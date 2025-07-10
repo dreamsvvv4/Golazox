@@ -1,63 +1,112 @@
-# Ultra KibanaDownloader - Advanced Elasticsearch Log Analytics
+# ElasticLogana
 
-A powerful, professional GUI application for downloading and analyzing logs from Elasticsearch with automated installation and modern interface.
+Advanced Elasticsearch log analytics tool with modern GUI interface for efficient log downloading and analysis.
 
-## Features
+## Overview
 
-- **Modern Java Swing GUI** with clean, professional design
-- **Unlimited log downloads** using Elasticsearch scroll API
-- **Real-time progress feedback** during download operations
-- **Automated installation** with included installers for Java and Python
-- **Cross-platform support** (Windows, Linux, macOS)
-- **Default 30-minute time range** for optimal performance
-- **Automatic log processing** with filtering, ordering, and compression
+ElasticLogana is a professional tool designed for downloading and analyzing logs from Elasticsearch clusters. It features a modern Java Swing interface with Python backend processing capabilities.
+
+## Key Features
+
+- **Modern GUI Interface**: Clean, professional Java Swing application
+- **Elasticsearch Integration**: Direct connection to Elasticsearch clusters
+- **Unlimited Downloads**: Uses Elasticsearch scroll API for large datasets
+- **Real-time Progress**: Live feedback during download operations
+- **Multi-format Support**: JSON, filtered, and compressed log outputs
+- **Cross-platform**: Windows, Linux, and macOS support
+- **Automated Processing**: Built-in filtering, ordering, and compression
 
 ## Quick Start
 
-### Windows (Recommended)
-1. Extract the project folder
-2. Run: `Requirements\install_and_start_elasticlogana_WINDOWS.bat`
-3. Application will start automatically
+### Prerequisites
+- Java 21 or higher
+- Python 3.13 or higher
+- Network access to Elasticsearch cluster
 
-### Linux/Mac
-1. Extract the project folder
-2. Run: `chmod +x Requirements/install_and_start_elasticlogana_LINUX.sh`
-3. Run: `./Requirements/install_and_start_elasticlogana_LINUX.sh`
+### Installation
 
-## What's Included
+#### Windows
+```bash
+# Navigate to project directory
+cd ElasticLogana
 
-### Core Application
-- `ElasticLoganaGUI.jar` - Main application (ready to run)
-- `main.py` - Python backend for log processing
-- `ElasticSearch.py` - Elasticsearch client with scroll API
-- Configuration files for different log types
+# Run the application
+java -jar ElasticLoganaGUI.jar
+```
 
-### Installers (Requirements folder)
-- `python-3.13.3-amd64.exe` - Python installer
-- `OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6 (1).msi` - Java installer
-- `requirements.txt` - Python dependencies
-- Installation scripts for Windows and Linux
+#### Linux/macOS
+```bash
+# Make scripts executable
+chmod +x Requirements/install_and_start_elasticlogana_LINUX.sh
 
-### Documentation
-- This README file
-- Source code and configuration files
+# Run installation
+./Requirements/install_and_start_elasticlogana_LINUX.sh
+```
 
-## Manual Installation
+### Python CLI Usage
+```bash
+# Direct Python execution
+python main.py
+## Project Structure
 
-If automatic installation fails:
+```
+├── ElasticLoganaGUI.jar          # Main GUI application
+├── main.py                       # Python CLI interface
+├── ElasticSearch.py             # Elasticsearch client
+├── Services.py                  # Service configuration
+├── conf*.py                     # Log type configurations
+├── model/                       # Java model classes
+├── ui/                          # UI components
+├── Requirements/                # Installation files
+└── logs/                        # Output directory
+```
 
-1. **Install Java 21** (included: `Requirements/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6 (1).msi`)
-2. **Install Python 3.13** (included: `Requirements/python-3.13.3-amd64.exe`)
-3. **Install Python dependencies**:
-   ```bash
-   # CRITICAL: Install elasticsearch 8.12.1 first
-   pip install elasticsearch==8.12.1
-   pip install -r Requirements/requirements.txt
-   ```
-4. **Run application**:
-   ```bash
-   java -jar ElasticLoganaGUI.jar
-   ```
+## Configuration
+
+The application supports multiple log analysis configurations:
+
+- **confForensic.py** - Forensic log analysis
+- **confPhoto.py** - Photo service logs
+- **confAudio.py** - Audio service logs
+- **confM2M.py** - Machine-to-machine communications
+- **ConfDoorlock.py** - Door lock system logs
+- **ConfFOTA.py** - Firmware over-the-air updates
+
+## Usage
+
+### GUI Mode
+1. Launch: `java -jar ElasticLoganaGUI.jar`
+2. Configure Elasticsearch connection
+3. Set time range and filters
+4. Start download and analysis
+
+### CLI Mode
+```bash
+python main.py
+```
+
+## Requirements
+
+- **Java**: OpenJDK 21 or higher
+- **Python**: 3.13 or higher
+- **Elasticsearch**: Compatible with v8.x
+- **Network**: Access to Elasticsearch cluster
+
+## Output
+
+Generated files are saved to the `logs/` directory:
+- **filtered.log** - Processed log entries
+- **ordered.log** - Chronologically sorted logs
+- **tagged.log** - Logs with additional metadata
+- **config.log** - Configuration and summary
+
+## Contributing
+
+This project is developed for Verisure internal use. For questions or improvements, please contact the development team.
+
+## License
+
+Internal use only - Verisure Security Systems.
 
 ## Usage
 
