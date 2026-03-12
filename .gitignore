@@ -1,0 +1,28 @@
+# Ignore local SSH key for CU tests
+Proyectos/remote_tests/cu_devkey_private
+
+# Ignore python cache in remote_tests
+Proyectos/remote_tests/__pycache__/
+
+# General ignores
+*.pyc
+__pycache__/
+.env
+.idea/
+.vscode/
+.DS_Store
+
+# Virtual environments
+.venv/
+.venv_service/
+venv/
+
+# Java compiled files
+*.class
+
+# Downloaded logs (generated at runtime)
+UltraKibanaDownloader/logs/
+UltraKibanaDownloader_V4.0/UltraKibanaDownloader/logs/
+
+# Third-party binaries
+Proyectos/llamadas/bin/

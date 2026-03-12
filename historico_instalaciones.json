@@ -1,0 +1,132 @@
+{
+  "resumen": [
+    {
+      "Numero de instalacion": 5912095,
+      "Serial Number": "26MQ5LEG",
+      "Descripcion": "Pruebas Oficina"
+    },
+    {
+      "Numero de instalacion": 5499266,
+      "Serial Number": "26MQ5H9V",
+      "Descripcion": "Pruebas casa"
+    },
+    {
+      "Numero de instalacion": 4695966,
+      "Serial Number": "26MQ4MJB",
+      "Descripcion": "Piloto Madrid"
+    },
+    {
+      "Numero de instalacion": 1618901,
+      "Serial Number": "26NQ7HZP",
+      "Descripcion": "Piloto Burgos"
+    }
+  ],
+  "instalaciones": [
+    {
+      "Numero de instalacion": 5912095,
+      "Descripcion": "Pruebas Oficina",
+      "Serial Number": "26MQ5LEG",
+      "Creado": "2024-11-11T10:51:40.705+00:00",
+      "Ultima actualizacion": "2025-07-14T13:13:28.482+00:00",
+  "version_CU": "1.21.24",
+      "Dispositivos totales": 13,
+      "Usuarios totales": 4,
+      "Tags totales": 4,
+      "Detalle dispositivos": "SVK:1, MAGNETIC:2, SPB:1, SMOKE:1, CROPTEX:1, AQUILA:1, ORION:2, MOK:1, LOCK:1, KEYFOB:1, NOX:1",
+      "Nodos": [
+        "SVK: 2ELBTRM7, Zone ID: VV01, version: 4.11.1",
+        "MAGNETIC: 2K2K6QSE, Zone ID: MG01, version: 4.15.0",
+        "MAGNETIC: 2JZ7RP7P, Zone ID: MG02",
+        "SPB: 3N2NRYFY, Zone ID: B301, version: 1.3.1",
+        "SMOKE: 2DUB3J78, Zone ID: FR02, version: 2.0.7",
+        "CROPTEX: 2DUYBH7H, Zone ID: YP03, version: 26.1.0",
+        "AQUILA: 2DBTHPNJ, Zone ID: QP04, MAC: 00:00:00:00:00:00, version: 2.25.7",
+        "ORION: 3649T2ZL, Zone ID: QR05, MAC: 24:c3:f9:2b:b6:f0, version: 2.22.20",
+        "ORION: 3649THGE, Zone ID: QR06, MAC: 24:c3:f9:2b:b7:2a, version: 2.22.20",
+        "MOK: 2DQDHDHN, Zone ID: VK02",
+        "LOCK: 32262PAX, Zone ID: DR01, version: 1.25.1",
+        "KEYFOB: 2EUJ63BK, Zone ID: KF02, version: 1.6.1",
+        "NOX: 3NAC2CWQ, Zone ID: FX07, version: 1.0.3"
+  ]
+    },
+    {
+      "Numero de instalacion": 5499266,
+      "Descripcion": "Pruebas casa",
+      "Serial Number": "26MQ5H9V",
+      "Creado": "2024-02-15T11:24:23.068+00:00",
+      "Ultima actualizacion": "2025-08-01T07:03:40.284+00:00",
+      "Telefono": "05906563183859",
+  "version_CU": "1.32.16",
+      "Dispositivos totales": 12,
+      "Usuarios totales": 4,
+      "Tags totales": 4,
+      "Detalle dispositivos": "SVK:1, SPB:1, CROPTEX:2, MAGNETIC:1, MOK:1, LOCK:1, KEYFOB:1, AQUILA:1, ORION:2, SMOKE:1",
+      "Nodos": [
+        "SVK: 2CHFF7QW, Zone ID: VV01, version: 4.11.1",
+        "SPB: 2DQL7ZTL, Zone ID: B301, version: 1.3.1",
+        "CROPTEX: 2CXAULVY, Zone ID: YP01",
+        "MAGNETIC: 2CB495KX, Zone ID: MG03, version: 3.11.0",
+        "MOK: 2DQDL4UW, Zone ID: VK02, version: 1.6.4",
+        "LOCK: 2D8QA7PX, Zone ID: DR01, version: 1.25.1",
+        "KEYFOB: 2C8HAYS3, Zone ID: KF02, version: 1.6.1",
+        "AQUILA: 2DBTKBZG, Zone ID: QP05, MAC: 24:c3:f9:0a:91:45, version: 2.25.7",
+        "ORION: 368YXBUF, Zone ID: QR04, MAC: 24:c3:f9:35:ec:6f, version: 2.22.23",
+        "ORION: 368T9GBG, Zone ID: QR06, MAC: 24:c3:f9:35:91:81, version: 2.22.25",
+        "CROPTEX: 2NG7TG9X, Zone ID: YP07, version: 26.1.0",
+        "SMOKE: 2DUAQJBW, Zone ID: FR02, version: 2.0.7"
+  ]
+    },
+    {
+      "Numero de instalacion": 4695966,
+      "Descripcion": "Piloto Madrid",
+      "Serial Number": "26MQ4MJB",
+      "Creado": "2022-09-22T08:08:13.202+00:00",
+      "Ultima actualizacion": "2025-08-06T21:02:58.100+00:00",
+  "version_CU": "1.36.6",
+      "Dispositivos totales": 10,
+      "Usuarios totales": 6,
+      "Tags totales": 6,
+      "Detalle dispositivos": "ORION:2, SVK:1, SMOKE:1, SPB:1, KEYFOB:1, MOK:1, MC3:2, LOCK:1",
+      "Nodos": [
+        "ORION: 3649SY2B, Zone ID: QR01, MAC: 24:c3:f9:2b:b6:e5, version: 2.22.25",
+        "SVK: 2ELBTULK, Zone ID: VV01, version: 4.12.1",
+        "ORION: 36499EGH, Zone ID: QR03, MAC: 24:c3:f9:2b:ae:1e, version: 2.22.25",
+        "SMOKE: 2DUAQXSC, Zone ID: FR01, version: 2.0.7",
+        "SPB: 3N2NM3G2, Zone ID: B302, version: 1.3.1",
+        "KEYFOB: 2D8LQAG7, Zone ID: KF01, version: 1.6.1",
+        "MOK: 2DQDEJ2S, Zone ID: VK03, version: 1.9.0",
+        "MC3: 2MYTNELK, Zone ID: MR05, version: 1.0.3",
+        "MC3: 2MYTN5VE, Zone ID: MR06, version: undefined",
+        "LOCK: 329KC22L, Zone ID: DR02, version: 2.1.0"
+  ]
+    },
+    {
+      "Numero de instalacion": 1618901,
+      "Descripcion": "Piloto Burgos",
+      "Serial Number": "26NQ7HZP",
+      "Creado": "2024-03-26T09:36:11.600+00:00",
+      "Ultima actualizacion": "2025-08-13T07:45:51.595+00:00",
+  "version_CU": "1.32.17",
+      "Dispositivos totales": 14,
+      "Usuarios totales": 4,
+      "Tags totales": 4,
+      "Detalle dispositivos": "ORION:3, MAGNETIC:8, SVK:1, LOCK:1, MOK:1",
+      "Nodos": [
+        "ORION: 368XPQJ6, Zone ID: QR01, MAC: 24:c3:f9:35:d8:a2, version: 2.22.25",
+        "ORION: 36HGTDUN, Zone ID: QR02, MAC: 24:c3:f9:4d:1d:f9, version: 2.22.25",
+        "ORION: 368XJF9A, Zone ID: QR03, MAC: 24:c3:f9:35:d5:fc, version: 2.22.25",
+        "MAGNETIC: 2KLLEWKP, Zone ID: MG04, version: 4.15.0",
+        "MAGNETIC: 2LN5RSDQ, Zone ID: MG05, version: 4.15.0",
+        "SVK: 2EU6Z2ZV, Zone ID: VV01, version: 4.12.1",
+        "MAGNETIC: 2MXU8L2N, Zone ID: MG06, version: 4.15.0",
+        "MAGNETIC: 2MC7GJ89, Zone ID: MG07, version: 4.15.0",
+        "MAGNETIC: 2MBYNYL9, Zone ID: MG08, version: 4.15.0",
+        "MAGNETIC: 2MC4UXWC, Zone ID: MG09, version: 4.15.0",
+        "MAGNETIC: 2MC3F8UX, Zone ID: MG10, version: 4.15.0",
+        "MAGNETIC: 2MXU5Q68, Zone ID: MG11, version: 4.15.0",
+        "LOCK: 328PCTBP, Zone ID: DR01, version: 1.25.1",
+        "MOK: 2FE59ZNQ, Zone ID: VK02, version: 1.9.0"
+  ]
+    }
+  ]
+}
