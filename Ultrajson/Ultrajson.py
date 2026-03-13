@@ -495,7 +495,7 @@ def find_key_matches(obj: Any, key_name: str, ruta_actual: List[str] = None) -> 
 
 class InstalacionGUI:
     APP_NAME = "Ultrajson"
-    APP_VERSION = "1.1.0"
+    APP_VERSION = "1.2.0"
 
     def _add_experimental_delete_button(self, edit_win, old_val, exists, msg_var, exp_path, path_var, new_value_var, _refresh_current_value, _invalidate_check, _write):
         """
@@ -523,10 +523,14 @@ class InstalacionGUI:
             idx_txt = idx_var.get().strip()
             id_txt = id_var.get().strip()
             eliminado = False
+            # Determine target before mutating (for confirmation preview)
+            target_obj = None
             # Eliminar por índice
             if idx_txt.isdigit():
                 idx = int(idx_txt)
                 if 0 <= idx < len(arr):
+                    target_obj = arr[idx]
+                    arr = list(arr)
                     arr.pop(idx)
                     eliminado = True
                 else:
@@ -535,7 +539,8 @@ class InstalacionGUI:
             # Eliminar por _id
             elif id_txt:
                 n = len(arr)
-                arr = [o for o in arr if not (isinstance(o, dict) and str(o.get('_id','')) == id_txt)]
+                target_obj = next((o for o in arr if isinstance(o, dict) and str(o.get('_id', '')) == id_txt), None)
+                arr = [o for o in arr if not (isinstance(o, dict) and str(o.get('_id', '')) == id_txt)]
                 if len(arr) < n:
                     eliminado = True
                 else:
@@ -544,6 +549,34 @@ class InstalacionGUI:
             else:
                 msg_var.set("Introduce un índice o un _id para eliminar.")
                 return
+
+            # ⚠ HARD CONFIRMATION before any mutation
+            try:
+                target_preview = json.dumps(target_obj, indent=2, ensure_ascii=False) if target_obj is not None else str(target_obj)
+                if len(target_preview) > 600:
+                    target_preview = target_preview[:597] + '…'
+            except Exception:
+                target_preview = str(target_obj)
+            if not messagebox.askyesno(
+                "⚠ CONFIRMAR ELIMINACIÓN EXPERIMENTAL",
+                f"Estás a punto de ELIMINAR un objeto del array '{exp_path}'.\n\n"
+                f"OBJETO A ELIMINAR:\n{target_preview}\n\n"
+                f"Esto modifica el JSON en memoria inmediatamente.\n"
+                f"Después necesitarás Check + Send para aplicarlo en backend.\n\n"
+                f"¿Continuar?",
+                parent=edit_win,
+            ):
+                msg_var.set("Eliminación cancelada.")
+                return
+
+            # Snapshot BEFORE mutating self._last_json_data
+            _exp_snapshot = ''
+            try:
+                if self._last_json_data is not None:
+                    _exp_snapshot = self._save_pre_patch_snapshot('experimental_pre_delete', self._last_json_data)
+            except Exception:
+                pass
+
             # Actualizar experimental
             ptrs = exp_path.strip("/").split("/")
             obj = self._last_json_data
@@ -556,7 +589,8 @@ class InstalacionGUI:
                     return
             last = self._unescape_json_pointer_token(ptrs[-1])
             obj[last] = arr
-            msg_var.set("Objeto eliminado del array experimental. Cierra la ventana y usa 'Check' y 'Send' para aplicar.")
+            _snap_note = f" | \U0001f4c1 Backup: {_exp_snapshot}" if _exp_snapshot else ""
+            msg_var.set(f"Objeto eliminado del array experimental. Cierra la ventana y usa 'Check' y 'Send' para aplicar.{_snap_note}")
             # Refrescar valor actual en la ventana principal
             try:
                 _refresh_current_value()
@@ -661,7 +695,7 @@ class InstalacionGUI:
         self.root.after(250, self._poll_queue)
 
     def _show_welcome(self):
-        """Write a short onboarding guide into the output panel for first-time users."""
+        """Write a colorized Quick Start guide into the output panel on first launch."""
         try:
             if self._last_json_data is not None:
                 return
@@ -671,36 +705,62 @@ class InstalacionGUI:
         except Exception:
             return
 
-        welcome = [
-            "Ultrajson — Quick Start",
-            "",
-            "1) Installation + Country → Query",
-            "   - View: Summary (readable) or JSON (full)",
-            "   - Save JSON: keep the downloaded file on disk",
-            "",
-            "2) Open JSON (offline): click 'Open JSON' or press Ctrl+O",
-            "",
-            "3) Search vs Filter",
-            "   - Search: highlights matches (F3 / Shift+F3)",
-            "   - Filter: reduces panel to matching lines/paths",
-            "",
-            "4) Tree View: browse JSON structure",
-            "",
-            "5) Compare",
-            "   - Fill 'Compare to' → Compare",
-            "   - Only diffs: show only changed/added/removed fields",
-            "   - Close Compare: back to normal view",
-            "",
-            "Path examples (Filter / Extract Path Value):",
-            "   cu.serialNumber",
-            "   nodes[0].serialNumber",
-            "   behaviours[id=autolock].config.timeout",
-            "   behaviours[?id=autolock].config.timeout   (all matches)",
-            "",
-            "Tip: See README.md for more examples",
+        # (line_text, tag_name or None)
+        # Tags are configured inline; reuse same palette as output widgets.
+        SEP = "  " + "─" * 54
+        lines = [
+            ("  Ultrajson — Quick Start",                                              'wlc_title'),
+            (SEP,                                                                       'wlc_dim'),
+            ("",                                                                        None),
+            ("  1)  Installation + Country → Query",                                   'wlc_section'),
+            ("      - View: Summary (readable) or JSON (full)",                        None),
+            ("      - Save JSON: keep the downloaded file on disk",                    None),
+            ("",                                                                        None),
+            ("  2)  Open JSON (offline):  'Open JSON' button  or  Ctrl+O",            'wlc_section'),
+            ("",                                                                        None),
+            ("  3)  Search vs Filter",                                                 'wlc_section'),
+            ("      - Search: highlights matches  (F3 / Shift+F3)",                   None),
+            ("      - Filter: reduces panel to matching lines/paths",                  None),
+            ("",                                                                        None),
+            ("  4)  Tree View:  browse JSON structure interactively",                  'wlc_section'),
+            ("",                                                                        None),
+            ("  5)  Compare",                                                          'wlc_section'),
+            ("      - Fill 'Compare to' → Compare",                                   None),
+            ("      - Only diffs: show only changed/added/removed fields",             None),
+            ("      - Close Compare: back to normal view",                             None),
+            ("",                                                                        None),
+            ("  6)  Remote Edit    ⚠  use with care",                                 'wlc_warn'),
+            ("      - Remote Edit…:       pre-check + PATCH a single installation via APIM", None),
+            ("      - Bulk Remote Edit…:  apply same PATCH to multiple installations", None),
+            ("      - Check validates path and shows current → new value before sending", None),
+            ("      - Unlock: tick 'Enable editing' + type EDIT in the confirm field", None),
+            ("      - Every successful PATCH is logged to remote_edit_audit.log",      None),
+            ("",                                                                        None),
+            (SEP,                                                                       'wlc_dim'),
+            ("  Path examples  (Filter / Extract Path Value):",                        'wlc_dim'),
+            ("      cu.serialNumber",                                                  'wlc_path'),
+            ("      nodes[0].serialNumber",                                            'wlc_path'),
+            ("      behaviours[id=autolock].config.timeout",                           'wlc_path'),
+            ("      behaviours[?id=autolock].config.timeout   (all matches)",          'wlc_path'),
+            (SEP,                                                                       'wlc_dim'),
         ]
+
         try:
-            self.text.insert('1.0', "\n".join(welcome) + "\n")
+            # Configure welcome-specific tags once
+            self.text.tag_configure('wlc_title',   foreground='#00d7d7',
+                                    font=('Consolas', 11, 'bold'))
+            self.text.tag_configure('wlc_section', foreground='#6ab4ff',
+                                    font=('Consolas', 10, 'bold'))
+            self.text.tag_configure('wlc_warn',    foreground='#ffaa00',
+                                    font=('Consolas', 10, 'bold'))
+            self.text.tag_configure('wlc_path',    foreground='#4ec94e')
+            self.text.tag_configure('wlc_dim',     foreground='#555555')
+
+            # Insert all text first, then apply tags by line number (1-based)
+            self.text.insert('1.0', "\n".join(t for t, _ in lines) + "\n")
+            for row, (_, tag) in enumerate(lines, start=1):
+                if tag:
+                    self.text.tag_add(tag, f'{row}.0', f'{row}.end')
             self.text.see('1.0')
         except Exception:
             pass
@@ -931,6 +991,8 @@ class InstalacionGUI:
             safe_config(self.btn_extract_path, state=('normal' if has_json else 'disabled'))
         if hasattr(self, 'btn_remote_edit'):
             safe_config(self.btn_remote_edit, state=('normal' if has_json else 'disabled'))
+        if hasattr(self, 'btn_remote_edit_bulk'):
+            safe_config(self.btn_remote_edit_bulk, state=('normal' if has_json else 'disabled'))
 
         if hasattr(self, 'btn_compare'):
             safe_config(self.btn_compare, state=('normal' if (has_json and not batch_running) else 'disabled'))
@@ -1264,6 +1326,9 @@ class InstalacionGUI:
         self.btn_extract_path.pack(side='left', padx=(6, 0))
         self._add_tooltip(self.btn_extract_path, "Extract the value of the path written in the Search box.")
 
+        ttk.Separator(tools_bar, orient='vertical').pack(side='left', fill='y', padx=10)
+        ttk.Label(tools_bar, text="⚠", foreground='#ffaa00').pack(side='left', padx=(0, 4))
+
         self.btn_remote_edit = ttk.Button(tools_bar, text="Remote Edit…", command=self.open_remote_edit_apim)
         self.btn_remote_edit.pack(side='left', padx=(6, 0))
         self._add_tooltip(self.btn_remote_edit, "Open a gated window to pre-check and apply a remote PATCH (APIM).")
@@ -1279,8 +1344,8 @@ class InstalacionGUI:
         btn_exit.pack(side='right')
         self._add_tooltip(btn_exit, "Exit the application.")
 
-        self.btn_stop = ttk.Button(right_bar, text="Stop", command=self.stop_batch, state='disabled')
-        self.btn_stop.pack(side='right', padx=(0, 6))
+        self.btn_stop = ttk.Button(right_bar, text="Stop", command=self.stop_batch)
+        # btn_stop is auto-shown/hidden via _set_batch_running — not packed here
         self._add_tooltip(self.btn_stop, "Stop the current Filter CSV batch run.")
 
         # Compare controls (moved to the bottom)
@@ -1664,24 +1729,36 @@ class InstalacionGUI:
 
         ttk.Label(frm, text="Preview / Progress:").grid(row=r, column=0, sticky='nw', pady=(6, 0))
         out_txt = tk.Text(frm, width=92, height=16, wrap='word', font=('Consolas', 9))
+        self._configure_output_widget(out_txt)
         out_txt.grid(row=r, column=1, columnspan=3, sticky='we', pady=(6, 0)); r += 1
 
         log_q: "queue.Queue[tuple[str, str]]" = queue.Queue()
         running = {"active": False, "mode": ""}
         stop_flag = {"stop": False}
         last_checked = {"ok": False, "items": [], "stale_reason": ""}
+        _live = {"total": 0, "ok": 0, "fail": 0}
+        counter_var = tk.StringVar(value="")
 
         def _write(s: str):
             try:
                 out_txt.delete('1.0', 'end')
-                out_txt.insert('1.0', s)
+                for line in s.split('\n'):
+                    tag = InstalacionGUI._tag_for_line(line)
+                    if tag:
+                        out_txt.insert('end', line + '\n', tag)
+                    else:
+                        out_txt.insert('end', line + '\n')
                 out_txt.see('1.0')
             except Exception:
                 pass
 
         def _append(s: str):
             try:
-                out_txt.insert('end', s + ("\n" if not s.endswith("\n") else ""))
+                tag = InstalacionGUI._tag_for_line(s)
+                if tag:
+                    out_txt.insert('end', s + ('\n' if not s.endswith('\n') else ''), tag)
+                else:
+                    out_txt.insert('end', s + ('\n' if not s.endswith('\n') else ''))
                 out_txt.see('end')
             except Exception:
                 pass
@@ -1692,8 +1769,18 @@ class InstalacionGUI:
                     kind, msg = log_q.get_nowait()
                     if kind == 'clear':
                         _write(msg)
+                    elif kind == 'counter':
+                        try:
+                            _live.update(msg)
+                        except Exception:
+                            pass
                     else:
                         _append(msg)
+            except Exception:
+                pass
+            try:
+                n, ok, fail = _live['total'], _live['ok'], _live['fail']
+                counter_var.set(f"{ok + fail}/{n}   ✓ OK={ok}   ✗ FAIL={fail}" if n > 0 else "")
             except Exception:
                 pass
             try:
@@ -1829,7 +1916,11 @@ class InstalacionGUI:
                         return val, 'auto:object(json)', ''
                     if isinstance(old_val, list) and isinstance(val, list):
                         return val, 'auto:array(json)', ''
-                    # Si el tipo no coincide, mostrar advertencia y sugerir el tipo correcto
+                    # object entered but target is array → auto-wrap in list
+                    if isinstance(old_val, list) and isinstance(val, dict):
+                        return [val], 'auto:array(wrapped-object)', \
+                            '⚠ El valor actual es un array: tu objeto ha sido envuelto automáticamente en una lista [{ … }].'
+                    # array entered but target is object → hard fail (ambiguous)
                     raise ValueError(
                         f"Type mismatch: current value is {self._json_type_name(old_val)} but new value is {self._json_type_name(val)}. "
                         f"Tip: Si el valor actual es un array, el nuevo valor debe ser una lista (ejemplo: [{{...}}]), no un objeto. "
@@ -1974,6 +2065,8 @@ class InstalacionGUI:
                             exists, old_val, why = self._get_by_pointer(data, full_ptr)
                             op, path_note = _validate_patch_target(data, full_ptr, exists, old_val, why)
                             new_val, parse_mode, _parse_note = _parse_new_value(new_value_var.get(), exists, old_val)
+                            if exists and new_val == old_val:
+                                raise ValueError(f"El valor nuevo es idéntico al actual ({old_val!r}). No hay nada que cambiar.")
                             payload = {
                                 "persistent": bool(PERSISTENT_FIXED),
                                 "request": [{"op": op, "path": full_ptr, "value": new_val}],
@@ -1998,6 +2091,7 @@ class InstalacionGUI:
                                     "payload": payload,
                                     "full_ptr": full_ptr,
                                     "expected_new_val": new_val,
+                                    "old_val": old_val if exists else "<missing>",
                                 }
                             )
 
@@ -2045,12 +2139,31 @@ class InstalacionGUI:
                 messagebox.showinfo("Bulk Remote Edit", "Run Check all first (need at least one OK).", parent=win)
                 return
 
+            try:
+                _first_ptr = str((items[0] if items else {}).get('full_ptr') or '')
+                _first_new = repr((items[0] if items else {}).get('expected_new_val'))
+                _first_old = repr((items[0] if items else {}).get('old_val', '<unknown>'))
+            except Exception:
+                _first_ptr, _first_new, _first_old = '', '', ''
             if not messagebox.askyesno(
-                "Confirm Bulk PATCH",
-                f"Send PATCH to {len(items)} installations (only those with CHECK OK)?\n\nProceed?",
+                "Confirmar Bulk PATCH",
+                f"¿Enviar PATCH a {len(items)} instalaciones (solo las OK)?\n\n"
+                f"  path         : {_first_ptr}\n"
+                f"  valor actual : {_first_old}\n"
+                f"  valor nuevo  : {_first_new}\n\n"
+                f"¿Continuar?",
                 parent=win,
             ):
                 return
+
+            # --- Snapshot backup BEFORE any bulk sending ---
+            _bulk_snapshot = ''
+            if self._last_json_data is not None:
+                try:
+                    _first_inst = str((items[0] if items else {}).get('installation_id') or 'bulk')
+                    _bulk_snapshot = self._save_pre_patch_snapshot(f"bulk_{_first_inst}", self._last_json_data)
+                except Exception:
+                    pass
 
             stop_flag['stop'] = False
             running['active'] = True
@@ -2060,7 +2173,10 @@ class InstalacionGUI:
             def worker():
                 try:
                     log_q.put(('append', ''))
+                    if _bulk_snapshot:
+                        log_q.put(('append', f"\u26be Backup (JSON cargado): {_bulk_snapshot}"))
                     log_q.put(('append', f"SEND: starting... ({len(items)} installations)"))
+                    log_q.put(('counter', {"total": len(items), "ok": 0, "fail": 0}))
                     ok = 0
                     fail = 0
 
@@ -2088,9 +2204,22 @@ class InstalacionGUI:
                             )
                             if resp.status_code >= 400:
                                 fail += 1
+                                log_q.put(('counter', {"total": len(items), "ok": ok, "fail": fail}))
                                 log_q.put(('append', f"FAIL {installation_id} | HTTP {resp.status_code} | {resp.text[:200]}"))
                             else:
                                 ok += 1
+                                log_q.put(('counter', {"total": len(items), "ok": ok, "fail": fail}))
+                                self._write_audit_log({
+                                    "installation": installation_id,
+                                    "path": str(it.get("full_ptr") or ""),
+                                    "old_val": it.get("old_val", "<unknown>"),
+                                    "new_val": it.get("expected_new_val"),
+                                    "op": ((it.get("payload") or {}).get("request") or [{}])[0].get("op", ""),
+                                    "user": (it.get("headers") or {}).get("x-sd-requested-by-user", ""),
+                                    "status": str(resp.status_code),
+                                    "note": "bulk",
+                                    "snapshot": _bulk_snapshot,
+                                })
                                 # Provide response preview even for HTTP 2xx (helps diagnose async/queued changes)
                                 resp_preview = ''
                                 try:
@@ -2175,6 +2304,8 @@ class InstalacionGUI:
 
                     log_q.put(('append', ''))
                     log_q.put(('append', f"SEND: done. OK={ok} FAIL={fail}"))
+                    # Invalidar: requiere re-Check para poder enviar de nuevo
+                    last_checked['ok'] = False
                 except Exception as e:
                     log_q.put(('append', "SEND: FAIL\n" + str(e) + "\n\n" + traceback.format_exc()))
                 finally:
@@ -2228,6 +2359,10 @@ class InstalacionGUI:
         except Exception:
             pass
 
+        # Counter label
+        counter_lbl = ttk.Label(frm, textvariable=counter_var, foreground='#6ab4ff', font=('Consolas', 9))
+        counter_lbl.grid(row=r, column=1, columnspan=3, sticky='w', pady=(4, 0)); r += 1
+
         # Buttons
         btns = ttk.Frame(frm)
         btns.grid(row=r, column=0, columnspan=4, sticky='we', pady=(10, 0))
@@ -2237,6 +2372,7 @@ class InstalacionGUI:
         btn_send.pack(side='left', padx=(8, 0))
         btn_stop = ttk.Button(btns, text="Stop", command=_stop)
         btn_stop.pack(side='left', padx=(8, 0))
+        ttk.Button(btns, text="Clear log", command=lambda: _write('')).pack(side='left', padx=(8, 0))
         ttk.Button(btns, text="Close", command=win.destroy).pack(side='right')
 
         enable_var.trace_add('write', _refresh_buttons)
@@ -2256,10 +2392,104 @@ class InstalacionGUI:
             frm.columnconfigure(1, weight=1)
         except Exception:
             pass
+        try:
+            win.update_idletasks()
+            win.minsize(win.winfo_width(), win.winfo_height())
+        except Exception:
+            pass
 
 
     def _normalize_serial(self, s: str) -> str:
         return str(s or "").strip().upper()
+
+    def _set_status(self, text: str, level: str = 'info') -> None:
+        """Actualiza la barra de estado con color según el nivel: ok/error/warn/info."""
+        try:
+            self.status_var.set(text)
+            colors = {'ok': '#4ec94e', 'error': '#ff5555', 'warn': '#ffaa00', 'info': ''}
+            fg = colors.get(level, '')
+            try:
+                self.status_label.configure(foreground=fg if fg else self.status_label.cget('foreground'))
+            except Exception:
+                pass
+        except Exception:
+            pass
+
+    @staticmethod
+    def _configure_output_widget(tw) -> None:
+        """Aplica tema oscuro y tags de color a un widget Text de output."""
+        try:
+            tw.configure(
+                background='#1e1e1e', foreground='#e6e6e6',
+                insertbackground='#ffffff',
+                selectbackground='#264d73', selectforeground='#ffffff',
+            )
+            tw.tag_configure('ok_tag',       foreground='#4ec94e')   # verde
+            tw.tag_configure('fail_tag',     foreground='#ff5555')   # rojo
+            tw.tag_configure('warn_tag',     foreground='#ffaa00')   # naranja
+            tw.tag_configure('check_ok_tag', foreground='#00d7d7')   # cyan
+            tw.tag_configure('send_tag',     foreground='#6ab4ff')   # azul
+            tw.tag_configure('dim_tag',      foreground='#888888')   # gris
+        except Exception:
+            pass
+
+    @staticmethod
+    def _tag_for_line(line: str) -> str:
+        """Devuelve el tag de color para una línea de log según su prefijo."""
+        u = line.strip().upper()
+        if u.startswith('OK ') or u == 'OK':        return 'ok_tag'
+        if u.startswith('FAIL'):                     return 'fail_tag'
+        if u.startswith('WARN'):                     return 'warn_tag'
+        if u.startswith('CHECK: OK'):                return 'check_ok_tag'
+        if u.startswith('CHECK: FAIL'):              return 'fail_tag'
+        if u.startswith('CHECK:'):                   return 'check_ok_tag'
+        if u.startswith('SEND: DONE') or u.startswith('SEND: OK'): return 'ok_tag'
+        if u.startswith('SEND: FAIL'):               return 'fail_tag'
+        if u.startswith('SEND:'):                    return 'send_tag'
+        if u.startswith('REFRESH: OK'):              return 'ok_tag'
+        if u.startswith('REFRESH: FAIL'):            return 'fail_tag'
+        if u.startswith('SIMULAR: OK'):              return 'ok_tag'
+        if u.startswith('SIMULAR: FAIL'):            return 'fail_tag'
+        if u.startswith('HTTP 2'):                   return 'ok_tag'
+        if u.startswith('HTTP 4') or u.startswith('HTTP 5'): return 'fail_tag'
+        return ''
+
+    @staticmethod
+    def _write_audit_log(entry: dict) -> None:
+        """Escribe una línea en el audit log de ediciones remotas (remote_edit_audit.log)."""
+        import datetime
+        try:
+            log_path = os.path.join(os.path.dirname(__file__), 'remote_edit_audit.log')
+            ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            parts = [f"ts={ts!r}"]
+            for k in ('installation', 'path', 'old_val', 'new_val', 'op', 'user', 'status', 'note', 'snapshot'):
+                v = entry.get(k, '')
+                parts.append(f"{k}={v!r}")
+            line = ' | '.join(parts) + '\n'
+            with open(log_path, 'a', encoding='utf-8') as f:
+                f.write(line)
+        except Exception:
+            pass
+
+    @staticmethod
+    def _save_pre_patch_snapshot(installation_id: str, data: object) -> str:
+        """
+        Dumps the full installation JSON to Ultrajson/backups/ before any PATCH is sent.
+        Returns the backup file path, or '' on failure.
+        """
+        import datetime
+        try:
+            ts = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+            backup_dir = os.path.join(os.path.dirname(__file__), 'backups')
+            os.makedirs(backup_dir, exist_ok=True)
+            safe_id = str(installation_id or 'unknown').replace('/', '_').replace('\\', '_')
+            fname = f"{ts}_{safe_id}.json"
+            fpath = os.path.join(backup_dir, fname)
+            with open(fpath, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            return fpath
+        except Exception:
+            return ''
 
     @staticmethod
     def _read_dotenv_file(path: str) -> dict:
@@ -2695,7 +2925,8 @@ class InstalacionGUI:
         ttk.Label(frm, text="Current value:").grid(row=r, column=0, sticky='w')
         ent_cur = ttk.Entry(frm, textvariable=current_value_var, width=70, state='readonly')
         ent_cur.grid(row=r, column=1, columnspan=3, sticky='we', pady=(0, 2)); r += 1
-        ttk.Label(frm, textvariable=current_value_info_var, foreground="#666666").grid(row=r, column=1, columnspan=3, sticky='w', pady=(0, 6)); r += 1
+        lbl_path_info = ttk.Label(frm, textvariable=current_value_info_var, foreground="#888888")
+        lbl_path_info.grid(row=r, column=1, columnspan=3, sticky='w', pady=(0, 6)); r += 1
 
         ttk.Label(frm, text="New value:").grid(row=r, column=0, sticky='w')
         ent_val = ttk.Entry(frm, textvariable=new_value_var, width=24)
@@ -2705,12 +2936,19 @@ class InstalacionGUI:
 
         ttk.Label(frm, text="Preview / Response:").grid(row=r, column=0, sticky='nw', pady=(6, 0))
         txt = tk.Text(frm, width=88, height=14, wrap='word', font=('Consolas', 9))
+        self._configure_output_widget(txt)
         txt.grid(row=r, column=1, columnspan=3, sticky='we', pady=(6, 0)); r += 1
 
         def _write(s: str):
             try:
                 txt.delete('1.0', 'end')
-                txt.insert('1.0', s)
+                for line in s.split('\n'):
+                    tag = InstalacionGUI._tag_for_line(line)
+                    if tag:
+                        txt.insert('end', line + '\n', tag)
+                    else:
+                        txt.insert('end', line + '\n')
+                txt.see('1.0')
             except Exception:
                 pass
 
@@ -2797,6 +3035,10 @@ class InstalacionGUI:
                         return val, "auto:object(json)", ""
                     if isinstance(old_val, list) and isinstance(val, list):
                         return val, "auto:array(json)", ""
+                    # object entered but target is array → auto-wrap in list
+                    if isinstance(old_val, list) and isinstance(val, dict):
+                        return [val], "auto:array(wrapped-object)", \
+                            "⚠ El valor actual es un array: tu objeto ha sido envuelto automáticamente en una lista [{ … }]."
                     raise ValueError("Type mismatch: current value is %s but new value is %s" % (self._json_type_name(old_val), self._json_type_name(val)))
 
             # If missing, fall back to JSON-then-string (but block common non-JSON literals)
@@ -2841,13 +3083,19 @@ class InstalacionGUI:
                 if exists:
                     current_value_var.set(self._format_value_for_input(old_val))
                     current_value_info_var.set(f"{target_or_err} • type={self._json_type_name(old_val)}")
+                    try: lbl_path_info.configure(foreground='#4ec94e')
+                    except Exception: pass
                 else:
                     current_value_var.set("<missing>")
                     current_value_info_var.set(f"{target_or_err} • {why}")
+                    try: lbl_path_info.configure(foreground='#ff5555')
+                    except Exception: pass
             except Exception as e:
                 try:
                     current_value_var.set("")
                     current_value_info_var.set(f"Error reading current value: {e}")
+                    try: lbl_path_info.configure(foreground='#ff5555')
+                    except Exception: pass
                 except Exception:
                     pass
 
@@ -2934,13 +3182,13 @@ class InstalacionGUI:
 
         def _build_and_check() -> None:
             try:
-                self.status_var.set("Remote Edit: verificando...")
+                self._set_status("Remote Edit: verificando...", 'warn')
                 ok, full_ptr, _target_desc = _compute_full_ptr_for_ui()
                 if not ok:
                     last_checked["ok"] = False
                     _write(f"CHECK: FAIL\nPath error: {_target_desc}")
                     _refresh_buttons()
-                    self.status_var.set("Check: FAIL")
+                    self._set_status("Check: FAIL", 'error')
                     return
 
                 exists, old_val, why = self._get_by_pointer(self._last_json_data, full_ptr)
@@ -2993,6 +3241,13 @@ class InstalacionGUI:
                 if not exists and not bool(allow_add_var.get()):
                     last_checked["ok"] = False
                     _write("CHECK: FAIL\nEl campo no existe y no está permitido crearlo (habilita 'Allow add' para forzar).")
+                    _refresh_buttons()
+                    return
+
+                # Bloquear no-ops: valor nuevo idéntico al actual
+                if exists and new_val == old_val:
+                    last_checked["ok"] = False
+                    _write(f"CHECK: FAIL\nEl valor nuevo es idéntico al actual: {old_val!r}\nNo hay nada que cambiar.")
                     _refresh_buttons()
                     return
 
@@ -3053,13 +3308,16 @@ class InstalacionGUI:
                 last_checked["headers"] = None
                 last_checked["payload"] = payload
                 last_checked["stale_reason"] = ""
+                last_checked["full_ptr"] = full_ptr
+                last_checked["old_val"] = old_val if exists else "<missing>"
+                last_checked["new_val"] = new_val
                 _refresh_buttons()
-                self.status_var.set(f"Check OK — {ctry}{ins} {full_ptr}")
+                self._set_status(f"Check OK — {ctry}{ins} {full_ptr}", 'ok')
             except Exception as e:
                 last_checked["ok"] = False
                 _write("CHECK: FAIL\n" + "Error during check: " + str(e) + "\n\n" + traceback.format_exc())
                 _refresh_buttons()
-                self.status_var.set("Check: FAIL")
+                self._set_status("Check: FAIL", 'error')
 
                 # --- Botón para editar experimental ---
             def _edit_experimental():
@@ -3124,7 +3382,7 @@ class InstalacionGUI:
                     self.root.update_idletasks()
                 except Exception:
                     pass
-                self.status_var.set("Remote Edit: request JSON copied")
+                self._set_status("Remote Edit: request JSON copied", 'ok')
             except Exception as e:
                 messagebox.showerror("Copy", f"Error copying: {e}", parent=win)
 
@@ -3220,14 +3478,31 @@ class InstalacionGUI:
                     headers["x-sd-requested-by-app"] = app_h
                 headers["x-sd-requested-by-user"] = user_h
 
+                _ptr_disp = str(last_checked.get("full_ptr") or "")
+                _old_disp = repr(last_checked.get("old_val", "<unknown>"))
+                _new_disp = repr(last_checked.get("new_val", "<unknown>"))
                 if not messagebox.askyesno(
-                    "Confirm Remote PATCH",
-                    f"Send PATCH to:\n{url}\n\ninstallationId={installation_id}\n\nProceed?",
+                    "Confirmar Remote PATCH",
+                    f"¿Enviar PATCH?\n\n"
+                    f"  installationId : {installation_id}\n"
+                    f"  path           : {_ptr_disp}\n"
+                    f"  valor actual   : {_old_disp}\n"
+                    f"  valor nuevo    : {_new_disp}\n\n"
+                    f"URL: {url}\n\n¿Continuar?",
                     parent=win,
                 ):
                     return
 
-                self.status_var.set(f"Enviando PATCH {installation_id}...")
+                # --- Snapshot backup BEFORE sending ---
+                _snapshot_path = ''
+                if self._last_json_data is not None:
+                    _snapshot_path = self._save_pre_patch_snapshot(installation_id, self._last_json_data)
+                    if _snapshot_path:
+                        _write(f"\U0001f4c1 Backup guardado: {_snapshot_path}\n")
+                    else:
+                        _write("\u26a0 No se pudo guardar el backup pre-PATCH.\n")
+
+                self._set_status(f"Enviando PATCH {installation_id}...", 'warn')
                 resp = requests.patch(
                     url,
                     params={"installationId": installation_id},
@@ -3241,10 +3516,29 @@ class InstalacionGUI:
                 except Exception:
                     out.append(resp.text)
                 _write("\n\n".join(out))
-                self.status_var.set(f"PATCH {installation_id} → HTTP {resp.status_code}")
+                _patch_level = 'ok' if resp.status_code < 400 else 'error'
+                self._set_status(f"PATCH {installation_id} → HTTP {resp.status_code}", _patch_level)
+                # Invalidar check tras envío: evita doble-envío accidental
+                _invalidate_check("enviado")
+                # Audit log
+                try:
+                    _op = (((last_checked.get("payload") or {}).get("request") or [{}])[0] or {}).get("op", "")
+                except Exception:
+                    _op = ""
+                self._write_audit_log({
+                    "installation": installation_id,
+                    "path": _ptr_disp,
+                    "old_val": last_checked.get("old_val", "<unknown>"),
+                    "new_val": last_checked.get("new_val"),
+                    "op": _op,
+                    "user": (headers.get("x-sd-requested-by-user") or ""),
+                    "status": str(resp.status_code),
+                    "note": "single",
+                    "snapshot": _snapshot_path,
+                })
             except Exception as e:
                 _write("Error sending PATCH: " + str(e) + "\n\n" + traceback.format_exc())
-                self.status_var.set("PATCH: error")
+                self._set_status("PATCH: error", 'error')
 
         def _refresh_buttons(*_):
             unlocked = _is_unlocked()
@@ -3464,6 +3758,7 @@ class InstalacionGUI:
         # --- Asegurar botón Editar experimental ---
         btn_exp = ttk.Button(btns, text="Editar experimental", command=_edit_experimental)
         btn_exp.pack(side='left', padx=(8, 0))
+        ttk.Button(btns, text="Clear log", command=lambda: _write('')).pack(side='left', padx=(8, 0))
         # --- Fin botón Editar experimental ---
         def _simulate():
             try:
@@ -3525,6 +3820,11 @@ class InstalacionGUI:
 
         try:
             frm.columnconfigure(1, weight=1)
+        except Exception:
+            pass
+        try:
+            win.update_idletasks()
+            win.minsize(win.winfo_width(), win.winfo_height())
         except Exception:
             pass
 
@@ -3654,7 +3954,7 @@ class InstalacionGUI:
                 self.compare_country_var.set(country)
         except Exception:
             pass
-        self.status_var.set("Downloading...")
+        self._set_status("Downloading...", 'warn')
         self._start_busy()
         self._set_compare_mode(False)
         self.text.delete('1.0','end')
@@ -3679,7 +3979,7 @@ class InstalacionGUI:
         country_a = self.country_var.get().strip().upper() or "??"
         base_data = self._last_json_data
 
-        self.status_var.set("Comparing...")
+        self._set_status("Comparing...", 'warn')
         self._start_busy()
         # Split the UI immediately when Compare is clicked
         self._set_compare_mode(True)
@@ -4072,7 +4372,7 @@ class InstalacionGUI:
         (base_data, data_b, changed, added, removed, inst_a, country_a, inst_b, country_b) = state
         if self.compare_only_diffs_var.get():
             self._render_compare_diff_only(changed, added, removed, inst_a, country_a, inst_b, country_b)
-            self.status_var.set(f"Diff-only view: {inst_a}({country_a}) vs {inst_b}({country_b})")
+            self._set_status(f"Diff-only view: {inst_a}({country_a}) vs {inst_b}({country_b})", 'ok')
             return
 
         # Restore full JSON views + highlights
@@ -4083,7 +4383,7 @@ class InstalacionGUI:
         spans_right = self._render_json_into(self.compare_text, data_b)
         self._apply_diff_highlights(self.text, spans_left, set(changed_paths) | set(removed_paths))
         self._apply_diff_highlights(self.compare_text, spans_right, set(changed_paths) | set(added_paths))
-        self.status_var.set(f"Comparison ready: {inst_a}({country_a}) vs {inst_b}({country_b})")
+        self._set_status(f"Comparison ready: {inst_a}({country_a}) vs {inst_b}({country_b})", 'ok')
 
     def close_compare_view(self):
         """User action: close side-by-side Compare view and return to normal layout."""
@@ -4092,7 +4392,7 @@ class InstalacionGUI:
         except Exception:
             pass
         self._set_compare_mode(False)
-        self.status_var.set("Compare closed")
+        self._set_status("Compare closed", 'ok')
         self._update_action_states()
 
     def _worker_compare(self, base_data: Any, inst_a: str, country_a: str, inst_b: str, country_b: str, keep_files: bool):
@@ -4348,7 +4648,7 @@ class InstalacionGUI:
                     self._set_compare_mode(False)
                     contenido, filename, data_obj = rest
                     self.text.insert('end', contenido)
-                    self.status_var.set("Summary" + (f" saved to {filename}" if filename else " loaded"))
+                    self._set_status("Summary" + (f" saved to {filename}" if filename else " loaded"), 'ok')
                     # Mantener JSON para extracción de rutas y filtrados posteriores
                     self._last_json_data = data_obj
                     self._stop_busy()
@@ -4357,7 +4657,7 @@ class InstalacionGUI:
                     self._set_compare_mode(False)
                     contenido, filename, data_obj = rest
                     self.text.insert('end', contenido)
-                    self.status_var.set("JSON" + (f" saved to {filename}" if filename else " loaded"))
+                    self._set_status("JSON" + (f" saved to {filename}" if filename else " loaded"), 'ok')
                     self._last_json_data = data_obj
                     if self.tree_visible.get(): self._cargar_tree(data_obj)
                     self._stop_busy()
@@ -4372,7 +4672,7 @@ class InstalacionGUI:
                     self.text.insert('end', contenido); self.status_var.set(stats)
                 elif estado=='jsonforce':
                     self._set_compare_mode(False)
-                    filename = rest[0]; self.status_var.set(f"JSON saved to {filename}"); self._stop_busy()
+                    filename = rest[0]; self._set_status(f"JSON saved to {filename}", 'ok'); self._stop_busy()
                 elif estado=='batchsearchprog':
                     self._set_compare_mode(False)
                     linea, stat = rest
@@ -4381,14 +4681,14 @@ class InstalacionGUI:
                     self._set_compare_mode(False)
                     resumen = rest[0]
                     self.text.insert('end',"\n"+resumen+"\n")
-                    self.status_var.set("Batch search completed")
+                    self._set_status("Batch search completed", 'ok')
                     self._set_batch_running(False)
                     self._stop_busy()
                 elif estado=='batchcancelled':
                     self._set_compare_mode(False)
                     resumen = rest[0]
                     self.text.insert('end',"\n"+resumen+"\n")
-                    self.status_var.set("Batch cancelled")
+                    self._set_status("Batch cancelled", 'warn')
                     self._set_batch_running(False)
                     self._stop_busy()
                 elif estado=='cmpview':
@@ -4399,7 +4699,7 @@ class InstalacionGUI:
 
                     if self.compare_only_diffs_var.get():
                         self._render_compare_diff_only(changed, added, removed, inst_a, country_a, inst_b, country_b)
-                        self.status_var.set(f"Diff-only view: {inst_a}({country_a}) vs {inst_b}({country_b})")
+                        self._set_status(f"Diff-only view: {inst_a}({country_a}) vs {inst_b}({country_b})", 'ok')
                     else:
                         spans_left = self._render_json_into(self.text, base_data)
                         spans_right = self._render_json_into(self.compare_text, data_b)
@@ -4409,11 +4709,11 @@ class InstalacionGUI:
                         removed_paths = {p for (p, _) in removed if p}
                         self._apply_diff_highlights(self.text, spans_left, set(changed_paths) | set(removed_paths))
                         self._apply_diff_highlights(self.compare_text, spans_right, set(changed_paths) | set(added_paths))
-                        self.status_var.set(f"Comparison ready: {inst_a}({country_a}) vs {inst_b}({country_b})")
+                        self._set_status(f"Comparison ready: {inst_a}({country_a}) vs {inst_b}({country_b})", 'ok')
                     self._stop_busy()
                     self._update_action_states()
                 elif estado=='error':
-                    err = rest[0]; self.status_var.set("Error"); self._stop_busy(); messagebox.showerror("Error", err)
+                    err = rest[0]; self._set_status("Error", 'error'); self._stop_busy(); messagebox.showerror("Error", err)
         except queue.Empty:
             pass
         finally:
@@ -4517,7 +4817,7 @@ class InstalacionGUI:
                 if longitud < 20_000:
                     messagebox.showinfo("Copy", f"Copied ({longitud} chars)")
                 else:
-                    self.status_var.set(f"Copied to clipboard ({longitud} chars)")
+                    self._set_status(f"Copied to clipboard ({longitud} chars)", 'ok')
             except Exception as e:
                 messagebox.showerror("Copy", f"Error copying: {e}")
             return
@@ -4526,12 +4826,12 @@ class InstalacionGUI:
         if resp:
             ruta = filedialog.asksaveasfilename(title="Save output", defaultextension=".txt", filetypes=[("Text","*.txt"),("All files","*.*")])
             if not ruta:
-                self.status_var.set("Save canceled")
+                self._set_status("Save canceled", 'warn')
                 return
             try:
                 with open(ruta,'w',encoding='utf-8') as f:
                     f.write(data)
-                self.status_var.set(f"Output saved to {os.path.basename(ruta)}")
+                self._set_status(f"Output saved to {os.path.basename(ruta)}", 'ok')
             except Exception as e:
                 messagebox.showerror("Save", f"Error saving: {e}")
                 # Auto export removed
@@ -4540,7 +4840,7 @@ class InstalacionGUI:
             fragmento = data[:UMBRAL]
             try:
                 self.root.clipboard_clear(); self.root.clipboard_append(fragmento)
-                self.status_var.set(f"Partial copy ({UMBRAL} chars of {longitud})")
+                self._set_status(f"Partial copy ({UMBRAL} chars of {longitud})", 'warn')
             except Exception as e:
                 messagebox.showerror("Copy", f"Error copying partially: {e}")
 
@@ -4564,7 +4864,7 @@ class InstalacionGUI:
                 self._q.put(("jsonforce", filename))
             except Exception as e:
                 self._q.put(("error", str(e)))
-        self.status_var.set("Downloading raw JSON..."); self._start_busy(); threading.Thread(target=_dl, daemon=True).start()
+        self._set_status("Downloading raw JSON...", 'warn'); self._start_busy(); threading.Thread(target=_dl, daemon=True).start()
 
     def cargar_json_local(self):
         ruta = filedialog.askopenfilename(title="Open JSON", filetypes=[("JSON","*.json"),("All files","*.*")])
@@ -4591,7 +4891,7 @@ class InstalacionGUI:
                 self._cargar_tree(data)
             except Exception:
                 pass
-        self.status_var.set(f"JSON loaded: {os.path.basename(ruta)}")
+        self._set_status(f"JSON loaded: {os.path.basename(ruta)}", 'ok')
         self._update_action_states()
 
     def _open_json_folder(self):
@@ -4655,6 +4955,7 @@ class InstalacionGUI:
         menu_tools.add_command(label="Show Paths", command=self.mostrar_rutas)
         menu_tools.add_command(label="Extract Path Value", command=self.extraer_valor_ruta_gui)
         menu_tools.add_command(label="Remote Edit (APIM)…", command=self.open_remote_edit_apim)
+        menu_tools.add_command(label="Bulk Remote Edit (APIM)…", command=self.open_remote_edit_apim_bulk)
         menubar.add_cascade(label="Tools", menu=menu_tools)
         # Help
         menu_help = tk.Menu(menubar, tearoff=0)
@@ -4673,7 +4974,12 @@ class InstalacionGUI:
             "4) Tree View: browse JSON structure\n"
             "5) Compare: use 'Compare to' → Compare\n"
             "   - Only diffs: show only changed/added/removed fields\n"
-            "   - Close Compare: return to normal view\n\n"
+            "   - Close Compare: return to normal view\n"
+            "6) Remote Edit (⚠): patches APIM config directly\n"
+            "   - Check validates path + shows current → new value\n"
+            "   - Requires unlock: tick Enable editing + type EDIT\n"
+            "   - Bulk Remote Edit applies same change to multiple installations\n"
+            "   - All changes logged to remote_edit_audit.log\n\n"
             "Path examples: cu.serialNumber | nodes[0].serialNumber | behaviours[id=autolock].config.timeout"
         )
         messagebox.showinfo("Quick Start", text)
@@ -4743,7 +5049,10 @@ class InstalacionGUI:
         self._batch_running = bool(running)
         try:
             if self.btn_stop is not None:
-                self.btn_stop.configure(state=('normal' if self._batch_running else 'disabled'))
+                if self._batch_running:
+                    self.btn_stop.pack(side='right', padx=(0, 6))
+                else:
+                    self.btn_stop.pack_forget()
         except Exception:
             pass
         if not self._batch_running:
@@ -4758,7 +5067,7 @@ class InstalacionGUI:
             return
         try:
             self._batch_cancel_event.set()
-            self.status_var.set("Stopping batch...")
+            self._set_status("Stopping batch...", 'warn')
         except Exception:
             pass
         # Disable immediately to prevent repeated clicks; worker will exit ASAP.
@@ -4819,11 +5128,11 @@ class InstalacionGUI:
             return
         self._search_results = buscar_patrones_en_texto(self.text, patrones)
         if not self._search_results:
-            self.status_var.set("No matches found")
+            self._set_status("No matches found", 'warn')
             return
         self._search_pos = 0
         self._marcar_actual()
-        self.status_var.set(f"{len(self._search_results)} matches (accumulated)")
+        self._set_status(f"{len(self._search_results)} matches (accumulated)", 'ok')
 
     def _marcar_actual(self):
         self.text.tag_remove('current_match','1.0','end')
@@ -4884,7 +5193,7 @@ class InstalacionGUI:
         # Modo árbol: aplicar enfoque de ruta o filtro estructural
         if self.tree_visible.get():
             if self._last_json_data is None:
-                self.status_var.set("No JSON loaded")
+                self._set_status("No JSON loaded", 'warn')
                 return
             if self._es_patron_ruta(patron):
                 if self._tree_focus_path(patron):
@@ -5000,7 +5309,7 @@ class InstalacionGUI:
                 "Enter a search pattern or a JSON path in the Search field (e.g. 'timeout' or 'cu.voip.simNumber') and click Filter CSV again."
             )
             return
-        self.text.delete('1.0','end'); self.status_var.set("Batch searching..."); self._start_busy()
+        self.text.delete('1.0','end'); self._set_status("Batch searching...", 'warn'); self._start_busy()
         # Batch-to-CSV streaming removed
         try:
             self._batch_cancel_event.clear()
