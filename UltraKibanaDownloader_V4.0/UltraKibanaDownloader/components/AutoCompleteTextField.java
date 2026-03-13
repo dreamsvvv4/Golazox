@@ -15,10 +15,12 @@ import java.awt.event.FocusListener;
  * Custom text field with autocomplete functionality
  */
 public class AutoCompleteTextField extends JTextField {
+    private static final long serialVersionUID = 1L;
     
-    private List<String> history;
+    private transient List<String> history;
     private JPopupMenu popup;
     
+    @SuppressWarnings("this-escape")
     public AutoCompleteTextField(String text, int columns, List<String> history) {
         super(text, columns);
         this.history = history;

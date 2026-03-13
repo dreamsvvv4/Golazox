@@ -19,7 +19,8 @@ import java.util.List;
  * and validates format (yyyy-MM-dd HH:mm:ss) when focus is lost.
  */
 public class DateInputField extends AutoCompleteTextField {
-    //
+    private static final long serialVersionUID = 1L;
+
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     // Posición del último click para restaurar el caret cuando el LAF hace selectAll
@@ -28,6 +29,7 @@ public class DateInputField extends AutoCompleteTextField {
     // Flag para permitir una sola vez selección completa (cuando el usuario realmente lo pide)
     private boolean allowFullSelectionOnce = false;
 
+    @SuppressWarnings("this-escape")
     public DateInputField(String text, int columns, List<String> history) {
         super(text, Math.max(columns, 20), history); // fuerza mínimo 20 columnas
         setFont(new Font("Consolas", Font.PLAIN, 20)); // fuente monoespaciada y más grande

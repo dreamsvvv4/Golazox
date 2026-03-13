@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
  * Enhanced output area with colored text, timestamps, and filtering capabilities
  */
 public class EnhancedOutputArea extends JTextPane {
+    private static final long serialVersionUID = 1L;
     
     private static final DateTimeFormatter TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss");
     private boolean showTimestamps = true;
@@ -22,6 +23,7 @@ public class EnhancedOutputArea extends JTextPane {
     public static final Color COLOR_ERROR = new Color(220, 20, 60);
     public static final Color COLOR_DEBUG = new Color(100, 149, 237);
     
+    @SuppressWarnings("this-escape")
     public EnhancedOutputArea() {
         super();
         setupStyles();
