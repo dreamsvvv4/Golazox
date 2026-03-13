@@ -128,7 +128,8 @@ public class UltraKibanaDownloader {
         frame.setLayout(new BorderLayout());
         
         // Set optimal size and center on screen
-        frame.setSize(1400, 900);
+        frame.setSize(1400, 980);
+        frame.setMinimumSize(new java.awt.Dimension(1100, 820));
         frame.setLocationRelativeTo(null);
         // Create split pane layout
         JSplitPane mainSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -143,7 +144,7 @@ public class UltraKibanaDownloader {
         frame.setVisible(true);
         // Ensure layout is fully validated after showing to avoid initial tiny field rendering
         SwingUtilities.invokeLater(() -> {
-            mainSplitPane.setDividerLocation(500);
+            mainSplitPane.setDividerLocation(520);
             frame.invalidate();
             frame.validate();
             frame.repaint();
@@ -162,9 +163,14 @@ public class UltraKibanaDownloader {
         title.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         controlPanel.add(title, BorderLayout.NORTH);
         
-        // Form content
+        // Form content – wrapped in a scroll pane so all rows stay visible at any window size
         JPanel formPanel = createCompactFormPanel();
-        controlPanel.add(formPanel, BorderLayout.CENTER);
+        JScrollPane formScroll = new JScrollPane(formPanel,
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        formScroll.setBorder(null);
+        formScroll.getViewport().setBackground(Color.WHITE);
+        controlPanel.add(formScroll, BorderLayout.CENTER);
         
         // Buttons
         JPanel buttonPanel = createButtonPanel();
@@ -188,10 +194,10 @@ public class UltraKibanaDownloader {
         addTimeRangeRow(formPanel, gbc, labelFont);
         addLogsPathRow(formPanel, gbc, labelFont);
         addCountryRow(formPanel, gbc, labelFont);
+        addTraceLevelRow(formPanel, gbc, labelFont);
         addConfigRow(formPanel, gbc, labelFont);
         addIncludeRow(formPanel, gbc, labelFont);
         addExcludeRow(formPanel, gbc, labelFont);
-        addTraceLevelRow(formPanel, gbc, labelFont);
 
         // Bottom spacer: absorbs all remaining vertical space so rows don't spread out
         gbc.gridx = 0; gbc.gridy = 11; gbc.gridwidth = 2;
@@ -365,8 +371,8 @@ public class UltraKibanaDownloader {
     }
 
     private void addConfigRow(JPanel formPanel, GridBagConstraints gbc, Font labelFont) {
-        // Row 7: Config
-        gbc.gridx = 0; gbc.gridy = 7; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
+        // Row 8: Config
+        gbc.gridx = 0; gbc.gridy = 8; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
         JLabel configLabel = new JLabel("Config:");
         configLabel.setFont(labelFont);
         configLabel.setMinimumSize(new Dimension(120, 25));
@@ -381,8 +387,8 @@ public class UltraKibanaDownloader {
     }
 
     private void addIncludeRow(JPanel formPanel, GridBagConstraints gbc, Font labelFont) {
-        // Row 8: Include
-        gbc.gridx = 0; gbc.gridy = 8; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
+        // Row 9: Include
+        gbc.gridx = 0; gbc.gridy = 9; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
         includeLabel = new JLabel("Include:");
         includeLabel.setFont(labelFont);
         includeLabel.setMinimumSize(new Dimension(120, 25));
@@ -398,8 +404,8 @@ public class UltraKibanaDownloader {
     }
 
     private void addExcludeRow(JPanel formPanel, GridBagConstraints gbc, Font labelFont) {
-        // Row 9: Exclude
-        gbc.gridx = 0; gbc.gridy = 9; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
+        // Row 10: Exclude
+        gbc.gridx = 0; gbc.gridy = 10; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
         excludeLabel = new JLabel("Exclude:");
         excludeLabel.setFont(labelFont);
         excludeLabel.setMinimumSize(new Dimension(120, 25));
@@ -465,8 +471,8 @@ public class UltraKibanaDownloader {
     }
 
     private void addTraceLevelRow(JPanel formPanel, GridBagConstraints gbc, Font labelFont) {
-        // Row 10: Trace Level
-        gbc.gridx = 0; gbc.gridy = 10; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
+        // Row 7: Trace Level
+        gbc.gridx = 0; gbc.gridy = 7; gbc.weightx = 0.0; gbc.fill = GridBagConstraints.NONE;
         JLabel traceLevelLabel = new JLabel("Trace Level:");
         traceLevelLabel.setFont(labelFont);
         traceLevelLabel.setMinimumSize(new Dimension(120, 25));
@@ -474,7 +480,7 @@ public class UltraKibanaDownloader {
         formPanel.add(traceLevelLabel, gbc);
 
         gbc.gridx = 1; gbc.weightx = 1.0; gbc.fill = GridBagConstraints.HORIZONTAL;
-        traceLevelComboBox = new JComboBox<>(new String[]{"All [D+I+W+E]", "Debug [D]", "Info [I]", "Warn [W]", "Error [E]", "Info+Warn+Error"});
+        traceLevelComboBox = new JComboBox<>(new String[]{"All", "Debug", "Info", "Warn", "Error"});
         styleComboBox(traceLevelComboBox);
         traceLevelComboBox.addActionListener(e -> updateTraceLevels());
         formPanel.add(traceLevelComboBox, gbc);
@@ -487,8 +493,6 @@ public class UltraKibanaDownloader {
             enabledTraceLevels.addAll(Arrays.asList("D", "I", "W", "E"));
         } else if (selected.startsWith("Debug")) {
             enabledTraceLevels.add("D");
-        } else if (selected.startsWith("Info+")) {
-            enabledTraceLevels.addAll(Arrays.asList("I", "W", "E"));
         } else if (selected.startsWith("Info")) {
             enabledTraceLevels.add("I");
         } else if (selected.startsWith("Warn")) {
@@ -1145,7 +1149,22 @@ public class UltraKibanaDownloader {
                     commandList.add("--exclude");
                     commandList.add(configuration.getExcludeKeywords());
                 }
-                
+
+                // Add log level filter for Elasticsearch query
+                String selLevel = traceLevelComboBox != null ? (String) traceLevelComboBox.getSelectedItem() : null;
+                if (selLevel != null && !selLevel.startsWith("All")) {
+                    String esLevels;
+                    if      (selLevel.startsWith("Debug"))  esLevels = "DEBUG";
+                    else if (selLevel.startsWith("Info"))   esLevels = "INFO";
+                    else if (selLevel.startsWith("Warn"))   esLevels = "WARN,WARNING";
+                    else if (selLevel.startsWith("Error"))  esLevels = "ERROR";
+                    else                                    esLevels = null;
+                    if (esLevels != null) {
+                        commandList.add("--levels");
+                        commandList.add(esLevels);
+                    }
+                }
+
                 // Execute the Python script
                 ProcessBuilder pb = new ProcessBuilder(commandList);
                 pb.directory(projectRoot);
@@ -1251,9 +1270,16 @@ public class UltraKibanaDownloader {
                                 } catch (Exception e) {
                                     updateStatus("Retrieving logs...");
                                 }
-                            } else if (progressMessage.contains("Completed!") || progressMessage.contains("Final result")) {
-                                updateStatus("Processing completed...");
+                            } else if (progressMessage.contains("Sorting and writing")) {
+                                updateStatus("Writing logs to file...");
+                                progressBar.setIndeterminate(true);
+                            } else if (progressMessage.contains("File write complete")) {
+                                progressBar.setIndeterminate(false);
                                 progressBar.setValue(100);
+                                updateStatus("Done!");
+                            } else if (progressMessage.contains("Completed!") || progressMessage.contains("Final result")) {
+                                updateStatus("Writing logs to file...");
+                                progressBar.setIndeterminate(true);
                             } else if (progressMessage.contains("Searching for logs")) {
                                 updateStatus("Searching for logs...");
                                 progressBar.setIndeterminate(true);
@@ -1475,22 +1501,22 @@ public class UltraKibanaDownloader {
         try {
             String logsPath = configuration.getLogs();
             File logsDir = new File(logsPath);
-            
+
             if (!logsDir.exists()) {
                 appendOut("\nError: Logs directory does not exist: " + logsPath + "\n\n");
                 updateError("Logs directory not found");
                 return;
             }
-            
+
             File mostRecentFile = findMostRecentLogFile(logsDir, "ordered.log");
-            
+
             if (mostRecentFile == null) {
                 appendOut("\nNo log files found in: " + logsPath + "\n");
                 appendOut("Please run Download first to generate log files.\n\n");
                 updateError("No log files found");
                 return;
             }
-            
+
             if (Desktop.isDesktopSupported()) {
                 Desktop desktop = Desktop.getDesktop();
                 desktop.open(mostRecentFile);
@@ -1503,12 +1529,11 @@ public class UltraKibanaDownloader {
                 appendStyled("Please manually open: " + mostRecentFile.getAbsolutePath() + "\n\n", C_DEFAULT, false);
                 updateError("Desktop not supported");
             }
-            
+
         } catch (Exception e) {
             appendOut("\nError opening log file: " + e.getMessage() + "\n\n");
             updateError("Failed to open log file: " + e.getMessage());
         }
-        
     }
 
     private File findMostRecentLogFile(File directory, String fileName) {

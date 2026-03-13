@@ -13,11 +13,12 @@ CANCEL_SIGNAL_FILE = os.path.join(tempfile.gettempdir(), "ukd_cancel.signal")
 logger = logging.getLogger("kibanaParserLogger")
 
 class ElasticSearch:
-    def __init__(self, sn=None, startMinutes=10, endMinutes=10, installation_number=None):
+    def __init__(self, sn=None, startMinutes=10, endMinutes=10, installation_number=None, levels=None):
         self.sn = sn
         self.installation_number = installation_number
         self.startMinutes = startMinutes
         self.endMinutes = endMinutes
+        self.levels = levels  # list of ES level strings e.g. ["INFO","DEBUG"] or None for all
         self.es = Elasticsearch(
             cloud_id="moonshot-cu-paris:ZXUtd2VzdC0zLmF3cy5lbGFzdGljLWNsb3VkLmNvbSRiZjA1NGEwZWJiOTk0OTMzYTY5Mzk5YjY5N2RjYzY0NCQ5OWE3MjZlMmNhMTA0YjY2OTQ1ZjI4ODE2ZDllZTJmNw==",
             api_key=("WVIvOIcB2rFKcJ2PoTHY", "hu5lM1ERQWSqQK6CUWSINg"),
@@ -239,8 +240,15 @@ class ElasticSearch:
                         item["bool"]["should"].append({ "match_phrase": { "service.name": service } })
                 else:
                     del item
-        
-        # logger.debug(jsonObject)
+
+        # Log level filter: add terms filter so Elasticsearch returns only wanted levels
+        if self.levels:
+            es_levels = list(self.levels)  # copy
+            # Always include both WARN and WARNING to cover all variants
+            if "WARN" in es_levels and "WARNING" not in es_levels:
+                es_levels.append("WARNING")
+            jsonObject["query"]["bool"]["filter"].append({"terms": {"log.level": es_levels}})
+            print("PROGRESS: Log level filter active: %s" % ", ".join(es_levels))
 
         return jsonObject
 

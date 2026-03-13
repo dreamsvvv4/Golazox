@@ -15,7 +15,7 @@ from Installation import Installation
 def getPath(pathPrefix, installation, date):
     return Path(pathPrefix, installation + "_" + date.strftime("%Y-%m-%dT%H_%M_%SZ"))
 
-def getLogs(logger, env, country2Digits, nInst, path, reqServices, reqDate, reqStartMinutes, reqEndMinutes, cuSerial=None):
+def getLogs(logger, env, country2Digits, nInst, path, reqServices, reqDate, reqStartMinutes, reqEndMinutes, cuSerial=None, levels=None):
     sn = None
     try:
         installation = Installation(env, country2Digits, nInst, Path(path,"config.log"))
@@ -37,9 +37,9 @@ def getLogs(logger, env, country2Digits, nInst, path, reqServices, reqDate, reqS
         response = elastic.getHitsAround(reqDate, reqServices)
     elif env == "aws":
         if sn:
-            elasticSearch = ElasticSearch(sn=sn, startMinutes=reqStartMinutes, endMinutes=reqEndMinutes)
+            elasticSearch = ElasticSearch(sn=sn, startMinutes=reqStartMinutes, endMinutes=reqEndMinutes, levels=levels)
         else:
-            elasticSearch = ElasticSearch(installation_number=nInst, startMinutes=reqStartMinutes, endMinutes=reqEndMinutes)
+            elasticSearch = ElasticSearch(installation_number=nInst, startMinutes=reqStartMinutes, endMinutes=reqEndMinutes, levels=levels)
         response = elasticSearch.getHitsAround(reqDate, reqServices)
 
     return response
@@ -64,6 +64,7 @@ def tsToString(ts):
     return ts.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
 def writeFiles(logger, path, logs, listFiltered, listTagged, tags, excludeFilter, includeFilter, installation_number=None):
+    print("PROGRESS: Sorting and writing %d logs to file..." % len(logs), flush=True)
     # Strip surrounding quotes so users can write "photo error" as a phrase token
     includeFilter = [kw.strip('"').strip("'") for kw in includeFilter] if includeFilter else []
     excludeFilter = [kw.strip('"').strip("'") for kw in excludeFilter] if excludeFilter else []
@@ -127,6 +128,7 @@ def writeFiles(logger, path, logs, listFiltered, listTagged, tags, excludeFilter
                     tsToString(log["ts"]), service_fixed, tags_fixed, log["log"], log["f1"], log["f2"], log["f3"], log["f4"], log["f5"]
                 ))
 
+    print("PROGRESS: File write complete. %d logs written." % written_logs, flush=True)
     if includeFilter or excludeFilter:
         print(f"\nFilter results : {total_logs} logs retrieved from Elastic")
         if includeFilter:
@@ -225,6 +227,7 @@ def parseArguments():
     parser.add_argument("--exclude", type=str, default="", help="Keywords to exclude from logs (comma-separated)")
     parser.add_argument("--include", type=str, default="", help="Keywords to include in logs (comma-separated)")
     parser.add_argument("--configName", type=str, default="All", help="Config preset name when using conf_all (All, Photos, Calls, Communications, Doorlock, FOTA)")
+    parser.add_argument("--levels", type=str, default="", help="Comma-separated log levels to filter at Elasticsearch level (e.g. INFO,DEBUG,WARN,ERROR). Empty means all levels.")
     
     
     args = parser.parse_args()

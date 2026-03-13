@@ -48,11 +48,14 @@ def goGetIt(logger, args, services, listFiltered, listTagged, tags):
     path = getPath(args.pathPrefix, args.installation, args.date)
     Path(path).mkdir(parents=True, exist_ok=True)
 
+    # Parse log level filter (e.g. "INFO,DEBUG" → ["INFO","DEBUG"])
+    levels = [l.strip() for l in args.levels.split(",") if l.strip()] if getattr(args, 'levels', '') else None
+
     if args.zipLogs is not None:
         logs = getLogsFromZip(logger, services, path, args.zipLogs)
     else:
         # Go to elastic and get what we need
-        logs = getLogs(logger, args.env, args.country, args.installation, path, services, args.date, args.startMinutes, args.endMinutes, cuSerial=args.cuSerial)
+        logs = getLogs(logger, args.env, args.country, args.installation, path, services, args.date, args.startMinutes, args.endMinutes, cuSerial=args.cuSerial, levels=levels)
 
     # Parse the exclude keywords (strip whitespace so 'photo, camera' works correctly)
     exclude_keywords = [kw.strip() for kw in args.exclude.split(",") if kw.strip()] if args.exclude else []
