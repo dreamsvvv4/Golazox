@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
  * Modern animated progress bar with gradient and pulsing effect
  */
 public class ModernProgressBar extends JComponent {
+    private static final long serialVersionUID = 1L;
     
     private int progress = 0;
     private int maxProgress = 100;
@@ -22,6 +23,7 @@ public class ModernProgressBar extends JComponent {
     private Color progressColor = new Color(25, 118, 210);
     private Color textColor = new Color(33, 33, 33);
     
+    @SuppressWarnings("this-escape")
     public ModernProgressBar() {
         setPreferredSize(new Dimension(300, 30));
         setOpaque(false);
