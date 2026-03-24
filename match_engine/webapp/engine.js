@@ -476,7 +476,30 @@ function pickCards(players, rand) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 6b. IN-MATCH PENALTY EVENTS (not shootout)
+// 6b. INJURY SIMULATOR
+// ─────────────────────────────────────────────────────────────
+const INJURY_WEIGHTS = {
+  ST:2.2, RW:2.0, LW:2.0, AM:1.8, CM:1.5, RM:1.5, LM:1.5,
+  DM:1.2, RB:1.0, LB:1.0, CB:0.8, GK:0.05,
+};
+function pickInjuries(players, rand) {
+  const result = [], used = new Set();
+  for (let i = 0; i < 2; i++) {
+    if (rand() > 0.28) continue;   // ~28% chance per attempt → avg ~0.56 injuries/team/match
+    const avail = players.filter(p => !used.has(p.name));
+    if (!avail.length) continue;
+    const weights = avail.map(p => INJURY_WEIGHTS[p.position] || 1);
+    const total   = weights.reduce((a, b) => a + b, 0);
+    let r = rand() * total, player = avail[avail.length - 1];
+    for (let j = 0; j < avail.length; j++) { r -= weights[j]; if (r <= 0) { player = avail[j]; break; } }
+    used.add(player.name);
+    result.push({ name: player.name, minute: 12 + Math.floor(rand() * 72) }); // 12'–84'
+  }
+  return result.sort((a, b) => a.minute - b.minute);
+}
+
+// ─────────────────────────────────────────────────────────────
+// 6c. IN-MATCH PENALTY EVENTS (not shootout)
 // ─────────────────────────────────────────────────────────────
 // Only missed penalties are generated as standalone events.
 // Scored penalties are already reflected in scorersA/B via pickScorers,
@@ -624,6 +647,8 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const scorersB = pickScorers(lineupB.players, fb, rand);
   const cardsA        = pickCards(lineupA.players, mulberry32(saltedSeed + 5));
   const cardsB        = pickCards(lineupB.players, mulberry32(saltedSeed + 7));
+  const injuriesA     = pickInjuries(lineupA.players, mulberry32(saltedSeed + 11));
+  const injuriesB     = pickInjuries(lineupB.players, mulberry32(saltedSeed + 13));
   const matchPenalties = pickMatchPenalties(lineupA, lineupB, saltedSeed);
   const penalties      = (fa === fb) ? simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed) : null;
 
@@ -648,6 +673,8 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
       cardsB,
       matchPenalties,
       penalties,
+      injuriesA,
+      injuriesB,
     },
     altScores:  sim.topScores.slice(0, 4),
     simulation: { iterations: sim.iterations, xgA, xgB },

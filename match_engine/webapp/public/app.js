@@ -33,11 +33,11 @@ const I18N = {
     'timeline-events-suffix':'evento','timeline-events-suffix-pl':'eventos','timeline-empty':'Sin incidencias destacadas',
     'mom-badge-text':'MEJOR JUGADOR','bench-label':'BANQUILLO','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Cambio realizado','tooltip-copied':'Resultado copiado ✓','tooltip-copy-fail':'No se pudo copiar',
-    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!',
+    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'🩹 LESIÓN',
     'ev-penalty':'PENALTI MARCADO','ev-penalty-miss':'PENALTI FALLADO','ev-corner':'CÓRNER','ev-freekick':'FALTA DIRECTA',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. fallado','ev-tag-corner':'córner','ev-tag-fk':'falta directa',
     'phase-playing':'EN JUEGO','phase-corner':'🚩 CÓRNER','phase-freekick':'🎯 FALTA DIRECTA',
-    'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL',
+    'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL','phase-injury':'🩹 LESIÓN',
     'pos-GK':'Portero','pos-RB':'Lateral Der.','pos-CB':'Central','pos-LB':'Lateral Izq.','pos-DM':'Mediocentro Def.',
     'pos-CM':'Centrocampista','pos-RM':'Interior Der.','pos-LM':'Interior Izq.','pos-AM':'Mediapunta',
     'pos-RW':'Extremo Der.','pos-LW':'Extremo Izq.','pos-ST':'Delantero Centro',
@@ -68,11 +68,11 @@ const I18N = {
     'timeline-events-suffix':'event','timeline-events-suffix-pl':'events','timeline-empty':'No notable incidents',
     'mom-badge-text':'PLAYER OF THE MATCH','bench-label':'BENCH','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Substitution made','tooltip-copied':'Result copied ✓','tooltip-copy-fail':'Could not copy',
-    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!',
+    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'🩹 INJURY',
     'ev-penalty':'PENALTY SCORED','ev-penalty-miss':'PENALTY MISSED','ev-corner':'CORNER','ev-freekick':'FREE KICK',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. missed','ev-tag-corner':'corner','ev-tag-fk':'free kick',
     'phase-playing':'IN PLAY','phase-corner':'🚩 CORNER','phase-freekick':'🎯 FREE KICK',
-    'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL',
+    'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL','phase-injury':'🩹 INJURY',
     'pos-GK':'Goalkeeper','pos-RB':'Right Back','pos-CB':'Centre Back','pos-LB':'Left Back','pos-DM':'Def. Midfielder',
     'pos-CM':'Midfielder','pos-RM':'Right Mid','pos-LM':'Left Mid','pos-AM':'Attacking Mid',
     'pos-RW':'Right Winger','pos-LW':'Left Winger','pos-ST':'Striker',
@@ -83,6 +83,58 @@ const I18N = {
     'prob-win-suffix':'wins','sim-iters-suffix':'simulations',
   },
 };
+
+// ── Web Audio Engine (procedural sounds, no external files) ─────────────────────
+const _AC = (() => {
+  try { return new (window.AudioContext || window.webkitAudioContext)(); } catch (_) { return null; }
+})();
+
+function _playSound(type) {
+  if (!_AC) return;
+  const go = () => {
+    if (_AC.state !== 'running') return;
+    const t0 = _AC.currentTime;
+    // Bandpass white noise burst — crowd roar / impact gasp
+    const noise = (freq, Q, dur, vol, atk = 0.10) => {
+      const len = _AC.sampleRate * dur | 0, buf = _AC.createBuffer(1, len, _AC.sampleRate);
+      const d = buf.getChannelData(0); for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      const src = _AC.createBufferSource(), flt = _AC.createBiquadFilter(), g = _AC.createGain();
+      src.buffer = buf; src.connect(flt); flt.connect(g); g.connect(_AC.destination);
+      flt.type = 'bandpass'; flt.frequency.value = freq; flt.Q.value = Q;
+      g.gain.setValueAtTime(0.001, t0); g.gain.linearRampToValueAtTime(vol, t0 + atk);
+      g.gain.setValueAtTime(vol, t0 + dur * 0.62); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      src.start(t0); src.stop(t0 + dur);
+    };
+    // Sine tone with attack/release envelope + optional frequency glide
+    const sine = (freq, dur, vol, endFreq) => {
+      const osc = _AC.createOscillator(), g = _AC.createGain();
+      osc.connect(g); g.connect(_AC.destination); osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, t0);
+      if (endFreq) osc.frequency.exponentialRampToValueAtTime(endFreq, t0 + dur);
+      g.gain.setValueAtTime(0.001, t0); g.gain.linearRampToValueAtTime(vol, t0 + 0.015);
+      g.gain.setValueAtTime(vol, t0 + dur - 0.06); g.gain.linearRampToValueAtTime(0.001, t0 + dur);
+      osc.start(t0); osc.stop(t0 + dur);
+    };
+    switch (type) {
+      case 'whistle_start': sine(3350, 0.65, 0.17); break;           // kickoff: 1 long blast
+      case 'goal': noise(650, 0.40, 2.6, 0.28, 0.10); sine(440, 0.45, 0.09, 900); break; // crowd roar + rising whoosh
+      case 'card':                                                    // two short ref blasts
+        sine(3700, 0.17, 0.14);
+        setTimeout(() => {
+          if (_AC?.state !== 'running') return;
+          const t1 = _AC.currentTime, o = _AC.createOscillator(), gn = _AC.createGain();
+          o.connect(gn); gn.connect(_AC.destination); o.type = 'sine'; o.frequency.value = 3700;
+          gn.gain.setValueAtTime(0.001,t1); gn.gain.linearRampToValueAtTime(0.14,t1+0.015);
+          gn.gain.setValueAtTime(0.14,t1+0.13); gn.gain.linearRampToValueAtTime(0.001,t1+0.17);
+          o.start(t1); o.stop(t1+0.18);
+        }, 240);
+        break;
+      case 'injury': sine(130, 0.24, 0.22, 38); noise(1100, 2.0, 1.0, 0.06, 0.04); break; // thud + crowd gasp
+      case 'penalty': noise(800, 0.65, 0.9, 0.10, 0.05); break;     // stadium tension hiss
+    }
+  };
+  if (_AC.state === 'suspended') _AC.resume().then(go).catch(() => {}); else go();
+}
 
 let _lang = (() => { try { return localStorage.getItem('odyssey_lang') || 'es'; } catch(_) { return 'es'; } })();
 
@@ -1726,6 +1778,9 @@ function animatePitchEvent(type, ev) {
   } else if (type === 'freekick') {
     phaseEl.textContent = `${t('phase-freekick')} — ${teamLabel}`;
     setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1200);
+  } else if (type === 'injury') {
+    phaseEl.textContent = `${t('phase-injury')} — ${teamLabel}`;
+    setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1600);
   }
 }
 
@@ -1780,6 +1835,8 @@ function playLiveMatch(data, payload, tickMs = 300) {
     ...((finalScore.cardsB?.red)    || []).map(c => ({ ...c, type: 'red',    side: 'B' })),
     ...(finalScore.matchPenalties || []).map(p => ({ type: p.scored ? 'penalty' : 'penalty-miss', side: p.side, minute: p.minute, name: p.taker })),
     ...(data.stats?.notableEvents || []).map(e => ({ type: e.type, side: e.side, minute: e.minute, name: e.name || '' })),
+    ...(finalScore.injuriesA || []).map(i => ({ ...i, type: 'injury', side: 'A' })),
+    ...(finalScore.injuriesB || []).map(i => ({ ...i, type: 'injury', side: 'B' })),
   ].sort((a, b) => a.minute - b.minute);
 
   // Init viewer
@@ -1794,6 +1851,9 @@ function playLiveMatch(data, payload, tickMs = 300) {
   drawRadar(data.ratings, payload.teamA, payload.teamB);
   initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Kickoff whistle — AudioContext unlocked by the click that triggered simulate
+  if (_AC?.state === 'suspended') _AC.resume().catch(() => {});
+  setTimeout(() => _playSound('whistle_start'), 350);
 
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
@@ -1806,6 +1866,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
     if (type === 'penalty-miss') return 1800;
     if (type === 'corner')      return 1100;
     if (type === 'freekick')    return 1200;
+    if (type === 'injury')      return 1600;
     return 1800; // yellow/red
   }
   let _preAcc = 0;
@@ -1927,6 +1988,7 @@ function addFeedEvent(ev) {
   else if (ev.type === 'penalty-miss')  icon = '❌';
   else if (ev.type === 'corner')        icon = '🚩';
   else if (ev.type === 'freekick')      icon = '🎯';
+  else if (ev.type === 'injury')        icon = '🩹';
   else if (ev.type === 'ft_whistle')    icon = '🏁';
   else                                  icon = '🟥';
   const sideClass = ev.side === 'N' ? 'live-event-n' : `live-event-${ev.side.toLowerCase()}`;
@@ -1938,6 +2000,9 @@ function addFeedEvent(ev) {
 }
 
 function triggerEventOverlay(type, name, score, side) {
+  // Sound effect tied to overlay type
+  const _snd = { goal:'goal', penalty:'goal', yellow:'card', red:'card', injury:'injury', 'penalty-miss':'penalty' };
+  if (_snd[type]) _playSound(_snd[type]);
   // Cancel any stale hide timers from previous overlay events
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1); _overlayHideTimer1 = null; }
   if (_overlayHideTimer2) { clearTimeout(_overlayHideTimer2); _overlayHideTimer2 = null; }
@@ -1950,6 +2015,7 @@ function triggerEventOverlay(type, name, score, side) {
                 : type === 'penalty-miss' ? '❌'
                 : type === 'corner' ? '🚩'
                 : type === 'freekick' ? '🎯'
+                : type === 'injury' ? '🩹'
                 : '🟥';
   const titleKey = type === 'goal'         ? 'ev-goal'
                  : type === 'yellow'       ? 'ev-yellow'
@@ -1958,11 +2024,13 @@ function triggerEventOverlay(type, name, score, side) {
                  : type === 'penalty-miss' ? 'ev-penalty-miss'
                  : type === 'corner'       ? 'ev-corner'
                  : type === 'freekick'     ? 'ev-freekick'
+                 : type === 'injury'       ? 'ev-injury'
                  : 'ev-red';
   const title   = t(titleKey);
   const holdMs  = (type === 'goal' || type === 'pen_winner' || type === 'penalty') ? 3200
                 : (type === 'penalty-miss') ? 1800
                 : (type === 'corner' || type === 'freekick') ? 1100
+                : (type === 'injury') ? 1600
                 : 1800;
 
   let badgeHtml = '';
