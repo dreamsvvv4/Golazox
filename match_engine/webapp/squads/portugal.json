@@ -1,158 +1,3345 @@
 {
   "slug": "portugal",
   "seasons": {
+    "1966": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Américo",
+          "position": "GK"
+        },
+        {
+          "name": "Carvalho",
+          "position": "GK"
+        },
+        {
+          "name": "José Pereira",
+          "position": "GK"
+        },
+        {
+          "name": "Germano",
+          "position": "CB"
+        },
+        {
+          "name": "Oliveira Duarte",
+          "position": "CB"
+        },
+        {
+          "name": "Jacinto",
+          "position": "CB"
+        },
+        {
+          "name": "Alexandre Baptista",
+          "position": "CB"
+        },
+        {
+          "name": "José Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Cruz",
+          "position": "CB"
+        },
+        {
+          "name": "Hilário",
+          "position": "CB"
+        },
+        {
+          "name": "Alberto Festa",
+          "position": "CB"
+        },
+        {
+          "name": "João Morais",
+          "position": "CB"
+        },
+        {
+          "name": "Peres",
+          "position": "CM"
+        },
+        {
+          "name": "Custódio Pinto",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente",
+          "position": "CM"
+        },
+        {
+          "name": "Mário Coluna",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime Graça",
+          "position": "CM"
+        },
+        {
+          "name": "António Simões",
+          "position": "ST"
+        },
+        {
+          "name": "José Augusto",
+          "position": "ST"
+        },
+        {
+          "name": "Eusébio",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Duarte",
+          "position": "ST"
+        },
+        {
+          "name": "Antonio Mendes",
+          "position": "ST"
+        },
+        {
+          "name": "Figueiredo",
+          "position": "ST"
+        },
+        {
+          "name": "João Lourenço",
+          "position": "ST"
+        },
+        {
+          "name": "Nóbrega",
+          "position": "ST"
+        },
+        {
+          "name": "José Torres",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1966/1967)",
+      "teamLabel": "portugal (1966-67)"
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vítor Damas",
+          "position": "GK"
+        },
+        {
+          "name": "Rui Rodrigues",
+          "position": "CB"
+        },
+        {
+          "name": "José Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Humberto Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "Hilário",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Gomes",
+          "position": "CB"
+        },
+        {
+          "name": "Peres",
+          "position": "CM"
+        },
+        {
+          "name": "Augusto Matine",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime Graça",
+          "position": "CM"
+        },
+        {
+          "name": "José Maria",
+          "position": "CM"
+        },
+        {
+          "name": "Dinis",
+          "position": "ST"
+        },
+        {
+          "name": "António Simões",
+          "position": "ST"
+        },
+        {
+          "name": "Eusébio",
+          "position": "ST"
+        },
+        {
+          "name": "Artur Jorge",
+          "position": "ST"
+        },
+        {
+          "name": "José Torres",
+          "position": "ST"
+        },
+        {
+          "name": "Nélson Fernandes",
+          "position": "ST"
+        },
+        {
+          "name": "Jacinto João",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1970/1971)",
+      "teamLabel": "portugal (1970-71)"
+    },
+    "1974": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tibi",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Damas",
+          "position": "GK"
+        },
+        {
+          "name": "Osvaldinho",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Alhinho",
+          "position": "CB"
+        },
+        {
+          "name": "José Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Humberto Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "António Barros",
+          "position": "CB"
+        },
+        {
+          "name": "Adelino Teixeira",
+          "position": "CB"
+        },
+        {
+          "name": "Artur Correia",
+          "position": "CB"
+        },
+        {
+          "name": "Rebelo",
+          "position": "CB"
+        },
+        {
+          "name": "Vítor Pereira",
+          "position": "CM"
+        },
+        {
+          "name": "Toni",
+          "position": "CM"
+        },
+        {
+          "name": "Valter",
+          "position": "CM"
+        },
+        {
+          "name": "Vítor Martins",
+          "position": "CM"
+        },
+        {
+          "name": "Octávio Machado",
+          "position": "CM"
+        },
+        {
+          "name": "Romeu",
+          "position": "CM"
+        },
+        {
+          "name": "Arnaldo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "António Oliveira",
+          "position": "CM"
+        },
+        {
+          "name": "João Alves",
+          "position": "CM"
+        },
+        {
+          "name": "Vítor Baptista",
+          "position": "ST"
+        },
+        {
+          "name": "Rui Jordão",
+          "position": "ST"
+        },
+        {
+          "name": "Jacinto João",
+          "position": "ST"
+        },
+        {
+          "name": "Nené",
+          "position": "ST"
+        },
+        {
+          "name": "Chico Faria",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1974/1975)",
+      "teamLabel": "portugal (1974-75)"
+    },
+    "1978": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Manuel Bento",
+          "position": "GK"
+        },
+        {
+          "name": "António Botelho",
+          "position": "GK"
+        },
+        {
+          "name": "Carlos Alhinho",
+          "position": "CB"
+        },
+        {
+          "name": "Eurico Gomes",
+          "position": "CB"
+        },
+        {
+          "name": "João Laranjeira",
+          "position": "CB"
+        },
+        {
+          "name": "Humberto Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "Augusto Inácio",
+          "position": "CB"
+        },
+        {
+          "name": "Adelino Teixeira",
+          "position": "CB"
+        },
+        {
+          "name": "Alberto Fonseca",
+          "position": "CB"
+        },
+        {
+          "name": "João Cardoso",
+          "position": "CB"
+        },
+        {
+          "name": "Minervino Pietra",
+          "position": "CB"
+        },
+        {
+          "name": "Artur Correia",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Celso",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar Duarte",
+          "position": "CM"
+        },
+        {
+          "name": "Shéu",
+          "position": "CM"
+        },
+        {
+          "name": "Toni",
+          "position": "CM"
+        },
+        {
+          "name": "Fernando Chalana",
+          "position": "CM"
+        },
+        {
+          "name": "João Alves",
+          "position": "CM"
+        },
+        {
+          "name": "António Oliveira",
+          "position": "CM"
+        },
+        {
+          "name": "José Alberto Costa",
+          "position": "ST"
+        },
+        {
+          "name": "Seninho",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Nené",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1978/1979)",
+      "teamLabel": "portugal (1978-79)"
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Manuel Bento",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Damas",
+          "position": "GK"
+        },
+        {
+          "name": "Jorge Amaral",
+          "position": "GK"
+        },
+        {
+          "name": "Delgado",
+          "position": "GK"
+        },
+        {
+          "name": "Carlos Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "Dito",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Alhinho",
+          "position": "CB"
+        },
+        {
+          "name": "Eurico Gomes",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Simões",
+          "position": "CB"
+        },
+        {
+          "name": "Humberto Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Magalhães",
+          "position": "CB"
+        },
+        {
+          "name": "Augusto Inácio",
+          "position": "CB"
+        },
+        {
+          "name": "João Cardoso",
+          "position": "CB"
+        },
+        {
+          "name": "Joaquim Murça",
+          "position": "CB"
+        },
+        {
+          "name": "Minervino Pietra",
+          "position": "CB"
+        },
+        {
+          "name": "Veloso",
+          "position": "CB"
+        },
+        {
+          "name": "António Bastos Lopes",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Gregório Freixo",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Xavier",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Rocha",
+          "position": "CM"
+        },
+        {
+          "name": "Shéu",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Manuel",
+          "position": "CM"
+        },
+        {
+          "name": "Frasco",
+          "position": "CM"
+        },
+        {
+          "name": "Abreu",
+          "position": "CM"
+        },
+        {
+          "name": "Eliseu",
+          "position": "CM"
+        },
+        {
+          "name": "Mário Jorge",
+          "position": "CM"
+        },
+        {
+          "name": "Romeu",
+          "position": "CM"
+        },
+        {
+          "name": "João Alves",
+          "position": "CM"
+        },
+        {
+          "name": "António Oliveira",
+          "position": "CM"
+        },
+        {
+          "name": "José Alberto Costa",
+          "position": "ST"
+        },
+        {
+          "name": "Rui Palhares",
+          "position": "ST"
+        },
+        {
+          "name": "Diamantino",
+          "position": "ST"
+        },
+        {
+          "name": "Jaime Magalhães",
+          "position": "ST"
+        },
+        {
+          "name": "Lito",
+          "position": "ST"
+        },
+        {
+          "name": "Coelho",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Rui Jordão",
+          "position": "ST"
+        },
+        {
+          "name": "Nené",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Norton de Matos",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1982/1983)",
+      "teamLabel": "portugal (1982-83)"
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Zé Beto",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Bento",
+          "position": "GK"
+        },
+        {
+          "name": "Jorge Martins",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Damas",
+          "position": "GK"
+        },
+        {
+          "name": "Dito",
+          "position": "CB"
+        },
+        {
+          "name": "José António",
+          "position": "CB"
+        },
+        {
+          "name": "Venâncio",
+          "position": "CB"
+        },
+        {
+          "name": "Frederico",
+          "position": "CB"
+        },
+        {
+          "name": "Morato",
+          "position": "CB"
+        },
+        {
+          "name": "Oliveira",
+          "position": "CB"
+        },
+        {
+          "name": "Luís Sobrinho",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Eduardo Luís",
+          "position": "CB"
+        },
+        {
+          "name": "Alberto Fonseca",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Magalhães",
+          "position": "CB"
+        },
+        {
+          "name": "Augusto Inácio",
+          "position": "CB"
+        },
+        {
+          "name": "Veloso",
+          "position": "CB"
+        },
+        {
+          "name": "João Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Bandeirinha",
+          "position": "CB"
+        },
+        {
+          "name": "Adelino Nunes",
+          "position": "CM"
+        },
+        {
+          "name": "André",
+          "position": "CM"
+        },
+        {
+          "name": "Shéu",
+          "position": "CM"
+        },
+        {
+          "name": "Frasco",
+          "position": "CM"
+        },
+        {
+          "name": "António Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Manuel",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime Pacheco",
+          "position": "CM"
+        },
+        {
+          "name": "Mário Jorge",
+          "position": "CM"
+        },
+        {
+          "name": "Adão",
+          "position": "CM"
+        },
+        {
+          "name": "Futre",
+          "position": "ST"
+        },
+        {
+          "name": "Ribeiro",
+          "position": "ST"
+        },
+        {
+          "name": "Jaime Mercês",
+          "position": "ST"
+        },
+        {
+          "name": "Jaime Magalhães",
+          "position": "ST"
+        },
+        {
+          "name": "Diamantino",
+          "position": "ST"
+        },
+        {
+          "name": "Coelho",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Xavier",
+          "position": "ST"
+        },
+        {
+          "name": "Rui Águas",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1986/1987)",
+      "teamLabel": "portugal (1986-87)"
+    },
+    "1990": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Silvino",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Madeira",
+          "position": "CB"
+        },
+        {
+          "name": "Leal",
+          "position": "CB"
+        },
+        {
+          "name": "Venâncio",
+          "position": "CB"
+        },
+        {
+          "name": "Fonseca",
+          "position": "CB"
+        },
+        {
+          "name": "João Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Veloso",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "João Galo",
+          "position": "CB"
+        },
+        {
+          "name": "José Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Oceano",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Xavier",
+          "position": "CM"
+        },
+        {
+          "name": "Hernâni",
+          "position": "CM"
+        },
+        {
+          "name": "André",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime Pacheco",
+          "position": "CM"
+        },
+        {
+          "name": "Semedo",
+          "position": "CM"
+        },
+        {
+          "name": "Nelo",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Barros",
+          "position": "CM"
+        },
+        {
+          "name": "Futre",
+          "position": "ST"
+        },
+        {
+          "name": "Pacheco",
+          "position": "ST"
+        },
+        {
+          "name": "Vítor Paneira",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Couto",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Cadete",
+          "position": "ST"
+        },
+        {
+          "name": "Rui Águas",
+          "position": "ST"
+        },
+        {
+          "name": "Domingos Paciência",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1990/1991)",
+      "teamLabel": "portugal (1990-91)"
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Neno",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Alfredo",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Madeira",
+          "position": "CB"
+        },
+        {
+          "name": "Hélder Cristóvão",
+          "position": "CB"
+        },
+        {
+          "name": "Nogueira",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Secretário",
+          "position": "CB"
+        },
+        {
+          "name": "João Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Veloso",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "Paulinho Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Bento",
+          "position": "CM"
+        },
+        {
+          "name": "Hélio Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Oceano",
+          "position": "CM"
+        },
+        {
+          "name": "Tavares",
+          "position": "CM"
+        },
+        {
+          "name": "Semedo",
+          "position": "CM"
+        },
+        {
+          "name": "Nelo",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Barbosa",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Barros",
+          "position": "CM"
+        },
+        {
+          "name": "António Folha",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Vítor Paneira",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Couto",
+          "position": "ST"
+        },
+        {
+          "name": "João Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Paulo Alves",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Cadete",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Sá Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Domingos Paciência",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1994/1995)",
+      "teamLabel": "portugal (1994-95)"
+    },
+    "1996": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Neno",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Alfredo",
+          "position": "GK"
+        },
+        {
+          "name": "Rui Correia",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Costa",
+          "position": "CB"
+        },
+        {
+          "name": "João Manuel Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Hélder Cristóvão",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Madeira",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Dimas",
+          "position": "CB"
+        },
+        {
+          "name": "Neves",
+          "position": "CB"
+        },
+        {
+          "name": "Secretário",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "João Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Paulinho Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Bento",
+          "position": "CM"
+        },
+        {
+          "name": "José Taira",
+          "position": "CM"
+        },
+        {
+          "name": "Oceano",
+          "position": "CM"
+        },
+        {
+          "name": "Tavares",
+          "position": "CM"
+        },
+        {
+          "name": "Barroso",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Pedrosa",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Barbosa",
+          "position": "CM"
+        },
+        {
+          "name": "Tulipa",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Barros",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "José Dominguez",
+          "position": "ST"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Porfírio",
+          "position": "ST"
+        },
+        {
+          "name": "António Folha",
+          "position": "ST"
+        },
+        {
+          "name": "Capucho",
+          "position": "ST"
+        },
+        {
+          "name": "Sérgio Conceição",
+          "position": "ST"
+        },
+        {
+          "name": "Paulo Jorge",
+          "position": "ST"
+        },
+        {
+          "name": "Vítor Paneira",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "João Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Paulo Alves",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Cadete",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Sá Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Domingos Paciência",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1996/1997)",
+      "teamLabel": "portugal (1996-97)"
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pedro Espinha",
+          "position": "GK"
+        },
+        {
+          "name": "Silvino",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Jorge Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Madeira",
+          "position": "CB"
+        },
+        {
+          "name": "Beto",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "João Manuel Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Litos",
+          "position": "CB"
+        },
+        {
+          "name": "Dimas",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Secretário",
+          "position": "CB"
+        },
+        {
+          "name": "Abel Xavier",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "Paulinho Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Paiva",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Bento",
+          "position": "CM"
+        },
+        {
+          "name": "Oceano",
+          "position": "CM"
+        },
+        {
+          "name": "Costinha",
+          "position": "CM"
+        },
+        {
+          "name": "Calado",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Barbosa",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Carlos",
+          "position": "ST"
+        },
+        {
+          "name": "Capucho",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Sérgio Conceição",
+          "position": "ST"
+        },
+        {
+          "name": "Edgar",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Couto",
+          "position": "ST"
+        },
+        {
+          "name": "João Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Cadete",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Sá Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Domingos Paciência",
+          "position": "ST"
+        },
+        {
+          "name": "Pauleta",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (1998/1999)",
+      "teamLabel": "portugal (1998-99)"
+    },
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pedro Espinha",
+          "position": "GK"
+        },
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Jorge Silva",
+          "position": "GK"
+        },
+        {
+          "name": "Quim",
+          "position": "GK"
+        },
+        {
+          "name": "Litos",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Meira",
+          "position": "CB"
+        },
+        {
+          "name": "Hélder Cristóvão",
+          "position": "CB"
+        },
+        {
+          "name": "Beto",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Dimas",
+          "position": "CB"
+        },
+        {
+          "name": "Secretário",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "Cabral",
+          "position": "CB"
+        },
+        {
+          "name": "Abel Xavier",
+          "position": "CB"
+        },
+        {
+          "name": "José Luís Vidigal",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Delfim",
+          "position": "CM"
+        },
+        {
+          "name": "Costinha",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Bento",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Bento",
+          "position": "CM"
+        },
+        {
+          "name": "Bino",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Capucho",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Sérgio Conceição",
+          "position": "ST"
+        },
+        {
+          "name": "João Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Sá Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Pauleta",
+          "position": "ST"
+        },
+        {
+          "name": "João Tomás",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2000/2001)",
+      "teamLabel": "portugal (2000-01)"
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vítor Baía",
+          "position": "GK"
+        },
+        {
+          "name": "Quim",
+          "position": "GK"
+        },
+        {
+          "name": "Nélson",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo Silva",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Meira",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rocha",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Caneira",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Andrade",
+          "position": "CB"
+        },
+        {
+          "name": "Beto",
+          "position": "CB"
+        },
+        {
+          "name": "João Manuel Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Ribeiro",
+          "position": "CB"
+        },
+        {
+          "name": "Mário Silva",
+          "position": "CB"
+        },
+        {
+          "name": "Nuno Valente",
+          "position": "CB"
+        },
+        {
+          "name": "Dimas",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Mário Sérgio",
+          "position": "CB"
+        },
+        {
+          "name": "Abel Xavier",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Frechaut",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Costinha",
+          "position": "CM"
+        },
+        {
+          "name": "José Luís Vidigal",
+          "position": "CM"
+        },
+        {
+          "name": "Jorge Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Bento",
+          "position": "CM"
+        },
+        {
+          "name": "Petit",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Hugo Viana",
+          "position": "CM"
+        },
+        {
+          "name": "Bino",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Luís Boa Morte",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Barbosa",
+          "position": "CM"
+        },
+        {
+          "name": "Nuno Assis",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "Neca",
+          "position": "CM"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Capucho",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Ferreira",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Sérgio Conceição",
+          "position": "ST"
+        },
+        {
+          "name": "João Pinto",
+          "position": "ST"
+        },
+        {
+          "name": "Pauleta",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Romeu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2002/2003)",
+      "teamLabel": "portugal (2002-03)"
+    },
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Moreira",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Quim",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Andrade",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Meira",
+          "position": "CB"
+        },
+        {
+          "name": "Beto",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Caneira",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB"
+        },
+        {
+          "name": "Nuno Valente",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Ribeiro",
+          "position": "CB"
+        },
+        {
+          "name": "Rui Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel",
+          "position": "CB"
+        },
+        {
+          "name": "Frechaut",
+          "position": "CB"
+        },
+        {
+          "name": "Costinha",
+          "position": "CM"
+        },
+        {
+          "name": "Petit",
+          "position": "CM"
+        },
+        {
+          "name": "Maniche",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Hugo Viana",
+          "position": "CM"
+        },
+        {
+          "name": "Luís Boa Morte",
+          "position": "CM"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Rui Costa",
+          "position": "CM"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Pauleta",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2004/2005)",
+      "teamLabel": "portugal (2004-05)"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Quim",
+          "position": "GK"
+        },
+        {
+          "name": "Paulo Santos",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Andrade",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Meira",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rocha",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Zé António",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Caneira",
+          "position": "CB"
+        },
+        {
+          "name": "Tonel",
+          "position": "CB"
+        },
+        {
+          "name": "Nuno Valente",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "Costinha",
+          "position": "CM"
+        },
+        {
+          "name": "Petit",
+          "position": "CM"
+        },
+        {
+          "name": "Maniche",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Hugo Viana",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl Meireles",
+          "position": "CM"
+        },
+        {
+          "name": "Luís Boa Morte",
+          "position": "CM"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Martins",
+          "position": "CM"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Pauleta",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2006/2007)",
+      "teamLabel": "portugal (2006-07)"
+    },
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Eduardo",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Quim",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Fernandes",
+          "position": "GK"
+        },
+        {
+          "name": "Nuno Espírito Santo",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Meira",
+          "position": "CB"
+        },
+        {
+          "name": "Rolando",
+          "position": "CB"
+        },
+        {
+          "name": "Tonel",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Caneira",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Ribeiro",
+          "position": "CB"
+        },
+        {
+          "name": "Antunes",
+          "position": "CB"
+        },
+        {
+          "name": "Bosingwa",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Veloso",
+          "position": "CM"
+        },
+        {
+          "name": "Petit",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Maniche",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl Meireles",
+          "position": "CM"
+        },
+        {
+          "name": "Danny",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Martins",
+          "position": "CM"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Duda",
+          "position": "ST"
+        },
+        {
+          "name": "Yannick Djaló",
+          "position": "ST"
+        },
+        {
+          "name": "César Peixoto",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        },
+        {
+          "name": "Nuno Gomes",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Ariza Makukula",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2008/2009)",
+      "teamLabel": "portugal (2008-09)"
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Eduardo",
+          "position": "GK"
+        },
+        {
+          "name": "Beto",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Fernandes",
+          "position": "GK"
+        },
+        {
+          "name": "Hilário",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Rolando",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Tonel",
+          "position": "CB"
+        },
+        {
+          "name": "Zé Castro",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Bosingwa",
+          "position": "CB"
+        },
+        {
+          "name": "João Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Sílvio",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Veloso",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl Meireles",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Rúben Amorim",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Machado",
+          "position": "CM"
+        },
+        {
+          "name": "Danny",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Martins",
+          "position": "CM"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Varela",
+          "position": "ST"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Duda",
+          "position": "ST"
+        },
+        {
+          "name": "Yannick Djaló",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Liedson",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2010/2011)",
+      "teamLabel": "portugal (2010-11)"
+    },
+    "2012": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Beto",
+          "position": "GK"
+        },
+        {
+          "name": "Eduardo",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Rolando",
+          "position": "CB"
+        },
+        {
+          "name": "Luís Neto",
+          "position": "CB"
+        },
+        {
+          "name": "Nuno André Coelho",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Sereno",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "João Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Sílvio",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Lopes",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Veloso",
+          "position": "CM"
+        },
+        {
+          "name": "Custódio",
+          "position": "CM"
+        },
+        {
+          "name": "André Santos",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl Meireles",
+          "position": "CM"
+        },
+        {
+          "name": "Hugo Viana",
+          "position": "CM"
+        },
+        {
+          "name": "Rúben Micael",
+          "position": "CM"
+        },
+        {
+          "name": "Rúben Amorim",
+          "position": "CM"
+        },
+        {
+          "name": "Paulo Machado",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Pizzi",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Martins",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Varela",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Barbosa",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Éder",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Nélson Oliveira",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2012/2013)",
+      "teamLabel": "portugal (2012-13)"
+    },
+    "2014": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Anthony Lopes",
+          "position": "GK"
+        },
+        {
+          "name": "Beto",
+          "position": "GK"
+        },
+        {
+          "name": "Eduardo",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "José Fonte",
+          "position": "CB"
+        },
+        {
+          "name": "Luís Neto",
+          "position": "CB"
+        },
+        {
+          "name": "Rolando",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Vezo",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Costa",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Guerreiro",
+          "position": "CB"
+        },
+        {
+          "name": "Antunes",
+          "position": "CB"
+        },
+        {
+          "name": "Eliseu",
+          "position": "CB"
+        },
+        {
+          "name": "Tiago Gomes",
+          "position": "CB"
+        },
+        {
+          "name": "Cédric Soares",
+          "position": "CB"
+        },
+        {
+          "name": "Vieirinha",
+          "position": "CB"
+        },
+        {
+          "name": "André Almeida",
+          "position": "CB"
+        },
+        {
+          "name": "Ivo Pinto",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Lopes",
+          "position": "CB"
+        },
+        {
+          "name": "João Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Bosingwa",
+          "position": "CB"
+        },
+        {
+          "name": "William Carvalho",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel Veloso",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Adrien Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl Meireles",
+          "position": "CM"
+        },
+        {
+          "name": "Rúben Amorim",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Tiba",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Josué",
+          "position": "CM"
+        },
+        {
+          "name": "João Mário",
+          "position": "CM"
+        },
+        {
+          "name": "Danny",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Varela",
+          "position": "ST"
+        },
+        {
+          "name": "Ivan Cavaleiro",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Horta",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Rafa Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Éder",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Almeida",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST"
+        },
+        {
+          "name": "Edinho",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2014/2015)",
+      "teamLabel": "portugal (2014-15)"
+    },
     "2016": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Pierre Schnelle",
+          "name": "Rui Patrício",
           "position": "GK"
         },
         {
-          "name": "Armin Hensel",
-          "position": "RB"
+          "name": "Anthony Lopes",
+          "position": "GK"
         },
         {
-          "name": "Christian Somma",
+          "name": "Eduardo",
+          "position": "GK"
+        },
+        {
+          "name": "Marafona",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe",
           "position": "CB"
         },
         {
-          "name": "Christopher Haupt",
+          "name": "José Fonte",
           "position": "CB"
         },
         {
-          "name": "Carsten Rehder",
-          "position": "LB"
+          "name": "Danilo Pereira",
+          "position": "CB"
         },
         {
-          "name": "Christoph Betten",
-          "position": "DM"
+          "name": "Luís Neto",
+          "position": "CB"
         },
         {
-          "name": "Benjamin Greibke",
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Guerreiro",
+          "position": "CB"
+        },
+        {
+          "name": "Antunes",
+          "position": "CB"
+        },
+        {
+          "name": "Eliseu",
+          "position": "CB"
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB"
+        },
+        {
+          "name": "Cédric Soares",
+          "position": "CB"
+        },
+        {
+          "name": "Vieirinha",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "William Carvalho",
           "position": "CM"
         },
         {
-          "name": "Giuseppe Ricciardi",
+          "name": "João Moutinho",
           "position": "CM"
         },
         {
-          "name": "Erhan Güloglu",
+          "name": "André Gomes",
           "position": "CM"
         },
         {
-          "name": "Gökhan Ecer",
+          "name": "Adrien Silva",
+          "position": "CM"
+        },
+        {
+          "name": "André André",
+          "position": "CM"
+        },
+        {
+          "name": "Renato Sanches",
+          "position": "CM"
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "João Mário",
+          "position": "CM"
+        },
+        {
+          "name": "Pizzi",
+          "position": "CM"
+        },
+        {
+          "name": "Danny",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
           "position": "ST"
         },
         {
-          "name": "Marcello Luis Trama",
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Gelson Martins",
+          "position": "ST"
+        },
+        {
+          "name": "Rafa Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Éder",
+          "position": "ST"
+        },
+        {
+          "name": "André Silva",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 64,
-        "goalkeeping": 60
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — portugal (2016/2017)",
       "teamLabel": "portugal (2016-17)"
     },
-    "2020": {
-      "formation": "2-4-2",
+    "2018": {
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Emre Palteki",
+          "name": "Rui Patrício",
           "position": "GK"
         },
         {
-          "name": "Blerim Gashi",
-          "position": "RB"
+          "name": "Anthony Lopes",
+          "position": "GK"
         },
         {
-          "name": "Cem Taser",
+          "name": "Cláudio Ramos",
+          "position": "GK"
+        },
+        {
+          "name": "Beto",
+          "position": "GK"
+        },
+        {
+          "name": "Danilo Pereira",
           "position": "CB"
         },
         {
-          "name": "Benjamin Pust",
-          "position": "DM"
+          "name": "José Fonte",
+          "position": "CB"
         },
         {
-          "name": "Kubilay Cinbirt",
+          "name": "Luís Neto",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB"
+        },
+        {
+          "name": "Rolando",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Guerreiro",
+          "position": "CB"
+        },
+        {
+          "name": "Mário Rui",
+          "position": "CB"
+        },
+        {
+          "name": "Kévin Rodrigues",
+          "position": "CB"
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB"
+        },
+        {
+          "name": "Cédric Soares",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "William Carvalho",
           "position": "CM"
         },
         {
-          "name": "Tamer Ismail Yigitoglu",
+          "name": "Rúben Neves",
           "position": "CM"
         },
         {
-          "name": "Selcuk Yasar",
+          "name": "André Gomes",
           "position": "CM"
         },
         {
-          "name": "Burhan Kilic",
+          "name": "Adrien Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Renato Sanches",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Sérgio Oliveira",
+          "position": "CM"
+        },
+        {
+          "name": "Gedson Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "João Mário",
+          "position": "CM"
+        },
+        {
+          "name": "Pizzi",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Gonçalo Guedes",
           "position": "ST"
         },
         {
-          "name": "Mikail Akyil",
+          "name": "Bruma",
+          "position": "ST"
+        },
+        {
+          "name": "Gelson Martins",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Costa",
+          "position": "ST"
+        },
+        {
+          "name": "Rony Lopes",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Quaresma",
+          "position": "ST"
+        },
+        {
+          "name": "Rafa Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "André Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Éder",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 64,
-        "goalkeeping": 60
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2018/2019)",
+      "teamLabel": "portugal (2018-19)"
+    },
+    "2020": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Anthony Lopes",
+          "position": "GK"
+        },
+        {
+          "name": "Rui Silva",
+          "position": "GK"
+        },
+        {
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Bruno Varela",
+          "position": "GK"
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB"
+        },
+        {
+          "name": "Danilo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Domingos Duarte",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "José Fonte",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Guerreiro",
+          "position": "CB"
+        },
+        {
+          "name": "Mário Rui",
+          "position": "CB"
+        },
+        {
+          "name": "Sequeira",
+          "position": "CB"
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Neves",
+          "position": "CM"
+        },
+        {
+          "name": "William Carvalho",
+          "position": "CM"
+        },
+        {
+          "name": "Renato Sanches",
+          "position": "CM"
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Sérgio Oliveira",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "CM"
+        },
+        {
+          "name": "Diogo Jota",
+          "position": "ST"
+        },
+        {
+          "name": "Gonçalo Guedes",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Podence",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "ST"
+        },
+        {
+          "name": "João Félix",
+          "position": "ST"
+        },
+        {
+          "name": "Rafa Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "André Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Paulinho",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — portugal (2020/2021)",
       "teamLabel": "portugal (2020-21)"
     },
     "2022": {
-      "formation": "1-4-2",
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Karsten Klintworth",
+          "name": "Diogo Costa",
           "position": "GK"
         },
         {
-          "name": "Ercan Aldemir",
-          "position": "RB"
+          "name": "José Sá",
+          "position": "GK"
         },
         {
-          "name": "Peter Lascheit",
-          "position": "DM"
+          "name": "Rui Silva",
+          "position": "GK"
         },
         {
-          "name": "Massaer Aidara",
+          "name": "Rui Patrício",
+          "position": "GK"
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB"
+        },
+        {
+          "name": "António Silva",
+          "position": "CB"
+        },
+        {
+          "name": "Tiago Djaló",
+          "position": "CB"
+        },
+        {
+          "name": "David Carmo",
+          "position": "CB"
+        },
+        {
+          "name": "Danilo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Domingos Duarte",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "José Fonte",
+          "position": "CB"
+        },
+        {
+          "name": "Nuno Mendes",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Guerreiro",
+          "position": "CB"
+        },
+        {
+          "name": "Mário Rui",
+          "position": "CB"
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB"
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB"
+        },
+        {
+          "name": "Diogo Dalot",
+          "position": "CB"
+        },
+        {
+          "name": "Cédric Soares",
+          "position": "CB"
+        },
+        {
+          "name": "Vitinha",
           "position": "CM"
         },
         {
-          "name": "Nurullah Dogan",
+          "name": "João Palhinha",
           "position": "CM"
         },
         {
-          "name": "Anil Aytunc Aydin",
+          "name": "Rúben Neves",
           "position": "CM"
         },
         {
-          "name": "Isaac Ampomah",
+          "name": "William Carvalho",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Otávio",
+          "position": "CM"
+        },
+        {
+          "name": "João Mário",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael Leão",
           "position": "ST"
         },
         {
-          "name": "Tolunay Sahinbas",
+          "name": "Diogo Jota",
+          "position": "ST"
+        },
+        {
+          "name": "Gonçalo Guedes",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Horta",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "ST"
+        },
+        {
+          "name": "João Félix",
+          "position": "ST"
+        },
+        {
+          "name": "Gonçalo Ramos",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "André Silva",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 64,
-        "goalkeeping": 60
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — portugal (2022/2023)",
       "teamLabel": "portugal (2022-23)"
     }
   },
-  "id": 3401,
+  "id": 3300,
   "name": "portugal"
 }

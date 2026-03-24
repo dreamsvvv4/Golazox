@@ -9,8 +9,20 @@
           "position": "GK"
         },
         {
+          "name": "Georges Carnus",
+          "position": "GK"
+        },
+        {
+          "name": "Johnny Schuth",
+          "position": "GK"
+        },
+        {
+          "name": "Marcel Aubour",
+          "position": "GK"
+        },
+        {
           "name": "Georges Casolari",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Claude Robin",
@@ -22,11 +34,35 @@
         },
         {
           "name": "Robert Péri",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Artelesa",
+          "position": "CB"
+        },
+        {
+          "name": "Robert Budzynski",
+          "position": "CB"
+        },
+        {
+          "name": "André Chorda",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Claude Piumi",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel De Michèle",
+          "position": "CB"
+        },
+        {
+          "name": "Jean Djorkaeff",
+          "position": "CB"
         },
         {
           "name": "Jean-Claude Suaudeau",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Robert Herbin",
@@ -41,19 +77,75 @@
           "position": "CM"
         },
         {
+          "name": "Joseph Bonnel",
+          "position": "CM"
+        },
+        {
+          "name": "Lucien Muller",
+          "position": "CM"
+        },
+        {
+          "name": "Gilbert Gress",
+          "position": "CM"
+        },
+        {
           "name": "Gérard Hausser",
           "position": "ST"
         },
         {
           "name": "Laurent Robuschi",
           "position": "ST"
+        },
+        {
+          "name": "Georges Lech",
+          "position": "ST"
+        },
+        {
+          "name": "Bernard Blanchet",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor De Bourgoing",
+          "position": "ST"
+        },
+        {
+          "name": "Jacky Simon",
+          "position": "ST"
+        },
+        {
+          "name": "Edmond Baraffe",
+          "position": "ST"
+        },
+        {
+          "name": "Hervé Revelli",
+          "position": "ST"
+        },
+        {
+          "name": "Fleury Di Nallo",
+          "position": "ST"
+        },
+        {
+          "name": "Paul Courtin",
+          "position": "ST"
+        },
+        {
+          "name": "Nestor Combin",
+          "position": "ST"
+        },
+        {
+          "name": "Didier Couécou",
+          "position": "ST"
+        },
+        {
+          "name": "Philippe Gondet",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1966/1967)",
       "teamLabel": "france (1966-67)"
@@ -66,8 +158,12 @@
           "position": "GK"
         },
         {
+          "name": "Jean-Michel Fouché",
+          "position": "GK"
+        },
+        {
           "name": "Bernard Bosquier",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Roger Lemerre",
@@ -79,11 +175,11 @@
         },
         {
           "name": "Jean Djorkaeff",
-          "position": "LB"
+          "position": "CB"
         },
         {
           "name": "Henri Michel",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Jacky Novi",
@@ -98,19 +194,67 @@
           "position": "CM"
         },
         {
+          "name": "Jean-Noël Huck",
+          "position": "CM"
+        },
+        {
+          "name": "Yves Herbet",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Michel Larqué",
+          "position": "CM"
+        },
+        {
+          "name": "Serge Chiesa",
+          "position": "CM"
+        },
+        {
           "name": "Georges Bereta",
           "position": "ST"
         },
         {
           "name": "Charly Loubet",
           "position": "ST"
+        },
+        {
+          "name": "Bernard Blanchet",
+          "position": "ST"
+        },
+        {
+          "name": "Georges Lech",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Molitor",
+          "position": "ST"
+        },
+        {
+          "name": "Hervé Revelli",
+          "position": "ST"
+        },
+        {
+          "name": "Philippe Gondet",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Floch",
+          "position": "ST"
+        },
+        {
+          "name": "Robert Rico",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Claude Bras",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1970/1971)",
       "teamLabel": "france (1970-71)"
@@ -123,8 +267,16 @@
           "position": "GK"
         },
         {
+          "name": "Jean-Paul Bertrand-Demanes",
+          "position": "GK"
+        },
+        {
+          "name": "René Charrier",
+          "position": "GK"
+        },
+        {
           "name": "Christian Lopez",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Marius Trésor",
@@ -136,11 +288,27 @@
         },
         {
           "name": "Jean-François Jodar",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "François Bracci",
+          "position": "CB"
+        },
+        {
+          "name": "Albert Vannucci",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Merchadier",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre Repellini",
+          "position": "CB"
         },
         {
           "name": "Henri Michel",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Jean-Noël Huck",
@@ -155,19 +323,75 @@
           "position": "CM"
         },
         {
+          "name": "Jean-Marc Guillou",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Michel Larqué",
+          "position": "CM"
+        },
+        {
+          "name": "Serge Chiesa",
+          "position": "CM"
+        },
+        {
           "name": "Georges Bereta",
           "position": "ST"
         },
         {
           "name": "Patrick Revelli",
           "position": "ST"
+        },
+        {
+          "name": "Christian Sarramagna",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Dalger",
+          "position": "ST"
+        },
+        {
+          "name": "Charly Loubet",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Molitor",
+          "position": "ST"
+        },
+        {
+          "name": "Bernard Lacombe",
+          "position": "ST"
+        },
+        {
+          "name": "Gérard Tonnel",
+          "position": "ST"
+        },
+        {
+          "name": "Gérard Soler",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Berdoll",
+          "position": "ST"
+        },
+        {
+          "name": "Hervé Revelli",
+          "position": "ST"
+        },
+        {
+          "name": "Jean Gallice",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Coste",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1974/1975)",
       "teamLabel": "france (1974-75)"
@@ -180,8 +404,20 @@
           "position": "GK"
         },
         {
+          "name": "André Rey",
+          "position": "GK"
+        },
+        {
+          "name": "Dominique Baratelli",
+          "position": "GK"
+        },
+        {
+          "name": "Jean-Paul Bertrand-Demanes",
+          "position": "GK"
+        },
+        {
           "name": "Christian Lopez",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Patrice Rio",
@@ -193,11 +429,27 @@
         },
         {
           "name": "Léonard Specht",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Battiston",
+          "position": "CB"
+        },
+        {
+          "name": "Maxime Bossis",
+          "position": "CB"
+        },
+        {
+          "name": "François Bracci",
+          "position": "CB"
+        },
+        {
+          "name": "Gérard Janvion",
+          "position": "CB"
         },
         {
           "name": "Henri Michel",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Dominique Bathenay",
@@ -212,19 +464,87 @@
           "position": "CM"
         },
         {
+          "name": "Francis Piasecki",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Giresse",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-François Larios",
+          "position": "CM"
+        },
+        {
+          "name": "Roger Jouve",
+          "position": "CM"
+        },
+        {
+          "name": "Raymond Keruzoré",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Marc Guillou",
+          "position": "CM"
+        },
+        {
+          "name": "Claude Papi",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Platini",
+          "position": "CM"
+        },
+        {
           "name": "Loïc Amisse",
           "position": "ST"
         },
         {
           "name": "Albert Gemmrich",
           "position": "ST"
+        },
+        {
+          "name": "Didier Six",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Dalger",
+          "position": "ST"
+        },
+        {
+          "name": "Bruno Baronchelli",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Rouyer",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre Pleimelding",
+          "position": "ST"
+        },
+        {
+          "name": "Bernard Lacombe",
+          "position": "ST"
+        },
+        {
+          "name": "Gérard Soler",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Berdoll",
+          "position": "ST"
+        },
+        {
+          "name": "Dominique Rocheteau",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1978/1979)",
       "teamLabel": "france (1978-79)"
@@ -237,8 +557,24 @@
           "position": "GK"
         },
         {
+          "name": "Richard Ruffier",
+          "position": "GK"
+        },
+        {
+          "name": "Dominique Baratelli",
+          "position": "GK"
+        },
+        {
+          "name": "Jean Castaneda",
+          "position": "GK"
+        },
+        {
+          "name": "Jean-Luc Ettori",
+          "position": "GK"
+        },
+        {
           "name": "Christian Lopez",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Marius Trésor",
@@ -250,11 +586,39 @@
         },
         {
           "name": "Patrick Battiston",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Maxime Bossis",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Mahut",
+          "position": "CB"
+        },
+        {
+          "name": "François Bracci",
+          "position": "CB"
+        },
+        {
+          "name": "Thierry Tusseau",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Jeannol",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Amoros",
+          "position": "CB"
+        },
+        {
+          "name": "Gérard Janvion",
+          "position": "CB"
         },
         {
           "name": "Luis Fernandez",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Dominique Bathenay",
@@ -269,19 +633,91 @@
           "position": "CM"
         },
         {
+          "name": "Jean Tigana",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Bravo",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Marc Ferratge",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Marc Ferreri",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Delamontagne",
+          "position": "CM"
+        },
+        {
+          "name": "Bernard Genghini",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Platini",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Giresse",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-François Larios",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Couriol",
+          "position": "CM"
+        },
+        {
           "name": "Jacques Zimako",
           "position": "ST"
         },
         {
           "name": "François Brisson",
           "position": "ST"
+        },
+        {
+          "name": "Bruno Bellone",
+          "position": "ST"
+        },
+        {
+          "name": "Didier Six",
+          "position": "ST"
+        },
+        {
+          "name": "Bernard Lacombe",
+          "position": "ST"
+        },
+        {
+          "name": "Bernard Zénier",
+          "position": "ST"
+        },
+        {
+          "name": "Yannick Stopyra",
+          "position": "ST"
+        },
+        {
+          "name": "Laurent Roussey",
+          "position": "ST"
+        },
+        {
+          "name": "Dominique Rocheteau",
+          "position": "ST"
+        },
+        {
+          "name": "Gérard Soler",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1982/1983)",
       "teamLabel": "france (1982-83)"
@@ -294,8 +730,20 @@
           "position": "GK"
         },
         {
+          "name": "Philippe Bergeroo",
+          "position": "GK"
+        },
+        {
+          "name": "Albert Rust",
+          "position": "GK"
+        },
+        {
+          "name": "Joël Bats",
+          "position": "GK"
+        },
+        {
           "name": "Basile Boli",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Yvon Le Roux",
@@ -307,11 +755,39 @@
         },
         {
           "name": "Maxime Bossis",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "William Ayache",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-François Domergue",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Jeannol",
+          "position": "CB"
+        },
+        {
+          "name": "Thierry Tusseau",
+          "position": "CB"
+        },
+        {
+          "name": "Michel Bibard",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Christophe Thouvenel",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Amoros",
+          "position": "CB"
         },
         {
           "name": "Fabrice Poullain",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Dominique Bijotat",
@@ -326,19 +802,63 @@
           "position": "CM"
         },
         {
+          "name": "Gérald Passi",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Marc Ferreri",
+          "position": "CM"
+        },
+        {
+          "name": "Bernard Genghini",
+          "position": "CM"
+        },
+        {
+          "name": "Philippe Vercruysse",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Platini",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Giresse",
+          "position": "CM"
+        },
+        {
           "name": "Bruno Bellone",
           "position": "ST"
         },
         {
           "name": "Jean-Pierre Papin",
           "position": "ST"
+        },
+        {
+          "name": "Daniel Xuereb",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Paille",
+          "position": "ST"
+        },
+        {
+          "name": "Gérard Buscher",
+          "position": "ST"
+        },
+        {
+          "name": "Dominique Rocheteau",
+          "position": "ST"
+        },
+        {
+          "name": "Yannick Stopyra",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1986/1987)",
       "teamLabel": "france (1986-87)"
@@ -351,8 +871,12 @@
           "position": "GK"
         },
         {
+          "name": "Gilles Rousset",
+          "position": "GK"
+        },
+        {
           "name": "Laurent Blanc",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Franck Silvestre",
@@ -364,11 +888,23 @@
         },
         {
           "name": "Bernard Casoni",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Éric Di Meco",
+          "position": "CB"
+        },
+        {
+          "name": "Jocelyn Angloma",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Amoros",
+          "position": "CB"
         },
         {
           "name": "Emmanuel Petit",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Didier Deschamps",
@@ -383,19 +919,63 @@
           "position": "CM"
         },
         {
+          "name": "Bernard Pardo",
+          "position": "CM"
+        },
+        {
+          "name": "Franck Sauzée",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Dib",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Philippe Durand",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Perez",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Marc Ferreri",
+          "position": "CM"
+        },
+        {
           "name": "Pascal Vahirua",
           "position": "ST"
         },
         {
           "name": "David Ginola",
           "position": "ST"
+        },
+        {
+          "name": "Christophe Cocard",
+          "position": "ST"
+        },
+        {
+          "name": "Éric Cantona",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "position": "ST"
+        },
+        {
+          "name": "Fabrice Divert",
+          "position": "ST"
+        },
+        {
+          "name": "Philippe Tibeuf",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1990/1991)",
       "teamLabel": "france (1990-91)"
@@ -408,8 +988,20 @@
           "position": "GK"
         },
         {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Bernard Lama",
+          "position": "GK"
+        },
+        {
+          "name": "Lionel Charbonnier",
+          "position": "GK"
+        },
+        {
           "name": "Alain Roche",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Jean-Pierre Cyprien",
@@ -421,11 +1013,31 @@
         },
         {
           "name": "Laurent Blanc",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Di Meco",
+          "position": "CB"
+        },
+        {
+          "name": "Jocelyn Angloma",
+          "position": "CB"
         },
         {
           "name": "Emmanuel Petit",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Paul Le Guen",
@@ -440,19 +1052,71 @@
           "position": "CM"
         },
         {
+          "name": "Jean-Michel Ferri",
+          "position": "CM"
+        },
+        {
+          "name": "Vincent Guérin",
+          "position": "CM"
+        },
+        {
+          "name": "Reynald Pedros",
+          "position": "CM"
+        },
+        {
+          "name": "Jérôme Gnako",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Corentin Martins",
+          "position": "CM"
+        },
+        {
           "name": "David Ginola",
           "position": "ST"
         },
         {
           "name": "Pascal Vahirua",
           "position": "ST"
+        },
+        {
+          "name": "Christophe Cocard",
+          "position": "ST"
+        },
+        {
+          "name": "Éric Cantona",
+          "position": "ST"
+        },
+        {
+          "name": "Patrice Loko",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Ouédec",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1994/1995)",
       "teamLabel": "france (1994-95)"
@@ -465,8 +1129,24 @@
           "position": "GK"
         },
         {
+          "name": "Lionel Létizi",
+          "position": "GK"
+        },
+        {
+          "name": "Bernard Lama",
+          "position": "GK"
+        },
+        {
+          "name": "Christophe Revault",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
           "name": "Frank Leboeuf",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Bruno N'Gotty",
@@ -478,11 +1158,43 @@
         },
         {
           "name": "Laurent Blanc",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Djetou",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Roche",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Di Meco",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Jocelyn Angloma",
+          "position": "CB"
         },
         {
           "name": "Emmanuel Petit",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Didier Deschamps",
@@ -497,19 +1209,71 @@
           "position": "CM"
         },
         {
+          "name": "Sabri Lamouchi",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Keller",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Pierre Laigle",
+          "position": "CM"
+        },
+        {
+          "name": "Franck Gava",
+          "position": "CM"
+        },
+        {
+          "name": "Reynald Pedros",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Corentin Martins",
+          "position": "CM"
+        },
+        {
           "name": "Florian Maurice",
           "position": "ST"
         },
         {
           "name": "Patrice Loko",
           "position": "ST"
+        },
+        {
+          "name": "Cyrille Pouget",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
+        },
+        {
+          "name": "Mickaël Madar",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Ouédec",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1996/1997)",
       "teamLabel": "france (1996-97)"
@@ -522,8 +1286,20 @@
           "position": "GK"
         },
         {
+          "name": "Lionel Létizi",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Lionel Charbonnier",
+          "position": "GK"
+        },
+        {
           "name": "Frank Leboeuf",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Martin Djetou",
@@ -535,11 +1311,31 @@
         },
         {
           "name": "Laurent Blanc",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Frédéric Déhu",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
         },
         {
           "name": "Patrick Vieira",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Didier Deschamps",
@@ -554,22 +1350,219 @@
           "position": "CM"
         },
         {
+          "name": "Christian Karembeu",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Boghossian",
+          "position": "CM"
+        },
+        {
+          "name": "Sabri Lamouchi",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Bá",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Keller",
+          "position": "CM"
+        },
+        {
+          "name": "Pierre Laigle",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
           "name": "Bernard Diomède",
           "position": "ST"
         },
         {
           "name": "Florian Maurice",
           "position": "ST"
+        },
+        {
+          "name": "Lilian Laslandes",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Guivarc'h",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Tony Vairelles",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (1998/1999)",
       "teamLabel": "france (1998-99)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Stéphane Porato",
+          "position": "GK"
+        },
+        {
+          "name": "Ulrich Ramé",
+          "position": "GK"
+        },
+        {
+          "name": "Bernard Lama",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Frank Leboeuf",
+          "position": "CB"
+        },
+        {
+          "name": "Laurent Blanc",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Frédéric Déhu",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Vieira",
+          "position": "CM"
+        },
+        {
+          "name": "Didier Deschamps",
+          "position": "CM"
+        },
+        {
+          "name": "Emmanuel Petit",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Karembeu",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Boghossian",
+          "position": "CM"
+        },
+        {
+          "name": "Vikash Dhorasoo",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Micoud",
+          "position": "CM"
+        },
+        {
+          "name": "Laurent Robert",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Florian Maurice",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Guivarc'h",
+          "position": "ST"
+        },
+        {
+          "name": "Lilian Laslandes",
+          "position": "ST"
+        },
+        {
+          "name": "Tony Vairelles",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 89,
+        "midfield": 79,
+        "defense": 88,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Francia (1999/2000)",
+      "teamLabel": "Francia (1999-00)"
     },
     "2000": {
       "formation": "4-4-2",
@@ -579,8 +1572,24 @@
           "position": "GK"
         },
         {
+          "name": "Richard Dutruel",
+          "position": "GK"
+        },
+        {
+          "name": "Bernard Lama",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Ulrich Ramé",
+          "position": "GK"
+        },
+        {
           "name": "Frank Leboeuf",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Philippe Christanval",
@@ -592,11 +1601,35 @@
         },
         {
           "name": "Frédéric Déhu",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Djetou",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Sagnol",
+          "position": "CB"
         },
         {
           "name": "Patrick Vieira",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Claude Makélélé",
@@ -611,19 +1644,67 @@
           "position": "CM"
         },
         {
+          "name": "Christian Karembeu",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Micoud",
+          "position": "CM"
+        },
+        {
           "name": "Laurent Robert",
           "position": "ST"
         },
         {
           "name": "Ludovic Giuly",
           "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Tony Vairelles",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Marlet",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2000/2001)",
       "teamLabel": "france (2000-01)"
@@ -636,8 +1717,16 @@
           "position": "GK"
         },
         {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
           "name": "Frank Leboeuf",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "William Gallas",
@@ -649,11 +1738,39 @@
         },
         {
           "name": "Philippe Mexès",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Christanval",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Sagnol",
+          "position": "CB"
         },
         {
           "name": "Benoît Pedretti",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Christian Karembeu",
@@ -668,19 +1785,91 @@
           "position": "CM"
         },
         {
+          "name": "Emmanuel Petit",
+          "position": "CM"
+        },
+        {
+          "name": "Olivier Dacourt",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Boghossian",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Cheyrou",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Olivier Kapo",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Djorkaeff",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Éric Carrière",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Micoud",
+          "position": "CM"
+        },
+        {
           "name": "Ludovic Giuly",
           "position": "ST"
         },
         {
           "name": "Sidney Govou",
           "position": "ST"
+        },
+        {
+          "name": "Daniel Moreira",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Djibril Cissé",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Marlet",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2002/2003)",
       "teamLabel": "france (2002-03)"
@@ -693,8 +1882,20 @@
           "position": "GK"
         },
         {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
+          "name": "Mickaël Landreau",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
           "name": "Jean-Alain Boumsong",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Sébastien Squillaci",
@@ -706,11 +1907,55 @@
         },
         {
           "name": "Philippe Mexès",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Givet",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Sylvain Armand",
+          "position": "CB"
+        },
+        {
+          "name": "Bixente Lizarazu",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Sagnol",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "Bernard Mendy",
+          "position": "CB"
         },
         {
           "name": "Patrick Vieira",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Claude Makélélé",
@@ -725,19 +1970,103 @@
           "position": "CM"
         },
         {
+          "name": "Olivier Dacourt",
+          "position": "CM"
+        },
+        {
+          "name": "Alou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Vikash Dhorasoo",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Cheyrou",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Jérôme Rothen",
+          "position": "CM"
+        },
+        {
+          "name": "Steed Malbranque",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Micoud",
+          "position": "CM"
+        },
+        {
+          "name": "Camel Meriem",
+          "position": "CM"
+        },
+        {
+          "name": "Olivier Kapo",
+          "position": "CM"
+        },
+        {
           "name": "Florent Malouda",
           "position": "ST"
         },
         {
           "name": "Ludovic Giuly",
           "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Moreira",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Djibril Cissé",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Saha",
+          "position": "ST"
+        },
+        {
+          "name": "Péguy Luyindula",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre-Alain Frau",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Marlet",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2004/2005)",
       "teamLabel": "france (2004-05)"
@@ -750,8 +2079,16 @@
           "position": "GK"
         },
         {
+          "name": "Mickaël Landreau",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
           "name": "William Gallas",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Jean-Alain Boumsong",
@@ -763,11 +2100,51 @@
         },
         {
           "name": "Philippe Mexès",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Givet",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Julien Escudé",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Sagnol",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Chimbonda",
+          "position": "CB"
+        },
+        {
+          "name": "Julien Faubert",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
         },
         {
           "name": "Patrick Vieira",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Claude Makélélé",
@@ -782,19 +2159,59 @@
           "position": "CM"
         },
         {
+          "name": "Alou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Vikash Dhorasoo",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
           "name": "Florent Malouda",
           "position": "ST"
         },
         {
           "name": "Franck Ribéry",
           "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Djibril Cissé",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Saha",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2006/2007)",
       "teamLabel": "france (2006-07)"
@@ -807,8 +2224,24 @@
           "position": "GK"
         },
         {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
+          "name": "Hugo Lloris",
+          "position": "GK"
+        },
+        {
+          "name": "Mickaël Landreau",
+          "position": "GK"
+        },
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
           "name": "Philippe Mexès",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "William Gallas",
@@ -820,11 +2253,47 @@
         },
         {
           "name": "Jean-Alain Boumsong",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Julien Escudé",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB"
+        },
+        {
+          "name": "Bacary Sagna",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
+        },
+        {
+          "name": "Rod Fanni",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Sagnol",
+          "position": "CB"
         },
         {
           "name": "Jérémy Toulalan",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Lassana Diarra",
@@ -839,19 +2308,79 @@
           "position": "CM"
         },
         {
+          "name": "Mathieu Flamini",
+          "position": "CM"
+        },
+        {
+          "name": "Claude Makélélé",
+          "position": "CM"
+        },
+        {
+          "name": "Yoann Gourcuff",
+          "position": "CM"
+        },
+        {
+          "name": "Samir Nasri",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
           "name": "Franck Ribéry",
           "position": "ST"
         },
         {
           "name": "Florent Malouda",
           "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Florent Sinama-Pongolle",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "David Trezeguet",
+          "position": "ST"
+        },
+        {
+          "name": "Djibril Cissé",
+          "position": "ST"
+        },
+        {
+          "name": "Bafétimbi Gomis",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Briand",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Savidan",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2008/2009)",
       "teamLabel": "france (2008-09)"
@@ -864,8 +2393,24 @@
           "position": "GK"
         },
         {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
+          "name": "Cédric Carrasso",
+          "position": "GK"
+        },
+        {
+          "name": "Stéphane Ruffier",
+          "position": "GK"
+        },
+        {
+          "name": "Nicolas Douchez",
+          "position": "GK"
+        },
+        {
           "name": "Mamadou Sakho",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Adil Rami",
@@ -877,11 +2422,71 @@
         },
         {
           "name": "Philippe Mexès",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "William Gallas",
+          "position": "CB"
+        },
+        {
+          "name": "Younès Kaboul",
+          "position": "CB"
+        },
+        {
+          "name": "Michaël Ciani",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Squillaci",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Alain Boumsong",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Planus",
+          "position": "CB"
+        },
+        {
+          "name": "Julien Escudé",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB"
+        },
+        {
+          "name": "Benoît Trémoulinas",
+          "position": "CB"
+        },
+        {
+          "name": "Bacary Sagna",
+          "position": "CB"
+        },
+        {
+          "name": "Rod Fanni",
+          "position": "CB"
+        },
+        {
+          "name": "Mathieu Debuchy",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
         },
         {
           "name": "Lassana Diarra",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Jérémy Toulalan",
@@ -896,19 +2501,111 @@
           "position": "CM"
         },
         {
+          "name": "Benoît Cheyrou",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Yohan Cabaye",
+          "position": "CM"
+        },
+        {
+          "name": "Abou Diaby",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Matuidi",
+          "position": "CM"
+        },
+        {
+          "name": "Samir Nasri",
+          "position": "CM"
+        },
+        {
+          "name": "Yoann Gourcuff",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Valbuena",
+          "position": "CM"
+        },
+        {
+          "name": "Dimitri Payet",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
           "name": "Franck Ribéry",
           "position": "ST"
         },
         {
           "name": "Florent Malouda",
           "position": "ST"
+        },
+        {
+          "name": "Charles N'Zogbia",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Loïc Rémy",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémy Ménez",
+          "position": "ST"
+        },
+        {
+          "name": "Djibril Cissé",
+          "position": "ST"
+        },
+        {
+          "name": "Kévin Gameiro",
+          "position": "ST"
+        },
+        {
+          "name": "André-Pierre Gignac",
+          "position": "ST"
+        },
+        {
+          "name": "Guillaume Hoarau",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Briand",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Saha",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2010/2011)",
       "teamLabel": "france (2010-11)"
@@ -921,8 +2618,20 @@
           "position": "GK"
         },
         {
+          "name": "Hugo Lloris",
+          "position": "GK"
+        },
+        {
+          "name": "Cédric Carrasso",
+          "position": "GK"
+        },
+        {
+          "name": "Mickaël Landreau",
+          "position": "GK"
+        },
+        {
           "name": "Raphaël Varane",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Laurent Koscielny",
@@ -934,11 +2643,47 @@
         },
         {
           "name": "Adil Rami",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Mapou Yanga-Mbiwa",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Mexès",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Benoît Trémoulinas",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Mathieu Debuchy",
+          "position": "CB"
+        },
+        {
+          "name": "Christophe Jallet",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
         },
         {
           "name": "Yann M'Vila",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Étienne Capoue",
@@ -953,19 +2698,99 @@
           "position": "CM"
         },
         {
+          "name": "Clément Chantôme",
+          "position": "CM"
+        },
+        {
+          "name": "Alou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Matuidi",
+          "position": "CM"
+        },
+        {
+          "name": "Yohan Cabaye",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Abou Diaby",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Amalfitano",
+          "position": "CM"
+        },
+        {
+          "name": "Samir Nasri",
+          "position": "CM"
+        },
+        {
+          "name": "Dimitri Payet",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Valbuena",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
+          "name": "Marvin Martin",
+          "position": "CM"
+        },
+        {
+          "name": "Yoann Gourcuff",
+          "position": "CM"
+        },
+        {
           "name": "Franck Ribéry",
           "position": "ST"
         },
         {
           "name": "Florent Malouda",
           "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémy Ménez",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
+        },
+        {
+          "name": "Bafétimbi Gomis",
+          "position": "ST"
+        },
+        {
+          "name": "Kévin Gameiro",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Briand",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Saha",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2012/2013)",
       "teamLabel": "france (2012-13)"
@@ -978,8 +2803,24 @@
           "position": "GK"
         },
         {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
+          "name": "Stéphane Ruffier",
+          "position": "GK"
+        },
+        {
+          "name": "Benoît Costil",
+          "position": "GK"
+        },
+        {
+          "name": "Mickaël Landreau",
+          "position": "GK"
+        },
+        {
           "name": "Raphaël Varane",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Eliaquim Mangala",
@@ -991,11 +2832,51 @@
         },
         {
           "name": "Laurent Koscielny",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Mapou Yanga-Mbiwa",
+          "position": "CB"
+        },
+        {
+          "name": "Kurt Zouma",
+          "position": "CB"
+        },
+        {
+          "name": "Loïc Perrin",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Mathieu",
+          "position": "CB"
+        },
+        {
+          "name": "Layvin Kurzawa",
+          "position": "CB"
+        },
+        {
+          "name": "Bacary Sagna",
+          "position": "CB"
+        },
+        {
+          "name": "Mathieu Debuchy",
+          "position": "CB"
+        },
+        {
+          "name": "Christophe Jallet",
+          "position": "CB"
         },
         {
           "name": "Maxime Gonalons",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Josuha Guilavogui",
@@ -1010,19 +2891,71 @@
           "position": "CM"
         },
         {
+          "name": "Paul Pogba",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Matuidi",
+          "position": "CM"
+        },
+        {
+          "name": "Yohan Cabaye",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Clément Grenier",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Valbuena",
+          "position": "CM"
+        },
+        {
+          "name": "Dimitri Payet",
+          "position": "CM"
+        },
+        {
+          "name": "Rémy Cabella",
+          "position": "CM"
+        },
+        {
           "name": "Franck Ribéry",
           "position": "ST"
         },
         {
           "name": "Antoine Griezmann",
           "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
+        },
+        {
+          "name": "Loïc Rémy",
+          "position": "ST"
+        },
+        {
+          "name": "André-Pierre Gignac",
+          "position": "ST"
+        },
+        {
+          "name": "Alexandre Lacazette",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2014/2015)",
       "teamLabel": "france (2014-15)"
@@ -1035,8 +2968,20 @@
           "position": "GK"
         },
         {
+          "name": "Alphonse Areola",
+          "position": "GK"
+        },
+        {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
+          "name": "Benoît Costil",
+          "position": "GK"
+        },
+        {
           "name": "Raphaël Varane",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Samuel Umtiti",
@@ -1048,11 +2993,59 @@
         },
         {
           "name": "Laurent Koscielny",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Mamadou Sakho",
+          "position": "CB"
+        },
+        {
+          "name": "Eliaquim Mangala",
+          "position": "CB"
+        },
+        {
+          "name": "Presnel Kimpembe",
+          "position": "CB"
+        },
+        {
+          "name": "Adil Rami",
+          "position": "CB"
+        },
+        {
+          "name": "Layvin Kurzawa",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Mathieu",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Djibril Sidibé",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Corchia",
+          "position": "CB"
+        },
+        {
+          "name": "Bacary Sagna",
+          "position": "CB"
+        },
+        {
+          "name": "Christophe Jallet",
+          "position": "CB"
         },
         {
           "name": "N'Golo Kanté",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Morgan Schneiderlin",
@@ -1067,19 +3060,71 @@
           "position": "CM"
         },
         {
+          "name": "Paul Pogba",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Matuidi",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Adrien Rabiot",
+          "position": "CM"
+        },
+        {
+          "name": "Yohan Cabaye",
+          "position": "CM"
+        },
+        {
+          "name": "Dimitri Payet",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Lemar",
+          "position": "CM"
+        },
+        {
+          "name": "Nabil Fekir",
+          "position": "CM"
+        },
+        {
           "name": "Kingsley Coman",
           "position": "ST"
         },
         {
           "name": "Antoine Griezmann",
           "position": "ST"
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Martial",
+          "position": "ST"
+        },
+        {
+          "name": "Kévin Gameiro",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
+        },
+        {
+          "name": "André-Pierre Gignac",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2016/2017)",
       "teamLabel": "france (2016-17)"
@@ -1092,8 +3137,24 @@
           "position": "GK"
         },
         {
+          "name": "Alphonse Areola",
+          "position": "GK"
+        },
+        {
+          "name": "Benjamin Lecomte",
+          "position": "GK"
+        },
+        {
+          "name": "Benoît Costil",
+          "position": "GK"
+        },
+        {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
           "name": "Raphaël Varane",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Samuel Umtiti",
@@ -1105,11 +3166,47 @@
         },
         {
           "name": "Presnel Kimpembe",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Kurt Zouma",
+          "position": "CB"
+        },
+        {
+          "name": "Mamadou Sakho",
+          "position": "CB"
+        },
+        {
+          "name": "Laurent Koscielny",
+          "position": "CB"
+        },
+        {
+          "name": "Adil Rami",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Hernández",
+          "position": "CB"
+        },
+        {
+          "name": "Benjamin Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Djibril Sidibé",
+          "position": "CB"
         },
         {
           "name": "N'Golo Kanté",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Steven Nzonzi",
@@ -1124,19 +3221,71 @@
           "position": "CM"
         },
         {
+          "name": "Corentin Tolisso",
+          "position": "CM"
+        },
+        {
+          "name": "Adrien Rabiot",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Matuidi",
+          "position": "CM"
+        },
+        {
+          "name": "Nabil Fekir",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Lemar",
+          "position": "CM"
+        },
+        {
+          "name": "Dimitri Payet",
+          "position": "CM"
+        },
+        {
           "name": "Florian Thauvin",
           "position": "ST"
         },
         {
           "name": "Antoine Griezmann",
           "position": "ST"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Martial",
+          "position": "ST"
+        },
+        {
+          "name": "Wissam Ben Yedder",
+          "position": "ST"
+        },
+        {
+          "name": "Alassane Pléa",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2018/2019)",
       "teamLabel": "france (2018-19)"
@@ -1149,8 +3298,20 @@
           "position": "GK"
         },
         {
+          "name": "Hugo Lloris",
+          "position": "GK"
+        },
+        {
+          "name": "Benoît Costil",
+          "position": "GK"
+        },
+        {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
           "name": "Raphaël Varane",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Clément Lenglet",
@@ -1162,11 +3323,39 @@
         },
         {
           "name": "Benjamin Pavard",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Presnel Kimpembe",
+          "position": "CB"
+        },
+        {
+          "name": "Kurt Zouma",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Hernández",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Léo Dubois",
+          "position": "CB"
+        },
+        {
+          "name": "Ruben Aguilar",
+          "position": "CB"
         },
         {
           "name": "N'Golo Kanté",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Steven Nzonzi",
@@ -1181,19 +3370,63 @@
           "position": "CM"
         },
         {
+          "name": "Eduardo Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Adrien Rabiot",
+          "position": "CM"
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Houssem Aouar",
+          "position": "CM"
+        },
+        {
+          "name": "Nabil Fekir",
+          "position": "CM"
+        },
+        {
           "name": "Kingsley Coman",
           "position": "ST"
         },
         {
           "name": "Jonathan Ikoné",
           "position": "ST"
+        },
+        {
+          "name": "Antoine Griezmann",
+          "position": "ST"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Martial",
+          "position": "ST"
+        },
+        {
+          "name": "Wissam Ben Yedder",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Thuram",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2020/2021)",
       "teamLabel": "france (2020-21)"
@@ -1206,8 +3439,24 @@
           "position": "GK"
         },
         {
+          "name": "Alban Lafont",
+          "position": "GK"
+        },
+        {
+          "name": "Alphonse Areola",
+          "position": "GK"
+        },
+        {
+          "name": "Hugo Lloris",
+          "position": "GK"
+        },
+        {
+          "name": "Steve Mandanda",
+          "position": "GK"
+        },
+        {
           "name": "William Saliba",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Dayot Upamecano",
@@ -1219,11 +3468,55 @@
         },
         {
           "name": "Benoît Badiashile",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Ibrahima Konaté",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Axel Disasi",
+          "position": "CB"
+        },
+        {
+          "name": "Presnel Kimpembe",
+          "position": "CB"
+        },
+        {
+          "name": "Theo Hernández",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Hernández",
+          "position": "CB"
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Adrien Truffert",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Jules Koundé",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Clauss",
+          "position": "CB"
         },
         {
           "name": "Aurélien Tchouaméni",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Boubacar Kamara",
@@ -1238,24 +3531,80 @@
           "position": "CM"
         },
         {
+          "name": "Eduardo Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Adrien Rabiot",
+          "position": "CM"
+        },
+        {
+          "name": "Mattéo Guendouzi",
+          "position": "CM"
+        },
+        {
+          "name": "Jordan Veretout",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Pogba",
+          "position": "CM"
+        },
+        {
           "name": "Kingsley Coman",
           "position": "ST"
         },
         {
           "name": "Moussa Diaby",
           "position": "ST"
+        },
+        {
+          "name": "Antoine Griezmann",
+          "position": "ST"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Christopher Nkunku",
+          "position": "ST"
+        },
+        {
+          "name": "Randal Kolo Muani",
+          "position": "ST"
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Thuram",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Wissam Ben Yedder",
+          "position": "ST"
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — france (2022/2023)",
       "teamLabel": "france (2022-23)"
     }
   },
   "id": 3377,
-  "name": "france"
+  "name": "Francia"
 }

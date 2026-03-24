@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odyssey — Football Time Machine</title>
+  <link rel="icon" type="image/png" href="odyssey-logo.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,45 +15,9 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="logo-mark">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
-          <defs>
-            <clipPath id="ody-clip"><circle cx="50" cy="50" r="40"/></clipPath>
-            <linearGradient id="ody-ndl" x1="0.15" y1="0.85" x2="0.85" y2="0.15">
-              <stop offset="0%"   stop-color="#000000"/>
-              <stop offset="45%"  stop-color="#206060"/>
-              <stop offset="100%" stop-color="#f0f9f5"/>
-            </linearGradient>
-          </defs>
-          <polygon points="50,2 53.5,18 50,14.5 46.5,18"  fill="#2a9898"/>
-          <polygon points="50,98 53.5,82 50,85.5 46.5,82" fill="#2a9898"/>
-          <polygon points="98,50 82,53.5 85.5,50 82,46.5" fill="#2a9898"/>
-          <polygon points="2,50  18,53.5 14.5,50 18,46.5"  fill="#2a9898"/>
-          <circle cx="50" cy="50" r="40" fill="#000000"/>
-          <circle cx="50" cy="50" r="40" fill="none" stroke="#2a9898" stroke-width="3.5"/>
-          <g clip-path="url(#ody-clip)">
-            <g fill="rgba(210,235,220,0.28)" stroke="rgba(140,190,170,0.55)" stroke-width="1.1">
-              <polygon points="50,36 60,42 60,54 50,60 40,54 40,42"/>
-              <polygon points="50,36 60,42 68,34 60,24 48,24 40,32"/>
-              <polygon points="60,42 68,34 78,40 78,52 68,58 60,54"/>
-              <polygon points="60,54 68,58 64,70 52,72 44,64 40,54"/>
-              <polygon points="40,54 44,64 32,66 24,58 26,46 40,42"/>
-              <polygon points="40,42 26,46 20,34 30,24 44,24 50,36"/>
-            </g>
-          </g>
-          <g clip-path="url(#ody-clip)">
-            <polygon points="22,78 46,54 78,22 54,46" fill="url(#ody-ndl)"/>
-            <polygon points="22,78 46,54 78,22 54,46" fill="none" stroke="rgba(100,210,185,0.35)" stroke-width="0.7"/>
-          </g>
-          <g transform="translate(76,24)">
-            <polygon points="0,-6.5 1.5,-1.5 6.5,0 1.5,1.5 0,6.5 -1.5,1.5 -6.5,0 -1.5,-1.5" fill="white"/>
-          </g>
-          <g transform="translate(64,34)">
-            <polygon points="0,-3.5 0.8,-0.8 3.5,0 0.8,0.8 0,3.5 -0.8,0.8 -3.5,0 -0.8,-0.8" fill="white" opacity="0.6"/>
-          </g>
-        </svg>
+        <img class="logo-img" src="odyssey-logo.png" alt="Odyssey" />
       </div>
       <div class="logo-text">
-        <h1>Odyssey</h1>
         <span class="logo-sub">Football Time Machine</span>
       </div>
       <div class="header-right">
@@ -154,15 +119,20 @@
 
     <!-- ── PRE-MATCH PRESENTATION ────────────── -->
     <div id="prematch-screen" class="prematch-screen glass-card hidden">
-      <button class="btn-skip pm-skip-btn" onclick="skipPreMatch()">⏭ Saltar</button>
       <div class="pm-eyebrow">PRESENTACIÓN DE EQUIPOS</div>
       <div class="pm-matchup">
         <div class="pm-team-block" id="pm-block-a"></div>
         <div class="pm-center-col">
           <div class="pm-vs-text">VS</div>
-          <div class="pm-start-label">Comenzando en</div>
-          <div class="pm-countdown" id="pm-countdown">10</div>
           <div class="pm-stadium-info hidden" id="pm-stadium-info"></div>
+          <div class="pm-speed-label">Duración del partido</div>
+          <div class="pm-speed-pills" id="pm-speed-pills">
+            <button class="pm-speed-pill" data-tick="0"   onclick="selectSpeed(this)">⚡ Directo</button>
+            <button class="pm-speed-pill" data-tick="333" onclick="selectSpeed(this)">30 seg</button>
+            <button class="pm-speed-pill pm-speed-active" data-tick="667" onclick="selectSpeed(this)">1 min</button>
+            <button class="pm-speed-pill" data-tick="2000" onclick="selectSpeed(this)">3 min</button>
+          </div>
+          <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()">▶ Iniciar partido</button>
         </div>
         <div class="pm-team-block pm-team-block-b" id="pm-block-b"></div>
       </div>

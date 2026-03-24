@@ -2,54 +2,102 @@
   "slug": "niederlande",
   "seasons": {
     "1966": {
-      "formation": "3-4-2",
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Takis Ikonomopoulos",
+          "name": "Eddy Pieters Graafland",
           "position": "GK"
         },
         {
-          "name": "Fragiskos Sourpis",
-          "position": "RB"
+          "name": "Tonny van Leeuwen",
+          "position": "GK"
         },
         {
-          "name": "Tasos Vasiliou",
+          "name": "Rinus Israël",
           "position": "CB"
         },
         {
-          "name": "Georgios Skrekis",
+          "name": "Henk Warnas",
           "position": "CB"
         },
         {
-          "name": "Fotis Balopoulos",
-          "position": "DM"
+          "name": "Miel Pijs",
+          "position": "CB"
         },
         {
-          "name": "Stathis Chaitas",
+          "name": "Daan Schrijvers",
+          "position": "CB"
+        },
+        {
+          "name": "Cor Veldhoen",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Quaedackers",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Suurbier",
+          "position": "CB"
+        },
+        {
+          "name": "Frits Flinkevleugel",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Dullens",
           "position": "CM"
         },
         {
-          "name": "Mimis Domazos",
+          "name": "Bennie Muller",
           "position": "CM"
         },
         {
-          "name": "Stelios Skevofylakas",
+          "name": "Piet de Zoete",
           "position": "CM"
         },
         {
-          "name": "Alekos Alexiadis",
+          "name": "Piet Fransen",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CM"
+        },
+        {
+          "name": "Kees Aarts",
           "position": "ST"
         },
         {
-          "name": "Mimis Papaioannou",
+          "name": "Coen Moulijn",
+          "position": "ST"
+        },
+        {
+          "name": "Piet Keizer",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Heijnen",
+          "position": "ST"
+        },
+        {
+          "name": "Sjaak Swart",
+          "position": "ST"
+        },
+        {
+          "name": "Willy van der Kuijlen",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas Nuninga",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1966/1967)",
       "teamLabel": "netherlands (1966-67)"
@@ -58,55 +106,119 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Takis Ikonomopoulos",
+          "name": "Jan van Beveren",
           "position": "GK"
         },
         {
-          "name": "Takis Synetopoulos",
-          "position": "RB"
+          "name": "Eddy Treijtel",
+          "position": "GK"
         },
         {
-          "name": "Angelos Spyridon",
+          "name": "Rinus Israël",
           "position": "CB"
         },
         {
-          "name": "Takis Eleftheriadis",
+          "name": "Epi Drost",
           "position": "CB"
         },
         {
-          "name": "Grigoris Aganian",
-          "position": "LB"
+          "name": "Hans Eijkenbroek",
+          "position": "CB"
         },
         {
-          "name": "Aristidis Kamaras",
-          "position": "DM"
+          "name": "Theo Laseroms",
+          "position": "CB"
         },
         {
-          "name": "Stathis Chaitas",
+          "name": "Ruud Krol",
+          "position": "CB"
+        },
+        {
+          "name": "Theo van Duivenbode",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Suurbier",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Jansen",
           "position": "CM"
         },
         {
-          "name": "Mimis Domazos",
+          "name": "Johan Neeskens",
           "position": "CM"
         },
         {
-          "name": "Georgios Koudas",
+          "name": "Pleun Strik",
           "position": "CM"
         },
         {
-          "name": "Spyros Pomonis",
+          "name": "Nico Rijnders",
+          "position": "CM"
+        },
+        {
+          "name": "Willem van Hanegem",
+          "position": "CM"
+        },
+        {
+          "name": "Gerrie Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Wietse Veenstra",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Rensenbrink",
           "position": "ST"
         },
         {
-          "name": "Mimis Papaioannou",
+          "name": "Piet Keizer",
+          "position": "ST"
+        },
+        {
+          "name": "Willy Brokamp",
+          "position": "ST"
+        },
+        {
+          "name": "Henk Wery",
+          "position": "ST"
+        },
+        {
+          "name": "Theo Pahlplatz",
+          "position": "ST"
+        },
+        {
+          "name": "Dick van Dijk",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Klijnjan",
+          "position": "ST"
+        },
+        {
+          "name": "Willy van der Kuijlen",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Mulder",
+          "position": "ST"
+        },
+        {
+          "name": "Wijtse Couperus",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1970/1971)",
       "teamLabel": "netherlands (1970-71)"
@@ -115,55 +227,123 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Takis Ikonomopoulos",
+          "name": "Jan Jongbloed",
           "position": "GK"
         },
         {
-          "name": "Takis Synetopoulos",
-          "position": "RB"
+          "name": "Piet Schrijvers",
+          "position": "GK"
         },
         {
-          "name": "Dimitrios Dimitriou",
+          "name": "Eddy Treijtel",
+          "position": "GK"
+        },
+        {
+          "name": "Dick Schneider",
           "position": "CB"
         },
         {
-          "name": "Takis Eleftheriadis",
+          "name": "Rinus Israël",
           "position": "CB"
         },
         {
-          "name": "Kostas Kambas",
-          "position": "LB"
+          "name": "Wim Rijsbergen",
+          "position": "CB"
         },
         {
-          "name": "Christos Terzanidis",
-          "position": "DM"
+          "name": "Harry Vos",
+          "position": "CB"
         },
         {
-          "name": "Vasilios Stravopodis",
+          "name": "Ruud Krol",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Suurbier",
+          "position": "CB"
+        },
+        {
+          "name": "Cees van Ierssel",
+          "position": "CB"
+        },
+        {
+          "name": "René Notten",
           "position": "CM"
         },
         {
-          "name": "Georgios Delikaris",
+          "name": "Wim Jansen",
           "position": "CM"
         },
         {
-          "name": "Stavros Sarafis",
+          "name": "Arie Haan",
           "position": "CM"
         },
         {
-          "name": "Mimis Papaioannou",
+          "name": "Johan Neeskens",
+          "position": "CM"
+        },
+        {
+          "name": "Pleun Strik",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Peters",
+          "position": "CM"
+        },
+        {
+          "name": "Chris Dekker",
+          "position": "CM"
+        },
+        {
+          "name": "Willem van Hanegem",
+          "position": "CM"
+        },
+        {
+          "name": "Theo de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Willy van de Kerkhof",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CM"
+        },
+        {
+          "name": "Piet Keizer",
           "position": "ST"
         },
         {
-          "name": "Thomas Mavros",
+          "name": "Rob Rensenbrink",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Ressel",
+          "position": "ST"
+        },
+        {
+          "name": "René van de Kerkhof",
+          "position": "ST"
+        },
+        {
+          "name": "Johnny Rep",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud Geels",
+          "position": "ST"
+        },
+        {
+          "name": "Willy van der Kuijlen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1974/1975)",
       "teamLabel": "netherlands (1974-75)"
@@ -172,55 +352,143 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Christidis",
+          "name": "Piet Schrijvers",
           "position": "GK"
         },
         {
-          "name": "Stelios Stefanakis",
-          "position": "RB"
+          "name": "Jan Jongbloed",
+          "position": "GK"
         },
         {
-          "name": "Georgios Firos",
+          "name": "Pim Doesburg",
+          "position": "GK"
+        },
+        {
+          "name": "John Metgod",
           "position": "CB"
         },
         {
-          "name": "Anthimos Kapsis",
+          "name": "Adrie van Kraaij",
           "position": "CB"
         },
         {
-          "name": "Pantelis Nikolaou",
-          "position": "LB"
+          "name": "Johnny Dusbaba",
+          "position": "CB"
         },
         {
-          "name": "Giannis Damanakis",
-          "position": "DM"
+          "name": "Wim Rijsbergen",
+          "position": "CB"
         },
         {
-          "name": "Spyros Livathinos",
+          "name": "Ernie Brandts",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Poortvliet",
+          "position": "CB"
+        },
+        {
+          "name": "Ruud Krol",
+          "position": "CB"
+        },
+        {
+          "name": "Piet Wildschut",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Hovenkamp",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Suurbier",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Jansen",
           "position": "CM"
         },
         {
-          "name": "Christos Terzanidis",
+          "name": "Arie Haan",
           "position": "CM"
         },
         {
-          "name": "Angelos Anastasiadis",
+          "name": "Johan Neeskens",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Kalabakas",
+          "name": "Willem van Hanegem",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Peters",
+          "position": "CM"
+        },
+        {
+          "name": "Dick Schoenaker",
+          "position": "CM"
+        },
+        {
+          "name": "Willy van de Kerkhof",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Boskamp",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Rensenbrink",
           "position": "ST"
         },
         {
-          "name": "Mimis Papaioannou",
+          "name": "Pierre Vermeulen",
+          "position": "ST"
+        },
+        {
+          "name": "Tscheu La Ling",
+          "position": "ST"
+        },
+        {
+          "name": "Adrie Koster",
+          "position": "ST"
+        },
+        {
+          "name": "René van de Kerkhof",
+          "position": "ST"
+        },
+        {
+          "name": "Johnny Rep",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud Geels",
+          "position": "ST"
+        },
+        {
+          "name": "Dick Nanninga",
+          "position": "ST"
+        },
+        {
+          "name": "Henk van Leeuwen",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Peters",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Lubse",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1978/1979)",
       "teamLabel": "netherlands (1978-79)"
@@ -229,55 +497,155 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Sarganis",
+          "name": "Piet Schrijvers",
           "position": "GK"
         },
         {
-          "name": "Giannis Dontas",
-          "position": "RB"
+          "name": "Hans van Breukelen",
+          "position": "GK"
         },
         {
-          "name": "Stelios Manolas",
+          "name": "Edward Metgod",
+          "position": "GK"
+        },
+        {
+          "name": "Ronald Koeman",
           "position": "CB"
         },
         {
-          "name": "Georgios Firos",
+          "name": "Michel van de Korput",
           "position": "CB"
         },
         {
-          "name": "Anthimos Kapsis",
-          "position": "LB"
+          "name": "John Metgod",
+          "position": "CB"
         },
         {
-          "name": "Giannis Damanakis",
-          "position": "DM"
+          "name": "Peter van de Ven",
+          "position": "CB"
         },
         {
-          "name": "Spyros Livathinos",
+          "name": "Ronald Spelbos",
+          "position": "CB"
+        },
+        {
+          "name": "Huub Stevens",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Poortvliet",
+          "position": "CB"
+        },
+        {
+          "name": "Piet Wildschut",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Hovenkamp",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Boeve",
+          "position": "CB"
+        },
+        {
+          "name": "Ruud Krol",
+          "position": "CB"
+        },
+        {
+          "name": "Edo Ophof",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Wijnstekers",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
           "position": "CM"
         },
         {
-          "name": "Babis Xanthopoulos",
+          "name": "Frank Rijkaard",
           "position": "CM"
         },
         {
-          "name": "Georgios Semertzidis",
+          "name": "Jan Peters",
           "position": "CM"
         },
         {
-          "name": "Dimitrios Saravakos",
+          "name": "Willy van de Kerkhof",
+          "position": "CM"
+        },
+        {
+          "name": "Dick Schoenaker",
+          "position": "CM"
+        },
+        {
+          "name": "Erwin Koeman",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Valke",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Gullit",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Tahamata",
           "position": "ST"
         },
         {
-          "name": "Grigoris Charalampidis",
+          "name": "Pierre Vermeulen",
+          "position": "ST"
+        },
+        {
+          "name": "Gerald Vanenburg",
+          "position": "ST"
+        },
+        {
+          "name": "René van der Gijp",
+          "position": "ST"
+        },
+        {
+          "name": "René Hofman",
+          "position": "ST"
+        },
+        {
+          "name": "Tscheu La Ling",
+          "position": "ST"
+        },
+        {
+          "name": "René van de Kerkhof",
+          "position": "ST"
+        },
+        {
+          "name": "Jurrie Koolhof",
+          "position": "ST"
+        },
+        {
+          "name": "Cees van Kooten",
+          "position": "ST"
+        },
+        {
+          "name": "Wim Kieft",
+          "position": "ST"
+        },
+        {
+          "name": "Kees 'Pier' Tol",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1982/1983)",
       "teamLabel": "netherlands (1982-83)"
@@ -286,55 +654,115 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Sarganis",
+          "name": "Jan van Grinsven",
           "position": "GK"
         },
         {
-          "name": "Christos Vasiliou",
-          "position": "RB"
+          "name": "Hans van Breukelen",
+          "position": "GK"
         },
         {
-          "name": "Stelios Manolas",
+          "name": "Joop Hiele",
+          "position": "GK"
+        },
+        {
+          "name": "Danny Blind",
           "position": "CB"
         },
         {
-          "name": "Petros Michos",
+          "name": "Ronald Koeman",
           "position": "CB"
         },
         {
-          "name": "Konstantinos Mavridis",
-          "position": "LB"
+          "name": "Ronald Spelbos",
+          "position": "CB"
         },
         {
-          "name": "Andreas Bonovas",
-          "position": "DM"
+          "name": "Adri van Tiggelen",
+          "position": "CB"
         },
         {
-          "name": "Georgios Semertzidis",
+          "name": "Peter Boeve",
+          "position": "CB"
+        },
+        {
+          "name": "Sjaak Troost",
+          "position": "CB"
+        },
+        {
+          "name": "Sonny Silooy",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
           "position": "CM"
         },
         {
-          "name": "Theodoros Voutyritsas",
+          "name": "Frank Rijkaard",
           "position": "CM"
         },
         {
-          "name": "Georgios Skartados",
+          "name": "Wilbert Suvrijn",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Tsiantakis",
+          "name": "Ton Lokhoff",
+          "position": "CM"
+        },
+        {
+          "name": "Erwin Koeman",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Valke",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Gullit",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Tahamata",
           "position": "ST"
         },
         {
-          "name": "Sakis Anastasiadis",
+          "name": "Rob de Wit",
+          "position": "ST"
+        },
+        {
+          "name": "René van der Gijp",
+          "position": "ST"
+        },
+        {
+          "name": "Gerald Vanenburg",
+          "position": "ST"
+        },
+        {
+          "name": "John van 't Schip",
+          "position": "ST"
+        },
+        {
+          "name": "John Bosman",
+          "position": "ST"
+        },
+        {
+          "name": "Wim Kieft",
+          "position": "ST"
+        },
+        {
+          "name": "Marco van Basten",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1986/1987)",
       "teamLabel": "netherlands (1986-87)"
@@ -343,55 +771,139 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Sarganis",
+          "name": "Hans van Breukelen",
           "position": "GK"
         },
         {
-          "name": "Kyriakos Karataidis",
-          "position": "RB"
+          "name": "Joop Hiele",
+          "position": "GK"
         },
         {
-          "name": "Pagonis Vakalopoulos",
+          "name": "Stanley Menzo",
+          "position": "GK"
+        },
+        {
+          "name": "Ronald Koeman",
           "position": "CB"
         },
         {
-          "name": "Georgios Koutoulas",
+          "name": "Danny Blind",
           "position": "CB"
         },
         {
-          "name": "Nikolaos Kourmpanas",
-          "position": "LB"
+          "name": "Stan Valckx",
+          "position": "CB"
         },
         {
-          "name": "Spyros Marangos",
-          "position": "DM"
+          "name": "Frank de Boer",
+          "position": "CB"
         },
         {
-          "name": "Stavros Stamatis",
+          "name": "Graeme Rutjes",
+          "position": "CB"
+        },
+        {
+          "name": "Henk Fraser",
+          "position": "CB"
+        },
+        {
+          "name": "Adri van Tiggelen",
+          "position": "CB"
+        },
+        {
+          "name": "Edward Sturing",
+          "position": "CB"
+        },
+        {
+          "name": "Berry van Aerle",
+          "position": "CB"
+        },
+        {
+          "name": "Jerry de Jong",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
           "position": "CM"
         },
         {
-          "name": "Daniil Papadopoulos",
+          "name": "Frank Rijkaard",
           "position": "CM"
         },
         {
-          "name": "Georgios Tsifoutis",
+          "name": "Richard Witschge",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Tsiantakis",
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Laamers",
+          "position": "CM"
+        },
+        {
+          "name": "Erwin Koeman",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Peeper",
+          "position": "CM"
+        },
+        {
+          "name": "John van den Brom",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Gullit",
+          "position": "CM"
+        },
+        {
+          "name": "Gerald Vanenburg",
           "position": "ST"
         },
         {
-          "name": "Theodoros Zakkas",
+          "name": "John van 't Schip",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Roy",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "John Bosman",
+          "position": "ST"
+        },
+        {
+          "name": "Marco van Basten",
+          "position": "ST"
+        },
+        {
+          "name": "Wim Kieft",
+          "position": "ST"
+        },
+        {
+          "name": "René Eijkelkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Gillhaus",
+          "position": "ST"
+        },
+        {
+          "name": "John van Loen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1990/1991)",
       "teamLabel": "netherlands (1990-91)"
@@ -400,55 +912,143 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Antonis Minou",
+          "name": "Ed de Goey",
           "position": "GK"
         },
         {
-          "name": "Vasilios Ioannidis",
-          "position": "RB"
+          "name": "Edwin van der Sar",
+          "position": "GK"
         },
         {
-          "name": "Nikolaos Dabizas",
+          "name": "Theo Snelders",
+          "position": "GK"
+        },
+        {
+          "name": "Ronald Koeman",
           "position": "CB"
         },
         {
-          "name": "Michalis Vlachos",
+          "name": "Danny Blind",
           "position": "CB"
         },
         {
-          "name": "Konstantinos Pavlopoulos",
-          "position": "LB"
+          "name": "Frank de Boer",
+          "position": "CB"
         },
         {
-          "name": "Dimitrios Markos",
-          "position": "DM"
+          "name": "Stan Valckx",
+          "position": "CB"
         },
         {
-          "name": "Spyros Marangos",
+          "name": "John de Wolf",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Numan",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Ulrich van Gobbel",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
           "position": "CM"
         },
         {
-          "name": "Theodoros Zagorakis",
+          "name": "Peter Bosz",
           "position": "CM"
         },
         {
-          "name": "Georgios Toursounidis",
+          "name": "Frank Rijkaard",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Tsiantakis",
+          "name": "Wim Jonk",
+          "position": "CM"
+        },
+        {
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Erwin Koeman",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Gullit",
+          "position": "CM"
+        },
+        {
+          "name": "Regi Blinker",
           "position": "ST"
         },
         {
-          "name": "Dimitrios Saravakos",
+          "name": "Marc Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Peter van Vossen",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Roy",
+          "position": "ST"
+        },
+        {
+          "name": "Gaston Taument",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Youri Mulder",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Gillhaus",
+          "position": "ST"
+        },
+        {
+          "name": "John Bosman",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1994/1995)",
       "teamLabel": "netherlands (1994-95)"
@@ -457,55 +1057,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Michopoulos",
+          "name": "Edwin van der Sar",
           "position": "GK"
         },
         {
-          "name": "Nikolaos Kostenoglou",
-          "position": "RB"
+          "name": "Ed de Goey",
+          "position": "GK"
         },
         {
-          "name": "Georgios Anatolakis",
+          "name": "Ruud Hesp",
+          "position": "GK"
+        },
+        {
+          "name": "Danny Blind",
           "position": "CB"
         },
         {
-          "name": "Michalis Vlachos",
+          "name": "Stan Valckx",
           "position": "CB"
         },
         {
-          "name": "Kyriakos Karataidis",
-          "position": "LB"
+          "name": "Frank de Boer",
+          "position": "CB"
         },
         {
-          "name": "Theodoros Zagorakis",
-          "position": "DM"
+          "name": "Jaap Stam",
+          "position": "CB"
         },
         {
-          "name": "Andreas Niniadis",
+          "name": "Winston Bogarde",
+          "position": "CB"
+        },
+        {
+          "name": "Johan de Kock",
+          "position": "CB"
+        },
+        {
+          "name": "John Veldman",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Numan",
+          "position": "CB"
+        },
+        {
+          "name": "Ferdi Vierklau",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Wim Jonk",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Frantzeskos",
+          "name": "Jean-Paul van Gastel",
           "position": "CM"
         },
         {
-          "name": "Vasilios Tsiartas",
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Richard Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Cruijff",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Overmars",
           "position": "ST"
         },
         {
-          "name": "Georgios Donis",
+          "name": "Peter Hoekstra",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Gaston Taument",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
+          "position": "ST"
+        },
+        {
+          "name": "Roy Makaay",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Youri Mulder",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1996/1997)",
       "teamLabel": "netherlands (1996-97)"
@@ -514,55 +1194,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Ilias Atmatsidis",
+          "name": "Oscar Moens",
           "position": "GK"
         },
         {
-          "name": "Nikolaos Dabizas",
-          "position": "RB"
+          "name": "Edwin van der Sar",
+          "position": "GK"
         },
         {
-          "name": "Giannis Kalitzakis",
+          "name": "Ed de Goey",
+          "position": "GK"
+        },
+        {
+          "name": "Ruud Hesp",
+          "position": "GK"
+        },
+        {
+          "name": "Ernest Faber",
           "position": "CB"
         },
         {
-          "name": "Marinos Ouzounidis",
+          "name": "Jaap Stam",
           "position": "CB"
         },
         {
-          "name": "Kyriakos Karataidis",
-          "position": "LB"
+          "name": "Frank de Boer",
+          "position": "CB"
         },
         {
-          "name": "Dimitrios Markos",
-          "position": "DM"
+          "name": "Kees van Wonderen",
+          "position": "CB"
         },
         {
-          "name": "Ilias Poursanidis",
+          "name": "André Ooijer",
+          "position": "CB"
+        },
+        {
+          "name": "Winston Bogarde",
+          "position": "CB"
+        },
+        {
+          "name": "Marc van Hintum",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Numan",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Paul van Gastel",
           "position": "CM"
         },
         {
-          "name": "Theodoros Zagorakis",
+          "name": "Wim Jonk",
           "position": "CM"
         },
         {
-          "name": "Takis Gonias",
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Martijn Reuser",
+          "position": "CM"
+        },
+        {
+          "name": "Boudewijn Zenden",
           "position": "ST"
         },
         {
-          "name": "Stelios Giannakopoulos",
+          "name": "Marc Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Peter van Vossen",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Jeffrey Talan",
+          "position": "ST"
+        },
+        {
+          "name": "Dries Boussatta",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Youri Mulder",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Mols",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Floyd Hasselbaink",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (1998/1999)",
       "teamLabel": "netherlands (1998-99)"
@@ -571,55 +1343,159 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Theofanis Katergiannakis",
+          "name": "Edwin van der Sar",
           "position": "GK"
         },
         {
-          "name": "Paraskevas Antzas",
-          "position": "RB"
+          "name": "Ed de Goey",
+          "position": "GK"
         },
         {
-          "name": "Georgios Amanatidis",
+          "name": "Sander Westerveld",
+          "position": "GK"
+        },
+        {
+          "name": "Bert Konterman",
           "position": "CB"
         },
         {
-          "name": "Giannis Goumas",
+          "name": "André Ooijer",
           "position": "CB"
         },
         {
-          "name": "Leonidas Vokolos",
-          "position": "LB"
+          "name": "Patrick Paauwe",
+          "position": "CB"
         },
         {
-          "name": "Akis Zikos",
-          "position": "DM"
+          "name": "Jaap Stam",
+          "position": "CB"
         },
         {
-          "name": "Ieroklis Stoltidis",
+          "name": "Frank de Boer",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Hofland",
+          "position": "CB"
+        },
+        {
+          "name": "Winston Bogarde",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Numan",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Bouma",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Melchiot",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Ricksen",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Ilias Poursanidis",
+          "name": "Paul Bosvelt",
           "position": "CM"
         },
         {
-          "name": "Angelos Basinas",
+          "name": "Mark van Bommel",
           "position": "CM"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Richard Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Bruggink",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Lurling",
+          "position": "CM"
+        },
+        {
+          "name": "Boudewijn Zenden",
           "position": "ST"
         },
         {
-          "name": "Dimitrios Nalitzis",
+          "name": "Marc Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Peter van Vossen",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Jeffrey Talan",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Floyd Hasselbaink",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
+          "position": "ST"
+        },
+        {
+          "name": "Roy Makaay",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Vennegoor of Hesselink",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2000/2001)",
       "teamLabel": "netherlands (2000-01)"
@@ -628,55 +1504,131 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Dionysis Chiotis",
+          "name": "Edwin van der Sar",
           "position": "GK"
         },
         {
-          "name": "Giannis Goumas",
-          "position": "RB"
+          "name": "Ronald Waterreus",
+          "position": "GK"
         },
         {
-          "name": "Georgios Amanatidis",
+          "name": "Frank de Boer",
           "position": "CB"
         },
         {
-          "name": "Nikolaos Dabizas",
+          "name": "Jaap Stam",
           "position": "CB"
         },
         {
-          "name": "Traianos Dellas",
-          "position": "LB"
+          "name": "André Ooijer",
+          "position": "CB"
         },
         {
-          "name": "Christos Patsatzoglou",
-          "position": "DM"
+          "name": "Patrick Paauwe",
+          "position": "CB"
         },
         {
-          "name": "Angelos Basinas",
+          "name": "Kevin Hofland",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Bouma",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Numan",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Ricksen",
+          "position": "CB"
+        },
+        {
+          "name": "George Boateng",
           "position": "CM"
         },
         {
-          "name": "Theodoros Zagorakis",
+          "name": "Paul Bosvelt",
           "position": "CM"
         },
         {
-          "name": "Georgios Karagounis",
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Denny Landzaat",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Boudewijn Zenden",
           "position": "ST"
         },
         {
-          "name": "Stelios Giannakopoulos",
+          "name": "Marc Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Victor Sikora",
+          "position": "ST"
+        },
+        {
+          "name": "Andy van der Meyde",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Floyd Hasselbaink",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Roy Makaay",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2002/2003)",
       "teamLabel": "netherlands (2002-03)"
@@ -685,55 +1637,183 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Antonis Nikopolidis",
+          "name": "Edwin van der Sar",
           "position": "GK"
         },
         {
-          "name": "Nikolaos Dabizas",
-          "position": "RB"
+          "name": "Maarten Stekelenburg",
+          "position": "GK"
         },
         {
-          "name": "Traianos Dellas",
+          "name": "Ronald Waterreus",
+          "position": "GK"
+        },
+        {
+          "name": "Sander Westerveld",
+          "position": "GK"
+        },
+        {
+          "name": "Edwin Zoetebier",
+          "position": "GK"
+        },
+        {
+          "name": "Jaap Stam",
           "position": "CB"
         },
         {
-          "name": "Giannis Goumas",
+          "name": "Khalid Boulahrouz",
           "position": "CB"
         },
         {
-          "name": "Michalis Kapsis",
-          "position": "LB"
+          "name": "Joris Mathijsen",
+          "position": "CB"
         },
         {
-          "name": "Angelos Basinas",
-          "position": "DM"
+          "name": "John Heitinga",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Katsouranis",
+          "name": "Kevin Hofland",
+          "position": "CB"
+        },
+        {
+          "name": "André Ooijer",
+          "position": "CB"
+        },
+        {
+          "name": "Frank de Boer",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Bouma",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Kromkamp",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Melchiot",
+          "position": "CB"
+        },
+        {
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Theodoros Zagorakis",
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Pantelis Kafes",
+          "name": "Paul Bosvelt",
           "position": "CM"
         },
         {
-          "name": "Stelios Giannakopoulos",
+          "name": "Theo Lucius",
+          "position": "CM"
+        },
+        {
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Edgar Davids",
+          "position": "CM"
+        },
+        {
+          "name": "Denny Landzaat",
+          "position": "CM"
+        },
+        {
+          "name": "Barry van Galen",
+          "position": "CM"
+        },
+        {
+          "name": "Dave van den Bergh",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Boudewijn Zenden",
           "position": "ST"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Kevin Bobson",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Andy van der Meyde",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Romeo Castelen",
+          "position": "ST"
+        },
+        {
+          "name": "Romano Denneboom",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Roy Makaay",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre van Hooijdonk",
+          "position": "ST"
+        },
+        {
+          "name": "Collins John",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2004/2005)",
       "teamLabel": "netherlands (2004-05)"
@@ -742,55 +1822,159 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Antonis Nikopolidis",
+          "name": "Edwin van der Sar",
           "position": "GK"
         },
         {
-          "name": "Sotiris Kyrgiakos",
-          "position": "RB"
+          "name": "Henk Timmer",
+          "position": "GK"
         },
         {
-          "name": "Traianos Dellas",
+          "name": "Maarten Stekelenburg",
+          "position": "GK"
+        },
+        {
+          "name": "Khalid Boulahrouz",
           "position": "CB"
         },
         {
-          "name": "Giannis Goumas",
+          "name": "Joris Mathijsen",
           "position": "CB"
         },
         {
-          "name": "Michalis Kapsis",
-          "position": "LB"
+          "name": "John Heitinga",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Katsouranis",
-          "position": "DM"
+          "name": "Barry Opdam",
+          "position": "CB"
         },
         {
-          "name": "Angelos Basinas",
+          "name": "André Ooijer",
+          "position": "CB"
+        },
+        {
+          "name": "Ron Vlaar",
+          "position": "CB"
+        },
+        {
+          "name": "Kew Jaliens",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Tim de Cler",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Kromkamp",
+          "position": "CB"
+        },
+        {
+          "name": "George Boateng",
           "position": "CM"
         },
         {
-          "name": "Christos Patsatzoglou",
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "Phillip Cocu",
           "position": "CM"
         },
         {
-          "name": "Georgios Samaras",
+          "name": "Hedwiges Maduro",
+          "position": "CM"
+        },
+        {
+          "name": "David Mendes da Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Stijn Schaars",
+          "position": "CM"
+        },
+        {
+          "name": "Evander Sno",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Denny Landzaat",
+          "position": "CM"
+        },
+        {
+          "name": "Theo Janssen",
+          "position": "CM"
+        },
+        {
+          "name": "Demy de Zeeuw",
+          "position": "CM"
+        },
+        {
+          "name": "Urby Emanuelson",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Nicky Hofs",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Babel",
           "position": "ST"
         },
         {
-          "name": "Dimitrios Salpingidis",
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Martijn Meerdink",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Vennegoor of Hesselink",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2006/2007)",
       "teamLabel": "netherlands (2006-07)"
@@ -799,55 +1983,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Stefanos Kotsolis",
+          "name": "Maarten Stekelenburg",
           "position": "GK"
         },
         {
-          "name": "Sotiris Kyrgiakos",
-          "position": "RB"
+          "name": "Edwin van der Sar",
+          "position": "GK"
         },
         {
-          "name": "Traianos Dellas",
+          "name": "Piet Velthuizen",
+          "position": "GK"
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK"
+        },
+        {
+          "name": "Henk Timmer",
+          "position": "GK"
+        },
+        {
+          "name": "Sander Boschker",
+          "position": "GK"
+        },
+        {
+          "name": "Joris Mathijsen",
           "position": "CB"
         },
         {
-          "name": "Avraam Papadopoulos",
+          "name": "John Heitinga",
           "position": "CB"
         },
         {
-          "name": "Sokratis",
-          "position": "LB"
+          "name": "Dirk Marcellis",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Katsouranis",
-          "position": "DM"
+          "name": "Khalid Boulahrouz",
+          "position": "CB"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "André Ooijer",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Bouma",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Tim de Cler",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Melchiot",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Kromkamp",
+          "position": "CB"
+        },
+        {
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Christos Patsatzoglou",
+          "name": "David Mendes da Silva",
           "position": "CM"
         },
         {
-          "name": "Angelos Basinas",
+          "name": "Orlando Engelaar",
           "position": "CM"
         },
         {
-          "name": "Georgios Samaras",
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Urby Emanuelson",
+          "position": "CM"
+        },
+        {
+          "name": "Demy de Zeeuw",
+          "position": "CM"
+        },
+        {
+          "name": "Denny Landzaat",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Babel",
           "position": "ST"
         },
         {
-          "name": "Vasilios Koutsianikoulis",
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Vennegoor of Hesselink",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2008/2009)",
       "teamLabel": "netherlands (2008-09)"
@@ -856,55 +2132,183 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Michalis Sifakis",
+          "name": "Maarten Stekelenburg",
           "position": "GK"
         },
         {
-          "name": "Sokratis",
-          "position": "RB"
+          "name": "Michel Vorm",
+          "position": "GK"
         },
         {
-          "name": "Avraam Papadopoulos",
+          "name": "Piet Velthuizen",
+          "position": "GK"
+        },
+        {
+          "name": "Sander Boschker",
+          "position": "GK"
+        },
+        {
+          "name": "John Heitinga",
           "position": "CB"
         },
         {
-          "name": "Loukas Vyntra",
+          "name": "Joris Mathijsen",
           "position": "CB"
         },
         {
-          "name": "Sotiris Kyrgiakos",
-          "position": "LB"
+          "name": "Ron Vlaar",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Katsouranis",
-          "position": "DM"
+          "name": "Peter Wisgerhof",
+          "position": "CB"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "Dirk Marcellis",
+          "position": "CB"
+        },
+        {
+          "name": "Khalid Boulahrouz",
+          "position": "CB"
+        },
+        {
+          "name": "Jeffrey Bruma",
+          "position": "CB"
+        },
+        {
+          "name": "Glenn Loovens",
+          "position": "CB"
+        },
+        {
+          "name": "André Ooijer",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Pieters",
+          "position": "CB"
+        },
+        {
+          "name": "Edson Braafheid",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Gregory van der Wiel",
+          "position": "CB"
+        },
+        {
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Giannis Maniatis",
+          "name": "Hedwiges Maduro",
           "position": "CM"
         },
         {
-          "name": "Christos Patsatzoglou",
+          "name": "Wout Brama",
           "position": "CM"
         },
         {
-          "name": "Georgios Samaras",
+          "name": "Stijn Schaars",
+          "position": "CM"
+        },
+        {
+          "name": "Leroy Fer",
+          "position": "CM"
+        },
+        {
+          "name": "Vurnon Anita",
+          "position": "CM"
+        },
+        {
+          "name": "Orlando Engelaar",
+          "position": "CM"
+        },
+        {
+          "name": "Urby Emanuelson",
+          "position": "CM"
+        },
+        {
+          "name": "Theo Janssen",
+          "position": "CM"
+        },
+        {
+          "name": "Demy de Zeeuw",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Royston Drenthe",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Siem de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Eljero Elia",
           "position": "ST"
         },
         {
-          "name": "Dimitrios Salpingidis",
+          "name": "Ryan Babel",
+          "position": "ST"
+        },
+        {
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremain Lens",
+          "position": "ST"
+        },
+        {
+          "name": "Roy Beerens",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Ricky van Wolfswinkel",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2010/2011)",
       "teamLabel": "netherlands (2010-11)"
@@ -913,55 +2317,187 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Orestis Karnezis",
+          "name": "Tim Krul",
           "position": "GK"
         },
         {
-          "name": "Kyriakos Papadopoulos",
-          "position": "RB"
+          "name": "Michel Vorm",
+          "position": "GK"
         },
         {
-          "name": "Sokratis",
+          "name": "Kenneth Vermeer",
+          "position": "GK"
+        },
+        {
+          "name": "Maarten Stekelenburg",
+          "position": "GK"
+        },
+        {
+          "name": "Jeroen Zoet",
+          "position": "GK"
+        },
+        {
+          "name": "Douglas",
           "position": "CB"
         },
         {
-          "name": "Avraam Papadopoulos",
+          "name": "John Heitinga",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Siovas",
-          "position": "LB"
+          "name": "Ron Vlaar",
+          "position": "CB"
         },
         {
-          "name": "Giannis Maniatis",
-          "position": "DM"
+          "name": "Stefan de Vrij",
+          "position": "CB"
         },
         {
-          "name": "Panagiotis Tachtsidis",
+          "name": "Bruno Martins Indi",
+          "position": "CB"
+        },
+        {
+          "name": "Jetro Willems",
+          "position": "CB"
+        },
+        {
+          "name": "Nick Viergever",
+          "position": "CB"
+        },
+        {
+          "name": "Khalid Boulahrouz",
+          "position": "CB"
+        },
+        {
+          "name": "Joris Mathijsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jeffrey Bruma",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Pieters",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Bouma",
+          "position": "CB"
+        },
+        {
+          "name": "Gregory van der Wiel",
+          "position": "CB"
+        },
+        {
+          "name": "Daryl Janmaat",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo van Rhijn",
+          "position": "CB"
+        },
+        {
+          "name": "Stijn Schaars",
           "position": "CM"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "Leroy Fer",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Katsouranis",
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Georgios Samaras",
+          "name": "Jordy Clasie",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Strootman",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Maher",
+          "position": "CM"
+        },
+        {
+          "name": "Urby Emanuelson",
+          "position": "CM"
+        },
+        {
+          "name": "Marco van Ginkel",
+          "position": "CM"
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Rafael van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Ola John",
           "position": "ST"
         },
         {
-          "name": "Giannis Fetfatzidis",
+          "name": "Eljero Elia",
+          "position": "ST"
+        },
+        {
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremain Lens",
+          "position": "ST"
+        },
+        {
+          "name": "Luciano Narsingh",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Ruben Schaken",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
+          "position": "ST"
+        },
+        {
+          "name": "Bas Dost",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2012/2013)",
       "teamLabel": "netherlands (2012-13)"
@@ -970,55 +2506,179 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Orestis Karnezis",
+          "name": "Tim Krul",
           "position": "GK"
         },
         {
-          "name": "Sokratis",
-          "position": "RB"
+          "name": "Jasper Cillessen",
+          "position": "GK"
         },
         {
-          "name": "Konstantinos Manolas",
+          "name": "Kenneth Vermeer",
+          "position": "GK"
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK"
+        },
+        {
+          "name": "Jeroen Zoet",
+          "position": "GK"
+        },
+        {
+          "name": "Daley Blind",
           "position": "CB"
         },
         {
-          "name": "Kyriakos Papadopoulos",
+          "name": "Stefan de Vrij",
           "position": "CB"
         },
         {
-          "name": "Georgios Tzavellas",
-          "position": "LB"
+          "name": "Bruno Martins Indi",
+          "position": "CB"
         },
         {
-          "name": "Andreas Samaris",
-          "position": "DM"
+          "name": "Ron Vlaar",
+          "position": "CB"
         },
         {
-          "name": "Giannis Maniatis",
+          "name": "Jetro Willems",
+          "position": "CB"
+        },
+        {
+          "name": "Terence Kongolo",
+          "position": "CB"
+        },
+        {
+          "name": "Virgil van Dijk",
+          "position": "CB"
+        },
+        {
+          "name": "Jeffrey Bruma",
+          "position": "CB"
+        },
+        {
+          "name": "Karim Rekik",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Pieters",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick van Aanholt",
+          "position": "CB"
+        },
+        {
+          "name": "Gregory van der Wiel",
+          "position": "CB"
+        },
+        {
+          "name": "Daryl Janmaat",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo van Rhijn",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Verhaegh",
+          "position": "CB"
+        },
+        {
+          "name": "Nigel de Jong",
           "position": "CM"
         },
         {
-          "name": "Panagiotis Tachtsidis",
+          "name": "Leroy Fer",
           "position": "CM"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "Jordy Clasie",
           "position": "CM"
         },
         {
-          "name": "Georgios Samaras",
+          "name": "Stijn Schaars",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Strootman",
+          "position": "CM"
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan de Guzmán",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Klaassen",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Siem de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Paul Boëtius",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Quincy Promes",
           "position": "ST"
         },
         {
-          "name": "Dimitrios Kolovos",
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremain Lens",
+          "position": "ST"
+        },
+        {
+          "name": "Luciano Narsingh",
+          "position": "ST"
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST"
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2014/2015)",
       "teamLabel": "netherlands (2014-15)"
@@ -1027,55 +2687,203 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Orestis Karnezis",
+          "name": "Jasper Cillessen",
           "position": "GK"
         },
         {
-          "name": "Konstantinos Manolas",
-          "position": "RB"
+          "name": "Jeroen Zoet",
+          "position": "GK"
         },
         {
-          "name": "Sokratis",
+          "name": "Kenneth Vermeer",
+          "position": "GK"
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK"
+        },
+        {
+          "name": "Maarten Stekelenburg",
+          "position": "GK"
+        },
+        {
+          "name": "Virgil van Dijk",
           "position": "CB"
         },
         {
-          "name": "Kyriakos Papadopoulos",
+          "name": "Stefan de Vrij",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Siovas",
-          "position": "LB"
+          "name": "Daley Blind",
+          "position": "CB"
         },
         {
-          "name": "Andreas Samaris",
-          "position": "DM"
+          "name": "Bruno Martins Indi",
+          "position": "CB"
         },
         {
-          "name": "Panagiotis Tachtsidis",
+          "name": "Jeffrey Bruma",
+          "position": "CB"
+        },
+        {
+          "name": "Terence Kongolo",
+          "position": "CB"
+        },
+        {
+          "name": "Riechedly Bazoer",
+          "position": "CB"
+        },
+        {
+          "name": "Jetro Willems",
+          "position": "CB"
+        },
+        {
+          "name": "Ron Vlaar",
+          "position": "CB"
+        },
+        {
+          "name": "Timo Letschert",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick van Aanholt",
+          "position": "CB"
+        },
+        {
+          "name": "Marvin Zeegelaar",
+          "position": "CB"
+        },
+        {
+          "name": "Rick Karsdorp",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Daryl Janmaat",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Joshua Brenet",
+          "position": "CB"
+        },
+        {
+          "name": "Jordy Clasie",
           "position": "CM"
         },
         {
-          "name": "Manolis Siopis",
+          "name": "Marten de Roon",
           "position": "CM"
         },
         {
-          "name": "Giannis Maniatis",
+          "name": "Leroy Fer",
           "position": "CM"
         },
         {
-          "name": "Lazaros Christodoulopoulos",
+          "name": "Stijn Schaars",
+          "position": "CM"
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Strootman",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Klaassen",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Pröpper",
+          "position": "CM"
+        },
+        {
+          "name": "Tonny Vilhena",
+          "position": "CM"
+        },
+        {
+          "name": "Marco van Ginkel",
+          "position": "CM"
+        },
+        {
+          "name": "Jorrit Hendrix",
+          "position": "CM"
+        },
+        {
+          "name": "Jens Toornstra",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Siem de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Quincy Promes",
           "position": "ST"
         },
         {
-          "name": "Giannis Gianniotas",
+          "name": "Bart Ramselaar",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremain Lens",
+          "position": "ST"
+        },
+        {
+          "name": "Arjen Robben",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Berghuis",
+          "position": "ST"
+        },
+        {
+          "name": "Luciano Narsingh",
+          "position": "ST"
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST"
+        },
+        {
+          "name": "Bas Dost",
+          "position": "ST"
+        },
+        {
+          "name": "Vincent Janssen",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2016/2017)",
       "teamLabel": "netherlands (2016-17)"
@@ -1084,55 +2892,167 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Odysseas Vlachodimos",
+          "name": "Jasper Cillessen",
           "position": "GK"
         },
         {
-          "name": "Konstantinos Manolas",
-          "position": "RB"
+          "name": "Jeroen Zoet",
+          "position": "GK"
         },
         {
-          "name": "Sokratis",
+          "name": "Sergio Padt",
+          "position": "GK"
+        },
+        {
+          "name": "Marco Bizot",
+          "position": "GK"
+        },
+        {
+          "name": "Stefan de Vrij",
           "position": "CB"
         },
         {
-          "name": "Panagiotis Retsos",
+          "name": "Virgil van Dijk",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Siovas",
-          "position": "LB"
+          "name": "Daley Blind",
+          "position": "CB"
         },
         {
-          "name": "Andreas Samaris",
-          "position": "DM"
+          "name": "Nathan Aké",
+          "position": "CB"
         },
         {
-          "name": "Dimitrios Kourbelis",
+          "name": "Terence Kongolo",
+          "position": "CB"
+        },
+        {
+          "name": "Matthijs de Ligt",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick van Aanholt",
+          "position": "CB"
+        },
+        {
+          "name": "Daryl Janmaat",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Fosu-Mensah",
+          "position": "CB"
+        },
+        {
+          "name": "Hans Hateboer",
+          "position": "CB"
+        },
+        {
+          "name": "Denzel Dumfries",
+          "position": "CB"
+        },
+        {
+          "name": "Marten de Roon",
           "position": "CM"
         },
         {
-          "name": "Alexandros Tziolis",
+          "name": "Pablo Rosario",
           "position": "CM"
         },
         {
-          "name": "Panagiotis Tachtsidis",
+          "name": "Georginio Wijnaldum",
           "position": "CM"
         },
         {
-          "name": "Anastasios Donis",
+          "name": "Kevin Strootman",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Pröpper",
+          "position": "CM"
+        },
+        {
+          "name": "Tonny Vilhena",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Vormer",
+          "position": "CM"
+        },
+        {
+          "name": "Donny van de Beek",
+          "position": "CM"
+        },
+        {
+          "name": "Frenkie de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Justin Kluivert",
+          "position": "CM"
+        },
+        {
+          "name": "Guus Til",
+          "position": "CM"
+        },
+        {
+          "name": "Quincy Promes",
           "position": "ST"
         },
         {
-          "name": "Georgios Masouras",
+          "name": "Ryan Babel",
+          "position": "ST"
+        },
+        {
+          "name": "Eljero Elia",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Bergwijn",
+          "position": "ST"
+        },
+        {
+          "name": "Arnaut Danjuma",
+          "position": "ST"
+        },
+        {
+          "name": "Javairô Dilrosun",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Berghuis",
+          "position": "ST"
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST"
+        },
+        {
+          "name": "Bas Dost",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
+          "position": "ST"
+        },
+        {
+          "name": "Wout Weghorst",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2018/2019)",
       "teamLabel": "netherlands (2018-19)"
@@ -1141,55 +3061,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Odysseas Vlachodimos",
+          "name": "Jasper Cillessen",
           "position": "GK"
         },
         {
-          "name": "Pantelis Hatzidiakos",
-          "position": "RB"
+          "name": "Marco Bizot",
+          "position": "GK"
         },
         {
-          "name": "Giannis Michailidis",
+          "name": "Joël Drommel",
+          "position": "GK"
+        },
+        {
+          "name": "Tim Krul",
+          "position": "GK"
+        },
+        {
+          "name": "Virgil van Dijk",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Siovas",
+          "name": "Stefan de Vrij",
           "position": "CB"
         },
         {
-          "name": "Stratos Svarnas",
-          "position": "LB"
+          "name": "Nathan Aké",
+          "position": "CB"
         },
         {
-          "name": "Manolis Siopis",
-          "position": "DM"
+          "name": "Sven Botman",
+          "position": "CB"
         },
         {
-          "name": "Dimitrios Kourbelis",
+          "name": "Daley Blind",
+          "position": "CB"
+        },
+        {
+          "name": "Perr Schuurs",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Wijndal",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick van Aanholt",
+          "position": "CB"
+        },
+        {
+          "name": "Hans Hateboer",
+          "position": "CB"
+        },
+        {
+          "name": "Denzel Dumfries",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Gravenberch",
           "position": "CM"
         },
         {
-          "name": "Andreas Bouchalakis",
+          "name": "Marten de Roon",
           "position": "CM"
         },
         {
-          "name": "Zeca",
+          "name": "Leroy Fer",
           "position": "CM"
         },
         {
-          "name": "Christos Tzolis",
+          "name": "Frenkie de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM"
+        },
+        {
+          "name": "Donny van de Beek",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Klaassen",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Strootman",
+          "position": "CM"
+        },
+        {
+          "name": "Teun Koopmeiners",
+          "position": "CM"
+        },
+        {
+          "name": "Calvin Stengs",
+          "position": "CM"
+        },
+        {
+          "name": "Mohamed Ihattaren",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Bergwijn",
           "position": "ST"
         },
         {
-          "name": "Georgios Masouras",
+          "name": "Quincy Promes",
+          "position": "ST"
+        },
+        {
+          "name": "Ryan Babel",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Berghuis",
+          "position": "ST"
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST"
+        },
+        {
+          "name": "Donyell Malen",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2020/2021)",
       "teamLabel": "netherlands (2020-21)"
@@ -1198,60 +3210,192 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Odysseas Vlachodimos",
+          "name": "Justin Bijlow",
           "position": "GK"
         },
         {
-          "name": "Konstantinos Mavropanos",
-          "position": "RB"
+          "name": "Mark Flekken",
+          "position": "GK"
         },
         {
-          "name": "Pantelis Hatzidiakos",
+          "name": "Joël Drommel",
+          "position": "GK"
+        },
+        {
+          "name": "Jasper Cillessen",
+          "position": "GK"
+        },
+        {
+          "name": "Kjell Scherpen",
+          "position": "GK"
+        },
+        {
+          "name": "Tim Krul",
+          "position": "GK"
+        },
+        {
+          "name": "Remko Pasveer",
+          "position": "GK"
+        },
+        {
+          "name": "Andries Noppert",
+          "position": "GK"
+        },
+        {
+          "name": "Matthijs de Ligt",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Nikolaou",
+          "name": "Virgil van Dijk",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Goutas",
-          "position": "LB"
+          "name": "Stefan de Vrij",
+          "position": "CB"
         },
         {
-          "name": "Manolis Siopis",
-          "position": "DM"
+          "name": "Nathan Aké",
+          "position": "CB"
         },
         {
-          "name": "Giannis Papanikolaou",
+          "name": "Daley Blind",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Martins Indi",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Wijndal",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrell Malacia",
+          "position": "CB"
+        },
+        {
+          "name": "Jeremie Frimpong",
+          "position": "CB"
+        },
+        {
+          "name": "Jurriën Timber",
+          "position": "CB"
+        },
+        {
+          "name": "Hans Hateboer",
+          "position": "CB"
+        },
+        {
+          "name": "Denzel Dumfries",
+          "position": "CB"
+        },
+        {
+          "name": "Devyne Rensch",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Teze",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Gravenberch",
           "position": "CM"
         },
         {
-          "name": "Dimitrios Kourbelis",
+          "name": "Marten de Roon",
           "position": "CM"
         },
         {
-          "name": "Andreas Bouchalakis",
+          "name": "Jerdy Schouten",
           "position": "CM"
         },
         {
-          "name": "Georgios Masouras",
+          "name": "Jordy Clasie",
+          "position": "CM"
+        },
+        {
+          "name": "Frenkie de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM"
+        },
+        {
+          "name": "Davy Klaassen",
+          "position": "CM"
+        },
+        {
+          "name": "Kenneth Taylor",
+          "position": "CM"
+        },
+        {
+          "name": "Teun Koopmeiners",
+          "position": "CM"
+        },
+        {
+          "name": "Guus Til",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi Simons",
+          "position": "CM"
+        },
+        {
+          "name": "Arnaut Danjuma",
           "position": "ST"
         },
         {
-          "name": "Christos Tzolis",
+          "name": "Noa Lang",
+          "position": "ST"
+        },
+        {
+          "name": "Cody Gakpo",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Bergwijn",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Berghuis",
+          "position": "ST"
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST"
+        },
+        {
+          "name": "Donyell Malen",
+          "position": "ST"
+        },
+        {
+          "name": "Wout Weghorst",
+          "position": "ST"
+        },
+        {
+          "name": "Brian Brobbey",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
+          "position": "ST"
+        },
+        {
+          "name": "Vincent Janssen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — netherlands (2022/2023)",
       "teamLabel": "netherlands (2022-23)"
     }
   },
-  "id": 3378,
+  "id": 3379,
   "name": "netherlands"
 }

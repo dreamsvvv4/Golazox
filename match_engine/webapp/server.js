@@ -7,7 +7,7 @@
 
 const express = require('express');
 const path    = require('path');
-const { simulateMatch } = require('./engine');
+const { simulateMatch, buildLineupFromCache } = require('./engine');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 
@@ -45,6 +45,10 @@ function _rateLimit(max, windowMs) {
     slot.n++;
     _rlBuckets.set(key, slot);
     if (slot.n > max) return res.status(429).json({ error: 'Too many requests. Please wait.' });
+    // Prune expired buckets to prevent unbounded memory growth
+    if (_rlBuckets.size > 500) {
+      for (const [k, v] of _rlBuckets) { if (now > v.reset) _rlBuckets.delete(k); }
+    }
     next();
   };
 }
@@ -82,7 +86,20 @@ app.get('/lookup', async (req, res) => {
         fetchTeamBadge(team),
         new Promise(r => setTimeout(() => r(null), 3000)),
       ]).catch(() => null);
-    res.json({ ...result, badgeUrl });
+
+    // Apply formation template so the frontend always receives a proper 11-man
+    // lineup instead of the raw ~25-player squad stored in cache.
+    let displayResult = result;
+    if (result.found && result.players && result.players.length > 0) {
+      const sanitiseFormation = (s) => {
+        const f = String(s || '').replace(/[^0-9\-]/g, '').trim();
+        return _VALID_FORMATIONS && _VALID_FORMATIONS.has(f) ? f : s;
+      };
+      const formationOverride = String(req.query.formation || '').replace(/[^0-9\-]/g, '').trim();
+      const lineup = buildLineupFromCache(result, formationOverride || '');
+      displayResult = { ...result, ...lineup };
+    }
+    res.json({ ...displayResult, badgeUrl });
   } catch (err) {
     console.error('[/lookup error]', err);
     res.status(500).json({ found: false, error: 'Lookup failed.' });

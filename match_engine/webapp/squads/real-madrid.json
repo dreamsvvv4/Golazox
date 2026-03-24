@@ -1,62 +1,343 @@
 {
   "slug": "real-madrid",
   "seasons": {
-    "2000": {
+    "2020": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Bodo Illgner",
+          "name": "Courtois",
           "position": "GK"
         },
         {
-          "name": "Fernando Hierro",
+          "name": "Lucas Vázquez",
           "position": "RB"
         },
         {
-          "name": "Félix Robles",
-          "position": "CB"
-        },
-        {
-          "name": "Manolo Sanchís",
-          "position": "CB"
-        },
-        {
-          "name": "Iván Helguera",
+          "name": "Mendy",
           "position": "LB"
         },
         {
-          "name": "Iván Campo",
-          "position": "DM"
+          "name": "Varane",
+          "position": "CB"
         },
         {
-          "name": "Albert Celades",
+          "name": "Nacho",
+          "position": "CB"
+        },
+        {
+          "name": "Modrić",
           "position": "CM"
         },
         {
-          "name": "Claude Makélélé",
+          "name": "Casemiro",
           "position": "CM"
         },
         {
-          "name": "Guti",
+          "name": "Kroos",
           "position": "CM"
         },
         {
-          "name": "Sávio",
+          "name": "Benzema",
           "position": "ST"
         },
         {
-          "name": "Luís Figo",
+          "name": "Vinícius",
           "position": "ST"
+        },
+        {
+          "name": "Asensio",
+          "position": "ST"
+        },
+        {
+          "name": "Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST"
+        },
+        {
+          "name": "Marcelo",
+          "position": "LB"
+        },
+        {
+          "name": "Altube",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Militão",
+          "position": "CB"
+        },
+        {
+          "name": "Odriozola",
+          "position": "RB"
+        },
+        {
+          "name": "Carvajal",
+          "position": "RB"
+        },
+        {
+          "name": "Mariano",
+          "position": "ST"
+        },
+        {
+          "name": "Hazard",
+          "position": "ST"
+        },
+        {
+          "name": "Ødegaard",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel Gutiérrez",
+          "position": "LB"
+        },
+        {
+          "name": "Arribas",
+          "position": "ST"
+        },
+        {
+          "name": "Blanco",
+          "position": "CM"
+        },
+        {
+          "name": "Jović",
+          "position": "ST"
+        },
+        {
+          "name": "Marvin Park",
+          "position": "ST"
+        },
+        {
+          "name": "Chust",
+          "position": "CB"
+        },
+        {
+          "name": "Duro",
+          "position": "ST"
+        },
+        {
+          "name": "Mayoral",
+          "position": "ST"
+        },
+        {
+          "name": "Santos",
+          "position": "RB"
+        },
+        {
+          "name": "Aranda",
+          "position": "ST"
+        },
+        {
+          "name": "Luis López",
+          "position": "GK"
+        },
+        {
+          "name": "Pablo Ramón",
+          "position": "CB"
+        },
+        {
+          "name": "Cañizares",
+          "position": "GK"
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
       },
-      "source": "Transfermarkt — Real Madrid (2000/2001)",
-      "teamLabel": "Real Madrid (2000-01)"
+      "source": "BDFutbol — Real Madrid 2020-21 Primera División",
+      "teamLabel": "Real Madrid 2020-21 Primera División"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Courtois",
+          "position": "GK"
+        },
+        {
+          "name": "Huijsen",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Carreras",
+          "position": "LB"
+        },
+        {
+          "name": "Asencio",
+          "position": "CB"
+        },
+        {
+          "name": "Militão",
+          "position": "CB"
+        },
+        {
+          "name": "Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Tchouaméni",
+          "position": "CM"
+        },
+        {
+          "name": "Güler",
+          "position": "CM"
+        },
+        {
+          "name": "Bellingham",
+          "position": "CM"
+        },
+        {
+          "name": "Vinícius",
+          "position": "ST"
+        },
+        {
+          "name": "Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Gonzalo",
+          "position": "ST"
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST"
+        },
+        {
+          "name": "Mastantuono",
+          "position": "ST"
+        },
+        {
+          "name": "Mestre",
+          "position": "GK"
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST"
+        },
+        {
+          "name": "Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander-Arnold",
+          "position": "RB"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Carvajal",
+          "position": "RB"
+        },
+        {
+          "name": "Fran García",
+          "position": "LB"
+        },
+        {
+          "name": "Alaba",
+          "position": "CB"
+        },
+        {
+          "name": "Pitarch",
+          "position": "CM"
+        },
+        {
+          "name": "Mendy",
+          "position": "LB"
+        },
+        {
+          "name": "Jiménez",
+          "position": "RB"
+        },
+        {
+          "name": "Endrick",
+          "position": "ST"
+        },
+        {
+          "name": "Cestero",
+          "position": "CM"
+        },
+        {
+          "name": "Palacios",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Ángel",
+          "position": "CM"
+        },
+        {
+          "name": "Valdepeñas",
+          "position": "CB"
+        },
+        {
+          "name": "Aguado",
+          "position": "LB"
+        },
+        {
+          "name": "Yáñez",
+          "position": "ST"
+        },
+        {
+          "name": "Fran González",
+          "position": "GK"
+        },
+        {
+          "name": "Joan",
+          "position": "CB"
+        },
+        {
+          "name": "Leiva",
+          "position": "ST"
+        },
+        {
+          "name": "Fati",
+          "position": "CB"
+        },
+        {
+          "name": "Mesonero",
+          "position": "CM"
+        },
+        {
+          "name": "Fortuny",
+          "position": "ST"
+        },
+        {
+          "name": "Navarro",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2025-26 Primera División (≈2026)",
+      "teamLabel": "Real Madrid 2025-26 Primera División"
     }
   },
   "id": 418,

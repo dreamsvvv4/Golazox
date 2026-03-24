@@ -108,7 +108,8 @@ function buildLineupFromCache(cached, formationOverride) {
     ST:  ['ST','LW','RW','AM'],
   };
 
-  // Build a mutable pool of available players
+  // Build a mutable pool of available players (scraper order is meaningful —
+  // Transfermarkt/BDFutbol list main squad first within each position group)
   const pool = cached.players.map(p => ({ ...p, used: false }));
 
   const pickPlayerFor = (wantedPos) => {
@@ -454,6 +455,9 @@ function pickCards(players, rand) {
 // ─────────────────────────────────────────────────────────────
 // 6b. IN-MATCH PENALTY EVENTS (not shootout)
 // ─────────────────────────────────────────────────────────────
+// Only missed penalties are generated as standalone events.
+// Scored penalties are already reflected in scorersA/B via pickScorers,
+// so showing a second ⚽ here would mismatch the final score.
 function pickMatchPenalties(lineupA, lineupB, seed) {
   const rand = mulberry32(seed + 19);
   const nPen = poissonSample(0.42, rand);  // ~1 penalty every 2.5 games total
@@ -463,11 +467,13 @@ function pickMatchPenalties(lineupA, lineupB, seed) {
     const lineup = side === 'A' ? lineupA : lineupB;
     const best   = lineup.players.filter(p => ['ST','AM','RW','LW','CM'].includes(p.position));
     const taker  = best.length ? best[Math.floor(rand() * best.length)] : lineup.players[Math.floor(rand() * lineup.players.length)];
+    // Always scored=false: penalty misses are the only events worth showing
+    // independently. Goals from penalty are already in scorersA/B.
     result.push({
       side,
       minute: 5 + Math.floor(rand() * 85),
       taker:  taker.name,
-      scored: rand() < 0.77,
+      scored: false,
     });
   }
   return result.sort((a, b) => a.minute - b.minute);
@@ -691,4 +697,4 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
   };
 }
 
-module.exports = { simulateMatch };
+module.exports = { simulateMatch, buildLineupFromCache };

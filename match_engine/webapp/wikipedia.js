@@ -129,6 +129,7 @@ function extractPlayersFromHtml(html, articleTitle) {
           const txt = $(a).text().trim();
           if (!txt || txt.length < 2) return true;
           if (/^\d/.test(txt)) return true;           // year/number links
+          if (/^[A-Z]{2,3}$/.test(txt)) return true;  // nationality codes (POR, ESP, BRA…)
           // Skip club names (usually longer compound names with FC, United, etc.)
           if (/\bF\.?C\.?\b|\bUnited\b|\bCity\b|\bAthletic\b|\bSporting\b|\bBorussia\b|\bDynamo\b/i.test(txt) && txt.split(' ').length >= 2) return true;
           nameCell = txt;
@@ -261,8 +262,14 @@ async function lookupWikipedia(teamName, era) {
   if (year) {
     const yr     = parseInt(year);
     const season = `${yr}-${String(yr + 1).slice(-2)}`; // e.g. 2000-01
+    const prevSeason = `${yr - 1}-${String(yr).slice(-2)}`; // e.g. 1999-00
+    // Year-first format is how Wikipedia titles most club season articles
+    queries.push(`${prevSeason} ${teamName} season`); // "2025-26 FC Barcelona season"
+    queries.push(`${season} ${teamName} season`);     // "2026-27 FC Barcelona season"
     queries.push(`${teamName} ${season} season`);
     queries.push(`${teamName} ${yr}-${yr + 1} season`);
+    queries.push(`${teamName} ${prevSeason} season`);
+    queries.push(`${teamName} ${yr - 1}-${yr} season`);
     queries.push(`${teamName} ${era}`);
     queries.push(`${teamName} ${yr}`);
   }
@@ -282,19 +289,29 @@ async function lookupWikipedia(teamName, era) {
       if (!titles || titles.length === 0) continue;
 
       // 2. Pick best title (prefer national team / World Cup / season article, then club article)
+      // Only include women's-team articles if the user explicitly asked for them
+      const wantsWomen = /women|femeni|femenin|ladies|mujer/i.test(teamName);
+      const isWomenTitle = (t) => !wantsWomen && /(femen[ií][oa]?n?|women'?s?|ladies|f[eé]minin)/i.test(t);
+
       const nationalTitle = isLikelyNational ? titles.find(t =>
+        !isWomenTitle(t) &&
         /national football team|world cup|copa am[eé]rica|uefa euro|at the \d{4}/i.test(t) &&
         new RegExp(teamName.split(' ')[0], 'i').test(t)
       ) : null;
       const seasonTitle = titles.find(t =>
+        !isWomenTitle(t) &&
         /season|temporada/i.test(t) &&
+        new RegExp(teamName.split(' ').slice(0, 2).join('.{0,3}'), 'i').test(t) &&
         (year ? t.includes(year) || t.includes(`${parseInt(year)-1}`) : true)
       );
       const clubTitle = titles.find(t =>
+        !isWomenTitle(t) &&
         new RegExp(teamName.split(' ')[0], 'i').test(t) &&
         !/(disambiguation|football association)/i.test(t)
       );
-      const chosenTitle = nationalTitle || seasonTitle || clubTitle || titles[0];
+      const chosenTitle = nationalTitle || seasonTitle || clubTitle
+        || titles.find(t => !isWomenTitle(t))
+        || titles[0];
 
       // 3. Fetch article HTML
       const parseData = await wpFetch({

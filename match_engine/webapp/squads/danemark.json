@@ -1,59 +1,763 @@
 {
   "slug": "danemark",
   "seasons": {
-    "1982": {
+    "1966": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Piet Schrijvers",
+          "name": "Leif Nielsen",
           "position": "GK"
         },
         {
-          "name": "Ronald Koeman",
-          "position": "RB"
-        },
-        {
-          "name": "Michel van de Korput",
+          "name": "Leif Hartwig",
           "position": "CB"
         },
         {
-          "name": "John Metgod",
+          "name": "Henning Boel",
           "position": "CB"
         },
         {
-          "name": "Peter van de Ven",
-          "position": "LB"
+          "name": "Henning Munk Jensen",
+          "position": "CB"
         },
         {
-          "name": "Jan Wouters",
-          "position": "DM"
+          "name": "Birger Larsen",
+          "position": "CB"
         },
         {
-          "name": "Frank Rijkaard",
+          "name": "Jens Jörgen Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "John Worbye",
+          "position": "CB"
+        },
+        {
+          "name": "Johnny Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Niels Möller",
           "position": "CM"
         },
         {
-          "name": "Jan Peters",
+          "name": "Niels-Erik Andersen",
           "position": "CM"
         },
         {
-          "name": "Willy van de Kerkhof",
+          "name": "Ove Sörensen",
           "position": "CM"
         },
         {
-          "name": "Simon Tahamata",
+          "name": "John Petersen",
+          "position": "CM"
+        },
+        {
+          "name": "Egon Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Ulrik Le Fevre",
           "position": "ST"
         },
         {
-          "name": "Pierre Vermeulen",
+          "name": "Jens Hansen",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Söndergaard",
+          "position": "ST"
+        },
+        {
+          "name": "Bent Schmidt Hansen",
+          "position": "ST"
+        },
+        {
+          "name": "Kaj Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Jörgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Poul Bilde",
+          "position": "ST"
+        },
+        {
+          "name": "Henning Enoksen",
+          "position": "ST"
+        },
+        {
+          "name": "Kjeld Thorst",
+          "position": "ST"
+        },
+        {
+          "name": "John Steen Olsen",
+          "position": "ST"
+        },
+        {
+          "name": "Keld Bak",
+          "position": "ST"
+        },
+        {
+          "name": "Finn Wiberg",
+          "position": "ST"
+        },
+        {
+          "name": "Leif Sørensen",
+          "position": "ST"
+        },
+        {
+          "name": "René Møller",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — denmark (1966/1967)",
+      "teamLabel": "denmark (1966-67)"
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Heinz Hildebrandt",
+          "position": "GK"
+        },
+        {
+          "name": "Kaj Paulsen",
+          "position": "GK"
+        },
+        {
+          "name": "Per Röntved",
+          "position": "CB"
+        },
+        {
+          "name": "Jörgen Christensen",
+          "position": "CB"
+        },
+        {
+          "name": "Morten Olsen",
+          "position": "CB"
+        },
+        {
+          "name": "Svend Andresen",
+          "position": "CB"
+        },
+        {
+          "name": "Torben Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Sandvad",
+          "position": "CB"
+        },
+        {
+          "name": "Arne Toft",
+          "position": "CB"
+        },
+        {
+          "name": "Flemming Pedersen",
+          "position": "CB"
+        },
+        {
+          "name": "Poul Frederiksen",
+          "position": "CB"
+        },
+        {
+          "name": "Jörn Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Henning Munk Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Jörgen Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Larsen",
+          "position": "CB"
+        },
+        {
+          "name": "Birger Pedersen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Andersen",
+          "position": "CM"
+        },
+        {
+          "name": "Niels Möller",
+          "position": "CM"
+        },
+        {
+          "name": "Kurt Praest",
+          "position": "CM"
+        },
+        {
+          "name": "Bent Outzen",
+          "position": "CM"
+        },
+        {
+          "name": "Per Friis",
+          "position": "CM"
+        },
+        {
+          "name": "Benny Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Erik Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Kristen Nygaard",
+          "position": "CM"
+        },
+        {
+          "name": "Keld Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Bernburg",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Flindt-Bjerg",
+          "position": "ST"
+        },
+        {
+          "name": "Poul-Erik Thygesen",
+          "position": "ST"
+        },
+        {
+          "name": "Bent Jensen",
+          "position": "ST"
+        },
+        {
+          "name": "Johnny Petersen",
+          "position": "ST"
+        },
+        {
+          "name": "Finn Wiberg",
+          "position": "ST"
+        },
+        {
+          "name": "Mogens Haastrup",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Forsing",
+          "position": "ST"
+        },
+        {
+          "name": "Jørgen Markussen",
+          "position": "ST"
+        },
+        {
+          "name": "Flemming Kjærsgaard",
+          "position": "ST"
+        },
+        {
+          "name": "Per Madsen",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — denmark (1970/1971)",
+      "teamLabel": "denmark (1970-71)"
+    },
+    "1974": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Birger Jensen",
+          "position": "GK"
+        },
+        {
+          "name": "Benno Larsen",
+          "position": "GK"
+        },
+        {
+          "name": "Per Poulsen",
+          "position": "GK"
+        },
+        {
+          "name": "Anders Sörensen",
+          "position": "CB"
+        },
+        {
+          "name": "Morten Olsen",
+          "position": "CB"
+        },
+        {
+          "name": "Svend Andresen",
+          "position": "CB"
+        },
+        {
+          "name": "Arne Toft",
+          "position": "CB"
+        },
+        {
+          "name": "Flemming Mortensen",
+          "position": "CB"
+        },
+        {
+          "name": "Steen Danielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Helge Vonsyld",
+          "position": "CB"
+        },
+        {
+          "name": "Leif Raaby",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Pettersson",
+          "position": "CB"
+        },
+        {
+          "name": "Henning Munk Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan-Hoiland Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jörgen Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Flemming Ahlberg",
+          "position": "CB"
+        },
+        {
+          "name": "Kjeld Seneca",
+          "position": "CM"
+        },
+        {
+          "name": "Sten Ziegler",
+          "position": "CM"
+        },
+        {
+          "name": "Knud Nørregaard",
+          "position": "CM"
+        },
+        {
+          "name": "Niels Sörensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Hans Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Sören Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Benny Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Lars Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Flemming Lund",
+          "position": "CM"
+        },
+        {
+          "name": "Kristen Nygaard",
+          "position": "CM"
+        },
+        {
+          "name": "Heino Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Ulrik Le Fevre",
+          "position": "ST"
+        },
+        {
+          "name": "Bjarne Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Jörgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Simonsen",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Flindt-Bjerg",
+          "position": "ST"
+        },
+        {
+          "name": "Henning Jensen",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Aabech",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Skouboe",
+          "position": "ST"
+        },
+        {
+          "name": "Niels-Christian Holmström",
+          "position": "ST"
+        },
+        {
+          "name": "Karl Aage Skouborg",
+          "position": "ST"
+        },
+        {
+          "name": "Erik Sörensen",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — denmark (1974/1975)",
+      "teamLabel": "denmark (1974-75)"
+    },
+    "1978": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Birger Jensen",
+          "position": "GK"
+        },
+        {
+          "name": "Ole Kjaer",
+          "position": "GK"
+        },
+        {
+          "name": "Per Poulsen",
+          "position": "GK"
+        },
+        {
+          "name": "Per Röntved",
+          "position": "CB"
+        },
+        {
+          "name": "Morten Olsen",
+          "position": "CB"
+        },
+        {
+          "name": "John Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Ronald Stelmer",
+          "position": "CB"
+        },
+        {
+          "name": "Allan Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Henning Munk Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Ole Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan-Hoiland Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Johnny Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Flemming Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Flemming Ahlberg",
+          "position": "CB"
+        },
+        {
+          "name": "Niels Tune-Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Jens Jörn Bertelsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Sörensen",
+          "position": "CM"
+        },
+        {
+          "name": "Sören Lerby",
+          "position": "CM"
+        },
+        {
+          "name": "Benny Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Lars Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Flemming Lund",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Sørensen",
+          "position": "CM"
+        },
+        {
+          "name": "Allan Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Carsten Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Arnesen",
+          "position": "CM"
+        },
+        {
+          "name": "Kristen Nygaard",
+          "position": "CM"
+        },
+        {
+          "name": "Heino Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Jörgen Kristensen",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Agerbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Simonsen",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Flindt-Bjerg",
+          "position": "ST"
+        },
+        {
+          "name": "Henning Jensen",
+          "position": "ST"
+        },
+        {
+          "name": "Preben Elkjaer Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Lundkvist",
+          "position": "ST"
+        },
+        {
+          "name": "Gert Jörgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Torsten-Frank Andersen",
+          "position": "ST"
+        },
+        {
+          "name": "Kurt Hansen",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Skouboe",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — denmark (1978/1979)",
+      "teamLabel": "denmark (1978-79)"
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ole Qvist",
+          "position": "GK"
+        },
+        {
+          "name": "Troels Rasmussen",
+          "position": "GK"
+        },
+        {
+          "name": "Ole Kjaer",
+          "position": "GK"
+        },
+        {
+          "name": "Per Röntved",
+          "position": "CB"
+        },
+        {
+          "name": "Morten Olsen",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Eigenbrod",
+          "position": "CB"
+        },
+        {
+          "name": "Steen Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Ole Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Ivan Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Ole Madsen",
+          "position": "CB"
+        },
+        {
+          "name": "John Sivebaek",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Busk",
+          "position": "CB"
+        },
+        {
+          "name": "Kim Ziegler",
+          "position": "CM"
+        },
+        {
+          "name": "Jens Jörn Bertelsen",
+          "position": "CM"
+        },
+        {
+          "name": "John Helt",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Birkedal",
+          "position": "CM"
+        },
+        {
+          "name": "Henrik Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Mølby",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Donnerup",
+          "position": "CM"
+        },
+        {
+          "name": "Sören Lerby",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Allan Hansen",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Arnesen",
+          "position": "CM"
+        },
+        {
+          "name": "John Lauridsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Olsen",
+          "position": "ST"
+        },
+        {
+          "name": "Klaus Berggreen",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Simonsen",
+          "position": "ST"
+        },
+        {
+          "name": "Sören Skov",
+          "position": "ST"
+        },
+        {
+          "name": "John Eriksen",
+          "position": "ST"
+        },
+        {
+          "name": "Preben Elkjaer Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Flemming Christensen",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Lundkvist",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Bastrup",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1982/1983)",
       "teamLabel": "denmark (1982-83)"
@@ -62,55 +766,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jan van Grinsven",
+          "name": "Lars Høgh",
           "position": "GK"
         },
         {
-          "name": "Danny Blind",
-          "position": "RB"
+          "name": "Ole Qvist",
+          "position": "GK"
         },
         {
-          "name": "Ronald Koeman",
+          "name": "Troels Rasmussen",
+          "position": "GK"
+        },
+        {
+          "name": "Morten Olsen",
           "position": "CB"
         },
         {
-          "name": "Ronald Spelbos",
+          "name": "Lars Olsen",
           "position": "CB"
         },
         {
-          "name": "Adri van Tiggelen",
-          "position": "LB"
+          "name": "Kent Nielsen",
+          "position": "CB"
         },
         {
-          "name": "Jan Wouters",
-          "position": "DM"
+          "name": "Ivan Nielsen",
+          "position": "CB"
         },
         {
-          "name": "Frank Rijkaard",
+          "name": "Henrik Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "John Sivebaek",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Busk",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Jörn Bertelsen",
           "position": "CM"
         },
         {
-          "name": "Wilbert Suvrijn",
+          "name": "Pierre Larsen",
           "position": "CM"
         },
         {
-          "name": "Ton Lokhoff",
+          "name": "John Jensen",
           "position": "CM"
         },
         {
-          "name": "Simon Tahamata",
+          "name": "Sören Lerby",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Bartram",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frimann",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Mølby",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Donnerup",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Arnesen",
+          "position": "CM"
+        },
+        {
+          "name": "John Lauridsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Olsen",
           "position": "ST"
         },
         {
-          "name": "Rob de Wit",
+          "name": "Klaus Berggreen",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Simonsen",
+          "position": "ST"
+        },
+        {
+          "name": "John Eriksen",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Lunde",
+          "position": "ST"
+        },
+        {
+          "name": "Preben Elkjaer Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Steen Thychosen",
+          "position": "ST"
+        },
+        {
+          "name": "Flemming Christensen",
+          "position": "ST"
+        },
+        {
+          "name": "Claus Nielsen",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Manniche",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1986/1987)",
       "teamLabel": "denmark (1986-87)"
@@ -119,55 +903,163 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Hans van Breukelen",
+          "name": "Peter Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Ronald Koeman",
-          "position": "RB"
+          "name": "Troels Rasmussen",
+          "position": "GK"
         },
         {
-          "name": "Danny Blind",
+          "name": "Lars Olsen",
           "position": "CB"
         },
         {
-          "name": "Stan Valckx",
+          "name": "Jakob Friis-Hansen",
           "position": "CB"
         },
         {
-          "name": "Frank de Boer",
-          "position": "LB"
+          "name": "Marc Rieper",
+          "position": "CB"
         },
         {
-          "name": "Jan Wouters",
-          "position": "DM"
+          "name": "Kent Nielsen",
+          "position": "CB"
         },
         {
-          "name": "Frank Rijkaard",
+          "name": "Johnny Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "John Larsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Heintze",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Risom",
+          "position": "CB"
+        },
+        {
+          "name": "Morten Bruun",
+          "position": "CB"
+        },
+        {
+          "name": "John Sivebaek",
+          "position": "CB"
+        },
+        {
+          "name": "John Helt",
           "position": "CM"
         },
         {
-          "name": "Richard Witschge",
+          "name": "John Jensen",
           "position": "CM"
         },
         {
-          "name": "Aron Winter",
+          "name": "Johnny Mølby",
           "position": "CM"
         },
         {
-          "name": "Gerald Vanenburg",
+          "name": "Kim Vilfort",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Bartram",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Mølby",
+          "position": "CM"
+        },
+        {
+          "name": "Jörgen Juul Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Keld Bordinggaard",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Erik Rasmussen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Skaarup",
+          "position": "CM"
+        },
+        {
+          "name": "Henrik Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Olsen",
           "position": "ST"
         },
         {
-          "name": "John van 't Schip",
+          "name": "Brian Laudrup",
+          "position": "ST"
+        },
+        {
+          "name": "Bent Christensen",
+          "position": "ST"
+        },
+        {
+          "name": "Flemming Povlsen",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Elstrup",
+          "position": "ST"
+        },
+        {
+          "name": "Miklos Molnar",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Svinggaard",
+          "position": "ST"
+        },
+        {
+          "name": "Brian Rasmussen",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Lyng",
+          "position": "ST"
+        },
+        {
+          "name": "Claus Nielsen",
+          "position": "ST"
+        },
+        {
+          "name": "Lars Jakobsen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1990/1991)",
       "teamLabel": "denmark (1990-91)"
@@ -176,55 +1068,123 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Ed de Goey",
+          "name": "Lars Høgh",
           "position": "GK"
         },
         {
-          "name": "Ronald Koeman",
-          "position": "RB"
+          "name": "Peter Schmeichel",
+          "position": "GK"
         },
         {
-          "name": "Danny Blind",
+          "name": "Mogens Krogh",
+          "position": "GK"
+        },
+        {
+          "name": "Lars Olsen",
           "position": "CB"
         },
         {
-          "name": "Frank de Boer",
+          "name": "Jakob Friis-Hansen",
           "position": "CB"
         },
         {
-          "name": "Stan Valckx",
-          "position": "LB"
+          "name": "Marc Rieper",
+          "position": "CB"
         },
         {
-          "name": "Jan Wouters",
-          "position": "DM"
+          "name": "Jes Høgh",
+          "position": "CB"
         },
         {
-          "name": "Peter Bosz",
+          "name": "Jakob Kjeldbjerg",
+          "position": "CB"
+        },
+        {
+          "name": "Carsten Dethlefsen",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Risager",
+          "position": "CB"
+        },
+        {
+          "name": "Brian Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "John Jensen",
           "position": "CM"
         },
         {
-          "name": "Frank Rijkaard",
+          "name": "Kim Vilfort",
           "position": "CM"
         },
         {
-          "name": "Wim Jonk",
+          "name": "Jesper Kristensen",
           "position": "CM"
         },
         {
-          "name": "Regi Blinker",
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Wieghorst",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Henrik Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Laudrup",
           "position": "ST"
         },
         {
-          "name": "Marc Overmars",
+          "name": "Søren Frederiksen",
+          "position": "ST"
+        },
+        {
+          "name": "Bent Christensen",
+          "position": "ST"
+        },
+        {
+          "name": "Flemming Povlsen",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Rasmussen",
+          "position": "ST"
+        },
+        {
+          "name": "Mark Strudal",
+          "position": "ST"
+        },
+        {
+          "name": "Frank Pingel",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1994/1995)",
       "teamLabel": "denmark (1994-95)"
@@ -233,55 +1193,175 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Edwin van der Sar",
+          "name": "Lars Høgh",
           "position": "GK"
         },
         {
-          "name": "Danny Blind",
-          "position": "RB"
+          "name": "Peter Schmeichel",
+          "position": "GK"
         },
         {
-          "name": "Stan Valckx",
+          "name": "Mogens Krogh",
+          "position": "GK"
+        },
+        {
+          "name": "Lars Olsen",
           "position": "CB"
         },
         {
-          "name": "Frank de Boer",
+          "name": "Diego Tur",
           "position": "CB"
         },
         {
-          "name": "Jaap Stam",
-          "position": "LB"
+          "name": "Per Nielsen",
+          "position": "CB"
         },
         {
-          "name": "Wim Jonk",
-          "position": "DM"
+          "name": "Jakob Friis-Hansen",
+          "position": "CB"
         },
         {
-          "name": "Jean-Paul van Gastel",
+          "name": "Torben Boye",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Rieper",
+          "position": "CB"
+        },
+        {
+          "name": "Jes Høgh",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Schjønberg",
+          "position": "CB"
+        },
+        {
+          "name": "Claus Thomsen",
+          "position": "CB"
+        },
+        {
+          "name": "Torben Piechnik",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Laursen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Heintze",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Risager",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Colding",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Rytter",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Stig Tøfting",
           "position": "CM"
         },
         {
-          "name": "Phillip Cocu",
+          "name": "Christian Lønstrup",
           "position": "CM"
         },
         {
-          "name": "Clarence Seedorf",
+          "name": "Bjarne Goldbaek",
           "position": "CM"
         },
         {
-          "name": "Marc Overmars",
+          "name": "Allan Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Vilfort",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Ole Bjur",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Bisgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Henrik Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Laudrup",
           "position": "ST"
         },
         {
-          "name": "Peter Hoekstra",
+          "name": "Thomas Thorninger",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Møller",
+          "position": "ST"
+        },
+        {
+          "name": "Per Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Miklos Molnar",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Andersen",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Rasmussen",
+          "position": "ST"
+        },
+        {
+          "name": "Mikkel Beck",
+          "position": "ST"
+        },
+        {
+          "name": "Steffen Højer",
+          "position": "ST"
+        },
+        {
+          "name": "Erik Bo Andersen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1996/1997)",
       "teamLabel": "denmark (1996-97)"
@@ -290,55 +1370,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Oscar Moens",
+          "name": "Peter Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Ernest Faber",
-          "position": "RB"
+          "name": "Mogens Krogh",
+          "position": "GK"
         },
         {
-          "name": "Jaap Stam",
+          "name": "Peter Kjaer",
+          "position": "GK"
+        },
+        {
+          "name": "René Henriksen",
           "position": "CB"
         },
         {
-          "name": "Frank de Boer",
+          "name": "Michael Schjønberg",
           "position": "CB"
         },
         {
-          "name": "Kees van Wonderen",
-          "position": "LB"
+          "name": "Ole Tobiasen",
+          "position": "CB"
         },
         {
-          "name": "Jean-Paul van Gastel",
-          "position": "DM"
+          "name": "Marc Rieper",
+          "position": "CB"
         },
         {
-          "name": "Wim Jonk",
+          "name": "Jes Høgh",
+          "position": "CB"
+        },
+        {
+          "name": "Claus Thomsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Laursen",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Heintze",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Colding",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Gravesen",
           "position": "CM"
         },
         {
-          "name": "Phillip Cocu",
+          "name": "Stig Tøfting",
           "position": "CM"
         },
         {
-          "name": "Clarence Seedorf",
+          "name": "Allan Nielsen",
           "position": "CM"
         },
         {
-          "name": "Boudewijn Zenden",
+          "name": "Bjarne Goldbaek",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Wieghorst",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Laudrup",
           "position": "ST"
         },
         {
-          "name": "Marc Overmars",
+          "name": "Søren Frederiksen",
+          "position": "ST"
+        },
+        {
+          "name": "Mikkel Beck",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Miklos Molnar",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Møller",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Andersen",
+          "position": "ST"
+        },
+        {
+          "name": "Ebbe Sand",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (1998/1999)",
       "teamLabel": "denmark (1998-99)"
@@ -347,55 +1507,183 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Edwin van der Sar",
+          "name": "Jesper Christiansen",
           "position": "GK"
         },
         {
-          "name": "Bert Konterman",
-          "position": "RB"
+          "name": "Peter Schmeichel",
+          "position": "GK"
         },
         {
-          "name": "André Ooijer",
+          "name": "Thomas Sörensen",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Kjaer",
+          "position": "GK"
+        },
+        {
+          "name": "Michael Hemmingsen",
           "position": "CB"
         },
         {
-          "name": "Patrick Paauwe",
+          "name": "René Henriksen",
           "position": "CB"
         },
         {
-          "name": "Jaap Stam",
-          "position": "LB"
+          "name": "Martin Laursen",
+          "position": "CB"
         },
         {
-          "name": "Phillip Cocu",
-          "position": "DM"
+          "name": "Steven Lustü",
+          "position": "CB"
         },
         {
-          "name": "Paul Bosvelt",
+          "name": "Henrik Lykke",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Madsen",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Schjønberg",
+          "position": "CB"
+        },
+        {
+          "name": "Jes Høgh",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Laursen",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Heintze",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Colding",
+          "position": "CB"
+        },
+        {
+          "name": "Kim Daugaard",
           "position": "CM"
         },
         {
-          "name": "Mark van Bommel",
+          "name": "Stig Tøfting",
           "position": "CM"
         },
         {
-          "name": "Clarence Seedorf",
+          "name": "Thomas Gravesen",
           "position": "CM"
         },
         {
-          "name": "Boudewijn Zenden",
+          "name": "Allan Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Bjarne Goldbaek",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Michaelsen",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Bisgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Magleby",
+          "position": "CM"
+        },
+        {
+          "name": "Carsten Fredgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Claus Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Johansen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Grønkjær",
           "position": "ST"
         },
         {
-          "name": "Marc Overmars",
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Møller",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Lassen",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Andersen",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Ebbe Sand",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Nygaard",
+          "position": "ST"
+        },
+        {
+          "name": "Miklos Molnar",
+          "position": "ST"
+        },
+        {
+          "name": "Mikkel Beck",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2000/2001)",
       "teamLabel": "denmark (2000-01)"
@@ -404,55 +1692,159 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Edwin van der Sar",
+          "name": "Peter Skov-Jensen",
           "position": "GK"
         },
         {
-          "name": "Frank de Boer",
-          "position": "RB"
+          "name": "Thomas Sörensen",
+          "position": "GK"
         },
         {
-          "name": "Jaap Stam",
+          "name": "Peter Kjaer",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Christiansen",
+          "position": "GK"
+        },
+        {
+          "name": "René Henriksen",
           "position": "CB"
         },
         {
-          "name": "André Ooijer",
+          "name": "Martin Albrechtsen",
           "position": "CB"
         },
         {
-          "name": "Patrick Paauwe",
-          "position": "LB"
+          "name": "Martin Laursen",
+          "position": "CB"
         },
         {
-          "name": "George Boateng",
-          "position": "DM"
+          "name": "Per Nielsen",
+          "position": "CB"
         },
         {
-          "name": "Paul Bosvelt",
+          "name": "Steven Lustü",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Heintze",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Rytter",
+          "position": "CB"
+        },
+        {
+          "name": "Kasper Bøgelund",
+          "position": "CB"
+        },
+        {
+          "name": "Stig Tøfting",
           "position": "CM"
         },
         {
-          "name": "Phillip Cocu",
+          "name": "Thomas Gravesen",
           "position": "CM"
         },
         {
-          "name": "Mark van Bommel",
+          "name": "Christian Poulsen",
           "position": "CM"
         },
         {
-          "name": "Boudewijn Zenden",
+          "name": "Thomas Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Allan Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Per Frandsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Michaelsen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Røll",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Brian Steen Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Wieghorst",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Johansen",
+          "position": "CM"
+        },
+        {
+          "name": "Claus Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Grønkjær",
           "position": "ST"
         },
         {
-          "name": "Marc Overmars",
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Nygaard",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Ebbe Sand",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Løvenkrands",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Madsen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2002/2003)",
       "teamLabel": "denmark (2002-03)"
@@ -461,55 +1853,203 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Edwin van der Sar",
+          "name": "Thomas Sörensen",
           "position": "GK"
         },
         {
-          "name": "Jaap Stam",
-          "position": "RB"
+          "name": "Peter Skov-Jensen",
+          "position": "GK"
         },
         {
-          "name": "Khalid Boulahrouz",
+          "name": "Stephan Andersen",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Christiansen",
+          "position": "GK"
+        },
+        {
+          "name": "Per Kröldrup",
           "position": "CB"
         },
         {
-          "name": "Joris Mathijsen",
+          "name": "Martin Laursen",
           "position": "CB"
         },
         {
-          "name": "John Heitinga",
-          "position": "LB"
+          "name": "Martin Albrechtsen",
+          "position": "CB"
         },
         {
-          "name": "Nigel de Jong",
-          "position": "DM"
+          "name": "Thomas Gaardsøe",
+          "position": "CB"
         },
         {
-          "name": "Phillip Cocu",
+          "name": "Per Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Steven Lustü",
+          "position": "CB"
+        },
+        {
+          "name": "Bo Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "René Henriksen",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Asbjørn Sennels",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Brian Priske",
+          "position": "CB"
+        },
+        {
+          "name": "Kasper Bøgelund",
+          "position": "CB"
+        },
+        {
+          "name": "Søren Colding",
+          "position": "CB"
+        },
+        {
+          "name": "Ulrich Vinzents",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Gravesen",
           "position": "CM"
         },
         {
-          "name": "Paul Bosvelt",
+          "name": "Christian Poulsen",
           "position": "CM"
         },
         {
-          "name": "Theo Lucius",
+          "name": "Daniel Jensen",
           "position": "CM"
         },
         {
-          "name": "Boudewijn Zenden",
+          "name": "Leon Andreasen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Kristiansen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Retov",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolai Stokholm",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Bisgaard",
+          "position": "CM"
+        },
+        {
+          "name": "David Rasmussen",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Michaelsen",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Røll",
+          "position": "CM"
+        },
+        {
+          "name": "Claus Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Morten Wieghorst",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Grønkjær",
           "position": "ST"
         },
         {
-          "name": "Kevin Bobson",
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Ebbe Sand",
+          "position": "ST"
+        },
+        {
+          "name": "Kenneth Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Løvenkrands",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Madsen",
+          "position": "ST"
+        },
+        {
+          "name": "Tommy Bechmann",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Skoubo",
+          "position": "ST"
+        },
+        {
+          "name": "Steffen Højer",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2004/2005)",
       "teamLabel": "denmark (2004-05)"
@@ -518,55 +2058,211 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Edwin van der Sar",
+          "name": "Thomas Sörensen",
           "position": "GK"
         },
         {
-          "name": "Khalid Boulahrouz",
-          "position": "RB"
+          "name": "Jesper Christiansen",
+          "position": "GK"
         },
         {
-          "name": "Joris Mathijsen",
+          "name": "Casper Ankergren",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Agger",
           "position": "CB"
         },
         {
-          "name": "John Heitinga",
+          "name": "Martin Albrechtsen",
           "position": "CB"
         },
         {
-          "name": "Barry Opdam",
-          "position": "LB"
+          "name": "Per Kröldrup",
+          "position": "CB"
         },
         {
-          "name": "George Boateng",
-          "position": "DM"
+          "name": "Martin Laursen",
+          "position": "CB"
         },
         {
-          "name": "Nigel de Jong",
+          "name": "Michael Gravgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Bo Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Per Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Allan Jepsen",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Sørensen",
+          "position": "CB"
+        },
+        {
+          "name": "Brian Priske",
+          "position": "CB"
+        },
+        {
+          "name": "Lars Jacobsen",
+          "position": "CB"
+        },
+        {
+          "name": "Kristian Bach Bak",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helveg",
+          "position": "CB"
+        },
+        {
+          "name": "Ulrich Vinzents",
+          "position": "CB"
+        },
+        {
+          "name": "Jerry Lucena",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Poulsen",
           "position": "CM"
         },
         {
-          "name": "Phillip Cocu",
+          "name": "Thomas Gravesen",
           "position": "CM"
         },
         {
-          "name": "Hedwiges Maduro",
+          "name": "Rasmus Würtz",
           "position": "CM"
         },
         {
-          "name": "Ryan Babel",
+          "name": "Thomas Augustinussen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Thygesen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Bech",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Kristiansen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Retov",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolai Stokholm",
+          "position": "CM"
+        },
+        {
+          "name": "Kristian Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Kamper",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Borre",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Due",
+          "position": "CM"
+        },
+        {
+          "name": "Claus Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Grønkjær",
           "position": "ST"
         },
         {
-          "name": "Arjen Robben",
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Løvenkrands",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Kenneth Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Skoubo",
+          "position": "ST"
+        },
+        {
+          "name": "Mads Junker",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Steffen Højer",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Sørensen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2006/2007)",
       "teamLabel": "denmark (2006-07)"
@@ -575,55 +2271,199 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Maarten Stekelenburg",
+          "name": "Thomas Sörensen",
           "position": "GK"
         },
         {
-          "name": "Joris Mathijsen",
-          "position": "RB"
+          "name": "Stephan Andersen",
+          "position": "GK"
         },
         {
-          "name": "John Heitinga",
+          "name": "Jesper Christiansen",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Stuhr-Ellegaard",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Agger",
           "position": "CB"
         },
         {
-          "name": "Dirk Marcellis",
+          "name": "Per Kröldrup",
           "position": "CB"
         },
         {
-          "name": "Khalid Boulahrouz",
-          "position": "LB"
+          "name": "Zanka",
+          "position": "CB"
         },
         {
-          "name": "Nigel de Jong",
-          "position": "DM"
+          "name": "Ulrik Laursen",
+          "position": "CB"
         },
         {
-          "name": "David Mendes da Silva",
+          "name": "Anders Møller Christensen",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Laursen",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Rasmussen",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Sørensen",
+          "position": "CB"
+        },
+        {
+          "name": "Christopher Poulsen",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Mtiliga",
+          "position": "CB"
+        },
+        {
+          "name": "Niclas Jensen",
+          "position": "CB"
+        },
+        {
+          "name": "Lars Jacobsen",
+          "position": "CB"
+        },
+        {
+          "name": "Kasper Bøgelund",
+          "position": "CB"
+        },
+        {
+          "name": "Anders Randrup",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Poulsen",
           "position": "CM"
         },
         {
-          "name": "Orlando Engelaar",
+          "name": "William Kvist",
           "position": "CM"
         },
         {
-          "name": "Clarence Seedorf",
+          "name": "Niki Zimling",
           "position": "CM"
         },
         {
-          "name": "Ryan Babel",
+          "name": "Thomas Augustinussen",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Leon Andreasen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Retov",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Vingaard",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Thygesen",
+          "position": "CM"
+        },
+        {
+          "name": "Hjalte Bo Nørregaard",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kristensen",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Borring",
+          "position": "CM"
+        },
+        {
+          "name": "Ken Ilsø",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Rommedahl",
           "position": "ST"
         },
         {
-          "name": "Arjen Robben",
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
+          "position": "ST"
+        },
+        {
+          "name": "Kenneth Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Nordstrand",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Rasmussen",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Bernburg",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Løvenkrands",
+          "position": "ST"
+        },
+        {
+          "name": "Marc Nygaard",
+          "position": "ST"
+        },
+        {
+          "name": "Mikkel Beckmann",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Sørensen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2008/2009)",
       "teamLabel": "denmark (2008-09)"
@@ -632,55 +2472,239 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Maarten Stekelenburg",
+          "name": "Anders Lindegaard",
           "position": "GK"
         },
         {
-          "name": "John Heitinga",
-          "position": "RB"
+          "name": "Thomas Sörensen",
+          "position": "GK"
         },
         {
-          "name": "Joris Mathijsen",
+          "name": "Stephan Andersen",
+          "position": "GK"
+        },
+        {
+          "name": "Kim Christensen",
+          "position": "GK"
+        },
+        {
+          "name": "Jonas Lössl",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Christiansen",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Agger",
           "position": "CB"
         },
         {
-          "name": "Ron Vlaar",
+          "name": "Simon Kjaer",
           "position": "CB"
         },
         {
-          "name": "Peter Wisgerhof",
-          "position": "LB"
+          "name": "Zanka",
+          "position": "CB"
         },
         {
-          "name": "Nigel de Jong",
-          "position": "DM"
+          "name": "Michael Jakobsen",
+          "position": "CB"
         },
         {
-          "name": "Hedwiges Maduro",
+          "name": "Per Kröldrup",
+          "position": "CB"
+        },
+        {
+          "name": "Kris Stadsgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Bjelland",
+          "position": "CB"
+        },
+        {
+          "name": "Anders Møller Christensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jim Larsen",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Poulsen",
+          "position": "CB"
+        },
+        {
+          "name": "Leon Jessen",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Mtiliga",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Lumb",
+          "position": "CB"
+        },
+        {
+          "name": "Lars Jacobsen",
+          "position": "CB"
+        },
+        {
+          "name": "Johnny Thomsen",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Nymann",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Poulsen",
           "position": "CM"
         },
         {
-          "name": "Wout Brama",
+          "name": "William Kvist",
           "position": "CM"
         },
         {
-          "name": "Stijn Schaars",
+          "name": "Lasse Schöne",
           "position": "CM"
         },
         {
-          "name": "Eljero Elia",
+          "name": "Martin Ørnskov",
+          "position": "CM"
+        },
+        {
+          "name": "Niki Zimling",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Würtz",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Thygesen",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Vingaard",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Hans Henrik Andreasen",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Kasper Lorentzen",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Bech",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Jørgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Absalonsen",
           "position": "ST"
         },
         {
-          "name": "Ryan Babel",
+          "name": "Søren Rieks",
+          "position": "ST"
+        },
+        {
+          "name": "Jesper Grønkjær",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Enevoldsen",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Løvenkrands",
+          "position": "ST"
+        },
+        {
+          "name": "Mads Junker",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Rasmussen",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Mikkel Beckmann",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Skoubo",
+          "position": "ST"
+        },
+        {
+          "name": "Rajko Lekic",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Bernburg",
+          "position": "ST"
+        },
+        {
+          "name": "Søren Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Dahl Tomasson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2010/2011)",
       "teamLabel": "denmark (2010-11)"
@@ -689,55 +2713,183 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Tim Krul",
+          "name": "Anders Lindegaard",
           "position": "GK"
         },
         {
-          "name": "Douglas",
-          "position": "RB"
+          "name": "Kasper Schmeichel",
+          "position": "GK"
         },
         {
-          "name": "John Heitinga",
+          "name": "Jesper Hansen",
+          "position": "GK"
+        },
+        {
+          "name": "Thomas Sörensen",
+          "position": "GK"
+        },
+        {
+          "name": "Stephan Andersen",
+          "position": "GK"
+        },
+        {
+          "name": "Steffen Rasmussen",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Agger",
           "position": "CB"
         },
         {
-          "name": "Ron Vlaar",
+          "name": "Simon Kjaer",
           "position": "CB"
         },
         {
-          "name": "Stefan de Vrij",
-          "position": "LB"
+          "name": "Jores Okore",
+          "position": "CB"
         },
         {
-          "name": "Stijn Schaars",
-          "position": "DM"
+          "name": "Andreas Bjelland",
+          "position": "CB"
         },
         {
-          "name": "Leroy Fer",
+          "name": "Kris Stadsgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Jesper Juelsgård",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Høegh",
+          "position": "CB"
+        },
+        {
+          "name": "Lasse Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Poulsen",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Conboy",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Mtiliga",
+          "position": "CB"
+        },
+        {
+          "name": "Lars Jacobsen",
+          "position": "CB"
+        },
+        {
+          "name": "William Kvist",
           "position": "CM"
         },
         {
-          "name": "Nigel de Jong",
+          "name": "Lasse Schöne",
           "position": "CM"
         },
         {
-          "name": "Jordy Clasie",
+          "name": "Niki Zimling",
           "position": "CM"
         },
         {
-          "name": "Ola John",
+          "name": "Christian Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Wass",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kristensen",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Kasper Lorentzen",
+          "position": "CM"
+        },
+        {
+          "name": "Casper Sloth",
+          "position": "CM"
+        },
+        {
+          "name": "Leon Andreasen",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Silberbauer",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolai Stokholm",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Viktor Fischer",
           "position": "ST"
         },
         {
-          "name": "Eljero Elia",
+          "name": "Emil Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Tobias Mikkelsen",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Rommedahl",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolai Jørgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Pedersen",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Helenius",
+          "position": "ST"
+        },
+        {
+          "name": "Mads Junker",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2012/2013)",
       "teamLabel": "denmark (2012-13)"
@@ -746,55 +2898,195 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Tim Krul",
+          "name": "Kasper Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Daley Blind",
-          "position": "RB"
+          "name": "Jonas Lössl",
+          "position": "GK"
         },
         {
-          "name": "Stefan de Vrij",
+          "name": "Stephan Andersen",
+          "position": "GK"
+        },
+        {
+          "name": "Nicolai Larsen",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Hansen",
+          "position": "GK"
+        },
+        {
+          "name": "Simon Kjaer",
           "position": "CB"
         },
         {
-          "name": "Bruno Martins Indi",
+          "name": "Daniel Agger",
           "position": "CB"
         },
         {
-          "name": "Ron Vlaar",
-          "position": "LB"
+          "name": "Jores Okore",
+          "position": "CB"
         },
         {
-          "name": "Nigel de Jong",
-          "position": "DM"
+          "name": "Andreas Bjelland",
+          "position": "CB"
         },
         {
-          "name": "Leroy Fer",
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Kian Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Jesper Juelsgård",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolai Boilesen",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Poulsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Knudsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jakob Ahlmann",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Ankersen",
+          "position": "CB"
+        },
+        {
+          "name": "Lars Jacobsen",
+          "position": "CB"
+        },
+        {
+          "name": "Lasse Schöne",
           "position": "CM"
         },
         {
-          "name": "Jordy Clasie",
+          "name": "Pierre-Emile Højbjerg",
           "position": "CM"
         },
         {
-          "name": "Stijn Schaars",
+          "name": "Niki Zimling",
           "position": "CM"
         },
         {
-          "name": "Quincy Promes",
+          "name": "William Kvist",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Würtz",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Wass",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Delaney",
+          "position": "CM"
+        },
+        {
+          "name": "Casper Sloth",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Christiansen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Kahlenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Leon Andreasen",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Danny Olsen",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Andersen",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolaj Thomsen",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Ankersen",
           "position": "ST"
         },
         {
-          "name": "Arjen Robben",
+          "name": "Emil Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Kusk",
+          "position": "ST"
+        },
+        {
+          "name": "Uffe Bech",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
+          "position": "ST"
+        },
+        {
+          "name": "Lasse Vibe",
+          "position": "ST"
+        },
+        {
+          "name": "Simon Makienok",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Rasmussen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2014/2015)",
       "teamLabel": "denmark (2014-15)"
@@ -803,55 +3095,167 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jasper Cillessen",
+          "name": "Kasper Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Virgil van Dijk",
-          "position": "RB"
+          "name": "Frederik Rönnow",
+          "position": "GK"
         },
         {
-          "name": "Stefan de Vrij",
+          "name": "Jonas Lössl",
+          "position": "GK"
+        },
+        {
+          "name": "Anders Lindegaard",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Hansen",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Christensen",
           "position": "CB"
         },
         {
-          "name": "Daley Blind",
+          "name": "Jannik Vestergaard",
           "position": "CB"
         },
         {
-          "name": "Bruno Martins Indi",
-          "position": "LB"
+          "name": "Simon Kjaer",
+          "position": "CB"
         },
         {
-          "name": "Jordy Clasie",
-          "position": "DM"
+          "name": "Erik Sviatchenko",
+          "position": "CB"
         },
         {
-          "name": "Marten de Roon",
+          "name": "Andreas Bjelland",
+          "position": "CB"
+        },
+        {
+          "name": "Zanka",
+          "position": "CB"
+        },
+        {
+          "name": "Jores Okore",
+          "position": "CB"
+        },
+        {
+          "name": "Lasse Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Dalsgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Agger",
+          "position": "CB"
+        },
+        {
+          "name": "Riza Durmisi",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Knudsen",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Ankersen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Stryger",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Emile Højbjerg",
           "position": "CM"
         },
         {
-          "name": "Leroy Fer",
+          "name": "Lasse Schöne",
           "position": "CM"
         },
         {
-          "name": "Stijn Schaars",
+          "name": "William Kvist",
           "position": "CM"
         },
         {
-          "name": "Quincy Promes",
+          "name": "Daniel Wass",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Delaney",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Falk",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolaj Thomsen",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Andersen",
+          "position": "CM"
+        },
+        {
+          "name": "Viktor Fischer",
           "position": "ST"
         },
         {
-          "name": "Bart Ramselaar",
+          "name": "Pione Sisto",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolai Jørgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
+          "position": "ST"
+        },
+        {
+          "name": "Lasse Vibe",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Gytkjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Morten Rasmussen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2016/2017)",
       "teamLabel": "denmark (2016-17)"
@@ -860,55 +3264,251 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jasper Cillessen",
+          "name": "Kasper Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Stefan de Vrij",
-          "position": "RB"
+          "name": "Jonas Lössl",
+          "position": "GK"
         },
         {
-          "name": "Virgil van Dijk",
+          "name": "David Jensen",
+          "position": "GK"
+        },
+        {
+          "name": "Frederik Rönnow",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Hansen",
+          "position": "GK"
+        },
+        {
+          "name": "Morten Bank",
+          "position": "GK"
+        },
+        {
+          "name": "Christoffer Haagh",
+          "position": "GK"
+        },
+        {
+          "name": "Christian Bommelund Christensen",
           "position": "CB"
         },
         {
-          "name": "Daley Blind",
+          "name": "Andreas Christensen",
           "position": "CB"
         },
         {
-          "name": "Nathan Aké",
-          "position": "LB"
+          "name": "Jannik Vestergaard",
+          "position": "CB"
         },
         {
-          "name": "Marten de Roon",
-          "position": "DM"
+          "name": "Simon Kjaer",
+          "position": "CB"
         },
         {
-          "name": "Pablo Rosario",
+          "name": "Zanka",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Dalsgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Bjelland",
+          "position": "CB"
+        },
+        {
+          "name": "Lasse Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolai Johansen",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Nielsen",
+          "position": "CB"
+        },
+        {
+          "name": "Kasper Skræp",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Fogt",
+          "position": "CB"
+        },
+        {
+          "name": "Riza Durmisi",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolai Boilesen",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Knudsen",
+          "position": "CB"
+        },
+        {
+          "name": "Mads Bertelsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Stryger",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Ankersen",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Vollesen",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Emile Højbjerg",
           "position": "CM"
         },
         {
-          "name": "Georginio Wijnaldum",
+          "name": "Lukas Lerager",
           "position": "CM"
         },
         {
-          "name": "Kevin Strootman",
+          "name": "Lasse Schöne",
           "position": "CM"
         },
         {
-          "name": "Quincy Promes",
+          "name": "Christian Nørgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Bannis",
+          "position": "CM"
+        },
+        {
+          "name": "William Kvist",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Jörgensen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Delaney",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Christiansen",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Johansson",
+          "position": "CM"
+        },
+        {
+          "name": "Christopher Jacobsen",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Hunsballe",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Victor Vobbe Larsen",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Pione Sisto",
           "position": "ST"
         },
         {
-          "name": "Ryan Babel",
+          "name": "Viktor Fischer",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Kempel",
+          "position": "ST"
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolai Jørgensen",
+          "position": "ST"
+        },
+        {
+          "name": "Kenneth Zohore",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Gytkjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bendtner",
+          "position": "ST"
+        },
+        {
+          "name": "Rasmus Gaudin",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Offenberg",
+          "position": "ST"
+        },
+        {
+          "name": "Oskar Høybye",
+          "position": "ST"
+        },
+        {
+          "name": "Anders Fønss",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Holm",
+          "position": "ST"
+        },
+        {
+          "name": "Troels Nielsen",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Veis",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2018/2019)",
       "teamLabel": "denmark (2018-19)"
@@ -917,55 +3517,199 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jasper Cillessen",
+          "name": "Kasper Schmeichel",
           "position": "GK"
         },
         {
-          "name": "Virgil van Dijk",
-          "position": "RB"
+          "name": "Frederik Rönnow",
+          "position": "GK"
         },
         {
-          "name": "Stefan de Vrij",
+          "name": "Jonas Lössl",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Christensen",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Hansen",
+          "position": "GK"
+        },
+        {
+          "name": "Thomas Mikkelsen",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Christensen",
           "position": "CB"
         },
         {
-          "name": "Nathan Aké",
+          "name": "Joachim Andersen",
           "position": "CB"
         },
         {
-          "name": "Sven Botman",
-          "position": "LB"
+          "name": "Jannik Vestergaard",
+          "position": "CB"
         },
         {
-          "name": "Ryan Gravenberch",
-          "position": "DM"
+          "name": "Simon Kjaer",
+          "position": "CB"
         },
         {
-          "name": "Marten de Roon",
+          "name": "Victor Nelsson",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Maxsø",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Scholz",
+          "position": "CB"
+        },
+        {
+          "name": "Henrik Dalsgaard",
+          "position": "CB"
+        },
+        {
+          "name": "Zanka",
+          "position": "CB"
+        },
+        {
+          "name": "Joakim Maehle",
+          "position": "CB"
+        },
+        {
+          "name": "Kristian Pedersen",
+          "position": "CB"
+        },
+        {
+          "name": "Jakob Ahlmann",
+          "position": "CB"
+        },
+        {
+          "name": "Rasmus Kristensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Stryger",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Bah",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Emile Højbjerg",
           "position": "CM"
         },
         {
-          "name": "Leroy Fer",
+          "name": "Oliver Abildgaard",
           "position": "CM"
         },
         {
-          "name": "Frenkie de Jong",
+          "name": "Jens Jönsson",
           "position": "CM"
         },
         {
-          "name": "Steven Bergwijn",
+          "name": "Christian Nørgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Delaney",
+          "position": "CM"
+        },
+        {
+          "name": "Philip Billing",
+          "position": "CM"
+        },
+        {
+          "name": "Mathias Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Wass",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Christiansen",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Falk",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Skov",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Damsgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Andersen",
+          "position": "CM"
+        },
+        {
+          "name": "Carlo Holse",
+          "position": "CM"
+        },
+        {
+          "name": "Jacob Bruun Larsen",
           "position": "ST"
         },
         {
-          "name": "Quincy Promes",
+          "name": "Pione Sisto",
+          "position": "ST"
+        },
+        {
+          "name": "Jesper Lindstrøm",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Skov Olsen",
+          "position": "ST"
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
+          "position": "ST"
+        },
+        {
+          "name": "Jonas Wind",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Gytkjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Mortensen",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2020/2021)",
       "teamLabel": "denmark (2020-21)"
@@ -974,60 +3718,164 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Justin Bijlow",
+          "name": "Frederik Rönnow",
           "position": "GK"
         },
         {
-          "name": "Matthijs de Ligt",
-          "position": "RB"
+          "name": "Daniel Iversen",
+          "position": "GK"
         },
         {
-          "name": "Virgil van Dijk",
+          "name": "Oliver Christensen",
+          "position": "GK"
+        },
+        {
+          "name": "Kasper Schmeichel",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Vindahl",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Christensen",
           "position": "CB"
         },
         {
-          "name": "Stefan de Vrij",
+          "name": "Joachim Andersen",
           "position": "CB"
         },
         {
-          "name": "Nathan Aké",
-          "position": "LB"
+          "name": "Victor Nelsson",
+          "position": "CB"
         },
         {
-          "name": "Ryan Gravenberch",
-          "position": "DM"
+          "name": "Jannik Vestergaard",
+          "position": "CB"
         },
         {
-          "name": "Marten de Roon",
+          "name": "Simon Kjaer",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Maxsø",
+          "position": "CB"
+        },
+        {
+          "name": "Joakim Maehle",
+          "position": "CB"
+        },
+        {
+          "name": "Mads Pedersen",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolai Boilesen",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Bah",
+          "position": "CB"
+        },
+        {
+          "name": "Rasmus Kristensen",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Stryger",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Emile Højbjerg",
           "position": "CM"
         },
         {
-          "name": "Jerdy Schouten",
+          "name": "Christian Nørgaard",
           "position": "CM"
         },
         {
-          "name": "Jordy Clasie",
+          "name": "Morten Hjulmand",
           "position": "CM"
         },
         {
-          "name": "Arnaut Danjuma",
+          "name": "Mathias Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "Philip Billing",
+          "position": "CM"
+        },
+        {
+          "name": "Casper Nielsen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Delaney",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Wass",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Skov",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Damsgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Jacob Bruun Larsen",
           "position": "ST"
         },
         {
-          "name": "Noa Lang",
+          "name": "Jesper Lindstrøm",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Skov Olsen",
+          "position": "ST"
+        },
+        {
+          "name": "Rasmus Højlund",
+          "position": "ST"
+        },
+        {
+          "name": "Jonas Wind",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST"
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Cornelius",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt — denmark (2022/2023)",
       "teamLabel": "denmark (2022-23)"
     }
   },
-  "id": 3379,
+  "id": 3436,
   "name": "denmark"
 }

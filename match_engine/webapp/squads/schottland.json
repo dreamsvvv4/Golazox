@@ -1,51 +1,123 @@
 {
   "slug": "schottland",
   "seasons": {
-    "2008": {
+    "1966": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Ernesto",
+          "name": "Bobby Ferguson",
           "position": "GK"
         },
         {
-          "name": "Georgios Ioannidis",
-          "position": "RB"
-        },
-        {
-          "name": "Rodrigão",
+          "name": "John Clark",
           "position": "CB"
         },
         {
-          "name": "Spencer",
+          "name": "Ronnie McKinnon",
           "position": "CB"
         },
         {
-          "name": "Nikolas Nikolaou",
-          "position": "LB"
+          "name": "Jackie McGrory",
+          "position": "CB"
         },
         {
-          "name": "Carlos Saavedra",
-          "position": "DM"
+          "name": "Eddie McCreadie",
+          "position": "CB"
         },
         {
-          "name": "Panayiotis Psillouras",
+          "name": "Willie Bell",
+          "position": "CB"
+        },
+        {
+          "name": "John Greig",
+          "position": "CB"
+        },
+        {
+          "name": "Tommy Gemmell",
+          "position": "CB"
+        },
+        {
+          "name": "David Provan",
+          "position": "CB"
+        },
+        {
+          "name": "Andy Penman",
           "position": "CM"
         },
         {
-          "name": "Renato Margaça",
+          "name": "Jim Scott",
           "position": "CM"
         },
         {
-          "name": "Kyriakos Polykarpou",
+          "name": "Bobby Murdoch",
           "position": "CM"
         },
         {
-          "name": "Carlos André",
+          "name": "Peter Cormack",
+          "position": "CM"
+        },
+        {
+          "name": "Billy Bremner",
+          "position": "CM"
+        },
+        {
+          "name": "Pat Stanton",
+          "position": "CM"
+        },
+        {
+          "name": "Willie Johnston",
+          "position": "CM"
+        },
+        {
+          "name": "Jim Baxter",
+          "position": "CM"
+        },
+        {
+          "name": "Dave Smith",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby Lennox",
           "position": "ST"
         },
         {
-          "name": "Mateus",
+          "name": "Charlie Cooke",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Scott",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Johnstone",
+          "position": "ST"
+        },
+        {
+          "name": "Willie Henderson",
+          "position": "ST"
+        },
+        {
+          "name": "Jackie Sinclair",
+          "position": "ST"
+        },
+        {
+          "name": "Denis Law",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Young",
+          "position": "ST"
+        },
+        {
+          "name": "Willie Wallace",
+          "position": "ST"
+        },
+        {
+          "name": "Stevie Chalmers",
+          "position": "ST"
+        },
+        {
+          "name": "Joe McBride",
           "position": "ST"
         }
       ],
@@ -55,54 +127,94 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2008/2009)",
-      "teamLabel": "scotland (2008-09)"
+      "source": "Transfermarkt — scotland (1966/1967)",
+      "teamLabel": "scotland (1966-67)"
     },
-    "2010": {
+    "1970": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Zsolt Posza",
+          "name": "Bobby Clark",
           "position": "GK"
         },
         {
-          "name": "Andreas Neophytou",
-          "position": "RB"
+          "name": "Jim Cruickshank",
+          "position": "GK"
         },
         {
-          "name": "Kypros Mouzouros",
+          "name": "Ronnie McKinnon",
           "position": "CB"
         },
         {
-          "name": "Andrés Imperiale",
+          "name": "Frank McLintock",
           "position": "CB"
         },
         {
-          "name": "Paco Borrego",
-          "position": "LB"
+          "name": "Bobby Moncur",
+          "position": "CB"
         },
         {
-          "name": "Matías Escobar",
-          "position": "DM"
+          "name": "John Greig",
+          "position": "CB"
         },
         {
-          "name": "Seyfo Soley",
+          "name": "Tommy Gemmell",
+          "position": "CB"
+        },
+        {
+          "name": "Billy Dickson",
+          "position": "CB"
+        },
+        {
+          "name": "Sandy Jardine",
+          "position": "CB"
+        },
+        {
+          "name": "Willie Callaghan",
+          "position": "CB"
+        },
+        {
+          "name": "Tommy McLean",
           "position": "CM"
         },
         {
-          "name": "Carlos Saavedra",
+          "name": "Willie Carr",
           "position": "CM"
         },
         {
-          "name": "Andreas Chatzigeorgiou",
+          "name": "Peter Cormack",
           "position": "CM"
         },
         {
-          "name": "Gonzalo Cabrera",
+          "name": "Davie Hay",
+          "position": "CM"
+        },
+        {
+          "name": "Pat Stanton",
+          "position": "CM"
+        },
+        {
+          "name": "Willie Johnston",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby Lennox",
           "position": "ST"
         },
         {
-          "name": "Diego Galeano",
+          "name": "Jimmy Johnstone",
+          "position": "ST"
+        },
+        {
+          "name": "Alan Gilzean",
+          "position": "ST"
+        },
+        {
+          "name": "John O'Hare",
+          "position": "ST"
+        },
+        {
+          "name": "Colin Stein",
           "position": "ST"
         }
       ],
@@ -112,54 +224,130 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2010/2011)",
-      "teamLabel": "scotland (2010-11)"
+      "source": "Transfermarkt — scotland (1970/1971)",
+      "teamLabel": "scotland (1970-71)"
     },
-    "2012": {
+    "1974": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Alexandre Negri",
+          "name": "Jim Stewart",
           "position": "GK"
         },
         {
-          "name": "Kypros Mouzouros",
-          "position": "RB"
+          "name": "Thomson Allan",
+          "position": "GK"
         },
         {
-          "name": "Sozos Sozou",
+          "name": "David Harvey",
+          "position": "GK"
+        },
+        {
+          "name": "Gordon McQueen",
           "position": "CB"
         },
         {
-          "name": "Carlos Marques",
+          "name": "Jim Holton",
           "position": "CB"
         },
         {
-          "name": "João Leonardo",
-          "position": "LB"
+          "name": "Martin Buchan",
+          "position": "CB"
         },
         {
-          "name": "Stefanos Siontis",
-          "position": "DM"
+          "name": "Kenny Burns",
+          "position": "CB"
         },
         {
-          "name": "Andreas Chatzigeorgiou",
+          "name": "John Blackley",
+          "position": "CB"
+        },
+        {
+          "name": "Erich Schaedler",
+          "position": "CB"
+        },
+        {
+          "name": "Willie Donachie",
+          "position": "CB"
+        },
+        {
+          "name": "Alex Forsyth",
+          "position": "CB"
+        },
+        {
+          "name": "Sandy Jardine",
+          "position": "CB"
+        },
+        {
+          "name": "Danny McGrain",
+          "position": "CB"
+        },
+        {
+          "name": "Jimmy Smith",
           "position": "CM"
         },
         {
-          "name": "Lamine N'Dao",
+          "name": "Bobby Robinson",
           "position": "CM"
         },
         {
-          "name": "Adama Bamba",
+          "name": "Graeme Souness",
           "position": "CM"
         },
         {
-          "name": "Jorge Troiteiro",
+          "name": "Peter Cormack",
+          "position": "CM"
+        },
+        {
+          "name": "Davie Hay",
+          "position": "CM"
+        },
+        {
+          "name": "Pat Stanton",
+          "position": "CM"
+        },
+        {
+          "name": "Billy Bremner",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Lorimer",
+          "position": "CM"
+        },
+        {
+          "name": "Tommy Hutchison",
+          "position": "CM"
+        },
+        {
+          "name": "Willie Morgan",
           "position": "ST"
         },
         {
-          "name": "Carlos André",
+          "name": "Jimmy Johnstone",
+          "position": "ST"
+        },
+        {
+          "name": "Kenny Dalglish",
+          "position": "ST"
+        },
+        {
+          "name": "Dixie Deans",
+          "position": "ST"
+        },
+        {
+          "name": "Denis Law",
+          "position": "ST"
+        },
+        {
+          "name": "Derek Johnstone",
+          "position": "ST"
+        },
+        {
+          "name": "Donald Ford",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Jordan",
           "position": "ST"
         }
       ],
@@ -169,54 +357,126 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2012/2013)",
-      "teamLabel": "scotland (2012-13)"
+      "source": "Transfermarkt — scotland (1974/1975)",
+      "teamLabel": "scotland (1974-75)"
     },
-    "2014": {
+    "1978": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Giannis Siderakis",
+          "name": "Jim Stewart",
           "position": "GK"
         },
         {
-          "name": "Stephanos Demosthenous",
-          "position": "RB"
+          "name": "Alan Rough",
+          "position": "GK"
         },
         {
-          "name": "Giovanny Romero",
+          "name": "Jim Blyth",
+          "position": "GK"
+        },
+        {
+          "name": "Bobby Clark",
+          "position": "GK"
+        },
+        {
+          "name": "Gordon McQueen",
           "position": "CB"
         },
         {
-          "name": "João Leonardo",
+          "name": "Willie Miller",
           "position": "CB"
         },
         {
-          "name": "Paulo Jorge",
-          "position": "LB"
+          "name": "David Narey",
+          "position": "CB"
         },
         {
-          "name": "Stefanos Siontis",
-          "position": "DM"
+          "name": "Martin Buchan",
+          "position": "CB"
         },
         {
-          "name": "Adjin Livingstone",
+          "name": "Tom Forsyth",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Burns",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Gray",
+          "position": "CB"
+        },
+        {
+          "name": "Willie Donachie",
+          "position": "CB"
+        },
+        {
+          "name": "Sandy Jardine",
+          "position": "CB"
+        },
+        {
+          "name": "Stuart Kennedy",
+          "position": "CB"
+        },
+        {
+          "name": "Don Masson",
           "position": "CM"
         },
         {
-          "name": "Antonis Tsoumas",
+          "name": "Lou Macari",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Christodoulou",
+          "name": "Asa Hartford",
           "position": "CM"
         },
         {
-          "name": "Richard Njoh",
+          "name": "Archie Gemmill",
+          "position": "CM"
+        },
+        {
+          "name": "Graeme Souness",
+          "position": "CM"
+        },
+        {
+          "name": "Bruce Rioch",
+          "position": "CM"
+        },
+        {
+          "name": "Willie Johnston",
+          "position": "CM"
+        },
+        {
+          "name": "John Robertson",
           "position": "ST"
         },
         {
-          "name": "Giorgos Xenofontos",
+          "name": "Arthur Graham",
+          "position": "ST"
+        },
+        {
+          "name": "Kenny Dalglish",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Wallace",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Jordan",
+          "position": "ST"
+        },
+        {
+          "name": "Andy Gray",
+          "position": "ST"
+        },
+        {
+          "name": "Derek Johnstone",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Harper",
           "position": "ST"
         }
       ],
@@ -226,54 +486,122 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2014/2015)",
-      "teamLabel": "scotland (2014-15)"
+      "source": "Transfermarkt — scotland (1978/1979)",
+      "teamLabel": "scotland (1978-79)"
     },
-    "2016": {
+    "1982": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Alexandre Negri",
+          "name": "Jim Stewart",
           "position": "GK"
         },
         {
-          "name": "Paolo Konstantinos Stylianou",
-          "position": "RB"
+          "name": "Alan Rough",
+          "position": "GK"
         },
         {
-          "name": "Andreas Andreou",
+          "name": "George Wood",
+          "position": "GK"
+        },
+        {
+          "name": "Jim Leighton",
+          "position": "GK"
+        },
+        {
+          "name": "Roy Aitken",
           "position": "CB"
         },
         {
-          "name": "João Leonardo",
+          "name": "Alan Hansen",
           "position": "CB"
         },
         {
-          "name": "Albert Serrán",
-          "position": "LB"
+          "name": "Willie Miller",
+          "position": "CB"
         },
         {
-          "name": "Henritse Eninful",
-          "position": "DM"
+          "name": "Alex McLeish",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Christodoulou",
+          "name": "David Narey",
+          "position": "CB"
+        },
+        {
+          "name": "Allan Evans",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Albiston",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Gray",
+          "position": "CB"
+        },
+        {
+          "name": "Ray Stewart",
+          "position": "CB"
+        },
+        {
+          "name": "Danny McGrain",
+          "position": "CB"
+        },
+        {
+          "name": "George Burley",
+          "position": "CB"
+        },
+        {
+          "name": "Tommy Burns",
           "position": "CM"
         },
         {
-          "name": "Marios Koukartas",
+          "name": "Graeme Souness",
           "position": "CM"
         },
         {
-          "name": "Tiago Gomes",
+          "name": "Asa Hartford",
           "position": "CM"
         },
         {
-          "name": "Carles Coto",
+          "name": "Gordon Strachan",
+          "position": "CM"
+        },
+        {
+          "name": "Davie Provan",
+          "position": "CM"
+        },
+        {
+          "name": "Jim Bett",
+          "position": "CM"
+        },
+        {
+          "name": "John Wark",
+          "position": "CM"
+        },
+        {
+          "name": "John Robertson",
           "position": "ST"
         },
         {
-          "name": "Kenidy",
+          "name": "Kenny Dalglish",
+          "position": "ST"
+        },
+        {
+          "name": "Alan Brazil",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Jordan",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Archibald",
+          "position": "ST"
+        },
+        {
+          "name": "Paul Sturrock",
           "position": "ST"
         }
       ],
@@ -283,54 +611,138 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2016/2017)",
-      "teamLabel": "scotland (2016-17)"
+      "source": "Transfermarkt — scotland (1982/1983)",
+      "teamLabel": "scotland (1982-83)"
     },
-    "2018": {
+    "1986": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Armin Gremsl",
+          "name": "Andy Goram",
           "position": "GK"
         },
         {
-          "name": "Stefanos Mouktaris",
-          "position": "RB"
+          "name": "Jim Leighton",
+          "position": "GK"
         },
         {
-          "name": "Răzvan Tincu",
+          "name": "Alan Rough",
+          "position": "GK"
+        },
+        {
+          "name": "Richard Gough",
           "position": "CB"
         },
         {
-          "name": "Bogdan Mitrea",
+          "name": "Roy Aitken",
           "position": "CB"
         },
         {
-          "name": "Konstantinos Sotiriou",
-          "position": "LB"
+          "name": "Alex McLeish",
+          "position": "CB"
         },
         {
-          "name": "Vladimir Boljevic",
-          "position": "DM"
+          "name": "Willie Miller",
+          "position": "CB"
         },
         {
-          "name": "Andreas Pachipis",
+          "name": "David Narey",
+          "position": "CB"
+        },
+        {
+          "name": "Alan Hansen",
+          "position": "CB"
+        },
+        {
+          "name": "Maurice Malpas",
+          "position": "CB"
+        },
+        {
+          "name": "Arthur Albiston",
+          "position": "CB"
+        },
+        {
+          "name": "Steve Nicol",
+          "position": "CB"
+        },
+        {
+          "name": "Ray Stewart",
+          "position": "CB"
+        },
+        {
+          "name": "Murdo MacLeod",
           "position": "CM"
         },
         {
-          "name": "Vasilios Papafotis",
+          "name": "Eamonn Bannon",
           "position": "CM"
         },
         {
-          "name": "Benjamin Asamoah",
+          "name": "Bobby Connor",
           "position": "CM"
         },
         {
-          "name": "Ioannis Chatzivasili",
+          "name": "Paul McStay",
+          "position": "CM"
+        },
+        {
+          "name": "Graeme Souness",
+          "position": "CM"
+        },
+        {
+          "name": "Gordon Strachan",
+          "position": "CM"
+        },
+        {
+          "name": "Jim Bett",
+          "position": "CM"
+        },
+        {
+          "name": "Davie Cooper",
           "position": "ST"
         },
         {
-          "name": "Luís Carlos",
+          "name": "Pat Nevin",
+          "position": "ST"
+        },
+        {
+          "name": "Brian McClair",
+          "position": "ST"
+        },
+        {
+          "name": "Kenny Dalglish",
+          "position": "ST"
+        },
+        {
+          "name": "Mo Johnston",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Archibald",
+          "position": "ST"
+        },
+        {
+          "name": "Frank McAvennie",
+          "position": "ST"
+        },
+        {
+          "name": "Charlie Nicholas",
+          "position": "ST"
+        },
+        {
+          "name": "Graeme Sharp",
+          "position": "ST"
+        },
+        {
+          "name": "Paul Sturrock",
+          "position": "ST"
+        },
+        {
+          "name": "David Speedie",
+          "position": "ST"
+        },
+        {
+          "name": "Ally McCoist",
           "position": "ST"
         }
       ],
@@ -340,54 +752,138 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2018/2019)",
-      "teamLabel": "scotland (2018-19)"
+      "source": "Transfermarkt — scotland (1986/1987)",
+      "teamLabel": "scotland (1986-87)"
     },
-    "2020": {
+    "1990": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Damjan Siskovski",
+          "name": "Andy Goram",
           "position": "GK"
         },
         {
-          "name": "Aleksandar Pantic",
-          "position": "RB"
+          "name": "Bryan Gunn",
+          "position": "GK"
         },
         {
-          "name": "Stefanos Mouktaris",
+          "name": "Jim Leighton",
+          "position": "GK"
+        },
+        {
+          "name": "Campbell Money",
+          "position": "GK"
+        },
+        {
+          "name": "Brian Irvine",
           "position": "CB"
         },
         {
-          "name": "Martinos Christofi",
+          "name": "Richard Gough",
           "position": "CB"
         },
         {
-          "name": "Román Golobart",
-          "position": "LB"
+          "name": "Alex McLeish",
+          "position": "CB"
         },
         {
-          "name": "Vladimir Boljevic",
-          "position": "DM"
+          "name": "Craig Levein",
+          "position": "CB"
         },
         {
-          "name": "Dusko Trajcevski",
+          "name": "Gary Gillespie",
+          "position": "CB"
+        },
+        {
+          "name": "Roy Aitken",
+          "position": "CB"
+        },
+        {
+          "name": "Dave McPherson",
+          "position": "CB"
+        },
+        {
+          "name": "Maurice Malpas",
+          "position": "CB"
+        },
+        {
+          "name": "Tom Boyd",
+          "position": "CB"
+        },
+        {
+          "name": "Jim McInally",
+          "position": "CB"
+        },
+        {
+          "name": "Stewart McKimmie",
+          "position": "CB"
+        },
+        {
+          "name": "Steve Nicol",
+          "position": "CB"
+        },
+        {
+          "name": "Bobby Connor",
           "position": "CM"
         },
         {
-          "name": "Gilson Costa",
+          "name": "Murdo MacLeod",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Michailidis",
+          "name": "Stuart McCall",
           "position": "CM"
         },
         {
-          "name": "Caló",
+          "name": "Paul McStay",
+          "position": "CM"
+        },
+        {
+          "name": "Gary McAllister",
+          "position": "CM"
+        },
+        {
+          "name": "Jim Bett",
+          "position": "CM"
+        },
+        {
+          "name": "John Collins",
+          "position": "CM"
+        },
+        {
+          "name": "Davie Cooper",
           "position": "ST"
         },
         {
-          "name": "Luís Carlos",
+          "name": "Pat Nevin",
+          "position": "ST"
+        },
+        {
+          "name": "Brian McClair",
+          "position": "ST"
+        },
+        {
+          "name": "Mo Johnston",
+          "position": "ST"
+        },
+        {
+          "name": "Alan McInally",
+          "position": "ST"
+        },
+        {
+          "name": "Ally McCoist",
+          "position": "ST"
+        },
+        {
+          "name": "Gordon Durie",
+          "position": "ST"
+        },
+        {
+          "name": "John Robertson",
+          "position": "ST"
+        },
+        {
+          "name": "Robert Fleck",
           "position": "ST"
         }
       ],
@@ -397,67 +893,10 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — scotland (2020/2021)",
-      "teamLabel": "scotland (2020-21)"
-    },
-    "2022": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Damjan Siskovski",
-          "position": "GK"
-        },
-        {
-          "name": "Andreas Karamanolis",
-          "position": "RB"
-        },
-        {
-          "name": "Khaled Adénon",
-          "position": "CB"
-        },
-        {
-          "name": "Semir Kerla",
-          "position": "CB"
-        },
-        {
-          "name": "Juhani Ojala",
-          "position": "LB"
-        },
-        {
-          "name": "Alex Vallejo",
-          "position": "DM"
-        },
-        {
-          "name": "Dusko Trajcevski",
-          "position": "CM"
-        },
-        {
-          "name": "Fawaz Abdullahi",
-          "position": "CM"
-        },
-        {
-          "name": "Christian Ilic",
-          "position": "CM"
-        },
-        {
-          "name": "Anaane Tidjani",
-          "position": "ST"
-        },
-        {
-          "name": "Revaz Injgia",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 64,
-        "midfield": 68,
-        "defense": 60,
-        "goalkeeping": 63
-      },
-      "source": "Transfermarkt — scotland (2022/2023)",
-      "teamLabel": "scotland (2022-23)"
+      "source": "Transfermarkt — scotland (1990/1991)",
+      "teamLabel": "scotland (1990-91)"
     }
   },
-  "id": 3393,
+  "id": 3380,
   "name": "scotland"
 }

@@ -1,47 +1,22 @@
-# Ignore local SSH key for CU tests
-Proyectos/remote_tests/cu_devkey_private
-
-# Ignore python cache in remote_tests
-Proyectos/remote_tests/__pycache__/
-
-# General ignores
-*.pyc
-__pycache__/
-.env
-.idea/
-.vscode/
-.DS_Store
-
-# Node.js
+# Dependencies
+node_modules/
 match_engine/webapp/node_modules/
-match_engine/webapp/seed_progress.log
-match_engine/webapp/seed_errors.log
 
-# Virtual environments
-.venv/
-.venv_service/
-venv/
+# Debug / temp files
+wp_*.txt
+_debug_search.js
+_wp_test.js
+match_engine/webapp/_debug_search.js
+match_engine/webapp/_wp_test.js
 
-# Java compiled files
-*.class
+# Seeder progress state
+.seed-progress.json
+match_engine/webapp/squads/.seed-progress.json
 
-# Downloaded logs (generated at runtime)
-UltraKibanaDownloader/logs/
-UltraKibanaDownloader_V4.0/UltraKibanaDownloader/logs/
+# OS
+.DS_Store
+Thumbs.db
 
-# Third-party binaries
-Proyectos/llamadas/bin/
-UltraKibanaDownloader/UltraKibanaDownloader.jar
-Proyectos/UltraProtom/
-UltraKibanaDownloader/README.md
-Ultrajson/Ultrajson_1.0.py
-Ultrajson/Ultrajson_2.0.py
-Ultrajson/backups/
-Ultrajson/remote_edit_audit.log
-_check.txt
-_fix_seq.py
-_garble_check.txt
-_methods.txt
-_mfo.txt
-_ops.txt
-_runcmds.txt
+# Editor
+.vscode/
+*.log

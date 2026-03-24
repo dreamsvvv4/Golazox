@@ -14,10 +14,12 @@
 
 'use strict';
 
+const fs   = require('fs');
+const path = require('path');
 const { SQUADS }                    = require('./squads');
 const { lookupWikipedia }           = require('./wikipedia');
 const { fetchBdfutbolSquad }        = require('./bdfutbol');
-const { fetchTransfermarktSquad }   = require('./transfermarkt');
+const { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile } = require('./transfermarkt');
 
 const SPORTSDB_BASE = 'https://www.thesportsdb.com/api/v1/json/3';
 const FETCH_TIMEOUT = 12000; // ms
@@ -119,12 +121,28 @@ const LEAGUE_TIERS = {
           'pro league', 'saudi professional league'],
 };
 
-function ratingsFromLeague(strLeague = '') {
+function ratingsFromLeague(strLeague = '', teamName = '') {
   const l = strLeague.toLowerCase();
-  if (LEAGUE_TIERS.tier1.some(t => l.includes(t))) {
+  const t = (teamName || '').toLowerCase();
+
+  const eliteNationals = ['spain','españa','espana','germany','deutschland','alemania',
+    'france','frankreich','francia','brazil','brasil','argentina','england','inglaterra',
+    'italy','italia','portugal','netherlands','holanda','holland','belgium','belgica',
+    'croatia','croacia'];
+  const strongNationals = ['denmark','dinamarca','switzerland','suiza','colombia',
+    'senegal','morocco','marruecos','usa','mexico','austria','czech','poland','polonia',
+    'ukraine','ucrania','sweden','suecia','norway','noruega','japan','south korea','chile','uruguay'];
+
+  if (eliteNationals.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
+    return { attack: 84, midfield: 84, defense: 83, goalkeeping: 82 };
+  }
+  if (strongNationals.some(n => t.includes(n))) {
+    return { attack: 78, midfield: 78, defense: 77, goalkeeping: 76 };
+  }
+  if (LEAGUE_TIERS.tier1.some(t2 => l.includes(t2))) {
     return { attack: 80, midfield: 80, defense: 80, goalkeeping: 80 };
   }
-  if (LEAGUE_TIERS.tier2.some(t => l.includes(t))) {
+  if (LEAGUE_TIERS.tier2.some(t2 => l.includes(t2))) {
     return { attack: 73, midfield: 73, defense: 73, goalkeeping: 73 };
   }
   return { attack: 68, midfield: 68, defense: 68, goalkeeping: 68 };
@@ -167,13 +185,17 @@ async function fetchFromSportsDB(teamName) {
       const rawPlayers = playersData.player;
       if (!rawPlayers || rawPlayers.length === 0) continue;
 
+      // Map ALL players to internal format so the full squad is cached
+      const allMapped = rawPlayers
+        .filter(p => p.strPlayer && p.strPosition)
+        .map(p => ({ name: p.strPlayer, position: mapPos(p.strPosition) }));
       const xi = buildXIFromPlayers(rawPlayers);
       if (xi.length < 8) continue;
 
       return {
         formation:  '4-3-3',
-        players:    xi,
-        ratings:    ratingsFromLeague(strLeague),
+        players:    allMapped.length >= 11 ? allMapped : xi,
+        ratings:    ratingsFromLeague(strLeague, teamName),
         source:     `TheSportsDB — ${teamLabel}${strLeague ? ` · ${strLeague}` : ''}${country ? ` (${country})` : ''}`,
         teamLabel,
         badgeUrl:   team.strBadge || team.strTeamBadge || null,
@@ -329,6 +351,116 @@ function makeVariants(name) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// Squads-dir cache: read/write scraped squads to squads/ folder
+// Acts as layer 0 before any external scraper is called.
+// Key: "<slug>__<saisonId>"  stored inside squads/<slug>.json
+// ─────────────────────────────────────────────────────────────
+const SQUADS_DIR = path.join(__dirname, 'squads');
+
+/** Normalise team name to a filesystem-safe slug */
+function _nameToSlug(name) {
+  return name.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // strip accents
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+/**
+ * Resolve the best slug for a team: prefer the Transfermarkt slug (which is
+ * what transfermarkt.js uses when saving files) and fall back to the generic
+ * normalised name slug.
+ */
+function _resolveSlug(teamName) {
+  const tmClub = resolveClub(teamName);
+  return (tmClub && tmClub.slug) ? tmClub.slug : _nameToSlug(teamName);
+}
+
+/**
+ * Try to load a team file using both TM slug and generic slug.
+ * Returns { teamFile, slug } for the first hit, or the generic one if neither exists.
+ */
+function _loadTeamFileAny(teamName) {
+  const tmClub = resolveClub(teamName);
+  const tmSlug = tmClub?.slug;
+  const genSlug = _nameToSlug(teamName);
+
+  // Try TM slug first (most common for scraped teams)
+  if (tmSlug) {
+    const tf = _loadTeamFile(tmSlug);
+    if (tf.seasons && Object.keys(tf.seasons).length > 0) return { teamFile: tf, slug: tmSlug };
+  }
+  // Fallback to generic slug (used by BDFutbol / SportsDB / Wikipedia saves)
+  const tf2 = _loadTeamFile(genSlug);
+  return { teamFile: tf2, slug: genSlug };
+}
+
+/**
+ * Look up a squad in the squads/ directory cache — EXACT year only.
+ * For no-era queries returns the most recent cached season.
+ * Returns the squad object or null.
+ */
+function lookupSquadsDir(teamName, era) {
+  const { teamFile } = _loadTeamFileAny(teamName);
+  if (!teamFile.seasons) return null;
+
+  const eraYear = era ? parseInt(String(era).match(/\d{4}/)?.[0]) : NaN;
+
+  // Exact year match
+  if (!isNaN(eraYear) && teamFile.seasons[String(eraYear)]) {
+    const s = teamFile.seasons[String(eraYear)];
+    return { ...s, source: `DB local — ${teamFile.name || teamName} (${eraYear})` };
+  }
+
+  // No-era: return the most recent season available (no network needed)
+  if (isNaN(eraYear)) {
+    const years = Object.keys(teamFile.seasons).map(Number).filter(n => !isNaN(n));
+    if (years.length === 0) return null;
+    const latest = String(Math.max(...years));
+    const s = teamFile.seasons[latest];
+    return { ...s, source: `DB local — ${teamFile.name || teamName} (${latest})` };
+  }
+
+  return null;
+}
+
+/**
+ * Last-resort: find the closest cached season (±5 years).
+ * Only called after ALL scrapers have failed for the exact year.
+ */
+function _lookupSquadsDirNearby(teamName, eraYear) {
+  const { teamFile } = _loadTeamFileAny(teamName);
+  if (!teamFile.seasons) return null;
+  const years = Object.keys(teamFile.seasons).map(Number).filter(n => !isNaN(n));
+  if (years.length === 0) return null;
+  years.sort((a, b) => Math.abs(a - eraYear) - Math.abs(b - eraYear));
+  const nearest = years[0];
+  if (Math.abs(nearest - eraYear) <= 5) {
+    const result = { ...teamFile.seasons[String(nearest)] };
+    result.source = `DB local — ${teamFile.name || teamName} (${nearest} ≈${eraYear})`;
+    return result;
+  }
+  return null;
+}
+
+/**
+ * Persist a scraped squad result into squads/<slug>.json for future
+ * requests. Only saves externally-fetched data (not Local DB entries).
+ */
+function saveToSquadsDir(teamName, era, squadData) {
+  if (!squadData || squadData.source?.startsWith('Local DB')) return;
+  if (!squadData.players || squadData.players.length < 8) return;
+
+  // Always use the canonical TM slug when the team is known, so all scrapers
+  // (BDFutbol, SportsDB, Wikipedia, Transfermarkt) write to the same file.
+  const slug     = _resolveSlug(teamName);
+  const eraYear  = era ? (String(era).match(/\d{4}/)?.[0] || null) : null;
+  const saisonId = eraYear || String(new Date().getFullYear());
+  try {
+    _saveTeamFile(slug, null, teamName, saisonId, squadData);
+  } catch (_) { /* non-critical */ }
+}
+
+// ─────────────────────────────────────────────────────────────
 // Local DB lookup (wraps squads.js with alias matching)
 // ─────────────────────────────────────────────────────────────
 function lookupLocal(teamName, era) {
@@ -418,6 +550,7 @@ function lookupLocal(teamName, era) {
  * lookupTeam(teamName, era)
  *
  * Priority (era given):
+ *   0. squads/ directory cache  (any previously scraped result)
  *   1. Local curated DB  (squads.js)
  *   2. BDFutbol          (Spanish football specialist — era-accurate)
  *   3. Transfermarkt     (international clubs — era-accurate)
@@ -426,9 +559,13 @@ function lookupLocal(teamName, era) {
  *   6. TheSportsDB       (current squad, ignores era)
  *
  * Priority (no era / current):
+ *   0. squads/ directory cache
  *   1. Local DB
  *   2. TheSportsDB
  *   3. Wikipedia (sometimes current)
+ *
+ * Any result from an external source (2–6) is persisted in squads/ so
+ * future lookups for the same team+era are served from cache instantly.
  *
  * Returns:
  *   { found: true,  formation, players[], ratings?, source, teamLabel }
@@ -436,6 +573,12 @@ function lookupLocal(teamName, era) {
  */
 async function lookupTeam(teamName, era = '') {
   if (!teamName || !teamName.trim()) return { found: false, source: null };
+
+  // 0. squads/ directory cache — serves any previously scraped result instantly
+  const cached = lookupSquadsDir(teamName, era);
+  if (cached && cached.players && cached.players.length >= 8) {
+    return { found: true, ...cached };
+  }
 
   // 1. Local curated DB (historical squads + current top clubs)
   const local = lookupLocal(teamName, era);
@@ -450,12 +593,16 @@ async function lookupTeam(teamName, era = '') {
     // 2. BDFutbol — Spanish football specialist, era-accurate
     try {
       const bdf = await fetchBdfutbolSquad(teamName, era);
-      if (bdf) return { found: true, ...bdf };
+      if (bdf) {
+        saveToSquadsDir(teamName, era, bdf);
+        return { found: true, ...bdf };
+      }
     } catch (err) {
       console.warn(`[lookup] BDFutbol failed for "${teamName}" ${era}: ${err.message}`);
     }
 
     // 3. Transfermarkt — international clubs, era-accurate
+    // (already saves to squads/ internally in transfermarkt.js)
     try {
       const tm = await fetchTransfermarktSquad(teamName, era);
       if (tm) return { found: true, ...tm };
@@ -466,14 +613,16 @@ async function lookupTeam(teamName, era = '') {
     // 4. Wikipedia — broad historical fallback
     try {
       const wiki = await lookupWikipedia(teamName, era);
-      if (wiki && wiki.found) return wiki;
+      if (wiki && wiki.found) {
+        saveToSquadsDir(teamName, era, wiki);
+        return wiki;
+      }
     } catch (err) {
       console.warn(`[lookup] Wikipedia failed for "${teamName}" ${era}: ${err.message}`);
     }
 
-    // 5. Progressive year expansion — try ±1 … ±5 around the requested era.
-    //    Useful when the exact season has no scraped data (e.g. small clubs, old eras).
-    //    Tries alternating offsets: +1, -1, +2, -2, … and stops on first hit.
+    // 5. All exact-year scrapers failed. Try nearby years ±5 on Transfermarkt/BDFutbol
+    //    (only reached when the exact season has no data anywhere).
     const requestedYear = parseInt(era.match(/\d{4}/)?.[0]);
     if (!isNaN(requestedYear)) {
       const MAX_DIST = 5;
@@ -487,6 +636,7 @@ async function lookupTeam(teamName, era = '') {
           if (bdf) {
             bdf.source += ` (≈${era})`;
             console.log(`[lookup] Nearby-year hit: BDFutbol ${teamName} ${tryYear} (requested ${era})`);
+            saveToSquadsDir(teamName, era, bdf);
             return { found: true, ...bdf };
           }
         } catch (_) { /* continue */ }
@@ -499,16 +649,25 @@ async function lookupTeam(teamName, era = '') {
           }
         } catch (_) { /* continue */ }
       }
+
+      // 5b. All external scrapers failed — try nearby cached season as last resort
+      const nearbyCache = _lookupSquadsDirNearby(teamName, requestedYear);
+      if (nearbyCache && nearbyCache.players?.length >= 8) {
+        return { found: true, ...nearbyCache };
+      }
     }
 
-    // 5b. Local DB closest-year fallback — use if all live scrapers failed
+    // 5c. Local DB closest-year fallback
     if (local) return { found: true, ...local };
   }
 
   // 6. TheSportsDB — current squad (era-insensitive)
   try {
     const api = await fetchFromSportsDB(teamName);
-    if (api) return { found: true, ...api };
+    if (api) {
+      saveToSquadsDir(teamName, era, api);
+      return { found: true, ...api };
+    }
   } catch (err) {
     console.warn(`[lookup] TheSportsDB failed for "${teamName}": ${err.message}`);
   }
@@ -517,7 +676,10 @@ async function lookupTeam(teamName, era = '') {
   if (!hasEra) {
     try {
       const wiki = await lookupWikipedia(teamName, era);
-      if (wiki && wiki.found) return wiki;
+      if (wiki && wiki.found) {
+        saveToSquadsDir(teamName, era, wiki);
+        return wiki;
+      }
     } catch (err) {
       console.warn(`[lookup] Wikipedia (no-era) failed for "${teamName}": ${err.message}`);
     }

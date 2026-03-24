@@ -9,8 +9,16 @@
           "position": "GK"
         },
         {
+          "name": "Günter Bernard",
+          "position": "GK"
+        },
+        {
+          "name": "Sepp Maier",
+          "position": "GK"
+        },
+        {
           "name": "Franz Beckenbauer",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Friedel Lutz",
@@ -22,11 +30,43 @@
         },
         {
           "name": "Willi Schulz",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Wolfgang Paul",
+          "position": "CB"
+        },
+        {
+          "name": "Sepp Piontek",
+          "position": "CB"
+        },
+        {
+          "name": "Jürgen Kurbjuhn",
+          "position": "CB"
+        },
+        {
+          "name": "Hartmut Heidemann",
+          "position": "CB"
+        },
+        {
+          "name": "Horst-Dieter Höttges",
+          "position": "CB"
+        },
+        {
+          "name": "Wolfgang Weber",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Patzke",
+          "position": "CB"
+        },
+        {
+          "name": "Karl-Heinz Schnellinger",
+          "position": "CB"
         },
         {
           "name": "Max Lorenz",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Peter Grosser",
@@ -41,19 +81,71 @@
           "position": "CM"
         },
         {
+          "name": "Lothar Ulsaß",
+          "position": "CM"
+        },
+        {
+          "name": "Werner Krämer",
+          "position": "CM"
+        },
+        {
+          "name": "Günter Netzer",
+          "position": "CM"
+        },
+        {
+          "name": "Wolfgang Overath",
+          "position": "CM"
+        },
+        {
           "name": "Lothar Emmerich",
           "position": "ST"
         },
         {
           "name": "Bernd Rupp",
           "position": "ST"
+        },
+        {
+          "name": "Heinz Hornig",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Grabowski",
+          "position": "ST"
+        },
+        {
+          "name": "Alfred Heiß",
+          "position": "ST"
+        },
+        {
+          "name": "Bernd Dörfel",
+          "position": "ST"
+        },
+        {
+          "name": "Helmut Haller",
+          "position": "ST"
+        },
+        {
+          "name": "Albert Brülls",
+          "position": "ST"
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Uwe Seeler",
+          "position": "ST"
+        },
+        {
+          "name": "Sigfried Held",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1966/1967)",
       "teamLabel": "germany (1966-67)"
@@ -66,8 +158,20 @@
           "position": "GK"
         },
         {
+          "name": "Sepp Maier",
+          "position": "GK"
+        },
+        {
+          "name": "Manfred Manglitz",
+          "position": "GK"
+        },
+        {
+          "name": "Horst Wolter",
+          "position": "GK"
+        },
+        {
           "name": "Franz Beckenbauer",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Klaus-Dieter Sieloff",
@@ -79,11 +183,39 @@
         },
         {
           "name": "Klaus Fichtel",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Horst-Dieter Höttges",
+          "position": "CB"
+        },
+        {
+          "name": "Wolfgang Weber",
+          "position": "CB"
+        },
+        {
+          "name": "Willi Neuberger",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Patzke",
+          "position": "CB"
+        },
+        {
+          "name": "Karl-Heinz Schnellinger",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Bella",
+          "position": "CB"
+        },
+        {
+          "name": "Berti Vogts",
+          "position": "CB"
         },
         {
           "name": "Max Lorenz",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Peter Dietrich",
@@ -98,19 +230,55 @@
           "position": "CM"
         },
         {
+          "name": "Wolfgang Overath",
+          "position": "CM"
+        },
+        {
+          "name": "Franz Roth",
+          "position": "CM"
+        },
+        {
           "name": "Hannes Löhr",
           "position": "ST"
         },
         {
           "name": "Erich Maas",
           "position": "ST"
+        },
+        {
+          "name": "Jürgen Grabowski",
+          "position": "ST"
+        },
+        {
+          "name": "Stan Libuda",
+          "position": "ST"
+        },
+        {
+          "name": "Helmut Haller",
+          "position": "ST"
+        },
+        {
+          "name": "Uwe Seeler",
+          "position": "ST"
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Jupp Heynckes",
+          "position": "ST"
+        },
+        {
+          "name": "Sigfried Held",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1970/1971)",
       "teamLabel": "germany (1970-71)"
@@ -123,8 +291,16 @@
           "position": "GK"
         },
         {
+          "name": "Norbert Nigbur",
+          "position": "GK"
+        },
+        {
+          "name": "Wolfgang Kleff",
+          "position": "GK"
+        },
+        {
           "name": "Franz Beckenbauer",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Karl-Heinz Körbel",
@@ -136,11 +312,35 @@
         },
         {
           "name": "Wolfgang Weber",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Georg Schwarzenbeck",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Cullmann",
+          "position": "CB"
+        },
+        {
+          "name": "Bernard Dietz",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Breitner",
+          "position": "CB"
+        },
+        {
+          "name": "Helmut Kremers",
+          "position": "CB"
+        },
+        {
+          "name": "Berti Vogts",
+          "position": "CB"
         },
         {
           "name": "Rainer Bonhof",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Hans-Josef Kapellmann",
@@ -155,19 +355,71 @@
           "position": "CM"
         },
         {
+          "name": "Heinz Flohe",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Hölzenbein",
+          "position": "CM"
+        },
+        {
+          "name": "Günter Netzer",
+          "position": "CM"
+        },
+        {
+          "name": "Wolfgang Overath",
+          "position": "CM"
+        },
+        {
           "name": "Dieter Herzog",
           "position": "ST"
         },
         {
           "name": "Erwin Kremers",
           "position": "ST"
+        },
+        {
+          "name": "Reiner Geye",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Grabowski",
+          "position": "ST"
+        },
+        {
+          "name": "Josef Pirrung",
+          "position": "ST"
+        },
+        {
+          "name": "Rudolf Seliger",
+          "position": "ST"
+        },
+        {
+          "name": "Uli Hoeneß",
+          "position": "ST"
+        },
+        {
+          "name": "Erwin Kostedde",
+          "position": "ST"
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Wolfgang Seel",
+          "position": "ST"
+        },
+        {
+          "name": "Jupp Heynckes",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1974/1975)",
       "teamLabel": "germany (1974-75)"
@@ -180,8 +432,16 @@
           "position": "GK"
         },
         {
+          "name": "Sepp Maier",
+          "position": "GK"
+        },
+        {
+          "name": "Rudi Kargus",
+          "position": "GK"
+        },
+        {
           "name": "Karlheinz Förster",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Rolf Rüssmann",
@@ -193,11 +453,35 @@
         },
         {
           "name": "Bernd Cullmann",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Gerd Zewe",
+          "position": "CB"
+        },
+        {
+          "name": "Bernard Dietz",
+          "position": "CB"
+        },
+        {
+          "name": "Herbert Zimmermann",
+          "position": "CB"
+        },
+        {
+          "name": "Berti Vogts",
+          "position": "CB"
+        },
+        {
+          "name": "Manfred Kaltz",
+          "position": "CB"
+        },
+        {
+          "name": "Harald Konopka",
+          "position": "CB"
         },
         {
           "name": "Uli Stielike",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Rainer Bonhof",
@@ -212,19 +496,59 @@
           "position": "CM"
         },
         {
+          "name": "Ronny Borchers",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Flohe",
+          "position": "CM"
+        },
+        {
+          "name": "Manfred Burgsmüller",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Hölzenbein",
+          "position": "CM"
+        },
+        {
+          "name": "Erich Beer",
+          "position": "CM"
+        },
+        {
           "name": "Rüdiger Abramczik",
           "position": "ST"
         },
         {
           "name": "Klaus Allofs",
           "position": "ST"
+        },
+        {
+          "name": "Klaus Toppmöller",
+          "position": "ST"
+        },
+        {
+          "name": "Klaus Fischer",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Rummenigge",
+          "position": "ST"
+        },
+        {
+          "name": "Dieter Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald Worm",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1978/1979)",
       "teamLabel": "germany (1978-79)"
@@ -237,8 +561,16 @@
           "position": "GK"
         },
         {
+          "name": "Bernd Franke",
+          "position": "GK"
+        },
+        {
+          "name": "Eike Immel",
+          "position": "GK"
+        },
+        {
           "name": "Gerd Strack",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Hans-Peter Briegel",
@@ -250,11 +582,27 @@
         },
         {
           "name": "Wilfried Hannes",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Holger Hieronymus",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Breitner",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Förster",
+          "position": "CB"
+        },
+        {
+          "name": "Manfred Kaltz",
+          "position": "CB"
         },
         {
           "name": "Wolfgang Dremmler",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Uli Stielike",
@@ -269,19 +617,71 @@
           "position": "CM"
         },
         {
+          "name": "Karl Allgöwer",
+          "position": "CM"
+        },
+        {
+          "name": "Hansi Müller",
+          "position": "CM"
+        },
+        {
+          "name": "Pierre Littbarski",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schuster",
+          "position": "CM"
+        },
+        {
+          "name": "Norbert Meier",
+          "position": "CM"
+        },
+        {
+          "name": "Felix Magath",
+          "position": "CM"
+        },
+        {
           "name": "Frank Mill",
           "position": "ST"
         },
         {
           "name": "Klaus Allofs",
           "position": "ST"
+        },
+        {
+          "name": "Klaus Fischer",
+          "position": "ST"
+        },
+        {
+          "name": "Rudi Völler",
+          "position": "ST"
+        },
+        {
+          "name": "Horst Hrubesch",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Rummenigge",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Milewski",
+          "position": "ST"
+        },
+        {
+          "name": "Uwe Reinders",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Allofs",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1982/1983)",
       "teamLabel": "germany (1982-83)"
@@ -294,8 +694,16 @@
           "position": "GK"
         },
         {
+          "name": "Ulrich Stein",
+          "position": "GK"
+        },
+        {
+          "name": "Eike Immel",
+          "position": "GK"
+        },
+        {
           "name": "Thomas Hörster",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Matthias Herget",
@@ -307,11 +715,47 @@
         },
         {
           "name": "Norbert Eder",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Jürgen Kohler",
+          "position": "CB"
+        },
+        {
+          "name": "Wolfgang Funkel",
+          "position": "CB"
+        },
+        {
+          "name": "Guido Buchwald",
+          "position": "CB"
+        },
+        {
+          "name": "Hans-Peter Briegel",
+          "position": "CB"
+        },
+        {
+          "name": "Karlheinz Förster",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Berthold",
+          "position": "CB"
+        },
+        {
+          "name": "Ditmar Jakobs",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Brehme",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Frontzeck",
+          "position": "CB"
         },
         {
           "name": "Ralf Falkenmayer",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Lothar Matthäus",
@@ -326,19 +770,71 @@
           "position": "CM"
         },
         {
+          "name": "Olaf Thon",
+          "position": "CM"
+        },
+        {
+          "name": "Wolfram Wuttke",
+          "position": "CM"
+        },
+        {
+          "name": "Pierre Littbarski",
+          "position": "CM"
+        },
+        {
+          "name": "Felix Magath",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Rummenigge",
+          "position": "CM"
+        },
+        {
+          "name": "Uwe Rahn",
+          "position": "CM"
+        },
+        {
           "name": "Frank Mill",
           "position": "ST"
         },
         {
           "name": "Herbert Waas",
           "position": "ST"
+        },
+        {
+          "name": "Dieter Eckstein",
+          "position": "ST"
+        },
+        {
+          "name": "Roland Wohlfarth",
+          "position": "ST"
+        },
+        {
+          "name": "Heinz Gründel",
+          "position": "ST"
+        },
+        {
+          "name": "Rudi Völler",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Rummenigge",
+          "position": "ST"
+        },
+        {
+          "name": "Klaus Allofs",
+          "position": "ST"
+        },
+        {
+          "name": "Dieter Hoeneß",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1986/1987)",
       "teamLabel": "germany (1986-87)"
@@ -351,8 +847,16 @@
           "position": "GK"
         },
         {
+          "name": "Raimond Aumann",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Köpke",
+          "position": "GK"
+        },
+        {
           "name": "Manfred Binz",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Klaus Augenthaler",
@@ -364,11 +868,39 @@
         },
         {
           "name": "Alois Reinhardt",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helmer",
+          "position": "CB"
+        },
+        {
+          "name": "Jürgen Kohler",
+          "position": "CB"
+        },
+        {
+          "name": "Guido Buchwald",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Berthold",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Steiner",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Brehme",
+          "position": "CB"
+        },
+        {
+          "name": "Hans Pflügler",
+          "position": "CB"
         },
         {
           "name": "Michael Zorc",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Thomas Strunz",
@@ -383,22 +915,78 @@
           "position": "CM"
         },
         {
+          "name": "Olaf Thon",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Reuter",
+          "position": "CM"
+        },
+        {
+          "name": "Knut Reinhardt",
+          "position": "CM"
+        },
+        {
+          "name": "Günter Hermann",
+          "position": "CM"
+        },
+        {
+          "name": "Uwe Bein",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Doll",
+          "position": "CM"
+        },
+        {
+          "name": "Pierre Littbarski",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Häßler",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Möller",
+          "position": "CM"
+        },
+        {
           "name": "Frank Mill",
           "position": "ST"
         },
         {
           "name": "Ulf Kirsten",
           "position": "ST"
+        },
+        {
+          "name": "Rudi Völler",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Kuntz",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Riedle",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Thom",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Klinsmann",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
-      "source": "Transfermarkt — Germany (1990/1991)",
-      "teamLabel": "Germany (1990-91)"
+      "source": "Transfermarkt — germany (1990/1991)",
+      "teamLabel": "germany (1990-91)"
     },
     "1994": {
       "formation": "4-4-2",
@@ -408,8 +996,20 @@
           "position": "GK"
         },
         {
+          "name": "Oliver Reck",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Köpke",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Kahn",
+          "position": "GK"
+        },
+        {
           "name": "Matthias Sammer",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Dirk Schuster",
@@ -421,11 +1021,27 @@
         },
         {
           "name": "Thomas Helmer",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Guido Buchwald",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Berthold",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Wörns",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Brehme",
+          "position": "CB"
         },
         {
           "name": "Dieter Eilts",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Jens Todt",
@@ -440,19 +1056,83 @@
           "position": "CM"
         },
         {
+          "name": "Maurizio Gaudino",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Basler",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Reuter",
+          "position": "CM"
+        },
+        {
+          "name": "Ralf Weber",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Wagner",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Möller",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Häßler",
+          "position": "CM"
+        },
+        {
+          "name": "Mehmet Scholl",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Effenberg",
+          "position": "CM"
+        },
+        {
           "name": "Olaf Marschall",
           "position": "ST"
         },
         {
           "name": "Fredi Bobic",
           "position": "ST"
+        },
+        {
+          "name": "Andreas Thom",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Riedle",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Kuntz",
+          "position": "ST"
+        },
+        {
+          "name": "Rudi Völler",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Klinsmann",
+          "position": "ST"
+        },
+        {
+          "name": "Ulf Kirsten",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1994/1995)",
       "teamLabel": "germany (1994-95)"
@@ -465,8 +1145,16 @@
           "position": "GK"
         },
         {
+          "name": "Oliver Kahn",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Reck",
+          "position": "GK"
+        },
+        {
           "name": "Matthias Sammer",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Stephan Paßlack",
@@ -478,11 +1166,31 @@
         },
         {
           "name": "Martin Spanring",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Markus Babbel",
+          "position": "CB"
+        },
+        {
+          "name": "Jürgen Kohler",
+          "position": "CB"
+        },
+        {
+          "name": "René Schneider",
+          "position": "CB"
+        },
+        {
+          "name": "Jörg Heinrich",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Tarnat",
+          "position": "CB"
         },
         {
           "name": "Steffen Freund",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Thomas Strunz",
@@ -497,19 +1205,67 @@
           "position": "CM"
         },
         {
+          "name": "Mario Basler",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Reuter",
+          "position": "CM"
+        },
+        {
+          "name": "Jörg Albertz",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Möller",
+          "position": "CM"
+        },
+        {
+          "name": "Mehmet Scholl",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Häßler",
+          "position": "CM"
+        },
+        {
+          "name": "Dariusz Wosz",
+          "position": "CM"
+        },
+        {
           "name": "Marco Bode",
           "position": "ST"
         },
         {
           "name": "Fredi Bobic",
           "position": "ST"
+        },
+        {
+          "name": "Stefan Kuntz",
+          "position": "ST"
+        },
+        {
+          "name": "Ulf Kirsten",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Klinsmann",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Bierhoff",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1996/1997)",
       "teamLabel": "germany (1996-97)"
@@ -522,8 +1278,16 @@
           "position": "GK"
         },
         {
+          "name": "Oliver Kahn",
+          "position": "GK"
+        },
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
           "name": "Jens Nowotny",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Mustafa Dogan",
@@ -535,11 +1299,43 @@
         },
         {
           "name": "Thomas Linke",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Paßlack",
+          "position": "CB"
+        },
+        {
+          "name": "Jürgen Kohler",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Helmer",
+          "position": "CB"
+        },
+        {
+          "name": "Markus Babbel",
+          "position": "CB"
+        },
+        {
+          "name": "Yves Eigenrauch",
+          "position": "CB"
+        },
+        {
+          "name": "Jörg Heinrich",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Tarnat",
+          "position": "CB"
+        },
+        {
+          "name": "Marko Rehmer",
+          "position": "CB"
         },
         {
           "name": "Sven Kmetsch",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Thomas Strunz",
@@ -554,19 +1350,123 @@
           "position": "CM"
         },
         {
+          "name": "Jens Jeremies",
+          "position": "CM"
+        },
+        {
+          "name": "Carsten Ramelow",
+          "position": "CM"
+        },
+        {
+          "name": "Steffen Freund",
+          "position": "CM"
+        },
+        {
+          "name": "Dietmar Hamann",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Ballack",
+          "position": "CM"
+        },
+        {
+          "name": "Olaf Thon",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Basler",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Reuter",
+          "position": "CM"
+        },
+        {
+          "name": "Jörg Albertz",
+          "position": "CM"
+        },
+        {
+          "name": "Ralf Weber",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Reich",
+          "position": "CM"
+        },
+        {
+          "name": "Lars Ricken",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Beinlich",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Möller",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Effenberg",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Häßler",
+          "position": "CM"
+        },
+        {
+          "name": "Dariusz Wosz",
+          "position": "CM"
+        },
+        {
           "name": "Marco Bode",
           "position": "ST"
         },
         {
           "name": "Oliver Neuville",
           "position": "ST"
+        },
+        {
+          "name": "Ulf Kirsten",
+          "position": "ST"
+        },
+        {
+          "name": "Olaf Marschall",
+          "position": "ST"
+        },
+        {
+          "name": "Fredi Bobic",
+          "position": "ST"
+        },
+        {
+          "name": "Carsten Jancker",
+          "position": "ST"
+        },
+        {
+          "name": "Paulo Rink",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Zickler",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Klinsmann",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Bierhoff",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1998/1999)",
       "teamLabel": "germany (1998-99)"
@@ -579,8 +1479,16 @@
           "position": "GK"
         },
         {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Hans Jörg Butt",
+          "position": "GK"
+        },
+        {
           "name": "Jens Nowotny",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Markus Babbel",
@@ -592,11 +1500,27 @@
         },
         {
           "name": "Christian Wörns",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Linke",
+          "position": "CB"
+        },
+        {
+          "name": "Jörg Heinrich",
+          "position": "CB"
+        },
+        {
+          "name": "Marko Rehmer",
+          "position": "CB"
+        },
+        {
+          "name": "Zoltan Sebescen",
+          "position": "CB"
         },
         {
           "name": "Frank Baumann",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Lothar Matthäus",
@@ -611,19 +1535,75 @@
           "position": "CM"
         },
         {
+          "name": "Carsten Ramelow",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Ballack",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Deisler",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Beinlich",
+          "position": "CM"
+        },
+        {
+          "name": "Mehmet Scholl",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Häßler",
+          "position": "CM"
+        },
+        {
+          "name": "Dariusz Wosz",
+          "position": "CM"
+        },
+        {
           "name": "Marco Bode",
           "position": "ST"
         },
         {
           "name": "Ulf Kirsten",
           "position": "ST"
+        },
+        {
+          "name": "Alexander Zickler",
+          "position": "ST"
+        },
+        {
+          "name": "Paulo Rink",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Preetz",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Neuville",
+          "position": "ST"
+        },
+        {
+          "name": "Carsten Jancker",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Bierhoff",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2000/2001)",
       "teamLabel": "germany (2000-01)"
@@ -636,8 +1616,24 @@
           "position": "GK"
         },
         {
+          "name": "Timo Hildebrand",
+          "position": "GK"
+        },
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Kahn",
+          "position": "GK"
+        },
+        {
+          "name": "Hans Jörg Butt",
+          "position": "GK"
+        },
+        {
           "name": "Jens Nowotny",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Christian Wörns",
@@ -649,11 +1645,31 @@
         },
         {
           "name": "Ingo Hertzsch",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Arne Friedrich",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Metzelder",
+          "position": "CB"
+        },
+        {
+          "name": "Jörg Heinrich",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Rahn",
+          "position": "CB"
+        },
+        {
+          "name": "Marko Rehmer",
+          "position": "CB"
         },
         {
           "name": "Fabian Ernst",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Sebastian Schindzielorz",
@@ -668,19 +1684,111 @@
           "position": "CM"
         },
         {
+          "name": "Frank Baumann",
+          "position": "CM"
+        },
+        {
+          "name": "Dietmar Hamann",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Kehl",
+          "position": "CM"
+        },
+        {
+          "name": "Jens Jeremies",
+          "position": "CM"
+        },
+        {
+          "name": "Torsten Frings",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Ballack",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Borowski",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Deisler",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Freier",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schneider",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Bierofka",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
+          "name": "Jörg Böhme",
+          "position": "CM"
+        },
+        {
+          "name": "Lars Ricken",
+          "position": "CM"
+        },
+        {
+          "name": "Mehmet Scholl",
+          "position": "CM"
+        },
+        {
           "name": "Marco Bode",
           "position": "ST"
         },
         {
           "name": "Thomas Brdaric",
           "position": "ST"
+        },
+        {
+          "name": "Oliver Neuville",
+          "position": "ST"
+        },
+        {
+          "name": "Fredi Bobic",
+          "position": "ST"
+        },
+        {
+          "name": "Carsten Jancker",
+          "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
+        },
+        {
+          "name": "Gerald Asamoah",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Max",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Zickler",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Bierhoff",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2002/2003)",
       "teamLabel": "germany (2002-03)"
@@ -693,8 +1801,20 @@
           "position": "GK"
         },
         {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Simon Jentzsch",
+          "position": "GK"
+        },
+        {
+          "name": "Timo Hildebrand",
+          "position": "GK"
+        },
+        {
           "name": "Jens Nowotny",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Thomas Linke",
@@ -706,11 +1826,51 @@
         },
         {
           "name": "Robert Huth",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Arne Friedrich",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Wörns",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Schulz",
+          "position": "CB"
+        },
+        {
+          "name": "Per Mertesacker",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Rahn",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Görlitz",
+          "position": "CB"
+        },
+        {
+          "name": "Moritz Volz",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Hinkel",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Owomoyela",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
         },
         {
           "name": "Carsten Ramelow",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Frank Baumann",
@@ -725,19 +1885,91 @@
           "position": "CM"
         },
         {
+          "name": "Jens Jeremies",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Engelhardt",
+          "position": "CM"
+        },
+        {
+          "name": "Fabian Ernst",
+          "position": "CM"
+        },
+        {
+          "name": "Torsten Frings",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Borowski",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Hitzlsperger",
+          "position": "CM"
+        },
+        {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Ballack",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Deisler",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Freier",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schneider",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "CM"
+        },
+        {
           "name": "Oliver Neuville",
           "position": "ST"
         },
         {
           "name": "Gerald Asamoah",
           "position": "ST"
+        },
+        {
+          "name": "Fredi Bobic",
+          "position": "ST"
+        },
+        {
+          "name": "Kevin Kuranyi",
+          "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Brdaric",
+          "position": "ST"
+        },
+        {
+          "name": "Benjamin Lauth",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2004/2005)",
       "teamLabel": "germany (2004-05)"
@@ -750,8 +1982,20 @@
           "position": "GK"
         },
         {
+          "name": "Robert Enke",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Kahn",
+          "position": "GK"
+        },
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
           "name": "Jens Nowotny",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Arne Friedrich",
@@ -763,11 +2007,43 @@
         },
         {
           "name": "Christoph Metzelder",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Robert Huth",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Friedrich",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Madlung",
+          "position": "CB"
+        },
+        {
+          "name": "Marcell Jansen",
+          "position": "CB"
+        },
+        {
+          "name": "Malik Fathi",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Owomoyela",
+          "position": "CB"
+        },
+        {
+          "name": "Clemens Fritz",
+          "position": "CB"
         },
         {
           "name": "Torsten Frings",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Fabian Ernst",
@@ -782,19 +2058,67 @@
           "position": "CM"
         },
         {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Borowski",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Hitzlsperger",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Deisler",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schneider",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Freier",
+          "position": "CM"
+        },
+        {
+          "name": "Piotr Trochowski",
+          "position": "CM"
+        },
+        {
           "name": "David Odonkor",
           "position": "ST"
         },
         {
           "name": "Jan Schlaudraff",
           "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
+        },
+        {
+          "name": "Gerald Asamoah",
+          "position": "ST"
+        },
+        {
+          "name": "Mike Hanke",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Neuville",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2006/2007)",
       "teamLabel": "germany (2006-07)"
@@ -807,8 +2131,24 @@
           "position": "GK"
         },
         {
+          "name": "Tim Wiese",
+          "position": "GK"
+        },
+        {
+          "name": "Robert Enke",
+          "position": "GK"
+        },
+        {
+          "name": "Timo Hildebrand",
+          "position": "GK"
+        },
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
           "name": "Per Mertesacker",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Serdar Taşçı",
@@ -820,11 +2160,47 @@
         },
         {
           "name": "Heiko Westermann",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Friedrich",
+          "position": "CB"
+        },
+        {
+          "name": "Marvin Compper",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Metzelder",
+          "position": "CB"
+        },
+        {
+          "name": "Marcell Jansen",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Schäfer",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
+        },
+        {
+          "name": "Clemens Fritz",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Hilbert",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Hinkel",
+          "position": "CB"
         },
         {
           "name": "Torsten Frings",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Simon Rolfes",
@@ -839,19 +2215,75 @@
           "position": "CM"
         },
         {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Hitzlsperger",
+          "position": "CM"
+        },
+        {
+          "name": "Gonzalo Castro",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Borowski",
+          "position": "CM"
+        },
+        {
+          "name": "Tobias Weis",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schneider",
+          "position": "CM"
+        },
+        {
+          "name": "Piotr Trochowski",
+          "position": "CM"
+        },
+        {
+          "name": "Marko Marin",
+          "position": "CM"
+        },
+        {
           "name": "David Odonkor",
           "position": "ST"
         },
         {
           "name": "Mario Gómez",
           "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Helmes",
+          "position": "ST"
+        },
+        {
+          "name": "Kevin Kuranyi",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Kießling",
+          "position": "ST"
+        },
+        {
+          "name": "Oliver Neuville",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2008/2009)",
       "teamLabel": "germany (2008-09)"
@@ -864,8 +2296,24 @@
           "position": "GK"
         },
         {
+          "name": "René Adler",
+          "position": "GK"
+        },
+        {
+          "name": "Tim Wiese",
+          "position": "GK"
+        },
+        {
+          "name": "Tobias Sippel",
+          "position": "GK"
+        },
+        {
+          "name": "Hans Jörg Butt",
+          "position": "GK"
+        },
+        {
           "name": "Mats Hummels",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Jérôme Boateng",
@@ -877,11 +2325,59 @@
         },
         {
           "name": "Serdar Taşçı",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Holger Badstuber",
+          "position": "CB"
+        },
+        {
+          "name": "Heiko Westermann",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Schulz",
+          "position": "CB"
+        },
+        {
+          "name": "Arne Friedrich",
+          "position": "CB"
+        },
+        {
+          "name": "Marcell Jansen",
+          "position": "CB"
+        },
+        {
+          "name": "Dennis Aogo",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Schmelzer",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Schäfer",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Großkreutz",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Beck",
+          "position": "CB"
+        },
+        {
+          "name": "Sascha Riether",
+          "position": "CB"
         },
         {
           "name": "Christian Träsch",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Stefan Reinartz",
@@ -896,19 +2392,83 @@
           "position": "CM"
         },
         {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Holtby",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Ballack",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Gentner",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Hitzlsperger",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Götze",
+          "position": "CM"
+        },
+        {
+          "name": "Marko Marin",
+          "position": "CM"
+        },
+        {
+          "name": "Piotr Trochowski",
+          "position": "CM"
+        },
+        {
+          "name": "Aaron Hunt",
+          "position": "CM"
+        },
+        {
           "name": "André Schürrle",
           "position": "ST"
         },
         {
           "name": "Thomas Müller",
           "position": "ST"
+        },
+        {
+          "name": "Mario Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Kießling",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Helmes",
+          "position": "ST"
+        },
+        {
+          "name": "Cacau",
+          "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2010/2011)",
       "teamLabel": "germany (2010-11)"
@@ -921,8 +2481,24 @@
           "position": "GK"
         },
         {
+          "name": "Marc-André ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "René Adler",
+          "position": "GK"
+        },
+        {
+          "name": "Ron-Robert Zieler",
+          "position": "GK"
+        },
+        {
+          "name": "Tim Wiese",
+          "position": "GK"
+        },
+        {
           "name": "Mats Hummels",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Jérôme Boateng",
@@ -934,11 +2510,39 @@
         },
         {
           "name": "Holger Badstuber",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Per Mertesacker",
+          "position": "CB"
+        },
+        {
+          "name": "Roman Neustädter",
+          "position": "CB"
+        },
+        {
+          "name": "Heiko Westermann",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Schmelzer",
+          "position": "CB"
+        },
+        {
+          "name": "Dennis Aogo",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastian Jung",
+          "position": "CB"
         },
         {
           "name": "Lars Bender",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Sven Bender",
@@ -953,19 +2557,71 @@
           "position": "CM"
         },
         {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Holtby",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Götze",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Reus",
+          "position": "CM"
+        },
+        {
           "name": "André Schürrle",
           "position": "ST"
         },
         {
           "name": "Julian Draxler",
           "position": "ST"
+        },
+        {
+          "name": "Thomas Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
+        },
+        {
+          "name": "Cacau",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2012/2013)",
       "teamLabel": "germany (2012-13)"
@@ -978,8 +2634,20 @@
           "position": "GK"
         },
         {
+          "name": "Marc-André ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Ron-Robert Zieler",
+          "position": "GK"
+        },
+        {
+          "name": "Roman Weidenfeller",
+          "position": "GK"
+        },
+        {
           "name": "Jérôme Boateng",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Mats Hummels",
@@ -991,11 +2659,63 @@
         },
         {
           "name": "Benedikt Höwedes",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Shkodran Mustafi",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Knoche",
+          "position": "CB"
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Schmelzer",
+          "position": "CB"
+        },
+        {
+          "name": "Marcell Jansen",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Hector",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Günter",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Großkreutz",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastian Jung",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Durm",
+          "position": "CB"
+        },
+        {
+          "name": "Oliver Sorg",
+          "position": "CB"
         },
         {
           "name": "Lars Bender",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Christoph Kramer",
@@ -1010,19 +2730,87 @@
           "position": "CM"
         },
         {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Max Meyer",
+          "position": "CM"
+        },
+        {
+          "name": "Maximilian Arnold",
+          "position": "CM"
+        },
+        {
+          "name": "Leon Goretzka",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Götze",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Reus",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Volland",
+          "position": "CM"
+        },
+        {
           "name": "André Schürrle",
           "position": "ST"
         },
         {
           "name": "Julian Draxler",
           "position": "ST"
+        },
+        {
+          "name": "Karim Bellarabi",
+          "position": "ST"
+        },
+        {
+          "name": "André Hahn",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Sam",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Max Kruse",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2014/2015)",
       "teamLabel": "germany (2014-15)"
@@ -1035,8 +2823,20 @@
           "position": "GK"
         },
         {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Marc-André ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Trapp",
+          "position": "GK"
+        },
+        {
           "name": "Jérôme Boateng",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Mats Hummels",
@@ -1048,11 +2848,39 @@
         },
         {
           "name": "Benedikt Höwedes",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Emre Can",
+          "position": "CB"
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Tah",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Süle",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Hector",
+          "position": "CB"
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "CB"
         },
         {
           "name": "Christoph Kramer",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Julian Weigl",
@@ -1067,19 +2895,91 @@
           "position": "CM"
         },
         {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Bastian Schweinsteiger",
+          "position": "CM"
+        },
+        {
+          "name": "Max Meyer",
+          "position": "CM"
+        },
+        {
+          "name": "Leon Goretzka",
+          "position": "CM"
+        },
+        {
+          "name": "Yannick Gerhardt",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Reus",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Götze",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Volland",
+          "position": "CM"
+        },
+        {
+          "name": "Julian Brandt",
+          "position": "CM"
+        },
+        {
           "name": "Julian Draxler",
           "position": "ST"
         },
         {
           "name": "André Schürrle",
           "position": "ST"
+        },
+        {
+          "name": "Karim Bellarabi",
+          "position": "ST"
+        },
+        {
+          "name": "Leroy Sané",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Serge Gnabry",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Podolski",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2016/2017)",
       "teamLabel": "germany (2016-17)"
@@ -1092,8 +2992,20 @@
           "position": "GK"
         },
         {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Neuer",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Trapp",
+          "position": "GK"
+        },
+        {
           "name": "Niklas Süle",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Antonio Rüdiger",
@@ -1105,11 +3017,39 @@
         },
         {
           "name": "Jonathan Tah",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Thilo Kehrer",
+          "position": "CB"
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB"
+        },
+        {
+          "name": "Mats Hummels",
+          "position": "CB"
+        },
+        {
+          "name": "Jérôme Boateng",
+          "position": "CB"
+        },
+        {
+          "name": "Nico Schulz",
+          "position": "CB"
+        },
+        {
+          "name": "Marvin Plattenhardt",
+          "position": "CB"
+        },
+        {
+          "name": "Jonas Hector",
+          "position": "CB"
         },
         {
           "name": "Joshua Kimmich",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Sebastian Rudy",
@@ -1124,19 +3064,75 @@
           "position": "CM"
         },
         {
+          "name": "Leon Goretzka",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Reus",
+          "position": "CM"
+        },
+        {
+          "name": "Julian Brandt",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Lars Stindl",
+          "position": "CM"
+        },
+        {
           "name": "Julian Draxler",
           "position": "ST"
         },
         {
           "name": "Leroy Sané",
           "position": "ST"
+        },
+        {
+          "name": "Serge Gnabry",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Kai Havertz",
+          "position": "ST"
+        },
+        {
+          "name": "Timo Werner",
+          "position": "ST"
+        },
+        {
+          "name": "Mark Uth",
+          "position": "ST"
+        },
+        {
+          "name": "Nils Petersen",
+          "position": "ST"
+        },
+        {
+          "name": "Sandro Wagner",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gómez",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2018/2019)",
       "teamLabel": "germany (2018-19)"
@@ -1149,8 +3145,20 @@
           "position": "GK"
         },
         {
+          "name": "Manuel Neuer",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Trapp",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Baumann",
+          "position": "GK"
+        },
+        {
           "name": "Niklas Süle",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Matthias Ginter",
@@ -1162,11 +3170,59 @@
         },
         {
           "name": "Lukas Klostermann",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Emre Can",
+          "position": "CB"
+        },
+        {
+          "name": "Thilo Kehrer",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Tah",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Koch",
+          "position": "CB"
+        },
+        {
+          "name": "Felix Uduokhai",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Halstenberg",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Stark",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Gosens",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Max",
+          "position": "CB"
+        },
+        {
+          "name": "Nico Schulz",
+          "position": "CB"
+        },
+        {
+          "name": "Ridle Baku",
+          "position": "CB"
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "CB"
         },
         {
           "name": "Joshua Kimmich",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Leon Goretzka",
@@ -1181,19 +3237,59 @@
           "position": "CM"
         },
         {
+          "name": "Florian Neuhaus",
+          "position": "CM"
+        },
+        {
+          "name": "Nadiem Amiri",
+          "position": "CM"
+        },
+        {
+          "name": "Mahmoud Dahoud",
+          "position": "CM"
+        },
+        {
+          "name": "Suat Serdar",
+          "position": "CM"
+        },
+        {
+          "name": "Julian Brandt",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Hofmann",
+          "position": "CM"
+        },
+        {
           "name": "Julian Draxler",
           "position": "ST"
         },
         {
           "name": "Leroy Sané",
           "position": "ST"
+        },
+        {
+          "name": "Serge Gnabry",
+          "position": "ST"
+        },
+        {
+          "name": "Kai Havertz",
+          "position": "ST"
+        },
+        {
+          "name": "Timo Werner",
+          "position": "ST"
+        },
+        {
+          "name": "Luca Waldschmidt",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2020/2021)",
       "teamLabel": "germany (2020-21)"
@@ -1206,8 +3302,20 @@
           "position": "GK"
         },
         {
+          "name": "Kevin Trapp",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Neuer",
+          "position": "GK"
+        },
+        {
+          "name": "Oliver Baumann",
+          "position": "GK"
+        },
+        {
           "name": "Nico Schlotterbeck",
-          "position": "RB"
+          "position": "CB"
         },
         {
           "name": "Niklas Süle",
@@ -1219,11 +3327,43 @@
         },
         {
           "name": "Jonathan Tah",
-          "position": "LB"
+          "position": "CB"
+        },
+        {
+          "name": "Armel Bella-Kotchap",
+          "position": "CB"
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB"
+        },
+        {
+          "name": "Thilo Kehrer",
+          "position": "CB"
+        },
+        {
+          "name": "Lukas Klostermann",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Gosens",
+          "position": "CB"
+        },
+        {
+          "name": "David Raum",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Günter",
+          "position": "CB"
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "CB"
         },
         {
           "name": "Joshua Kimmich",
-          "position": "DM"
+          "position": "CM"
         },
         {
           "name": "Anton Stach",
@@ -1238,24 +3378,84 @@
           "position": "CM"
         },
         {
+          "name": "İlkay Gündoğan",
+          "position": "CM"
+        },
+        {
+          "name": "Maximilian Arnold",
+          "position": "CM"
+        },
+        {
+          "name": "Florian Neuhaus",
+          "position": "CM"
+        },
+        {
+          "name": "Jamal Musiala",
+          "position": "CM"
+        },
+        {
+          "name": "Julian Brandt",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Hofmann",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Götze",
+          "position": "CM"
+        },
+        {
           "name": "Julian Draxler",
           "position": "ST"
         },
         {
           "name": "Leroy Sané",
           "position": "ST"
+        },
+        {
+          "name": "Karim Adeyemi",
+          "position": "ST"
+        },
+        {
+          "name": "Serge Gnabry",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Kai Havertz",
+          "position": "ST"
+        },
+        {
+          "name": "Youssoufa Moukoko",
+          "position": "ST"
+        },
+        {
+          "name": "Timo Werner",
+          "position": "ST"
+        },
+        {
+          "name": "Niclas Füllkrug",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Nmecha",
+          "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 67,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2022/2023)",
       "teamLabel": "germany (2022-23)"
     }
   },
   "id": 3262,
-  "name": "Germany"
+  "name": "germany"
 }

@@ -270,7 +270,9 @@ const TM_CLUBS = {
   'club brugge':               { id: 2282,  slug: 'fc-brugge' },
 
   // ── Selecciones nacionales ──────────────────────────────
-  // Europa
+  // NOTA: Solo se incluyen IDs verificados que devuelven la selección correcta.
+  // El resto se resuelve mediante búsqueda dinámica (Nationalelf endpoint).
+  // IDs verificados manualmente (producen jugadores del país correcto):
   'alemania':                  { id: 3262,  slug: 'deutschland' },
   'germany':                   { id: 3262,  slug: 'deutschland' },
   'deutschland':               { id: 3262,  slug: 'deutschland' },
@@ -283,127 +285,37 @@ const TM_CLUBS = {
   'francia':                   { id: 3377,  slug: 'frankreich' },
   'italy':                     { id: 3376,  slug: 'italien' },
   'italia':                    { id: 3376,  slug: 'italien' },
-  'england':                   { id: 3166,  slug: 'england' },
-  'inglaterra':                { id: 3166,  slug: 'england' },
-  'netherlands':               { id: 3378,  slug: 'niederlande' },
-  'holanda':                   { id: 3378,  slug: 'niederlande' },
-  'países bajos':              { id: 3378,  slug: 'niederlande' },
-  'paises bajos':              { id: 3378,  slug: 'niederlande' },
-  'portugal':                  { id: 3401,  slug: 'portugal' },
   'belgium':                   { id: 3382,  slug: 'belgien' },
   'bélgica':                   { id: 3382,  slug: 'belgien' },
   'belgica':                   { id: 3382,  slug: 'belgien' },
-  'croatia':                   { id: 3622,  slug: 'kroatien' },
-  'croacia':                   { id: 3622,  slug: 'kroatien' },
-  'russia':                    { id: 3384,  slug: 'russland' },
-  'rusia':                     { id: 3384,  slug: 'russland' },
-  'ukraine':                   { id: 3394,  slug: 'ukraine' },
-  'ucrania':                   { id: 3394,  slug: 'ukraine' },
-  'poland':                    { id: 3387,  slug: 'polen' },
-  'polonia':                   { id: 3387,  slug: 'polen' },
-  'denmark':                   { id: 3379,  slug: 'danemark' },
-  'dinamarca':                 { id: 3379,  slug: 'danemark' },
-  'sweden':                    { id: 3380,  slug: 'schweden' },
-  'suecia':                    { id: 3380,  slug: 'schweden' },
-  'norway':                    { id: 3383,  slug: 'norwegen' },
-  'noruega':                   { id: 3383,  slug: 'norwegen' },
-  'switzerland':               { id: 3385,  slug: 'schweiz' },
-  'suiza':                     { id: 3385,  slug: 'schweiz' },
-  'austria':                   { id: 3389,  slug: 'osterreich' },
-  'scotland':                  { id: 3393,  slug: 'schottland' },
-  'escocia':                   { id: 3393,  slug: 'schottland' },
-  'wales':                     { id: 3395,  slug: 'wales' },
-  'gales':                     { id: 3395,  slug: 'wales' },
-  'turkey':                    { id: 3390,  slug: 'turkei' },
-  'turquía':                   { id: 3390,  slug: 'turkei' },
-  'turquia':                   { id: 3390,  slug: 'turkei' },
-  'greece':                    { id: 3400,  slug: 'griechenland' },
-  'grecia':                    { id: 3400,  slug: 'griechenland' },
-  'serbia':                    { id: 3399,  slug: 'serbien' },
-  'romania':                   { id: 3396,  slug: 'rumanien' },
-  'rumania':                   { id: 3396,  slug: 'rumanien' },
-  'hungary':                   { id: 3397,  slug: 'ungarn' },
-  'hungría':                   { id: 3397,  slug: 'ungarn' },
-  'hungria':                   { id: 3397,  slug: 'ungarn' },
-  'czech republic':            { id: 3398,  slug: 'tschechien' },
-  'república checa':           { id: 3398,  slug: 'tschechien' },
-  'republica checa':           { id: 3398,  slug: 'tschechien' },
-  'slovakia':                  { id: 3403,  slug: 'slowakei' },
-  'eslovaquia':                { id: 3403,  slug: 'slowakei' },
-  'slovenia':                  { id: 3404,  slug: 'slowenien' },
-  'eslovenia':                 { id: 3404,  slug: 'slowenien' },
-  'finland':                   { id: 3381,  slug: 'finnland' },
-  'finlandia':                 { id: 3381,  slug: 'finnland' },
-  'iceland':                   { id: 3386,  slug: 'island' },
-  'islandia':                  { id: 3386,  slug: 'island' },
-  'republic of ireland':       { id: 3392,  slug: 'irland' },
-  'irlanda':                   { id: 3392,  slug: 'irland' },
-  'northern ireland':          { id: 3391,  slug: 'nordirland' },
-  'irlanda del norte':         { id: 3391,  slug: 'nordirland' },
-  'bosnia':                    { id: 3411,  slug: 'bosnien-herzegowina' },
-  'bosnia herzegovina':        { id: 3411,  slug: 'bosnien-herzegowina' },
-  'albania':                   { id: 3419,  slug: 'albanien' },
-
-  // América
   'argentina':                 { id: 3437,  slug: 'argentinien' },
-  'brasil':                    { id: 3439,  slug: 'brasilien' },
   'brazil':                    { id: 3439,  slug: 'brasilien' },
-  'uruguay':                   { id: 3455,  slug: 'uruguay' },
-  'colombia':                  { id: 3452,  slug: 'kolumbien' },
-  'chile':                     { id: 3457,  slug: 'chile' },
-  'ecuador':                   { id: 3454,  slug: 'ecuador' },
-  'peru':                      { id: 3456,  slug: 'peru' },
-  'perú':                      { id: 3456,  slug: 'peru' },
-  'paraguay':                  { id: 3453,  slug: 'paraguay' },
-  'venezuela':                 { id: 3459,  slug: 'venezuela' },
-  'mexico':                    { id: 3440,  slug: 'mexiko' },
-  'méxico':                    { id: 3440,  slug: 'mexiko' },
-  'usa':                       { id: 3438,  slug: 'vereinigte-staaten' },
-  'estados unidos':            { id: 3438,  slug: 'vereinigte-staaten' },
-  'united states':             { id: 3438,  slug: 'vereinigte-staaten' },
-  'costa rica':                { id: 3451,  slug: 'costa-rica' },
-  'jamaica':                   { id: 3445,  slug: 'jamaika' },
-  'canada':                    { id: 3441,  slug: 'kanada' },
-  'canadá':                    { id: 3441,  slug: 'kanada' },
-
-  // África
-  'senegal':                   { id: 3476,  slug: 'senegal' },
-  'cameroon':                  { id: 3481,  slug: 'kamerun' },
-  'camerún':                   { id: 3481,  slug: 'kamerun' },
-  'camerun':                   { id: 3481,  slug: 'kamerun' },
-  'ghana':                     { id: 3473,  slug: 'ghana' },
-  'nigeria':                   { id: 3478,  slug: 'nigeria' },
-  'morocco':                   { id: 3484,  slug: 'marokko' },
-  'marruecos':                 { id: 3484,  slug: 'marokko' },
-  'egypt':                     { id: 3485,  slug: 'agypten' },
-  'egipto':                    { id: 3485,  slug: 'agypten' },
-  'ivory coast':               { id: 3489,  slug: 'elfenbeinkuste' },
-  'costa de marfil':           { id: 3489,  slug: 'elfenbeinkuste' },
-  'south africa':              { id: 3490,  slug: 'sudafrika' },
-  'sudáfrica':                 { id: 3490,  slug: 'sudafrika' },
-  'sudafrica':                 { id: 3490,  slug: 'sudafrika' },
-  'algeria':                   { id: 3487,  slug: 'algerien' },
-  'argelia':                   { id: 3487,  slug: 'algerien' },
-  'tunisia':                   { id: 3488,  slug: 'tunesien' },
-  'túnez':                     { id: 3488,  slug: 'tunesien' },
-  'tunez':                     { id: 3488,  slug: 'tunesien' },
-  'mali':                      { id: 3483,  slug: 'mali' },
-  'zambia':                    { id: 3491,  slug: 'sambia' },
-
-  // Asia / Oceanía
-  'japan':                     { id: 3466,  slug: 'japan' },
-  'japón':                     { id: 3466,  slug: 'japan' },
-  'japon':                     { id: 3466,  slug: 'japan' },
-  'south korea':               { id: 3467,  slug: 'sudkorea' },
-  'corea del sur':             { id: 3467,  slug: 'sudkorea' },
-  'corea':                     { id: 3467,  slug: 'sudkorea' },
-  'australia':                 { id: 3465,  slug: 'australien' },
-  'saudi arabia':              { id: 3462,  slug: 'saudi-arabien' },
-  'arabia saudí':              { id: 3462,  slug: 'saudi-arabien' },
-  'arabia saudi':              { id: 3462,  slug: 'saudi-arabien' },
-  'iran':                      { id: 3463,  slug: 'iran' },
-  'irán':                      { id: 3463,  slug: 'iran' },
-  'china':                     { id: 3464,  slug: 'china' },
+  'brasil':                    { id: 3439,  slug: 'brasilien' },
+  // ── Additional verified European national teams ─────────────
+  'england':                   { id: 3299,  slug: 'england' },
+  'inglaterra':                { id: 3299,  slug: 'england' },
+  'portugal':                  { id: 3300,  slug: 'portugal' },
+  'netherlands':               { id: 3379,  slug: 'niederlande' },
+  'holanda':                   { id: 3379,  slug: 'niederlande' },
+  'holland':                   { id: 3379,  slug: 'niederlande' },
+  'paises bajos':              { id: 3379,  slug: 'niederlande' },
+  'scotland':                  { id: 3380,  slug: 'schottland' },
+  'escocia':                   { id: 3380,  slug: 'schottland' },
+  'austria':                   { id: 3383,  slug: 'osterreich' },
+  'österreich':                { id: 3383,  slug: 'osterreich' },
+  'osterreich':                { id: 3383,  slug: 'osterreich' },
+  'denmark':                   { id: 3436,  slug: 'danemark' },
+  'dinamarca':                 { id: 3436,  slug: 'danemark' },
+  'sweden':                    { id: 3557,  slug: 'schweden' },
+  'suecia':                    { id: 3557,  slug: 'schweden' },
+  'switzerland':               { id: 3384,  slug: 'schweiz' },
+  'suiza':                     { id: 3384,  slug: 'schweiz' },
+  'croatia':                   { id: 3556,  slug: 'kroatien' },
+  'croacia':                   { id: 3556,  slug: 'kroatien' },
+  'czech republic':            { id: 3445,  slug: 'tschechien' },
+  'czechia':                   { id: 3445,  slug: 'tschechien' },
+  'república checa':           { id: 3445,  slug: 'tschechien' },
+  'republica checa':           { id: 3445,  slug: 'tschechien' },
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -434,7 +346,8 @@ function resolveClub(teamName) {
 // Dynamic Transfermarkt search — find ANY club by name
 // Caches results to avoid repeated network calls in the same session
 // ─────────────────────────────────────────────────────────────
-const _tmSearchCache = new Map(); // teamName.lc → { slug, id } | null
+const _tmSearchCache = new Map(); // teamName.lc → { slug, id } | null  (capped at 300)
+const _TM_CACHE_MAX = 300;
 
 // ─────────────────────────────────────────────────────────────
 // Persistent per-team squad store
@@ -465,7 +378,8 @@ function _loadTeamFile(slug) {
 function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
   const file = path.join(SQUADS_DIR, `${slug}.json`);
   const data = _loadTeamFile(slug);
-  data.id    = id;
+  // Only set id if provided — never overwrite an existing id with null
+  if (id != null) data.id = id;
   data.slug  = slug;
   if (!data.name) data.name = teamName;
   data.seasons             = data.seasons || {};
@@ -474,9 +388,65 @@ function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
   catch (e) { console.warn('[squads] No se pudo guardar:', e.message); }
 }
 
+// ─────────────────────────────────────────────────────────────
+// National team name → TM slug mapping
+// Used to route national team searches to the Nationalelf endpoint
+// ─────────────────────────────────────────────────────────────
+const NATIONAL_TEAM_SLUGS = new Map([
+  // English names → TM slug
+  ['spain','spanien'],         ['england','england'],       ['france','frankreich'],
+  ['germany','deutschland'],   ['italy','italien'],         ['portugal','portugal'],
+  ['netherlands','niederlande'],['belgium','belgien'],      ['croatia','kroatien'],
+  ['russia','russland'],       ['ukraine','ukraine'],       ['poland','polen'],
+  ['denmark','danemark'],      ['sweden','schweden'],       ['norway','norwegen'],
+  ['switzerland','schweiz'],   ['austria','osterreich'],    ['scotland','schottland'],
+  ['wales','wales'],           ['turkey','turkei'],         ['greece','griechenland'],
+  ['serbia','serbien'],        ['romania','rumanien'],      ['hungary','ungarn'],
+  ['czech republic','tschechien'], ['slovakia','slowakei'], ['slovenia','slowenien'],
+  ['finland','finnland'],      ['iceland','island'],        ['republic of ireland','irland'],
+  ['northern ireland','nordirland'], ['bosnia','bosnien-herzegowina'], ['albania','albanien'],
+  ['argentina','argentinien'], ['brazil','brasilien'],      ['brasil','brasilien'],
+  ['uruguay','uruguay'],       ['colombia','kolumbien'],    ['chile','chile'],
+  ['ecuador','ecuador'],       ['peru','peru'],             ['paraguay','paraguay'],
+  ['venezuela','venezuela'],   ['mexico','mexiko'],         ['usa','vereinigte-staaten'],
+  ['united states','vereinigte-staaten'], ['costa rica','costa-rica'], ['canada','kanada'],
+  ['senegal','senegal'],       ['cameroon','kamerun'],      ['ghana','ghana'],
+  ['nigeria','nigeria'],       ['morocco','marokko'],       ['egypt','agypten'],
+  ['ivory coast','elfenbeinkuste'], ['south africa','sudafrika'], ['algeria','algerien'],
+  ['tunisia','tunesien'],      ['mali','mali'],
+  ['japan','japan'],           ['south korea','sudkorea'],  ['australia','australien'],
+  ['saudi arabia','saudi-arabien'], ['iran','iran'],
+  // Spanish / alternate names
+  ['españa','spanien'],        ['espana','spanien'],        ['alemania','deutschland'],
+  ['francia','frankreich'],    ['italia','italien'],        ['holanda','niederlande'],
+  ['países bajos','niederlande'], ['paises bajos','niederlande'], ['bélgica','belgien'],
+  ['belgica','belgien'],       ['croacia','kroatien'],      ['rusia','russland'],
+  ['ucrania','ukraine'],       ['polonia','polen'],         ['dinamarca','danemark'],
+  ['suecia','schweden'],       ['noruega','norwegen'],      ['suiza','schweiz'],
+  ['escocia','schottland'],    ['gales','wales'],           ['turquía','turkei'],
+  ['turquia','turkei'],        ['grecia','griechenland'],   ['rumania','rumanien'],
+  ['hungría','ungarn'],        ['hungria','ungarn'],        ['república checa','tschechien'],
+  ['republica checa','tschechien'], ['eslovaquia','slowakei'], ['eslovenia','slowenien'],
+  ['finlandia','finnland'],    ['islandia','island'],       ['irlanda','irland'],
+  ['irlanda del norte','nordirland'],
+  ['argentina','argentinien'], ['brasil','brasilien'],      ['colombia','kolumbien'],
+  ['perú','peru'],             ['méxico','mexiko'],         ['estados unidos','vereinigte-staaten'],
+  ['canadá','kanada'],         ['camerún','kamerun'],       ['camerun','kamerun'],
+  ['marruecos','marokko'],     ['egipto','agypten'],        ['costa de marfil','elfenbeinkuste'],
+  ['sudáfrica','sudafrika'],   ['sudafrica','sudafrika'],   ['argelia','algerien'],
+  ['túnez','tunesien'],        ['tunez','tunesien'],
+  ['japón','japan'],           ['japon','japan'],           ['corea del sur','sudkorea'],
+  ['corea','sudkorea'],        ['arabia saudí','saudi-arabien'], ['arabia saudi','saudi-arabien'],
+  ['irán','iran'],             ['inglaterra','england'],
+]);
+
+function isNationalTeam(teamName) {
+  return NATIONAL_TEAM_SLUGS.has(teamName.toLowerCase().trim()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+}
+
 async function searchTransfermarktClub(teamName) {
   const cacheKey = teamName.toLowerCase().trim();
-
   if (_tmSearchCache.has(cacheKey)) return _tmSearchCache.get(cacheKey);
 
   const TM_HEADERS = {
@@ -486,9 +456,15 @@ async function searchTransfermarktClub(teamName) {
     'Referer': 'https://www.transfermarkt.es/',
   };
 
-  // Try the Transfermarkt quick-search endpoint
-  // Both `query` and `Vereinsname` params improve club matching
-  const searchUrl = `https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=${encodeURIComponent(teamName)}&Vereinsname=${encodeURIComponent(teamName)}`;
+  // For known national team names, use the Nationalelf search endpoint instead of
+  // the club (Vereinsname) endpoint — this avoids matching small clubs with country names
+  const normKey = cacheKey.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const isNational = NATIONAL_TEAM_SLUGS.has(normKey);
+  const expectedSlug = NATIONAL_TEAM_SLUGS.get(normKey);
+
+  const searchUrl = isNational
+    ? `https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=${encodeURIComponent(teamName)}&Nationalelf_page=0`
+    : `https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=${encodeURIComponent(teamName)}&Vereinsname=${encodeURIComponent(teamName)}`;
 
   try {
     const res = await fetch(searchUrl, {
@@ -499,21 +475,69 @@ async function searchTransfermarktClub(teamName) {
     const html = await res.text();
     const $ = cheerio.load(html);
 
-    // Club links follow patterns like /fc-barcelona/startseite/verein/131
-    // or /fc-barcelona/kader/verein/131/saison_id/YYYY
     let found = null;
-    $('a[href*="/verein/"]').each((_, a) => {
-      if (found) return false;
-      const href = $(a).attr('href') || '';
-      const m = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
-      if (m) {
-        found = { slug: m[1], id: parseInt(m[2], 10) };
-      }
-    });
 
+    if (isNational) {
+      // National team search: look for /verein/ or /verband/ links, filter by expected slug
+      const trySlug = expectedSlug || '';
+      $('a[href*="/verein/"], a[href*="/verband/"]').each((_, a) => {
+        if (found) return false;
+        const href = $(a).attr('href') || '';
+        const mv = href.match(/^\/([^/]+)\/[^/]+\/verband\/(\d+)/);
+        if (mv && (!trySlug || mv[1] === trySlug || mv[1].includes(trySlug.replace('2','')))) {
+          found = { slug: mv[1], id: parseInt(mv[2], 10), type: 'verband' };
+          return false;
+        }
+        const me = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
+        if (me && (!trySlug || me[1] === trySlug || me[1].includes(trySlug.replace('2','')))) {
+          found = { slug: me[1], id: parseInt(me[2], 10), type: 'verein' };
+        }
+      });
+      // If slug filter found nothing, take first result
+      if (!found) {
+        $('a[href*="/verband/"]').each((_, a) => {
+          if (found) return false;
+          const href = $(a).attr('href') || '';
+          const m = href.match(/^\/([^/]+)\/[^/]+\/verband\/(\d+)/);
+          if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verband' };
+        });
+        if (!found) {
+          $('a[href*="/verein/"]').each((_, a) => {
+            if (found) return false;
+            const href = $(a).attr('href') || '';
+            const m = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
+            if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verein' };
+          });
+        }
+      }
+    } else {
+      // Club search: prefer /verband/ links first, fallback to /verein/
+      $('a[href*="/verband/"]').each((_, a) => {
+        if (found) return false;
+        const href = $(a).attr('href') || '';
+        const m = href.match(/^\/([^/]+)\/[^/]+\/verband\/(\d+)/);
+        if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verband' };
+      });
+      if (!found) {
+        $('a[href*="/verein/"]').each((_, a) => {
+          if (found) return false;
+          const href = $(a).attr('href') || '';
+          const m = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
+          if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verein' };
+        });
+      }
+    }
+
+    if (_tmSearchCache.size >= _TM_CACHE_MAX) {
+      // Evict oldest entry to keep memory bounded
+      _tmSearchCache.delete(_tmSearchCache.keys().next().value);
+    }
     _tmSearchCache.set(cacheKey, found);
     return found;
   } catch (_) {
+    if (_tmSearchCache.size >= _TM_CACHE_MAX) {
+      _tmSearchCache.delete(_tmSearchCache.keys().next().value);
+    }
     _tmSearchCache.set(cacheKey, null);
     return null;
   }
@@ -571,6 +595,7 @@ function buildXI(raw) {
 // ─────────────────────────────────────────────────────────────
 function ratingsFromLeague(leagueText = '', teamName = '') {
   const l = leagueText.toLowerCase();
+  const t = (teamName || '').toLowerCase();
   const clamp = (v) => Math.max(60, Math.min(90, Math.round(v)));
 
   // Deterministic per-team variation within tier: ±6 ATK/MID/DEF, ±4 GK
@@ -580,15 +605,34 @@ function ratingsFromLeague(leagueText = '', teamName = '') {
   const dD = (((h >> 8) & 0x0F) % 13) - 6;
   const dG = (((h >> 12) & 0x07) % 9) - 4;
 
+  // Elite national teams: historically dominant, top FIFA ranking
+  const eliteNationals = ['spain','españa','espana','germany','deutschland','alemania',
+    'france','frankreich','francia','brazil','brasil','argentina','england','inglaterra',
+    'italy','italia','portugal','netherlands','holanda','holland','belgium','belgica',
+    'croatia','croacia'];
+  // Strong national teams
+  const strongNationals = ['denmark','dinamarca','switzerland','suiza','colombia',
+    'senegal','morocco','marruecos','usa','mexico','austria','czech','poland','polonia',
+    'ukraine','ucrania','sweden','suecia','norway','noruega','japan','japon',
+    'south korea','corea','cameroon','nigeria','chile','uruguay'];
+
+  // International competition keywords (no club league)
+  const isNationalComp = /world cup|nations league|european|championship|qualifying|euro\b|copa del mundo|eliminatoria|conmebol|concacaf|afcon|caf|afc|copa america/i.test(l)
+    || (l === '' && eliteNationals.some(n => t.includes(n)));
+
   const tier1 = ['premier league', 'la liga', 'bundesliga', 'serie a', 'ligue 1',
                   'primera division', 'primera división'];
   const tier2 = ['championship', 'segunda', 'ligue 2', '2. bundesliga', 'serie b',
                   'eredivisie', 'primeira liga'];
 
   let base;
-  if (tier1.some(t => l.includes(t))) {
+  if (eliteNationals.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
+    base = { attack: 84, midfield: 84, defense: 83, goalkeeping: 82 };
+  } else if (isNationalComp || strongNationals.some(n => t.includes(n))) {
+    base = { attack: 78, midfield: 78, defense: 77, goalkeeping: 76 };
+  } else if (tier1.some(t2 => l.includes(t2))) {
     base = { attack: 77, midfield: 77, defense: 77, goalkeeping: 75 };
-  } else if (tier2.some(t => l.includes(t))) {
+  } else if (tier2.some(t2 => l.includes(t2))) {
     base = { attack: 70, midfield: 70, defense: 70, goalkeeping: 68 };
   } else {
     base = { attack: 63, midfield: 63, defense: 63, goalkeeping: 62 };
@@ -616,6 +660,16 @@ async function fetchTransfermarktSquad(teamName, era) {
 
   if (!club) return null;
 
+  // ── Validation: for known national teams, reject if wrong slug was found ──
+  const normKey = teamName.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const expectedSlug = NATIONAL_TEAM_SLUGS.get(normKey);
+  if (expectedSlug && club.slug !== expectedSlug) {
+    // Dynamic search returned a club with the wrong slug (e.g. a Serbian club
+    // named "Costa Rica" instead of the Costa Rican FA). Discard it.
+    console.warn(`[TM] ⚠️  Slug incorrecto para "${teamName}": esperado "${expectedSlug}", encontrado "${club.slug}" — descartando`);
+    return null;
+  }
+
   const saisonId = eraToSaisonId(era);
   if (!saisonId) return null;
 
@@ -625,7 +679,9 @@ async function fetchTransfermarktSquad(teamName, era) {
     return teamFile.seasons[saisonId];
   }
 
-  const url = `https://www.transfermarkt.es/${club.slug}/kader/verein/${club.id}/saison_id/${saisonId}`;
+  // National teams fetched via dynamic search come back with type:'verband'
+  const urlType = club.type || 'verein';
+  const url = `https://www.transfermarkt.es/${club.slug}/kader/${urlType}/${club.id}/saison_id/${saisonId}`;
 
   let html;
   try {
@@ -646,6 +702,14 @@ async function fetchTransfermarktSquad(teamName, era) {
   const $ = cheerio.load(html);
   const $table = $('table.items');
   if (!$table.length) return null;
+
+  // ── Cross-validate: canonical URL must contain the expected slug ──────────
+  const canonicalHref = $('link[rel="canonical"]').attr('href') || '';
+  const slugInPage = (canonicalHref.match(/transfermarkt\.\w+\/([^/]+)\/kader/) || [])[1] || '';
+  if (slugInPage && slugInPage !== club.slug) {
+    console.warn(`[TM] ⚠️  Página recibida para "${slugInPage}" pero esperábamos "${club.slug}" — descartando`);
+    return null;
+  }
 
   // Get league/competition name for ratings
   const leagueText = $('a.hauptlink[href*="wettbewerb"]').first().text().trim()
@@ -675,11 +739,10 @@ async function fetchTransfermarktSquad(teamName, era) {
     rawPlayers.push({ name, position });
   });
 
-  if (rawPlayers.length < 8) return null;
+  if (rawPlayers.length < 14) return null; // un plantel real tiene mínimo 14
 
+  // Build a representative XI just to derive formation string just to derive formation string
   const xi = buildXI(rawPlayers);
-  if (xi.length < 8) return null;
-
   const fwdCount = xi.filter(p => ['ST','RW','LW'].includes(p.position)).length;
   const midFull  = xi.filter(p => ['CM','DM','AM','RM','LM'].includes(p.position)).length;
   const defFull  = xi.filter(p => ['CB','RB','LB'].includes(p.position)).length;
@@ -687,7 +750,7 @@ async function fetchTransfermarktSquad(teamName, era) {
 
   const result = {
     formation,
-    players:   xi,
+    players:   rawPlayers,  // full squad — engine picks best 11 per formation
     ratings:   ratingsFromLeague(leagueText, teamName),
     source:    `Transfermarkt — ${teamName} (${saisonId}/${parseInt(saisonId)+1})`,
     teamLabel: `${teamName} (${saisonId}-${String(parseInt(saisonId)+1).slice(-2)})`,
@@ -699,4 +762,4 @@ async function fetchTransfermarktSquad(teamName, era) {
   return result;
 }
 
-module.exports = { fetchTransfermarktSquad };
+module.exports = { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile };

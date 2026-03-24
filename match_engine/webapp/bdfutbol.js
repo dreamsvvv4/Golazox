@@ -376,9 +376,9 @@ async function fetchBdfutbolSquad(teamName, era) {
     const position = BDF_POS[posCode];
     if (!position) return; // skip header / spacer rows
 
-    // Name: prefer full name in d-none span, fallback to nickname span
-    const fullName = $(row).find('span.d-none').text().trim()
-      || $(row).find('span.font-weight-bold').text().trim();
+    // Name: prefer common/display name (font-weight-bold), fallback to full legal name (d-none)
+    const fullName = $(row).find('span.font-weight-bold').text().trim()
+      || $(row).find('span.d-none').text().trim();
     if (!fullName) return;
 
     rawPlayers.push({ name: fullName, position });
@@ -386,22 +386,18 @@ async function fetchBdfutbolSquad(teamName, era) {
 
   if (rawPlayers.length < 8) return null;
 
+  // Build a representative XI just to derive formation string
   const xi = buildXI(rawPlayers);
-  if (xi.length < 8) return null;
-
-  // Assign ratings based on division + deterministic team-specific variation.
-  // Hash on teamName gives each club distinct attributes within their tier.
-  const ratings = ratingsFromTitle(rawTitle, teamName);
-
-  // Formation from XI composition
   const fwdCount = xi.filter(p => ['ST','RW','LW'].includes(p.position)).length;
   const midFull  = xi.filter(p => ['CM','DM','AM','RM','LM'].includes(p.position)).length;
   const defFull  = xi.filter(p => ['CB','RB','LB'].includes(p.position)).length;
   const formation = `${defFull}-${midFull}-${fwdCount}`;
 
+  const ratings = ratingsFromTitle(rawTitle, teamName);
+
   return {
     formation,
-    players: xi,
+    players: rawPlayers,   // full squad — engine picks best 11 per formation
     ratings,
     source:    `BDFutbol — ${rawTitle}`,
     teamLabel: rawTitle,

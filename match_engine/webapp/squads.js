@@ -172,25 +172,6 @@ const SQUADS = {
     ]
   },
 
-  'real madrid': {
-    aliases: ['real madrid 2024','real madrid 2025','real madrid 2026','madrid hoy'],
-    formation: '4-3-3',
-    ratings: { attack:91, midfield:89, defense:85, goalkeeping:90 },
-    players: [
-      { name: 'Thibaut Courtois',  position: 'GK' },
-      { name: 'Dani Carvajal',     position: 'RB' },
-      { name: 'Éder Militão',      position: 'CB' },
-      { name: 'Antonio Rüdiger',   position: 'CB' },
-      { name: 'Ferland Mendy',     position: 'LB' },
-      { name: 'Jude Bellingham',   position: 'AM' },
-      { name: 'Luka Modric',       position: 'CM' },
-      { name: 'Toni Kroos',        position: 'CM' },
-      { name: 'Federico Valverde', position: 'RW' },
-      { name: 'Kylian Mbappé',     position: 'ST' },
-      { name: 'Vinicius Jr',       position: 'LW' },
-    ]
-  },
-
   // ══════════════════════════════════════════════════════════
   //  FC BARCELONA
   // ══════════════════════════════════════════════════════════
@@ -328,25 +309,6 @@ const SQUADS = {
     ]
   },
 
-  'barcelona': {
-    aliases: ['barcelona 2024','barça actual','fc barcelona 2025','fc barcelona 2026'],
-    formation: '4-3-3',
-    ratings: { attack:88, midfield:89, defense:83, goalkeeping:84 },
-    players: [
-      { name: 'Marc-André ter Stegen', position: 'GK' },
-      { name: 'Jules Koundé',          position: 'RB' },
-      { name: 'Ronald Araújo',         position: 'CB' },
-      { name: 'Pau Cubarsí',           position: 'CB' },
-      { name: 'Alejandro Balde',       position: 'LB' },
-      { name: 'Marc Casadó',           position: 'DM' },
-      { name: 'Pedri',                 position: 'CM' },
-      { name: 'Gavi',                  position: 'CM' },
-      { name: 'Lamine Yamal',          position: 'RW' },
-      { name: 'Robert Lewandowski',    position: 'ST' },
-      { name: 'Raphinha',              position: 'LW' },
-    ]
-  },
-
   // ══════════════════════════════════════════════════════════
   //  AC MILAN
   // ══════════════════════════════════════════════════════════
@@ -443,25 +405,6 @@ const SQUADS = {
       { name: 'Kaká',               position: 'AM' },
       { name: 'Filippo Inzaghi',    position: 'ST' },
       { name: 'Andriy Shevchenko', position: 'LW' },
-    ]
-  },
-
-  'ac milan': {
-    aliases: ['milan','ac milan actual','milan 2024'],
-    formation: '4-2-3-1',
-    ratings: { attack:83, midfield:82, defense:82, goalkeeping:82 },
-    players: [
-      { name: 'Mike Maignan',      position: 'GK' },
-      { name: 'Davide Calabria',   position: 'RB' },
-      { name: 'Malick Thiaw',      position: 'CB' },
-      { name: 'Fikayo Tomori',     position: 'CB' },
-      { name: 'Theo Hernández',    position: 'LB' },
-      { name: 'Ruben Loftus-Cheek',position: 'CM' },
-      { name: 'Tijjani Reijnders', position: 'CM' },
-      { name: 'Samuel Chukwueze', position: 'RW' },
-      { name: 'Christian Pulisic', position: 'AM' },
-      { name: 'Álvaro Morata',     position: 'ST' },
-      { name: 'Rafael Leão',       position: 'LW' },
     ]
   },
 
@@ -648,25 +591,6 @@ const SQUADS = {
     ]
   },
 
-  'liverpool': {
-    aliases: ['liverpool 2024','liverpool 2025','liverpool 2026','liverpool slot'],
-    formation: '4-3-3',
-    ratings: { attack:88, midfield:87, defense:86, goalkeeping:87 },
-    players: [
-      { name: 'Alisson Becker',    position: 'GK' },
-      { name: 'Trent Alexander-Arnold', position: 'RB' },
-      { name: 'Ibrahima Konaté',   position: 'CB' },
-      { name: 'Virgil van Dijk',   position: 'CB' },
-      { name: 'Andrew Robertson',  position: 'LB' },
-      { name: 'Wataru Endo',       position: 'DM' },
-      { name: 'Alexis Mac Allister', position: 'CM' },
-      { name: 'Dominik Szoboszlai', position: 'CM' },
-      { name: 'Mohamed Salah',     position: 'RW' },
-      { name: 'Darwin Núñez',      position: 'ST' },
-      { name: 'Luis Díaz',         position: 'LW' },
-    ]
-  },
-
   // ══════════════════════════════════════════════════════════
   //  MANCHESTER UNITED
   // ══════════════════════════════════════════════════════════
@@ -751,25 +675,6 @@ const SQUADS = {
     ]
   },
 
-  'arsenal': {
-    aliases: ['arsenal 2024','arsenal 2025','arsenal arteta','arsenal actual'],
-    formation: '4-3-3',
-    ratings: { attack:87, midfield:87, defense:87, goalkeeping:83 },
-    players: [
-      { name: 'David Raya',        position: 'GK' },
-      { name: 'Ben White',         position: 'RB' },
-      { name: 'William Saliba',    position: 'CB' },
-      { name: 'Gabriel Magalhães', position: 'CB' },
-      { name: 'Oleksandr Zinchenko', position: 'LB' },
-      { name: 'Thomas Partey',     position: 'DM' },
-      { name: 'Martin Ødegaard',   position: 'CM' },
-      { name: 'Declan Rice',       position: 'CM' },
-      { name: 'Bukayo Saka',       position: 'RW' },
-      { name: 'Kai Havertz',       position: 'ST' },
-      { name: 'Gabriel Martinelli',position: 'LW' },
-    ]
-  },
-
   // ══════════════════════════════════════════════════════════
   //  MANCHESTER CITY
   // ══════════════════════════════════════════════════════════
@@ -788,25 +693,6 @@ const SQUADS = {
       { name: 'Kevin De Bruyne',   position: 'CM' },
       { name: 'Bernardo Silva',    position: 'CM' },
       { name: 'Phil Foden',        position: 'LW' },
-      { name: 'Erling Haaland',    position: 'ST' },
-      { name: 'Jack Grealish',     position: 'LW' },
-    ]
-  },
-
-  'manchester city': {
-    aliases: ['man city','manchester city 2024','manchester city 2025','man city guardiola'],
-    formation: '4-3-3',
-    ratings: { attack:90, midfield:92, defense:85, goalkeeping:86 },
-    players: [
-      { name: 'Ederson',           position: 'GK' },
-      { name: 'Kyle Walker',       position: 'RB' },
-      { name: 'Rúben Dias',        position: 'CB' },
-      { name: 'Manuel Akanji',     position: 'CB' },
-      { name: 'Josko Gvardiol',    position: 'LB' },
-      { name: 'Rodri',             position: 'DM' },
-      { name: 'Kevin De Bruyne',   position: 'CM' },
-      { name: 'Bernardo Silva',    position: 'CM' },
-      { name: 'Phil Foden',        position: 'RW' },
       { name: 'Erling Haaland',    position: 'ST' },
       { name: 'Jack Grealish',     position: 'LW' },
     ]
@@ -996,25 +882,6 @@ const SQUADS = {
       { name: 'Thomas Müller',     position: 'AM' },
       { name: 'Leroy Sané',        position: 'LW' },
       { name: 'Robert Lewandowski',position: 'ST' },
-    ]
-  },
-
-  'bayern munich': {
-    aliases: ['bayern munich 2024','bayern munich 2025','fc bayern actual','fc bayern munich'],
-    formation: '4-2-3-1',
-    ratings: { attack:88, midfield:87, defense:84, goalkeeping:89 },
-    players: [
-      { name: 'Manuel Neuer',      position: 'GK' },
-      { name: 'Noussair Mazraoui', position: 'RB' },
-      { name: 'Kim Min-jae',       position: 'CB' },
-      { name: 'Dayot Upamecano',   position: 'CB' },
-      { name: 'Alphonso Davies',   position: 'LB' },
-      { name: 'Joshua Kimmich',    position: 'DM' },
-      { name: 'Leon Goretzka',     position: 'DM' },
-      { name: 'Jamal Musiala',     position: 'AM' },
-      { name: 'Serge Gnabry',      position: 'RW' },
-      { name: 'Harry Kane',        position: 'ST' },
-      { name: 'Leroy Sané',        position: 'LW' },
     ]
   },
 
@@ -1529,45 +1396,7 @@ const SQUADS = {
     ]
   },
 
-  'portugal': {
-    aliases: ['portugal 2024','portugal 2025','seleccion portuguesa','selecao portugal'],
-    formation: '4-3-3',
-    ratings: { attack:89, midfield:83, defense:80, goalkeeping:81 },
-    players: [
-      { name: 'Diogo Costa',       position: 'GK' },
-      { name: 'João Cancelo',      position: 'RB' },
-      { name: 'Rúben Dias',        position: 'CB' },
-      { name: 'Pepe',              position: 'CB' },
-      { name: 'Raphaël Guerreiro', position: 'LB' },
-      { name: 'Vitinha',           position: 'DM' },
-      { name: 'Bruno Fernandes',   position: 'CM' },
-      { name: 'Bernardo Silva',    position: 'CM' },
-      { name: 'Cristiano Ronaldo', position: 'RW' },
-      { name: 'Gonçalo Ramos',     position: 'ST' },
-      { name: 'Rafael Leão',       position: 'LW' },
-    ]
-  },
-
   // ── BELGICA ──────────────────────────────────────────────
-
-  'belgica': {
-    aliases: ['belgium','belgium 2018','belgica 2018','generacion dorada belgica','red devils 2018'],
-    formation: '4-3-3',
-    ratings: { attack:90, midfield:88, defense:84, goalkeeping:81 },
-    players: [
-      { name: 'Thibaut Courtois',  position: 'GK' },
-      { name: 'Toby Alderweireld', position: 'RB' },
-      { name: 'Vincent Kompany',   position: 'CB' },
-      { name: 'Jan Vertonghen',    position: 'CB' },
-      { name: 'Thomas Meunier',    position: 'LB' },
-      { name: 'Axel Witsel',       position: 'DM' },
-      { name: 'Kevin De Bruyne',   position: 'CM' },
-      { name: 'Marouane Fellaini', position: 'CM' },
-      { name: 'Eden Hazard',       position: 'LW' },
-      { name: 'Romelu Lukaku',     position: 'ST' },
-      { name: 'Dries Mertens',     position: 'RW' },
-    ]
-  },
 
   // ── ATLETICO MADRID ──────────────────────────────────────
 

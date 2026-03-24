@@ -20,7 +20,7 @@
 
 const path = require('path');
 const fs   = require('fs');
-const { fetchTransfermarktSquad } = require('./transfermarkt');
+const { fetchTransfermarktSquad, resolveClub, _loadTeamFile } = require('./transfermarkt');
 
 // ── Parseo de argumentos ───────────────────────────────────────
 const args     = process.argv.slice(2);
@@ -133,8 +133,9 @@ const CLUB_TEAMS = [
 function buildQueue() {
   let catalog = [];
 
-  if (BATCH === 'national' || BATCH === 'all') catalog.push(...NATIONAL_TEAMS);
+  // Clubs first: easier to verify, not rate-limited as aggressively
   if (BATCH === 'clubs'    || BATCH === 'all') catalog.push(...CLUB_TEAMS);
+  if (BATCH === 'national' || BATCH === 'all') catalog.push(...NATIONAL_TEAMS);
 
   if (ONLY_TEAM) {
     const key = ONLY_TEAM.toLowerCase();
@@ -171,9 +172,11 @@ function eta(done, total, elapsedMs, downloadsOnly) {
 const SQUADS_DIR = path.join(__dirname, 'squads');
 
 function isCachedLocally(team, year) {
-  if (!fs.existsSync(SQUADS_DIR)) return false;
-  // We'd need to know the slug — let the timing detect it instead
-  return false;
+  const club = resolveClub(team);
+  const slug = club?.slug || team.toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const data = _loadTeamFile(slug);
+  return !!(data.seasons && data.seasons[String(year)]);
 }
 
 // ── Main ──────────────────────────────────────────────────────
@@ -208,6 +211,32 @@ async function main() {
   let downloaded = 0, cached = 0, failed = 0, skipped = 0;
   const startTime = Date.now();
   let lastRegion  = '';
+  let consecutiveFails = 0; // track rate-limiting
+  const PROGRESS_FILE = path.join(SQUADS_DIR, '.seed-progress.json');
+
+  function writeProgress(i, currentTeam, currentYear) {
+    try {
+      const elapsed = Date.now() - startTime;
+      const done = i + 1;
+      const remaining = total - done;
+      const msPerDl = downloaded > 0 ? elapsed / downloaded : DELAY;
+      const etaSec  = Math.round((remaining * msPerDl) / 1000);
+      const etaStr  = etaSec > 3600
+        ? `${Math.floor(etaSec/3600)}h ${Math.floor((etaSec%3600)/60)}m`
+        : etaSec > 60 ? `${Math.floor(etaSec/60)}m ${etaSec%60}s` : `${etaSec}s`;
+      fs.writeFileSync(PROGRESS_FILE, JSON.stringify({
+        progreso: `${done}/${total}`,
+        porcentaje: `${Math.round((done/total)*100)}%`,
+        descargados: downloaded,
+        enCache:     cached,
+        sinDatos:    failed,
+        ahora:       `${currentTeam} ${currentYear}`,
+        tiempoTranscurrido: formatTime(elapsed),
+        etaRestante: etaStr,
+        ultimaActualizacion: new Date().toISOString(),
+      }, null, 2), 'utf8');
+    } catch (_) {}
+  }
 
   for (let i = 0; i < total; i++) {
     if (i < FROM) { skipped++; continue; }
@@ -222,6 +251,13 @@ async function main() {
       lastRegion = region;
     }
 
+    // Skip instantly if already on disk — no network call at all
+    if (isCachedLocally(team, year)) {
+      cached++;
+      if (!ONLY_NEW) console.log(`  [${num}/${total}] ${pct}%  💾  ${team.padEnd(22)} ${year}  (en caché)`);
+      continue;
+    }
+
     try {
       const t0     = Date.now();
       const result = await fetchTransfermarktSquad(team, year);
@@ -230,17 +266,32 @@ async function main() {
       if (!result) {
         if (!ONLY_NEW) console.log(`  [${num}/${total}] ${pct}%  ⬛  ${team.padEnd(22)} ${year}  — sin datos TM`);
         failed++;
+        consecutiveFails++;
 
-      } else if (ms < 40) {
-        // Responded instantly → came from disk cache
-        cached++;
-        if (!ONLY_NEW) console.log(`  [${num}/${total}] ${pct}%  💾  ${team.padEnd(22)} ${year}  ${result.formation}`);
+        // If we get ≥10 consecutive failures, TM is almost certainly blocking us — abort
+        if (consecutiveFails >= 10) {
+          console.log(`\n  🚫  ${consecutiveFails} fallos seguidos — TM está bloqueando la IP. Abortando.`);
+          console.log(`  💡  Espera unas horas y vuelve a lanzar con --only-new para reanudar.`);
+          process.exit(1);
+        }
+
+        // Back-off: avoid hammering TM when it's blocking us
+        if (consecutiveFails >= 5 && consecutiveFails % 5 === 0) {
+          const backoff = Math.min(consecutiveFails * 500, 10000); // up to 10s
+          console.log(`  ⚠️  ${consecutiveFails} fallos consecutivos — pausa de ${backoff}ms`);
+          await sleep(backoff);
+        } else {
+          await sleep(800); // short delay even on failures
+        }
 
       } else {
-        // Real network download
+        // Real network download — show GK for spot-checking
+        consecutiveFails = 0; // reset on success
         downloaded++;
-        const players = result.players.map(p => p.name).slice(0, 3).join(', ');
-        console.log(`  [${num}/${total}] ${pct}%  ⬇️   ${team.padEnd(22)} ${year}  ${result.formation}  (${ms}ms) — ${players}...`);
+        const gk     = result.players.find(p => p.position === 'GK');
+        const gkName = gk ? gk.name : '(sin GK?)';
+        const total2 = result.players.length;
+        console.log(`  [${num}/${total}] ${pct}%  ⬇️   ${team.padEnd(22)} ${year}  ${result.formation}  ${total2}j  GK: ${gkName}  (${ms}ms)`);
         // Only throttle after actual network requests
         await sleep(DELAY);
       }
@@ -251,12 +302,16 @@ async function main() {
       await sleep(DELAY); // wait even after errors
     }
 
+    // Write progress file every 5 items
+    if (i % 5 === 0) writeProgress(i, team, year);
+
     // Progress summary every 50 items
     if ((i + 1) % 50 === 0) {
       const elapsed = Date.now() - startTime;
       console.log(`\n  ┄ Progreso: ${downloaded} descargados | ${cached} en caché | ${failed} sin datos | ${formatTime(elapsed)} transcurrido\n`);
     }
   }
+  writeProgress(total - 1, 'COMPLETADO', '');
 
   // ── Resumen final ────────────────────────────────────────────
   const totalMs = Date.now() - startTime;

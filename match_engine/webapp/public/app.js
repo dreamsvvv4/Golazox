@@ -480,7 +480,6 @@ async function handleSimulate() {
   document.getElementById('results')?.classList.add('hidden');
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
-  if (_pmCountId)         { clearInterval(_pmCountId);         _pmCountId = null; }
 
   setLoading(true);
 
@@ -728,6 +727,7 @@ function renderTimeline(scorersA, scorersB, cardsA, cardsB, teamA, teamB, matchP
   ].sort((a, b) => a.minute - b.minute);
 
   const evCount = events.length;
+  const header = document.getElementById('timeline-header');
   header.innerHTML = `<span style="color:var(--accent-a)">${escHtml(teamA)}</span><span class="timeline-count">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span><span style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
 
   const container = document.getElementById('timeline-events');
@@ -808,7 +808,13 @@ function renderMoM(mom) {
 }
 
 // ── Pre-match player card presentation ──────────────────────
-let _pmData = null, _pmPayload = null, _pmCountId = null;
+let _pmData = null, _pmPayload = null, _pmTick = 667; // ms per simulated minute (default 1 min)
+
+function selectSpeed(btn) {
+  document.querySelectorAll('.pm-speed-pill').forEach(b => b.classList.remove('pm-speed-active'));
+  btn.classList.add('pm-speed-active');
+  _pmTick = parseInt(btn.dataset.tick, 10);
+}
 
 function showPreMatch(data, payload) {
   _pmData    = data;
@@ -833,25 +839,41 @@ function showPreMatch(data, payload) {
     }
   }
 
-  let secs = 10;
-  const cdEl = document.getElementById('pm-countdown');
-  if (cdEl) cdEl.textContent = secs;
-  _pmCountId = setInterval(() => {
-    secs--;
-    if (cdEl) cdEl.textContent = secs;
-    if (secs <= 0) skipPreMatch();
-  }, 1000);
+  // Reset speed pills to default (1 min)
+  _pmTick = 667;
+  document.querySelectorAll('.pm-speed-pill').forEach(b => {
+    b.classList.toggle('pm-speed-active', parseInt(b.dataset.tick, 10) === 667);
+  });
 }
 
 function skipPreMatch() {
-  clearInterval(_pmCountId); _pmCountId = null;
+  // Read the current starter cards from the DOM and apply any pre-match
+  // substitutions the user made to _pmData before launching the simulation.
+  const _readLineupFromDom = (side, originalLineup) => {
+    const block = document.getElementById(`pm-block-${side}`);
+    if (!block) return originalLineup;
+    const starters = [...block.querySelectorAll('.pm-starter')]
+      .map(c => ({ name: c.dataset.playerName, position: c.dataset.playerPos }))
+      .filter(p => p.name && p.position);
+    if (starters.length === 0) return originalLineup;
+    return { ...originalLineup, players: starters };
+  };
+
+  const updatedData = {
+    ..._pmData,
+    lineups: {
+      teamA: _readLineupFromDom('a', _pmData.lineups.teamA),
+      teamB: _readLineupFromDom('b', _pmData.lineups.teamB),
+    },
+  };
+
   const screen = document.getElementById('prematch-screen');
   screen.classList.add('pm-fade-out');
   setTimeout(() => {
     screen.classList.add('hidden');
     screen.classList.remove('pm-fade-out');
-    playLiveMatch(_pmData, _pmPayload);
-  }, 500);
+    playLiveMatch(updatedData, _pmPayload, _pmTick);
+  }, 400);
 }
 
 function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
@@ -985,11 +1007,20 @@ function _handlePmCardClick(card, side) {
     return;
   }
 
-  // Perform swap: exchange innerHTML content (visual only, cosmetic substitution)
+  // Perform swap: exchange innerHTML content + data attributes + title
   const aHtml = selected.innerHTML;
   const bHtml = card.innerHTML;
   selected.innerHTML = bHtml;
   card.innerHTML = aHtml;
+
+  // Swap player data so DOM state stays consistent with visual content
+  const aName = selected.dataset.playerName, aPos = selected.dataset.playerPos, aTitle = selected.title;
+  selected.dataset.playerName = card.dataset.playerName;
+  selected.dataset.playerPos  = card.dataset.playerPos;
+  selected.title              = card.title;
+  card.dataset.playerName = aName;
+  card.dataset.playerPos  = aPos;
+  card.title              = aTitle;
 
   // Swap the pm-sub / pm-starter class marker
   if (selectedIsSub) {
@@ -1282,6 +1313,8 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
   card.style.animationDelay = `${delayMs}ms`;
   card.style.setProperty('--kit', kitColor);
   card.title = player.name;
+  card.dataset.playerName = player.name;
+  card.dataset.playerPos  = player.position;
   card.innerHTML =
     `<div class="pmc-top">${badgeCorner}<div class="pmc-ovr-pos"><div class="pmc-ovr">${rating}</div><div class="pmc-pos-tag">${escHtml(player.position)}</div></div></div>` +
     `<div class="pmc-sil">${_jerseyIcon(kitColor, jerseyN || '', kitColor2)}</div>` +
@@ -1561,11 +1594,17 @@ let _lastGoalSide = 'A';  // tracks last team to score (for overlay)
 let _overlayHideTimer1 = null;  // pending "start fade-out" timer
 let _overlayHideTimer2 = null;  // pending "add hidden" timer
 
-function playLiveMatch(data, payload) {
+function playLiveMatch(data, payload, tickMs = 300) {
   _liveData    = data;
   _livePayload = payload;
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
+
+  // ── Instant / "Directo" mode: skip live viewer entirely ─────────
+  if (tickMs === 0) {
+    finishLive();
+    return;
+  }
 
   const { finalScore } = data;
   const events = [
@@ -1592,7 +1631,8 @@ function playLiveMatch(data, payload) {
   initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  const TICK = 300; // ms per simulated minute
+  // tickMs=0 → instant result (no animation delay)
+  const TICK = tickMs;
 
   // ── Pre-compute total match duration so the clock syncs with events ──
   // (events with sequential accDelay can exceed 90*TICK)
@@ -1674,6 +1714,11 @@ function playLiveMatch(data, payload) {
     const kicks = Math.max(pens.shotsA.length, pens.shotsB.length);
     penaltyEndMs = regularMs + 900 + kicks * 1100 + 1400;
 
+    // Full-time whistle before shootout (so users see the draw score clearly)
+    const ftLabel = (lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
+      ` — ${finalScore.teamA}:${finalScore.teamB}`;
+    setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50);
+
     // Announcement
     setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500);
 
@@ -1718,9 +1763,10 @@ function addFeedEvent(ev) {
   else if (ev.type === 'penalty-miss')  icon = '❌';
   else if (ev.type === 'corner')        icon = '🚩';
   else if (ev.type === 'freekick')      icon = '🎯';
+  else if (ev.type === 'ft_whistle')    icon = '🏁';
   else                                  icon = '🟥';
   const sideClass = ev.side === 'N' ? 'live-event-n' : `live-event-${ev.side.toLowerCase()}`;
-  const extraClass = ev.type === 'pen_miss' ? ' pen-miss-entry' : ev.type === 'pen_start' ? ' pen-header-entry' : '';
+  const extraClass = ev.type === 'pen_miss' ? ' pen-miss-entry' : ev.type === 'pen_start' ? ' pen-header-entry' : ev.type === 'ft_whistle' ? ' pen-header-entry' : '';
   const div  = document.createElement('div');
   div.className = `live-event ${sideClass}${extraClass}`;
   div.innerHTML = `<span class="le-min">${ev.type.startsWith('pen') ? 'P' : ev.minute + "'"}</span><span class="le-icon">${icon}</span><span class="le-name">${escHtml(ev.name)}</span>`;

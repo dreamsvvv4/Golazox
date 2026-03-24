@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "seed": "node seed_squads.js",
+    "seed:bg": "node seed_squads_bg.js",
+    "seed:dry": "node seed_squads_bg.js --dry-run",
+    "seed:once": "node seed_squads_bg.js --once"
   },
   "dependencies": {
     "cheerio": "^1.1.0",
@@ -13,5 +17,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "jimp": "^1.6.0"
   }
 }

@@ -1,173 +1,1312 @@
 {
   "slug": "schweiz",
   "seasons": {
-    "1982": {
+    "1966": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Dimitrios Skounas",
+          "name": "Mario Prosperi",
           "position": "GK"
         },
         {
-          "name": "Panagiotis Pantsios",
-          "position": "RB"
+          "name": "Charles Elsener",
+          "position": "GK"
         },
         {
-          "name": "Konstantinos Aritzis",
+          "name": "Léo Eichmann",
+          "position": "GK"
+        },
+        {
+          "name": "Werner Leimgruber",
           "position": "CB"
         },
         {
-          "name": "Athanasios Vourtos",
+          "name": "Konrad Kyburz",
           "position": "CB"
         },
         {
-          "name": "Dimitrios Aivazidis",
-          "position": "LB"
+          "name": "Alex Matter",
+          "position": "CB"
         },
         {
-          "name": "Anastasios Savvidis",
-          "position": "DM"
+          "name": "Willy Allemann",
+          "position": "CB"
         },
         {
-          "name": "Pavlos Dimitriou",
+          "name": "René Brodmann",
+          "position": "CB"
+        },
+        {
+          "name": "Hansruedi Fuhrer",
+          "position": "CB"
+        },
+        {
+          "name": "Xavier Stierli",
+          "position": "CB"
+        },
+        {
+          "name": "Ely Tacchella",
+          "position": "CB"
+        },
+        {
+          "name": "Charly Hertig",
+          "position": "CB"
+        },
+        {
+          "name": "Heinz Schneiter",
+          "position": "CB"
+        },
+        {
+          "name": "André Grobéty",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Bernasconi",
           "position": "CM"
         },
         {
-          "name": "Giannis Georgiadis",
+          "name": "Anton Schnider",
           "position": "CM"
         },
         {
-          "name": "Athanasios Gourales",
+          "name": "Richard Dürr",
           "position": "CM"
         },
         {
-          "name": "Sakis Anastasiadis",
+          "name": "Vittore Gottardi",
+          "position": "CM"
+        },
+        {
+          "name": "Kurt Armbruster",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Bäni",
+          "position": "CM"
+        },
+        {
+          "name": "Philippe Pottier",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Kuhn",
+          "position": "CM"
+        },
+        {
+          "name": "Karl Odermatt",
+          "position": "CM"
+        },
+        {
+          "name": "Anton Allemann",
           "position": "ST"
         },
         {
-          "name": "Sakis Zelidis",
+          "name": "Rolf Blättler",
+          "position": "ST"
+        },
+        {
+          "name": "Georges Perroud",
+          "position": "ST"
+        },
+        {
+          "name": "Robert Hosp",
+          "position": "ST"
+        },
+        {
+          "name": "Kurt Grünig",
+          "position": "ST"
+        },
+        {
+          "name": "Georges Vuilleumier",
+          "position": "ST"
+        },
+        {
+          "name": "Fritz Künzli",
+          "position": "ST"
+        },
+        {
+          "name": "René Quentin",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Claude Schindelholz",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1966/1967)",
+      "teamLabel": "switzerland (1966-67)"
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marcel Kunz",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Grob",
+          "position": "GK"
+        },
+        {
+          "name": "Mario Prosperi",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Ramseier",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Paul Loichat",
+          "position": "CB"
+        },
+        {
+          "name": "Pier Angelo Boffi",
+          "position": "CB"
+        },
+        {
+          "name": "Anton Weibel",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Albert Chapuisat",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Citherlet",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Wenger",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Berset",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Kuhn",
+          "position": "CM"
+        },
+        {
+          "name": "Karl Odermatt",
+          "position": "CM"
+        },
+        {
+          "name": "Kurt Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Georges Perroud",
+          "position": "ST"
+        },
+        {
+          "name": "Rolf Blättler",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Jeandupeux",
+          "position": "ST"
+        },
+        {
+          "name": "René Quentin",
+          "position": "ST"
+        },
+        {
+          "name": "Ernst Rutschmann",
+          "position": "ST"
+        },
+        {
+          "name": "Walter Balmer",
+          "position": "ST"
+        },
+        {
+          "name": "Fritz Künzli",
+          "position": "ST"
+        },
+        {
+          "name": "Georges Vuilleumier",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1970/1971)",
+      "teamLabel": "switzerland (1970-71)"
+    },
+    "1974": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Erich Burgener",
+          "position": "GK"
+        },
+        {
+          "name": "Hans Küng",
+          "position": "GK"
+        },
+        {
+          "name": "Jean-Yves Valentini",
+          "position": "CB"
+        },
+        {
+          "name": "René Hasler",
+          "position": "CB"
+        },
+        {
+          "name": "Pirmin Stierli",
+          "position": "CB"
+        },
+        {
+          "name": "Otto Demarmels",
+          "position": "CB"
+        },
+        {
+          "name": "Gilbert Guyot",
+          "position": "CB"
+        },
+        {
+          "name": "Rolf Bollmann",
+          "position": "CB"
+        },
+        {
+          "name": "Lucio Bizzini",
+          "position": "CB"
+        },
+        {
+          "name": "René Botteron",
+          "position": "CM"
+        },
+        {
+          "name": "André Meier",
+          "position": "CM"
+        },
+        {
+          "name": "Jacques Ducret",
+          "position": "CM"
+        },
+        {
+          "name": "Hans-Peter Schild",
+          "position": "CM"
+        },
+        {
+          "name": "Ulrich Wegmann",
+          "position": "CM"
+        },
+        {
+          "name": "Serge Trinchero",
+          "position": "CM"
+        },
+        {
+          "name": "Jakob Kuhn",
+          "position": "CM"
+        },
+        {
+          "name": "Kurt Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Rudolf Elsener",
+          "position": "ST"
+        },
+        {
+          "name": "Joko Pfister",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Risi",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Jeandupeux",
+          "position": "ST"
+        },
+        {
+          "name": "Ernst Rutschmann",
+          "position": "ST"
+        },
+        {
+          "name": "Rudolf Schneeberger",
+          "position": "ST"
+        },
+        {
+          "name": "Walter Balmer",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1974/1975)",
+      "teamLabel": "switzerland (1974-75)"
+    },
+    "1978": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Roger Berbig",
+          "position": "GK"
+        },
+        {
+          "name": "Erich Burgener",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Engel",
+          "position": "GK"
+        },
+        {
+          "name": "Francis Montandon",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Albert Chapuisat",
+          "position": "CB"
+        },
+        {
+          "name": "Roger Wehrli",
+          "position": "CB"
+        },
+        {
+          "name": "Jörg Stohler",
+          "position": "CB"
+        },
+        {
+          "name": "Lucio Bizzini",
+          "position": "CB"
+        },
+        {
+          "name": "Pius Fischbach",
+          "position": "CB"
+        },
+        {
+          "name": "Jakob Brechbühl",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Gross",
+          "position": "CM"
+        },
+        {
+          "name": "René Botteron",
+          "position": "CM"
+        },
+        {
+          "name": "André Meier",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Schnyder",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Parietti",
+          "position": "CM"
+        },
+        {
+          "name": "Serge Trinchero",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Hermann",
+          "position": "CM"
+        },
+        {
+          "name": "Raimondo Ponte",
+          "position": "CM"
+        },
+        {
+          "name": "Umberto Barberis",
+          "position": "CM"
+        },
+        {
+          "name": "Markus Tanner",
+          "position": "CM"
+        },
+        {
+          "name": "Rudolf Elsener",
+          "position": "ST"
+        },
+        {
+          "name": "Claudio Sulser",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1978/1979)",
+      "teamLabel": "switzerland (1978-79)"
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Roberto Böckli",
+          "position": "GK"
+        },
+        {
+          "name": "Roger Berbig",
+          "position": "GK"
+        },
+        {
+          "name": "Erich Burgener",
+          "position": "GK"
+        },
+        {
+          "name": "Gianpietro Zappa",
+          "position": "CB"
+        },
+        {
+          "name": "Fritz Baur",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Marie Conz",
+          "position": "CB"
+        },
+        {
+          "name": "Silvano Bianchi",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Geiger",
+          "position": "CB"
+        },
+        {
+          "name": "André Egli",
+          "position": "CB"
+        },
+        {
+          "name": "Heinz Lüdi",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Weber",
+          "position": "CB"
+        },
+        {
+          "name": "Roger Wehrli",
+          "position": "CB"
+        },
+        {
+          "name": "Charly In-Albon",
+          "position": "CB"
+        },
+        {
+          "name": "Herbert Hermann",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Schällibaum",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Koller",
+          "position": "CM"
+        },
+        {
+          "name": "Alfred Scheiwiler",
+          "position": "CM"
+        },
+        {
+          "name": "André Meier",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Decastel",
+          "position": "CM"
+        },
+        {
+          "name": "René Botteron",
+          "position": "CM"
+        },
+        {
+          "name": "Georges Bregy",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Hermann",
+          "position": "CM"
+        },
+        {
+          "name": "Lucien Favre",
+          "position": "CM"
+        },
+        {
+          "name": "Erni Maissen",
+          "position": "CM"
+        },
+        {
+          "name": "Raimondo Ponte",
+          "position": "CM"
+        },
+        {
+          "name": "Umberto Barberis",
+          "position": "CM"
+        },
+        {
+          "name": "Manfred Braschler",
+          "position": "ST"
+        },
+        {
+          "name": "Rudolf Elsener",
+          "position": "ST"
+        },
+        {
+          "name": "Claudio Sulser",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Paul Brigger",
+          "position": "ST"
+        },
+        {
+          "name": "Hanspeter Zwicker",
+          "position": "ST"
+        },
+        {
+          "name": "Angelo Elia",
+          "position": "ST"
+        },
+        {
+          "name": "Robert Lüthi",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (1982/1983)",
       "teamLabel": "switzerland (1982-83)"
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Martin Brunner",
+          "position": "GK"
+        },
+        {
+          "name": "Urs Zurbuchen",
+          "position": "GK"
+        },
+        {
+          "name": "Erich Burgener",
+          "position": "GK"
+        },
+        {
+          "name": "Roberto Böckli",
+          "position": "GK"
+        },
+        {
+          "name": "Christoph Gilli",
+          "position": "CB"
+        },
+        {
+          "name": "Gianpietro Zappa",
+          "position": "CB"
+        },
+        {
+          "name": "André Egli",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Weber",
+          "position": "CB"
+        },
+        {
+          "name": "Roger Wehrli",
+          "position": "CB"
+        },
+        {
+          "name": "Charly In-Albon",
+          "position": "CB"
+        },
+        {
+          "name": "Jürg Wittwer",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Geiger",
+          "position": "CB"
+        },
+        {
+          "name": "Urs Bamert",
+          "position": "CB"
+        },
+        {
+          "name": "Claude Ryf",
+          "position": "CB"
+        },
+        {
+          "name": "Stefan Marini",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Schällibaum",
+          "position": "CB"
+        },
+        {
+          "name": "René Botteron",
+          "position": "CM"
+        },
+        {
+          "name": "Philippe Perret",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Decastel",
+          "position": "CM"
+        },
+        {
+          "name": "Roger Kundert",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Koller",
+          "position": "CM"
+        },
+        {
+          "name": "Georges Bregy",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Bickel",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Hermann",
+          "position": "CM"
+        },
+        {
+          "name": "Patrice Mottiez",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Sutter",
+          "position": "CM"
+        },
+        {
+          "name": "Erni Maissen",
+          "position": "CM"
+        },
+        {
+          "name": "Claudio Sulser",
+          "position": "ST"
+        },
+        {
+          "name": "Dominique Cina",
+          "position": "ST"
+        },
+        {
+          "name": "Andy Halter",
+          "position": "ST"
+        },
+        {
+          "name": "Beat Sutter",
+          "position": "ST"
+        },
+        {
+          "name": "Dario Zuffi",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Paul Brigger",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Matthey",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1986/1987)",
+      "teamLabel": "switzerland (1986-87)"
     },
     "1990": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Pavol Michalik",
+          "name": "Philipp Walker",
           "position": "GK"
         },
         {
-          "name": "Konstantinos Konstantinidis",
-          "position": "RB"
+          "name": "Stefan Huber",
+          "position": "GK"
         },
         {
-          "name": "Dimitrios Athanasiadis",
+          "name": "Martin Brunner",
+          "position": "GK"
+        },
+        {
+          "name": "André Egli",
           "position": "CB"
         },
         {
-          "name": "Vasilios Apostolou",
+          "name": "Dominique Herr",
           "position": "CB"
         },
         {
-          "name": "Alexandros Vassos",
-          "position": "LB"
+          "name": "Urs Fischer",
+          "position": "CB"
         },
         {
-          "name": "Makis Chavos",
-          "position": "DM"
+          "name": "Alain Geiger",
+          "position": "CB"
         },
         {
-          "name": "Vangelis Tsoukalis",
+          "name": "Peter Schepull",
+          "position": "CB"
+        },
+        {
+          "name": "Herbert Baumann",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Hottiger",
+          "position": "CB"
+        },
+        {
+          "name": "Blaise Piffaretti",
           "position": "CM"
         },
         {
-          "name": "Michalis Gekas",
+          "name": "Patrick Sylvestre",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Patinios",
+          "name": "Marcel Koller",
           "position": "CM"
         },
         {
-          "name": "Stoycho Stoev",
+          "name": "Reto Gertschen",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Bickel",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Hermann",
+          "position": "CM"
+        },
+        {
+          "name": "Didier Gigon",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Colombo",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Sutter",
+          "position": "CM"
+        },
+        {
+          "name": "Philippe Hertig",
+          "position": "CM"
+        },
+        {
+          "name": "Christophe Bonvin",
           "position": "ST"
         },
         {
-          "name": "Diogenis Alagiozidis",
+          "name": "Beat Sutter",
+          "position": "ST"
+        },
+        {
+          "name": "Kubilay Türkyilmaz",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Knup",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Frédéric Chassot",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (1990/1991)",
       "teamLabel": "switzerland (1990-91)"
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marco Pascolo",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
+        },
+        {
+          "name": "Stephan Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Stefan Huber",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Brunner",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Rueda",
+          "position": "CB"
+        },
+        {
+          "name": "Murat Yakin",
+          "position": "CB"
+        },
+        {
+          "name": "Stéphane Henchoz",
+          "position": "CB"
+        },
+        {
+          "name": "Dominique Herr",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Geiger",
+          "position": "CB"
+        },
+        {
+          "name": "Ramon Vega",
+          "position": "CB"
+        },
+        {
+          "name": "André Egli",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Thüler",
+          "position": "CB"
+        },
+        {
+          "name": "Yvan Quentin",
+          "position": "CB"
+        },
+        {
+          "name": "Giuseppe Mazzarelli",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Hottiger",
+          "position": "CB"
+        },
+        {
+          "name": "Harald Gämperle",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Koller",
+          "position": "CM"
+        },
+        {
+          "name": "Sébastien Fournier",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Sylvestre",
+          "position": "CM"
+        },
+        {
+          "name": "Georges Bregy",
+          "position": "CM"
+        },
+        {
+          "name": "Ciriaco Sforza",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Bickel",
+          "position": "CM"
+        },
+        {
+          "name": "Jürg Studer",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Wyss",
+          "position": "CM"
+        },
+        {
+          "name": "Christophe Ohrel",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Sutter",
+          "position": "CM"
+        },
+        {
+          "name": "Christophe Bonvin",
+          "position": "ST"
+        },
+        {
+          "name": "Kubilay Türkyilmaz",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Knup",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Nestor Subiat",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Grassi",
+          "position": "ST"
+        },
+        {
+          "name": "Beat Sutter",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1994/1995)",
+      "teamLabel": "switzerland (1994-95)"
+    },
+    "1996": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marco Pascolo",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
+        },
+        {
+          "name": "Stephan Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Joël Corminboeuf",
+          "position": "GK"
+        },
+        {
+          "name": "Régis Rothenbühler",
+          "position": "CB"
+        },
+        {
+          "name": "Dominique Herr",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Walker",
+          "position": "CB"
+        },
+        {
+          "name": "Stéphane Henchoz",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Geiger",
+          "position": "CB"
+        },
+        {
+          "name": "Murat Yakin",
+          "position": "CB"
+        },
+        {
+          "name": "Ramon Vega",
+          "position": "CB"
+        },
+        {
+          "name": "Yvan Quentin",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Thüler",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Hottiger",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Jeanneret",
+          "position": "CB"
+        },
+        {
+          "name": "Bernt Haas",
+          "position": "CB"
+        },
+        {
+          "name": "Raphael Wicky",
+          "position": "CM"
+        },
+        {
+          "name": "Sébastien Fournier",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Sylvestre",
+          "position": "CM"
+        },
+        {
+          "name": "Blaise Piffaretti",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Koller",
+          "position": "CM"
+        },
+        {
+          "name": "Johann Vogel",
+          "position": "CM"
+        },
+        {
+          "name": "Massimo Lombardo",
+          "position": "CM"
+        },
+        {
+          "name": "Ciriaco Sforza",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Esposito",
+          "position": "CM"
+        },
+        {
+          "name": "Christophe Ohrel",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Colombo",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Sutter",
+          "position": "CM"
+        },
+        {
+          "name": "Alexandre Comisetti",
+          "position": "CM"
+        },
+        {
+          "name": "Christophe Bonvin",
+          "position": "ST"
+        },
+        {
+          "name": "David Sesa",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Kunz",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Knup",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Grassi",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Kubilay Türkyilmaz",
+          "position": "ST"
+        },
+        {
+          "name": "Nestor Subiat",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — switzerland (1996/1997)",
+      "teamLabel": "switzerland (1996-97)"
     },
     "1998": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Kyriakos Karipis",
+          "name": "Andreas Hilfiker",
           "position": "GK"
         },
         {
-          "name": "Pavel Sustr",
-          "position": "RB"
+          "name": "Joël Corminboeuf",
+          "position": "GK"
         },
         {
-          "name": "Irineos Christodoulou",
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
+        },
+        {
+          "name": "Marco Pascolo",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Brunner",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Hodel",
           "position": "CB"
         },
         {
-          "name": "Annoulis Tsifkas",
+          "name": "Régis Rothenbühler",
           "position": "CB"
         },
         {
-          "name": "Christos Kiosses",
-          "position": "LB"
+          "name": "Marco Zwyssig",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Valianis",
-          "position": "DM"
+          "name": "Ramon Vega",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Papageorgiou",
+          "name": "Stéphane Henchoz",
+          "position": "CB"
+        },
+        {
+          "name": "Murat Yakin",
+          "position": "CB"
+        },
+        {
+          "name": "Stefan Wolf",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Bernt Haas",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Jeanneret",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Fournier",
           "position": "CM"
         },
         {
-          "name": "Sören Frandsen",
+          "name": "Johann Vogel",
           "position": "CM"
         },
         {
-          "name": "Anastasios Dentsas",
+          "name": "Raphael Wicky",
           "position": "CM"
         },
         {
-          "name": "Georgios Panagiotidis",
+          "name": "Johann Lonfat",
+          "position": "CM"
+        },
+        {
+          "name": "Fabio Celestini",
+          "position": "CM"
+        },
+        {
+          "name": "Ciriaco Sforza",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Bühlmann",
+          "position": "CM"
+        },
+        {
+          "name": "Alexandre Comisetti",
+          "position": "CM"
+        },
+        {
+          "name": "Francesco Di Jorio",
+          "position": "CM"
+        },
+        {
+          "name": "David Sesa",
           "position": "ST"
         },
         {
-          "name": "Christos Pempes",
+          "name": "Adrian Kunz",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Grassi",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Alexandre Rey",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick De Napoli",
+          "position": "ST"
+        },
+        {
+          "name": "Frédéric Chassot",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (1998/1999)",
       "teamLabel": "switzerland (1998-99)"
@@ -176,55 +1315,167 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Gialamas",
+          "name": "Pascal Zuberbühler",
           "position": "GK"
         },
         {
-          "name": "Konstantinos Pattas",
-          "position": "RB"
+          "name": "Marco Pascolo",
+          "position": "GK"
         },
         {
-          "name": "Zisis Arvanitidis",
+          "name": "Jörg Stiel",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Hodel",
           "position": "CB"
         },
         {
-          "name": "Antonis Nasias",
+          "name": "Régis Rothenbühler",
           "position": "CB"
         },
         {
-          "name": "Martin Baliak",
-          "position": "LB"
+          "name": "Murat Yakin",
+          "position": "CB"
         },
         {
-          "name": "Aboy-Emeka Obidile",
-          "position": "DM"
+          "name": "Stéphane Henchoz",
+          "position": "CB"
         },
         {
-          "name": "Jozef Pavlik",
+          "name": "Marco Zwyssig",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Jeanneret",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Zellweger",
+          "position": "CB"
+        },
+        {
+          "name": "Bernt Haas",
+          "position": "CB"
+        },
+        {
+          "name": "Badile Lubamba",
+          "position": "CB"
+        },
+        {
+          "name": "Giuseppe Mazzarelli",
+          "position": "CB"
+        },
+        {
+          "name": "Christophe Jaquet",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Fournier",
           "position": "CM"
         },
         {
-          "name": "Anastasios Dentsas",
+          "name": "Johann Vogel",
           "position": "CM"
         },
         {
-          "name": "Athanasios Tragiannis",
+          "name": "Raphael Wicky",
           "position": "CM"
         },
         {
-          "name": "Ademar Dorneles Rodrigues",
+          "name": "Johann Lonfat",
+          "position": "CM"
+        },
+        {
+          "name": "Dario Rota",
+          "position": "CM"
+        },
+        {
+          "name": "Fabio Celestini",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Cantaluppi",
+          "position": "CM"
+        },
+        {
+          "name": "Ciriaco Sforza",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Wyss",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Cabanas",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Esposito",
+          "position": "CM"
+        },
+        {
+          "name": "Andres Gerber",
+          "position": "CM"
+        },
+        {
+          "name": "Sascha Müller",
+          "position": "CM"
+        },
+        {
+          "name": "Alexandre Comisetti",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Bühlmann",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "David Sesa",
           "position": "ST"
         },
         {
-          "name": "Christos Iliopoulos",
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Léonard Thurre",
+          "position": "ST"
+        },
+        {
+          "name": "Kubilay Türkyilmaz",
+          "position": "ST"
+        },
+        {
+          "name": "Blaise Nkufo",
+          "position": "ST"
+        },
+        {
+          "name": "Alexandre Rey",
+          "position": "ST"
+        },
+        {
+          "name": "André Muff",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2000/2001)",
       "teamLabel": "switzerland (2000-01)"
@@ -233,55 +1484,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Nikolaos Zafiropoulos",
+          "name": "Jörg Stiel",
           "position": "GK"
         },
         {
-          "name": "Efthimios Tselios",
-          "position": "RB"
+          "name": "Fabrice Borer",
+          "position": "GK"
         },
         {
-          "name": "Angelos Votaris",
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
+        },
+        {
+          "name": "Murat Yakin",
           "position": "CB"
         },
         {
-          "name": "Athanasios Karypidis",
+          "name": "Remo Meyer",
           "position": "CB"
         },
         {
-          "name": "Przemyslaw Urbaniak",
-          "position": "LB"
+          "name": "Stéphane Henchoz",
+          "position": "CB"
         },
         {
-          "name": "Makis Chavos",
-          "position": "DM"
+          "name": "Stephan Keller",
+          "position": "CB"
         },
         {
-          "name": "Alexandros Moutidis",
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Zwyssig",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Yvan Quentin",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Spycher",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Berner",
+          "position": "CB"
+        },
+        {
+          "name": "Bernt Haas",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Zellweger",
+          "position": "CB"
+        },
+        {
+          "name": "Giuseppe Mazzarelli",
+          "position": "CB"
+        },
+        {
+          "name": "Raphael Wicky",
           "position": "CM"
         },
         {
-          "name": "Dobrica Spasic",
+          "name": "Sébastien Fournier",
           "position": "CM"
         },
         {
-          "name": "Athanasios Katis",
+          "name": "Johann Vogel",
           "position": "CM"
         },
         {
-          "name": "Charilaos Pappas",
+          "name": "Fabio Celestini",
+          "position": "CM"
+        },
+        {
+          "name": "Johann Lonfat",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Cantaluppi",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Cabanas",
+          "position": "CM"
+        },
+        {
+          "name": "Massimo Lombardo",
+          "position": "CM"
+        },
+        {
+          "name": "Francesco Di Jorio",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "David Sesa",
           "position": "ST"
         },
         {
-          "name": "Antonis Macheroudis",
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Frei",
+          "position": "ST"
+        },
+        {
+          "name": "Blaise Nkufo",
+          "position": "ST"
+        },
+        {
+          "name": "Léonard Thurre",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2002/2003)",
       "teamLabel": "switzerland (2002-03)"
@@ -290,55 +1621,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Sorin Colceag",
+          "name": "Pascal Zuberbühler",
           "position": "GK"
         },
         {
-          "name": "Vasilios Michailidis",
-          "position": "RB"
+          "name": "Fabrice Borer",
+          "position": "GK"
         },
         {
-          "name": "Ilias Stergiadis",
+          "name": "Sébastien Roth",
+          "position": "GK"
+        },
+        {
+          "name": "Jörg Stiel",
+          "position": "GK"
+        },
+        {
+          "name": "Patrick Müller",
           "position": "CB"
         },
         {
-          "name": "Antonis Kyrou",
+          "name": "Stéphane Henchoz",
           "position": "CB"
         },
         {
-          "name": "Nikolaos Meserdis",
-          "position": "LB"
+          "name": "Murat Yakin",
+          "position": "CB"
         },
         {
-          "name": "Ilias Botaitis",
-          "position": "DM"
+          "name": "Stéphane Grichting",
+          "position": "CB"
         },
         {
-          "name": "Georgios Siakkas",
+          "name": "Remo Meyer",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Zwyssig",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Spycher",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Bruno Berner",
+          "position": "CB"
+        },
+        {
+          "name": "Bernt Haas",
+          "position": "CB"
+        },
+        {
+          "name": "Johann Vogel",
           "position": "CM"
         },
         {
-          "name": "Dimitrios Ballis",
+          "name": "Raphael Wicky",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Chatzidrosos",
+          "name": "Benjamin Huggel",
           "position": "CM"
         },
         {
-          "name": "Vangelis Mitsopoulos",
+          "name": "Fabio Celestini",
+          "position": "CM"
+        },
+        {
+          "name": "Johann Lonfat",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Cabanas",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Vonlanthen",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Gygax",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Frei",
           "position": "ST"
         },
         {
-          "name": "Kosmas Vakoufaris",
+          "name": "Marco Streller",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Häberli",
+          "position": "ST"
+        },
+        {
+          "name": "André Muff",
+          "position": "ST"
+        },
+        {
+          "name": "Alexandre Rey",
+          "position": "ST"
+        },
+        {
+          "name": "Stéphane Chapuisat",
+          "position": "ST"
+        },
+        {
+          "name": "Milaim Rama",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2004/2005)",
       "teamLabel": "switzerland (2004-05)"
@@ -347,55 +1758,131 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Polychronis Vezyridis",
+          "name": "Fabio Coltorti",
           "position": "GK"
         },
         {
-          "name": "Filippos Vasiliadis",
-          "position": "RB"
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
         },
         {
-          "name": "Petros Salepis",
+          "name": "Diego Benaglio",
+          "position": "GK"
+        },
+        {
+          "name": "Philippe Senderos",
           "position": "CB"
         },
         {
-          "name": "Angelo Barletta",
+          "name": "Patrick Müller",
           "position": "CB"
         },
         {
-          "name": "Panagiotis Pappas",
-          "position": "LB"
+          "name": "Stéphane Grichting",
+          "position": "CB"
         },
         {
-          "name": "Georgios Siakkas",
-          "position": "DM"
+          "name": "Boris Smiljanic",
+          "position": "CB"
         },
         {
-          "name": "Dimitrios Zavadias",
+          "name": "Steve von Bergen",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Djourou",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Spycher",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Degen",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Johann Vogel",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Soulidis",
+          "name": "Raphael Wicky",
           "position": "CM"
         },
         {
-          "name": "Dejan Jurkic",
+          "name": "Benjamin Huggel",
           "position": "CM"
         },
         {
-          "name": "Vangelis Mitsopoulos",
+          "name": "Gökhan Inler",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Cabanas",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "David Degen",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Vonlanthen",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Gygax",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "Xavier Margairaz",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Regazzoni",
           "position": "ST"
         },
         {
-          "name": "Georgios Georgiadis",
+          "name": "Alex Frei",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Streller",
+          "position": "ST"
+        },
+        {
+          "name": "Mauro Lustrinelli",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2006/2007)",
       "teamLabel": "switzerland (2006-07)"
@@ -404,55 +1891,171 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Radisa Ilic",
+          "name": "Diego Benaglio",
           "position": "GK"
         },
         {
-          "name": "Cyril Kali",
-          "position": "RB"
+          "name": "Marco Wölfli",
+          "position": "GK"
         },
         {
-          "name": "Aurélien Collin",
+          "name": "Eldin Jakupović",
+          "position": "GK"
+        },
+        {
+          "name": "Johnny Leoni",
+          "position": "GK"
+        },
+        {
+          "name": "Fabio Coltorti",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Zuberbühler",
+          "position": "GK"
+        },
+        {
+          "name": "Philippe Senderos",
           "position": "CB"
         },
         {
-          "name": "Ninoslav Milenkovic",
+          "name": "Johan Djourou",
           "position": "CB"
         },
         {
-          "name": "Giannis Voskopoulos",
-          "position": "LB"
+          "name": "Steve von Bergen",
+          "position": "CB"
         },
         {
-          "name": "Mohammed Abubakari",
-          "position": "DM"
+          "name": "Stéphane Grichting",
+          "position": "CB"
         },
         {
-          "name": "Angelos Digozis",
+          "name": "Mario Eggimann",
+          "position": "CB"
+        },
+        {
+          "name": "Reto Ziegler",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Nef",
+          "position": "CB"
+        },
+        {
+          "name": "Boris Smiljanic",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Spycher",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Degen",
+          "position": "CB"
+        },
+        {
+          "name": "Gökhan Inler",
           "position": "CM"
         },
         {
-          "name": "Georgios Siakkas",
+          "name": "Gelson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Patrick Zoundi",
+          "name": "Benjamin Huggel",
           "position": "CM"
         },
         {
-          "name": "Deniz Baykara",
+          "name": "Sandro Burki",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Almen Abdi",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Cabanas",
+          "position": "CM"
+        },
+        {
+          "name": "Johan Vonlanthen",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "Xavier Margairaz",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Gygax",
+          "position": "CM"
+        },
+        {
+          "name": "Valentin Stocker",
           "position": "ST"
         },
         {
-          "name": "José Luis Jerez",
+          "name": "Alberto Regazzoni",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Frei",
+          "position": "ST"
+        },
+        {
+          "name": "Eren Derdiyok",
+          "position": "ST"
+        },
+        {
+          "name": "Blaise Nkufo",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Streller",
+          "position": "ST"
+        },
+        {
+          "name": "Mauro Lustrinelli",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Häberli",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2008/2009)",
       "teamLabel": "switzerland (2008-09)"
@@ -461,55 +2064,155 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Daniel Fernandes",
+          "name": "Diego Benaglio",
           "position": "GK"
         },
         {
-          "name": "Athanasios Panteliadis",
-          "position": "RB"
+          "name": "Marco Wölfli",
+          "position": "GK"
         },
         {
-          "name": "Anastasios Papazoglou",
+          "name": "Germano Vailati",
+          "position": "GK"
+        },
+        {
+          "name": "Johnny Leoni",
+          "position": "GK"
+        },
+        {
+          "name": "Reto Ziegler",
           "position": "CB"
         },
         {
-          "name": "Pablo Amo",
+          "name": "Johan Djourou",
           "position": "CB"
         },
         {
-          "name": "Uros Sindjic",
-          "position": "LB"
+          "name": "Philippe Senderos",
+          "position": "CB"
         },
         {
-          "name": "Mohammed Abubakari",
-          "position": "DM"
+          "name": "Stéphane Grichting",
+          "position": "CB"
         },
         {
-          "name": "Jorge Brítez",
+          "name": "Steve von Bergen",
+          "position": "CB"
+        },
+        {
+          "name": "François Affolter",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Eggimann",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Rossini",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic Magnin",
+          "position": "CB"
+        },
+        {
+          "name": "Christoph Spycher",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Scott Sutter",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Padalino",
+          "position": "CB"
+        },
+        {
+          "name": "Gökhan Inler",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Vlasopoulos",
+          "name": "Pirmin Schwegler",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Mousikakis",
+          "name": "Gelson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Alexandros Kontos",
+          "name": "Benjamin Huggel",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "David Degen",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Moreno Costanzo",
+          "position": "CM"
+        },
+        {
+          "name": "Xavier Margairaz",
+          "position": "CM"
+        },
+        {
+          "name": "Hakan Yakin",
+          "position": "CM"
+        },
+        {
+          "name": "Davide Chiumiento",
+          "position": "CM"
+        },
+        {
+          "name": "Valentin Stocker",
           "position": "ST"
         },
         {
-          "name": "Nikolaos Aslanidis",
+          "name": "Nassim Ben Khalifa",
+          "position": "ST"
+        },
+        {
+          "name": "Eren Derdiyok",
+          "position": "ST"
+        },
+        {
+          "name": "Albert Bunjaku",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Frei",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Streller",
+          "position": "ST"
+        },
+        {
+          "name": "Blaise Nkufo",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2010/2011)",
       "teamLabel": "switzerland (2010-11)"
@@ -518,55 +2221,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Fotis Koutzavasilis",
+          "name": "Yann Sommer",
           "position": "GK"
         },
         {
-          "name": "Athanasios Panteliadis",
-          "position": "RB"
+          "name": "Diego Benaglio",
+          "position": "GK"
         },
         {
-          "name": "Charalampos Brilakis",
+          "name": "Marco Wölfli",
+          "position": "GK"
+        },
+        {
+          "name": "Reto Ziegler",
           "position": "CB"
         },
         {
-          "name": "Georgios Karakostas",
+          "name": "Timm Klose",
           "position": "CB"
         },
         {
-          "name": "Georgios Paraskevaidis",
-          "position": "LB"
+          "name": "Johan Djourou",
+          "position": "CB"
         },
         {
-          "name": "Georgios Siakkas",
-          "position": "DM"
+          "name": "Philippe Senderos",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Triantafyllou",
+          "name": "François Affolter",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Rossini",
+          "position": "CB"
+        },
+        {
+          "name": "Steve von Bergen",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Nef",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Michel Morganella",
+          "position": "CB"
+        },
+        {
+          "name": "Gökhan Inler",
           "position": "CM"
         },
         {
-          "name": "Sasa Ranic",
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Kiassos",
+          "name": "Gelson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Alexandros Kontos",
+          "name": "Fabian Frei",
+          "position": "CM"
+        },
+        {
+          "name": "Alain Wiss",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "Adrian Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Mathys",
+          "position": "CM"
+        },
+        {
+          "name": "Valentin Stocker",
           "position": "ST"
         },
         {
-          "name": "Filipe da Costa",
+          "name": "Izet Hajrovic",
+          "position": "ST"
+        },
+        {
+          "name": "Matias Vitkieviez",
+          "position": "ST"
+        },
+        {
+          "name": "Admir Mehmedi",
+          "position": "ST"
+        },
+        {
+          "name": "Nassim Ben Khalifa",
+          "position": "ST"
+        },
+        {
+          "name": "Innocent Emeghara",
+          "position": "ST"
+        },
+        {
+          "name": "Eren Derdiyok",
+          "position": "ST"
+        },
+        {
+          "name": "Josip Drmic",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gavranovic",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2012/2013)",
       "teamLabel": "switzerland (2012-13)"
@@ -575,55 +2370,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Apostolos Androutsos",
+          "name": "Yann Sommer",
           "position": "GK"
         },
         {
-          "name": "Giannis Voskopoulos",
-          "position": "RB"
+          "name": "Diego Benaglio",
+          "position": "GK"
         },
         {
-          "name": "Stelios Kapsalis",
+          "name": "Roman Bürki",
+          "position": "GK"
+        },
+        {
+          "name": "Yvon Mvogo",
+          "position": "GK"
+        },
+        {
+          "name": "Marwin Hitz",
+          "position": "GK"
+        },
+        {
+          "name": "Fabian Schär",
           "position": "CB"
         },
         {
-          "name": "Tryfon Kasmeridis",
+          "name": "Fabian Lustenberger",
           "position": "CB"
         },
         {
-          "name": "Filip Naumcevski",
-          "position": "LB"
+          "name": "Johan Djourou",
+          "position": "CB"
         },
         {
-          "name": "Georgios Siakkas",
-          "position": "DM"
+          "name": "Loris Benito",
+          "position": "CB"
         },
         {
-          "name": "Egutu Oliseh",
+          "name": "Philippe Senderos",
+          "position": "CB"
+        },
+        {
+          "name": "Steve von Bergen",
+          "position": "CB"
+        },
+        {
+          "name": "Reto Ziegler",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "François Moubandje",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Lang",
+          "position": "CB"
+        },
+        {
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Christos Routsis",
+          "name": "Gökhan Inler",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Triantafyllou",
+          "name": "Pirmin Schwegler",
           "position": "CM"
         },
         {
-          "name": "Nikolaos Aslanidis",
+          "name": "Fabian Frei",
+          "position": "CM"
+        },
+        {
+          "name": "Gelson Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Pajtim Kasami",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Schönbächler",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Tranquillo Barnetta",
+          "position": "CM"
+        },
+        {
+          "name": "Valentin Stocker",
           "position": "ST"
         },
         {
-          "name": "Athanasios Moutesidis",
+          "name": "Admir Mehmedi",
+          "position": "ST"
+        },
+        {
+          "name": "Josip Drmic",
+          "position": "ST"
+        },
+        {
+          "name": "Haris Seferovic",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Frey",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gavranovic",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2014/2015)",
       "teamLabel": "switzerland (2014-15)"
@@ -632,108 +2519,324 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Ilias Melkas",
+          "name": "Yann Sommer",
           "position": "GK"
         },
         {
-          "name": "Stelios Kapsalis",
-          "position": "RB"
+          "name": "Roman Bürki",
+          "position": "GK"
         },
         {
-          "name": "Giannis Voskopoulos",
+          "name": "Marwin Hitz",
+          "position": "GK"
+        },
+        {
+          "name": "Yvon Mvogo",
+          "position": "GK"
+        },
+        {
+          "name": "Nico Elvedi",
           "position": "CB"
         },
         {
-          "name": "Alexandros Papatzikos",
+          "name": "Timm Klose",
           "position": "CB"
         },
         {
-          "name": "Timotheos Tselepidis",
-          "position": "LB"
+          "name": "Léo Lacroix",
+          "position": "CB"
         },
         {
-          "name": "Georgios Siakkas",
-          "position": "DM"
+          "name": "Fabian Schär",
+          "position": "CB"
         },
         {
-          "name": "Jessy Lando Fusu",
+          "name": "Johan Djourou",
+          "position": "CB"
+        },
+        {
+          "name": "Steve von Bergen",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Senderos",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "François Moubandje",
+          "position": "CB"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Lang",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Kyriakos Giaxis",
+          "name": "Edimilson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Christos Routsis",
+          "name": "Denis Zakaria",
           "position": "CM"
         },
         {
-          "name": "Stelios Pozoglou",
+          "name": "Fabian Frei",
+          "position": "CM"
+        },
+        {
+          "name": "Gelson Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Remo Freuler",
+          "position": "CM"
+        },
+        {
+          "name": "Pajtim Kasami",
+          "position": "CM"
+        },
+        {
+          "name": "Luca Zuffi",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Valentin Stocker",
           "position": "ST"
         },
         {
-          "name": "Matija Tadic",
+          "name": "Renato Steffen",
+          "position": "ST"
+        },
+        {
+          "name": "Admir Mehmedi",
+          "position": "ST"
+        },
+        {
+          "name": "Shani Tarashaj",
+          "position": "ST"
+        },
+        {
+          "name": "Breel Embolo",
+          "position": "ST"
+        },
+        {
+          "name": "Eren Derdiyok",
+          "position": "ST"
+        },
+        {
+          "name": "Haris Seferovic",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2016/2017)",
       "teamLabel": "switzerland (2016-17)"
     },
     "2018": {
-      "formation": "3-4-2",
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Vasilios Kasimis",
+          "name": "Yann Sommer",
           "position": "GK"
         },
         {
-          "name": "Leonidas Kastritseas",
-          "position": "RB"
+          "name": "Roman Bürki",
+          "position": "GK"
         },
         {
-          "name": "Thomas Makousis",
+          "name": "Marwin Hitz",
+          "position": "GK"
+        },
+        {
+          "name": "Yvon Mvogo",
+          "position": "GK"
+        },
+        {
+          "name": "David von Ballmoos",
+          "position": "GK"
+        },
+        {
+          "name": "Jonas Omlin",
+          "position": "GK"
+        },
+        {
+          "name": "Gregor Kobel",
+          "position": "GK"
+        },
+        {
+          "name": "Nico Elvedi",
           "position": "CB"
         },
         {
-          "name": "Apostolos Apostolopoulos",
+          "name": "Timm Klose",
           "position": "CB"
         },
         {
-          "name": "Nikolaos Anastasopoulos",
-          "position": "DM"
+          "name": "Manuel Akanji",
+          "position": "CB"
         },
         {
-          "name": "Agathoklis Polyzos",
+          "name": "Léo Lacroix",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Loris Benito",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Djourou",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "François Moubandje",
+          "position": "CB"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Lang",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Mbabu",
+          "position": "CB"
+        },
+        {
+          "name": "Stephan Lichtsteiner",
+          "position": "CB"
+        },
+        {
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Konstantinos Vlachopoulos",
+          "name": "Denis Zakaria",
           "position": "CM"
         },
         {
-          "name": "Dimitrios Kechagias",
+          "name": "Edimilson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Stefanos Petrou",
+          "name": "Fabian Frei",
+          "position": "CM"
+        },
+        {
+          "name": "Gelson Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Remo Freuler",
+          "position": "CM"
+        },
+        {
+          "name": "Blerim Dzemaili",
+          "position": "CM"
+        },
+        {
+          "name": "Valon Behrami",
+          "position": "CM"
+        },
+        {
+          "name": "Djibril Sow",
+          "position": "CM"
+        },
+        {
+          "name": "Florent Hadergjonaj",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Fassnacht",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Zuber",
           "position": "ST"
         },
         {
-          "name": "Kleon Pouflis",
+          "name": "Renato Steffen",
+          "position": "ST"
+        },
+        {
+          "name": "Admir Mehmedi",
+          "position": "ST"
+        },
+        {
+          "name": "Breel Embolo",
+          "position": "ST"
+        },
+        {
+          "name": "Haris Seferovic",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gavranovic",
+          "position": "ST"
+        },
+        {
+          "name": "Josip Drmic",
+          "position": "ST"
+        },
+        {
+          "name": "Dimitri Oberlin",
+          "position": "ST"
+        },
+        {
+          "name": "Albian Ajeti",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2018/2019)",
       "teamLabel": "switzerland (2018-19)"
@@ -742,55 +2845,139 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Zacharias Kavousakis",
+          "name": "Jonas Omlin",
           "position": "GK"
         },
         {
-          "name": "Tryfon Kasmeridis",
-          "position": "RB"
+          "name": "Yann Sommer",
+          "position": "GK"
         },
         {
-          "name": "Athanasios Giannarakis",
+          "name": "Yvon Mvogo",
+          "position": "GK"
+        },
+        {
+          "name": "David von Ballmoos",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Akanji",
           "position": "CB"
         },
         {
-          "name": "Isidoros Koutsidis",
+          "name": "Nico Elvedi",
           "position": "CB"
         },
         {
-          "name": "Cyril Kali",
-          "position": "LB"
+          "name": "Fabian Schär",
+          "position": "CB"
         },
         {
-          "name": "Nikolaos Kritikos",
-          "position": "DM"
+          "name": "Becir Omeragic",
+          "position": "CB"
         },
         {
-          "name": "Theocharis Psaltis",
+          "name": "Loris Benito",
+          "position": "CB"
+        },
+        {
+          "name": "Eray Cömert",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Mbabu",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Lotomba",
+          "position": "CB"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Lang",
+          "position": "CB"
+        },
+        {
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Julián Marchioni",
+          "name": "Edimilson Fernandes",
           "position": "CM"
         },
         {
-          "name": "Stratos Gravas",
+          "name": "Remo Freuler",
           "position": "CM"
         },
         {
-          "name": "D’Avila Messi Kessie",
+          "name": "Djibril Sow",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Sohm",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Aebischer",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Fassnacht",
+          "position": "CM"
+        },
+        {
+          "name": "Rubén Vargas",
           "position": "ST"
         },
         {
-          "name": "Alexandros Maskanakis",
+          "name": "Steven Zuber",
+          "position": "ST"
+        },
+        {
+          "name": "Renato Steffen",
+          "position": "ST"
+        },
+        {
+          "name": "Admir Mehmedi",
+          "position": "ST"
+        },
+        {
+          "name": "Breel Embolo",
+          "position": "ST"
+        },
+        {
+          "name": "Haris Seferovic",
+          "position": "ST"
+        },
+        {
+          "name": "Cedric Itten",
+          "position": "ST"
+        },
+        {
+          "name": "Albian Ajeti",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gavranovic",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2020/2021)",
       "teamLabel": "switzerland (2020-21)"
@@ -799,60 +2986,168 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Makis Giannikoglou",
+          "name": "Gregor Kobel",
           "position": "GK"
         },
         {
-          "name": "Aristotelis Karasalidis",
-          "position": "RB"
+          "name": "Jonas Omlin",
+          "position": "GK"
         },
         {
-          "name": "Fotis Pantekidis",
+          "name": "Yann Sommer",
+          "position": "GK"
+        },
+        {
+          "name": "Philipp Köhn",
+          "position": "GK"
+        },
+        {
+          "name": "Yvon Mvogo",
+          "position": "GK"
+        },
+        {
+          "name": "David von Ballmoos",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Akanji",
           "position": "CB"
         },
         {
-          "name": "Konstantinos Dimitriou",
+          "name": "Nico Elvedi",
           "position": "CB"
         },
         {
-          "name": "Athanasios Giannarakis",
-          "position": "LB"
+          "name": "Fabian Schär",
+          "position": "CB"
         },
         {
-          "name": "Konstantinos Thymianis",
-          "position": "DM"
+          "name": "Eray Cömert",
+          "position": "CB"
         },
         {
-          "name": "Adrián Colombino",
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Lotomba",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Mbabu",
+          "position": "CB"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "CB"
+        },
+        {
+          "name": "Leonidas Stergiou",
+          "position": "CB"
+        },
+        {
+          "name": "Granit Xhaka",
           "position": "CM"
         },
         {
-          "name": "Paschalis Staikos",
+          "name": "Denis Zakaria",
           "position": "CM"
         },
         {
-          "name": "Spyros Natsos",
+          "name": "Ardon Jashari",
           "position": "CM"
         },
         {
-          "name": "Panagiotis Tsagalidis",
+          "name": "Edimilson Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Fabian Frei",
+          "position": "CM"
+        },
+        {
+          "name": "Djibril Sow",
+          "position": "CM"
+        },
+        {
+          "name": "Remo Freuler",
+          "position": "CM"
+        },
+        {
+          "name": "Michel Aebischer",
+          "position": "CM"
+        },
+        {
+          "name": "Fabian Rieder",
+          "position": "CM"
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Fassnacht",
+          "position": "CM"
+        },
+        {
+          "name": "Mattia Bottani",
+          "position": "CM"
+        },
+        {
+          "name": "Noah Okafor",
           "position": "ST"
         },
         {
-          "name": "Alexandros Maskanakis",
+          "name": "Rubén Vargas",
+          "position": "ST"
+        },
+        {
+          "name": "Steven Zuber",
+          "position": "ST"
+        },
+        {
+          "name": "Dan Ndoye",
+          "position": "ST"
+        },
+        {
+          "name": "Renato Steffen",
+          "position": "ST"
+        },
+        {
+          "name": "Breel Embolo",
+          "position": "ST"
+        },
+        {
+          "name": "Zeki Amdouni",
+          "position": "ST"
+        },
+        {
+          "name": "Haris Seferovic",
+          "position": "ST"
+        },
+        {
+          "name": "Cedric Itten",
+          "position": "ST"
+        },
+        {
+          "name": "Andi Zeqiri",
+          "position": "ST"
+        },
+        {
+          "name": "Mario Gavranovic",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 69,
-        "defense": 61,
-        "goalkeeping": 63
+        "attack": 74,
+        "midfield": 84,
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — switzerland (2022/2023)",
       "teamLabel": "switzerland (2022-23)"
     }
   },
-  "id": 3385,
+  "id": 3384,
   "name": "switzerland"
 }

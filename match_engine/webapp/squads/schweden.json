@@ -5,55 +5,135 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Bobby Ferguson",
+          "name": "Ronney Pettersson",
           "position": "GK"
         },
         {
-          "name": "John Clark",
-          "position": "RB"
+          "name": "Sven-Gunnar Larsson",
+          "position": "GK"
         },
         {
-          "name": "Ronnie McKinnon",
+          "name": "Nils Hult",
+          "position": "GK"
+        },
+        {
+          "name": "Kurt Axelsson",
           "position": "CB"
         },
         {
-          "name": "Jackie McGrory",
+          "name": "Hans Selander",
           "position": "CB"
         },
         {
-          "name": "Eddie McCreadie",
-          "position": "LB"
+          "name": "Nils Johansson",
+          "position": "CB"
         },
         {
-          "name": "Andy Penman",
-          "position": "DM"
+          "name": "Bill Björklund",
+          "position": "CB"
         },
         {
-          "name": "Jim Scott",
+          "name": "Jan Karlsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ingvar Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Ericsson",
+          "position": "CB"
+        },
+        {
+          "name": "Boris Målberg",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Nordqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Rolf Björklund",
+          "position": "CB"
+        },
+        {
+          "name": "Leif Eriksson",
           "position": "CM"
         },
         {
-          "name": "Bobby Murdoch",
+          "name": "Lars Erik Ahlberg",
           "position": "CM"
         },
         {
-          "name": "Peter Cormack",
+          "name": "Jim Nildén",
           "position": "CM"
         },
         {
-          "name": "Bobby Lennox",
+          "name": "Lennart Wallin",
+          "position": "CM"
+        },
+        {
+          "name": "Roger Magnusson",
           "position": "ST"
         },
         {
-          "name": "Charlie Cooke",
+          "name": "Bo Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Kindvall",
+          "position": "ST"
+        },
+        {
+          "name": "Agne Simonsson",
+          "position": "ST"
+        },
+        {
+          "name": "Inge Danielsson",
+          "position": "ST"
+        },
+        {
+          "name": "Ingvar Svahn",
+          "position": "ST"
+        },
+        {
+          "name": "Gert Christiansson",
+          "position": "ST"
+        },
+        {
+          "name": "Örjan Martinsson",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Turesson",
+          "position": "ST"
+        },
+        {
+          "name": "Roland Lundblad",
+          "position": "ST"
+        },
+        {
+          "name": "Lennart Backman",
+          "position": "ST"
+        },
+        {
+          "name": "Ulf Jansson",
+          "position": "ST"
+        },
+        {
+          "name": "Björn Carlsson",
+          "position": "ST"
+        },
+        {
+          "name": "Ulf Hultberg",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1966/1967)",
       "teamLabel": "sweden (1966-67)"
@@ -62,55 +142,127 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Bobby Clark",
+          "name": "Ronnie Hellström",
           "position": "GK"
         },
         {
-          "name": "Ronnie McKinnon",
-          "position": "RB"
+          "name": "Ronney Pettersson",
+          "position": "GK"
         },
         {
-          "name": "Frank McLintock",
+          "name": "Sven-Gunnar Larsson",
+          "position": "GK"
+        },
+        {
+          "name": "Krister Kristensson",
           "position": "CB"
         },
         {
-          "name": "Bobby Moncur",
+          "name": "Hans Selander",
           "position": "CB"
         },
         {
-          "name": "John Greig",
-          "position": "LB"
+          "name": "Kurt Axelsson",
+          "position": "CB"
         },
         {
-          "name": "Tommy McLean",
-          "position": "DM"
+          "name": "Leif Malberg",
+          "position": "CB"
         },
         {
-          "name": "Willie Carr",
+          "name": "Jan Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Nordqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Grip",
+          "position": "CB"
+        },
+        {
+          "name": "Olle Nordin",
           "position": "CM"
         },
         {
-          "name": "Peter Cormack",
+          "name": "Tommy Svensson",
           "position": "CM"
         },
         {
-          "name": "Davie Hay",
+          "name": "Leif Eriksson",
           "position": "CM"
         },
         {
-          "name": "Bobby Lennox",
+          "name": "Thomas Nordahl",
+          "position": "CM"
+        },
+        {
+          "name": "Göran Nicklasson",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Olsson",
+          "position": "CM"
+        },
+        {
+          "name": "Örjan Persson",
+          "position": "CM"
+        },
+        {
+          "name": "Inge Danielsson",
           "position": "ST"
         },
         {
-          "name": "Jimmy Johnstone",
+          "name": "Bo Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Kindvall",
+          "position": "ST"
+        },
+        {
+          "name": "Reine Almqvist",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Eklund",
+          "position": "ST"
+        },
+        {
+          "name": "Dan Brzokoupil",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Johansson",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Grahn",
+          "position": "ST"
+        },
+        {
+          "name": "Claes Cronqvist",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Turesson",
+          "position": "ST"
+        },
+        {
+          "name": "Inge Ejderstedt",
+          "position": "ST"
+        },
+        {
+          "name": "Sten Palsson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1970/1971)",
       "teamLabel": "sweden (1970-71)"
@@ -119,55 +271,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jim Stewart",
+          "name": "Ronnie Hellström",
           "position": "GK"
         },
         {
-          "name": "Gordon McQueen",
-          "position": "RB"
+          "name": "Göran Hagberg",
+          "position": "GK"
         },
         {
-          "name": "Jim Holton",
+          "name": "Ronny Gustafsson",
+          "position": "GK"
+        },
+        {
+          "name": "Sven-Gunnar Larsson",
+          "position": "GK"
+        },
+        {
+          "name": "Roland Andersson",
           "position": "CB"
         },
         {
-          "name": "Martin Buchan",
+          "name": "Jan Olsson",
           "position": "CB"
         },
         {
-          "name": "Kenny Burns",
-          "position": "LB"
+          "name": "Jörgen Augustsson",
+          "position": "CB"
         },
         {
-          "name": "Jimmy Smith",
-          "position": "DM"
+          "name": "Roy Andersson",
+          "position": "CB"
         },
         {
-          "name": "Bobby Robinson",
+          "name": "Kent Karlsson",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Nordqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Grip",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Sven Lindman",
           "position": "CM"
         },
         {
-          "name": "Graeme Souness",
+          "name": "Thomas Sjöberg",
           "position": "CM"
         },
         {
-          "name": "Peter Cormack",
+          "name": "Thomas Nordahl",
           "position": "CM"
         },
         {
-          "name": "Willie Morgan",
+          "name": "Anders Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Eine Fredriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Staffan Tapper",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Ahlström",
+          "position": "CM"
+        },
+        {
+          "name": "Örjan Persson",
+          "position": "CM"
+        },
+        {
+          "name": "Conny Torstensson",
+          "position": "CM"
+        },
+        {
+          "name": "Bo Larsson",
           "position": "ST"
         },
         {
-          "name": "Jimmy Johnstone",
+          "name": "Ove Kindvall",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Mattsson",
+          "position": "ST"
+        },
+        {
+          "name": "Sten Palsson",
+          "position": "ST"
+        },
+        {
+          "name": "Reine Almqvist",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Sjöström",
+          "position": "ST"
+        },
+        {
+          "name": "Yngve Leback",
+          "position": "ST"
+        },
+        {
+          "name": "Ove Grahn",
+          "position": "ST"
+        },
+        {
+          "name": "Ralf Edström",
+          "position": "ST"
+        },
+        {
+          "name": "Roland Sandberg",
+          "position": "ST"
+        },
+        {
+          "name": "Benno Magnusson",
+          "position": "ST"
+        },
+        {
+          "name": "Inge Ejderstedt",
+          "position": "ST"
+        },
+        {
+          "name": "Claes Cronqvist",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1974/1975)",
       "teamLabel": "sweden (1974-75)"
@@ -176,55 +420,127 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jim Stewart",
+          "name": "Ronnie Hellström",
           "position": "GK"
         },
         {
-          "name": "Gordon McQueen",
-          "position": "RB"
+          "name": "Göran Hagberg",
+          "position": "GK"
         },
         {
-          "name": "Willie Miller",
+          "name": "Jan Möller",
+          "position": "GK"
+        },
+        {
+          "name": "Håkan Arvidsson",
           "position": "CB"
         },
         {
-          "name": "David Narey",
+          "name": "Klas Johansson",
           "position": "CB"
         },
         {
-          "name": "Martin Buchan",
-          "position": "LB"
+          "name": "Magnus Andersson",
+          "position": "CB"
         },
         {
-          "name": "Don Masson",
-          "position": "DM"
+          "name": "Roland Andersson",
+          "position": "CB"
         },
         {
-          "name": "Lou Macari",
+          "name": "Roy Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Björn Nordqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Kent Karlsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ingemar Erlandsson",
+          "position": "CB"
+        },
+        {
+          "name": "Hasse Borg",
+          "position": "CB"
+        },
+        {
+          "name": "Staffan Tapper",
           "position": "CM"
         },
         {
-          "name": "Asa Hartford",
+          "name": "Thomas Sjöberg",
           "position": "CM"
         },
         {
-          "name": "Archie Gemmill",
+          "name": "Ronald Åman",
           "position": "CM"
         },
         {
-          "name": "John Robertson",
+          "name": "Olle Nordin",
+          "position": "CM"
+        },
+        {
+          "name": "Mats Nordgren",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Linderoth",
+          "position": "CM"
+        },
+        {
+          "name": "Kenneth Ohlsson",
+          "position": "CM"
+        },
+        {
+          "name": "Lennart Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Conny Torstensson",
+          "position": "CM"
+        },
+        {
+          "name": "Tommy Berggren",
           "position": "ST"
         },
         {
-          "name": "Arthur Graham",
+          "name": "Bo Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Billy Ohlsson",
+          "position": "ST"
+        },
+        {
+          "name": "Anders Grönhagen",
+          "position": "ST"
+        },
+        {
+          "name": "Benny Wendt",
+          "position": "ST"
+        },
+        {
+          "name": "Torbjörn Nilsson",
+          "position": "ST"
+        },
+        {
+          "name": "Sanny Aslund",
+          "position": "ST"
+        },
+        {
+          "name": "Ralf Edström",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1978/1979)",
       "teamLabel": "sweden (1978-79)"
@@ -233,55 +549,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Jim Stewart",
+          "name": "Thomas Ravelli",
           "position": "GK"
         },
         {
-          "name": "Roy Aitken",
-          "position": "RB"
+          "name": "Thomas Wernersson",
+          "position": "GK"
         },
         {
-          "name": "Alan Hansen",
+          "name": "Bernt Ljung",
+          "position": "GK"
+        },
+        {
+          "name": "Sten-Ove Ramberg",
           "position": "CB"
         },
         {
-          "name": "Willie Miller",
+          "name": "Klas Johansson",
           "position": "CB"
         },
         {
-          "name": "Alex McLeish",
-          "position": "LB"
+          "name": "Greger Hallén",
+          "position": "CB"
         },
         {
-          "name": "Tommy Burns",
-          "position": "DM"
+          "name": "Hans Berndtsson",
+          "position": "CB"
         },
         {
-          "name": "Graeme Souness",
+          "name": "Tomas Mansson",
+          "position": "CB"
+        },
+        {
+          "name": "Glenn Hysén",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Ravelli",
+          "position": "CB"
+        },
+        {
+          "name": "Sven Dahlkvist",
+          "position": "CB"
+        },
+        {
+          "name": "Ingemar Erlandsson",
+          "position": "CB"
+        },
+        {
+          "name": "Stig Fredriksson",
+          "position": "CB"
+        },
+        {
+          "name": "Hasse Borg",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Ahlström",
           "position": "CM"
         },
         {
-          "name": "Asa Hartford",
+          "name": "Tommy Holmgren",
           "position": "CM"
         },
         {
-          "name": "Gordon Strachan",
+          "name": "Michael Andersson",
           "position": "CM"
         },
         {
-          "name": "John Robertson",
+          "name": "Tord Holmgren",
+          "position": "CM"
+        },
+        {
+          "name": "Ulf Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Björn Nilsson",
+          "position": "CM"
+        },
+        {
+          "name": "Kalle Björklund",
+          "position": "CM"
+        },
+        {
+          "name": "Tony Persson",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Prytz",
+          "position": "CM"
+        },
+        {
+          "name": "Glenn Strömberg",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Nilsson",
+          "position": "CM"
+        },
+        {
+          "name": "Dan Corneliusson",
           "position": "ST"
         },
         {
-          "name": "Kenny Dalglish",
+          "name": "Jan Svensson",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Lennart Nilsson",
+          "position": "ST"
+        },
+        {
+          "name": "Peter Truedsson",
+          "position": "ST"
+        },
+        {
+          "name": "Hakan Sandberg",
+          "position": "ST"
+        },
+        {
+          "name": "Mats Jingblad",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Nilsson",
+          "position": "ST"
+        },
+        {
+          "name": "Sören Börjesson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1982/1983)",
       "teamLabel": "sweden (1982-83)"
@@ -290,55 +698,119 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Andy Goram",
+          "name": "Thomas Ravelli",
           "position": "GK"
         },
         {
-          "name": "Richard Gough",
-          "position": "RB"
+          "name": "Jan Möller",
+          "position": "GK"
         },
         {
-          "name": "Roy Aitken",
+          "name": "Thomas Wernersson",
+          "position": "GK"
+        },
+        {
+          "name": "Bengt Nilsson",
+          "position": "GK"
+        },
+        {
+          "name": "Magnus Andersson",
           "position": "CB"
         },
         {
-          "name": "Alex McLeish",
+          "name": "Torbjörn Persson",
           "position": "CB"
         },
         {
-          "name": "Willie Miller",
-          "position": "LB"
+          "name": "Glenn Hysén",
+          "position": "CB"
         },
         {
-          "name": "Murdo MacLeod",
-          "position": "DM"
+          "name": "Peter Larsson",
+          "position": "CB"
         },
         {
-          "name": "Eamonn Bannon",
+          "name": "Andreas Ravelli",
+          "position": "CB"
+        },
+        {
+          "name": "Stig Fredriksson",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Anders Palmér",
           "position": "CM"
         },
         {
-          "name": "Bobby Connor",
+          "name": "Leif Engqvist",
           "position": "CM"
         },
         {
-          "name": "Paul McStay",
+          "name": "Tommy Holmgren",
           "position": "CM"
         },
         {
-          "name": "Davie Cooper",
+          "name": "Gunnar Samuelsson",
+          "position": "CM"
+        },
+        {
+          "name": "Ulf Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Björn Nilsson",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Prytz",
+          "position": "CM"
+        },
+        {
+          "name": "Glenn Strömberg",
+          "position": "CM"
+        },
+        {
+          "name": "Lasse Larsson",
           "position": "ST"
         },
         {
-          "name": "Pat Nevin",
+          "name": "Johnny Ekström",
+          "position": "ST"
+        },
+        {
+          "name": "Dan Corneliusson",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Holmqvist",
+          "position": "ST"
+        },
+        {
+          "name": "Mats Magnusson",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Jan Hellström",
+          "position": "ST"
+        },
+        {
+          "name": "Lennart Nilsson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1986/1987)",
       "teamLabel": "sweden (1986-87)"
@@ -347,55 +819,167 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Andy Goram",
+          "name": "Thomas Ravelli",
           "position": "GK"
         },
         {
-          "name": "Brian Irvine",
-          "position": "RB"
+          "name": "Sven Andersson",
+          "position": "GK"
         },
         {
-          "name": "Richard Gough",
+          "name": "Lars Eriksson",
+          "position": "GK"
+        },
+        {
+          "name": "Sulo Vaattovaara",
           "position": "CB"
         },
         {
-          "name": "Alex McLeish",
+          "name": "Jan Eriksson",
           "position": "CB"
         },
         {
-          "name": "Craig Levein",
-          "position": "LB"
+          "name": "Pontus Kåmark",
+          "position": "CB"
         },
         {
-          "name": "Bobby Connor",
-          "position": "DM"
+          "name": "Glenn Hysén",
+          "position": "CB"
         },
         {
-          "name": "Murdo MacLeod",
+          "name": "Jean-Paul Vonderburg",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Larsson",
+          "position": "CB"
+        },
+        {
+          "name": "Mats Gren",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Joakim Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Roger Ljung",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Magnus Erlingmark",
           "position": "CM"
         },
         {
-          "name": "Stuart McCall",
+          "name": "Klas Ingesson",
           "position": "CM"
         },
         {
-          "name": "Paul McStay",
+          "name": "Peter Wibrån",
           "position": "CM"
         },
         {
-          "name": "Davie Cooper",
+          "name": "Per Blohm",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Nylén",
+          "position": "CM"
+        },
+        {
+          "name": "Leif Engqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Ulrik Jansson",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Thern",
+          "position": "CM"
+        },
+        {
+          "name": "Jonny Rödlund",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Jansson",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Rehn",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Lindqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Schwarz",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Limpar",
+          "position": "CM"
+        },
+        {
+          "name": "Glenn Strömberg",
+          "position": "CM"
+        },
+        {
+          "name": "Jens Fjellström",
+          "position": "CM"
+        },
+        {
+          "name": "Patrik Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Kennet Andersson",
           "position": "ST"
         },
         {
-          "name": "Pat Nevin",
+          "name": "Dan Corneliusson",
+          "position": "ST"
+        },
+        {
+          "name": "Tomas Brolin",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Eklund",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Eskilsson",
+          "position": "ST"
+        },
+        {
+          "name": "Johnny Ekström",
+          "position": "ST"
+        },
+        {
+          "name": "Mats Magnusson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1990/1991)",
       "teamLabel": "sweden (1990-91)"
@@ -404,55 +988,151 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Andy Goram",
+          "name": "Thomas Ravelli",
           "position": "GK"
         },
         {
-          "name": "Brian Irvine",
-          "position": "RB"
+          "name": "Lars Eriksson",
+          "position": "GK"
         },
         {
-          "name": "Alan McLaren",
+          "name": "Magnus Hedman",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Andersson",
           "position": "CB"
         },
         {
-          "name": "Colin Hendry",
+          "name": "Joachim Björklund",
           "position": "CB"
         },
         {
-          "name": "Craig Levein",
-          "position": "LB"
+          "name": "Gary Sundgren",
+          "position": "CB"
         },
         {
-          "name": "Ian Ferguson",
-          "position": "DM"
+          "name": "Pontus Kåmark",
+          "position": "CB"
         },
         {
-          "name": "Stuart McCall",
+          "name": "Teddy Lucic",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Eriksson",
+          "position": "CB"
+        },
+        {
+          "name": "Roger Ljung",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Hansson",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Jesper Jansson",
           "position": "CM"
         },
         {
-          "name": "Paul McStay",
+          "name": "Klas Ingesson",
           "position": "CM"
         },
         {
-          "name": "Gary McAllister",
+          "name": "Magnus Erlingmark",
           "position": "CM"
         },
         {
-          "name": "Pat Nevin",
+          "name": "Anders Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Thern",
+          "position": "CM"
+        },
+        {
+          "name": "Håkan Mild",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Jansson",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Landberg",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Schwarz",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Limpar",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Rehn",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Pär Zetterberg",
+          "position": "CM"
+        },
+        {
+          "name": "Kennet Andersson",
           "position": "ST"
         },
         {
-          "name": "Eoin Jess",
+          "name": "Mats Lilienberg",
+          "position": "ST"
+        },
+        {
+          "name": "Niclas Kindvall",
+          "position": "ST"
+        },
+        {
+          "name": "Hans Eklund",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Johnny Ekström",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Dahlin",
+          "position": "ST"
+        },
+        {
+          "name": "Tomas Brolin",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1994/1995)",
       "teamLabel": "sweden (1994-95)"
@@ -461,55 +1141,147 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Andy Goram",
+          "name": "Jonnie Fedel",
           "position": "GK"
         },
         {
-          "name": "Derek Whyte",
-          "position": "RB"
+          "name": "Bengt Andersson",
+          "position": "GK"
         },
         {
-          "name": "Brian O'Neil",
+          "name": "Thomas Ravelli",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Andersson",
           "position": "CB"
         },
         {
-          "name": "Colin Calderwood",
+          "name": "Joachim Björklund",
           "position": "CB"
         },
         {
-          "name": "Colin Hendry",
-          "position": "LB"
+          "name": "Teddy Lucic",
+          "position": "CB"
         },
         {
-          "name": "Paul Lambert",
-          "position": "DM"
+          "name": "Gary Sundgren",
+          "position": "CB"
         },
         {
-          "name": "Stuart McCall",
+          "name": "Andreas Jakobsson",
+          "position": "CB"
+        },
+        {
+          "name": "Jozo Matovac",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Karlsson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Magnus Erlingmark",
           "position": "CM"
         },
         {
-          "name": "Paul McStay",
+          "name": "Klas Ingesson",
           "position": "CM"
         },
         {
-          "name": "Gary McAllister",
+          "name": "Anders Andersson",
           "position": "CM"
         },
         {
-          "name": "Pat Nevin",
+          "name": "Magnus Svensson",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Wibrån",
+          "position": "CM"
+        },
+        {
+          "name": "Jonas Thern",
+          "position": "CM"
+        },
+        {
+          "name": "Håkan Mild",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Limpar",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Landberg",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Schwarz",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Pär Zetterberg",
+          "position": "CM"
+        },
+        {
+          "name": "Mattias Jonson",
           "position": "ST"
         },
         {
-          "name": "Kevin Gallacher",
+          "name": "Kennet Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Sebastian Henriksson",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Pringle",
+          "position": "ST"
+        },
+        {
+          "name": "Dan Sahlin",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Dahlin",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Andersson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1996/1997)",
       "teamLabel": "sweden (1996-97)"
@@ -518,55 +1290,167 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Andy Goram",
+          "name": "Magnus Kihlstedt",
           "position": "GK"
         },
         {
-          "name": "Derek Whyte",
-          "position": "RB"
+          "name": "Håkan Svensson",
+          "position": "GK"
         },
         {
-          "name": "Matt Elliott",
+          "name": "Magnus Hedman",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Andersson",
           "position": "CB"
         },
         {
-          "name": "Colin Calderwood",
+          "name": "Joachim Björklund",
           "position": "CB"
         },
         {
-          "name": "Colin Hendry",
-          "position": "LB"
+          "name": "Andreas Jakobsson",
+          "position": "CB"
         },
         {
-          "name": "Paul Lambert",
-          "position": "DM"
+          "name": "Jozo Matovac",
+          "position": "CB"
         },
         {
-          "name": "Barry Ferguson",
+          "name": "Pontus Kåmark",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Mjällby",
+          "position": "CB"
+        },
+        {
+          "name": "Teddy Lucic",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Sundgren",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Wahlstedt",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Rosén",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Klas Ingesson",
           "position": "CM"
         },
         {
-          "name": "Stuart McCall",
+          "name": "Magnus Erlingmark",
           "position": "CM"
         },
         {
-          "name": "Scot Gemmill",
+          "name": "Daniel Tjernström",
           "position": "CM"
         },
         {
-          "name": "Neil McCann",
+          "name": "Morgan Nilsson",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Magnus Svensson",
+          "position": "CM"
+        },
+        {
+          "name": "Håkan Mild",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Lantz",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Schwarz",
+          "position": "CM"
+        },
+        {
+          "name": "Fredrik Söderström",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Yksel Osmanovski",
+          "position": "CM"
+        },
+        {
+          "name": "Pär Zetterberg",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Åslund",
+          "position": "CM"
+        },
+        {
+          "name": "Hans Bergh",
           "position": "ST"
         },
         {
-          "name": "Kevin Gallacher",
+          "name": "Mattias Jonson",
+          "position": "ST"
+        },
+        {
+          "name": "Christer Mattiasson",
+          "position": "ST"
+        },
+        {
+          "name": "Kennet Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Mats Lilienberg",
+          "position": "ST"
+        },
+        {
+          "name": "Dan Sahlin",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Pettersson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (1998/1999)",
       "teamLabel": "sweden (1998-99)"
@@ -575,55 +1459,171 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Neil Sullivan",
+          "name": "Magnus Kihlstedt",
           "position": "GK"
         },
         {
-          "name": "Brian O'Neil",
-          "position": "RB"
+          "name": "Eddie Gustafsson",
+          "position": "GK"
         },
         {
-          "name": "David Weir",
+          "name": "Mattias Asper",
+          "position": "GK"
+        },
+        {
+          "name": "Magnus Hedman",
+          "position": "GK"
+        },
+        {
+          "name": "Dime Jankulovski",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Andersson",
           "position": "CB"
         },
         {
-          "name": "Christian Dailly",
+          "name": "Joachim Björklund",
           "position": "CB"
         },
         {
-          "name": "Paul Ritchie",
-          "position": "LB"
+          "name": "Johan Mjällby",
+          "position": "CB"
         },
         {
-          "name": "Paul Lambert",
-          "position": "DM"
+          "name": "Olof Mellberg",
+          "position": "CB"
         },
         {
-          "name": "Barry Ferguson",
+          "name": "Pontus Kåmark",
+          "position": "CB"
+        },
+        {
+          "name": "Teddy Lucic",
+          "position": "CB"
+        },
+        {
+          "name": "Klebér Saarenpää",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Sundgren",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Tomas Antonelius",
+          "position": "CB"
+        },
+        {
+          "name": "Roland Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Christoffer Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Karl Corneliusson",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Andersson",
           "position": "CM"
         },
         {
-          "name": "Colin Cameron",
+          "name": "Anders Andersson",
           "position": "CM"
         },
         {
-          "name": "Gary Holt",
+          "name": "Magnus Svensson",
           "position": "CM"
         },
         {
-          "name": "Neil McCann",
+          "name": "Magnus Kihlberg",
+          "position": "CM"
+        },
+        {
+          "name": "Anders Svensson",
+          "position": "CM"
+        },
+        {
+          "name": "Tobias Linderoth",
+          "position": "CM"
+        },
+        {
+          "name": "Håkan Mild",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Schwarz",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Hansson",
+          "position": "CM"
+        },
+        {
+          "name": "Yksel Osmanovski",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Selakovic",
           "position": "ST"
         },
         {
-          "name": "Kevin Gallacher",
+          "name": "Mattias Jonson",
+          "position": "ST"
+        },
+        {
+          "name": "Kennet Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Magnus Arvidsson",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Jonas Wallerstedt",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Allbäck",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2000/2001)",
       "teamLabel": "sweden (2000-01)"
@@ -632,55 +1632,195 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Neil Sullivan",
+          "name": "Magnus Kihlstedt",
           "position": "GK"
         },
         {
-          "name": "David Weir",
-          "position": "RB"
+          "name": "Magnus Hedman",
+          "position": "GK"
         },
         {
-          "name": "Gary Caldwell",
+          "name": "Mattias Asper",
+          "position": "GK"
+        },
+        {
+          "name": "Dick Last",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Isaksson",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Andersson",
           "position": "CB"
         },
         {
-          "name": "Russell Anderson",
+          "name": "Daniel Majstorović",
           "position": "CB"
         },
         {
-          "name": "Steven Pressley",
-          "position": "LB"
+          "name": "Patrik Anttonen",
+          "position": "CB"
         },
         {
-          "name": "Paul Lambert",
-          "position": "DM"
+          "name": "Olof Mellberg",
+          "position": "CB"
         },
         {
-          "name": "Derek McInnes",
+          "name": "Johan Mjällby",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Pontus Kåmark",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Jakobsson",
+          "position": "CB"
+        },
+        {
+          "name": "Teddy Lucic",
+          "position": "CB"
+        },
+        {
+          "name": "Tommy Jönsson",
+          "position": "CB"
+        },
+        {
+          "name": "Nils-Eric Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Edman",
+          "position": "CB"
+        },
+        {
+          "name": "Tomas Antonelius",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Christoffer Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Tobias Linderoth",
           "position": "CM"
         },
         {
-          "name": "Barry Ferguson",
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Scot Gemmill",
+          "name": "Anders Andersson",
           "position": "CM"
         },
         {
-          "name": "Neil McCann",
+          "name": "Magnus Svensson",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Johansson",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Lantz",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Aubynn",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Farnerud",
+          "position": "CM"
+        },
+        {
+          "name": "Fredrik Söderström",
+          "position": "CM"
+        },
+        {
+          "name": "Kennedy",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ulander",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Selakovic",
           "position": "ST"
         },
         {
-          "name": "James McFadden",
+          "name": "Mattias Jonson",
+          "position": "ST"
+        },
+        {
+          "name": "Niklas Skoog",
+          "position": "ST"
+        },
+        {
+          "name": "Rade Prica",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Allbäck",
+          "position": "ST"
+        },
+        {
+          "name": "Jörgen Pettersson",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Andreas Andersson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2002/2003)",
       "teamLabel": "sweden (2002-03)"
@@ -689,55 +1829,203 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Rab Douglas",
+          "name": "Andreas Isaksson",
           "position": "GK"
         },
         {
-          "name": "Christian Dailly",
-          "position": "RB"
+          "name": "Magnus Hedman",
+          "position": "GK"
         },
         {
-          "name": "Steven Caldwell",
+          "name": "Eddie Gustafsson",
+          "position": "GK"
+        },
+        {
+          "name": "Magnus Kihlstedt",
+          "position": "GK"
+        },
+        {
+          "name": "John Rune Alvbåge",
+          "position": "GK"
+        },
+        {
+          "name": "Olof Mellberg",
           "position": "CB"
         },
         {
-          "name": "Gary Caldwell",
+          "name": "Johan Mjällby",
           "position": "CB"
         },
         {
-          "name": "Steven Pressley",
-          "position": "LB"
+          "name": "Teddy Lucic",
+          "position": "CB"
         },
         {
-          "name": "Barry Ferguson",
-          "position": "DM"
+          "name": "Petter Hansson",
+          "position": "CB"
         },
         {
-          "name": "Richard Hughes",
+          "name": "Andreas Jakobsson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Antonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Fredrik Stenman",
+          "position": "CB"
+        },
+        {
+          "name": "Max von Schlebrügge",
+          "position": "CB"
+        },
+        {
+          "name": "Tommy Jönsson",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Edman",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Dorsin",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Järdler",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Christoffer Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Arnold Mezan",
+          "position": "CB"
+        },
+        {
+          "name": "Fredric Lundqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Wahlstedt",
+          "position": "CB"
+        },
+        {
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Murray McCulloch",
+          "name": "Tobias Linderoth",
           "position": "CM"
         },
         {
-          "name": "Darren Fletcher",
+          "name": "Anders Andersson",
           "position": "CM"
         },
         {
-          "name": "James McFadden",
+          "name": "Johan Arneng",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Farnerud",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Johansson",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ericsson",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Sharbel Touma",
+          "position": "CM"
+        },
+        {
+          "name": "Mats Rubarth",
           "position": "ST"
         },
         {
-          "name": "Neil McCann",
+          "name": "Christian Wilhelmsson",
+          "position": "ST"
+        },
+        {
+          "name": "Mattias Jonson",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Selakovic",
+          "position": "ST"
+        },
+        {
+          "name": "Babis Stefanidis",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Allbäck",
+          "position": "ST"
+        },
+        {
+          "name": "Rade Prica",
+          "position": "ST"
+        },
+        {
+          "name": "Fredrik Berglund",
+          "position": "ST"
+        },
+        {
+          "name": "Niklas Skoog",
+          "position": "ST"
+        },
+        {
+          "name": "Lasse Nilsson",
+          "position": "ST"
+        },
+        {
+          "name": "Pablo Pinones-Arce",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2004/2005)",
       "teamLabel": "sweden (2004-05)"
@@ -746,55 +2034,187 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Craig Gordon",
+          "name": "Andreas Isaksson",
           "position": "GK"
         },
         {
-          "name": "Christian Dailly",
-          "position": "RB"
+          "name": "Eddie Gustafsson",
+          "position": "GK"
         },
         {
-          "name": "Steven Caldwell",
+          "name": "Rami Shaaban",
+          "position": "GK"
+        },
+        {
+          "name": "John Rune Alvbåge",
+          "position": "GK"
+        },
+        {
+          "name": "Olof Mellberg",
           "position": "CB"
         },
         {
-          "name": "Steven Pressley",
+          "name": "Daniel Majstorović",
           "position": "CB"
         },
         {
-          "name": "David Weir",
-          "position": "LB"
+          "name": "Petter Hansson",
+          "position": "CB"
         },
         {
-          "name": "Barry Ferguson",
-          "position": "DM"
+          "name": "Teddy Lucic",
+          "position": "CB"
         },
         {
-          "name": "Darren Fletcher",
+          "name": "Mikael Antonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Fredrik Stenman",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Granqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Max von Schlebrügge",
+          "position": "CB"
+        },
+        {
+          "name": "Olof Persson",
+          "position": "CB"
+        },
+        {
+          "name": "Karl Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Edman",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Dorsin",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Christoffer Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Arnold Mezan",
+          "position": "CB"
+        },
+        {
+          "name": "Matías Concha",
+          "position": "CB"
+        },
+        {
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Nigel Quashie",
+          "name": "Daniel Andersson",
           "position": "CM"
         },
         {
-          "name": "Paul Hartley",
+          "name": "Tobias Linderoth",
           "position": "CM"
         },
         {
-          "name": "James McFadden",
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Dusan Predrag Djuric",
+          "position": "CM"
+        },
+        {
+          "name": "Samuel Holmén",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Aubynn",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ericsson",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Kennedy",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Ishizaki",
+          "position": "CM"
+        },
+        {
+          "name": "Yksel Osmanovski",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Wilhelmsson",
           "position": "ST"
         },
         {
-          "name": "Gary Teale",
+          "name": "Mattias Jonson",
+          "position": "ST"
+        },
+        {
+          "name": "Stefan Selakovic",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Markus Rosenberg",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Allbäck",
+          "position": "ST"
+        },
+        {
+          "name": "Tobias Hysén",
+          "position": "ST"
+        },
+        {
+          "name": "Fredrik Berglund",
+          "position": "ST"
+        },
+        {
+          "name": "Lasse Nilsson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2006/2007)",
       "teamLabel": "sweden (2006-07)"
@@ -803,55 +2223,203 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Allan McGregor",
+          "name": "Andreas Isaksson",
           "position": "GK"
         },
         {
-          "name": "Stephen McManus",
-          "position": "RB"
+          "name": "Johan Sellberg-Wiland",
+          "position": "GK"
         },
         {
-          "name": "Gary Caldwell",
+          "name": "Rami Shaaban",
+          "position": "GK"
+        },
+        {
+          "name": "Olof Mellberg",
           "position": "CB"
         },
         {
-          "name": "Christophe Berra",
+          "name": "Rasmus Lindgren",
           "position": "CB"
         },
         {
-          "name": "Kirk Broadfoot",
-          "position": "LB"
+          "name": "Petter Hansson",
+          "position": "CB"
         },
         {
-          "name": "Barry Ferguson",
-          "position": "DM"
+          "name": "Andreas Granqvist",
+          "position": "CB"
         },
         {
-          "name": "Darren Fletcher",
+          "name": "Viktor Elm",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Majstorović",
+          "position": "CB"
+        },
+        {
+          "name": "Max von Schlebrügge",
+          "position": "CB"
+        },
+        {
+          "name": "Mattias Bjärsmyr",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Larsson",
+          "position": "CB"
+        },
+        {
+          "name": "Fredrik Risp",
+          "position": "CB"
+        },
+        {
+          "name": "Suleyman Sleyman",
+          "position": "CB"
+        },
+        {
+          "name": "Oskar Rönningberg",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Dorsin",
+          "position": "CB"
+        },
+        {
+          "name": "Oscar Wendt",
+          "position": "CB"
+        },
+        {
+          "name": "Behrang Safari",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Matías Concha",
+          "position": "CB"
+        },
+        {
+          "name": "Fredrik Stoor Siekkinen",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Tobias Linderoth",
           "position": "CM"
         },
         {
-          "name": "Scott Brown",
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Kevin Thomson",
+          "name": "Daniel Andersson",
           "position": "CM"
         },
         {
-          "name": "James McFadden",
+          "name": "Louay Chanko",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Samuel Holmén",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Petter Andersson",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Johansson",
+          "position": "CM"
+        },
+        {
+          "name": "Dusan Predrag Djuric",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Wernbloom",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Dahl",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Ishizaki",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Kennedy",
+          "position": "CM"
+        },
+        {
+          "name": "Niclas Alexandersson",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Wilhelmsson",
           "position": "ST"
         },
         {
-          "name": "Gary Teale",
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Markus Rosenberg",
+          "position": "ST"
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Patrik Ingelsten",
+          "position": "ST"
+        },
+        {
+          "name": "Rade Prica",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Allbäck",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Oremo",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2008/2009)",
       "teamLabel": "sweden (2008-09)"
@@ -860,55 +2428,211 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Allan McGregor",
+          "name": "Andreas Isaksson",
           "position": "GK"
         },
         {
-          "name": "Christophe Berra",
-          "position": "RB"
+          "name": "Johan Sellberg-Wiland",
+          "position": "GK"
         },
         {
-          "name": "Stephen McManus",
+          "name": "Johan Dahlin",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Örlund",
+          "position": "GK"
+        },
+        {
+          "name": "Eddie Gustafsson",
+          "position": "GK"
+        },
+        {
+          "name": "Viktor Noring",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Nordfeldt",
+          "position": "GK"
+        },
+        {
+          "name": "Olof Mellberg",
           "position": "CB"
         },
         {
-          "name": "Gary Caldwell",
+          "name": "Andreas Granqvist",
           "position": "CB"
         },
         {
-          "name": "Lee McCulloch",
-          "position": "LB"
+          "name": "Viktor Elm",
+          "position": "CB"
         },
         {
-          "name": "Darren Fletcher",
-          "position": "DM"
+          "name": "Jonas Olsson",
+          "position": "CB"
         },
         {
-          "name": "Scott Brown",
+          "name": "Daniel Majstorović",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Antonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Almebäck",
+          "position": "CB"
+        },
+        {
+          "name": "Petter Hansson",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ekstrand",
+          "position": "CB"
+        },
+        {
+          "name": "Tom Söderberg",
+          "position": "CB"
+        },
+        {
+          "name": "Per Karlsson",
+          "position": "CB"
+        },
+        {
+          "name": "Oscar Wendt",
+          "position": "CB"
+        },
+        {
+          "name": "Behrang Safari",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Dorsin",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Lund Fahlén",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastian Eriksson",
           "position": "CM"
         },
         {
-          "name": "Charlie Adam",
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Kevin Thomson",
+          "name": "Kim Källström",
           "position": "CM"
         },
         {
-          "name": "James McFadden",
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Elm",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Wernbloom",
+          "position": "CM"
+        },
+        {
+          "name": "Samuel Holmén",
+          "position": "CM"
+        },
+        {
+          "name": "Dusan Predrag Djuric",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Farnerud",
+          "position": "CM"
+        },
+        {
+          "name": "Alexander Farnerud",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Lantz",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Ishizaki",
+          "position": "CM"
+        },
+        {
+          "name": "Tobias Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Larsson",
           "position": "ST"
         },
         {
-          "name": "Steven Naismith",
+          "name": "Emir Bajrami",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Wilhelmsson",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Ola Toivonen",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Guillermo Molins",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Gerndt",
+          "position": "ST"
+        },
+        {
+          "name": "Denni Avdic",
+          "position": "ST"
+        },
+        {
+          "name": "Tobias Hysén",
+          "position": "ST"
+        },
+        {
+          "name": "Mathias Ranégie",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2010/2011)",
       "teamLabel": "sweden (2010-11)"
@@ -917,55 +2641,211 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Allan McGregor",
+          "name": "Andreas Isaksson",
           "position": "GK"
         },
         {
-          "name": "Charlie Mulgrew",
-          "position": "RB"
+          "name": "Pär Hansson",
+          "position": "GK"
         },
         {
-          "name": "Russell Martin",
+          "name": "Johan Sellberg-Wiland",
+          "position": "GK"
+        },
+        {
+          "name": "Johan Dahlin",
+          "position": "GK"
+        },
+        {
+          "name": "Karl-Johan Johnsson",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Granqvist",
           "position": "CB"
         },
         {
-          "name": "Christophe Berra",
+          "name": "Jonas Olsson",
           "position": "CB"
         },
         {
-          "name": "Gary Caldwell",
-          "position": "LB"
+          "name": "Pontus Jansson",
+          "position": "CB"
         },
         {
-          "name": "Liam Kelly",
-          "position": "DM"
+          "name": "Niklas Backman",
+          "position": "CB"
         },
         {
-          "name": "Ian Black",
+          "name": "Mikael Antonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Markus Holgersson",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Almebäck",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Dyrestam",
+          "position": "CB"
+        },
+        {
+          "name": "Olof Mellberg",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Oscar Wendt",
+          "position": "CB"
+        },
+        {
+          "name": "Behrang Safari",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Hult",
+          "position": "CB"
+        },
+        {
+          "name": "Marcus Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre Neurath Bengtsson",
+          "position": "CB"
+        },
+        {
+          "name": "Erdin Demir",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Salomonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Albin Ekdal",
           "position": "CM"
         },
         {
-          "name": "Darren Fletcher",
+          "name": "Erik Friberg",
           "position": "CM"
         },
         {
-          "name": "James Morrison",
+          "name": "Anders Svensson",
           "position": "CM"
         },
         {
-          "name": "Robert Snodgrass",
+          "name": "Rasmus Elm",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Wernbloom",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Samuel Holmén",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Durmaz",
+          "position": "CM"
+        },
+        {
+          "name": "Oscar Hiljemark",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Thern",
+          "position": "CM"
+        },
+        {
+          "name": "Stefan Ishizaki",
+          "position": "CM"
+        },
+        {
+          "name": "Jiloan Hamad",
+          "position": "CM"
+        },
+        {
+          "name": "Tobias Sana",
           "position": "ST"
         },
         {
-          "name": "James Forrest",
+          "name": "Alexander Kacaniklic",
+          "position": "ST"
+        },
+        {
+          "name": "Emir Bajrami",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Wilhelmsson",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Ola Toivonen",
+          "position": "ST"
+        },
+        {
+          "name": "John Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Markus Rosenberg",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Mathias Ranégie",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Claesson",
+          "position": "ST"
+        },
+        {
+          "name": "Tobias Hysén",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2012/2013)",
       "teamLabel": "sweden (2012-13)"
@@ -974,55 +2854,231 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "David Marshall",
+          "name": "Kristoffer Nordfeldt",
           "position": "GK"
         },
         {
-          "name": "Charlie Mulgrew",
-          "position": "RB"
+          "name": "Pär Hansson",
+          "position": "GK"
         },
         {
-          "name": "Russell Martin",
+          "name": "Andreas Isaksson",
+          "position": "GK"
+        },
+        {
+          "name": "Johan Dahlin",
+          "position": "GK"
+        },
+        {
+          "name": "Karl-Johan Johnsson",
+          "position": "GK"
+        },
+        {
+          "name": "David Mitov Nilsson",
+          "position": "GK"
+        },
+        {
+          "name": "Oscar Jansson",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Granqvist",
           "position": "CB"
         },
         {
-          "name": "Grant Hanley",
+          "name": "Jonas Olsson",
           "position": "CB"
         },
         {
-          "name": "Christophe Berra",
-          "position": "LB"
+          "name": "Rasmus Bengtsson",
+          "position": "CB"
         },
         {
-          "name": "Kevin McDonald",
-          "position": "DM"
+          "name": "Filip Helander",
+          "position": "CB"
         },
         {
-          "name": "James McArthur",
+          "name": "Pontus Jansson",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ekstrand",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Milosevic",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Berg",
+          "position": "CB"
+        },
+        {
+          "name": "Per Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Backman",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Antonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Oscar Wendt",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre Neurath Bengtsson",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Hult",
+          "position": "CB"
+        },
+        {
+          "name": "Erdin Demir",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Mattias Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Larsson",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Albin Ekdal",
           "position": "CM"
         },
         {
-          "name": "James Morrison",
+          "name": "Jakob Johansson",
           "position": "CM"
         },
         {
-          "name": "Scott Brown",
+          "name": "Oscar Lewicki",
           "position": "CM"
         },
         {
-          "name": "George Boyd",
+          "name": "Pontus Wernbloom",
+          "position": "CM"
+        },
+        {
+          "name": "Rasmus Elm",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Durmaz",
+          "position": "CM"
+        },
+        {
+          "name": "Oscar Hiljemark",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Magnus Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Muamer Tankovic",
+          "position": "CM"
+        },
+        {
+          "name": "Erkan Zengin",
           "position": "ST"
         },
         {
-          "name": "Johnny Russell",
+          "name": "Emil Forsberg",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Kacaniklic",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Ola Toivonen",
+          "position": "ST"
+        },
+        {
+          "name": "John Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Branimir Hrgota",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Kiese Thelin",
+          "position": "ST"
+        },
+        {
+          "name": "Robin Quaison",
+          "position": "ST"
+        },
+        {
+          "name": "Guillermo Molins",
+          "position": "ST"
+        },
+        {
+          "name": "Tobias Hysén",
+          "position": "ST"
+        },
+        {
+          "name": "Erton Fejzullahu",
+          "position": "ST"
+        },
+        {
+          "name": "Nabil Bahoui",
+          "position": "ST"
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST"
+        },
+        {
+          "name": "Christoffer Nyman",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2014/2015)",
       "teamLabel": "sweden (2014-15)"
@@ -1031,55 +3087,231 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "David Marshall",
+          "name": "Karl-Johan Johnsson",
           "position": "GK"
         },
         {
-          "name": "Grant Hanley",
-          "position": "RB"
+          "name": "Johannes Hopf",
+          "position": "GK"
         },
         {
-          "name": "Russell Martin",
+          "name": "Robin Olsen",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Nordfeldt",
+          "position": "GK"
+        },
+        {
+          "name": "Patrik Carlgren",
+          "position": "GK"
+        },
+        {
+          "name": "Jacob Rinne",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Isaksson",
+          "position": "GK"
+        },
+        {
+          "name": "Victor Lindelöf",
           "position": "CB"
         },
         {
-          "name": "Charlie Mulgrew",
+          "name": "Andreas Granqvist",
           "position": "CB"
         },
         {
-          "name": "Christophe Berra",
-          "position": "LB"
+          "name": "Pontus Jansson",
+          "position": "CB"
         },
         {
-          "name": "Kevin McDonald",
-          "position": "DM"
+          "name": "Emil Bergström",
+          "position": "CB"
         },
         {
-          "name": "Liam Bridcutt",
+          "name": "Erik Berg",
+          "position": "CB"
+        },
+        {
+          "name": "Filip Helander",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastian Holmén",
+          "position": "CB"
+        },
+        {
+          "name": "Joakim Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Gustav Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Milosevic",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ludwig Augustinsson",
+          "position": "CB"
+        },
+        {
+          "name": "Oscar Wendt",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Hult",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Lundkvist",
+          "position": "CB"
+        },
+        {
+          "name": "Pa Konate",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Anton Tinnerholm",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Salomonsson",
+          "position": "CB"
+        },
+        {
+          "name": "Linus Wahlqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Albin Ekdal",
           "position": "CM"
         },
         {
-          "name": "James McArthur",
+          "name": "Jakob Johansson",
           "position": "CM"
         },
         {
-          "name": "James Morrison",
+          "name": "Oscar Lewicki",
           "position": "CM"
         },
         {
-          "name": "Jamie Murphy",
+          "name": "Sebastian Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Pontus Wernbloom",
+          "position": "CM"
+        },
+        {
+          "name": "Oscar Hiljemark",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Durmaz",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Rohdén",
+          "position": "CM"
+        },
+        {
+          "name": "Alexander Fransson",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Melker Hallberg",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Kerim Mrabti",
+          "position": "CM"
+        },
+        {
+          "name": "Emil Forsberg",
           "position": "ST"
         },
         {
-          "name": "Barrie McKay",
+          "name": "Erkan Zengin",
+          "position": "ST"
+        },
+        {
+          "name": "Nicklas Bärkroth",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "John Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Claesson",
+          "position": "ST"
+        },
+        {
+          "name": "Ola Toivonen",
+          "position": "ST"
+        },
+        {
+          "name": "Christoffer Nyman",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Kiese Thelin",
+          "position": "ST"
+        },
+        {
+          "name": "Gustav Engvall",
+          "position": "ST"
+        },
+        {
+          "name": "Emir Kujovic",
+          "position": "ST"
+        },
+        {
+          "name": "Mikael Ishak",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2016/2017)",
       "teamLabel": "sweden (2016-17)"
@@ -1088,55 +3320,231 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Craig Gordon",
+          "name": "Robin Olsen",
           "position": "GK"
         },
         {
-          "name": "Grant Hanley",
-          "position": "RB"
+          "name": "Karl-Johan Johnsson",
+          "position": "GK"
         },
         {
-          "name": "David Bates",
+          "name": "Pontus Dahlberg",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Nordfeldt",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Abrahamsson",
+          "position": "GK"
+        },
+        {
+          "name": "Jacob Rinne",
+          "position": "GK"
+        },
+        {
+          "name": "Victor Lindelöf",
           "position": "CB"
         },
         {
-          "name": "John Souttar",
+          "name": "Pontus Jansson",
           "position": "CB"
         },
         {
-          "name": "Scott McKenna",
-          "position": "LB"
+          "name": "Filip Helander",
+          "position": "CB"
         },
         {
-          "name": "Kevin McDonald",
-          "position": "DM"
+          "name": "Andreas Granqvist",
+          "position": "CB"
         },
         {
-          "name": "Callum McGregor",
+          "name": "Sotirios Papagiannopoulos",
+          "position": "CB"
+        },
+        {
+          "name": "Joakim Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Franz Brorsson",
+          "position": "CB"
+        },
+        {
+          "name": "Gustav Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Une",
+          "position": "CB"
+        },
+        {
+          "name": "Ludwig Augustinsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ken Sema",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Niklas Hult",
+          "position": "CB"
+        },
+        {
+          "name": "Rasmus Lindkvist",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Anton Tinnerholm",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Larsson",
+          "position": "CB"
+        },
+        {
+          "name": "Linus Wahlqvist",
+          "position": "CB"
+        },
+        {
+          "name": "Albin Ekdal",
           "position": "CM"
         },
         {
-          "name": "Graeme Shinnie",
+          "name": "Jakob Johansson",
           "position": "CM"
         },
         {
-          "name": "Tom Cairney",
+          "name": "Oscar Lewicki",
           "position": "CM"
         },
         {
-          "name": "Ryan Fraser",
+          "name": "Jesper Karlström",
+          "position": "CM"
+        },
+        {
+          "name": "Kristoffer Olsson",
+          "position": "CM"
+        },
+        {
+          "name": "Mattias Svanberg",
+          "position": "CM"
+        },
+        {
+          "name": "Oscar Hiljemark",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Durmaz",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Alexander Fransson",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Rohdén",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Gojani",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Jiloan Hamad",
+          "position": "CM"
+        },
+        {
+          "name": "Kerim Mrabti",
+          "position": "CM"
+        },
+        {
+          "name": "Emil Forsberg",
           "position": "ST"
         },
         {
-          "name": "Jamie Murphy",
+          "name": "Kristoffer Peterson",
+          "position": "ST"
+        },
+        {
+          "name": "David Moberg Karlsson",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Claesson",
+          "position": "ST"
+        },
+        {
+          "name": "Robin Quaison",
+          "position": "ST"
+        },
+        {
+          "name": "Mikael Ishak",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "John Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Kiese Thelin",
+          "position": "ST"
+        },
+        {
+          "name": "Sebastian Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Ola Toivonen",
+          "position": "ST"
+        },
+        {
+          "name": "Karl Holmberg",
+          "position": "ST"
+        },
+        {
+          "name": "Gustaf Nilsson",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2018/2019)",
       "teamLabel": "sweden (2018-19)"
@@ -1145,55 +3553,227 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Craig Gordon",
+          "name": "Robin Olsen",
           "position": "GK"
         },
         {
-          "name": "Liam Cooper",
-          "position": "RB"
+          "name": "Pontus Dahlberg",
+          "position": "GK"
         },
         {
-          "name": "Scott McKenna",
+          "name": "Kristoffer Nordfeldt",
+          "position": "GK"
+        },
+        {
+          "name": "Jacob Rinne",
+          "position": "GK"
+        },
+        {
+          "name": "Isak Pettersson",
+          "position": "GK"
+        },
+        {
+          "name": "Karl-Johan Johnsson",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Abrahamsson",
+          "position": "GK"
+        },
+        {
+          "name": "Victor Lindelöf",
           "position": "CB"
         },
         {
-          "name": "Ryan Porteous",
+          "name": "Pontus Jansson",
           "position": "CB"
         },
         {
-          "name": "Declan Gallagher",
-          "position": "LB"
+          "name": "Anel Ahmedhodzic",
+          "position": "CB"
         },
         {
-          "name": "Callum McGregor",
-          "position": "DM"
+          "name": "Filip Helander",
+          "position": "CB"
         },
         {
-          "name": "Scott McTominay",
+          "name": "Carl Starfelt",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Une",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastian Holmén",
+          "position": "CB"
+        },
+        {
+          "name": "Marcus Danielson",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Sandberg",
+          "position": "CB"
+        },
+        {
+          "name": "Kristopher Da Graca",
+          "position": "CB"
+        },
+        {
+          "name": "Gustav Svensson",
+          "position": "CB"
+        },
+        {
+          "name": "Ludwig Augustinsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ken Sema",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre Neurath Bengtsson",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Simon Hedlund",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Mikael Lustig",
+          "position": "CB"
+        },
+        {
+          "name": "Mattias Johansson",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Cajuste",
           "position": "CM"
         },
         {
-          "name": "John McGinn",
+          "name": "Albin Ekdal",
           "position": "CM"
         },
         {
-          "name": "Stuart Armstrong",
+          "name": "Gustav Berggren",
           "position": "CM"
         },
         {
-          "name": "Ryan Fraser",
+          "name": "August Erlingmark",
+          "position": "CM"
+        },
+        {
+          "name": "Mattias Svanberg",
+          "position": "CM"
+        },
+        {
+          "name": "Kristoffer Olsson",
+          "position": "CM"
+        },
+        {
+          "name": "Darijan Bojanic",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Anton Salétros",
+          "position": "CM"
+        },
+        {
+          "name": "Oscar Hiljemark",
+          "position": "CM"
+        },
+        {
+          "name": "Dejan Kulusevski",
+          "position": "CM"
+        },
+        {
+          "name": "Daleho Irandust",
+          "position": "CM"
+        },
+        {
+          "name": "Muamer Tankovic",
+          "position": "CM"
+        },
+        {
+          "name": "Emil Forsberg",
           "position": "ST"
         },
         {
-          "name": "James Forrest",
+          "name": "Jesper Karlsson",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Kacaniklic",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Isak",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Claesson",
+          "position": "ST"
+        },
+        {
+          "name": "Robin Quaison",
+          "position": "ST"
+        },
+        {
+          "name": "Sebastian Andersson",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Kiese Thelin",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Berg",
+          "position": "ST"
+        },
+        {
+          "name": "John Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Dino Islamovic",
+          "position": "ST"
+        },
+        {
+          "name": "Robin Söder",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2020/2021)",
       "teamLabel": "sweden (2020-21)"
@@ -1202,60 +3782,208 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Zander Clark",
+          "name": "Leopold Wahlstedt",
           "position": "GK"
         },
         {
-          "name": "Scott McKenna",
-          "position": "RB"
+          "name": "Robin Olsen",
+          "position": "GK"
         },
         {
-          "name": "Jack Hendry",
+          "name": "Jacob Rinne",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Linde",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Nordfeldt",
+          "position": "GK"
+        },
+        {
+          "name": "Victor Lindelöf",
           "position": "CB"
         },
         {
-          "name": "Liam Cooper",
+          "name": "Hjalmar Ekdal",
           "position": "CB"
         },
         {
-          "name": "Ryan Porteous",
-          "position": "LB"
+          "name": "Carl Starfelt",
+          "position": "CB"
         },
         {
-          "name": "Billy Gilmour",
-          "position": "DM"
+          "name": "Isak Hien",
+          "position": "CB"
         },
         {
-          "name": "Callum McGregor",
+          "name": "Joakim Nilsson",
+          "position": "CB"
+        },
+        {
+          "name": "Filip Dagerstal",
+          "position": "CB"
+        },
+        {
+          "name": "Filip Helander",
+          "position": "CB"
+        },
+        {
+          "name": "Edvin Kurtulus",
+          "position": "CB"
+        },
+        {
+          "name": "Aiham Ousou",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander Milosevic",
+          "position": "CB"
+        },
+        {
+          "name": "Sotirios Papagiannopoulos",
+          "position": "CB"
+        },
+        {
+          "name": "Marcus Danielson",
+          "position": "CB"
+        },
+        {
+          "name": "Pavle Vagic",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Gudmundsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ludwig Augustinsson",
+          "position": "CB"
+        },
+        {
+          "name": "Ken Sema",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Olsson",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre Neurath Bengtsson",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Holm",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Sundgren",
+          "position": "CB"
+        },
+        {
+          "name": "Jens Cajuste",
           "position": "CM"
         },
         {
-          "name": "John McGinn",
+          "name": "Jesper Karlström",
           "position": "CM"
         },
         {
-          "name": "Scott McTominay",
+          "name": "Samuel Gustafson",
           "position": "CM"
         },
         {
-          "name": "Ryan Fraser",
+          "name": "Albin Ekdal",
+          "position": "CM"
+        },
+        {
+          "name": "Mattias Svanberg",
+          "position": "CM"
+        },
+        {
+          "name": "Kristoffer Olsson",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Rohdén",
+          "position": "CM"
+        },
+        {
+          "name": "Magnus Eriksson",
+          "position": "CM"
+        },
+        {
+          "name": "Dejan Kulusevski",
+          "position": "CM"
+        },
+        {
+          "name": "Patrik Wålemark",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Karlsson",
           "position": "ST"
         },
         {
-          "name": "Barrie McKay",
+          "name": "Emil Forsberg",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Elanga",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Isak",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Claesson",
+          "position": "ST"
+        },
+        {
+          "name": "Robin Quaison",
+          "position": "ST"
+        },
+        {
+          "name": "Mikael Ishak",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Christoffer Nyman",
+          "position": "ST"
+        },
+        {
+          "name": "Branimir Hrgota",
           "position": "ST"
         }
       ],
       "ratings": {
-        "attack": 66,
-        "midfield": 66,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 81,
+        "midfield": 81,
+        "defense": 71,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — sweden (2022/2023)",
       "teamLabel": "sweden (2022-23)"
     }
   },
-  "id": 3380,
+  "id": 3557,
   "name": "sweden"
 }

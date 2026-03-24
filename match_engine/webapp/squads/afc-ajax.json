@@ -1,0 +1,333 @@
+{
+  "slug": "afc-ajax",
+  "seasons": {
+    "1987": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lloyd Doesburg",
+          "position": "GK"
+        },
+        {
+          "name": "Stanley Menzo",
+          "position": "GK"
+        },
+        {
+          "name": "Erik de Haan",
+          "position": "GK"
+        },
+        {
+          "name": "Danny Blind",
+          "position": "CB"
+        },
+        {
+          "name": "Danny Hesp",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Verlaat",
+          "position": "CB"
+        },
+        {
+          "name": "Frank de Boer",
+          "position": "CB"
+        },
+        {
+          "name": "Ronald Spelbos",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Larsson",
+          "position": "CB"
+        },
+        {
+          "name": "Peter Boeve",
+          "position": "CB"
+        },
+        {
+          "name": "Sonny Silooy",
+          "position": "CB"
+        },
+        {
+          "name": "Edo Ophof",
+          "position": "CB"
+        },
+        {
+          "name": "Desmond Gemert",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Rijkaard",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Scholten",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Rijnink",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Keizer",
+          "position": "CM"
+        },
+        {
+          "name": "Petri Tiainen",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Richard Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Richard Sneekes",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Jan Sørensen",
+          "position": "CM"
+        },
+        {
+          "name": "Erik Regtop",
+          "position": "CM"
+        },
+        {
+          "name": "Rob de Wit",
+          "position": "ST"
+        },
+        {
+          "name": "Ally Dick",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Roy",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "John van 't Schip",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "John Bosman",
+          "position": "ST"
+        },
+        {
+          "name": "Frank Stapleton",
+          "position": "ST"
+        },
+        {
+          "name": "Henny Meijer",
+          "position": "ST"
+        },
+        {
+          "name": "Erik Tammer",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 69,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Ajax (1987/1988)",
+      "teamLabel": "Ajax (1987-88)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "André Onana",
+          "position": "GK"
+        },
+        {
+          "name": "Bruno Varela",
+          "position": "GK"
+        },
+        {
+          "name": "Benjamin van Leer",
+          "position": "GK"
+        },
+        {
+          "name": "Kostas Lamprou",
+          "position": "GK"
+        },
+        {
+          "name": "Dominik Kotarski",
+          "position": "GK"
+        },
+        {
+          "name": "Stan van Bladeren",
+          "position": "GK"
+        },
+        {
+          "name": "Issam El Maach",
+          "position": "GK"
+        },
+        {
+          "name": "Matthijs de Ligt",
+          "position": "CB"
+        },
+        {
+          "name": "Daley Blind",
+          "position": "CB"
+        },
+        {
+          "name": "Maximilian Wöber",
+          "position": "CB"
+        },
+        {
+          "name": "Lisandro Magallán",
+          "position": "CB"
+        },
+        {
+          "name": "Perr Schuurs",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolás Tagliafico",
+          "position": "CB"
+        },
+        {
+          "name": "Daley Sinkgraven",
+          "position": "CB"
+        },
+        {
+          "name": "Noussair Mazraoui",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Rasmus Kristensen",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Gravenberch",
+          "position": "CM"
+        },
+        {
+          "name": "Lasse Schöne",
+          "position": "CM"
+        },
+        {
+          "name": "Frenkie de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Donny van de Beek",
+          "position": "CM"
+        },
+        {
+          "name": "Carel Eiting",
+          "position": "CM"
+        },
+        {
+          "name": "Jurgen Ekkelenkamp",
+          "position": "CM"
+        },
+        {
+          "name": "Mitchel Bakker",
+          "position": "CM"
+        },
+        {
+          "name": "Zakaria Labyad",
+          "position": "CM"
+        },
+        {
+          "name": "Siem de Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Dani de Wit",
+          "position": "CM"
+        },
+        {
+          "name": "Hassane Bandé",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Johnsen",
+          "position": "ST"
+        },
+        {
+          "name": "Noa Lang",
+          "position": "ST"
+        },
+        {
+          "name": "David Neres",
+          "position": "ST"
+        },
+        {
+          "name": "Hakim Ziyech",
+          "position": "ST"
+        },
+        {
+          "name": "Dušan Tadić",
+          "position": "ST"
+        },
+        {
+          "name": "Vaclav Cerny",
+          "position": "ST"
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST"
+        },
+        {
+          "name": "Kaj Sierhuis",
+          "position": "ST"
+        },
+        {
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Danilo",
+          "position": "ST"
+        },
+        {
+          "name": "Lassina Traoré",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 69,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Ajax (2018/2019)",
+      "teamLabel": "Ajax (2018-19)"
+    }
+  },
+  "id": 610,
+  "name": "Ajax"
+}
