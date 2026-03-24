@@ -26,6 +26,7 @@
 const cheerio = require('cheerio');
 const fs      = require('fs');
 const path    = require('path');
+const { buildXI, ELITE_NATIONALS, STRONG_NATIONALS } = require('./utils');
 const FETCH_TIMEOUT = 10000;
 
 // ─────────────────────────────────────────────────────────────
@@ -553,44 +554,6 @@ function eraToSaisonId(era) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Build balanced XI from raw player list
-// ─────────────────────────────────────────────────────────────
-function buildXI(raw) {
-  const pool = {};
-  for (const { name, position } of raw) {
-    (pool[position] = pool[position] || []).push(name);
-  }
-
-  const xi = [];
-  function take(pos, n, ...fallbacks) {
-    let need = n;
-    for (const src of [pos, ...fallbacks]) {
-      while (need > 0 && pool[src]?.length > 0) {
-        xi.push({ name: pool[src].shift(), position: pos });
-        need--;
-      }
-      if (!need) break;
-    }
-  }
-
-  const attCount = (pool['ST']||[]).length + (pool['RW']||[]).length + (pool['LW']||[]).length;
-  const midCount = (pool['CM']||[]).length + (pool['DM']||[]).length + (pool['AM']||[]).length;
-  const useTwoUp = attCount >= 2 && midCount >= 4;
-
-  take('GK', 1);
-  take('RB', 1, 'CB'); take('CB', 2, 'DM'); take('LB', 1, 'CB');
-  if (useTwoUp) {
-    take('DM', 1, 'CM'); take('CM', 3, 'AM', 'DM', 'RW', 'LW');
-    take('ST', 2, 'RW', 'LW', 'AM');
-  } else {
-    take('DM', 1, 'CM'); take('CM', 2, 'AM', 'DM');
-    take('RW', 1, 'AM', 'CM'); take('ST', 1, 'LW', 'AM'); take('LW', 1, 'AM', 'CM', 'ST');
-  }
-
-  return xi.slice(0, 11);
-}
-
-// ─────────────────────────────────────────────────────────────
 // League-based rating estimator
 // ─────────────────────────────────────────────────────────────
 function ratingsFromLeague(leagueText = '', teamName = '') {
@@ -605,20 +568,9 @@ function ratingsFromLeague(leagueText = '', teamName = '') {
   const dD = (((h >> 8) & 0x0F) % 13) - 6;
   const dG = (((h >> 12) & 0x07) % 9) - 4;
 
-  // Elite national teams: historically dominant, top FIFA ranking
-  const eliteNationals = ['spain','españa','espana','germany','deutschland','alemania',
-    'france','frankreich','francia','brazil','brasil','argentina','england','inglaterra',
-    'italy','italia','portugal','netherlands','holanda','holland','belgium','belgica',
-    'croatia','croacia'];
-  // Strong national teams
-  const strongNationals = ['denmark','dinamarca','switzerland','suiza','colombia',
-    'senegal','morocco','marruecos','usa','mexico','austria','czech','poland','polonia',
-    'ukraine','ucrania','sweden','suecia','norway','noruega','japan','japon',
-    'south korea','corea','cameroon','nigeria','chile','uruguay'];
-
   // International competition keywords (no club league)
   const isNationalComp = /world cup|nations league|european|championship|qualifying|euro\b|copa del mundo|eliminatoria|conmebol|concacaf|afcon|caf|afc|copa america/i.test(l)
-    || (l === '' && eliteNationals.some(n => t.includes(n)));
+    || (l === '' && ELITE_NATIONALS.some(n => t.includes(n)));
 
   const tier1 = ['premier league', 'la liga', 'bundesliga', 'serie a', 'ligue 1',
                   'primera division', 'primera división'];
@@ -626,9 +578,9 @@ function ratingsFromLeague(leagueText = '', teamName = '') {
                   'eredivisie', 'primeira liga'];
 
   let base;
-  if (eliteNationals.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
+  if (ELITE_NATIONALS.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
     base = { attack: 84, midfield: 84, defense: 83, goalkeeping: 82 };
-  } else if (isNationalComp || strongNationals.some(n => t.includes(n))) {
+  } else if (isNationalComp || STRONG_NATIONALS.some(n => t.includes(n))) {
     base = { attack: 78, midfield: 78, defense: 77, goalkeeping: 76 };
   } else if (tier1.some(t2 => l.includes(t2))) {
     base = { attack: 77, midfield: 77, defense: 77, goalkeeping: 75 };

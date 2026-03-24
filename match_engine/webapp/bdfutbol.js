@@ -14,6 +14,7 @@
 'use strict';
 
 const cheerio = require('cheerio');
+const { buildXI } = require('./utils');
 const FETCH_TIMEOUT = 8000;
 
 // ─────────────────────────────────────────────────────────────
@@ -232,55 +233,6 @@ function resolveClubId(teamName) {
     }
   }
   return bestId;
-}
-
-// ─────────────────────────────────────────────────────────────
-// Build a balanced XI from a raw player list
-// ─────────────────────────────────────────────────────────────
-function buildXI(raw) {
-  const pool = {};
-  for (const { name, position } of raw) {
-    (pool[position] = pool[position] || []).push(name);
-  }
-
-  const xi = [];
-  function take(pos, n, ...fallbacks) {
-    let need = n;
-    for (const src of [pos, ...fallbacks]) {
-      while (need > 0 && pool[src]?.length > 0) {
-        xi.push({ name: pool[src].shift(), position: pos });
-        need--;
-      }
-      if (!need) break;
-    }
-  }
-
-  // Count available positions to decide formation
-  const gkCount  = (pool['GK']  || []).length;
-  const defCount = (pool['CB']||[]).length + (pool['RB']||[]).length + (pool['LB']||[]).length;
-  const midCount = (pool['CM']||[]).length + (pool['DM']||[]).length + (pool['AM']||[]).length;
-  const attCount = (pool['ST']||[]).length + (pool['RW']||[]).length + (pool['LW']||[]).length;
-
-  // Default to 4-4-2 if ≥2 strikers, else 4-3-3
-  const useTwoUp = attCount >= 2 && midCount >= 4;
-
-  take('GK', 1);
-  take('RB', 1, 'CB');
-  take('CB', 2, 'DM');
-  take('LB', 1, 'CB');
-  if (useTwoUp) {
-    take('DM', 1, 'CM');
-    take('CM', 3, 'AM', 'DM', 'RW', 'LW');
-    take('ST', 2, 'RW', 'LW', 'AM');
-  } else {
-    take('DM', 1, 'CM');
-    take('CM', 2, 'AM', 'DM');
-    take('RW', 1, 'AM', 'CM');
-    take('ST', 1, 'LW', 'AM', 'CM');
-    take('LW', 1, 'AM', 'CM', 'ST');
-  }
-
-  return xi.slice(0, 11);
 }
 
 // ─────────────────────────────────────────────────────────────

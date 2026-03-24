@@ -20,6 +20,7 @@ const { SQUADS }                    = require('./squads');
 const { lookupWikipedia }           = require('./wikipedia');
 const { fetchBdfutbolSquad }        = require('./bdfutbol');
 const { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile } = require('./transfermarkt');
+const { buildXI, ELITE_NATIONALS, STRONG_NATIONALS } = require('./utils');
 
 const SPORTSDB_BASE = 'https://www.thesportsdb.com/api/v1/json/3';
 const FETCH_TIMEOUT = 12000; // ms
@@ -69,46 +70,16 @@ function mapPos(raw) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Build a balanced 4-3-3 XI from a raw TheSportsDB player list
+// Build XI from raw TheSportsDB player list
+// Maps TheSportsDB format → internal codes, then delegates to shared buildXI
 // ─────────────────────────────────────────────────────────────
 function buildXIFromPlayers(rawPlayers) {
-  // Map every player to { name, position }
-  const mapped = rawPlayers
+  // Normalize RM/LM → CM so shared buildXI's pool handles them
+  const normalizePos = p => (p === 'RM' || p === 'LM') ? 'CM' : p;
+  const raw = rawPlayers
     .filter(p => p.strPlayer && p.strPosition)
-    .map(p => ({ name: p.strPlayer, pos: mapPos(p.strPosition) }));
-
-  // Group by internal position code
-  const pool = {};
-  for (const { name, pos } of mapped) {
-    (pool[pos] = pool[pos] || []).push(name);
-  }
-
-  const xi = [];
-
-  // take(wantedPos, n, ...fallbacks): picks n players from pool
-  function take(wantedPos, n, ...fallbacks) {
-    let need = n;
-    for (const src of [wantedPos, ...fallbacks]) {
-      while (need > 0 && pool[src] && pool[src].length > 0) {
-        xi.push({ name: pool[src].shift(), position: wantedPos });
-        need--;
-      }
-      if (need === 0) break;
-    }
-  }
-
-  // 4-3-3 blueprint
-  take('GK', 1);
-  take('RB', 1, 'CB');
-  take('CB', 2, 'RB', 'DM');
-  take('LB', 1, 'CB');
-  take('DM', 1, 'CM');
-  take('CM', 2, 'AM', 'DM', 'RM', 'LM');
-  take('RW', 1, 'AM', 'RM', 'ST');
-  take('ST', 1, 'LW', 'RW', 'AM');
-  take('LW', 1, 'AM', 'LM', 'ST');
-
-  return xi.slice(0, 11);
+    .map(p => ({ name: p.strPlayer, position: normalizePos(mapPos(p.strPosition)) }));
+  return buildXI(raw);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -125,18 +96,10 @@ function ratingsFromLeague(strLeague = '', teamName = '') {
   const l = strLeague.toLowerCase();
   const t = (teamName || '').toLowerCase();
 
-  const eliteNationals = ['spain','españa','espana','germany','deutschland','alemania',
-    'france','frankreich','francia','brazil','brasil','argentina','england','inglaterra',
-    'italy','italia','portugal','netherlands','holanda','holland','belgium','belgica',
-    'croatia','croacia'];
-  const strongNationals = ['denmark','dinamarca','switzerland','suiza','colombia',
-    'senegal','morocco','marruecos','usa','mexico','austria','czech','poland','polonia',
-    'ukraine','ucrania','sweden','suecia','norway','noruega','japan','south korea','chile','uruguay'];
-
-  if (eliteNationals.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
+  if (ELITE_NATIONALS.some(n => t === n || t.startsWith(n + ' ') || t.endsWith(' ' + n))) {
     return { attack: 84, midfield: 84, defense: 83, goalkeeping: 82 };
   }
-  if (strongNationals.some(n => t.includes(n))) {
+  if (STRONG_NATIONALS.some(n => t.includes(n))) {
     return { attack: 78, midfield: 78, defense: 77, goalkeeping: 76 };
   }
   if (LEAGUE_TIERS.tier1.some(t2 => l.includes(t2))) {
