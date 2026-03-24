@@ -255,17 +255,30 @@ function buildBench(teamInput, eraInput, knownSquadMatch, maxSize = 7) {
 // Heuristics based on name tokens.  Pure function, no lookups.
 
 const RATING_HINTS = [
-  // Attack
-  { tokens: ['brazil','brasil','barça','barcelona','munich','ajax','juventus','real madrid','psg','chelsea','liverpool','city','inter','milan'], atk: 5 },
-  { tokens: ['1970','1974','1982','1986','1998','2014'], atk: 3 },
-  // Defense
-  { tokens: ['milan','juventus','atletico','atletico madrid','chelsea','inter'], def: 5 },
-  { tokens: ['1989','1994','2004','2016'], def: 4 },
-  // Midfield
-  { tokens: ['barcelona','barça','ajax','city','manchester city','liverpool'], mid: 5 },
-  { tokens: ['zidane','guardiola','cruyff','ronaldo','messi','pele','basten'], mid: 3, atk: 3 },
-  // GK
-  { tokens: ['italy','spain','germany','france','arsenal','milan'], gk: 3 },
+  // ── Attack elite clubs/nations ────────────────────────────
+  { tokens: ['real madrid','barcelona','barça','fc barcelona','brazil','brasil',
+             'münchen','munich','ajax','psg'], atk: 7, mid: 6 },
+  { tokens: ['juventus','milan','ac milan','inter','liverpool',
+             'manchester city','city','chelsea','atletico'], atk: 5 },
+  { tokens: ['arsenal','borussia dortmund','porto','napoli','bayer'], atk: 3 },
+  { tokens: ['1970','1974','1982','1986','1994','1998','2002'], atk: 4 },
+  // ── Defense elite ─────────────────────────────────────────
+  { tokens: ['ac milan','milan','juventus','atletico','atletico madrid',
+             'inter','chelsea','münchen','munich'], def: 6 },
+  { tokens: ['manchester united','arsenal','porto','lyon'], def: 3 },
+  { tokens: ['1989','1990','1994','2004','2006','2016'], def: 4 },
+  // ── Midfield elite ────────────────────────────────────────
+  { tokens: ['barcelona','barça','manchester city','city','ajax',
+             'liverpool','real madrid'], mid: 6 },
+  { tokens: ['juventus','münchen','munich','dortmund','chelsea'], mid: 3 },
+  // ── Goalkeeping elite ─────────────────────────────────────
+  { tokens: ['italy','italia','spain','españa','germany','deutschland',
+             'france','frankreich'], gk: 4 },
+  { tokens: ['real madrid','juventus','manchester united','milan','ac milan',
+             'liverpool','arsenal'], gk: 3 },
+  // ── Star player era tokens ─────────────────────────────────
+  { tokens: ['zidane','guardiola','cruyff','ronaldo','messi','pelé','pele',
+             'van basten','basten'], mid: 3, atk: 4 },
 ];
 
 function deriveRatings(teamInput, eraInput, scraperRatings = null) {
@@ -288,8 +301,23 @@ function deriveRatings(teamInput, eraInput, scraperRatings = null) {
     }
   }
 
-  // 2. Use scraper-provided ratings if available (BDFutbol / Transfermarkt).
-  if (scraperRatings) return scraperRatings;
+  // 2. Use scraper-provided ratings, boosted by half-strength prestige hints
+  // so elite clubs are differentiated within the same league tier.
+  if (scraperRatings) {
+    let { attack: atk, midfield: mid, defense: def, goalkeeping: gk } = scraperRatings;
+    for (const hint of RATING_HINTS) {
+      for (const tok of hint.tokens) {
+        if (hay.includes(tok)) {
+          if (hint.atk) atk = Math.min(97, atk + Math.ceil(hint.atk / 2));
+          if (hint.mid) mid = Math.min(97, mid + Math.ceil(hint.mid / 2));
+          if (hint.def) def = Math.min(97, def + Math.ceil(hint.def / 2));
+          if (hint.gk)  gk  = Math.min(97, gk  + Math.ceil(hint.gk  / 2));
+        }
+      }
+    }
+    const clamp = (v) => Math.max(60, Math.min(97, v));
+    return { attack: clamp(atk), midfield: clamp(mid), defense: clamp(def), goalkeeping: clamp(gk) };
+  }
 
   // 3. Heuristic fallback for unrecognised teams.
   let atk = 74, mid = 74, def = 74, gk = 72;

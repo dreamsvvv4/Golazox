@@ -96,6 +96,25 @@ const SQUADS = {
     ]
   },
 
+  'real madrid 2008': {
+    aliases: ['real madrid 2007-08','real madrid 2008-09','real madrid 2007','real madrid 2009','madrid schuster','madrid 2008'],
+    formation: '4-4-2',
+    ratings: { attack:87, midfield:82, defense:84, goalkeeping:88 },
+    players: [
+      { name: 'Iker Casillas',       position: 'GK' },
+      { name: 'Sergio Ramos',        position: 'RB' },
+      { name: 'Fabio Cannavaro',     position: 'CB' },
+      { name: 'Pepe',                position: 'CB' },
+      { name: 'Gabriel Heinze',      position: 'LB' },
+      { name: 'Arjen Robben',        position: 'RW' },
+      { name: 'Wesley Sneijder',     position: 'CM' },
+      { name: 'Fernando Gago',       position: 'DM' },
+      { name: 'Rafael van der Vaart',position: 'AM' },
+      { name: 'Raúl',                position: 'ST' },
+      { name: 'Gonzalo Higuaín',     position: 'ST' },
+    ]
+  },
+
   'real madrid 2012': {
     aliases: ['real madrid 2011-12','real madrid mourinho','madrid 2011','madrid 2012'],
     formation: '4-2-3-1',
@@ -150,6 +169,26 @@ const SQUADS = {
       { name: 'Cristiano Ronaldo', position: 'LW' },
       { name: 'Karim Benzema',     position: 'ST' },
       { name: 'Gareth Bale',       position: 'RW' },
+    ]
+  },
+
+  'real madrid 2019': {
+    aliases: ['real madrid 2018-19','real madrid 2019-20','real madrid 2018','real madrid 2020',
+              'madrid zidane 2020','los blancos 2020','madrid covid'],
+    formation: '4-3-3',
+    ratings: { attack:89, midfield:90, defense:87, goalkeeping:90 },
+    players: [
+      { name: 'Thibaut Courtois',   position: 'GK' },
+      { name: 'Dani Carvajal',      position: 'RB' },
+      { name: 'Sergio Ramos',       position: 'CB' },
+      { name: 'Raphaël Varane',     position: 'CB' },
+      { name: 'Ferland Mendy',      position: 'LB' },
+      { name: 'Luka Modrić',        position: 'CM' },
+      { name: 'Casemiro',           position: 'DM' },
+      { name: 'Toni Kroos',         position: 'CM' },
+      { name: 'Federico Valverde',  position: 'RW' },
+      { name: 'Karim Benzema',      position: 'ST' },
+      { name: 'Vinícius Jr.',       position: 'LW' },
     ]
   },
 
