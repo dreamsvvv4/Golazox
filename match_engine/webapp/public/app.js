@@ -45,6 +45,7 @@ const I18N = {
     'hth-attack':'Ataque','hth-midfield':'Centrocampo','hth-defense':'Defensa','hth-goalkeeping':'Portería',
     'radar-attack':'Ataque','radar-midfield':'Medio','radar-defense':'Defensa','radar-goalkeeping':'Portería','radar-physical':'Físico',
     'prob-draw':'Empate','alt-scores-label':'Otros resultados:',
+    'prob-win-suffix':'gana','sim-iters-suffix':'simulaciones',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -79,6 +80,7 @@ const I18N = {
     'hth-attack':'Attack','hth-midfield':'Midfield','hth-defense':'Defense','hth-goalkeeping':'Goalkeeping',
     'radar-attack':'Attack','radar-midfield':'Mid','radar-defense':'Defense','radar-goalkeeping':'GK','radar-physical':'Physical',
     'prob-draw':'Draw','alt-scores-label':'Other scorelines:',
+    'prob-win-suffix':'wins','sim-iters-suffix':'simulations',
   },
 };
 
@@ -569,7 +571,7 @@ function renderResult(data, payload) {
 
   // ── Penaltis (sólo si hubo empate)
   document.getElementById('poster-label').textContent =
-    finalScore.penalties ? 'EMPATE · PENALTIS' : 'RESULTADO FINAL';
+    t(finalScore.penalties ? 'poster-label-pens' : 'poster-label-final');
   const stadiumCtxEl = document.getElementById('poster-context');
   if (stadiumCtxEl) {
     const stadiumTxt = _selectedStadium ? `🏟️ ${_selectedStadium.name} · ${_selectedStadium.city}` : 'Partido de leyenda · Campo neutral';
@@ -591,8 +593,8 @@ function renderResult(data, payload) {
   }
 
   // ── Probabilidades ──────────────────────────────────────────────
-  document.getElementById('prob-label-a').textContent = `${payload.teamA} gana`;
-  document.getElementById('prob-label-b').textContent = `${payload.teamB} gana`;
+  document.getElementById('prob-label-a').textContent = `${payload.teamA} ${t('prob-win-suffix')}`;
+  document.getElementById('prob-label-b').textContent = `${payload.teamB} ${t('prob-win-suffix')}`;
 
   const pA = probabilities.teamA_win;
   const pD = probabilities.draw;
@@ -617,7 +619,7 @@ function renderResult(data, payload) {
   // xG + iterations
   document.getElementById('xg-a').textContent     = simulation.xgA;
   document.getElementById('xg-b').textContent     = simulation.xgB;
-  document.getElementById('sim-iters').textContent = `${simulation.iterations.toLocaleString()} simulaciones`;
+  document.getElementById('sim-iters').textContent = `${simulation.iterations.toLocaleString()} ${t('sim-iters-suffix')}`;
 
   // ── Estadísticas + Mejor jugador ──────────────────────
   renderHthBars(ratings, data.stats, payload.teamA, payload.teamB);
@@ -2089,10 +2091,10 @@ function renderPenalties(penalties, teamA, teamB) {
   }
 
   const winnerName = penalties.winner === 'A' ? teamA : teamB;
-  const sdNote     = penalties.suddenDeath ? ' (muerte súbita)' : '';
+  const sdNote     = penalties.suddenDeath ? t('pen-winner-sd') : '';
   document.getElementById('pen-result').innerHTML =
     `<div class="pen-score-display">${penalties.scoreA} – ${penalties.scoreB}</div>` +
-    `<div class="pen-winner">🏆 <strong>${escHtml(winnerName)}</strong> gana la tanda${sdNote}</div>`;
+    `<div class="pen-winner">🏆 <strong>${escHtml(winnerName)}</strong> ${t('pen-winner-suffix')}${sdNote}</div>`;
 }
 
 // ── Autocomplete (team name suggestions) ─────────────────────

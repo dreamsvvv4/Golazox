@@ -12,6 +12,7 @@ const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 
 const app  = express();
+app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
 const PORT = process.env.PORT || 3000;
 
 // Pre-build autocomplete list from local squad DB (capitalised, sorted)
@@ -72,7 +73,7 @@ app.get('/suggest', (req, res) => {
 // ── GET /lookup ──────────────────────────────
 // Query: ?team=Arsenal&era=2004
 // Returns live squad data from local DB or TheSportsDB API
-app.get('/lookup', async (req, res) => {
+app.get('/lookup', _rateLimit(30, 60000), async (req, res) => {
   try {
     const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
     const team = sanitise(req.query.team);
@@ -91,10 +92,6 @@ app.get('/lookup', async (req, res) => {
     // lineup instead of the raw ~25-player squad stored in cache.
     let displayResult = result;
     if (result.found && result.players && result.players.length > 0) {
-      const sanitiseFormation = (s) => {
-        const f = String(s || '').replace(/[^0-9\-]/g, '').trim();
-        return _VALID_FORMATIONS && _VALID_FORMATIONS.has(f) ? f : s;
-      };
       const formationOverride = String(req.query.formation || '').replace(/[^0-9\-]/g, '').trim();
       const lineup = buildLineupFromCache(result, formationOverride || '');
       displayResult = { ...result, ...lineup };

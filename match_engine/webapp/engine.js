@@ -54,7 +54,7 @@ const FORMATION_TEMPLATES = {
   '2-1-1': ['GK','RB','LB','CM','ST'],
   // 3v3 (GK + 2 outfield)
   '1-1':   ['GK','CM','ST'],
-  '1-2':   ['GK','DM','RW','ST'],
+  '1-2':   ['GK','AM','ST'],
 };
 
 const DEFAULT_FORMATION = '4-3-3';
@@ -80,6 +80,22 @@ const GENERIC_NAMES = {
 // Falls back to generic placeholder XI for unrecognised teams.
 const { SQUADS: KNOWN_SQUADS } = require('./squads');
 
+// Position affinity groups: which source positions can fill each template slot
+const POS_AFFINITY = {
+  GK:  ['GK'],
+  RB:  ['RB','CB','DM'],
+  CB:  ['CB','RB','LB','DM'],
+  LB:  ['LB','CB','DM'],
+  DM:  ['DM','CM','CB'],
+  CM:  ['CM','DM','AM','RM','LM'],
+  RM:  ['RM','CM','RW','AM'],
+  LM:  ['LM','CM','LW','AM'],
+  AM:  ['AM','CM','RW','LW'],
+  RW:  ['RW','AM','ST','RM'],
+  LW:  ['LW','AM','ST','LM'],
+  ST:  ['ST','LW','RW','AM'],
+};
+
 /**
  * buildLineupFromCache(cached, formationOverride)
  * Converts a lookupTeam() result into the same shape as buildLineup().
@@ -91,22 +107,6 @@ function buildLineupFromCache(cached, formationOverride) {
     ? formationOverride
     : cached.formation;
   const template = FORMATION_TEMPLATES[formation] || FORMATION_TEMPLATES[DEFAULT_FORMATION];
-
-  // Position affinity groups: which source positions can fill each template slot
-  const POS_AFFINITY = {
-    GK:  ['GK'],
-    RB:  ['RB','CB','DM'],
-    CB:  ['CB','RB','LB','DM'],
-    LB:  ['LB','CB','DM'],
-    DM:  ['DM','CM','CB'],
-    CM:  ['CM','DM','AM','RM','LM'],
-    RM:  ['RM','CM','RW','AM'],
-    LM:  ['LM','CM','LW','AM'],
-    AM:  ['AM','CM','RW','LW'],
-    RW:  ['RW','AM','ST','RM'],
-    LW:  ['LW','AM','ST','LM'],
-    ST:  ['ST','LW','RW','AM'],
-  };
 
   // Build a mutable pool of available players (scraper order is meaningful —
   // Transfermarkt/BDFutbol list main squad first within each position group)
@@ -171,16 +171,9 @@ function buildLineup(teamInput, eraInput, formationOverride) {
 
   if (match) {
     // Use known squad — pick by positional affinity so 5v5/3v3 gets correct roles
-    const POS_AFFINITY_BL = {
-      GK:['GK'], RB:['RB','CB','DM'], CB:['CB','RB','LB','DM'],
-      LB:['LB','CB','DM'], DM:['DM','CM','CB'], CM:['CM','DM','AM','RM','LM'],
-      RM:['RM','CM','RW','AM'], LM:['LM','CM','LW','AM'],
-      AM:['AM','CM','RW','LW'], RW:['RW','AM','ST','RM'],
-      LW:['LW','AM','ST','LM'], ST:['ST','LW','RW','AM'],
-    };
     const pool2 = match.players.map(p => ({ ...p, used: false }));
     const pick2 = (wPos) => {
-      const aff = POS_AFFINITY_BL[wPos] || [wPos, 'CM'];
+      const aff = POS_AFFINITY[wPos] || [wPos, 'CM'];
       for (const ap of aff) {
         const idx = pool2.findIndex(p => !p.used && p.position === ap);
         if (idx !== -1) { pool2[idx].used = true; return pool2[idx]; }
@@ -427,8 +420,10 @@ function pickScorers(players, nGoals, rand) {
       if (r <= 0) { scorer = pool[j]; break; }
     }
     // Unique goal minute (1–95, including stoppage time)
+    // Safety: if all 95 slots are taken just allow a duplicate rather than looping forever
     let minute;
-    do { minute = 1 + Math.floor(rand() * 95); } while (usedMins.has(minute));
+    let _attempts = 0;
+    do { minute = 1 + Math.floor(rand() * 95); _attempts++; } while (usedMins.has(minute) && _attempts < 95);
     usedMins.add(minute);
     result.push({ name: scorer.name, minute });
   }

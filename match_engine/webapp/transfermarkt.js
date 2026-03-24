@@ -268,7 +268,7 @@ const TM_CLUBS = {
   'sporting cp':               { id: 336,   slug: 'sporting-cp' },
   'celtic':                    { id: 371,   slug: 'celtic-glasgow' },
   'anderlecht':                { id: 28,    slug: 'rsc-anderlecht' },
-  'club brugge':               { id: 2282,  slug: 'fc-brugge' },
+  'club brugge':               { id: 5765,  slug: 'fc-brugge' },
 
   // ── Selecciones nacionales ──────────────────────────────
   // NOTA: Solo se incluyen IDs verificados que devuelven la selección correcta.
@@ -366,11 +366,19 @@ try {
   if (count > 0) console.log(`[squads] ${count} equipos en caché local (squads/)`);
 } catch (_) {}
 
+/** In-memory cache: slug → parsed team file object */
+const _teamFileCache = new Map();
+
 /** Read a team file; returns { slug, seasons:{} } if missing */
 function _loadTeamFile(slug) {
+  if (_teamFileCache.has(slug)) return _teamFileCache.get(slug);
   const file = path.join(SQUADS_DIR, `${slug}.json`);
   try {
-    if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (fs.existsSync(file)) {
+      const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+      _teamFileCache.set(slug, data);
+      return data;
+    }
   } catch (_) {}
   return { slug, seasons: {} };
 }
@@ -385,7 +393,7 @@ function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
   if (!data.name) data.name = teamName;
   data.seasons             = data.seasons || {};
   data.seasons[saisonId]   = squadData;
-  try { fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8'); }
+  try { fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8'); _teamFileCache.set(slug, data); }
   catch (e) { console.warn('[squads] No se pudo guardar:', e.message); }
 }
 
