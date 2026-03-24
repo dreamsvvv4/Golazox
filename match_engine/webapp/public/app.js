@@ -559,6 +559,8 @@ async function handleSimulate() {
 
     if (!response.ok) {
       const err = await response.json().catch(() => ({}));
+      // 404 = team not found: show the server message directly (no "Error en la simulación:" prefix)
+      if (response.status === 404) throw new Error(err.error || 'Equipo no encontrado.');
       throw new Error(err.error || `Server error ${response.status}`);
     }
 
@@ -566,7 +568,9 @@ async function handleSimulate() {
     showPreMatch(data, payload);
 
   } catch (err) {
-    showError(`Error en la simulación: ${err.message}`);
+    // 404 messages come pre-formatted from the server (team not found)
+    const isNotFound = err.message.includes('no encontrado') || err.message.includes('not found');
+    showError(isNotFound ? err.message : `Error en la simulación: ${err.message}`);
   } finally {
     setLoading(false);
   }
@@ -1807,6 +1811,7 @@ function stopLivePitch() {
 // ── Live match playback ───────────────────────────────────────
 let _liveTimer = null;
 let _liveClockInterval = null;
+let _eventTimers = [];   // all per-event setTimeout IDs, cleared on skip
 let _liveData    = null;
 let _livePayload = null;
 let _lastGoalSide = 'A';  // tracks last team to score (for overlay)
@@ -1896,7 +1901,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
     const startAt = Math.max(fireAt, accDelay);
     accDelay      = startAt + _holdMs(ev.type) + 350;
 
-    setTimeout(() => {
+    _eventTimers.push(setTimeout(() => {
       if (ev.type === 'goal') {
         if (ev.side === 'A') scoreA++; else scoreB++;
         _lastGoalSide = ev.side;
@@ -1928,7 +1933,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
         animatePitchEvent(ev.type, ev);
       }
       addFeedEvent(ev);
-    }, startAt);
+    }, startAt));
   });
 
   // ── Penalty shootout animation (if draw) ────────────────────────
@@ -1942,31 +1947,31 @@ function playLiveMatch(data, payload, tickMs = 300) {
     // Full-time whistle before shootout (so users see the draw score clearly)
     const ftLabel = (lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
       ` — ${finalScore.teamA}:${finalScore.teamB}`;
-    setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50);
+    _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50));
 
     // Announcement
-    setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500);
+    _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500));
 
     let penT = regularMs + 900;
     for (let i = 0; i < kicks; i++) {
       const kA = pens.shotsA[i];
       const kB = pens.shotsB[i];
       if (kA) {
-        ((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'A', scored: k.scored }), t))(penT, kA);
+        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'A', scored: k.scored }), t))(penT, kA));
         penT += 560;
       }
       if (kB) {
-        ((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'B', scored: k.scored }), t))(penT, kB);
+        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'B', scored: k.scored }), t))(penT, kB));
         penT += 560;
       }
       penT += 140;
     }
     // Winner overlay
-    setTimeout(() => {
+    _eventTimers.push(setTimeout(() => {
       const winName = pens.winner === 'A' ? payload.teamA : payload.teamB;
       addFeedEvent({ type: 'pen_winner', minute: 90, name: winName, side: pens.winner });
       triggerEventOverlay('pen_winner', winName, `${pens.scoreA}–${pens.scoreB}`);
-    }, penT + 400);
+    }, penT + 400));
   }
 
   // Finish after full match + optional penalty sequence.
@@ -2084,6 +2089,7 @@ function finishLive() {
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1);  _overlayHideTimer1 = null; }
   if (_overlayHideTimer2) { clearTimeout(_overlayHideTimer2);  _overlayHideTimer2 = null; }
+  _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
   // Always hide event overlay before transitioning to results
   document.getElementById('event-overlay').classList.add('hidden');
   stopLivePitch();

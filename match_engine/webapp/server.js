@@ -140,6 +140,14 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
       lookupTeam(sTeamB, sEraB),
     ]);
 
+    // Reject simulation if either team was not found anywhere
+    if (!luA.found) {
+      return res.status(404).json({ error: `¡Equipo no encontrado: "${sTeamA}"${sEraA ? ' (' + sEraA + ')' : ''}¡ Prueba sin año o con el nombre en inglés.` });
+    }
+    if (!luB.found) {
+      return res.status(404).json({ error: `¡Equipo no encontrado: "${sTeamB}"${sEraB ? ' (' + sEraB + ')' : ''}¡ Prueba sin año o con el nombre en inglés.` });
+    }
+
     const params = {
       teamA:      sTeamA,
       teamB:      sTeamB,
