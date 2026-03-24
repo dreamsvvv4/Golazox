@@ -3,8 +3,7 @@
 import sys, importlib, types as _types
 _base = importlib.import_module('conf_all').CONFIGS.get('Custom', {})
 services   = [
-    "cuxscored",
-    "cuxsdialerd"
+    "cuxsupdaterd"
 ]
 tags       = _base.get('tags', [])
 listTagged = _base.get('listTagged', [])

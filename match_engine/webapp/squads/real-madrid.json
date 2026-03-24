@@ -1,0 +1,64 @@
+{
+  "slug": "real-madrid",
+  "seasons": {
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bodo Illgner",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "RB"
+        },
+        {
+          "name": "Félix Robles",
+          "position": "CB"
+        },
+        {
+          "name": "Manolo Sanchís",
+          "position": "CB"
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "LB"
+        },
+        {
+          "name": "Iván Campo",
+          "position": "DM"
+        },
+        {
+          "name": "Albert Celades",
+          "position": "CM"
+        },
+        {
+          "name": "Claude Makélélé",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Sávio",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2000/2001)",
+      "teamLabel": "Real Madrid (2000-01)"
+    }
+  },
+  "id": 418,
+  "name": "Real Madrid"
+}

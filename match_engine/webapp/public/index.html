@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odyssey — Football Time Machine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-mark">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+          <defs>
+            <clipPath id="ody-clip"><circle cx="50" cy="50" r="40"/></clipPath>
+            <linearGradient id="ody-ndl" x1="0.15" y1="0.85" x2="0.85" y2="0.15">
+              <stop offset="0%"   stop-color="#000000"/>
+              <stop offset="45%"  stop-color="#206060"/>
+              <stop offset="100%" stop-color="#f0f9f5"/>
+            </linearGradient>
+          </defs>
+          <polygon points="50,2 53.5,18 50,14.5 46.5,18"  fill="#2a9898"/>
+          <polygon points="50,98 53.5,82 50,85.5 46.5,82" fill="#2a9898"/>
+          <polygon points="98,50 82,53.5 85.5,50 82,46.5" fill="#2a9898"/>
+          <polygon points="2,50  18,53.5 14.5,50 18,46.5"  fill="#2a9898"/>
+          <circle cx="50" cy="50" r="40" fill="#000000"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#2a9898" stroke-width="3.5"/>
+          <g clip-path="url(#ody-clip)">
+            <g fill="rgba(210,235,220,0.28)" stroke="rgba(140,190,170,0.55)" stroke-width="1.1">
+              <polygon points="50,36 60,42 60,54 50,60 40,54 40,42"/>
+              <polygon points="50,36 60,42 68,34 60,24 48,24 40,32"/>
+              <polygon points="60,42 68,34 78,40 78,52 68,58 60,54"/>
+              <polygon points="60,54 68,58 64,70 52,72 44,64 40,54"/>
+              <polygon points="40,54 44,64 32,66 24,58 26,46 40,42"/>
+              <polygon points="40,42 26,46 20,34 30,24 44,24 50,36"/>
+            </g>
+          </g>
+          <g clip-path="url(#ody-clip)">
+            <polygon points="22,78 46,54 78,22 54,46" fill="url(#ody-ndl)"/>
+            <polygon points="22,78 46,54 78,22 54,46" fill="none" stroke="rgba(100,210,185,0.35)" stroke-width="0.7"/>
+          </g>
+          <g transform="translate(76,24)">
+            <polygon points="0,-6.5 1.5,-1.5 6.5,0 1.5,1.5 0,6.5 -1.5,1.5 -6.5,0 -1.5,-1.5" fill="white"/>
+          </g>
+          <g transform="translate(64,34)">
+            <polygon points="0,-3.5 0.8,-0.8 3.5,0 0.8,0.8 0,3.5 -0.8,0.8 -3.5,0 -0.8,-0.8" fill="white" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <h1>Odyssey</h1>
+        <span class="logo-sub">Football Time Machine</span>
+      </div>
+      <div class="header-right">
+        <span class="tagline">Any team &middot; Any era &middot; Any rivalry</span>
+        <button class="btn-lang" id="lang-toggle" onclick="setLang(_lang==='es'?'en':'es')" title="Switch language">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════════ -->
+  <main class="main-wrap">
+
+    <!-- ── INPUT PANEL ────────────────────────── -->
+    <section class="input-panel glass-card">
+      <div class="teams-grid">
+
+        <!-- Team A -->
+        <div class="team-col" id="col-a">
+          <div class="team-label label-a">EQUIPO A</div>
+          <input id="teamA"      class="inp inp-main" type="text"
+                 placeholder="ej. FC Barcelona, Brasil, Ajax…" autocomplete="off" />
+          <div class="ac-dropdown hidden" id="ac-A"></div>
+          <input id="eraA"       class="inp inp-sub"  type="text"
+                 placeholder="Temporada / Época (opcional) — ej. 1991-92" autocomplete="off" />
+          <select id="formationA" class="inp inp-sub select-formation">
+            <option value="">Formación (automática)</option>
+          </select>
+          <button class="btn-lookup" id="lookupA" onclick="handleLookup('A')">
+            🔍 Buscar alineación
+          </button>
+          <div class="lookup-preview hidden" id="preview-A">
+            <div class="lookup-source" id="preview-source-A"></div>
+            <div class="lookup-players" id="preview-players-A"></div>
+          </div>
+        </div>
+
+        <!-- VS divider -->
+        <div class="vs-col">
+          <div class="vs-badge">VS</div>
+        </div>
+
+        <!-- Team B -->
+        <div class="team-col" id="col-b">
+          <div class="team-label label-b">EQUIPO B</div>
+          <input id="teamB"      class="inp inp-main" type="text"
+                 placeholder="ej. AC Milan, Real Madrid, Alemania…" autocomplete="off" />
+          <div class="ac-dropdown hidden" id="ac-B"></div>
+          <input id="eraB"       class="inp inp-sub"  type="text"
+                 placeholder="Temporada / Época (opcional) — ej. 1988-89" autocomplete="off" />
+          <select id="formationB" class="inp inp-sub select-formation">
+            <option value="">Formación (automática)</option>
+          </select>
+          <button class="btn-lookup" id="lookupB" onclick="handleLookup('B')">
+            🔍 Buscar alineación
+          </button>
+          <div class="lookup-preview hidden" id="preview-B">
+            <div class="lookup-source" id="preview-source-B"></div>
+            <div class="lookup-players" id="preview-players-B"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Match mode ──────────────────────── -->
+      <div class="extra-options-row">
+        <div class="mode-selector">
+          <span class="mode-lbl">Modo:</span>
+          <div class="mode-pills">
+            <button class="mode-pill mode-pill-active" id="mode-11v11" onclick="setMatchMode('11v11')">11 vs 11</button>
+            <button class="mode-pill" id="mode-5v5"   onclick="setMatchMode('5v5')">5 vs 5</button>
+            <button class="mode-pill" id="mode-3v3"   onclick="setMatchMode('3v3')">3 vs 3</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Stadium visual picker ─────────────────────────── -->
+      <div class="stadium-picker-section">
+        <div class="stadium-picker-lbl">🏟️ ESTADIO</div>
+        <div class="stadium-picker-row" id="stadium-picker-row">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-simulate" class="btn-simulate" onclick="handleSimulate()">
+          <span class="btn-icon">▶</span> Simular Partido
+        </button>
+      </div>
+
+      <div id="error-msg" class="error-msg hidden"></div>
+    </section>
+
+    <!-- ── LOADING INDICATOR ──────────────────── -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <span>Simulando 30 000 partidos…</span>
+    </div>
+
+    <!-- ── PRE-MATCH PRESENTATION ────────────── -->
+    <div id="prematch-screen" class="prematch-screen glass-card hidden">
+      <button class="btn-skip pm-skip-btn" onclick="skipPreMatch()">⏭ Saltar</button>
+      <div class="pm-eyebrow">PRESENTACIÓN DE EQUIPOS</div>
+      <div class="pm-matchup">
+        <div class="pm-team-block" id="pm-block-a"></div>
+        <div class="pm-center-col">
+          <div class="pm-vs-text">VS</div>
+          <div class="pm-start-label">Comenzando en</div>
+          <div class="pm-countdown" id="pm-countdown">10</div>
+          <div class="pm-stadium-info hidden" id="pm-stadium-info"></div>
+        </div>
+        <div class="pm-team-block pm-team-block-b" id="pm-block-b"></div>
+      </div>
+    </div>
+
+    <!-- ── LIVE MATCH VIEWER ─────────────────── -->
+    <div id="live-viewer" class="live-viewer glass-card hidden">
+      <div class="live-header">
+        <span class="live-dot"></span>
+        <span class="live-badge">EN DIRECTO</span>
+        <button class="btn-skip" onclick="skipLive()">⏭ Saltar</button>
+      </div>
+      <div class="live-scoreboard">
+        <span class="live-team-name" id="live-team-a">-</span>
+        <div class="live-score-block">
+          <span class="live-score-num" id="live-score-a">0</span>
+          <span class="live-score-sep">-</span>
+          <span class="live-score-num" id="live-score-b">0</span>
+        </div>
+        <span class="live-team-name" id="live-team-b">-</span>
+      </div>
+      <div class="live-clock-wrap">
+        <span class="live-clock" id="live-clock">0'</span>
+      </div>
+      <div class="live-body">
+        <div class="live-feed-wrap">
+          <div class="live-feed" id="live-feed"></div>
+        </div>
+        <div class="live-pitch-wrap">
+          <div class="live-pitch-label" id="live-pitch-phase">EN JUEGO</div>
+          <svg id="live-pitch-svg" class="live-pitch-svg" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- pitch markings drawn by JS -->
+          </svg>
+        </div>
+        <div class="radar-wrap">
+          <div class="radar-legend" id="radar-legend"></div>
+          <svg class="radar-svg" id="radar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GOAL / CARD OVERLAY ──────────────── -->
+    <div id="event-overlay" class="event-overlay hidden">
+      <div id="event-overlay-inner" class="eo-inner"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         RESULTS  (hidden until simulation runs)
+    ══════════════════════════════════════════════ -->
+    <section id="results" class="results hidden">
+
+      <!-- ── SCORE POSTER ─────────────────────── -->
+      <div class="score-poster glass-card">
+        <div class="poster-teams">
+          <div class="poster-team" id="poster-team-a">
+            <img class="poster-badge" id="badge-a" src="" alt="" style="display:none" onerror="this.style.display='none'" />
+            <div class="poster-name" id="poster-name-a">-</div>
+            <div class="poster-era"  id="poster-era-a"></div>
+          </div>
+          <div class="poster-score-block">
+            <div class="poster-score" id="poster-score">- : -</div>
+            <div class="poster-label" id="poster-label">RESULTADO FINAL</div>
+            <div class="poster-context" id="poster-context">Partido de leyenda · Campo neutral</div>
+          </div>
+          <div class="poster-team" id="poster-team-b">
+            <img class="poster-badge" id="badge-b" src="" alt="" style="display:none" onerror="this.style.display='none'" />
+            <div class="poster-name" id="poster-name-b">-</div>
+            <div class="poster-era"  id="poster-era-b"></div>
+          </div>
+        </div>
+
+        <!-- Scorers row -->
+        <div class="scorers-row">
+          <div class="scorers-side" id="scorers-a"></div>
+          <div class="scorers-mid">⚽</div>
+          <div class="scorers-side scorers-right" id="scorers-b"></div>
+        </div>
+
+        <!-- Cards row -->
+        <div class="cards-row" id="cards-row">
+          <div class="cards-side" id="cards-a"></div>
+          <div class="cards-mid">🟨🟥</div>
+          <div class="cards-side cards-right" id="cards-b"></div>
+        </div>
+        <!-- Share -->
+        <div class="share-row">
+          <button class="btn-share" onclick="shareResult()">📤 Compartir resultado</button>
+        </div>
+      </div>
+
+      <!-- ── CRÓNICA DEL PARTIDO ───────────────────────── -->
+      <div class="timeline-card glass-card">
+        <h2 class="section-title" data-i18n="section-timeline">Crónica del partido</h2>
+        <div class="timeline-header" id="timeline-header"></div>
+        <div class="timeline-events" id="timeline-events"></div>
+      </div>
+      <!-- ── TANDA DE PENALTIS ────────────────────── -->
+      <div class="penalty-card glass-card hidden" id="penalty-card">
+        <h2 class="section-title" data-i18n="pen-shootout-title">Tanda de Penaltis</h2>
+        <div class="pen-header" id="pen-header"></div>
+        <div class="pen-rows"  id="pen-rows"></div>
+        <div class="pen-result" id="pen-result"></div>
+      </div>
+      <!-- ── PROBABILIDADES ───────────────────────── -->
+      <div class="probs-card glass-card">
+        <h2 class="section-title" data-i18n="section-probs">Probabilidades</h2>
+        <div class="probs-grid">
+          <div class="prob-item prob-a">
+            <div class="prob-label" id="prob-label-a">Team A Win</div>
+            <div class="prob-value" id="prob-a">-</div>
+            <div class="prob-bar-wrap"><div class="prob-bar bar-a" id="bar-a"></div></div>
+          </div>
+          <div class="prob-item prob-d">
+            <div class="prob-label" data-i18n="prob-draw">Empate</div>
+            <div class="prob-value" id="prob-draw">-</div>
+            <div class="prob-bar-wrap"><div class="prob-bar bar-d" id="bar-d"></div></div>
+          </div>
+          <div class="prob-item prob-b">
+            <div class="prob-label" id="prob-label-b">Team B Win</div>
+            <div class="prob-value" id="prob-b">-</div>
+            <div class="prob-bar-wrap"><div class="prob-bar bar-b" id="bar-b"></div></div>
+          </div>
+        </div>
+
+        <!-- Alternate scorelines -->
+        <div class="alt-scores">
+          <span class="alt-label" data-i18n="alt-scores-label">Otros resultados:</span>
+          <span id="alt-scores-list">-</span>
+        </div>
+
+        <!-- xG row -->
+        <div class="xg-row">
+          <span>xG <span id="xg-a">-</span></span>
+          <span class="xg-sep">·</span>
+          <span>xG <span id="xg-b">-</span></span>
+          <span class="xg-sep">·</span>
+          <span id="sim-iters" class="xg-note"></span>
+        </div>
+      </div>
+
+      <!-- ── ESTADÍSTICAS COMPARADAS ─────────────── -->
+      <div class="stats-card glass-card">
+        <h2 class="section-title" data-i18n="section-stats">Estadísticas comparadas</h2>
+        <div class="hth-names">
+          <span id="hth-name-a">Equipo A</span>
+          <span id="hth-name-b">Equipo B</span>
+        </div>
+        <div id="hth-rows"></div>
+      </div>
+
+      <!-- ── MEJOR JUGADOR ──────────────────────────── -->
+      <div class="mom-card glass-card">
+        <div class="mom-icon">⭐</div>
+        <div class="mom-body">
+          <div class="mom-badge" data-i18n="mom-badge-text">MEJOR JUGADOR DEL PARTIDO</div>
+          <div class="mom-name" id="mom-name">-</div>
+          <div class="mom-meta" id="mom-meta">-</div>
+        </div>
+      </div>
+
+      <!-- ── ALINEACIONES ───────────────────────────── -->
+      <div class="lineups-wrap">
+        <div class="lineup-card glass-card" id="lineup-card-a">
+          <h2 class="section-title" id="lineup-title-a">Team A Lineup</h2>
+          <div class="formation-badge" id="formation-a-badge"></div>
+          <div class="pitch-wrap">
+            <div class="pitch" id="pitch-a"></div>
+          </div>
+          <div class="squad-source" id="source-a"></div>
+        </div>
+
+        <div class="lineup-card glass-card" id="lineup-card-b">
+          <h2 class="section-title" id="lineup-title-b">Team B Lineup</h2>
+          <div class="formation-badge" id="formation-b-badge"></div>
+          <div class="pitch-wrap">
+            <div class="pitch" id="pitch-b"></div>
+          </div>
+          <div class="squad-source" id="source-b"></div>
+        </div>
+      </div>
+
+    </section>
+    <!-- /results -->
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

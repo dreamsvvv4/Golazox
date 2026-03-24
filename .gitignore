@@ -12,6 +12,11 @@ __pycache__/
 .vscode/
 .DS_Store
 
+# Node.js
+match_engine/webapp/node_modules/
+match_engine/webapp/seed_progress.log
+match_engine/webapp/seed_errors.log
+
 # Virtual environments
 .venv/
 .venv_service/

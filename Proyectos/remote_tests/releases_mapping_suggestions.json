@@ -1,0 +1,22 @@
+{
+  "cuxs": ["central unit", "cuxs", "cu"],
+  "lock 1.2": ["lock 1.2", "lock", "smartlock", "doorlock", "lock" ],
+  "lock 1.1": ["lock 1.1", "lock", "smartlock", "doorlock"],
+  "lock 1.0": ["lock 1.0", "lock", "smartlock", "doorlock"],
+  "vc4": ["vc4", "rvc4", "rv c4"],
+  "svk": ["svk", "voice keypad", "siren", "siren voice keypad"],
+  "camera1": ["camera1", "ipcamera", "orion", "camera", "aquila"],
+  "camera2": ["camera2", "ipcamera", "orion", "camera", "aquila"],
+  "ipdep": ["ipdep", "ip camera", "ipcamera"],
+  "mc3": ["mc3", "mc3 without audio", "mc3"],
+  "mok": ["mok", "mokmok", "m o k"],
+  "ipcamera": ["ipcamera", "camera"],
+  "orion": ["orion", "arlo orion"],
+  "aquila": ["aquila", "arlo aquila"],
+  "croptex": ["croptex", "cropex", "croptex"],
+  "smartplug": ["smart plug", "smartplug", "sensingplug"],
+  "homepanel": ["homepanel", "portal", "home panel"],
+  "keyfob": ["keyfob", "mom keyfob", "keyfob"],
+  "doorlock": ["doorlock", "lock", "smartlock"],
+  "default": ["central unit", "cu", "cuxs", "camera", "lock"]
+}

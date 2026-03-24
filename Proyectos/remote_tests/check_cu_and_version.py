@@ -25,6 +25,8 @@ import subprocess
 import sys
 import contextlib
 from typing import Optional, List, Tuple
+import difflib
+import unicodedata
 
 
 def load_network_scanner(module_path: str):
@@ -98,6 +100,189 @@ def run_ssh_subprocess(host: str, user: str, port: int, key_path: Optional[str],
         return {'error': str(e)}
 
 
+def _parse_version(v: Optional[str]):
+    if not v:
+        return None
+    v = str(v).strip()
+    try:
+        from packaging.version import parse as _p
+        return _p(v)
+    except Exception:
+        parts = re.findall(r"\d+", v)
+        if not parts:
+            return v
+        return tuple(int(x) for x in parts)
+
+
+def _compare_versions(a: Optional[str], b: Optional[str]) -> Optional[int]:
+    """Return 1 if a>b, 0 if equal, -1 if a<b, None if not comparable"""
+    if a is None or b is None:
+        return None
+    pa = _parse_version(a)
+    pb = _parse_version(b)
+    try:
+        if pa is None or pb is None:
+            return None
+        if pa > pb:
+            return 1
+        if pa < pb:
+            return -1
+        return 0
+    except Exception:
+        try:
+            if str(a) > str(b):
+                return 1
+            if str(a) < str(b):
+                return -1
+            return 0
+        except Exception:
+            return None
+
+
+def load_latest_from_excel(path: str):
+    """Load versions mapping and global latest from an Excel file.
+    Returns (mapping_by_serial, global_latest)
+    mapping_by_serial: dict keyed by serial (lowercased) -> version string
+    global_latest: best effort latest version string found in file
+    """
+    mapping = {}
+    versions = []
+    def _clean_cell(x):
+        if x is None:
+            return None
+        s = str(x).strip()
+        # remove surrounding quotes if present
+        if (s.startswith("'") and s.endswith("'")) or (s.startswith('"') and s.endswith('"')):
+            s = s[1:-1].strip()
+        # strip any stray leading/trailing quotes/spaces
+        s = s.strip().strip('\'"')
+        return s
+    # if a directory provided, pick the first Excel file inside
+    try:
+        if os.path.isdir(path):
+            files = [f for f in os.listdir(path) if f.lower().endswith(('.xlsx', '.xls'))]
+            if files:
+                path = os.path.join(path, files[0])
+            else:
+                return mapping, None
+    except Exception:
+        pass
+    try:
+        try:
+            from openpyxl import load_workbook
+        except Exception:
+            try:
+                import pandas as pd
+                df = pd.read_excel(path, sheet_name=0)
+            except Exception:
+                return mapping, None
+            cols = [ _clean_cell(c).lower() for c in df.columns.astype(str) ]
+            ver_cols = [i for i, c in enumerate(cols) if 'version' in c or 'fw' in c or 'tag' in c]
+            serial_cols = [i for i, c in enumerate(cols) if 'serial' in c or c == 'sn' or 'installation' in c or 'instalacion' in c or 'numero' in c or 'column' in c or 'component' in c or 'device' in c]
+            for idx, row in df.iterrows():
+                ver = None
+                ser = None
+                if ver_cols:
+                    raw = row.iloc[ver_cols[0]]
+                    ver = _clean_cell(raw) if pd.notna(raw) else None
+                if serial_cols:
+                    raw = row.iloc[serial_cols[0]]
+                    ser = _clean_cell(raw) if pd.notna(raw) else None
+                if ver:
+                    versions.append(ver)
+                if ser and ver:
+                    mapping[str(ser).strip().lower()] = str(ver).strip()
+            if versions:
+                best = versions[0]
+                for v in versions[1:]:
+                    c = _compare_versions(v, best)
+                    if c is None:
+                        continue
+                    if c == 1:
+                        best = v
+                return mapping, best
+            return mapping, None
+
+        wb = load_workbook(path, read_only=True, data_only=True)
+        ws = wb[wb.sheetnames[0]]
+        rows = ws.iter_rows(values_only=True)
+        header = None
+        for row in rows:
+            if not header:
+                header = [ _clean_cell(c).lower() if c is not None else '' for c in row ]
+                ver_idx = None
+                serial_idx = None
+                model_idx = None
+                for i, h in enumerate(header):
+                    if any(x in h for x in ('version', 'vers', 'fw', 'tag')) and ver_idx is None:
+                        ver_idx = i
+                    if any(x in h for x in ('serial', 'sn', 'numero', 'installation', 'instalacion')) and serial_idx is None:
+                        serial_idx = i
+                # Prefer explicit 'column'/'column1' header for model, otherwise use other heuristics
+                for i, h in enumerate(header):
+                    if 'column' in h:
+                        model_idx = i
+                        break
+                if model_idx is None:
+                    for i, h in enumerate(header):
+                        if any(x in h for x in ('component', 'device', 'model', 'teamslink')):
+                            model_idx = i
+                            break
+                # fallback: use last column as model if nothing else matched
+                if model_idx is None and len(header) > 0:
+                    model_idx = len(header) - 1
+                continue
+            if not any(row):
+                continue
+            ver = None
+            ser = None
+            if 'ver_idx' in locals() and ver_idx is not None and ver_idx < len(row):
+                ver = _clean_cell(row[ver_idx])
+            else:
+                for cell in row:
+                    if cell and re.search(r"\d+\.\d+", str(cell)):
+                        ver = _clean_cell(cell)
+                        break
+            if 'serial_idx' in locals() and serial_idx is not None and serial_idx < len(row):
+                ser = _clean_cell(row[serial_idx])
+            model = None
+            if 'model_idx' in locals() and model_idx is not None and model_idx < len(row):
+                model = _clean_cell(row[model_idx])
+            if ver is not None:
+                versions.append(str(ver).strip())
+            if ser is not None and ver is not None:
+                mapping[str(ser).strip().lower()] = str(ver).strip()
+            if model is not None and ver is not None:
+                mapping[str(model).strip().lower()] = str(ver).strip()
+        best = None
+        for v in versions:
+            if best is None:
+                best = v
+                continue
+            c = _compare_versions(v, best)
+            if c is None:
+                continue
+            if c == 1:
+                best = v
+        return mapping, best
+    except Exception:
+        return mapping, None
+
+
+def load_device_version_json(path: Optional[str] = None):
+    """Load Device Version.json and return list of entries.
+    Default path is next to this script: 'Device Version.json'
+    """
+    if not path:
+        path = os.path.join(os.path.dirname(__file__), 'Device Version.json')
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data
+    except Exception:
+        return []
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description='Find CU IP and run CheckVersion.sh')
     ap.add_argument('--host', help='Direct host IP')
@@ -118,7 +303,23 @@ def main(argv=None):
     ap.add_argument('--show-tag-only', action='store_true', help='Print only TAG_VERSION per host')
     ap.add_argument('--pretty', action='store_true', help='Print a pretty table of Host, Serial, Installation, TAG_VERSION')
     ap.add_argument('--export', help='Write full results to JSON file')
+    ap.add_argument('--releases-excel', help='Path to Excel file listing releases/versions (optional)')
+    ap.add_argument('--match-cutoff', type=float, default=0.6, help='Fuzzy match cutoff for matching device names (0.0-1.0)')
+    ap.add_argument('--dump-scanner', action='store_true', help='Print network_scanner.MAC_INFO and exit (debug)')
     args = ap.parse_args(argv)
+
+    def _normalize_for_match(s: Optional[str]):
+        if not s:
+            return ''
+        if not isinstance(s, str):
+            s = str(s)
+        s = s.strip().lower()
+        # remove accents
+        s = unicodedata.normalize('NFKD', s)
+        s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+        # keep only alphanum
+        s = re.sub(r'[^a-z0-9]', '', s)
+        return s
 
     # If the script is executed without flags (no host/mac/serial and no output flags),
     # default to pretty output so it can be run directly.
@@ -127,6 +328,34 @@ def main(argv=None):
 
     scanner_path = os.path.join(os.path.dirname(__file__), 'network_scanner.py')
     scanner = load_network_scanner(scanner_path)
+
+    # If user didn't provide --releases-excel, try a sensible default in OneDrive
+    if not args.releases_excel:
+        try:
+            home = os.path.expanduser('~')
+            default_candidates = [
+                os.path.join(home, 'OneDrive - Verisure', 'Releases'),
+                os.path.join(os.path.dirname(__file__), '..', 'Releases')
+            ]
+            for cand in default_candidates:
+                try:
+                    if os.path.isdir(cand):
+                        files = [f for f in os.listdir(cand) if f.lower().endswith(('.xlsx', '.xls'))]
+                        if files:
+                            args.releases_excel = cand
+                            break
+                except Exception:
+                    continue
+        except Exception:
+            pass
+
+    if args.dump_scanner:
+        try:
+            info = getattr(scanner, 'MAC_INFO', {})
+            print(json.dumps({'MAC_INFO_len': len(info), 'sample_keys': list(info.keys())[:50]}, indent=2))
+        except Exception as e:
+            print(json.dumps({'error': str(e)}))
+        return 0
 
     targets = []
     if args.host:
@@ -159,9 +388,101 @@ def main(argv=None):
                 with contextlib.redirect_stdout(devnull), contextlib.redirect_stderr(devnull):
                     ip = find_ip_for_mac(scanner, mac)
                 devnull.close()
+            # Append discovered target (ip may be None if not found)
             targets.append({'host': ip, 'mac': mac, 'serial': info.get('Serial Number'), 'installation': info.get('Numero de instalacion')})
 
+    # Load releases/versions mapping from Excel if requested
+    latest_map = {}
+    global_latest = None
+    latest_source = None
+    if args.releases_excel:
+        rx = args.releases_excel
+        # If a directory provided, try to pick the first Excel file inside
+        if os.path.isdir(rx):
+            files = [f for f in os.listdir(rx) if f.lower().endswith(('.xlsx', '.xls'))]
+            if files:
+                rx = os.path.join(rx, files[0])
+        mapping, best = load_latest_from_excel(rx)
+        latest_map = mapping or {}
+        # normalize excel-derived keys for robust matching
+        try:
+            latest_map = { _normalize_for_match(k): v for k, v in (latest_map or {}).items() }
+        except Exception:
+            latest_map = { str(k).strip().lower(): v for k, v in (latest_map or {}).items() }
+        global_latest = best
+        latest_source = f"excel:{rx}"
+
+        # Try to enrich mapping using Device Version.json entries (Entity / FOTAxS)
+        devs = load_device_version_json()
+        # load optional aliases file to map entities to excel keys
+        aliases = {}
+        try:
+            aliases_path = os.path.join(os.path.dirname(__file__), 'device_aliases.json')
+            if os.path.isfile(aliases_path):
+                with open(aliases_path, 'r', encoding='utf-8') as af:
+                    aliases = json.load(af)
+        except Exception:
+            aliases = {}
+        # sensible defaults when aliases not provided
+        default_aliases = {
+            'orion': 'camera1',
+            'aquila': 'camera2',
+            'cu': 'cuxs'
+        }
+        if devs:
+            # normalize keys from excel mapping (again) to ensure consistent form
+            excel_keys = { _normalize_for_match(k): v for k, v in (latest_map or {}).items() }
+            for entry in devs:
+                ent = (entry.get('Entity / FOTAxS') or entry.get('Entity') or '').strip()
+                name = (entry.get('Name') or '').strip()
+                if not ent and not name:
+                    continue
+                ent_k = _normalize_for_match(ent)
+                name_k = _normalize_for_match(name)
+                found = None
+                # direct match against excel keys
+                if ent_k and ent_k in excel_keys:
+                    found = excel_keys[ent_k]
+                elif name_k and name_k in excel_keys:
+                    found = excel_keys[name_k]
+                else:
+                    # substring match
+                    for k in excel_keys.keys():
+                        if ent_k and (ent_k in k or k in ent_k):
+                            found = excel_keys[k]
+                            break
+                        if name_k and (name_k in k or k in name_k):
+                            found = excel_keys[k]
+                            break
+                # fuzzy match
+                if not found and ent_k:
+                    km = difflib.get_close_matches(ent_k, list(excel_keys.keys()), n=1, cutoff=args.match_cutoff)
+                    if km:
+                        found = excel_keys[km[0]]
+                if not found and name_k:
+                    km = difflib.get_close_matches(name_k, list(excel_keys.keys()), n=1, cutoff=args.match_cutoff)
+                    if km:
+                        found = excel_keys[km[0]]
+
+                if found:
+                    latest_map[ent_k] = found
+                    if name_k:
+                        latest_map[name_k] = found
+                else:
+                    # try alias fallback: map common device entities to excel camera keys
+                    # prefer user-provided aliases, then defaults
+                    aliask = aliases.get(ent.lower()) if aliases else None
+                    if not aliask:
+                        aliask = default_aliases.get(ent_k)
+                    if aliask:
+                        aliask_n = _normalize_for_match(aliask)
+                        if aliask_n in excel_keys:
+                            latest_map[ent_k] = excel_keys[aliask_n]
+                            if name_k:
+                                latest_map[name_k] = excel_keys[aliask_n]
+
     results = []
+    # if no targets were discovered, give a helpful debug message
     for t in targets:
         host = t.get('host')
         if not host:
@@ -251,7 +572,100 @@ def main(argv=None):
                         'fw': fw, 'hw': hw, 'is_active': active, 'location': location
                     })
                 cmd_result['nodes_raw'] = nodes_out
+                # For each node, try to attach latest_known from latest_map
+                for n in nodes_parsed:
+                    # build candidate keys for node (normalized)
+                    node_candidates = []
+                    for fld in ('config_label', 'sn', 'location'):
+                        v = n.get(fld)
+                        if v:
+                            node_candidates.append(_normalize_for_match(v))
+                    node_latest = None
+                    node_matched = None
+                    # exact match
+                    for c in node_candidates:
+                        if _normalize_for_match(c) in latest_map:
+                            node_latest = latest_map[_normalize_for_match(c)]
+                            node_matched = c
+                            break
+                    # substring
+                    if not node_latest:
+                        for c in node_candidates:
+                            for k in latest_map.keys():
+                                if not k or not c:
+                                    continue
+                                if k in c or c in k:
+                                    node_latest = latest_map[k]
+                                    node_matched = k
+                                    break
+                            if node_latest:
+                                break
+                    # fuzzy
+                    if not node_latest:
+                        keys = list(latest_map.keys())
+                        for c in node_candidates:
+                            if not c:
+                                continue
+                            matches = difflib.get_close_matches(c, keys, n=1, cutoff=args.match_cutoff)
+                            if matches:
+                                node_latest = latest_map[matches[0]]
+                                node_matched = matches[0]
+                                break
+                    # alias substring fallback (e.g. Orion -> camera1, Aquila -> camera2)
+                    if not node_latest:
+                        for c in node_candidates:
+                            for akey, atarget in default_aliases.items():
+                                if akey and akey in c:
+                                    atn = _normalize_for_match(atarget)
+                                    if atn in latest_map:
+                                        node_latest = latest_map[atn]
+                                        node_matched = atn
+                                        break
+                            if node_latest:
+                                break
+                    n['latest_known'] = node_latest
+                    if node_latest:
+                        cmp = _compare_versions(n.get('fw'), node_latest)
+                        if cmp is None:
+                            n['is_latest'] = (str(n.get('fw')).strip() == str(node_latest).strip())
+                        else:
+                            n['is_latest'] = True if cmp >= 0 else False
+                    else:
+                        n['is_latest'] = None
                 cmd_result['nodes'] = nodes_parsed
+
+            # If we loaded releases data from Excel, attach latest info
+            if 'latest_map' in locals() and latest_map:
+                latest_known = None
+                # For host-level check: only evaluate CUxS mapping when we have a host and TAG_VERSION
+                tag = None
+                if isinstance(cmd_result.get('parsed'), dict):
+                    tag = cmd_result['parsed'].get('TAG_VERSION')
+                if not tag and isinstance(cmd_result.get('result'), dict):
+                    s = cmd_result['result'].get('stdout','')
+                    mm = re.search(r'TAG_VERSION\s*=\s*"?([^"\n]+)"?', s)
+                    if mm:
+                        tag = mm.group(1).strip()
+
+                # Only set host-level latest if we have a reachable host and a parsed TAG_VERSION
+                if t.get('host') and tag:
+                    # prefer explicit CU key mapping (cuxs)
+                    cuxs_key = _normalize_for_match('cuxs')
+                    if cuxs_key in latest_map:
+                        latest_known = latest_map[cuxs_key]
+
+                # Do not fallback to global_latest for hosts without TAG or for unrelated targets
+                cmd_result['latest_known'] = latest_known
+                cmd_result['latest_source'] = latest_source
+                if latest_known:
+                    # compare
+                    cmp = _compare_versions(tag, latest_known) if tag else None
+                    if cmp is None:
+                        cmd_result['is_latest'] = (str(tag).strip() == str(latest_known).strip()) if tag else None
+                    else:
+                        cmd_result['is_latest'] = True if cmp >= 0 else False
+                else:
+                    cmd_result['is_latest'] = None
 
             results.append(cmd_result)
 
@@ -282,11 +696,11 @@ def main(argv=None):
     else:
         # If pretty requested, print aligned table with selected fields
         if args.pretty:
-            cols = ["Host", "Serial", "Installation", "TAG_VERSION"]
-            widths = [18, 14, 14, 12]
-            header = f"{cols[0]:<{widths[0]}} {cols[1]:<{widths[1]}} {cols[2]:<{widths[2]}} {cols[3]:<{widths[3]}}"
+            cols = ["Host", "Serial", "Installation", "TAG_VERSION", "LATEST", "STATUS"]
+            widths = [18, 14, 14, 12, 12, 12]
+            header = f"{cols[0]:<{widths[0]}} {cols[1]:<{widths[1]}} {cols[2]:<{widths[2]}} {cols[3]:<{widths[3]}} {cols[4]:<{widths[4]}} {cols[5]:<{widths[5]}}"
             print(header)
-            print('-' * (sum(widths) + 3))
+            print('-' * (sum(widths) + 6))
             for t in results:
                 host = t.get('host') or '-'
                 serial = t.get('serial') or '-'
@@ -300,7 +714,18 @@ def main(argv=None):
                     if mm:
                         tag = mm.group(1).strip()
                 tag = tag or '-'
-                print(f"{host:<{widths[0]}} {serial:<{widths[1]}} {inst:<{widths[2]}} {tag:<{widths[3]}}")
+                # determine latest to display: only show latest for actual hosts
+                if t.get('host'):
+                    latest_disp = t.get('latest_known') or global_latest or ''
+                    status = '-'
+                    if isinstance(t.get('is_latest'), bool):
+                        status = 'up-to-date' if t.get('is_latest') else 'outdated'
+                    elif t.get('latest_known') or global_latest:
+                        status = 'unknown'
+                else:
+                    latest_disp = ''
+                    status = '-'
+                print(f"{host:<{widths[0]}} {serial:<{widths[1]}} {inst:<{widths[2]}} {tag:<{widths[3]}} {str(latest_disp):<{widths[4]}} {status:<{widths[5]}}")
             # After printing versions table, also print nodes table per host if present
             for t in results:
                 host = t.get('host')
@@ -308,13 +733,20 @@ def main(argv=None):
                 if not nodes:
                     continue
                 print('\nNodes for host: %s' % (host or '-'))
-                ncols = ["sn", "zone", "config_label", "fw", "hw", "is_active", "location"]
-                nwidths = [10, 6, 12, 10, 8, 9, 18]
-                nheader = f"{ncols[0]:<{nwidths[0]}} {ncols[1]:<{nwidths[1]}} {ncols[2]:<{nwidths[2]}} {ncols[3]:<{nwidths[3]}} {ncols[4]:<{nwidths[4]}} {ncols[5]:<{nwidths[5]}} {ncols[6]:<{nwidths[6]}}"
+                ncols = ["sn", "zone", "config_label", "fw", "hw", "is_active", "location", "LATEST", "STATUS"]
+                # slightly smaller widths to avoid terminal wrapping
+                nwidths = [10, 6, 12, 9, 6, 8, 14, 10, 10]
+                nheader = f"{ncols[0]:<{nwidths[0]}} {ncols[1]:<{nwidths[1]}} {ncols[2]:<{nwidths[2]}} {ncols[3]:<{nwidths[3]}} {ncols[4]:<{nwidths[4]}} {ncols[5]:<{nwidths[5]}} {ncols[6]:<{nwidths[6]}} {ncols[7]:<{nwidths[7]}} {ncols[8]:<{nwidths[8]}}"
                 print(nheader)
-                print('-' * (sum(nwidths) + 6))
+                print('-' * (sum(nwidths) + 8))
                 for n in nodes:
-                    print(f"{n.get('sn',''):<{nwidths[0]}} {n.get('zone',''):<{nwidths[1]}} {n.get('config_label',''):<{nwidths[2]}} {n.get('fw',''):<{nwidths[3]}} {n.get('hw',''):<{nwidths[4]}} {n.get('is_active',''):<{nwidths[5]}} {n.get('location',''):<{nwidths[6]}}")
+                    status = '-'
+                    if isinstance(n.get('is_latest'), bool):
+                        status = 'up-to-date' if n.get('is_latest') else 'outdated'
+                    elif n.get('latest_known'):
+                        status = 'unknown'
+                    latest = n.get('latest_known') or '-'
+                    print(f"{n.get('sn',''):<{nwidths[0]}} {n.get('zone',''):<{nwidths[1]}} {n.get('config_label',''):<{nwidths[2]}} {n.get('fw',''):<{nwidths[3]}} {n.get('hw',''):<{nwidths[4]}} {n.get('is_active',''):<{nwidths[5]}} {n.get('location',''):<{nwidths[6]}} {latest:<{nwidths[7]}} {status:<{nwidths[8]}}")
         else:
             print(json.dumps(output, indent=2))
     return 0
