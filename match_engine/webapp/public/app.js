@@ -33,7 +33,7 @@ const I18N = {
     'timeline-events-suffix':'evento','timeline-events-suffix-pl':'eventos','timeline-empty':'Sin incidencias destacadas',
     'mom-badge-text':'MEJOR JUGADOR','bench-label':'BANQUILLO','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Cambio realizado','tooltip-copied':'Resultado copiado ✓','tooltip-copy-fail':'No se pudo copiar',
-    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'🩹 LESIÓN',
+    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'LESIÓN',
     'ev-penalty':'PENALTI MARCADO','ev-penalty-miss':'PENALTI FALLADO','ev-corner':'CÓRNER','ev-freekick':'FALTA DIRECTA',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. fallado','ev-tag-corner':'córner','ev-tag-fk':'falta directa',
     'phase-playing':'EN JUEGO','phase-corner':'🚩 CÓRNER','phase-freekick':'🎯 FALTA DIRECTA',
@@ -46,6 +46,10 @@ const I18N = {
     'radar-attack':'Ataque','radar-midfield':'Medio','radar-defense':'Defensa','radar-goalkeeping':'Portería','radar-physical':'Físico',
     'prob-draw':'Empate','alt-scores-label':'Otros resultados:',
     'prob-win-suffix':'gana','sim-iters-suffix':'simulaciones',
+    'mom-reason-goal':'gol','mom-reason-goals':'goles','mom-reason-best':'Mejor en el campo',
+    'sim-error-prefix':'Error en la simulación:','pm-intro-neutral':'Campo Neutral',
+    'ref-section-label':'ÁRBITRO','ref-random':'Aleatorio / Ninguno',
+    'referee-label':'Árbitro','weather-section-label':'CLIMA',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -68,7 +72,7 @@ const I18N = {
     'timeline-events-suffix':'event','timeline-events-suffix-pl':'events','timeline-empty':'No notable incidents',
     'mom-badge-text':'PLAYER OF THE MATCH','bench-label':'BENCH','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Substitution made','tooltip-copied':'Result copied ✓','tooltip-copy-fail':'Could not copy',
-    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'🩹 INJURY',
+    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'INJURY',
     'ev-penalty':'PENALTY SCORED','ev-penalty-miss':'PENALTY MISSED','ev-corner':'CORNER','ev-freekick':'FREE KICK',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. missed','ev-tag-corner':'corner','ev-tag-fk':'free kick',
     'phase-playing':'IN PLAY','phase-corner':'🚩 CORNER','phase-freekick':'🎯 FREE KICK',
@@ -81,60 +85,12 @@ const I18N = {
     'radar-attack':'Attack','radar-midfield':'Mid','radar-defense':'Defense','radar-goalkeeping':'GK','radar-physical':'Physical',
     'prob-draw':'Draw','alt-scores-label':'Other scorelines:',
     'prob-win-suffix':'wins','sim-iters-suffix':'simulations',
+    'mom-reason-goal':'goal','mom-reason-goals':'goals','mom-reason-best':'Best on the pitch',
+    'sim-error-prefix':'Simulation error:','pm-intro-neutral':'Neutral Ground',
+    'ref-section-label':'REFEREE','ref-random':'Random / None',
+    'referee-label':'Referee','weather-section-label':'WEATHER',
   },
 };
-
-// ── Web Audio Engine (procedural sounds, no external files) ─────────────────────
-const _AC = (() => {
-  try { return new (window.AudioContext || window.webkitAudioContext)(); } catch (_) { return null; }
-})();
-
-function _playSound(type) {
-  if (!_AC) return;
-  const go = () => {
-    if (_AC.state !== 'running') return;
-    const t0 = _AC.currentTime;
-    // Bandpass white noise burst — crowd roar / impact gasp
-    const noise = (freq, Q, dur, vol, atk = 0.10) => {
-      const len = _AC.sampleRate * dur | 0, buf = _AC.createBuffer(1, len, _AC.sampleRate);
-      const d = buf.getChannelData(0); for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
-      const src = _AC.createBufferSource(), flt = _AC.createBiquadFilter(), g = _AC.createGain();
-      src.buffer = buf; src.connect(flt); flt.connect(g); g.connect(_AC.destination);
-      flt.type = 'bandpass'; flt.frequency.value = freq; flt.Q.value = Q;
-      g.gain.setValueAtTime(0.001, t0); g.gain.linearRampToValueAtTime(vol, t0 + atk);
-      g.gain.setValueAtTime(vol, t0 + dur * 0.62); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-      src.start(t0); src.stop(t0 + dur);
-    };
-    // Sine tone with attack/release envelope + optional frequency glide
-    const sine = (freq, dur, vol, endFreq) => {
-      const osc = _AC.createOscillator(), g = _AC.createGain();
-      osc.connect(g); g.connect(_AC.destination); osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, t0);
-      if (endFreq) osc.frequency.exponentialRampToValueAtTime(endFreq, t0 + dur);
-      g.gain.setValueAtTime(0.001, t0); g.gain.linearRampToValueAtTime(vol, t0 + 0.015);
-      g.gain.setValueAtTime(vol, t0 + dur - 0.06); g.gain.linearRampToValueAtTime(0.001, t0 + dur);
-      osc.start(t0); osc.stop(t0 + dur);
-    };
-    switch (type) {
-      case 'whistle_start': sine(3350, 0.65, 0.17); break;           // kickoff: 1 long blast
-      case 'goal': noise(650, 0.40, 2.6, 0.28, 0.10); sine(440, 0.45, 0.09, 900); break; // crowd roar + rising whoosh
-      case 'card':                                                    // two short ref blasts
-        sine(3700, 0.17, 0.14);
-        setTimeout(() => {
-          if (_AC?.state !== 'running') return;
-          const t1 = _AC.currentTime, o = _AC.createOscillator(), gn = _AC.createGain();
-          o.connect(gn); gn.connect(_AC.destination); o.type = 'sine'; o.frequency.value = 3700;
-          gn.gain.setValueAtTime(0.001,t1); gn.gain.linearRampToValueAtTime(0.14,t1+0.015);
-          gn.gain.setValueAtTime(0.14,t1+0.13); gn.gain.linearRampToValueAtTime(0.001,t1+0.17);
-          o.start(t1); o.stop(t1+0.18);
-        }, 240);
-        break;
-      case 'injury': sine(130, 0.24, 0.22, 38); noise(1100, 2.0, 1.0, 0.06, 0.04); break; // thud + crowd gasp
-      case 'penalty': noise(800, 0.65, 0.9, 0.10, 0.05); break;     // stadium tension hiss
-    }
-  };
-  if (_AC.state === 'suspended') _AC.resume().then(go).catch(() => {}); else go();
-}
 
 let _lang = (() => { try { return localStorage.getItem('odyssey_lang') || 'es'; } catch(_) { return 'es'; } })();
 
@@ -192,6 +148,8 @@ function applyI18n() {
   // Neutral stadium card
   const neutroCard = document.querySelector('.spk-card[data-id=""] .spk-name');
   if (neutroCard) neutroCard.textContent = t('stadium-neutro');
+  // Rebuild weather picker labels when language changes (guard: fn may not be defined on first call)
+  if (typeof _buildWeatherPicker === 'function') _buildWeatherPicker();
   // Generic data-i18n sweep
   document.querySelectorAll('[data-i18n]').forEach(node => {
     const key = node.dataset.i18n;
@@ -248,7 +206,40 @@ function setMatchMode(mode) {
 
 // ── Estadios míticos ────────────────────────────────────────────
 // Build proxied image URL (server fetches from Wikimedia, follows redirects)
-const _imgProxy = f => `/img-proxy?url=${encodeURIComponent('https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=500')}`;
+const _imgProxy  = f => `/img-proxy?url=${encodeURIComponent('https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=500')}`;
+const _refImgProxy = f => `/img-proxy?url=${encodeURIComponent('https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=200')}`;
+
+// Palette for initials-avatar fallback (one per referee, hashed from id)
+const _AVATAR_COLORS = [
+  'linear-gradient(135deg,#b8860b,#ffd700)',
+  'linear-gradient(135deg,#8b0000,#c0392b)',
+  'linear-gradient(135deg,#1a3a5c,#2980b9)',
+  'linear-gradient(135deg,#1a5c2a,#27ae60)',
+  'linear-gradient(135deg,#4a1a5c,#8e44ad)',
+  'linear-gradient(135deg,#5c3a1a,#e67e22)',
+  'linear-gradient(135deg,#1a5c5c,#16a085)',
+  'linear-gradient(135deg,#3d3d3d,#7f8c8d)',
+];
+function _avatarColor(id) {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = ((h * 5) + id.charCodeAt(i)) & 0xffff;
+  return _AVATAR_COLORS[h % _AVATAR_COLORS.length];
+}
+function _initials(name) {
+  return name.split(' ').filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+}
+
+// ── Clima ───────────────────────────────────────────────────────
+const WEATHER = [
+  { id: 'sunny',  emoji: '☀️',  labelEs: 'Soleado',       labelEn: 'Sunny',        goalMult: 1.00 },
+  { id: 'cloudy', emoji: '⛅',  labelEs: 'Nublado',        labelEn: 'Cloudy',       goalMult: 0.97 },
+  { id: 'rain',   emoji: '🌧️', labelEs: 'Lluvia',         labelEn: 'Rain',         goalMult: 0.88 },
+  { id: 'storm',  emoji: '⛈️', labelEs: 'Tormenta',       labelEn: 'Storm',        goalMult: 0.76 },
+  { id: 'snow',   emoji: '❄️', labelEs: 'Nieve',          labelEn: 'Snow',         goalMult: 0.82 },
+  { id: 'wind',   emoji: '🌬️', labelEs: 'Viento fuerte',  labelEn: 'Strong wind',  goalMult: 0.93 },
+  { id: 'heat',   emoji: '🌡️', labelEs: 'Calor extremo',  labelEn: 'Extreme heat', goalMult: 0.91 },
+  { id: 'night',  emoji: '🌙',  labelEs: 'Noche',          labelEn: 'Night',        goalMult: 1.00 },
+];
 
 const STADIUMS = [
   { id:'bernabeu',   name:'Santiago Bernabéu',    city:'Madrid',          country:'España',
@@ -293,6 +284,8 @@ const STADIUMS = [
 ];
 
 let _selectedStadium = null;
+let _selectedReferee = null;     // full referee object from /referees
+let _selectedWeather = null;     // weather object from WEATHER array
 
 function selectStadium(stadiumId) {
   _selectedStadium = STADIUMS.find(s => s.id === stadiumId) || null;
@@ -302,9 +295,39 @@ function selectStadium(stadiumId) {
   });
 }
 
+function selectReferee(refereeId) {
+  // If already selected, deselect (toggle off)
+  if (_selectedReferee && _selectedReferee.id === refereeId) {
+    _selectedReferee = null;
+  } else {
+    _selectedReferee = window._refereesData?.find(r => r.id === refereeId) || null;
+  }
+  document.querySelectorAll('.ref-card').forEach(c => {
+    c.classList.toggle('ref-active', _selectedReferee && c.dataset.id === _selectedReferee.id);
+  });
+}
+
+function selectWeather(weatherId) {
+  if (_selectedWeather && _selectedWeather.id === weatherId) {
+    _selectedWeather = null;
+  } else {
+    _selectedWeather = WEATHER.find(w => w.id === weatherId) || null;
+  }
+  document.querySelectorAll('.wth-card').forEach(c => {
+    c.classList.toggle('wth-active', _selectedWeather && c.dataset.id === _selectedWeather.id);
+  });
+}
+
 // ── Autocomplete data: loaded once on startup ───────────────────
 const _acList = [];
 fetch('/suggest').then(r => r.json()).then(list => _acList.push(...list)).catch(() => {});
+
+// ── Referee data: loaded once on startup ─────────────────────────
+window._refereesData = [];
+fetch('/referees').then(r => r.json()).then(list => {
+  window._refereesData = list;
+  _buildRefereePicker(list);
+}).catch(() => {});
 
 // ── Bootstrap ────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -357,7 +380,70 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup autocomplete for both team inputs
   setupAutocomplete('teamA', 'ac-A', 'A');
   setupAutocomplete('teamB', 'ac-B', 'B');
+
+  // Build weather picker
+  _buildWeatherPicker();
 });
+
+// ── Referee picker builder (called after /referees load) ─────────
+function _buildRefereePicker(referees) {
+  const row = document.getElementById('referee-picker-row');
+  if (!row) return;
+  row.innerHTML = '';
+  // "Random / None" option
+  const noneCard = document.createElement('div');
+  noneCard.className = 'ref-card ref-active';
+  noneCard.dataset.id = '';
+  noneCard.innerHTML =
+    `<div class="ref-photo-area"><div class="ref-initials-av" style="background:linear-gradient(135deg,#444,#888)">?</div></div>` +
+    `<div class="ref-name">${t('ref-random')}</div>`;
+  noneCard.onclick = () => selectReferee('');
+  row.appendChild(noneCard);
+
+  referees.filter(r => r.id !== 'neutral').forEach(ref => {
+    const card = document.createElement('div');
+    card.className = 'ref-card';
+    card.dataset.id = ref.id;
+    const tip = `📋 ${ref.strictness.toFixed(2)} · 🟥 ${ref.red_card_bias.toFixed(2)} · 🥊 ${ref.penalty_rate.toFixed(2)}`;
+    card.title = tip;
+    const ini  = _initials(ref.name);
+    const grad = _avatarColor(ref.id);
+    if (ref.img) {
+      const imgSrc = _refImgProxy(ref.img);
+      card.innerHTML =
+        `<div class="ref-photo-area">` +
+          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy"` +
+          ` onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` +
+          `<div class="ref-initials-av" style="display:none;background:${grad}">${ini}</div>` +
+        `</div>` +
+        `<div class="ref-name">${escHtml(ref.name)}</div>` +
+        `<div class="ref-stats">${tip}</div>`;
+    } else {
+      card.innerHTML =
+        `<div class="ref-photo-area"><div class="ref-initials-av" style="background:${grad}">${ini}</div></div>` +
+        `<div class="ref-name">${escHtml(ref.name)}</div>` +
+        `<div class="ref-stats">${tip}</div>`;
+    }
+    card.onclick = () => selectReferee(ref.id);
+    row.appendChild(card);
+  });
+}
+
+// ── Weather picker builder ───────────────────────────────────────
+function _buildWeatherPicker() {
+  const row = document.getElementById('weather-picker-row');
+  if (!row) return;
+  row.innerHTML = '';
+  WEATHER.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'wth-card';
+    card.dataset.id = w.id;
+    const label = _lang === 'en' ? w.labelEn : w.labelEs;
+    card.innerHTML = `<div class="wth-icon">${w.emoji}</div><div class="wth-label">${escHtml(label)}</div>`;
+    card.onclick = () => selectWeather(w.id);
+    row.appendChild(card);
+  });
+}
 
 // ── Lookup cache: stores last API result per side (A / B) ────
 const _lookupCache = { A: null, B: null };
@@ -532,6 +618,7 @@ async function handleSimulate() {
     }
   });
   document.getElementById('results')?.classList.add('hidden');
+  _timelineStarted = false;
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
 
@@ -546,7 +633,11 @@ async function handleSimulate() {
     formationB: document.getElementById('formationB').value || _lookupCache['B']?.formation || '',
     matchMode:  _matchMode,
     stadium:    _selectedStadium ? _selectedStadium.id : null,
+    refereeId:  _selectedReferee ? _selectedReferee.id : null,
+    isFinal:    false,
+    weatherId:  _selectedWeather ? _selectedWeather.id : null,
     matchSalt:  Date.now() & 0x7fffffff,
+    lang:       _lang,
   };
 
   try {
@@ -560,7 +651,7 @@ async function handleSimulate() {
     if (!response.ok) {
       const err = await response.json().catch(() => ({}));
       // 404 = team not found: show the server message directly (no "Error en la simulación:" prefix)
-      if (response.status === 404) throw new Error(err.error || 'Equipo no encontrado.');
+      if (response.status === 404) throw new Error(err.error || t('fail-lookup'));
       throw new Error(err.error || `Server error ${response.status}`);
     }
 
@@ -569,8 +660,8 @@ async function handleSimulate() {
 
   } catch (err) {
     // 404 messages come pre-formatted from the server (team not found)
-    const isNotFound = err.message.includes('no encontrado') || err.message.includes('not found');
-    showError(isNotFound ? err.message : `Error en la simulación: ${err.message}`);
+    const isNotFound = err.message.includes('no encontrado') || err.message.includes('not found') || err.message.includes('No encontrado') || err.message.includes('Not found');
+    showError(isNotFound ? err.message : `${t('sim-error-prefix')} ${err.message}`);
   } finally {
     setLoading(false);
   }
@@ -623,15 +714,24 @@ function renderResult(data, payload) {
   };
   renderCards(document.getElementById('cards-a'), finalScore.cardsA);
   renderCards(document.getElementById('cards-b'), finalScore.cardsB);
-  renderTimeline(finalScore.scorersA, finalScore.scorersB, finalScore.cardsA, finalScore.cardsB, payload.teamA, payload.teamB, finalScore.matchPenalties, data.stats?.notableEvents);
+  if (!_timelineStarted) {
+    renderTimeline(finalScore.scorersA, finalScore.scorersB, finalScore.cardsA, finalScore.cardsB, payload.teamA, payload.teamB, finalScore.matchPenalties, data.stats?.notableEvents);
+    if (Array.isArray(data.timeline) && data.timeline.length) {
+      // Build the timeline HTML immediately then flush all rows visible at once
+      animateTimeline(data.timeline, payload.teamA, payload.teamB, 0);
+      flushTimeline();
+    }
+  }
 
   // ── Penaltis (sólo si hubo empate)
   document.getElementById('poster-label').textContent =
     t(finalScore.penalties ? 'poster-label-pens' : 'poster-label-final');
   const stadiumCtxEl = document.getElementById('poster-context');
   if (stadiumCtxEl) {
-    const stadiumTxt = _selectedStadium ? `🏟️ ${_selectedStadium.name} · ${_selectedStadium.city}` : 'Partido de leyenda · Campo neutral';
-    stadiumCtxEl.textContent = stadiumTxt;
+    const stadiumTxt  = _selectedStadium ? `🏟️ ${_selectedStadium.name} · ${_selectedStadium.city}` : t('poster-context');
+    const refName     = data.referee?.name;
+    const weatherTxt  = _selectedWeather ? `${_selectedWeather.emoji} ${_lang === 'en' ? _selectedWeather.labelEn : _selectedWeather.labelEs}` : '';
+    stadiumCtxEl.textContent = [stadiumTxt, refName ? `🟥 ${refName}` : '', weatherTxt].filter(Boolean).join(' · ');
   }
   renderPenalties(finalScore.penalties, payload.teamA, payload.teamB);
 
@@ -734,16 +834,23 @@ function renderLineup(side, lineup, teamName, era, badgeUrl) {
   const { primary: kitPrimary, secondary: kitSecondary } = _getKitColors(teamName, side.toLowerCase());
   const kitBg  = kitPrimary  || JERSEY_COLORS[side].bg;
 
+  // Apply kit-accent CSS var to lineup card for badge + top-border tinting
+  const card = document.getElementById(`lineup-card-${side}`);
+  if (card) card.style.setProperty('--kit-col', kitBg);
+
+  let chipIdx = 0;
   Object.keys(rows).sort((a, b) => a - b).forEach(rowKey => {
     const rowDiv = document.createElement('div');
     rowDiv.className = 'pitch-row';
     rows[rowKey].forEach(player => {
       const chip = document.createElement('div');
       chip.className = 'player-chip';
+      chip.style.setProperty('--i', chipIdx++);
       const posDesc = POS_DESCRIPTIONS[player.position] || player.position;
       chip.innerHTML = `
         <div class="player-jersey">${_jerseyIcon(kitBg, _JERSEY_NUM[player.position] ?? '?', kitSecondary)}</div>
         <div class="player-name">${escHtml(player.name)}</div>
+        <div class="player-pos-lbl">${escHtml(player.position)}</div>
         <div class="player-tooltip">
           <span class="tooltip-pos">${escHtml(player.position)}</span>
           <span class="tooltip-name">${escHtml(player.name)}</span>
@@ -812,6 +919,126 @@ function renderTimeline(scorersA, scorersB, cardsA, cardsB, teamA, teamB, matchP
   }).join('');
 }
 
+// ── Animated match timeline (1 real-second = 1 match minute) ──
+/**
+ * Progressively reveals match events over real time.
+ * Uses data.timeline from the engine's buildTimeline() output — each event
+ * has { minute, type, side, player, scoreA, scoreB, narrative? } already set.
+ *
+ * @param {Array}  events       - sorted timeline from engine response
+ * @param {string} teamA        - display name Team A
+ * @param {string} teamB        - display name Team B
+ * @param {number} msPerMinute  - real milliseconds per match minute (default 1000)
+ */
+let _animTimers = [];
+
+// Reveal all still-hidden timeline rows instantly (called when match ends)
+function flushTimeline() {
+  _animTimers.forEach(id => { clearTimeout(id); clearInterval(id); });
+  _animTimers = [];
+  const container = document.getElementById('timeline-events');
+  if (!container) return;
+  container.querySelectorAll('.t-anim-hidden').forEach(row => {
+    row.classList.remove('t-anim-hidden');
+    row.classList.add('t-anim-reveal');
+    // Show full narration text immediately (no typewriter)
+    const narEl = row.querySelector('[data-nar]');
+    if (narEl) {
+      narEl.classList.remove('t-nar-pending');
+      narEl.textContent = narEl.dataset.nar;
+    }
+  });
+  // Also flush any narration still being typed
+  container.querySelectorAll('.t-nar-pending[data-nar]').forEach(narEl => {
+    narEl.classList.remove('t-nar-pending');
+    narEl.textContent = narEl.dataset.nar;
+  });
+}
+
+function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
+  // Cancel any previous animation run
+  _animTimers.forEach(clearTimeout);
+  _animTimers = [];
+  _timelineStarted = true;
+
+  const evCount   = events.length;
+  const header    = document.getElementById('timeline-header');
+  const container = document.getElementById('timeline-events');
+
+  header.innerHTML =
+    `<span style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
+    `<span class="timeline-count">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span>` +
+    `<span style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
+
+  if (!events.length) {
+    container.innerHTML = `<div class="t-empty-match">${t('timeline-empty')}</div>`;
+    return;
+  }
+
+  // Pre-render all event rows hidden
+  container.innerHTML = events.map((ev, idx) => {
+    let icon, suffix;
+    switch (ev.type) {
+      case 'goal':         icon = '⚽'; suffix = ''; break;
+      case 'yellow':       icon = '🟨'; suffix = ''; break;
+      case 'red':          icon = '🟥'; suffix = ''; break;
+      case 'penalty':      icon = '⚽'; suffix = ` <span class="t-tag t-tag-pen">${t('ev-tag-pen')}</span>`; break;
+      case 'penalty_miss': icon = '❌'; suffix = ` <span class="t-tag t-tag-miss">${t('ev-tag-miss')}</span>`; break;
+      case 'corner':       icon = '🚩'; suffix = ` <span class="t-tag t-tag-corner">${t('ev-tag-corner')}</span>`; break;
+      case 'freekick':     icon = '🎯'; suffix = ` <span class="t-tag t-tag-fk">${t('ev-tag-fk')}</span>`; break;
+      case 'injury':       icon = '🩹'; suffix = ''; break;
+      default:             icon = '•';  suffix = '';
+    }
+    const isA      = ev.side === 'A';
+    const nameStr  = ev.player ? escHtml(ev.player) : '';
+    const label    = `${icon}${nameStr ? ' ' + nameStr : ''}${suffix}`;
+    const narHtml  = ev.narrative
+      ? `<div class="t-narration${isA ? ' t-nar-a' : ' t-nar-b'} t-nar-pending" data-nar="${escHtml(ev.narrative)}"></div>`
+      : '';
+    return `<div class="t-event t-event-narrated t-anim-hidden" id="t-ev-${idx}">` +
+      `<div>` +
+        `<div class="t-left">${isA ? label : ''}</div>` +
+        `<div class="t-mid"><span class="t-icon">${icon}</span><span class="t-min">${ev.minute}'</span></div>` +
+        `<div class="t-right">${!isA ? label : ''}</div>` +
+      `</div>` +
+      narHtml +
+      '</div>';
+  }).join('');
+
+  // Schedule each event to appear at event.minute * msPerMinute
+  // msPerMinute=0 → instant mode, no timers, caller must call flushTimeline() after
+  if (msPerMinute === 0) return;
+  events.forEach((ev, idx) => {
+    const delay = ev.minute * msPerMinute;
+    const tid   = setTimeout(() => {
+      const row = document.getElementById(`t-ev-${idx}`);
+      if (row) {
+        row.classList.remove('t-anim-hidden');
+        row.classList.add('t-anim-reveal');
+        // Typewriter effect for narrative
+        const narEl = row.querySelector('.t-nar-pending[data-nar]');
+        if (narEl) {
+          narEl.classList.remove('t-nar-pending');
+          const fullText = narEl.dataset.nar;
+          let i = 0;
+          const typeId = setInterval(() => {
+            i++;
+            narEl.textContent = fullText.slice(0, i);
+            if (i >= fullText.length) clearInterval(typeId);
+          }, 22);
+          _animTimers.push(typeId);
+        }
+      }
+      // Update live score on goal events
+      if (ev.type === 'goal') {
+        const scoreEl = document.getElementById('poster-score');
+        if (scoreEl) scoreEl.textContent = `${ev.scoreA} : ${ev.scoreB}`;
+      }
+    }, delay);
+    _animTimers.push(tid);
+  });
+}
+
 // ── Head-to-head attribute + stat bars ────────────────────
 function renderHthBars(ratings, stats, teamA, teamB) {
   document.getElementById('hth-name-a').textContent = teamA;
@@ -861,12 +1088,24 @@ function renderMoM(mom) {
   if (!mom) return;
   document.getElementById('mom-name').textContent = mom.name;
   const teamColor = mom.team === 'A' ? 'var(--accent-a)' : 'var(--accent-b)';
+  let reasonText;
+  if (mom.reason && typeof mom.reason === 'object') {
+    if (mom.reason.type === 'goals') {
+      const n = mom.reason.count;
+      reasonText = `${n} ${n === 1 ? t('mom-reason-goal') : t('mom-reason-goals')}`;
+    } else {
+      reasonText = t('mom-reason-best');
+    }
+  } else {
+    reasonText = mom.reason || '';
+  }
   document.getElementById('mom-meta').innerHTML =
-    `${escHtml(mom.teamName)} · <span style="color:${teamColor}">${escHtml(mom.reason)}</span>`;
+    `${escHtml(mom.teamName)} · <span style="color:${teamColor}">${escHtml(reasonText)}</span>`;
 }
 
 // ── Pre-match player card presentation ──────────────────────
 let _pmData = null, _pmPayload = null, _pmTick = 667; // ms per simulated minute (default 1 min)
+let _timelineStarted = false;
 
 function selectSpeed(btn) {
   document.querySelectorAll('.pm-speed-pill').forEach(b => b.classList.remove('pm-speed-active'));
@@ -884,6 +1123,72 @@ function showPreMatch(data, payload) {
 
   buildPreMatchSide('a', data.lineups.teamA, payload.teamA, payload.eraA, data.badgeA || _badgeFallback(payload.teamA), data.ratings.teamA);
   buildPreMatchSide('b', data.lineups.teamB, payload.teamB, payload.eraB, data.badgeB || _badgeFallback(payload.teamB), data.ratings.teamB);
+
+  // ── Intro block ──────────────────────────────────────────
+  const pmIntro = document.getElementById('pm-intro');
+  if (pmIntro) {
+    const nameA = payload.teamA, eraA = payload.eraA || '';
+    const nameB = payload.teamB, eraB = payload.eraB || '';
+    const stad  = _selectedStadium;
+    const rA    = data.ratings?.teamA || {};
+    const rB    = data.ratings?.teamB || {};
+    const eraStrA = eraA ? ` <span class="pm-intro-era">${escHtml(eraA)}</span>` : '';
+    const eraStrB = eraB ? ` <span class="pm-intro-era">${escHtml(eraB)}</span>` : '';
+    const stadHtml = stad
+      ? `<div class="pm-intro-stad">🏟️ <strong>${escHtml(stad.name)}</strong> &middot; ${escHtml(stad.city)}</div>`
+      : `<div class="pm-intro-stad">🏟️ ${escHtml(t('pm-intro-neutral'))}</div>`;
+    // Build preview line based on overall ratings gap and style
+    const atkA = rA.attack || 75, midA = rA.midfield || 75, defA = rA.defense || 75;
+    const atkB = rB.attack || 75, midB = rB.midfield || 75, defB = rB.defense || 75;
+    const ovA  = (atkA + midA + defA) / 3;
+    const ovB  = (atkB + midB + defB) / 3;
+    const gap  = Math.abs(ovA - ovB);
+    const domTeam  = ovA >= ovB ? nameA : nameB;
+    const weakTeam = ovA >= ovB ? nameB : nameA;
+    const highAtk  = atkA > 82 || atkB > 82;
+    const highDef  = defA > 82 && defB > 82;
+    let preview;
+    if (_lang === 'en') {
+      if (gap >= 10) {
+        preview = `On paper, <strong>${escHtml(domTeam)}</strong> are the <em>clear favourites</em> ` +
+          `— but upsets are the soul of football. Can <strong>${escHtml(weakTeam)}</strong> defy the odds?`;
+      } else if (gap < 3 && highAtk) {
+        preview = `Two attacking powerhouses collide in what promises to be a <em>goal‑fest</em>. ` +
+          `Brace yourself — this one could go either way.`;
+      } else if (gap < 3 && highDef) {
+        preview = `Two defensive giants face off in a <em>tactical masterclass</em>. ` +
+          `Every set piece, every counter — one moment of magic could decide it.`;
+      } else if (gap < 3) {
+        preview = `The ratings couldn't be closer. A <em>genuine 50–50</em> contest. ` +
+          `Pure football will decide who takes the bragging rights.`;
+      } else {
+        preview = `<strong>${escHtml(domTeam)}</strong> come in as <em>slight favourites</em>, ` +
+          `but football never follows a script. Will the stars deliver on the big stage?`;
+      }
+    } else {
+      if (gap >= 10) {
+        preview = `Sobre el papel, <strong>${escHtml(domTeam)}</strong> parte como <em>favorito claro</em> ` +
+          `— pero el fútbol siempre guarda sorpresas. ¿Podrá <strong>${escHtml(weakTeam)}</strong> dar la campanada?`;
+      } else if (gap < 3 && highAtk) {
+        preview = `Dos potencias ofensivas que prometen un <em>duelo de goles</em>. ` +
+          `Ataque contra ataque y resultado totalmente abierto — agárrate al asiento.`;
+      } else if (gap < 3 && highDef) {
+        preview = `Dos bloques defensivos de primer nivel en una <em>batalla táctica</em>. ` +
+          `Cada balón parado o contragolpe puede ser decisivo.`;
+      } else if (gap < 3) {
+        preview = `Los números no podrían estar más igualados. Un <em>50–50</em> de manual. ` +
+          `Solo el fútbol decidirá quién se lleva los tres puntos.`;
+      } else {
+        preview = `<strong>${escHtml(domTeam)}</strong> parte como <em>ligero favorito</em>, ` +
+          `pero el fútbol nunca sigue un guión. ¿Serán capaces las estrellas de marcar la diferencia?`;
+      }
+    }
+    pmIntro.innerHTML =
+      `<div class="pm-intro-matchup">${escHtml(nameA)}${eraStrA} <span class="pm-intro-vs">VS</span> ${escHtml(nameB)}${eraStrB}</div>` +
+      stadHtml +
+      `<p class="pm-intro-text">${preview}</p>`;
+    pmIntro.classList.remove('hidden');
+  }
 
   // Show stadium info if selected
   const pmStadInfo = document.getElementById('pm-stadium-info');
@@ -1307,17 +1612,33 @@ function _getKitColors(teamLabel, fallbackSide) {
 const _JERSEY_NUM = { GK:1, RB:2, CB:5, LB:3, DM:6, CM:8, RM:7, LM:11, AM:10, RW:7, LW:11, ST:9 };
 
 // ── Jersey SVG shirt icon ────────────────────────────────────
-// Renders a football-shirt silhouette with a number inside
+// Renders a premium football-shirt silhouette with collar, sleeves + number
 function _jerseyIcon(col, num, col2) {
-  const sl = col2 || 'rgba(0,0,0,.20)';
-  return `<svg viewBox="0 0 54 60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8,2 Q14,7 27,7 Q40,7 46,2 L54,8 L54,24 L44,22 L44,58 L10,58 L10,22 L0,24 L0,8 Z"
-          fill="${col}" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
-    <path d="M8,2 L0,8 L0,24 L10,22 L10,8 Z" fill="${sl}" opacity="0.85"/>
-    <path d="M46,2 L54,8 L54,24 L44,22 L44,8 Z" fill="${sl}" opacity="0.85"/>
-    <path d="M14,20 L40,20" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3,3"/>
-    <text x="27" y="43" text-anchor="middle" dominant-baseline="middle"
-          font-size="19" fill="rgba(255,255,255,.97)" font-weight="900"
+  const sl  = col2 || 'rgba(0,0,0,.28)';
+  const hi  = 'rgba(255,255,255,.13)';   // body highlight
+  const sh  = 'rgba(0,0,0,.22)';          // inner shadow
+  return `<svg viewBox="0 0 54 62" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main body -->
+    <path d="M8,4 Q14,10 27,10 Q40,10 46,4 L54,12 L54,27 L44,25 L44,59 L10,59 L10,25 L0,27 L0,12 Z"
+          fill="${col}" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+    <!-- Left sleeve -->
+    <path d="M8,4 L0,12 L0,27 L10,25 L10,10 Z" fill="${sl}" opacity=".75"/>
+    <!-- Right sleeve -->
+    <path d="M46,4 L54,12 L54,27 L44,25 L44,10 Z" fill="${sl}" opacity=".75"/>
+    <!-- Collar shadow ring -->
+    <path d="M18,4.5 Q27,13 36,4.5" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2"/>
+    <!-- Collar highlight -->
+    <path d="M19,4.2 Q27,11.5 35,4.2" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.1"/>
+    <!-- Body chest highlight -->
+    <path d="M12,27 Q27,30 42,27 L42,46 Q27,49 12,46 Z" fill="${hi}"/>
+    <!-- Sleeve inner highlight -->
+    <path d="M2,16 L2,25 L9,24" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+    <path d="M52,16 L52,25 L45,24" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+    <!-- Shoulder seam line -->
+    <line x1="13" y1="24" x2="41" y2="24" stroke="rgba(255,255,255,.18)" stroke-width=".8" stroke-dasharray="2.5,2"/>
+    <!-- Number -->
+    <text x="27" y="45" text-anchor="middle" dominant-baseline="middle"
+          font-size="18" fill="rgba(255,255,255,.96)" font-weight="900"
           font-family="'Arial Black',Arial,sans-serif">${num}</text>
   </svg>`;
 }
@@ -1823,6 +2144,8 @@ function playLiveMatch(data, payload, tickMs = 300) {
   _livePayload = payload;
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
+  // Clear any leftover timers from a previous live match (prevents phantom events/wrong scores)
+  _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
 
   // ── Instant / "Directo" mode: skip live viewer entirely ─────────
   if (tickMs === 0) {
@@ -1831,18 +2154,29 @@ function playLiveMatch(data, payload, tickMs = 300) {
   }
 
   const { finalScore } = data;
-  const events = [
-    ...(finalScore.scorersA || []).map(s => ({ ...s, type: 'goal',   side: 'A' })),
-    ...(finalScore.scorersB || []).map(s => ({ ...s, type: 'goal',   side: 'B' })),
-    ...((finalScore.cardsA?.yellow) || []).map(c => ({ ...c, type: 'yellow', side: 'A' })),
-    ...((finalScore.cardsA?.red)    || []).map(c => ({ ...c, type: 'red',    side: 'A' })),
-    ...((finalScore.cardsB?.yellow) || []).map(c => ({ ...c, type: 'yellow', side: 'B' })),
-    ...((finalScore.cardsB?.red)    || []).map(c => ({ ...c, type: 'red',    side: 'B' })),
-    ...(finalScore.matchPenalties || []).map(p => ({ type: p.scored ? 'penalty' : 'penalty-miss', side: p.side, minute: p.minute, name: p.taker })),
-    ...(data.stats?.notableEvents || []).map(e => ({ type: e.type, side: e.side, minute: e.minute, name: e.name || '' })),
-    ...(finalScore.injuriesA || []).map(i => ({ ...i, type: 'injury', side: 'A' })),
-    ...(finalScore.injuriesB || []).map(i => ({ ...i, type: 'injury', side: 'B' })),
-  ].sort((a, b) => a.minute - b.minute);
+  // Prefer the engine timeline (has narrative) — normalize player→name and type aliases
+  const events = (Array.isArray(data.timeline) && data.timeline.length
+    ? data.timeline.map(ev => ({
+        ...ev,
+        name: ev.name || ev.player || '',
+        type: ev.type === 'penalty_miss' ? 'penalty-miss' : ev.type,
+      }))
+    : [
+        ...(finalScore.scorersA || []).map(s => ({ ...s, type: 'goal',   side: 'A' })),
+        ...(finalScore.scorersB || []).map(s => ({ ...s, type: 'goal',   side: 'B' })),
+        ...((finalScore.cardsA?.yellow) || []).map(c => ({ ...c, type: 'yellow', side: 'A' })),
+        ...((finalScore.cardsA?.red)    || []).map(c => ({ ...c, type: 'red',    side: 'A' })),
+        ...((finalScore.cardsB?.yellow) || []).map(c => ({ ...c, type: 'yellow', side: 'B' })),
+        ...((finalScore.cardsB?.red)    || []).map(c => ({ ...c, type: 'red',    side: 'B' })),
+        ...(finalScore.matchPenalties || []).map(p => ({ type: p.scored ? 'penalty' : 'penalty-miss', side: p.side, minute: p.minute, name: p.taker })),
+        ...(data.stats?.notableEvents || []).map(e => ({ type: e.type, side: e.side, minute: e.minute, name: e.name || '' })),
+        ...(finalScore.injuriesA || []).map(i => ({ ...i, type: 'injury', side: 'A' })),
+        ...(finalScore.injuriesB || []).map(i => ({ ...i, type: 'injury', side: 'B' })),
+      ]
+  ).sort((a, b) => a.minute - b.minute)
+  // Corners and freekicks are shown in the timeline below but kept out of the live feed
+  // to avoid visual clutter and timeline delays
+  .filter(ev => ev.type !== 'corner' && ev.type !== 'freekick');
 
   // Init viewer
   const viewer = document.getElementById('live-viewer');
@@ -1856,12 +2190,16 @@ function playLiveMatch(data, payload, tickMs = 300) {
   drawRadar(data.ratings, payload.teamA, payload.teamB);
   initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // Kickoff whistle — AudioContext unlocked by the click that triggered simulate
-  if (_AC?.state === 'suspended') _AC.resume().catch(() => {});
-  setTimeout(() => _playSound('whistle_start'), 350);
-
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
+  // Start timeline in sync with live match — show timeline card below live viewer
+  if (Array.isArray(data.timeline) && data.timeline.length) {
+    animateTimeline(data.timeline, payload.teamA, payload.teamB, TICK);
+    // Make results section visible (results-live hides everything except timeline-card)
+    const resultsEl = document.getElementById('results');
+    resultsEl.classList.remove('hidden');
+    resultsEl.classList.add('results-live');
+  }
 
   // ── Pre-compute total match duration so the clock syncs with events ──
   // (events with sequential accDelay can exceed 90*TICK)
@@ -1945,11 +2283,14 @@ function playLiveMatch(data, payload, tickMs = 300) {
     penaltyEndMs = regularMs + 900 + kicks * 1100 + 1400;
 
     // Full-time whistle before shootout (so users see the draw score clearly)
-    const ftLabel = (lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
+    const ftLabel = (_lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
       ` — ${finalScore.teamA}:${finalScore.teamB}`;
     _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50));
 
-    // Announcement
+    // Cinematic penalty shootout splash
+    _eventTimers.push(setTimeout(() => triggerShootoutSplash(payload.teamA, payload.teamB), regularMs + 300));
+
+    // Announcement feed entry
     _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500));
 
     let penT = regularMs + 900;
@@ -2005,9 +2346,6 @@ function addFeedEvent(ev) {
 }
 
 function triggerEventOverlay(type, name, score, side) {
-  // Sound effect tied to overlay type
-  const _snd = { goal:'goal', penalty:'goal', yellow:'card', red:'card', injury:'injury', 'penalty-miss':'penalty' };
-  if (_snd[type]) _playSound(_snd[type]);
   // Cancel any stale hide timers from previous overlay events
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1); _overlayHideTimer1 = null; }
   if (_overlayHideTimer2) { clearTimeout(_overlayHideTimer2); _overlayHideTimer2 = null; }
@@ -2098,7 +2436,11 @@ function finishLive() {
   setTimeout(() => {
     viewer.classList.add('hidden');
     viewer.classList.remove('live-fade-out');
+    // Remove live-only mask so renderResult can show all cards
+    document.getElementById('results').classList.remove('results-live');
     renderResult(_liveData, _livePayload);
+    // Flush any pending timeline events so the entire timeline is visible immediately
+    flushTimeline();
   }, 620);
 }
 
@@ -2154,9 +2496,10 @@ function renderPenalties(penalties, teamA, teamB) {
   for (let i = 0; i < kicks; i++) {
     const kA = penalties.shotsA[i];
     const kB = penalties.shotsB[i];
-    const mkKick = k => `<span class="pen-kick ${k.scored ? 'scored' : 'missed'}">${k.scored ? '⚽' : '✕'}</span>`;
+    const mkKick = k => `<span class="pen-kick ${k.scored ? 'scored' : 'missed'}" style="--ki:${i}">${k.scored ? '⚽' : '✕'}</span>`;
     const row = document.createElement('div');
-    row.className = 'pen-row' + (i >= 5 ? ' pen-sd' : '');
+    row.className = 'pen-row pen-row-anim' + (i >= 5 ? ' pen-sd' : '');
+    row.style.setProperty('--i', i);
     row.innerHTML =
       `<div class="pen-kicker-a">${kA ? `<span class="pen-name pen-name-a">${escHtml(kA.name)}</span>${mkKick(kA)}` : ''}</div>` +
       `<div class="pen-round-num">${i < 5 ? i + 1 : 'SD'}</div>` +
@@ -2167,8 +2510,81 @@ function renderPenalties(penalties, teamA, teamB) {
   const winnerName = penalties.winner === 'A' ? teamA : teamB;
   const sdNote     = penalties.suddenDeath ? t('pen-winner-sd') : '';
   document.getElementById('pen-result').innerHTML =
-    `<div class="pen-score-display">${penalties.scoreA} – ${penalties.scoreB}</div>` +
-    `<div class="pen-winner">🏆 <strong>${escHtml(winnerName)}</strong> ${t('pen-winner-suffix')}${sdNote}</div>`;
+    `<div class="pen-score-display pen-score-anim">${penalties.scoreA} – ${penalties.scoreB}</div>` +
+    `<div class="pen-winner pen-winner-anim">🏆 <strong>${escHtml(winnerName)}</strong> ${t('pen-winner-suffix')}${sdNote}</div>`;
+  // Trigger win confetti burst
+  _penConfetti();
+}
+
+// ── Penalty shootout cinematic splash ─────────────────────────
+function triggerShootoutSplash(teamA, teamB) {
+  const overlay = document.getElementById('pen-shootout-overlay');
+  if (!overlay) return;
+  const labelA = overlay.querySelector('.pso-team-a');
+  const labelB = overlay.querySelector('.pso-team-b');
+  const countdown = overlay.querySelector('.pso-countdown');
+  if (labelA) labelA.textContent = teamA;
+  if (labelB) labelB.textContent = teamB;
+  overlay.classList.remove('hidden', 'pso-hide');
+  overlay.classList.add('pso-show');
+  // Countdown 3 → 2 → 1 → GO!
+  const steps = ['3', '2', '1', _lang === 'en' ? 'GO!' : '¡YA!'];
+  let step = 0;
+  if (countdown) countdown.textContent = steps[0];
+  const tick = setInterval(() => {
+    step++;
+    if (step >= steps.length) {
+      clearInterval(tick);
+      overlay.classList.add('pso-hide');
+      overlay.classList.remove('pso-show');
+      setTimeout(() => overlay.classList.add('hidden'), 600);
+    } else {
+      if (countdown) {
+        countdown.classList.remove('pso-count-pulse');
+        void countdown.offsetWidth;
+        countdown.classList.add('pso-count-pulse');
+        countdown.textContent = steps[step];
+      }
+    }
+  }, 700);
+}
+
+// ── Penalty confetti burst ─────────────────────────────────────
+function _penConfetti() {
+  const canvas = document.getElementById('pen-confetti-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width  = canvas.offsetWidth  || window.innerWidth;
+  canvas.height = canvas.offsetHeight || 320;
+  const W = canvas.width, H = canvas.height;
+  canvas.style.opacity = '1';
+  const COLORS = ['#fbbf24','#22c55e','#60a5fa','#f87171','#a78bfa','#fff','#f472b6'];
+  const particles = Array.from({length: 80}, () => ({
+    x: W * Math.random(), y: -10 - Math.random() * 40,
+    vx: (Math.random() - .5) * 4, vy: 2.5 + Math.random() * 3,
+    r: 4 + Math.random() * 5, rot: Math.random() * 360,
+    drot: (Math.random() - .5) * 8,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    shape: Math.random() > .5 ? 'rect' : 'circle',
+  }));
+  let frame = 0;
+  const MAX = 90;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x  += p.vx; p.y += p.vy; p.rot += p.drot; p.vy += 0.08;
+      ctx.save(); ctx.globalAlpha = Math.max(0, 1 - frame / MAX);
+      ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      if (p.shape === 'rect') ctx.fillRect(-p.r, -p.r*.5, p.r*2, p.r);
+      else { ctx.beginPath(); ctx.arc(0, 0, p.r*.7, 0, Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    frame++;
+    if (frame < MAX + 20) requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, W, H); canvas.style.opacity = '0'; }
+  }
+  draw();
 }
 
 // ── Autocomplete (team name suggestions) ─────────────────────

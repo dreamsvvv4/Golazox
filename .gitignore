@@ -4,10 +4,23 @@ match_engine/webapp/node_modules/
 
 # Debug / temp files
 wp_*.txt
+sn_*.txt
+*_result*.txt
+*_debug*.txt
+git_*.txt
+it_result.txt
 _debug_search.js
 _wp_test.js
+_smoke_narrator.js
+_sn_debug.js
+_test_lookups.js
+_wp_sn_test.js
 match_engine/webapp/_debug_search.js
 match_engine/webapp/_wp_test.js
+match_engine/webapp/_smoke_narrator.js
+match_engine/webapp/_sn_debug.js
+match_engine/webapp/_test_lookups.js
+match_engine/webapp/_wp_sn_test.js
 
 # Seeder progress state
 .seed-progress.json

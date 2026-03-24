@@ -1,0 +1,222 @@
+{
+  "goal": {
+    "contexto": {
+      "early":         { "es": ["En los compases iniciales del partido,", "Con el choque apenas comenzado,", "Cuando el encuentro todavía buscaba su ritmo,"], "en": ["In the early stages of the match,", "With the game barely underway,", "As the match was still finding its rhythm,"] },
+      "first_half":    { "es": ["En la primera mitad del duelo,", "Antes del descanso,", "Con el partido equilibrado en la primera mitad,"], "en": ["In the first half of the contest,", "Before the break,", "With the match finely balanced in the opening period,"] },
+      "second_half":   { "es": ["Pasado el ecuador del partido,", "Con la segunda mitad en su mejor momento,", "En la segunda mitad del encuentro,"], "en": ["Past the halfway mark,", "With the second half in full swing,", "As the second period unfolded,"] },
+      "late":          { "es": ["En los últimos minutos de la contienda,", "Con el partido entrando en su tramo decisivo,", "Cuando el tiempo se agotaba,"], "en": ["In the closing stages,", "As the match entered its decisive phase,", "With time running out,"] },
+      "final_minutes": { "es": ["En el tramo final del encuentro,", "Con el marcador aún por decidir,", "En los instantes cruciales,"], "en": ["In the dying moments of the match,", "With the scoreboard still undecided,", "At the most critical juncture,"] }
+    },
+    "creacion": {
+      "posesion": { "es": ["tras un paciente trabajo colectivo y un pase filtrado en profundidad,", "después de una elaborada jugada de toque por el interior,", "con una combinación cinemática entre líneas,"], "en": ["after patient build-up play and a perfectly-timed through ball,", "following a beautifully crafted combination through the middle,", "with a flowing exchange through the lines,"] },
+      "directo":  { "es": ["en una transición fulgurante que sorprendió a la defensa rival,", "aprovechando un rápido contragolpe,", "en un balón directo que rompió la línea defensiva,"], "en": ["on a blistering counter-attack that caught the defence off guard,", "capitalising on a swift transition,", "from a direct ball that split the defensive line,"] },
+      "catenaccio": { "es": ["tras explotar un balón parado con precisión quirúrgica,", "aprovechando un error defensivo del rival,", "en una jugada a balón parado perfectamente ensayada,"], "en": ["from a set piece executed with surgical precision,", "capitalising on a defensive error by the opposition,", "from a perfectly rehearsed set-piece routine,"] },
+      "default":  { "es": ["en una jugada de gran calidad,", "tras una incursión peligrosa,"], "en": ["from a high-quality move,", "following a dangerous attack,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player} recibe el esférico con una calidad suprema, se gira con elegancia y", "${player} se asocia con un compañero, se desmarca de su par con maestría y"], "en": ["${player} receives the ball with supreme quality, turns elegantly and", "${player} combines with a teammate, loses his marker with masterful skill and"] },
+      "good":    { "es": ["${player} se posiciona a la perfección, controla el balón y", "${player} recibe el pase, se libera de su marcador y"], "en": ["${player} positions himself perfectly, controls the ball and", "${player} receives the pass, shakes off his marker and"] },
+      "average": { "es": ["${player} llega al área en el momento justo y", "${player} se encuentra con el balón y"], "en": ["${player} arrives in the area at just the right moment and", "${player} finds himself with the ball and"] },
+      "clutch":  { "es": ["con la presión del momento a cuestas, ${player} asume la responsabilidad y", "en el instante definitivo, ${player} no tiembla y"], "en": ["with the weight of the moment on his shoulders, ${player} steps up and", "in the defining instant, ${player} holds his nerve and"] },
+      "default": { "es": ["${player} dispone del balón y"], "en": ["${player} has the ball and"] }
+    },
+    "desenlace": {
+      "power":    { "es": ["remata con una potencia brutal que el portero nada puede hacer. ¡¡¡GOOOOOL!!!"], "en": ["fires with ferocious power — the goalkeeper is helpless. GOAL!!!"] },
+      "placed":   { "es": ["coloca el balón en la escuadra con una precisión impecable. ¡¡¡GOOOOOL!!!"], "en": ["places the ball into the top corner with impeccable precision. GOAL!!!"] },
+      "tap_in":   { "es": ["empuja el balón al fondo de la red casi sin ángulo. ¡¡¡GOOOOOL!!!"], "en": ["taps it home from close range. GOAL!!!"] },
+      "volley":   { "es": ["conecta una volea de media vuelta que entra como una exhalación. ¡¡¡GOOOOOL!!!"], "en": ["connects with an instinctive half-volley that flies in. GOAL!!!"] },
+      "header":   { "es": ["remata de cabeza con una potencia y precisión sobrehumanas. ¡¡¡GOOOOOL!!!"], "en": ["powers in the header with inhuman strength and precision. GOAL!!!"] }
+    }
+  },
+
+  "yellow": {
+    "contexto": {
+      "early":         { "es": ["En los prolegómenos del partido,", "Cuando el choque aún se calentaba,"], "en": ["Early in the proceedings,", "As the match was warming up,"] },
+      "first_half":    { "es": ["En la primera mitad,", "Antes del descanso,"], "en": ["In the first half,", "Before the interval,"] },
+      "second_half":   { "es": ["En la segunda mitad,", "Con el partido avanzado,"], "en": ["In the second half,", "As the game progressed,"] },
+      "late":          { "es": ["Con el partido ya en su fase final,", "En los compases finales,"], "en": ["With the match in its final phase,", "In the closing stages,"] },
+      "final_minutes": { "es": ["En los instantes de mayor tensión,", "Con los nervios a flor de piel,"], "en": ["In the tensest moments,", "With nerves running high,"] },
+      "default":       { "es": ["Durante el partido,"], "en": ["During the match,"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["interrumpiendo un ataque elaborado del rival,"], "en": ["breaking up a patient attacking move,"] },
+      "directo":    { "es": ["en un lance físico durante una transición,"], "en": ["in a physical challenge during a transition,"] },
+      "catenaccio": { "es": ["al tratar de preservar la organización defensiva,"], "en": ["while trying to maintain defensive shape,"] },
+      "default":    { "es": ["en una disputa por el balón,"], "en": ["in a tussle for the ball,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["el colegiado no tiene dudas y muestra el cartón amarillo a ${player}."], "en": ["the referee has no hesitation in showing ${player} the yellow card."] },
+      "good":    { "es": ["el árbitro señala la falta y amonesta a ${player}."], "en": ["the referee signals the foul and books ${player}."] },
+      "average": { "es": ["${player} recibe la tarjeta amarilla."], "en": ["${player} is cautioned."] },
+      "clutch":  { "es": ["incluso ${player}, de habitual compostura, recibe el cartón amarillo."], "en": ["even the usually composed ${player} picks up a yellow card."] },
+      "default": { "es": ["${player} es amonestado."], "en": ["${player} is booked."] },
+      "ref_collina": { "es": ["${referee}, con esa mirada penetrante que no admite debate, muestra el amarillo a ${player}."], "en": ["${referee}, with that piercing gaze that brooks no argument, shows the yellow to ${player}."] },
+      "ref_mateu":   { "es": ["${referee} vuelve a estar en el centro de todo — tarjeta amarilla a ${player} sin ni pensarlo.", "${referee} saca con gesto teatral la tarjeta a ${player}. ¡El protagonismo es suyo!"], "en": ["${referee} is at the centre of it all again — yellow card to ${player} without hesitation.", "${referee} flourishes the card at ${player} with characteristic drama!"] },
+      "ref_merk":    { "es": ["${referee}, disciplinado y meticuloso, interrumpe el juego y sanciona a ${player}."], "en": ["${referee}, disciplined and methodical, stops play and books ${player}."] },
+      "ref_webb":    { "es": ["${referee} se impone con autoridad y amonesta a ${player}."], "en": ["${referee} asserts his authority and books ${player}."] },
+      "ref_moreno":  { "es": ["${referee} tarda en reaccionar pero finalmente saca la tarjeta a ${player} — decisión muy discutible."], "en": ["${referee} is slow to react but eventually books ${player} — a very questionable call."] }
+    },
+    "desenlace": {
+      "warning": { "es": ["Es el aviso que no puede permitirse repetir."], "en": ["It's a warning he cannot afford to repeat."] },
+      "protest": { "es": ["El jugador alza los brazos en señal de protesta."], "en": ["The player raises his arms in protest."] },
+      "default": { "es": ["El juego se reanuda."], "en": ["Play resumes."] }
+    }
+  },
+
+  "red": {
+    "contexto": {
+      "early":         { "es": ["Pronto en el partido, un suceso inesperado:"], "en": ["Early in the match, an unexpected moment:"] },
+      "first_half":    { "es": ["En la primera parte, el juego se complica para un equipo:"], "en": ["In the first half, the game turns difficult for one side:"] },
+      "second_half":   { "es": ["En la segunda mitad,"], "en": ["In the second half,"] },
+      "late":          { "es": ["En los minutos finales, un momento que lo cambia todo:"], "en": ["In the final minutes, a moment that changes everything:"] },
+      "final_minutes": { "es": ["Con el final a la vista,"], "en": ["With the end in sight,"] },
+      "default":       { "es": ["En un momento tenso del partido,"], "en": ["At a tense moment in the match,"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["tras una entrada tardía que destroza una jugada elaborada,"], "en": ["after a reckless challenge that cuts short a flowing attack,"] },
+      "directo":    { "es": ["en un lance de fuerza que se torna peligroso,"], "en": ["in a physical confrontation that turns dangerous,"] },
+      "catenaccio": { "es": ["al intentar frenar el último recurso ofensivo del rival,"], "en": ["desperately trying to stop the opposition's final attacking thrust,"] },
+      "default":    { "es": ["en una jugada que no debería haber ocurrido,"], "en": ["in a moment that should never have happened,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player} comete una entrada inadmisible y el árbitro no duda: ROJA DIRECTA."], "en": ["${player} commits an unacceptable challenge and the referee does not hesitate: STRAIGHT RED."] },
+      "good":    { "es": ["${player} es expulsado tras una falta flagrante."], "en": ["${player} is sent off for a blatant foul."] },
+      "average": { "es": ["${player} se va a las duchas antes de tiempo."], "en": ["${player} walks to the showers early."] },
+      "clutch":  { "es": ["Incluso ${player}, pieza clave del equipo, es expulsado."], "en": ["Even the key player ${player} is shown the red card."] },
+      "ref_collina": { "es": ["${referee} avanza hacia ${player} con calma absoluta, saca la roja y no acepta réplica alguna."], "en": ["${referee} strides toward ${player} with total composure, produces the red, and accepts no argument."] },
+      "ref_mateu":   { "es": ["${referee} esala rapidamente de cero a rojo — ${player} ve la cartulina directa en una decisión que incendia el estadio.", "¡Qué escena! ${referee} expulsa a ${player} y el estadio estalla."], "en": ["${referee} escalates instantly — ${player} sees a straight red in a decision that ignites the stadium.", "What a scene! ${referee} sends off ${player} and the ground erupts."] },
+      "ref_merk":    { "es": ["${referee} no tolera la agresividad — ${player} recibe la roja directa."], "en": ["${referee} will not tolerate aggression — ${player} receives a straight red."] },
+      "ref_moreno":  { "es": ["${referee} elige este momento para sacar la roja a ${player} en una decisión que dejará perplejos a todos."], "en": ["${referee} chooses this moment to send off ${player} in a decision that will baffle everyone."] },
+      "default": { "es": ["${player} es expulsado."], "en": ["${player} is sent off."] }
+    },
+    "desenlace": {
+      "ten_men": { "es": ["Su equipo deberá completar el partido con diez hombres."], "en": ["His team must see out the match with ten men."] },
+      "default": { "es": ["Un golpe durísimo para su equipo."], "en": ["A huge blow for his team."] }
+    }
+  },
+
+  "injury": {
+    "contexto": {
+      "early":         { "es": ["En los minutos iniciales,"], "en": ["In the early minutes,"] },
+      "first_half":    { "es": ["Antes de llegar al descanso,"], "en": ["Before half-time,"] },
+      "second_half":   { "es": ["Avanzado el partido,"], "en": ["As the game wore on,"] },
+      "late":          { "es": ["En los momentos decisivos,"], "en": ["At a critical moment,"] },
+      "final_minutes": { "es": ["Con la conclusión próxima,"], "en": ["With the match nearly over,"] },
+      "default":       { "es": ["Durante el partido,"], "en": ["During the match,"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["en una disputa por el balón,"], "en": ["in a ball-winning challenge,"] },
+      "directo":    { "es": ["en un choque físico de alta intensidad,"], "en": ["in a high-intensity physical clash,"] },
+      "catenaccio": { "es": ["al defender una acción de estrategia,"], "en": ["while defending a set-piece,"] },
+      "default":    { "es": ["en un lance del juego,"], "en": ["in a game situation,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player}, pieza clave del sistema, cae al suelo lesionado."], "en": ["${player}, a key component of the team's system, goes down injured."] },
+      "good":    { "es": ["${player} tiene que retirarse del terreno de juego con molestias."], "en": ["${player} has to leave the field with discomfort."] },
+      "average": { "es": ["${player} se lesiona y necesita asistencia médica."], "en": ["${player} picks up an injury and requires medical attention."] },
+      "clutch":  { "es": ["${player}, justo quien más se necesitaba, sale lesionado."], "en": ["${player}, the player most needed, limps off injured."] },
+      "default": { "es": ["${player} abandona el campo lesionado."], "en": ["${player} leaves the field injured."] }
+    },
+    "desenlace": {
+      "sub":     { "es": ["El banquillo deberá adaptarse."], "en": ["The bench will need to adapt."] },
+      "default": { "es": ["Un contratiempo que puede cambiar los planes del técnico."], "en": ["A setback that may change the manager's plans."] }
+    }
+  },
+
+  "penalty": {
+    "contexto": {
+      "early":         { "es": ["En plena apertura del partido,"], "en": ["In the early exchanges,"] },
+      "first_half":    { "es": ["En la primera mitad,"], "en": ["In the first half,"] },
+      "second_half":   { "es": ["Con el partido en su segunda mitad,"], "en": ["In the second half,"] },
+      "late":          { "es": ["Con el tiempo corriendo en contra,"], "en": ["With time running out,"] },
+      "final_minutes": { "es": ["En los instantes de máxima tensión,"], "en": ["In the most nerve-shredding moments,"] },
+      "default":       { "es": ["En una jugada de gran tensión,"], "en": ["In a high-tension moment,"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["tras una mano en el área aprovechando un remate tras una jugada trabajada,"], "en": ["after a handball in the area following a flowing attacking move,"] },
+      "directo":    { "es": ["le derriban en el área en una acción de contra,"], "en": ["he is brought down in the box on a counter-attack,"] },
+      "catenaccio": { "es": ["el delantero es zancadilleado en el área rival,"], "en": ["the striker is tripped inside the opposition penalty area,"] },
+      "default":    { "es": ["el árbitro señala el punto de penalti,"], "en": ["the referee points to the spot,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player} coge el balón, respira hondo y lo coloca. El portero adivina la dirección pero no llega."], "en": ["${player} picks up the ball, takes a deep breath and places it. The keeper guesses right but cannot reach it."] },
+      "good":    { "es": ["${player} dispara al centro. El portero se tira pero el balón entra."], "en": ["${player} fires down the middle. The keeper dives but the ball goes in."] },
+      "average": { "es": ["${player} ejecuta el lanzamiento y el balón entra por la escuadra."], "en": ["${player} steps up and fires it into the corner."] },
+      "clutch":  { "es": ["${player} no tiembla. Pausa, carrera y… dentro. Magistral."], "en": ["${player} doesn't flinch. Steps back, runs up and… in. Masterful."] },
+      "default": { "es": ["${player} transforma el penalti."], "en": ["${player} converts the penalty."] }
+    },
+    "desenlace": {
+      "nets_it": { "es": ["¡Gol de penalti! El marcador cambia."], "en": ["Penalty goal! The scoreboard changes."] },
+      "default": { "es": ["¡La pelota entra! El estadio explota."], "en": ["The ball is in! The stadium erupts."] }
+    }
+  },
+
+  "penalty_miss": {
+    "contexto": {
+      "early":         { "es": ["En una gran oportunidad temprana,"], "en": ["In an early big chance,"] },
+      "first_half":    { "es": ["En la primera mitad,"], "en": ["In the first half,"] },
+      "second_half":   { "es": ["Con el partido avanzado,"], "en": ["With the game progressed,"] },
+      "late":          { "es": ["Con el marcador aún en juego,"], "en": ["With the score still in the balance,"] },
+      "final_minutes": { "es": ["En el momento más importante,"], "en": ["At the most important moment,"] },
+      "default":       { "es": ["En una jugada decisiva,"], "en": ["In a decisive moment,"] }
+    },
+    "creacion": {
+      "default": { "es": ["el árbitro señala penalti,"], "en": ["the referee awards a penalty,"] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player} afronta la responsabilidad pero el portero adivina la dirección y detiene el lanzamiento."], "en": ["${player} steps up but the goalkeeper reads it perfectly and makes the save."] },
+      "good":    { "es": ["${player} dispara fuerte pero el balón se va al poste."], "en": ["${player} fires hard but the ball strikes the post."] },
+      "average": { "es": ["${player} lanza pero el portero para el penalti."], "en": ["${player} takes the penalty but the goalkeeper saves it."] },
+      "clutch":  { "es": ["Incluso ${player}, habitualmente fiable en este cometido, falla el penalti."], "en": ["Even the usually reliable ${player} misses the penalty."] },
+      "default": { "es": ["${player} falla el penalti."], "en": ["${player} misses the penalty."] }
+    },
+    "desenlace": {
+      "relief":  { "es": ["Alivio en el banquillo contrario."], "en": ["Relief on the opposition bench."] },
+      "default": { "es": ["El estadio contiene la respiración."], "en": ["The stadium holds its breath."] }
+    }
+  },
+
+  "corner": {
+    "contexto": {
+      "default": { "es": ["En el minuto ${minute},"], "en": ["In minute ${minute},"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["tras un disparo que rozó el larguero,"], "en": ["after a shot that grazed the crossbar,"] },
+      "directo":    { "es": ["tras un ataque directo rechazado por la defensa,"], "en": ["after a direct attack was blocked by the defence,"] },
+      "catenaccio": { "es": ["fruto de la insistencia ofensiva,"], "en": ["from persistent attacking pressure,"] },
+      "default":    { "es": ["el equipo obtiene un saque de esquina."], "en": ["the team earns a corner kick."] }
+    },
+    "ejecucion": {
+      "default": { "es": ["El balón se coloca en el córner."], "en": ["The ball is placed at the corner flag."] }
+    },
+    "desenlace": {
+      "cleared": { "es": ["La defensa despeja sin peligro."], "en": ["The defence clears comfortably."] },
+      "chance":  { "es": ["Genera peligro en el área pero sin consecuencias."], "en": ["It creates danger in the box but comes to nothing."] },
+      "default": { "es": ["Sale sin consecuencias."], "en": ["It comes to nothing."] }
+    }
+  },
+
+  "freekick": {
+    "contexto": {
+      "default": { "es": ["Minuto ${minute}:"], "en": ["Minute ${minute}:"] }
+    },
+    "creacion": {
+      "posesion":   { "es": ["una falta directa en una posición privilegiada, clásica en el juego de combinación,"], "en": ["a direct free kick from a prime position, a hallmark of their passing game,"] },
+      "directo":    { "es": ["una falta directa peligrosa en zona de remate,"], "en": ["a dangerous direct free kick in a shooting position,"] },
+      "catenaccio": { "es": ["una falta en el costado del área, típica apuesta del contraataque,"], "en": ["a free kick on the edge of the area, a typical counter-attacking gambit,"] },
+      "default":    { "es": ["una falta directa en posición peligrosa."], "en": ["a direct free kick from a dangerous position."] }
+    },
+    "ejecucion": {
+      "elite":   { "es": ["${player} se encarga del lanzamiento. El esférico dibuja una parábola perfecta…"], "en": ["${player} steps up to take it. The ball curves in a perfect arc…"] },
+      "good":    { "es": ["${player} dispara con fuerza hacia la portería…"], "en": ["${player} fires powerfully toward goal…"] },
+      "average": { "es": ["${player} ejecuta la falta…"], "en": ["${player} takes the free kick…"] },
+      "default": { "es": ["Se lanza la falta directa…"], "en": ["The free kick is taken…"] }
+    },
+    "desenlace": {
+      "saved":  { "es": ["el portero estira todo lo que puede y desvía a córner."], "en": ["the goalkeeper stretches full length and tips it over."] },
+      "over":   { "es": ["el balón se marcha por encima del larguero entre el alivio de la defensa."], "en": ["the ball sails over the bar to the relief of the defence."] },
+      "wall":   { "es": ["la barrera desvía el balón a córner."], "en": ["the wall deflects the ball away for a corner."] },
+      "default": { "es": ["sin peligro real."], "en": ["without real danger."] }
+    }
+  }
+}

@@ -11,6 +11,7 @@
  *   node seed_squads.js                     # Todo (salta los cacheados)
  *   node seed_squads.js --batch national    # Solo selecciones
  *   node seed_squads.js --batch clubs       # Solo clubes
+ *   node seed_squads.js --batch winners     # Solo campeones WC/Euro/UCL
  *   node seed_squads.js --dry-run           # Vista previa sin descargar
  *   node seed_squads.js --delay 3000        # Delay entre peticiones (ms, default 2500)
  *   node seed_squads.js --team "Spain"      # Un equipo, todos sus años
@@ -129,6 +130,52 @@ const CLUB_TEAMS = [
   { team: 'Celtic',             years: [1967,1969,1970],                                 region: 'Escocia' },
 ];
 
+// ── Solo campeones (modo --batch winners) ─────────────────────
+// Selecciones: solo el año en que ganaron el Mundial o la Eurocopa
+// Clubes: solo el año en que ganaron la Champions League
+const WINNERS_TEAMS = [
+  // ── Selecciones campeonas del MUNDO ──────────────────────────
+  { team: 'england',    years: [1966],                       region: 'WC winner' },
+  { team: 'brasil',     years: [1970,1994,2002],             region: 'WC winner' },
+  { team: 'germany',    years: [1974,1990,2014],             region: 'WC winner' },
+  { team: 'argentina',  years: [1978,1986,2022],             region: 'WC winner' },
+  { team: 'italy',      years: [1982,2006],                  region: 'WC winner' },
+  { team: 'france',     years: [1998,2018],                  region: 'WC winner' },
+  { team: 'spain',      years: [2010],                       region: 'WC winner' },
+
+  // ── Selecciones campeonas de EUROCOPA ─────────────────────────
+  { team: 'spain',      years: [2008,2012,2024],             region: 'Euro winner' },
+  { team: 'germany',    years: [1972,1980,1996],             region: 'Euro winner' },
+  { team: 'france',     years: [1984,2000],                  region: 'Euro winner' },
+  { team: 'italy',      years: [1968,2021],                  region: 'Euro winner' },
+  { team: 'netherlands',years: [1988],                       region: 'Euro winner' },
+  { team: 'denmark',    years: [1992],                       region: 'Euro winner' },
+  { team: 'greece',     years: [2004],                       region: 'Euro winner' },
+  { team: 'portugal',   years: [2016],                       region: 'Euro winner' },
+
+  // ── Clubes campeones de CHAMPIONS LEAGUE ─────────────────────
+  { team: 'Real Madrid',          years: [1956,1957,1958,1959,1966,1998,2000,2002,2014,2016,2017,2018,2022,2024], region: 'UCL winner' },
+  { team: 'AC Milan',             years: [1963,1969,1989,1990,1994,2003,2007],           region: 'UCL winner' },
+  { team: 'Bayern Munich',        years: [1974,1975,1976,2001,2013,2020],                region: 'UCL winner' },
+  { team: 'Liverpool',            years: [1977,1978,1981,1984,2005,2019],                region: 'UCL winner' },
+  { team: 'Barcelona',            years: [1992,2006,2009,2011,2015],                     region: 'UCL winner' },
+  { team: 'Ajax',                 years: [1971,1972,1973,1995],                          region: 'UCL winner' },
+  { team: 'Inter Milan',          years: [1964,1965,2010],                               region: 'UCL winner' },
+  { team: 'Manchester United',    years: [1968,1999,2008],                               region: 'UCL winner' },
+  { team: 'Juventus',             years: [1985,1996],                                    region: 'UCL winner' },
+  { team: 'Borussia Dortmund',    years: [1997],                                         region: 'UCL winner' },
+  { team: 'Porto',                years: [1987,2004],                                    region: 'UCL winner' },
+  { team: 'Chelsea',              years: [2012,2021],                                    region: 'UCL winner' },
+  { team: 'Manchester City',      years: [2023],                                         region: 'UCL winner' },
+  { team: 'Benfica',              years: [1961,1962],                                    region: 'UCL winner' },
+  { team: 'Marseille',            years: [1993],                                         region: 'UCL winner' },
+  { team: 'PSV',                  years: [1988],                                         region: 'UCL winner' },
+  { team: 'Nottingham Forest',    years: [1979,1980],                                    region: 'UCL winner' },
+  { team: 'Aston Villa',          years: [1982],                                         region: 'UCL winner' },
+  { team: 'Feyenoord',            years: [1970],                                         region: 'UCL winner' },
+  { team: 'Celtic',               years: [1967],                                         region: 'UCL winner' },
+];
+
 // ── Construir cola de descargas ────────────────────────────────
 function buildQueue() {
   let catalog = [];
@@ -136,6 +183,7 @@ function buildQueue() {
   // Clubs first: easier to verify, not rate-limited as aggressively
   if (BATCH === 'clubs'    || BATCH === 'all') catalog.push(...CLUB_TEAMS);
   if (BATCH === 'national' || BATCH === 'all') catalog.push(...NATIONAL_TEAMS);
+  if (BATCH === 'winners')                     catalog.push(...WINNERS_TEAMS);
 
   if (ONLY_TEAM) {
     const key = ONLY_TEAM.toLowerCase();
@@ -153,6 +201,24 @@ function buildQueue() {
 
 // ── Utilidades ────────────────────────────────────────────────
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+// Pausa caótica que simula lectura humana: base ±40% + pico ocasional de 10-20s
+function humanDelay(baseMs) {
+  const jitter = baseMs * 0.4;
+  const delay  = baseMs - jitter + Math.random() * jitter * 2; // ±40%
+  // 1 de cada 8 peticiones → pausa larga de "lectura" (10-20s)
+  const longPause = Math.random() < 0.125 ? 10000 + Math.random() * 10000 : 0;
+  return Math.round(delay + longPause);
+}
+
+// Pausa caótica que simula lectura humana: base ± 40% + pico ocasional
+function humanDelay(baseMs) {
+  const jitter = baseMs * 0.4;
+  const delay  = baseMs - jitter + Math.random() * jitter * 2; // base ±40%
+  // 1 de cada 8 peticiones → pausa larga de lectura (10-20s)
+  const longPause = Math.random() < 0.125 ? 10000 + Math.random() * 10000 : 0;
+  return Math.round(delay + longPause);
+}
 
 function formatTime(ms) {
   const m = Math.floor(ms / 60000);
@@ -279,9 +345,9 @@ async function main() {
         if (consecutiveFails >= 5 && consecutiveFails % 5 === 0) {
           const backoff = Math.min(consecutiveFails * 500, 10000); // up to 10s
           console.log(`  ⚠️  ${consecutiveFails} fallos consecutivos — pausa de ${backoff}ms`);
-          await sleep(backoff);
+          await sleep(humanDelay(backoff));
         } else {
-          await sleep(800); // short delay even on failures
+          await sleep(humanDelay(800)); // short delay even on failures
         }
 
       } else {
@@ -291,15 +357,16 @@ async function main() {
         const gk     = result.players.find(p => p.position === 'GK');
         const gkName = gk ? gk.name : '(sin GK?)';
         const total2 = result.players.length;
-        console.log(`  [${num}/${total}] ${pct}%  ⬇️   ${team.padEnd(22)} ${year}  ${result.formation}  ${total2}j  GK: ${gkName}  (${ms}ms)`);
+        const actualDelay = humanDelay(DELAY);
+        console.log(`  [${num}/${total}] ${pct}%  ⬇️   ${team.padEnd(22)} ${year}  ${result.formation}  ${total2}j  GK: ${gkName}  (${ms}ms, espera ~${Math.round(actualDelay/1000)}s)`);
         // Only throttle after actual network requests
-        await sleep(DELAY);
+        await sleep(actualDelay);
       }
 
     } catch (e) {
       console.log(`  [${num}/${total}] ${pct}%  ❌  ${team.padEnd(22)} ${year}  ERROR: ${e.message}`);
       failed++;
-      await sleep(DELAY); // wait even after errors
+      await sleep(humanDelay(DELAY)); // wait even after errors
     }
 
     // Write progress file every 5 items

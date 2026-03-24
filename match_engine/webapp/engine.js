@@ -15,6 +15,30 @@
 
 'use strict';
 
+const {
+  getRefereeById,
+  applyBigMatchPressure,
+  calcCardRate,
+  calcRedRate,
+  calcPenaltyRate,
+  calcFoulRate,
+  buildRefereeStats,
+  NEUTRAL_REFEREE,
+} = require('./referee_logic');
+
+// ── Weather effects lookup ─────────────────────────────────────
+// goalMult applied to xgA/xgB; foulMult applied in buildStats.
+const WEATHER_EFFECTS = {
+  sunny:  { goalMult: 1.00, foulMult: 1.00 },
+  cloudy: { goalMult: 0.97, foulMult: 1.00 },
+  rain:   { goalMult: 0.88, foulMult: 1.10 },
+  storm:  { goalMult: 0.76, foulMult: 1.18 },
+  snow:   { goalMult: 0.82, foulMult: 1.07 },
+  wind:   { goalMult: 0.93, foulMult: 1.04 },
+  heat:   { goalMult: 0.91, foulMult: 1.10 },
+  night:  { goalMult: 1.00, foulMult: 1.00 },
+};
+
 // ── Deterministic PRNG (Mulberry32) ───────────────────────────
 // Gives fully reproducible results for a given seed.
 function mulberry32(seed) {
@@ -355,6 +379,61 @@ function calcXG(atkOwn, defOpp, midOwn, gkOpp) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// 3b. DYNAMIC MATCH MODIFIERS
+// ─────────────────────────────────────────────────────────────
+
+/**
+ * Returns a defense-effectiveness multiplier for minute-based stamina.
+ * After minute 70, teams tire: defensive coverage weakens → attacking teams benefit.
+ * Decay rate differs by play style:
+ *   catenaccio → most disciplined (least decay, 0.6% per min over 70)
+ *   posesion   → moderate decay (0.8% per min) — controlled but tired legs
+ *   directo    → fastest decay (1.2% per min) — high-intensity pressing exhausts
+ * Returns 1.0 before min 70, falling to a floor of 0.75.
+ */
+function staminaDecay(minute, playStyle = 'directo') {
+  if (minute <= 70) return 1.0;
+  const excess = minute - 70;
+  const rate = { posesion: 0.008, directo: 0.012, catenaccio: 0.006 }[playStyle] || 0.010;
+  return Math.max(0.75, 1.0 - excess * rate);
+}
+
+/**
+ * Returns a scorer-weight multiplier for clutch players in pressure situations.
+ * Requires player.isClutch === true, losing/drawing, and minute ≥ 80.
+ */
+function clutchModifier(isClutch, scoreDiff, minute) {
+  return (isClutch && minute >= 80 && scoreDiff <= 0) ? 1.15 : 1.0;
+}
+
+/**
+ * refereeModifier kept for backward compatibility (used nowhere internally anymore —
+ * replaced by the calcCardRate / calcRedRate / calcPenaltyRate helpers in referee_logic).
+ * @deprecated — use referee_logic helpers instead.
+ */
+function refereeModifier(strictness = 0.5, eventType) {
+  const delta = strictness - 0.5;
+  if (eventType === 'yellow')  return Math.max(0.4, 1.0 + delta * 0.60);
+  if (eventType === 'red')     return Math.max(0.2, 1.0 + delta * 0.80);
+  if (eventType === 'penalty') return Math.max(0.4, 1.0 + delta * 0.50);
+  return 1.0;
+}
+
+/**
+ * Picks a goal minute biased toward late minutes when play style promotes fatigue.
+ * directo teams press intensely → higher late-goal probability;
+ * catenaccio teams stay disciplined → more even distribution.
+ */
+function _staminaBiasedMinute(rand, playStyle = 'directo') {
+  const lateExtra = { posesion: 0.18, directo: 0.32, catenaccio: 0.08 }[playStyle] || 0.22;
+  const earlyW = 70;
+  const lateW  = 25 * (1 + lateExtra);
+  const r      = rand() * (earlyW + lateW);
+  if (r < earlyW) return 1 + Math.floor(r);
+  return 71 + Math.floor((r - earlyW) / lateW * 25);
+}
+
+// ─────────────────────────────────────────────────────────────
 // 4. MONTE CARLO SIMULATOR
 // ─────────────────────────────────────────────────────────────
 const N_ITERATIONS = 30_000;
@@ -403,28 +482,42 @@ const SCORER_WEIGHTS = { ST: 4, LW: 3, RW: 3, AM: 2, CM: 1, RM: 1, LM: 1, DM: 0.
 
 /**
  * Returns [{name, minute}] sorted by minute.
+ * opts.playStyle  — enables stamina-biased minute selection (more late goals).
+ * opts.scoreDiff  — final goals diff for this team (negative = losing); unlocks clutch bonus.
  */
-function pickScorers(players, nGoals, rand) {
+function pickScorers(players, nGoals, rand, opts = {}) {
   if (nGoals === 0) return [];
-  const pool    = players.filter(p => (SCORER_WEIGHTS[p.position] || 0) > 0);
+  const pool     = players.filter(p => (SCORER_WEIGHTS[p.position] || 0) > 0);
   if (!pool.length) return [];
-  const weights = pool.map(p => SCORER_WEIGHTS[p.position] || 0);
-  const total   = weights.reduce((a, b) => a + b, 0);
-  const result  = [];
+  const result   = [];
   const usedMins = new Set();
+
   for (let g = 0; g < nGoals; g++) {
+    // ── 1. Assign minute (stamina-biased when playStyle is provided) ──
+    let minute, _att = 0;
+    if (opts.playStyle) {
+      do { minute = _staminaBiasedMinute(rand, opts.playStyle); _att++; }
+      while (usedMins.has(minute) && _att < 95);
+    } else {
+      do { minute = 1 + Math.floor(rand() * 95); _att++; }
+      while (usedMins.has(minute) && _att < 95);
+    }
+    usedMins.add(minute);
+
+    // ── 2. Apply clutch bonus: isClutch players get +15% weight when late & losing ──
+    const weights = pool.map(p => {
+      const base = SCORER_WEIGHTS[p.position] || 0;
+      return base * clutchModifier(!!p.isClutch, opts.scoreDiff ?? 0, minute);
+    });
+    const total = weights.reduce((a, b) => a + b, 0);
+
+    // ── 3. Weighted random scorer pick ──
     let r = rand() * total;
     let scorer = pool[pool.length - 1];
     for (let j = 0; j < pool.length; j++) {
       r -= weights[j];
       if (r <= 0) { scorer = pool[j]; break; }
     }
-    // Unique goal minute (1–95, including stoppage time)
-    // Safety: if all 95 slots are taken just allow a duplicate rather than looping forever
-    let minute;
-    let _attempts = 0;
-    do { minute = 1 + Math.floor(rand() * 95); _attempts++; } while (usedMins.has(minute) && _attempts < 95);
-    usedMins.add(minute);
     result.push({ name: scorer.name, minute });
   }
   return result.sort((a, b) => a.minute - b.minute);
@@ -432,6 +525,27 @@ function pickScorers(players, nGoals, rand) {
 
 // ─────────────────────────────────────────────────────────────
 // 6. CARD SIMULATOR
+// ── Fix: reassign goals scored by expelled players ───────────
+function _fixRedCardScorers(scorers, reds, players, rand) {
+  if (!reds || !reds.length) return scorers;
+  const redAt = {};
+  reds.forEach(r => { redAt[r.name] = r.minute; });
+  return scorers.map(g => {
+    const expelled = redAt[g.name];
+    if (expelled !== undefined && expelled <= g.minute) {
+      const pool = players.filter(p =>
+        (SCORER_WEIGHTS[p.position] || 0) > 0 &&
+        p.name !== g.name &&
+        (!redAt[p.name] || redAt[p.name] > g.minute)
+      );
+      if (pool.length) {
+        return { ...g, name: pool[Math.floor(rand() * pool.length)].name };
+      }
+    }
+    return g;
+  });
+}
+
 // ─────────────────────────────────────────────────────────────
 // Position weights for yellow cards (DM/CB highest; GK lowest)
 const YELLOW_WEIGHTS = { GK:0.3, RB:2.0, CB:2.5, LB:2.0, DM:3.0, CM:1.8, RM:1.5, LM:1.5, AM:1.2, RW:1.0, LW:1.0, ST:1.5 };
@@ -440,11 +554,14 @@ const RED_WEIGHTS    = { GK:0.1, RB:0.8, CB:1.8, LB:0.8, DM:1.5, CM:0.8, RM:0.4,
 
 /**
  * Simulates yellow and red cards for one team.
+ * referee: full referee object from referee_logic.  Multipliers applied directly:
+ *   P(yellow) = 1.2  × referee.strictness
+ *   P(red)    = 0.10 × referee.red_card_bias
  * Returns { yellow: [{name, minute}], red: [{name, minute}] }
  */
-function pickCards(players, rand) {
-  const nYellow = poissonSample(1.2,  rand);   // avg ~1.2 yellows per team per match
-  const nRed    = poissonSample(0.10, rand);   // avg ~0.1 reds per team (~1 per 10 games)
+function pickCards(players, rand, referee = NEUTRAL_REFEREE) {
+  const nYellow = poissonSample(calcCardRate(1.2,  referee), rand);
+  const nRed    = poissonSample(calcRedRate(0.10,  referee), rand);
 
   function pickWeighted(weightArr, n) {
     const total = weightArr.reduce((a, b) => a + b, 0);
@@ -504,9 +621,10 @@ function pickInjuries(players, rand) {
 // Only missed penalties are generated as standalone events.
 // Scored penalties are already reflected in scorersA/B via pickScorers,
 // so showing a second ⚽ here would mismatch the final score.
-function pickMatchPenalties(lineupA, lineupB, seed) {
-  const rand = mulberry32(seed + 19);
-  const nPen = poissonSample(0.42, rand);  // ~1 penalty every 2.5 games total
+function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE) {
+  const rand   = mulberry32(seed + 19);
+  // P(penalty) = 0.42 × referee.penalty_rate
+  const nPen   = poissonSample(calcPenaltyRate(0.42, referee), rand);  // base: ~1 penalty every 2.5 games
   const result = [];
   for (let i = 0; i < Math.min(nPen, 2); i++) {
     const side   = rand() < 0.5 ? 'A' : 'B';
@@ -517,9 +635,11 @@ function pickMatchPenalties(lineupA, lineupB, seed) {
     // independently. Goals from penalty are already in scorersA/B.
     result.push({
       side,
-      minute: 5 + Math.floor(rand() * 85),
-      taker:  taker.name,
-      scored: false,
+      minute:      5 + Math.floor(rand() * 85),
+      taker:       taker.name,
+      scored:      false,
+      refereeId:   referee.id,
+      refereeName: referee.name,
     });
   }
   return result.sort((a, b) => a.minute - b.minute);
@@ -590,7 +710,15 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed) {
  * params: { teamA, teamB, eraA, eraB, formationA, formationB }
  */
 function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', formationB = '',
-                         cachedLineupA = null, cachedLineupB = null, matchMode = '11v11', matchSalt = 0 }) {
+                         cachedLineupA = null, cachedLineupB = null, matchMode = '11v11', matchSalt = 0,
+                         mode = 'visual', refereeStrictness = 0.5,
+                         refereeId = null, isFinal = false,
+                         weatherId = null,
+                         playStyleA = null, playStyleB = null }) {
+  // Fast path: analysis mode skips lineup/event building entirely
+  if (mode === 'analysis') {
+    return analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, matchMode, matchSalt);
+  }
   // Resolve default formation per mode when caller didn't specify one
   const defaultFormByMode = { '5v5': '1-2-1', '3v3': '1-1', '11v11': '' };
   const smallSidedForms   = new Set(['1-2-1','1-1-2','2-1-1','1-1','1-2']);
@@ -620,9 +748,18 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
   const ratingsB = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
 
+  // 2b. Resolve play styles: explicit param > cached lineup metadata > sensible default
+  const pStyleA = playStyleA || cachedLineupA?.playStyle || 'directo';
+  const pStyleB = playStyleB || cachedLineupB?.playStyle || 'directo';
+
   // 3. Deterministic seed from team names; saltedSeed varies per play for result variety
   const seed       = [...(teamA + teamB + eraA + eraB)].reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) >>> 0, 17);
   const saltedSeed = (seed ^ ((matchSalt | 0) >>> 0)) >>> 0;
+
+  // 3b. Resolve referee — use seeded PRNG for big-match-pressure variance
+  const randRef  = mulberry32(saltedSeed ^ 0xBEEF7A91);
+  const baseRef  = getRefereeById(refereeId);
+  const referee  = applyBigMatchPressure(baseRef, !!isFinal, randRef);
 
   // 4. Per-match form/luck variance — uses saltedSeed so each play differs
   const randForm = mulberry32(saltedSeed ^ 0xA3C5F1B7);
@@ -632,8 +769,9 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   // 5. Calculate xG (base formula × per-match form)
   const rawXgA = calcXG(ratingsA.attack, ratingsB.defense, ratingsA.midfield, ratingsB.goalkeeping);
   const rawXgB = calcXG(ratingsB.attack, ratingsA.defense, ratingsB.midfield, ratingsA.goalkeeping);
-  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult).toFixed(3);
-  const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult).toFixed(3);
+  const weatherFx = WEATHER_EFFECTS[weatherId] || WEATHER_EFFECTS.sunny;
+  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult).toFixed(3);
+  const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult * weatherFx.goalMult).toFixed(3);
 
   // 6. Monte Carlo
   const sim = monteCarlo(xgA, xgB, seed);
@@ -643,13 +781,18 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const fa = poissonSample(xgA, singleRand);
   const fb = poissonSample(xgB, singleRand);
   const rand     = mulberry32(saltedSeed + 1);
-  const scorersA = pickScorers(lineupA.players, fa, rand);
-  const scorersB = pickScorers(lineupB.players, fb, rand);
-  const cardsA        = pickCards(lineupA.players, mulberry32(saltedSeed + 5));
-  const cardsB        = pickCards(lineupB.players, mulberry32(saltedSeed + 7));
+  // scoreDiff passed so clutchModifier can activate for late-match, losing situations
+  let scorersA = pickScorers(lineupA.players, fa, rand, { playStyle: pStyleA, scoreDiff: fa - fb });
+  let scorersB = pickScorers(lineupB.players, fb, rand, { playStyle: pStyleB, scoreDiff: fb - fa });
+  const cardsA        = pickCards(lineupA.players, mulberry32(saltedSeed + 5), referee);
+  const cardsB        = pickCards(lineupB.players, mulberry32(saltedSeed + 7), referee);
+  // Red-carded players cannot score after their expulsion minute — reassign to a different player
+  const fixRand = mulberry32(saltedSeed + 99);
+  scorersA = _fixRedCardScorers(scorersA, cardsA.red, lineupA.players, fixRand);
+  scorersB = _fixRedCardScorers(scorersB, cardsB.red, lineupB.players, fixRand);
   const injuriesA     = pickInjuries(lineupA.players, mulberry32(saltedSeed + 11));
   const injuriesB     = pickInjuries(lineupB.players, mulberry32(saltedSeed + 13));
-  const matchPenalties = pickMatchPenalties(lineupA, lineupB, saltedSeed);
+  const matchPenalties = pickMatchPenalties(lineupA, lineupB, saltedSeed, referee);
   const penalties      = (fa === fb) ? simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed) : null;
 
   return {
@@ -678,14 +821,23 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
     },
     altScores:  sim.topScores.slice(0, 4),
     simulation: { iterations: sim.iterations, xgA, xgB },
-    stats:      buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, saltedSeed),
+    // Referee identity exposed to client + narrator
+    referee: { id: referee.id, name: referee.name },
+    weather:  weatherId ? { id: weatherId, goalMult: weatherFx.goalMult, foulMult: weatherFx.foulMult } : null,
+    ...(()=>{
+      const stats    = buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, saltedSeed, { referee, weatherFoulMult: weatherFx.foulMult });
+      const timeline = buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, stats.notableEvents, referee);
+      const referee_stats = buildRefereeStats(timeline, stats, matchPenalties);
+      return { stats, timeline, referee_stats };
+    })(),
+    playStyle: { teamA: pStyleA, teamB: pStyleB },
   };
 }
 
 // ─────────────────────────────────────────────────────────────
 // 7. STATS BUILDER (possession, shots, man of match)
 // ─────────────────────────────────────────────────────────────
-function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, seed) {
+function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, seed, args = {}) {
   const possA     = Math.round(ratingsA.midfield / (ratingsA.midfield + ratingsB.midfield) * 100);
   const shotsRand = mulberry32(seed + 9);
   const shotsA    = Math.max(fa, Math.round(xgA * 5.5 + shotsRand() * 3.5));
@@ -694,8 +846,11 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
   const extraRand = mulberry32(seed + 15);
   const cornersA  = Math.max(1, Math.round(shotsA * 0.4 + extraRand() * 3));
   const cornersB  = Math.max(1, Math.round(shotsB * 0.4 + extraRand() * 3));
-  const foulsA    = Math.max(3, Math.round(8 + (75 - ratingsA.defense) * 0.14 + extraRand() * 4));
-  const foulsB    = Math.max(3, Math.round(8 + (75 - ratingsB.defense) * 0.14 + extraRand() * 4));
+  // P(foul) = base_foul_rate × (2.0 − referee.foul_tolerance) — lenient refs call fewer fouls
+  const wFoul     = args.weatherFoulMult || 1.0;
+  const foulBase  = referee => Math.max(3, Math.round(8 + (75 - (referee || 74)) * 0.14 + extraRand() * 4));
+  const foulsA    = Math.max(2, Math.round(calcFoulRate(foulBase(ratingsA.defense), args.referee || NEUTRAL_REFEREE) * wFoul));
+  const foulsB    = Math.max(2, Math.round(calcFoulRate(foulBase(ratingsB.defense), args.referee || NEUTRAL_REFEREE) * wFoul));
   const savesA    = Math.max(0, shotsB - fb);
   const savesB    = Math.max(0, shotsA - fa);
 
@@ -724,7 +879,7 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
     allGoals.forEach(g => { counts[g.name] = counts[g.name] || { ...g, count: 0 }; counts[g.name].count++; });
     const top = Object.values(counts).sort((a, b) => b.count - a.count)[0];
     manOfMatch = { name: top.name, team: top.side, teamName: top.teamName,
-                   reason: top.count === 1 ? '1 gol' : `${top.count} goles` };
+                   reason: { type: 'goals', count: top.count } };
   } else {
     const domSide   = (ratingsA.attack + ratingsA.midfield) >= (ratingsB.attack + ratingsB.midfield) ? 'A' : 'B';
     const domLineup = domSide === 'A' ? lineupA : lineupB;
@@ -733,7 +888,7 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
     const cands     = domLineup.players.filter(p => keyPos.includes(p.position));
     const momR      = mulberry32(seed + 11);
     const picked    = cands[Math.floor(momR() * cands.length)] || domLineup.players[6];
-    manOfMatch = { name: picked.name, team: domSide, teamName: domName, reason: 'Mejor en el campo' };
+    manOfMatch = { name: picked.name, team: domSide, teamName: domName, reason: { type: 'best_field' } };
   }
 
   return {
@@ -747,4 +902,97 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
   };
 }
 
-module.exports = { simulateMatch, buildLineupFromCache };
+// ─────────────────────────────────────────────────────────────
+// 8. TIMELINE BUILDER
+// ─────────────────────────────────────────────────────────────
+/**
+ * Merges all match events into a single chronological array with a running score
+ * attached to each event.  Used by visual-mode clients to animate the match
+ * minute-by-minute (1 real second = 1 match minute).
+ *
+ * @returns {Array<{minute, type, side, player, scoreA, scoreB}>}
+ */
+function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, notableEvents, referee = null) {
+  const all = [];
+
+  // Each card/penalty event carries referee identity so the narrator can personalise phrases.
+  const refTag = referee
+    ? { refereeId: referee.id, refereeName: referee.name }
+    : {};
+
+  (scorersA     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'A', player: e.name }));
+  (scorersB     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'B', player: e.name }));
+  (cardsA?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'A', player: e.name, ...refTag }));
+  (cardsB?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'B', player: e.name, ...refTag }));
+  (cardsA?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'A', player: e.name, ...refTag }));
+  (cardsB?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'B', player: e.name, ...refTag }));
+  (injuriesA    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'A', player: e.name }));
+  (injuriesB    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'B', player: e.name }));
+  (matchPenalties || []).forEach(e =>
+    all.push({ minute: e.minute, type: e.scored ? 'penalty' : 'penalty_miss', side: e.side, player: e.taker,
+               refereeId: e.refereeId || refTag.refereeId, refereeName: e.refereeName || refTag.refereeName }));
+  (notableEvents || []).filter(e => e.type === 'corner' || e.type === 'freekick')
+    .forEach(e => all.push({ minute: e.minute, type: e.type, side: e.side, player: e.name || null }));
+
+  all.sort((a, b) => a.minute - b.minute);
+
+  // Attach running score at each event
+  let sA = 0, sB = 0;
+  for (const ev of all) {
+    if (ev.type === 'goal') { ev.side === 'A' ? sA++ : sB++; }
+    ev.scoreA = sA;
+    ev.scoreB = sB;
+  }
+  return all;
+}
+
+// ─────────────────────────────────────────────────────────────
+// 9. ANALYSIS MODE (10 000-iteration fast path)
+// ─────────────────────────────────────────────────────────────
+/**
+ * Skips lineup building and event generation.
+ * Returns only win/draw/loss percentages and top scorelines from 10,000 simulations.
+ */
+function analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, matchMode, matchSalt) {
+  const N            = 10_000;
+  const modeGoalMult = matchMode === '5v5' ? 1.6 : matchMode === '3v3' ? 2.2 : 1.0;
+  const ratingsA     = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
+  const ratingsB     = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
+  const rawXgA       = calcXG(ratingsA.attack, ratingsB.defense,  ratingsA.midfield, ratingsB.goalkeeping);
+  const rawXgB       = calcXG(ratingsB.attack, ratingsA.defense,  ratingsB.midfield, ratingsA.goalkeeping);
+  const seed         = [...(teamA + teamB + eraA + eraB)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 17);
+  const rand         = mulberry32((seed ^ ((matchSalt | 0) >>> 0)) >>> 0);
+
+  let winsA = 0, draws = 0, winsB = 0;
+  const scoreDist = {};
+  for (let i = 0; i < N; i++) {
+    const formA = 0.82 + rand() * 0.36;
+    const formB = 0.82 + rand() * 0.36;
+    const ga    = poissonSample(Math.max(0.25, rawXgA * formA * modeGoalMult), rand);
+    const gb    = poissonSample(Math.max(0.25, rawXgB * formB * modeGoalMult), rand);
+    const key   = `${ga}-${gb}`;
+    scoreDist[key] = (scoreDist[key] || 0) + 1;
+    if (ga > gb) winsA++;
+    else if (gb > ga) winsB++;
+    else draws++;
+  }
+
+  const topScores = Object.entries(scoreDist)
+    .sort((a, b) => b[1] - a[1]).slice(0, 5)
+    .map(([score, count]) => ({ score, probability: +((count / N) * 100).toFixed(2) }));
+
+  return {
+    mode: 'analysis',
+    iterations: N,
+    ratings:  { teamA: ratingsA, teamB: ratingsB },
+    xg:       { teamA: +rawXgA.toFixed(3), teamB: +rawXgB.toFixed(3) },
+    probabilities: {
+      teamA_win: +((winsA / N) * 100).toFixed(1),
+      draw:      +((draws / N) * 100).toFixed(1),
+      teamB_win: +((winsB / N) * 100).toFixed(1),
+    },
+    topScores,
+  };
+}
+
+module.exports = { simulateMatch, analyzeMatch, buildLineupFromCache };

@@ -107,35 +107,70 @@ function extractPlayersFromHtml(html, articleTitle) {
     const posIdx  = headers.findIndex(h =>
       h === 'pos' || h === 'pos.' || h === 'position' || h === 'posición' || h === 'posicao'
     );
+    // Club column — cells here contain club names, never player names
+    const clubIdx = headers.findIndex(h =>
+      h === 'club' || h === 'current club' || h === 'club team' || h === 'clubs' || h === 'team'
+    );
+
+    // ── Helpers (defined once per table, capture $ and clubIdx) ──────────
+    const isLikelyClubHref = (href) =>
+      /_F\.C\.|_C\.F\.|_CF\b|_RFC\b|_AFC\b|_SC\b|_SK\b|football_club|_club\b/i.test(href);
+
+    const isValidName = (txt) => {
+      if (!txt || txt.length < 2) return false;
+      if (/^\d/.test(txt)) return false;           // year/number links
+      if (/^[A-Z]{2,3}$/.test(txt)) return false;  // nationality codes
+      if (/\bF\.?C\.?\b|\bC\.?F\.?\b|\bS\.?C\.?\b|\bA\.?C\.?\b|\bS\.?K\.?\b|\bUnited\b|\bCity\b|\bAthletic\b|\bSporting\b|\bBorussia\b|\bDynamo\b|\bOlympique\b|\bOlympiacos\b|\bBenfica\b|\bFenerbahce\b|\bGalatasaray\b/i.test(txt)) return false;
+      return true;
+    };
+
+    const extractLinkName = (cell) => {
+      let found = '';
+      $(cell).find('a[href]').each((_, a) => {
+        const href = $(a).attr('href') || '';
+        if (!/^\/wiki\//.test(href)) return true;
+        if (/Special:|Help:|Wikipedia:|Category:|File:|Talk:|User:|Portal:/i.test(href)) return true;
+        if (isLikelyClubHref(href)) return true;
+        const txt = $(a).text().trim();
+        if (!isValidName(txt)) return true;
+        found = txt;
+        return false;
+      });
+      return found;
+    };
 
     $(table).find('tr').each((_ri, row) => {
       const cells = $(row).find('td');
       if (cells.length < 3) return; // need at least 3 cells for a real player row
 
-      // ── Step 1: find player name ─────────────────────────────
-      // Wikipedia squad tables often have an EXTRA <td> (flag image) not
-      // reflected in the <th> count, so cells[nameIdx] can land on the DOB
-      // column instead of the player column.
-      // Strategy: scan ALL cells for the first Wikipedia link that looks like
-      // a person (not a country, club, admin page, or bare number).
+      // ── Step 0: player name in <th scope="row"> (Wikipedia squad tables) ──
+      // Many Wikipedia squad tables use <th scope="row"> for the player name
+      // instead of <td>. Check those first — they are unambiguously the player.
       let nameCell = '';
-
-      cells.each((ci, cell) => {
-        if (nameCell) return false; // stop once found
-        $(cell).find('a[href]').each((_, a) => {
-          const href = $(a).attr('href') || '';
-          if (!/^\/wiki\//.test(href)) return true; // must be a /wiki/ link
-          if (/Special:|Help:|Wikipedia:|Category:|File:|Talk:|User:|Portal:/i.test(href)) return true;
-          const txt = $(a).text().trim();
-          if (!txt || txt.length < 2) return true;
-          if (/^\d/.test(txt)) return true;           // year/number links
-          if (/^[A-Z]{2,3}$/.test(txt)) return true;  // nationality codes (POR, ESP, BRA…)
-          // Skip club names (usually longer compound names with FC, United, etc.)
-          if (/\bF\.?C\.?\b|\bUnited\b|\bCity\b|\bAthletic\b|\bSporting\b|\bBorussia\b|\bDynamo\b/i.test(txt) && txt.split(' ').length >= 2) return true;
-          nameCell = txt;
-          return false;
-        });
+      $(row).find('th').each((_, th) => {
+        if (nameCell) return false;
+        nameCell = extractLinkName(th) || '';
       });
+
+      // ── Step 1: find player name in <td> cells ───────────────
+      if (!nameCell) {
+        const nameCols = nameIdx >= 0
+          ? [nameIdx, nameIdx + 1, nameIdx - 1].filter(i => i >= 0 && i < cells.length)
+          : [];
+        for (const ci of nameCols) {
+          nameCell = extractLinkName(cells[ci]);
+          if (nameCell) break;
+        }
+      }
+
+      // Pass 2: scan all cells but skip the club column
+      if (!nameCell) {
+        cells.each((ci, cell) => {
+          if (nameCell) return false;
+          if (clubIdx >= 0 && Math.abs(ci - clubIdx) <= 1) return true; // skip club col
+          nameCell = extractLinkName(cell);
+        });
+      }
 
       // ── Step 2: fallback — find name by text at offset-corrected index ──
       if (!nameCell) {
@@ -309,9 +344,20 @@ async function lookupWikipedia(teamName, era) {
         new RegExp(teamName.split(' ')[0], 'i').test(t) &&
         !/(disambiguation|football association)/i.test(t)
       );
-      const chosenTitle = nationalTitle || seasonTitle || clubTitle
+      let chosenTitle = nationalTitle || seasonTitle || clubTitle
         || titles.find(t => !isWomenTitle(t))
         || titles[0];
+
+      // If the chosen article is the generic "X national football team" page (no year/tournament
+      // in the title) but the requested year is historical (>2 years before now), skip it —
+      // that article only contains the current squad and would return wrong players.
+      if (chosenTitle && year && isLikelyNational) {
+        const isGenericNational = /national football team/i.test(chosenTitle) &&
+          !/world cup|copa am[eé]rica|uefa euro|at the \d{4}|\d{4}[-–]\d{2}/i.test(chosenTitle);
+        const currentYear = new Date().getFullYear();
+        const requestedYear = parseInt(year);
+        if (isGenericNational && requestedYear < currentYear - 2) continue; // skip — year too old
+      }
 
       // 3. Fetch article HTML
       const parseData = await wpFetch({

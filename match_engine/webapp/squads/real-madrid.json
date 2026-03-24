@@ -1,6 +1,908 @@
 {
   "slug": "real-madrid",
   "seasons": {
+    "1972": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "García Remón",
+          "position": "GK"
+        },
+        {
+          "name": "José Luis",
+          "position": "RB"
+        },
+        {
+          "name": "Touriño",
+          "position": "CB"
+        },
+        {
+          "name": "Benito",
+          "position": "CB"
+        },
+        {
+          "name": "Verdugo",
+          "position": "CB"
+        },
+        {
+          "name": "Pirri",
+          "position": "CM"
+        },
+        {
+          "name": "Zoco",
+          "position": "CM"
+        },
+        {
+          "name": "Velázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Santillana",
+          "position": "ST"
+        },
+        {
+          "name": "Amancio",
+          "position": "ST"
+        },
+        {
+          "name": "Aguilar",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Ángel",
+          "position": "GK"
+        },
+        {
+          "name": "Grande",
+          "position": "CM"
+        },
+        {
+          "name": "Grosso",
+          "position": "ST"
+        },
+        {
+          "name": "Andrés",
+          "position": "CB"
+        },
+        {
+          "name": "González",
+          "position": "CM"
+        },
+        {
+          "name": "Junquera",
+          "position": "GK"
+        },
+        {
+          "name": "Anzarda",
+          "position": "ST"
+        },
+        {
+          "name": "Macanás",
+          "position": "ST"
+        },
+        {
+          "name": "Marañón",
+          "position": "ST"
+        },
+        {
+          "name": "Fermín",
+          "position": "CM"
+        },
+        {
+          "name": "Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Zunzunegui",
+          "position": "CB"
+        },
+        {
+          "name": "Ballester",
+          "position": "CB"
+        },
+        {
+          "name": "Fleitas",
+          "position": "ST"
+        },
+        {
+          "name": "Corral",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1972-73 Primera División",
+      "teamLabel": "Real Madrid 1972-73 Primera División"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "RB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB"
+        },
+        {
+          "name": "Júlio César",
+          "position": "CB"
+        },
+        {
+          "name": "Karanka",
+          "position": "CB"
+        },
+        {
+          "name": "Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CM"
+        },
+        {
+          "name": "Sávio",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Morientes",
+          "position": "ST"
+        },
+        {
+          "name": "Bizzarri",
+          "position": "GK"
+        },
+        {
+          "name": "McManaman",
+          "position": "CM"
+        },
+        {
+          "name": "Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "Iván Campo",
+          "position": "CB"
+        },
+        {
+          "name": "Geremi",
+          "position": "RB"
+        },
+        {
+          "name": "Illgner",
+          "position": "GK"
+        },
+        {
+          "name": "Anelka",
+          "position": "ST"
+        },
+        {
+          "name": "Karembeu",
+          "position": "CM"
+        },
+        {
+          "name": "Sanchis",
+          "position": "CB"
+        },
+        {
+          "name": "Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Ognjenović",
+          "position": "ST"
+        },
+        {
+          "name": "Baljić",
+          "position": "ST"
+        },
+        {
+          "name": "Meca",
+          "position": "ST"
+        },
+        {
+          "name": "Zárate",
+          "position": "ST"
+        },
+        {
+          "name": "Dorado",
+          "position": "LB"
+        },
+        {
+          "name": "Aganzo",
+          "position": "ST"
+        },
+        {
+          "name": "Eto'o",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando",
+          "position": "CM"
+        },
+        {
+          "name": "Oliver",
+          "position": "GK"
+        },
+        {
+          "name": "Sestelo",
+          "position": "ST"
+        },
+        {
+          "name": "Corona",
+          "position": "CM"
+        },
+        {
+          "name": "Manu Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Álvaro Benito",
+          "position": "CM"
+        },
+        {
+          "name": "Aranda",
+          "position": "ST"
+        },
+        {
+          "name": "Jarni",
+          "position": "CM"
+        },
+        {
+          "name": "César Navas",
+          "position": "CB"
+        },
+        {
+          "name": "Sousa",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1999-00 Primera División",
+      "teamLabel": "Real Madrid 1999-00 Primera División"
+    },
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "RB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB"
+        },
+        {
+          "name": "Karanka",
+          "position": "CB"
+        },
+        {
+          "name": "Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "Makélélé",
+          "position": "CM"
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "McManaman",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Figo",
+          "position": "ST"
+        },
+        {
+          "name": "César",
+          "position": "GK"
+        },
+        {
+          "name": "Sávio",
+          "position": "CM"
+        },
+        {
+          "name": "Munitis",
+          "position": "ST"
+        },
+        {
+          "name": "Morientes",
+          "position": "ST"
+        },
+        {
+          "name": "Geremi",
+          "position": "RB"
+        },
+        {
+          "name": "Carlos Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Celades",
+          "position": "CM"
+        },
+        {
+          "name": "Solari",
+          "position": "CM"
+        },
+        {
+          "name": "Flávio Conceição",
+          "position": "CM"
+        },
+        {
+          "name": "Iván Campo",
+          "position": "CB"
+        },
+        {
+          "name": "Sanchis",
+          "position": "CB"
+        },
+        {
+          "name": "Tote",
+          "position": "ST"
+        },
+        {
+          "name": "Rivera",
+          "position": "CM"
+        },
+        {
+          "name": "Júlio César",
+          "position": "CB"
+        },
+        {
+          "name": "Rubén",
+          "position": "CB"
+        },
+        {
+          "name": "Corrales",
+          "position": "LB"
+        },
+        {
+          "name": "Zafra",
+          "position": "CM"
+        },
+        {
+          "name": "Meca",
+          "position": "ST"
+        },
+        {
+          "name": "Sestelo",
+          "position": "ST"
+        },
+        {
+          "name": "Illgner",
+          "position": "GK"
+        },
+        {
+          "name": "Manu Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Robles",
+          "position": "CB"
+        },
+        {
+          "name": "Leo Bermejo",
+          "position": "LB"
+        },
+        {
+          "name": "Pavón",
+          "position": "CB"
+        },
+        {
+          "name": "Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Corona",
+          "position": "CM"
+        },
+        {
+          "name": "Miñambres",
+          "position": "RB"
+        },
+        {
+          "name": "Álvaro Benito",
+          "position": "CM"
+        },
+        {
+          "name": "Ognjenović",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2000-01 Primera División",
+      "teamLabel": "Real Madrid 2000-01 Primera División"
+    },
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "RB"
+        },
+        {
+          "name": "Heinze",
+          "position": "LB"
+        },
+        {
+          "name": "Cannavaro",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Robben",
+          "position": "CM"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CM"
+        },
+        {
+          "name": "Gago",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Higuaín",
+          "position": "ST"
+        },
+        {
+          "name": "Huntelaar",
+          "position": "ST"
+        },
+        {
+          "name": "Dudek",
+          "position": "GK"
+        },
+        {
+          "name": "Van der Vaart",
+          "position": "CM"
+        },
+        {
+          "name": "Sneijder",
+          "position": "CM"
+        },
+        {
+          "name": "Lass Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Codina",
+          "position": "GK"
+        },
+        {
+          "name": "Drenthe",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel Torres",
+          "position": "LB"
+        },
+        {
+          "name": "Metzelder",
+          "position": "CB"
+        },
+        {
+          "name": "Javi García",
+          "position": "CM"
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "RB"
+        },
+        {
+          "name": "Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Saviola",
+          "position": "ST"
+        },
+        {
+          "name": "Van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "De la Red",
+          "position": "CM"
+        },
+        {
+          "name": "Parejo",
+          "position": "CM"
+        },
+        {
+          "name": "Bueno",
+          "position": "ST"
+        },
+        {
+          "name": "Palanca",
+          "position": "ST"
+        },
+        {
+          "name": "Faubert",
+          "position": "CM"
+        },
+        {
+          "name": "Kagelmacher",
+          "position": "CB"
+        },
+        {
+          "name": "Tébar",
+          "position": "CM"
+        },
+        {
+          "name": "Velayos",
+          "position": "RB"
+        },
+        {
+          "name": "Antón",
+          "position": "LB"
+        },
+        {
+          "name": "Agus",
+          "position": "CB"
+        },
+        {
+          "name": "Robinho",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2008-09 Primera División",
+      "teamLabel": "Real Madrid 2008-09 Primera División"
+    },
+    "2016": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK"
+        },
+        {
+          "name": "Carvajal",
+          "position": "RB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "LB"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho",
+          "position": "CB"
+        },
+        {
+          "name": "Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Casilla",
+          "position": "GK"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Kovačić",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "ST"
+        },
+        {
+          "name": "Morata",
+          "position": "ST"
+        },
+        {
+          "name": "Yáñez",
+          "position": "GK"
+        },
+        {
+          "name": "Danilo",
+          "position": "RB"
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Asensio",
+          "position": "ST"
+        },
+        {
+          "name": "Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Mariano",
+          "position": "ST"
+        },
+        {
+          "name": "Coentrão",
+          "position": "LB"
+        },
+        {
+          "name": "Tejero",
+          "position": "LB"
+        },
+        {
+          "name": "Hakimi",
+          "position": "RB"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CM"
+        },
+        {
+          "name": "Enzo Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Ødegaard",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Silva",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2016-17 Primera División",
+      "teamLabel": "Real Madrid 2016-17 Primera División"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Courtois",
+          "position": "GK"
+        },
+        {
+          "name": "Carvajal",
+          "position": "RB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "LB"
+        },
+        {
+          "name": "Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Asensio",
+          "position": "ST"
+        },
+        {
+          "name": "Keylor Navas",
+          "position": "GK"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "ST"
+        },
+        {
+          "name": "Nacho",
+          "position": "CB"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Luca Zidane",
+          "position": "GK"
+        },
+        {
+          "name": "Odriozola",
+          "position": "RB"
+        },
+        {
+          "name": "Reguilón",
+          "position": "LB"
+        },
+        {
+          "name": "Vinícius",
+          "position": "ST"
+        },
+        {
+          "name": "Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Mariano",
+          "position": "ST"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CM"
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST"
+        },
+        {
+          "name": "Vallejo",
+          "position": "CB"
+        },
+        {
+          "name": "Javi Sánchez",
+          "position": "CB"
+        },
+        {
+          "name": "Cristo",
+          "position": "ST"
+        },
+        {
+          "name": "Casilla",
+          "position": "GK"
+        },
+        {
+          "name": "Mayoral",
+          "position": "ST"
+        },
+        {
+          "name": "Seoane",
+          "position": "CM"
+        },
+        {
+          "name": "Fidalgo",
+          "position": "CM"
+        },
+        {
+          "name": "Grau",
+          "position": "CM"
+        },
+        {
+          "name": "Franchu",
+          "position": "ST"
+        },
+        {
+          "name": "Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Dela",
+          "position": "CB"
+        },
+        {
+          "name": "Fran García",
+          "position": "LB"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2018-19 Primera División",
+      "teamLabel": "Real Madrid 2018-19 Primera División"
+    },
     "2020": {
       "formation": "4-4-2",
       "players": [

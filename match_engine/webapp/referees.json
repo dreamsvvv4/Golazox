@@ -1,0 +1,132 @@
+[
+  {
+    "id": "collina",
+    "name": "Pierluigi Collina",
+    "img": "Pierluigi_Collina.jpg",
+    "strictness":    1.05,
+    "foul_tolerance": 1.10,
+    "penalty_rate":   0.95,
+    "red_card_bias":  1.30,
+    "play_advantage": 1.15
+  },
+  {
+    "id": "webb",
+    "name": "Howard Webb",
+    "img": "Howard_Webb.jpg",
+    "strictness":    1.10,
+    "foul_tolerance": 1.00,
+    "penalty_rate":   1.15,
+    "red_card_bias":  1.10,
+    "play_advantage": 1.05
+  },
+  {
+    "id": "merk",
+    "name": "Markus Merk",
+    "img": "Markus_Merk_(cropped).jpg",
+    "strictness":    1.20,
+    "foul_tolerance": 0.90,
+    "penalty_rate":   1.05,
+    "red_card_bias":  1.20,
+    "play_advantage": 0.95
+  },
+  {
+    "id": "kuipers",
+    "name": "Björn Kuipers",
+    "img": "Björn_Kuipers.jpg",
+    "strictness":    0.90,
+    "foul_tolerance": 1.10,
+    "penalty_rate":   1.00,
+    "red_card_bias":  0.85,
+    "play_advantage": 1.10
+  },
+  {
+    "id": "brych",
+    "name": "Felix Brych",
+    "img": "Felix_Brych_(cropped).jpg",
+    "strictness":    1.00,
+    "foul_tolerance": 1.05,
+    "penalty_rate":   0.95,
+    "red_card_bias":  1.00,
+    "play_advantage": 1.05
+  },
+  {
+    "id": "mateu",
+    "name": "Antonio Mateu Lahoz",
+    "img": "Antonio_Mateu_Lahoz.jpg",
+    "strictness":    1.40,
+    "foul_tolerance": 0.75,
+    "penalty_rate":   1.30,
+    "red_card_bias":  1.50,
+    "play_advantage": 0.80
+  },
+  {
+    "id": "moreno",
+    "name": "Byron Moreno",
+    "img": "Byron_Moreno.jpg",
+    "strictness":    0.70,
+    "foul_tolerance": 1.35,
+    "penalty_rate":   1.60,
+    "red_card_bias":  0.60,
+    "play_advantage": 0.70
+  },
+  {
+    "id": "estrada",
+    "name": "Massimo Busacca",
+    "img": "Massimo_Busacca.jpg",
+    "strictness":    1.10,
+    "foul_tolerance": 1.00,
+    "penalty_rate":   1.00,
+    "red_card_bias":  1.15,
+    "play_advantage": 1.00
+  },
+  {
+    "id": "clattenburg",
+    "name": "Mark Clattenburg",
+    "img": "Mark_Clattenburg.jpg",
+    "strictness":    0.95,
+    "foul_tolerance": 1.10,
+    "penalty_rate":   1.05,
+    "red_card_bias":  0.90,
+    "play_advantage": 1.15
+  },
+  {
+    "id": "kassai",
+    "name": "Viktor Kassai",
+    "img": "Kassai_Viktor.jpg",
+    "strictness":    1.05,
+    "foul_tolerance": 1.00,
+    "penalty_rate":   1.05,
+    "red_card_bias":  1.10,
+    "play_advantage": 1.00
+  },
+  {
+    "id": "taylor",
+    "name": "Graham Poll",
+    "img": "Graham_poll.JPG",
+    "strictness":    1.15,
+    "foul_tolerance": 0.90,
+    "penalty_rate":   0.90,
+    "red_card_bias":  1.40,
+    "play_advantage": 0.95
+  },
+  {
+    "id": "rizzoli",
+    "name": "Nicola Rizzoli",
+    "img": "Nicola_Rizzoli_final_Alemanha_Argentina_Copa_do_Mundo_2014.jpg",
+    "strictness":    1.00,
+    "foul_tolerance": 1.05,
+    "penalty_rate":   1.00,
+    "red_card_bias":  1.00,
+    "play_advantage": 1.05
+  },
+  {
+    "id": "neutral",
+    "name": "Arbitro neutral",
+    "img": null,
+    "strictness":    1.00,
+    "foul_tolerance": 1.00,
+    "penalty_rate":   1.00,
+    "red_card_bias":  1.00,
+    "play_advantage": 1.00
+  }
+]

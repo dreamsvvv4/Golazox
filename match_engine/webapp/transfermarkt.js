@@ -454,15 +454,48 @@ function isNationalTeam(teamName) {
     .normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
 }
 
+// ── User-Agent pool — rotación anti-detección ───────────────
+const _UA_POOL = [
+  // Chrome Windows
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+  // Firefox Windows
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0',
+  // Safari macOS
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.15',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15',
+  // Chrome macOS
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+  // Chrome Android (mobile)
+  'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.105 Mobile Safari/537.36',
+  // Safari iPhone
+  'Mozilla/5.0 (iPhone; CPU iPhone OS 17_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Mobile/15E148 Safari/604.1',
+];
+let _uaIndex = Math.floor(Math.random() * _UA_POOL.length);
+function _nextUA() {
+  _uaIndex = (_uaIndex + 1) % _UA_POOL.length;
+  return _UA_POOL[_uaIndex];
+}
+
 async function searchTransfermarktClub(teamName) {
   const cacheKey = teamName.toLowerCase().trim();
   if (_tmSearchCache.has(cacheKey)) return _tmSearchCache.get(cacheKey);
 
   const TM_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36',
-    'Accept-Language': 'es-ES,es;q=0.9',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'User-Agent': _nextUA(),
+    'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Encoding': 'gzip, deflate, br',
     'Referer': 'https://www.transfermarkt.es/',
+    'DNT': '1',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'same-origin',
+    'Sec-Fetch-User': '?1',
+    'Cache-Control': 'max-age=0',
   };
 
   // For known national team names, use the Nationalelf search endpoint instead of
@@ -647,8 +680,8 @@ async function fetchTransfermarktSquad(teamName, era) {
   try {
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36',
-        'Accept-Language': 'es-ES,es;q=0.9',
+        'User-Agent': _nextUA(),
+        'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
       },
       signal: AbortSignal.timeout(FETCH_TIMEOUT),
     });

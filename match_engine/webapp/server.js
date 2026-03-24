@@ -8,8 +8,10 @@
 const express = require('express');
 const path    = require('path');
 const { simulateMatch, buildLineupFromCache } = require('./engine');
+const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
+const { REFEREES }      = require('./referee_logic');
 
 const app  = express();
 app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
@@ -108,7 +110,8 @@ app.get('/lookup', _rateLimit(30, 60000), async (req, res) => {
 // Returns: { lineups, ratings, probabilities, finalScore, scorers, altScores, narrative }
 app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
   try {
-    const { teamA, teamB, eraA = '', eraB = '', formationA = '', formationB = '', matchMode = '11v11', matchSalt = 0 } = req.body;
+    const { teamA, teamB, eraA = '', eraB = '', formationA = '', formationB = '', matchMode = '11v11', matchSalt = 0, lang: reqLang = 'es',
+            refereeId = null, isFinal = false, weatherId = null } = req.body;
 
     if (!teamA || !teamB) {
       return res.status(400).json({ error: 'Both teamA and teamB are required.' });
@@ -159,6 +162,9 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
       cachedLineupB: luB.found ? luB : null,
       matchMode:     ['11v11','5v5','3v3'].includes(matchMode) ? matchMode : '11v11',
       matchSalt:     (Math.trunc(Number(matchSalt || 0)) || 0) & 0x7fffffff,
+      refereeId:     typeof refereeId === 'string' ? refereeId.slice(0, 32) : null,
+      isFinal:       !!isFinal,
+      weatherId:     typeof weatherId === 'string' ? weatherId.slice(0, 24) : null,
     };
 
     const [badgeA, badgeB] = await Promise.all([
@@ -166,13 +172,26 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
       luB.badgeUrl ? Promise.resolve(luB.badgeUrl) : badgeRaceB,
     ]);
 
-    const result = { ...simulateMatch(params), badgeA, badgeB };
+    const simResult = simulateMatch(params);
+    // Annotate timeline with narratives in the language the client requested
+    const lang = reqLang === 'en' ? 'en' : 'es';
+    if (Array.isArray(simResult.timeline)) {
+      describeTimeline(simResult.timeline, simResult.playStyle || {}, lang, params.matchSalt);
+    }
+    const result = { ...simResult, badgeA, badgeB };
     res.json(result);
 
   } catch (err) {
     console.error('[/simulate error]', err);
     res.status(500).json({ error: 'Simulation failed. Check server logs.' });
   }
+});
+
+// ── GET /referees ─────────────────────────────────────────────────────────
+// Returns the full list of available referees (id, name, multipliers).
+// Used by the client to populate the referee picker.
+app.get('/referees', (_req, res) => {
+  res.json(REFEREES);
 });
 
 // ── GET /img-proxy  ─────────────────────────────────────────────────────────
@@ -206,6 +225,18 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`\n  ⚽  Football Simulator running at http://localhost:${PORT}\n`);
+app.listen(PORT, '0.0.0.0', () => {
+  // Print local network IPs so devices on the same WiFi can connect
+  const { networkInterfaces } = require('os');
+  const nets = networkInterfaces();
+  const localIPs = [];
+  for (const iface of Object.values(nets)) {
+    for (const net of iface) {
+      if (net.family === 'IPv4' && !net.internal) localIPs.push(net.address);
+    }
+  }
+  console.log(`\n  ⚽  Football Simulator running at:`);
+  console.log(`       http://localhost:${PORT}`);
+  localIPs.forEach(ip => console.log(`       http://${ip}:${PORT}  ← use this on your iPhone`));
+  console.log();
 });

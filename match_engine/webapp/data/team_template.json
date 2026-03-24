@@ -1,0 +1,160 @@
+{
+  "_comment": "Historical team data template. Copy to data/teams/{team}_{year}.json and fill in values.",
+  "_schema_version": "2.0",
+
+  "id": "brazil_1970",
+  "name": "Brazil",
+  "year": 1970,
+  "tournament": "FIFA World Cup",
+
+  "playStyle": "directo",
+
+  "attack_strength":   96,
+  "midfield_control":  92,
+  "defense_strength":  78,
+  "goalkeeping":       75,
+
+  "players": [
+    {
+      "name":      "Félix",
+      "position":  "GK",
+      "pace":      55,
+      "shooting":  22,
+      "passing":   62,
+      "dribbling": 45,
+      "defending": 78,
+      "physical":  72,
+      "rating":    78,
+      "isClutch":  false
+    },
+    {
+      "name":      "Carlos Alberto",
+      "position":  "RB",
+      "pace":      82,
+      "shooting":  72,
+      "passing":   79,
+      "dribbling": 75,
+      "defending": 80,
+      "physical":  78,
+      "rating":    86,
+      "isClutch":  false
+    },
+    {
+      "name":      "Brito",
+      "position":  "CB",
+      "pace":      64,
+      "shooting":  35,
+      "passing":   65,
+      "dribbling": 55,
+      "defending": 84,
+      "physical":  82,
+      "rating":    82,
+      "isClutch":  false
+    },
+    {
+      "name":      "Piazza",
+      "position":  "CB",
+      "pace":      62,
+      "shooting":  38,
+      "passing":   68,
+      "dribbling": 57,
+      "defending": 83,
+      "physical":  80,
+      "rating":    81,
+      "isClutch":  false
+    },
+    {
+      "name":      "Everaldo",
+      "position":  "LB",
+      "pace":      78,
+      "shooting":  55,
+      "passing":   72,
+      "dribbling": 70,
+      "defending": 78,
+      "physical":  74,
+      "rating":    80,
+      "isClutch":  false
+    },
+    {
+      "name":      "Clodoaldo",
+      "position":  "DM",
+      "pace":      72,
+      "shooting":  62,
+      "passing":   80,
+      "dribbling": 78,
+      "defending": 82,
+      "physical":  76,
+      "rating":    83,
+      "isClutch":  true
+    },
+    {
+      "name":      "Gérson",
+      "position":  "CM",
+      "pace":      70,
+      "shooting":  75,
+      "passing":   90,
+      "dribbling": 82,
+      "defending": 70,
+      "physical":  72,
+      "rating":    88,
+      "isClutch":  true
+    },
+    {
+      "name":      "Rivellino",
+      "position":  "LM",
+      "pace":      78,
+      "shooting":  85,
+      "passing":   88,
+      "dribbling": 90,
+      "defending": 55,
+      "physical":  74,
+      "rating":    91,
+      "isClutch":  true
+    },
+    {
+      "name":      "Jairzinho",
+      "position":  "RW",
+      "pace":      92,
+      "shooting":  88,
+      "passing":   78,
+      "dribbling": 91,
+      "defending": 48,
+      "physical":  80,
+      "rating":    92,
+      "isClutch":  true
+    },
+    {
+      "name":      "Tostão",
+      "position":  "AM",
+      "pace":      75,
+      "shooting":  84,
+      "passing":   87,
+      "dribbling": 88,
+      "defending": 42,
+      "physical":  70,
+      "rating":    89,
+      "isClutch":  true
+    },
+    {
+      "name":      "Pelé",
+      "position":  "ST",
+      "pace":      95,
+      "shooting":  97,
+      "passing":   85,
+      "dribbling": 98,
+      "defending": 40,
+      "physical":  82,
+      "rating":    99,
+      "isClutch":  true
+    }
+  ],
+
+  "_notes": {
+    "playStyle_values":       ["posesion", "directo", "catenaccio"],
+    "rating_range":           "0–99 (integer)",
+    "isClutch_description":   "True for players historically known for big-match performances. Engine applies +15% scorer weight when team is losing/drawing after minute 80.",
+    "attack_strength_alias":  "Maps to engine 'attack' rating (60–97)",
+    "midfield_control_alias": "Maps to engine 'midfield' rating (60–97)",
+    "defense_strength_alias": "Maps to engine 'defense' rating (60–97)"
+  }
+}
