@@ -1315,6 +1315,18 @@ function showPreMatch(data, payload) {
   document.querySelectorAll('.pm-speed-pill').forEach(b => {
     b.classList.toggle('pm-speed-active', parseInt(b.dataset.tick, 10) === 667);
   });
+
+  // Draw radar in pre-match row
+  const isPenMode = payload.matchMode === 'penalties';
+  const radarRow = document.getElementById('pm-radar-row');
+  const radarCard = document.getElementById('radar-card');
+  if (radarRow && radarCard && !isPenMode && data.ratings) {
+    radarRow.appendChild(radarCard);
+    radarCard.style.display = '';
+    drawRadar(data.ratings, payload.teamA, payload.teamB);
+  } else if (radarRow) {
+    radarRow.innerHTML = '';
+  }
 }
 
 function skipPreMatch() {
@@ -2722,14 +2734,16 @@ function playLiveMatch(data, payload, tickMs = 300) {
   // Clear any leftover timers from a previous live match (prevents phantom events/wrong scores)
   _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
 
-  // Restore radar-card to stats-modal if a previous finishLive() moved it to results
+  // Restore radar-card to stats-modal if it was in results or pm-radar-row
   const radarCard = document.getElementById('radar-card');
   const statsModalInner = document.getElementById('stats-modal-inner');
   if (radarCard && statsModalInner && !statsModalInner.contains(radarCard)) {
     statsModalInner.appendChild(radarCard);
   }
-  // Close any open stats modal from previous match
+  // Close stats modal and clear pm-radar-row for the new match
   document.getElementById('stats-modal')?.classList.add('hidden');
+  const pmRadarRow = document.getElementById('pm-radar-row');
+  if (pmRadarRow) pmRadarRow.innerHTML = '';
 
   // ── Instant / "Directo" mode: skip live viewer entirely ─────────
   if (tickMs === 0) {

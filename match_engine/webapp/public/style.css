@@ -1286,6 +1286,25 @@ body {
   transform: translateY(1px);
   box-shadow: 0 3px 12px rgba(30,99,240,.4);
 }
+
+/* ── Radar row below pre-match lineups ─────────────────────── */
+.pm-radar-row {
+  margin-top: .8rem;
+  display: flex; justify-content: center;
+  padding-bottom: .4rem;
+}
+.pm-radar-row .radar-card {
+  max-width: none;
+  margin: 0;
+  padding: .6rem .7rem .5rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; gap: .3rem;
+}
+.pm-radar-row .radar-svg  { width: 190px !important; height: 190px !important; }
+.pm-radar-row .radar-legend { flex-wrap: nowrap; gap: .6rem; }
+.pm-radar-row .radar-legend-item { font-size: .68rem; }
 /* Team block */
 .pm-team-block   { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
 .pm-team-block-b { align-items: flex-end; }
