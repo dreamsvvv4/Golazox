@@ -1725,7 +1725,10 @@ body {
   animation: slide-in-feed .3s ease;
   border-bottom: none !important;
 }
-.t-event-ft     { background: rgba(255,255,255,.07); color: rgba(255,255,255,.55); }
+.t-event-kickoff{ background: rgba(79,131,255,.1); color: rgba(120,170,255,.9);
+                  border-left: 2px solid rgba(79,131,255,.4); }
+.t-event-ft     { background: rgba(255,255,255,.07); color: rgba(255,255,255,.55);
+                  border-left: 2px solid rgba(255,255,255,.15); }
 .t-event-pen-hdr{ background: linear-gradient(90deg,rgba(255,215,0,.12),rgba(255,215,0,.05),transparent);
                   border-left: 2px solid rgba(255,215,0,.5); color: rgba(255,215,0,.9); }
 .t-event-pen-a  { background: rgba(79,131,255,.1); }
@@ -1970,6 +1973,14 @@ body {
 .eo-goal   { background: rgba(4,22,4,.92);  border-color: rgba(34,197,94,.55);  box-shadow: 0 0 80px rgba(34,197,94,.25), 0 0 160px rgba(34,197,94,.08); }
 .eo-yellow { background: rgba(22,18,0,.92); border-color: rgba(251,191,36,.55); box-shadow: 0 0 80px rgba(251,191,36,.2); }
 .eo-red    { background: rgba(22,4,4,.92);  border-color: rgba(239,68,68,.55);  box-shadow: 0 0 80px rgba(239,68,68,.2); }
+.eo-kick_off, .eo-fulltime {
+  background: rgba(0,8,28,.92);
+  border-color: rgba(79,131,255,.55);
+  box-shadow: 0 0 80px rgba(79,131,255,.25), 0 0 160px rgba(79,131,255,.08);
+}
+.eo-kick_off .eo-title, .eo-fulltime .eo-title {
+  color: #60a5fa; text-shadow: 0 0 24px rgba(79,131,255,.7);
+}
 .eo-badge-wrap { margin-bottom: .4rem; }
 .eo-badge {
   width: 52px; height: 52px; object-fit: contain;

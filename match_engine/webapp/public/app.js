@@ -37,6 +37,7 @@ const I18N = {
     'sub-change-toast':'✅ Cambio realizado','tooltip-copied':'Resultado copiado ✓','tooltip-copy-fail':'No se pudo copiar',
     'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'LESIÓN',
     'ev-penalty':'PENALTI MARCADO','ev-penalty-miss':'PENALTI FALLADO','ev-corner':'CÓRNER','ev-freekick':'FALTA DIRECTA',
+    'ev-kickoff':'INICIO DEL PARTIDO','ev-fulltime':'PITIDO FINAL',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. fallado','ev-tag-corner':'córner','ev-tag-fk':'falta directa',
     'phase-playing':'EN JUEGO','phase-corner':'🚩 CÓRNER','phase-freekick':'🎯 FALTA DIRECTA',
     'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL','phase-injury':'🩹 LESIÓN',
@@ -78,6 +79,7 @@ const I18N = {
     'sub-change-toast':'✅ Substitution made','tooltip-copied':'Result copied ✓','tooltip-copy-fail':'Could not copy',
     'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'INJURY',
     'ev-penalty':'PENALTY SCORED','ev-penalty-miss':'PENALTY MISSED','ev-corner':'CORNER','ev-freekick':'FREE KICK',
+    'ev-kickoff':'KICK OFF','ev-fulltime':'FULL TIME',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. missed','ev-tag-corner':'corner','ev-tag-fk':'free kick',
     'phase-playing':'IN PLAY','phase-corner':'🚩 CORNER','phase-freekick':'🎯 FREE KICK',
     'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL','phase-injury':'🩹 INJURY',
@@ -2806,6 +2808,14 @@ function playLiveMatch(data, payload, tickMs = 300) {
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
+
+  // Kick-off whistle overlay + timeline entry
+  if (!isPenMode) {
+    _eventTimers.push(setTimeout(() => {
+      triggerEventOverlay('kick_off', '', null, null);
+      addFeedEvent({ type: 'kick_off', minute: 0, name: t('ev-kickoff'), side: 'N' });
+    }, 400));
+  }
   // Start timeline in sync with live match — move timeline-card into the right column slot
   if (Array.isArray(data.timeline) && data.timeline.length) {
     const timelineCard = document.querySelector('.timeline-card');
@@ -2893,15 +2903,18 @@ function playLiveMatch(data, payload, tickMs = 300) {
   const regularMs = isPenMode ? 0 : Math.max(90 * TICK, accDelay);
   if (isPenMode && _liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
   let penaltyEndMs = 0;
+
+  // Full-time whistle for ALL regular 90-min matches (with or without subsequent penalty shootout)
+  if (!isPenMode) {
+    const ftLabel = t('ev-fulltime') + ` — ${finalScore.teamA}:${finalScore.teamB}`;
+    _eventTimers.push(setTimeout(() => {
+      triggerEventOverlay('fulltime', `${payload.teamA} ${finalScore.teamA} – ${finalScore.teamB} ${payload.teamB}`, null, null);
+      addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' });
+    }, regularMs + 50));
+  }
+
   if (pens) {
     const kicks = Math.max(pens.shotsA.length, pens.shotsB.length);
-
-    // Full-time whistle only for regular matches ending in a draw (not penalties-only mode)
-    if (!isPenMode) {
-      const ftLabel = (_lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
-        ` — ${finalScore.teamA}:${finalScore.teamB}`;
-      _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50));
-    }
 
     // Cinematic penalty shootout splash
     _eventTimers.push(setTimeout(() => triggerShootoutSplash(payload.teamA, payload.teamB), regularMs + 300));
@@ -2959,7 +2972,10 @@ function addFeedEvent(ev) {
 
   const div = document.createElement('div');
 
-  if (ev.type === 'ft_whistle') {
+  if (ev.type === 'kick_off') {
+    div.className = 't-event-special t-event-kickoff';
+    div.textContent = '🎺 ' + (ev.name || t('ev-kickoff'));
+  } else if (ev.type === 'ft_whistle') {
     div.className = 't-event-special t-event-ft';
     div.textContent = ev.name || '⏱ FT';
   } else if (ev.type === 'pen_start') {
@@ -3027,6 +3043,7 @@ function triggerEventOverlay(type, name, score, side) {
                 : type === 'corner' ? '🚩'
                 : type === 'freekick' ? '🎯'
                 : type === 'injury' ? '🩹'
+                : type === 'kick_off' || type === 'fulltime' ? '🎺'
                 : '🟥';
   const titleKey = type === 'goal'         ? 'ev-goal'
                  : type === 'yellow'       ? 'ev-yellow'
@@ -3036,12 +3053,15 @@ function triggerEventOverlay(type, name, score, side) {
                  : type === 'corner'       ? 'ev-corner'
                  : type === 'freekick'     ? 'ev-freekick'
                  : type === 'injury'       ? 'ev-injury'
+                 : type === 'kick_off'     ? 'ev-kickoff'
+                 : type === 'fulltime'     ? 'ev-fulltime'
                  : 'ev-red';
   const title   = t(titleKey);
   const holdMs  = (type === 'goal' || type === 'pen_winner' || type === 'penalty') ? 3200
                 : (type === 'penalty-miss') ? 1800
                 : (type === 'corner' || type === 'freekick') ? 1100
                 : (type === 'injury') ? 1600
+                : (type === 'kick_off' || type === 'fulltime') ? 2000
                 : 1800;
 
   let badgeHtml = '';
