@@ -2121,17 +2121,57 @@ function _lpTierColor(ovr) {
   return '#c05050';
 }
 
-// Base pitch coordinates (percentage)
-const _LP_POS_A = {
-  GK:[.50,.06], RB:[.80,.20], CB:[.62,.18], LB:[.20,.20],
-  DM:[.50,.33], CM:[.42,.40], RM:[.75,.38], LM:[.25,.38],
-  AM:[.50,.44], RW:[.78,.42], LW:[.22,.42], ST:[.50,.46],
-};
-const _LP_POS_B = {
-  GK:[.50,.94], RB:[.20,.80], CB:[.38,.82], LB:[.80,.80],
-  DM:[.50,.67], CM:[.58,.60], RM:[.25,.62], LM:[.75,.62],
-  AM:[.50,.56], RW:[.22,.58], LW:[.78,.58], ST:[.50,.54],
-};
+// Formation-aware position builder.
+// Buckets every player into a tactical row (GK/DEF/DM/MID/AM/FWD)
+// then distributes each row evenly across the width — zero overlaps for
+// any formation (4-4-2, 4-3-3, 3-5-2, 5-3-2, etc.).
+function _buildFormationPositions(players, isTeamA) {
+  // Row index per position code (3 = midfield fallback for unknown)
+  const ROW = {
+    GK:0,
+    SW:1, CB:1, RB:1, LB:1, RWB:1, LWB:1,
+    CDM:2, DM:2,
+    CM:3, RM:3, LM:3,
+    CAM:4, AM:4,
+    RW:5, LW:5, SS:5, CF:5, ST:5
+  };
+  // Left-to-right order within a row (negative = left side)
+  const H_ORDER = {
+    LWB:-3, LB:-2, LW:-2, LM:-2,
+    SW:0, CB:0, DM:0, CDM:0, CM:0, AM:0, CAM:0, CF:0, SS:0, GK:0, ST:0,
+    RB:2, RM:2, RW:2, RWB:3
+  };
+  // y positions as fraction of pitch height
+  // Team A: defends top  → GK at low y, forwards at high y
+  // Team B: defends bottom → GK at high y, forwards at low y
+  const ROW_Y_A = [0.07, 0.20, 0.33, 0.47, 0.58, 0.72];
+  const ROW_Y_B = [0.93, 0.80, 0.67, 0.53, 0.42, 0.28];
+  const rowY = isTeamA ? ROW_Y_A : ROW_Y_B;
+
+  const buckets = Array.from({ length: 6 }, () => []);
+  players.forEach((p, i) => {
+    const row = ROW[p.position] ?? 3;
+    buckets[row].push(i);
+  });
+
+  const pos = new Array(players.length);
+  buckets.forEach((idxList, rowIdx) => {
+    if (!idxList.length) return;
+    // Sort within row left→right (mirror for Team B so L/R names stay correct)
+    idxList.sort((a, b) => {
+      const oa = H_ORDER[players[a].position] ?? 0;
+      const ob = H_ORDER[players[b].position] ?? 0;
+      return isTeamA ? oa - ob : ob - oa;
+    });
+    const y = rowY[rowIdx];
+    const n = idxList.length;
+    idxList.forEach((playerIdx, j) => {
+      const x = n === 1 ? 0.50 : 0.12 + j * 0.76 / (n - 1);
+      pos[playerIdx] = { x, y };
+    });
+  });
+  return pos; // pos[i] = { x, y } as [0,1] fractions
+}
 
 const _JERSEY_LP = { GK:1, RB:2, CB:5, LB:3, DM:6, CM:8, RM:7, LM:11, AM:10, RW:7, LW:11, ST:9 };
 
@@ -2237,13 +2277,13 @@ function initLivePitch(lineupA, lineupB) {
   const usedNumsA = new Set(), usedNumsB = new Set();
   let bestOvr = -1, ballOwnerX = cx, ballOwnerY = cy;
 
-  const renderTeam = (players, posMap, rimColor, fillColor, usedNums, teamKey) => {
+  const renderTeam = (players, posList, rimColor, fillColor, usedNums, teamKey) => {
     const EL = [];
     players.forEach((p, i) => {
       const pos = p.position || 'CM';
-      const base = posMap[pos] || posMap.CM;
-      const bx = base[0] * W;
-      const by = base[1] * H;
+      const slot = posList[i] || { x: 0.5, y: 0.5 };
+      const bx = slot.x * W;
+      const by = slot.y * H;
       let num = _JERSEY_LP[pos] ?? (i + 1);
       while (usedNums.has(num)) num++;
       usedNums.add(num);
@@ -2314,8 +2354,8 @@ function initLivePitch(lineupA, lineupB) {
     return EL;
   };
 
-  _pitchDots.a = renderTeam(playersA, _LP_POS_A, '#4f83ff', 'rgba(10,20,50,.85)',  usedNumsA, 'a');
-  _pitchDots.b = renderTeam(playersB, _LP_POS_B, '#ff4d55', 'rgba(50,10,14,.85)',  usedNumsB, 'b');
+  _pitchDots.a = renderTeam(playersA, _buildFormationPositions(playersA, true),  '#4f83ff', 'rgba(10,20,50,.85)',  usedNumsA, 'a');
+  _pitchDots.b = renderTeam(playersB, _buildFormationPositions(playersB, false), '#ff4d55', 'rgba(50,10,14,.85)',  usedNumsB, 'b');
 
   // ── Ball ─────────────────────────────────────────────────────────────────
   const ballG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -2369,10 +2409,18 @@ function _driftPlayers() {
     _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
     _pitchDots.ball.dataset.bx = bx;
     _pitchDots.ball.dataset.by = by;
-    // Update particle stream endpoint
+    // Update particle stream: ball end (x2/y2) + ball-owner end (x1/y1)
     if (_lpParticleEl) {
       _lpParticleEl.setAttribute('x2', bx);
       _lpParticleEl.setAttribute('y2', by);
+      if (_lpBallOwnerEl) {
+        const t = _lpBallOwnerEl.getAttribute('transform') || '';
+        const m = t.match(/translate\(([^,]+),([^)]+)\)/);
+        if (m) {
+          _lpParticleEl.setAttribute('x1', m[1]);
+          _lpParticleEl.setAttribute('y1', m[2]);
+        }
+      }
     }
   }
 }
