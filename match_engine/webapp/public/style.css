@@ -1692,13 +1692,26 @@ body {
 
 /* ── Radar chart (now in results section) ─────────────────── */
 .radar-card {
-  display: flex; flex-direction: column; align-items: center; gap: .5rem;
-  padding: 1.1rem;
-  max-width: 280px;
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  padding: 1.25rem 1rem;
+  max-width: 340px;
   margin: 0 auto;
 }
-.radar-wrap { width: 168px; flex-shrink: 0; }
-.radar-svg  { width: 220px !important; height: 220px !important; }
+.radar-wrap { width: 220px; flex-shrink: 0; }
+.radar-svg  { width: 220px !important; height: 220px !important; display: block; }
+.radar-legend {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.radar-legend-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .76rem; font-weight: 700;
+  font-family: 'Rajdhani', var(--font);
+  color: rgba(255,255,255,.8);
+  letter-spacing: .04em;
+}
+.radar-legend-dot {
+  width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+}
 
 /* ── Live Smart-Dot Pitch ─────────────────────────────────── */
 .live-pitch-wrap {
@@ -1719,11 +1732,13 @@ body {
 }
 /* Player group: smooth movement */
 .lp-player-g {
-  transition: transform .55s cubic-bezier(.4,0,.2,1);
+  transition: transform .5s cubic-bezier(.25,.1,.25,1);
   cursor: pointer;
+  will-change: transform;
 }
 .lp-ball-g {
-  transition: transform .38s cubic-bezier(.4,0,.2,1);
+  transition: transform .3s cubic-bezier(.25,.1,.25,1);
+  will-change: transform;
 }
 /* Smart dot glow: normal state */
 .lp-dot-main {

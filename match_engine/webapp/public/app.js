@@ -2057,60 +2057,99 @@ function renderKeyMoments(finalScore, data, payload) {
   el.style.display = 'block';
 }
 
-// ── Radar (spider) chart ─────────────────────────────────────
+// ── Radar (spider) chart — premium redesign ─────────────────
 function drawRadar(ratings, teamA, teamB) {
   const axes = [
     { label: t('radar-attack'),      vA: ratings.teamA.attack,      vB: ratings.teamB.attack },
     { label: t('radar-midfield'),    vA: ratings.teamA.midfield,    vB: ratings.teamB.midfield },
     { label: t('radar-defense'),     vA: ratings.teamA.defense,     vB: ratings.teamB.defense },
     { label: t('radar-goalkeeping'), vA: ratings.teamA.goalkeeping, vB: ratings.teamB.goalkeeping },
-    { label: t('radar-physical'),    vA: Math.round((ratings.teamA.attack  + ratings.teamA.midfield)  / 2),
-                         vB: Math.round((ratings.teamB.attack  + ratings.teamB.midfield)  / 2) },
+    { label: t('radar-physical'),
+      vA: Math.round((ratings.teamA.attack + ratings.teamA.midfield) / 2),
+      vB: Math.round((ratings.teamB.attack + ratings.teamB.midfield) / 2) },
   ];
   const N = axes.length;
-  const cx = 100, cy = 105, R = 68;
+  const cx = 110, cy = 110, R = 78;
   const angle = i => (Math.PI * 2 * i / N) - Math.PI / 2;
   const pt    = (r, i) => [cx + r * Math.cos(angle(i)), cy + r * Math.sin(angle(i))];
-  const maxV  = Math.max(...axes.flatMap(a => [a.vA, a.vB]), 1);
+  const maxV  = 100; // fixed scale 0-100
 
-  let svg = '';
-  // Grid rings
-  [.25,.5,.75,1].forEach(f => {
+  let svg = `<defs>
+    <filter id="rdr-glow-a" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rdr-glow-b" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="rdr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#060e1a"/>
+    </linearGradient>
+  </defs>`;
+
+  // Background
+  svg += `<rect width="220" height="220" rx="10" fill="url(#rdr-bg)"/>`;
+
+  // Grid rings with labels
+  [25, 50, 75, 100].forEach((pct, ri) => {
+    const f = pct / 100;
     const pts = axes.map((_, i) => pt(R * f, i).join(',')).join(' ');
-    svg += `<polygon points="${pts}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width=".8"/>`;
+    svg += `<polygon points="${pts}" fill="none" stroke="rgba(0,212,255,${ri === 3 ? .18 : .08})" stroke-width="${ri === 3 ? .9 : .6}" stroke-dasharray="${ri < 3 ? '3 3' : ''}"/>`;
+    // small value label on rightmost axis
+    const [lx, ly] = pt(R * f, 1);
+    svg += `<text x="${(lx+2).toFixed(1)}" y="${ly.toFixed(1)}" font-size="6" fill="rgba(0,212,255,.35)"
+      font-family="Rajdhani,sans-serif" dominant-baseline="middle">${pct}</text>`;
   });
+
   // Axis spokes
   axes.forEach((_, i) => {
     const [x, y] = pt(R, i);
-    svg += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.12)" stroke-width=".8"/>`;
+    svg += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(0,212,255,.14)" stroke-width=".8"/>`;
   });
+
+  // Team B fill (draw first so A is on top)
+  const ptsB = axes.map((a, i) => pt(R * a.vB / maxV, i).join(',')).join(' ');
+  svg += `<polygon points="${ptsB}" fill="rgba(231,76,60,.18)" stroke="#ff4d55" stroke-width="1.8"
+    stroke-linejoin="round" filter="url(#rdr-glow-b)" opacity=".9"/>`;
+
   // Team A fill
   const ptsA = axes.map((a, i) => pt(R * a.vA / maxV, i).join(',')).join(' ');
-  svg += `<polygon points="${ptsA}" fill="rgba(26,86,219,.3)" stroke="#4f83ff" stroke-width="2" stroke-linejoin="round"/>`;
-  // Team B fill
-  const ptsB = axes.map((a, i) => pt(R * a.vB / maxV, i).join(',')).join(' ');
-  svg += `<polygon points="${ptsB}" fill="rgba(192,57,43,.28)" stroke="#e74c3c" stroke-width="2" stroke-linejoin="round"/>`;
-  // Dots
+  svg += `<polygon points="${ptsA}" fill="rgba(79,131,255,.2)" stroke="#4f83ff" stroke-width="1.8"
+    stroke-linejoin="round" filter="url(#rdr-glow-a)" opacity=".9"/>`;
+
+  // Dots + value callouts
   axes.forEach((a, i) => {
     const [xA, yA] = pt(R * a.vA / maxV, i);
     const [xB, yB] = pt(R * a.vB / maxV, i);
-    svg += `<circle cx="${xA}" cy="${yA}" r="3" fill="#4f83ff"/>`;
-    svg += `<circle cx="${xB}" cy="${yB}" r="3" fill="#e74c3c"/>`;
+    svg += `<circle cx="${xA}" cy="${yA}" r="3.5" fill="#4f83ff" stroke="rgba(255,255,255,.4)" stroke-width=".8" filter="url(#rdr-glow-a)"/>`;
+    svg += `<circle cx="${xB}" cy="${yB}" r="3.5" fill="#ff4d55" stroke="rgba(255,255,255,.4)" stroke-width=".8" filter="url(#rdr-glow-b)"/>`;
   });
-  // Labels
+
+  // Axis labels
   axes.forEach((a, i) => {
-    const [x, y] = pt(R + 14, i);
-    const anchor = x < cx - 6 ? 'end' : x > cx + 6 ? 'start' : 'middle';
-    svg += `<text x="${x}" y="${y}" text-anchor="${anchor}" dominant-baseline="middle"
-      fill="rgba(255,255,255,.65)" font-size="8.5" font-family="sans-serif">${a.label}</text>`;
+    const [x, y] = pt(R + 16, i);
+    const anchor = x < cx - 8 ? 'end' : x > cx + 8 ? 'start' : 'middle';
+    svg += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
+      fill="rgba(255,255,255,.75)" font-size="9.5" font-family="Rajdhani,sans-serif"
+      font-weight="700" letter-spacing=".03em">${a.label}</text>`;
+    // value pair
+    const [vx, vy] = pt(R + 28, i);
+    svg += `<text x="${vx.toFixed(1)}" y="${vy.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="middle"
+      font-size="7.5" font-family="Rajdhani,sans-serif" font-weight="800">
+      <tspan fill="#4f83ff">${a.vA}</tspan><tspan fill="rgba(255,255,255,.3)"> · </tspan><tspan fill="#ff4d55">${a.vB}</tspan>
+    </text>`;
   });
+
+  document.getElementById('radar-svg').setAttribute('viewBox', '0 0 220 220');
   document.getElementById('radar-svg').innerHTML = svg;
 
   // Legend
   const leg = document.getElementById('radar-legend');
   leg.innerHTML =
-    `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#4f83ff"></span>${escHtml(teamA.slice(0,14))}</span>` +
-    `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#e74c3c"></span>${escHtml(teamB.slice(0,14))}</span>`;
+    `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#4f83ff;box-shadow:0 0 6px #4f83ff"></span>${escHtml(teamA.slice(0,16))}</span>` +
+    `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#ff4d55;box-shadow:0 0 6px #ff4d55"></span>${escHtml(teamB.slice(0,16))}</span>`;
 }
 
 // ── Live Smart-Dot Pitch ──────────────────────────────────────
@@ -2392,7 +2431,7 @@ function initLivePitch(lineupA, lineupB) {
 
 function _startPitchDrift() {
   if (_pitchDriftInterval) clearInterval(_pitchDriftInterval);
-  _pitchDriftInterval = setInterval(_driftPlayers, 950);
+  _pitchDriftInterval = setInterval(_driftPlayers, 600);
 }
 
 function _driftPlayers() {
@@ -2404,16 +2443,16 @@ function _driftPlayers() {
     const ny = Math.max(6, Math.min(H - 6, by + (Math.random() - .5) * amp));
     g.setAttribute('transform', `translate(${nx},${ny})`);
   };
-  _pitchDots.a.forEach(g => jitter(g, 5));
-  _pitchDots.b.forEach(g => jitter(g, 5));
-  // Ball vortex wanders
+  _pitchDots.a.forEach(g => jitter(g, 14));
+  _pitchDots.b.forEach(g => jitter(g, 14));
+  // Ball wanders freely
   if (_pitchDots.ball) {
-    const bx = _LP.cx + (Math.random() - .5) * 38;
-    const by = _LP.cy + (Math.random() - .5) * 38;
+    const bx = _LP.cx + (Math.random() - .5) * 40;
+    const by = _LP.cy + (Math.random() - .5) * 40;
     _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
     _pitchDots.ball.dataset.bx = bx;
     _pitchDots.ball.dataset.by = by;
-    // Update particle stream: ball end (x2/y2) + ball-owner end (x1/y1)
+    // Update particle stream
     if (_lpParticleEl) {
       _lpParticleEl.setAttribute('x2', bx);
       _lpParticleEl.setAttribute('y2', by);
