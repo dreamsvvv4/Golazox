@@ -744,6 +744,10 @@ function renderResult(data, payload) {
   const isPenMode = payload.matchMode === 'penalties';
   document.querySelector('.probs-card')?.classList.toggle('hidden', isPenMode);
   document.querySelector('.stats-card')?.classList.toggle('hidden', isPenMode);
+  document.getElementById('radar-card')?.classList.toggle('hidden', isPenMode);
+
+  // Draw radar in results (also covers instant/direct mode where playLiveMatch skips it)
+  if (!isPenMode && ratings) drawRadar(ratings, payload.teamA, payload.teamB);
 
   // ── Score poster ───────────────────────────────────────
   document.getElementById('poster-name-a').textContent = payload.teamA;
@@ -2428,7 +2432,13 @@ function _driftPlayers() {
 function animatePitchEvent(type, ev) {
   const svg = document.getElementById('live-pitch-svg');
   const phaseEl = document.getElementById('live-pitch-phase');
+  const feedHdr = document.querySelector('.live-feed-header');
   if (!svg || !phaseEl) return;
+
+  function setPhase(txt) {
+    phaseEl.textContent = txt;
+    if (feedHdr) feedHdr.textContent = txt;
+  }
 
   // Resolve the team name for display in the pitch phase label
   const teamLabel = ev.side === 'A'
@@ -2436,7 +2446,7 @@ function animatePitchEvent(type, ev) {
     : (_livePayload?.teamB || 'B');
 
   if (type === 'goal') {
-    phaseEl.textContent = `${t('phase-goal')} — ${teamLabel}`;
+    setPhase(`${t('phase-goal')} — ${teamLabel}`);
     const attackers = ev.side === 'A' ? _pitchDots.a : _pitchDots.b;
     attackers.forEach(g => {
       const goalY = ev.side === 'A' ? _LP.H * 0.88 : _LP.H * 0.12;
@@ -2451,29 +2461,29 @@ function animatePitchEvent(type, ev) {
       const by = ev.side === 'A' ? _LP.H * 0.92 : _LP.H * 0.08;
       _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
     }
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); _resetToBase(); }, 2200);
+    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 2200);
   } else if (type === 'yellow' || type === 'red') {
-    phaseEl.textContent = type === 'yellow'
+    setPhase(type === 'yellow'
       ? `${t('phase-yellow')} — ${teamLabel}`
-      : `${t('phase-red')} — ${teamLabel}`;
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1800);
+      : `${t('phase-red')} — ${teamLabel}`);
+    setTimeout(() => { setPhase(t('phase-playing')); }, 1800);
   } else if (type === 'penalty-miss') {
-    phaseEl.textContent = `${t('phase-pen-miss')} — ${teamLabel}`;
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1800);
+    setPhase(`${t('phase-pen-miss')} — ${teamLabel}`);
+    setTimeout(() => { setPhase(t('phase-playing')); }, 1800);
   } else if (type === 'corner') {
-    phaseEl.textContent = `${t('phase-corner')} — ${teamLabel}`;
+    setPhase(`${t('phase-corner')} — ${teamLabel}`);
     if (_pitchDots.ball) {
       const cornerX = ev.side === 'A' ? _LP.W * 0.96 : _LP.W * 0.04;
       const cornerY = Math.random() < 0.5 ? _LP.H * 0.97 : _LP.H * 0.03;
       _pitchDots.ball.setAttribute('transform', `translate(${cornerX},${cornerY})`);
     }
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); _resetToBase(); }, 1100);
+    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 1100);
   } else if (type === 'freekick') {
-    phaseEl.textContent = `${t('phase-freekick')} — ${teamLabel}`;
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1200);
+    setPhase(`${t('phase-freekick')} — ${teamLabel}`);
+    setTimeout(() => { setPhase(t('phase-playing')); }, 1200);
   } else if (type === 'injury') {
-    phaseEl.textContent = `${t('phase-injury')} — ${teamLabel}`;
-    setTimeout(() => { phaseEl.textContent = t('phase-playing'); }, 1600);
+    setPhase(`${t('phase-injury')} — ${teamLabel}`);
+    setTimeout(() => { setPhase(t('phase-playing')); }, 1600);
   }
 }
 
@@ -2548,12 +2558,9 @@ function playLiveMatch(data, payload, tickMs = 300) {
   document.getElementById('live-score-b').textContent = '0';
   document.getElementById('live-feed').innerHTML      = '';
 
-  // In penalties mode hide the pitch and radar (irrelevant for a shootout)
+  // In penalties mode hide the pitch (radar is now in results section, not here)
   const pitchWrap  = document.querySelector('.live-pitch-wrap');
-  const radarWrap  = document.getElementById('radar-svg')?.closest('.radar-wrap') ||
-                     document.getElementById('radar-svg')?.parentElement;
   if (pitchWrap)  pitchWrap.style.display  = isPenMode ? 'none' : '';
-  if (radarWrap)  radarWrap.style.display  = isPenMode ? 'none' : '';
 
   if (!isPenMode) {
     drawRadar(data.ratings, payload.teamA, payload.teamB);
@@ -2729,7 +2736,9 @@ function addFeedEvent(ev) {
   const div  = document.createElement('div');
   div.className = `live-event ${sideClass}${extraClass}`;
   div.innerHTML = `<span class="le-min">${ev.type.startsWith('pen') ? 'P' : ev.minute + "'"}</span><span class="le-icon">${icon}</span><span class="le-name">${escHtml(ev.name)}</span>`;
-  feed.prepend(div);
+  feed.appendChild(div);
+  // Auto-scroll to latest event
+  feed.scrollTop = feed.scrollHeight;
 }
 
 function triggerEventOverlay(type, name, score, side) {
@@ -2818,12 +2827,9 @@ function finishLive() {
   document.getElementById('pen-kick-overlay')?.classList.add('hidden');
   // Always hide event overlay before transitioning to results
   document.getElementById('event-overlay').classList.add('hidden');
-  // Restore pitch/radar visibility for the next match
+  // Restore pitch visibility for the next match
   const pitchWrap = document.querySelector('.live-pitch-wrap');
-  const radarSvg  = document.getElementById('radar-svg');
-  const radarWrap = radarSvg?.closest('.radar-wrap') || radarSvg?.parentElement;
   if (pitchWrap) pitchWrap.style.display = '';
-  if (radarWrap) radarWrap.style.display = '';
   stopLivePitch();
   const viewer = document.getElementById('live-viewer');
   viewer.classList.add('live-fade-out');

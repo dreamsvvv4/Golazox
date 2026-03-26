@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=14" />
+  <link rel="stylesheet" href="style.css?v=15" />
 </head>
 <body>
 
@@ -179,18 +179,15 @@
         <span class="live-clock" id="live-clock">0'</span>
       </div>
       <div class="live-body">
-        <div class="live-feed-wrap">
-          <div class="live-feed" id="live-feed"></div>
-        </div>
         <div class="live-pitch-wrap">
           <div class="live-pitch-label" id="live-pitch-phase">EN JUEGO</div>
           <svg id="live-pitch-svg" class="live-pitch-svg" viewBox="0 0 160 240" xmlns="http://www.w3.org/2000/svg">
             <!-- Holo-Pitch drawn by JS -->
           </svg>
         </div>
-        <div class="radar-wrap">
-          <div class="radar-legend" id="radar-legend"></div>
-          <svg class="radar-svg" id="radar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="live-feed-wrap">
+          <div class="live-feed-header">EN JUEGO</div>
+          <div class="live-feed" id="live-feed"></div>
         </div>
       </div>
     </div>
@@ -300,6 +297,12 @@
         <div class="share-row">
           <button class="btn-share" onclick="shareResult()">📤 Compartir resultado</button>
         </div>
+      </div>
+
+      <!-- ── RADAR (stats comparison, shown after live) ──── -->
+      <div class="radar-card glass-card hidden" id="radar-card">
+        <div class="radar-legend" id="radar-legend"></div>
+        <svg class="radar-svg" id="radar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
       </div>
 
       <!-- ── CRÓNICA DEL PARTIDO ───────────────────────── -->
@@ -442,6 +445,6 @@
   </footer>
 
   <script src="/player_ratings.js"></script>
-  <script src="app.js?v=17"></script>
+  <script src="app.js?v=18"></script>
 </body>
 </html>
