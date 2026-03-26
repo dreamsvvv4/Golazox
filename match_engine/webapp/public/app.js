@@ -1345,21 +1345,64 @@ function skipPreMatch() {
     return { ...originalLineup, players: starters };
   };
 
-  const updatedData = {
-    ..._pmData,
-    lineups: {
-      teamA: _readLineupFromDom('a', _pmData.lineups.teamA),
-      teamB: _readLineupFromDom('b', _pmData.lineups.teamB),
-    },
+  const luA = _readLineupFromDom('a', _pmData.lineups.teamA);
+  const luB = _readLineupFromDom('b', _pmData.lineups.teamB);
+
+  // Detect if any swaps were made vs the original simulation lineup
+  const origNamesA = (_pmData.lineups.teamA?.players || []).map(p => p.name).join('|');
+  const origNamesB = (_pmData.lineups.teamB?.players || []).map(p => p.name).join('|');
+  const newNamesA  = (luA.players || []).map(p => p.name).join('|');
+  const newNamesB  = (luB.players || []).map(p => p.name).join('|');
+  const hasSwaps   = origNamesA !== newNamesA || origNamesB !== newNamesB;
+
+  const doLaunch = (data) => {
+    const screen = document.getElementById('prematch-screen');
+    screen.classList.add('pm-fade-out');
+    setTimeout(() => {
+      screen.classList.add('hidden');
+      screen.classList.remove('pm-fade-out');
+      playLiveMatch(data, _pmPayload, _pmTick);
+    }, 400);
   };
 
-  const screen = document.getElementById('prematch-screen');
-  screen.classList.add('pm-fade-out');
-  setTimeout(() => {
-    screen.classList.add('hidden');
-    screen.classList.remove('pm-fade-out');
-    playLiveMatch(updatedData, _pmPayload, _pmTick);
-  }, 400);
+  if (!hasSwaps) {
+    doLaunch(_pmData);
+    return;
+  }
+
+  // Swaps detected → re-simulate with the new lineup so results reflect the changes
+  const playBtn = document.querySelector('.pm-start-btn');
+  if (playBtn) { playBtn.disabled = true; playBtn.textContent = '⏳ Recalculando...'; }
+
+  const body = {
+    teamA: _pmPayload.teamA, eraA: _pmPayload.eraA || '',
+    teamB: _pmPayload.teamB, eraB: _pmPayload.eraB || '',
+    formationA: luA.formation || _pmPayload.formationA || '',
+    formationB: luB.formation || _pmPayload.formationB || '',
+    matchMode:  _pmPayload.matchMode || '11v11',
+    matchSalt:  _pmPayload.matchSalt || 0,
+    refereeId:  _pmPayload.refereeId || null,
+    isFinal:    _pmPayload.isFinal   || false,
+    weatherId:  _pmPayload.weatherId || null,
+    playersOverrideA: luA.players,
+    playersOverrideB: luB.players,
+  };
+
+  fetch('/simulate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+    .then(r => r.json())
+    .then(newData => {
+      if (playBtn) { playBtn.disabled = false; playBtn.textContent = '▶ Iniciar Partido'; }
+      // Preserve original badges (re-sim may not re-fetch them)
+      doLaunch({ ...newData, badgeA: newData.badgeA || _pmData.badgeA, badgeB: newData.badgeB || _pmData.badgeB });
+    })
+    .catch(() => {
+      if (playBtn) { playBtn.disabled = false; playBtn.textContent = '▶ Iniciar Partido'; }
+      doLaunch(_pmData); // fallback to original if re-sim fails
+    });
 }
 
 function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
@@ -2360,8 +2403,10 @@ function initLivePitch(lineupA, lineupB) {
       g.setAttribute('transform', `translate(${bx},${by})`);
       g.classList.add('lp-player-g');
       if (isHero) g.classList.add('lp-hero-dot');
-      g.dataset.bx   = bx;
-      g.dataset.by   = by;
+      g.dataset.bx    = bx;
+      g.dataset.by    = by;
+      g.dataset.homex = bx;
+      g.dataset.homey = by;
       g.dataset.pos  = pos;
       g.dataset.name = p.name;
       g.dataset.ovr  = ovr;
@@ -2536,41 +2581,59 @@ function _startPitchDrift() {
 function _driftPlayers() {
   const W = _LP.W, H = _LP.H;
   _driftTick++;
-  // Every 5 ticks (~3s) trigger an attack/defense wave
-  if (_driftTick % 5 === 0 && !_attackBiasTimer) {
+  // Every 4 ticks (~2.4s) trigger an attack/defense wave
+  if (_driftTick % 4 === 0 && !_attackBiasTimer) {
     _attackBias = Math.random() < .5 ? 1 : -1;
-    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 3000);
+    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 2400);
   }
-  const jitter = (g, amp, yBias) => {
-    const bx = parseFloat(g.dataset.bx);
-    const by = parseFloat(g.dataset.by);
-    const nx = Math.max(6, Math.min(W - 6, bx + (Math.random() - .5) * amp));
-    const ny = Math.max(6, Math.min(H - 6, by + (Math.random() - .5) * amp + (yBias || 0)));
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  // Move each player: pull toward home zone + jitter.
+  // Updating dataset.bx/by lets movement compound realistically.
+  const movePlayer = (g, yBias) => {
+    const hx = parseFloat(g.dataset.homex || g.dataset.bx);
+    const hy = parseFloat(g.dataset.homey || g.dataset.by);
+    const cx = parseFloat(g.dataset.bx);
+    const cy = parseFloat(g.dataset.by);
+    // 8% pull toward home each tick + ±18px jitter + attack y-bias
+    const nx = clamp(cx + (hx - cx) * 0.08 + (Math.random() - .5) * 22, 6, W - 6);
+    const ny = clamp(cy + (hy - cy) * 0.08 + (Math.random() - .5) * 22 + (yBias || 0), 6, H - 6);
     g.setAttribute('transform', `translate(${nx},${ny})`);
+    g.dataset.bx = nx;
+    g.dataset.by = ny;
   };
-  // +1 bias: team A pushes down (attacks), team B slightly retreats
-  const yBiasA = _attackBias === 1 ? 5 : _attackBias === -1 ? -3 : 0;
-  const yBiasB = _attackBias === -1 ? -5 : _attackBias === 1 ? 3 : 0;
-  _pitchDots.a.forEach(g => jitter(g, 12, yBiasA));
-  _pitchDots.b.forEach(g => jitter(g, 12, yBiasB));
-  // Ball wanders freely
+
+  const yBiasA = _attackBias === 1 ? 6 : _attackBias === -1 ? -4 : 0;
+  const yBiasB = _attackBias === -1 ? -6 : _attackBias === 1 ? 4 : 0;
+  _pitchDots.a.forEach(g => movePlayer(g, yBiasA));
+  _pitchDots.b.forEach(g => movePlayer(g, yBiasB));
+
+  // Ball: 40% chance "pass" near a random player, else roll freely across the whole field
   if (_pitchDots.ball) {
-    const bx = _LP.cx + (Math.random() - .5) * 40;
-    const by = _LP.cy + (Math.random() - .5) * 40;
-    _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
-    _pitchDots.ball.dataset.bx = bx;
-    _pitchDots.ball.dataset.by = by;
+    const allDots = [..._pitchDots.a, ..._pitchDots.b];
+    let nbx, nby;
+    if (allDots.length > 0 && Math.random() < 0.4) {
+      const target = allDots[Math.floor(Math.random() * allDots.length)];
+      nbx = clamp(parseFloat(target.dataset.bx) + (Math.random() - .5) * 14, 4, W - 4);
+      nby = clamp(parseFloat(target.dataset.by) + (Math.random() - .5) * 14, 4, H - 4);
+    } else {
+      const bx = parseFloat(_pitchDots.ball.dataset.bx || _LP.cx);
+      const by = parseFloat(_pitchDots.ball.dataset.by || _LP.cy);
+      nbx = clamp(bx + (Math.random() - .5) * 40, 4, W - 4);
+      nby = clamp(by + (Math.random() - .5) * 40, 4, H - 4);
+    }
+    _pitchDots.ball.setAttribute('transform', `translate(${nbx},${nby})`);
+    _pitchDots.ball.dataset.bx = nbx;
+    _pitchDots.ball.dataset.by = nby;
+
     // Update particle stream
     if (_lpParticleEl) {
-      _lpParticleEl.setAttribute('x2', bx);
-      _lpParticleEl.setAttribute('y2', by);
+      _lpParticleEl.setAttribute('x2', nbx);
+      _lpParticleEl.setAttribute('y2', nby);
       if (_lpBallOwnerEl) {
         const t = _lpBallOwnerEl.getAttribute('transform') || '';
         const m = t.match(/translate\(([^,]+),([^)]+)\)/);
-        if (m) {
-          _lpParticleEl.setAttribute('x1', m[1]);
-          _lpParticleEl.setAttribute('y1', m[2]);
-        }
+        if (m) { _lpParticleEl.setAttribute('x1', m[1]); _lpParticleEl.setAttribute('y1', m[2]); }
       }
     }
   }

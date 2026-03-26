@@ -179,7 +179,8 @@ app.get('/lookup', _rateLimit(30, 60000), async (req, res) => {
 app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
   try {
     const { teamA, teamB, eraA = '', eraB = '', formationA = '', formationB = '', matchMode = '11v11', matchSalt = 0, lang: reqLang = 'es',
-            refereeId = null, isFinal = false, weatherId = null } = req.body;
+            refereeId = null, isFinal = false, weatherId = null,
+            playersOverrideA = null, playersOverrideB = null } = req.body;
 
     if (!teamA || !teamB) {
       return res.status(400).json({ error: 'Both teamA and teamB are required.' });
@@ -218,6 +219,22 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
     if (!luB.found) {
       return res.status(404).json({ error: `¡Equipo no encontrado: "${sTeamB}"${sEraB ? ' (' + sEraB + ')' : ''}¡ Prueba sin año o con el nombre en inglés.` });
     }
+
+    // Apply pre-match player overrides (from user substitutions in the pre-match screen).
+    // Sanitise each player: strip HTML, limit name to 60 chars, validate position code.
+    const VALID_POSITIONS = new Set(['GK','RB','CB','LB','DM','CM','RM','LM','AM','RW','LW','ST']);
+    const sanitisePlayers = (arr) => {
+      if (!Array.isArray(arr) || arr.length < 8) return null;
+      const cleaned = arr.slice(0, 25).map(p => ({
+        name:     String(p.name || '').replace(/[<>]/g, '').trim().slice(0, 60),
+        position: VALID_POSITIONS.has(String(p.position || '').toUpperCase()) ? String(p.position).toUpperCase() : null,
+      })).filter(p => p.name.length > 0 && p.position);
+      return cleaned.length >= 8 ? cleaned : null;
+    };
+    const cleanOverrideA = sanitisePlayers(playersOverrideA);
+    const cleanOverrideB = sanitisePlayers(playersOverrideB);
+    if (cleanOverrideA) luA.players = cleanOverrideA;
+    if (cleanOverrideB) luB.players = cleanOverrideB;
 
     const params = {
       teamA:      sTeamA,

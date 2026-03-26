@@ -2125,7 +2125,7 @@ body {
   .t-event       { grid-template-columns: 1fr 42px 1fr; gap: .26rem; }
   .t-event-narrated > :first-child { grid-template-columns: 1fr 42px 1fr; }
   .t-left, .t-right  { font-size: .73rem; }
-  .t-narration   { font-size: .67rem; }
+  .t-narration   { font-size: .76rem; }
 
   /* ── MOM ── */
   .mom-card  { padding: .85rem .95rem; flex-wrap: wrap; gap: 0; }
@@ -2216,7 +2216,7 @@ body {
   .t-event-narrated > :first-child { grid-template-columns: 1fr 32px 1fr; }
   .t-left, .t-right { font-size: .67rem; }
   .t-min        { font-size: .53rem; padding: .06rem .2rem; min-width: 19px; }
-  .t-narration  { font-size: .61rem; }
+  .t-narration  { font-size: .72rem; }
 
   /* ── Player chips (lineup pitch) ── */
   .player-jersey svg { width: 33px; height: 37px; }
