@@ -2109,75 +2109,19 @@ function drawRadar(ratings, teamA, teamB) {
     `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#e74c3c"></span>${escHtml(teamB.slice(0,14))}</span>`;
 }
 
-// ── Live Holo-Pitch ───────────────────────────────────────────
-// SVG viewBox is 160×240 to give more vertical room for badges
+// ── Live Smart-Dot Pitch ──────────────────────────────────────
 const _LP = { W: 160, H: 240, cx: 80, cy: 120 };
 
-// Rating → tier colour (matches lookup panel tiers)
+// Rating → tier colour
 function _lpTierColor(ovr) {
-  if (ovr >= 88) return '#39ff9f';   // emerald elite
-  if (ovr >= 80) return '#e8a820';   // gold
-  if (ovr >= 70) return '#9ab0cc';   // silver
-  if (ovr >= 60) return '#aa6832';   // bronze
-  return '#c05050';                  // poor
+  if (ovr >= 88) return '#39ff9f';
+  if (ovr >= 80) return '#e8a820';
+  if (ovr >= 70) return '#9ab0cc';
+  if (ovr >= 60) return '#aa6832';
+  return '#c05050';
 }
 
-// Tiny SVG silhouette (body + head) centred at (0,0), scale ~10px tall
-function _lpSilhouette(color, glowColor) {
-  return `<g class="lp-sil">
-    <ellipse cx="0" cy="-7" rx="2.6" ry="2.8" fill="${color}" opacity=".92"/>
-    <path d="M-3.5,0 Q-4,5 -3,9 L3,9 Q4,5 3.5,0 Q1,-3.5 -1.5,-3.5 Z" fill="${color}" opacity=".84"/>
-    <line x1="-3.5" y1="2" x2="-6" y2="7" stroke="${color}" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
-    <line x1="3.5"  y1="2" x2="6"  y2="7" stroke="${color}" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
-    <line x1="-1.5" y1="9" x2="-2.5" y2="15" stroke="${color}" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
-    <line x1="1.5"  y1="9" x2="2.5"  y2="15" stroke="${color}" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
-    <ellipse cx="0" cy="-7" rx="2.6" ry="2.8" fill="none" stroke="${glowColor}" stroke-width=".6" opacity=".55"/>
-  </g>`;
-}
-
-// Floating data badge above silhouette
-function _lpBadge(pos, num, ovr, color, side) {
-  const tierCol = _lpTierColor(ovr);
-  const label = `${pos} #${num}`;
-  const w = 28, h = 10;
-  return `<g class="lp-badge" transform="translate(${-w/2},-28)">
-    <rect x="0" y="0" width="${w}" height="${h}" rx="2.5"
-      fill="rgba(3,8,20,.82)" stroke="${tierCol}" stroke-width=".7" opacity=".95"/>
-    <text x="${w/2}" y="4.5" text-anchor="middle" dominant-baseline="middle"
-      font-family="'Rajdhani',sans-serif" font-size="3.2" font-weight="700"
-      fill="rgba(255,255,255,.85)" letter-spacing=".3">${label}</text>
-    <rect x="1" y="5.5" width="${w-2}" height="3.8" rx="1.5" fill="rgba(0,0,0,.4)"/>
-    <rect x="1" y="5.5" width="${Math.round((w-2)*(Math.min(ovr,99)-50)/49)}" height="3.8"
-      rx="1.5" fill="${tierCol}" opacity=".9"/>
-    <text x="${w/2}" y="7.4" text-anchor="middle" dominant-baseline="middle"
-      font-family="'Rajdhani',sans-serif" font-size="3.4" font-weight="900"
-      fill="${tierCol}">${ovr}</text>
-  </g>`;
-}
-
-// Ground-shadow disc under each silhouette
-function _lpShadow(color) {
-  return `<ellipse cx="0" cy="15" rx="5" ry="2" fill="${color}" opacity=".18"/>`;
-}
-
-// Vertical focus-beam for the highest-rated player
-function _lpFocusBeam(x, y, color) {
-  return `<g class="lp-focus-beam">
-    <line x1="${x}" y1="${y-28}" x2="${x}" y2="${y+16}"
-      stroke="${color}" stroke-width="1.2" stroke-dasharray="3 2" opacity=".5"
-      class="lp-beam-line"/>
-    <ellipse cx="${x}" cy="${y-28}" rx="7" ry="3"
-      fill="${color}" opacity=".18" class="lp-beam-halo"/>
-  </g>`;
-}
-
-// Particle stream from ball bearer to ball position
-function _lpParticleStream(x1, y1, x2, y2, color) {
-  return `<line class="lp-particle" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"
-    stroke="${color}" stroke-width=".8" stroke-dasharray="2 4" opacity=".55"/>`;
-}
-
-// Base pitch coordinates (percentage of pitch)
+// Base pitch coordinates (percentage)
 const _LP_POS_A = {
   GK:[.50,.06], RB:[.80,.20], CB:[.62,.18], LB:[.20,.20],
   DM:[.50,.33], CM:[.42,.40], RM:[.75,.38], LM:[.25,.38],
@@ -2193,41 +2137,27 @@ const _JERSEY_LP = { GK:1, RB:2, CB:5, LB:3, DM:6, CM:8, RM:7, LM:11, AM:10, RW:
 
 let _pitchDots       = { a: [], b: [], ball: null };
 let _pitchDriftInterval = null;
-let _lpFocusEl       = null;  // the focused player's badge <g> (for pulsing)
-let _lpParticleEl    = null;  // particle <line> element
+let _lpBallOwnerEl   = null;  // current ball-owner dot <g> element
+let _lpParticleEl    = null;
 
 function _lpHexGrid(W, H) {
-  // Sparse hexagonal grid for the holo texture (every ~18px)
-  const s = 9; // hex "size" (circumradius)
+  const s = 9;
   const dx = s * Math.sqrt(3), dy = s * 1.5;
   const rows = Math.ceil(H / dy) + 2, cols = Math.ceil(W / dx) + 2;
   let d = '';
   for (let row = -1; row < rows; row++) {
     for (let col = -1; col < cols; col++) {
-      const cx = col * dx + (row % 2 === 0 ? 0 : dx / 2);
-      const cy = row * dy;
-      // hexagon path
+      const hx = col * dx + (row % 2 === 0 ? 0 : dx / 2);
+      const hy = row * dy;
       let pts = '';
       for (let i = 0; i < 6; i++) {
         const a = Math.PI / 180 * (60 * i - 30);
-        const px = cx + s * Math.cos(a), py = cy + s * Math.sin(a);
-        pts += (i === 0 ? 'M' : 'L') + px.toFixed(1) + ',' + py.toFixed(1);
+        pts += (i === 0 ? 'M' : 'L') + (hx + s * Math.cos(a)).toFixed(1) + ',' + (hy + s * Math.sin(a)).toFixed(1);
       }
       d += pts + 'Z ';
     }
   }
-  return `<path d="${d}" fill="none" stroke="rgba(80,220,180,.07)" stroke-width=".4" class="lp-hex"/>`;
-}
-
-function _lpTacticalLines(W, H, cx, cy) {
-  // Glowing tactical grid: thirds + center
-  const t = H / 3;
-  return [
-    `<line x1="0" y1="${t}" x2="${W}" y2="${t}" stroke="rgba(0,212,255,.14)" stroke-width=".5" stroke-dasharray="4 4"/>`,
-    `<line x1="0" y1="${t*2}" x2="${W}" y2="${t*2}" stroke="rgba(0,212,255,.14)" stroke-width=".5" stroke-dasharray="4 4"/>`,
-    `<line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" stroke="rgba(0,212,255,.08)" stroke-width=".4" stroke-dasharray="3 6"/>`,
-    `<line x1="0" y1="${H/2}" x2="${W}" y2="${H/2}" stroke="rgba(255,255,255,.2)" stroke-width=".6"/>`,
-  ].join('');
+  return `<path d="${d}" fill="none" stroke="rgba(80,220,180,.06)" stroke-width=".35" class="lp-hex"/>`;
 }
 
 function initLivePitch(lineupA, lineupB) {
@@ -2236,207 +2166,183 @@ function initLivePitch(lineupA, lineupB) {
 
   const W = _LP.W, H = _LP.H, cx = _LP.cx, cy = _LP.cy;
 
-  // ── Compute ratings for both teams to pick focus player & tier colours ──
   const rgsA = _liveData?.ratings?.teamA || { attack:72, midfield:72, defense:72, goalkeeping:72 };
   const rgsB = _liveData?.ratings?.teamB || { attack:72, midfield:72, defense:72, goalkeeping:72 };
-  const _ovr = (p, rgs) => calcPlayerRating(p, rgs);
 
-  const playersA = (lineupA?.players || []).map(p => ({ ...p, _ovr: _ovr(p, rgsA) }));
-  const playersB = (lineupB?.players || []).map(p => ({ ...p, _ovr: _ovr(p, rgsB) }));
+  const playersA = (lineupA?.players || []).map(p => ({ ...p, _ovr: calcPlayerRating(p, rgsA) }));
+  const playersB = (lineupB?.players || []).map(p => ({ ...p, _ovr: calcPlayerRating(p, rgsB) }));
+
+  // Pick ball owner = highest-rated player (initial state)
   const allPlayers = [...playersA, ...playersB];
-  const heroPlayer = allPlayers.reduce((best, p) => (!best || p._ovr > best._ovr) ? p : best, null);
+  const heroPlayer = allPlayers.reduce((b, p) => (!b || p._ovr > b._ovr) ? p : b, null);
 
-  // ── SVG defs: gradients ──────────────────────────────────────────────────
+  // ── Defs ────────────────────────────────────────────────────────────────
   let markup = `<defs>
     <radialGradient id="lp-pitch-grad" cx="50%" cy="50%" r="72%">
-      <stop offset="0%"   stop-color="#0d2b1a" stop-opacity=".98"/>
-      <stop offset="70%"  stop-color="#071a0f" stop-opacity=".98"/>
-      <stop offset="100%" stop-color="#030d06" stop-opacity="1"/>
+      <stop offset="0%"   stop-color="#0c2416"/>
+      <stop offset="100%" stop-color="#040e08"/>
     </radialGradient>
-    <radialGradient id="lp-ball-grad" cx="38%" cy="35%" r="60%">
+    <radialGradient id="lp-ball-grad" cx="35%" cy="30%" r="65%">
       <stop offset="0%"   stop-color="#ffffff"/>
       <stop offset="100%" stop-color="#44aaff"/>
     </radialGradient>
-    <radialGradient id="lp-vortex-outer" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"  stop-color="rgba(0,212,255,.6)"/>
-      <stop offset="60%" stop-color="rgba(255,77,109,.4)"/>
-      <stop offset="100%" stop-color="transparent"/>
-    </radialGradient>
-    <filter id="lp-glow-a" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    <filter id="lp-dot-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="lp-glow-b" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="lp-glow-focus" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="lp-badge-glow" x="-40%" y="-80%" width="180%" height="260%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+    <filter id="lp-hero-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <clipPath id="lp-clip"><rect width="${W}" height="${H}" rx="6"/></clipPath>
   </defs>`;
 
-  // ── Pitch background ────────────────────────────────────────────────────
+  // ── Background ─────────────────────────────────────────────────────────
   markup += `<rect width="${W}" height="${H}" rx="6" fill="url(#lp-pitch-grad)"/>`;
-
-  // ── Hex grid texture ────────────────────────────────────────────────────
   markup += `<g clip-path="url(#lp-clip)">${_lpHexGrid(W, H)}</g>`;
 
-  // ── Tactical lines ──────────────────────────────────────────────────────
-  markup += `<g clip-path="url(#lp-clip)">${_lpTacticalLines(W, H, cx, cy)}</g>`;
-
-  // ── Standard pitch markings ─────────────────────────────────────────────
-  markup += `
-    <g clip-path="url(#lp-clip)" stroke="rgba(255,255,255,.22)" stroke-width=".7" fill="none">
-      <rect x="1" y="1" width="${W-2}" height="${H-2}" rx="5"/>
-      <rect x="44" y="1"      width="${W-88}" height="22" rx="1"/>
-      <rect x="44" y="${H-23}" width="${W-88}" height="22" rx="1"/>
-      <rect x="58" y="1"      width="${W-116}" height="10" rx="1"/>
-      <rect x="58" y="${H-11}" width="${W-116}" height="10" rx="1"/>
-      <circle cx="${cx}" cy="${cy}" r="20"/>
-      <circle cx="${cx}" cy="${cy}" r="1.5" fill="rgba(255,255,255,.35)" stroke="none"/>
-      <circle cx="${cx}" cy="${H*0.07}" r="2.5" fill="rgba(255,255,255,.18)" stroke="none"/>
-      <circle cx="${cx}" cy="${H*0.93}" r="2.5" fill="rgba(255,255,255,.18)" stroke="none"/>
-    </g>`;
-
-  // ── Isometric edge glow (depth illusion) ────────────────────────────────
-  markup += `
-    <rect width="${W}" height="${H}" rx="6" fill="none"
-      stroke="rgba(0,212,255,.35)" stroke-width="1.2"/>
-    <rect x="3" y="3" width="${W-6}" height="${H-6}" rx="4" fill="none"
-      stroke="rgba(0,212,255,.1)" stroke-width=".5"/>`;
-
-  // ── Corner accent lines ─────────────────────────────────────────────────
-  const ca = 10;
-  const corners = [[0,0],[W,0],[0,H],[W,H]];
-  markup += corners.map(([x,y]) => {
-    const sx = x === 0 ? 1 : -1, sy = y === 0 ? 1 : -1;
-    return `<line x1="${x+sx*1}" y1="${y}" x2="${x+sx*ca}" y2="${y}" stroke="rgba(0,212,255,.6)" stroke-width="1.2"/>
-            <line x1="${x}" y1="${y+sy*1}" x2="${x}" y2="${y+sy*ca}" stroke="rgba(0,212,255,.6)" stroke-width="1.2"/>`;
-  }).join('');
-
-  // ── Referee symbols near center (whistle + red card) ────────────────────
-  const rfX = cx + 24, rfY = cy - 14;
-  markup += `<g class="lp-ref-symbols" opacity=".7">
-    <!-- Whistle -->
-    <circle cx="${rfX}" cy="${rfY}" r="3.5" fill="none" stroke="rgba(220,200,160,.7)" stroke-width=".8"/>
-    <line x1="${rfX+2}" y1="${rfY-1}" x2="${rfX+6}" y2="${rfY-4}" stroke="rgba(220,200,160,.7)" stroke-width=".8"/>
-    <circle cx="${rfX+6.5}" cy="${rfY-4.5}" r="1.2" fill="rgba(220,200,160,.5)"/>
-    <!-- Red card -->
-    <rect x="${rfX-7}" y="${rfY-4}" width="5" height="7" rx="1"
-      fill="rgba(255,50,50,.65)" stroke="rgba(255,120,120,.4)" stroke-width=".5"/>
+  // ── Pitch markings ──────────────────────────────────────────────────────
+  markup += `<g clip-path="url(#lp-clip)" fill="none">
+    <rect x="1" y="1" width="${W-2}" height="${H-2}" rx="5"
+      stroke="rgba(255,255,255,.15)" stroke-width=".6"/>
+    <line x1="0" y1="${H/2}" x2="${W}" y2="${H/2}"
+      stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
+    <circle cx="${cx}" cy="${cy}" r="20"
+      stroke="rgba(255,255,255,.15)" stroke-width=".6"/>
+    <rect x="44" y="1"      width="72" height="22" rx="1"
+      stroke="rgba(255,255,255,.12)" stroke-width=".5"/>
+    <rect x="44" y="${H-23}" width="72" height="22" rx="1"
+      stroke="rgba(255,255,255,.12)" stroke-width=".5"/>
+    <rect x="58" y="1"      width="44" height="10" rx="1"
+      stroke="rgba(255,255,255,.1)"  stroke-width=".4"/>
+    <rect x="58" y="${H-11}" width="44" height="10" rx="1"
+      stroke="rgba(255,255,255,.1)"  stroke-width=".4"/>
   </g>`;
 
-  // ── Vortex energy at center (replaces plain dot) ─────────────────────────
-  markup += `<g class="lp-vortex" filter="url(#lp-glow-a)">
-    <circle cx="${cx}" cy="${cy}" r="8" fill="url(#lp-vortex-outer)" opacity=".7" class="lp-vortex-ring"/>
-    <circle cx="${cx}" cy="${cy}" r="4" fill="rgba(0,212,255,.4)" class="lp-vortex-core"/>
-    <circle cx="${cx}" cy="${cy}" r="1.8" fill="#fff" opacity=".9"/>
-  </g>`;
+  // ── Border glow ─────────────────────────────────────────────────────────
+  markup += `<rect width="${W}" height="${H}" rx="6" fill="none"
+    stroke="rgba(0,212,255,.3)" stroke-width="1"/>`;
 
-  // ──  placeholder for particle stream (drawn after players) ───────────────
+  // ── Placeholder for particle stream ────────────────────────────────────
   markup += `<g id="lp-particle-layer"></g>`;
 
-  // ── Player silhouettes layer ─────────────────────────────────────────────
+  // ── Write static markup → DOM ───────────────────────────────────────────
+  svg.innerHTML = markup;
+
+  // ── Render players as Smart Dots ────────────────────────────────────────
   _pitchDots.a = [];
   _pitchDots.b = [];
-  _lpFocusEl   = null;
+  _lpBallOwnerEl = null;
 
   const usedNumsA = new Set(), usedNumsB = new Set();
-  let focusX = cx, focusY = cy, focusBallX = cx, focusBallY = cy;
-  let bestOvr = -1;
+  let bestOvr = -1, ballOwnerX = cx, ballOwnerY = cy;
 
-  // Render one team's players and return markup + dots array
-  const renderTeam = (players, posMap, colorMain, colorGlow, side, usedNums, teamRgs) => {
+  const renderTeam = (players, posMap, rimColor, fillColor, usedNums, teamKey) => {
     const EL = [];
     players.forEach((p, i) => {
-      const pos  = p.position || 'CM';
+      const pos = p.position || 'CM';
       const base = posMap[pos] || posMap.CM;
-      const bx   = base[0] * W;
-      const by   = base[1] * H;
-      let   num  = _JERSEY_LP[pos] ?? (i + 1);
+      const bx = base[0] * W;
+      const by = base[1] * H;
+      let num = _JERSEY_LP[pos] ?? (i + 1);
       while (usedNums.has(num)) num++;
       usedNums.add(num);
 
-      const ovr      = p._ovr;
-      const tierCol  = _lpTierColor(ovr);
-      const isFocus  = (heroPlayer && p.name === heroPlayer.name);
+      const ovr     = p._ovr;
+      const tierCol = _lpTierColor(ovr);
+      const isHero  = heroPlayer && p.name === heroPlayer.name;
+      const R       = isHero ? 7.5 : 6;  // hero dot slightly larger
 
-      // Build group
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('transform', `translate(${bx},${by})`);
       g.classList.add('lp-player-g');
-      g.dataset.bx  = bx;
-      g.dataset.by  = by;
-      g.dataset.pos = pos;
+      if (isHero) g.classList.add('lp-hero-dot');
+      g.dataset.bx   = bx;
+      g.dataset.by   = by;
+      g.dataset.pos  = pos;
+      g.dataset.name = p.name;
+      g.dataset.ovr  = ovr;
+      g.dataset.num  = num;
+      g.dataset.tier = tierCol;
+      g.dataset.team = teamKey;
 
-      let inner = _lpShadow(colorMain);
+      // Smart dot: dark glass fill + glowing rim
+      g.innerHTML = `
+        <circle r="${R+2}" fill="${rimColor}" opacity=".18" class="lp-dot-outer-ring"/>
+        <circle r="${R}" fill="${fillColor}" stroke="${rimColor}" stroke-width="1.4"
+          class="lp-dot-main" filter="url(#lp-dot-glow)"/>
+        <circle r="${R*.55}" fill="rgba(255,255,255,.12)"/>
+        <text y="1" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Rajdhani',sans-serif" font-size="${isHero ? 4.8 : 4.2}"
+          font-weight="800" fill="rgba(255,255,255,.92)">${num}</text>
+        <g class="lp-dot-tooltip" opacity="0" pointer-events="none">
+          <rect x="-17" y="${-(R+14)}" width="34" height="11" rx="2.5"
+            fill="rgba(3,8,20,.92)" stroke="${tierCol}" stroke-width=".65"/>
+          <text x="0" y="${-(R+10)}" text-anchor="middle" dominant-baseline="middle"
+            font-family="'Rajdhani',sans-serif" font-size="3.4" font-weight="700"
+            fill="rgba(255,255,255,.85)">${pos}</text>
+          <text x="0" y="${-(R+5.5)}" text-anchor="middle" dominant-baseline="middle"
+            font-family="'Rajdhani',sans-serif" font-size="3.8" font-weight="900"
+            fill="${tierCol}">${ovr}</text>
+        </g>`;
 
-      // Focus glow ring for hero player
-      if (isFocus) {
-        inner += `<circle cx="0" cy="4" r="9" fill="none" stroke="${tierCol}" stroke-width="1.2"
-          opacity=".7" class="lp-hero-ring"/>`;
-        focusX = bx; focusY = by;
-        _lpFocusEl = g;
-      }
+      // Hover / touch: show tooltip
+      const showTip = () => {
+        const tip = g.querySelector('.lp-dot-tooltip');
+        if (tip) tip.setAttribute('opacity', '1');
+        g.style.zIndex = '99';
+      };
+      const hideTip = () => {
+        const tip = g.querySelector('.lp-dot-tooltip');
+        if (tip) tip.setAttribute('opacity', '0');
+      };
+      g.addEventListener('mouseenter', showTip);
+      g.addEventListener('mouseleave', hideTip);
+      g.addEventListener('touchstart', e => { e.preventDefault(); showTip(); }, { passive: false });
+      g.addEventListener('touchend', () => setTimeout(hideTip, 1400));
 
-      inner += _lpSilhouette(colorMain, isFocus ? tierCol : colorGlow);
-      inner += _lpBadge(pos, num, ovr, colorMain, side);
-
-      // For focus player: add glow filter wrapper
-      if (isFocus) {
-        g.setAttribute('filter', 'url(#lp-glow-focus)');
-      }
-
-      g.innerHTML = inner;
       svg.appendChild(g);
       EL.push(g);
 
-      if (ovr > bestOvr) { bestOvr = ovr; focusBallX = bx; focusBallY = by; }
+      if (ovr > bestOvr) {
+        bestOvr = ovr;
+        ballOwnerX = bx;
+        ballOwnerY = by;
+        _lpBallOwnerEl = g;
+      }
     });
     return EL;
   };
 
-  svg.innerHTML = markup;
+  _pitchDots.a = renderTeam(playersA, _LP_POS_A, '#4f83ff', 'rgba(10,20,50,.85)',  usedNumsA, 'a');
+  _pitchDots.b = renderTeam(playersB, _LP_POS_B, '#ff4d55', 'rgba(50,10,14,.85)',  usedNumsB, 'b');
 
-  // Re-grab the particle layer (it's now in DOM after innerHTML assignment)
-  const particleLayer = svg.querySelector('#lp-particle-layer') || svg;
-
-  _pitchDots.a = renderTeam(playersA, _LP_POS_A, '#4f83ff', '#7ab0ff', 'a', usedNumsA, rgsA);
-  _pitchDots.b = renderTeam(playersB, _LP_POS_B, '#ff4d55', '#ff8a90', 'b', usedNumsB, rgsB);
-
-  // ── Ball (vortex) ────────────────────────────────────────────────────────
+  // ── Ball ─────────────────────────────────────────────────────────────────
   const ballG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
   ballG.setAttribute('transform', `translate(${cx},${cy})`);
   ballG.classList.add('lp-ball-g');
   ballG.dataset.bx = cx;
   ballG.dataset.by = cy;
   ballG.innerHTML = `
-    <circle r="4.5" fill="url(#lp-ball-grad)" stroke="rgba(255,255,255,.8)" stroke-width=".8"/>
-    <circle r="2" fill="rgba(255,255,255,.6)"/>`;
+    <circle r="4.5" fill="url(#lp-ball-grad)" stroke="rgba(255,255,255,.75)" stroke-width=".7"/>
+    <circle r="1.8" fill="rgba(255,255,255,.55)"/>`;
   svg.appendChild(ballG);
   _pitchDots.ball = ballG;
 
-  // ── Particle stream from hero to ball ───────────────────────────────────
+  // ── Particle stream: ball-owner → ball ──────────────────────────────────
   const streamLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-  streamLine.setAttribute('x1', focusBallX);
-  streamLine.setAttribute('y1', focusBallY);
+  streamLine.setAttribute('x1', ballOwnerX);
+  streamLine.setAttribute('y1', ballOwnerY);
   streamLine.setAttribute('x2', cx);
   streamLine.setAttribute('y2', cy);
   streamLine.setAttribute('stroke', _lpTierColor(bestOvr));
-  streamLine.setAttribute('stroke-width', '0.9');
+  streamLine.setAttribute('stroke-width', '0.8');
   streamLine.setAttribute('stroke-dasharray', '2 4');
-  streamLine.setAttribute('opacity', '0.45');
+  streamLine.setAttribute('opacity', '0.4');
   streamLine.classList.add('lp-particle');
   svg.appendChild(streamLine);
   _lpParticleEl = streamLine;
 
-  // Start idle drift
   _startPitchDrift();
 }
 
