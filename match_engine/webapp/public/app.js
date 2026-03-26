@@ -1874,7 +1874,7 @@ const PLAYER_OVERRIDES = new Map([
   ['xavi hernández',     93], ['xavi hernandez',    93],
   ['andrés iniesta',     92], ['andres iniesta',    92], ['iniesta',   92],
   ['andrea pirlo',       93], ['pirlo',             93],
-  ['zinedine zidane',    96], ['zidane',            96],
+  ['zinedine zidane',    96],
   ['michel platini',     96], ['platini',           96],
   ['xabi alonso',        91],
   ['sergio busquets',    89], ['busquets',          89],

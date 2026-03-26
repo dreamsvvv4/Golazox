@@ -1,0 +1,40 @@
+{
+  "slug": "china",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        { "name": "Senne Lammens",        "position": "GK", "marketValue": 30000000, "rating": 87 },
+        { "name": "Altay Bayındır",        "position": "GK", "marketValue": 7000000,  "rating": 81 },
+        { "name": "Tom Heaton",            "position": "GK", "marketValue": 150000,   "rating": 66 },
+        { "name": "Leny Yoro",             "position": "CB", "marketValue": 50000000, "rating": 89 },
+        { "name": "Matthijs de Ligt",      "position": "CB", "marketValue": 40000000, "rating": 88 },
+        { "name": "Lisandro Martínez",     "position": "CB", "marketValue": 40000000, "rating": 88 },
+        { "name": "Patrick Dorgu",         "position": "CB", "marketValue": 35000000, "rating": 87 },
+        { "name": "Diogo Dalot",           "position": "CB", "marketValue": 30000000, "rating": 87 },
+        { "name": "Ayden Heaven",          "position": "CB", "marketValue": 20000000, "rating": 85 },
+        { "name": "Noussair Mazraoui",     "position": "CB", "marketValue": 20000000, "rating": 85 },
+        { "name": "Luke Shaw",             "position": "CB", "marketValue": 10000000, "rating": 82 },
+        { "name": "Harry Maguire",         "position": "CB", "marketValue": 10000000, "rating": 81 },
+        { "name": "Tyrell Malacia",        "position": "CB", "marketValue": 5000000,  "rating": 80 },
+        { "name": "Diego León",            "position": "LB", "marketValue": 4000000,  "rating": 79 },
+        { "name": "Tyler Fredricson",      "position": "RB", "marketValue": 3000000,  "rating": 78 },
+        { "name": "Casemiro",              "position": "DM", "marketValue": 8000000,  "rating": 88 },
+        { "name": "Bruno Fernandes",       "position": "CM", "marketValue": 40000000, "rating": 88 },
+        { "name": "Mason Mount",           "position": "CM", "marketValue": 30000000, "rating": 87 },
+        { "name": "Manuel Ugarte",         "position": "DM", "marketValue": 30000000, "rating": 83 },
+        { "name": "Kobbie Mainoo",         "position": "CM", "marketValue": 50000000, "rating": 83 },
+        { "name": "Bryan Mbeumo",          "position": "ST", "marketValue": 80000000, "rating": 90 },
+        { "name": "Matheus Cunha",         "position": "ST", "marketValue": 70000000, "rating": 90 },
+        { "name": "Benjamin Sesko",        "position": "ST", "marketValue": 65000000, "rating": 90 },
+        { "name": "Amad Diallo",           "position": "RW", "marketValue": 50000000, "rating": 89 },
+        { "name": "Joshua Zirkzee",        "position": "ST", "marketValue": 22000000, "rating": 86 },
+        { "name": "Chido Obi",             "position": "ST", "marketValue": 5000000,  "rating": 80 }
+      ],
+      "ratings": { "attack": 60, "midfield": 63, "defense": 62, "goalkeeping": 60 },
+      "source": "Transfermarkt — China (2025/2026)",
+      "teamLabel": "China (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/china.png"
+}
