@@ -1626,8 +1626,8 @@ body {
 }
 .live-body {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 240px 1fr 220px;
+  gap: 1rem;
   align-items: stretch;
 }
 /* Feed column: scrollable narrative panel */
@@ -1690,7 +1690,15 @@ body {
 .le-icon { font-size: .95rem; }
 .le-name { color: rgba(255,255,255,.85); font-weight: 500; }
 
-/* ── Radar chart (now in results section) ─────────────────── */
+/* ── Radar chart ─────────────────────────────────────────── */
+/* Inside live-body (3rd column): fills the grid cell, compact padding */
+.live-body .radar-card {
+  max-width: none;
+  margin: 0;
+  padding: .7rem .5rem;
+  display: flex; flex-direction: column; align-items: center; gap: .4rem;
+}
+/* Standalone in results section */
 .radar-card {
   display: flex; flex-direction: column; align-items: center; gap: .6rem;
   padding: 1.25rem 1rem;
@@ -2001,16 +2009,18 @@ body {
   .referee-picker-section,
   .weather-picker-section { margin-top: .85rem; padding-top: .85rem; }
 
-  /* ── Live viewer: 2-col pitch | feed ── */
+  /* ── Live viewer: 3-col pitch | feed | radar ── */
   .live-viewer  { padding: .9rem .9rem; }
   .live-body    {
-    grid-template-columns: 160px 1fr;
-    gap: .65rem;
+    grid-template-columns: 140px 1fr 140px;
+    gap: .55rem;
   }
-  .live-pitch-wrap { width: 160px; }
-  .live-pitch-svg  { width: 160px; height: 240px; }
+  .live-pitch-wrap { width: 140px; }
+  .live-pitch-svg  { width: 140px; height: 210px; }
   .live-pitch-label { font-size: .5rem; }
-  .live-feed-wrap  { min-height: 240px; }
+  .live-feed-wrap  { min-height: 210px; }
+  .live-body .radar-card { padding: .4rem .3rem; }
+  .live-body .radar-svg  { width: 140px !important; height: 140px !important; }
   .live-team-name  { max-width: 112px; font-size: .86rem; }
   .live-score-num  { font-size: 2.1rem; }
   .live-score-sep  { font-size: 1.7rem; }
@@ -2119,11 +2129,14 @@ body {
   .wth-icon     { font-size: 1.12rem; }
   .wth-label    { font-size: .5rem; }
 
-  /* ── Live viewer: 2-col compact ── */
-  .live-body    { grid-template-columns: 120px 1fr; gap: .4rem; }
-  .live-pitch-wrap { width: 120px; }
-  .live-pitch-svg  { width: 120px; height: 180px; }
-  .live-feed-wrap  { min-height: 180px; }
+  /* ── Live viewer: 3-col compact mobile ── */
+  .live-body    { grid-template-columns: 90px 1fr 90px; gap: .3rem; }
+  .live-pitch-wrap { width: 90px; }
+  .live-pitch-svg  { width: 90px; height: 135px; }
+  .live-feed-wrap  { min-height: 135px; }
+  .live-body .radar-card { padding: .25rem .2rem; }
+  .live-body .radar-svg  { width: 90px !important; height: 90px !important; }
+  .live-body .radar-legend { display: none; }
 
   /* ── Score poster ── */
   .poster-score { font-size: 2.2rem; }

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=17" />
+  <link rel="stylesheet" href="style.css?v=18" />
 </head>
 <body>
 
@@ -189,6 +189,10 @@
           <div class="live-feed-header">EN JUEGO</div>
           <div class="live-feed" id="live-feed"></div>
         </div>
+        <div class="radar-card glass-card" id="radar-card">
+          <div class="radar-legend" id="radar-legend"></div>
+          <svg class="radar-svg" id="radar-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
       </div>
     </div>
 
@@ -297,12 +301,6 @@
         <div class="share-row">
           <button class="btn-share" onclick="shareResult()">📤 Compartir resultado</button>
         </div>
-      </div>
-
-      <!-- ── RADAR (stats comparison, shown after live) ──── -->
-      <div class="radar-card glass-card hidden" id="radar-card">
-        <div class="radar-legend" id="radar-legend"></div>
-        <svg class="radar-svg" id="radar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
       </div>
 
       <!-- ── CRÓNICA DEL PARTIDO ───────────────────────── -->
@@ -445,6 +443,6 @@
   </footer>
 
   <script src="/player_ratings.js"></script>
-  <script src="app.js?v=20"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>

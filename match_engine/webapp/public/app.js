@@ -744,9 +744,14 @@ function renderResult(data, payload) {
   const isPenMode = payload.matchMode === 'penalties';
   document.querySelector('.probs-card')?.classList.toggle('hidden', isPenMode);
   document.querySelector('.stats-card')?.classList.toggle('hidden', isPenMode);
-  document.getElementById('radar-card')?.classList.toggle('hidden', isPenMode);
+  // radar-card has been moved to results by finishLive; show/hide it
+  const radarCardEl = document.getElementById('radar-card');
+  if (radarCardEl) {
+    radarCardEl.style.display = isPenMode ? 'none' : '';
+    radarCardEl.classList.remove('hidden');
+  }
 
-  // Draw radar in results (also covers instant/direct mode where playLiveMatch skips it)
+  // Draw radar (covers instant mode where playLiveMatch skips drawRadar)
   if (!isPenMode && ratings) drawRadar(ratings, payload.teamA, payload.teamB);
 
   // ── Score poster ───────────────────────────────────────
@@ -2555,6 +2560,13 @@ function playLiveMatch(data, payload, tickMs = 300) {
   // Clear any leftover timers from a previous live match (prevents phantom events/wrong scores)
   _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
 
+  // Restore radar-card to live-body if a previous finishLive() moved it to results
+  const radarCard = document.getElementById('radar-card');
+  const liveBody  = document.querySelector('.live-body');
+  if (radarCard && liveBody && !liveBody.contains(radarCard)) {
+    liveBody.appendChild(radarCard);
+  }
+
   // ── Instant / "Directo" mode: skip live viewer entirely ─────────
   if (tickMs === 0) {
     finishLive();
@@ -2597,9 +2609,11 @@ function playLiveMatch(data, payload, tickMs = 300) {
   document.getElementById('live-score-b').textContent = '0';
   document.getElementById('live-feed').innerHTML      = '';
 
-  // In penalties mode hide the pitch (radar is now in results section, not here)
+  // In penalties mode hide the pitch and radar (irrelevant for a shootout)
   const pitchWrap  = document.querySelector('.live-pitch-wrap');
-  if (pitchWrap)  pitchWrap.style.display  = isPenMode ? 'none' : '';
+  const radarCardEl = document.getElementById('radar-card');
+  if (pitchWrap)   pitchWrap.style.display   = isPenMode ? 'none' : '';
+  if (radarCardEl) radarCardEl.style.display = isPenMode ? 'none' : '';
 
   if (!isPenMode) {
     drawRadar(data.ratings, payload.teamA, payload.teamB);
@@ -2866,7 +2880,7 @@ function finishLive() {
   document.getElementById('pen-kick-overlay')?.classList.add('hidden');
   // Always hide event overlay before transitioning to results
   document.getElementById('event-overlay').classList.add('hidden');
-  // Restore pitch visibility for the next match
+  // Restore pitch and radar visibility for next match
   const pitchWrap = document.querySelector('.live-pitch-wrap');
   if (pitchWrap) pitchWrap.style.display = '';
   stopLivePitch();
@@ -2875,6 +2889,11 @@ function finishLive() {
   setTimeout(() => {
     viewer.classList.add('hidden');
     viewer.classList.remove('live-fade-out');
+    // Move radar-card into results section so it stays visible after live fades out
+    const rc = document.getElementById('radar-card');
+    const scorePosterCard = document.querySelector('#results .score-poster');
+    if (rc && scorePosterCard) scorePosterCard.after(rc);
+    else if (rc) document.getElementById('results')?.appendChild(rc);
     // Remove live-only mask so renderResult can show all cards
     document.getElementById('results').classList.remove('results-live');
     renderResult(_liveData, _livePayload);
