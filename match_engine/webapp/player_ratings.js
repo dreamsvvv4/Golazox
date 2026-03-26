@@ -274,7 +274,7 @@ const PLAYER_RATINGS_RAW = [
   ['rivelino',               89],
   ['carlos valderrama',      87], ['valderrama',           87],
   // â”€â”€ 1990sâ€“2000s â”€â”€
-  ['xavi hernandez',         93], ['xavi hernÃ¡ndez',       93],
+  ['xavi hernandez',         93], ['xavi hernÃ¡ndez',       93], ['xavi', 93],
   ['andres iniesta',         92], ['andrÃ©s iniesta',       92], ['iniesta', 92],
   ['andrea pirlo',           93], ['pirlo',                93],
   ['luka modric',            91], ['luka modriÄ‡',          91], ['modriÄ‡',  91], ['modric', 91],
@@ -431,6 +431,7 @@ const PLAYER_RATINGS_RAW = [
   // â”€â”€ 1990sâ€“2000s â”€â”€
   ['raul gonzalez',          88], ['raÃºl',                 88], ['raul',    88],
   ['Fernando Hierro',        87], ['hierro',               87],
+  ['ivan helguera',          78], ['helguera',             78],
   ['davor suker',            87], ['Å¡uker',                87], ['suker',   87],
   ['robert prosinecki',      85], ['prosineÄki',           85],
   ['predrag mijatovic',      84], ['mijatoviÄ‡',            84],
