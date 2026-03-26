@@ -1,5 +1,441 @@
 {
   "slug": "japan",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/japan.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Zion Suzuki",
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Leo Kokubo",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Keisuke Osako",
+          "position": "GK",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Kosei Tani",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tomoki Hayakawa",
+          "position": "GK",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Taishi Brandon Nozawa",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Alexandre Pisano",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Hiroki Ito",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Ko Itakura",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Yukinari Sugawara",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Koki Machida",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Tsuyoshi Watanabe",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Daiki Hashioka",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Hayato Araki",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Shogo Taniguchi",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Naomichi Ueda",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yuta Nakayama",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Taiyo Koga",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Hiroki Sekine",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Kota Takai",
+          "position": "CB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Yuto Tsunashima",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Henry Heroki Mochizuki",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Tomoya Ando",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Junnosuke Suzuki",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Daichi Kamada",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Wataru Endo",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Reo Hatate",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Tojiro Kubo",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 83
+        },
+        {
+          "name": "Kaishu Sano",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Hayao Kawabe",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Kodai Sano",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ao Tanaka",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Joel Chima Fujita",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Ryoya Morishita",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ayumu Seko",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Satoshi Tanaka",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Sho Inagaki",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Zento Uno",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sota Kitano",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Yuto Ozeki",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Ryunosuke Sato",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Koki Kumasaka",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Ritsu Doan",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Takumi Minamino",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Kyogo Furuhashi",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Keito Nakamura",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Takefusa Kubo",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Junya Ito",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ayase Ueda",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Yuito Suzuki",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Koki Saito",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Shuto Machino",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Koki Ogawa",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mao Hosoya",
+          "position": "ST",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Yuki Ohashi",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Yuki Soma",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Taisei Miyashiro",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Yu Hirakawa",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Shin Yamada",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Keisuke Goto",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Taichi Hara",
+          "position": "ST",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Ryo Germain",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Shunsuke Mito",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Kota Tawaratsumida",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Yuki Kakita",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sota Nakamura",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 72,
+        "defense": 82,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — Japon (2025/2026)",
+      "teamLabel": "Japon (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/japan.png",
+  "id": 3435,
+  "name": "Japon"
 }

@@ -1589,6 +1589,37 @@ body {
   font-size: .7rem; font-weight: 800; letter-spacing: .12em;
   color: #22c55e; text-transform: uppercase;
 }
+.btn-stats-modal {
+  background: rgba(0,212,255,.1);
+  border: 1px solid rgba(0,212,255,.3);
+  color: rgba(0,212,255,.9);
+  border-radius: 6px;
+  font-family: 'Rajdhani', var(--font);
+  font-size: .66rem; font-weight: 800; letter-spacing: .06em;
+  padding: .28rem .65rem; cursor: pointer;
+  transition: background .15s;
+}
+.btn-stats-modal:hover { background: rgba(0,212,255,.22); }
+.stats-modal {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,10,.78); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+}
+.stats-modal.hidden { display: none; }
+.stats-modal-inner {
+  position: relative;
+  background: rgba(5,10,28,.97);
+  border: 1px solid rgba(0,212,255,.22);
+  border-radius: 16px;
+  padding: 1.4rem 1.2rem 1rem;
+}
+.stats-modal-close {
+  position: absolute; top: .5rem; right: .65rem;
+  background: none; border: none;
+  color: rgba(255,255,255,.4); font-size: 1rem; cursor: pointer;
+  line-height: 1;
+}
+.stats-modal-close:hover { color: rgba(255,255,255,.85); }
 .btn-skip {
   margin-left: auto; padding: .3rem .8rem;
   border-radius: 6px; border: 1px solid rgba(255,255,255,.18);
@@ -1626,7 +1657,7 @@ body {
 }
 .live-body {
   display: grid;
-  grid-template-columns: 240px 1fr 220px;
+  grid-template-columns: 260px 1fr;
   gap: 1rem;
   align-items: stretch;
 }
@@ -1666,15 +1697,27 @@ body {
   letter-spacing: .04em;
 }
 .live-event {
-  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+  display: flex; flex-direction: column;
   padding: .32rem .55rem; border-radius: 7px; margin-bottom: .3rem;
   font-size: .82rem; background: rgba(255,255,255,.055);
   animation: slide-in-feed .35s ease;
 }
-.live-event-b { flex-direction: row-reverse; text-align: right; }
-.live-event-n { justify-content: center; }
+.le-main-row {
+  display: flex; align-items: center; gap: .45rem;
+  flex-wrap: wrap;
+}
+.live-event-b .le-main-row { flex-direction: row-reverse; text-align: right; }
+.live-event-n .le-main-row { justify-content: center; }
 .le-narrative {
   display: none;
+}
+.le-narrative-text {
+  margin-top: .2rem;
+  font-size: .72rem;
+  color: rgba(255,255,255,.46);
+  line-height: 1.45;
+  font-style: italic;
+  padding-left: 2rem;
 }
 .pen-header-entry {
   background: linear-gradient(90deg, rgba(255,215,0,.14), rgba(255,215,0,.06), transparent);
@@ -1691,11 +1734,11 @@ body {
 .le-name { color: rgba(255,255,255,.85); font-weight: 500; }
 
 /* ── Radar chart ─────────────────────────────────────────── */
-/* Inside live-body (3rd column): fills the grid cell, compact padding */
-.live-body .radar-card {
+/* Inside stats modal: compact padding */
+.stats-modal .radar-card {
   max-width: none;
   margin: 0;
-  padding: .7rem .5rem;
+  padding: .5rem .4rem;
   display: flex; flex-direction: column; align-items: center; gap: .4rem;
 }
 /* Standalone in results section */
@@ -1723,7 +1766,7 @@ body {
 
 /* ── Live Smart-Dot Pitch ─────────────────────────────────── */
 .live-pitch-wrap {
-  width: 240px; flex-shrink: 0;
+  width: 260px; flex-shrink: 0;
   display: flex; flex-direction: column; align-items: center; gap: .3rem;
   position: relative;
 }
@@ -1734,7 +1777,7 @@ body {
   text-shadow: 0 0 8px rgba(0,212,255,.5);
 }
 .live-pitch-svg {
-  width: 240px; height: 360px; display: block;
+  width: 260px; height: 390px; display: block;
   border-radius: 8px; overflow: visible;
   filter: drop-shadow(0 0 6px rgba(0,212,255,.18)) drop-shadow(0 0 18px rgba(0,212,255,.08));
 }
@@ -2009,18 +2052,16 @@ body {
   .referee-picker-section,
   .weather-picker-section { margin-top: .85rem; padding-top: .85rem; }
 
-  /* ── Live viewer: 3-col pitch | feed | radar ── */
+  /* ── Live viewer: 2-col pitch | feed ── */
   .live-viewer  { padding: .9rem .9rem; }
   .live-body    {
-    grid-template-columns: 140px 1fr 140px;
+    grid-template-columns: 140px 1fr;
     gap: .55rem;
   }
   .live-pitch-wrap { width: 140px; }
   .live-pitch-svg  { width: 140px; height: 210px; }
   .live-pitch-label { font-size: .5rem; }
   .live-feed-wrap  { min-height: 210px; }
-  .live-body .radar-card { padding: .4rem .3rem; }
-  .live-body .radar-svg  { width: 140px !important; height: 140px !important; }
   .live-team-name  { max-width: 112px; font-size: .86rem; }
   .live-score-num  { font-size: 2.1rem; }
   .live-score-sep  { font-size: 1.7rem; }
@@ -2129,14 +2170,11 @@ body {
   .wth-icon     { font-size: 1.12rem; }
   .wth-label    { font-size: .5rem; }
 
-  /* ── Live viewer: 3-col compact mobile ── */
-  .live-body    { grid-template-columns: 90px 1fr 90px; gap: .3rem; }
+  /* ── Live viewer: 2-col compact mobile ── */
+  .live-body    { grid-template-columns: 90px 1fr; gap: .3rem; }
   .live-pitch-wrap { width: 90px; }
   .live-pitch-svg  { width: 90px; height: 135px; }
   .live-feed-wrap  { min-height: 135px; }
-  .live-body .radar-card { padding: .25rem .2rem; }
-  .live-body .radar-svg  { width: 90px !important; height: 90px !important; }
-  .live-body .radar-legend { display: none; }
 
   /* ── Score poster ── */
   .poster-score { font-size: 2.2rem; }

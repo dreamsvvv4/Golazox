@@ -2227,6 +2227,9 @@ let _pitchDots       = { a: [], b: [], ball: null };
 let _pitchDriftInterval = null;
 let _lpBallOwnerEl   = null;  // current ball-owner dot <g> element
 let _lpParticleEl    = null;
+let _driftTick       = 0;     // attack-wave counter
+let _attackBias      = 0;     // +1=team A attacking, -1=team B attacking
+let _attackBiasTimer = null;
 
 function _lpHexGrid(W, H) {
   const s = 9;
@@ -2434,22 +2437,110 @@ function initLivePitch(lineupA, lineupB) {
   _startPitchDrift();
 }
 
+// ── Penalty-only pitch: GK vs GK, ball at centre ─────────────
+function initPenaltyPitch(lineupA, lineupB) {
+  const svg = document.getElementById('live-pitch-svg');
+  if (!svg) return;
+  const W = _LP.W, H = _LP.H, cx = _LP.cx;
+
+  svg.innerHTML = `<defs>
+    <radialGradient id="lp-pitch-grad" cx="50%" cy="50%" r="72%">
+      <stop offset="0%"   stop-color="#0c2416"/>
+      <stop offset="100%" stop-color="#040e08"/>
+    </radialGradient>
+    <radialGradient id="lp-ball-grad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#44aaff"/>
+    </radialGradient>
+    <filter id="lp-dot-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="lp-clip"><rect width="${W}" height="${H}" rx="6"/></clipPath>
+  </defs>
+  <rect width="${W}" height="${H}" rx="6" fill="url(#lp-pitch-grad)"/>
+  <g clip-path="url(#lp-clip)" fill="none">
+    <rect x="1" y="1" width="${W-2}" height="${H-2}" rx="5"
+      stroke="rgba(255,255,255,.15)" stroke-width=".6"/>
+    <rect x="44" y="1" width="72" height="22" rx="1"
+      stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
+    <rect x="58" y="1" width="44" height="10" rx="1"
+      stroke="rgba(255,255,255,.14)" stroke-width=".5"/>
+    <circle cx="${cx}" cy="${H*.17}" r="1.5" fill="rgba(255,255,255,.7)"/>
+    <rect x="44" y="${H-23}" width="72" height="22" rx="1"
+      stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
+    <rect x="58" y="${H-11}" width="44" height="10" rx="1"
+      stroke="rgba(255,255,255,.14)" stroke-width=".5"/>
+    <circle cx="${cx}" cy="${H*.83}" r="1.5" fill="rgba(255,255,255,.7)"/>
+    <line x1="0" y1="${H/2}" x2="${W}" y2="${H/2}"
+      stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+    <circle cx="${cx}" cy="${H/2}" r="20"
+      stroke="rgba(255,255,255,.07)" stroke-width=".5"/>
+  </g>
+  <rect width="${W}" height="${H}" rx="6" fill="none"
+    stroke="rgba(0,212,255,.3)" stroke-width="1"/>`;
+
+  _pitchDots.a = []; _pitchDots.b = []; _lpBallOwnerEl = null;
+
+  const mkG = (x, y, rim, fill, label) => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('transform', `translate(${x},${y})`);
+    g.classList.add('lp-player-g', 'lp-hero-dot');
+    g.dataset.bx = x; g.dataset.by = y;
+    g.innerHTML = `
+      <circle r="9" fill="${fill}" opacity=".2" class="lp-dot-outer-ring"/>
+      <circle r="7" fill="${fill}" stroke="${rim}" stroke-width="2"
+        class="lp-dot-main" filter="url(#lp-dot-glow)"/>
+      <text y="1" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Rajdhani',sans-serif" font-size="5.5" font-weight="900"
+        fill="rgba(255,255,255,.95)">${label}</text>`;
+    svg.appendChild(g);
+    return g;
+  };
+
+  // GK A top; GK B bottom
+  _pitchDots.a.push(mkG(cx, H * 0.06, '#4f83ff', 'rgba(10,20,50,.9)', '1'));
+  _pitchDots.b.push(mkG(cx, H * 0.94, '#ff4d55', 'rgba(50,10,14,.9)', '1'));
+
+  // Ball at centre
+  const ballG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  ballG.setAttribute('transform', `translate(${cx},${H * 0.5})`);
+  ballG.classList.add('lp-ball-g');
+  ballG.dataset.bx = cx; ballG.dataset.by = H * 0.5;
+  ballG.innerHTML = `
+    <circle r="5" fill="url(#lp-ball-grad)" stroke="rgba(255,255,255,.8)" stroke-width=".8"/>
+    <circle r="2" fill="rgba(255,255,255,.6)"/>`;
+  svg.appendChild(ballG);
+  _pitchDots.ball = ballG;
+
+  _startPitchDrift();
+}
+
 function _startPitchDrift() {
-  if (_pitchDriftInterval) clearInterval(_pitchDriftInterval);
+  if (_attackBiasTimer) { clearTimeout(_attackBiasTimer); _attackBiasTimer = null; }
   _pitchDriftInterval = setInterval(_driftPlayers, 600);
 }
 
 function _driftPlayers() {
   const W = _LP.W, H = _LP.H;
-  const jitter = (g, amp) => {
+  _driftTick++;
+  // Every 5 ticks (~3s) trigger an attack/defense wave
+  if (_driftTick % 5 === 0 && !_attackBiasTimer) {
+    _attackBias = Math.random() < .5 ? 1 : -1;
+    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 3000);
+  }
+  const jitter = (g, amp, yBias) => {
     const bx = parseFloat(g.dataset.bx);
     const by = parseFloat(g.dataset.by);
     const nx = Math.max(6, Math.min(W - 6, bx + (Math.random() - .5) * amp));
-    const ny = Math.max(6, Math.min(H - 6, by + (Math.random() - .5) * amp));
+    const ny = Math.max(6, Math.min(H - 6, by + (Math.random() - .5) * amp + (yBias || 0)));
     g.setAttribute('transform', `translate(${nx},${ny})`);
   };
-  _pitchDots.a.forEach(g => jitter(g, 14));
-  _pitchDots.b.forEach(g => jitter(g, 14));
+  // +1 bias: team A pushes down (attacks), team B slightly retreats
+  const yBiasA = _attackBias === 1 ? 5 : _attackBias === -1 ? -3 : 0;
+  const yBiasB = _attackBias === -1 ? -5 : _attackBias === 1 ? 3 : 0;
+  _pitchDots.a.forEach(g => jitter(g, 12, yBiasA));
+  _pitchDots.b.forEach(g => jitter(g, 12, yBiasB));
   // Ball wanders freely
   if (_pitchDots.ball) {
     const bx = _LP.cx + (Math.random() - .5) * 40;
@@ -2471,6 +2562,30 @@ function _driftPlayers() {
       }
     }
   }
+}
+
+// ── Pitch event helpers ───────────────────────────────────────
+function _findDotByName(name) {
+  if (!name) return null;
+  const needle = name.toLowerCase();
+  const all = [..._pitchDots.a, ..._pitchDots.b];
+  return all.find(g => {
+    const n = (g.dataset.name || '').toLowerCase();
+    return n && n.includes(needle);
+  }) || null;
+}
+function _flashDot(g, color, duration) {
+  if (!g) return;
+  const main = g.querySelector('.lp-dot-main');
+  if (!main) return;
+  const origStroke = main.getAttribute('stroke');
+  const origWidth  = main.getAttribute('stroke-width');
+  main.setAttribute('stroke', color);
+  main.setAttribute('stroke-width', '3');
+  setTimeout(() => {
+    main.setAttribute('stroke', origStroke || '#4f83ff');
+    main.setAttribute('stroke-width', origWidth || '1.4');
+  }, duration);
 }
 
 function animatePitchEvent(type, ev) {
@@ -2510,23 +2625,69 @@ function animatePitchEvent(type, ev) {
     setPhase(type === 'yellow'
       ? `${t('phase-yellow')} — ${teamLabel}`
       : `${t('phase-red')} — ${teamLabel}`);
-    setTimeout(() => { setPhase(t('phase-playing')); }, 1800);
+    // Flash the carded player's dot
+    const culprit = _findDotByName(ev.name);
+    _flashDot(culprit, type === 'yellow' ? '#ffdc00' : '#ff2020', 1800);
+    // Player steps back slightly (guilty retreat)
+    if (culprit) {
+      const bx = parseFloat(culprit.dataset.bx);
+      const by = parseFloat(culprit.dataset.by);
+      const pullY = ev.side === 'A' ? -10 : 10;
+      culprit.setAttribute('transform', `translate(${bx},${by + pullY})`);
+    }
+    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 1800);
+
   } else if (type === 'penalty-miss') {
     setPhase(`${t('phase-pen-miss')} — ${teamLabel}`);
-    setTimeout(() => { setPhase(t('phase-playing')); }, 1800);
+    // Ball flies wide of the goal
+    if (_pitchDots.ball) {
+      const missX = _LP.cx + (Math.random() > .5 ? 1 : -1) * (28 + Math.random() * 14);
+      const missY = ev.side === 'A' ? _LP.H * 0.04 : _LP.H * 0.96;
+      _pitchDots.ball.setAttribute('transform', `translate(${missX},${missY})`);
+    }
+    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 1800);
+
   } else if (type === 'corner') {
     setPhase(`${t('phase-corner')} — ${teamLabel}`);
     if (_pitchDots.ball) {
-      const cornerX = ev.side === 'A' ? _LP.W * 0.96 : _LP.W * 0.04;
-      const cornerY = Math.random() < 0.5 ? _LP.H * 0.97 : _LP.H * 0.03;
+      const cornerX = Math.random() < 0.5 ? _LP.W * 0.97 : _LP.W * 0.03;
+      const cornerY = ev.side === 'A' ? _LP.H * 0.98 : _LP.H * 0.02;
       _pitchDots.ball.setAttribute('transform', `translate(${cornerX},${cornerY})`);
     }
+    // Attackers cluster around penalty area for the cross
+    const attackers = ev.side === 'A' ? _pitchDots.a : _pitchDots.b;
+    const penY = ev.side === 'A' ? _LP.H * 0.82 : _LP.H * 0.18;
+    attackers.forEach((g, i) => {
+      const nx = 24 + i * (_LP.W - 48) / Math.max(attackers.length - 1, 1);
+      g.setAttribute('transform', `translate(${nx},${penY + (Math.random() - .5) * 12})`);
+    });
     setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 1100);
+
   } else if (type === 'freekick') {
     setPhase(`${t('phase-freekick')} — ${teamLabel}`);
-    setTimeout(() => { setPhase(t('phase-playing')); }, 1200);
+    // Ball to freekick spot
+    if (_pitchDots.ball) {
+      const fkX = _LP.cx + (Math.random() - .5) * 40;
+      const fkY = ev.side === 'A' ? _LP.H * 0.40 : _LP.H * 0.60;
+      _pitchDots.ball.setAttribute('transform', `translate(${fkX},${fkY})`);
+      // Defenders form a wall near the ball
+      const defenders = ev.side === 'A' ? _pitchDots.b : _pitchDots.a;
+      defenders.slice(0, 4).forEach((g, i) => {
+        const wx = fkX - 22 + i * 15;
+        const wy = ev.side === 'A' ? fkY - 14 : fkY + 14;
+        g.setAttribute('transform', `translate(${wx},${wy})`);
+      });
+    }
+    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 1200);
+
   } else if (type === 'injury') {
     setPhase(`${t('phase-injury')} — ${teamLabel}`);
+    // Dim the injured player
+    const injured = _findDotByName(ev.name);
+    if (injured) {
+      injured.style.opacity = '0.3';
+      setTimeout(() => { injured.style.opacity = ''; }, 2000);
+    }
     setTimeout(() => { setPhase(t('phase-playing')); }, 1600);
   }
 }
@@ -2539,6 +2700,8 @@ function _resetToBase() {
 
 function stopLivePitch() {
   if (_pitchDriftInterval) { clearInterval(_pitchDriftInterval); _pitchDriftInterval = null; }
+  if (_attackBiasTimer)    { clearTimeout(_attackBiasTimer);     _attackBiasTimer = null; }
+  _attackBias = 0; _driftTick = 0;
   _pitchDots = { a: [], b: [], ball: null };
 }
 
@@ -2560,12 +2723,14 @@ function playLiveMatch(data, payload, tickMs = 300) {
   // Clear any leftover timers from a previous live match (prevents phantom events/wrong scores)
   _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
 
-  // Restore radar-card to live-body if a previous finishLive() moved it to results
+  // Restore radar-card to stats-modal if a previous finishLive() moved it to results
   const radarCard = document.getElementById('radar-card');
-  const liveBody  = document.querySelector('.live-body');
-  if (radarCard && liveBody && !liveBody.contains(radarCard)) {
-    liveBody.appendChild(radarCard);
+  const statsModalInner = document.getElementById('stats-modal-inner');
+  if (radarCard && statsModalInner && !statsModalInner.contains(radarCard)) {
+    statsModalInner.appendChild(radarCard);
   }
+  // Close any open stats modal from previous match
+  document.getElementById('stats-modal')?.classList.add('hidden');
 
   // ── Instant / "Directo" mode: skip live viewer entirely ─────────
   if (tickMs === 0) {
@@ -2609,14 +2774,17 @@ function playLiveMatch(data, payload, tickMs = 300) {
   document.getElementById('live-score-b').textContent = '0';
   document.getElementById('live-feed').innerHTML      = '';
 
-  // In penalties mode hide the pitch and radar (irrelevant for a shootout)
-  const pitchWrap  = document.querySelector('.live-pitch-wrap');
+  // Radar: draw into stats-modal (hidden until user clicks Stats button)
   const radarCardEl = document.getElementById('radar-card');
-  if (pitchWrap)   pitchWrap.style.display   = isPenMode ? 'none' : '';
   if (radarCardEl) radarCardEl.style.display = isPenMode ? 'none' : '';
+  if (!isPenMode) drawRadar(data.ratings, payload.teamA, payload.teamB);
 
-  if (!isPenMode) {
-    drawRadar(data.ratings, payload.teamA, payload.teamB);
+  // Pitch: always show — simplified 2-dot layout in penalty mode
+  const pitchWrap = document.querySelector('.live-pitch-wrap');
+  if (pitchWrap) pitchWrap.style.display = '';
+  if (isPenMode) {
+    initPenaltyPitch(data.lineups?.teamA, data.lineups?.teamB);
+  } else {
     initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
   }
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2788,7 +2956,10 @@ function addFeedEvent(ev) {
   const extraClass = ev.type === 'pen_miss' ? ' pen-miss-entry' : ev.type === 'pen_start' ? ' pen-header-entry' : ev.type === 'ft_whistle' ? ' pen-header-entry' : '';
   const div  = document.createElement('div');
   div.className = `live-event ${sideClass}${extraClass}`;
-  div.innerHTML = `<span class="le-min">${ev.type.startsWith('pen') ? 'P' : ev.minute + "'"}</span><span class="le-icon">${icon}</span><span class="le-name">${escHtml(ev.name)}</span>`;
+  const minLabel = ev.type.startsWith('pen') ? 'P' : ev.minute + "'";
+  div.innerHTML =
+    `<div class="le-main-row"><span class="le-min">${minLabel}</span><span class="le-icon">${icon}</span><span class="le-name">${escHtml(ev.name)}</span></div>` +
+    (ev.narrative ? `<div class="le-narrative-text">${escHtml(ev.narrative)}</div>` : '');
   feed.appendChild(div);
   // Auto-scroll to latest event
   feed.scrollTop = feed.scrollHeight;
@@ -2889,6 +3060,8 @@ function finishLive() {
   setTimeout(() => {
     viewer.classList.add('hidden');
     viewer.classList.remove('live-fade-out');
+    // Close stats modal before transitioning to results
+    document.getElementById('stats-modal')?.classList.add('hidden');
     // Move radar-card into results section so it stays visible after live fades out
     const rc = document.getElementById('radar-card');
     const scorePosterCard = document.querySelector('#results .score-poster');

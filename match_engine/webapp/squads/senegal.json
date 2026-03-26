@@ -1,5 +1,219 @@
 {
   "slug": "senegal",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/senegal.png"
+  "seasons": {
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tony Sylva",
+          "position": "GK",
+          "marketValue": 4250000,
+          "rating": 79
+        },
+        {
+          "name": "Cheikh N'Diaye",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Bouna Coundoul",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pape Diakhaté",
+          "position": "CB",
+          "marketValue": 5250000,
+          "rating": 80
+        },
+        {
+          "name": "Habib Beye",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Souleymane Diawara",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Mohamed Sarr",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kader Mangane",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Abdoulaye Faye",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Moustapha Sall",
+          "position": "CB",
+          "marketValue": 1750000,
+          "rating": 75
+        },
+        {
+          "name": "Ibrahima Faye",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Lamine Diatta",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ibrahima Sonko",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Cheikh Guèye",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Massamba Sambou",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Pascal Mendy",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 85
+        },
+        {
+          "name": "Papa Bouba Diop",
+          "position": "CM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Guirane N'Daw",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Salif Diao",
+          "position": "CM",
+          "marketValue": 2250000,
+          "rating": 76
+        },
+        {
+          "name": "Rémi Gomis",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ousmane N'Doye",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Papa Malick Ba",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Frédéric Mendy",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 85
+        },
+        {
+          "name": "Mamadou Niang",
+          "position": "ST",
+          "marketValue": 10500000,
+          "rating": 83
+        },
+        {
+          "name": "Diomansy Kamara",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Henri Camara",
+          "position": "ST",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "El-Hadji Diouf",
+          "position": "ST",
+          "marketValue": 5750000,
+          "rating": 80
+        },
+        {
+          "name": "Issiar Dia",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "N'Diaye Papa Waigo",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Modou Sougou",
+          "position": "ST",
+          "marketValue": 1100000,
+          "rating": 74
+        },
+        {
+          "name": "Babacar Guèye",
+          "position": "ST",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Mbaye Leye",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Khalilou Fadiga",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 74,
+        "defense": 82,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — Senegal (2008/2009)",
+      "teamLabel": "Senegal (2008-09)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/senegal.png",
+  "id": 3499,
+  "name": "Senegal"
 }

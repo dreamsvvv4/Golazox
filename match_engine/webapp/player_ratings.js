@@ -237,7 +237,6 @@ const PLAYER_RATINGS_RAW = [
   ['nico schlotterbeck',     84], ['schlotterbeck',        84],
   ['nordi mukiele',          82],
   ['sergio gomez',           80],
-  ['pedri gonzalez cb',      88],
   ['lucas hernandez',        84],
   ['presnel kimpembe',       83], ['kimpembe',             83],
   ['danilo luiz',            84], ['danilo',               84],
@@ -317,10 +316,8 @@ const PLAYER_RATINGS_RAW = [
   ['peter van vossen',       80],
   ['kaka',                   92],
   ['rivaldo',                93],
-  ['romario midfield',       80],
   ['melo',                   78],
   ['emerson',                84],
-  ['cafu mid',               90],
   ['deivid',                 78],
   // â”€â”€ 2010s â”€â”€
   ['kevin de bruyne',        92], ['de bruyne',            92],
@@ -464,7 +461,6 @@ const PLAYER_RATINGS_RAW = [
   ['andriy shevchenko',      91], ['shevchenko',           91],
   ['filippo inzaghi',        85],
   ['ole gunnar solskjaer',   82], ['solskjaer',            82],
-  ['ryan giggs fwd',         82],
   ['kaka',                   92],
   ['robinho',                84],
   ['adriano',                87], ['adriano imperador',    87],
@@ -494,8 +490,6 @@ const PLAYER_RATINGS_RAW = [
   ['karim benzema',          91], ['benzema',              91],
   ['gonzalo higuain',        85], ['higuaÃ­n',              85], ['higuain',  85],
   ['david villa',            89],
-  ['david silva fwd',        82],
-  ['eden hazard fwd',        86],
   ['angel di maria',         88], ['Ã¡ngel di marÃ­a',       88], ['di maria', 88], ['di marÃ­a', 88],
   ['robert lewandowski',     93], ['lewandowski',          93],
   ['harry kane',             91], ['kane',                 91],
@@ -552,7 +546,6 @@ const PLAYER_RATINGS_RAW = [
   ['marcus thuram',          85], ['thuram marcus',        85],
   ['randal kolo muani',      83], ['kolo muani',           83],
   ['gabriel jesus',          84], ['g.jesus',              84],
-  ['bernardo silva fwd',     81],
   ['ansu fati',              83], ['fati',                 83],
   ['fermin lopez',           82],
   ['ollie watkins',          85], ['watkins',              85],
@@ -573,7 +566,6 @@ const PLAYER_RATINGS_RAW = [
   ['serhou guirassy',        84], ['guirassy',             84],
   ['loÃ¯s openda',            84], ['openda',               84],
   ['dani olmo',              86], ['olmo',                 86],
-  ['pedri gonzalez fwd',     82],
   ['ferran torres',          84],
   ['ayoze perez',            80],
   ['ante rebic',             81],
@@ -585,18 +577,13 @@ const PLAYER_RATINGS_RAW = [
 
   // â”€â”€ Jugadores MLS / Saudi / histÃ³ricos adicionales â”€â”€
   ['david beckham',          87],
-  ['thierry henry mls',      90],
-  ['zlatan ibrahimovic mls', 88],
   ['xherdan shaqiri',        82], ['shaqiri',              82],
   ['lorenzo insigne',        85], ['insigne',              85],
   ['sebastian giovinco',     83], ['giovinco',             83],
-  ['gonzalo higuain mls',    83],
   ['blaise matuidi',         84], ['matuidi',              84],
   ['kalidou koulibaly',      86], ['koulibaly',            86],
   ['jordan henderson',       80], ['henderson',            80],
   ['roberto firmino',        83],
-  ['karim benzema saudi',    88],
-  ['neymar saudi',           90],
   ['riyad mahrez',           85],
 
   // ── FC Bayern (actuales) ─────────────────────────────────────────────
@@ -631,7 +618,6 @@ const PLAYER_RATINGS_RAW = [
   ['gerard martin',          80],
   ['fermin lopez',           83], ['fermín',               83],
   ['eric garcia camara',     79],
-  ['inigo martinez barca',   83],
 
   // ── Premier League (actuales 2025) ────────────────────────────────────
   ['chris wood',             82],
@@ -658,23 +644,14 @@ const PLAYER_RATINGS_RAW = [
   ['ademola lookman',        85], ['lookman',              85],
   ['sandro tonali',          85], ['tonali',               85],
   ['federico chiesa',        83], ['chiesa',               83],
-  ['marcus thuram inter',    84],
   ['piotr zielinski',        84], ['zielinski',            84],
   ['hakan calhanoglu',       87], ['calhanoglu',           87], ['çalhanoğlu', 87],
-  ['romelu lukaku inter',    84],
   ['matias vecino',          79],
   ['kristjan asllani',       80],
   ['yann bisseck',           81],
 
   // ── La Liga extra (actuales 2025) ─────────────────────────────────────
-  ['kylian mbappe real',     96],
-  ['vinicius jr real',       89],
-  ['jude bellingham real',   90],
-  ['rodri manchester',       92],
-  ['robert lewandowski barca', 90],
   ['david raya',             85], ['raya',                 85],
-  ['pedri barca',            88],
-  ['gavi barca',             88],
   ['osasuna',                75],
   ['valladolid',             73],
   ['ian maatsen',            83], ['maatsen',              83],
@@ -706,9 +683,10 @@ function getPlayerOverride(name) {
     const kn = normalize(key);
     // Exact full-name match
     if (kn === nl) return val;
-    // All key words must exist as whole words in the player name
+    // Word-subset match: requires 2+ word keys to prevent common-surname false positives.
+    // Single-word keys ('ramos', 'son', 'james', etc.) only match via exact full-name above.
     const keyWords = kn.split(' ');
-    if (keyWords.every(w => nameWords.has(w))) return val;
+    if (keyWords.length >= 2 && keyWords.every(w => nameWords.has(w))) return val;
   }
   return null;
 }

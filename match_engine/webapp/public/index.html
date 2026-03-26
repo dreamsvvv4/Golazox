@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=18" />
+  <link rel="stylesheet" href="style.css?v=19" />
 </head>
 <body>
 
@@ -164,6 +164,7 @@
       <div class="live-header">
         <span class="live-dot"></span>
         <span class="live-badge">EN DIRECTO</span>
+        <button class="btn-stats-modal" onclick="toggleStatsModal()">📊 Stats</button>
         <button class="btn-skip" onclick="skipLive()">⏭ Saltar</button>
       </div>
       <div class="live-scoreboard">
@@ -189,6 +190,13 @@
           <div class="live-feed-header">EN JUEGO</div>
           <div class="live-feed" id="live-feed"></div>
         </div>
+      </div>
+    </div>
+
+    <!-- ── STATS MODAL (radar) ──────────────────────── -->
+    <div id="stats-modal" class="stats-modal hidden">
+      <div class="stats-modal-inner" id="stats-modal-inner">
+        <button class="stats-modal-close" onclick="toggleStatsModal()">✕</button>
         <div class="radar-card glass-card" id="radar-card">
           <div class="radar-legend" id="radar-legend"></div>
           <svg class="radar-svg" id="radar-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -443,6 +451,6 @@
   </footer>
 
   <script src="/player_ratings.js"></script>
-  <script src="app.js?v=21"></script>
+  <script src="app.js?v=22"></script>
 </body>
 </html>
