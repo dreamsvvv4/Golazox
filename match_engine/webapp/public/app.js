@@ -2974,7 +2974,7 @@ function addFeedEvent(ev) {
 
   if (ev.type === 'kick_off') {
     div.className = 't-event-special t-event-kickoff';
-    div.textContent = '🎺 ' + (ev.name || t('ev-kickoff'));
+    div.textContent = '🔔 ' + (ev.name || t('ev-kickoff'));
   } else if (ev.type === 'ft_whistle') {
     div.className = 't-event-special t-event-ft';
     div.textContent = ev.name || '⏱ FT';
@@ -3026,7 +3026,6 @@ function addFeedEvent(ev) {
   }
 
   container.appendChild(div);
-  container.scrollTop = container.scrollHeight;
 }
 
 function triggerEventOverlay(type, name, score, side) {
@@ -3043,7 +3042,8 @@ function triggerEventOverlay(type, name, score, side) {
                 : type === 'corner' ? '🚩'
                 : type === 'freekick' ? '🎯'
                 : type === 'injury' ? '🩹'
-                : type === 'kick_off' || type === 'fulltime' ? '🎺'
+                : type === 'kick_off' ? '🔔'
+                : type === 'fulltime' ? '⏱'
                 : '🟥';
   const titleKey = type === 'goal'         ? 'ev-goal'
                  : type === 'yellow'       ? 'ev-yellow'
@@ -3138,6 +3138,7 @@ function finishLive() {
       if (penCard) penCard.before(tc);
       else resultsEl.appendChild(tc);
     }
+    if (tc) tc.scrollTop = 0;
     // Flush any still-hidden timeline events so the full timeline is visible immediately
     flushTimeline();
     renderResult(_liveData, _livePayload);

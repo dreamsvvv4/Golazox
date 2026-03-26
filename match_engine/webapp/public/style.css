@@ -841,13 +841,13 @@ body {
 .t-event-narrated { display: flex; flex-direction: column; padding: .3rem 0; }
 .t-event-narrated > :first-child { display: grid; grid-template-columns: 1fr 58px 1fr; align-items: center; gap: .5rem; }
 .t-narration {
-  font-size: .74rem; font-style: italic; line-height: 1.4;
-  color: rgba(255,255,255,.50); padding: .15rem .4rem .1rem;
+  font-size: .82rem; font-style: italic; line-height: 1.5;
+  color: rgba(255,255,255,.55); padding: .2rem .4rem .12rem;
   border-top: 1px solid rgba(255,255,255,.05); margin-top: .1rem;
   min-height: 1.1em;
 }
 .t-nar-a { text-align: left; }
-.t-nar-b { text-align: right; }
+.t-nar-b { text-align: left; }
 @keyframes t-cursor-blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
 /* ── Head-to-head stats bars ──────────────────────────────── */
@@ -1716,7 +1716,7 @@ body {
 .live-timeline-wrap .t-event { padding: .28rem 0; }
 .live-timeline-wrap .t-left,
 .live-timeline-wrap .t-right { font-size: .78rem; }
-.live-timeline-wrap .t-narration { font-size: .68rem; }
+.live-timeline-wrap .t-narration { font-size: .76rem; }
 /* Special non-event rows (ft_whistle, pen_start, pen_goal, pen_miss, pen_winner) */
 .t-event-special {
   justify-content: center; text-align: center;
