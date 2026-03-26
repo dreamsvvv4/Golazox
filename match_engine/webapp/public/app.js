@@ -2814,7 +2814,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
     _eventTimers.push(setTimeout(() => {
       triggerEventOverlay('kick_off', '', null, null);
       addFeedEvent({ type: 'kick_off', minute: 0, name: t('ev-kickoff'), side: 'N' });
-    }, 400));
+    }, 900));
   }
   // Start timeline in sync with live match — move timeline-card into the right column slot
   if (Array.isArray(data.timeline) && data.timeline.length) {
@@ -2975,6 +2975,9 @@ function addFeedEvent(ev) {
   if (ev.type === 'kick_off') {
     div.className = 't-event-special t-event-kickoff';
     div.textContent = '🔔 ' + (ev.name || t('ev-kickoff'));
+    // Kick-off belongs at the TOP of the timeline (first event chronologically)
+    container.prepend(div);
+    return;
   } else if (ev.type === 'ft_whistle') {
     div.className = 't-event-special t-event-ft';
     div.textContent = ev.name || '⏱ FT';
@@ -3061,7 +3064,7 @@ function triggerEventOverlay(type, name, score, side) {
                 : (type === 'penalty-miss') ? 1800
                 : (type === 'corner' || type === 'freekick') ? 1100
                 : (type === 'injury') ? 1600
-                : (type === 'kick_off' || type === 'fulltime') ? 2000
+                : (type === 'kick_off' || type === 'fulltime') ? 3000
                 : 1800;
 
   let badgeHtml = '';
