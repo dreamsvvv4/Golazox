@@ -477,7 +477,6 @@ function _updateClashButton() {
     btn.innerHTML = `
       <svg class="clash-energy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <line class="energy-line" x1="2" y1="50" x2="98" y2="50"/>
-        <circle class="energy-spark" cx="50" cy="50" r="8"/>
       </svg>
       <span class="clash-l1">INICIAR</span>
       <span class="clash-l2">ODYSSEY</span>`;
