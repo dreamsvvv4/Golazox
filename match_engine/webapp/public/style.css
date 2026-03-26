@@ -842,9 +842,9 @@ body {
 .t-event-narrated { display: flex; flex-direction: column; padding: .3rem 0; }
 .t-event-narrated > :first-child { display: grid; grid-template-columns: 1fr 58px 1fr; align-items: center; gap: .5rem; }
 .t-narration {
-  font-size: .82rem; font-style: italic; line-height: 1.5;
-  color: rgba(255,255,255,.55); padding: .2rem .4rem .12rem;
-  border-top: 1px solid rgba(255,255,255,.05); margin-top: .1rem;
+  font-size: .82rem; font-style: normal; line-height: 1.55;
+  color: #cbd5e1; padding: .2rem .4rem .12rem;
+  border-top: 1px solid rgba(255,255,255,.07); margin-top: .1rem;
   min-height: 1.1em;
 }
 .t-nar-a { text-align: left; }
