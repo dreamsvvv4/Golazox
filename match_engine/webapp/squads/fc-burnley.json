@@ -1,0 +1,861 @@
+{
+  "slug": "fc-burnley",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Pope",
+          "position": "GK"
+        },
+        {
+          "name": "Bailey Peacock-Farrell",
+          "position": "GK"
+        },
+        {
+          "name": "Wayne Hennessey",
+          "position": "GK"
+        },
+        {
+          "name": "Will Norris",
+          "position": "GK"
+        },
+        {
+          "name": "Lukas Jensen",
+          "position": "GK"
+        },
+        {
+          "name": "Sam Waller",
+          "position": "GK"
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Collins",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Mee",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Long",
+          "position": "CB"
+        },
+        {
+          "name": "Bobby Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Taylor",
+          "position": "CB"
+        },
+        {
+          "name": "Erik Pieters",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Dodgson",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Matthew Lowton",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Bardsley",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Westwood",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Cork",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Brownhill",
+          "position": "CM"
+        },
+        {
+          "name": "Dale Stephens",
+          "position": "CM"
+        },
+        {
+          "name": "Mark Helm",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gomez-Mancini",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Richardson",
+          "position": "CM"
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "ST"
+        },
+        {
+          "name": "Maxwel Cornet",
+          "position": "ST"
+        },
+        {
+          "name": "Dara Costelloe",
+          "position": "ST"
+        },
+        {
+          "name": "Jóhann Berg Gudmundsson",
+          "position": "ST"
+        },
+        {
+          "name": "Aaron Lennon",
+          "position": "ST"
+        },
+        {
+          "name": "Wout Weghorst",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Wood",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Rodríguez",
+          "position": "ST"
+        },
+        {
+          "name": "Matej Vydra",
+          "position": "ST"
+        },
+        {
+          "name": "Ashley Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Joe McGlynn",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Burnley (2021/2022)",
+      "teamLabel": "Burnley (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Arijanet Murić",
+          "position": "GK"
+        },
+        {
+          "name": "Bailey Peacock-Farrell",
+          "position": "GK"
+        },
+        {
+          "name": "Will Norris",
+          "position": "GK"
+        },
+        {
+          "name": "Denis Franchi",
+          "position": "GK"
+        },
+        {
+          "name": "Charlie Casper",
+          "position": "GK"
+        },
+        {
+          "name": "Taylor Harwood-Bellis",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Beyer",
+          "position": "CB"
+        },
+        {
+          "name": "Hjalmar Ekdal",
+          "position": "CB"
+        },
+        {
+          "name": "Ameen Al-Dakhil",
+          "position": "CB"
+        },
+        {
+          "name": "CJ Egan-Riley",
+          "position": "CB"
+        },
+        {
+          "name": "Luke McNally",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Long",
+          "position": "CB"
+        },
+        {
+          "name": "Bobby Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Sassi",
+          "position": "CB"
+        },
+        {
+          "name": "Ian Maatsen",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Taylor",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Dodgson",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Vitinho",
+          "position": "CB"
+        },
+        {
+          "name": "Matthew Lowton",
+          "position": "CB"
+        },
+        {
+          "name": "Jack Cork",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Brownhill",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "CM"
+        },
+        {
+          "name": "Samuel Bastien",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Phillips",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Bauress",
+          "position": "CM"
+        },
+        {
+          "name": "Scott Twine",
+          "position": "CM"
+        },
+        {
+          "name": "Marcel Lewis",
+          "position": "CM"
+        },
+        {
+          "name": "Anass Zaroury",
+          "position": "ST"
+        },
+        {
+          "name": "Darko Churlinov",
+          "position": "ST"
+        },
+        {
+          "name": "Dara Costelloe",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Tella",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Benson",
+          "position": "ST"
+        },
+        {
+          "name": "Jóhann Berg Gudmundsson",
+          "position": "ST"
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Obafemi",
+          "position": "ST"
+        },
+        {
+          "name": "Halil Dervişoğlu",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Rodríguez",
+          "position": "ST"
+        },
+        {
+          "name": "Ashley Barnes",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Burnley (2022/2023)",
+      "teamLabel": "Burnley (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "James Trafford",
+          "position": "GK"
+        },
+        {
+          "name": "Arijanet Murić",
+          "position": "GK"
+        },
+        {
+          "name": "Lawrence Vigouroux",
+          "position": "GK"
+        },
+        {
+          "name": "Denis Franchi",
+          "position": "GK"
+        },
+        {
+          "name": "Jordan Beyer",
+          "position": "CB"
+        },
+        {
+          "name": "Ameen Al-Dakhil",
+          "position": "CB"
+        },
+        {
+          "name": "Dara O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Hjalmar Ekdal",
+          "position": "CB"
+        },
+        {
+          "name": "Maxime Estève",
+          "position": "CB"
+        },
+        {
+          "name": "Hannes Delcroix",
+          "position": "CB"
+        },
+        {
+          "name": "Luke McNally",
+          "position": "CB"
+        },
+        {
+          "name": "CJ Egan-Riley",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Taylor",
+          "position": "CB"
+        },
+        {
+          "name": "Lorenz Assignon",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Vitinho",
+          "position": "CB"
+        },
+        {
+          "name": "Sander Berge",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Cork",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Brownhill",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "CM"
+        },
+        {
+          "name": "Han-Noah Massengo",
+          "position": "CM"
+        },
+        {
+          "name": "Aaron Ramsey",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Tresor",
+          "position": "CM"
+        },
+        {
+          "name": "Scott Twine",
+          "position": "CM"
+        },
+        {
+          "name": "Wilson Odobert",
+          "position": "ST"
+        },
+        {
+          "name": "Anass Zaroury",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Bruun Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Darko Churlinov",
+          "position": "ST"
+        },
+        {
+          "name": "Dara Costelloe",
+          "position": "ST"
+        },
+        {
+          "name": "Luca Koleosho",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Benson",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Redmond",
+          "position": "ST"
+        },
+        {
+          "name": "Jóhann Berg Gudmundsson",
+          "position": "ST"
+        },
+        {
+          "name": "Enock Agyei",
+          "position": "ST"
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST"
+        },
+        {
+          "name": "David Datro Fofana",
+          "position": "ST"
+        },
+        {
+          "name": "Zeki Amdouni",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Obafemi",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Rodríguez",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Burnley (2023/2024)",
+      "teamLabel": "Burnley (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "James Trafford",
+          "position": "GK"
+        },
+        {
+          "name": "Etienne Green",
+          "position": "GK"
+        },
+        {
+          "name": "Václav Hladký",
+          "position": "GK"
+        },
+        {
+          "name": "Maxime Estève",
+          "position": "CB"
+        },
+        {
+          "name": "CJ Egan-Riley",
+          "position": "CB"
+        },
+        {
+          "name": "Dara O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Bashir Humphreys",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Beyer",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Worrall",
+          "position": "CB"
+        },
+        {
+          "name": "Hjalmar Ekdal",
+          "position": "CB"
+        },
+        {
+          "name": "Hannes Delcroix",
+          "position": "CB"
+        },
+        {
+          "name": "Luke McNally",
+          "position": "CB"
+        },
+        {
+          "name": "John Egan",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Pires",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Dodgson",
+          "position": "CB"
+        },
+        {
+          "name": "Vitinho",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Oliver Sonne",
+          "position": "CB"
+        },
+        {
+          "name": "Shurandy Sambo",
+          "position": "CB"
+        },
+        {
+          "name": "Josh Brownhill",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "CM"
+        },
+        {
+          "name": "Han-Noah Massengo",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Laurent",
+          "position": "CM"
+        },
+        {
+          "name": "Jonjo Shelvey",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hugill",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Bauress",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Veevers",
+          "position": "CM"
+        },
+        {
+          "name": "Hannibal",
+          "position": "CM"
+        },
+        {
+          "name": "Aaron Ramsey",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Tresor",
+          "position": "CM"
+        },
+        {
+          "name": "Scott Twine",
+          "position": "CM"
+        },
+        {
+          "name": "Tommy McDermott",
+          "position": "CM"
+        },
+        {
+          "name": "Wilson Odobert",
+          "position": "ST"
+        },
+        {
+          "name": "Jaidon Anthony",
+          "position": "ST"
+        },
+        {
+          "name": "Anass Zaroury",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "ST"
+        },
+        {
+          "name": "Jaydon Banel",
+          "position": "ST"
+        },
+        {
+          "name": "Dara Costelloe",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Tweedy",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Edwards",
+          "position": "ST"
+        },
+        {
+          "name": "Luca Koleosho",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Benson",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Redmond",
+          "position": "ST"
+        },
+        {
+          "name": "Jóhann Berg Gudmundsson",
+          "position": "ST"
+        },
+        {
+          "name": "Enock Agyei",
+          "position": "ST"
+        },
+        {
+          "name": "Zeki Amdouni",
+          "position": "ST"
+        },
+        {
+          "name": "Zian Flemming",
+          "position": "ST"
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST"
+        },
+        {
+          "name": "Wout Weghorst",
+          "position": "ST"
+        },
+        {
+          "name": "Andréas Hountondji",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Obafemi",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Rodríguez",
+          "position": "ST"
+        },
+        {
+          "name": "Ashley Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Westley",
+          "position": "ST"
+        },
+        {
+          "name": "Vernon Masara",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Burnley (2024/2025)",
+      "teamLabel": "Burnley (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Max Weiß",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK"
+        },
+        {
+          "name": "Václav Hladký",
+          "position": "GK"
+        },
+        {
+          "name": "Maxime Estève",
+          "position": "CB"
+        },
+        {
+          "name": "Bashir Humphreys",
+          "position": "CB"
+        },
+        {
+          "name": "Hjalmar Ekdal",
+          "position": "CB"
+        },
+        {
+          "name": "Axel Tuanzebe",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Worrall",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Beyer",
+          "position": "CB"
+        },
+        {
+          "name": "Quilindschy Hartman",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Pires",
+          "position": "CB"
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Lesley Ugochukwu",
+          "position": "CM"
+        },
+        {
+          "name": "Florentino",
+          "position": "CM"
+        },
+        {
+          "name": "James Ward-Prowse",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Laurent",
+          "position": "CM"
+        },
+        {
+          "name": "Hannibal",
+          "position": "CM"
+        },
+        {
+          "name": "Mike Tresor",
+          "position": "CM"
+        },
+        {
+          "name": "Jaidon Anthony",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Bruun Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Loum Tchaouna",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Edwards",
+          "position": "ST"
+        },
+        {
+          "name": "Zian Flemming",
+          "position": "ST"
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST"
+        },
+        {
+          "name": "Zeki Amdouni",
+          "position": "ST"
+        },
+        {
+          "name": "Armando Broja",
+          "position": "ST"
+        },
+        {
+          "name": "Ashley Barnes",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Burnley (2025/2026)",
+      "teamLabel": "Burnley (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/fc-burnley.png",
+  "id": 1132,
+  "name": "Burnley"
+}

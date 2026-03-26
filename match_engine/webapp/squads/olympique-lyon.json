@@ -1,0 +1,846 @@
+{
+  "slug": "olympique-lyon",
+  "seasons": {
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
+          "name": "Nicolas Puydebois",
+          "position": "GK"
+        },
+        {
+          "name": "Joan Hartock",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Jaccard",
+          "position": "GK"
+        },
+        {
+          "name": "Cris",
+          "position": "CB"
+        },
+        {
+          "name": "Cláudio Caçapa",
+          "position": "CB"
+        },
+        {
+          "name": "Lamine Diatta",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Berthod",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "Johann Truchet",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Essien",
+          "position": "CM"
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Jérémy Clément",
+          "position": "CM"
+        },
+        {
+          "name": "Yohann Gomez",
+          "position": "CM"
+        },
+        {
+          "name": "Florent Balmont",
+          "position": "CM"
+        },
+        {
+          "name": "Yacine Hima",
+          "position": "CM"
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM"
+        },
+        {
+          "name": "Bryan Bergougnoux",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
+          "name": "Florent Malouda",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Idangar",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre-Alain Frau",
+          "position": "ST"
+        },
+        {
+          "name": "Nilmar",
+          "position": "ST"
+        },
+        {
+          "name": "Giovane Élber",
+          "position": "ST"
+        },
+        {
+          "name": "Julien Viale",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2004/2005)",
+      "teamLabel": "Lyon (2004-05)"
+    },
+    "2005": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Vercoutre",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Riou",
+          "position": "GK"
+        },
+        {
+          "name": "Joan Hartock",
+          "position": "GK"
+        },
+        {
+          "name": "Cris",
+          "position": "CB"
+        },
+        {
+          "name": "Cláudio Caçapa",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Sylvain Monsoreau",
+          "position": "CB"
+        },
+        {
+          "name": "Lamine Diatta",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Berthod",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Benoît Pedretti",
+          "position": "CM"
+        },
+        {
+          "name": "Jérémy Clément",
+          "position": "CM"
+        },
+        {
+          "name": "Romain Beynié",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
+          "name": "Florent Malouda",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Fred",
+          "position": "ST"
+        },
+        {
+          "name": "John Carew",
+          "position": "ST"
+        },
+        {
+          "name": "Nilmar",
+          "position": "ST"
+        },
+        {
+          "name": "Pierre-Alain Frau",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2005/2006)",
+      "teamLabel": "Lyon (2005-06)"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Vercoutre",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Riou",
+          "position": "GK"
+        },
+        {
+          "name": "Joan Hartock",
+          "position": "GK"
+        },
+        {
+          "name": "Alexandre Bouchard",
+          "position": "GK"
+        },
+        {
+          "name": "Cris",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Squillaci",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Cláudio Caçapa",
+          "position": "CB"
+        },
+        {
+          "name": "Lamine Diatta",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Berthod",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
+        },
+        {
+          "name": "Mourad Benhamida",
+          "position": "CB"
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Jérémy Toulalan",
+          "position": "CM"
+        },
+        {
+          "name": "Alou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Benoît Pedretti",
+          "position": "CM"
+        },
+        {
+          "name": "Fábio Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Romain Beynié",
+          "position": "CM"
+        },
+        {
+          "name": "Tiago Mendes",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
+          "name": "Florent Malouda",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Idangar",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Fred",
+          "position": "ST"
+        },
+        {
+          "name": "John Carew",
+          "position": "ST"
+        },
+        {
+          "name": "Milan Baros",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Loïc Rémy",
+          "position": "ST"
+        },
+        {
+          "name": "Grégory Bettiol",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2006/2007)",
+      "teamLabel": "Lyon (2006-07)"
+    },
+    "2007": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Grégory Coupet",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Vercoutre",
+          "position": "GK"
+        },
+        {
+          "name": "Frédéric Roux",
+          "position": "GK"
+        },
+        {
+          "name": "Joan Hartock",
+          "position": "GK"
+        },
+        {
+          "name": "Sébastien Squillaci",
+          "position": "CB"
+        },
+        {
+          "name": "Cris",
+          "position": "CB"
+        },
+        {
+          "name": "Anderson",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Alain Boumsong",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Müller",
+          "position": "CB"
+        },
+        {
+          "name": "Sandy Paillot",
+          "position": "CB"
+        },
+        {
+          "name": "Mickaël Charvet",
+          "position": "CB"
+        },
+        {
+          "name": "Fabio Grosso",
+          "position": "CB"
+        },
+        {
+          "name": "Nadir Belhadj",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Toulalan",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Bodmer",
+          "position": "CM"
+        },
+        {
+          "name": "Fábio Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Crosas",
+          "position": "CM"
+        },
+        {
+          "name": "Romain Beynié",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Lossémy Karaboué",
+          "position": "CM"
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM"
+        },
+        {
+          "name": "Hatem Ben Arfa",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Mounier",
+          "position": "ST"
+        },
+        {
+          "name": "Abdul Kader Keita",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "César Delgado",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Fred",
+          "position": "ST"
+        },
+        {
+          "name": "Loïc Rémy",
+          "position": "ST"
+        },
+        {
+          "name": "Milan Baros",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2007/2008)",
+      "teamLabel": "Lyon (2007-08)"
+    },
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Hugo Lloris",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Vercoutre",
+          "position": "GK"
+        },
+        {
+          "name": "Joan Hartock",
+          "position": "GK"
+        },
+        {
+          "name": "Anthony Lopes",
+          "position": "GK"
+        },
+        {
+          "name": "Cris",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Alain Boumsong",
+          "position": "CB"
+        },
+        {
+          "name": "John Mensah",
+          "position": "CB"
+        },
+        {
+          "name": "Timothée Kolodziejczak",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolas Seguin",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Fontaine",
+          "position": "CB"
+        },
+        {
+          "name": "Fabio Grosso",
+          "position": "CB"
+        },
+        {
+          "name": "François Clerc",
+          "position": "CB"
+        },
+        {
+          "name": "Anthony Réveillère",
+          "position": "CB"
+        },
+        {
+          "name": "Lamine Gassama",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Faure",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Pied",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Toulalan",
+          "position": "CM"
+        },
+        {
+          "name": "Jean Makoun",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Bodmer",
+          "position": "CM"
+        },
+        {
+          "name": "Fábio Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Saïd Mehamha",
+          "position": "CM"
+        },
+        {
+          "name": "Kim Källström",
+          "position": "CM"
+        },
+        {
+          "name": "Miralem Pjanić",
+          "position": "CM"
+        },
+        {
+          "name": "Clément Grenier",
+          "position": "CM"
+        },
+        {
+          "name": "Pierrick Valdivia",
+          "position": "CM"
+        },
+        {
+          "name": "Yannis Tafer",
+          "position": "CM"
+        },
+        {
+          "name": "Ederson",
+          "position": "CM"
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Mounier",
+          "position": "ST"
+        },
+        {
+          "name": "Sidney Govou",
+          "position": "ST"
+        },
+        {
+          "name": "Abdul Kader Keita",
+          "position": "ST"
+        },
+        {
+          "name": "César Delgado",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Milan Baros",
+          "position": "ST"
+        },
+        {
+          "name": "Fred",
+          "position": "ST"
+        },
+        {
+          "name": "Frédéric Piquionne",
+          "position": "ST"
+        },
+        {
+          "name": "Alexandre Lacazette",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2008/2009)",
+      "teamLabel": "Lyon (2008-09)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dominik Greif",
+          "position": "GK"
+        },
+        {
+          "name": "Rémy Descamps",
+          "position": "GK"
+        },
+        {
+          "name": "Lassine Diarra",
+          "position": "GK"
+        },
+        {
+          "name": "Moussa Niakhaté",
+          "position": "CB"
+        },
+        {
+          "name": "Clinton Mata",
+          "position": "CB"
+        },
+        {
+          "name": "Ruben Kluivert",
+          "position": "CB"
+        },
+        {
+          "name": "Noham Kamara",
+          "position": "CB"
+        },
+        {
+          "name": "Abner",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolás Tagliafico",
+          "position": "CB"
+        },
+        {
+          "name": "Achraf Laâziri",
+          "position": "CB"
+        },
+        {
+          "name": "Ainsley Maitland-Niles",
+          "position": "CB"
+        },
+        {
+          "name": "Hans Hateboer",
+          "position": "CB"
+        },
+        {
+          "name": "Steeve Kango",
+          "position": "CB"
+        },
+        {
+          "name": "Tyler Morton",
+          "position": "CM"
+        },
+        {
+          "name": "Tanner Tessmann",
+          "position": "CM"
+        },
+        {
+          "name": "Orel Mangala",
+          "position": "CM"
+        },
+        {
+          "name": "Mathys De Carvalho",
+          "position": "CM"
+        },
+        {
+          "name": "Corentin Tolisso",
+          "position": "CM"
+        },
+        {
+          "name": "Khalis Merah",
+          "position": "CM"
+        },
+        {
+          "name": "Pavel Sulc",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Karabec",
+          "position": "CM"
+        },
+        {
+          "name": "Noah Nartey",
+          "position": "CM"
+        },
+        {
+          "name": "Malick Fofana",
+          "position": "ST"
+        },
+        {
+          "name": "Afonso Moreira",
+          "position": "ST"
+        },
+        {
+          "name": "Rémi Himbert",
+          "position": "ST"
+        },
+        {
+          "name": "Ernest Nuamah",
+          "position": "ST"
+        },
+        {
+          "name": "Rachid Ghezzal",
+          "position": "ST"
+        },
+        {
+          "name": "Endrick",
+          "position": "ST"
+        },
+        {
+          "name": "Roman Yaremchuk",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Lyon (2025/2026)",
+      "teamLabel": "Lyon (2025-26)"
+    }
+  },
+  "id": 1041,
+  "name": "Lyon",
+  "badgeLocalPath": "/img/badges/olympique-lyon.png"
+}

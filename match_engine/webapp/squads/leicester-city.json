@@ -1,0 +1,809 @@
+{
+  "slug": "leicester-city",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Danny Ward",
+          "position": "GK"
+        },
+        {
+          "name": "Kasper Schmeichel",
+          "position": "GK"
+        },
+        {
+          "name": "Eldin Jakupović",
+          "position": "GK"
+        },
+        {
+          "name": "Jakub Stolarczyk",
+          "position": "GK"
+        },
+        {
+          "name": "Chituru Odunze",
+          "position": "GK"
+        },
+        {
+          "name": "Wesley Fofana",
+          "position": "CB"
+        },
+        {
+          "name": "Çağlar Söyüncü",
+          "position": "CB"
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Amartey",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB"
+        },
+        {
+          "name": "Filip Benkovic",
+          "position": "CB"
+        },
+        {
+          "name": "Sam Hughes",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Brunt",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Nelson",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Bertrand",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "James Justin",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Vontae Daley-Campbell",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "CM"
+        },
+        {
+          "name": "Boubakary Soumaré",
+          "position": "CM"
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "CM"
+        },
+        {
+          "name": "Nampalys Mendy",
+          "position": "CM"
+        },
+        {
+          "name": "Sammy Braybrooke",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Tielemans",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Praet",
+          "position": "CM"
+        },
+        {
+          "name": "Kiernan Dewsbury-Hall",
+          "position": "CM"
+        },
+        {
+          "name": "Oliver Ewing",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Albrighton",
+          "position": "CM"
+        },
+        {
+          "name": "Kasey McAteer",
+          "position": "CM"
+        },
+        {
+          "name": "James Maddison",
+          "position": "CM"
+        },
+        {
+          "name": "Will Alves",
+          "position": "CM"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Wanya Marçal",
+          "position": "ST"
+        },
+        {
+          "name": "Ademola Lookman",
+          "position": "ST"
+        },
+        {
+          "name": "Kelechi Iheanacho",
+          "position": "ST"
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST"
+        },
+        {
+          "name": "Ayoze Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Jamie Vardy",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Leicester City (2021/2022)",
+      "teamLabel": "Leicester City (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Danny Ward",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Iversen",
+          "position": "GK"
+        },
+        {
+          "name": "Alex Smithies",
+          "position": "GK"
+        },
+        {
+          "name": "Wesley Fofana",
+          "position": "CB"
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB"
+        },
+        {
+          "name": "Çağlar Söyüncü",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Souttar",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Amartey",
+          "position": "CB"
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Brunt",
+          "position": "CB"
+        },
+        {
+          "name": "Victor Kristiansen",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Bertrand",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "James Justin",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Wormleighton",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "CM"
+        },
+        {
+          "name": "Boubakary Soumaré",
+          "position": "CM"
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "CM"
+        },
+        {
+          "name": "Nampalys Mendy",
+          "position": "CM"
+        },
+        {
+          "name": "Sammy Braybrooke",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Tielemans",
+          "position": "CM"
+        },
+        {
+          "name": "Kiernan Dewsbury-Hall",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Praet",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Albrighton",
+          "position": "CM"
+        },
+        {
+          "name": "Kasey McAteer",
+          "position": "CM"
+        },
+        {
+          "name": "James Maddison",
+          "position": "CM"
+        },
+        {
+          "name": "Will Alves",
+          "position": "CM"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Tetê",
+          "position": "ST"
+        },
+        {
+          "name": "Wanya Marçal",
+          "position": "ST"
+        },
+        {
+          "name": "Kelechi Iheanacho",
+          "position": "ST"
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST"
+        },
+        {
+          "name": "Ayoze Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Jamie Vardy",
+          "position": "ST"
+        },
+        {
+          "name": "George Hirst",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Leicester City (2022/2023)",
+      "teamLabel": "Leicester City (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mads Hermansen",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Iversen",
+          "position": "GK"
+        },
+        {
+          "name": "Danny Ward",
+          "position": "GK"
+        },
+        {
+          "name": "Jakub Stolarczyk",
+          "position": "GK"
+        },
+        {
+          "name": "Alex Smithies",
+          "position": "GK"
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB"
+        },
+        {
+          "name": "Callum Doyle",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Souttar",
+          "position": "CB"
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB"
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Nelson",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "James Justin",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "CM"
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM"
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "CM"
+        },
+        {
+          "name": "Brandon Cover",
+          "position": "CM"
+        },
+        {
+          "name": "Kiernan Dewsbury-Hall",
+          "position": "CM"
+        },
+        {
+          "name": "Cesare Casadei",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Praet",
+          "position": "CM"
+        },
+        {
+          "name": "Arjan Raikhy",
+          "position": "CM"
+        },
+        {
+          "name": "Kasey McAteer",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Albrighton",
+          "position": "CM"
+        },
+        {
+          "name": "Will Alves",
+          "position": "CM"
+        },
+        {
+          "name": "Logan Briggs",
+          "position": "CM"
+        },
+        {
+          "name": "Stephy Mavididi",
+          "position": "ST"
+        },
+        {
+          "name": "Abdul Fatawu",
+          "position": "ST"
+        },
+        {
+          "name": "Yunus Akgün",
+          "position": "ST"
+        },
+        {
+          "name": "Wanya Marçal",
+          "position": "ST"
+        },
+        {
+          "name": "Silko Thomas",
+          "position": "ST"
+        },
+        {
+          "name": "Kelechi Iheanacho",
+          "position": "ST"
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Cannon",
+          "position": "ST"
+        },
+        {
+          "name": "Jamie Vardy",
+          "position": "ST"
+        },
+        {
+          "name": "Tawanda Maswanhise",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Leicester City (2023/2024)",
+      "teamLabel": "Leicester City (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mads Hermansen",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Iversen",
+          "position": "GK"
+        },
+        {
+          "name": "Danny Ward",
+          "position": "GK"
+        },
+        {
+          "name": "Jakub Stolarczyk",
+          "position": "GK"
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB"
+        },
+        {
+          "name": "Caleb Okoli",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Souttar",
+          "position": "CB"
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB"
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Nelson",
+          "position": "CB"
+        },
+        {
+          "name": "Tom Wilson-Brown",
+          "position": "CB"
+        },
+        {
+          "name": "Victor Kristiansen",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "James Justin",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Woyo Coulibaly",
+          "position": "CB"
+        },
+        {
+          "name": "Olabade Aluko",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "CM"
+        },
+        {
+          "name": "Boubakary Soumaré",
+          "position": "CM"
+        },
+        {
+          "name": "Oliver Skipp",
+          "position": "CM"
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM"
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "CM"
+        },
+        {
+          "name": "Sammy Braybrooke",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Golding",
+          "position": "CM"
+        },
+        {
+          "name": "Henry Cartwright",
+          "position": "CM"
+        },
+        {
+          "name": "Kasey McAteer",
+          "position": "CM"
+        },
+        {
+          "name": "Bilal El Khannouss",
+          "position": "CM"
+        },
+        {
+          "name": "Facundo Buonanotte",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "CM"
+        },
+        {
+          "name": "Will Alves",
+          "position": "CM"
+        },
+        {
+          "name": "Stephy Mavididi",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Monga",
+          "position": "ST"
+        },
+        {
+          "name": "Abdul Fatawu",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Cannon",
+          "position": "ST"
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST"
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Jamie Vardy",
+          "position": "ST"
+        },
+        {
+          "name": "Jake Evans",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Popov",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Leicester City (2024/2025)",
+      "teamLabel": "Leicester City (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jakub Stolarczyk",
+          "position": "GK"
+        },
+        {
+          "name": "Fran Vieites",
+          "position": "GK"
+        },
+        {
+          "name": "Asmir Begovic",
+          "position": "GK"
+        },
+        {
+          "name": "Caleb Okoli",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Souttar",
+          "position": "CB"
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Nelson",
+          "position": "CB"
+        },
+        {
+          "name": "Jamaal Lascelles",
+          "position": "CB"
+        },
+        {
+          "name": "Victor Kristiansen",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Pereira",
+          "position": "CB"
+        },
+        {
+          "name": "Olabade Aluko",
+          "position": "CB"
+        },
+        {
+          "name": "Oliver Skipp",
+          "position": "CM"
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM"
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "CM"
+        },
+        {
+          "name": "Jordan James",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Aribo",
+          "position": "CM"
+        },
+        {
+          "name": "Louis Page",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Golding",
+          "position": "CM"
+        },
+        {
+          "name": "Aaron Ramsey",
+          "position": "CM"
+        },
+        {
+          "name": "Divine Mukasa",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "CM"
+        },
+        {
+          "name": "Jeremy Monga",
+          "position": "ST"
+        },
+        {
+          "name": "Stephy Mavididi",
+          "position": "ST"
+        },
+        {
+          "name": "Abdul Fatawu",
+          "position": "ST"
+        },
+        {
+          "name": "Wanya Marçal",
+          "position": "ST"
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Dujuan Richards",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Leicester City (2025/2026)",
+      "teamLabel": "Leicester City (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/leicester-city.png",
+  "id": 1003,
+  "name": "Leicester City"
+}

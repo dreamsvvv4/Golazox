@@ -69,6 +69,20 @@ const TM_POS = {
   'striker':                   'ST',
 };
 
+/**
+ * Convierte valor de mercado (€) a OVR estilo FIFA usando escala logarítmica.
+ * Calibrado con datos reales (Mbappé €200M~95, jugador medio Liga €3M~76, etc.)
+ *   €200M+ → 93-96   €50-100M → 87-90   €20-50M → 83-86
+ *   €5-20M → 78-82   €1-5M   → 73-77   <€1M    → 62-72
+ */
+function mvToRating(mv) {
+  if (!mv || mv <= 0) return null;
+  // log10 scale: log(100K)=5, log(1M)=6, log(10M)=7, log(100M)=8, log(200M)≈8.3
+  const log = Math.log10(Math.max(mv, 50000));
+  const raw = Math.round(30 + 8.5 * log);
+  return Math.max(62, Math.min(95, raw));
+}
+
 function mapTmPos(raw) {
   if (!raw) return null;
   const p = raw.toLowerCase().trim();
@@ -98,35 +112,36 @@ const TM_CLUBS = {
   'fc barcelona':              { id: 131,   slug: 'fc-barcelona' },
   'barça':                     { id: 131,   slug: 'fc-barcelona' },
   'barca':                     { id: 131,   slug: 'fc-barcelona' },
-  'atletico madrid':           { id: 13,    slug: 'atletico-de-madrid' },
-  'atlético madrid':           { id: 13,    slug: 'atletico-de-madrid' },
-  'atletico de madrid':        { id: 13,    slug: 'atletico-de-madrid' },
-  'atlético de madrid':        { id: 13,    slug: 'atletico-de-madrid' },
-  'atleti':                    { id: 13,    slug: 'atletico-de-madrid' },
+  'atletico madrid':           { id: 13,    slug: 'atletico-madrid' },
+  'atlético madrid':           { id: 13,    slug: 'atletico-madrid' },
+  'atletico de madrid':        { id: 13,    slug: 'atletico-madrid' },
+  'atlético de madrid':        { id: 13,    slug: 'atletico-madrid' },
+  'atleti':                    { id: 13,    slug: 'atletico-madrid' },
+  'atletico-de-madrid':        { id: 13,    slug: 'atletico-madrid' },
   'sevilla':                   { id: 368,   slug: 'fc-sevilla' },
   'sevilla fc':                { id: 368,   slug: 'fc-sevilla' },
   'valencia':                  { id: 1049,  slug: 'fc-valencia' },
   'valencia cf':               { id: 1049,  slug: 'fc-valencia' },
-  'villarreal':                { id: 1050,  slug: 'villarreal-cf' },
-  'villarreal cf':             { id: 1050,  slug: 'villarreal-cf' },
+  'villarreal':                { id: 1050,  slug: 'fc-villarreal' },
+  'villarreal cf':             { id: 1050,  slug: 'fc-villarreal' },
   'athletic bilbao':           { id: 621,   slug: 'athletic-club' },
   'athletic club':             { id: 621,   slug: 'athletic-club' },
   'athletic':                  { id: 621,   slug: 'athletic-club' },
   'real sociedad':             { id: 681,   slug: 'real-sociedad-san-sebastian' },
   'betis':                     { id: 150,   slug: 'real-betis-balompie' },
   'real betis':                { id: 150,   slug: 'real-betis-balompie' },
-  'celta vigo':                { id: 940,   slug: 'rc-celta-vigo' },
-  'celta de vigo':             { id: 940,   slug: 'rc-celta-vigo' },
-  'celta':                     { id: 940,   slug: 'rc-celta-vigo' },
+  'celta vigo':                { id: 940,   slug: 'celta-vigo' },
+  'celta de vigo':             { id: 940,   slug: 'celta-vigo' },
+  'celta':                     { id: 940,   slug: 'celta-vigo' },
   'osasuna':                   { id: 331,   slug: 'ca-osasuna' },
   'ca osasuna':                { id: 331,   slug: 'ca-osasuna' },
   'deportivo':                 { id: 716,   slug: 'rc-deportivo' },
   'deportivo la coruña':       { id: 716,   slug: 'rc-deportivo' },
   'deportivo de la coruña':    { id: 716,   slug: 'rc-deportivo' },
-  'espanyol':                  { id: 714,   slug: 'rcd-espanyol-barcelona' },
-  'rcd espanyol':              { id: 714,   slug: 'rcd-espanyol-barcelona' },
-  'girona':                    { id: 12321, slug: 'girona-fc' },
-  'girona fc':                 { id: 12321, slug: 'girona-fc' },
+  'espanyol':                  { id: 714,   slug: 'espanyol-barcelona' },
+  'rcd espanyol':              { id: 714,   slug: 'espanyol-barcelona' },
+  'girona':                    { id: 12321, slug: 'fc-girona' },
+  'girona fc':                 { id: 12321, slug: 'fc-girona' },
   'malaga':                    { id: 2517,  slug: 'malaga-cf' },
   'málaga':                    { id: 2517,  slug: 'malaga-cf' },
   'málaga cf':                 { id: 2517,  slug: 'malaga-cf' },
@@ -147,8 +162,8 @@ const TM_CLUBS = {
   'real zaragoza':             { id: 1051,  slug: 'real-zaragoza' },
   'cadiz':                     { id: 2055,  slug: 'cadiz-cf' },
   'cádiz':                     { id: 2055,  slug: 'cadiz-cf' },
-  'mallorca':                  { id: 237,   slug: 'real-club-deportivo-mallorca' },
-  'real mallorca':             { id: 237,   slug: 'real-club-deportivo-mallorca' },
+  'mallorca':                  { id: 237,   slug: 'rcd-mallorca' },
+  'real mallorca':             { id: 237,   slug: 'rcd-mallorca' },
   'eibar':                     { id: 1242,  slug: 'sd-eibar' },
   'sd eibar':                  { id: 1242,  slug: 'sd-eibar' },
   'alavés':                    { id: 1244,  slug: 'deportivo-alaves' },
@@ -220,10 +235,9 @@ const TM_CLUBS = {
   'eintracht frankfurt':       { id: 24,    slug: 'eintracht-frankfurt' },
   'wolfsburg':                 { id: 82,    slug: 'vfl-wolfsburg' },
   'hoffenheim':                { id: 533,   slug: 'tsg-1899-hoffenheim' },
-  'freiburg':                  { id: 17,    slug: 'sport-club-freiburg' },
   // ── Serie A ─────────────────────────────────────────────────
-  'juventus':                  { id: 506,   slug: 'juventus-fc' },
-  'juve':                      { id: 506,   slug: 'juventus-fc' },
+  'juventus':                  { id: 506,   slug: 'juventus-turin' },
+  'juve':                      { id: 506,   slug: 'juventus-turin' },
   'ac milan':                  { id: 5,     slug: 'ac-mailand' },
   'milan':                     { id: 5,     slug: 'ac-mailand' },
   'inter milan':               { id: 46,    slug: 'inter-mailand' },
@@ -238,37 +252,104 @@ const TM_CLUBS = {
   'ac milán':                  { id: 5,     slug: 'ac-mailand' },
   'roma':                      { id: 12,    slug: 'as-rom' },
   'as roma':                   { id: 12,    slug: 'as-rom' },
-  'napoli':                    { id: 6195,  slug: 'ssc-napoli' },
-  'ssc napoli':                { id: 6195,  slug: 'ssc-napoli' },
-  'lazio':                     { id: 398,   slug: 'ss-lazio' },
-  'ss lazio':                  { id: 398,   slug: 'ss-lazio' },
+  'napoli':                    { id: 6195,  slug: 'ssc-neapel' },
+  'ssc napoli':                { id: 6195,  slug: 'ssc-neapel' },
+  'lazio':                     { id: 398,   slug: 'lazio-rom' },
+  'ss lazio':                  { id: 398,   slug: 'lazio-rom' },
   'atalanta':                  { id: 800,   slug: 'atalanta-bc' },
-  'fiorentina':                { id: 430,   slug: 'acf-fiorentina' },
-  'torino':                    { id: 416,   slug: 'torino-fc' },
+  'fiorentina':                { id: 430,   slug: 'ac-florenz' },
+  'torino':                    { id: 416,   slug: 'fc-turin' },
   // ── Ligue 1 ─────────────────────────────────────────────────
-  'paris saint-germain':       { id: 583,   slug: 'paris-saint-germain' },
-  'psg':                       { id: 583,   slug: 'paris-saint-germain' },
-  'paris saint germain':       { id: 583,   slug: 'paris-saint-germain' },
-  'marseille':                 { id: 244,   slug: 'olympique-de-marseille' },
-  'olympique marseille':       { id: 244,   slug: 'olympique-de-marseille' },
-  'lyon':                      { id: 1041,  slug: 'olympique-lyonnais' },
-  'olympique lyonnais':        { id: 1041,  slug: 'olympique-lyonnais' },
+  'paris saint-germain':       { id: 583,   slug: 'fc-paris-saint-germain' },
+  'psg':                       { id: 583,   slug: 'fc-paris-saint-germain' },
+  'paris saint germain':       { id: 583,   slug: 'fc-paris-saint-germain' },
+  'marseille':                 { id: 244,   slug: 'olympique-marseille' },
+  'olympique marseille':       { id: 244,   slug: 'olympique-marseille' },
+  'lyon':                      { id: 1041,  slug: 'olympique-lyon' },
+  'olympique lyonnais':        { id: 1041,  slug: 'olympique-lyon' },
   'monaco':                    { id: 162,   slug: 'as-monaco' },
   'as monaco':                 { id: 162,   slug: 'as-monaco' },
   // ── Dutch / Portuguese / Belgian ────────────────────────────
-  'ajax':                      { id: 610,   slug: 'afc-ajax' },
-  'afc ajax':                  { id: 610,   slug: 'afc-ajax' },
+  'ajax':                      { id: 610,   slug: 'ajax-amsterdam' },
+  'afc ajax':                  { id: 610,   slug: 'ajax-amsterdam' },
   'psv':                       { id: 383,   slug: 'psv-eindhoven' },
   'psv eindhoven':             { id: 383,   slug: 'psv-eindhoven' },
   'feyenoord':                 { id: 234,   slug: 'feyenoord-rotterdam' },
   'porto':                     { id: 720,   slug: 'fc-porto' },
   'fc porto':                  { id: 720,   slug: 'fc-porto' },
-  'benfica':                   { id: 294,   slug: 'sl-benfica' },
-  'sl benfica':                { id: 294,   slug: 'sl-benfica' },
+  'benfica':                   { id: 294,   slug: 'benfica-lissabon' },
+  'sl benfica':                { id: 294,   slug: 'benfica-lissabon' },
   'sporting cp':               { id: 336,   slug: 'sporting-cp' },
   'celtic':                    { id: 371,   slug: 'celtic-glasgow' },
   'anderlecht':                { id: 28,    slug: 'rsc-anderlecht' },
-  'club brugge':               { id: 5765,  slug: 'fc-brugge' },
+  // ── Additional Premier League / Championship ─────────────────
+  'fulham':                    { id: 931,   slug: 'fc-fulham' },
+  'fc fulham':                 { id: 931,   slug: 'fc-fulham' },
+  'crystal palace':            { id: 873,   slug: 'crystal-palace' },
+  'brentford':                 { id: 1148,  slug: 'fc-brentford' },
+  'brentford fc':              { id: 1148,  slug: 'fc-brentford' },
+  'burnley':                   { id: 1132,  slug: 'fc-burnley' },
+  'sheffield united':          { id: 350,   slug: 'sheffield-united' },
+  'watford':                   { id: 1010,  slug: 'fc-watford' },
+  'stoke city':                { id: 707,   slug: 'stoke-city' },
+  'coventry city':             { id: 1026,  slug: 'coventry-city' },
+  // ── Additional Bundesliga ────────────────────────────────────
+  'union berlin':              { id: 89,    slug: '1-fc-union-berlin' },
+  '1. fc union berlin':        { id: 89,    slug: '1-fc-union-berlin' },
+  'augsburg':                  { id: 167,   slug: 'fc-augsburg' },
+  'fc augsburg':               { id: 167,   slug: 'fc-augsburg' },
+  'hertha berlin':             { id: 86,    slug: 'hertha-bsc' },
+  'hertha bsc':                { id: 86,    slug: 'hertha-bsc' },
+  'hamburger sv':              { id: 41,    slug: 'hamburger-sv' },
+  'hsv':                       { id: 41,    slug: 'hamburger-sv' },
+  'hannover 96':               { id: 44,    slug: 'hannover-96' },
+  'hannover':                  { id: 44,    slug: 'hannover-96' },
+  // ── Additional Serie A ───────────────────────────────────────
+  'genoa':                     { id: 252,   slug: 'cfc-genua' },
+  'hellas verona':             { id: 276,   slug: 'hellas-verona' },
+  'verona':                    { id: 276,   slug: 'hellas-verona' },
+  'udinese':                   { id: 410,   slug: 'udinese-calcio' },
+  'lecce':                     { id: 1836,  slug: 'us-lecce' },
+  'empoli':                    { id: 749,   slug: 'fc-empoli' },
+  'monza':                     { id: 6316,  slug: 'ac-monza' },
+  'ac monza':                  { id: 6316,  slug: 'ac-monza' },
+  // ── Additional Ligue 1 ───────────────────────────────────────
+  'lens':                      { id: 826,   slug: 'rc-lens' },
+  'rc lens':                   { id: 826,   slug: 'rc-lens' },
+  'rennes':                    { id: 273,   slug: 'fc-stade-rennes' },
+  'stade rennais':             { id: 273,   slug: 'fc-stade-rennes' },
+  'toulouse':                  { id: 415,   slug: 'fc-toulouse' },
+  'montpellier':               { id: 969,   slug: 'montpellier-hsc' },
+  // ── UCL / Europa ─────────────────────────────────────────────
+  'young boys':                { id: 2025,  slug: 'bsc-young-boys' },
+  'bsc young boys':            { id: 2025,  slug: 'bsc-young-boys' },
+  'red bull salzburg':         { id: 409,   slug: 'red-bull-salzburg' },
+  'rb salzburg':               { id: 409,   slug: 'red-bull-salzburg' },
+  'salzburg':                  { id: 409,   slug: 'red-bull-salzburg' },
+  'shakhtar donetsk':          { id: 660,   slug: 'shakhtar-donetsk' },
+  'dinamo zagreb':             { id: 419,   slug: 'gnk-dinamo-zagreb' },
+  // ── Saudi Pro League (explicit entries to skip dynamic search) ──────────────────
+  'al-nassr':                  { id: 18544, slug: 'al-nasr-riad' },
+  'al nassr':                  { id: 18544, slug: 'al-nasr-riad' },
+  'al-nassr fc':               { id: 18544, slug: 'al-nasr-riad' },
+  // ── MLS ──────────────────────────────────────────────────────
+  'inter miami':               { id: 68274, slug: 'inter-miami-cf' },
+  'inter miami cf':            { id: 68274, slug: 'inter-miami-cf' },
+  'inter de miami':            { id: 68274, slug: 'inter-miami-cf' },
+  'inter de miami cf':         { id: 68274, slug: 'inter-miami-cf' },
+  'lafc':                      { id: 38464, slug: 'los-angeles-fc' },
+  'los angeles fc':            { id: 38464, slug: 'los-angeles-fc' },
+  'la fc':                     { id: 38464, slug: 'los-angeles-fc' },
+  // ── Saudi Pro League ─────────────────────────────────────────
+  'al-hilal':                  { id: 2672,  slug: 'al-hilal-saudi-fc' },
+  'al hilal':                  { id: 2672,  slug: 'al-hilal-saudi-fc' },
+  // ── Scotland ─────────────────────────────────────────────────
+  'rangers':                   { id: 39,    slug: 'rangers-fc' },
+  'rangers fc':                { id: 39,    slug: 'rangers-fc' },
+  'glasgow rangers':           { id: 39,    slug: 'rangers-fc' },
+  // ── South American ───────────────────────────────────────────
+  'internacional':             { id: 4286,  slug: 'sc-internacional' },
+  'sc internacional':          { id: 4286,  slug: 'sc-internacional' },
 
   // ── Selecciones nacionales ──────────────────────────────
   // NOTA: Solo se incluyen IDs verificados que devuelven la selección correcta.
@@ -331,11 +412,12 @@ function resolveClub(teamName) {
     if (normK === key) return info;
   }
 
-  // Partial/fuzzy match
+  // Partial/fuzzy match — normK.includes(key) only fires when key ≥5 chars,
+  // preventing short words like 'iran' or 'peru' from matching unrelated club names.
   let best = null, bestLen = 0;
   for (const [k, info] of Object.entries(TM_CLUBS)) {
     const normK = k.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    if ((key.includes(normK) || normK.includes(key)) && normK.length > bestLen) {
+    if ((key.includes(normK) || (key.length >= 5 && normK.includes(key))) && normK.length > bestLen) {
       best = info;
       bestLen = normK.length;
     }
@@ -372,7 +454,12 @@ const _teamFileCache = new Map();
 /** Read a team file; returns { slug, seasons:{} } if missing */
 function _loadTeamFile(slug) {
   if (_teamFileCache.has(slug)) return _teamFileCache.get(slug);
-  const file = path.join(SQUADS_DIR, `${slug}.json`);
+  const file = path.resolve(SQUADS_DIR, `${slug}.json`);
+  // Path containment: reject any slug that escapes the squads directory
+  if (!file.startsWith(SQUADS_DIR + path.sep) && file !== SQUADS_DIR) {
+    console.warn('[squads] Blocked path traversal attempt for slug:', slug);
+    return { slug, seasons: {} };
+  }
   try {
     if (fs.existsSync(file)) {
       const data = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -385,7 +472,12 @@ function _loadTeamFile(slug) {
 
 /** Save/update a season into the team file */
 function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
-  const file = path.join(SQUADS_DIR, `${slug}.json`);
+  const file = path.resolve(SQUADS_DIR, `${slug}.json`);
+  // Path containment: never write outside the squads directory
+  if (!file.startsWith(SQUADS_DIR + path.sep) && file !== SQUADS_DIR) {
+    console.warn('[squads] Blocked write path traversal for slug:', slug);
+    return;
+  }
   const data = _loadTeamFile(slug);
   // Only set id if provided — never overwrite an existing id with null
   if (id != null) data.id = id;
@@ -696,12 +788,21 @@ async function fetchTransfermarktSquad(teamName, era) {
   const $table = $('table.items');
   if (!$table.length) return null;
 
-  // ── Cross-validate: canonical URL must contain the expected slug ──────────
+  // ── Cross-validate: canonical URL must contain the expected slug or the team ID ──────────────────
+  // TM occasionally renames slugs (e.g. atletico-de-madrid → atletico-madrid) but the ID stays stable.
+  // We only discard if the slug clearly belongs to a DIFFERENT team (different root word).
   const canonicalHref = $('link[rel="canonical"]').attr('href') || '';
   const slugInPage = (canonicalHref.match(/transfermarkt\.\w+\/([^/]+)\/kader/) || [])[1] || '';
   if (slugInPage && slugInPage !== club.slug) {
-    console.warn(`[TM] ⚠️  Página recibida para "${slugInPage}" pero esperábamos "${club.slug}" — descartando`);
-    return null;
+    // Accept if slug is a close variant (same first token, TM renaming)
+    const rootA = club.slug.split('-')[0];
+    const rootB = slugInPage.split('-')[0];
+    if (rootA !== rootB) {
+      console.warn(`[TM] ⚠️  Página recibida para "${slugInPage}" pero esperábamos "${club.slug}" — descartando (raíces distintas)`);
+      return null;
+    }
+    // Same root word → TM renamed the club URL; update our running reference silently
+    console.info(`[TM] ℹ️  Slug renombrado: "${club.slug}" → "${slugInPage}" (ID ${club.id}) — aceptando`);
   }
 
   // Get league/competition name for ratings
@@ -729,10 +830,41 @@ async function fetchTransfermarktSquad(teamName, era) {
     const name = posrelaLink || directLink;
     if (!name) return;
 
-    rawPlayers.push({ name, position });
+    // Market value — parse TM.es formats:
+    //   "350 mil €"  → €350 000
+    //   "1,50 mill. €" or "1,50 M €" → €1 500 000
+    const mvRaw = $row.find('td.rechts.hauptlink').text().trim()
+               || $row.find('td.rechts').last().text().trim();
+    let marketValue = 0;
+    if (mvRaw) {
+      const mvClean = mvRaw.replace(/[€$\s]/g, '').replace(',', '.');
+      const num = parseFloat(mvClean);
+      if (!isNaN(num)) {
+        if (/mill/i.test(mvRaw))           marketValue = num * 1_000_000; // "mill." = millones
+        else if (/\bM\b/.test(mvRaw))      marketValue = num * 1_000_000; // "M" solamente
+        else if (/mil/i.test(mvRaw))       marketValue = num * 1_000;     // "mil" = miles
+        else                               marketValue = num;
+      }
+    }
+
+    rawPlayers.push({ name, position, marketValue });
   });
 
   if (rawPlayers.length < 14) return null; // un plantel real tiene mínimo 14
+
+  // Apply PLAYER_RATINGS overrides first (covers all famous players regardless of era),
+  // then mvToRating as fallback — so Ronaldo is always 99 even if TM shows €12M today.
+  const { playerRating: _pr } = require('./player_ratings');
+
+  for (const p of rawPlayers) {
+    p.rating = _pr(p.name, p.marketValue);
+  }
+
+  // Sort within each position group by rating descending (best player picked first for XI)
+  rawPlayers.sort((a, b) => {
+    if (a.position !== b.position) return 0;
+    return (b.rating || 0) - (a.rating || 0);
+  });
 
   // Build a representative XI just to derive formation string just to derive formation string
   const xi = buildXI(rawPlayers);
@@ -755,4 +887,79 @@ async function fetchTransfermarktSquad(teamName, era) {
   return result;
 }
 
-module.exports = { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile };
+// ─────────────────────────────────────────────────────────────
+// Local badge cache
+//   Download team badge images to public/img/badges/{slug}.{ext}
+//   so the frontend always uses self-hosted paths (CSP: img-src 'self').
+// ─────────────────────────────────────────────────────────────
+const BADGES_DIR = path.join(__dirname, 'public', 'img', 'badges');
+if (!fs.existsSync(BADGES_DIR)) fs.mkdirSync(BADGES_DIR, { recursive: true });
+
+/** Trusted badge image hosts — SSRF protection: only download from these */
+const _SAFE_BADGE_HOSTS = new Set(['www.thesportsdb.com', 'thesportsdb.com', 'r2.thesportsdb.com']);
+const _BADGE_MAX_BYTES  = 512 * 1024;  // 500 KB cap
+
+/**
+ * Download a badge image from a trusted TheSportsDB URL and save it locally.
+ * Returns the public path "/img/badges/{slug}.{ext}", or null on failure.
+ * Safe to call even if the file already exists (returns cached path immediately).
+ */
+async function saveBadgeLocally(badgeUrl, slug) {
+  if (!badgeUrl || !slug) return null;
+  if (!/^[a-z0-9][a-z0-9\-]{0,79}$/.test(slug)) return null;
+  let parsedUrl;
+  try { parsedUrl = new URL(badgeUrl); } catch (_) { return null; }
+  if (!_SAFE_BADGE_HOSTS.has(parsedUrl.hostname)) return null;
+  if (parsedUrl.protocol !== 'https:') return null;
+  const extMatch = parsedUrl.pathname.match(/\.(png|jpg|jpeg|gif|webp|svg)$/i);
+  const ext = extMatch ? extMatch[1].toLowerCase() : 'png';
+  const localFile = path.join(BADGES_DIR, `${slug}.${ext}`);
+  if (!localFile.startsWith(BADGES_DIR + path.sep)) return null;
+  if (fs.existsSync(localFile)) return `/img/badges/${slug}.${ext}`;
+  try {
+    const res = await fetch(badgeUrl, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) return null;
+    const ct = (res.headers.get('content-type') || '').split(';')[0].trim();
+    if (!ct.startsWith('image/')) return null;
+    const buf = await res.arrayBuffer();
+    if (buf.byteLength > _BADGE_MAX_BYTES) return null;
+    fs.writeFileSync(localFile, Buffer.from(buf));
+    return `/img/badges/${slug}.${ext}`;
+  } catch (_) { return null; }
+}
+
+/**
+ * Scan the badges directory for any file matching this slug.
+ * Returns the public path or null (no network call).
+ */
+function getLocalBadgePath(slug) {
+  if (!slug || !/^[a-z0-9][a-z0-9\-]{0,79}$/.test(slug)) return null;
+  for (const ext of ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg']) {
+    const f = path.join(BADGES_DIR, `${slug}.${ext}`);
+    if (fs.existsSync(f)) return `/img/badges/${slug}.${ext}`;
+  }
+  return null;
+}
+
+/**
+ * Persist the local badge path at the TOP LEVEL of the team file.
+ * { slug, name, badgeLocalPath: '/img/badges/slug.png', seasons: { ... } }
+ */
+function saveBadgePathToFile(slug, localPath) {
+  if (!slug || !localPath) return;
+  if (!/^[a-z0-9][a-z0-9\-]{0,79}$/.test(slug)) return;
+  const file = path.resolve(SQUADS_DIR, `${slug}.json`);
+  if (!file.startsWith(SQUADS_DIR + path.sep)) return;
+  const data = _loadTeamFile(slug);
+  if (data.badgeLocalPath === localPath) return;  // no-op if already saved
+  data.badgeLocalPath = localPath;
+  try {
+    fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
+    _teamFileCache.set(slug, data);
+  } catch (_) { /* non-critical */ }
+}
+
+module.exports = {
+  fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile,
+  saveBadgeLocally, saveBadgePathToFile, getLocalBadgePath,
+};

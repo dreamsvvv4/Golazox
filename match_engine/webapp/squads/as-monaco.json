@@ -1,0 +1,479 @@
+{
+  "slug": "as-monaco",
+  "seasons": {
+    "2003": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "André Biancarelli",
+          "position": "GK"
+        },
+        {
+          "name": "Stéphane Porato",
+          "position": "GK"
+        },
+        {
+          "name": "Tony Sylva",
+          "position": "GK"
+        },
+        {
+          "name": "Flavio Roma",
+          "position": "GK"
+        },
+        {
+          "name": "Joseph Dayo Oshadogan",
+          "position": "CB"
+        },
+        {
+          "name": "Sébastien Squillaci",
+          "position": "CB"
+        },
+        {
+          "name": "Arnaud Lescure",
+          "position": "CB"
+        },
+        {
+          "name": "Julien Rodriguez",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Givet",
+          "position": "CB"
+        },
+        {
+          "name": "Jim Ablancourt",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Hassan El Fakiri",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Ibarra",
+          "position": "CB"
+        },
+        {
+          "name": "Édouard Cissé",
+          "position": "CM"
+        },
+        {
+          "name": "Akis Zikos",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolas Hislen",
+          "position": "CM"
+        },
+        {
+          "name": "Laurent Mohellebi",
+          "position": "CM"
+        },
+        {
+          "name": "Jaroslav Plasil",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Bernardi",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Juan",
+          "position": "CM"
+        },
+        {
+          "name": "Jérôme Rothen",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolas Maurice-Belay",
+          "position": "CM"
+        },
+        {
+          "name": "Ludovic Giuly",
+          "position": "ST"
+        },
+        {
+          "name": "Laurent Lanteri",
+          "position": "ST"
+        },
+        {
+          "name": "Souleymane Camara",
+          "position": "ST"
+        },
+        {
+          "name": "Sébastien Carole",
+          "position": "ST"
+        },
+        {
+          "name": "Dado Prso",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST"
+        },
+        {
+          "name": "Shabani Nonda",
+          "position": "ST"
+        },
+        {
+          "name": "Nicolas Raynier",
+          "position": "ST"
+        },
+        {
+          "name": "Emmanuel Adebayor",
+          "position": "ST"
+        },
+        {
+          "name": "Sébastien Grax",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Monaco (2003/2004)",
+      "teamLabel": "Monaco (2003-04)"
+    },
+    "2016": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Danijel Subasic",
+          "position": "GK"
+        },
+        {
+          "name": "Morgan De Sanctis",
+          "position": "GK"
+        },
+        {
+          "name": "Seydou Sy",
+          "position": "GK"
+        },
+        {
+          "name": "Loïc Badiashile",
+          "position": "GK"
+        },
+        {
+          "name": "Kamil Glik",
+          "position": "CB"
+        },
+        {
+          "name": "Jemerson",
+          "position": "CB"
+        },
+        {
+          "name": "Almamy Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Marcel Tisserand",
+          "position": "CB"
+        },
+        {
+          "name": "Andrea Raggi",
+          "position": "CB"
+        },
+        {
+          "name": "Abdou Diallo",
+          "position": "CB"
+        },
+        {
+          "name": "Dinis Almeida",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Diarra",
+          "position": "CB"
+        },
+        {
+          "name": "Safwan Mbaé",
+          "position": "CB"
+        },
+        {
+          "name": "Kouadio-Yves Dabila",
+          "position": "CB"
+        },
+        {
+          "name": "Benjamin Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge",
+          "position": "CB"
+        },
+        {
+          "name": "Elderson",
+          "position": "CB"
+        },
+        {
+          "name": "Djibril Sidibé",
+          "position": "CB"
+        },
+        {
+          "name": "Nabil Dirar",
+          "position": "CB"
+        },
+        {
+          "name": "Yhoan Andzouana",
+          "position": "CB"
+        },
+        {
+          "name": "Pierre-Daniel Nguinda",
+          "position": "CB"
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM"
+        },
+        {
+          "name": "Tiemoué Bakayoko",
+          "position": "CM"
+        },
+        {
+          "name": "Youssef Aït Bennasser",
+          "position": "CM"
+        },
+        {
+          "name": "Kévin N'Doram",
+          "position": "CM"
+        },
+        {
+          "name": "Tristan Muyumba",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan Mexique",
+          "position": "CM"
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Thomas Lemar",
+          "position": "CM"
+        },
+        {
+          "name": "Gabriel Boschilia",
+          "position": "CM"
+        },
+        {
+          "name": "Dylan Beaulieu",
+          "position": "CM"
+        },
+        {
+          "name": "Ivan Cavaleiro",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Saint-Maximin",
+          "position": "ST"
+        },
+        {
+          "name": "Corentin Tirard",
+          "position": "ST"
+        },
+        {
+          "name": "Adrien Bongiovanni",
+          "position": "ST"
+        },
+        {
+          "name": "Rony Lopes",
+          "position": "ST"
+        },
+        {
+          "name": "Gil Dias",
+          "position": "ST"
+        },
+        {
+          "name": "Irvin Cardona",
+          "position": "ST"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Radamel Falcao",
+          "position": "ST"
+        },
+        {
+          "name": "Valère Germain",
+          "position": "ST"
+        },
+        {
+          "name": "Guido Carrillo",
+          "position": "ST"
+        },
+        {
+          "name": "Corentin Jean",
+          "position": "ST"
+        },
+        {
+          "name": "Lacina Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Ilyes Chaïbi",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Monaco (2016/2017)",
+      "teamLabel": "Monaco (2016-17)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Philipp Köhn",
+          "position": "GK"
+        },
+        {
+          "name": "Lukas Hradecky",
+          "position": "GK"
+        },
+        {
+          "name": "Jules Stawiecki",
+          "position": "GK"
+        },
+        {
+          "name": "Yann Lienard",
+          "position": "GK"
+        },
+        {
+          "name": "Thilo Kehrer",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Mawissa",
+          "position": "CB"
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB"
+        },
+        {
+          "name": "Mohammed Salisu",
+          "position": "CB"
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB"
+        },
+        {
+          "name": "Caio Henrique",
+          "position": "CB"
+        },
+        {
+          "name": "Kassoum Ouattara",
+          "position": "CB"
+        },
+        {
+          "name": "Vanderson",
+          "position": "CB"
+        },
+        {
+          "name": "Jordan Teze",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Zakaria",
+          "position": "CM"
+        },
+        {
+          "name": "Aladji Bamba",
+          "position": "CM"
+        },
+        {
+          "name": "Lamine Camara",
+          "position": "CM"
+        },
+        {
+          "name": "Mamadou Coulibaly",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Pogba",
+          "position": "CM"
+        },
+        {
+          "name": "Krépin Diatta",
+          "position": "CM"
+        },
+        {
+          "name": "Aleksandr Golovin",
+          "position": "CM"
+        },
+        {
+          "name": "Stanis Idumbo",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Adingra",
+          "position": "ST"
+        },
+        {
+          "name": "Takumi Minamino",
+          "position": "ST"
+        },
+        {
+          "name": "Ansu Fati",
+          "position": "ST"
+        },
+        {
+          "name": "Maghnes Akliouche",
+          "position": "ST"
+        },
+        {
+          "name": "Folarin Balogun",
+          "position": "ST"
+        },
+        {
+          "name": "Mika Biereth",
+          "position": "ST"
+        },
+        {
+          "name": "Paris Brunner",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Monaco (2025/2026)",
+      "teamLabel": "Monaco (2025-26)"
+    }
+  },
+  "id": 162,
+  "name": "Monaco",
+  "badgeLocalPath": "/img/badges/as-monaco.png"
+}

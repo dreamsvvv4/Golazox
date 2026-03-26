@@ -3542,8 +3542,335 @@
       },
       "source": "Transfermarkt — england (2022/2023)",
       "teamLabel": "england (2022-23)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "James Trafford",
+          "position": "GK"
+        },
+        {
+          "name": "Dean Henderson",
+          "position": "GK"
+        },
+        {
+          "name": "Levi Colwill",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Ezri Konsa",
+          "position": "CB"
+        },
+        {
+          "name": "John Stones",
+          "position": "CB"
+        },
+        {
+          "name": "Jarell Quansah",
+          "position": "CB"
+        },
+        {
+          "name": "Trevoh Chalobah",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Myles Lewis-Skelly",
+          "position": "CB"
+        },
+        {
+          "name": "Djed Spence",
+          "position": "CB"
+        },
+        {
+          "name": "Nico O'Reilly",
+          "position": "CB"
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "CB"
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "CB"
+        },
+        {
+          "name": "Reece James",
+          "position": "CB"
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "CM"
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM"
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM"
+        },
+        {
+          "name": "Curtis Jones",
+          "position": "CM"
+        },
+        {
+          "name": "Conor Gallagher",
+          "position": "CM"
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Ruben Loftus-Cheek",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Scott",
+          "position": "CM"
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM"
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM"
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Gibbs-White",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Rogers",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "ST"
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "ST"
+        },
+        {
+          "name": "Jarrod Bowen",
+          "position": "ST"
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST"
+        },
+        {
+          "name": "Ollie Watkins",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Solanke",
+          "position": "ST"
+        },
+        {
+          "name": "Ivan Toney",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 73,
+        "goalkeeping": 75
+      },
+      "source": "Transfermarkt — New England Revolution (2025/2026)",
+      "teamLabel": "New England Revolution (2025-26)"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dean Henderson",
+          "position": "GK"
+        },
+        {
+          "name": "James Trafford",
+          "position": "GK"
+        },
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "Aaron Ramsdale",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Ezri Konsa",
+          "position": "CB"
+        },
+        {
+          "name": "Fikayo Tomori",
+          "position": "CB"
+        },
+        {
+          "name": "John Stones",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Maguire",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Nico O'Reilly",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Hall",
+          "position": "CB"
+        },
+        {
+          "name": "Djed Spence",
+          "position": "CB"
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "CB"
+        },
+        {
+          "name": "Ben White",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "CM"
+        },
+        {
+          "name": "James Garner",
+          "position": "CM"
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM"
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM"
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Kobbie Mainoo",
+          "position": "CM"
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM"
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "CM"
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Rogers",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "ST"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "ST"
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "ST"
+        },
+        {
+          "name": "Jarrod Bowen",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Solanke",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 73,
+        "goalkeeping": 75
+      },
+      "source": "Transfermarkt — New England Revolution (2026/2027)",
+      "teamLabel": "New England Revolution (2026-27)"
     }
   },
   "id": 3299,
-  "name": "england"
+  "name": "england",
+  "badgeLocalPath": "/img/badges/england.png"
 }

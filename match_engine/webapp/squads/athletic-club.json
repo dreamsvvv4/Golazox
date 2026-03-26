@@ -1,6 +1,131 @@
 {
   "slug": "athletic-club",
   "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Unai Simón",
+          "position": "GK"
+        },
+        {
+          "name": "Álex Padilla",
+          "position": "GK"
+        },
+        {
+          "name": "Dani Vivian",
+          "position": "CB"
+        },
+        {
+          "name": "Aitor Paredes",
+          "position": "CB"
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB"
+        },
+        {
+          "name": "Yeray Álvarez",
+          "position": "CB"
+        },
+        {
+          "name": "Unai Egiluz",
+          "position": "CB"
+        },
+        {
+          "name": "Adama Boiro",
+          "position": "CB"
+        },
+        {
+          "name": "Yuri Berchiche",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Areso",
+          "position": "CB"
+        },
+        {
+          "name": "Andoni Gorosabel",
+          "position": "CB"
+        },
+        {
+          "name": "Iñigo Lekue",
+          "position": "CB"
+        },
+        {
+          "name": "Mikel Vesga",
+          "position": "CM"
+        },
+        {
+          "name": "Mikel Jauregizar",
+          "position": "CM"
+        },
+        {
+          "name": "Beñat Prados",
+          "position": "CM"
+        },
+        {
+          "name": "Alejandro Rego",
+          "position": "CM"
+        },
+        {
+          "name": "Selton Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Iñigo Ruiz de Galarreta",
+          "position": "CM"
+        },
+        {
+          "name": "Oihan Sancet",
+          "position": "CM"
+        },
+        {
+          "name": "Unai Gómez",
+          "position": "CM"
+        },
+        {
+          "name": "Nico Williams",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Berenguer",
+          "position": "ST"
+        },
+        {
+          "name": "Nico Serrano",
+          "position": "ST"
+        },
+        {
+          "name": "Iñaki Williams",
+          "position": "ST"
+        },
+        {
+          "name": "Robert Navarro",
+          "position": "ST"
+        },
+        {
+          "name": "Gorka Guruzeta",
+          "position": "ST"
+        },
+        {
+          "name": "Maroan Sannadi",
+          "position": "ST"
+        },
+        {
+          "name": "Urko Izeta",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 67,
+        "defense": 63,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Athletic Bilbao (2025/2026)",
+      "teamLabel": "Athletic Bilbao (2025-26)"
+    },
     "2026": {
       "found": true,
       "formation": "4-3-3",
@@ -55,5 +180,7 @@
       "teamLabel": "Athletic de Bilbao (2026)"
     }
   },
-  "name": "Athletic de Bilbao"
+  "name": "Athletic de Bilbao",
+  "badgeLocalPath": "/img/badges/athletic-club.png",
+  "id": 621
 }

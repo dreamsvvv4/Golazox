@@ -3684,6 +3684,203 @@
       "source": "Transfermarkt — spain (2022/2023)",
       "teamLabel": "spain (2022-23)"
     },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Raya",
+          "position": "GK"
+        },
+        {
+          "name": "Robert Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Álex Remiro",
+          "position": "GK"
+        },
+        {
+          "name": "Unai Simón",
+          "position": "GK"
+        },
+        {
+          "name": "Pau Torres",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Le Normand",
+          "position": "CB"
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Vivian",
+          "position": "CB"
+        },
+        {
+          "name": "Aitor Paredes",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Pau Cubarsí",
+          "position": "CB"
+        },
+        {
+          "name": "Alejandro Grimaldo",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Cucurella",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Porro",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Óscar Mingueza",
+          "position": "CB"
+        },
+        {
+          "name": "Rodri",
+          "position": "CM"
+        },
+        {
+          "name": "Martín Zubimendi",
+          "position": "CM"
+        },
+        {
+          "name": "Pepelu",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Casadó",
+          "position": "CM"
+        },
+        {
+          "name": "Pedri",
+          "position": "CM"
+        },
+        {
+          "name": "Mikel Merino",
+          "position": "CM"
+        },
+        {
+          "name": "Fabián Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Barrios",
+          "position": "CM"
+        },
+        {
+          "name": "Aleix García",
+          "position": "CM"
+        },
+        {
+          "name": "Jesús Navas",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Olmo",
+          "position": "CM"
+        },
+        {
+          "name": "Oihan Sancet",
+          "position": "CM"
+        },
+        {
+          "name": "Fermín López",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM"
+        },
+        {
+          "name": "Nico Williams",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Riquelme",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Baena",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Gil",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Zaragoza",
+          "position": "ST"
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "ST"
+        },
+        {
+          "name": "Yéremy Pino",
+          "position": "ST"
+        },
+        {
+          "name": "Mikel Oyarzabal",
+          "position": "ST"
+        },
+        {
+          "name": "Ferran Torres",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST"
+        },
+        {
+          "name": "Samu Aghehowa",
+          "position": "ST"
+        },
+        {
+          "name": "Gerard Moreno",
+          "position": "ST"
+        },
+        {
+          "name": "Ayoze Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Joselu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 88,
+        "defense": 77,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — spain (2024/2025)",
+      "teamLabel": "spain (2024-25)"
+    },
     "2026": {
       "formation": "4-3-3",
       "players": [
@@ -3811,5 +4008,6 @@
     }
   },
   "id": 3375,
-  "name": "España"
+  "name": "España",
+  "badgeLocalPath": "/img/badges/spanien.png"
 }

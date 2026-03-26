@@ -1,0 +1,125 @@
+{
+  "slug": "tigres-uanl",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nahuel Guzmán",
+          "position": "GK"
+        },
+        {
+          "name": "Felipe Rodríguez",
+          "position": "GK"
+        },
+        {
+          "name": "Antonio Carrera",
+          "position": "GK"
+        },
+        {
+          "name": "Joaquim",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Angulo",
+          "position": "CB"
+        },
+        {
+          "name": "Juan José Purata",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Guerrero",
+          "position": "CB"
+        },
+        {
+          "name": "Francisco Reyes",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Farfán",
+          "position": "CB"
+        },
+        {
+          "name": "Osvaldo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Ordóñez",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Garza",
+          "position": "CB"
+        },
+        {
+          "name": "Vladímir Loroña",
+          "position": "CB"
+        },
+        {
+          "name": "Rômulo",
+          "position": "CM"
+        },
+        {
+          "name": "César Araújo",
+          "position": "CM"
+        },
+        {
+          "name": "Fernando Gorriarán",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Pablo Vigón",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Brunetta",
+          "position": "CM"
+        },
+        {
+          "name": "Marcelo Flores",
+          "position": "ST"
+        },
+        {
+          "name": "Diego Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Diego Lainez",
+          "position": "ST"
+        },
+        {
+          "name": "Ozziel Herrera",
+          "position": "ST"
+        },
+        {
+          "name": "Ángel Correa",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Aguirre",
+          "position": "ST"
+        },
+        {
+          "name": "Iván López",
+          "position": "ST"
+        },
+        {
+          "name": "André-Pierre Gignac",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 69,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Tigres UANL (2025/2026)",
+      "teamLabel": "Tigres UANL (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/tigres-uanl.png",
+  "id": 7055,
+  "name": "Tigres UANL"
+}

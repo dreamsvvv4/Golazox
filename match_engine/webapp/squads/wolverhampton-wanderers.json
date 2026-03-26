@@ -1,0 +1,853 @@
+{
+  "slug": "wolverhampton-wanderers",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Sá",
+          "position": "GK"
+        },
+        {
+          "name": "Matija Sarkic",
+          "position": "GK"
+        },
+        {
+          "name": "John Ruddy",
+          "position": "GK"
+        },
+        {
+          "name": "Louie Moulden",
+          "position": "GK"
+        },
+        {
+          "name": "Andreas Søndergaard",
+          "position": "GK"
+        },
+        {
+          "name": "James Storer",
+          "position": "GK"
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB"
+        },
+        {
+          "name": "Maximilian Kilman",
+          "position": "CB"
+        },
+        {
+          "name": "Romain Saïss",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Boly",
+          "position": "CB"
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Toti",
+          "position": "CB"
+        },
+        {
+          "name": "Dion Sanderson",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Marques",
+          "position": "CB"
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Giles",
+          "position": "CB"
+        },
+        {
+          "name": "Marçal",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Otto",
+          "position": "CB"
+        },
+        {
+          "name": "Ki-Jana Hoever",
+          "position": "CB"
+        },
+        {
+          "name": "Dexter Lembikisa",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Neves",
+          "position": "CM"
+        },
+        {
+          "name": "Leander Dendoncker",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Jordão",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM"
+        },
+        {
+          "name": "Connor Ronan",
+          "position": "CM"
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Gibbs-White",
+          "position": "CM"
+        },
+        {
+          "name": "Chem Campbell",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel Podence",
+          "position": "ST"
+        },
+        {
+          "name": "Chiquinho",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "ST"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "position": "ST"
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST"
+        },
+        {
+          "name": "Fábio Silva",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Wolverhampton Wanderers (2021/2022)",
+      "teamLabel": "Wolverhampton Wanderers (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Sá",
+          "position": "GK"
+        },
+        {
+          "name": "Matija Sarkic",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Bentley",
+          "position": "GK"
+        },
+        {
+          "name": "Louie Moulden",
+          "position": "GK"
+        },
+        {
+          "name": "Jackson Smith",
+          "position": "GK"
+        },
+        {
+          "name": "Maximilian Kilman",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Collins",
+          "position": "CB"
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB"
+        },
+        {
+          "name": "Toti",
+          "position": "CB"
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Willy Boly",
+          "position": "CB"
+        },
+        {
+          "name": "Craig Dawson",
+          "position": "CB"
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Otto",
+          "position": "CB"
+        },
+        {
+          "name": "Ki-Jana Hoever",
+          "position": "CB"
+        },
+        {
+          "name": "Dexter Lembikisa",
+          "position": "CB"
+        },
+        {
+          "name": "Rúben Neves",
+          "position": "CM"
+        },
+        {
+          "name": "Leander Dendoncker",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Lemina",
+          "position": "CM"
+        },
+        {
+          "name": "Boubacar Traoré",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Hodge",
+          "position": "CM"
+        },
+        {
+          "name": "Harvey Griffiths",
+          "position": "CM"
+        },
+        {
+          "name": "João Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM"
+        },
+        {
+          "name": "João Moutinho",
+          "position": "CM"
+        },
+        {
+          "name": "Connor Ronan",
+          "position": "CM"
+        },
+        {
+          "name": "Morgan Gibbs-White",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM"
+        },
+        {
+          "name": "Chem Campbell",
+          "position": "CM"
+        },
+        {
+          "name": "Gonçalo Guedes",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Podence",
+          "position": "ST"
+        },
+        {
+          "name": "Chiquinho",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "ST"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Matheus Cunha",
+          "position": "ST"
+        },
+        {
+          "name": "Sasa Kalajdzic",
+          "position": "ST"
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "position": "ST"
+        },
+        {
+          "name": "Diego Costa",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Fraser",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Wolverhampton Wanderers (2022/2023)",
+      "teamLabel": "Wolverhampton Wanderers (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Sá",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Bentley",
+          "position": "GK"
+        },
+        {
+          "name": "Tom King",
+          "position": "GK"
+        },
+        {
+          "name": "Louie Moulden",
+          "position": "GK"
+        },
+        {
+          "name": "Maximilian Kilman",
+          "position": "CB"
+        },
+        {
+          "name": "Toti",
+          "position": "CB"
+        },
+        {
+          "name": "Santiago Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Craig Dawson",
+          "position": "CB"
+        },
+        {
+          "name": "Justin Hubner",
+          "position": "CB"
+        },
+        {
+          "name": "Alfie Pond",
+          "position": "CB"
+        },
+        {
+          "name": "Temple Ojinnaka",
+          "position": "CB"
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Aaron Keto-Diyawa",
+          "position": "CB"
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Otto",
+          "position": "CB"
+        },
+        {
+          "name": "Ki-Jana Hoever",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Doherty",
+          "position": "CB"
+        },
+        {
+          "name": "Wesley Okoduwa",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Lemina",
+          "position": "CM"
+        },
+        {
+          "name": "Boubacar Traoré",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Hodge",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Jordão",
+          "position": "CM"
+        },
+        {
+          "name": "Harvey Griffiths",
+          "position": "CM"
+        },
+        {
+          "name": "João Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Ricner Bellegarde",
+          "position": "CM"
+        },
+        {
+          "name": "Tommy Doyle",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM"
+        },
+        {
+          "name": "Matthew Whittingham",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM"
+        },
+        {
+          "name": "Chem Campbell",
+          "position": "CM"
+        },
+        {
+          "name": "Tawanda Chirewa",
+          "position": "CM"
+        },
+        {
+          "name": "Noha Lemina",
+          "position": "CM"
+        },
+        {
+          "name": "Ty Barnett",
+          "position": "CM"
+        },
+        {
+          "name": "Owen Hesketh",
+          "position": "CM"
+        },
+        {
+          "name": "Enso González",
+          "position": "ST"
+        },
+        {
+          "name": "Emilio Ballard-Matthews",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "ST"
+        },
+        {
+          "name": "Matheus Cunha",
+          "position": "ST"
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST"
+        },
+        {
+          "name": "Fábio Silva",
+          "position": "ST"
+        },
+        {
+          "name": "Sasa Kalajdzic",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Fraser",
+          "position": "ST"
+        },
+        {
+          "name": "Leon Chiwome",
+          "position": "ST"
+        },
+        {
+          "name": "Fletcher Holman",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Wolverhampton Wanderers (2023/2024)",
+      "teamLabel": "Wolverhampton Wanderers (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Sá",
+          "position": "GK"
+        },
+        {
+          "name": "Sam Johnstone",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Bentley",
+          "position": "GK"
+        },
+        {
+          "name": "Tom King",
+          "position": "GK"
+        },
+        {
+          "name": "Toti",
+          "position": "CB"
+        },
+        {
+          "name": "Emmanuel Agbadou",
+          "position": "CB"
+        },
+        {
+          "name": "Santiago Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Nasser Djiga",
+          "position": "CB"
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Bastien Meupiyou",
+          "position": "CB"
+        },
+        {
+          "name": "Craig Dawson",
+          "position": "CB"
+        },
+        {
+          "name": "Alfie Pond",
+          "position": "CB"
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "position": "CB"
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Lima",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Doherty",
+          "position": "CB"
+        },
+        {
+          "name": "Wesley Okoduwa",
+          "position": "CB"
+        },
+        {
+          "name": "André",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Lemina",
+          "position": "CM"
+        },
+        {
+          "name": "Boubacar Traoré",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Hodge",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Rawlings",
+          "position": "CM"
+        },
+        {
+          "name": "João Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Ricner Bellegarde",
+          "position": "CM"
+        },
+        {
+          "name": "Marshall Munetsi",
+          "position": "CM"
+        },
+        {
+          "name": "Tommy Doyle",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM"
+        },
+        {
+          "name": "Rodrigo Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM"
+        },
+        {
+          "name": "Chem Campbell",
+          "position": "CM"
+        },
+        {
+          "name": "Tawanda Chirewa",
+          "position": "CM"
+        },
+        {
+          "name": "Mateus Mané",
+          "position": "CM"
+        },
+        {
+          "name": "Gonçalo Guedes",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Forbs",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Podence",
+          "position": "ST"
+        },
+        {
+          "name": "Enso González",
+          "position": "ST"
+        },
+        {
+          "name": "Chiquinho",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Edozie",
+          "position": "ST"
+        },
+        {
+          "name": "Matheus Cunha",
+          "position": "ST"
+        },
+        {
+          "name": "Jørgen Strand Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST"
+        },
+        {
+          "name": "Sasa Kalajdzic",
+          "position": "ST"
+        },
+        {
+          "name": "Leon Chiwome",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Fraser",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Wolverhampton Wanderers (2024/2025)",
+      "teamLabel": "Wolverhampton Wanderers (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Sá",
+          "position": "GK"
+        },
+        {
+          "name": "Sam Johnstone",
+          "position": "GK"
+        },
+        {
+          "name": "Daniel Bentley",
+          "position": "GK"
+        },
+        {
+          "name": "Ladislav Krejci",
+          "position": "CB"
+        },
+        {
+          "name": "Toti",
+          "position": "CB"
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Santiago Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Bueno",
+          "position": "CB"
+        },
+        {
+          "name": "David Møller Wolfe",
+          "position": "CB"
+        },
+        {
+          "name": "Jackson Tchatchoua",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Lima",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Doherty",
+          "position": "CB"
+        },
+        {
+          "name": "André",
+          "position": "CM"
+        },
+        {
+          "name": "João Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Jean-Ricner Bellegarde",
+          "position": "CM"
+        },
+        {
+          "name": "Rodrigo Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Mateus Mané",
+          "position": "CM"
+        },
+        {
+          "name": "Angel Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Enso González",
+          "position": "ST"
+        },
+        {
+          "name": "Tolu Arokodare",
+          "position": "ST"
+        },
+        {
+          "name": "Adam Armstrong",
+          "position": "ST"
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Fraser",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Wolverhampton Wanderers (2025/2026)",
+      "teamLabel": "Wolverhampton Wanderers (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/wolverhampton-wanderers.png",
+  "id": 543,
+  "name": "Wolverhampton Wanderers"
+}

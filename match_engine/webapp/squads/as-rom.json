@@ -1,0 +1,342 @@
+{
+  "slug": "as-rom",
+  "seasons": {
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Francesco Antonioli",
+          "position": "GK"
+        },
+        {
+          "name": "Marco Amelia",
+          "position": "GK"
+        },
+        {
+          "name": "Sebastián Cejas",
+          "position": "GK"
+        },
+        {
+          "name": "Carlo Zotti",
+          "position": "GK"
+        },
+        {
+          "name": "Marco Paoloni",
+          "position": "GK"
+        },
+        {
+          "name": "Ivan Pelizzoli",
+          "position": "GK"
+        },
+        {
+          "name": "Antônio Carlos Zago",
+          "position": "CB"
+        },
+        {
+          "name": "Aldair",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Zebina",
+          "position": "CB"
+        },
+        {
+          "name": "Walter Samuel",
+          "position": "CB"
+        },
+        {
+          "name": "Saliou Lassissi",
+          "position": "CB"
+        },
+        {
+          "name": "Damiano Ferronetti",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastiano Siviglia",
+          "position": "CB"
+        },
+        {
+          "name": "Cesare Bovo",
+          "position": "CB"
+        },
+        {
+          "name": "Leandro Cufré",
+          "position": "CB"
+        },
+        {
+          "name": "Vincent Candela",
+          "position": "CB"
+        },
+        {
+          "name": "Cafu",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Panucci",
+          "position": "CB"
+        },
+        {
+          "name": "Emerson",
+          "position": "CM"
+        },
+        {
+          "name": "Ivan Tomic",
+          "position": "CM"
+        },
+        {
+          "name": "Gianni Guigou",
+          "position": "CM"
+        },
+        {
+          "name": "Daniele De Rossi",
+          "position": "CM"
+        },
+        {
+          "name": "Emanuele Mancini",
+          "position": "CM"
+        },
+        {
+          "name": "Francisco Lima",
+          "position": "CM"
+        },
+        {
+          "name": "Marcos Assunção",
+          "position": "CM"
+        },
+        {
+          "name": "Damiano Tommasi",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Aquilani",
+          "position": "CM"
+        },
+        {
+          "name": "Diego Fuser",
+          "position": "CM"
+        },
+        {
+          "name": "Mancini",
+          "position": "ST"
+        },
+        {
+          "name": "Simone Pepe",
+          "position": "ST"
+        },
+        {
+          "name": "Francesco Totti",
+          "position": "ST"
+        },
+        {
+          "name": "Antonio Cassano",
+          "position": "ST"
+        },
+        {
+          "name": "Vincenzo Montella",
+          "position": "ST"
+        },
+        {
+          "name": "Daniele Martinetti",
+          "position": "ST"
+        },
+        {
+          "name": "Abel Balbo",
+          "position": "ST"
+        },
+        {
+          "name": "Gabriel Batistuta",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Delvecchio",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Roma (2001/2002)",
+      "teamLabel": "Roma (2001-02)"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Doni",
+          "position": "GK"
+        },
+        {
+          "name": "Gianluca Curci",
+          "position": "GK"
+        },
+        {
+          "name": "Carlo Zotti",
+          "position": "GK"
+        },
+        {
+          "name": "Pietro Pipolo",
+          "position": "GK"
+        },
+        {
+          "name": "Júlio Sérgio",
+          "position": "GK"
+        },
+        {
+          "name": "Philippe Mexès",
+          "position": "CB"
+        },
+        {
+          "name": "Cristian Chivu",
+          "position": "CB"
+        },
+        {
+          "name": "Matteo Ferrari",
+          "position": "CB"
+        },
+        {
+          "name": "Samuel Kuffour",
+          "position": "CB"
+        },
+        {
+          "name": "Gilberto Martínez",
+          "position": "CB"
+        },
+        {
+          "name": "Rodrigo Defendi",
+          "position": "CB"
+        },
+        {
+          "name": "Gianluca Freddi",
+          "position": "CB"
+        },
+        {
+          "name": "Dario Polverini",
+          "position": "CB"
+        },
+        {
+          "name": "Max Tonetto",
+          "position": "CB"
+        },
+        {
+          "name": "Leandro Cufré",
+          "position": "CB"
+        },
+        {
+          "name": "Fabrizio Grillo",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Cassetti",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Panucci",
+          "position": "CB"
+        },
+        {
+          "name": "Aleandro Rosi",
+          "position": "CB"
+        },
+        {
+          "name": "Valerio Virga",
+          "position": "CB"
+        },
+        {
+          "name": "Daniele De Rossi",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Faty",
+          "position": "CM"
+        },
+        {
+          "name": "Massimiliano Marsili",
+          "position": "CM"
+        },
+        {
+          "name": "David Pizarro",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Aquilani",
+          "position": "CM"
+        },
+        {
+          "name": "Adewale Dauda Wahab",
+          "position": "CM"
+        },
+        {
+          "name": "Simone Palermo",
+          "position": "CM"
+        },
+        {
+          "name": "Claudio Della Penna",
+          "position": "CM"
+        },
+        {
+          "name": "Andrea Giacomini",
+          "position": "CM"
+        },
+        {
+          "name": "Simone Perrotta",
+          "position": "CM"
+        },
+        {
+          "name": "Mancini",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Taddei",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Wilhelmsson",
+          "position": "ST"
+        },
+        {
+          "name": "Francesco Totti",
+          "position": "ST"
+        },
+        {
+          "name": "Mirko Vučinić",
+          "position": "ST"
+        },
+        {
+          "name": "Mido",
+          "position": "ST"
+        },
+        {
+          "name": "Francesco Tavano",
+          "position": "ST"
+        },
+        {
+          "name": "Vincenzo Montella",
+          "position": "ST"
+        },
+        {
+          "name": "Shabani Nonda",
+          "position": "ST"
+        },
+        {
+          "name": "Stefano Okaka",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Roma (2006/2007)",
+      "teamLabel": "Roma (2006-07)"
+    }
+  },
+  "id": 12,
+  "name": "Roma",
+  "badgeLocalPath": "/img/badges/as-rom.png"
+}

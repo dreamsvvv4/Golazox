@@ -1,0 +1,761 @@
+{
+  "slug": "fc-fulham",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marek Rodák",
+          "position": "GK"
+        },
+        {
+          "name": "Paulo Gazzaniga",
+          "position": "GK"
+        },
+        {
+          "name": "Fabri",
+          "position": "GK"
+        },
+        {
+          "name": "Damian Las",
+          "position": "GK"
+        },
+        {
+          "name": "Taye Ashby-Hammond",
+          "position": "GK"
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "CB"
+        },
+        {
+          "name": "Alfie Mawson",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Hector",
+          "position": "CB"
+        },
+        {
+          "name": "Terence Kongolo",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Odoi",
+          "position": "CB"
+        },
+        {
+          "name": "Tim Ream",
+          "position": "CB"
+        },
+        {
+          "name": "Neco Williams",
+          "position": "CB"
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Bryan",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Steven Sessegnon",
+          "position": "CB"
+        },
+        {
+          "name": "Cyrus Christie",
+          "position": "CB"
+        },
+        {
+          "name": "Marlon Fossey",
+          "position": "CB"
+        },
+        {
+          "name": "Jean Michaël Seri",
+          "position": "CM"
+        },
+        {
+          "name": "Nathaniel Chalobah",
+          "position": "CM"
+        },
+        {
+          "name": "Adrion Pajaziti",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Anguissa",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Onomah",
+          "position": "CM"
+        },
+        {
+          "name": "Domingos Quina",
+          "position": "CM"
+        },
+        {
+          "name": "Tyrese Francois",
+          "position": "CM"
+        },
+        {
+          "name": "Fábio Carvalho",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "CM"
+        },
+        {
+          "name": "Neeskens Kebano",
+          "position": "ST"
+        },
+        {
+          "name": "Ivan Cavaleiro",
+          "position": "ST"
+        },
+        {
+          "name": "Ollie O'Neill",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Knockaert",
+          "position": "ST"
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST"
+        },
+        {
+          "name": "Aboubakar Kamara",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Stansfield",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Fulham (2021/2022)",
+      "teamLabel": "Fulham (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Paulo Gazzaniga",
+          "position": "GK"
+        },
+        {
+          "name": "Marek Rodák",
+          "position": "GK"
+        },
+        {
+          "name": "George Wickens",
+          "position": "GK"
+        },
+        {
+          "name": "Issa Diop",
+          "position": "CB"
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "CB"
+        },
+        {
+          "name": "Shane Duffy",
+          "position": "CB"
+        },
+        {
+          "name": "Tim Ream",
+          "position": "CB"
+        },
+        {
+          "name": "Connor McAvoy",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Layvin Kurzawa",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Bryan",
+          "position": "CB"
+        },
+        {
+          "name": "Stefan Parkes",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Mbabu",
+          "position": "CB"
+        },
+        {
+          "name": "Cédric Soares",
+          "position": "CB"
+        },
+        {
+          "name": "Marlon Fossey",
+          "position": "CB"
+        },
+        {
+          "name": "Steven Sessegnon",
+          "position": "CB"
+        },
+        {
+          "name": "Luciano D'Auria-Henry",
+          "position": "CB"
+        },
+        {
+          "name": "João Palhinha",
+          "position": "CM"
+        },
+        {
+          "name": "Nathaniel Chalobah",
+          "position": "CM"
+        },
+        {
+          "name": "Adrion Pajaziti",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Pereira",
+          "position": "CM"
+        },
+        {
+          "name": "Saša Lukić",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM"
+        },
+        {
+          "name": "Josh Onomah",
+          "position": "CM"
+        },
+        {
+          "name": "Tyrese Francois",
+          "position": "CM"
+        },
+        {
+          "name": "Matt Dibley-Dias",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Harris",
+          "position": "CM"
+        },
+        {
+          "name": "Kristian Sekularac",
+          "position": "CM"
+        },
+        {
+          "name": "Manor Solomon",
+          "position": "ST"
+        },
+        {
+          "name": "Willian",
+          "position": "ST"
+        },
+        {
+          "name": "Neeskens Kebano",
+          "position": "ST"
+        },
+        {
+          "name": "Ollie O'Neill",
+          "position": "ST"
+        },
+        {
+          "name": "Martial Godo",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Knockaert",
+          "position": "ST"
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Vinícius",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Stansfield",
+          "position": "ST"
+        },
+        {
+          "name": "Terry Ablade",
+          "position": "ST"
+        },
+        {
+          "name": "Callum McFarlane",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Fulham (2022/2023)",
+      "teamLabel": "Fulham (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Marek Rodák",
+          "position": "GK"
+        },
+        {
+          "name": "Steven Benda",
+          "position": "GK"
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "CB"
+        },
+        {
+          "name": "Issa Diop",
+          "position": "CB"
+        },
+        {
+          "name": "Calvin Bassey",
+          "position": "CB"
+        },
+        {
+          "name": "Tim Ream",
+          "position": "CB"
+        },
+        {
+          "name": "Luc De Fougerolles",
+          "position": "CB"
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Fodé Ballo-Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Kevin Mbabu",
+          "position": "CB"
+        },
+        {
+          "name": "Devan Tanton",
+          "position": "CB"
+        },
+        {
+          "name": "João Palhinha",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Pereira",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM"
+        },
+        {
+          "name": "Saša Lukić",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM"
+        },
+        {
+          "name": "Tyrese Francois",
+          "position": "CM"
+        },
+        {
+          "name": "Matt Dibley-Dias",
+          "position": "CM"
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Harris",
+          "position": "CM"
+        },
+        {
+          "name": "Kristian Sekularac",
+          "position": "CM"
+        },
+        {
+          "name": "Josh King",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Willian",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "ST"
+        },
+        {
+          "name": "Armando Broja",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Vinícius",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Stansfield",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Fulham (2023/2024)",
+      "teamLabel": "Fulham (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Steven Benda",
+          "position": "GK"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Calvin Bassey",
+          "position": "CB"
+        },
+        {
+          "name": "Issa Diop",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Cuenca",
+          "position": "CB"
+        },
+        {
+          "name": "Sam Amissah",
+          "position": "CB"
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Sessegnon",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "Sander Berge",
+          "position": "CM"
+        },
+        {
+          "name": "Andreas Pereira",
+          "position": "CM"
+        },
+        {
+          "name": "Saša Lukić",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM"
+        },
+        {
+          "name": "Emile Smith Rowe",
+          "position": "CM"
+        },
+        {
+          "name": "Josh King",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Reiss Nelson",
+          "position": "ST"
+        },
+        {
+          "name": "Willian",
+          "position": "ST"
+        },
+        {
+          "name": "Martial Godo",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST"
+        },
+        {
+          "name": "Jay Stansfield",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Vinícius",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Fulham (2024/2025)",
+      "teamLabel": "Fulham (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bernd Leno",
+          "position": "GK"
+        },
+        {
+          "name": "Benjamin Lecomte",
+          "position": "GK"
+        },
+        {
+          "name": "Calvin Bassey",
+          "position": "CB"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Issa Diop",
+          "position": "CB"
+        },
+        {
+          "name": "Jorge Cuenca",
+          "position": "CB"
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Sessegnon",
+          "position": "CB"
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "CB"
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB"
+        },
+        {
+          "name": "Sander Berge",
+          "position": "CM"
+        },
+        {
+          "name": "Saša Lukić",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM"
+        },
+        {
+          "name": "Emile Smith Rowe",
+          "position": "CM"
+        },
+        {
+          "name": "Josh King",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Oscar Bobb",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Samuel Chukwueze",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "position": "ST"
+        },
+        {
+          "name": "Jonah Kusi-Asare",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Fulham (2025/2026)",
+      "teamLabel": "Fulham (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/fc-fulham.png",
+  "id": 931,
+  "name": "Fulham"
+}

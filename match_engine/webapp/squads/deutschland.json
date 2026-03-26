@@ -1,59 +1,6 @@
 {
   "slug": "deutschland",
   "seasons": {
-    "1932": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "AEK Athens",
-          "position": "GK"
-        },
-        {
-          "name": "Lazio",
-          "position": "RB"
-        },
-        {
-          "name": "Atalanta",
-          "position": "CB"
-        },
-        {
-          "name": "Torino",
-          "position": "CB"
-        },
-        {
-          "name": "Bodrum",
-          "position": "LB"
-        },
-        {
-          "name": "Lecce",
-          "position": "DM"
-        },
-        {
-          "name": "Çaykur Rizespor",
-          "position": "CM"
-        },
-        {
-          "name": "Rangers",
-          "position": "CM"
-        },
-        {
-          "name": "Burnley",
-          "position": "RW"
-        },
-        {
-          "name": "Esteghlal",
-          "position": "ST"
-        },
-        {
-          "name": "Trabzonspor",
-          "position": "LW"
-        }
-      ],
-      "ratings": null,
-      "source": "Wikipedia — \"Albania national football team\"",
-      "teamLabel": "Alemania (1932)"
-    },
     "1966": {
       "formation": "4-4-2",
       "players": [
@@ -336,6 +283,103 @@
       "source": "Transfermarkt — germany (1970/1971)",
       "teamLabel": "germany (1970-71)"
     },
+    "1972": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Wolfgang Kleff",
+          "position": "GK"
+        },
+        {
+          "name": "Sepp Maier",
+          "position": "GK"
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "position": "CB"
+        },
+        {
+          "name": "Horst-Dieter Höttges",
+          "position": "CB"
+        },
+        {
+          "name": "Georg Schwarzenbeck",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Breitner",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Bella",
+          "position": "CB"
+        },
+        {
+          "name": "Berti Vogts",
+          "position": "CB"
+        },
+        {
+          "name": "Rainer Bonhof",
+          "position": "CM"
+        },
+        {
+          "name": "Herbert Wimmer",
+          "position": "CM"
+        },
+        {
+          "name": "Heinz Flohe",
+          "position": "CM"
+        },
+        {
+          "name": "Günter Netzer",
+          "position": "CM"
+        },
+        {
+          "name": "Hannes Löhr",
+          "position": "ST"
+        },
+        {
+          "name": "Erwin Kremers",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Grabowski",
+          "position": "ST"
+        },
+        {
+          "name": "Reiner Geye",
+          "position": "ST"
+        },
+        {
+          "name": "Uli Hoeneß",
+          "position": "ST"
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST"
+        },
+        {
+          "name": "Sigfried Held",
+          "position": "ST"
+        },
+        {
+          "name": "Horst Köppel",
+          "position": "ST"
+        },
+        {
+          "name": "Jupp Heynckes",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — germany (1972/1973)",
+      "teamLabel": "germany (1972-73)"
+    },
     "1974": {
       "formation": "4-4-2",
       "players": [
@@ -605,6 +649,147 @@
       },
       "source": "Transfermarkt — germany (1978/1979)",
       "teamLabel": "germany (1978-79)"
+    },
+    "1980": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dieter Burdenski",
+          "position": "GK"
+        },
+        {
+          "name": "Toni Schumacher",
+          "position": "GK"
+        },
+        {
+          "name": "Norbert Nigbur",
+          "position": "GK"
+        },
+        {
+          "name": "Walter Junghans",
+          "position": "GK"
+        },
+        {
+          "name": "Eike Immel",
+          "position": "GK"
+        },
+        {
+          "name": "Ditmar Jakobs",
+          "position": "CB"
+        },
+        {
+          "name": "Hans-Peter Briegel",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Cullmann",
+          "position": "CB"
+        },
+        {
+          "name": "Karlheinz Förster",
+          "position": "CB"
+        },
+        {
+          "name": "Bernard Dietz",
+          "position": "CB"
+        },
+        {
+          "name": "Bernd Förster",
+          "position": "CB"
+        },
+        {
+          "name": "Herbert Zimmermann",
+          "position": "CB"
+        },
+        {
+          "name": "Kurt Niedermayer",
+          "position": "CB"
+        },
+        {
+          "name": "Manfred Kaltz",
+          "position": "CB"
+        },
+        {
+          "name": "Rainer Bonhof",
+          "position": "CM"
+        },
+        {
+          "name": "Caspar Memering",
+          "position": "CM"
+        },
+        {
+          "name": "Uli Stielike",
+          "position": "CM"
+        },
+        {
+          "name": "Lothar Matthäus",
+          "position": "CM"
+        },
+        {
+          "name": "Mirko Votava",
+          "position": "CM"
+        },
+        {
+          "name": "Karl Allgöwer",
+          "position": "CM"
+        },
+        {
+          "name": "Hansi Müller",
+          "position": "CM"
+        },
+        {
+          "name": "Ronny Borchers",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schuster",
+          "position": "CM"
+        },
+        {
+          "name": "Felix Magath",
+          "position": "CM"
+        },
+        {
+          "name": "Walter Kelsch",
+          "position": "ST"
+        },
+        {
+          "name": "Karl Del'Haye",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Allofs",
+          "position": "ST"
+        },
+        {
+          "name": "Klaus Fischer",
+          "position": "ST"
+        },
+        {
+          "name": "Harald Nickel",
+          "position": "ST"
+        },
+        {
+          "name": "Karl-Heinz Rummenigge",
+          "position": "ST"
+        },
+        {
+          "name": "Horst Hrubesch",
+          "position": "ST"
+        },
+        {
+          "name": "Klaus Allofs",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — germany (1980/1981)",
+      "teamLabel": "germany (1980-81)"
     },
     "1982": {
       "formation": "4-4-2",
@@ -3510,5 +3695,6 @@
     }
   },
   "id": 3262,
-  "name": "germany"
+  "name": "germany",
+  "badgeLocalPath": "/img/badges/deutschland.png"
 }

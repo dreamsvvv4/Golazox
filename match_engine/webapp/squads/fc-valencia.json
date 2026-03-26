@@ -1,6 +1,284 @@
 {
   "slug": "fc-valencia",
   "seasons": {
+    "1996": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Zubizarreta",
+          "position": "GK"
+        },
+        {
+          "name": "Otero",
+          "position": "RB"
+        },
+        {
+          "name": "Romero",
+          "position": "LB"
+        },
+        {
+          "name": "Ferreira",
+          "position": "CB"
+        },
+        {
+          "name": "Cáceres",
+          "position": "CB"
+        },
+        {
+          "name": "Karpin",
+          "position": "CM"
+        },
+        {
+          "name": "Engonga",
+          "position": "CM"
+        },
+        {
+          "name": "José Ignacio",
+          "position": "CM"
+        },
+        {
+          "name": "Mendieta",
+          "position": "CM"
+        },
+        {
+          "name": "Moya",
+          "position": "ST"
+        },
+        {
+          "name": "Claudio López",
+          "position": "ST"
+        },
+        {
+          "name": "Bartual",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando",
+          "position": "CM"
+        },
+        {
+          "name": "Eskurza",
+          "position": "CM"
+        },
+        {
+          "name": "Vlaović",
+          "position": "ST"
+        },
+        {
+          "name": "Leandro",
+          "position": "ST"
+        },
+        {
+          "name": "Palop",
+          "position": "GK"
+        },
+        {
+          "name": "Farinós",
+          "position": "CM"
+        },
+        {
+          "name": "Poyatos",
+          "position": "CM"
+        },
+        {
+          "name": "Ortega",
+          "position": "ST"
+        },
+        {
+          "name": "Gálvez",
+          "position": "ST"
+        },
+        {
+          "name": "Javi Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "Iñaki Hurtado",
+          "position": "CM"
+        },
+        {
+          "name": "Sietes",
+          "position": "LB"
+        },
+        {
+          "name": "Iván Campo",
+          "position": "CB"
+        },
+        {
+          "name": "Romário",
+          "position": "ST"
+        },
+        {
+          "name": "Camarasa",
+          "position": "CB"
+        },
+        {
+          "name": "Rubén Navarro",
+          "position": "ST"
+        },
+        {
+          "name": "Luis López",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Martínez",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 70,
+        "defense": 69,
+        "goalkeeping": 69
+      },
+      "source": "BDFutbol — Valencia 1996-97 Primera División",
+      "teamLabel": "Valencia 1996-97 Primera División"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jonathan López",
+          "position": "GK"
+        },
+        {
+          "name": "Santiago Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Jorge Bartual",
+          "position": "GK"
+        },
+        {
+          "name": "Andrés Palop",
+          "position": "GK"
+        },
+        {
+          "name": "Joachim Björklund",
+          "position": "CB"
+        },
+        {
+          "name": "Javi Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "Mauricio Pellegrino",
+          "position": "CB"
+        },
+        {
+          "name": "Paco Camarasa",
+          "position": "CB"
+        },
+        {
+          "name": "Miroslav Djukic",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Ángel Soria",
+          "position": "CB"
+        },
+        {
+          "name": "Alain Roche",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Fagiani",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Cabezas",
+          "position": "CB"
+        },
+        {
+          "name": "Amedeo Carboni",
+          "position": "CB"
+        },
+        {
+          "name": "Jocelyn Angloma",
+          "position": "CB"
+        },
+        {
+          "name": "Gerardo García",
+          "position": "CB"
+        },
+        {
+          "name": "Curro Montoya",
+          "position": "CM"
+        },
+        {
+          "name": "Javier Farinós",
+          "position": "CM"
+        },
+        {
+          "name": "David Albelda",
+          "position": "CM"
+        },
+        {
+          "name": "Rafa Barber",
+          "position": "CM"
+        },
+        {
+          "name": "Gerard López",
+          "position": "CM"
+        },
+        {
+          "name": "Luis Milla",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Șerban",
+          "position": "CM"
+        },
+        {
+          "name": "Gaizka Mendieta",
+          "position": "CM"
+        },
+        {
+          "name": "Kily González",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar García",
+          "position": "CM"
+        },
+        {
+          "name": "Xisco Muñoz",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Ángel Angulo",
+          "position": "ST"
+        },
+        {
+          "name": "Juan Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Goran Vlaovic",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Pascual",
+          "position": "ST"
+        },
+        {
+          "name": "Claudio López",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Ilie",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Valencia (1999/2000)",
+      "teamLabel": "Valencia (1999-00)"
+    },
     "2000": {
       "formation": "4-4-2",
       "players": [
@@ -129,7 +407,279 @@
       },
       "source": "BDFutbol — Valencia 2000-01 Primera División",
       "teamLabel": "Valencia 2000-01 Primera División"
+    },
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Santiago Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Andrés Palop",
+          "position": "GK"
+        },
+        {
+          "name": "David Rangel",
+          "position": "GK"
+        },
+        {
+          "name": "Mauricio Pellegrino",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Ayala",
+          "position": "CB"
+        },
+        {
+          "name": "Miroslav Djukic",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Marchena",
+          "position": "CB"
+        },
+        {
+          "name": "David Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Aurélio",
+          "position": "CB"
+        },
+        {
+          "name": "Amedeo Carboni",
+          "position": "CB"
+        },
+        {
+          "name": "Jocelyn Angloma",
+          "position": "CB"
+        },
+        {
+          "name": "Curro Torres",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Garrido",
+          "position": "CB"
+        },
+        {
+          "name": "David Albelda",
+          "position": "CM"
+        },
+        {
+          "name": "Gonzalo de los Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Rubén Baraja",
+          "position": "CM"
+        },
+        {
+          "name": "Dennis Șerban",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel Albiol",
+          "position": "CM"
+        },
+        {
+          "name": "Kily González",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Aimar",
+          "position": "CM"
+        },
+        {
+          "name": "Jandro Castro",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente",
+          "position": "ST"
+        },
+        {
+          "name": "Francisco Rufete",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Ángel Angulo",
+          "position": "ST"
+        },
+        {
+          "name": "Juan Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "John Carew",
+          "position": "ST"
+        },
+        {
+          "name": "Salva Ballesta",
+          "position": "ST"
+        },
+        {
+          "name": "Adrian Ilie",
+          "position": "ST"
+        },
+        {
+          "name": "Mista",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Valencia (2001/2002)",
+      "teamLabel": "Valencia (2001-02)"
+    },
+    "2003": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Santiago Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Andrés Palop",
+          "position": "GK"
+        },
+        {
+          "name": "David Rangel",
+          "position": "GK"
+        },
+        {
+          "name": "Mauricio Pellegrino",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Ayala",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Marchena",
+          "position": "CB"
+        },
+        {
+          "name": "David Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Albiol",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Gavilán",
+          "position": "CB"
+        },
+        {
+          "name": "César Soriano",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Aurélio",
+          "position": "CB"
+        },
+        {
+          "name": "Amedeo Carboni",
+          "position": "CB"
+        },
+        {
+          "name": "Vicente Verdejo",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Garrido",
+          "position": "CB"
+        },
+        {
+          "name": "Curro Torres",
+          "position": "CB"
+        },
+        {
+          "name": "David Albelda",
+          "position": "CM"
+        },
+        {
+          "name": "Mohamed Sissoko",
+          "position": "CM"
+        },
+        {
+          "name": "Rubén Baraja",
+          "position": "CM"
+        },
+        {
+          "name": "Borja Criado",
+          "position": "CM"
+        },
+        {
+          "name": "Jean Félix Dorothée",
+          "position": "CM"
+        },
+        {
+          "name": "Fabián Canobbio",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Aimar",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente",
+          "position": "ST"
+        },
+        {
+          "name": "Jaime Gavilán",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge López",
+          "position": "ST"
+        },
+        {
+          "name": "Francisco Rufete",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Ángel Angulo",
+          "position": "ST"
+        },
+        {
+          "name": "Xisco Muñoz",
+          "position": "ST"
+        },
+        {
+          "name": "Juan Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo Oliveira",
+          "position": "ST"
+        },
+        {
+          "name": "Mista",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Valencia (2003/2004)",
+      "teamLabel": "Valencia (2003-04)"
     }
   },
-  "name": "Valencia"
+  "name": "Valencia",
+  "id": 1049,
+  "badgeLocalPath": "/img/badges/fc-valencia.png"
 }

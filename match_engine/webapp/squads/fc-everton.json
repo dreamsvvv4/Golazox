@@ -1,0 +1,793 @@
+{
+  "slug": "fc-everton",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "Asmir Begovic",
+          "position": "GK"
+        },
+        {
+          "name": "Andy Lonergan",
+          "position": "GK"
+        },
+        {
+          "name": "Harry Tyrer",
+          "position": "GK"
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB"
+        },
+        {
+          "name": "Yerry Mina",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Godfrey",
+          "position": "CB"
+        },
+        {
+          "name": "Mason Holgate",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Philippe Gbamin",
+          "position": "CB"
+        },
+        {
+          "name": "Jarrad Branthwaite",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Astley",
+          "position": "CB"
+        },
+        {
+          "name": "Reece Welch",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "CB"
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "CB"
+        },
+        {
+          "name": "Niels Nkounkou",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "CB"
+        },
+        {
+          "name": "Jonjoe Kenny",
+          "position": "CB"
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "CB"
+        },
+        {
+          "name": "Allan",
+          "position": "CM"
+        },
+        {
+          "name": "Donny van de Beek",
+          "position": "CM"
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Davies",
+          "position": "CM"
+        },
+        {
+          "name": "Fabian Delph",
+          "position": "CM"
+        },
+        {
+          "name": "Tyler Onyango",
+          "position": "CM"
+        },
+        {
+          "name": "Isaac Price",
+          "position": "CM"
+        },
+        {
+          "name": "Abdoulaye Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM"
+        },
+        {
+          "name": "Gylfi Sigurdsson",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Whitaker",
+          "position": "CM"
+        },
+        {
+          "name": "Demarai Gray",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Broadhead",
+          "position": "ST"
+        },
+        {
+          "name": "Lewis Dobbin",
+          "position": "ST"
+        },
+        {
+          "name": "Anwar El Ghazi",
+          "position": "ST"
+        },
+        {
+          "name": "Andros Townsend",
+          "position": "ST"
+        },
+        {
+          "name": "Richarlison",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        },
+        {
+          "name": "Moise Kean",
+          "position": "ST"
+        },
+        {
+          "name": "Salomón Rondón",
+          "position": "ST"
+        },
+        {
+          "name": "Cenk Tosun",
+          "position": "ST"
+        },
+        {
+          "name": "Ellis Simms",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Everton (2021/2022)",
+      "teamLabel": "Everton (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "Asmir Begovic",
+          "position": "GK"
+        },
+        {
+          "name": "Eldin Jakupović",
+          "position": "GK"
+        },
+        {
+          "name": "Andy Lonergan",
+          "position": "GK"
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Godfrey",
+          "position": "CB"
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB"
+        },
+        {
+          "name": "Yerry Mina",
+          "position": "CB"
+        },
+        {
+          "name": "Mason Holgate",
+          "position": "CB"
+        },
+        {
+          "name": "Jean-Philippe Gbamin",
+          "position": "CB"
+        },
+        {
+          "name": "Reece Welch",
+          "position": "CB"
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "CB"
+        },
+        {
+          "name": "Ishé Samuels-Smith",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "CB"
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "CB"
+        },
+        {
+          "name": "Kyle John",
+          "position": "CB"
+        },
+        {
+          "name": "Amadou Onana",
+          "position": "CM"
+        },
+        {
+          "name": "James Garner",
+          "position": "CM"
+        },
+        {
+          "name": "Allan",
+          "position": "CM"
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "CM"
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Davies",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Warrington",
+          "position": "CM"
+        },
+        {
+          "name": "Isaac Price",
+          "position": "CM"
+        },
+        {
+          "name": "Rúben Vinagre",
+          "position": "CM"
+        },
+        {
+          "name": "Abdoulaye Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM"
+        },
+        {
+          "name": "Sean McAllister",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "ST"
+        },
+        {
+          "name": "Demarai Gray",
+          "position": "ST"
+        },
+        {
+          "name": "Andros Townsend",
+          "position": "ST"
+        },
+        {
+          "name": "Stanley Mills",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        },
+        {
+          "name": "Neal Maupay",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Cannon",
+          "position": "ST"
+        },
+        {
+          "name": "Ellis Simms",
+          "position": "ST"
+        },
+        {
+          "name": "Salomón Rondón",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Everton (2022/2023)",
+      "teamLabel": "Everton (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "João Virgínia",
+          "position": "GK"
+        },
+        {
+          "name": "Andy Lonergan",
+          "position": "GK"
+        },
+        {
+          "name": "Billy Crellin",
+          "position": "GK"
+        },
+        {
+          "name": "Jarrad Branthwaite",
+          "position": "CB"
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Godfrey",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB"
+        },
+        {
+          "name": "Mason Holgate",
+          "position": "CB"
+        },
+        {
+          "name": "Elijah Campbell",
+          "position": "CB"
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "CB"
+        },
+        {
+          "name": "Mackenzie Hunt",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Young",
+          "position": "CB"
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "CB"
+        },
+        {
+          "name": "Amadou Onana",
+          "position": "CM"
+        },
+        {
+          "name": "James Garner",
+          "position": "CM"
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "CM"
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Warrington",
+          "position": "CM"
+        },
+        {
+          "name": "Tyler Onyango",
+          "position": "CM"
+        },
+        {
+          "name": "Jenson Metcalfe",
+          "position": "CM"
+        },
+        {
+          "name": "Abdoulaye Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "ST"
+        },
+        {
+          "name": "Jack Harrison",
+          "position": "ST"
+        },
+        {
+          "name": "Arnaut Danjuma",
+          "position": "ST"
+        },
+        {
+          "name": "Lewis Dobbin",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        },
+        {
+          "name": "Beto",
+          "position": "ST"
+        },
+        {
+          "name": "Neal Maupay",
+          "position": "ST"
+        },
+        {
+          "name": "Youssef Chermiti",
+          "position": "ST"
+        },
+        {
+          "name": "Tom Cannon",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Everton (2023/2024)",
+      "teamLabel": "Everton (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "João Virgínia",
+          "position": "GK"
+        },
+        {
+          "name": "Asmir Begovic",
+          "position": "GK"
+        },
+        {
+          "name": "Zan-Luk Leban",
+          "position": "GK"
+        },
+        {
+          "name": "Jarrad Branthwaite",
+          "position": "CB"
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB"
+        },
+        {
+          "name": "Mason Holgate",
+          "position": "CB"
+        },
+        {
+          "name": "Reece Welch",
+          "position": "CB"
+        },
+        {
+          "name": "Bradley Moonan",
+          "position": "CB"
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "CB"
+        },
+        {
+          "name": "Jake O'Brien",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Young",
+          "position": "CB"
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "CB"
+        },
+        {
+          "name": "Roman Dixon",
+          "position": "CB"
+        },
+        {
+          "name": "Orel Mangala",
+          "position": "CM"
+        },
+        {
+          "name": "James Garner",
+          "position": "CM"
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Butterfield",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Alcaraz",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Iroegbunam",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Armstrong",
+          "position": "CM"
+        },
+        {
+          "name": "Jenson Metcalfe",
+          "position": "CM"
+        },
+        {
+          "name": "Callum Bates",
+          "position": "CM"
+        },
+        {
+          "name": "Abdoulaye Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Owen Barker",
+          "position": "CM"
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "ST"
+        },
+        {
+          "name": "Jack Harrison",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Heath",
+          "position": "ST"
+        },
+        {
+          "name": "Coby Ebere",
+          "position": "ST"
+        },
+        {
+          "name": "Iliman Ndiaye",
+          "position": "ST"
+        },
+        {
+          "name": "Jesper Lindstrøm",
+          "position": "ST"
+        },
+        {
+          "name": "Beto",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        },
+        {
+          "name": "Armando Broja",
+          "position": "ST"
+        },
+        {
+          "name": "Neal Maupay",
+          "position": "ST"
+        },
+        {
+          "name": "Youssef Chermiti",
+          "position": "ST"
+        },
+        {
+          "name": "Martin Sherif",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Everton (2024/2025)",
+      "teamLabel": "Everton (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Travers",
+          "position": "GK"
+        },
+        {
+          "name": "Tom King",
+          "position": "GK"
+        },
+        {
+          "name": "Jarrad Branthwaite",
+          "position": "CB"
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB"
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Aznou",
+          "position": "CB"
+        },
+        {
+          "name": "Jake O'Brien",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "CB"
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "CB"
+        },
+        {
+          "name": "James Garner",
+          "position": "CM"
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "CM"
+        },
+        {
+          "name": "Kiernan Dewsbury-Hall",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Alcaraz",
+          "position": "CM"
+        },
+        {
+          "name": "Tim Iroegbunam",
+          "position": "CM"
+        },
+        {
+          "name": "Harrison Armstrong",
+          "position": "CM"
+        },
+        {
+          "name": "Merlin Röhl",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Grealish",
+          "position": "ST"
+        },
+        {
+          "name": "Tyrique George",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "ST"
+        },
+        {
+          "name": "Iliman Ndiaye",
+          "position": "ST"
+        },
+        {
+          "name": "Tyler Dibling",
+          "position": "ST"
+        },
+        {
+          "name": "Thierno Barry",
+          "position": "ST"
+        },
+        {
+          "name": "Beto",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Everton (2025/2026)",
+      "teamLabel": "Everton (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/fc-everton.png",
+  "id": 29,
+  "name": "Everton"
+}

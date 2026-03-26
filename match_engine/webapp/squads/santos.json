@@ -1,0 +1,53 @@
+{
+  "slug": "santos",
+  "seasons": {
+    "2014": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Diogenes",
+          "position": "GK"
+        },
+        {
+          "name": "Adonis Frías",
+          "position": "RB"
+        },
+        {
+          "name": "Alexis Duarte",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Bontempo",
+          "position": "DM"
+        },
+        {
+          "name": "Gabriel Menino",
+          "position": "CM"
+        },
+        {
+          "name": "Benjamín Rollheiser",
+          "position": "CM"
+        },
+        {
+          "name": "Billal Brahimi",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Barreal",
+          "position": "LW"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 78
+      },
+      "source": "TheSportsDB — Santos · Brazilian Serie A (Brazil)",
+      "teamLabel": "Santos",
+      "badgeUrl": "/img/badges/santos.png"
+    }
+  },
+  "badgeLocalPath": "/img/badges/santos.png",
+  "name": "Santos"
+}

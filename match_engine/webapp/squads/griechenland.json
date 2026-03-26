@@ -1,6 +1,116 @@
 {
   "slug": "griechenland",
-  "seasons": {},
-  "id": 3400,
+  "seasons": {
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Antonis Nikopolidis",
+          "position": "GK"
+        },
+        {
+          "name": "Konstantinos Chalkias",
+          "position": "GK"
+        },
+        {
+          "name": "Theofanis Katergiannakis",
+          "position": "GK"
+        },
+        {
+          "name": "Nikolaos Dabizas",
+          "position": "CB"
+        },
+        {
+          "name": "Traianos Dellas",
+          "position": "CB"
+        },
+        {
+          "name": "Giannis Goumas",
+          "position": "CB"
+        },
+        {
+          "name": "Michalis Kapsis",
+          "position": "CB"
+        },
+        {
+          "name": "Stelios Venetidis",
+          "position": "CB"
+        },
+        {
+          "name": "Takis Fyssas",
+          "position": "CB"
+        },
+        {
+          "name": "Georgios Seitaridis",
+          "position": "CB"
+        },
+        {
+          "name": "Angelos Basinas",
+          "position": "CM"
+        },
+        {
+          "name": "Konstantinos Katsouranis",
+          "position": "CM"
+        },
+        {
+          "name": "Theodoros Zagorakis",
+          "position": "CM"
+        },
+        {
+          "name": "Pantelis Kafes",
+          "position": "CM"
+        },
+        {
+          "name": "Georgios Karagounis",
+          "position": "CM"
+        },
+        {
+          "name": "Vasilios Lakis",
+          "position": "CM"
+        },
+        {
+          "name": "Vasilios Tsiartas",
+          "position": "CM"
+        },
+        {
+          "name": "Stelios Giannakopoulos",
+          "position": "ST"
+        },
+        {
+          "name": "Georgios Georgiadis",
+          "position": "ST"
+        },
+        {
+          "name": "Ioannis Amanatidis",
+          "position": "ST"
+        },
+        {
+          "name": "Angelos Charisteas",
+          "position": "ST"
+        },
+        {
+          "name": "Demis Nikolaidis",
+          "position": "ST"
+        },
+        {
+          "name": "Zisis Vryzas",
+          "position": "ST"
+        },
+        {
+          "name": "Dimitrios Papadopoulos",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — greece (2004/2005)",
+      "teamLabel": "greece (2004-05)"
+    }
+  },
+  "id": 3378,
   "name": "greece"
 }

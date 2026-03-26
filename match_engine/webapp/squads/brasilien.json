@@ -5735,47 +5735,6 @@
       "source": "Transfermarkt — brasil (2019/2020)",
       "teamLabel": "brasil (2019-20)"
     },
-    "2020": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "GK",
-          "position": "GK"
-        },
-        {
-          "name": "DF",
-          "position": "RB"
-        },
-        {
-          "name": "MF",
-          "position": "DM"
-        },
-        {
-          "name": "Copa América",
-          "position": "CM"
-        },
-        {
-          "name": "Panamerican Championship",
-          "position": "CM"
-        },
-        {
-          "name": "FW",
-          "position": "RW"
-        },
-        {
-          "name": "FIFA World Cup",
-          "position": "CM"
-        },
-        {
-          "name": "FIFA Confederations Cup",
-          "position": "CM"
-        }
-      ],
-      "ratings": null,
-      "source": "Wikipedia — \"Brazil national football team\"",
-      "teamLabel": "Brasil (2020)"
-    },
     "2021": {
       "formation": "4-4-2",
       "players": [
@@ -6148,5 +6107,6 @@
     }
   },
   "id": 3439,
-  "name": "brasil"
+  "name": "brasil",
+  "badgeLocalPath": "/img/badges/brasilien.png"
 }

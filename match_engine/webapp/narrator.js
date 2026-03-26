@@ -93,7 +93,13 @@ function _phrase(section, key, lang, rand) {
  * @param {function} rand - seeded PRNG (0–1), defaults to Math.random
  * @returns {string}
  */
-function describe(event, context = {}, lang = 'es', rand = Math.random) {
+function describe(event, context = {}, lang = 'es', rand = null) {
+  // Deterministic fallback seed: derived from player name so same player always
+  // gets the same narrative style when called outside of describeTimeline.
+  if (!rand) {
+    const s = [...(event.player || 'x')].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, event.minute || 0);
+    rand = _rng(s);
+  }
   const {
     type        = 'goal',
     minute      = 45,
@@ -147,7 +153,6 @@ function describe(event, context = {}, lang = 'es', rand = Math.random) {
 
 /**
  * Annotates every event in a timeline array (in-place) with a `narrative` string.
- * Also adds `narrativeEn` if lang is 'es', or `narrativeEs` if lang is 'en'.
  *
  * @param {Array}  events   - output of engine.buildTimeline()
  * @param {object} context  - { playStyleA, playStyleB }

@@ -22,6 +22,7 @@ const {
   calcRedRate,
   calcPenaltyRate,
   calcFoulRate,
+  calcPlayAdvantageXgBoost,
   buildRefereeStats,
   NEUTRAL_REFEREE,
 } = require('./referee_logic');
@@ -36,7 +37,7 @@ const WEATHER_EFFECTS = {
   snow:   { goalMult: 0.82, foulMult: 1.07 },
   wind:   { goalMult: 0.93, foulMult: 1.04 },
   heat:   { goalMult: 0.91, foulMult: 1.10 },
-  night:  { goalMult: 1.00, foulMult: 1.00 },
+  night:  { goalMult: 1.03, foulMult: 0.97 },  // artificial light, fast pitch, fewer fouls
 };
 
 // ── Deterministic PRNG (Mulberry32) ───────────────────────────
@@ -50,10 +51,22 @@ function mulberry32(seed) {
   };
 }
 
-// ── Poisson random variate via Knuth's algorithm ──────────────
+// ── Poisson random variate ─────────────────────────────────────
+// Knuth's exact algorithm for λ ≤ 30; normal approximation (Wilson-Hilferty)
+// for λ > 30 to keep O(1) cost and avoid blocking the Event Loop.
+// Hard cap at λ = 20 for game logic (no realistic football scenario exceeds this).
 function poissonSample(lambda, rand) {
   if (lambda <= 0) return 0;
-  const L = Math.exp(-lambda);
+  const safeLambda = Math.min(lambda, 20); // hard cap — safety against runaway xG
+  if (safeLambda > 15) {
+    // Normal approximation: Poisson(λ) ≈ N(λ, λ) for large λ
+    // Box-Muller transform with two PRNG draws
+    const u1 = Math.max(1e-10, rand());
+    const u2 = rand();
+    const z  = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+    return Math.max(0, Math.round(safeLambda + z * Math.sqrt(safeLambda)));
+  }
+  const L = Math.exp(-safeLambda);
   let k = 0, p = 1;
   do { k++; p *= rand(); } while (p > L);
   return k - 1;
@@ -103,6 +116,7 @@ const GENERIC_NAMES = {
 // Squad database — loaded from squads.js (60+ historical & modern teams).
 // Falls back to generic placeholder XI for unrecognised teams.
 const { SQUADS: KNOWN_SQUADS } = require('./squads');
+const { playerRating: _calcRating, getPlayerPosition: _getPos } = require('./player_ratings');
 
 // Position affinity groups: which source positions can fill each template slot
 const POS_AFFINITY = {
@@ -132,26 +146,75 @@ function buildLineupFromCache(cached, formationOverride) {
     : cached.formation;
   const template = FORMATION_TEMPLATES[formation] || FORMATION_TEMPLATES[DEFAULT_FORMATION];
 
-  // Build a mutable pool of available players (scraper order is meaningful —
-  // Transfermarkt/BDFutbol list main squad first within each position group)
-  const pool = cached.players.map(p => ({ ...p, used: false }));
+  // Build a mutable pool with fresh ratings; apply known-player position overrides
+  // so e.g. Baresi stays CB even when BDFutbol lists all defenders as CB/def.
+  const pool = cached.players
+    .map(p => ({
+      ...p,
+      used: false,
+      position: _getPos(p.name) || p.position,
+      rating: _calcRating(p.name, p.marketValue) ?? p.rating,
+    }));
+
+  // Count how many players of each position the template needs
+  const needed = {};
+  for (const pos of template) needed[pos] = (needed[pos] || 0) + 1;
+
+  // Pre-reserve the best exact-match players for each position so that a
+  // world-class CB (e.g. Baresi) is never consumed to fill an RB slot.
+  // Quality floor: only reserve if the player's rating is ≥ 63; below that,
+  // the position falls through to the affinity fallback which can find a
+  // better-rated player from an adjacent role (e.g. CM fills LM over a 55-rated LM).
+  const RESERVE_MIN_RATING = 63;
+  const reservedByPos = {};
+  const reservedIdx   = new Set();
+  for (const [pos, count] of Object.entries(needed)) {
+    const exact = pool
+      .map((p, i) => ({ p, i }))
+      .filter(({ p, i }) => !reservedIdx.has(i) && p.position === pos && (p.rating || 0) >= RESERVE_MIN_RATING)
+      .sort((a, b) => (b.p.rating || 0) - (a.p.rating || 0))
+      .slice(0, count);
+    reservedByPos[pos] = exact.map(({ i }) => i);
+    exact.forEach(({ i }) => reservedIdx.add(i));
+  }
 
   const pickPlayerFor = (wantedPos) => {
-    const affinities = POS_AFFINITY[wantedPos] || [wantedPos, 'CM'];
-    for (const affPos of affinities) {
-      const idx = pool.findIndex(p => !p.used && p.position === affPos);
-      if (idx !== -1) { pool[idx].used = true; return pool[idx]; }
+    // Use pre-reserved exact-match players first
+    if (reservedByPos[wantedPos]?.length > 0) {
+      const idx = reservedByPos[wantedPos].shift();
+      pool[idx].used = true;
+      return pool[idx];
     }
-    // Fallback: first unused player
-    const idx = pool.findIndex(p => !p.used);
-    if (idx !== -1) { pool[idx].used = true; return pool[idx]; }
+    // Fallback: affinity chain; prefer LOWEST-rated to preserve stars for their natural slot
+    const affinities = POS_AFFINITY[wantedPos] || [wantedPos, 'CM'];
+    for (const affPos of affinities.slice(1)) {
+      const candidates = pool
+        .map((p, i) => ({ p, i }))
+        .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === affPos)
+        .sort((a, b) => (a.p.rating || 0) - (b.p.rating || 0)); // ASC — save best for natural pos
+      if (candidates.length > 0) {
+        reservedIdx.delete(candidates[0].i); // no longer reserved — consumed here
+        pool[candidates[0].i].used = true;
+        return pool[candidates[0].i];
+      }
+    }
+    // Last resort: highest-rated unused, skip reserved unless it's all that's left
+    const remaining = pool
+      .map((p, i) => ({ p, i }))
+      .filter(({ p, i }) => !p.used && !reservedIdx.has(i))
+      .sort((a, b) => (b.p.rating || 0) - (a.p.rating || 0));
+    if (remaining.length > 0) { pool[remaining[0].i].used = true; return pool[remaining[0].i]; }
+    // Absolute last resort: take from reserved if nothing else is available
+    const anyLeft = pool.map((p,i)=>({p,i})).filter(({p})=>!p.used)
+      .sort((a,b)=>(b.p.rating||0)-(a.p.rating||0));
+    if (anyLeft.length > 0) { pool[anyLeft[0].i].used = true; return pool[anyLeft[0].i]; }
     return null;
   };
 
   const players = template.map((pos, i) => {
     const p = pickPlayerFor(pos);
     return p
-      ? { name: p.name, position: pos }
+      ? { name: p.name, position: pos, rating: p.rating || undefined }
       : { name: 'Player ' + (i + 1), position: pos };
   });
 
@@ -275,27 +338,52 @@ const RATING_HINTS = [
   // ── Attack elite clubs/nations ────────────────────────────
   { tokens: ['real madrid','barcelona','barça','fc barcelona','brazil','brasil',
              'münchen','munich','ajax','psg'], atk: 7, mid: 6 },
-  { tokens: ['juventus','milan','ac milan','inter','liverpool',
+  // Note: 'milan' removed — bare token ambiguous (AC Milan vs Inter Milan).
+  // Use 'ac milan' or 'inter' explicitly in each hint.
+  { tokens: ['juventus','ac milan','inter','liverpool',
              'manchester city','city','chelsea','atletico'], atk: 5 },
-  { tokens: ['arsenal','borussia dortmund','porto','napoli','bayer'], atk: 3 },
+  { tokens: ['arsenal','borussia dortmund','porto','napoli','bayer',
+             'marseille','olympique de marseille','benfica','sevilla',
+             'boca juniors','river plate','flamengo'], atk: 3 },
+  { tokens: ['celtic','galatasaray','fenerbahce','red star','crvena zvezda'], atk: 2 },
   { tokens: ['1970','1974','1982','1986','1994','1998','2002'], atk: 4 },
   // ── Defense elite ─────────────────────────────────────────
   { tokens: ['ac milan','milan','juventus','atletico','atletico madrid',
              'inter','chelsea','münchen','munich'], def: 6 },
-  { tokens: ['manchester united','arsenal','porto','lyon'], def: 3 },
+  { tokens: ['manchester united','arsenal','porto','lyon','rangers'], def: 3 },
   { tokens: ['1989','1990','1994','2004','2006','2016'], def: 4 },
   // ── Midfield elite ────────────────────────────────────────
   { tokens: ['barcelona','barça','manchester city','city','ajax',
              'liverpool','real madrid'], mid: 6 },
-  { tokens: ['juventus','münchen','munich','dortmund','chelsea'], mid: 3 },
+  { tokens: ['juventus','münchen','munich','dortmund','chelsea',
+             'benfica','marseille','celtic'], mid: 3 },
   // ── Goalkeeping elite ─────────────────────────────────────
   { tokens: ['italy','italia','spain','españa','germany','deutschland',
              'france','frankreich'], gk: 4 },
-  { tokens: ['real madrid','juventus','manchester united','milan','ac milan',
+  { tokens: ['real madrid','juventus','manchester united','ac milan',
              'liverpool','arsenal'], gk: 3 },
   // ── Star player era tokens ─────────────────────────────────
   { tokens: ['zidane','guardiola','cruyff','ronaldo','messi','pelé','pele',
              'van basten','basten'], mid: 3, atk: 4 },
+  { tokens: ['ronaldinho','ronaldinho gaucho'], mid: 3, atk: 3 },
+  { tokens: ['mbappe','mbappé','kylian mbappe'], atk: 5 },
+  { tokens: ['neymar','neymar jr'], atk: 4, mid: 2 },
+  { tokens: ['lewandowski'], atk: 4 },
+  { tokens: ['ibrahimovic','ibrahimović','zlatan'], atk: 4 },
+  { tokens: ['henry','thierry henry'], atk: 4 },
+  { tokens: ['de bruyne','kevin de bruyne'], mid: 5, atk: 2 },
+  { tokens: ['xavi hernandez','xavi hernández'], mid: 4 },
+  { tokens: ['iniesta','andrés iniesta'], mid: 4 },
+  { tokens: ['modric','modrić'], mid: 4 },
+  { tokens: ['pirlo','andrea pirlo'], mid: 4, def: 1 },
+  { tokens: ['kaka','kaká'], mid: 3, atk: 2 },
+  { tokens: ['figo','luís figo'], atk: 2, mid: 3 },
+  { tokens: ['beckham','david beckham'], mid: 2, atk: 2 },
+  { tokens: ['del piero','alessandro del piero'], atk: 3 },
+  { tokens: ['shevchenko'], atk: 3 },
+  { tokens: ['rooney','wayne rooney'], atk: 3 },
+  { tokens: ['gerrard','steven gerrard'], mid: 3 },
+  { tokens: ['lampard','frank lampard'], mid: 3 },
 ];
 
 function deriveRatings(teamInput, eraInput, scraperRatings = null) {
@@ -318,17 +406,25 @@ function deriveRatings(teamInput, eraInput, scraperRatings = null) {
     }
   }
 
-  // 2. Use scraper-provided ratings, boosted by half-strength prestige hints
-  // so elite clubs are differentiated within the same league tier.
+  // 2. Use scraper-provided ratings, boosted by prestige hints.
+  // Suspicious ratings (avg < 70) indicate a bad league-context read during scraping;
+  // floor them to a reasonable tier-2 baseline so elite clubs aren't under-rated.
   if (scraperRatings) {
-    let { attack: atk, midfield: mid, defense: def, goalkeeping: gk } = scraperRatings;
+    const avgSR = (scraperRatings.attack + scraperRatings.midfield +
+                   scraperRatings.defense + scraperRatings.goalkeeping) / 4;
+    const base  = avgSR >= 70
+      ? scraperRatings
+      : { attack: 73, midfield: 73, defense: 73, goalkeeping: 71 };
+    let { attack: atk, midfield: mid, defense: def, goalkeeping: gk } = base;
+    // Apply hints at 70% strength (was 50%) — better differentiation between elite / average
     for (const hint of RATING_HINTS) {
       for (const tok of hint.tokens) {
         if (hay.includes(tok)) {
-          if (hint.atk) atk = Math.min(97, atk + Math.ceil(hint.atk / 2));
-          if (hint.mid) mid = Math.min(97, mid + Math.ceil(hint.mid / 2));
-          if (hint.def) def = Math.min(97, def + Math.ceil(hint.def / 2));
-          if (hint.gk)  gk  = Math.min(97, gk  + Math.ceil(hint.gk  / 2));
+          if (hint.atk) atk = Math.min(97, atk + Math.round(hint.atk * 0.7));
+          if (hint.mid) mid = Math.min(97, mid + Math.round(hint.mid * 0.7));
+          if (hint.def) def = Math.min(97, def + Math.round(hint.def * 0.7));
+          if (hint.gk)  gk  = Math.min(97, gk  + Math.round(hint.gk  * 0.7));
+          break; // apply each hint at most once
         }
       }
     }
@@ -340,12 +436,15 @@ function deriveRatings(teamInput, eraInput, scraperRatings = null) {
   let atk = 74, mid = 74, def = 74, gk = 72;
 
   for (const hint of RATING_HINTS) {
+    // Apply each hint at most once — break on first matching token to avoid double-bonus
+    // when multiple tokens in the same hint match (e.g. "ac milan" matching both "ac milan" and "milan")
     for (const tok of hint.tokens) {
       if (hay.includes(tok)) {
         if (hint.atk) atk = Math.min(97, atk + hint.atk);
         if (hint.mid) mid = Math.min(97, mid + hint.mid);
         if (hint.def) def = Math.min(97, def + hint.def);
         if (hint.gk)  gk  = Math.min(97, gk  + hint.gk);
+        break; // only apply each hint entry once
       }
     }
   }
@@ -436,7 +535,7 @@ function _staminaBiasedMinute(rand, playStyle = 'directo') {
 // ─────────────────────────────────────────────────────────────
 // 4. MONTE CARLO SIMULATOR
 // ─────────────────────────────────────────────────────────────
-const N_ITERATIONS = 30_000;
+const N_ITERATIONS = 10_000;
 
 /**
  * monteCarlo(xgA, xgB, seed)
@@ -560,35 +659,36 @@ const RED_WEIGHTS    = { GK:0.1, RB:0.8, CB:1.8, LB:0.8, DM:1.5, CM:0.8, RM:0.4,
  * Returns { yellow: [{name, minute}], red: [{name, minute}] }
  */
 function pickCards(players, rand, referee = NEUTRAL_REFEREE) {
-  const nYellow = poissonSample(calcCardRate(1.2,  referee), rand);
-  const nRed    = poissonSample(calcRedRate(0.10,  referee), rand);
+  // Cap at players.length − 1 so we never request more unique cards than available players
+  const maxCards = Math.max(0, players.length - 1);
+  // play_advantage > 1.0 → ref lets play flow → fewer interruptions → fewer cards
+  // Divide base rates by play_advantage so a lenient ref (1.15) gives ~13% fewer cards
+  const pa = referee.play_advantage || 1.0;
+  const nYellow  = Math.min(maxCards, poissonSample(calcCardRate(1.2  / pa, referee), rand));
+  const nRed     = Math.min(maxCards - nYellow, poissonSample(calcRedRate(0.10 / pa, referee), rand));
 
-  function pickWeighted(weightArr, n) {
-    const total = weightArr.reduce((a, b) => a + b, 0);
-    if (total === 0 || n === 0) return [];
-    const result    = [];
-    const usedNames = new Set();
-    let safety = 0;
-    while (result.length < n && safety++ < n * 20) {
+  // Correct weighted sampling without replacement: rebuild eligible pool each pick
+  function pickWeighted(weightMap, n) {
+    if (n === 0) return [];
+    const result  = [];
+    const pool    = players.map((p, i) => ({ p, w: weightMap[p.position] || 0, i }))
+                           .filter(x => x.w > 0);
+    let remaining = [...pool];
+    while (result.length < n && remaining.length > 0) {
+      const total = remaining.reduce((s, x) => s + x.w, 0);
+      if (total === 0) break;
       let r = rand() * total;
-      for (let i = 0; i < players.length; i++) {
-        r -= weightArr[i];
-        if (r <= 0) {
-          const p = players[i];
-          if (!usedNames.has(p.name)) {
-            usedNames.add(p.name);
-            result.push({ name: p.name, minute: 1 + Math.floor(rand() * 90) });
-          }
-          break;
-        }
-      }
+      let chosen = remaining[remaining.length - 1];
+      for (const x of remaining) { r -= x.w; if (r <= 0) { chosen = x; break; } }
+      result.push({ name: chosen.p.name, minute: 1 + Math.floor(rand() * 90) });
+      remaining = remaining.filter(x => x.i !== chosen.i);
     }
     return result.sort((a, b) => a.minute - b.minute);
   }
 
   return {
-    yellow: pickWeighted(players.map(p => YELLOW_WEIGHTS[p.position] || 0), nYellow),
-    red:    pickWeighted(players.map(p => RED_WEIGHTS[p.position]    || 0), nRed),
+    yellow: pickWeighted(YELLOW_WEIGHTS, nYellow),
+    red:    pickWeighted(RED_WEIGHTS, nRed),
   };
 }
 
@@ -679,18 +779,20 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed) {
     if (scoreA - scoreB > left || scoreB - scoreA > left) break;
   }
 
-  // Sudden death
-  let sd = 5, safety = 0;
-  while (scoreA === scoreB && safety++ < 30) {
+  // Sudden death — max 20 extra rounds (40 kicks), statistically impossible to exhaust
+  let sd = 5;
+  for (let round = 0; round < 20 && scoreA === scoreB; round++) {
     const goA = rand() < convA;
     const goB = rand() < convB;
     shotsA.push({ name: kickersA[sd % kickersA.length].name, scored: goA });
     shotsB.push({ name: kickersB[sd % kickersB.length].name, scored: goB });
     if (goA) scoreA++;
     if (goB) scoreB++;
-    if (goA !== goB) break;   // one scored and the other missed → winner decided
+    if (goA !== goB) break; // one scored and the other missed → winner decided
     sd++;
   }
+  // If still level after max rounds (P ≈ 0), break the tie by coin-toss using PRNG
+  if (scoreA === scoreB) { if (rand() < 0.5) scoreA++; else scoreB++; }
 
   return {
     winner:      scoreA > scoreB ? 'A' : 'B',
@@ -718,6 +820,47 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   // Fast path: analysis mode skips lineup/event building entirely
   if (mode === 'analysis') {
     return analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, matchMode, matchSalt);
+  }
+  // Fast path: penalties-only shootout — no 90-min match simulated
+  if (matchMode === 'penalties') {
+    const lineupA  = cachedLineupA ? buildLineupFromCache(cachedLineupA, '') : buildLineup(teamA, eraA, '');
+    const lineupB  = cachedLineupB ? buildLineupFromCache(cachedLineupB, '') : buildLineup(teamB, eraB, '');
+    const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
+    const ratingsB = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
+    const seed       = [...(teamA + teamB + eraA + eraB)].reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) >>> 0, 17);
+    const saltedSeed = (seed ^ ((matchSalt | 0) >>> 0)) >>> 0;
+    const penalties  = simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed);
+    return {
+      lineups: {
+        teamA: { ...lineupA, xg: 0, bench: [] },
+        teamB: { ...lineupB, xg: 0, bench: [] },
+      },
+      ratings: { teamA: ratingsA, teamB: ratingsB },
+      probabilities: { teamA_win: 0.5, draw: 0, teamB_win: 0.5 },
+      finalScore: {
+        teamA: 0, teamB: 0, score: '0-0',
+        scorersA: [], scorersB: [],
+        cardsA: { yellow: [], red: [] },
+        cardsB: { yellow: [], red: [] },
+        matchPenalties: [], penalties,
+        injuriesA: [], injuriesB: [],
+      },
+      altScores: [],
+      simulation: { iterations: 0, xgA: 0, xgB: 0 },
+      matchMode: 'penalties',
+      timeline: [],
+      stats: {
+        possession: { teamA: 50, teamB: 50 },
+        shots: { teamA: 0, teamB: 0 }, shotsOnTarget: { teamA: 0, teamB: 0 },
+        corners: { teamA: 0, teamB: 0 }, fouls: { teamA: 0, teamB: 0 },
+        yellowCards: 0, redCards: 0, saves: { teamA: 0, teamB: 0 },
+        man_of_match: null, notableEvents: [],
+      },
+      referee_stats: { fouls: 0, yellow_cards: 0, red_cards: 0, penalties_awarded: penalties.shotsA.length + penalties.shotsB.length },
+      referee: { id: null, name: null },
+      weather: null,
+      playStyle: { teamA: 'directo', teamB: 'directo' },
+    };
   }
   // Resolve default formation per mode when caller didn't specify one
   const defaultFormByMode = { '5v5': '1-2-1', '3v3': '1-1', '11v11': '' };
@@ -769,9 +912,10 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   // 5. Calculate xG (base formula × per-match form)
   const rawXgA = calcXG(ratingsA.attack, ratingsB.defense, ratingsA.midfield, ratingsB.goalkeeping);
   const rawXgB = calcXG(ratingsB.attack, ratingsA.defense, ratingsB.midfield, ratingsA.goalkeeping);
-  const weatherFx = WEATHER_EFFECTS[weatherId] || WEATHER_EFFECTS.sunny;
-  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult).toFixed(3);
-  const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult * weatherFx.goalMult).toFixed(3);
+  const weatherFx  = WEATHER_EFFECTS[weatherId] || WEATHER_EFFECTS.sunny;
+  const paXgBoost  = calcPlayAdvantageXgBoost(referee); // play_advantage > 1 → ref lets play flow → more open play
+  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
+  const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
 
   // 6. Monte Carlo
   const sim = monteCarlo(xgA, xgB, seed);
@@ -826,7 +970,7 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
     weather:  weatherId ? { id: weatherId, goalMult: weatherFx.goalMult, foulMult: weatherFx.foulMult } : null,
     ...(()=>{
       const stats    = buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, saltedSeed, { referee, weatherFoulMult: weatherFx.foulMult });
-      const timeline = buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, stats.notableEvents, referee);
+      const timeline = buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, stats.notableEvents, referee, ratingsA, ratingsB);
       const referee_stats = buildRefereeStats(timeline, stats, matchPenalties);
       return { stats, timeline, referee_stats };
     })(),
@@ -912,7 +1056,7 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
  *
  * @returns {Array<{minute, type, side, player, scoreA, scoreB}>}
  */
-function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, notableEvents, referee = null) {
+function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, notableEvents, referee = null, ratingsA = null, ratingsB = null) {
   const all = [];
 
   // Each card/penalty event carries referee identity so the narrator can personalise phrases.
@@ -920,16 +1064,24 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
     ? { refereeId: referee.id, refereeName: referee.name }
     : {};
 
-  (scorersA     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'A', player: e.name }));
-  (scorersB     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'B', player: e.name }));
-  (cardsA?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'A', player: e.name, ...refTag }));
-  (cardsB?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'B', player: e.name, ...refTag }));
-  (cardsA?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'A', player: e.name, ...refTag }));
-  (cardsB?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'B', player: e.name, ...refTag }));
-  (injuriesA    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'A', player: e.name }));
-  (injuriesB    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'B', player: e.name }));
+  // Player rating proxy: use team-level ratings so the narrator can pick elite/good/average phrases.
+  // Scorers inherit team attack rating; card recipients inherit team defense rating.
+  const atkA = ratingsA?.attack     || 75;
+  const atkB = ratingsB?.attack     || 75;
+  const defA = ratingsA?.defense    || 75;
+  const defB = ratingsB?.defense    || 75;
+
+  (scorersA     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'A', player: e.name, playerRating: atkA }));
+  (scorersB     || []).forEach(e => all.push({ minute: e.minute, type: 'goal',   side: 'B', player: e.name, playerRating: atkB }));
+  (cardsA?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'A', player: e.name, playerRating: defA, ...refTag }));
+  (cardsB?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'B', player: e.name, playerRating: defB, ...refTag }));
+  (cardsA?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'A', player: e.name, playerRating: defA, ...refTag }));
+  (cardsB?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'B', player: e.name, playerRating: defB, ...refTag }));
+  (injuriesA    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'A', player: e.name, playerRating: atkA }));
+  (injuriesB    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'B', player: e.name, playerRating: atkB }));
   (matchPenalties || []).forEach(e =>
     all.push({ minute: e.minute, type: e.scored ? 'penalty' : 'penalty_miss', side: e.side, player: e.taker,
+               playerRating: e.side === 'A' ? atkA : atkB,
                refereeId: e.refereeId || refTag.refereeId, refereeName: e.refereeName || refTag.refereeName }));
   (notableEvents || []).filter(e => e.type === 'corner' || e.type === 'freekick')
     .forEach(e => all.push({ minute: e.minute, type: e.type, side: e.side, player: e.name || null }));

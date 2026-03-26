@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odyssey — Football Time Machine</title>
   <link rel="icon" type="image/png" href="odyssey-logo.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body>
 
@@ -56,9 +59,9 @@
           </div>
         </div>
 
-        <!-- VS divider -->
+        <!-- VS / Clash divider -->
         <div class="vs-col">
-          <div class="vs-badge">VS</div>
+          <button class="vs-badge" id="vs-clash"><span>VS</span></button>
         </div>
 
         <!-- Team B -->
@@ -87,9 +90,10 @@
         <div class="mode-selector">
           <span class="mode-lbl">Modo:</span>
           <div class="mode-pills">
-            <button class="mode-pill mode-pill-active" id="mode-11v11" onclick="setMatchMode('11v11')">11 vs 11</button>
-            <button class="mode-pill" id="mode-5v5"   onclick="setMatchMode('5v5')">5 vs 5</button>
-            <button class="mode-pill" id="mode-3v3"   onclick="setMatchMode('3v3')">3 vs 3</button>
+            <button class="mode-pill mode-pill-active" id="mode-11v11"    onclick="setMatchMode('11v11')">11 vs 11</button>
+            <button class="mode-pill" id="mode-5v5"        onclick="setMatchMode('5v5')">5 vs 5</button>
+            <button class="mode-pill" id="mode-3v3"        onclick="setMatchMode('3v3')">3 vs 3</button>
+            <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')">🥅 Penaltis</button>
           </div>
         </div>
       </div>
@@ -180,8 +184,8 @@
         </div>
         <div class="live-pitch-wrap">
           <div class="live-pitch-label" id="live-pitch-phase">EN JUEGO</div>
-          <svg id="live-pitch-svg" class="live-pitch-svg" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- pitch markings drawn by JS -->
+          <svg id="live-pitch-svg" class="live-pitch-svg" viewBox="0 0 160 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Holo-Pitch drawn by JS -->
           </svg>
         </div>
         <div class="radar-wrap">
@@ -194,6 +198,46 @@
     <!-- ── GOAL / CARD OVERLAY ──────────────── -->
     <div id="event-overlay" class="event-overlay hidden">
       <div id="event-overlay-inner" class="eo-inner"></div>
+    </div>
+
+    <!-- ── PENALTY KICK ANIMATION OVERLAY ── -->
+    <div id="pen-kick-overlay" class="pko-overlay hidden">
+      <div class="pko-inner">
+        <div class="pko-score-bar" id="pko-score-bar"></div>
+        <div class="pko-kicker-name" id="pko-kicker-name"></div>
+        <div class="pko-pitch">
+          <!-- Goal frame -->
+          <svg class="pko-goal-svg" viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grass -->
+            <rect x="0" y="60" width="200" height="30" fill="rgba(34,197,94,.12)" rx="0"/>
+            <!-- Penalty spot -->
+            <circle cx="100" cy="75" r="3" fill="rgba(255,255,255,.35)"/>
+            <!-- Goal posts -->
+            <rect x="30" y="10" width="4" height="55" fill="white" opacity=".9" rx="2"/>
+            <rect x="166" y="10" width="4" height="55" fill="white" opacity=".9" rx="2"/>
+            <rect x="30" y="10" width="140" height="4" fill="white" opacity=".9" rx="2"/>
+            <!-- Net lines vertical -->
+            <line x1="50"  y1="14" x2="50"  y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="70"  y1="14" x2="70"  y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="90"  y1="14" x2="90"  y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="110" y1="14" x2="110" y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="130" y1="14" x2="130" y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="150" y1="14" x2="150" y2="65" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <!-- Net lines horizontal -->
+            <line x1="34"  y1="25" x2="166" y2="25" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="34"  y1="40" x2="166" y2="40" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="34"  y1="55" x2="166" y2="55" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <!-- Goalkeeper -->
+            <g id="pko-gk-g" class="pko-gk">
+              <rect x="88" y="30" width="24" height="30" rx="4" fill="rgba(255,165,0,.7)"/>
+              <circle cx="100" cy="24" r="8" fill="rgba(255,165,0,.8)"/>
+            </g>
+          </svg>
+          <!-- Ball -->
+          <div class="pko-ball" id="pko-ball">⚽</div>
+        </div>
+        <div class="pko-result-label" id="pko-result-label"></div>
+      </div>
     </div>
 
     <!-- ── PENALTY SHOOTOUT CINEMATIC SPLASH ── -->
@@ -319,14 +363,18 @@
         <div id="hth-rows"></div>
       </div>
 
-      <!-- ── MEJOR JUGADOR ──────────────────────────── -->
+      <!-- ── MEJOR JUGADOR + PUNTOS CLAVE ───────────────── -->
       <div class="mom-card glass-card">
-        <div class="mom-icon">⭐</div>
-        <div class="mom-body">
-          <div class="mom-badge" data-i18n="mom-badge-text">MEJOR JUGADOR DEL PARTIDO</div>
-          <div class="mom-name" id="mom-name">-</div>
-          <div class="mom-meta" id="mom-meta">-</div>
+        <div class="mom-left">
+          <div class="mom-icon">⭐</div>
+          <div class="mom-body">
+            <div class="mom-badge" data-i18n="mom-badge-text">MEJOR JUGADOR DEL PARTIDO</div>
+            <div class="mom-name" id="mom-name">-</div>
+            <div class="mom-meta" id="mom-meta">-</div>
+          </div>
         </div>
+        <div class="mom-divider"></div>
+        <div class="key-moments" id="key-moments" style="display:none"></div>
       </div>
 
       <!-- ── ALINEACIONES ───────────────────────────── -->
@@ -393,6 +441,7 @@
     <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="/player_ratings.js"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>

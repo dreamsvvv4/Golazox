@@ -116,8 +116,18 @@ function calcPenaltyRate(basePenaltyRate, referee) {
 }
 
 /**
+ * calcPlayAdvantageXgBoost(referee)
+ * A ref who lets play flow (play_advantage > 1.0) creates more open play,
+ * boosting xG slightly: +1.5% per 0.1 above 1.0, capped at +8%.
+ * A ref who stops play constantly (play_advantage < 1.0) reduces xG.
+ */
+function calcPlayAdvantageXgBoost(referee) {
+  const pa = referee.play_advantage || 1.0;
+  return Math.max(0.92, Math.min(1.08, 1.0 + (pa - 1.0) * 0.15));
+}
+
+/**
  * buildRefereeStats(timeline, matchPenalties)
- * Tallies fouls/cards/penalties from the final timeline so the client
  * can display a referee report card.
  *
  * @param {Array}  timeline        - output of engine.buildTimeline()
@@ -160,9 +170,10 @@ module.exports = {
   NEUTRAL_REFEREE,
   getRefereeById,
   applyBigMatchPressure,
-  calcFoulRate,
   calcCardRate,
   calcRedRate,
+  calcFoulRate,
   calcPenaltyRate,
+  calcPlayAdvantageXgBoost,
   buildRefereeStats,
 };

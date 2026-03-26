@@ -176,14 +176,77 @@ const WINNERS_TEAMS = [
   { team: 'Celtic',               years: [1967],                                         region: 'UCL winner' },
 ];
 
+// ── Clubes adicionales: ligas actuales + Saudi + MLS + LatAm ──
+const CY = [2025]; // temporada actual 2025/26
+const EXTRA_CLUBS = [
+
+  // ══ SAUDI PRO LEAGUE ═══════════════════════════════════════════
+  // 2025 actual + 2023 (la era de los superestrellas)
+  { team: 'Al-Hilal',   years: [2023, 2025], region: 'Saudi Pro League' }, // Neymar, Milinkovic-Savic, Malcom
+  { team: 'Al-Nassr',   years: [2023, 2025], region: 'Saudi Pro League' }, // Cristiano Ronaldo
+  { team: 'Al-Ittihad', years: [2023, 2025], region: 'Saudi Pro League' }, // Benzema, Kanté, Fabinho
+  { team: 'Al-Ahli',    years: [2023, 2025], region: 'Saudi Pro League' }, // Mahrez, Firmino, Mendy
+  { team: 'Al-Ettifaq', years: [2023, 2025], region: 'Saudi Pro League' }, // Henderson, Mané
+  { team: 'Al-Qadsiah', years: CY,           region: 'Saudi Pro League' },
+  { team: 'Al-Shabab',  years: CY,           region: 'Saudi Pro League' },
+
+  // ══ MLS ════════════════════════════════════════════════════════
+  { team: 'LA Galaxy',             years: [2011, 2025], region: 'MLS' }, // Beckham, Keane, Donovan
+  { team: 'Inter Miami',           years: [2023, 2025], region: 'MLS' }, // Messi, Suárez, Busquets, Alba
+  { team: 'LAFC',                  years: [2022, 2025], region: 'MLS' }, // Gareth Bale, Vela, MLS Cup
+  { team: 'Atlanta United',        years: [2018, 2025], region: 'MLS' }, // Almirón, Martínez, MLS Cup
+  { team: 'Seattle Sounders',      years: [2016, 2025], region: 'MLS' }, // Dempsey + MLS Cup
+  { team: 'Columbus Crew',         years: [2020, 2025], region: 'MLS' }, // MLS Cup
+  { team: 'Sporting Kansas City',  years: [2013, 2025], region: 'MLS' }, // MLS Cup
+  { team: 'New York City FC',      years: [2021, 2025], region: 'MLS' }, // MLS Cup
+  { team: 'Portland Timbers',      years: [2015, 2025], region: 'MLS' }, // MLS Cup
+  { team: 'New York Red Bulls',    years: [2008, 2025], region: 'MLS' }, // Thierry Henry
+  { team: 'New England Revolution',years: CY,           region: 'MLS' },
+
+  // ══ PREMIER LEAGUE ════════════════════════════════════════════
+  ...['Tottenham Hotspur','Everton','Newcastle United','West Ham United',
+      'Fulham','Crystal Palace','Brentford','Bournemouth','Brighton',
+      'Wolverhampton Wanderers','Leicester City','Leeds United',
+      'Burnley','Sheffield United','Watford'].map(t => ({ team: t, years: CY, region: 'Premier League' })),
+
+  // ══ BUNDESLIGA ════════════════════════════════════════════════
+  ...['RB Leipzig','Eintracht Frankfurt','Wolfsburg','Union Berlin',
+      'Freiburg','Hoffenheim','Mainz 05','Augsburg','Werder Bremen'].map(t => ({ team: t, years: CY, region: 'Bundesliga' })),
+
+  // ══ SERIE A ═══════════════════════════════════════════════════
+  ...['Lazio','Atalanta','Fiorentina','Torino',
+      'Bologna','Monza','Hellas Verona','Udinese'].map(t => ({ team: t, years: CY, region: 'Serie A' })),
+
+  // ══ LIGUE 1 ═══════════════════════════════════════════════════
+  ...['Lens','Rennes','Toulouse','Lille','Nice','Monaco','Marseille','Lyon',
+      'Brest','Montpellier'].map(t => ({ team: t, years: CY, region: 'Ligue 1' })),
+
+  // ══ LA LIGA ═══════════════════════════════════════════════════
+  ...['Villarreal','Celta Vigo','Osasuna','Mallorca','Espanyol','Girona',
+      'Athletic Bilbao','Real Sociedad','Real Betis'].map(t => ({ team: t, years: CY, region: 'La Liga' })),
+
+  // ══ UCL PARTICIPANTES ═════════════════════════════════════════
+  ...['Galatasaray','Red Bull Salzburg','Shakhtar Donetsk',
+      'Braga','Dinamo Zagreb','Young Boys','FC Copenhagen',
+      'Rangers','Club Brugge'].map(t => ({ team: t, years: CY, region: 'UCL recent' })),
+
+  // ══ SUDAMÉRICA ════════════════════════════════════════════════
+  ...['Boca Juniors','River Plate','Flamengo','Palmeiras','Atletico Mineiro',
+      'Fluminense','Corinthians','Estudiantes'].map(t => ({ team: t, years: CY, region: 'Sudamérica' })),
+
+  // ══ LIGA MX ═══════════════════════════════════════════════════
+  ...['Tigres UANL','Monterrey','Guadalajara'].map(t => ({ team: t, years: CY, region: 'Liga MX' })),
+];
+
 // ── Construir cola de descargas ────────────────────────────────
 function buildQueue() {
   let catalog = [];
 
   // Clubs first: easier to verify, not rate-limited as aggressively
-  if (BATCH === 'clubs'    || BATCH === 'all') catalog.push(...CLUB_TEAMS);
+  if (BATCH === 'clubs'    || BATCH === 'all') catalog.push(...CLUB_TEAMS, ...EXTRA_CLUBS);
   if (BATCH === 'national' || BATCH === 'all') catalog.push(...NATIONAL_TEAMS);
   if (BATCH === 'winners')                     catalog.push(...WINNERS_TEAMS);
+  if (BATCH === 'extra')                       catalog.push(...EXTRA_CLUBS);
 
   if (ONLY_TEAM) {
     const key = ONLY_TEAM.toLowerCase();
@@ -207,15 +270,6 @@ function humanDelay(baseMs) {
   const jitter = baseMs * 0.4;
   const delay  = baseMs - jitter + Math.random() * jitter * 2; // ±40%
   // 1 de cada 8 peticiones → pausa larga de "lectura" (10-20s)
-  const longPause = Math.random() < 0.125 ? 10000 + Math.random() * 10000 : 0;
-  return Math.round(delay + longPause);
-}
-
-// Pausa caótica que simula lectura humana: base ± 40% + pico ocasional
-function humanDelay(baseMs) {
-  const jitter = baseMs * 0.4;
-  const delay  = baseMs - jitter + Math.random() * jitter * 2; // base ±40%
-  // 1 de cada 8 peticiones → pausa larga de lectura (10-20s)
   const longPause = Math.random() < 0.125 ? 10000 + Math.random() * 10000 : 0;
   return Math.round(delay + longPause);
 }

@@ -1,0 +1,793 @@
+{
+  "slug": "crystal-palace",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jack Butland",
+          "position": "GK"
+        },
+        {
+          "name": "Vicente Guaita",
+          "position": "GK"
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Ferguson",
+          "position": "CB"
+        },
+        {
+          "name": "James Tomkins",
+          "position": "CB"
+        },
+        {
+          "name": "Jarosław Jach",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "CB"
+        },
+        {
+          "name": "Reece Hannam",
+          "position": "CB"
+        },
+        {
+          "name": "Tayo Adaramola",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ward",
+          "position": "CB"
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Kelly",
+          "position": "CB"
+        },
+        {
+          "name": "Jaïro Riedewald",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Milivojevic",
+          "position": "CM"
+        },
+        {
+          "name": "Cheikhou Kouyaté",
+          "position": "CM"
+        },
+        {
+          "name": "Conor Gallagher",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "James McArthur",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Wells-Morrison",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Schlupp",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Wilfried Zaha",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Olise",
+          "position": "ST"
+        },
+        {
+          "name": "Jesurun Rak-Sakyi",
+          "position": "ST"
+        },
+        {
+          "name": "Scott Banks",
+          "position": "ST"
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Christian Benteke",
+          "position": "ST"
+        },
+        {
+          "name": "Luke Plange",
+          "position": "ST"
+        },
+        {
+          "name": "Rob Street",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Crystal Palace (2021/2022)",
+      "teamLabel": "Crystal Palace (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sam Johnstone",
+          "position": "GK"
+        },
+        {
+          "name": "Jack Butland",
+          "position": "GK"
+        },
+        {
+          "name": "Vicente Guaita",
+          "position": "GK"
+        },
+        {
+          "name": "Joe Whitworth",
+          "position": "GK"
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK"
+        },
+        {
+          "name": "Owen Goodman",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Ferguson",
+          "position": "CB"
+        },
+        {
+          "name": "James Tomkins",
+          "position": "CB"
+        },
+        {
+          "name": "Kofi Balmer",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "CB"
+        },
+        {
+          "name": "Tayo Adaramola",
+          "position": "CB"
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ward",
+          "position": "CB"
+        },
+        {
+          "name": "David Boateng",
+          "position": "CB"
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Jaïro Riedewald",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Milivojevic",
+          "position": "CM"
+        },
+        {
+          "name": "Kaden Rodney",
+          "position": "CM"
+        },
+        {
+          "name": "David Ozoh",
+          "position": "CM"
+        },
+        {
+          "name": "Albert Sambi Lokonga",
+          "position": "CM"
+        },
+        {
+          "name": "Naouirou Ahamada",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "James McArthur",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Wells-Morrison",
+          "position": "CM"
+        },
+        {
+          "name": "Killian Phillips",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Schlupp",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Wilfried Zaha",
+          "position": "ST"
+        },
+        {
+          "name": "John-Kymani Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Adler Nascimento",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Olise",
+          "position": "ST"
+        },
+        {
+          "name": "Malcolm Ebiowei",
+          "position": "ST"
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Luke Plange",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Crystal Palace (2022/2023)",
+      "teamLabel": "Crystal Palace (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dean Henderson",
+          "position": "GK"
+        },
+        {
+          "name": "Sam Johnstone",
+          "position": "GK"
+        },
+        {
+          "name": "Joe Whitworth",
+          "position": "GK"
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB"
+        },
+        {
+          "name": "Rob Holding",
+          "position": "CB"
+        },
+        {
+          "name": "Nathan Ferguson",
+          "position": "CB"
+        },
+        {
+          "name": "James Tomkins",
+          "position": "CB"
+        },
+        {
+          "name": "Seán Grehan",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "CB"
+        },
+        {
+          "name": "Tayo Adaramola",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Muñoz",
+          "position": "CB"
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ward",
+          "position": "CB"
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "CM"
+        },
+        {
+          "name": "Jefferson Lerma",
+          "position": "CM"
+        },
+        {
+          "name": "Jaïro Riedewald",
+          "position": "CM"
+        },
+        {
+          "name": "David Ozoh",
+          "position": "CM"
+        },
+        {
+          "name": "Kaden Rodney",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "Naouirou Ahamada",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Wells-Morrison",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Schlupp",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Matheus França",
+          "position": "CM"
+        },
+        {
+          "name": "Jadan Raymond",
+          "position": "CM"
+        },
+        {
+          "name": "John-Kymani Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Olise",
+          "position": "ST"
+        },
+        {
+          "name": "Jesurun Rak-Sakyi",
+          "position": "ST"
+        },
+        {
+          "name": "Malcolm Ebiowei",
+          "position": "ST"
+        },
+        {
+          "name": "Franco Umeh",
+          "position": "ST"
+        },
+        {
+          "name": "Roshaun Mathurin",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST"
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Luke Plange",
+          "position": "ST"
+        },
+        {
+          "name": "Ademola Ola-Adebomi",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Crystal Palace (2023/2024)",
+      "teamLabel": "Crystal Palace (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dean Henderson",
+          "position": "GK"
+        },
+        {
+          "name": "Sam Johnstone",
+          "position": "GK"
+        },
+        {
+          "name": "Matt Turner",
+          "position": "GK"
+        },
+        {
+          "name": "Joe Whitworth",
+          "position": "GK"
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK"
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB"
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB"
+        },
+        {
+          "name": "Trevoh Chalobah",
+          "position": "CB"
+        },
+        {
+          "name": "Maxence Lacroix",
+          "position": "CB"
+        },
+        {
+          "name": "Chadi Riad",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB"
+        },
+        {
+          "name": "Rob Holding",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Chilwell",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Muñoz",
+          "position": "CB"
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB"
+        },
+        {
+          "name": "Caleb Kporha",
+          "position": "CB"
+        },
+        {
+          "name": "Joel Ward",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "CM"
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Jefferson Lerma",
+          "position": "CM"
+        },
+        {
+          "name": "David Ozoh",
+          "position": "CM"
+        },
+        {
+          "name": "Kaden Rodney",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "Naouirou Ahamada",
+          "position": "CM"
+        },
+        {
+          "name": "Jeffrey Schlupp",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Daichi Kamada",
+          "position": "CM"
+        },
+        {
+          "name": "Matheus França",
+          "position": "CM"
+        },
+        {
+          "name": "Justin Devenny",
+          "position": "CM"
+        },
+        {
+          "name": "Asher Agbinone",
+          "position": "ST"
+        },
+        {
+          "name": "Ismaïla Sarr",
+          "position": "ST"
+        },
+        {
+          "name": "Romain Esse",
+          "position": "ST"
+        },
+        {
+          "name": "Malcolm Ebiowei",
+          "position": "ST"
+        },
+        {
+          "name": "Franco Umeh",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST"
+        },
+        {
+          "name": "Eddie Nketiah",
+          "position": "ST"
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST"
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST"
+        },
+        {
+          "name": "Zach Marsh",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Crystal Palace (2024/2025)",
+      "teamLabel": "Crystal Palace (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dean Henderson",
+          "position": "GK"
+        },
+        {
+          "name": "Walter Benítez",
+          "position": "GK"
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK"
+        },
+        {
+          "name": "Maxence Lacroix",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB"
+        },
+        {
+          "name": "Jaydee Canvot",
+          "position": "CB"
+        },
+        {
+          "name": "Chadi Riad",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "CB"
+        },
+        {
+          "name": "Borna Sosa",
+          "position": "CB"
+        },
+        {
+          "name": "Rio Cardines",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Muñoz",
+          "position": "CB"
+        },
+        {
+          "name": "Caleb Kporha",
+          "position": "CB"
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "CM"
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "CM"
+        },
+        {
+          "name": "Jefferson Lerma",
+          "position": "CM"
+        },
+        {
+          "name": "Kaden Rodney",
+          "position": "CM"
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "Daichi Kamada",
+          "position": "CM"
+        },
+        {
+          "name": "Justin Devenny",
+          "position": "CM"
+        },
+        {
+          "name": "Ismaïla Sarr",
+          "position": "ST"
+        },
+        {
+          "name": "Yéremy Pino",
+          "position": "ST"
+        },
+        {
+          "name": "Brennan Johnson",
+          "position": "ST"
+        },
+        {
+          "name": "Evann Guessand",
+          "position": "ST"
+        },
+        {
+          "name": "Jørgen Strand Larsen",
+          "position": "ST"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST"
+        },
+        {
+          "name": "Christantus Uche",
+          "position": "ST"
+        },
+        {
+          "name": "Eddie Nketiah",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Crystal Palace (2025/2026)",
+      "teamLabel": "Crystal Palace (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/crystal-palace.png",
+  "id": 873,
+  "name": "Crystal Palace"
+}

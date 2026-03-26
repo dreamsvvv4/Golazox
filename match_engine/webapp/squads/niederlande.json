@@ -767,6 +767,139 @@
       "source": "Transfermarkt — netherlands (1986/1987)",
       "teamLabel": "netherlands (1986-87)"
     },
+    "1988": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Stanley Menzo",
+          "position": "GK"
+        },
+        {
+          "name": "Hans van Breukelen",
+          "position": "GK"
+        },
+        {
+          "name": "Joop Hiele",
+          "position": "GK"
+        },
+        {
+          "name": "Ronald Koeman",
+          "position": "CB"
+        },
+        {
+          "name": "Fred Rutten",
+          "position": "CB"
+        },
+        {
+          "name": "Rob Reekers",
+          "position": "CB"
+        },
+        {
+          "name": "Adick Koot",
+          "position": "CB"
+        },
+        {
+          "name": "Adri van Tiggelen",
+          "position": "CB"
+        },
+        {
+          "name": "Sonny Silooy",
+          "position": "CB"
+        },
+        {
+          "name": "Sjaak Troost",
+          "position": "CB"
+        },
+        {
+          "name": "Berry van Aerle",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Wouters",
+          "position": "CM"
+        },
+        {
+          "name": "Peter Bosz",
+          "position": "CM"
+        },
+        {
+          "name": "Wim Koevermans",
+          "position": "CM"
+        },
+        {
+          "name": "Frank Rijkaard",
+          "position": "CM"
+        },
+        {
+          "name": "Wilbert Suvrijn",
+          "position": "CM"
+        },
+        {
+          "name": "Aron Winter",
+          "position": "CM"
+        },
+        {
+          "name": "Arnold Mühren",
+          "position": "CM"
+        },
+        {
+          "name": "Erwin Koeman",
+          "position": "CM"
+        },
+        {
+          "name": "Rob Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Ruud Gullit",
+          "position": "CM"
+        },
+        {
+          "name": "Pieter Huistra",
+          "position": "ST"
+        },
+        {
+          "name": "Hendrie Krüzen",
+          "position": "ST"
+        },
+        {
+          "name": "Gerald Vanenburg",
+          "position": "ST"
+        },
+        {
+          "name": "John van 't Schip",
+          "position": "ST"
+        },
+        {
+          "name": "John Bosman",
+          "position": "ST"
+        },
+        {
+          "name": "René Eijkelkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Marco van Basten",
+          "position": "ST"
+        },
+        {
+          "name": "Wim Kieft",
+          "position": "ST"
+        },
+        {
+          "name": "John van Loen",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — netherlands (1988/1989)",
+      "teamLabel": "netherlands (1988-89)"
+    },
     "1990": {
       "formation": "4-4-2",
       "players": [
@@ -3397,5 +3530,6 @@
     }
   },
   "id": 3379,
-  "name": "netherlands"
+  "name": "netherlands",
+  "badgeLocalPath": "/img/badges/niederlande.png"
 }

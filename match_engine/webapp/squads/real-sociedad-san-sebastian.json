@@ -109,7 +109,122 @@
       },
       "source": "BDFutbol — Real Sociedad 1982-83 Primera División",
       "teamLabel": "Real Sociedad 1982-83 Primera División"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Álex Remiro",
+          "position": "GK"
+        },
+        {
+          "name": "Unai Marrero",
+          "position": "GK"
+        },
+        {
+          "name": "Jon Martín",
+          "position": "CB"
+        },
+        {
+          "name": "Igor Zubeldia",
+          "position": "CB"
+        },
+        {
+          "name": "Duje Caleta-Car",
+          "position": "CB"
+        },
+        {
+          "name": "Aritz Elustondo",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Aihen Muñoz",
+          "position": "CB"
+        },
+        {
+          "name": "Jon Aramburu",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Odriozola",
+          "position": "CB"
+        },
+        {
+          "name": "Jon Gorrotxategi",
+          "position": "CM"
+        },
+        {
+          "name": "Beñat Turrientes",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Sucic",
+          "position": "CM"
+        },
+        {
+          "name": "Yangel Herrera",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Soler",
+          "position": "CM"
+        },
+        {
+          "name": "Brais Méndez",
+          "position": "CM"
+        },
+        {
+          "name": "Arsen Zakharyan",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Marín",
+          "position": "CM"
+        },
+        {
+          "name": "Ander Barrenetxea",
+          "position": "ST"
+        },
+        {
+          "name": "Gonçalo Guedes",
+          "position": "ST"
+        },
+        {
+          "name": "Wesley",
+          "position": "ST"
+        },
+        {
+          "name": "Takefusa Kubo",
+          "position": "ST"
+        },
+        {
+          "name": "Mikel Oyarzabal",
+          "position": "ST"
+        },
+        {
+          "name": "Orri Óskarsson",
+          "position": "ST"
+        },
+        {
+          "name": "Jon Karrikaburu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Real Sociedad (2025/2026)",
+      "teamLabel": "Real Sociedad (2025-26)"
     }
   },
-  "name": "Real Sociedad"
+  "name": "Real Sociedad",
+  "badgeLocalPath": "/img/badges/real-sociedad-san-sebastian.png",
+  "id": 681
 }

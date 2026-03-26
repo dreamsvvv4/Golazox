@@ -1,0 +1,789 @@
+{
+  "slug": "newcastle-united",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Freddie Woodman",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Jamaal Lascelles",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Ciaran Clark",
+          "position": "CB"
+        },
+        {
+          "name": "Federico Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Targett",
+          "position": "CB"
+        },
+        {
+          "name": "Jamal Lewis",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Dummett",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Manquillo",
+          "position": "CB"
+        },
+        {
+          "name": "Isaac Hayden",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM"
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM"
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Jonjo Shelvey",
+          "position": "CM"
+        },
+        {
+          "name": "Jeff Hendrick",
+          "position": "CM"
+        },
+        {
+          "name": "Matty Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas De Bolle",
+          "position": "CM"
+        },
+        {
+          "name": "Matt Ritchie",
+          "position": "CM"
+        },
+        {
+          "name": "Joe White",
+          "position": "CM"
+        },
+        {
+          "name": "Allan Saint-Maximin",
+          "position": "ST"
+        },
+        {
+          "name": "Ryan Fraser",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "ST"
+        },
+        {
+          "name": "Callum Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Wood",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight Gayle",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Newcastle United (2021/2022)",
+      "teamLabel": "Newcastle United (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Pope",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK"
+        },
+        {
+          "name": "Loris Karius",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK"
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Jamaal Lascelles",
+          "position": "CB"
+        },
+        {
+          "name": "Federico Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Ciaran Clark",
+          "position": "CB"
+        },
+        {
+          "name": "Kell Watts",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Targett",
+          "position": "CB"
+        },
+        {
+          "name": "Jamal Lewis",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Dummett",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Manquillo",
+          "position": "CB"
+        },
+        {
+          "name": "Harrison Ashby",
+          "position": "CB"
+        },
+        {
+          "name": "Isaac Hayden",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM"
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM"
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Jonjo Shelvey",
+          "position": "CM"
+        },
+        {
+          "name": "Jeff Hendrick",
+          "position": "CM"
+        },
+        {
+          "name": "Matty Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Miley",
+          "position": "CM"
+        },
+        {
+          "name": "Matt Ritchie",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Allan Saint-Maximin",
+          "position": "ST"
+        },
+        {
+          "name": "Ryan Fraser",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Isak",
+          "position": "ST"
+        },
+        {
+          "name": "Callum Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Wood",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Newcastle United (2022/2023)",
+      "teamLabel": "Newcastle United (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Pope",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK"
+        },
+        {
+          "name": "Loris Karius",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK"
+        },
+        {
+          "name": "Adam Harrison",
+          "position": "GK"
+        },
+        {
+          "name": "Aidan Harris",
+          "position": "GK"
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Jamaal Lascelles",
+          "position": "CB"
+        },
+        {
+          "name": "Kell Watts",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Hall",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Targett",
+          "position": "CB"
+        },
+        {
+          "name": "Jamal Lewis",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Dummett",
+          "position": "CB"
+        },
+        {
+          "name": "Alex Murphy",
+          "position": "CB"
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Manquillo",
+          "position": "CB"
+        },
+        {
+          "name": "Harrison Ashby",
+          "position": "CB"
+        },
+        {
+          "name": "Sandro Tonali",
+          "position": "CM"
+        },
+        {
+          "name": "Isaac Hayden",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM"
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM"
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Miley",
+          "position": "CM"
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Jeff Hendrick",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas De Bolle",
+          "position": "CM"
+        },
+        {
+          "name": "Travis Hernes",
+          "position": "CM"
+        },
+        {
+          "name": "James Huntley",
+          "position": "CM"
+        },
+        {
+          "name": "Matt Ritchie",
+          "position": "CM"
+        },
+        {
+          "name": "Joe White",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Ryan Fraser",
+          "position": "ST"
+        },
+        {
+          "name": "Amadou Diallo",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Isak",
+          "position": "ST"
+        },
+        {
+          "name": "Callum Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "Ben Parkinson",
+          "position": "ST"
+        },
+        {
+          "name": "Michael Ndiweni",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Newcastle United (2023/2024)",
+      "teamLabel": "Newcastle United (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Pope",
+          "position": "GK"
+        },
+        {
+          "name": "Odysseas Vlachodimos",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK"
+        },
+        {
+          "name": "John Ruddy",
+          "position": "GK"
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB"
+        },
+        {
+          "name": "Lloyd Kelly",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Jamaal Lascelles",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Hall",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Targett",
+          "position": "CB"
+        },
+        {
+          "name": "Jamal Lewis",
+          "position": "CB"
+        },
+        {
+          "name": "Alex Murphy",
+          "position": "CB"
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Harrison Ashby",
+          "position": "CB"
+        },
+        {
+          "name": "Leo Shahar",
+          "position": "CB"
+        },
+        {
+          "name": "Sandro Tonali",
+          "position": "CM"
+        },
+        {
+          "name": "Isaac Hayden",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM"
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Miley",
+          "position": "CM"
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Joe White",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Trevan Sanusi",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "ST"
+        },
+        {
+          "name": "Alexander Isak",
+          "position": "ST"
+        },
+        {
+          "name": "Callum Wilson",
+          "position": "ST"
+        },
+        {
+          "name": "William Osula",
+          "position": "ST"
+        },
+        {
+          "name": "Sean Neave",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Newcastle United (2024/2025)",
+      "teamLabel": "Newcastle United (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Aaron Ramsdale",
+          "position": "GK"
+        },
+        {
+          "name": "Nick Pope",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK"
+        },
+        {
+          "name": "John Ruddy",
+          "position": "GK"
+        },
+        {
+          "name": "Malick Thiaw",
+          "position": "CB"
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB"
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Hall",
+          "position": "CB"
+        },
+        {
+          "name": "Alex Murphy",
+          "position": "CB"
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB"
+        },
+        {
+          "name": "Emil Krafth",
+          "position": "CB"
+        },
+        {
+          "name": "Sandro Tonali",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM"
+        },
+        {
+          "name": "Jacob Ramsey",
+          "position": "CM"
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Miley",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM"
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "ST"
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "ST"
+        },
+        {
+          "name": "Anthony Elanga",
+          "position": "ST"
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "ST"
+        },
+        {
+          "name": "Nick Woltemade",
+          "position": "ST"
+        },
+        {
+          "name": "Yoane Wissa",
+          "position": "ST"
+        },
+        {
+          "name": "William Osula",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Newcastle United (2025/2026)",
+      "teamLabel": "Newcastle United (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/newcastle-united.png",
+  "id": 762,
+  "name": "Newcastle United"
+}

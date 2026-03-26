@@ -21,16 +21,18 @@ const I18N = {
     'btn-simulate':'Simular Partido','tagline':'Cualquier equipo · Cualquier época · Cualquier rivalidad',
     'loading-text':'Simulando 30 000 partidos…','pm-eyebrow':'PRESENTACIÓN DE EQUIPOS','pm-start-label':'Comenzando en',
     'live-badge':'EN DIRECTO','btn-skip':'⏭ Saltar',
-    'poster-label-final':'RESULTADO FINAL','poster-label-pens':'EMPATE · PENALTIS','poster-context':'Partido de leyenda · Campo neutral',
+    'poster-label-final':'RESULTADO FINAL','poster-label-pens':'EMPATE · PENALTIS','poster-label-pen-mode':'TANDA DE PENALTIS','poster-context':'Partido de leyenda · Campo neutral',
     'section-probs':'PROBABILIDADES','section-timeline':'LÍNEA DE TIEMPO',
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir',
     'error-no-teams':'Introduce los nombres de ambos equipos.','error-too-long':'Los nombres de equipo no pueden superar 80 caracteres.',
+    'error-rate-limit':'Demasiadas simulaciones seguidas. Espera un momento e inténtalo de nuevo.',
     'fail-lookup':'❌ No encontrado','hint-lookup':'Prueba sin época, o con el nombre en inglés',
     'timeout-lookup':'Tiempo de espera agotado (scraper lento). Intenta de nuevo.',
     'no-connection':'Sin conexión al servidor. ¿Está iniciado?',
     'pen-shootout-title':'🎯 Tandas de Penaltis','pen-winner-suffix':'gana la tanda','pen-winner-sd':' (muerte súbita)',
     'timeline-events-suffix':'evento','timeline-events-suffix-pl':'eventos','timeline-empty':'Sin incidencias destacadas',
+    'km-title':'Puntos clave','km-reds':'Tanda de tarjetas rojas — el árbitro se mostró muy estricto','km-clutch':'Factor decisivo','km-clean-sheet':'Portería a cero','km-thrashing':'Goleada','km-draw':'Empate muy disputado','km-extra-time':'Se decidió en los penaltis',
     'mom-badge-text':'MEJOR JUGADOR','bench-label':'BANQUILLO','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Cambio realizado','tooltip-copied':'Resultado copiado ✓','tooltip-copy-fail':'No se pudo copiar',
     'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'LESIÓN',
@@ -60,16 +62,18 @@ const I18N = {
     'btn-simulate':'Simulate Match','tagline':'Any team · Any era · Any rivalry',
     'loading-text':'Simulating 30,000 matches…','pm-eyebrow':'TEAM PRESENTATION','pm-start-label':'Starting in',
     'live-badge':'LIVE','btn-skip':'⏭ Skip',
-    'poster-label-final':'FINAL SCORE','poster-label-pens':'DRAW · PENALTIES','poster-context':'Legendary match · Neutral ground',
+    'poster-label-final':'FINAL SCORE','poster-label-pens':'DRAW · PENALTIES','poster-label-pen-mode':'PENALTY SHOOTOUT','poster-context':'Legendary match · Neutral ground',
     'section-probs':'PROBABILITIES','section-timeline':'MATCH TIMELINE',
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share',
     'error-no-teams':'Please enter both team names.','error-too-long':'Team names cannot exceed 80 characters.',
+    'error-rate-limit':'Too many simulations in a row. Please wait a moment and try again.',
     'fail-lookup':'❌ Not found','hint-lookup':'Try without era, or use the English team name',
     'timeout-lookup':'Request timed out (slow scraper). Try again.',
     'no-connection':'No connection to server. Is it running?',
     'pen-shootout-title':'🎯 Penalty Shootout','pen-winner-suffix':'wins on penalties','pen-winner-sd':' (sudden death)',
     'timeline-events-suffix':'event','timeline-events-suffix-pl':'events','timeline-empty':'No notable incidents',
+    'km-title':'Key moments','km-reds':'Lots of red cards — the referee was very strict','km-clutch':'Decisive factor','km-clean-sheet':'Clean sheet','km-thrashing':'Dominant victory','km-draw':'Closely contested draw','km-extra-time':'Decided on penalties',
     'mom-badge-text':'PLAYER OF THE MATCH','bench-label':'BENCH','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Substitution made','tooltip-copied':'Result copied ✓','tooltip-copy-fail':'Could not copy',
     'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'INJURY',
@@ -185,7 +189,7 @@ let _matchMode = '11v11';
 
 function setMatchMode(mode) {
   _matchMode = mode;
-  ['11v11','5v5','3v3'].forEach(m => {
+  ['11v11','5v5','3v3','penalties'].forEach(m => {
     document.getElementById(`mode-${m}`)?.classList.toggle('mode-pill-active', m === mode);
   });
   const formations = mode === '5v5' ? FORMATIONS_5V5 : mode === '3v3' ? FORMATIONS_3V3 : FORMATIONS;
@@ -205,9 +209,9 @@ function setMatchMode(mode) {
 }
 
 // ── Estadios míticos ────────────────────────────────────────────
-// Build proxied image URL (server fetches from Wikimedia, follows redirects)
-const _imgProxy  = f => `/img-proxy?url=${encodeURIComponent('https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=500')}`;
-const _refImgProxy = f => `/img-proxy?url=${encodeURIComponent('https://commons.wikimedia.org/wiki/Special:FilePath/' + f + '?width=200')}`;
+// Local image paths
+const _imgProxy    = f => `/img/stadiums/${f}`;
+const _refImgProxy = f => `/img/referees/${f}`;
 
 // Palette for initials-avatar fallback (one per referee, hashed from id)
 const _AVATAR_COLORS = [
@@ -319,17 +323,14 @@ function selectWeather(weatherId) {
 }
 
 // ── Autocomplete data: loaded once on startup ───────────────────
-const _acList = [];
+const _acList = [];  // [{name,badge}, ...]
 fetch('/suggest').then(r => r.json()).then(list => _acList.push(...list)).catch(() => {});
 
-// ── Referee data: loaded once on startup ─────────────────────────
-window._refereesData = [];
-fetch('/referees').then(r => r.json()).then(list => {
-  window._refereesData = list;
-  _buildRefereePicker(list);
-}).catch(() => {});
+const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
+function badgeOrPlaceholder(url) { return url || BADGE_PLACEHOLDER; }
 
 // ── Bootstrap ────────────────────────────────────────────
+window._refereesData = [];
 document.addEventListener('DOMContentLoaded', () => {
   // Apply saved language preference
   applyI18n();
@@ -372,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Allow Enter key to trigger simulation from any input
-  ['teamA','eraA','teamB','eraB','formationA','formationB'].forEach(id => {
+  ['teamA','eraA','teamB','eraB'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') handleSimulate(); });
   });
@@ -383,6 +384,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Build weather picker
   _buildWeatherPicker();
+
+  // Load referees (dentro de DOMContentLoaded — DOM garantizado listo)
+  fetch('/referees').then(r => r.json()).then(list => {
+    window._refereesData = list;
+    _buildRefereePicker(list);
+  }).catch(() => {});
 });
 
 // ── Referee picker builder (called after /referees load) ─────────
@@ -448,11 +455,45 @@ function _buildWeatherPicker() {
 // ── Lookup cache: stores last API result per side (A / B) ────
 const _lookupCache = { A: null, B: null };
 
+// Converts a CSS hex colour (#rrggbb) to rgba(r,g,b,a)
+function hexToRgba(hex, alpha) {
+  hex = hex.replace('#', '');
+  if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+  const r = parseInt(hex.slice(0,2),16), g = parseInt(hex.slice(2,4),16), b = parseInt(hex.slice(4,6),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// Updates the VS badge: plain "VS" when lineups incomplete, "INICIAR ODYSSEY" when both ready
+function _updateClashButton() {
+  const btn = document.getElementById('vs-clash');
+  if (!btn) return;
+  const aData = _lookupCache['A'], bData = _lookupCache['B'];
+  if (aData && bData) {
+    const colA = hexToRgba(_getKitColor(aData.teamLabel || document.getElementById('teamA')?.value || '', 'a'), .72);
+    const colB = hexToRgba(_getKitColor(bData.teamLabel || document.getElementById('teamB')?.value || '', 'b'), .72);
+    btn.style.setProperty('--clash-a', colA);
+    btn.style.setProperty('--clash-b', colB);
+    btn.classList.add('vs-ready');
+    btn.innerHTML = `
+      <svg class="clash-energy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <line class="energy-line" x1="2" y1="50" x2="98" y2="50"/>
+        <circle class="energy-spark" cx="50" cy="50" r="8"/>
+      </svg>
+      <span class="clash-l1">INICIAR</span>
+      <span class="clash-l2">ODYSSEY</span>`;
+    btn.onclick = handleSimulate;
+  } else {
+    btn.classList.remove('vs-ready');
+    btn.innerHTML = '<span>VS</span>';
+    btn.onclick = null;
+  }
+}
+
 // Picks players by role for a given match mode (prevents 5v5 showing 4 defenders)
 function _pickForMode(players, mode) {
   const POS_SORT = { GK:0, RB:1, CB:1, LB:1, DM:2, CM:3, RM:3, LM:3, AM:3.5, RW:4, LW:4, ST:4 };
   const sorted   = [...players].sort((a,b) => (POS_SORT[a.position]??3) - (POS_SORT[b.position]??3));
-  if (mode === '11v11') return sorted.slice(0, 11);
+  if (mode === '11v11' || mode === 'penalties') return sorted.slice(0, 11);
 
   // Build pool grouped by position
   const byPos = {};
@@ -558,6 +599,8 @@ async function handleLookup(side) {
       document.getElementById(`preview-players-${side}`).innerHTML =
         `<div class="lk-hint">${t('hint-lookup')}</div>`;
       _lookupCache[side] = null;
+      document.getElementById(`col-${side.toLowerCase()}`)?.classList.remove('tc-loaded');
+      _updateClashButton();
     } else {
       _lookupCache[side] = data;
 
@@ -572,6 +615,15 @@ async function handleLookup(side) {
         const opt = [...formSel.options].find(o => o.value === data.formation);
         if (opt) formSel.value = data.formation;
       }
+
+      // Premium UI: inject kit colour glow into team column + update clash button
+      const colEl = document.getElementById(`col-${side.toLowerCase()}`);
+      if (colEl) {
+        const kitHex = _getKitColor(data.teamLabel || teamInput, side.toLowerCase());
+        colEl.style.setProperty('--team-glow', hexToRgba(kitHex, .7));
+        colEl.classList.add('tc-loaded');
+      }
+      _updateClashButton();
     }
 
     preview.classList.remove('hidden');
@@ -586,6 +638,8 @@ async function handleLookup(side) {
     document.getElementById(`preview-players-${side}`).innerHTML = '';
     preview.classList.remove('hidden');
     _lookupCache[side] = null;
+    document.getElementById(`col-${side.toLowerCase()}`)?.classList.remove('tc-loaded');
+    _updateClashButton();
   } finally {
     btn.disabled    = false;
     btn.textContent = t('lookup-btn');
@@ -619,8 +673,16 @@ async function handleSimulate() {
   });
   document.getElementById('results')?.classList.add('hidden');
   _timelineStarted = false;
-  if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
-  if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
+  // Clear key moments and MOTM from previous match
+  const _kmEl = document.getElementById('key-moments');
+  if (_kmEl) { _kmEl.innerHTML = ''; _kmEl.style.display = 'none'; }
+  const _momName = document.getElementById('mom-name');
+  const _momMeta = document.getElementById('mom-meta');
+  if (_momName) _momName.textContent = '-';
+  if (_momMeta) _momMeta.textContent = '-';
+  if (_liveTimer)           { clearTimeout(_liveTimer);            _liveTimer = null; }
+  if (_liveClockInterval)   { clearInterval(_liveClockInterval);   _liveClockInterval = null; }
+  if (_pitchDriftInterval)  { clearInterval(_pitchDriftInterval);  _pitchDriftInterval = null; }
 
   setLoading(true);
 
@@ -652,7 +714,8 @@ async function handleSimulate() {
       const err = await response.json().catch(() => ({}));
       // 404 = team not found: show the server message directly (no "Error en la simulación:" prefix)
       if (response.status === 404) throw new Error(err.error || t('fail-lookup'));
-      throw new Error(err.error || `Server error ${response.status}`);
+      if (response.status === 429) throw new Error(t('error-rate-limit') || 'Demasiadas simulaciones. Espera un momento.');
+      throw new Error(err.error || `${t('sim-error-prefix')} ${response.status}`);
     }
 
     const data = await response.json();
@@ -677,12 +740,20 @@ function renderResult(data, payload) {
   section.classList.add('fade-in');
   section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+  // ── Show/hide cards that don't apply to a pure penalties contest ──
+  const isPenMode = payload.matchMode === 'penalties';
+  document.querySelector('.probs-card')?.classList.toggle('hidden', isPenMode);
+  document.querySelector('.stats-card')?.classList.toggle('hidden', isPenMode);
+
   // ── Score poster ───────────────────────────────────────
   document.getElementById('poster-name-a').textContent = payload.teamA;
   document.getElementById('poster-era-a').textContent  = payload.eraA || '';
   document.getElementById('poster-name-b').textContent = payload.teamB;
   document.getElementById('poster-era-b').textContent  = payload.eraB || '';
-  animateScore(0, finalScore.teamA, 0, finalScore.teamB);
+  animateScore(
+    0, isPenMode ? (finalScore.penalties?.scoreA ?? 0) : finalScore.teamA,
+    0, isPenMode ? (finalScore.penalties?.scoreB ?? 0) : finalScore.teamB
+  );
 
   // ── Escudos ──────────────────────────────────────────────
   const setBadge = (id, url) => {
@@ -723,8 +794,9 @@ function renderResult(data, payload) {
     }
   }
 
-  // ── Penaltis (sólo si hubo empate)
+  // ── Penaltis (sólo si hubo empate o modo penalties puro)
   document.getElementById('poster-label').textContent =
+    payload.matchMode === 'penalties' ? t('poster-label-pen-mode') :
     t(finalScore.penalties ? 'poster-label-pens' : 'poster-label-final');
   const stadiumCtxEl = document.getElementById('poster-context');
   if (stadiumCtxEl) {
@@ -734,6 +806,7 @@ function renderResult(data, payload) {
     stadiumCtxEl.textContent = [stadiumTxt, refName ? `🟥 ${refName}` : '', weatherTxt].filter(Boolean).join(' · ');
   }
   renderPenalties(finalScore.penalties, payload.teamA, payload.teamB);
+  renderKeyMoments(finalScore, data, payload);
 
   // ── Resultado: destacar ganador ───────────────────────────────────
   const posterA = document.getElementById('poster-team-a');
@@ -814,7 +887,7 @@ function renderLineup(side, lineup, teamName, era, badgeUrl) {
     img.className = 'lineup-badge';
     img.src       = badgeUrl;
     img.alt       = '';
-    img.onerror   = () => img.remove();
+    img.onerror   = () => { img.src = BADGE_PLACEHOLDER; };
     titleEl.appendChild(img);
   }
   titleEl.appendChild(document.createTextNode(era ? `${teamName} · ${era}` : teamName));
@@ -936,6 +1009,9 @@ let _animTimers = [];
 function flushTimeline() {
   _animTimers.forEach(id => { clearTimeout(id); clearInterval(id); });
   _animTimers = [];
+  // Reveal event count immediately on skip/flush
+  const badge = document.getElementById('tl-count-badge');
+  if (badge) badge.style.opacity = '1';
   const container = document.getElementById('timeline-events');
   if (!container) return;
   container.querySelectorAll('.t-anim-hidden').forEach(row => {
@@ -965,9 +1041,12 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   const header    = document.getElementById('timeline-header');
   const container = document.getElementById('timeline-events');
 
+  // Count is hidden initially — revealed after the last event appears
   header.innerHTML =
     `<span style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
-    `<span class="timeline-count">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span>` +
+    `<span class="timeline-count" id="tl-count-badge" style="opacity:0;transition:opacity .5s">` +
+      `${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}` +
+    `</span>` +
     `<span style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
 
   if (!events.length) {
@@ -1008,6 +1087,14 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   // Schedule each event to appear at event.minute * msPerMinute
   // msPerMinute=0 → instant mode, no timers, caller must call flushTimeline() after
   if (msPerMinute === 0) return;
+
+  // Reveal the event count after the last event appears
+  const _lastDelay = events.length ? events[events.length - 1].minute * msPerMinute + 1200 : 500;
+  _animTimers.push(setTimeout(() => {
+    const badge = document.getElementById('tl-count-badge');
+    if (badge) badge.style.opacity = '1';
+  }, _lastDelay));
+
   events.forEach((ev, idx) => {
     const delay = ev.minute * msPerMinute;
     const tid   = setTimeout(() => {
@@ -1116,6 +1203,19 @@ function selectSpeed(btn) {
 function showPreMatch(data, payload) {
   _pmData    = data;
   _pmPayload = payload;
+
+  // Penalties-only mode: bypass the full pre-match screen entirely
+  if (payload.matchMode === 'penalties') {
+    _pmTick = 300;  // non-zero so playLiveMatch doesn't skip to instant results
+    // Clear any stale lineup DOM from a previous regular match so _readLineupFromDom
+    // doesn't reuse old players for the current simulation's lineup.
+    ['a', 'b'].forEach(s => {
+      const el = document.getElementById(`pm-block-${s}`);
+      if (el) el.innerHTML = '';
+    });
+    skipPreMatch();
+    return;
+  }
 
   const screen = document.getElementById('prematch-screen');
   screen.classList.remove('hidden', 'pm-fade-out');
@@ -1255,7 +1355,7 @@ function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
     img.className = 'pm-badge-big';
     img.src = badgeUrl;
     img.alt = '';
-    img.onerror = () => { img.style.display = 'none'; };
+    img.onerror = () => { img.src = BADGE_PLACEHOLDER; };
     badgeZone.appendChild(img);
   } else {
     badgeZone.innerHTML = `<div class="pm-badge-placeholder">${escHtml(teamName.slice(0,3).toUpperCase())}</div>`;
@@ -1681,7 +1781,7 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
 
   // Badge corner (team shield on card)
   const badgeCorner = badgeUrl
-    ? `<img class="pmc-badge" src="${escHtml(badgeUrl)}" alt="" onerror="this.style.display='none'">`
+    ? `<img class="pmc-badge" src="${escHtml(badgeUrl)}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">`
     : '';
 
   // Jersey number watermark
@@ -1859,12 +1959,16 @@ const PLAYER_OVERRIDES = new Map([
 ]);
 
 function calcPlayerRating(player, teamRatings) {
-  const nameLow = (player.name || '').toLowerCase();
-  // Check famous-player overrides first — they always win regardless of team tier
-  for (const [key, ovr] of PLAYER_OVERRIDES) {
-    if (nameLow.includes(key)) return ovr;
+  // 1. Rating ya calculado por el backend (override famoso o mvToRating) — usarlo directamente
+  if (player.rating && player.rating > 0) return player.rating;
+
+  // 2. Override por nombre usando el módulo compartido player_ratings.js (cargado antes que app.js)
+  if (typeof getPlayerOverride === 'function') {
+    const ovr = getPlayerOverride(player.name);
+    if (ovr) return ovr;
   }
-  // Fallback: team aggregate ± deterministic name hash (±8)
+
+  // 3. Fallback: media del equipo ± hash determinista del nombre (±8)
   const pos  = player.position;
   const base = pos === 'GK'                        ? teamRatings.goalkeeping
              : ['CB','RB','LB'].includes(pos)      ? teamRatings.defense
@@ -1873,6 +1977,80 @@ function calcPlayerRating(player, teamRatings) {
   let h = 0;
   for (let i = 0; i < player.name.length; i++) h = ((h * 31) + player.name.charCodeAt(i)) & 0xffff;
   return Math.max(55, Math.min(99, Math.round(base + (h % 17) - 8)));
+}
+
+// ── Key moments summary ─────────────────────────────────────
+function renderKeyMoments(finalScore, data, payload) {
+  const el = document.getElementById('key-moments');
+  if (!el) return;
+
+  const bullets = [];
+  const scoreA = finalScore.teamA, scoreB = finalScore.teamB;
+  const teamA = payload.teamA, teamB = payload.teamB;
+
+  // Penalties-only mode: show just the shootout result bullet
+  if (payload.matchMode === 'penalties') {
+    const pens = finalScore.penalties;
+    if (pens) {
+      const penWinner = pens.winner === 'A' ? teamA : teamB;
+      const sdTxt = pens.suddenDeath ? (` ${t('pen-winner-sd')}`) : '';
+      bullets.push(`🥅 ${escHtml(penWinner)} ${t('pen-winner-suffix')} ${pens.scoreA}–${pens.scoreB}${sdTxt}`);
+    }
+    el.innerHTML = bullets.map(b => `<div class="km-bullet">${b}</div>`).join('');
+    el.style.display = bullets.length ? '' : 'none';
+    return;
+  }
+
+  const redsA = (finalScore.cardsA?.red || []).length;
+  const redsB = (finalScore.cardsB?.red || []).length;
+  const totalReds = redsA + redsB;
+  const mom = data.mom;
+
+  // Penalties decided the match
+  if (finalScore.penalties) {
+    bullets.push(`🎯 ${t('km-extra-time')}`);
+  }
+  // Thrashing (3+ goal difference)
+  const diff = Math.abs(scoreA - scoreB);
+  if (diff >= 3) {
+    const winner = scoreA > scoreB ? teamA : teamB;
+    bullets.push(`💥 ${t('km-thrashing')}: ${escHtml(winner)} (${scoreA}–${scoreB})`);
+  } else if (scoreA === scoreB && !finalScore.penalties) {
+    bullets.push(`⚖️ ${t('km-draw')}`);
+  }
+  // Red cards
+  if (totalReds >= 2) {
+    bullets.push(`🟥 ${t('km-reds')} (${totalReds})`);
+  } else if (totalReds === 1) {
+    const red = (redsA ? finalScore.cardsA.red[0] : finalScore.cardsB.red[0]);
+    bullets.push(`🟥 Expulsión: ${escHtml(red.name)} (${red.minute}')`);
+  }
+  // Clean sheet
+  if (scoreA === 0) bullets.push(`🧤 ${t('km-clean-sheet')}: ${escHtml(teamB)}`);
+  else if (scoreB === 0) bullets.push(`🧤 ${t('km-clean-sheet')}: ${escHtml(teamA)}`);
+  // Top scorer (2+ goals)
+  const allScorers = [...(finalScore.scorersA || []), ...(finalScore.scorersB || [])];
+  const scorerMap = {};
+  allScorers.forEach(s => { scorerMap[s.name] = (scorerMap[s.name] || 0) + 1; });
+  const topScorer = Object.entries(scorerMap).sort((a, b) => b[1] - a[1])[0];
+  if (topScorer && topScorer[1] >= 2) {
+    bullets.push(`⚽ ${t('km-clutch')}: ${escHtml(topScorer[0])} (${topScorer[1]} goles)`);
+  } else if (mom) {
+    bullets.push(`⭐ ${t('km-clutch')}: ${escHtml(mom.name)}`);
+  }
+  // Referee
+  if (_selectedReferee) {
+    const s = _selectedReferee.strictness;
+    if (s >= 1.3) bullets.push(`🟨 ${escHtml(_selectedReferee.name)} fue muy estricto (strictness ${s.toFixed(2)})`);
+    else if (s <= 0.8) bullets.push(`😌 ${escHtml(_selectedReferee.name)} dejó jugar (strictness ${s.toFixed(2)})`);
+  }
+
+  if (!bullets.length) { el.style.display = 'none'; return; }
+
+  el.innerHTML =
+    `<div class="km-title">📋 ${t('km-title')}</div>` +
+    `<ul class="km-list">${bullets.map(b => `<li>${b}</li>`).join('')}</ul>`;
+  el.style.display = 'block';
 }
 
 // ── Radar (spider) chart ─────────────────────────────────────
@@ -1931,96 +2109,332 @@ function drawRadar(ratings, teamA, teamB) {
     `<span class="radar-legend-item"><span class="radar-legend-dot" style="background:#e74c3c"></span>${escHtml(teamB.slice(0,14))}</span>`;
 }
 
-// ── Live mini-pitch ───────────────────────────────────────────
-// Pitch SVG dimensions (viewBox="0 0 140 200")
-const _LP = { W: 140, H: 200, cx: 70, cy: 100 };
+// ── Live Holo-Pitch ───────────────────────────────────────────
+// SVG viewBox is 160×240 to give more vertical room for badges
+const _LP = { W: 160, H: 240, cx: 80, cy: 120 };
 
-// Base pitch coordinates per position (percentage of pitch, origin = team A goal at top)
-// Team A attacks downward (top half), Team B attacks upward (bottom half)
+// Rating → tier colour (matches lookup panel tiers)
+function _lpTierColor(ovr) {
+  if (ovr >= 88) return '#39ff9f';   // emerald elite
+  if (ovr >= 80) return '#e8a820';   // gold
+  if (ovr >= 70) return '#9ab0cc';   // silver
+  if (ovr >= 60) return '#aa6832';   // bronze
+  return '#c05050';                  // poor
+}
+
+// Tiny SVG silhouette (body + head) centred at (0,0), scale ~10px tall
+function _lpSilhouette(color, glowColor) {
+  return `<g class="lp-sil">
+    <ellipse cx="0" cy="-7" rx="2.6" ry="2.8" fill="${color}" opacity=".92"/>
+    <path d="M-3.5,0 Q-4,5 -3,9 L3,9 Q4,5 3.5,0 Q1,-3.5 -1.5,-3.5 Z" fill="${color}" opacity=".84"/>
+    <line x1="-3.5" y1="2" x2="-6" y2="7" stroke="${color}" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
+    <line x1="3.5"  y1="2" x2="6"  y2="7" stroke="${color}" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
+    <line x1="-1.5" y1="9" x2="-2.5" y2="15" stroke="${color}" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+    <line x1="1.5"  y1="9" x2="2.5"  y2="15" stroke="${color}" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+    <ellipse cx="0" cy="-7" rx="2.6" ry="2.8" fill="none" stroke="${glowColor}" stroke-width=".6" opacity=".55"/>
+  </g>`;
+}
+
+// Floating data badge above silhouette
+function _lpBadge(pos, num, ovr, color, side) {
+  const tierCol = _lpTierColor(ovr);
+  const label = `${pos} #${num}`;
+  const w = 28, h = 10;
+  return `<g class="lp-badge" transform="translate(${-w/2},-28)">
+    <rect x="0" y="0" width="${w}" height="${h}" rx="2.5"
+      fill="rgba(3,8,20,.82)" stroke="${tierCol}" stroke-width=".7" opacity=".95"/>
+    <text x="${w/2}" y="4.5" text-anchor="middle" dominant-baseline="middle"
+      font-family="'Rajdhani',sans-serif" font-size="3.2" font-weight="700"
+      fill="rgba(255,255,255,.85)" letter-spacing=".3">${label}</text>
+    <rect x="1" y="5.5" width="${w-2}" height="3.8" rx="1.5" fill="rgba(0,0,0,.4)"/>
+    <rect x="1" y="5.5" width="${Math.round((w-2)*(Math.min(ovr,99)-50)/49)}" height="3.8"
+      rx="1.5" fill="${tierCol}" opacity=".9"/>
+    <text x="${w/2}" y="7.4" text-anchor="middle" dominant-baseline="middle"
+      font-family="'Rajdhani',sans-serif" font-size="3.4" font-weight="900"
+      fill="${tierCol}">${ovr}</text>
+  </g>`;
+}
+
+// Ground-shadow disc under each silhouette
+function _lpShadow(color) {
+  return `<ellipse cx="0" cy="15" rx="5" ry="2" fill="${color}" opacity=".18"/>`;
+}
+
+// Vertical focus-beam for the highest-rated player
+function _lpFocusBeam(x, y, color) {
+  return `<g class="lp-focus-beam">
+    <line x1="${x}" y1="${y-28}" x2="${x}" y2="${y+16}"
+      stroke="${color}" stroke-width="1.2" stroke-dasharray="3 2" opacity=".5"
+      class="lp-beam-line"/>
+    <ellipse cx="${x}" cy="${y-28}" rx="7" ry="3"
+      fill="${color}" opacity=".18" class="lp-beam-halo"/>
+  </g>`;
+}
+
+// Particle stream from ball bearer to ball position
+function _lpParticleStream(x1, y1, x2, y2, color) {
+  return `<line class="lp-particle" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"
+    stroke="${color}" stroke-width=".8" stroke-dasharray="2 4" opacity=".55"/>`;
+}
+
+// Base pitch coordinates (percentage of pitch)
 const _LP_POS_A = {
-  GK: [0.50, 0.06], RB: [0.80, 0.20], CB: [0.62, 0.18], LB: [0.20, 0.20],
-  DM: [0.50, 0.33], CM: [0.42, 0.40], RM: [0.75, 0.38], LM: [0.25, 0.38],
-  AM: [0.50, 0.44], RW: [0.78, 0.42], LW: [0.22, 0.42], ST: [0.50, 0.46],
+  GK:[.50,.06], RB:[.80,.20], CB:[.62,.18], LB:[.20,.20],
+  DM:[.50,.33], CM:[.42,.40], RM:[.75,.38], LM:[.25,.38],
+  AM:[.50,.44], RW:[.78,.42], LW:[.22,.42], ST:[.50,.46],
 };
 const _LP_POS_B = {
-  GK: [0.50, 0.94], RB: [0.20, 0.80], CB: [0.38, 0.82], LB: [0.80, 0.80],
-  DM: [0.50, 0.67], CM: [0.58, 0.60], RM: [0.25, 0.62], LM: [0.75, 0.62],
-  AM: [0.50, 0.56], RW: [0.22, 0.58], LW: [0.78, 0.58], ST: [0.50, 0.54],
+  GK:[.50,.94], RB:[.20,.80], CB:[.38,.82], LB:[.80,.80],
+  DM:[.50,.67], CM:[.58,.60], RM:[.25,.62], LM:[.75,.62],
+  AM:[.50,.56], RW:[.22,.58], LW:[.78,.58], ST:[.50,.54],
 };
 
-let _pitchDots = { a: [], b: [], ball: null };
+const _JERSEY_LP = { GK:1, RB:2, CB:5, LB:3, DM:6, CM:8, RM:7, LM:11, AM:10, RW:7, LW:11, ST:9 };
+
+let _pitchDots       = { a: [], b: [], ball: null };
 let _pitchDriftInterval = null;
+let _lpFocusEl       = null;  // the focused player's badge <g> (for pulsing)
+let _lpParticleEl    = null;  // particle <line> element
+
+function _lpHexGrid(W, H) {
+  // Sparse hexagonal grid for the holo texture (every ~18px)
+  const s = 9; // hex "size" (circumradius)
+  const dx = s * Math.sqrt(3), dy = s * 1.5;
+  const rows = Math.ceil(H / dy) + 2, cols = Math.ceil(W / dx) + 2;
+  let d = '';
+  for (let row = -1; row < rows; row++) {
+    for (let col = -1; col < cols; col++) {
+      const cx = col * dx + (row % 2 === 0 ? 0 : dx / 2);
+      const cy = row * dy;
+      // hexagon path
+      let pts = '';
+      for (let i = 0; i < 6; i++) {
+        const a = Math.PI / 180 * (60 * i - 30);
+        const px = cx + s * Math.cos(a), py = cy + s * Math.sin(a);
+        pts += (i === 0 ? 'M' : 'L') + px.toFixed(1) + ',' + py.toFixed(1);
+      }
+      d += pts + 'Z ';
+    }
+  }
+  return `<path d="${d}" fill="none" stroke="rgba(80,220,180,.07)" stroke-width=".4" class="lp-hex"/>`;
+}
+
+function _lpTacticalLines(W, H, cx, cy) {
+  // Glowing tactical grid: thirds + center
+  const t = H / 3;
+  return [
+    `<line x1="0" y1="${t}" x2="${W}" y2="${t}" stroke="rgba(0,212,255,.14)" stroke-width=".5" stroke-dasharray="4 4"/>`,
+    `<line x1="0" y1="${t*2}" x2="${W}" y2="${t*2}" stroke="rgba(0,212,255,.14)" stroke-width=".5" stroke-dasharray="4 4"/>`,
+    `<line x1="${W/2}" y1="0" x2="${W/2}" y2="${H}" stroke="rgba(0,212,255,.08)" stroke-width=".4" stroke-dasharray="3 6"/>`,
+    `<line x1="0" y1="${H/2}" x2="${W}" y2="${H/2}" stroke="rgba(255,255,255,.2)" stroke-width=".6"/>`,
+  ].join('');
+}
 
 function initLivePitch(lineupA, lineupB) {
   const svg = document.getElementById('live-pitch-svg');
   if (!svg) return;
 
-  // Pitch markings
-  svg.innerHTML = `
-    <rect x="0" y="0" width="${_LP.W}" height="${_LP.H}" rx="4" fill="#1a4a1a"/>
-    <line x1="0" y1="${_LP.H/2}" x2="${_LP.W}" y2="${_LP.H/2}" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <circle cx="${_LP.cx}" cy="${_LP.cy}" r="18" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <circle cx="${_LP.cx}" cy="${_LP.cy}" r="1.5" fill="rgba(255,255,255,.35)"/>
-    <rect x="42" y="1" width="56" height="20" rx="1" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <rect x="42" y="${_LP.H-21}" width="56" height="20" rx="1" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <rect x="58" y="1" width="24" height="9" rx="1" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <rect x="58" y="${_LP.H-10}" width="24" height="9" rx="1" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
-    <rect x="1" y="1" width="${_LP.W-2}" height="${_LP.H-2}" rx="3" fill="none" stroke="rgba(255,255,255,.15)" stroke-width=".7"/>
-  `;
+  const W = _LP.W, H = _LP.H, cx = _LP.cx, cy = _LP.cy;
 
-  // Draw team A players
+  // ── Compute ratings for both teams to pick focus player & tier colours ──
+  const rgsA = _liveData?.ratings?.teamA || { attack:72, midfield:72, defense:72, goalkeeping:72 };
+  const rgsB = _liveData?.ratings?.teamB || { attack:72, midfield:72, defense:72, goalkeeping:72 };
+  const _ovr = (p, rgs) => calcPlayerRating(p, rgs);
+
+  const playersA = (lineupA?.players || []).map(p => ({ ...p, _ovr: _ovr(p, rgsA) }));
+  const playersB = (lineupB?.players || []).map(p => ({ ...p, _ovr: _ovr(p, rgsB) }));
+  const allPlayers = [...playersA, ...playersB];
+  const heroPlayer = allPlayers.reduce((best, p) => (!best || p._ovr > best._ovr) ? p : best, null);
+
+  // ── SVG defs: gradients ──────────────────────────────────────────────────
+  let markup = `<defs>
+    <radialGradient id="lp-pitch-grad" cx="50%" cy="50%" r="72%">
+      <stop offset="0%"   stop-color="#0d2b1a" stop-opacity=".98"/>
+      <stop offset="70%"  stop-color="#071a0f" stop-opacity=".98"/>
+      <stop offset="100%" stop-color="#030d06" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="lp-ball-grad" cx="38%" cy="35%" r="60%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#44aaff"/>
+    </radialGradient>
+    <radialGradient id="lp-vortex-outer" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="rgba(0,212,255,.6)"/>
+      <stop offset="60%" stop-color="rgba(255,77,109,.4)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="lp-glow-a" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lp-glow-b" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lp-glow-focus" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lp-badge-glow" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="lp-clip"><rect width="${W}" height="${H}" rx="6"/></clipPath>
+  </defs>`;
+
+  // ── Pitch background ────────────────────────────────────────────────────
+  markup += `<rect width="${W}" height="${H}" rx="6" fill="url(#lp-pitch-grad)"/>`;
+
+  // ── Hex grid texture ────────────────────────────────────────────────────
+  markup += `<g clip-path="url(#lp-clip)">${_lpHexGrid(W, H)}</g>`;
+
+  // ── Tactical lines ──────────────────────────────────────────────────────
+  markup += `<g clip-path="url(#lp-clip)">${_lpTacticalLines(W, H, cx, cy)}</g>`;
+
+  // ── Standard pitch markings ─────────────────────────────────────────────
+  markup += `
+    <g clip-path="url(#lp-clip)" stroke="rgba(255,255,255,.22)" stroke-width=".7" fill="none">
+      <rect x="1" y="1" width="${W-2}" height="${H-2}" rx="5"/>
+      <rect x="44" y="1"      width="${W-88}" height="22" rx="1"/>
+      <rect x="44" y="${H-23}" width="${W-88}" height="22" rx="1"/>
+      <rect x="58" y="1"      width="${W-116}" height="10" rx="1"/>
+      <rect x="58" y="${H-11}" width="${W-116}" height="10" rx="1"/>
+      <circle cx="${cx}" cy="${cy}" r="20"/>
+      <circle cx="${cx}" cy="${cy}" r="1.5" fill="rgba(255,255,255,.35)" stroke="none"/>
+      <circle cx="${cx}" cy="${H*0.07}" r="2.5" fill="rgba(255,255,255,.18)" stroke="none"/>
+      <circle cx="${cx}" cy="${H*0.93}" r="2.5" fill="rgba(255,255,255,.18)" stroke="none"/>
+    </g>`;
+
+  // ── Isometric edge glow (depth illusion) ────────────────────────────────
+  markup += `
+    <rect width="${W}" height="${H}" rx="6" fill="none"
+      stroke="rgba(0,212,255,.35)" stroke-width="1.2"/>
+    <rect x="3" y="3" width="${W-6}" height="${H-6}" rx="4" fill="none"
+      stroke="rgba(0,212,255,.1)" stroke-width=".5"/>`;
+
+  // ── Corner accent lines ─────────────────────────────────────────────────
+  const ca = 10;
+  const corners = [[0,0],[W,0],[0,H],[W,H]];
+  markup += corners.map(([x,y]) => {
+    const sx = x === 0 ? 1 : -1, sy = y === 0 ? 1 : -1;
+    return `<line x1="${x+sx*1}" y1="${y}" x2="${x+sx*ca}" y2="${y}" stroke="rgba(0,212,255,.6)" stroke-width="1.2"/>
+            <line x1="${x}" y1="${y+sy*1}" x2="${x}" y2="${y+sy*ca}" stroke="rgba(0,212,255,.6)" stroke-width="1.2"/>`;
+  }).join('');
+
+  // ── Referee symbols near center (whistle + red card) ────────────────────
+  const rfX = cx + 24, rfY = cy - 14;
+  markup += `<g class="lp-ref-symbols" opacity=".7">
+    <!-- Whistle -->
+    <circle cx="${rfX}" cy="${rfY}" r="3.5" fill="none" stroke="rgba(220,200,160,.7)" stroke-width=".8"/>
+    <line x1="${rfX+2}" y1="${rfY-1}" x2="${rfX+6}" y2="${rfY-4}" stroke="rgba(220,200,160,.7)" stroke-width=".8"/>
+    <circle cx="${rfX+6.5}" cy="${rfY-4.5}" r="1.2" fill="rgba(220,200,160,.5)"/>
+    <!-- Red card -->
+    <rect x="${rfX-7}" y="${rfY-4}" width="5" height="7" rx="1"
+      fill="rgba(255,50,50,.65)" stroke="rgba(255,120,120,.4)" stroke-width=".5"/>
+  </g>`;
+
+  // ── Vortex energy at center (replaces plain dot) ─────────────────────────
+  markup += `<g class="lp-vortex" filter="url(#lp-glow-a)">
+    <circle cx="${cx}" cy="${cy}" r="8" fill="url(#lp-vortex-outer)" opacity=".7" class="lp-vortex-ring"/>
+    <circle cx="${cx}" cy="${cy}" r="4" fill="rgba(0,212,255,.4)" class="lp-vortex-core"/>
+    <circle cx="${cx}" cy="${cy}" r="1.8" fill="#fff" opacity=".9"/>
+  </g>`;
+
+  // ──  placeholder for particle stream (drawn after players) ───────────────
+  markup += `<g id="lp-particle-layer"></g>`;
+
+  // ── Player silhouettes layer ─────────────────────────────────────────────
   _pitchDots.a = [];
-  (lineupA?.players || []).forEach((p, i) => {
-    const base = _LP_POS_A[p.position] || _LP_POS_A.CM;
-    const cx = base[0] * _LP.W;
-    const cy = base[1] * _LP.H;
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', cx);
-    circle.setAttribute('cy', cy);
-    circle.setAttribute('r', '4.5');
-    circle.setAttribute('fill', '#4f83ff');
-    circle.setAttribute('stroke', '#fff');
-    circle.setAttribute('stroke-width', '1');
-    circle.classList.add('lp-dot');
-    circle.dataset.bx = cx;
-    circle.dataset.by = cy;
-    circle.dataset.pos = p.position;
-    svg.appendChild(circle);
-    _pitchDots.a.push(circle);
-  });
-
-  // Draw team B players
   _pitchDots.b = [];
-  (lineupB?.players || []).forEach((p, i) => {
-    const base = _LP_POS_B[p.position] || _LP_POS_B.CM;
-    const cx = base[0] * _LP.W;
-    const cy = base[1] * _LP.H;
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', cx);
-    circle.setAttribute('cy', cy);
-    circle.setAttribute('r', '4.5');
-    circle.setAttribute('fill', '#e74c3c');
-    circle.setAttribute('stroke', '#fff');
-    circle.setAttribute('stroke-width', '1');
-    circle.classList.add('lp-dot');
-    circle.dataset.bx = cx;
-    circle.dataset.by = cy;
-    circle.dataset.pos = p.position;
-    svg.appendChild(circle);
-    _pitchDots.b.push(circle);
-  });
+  _lpFocusEl   = null;
 
-  // Ball
-  const ball = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  ball.setAttribute('cx', _LP.cx);
-  ball.setAttribute('cy', _LP.cy);
-  ball.setAttribute('r', '3');
-  ball.setAttribute('fill', '#fff');
-  ball.setAttribute('stroke', '#333');
-  ball.setAttribute('stroke-width', '.8');
-  ball.classList.add('lp-ball');
-  svg.appendChild(ball);
-  _pitchDots.ball = ball;
+  const usedNumsA = new Set(), usedNumsB = new Set();
+  let focusX = cx, focusY = cy, focusBallX = cx, focusBallY = cy;
+  let bestOvr = -1;
+
+  // Render one team's players and return markup + dots array
+  const renderTeam = (players, posMap, colorMain, colorGlow, side, usedNums, teamRgs) => {
+    const EL = [];
+    players.forEach((p, i) => {
+      const pos  = p.position || 'CM';
+      const base = posMap[pos] || posMap.CM;
+      const bx   = base[0] * W;
+      const by   = base[1] * H;
+      let   num  = _JERSEY_LP[pos] ?? (i + 1);
+      while (usedNums.has(num)) num++;
+      usedNums.add(num);
+
+      const ovr      = p._ovr;
+      const tierCol  = _lpTierColor(ovr);
+      const isFocus  = (heroPlayer && p.name === heroPlayer.name);
+
+      // Build group
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('transform', `translate(${bx},${by})`);
+      g.classList.add('lp-player-g');
+      g.dataset.bx  = bx;
+      g.dataset.by  = by;
+      g.dataset.pos = pos;
+
+      let inner = _lpShadow(colorMain);
+
+      // Focus glow ring for hero player
+      if (isFocus) {
+        inner += `<circle cx="0" cy="4" r="9" fill="none" stroke="${tierCol}" stroke-width="1.2"
+          opacity=".7" class="lp-hero-ring"/>`;
+        focusX = bx; focusY = by;
+        _lpFocusEl = g;
+      }
+
+      inner += _lpSilhouette(colorMain, isFocus ? tierCol : colorGlow);
+      inner += _lpBadge(pos, num, ovr, colorMain, side);
+
+      // For focus player: add glow filter wrapper
+      if (isFocus) {
+        g.setAttribute('filter', 'url(#lp-glow-focus)');
+      }
+
+      g.innerHTML = inner;
+      svg.appendChild(g);
+      EL.push(g);
+
+      if (ovr > bestOvr) { bestOvr = ovr; focusBallX = bx; focusBallY = by; }
+    });
+    return EL;
+  };
+
+  svg.innerHTML = markup;
+
+  // Re-grab the particle layer (it's now in DOM after innerHTML assignment)
+  const particleLayer = svg.querySelector('#lp-particle-layer') || svg;
+
+  _pitchDots.a = renderTeam(playersA, _LP_POS_A, '#4f83ff', '#7ab0ff', 'a', usedNumsA, rgsA);
+  _pitchDots.b = renderTeam(playersB, _LP_POS_B, '#ff4d55', '#ff8a90', 'b', usedNumsB, rgsB);
+
+  // ── Ball (vortex) ────────────────────────────────────────────────────────
+  const ballG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  ballG.setAttribute('transform', `translate(${cx},${cy})`);
+  ballG.classList.add('lp-ball-g');
+  ballG.dataset.bx = cx;
+  ballG.dataset.by = cy;
+  ballG.innerHTML = `
+    <circle r="4.5" fill="url(#lp-ball-grad)" stroke="rgba(255,255,255,.8)" stroke-width=".8"/>
+    <circle r="2" fill="rgba(255,255,255,.6)"/>`;
+  svg.appendChild(ballG);
+  _pitchDots.ball = ballG;
+
+  // ── Particle stream from hero to ball ───────────────────────────────────
+  const streamLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  streamLine.setAttribute('x1', focusBallX);
+  streamLine.setAttribute('y1', focusBallY);
+  streamLine.setAttribute('x2', cx);
+  streamLine.setAttribute('y2', cy);
+  streamLine.setAttribute('stroke', _lpTierColor(bestOvr));
+  streamLine.setAttribute('stroke-width', '0.9');
+  streamLine.setAttribute('stroke-dasharray', '2 4');
+  streamLine.setAttribute('opacity', '0.45');
+  streamLine.classList.add('lp-particle');
+  svg.appendChild(streamLine);
+  _lpParticleEl = streamLine;
 
   // Start idle drift
   _startPitchDrift();
@@ -2028,26 +2442,32 @@ function initLivePitch(lineupA, lineupB) {
 
 function _startPitchDrift() {
   if (_pitchDriftInterval) clearInterval(_pitchDriftInterval);
-  _pitchDriftInterval = setInterval(_driftPlayers, 900);
+  _pitchDriftInterval = setInterval(_driftPlayers, 950);
 }
 
 function _driftPlayers() {
-  const jitter = (dot, amp) => {
-    const bx = parseFloat(dot.dataset.bx);
-    const by = parseFloat(dot.dataset.by);
-    const nx = Math.max(4, Math.min(_LP.W - 4, bx + (Math.random() - .5) * amp));
-    const ny = Math.max(4, Math.min(_LP.H - 4, by + (Math.random() - .5) * amp));
-    dot.setAttribute('cx', nx);
-    dot.setAttribute('cy', ny);
+  const W = _LP.W, H = _LP.H;
+  const jitter = (g, amp) => {
+    const bx = parseFloat(g.dataset.bx);
+    const by = parseFloat(g.dataset.by);
+    const nx = Math.max(6, Math.min(W - 6, bx + (Math.random() - .5) * amp));
+    const ny = Math.max(6, Math.min(H - 6, by + (Math.random() - .5) * amp));
+    g.setAttribute('transform', `translate(${nx},${ny})`);
   };
-  _pitchDots.a.forEach(d => jitter(d, 6));
-  _pitchDots.b.forEach(d => jitter(d, 6));
-  // Ball wanders toward midfield
+  _pitchDots.a.forEach(g => jitter(g, 5));
+  _pitchDots.b.forEach(g => jitter(g, 5));
+  // Ball vortex wanders
   if (_pitchDots.ball) {
-    const bx = _LP.cx + (Math.random() - .5) * 40;
-    const by = _LP.cy + (Math.random() - .5) * 40;
-    _pitchDots.ball.setAttribute('cx', bx);
-    _pitchDots.ball.setAttribute('cy', by);
+    const bx = _LP.cx + (Math.random() - .5) * 38;
+    const by = _LP.cy + (Math.random() - .5) * 38;
+    _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
+    _pitchDots.ball.dataset.bx = bx;
+    _pitchDots.ball.dataset.by = by;
+    // Update particle stream endpoint
+    if (_lpParticleEl) {
+      _lpParticleEl.setAttribute('x2', bx);
+      _lpParticleEl.setAttribute('y2', by);
+    }
   }
 }
 
@@ -2063,26 +2483,21 @@ function animatePitchEvent(type, ev) {
 
   if (type === 'goal') {
     phaseEl.textContent = `${t('phase-goal')} — ${teamLabel}`;
-    // Push attacking team forward toward goal, defenders back
     const attackers = ev.side === 'A' ? _pitchDots.a : _pitchDots.b;
-    const defenders = ev.side === 'A' ? _pitchDots.b : _pitchDots.a;
-    attackers.forEach(d => {
+    attackers.forEach(g => {
       const goalY = ev.side === 'A' ? _LP.H * 0.88 : _LP.H * 0.12;
-      const cx  = parseFloat(d.getAttribute('cx'));
-      const cy  = parseFloat(d.getAttribute('cy'));
-      d.setAttribute('cx', cx + (Math.random() - .5) * 12);
-      d.setAttribute('cy', cy + (goalY - cy) * 0.4);
+      const bx = parseFloat(g.dataset.bx);
+      const by = parseFloat(g.dataset.by);
+      const nx = bx + (Math.random() - .5) * 12;
+      const ny = by + (goalY - by) * 0.4;
+      g.setAttribute('transform', `translate(${nx},${ny})`);
     });
-    // Ball to goal area
     if (_pitchDots.ball) {
-      _pitchDots.ball.setAttribute('cx', _LP.cx + (Math.random() - .5) * 20);
-      _pitchDots.ball.setAttribute('cy', ev.side === 'A' ? _LP.H * 0.92 : _LP.H * 0.08);
+      const bx = _LP.cx + (Math.random() - .5) * 20;
+      const by = ev.side === 'A' ? _LP.H * 0.92 : _LP.H * 0.08;
+      _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
     }
-    // Reset toward base after 2s
-    setTimeout(() => {
-      phaseEl.textContent = t('phase-playing');
-      _resetToBase();
-    }, 2200);
+    setTimeout(() => { phaseEl.textContent = t('phase-playing'); _resetToBase(); }, 2200);
   } else if (type === 'yellow' || type === 'red') {
     phaseEl.textContent = type === 'yellow'
       ? `${t('phase-yellow')} — ${teamLabel}`
@@ -2096,8 +2511,7 @@ function animatePitchEvent(type, ev) {
     if (_pitchDots.ball) {
       const cornerX = ev.side === 'A' ? _LP.W * 0.96 : _LP.W * 0.04;
       const cornerY = Math.random() < 0.5 ? _LP.H * 0.97 : _LP.H * 0.03;
-      _pitchDots.ball.setAttribute('cx', cornerX);
-      _pitchDots.ball.setAttribute('cy', cornerY);
+      _pitchDots.ball.setAttribute('transform', `translate(${cornerX},${cornerY})`);
     }
     setTimeout(() => { phaseEl.textContent = t('phase-playing'); _resetToBase(); }, 1100);
   } else if (type === 'freekick') {
@@ -2110,18 +2524,9 @@ function animatePitchEvent(type, ev) {
 }
 
 function _resetToBase() {
-  _pitchDots.a.forEach(d => {
-    d.setAttribute('cx', d.dataset.bx);
-    d.setAttribute('cy', d.dataset.by);
-  });
-  _pitchDots.b.forEach(d => {
-    d.setAttribute('cx', d.dataset.bx);
-    d.setAttribute('cy', d.dataset.by);
-  });
-  if (_pitchDots.ball) {
-    _pitchDots.ball.setAttribute('cx', _LP.cx);
-    _pitchDots.ball.setAttribute('cy', _LP.cy);
-  }
+  _pitchDots.a.forEach(g => g.setAttribute('transform', `translate(${g.dataset.bx},${g.dataset.by})`));
+  _pitchDots.b.forEach(g => g.setAttribute('transform', `translate(${g.dataset.bx},${g.dataset.by})`));
+  if (_pitchDots.ball) _pitchDots.ball.setAttribute('transform', `translate(${_LP.cx},${_LP.cy})`);
 }
 
 function stopLivePitch() {
@@ -2183,12 +2588,23 @@ function playLiveMatch(data, payload, tickMs = 300) {
   viewer.classList.remove('hidden', 'live-fade-out');
   document.getElementById('live-team-a').textContent  = payload.teamA;
   document.getElementById('live-team-b').textContent  = payload.teamB;
-  document.getElementById('live-clock').textContent   = "0'";
+  const isPenMode = payload.matchMode === 'penalties';
+  document.getElementById('live-clock').textContent   = isPenMode ? '🥅' : "0'";
   document.getElementById('live-score-a').textContent = '0';
   document.getElementById('live-score-b').textContent = '0';
   document.getElementById('live-feed').innerHTML      = '';
-  drawRadar(data.ratings, payload.teamA, payload.teamB);
-  initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
+
+  // In penalties mode hide the pitch and radar (irrelevant for a shootout)
+  const pitchWrap  = document.querySelector('.live-pitch-wrap');
+  const radarWrap  = document.getElementById('radar-svg')?.closest('.radar-wrap') ||
+                     document.getElementById('radar-svg')?.parentElement;
+  if (pitchWrap)  pitchWrap.style.display  = isPenMode ? 'none' : '';
+  if (radarWrap)  radarWrap.style.display  = isPenMode ? 'none' : '';
+
+  if (!isPenMode) {
+    drawRadar(data.ratings, payload.teamA, payload.teamB);
+    initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
+  }
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
@@ -2274,18 +2690,21 @@ function playLiveMatch(data, payload, tickMs = 300) {
     }, startAt));
   });
 
-  // ── Penalty shootout animation (if draw) ────────────────────────
+  // ── Penalty shootout animation (if draw OR penalties-only mode) ──
   const pens = finalScore.penalties;
-  const regularMs = Math.max(90 * TICK, accDelay);
+  // Penalties-only mode: skip the 90-min clock entirely, start shootout immediately
+  const regularMs = isPenMode ? 0 : Math.max(90 * TICK, accDelay);
+  if (isPenMode && _liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
   let penaltyEndMs = 0;
   if (pens) {
     const kicks = Math.max(pens.shotsA.length, pens.shotsB.length);
-    penaltyEndMs = regularMs + 900 + kicks * 1100 + 1400;
 
-    // Full-time whistle before shootout (so users see the draw score clearly)
-    const ftLabel = (_lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
-      ` — ${finalScore.teamA}:${finalScore.teamB}`;
-    _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50));
+    // Full-time whistle only for regular matches ending in a draw (not penalties-only mode)
+    if (!isPenMode) {
+      const ftLabel = (_lang === 'es' ? '⏱ PITIDO FINAL' : '⏱ FULL TIME') +
+        ` — ${finalScore.teamA}:${finalScore.teamB}`;
+      _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'ft_whistle', minute: 90, name: ftLabel, side: 'N' }), regularMs + 50));
+    }
 
     // Cinematic penalty shootout splash
     _eventTimers.push(setTimeout(() => triggerShootoutSplash(payload.teamA, payload.teamB), regularMs + 300));
@@ -2293,19 +2712,32 @@ function playLiveMatch(data, payload, tickMs = 300) {
     // Announcement feed entry
     _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500));
 
-    let penT = regularMs + 900;
+    // GK names for the PARADA label (opposing GK faces each kick)
+    const gkA = data.lineups?.teamA?.players?.find(p => p.position === 'GK')?.name || '';
+    const gkB = data.lineups?.teamB?.players?.find(p => p.position === 'GK')?.name || '';
+
+    // Splash starts at regularMs+300, countdown 4×700ms + 600ms hide = ~3400ms → done at regularMs+3700.
+    // Add 400ms padding so the first kick starts cleanly after the overlay is gone.
+    let penT = regularMs + 4100;
+    let runA = 0, runB = 0;
     for (let i = 0; i < kicks; i++) {
       const kA = pens.shotsA[i];
       const kB = pens.shotsB[i];
       if (kA) {
-        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'A', scored: k.scored }), t))(penT, kA));
-        penT += 560;
+        if (kA.scored) runA++;
+        const snapA = runA, snapB = runB;
+        _eventTimers.push(((t, k, sA, sB) => setTimeout(() => triggerPenKickAnim(k.name, k.scored, sA, sB, payload.teamA, payload.teamB, gkB), t))(penT, kA, snapA, snapB));
+        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'A', scored: k.scored }), t))(penT + 1300, kA));
+        penT += 3000;
       }
       if (kB) {
-        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'B', scored: k.scored }), t))(penT, kB));
-        penT += 560;
+        if (kB.scored) runB++;
+        const snapA = runA, snapB = runB;
+        _eventTimers.push(((t, k, sA, sB) => setTimeout(() => triggerPenKickAnim(k.name, k.scored, sA, sB, payload.teamA, payload.teamB, gkA), t))(penT, kB, snapA, snapB));
+        _eventTimers.push(((t, k) => setTimeout(() => addFeedEvent({ type: k.scored ? 'pen_goal' : 'pen_miss', minute: 90, name: k.name, side: 'B', scored: k.scored }), t))(penT + 1300, kB));
+        penT += 3000;
       }
-      penT += 140;
+      penT += 200;
     }
     // Winner overlay
     _eventTimers.push(setTimeout(() => {
@@ -2313,6 +2745,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
       addFeedEvent({ type: 'pen_winner', minute: 90, name: winName, side: pens.winner });
       triggerEventOverlay('pen_winner', winName, `${pens.scoreA}–${pens.scoreB}`);
     }, penT + 400));
+    penaltyEndMs = penT + 400;
   }
 
   // Finish after full match + optional penalty sequence.
@@ -2428,8 +2861,15 @@ function finishLive() {
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1);  _overlayHideTimer1 = null; }
   if (_overlayHideTimer2) { clearTimeout(_overlayHideTimer2);  _overlayHideTimer2 = null; }
   _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
+  document.getElementById('pen-kick-overlay')?.classList.add('hidden');
   // Always hide event overlay before transitioning to results
   document.getElementById('event-overlay').classList.add('hidden');
+  // Restore pitch/radar visibility for the next match
+  const pitchWrap = document.querySelector('.live-pitch-wrap');
+  const radarSvg  = document.getElementById('radar-svg');
+  const radarWrap = radarSvg?.closest('.radar-wrap') || radarSvg?.parentElement;
+  if (pitchWrap) pitchWrap.style.display = '';
+  if (radarWrap) radarWrap.style.display = '';
   stopLivePitch();
   const viewer = document.getElementById('live-viewer');
   viewer.classList.add('live-fade-out');
@@ -2446,6 +2886,7 @@ function finishLive() {
 
 function skipLive() {
   document.getElementById('event-overlay').classList.add('hidden');
+  document.getElementById('pen-kick-overlay')?.classList.add('hidden');
   finishLive();
 }
 
@@ -2514,6 +2955,112 @@ function renderPenalties(penalties, teamA, teamB) {
     `<div class="pen-winner pen-winner-anim">🏆 <strong>${escHtml(winnerName)}</strong> ${t('pen-winner-suffix')}${sdNote}</div>`;
   // Trigger win confetti burst
   _penConfetti();
+}
+
+// ── Penalty kick animation ─────────────────────────────────────
+function triggerPenKickAnim(kickerName, scored, penScoreA, penScoreB, teamA, teamB, gkName) {
+  const overlay = document.getElementById('pen-kick-overlay');
+  if (!overlay) return;
+  const ballEl  = document.getElementById('pko-ball');
+  const gkEl    = document.getElementById('pko-gk-g');
+  const nameEl  = document.getElementById('pko-kicker-name');
+  const lblEl   = document.getElementById('pko-result-label');
+  const scoreEl = document.getElementById('pko-score-bar');
+
+  // Reset
+  ballEl.classList.remove('kick', 'miss-spin');
+  gkEl.classList.remove('dive-left', 'dive-right', 'dive-up');
+  lblEl.classList.remove('show', 'goal', 'miss', 'saved');
+  void ballEl.offsetWidth;
+  nameEl.textContent = kickerName;
+  lblEl.textContent  = '';
+  if (scoreEl && teamA != null) scoreEl.textContent = `${teamA}  ${penScoreA}–${penScoreB}  ${teamB}`;
+
+  // Pre-determine outcome so ball trajectory matches the result type
+  // 'saved' = 60% of misses, 'fuera' = remaining 40%
+  const outcome = scored ? 'goal' : (Math.random() < 0.6 ? 'saved' : 'fuera');
+
+  // Target positions per outcome
+  const goalTargets = [
+    { tx: -55, ty: -95, scale: .45 },
+    { tx:  55, ty: -95, scale: .45 },
+    { tx: -45, ty: -55, scale: .50 },
+    { tx:  45, ty: -55, scale: .50 },
+  ];
+  // Saved: toward goal but stoppable — GK dives same direction
+  const savedTargets = [
+    { tx: -50, ty: -80, scale: .47 },
+    { tx:  50, ty: -80, scale: .47 },
+    { tx: -40, ty: -50, scale: .52 },
+    { tx:  40, ty: -50, scale: .52 },
+  ];
+  // Fuera: way outside the goal frame (over the bar or wide)
+  const fueraTargets = [
+    { tx:   0, ty: -160, scale: .22 },  // high over the bar
+    { tx: -130, ty: -30, scale: .35 },  // wide left
+    { tx:  130, ty: -30, scale: .35 },  // wide right
+    { tx: -100, ty: -130, scale: .28 }, // high & wide left
+    { tx:  100, ty: -130, scale: .28 }, // high & wide right
+  ];
+
+  const pool = outcome === 'goal' ? goalTargets : outcome === 'saved' ? savedTargets : fueraTargets;
+  const target = pool[Math.floor(Math.random() * pool.length)];
+
+  // GK: dives opposite for goals (fooled), same side for saves, stands for fuera
+  const ballDir = target.tx < -20 ? 'left' : target.tx > 20 ? 'right' : 'center';
+  let gkClass;
+  if (outcome === 'goal') {
+    gkClass = ballDir === 'left' ? 'dive-right' : ballDir === 'right' ? 'dive-left' : 'dive-up';
+  } else if (outcome === 'saved') {
+    gkClass = ballDir === 'left' ? 'dive-left' : ballDir === 'right' ? 'dive-right' : 'dive-up';
+  } else {
+    // fuera — ball goes wide/over, GK barely reacts
+    gkClass = 'dive-up';
+  }
+
+  // Show overlay
+  overlay.classList.remove('hidden', 'pko-out');
+  void overlay.offsetWidth;
+  overlay.classList.add('pko-in');
+
+  // 400ms → GK dives (slower, more tension)
+  setTimeout(() => gkEl.classList.add(gkClass), 400);
+
+  // 600ms → ball flies
+  setTimeout(() => {
+    ballEl.style.setProperty('--pko-tx',    target.tx + 'px');
+    ballEl.style.setProperty('--pko-ty',    target.ty + 'px');
+    ballEl.style.setProperty('--pko-scale', target.scale);
+    ballEl.classList.add(outcome === 'goal' ? 'kick' : 'miss-spin');
+  }, 600);
+
+  // 1300ms → result label with big pop animation
+  setTimeout(() => {
+    let resultText, resultClass;
+    if (outcome === 'goal') {
+      resultText  = _lang === 'en' ? '⚽ GOAL!' : '⚽ ¡GOOOL!';
+      resultClass = 'goal';
+    } else if (outcome === 'saved') {
+      const gkLabel = gkName ? ` ${gkName}` : '';
+      resultText  = _lang === 'en' ? `🧤 SAVED!${gkLabel}` : `🧤 ¡PARADA!${gkLabel}`;
+      resultClass = 'saved';
+    } else {
+      resultText  = _lang === 'en' ? '❌ MISSED!' : '❌ ¡FUERA!';
+      resultClass = 'miss';
+    }
+    lblEl.textContent = resultText;
+    lblEl.classList.add('show', resultClass);
+  }, 1300);
+
+  // 2600ms → fade out overlay
+  setTimeout(() => {
+    overlay.classList.remove('pko-in');
+    overlay.classList.add('pko-out');
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('pko-out');
+    }, 300);
+  }, 2600);
 }
 
 // ── Penalty shootout cinematic splash ─────────────────────────
@@ -2596,10 +3143,12 @@ function setupAutocomplete(inputId, dropdownId, teamSide) {
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
     if (q.length < 2) { drop.classList.add('hidden'); return; }
-    const matches = _acList.filter(s => s.toLowerCase().includes(q)).slice(0, 12);
+    const matches = _acList.filter(s => s.name.toLowerCase().includes(q)).slice(0, 12);
     if (!matches.length) { drop.classList.add('hidden'); return; }
     drop.innerHTML = matches.map(m =>
-      `<div class="ac-item" data-val="${escHtml(m)}">${escHtml(m)}</div>`
+      `<div class="ac-item" data-val="${escHtml(m.name)}">` +
+      `<img class="ac-badge" src="${escHtml(badgeOrPlaceholder(m.badge))}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
+      `<span>${escHtml(m.name)}</span></div>`
     ).join('');
     drop.classList.remove('hidden');
     drop.querySelectorAll('.ac-item').forEach(item => {

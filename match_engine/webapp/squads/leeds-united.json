@@ -1,0 +1,781 @@
+{
+  "slug": "leeds-united",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Illan Meslier",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Klaesson",
+          "position": "GK"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Robin Koch",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB"
+        },
+        {
+          "name": "Liam Cooper",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Cresswell",
+          "position": "CB"
+        },
+        {
+          "name": "Kris Moore",
+          "position": "CB"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "CB"
+        },
+        {
+          "name": "Leif Davis",
+          "position": "CB"
+        },
+        {
+          "name": "Leo Hjelde",
+          "position": "CB"
+        },
+        {
+          "name": "Liam McCarron",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Ayling",
+          "position": "CB"
+        },
+        {
+          "name": "Cody Drameh",
+          "position": "CB"
+        },
+        {
+          "name": "Jamie Shackleton",
+          "position": "CB"
+        },
+        {
+          "name": "Kalvin Phillips",
+          "position": "CM"
+        },
+        {
+          "name": "Mateusz Klich",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Jenkins",
+          "position": "CM"
+        },
+        {
+          "name": "Nohan Kenneh",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Forshaw",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Bate",
+          "position": "CM"
+        },
+        {
+          "name": "Archie Gray",
+          "position": "CM"
+        },
+        {
+          "name": "Stuart Dallas",
+          "position": "CM"
+        },
+        {
+          "name": "Stuart McKinstry",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Greenwood",
+          "position": "CM"
+        },
+        {
+          "name": "Raphinha",
+          "position": "ST"
+        },
+        {
+          "name": "Jack Harrison",
+          "position": "ST"
+        },
+        {
+          "name": "Crysencio Summerville",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Hélder Costa",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Poveda",
+          "position": "ST"
+        },
+        {
+          "name": "Tyler Roberts",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Bamford",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Gelhardt",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Leeds United (2021/2022)",
+      "teamLabel": "Leeds United (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Illan Meslier",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Klaesson",
+          "position": "GK"
+        },
+        {
+          "name": "Joel Robles",
+          "position": "GK"
+        },
+        {
+          "name": "Dani van den Heuvel",
+          "position": "GK"
+        },
+        {
+          "name": "Robin Koch",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB"
+        },
+        {
+          "name": "Maximilian Wöber",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Cresswell",
+          "position": "CB"
+        },
+        {
+          "name": "Liam Cooper",
+          "position": "CB"
+        },
+        {
+          "name": "Diogo Monteiro",
+          "position": "CB"
+        },
+        {
+          "name": "Jeremiah Chilokoa-Mullen",
+          "position": "CB"
+        },
+        {
+          "name": "Kris Moore",
+          "position": "CB"
+        },
+        {
+          "name": "James Debayo",
+          "position": "CB"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "CB"
+        },
+        {
+          "name": "Leo Hjelde",
+          "position": "CB"
+        },
+        {
+          "name": "Rasmus Kristensen",
+          "position": "CB"
+        },
+        {
+          "name": "Cody Drameh",
+          "position": "CB"
+        },
+        {
+          "name": "Jamie Shackleton",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Ayling",
+          "position": "CB"
+        },
+        {
+          "name": "Tyler Adams",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Roca",
+          "position": "CM"
+        },
+        {
+          "name": "Mateusz Klich",
+          "position": "CM"
+        },
+        {
+          "name": "Weston McKennie",
+          "position": "CM"
+        },
+        {
+          "name": "Darko Gyabi",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Forshaw",
+          "position": "CM"
+        },
+        {
+          "name": "Archie Gray",
+          "position": "CM"
+        },
+        {
+          "name": "Alfie McCalmont",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Allen",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Snowdon",
+          "position": "CM"
+        },
+        {
+          "name": "Stuart Dallas",
+          "position": "CM"
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Greenwood",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Harrison",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Sinisterra",
+          "position": "ST"
+        },
+        {
+          "name": "Crysencio Summerville",
+          "position": "ST"
+        },
+        {
+          "name": "Amari Miller",
+          "position": "ST"
+        },
+        {
+          "name": "Wilfried Gnonto",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Sonny Perkins",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Poveda",
+          "position": "ST"
+        },
+        {
+          "name": "Tyler Roberts",
+          "position": "ST"
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Bamford",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Gelhardt",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo",
+          "position": "ST"
+        },
+        {
+          "name": "Mateo Joseph",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Leeds United (2022/2023)",
+      "teamLabel": "Leeds United (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Illan Meslier",
+          "position": "GK"
+        },
+        {
+          "name": "Kristoffer Klaesson",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK"
+        },
+        {
+          "name": "Dani van den Heuvel",
+          "position": "GK"
+        },
+        {
+          "name": "Harry Christy",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Rodon",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Cresswell",
+          "position": "CB"
+        },
+        {
+          "name": "Liam Cooper",
+          "position": "CB"
+        },
+        {
+          "name": "Kris Moore",
+          "position": "CB"
+        },
+        {
+          "name": "Djed Spence",
+          "position": "CB"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "CB"
+        },
+        {
+          "name": "Leo Hjelde",
+          "position": "CB"
+        },
+        {
+          "name": "Sam Byram",
+          "position": "CB"
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "Cody Drameh",
+          "position": "CB"
+        },
+        {
+          "name": "Jamie Shackleton",
+          "position": "CB"
+        },
+        {
+          "name": "Luke Ayling",
+          "position": "CB"
+        },
+        {
+          "name": "Ethan Ampadu",
+          "position": "CM"
+        },
+        {
+          "name": "Ilia Gruev",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Crew",
+          "position": "CM"
+        },
+        {
+          "name": "Archie Gray",
+          "position": "CM"
+        },
+        {
+          "name": "Glen Kamara",
+          "position": "CM"
+        },
+        {
+          "name": "Darko Gyabi",
+          "position": "CM"
+        },
+        {
+          "name": "Lewis Bate",
+          "position": "CM"
+        },
+        {
+          "name": "Stuart Dallas",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Greenwood",
+          "position": "CM"
+        },
+        {
+          "name": "Crysencio Summerville",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Sinisterra",
+          "position": "ST"
+        },
+        {
+          "name": "Jaidon Anthony",
+          "position": "ST"
+        },
+        {
+          "name": "Wilfried Gnonto",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Sonny Perkins",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Poveda",
+          "position": "ST"
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST"
+        },
+        {
+          "name": "Joël Piroe",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Bamford",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Gelhardt",
+          "position": "ST"
+        },
+        {
+          "name": "Mateo Joseph",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Leeds United (2023/2024)",
+      "teamLabel": "Leeds United (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Illan Meslier",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK"
+        },
+        {
+          "name": "Alex Cairns",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Rodon",
+          "position": "CB"
+        },
+        {
+          "name": "Maximilian Wöber",
+          "position": "CB"
+        },
+        {
+          "name": "James Debayo",
+          "position": "CB"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "CB"
+        },
+        {
+          "name": "Isaac Schmidt",
+          "position": "CB"
+        },
+        {
+          "name": "Sam Byram",
+          "position": "CB"
+        },
+        {
+          "name": "Jayden Bogle",
+          "position": "CB"
+        },
+        {
+          "name": "Ethan Ampadu",
+          "position": "CM"
+        },
+        {
+          "name": "Ilia Gruev",
+          "position": "CM"
+        },
+        {
+          "name": "Josuha Guilavogui",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Crew",
+          "position": "CM"
+        },
+        {
+          "name": "Ao Tanaka",
+          "position": "CM"
+        },
+        {
+          "name": "Darko Gyabi",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Rothwell",
+          "position": "CM"
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Chambers",
+          "position": "CM"
+        },
+        {
+          "name": "Manor Solomon",
+          "position": "ST"
+        },
+        {
+          "name": "Largie Ramazani",
+          "position": "ST"
+        },
+        {
+          "name": "Wilfried Gnonto",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST"
+        },
+        {
+          "name": "Joël Piroe",
+          "position": "ST"
+        },
+        {
+          "name": "Mateo Joseph",
+          "position": "ST"
+        },
+        {
+          "name": "Joe Gelhardt",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Bamford",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Gray",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Leeds United (2024/2025)",
+      "teamLabel": "Leeds United (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lucas Perri",
+          "position": "GK"
+        },
+        {
+          "name": "Illan Meslier",
+          "position": "GK"
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK"
+        },
+        {
+          "name": "Alex Cairns",
+          "position": "GK"
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB"
+        },
+        {
+          "name": "Jaka Bijol",
+          "position": "CB"
+        },
+        {
+          "name": "Joe Rodon",
+          "position": "CB"
+        },
+        {
+          "name": "Sebastiaan Bornauw",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Gudmundsson",
+          "position": "CB"
+        },
+        {
+          "name": "Sam Byram",
+          "position": "CB"
+        },
+        {
+          "name": "Jayden Bogle",
+          "position": "CB"
+        },
+        {
+          "name": "James Justin",
+          "position": "CB"
+        },
+        {
+          "name": "Ethan Ampadu",
+          "position": "CM"
+        },
+        {
+          "name": "Anton Stach",
+          "position": "CM"
+        },
+        {
+          "name": "Ilia Gruev",
+          "position": "CM"
+        },
+        {
+          "name": "Charlie Crew",
+          "position": "CM"
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM"
+        },
+        {
+          "name": "Ao Tanaka",
+          "position": "CM"
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "CM"
+        },
+        {
+          "name": "Facundo Buonanotte",
+          "position": "CM"
+        },
+        {
+          "name": "Noah Okafor",
+          "position": "ST"
+        },
+        {
+          "name": "Wilfried Gnonto",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel James",
+          "position": "ST"
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST"
+        },
+        {
+          "name": "Joël Piroe",
+          "position": "ST"
+        },
+        {
+          "name": "Lukas Nmecha",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Leeds United (2025/2026)",
+      "teamLabel": "Leeds United (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/leeds-united.png",
+  "id": 399,
+  "name": "Leeds United"
+}

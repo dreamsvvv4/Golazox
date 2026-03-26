@@ -1,112 +1,905 @@
 {
   "slug": "fc-arsenal",
   "seasons": {
-    "1998": {
-      "found": true,
-      "formation": "4-3-3",
+    "1994": {
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Grazer AK",
+          "name": "David Seaman",
           "position": "GK"
         },
         {
-          "name": "Luton Town",
-          "position": "RB"
+          "name": "Vince Bartram",
+          "position": "GK"
         },
         {
-          "name": "Monaco",
+          "name": "Lee Harper",
+          "position": "GK"
+        },
+        {
+          "name": "Tony Adams",
           "position": "CB"
         },
         {
-          "name": "Queens Park Rangers",
+          "name": "Andy Linighan",
           "position": "CB"
         },
         {
-          "name": "SCO",
-          "position": "LB"
+          "name": "Steve Bould",
+          "position": "CB"
         },
         {
-          "name": "Sporting CP",
-          "position": "DM"
+          "name": "Martin Keown",
+          "position": "CB"
         },
         {
-          "name": "Ajax",
+          "name": "Scott Marshall",
+          "position": "CB"
+        },
+        {
+          "name": "Nigel Winterburn",
+          "position": "CB"
+        },
+        {
+          "name": "Pål Lydersen",
+          "position": "CB"
+        },
+        {
+          "name": "Gavin McGowan",
+          "position": "CB"
+        },
+        {
+          "name": "Lee Dixon",
+          "position": "CB"
+        },
+        {
+          "name": "Steve Morrow",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Davis",
           "position": "CM"
         },
         {
-          "name": "Southend United",
+          "name": "Eddie McGoldrick",
           "position": "CM"
         },
         {
-          "name": "NED",
-          "position": "RW"
+          "name": "Stefan Schwarz",
+          "position": "CM"
         },
         {
-          "name": "LBR",
+          "name": "John Jensen",
+          "position": "CM"
+        },
+        {
+          "name": "David Hillier",
+          "position": "CM"
+        },
+        {
+          "name": "Ian Selley",
+          "position": "CM"
+        },
+        {
+          "name": "Ray Parlour",
+          "position": "CM"
+        },
+        {
+          "name": "Stephen Hughes",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Merson",
+          "position": "CM"
+        },
+        {
+          "name": "Adrian Clarke",
+          "position": "CM"
+        },
+        {
+          "name": "Glenn Helder",
           "position": "ST"
         },
         {
-          "name": "Middlesbrough",
-          "position": "CM"
+          "name": "Jimmy Carter",
+          "position": "ST"
+        },
+        {
+          "name": "Mark Flatts",
+          "position": "ST"
+        },
+        {
+          "name": "Kevin Campbell",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Wright",
+          "position": "ST"
+        },
+        {
+          "name": "Alan Smith",
+          "position": "ST"
+        },
+        {
+          "name": "John Hartson",
+          "position": "ST"
+        },
+        {
+          "name": "Paul Dickov",
+          "position": "ST"
+        },
+        {
+          "name": "Paul Shaw",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Kiwomya",
+          "position": "ST"
         }
       ],
-      "ratings": null,
-      "source": "Wikipedia — \"1997–98 Arsenal F.C. season\"",
-      "teamLabel": "Arsenal (1998)"
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (1994/1995)",
+      "teamLabel": "Arsenal (1994-95)"
     },
-    "2005": {
-      "found": true,
-      "formation": "4-3-3",
+    "2001": {
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Celta Vigo",
+          "name": "Craig Holloway",
           "position": "GK"
         },
         {
-          "name": "Beveren",
-          "position": "RB"
+          "name": "David Seaman",
+          "position": "GK"
         },
         {
-          "name": "Leicester City",
+          "name": "Stuart Taylor",
+          "position": "GK"
+        },
+        {
+          "name": "Richard Wright",
+          "position": "GK"
+        },
+        {
+          "name": "Graham Stack",
+          "position": "GK"
+        },
+        {
+          "name": "Tony Adams",
           "position": "CB"
         },
         {
-          "name": "Queens Park Rangers",
+          "name": "Martin Keown",
           "position": "CB"
         },
         {
-          "name": "ENG",
-          "position": "LB"
+          "name": "Matthew Upson",
+          "position": "CB"
         },
         {
-          "name": "Marseille",
-          "position": "DM"
+          "name": "Sol Campbell",
+          "position": "CB"
         },
         {
-          "name": "Middlesbrough",
+          "name": "Igors Stepanovs",
+          "position": "CB"
+        },
+        {
+          "name": "Stathis Tavlaridis",
+          "position": "CB"
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Juan",
+          "position": "CB"
+        },
+        {
+          "name": "Lee Dixon",
+          "position": "CB"
+        },
+        {
+          "name": "Laurén",
+          "position": "CB"
+        },
+        {
+          "name": "Oleg Luzhnyi",
+          "position": "CB"
+        },
+        {
+          "name": "Moritz Volz",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Vieira",
           "position": "CM"
         },
         {
-          "name": "AFC Bournemouth",
+          "name": "Gilles Grimandi",
           "position": "CM"
         },
         {
-          "name": "Feyenoord",
-          "position": "RW"
+          "name": "Junichi Inamoto",
+          "position": "CM"
         },
         {
-          "name": "West Bromwich Albion",
+          "name": "John Halls",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Svärd",
+          "position": "CM"
+        },
+        {
+          "name": "Ray Parlour",
+          "position": "CM"
+        },
+        {
+          "name": "Edú Gaspar",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Rohan Ricketts",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Jermaine Pennant",
           "position": "ST"
         },
         {
-          "name": "Charlton Athletic",
-          "position": "LW"
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Francis Jeffers",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémie Aliadière",
+          "position": "ST"
+        },
+        {
+          "name": "Carlin Itonga",
+          "position": "ST"
         }
       ],
-      "ratings": null,
-      "source": "Wikipedia — \"2004–05 Arsenal F.C. season\"",
-      "teamLabel": "Arsenal (2005)"
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (2001/2002)",
+      "teamLabel": "Arsenal (2001-02)"
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Craig Holloway",
+          "position": "GK"
+        },
+        {
+          "name": "David Seaman",
+          "position": "GK"
+        },
+        {
+          "name": "Stuart Taylor",
+          "position": "GK"
+        },
+        {
+          "name": "Guillaume Warmuz",
+          "position": "GK"
+        },
+        {
+          "name": "Rami Shaaban",
+          "position": "GK"
+        },
+        {
+          "name": "Matthew Upson",
+          "position": "CB"
+        },
+        {
+          "name": "Martin Keown",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Cygan",
+          "position": "CB"
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB"
+        },
+        {
+          "name": "Igors Stepanovs",
+          "position": "CB"
+        },
+        {
+          "name": "Stathis Tavlaridis",
+          "position": "CB"
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Garry",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Moritz Volz",
+          "position": "CB"
+        },
+        {
+          "name": "Laurén",
+          "position": "CB"
+        },
+        {
+          "name": "Oleg Luzhnyi",
+          "position": "CB"
+        },
+        {
+          "name": "Justin Hoyte",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Vieira",
+          "position": "CM"
+        },
+        {
+          "name": "Gilberto Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Svärd",
+          "position": "CM"
+        },
+        {
+          "name": "Steve Sidwell",
+          "position": "CM"
+        },
+        {
+          "name": "Ray Parlour",
+          "position": "CM"
+        },
+        {
+          "name": "Edú Gaspar",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "David Bentley",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Jerome Thomas",
+          "position": "ST"
+        },
+        {
+          "name": "Jermaine Pennant",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Francis Jeffers",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémie Aliadière",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (2002/2003)",
+      "teamLabel": "Arsenal (2002-03)"
+    },
+    "2003": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Stuart Taylor",
+          "position": "GK"
+        },
+        {
+          "name": "Rami Shaaban",
+          "position": "GK"
+        },
+        {
+          "name": "Graham Stack",
+          "position": "GK"
+        },
+        {
+          "name": "Craig Holloway",
+          "position": "GK"
+        },
+        {
+          "name": "Martin Keown",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Cygan",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Senderos",
+          "position": "CB"
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB"
+        },
+        {
+          "name": "Stathis Tavlaridis",
+          "position": "CB"
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB"
+        },
+        {
+          "name": "Laurén",
+          "position": "CB"
+        },
+        {
+          "name": "Justin Hoyte",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Simek",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Vieira",
+          "position": "CM"
+        },
+        {
+          "name": "Gilberto Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Ólafur Ingi Skúlason",
+          "position": "CM"
+        },
+        {
+          "name": "Ray Parlour",
+          "position": "CM"
+        },
+        {
+          "name": "Edú Gaspar",
+          "position": "CM"
+        },
+        {
+          "name": "John Spicer",
+          "position": "CM"
+        },
+        {
+          "name": "Cesc Fàbregas",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "David Bentley",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Quincy Owusu-Abeyie",
+          "position": "ST"
+        },
+        {
+          "name": "Jerome Thomas",
+          "position": "ST"
+        },
+        {
+          "name": "Ryan Smith",
+          "position": "ST"
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST"
+        },
+        {
+          "name": "Francis Jeffers",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémie Aliadière",
+          "position": "ST"
+        },
+        {
+          "name": "Michal Papadopulos",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (2003/2004)",
+      "teamLabel": "Arsenal (2003-04)"
+    },
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jens Lehmann",
+          "position": "GK"
+        },
+        {
+          "name": "Stuart Taylor",
+          "position": "GK"
+        },
+        {
+          "name": "Manuel Almunia",
+          "position": "GK"
+        },
+        {
+          "name": "Chris Wright",
+          "position": "GK"
+        },
+        {
+          "name": "Michael Jordan",
+          "position": "GK"
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB"
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB"
+        },
+        {
+          "name": "Pascal Cygan",
+          "position": "CB"
+        },
+        {
+          "name": "Philippe Senderos",
+          "position": "CB"
+        },
+        {
+          "name": "Johan Djourou",
+          "position": "CB"
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB"
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Karbassiyoon",
+          "position": "CB"
+        },
+        {
+          "name": "Laurén",
+          "position": "CB"
+        },
+        {
+          "name": "Emmanuel Eboué",
+          "position": "CB"
+        },
+        {
+          "name": "Justin Hoyte",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Simek",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Vieira",
+          "position": "CM"
+        },
+        {
+          "name": "Gilberto Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Mathieu Flamini",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Svärd",
+          "position": "CM"
+        },
+        {
+          "name": "Jordan Fowler",
+          "position": "CM"
+        },
+        {
+          "name": "Cesc Fàbregas",
+          "position": "CM"
+        },
+        {
+          "name": "Edú Gaspar",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastian Larsson",
+          "position": "CM"
+        },
+        {
+          "name": "Patrick Cregg",
+          "position": "CM"
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Smith",
+          "position": "ST"
+        },
+        {
+          "name": "Quincy Owusu-Abeyie",
+          "position": "ST"
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST"
+        },
+        {
+          "name": "Jermaine Pennant",
+          "position": "ST"
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST"
+        },
+        {
+          "name": "Jérémie Aliadière",
+          "position": "ST"
+        },
+        {
+          "name": "Arturo Lupoli",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (2004/2005)",
+      "teamLabel": "Arsenal (2004-05)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Raya",
+          "position": "GK"
+        },
+        {
+          "name": "Kepa Arrizabalaga",
+          "position": "GK"
+        },
+        {
+          "name": "William Saliba",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel",
+          "position": "CB"
+        },
+        {
+          "name": "Piero Hincapié",
+          "position": "CB"
+        },
+        {
+          "name": "Cristhian Mosquera",
+          "position": "CB"
+        },
+        {
+          "name": "Riccardo Calafiori",
+          "position": "CB"
+        },
+        {
+          "name": "Myles Lewis-Skelly",
+          "position": "CB"
+        },
+        {
+          "name": "Jurriën Timber",
+          "position": "CB"
+        },
+        {
+          "name": "Ben White",
+          "position": "CB"
+        },
+        {
+          "name": "Martín Zubimendi",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Nørgaard",
+          "position": "CM"
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM"
+        },
+        {
+          "name": "Mikel Merino",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ødegaard",
+          "position": "CM"
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "CM"
+        },
+        {
+          "name": "Gabriel Martinelli",
+          "position": "ST"
+        },
+        {
+          "name": "Leandro Trossard",
+          "position": "ST"
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "ST"
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "ST"
+        },
+        {
+          "name": "Max Dowman",
+          "position": "ST"
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "position": "ST"
+        },
+        {
+          "name": "Kai Havertz",
+          "position": "ST"
+        },
+        {
+          "name": "Gabriel Jesus",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Arsenal (2025/2026)",
+      "teamLabel": "Arsenal (2025-26)"
     }
   },
-  "name": "Arsenal"
+  "name": "Arsenal",
+  "id": 11
 }

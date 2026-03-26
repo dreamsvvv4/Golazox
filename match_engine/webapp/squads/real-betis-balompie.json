@@ -343,7 +343,183 @@
       },
       "source": "BDFutbol — Betis 1996-97 Primera División",
       "teamLabel": "Betis 1996-97 Primera División"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Álvaro Valles",
+          "position": "GK"
+        },
+        {
+          "name": "Pau López",
+          "position": "GK"
+        },
+        {
+          "name": "Adrián San Miguel",
+          "position": "GK"
+        },
+        {
+          "name": "Natan",
+          "position": "CB"
+        },
+        {
+          "name": "Valentín Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Rodríguez",
+          "position": "CB"
+        },
+        {
+          "name": "Ángel Ortiz",
+          "position": "CB"
+        },
+        {
+          "name": "Héctor Bellerín",
+          "position": "CB"
+        },
+        {
+          "name": "Sofyan Amrabat",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Roca",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Altimira",
+          "position": "CM"
+        },
+        {
+          "name": "Álvaro Fidalgo",
+          "position": "CM"
+        },
+        {
+          "name": "Nelson Deossa",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Fornals",
+          "position": "CM"
+        },
+        {
+          "name": "Giovani Lo Celso",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Abde Ezzalzouli",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Riquelme",
+          "position": "ST"
+        },
+        {
+          "name": "Antony",
+          "position": "ST"
+        },
+        {
+          "name": "Pablo García",
+          "position": "ST"
+        },
+        {
+          "name": "Aitor Ruibal",
+          "position": "ST"
+        },
+        {
+          "name": "Cucho Hernández",
+          "position": "ST"
+        },
+        {
+          "name": "Chimy Ávila",
+          "position": "ST"
+        },
+        {
+          "name": "Cédric Bakambu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Real Betis (2025/2026)",
+      "teamLabel": "Real Betis (2025-26)"
+    },
+    "2026": {
+      "found": true,
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marcel Dandjinou",
+          "position": "GK"
+        },
+        {
+          "name": "Tamimou Ouorou",
+          "position": "RB"
+        },
+        {
+          "name": "Yohan Roche",
+          "position": "CB"
+        },
+        {
+          "name": "Olivier Verdon",
+          "position": "CB"
+        },
+        {
+          "name": "Rachid Moumini",
+          "position": "LB"
+        },
+        {
+          "name": "Rodrigue Fassinou",
+          "position": "DM"
+        },
+        {
+          "name": "Attidjikou Samadou",
+          "position": "CM"
+        },
+        {
+          "name": "Mattéo Ahlinvi",
+          "position": "CM"
+        },
+        {
+          "name": "Steve Mounié",
+          "position": "RW"
+        },
+        {
+          "name": "Aiyegun Tosin",
+          "position": "ST"
+        },
+        {
+          "name": "Adam Akimey",
+          "position": "LW"
+        }
+      ],
+      "ratings": null,
+      "source": "Wikipedia — \"Benin national football team\"",
+      "teamLabel": "Betis (2026)"
     }
   },
-  "name": "Betis"
+  "name": "Betis",
+  "badgeLocalPath": "/img/badges/real-betis-balompie.png",
+  "id": 150
 }

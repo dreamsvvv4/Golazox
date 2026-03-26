@@ -1,0 +1,443 @@
+{
+  "slug": "club-atletico-river-plate",
+  "seasons": {
+    "2015": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marcelo Barovero",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Enrique Bologna",
+          "position": "GK",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Julio Chiarini",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Maximiliano Velazco",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Augusto Batalla",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ramiro Funes Mori",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Gabriel Mercado",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Leonel Vangioni",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jonatan Maidana",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Milton Casco",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Camilo Mayada",
+          "position": "CB",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Arturo Mina",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lucas Martínez Quarta",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kevin Sibille",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emanuel Mammana",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Leandro Vega",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luis Olivera",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jorge Moreira",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pablo Carreras",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gonzalo Montiel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucho González",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Éder Balanta",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Leonardo Ponzio",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Carlos Sánchez",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Matías Kranevitter",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Andrés D'Alessandro",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Nicolás Domingo",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Leonardo Pisculichi",
+          "position": "CM",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Joaquín Arzura",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Augusto Solari",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Iván Rossi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Zacarías Morán Correa",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Exequiel Palacios",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gonzalo Martínez",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tomás Andrade",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tabaré Viúdez",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Rodrigo Mora",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicolás Bertolo",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Javier Saviola",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Marcelo Larrondo",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Iván Alonso",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Lucas Alario",
+          "position": "ST",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Franco López",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nicolas Franco",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Boyé",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sebastián Driussi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — River Plate (2015/2016)",
+      "teamLabel": "River Plate (2015-16)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ezequiel Centurión",
+          "position": "GK"
+        },
+        {
+          "name": "Santiago Beltrán",
+          "position": "GK"
+        },
+        {
+          "name": "Franco Armani",
+          "position": "GK"
+        },
+        {
+          "name": "Franco Jaroszewicz",
+          "position": "GK"
+        },
+        {
+          "name": "Lautaro Rivero",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Martínez Quarta",
+          "position": "CB"
+        },
+        {
+          "name": "Juan Carlos Portillo",
+          "position": "CB"
+        },
+        {
+          "name": "Paulo Díaz",
+          "position": "CB"
+        },
+        {
+          "name": "Germán Pezzella",
+          "position": "CB"
+        },
+        {
+          "name": "Ulises Giménez",
+          "position": "CB"
+        },
+        {
+          "name": "Matías Viña",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Acuña",
+          "position": "CB"
+        },
+        {
+          "name": "Gonzalo Montiel",
+          "position": "CB"
+        },
+        {
+          "name": "Fabricio Bustos",
+          "position": "CB"
+        },
+        {
+          "name": "Aníbal Moreno",
+          "position": "CM"
+        },
+        {
+          "name": "Kevin Castaño",
+          "position": "CM"
+        },
+        {
+          "name": "Fausto Vera",
+          "position": "CM"
+        },
+        {
+          "name": "Elián Giménez",
+          "position": "CM"
+        },
+        {
+          "name": "Giuliano Galoppo",
+          "position": "CM"
+        },
+        {
+          "name": "Kendry Páez",
+          "position": "CM"
+        },
+        {
+          "name": "Tomás Galván",
+          "position": "CM"
+        },
+        {
+          "name": "Santiago Lencina",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Fernando Quintero",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Cruz Meza",
+          "position": "CM"
+        },
+        {
+          "name": "Leonel Jaime",
+          "position": "ST"
+        },
+        {
+          "name": "Ian Subiabre",
+          "position": "ST"
+        },
+        {
+          "name": "Maximiliano Meza",
+          "position": "ST"
+        },
+        {
+          "name": "Maximiliano Salas",
+          "position": "ST"
+        },
+        {
+          "name": "Facundo Colidio",
+          "position": "ST"
+        },
+        {
+          "name": "Sebastián Driussi",
+          "position": "ST"
+        },
+        {
+          "name": "Agustín Ruberto",
+          "position": "ST"
+        },
+        {
+          "name": "Joaquín Freitas",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — River Plate (2025/2026)",
+      "teamLabel": "River Plate (2025-26)"
+    }
+  },
+  "id": 209,
+  "name": "River Plate"
+}

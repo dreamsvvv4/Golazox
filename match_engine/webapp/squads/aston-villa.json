@@ -1,0 +1,60 @@
+{
+  "slug": "aston-villa",
+  "seasons": {
+    "2026": {
+      "found": true,
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Emiliano Martínez",
+          "position": "GK"
+        },
+        {
+          "name": "Matty Cash",
+          "position": "RB"
+        },
+        {
+          "name": "Victor Lindelöf",
+          "position": "CB"
+        },
+        {
+          "name": "Ezri Konsa",
+          "position": "CB"
+        },
+        {
+          "name": "Tyrone Mings",
+          "position": "LB"
+        },
+        {
+          "name": "Ross Barkley",
+          "position": "DM"
+        },
+        {
+          "name": "John McGinn",
+          "position": "CM"
+        },
+        {
+          "name": "Youri Tielemans",
+          "position": "CM"
+        },
+        {
+          "name": "Ollie Watkins",
+          "position": "RW"
+        },
+        {
+          "name": "Tammy Abraham",
+          "position": "ST"
+        },
+        {
+          "name": "Jadon Sancho",
+          "position": "LW"
+        }
+      ],
+      "ratings": null,
+      "source": "Wikipedia — \"Aston Villa F.C.\"",
+      "teamLabel": "Aston Villa (2026)"
+    }
+  },
+  "name": "Aston Villa",
+  "badgeLocalPath": "/img/badges/aston-villa.png"
+}

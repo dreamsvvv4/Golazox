@@ -1,0 +1,909 @@
+{
+  "slug": "brighton-hove-albion",
+  "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Robert Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Kjell Scherpen",
+          "position": "GK"
+        },
+        {
+          "name": "Christian Walton",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK"
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Webster",
+          "position": "CB"
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB"
+        },
+        {
+          "name": "Shane Duffy",
+          "position": "CB"
+        },
+        {
+          "name": "Matt Clarke",
+          "position": "CB"
+        },
+        {
+          "name": "Antef Tsoungui",
+          "position": "CB"
+        },
+        {
+          "name": "Ed Turns",
+          "position": "CB"
+        },
+        {
+          "name": "Odeluga Offiah",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Cucurella",
+          "position": "CB"
+        },
+        {
+          "name": "Michal Karbownik",
+          "position": "CB"
+        },
+        {
+          "name": "Haydon Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "James Furlong",
+          "position": "CB"
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Yves Bissouma",
+          "position": "CM"
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "CM"
+        },
+        {
+          "name": "Tudor Băluță",
+          "position": "CM"
+        },
+        {
+          "name": "Enock Mwepu",
+          "position": "CM"
+        },
+        {
+          "name": "Alexis Mac Allister",
+          "position": "CM"
+        },
+        {
+          "name": "Jakub Moder",
+          "position": "CM"
+        },
+        {
+          "name": "Pascal Groß",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Alzate",
+          "position": "CM"
+        },
+        {
+          "name": "Taylor Richards",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Leonard",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM"
+        },
+        {
+          "name": "Andrew Moran",
+          "position": "CM"
+        },
+        {
+          "name": "Leandro Trossard",
+          "position": "ST"
+        },
+        {
+          "name": "Abdallah Sima",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "ST"
+        },
+        {
+          "name": "Solly March",
+          "position": "ST"
+        },
+        {
+          "name": "Neal Maupay",
+          "position": "ST"
+        },
+        {
+          "name": "Aaron Connolly",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Andi Zeqiri",
+          "position": "ST"
+        },
+        {
+          "name": "Jürgen Locadia",
+          "position": "ST"
+        },
+        {
+          "name": "Florin Andone",
+          "position": "ST"
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Brighton (2021/2022)",
+      "teamLabel": "Brighton (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Robert Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK"
+        },
+        {
+          "name": "Levi Colwill",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Webster",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB"
+        },
+        {
+          "name": "Ed Turns",
+          "position": "CB"
+        },
+        {
+          "name": "Antef Tsoungui",
+          "position": "CB"
+        },
+        {
+          "name": "Odeluga Offiah",
+          "position": "CB"
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "CB"
+        },
+        {
+          "name": "Haydon Roberts",
+          "position": "CB"
+        },
+        {
+          "name": "James Furlong",
+          "position": "CB"
+        },
+        {
+          "name": "Imari Samuels",
+          "position": "CB"
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "CM"
+        },
+        {
+          "name": "Billy Gilmour",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinchy",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinshelwood",
+          "position": "CM"
+        },
+        {
+          "name": "Alexis Mac Allister",
+          "position": "CM"
+        },
+        {
+          "name": "Jakub Moder",
+          "position": "CM"
+        },
+        {
+          "name": "Pascal Groß",
+          "position": "CM"
+        },
+        {
+          "name": "Yasin Ayari",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Alzate",
+          "position": "CM"
+        },
+        {
+          "name": "Taylor Richards",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Spong",
+          "position": "CM"
+        },
+        {
+          "name": "Enock Mwepu",
+          "position": "CM"
+        },
+        {
+          "name": "Julio Enciso",
+          "position": "CM"
+        },
+        {
+          "name": "Facundo Buonanotte",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM"
+        },
+        {
+          "name": "Andrew Moran",
+          "position": "CM"
+        },
+        {
+          "name": "Leandro Trossard",
+          "position": "ST"
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "ST"
+        },
+        {
+          "name": "Cameron Peupion",
+          "position": "ST"
+        },
+        {
+          "name": "Solly March",
+          "position": "ST"
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST"
+        },
+        {
+          "name": "Neal Maupay",
+          "position": "ST"
+        },
+        {
+          "name": "Deniz Undav",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Aaron Connolly",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Brighton (2022/2023)",
+      "teamLabel": "Brighton (2022-23)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Carl Rushworth",
+          "position": "GK"
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK"
+        },
+        {
+          "name": "Adam Webster",
+          "position": "CB"
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB"
+        },
+        {
+          "name": "Igor Julio",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB"
+        },
+        {
+          "name": "Ed Turns",
+          "position": "CB"
+        },
+        {
+          "name": "Odeluga Offiah",
+          "position": "CB"
+        },
+        {
+          "name": "Ben Jackson",
+          "position": "CB"
+        },
+        {
+          "name": "Leigh Kavanagh",
+          "position": "CB"
+        },
+        {
+          "name": "Noel Atom",
+          "position": "CB"
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "CB"
+        },
+        {
+          "name": "Imari Samuels",
+          "position": "CB"
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Baleba",
+          "position": "CM"
+        },
+        {
+          "name": "Billy Gilmour",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinshelwood",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinchy",
+          "position": "CM"
+        },
+        {
+          "name": "Valentín Barco",
+          "position": "CM"
+        },
+        {
+          "name": "Jakub Moder",
+          "position": "CM"
+        },
+        {
+          "name": "Pascal Groß",
+          "position": "CM"
+        },
+        {
+          "name": "Mahmoud Dahoud",
+          "position": "CM"
+        },
+        {
+          "name": "Yasin Ayari",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Alzate",
+          "position": "CM"
+        },
+        {
+          "name": "James Milner",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Leonard",
+          "position": "CM"
+        },
+        {
+          "name": "Jensen Weir",
+          "position": "CM"
+        },
+        {
+          "name": "Samy Chouchane",
+          "position": "CM"
+        },
+        {
+          "name": "Julio Enciso",
+          "position": "CM"
+        },
+        {
+          "name": "Facundo Buonanotte",
+          "position": "CM"
+        },
+        {
+          "name": "Andrew Moran",
+          "position": "CM"
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM"
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "ST"
+        },
+        {
+          "name": "Simon Adingra",
+          "position": "ST"
+        },
+        {
+          "name": "Ansu Fati",
+          "position": "ST"
+        },
+        {
+          "name": "Abdallah Sima",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "ST"
+        },
+        {
+          "name": "Luca Barrington",
+          "position": "ST"
+        },
+        {
+          "name": "Cameron Peupion",
+          "position": "ST"
+        },
+        {
+          "name": "Solly March",
+          "position": "ST"
+        },
+        {
+          "name": "Benicio Baker",
+          "position": "ST"
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST"
+        },
+        {
+          "name": "João Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Joshua Duffus",
+          "position": "ST"
+        },
+        {
+          "name": "Mark O'Mahony",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Brighton (2023/2024)",
+      "teamLabel": "Brighton (2023-24)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK"
+        },
+        {
+          "name": "Carl Rushworth",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK"
+        },
+        {
+          "name": "Killian Cahill",
+          "position": "GK"
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB"
+        },
+        {
+          "name": "Igor Julio",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Webster",
+          "position": "CB"
+        },
+        {
+          "name": "Eiran Cashin",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB"
+        },
+        {
+          "name": "Ruairi McConville",
+          "position": "CB"
+        },
+        {
+          "name": "Odeluga Offiah",
+          "position": "CB"
+        },
+        {
+          "name": "Ed Turns",
+          "position": "CB"
+        },
+        {
+          "name": "Freddie Simmonds",
+          "position": "CB"
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "CB"
+        },
+        {
+          "name": "Ferdi Kadıoğlu",
+          "position": "CB"
+        },
+        {
+          "name": "Jacob Slater",
+          "position": "CB"
+        },
+        {
+          "name": "Imari Samuels",
+          "position": "CB"
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Charlie Tasker",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Baleba",
+          "position": "CM"
+        },
+        {
+          "name": "Mats Wieffer",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinshelwood",
+          "position": "CM"
+        },
+        {
+          "name": "Billy Gilmour",
+          "position": "CM"
+        },
+        {
+          "name": "Yasin Ayari",
+          "position": "CM"
+        },
+        {
+          "name": "Matt O'Riley",
+          "position": "CM"
+        },
+        {
+          "name": "Malick Yalcouyé",
+          "position": "CM"
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "CM"
+        },
+        {
+          "name": "Jakub Moder",
+          "position": "CM"
+        },
+        {
+          "name": "Valentín Barco",
+          "position": "CM"
+        },
+        {
+          "name": "James Milner",
+          "position": "CM"
+        },
+        {
+          "name": "Jensen Weir",
+          "position": "CM"
+        },
+        {
+          "name": "Joe Knight",
+          "position": "CM"
+        },
+        {
+          "name": "Brajan Gruda",
+          "position": "CM"
+        },
+        {
+          "name": "Julio Enciso",
+          "position": "CM"
+        },
+        {
+          "name": "Harry Howell",
+          "position": "CM"
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "ST"
+        },
+        {
+          "name": "Simon Adingra",
+          "position": "ST"
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "ST"
+        },
+        {
+          "name": "Cameron Peupion",
+          "position": "ST"
+        },
+        {
+          "name": "Yankuba Minteh",
+          "position": "ST"
+        },
+        {
+          "name": "Solly March",
+          "position": "ST"
+        },
+        {
+          "name": "Amario Cozier-Duberry",
+          "position": "ST"
+        },
+        {
+          "name": "João Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST"
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Mark O'Mahony",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Brighton (2024/2025)",
+      "teamLabel": "Brighton (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK"
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK"
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK"
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB"
+        },
+        {
+          "name": "Olivier Boscagli",
+          "position": "CB"
+        },
+        {
+          "name": "Igor Julio",
+          "position": "CB"
+        },
+        {
+          "name": "Adam Webster",
+          "position": "CB"
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB"
+        },
+        {
+          "name": "Ferdi Kadıoğlu",
+          "position": "CB"
+        },
+        {
+          "name": "Maxim De Cuyper",
+          "position": "CB"
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Baleba",
+          "position": "CM"
+        },
+        {
+          "name": "Mats Wieffer",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Hinshelwood",
+          "position": "CM"
+        },
+        {
+          "name": "Yasin Ayari",
+          "position": "CM"
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "CM"
+        },
+        {
+          "name": "Matt O'Riley",
+          "position": "CM"
+        },
+        {
+          "name": "Pascal Groß",
+          "position": "CM"
+        },
+        {
+          "name": "James Milner",
+          "position": "CM"
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "ST"
+        },
+        {
+          "name": "Yankuba Minteh",
+          "position": "ST"
+        },
+        {
+          "name": "Solly March",
+          "position": "ST"
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST"
+        },
+        {
+          "name": "Charalampos Kostoulas",
+          "position": "ST"
+        },
+        {
+          "name": "Stefanos Tzimas",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Brighton (2025/2026)",
+      "teamLabel": "Brighton (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/brighton-hove-albion.png",
+  "id": 1237,
+  "name": "Brighton"
+}

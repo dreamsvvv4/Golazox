@@ -1,6 +1,926 @@
 {
   "slug": "real-madrid",
   "seasons": {
+    "1950": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juan Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Navarro",
+          "position": "RB"
+        },
+        {
+          "name": "Hon",
+          "position": "CB"
+        },
+        {
+          "name": "Pont",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Muñoz",
+          "position": "CM"
+        },
+        {
+          "name": "Montalvo",
+          "position": "CM"
+        },
+        {
+          "name": "Narro",
+          "position": "CM"
+        },
+        {
+          "name": "Luciano",
+          "position": "CM"
+        },
+        {
+          "name": "Olmedo",
+          "position": "CM"
+        },
+        {
+          "name": "Pahiño",
+          "position": "ST"
+        },
+        {
+          "name": "Molowny",
+          "position": "ST"
+        },
+        {
+          "name": "García Martín",
+          "position": "GK"
+        },
+        {
+          "name": "Clemente",
+          "position": "CB"
+        },
+        {
+          "name": "Macala",
+          "position": "ST"
+        },
+        {
+          "name": "Cabrera",
+          "position": "ST"
+        },
+        {
+          "name": "Arsuaga",
+          "position": "ST"
+        },
+        {
+          "name": "Oliva",
+          "position": "CB"
+        },
+        {
+          "name": "Imbelloni",
+          "position": "ST"
+        },
+        {
+          "name": "Roque Olsen",
+          "position": "CM"
+        },
+        {
+          "name": "Navarro",
+          "position": "ST"
+        },
+        {
+          "name": "Azcárate",
+          "position": "CB"
+        },
+        {
+          "name": "García",
+          "position": "CB"
+        },
+        {
+          "name": "Nemes",
+          "position": "ST"
+        },
+        {
+          "name": "Pachicho",
+          "position": "ST"
+        },
+        {
+          "name": "Alonso",
+          "position": "RB"
+        },
+        {
+          "name": "Sobrado",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1950-51 Primera División",
+      "teamLabel": "Real Madrid 1950-51 Primera División"
+    },
+    "1956": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juanito Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Javier Berasaluce",
+          "position": "GK"
+        },
+        {
+          "name": "Juan Visa",
+          "position": "GK"
+        },
+        {
+          "name": "Juanito",
+          "position": "GK"
+        },
+        {
+          "name": "Ángel Atienza",
+          "position": "CB"
+        },
+        {
+          "name": "Joaquín Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "José Becerril",
+          "position": "CB"
+        },
+        {
+          "name": "Joaquín Oliva",
+          "position": "CB"
+        },
+        {
+          "name": "Cela",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Lesmes",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Casado",
+          "position": "CB"
+        },
+        {
+          "name": "Marquitos",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Torres",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Muñoz",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "José Rubio",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM"
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM"
+        },
+        {
+          "name": "Raymond Kopa",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Joseíto",
+          "position": "ST"
+        },
+        {
+          "name": "Alfredo di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST"
+        },
+        {
+          "name": "Roque Olsen",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Molowny",
+          "position": "ST"
+        },
+        {
+          "name": "Enrique Mateos",
+          "position": "ST"
+        },
+        {
+          "name": "José Luis Pérez-Payá",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1956/1957)",
+      "teamLabel": "Real Madrid (1956-57)"
+    },
+    "1957": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juanito Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Javier Berasaluce",
+          "position": "GK"
+        },
+        {
+          "name": "Rogelio Domínguez",
+          "position": "GK"
+        },
+        {
+          "name": "Ángel Atienza",
+          "position": "CB"
+        },
+        {
+          "name": "José Becerril",
+          "position": "CB"
+        },
+        {
+          "name": "José Santamaría",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Lesmes",
+          "position": "CB"
+        },
+        {
+          "name": "Marquitos",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Muñoz",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "José Rubio",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM"
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM"
+        },
+        {
+          "name": "Chus Pereda",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM"
+        },
+        {
+          "name": "Raymond Kopa",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Joseíto",
+          "position": "ST"
+        },
+        {
+          "name": "Alfredo di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST"
+        },
+        {
+          "name": "Enrique Mateos",
+          "position": "ST"
+        },
+        {
+          "name": "Isidro Brunet",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Cela",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1957/1958)",
+      "teamLabel": "Real Madrid (1957-58)"
+    },
+    "1958": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juanito Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Rogelio Domínguez",
+          "position": "GK"
+        },
+        {
+          "name": "Ángel Atienza",
+          "position": "CB"
+        },
+        {
+          "name": "Miche",
+          "position": "CB"
+        },
+        {
+          "name": "José Santamaría",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Lesmes",
+          "position": "CB"
+        },
+        {
+          "name": "Marquitos",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Manuel Villa",
+          "position": "CM"
+        },
+        {
+          "name": "Ángel Segurola",
+          "position": "CM"
+        },
+        {
+          "name": "Falín",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM"
+        },
+        {
+          "name": "Héctor Ramos",
+          "position": "CM"
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM"
+        },
+        {
+          "name": "Raymond Kopa",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Joseíto",
+          "position": "ST"
+        },
+        {
+          "name": "Alfredo di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST"
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST"
+        },
+        {
+          "name": "Enrique Mateos",
+          "position": "ST"
+        },
+        {
+          "name": "Jesús Herrera",
+          "position": "ST"
+        },
+        {
+          "name": "Joaquín García",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1958/1959)",
+      "teamLabel": "Real Madrid (1958-59)"
+    },
+    "1959": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juanito Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Rogelio Domínguez",
+          "position": "GK"
+        },
+        {
+          "name": "Juan Bagur",
+          "position": "GK"
+        },
+        {
+          "name": "Miche",
+          "position": "CB"
+        },
+        {
+          "name": "Pantaleon",
+          "position": "CB"
+        },
+        {
+          "name": "José Santamaría",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Lesmes",
+          "position": "CB"
+        },
+        {
+          "name": "Pachín",
+          "position": "CB"
+        },
+        {
+          "name": "Marquitos",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM"
+        },
+        {
+          "name": "Didi",
+          "position": "CM"
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM"
+        },
+        {
+          "name": "Luis del Sol",
+          "position": "CM"
+        },
+        {
+          "name": "Felo",
+          "position": "CM"
+        },
+        {
+          "name": "José Maria Vidal",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Manolín Bueno",
+          "position": "ST"
+        },
+        {
+          "name": "Canário",
+          "position": "ST"
+        },
+        {
+          "name": "Alfredo di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST"
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST"
+        },
+        {
+          "name": "Enrique Mateos",
+          "position": "ST"
+        },
+        {
+          "name": "Pepillo García",
+          "position": "ST"
+        },
+        {
+          "name": "Jesús Herrera",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1959/1960)",
+      "teamLabel": "Real Madrid (1959-60)"
+    },
+    "1960": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Juanito Alonso",
+          "position": "GK"
+        },
+        {
+          "name": "Rogelio Domínguez",
+          "position": "GK"
+        },
+        {
+          "name": "Vicente Train",
+          "position": "GK"
+        },
+        {
+          "name": "Miche",
+          "position": "CB"
+        },
+        {
+          "name": "José Santamaría",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro Casado",
+          "position": "CB"
+        },
+        {
+          "name": "Pachín",
+          "position": "CB"
+        },
+        {
+          "name": "Marquitos",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM"
+        },
+        {
+          "name": "Didi",
+          "position": "CM"
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM"
+        },
+        {
+          "name": "Luis del Sol",
+          "position": "CM"
+        },
+        {
+          "name": "Felo",
+          "position": "CM"
+        },
+        {
+          "name": "José Maria Vidal",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Manolín Bueno",
+          "position": "ST"
+        },
+        {
+          "name": "Canário",
+          "position": "ST"
+        },
+        {
+          "name": "Alfredo di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST"
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST"
+        },
+        {
+          "name": "Agne Simonsson",
+          "position": "ST"
+        },
+        {
+          "name": "Enrique Mateos",
+          "position": "ST"
+        },
+        {
+          "name": "Pepillo García",
+          "position": "ST"
+        },
+        {
+          "name": "Jesús Herrera",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1960/1961)",
+      "teamLabel": "Real Madrid (1960-61)"
+    },
+    "1962": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vicente",
+          "position": "GK"
+        },
+        {
+          "name": "Isidro",
+          "position": "RB"
+        },
+        {
+          "name": "Casado",
+          "position": "LB"
+        },
+        {
+          "name": "Santamaría",
+          "position": "CB"
+        },
+        {
+          "name": "Pachín",
+          "position": "CB"
+        },
+        {
+          "name": "Muller",
+          "position": "CM"
+        },
+        {
+          "name": "Félix Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Puskás",
+          "position": "ST"
+        },
+        {
+          "name": "Amancio",
+          "position": "ST"
+        },
+        {
+          "name": "Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Di Stéfano",
+          "position": "ST"
+        },
+        {
+          "name": "Araquistain",
+          "position": "GK"
+        },
+        {
+          "name": "Zoco",
+          "position": "CM"
+        },
+        {
+          "name": "Tejada",
+          "position": "ST"
+        },
+        {
+          "name": "Miera",
+          "position": "CB"
+        },
+        {
+          "name": "Evaristo",
+          "position": "ST"
+        },
+        {
+          "name": "Fermín",
+          "position": "GK"
+        },
+        {
+          "name": "Yanko",
+          "position": "ST"
+        },
+        {
+          "name": "Bueno",
+          "position": "ST"
+        },
+        {
+          "name": "Felo",
+          "position": "CM"
+        },
+        {
+          "name": "Marquitos",
+          "position": "RB"
+        },
+        {
+          "name": "Simonsson",
+          "position": "ST"
+        },
+        {
+          "name": "Vidal",
+          "position": "CM"
+        },
+        {
+          "name": "Pantaleón II",
+          "position": "CB"
+        },
+        {
+          "name": "Moncho",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1962-63 Primera División",
+      "teamLabel": "Real Madrid 1962-63 Primera División"
+    },
+    "1966": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Araquistáin",
+          "position": "GK"
+        },
+        {
+          "name": "Antonio Betancort",
+          "position": "GK"
+        },
+        {
+          "name": "Andrés Junquera",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Zunzunegui",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Calpe",
+          "position": "CB"
+        },
+        {
+          "name": "Pedro de Felipe",
+          "position": "CB"
+        },
+        {
+          "name": "Vicente Miera",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Sanchís",
+          "position": "CB"
+        },
+        {
+          "name": "Pachín",
+          "position": "CB"
+        },
+        {
+          "name": "Ignacio Zoco",
+          "position": "CM"
+        },
+        {
+          "name": "Félix Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Chato González",
+          "position": "CM"
+        },
+        {
+          "name": "Pirri",
+          "position": "CM"
+        },
+        {
+          "name": "Juanito",
+          "position": "CM"
+        },
+        {
+          "name": "José Fernando Rovira",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Velázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Fernand Goyvaerts",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST"
+        },
+        {
+          "name": "Manolín Bueno",
+          "position": "ST"
+        },
+        {
+          "name": "Amancio",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Serena",
+          "position": "ST"
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST"
+        },
+        {
+          "name": "Ramón Grosso",
+          "position": "ST"
+        },
+        {
+          "name": "José Veloso",
+          "position": "ST"
+        },
+        {
+          "name": "Jaime Blanco",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1966/1967)",
+      "teamLabel": "Real Madrid (1966-67)"
+    },
     "1972": {
       "formation": "4-4-2",
       "players": [
@@ -117,6 +1037,708 @@
       },
       "source": "BDFutbol — Real Madrid 1972-73 Primera División",
       "teamLabel": "Real Madrid 1972-73 Primera División"
+    },
+    "1976": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Miguel Ángel",
+          "position": "GK"
+        },
+        {
+          "name": "Amador",
+          "position": "GK"
+        },
+        {
+          "name": "Mariano García Remón",
+          "position": "GK"
+        },
+        {
+          "name": "Juan Sol",
+          "position": "CB"
+        },
+        {
+          "name": "Benito Rubiñán",
+          "position": "CB"
+        },
+        {
+          "name": "Goyo Benito",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Breitner",
+          "position": "CB"
+        },
+        {
+          "name": "José Antonio Camacho",
+          "position": "CB"
+        },
+        {
+          "name": "Francisco Uría",
+          "position": "CB"
+        },
+        {
+          "name": "Isidoro San José",
+          "position": "CB"
+        },
+        {
+          "name": "Pirri",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente del Bosque",
+          "position": "CM"
+        },
+        {
+          "name": "Sánchez Barrios",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Vitoria",
+          "position": "CM"
+        },
+        {
+          "name": "Manuel Velázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Henning Jensen",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Guerini",
+          "position": "ST"
+        },
+        {
+          "name": "Ico Aguilar",
+          "position": "ST"
+        },
+        {
+          "name": "Santillana",
+          "position": "ST"
+        },
+        {
+          "name": "Roberto Martínez",
+          "position": "ST"
+        },
+        {
+          "name": "Pepe Macanás",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1976/1977)",
+      "teamLabel": "Real Madrid (1976-77)"
+    },
+    "1980": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Miguel Ángel",
+          "position": "GK"
+        },
+        {
+          "name": "Mariano García Remón",
+          "position": "GK"
+        },
+        {
+          "name": "Agustín",
+          "position": "GK"
+        },
+        {
+          "name": "Ángel Pérez García",
+          "position": "CB"
+        },
+        {
+          "name": "Andrés Sabido",
+          "position": "CB"
+        },
+        {
+          "name": "Goyo Benito",
+          "position": "CB"
+        },
+        {
+          "name": "José Antonio Camacho",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael García Cortés",
+          "position": "CB"
+        },
+        {
+          "name": "Isidoro San José",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio García Navajas",
+          "position": "CB"
+        },
+        {
+          "name": "Uli Stielike",
+          "position": "CM"
+        },
+        {
+          "name": "Ricardo Gallego",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente del Bosque",
+          "position": "CM"
+        },
+        {
+          "name": "Ángel",
+          "position": "CM"
+        },
+        {
+          "name": "Francisco García Hernández",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel Ángel Portugal",
+          "position": "CM"
+        },
+        {
+          "name": "Laurie Cunningham",
+          "position": "ST"
+        },
+        {
+          "name": "Juanito",
+          "position": "ST"
+        },
+        {
+          "name": "Poli Rincón",
+          "position": "ST"
+        },
+        {
+          "name": "Santillana",
+          "position": "ST"
+        },
+        {
+          "name": "Isidro Díaz",
+          "position": "ST"
+        },
+        {
+          "name": "Francisco Pineda",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1980/1981)",
+      "teamLabel": "Real Madrid (1980-81)"
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Manuel Ochotorena",
+          "position": "GK"
+        },
+        {
+          "name": "Paco Buyo",
+          "position": "GK"
+        },
+        {
+          "name": "Agustín",
+          "position": "GK"
+        },
+        {
+          "name": "Antonio Maceda",
+          "position": "CB"
+        },
+        {
+          "name": "Manolo Sanchís",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe Salguero",
+          "position": "CB"
+        },
+        {
+          "name": "Mino",
+          "position": "CB"
+        },
+        {
+          "name": "José Antonio Camacho",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael Gordillo",
+          "position": "CB"
+        },
+        {
+          "name": "Chucho Solana",
+          "position": "CB"
+        },
+        {
+          "name": "Chendo",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Gallego",
+          "position": "CM"
+        },
+        {
+          "name": "Milan Jankovic",
+          "position": "CM"
+        },
+        {
+          "name": "Míchel",
+          "position": "CM"
+        },
+        {
+          "name": "Rafa Martín Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Juanito",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Pardeza",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Jorge Valdano",
+          "position": "ST"
+        },
+        {
+          "name": "Emilio Butragueño",
+          "position": "ST"
+        },
+        {
+          "name": "Santillana",
+          "position": "ST"
+        },
+        {
+          "name": "Cholo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1986/1987)",
+      "teamLabel": "Real Madrid (1986-87)"
+    },
+    "1987": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Buyo",
+          "position": "GK"
+        },
+        {
+          "name": "Chendo",
+          "position": "RB"
+        },
+        {
+          "name": "Camacho",
+          "position": "LB"
+        },
+        {
+          "name": "Tendillo",
+          "position": "CB"
+        },
+        {
+          "name": "Sanchis",
+          "position": "CB"
+        },
+        {
+          "name": "Gordillo",
+          "position": "CM"
+        },
+        {
+          "name": "Martín Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Míchel",
+          "position": "CM"
+        },
+        {
+          "name": "Janković",
+          "position": "CM"
+        },
+        {
+          "name": "Hugo Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Butragueño",
+          "position": "ST"
+        },
+        {
+          "name": "Ochotorena",
+          "position": "GK"
+        },
+        {
+          "name": "Solana",
+          "position": "LB"
+        },
+        {
+          "name": "Gallego",
+          "position": "CM"
+        },
+        {
+          "name": "Paco Llorente",
+          "position": "CM"
+        },
+        {
+          "name": "Santillana",
+          "position": "ST"
+        },
+        {
+          "name": "Agustín",
+          "position": "GK"
+        },
+        {
+          "name": "Maqueda",
+          "position": "CM"
+        },
+        {
+          "name": "Mino",
+          "position": "CB"
+        },
+        {
+          "name": "Muñoz Pérez",
+          "position": "LB"
+        },
+        {
+          "name": "Aldana",
+          "position": "CM"
+        },
+        {
+          "name": "Maceda",
+          "position": "CB"
+        },
+        {
+          "name": "Aragón",
+          "position": "CM"
+        },
+        {
+          "name": "León",
+          "position": "RB"
+        },
+        {
+          "name": "Mandiá",
+          "position": "CB"
+        },
+        {
+          "name": "Pardeza",
+          "position": "ST"
+        },
+        {
+          "name": "Julio Llorente",
+          "position": "RB"
+        },
+        {
+          "name": "Santi",
+          "position": "CM"
+        },
+        {
+          "name": "Valdano",
+          "position": "ST"
+        },
+        {
+          "name": "Felipe Herrero",
+          "position": "CB"
+        },
+        {
+          "name": "Aguilà",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1987-88 Primera División",
+      "teamLabel": "Real Madrid 1987-88 Primera División"
+    },
+    "1996": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Illgner",
+          "position": "GK"
+        },
+        {
+          "name": "Panucci",
+          "position": "RB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB"
+        },
+        {
+          "name": "Alkorta",
+          "position": "CB"
+        },
+        {
+          "name": "Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor",
+          "position": "CM"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Mijatović",
+          "position": "ST"
+        },
+        {
+          "name": "Šuker",
+          "position": "ST"
+        },
+        {
+          "name": "Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Amavisca",
+          "position": "CM"
+        },
+        {
+          "name": "Sanchis",
+          "position": "CB"
+        },
+        {
+          "name": "Chendo",
+          "position": "RB"
+        },
+        {
+          "name": "Secretário",
+          "position": "RB"
+        },
+        {
+          "name": "Buyo",
+          "position": "GK"
+        },
+        {
+          "name": "Milla",
+          "position": "CM"
+        },
+        {
+          "name": "Lasa",
+          "position": "LB"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Álvaro Benito",
+          "position": "CM"
+        },
+        {
+          "name": "Zé Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "García Calvo",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Sanz",
+          "position": "CB"
+        },
+        {
+          "name": "Petković",
+          "position": "CM"
+        },
+        {
+          "name": "Irurzun",
+          "position": "ST"
+        },
+        {
+          "name": "Valbuena",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1996-97 Primera División",
+      "teamLabel": "Real Madrid 1996-97 Primera División"
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bodo Illgner",
+          "position": "GK"
+        },
+        {
+          "name": "Pedro Contreras",
+          "position": "GK"
+        },
+        {
+          "name": "Albano Bizzarri",
+          "position": "GK"
+        },
+        {
+          "name": "Eduardo Almansa",
+          "position": "GK"
+        },
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "Manolo Sanchís",
+          "position": "CB"
+        },
+        {
+          "name": "Aitor Karanka",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Sanz",
+          "position": "CB"
+        },
+        {
+          "name": "Manuel Tena",
+          "position": "CB"
+        },
+        {
+          "name": "Rubio",
+          "position": "CB"
+        },
+        {
+          "name": "Robert Jarni",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Dorado",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Panucci",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Rojas",
+          "position": "CB"
+        },
+        {
+          "name": "Fernando Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Iván Campo",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Karembeu",
+          "position": "CM"
+        },
+        {
+          "name": "Clarence Seedorf",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Rivera",
+          "position": "CM"
+        },
+        {
+          "name": "Álvaro Benito",
+          "position": "CM"
+        },
+        {
+          "name": "Tote",
+          "position": "CM"
+        },
+        {
+          "name": "Sávio",
+          "position": "ST"
+        },
+        {
+          "name": "Perica Ognjenovic",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Predrag Mijatović",
+          "position": "ST"
+        },
+        {
+          "name": "Davor Suker",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST"
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST"
+        },
+        {
+          "name": "Pablo Villanueva",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (1998/1999)",
+      "teamLabel": "Real Madrid (1998-99)"
     },
     "1999": {
       "formation": "4-4-2",
@@ -456,6 +2078,312 @@
       "source": "BDFutbol — Real Madrid 2000-01 Primera División",
       "teamLabel": "Real Madrid 2000-01 Primera División"
     },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "César Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Carlos Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "César Navas",
+          "position": "CB"
+        },
+        {
+          "name": "Juanjo Olalla",
+          "position": "CB"
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Bravo",
+          "position": "CB"
+        },
+        {
+          "name": "Francisco Pavón",
+          "position": "CB"
+        },
+        {
+          "name": "Rubén González",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "CB"
+        },
+        {
+          "name": "Óscar Miñambres",
+          "position": "CB"
+        },
+        {
+          "name": "Borja Fernández",
+          "position": "CM"
+        },
+        {
+          "name": "Esteban Cambiasso",
+          "position": "CM"
+        },
+        {
+          "name": "Albert Celades",
+          "position": "CM"
+        },
+        {
+          "name": "Claude Makélélé",
+          "position": "CM"
+        },
+        {
+          "name": "Luis García",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Flávio Conceição",
+          "position": "CM"
+        },
+        {
+          "name": "Steve McManaman",
+          "position": "CM"
+        },
+        {
+          "name": "Santiago Solari",
+          "position": "CM"
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM"
+        },
+        {
+          "name": "Tote",
+          "position": "CM"
+        },
+        {
+          "name": "Álex Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Valdo",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST"
+        },
+        {
+          "name": "Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Javier Portillo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2002/2003)",
+      "teamLabel": "Real Madrid (2002-03)"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Diego López",
+          "position": "GK"
+        },
+        {
+          "name": "Kiko Casilla",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Fabio Cannavaro",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan Woodgate",
+          "position": "CB"
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Bravo",
+          "position": "CB"
+        },
+        {
+          "name": "Francisco Pavón",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Mejía",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Alejandro",
+          "position": "CB"
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Cicinho",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Torres",
+          "position": "CB"
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "CB"
+        },
+        {
+          "name": "Óscar Miñambres",
+          "position": "CB"
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Fernando Gago",
+          "position": "CM"
+        },
+        {
+          "name": "Emerson",
+          "position": "CM"
+        },
+        {
+          "name": "Javi García",
+          "position": "CM"
+        },
+        {
+          "name": "Marcos Tébar",
+          "position": "CM"
+        },
+        {
+          "name": "Guti",
+          "position": "CM"
+        },
+        {
+          "name": "Rubén de la Red",
+          "position": "CM"
+        },
+        {
+          "name": "Pedro Mosquera",
+          "position": "CM"
+        },
+        {
+          "name": "Borja Valero",
+          "position": "CM"
+        },
+        {
+          "name": "Adrián González",
+          "position": "CM"
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM"
+        },
+        {
+          "name": "Júlio Baptista",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Mata",
+          "position": "CM"
+        },
+        {
+          "name": "Robinho",
+          "position": "ST"
+        },
+        {
+          "name": "Miguel Ángel Nieto",
+          "position": "ST"
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Antonio Cassano",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Gonzalo Higuaín",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Negredo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2006/2007)",
+      "teamLabel": "Real Madrid (2006-07)"
+    },
     "2008": {
       "formation": "4-4-2",
       "players": [
@@ -613,6 +2541,606 @@
       "source": "BDFutbol — Real Madrid 2008-09 Primera División",
       "teamLabel": "Real Madrid 2008-09 Primera División"
     },
+    "2012": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Diego López",
+          "position": "GK"
+        },
+        {
+          "name": "Antonio Adán",
+          "position": "GK"
+        },
+        {
+          "name": "Jesús Fernández",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Albiol",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Carvalho",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Arbeloa",
+          "position": "CB"
+        },
+        {
+          "name": "Xabi Alonso",
+          "position": "CM"
+        },
+        {
+          "name": "Lassana Diarra",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Essien",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM"
+        },
+        {
+          "name": "Omar Mascarell",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Esteban Granero",
+          "position": "CM"
+        },
+        {
+          "name": "Álex Fernández",
+          "position": "CM"
+        },
+        {
+          "name": "José Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Kaká",
+          "position": "CM"
+        },
+        {
+          "name": "Denis Cheryshev",
+          "position": "ST"
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST"
+        },
+        {
+          "name": "José Callejón",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Gonzalo Higuaín",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2012/2013)",
+      "teamLabel": "Real Madrid (2012-13)"
+    },
+    "2013": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Diego López",
+          "position": "GK"
+        },
+        {
+          "name": "Jesús Fernández",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Arbeloa",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "Asier Illarramendi",
+          "position": "CM"
+        },
+        {
+          "name": "Xabi Alonso",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Omar Mascarell",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "José Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Mesut Özil",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Kaká",
+          "position": "CM"
+        },
+        {
+          "name": "Jesé",
+          "position": "ST"
+        },
+        {
+          "name": "Burgui",
+          "position": "ST"
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST"
+        },
+        {
+          "name": "Willian José",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl de Tomás",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2013/2014)",
+      "teamLabel": "Real Madrid (2013-14)"
+    },
+    "2014": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK"
+        },
+        {
+          "name": "Keylor Navas",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Pacheco",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Yáñez",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Jaime Sánchez",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Derik Osede",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB"
+        },
+        {
+          "name": "Felipe Abner",
+          "position": "CB"
+        },
+        {
+          "name": "Javi Noblejas",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Arbeloa",
+          "position": "CB"
+        },
+        {
+          "name": "Guillermo Varela",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Asier Illarramendi",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Xabi Alonso",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Torró",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Sami Khedira",
+          "position": "CM"
+        },
+        {
+          "name": "Álvaro Medrán",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio Aguza",
+          "position": "CM"
+        },
+        {
+          "name": "Javi Muñoz",
+          "position": "CM"
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ødegaard",
+          "position": "CM"
+        },
+        {
+          "name": "Jesé",
+          "position": "ST"
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Chicharito",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl de Tomás",
+          "position": "ST"
+        },
+        {
+          "name": "Eero Markkanen",
+          "position": "ST"
+        },
+        {
+          "name": "Borja Mayoral",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2014/2015)",
+      "teamLabel": "Real Madrid (2014-15)"
+    },
+    "2015": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK"
+        },
+        {
+          "name": "Kiko Casilla",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Yáñez",
+          "position": "GK"
+        },
+        {
+          "name": "Álex Craninx",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Danilo",
+          "position": "CB"
+        },
+        {
+          "name": "Pepe",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lienhart",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Arbeloa",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Tejero",
+          "position": "CB"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM"
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Martin Ødegaard",
+          "position": "CM"
+        },
+        {
+          "name": "Jesé",
+          "position": "ST"
+        },
+        {
+          "name": "Denis Cheryshev",
+          "position": "ST"
+        },
+        {
+          "name": "José Carlos Lazo",
+          "position": "ST"
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Borja Mayoral",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2015/2016)",
+      "teamLabel": "Real Madrid (2015-16)"
+    },
     "2016": {
       "formation": "4-4-2",
       "players": [
@@ -745,6 +3273,147 @@
       },
       "source": "BDFutbol — Real Madrid 2016-17 Primera División",
       "teamLabel": "Real Madrid 2016-17 Primera División"
+    },
+    "2017": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK"
+        },
+        {
+          "name": "Kiko Casilla",
+          "position": "GK"
+        },
+        {
+          "name": "Luca Zidane",
+          "position": "GK"
+        },
+        {
+          "name": "Moha Ramos",
+          "position": "GK"
+        },
+        {
+          "name": "Raphaël Varane",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB"
+        },
+        {
+          "name": "Manu Hernando",
+          "position": "CB"
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB"
+        },
+        {
+          "name": "Theo Hernández",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CB"
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Tejero",
+          "position": "CB"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Jaime Seoane",
+          "position": "CM"
+        },
+        {
+          "name": "Luismi Quezada",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "CM"
+        },
+        {
+          "name": "Isco",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Franchu",
+          "position": "CM"
+        },
+        {
+          "name": "Cristo",
+          "position": "ST"
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Borja Mayoral",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2017/2018)",
+      "teamLabel": "Real Madrid (2017-18)"
     },
     "2018": {
       "formation": "4-4-2",
@@ -1064,6 +3733,521 @@
       "source": "BDFutbol — Real Madrid 2020-21 Primera División",
       "teamLabel": "Real Madrid 2020-21 Primera División"
     },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Thibaut Courtois",
+          "position": "GK"
+        },
+        {
+          "name": "Andriy Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Mario de Luis",
+          "position": "GK"
+        },
+        {
+          "name": "Luis López",
+          "position": "GK"
+        },
+        {
+          "name": "Lucas Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Diego Piñeiro",
+          "position": "GK"
+        },
+        {
+          "name": "Fran González",
+          "position": "GK"
+        },
+        {
+          "name": "Éder Militão",
+          "position": "CB"
+        },
+        {
+          "name": "David Alaba",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB"
+        },
+        {
+          "name": "Marvel",
+          "position": "CB"
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Odriozola",
+          "position": "CB"
+        },
+        {
+          "name": "Vinícius Tobias",
+          "position": "CB"
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Martín",
+          "position": "CM"
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Eduardo Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Dotor",
+          "position": "CM"
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio Arribas",
+          "position": "CM"
+        },
+        {
+          "name": "Nico Paz",
+          "position": "CM"
+        },
+        {
+          "name": "Vinicius Junior",
+          "position": "ST"
+        },
+        {
+          "name": "Eden Hazard",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST"
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST"
+        },
+        {
+          "name": "Álvaro Rodríguez",
+          "position": "ST"
+        },
+        {
+          "name": "Mariano Díaz",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2022/2023)",
+      "teamLabel": "Real Madrid (2022-23)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Thibaut Courtois",
+          "position": "GK"
+        },
+        {
+          "name": "Andriy Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Fran González",
+          "position": "GK"
+        },
+        {
+          "name": "Sergio Mestre",
+          "position": "GK"
+        },
+        {
+          "name": "Dean Huijsen",
+          "position": "CB"
+        },
+        {
+          "name": "Raúl Asencio",
+          "position": "CB"
+        },
+        {
+          "name": "Éder Militão",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "David Alaba",
+          "position": "CB"
+        },
+        {
+          "name": "Jacobo Ramón",
+          "position": "CB"
+        },
+        {
+          "name": "Diego Aguado",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB"
+        },
+        {
+          "name": "Víctor Valdepeñas",
+          "position": "CB"
+        },
+        {
+          "name": "Mario Rivas",
+          "position": "CB"
+        },
+        {
+          "name": "Fran García",
+          "position": "CB"
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB"
+        },
+        {
+          "name": "Youssef Enríquez",
+          "position": "CB"
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB"
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "David Jiménez",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Fortea",
+          "position": "CB"
+        },
+        {
+          "name": "Lorenzo Aguado",
+          "position": "CB"
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Martín",
+          "position": "CM"
+        },
+        {
+          "name": "Chema Andrés",
+          "position": "CM"
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Eduardo Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM"
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM"
+        },
+        {
+          "name": "Arda Güler",
+          "position": "CM"
+        },
+        {
+          "name": "Pol Fortuny",
+          "position": "CM"
+        },
+        {
+          "name": "Vinicius Junior",
+          "position": "ST"
+        },
+        {
+          "name": "Víctor Muñoz",
+          "position": "ST"
+        },
+        {
+          "name": "Hugo de Llanos",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST"
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Yáñez",
+          "position": "ST"
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Endrick",
+          "position": "ST"
+        },
+        {
+          "name": "Gonzalo García",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Madrid (2024/2025)",
+      "teamLabel": "Real Madrid (2024-25)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Courtois",
+          "position": "GK"
+        },
+        {
+          "name": "Huijsen",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Carreras",
+          "position": "LB"
+        },
+        {
+          "name": "Asencio",
+          "position": "CB"
+        },
+        {
+          "name": "Militão",
+          "position": "CB"
+        },
+        {
+          "name": "Valverde",
+          "position": "CM"
+        },
+        {
+          "name": "Tchouaméni",
+          "position": "CM"
+        },
+        {
+          "name": "Güler",
+          "position": "CM"
+        },
+        {
+          "name": "Bellingham",
+          "position": "CM"
+        },
+        {
+          "name": "Vinícius",
+          "position": "ST"
+        },
+        {
+          "name": "Mbappé",
+          "position": "ST"
+        },
+        {
+          "name": "Lunin",
+          "position": "GK"
+        },
+        {
+          "name": "Camavinga",
+          "position": "CM"
+        },
+        {
+          "name": "Gonzalo",
+          "position": "ST"
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST"
+        },
+        {
+          "name": "Mastantuono",
+          "position": "ST"
+        },
+        {
+          "name": "Mestre",
+          "position": "GK"
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST"
+        },
+        {
+          "name": "Rüdiger",
+          "position": "CB"
+        },
+        {
+          "name": "Alexander-Arnold",
+          "position": "RB"
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM"
+        },
+        {
+          "name": "Carvajal",
+          "position": "RB"
+        },
+        {
+          "name": "Fran García",
+          "position": "LB"
+        },
+        {
+          "name": "Alaba",
+          "position": "CB"
+        },
+        {
+          "name": "Pitarch",
+          "position": "CM"
+        },
+        {
+          "name": "Mendy",
+          "position": "LB"
+        },
+        {
+          "name": "Jiménez",
+          "position": "RB"
+        },
+        {
+          "name": "Endrick",
+          "position": "ST"
+        },
+        {
+          "name": "Cestero",
+          "position": "CM"
+        },
+        {
+          "name": "Palacios",
+          "position": "ST"
+        },
+        {
+          "name": "Manuel Ángel",
+          "position": "CM"
+        },
+        {
+          "name": "Valdepeñas",
+          "position": "CB"
+        },
+        {
+          "name": "Aguado",
+          "position": "LB"
+        },
+        {
+          "name": "Yáñez",
+          "position": "ST"
+        },
+        {
+          "name": "Fran González",
+          "position": "GK"
+        },
+        {
+          "name": "Joan",
+          "position": "CB"
+        },
+        {
+          "name": "Leiva",
+          "position": "ST"
+        },
+        {
+          "name": "Fati",
+          "position": "CB"
+        },
+        {
+          "name": "Mesonero",
+          "position": "CM"
+        },
+        {
+          "name": "Fortuny",
+          "position": "ST"
+        },
+        {
+          "name": "Navarro",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 2025-26 Primera División",
+      "teamLabel": "Real Madrid 2025-26 Primera División"
+    },
     "2026": {
       "formation": "4-4-2",
       "players": [
@@ -1243,5 +4427,6 @@
     }
   },
   "id": 418,
-  "name": "Real Madrid"
+  "name": "Real Madrid",
+  "badgeLocalPath": "/img/badges/real-madrid.png"
 }

@@ -1,6 +1,622 @@
 {
   "slug": "manchester-united",
   "seasons": {
+    "1968": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Gaskell",
+          "position": "GK"
+        },
+        {
+          "name": "John Connaughton",
+          "position": "GK"
+        },
+        {
+          "name": "Alex Stepney",
+          "position": "GK"
+        },
+        {
+          "name": "Jimmy Rimmer",
+          "position": "GK"
+        },
+        {
+          "name": "Bill Foulkes",
+          "position": "CB"
+        },
+        {
+          "name": "David Sadler",
+          "position": "CB"
+        },
+        {
+          "name": "Steve James",
+          "position": "CB"
+        },
+        {
+          "name": "Tony Dunne",
+          "position": "CB"
+        },
+        {
+          "name": "John Fitzpatrick",
+          "position": "CB"
+        },
+        {
+          "name": "Frank Kopel",
+          "position": "CB"
+        },
+        {
+          "name": "Francis Burns",
+          "position": "CB"
+        },
+        {
+          "name": "Shay Brennan",
+          "position": "CB"
+        },
+        {
+          "name": "Willie Watson",
+          "position": "CB"
+        },
+        {
+          "name": "Nobby Stiles",
+          "position": "CM"
+        },
+        {
+          "name": "Carlo Sartori",
+          "position": "CM"
+        },
+        {
+          "name": "Pat Crerand",
+          "position": "CM"
+        },
+        {
+          "name": "Sir Bobby Charlton",
+          "position": "CM"
+        },
+        {
+          "name": "John Aston",
+          "position": "ST"
+        },
+        {
+          "name": "George Best",
+          "position": "ST"
+        },
+        {
+          "name": "Willie Morgan",
+          "position": "ST"
+        },
+        {
+          "name": "Denis Law",
+          "position": "ST"
+        },
+        {
+          "name": "Don Givens",
+          "position": "ST"
+        },
+        {
+          "name": "Alan Gowling",
+          "position": "ST"
+        },
+        {
+          "name": "Jimmy Ryan",
+          "position": "ST"
+        },
+        {
+          "name": "Brian Kidd",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (1968/1969)",
+      "teamLabel": "Manchester United (1968-69)"
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gary Walsh",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Schmeichel",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Pilkington",
+          "position": "GK"
+        },
+        {
+          "name": "Steve Bruce",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Pallister",
+          "position": "CB"
+        },
+        {
+          "name": "David May",
+          "position": "CB"
+        },
+        {
+          "name": "Pat McGibbon",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Casper",
+          "position": "CB"
+        },
+        {
+          "name": "Neil Whitworth",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Irwin",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Parker",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "John O'Kane",
+          "position": "CB"
+        },
+        {
+          "name": "Nicky Butt",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Ince",
+          "position": "CM"
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM"
+        },
+        {
+          "name": "Simon Davies",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Andrey Kanchelskis",
+          "position": "CM"
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM"
+        },
+        {
+          "name": "Keith Gillespie",
+          "position": "CM"
+        },
+        {
+          "name": "Lee Sharpe",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Ben Thornley",
+          "position": "ST"
+        },
+        {
+          "name": "Terry Cooke",
+          "position": "ST"
+        },
+        {
+          "name": "Éric Cantona",
+          "position": "ST"
+        },
+        {
+          "name": "Brian McClair",
+          "position": "ST"
+        },
+        {
+          "name": "Mark Hughes",
+          "position": "ST"
+        },
+        {
+          "name": "Graeme Tomlinson",
+          "position": "ST"
+        },
+        {
+          "name": "Andy Cole",
+          "position": "ST"
+        },
+        {
+          "name": "Colin McKee",
+          "position": "ST"
+        },
+        {
+          "name": "Dion Dublin",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (1994/1995)",
+      "teamLabel": "Manchester United (1994-95)"
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Culkin",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Bosnich",
+          "position": "GK"
+        },
+        {
+          "name": "Massimo Taibi",
+          "position": "GK"
+        },
+        {
+          "name": "Peter Schmeichel",
+          "position": "GK"
+        },
+        {
+          "name": "Raimond van der Gouw",
+          "position": "GK"
+        },
+        {
+          "name": "Kevin Pilkington",
+          "position": "GK"
+        },
+        {
+          "name": "David May",
+          "position": "CB"
+        },
+        {
+          "name": "Ronny Johnsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jaap Stam",
+          "position": "CB"
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB"
+        },
+        {
+          "name": "Chris Casper",
+          "position": "CB"
+        },
+        {
+          "name": "Danny Higginbotham",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Quinton Fortune",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Irwin",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Neville",
+          "position": "CB"
+        },
+        {
+          "name": "John Curtis",
+          "position": "CB"
+        },
+        {
+          "name": "Henning Berg",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Clegg",
+          "position": "CB"
+        },
+        {
+          "name": "Ryan Ford",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Teather",
+          "position": "CM"
+        },
+        {
+          "name": "Nicky Butt",
+          "position": "CM"
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Phil Mulryne",
+          "position": "CM"
+        },
+        {
+          "name": "Ronnie Wallwork",
+          "position": "CM"
+        },
+        {
+          "name": "Mark Wilson",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan Greening",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Twiss",
+          "position": "CM"
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Cruijff",
+          "position": "CM"
+        },
+        {
+          "name": "Terry Cooke",
+          "position": "ST"
+        },
+        {
+          "name": "Alex Notman",
+          "position": "ST"
+        },
+        {
+          "name": "David Healy",
+          "position": "ST"
+        },
+        {
+          "name": "Andy Cole",
+          "position": "ST"
+        },
+        {
+          "name": "Teddy Sheringham",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight Yorke",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Gunnar Solskjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Erik Nevland",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (1998/1999)",
+      "teamLabel": "Manchester United (1998-99)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nick Culkin",
+          "position": "GK"
+        },
+        {
+          "name": "Paul Rachubka",
+          "position": "GK"
+        },
+        {
+          "name": "Mark Bosnich",
+          "position": "GK"
+        },
+        {
+          "name": "Raimond van der Gouw",
+          "position": "GK"
+        },
+        {
+          "name": "Massimo Taibi",
+          "position": "GK"
+        },
+        {
+          "name": "David May",
+          "position": "CB"
+        },
+        {
+          "name": "Ronny Johnsen",
+          "position": "CB"
+        },
+        {
+          "name": "Jaap Stam",
+          "position": "CB"
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB"
+        },
+        {
+          "name": "Danny Higginbotham",
+          "position": "CB"
+        },
+        {
+          "name": "John O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Irwin",
+          "position": "CB"
+        },
+        {
+          "name": "Quinton Fortune",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Lee Roche",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Neville",
+          "position": "CB"
+        },
+        {
+          "name": "John Curtis",
+          "position": "CB"
+        },
+        {
+          "name": "Henning Berg",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Clegg",
+          "position": "CB"
+        },
+        {
+          "name": "Nicky Butt",
+          "position": "CM"
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Stewart",
+          "position": "CM"
+        },
+        {
+          "name": "Ronnie Wallwork",
+          "position": "CM"
+        },
+        {
+          "name": "Mark Wilson",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan Greening",
+          "position": "CM"
+        },
+        {
+          "name": "Richie Wellens",
+          "position": "CM"
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Twiss",
+          "position": "CM"
+        },
+        {
+          "name": "Jesper Blomqvist",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Cruijff",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Chadwick",
+          "position": "CM"
+        },
+        {
+          "name": "Alex Notman",
+          "position": "ST"
+        },
+        {
+          "name": "Erik Nevland",
+          "position": "ST"
+        },
+        {
+          "name": "Andy Cole",
+          "position": "ST"
+        },
+        {
+          "name": "Teddy Sheringham",
+          "position": "ST"
+        },
+        {
+          "name": "Dwight Yorke",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Gunnar Solskjaer",
+          "position": "ST"
+        },
+        {
+          "name": "David Healy",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (1999/2000)",
+      "teamLabel": "Manchester United (1999-00)"
+    },
     "2000": {
       "found": true,
       "formation": "4-3-3",
@@ -53,7 +669,557 @@
       "ratings": null,
       "source": "Wikipedia — \"2000–01 Manchester United F.C. season\"",
       "teamLabel": "Manchester United (2000)"
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ben Williams",
+          "position": "GK"
+        },
+        {
+          "name": "Fabien Barthez",
+          "position": "GK"
+        },
+        {
+          "name": "Roy Carroll",
+          "position": "GK"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Laurent Blanc",
+          "position": "CB"
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB"
+        },
+        {
+          "name": "David May",
+          "position": "CB"
+        },
+        {
+          "name": "John O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB"
+        },
+        {
+          "name": "Paul Tierney",
+          "position": "CB"
+        },
+        {
+          "name": "Quinton Fortune",
+          "position": "CB"
+        },
+        {
+          "name": "Danny Pugh",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Kieran Richardson",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Lee Roche",
+          "position": "CB"
+        },
+        {
+          "name": "Mark Lynch",
+          "position": "CB"
+        },
+        {
+          "name": "Nicky Butt",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Sebastián Verón",
+          "position": "CM"
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Stewart",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Darren Fletcher",
+          "position": "CM"
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Luke Chadwick",
+          "position": "CM"
+        },
+        {
+          "name": "Jimmy Davis",
+          "position": "ST"
+        },
+        {
+          "name": "Mads Timm",
+          "position": "ST"
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Gunnar Solskjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Diego Forlán",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Webber",
+          "position": "ST"
+        },
+        {
+          "name": "Daniel Nardiello",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (2002/2003)",
+      "teamLabel": "Manchester United (2002-03)"
+    },
+    "2007": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Edwin van der Sar",
+          "position": "GK"
+        },
+        {
+          "name": "Tomasz Kuszczak",
+          "position": "GK"
+        },
+        {
+          "name": "Ben Foster",
+          "position": "GK"
+        },
+        {
+          "name": "Tom Heaton",
+          "position": "GK"
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB"
+        },
+        {
+          "name": "Nemanja Vidic‎",
+          "position": "CB"
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "John O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Mikaël Silvestre",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Phil Bardsley",
+          "position": "CB"
+        },
+        {
+          "name": "Danny Simpson",
+          "position": "CB"
+        },
+        {
+          "name": "Richard Eckersley",
+          "position": "CB"
+        },
+        {
+          "name": "Owen Hargreaves",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM"
+        },
+        {
+          "name": "Kieran Lee",
+          "position": "CM"
+        },
+        {
+          "name": "Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Darren Fletcher",
+          "position": "CM"
+        },
+        {
+          "name": "Darron Gibson",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Hewson",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Ji-sung Park",
+          "position": "CM"
+        },
+        {
+          "name": "Lee Martin",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Chris Eagles",
+          "position": "ST"
+        },
+        {
+          "name": "Febian Brandy",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Tevez",
+          "position": "ST"
+        },
+        {
+          "name": "Louis Saha",
+          "position": "ST"
+        },
+        {
+          "name": "Fraizer Campbell",
+          "position": "ST"
+        },
+        {
+          "name": "Fangzhuo Dong",
+          "position": "ST"
+        },
+        {
+          "name": "Ole Gunnar Solskjaer",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (2007/2008)",
+      "teamLabel": "Manchester United (2007-08)"
+    },
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Edwin van der Sar",
+          "position": "GK"
+        },
+        {
+          "name": "Tomasz Kuszczak",
+          "position": "GK"
+        },
+        {
+          "name": "Ben Foster",
+          "position": "GK"
+        },
+        {
+          "name": "Ron-Robert Zieler",
+          "position": "GK"
+        },
+        {
+          "name": "Ben Amos",
+          "position": "GK"
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB"
+        },
+        {
+          "name": "Nemanja Vidic‎",
+          "position": "CB"
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB"
+        },
+        {
+          "name": "John O'Shea",
+          "position": "CB"
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB"
+        },
+        {
+          "name": "James Chester",
+          "position": "CB"
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB"
+        },
+        {
+          "name": "Rafael",
+          "position": "CB"
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB"
+        },
+        {
+          "name": "Fábio",
+          "position": "CB"
+        },
+        {
+          "name": "Ritchie De Laet",
+          "position": "CB"
+        },
+        {
+          "name": "David Gray",
+          "position": "CB"
+        },
+        {
+          "name": "Richard Eckersley",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM"
+        },
+        {
+          "name": "Owen Hargreaves",
+          "position": "CM"
+        },
+        {
+          "name": "Anderson",
+          "position": "CM"
+        },
+        {
+          "name": "Darren Fletcher",
+          "position": "CM"
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM"
+        },
+        {
+          "name": "Darron Gibson",
+          "position": "CM"
+        },
+        {
+          "name": "Rodrigo Possebon",
+          "position": "CM"
+        },
+        {
+          "name": "Tom Cleverley",
+          "position": "CM"
+        },
+        {
+          "name": "Danny Drinkwater",
+          "position": "CM"
+        },
+        {
+          "name": "Corry Evans",
+          "position": "CM"
+        },
+        {
+          "name": "Matty James",
+          "position": "CM"
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM"
+        },
+        {
+          "name": "Ji-sung Park",
+          "position": "CM"
+        },
+        {
+          "name": "Lee Martin",
+          "position": "CM"
+        },
+        {
+          "name": "Nani",
+          "position": "ST"
+        },
+        {
+          "name": "Zoran Tosic",
+          "position": "ST"
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST"
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST"
+        },
+        {
+          "name": "Dimitar Berbatov",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Tevez",
+          "position": "ST"
+        },
+        {
+          "name": "Fraizer Campbell",
+          "position": "ST"
+        },
+        {
+          "name": "Manucho",
+          "position": "ST"
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST"
+        },
+        {
+          "name": "Federico Macheda",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (2008/2009)",
+      "teamLabel": "Manchester United (2008-09)"
+    },
+    "2026": {
+      "found": true,
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Altay Bayındır",
+          "position": "GK"
+        },
+        {
+          "name": "Diogo Dalot",
+          "position": "RB"
+        },
+        {
+          "name": "Matthijs de Ligt",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Maguire",
+          "position": "CB"
+        },
+        {
+          "name": "Lisandro Martínez",
+          "position": "LB"
+        },
+        {
+          "name": "Mason Mount",
+          "position": "DM"
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "CM"
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM"
+        },
+        {
+          "name": "Matheus Cunha",
+          "position": "RW"
+        },
+        {
+          "name": "Joshua Zirkzee",
+          "position": "ST"
+        },
+        {
+          "name": "Amad Diallo",
+          "position": "LW"
+        }
+      ],
+      "ratings": null,
+      "source": "Wikipedia — \"Manchester United F.C.\"",
+      "teamLabel": "Manchester United (2026)"
     }
   },
-  "name": "Manchester United"
+  "name": "Manchester United",
+  "id": 985,
+  "badgeLocalPath": "/img/badges/manchester-united.png"
 }

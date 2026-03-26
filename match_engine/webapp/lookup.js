@@ -19,7 +19,8 @@ const path = require('path');
 const { SQUADS }                    = require('./squads');
 const { lookupWikipedia }           = require('./wikipedia');
 const { fetchBdfutbolSquad }        = require('./bdfutbol');
-const { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile } = require('./transfermarkt');
+const { fetchTransfermarktSquad, resolveClub, _loadTeamFile, _saveTeamFile,
+        saveBadgeLocally, saveBadgePathToFile, getLocalBadgePath } = require('./transfermarkt');
 const { buildXI, ELITE_NATIONALS, STRONG_NATIONALS } = require('./utils');
 
 const SPORTSDB_BASE = 'https://www.thesportsdb.com/api/v1/json/3';
@@ -103,12 +104,13 @@ function ratingsFromLeague(strLeague = '', teamName = '') {
     return { attack: 78, midfield: 78, defense: 77, goalkeeping: 76 };
   }
   if (LEAGUE_TIERS.tier1.some(t2 => l.includes(t2))) {
-    return { attack: 80, midfield: 80, defense: 80, goalkeeping: 80 };
+    // Modern football: attack attributes skew slightly higher than defensive ones
+    return { attack: 81, midfield: 80, defense: 79, goalkeeping: 78 };
   }
   if (LEAGUE_TIERS.tier2.some(t2 => l.includes(t2))) {
-    return { attack: 73, midfield: 73, defense: 73, goalkeeping: 73 };
+    return { attack: 74, midfield: 73, defense: 73, goalkeeping: 72 };
   }
-  return { attack: 68, midfield: 68, defense: 68, goalkeeping: 68 };
+  return { attack: 69, midfield: 68, defense: 68, goalkeeping: 67 };
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -161,7 +163,14 @@ async function fetchFromSportsDB(teamName) {
         ratings:    ratingsFromLeague(strLeague, teamName),
         source:     `TheSportsDB — ${teamLabel}${strLeague ? ` · ${strLeague}` : ''}${country ? ` (${country})` : ''}`,
         teamLabel,
-        badgeUrl:   team.strBadge || team.strTeamBadge || null,
+        badgeUrl:   await (async () => {
+          const extBadge = team.strBadge || team.strTeamBadge || null;
+          if (!extBadge) return null;
+          const slug = _resolveSlug(teamName);
+          const local = await saveBadgeLocally(extBadge, slug);
+          if (local) { saveBadgePathToFile(slug, local); return local; }
+          return null;  // skip external URL — CSP would block it
+        })(),
       };
     } catch (_) {
       // try next variant
@@ -289,8 +298,9 @@ function makeVariants(name) {
     'atletico madrid':     ['Atletico Madrid', 'Club Atlético de Madrid'],
     'bayer leverkusen':    ['Bayer 04 Leverkusen'],
     'rb leipzig':          ['RasenBallsport Leipzig'],
-    'paris saint germain': ['Paris Saint-Germain'],
-    'tottenham':           ['Tottenham Hotspur'],
+    'paris saint germain':  ['Paris SG', 'Paris Saint-Germain'],
+    'paris saint-germain':  ['Paris SG', 'Paris Saint-Germain'],
+    'tottenham':            ['Tottenham Hotspur'],
     'spurs':               ['Tottenham Hotspur'],
     'wolves':              ['Wolverhampton Wanderers'],
     'west ham':            ['West Ham United'],
@@ -300,11 +310,124 @@ function makeVariants(name) {
     'inter':               ['Internazionale'],
     'inter milan':         ['Internazionale'],
     'ac milan':            ['Milan'],
+    'psv':                 ['PSV Eindhoven'],
     'atletico de madrid':  ['Atletico Madrid'],
     'girona':              ['Girona FC'],
     'osasuna':             ['CA Osasuna'],
     'malaga':              ['Málaga CF'],
     'deportivo':           ['Deportivo de La Coruña'],
+    // Clubes europeos / resto del mundo
+    'az alkmaar':          ['AZ', 'AZ Alkmaar'],
+    'dynamo kyiv':         ['Dynamo Kyiv', 'Dynamo Kiev'],
+    'red star belgrade':   ['Crvena Zvezda', 'Crvena zvezda', 'Red Star Belgrade', 'FK Crvena zvezda'],
+    'zenit st petersburg': ['Zenit St Petersburg', 'FC Zenit', 'Zenit'],
+    'spartak moscow':      ['Spartak Moscow', 'FC Spartak Moscow'],
+    'cska moscow':         ['CSKA Moscow', 'PFC CSKA Moscow'],
+    'steaua bucharest':    ['Steaua Bucharest', 'FCSB'],
+    'rapid vienna':        ['SK Rapid Wien', 'Rapid Wien'],
+    'galatasaray':         ['Galatasaray SK', 'Galatasaray'],
+    'fenerbahce':          ['Fenerbahçe', 'Fenerbahce SK'],
+    'besiktas':            ['Beşiktaş', 'Besiktas JK'],
+    // Equipos sudamericanos
+    'boca juniors':        ['Boca Juniors', 'Club Atletico Boca Juniors'],
+    'river plate':         ['River Plate', 'Club Atletico River Plate'],
+    'sao paulo fc':        ['São Paulo', 'Sao Paulo FC', 'São Paulo FC'],
+    'gremio':              ['Grêmio', 'Gremio FBPA'],
+    'peñarol':             ['Peñarol', 'Club Atletico Peñarol'],
+    'nacional':            ['Nacional Montevideo', 'Club Nacional de Football'],
+    'independiente':       ['Club Atletico Independiente'],
+    // Selecciones nacionales (variantes TheSportsDB)
+    'ivory coast':         ['Ivory Coast', "Côte d'Ivoire"],
+    'bosnia':              ['Bosnia-Herzegovina', 'Bosnia and Herzegovina', 'Bosnia & Herzegovina'],
+    'republic of ireland': ['Republic of Ireland', 'Ireland'],
+    // México
+    'club america':        ['Club América', 'America', 'Club America', 'CF América'],
+    'guadalajara':         ['CD Guadalajara', 'Chivas', 'Deportivo Guadalajara'],
+    'tigres uanl':         ['Tigres UANL', 'Tigres de la UANL', 'Tigres'],
+    'monterrey':           ['CF Monterrey', 'Club de Fútbol Monterrey'],
+    // Selecciones — variantes TheSportsDB
+    'united states':       ['USA', 'United States of America'],
+    'northern ireland':    ['Northern Ireland', 'Northern Ireland FA'],
+    // Bundesliga adicional
+    'hamburger sv':        ['Hamburger SV', 'Hamburger Sport-Verein', 'HSV Hamburg'],
+    'union berlin':        ['1. FC Union Berlin', 'FC Union Berlin'],
+    'mainz':               ['FSV Mainz 05', 'Mainz 05'],
+    'mainz 05':            ['1. FSV Mainz 05', 'FSV Mainz 05'],
+    'hertha berlin':       ['Hertha', 'Hertha BSC', 'Hertha Berlin SC'],
+    'hannover 96':         ['Hannover 96'],
+    'st. pauli':           ['FC St. Pauli', 'St Pauli'],
+    'heidenheim':          ['FC Heidenheim', '1. FC Heidenheim 1846'],
+    'darmstadt':           ['SV Darmstadt 98', 'Darmstadt 98'],
+    // Ligue 1 adicional
+    'saint-etienne':       ['St Etienne', 'AS Saint-Etienne', 'Saint Etienne'],
+    'lens':                ['RC Lens', 'Racing Club de Lens'],
+    'nice':                ['OGC Nice'],
+    'rennes':              ['Stade Rennais', 'Stade Rennais FC'],
+    'toulouse':            ['Toulouse FC'],
+    'brest':               ['Stade Brestois 29', 'Stade Brest'],
+    'montpellier':         ['Montpellier HSC'],
+    'strasbourg':          ['RC Strasbourg', 'Racing Club de Strasbourg'],
+    'stade reims':         ['Stade de Reims', 'Reims'],
+    'angers':              ['SCO Angers', 'Angers SCO'],
+    // Serie A adicional
+    'bologna':             ['FC Bologna', 'Bologna FC 1909'],
+    'genoa':               ['Genoa CFC'],
+    'hellas verona':       ['Hellas Verona FC'],
+    'verona':              ['Hellas Verona', 'AC ChievoVerona'],
+    'udinese':             ['Udinese Calcio'],
+    'lecce':               ['US Lecce'],
+    'empoli':              ['FC Empoli'],
+    'monza':               ['AC Monza'],
+    'salernitana':         ['US Salernitana', 'Unione Sportiva Salernitana'],
+    // UCL / Europa adicional
+    'partizan':            ['FK Partizan', 'Partizan Belgrade', 'Partizan Beograd'],
+    'brighton':            ['Brighton & Hove Albion', 'Brighton and Hove Albion'],
+    'young boys':          ['BSC Young Boys', 'Young Boys Bern'],
+    'red bull salzburg':   ['FC Salzburg', 'FC Red Bull Salzburg', 'RB Salzburg'],
+    'shakhtar donetsk':    ['FC Shakhtar Donetsk', 'Shakhtar'],
+    'fc copenhagen':       ['FC Kobenhavn', 'FC Copenhagen'],
+    'rangers':             ['Rangers FC', 'Glasgow Rangers'],
+    'club brugge':         ['Club Brugge KV', 'Club Brugge', 'Brugge'],
+    'bournemouth':         ['AFC Bournemouth', 'Bournemouth FC'],
+    'freiburg':            ['SC Freiburg', 'Sport-Club Freiburg'],
+    'dinamo zagreb':       ['GNK Dinamo Zagreb', 'NK Dinamo Zagreb'],
+    // Saudi Pro League
+    'al-hilal':            ['Al-Hilal', 'Al Hilal', 'Al-Hilal Saudi FC', 'Al-Hilal SFC'],
+    'al-nassr':            ['Al-Nassr', 'Al Nassr', 'Al-Nassr FC'],
+    'al-ittihad':          ['Al-Ittihad', 'Al Ittihad', 'Ittihad FC'],
+    'al-ahli':             ['Al-Ahli', 'Al Ahli', 'Al Ahli Saudi FC'],
+    'al-shabab':           ['Al-Shabab', 'Al Shabab'],
+    'al-fateh':            ['Al-Fateh', 'Al Fateh'],
+    'al-ettifaq':          ['Al-Ettifaq', 'Al Ettifaq', 'Ettifaq FC'],
+    'al-qadsiah':          ['Al-Qadsiah', 'Al Qadsiah'],
+    // MLS
+    'la galaxy':           ['Los Angeles Galaxy', 'LA Galaxy'],
+    'lafc':                ['Los Angeles FC', 'LA FC'],
+    'seattle sounders':    ['Seattle Sounders FC'],
+    'portland timbers':    ['Portland Timbers FC'],
+    'atlanta united':      ['Atlanta United FC'],
+    'inter miami':         ['Inter Miami CF', 'CF Inter Miami'],
+    'inter de miami':      ['Inter Miami CF', 'CF Inter Miami'],
+    'inter de miami cf':   ['Inter Miami CF', 'CF Inter Miami'],
+    'new york city fc':    ['NYCFC', 'NYC FC'],
+    'new york red bulls':  ['New York Red Bulls', 'NY Red Bulls'],
+    'columbus crew':       ['Columbus Crew SC'],
+    'toronto fc':          ['Toronto FC'],
+    'chicago fire':        ['Chicago Fire FC'],
+    'sporting kansas city':['Sporting KC', 'Sporting Kansas City FC'],
+    'new england revolution':['New England Revolution'],
+    'real salt lake':      ['Real Salt Lake FC', 'RSL'],
+    'vancouver whitecaps': ['Vancouver Whitecaps FC'],
+    'cf montreal':         ['CF Montréal', 'Montreal Impact'],
+    'austin fc':           ['Austin FC'],
+    // Sudamérica adicional
+    'atletico mineiro':    ['Atlético Mineiro', 'Atletico Mineiro'],
+    'palmeiras':           ['SE Palmeiras', 'Sociedade Esportiva Palmeiras'],
+    'flamengo':            ['CR Flamengo', 'Club de Regatas do Flamengo', 'Flamengo Rio'],
+    'botafogo':            ['Botafogo FR', 'Botafogo de Futebol e Regatas'],
+    'vasco da gama':       ['CR Vasco da Gama', 'Vasco'],
+    'colo-colo':           ['Colo-Colo', 'Club Social y Deportivo Colo-Colo'],
+    'racing club':         ['Racing Club', 'Racing Club de Avellaneda'],
   };
   const key = clean.toLowerCase();
   if (ALIASES[key]) variants.push(...ALIASES[key]);
@@ -368,10 +491,14 @@ function lookupSquadsDir(teamName, era) {
 
   const eraYear = era ? parseInt(String(era).match(/\d{4}/)?.[0]) : NaN;
 
+  // Badge: prefer the locally-cached path stored at team-file top level.
+  // Never expose raw external URLs — the CSP only allows img-src 'self'.
+  const localBadge = teamFile.badgeLocalPath || null;
+
   // Exact year match
   if (!isNaN(eraYear) && teamFile.seasons[String(eraYear)]) {
     const s = teamFile.seasons[String(eraYear)];
-    return { ...s, source: `DB local — ${teamFile.name || teamName} (${eraYear})` };
+    return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (${eraYear})` };
   }
 
   // No-era: return the most recent season available (no network needed)
@@ -380,7 +507,7 @@ function lookupSquadsDir(teamName, era) {
     if (years.length === 0) return null;
     const latest = String(Math.max(...years));
     const s = teamFile.seasons[latest];
-    return { ...s, source: `DB local — ${teamFile.name || teamName} (${latest})` };
+    return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (${latest})` };
   }
 
   return null;
@@ -655,6 +782,18 @@ async function lookupTeam(teamName, era = '') {
 // Lightweight badge-only lookup (no player data, fast)
 // ─────────────────────────────────────────────────────────────
 async function fetchTeamBadge(teamName) {
+  const slug = _resolveSlug(teamName);
+
+  // 1. Fast path: check if the image file already exists on disk
+  const existing = getLocalBadgePath(slug);
+  if (existing) {
+    // Ensure the team file also records it (self-healing for migrated teams)
+    const { teamFile } = _loadTeamFileAny(teamName);
+    if (!teamFile.badgeLocalPath) saveBadgePathToFile(slug, existing);
+    return existing;
+  }
+
+  // 2. Fetch badge URL from TheSportsDB
   const variants = makeVariants(teamName);
   for (const variant of variants.slice(0, 3)) {
     try {
@@ -663,7 +802,15 @@ async function fetchTeamBadge(teamName) {
       if (!teams) continue;
       const team  = teams.find(t => !t.strSport || t.strSport.toLowerCase() === 'soccer') || teams[0];
       const badge = team?.strBadge || team?.strTeamBadge;
-      if (badge) return badge;
+      if (!badge) continue;
+
+      // 3. Download and cache locally
+      const localPath = await saveBadgeLocally(badge, slug);
+      if (localPath) {
+        saveBadgePathToFile(slug, localPath);
+        return localPath;
+      }
+      // Download failed — skip external URL (CSP img-src 'self' would block it)
     } catch (_) { continue; }
   }
   return null;

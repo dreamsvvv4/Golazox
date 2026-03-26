@@ -1,6 +1,667 @@
 {
   "slug": "fc-barcelona",
   "seasons": {
+    "1985": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Javier Urruti",
+          "position": "GK"
+        },
+        {
+          "name": "Amador",
+          "position": "GK"
+        },
+        {
+          "name": "Covelo",
+          "position": "GK"
+        },
+        {
+          "name": "José Ramón Alexanko",
+          "position": "CB"
+        },
+        {
+          "name": "Jordi Capella",
+          "position": "CB"
+        },
+        {
+          "name": "Migueli",
+          "position": "CB"
+        },
+        {
+          "name": "Josep Moratalla",
+          "position": "CB"
+        },
+        {
+          "name": "Salva",
+          "position": "CB"
+        },
+        {
+          "name": "Esteve Fradera",
+          "position": "CB"
+        },
+        {
+          "name": "Julio Alberto",
+          "position": "CB"
+        },
+        {
+          "name": "Manolo",
+          "position": "CB"
+        },
+        {
+          "name": "Ángel Pedraza",
+          "position": "CB"
+        },
+        {
+          "name": "Gerardo Miranda",
+          "position": "CB"
+        },
+        {
+          "name": "Urbano Ortega",
+          "position": "CM"
+        },
+        {
+          "name": "Josep Villarroya",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Muñoz",
+          "position": "CM"
+        },
+        {
+          "name": "Ramón Calderé",
+          "position": "CM"
+        },
+        {
+          "name": "Nayim",
+          "position": "CM"
+        },
+        {
+          "name": "Tente Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Marcos Alonso",
+          "position": "CM"
+        },
+        {
+          "name": "Bernd Schuster",
+          "position": "CM"
+        },
+        {
+          "name": "Esteban Vigo",
+          "position": "ST"
+        },
+        {
+          "name": "Juan Carlos Rojo",
+          "position": "ST"
+        },
+        {
+          "name": "Francisco López López",
+          "position": "ST"
+        },
+        {
+          "name": "Lobo Carrasco",
+          "position": "ST"
+        },
+        {
+          "name": "Steve Archibald",
+          "position": "ST"
+        },
+        {
+          "name": "Pichi Alonso",
+          "position": "ST"
+        },
+        {
+          "name": "Paco Clos",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl Amarilla",
+          "position": "ST"
+        },
+        {
+          "name": "Manolo",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (1985/1986)",
+      "teamLabel": "Barcelona (1985-86)"
+    },
+    "1992": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Andoni Zubizarreta",
+          "position": "GK"
+        },
+        {
+          "name": "Carles Busquets",
+          "position": "GK"
+        },
+        {
+          "name": "Jesús Angoy",
+          "position": "GK"
+        },
+        {
+          "name": "Ronald Koeman",
+          "position": "CB"
+        },
+        {
+          "name": "José Ramón Alexanko",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Ángel Nadal",
+          "position": "CB"
+        },
+        {
+          "name": "Pablo Alfaro",
+          "position": "CB"
+        },
+        {
+          "name": "Andoni Goikoetxea",
+          "position": "CB"
+        },
+        {
+          "name": "Ricardo Serna",
+          "position": "CB"
+        },
+        {
+          "name": "Miquel Soler",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Barjuan",
+          "position": "CB"
+        },
+        {
+          "name": "Lluís Carreras",
+          "position": "CB"
+        },
+        {
+          "name": "Juan Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Albert Ferrer",
+          "position": "CB"
+        },
+        {
+          "name": "Pep Guardiola",
+          "position": "CM"
+        },
+        {
+          "name": "Eusebio",
+          "position": "CM"
+        },
+        {
+          "name": "Richard Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Guillermo Amor",
+          "position": "CM"
+        },
+        {
+          "name": "Goran Vucevic",
+          "position": "CM"
+        },
+        {
+          "name": "Jon Andoni Goikoetxea",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar García",
+          "position": "CM"
+        },
+        {
+          "name": "José Mari Bakero",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Hristo Stoichkov",
+          "position": "ST"
+        },
+        {
+          "name": "Txiki Begiristain",
+          "position": "ST"
+        },
+        {
+          "name": "Thomas Christiansen",
+          "position": "ST"
+        },
+        {
+          "name": "Julio Salinas",
+          "position": "ST"
+        },
+        {
+          "name": "Pablo Maqueda",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (1992/1993)",
+      "teamLabel": "Barcelona (1992-93)"
+    },
+    "1995": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Francesc Arnau",
+          "position": "GK"
+        },
+        {
+          "name": "Carles Busquets",
+          "position": "GK"
+        },
+        {
+          "name": "Jesús Angoy",
+          "position": "GK"
+        },
+        {
+          "name": "Julen Lopetegui",
+          "position": "GK"
+        },
+        {
+          "name": "Fernando Porto",
+          "position": "CB"
+        },
+        {
+          "name": "Abelardo",
+          "position": "CB"
+        },
+        {
+          "name": "Gheorghe Popescu",
+          "position": "CB"
+        },
+        {
+          "name": "Miguel Ángel Nadal",
+          "position": "CB"
+        },
+        {
+          "name": "Quique Álvarez",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Barjuan",
+          "position": "CB"
+        },
+        {
+          "name": "Lluís Carreras",
+          "position": "CB"
+        },
+        {
+          "name": "Xavi Roca",
+          "position": "CB"
+        },
+        {
+          "name": "Albert Ferrer",
+          "position": "CB"
+        },
+        {
+          "name": "Josep Setvalls",
+          "position": "CM"
+        },
+        {
+          "name": "Pep Guardiola",
+          "position": "CM"
+        },
+        {
+          "name": "Albert Celades",
+          "position": "CM"
+        },
+        {
+          "name": "Guillermo Amor",
+          "position": "CM"
+        },
+        {
+          "name": "Robert Prosinecki",
+          "position": "CM"
+        },
+        {
+          "name": "Toni Velamazán",
+          "position": "CM"
+        },
+        {
+          "name": "Roger García",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Carlos Moreno",
+          "position": "CM"
+        },
+        {
+          "name": "José Mari Bakero",
+          "position": "CM"
+        },
+        {
+          "name": "Gheorghe Hagi",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Cruijff",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar García",
+          "position": "CM"
+        },
+        {
+          "name": "Iván de la Peña",
+          "position": "CM"
+        },
+        {
+          "name": "Juanjo Carricondo",
+          "position": "ST"
+        },
+        {
+          "name": "Ángel Cuéllar",
+          "position": "ST"
+        },
+        {
+          "name": "Francisco Rufete",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Xavier García Pimienta",
+          "position": "ST"
+        },
+        {
+          "name": "Meho Kodro",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (1995/1996)",
+      "teamLabel": "Barcelona (1995-96)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ruud Hesp",
+          "position": "GK"
+        },
+        {
+          "name": "Francesc Arnau",
+          "position": "GK"
+        },
+        {
+          "name": "Pepe Reina",
+          "position": "GK"
+        },
+        {
+          "name": "Frédéric Déhu",
+          "position": "CB"
+        },
+        {
+          "name": "Abelardo",
+          "position": "CB"
+        },
+        {
+          "name": "Winston Bogarde",
+          "position": "CB"
+        },
+        {
+          "name": "Frank de Boer",
+          "position": "CB"
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Barjuan",
+          "position": "CB"
+        },
+        {
+          "name": "Nano",
+          "position": "CB"
+        },
+        {
+          "name": "Michael Reiziger",
+          "position": "CB"
+        },
+        {
+          "name": "Pep Guardiola",
+          "position": "CM"
+        },
+        {
+          "name": "Phillip Cocu",
+          "position": "CM"
+        },
+        {
+          "name": "Gabri",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Luis Enrique",
+          "position": "CM"
+        },
+        {
+          "name": "Jari Litmanen",
+          "position": "CM"
+        },
+        {
+          "name": "Rivaldo",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Rosas",
+          "position": "CM"
+        },
+        {
+          "name": "Emmanuel Amunike",
+          "position": "ST"
+        },
+        {
+          "name": "Simão",
+          "position": "ST"
+        },
+        {
+          "name": "Boudewijn Zenden",
+          "position": "ST"
+        },
+        {
+          "name": "Ronald de Boer",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST"
+        },
+        {
+          "name": "Sergio Santamaría",
+          "position": "ST"
+        },
+        {
+          "name": "Patrick Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Dani García",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (1999/2000)",
+      "teamLabel": "Barcelona (1999-00)"
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bonano",
+          "position": "GK"
+        },
+        {
+          "name": "Reiziger",
+          "position": "RB"
+        },
+        {
+          "name": "Frank de Boer",
+          "position": "CB"
+        },
+        {
+          "name": "Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Mendieta",
+          "position": "CM"
+        },
+        {
+          "name": "Cocu",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Gabri",
+          "position": "CM"
+        },
+        {
+          "name": "Kluivert",
+          "position": "ST"
+        },
+        {
+          "name": "Saviola",
+          "position": "ST"
+        },
+        {
+          "name": "Overmars",
+          "position": "ST"
+        },
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Riquelme",
+          "position": "CM"
+        },
+        {
+          "name": "Motta",
+          "position": "CM"
+        },
+        {
+          "name": "Luis Enrique",
+          "position": "ST"
+        },
+        {
+          "name": "Rochemback",
+          "position": "CM"
+        },
+        {
+          "name": "Enke",
+          "position": "GK"
+        },
+        {
+          "name": "Sorín",
+          "position": "LB"
+        },
+        {
+          "name": "Gerard",
+          "position": "CM"
+        },
+        {
+          "name": "Fernando Navarro",
+          "position": "LB"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Christanval",
+          "position": "CB"
+        },
+        {
+          "name": "Andersson",
+          "position": "CB"
+        },
+        {
+          "name": "Geovanni",
+          "position": "ST"
+        },
+        {
+          "name": "Oleguer",
+          "position": "RB"
+        },
+        {
+          "name": "Òscar López",
+          "position": "LB"
+        },
+        {
+          "name": "Nano",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio García",
+          "position": "ST"
+        },
+        {
+          "name": "Dani Tortolero",
+          "position": "CB"
+        },
+        {
+          "name": "David Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Peña",
+          "position": "LB"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 73,
+        "defense": 77,
+        "goalkeeping": 72
+      },
+      "source": "BDFutbol — Barcelona 2002-03 Primera División",
+      "teamLabel": "Barcelona 2002-03 Primera División"
+    },
     "2004": {
       "formation": "4-4-2",
       "players": [
@@ -154,6 +815,888 @@
       "source": "BDFutbol — Barcelona 2004-05 Primera División",
       "teamLabel": "Barcelona 2004-05 Primera División"
     },
+    "2005": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Oleguer",
+          "position": "RB"
+        },
+        {
+          "name": "Sylvinho",
+          "position": "LB"
+        },
+        {
+          "name": "Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Márquez",
+          "position": "CB"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Edmílson",
+          "position": "CM"
+        },
+        {
+          "name": "Van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Eto'o",
+          "position": "ST"
+        },
+        {
+          "name": "Ronaldinho",
+          "position": "ST"
+        },
+        {
+          "name": "Giuly",
+          "position": "ST"
+        },
+        {
+          "name": "Jorquera",
+          "position": "GK"
+        },
+        {
+          "name": "Belletti",
+          "position": "RB"
+        },
+        {
+          "name": "Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Larsson",
+          "position": "ST"
+        },
+        {
+          "name": "Van Bronckhorst",
+          "position": "LB"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Motta",
+          "position": "CM"
+        },
+        {
+          "name": "Ezquerro",
+          "position": "ST"
+        },
+        {
+          "name": "Gabri",
+          "position": "CM"
+        },
+        {
+          "name": "Maxi López",
+          "position": "ST"
+        },
+        {
+          "name": "Rodri",
+          "position": "CB"
+        },
+        {
+          "name": "Ludovic",
+          "position": "CM"
+        },
+        {
+          "name": "Olmo",
+          "position": "CB"
+        },
+        {
+          "name": "Orlandi",
+          "position": "CM"
+        },
+        {
+          "name": "Martos",
+          "position": "CB"
+        },
+        {
+          "name": "Montañés",
+          "position": "ST"
+        },
+        {
+          "name": "Pitu Comadevall",
+          "position": "CM"
+        },
+        {
+          "name": "Masó",
+          "position": "CM"
+        },
+        {
+          "name": "Damià",
+          "position": "CM"
+        },
+        {
+          "name": "Cristian",
+          "position": "ST"
+        },
+        {
+          "name": "Peña",
+          "position": "LB"
+        },
+        {
+          "name": "Jordi Gómez",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 73,
+        "defense": 77,
+        "goalkeeping": 72
+      },
+      "source": "BDFutbol — Barcelona 2005-06 Primera División",
+      "teamLabel": "Barcelona 2005-06 Primera División"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Albert Jorquera",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Martínez",
+          "position": "GK"
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Rafa Márquez",
+          "position": "CB"
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Oleguer",
+          "position": "CB"
+        },
+        {
+          "name": "Jesús Olmo",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Valiente",
+          "position": "CB"
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB"
+        },
+        {
+          "name": "Sylvinho",
+          "position": "CB"
+        },
+        {
+          "name": "Gianluca Zambrotta",
+          "position": "CB"
+        },
+        {
+          "name": "Juliano Belletti",
+          "position": "CB"
+        },
+        {
+          "name": "Thiago Motta",
+          "position": "CM"
+        },
+        {
+          "name": "Edmílson",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Crosas",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Mark van Bommel",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Gómez",
+          "position": "CM"
+        },
+        {
+          "name": "Lluis Sastre",
+          "position": "CM"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Ronaldinho",
+          "position": "ST"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Ludovic Giuly",
+          "position": "ST"
+        },
+        {
+          "name": "Jeffrén",
+          "position": "ST"
+        },
+        {
+          "name": "Javier Saviola",
+          "position": "ST"
+        },
+        {
+          "name": "Giovani dos Santos",
+          "position": "ST"
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST"
+        },
+        {
+          "name": "Eidur Gudjohnsen",
+          "position": "ST"
+        },
+        {
+          "name": "Santiago Ezquerro",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2006/2007)",
+      "teamLabel": "Barcelona (2006-07)"
+    },
+    "2007": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Zambrotta",
+          "position": "RB"
+        },
+        {
+          "name": "Abidal",
+          "position": "LB"
+        },
+        {
+          "name": "Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Milito",
+          "position": "CB"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM"
+        },
+        {
+          "name": "Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Eto'o",
+          "position": "ST"
+        },
+        {
+          "name": "Pinto",
+          "position": "GK"
+        },
+        {
+          "name": "Bojan",
+          "position": "ST"
+        },
+        {
+          "name": "Giovani dos Santos",
+          "position": "ST"
+        },
+        {
+          "name": "Márquez",
+          "position": "CB"
+        },
+        {
+          "name": "Thuram",
+          "position": "CB"
+        },
+        {
+          "name": "Jorquera",
+          "position": "GK"
+        },
+        {
+          "name": "Guðjohnsen",
+          "position": "ST"
+        },
+        {
+          "name": "Deco",
+          "position": "CM"
+        },
+        {
+          "name": "Ronaldinho",
+          "position": "ST"
+        },
+        {
+          "name": "Sylvinho",
+          "position": "LB"
+        },
+        {
+          "name": "Oleguer",
+          "position": "RB"
+        },
+        {
+          "name": "Edmílson",
+          "position": "CM"
+        },
+        {
+          "name": "Ezquerro",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Víctor Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Vázquez",
+          "position": "ST"
+        },
+        {
+          "name": "Fali",
+          "position": "RB"
+        },
+        {
+          "name": "Rueda",
+          "position": "CM"
+        },
+        {
+          "name": "Crosas",
+          "position": "CM"
+        },
+        {
+          "name": "Oier Olazábal",
+          "position": "GK"
+        },
+        {
+          "name": "Espasandín",
+          "position": "LB"
+        },
+        {
+          "name": "Botía",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Valiente",
+          "position": "CB"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 73,
+        "defense": 77,
+        "goalkeeping": 72
+      },
+      "source": "BDFutbol — Barcelona 2007-08 Primera División",
+      "teamLabel": "Barcelona 2007-08 Primera División"
+    },
+    "2009": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "José Manuel Pinto",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Miño",
+          "position": "GK"
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Milito",
+          "position": "CB"
+        },
+        {
+          "name": "Rafa Márquez",
+          "position": "CB"
+        },
+        {
+          "name": "Dmytro Chygrynskyi",
+          "position": "CB"
+        },
+        {
+          "name": "Andreu Fontàs",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Muniesa",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Maxwell",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan dos Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM"
+        },
+        {
+          "name": "Seydou Keita",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Thiago Alcántara",
+          "position": "CM"
+        },
+        {
+          "name": "Gai Assulin",
+          "position": "ST"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Jeffrén",
+          "position": "ST"
+        },
+        {
+          "name": "Bojan Krkic",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST"
+        },
+        {
+          "name": "Eidur Gudjohnsen",
+          "position": "ST"
+        },
+        {
+          "name": "Jonathan Soriano",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2009/2010)",
+      "teamLabel": "Barcelona (2009-10)"
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Miño",
+          "position": "GK"
+        },
+        {
+          "name": "Oier Olazábal",
+          "position": "GK"
+        },
+        {
+          "name": "José Manuel Pinto",
+          "position": "GK"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Milito",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Muniesa",
+          "position": "CB"
+        },
+        {
+          "name": "Andreu Fontàs",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Adriano",
+          "position": "CB"
+        },
+        {
+          "name": "Maxwell",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Martín Montoya",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan dos Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Oriol Romeu",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Seydou Keita",
+          "position": "CM"
+        },
+        {
+          "name": "Thiago Alcántara",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Nolito",
+          "position": "ST"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Jeffrén",
+          "position": "ST"
+        },
+        {
+          "name": "Bojan Krkic",
+          "position": "ST"
+        },
+        {
+          "name": "David Villa",
+          "position": "ST"
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "position": "ST"
+        },
+        {
+          "name": "Gerard Deulofeu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2010/2011)",
+      "teamLabel": "Barcelona (2010-11)"
+    },
+    "2011": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Oier Olazábal",
+          "position": "GK"
+        },
+        {
+          "name": "Rubén Miño",
+          "position": "GK"
+        },
+        {
+          "name": "José Manuel Pinto",
+          "position": "GK"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Andreu Fontàs",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Muniesa",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Adriano",
+          "position": "CB"
+        },
+        {
+          "name": "Éric Abidal",
+          "position": "CB"
+        },
+        {
+          "name": "Maxwell",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Martín Montoya",
+          "position": "CB"
+        },
+        {
+          "name": "Kiko Femenía",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "CM"
+        },
+        {
+          "name": "Jonathan dos Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Cesc Fàbregas",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Thiago Alcántara",
+          "position": "CM"
+        },
+        {
+          "name": "Seydou Keita",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "Martí Riverola",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Afellay",
+          "position": "CM"
+        },
+        {
+          "name": "Rafinha",
+          "position": "CM"
+        },
+        {
+          "name": "Cristian Tello",
+          "position": "ST"
+        },
+        {
+          "name": "Isaac Cuenca",
+          "position": "ST"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "David Villa",
+          "position": "ST"
+        },
+        {
+          "name": "Gerard Deulofeu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2011/2012)",
+      "teamLabel": "Barcelona (2011-12)"
+    },
     "2012": {
       "formation": "4-4-2",
       "players": [
@@ -295,60 +1838,806 @@
       "source": "BDFutbol — Barcelona 2012-13 Primera División",
       "teamLabel": "Barcelona 2012-13 Primera División"
     },
+    "2013": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Víctor Valdés",
+          "position": "GK"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "RB"
+        },
+        {
+          "name": "Mascherano",
+          "position": "CB"
+        },
+        {
+          "name": "Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Fàbregas",
+          "position": "CM"
+        },
+        {
+          "name": "Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Pinto",
+          "position": "GK"
+        },
+        {
+          "name": "Adriano",
+          "position": "LB"
+        },
+        {
+          "name": "Neymar",
+          "position": "ST"
+        },
+        {
+          "name": "Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Song",
+          "position": "CM"
+        },
+        {
+          "name": "Oier Olazábal",
+          "position": "GK"
+        },
+        {
+          "name": "Jordi Alba",
+          "position": "LB"
+        },
+        {
+          "name": "Montoya",
+          "position": "RB"
+        },
+        {
+          "name": "Tello",
+          "position": "ST"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "RB"
+        },
+        {
+          "name": "Puyol",
+          "position": "CB"
+        },
+        {
+          "name": "Jonathan dos Santos",
+          "position": "CM"
+        },
+        {
+          "name": "Afellay",
+          "position": "ST"
+        },
+        {
+          "name": "Dongou",
+          "position": "ST"
+        },
+        {
+          "name": "Adama",
+          "position": "ST"
+        },
+        {
+          "name": "Sergi Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Patric",
+          "position": "RB"
+        },
+        {
+          "name": "Cuenca",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 73,
+        "defense": 77,
+        "goalkeeping": 72
+      },
+      "source": "BDFutbol — Barcelona 2013-14 Primera División",
+      "teamLabel": "Barcelona 2013-14 Primera División"
+    },
+    "2014": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marc-André ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Claudio Bravo",
+          "position": "GK"
+        },
+        {
+          "name": "Jordi Masip",
+          "position": "GK"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Vermaelen",
+          "position": "CB"
+        },
+        {
+          "name": "Edgar Ié",
+          "position": "CB"
+        },
+        {
+          "name": "Jordi Alba",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Mathieu",
+          "position": "CB"
+        },
+        {
+          "name": "Adriano",
+          "position": "CB"
+        },
+        {
+          "name": "Martín Montoya",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Douglas",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Samper",
+          "position": "CM"
+        },
+        {
+          "name": "Diawandou Diagne",
+          "position": "CM"
+        },
+        {
+          "name": "Gerard Gumbau",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Ivan Rakitic",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "Xavi",
+          "position": "CM"
+        },
+        {
+          "name": "Neymar",
+          "position": "CM"
+        },
+        {
+          "name": "Rafinha",
+          "position": "CM"
+        },
+        {
+          "name": "Munir El Haddadi",
+          "position": "CM"
+        },
+        {
+          "name": "Alen Halilovic",
+          "position": "CM"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST"
+        },
+        {
+          "name": "Sandro Ramírez",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2014/2015)",
+      "teamLabel": "Barcelona (2014-15)"
+    },
+    "2015": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marc-André ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Claudio Bravo",
+          "position": "GK"
+        },
+        {
+          "name": "Jordi Masip",
+          "position": "GK"
+        },
+        {
+          "name": "Gerard Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB"
+        },
+        {
+          "name": "Thomas Vermaelen",
+          "position": "CB"
+        },
+        {
+          "name": "Jordi Alba",
+          "position": "CB"
+        },
+        {
+          "name": "Jérémy Mathieu",
+          "position": "CB"
+        },
+        {
+          "name": "Adriano",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Douglas",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Samper",
+          "position": "CM"
+        },
+        {
+          "name": "Gerard Gumbau",
+          "position": "CM"
+        },
+        {
+          "name": "Ivan Rakitic",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "Wilfrid Kaptoum",
+          "position": "CM"
+        },
+        {
+          "name": "Carles Aleñá",
+          "position": "CM"
+        },
+        {
+          "name": "Neymar",
+          "position": "CM"
+        },
+        {
+          "name": "Rafinha",
+          "position": "CM"
+        },
+        {
+          "name": "Munir El Haddadi",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Cámara",
+          "position": "CM"
+        },
+        {
+          "name": "Aitor Cantalapiedra",
+          "position": "CM"
+        },
+        {
+          "name": "Arda Turan",
+          "position": "ST"
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Aleix Vidal",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST"
+        },
+        {
+          "name": "Sandro Ramírez",
+          "position": "ST"
+        },
+        {
+          "name": "Dani Romera",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2015/2016)",
+      "teamLabel": "Barcelona (2015-16)"
+    },
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Semedo",
+          "position": "RB"
+        },
+        {
+          "name": "Jordi Alba",
+          "position": "LB"
+        },
+        {
+          "name": "Piqué",
+          "position": "CB"
+        },
+        {
+          "name": "Lenglet",
+          "position": "CB"
+        },
+        {
+          "name": "Busquets",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM"
+        },
+        {
+          "name": "De Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Messi",
+          "position": "ST"
+        },
+        {
+          "name": "Griezmann",
+          "position": "ST"
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST"
+        },
+        {
+          "name": "Neto",
+          "position": "GK"
+        },
+        {
+          "name": "Vidal",
+          "position": "CM"
+        },
+        {
+          "name": "Rakitić",
+          "position": "CM"
+        },
+        {
+          "name": "Ansu Fati",
+          "position": "ST"
+        },
+        {
+          "name": "Arthur",
+          "position": "CM"
+        },
+        {
+          "name": "Iñaki Peña",
+          "position": "GK"
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "LB"
+        },
+        {
+          "name": "Umtiti",
+          "position": "CB"
+        },
+        {
+          "name": "Riqui Puig",
+          "position": "CM"
+        },
+        {
+          "name": "Carles Pérez",
+          "position": "ST"
+        },
+        {
+          "name": "Braithwaite",
+          "position": "ST"
+        },
+        {
+          "name": "Araújo",
+          "position": "CB"
+        },
+        {
+          "name": "Dembélé",
+          "position": "ST"
+        },
+        {
+          "name": "Aleñá",
+          "position": "CM"
+        },
+        {
+          "name": "Rafinha",
+          "position": "CM"
+        },
+        {
+          "name": "Todibo",
+          "position": "CB"
+        },
+        {
+          "name": "Collado",
+          "position": "ST"
+        },
+        {
+          "name": "Wagué",
+          "position": "RB"
+        },
+        {
+          "name": "Monchu",
+          "position": "CM"
+        },
+        {
+          "name": "Morer",
+          "position": "RB"
+        },
+        {
+          "name": "Cuenca",
+          "position": "CB"
+        },
+        {
+          "name": "Tenas",
+          "position": "GK"
+        },
+        {
+          "name": "Akieme",
+          "position": "LB"
+        },
+        {
+          "name": "Manaj",
+          "position": "ST"
+        },
+        {
+          "name": "Chumi",
+          "position": "CB"
+        },
+        {
+          "name": "Saverio",
+          "position": "ST"
+        },
+        {
+          "name": "Mingueza",
+          "position": "CB"
+        },
+        {
+          "name": "Jandro",
+          "position": "CM"
+        },
+        {
+          "name": "Abel Ruiz",
+          "position": "ST"
+        },
+        {
+          "name": "Reis",
+          "position": "CM"
+        },
+        {
+          "name": "De la Fuente",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 69,
+        "defense": 70,
+        "goalkeeping": 71
+      },
+      "source": "BDFutbol — Barcelona 2019-20 Primera División",
+      "teamLabel": "Barcelona 2019-20 Primera División"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Joan Garcia",
+          "position": "GK"
+        },
+        {
+          "name": "Koundé",
+          "position": "RB"
+        },
+        {
+          "name": "Balde",
+          "position": "LB"
+        },
+        {
+          "name": "Cubarsí",
+          "position": "CB"
+        },
+        {
+          "name": "Gerard Martín",
+          "position": "CB"
+        },
+        {
+          "name": "Eric Garcia",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Olmo",
+          "position": "CM"
+        },
+        {
+          "name": "Pedri",
+          "position": "CM"
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "ST"
+        },
+        {
+          "name": "Ferran Torres",
+          "position": "ST"
+        },
+        {
+          "name": "Raphinha",
+          "position": "ST"
+        },
+        {
+          "name": "Szczęsny",
+          "position": "GK"
+        },
+        {
+          "name": "Rashford",
+          "position": "ST"
+        },
+        {
+          "name": "Lewandowski",
+          "position": "ST"
+        },
+        {
+          "name": "Fermín",
+          "position": "CM"
+        },
+        {
+          "name": "De Jong",
+          "position": "CM"
+        },
+        {
+          "name": "Kochen",
+          "position": "GK"
+        },
+        {
+          "name": "Casadó",
+          "position": "CM"
+        },
+        {
+          "name": "Araújo",
+          "position": "CB"
+        },
+        {
+          "name": "Bernal",
+          "position": "CM"
+        },
+        {
+          "name": "Bardghji",
+          "position": "ST"
+        },
+        {
+          "name": "Christensen",
+          "position": "CB"
+        },
+        {
+          "name": "João Cancelo",
+          "position": "LB"
+        },
+        {
+          "name": "Dro",
+          "position": "CM"
+        },
+        {
+          "name": "Torrents",
+          "position": "LB"
+        },
+        {
+          "name": "Toni Fernández",
+          "position": "ST"
+        },
+        {
+          "name": "Espart",
+          "position": "RB"
+        },
+        {
+          "name": "Marqués",
+          "position": "CM"
+        },
+        {
+          "name": "Gavi",
+          "position": "CM"
+        },
+        {
+          "name": "Aller",
+          "position": "GK"
+        },
+        {
+          "name": "Ter Stegen",
+          "position": "GK"
+        },
+        {
+          "name": "Cortés",
+          "position": "CB"
+        },
+        {
+          "name": "Iñaki Peña",
+          "position": "GK"
+        },
+        {
+          "name": "Hernández",
+          "position": "CM"
+        },
+        {
+          "name": "Guillermo",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Rodríguez",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 73,
+        "defense": 77,
+        "goalkeeping": 72
+      },
+      "source": "BDFutbol — Barcelona 2025-26 Primera División",
+      "teamLabel": "Barcelona 2025-26 Primera División"
+    },
     "2026": {
       "found": true,
       "formation": "4-3-3",
       "players": [
         {
-          "name": "GK",
+          "name": "Joan García",
           "position": "GK"
         },
         {
-          "name": "DF",
+          "name": "João Cancelo",
           "position": "RB"
         },
         {
-          "name": "Melanie Serrano",
+          "name": "Alejandro Balde",
+          "position": "CB"
+        },
+        {
+          "name": "Ronald Araújo",
+          "position": "CB"
+        },
+        {
+          "name": "Pau Cubarsí",
+          "position": "LB"
+        },
+        {
+          "name": "Gavi",
           "position": "DM"
         },
         {
-          "name": "Alexia Putellas",
+          "name": "Pedri",
           "position": "CM"
         },
         {
-          "name": "Marta Torrejón",
+          "name": "Fermín López",
           "position": "CM"
         },
         {
-          "name": "FW",
+          "name": "Ferran Torres",
           "position": "RW"
         },
         {
-          "name": "Vicky Losada",
-          "position": "CM"
+          "name": "Robert Lewandowski",
+          "position": "ST"
         },
         {
-          "name": "Patri Guijarro",
-          "position": "CM"
-        },
-        {
-          "name": "Marta Unzúe",
-          "position": "CM"
-        },
-        {
-          "name": "Aitana Bonmatí",
-          "position": "CM"
-        },
-        {
-          "name": "Mapi León",
-          "position": "CM"
+          "name": "Lamine Yamal",
+          "position": "LW"
         }
       ],
       "ratings": null,
-      "source": "Wikipedia — \"FC Barcelona Femení\"",
-      "teamLabel": "FC Barcelona (2026)"
+      "source": "Wikipedia — \"2025–26 FC Barcelona season\"",
+      "teamLabel": "barcelona (2026)"
     }
   },
   "id": 131,
-  "name": "FC Barcelona"
+  "name": "FC Barcelona",
+  "badgeLocalPath": "/img/badges/fc-barcelona.png"
 }

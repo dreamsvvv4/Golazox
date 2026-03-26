@@ -1,0 +1,785 @@
+{
+  "slug": "fc-sevilla",
+  "seasons": {
+    "1997": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Casagrande",
+          "position": "GK"
+        },
+        {
+          "name": "Velasco",
+          "position": "RB"
+        },
+        {
+          "name": "Paco Peña",
+          "position": "CB"
+        },
+        {
+          "name": "Hibić",
+          "position": "CB"
+        },
+        {
+          "name": "Prieto",
+          "position": "CB"
+        },
+        {
+          "name": "Tsartas",
+          "position": "CM"
+        },
+        {
+          "name": "Axel",
+          "position": "CM"
+        },
+        {
+          "name": "Oulida",
+          "position": "CM"
+        },
+        {
+          "name": "Jurić",
+          "position": "CM"
+        },
+        {
+          "name": "Carlitos",
+          "position": "ST"
+        },
+        {
+          "name": "Molnar",
+          "position": "ST"
+        },
+        {
+          "name": "Monchi",
+          "position": "GK"
+        },
+        {
+          "name": "Nando",
+          "position": "LB"
+        },
+        {
+          "name": "Alfredo",
+          "position": "CM"
+        },
+        {
+          "name": "Cordón",
+          "position": "LB"
+        },
+        {
+          "name": "Míchel",
+          "position": "CM"
+        },
+        {
+          "name": "Luque",
+          "position": "GK"
+        },
+        {
+          "name": "Rytter",
+          "position": "RB"
+        },
+        {
+          "name": "Marchena",
+          "position": "CM"
+        },
+        {
+          "name": "Loren",
+          "position": "ST"
+        },
+        {
+          "name": "Salva",
+          "position": "ST"
+        },
+        {
+          "name": "Thétis",
+          "position": "CB"
+        },
+        {
+          "name": "Vukićević",
+          "position": "CM"
+        },
+        {
+          "name": "Lawarée",
+          "position": "ST"
+        },
+        {
+          "name": "Enría",
+          "position": "ST"
+        },
+        {
+          "name": "Jesuli",
+          "position": "CM"
+        },
+        {
+          "name": "Lucio Wagner",
+          "position": "LB"
+        },
+        {
+          "name": "Pepelu",
+          "position": "CM"
+        },
+        {
+          "name": "David",
+          "position": "ST"
+        },
+        {
+          "name": "Galván",
+          "position": "RB"
+        },
+        {
+          "name": "Corona",
+          "position": "CB"
+        },
+        {
+          "name": "Rico",
+          "position": "LB"
+        },
+        {
+          "name": "Juan Ramón",
+          "position": "CB"
+        },
+        {
+          "name": "Eboué",
+          "position": "GK"
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "BDFutbol — Sevilla 1997-98 Segunda División",
+      "teamLabel": "Sevilla 1997-98 Segunda División"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Andrés Palop",
+          "position": "GK"
+        },
+        {
+          "name": "David Cobeño",
+          "position": "GK"
+        },
+        {
+          "name": "Javi Varas",
+          "position": "GK"
+        },
+        {
+          "name": "Julien Escudé",
+          "position": "CB"
+        },
+        {
+          "name": "Javi Navarro",
+          "position": "CB"
+        },
+        {
+          "name": "Ivica Dragutinovic",
+          "position": "CB"
+        },
+        {
+          "name": "Aitor Ocio",
+          "position": "CB"
+        },
+        {
+          "name": "Federico Fazio",
+          "position": "CB"
+        },
+        {
+          "name": "Adriano",
+          "position": "CB"
+        },
+        {
+          "name": "Antonio Puerta",
+          "position": "CB"
+        },
+        {
+          "name": "David Castedo",
+          "position": "CB"
+        },
+        {
+          "name": "Dani Alves",
+          "position": "CB"
+        },
+        {
+          "name": "Andreas Hinkel",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Poulsen",
+          "position": "CM"
+        },
+        {
+          "name": "Josep Lluís Martí",
+          "position": "CM"
+        },
+        {
+          "name": "Lolo",
+          "position": "CM"
+        },
+        {
+          "name": "Renato",
+          "position": "CM"
+        },
+        {
+          "name": "Enzo Maresca",
+          "position": "CM"
+        },
+        {
+          "name": "Bruno Herrero",
+          "position": "CM"
+        },
+        {
+          "name": "Jesús Navas",
+          "position": "CM"
+        },
+        {
+          "name": "Jesuli",
+          "position": "CM"
+        },
+        {
+          "name": "Duda",
+          "position": "ST"
+        },
+        {
+          "name": "Alejandro Alfaro",
+          "position": "ST"
+        },
+        {
+          "name": "Diego Capel",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Sales",
+          "position": "ST"
+        },
+        {
+          "name": "Frédéric Kanouté",
+          "position": "ST"
+        },
+        {
+          "name": "Luís Fabiano",
+          "position": "ST"
+        },
+        {
+          "name": "Aleksandr Kerzhakov",
+          "position": "ST"
+        },
+        {
+          "name": "Javier Chevantón",
+          "position": "ST"
+        },
+        {
+          "name": "Kepa Blanco",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Sevilla (2006/2007)",
+      "teamLabel": "Sevilla (2006-07)"
+    },
+    "2015": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sergio Rico",
+          "position": "GK"
+        },
+        {
+          "name": "Beto",
+          "position": "GK"
+        },
+        {
+          "name": "David Soria",
+          "position": "GK"
+        },
+        {
+          "name": "Federico Fazio",
+          "position": "CB"
+        },
+        {
+          "name": "Adil Rami",
+          "position": "CB"
+        },
+        {
+          "name": "Timothée Kolodziejczak",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carriço",
+          "position": "CB"
+        },
+        {
+          "name": "Marco Andreolli",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolás Pareja",
+          "position": "CB"
+        },
+        {
+          "name": "Diego González",
+          "position": "CB"
+        },
+        {
+          "name": "Benoît Trémoulinas",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Escudero",
+          "position": "CB"
+        },
+        {
+          "name": "José Matos",
+          "position": "CB"
+        },
+        {
+          "name": "Mariano",
+          "position": "CB"
+        },
+        {
+          "name": "Coke",
+          "position": "CB"
+        },
+        {
+          "name": "Diogo Figueiras",
+          "position": "CB"
+        },
+        {
+          "name": "David Carmona",
+          "position": "CB"
+        },
+        {
+          "name": "Grzegorz Krychowiak",
+          "position": "CM"
+        },
+        {
+          "name": "Steven Nzonzi",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente Iborra",
+          "position": "CM"
+        },
+        {
+          "name": "Luismi Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Éver Banega",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Sebastián Cristóforo",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Cotán",
+          "position": "CM"
+        },
+        {
+          "name": "Denis Suárez",
+          "position": "CM"
+        },
+        {
+          "name": "Gaël Kakuta",
+          "position": "CM"
+        },
+        {
+          "name": "Ivi López",
+          "position": "CM"
+        },
+        {
+          "name": "Borja Lasso",
+          "position": "CM"
+        },
+        {
+          "name": "Yevgen Konoplyanka",
+          "position": "ST"
+        },
+        {
+          "name": "Vitolo",
+          "position": "ST"
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST"
+        },
+        {
+          "name": "Curro Sánchez",
+          "position": "ST"
+        },
+        {
+          "name": "Kévin Gameiro",
+          "position": "ST"
+        },
+        {
+          "name": "Ciro Immobile",
+          "position": "ST"
+        },
+        {
+          "name": "Fernando Llorente",
+          "position": "ST"
+        },
+        {
+          "name": "Juan Muñoz",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Fernández",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Sevilla (2015/2016)",
+      "teamLabel": "Sevilla (2015-16)"
+    },
+    "2016": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sergio Rico",
+          "position": "GK"
+        },
+        {
+          "name": "Salvatore Sirigu",
+          "position": "GK"
+        },
+        {
+          "name": "David Soria",
+          "position": "GK"
+        },
+        {
+          "name": "José Antonio Caro",
+          "position": "GK"
+        },
+        {
+          "name": "Clément Lenglet",
+          "position": "CB"
+        },
+        {
+          "name": "Timothée Kolodziejczak",
+          "position": "CB"
+        },
+        {
+          "name": "Adil Rami",
+          "position": "CB"
+        },
+        {
+          "name": "Gabriel Mercado",
+          "position": "CB"
+        },
+        {
+          "name": "Daniel Carriço",
+          "position": "CB"
+        },
+        {
+          "name": "Diego González",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolás Pareja",
+          "position": "CB"
+        },
+        {
+          "name": "Cristian Tassano",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Escudero",
+          "position": "CB"
+        },
+        {
+          "name": "Benoît Trémoulinas",
+          "position": "CB"
+        },
+        {
+          "name": "José Matos",
+          "position": "CB"
+        },
+        {
+          "name": "Álex Muñoz",
+          "position": "CB"
+        },
+        {
+          "name": "Mariano",
+          "position": "CB"
+        },
+        {
+          "name": "David Carmona",
+          "position": "CB"
+        },
+        {
+          "name": "Steven Nzonzi",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente Iborra",
+          "position": "CM"
+        },
+        {
+          "name": "Matías Kranevitter",
+          "position": "CM"
+        },
+        {
+          "name": "Walter Montoya",
+          "position": "CM"
+        },
+        {
+          "name": "Michael Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Franco Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Samir Nasri",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM"
+        },
+        {
+          "name": "Hiroshi Kiyotake",
+          "position": "CM"
+        },
+        {
+          "name": "Ganso",
+          "position": "CM"
+        },
+        {
+          "name": "Borja Lasso",
+          "position": "CM"
+        },
+        {
+          "name": "Pepe Mena",
+          "position": "CM"
+        },
+        {
+          "name": "Vitolo",
+          "position": "ST"
+        },
+        {
+          "name": "Yevgen Konoplyanka",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Pozo",
+          "position": "ST"
+        },
+        {
+          "name": "Joaquín Correa",
+          "position": "ST"
+        },
+        {
+          "name": "Stevan Jovetić",
+          "position": "ST"
+        },
+        {
+          "name": "Wissam Ben Yedder",
+          "position": "ST"
+        },
+        {
+          "name": "Luciano Vietto",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Fernández",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Sevilla (2016/2017)",
+      "teamLabel": "Sevilla (2016-17)"
+    },
+    "2020": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Yassine Bounou",
+          "position": "GK"
+        },
+        {
+          "name": "Tomáš Vaclík",
+          "position": "GK"
+        },
+        {
+          "name": "Javi Díaz",
+          "position": "GK"
+        },
+        {
+          "name": "Alfonso Pastor",
+          "position": "GK"
+        },
+        {
+          "name": "Adrián González",
+          "position": "GK"
+        },
+        {
+          "name": "Diego Carlos",
+          "position": "CB"
+        },
+        {
+          "name": "Sergi Gómez",
+          "position": "CB"
+        },
+        {
+          "name": "Karim Rekik",
+          "position": "CB"
+        },
+        {
+          "name": "Joris Gnagnon",
+          "position": "CB"
+        },
+        {
+          "name": "Kike Ríos",
+          "position": "CB"
+        },
+        {
+          "name": "Marcos Acuña",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Escudero",
+          "position": "CB"
+        },
+        {
+          "name": "Javi Vázquez",
+          "position": "CB"
+        },
+        {
+          "name": "Pablo Pérez",
+          "position": "CB"
+        },
+        {
+          "name": "Jules Koundé",
+          "position": "CB"
+        },
+        {
+          "name": "Juanlu Sánchez",
+          "position": "CB"
+        },
+        {
+          "name": "Nemanja Gudelj",
+          "position": "CM"
+        },
+        {
+          "name": "Fernando",
+          "position": "CM"
+        },
+        {
+          "name": "Joan Jordán",
+          "position": "CM"
+        },
+        {
+          "name": "Óliver Torres",
+          "position": "CM"
+        },
+        {
+          "name": "Ivan Rakitic",
+          "position": "CM"
+        },
+        {
+          "name": "Jesús Navas",
+          "position": "CM"
+        },
+        {
+          "name": "Suso",
+          "position": "CM"
+        },
+        {
+          "name": "Óscar Rodríguez",
+          "position": "CM"
+        },
+        {
+          "name": "Munir El Haddadi",
+          "position": "CM"
+        },
+        {
+          "name": "Franco Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Carlos Álvarez",
+          "position": "CM"
+        },
+        {
+          "name": "Lucas Ocampos",
+          "position": "ST"
+        },
+        {
+          "name": "Bryan Gil",
+          "position": "ST"
+        },
+        {
+          "name": "Papu Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Oussama Idrissi",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Pozo",
+          "position": "ST"
+        },
+        {
+          "name": "Aleix Vidal",
+          "position": "ST"
+        },
+        {
+          "name": "Antonio Zarzana",
+          "position": "ST"
+        },
+        {
+          "name": "Youssef En-Nesyri",
+          "position": "ST"
+        },
+        {
+          "name": "Luuk de Jong",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Fernández",
+          "position": "ST"
+        },
+        {
+          "name": "Iván Romero",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Sevilla (2020/2021)",
+      "teamLabel": "Sevilla (2020-21)"
+    }
+  },
+  "id": 368,
+  "name": "Sevilla",
+  "badgeLocalPath": "/img/badges/fc-sevilla.png"
+}

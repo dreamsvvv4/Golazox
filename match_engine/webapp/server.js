@@ -7,6 +7,7 @@
 
 const express = require('express');
 const path    = require('path');
+const fs      = require('fs');
 const { simulateMatch, buildLineupFromCache } = require('./engine');
 const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
@@ -15,6 +16,7 @@ const { REFEREES }      = require('./referee_logic');
 
 const app  = express();
 app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
+app.disable('x-powered-by');  // Don't expose server fingerprint
 const PORT = process.env.PORT || 3000;
 
 // Pre-build autocomplete list from local squad DB (capitalised, sorted)
@@ -22,9 +24,40 @@ const SQUAD_SUGGESTIONS = [...new Set(
   Object.keys(SQUADS).map(k => k.replace(/\b\w/g, c => c.toUpperCase()))
 )].sort();
 
+// Badge map: lowercased name → local path (built from squads/ at startup)
+// Falls back to placeholder when nothing is found.
+const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
+const _squadFiles = fs.readdirSync(path.join(__dirname, 'squads'))
+  .filter(f => f.endsWith('.json') && !f.startsWith('.'));
+const _badgeMap = new Map();  // name.lc → localPath
+const _allTeams = [];         // { name, badge, slug } — full list for /badges
+for (const file of _squadFiles) {
+  try {
+    const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', file), 'utf8'));
+    const name  = d.name || file.replace('.json', '');
+    const badge = d.badgeLocalPath || BADGE_PLACEHOLDER;
+    _badgeMap.set(name.toLowerCase(), badge);
+    _allTeams.push({ name, badge, slug: d.slug || file.replace('.json', '') });
+  } catch(_) {}
+}
+_allTeams.sort((a, b) => a.name.localeCompare(b.name));
+
+function _badgeFor(teamName) {
+  if (!teamName) return BADGE_PLACEHOLDER;
+  return _badgeMap.get(teamName.toLowerCase())
+      || _badgeMap.get(teamName.toLowerCase().replace(/^(fc|ac|as|rc|sc|cd|ud|cf|ss|sk)\s+/i, ''))
+      || BADGE_PLACEHOLDER;
+}
+
 // ── Middleware ────────────────────────────────
 app.use(express.json({ limit: '32kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Shared JS modules — served from webapp root (used by both Node.js and browser)
+app.get('/player_ratings.js', (_req, res) => {
+  res.type('application/javascript');
+  res.sendFile(path.join(__dirname, 'player_ratings.js'));
+});
 
 // Security headers
 app.use((_req, res, next) => {
@@ -33,7 +66,12 @@ app.use((_req, res, next) => {
   res.set('X-XSS-Protection', '1; mode=block');
   res.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.set('Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: https://upload.wikimedia.org https://commons.wikimedia.org https://www.thesportsdb.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'");
+    "default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'");
+  res.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.set('Cross-Origin-Opener-Policy', 'same-origin');
+  res.set('Cross-Origin-Resource-Policy', 'same-origin');
+  // HSTS: only sent over HTTPS; harmless on HTTP (ignored by browsers then)
+  res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   next();
 });
 
@@ -47,7 +85,10 @@ function _rateLimit(max, windowMs) {
     if (now > slot.reset) { slot.n = 0; slot.reset = now + windowMs; }
     slot.n++;
     _rlBuckets.set(key, slot);
-    if (slot.n > max) return res.status(429).json({ error: 'Too many requests. Please wait.' });
+    if (slot.n > max) {
+      res.set('Retry-After', Math.ceil((slot.reset - now) / 1000));
+      return res.status(429).json({ error: 'Too many requests. Please wait.' });
+    }
     // Prune expired buckets to prevent unbounded memory growth
     if (_rlBuckets.size > 500) {
       for (const [k, v] of _rlBuckets) { if (now > v.reset) _rlBuckets.delete(k); }
@@ -63,13 +104,39 @@ const _VALID_FORMATIONS = new Set([
 ]);
 
 // ── GET /suggest ─────────────────────────────
-// Query: ?q=bar  → returns up to 15 matching squad names for autocomplete
-app.get('/suggest', (req, res) => {
+// Query: ?q=bar  → returns up to 15 matching {name, badge} objects for autocomplete
+app.get('/suggest', _rateLimit(60, 60000), (req, res) => {
   const q = String(req.query.q || '').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
   const matches = q.length < 1
     ? SQUAD_SUGGESTIONS.slice(0, 20)
     : SQUAD_SUGGESTIONS.filter(s => s.toLowerCase().includes(q)).slice(0, 15);
-  res.json(matches);
+  const result = matches.map(name => ({ name, badge: _badgeFor(name) }));
+  res.set('Cache-Control', 'no-store');
+  res.json(result);
+});
+
+// ── GET /badges ───────────────────────────────
+// Gallery page: returns all known teams with badges as HTML
+app.get('/badges', _rateLimit(30, 60000), (_req, res) => {
+  const rows = _allTeams.map(t =>
+    `<div class="bg-card">`+
+    `<img src="${t.badge.replace(/"/g,'&quot;')}" alt="" onerror="this.src='/img/badges/_placeholder.svg'">` +
+    `<div class="bg-name">${t.name.replace(/</g,'&lt;')}</div>`+
+    `</div>`
+  ).join('');
+  res.set('Cache-Control', 'no-store');
+  res.send(`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Badge Gallery</title>
+<style>body{background:#0d1526;color:#e2e8f0;font-family:sans-serif;padding:1rem}
+h1{color:#00d4ff;margin-bottom:1.2rem}input{background:#1a2236;color:#e2e8f0;border:1px solid #2d3f5e;border-radius:6px;padding:.4rem .8rem;font-size:.9rem;margin-bottom:1rem;width:280px}
+.bg-grid{display:flex;flex-wrap:wrap;gap:10px}
+.bg-card{background:#1a2236;border:1px solid #2d3f5e;border-radius:8px;width:90px;padding:10px 6px 8px;text-align:center;transition:border-color .15s}
+.bg-card:hover{border-color:#00d4ff}
+.bg-card img{width:56px;height:56px;object-fit:contain;display:block;margin:0 auto 6px}
+.bg-name{font-size:.65rem;line-height:1.3;word-break:break-word;color:#94a3b8}
+</style></head><body>
+<h1>⚽ Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
+<input id="f" placeholder="Filtrar…" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
+<div class="bg-grid">${rows}</div></body></html>`);
 });
 
 // ── GET /lookup ──────────────────────────────
@@ -98,9 +165,10 @@ app.get('/lookup', _rateLimit(30, 60000), async (req, res) => {
       const lineup = buildLineupFromCache(result, formationOverride || '');
       displayResult = { ...result, ...lineup };
     }
+    res.set('Cache-Control', 'no-store');
     res.json({ ...displayResult, badgeUrl });
   } catch (err) {
-    console.error('[/lookup error]', err);
+    console.error('[/lookup error]', err.message);
     res.status(500).json({ found: false, error: 'Lookup failed.' });
   }
 });
@@ -160,7 +228,7 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
       formationB:    sanitiseFormation(formationB) || (luB.found ? luB.formation : ''),
       cachedLineupA: luA.found ? luA : null,
       cachedLineupB: luB.found ? luB : null,
-      matchMode:     ['11v11','5v5','3v3'].includes(matchMode) ? matchMode : '11v11',
+      matchMode:     ['11v11','5v5','3v3','penalties'].includes(matchMode) ? matchMode : '11v11',
       matchSalt:     (Math.trunc(Number(matchSalt || 0)) || 0) & 0x7fffffff,
       refereeId:     typeof refereeId === 'string' ? refereeId.slice(0, 32) : null,
       isFinal:       !!isFinal,
@@ -179,10 +247,11 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
       describeTimeline(simResult.timeline, simResult.playStyle || {}, lang, params.matchSalt);
     }
     const result = { ...simResult, badgeA, badgeB };
+    res.set('Cache-Control', 'no-store');
     res.json(result);
 
   } catch (err) {
-    console.error('[/simulate error]', err);
+    console.error('[/simulate error]', err.message);
     res.status(500).json({ error: 'Simulation failed. Check server logs.' });
   }
 });
@@ -190,39 +259,23 @@ app.post('/simulate', _rateLimit(15, 60000), async (req, res) => {
 // ── GET /referees ─────────────────────────────────────────────────────────
 // Returns the full list of available referees (id, name, multipliers).
 // Used by the client to populate the referee picker.
-app.get('/referees', (_req, res) => {
+app.get('/referees', _rateLimit(30, 60000), (_req, res) => {
   res.json(REFEREES);
 });
 
-// ── GET /img-proxy  ─────────────────────────────────────────────────────────
-// Proxies images from Wikimedia Commons (follows Special:FilePath redirects).
-// Only allows wikimedia.org domains to prevent SSRF.
-app.get('/img-proxy', async (req, res) => {
-  const rawUrl = String(req.query.url || '').trim();
-  if (!/^https:\/\/(upload\.wikimedia\.org|commons\.wikimedia\.org)\//.test(rawUrl)) {
-    return res.status(400).send('Forbidden');
-  }
-  try {
-    const r = await fetch(rawUrl, {
-      redirect: 'follow',
-      headers: { 'User-Agent': 'FootballSimBot/1.0 (educational project; contact: localhost)' },
-      signal: AbortSignal.timeout(10000),
-    });
-    if (!r.ok) return res.status(r.status).send('Image not found');
-    const ct = r.headers.get('content-type') || 'image/jpeg';
-    res.set('Content-Type', ct);
-    res.set('Cache-Control', 'public, max-age=86400');
-    const buf = await r.arrayBuffer();
-    res.send(Buffer.from(buf));
-  } catch (e) {
-    console.warn('[img-proxy]', e.message);
-    res.status(502).send('Image fetch failed');
-  }
-});
+// Images are served as static files from public/img/ — no proxy needed.
 
 // ── Serve index.html for all other routes ─────
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// ── Process crash guards ─────────────────────
+process.on('uncaughtException', (err) => {
+  console.error('[uncaughtException]', err.message);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('[unhandledRejection]', reason instanceof Error ? reason.message : reason);
 });
 
 app.listen(PORT, '0.0.0.0', () => {
