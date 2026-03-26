@@ -1016,9 +1016,12 @@ let _animTimers = [];
 function flushTimeline() {
   _animTimers.forEach(id => { clearTimeout(id); clearInterval(id); });
   _animTimers = [];
-  // Reveal event count immediately on skip/flush
+  // Reveal event count badge when match ends (stored in data-final-count)
   const badge = document.getElementById('tl-count-badge');
-  if (badge) badge.style.opacity = '1';
+  if (badge && badge.dataset.finalCount) {
+    badge.textContent = badge.dataset.finalCount;
+    badge.removeAttribute('data-final-count');
+  }
   const container = document.getElementById('timeline-events');
   if (!container) return;
   container.querySelectorAll('.t-anim-hidden').forEach(row => {
@@ -1048,13 +1051,16 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   const header    = document.getElementById('timeline-header');
   const container = document.getElementById('timeline-events');
 
-  // Count is hidden initially — revealed after the last event appears
+  // Show VS initially; replaced with event count when match ends
   header.innerHTML =
     `<span class="tl-hdr-team" style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
-    `<span class="tl-hdr-sep" id="tl-count-badge" style="opacity:0;transition:opacity .5s">` +
-      `${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}` +
-    `</span>` +
+    `<span class="tl-hdr-sep" id="tl-count-badge">VS</span>` +
     `<span class="tl-hdr-team" style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
+
+  // Store event count for reveal after match
+  const _evCountFinal = `${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}`;
+  const _countBadge = document.getElementById('tl-count-badge');
+  if (_countBadge) _countBadge.dataset.finalCount = _evCountFinal;
 
   if (!events.length) {
     container.innerHTML = `<div class="t-empty-match">${t('timeline-empty')}</div>`;
@@ -1099,7 +1105,10 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   const _lastDelay = events.length ? events[events.length - 1].minute * msPerMinute + 1200 : 500;
   _animTimers.push(setTimeout(() => {
     const badge = document.getElementById('tl-count-badge');
-    if (badge) badge.style.opacity = '1';
+    if (badge && badge.dataset.finalCount) {
+      badge.textContent = badge.dataset.finalCount;
+      badge.removeAttribute('data-final-count');
+    }
   }, _lastDelay));
 
   events.forEach((ev, idx) => {
@@ -2945,6 +2954,9 @@ function playLiveMatch(data, payload, tickMs = 300) {
 function addFeedEvent(ev) {
   const container = document.getElementById('timeline-events');
   if (!container) return;
+  // Penalty shootout events are handled exclusively by the penalty-card — skip them here
+  if (ev.type === 'pen_start' || ev.type === 'pen_goal' || ev.type === 'pen_miss' || ev.type === 'pen_winner') return;
+
   const div = document.createElement('div');
 
   if (ev.type === 'ft_whistle') {
