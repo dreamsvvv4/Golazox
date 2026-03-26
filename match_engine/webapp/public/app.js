@@ -1784,23 +1784,22 @@ const _STAT_MAP = {
 function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverride, kit2Override) {
   const rating   = calcPlayerRating(player, teamRatings);
   const tier     = rating >= 90 ? 'elite' : rating >= 82 ? 'gold' : rating >= 72 ? 'silver' : 'bronze';
-  const parts    = player.name.split(' ');
-  const display  = (player.name.length <= 11 ? player.name : parts[parts.length - 1]).toUpperCase();
+  const parts    = player.name.split(/\s+/);
+  let display;
+  if (player.name.length <= 12 || parts.length === 1) {
+    display = player.name; // short or single-word: show full
+  } else {
+    // "F. APELLIDO" — initial + last word, readable and compact
+    display = parts[0][0] + '. ' + parts[parts.length - 1];
+  }
+  display = display.toUpperCase();
   const kitColor = kitOverride || _KIT_COLORS[side] || _KIT_COLORS.a;
   const kitColor2 = kit2Override || null;
   const jerseyN  = _JERSEY_NUM[player.position] ?? 0;
 
-  // Hash for stat variation
+  // Hash for stat variation (kept for potential future use)
   let h = 0;
   for (let i = 0; i < player.name.length; i++) h = ((h * 31) + player.name.charCodeAt(i)) & 0xffff;
-
-  const statDefs = _STAT_MAP[player.position] || _STAT_MAP.CM;
-  const statsHtml = statDefs.map(([label, minor, ratKey], idx) => {
-    const base = teamRatings[ratKey];
-    const seed = (h >> (idx * 4)) & 0xf;
-    const v    = Math.max(40, Math.min(99, Math.round(base + (seed - 7) + (minor ? -5 : 3))));
-    return `<div class="pmc-stat"><div class="pmc-stat-v">${v}</div><div class="pmc-stat-bar"><span style="width:${v}%"></span></div><div class="pmc-stat-l">${label}</div></div>`;
-  }).join('');
 
   // Badge corner (team shield on card)
   const badgeCorner = badgeUrl
@@ -1820,8 +1819,7 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
   card.innerHTML =
     `<div class="pmc-top">${badgeCorner}<div class="pmc-ovr-pos"><div class="pmc-ovr">${rating}</div><div class="pmc-pos-tag">${escHtml(player.position)}</div></div></div>` +
     `<div class="pmc-sil">${_jerseyIcon(kitColor, jerseyN || '', kitColor2)}</div>` +
-    `<div class="pmc-name">${escHtml(display)}</div>` +
-    `<div class="pmc-stats">${statsHtml}</div>`;
+    `<div class="pmc-name">${escHtml(display)}</div>`;
   return card;
 }
 
