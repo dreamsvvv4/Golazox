@@ -154,11 +154,11 @@
             <button class="pm-speed-pill" data-tick="2000" onclick="selectSpeed(this)">3 min</button>
           </div>
           <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()">▶ Iniciar partido</button>
+          <div class="pm-radar-row" id="pm-radar-row">
+            <!-- radar-card moved here by showPreMatch() -->
+          </div>
         </div>
         <div class="pm-team-block pm-team-block-b" id="pm-block-b"></div>
-      </div>
-      <div class="pm-radar-row" id="pm-radar-row">
-        <!-- radar-card moved here by showPreMatch() -->
       </div>
     </div>
 
@@ -171,13 +171,19 @@
         <button class="btn-skip" onclick="skipLive()">⏭ Saltar</button>
       </div>
       <div class="live-scoreboard">
-        <span class="live-team-name" id="live-team-a">-</span>
+        <div class="live-team-side">
+          <img class="live-team-badge" id="live-badge-a" src="" alt="" style="display:none">
+          <span class="live-team-name" id="live-team-a">-</span>
+        </div>
         <div class="live-score-block">
           <span class="live-score-num" id="live-score-a">0</span>
           <span class="live-score-sep">-</span>
           <span class="live-score-num" id="live-score-b">0</span>
         </div>
-        <span class="live-team-name" id="live-team-b">-</span>
+        <div class="live-team-side live-team-side-b">
+          <img class="live-team-badge" id="live-badge-b" src="" alt="" style="display:none">
+          <span class="live-team-name" id="live-team-b">-</span>
+        </div>
       </div>
       <div class="live-clock-wrap">
         <span class="live-clock" id="live-clock">0'</span>

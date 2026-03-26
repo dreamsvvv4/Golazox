@@ -743,14 +743,8 @@ function renderResult(data, payload) {
   const isPenMode = payload.matchMode === 'penalties';
   document.querySelector('.probs-card')?.classList.toggle('hidden', isPenMode);
   document.querySelector('.stats-card')?.classList.toggle('hidden', isPenMode);
-  // radar-card has been moved to results by finishLive; show/hide it
-  const radarCardEl = document.getElementById('radar-card');
-  if (radarCardEl) {
-    radarCardEl.style.display = isPenMode ? 'none' : '';
-    radarCardEl.classList.remove('hidden');
-  }
 
-  // Draw radar (covers instant mode where playLiveMatch skips drawRadar)
+  // Draw radar into stats-modal (accessible via Stats button; not shown in results section)
   if (!isPenMode && ratings) drawRadar(ratings, payload.teamA, payload.teamB);
 
   // ── Score poster ───────────────────────────────────────
@@ -1116,18 +1110,11 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
       if (row) {
         row.classList.remove('t-anim-hidden');
         row.classList.add('t-anim-reveal');
-        // Typewriter effect for narrative
+        // Show narration text immediately (no typewriter)
         const narEl = row.querySelector('.t-nar-pending[data-nar]');
         if (narEl) {
           narEl.classList.remove('t-nar-pending');
-          const fullText = narEl.dataset.nar;
-          let i = 0;
-          const typeId = setInterval(() => {
-            i++;
-            narEl.textContent = fullText.slice(0, i);
-            if (i >= fullText.length) clearInterval(typeId);
-          }, 22);
-          _animTimers.push(typeId);
+          narEl.textContent = narEl.dataset.nar;
         }
       }
       // Update live score on goal events
@@ -2785,6 +2772,10 @@ function playLiveMatch(data, payload, tickMs = 300) {
   viewer.classList.remove('hidden', 'live-fade-out');
   document.getElementById('live-team-a').textContent  = payload.teamA;
   document.getElementById('live-team-b').textContent  = payload.teamB;
+  const badgeAEl = document.getElementById('live-badge-a');
+  const badgeBEl = document.getElementById('live-badge-b');
+  if (badgeAEl) { badgeAEl.src = data.badgeA || ''; badgeAEl.style.display = data.badgeA ? '' : 'none'; }
+  if (badgeBEl) { badgeBEl.src = data.badgeB || ''; badgeBEl.style.display = data.badgeB ? '' : 'none'; }
   const isPenMode = payload.matchMode === 'penalties';
   document.getElementById('live-clock').textContent   = isPenMode ? '🥅' : "0'";
   document.getElementById('live-score-a').textContent = '0';
@@ -3108,11 +3099,6 @@ function finishLive() {
     viewer.classList.remove('live-fade-out');
     // Close stats modal before transitioning to results
     document.getElementById('stats-modal')?.classList.add('hidden');
-    // Move radar-card into results section so it stays visible after live fades out
-    const rc = document.getElementById('radar-card');
-    const scorePosterCard = document.querySelector('#results .score-poster');
-    if (rc && scorePosterCard) scorePosterCard.after(rc);
-    else if (rc) document.getElementById('results')?.appendChild(rc);
     // Move timeline-card back from live slot into results, before penalty-card (if any)
     const tc       = document.querySelector('.timeline-card');
     const resultsEl = document.getElementById('results');

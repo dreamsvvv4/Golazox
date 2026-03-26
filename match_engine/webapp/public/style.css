@@ -801,10 +801,13 @@ body {
 /* ── Match timeline ───────────────────────────────────────── */
 .timeline-card { padding: 1.8rem 2rem; }
 .timeline-header {
-  display: flex; justify-content: space-between; align-items: center;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   font-size: .78rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .1em; margin-bottom: 1rem;
 }
+.timeline-header > *:first-child { justify-content: flex-end; text-align: right; }
+.timeline-header > *:last-child  { justify-content: flex-start; text-align: left; }
 .timeline-count { color: var(--grey); font-weight: 400; text-transform: none; letter-spacing: 0; }
 .timeline-events { display: flex; flex-direction: column; }
 .t-event {
@@ -846,12 +849,6 @@ body {
 .t-nar-a { text-align: left; }
 .t-nar-b { text-align: right; }
 @keyframes t-cursor-blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.t-nar-pending::after {
-  content: '';
-}
-.t-narration:not(:empty)::after {
-  content: none;
-}
 
 /* ── Head-to-head stats bars ──────────────────────────────── */
 .stats-card { padding: 1.8rem 2rem; }
@@ -1285,11 +1282,10 @@ body {
   box-shadow: 0 3px 12px rgba(30,99,240,.4);
 }
 
-/* ── Radar row below pre-match lineups ─────────────────────── */
+/* ── Radar row below pre-match start button ───────────────── */
 .pm-radar-row {
-  margin-top: .8rem;
+  margin-top: .7rem;
   display: flex; justify-content: center;
-  padding-bottom: .4rem;
 }
 .pm-radar-row .radar-card {
   max-width: none;
@@ -1648,6 +1644,15 @@ body {
   display: flex; align-items: center; justify-content: center;
   gap: 1.2rem; margin-bottom: .4rem;
 }
+/* Team side wrapper with optional badge */
+.live-team-side {
+  display: flex; align-items: center; gap: .5rem;
+}
+.live-team-side-b { flex-direction: row-reverse; }
+.live-team-badge {
+  width: 30px; height: 30px; object-fit: contain;
+  border-radius: 4px; flex-shrink: 0;
+}
 .live-team-name {
   font-size: .95rem; font-weight: 700; color: rgba(255,255,255,.85);
   max-width: 130px; text-align: center;
@@ -1702,6 +1707,7 @@ body {
   font-size: .62rem;
   padding-bottom: .4rem;
   border-bottom: 1px solid rgba(255,255,255,.07);
+  grid-template-columns: 1fr 44px 1fr;
 }
 /* Team badge-name pair inside live timeline header */
 .tl-hdr-team {
