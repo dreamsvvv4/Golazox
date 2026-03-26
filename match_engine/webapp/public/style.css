@@ -6,6 +6,15 @@
 /* ── Reset & tokens ──────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Global custom scrollbar ─────────────────────────────── */
+::-webkit-scrollbar              { width: 5px; height: 5px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: rgba(255,255,255,.12); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(0,212,255,.35); }
+::-webkit-scrollbar-corner       { background: transparent; }
+/* Firefox */
+* { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.12) transparent; }
+
 :root {
   --bg:          #080b14;
   --bg-card:     rgba(255,255,255,0.04);
