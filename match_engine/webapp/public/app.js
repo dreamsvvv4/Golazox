@@ -970,7 +970,10 @@ function renderTimeline(scorersA, scorersB, cardsA, cardsB, teamA, teamB, matchP
 
   const evCount = events.length;
   const header = document.getElementById('timeline-header');
-  header.innerHTML = `<span style="color:var(--accent-a)">${escHtml(teamA)}</span><span class="timeline-count">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span><span style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
+  header.innerHTML =
+    `<span class="tl-hdr-team" style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
+    `<span class="tl-hdr-sep">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span>` +
+    `<span class="tl-hdr-team" style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
 
   const container = document.getElementById('timeline-events');
   if (!events.length) {
@@ -1046,16 +1049,12 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   const container = document.getElementById('timeline-events');
 
   // Count is hidden initially — revealed after the last event appears
-  const _badgeA = _liveData?.badgeA || '';
-  const _badgeB = _liveData?.badgeB || '';
-  const _imgA   = _badgeA ? `<img class="tl-hdr-badge" src="${escHtml(_badgeA)}" alt="">` : '';
-  const _imgB   = _badgeB ? `<img class="tl-hdr-badge" src="${escHtml(_badgeB)}" alt="">` : '';
   header.innerHTML =
-    `<span class="tl-hdr-team" style="color:var(--accent-a)">${_imgA}${escHtml(teamA)}</span>` +
-    `<span class="timeline-count" id="tl-count-badge" style="opacity:0;transition:opacity .5s">` +
+    `<span class="tl-hdr-team" style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
+    `<span class="tl-hdr-sep" id="tl-count-badge" style="opacity:0;transition:opacity .5s">` +
       `${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}` +
     `</span>` +
-    `<span class="tl-hdr-team" style="color:var(--accent-b)">${_imgB}${escHtml(teamB)}</span>`;
+    `<span class="tl-hdr-team" style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
 
   if (!events.length) {
     container.innerHTML = `<div class="t-empty-match">${t('timeline-empty')}</div>`;

@@ -1602,17 +1602,6 @@ body {
   font-size: .7rem; font-weight: 800; letter-spacing: .12em;
   color: #22c55e; text-transform: uppercase;
 }
-.btn-stats-modal {
-  background: rgba(0,212,255,.1);
-  border: 1px solid rgba(0,212,255,.3);
-  color: rgba(0,212,255,.9);
-  border-radius: 6px;
-  font-family: 'Rajdhani', var(--font);
-  font-size: .66rem; font-weight: 800; letter-spacing: .06em;
-  padding: .28rem .65rem; cursor: pointer;
-  transition: background .15s;
-}
-.btn-stats-modal:hover { background: rgba(0,212,255,.22); }
 .stats-modal {
   position: fixed; inset: 0; z-index: 2000;
   background: rgba(0,0,10,.78); backdrop-filter: blur(6px);
@@ -1709,13 +1698,15 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.07);
   grid-template-columns: 1fr 44px 1fr;
 }
-/* Team badge-name pair inside live timeline header */
+/* Team name spans in timeline header */
 .tl-hdr-team {
-  display: flex; align-items: center; gap: .35rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
 }
-.tl-hdr-badge {
-  width: 18px; height: 18px; object-fit: contain;
-  border-radius: 3px; flex-shrink: 0;
+/* Event count in the middle */
+.tl-hdr-sep {
+  color: var(--grey); font-weight: 400; text-transform: none;
+  letter-spacing: 0; text-align: center; white-space: nowrap;
+  font-size: .72rem;
 }
 /* Tighter events inside live mode */
 .live-timeline-wrap .t-event,
