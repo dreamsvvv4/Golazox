@@ -120,7 +120,7 @@ const PLAYER_RATINGS_RAW = [
   ['vladimir beara',         88],
   ['gyula grosics',          88],
   ['marco ballotta',         80],
-  ['francisco Buyo',         82],
+  ['francisco Buyo',         82], ['buyo',                 82], ['paco buyo',            82],
   // â”€â”€ 2000sâ€“2010s â”€â”€
   ['edwin van der sar',      89], ['van der sar',          89],
   ['petr Äech',              88], ['cech',                 88], ['Äech',     88],

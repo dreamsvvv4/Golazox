@@ -185,7 +185,17 @@ function buildLineupFromCache(cached, formationOverride) {
       pool[idx].used = true;
       return pool[idx];
     }
-    // Fallback: affinity chain; prefer LOWEST-rated to preserve stars for their natural slot
+    // Fallback step 1: any exact-position player not yet reserved (e.g. GKs with no market value)
+    // This prevents high-rated outfield players being grabbed for wrong positions (e.g. Míchel→GK)
+    const exactUnreserved = pool
+      .map((p, i) => ({ p, i }))
+      .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === wantedPos)
+      .sort((a, b) => (b.p.rating || 0) - (a.p.rating || 0)); // DESC — best available for this pos
+    if (exactUnreserved.length > 0) {
+      pool[exactUnreserved[0].i].used = true;
+      return pool[exactUnreserved[0].i];
+    }
+    // Fallback step 2: affinity chain; prefer LOWEST-rated to preserve stars for their natural slot
     const affinities = POS_AFFINITY[wantedPos] || [wantedPos, 'CM'];
     for (const affPos of affinities.slice(1)) {
       const candidates = pool

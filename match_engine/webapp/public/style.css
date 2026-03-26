@@ -291,6 +291,7 @@ body {
   border: 2px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   transition: border-color .16s, box-shadow .16s, transform .13s;
+  position: relative;
 }
 .ref-card:hover { border-color: rgba(255,255,255,.28); transform: translateY(-2px); }
 .ref-active {
