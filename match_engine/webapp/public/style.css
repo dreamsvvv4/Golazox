@@ -1655,6 +1655,16 @@ body {
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,.12) transparent;
 }
+/* Empty state hint */
+.live-feed:empty::before {
+  content: "Esperando eventos…";
+  display: block;
+  text-align: center;
+  padding: 1.5rem .5rem;
+  font-size: .72rem;
+  color: rgba(255,255,255,.2);
+  letter-spacing: .04em;
+}
 .live-event {
   display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
   padding: .32rem .55rem; border-radius: 7px; margin-bottom: .3rem;
@@ -1684,12 +1694,15 @@ body {
 .radar-card {
   display: flex; flex-direction: column; align-items: center; gap: .5rem;
   padding: 1.1rem;
+  max-width: 280px;
+  margin: 0 auto;
 }
 .radar-wrap { width: 168px; flex-shrink: 0; }
+.radar-svg  { width: 220px !important; height: 220px !important; }
 
 /* ── Live Smart-Dot Pitch ─────────────────────────────────── */
 .live-pitch-wrap {
-  width: 148px; flex-shrink: 0;
+  width: 240px; flex-shrink: 0;
   display: flex; flex-direction: column; align-items: center; gap: .3rem;
   position: relative;
 }
@@ -1976,13 +1989,13 @@ body {
   /* ── Live viewer: 2-col pitch | feed ── */
   .live-viewer  { padding: .9rem .9rem; }
   .live-body    {
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 160px 1fr;
     gap: .65rem;
   }
-  .live-pitch-wrap { width: 140px; }
-  .live-pitch-svg  { width: 140px; height: 210px; }
+  .live-pitch-wrap { width: 160px; }
+  .live-pitch-svg  { width: 160px; height: 240px; }
   .live-pitch-label { font-size: .5rem; }
-  .live-feed-wrap  { min-height: 210px; }
+  .live-feed-wrap  { min-height: 240px; }
   .live-team-name  { max-width: 112px; font-size: .86rem; }
   .live-score-num  { font-size: 2.1rem; }
   .live-score-sep  { font-size: 1.7rem; }
@@ -2092,10 +2105,10 @@ body {
   .wth-label    { font-size: .5rem; }
 
   /* ── Live viewer: 2-col compact ── */
-  .live-body    { grid-template-columns: 100px 1fr; gap: .4rem; }
-  .live-pitch-wrap { width: 100px; }
-  .live-pitch-svg  { width: 100px; height: 150px; }
-  .live-feed-wrap  { min-height: 150px; }
+  .live-body    { grid-template-columns: 120px 1fr; gap: .4rem; }
+  .live-pitch-wrap { width: 120px; }
+  .live-pitch-svg  { width: 120px; height: 180px; }
+  .live-feed-wrap  { min-height: 180px; }
 
   /* ── Score poster ── */
   .poster-score { font-size: 2.2rem; }
