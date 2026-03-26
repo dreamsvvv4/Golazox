@@ -794,11 +794,13 @@ function renderResult(data, payload) {
   renderCards(document.getElementById('cards-a'), finalScore.cardsA);
   renderCards(document.getElementById('cards-b'), finalScore.cardsB);
   if (!_timelineStarted) {
-    renderTimeline(finalScore.scorersA, finalScore.scorersB, finalScore.cardsA, finalScore.cardsB, payload.teamA, payload.teamB, finalScore.matchPenalties, data.stats?.notableEvents);
     if (Array.isArray(data.timeline) && data.timeline.length) {
-      // Build the timeline HTML immediately then flush all rows visible at once
+      // Instantly populate and reveal the full timeline for post-match display
       animateTimeline(data.timeline, payload.teamA, payload.teamB, 0);
       flushTimeline();
+    } else {
+      // Fallback: build from finalScore fields when engine timeline is absent
+      renderTimeline(finalScore.scorersA, finalScore.scorersB, finalScore.cardsA, finalScore.cardsB, payload.teamA, payload.teamB, finalScore.matchPenalties, data.stats?.notableEvents);
     }
   }
 
@@ -1050,12 +1052,16 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
   const container = document.getElementById('timeline-events');
 
   // Count is hidden initially — revealed after the last event appears
+  const _badgeA = _liveData?.badgeA || '';
+  const _badgeB = _liveData?.badgeB || '';
+  const _imgA   = _badgeA ? `<img class="tl-hdr-badge" src="${escHtml(_badgeA)}" alt="">` : '';
+  const _imgB   = _badgeB ? `<img class="tl-hdr-badge" src="${escHtml(_badgeB)}" alt="">` : '';
   header.innerHTML =
-    `<span style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
+    `<span class="tl-hdr-team" style="color:var(--accent-a)">${_imgA}${escHtml(teamA)}</span>` +
     `<span class="timeline-count" id="tl-count-badge" style="opacity:0;transition:opacity .5s">` +
       `${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}` +
     `</span>` +
-    `<span style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
+    `<span class="tl-hdr-team" style="color:var(--accent-b)">${_imgB}${escHtml(teamB)}</span>`;
 
   if (!events.length) {
     container.innerHTML = `<div class="t-empty-match">${t('timeline-empty')}</div>`;
@@ -2602,12 +2608,10 @@ function _flashDot(g, color, duration) {
 function animatePitchEvent(type, ev) {
   const svg = document.getElementById('live-pitch-svg');
   const phaseEl = document.getElementById('live-pitch-phase');
-  const feedHdr = document.querySelector('.live-feed-header');
   if (!svg || !phaseEl) return;
 
   function setPhase(txt) {
     phaseEl.textContent = txt;
-    if (feedHdr) feedHdr.textContent = txt;
   }
 
   // Resolve the team name for display in the pitch phase label
@@ -2785,7 +2789,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
   document.getElementById('live-clock').textContent   = isPenMode ? '🥅' : "0'";
   document.getElementById('live-score-a').textContent = '0';
   document.getElementById('live-score-b').textContent = '0';
-  document.getElementById('live-feed').innerHTML      = '';
+  document.getElementById('timeline-events').innerHTML = '';
 
   // Radar: draw into stats-modal (hidden until user clicks Stats button)
   const radarCardEl = document.getElementById('radar-card');
@@ -2803,13 +2807,12 @@ function playLiveMatch(data, payload, tickMs = 300) {
   viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
-  // Start timeline in sync with live match — show timeline card below live viewer
+  // Start timeline in sync with live match — move timeline-card into the right column slot
   if (Array.isArray(data.timeline) && data.timeline.length) {
+    const timelineCard = document.querySelector('.timeline-card');
+    const liveSlot     = document.getElementById('live-timeline-wrap');
+    if (timelineCard && liveSlot) liveSlot.appendChild(timelineCard);
     animateTimeline(data.timeline, payload.teamA, payload.teamB, TICK);
-    // Make results section visible (results-live hides everything except timeline-card)
-    const resultsEl = document.getElementById('results');
-    resultsEl.classList.remove('hidden');
-    resultsEl.classList.add('results-live');
   }
 
   // ── Pre-compute total match duration so the clock syncs with events ──
@@ -2881,7 +2884,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
         triggerEventOverlay(ev.type, ev.name, null, ev.side);
         animatePitchEvent(ev.type, ev);
       }
-      addFeedEvent(ev);
+      // Note: regular events are already rendered by animateTimeline — no addFeedEvent here
     }, startAt));
   });
 
@@ -2950,32 +2953,62 @@ function playLiveMatch(data, payload, tickMs = 300) {
 }
 
 function addFeedEvent(ev) {
-  const feed = document.getElementById('live-feed');
-  let icon;
-  if      (ev.type === 'goal')          icon = '⚽';
-  else if (ev.type === 'yellow')        icon = '🟨';
-  else if (ev.type === 'pen_start')     icon = '🎯';
-  else if (ev.type === 'pen_goal')      icon = '⚽';
-  else if (ev.type === 'pen_miss')      icon = '✕';
-  else if (ev.type === 'pen_winner')    icon = '🏆';
-  else if (ev.type === 'penalty')       icon = '⚽';
-  else if (ev.type === 'penalty-miss')  icon = '❌';
-  else if (ev.type === 'corner')        icon = '🚩';
-  else if (ev.type === 'freekick')      icon = '🎯';
-  else if (ev.type === 'injury')        icon = '🩹';
-  else if (ev.type === 'ft_whistle')    icon = '🏁';
-  else                                  icon = '🟥';
-  const sideClass = ev.side === 'N' ? 'live-event-n' : `live-event-${ev.side.toLowerCase()}`;
-  const extraClass = ev.type === 'pen_miss' ? ' pen-miss-entry' : ev.type === 'pen_start' ? ' pen-header-entry' : ev.type === 'ft_whistle' ? ' pen-header-entry' : '';
-  const div  = document.createElement('div');
-  div.className = `live-event ${sideClass}${extraClass}`;
-  const minLabel = ev.type.startsWith('pen') ? 'P' : ev.minute + "'";
-  div.innerHTML =
-    `<div class="le-main-row"><span class="le-min">${minLabel}</span><span class="le-icon">${icon}</span><span class="le-name">${escHtml(ev.name)}</span></div>` +
-    (ev.narrative ? `<div class="le-narrative-text">${escHtml(ev.narrative)}</div>` : '');
-  feed.appendChild(div);
-  // Auto-scroll to latest event
-  feed.scrollTop = feed.scrollHeight;
+  const container = document.getElementById('timeline-events');
+  if (!container) return;
+  const div = document.createElement('div');
+
+  if (ev.type === 'ft_whistle') {
+    div.className = 't-event-special t-event-ft';
+    div.textContent = ev.name || '⏱ FT';
+  } else if (ev.type === 'pen_start') {
+    div.className = 't-event-special t-event-pen-hdr';
+    div.textContent = ev.name || t('pen-shootout-title');
+  } else if (ev.type === 'pen_winner') {
+    div.className = 't-event-special t-event-winner';
+    div.textContent = '🏆 ' + escHtml(ev.name || '');
+  } else if (ev.type === 'pen_goal' || ev.type === 'pen_miss') {
+    const isA   = ev.side === 'A';
+    const icon  = ev.scored !== false ? '⚽' : '❌';
+    const suf   = ev.scored !== false
+      ? ` <span class="t-tag t-tag-pen">${t('ev-tag-pen')}</span>`
+      : ` <span class="t-tag t-tag-miss">${t('ev-tag-miss')}</span>`;
+    const label = `${icon} ${escHtml(ev.name || '')}${suf}`;
+    div.className = `t-event t-anim-reveal t-event-special ${isA ? 't-event-pen-a' : 't-event-pen-b'}`;
+    div.innerHTML =
+      `<div class="t-left">${isA ? label : ''}</div>` +
+      `<div class="t-mid"><span class="t-min">P</span></div>` +
+      `<div class="t-right">${!isA ? label : ''}</div>`;
+  } else {
+    // Regular match event — build standard t-event row
+    let icon, suffix;
+    switch (ev.type) {
+      case 'goal':         icon = '⚽'; suffix = ''; break;
+      case 'yellow':       icon = '🟨'; suffix = ''; break;
+      case 'red':          icon = '🟥'; suffix = ''; break;
+      case 'penalty':      icon = '⚽'; suffix = ` <span class="t-tag t-tag-pen">${t('ev-tag-pen')}</span>`; break;
+      case 'penalty-miss': icon = '❌'; suffix = ` <span class="t-tag t-tag-miss">${t('ev-tag-miss')}</span>`; break;
+      case 'corner':       icon = '🚩'; suffix = ` <span class="t-tag t-tag-corner">${t('ev-tag-corner')}</span>`; break;
+      case 'freekick':     icon = '🎯'; suffix = ` <span class="t-tag t-tag-fk">${t('ev-tag-fk')}</span>`; break;
+      case 'injury':       icon = '🩹'; suffix = ''; break;
+      default:             icon = '•';  suffix = '';
+    }
+    const isA   = ev.side === 'A';
+    const label = `${icon} ${escHtml(ev.name || '')}${suffix}`;
+    const narHtml = ev.narrative
+      ? `<div class="t-narration${isA ? ' t-nar-a' : ' t-nar-b'}">${escHtml(ev.narrative)}</div>`
+      : '';
+    div.className = 't-event t-event-narrated t-anim-reveal';
+    div.innerHTML =
+      `<div>` +
+        `<div class="t-left">${isA ? label : ''}</div>` +
+        `<div class="t-mid"><span class="t-icon">${icon}</span><span class="t-min">${ev.minute || ''}'</span></div>` +
+        `<div class="t-right">${!isA ? label : ''}</div>` +
+      `</div>` +
+      narHtml;
+  }
+
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
 }
 
 function triggerEventOverlay(type, name, score, side) {
@@ -3080,11 +3113,17 @@ function finishLive() {
     const scorePosterCard = document.querySelector('#results .score-poster');
     if (rc && scorePosterCard) scorePosterCard.after(rc);
     else if (rc) document.getElementById('results')?.appendChild(rc);
-    // Remove live-only mask so renderResult can show all cards
-    document.getElementById('results').classList.remove('results-live');
-    renderResult(_liveData, _livePayload);
-    // Flush any pending timeline events so the entire timeline is visible immediately
+    // Move timeline-card back from live slot into results, before penalty-card (if any)
+    const tc       = document.querySelector('.timeline-card');
+    const resultsEl = document.getElementById('results');
+    if (tc && resultsEl) {
+      const penCard = resultsEl.querySelector('.penalty-card');
+      if (penCard) penCard.before(tc);
+      else resultsEl.appendChild(tc);
+    }
+    // Flush any still-hidden timeline events so the full timeline is visible immediately
     flushTimeline();
+    renderResult(_liveData, _livePayload);
   }, 620);
 }
 
