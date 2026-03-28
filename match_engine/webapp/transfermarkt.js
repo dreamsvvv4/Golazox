@@ -428,6 +428,17 @@ function resolveClub(teamName) {
     if (normK === key) return info;
   }
 
+  // Slug-based lookup: if the input looks like a slug (e.g. "atletico-madrid"),
+  // check if it directly matches any entry's slug value before falling through
+  // to the fuzzy match. This prevents short TM_CLUBS keys like "madrid" or
+  // "deportivo" from incorrectly matching unrelated slugs (e.g. "atletico-madrid"
+  // would otherwise match "madrid" → Real Madrid, and "deportivo-alaves" → RC Deportivo).
+  if (key.includes('-')) {
+    for (const [, info] of Object.entries(TM_CLUBS)) {
+      if (info.slug === key) return info;
+    }
+  }
+
   // Partial/fuzzy match — normK.includes(key) only fires when key ≥5 chars,
   // preventing short words like 'iran' or 'peru' from matching unrelated club names.
   let best = null, bestLen = 0;
