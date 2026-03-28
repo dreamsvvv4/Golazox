@@ -1,0 +1,75 @@
+{
+  "slug": "haiti",
+  "name": "Haiti",
+  "badgeLocalPath": "/img/badges/haiti.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Béchara Asgour",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Steeven Sah",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Andrew Jean-Baptiste",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Mechack Jérôme",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Ronald Matheus",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Derrick Étienne Jr.",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Agustin Cétout",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Ernst Saintilus",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Duckens Nazon",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Frantzdy Pierrot",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Wilde-Donald Guerrier",
+          "position": "LW",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 70,
+        "defense": 68,
+        "goalkeeping": 65
+      },
+      "source": "Haiti NT — CONCACAF Nations League 2024-25",
+      "teamLabel": "Haiti (2025)"
+    }
+  }
+}

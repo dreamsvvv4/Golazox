@@ -1,0 +1,42 @@
+{
+  "slug": "levante-ud",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Dani Cárdenas", "position": "GK", "rating": 74 },
+        { "name": "Andrés Fernández", "position": "GK", "rating": 72 },
+        { "name": "Rober Pier", "position": "CB", "rating": 74 },
+        { "name": "Ruben Vezo", "position": "CB", "rating": 73 },
+        { "name": "Djené Dakonam", "position": "CB", "rating": 72 },
+        { "name": "Nikola Maras", "position": "CB", "rating": 70 },
+        { "name": "Son", "position": "RB", "rating": 72 },
+        { "name": "Marc Pubill", "position": "RB", "rating": 73 },
+        { "name": "Pepelu", "position": "DM", "rating": 76 },
+        { "name": "Enis Bardhi", "position": "CM", "rating": 76 },
+        { "name": "Gonzalo Melero", "position": "CM", "rating": 74 },
+        { "name": "Pablo Martínez", "position": "LB", "rating": 70 },
+        { "name": "Roger Brugué", "position": "AM", "rating": 72 },
+        { "name": "Dani Gómez", "position": "ST", "rating": 76 },
+        { "name": "Sergio León", "position": "ST", "rating": 73 },
+        { "name": "Andrés García", "position": "RW", "rating": 71 },
+        { "name": "Marti Muñoz", "position": "LW", "rating": 70 },
+        { "name": "Iborra", "position": "CM", "rating": 70 },
+        { "name": "Malsa", "position": "LW", "rating": 70 },
+        { "name": "Fran Pérez", "position": "RW", "rating": 69 },
+        { "name": "Marc Relats", "position": "RB", "rating": 68 }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — Levante UD (2025/2026)",
+      "teamLabel": "Levante UD (2025-26)"
+    }
+  },
+  "id": 745,
+  "name": "Levante UD",
+  "badgeLocalPath": "/img/badges/levante-ud.png"
+}

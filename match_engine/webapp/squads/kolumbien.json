@@ -1,0 +1,260 @@
+{
+  "slug": "kolumbien",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Kevin Mier",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Álvaro Montero",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Camilo Vargas",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "David Ospina",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Daniel Muñoz",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 19000000,
+          "rating": 85
+        },
+        {
+          "name": "Jhon Lucumí",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Yerson Mosquera",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Willer Ditta",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Carlos Cuesta",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Yerry Mina",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Deiver Machado",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Johan Mojica",
+          "position": "LB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Cristián Borja",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Santiago Arias",
+          "position": "RB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Andrés Felipe Román",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Álvaro Angulo",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 82
+        },
+        {
+          "name": "Richard Ríos",
+          "position": "DM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Jefferson Lerma",
+          "position": "DM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Jorge Carrascal",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Kevin Castaño",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Juan Portilla",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Gustavo Puerta",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Juan Fernando Quintero",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Rafael Carrascal",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Luis Díaz",
+          "position": "LW",
+          "marketValue": 85000000,
+          "rating": 90
+        },
+        {
+          "name": "Yáser Asprilla",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Cucho Hernández",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jhon Arias",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Jhon Córdoba",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Jhon Durán",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 82
+        },
+        {
+          "name": "Rafael Borré",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jáminton Campaz",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Andrés Gómez",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Marino Hinestroza",
+          "position": "LW",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Johan Carbonero",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Kevin Serna",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Dayro Moreno",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Alfredo Morelos",
+          "position": "ST",
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 74,
+        "defense": 75,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — colombia (2025/2026)",
+      "teamLabel": "colombia (2025-26)"
+    }
+  },
+  "id": 3816,
+  "name": "colombia",
+  "badgeLocalPath": "/img/badges/colombia.png"
+}

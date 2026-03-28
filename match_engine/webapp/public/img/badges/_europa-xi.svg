@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003380"/>
+      <stop offset="100%" style="stop-color:#001140"/>
+    </linearGradient>
+  </defs>
+  <path d="M40 4 L72 16 L72 45 Q72 65 40 76 Q8 65 8 45 L8 16 Z"
+        fill="url(#g)" stroke="#ffcc00" stroke-width="1.8"/>
+  <path d="M40 11 L65 21 L65 44 Q65 60 40 69 Q15 60 15 44 L15 21 Z"
+        fill="none" stroke="rgba(255,204,0,0.2)" stroke-width="1"/>
+  <!-- EU stars ring (12 stars) -->
+  <g fill="#ffcc00">
+    <circle cx="40" cy="20" r="1.6"/>
+    <circle cx="47.7" cy="22" r="1.6"/>
+    <circle cx="53" cy="28" r="1.6"/>
+    <circle cx="54" cy="35.5" r="1.6"/>
+    <circle cx="50.5" cy="42.5" r="1.6"/>
+    <circle cx="44.5" cy="46.5" r="1.6"/>
+    <circle cx="37.5" cy="47" r="1.6"/>
+    <circle cx="31.5" cy="44.5" r="1.6"/>
+    <circle cx="27.5" cy="39" r="1.6"/>
+    <circle cx="27" cy="32" r="1.6"/>
+    <circle cx="30.5" cy="25.5" r="1.6"/>
+    <circle cx="36.5" cy="21" r="1.6"/>
+  </g>
+  <text x="40" y="62" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="7" font-weight="900" fill="#ffcc00" letter-spacing="1">EUROPA</text>
+  <text x="40" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" font-weight="700" fill="rgba(255,204,0,0.7)">ALL STARS</text>
+</svg>

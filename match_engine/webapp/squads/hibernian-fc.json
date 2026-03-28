@@ -1,0 +1,126 @@
+{
+  "slug": "hibernian-fc",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Marshall",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Murray Johnson",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Paul Hanlon",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Ryan Porteous",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Rocky Bushiri",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Josh Doig",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Chris Cadden",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Emiliano Marcondes",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nohan Kenneh",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Jake Doyle-Hayes",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Élie Youan",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Martin Boyle",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Mykola Kukharevych",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Christian Doidge",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Kyle Magennis",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Lewis Stevenson",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Aiden McGeady",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Sylvester Jasper",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Dylan Tait",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Harry McKirdy",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Jair Tavares",
+          "position": "RW",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 65,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Hibernian FC (2025/2026)",
+      "teamLabel": "Hibernian FC (2025-26)"
+    }
+  },
+  "id": 212,
+  "name": "Hibernian FC",
+  "badgeLocalPath": "/img/badges/hibernian-fc.png"
+}

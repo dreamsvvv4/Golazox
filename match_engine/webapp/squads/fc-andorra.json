@@ -1,0 +1,42 @@
+{
+  "slug": "fc-andorra",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Rafa Ortiz", "position": "GK" },
+        { "name": "Marc Vito", "position": "RB" },
+        { "name": "Xabier Etxeita", "position": "CB" },
+        { "name": "Marc Rebes", "position": "CB" },
+        { "name": "Chus Herrero", "position": "LB" },
+        { "name": "Manu Nieto", "position": "CM" },
+        { "name": "Valentín Vada", "position": "CM" },
+        { "name": "Max Llovera", "position": "CM" },
+        { "name": "Alex Martínez", "position": "RW" },
+        { "name": "Moisés San Miguel", "position": "ST" },
+        { "name": "Jordi Calavera", "position": "LW" },
+        { "name": "Juan Carlos", "position": "GK" },
+        { "name": "Braian Cufre", "position": "RB" },
+        { "name": "Ricard Fernández", "position": "CB" },
+        { "name": "Dani Romero", "position": "LB" },
+        { "name": "Hamza Igamane", "position": "CM" },
+        { "name": "Víctor Barbera", "position": "CM" },
+        { "name": "Xavi Molina", "position": "RW" },
+        { "name": "Abde Ezzalzouli", "position": "ST" },
+        { "name": "Nico González", "position": "LW" },
+        { "name": "Pau Víctor", "position": "CB" }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — FC Andorra 2024-25 La Liga 2",
+      "teamLabel": "FC Andorra 2024-25 La Liga 2"
+    }
+  },
+  "id": 62799,
+  "name": "FC Andorra",
+  "badgeLocalPath": "/img/badges/fc-andorra.png"
+}

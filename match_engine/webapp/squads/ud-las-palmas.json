@@ -1,0 +1,42 @@
+{
+  "slug": "ud-las-palmas",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Álvaro Valles", "position": "GK", "rating": 78 },
+        { "name": "Oliver Zelenika", "position": "GK", "rating": 72 },
+        { "name": "Mika Märmol", "position": "CB", "rating": 76 },
+        { "name": "Alex Suárez", "position": "CB", "rating": 73 },
+        { "name": "Florian Lejeune", "position": "CB", "rating": 75 },
+        { "name": "Sebastián Cáceres", "position": "CB", "rating": 72 },
+        { "name": "Scott McKenna", "position": "CB", "rating": 74 },
+        { "name": "Sergi Cardona", "position": "LB", "rating": 74 },
+        { "name": "Álex Suárez", "position": "RB", "rating": 72 },
+        { "name": "Kirian Rodríguez", "position": "CM", "rating": 78 },
+        { "name": "Fede San Emeterio", "position": "CM", "rating": 74 },
+        { "name": "Javi Muñoz", "position": "CM", "rating": 73 },
+        { "name": "Jon Pacheco", "position": "DM", "rating": 72 },
+        { "name": "Alberto Moleiro", "position": "AM", "rating": 79 },
+        { "name": "Fabio González", "position": "CM", "rating": 70 },
+        { "name": "Marc Cardona", "position": "RW", "rating": 73 },
+        { "name": "Sandro Ramírez", "position": "ST", "rating": 74 },
+        { "name": "Munir El Haddadi", "position": "LW", "rating": 73 },
+        { "name": "Antonio Molina", "position": "ST", "rating": 70 },
+        { "name": "Coco", "position": "RB", "rating": 70 },
+        { "name": "Jesé Rodríguez", "position": "LW", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 67,
+        "defense": 64,
+        "goalkeeping": 66
+      },
+      "source": "Transfermarkt — UD Las Palmas (2025/2026)",
+      "teamLabel": "UD Las Palmas (2025-26)"
+    }
+  },
+  "id": 472,
+  "name": "Las Palmas",
+  "badgeLocalPath": "/img/badges/ud-las-palmas.png"
+}

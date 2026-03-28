@@ -1,0 +1,303 @@
+{
+  "slug": "kap-verde",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bruno Varela",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Márcio Rosa",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Vozinha",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Henrique Tavares",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "Rivaldo",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 93
+        },
+        {
+          "name": "Logan Costa",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Wagner Pina",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Steven Moreira",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Diney Borges",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ricardo Santos",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jordan Semedo",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Yuran Fernandes",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sidny Lopes Cabral",
+          "position": "CB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Kelvin Pires",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Roberto Lopes",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Jójó",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Kristopher Da Graca",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Stopira",
+          "position": "LB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Bruno Almeida",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "David Moreira",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Kevin Lenini",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 79
+        },
+        {
+          "name": "Jamiro Monteiro",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Laros Duarte",
+          "position": "LW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Deroy Duarte",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "David Costa",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "João Paulo",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Stéphane Cueni",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Yannick Semedo",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Aílson Tavares",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "David Tavares",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Elson Mendes",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Hélio Varela",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jovane Cabral",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Willy Semedo",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Duk",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Garry Rodrigues",
+          "position": "RW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Ryan Mendes",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Telmo Arcanjo",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Dailon Livramento",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Benchimol",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Alessio Da Cruz",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Fabrício Garcia",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Nuno Da Costa",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Heri Tavares",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alvin Fortes",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Rúben Pina",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ilano Silva Timas",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — cape verde (2025/2026)",
+      "teamLabel": "cape verde (2025-26)"
+    }
+  },
+  "id": 4311,
+  "name": "cape verde",
+  "badgeLocalPath": "/img/badges/cape-verde.png"
+}

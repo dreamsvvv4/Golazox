@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a4a1a"/>
+      <stop offset="100%" stop-color="#0a2010"/>
+    </radialGradient>
+  </defs>
+  <rect width="80" height="80" rx="10" fill="url(#bg)"/>
+  <path d="M40 8 L68 20 L68 46 Q68 64 40 74 Q12 64 12 46 L12 20 Z" fill="none" stroke="#f0c040" stroke-width="2.5"/>
+  <!-- Top half gold fill -->
+  <path d="M40 14 L62 24 L62 40 L40 40 L18 40 L18 24 Z" fill="#f0c040" opacity="0.15"/>
+  <!-- Stars -->
+  <text x="28" y="32" font-family="Arial" font-size="9" fill="#f0c040">★★★</text>
+  <!-- AM text -->
+  <text x="40" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="13" fill="#f0c040">AM</text>
+  <text x="40" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" fill="#8ae88a" letter-spacing="0.5">HISTÓRICA</text>
+</svg>

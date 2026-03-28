@@ -1,0 +1,42 @@
+{
+  "slug": "cadiz-cf",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Conan Ledesma", "position": "GK", "rating": 76 },
+        { "name": "David Gil", "position": "GK", "rating": 69 },
+        { "name": "Fali", "position": "CB", "rating": 75 },
+        { "name": "Marcos Mauro", "position": "CB", "rating": 73 },
+        { "name": "José Espino", "position": "CB", "rating": 72 },
+        { "name": "Xavier Manu Sánchez", "position": "CB", "rating": 70 },
+        { "name": "Carlos Akapo", "position": "RB", "rating": 73 },
+        { "name": "Alfonso González", "position": "LB", "rating": 70 },
+        { "name": "Tomás Alarcón", "position": "DM", "rating": 74 },
+        { "name": "Rubén Alcaraz", "position": "DM", "rating": 73 },
+        { "name": "Alejo", "position": "CM", "rating": 72 },
+        { "name": "Jens Jonsson", "position": "CM", "rating": 71 },
+        { "name": "Théo Bongonda", "position": "LW", "rating": 74 },
+        { "name": "Iza Carcelén", "position": "RW", "rating": 73 },
+        { "name": "Ontiveros", "position": "AM", "rating": 72 },
+        { "name": "Roger Martí", "position": "ST", "rating": 74 },
+        { "name": "Pablo Rodríguez", "position": "ST", "rating": 70 },
+        { "name": "Chris Ramos", "position": "ST", "rating": 71 },
+        { "name": "Ocampo", "position": "CM", "rating": 69 },
+        { "name": "Zaldua", "position": "RB", "rating": 70 },
+        { "name": "Brian Olivan", "position": "LB", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 63,
+        "defense": 62,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Cádiz CF (2025/2026)",
+      "teamLabel": "Cádiz CF (2025-26)"
+    }
+  },
+  "id": 2517,
+  "name": "Cádiz CF",
+  "badgeLocalPath": "/img/badges/cadiz-cf.png"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "malaga",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Alfonso Herrero", "position": "GK" },
+        { "name": "Víctor García", "position": "RB" },
+        { "name": "Esteban Burgos", "position": "CB" },
+        { "name": "Juankar", "position": "CB" },
+        { "name": "Abou Ba", "position": "LB" },
+        { "name": "Dani Sánchez", "position": "CM" },
+        { "name": "Ramón", "position": "CM" },
+        { "name": "Víctor Olmo", "position": "AM" },
+        { "name": "Jairo", "position": "RW" },
+        { "name": "Roberto", "position": "LW" },
+        { "name": "Andrés Caro", "position": "ST" },
+        { "name": "Diego Mariño", "position": "GK" },
+        { "name": "Kevin Medrano", "position": "RB" },
+        { "name": "Javi Jiménez", "position": "CB" },
+        { "name": "Adrián González", "position": "LB" },
+        { "name": "Genaro", "position": "CM" },
+        { "name": "Rubén Castro", "position": "CM" },
+        { "name": "Cristian", "position": "RW" },
+        { "name": "Paulino", "position": "ST" },
+        { "name": "Sekou Gassama", "position": "LW" },
+        { "name": "Iván Balliu", "position": "CB" }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 65,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Málaga CF 2024-25 La Liga 2",
+      "teamLabel": "Málaga CF 2024-25 La Liga 2"
+    }
+  },
+  "id": 59,
+  "name": "Málaga CF",
+  "badgeLocalPath": "/img/badges/malaga.png"
+}

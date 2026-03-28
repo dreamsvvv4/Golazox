@@ -1,0 +1,42 @@
+{
+  "slug": "catanzaro",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Fulignati", "position": "GK", "rating": 72 },
+        { "name": "Sala", "position": "GK", "rating": 66 },
+        { "name": "Scognamillo", "position": "CB", "rating": 72 },
+        { "name": "Brighenti", "position": "CB", "rating": 71 },
+        { "name": "Antonini", "position": "CB", "rating": 70 },
+        { "name": "Tentardini", "position": "LB", "rating": 70 },
+        { "name": "Oliveri", "position": "RB", "rating": 70 },
+        { "name": "Ghion", "position": "DM", "rating": 72 },
+        { "name": "Verna", "position": "CM", "rating": 73 },
+        { "name": "Pontisso", "position": "CM", "rating": 70 },
+        { "name": "Vandeputte", "position": "LW", "rating": 74 },
+        { "name": "Biasci", "position": "ST", "rating": 74 },
+        { "name": "Stoppa", "position": "RW", "rating": 72 },
+        { "name": "Iemmello", "position": "ST", "rating": 75 },
+        { "name": "Sounas", "position": "AM", "rating": 71 },
+        { "name": "Ambrosino", "position": "ST", "rating": 72 },
+        { "name": "Situm", "position": "RW", "rating": 71 },
+        { "name": "Compagnon", "position": "LW", "rating": 70 },
+        { "name": "Curcio", "position": "AM", "rating": 71 },
+        { "name": "Brignola", "position": "CM", "rating": 69 },
+        { "name": "Cinelli", "position": "CB", "rating": 69 }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — US Catanzaro (2025/2026)",
+      "teamLabel": "US Catanzaro (2025-26)"
+    }
+  },
+  "id": 5268,
+  "name": "US Catanzaro",
+  "badgeLocalPath": "/img/badges/catanzaro.png"
+}

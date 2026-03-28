@@ -1,0 +1,42 @@
+{
+  "slug": "moreirense",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Dibussi", "position": "GK", "rating": 70 },
+        { "name": "Mateus Safira", "position": "GK", "rating": 65 },
+        { "name": "António Domingos", "position": "CB", "rating": 70 },
+        { "name": "João Ferreira", "position": "CB", "rating": 70 },
+        { "name": "Tiago Rodrigues", "position": "CB", "rating": 69 },
+        { "name": "Filipe Ferreira", "position": "LB", "rating": 70 },
+        { "name": "Joel Low", "position": "RB", "rating": 69 },
+        { "name": "Toni Borevkovic", "position": "DM", "rating": 71 },
+        { "name": "Yan Matheus", "position": "CM", "rating": 71 },
+        { "name": "Benny", "position": "CM", "rating": 70 },
+        { "name": "Riascos", "position": "RW", "rating": 71 },
+        { "name": "Walterson", "position": "LW", "rating": 70 },
+        { "name": "Murilo", "position": "ST", "rating": 71 },
+        { "name": "Levi García", "position": "ST", "rating": 72 },
+        { "name": "Ibrama", "position": "CB", "rating": 68 },
+        { "name": "Yuri Medeiros", "position": "CM", "rating": 70 },
+        { "name": "Ofori", "position": "LM", "rating": 69 },
+        { "name": "Matheus Índio", "position": "DM", "rating": 69 },
+        { "name": "Roger", "position": "ST", "rating": 69 },
+        { "name": "Steven Vitoria", "position": "CB", "rating": 70 },
+        { "name": "Alex Soares", "position": "RB", "rating": 68 }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 64,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Moreirense FC (2025/2026)",
+      "teamLabel": "Moreirense FC (2025-26)"
+    }
+  },
+  "id": 9005,
+  "name": "Moreirense FC",
+  "badgeLocalPath": "/img/badges/moreirense.png"
+}

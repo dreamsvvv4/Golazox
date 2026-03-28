@@ -1,0 +1,42 @@
+{
+  "slug": "spezia",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Ivan Provedel", "position": "GK", "rating": 75 },
+        { "name": "Diego Zoet", "position": "GK", "rating": 70 },
+        { "name": "Jakub Kiwior", "position": "CB", "rating": 74 },
+        { "name": "Dimitrios Nikolaou", "position": "CB", "rating": 73 },
+        { "name": "Kelvin Amian", "position": "RB", "rating": 73 },
+        { "name": "Salvador Ferrer", "position": "LB", "rating": 72 },
+        { "name": "Luca Vignali", "position": "RB", "rating": 71 },
+        { "name": "Simone Bastoni", "position": "LB", "rating": 73 },
+        { "name": "Arkadiusz Reca", "position": "LB", "rating": 72 },
+        { "name": "Giulio Maggiore", "position": "CM", "rating": 74 },
+        { "name": "Mehdi Léris", "position": "RW", "rating": 74 },
+        { "name": "Petko Hristov", "position": "CB", "rating": 72 },
+        { "name": "Kouda", "position": "LW", "rating": 73 },
+        { "name": "Daniele Verde", "position": "AM", "rating": 73 },
+        { "name": "Emmanuel Gyasi", "position": "RW", "rating": 73 },
+        { "name": "Edoardo Soleri", "position": "ST", "rating": 71 },
+        { "name": "Nzola", "position": "ST", "rating": 74 },
+        { "name": "Gelmi", "position": "AM", "rating": 70 },
+        { "name": "P'Gelle", "position": "ST", "rating": 70 },
+        { "name": "Strelec", "position": "ST", "rating": 72 },
+        { "name": "Hristov", "position": "CB", "rating": 71 }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 68,
+        "defense": 66,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Spezia Calcio (2025/2026)",
+      "teamLabel": "Spezia Calcio (2025-26)"
+    }
+  },
+  "id": 458,
+  "name": "Spezia Calcio",
+  "badgeLocalPath": "/img/badges/spezia.png"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "ireland",
+  "name": "Ireland",
+  "badgeLocalPath": "/img/badges/ireland.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Caoimhín Kelleher",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Séamus Coleman",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Nathan Collins",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Liam Scales",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Matt Doherty",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Jayson Molumby",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Callum O'Dowda",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Chiedozie Ogbene",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Troy Parrott",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST",
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 73
+      },
+      "source": "Republic of Ireland NT — UEFA Nations League B 2024-25",
+      "teamLabel": "Ireland (2025)"
+    }
+  }
+}

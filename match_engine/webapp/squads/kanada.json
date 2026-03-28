@@ -1,0 +1,243 @@
+{
+  "slug": "kanada",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Maxime Crépeau",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Dayne St. Clair",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Owen Goodman",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luka Gavran",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jayden Hibbert",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "Alphonso Davies",
+          "position": "LB",
+          "marketValue": 50000000,
+          "rating": 87
+        },
+        {
+          "name": "Alistair Johnston",
+          "position": "RB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Moïse Bombito",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Derek Cornelius",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alfie Jones",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Kamal Miller",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Joel Waterman",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jahkeele Marshall-Rutty",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Richie Laryea",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Sam Adekugbe",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luc De Fougerolles",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Jamie Knight-Lebel",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ismaël Koné",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Stephen Eustaquio",
+          "position": "DM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Niko Sigur",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ali Ahmed",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Osorio",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Mathieu Choinière",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nathan-Dylan Saliba",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Zorhan Bassong",
+          "position": "DM",
+          "marketValue": 450000,
+          "rating": 71
+        },
+        {
+          "name": "Jonathan David",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Tajon Buchanan",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jacob Shaffelburg",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Liam Millar",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Cyle Larin",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Tani Oluwaseyi",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Theo Bair",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Jayden Nelson",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Promise David",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Daniel Jebbison",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Junior Hoilett",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 64,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — canada (2025/2026)",
+      "teamLabel": "canada (2025-26)"
+    }
+  },
+  "id": 3510,
+  "name": "canada",
+  "badgeLocalPath": "/img/badges/canada.png"
+}

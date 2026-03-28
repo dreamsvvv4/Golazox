@@ -1,0 +1,285 @@
+{
+  "slug": "finnland",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lukas Hradecky",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jesse Joronen",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Viljami Sinisalo",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lucas Bergström",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Leo Väisänen",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Adam Ståhl",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Miro Tenho",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jere Uronen",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Robert Ivanov",
+          "position": "LB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Ville Koski",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Tuomas Ollila",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Juhani Pikkarainen",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Arttu Hoskonen",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ville Tikkanen",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Nikolai Alho",
+          "position": "RB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Daniel O'Shaughnessy",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Noah Pallas",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jussi Niska",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ryan Mahuta",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Juho Lähteenmäki",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 71
+        },
+        {
+          "name": "Kaan Kairinen",
+          "position": "DM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Glen Kamara",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Fredrik Jensen",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Robin Lod",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Onni Valakari",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Leo Walta",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Santeri Väänänen",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Adam Markhiev",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Niklas Pyyhtiä",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Naatan Skyttä",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Matti Peltola",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tommi Jyry",
+          "position": "CM",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Anssi Suhonen",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ilmari Niskanen",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Rasmus Schüller",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Joel Pohjanpalo",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Topi Keskinen",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Casper Terho",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Benjamin Källman",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Oliver Antman",
+          "position": "RW",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Daniel Håkans",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Teemu Pukki",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Oiva Jukkola",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Adrian Svanbäck",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 69,
+        "defense": 63,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — finland (2025/2026)",
+      "teamLabel": "finland (2025-26)"
+    }
+  },
+  "id": 3443,
+  "name": "finland",
+  "badgeLocalPath": "/img/badges/finland.png"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "hull-city",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Ivor Pandur", "position": "GK", "rating": 73 },
+        { "name": "Matt Ingram", "position": "GK", "rating": 68 },
+        { "name": "Jacob Greaves", "position": "CB", "rating": 74 },
+        { "name": "Sean McLoughlin", "position": "CB", "rating": 72 },
+        { "name": "Alfie Jones", "position": "CB", "rating": 71 },
+        { "name": "Lewie Coyle", "position": "RB", "rating": 72 },
+        { "name": "Callum Elder", "position": "LB", "rating": 72 },
+        { "name": "Jean Michael Seri", "position": "DM", "rating": 74 },
+        { "name": "Ozan Tufan", "position": "CM", "rating": 73 },
+        { "name": "Dogukan Sinik", "position": "AM", "rating": 72 },
+        { "name": "Adama Traore", "position": "RW", "rating": 72 },
+        { "name": "Cyrus Christie", "position": "RB", "rating": 70 },
+        { "name": "Tyler Smith", "position": "LW", "rating": 71 },
+        { "name": "Liam Delap", "position": "ST", "rating": 76 },
+        { "name": "Oscar Estupiñán", "position": "ST", "rating": 74 },
+        { "name": "Ryan Longman", "position": "LW", "rating": 72 },
+        { "name": "Benjamin Tetteh", "position": "ST", "rating": 71 },
+        { "name": "Dimitrios Pelkas", "position": "AM", "rating": 72 },
+        { "name": "Sinclair Armstrong", "position": "ST", "rating": 72 },
+        { "name": "Regan Slater", "position": "CM", "rating": 70 },
+        { "name": "Keane Lewis-Potter", "position": "LW", "rating": 73 }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 66,
+        "defense": 65,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Hull City (2025/2026)",
+      "teamLabel": "Hull City (2025-26)"
+    }
+  },
+  "id": 1190,
+  "name": "Hull City",
+  "badgeLocalPath": "/img/badges/hull-city.png"
+}

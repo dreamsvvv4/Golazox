@@ -1,0 +1,42 @@
+{
+  "slug": "cardiff-city",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Ryan Allsop", "position": "GK", "rating": 70 },
+        { "name": "Jak Alnwick", "position": "GK", "rating": 68 },
+        { "name": "Mark McGuinness", "position": "CB", "rating": 72 },
+        { "name": "Curtis Nelson", "position": "CB", "rating": 71 },
+        { "name": "Perry Ng", "position": "RB", "rating": 72 },
+        { "name": "Jamilu Collins", "position": "LB", "rating": 71 },
+        { "name": "Joel Bagan", "position": "LB", "rating": 70 },
+        { "name": "Joe Ralls", "position": "DM", "rating": 72 },
+        { "name": "Romaine Sawyers", "position": "CM", "rating": 72 },
+        { "name": "Callum O'Dowda", "position": "CM", "rating": 71 },
+        { "name": "Josh Bowler", "position": "RW", "rating": 72 },
+        { "name": "Ryan Wintle", "position": "CM", "rating": 71 },
+        { "name": "Nathaniel Mendez-Laing", "position": "RW", "rating": 71 },
+        { "name": "Ollie Tanner", "position": "LW", "rating": 71 },
+        { "name": "Callum Robinson", "position": "LW", "rating": 71 },
+        { "name": "Kion Etete", "position": "ST", "rating": 71 },
+        { "name": "Aaron Ramsey", "position": "CM", "rating": 72 },
+        { "name": "Isaak Davies", "position": "ST", "rating": 71 },
+        { "name": "Jordan Hugill", "position": "ST", "rating": 70 },
+        { "name": "Sory Kaba", "position": "ST", "rating": 70 },
+        { "name": "Ebou Adams", "position": "DM", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 64,
+        "defense": 63,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Cardiff City (2025/2026)",
+      "teamLabel": "Cardiff City (2025-26)"
+    }
+  },
+  "id": 1020,
+  "name": "Cardiff City",
+  "badgeLocalPath": "/img/badges/cardiff-city.png"
+}

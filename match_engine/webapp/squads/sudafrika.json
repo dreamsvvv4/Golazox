@@ -1,0 +1,453 @@
+{
+  "slug": "sudafrika",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Ronwen Williams",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 81
+        },
+        {
+          "name": "Ricardo Goss",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Sipho Chaine",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Renaldo Leaner",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Andile Mbanjwa",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Samukelo Xulu",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Kopano Thuntsane",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Siyabonga Ngezana",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Nkosinathi Sibisi",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Aubrey Modiba",
+          "position": "LB",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Khuliso Mudau",
+          "position": "RB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Fawaaz Basadien",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Thapelo Morena",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Nyiko Mobbie",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Deano Van Rooyen",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Kegan Johannes",
+          "position": "CB",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Thabiso Monyane",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Zuko Mdunyelwa",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Thabo Moloisane",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Grant Kekana",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Terrence Mashego",
+          "position": "LB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Thabang Matuludi",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Kwanda Mngonyama",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Samukele Kabini",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ramahlwe Mphahlele",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Thabang Molaoa",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Wayde Jooste",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Harold Majadibodu",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Tylon Smith",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Khulumani Ndamane",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Malibongwe Khoza",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Mbekezeli Mbokazi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Vuyo Letlapa",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Teboho Mokoena",
+          "position": "DM",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Neo Maema",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Patrick Maswanganyi",
+          "position": "AM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Jayden Adams",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ndabayithethwa Ndlondlo",
+          "position": "CM",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Sipho Mbule",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Luke Le Roux",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Fortune Makaringe",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Mduduzi Shabalala",
+          "position": "CM",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Bathusi Aubaas",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Thabiso Kutumela",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Thalente Mbatha",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Yaya Sithole",
+          "position": "CM",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Ndamulelo Maphangule",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Sinoxolo Kwayiba",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ntando Nkosi",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Masindi Nemtajela",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Simphiwe Selepe",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Momelezi Dlambewu",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Iqraam Rayners",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Percy Tau",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 80
+        },
+        {
+          "name": "Elias Mokwana",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Relebohile Mofokeng",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Shandre Campbell",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Keagan Dolly",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Oswin Appollis",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Thamsanqa Masiya",
+          "position": "ST",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Kamogelo Sebelebele",
+          "position": "ST",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Zakhele Lepasa",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Evidence Makgopa",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Ashley Cupido",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Yanela Mbuthuma",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tshepang Moremi",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Menzi Masuku",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Tebogo Tlolane",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Keletso Makgalwa",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Mohau Nkota",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Siyabonga Mashinini",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — south africa (2025/2026)",
+      "teamLabel": "south africa (2025-26)"
+    }
+  },
+  "id": 3806,
+  "name": "south africa",
+  "badgeLocalPath": "/img/badges/south-africa.png"
+}

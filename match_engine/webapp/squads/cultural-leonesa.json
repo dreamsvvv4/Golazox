@@ -1,0 +1,42 @@
+{
+  "slug": "cultural-leonesa",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Jean-Luc Dompe", "position": "GK" },
+        { "name": "Llorente", "position": "RB" },
+        { "name": "Arturo Molina", "position": "CB" },
+        { "name": "Quillo", "position": "CB" },
+        { "name": "Adri González", "position": "LB" },
+        { "name": "Víctor García", "position": "CM" },
+        { "name": "Jorge Fernández", "position": "CM" },
+        { "name": "Pepe Sánchez", "position": "CM" },
+        { "name": "Dani Rubio", "position": "RW" },
+        { "name": "Sergio Marcos", "position": "ST" },
+        { "name": "Lolo Planas", "position": "LW" },
+        { "name": "Óscar Sánchez", "position": "GK" },
+        { "name": "David González", "position": "RB" },
+        { "name": "Marcos Díaz", "position": "CB" },
+        { "name": "Luis Muñoz", "position": "LB" },
+        { "name": "Riki García", "position": "CM" },
+        { "name": "Carlos Hernández", "position": "CM" },
+        { "name": "Álvaro Blanco", "position": "RW" },
+        { "name": "Raúl López", "position": "ST" },
+        { "name": "Toni Martínez", "position": "LW" },
+        { "name": "Adrián Colunga", "position": "CB" }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 62,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Cultural Leonesa 2024-25 La Liga 2",
+      "teamLabel": "Cultural Leonesa 2024-25 La Liga 2"
+    }
+  },
+  "id": 3773,
+  "name": "Cultural Leonesa",
+  "badgeLocalPath": "/img/badges/cultural-leonesa.png"
+}

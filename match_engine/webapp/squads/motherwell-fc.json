@@ -1,0 +1,42 @@
+{
+  "slug": "motherwell-fc",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Liam Kelly", "position": "GK", "rating": 71 },
+        { "name": "Trevor Carson", "position": "GK", "rating": 67 },
+        { "name": "Ricki Lamie", "position": "CB", "rating": 71 },
+        { "name": "Liam Donnelly", "position": "CB", "rating": 71 },
+        { "name": "Stephen O'Donnell", "position": "RB", "rating": 71 },
+        { "name": "Bevis Mugabi", "position": "CB", "rating": 70 },
+        { "name": "Liam Grimshaw", "position": "LB", "rating": 69 },
+        { "name": "Barry Maguire", "position": "DM", "rating": 71 },
+        { "name": "Callum Slattery", "position": "CM", "rating": 72 },
+        { "name": "Dean McMaster", "position": "CM", "rating": 70 },
+        { "name": "Theo Bair", "position": "ST", "rating": 72 },
+        { "name": "Kevin van Veen", "position": "ST", "rating": 73 },
+        { "name": "Liam Shaw", "position": "LW", "rating": 71 },
+        { "name": "Lennon Miller", "position": "CM", "rating": 72 },
+        { "name": "Sean Goss", "position": "CM", "rating": 70 },
+        { "name": "Stuart McKinstry", "position": "RW", "rating": 71 },
+        { "name": "Joe Efford", "position": "LW", "rating": 69 },
+        { "name": "Alistair Johnston", "position": "RB", "rating": 71 },
+        { "name": "Max Johnston", "position": "RB", "rating": 70 },
+        { "name": "Alexandro Bernabei", "position": "LB", "rating": 70 },
+        { "name": "Callum Roberts", "position": "RW", "rating": 69 }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 62,
+        "defense": 62,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Motherwell FC (2025/2026)",
+      "teamLabel": "Motherwell FC (2025-26)"
+    }
+  },
+  "id": 1292,
+  "name": "Motherwell FC",
+  "badgeLocalPath": "/img/badges/motherwell-fc.png"
+}

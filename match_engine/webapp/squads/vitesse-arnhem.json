@@ -1,0 +1,42 @@
+{
+  "slug": "vitesse-arnhem",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Jeroen Houwen", "position": "GK", "rating": 72 },
+        { "name": "Patrick Vroegh", "position": "GK", "rating": 67 },
+        { "name": "Danilho Doekhi", "position": "CB", "rating": 74 },
+        { "name": "Eli Dasa", "position": "RB", "rating": 74 },
+        { "name": "Daan Huisman", "position": "CB", "rating": 72 },
+        { "name": "Maximilian Wittek", "position": "LB", "rating": 73 },
+        { "name": "Tomas Tiilikainen", "position": "CB", "rating": 72 },
+        { "name": "Enzo Cornelisse", "position": "DM", "rating": 73 },
+        { "name": "Riechedly Bazoer", "position": "CM", "rating": 74 },
+        { "name": "Loïs Openda", "position": "ST", "rating": 76 },
+        { "name": "Jacob Rasmussen", "position": "CB", "rating": 72 },
+        { "name": "Dominik Oroz", "position": "AM", "rating": 72 },
+        { "name": "Lois Openda", "position": "LW", "rating": 73 },
+        { "name": "Nathan Markelo", "position": "RW", "rating": 73 },
+        { "name": "Chukwunonso Madueke", "position": "RW", "rating": 74 },
+        { "name": "Mexx Meerdink", "position": "ST", "rating": 73 },
+        { "name": "Bram Nuytinck", "position": "CB", "rating": 71 },
+        { "name": "Navarone Foor", "position": "CM", "rating": 72 },
+        { "name": "Peter Turgott", "position": "LW", "rating": 71 },
+        { "name": "Mustapha Tighadouini", "position": "LW", "rating": 71 },
+        { "name": "Nikolai Baden Frederiksen", "position": "AM", "rating": 72 }
+      ],
+      "ratings": {
+        "attack": 70,
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Vitesse Arnhem (2025/2026)",
+      "teamLabel": "Vitesse Arnhem (2025-26)"
+    }
+  },
+  "id": 6,
+  "name": "Vitesse",
+  "badgeLocalPath": "/img/badges/vitesse-arnhem.png"
+}

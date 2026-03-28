@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- DR Congo flag: blue background, red diagonal stripe with yellow borders, yellow star -->
+  <rect width="900" height="600" fill="#007FFF"/>
+  <!-- Yellow outer stripe (140px perpendicular each side) -->
+  <polygon points="0,432 648,0 900,0 900,168 252,600 0,600" fill="#F7D618"/>
+  <!-- Red centre stripe (100px perpendicular each side) -->
+  <polygon points="0,480 720,0 900,0 900,120 180,600 0,600" fill="#CE1126"/>
+  <!-- Yellow 5-pointed star — upper-left blue field -->
+  <polygon points="130,20 146,68 197,68 156,98 171,147 130,117 89,147 104,98 63,68 114,68" fill="#F7D618"/>
+</svg>

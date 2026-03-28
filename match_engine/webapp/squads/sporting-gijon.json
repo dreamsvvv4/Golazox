@@ -1,0 +1,126 @@
+{
+  "slug": "sporting-gijon",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Siviero",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Álvaro Sañudo",
+          "position": "GK",
+          "rating": 65
+        },
+        {
+          "name": "Pedro Díaz",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Guille Rosas",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Bogdan Milovanov",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Espinosa",
+          "position": "CB",
+          "rating": 68
+        },
+        {
+          "name": "Gaspar Campos",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Dubasin",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Nacho Méndez",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Manu García",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Villalba",
+          "position": "RM",
+          "rating": 71
+        },
+        {
+          "name": "Aitor García",
+          "position": "LM",
+          "rating": 72
+        },
+        {
+          "name": "Otero",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Enric Franquesa",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Djuka",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Mata",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Cerro",
+          "position": "ST",
+          "rating": 69
+        },
+        {
+          "name": "Colombatto",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Queijeiro",
+          "position": "RB",
+          "rating": 68
+        },
+        {
+          "name": "Pelayo Morilla",
+          "position": "AM",
+          "rating": 70
+        },
+        {
+          "name": "Champagne",
+          "position": "RW",
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Sporting de Gijón (2025/2026)",
+      "teamLabel": "Sporting de Gijón (2025-26)"
+    }
+  },
+  "id": 369,
+  "name": "Sporting de Gijón",
+  "badgeLocalPath": "/img/badges/sporting-gijon.png"
+}

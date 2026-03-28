@@ -1,0 +1,42 @@
+{
+  "slug": "caen",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Rémy Riou", "position": "GK", "rating": 71 },
+        { "name": "Thomas Callens", "position": "GK", "rating": 67 },
+        { "name": "Alexandru Bengescu", "position": "CB", "rating": 72 },
+        { "name": "Théo Zidane", "position": "CB", "rating": 70 },
+        { "name": "Emmanuel Ntim", "position": "CB", "rating": 71 },
+        { "name": "Mathieu Repas", "position": "LB", "rating": 70 },
+        { "name": "Faïsal Boulaya", "position": "AM", "rating": 73 },
+        { "name": "Ivan Sanchez", "position": "RB", "rating": 71 },
+        { "name": "Alexis Beka Beka", "position": "DM", "rating": 71 },
+        { "name": "Emmanuel Ikoné", "position": "CM", "rating": 71 },
+        { "name": "Yannick Cahuzac", "position": "CM", "rating": 70 },
+        { "name": "Pierre Lees Melou", "position": "CM", "rating": 71 },
+        { "name": "Mayron George", "position": "RW", "rating": 72 },
+        { "name": "Rommell Baio", "position": "LW", "rating": 71 },
+        { "name": "Calvin Bombo", "position": "ST", "rating": 72 },
+        { "name": "Alexis Claude-Maurice", "position": "LW", "rating": 72 },
+        { "name": "Ruben Aguilar", "position": "RB", "rating": 72 },
+        { "name": "Burchas", "position": "CM", "rating": 69 },
+        { "name": "Tristan Dingome", "position": "DM", "rating": 70 },
+        { "name": "Enzo Crivelli", "position": "ST", "rating": 71 },
+        { "name": "Julien Féret", "position": "AM", "rating": 69 }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — SM Caen (2025/2026)",
+      "teamLabel": "SM Caen (2025-26)"
+    }
+  },
+  "id": 769,
+  "name": "SM Caen",
+  "badgeLocalPath": "/img/badges/caen.png"
+}

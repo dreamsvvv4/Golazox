@@ -1,0 +1,42 @@
+{
+  "slug": "real-valladolid",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Jordi Masip", "position": "GK", "rating": 74 },
+        { "name": "Raúl Fernández", "position": "GK", "rating": 70 },
+        { "name": "Javier Sánchez", "position": "CB", "rating": 74 },
+        { "name": "Joaquín Fernández", "position": "CB", "rating": 72 },
+        { "name": "Stef Peeters", "position": "CB", "rating": 71 },
+        { "name": "Johan Mojica", "position": "LB", "rating": 74 },
+        { "name": "Marcos del Valle", "position": "RB", "rating": 71 },
+        { "name": "Lucas Rosa", "position": "LB", "rating": 70 },
+        { "name": "Kike Pérez", "position": "DM", "rating": 74 },
+        { "name": "Selim Amallah", "position": "CM", "rating": 74 },
+        { "name": "Óscar Plano", "position": "CM", "rating": 73 },
+        { "name": "Fabio Blanco", "position": "LW", "rating": 72 },
+        { "name": "Iván Sánchez", "position": "RW", "rating": 72 },
+        { "name": "Nacho Martínez", "position": "CM", "rating": 71 },
+        { "name": "Cyle Larin", "position": "ST", "rating": 75 },
+        { "name": "Shon Weissman", "position": "ST", "rating": 73 },
+        { "name": "Raúl de Tomás", "position": "ST", "rating": 73 },
+        { "name": "Luis Pérez", "position": "LW", "rating": 70 },
+        { "name": "Jawad El Yamiq", "position": "CB", "rating": 73 },
+        { "name": "Monchu", "position": "CM", "rating": 71 },
+        { "name": "Mamadou Sylla", "position": "ST", "rating": 68 }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 65,
+        "defense": 63,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Real Valladolid (2025/2026)",
+      "teamLabel": "Real Valladolid (2025-26)"
+    }
+  },
+  "id": 366,
+  "name": "Real Valladolid",
+  "badgeLocalPath": "/img/badges/real-valladolid.png"
+}

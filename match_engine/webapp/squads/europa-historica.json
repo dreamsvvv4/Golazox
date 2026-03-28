@@ -1,0 +1,102 @@
+{
+  "slug": "europa-historica",
+  "name": "Europa Histórica",
+  "badgeLocalPath": "/img/badges/_europa-historica.svg",
+  "seasons": {
+    "all-time": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lev Yashin",
+          "position": "GK",
+          "rating": 97
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "RB",
+          "rating": 92
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "position": "CB",
+          "rating": 97
+        },
+        {
+          "name": "Franco Baresi",
+          "position": "CB",
+          "rating": 96
+        },
+        {
+          "name": "Paolo Maldini",
+          "position": "LB",
+          "rating": 97
+        },
+        {
+          "name": "Xavi Hernández",
+          "position": "DM",
+          "rating": 96
+        },
+        {
+          "name": "Zinedine Zidane",
+          "position": "CM",
+          "rating": 96
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CAM",
+          "rating": 97
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "RW",
+          "rating": 98
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST",
+          "rating": 95
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "LW",
+          "rating": 96
+        }
+      ],
+      "bench": [
+        {
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 95
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB",
+          "rating": 95
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CAM",
+          "rating": 95
+        },
+        {
+          "name": "Michel Platini",
+          "position": "CM",
+          "rating": 95
+        },
+        {
+          "name": "Marco van Basten",
+          "position": "ST",
+          "rating": 95
+        }
+      ],
+      "ratings": {
+        "attack": 97,
+        "midfield": 97,
+        "defense": 97,
+        "goalkeeping": 97
+      },
+      "source": "Fantasy — Europa Histórica All Time",
+      "teamLabel": "Europa Histórica"
+    }
+  }
+}

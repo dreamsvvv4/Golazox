@@ -1,0 +1,387 @@
+{
+  "slug": "resto-mundo",
+  "name": "Resto del Mundo",
+  "badgeLocalPath": "/img/badges/_resto-mundo.svg",
+  "seasons": {
+    "1974": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Robert Mensah",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Ibrahim Sunday",
+          "position": "RB",
+          "rating": 85
+        },
+        {
+          "name": "Miloud Hadefi",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Ali Parvin",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Chérif Souleymane",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Tarek Dhiab",
+          "position": "DM",
+          "rating": 87
+        },
+        {
+          "name": "Abdul Razak",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Mahmoud El Khatib",
+          "position": "CAM",
+          "rating": 88
+        },
+        {
+          "name": "Kunishige Kamamoto",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Roger Milla",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Cha Bum-kun",
+          "position": "LW",
+          "rating": 89
+        }
+      ],
+      "bench": [
+        {
+          "name": "Mansour Rashidi",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Laurent Pokou",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Majed Abdullah",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Pierre Ndaye Mulamba",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Ali Danaeifard",
+          "position": "CM",
+          "rating": 83
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 83
+      },
+      "source": "Fantasy — Resto del Mundo XI Años 70 (Milla / Cha Bum-kun / El Khatib)",
+      "teamLabel": "Resto del Mundo (Años 70)"
+    },
+    "1994": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jacques Songo’o",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Noureddine Naybet",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "Lucas Radebe",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Taribo West",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Celestine Babayaro",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Jay-Jay Okocha",
+          "position": "DM",
+          "rating": 89
+        },
+        {
+          "name": "Hidetoshi Nakata",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Abedi Pelé",
+          "position": "CAM",
+          "rating": 91
+        },
+        {
+          "name": "Harry Kewell",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "George Weah",
+          "position": "ST",
+          "rating": 94
+        },
+        {
+          "name": "Rashidi Yekini",
+          "position": "LW",
+          "rating": 87
+        }
+      ],
+      "bench": [
+        {
+          "name": "Mark Bosnich",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Sunday Oliseh",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Ali Daei",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Hossam Hassan",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "rating": 86
+        }
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 89,
+        "defense": 86,
+        "goalkeeping": 84
+      },
+      "source": "Fantasy — Resto del Mundo XI Años 90 (Weah / Abedi Pelé / Okocha / Nakata)",
+      "teamLabel": "Resto del Mundo (Años 90)"
+    },
+    "2006": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mark Schwarzer",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Geremi Njitap",
+          "position": "RB",
+          "rating": 85
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Samuel Kuffour",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Lee Young-pyo",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Michael Essien",
+          "position": "DM",
+          "rating": 90
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "rating": 89
+        },
+        {
+          "name": "Park Ji-sung",
+          "position": "CAM",
+          "rating": 87
+        },
+        {
+          "name": "Shunsuke Nakamura",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Samuel Eto’o",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "LW",
+          "rating": 92
+        }
+      ],
+      "bench": [
+        {
+          "name": "Carlos Kameni",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Tim Cahill",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Emmanuel Adebayor",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Seydou Keita",
+          "position": "CM",
+          "rating": 86
+        }
+      ],
+      "ratings": {
+        "attack": 91,
+        "midfield": 89,
+        "defense": 86,
+        "goalkeeping": 84
+      },
+      "source": "Fantasy — Resto del Mundo XI Años 2000 (Eto’o / Drogba / Essien / Yaya Touré)",
+      "teamLabel": "Resto del Mundo (Años 2000)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Yassine Bounou",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Kim Min-jae",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Ramy Bensebaini",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Thomas Partey",
+          "position": "DM",
+          "rating": 85
+        },
+        {
+          "name": "Ismaël Bennacer",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Mohammed Kudus",
+          "position": "CAM",
+          "rating": 86
+        },
+        {
+          "name": "Mohamed Salah",
+          "position": "RW",
+          "rating": 91
+        },
+        {
+          "name": "Victor Osimhen",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Son Heung-min",
+          "position": "LW",
+          "rating": 89
+        }
+      ],
+      "bench": [
+        {
+          "name": "Édouard Mendy",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Edmond Tapsoba",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Wataru Endo",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "LW",
+          "rating": 86
+        },
+        {
+          "name": "Serhou Guirassy",
+          "position": "ST",
+          "rating": 86
+        }
+      ],
+      "ratings": {
+        "attack": 89,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 86
+      },
+      "source": "Fantasy — Resto del Mundo XI Actualidad 2025 (Salah / Osimhen / Son / Hakimi)",
+      "teamLabel": "Resto del Mundo"
+    }
+  }
+}

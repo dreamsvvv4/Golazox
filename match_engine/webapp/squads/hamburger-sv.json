@@ -1,0 +1,42 @@
+{
+  "slug": "hamburger-sv",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Daniel Heuer Fernandes", "position": "GK", "rating": 76 },
+        { "name": "Tom Mickel", "position": "GK", "rating": 70 },
+        { "name": "Jonas David", "position": "CB", "rating": 75 },
+        { "name": "Dennis Hadzikadunic", "position": "CB", "rating": 74 },
+        { "name": "Guilherme Ramos", "position": "CB", "rating": 73 },
+        { "name": "William Mikelbrencis", "position": "RB", "rating": 74 },
+        { "name": "Miro Muheim", "position": "LB", "rating": 74 },
+        { "name": "László Bénes", "position": "DM", "rating": 75 },
+        { "name": "Jean-Luc Dompé", "position": "LW", "rating": 76 },
+        { "name": "Emir Sahiti", "position": "AM", "rating": 74 },
+        { "name": "Ransford-Yeboah Königsdörffer", "position": "RW", "rating": 74 },
+        { "name": "Fabio Baldé", "position": "LW", "rating": 73 },
+        { "name": "Ludovit Reis", "position": "CM", "rating": 75 },
+        { "name": "Robert Glatzel", "position": "ST", "rating": 77 },
+        { "name": "Laszlo Benes", "position": "CM", "rating": 74 },
+        { "name": "Immanuel Pherai", "position": "AM", "rating": 73 },
+        { "name": "Elias Saad", "position": "RW", "rating": 72 },
+        { "name": "Noah Katterbach", "position": "LB", "rating": 72 },
+        { "name": "Stephan Ambrosius", "position": "CB", "rating": 72 },
+        { "name": "Ogechukwu Agu", "position": "DM", "rating": 71 },
+        { "name": "Bakéry Jatta", "position": "LW", "rating": 73 }
+      ],
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 68,
+        "goalkeeping": 68
+      },
+      "source": "Transfermarkt — Hamburger SV (2025/2026)",
+      "teamLabel": "Hamburger SV (2025-26)"
+    }
+  },
+  "id": 41,
+  "name": "Hamburger SV",
+  "badgeLocalPath": "/img/badges/hamburger-sv.png"
+}

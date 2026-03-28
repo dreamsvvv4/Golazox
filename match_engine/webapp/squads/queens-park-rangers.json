@@ -1,0 +1,42 @@
+{
+  "slug": "queens-park-rangers",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Joe Lumley", "position": "GK", "rating": 70 },
+        { "name": "Seny Dieng", "position": "GK", "rating": 72 },
+        { "name": "Jake Clarke-Salter", "position": "CB", "rating": 72 },
+        { "name": "Rob Dickie", "position": "CB", "rating": 72 },
+        { "name": "Jimmy Dunne", "position": "CB", "rating": 71 },
+        { "name": "Ethan Laird", "position": "RB", "rating": 72 },
+        { "name": "Sam McCallum", "position": "LB", "rating": 71 },
+        { "name": "Stefan Johansen", "position": "DM", "rating": 73 },
+        { "name": "Ilias Chair", "position": "AM", "rating": 75 },
+        { "name": "Chris Willock", "position": "RW", "rating": 73 },
+        { "name": "Andre Gray", "position": "ST", "rating": 71 },
+        { "name": "Albert Adomah", "position": "RW", "rating": 70 },
+        { "name": "Luke Amos", "position": "CM", "rating": 70 },
+        { "name": "Lyndon Dykes", "position": "ST", "rating": 72 },
+        { "name": "Charlie Austin", "position": "ST", "rating": 71 },
+        { "name": "Tyler Roberts", "position": "LW", "rating": 71 },
+        { "name": "Moses Odubajo", "position": "RB", "rating": 70 },
+        { "name": "Kenneth Paal", "position": "LB", "rating": 71 },
+        { "name": "Abbas Hamdan", "position": "CM", "rating": 70 },
+        { "name": "Yan Dhanda", "position": "CM", "rating": 70 },
+        { "name": "Sinclair Armstrong", "position": "ST", "rating": 71 }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 65,
+        "defense": 63,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Queens Park Rangers (2025/2026)",
+      "teamLabel": "QPR (2025-26)"
+    }
+  },
+  "id": 1027,
+  "name": "QPR",
+  "badgeLocalPath": "/img/badges/queens-park-rangers.png"
+}

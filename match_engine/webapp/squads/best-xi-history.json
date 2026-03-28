@@ -1,0 +1,102 @@
+{
+  "slug": "best-xi-history",
+  "name": "Mejor XI de la Historia",
+  "badgeLocalPath": "/img/badges/_best-xi-history.svg",
+  "seasons": {
+    "all-time": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lev Yashin",
+          "position": "GK",
+          "rating": 97
+        },
+        {
+          "name": "Cafu",
+          "position": "RB",
+          "rating": 95
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "position": "CB",
+          "rating": 97
+        },
+        {
+          "name": "Franco Baresi",
+          "position": "CB",
+          "rating": 96
+        },
+        {
+          "name": "Paolo Maldini",
+          "position": "LB",
+          "rating": 97
+        },
+        {
+          "name": "Xavi Hernández",
+          "position": "DM",
+          "rating": 96
+        },
+        {
+          "name": "Diego Maradona",
+          "position": "CM",
+          "rating": 98
+        },
+        {
+          "name": "Pelé",
+          "position": "CAM",
+          "rating": 99
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "LW",
+          "rating": 99
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "RW",
+          "rating": 98
+        },
+        {
+          "name": "Ronaldo Nazário",
+          "position": "ST",
+          "rating": 97
+        }
+      ],
+      "bench": [
+        {
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 95
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB",
+          "rating": 95
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CAM",
+          "rating": 97
+        },
+        {
+          "name": "Zinedine Zidane",
+          "position": "CM",
+          "rating": 96
+        },
+        {
+          "name": "Alfredo Di Stéfano",
+          "position": "ST",
+          "rating": 96
+        }
+      ],
+      "ratings": {
+        "attack": 99,
+        "midfield": 98,
+        "defense": 97,
+        "goalkeeping": 97
+      },
+      "source": "Fantasy — Mejor XI de la Historia del Fútbol",
+      "teamLabel": "Mejor XI Historia"
+    }
+  }
+}

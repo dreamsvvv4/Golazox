@@ -1,0 +1,411 @@
+{
+  "slug": "jamaika",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Andre Blake",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jahmali Waite",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Shaquan Davis",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Kemar Foster",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "Benjamin Williams",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Tafari Chambers",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Joshua Grant",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Rico Henry",
+          "position": "LB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ethan Pinnock",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Mason Holgate",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Joel Latibeaudiere",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kyle Duncan",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Dexter Lembikisa",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Amari'i Bell",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ronaldo Webster",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ian Fray",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Damion Lowe",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Richard King",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Greg Leigh",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Maliek Howell",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Kyle Ming",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jamoi Topey",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Sue-Lae McCalla",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Jeovanni Laing",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Steven Young",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Fitzroy Cummings",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Gadail Irving",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Christopher Ainsworth",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Robino Gordon",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 61
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kasey Palmer",
+          "position": "AM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jon Russell",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Isaac Hayden",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Karoy Anderson",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Kevon Lambert",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Brandon Cover",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Dwayne Atkinson",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Tyreek Magee",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jahshaun Anglin",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Shamar Watson",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Romario Guthrie",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Demario Phillips",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Nathaniel Howe",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Ravel Morrison",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Daniel Green",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Leon Bailey",
+          "position": "LW",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Rumarn Burrell",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Demarai Gray",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Shamar Nicholson",
+          "position": "ST",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Tyreece Campbell",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bailey Cadamarteri",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Renaldo Cephas",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Malik Mothersille",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Michail Antonio",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Dujuan Richards",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Warner Brown",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Romario Williams",
+          "position": "ST",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Jalmaro Calvin",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Kaheim Dixon",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Kimani Arbourine",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Nickalia Fuller",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Kimoni Bailey",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Ranaldo Biggs",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Shaniel Thomas",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Raheem Edwards",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 65,
+        "defense": 62,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — jamaica (2025/2026)",
+      "teamLabel": "jamaica (2025-26)"
+    }
+  },
+  "id": 3671,
+  "name": "jamaica",
+  "badgeLocalPath": "/img/badges/jamaica.png"
+}

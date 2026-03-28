@@ -1,0 +1,42 @@
+{
+  "slug": "aberdeen-fc",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Kelle Roos", "position": "GK", "rating": 72 },
+        { "name": "Joe Lewis", "position": "GK", "rating": 70 },
+        { "name": "Graeme Shinnie", "position": "CM", "rating": 74 },
+        { "name": "Anthony Stewart", "position": "CB", "rating": 71 },
+        { "name": "Liam Scales", "position": "CB", "rating": 72 },
+        { "name": "Jack MacKenzie", "position": "LB", "rating": 71 },
+        { "name": "Nicky Devlin", "position": "RB", "rating": 71 },
+        { "name": "Connor Barron", "position": "DM", "rating": 73 },
+        { "name": "Duk", "position": "LW", "rating": 74 },
+        { "name": "Leighton Clarkson", "position": "CM", "rating": 73 },
+        { "name": "Ylber Ramadani", "position": "DM", "rating": 73 },
+        { "name": "Matty Kennedy", "position": "RW", "rating": 72 },
+        { "name": "Bojan Miovski", "position": "ST", "rating": 76 },
+        { "name": "Vicente Besuijen", "position": "LW", "rating": 72 },
+        { "name": "Jonah Ayunga", "position": "ST", "rating": 70 },
+        { "name": "Ross McCrorie", "position": "DM", "rating": 71 },
+        { "name": "Jayden Richardson", "position": "RB", "rating": 70 },
+        { "name": "Sivert Heltne Nilsen", "position": "CM", "rating": 71 },
+        { "name": "Liam Gallagher", "position": "CB", "rating": 69 },
+        { "name": "Teddy Jenks", "position": "CM", "rating": 70 },
+        { "name": "Pape Habib Gueye", "position": "CM", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Aberdeen FC (2025/2026)",
+      "teamLabel": "Aberdeen FC (2025-26)"
+    }
+  },
+  "id": 396,
+  "name": "Aberdeen FC",
+  "badgeLocalPath": "/img/badges/aberdeen-fc.png"
+}

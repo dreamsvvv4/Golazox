@@ -1,0 +1,102 @@
+{
+  "slug": "best-xi-2025",
+  "name": "Mejor XI 2025",
+  "badgeLocalPath": "/img/badges/_best-xi-2025.svg",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Thibaut Courtois",
+          "position": "GK",
+          "rating": 91
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "William Saliba",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Virgil van Dijk",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Nuno Mendes",
+          "position": "LB",
+          "rating": 87
+        },
+        {
+          "name": "Rodri",
+          "position": "DM",
+          "rating": 92
+        },
+        {
+          "name": "Pedri",
+          "position": "CM",
+          "rating": 89
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CAM",
+          "rating": 92
+        },
+        {
+          "name": "Vinícius Júnior",
+          "position": "LW",
+          "rating": 92
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "RW",
+          "rating": 93
+        },
+        {
+          "name": "Erling Haaland",
+          "position": "ST",
+          "rating": 92
+        }
+      ],
+      "bench": [
+        {
+          "name": "Gianluigi Donnarumma",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Vitinha",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Raphinha",
+          "position": "RW",
+          "rating": 89
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "RW",
+          "rating": 90
+        }
+      ],
+      "ratings": {
+        "attack": 93,
+        "midfield": 91,
+        "defense": 90,
+        "goalkeeping": 91
+      },
+      "source": "Fantasy — Mejor XI del Mundo 2025",
+      "teamLabel": "Mejor XI 2025"
+    }
+  }
+}

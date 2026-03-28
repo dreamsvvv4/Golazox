@@ -1,0 +1,42 @@
+{
+  "slug": "ud-almeria",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Fernando Martínez", "position": "GK", "rating": 73 },
+        { "name": "Óscar Arcas", "position": "GK", "rating": 65 },
+        { "name": "Rodrigo Ely", "position": "CB", "rating": 73 },
+        { "name": "Kaiky", "position": "CB", "rating": 73 },
+        { "name": "Babic", "position": "CB", "rating": 71 },
+        { "name": "Srdjan Babic", "position": "CB", "rating": 70 },
+        { "name": "Gotzone Monasterio", "position": "LB", "rating": 70 },
+        { "name": "Balliu", "position": "RB", "rating": 71 },
+        { "name": "Melero", "position": "DM", "rating": 72 },
+        { "name": "Óscar Melendo", "position": "CM", "rating": 73 },
+        { "name": "Largie Ramazani", "position": "LW", "rating": 74 },
+        { "name": "Dion Lopy", "position": "CM", "rating": 72 },
+        { "name": "Samu Costa", "position": "CM", "rating": 71 },
+        { "name": "Iñigo Eguaras", "position": "DM", "rating": 71 },
+        { "name": "El Bilal Touré", "position": "ST", "rating": 76 },
+        { "name": "Léo Baptistão", "position": "ST", "rating": 72 },
+        { "name": "Dyego Sousa", "position": "ST", "rating": 71 },
+        { "name": "Sam Costa", "position": "RW", "rating": 71 },
+        { "name": "Portillo", "position": "RW", "rating": 70 },
+        { "name": "Lopy", "position": "CM", "rating": 70 },
+        { "name": "Recio", "position": "DM", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 62,
+        "defense": 62,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — UD Almería (2025/2026)",
+      "teamLabel": "UD Almería (2025-26)"
+    }
+  },
+  "id": 3368,
+  "name": "UD Almería",
+  "badgeLocalPath": "/img/badges/ud-almeria.png"
+}

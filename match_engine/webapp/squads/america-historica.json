@@ -1,0 +1,102 @@
+{
+  "slug": "america-historica",
+  "name": "América Histórica",
+  "badgeLocalPath": "/img/badges/_america-historica.svg",
+  "seasons": {
+    "all-time": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ubaldo Fillol",
+          "position": "GK",
+          "rating": 91
+        },
+        {
+          "name": "Carlos Alberto",
+          "position": "RB",
+          "rating": 94
+        },
+        {
+          "name": "Elías Figueroa",
+          "position": "CB",
+          "rating": 94
+        },
+        {
+          "name": "Daniel Passarella",
+          "position": "CB",
+          "rating": 94
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB",
+          "rating": 94
+        },
+        {
+          "name": "Fernando Redondo",
+          "position": "DM",
+          "rating": 92
+        },
+        {
+          "name": "Diego Maradona",
+          "position": "CM",
+          "rating": 98
+        },
+        {
+          "name": "Pelé",
+          "position": "CAM",
+          "rating": 99
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "LW",
+          "rating": 99
+        },
+        {
+          "name": "Ronaldo Nazário",
+          "position": "ST",
+          "rating": 97
+        },
+        {
+          "name": "Ronaldinho",
+          "position": "RW",
+          "rating": 95
+        }
+      ],
+      "bench": [
+        {
+          "name": "José Luis Chilavert",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Cafu",
+          "position": "RB",
+          "rating": 95
+        },
+        {
+          "name": "Zico",
+          "position": "CAM",
+          "rating": 96
+        },
+        {
+          "name": "Romário",
+          "position": "ST",
+          "rating": 95
+        },
+        {
+          "name": "Gabriel Batistuta",
+          "position": "ST",
+          "rating": 94
+        }
+      ],
+      "ratings": {
+        "attack": 98,
+        "midfield": 96,
+        "defense": 95,
+        "goalkeeping": 91
+      },
+      "source": "Fantasy — América Histórica All Time",
+      "teamLabel": "América Histórica"
+    }
+  }
+}

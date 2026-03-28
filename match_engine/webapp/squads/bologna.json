@@ -1,0 +1,105 @@
+{
+  "slug": "bologna",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Lukasz Skorupski",
+          "position": "GK"
+        },
+        {
+          "name": "Jesper Lindstrom",
+          "position": "RB"
+        },
+        {
+          "name": "Sam Beukema",
+          "position": "CB"
+        },
+        {
+          "name": "Lorenzo De Silvestri",
+          "position": "CB"
+        },
+        {
+          "name": "Charalampos Lykogiannis",
+          "position": "LB"
+        },
+        {
+          "name": "Remo Freuler",
+          "position": "CM"
+        },
+        {
+          "name": "Nicola Moro",
+          "position": "CM"
+        },
+        {
+          "name": "Alexis Saelemaekers",
+          "position": "AM"
+        },
+        {
+          "name": "Joshua Zirkzee",
+          "position": "RW"
+        },
+        {
+          "name": "Riccardo Orsolini",
+          "position": "LW"
+        },
+        {
+          "name": "Santiago Castro",
+          "position": "ST"
+        },
+        {
+          "name": "Tommaso Corazza",
+          "position": "RB"
+        },
+        {
+          "name": "Stefan Posch",
+          "position": "CB"
+        },
+        {
+          "name": "Nicolas Gonzalez",
+          "position": "LB"
+        },
+        {
+          "name": "Lewis Ferguson",
+          "position": "CM"
+        },
+        {
+          "name": "Oussama El Azzouzi",
+          "position": "CM"
+        },
+        {
+          "name": "Dan Ndoye",
+          "position": "RW"
+        },
+        {
+          "name": "Thijs Dallinga",
+          "position": "ST"
+        },
+        {
+          "name": "Giovanni Fabbian",
+          "position": "AM"
+        },
+        {
+          "name": "Victor Kristiansen",
+          "position": "LB"
+        },
+        {
+          "name": "Remo Freuler jr.",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Bologna 2024-25 Serie A",
+      "teamLabel": "Bologna FC 2024-25 Serie A"
+    }
+  },
+  "id": 1025,
+  "name": "Bologna FC",
+  "badgeLocalPath": "/img/badges/bologna.png"
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "freiburg",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Noah Atubolu",
+          "position": "GK"
+        },
+        {
+          "name": "Lukas Kübler",
+          "position": "RB"
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB"
+        },
+        {
+          "name": "Philipp Lienhart",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Günter",
+          "position": "LB"
+        },
+        {
+          "name": "Nicolas Höfler",
+          "position": "CM"
+        },
+        {
+          "name": "Maximilian Eggestein",
+          "position": "CM"
+        },
+        {
+          "name": "Vincenzo Grifo",
+          "position": "AM"
+        },
+        {
+          "name": "Michael Gregoritsch",
+          "position": "RW"
+        },
+        {
+          "name": "Roland Sallai",
+          "position": "LW"
+        },
+        {
+          "name": "Lucas Höler",
+          "position": "ST"
+        },
+        {
+          "name": "Benjamin Uphoff",
+          "position": "GK"
+        },
+        {
+          "name": "Kiliann Sildillia",
+          "position": "RB"
+        },
+        {
+          "name": "Max Rosenfelder",
+          "position": "CB"
+        },
+        {
+          "name": "Patrick Osterhage",
+          "position": "CM"
+        },
+        {
+          "name": "Daniel-Kofi Kyereh",
+          "position": "AM"
+        },
+        {
+          "name": "Ritsu Doan",
+          "position": "RW"
+        },
+        {
+          "name": "Merlin Röhl",
+          "position": "LW"
+        },
+        {
+          "name": "Junior Adamu",
+          "position": "ST"
+        },
+        {
+          "name": "Eren Dinkci",
+          "position": "ST"
+        },
+        {
+          "name": "Yannik Keitel",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Freiburg 2024-25 Bundesliga",
+      "teamLabel": "SC Freiburg 2024-25 Bundesliga"
+    }
+  },
+  "id": 17,
+  "name": "SC Freiburg",
+  "badgeLocalPath": "/img/badges/freiburg.png"
+}

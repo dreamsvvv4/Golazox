@@ -1,0 +1,42 @@
+{
+  "slug": "bristol-city",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Daniel Bentley", "position": "GK", "rating": 72 },
+        { "name": "Max O'Leary", "position": "GK", "rating": 71 },
+        { "name": "Rob Atkinson", "position": "CB", "rating": 73 },
+        { "name": "Tomas Kalas", "position": "CB", "rating": 73 },
+        { "name": "Kal Naismith", "position": "CB", "rating": 71 },
+        { "name": "Cameron Pring", "position": "LB", "rating": 71 },
+        { "name": "Haydon Roberts", "position": "LB", "rating": 71 },
+        { "name": "George Tanner", "position": "RB", "rating": 71 },
+        { "name": "Andy King", "position": "DM", "rating": 72 },
+        { "name": "Han-Noah Massengo", "position": "CM", "rating": 72 },
+        { "name": "Matty James", "position": "CM", "rating": 72 },
+        { "name": "Alex Scott", "position": "CM", "rating": 74 },
+        { "name": "Chris Martin", "position": "AM", "rating": 71 },
+        { "name": "Antoine Semenyo", "position": "RW", "rating": 74 },
+        { "name": "Nahki Wells", "position": "ST", "rating": 72 },
+        { "name": "Tommy Conway", "position": "ST", "rating": 73 },
+        { "name": "Mark Sykes", "position": "RW", "rating": 71 },
+        { "name": "Anis Mehmeti", "position": "LW", "rating": 71 },
+        { "name": "Joe Williams", "position": "CM", "rating": 71 },
+        { "name": "Sam Bell", "position": "ST", "rating": 70 },
+        { "name": "Liam Manning", "position": "LB", "rating": 68 }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Bristol City (2025/2026)",
+      "teamLabel": "Bristol City (2025-26)"
+    }
+  },
+  "id": 1295,
+  "name": "Bristol City",
+  "badgeLocalPath": "/img/badges/bristol-city.png"
+}

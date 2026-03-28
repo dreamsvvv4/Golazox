@@ -1,0 +1,102 @@
+{
+  "slug": "africa-historica",
+  "name": "África Histórica",
+  "badgeLocalPath": "/img/badges/_africa-historica.svg",
+  "seasons": {
+    "all-time": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Thomas N'Kono",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "Samuel Kuffour",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Celestine Babayaro",
+          "position": "LB",
+          "rating": 86
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "DM",
+          "rating": 91
+        },
+        {
+          "name": "Michael Essien",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Abedi Pelé",
+          "position": "CAM",
+          "rating": 92
+        },
+        {
+          "name": "Mohamed Salah",
+          "position": "RW",
+          "rating": 92
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "George Weah",
+          "position": "LW",
+          "rating": 94
+        }
+      ],
+      "bench": [
+        {
+          "name": "Édouard Mendy",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Lucas Radebe",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Jay-Jay Okocha",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Riyad Mahrez",
+          "position": "RW",
+          "rating": 89
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "ST",
+          "rating": 92
+        }
+      ],
+      "ratings": {
+        "attack": 93,
+        "midfield": 91,
+        "defense": 88,
+        "goalkeeping": 89
+      },
+      "source": "Fantasy — África Histórica All Time",
+      "teamLabel": "África Histórica"
+    }
+  }
+}

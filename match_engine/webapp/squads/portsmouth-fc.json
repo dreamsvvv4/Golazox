@@ -1,0 +1,121 @@
+{
+  "slug": "portsmouth-fc",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nicolas Schmid",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Josh Griffiths",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Conor Shaughnessy",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Regan Poole",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Miles Leaburn",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Tom Lowery",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Zak Swanson",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Samuel Sherring",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Marlon Pack",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Will Smallbone",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Kusini Yengi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Colby Bishop",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Abu Kamara",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Alex Robertson",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Abdoulaye Kamara",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Callum Lang",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Jack Sparkes",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Harvey Blair",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Elias Sorensen",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Terry Devlin",
+          "position": "CM",
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 62,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Portsmouth FC (2025/2026)",
+      "teamLabel": "Portsmouth FC (2025-26)"
+    }
+  },
+  "id": 1045,
+  "name": "Portsmouth",
+  "badgeLocalPath": "/img/badges/portsmouth-fc.png"
+}

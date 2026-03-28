@@ -1,0 +1,345 @@
+{
+  "slug": "sudkorea",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bum-keun Song",
+          "position": "GK",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Hyeon-woo Jo",
+          "position": "GK",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Seung-gyu Kim",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Chang-geun Lee",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Dong-heon Kim",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Min-jae Kim",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 87
+        },
+        {
+          "name": "Yu-min Cho",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Young-woo Seol",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Seung-wook Park",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Han-beom Lee",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ju-sung Kim",
+          "position": "LB",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Moon-hwan Kim",
+          "position": "RB",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Jun Choi",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ji-soo Kim",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Tae-hyeon Kim",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Tae-seok Lee",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Myung-jae Lee",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jae-won Hwang",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Kyung-won Kwon",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Hyun-taek Cho",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jun-soo Byeon",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Myeong-kwan Seo",
+          "position": "CB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Kang-in Lee",
+          "position": "AM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "In-beom Hwang",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Jens Castrop",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jae-sung Lee",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jun-ho Bae",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Yong-woo Park",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Seung-ho Paik",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Dong-gyeong Lee",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Du-jae Won",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Bong-soo Kim",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Hyeok-kyu Kwon",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Jin-gyu Kim",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jin-seob Park",
+          "position": "CM",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Min-woo Seo",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sang-yun Kang",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Seung-won Lee",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Heung-min Son",
+          "position": "LW",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "LW",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Gue-sung Cho",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Min-hyeok Yang",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Sang-bin Jeong",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Hyeon-gyu Oh",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Hyun-jun Yang",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ji-sung Eom",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Sang-ho Na",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Min-kyu Joo",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Se-hun Oh",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Seon-min Moon",
+          "position": "RW",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Seung-won Jeong",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Jae-hyeon Mo",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Ho-jae Lee",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Jin-woo Jeon",
+          "position": "ST",
+          "marketValue": 375000,
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 77,
+        "defense": 83,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — south korea (2025/2026)",
+      "teamLabel": "south korea (2025-26)"
+    }
+  },
+  "id": 3589,
+  "name": "south korea",
+  "badgeLocalPath": "/img/badges/south-korea.png"
+}

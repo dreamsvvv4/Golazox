@@ -1,0 +1,387 @@
+{
+  "slug": "america-xi",
+  "name": "América All Stars",
+  "badgeLocalPath": "/img/badges/_america-xi.svg",
+  "seasons": {
+    "1974": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ubaldo Fillol",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Carlos Alberto",
+          "position": "RB",
+          "rating": 93
+        },
+        {
+          "name": "Elías Figueroa",
+          "position": "CB",
+          "rating": 94
+        },
+        {
+          "name": "Daniel Passarella",
+          "position": "CB",
+          "rating": 92
+        },
+        {
+          "name": "Marinho Chagas",
+          "position": "LB",
+          "rating": 88
+        },
+        {
+          "name": "Clodoaldo",
+          "position": "DM",
+          "rating": 89
+        },
+        {
+          "name": "Roberto Rivelino",
+          "position": "CM",
+          "rating": 92
+        },
+        {
+          "name": "Pelé",
+          "position": "CAM",
+          "rating": 98
+        },
+        {
+          "name": "Jairzinho",
+          "position": "RW",
+          "rating": 92
+        },
+        {
+          "name": "Mario Kempes",
+          "position": "ST",
+          "rating": 92
+        },
+        {
+          "name": "Teófilo Cubillas",
+          "position": "LW",
+          "rating": 90
+        }
+      ],
+      "bench": [
+        {
+          "name": "Emerson Leão",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Héctor Chumpitaz",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Zico",
+          "position": "CAM",
+          "rating": 94
+        },
+        {
+          "name": "Ricardo Bochini",
+          "position": "CAM",
+          "rating": 89
+        },
+        {
+          "name": "Tostão",
+          "position": "ST",
+          "rating": 90
+        }
+      ],
+      "ratings": {
+        "attack": 94,
+        "midfield": 92,
+        "defense": 91,
+        "goalkeeping": 89
+      },
+      "source": "Fantasy — América All Stars XI Años 70 (Pelé / Kempes / Figueroa / Fillol)",
+      "teamLabel": "América All Stars (Años 70)"
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "José Luis Chilavert",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Cafu",
+          "position": "RB",
+          "rating": 93
+        },
+        {
+          "name": "Aldair",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Oscar Ruggeri",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB",
+          "rating": 94
+        },
+        {
+          "name": "Fernando Redondo",
+          "position": "DM",
+          "rating": 91
+        },
+        {
+          "name": "Dunga",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Carlos Valderrama",
+          "position": "CAM",
+          "rating": 89
+        },
+        {
+          "name": "Rivaldo",
+          "position": "LW",
+          "rating": 93
+        },
+        {
+          "name": "Gabriel Batistuta",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Ronaldo",
+          "position": "RW",
+          "rating": 96
+        }
+      ],
+      "bench": [
+        {
+          "name": "Cláudio Taffarel",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Iván Córdoba",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Enzo Francescoli",
+          "position": "CAM",
+          "rating": 91
+        },
+        {
+          "name": "Freddy Rincón",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Romário",
+          "position": "ST",
+          "rating": 94
+        }
+      ],
+      "ratings": {
+        "attack": 94,
+        "midfield": 92,
+        "defense": 92,
+        "goalkeeping": 90
+      },
+      "source": "Fantasy — América All Stars XI Años 90 (R9 / Batistuta / Carlos / Redondo)",
+      "teamLabel": "América All Stars (Años 90)"
+    },
+    "2006": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dida",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Javier Zanetti",
+          "position": "RB",
+          "rating": 92
+        },
+        {
+          "name": "Lúcio",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Roberto Ayala",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Juan Pablo Sorín",
+          "position": "LB",
+          "rating": 88
+        },
+        {
+          "name": "Emerson",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Kaká",
+          "position": "CM",
+          "rating": 94
+        },
+        {
+          "name": "Juan Román Riquelme",
+          "position": "CAM",
+          "rating": 91
+        },
+        {
+          "name": "Ronaldinho",
+          "position": "RW",
+          "rating": 95
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "ST",
+          "rating": 94
+        },
+        {
+          "name": "Hernán Crespo",
+          "position": "LW",
+          "rating": 90
+        }
+      ],
+      "bench": [
+        {
+          "name": "Rogério Ceni",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Rafael Márquez",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "DM",
+          "rating": 89
+        },
+        {
+          "name": "Pablo Aimar",
+          "position": "CAM",
+          "rating": 88
+        },
+        {
+          "name": "Diego Forlán",
+          "position": "ST",
+          "rating": 90
+        }
+      ],
+      "ratings": {
+        "attack": 93,
+        "midfield": 92,
+        "defense": 90,
+        "goalkeeping": 88
+      },
+      "source": "Fantasy — América All Stars XI Años 2000 (Ronaldinho / Kaká / Messi / Riquelme)",
+      "teamLabel": "América All Stars (Años 2000)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alisson Becker",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Ronald Araújo",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "Marquinhos",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Éder Militão",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Alphonso Davies",
+          "position": "LB",
+          "rating": 87
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "DM",
+          "rating": 90
+        },
+        {
+          "name": "Enzo Fernández",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Alexis Mac Allister",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "CAM",
+          "rating": 91
+        },
+        {
+          "name": "Vinícius Júnior",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Lautaro Martínez",
+          "position": "ST",
+          "rating": 89
+        }
+      ],
+      "bench": [
+        {
+          "name": "Emiliano Martínez",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Gabriel Magalhães",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Rodrygo",
+          "position": "RW",
+          "rating": 87
+        },
+        {
+          "name": "Julián Álvarez",
+          "position": "ST",
+          "rating": 88
+        }
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
+      },
+      "source": "Fantasy — América All Stars XI Actualidad 2025",
+      "teamLabel": "América All Stars"
+    }
+  }
+}

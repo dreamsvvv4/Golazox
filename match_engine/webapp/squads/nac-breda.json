@@ -1,0 +1,42 @@
+{
+  "slug": "nac-breda",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Michael Verrips", "position": "GK", "rating": 72 },
+        { "name": "Kostas Lamprou", "position": "GK", "rating": 68 },
+        { "name": "Achraf Douiri", "position": "CB", "rating": 72 },
+        { "name": "Tom Muyters", "position": "CB", "rating": 71 },
+        { "name": "Sydney van Hooijdonk", "position": "ST", "rating": 75 },
+        { "name": "Lodewijkx", "position": "RB", "rating": 72 },
+        { "name": "Wouter Burger", "position": "DM", "rating": 73 },
+        { "name": "Finn Stokkers", "position": "LB", "rating": 70 },
+        { "name": "Zyad Karim", "position": "CB", "rating": 71 },
+        { "name": "Sven Braken", "position": "LW", "rating": 72 },
+        { "name": "Olger Hulsen", "position": "CM", "rating": 72 },
+        { "name": "Remi Wörtche", "position": "AM", "rating": 72 },
+        { "name": "Ricky van Wolfswinkel", "position": "RW", "rating": 71 },
+        { "name": "Joep van der Sluys", "position": "RB", "rating": 70 },
+        { "name": "Maxime Noor", "position": "LW", "rating": 71 },
+        { "name": "Mo Tahiri", "position": "CM", "rating": 72 },
+        { "name": "Sven Mijnans", "position": "AM", "rating": 72 },
+        { "name": "Denzel Dumfries", "position": "RB", "rating": 72 },
+        { "name": "Idrissa Doumbia", "position": "CM", "rating": 71 },
+        { "name": "Vin Seferi", "position": "ST", "rating": 70 },
+        { "name": "Marco Dulfer", "position": "CB", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 68,
+        "defense": 66,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — NAC Breda (2025/2026)",
+      "teamLabel": "NAC Breda (2025-26)"
+    }
+  },
+  "id": 241,
+  "name": "NAC Breda",
+  "badgeLocalPath": "/img/badges/nac-breda.png"
+}

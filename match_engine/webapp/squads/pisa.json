@@ -1,0 +1,42 @@
+{
+  "slug": "pisa",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Nicolas Andrade", "position": "GK", "rating": 72 },
+        { "name": "Mastrantonio", "position": "GK", "rating": 70 },
+        { "name": "Canestrelli", "position": "CB", "rating": 75 },
+        { "name": "Hermannsson", "position": "CB", "rating": 73 },
+        { "name": "Caracciolo", "position": "CB", "rating": 72 },
+        { "name": "Touré", "position": "LB", "rating": 72 },
+        { "name": "Marin", "position": "RB", "rating": 72 },
+        { "name": "Piccinini", "position": "DM", "rating": 72 },
+        { "name": "Mlakar", "position": "CM", "rating": 73 },
+        { "name": "Veloso", "position": "CM", "rating": 74 },
+        { "name": "Tramoni", "position": "LW", "rating": 74 },
+        { "name": "Bonfanti", "position": "ST", "rating": 74 },
+        { "name": "Moreo", "position": "AM", "rating": 72 },
+        { "name": "Lind", "position": "RW", "rating": 73 },
+        { "name": "Arena", "position": "ST", "rating": 71 },
+        { "name": "Peréz", "position": "RW", "rating": 71 },
+        { "name": "Calabresi", "position": "RB", "rating": 71 },
+        { "name": "Valoti", "position": "CM", "rating": 71 },
+        { "name": "Ionita", "position": "CM", "rating": 70 },
+        { "name": "Masucci", "position": "ST", "rating": 70 },
+        { "name": "Rus", "position": "CB", "rating": 70 }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 67,
+        "defense": 67,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — AC Pisa 1909 (2025/2026)",
+      "teamLabel": "AC Pisa 1909 (2025-26)"
+    }
+  },
+  "id": 1573,
+  "name": "Pisa",
+  "badgeLocalPath": "/img/badges/pisa.png"
+}

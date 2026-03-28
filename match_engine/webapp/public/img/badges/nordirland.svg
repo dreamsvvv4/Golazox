@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Northern Ireland Ulster Banner -->
+  <!-- White background -->
+  <rect width="900" height="600" fill="#FFFFFF"/>
+  <!-- Red cross -->
+  <rect x="380" y="0" width="140" height="600" fill="#CF142B"/>
+  <rect x="0" y="230" width="900" height="140" fill="#CF142B"/>
+  <!-- Six-pointed white star (overlay on cross) -->
+  <polygon points="450,185 470,245 535,245 483,283 503,343 450,305 397,343 417,283 365,245 430,245"
+           fill="#FFFFFF" stroke="#CF142B" stroke-width="3"/>
+  <!-- Red hand of Ulster (simplified path) -->
+  <path d="M450,245 C443,245 438,250 438,257 L438,290 
+           C438,290 430,285 425,285 C418,285 414,290 414,296 L414,310
+           C414,330 430,345 450,345 C470,345 486,330 486,310 L486,296
+           C486,290 482,285 475,285 C470,285 462,290 462,290 
+           L462,257 C462,250 457,245 450,245 Z"
+        fill="#CF142B"/>
+  <!-- Gold crown above star -->
+  <g transform="translate(415,110)">
+    <rect x="0" y="30" width="70" height="14" fill="#FFD700"/>
+    <polygon points="5,30 5,5 20,20 35,0 50,20 65,5 65,30" fill="#FFD700"/>
+    <circle cx="35" cy="0" r="5" fill="#FFD700"/>
+  </g>
+</svg>

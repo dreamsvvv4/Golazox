@@ -1,0 +1,42 @@
+{
+  "slug": "fc-twente",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Lars Unnerstall", "position": "GK", "rating": 76 },
+        { "name": "Abel Hesselink", "position": "GK", "rating": 68 },
+        { "name": "Mees Hilgers", "position": "CB", "rating": 77 },
+        { "name": "Bas Kuipers", "position": "CB", "rating": 74 },
+        { "name": "Max Bruns", "position": "CB", "rating": 73 },
+        { "name": "Joshua Brenet", "position": "RB", "rating": 74 },
+        { "name": "Bart van Rooij", "position": "LB", "rating": 73 },
+        { "name": "Mathias Kjølø", "position": "DM", "rating": 74 },
+        { "name": "Youri Regeer", "position": "CM", "rating": 75 },
+        { "name": "Michel Vlap", "position": "AM", "rating": 74 },
+        { "name": "Daan Rots", "position": "LW", "rating": 74 },
+        { "name": "Ricky van Wolfswinkel", "position": "CM", "rating": 73 },
+        { "name": "Sem Steijn", "position": "AM", "rating": 75 },
+        { "name": "Gijs Smal", "position": "LB", "rating": 73 },
+        { "name": "Sam Lammers", "position": "ST", "rating": 74 },
+        { "name": "Manfred Ugalde", "position": "ST", "rating": 76 },
+        { "name": "Myron Boadu", "position": "ST", "rating": 74 },
+        { "name": "Virgil Misidjan", "position": "RW", "rating": 73 },
+        { "name": "Carel Eiting", "position": "DM", "rating": 74 },
+        { "name": "Alec van Hoorenbeeck", "position": "CB", "rating": 72 },
+        { "name": "Ramiz Zerrouki", "position": "CM", "rating": 75 }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 74,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — FC Twente (2025/2026)",
+      "teamLabel": "FC Twente (2025-26)"
+    }
+  },
+  "id": 317,
+  "name": "FC Twente",
+  "badgeLocalPath": "/img/badges/fc-twente.png"
+}
