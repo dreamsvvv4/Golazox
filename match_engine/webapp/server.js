@@ -12,7 +12,7 @@ const compress   = require('compression');
 const nodemailer = require('nodemailer');
 const { rateLimit, ipKeyGenerator } = require('express-rate-limit');
 const slowDown                         = require('express-slow-down');
-const { simulateMatch, buildLineupFromCache } = require('./engine');
+const { simulateMatch, buildLineupFromCache, deriveRatings } = require('./engine');
 const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
@@ -768,7 +768,9 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     if (result.found && result.players && result.players.length > 0) {
       const formationOverride = String(req.query.formation || '').replace(/[^0-9\-]/g, '').trim();
       const lineup = buildLineupFromCache(result, formationOverride || '');
-      displayResult = { ...result, ...lineup };
+      // Use deriveRatings (same as simulation) so lookup preview shows consistent player ratings
+      const computedRatings = deriveRatings(team, era, result.ratings);
+      displayResult = { ...result, ...lineup, ratings: computedRatings };
     }
     res.set('Cache-Control', 'no-store');
     res.json({ ...displayResult, badgeUrl });

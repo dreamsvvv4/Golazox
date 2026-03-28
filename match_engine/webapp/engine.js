@@ -1172,4 +1172,4 @@ function analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, ma
   };
 }
 
-module.exports = { simulateMatch, analyzeMatch, buildLineupFromCache };
+module.exports = { simulateMatch, analyzeMatch, buildLineupFromCache, deriveRatings };
