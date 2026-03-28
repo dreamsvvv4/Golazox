@@ -429,14 +429,20 @@ function resolveClub(teamName) {
   }
 
   // Slug-based lookup: if the input looks like a slug (e.g. "atletico-madrid"),
-  // check if it directly matches any entry's slug value before falling through
-  // to the fuzzy match. This prevents short TM_CLUBS keys like "madrid" or
-  // "deportivo" from incorrectly matching unrelated slugs (e.g. "atletico-madrid"
-  // would otherwise match "madrid" → Real Madrid, and "deportivo-alaves" → RC Deportivo).
+  // only match by exact slug value — never fall through to the fuzzy match.
+  // Fuzzy substring matching on hyphenated slugs causes false positives because
+  // short TM_CLUBS keys like "madrid", "athletic", "deportivo", "barcelona",
+  // "sevilla", "rangers", "juventus" etc. are substrings of many unrelated slugs:
+  //   "atletico-madrid"      → would fuzzy-match "madrid"     → Real Madrid
+  //   "deportivo-alaves"     → would fuzzy-match "deportivo"  → RC Deportivo
+  //   "rcd-espanyol-barcelona" → would fuzzy-match "barcelona" → FC Barcelona
+  //   "real-betis-sevilla"   → would fuzzy-match "sevilla"    → Sevilla FC
+  //   "charlton-athletic"    → would fuzzy-match "athletic"   → Athletic Club
   if (key.includes('-')) {
     for (const [, info] of Object.entries(TM_CLUBS)) {
       if (info.slug === key) return info;
     }
+    return null; // slug not found in TM_CLUBS — avoid false fuzzy positives
   }
 
   // Partial/fuzzy match — normK.includes(key) only fires when key ≥5 chars,
