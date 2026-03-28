@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# No indexar endpoints de API ni rutas internas
+Disallow: /simulate
+Disallow: /lookup
+Disallow: /suggest
+Disallow: /badges
+Disallow: /referees
+
+Sitemap: https://golazox.com/sitemap.xml

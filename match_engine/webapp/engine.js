@@ -153,7 +153,7 @@ function buildLineupFromCache(cached, formationOverride) {
       ...p,
       used: false,
       position: _getPos(p.name) || p.position,
-      rating: _calcRating(p.name, p.marketValue) ?? p.rating,
+      rating: (p.rating && p.rating > 0) ? p.rating : (_calcRating(p.name, p.marketValue) ?? p.rating),
     }));
 
   // Count how many players of each position the template needs
@@ -314,12 +314,25 @@ const BENCH_TEMPLATE = ['GK', 'CB', 'LB', 'DM', 'CM', 'AM', 'ST'];
 /**
  * Builds a 7-player bench from the squad's extra players (if available),
  * or generates generic names matching BENCH_TEMPLATE positions.
+ * starterNames: Set of player names already in the starting 11, to avoid duplicates.
  */
-function buildBench(teamInput, eraInput, knownSquadMatch, maxSize = 7) {
+function buildBench(teamInput, eraInput, knownSquadMatch, maxSize = 7, starterNames = new Set()) {
   const bench = [];
-  // If the squad has more than 11 players defined, use extras first
-  if (knownSquadMatch && knownSquadMatch.players.length > 11) {
-    const extras = knownSquadMatch.players.slice(11);
+  // If the squad JSON already has an explicit bench array, prefer those players
+  const explicitBench = knownSquadMatch?.bench || [];
+  if (explicitBench.length > 0) {
+    explicitBench
+      .filter(p => !starterNames.has(p.name))
+      .slice(0, maxSize)
+      .forEach((p, i) => {
+        bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM',
+                     rating: p.rating || undefined, isReal: true });
+      });
+  } else if (knownSquadMatch && knownSquadMatch.players.length > 0) {
+    // Fall back to extra players from the starting pool (scraped squads)
+    const extras = knownSquadMatch.players
+      .filter(p => !starterNames.has(p.name))
+      .slice(0, maxSize);
     extras.forEach((p, i) => {
       bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM', isReal: true });
     });
@@ -894,8 +907,10 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
 
   // 1b. Build bench (7 subs for 11v11, fewer for small-sided)
   const benchSize = matchMode === '3v3' ? 2 : matchMode === '5v5' ? 3 : 7;
-  const benchA = buildBench(teamA, eraA, cachedLineupA, benchSize);
-  const benchB = buildBench(teamB, eraB, cachedLineupB, benchSize);
+  const starterNamesA = new Set(lineupA.players.map(p => p.name));
+  const starterNamesB = new Set(lineupB.players.map(p => p.name));
+  const benchA = buildBench(teamA, eraA, cachedLineupA, benchSize, starterNamesA);
+  const benchB = buildBench(teamB, eraB, cachedLineupB, benchSize, starterNamesB);
 
   // 2. Derive ratings — priority: known squads DB → scraper data → heuristic
   const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);

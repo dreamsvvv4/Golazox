@@ -1,0 +1,47 @@
+{
+  "id": "/",
+  "name": "GolazoX — Football Time Machine",
+  "short_name": "GolazoX",
+  "description": "Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#0a0f1a",
+  "theme_color": "#0a0f1a",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/golazox-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/golazox-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/golazox-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["games", "sports"],
+  "shortcuts": [
+    {
+      "name": "Simular partido",
+      "short_name": "Simular",
+      "description": "Abre el simulador directamente",
+      "url": "/?source=shortcut",
+      "icons": [{ "src": "/golazox-logo.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": []
+}

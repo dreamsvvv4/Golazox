@@ -2,29 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odyssey — Football Time Machine</title>
-  <link rel="icon" type="image/png" href="odyssey-logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=21" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>GolazOX — Football Time Machine</title>
+  <meta name="color-scheme" content="dark" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" type="image/png" href="golazox-logo.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- PWA / móvil -->
+  <meta name="theme-color" content="#0a0f1a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- black-translucent: status bar overlaps the app (uses our bg color), giving true edge-to-edge -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="GolazOX" />
+  <link rel="apple-touch-icon" href="/golazox-logo.png" />
+  <!-- Windows / Edge tile -->
+  <meta name="msapplication-TileColor" content="#0a0f1a" />
+  <meta name="msapplication-TileImage" content="/golazox-logo.png" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <!-- SEO description -->
+  <meta name="description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="GolazOX" />
+  <meta property="og:title" content="GolazOX — Football Time Machine" />
+  <meta property="og:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="GolazOX Football Time Machine" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_GB" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GolazOX — Football Time Machine" />
+  <meta name="twitter:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo." />
+  <meta name="twitter:image" content="/og-image.png" />
+  <meta name="twitter:image:alt" content="GolazOX Football Time Machine" />
+
+  <!-- Fuente Rajdhani — auto-alojada (public/fonts/) sin tracking de Google -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-500.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
+
+  <link rel="stylesheet" href="style.css?v=44" />
 </head>
 <body>
+<div id="wx-overlay" aria-hidden="true"></div>
 
-  <!-- ═══════════════════════════════════════════
-       HEADER
-  ══════════════════════════════════════════════ -->
+  <!-- ── PWA Install Bottom Sheet ─────────────────────── -->
+  <div id="pwa-install-sheet" class="pwa-sheet" aria-live="polite" role="dialog" aria-labelledby="pwa-sheet-title" hidden>
+    <div class="pwa-sheet-inner">
+      <div class="pwa-sheet-logo">
+        <img src="/golazox-wordmark.png?v=2" alt="GolazOX" class="pwa-sheet-wordmark" />
+      </div>
+      <div class="pwa-sheet-text">
+        <p class="pwa-sheet-title" id="pwa-sheet-title">Juega sin conexión, sin navegador</p>
+        <p class="pwa-sheet-sub">Instala la Máquina del Tiempo en tu pantalla de inicio — acceso instantáneo, cero anuncios.</p>
+      </div>
+      <div class="pwa-sheet-actions">
+        <button id="pwa-install-btn" class="pwa-btn pwa-btn-install">⚡ Instalar</button>
+        <button id="pwa-dismiss-btn" class="pwa-btn pwa-btn-later">Más tarde</button>
+      </div>
+    </div>
+  </div>
   <header class="site-header">
     <div class="header-inner">
       <div class="logo-mark">
-        <img class="logo-img" src="odyssey-logo.png" alt="Odyssey" />
+        <img class="logo-img" src="/golazox-wordmark.png?v=2" alt="GolazOX" id="gx-wordmark" />
       </div>
       <div class="logo-text">
         <span class="logo-sub">Football Time Machine</span>
       </div>
       <div class="header-right">
-        <span class="tagline">Any team &middot; Any era &middot; Any rivalry</span>
+        <span class="tagline" data-i18n="tagline">Cualquier equipo · Cualquier época · Cualquier rivalidad</span>
         <button class="btn-lang" id="lang-toggle" onclick="setLang(_lang==='es'?'en':'es')" title="Switch language">EN</button>
       </div>
     </div>
@@ -42,15 +98,15 @@
         <!-- Team A -->
         <div class="team-col" id="col-a">
           <div class="team-label label-a">EQUIPO A</div>
-          <input id="teamA"      class="inp inp-main" type="text"
-                 placeholder="ej. FC Barcelona, Brasil, Ajax…" autocomplete="off" />
-          <div class="ac-dropdown hidden" id="ac-A"></div>
-          <input id="eraA"       class="inp inp-sub"  type="text"
-                 placeholder="Temporada / Época (opcional) — ej. 1991-92" autocomplete="off" />
+          <div class="team-picker" id="picker-A"></div>
+          <input type="hidden" id="teamA" value="">
+          <select id="eraA" class="inp inp-sub era-select" disabled>
+            <option value="">⏳ Selecciona un equipo primero</option>
+          </select>
           <select id="formationA" class="inp inp-sub select-formation">
             <option value="">Formación (automática)</option>
           </select>
-          <button class="btn-lookup" id="lookupA" onclick="handleLookup('A')">
+          <button class="btn-lookup" id="lookupA" onclick="handleLookup('A')" disabled>
             🔍 Buscar alineación
           </button>
           <div class="lookup-preview hidden" id="preview-A">
@@ -62,20 +118,21 @@
         <!-- VS / Clash divider -->
         <div class="vs-col">
           <button class="vs-badge" id="vs-clash"><span>VS</span></button>
+          <span class="vs-clash-label" id="vs-clash-label"></span>
         </div>
 
         <!-- Team B -->
         <div class="team-col" id="col-b">
           <div class="team-label label-b">EQUIPO B</div>
-          <input id="teamB"      class="inp inp-main" type="text"
-                 placeholder="ej. AC Milan, Real Madrid, Alemania…" autocomplete="off" />
-          <div class="ac-dropdown hidden" id="ac-B"></div>
-          <input id="eraB"       class="inp inp-sub"  type="text"
-                 placeholder="Temporada / Época (opcional) — ej. 1988-89" autocomplete="off" />
+          <div class="team-picker" id="picker-B"></div>
+          <input type="hidden" id="teamB" value="">
+          <select id="eraB" class="inp inp-sub era-select" disabled>
+            <option value="">⏳ Selecciona un equipo primero</option>
+          </select>
           <select id="formationB" class="inp inp-sub select-formation">
             <option value="">Formación (automática)</option>
           </select>
-          <button class="btn-lookup" id="lookupB" onclick="handleLookup('B')">
+          <button class="btn-lookup" id="lookupB" onclick="handleLookup('B')" disabled>
             🔍 Buscar alineación
           </button>
           <div class="lookup-preview hidden" id="preview-B">
@@ -93,7 +150,7 @@
             <button class="mode-pill mode-pill-active" id="mode-11v11"    onclick="setMatchMode('11v11')">11 vs 11</button>
             <button class="mode-pill" id="mode-5v5"        onclick="setMatchMode('5v5')">5 vs 5</button>
             <button class="mode-pill" id="mode-3v3"        onclick="setMatchMode('3v3')">3 vs 3</button>
-            <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')">🥅 Penaltis</button>
+            <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')" data-i18n="mode-penalties">🥅 Penaltis</button>
           </div>
         </div>
       </div>
@@ -122,12 +179,6 @@
         </div>
       </div>
 
-      <div class="btn-row">
-        <button id="btn-simulate" class="btn-simulate" onclick="handleSimulate()">
-          <span class="btn-icon">▶</span> Simular Partido
-        </button>
-      </div>
-
       <div id="error-msg" class="error-msg hidden"></div>
     </section>
 
@@ -153,7 +204,7 @@
             <button class="pm-speed-pill pm-speed-active" data-tick="667" onclick="selectSpeed(this)">1 min</button>
             <button class="pm-speed-pill" data-tick="2000" onclick="selectSpeed(this)">3 min</button>
           </div>
-          <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()">▶ Iniciar partido</button>
+          <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()" data-i18n="pm-start-btn">▶ Iniciar partido</button>
           <div class="pm-radar-row" id="pm-radar-row">
             <!-- radar-card moved here by showPreMatch() -->
           </div>
@@ -314,7 +365,7 @@
         </div>
         <!-- Share -->
         <div class="share-row">
-          <button class="btn-share" onclick="shareResult()">📤 Compartir resultado</button>
+          <button class="btn-share" onclick="shareResult()" data-i18n="btn-share">📤 Compartir resultado</button>
         </div>
       </div>
 
@@ -378,6 +429,9 @@
         </div>
         <div id="hth-rows"></div>
       </div>
+
+      <!-- ── ANÁLISIS DEL PARTIDO (heatmap + distancias) ─────────── -->
+      <div class="match-analysis-card glass-card hidden" id="match-analysis-card"></div>
 
       <!-- ── MEJOR JUGADOR + PUNTOS CLAVE ───────────────── -->
       <div class="mom-card glass-card">
@@ -455,9 +509,123 @@
 
   <footer class="site-footer">
     <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>
+    <p class="footer-legal footer-disclaimer">
+      GolazoX es un proyecto independiente sin afiliación, patrocinio ni respaldo de FIFA, UEFA, ningún club de fútbol,
+      ni ningún jugador mencionado. Los nombres de equipos y jugadores se usan con fines estadísticos, históricos
+      y de entretenimiento, bajo la doctrina de uso referencial de figuras públicas en el ejercicio de su actividad profesional.
+      Los escudos mostrados son representaciones genéricas de identificación y no son marcas oficiales.
+      Datos de plantilla parcialmente derivados de Wikipedia (CC BY-SA 4.0).
+    </p>
+    <p class="footer-links">
+      <a href="/legal" class="footer-link">Aviso Legal</a>
+      &nbsp;·&nbsp;
+      <a href="/privacy" class="footer-link">Política de Privacidad</a>
+      &nbsp;·&nbsp;
+      <a href="/contact" class="footer-link">Contacto</a>
+    </p>
   </footer>
 
+  <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
+  <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=25"></script>
+  <script src="app.js?v=50"></script>
+
+  <!-- PWA Install prompt logic -->
+  <script>
+    (function () {
+      var _deferredInstall = null;
+      var _dismissed = false;
+
+      // Respect user's previous dismissal (stored for 7 days)
+      try {
+        var ts = localStorage.getItem('pwa_dismiss_ts');
+        if (ts && (Date.now() - parseInt(ts, 10)) < 7 * 24 * 60 * 60 * 1000) {
+          _dismissed = true;
+        }
+      } catch (_) {}
+
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        _deferredInstall = e;
+        if (!_dismissed) {
+          // Small delay so the page settles first
+          setTimeout(function () {
+            var sheet = document.getElementById('pwa-install-sheet');
+            if (sheet) {
+              sheet.hidden = false;
+              // Trigger slide-up animation
+              requestAnimationFrame(function () { sheet.classList.add('pwa-sheet--visible'); });
+            }
+          }, 2500);
+        }
+      });
+
+      function _hideSheet() {
+        var sheet = document.getElementById('pwa-install-sheet');
+        if (!sheet) return;
+        sheet.classList.remove('pwa-sheet--visible');
+        setTimeout(function () { sheet.hidden = true; }, 380);
+      }
+
+      window.addEventListener('DOMContentLoaded', function () {
+        var installBtn  = document.getElementById('pwa-install-btn');
+        var dismissBtn  = document.getElementById('pwa-dismiss-btn');
+
+        if (installBtn) {
+          installBtn.addEventListener('click', function () {
+            if (!_deferredInstall) return;
+            _deferredInstall.prompt();
+            _deferredInstall.userChoice.then(function (result) {
+              _deferredInstall = null;
+              _hideSheet();
+            });
+          });
+        }
+
+        if (dismissBtn) {
+          dismissBtn.addEventListener('click', function () {
+            _dismissed = true;
+            try { localStorage.setItem('pwa_dismiss_ts', String(Date.now())); } catch (_) {}
+            _hideSheet();
+          });
+        }
+      });
+
+      // Hide once the app is actually installed
+      window.addEventListener('appinstalled', function () {
+        _hideSheet();
+        _dismissed = true;
+      });
+    })();
+  </script>
+  <!-- Registered last so it never blocks first-paint; runs async in background -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        // Auto-reload when a new SW takes control (ensures fresh CSS/JS on all devices)
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+          window.location.reload();
+        });
+        navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function (reg) {
+            // Activate the new SW immediately when an update is found
+            reg.addEventListener('updatefound', function () {
+              var newSW = reg.installing;
+              if (!newSW) return;
+              newSW.addEventListener('statechange', function () {
+                if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available — tell SW to skip waiting so it activates now
+                  newSW.postMessage({ type: 'SKIP_WAITING' });
+                }
+              });
+            });
+          })
+          .catch(function (err) {
+            console.warn('[PWA] Service worker registration failed:', err);
+          });
+      });
+    }
+  </script>
 </body>
 </html>

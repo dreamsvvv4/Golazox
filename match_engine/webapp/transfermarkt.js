@@ -67,6 +67,22 @@ const TM_POS = {
   'left winger':               'LW',
   'centre-forward':            'ST',
   'striker':                   'ST',
+  // German (TM.de — primary scrape language)
+  'torwart':                   'GK',
+  'rechter verteidiger':       'RB',
+  'innenverteidiger':          'CB',
+  'linker verteidiger':        'LB',
+  'defensives mittelfeld':     'DM',
+  'zentrales mittelfeld':      'CM',
+  'offensives mittelfeld':     'AM',
+  'rechtes mittelfeld':        'RM',
+  'linkes mittelfeld':         'LM',
+  'rechtsaußen':               'RW',
+  'linksaußen':                'LW',
+  'mittelstürmer':             'ST',
+  'sturmspitze':               'ST',
+  'hängende spitze':           'AM',
+  'zweite spitze':             'ST',
 };
 
 /**
@@ -87,16 +103,16 @@ function mapTmPos(raw) {
   if (!raw) return null;
   const p = raw.toLowerCase().trim();
   if (TM_POS[p]) return TM_POS[p];
-  if (p.includes('portero') || p.includes('goalkeeper')) return 'GK';
-  if (p.includes('lateral derecho') || p.includes('right back')) return 'RB';
-  if (p.includes('lateral izquierdo') || p.includes('left back')) return 'LB';
-  if (p.includes('central') || p.includes('centre-back') || p.includes('defens')) return 'CB';
-  if (p.includes('pivote') || p.includes('defensivo') || p.includes('defensive mid')) return 'DM';
-  if (p.includes('extremo derecho') || p.includes('right wing')) return 'RW';
-  if (p.includes('extremo izquierdo') || p.includes('left wing')) return 'LW';
-  if (p.includes('mediapunta') || p.includes('ofensivo') || p.includes('attacking')) return 'AM';
-  if (p.includes('centrocampista') || p.includes('midfield') || p.includes('medio')) return 'CM';
-  if (p.includes('delantero') || p.includes('forward') || p.includes('striker')) return 'ST';
+  if (p.includes('portero') || p.includes('goalkeeper') || p.includes('torwart')) return 'GK';
+  if (p.includes('lateral derecho') || p.includes('right back') || p.includes('rechter verteidiger')) return 'RB';
+  if (p.includes('lateral izquierdo') || p.includes('left back') || p.includes('linker verteidiger')) return 'LB';
+  if (p.includes('central') || p.includes('centre-back') || p.includes('defens') || p.includes('innenverteidiger')) return 'CB';
+  if (p.includes('pivote') || p.includes('defensivo') || p.includes('defensive mid') || p.includes('defensives mittelfeld')) return 'DM';
+  if (p.includes('rechtsaußen') || p.includes('extremo derecho') || p.includes('right wing')) return 'RW';
+  if (p.includes('linksaußen') || p.includes('extremo izquierdo') || p.includes('left wing')) return 'LW';
+  if (p.includes('mediapunta') || p.includes('ofensivo') || p.includes('attacking') || p.includes('offensives mittelfeld') || p.includes('hängende')) return 'AM';
+  if (p.includes('centrocampista') || p.includes('midfield') || p.includes('medio') || p.includes('mittelfeld')) return 'CM';
+  if (p.includes('delantero') || p.includes('forward') || p.includes('striker') || p.includes('stürmer') || p.includes('spitze')) return 'ST';
   return null;
 }
 
@@ -917,8 +933,14 @@ async function saveBadgeLocally(badgeUrl, slug) {
   if (!localFile.startsWith(BADGES_DIR + path.sep)) return null;
   if (fs.existsSync(localFile)) return `/img/badges/${slug}.${ext}`;
   try {
-    const res = await fetch(badgeUrl, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return null;
+    // redirect:'manual' prevents SSRF via open redirects — we only allow requests
+    // that stay on the original allowlisted host without following redirects.
+    const res = await fetch(badgeUrl, {
+      signal: AbortSignal.timeout(8000),
+      redirect: 'manual',
+    });
+    // Allow direct 200 only — reject any redirect (3xx)
+    if (!res.ok || res.status !== 200) return null;
     const ct = (res.headers.get('content-type') || '').split(';')[0].trim();
     if (!ct.startsWith('image/')) return null;
     const buf = await res.arrayBuffer();

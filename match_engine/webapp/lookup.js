@@ -489,13 +489,15 @@ function lookupSquadsDir(teamName, era) {
   const { teamFile } = _loadTeamFileAny(teamName);
   if (!teamFile.seasons) return null;
 
-  const eraYear = era ? parseInt(String(era).match(/\d{4}/)?.[0]) : NaN;
-
-  // Badge: prefer the locally-cached path stored at team-file top level.
-  // Never expose raw external URLs — the CSP only allows img-src 'self'.
   const localBadge = teamFile.badgeLocalPath || null;
 
-  // Exact year match
+  // Explicit 'all-time' key
+  if (era === 'all-time' && teamFile.seasons['all-time']) {
+    const s = teamFile.seasons['all-time'];
+    return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (All Time)` };
+  }
+
+  const eraYear = era ? parseInt(String(era).match(/\d{4}/)?.[0]) : NaN;
   if (!isNaN(eraYear) && teamFile.seasons[String(eraYear)]) {
     const s = teamFile.seasons[String(eraYear)];
     return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (${eraYear})` };
@@ -504,7 +506,14 @@ function lookupSquadsDir(teamName, era) {
   // No-era: return the most recent season available (no network needed)
   if (isNaN(eraYear)) {
     const years = Object.keys(teamFile.seasons).map(Number).filter(n => !isNaN(n));
-    if (years.length === 0) return null;
+    if (years.length === 0) {
+      // Fallback to 'all-time' if no numeric seasons exist
+      if (teamFile.seasons['all-time']) {
+        const s = teamFile.seasons['all-time'];
+        return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (All Time)` };
+      }
+      return null;
+    }
     const latest = String(Math.max(...years));
     const s = teamFile.seasons[latest];
     return { ...s, badgeUrl: localBadge, source: `DB local — ${teamFile.name || teamName} (${latest})` };
@@ -664,6 +673,11 @@ function lookupLocal(teamName, era) {
 async function lookupTeam(teamName, era = '') {
   if (!teamName || !teamName.trim()) return { found: false, source: null };
 
+  // OFFLINE_MODE=true → only use local data (squads/ + curated DB).
+  // Recommended for production: no scraping, no external dependencies.
+  // To regenerate squads offline: npm run seed
+  const offlineOnly = process.env.OFFLINE_MODE === 'true';
+
   // 0. squads/ directory cache — serves any previously scraped result instantly
   const cached = lookupSquadsDir(teamName, era);
   if (cached && cached.players && cached.players.length >= 8) {
@@ -676,6 +690,12 @@ async function lookupTeam(teamName, era = '') {
   // Closest-year fallback (≈year) → defer until after live scrapers so
   // Transfermarkt/BDFutbol can provide the correct era-accurate data.
   if (local && !local.isFallback) return { found: true, ...local };
+
+  // In offline mode, skip all scrapers and return local fallback or not-found
+  if (offlineOnly) {
+    if (local) return { found: true, ...local };
+    return { found: false, source: null, offline: true };
+  }
 
   const hasEra = Boolean(era && era.trim());
 

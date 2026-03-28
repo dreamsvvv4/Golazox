@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Simulador de Partidos de Fútbol — JavaScript Frontend
  * ═══════════════════════════════════════════════
  * Flujo:
@@ -19,12 +19,19 @@ const I18N = {
     'formation-default':'Formación (automática)','lookup-btn':'🔍 Buscar alineación','lookup-searching':'⌛ Buscando…',
     'mode-lbl':'Modo:','stadium-lbl':'🏟️ ESTADIO','stadium-neutro':'Neutro',
     'btn-simulate':'Simular Partido','tagline':'Cualquier equipo · Cualquier época · Cualquier rivalidad',
-    'loading-text':'Simulando 30 000 partidos…','pm-eyebrow':'PRESENTACIÓN DE EQUIPOS','pm-start-label':'Comenzando en',
+    'loading-text':'Simulando el partido…','pm-eyebrow':'PRESENTACIÓN DE EQUIPOS','pm-start-label':'Comenzando en',
     'live-badge':'EN DIRECTO','btn-skip':'⏭ Saltar',
     'poster-label-final':'RESULTADO FINAL','poster-label-pens':'EMPATE · PENALTIS','poster-label-pen-mode':'TANDA DE PENALTIS','poster-context':'Partido de leyenda · Campo neutral',
     'section-probs':'PROBABILIDADES','section-timeline':'LÍNEA DE TIEMPO',
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
-    'btn-share':'📤 Compartir',
+    'btn-share':'📤 Compartir resultado',
+    'btn-share-loading':'⏳ Generando imagen…',
+    'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
+    'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
+    'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
+    'tp-loading':'Cargando equipos…','tp-retry':'↺ Reintentar','tp-change-title':'Cambiar',
+    'vs-play':'JUGAR','vs-simulate':'▶ SIMULAR','vs-recalc':'⏳ Recalculando…',
+    'fl-balanced':'Equilibrado','fl-attack':'Atacante','fl-defensive':'Defensivo','fl-standard':'Estándar','fl-high-press':'Presión alta',
     'error-no-teams':'Introduce los nombres de ambos equipos.','error-too-long':'Los nombres de equipo no pueden superar 80 caracteres.',
     'error-rate-limit':'Demasiadas simulaciones seguidas. Espera un momento e inténtalo de nuevo.',
     'fail-lookup':'❌ No encontrado','hint-lookup':'Prueba sin época, o con el nombre en inglés',
@@ -53,6 +60,12 @@ const I18N = {
     'sim-error-prefix':'Error en la simulación:','pm-intro-neutral':'Campo Neutral',
     'ref-section-label':'ÁRBITRO','ref-random':'Aleatorio / Ninguno',
     'referee-label':'Árbitro','weather-section-label':'CLIMA',
+    'footer-tagline':'Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento',
+    'footer-disclaimer':'GolazoX es un proyecto independiente sin afiliación, patrocinio ni respaldo de FIFA, UEFA, ningún club de fútbol, ni ningún jugador mencionado. Los nombres de equipos y jugadores se usan con fines estadísticos, históricos y de entretenimiento, bajo la doctrina de uso referencial de figuras públicas en el ejercicio de su actividad profesional. Los escudos mostrados son representaciones genéricas de identificación y no son marcas oficiales. Datos de plantilla parcialmente derivados de Wikipedia (CC BY-SA 4.0).',
+    'footer-legal-link':'Aviso Legal','footer-privacy-link':'Política de Privacidad','footer-contact-link':'Contacto',
+    'ma-title':'📊 Análisis del partido','ma-dist-label':'⚡ Distancia recorrida','ma-no-data':'Sin datos',
+    'ma-hm-low':'Baja','ma-hm-high':'Alta',
+    'pm-card-change':'— clic para cambio','pm-card-sub':'— clic para sustituir',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -61,12 +74,19 @@ const I18N = {
     'formation-default':'Formation (auto)','lookup-btn':'🔍 Search lineup','lookup-searching':'⌛ Searching…',
     'mode-lbl':'Mode:','stadium-lbl':'🏟️ STADIUM','stadium-neutro':'Neutral',
     'btn-simulate':'Simulate Match','tagline':'Any team · Any era · Any rivalry',
-    'loading-text':'Simulating 30,000 matches…','pm-eyebrow':'TEAM PRESENTATION','pm-start-label':'Starting in',
+    'loading-text':'Simulating match…','pm-eyebrow':'TEAM PRESENTATION','pm-start-label':'Starting in',
     'live-badge':'LIVE','btn-skip':'⏭ Skip',
     'poster-label-final':'FINAL SCORE','poster-label-pens':'DRAW · PENALTIES','poster-label-pen-mode':'PENALTY SHOOTOUT','poster-context':'Legendary match · Neutral ground',
     'section-probs':'PROBABILITIES','section-timeline':'MATCH TIMELINE',
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
-    'btn-share':'📤 Share',
+    'btn-share':'📤 Share result',
+    'btn-share-loading':'⏳ Generating image…',
+    'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
+    'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
+    'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
+    'tp-loading':'Loading teams…','tp-retry':'↺ Retry','tp-change-title':'Change',
+    'vs-play':'PLAY','vs-simulate':'▶ SIMULATE','vs-recalc':'⏳ Recalculating…',
+    'fl-balanced':'Balanced','fl-attack':'Attacking','fl-defensive':'Defensive','fl-standard':'Standard','fl-high-press':'High press',
     'error-no-teams':'Please enter both team names.','error-too-long':'Team names cannot exceed 80 characters.',
     'error-rate-limit':'Too many simulations in a row. Please wait a moment and try again.',
     'fail-lookup':'❌ Not found','hint-lookup':'Try without era, or use the English team name',
@@ -95,10 +115,16 @@ const I18N = {
     'sim-error-prefix':'Simulation error:','pm-intro-neutral':'Neutral Ground',
     'ref-section-label':'REFEREE','ref-random':'Random / None',
     'referee-label':'Referee','weather-section-label':'WEATHER',
+    'footer-tagline':'Football Match Simulator · Probabilistic engine (Poisson xG + Monte Carlo) · For entertainment only',
+    'footer-disclaimer':'GolazoX is an independent project with no affiliation, sponsorship, or endorsement from FIFA, UEFA, any football club, or any mentioned player. Team and player names are used for statistical, historical, and entertainment purposes, under the referential use doctrine for public figures in the exercise of their professional activities. Badges shown are generic identification representations and are not official trademarks. Squad data partially derived from Wikipedia (CC BY-SA 4.0).',
+    'footer-legal-link':'Legal Notice','footer-privacy-link':'Privacy Policy','footer-contact-link':'Contact',
+    'ma-title':'📊 Match Analysis','ma-dist-label':'⚡ Distance covered','ma-no-data':'No data',
+    'ma-hm-low':'Low','ma-hm-high':'High',
+    'pm-card-change':'— click to swap','pm-card-sub':'— click to substitute',
   },
 };
 
-let _lang = (() => { try { return localStorage.getItem('odyssey_lang') || 'es'; } catch(_) { return 'es'; } })();
+let _lang = (() => { try { return localStorage.getItem('golazox_lang') || 'es'; } catch(_) { return 'es'; } })();
 
 function t(key) {
   return (I18N[_lang] || I18N.es)[key] || I18N.es[key] || key;
@@ -106,7 +132,7 @@ function t(key) {
 
 function setLang(lang) {
   _lang = (lang === 'en') ? 'en' : 'es';
-  try { localStorage.setItem('odyssey_lang', _lang); } catch(_) {}
+  try { localStorage.setItem('golazox_lang', _lang); } catch(_) {}
   applyI18n();
 }
 
@@ -131,10 +157,8 @@ function applyI18n() {
     if (sel && sel.options.length) sel.options[0].textContent = t('formation-default');
   });
   // Buttons
-  const la = el('lookupA'); if (la && !la.disabled) la.textContent = t('lookup-btn');
-  const lb = el('lookupB'); if (lb && !lb.disabled) lb.textContent = t('lookup-btn');
-  const bsim = el('btn-simulate');
-  if (bsim) bsim.innerHTML = `<span class="btn-icon">▶</span> ${t('btn-simulate')}`;
+  const la = el('lookupA'); if (la) la.textContent = t('lookup-btn');
+  const lb = el('lookupB'); if (lb) lb.textContent = t('lookup-btn');
   // Labels  
   document.querySelectorAll('.mode-lbl').forEach(el => { el.textContent = t('mode-lbl'); });
   document.querySelectorAll('.stadium-picker-lbl').forEach(el2 => { el2.textContent = t('stadium-lbl'); });
@@ -146,6 +170,19 @@ function applyI18n() {
   if (pmEye) pmEye.textContent = t('pm-eyebrow');
   const pmStart = document.querySelector('.pm-start-label');
   if (pmStart) pmStart.textContent = t('pm-start-label');
+  // Mode pills
+  const modePen = el('mode-penalties'); if (modePen) modePen.textContent = t('mode-penalties');
+  // PM screen
+  const pmSpeedLbl = document.querySelector('.pm-speed-label'); if (pmSpeedLbl) pmSpeedLbl.textContent = t('pm-speed-label');
+  const pmStartBtn = el('pm-start-btn'); if (pmStartBtn && !pmStartBtn.disabled) pmStartBtn.textContent = t('pm-start-btn');
+  const speedInstant = document.querySelector('.pm-speed-pill[data-tick="0"]'); if (speedInstant) speedInstant.textContent = t('speed-instant');
+  // Share button
+  document.querySelectorAll('.btn-share').forEach(b => { b.textContent = t('btn-share'); });
+  // Era selects — update placeholder of disabled (no team selected) ones
+  ['eraA','eraB'].forEach(id => {
+    const s = el(id);
+    if (s && s.disabled && s.options.length === 1) s.options[0].textContent = t('era-pending');
+  });
   // Update POS_DESCRIPTIONS in-place
   POS_DESCRIPTIONS.GK = t('pos-GK'); POS_DESCRIPTIONS.RB = t('pos-RB'); POS_DESCRIPTIONS.CB = t('pos-CB');
   POS_DESCRIPTIONS.LB = t('pos-LB'); POS_DESCRIPTIONS.DM = t('pos-DM'); POS_DESCRIPTIONS.CM = t('pos-CM');
@@ -156,6 +193,22 @@ function applyI18n() {
   if (neutroCard) neutroCard.textContent = t('stadium-neutro');
   // Rebuild weather picker labels when language changes (guard: fn may not be defined on first call)
   if (typeof _buildWeatherPicker === 'function') _buildWeatherPicker();
+  // Refresh formation dropdowns with translated labels
+  if (typeof setMatchMode === 'function' && typeof _matchMode !== 'undefined') setMatchMode(_matchMode);
+  // Re-render team pickers so type-select labels (Clubs/Nations/Back…) update
+  if (typeof _renderPicker === 'function') { _renderPicker('A'); _renderPicker('B'); }
+  // Footer
+  const ftTag = document.querySelector('.site-footer > p:first-child');
+  if (ftTag) ftTag.textContent = t('footer-tagline');
+  const ftDisc = document.querySelector('.footer-disclaimer');
+  if (ftDisc) ftDisc.textContent = t('footer-disclaimer');
+  document.querySelectorAll('.footer-link').forEach(a => {
+    const p = a.pathname;
+    a.href = _lang === 'en' ? p + '?lang=en' : p;
+    if (p === '/legal')   a.textContent = t('footer-legal-link');
+    if (p === '/privacy') a.textContent = t('footer-privacy-link');
+    if (p === '/contact') a.textContent = t('footer-contact-link');
+  });
   // Generic data-i18n sweep
   document.querySelectorAll('[data-i18n]').forEach(node => {
     const key = node.dataset.i18n;
@@ -164,13 +217,24 @@ function applyI18n() {
   });
 }
 
+/** Strip data-source prefix from lookup result for display (hides internal source names) */
+function _displayLabel(data) {
+  if (data && data.teamLabel) return data.teamLabel;
+  const s = (data && data.source) || '';
+  return s.replace(/^(DB local|Local DB|TheSportsDB|BDFutbol|Transfermarkt|Wikipedia)\s*[\u2014\u2013-]+\s*/i, '').replace(/^"|"$/g, '').trim() || s;
+}
+
 const FORMATIONS = ['4-3-3', '4-4-2', '4-2-3-1', '3-5-2', '3-4-3', '5-3-2', '4-5-1', '4-1-4-1'];
 const FORMATIONS_5V5 = ['1-2-1', '1-1-2', '2-1-1'];
 const FORMATIONS_3V3 = ['1-1', '1-2'];
-const FORMATION_LABELS = {
-  '1-2-1':'1-2-1 (Equilibrado)', '1-1-2':'1-1-2 (Atacante)', '2-1-1':'2-1-1 (Defensivo)',
-  '1-1':'1-1 (Estándar)', '1-2':'1-2 (Presión alta)',
-};
+const FORMATION_LABELS = {};
+function _formationLabel(f) {
+  const map = {
+    '1-2-1': t('fl-balanced'), '1-1-2': t('fl-attack'), '2-1-1': t('fl-defensive'),
+    '1-1': t('fl-standard'),  '1-2': t('fl-high-press'),
+  };
+  return map[f] ? `${f} (${map[f]})` : f;
+}
 
 // ── Badge fallback: SVG con iniciales del equipo ───────────────
 function _badgeFallback(teamName) {
@@ -198,11 +262,11 @@ function setMatchMode(mode) {
   ['formationA','formationB'].forEach(id => {
     const sel = document.getElementById(id);
     if (!sel) return;
-    sel.innerHTML = '<option value="">Formación (automática)</option>';
+    sel.innerHTML = `<option value="">${t('formation-default')}</option>`;
     formations.forEach(f => {
       const opt = document.createElement('option');
       opt.value = f;
-      opt.textContent = FORMATION_LABELS[f] || f;
+      opt.textContent = _formationLabel(f);
       sel.appendChild(opt);
     });
   });
@@ -236,15 +300,118 @@ function _initials(name) {
 }
 
 // ── Clima ───────────────────────────────────────────────────────
+const _WEATHER_SVG = {
+  // Sun rotates slowly around its own center
+  sunny: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g><animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="14s" repeatCount="indefinite"/>
+      <circle cx="16" cy="16" r="5.5" fill="#fbbf24"/>
+      <g stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round">
+        <line x1="16" y1="2.5" x2="16" y2="6"/><line x1="16" y1="26" x2="16" y2="29.5"/>
+        <line x1="2.5" y1="16" x2="6" y2="16"/><line x1="26" y1="16" x2="29.5" y2="16"/>
+        <line x1="6.5" y1="6.5" x2="9" y2="9"/><line x1="23" y1="23" x2="25.5" y2="25.5"/>
+        <line x1="6.5" y1="25.5" x2="9" y2="23"/><line x1="23" y1="9" x2="25.5" y2="6.5"/>
+      </g>
+    </g></svg>`,
+  // Cloud drifts gently left-right
+  cloudy: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;2 -1;0 1;0 0" dur="5s" repeatCount="indefinite"/>
+      <path d="M25 21H9a5 5 0 0 1-.5-9.97A7 7 0 0 1 23 16h2a4 4 0 0 1 0 8Z" fill="rgba(200,215,235,.85)"/>
+      <circle cx="9.5" cy="11" r="2.8" fill="#fbbf24" opacity=".7"/>
+      <path d="M7 10 a2.5 2.5 0 0 1 4.5-1.5" stroke="rgba(200,215,235,.85)" stroke-width="3" fill="none"/>
+    </g></svg>`,
+  // Rain drops fall with staggered delay
+  rain: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 19H8a5 5 0 0 1-.5-9.97A7 7 0 0 1 22 14h2a4 4 0 0 1 0 8Z" fill="rgba(150,180,220,.85)"/>
+    <g stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round">
+      <line x1="10" y1="23" x2="8.5" y2="28">
+        <animate attributeName="y1" values="23;26;23" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="28;31;28" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="16" y1="23" x2="14.5" y2="28">
+        <animate attributeName="y1" values="23;26;23" dur="1s" begin=".35s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="28;31;28" dur="1s" begin=".35s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;.2;1" dur="1s" begin=".35s" repeatCount="indefinite"/>
+      </line>
+      <line x1="22" y1="23" x2="20.5" y2="28">
+        <animate attributeName="y1" values="23;26;23" dur="1s" begin=".7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="28;31;28" dur="1s" begin=".7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;.2;1" dur="1s" begin=".7s" repeatCount="indefinite"/>
+      </line>
+    </g></svg>`,
+  // Storm: rain + lightning blinks
+  storm: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 18H8a5 5 0 0 1-.5-9.97A7 7 0 0 1 22 13h2a4 4 0 0 1 0 8Z" fill="rgba(120,130,160,.85)"/>
+    <g stroke="#93b4dd" stroke-width="2" stroke-linecap="round">
+      <line x1="9" y1="22" x2="7.5" y2="27">
+        <animate attributeName="opacity" values="1;.1;1" dur=".8s" begin=".1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="22" y1="22" x2="20.5" y2="27">
+        <animate attributeName="opacity" values="1;.1;1" dur=".8s" begin=".55s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    <path d="M17 20 L13 28 L17 26 L13 33" stroke="#fde047" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="opacity" values="1;1;.05;1;.05;1;1" dur="4s" repeatCount="indefinite"/>
+    </path></svg>`,
+  // Snowflake rotates
+  snow: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g><animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="9s" repeatCount="indefinite"/>
+      <g stroke="#a5f3fc" stroke-width="2.2" stroke-linecap="round">
+        <line x1="16" y1="4" x2="16" y2="28"/><line x1="4" y1="16" x2="28" y2="16"/>
+        <line x1="7.5" y1="7.5" x2="24.5" y2="24.5"/><line x1="24.5" y1="7.5" x2="7.5" y2="24.5"/>
+      </g>
+      <circle cx="16" cy="16" r="2.5" fill="#a5f3fc"/>
+    </g></svg>`,
+  // Wind gusts ripple
+  wind: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="rgba(147,210,255,.9)" stroke-width="2.2" stroke-linecap="round">
+      <path d="M4 10 Q10 6 18 10 a4 4 0 0 0 4 0 a4 4 0 0 0 0-4">
+        <animate attributeName="opacity" values=".4;1;.4" dur="2.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M4 16 Q12 12 20 16 Q26 19 28 16">
+        <animate attributeName="opacity" values=".4;1;.4" dur="2.2s" begin=".5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M4 22 Q9 18 16 22 a3.5 3.5 0 0 0 3.5 0 a3.5 3.5 0 0 0 0-3.5">
+        <animate attributeName="opacity" values=".4;1;.4" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+      </path>
+    </g></svg>`,
+  // Thermometer: clean 2-color, liquid pulses red
+  heat: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="13.5" y="4" width="5" height="15" rx="2.5" stroke="rgba(220,60,40,.45)" stroke-width="1.4" fill="rgba(220,60,40,.07)"/>
+    <rect x="14.8" y="11" width="2.4" height="8" rx="1.2" fill="rgba(220,60,40,.55)">
+      <animate attributeName="height" values="8;11;8" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="11;8;11" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="rgba(220,60,40,.55);rgba(255,90,50,.9);rgba(220,60,40,.55)" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="16" cy="23" r="3.8" fill="rgba(220,60,40,.85)"/>
+    <g stroke="rgba(220,60,40,.55)" stroke-width="1.4" stroke-linecap="round">
+      <line x1="20" y1="8" x2="22.5" y2="8"/>
+      <line x1="20" y1="12" x2="22.5" y2="12"/>
+      <line x1="20" y1="16" x2="22.5" y2="16"/>
+    </g></svg>`,
+  // Moon + twinkling stars
+  night: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 8a10 10 0 1 1-12.5 12.5A7.5 7.5 0 0 0 22 8Z" fill="rgba(147,130,200,.85)" stroke="rgba(180,165,230,.7)" stroke-width="1.5"/>
+    <circle cx="7" cy="11" r="1" fill="rgba(255,255,255,.85)">
+      <animate attributeName="opacity" values=".2;1;.2" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="4.5" cy="16.5" r=".8" fill="rgba(255,255,255,.85)">
+      <animate attributeName="opacity" values="1;.2;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="10" cy="7.5" r=".7" fill="rgba(255,255,255,.85)">
+      <animate attributeName="opacity" values=".5;1;.1;1;.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle></svg>`,
+};
+
 const WEATHER = [
-  { id: 'sunny',  emoji: '☀️',  labelEs: 'Soleado',       labelEn: 'Sunny',        goalMult: 1.00 },
-  { id: 'cloudy', emoji: '⛅',  labelEs: 'Nublado',        labelEn: 'Cloudy',       goalMult: 0.97 },
-  { id: 'rain',   emoji: '🌧️', labelEs: 'Lluvia',         labelEn: 'Rain',         goalMult: 0.88 },
-  { id: 'storm',  emoji: '⛈️', labelEs: 'Tormenta',       labelEn: 'Storm',        goalMult: 0.76 },
-  { id: 'snow',   emoji: '❄️', labelEs: 'Nieve',          labelEn: 'Snow',         goalMult: 0.82 },
-  { id: 'wind',   emoji: '🌬️', labelEs: 'Viento fuerte',  labelEn: 'Strong wind',  goalMult: 0.93 },
-  { id: 'heat',   emoji: '🌡️', labelEs: 'Calor extremo',  labelEn: 'Extreme heat', goalMult: 0.91 },
-  { id: 'night',  emoji: '🌙',  labelEs: 'Noche',          labelEn: 'Night',        goalMult: 1.00 },
+  { id: 'sunny',  labelEs: 'Soleado',       labelEn: 'Sunny',        goalMult: 1.00 },
+  { id: 'cloudy', labelEs: 'Nublado',        labelEn: 'Cloudy',       goalMult: 0.97 },
+  { id: 'rain',   labelEs: 'Lluvia',         labelEn: 'Rain',         goalMult: 0.88 },
+  { id: 'storm',  labelEs: 'Tormenta',       labelEn: 'Storm',        goalMult: 0.76 },
+  { id: 'snow',   labelEs: 'Nieve',          labelEn: 'Snow',         goalMult: 0.82 },
+  { id: 'wind',   labelEs: 'Viento fuerte',  labelEn: 'Strong wind',  goalMult: 0.93 },
+  { id: 'heat',   labelEs: 'Calor extremo',  labelEn: 'Extreme heat', goalMult: 0.91 },
+  { id: 'night',  labelEs: 'Noche',          labelEn: 'Night',        goalMult: 1.00 },
 ];
 
 const STADIUMS = [
@@ -292,6 +459,7 @@ const STADIUMS = [
 let _selectedStadium = null;
 let _selectedReferee = null;     // full referee object from /referees
 let _selectedWeather = null;     // weather object from WEATHER array
+let _shareData       = null;     // data snapshot for share card generation
 
 function selectStadium(stadiumId) {
   _selectedStadium = STADIUMS.find(s => s.id === stadiumId) || null;
@@ -322,11 +490,369 @@ function selectWeather(weatherId) {
   document.querySelectorAll('.wth-card').forEach(c => {
     c.classList.toggle('wth-active', _selectedWeather && c.dataset.id === _selectedWeather.id);
   });
+  // Drive weather atmosphere overlay via body data attribute
+  if (_selectedWeather) {
+    document.body.dataset.wx = _selectedWeather.id;
+  } else {
+    delete document.body.dataset.wx;
+  }
 }
 
 // ── Autocomplete data: loaded once on startup ───────────────────
 const _acList = [];  // [{name,badge}, ...]
 fetch('/suggest').then(r => r.json()).then(list => _acList.push(...list)).catch(() => {});
+
+// ── Season catalog: team → available years ───────────────────
+let _catalog = [];  // [{slug, name, badge, seasons:["2006",...], group}, ...]
+let _catalogReady = false;
+function _fetchCatalog() {
+  fetch('/catalog')
+    .then(r => {
+      if (!r.ok || !r.headers.get('content-type')?.includes('json'))
+        throw new Error('not json');
+      return r.json();
+    })
+    .then(d => {
+      _catalog = Array.isArray(d) ? d : [];
+      _catalogReady = true;
+      _renderPicker('A');
+      _renderPicker('B');
+    })
+    .catch(() => {
+      _catalogReady = false;
+      _renderPicker('A');
+      _renderPicker('B');
+    });
+}
+_fetchCatalog();
+
+// ── Team Picker ───────────────────────────────────────────
+const _pickerState = { A: { type: null, league: null }, B: { type: null, league: null } };
+
+// Map slug → ISO 3166-1 alpha-2 for flagcdn.com images (no emoji, works on Windows)
+const _NATION_ISO = {
+  // Slugs alemán (originales)
+  'argentinien':'ar',   'belgien':'be',       'brasilien':'br',    'bulgarien':'bg',
+  'danemark':'dk',      'deutschland':'de',   'england':'gb-eng',  'frankreich':'fr',
+  'griechenland':'gr',  'italien':'it',       'japan':'jp',        'kroatien':'hr',
+  'marokko':'ma',       'niederlande':'nl',   'norwegen':'no',     'osterreich':'at',
+  'polen':'pl',         'portugal':'pt',      'russland':'ru',     'schottland':'gb-sct',
+  'schweden':'se',      'schweiz':'ch',       'senegal':'sn',      'spanien':'es',
+  'tschechien':'cz',    'vereinigte-staaten':'us', 'china':'cn',
+  'irak':'iq',          'jordanien':'jo',
+  // Slugs alemán WC2026
+  'albanien':'al',      'algerien':'dz',      'australien':'au',   'agypten':'eg',
+  'bosnien-herzegowina':'ba', 'elfenbeinkuste':'ci','finnland':'fi',    'island':'is',
+  'jamaika':'jm',       'kamerun':'cm',       'kanada':'ca',       'kap-verde':'cv',
+  'kongo':'cd',
+  'kolumbien':'co',     'mexiko':'mx',        'neuseeland':'nz',   'nordkorea':'kp',
+  'nordirland':'gb-nir','saudi-arabien':'sa', 'serbien':'rs',      'slowakei':'sk',
+  'slowenien':'si',     'sudafrika':'za',     'sudkorea':'kr',     'trinidad-und-tobago':'tt',
+  'tunesien':'tn',      'turkei':'tr',        'ungarn':'hu',       'usbekistan':'uz',
+  // Slugs alemán WC2026
+  'marruecos':'ma',     'noruega':'no',       'rusia':'ru',        'japon':'jp',
+  'corea':'kr',         'holanda':'nl',
+  // Slugs inglés (WC2026 + nuevas descargas)
+  'albania':'al',       'algeria':'dz',       'argentina':'ar',    'australia':'au',
+  'austria':'at',       'bahrain':'bh',       'belgium':'be',      'bolivia':'bo',
+  'bosnia':'ba',        'brazil':'br',        'bulgaria':'bg',     'cameroon':'cm',
+  'canada':'ca',        'cape-verde':'cv',    'chile':'cl',        'colombia':'co',
+  'costa-rica':'cr',    'croatia':'hr',       'czech-republic':'cz','denmark':'dk',
+  'democratic-republic-of-congo':'cd',
+  'ecuador':'ec',       'egypt':'eg',         'finland':'fi',      'france':'fr',
+  'germany':'de',       'ghana':'gh',         'greece':'gr',       'haiti':'ht',         'honduras':'hn',
+  'hungary':'hu',       'iceland':'is',       'iran':'ir',         'iraq':'iq',
+  'ireland':'ie',       'ivory-coast':'ci',   'jordan':'jo',       'mali':'ml',
+  'mexico':'mx',        'morocco':'ma',       'netherlands':'nl',  'new-zealand':'nz',
+  'nigeria':'ng',       'north-korea':'kp',   'norway':'no',       'oman':'om',
+  'panama':'pa',        'paraguay':'py',      'peru':'pe',         'poland':'pl',
+  'republic-of-ireland':'ie', 'romania':'ro', 'russia':'ru',       'saudi-arabia':'sa',
+  'scotland':'gb-sct',  'serbia':'rs',        'slovakia':'sk',     'slovenia':'si',
+  'south-africa':'za',  'south-korea':'kr',   'spain':'es',        'sweden':'se',
+  'switzerland':'ch',   'trinidad-and-tobago':'tt', 'tunisia':'tn', 'turkey':'tr',
+  'ukraine':'ua',       'united-states':'us', 'uruguay':'uy',      'uzbekistan':'uz',
+  'venezuela':'ve',     'wales':'gb-wls',
+};
+const _LEAGUE_META = {
+  '🇪🇸 La Liga':           { name:'La Liga',          iso:'es'     , tier:1 },
+  '🇪🇸 La Liga 2':         { name:'La Liga 2',        iso:'es'     , tier:2 },
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League':  { name:'Premier League',   iso:'gb-eng'  , tier:1 },
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship':   { name:'Championship',     iso:'gb-eng'  , tier:2 },
+  '🇩🇪 Bundesliga':       { name:'Bundesliga',       iso:'de'     , tier:1 },
+  '🇩🇪 2. Bundesliga':    { name:'2. Bundesliga',    iso:'de'     , tier:2 },
+  '🇮🇹 Serie A':          { name:'Serie A',          iso:'it'     , tier:1 },
+  '🇮🇹 Serie B':          { name:'Serie B',          iso:'it'     , tier:2 },
+  '🇫🇷 Ligue 1':          { name:'Ligue 1',          iso:'fr'     , tier:1 },
+  '🇫🇷 Ligue 2':          { name:'Ligue 2',          iso:'fr'     , tier:2 },
+  '🇳🇱 Eredivisie':       { name:'Eredivisie',       iso:'nl'     , tier:1 },
+  '🇵🇹 Liga Portugal':    { name:'Liga Portugal',    iso:'pt'     , tier:1 },
+  '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia':        { name:'Escocia',          nameEn:'Scotland',              iso:'gb-sct'  , tier:1 },
+  '🇸🇦 Saudi Pro League': { name:'Saudi Pro League', iso:'sa'     , tier:1 },
+  '🇺🇸 MLS':              { name:'MLS',              iso:'us'     , tier:1 },
+  '🌎 América del Sur':    { name:'América del Sur',  nameEn:'South America',         iso:null, svg:'/img/badges/_south-america.svg' , tier:1 },
+  '🌍 Otros':            { name:'Otros',            nameEn:'Other',                 iso:null, svg:'/img/badges/_globe.svg'         , tier:1 },
+  '⭐ Fantasy XI':        { name:'Fantasy XI',       nameEn:'Fantasy XI',            iso:null, svg:'/img/badges/_best-xi-history.svg', tier:1 },
+  '🌐 Continentes Históricos': { name:'Continentes Históricos', nameEn:'Historical Continents', iso:null, svg:'/img/badges/_europa-historica.svg', tier:1 },
+};
+
+function _pickerSelectType(side, type) {
+  _pickerState[side] = { type, league: null };
+  _renderPicker(side);
+}
+function _pickerSelectLeague(side, league) {
+  _pickerState[side].league = league;
+  _renderPicker(side);
+}
+// Returns the localized display name for a catalog entry
+function _entryName(entry) {
+  if (!entry) return '';
+  return _lang === 'en'
+    ? (entry.nameEn || entry.name)
+    : (entry.nameEs || entry.name || entry.nameEn);
+}
+function _pickerSelectTeam(side, slugVal) {
+  document.getElementById(`team${side}`).value = slugVal;
+  _populateEraSelect(slugVal, side);
+  _updateClashButton();
+  _renderPicker(side);
+  // Flash the team panel to confirm selection
+  const col = document.getElementById(`col-${side.toLowerCase()}`);
+  if (col) {
+    col.classList.remove('col-flash');
+    void col.offsetWidth; // force reflow to restart animation
+    col.classList.add('col-flash');
+    setTimeout(() => col.classList.remove('col-flash'), 650);
+  }
+}
+function _pickerReset(side) {
+  _pickerState[side] = { type: null, league: null };
+  document.getElementById(`team${side}`).value = '';
+  const era = document.getElementById(`era${side}`);
+  if (era) { era.innerHTML = `<option value="">${t('era-pending')}</option>`; era.disabled = true; }
+  _eraConfirmed[side] = false;
+  _lookupCache[side] = null;
+  _updateLookupBtn(side);
+  _updateClashButton();
+  _renderPicker(side);
+}
+
+function _initTeamPicker(side) {
+  const container = document.getElementById(`picker-${side}`);
+  if (!container || container._wired) return;
+  container._wired = true;
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('[data-pa]');
+    if (!btn) return;
+    const a = btn.dataset.pa, v = btn.dataset.pv || '';
+    if      (a === 'type')   _pickerSelectType(side, v);
+    else if (a === 'league') _pickerSelectLeague(side, v);
+    else if (a === 'team')   _pickerSelectTeam(side, v);
+    else if (a === 'reset')  _pickerReset(side);
+    else if (a === 'back')   { _pickerState[side] = { type: _pickerState[side]?.type || 'club', league: null }; _renderPicker(side); }
+    else if (a === 'backtype') { _pickerState[side] = { type: null, league: null }; _renderPicker(side); }
+    else if (a === 'retry')  _fetchCatalog();
+  });
+  _renderPicker(side);
+}
+
+function _renderPicker(side) {
+  const container = document.getElementById(`picker-${side}`);
+  if (!container) return;
+  const chosenName = document.getElementById(`team${side}`)?.value || '';
+  const st = _pickerState[side];
+
+  // ── Chosen ──────────────────────────────────────────────
+  if (chosenName) {
+    const entry = _catalog.find(c => c.slug === chosenName || c.name === chosenName);
+    const badge = entry?.badge || BADGE_PLACEHOLDER;
+    const meta  = _LEAGUE_META[entry?.group];
+    const displayName = _entryName(entry) || chosenName;
+    container.innerHTML =
+      `<div class="tp-chosen">` +
+      `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
+      `<div class="tp-chosen-info">` +
+        `<span class="tp-chosen-name">${escHtml(displayName)}</span>` +
+        `<span class="tp-chosen-group">${escHtml(meta?.name || '')}</span>` +
+      `</div>` +
+      `<button class="tp-change-btn" data-pa="reset" title="${t('tp-change-title')}">&#10005;</button>` +
+      `</div>`;
+    return;
+  }
+
+  // ── Loading / error ──────────────────────────────────────
+  if (!_catalogReady && !_catalog.length) {
+    container.innerHTML =
+      `<div class="tp-loading">` +
+      `<span class="tp-loading-spinner"></span>` +
+      `<span class="tp-loading-text">${t('tp-loading')}</span>` +
+      `<button class="tp-retry-btn" data-pa="retry">${t('tp-retry')}</button>` +
+      `</div>`;
+    return;
+  }
+
+  // ── Type select ──────────────────────────────────────────
+  if (!st.type) {
+    container.innerHTML =
+      `<div class="tp-type-row">` +
+      `<button class="tp-type-btn" data-pa="type" data-pv="club">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h12M8 2v3a4 4 0 008 0V2M7 7H4a2 2 0 000 4h3m10-4h3a2 2 0 010 4h-3M9 21h6m-3-7v7M8 14a4 4 0 018 0"/></svg>` +
+      `<span class="tp-type-label">${t('tp-clubs')}</span></button>` +
+      `<button class="tp-type-btn" data-pa="type" data-pv="seleccion">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>` +
+      `<span class="tp-type-label">${t('tp-nations')}</span></button>` +
+      `<button class="tp-type-btn" data-pa="type" data-pv="special">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>` +
+      `<span class="tp-type-label">${t('tp-special')}</span></button>` +
+      `</div>`;
+    return;
+  }
+
+  // ── Selecciones — flag image grid ──────────────────────────────
+  if (st.type === 'seleccion') {
+    const nations = _catalog.filter(c => c.group === '🌍 Selecciones');
+    container.innerHTML =
+      `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-nations-label')}</span></div>` +
+      `<div class="tp-nations-grid">` +
+      nations.map(n => {
+        const iso = _NATION_ISO[n.slug.toLowerCase()];
+        const flagHtml = iso
+          ? `<img class="tp-flag-img" src="https://flagcdn.com/w40/${iso}.png" alt="" loading="lazy">`
+          : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
+        return `<button class="tp-nation-card" data-pa="team" data-pv="${escHtml(n.slug)}">` +
+          flagHtml +
+          `<span class="tp-nation-name">${escHtml(_entryName(n))}</span>` +
+          `</button>`;
+      }).join('') +
+      `</div>`;
+    return;
+  }
+
+  // ── Special — Fantasy XI + Continentes Históricos ─────────────
+  if (st.type === 'special') {
+    if (!st.league) {
+      const specGroups = [...new Set(
+        _catalog.filter(c => c.group === '⭐ Fantasy XI' || c.group === '🌐 Continentes Históricos').map(c => c.group)
+      )];
+      container.innerHTML =
+        `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-special-label')}</span></div>` +
+        `<div class="tp-leagues-grid">` +
+        specGroups.map(g => {
+          const meta  = _LEAGUE_META[g] || { name: g.replace(/^\S+ /,''), tier: 1 };
+          const count = _catalog.filter(c => c.group === g).length;
+          const metaName = _lang === 'en' ? (meta.nameEn || meta.name) : meta.name;
+          const flagInner = meta.svg
+            ? `<img class="tp-league-flag tp-league-flag-svg" src="${meta.svg}" alt="" loading="lazy">`
+            : `<span class="tp-league-flag-dot"></span>`;
+          const flagHtml = `<span class="tp-flag-wrap">${flagInner}</span>`;
+          return `<button class="tp-league-btn" data-pa="league" data-pv="${escHtml(g)}">` +
+            flagHtml +
+            `<span class="tp-lg-name">${escHtml(metaName)}</span>` +
+            `<span class="tp-lg-count">${count}</span></button>`;
+        }).join('') +
+        `</div>`;
+      return;
+    }
+    const spTeams = _catalog.filter(c => c.group === st.league);
+    const spMeta  = _LEAGUE_META[st.league] || { name: st.league.replace(/^\S+ /,'') };
+    const spName  = _lang === 'en' ? (spMeta.nameEn || spMeta.name) : spMeta.name;
+    container.innerHTML =
+      `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(spName)}</button></div>` +
+      `<div class="tp-teams-grid">` +
+      spTeams.map(t =>
+        `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
+        `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy" onerror="this.src='${BADGE_PLACEHOLDER}'" >` +
+        `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
+        `</button>`
+      ).join('') +
+      `</div>`;
+    return;
+  }
+
+  // ── Clubs — league list ──────────────────────────────────
+  if (!st.league) {
+    const leagues = [...new Set(
+      _catalog.filter(c => c.group !== '🌍 Selecciones' && c.group !== '⭐ Fantasy XI' && c.group !== '🌐 Continentes Históricos').map(c => c.group || '🌍 Otros')
+    )];
+    container.innerHTML =
+      `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-leagues-label')}</span></div>` +
+      `<div class="tp-leagues-grid">` +
+      leagues.map(g => {
+        const meta  = _LEAGUE_META[g] || { name: g.replace(/^\S+ /,''), iso: null, tier: 1 };
+        const count = _catalog.filter(c => c.group === g).length;
+        const flagInner = meta.iso
+          ? `<img class="tp-league-flag" src="https://flagcdn.com/w40/${meta.iso}.png" alt="" loading="lazy">`
+          : meta.svg
+            ? `<img class="tp-league-flag tp-league-flag-svg" src="${meta.svg}" alt="" loading="lazy">`
+            : `<span class="tp-league-flag-dot"></span>`;
+        const flagHtml = `<span class="tp-flag-wrap${meta.tier === 2 ? ' tp-flag-t2' : ''}">${flagInner}</span>`;
+        return `<button class="tp-league-btn${meta.tier === 2 ? ' tp-league-tier2' : ''}" data-pa="league" data-pv="${escHtml(g)}">` +
+          flagHtml +
+          `<span class="tp-lg-name">${escHtml(_lang === 'en' ? (meta.nameEn || meta.name) : meta.name)}</span>` +
+          `<span class="tp-lg-count">${count}</span></button>`;
+      }).join('') +
+      `</div>`;
+    return;
+  }
+
+  // ── Clubs — team badge grid ────────────────────────────────
+  const teams = _catalog.filter(c => c.group === st.league);
+  const lgMeta = _LEAGUE_META[st.league] || { name: st.league.replace(/^\S+ /,'') };
+  const lgName  = _lang === 'en' ? (lgMeta.nameEn || lgMeta.name) : lgMeta.name;
+  container.innerHTML =
+    `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(lgName)}</button></div>` +
+    `<div class="tp-teams-grid">` +
+    teams.map(t =>
+      `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
+      `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
+      `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
+      `</button>`
+    ).join('') +
+    `</div>`;
+}
+
+/** Populate the era <select> for the given team name from the catalog. */
+function _updateLookupBtn(side) {
+  const btn  = document.getElementById(`lookup${side}`);
+  if (!btn) return;
+  const team = (document.getElementById(`team${side}`)?.value || '').trim();
+  const era  = document.getElementById(`era${side}`);
+  const hasEra = era && !era.disabled && era.value !== '';
+  btn.disabled = !(team && hasEra);
+}
+
+function _populateEraSelect(teamName, side) {
+  const sel = document.getElementById(`era${side}`);
+  if (!sel) return;
+  const q = teamName.trim().toLowerCase();
+  const entry = _catalog.find(c =>
+    c.slug.toLowerCase() === q ||
+    c.name.toLowerCase() === q ||
+    (c.nameEn || '').toLowerCase() === q ||
+    (c.nameEs || '').toLowerCase() === q
+  );
+  // Reset confirmation — user must re-confirm after changing teams
+  _eraConfirmed[side] = false;
+  if (entry && entry.seasons.length) {
+    const prev = sel.value;
+    sel.innerHTML =
+      `<option value="">${t('era-any')}</option>` +
+      entry.seasons.map(y =>
+        `<option value="${y}"${y === prev ? ' selected' : ''}>${y === 'all-time' ? '★ All Time' : y}</option>`
+      ).join('');
+    sel.disabled = false;
+  } else {
+    // No local seasons → era is not applicable; treat as auto-confirmed
+    _eraConfirmed[side] = true;
+    sel.innerHTML = `<option value="">${t('era-no-seasons')}</option>`;
+    sel.disabled = true;
+  }
+  _updateLookupBtn(side);
+  sel.onchange = () => {
+    _eraConfirmed[side] = true;
+    _updateLookupBtn(side);
+    _updateClashButton();
+  };
+}
 
 const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
 function badgeOrPlaceholder(url) { return url || BADGE_PLACEHOLDER; }
@@ -337,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Apply saved language preference
   applyI18n();
 
-  // Logo is served directly as odyssey-logo.png from public/
+  // Logo is served directly as golazox-logo.png from public/
 
   // Populate formation dropdowns (11v11 default)
   ['formationA', 'formationB'].forEach(id => {
@@ -356,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const neutroCard = document.createElement('div');
     neutroCard.className = 'spk-card spk-active';
     neutroCard.dataset.id = '';
-    neutroCard.innerHTML = `<div class="spk-img-placeholder">🏟️</div><div class="spk-name">Neutro</div>`;
+    neutroCard.innerHTML = `<div class="spk-img-placeholder">🏟️</div><div class="spk-name">${t('stadium-neutro')}</div>`;
     neutroCard.onclick = () => selectStadium('');
     pickerRow.appendChild(neutroCard);
 
@@ -374,15 +900,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Allow Enter key to trigger simulation from any input
-  ['teamA','eraA','teamB','eraB'].forEach(id => {
+  // Allow Enter key to trigger simulation from the era selects
+  ['eraA','eraB'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') handleSimulate(); });
   });
 
-  // Setup autocomplete for both team inputs
-  setupAutocomplete('teamA', 'ac-A', 'A');
-  setupAutocomplete('teamB', 'ac-B', 'B');
+  // Init team pickers (catalog fills them when it arrives)
+  _initTeamPicker('A');
+  _initTeamPicker('B');
 
   // Build weather picker
   _buildWeatherPicker();
@@ -448,7 +974,8 @@ function _buildWeatherPicker() {
     card.className = 'wth-card';
     card.dataset.id = w.id;
     const label = _lang === 'en' ? w.labelEn : w.labelEs;
-    card.innerHTML = `<div class="wth-icon">${w.emoji}</div><div class="wth-label">${escHtml(label)}</div>`;
+    const icon = _WEATHER_SVG[w.id] || '';
+    card.innerHTML = `<div class="wth-icon">${icon}</div><div class="wth-label">${escHtml(label)}</div>`;
     card.onclick = () => selectWeather(w.id);
     row.appendChild(card);
   });
@@ -456,6 +983,10 @@ function _buildWeatherPicker() {
 
 // ── Lookup cache: stores last API result per side (A / B) ────
 const _lookupCache = { A: null, B: null };
+// Tracks whether the user has explicitly confirmed an era for each side
+// (either by selecting a specific year, selecting "any era", or by the
+// dropdown being disabled because the team has no local seasons).
+const _eraConfirmed = { A: false, B: false };
 
 // Converts a CSS hex colour (#rrggbb) to rgba(r,g,b,a)
 function hexToRgba(hex, alpha) {
@@ -465,27 +996,36 @@ function hexToRgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// Updates the VS badge: plain "VS" when lineups incomplete, "INICIAR ODYSSEY" when both ready
+// Updates the VS badge: plain "VS" → "▶ JUGAR" when both teams chosen → "▶ SIMULAR" when both lineups loaded
 function _updateClashButton() {
   const btn = document.getElementById('vs-clash');
   if (!btn) return;
+  const lbl = document.getElementById('vs-clash-label');
   const aData = _lookupCache['A'], bData = _lookupCache['B'];
+  const teamA = (document.getElementById('teamA')?.value || '').trim();
+  const teamB = (document.getElementById('teamB')?.value || '').trim();
+
   if (aData && bData) {
-    const colA = hexToRgba(_getKitColor(aData.teamLabel || document.getElementById('teamA')?.value || '', 'a'), .72);
-    const colB = hexToRgba(_getKitColor(bData.teamLabel || document.getElementById('teamB')?.value || '', 'b'), .72);
+    // Full ready — both lineups loaded
+    const colA = hexToRgba(_getKitColor(aData.teamLabel || teamA, 'a'), .72);
+    const colB = hexToRgba(_getKitColor(bData.teamLabel || teamB, 'b'), .72);
     btn.style.setProperty('--clash-a', colA);
     btn.style.setProperty('--clash-b', colB);
+    btn.classList.remove('vs-teams-ready');
     btn.classList.add('vs-ready');
     btn.innerHTML = `
-      <svg class="clash-energy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <line class="energy-line" x1="2" y1="50" x2="98" y2="50"/>
-      </svg>
-      <span class="clash-l1">INICIAR</span>
-      <span class="clash-l2">ODYSSEY</span>`;
+      <div class="clash-logo-wrap">
+        <img class="clash-logo-img" src="/golazox-coin.png?v=2" alt="GolazOX" draggable="false" />
+      </div>`;
+    if (lbl) { lbl.textContent = t('vs-simulate'); lbl.classList.add('visible'); }
     btn.onclick = handleSimulate;
   } else {
-    btn.classList.remove('vs-ready');
+    // Default — lineups not ready yet
+    btn.classList.remove('vs-ready', 'vs-teams-ready');
+    btn.style.removeProperty('--clash-a');
+    btn.style.removeProperty('--clash-b');
     btn.innerHTML = '<span>VS</span>';
+    if (lbl) { lbl.textContent = ''; lbl.classList.remove('visible'); }
     btn.onclick = null;
   }
 }
@@ -606,7 +1146,7 @@ async function handleLookup(side) {
       _lookupCache[side] = data;
 
       document.getElementById(`preview-source-${side}`).textContent =
-        `✅ ${data.source}`;
+        `✅ ${_displayLabel(data)}`;
 
       _renderLookupPlayers(side, data);
 
@@ -649,8 +1189,26 @@ async function handleLookup(side) {
 
 // ── Main handler — called by the "Simulate Match" button ──
 async function handleSimulate() {
-  const teamA = document.getElementById('teamA').value.trim();
-  const teamB = document.getElementById('teamB').value.trim();
+  // Coin collapse animation before transitioning
+  const vsBtn = document.getElementById('vs-clash');
+  if (vsBtn?.classList.contains('vs-ready')) {
+    vsBtn.classList.add('coin-collapsing');
+    await new Promise(r => setTimeout(r, 420));
+  }
+
+  // Brief weather burst effect at simulation start
+  if (_selectedWeather) {
+    document.body.classList.add('wx-burst');
+    setTimeout(() => document.body.classList.remove('wx-burst'), 2800);
+  }
+
+  // Resolve slug → localized display name for the match UI
+  const slugA = document.getElementById('teamA').value.trim();
+  const slugB = document.getElementById('teamB').value.trim();
+  const entryA = _catalog.find(c => c.slug === slugA || c.name === slugA);
+  const entryB = _catalog.find(c => c.slug === slugB || c.name === slugB);
+  const teamA = _entryName(entryA) || slugA;
+  const teamB = _entryName(entryB) || slugB;
 
   // Basic validation
   if (!teamA || !teamB) {
@@ -728,6 +1286,10 @@ async function handleSimulate() {
     showError(isNotFound ? err.message : `${t('sim-error-prefix')} ${err.message}`);
   } finally {
     setLoading(false);
+    // Restore the coin button (remove collapse animation so it reappears)
+    const _vsBtn = document.getElementById('vs-clash');
+    if (_vsBtn) _vsBtn.classList.remove('coin-collapsing');
+    document.body.classList.remove('wx-burst');
   }
 }
 
@@ -863,6 +1425,37 @@ function renderResult(data, payload) {
   // ── Alineaciones ────────────────────────────────────────────
   renderLineup('a', lineups.teamA, payload.teamA, payload.eraA, data.badgeA || _badgeFallback(payload.teamA));
   renderLineup('b', lineups.teamB, payload.teamB, payload.eraB, data.badgeB || _badgeFallback(payload.teamB));
+
+  // ── Snapshot para share card ──────────────────────────────
+  _shareData = {
+    teamA:    payload.teamA,
+    teamB:    payload.teamB,
+    eraA:     payload.eraA || '',
+    eraB:     payload.eraB || '',
+    scoreA:   isPenMode ? (finalScore.penalties?.scoreA ?? 0) : finalScore.teamA,
+    scoreB:   isPenMode ? (finalScore.penalties?.scoreB ?? 0) : finalScore.teamB,
+    scorersA: finalScore.scorersA || [],
+    scorersB: finalScore.scorersB || [],
+    penalties: finalScore.penalties || null,
+    ratings,
+    probabilities,
+    badgeA:   data.badgeA || null,
+    badgeB:   data.badgeB || null,
+    mom:      data.stats?.manOfMatch || null,
+    stadium:  _selectedStadium,
+    weather:  _selectedWeather,
+    matchMode: payload.matchMode,
+    // Extended share data: match stats + lineups
+    matchStats: isPenMode ? null : {
+      possession: data.stats?.possession || { teamA: 50, teamB: 50 },
+      shots:      data.stats?.shots      || { teamA: 0,  teamB: 0  },
+      corners:    data.stats?.corners    || { teamA: 0,  teamB: 0  },
+      saves:      data.stats?.saves      || { teamA: 0,  teamB: 0  },
+      fouls:      data.stats?.fouls      || { teamA: 0,  teamB: 0  },
+    },
+    lineupA: isPenMode ? null : (lineups.teamA || null),
+    lineupB: isPenMode ? null : (lineups.teamB || null),
+  };
 }
 
 // ── Lineup pitch renderer ─────────────────────────────────
@@ -898,7 +1491,7 @@ function renderLineup(side, lineup, teamName, era, badgeUrl) {
   }
   titleEl.appendChild(document.createTextNode(era ? `${teamName} · ${era}` : teamName));
   document.getElementById(`formation-${side}-badge`).textContent = lineup.formation;
-  document.getElementById(`source-${side}`).textContent = lineup.source;
+  document.getElementById(`source-${side}`).textContent = _displayLabel(lineup);
 
   // Group by row — respect match mode player count
   const nPlayersRL = { '3v3':3, '5v5':5, '11v11':11 }[_matchMode] || 11;
@@ -974,7 +1567,7 @@ function renderTimeline(scorersA, scorersB, cardsA, cardsB, teamA, teamB, matchP
   const header = document.getElementById('timeline-header');
   header.innerHTML =
     `<span class="tl-hdr-team" style="color:var(--accent-a)">${escHtml(teamA)}</span>` +
-    `<span class="tl-hdr-sep">${evCount} ${evCount !== 1 ? t('timeline-events-suffix-pl') : t('timeline-events-suffix')}</span>` +
+    `<span class="tl-hdr-sep">·</span>` +
     `<span class="tl-hdr-team" style="color:var(--accent-b)">${escHtml(teamB)}</span>`;
 
   const container = document.getElementById('timeline-events');
@@ -1372,7 +1965,7 @@ function skipPreMatch() {
 
   // Swaps detected → re-simulate with the new lineup so results reflect the changes
   const playBtn = document.querySelector('.pm-start-btn');
-  if (playBtn) { playBtn.disabled = true; playBtn.textContent = '⏳ Recalculando...'; }
+  if (playBtn) { playBtn.disabled = true; playBtn.textContent = t('vs-recalc'); }
 
   const body = {
     teamA: _pmPayload.teamA, eraA: _pmPayload.eraA || '',
@@ -1384,6 +1977,7 @@ function skipPreMatch() {
     refereeId:  _pmPayload.refereeId || null,
     isFinal:    _pmPayload.isFinal   || false,
     weatherId:  _pmPayload.weatherId || null,
+    lang:       _lang,
     playersOverrideA: luA.players,
     playersOverrideB: luB.players,
   };
@@ -1395,12 +1989,12 @@ function skipPreMatch() {
   })
     .then(r => r.json())
     .then(newData => {
-      if (playBtn) { playBtn.disabled = false; playBtn.textContent = '▶ Iniciar Partido'; }
+      if (playBtn) { playBtn.disabled = false; playBtn.textContent = t('pm-start-btn'); }
       // Preserve original badges (re-sim may not re-fetch them)
       doLaunch({ ...newData, badgeA: newData.badgeA || _pmData.badgeA, badgeB: newData.badgeB || _pmData.badgeB });
     })
     .catch(() => {
-      if (playBtn) { playBtn.disabled = false; playBtn.textContent = '▶ Iniciar Partido'; }
+      if (playBtn) { playBtn.disabled = false; playBtn.textContent = t('pm-start-btn'); }
       doLaunch(_pmData); // fallback to original if re-sim fails
     });
 }
@@ -1469,7 +2063,7 @@ function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
       card.dataset.slot   = player.name;
       card.dataset.pmSide = side;
       card.classList.add('pm-starter');
-      card.title = `${player.name} — clic para cambio`;
+      card.title = `${player.name} ${t('pm-card-change')}`;
       card.addEventListener('click', () => _handlePmCardClick(card, side));
       rowEl.appendChild(card);
       cardIdx++;
@@ -1479,7 +2073,7 @@ function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
   block.appendChild(rowsWrap);
 
   // ── Bench section — only if at least one real squad player ──────
-  const realBench = _matchMode === '11v11' ? (lineup.bench || []).filter(p => p.isReal) : [];
+  const realBench = _matchMode === '11v11' ? (lineup.bench || []).filter(p => p.isReal).slice(0, 5) : [];
   if (realBench.length > 0) {
     const benchLabel = document.createElement('div');
     benchLabel.className = 'pm-bench-label';
@@ -1494,7 +2088,7 @@ function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
       card.dataset.slot   = player.name;
       card.dataset.pmSide = side;
       card.classList.add('pm-sub');
-      card.title = `${player.name} — clic para sustituir`;
+      card.title = `${player.name} ${t('pm-card-sub')}`;
       card.addEventListener('click', () => _handlePmCardClick(card, side));
       benchRow.appendChild(card);
     });
@@ -1803,8 +2397,8 @@ function _jerseyIcon(col, num, col2) {
     <!-- Shoulder seam line -->
     <line x1="13" y1="24" x2="41" y2="24" stroke="rgba(255,255,255,.18)" stroke-width=".8" stroke-dasharray="2.5,2"/>
     <!-- Number -->
-    <text x="27" y="45" text-anchor="middle" dominant-baseline="middle"
-          font-size="18" fill="rgba(255,255,255,.96)" font-weight="900"
+    <text x="27" y="47" text-anchor="middle" dominant-baseline="middle"
+          font-size="16" fill="rgba(255,255,255,.22)" font-weight="900"
           font-family="'Arial Black',Arial,sans-serif">${num}</text>
   </svg>`;
 }
@@ -1840,7 +2434,7 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
   const kitColor2 = kit2Override || null;
   const jerseyN  = _JERSEY_NUM[player.position] ?? 0;
 
-  // Hash for stat variation (kept for potential future use)
+  // Hash for stat variation
   let h = 0;
   for (let i = 0; i < player.name.length; i++) h = ((h * 31) + player.name.charCodeAt(i)) & 0xffff;
 
@@ -1863,7 +2457,49 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
     `<div class="pmc-top">${badgeCorner}<div class="pmc-ovr-pos"><div class="pmc-ovr">${rating}</div><div class="pmc-pos-tag">${escHtml(player.position)}</div></div></div>` +
     `<div class="pmc-sil">${_jerseyIcon(kitColor, jerseyN || '', kitColor2)}</div>` +
     `<div class="pmc-name">${escHtml(display)}</div>`;
+
+  // ── Hover stats tooltip ──────────────────────────────────
+  const tipColor = tier === 'elite' ? '#f7d02e' : tier === 'gold' ? '#daa520' : tier === 'silver' ? '#c0c0e0' : '#c48040';
+  const stats = _deriveStats(player.position, rating, h);
+  const tipHtml = stats.map(s =>
+    `<div class="pmc-tip-row"><span class="pmc-tip-lbl">${s.label}</span><span class="pmc-tip-val" style="color:${tipColor}">${s.val}</span></div>`
+  ).join('');
+  const tipEl = document.createElement('div');
+  tipEl.className = 'pmc-tooltip';
+  tipEl.innerHTML = tipHtml;
+  card.appendChild(tipEl);
+
   return card;
+}
+
+// Derive 4 position-specific stats from OVR + name hash for variety
+function _deriveStats(pos, ovr, nhash) {
+  // [label, bias relative to OVR]
+  const profiles = {
+    GK:  [['RFL', 14],['POS', 8],['PAR', 5],['SAL', -5]],
+    CB:  [['DEF', 10],['FIS', 6],['INT', 4],['PAS', -6]],
+    LB:  [['DEF', 5],['VEL', 8],['PAS', 4],['ATQ', -3]],
+    RB:  [['DEF', 5],['VEL', 8],['PAS', 4],['ATQ', -3]],
+    LWB: [['VEL', 9],['DEF', 4],['PAS', 5],['DRI', 2]],
+    RWB: [['VEL', 9],['DEF', 4],['PAS', 5],['DRI', 2]],
+    DM:  [['DEF', 7],['PAS', 4],['FIS', 5],['VIS', -3]],
+    CM:  [['PAS', 6],['VIS', 6],['DRI', 2],['TIR', -4]],
+    CAM: [['PAS', 7],['DRI', 8],['VIS', 5],['TIR', 3]],
+    LM:  [['VEL', 8],['DRI', 6],['PAS', 4],['TIR', 0]],
+    RM:  [['VEL', 8],['DRI', 6],['PAS', 4],['TIR', 0]],
+    LW:  [['VEL', 10],['DRI', 8],['TIR', 3],['PAS', 2]],
+    RW:  [['VEL', 10],['DRI', 8],['TIR', 3],['PAS', 2]],
+    ST:  [['TIR', 12],['VEL', 7],['POT', 5],['DRI', 3]],
+    CF:  [['TIR', 10],['DRI', 6],['VIS', 6],['POT', 4]],
+    SS:  [['TIR', 8],['DRI', 5],['VEL', 6],['VIS', 5]],
+  };
+  const fallback = [['PAS', 4],['DRI', 2],['TIR', 0],['DEF', -4]];
+  const profile = profiles[pos] || fallback;
+  return profile.slice(0, 4).map(([label, bias], i) => {
+    const noise = ((nhash >> (i * 4)) & 7) - 3; // -3 … +3
+    const val   = Math.min(99, Math.max(55, Math.round(ovr + bias + noise)));
+    return { label, val };
+  });
 }
 
 // Notable player overrides — always displayed correctly regardless of team tier.
@@ -2285,6 +2921,10 @@ let _lpParticleEl    = null;
 let _driftTick       = 0;     // attack-wave counter
 let _attackBias      = 0;     // +1=team A attacking, -1=team B attacking
 let _attackBiasTimer = null;
+let _heatmapData     = { a: [], b: [] }; // position samples per team
+let _distanceData    = {};               // player name → accumulated px distance
+let _prevPos         = {};               // last known position per player name
+let _distSamples     = 0;                // drift-tick distance samples taken this match (for km normalisation)
 
 function _lpHexGrid(W, H) {
   const s = 9;
@@ -2309,6 +2949,12 @@ function _lpHexGrid(W, H) {
 function initLivePitch(lineupA, lineupB) {
   const svg = document.getElementById('live-pitch-svg');
   if (!svg) return;
+
+  // Reset heatmap/distance tracking for fresh match
+  _heatmapData = { a: [], b: [] };
+  _distanceData = {};
+  _prevPos = {};
+  _distSamples = 0;
 
   const W = _LP.W, H = _LP.H, cx = _LP.cx, cy = _LP.cy;
 
@@ -2363,6 +3009,15 @@ function initLivePitch(lineupA, lineupB) {
       stroke="rgba(255,255,255,.1)"  stroke-width=".4"/>
     <rect x="58" y="${H-11}" width="44" height="10" rx="1"
       stroke="rgba(255,255,255,.1)"  stroke-width=".4"/>
+    <!-- Goal frames (crossbar + posts) -->
+    <line x1="58" y1="1"       x2="102" y2="1"       stroke="rgba(255,255,255,.65)" stroke-width="1.8"/>
+    <line x1="58" y1="1"       x2="58"  y2="11"      stroke="rgba(255,255,255,.5)"  stroke-width="1.4"/>
+    <line x1="102" y1="1"      x2="102" y2="11"      stroke="rgba(255,255,255,.5)"  stroke-width="1.4"/>
+    <rect x="58.5" y="1.5"     width="43" height="9" fill="rgba(79,131,255,.1)"     rx="0"/>
+    <line x1="58" y1="${H-1}"  x2="102" y2="${H-1}"  stroke="rgba(255,255,255,.65)" stroke-width="1.8"/>
+    <line x1="58" y1="${H-1}"  x2="58"  y2="${H-11}" stroke="rgba(255,255,255,.5)"  stroke-width="1.4"/>
+    <line x1="102" y1="${H-1}" x2="102" y2="${H-11}" stroke="rgba(255,255,255,.5)"  stroke-width="1.4"/>
+    <rect x="58.5" y="${H-10.5}" width="43" height="9" fill="rgba(255,77,85,.1)"    rx="0"/>
   </g>`;
 
   // ── Border glow ─────────────────────────────────────────────────────────
@@ -2543,7 +3198,9 @@ function initPenaltyPitch(lineupA, lineupB) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     g.setAttribute('transform', `translate(${x},${y})`);
     g.classList.add('lp-player-g', 'lp-hero-dot');
+    // Set both current position AND home anchor so drift (if any) stays anchored
     g.dataset.bx = x; g.dataset.by = y;
+    g.dataset.homex = x; g.dataset.homey = y;
     g.innerHTML = `
       <circle r="9" fill="${fill}" opacity=".2" class="lp-dot-outer-ring"/>
       <circle r="7" fill="${fill}" stroke="${rim}" stroke-width="2"
@@ -2570,7 +3227,8 @@ function initPenaltyPitch(lineupA, lineupB) {
   svg.appendChild(ballG);
   _pitchDots.ball = ballG;
 
-  _startPitchDrift();
+  // Penalty pitch: GKs should sit still — no drift interval needed
+  // (_driftPlayers jitter would move them around the full field)
 }
 
 function _startPitchDrift() {
@@ -2607,6 +3265,30 @@ function _driftPlayers() {
   const yBiasB = _attackBias === -1 ? -6 : _attackBias === 1 ? 4 : 0;
   _pitchDots.a.forEach(g => movePlayer(g, yBiasA));
   _pitchDots.b.forEach(g => movePlayer(g, yBiasB));
+
+  // ── Heatmap + distance tracking (every other tick) ───────────────────
+  if (_driftTick % 2 === 0) {
+    _distSamples++;
+    [..._pitchDots.a, ..._pitchDots.b].forEach(g => {
+      const nx   = parseFloat(g.dataset.bx);
+      const ny   = parseFloat(g.dataset.by);
+      const team = g.dataset.team;
+      const key  = g.dataset.name;
+      // Heatmap sample (normalised 0-1, cap at 800 per team)
+      if (team === 'a' || team === 'b') {
+        if (_heatmapData[team] && _heatmapData[team].length < 800) {
+          _heatmapData[team].push({ x: nx / W, y: ny / H });
+        }
+      }
+      // Distance accumulation
+      if (key && _prevPos[key]) {
+        const dx = nx - _prevPos[key].x;
+        const dy = ny - _prevPos[key].y;
+        _distanceData[key] = (_distanceData[key] || 0) + Math.sqrt(dx * dx + dy * dy);
+      }
+      if (key) _prevPos[key] = { x: nx, y: ny, team };
+    });
+  }
 
   // Ball: 40% chance "pass" near a random player, else roll freely across the whole field
   if (_pitchDots.ball) {
@@ -2775,7 +3457,293 @@ function stopLivePitch() {
   if (_pitchDriftInterval) { clearInterval(_pitchDriftInterval); _pitchDriftInterval = null; }
   if (_attackBiasTimer)    { clearTimeout(_attackBiasTimer);     _attackBiasTimer = null; }
   _attackBias = 0; _driftTick = 0;
+  // Snapshot final player positions into _heatmapData so the post-match card always
+  // has data even in "⚡ Directo" (tickMs=0) where the drift interval fires very few times.
+  const W = _LP.W || 1, H = _LP.H || 1;
+  [..._pitchDots.a, ..._pitchDots.b].forEach(g => {
+    const nx   = parseFloat(g.dataset.bx);
+    const ny   = parseFloat(g.dataset.by);
+    const team = g.dataset.team;
+    const key  = g.dataset.name;
+    if ((team === 'a' || team === 'b') && _heatmapData[team] && !isNaN(nx)) {
+      _heatmapData[team].push({ x: nx / W, y: ny / H });
+      if (key) _prevPos[key] = (_prevPos[key] || { x: nx, y: ny, team });
+    }
+  });
   _pitchDots = { a: [], b: [], ball: null };
+  // _heatmapData / _distanceData / _prevPos kept alive for post-match render
+}
+
+// ── Match analysis: heatmap + distance recorrida ─────────────
+// Canvas-based thermal heatmap: transparent → dark-blue → cyan → green → yellow → orange → red
+function _buildHeatColorMap() {
+  const stops = [
+    [0,   [0,  0,   0,   0  ]],
+    [20,  [0,  0,   100, 60 ]],
+    [60,  [0,  30,  220, 150]],
+    [110, [0,  190, 130, 200]],
+    [160, [180,225, 0,   225]],
+    [205, [255,110, 0,   245]],
+    [255, [255, 20, 0,   255]]
+  ];
+  const map = [];
+  for (let i = 0; i < 256; i++) {
+    let s0 = stops[0], s1 = stops[1];
+    for (let j = 0; j < stops.length - 1; j++) {
+      if (i >= stops[j][0] && i <= stops[j + 1][0]) { s0 = stops[j]; s1 = stops[j + 1]; break; }
+    }
+    const fac = s1[0] > s0[0] ? (i - s0[0]) / (s1[0] - s0[0]) : 0;
+    map.push(s0[1].map((v, k) => Math.round(v + (s1[1][k] - v) * fac)));
+  }
+  return map;
+}
+
+// ── Draw global (both-team) heatmap by layering A then B ────────
+function _drawHeatmapGlobal(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const CW = canvas.width, CH = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#061008';
+  ctx.fillRect(0, 0, CW, CH);
+
+  // Draw team A in blue channel, B in red channel independently then composite
+  const drawTeamLayer = (samples, colorStop0, colorStop1) => {
+    const off = document.createElement('canvas');
+    off.width = CW; off.height = CH;
+    const octx = off.getContext('2d');
+    octx.fillStyle = '#000'; octx.fillRect(0, 0, CW, CH);
+    octx.globalCompositeOperation = 'lighter';
+    const R = CW * 0.12;
+    samples.forEach(({ x, y }) => {
+      const px = x * CW, py = y * CH;
+      const g = octx.createRadialGradient(px, py, 0, px, py, R);
+      g.addColorStop(0, colorStop0); g.addColorStop(1, 'rgba(0,0,0,0)');
+      octx.fillStyle = g;
+      octx.beginPath(); octx.arc(px, py, R, 0, Math.PI * 2); octx.fill();
+    });
+    return octx.getImageData(0, 0, CW, CH);
+  };
+
+  const sa = _heatmapData.a.length >= 4 ? drawTeamLayer(_heatmapData.a, 'rgba(79,131,255,0.09)', '') : null;
+  const sb = _heatmapData.b.length >= 4 ? drawTeamLayer(_heatmapData.b, 'rgba(255,77,85,0.09)',  '') : null;
+
+  if (sa || sb) {
+    const out = ctx.createImageData(CW, CH);
+    const od  = out.data;
+    const la = sa ? sa.data : null;
+    const lb = sb ? sb.data : null;
+    const la_len = la ? la.length : 0;
+    for (let i = 0; i < od.length; i += 4) {
+      const va = la && i < la_len ? la[i] : 0;
+      const vb = lb && i < lb.length ? lb[i] : 0;
+      // blue team (A) → blue/cyan tones; red team (B) → orange/red tones
+      const [r1, g1, b1] = _heatVal(va, [0,0,120], [0,120,255], [0,220,255]);
+      const [r2, g2, b2] = _heatVal(vb, [80,0,0],  [255,80,0],  [255,220,0]);
+      od[i]   = Math.min(255, r1 + r2);
+      od[i+1] = Math.min(255, g1 + g2);
+      od[i+2] = Math.min(255, b1 + b2);
+      od[i+3] = Math.min(255, (va > 0 || vb > 0) ? 180 + Math.min(74, (va + vb) / 2) : 0);
+    }
+    ctx.putImageData(out, 0, 0);
+  }
+  _pitchOverlay(ctx, CW, CH);
+}
+
+function _heatVal(v, col0, col1, col2) {
+  if (v === 0) return [0, 0, 0];
+  const t = Math.min(1, v / 180);
+  if (t < 0.5) {
+    const f = t * 2;
+    return [Math.round(col0[0] + (col1[0] - col0[0]) * f), Math.round(col0[1] + (col1[1] - col0[1]) * f), Math.round(col0[2] + (col1[2] - col0[2]) * f)];
+  }
+  const f = (t - 0.5) * 2;
+  return [Math.round(col1[0] + (col2[0] - col1[0]) * f), Math.round(col1[1] + (col2[1] - col1[1]) * f), Math.round(col1[2] + (col2[2] - col1[2]) * f)];
+}
+
+function _pitchOverlay(ctx, CW, CH) {
+  ctx.globalAlpha = 0.60;
+  ctx.strokeStyle = 'rgba(255,255,255,0.9)';
+  ctx.lineWidth = 1.2;
+  ctx.strokeRect(2, 2, CW - 4, CH - 4);
+  ctx.beginPath(); ctx.moveTo(2, CH / 2); ctx.lineTo(CW - 2, CH / 2); ctx.stroke();
+  ctx.beginPath(); ctx.arc(CW / 2, CH / 2, CW * 0.13, 0, Math.PI * 2); ctx.stroke();
+  const pa = CW * 0.44, paH = CH * 0.165;
+  ctx.strokeRect((CW - pa) / 2, 2, pa, paH);
+  ctx.strokeRect((CW - pa) / 2, CH - paH - 2, pa, paH);
+  const ga = CW * 0.275, gaH = CH * 0.067;
+  ctx.strokeRect((CW - ga) / 2, 2, ga, gaH);
+  ctx.strokeRect((CW - ga) / 2, CH - gaH - 2, ga, gaH);
+  ctx.globalAlpha = 0.75;
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.beginPath(); ctx.arc(CW / 2, CH * 0.118, 2.2, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(CW / 2, CH * 0.882, 2.2, 0, Math.PI * 2); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function _drawHeatmapCanvas(canvasId, samples) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const CW = canvas.width, CH = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#061008';
+  ctx.fillRect(0, 0, CW, CH);
+
+  if (samples.length >= 4) {
+    const off = document.createElement('canvas');
+    off.width = CW; off.height = CH;
+    const octx = off.getContext('2d');
+    octx.fillStyle = '#000';
+    octx.fillRect(0, 0, CW, CH);
+    octx.globalCompositeOperation = 'lighter';
+    const R = CW * 0.12;
+    samples.forEach(({ x, y }) => {
+      const px = x * CW, py = y * CH;
+      const g = octx.createRadialGradient(px, py, 0, px, py, R);
+      g.addColorStop(0,   'rgba(255,255,255,0.07)');
+      g.addColorStop(0.4, 'rgba(255,255,255,0.025)');
+      g.addColorStop(1,   'rgba(0,0,0,0)');
+      octx.fillStyle = g;
+      octx.beginPath();
+      octx.arc(px, py, R, 0, Math.PI * 2);
+      octx.fill();
+    });
+    const sp = octx.getImageData(0, 0, CW, CH).data;
+    let maxI = 0;
+    for (let i = 0; i < sp.length; i += 4) if (sp[i] > maxI) maxI = sp[i];
+    if (maxI > 0) {
+      const colorMap = _buildHeatColorMap();
+      const out = ctx.createImageData(CW, CH);
+      const od  = out.data;
+      for (let i = 0; i < sp.length; i += 4) {
+        const [r, g, b, a] = colorMap[Math.min(255, Math.floor(sp[i] / maxI * 255))];
+        od[i] = r; od[i+1] = g; od[i+2] = b; od[i+3] = a;
+      }
+      ctx.putImageData(out, 0, 0);
+    }
+  }
+  _pitchOverlay(ctx, CW, CH);
+}
+
+let _hmActiveTab = 'global';
+
+function _switchHmTab(team, btn) {
+  _hmActiveTab = team;
+  const wrap = btn.closest('.ma-heatmap-wrap');
+  wrap.querySelectorAll('.ma-hm-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  wrap.querySelectorAll('.ma-canvas').forEach(c => { c.style.display = 'none'; });
+  const target = document.getElementById(`ma-canvas-${team}`);
+  if (target) target.style.display = 'block';
+  if (team === 'global') _drawHeatmapGlobal('ma-canvas-global');
+  _refreshDistList();
+}
+
+function _refreshDistList() {
+  const container = document.querySelector('.ma-distance');
+  if (!container) return;
+  const filterTeam = _hmActiveTab === 'global' ? null : _hmActiveTab;
+  const entries = Object.entries(_distanceData)
+    .filter(([name, d]) => d > 0 && (!filterTeam || _prevPos[name]?.team === filterTeam))
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 11);
+  const maxDist = entries.length ? entries[0][1] : 1;
+  const header = container.querySelector('.ma-dist-header');
+  const distHtml = entries.map(([name, dist], idx) => {
+    const pct   = Math.round(dist / maxDist * 100);
+    const info  = _prevPos[name];
+    const isA   = info?.team === 'a';
+    const color = isA ? '#4f83ff' : '#ff4d55';
+    const nm    = name.split(' ');
+    const label = nm.length > 1 ? `${nm[0][0]}. ${nm[nm.length - 1]}` : name;
+    const km    = _pxToKm(dist).toFixed(1);
+    return `<div class="ma-dist-row">
+      <span class="ma-dist-rank">${idx + 1}</span>
+      <div class="ma-dist-dot" style="background:${color};box-shadow:0 0 5px ${color}88"></div>
+      <span class="ma-dist-name">${escHtml(label.toUpperCase())}</span>
+      <div class="ma-dist-bar-wrap"><div class="ma-dist-bar" style="width:${pct}%;background:linear-gradient(90deg,${color}55,${color})"></div></div>
+      <span class="ma-dist-val">${km}&thinsp;km</span>
+    </div>`;
+  }).join('');
+  // Remove old rows (keep the header)
+  container.querySelectorAll('.ma-dist-row').forEach(el => el.remove());
+  container.querySelector('span[style]')?.remove();
+  if (distHtml) {
+    container.insertAdjacentHTML('beforeend', distHtml);
+  } else {
+    container.insertAdjacentHTML('beforeend', `<span style="opacity:.3;font-size:.6rem">${t('ma-no-data')}</span>`);
+  }
+}
+
+// Realistic km scaling: drift samples fire every 2nd drift tick (600ms each).
+// 1-min mode (90×667ms) accumulates ~50 distance-samples → reference baseline.
+// Any speed mode is normalised so the final display always represents 90 min.
+function _pxToKm(px) {
+  const REF_SAMPLES = 50;  // calibrated for 1-min mode
+  const factor = _distSamples > 0 ? REF_SAMPLES / _distSamples : 1;
+  return (px / _LP.W * 2.2 * factor);
+}
+
+function renderMatchAnalysis(teamA, teamB) {
+  const card = document.getElementById('match-analysis-card');
+  if (!card) return;
+  const hasHeat = _heatmapData.a.length > 0 || _heatmapData.b.length > 0;
+  const hasDist = Object.keys(_distanceData).length > 0;
+  if (!hasHeat && !hasDist) { card.classList.add('hidden'); return; }
+  card.classList.remove('hidden');
+
+  // ── Distance per player (top 11) ──────────────────────────
+  const distEntries = Object.entries(_distanceData)
+    .filter(([, d]) => d > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 11);
+  const maxDist = distEntries.length ? distEntries[0][1] : 1;
+  const distHtml = distEntries.map(([name, dist], idx) => {
+    const pct   = Math.round(dist / maxDist * 100);
+    const info  = _prevPos[name];
+    const isA   = info?.team === 'a';
+    const color = isA ? '#4f83ff' : '#ff4d55';
+    const nm    = name.split(' ');
+    const label = nm.length > 1 ? `${nm[0][0]}. ${nm[nm.length - 1]}` : name;
+    const km    = _pxToKm(dist).toFixed(1);
+    return `<div class="ma-dist-row">
+      <span class="ma-dist-rank">${idx + 1}</span>
+      <div class="ma-dist-dot" style="background:${color};box-shadow:0 0 5px ${color}88"></div>
+      <span class="ma-dist-name">${escHtml(label.toUpperCase())}</span>
+      <div class="ma-dist-bar-wrap"><div class="ma-dist-bar" style="width:${pct}%;background:linear-gradient(90deg,${color}55,${color})"></div></div>
+      <span class="ma-dist-val">${km}&thinsp;km</span>
+    </div>`;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="ma-title">${t('ma-title')}</div>
+    <div class="ma-body">
+      <div class="ma-heatmap-wrap">
+        <div class="ma-hm-tabs">
+          <button class="ma-hm-tab active" data-team="global" onclick="_switchHmTab('global',this)">Global</button>
+          <button class="ma-hm-tab" data-team="a" onclick="_switchHmTab('a',this)">${escHtml(teamA)}</button>
+          <button class="ma-hm-tab" data-team="b" onclick="_switchHmTab('b',this)">${escHtml(teamB)}</button>
+        </div>
+        <div class="ma-hm-frame">
+          <canvas id="ma-canvas-global" class="ma-canvas" width="240" height="360"></canvas>
+          <canvas id="ma-canvas-a"      class="ma-canvas" width="240" height="360" style="display:none"></canvas>
+          <canvas id="ma-canvas-b"      class="ma-canvas" width="240" height="360" style="display:none"></canvas>
+        </div>
+        <div class="ma-hm-legend"><span>${t('ma-hm-low')}</span><div class="ma-hm-grad"></div><span>${t('ma-hm-high')}</span></div>
+      </div>
+      <div class="ma-distance">
+        <div class="ma-dist-header">
+          <div class="ma-dist-title">${t('ma-dist-label')}</div>
+        </div>
+        ${distHtml || `<span style="opacity:.3;font-size:.6rem">${t('ma-no-data')}</span>`}
+      </div>
+    </div>`;
+
+  requestAnimationFrame(() => {
+    _drawHeatmapGlobal('ma-canvas-global');
+    _drawHeatmapCanvas('ma-canvas-a', _heatmapData.a);
+    _drawHeatmapCanvas('ma-canvas-b', _heatmapData.b);
+  });
 }
 
 // ── Live match playback ───────────────────────────────────────
@@ -2809,6 +3777,15 @@ function playLiveMatch(data, payload, tickMs = 300) {
 
   // ── Instant / "Directo" mode: skip live viewer entirely ─────────
   if (tickMs === 0) {
+    // Generate heatmap + distance data synthetically so post-match analysis card works.
+    // Init the pitch (populates _pitchDots with player home positions), then run
+    // _driftPlayers() 120 times synchronously (~equivalent to a 90-min match at
+    // 600ms interval = 72s of samples → same order of magnitude as live mode).
+    const isPenMode = _livePayload?.matchMode === 'penalties';
+    if (!isPenMode && data.lineups?.teamA && data.lineups?.teamB) {
+      initLivePitch(data.lineups.teamA, data.lineups.teamB);
+      for (let i = 0; i < 120; i++) _driftPlayers();
+    }
     finishLive();
     return;
   }
@@ -2896,7 +3873,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
     if (type === 'injury')      return 1600;
     return 1800; // yellow/red
   }
-  let _preAcc = 0;
+  let _preAcc = isPenMode ? 0 : (900 + 3000 + 350);
   events.forEach(ev => {
     const fireAt  = ev.minute * TICK;
     const startAt = Math.max(fireAt, _preAcc);
@@ -2916,7 +3893,9 @@ function playLiveMatch(data, payload, tickMs = 300) {
 
   // Schedule events with sequential queue
   let scoreA = 0, scoreB = 0;
-  let accDelay = 0;
+  // Reserve room for the kick-off overlay (fires at 900ms, holds 3000ms, gap 350ms)
+  // so the first match event never cancels it prematurely.
+  let accDelay = isPenMode ? 0 : (900 + 3000 + 350);
 
   events.forEach(ev => {
     const fireAt  = ev.minute * TICK;
@@ -2977,19 +3956,30 @@ function playLiveMatch(data, payload, tickMs = 300) {
   if (pens) {
     const kicks = Math.max(pens.shotsA.length, pens.shotsB.length);
 
+    // After a regular match that goes to pens the FT overlay must fully clear first.
+    // FT fires at regularMs+50, holds 3000ms, fades 550ms → gone at regularMs+3600.
+    // penSeqStart ensures everything penalty-related starts AFTER that (+200ms safety pad).
+    const penSeqStart = isPenMode ? 0 : regularMs + 3800;
+
+    // Switch live pitch to kicker+GK view before shootout splash
+    _eventTimers.push(setTimeout(() => {
+      stopLivePitch();
+      initPenaltyPitch(data.lineups?.teamA, data.lineups?.teamB);
+    }, penSeqStart));
+
     // Cinematic penalty shootout splash
-    _eventTimers.push(setTimeout(() => triggerShootoutSplash(payload.teamA, payload.teamB), regularMs + 300));
+    _eventTimers.push(setTimeout(() => triggerShootoutSplash(payload.teamA, payload.teamB), penSeqStart + 100));
 
     // Announcement feed entry
-    _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), regularMs + 500));
+    _eventTimers.push(setTimeout(() => addFeedEvent({ type: 'pen_start', minute: 90, name: t('pen-shootout-title'), side: 'N' }), penSeqStart + 300));
 
     // GK names for the PARADA label (opposing GK faces each kick)
     const gkA = data.lineups?.teamA?.players?.find(p => p.position === 'GK')?.name || '';
     const gkB = data.lineups?.teamB?.players?.find(p => p.position === 'GK')?.name || '';
 
-    // Splash starts at regularMs+300, countdown 4×700ms + 600ms hide = ~3400ms → done at regularMs+3700.
+    // Splash starts at penSeqStart+100, countdown 4×700ms + 600ms hide = ~3400ms → done at penSeqStart+3500.
     // Add 400ms padding so the first kick starts cleanly after the overlay is gone.
-    let penT = regularMs + 4100;
+    let penT = penSeqStart + 3900;
     let runA = 0, runB = 0;
     for (let i = 0; i < kicks; i++) {
       const kA = pens.shotsA[i];
@@ -3205,6 +4195,8 @@ function finishLive() {
     if (tc) tc.scrollTop = 0;
     // Flush any still-hidden timeline events so the full timeline is visible immediately
     flushTimeline();
+    // Render post-match analysis card (heatmap + distance)
+    renderMatchAnalysis(_livePayload?.teamA || '', _livePayload?.teamB || '');
     renderResult(_liveData, _livePayload);
   }, 620);
 }
@@ -3215,21 +4207,118 @@ function skipLive() {
   finishLive();
 }
 
-// ── Share result ───────────────────────────────────────────
+// ── Share result ─────────────────────────────────────────────────────────────
+// Generates a 1080×1920 Canvas poster and shares/downloads it.
 function shareResult() {
-  const nameA = document.getElementById('poster-name-a').textContent;
-  const nameB = document.getElementById('poster-name-b').textContent;
-  const eraA  = document.getElementById('poster-era-a').textContent;
-  const eraB  = document.getElementById('poster-era-b').textContent;
-  const score = document.getElementById('poster-score').textContent.trim().replace(' : ', '-');
-  const text  = `⚽ ${nameA}${eraA ? ' ('+eraA+')' : ''} ${score} ${nameB}${eraB ? ' ('+eraB+')' : ''}\n🎮 Simulador de Partidos de Fútbol`;
-  if (typeof navigator.share === 'function') {
-    navigator.share({ title: 'Resultado del partido', text }).catch(() => {});
-  } else {
-    navigator.clipboard.writeText(text)
-      .then(() => showToast(t('tooltip-copied')))
-      .catch(() => showToast(t('tooltip-copy-fail')));
+  if (!_shareData) return;
+  _openSharePanel(_shareData);
+}
+
+function _openSharePanel(data) {
+  const siteUrl = (window.GOLAZOX_CONFIG && window.GOLAZOX_CONFIG.siteUrl) || '';
+  const scoreText = `${data.teamA} ${data.scoreA}\u2013${data.scoreB} ${data.teamB}`;
+  const eraNote   = (data.eraA && data.eraA === data.eraB) ? ` [${data.eraA}]`
+                  : (data.eraA || data.eraB) ? ` [${[data.eraA, data.eraB].filter(Boolean).join(' / ')}]` : '';
+  const shareText = `\u26BD ${scoreText}${eraNote}\nGolazoX.com${siteUrl ? '\n' + siteUrl : ''}`;
+  const encodedText = encodeURIComponent(shareText);
+
+  const existing = document.getElementById('share-panel-overlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'share-panel-overlay';
+  overlay.className = 'share-panel-overlay';
+  overlay.innerHTML = `
+    <div class="share-panel">
+      <div class="share-panel-title">Compartir resultado</div>
+      <div class="share-panel-options">
+        <div class="share-opt" id="sopt-native">
+          <div class="share-opt-icon">\uD83D\uDCF8</div>
+          <div class="share-opt-label">Imagen</div>
+        </div>
+        <div class="share-opt" id="sopt-copy">
+          <div class="share-opt-icon">\uD83D\uDCCB</div>
+          <div class="share-opt-label">Copiar</div>
+        </div>
+        <div class="share-opt" id="sopt-whatsapp">
+          <div class="share-opt-icon">\uD83D\uDCAC</div>
+          <div class="share-opt-label">WhatsApp</div>
+        </div>
+        <div class="share-opt" id="sopt-twitter">
+          <div class="share-opt-icon">\uD83D\uDC26</div>
+          <div class="share-opt-label">X / Twitter</div>
+        </div>
+      </div>
+      <div class="share-panel-copied" id="share-copied">\u00A1Copiado al portapapeles!</div>
+      <button class="share-panel-cancel" id="share-cancel">Cancelar</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('open')));
+
+  function closePanel() {
+    overlay.classList.remove('open');
+    setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 320);
   }
+
+  overlay.addEventListener('click', e => { if (e.target === overlay) closePanel(); });
+  document.getElementById('share-cancel').addEventListener('click', closePanel);
+
+  // Option: native share with image
+  document.getElementById('sopt-native').addEventListener('click', () => {
+    closePanel();
+    const btn = document.querySelector('.btn-share');
+    if (btn) { btn.textContent = t('btn-share-loading'); btn.disabled = true; }
+    _generateShareCard(data).then(blob => {
+      if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
+      const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 30);
+      const fileName = `golazox-${slug(data.teamA)}-vs-${slug(data.teamB)}.png`;
+      const file = new File([blob], fileName, { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: `\u26BD ${scoreText}` }).catch(() => _scDownload(blob, fileName));
+      } else {
+        _scDownload(blob, fileName);
+      }
+    }).catch(err => {
+      console.error('[share]', err);
+      if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
+      showToast(t('tooltip-copy-fail'));
+    });
+  });
+
+  // Option: copy text
+  document.getElementById('sopt-copy').addEventListener('click', () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareText).then(() => {
+        const el = document.getElementById('share-copied');
+        if (el) { el.classList.add('visible'); setTimeout(() => el.classList.remove('visible'), 2200); }
+      }).catch(() => showToast(t('tooltip-copy-fail')));
+    } else {
+      showToast(t('tooltip-copy-fail'));
+    }
+  });
+
+  // Option: WhatsApp
+  document.getElementById('sopt-whatsapp').addEventListener('click', () => {
+    closePanel();
+    window.open(`https://wa.me/?text=${encodedText}`, '_blank', 'noopener,noreferrer');
+  });
+
+  // Option: X / Twitter
+  document.getElementById('sopt-twitter').addEventListener('click', () => {
+    closePanel();
+    window.open(`https://twitter.com/intent/tweet?text=${encodedText}`, '_blank', 'noopener,noreferrer');
+  });
+}
+
+function _scDownload(blob, fileName) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = fileName;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 8000);
 }
 
 function showToast(msg) {
@@ -3459,67 +4548,11 @@ function _penConfetti() {
   draw();
 }
 
-// ── Autocomplete (team name suggestions) ─────────────────────
-function setupAutocomplete(inputId, dropdownId, teamSide) {
-  const input = document.getElementById(inputId);
-  const drop  = document.getElementById(dropdownId);
-  if (!input || !drop) return;
-
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    if (q.length < 2) { drop.classList.add('hidden'); return; }
-    const matches = _acList.filter(s => s.name.toLowerCase().includes(q)).slice(0, 12);
-    if (!matches.length) { drop.classList.add('hidden'); return; }
-    drop.innerHTML = matches.map(m =>
-      `<div class="ac-item" data-val="${escHtml(m.name)}">` +
-      `<img class="ac-badge" src="${escHtml(badgeOrPlaceholder(m.badge))}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
-      `<span>${escHtml(m.name)}</span></div>`
-    ).join('');
-    drop.classList.remove('hidden');
-    drop.querySelectorAll('.ac-item').forEach(item => {
-      item.addEventListener('mousedown', e => {
-        e.preventDefault();
-        const val = item.dataset.val;
-        // Parse "Real Madrid 1960" → team="Real Madrid", era="1960"
-        const yearMatch = val.match(/\b(\d{4})\b/);
-        input.value = yearMatch ? val.replace(yearMatch[0], '').trim() : val;
-        const eraEl = document.getElementById(`era${teamSide}`);
-        if (yearMatch && eraEl && !eraEl.value.trim()) eraEl.value = yearMatch[1];
-        drop.classList.add('hidden');
-      });
-    });
-  });
-
-  input.addEventListener('keydown', e => {
-    const items = [...drop.querySelectorAll('.ac-item')];
-    if (!items.length || drop.classList.contains('hidden')) return;
-    const active = drop.querySelector('.ac-active');
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      const next = active ? active.nextElementSibling : items[0];
-      active?.classList.remove('ac-active');
-      next?.classList.add('ac-active');
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      const prev = active ? active.previousElementSibling : items[items.length - 1];
-      active?.classList.remove('ac-active');
-      prev?.classList.add('ac-active');
-    } else if (e.key === 'Enter' && active) {
-      active.dispatchEvent(new MouseEvent('mousedown'));
-    } else if (e.key === 'Escape') {
-      drop.classList.add('hidden');
-    }
-  });
-
-  input.addEventListener('blur', () => {
-    setTimeout(() => drop.classList.add('hidden'), 150);
-  });
-}
-
 // ── UI state helpers ──────────────────────────────────────
 function setLoading(on) {
   document.getElementById('loader').classList.toggle('hidden', !on);
-  document.getElementById('btn-simulate').disabled = on;
+  const clashBtn = document.getElementById('vs-clash');
+  if (clashBtn) clashBtn.disabled = on;
 }
 
 function showError(msg) {
@@ -3540,4 +4573,737 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SHARE CARD — Canvas 1080×1920 (9:16) infographic generator
+// No external dependencies. Pure Canvas API.
+// ════════════════════════════════════════════════════════════════════════════
+
+/** Load an image, returning null on error (never throws). */
+function _scLoadImg(src) {
+  return new Promise(resolve => {
+    if (!src) return resolve(null);
+    const img = new Image();
+    img.onload  = () => resolve(img);
+    img.onerror = () => resolve(null);
+    // crossOrigin='anonymous' is only needed for genuinely external URLs.
+    // Setting it on same-origin paths (e.g. /img/badges/…) triggers a CORS
+    // preflight that Express.static doesn't answer → onerror and canvas taint.
+    // For data: URIs no network request is made, so no header is needed either.
+    if (/^https?:\/\//.test(src)) img.crossOrigin = 'anonymous';
+    img.src = src;
+  });
+}
+
+/** Strip non-Latin characters (incl. emoji) so canvas text renders reliably. */
+function _scSafe(s) {
+  return String(s || '').replace(/[^\u0000-\u024F\u1E00-\u1EFF]/g, '').trim();
+}
+
+/** Draw a horizontal gradient divider line. */
+function _scDivider(ctx, y, W) {
+  const g = ctx.createLinearGradient(0, y, W, y);
+  g.addColorStop(0,   'rgba(0,212,255,0)');
+  g.addColorStop(0.3, 'rgba(0,212,255,0.45)');
+  g.addColorStop(0.7, 'rgba(0,212,255,0.45)');
+  g.addColorStop(1,   'rgba(0,212,255,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, y, W, 1.5);
+}
+
+/** Draw text with a neon glow. */
+function _scGlow(ctx, text, x, y, color, blur) {
+  ctx.save();
+  ctx.shadowColor = color; ctx.shadowBlur = blur;
+  ctx.fillStyle   = color;
+  ctx.fillText(text, x, y);
+  ctx.restore();
+}
+
+/** Draw a circular-clipped badge. Falls back to initials circle. */
+function _scBadge(ctx, img, cx, cy, r, glowColor, initials) {
+  ctx.save();
+  // Glow ring
+  ctx.shadowColor = glowColor; ctx.shadowBlur = 25;
+  ctx.strokeStyle = glowColor + 'aa'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(cx, cy, r + 5, 0, Math.PI * 2); ctx.stroke();
+  ctx.shadowBlur = 0;
+  // Clip circle
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.clip();
+  if (img) {
+    ctx.drawImage(img, cx - r, cy - r, r * 2, r * 2);
+  } else {
+    ctx.fillStyle = glowColor + '22'; ctx.fill();
+    ctx.font = `bold 52px "Rajdhani",Arial,sans-serif`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillStyle = glowColor;
+    ctx.fillText((initials || '?').slice(0, 3).toUpperCase(), cx, cy);
+  }
+  ctx.restore();
+}
+
+/**
+ * Generate and return a PNG Blob for the share card.
+ * @param {object} d  - _shareData snapshot
+ */
+async function _generateShareCard(d) {
+  // ── 1. Font loading ──────────────────────────────────────────────────────
+  await document.fonts.ready;
+  await Promise.allSettled([
+    'bold 230px "Rajdhani"', 'bold 170px "Rajdhani"',
+    'bold 130px "Rajdhani"', 'bold 110px "Rajdhani"',
+    'bold 88px "Rajdhani"',  'bold 58px "Rajdhani"',
+    'bold 56px "Rajdhani"',  'bold 30px "Rajdhani"',
+    '700 36px "Rajdhani"',   '700 27px "Rajdhani"',
+    '700 25px "Rajdhani"',   '600 23px "Rajdhani"',
+    '500 31px "Rajdhani"',   '500 30px "Rajdhani"',
+    '500 28px "Rajdhani"',   '400 26px "Rajdhani"',
+    '400 22px "Rajdhani"',
+  ].map(f => document.fonts.load(f).catch(() => null)));
+
+  // ── 2. Offscreen canvas — 1080 × 5000 scratch pad ────────────────────────
+  // H=5000 is intentionally oversized; the canvas is auto-cropped to
+  // finalH = footerY + 120 before export, so the output file is exactly as
+  // tall as the content — no wasted pixels, no cut-off sections.
+  const W = 1080, H = 5000;
+  const canvas = document.createElement('canvas');
+  canvas.width  = W;
+  canvas.height = H;
+  // alpha:false → the canvas has no alpha channel; compositing is faster and
+  // there are no premultiplied-alpha artefacts or transparent-edge black borders.
+  const ctx = canvas.getContext('2d', { alpha: false });
+  // Paranoid transform reset: ensure no DPR scale is inherited.
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  // High-quality badge/image downscaling.
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+
+  const CYAN    = '#00d4ff';
+  const MAGENTA = '#ff2d78';
+  const GOLD    = '#ffd700';
+  const WHITE   = '#ffffff';
+  const DIM     = 'rgba(255,255,255,0.55)';
+  const DIM2    = 'rgba(255,255,255,0.28)';
+  const isEN    = _lang === 'en';
+
+  // Effective scores (show penalty scores if applicable)
+  const finalScoreA = d.penalties ? (d.penalties.scoreA ?? d.scoreA) : d.scoreA;
+  const finalScoreB = d.penalties ? (d.penalties.scoreB ?? d.scoreB) : d.scoreB;
+
+  // Pre-load both badges in parallel
+  const [imgA, imgB] = await Promise.all([
+    _scLoadImg(d.badgeA),
+    _scLoadImg(d.badgeB),
+  ]);
+
+  // ── 3. Background ─────────────────────────────────────────────────────────
+  // Solid base fill FIRST. With alpha:false the canvas starts as opaque black;
+  // the explicit fill ensures we meet the #1a1a1a acceptance criterion and
+  // guarantees zero transparent/gap pixels even if the gradient below produces
+  // any floating-point edge artefact.
+  ctx.fillStyle = '#1a1a1a';
+  ctx.fillRect(0, 0, W, H);
+  // Gradient overlay on top of the solid base.
+  const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+  bgGrad.addColorStop(0,    '#070710');
+  bgGrad.addColorStop(0.5,  '#0b0d1a');
+  bgGrad.addColorStop(1,    '#110418');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Grid overlay
+  ctx.lineWidth = 1;
+  for (let x = 0; x <= W; x += 54) {
+    ctx.strokeStyle = `rgba(0,212,255,${x % 162 === 0 ? 0.06 : 0.022})`;
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y <= H; y += 54) {
+    ctx.strokeStyle = `rgba(0,212,255,${y % 162 === 0 ? 0.06 : 0.022})`;
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Decorative glow orbs — centred on the new compact match-banner zone
+  const addOrb = (x, y, r, color) => {
+    const radGrad = ctx.createRadialGradient(x, y, 0, x, y, r);
+    radGrad.addColorStop(0, color + '22');
+    radGrad.addColorStop(1, color + '00');
+    ctx.fillStyle = radGrad;
+    ctx.fillRect(x - r, y - r, r * 2, r * 2);
+  };
+  addOrb(200, 360, 320, '#00d4ff');
+  addOrb(880, 360, 320, '#ff2d78');
+  addOrb(540, 1200, 280, '#8800ff');
+
+  // Top neon edge bar
+  const topBar = ctx.createLinearGradient(0, 0, W, 0);
+  topBar.addColorStop(0,   'rgba(0,212,255,0)');
+  topBar.addColorStop(0.5, 'rgba(0,212,255,0.9)');
+  topBar.addColorStop(1,   'rgba(0,212,255,0)');
+  ctx.fillStyle = topBar; ctx.fillRect(0, 0, W, 3);
+
+  // ── HEADER ZONE: 0 – 192 ─────────────────────────────────────────────────
+  ctx.textAlign    = 'center';
+  ctx.textBaseline = 'alphabetic';
+
+  // GOLAZOX wordmark
+  ctx.font = 'bold 88px "Rajdhani",Arial,sans-serif';
+  _scGlow(ctx, 'GOLAZOX', W / 2, 92, CYAN, 35);
+
+  // Subtitle
+  ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = DIM;
+  ctx.fillText('HISTORIC MATCH SIMULATED', W / 2, 140);
+
+  // Context (stadium · weather)
+  const stadium = d.stadium ? `${_scSafe(d.stadium.name)} · ${_scSafe(d.stadium.city)}` : (isEN ? 'Neutral Ground' : 'Campo Neutral');
+  const weatherTxt = d.weather ? _scSafe(isEN ? d.weather.labelEn : d.weather.labelEs) : '';
+  const ctxLine = [stadium, weatherTxt].filter(Boolean).join('  ·  ').slice(0, 80);
+  ctx.font = '400 24px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = DIM2;
+  ctx.fillText(ctxLine, W / 2, 174);
+
+  _scDivider(ctx, 190, W);
+
+  // ── MATCH BANNER (both teams + score on one horizontal visual) ────────────
+  // curY is the "cursor" for all dynamic content from here down.
+  // Everything uses curY offsets so sections stack automatically.
+  let curY = 212;
+
+  // Badge A (left) and Badge B (right) — vertically centred on the score block
+  const BAN_CY = curY + 102;   // = 314  badge vertical centre
+  const BAN_AX = 165;           // badge A horizontal centre
+  const BAN_BX = W - 165;       // badge B horizontal centre  (= 915)
+  const BAN_R  = 82;            // badge radius
+  _scBadge(ctx, imgA, BAN_AX, BAN_CY, BAN_R, CYAN,    d.teamA);
+  _scBadge(ctx, imgB, BAN_BX, BAN_CY, BAN_R, MAGENTA, d.teamB);
+
+  // Score digits — 170 px is bold and readable; right-aligning A and left-
+  // aligning B around the centre creates clean score symmetry without the
+  // large digits ever overrunning the badge circles (different x zones).
+  const SCR_Y = curY + 182;  // = 394  score digit baseline
+  ctx.textBaseline = 'alphabetic';
+  ctx.font = 'bold 170px "Rajdhani",Arial,sans-serif';
+  ctx.shadowColor = WHITE; ctx.shadowBlur = 45; ctx.fillStyle = WHITE;
+  ctx.textAlign = 'right'; ctx.fillText(String(finalScoreA), W / 2 - 68, SCR_Y);
+  ctx.textAlign = 'left';  ctx.fillText(String(finalScoreB), W / 2 + 68, SCR_Y);
+  ctx.shadowBlur = 0;
+
+  // Colon separator
+  ctx.font = 'bold 110px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.30)';
+  ctx.textAlign = 'center';
+  ctx.fillText(':', W / 2, curY + 158);   // = 370
+
+  // Match result label
+  const matchLabel = d.matchMode === 'penalties'
+    ? (isEN ? 'PENALTY SHOOTOUT' : 'TANDA DE PENALTIS')
+    : d.penalties
+      ? (isEN ? 'DRAW  ·  PENALTIES' : 'EMPATE  ·  PENALTIS')
+      : (isEN ? 'FINAL SCORE' : 'RESULTADO FINAL');
+  ctx.font = '700 26px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = DIM2;
+  ctx.fillText(matchLabel, W / 2, curY + 218);  // = 430
+
+  // Penalty shootout scores (if applicable)
+  const hasPen = !!(d.penalties && d.penalties.scoreA != null);
+  if (hasPen) {
+    ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = GOLD + 'cc';
+    ctx.fillText(
+      `(${d.penalties.scoreA} – ${d.penalties.scoreB} ${isEN ? 'pen.' : 'pen.'})`,
+      W / 2, curY + 255   // = 467
+    );
+  }
+
+  // Team names — left-aligned from far-left for A, right-aligned to far-right
+  // for B. Placed *below* the badge/score block so they never clip digits.
+  // fitText shrinks font until the name fits maxW, then adds "…" if needed.
+  const NAME_MAX_W = 450;
+  const nameY      = curY + (hasPen ? 292 : 260);  // = 504 or 472
+
+  const fitText = (text, maxW, maxFs, minFs) => {
+    let fs = maxFs;
+    ctx.font = `bold ${fs}px "Rajdhani",Arial,sans-serif`;
+    while (ctx.measureText(text).width > maxW && fs > minFs) {
+      fs -= 2;
+      ctx.font = `bold ${fs}px "Rajdhani",Arial,sans-serif`;
+    }
+    let t = text;
+    if (ctx.measureText(t).width > maxW) {
+      while (t.length > 2 && ctx.measureText(t + '…').width > maxW) t = t.slice(0, -1);
+      t += '…';
+    }
+    return t;
+  };
+
+  const nmA = fitText(_scSafe(d.teamA), NAME_MAX_W, 44, 22);
+  ctx.textAlign = 'left'; ctx.fillStyle = WHITE;
+  ctx.shadowColor = CYAN; ctx.shadowBlur = 10;
+  ctx.fillText(nmA, 28, nameY);
+  ctx.shadowBlur = 0;
+
+  const nmB = fitText(_scSafe(d.teamB), NAME_MAX_W, 44, 22);
+  ctx.textAlign = 'right'; ctx.fillStyle = WHITE;
+  ctx.shadowColor = MAGENTA; ctx.shadowBlur = 10;
+  ctx.fillText(nmB, W - 28, nameY);
+  ctx.shadowBlur = 0;
+
+  const eraY = nameY + 40;
+  if (d.eraA) {
+    ctx.font = '500 27px "Rajdhani",Arial,sans-serif';
+    ctx.textAlign = 'left'; ctx.fillStyle = CYAN + 'bb';
+    ctx.fillText(_scSafe(d.eraA), 28, eraY);
+  }
+  if (d.eraB) {
+    ctx.font = '500 27px "Rajdhani",Arial,sans-serif';
+    ctx.textAlign = 'right'; ctx.fillStyle = MAGENTA + 'bb';
+    ctx.fillText(_scSafe(d.eraB), W - 28, eraY);
+  }
+  const hasEra = !!(d.eraA || d.eraB);
+  curY = eraY + (hasEra ? 52 : 30);
+
+  _scDivider(ctx, curY + 8, W);
+  curY += 32;
+
+  // ── SCORERS ───────────────────────────────────────────────────────────────
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = DIM2;
+  ctx.fillText(isEN ? 'GOALSCORERS' : 'GOLEADORES', W / 2, curY);
+  curY += 16;
+
+  // Team name colour-labels above their scorer column
+  ctx.font = '600 22px "Rajdhani",Arial,sans-serif';
+  ctx.textAlign = 'right'; ctx.fillStyle = CYAN + 'aa';
+  ctx.fillText(_scSafe(d.teamA).slice(0, 18), W / 2 - 22, curY);
+  ctx.textAlign = 'left';  ctx.fillStyle = MAGENTA + 'aa';
+  ctx.fillText(_scSafe(d.teamB).slice(0, 18), W / 2 + 22, curY);
+  curY += 8;
+
+  const maxRows = 4;
+  const sA      = (d.scorersA || []).slice(0, maxRows);
+  const sB      = (d.scorersB || []).slice(0, maxRows);
+  const rows    = Math.max(sA.length, sB.length, 1);
+
+  // Vertical divider between the two scorer columns
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  ctx.fillRect(W / 2 - 1, curY, 2, rows * 52 + 20);
+
+  ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
+  for (let i = 0; i < rows; i++) {
+    const ry = curY + 14 + i * 52;
+    const gA = sA[i];
+    const gB = sB[i];
+
+    if (gA) {
+      const nm     = _scSafe(gA.name);
+      const minTxt = `${gA.minute || '?'}'`;
+      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
+      const nmW = ctx.measureText(nm).width;
+      ctx.textAlign = 'right'; ctx.fillStyle = CYAN;
+      ctx.fillText(nm, W / 2 - 15, ry);
+      ctx.font = '500 24px "Rajdhani",Arial,sans-serif';
+      ctx.fillStyle = CYAN + '88'; ctx.textAlign = 'right';
+      ctx.fillText(minTxt, W / 2 - 15 - nmW - 10, ry);
+      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
+    } else {
+      ctx.textAlign = 'right'; ctx.fillStyle = DIM2;
+      ctx.fillText('—', W / 2 - 30, ry);
+    }
+
+    if (gB) {
+      const nm     = _scSafe(gB.name);
+      const minTxt = `${gB.minute || '?'}'`;
+      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
+      const nmW = ctx.measureText(nm).width;
+      ctx.textAlign = 'left'; ctx.fillStyle = MAGENTA;
+      ctx.fillText(nm, W / 2 + 15, ry);
+      ctx.font = '500 24px "Rajdhani",Arial,sans-serif';
+      ctx.fillStyle = MAGENTA + '88'; ctx.textAlign = 'left';
+      ctx.fillText(minTxt, W / 2 + 15 + nmW + 10, ry);
+      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
+    } else {
+      ctx.textAlign = 'left'; ctx.fillStyle = DIM2;
+      ctx.fillText('—', W / 2 + 30, ry);
+    }
+  }
+
+  curY += rows * 52 + 34;
+  _scDivider(ctx, curY, W);
+  curY += 42;
+
+  if (d.ratings) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'TEAM STATS' : 'ESTADÍSTICAS', W / 2, curY);
+    curY += 42;
+
+    const BAR_W  = 320;
+    const BAR_H  = 13;
+    const ROW_H  = 56;
+    const PAD    = 50;  // gap label to bar
+    const statRows = [
+      { lbl: isEN ? 'ATK' : 'ATQ', vA: d.ratings.teamA.attack,      vB: d.ratings.teamB.attack },
+      { lbl: isEN ? 'MID' : 'MED', vA: d.ratings.teamA.midfield,    vB: d.ratings.teamB.midfield },
+      { lbl: isEN ? 'DEF' : 'DEF', vA: d.ratings.teamA.defense,     vB: d.ratings.teamB.defense },
+      { lbl: isEN ? 'GK'  : 'POR', vA: d.ratings.teamA.goalkeeping, vB: d.ratings.teamB.goalkeeping },
+    ];
+
+    statRows.forEach(s => {
+      const ry    = curY;
+      const total = (s.vA + s.vB) || 1;
+      const wA    = Math.max(8, Math.round(BAR_W * s.vA / (total * 1.1)));
+      const wB    = Math.max(8, Math.round(BAR_W * s.vB / (total * 1.1)));
+      const cx2   = W / 2;
+
+      // Label
+      ctx.font = '600 23px "Rajdhani",Arial,sans-serif';
+      ctx.textAlign = 'center'; ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.fillText(s.lbl, cx2, ry + BAR_H);
+
+      // Team A bar (left)
+      ctx.fillStyle = 'rgba(0,212,255,0.1)';
+      ctx.fillRect(cx2 - PAD - BAR_W, ry, BAR_W, BAR_H);
+      const gA2 = ctx.createLinearGradient(cx2 - PAD - wA, 0, cx2 - PAD, 0);
+      gA2.addColorStop(0, 'rgba(0,212,255,0.3)');
+      gA2.addColorStop(1, 'rgba(0,212,255,0.95)');
+      ctx.fillStyle = gA2;
+      ctx.fillRect(cx2 - PAD - wA, ry, wA, BAR_H);
+      ctx.font = 'bold 27px "Rajdhani",Arial,sans-serif';
+      ctx.textAlign = 'right'; ctx.fillStyle = CYAN;
+      ctx.fillText(String(s.vA), cx2 - PAD - BAR_W - 14, ry + BAR_H);
+
+      // Team B bar (right)
+      ctx.fillStyle = 'rgba(255,45,120,0.1)';
+      ctx.fillRect(cx2 + PAD, ry, BAR_W, BAR_H);
+      const gB2 = ctx.createLinearGradient(cx2 + PAD, 0, cx2 + PAD + wB, 0);
+      gB2.addColorStop(0, 'rgba(255,45,120,0.95)');
+      gB2.addColorStop(1, 'rgba(255,45,120,0.3)');
+      ctx.fillStyle = gB2;
+      ctx.fillRect(cx2 + PAD, ry, wB, BAR_H);
+      ctx.font = 'bold 27px "Rajdhani",Arial,sans-serif';
+      ctx.textAlign = 'left'; ctx.fillStyle = MAGENTA;
+      ctx.fillText(String(s.vB), cx2 + PAD + BAR_W + 14, ry + BAR_H);
+
+      curY += ROW_H;
+    });
+
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── MAN OF THE MATCH ──────────────────────────────────────────────────────
+  if (d.mom) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = 'rgba(255,215,0,0.55)';
+    ctx.fillText(isEN ? 'PLAYER OF THE MATCH' : 'MEJOR JUGADOR DEL PARTIDO', W / 2, curY);
+    curY += 12;
+
+    ctx.font = 'bold 56px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, _scSafe(d.mom.name || ''), W / 2, curY + 56, GOLD, 22);
+    curY += 76;
+
+    let reason = '';
+    if (d.mom.reason?.type === 'goals') {
+      const n = d.mom.reason.count;
+      reason = `${n} ${n === 1 ? (isEN ? 'goal' : 'gol') : (isEN ? 'goals' : 'goles')}`;
+    } else {
+      reason = isEN ? 'Best on the pitch' : 'Mejor en el campo';
+    }
+    ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = GOLD + '88';
+    ctx.fillText(_scSafe(reason), W / 2, curY);
+    curY += 48;
+
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── WIN PROBABILITIES ─────────────────────────────────────────────────────
+  if (d.probabilities) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '600 23px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'WIN PROBABILITY' : 'PROBABILIDAD DE VICTORIA', W / 2, curY);
+    curY += 18;
+
+    const { teamA_win: pA, draw: pD, teamB_win: pB } = d.probabilities;
+    const bX = 90, bW = W - 180, bH = 18;
+    const total = pA + pD + pB || 100;
+    const wA = Math.round(bW * pA / total);
+    const wD = Math.round(bW * pD / total);
+    const wBb = bW - wA - wD;
+
+    ctx.fillStyle = 'rgba(0,212,255,0.9)';   ctx.fillRect(bX,          curY, wA,  bH);
+    ctx.fillStyle = 'rgba(255,255,255,0.2)'; ctx.fillRect(bX + wA,      curY, wD,  bH);
+    ctx.fillStyle = 'rgba(255,45,120,0.9)';  ctx.fillRect(bX + wA + wD, curY, wBb, bH);
+    curY += bH + 10;
+
+    ctx.font = 'bold 30px "Rajdhani",Arial,sans-serif';
+    ctx.textAlign = 'left';   ctx.fillStyle = CYAN;    ctx.fillText(`${pA}%`, bX, curY);
+    ctx.textAlign = 'center'; ctx.fillStyle = DIM;     ctx.fillText(`${pD}%`, W / 2, curY);
+    ctx.textAlign = 'right';  ctx.fillStyle = MAGENTA; ctx.fillText(`${pB}%`, bX + bW, curY);
+    curY += 52;
+
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── MATCH STATS (possession / shots / corners / saves / fouls) ────────────
+  if (d.matchStats) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'MATCH STATS' : 'ESTADÍSTICAS DEL PARTIDO', W / 2, curY);
+    curY += 42;
+
+    const ms = d.matchStats;
+    const statLines = [
+      { lbl: isEN ? 'POSSESSION' : 'POSESIÓN',  vA: ms.possession.teamA, vB: ms.possession.teamB, sfx: '%' },
+      { lbl: isEN ? 'SHOTS'      : 'TIROS',      vA: ms.shots.teamA,      vB: ms.shots.teamB,      sfx: ''  },
+      { lbl: isEN ? 'CORNERS'    : 'CÓRNERES',   vA: ms.corners.teamA,    vB: ms.corners.teamB,    sfx: ''  },
+      { lbl: isEN ? 'SAVES'      : 'PARADAS',    vA: ms.saves.teamA,      vB: ms.saves.teamB,      sfx: ''  },
+      { lbl: isEN ? 'FOULS'      : 'FALTAS',     vA: ms.fouls.teamA,      vB: ms.fouls.teamB,      sfx: ''  },
+    ];
+
+    const SBW = 280, SBH = 12, SPAD = 46, SROW = 48;
+    const scx = W / 2;
+    statLines.forEach(s => {
+      const tot = (s.vA + s.vB) || 1;
+      const wSA = Math.max(6, Math.round(SBW * s.vA / tot));
+      const wSB = Math.max(6, Math.round(SBW * s.vB / tot));
+
+      ctx.font = '500 22px "Rajdhani",Arial,sans-serif';
+      ctx.textAlign = 'center'; ctx.fillStyle = 'rgba(255,255,255,0.45)';
+      ctx.fillText(s.lbl, scx, curY + SBH);
+
+      ctx.fillStyle = 'rgba(0,212,255,0.1)';
+      ctx.fillRect(scx - SPAD - SBW, curY, SBW, SBH);
+      ctx.fillStyle = 'rgba(0,212,255,0.85)';
+      ctx.fillRect(scx - SPAD - wSA, curY, wSA, SBH);
+
+      ctx.fillStyle = 'rgba(255,45,120,0.1)';
+      ctx.fillRect(scx + SPAD, curY, SBW, SBH);
+      ctx.fillStyle = 'rgba(255,45,120,0.85)';
+      ctx.fillRect(scx + SPAD, curY, wSB, SBH);
+
+      ctx.font = 'bold 26px "Rajdhani",Arial,sans-serif';
+      ctx.textAlign = 'right'; ctx.fillStyle = CYAN;
+      ctx.fillText(`${s.vA}${s.sfx}`, scx - SPAD - SBW - 12, curY + SBH);
+      ctx.textAlign = 'left'; ctx.fillStyle = MAGENTA;
+      ctx.fillText(`${s.vB}${s.sfx}`, scx + SPAD + SBW + 12, curY + SBH);
+
+      curY += SROW;
+    });
+
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── RADAR CHART ────────────────────────────────────────────────────────────
+  if (d.ratings) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'TEAM RADAR' : 'RADAR DE EQUIPOS', W / 2, curY);
+    curY += 30;
+
+    const radarAxes = [
+      { lbl: isEN ? 'ATK' : 'ATQ', vA: d.ratings.teamA.attack,      vB: d.ratings.teamB.attack },
+      { lbl: isEN ? 'MID' : 'MED', vA: d.ratings.teamA.midfield,    vB: d.ratings.teamB.midfield },
+      { lbl: isEN ? 'DEF' : 'DEF', vA: d.ratings.teamA.defense,     vB: d.ratings.teamB.defense },
+      { lbl: isEN ? 'GK'  : 'POR', vA: d.ratings.teamA.goalkeeping, vB: d.ratings.teamB.goalkeeping },
+      { lbl: isEN ? 'PHY' : 'FÍS',
+        vA: Math.round((d.ratings.teamA.attack + d.ratings.teamA.midfield) / 2),
+        vB: Math.round((d.ratings.teamB.attack + d.ratings.teamB.midfield) / 2) },
+    ];
+    const RN  = radarAxes.length;
+    const RCX = W / 2, RCY = curY + 220, RR = 200;
+    const rang = i => (Math.PI * 2 * i / RN) - Math.PI / 2;
+    const rpt  = (r, i) => [RCX + r * Math.cos(rang(i)), RCY + r * Math.sin(rang(i))];
+
+    [0.25, 0.5, 0.75, 1].forEach(frac => {
+      ctx.beginPath();
+      for (let i = 0; i < RN; i++) {
+        const [px, py] = rpt(RR * frac, i);
+        i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = `rgba(255,255,255,${frac === 1 ? 0.12 : 0.06})`;
+      ctx.lineWidth = 1; ctx.stroke();
+    });
+
+    for (let i = 0; i < RN; i++) {
+      const [px, py] = rpt(RR, i);
+      ctx.beginPath(); ctx.moveTo(RCX, RCY); ctx.lineTo(px, py);
+      ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1; ctx.stroke();
+    }
+
+    ctx.save();
+    ctx.beginPath();
+    radarAxes.forEach(({ vA }, i) => {
+      const [px, py] = rpt(RR * vA / 100, i);
+      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(0,212,255,0.18)'; ctx.fill();
+    ctx.strokeStyle = 'rgba(0,212,255,0.9)'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    radarAxes.forEach(({ vB }, i) => {
+      const [px, py] = rpt(RR * vB / 100, i);
+      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(255,45,120,0.15)'; ctx.fill();
+    ctx.strokeStyle = 'rgba(255,45,120,0.9)'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.restore();
+
+    ctx.font = 'bold 26px "Rajdhani",Arial,sans-serif';
+    ctx.textBaseline = 'middle';
+    radarAxes.forEach(({ lbl }, i) => {
+      const [px, py] = rpt(RR + 38, i);
+      ctx.textAlign  = px < RCX - 10 ? 'right' : px > RCX + 10 ? 'left' : 'center';
+      ctx.fillStyle  = DIM;
+      ctx.fillText(lbl, px, py);
+    });
+
+    const legY = RCY + RR + 55;
+    ctx.textBaseline = 'alphabetic';
+    ctx.font = '600 26px "Rajdhani",Arial,sans-serif';
+    ctx.beginPath(); ctx.arc(W / 2 - 180, legY - 8, 8, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN; ctx.fill();
+    ctx.textAlign = 'left'; ctx.fillStyle = CYAN;
+    ctx.fillText(_scSafe(d.teamA), W / 2 - 165, legY);
+    ctx.beginPath(); ctx.arc(W / 2 + 60, legY - 8, 8, 0, Math.PI * 2);
+    ctx.fillStyle = MAGENTA; ctx.fill();
+    ctx.textAlign = 'left'; ctx.fillStyle = MAGENTA;
+    ctx.fillText(_scSafe(d.teamB), W / 2 + 75, legY);
+
+    curY = legY + 50;
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── LINEUPS ────────────────────────────────────────────────────────────────
+  if (d.lineupA?.players?.length && d.lineupB?.players?.length) {
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'LINEUPS' : 'ALINEACIONES', W / 2, curY);
+    curY += 16;
+
+    ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
+    ctx.textAlign = 'left';  ctx.fillStyle = CYAN + 'cc';
+    ctx.fillText(_scSafe(d.lineupA.formation || ''), 60, curY);
+    ctx.textAlign = 'right'; ctx.fillStyle = MAGENTA + 'cc';
+    ctx.fillText(_scSafe(d.lineupB.formation || ''), W - 60, curY);
+    curY += 36;
+
+    const POS_ROW_SC = { GK:0, RB:1, CB:1, LB:1, DM:2, CM:3, RM:3, LM:3, AM:3.5, RW:4, LW:4, ST:4 };
+    const makeRows = lineup => {
+      const rows = {};
+      (lineup.players || []).slice(0, 11).forEach(p => {
+        const row = POS_ROW_SC[p.position] ?? 3;
+        (rows[row] = rows[row] || []).push(p);
+      });
+      return Object.keys(rows).sort((a, b) => a - b).map(k => rows[k]);
+    };
+    const rowsA = makeRows(d.lineupA);
+    const rowsB = makeRows(d.lineupB);
+    const totalRows = Math.max(rowsA.length, rowsB.length);
+
+    for (let ri = 0; ri < totalRows; ri++) {
+      const rowA = rowsA[ri] || [];
+      const rowB = rowsB[ri] || [];
+      const ROW_H_LU = 58, COL_W = W / 2 - 40;
+
+      rowA.forEach((p, pi) => {
+        const cellW = COL_W / rowA.length;
+        const x = 40 + cellW * pi + cellW / 2;
+        const y = curY + 38;
+        ctx.beginPath(); ctx.arc(x, y - 14, 15, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,212,255,0.25)'; ctx.fill();
+        ctx.strokeStyle = CYAN + '99'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.font = 'bold 13px "Rajdhani",Arial,sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillStyle = CYAN; ctx.fillText(p.position, x, y - 14);
+        ctx.font = '500 22px "Rajdhani",Arial,sans-serif';
+        ctx.textBaseline = 'alphabetic';
+        const nm = _scSafe(p.name).split(' ').pop();
+        ctx.fillStyle = WHITE; ctx.fillText(nm, x, y + 14);
+      });
+
+      rowB.forEach((p, pi) => {
+        const cellW = COL_W / rowB.length;
+        const x = W / 2 + 40 + cellW * pi + cellW / 2;
+        const y = curY + 38;
+        ctx.beginPath(); ctx.arc(x, y - 14, 15, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,45,120,0.2)'; ctx.fill();
+        ctx.strokeStyle = MAGENTA + '99'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.font = 'bold 13px "Rajdhani",Arial,sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillStyle = MAGENTA; ctx.fillText(p.position, x, y - 14);
+        ctx.font = '500 22px "Rajdhani",Arial,sans-serif';
+        ctx.textBaseline = 'alphabetic';
+        const nm = _scSafe(p.name).split(' ').pop();
+        ctx.fillStyle = WHITE; ctx.fillText(nm, x, y + 14);
+      });
+
+      curY += ROW_H_LU;
+    }
+
+    curY += 40;
+    _scDivider(ctx, curY, W);
+    curY += 40;
+  }
+
+  // ── FOOTER (anchored at curY, not at fixed H) ──────────────────────────────
+  const footerY = curY + 20;
+  const botBar = ctx.createLinearGradient(0, 0, W, 0);
+  botBar.addColorStop(0,   'rgba(0,212,255,0)');
+  botBar.addColorStop(0.5, 'rgba(0,212,255,0.75)');
+  botBar.addColorStop(1,   'rgba(0,212,255,0)');
+  ctx.fillStyle = botBar; ctx.fillRect(0, footerY, W, 2);
+
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = '700 36px "Rajdhani",Arial,sans-serif';
+  const _sUrl = ((window.GOLAZOX_CONFIG && window.GOLAZOX_CONFIG.siteUrl) || 'golazox.com')
+    .replace(/^https?:\/\//, '').replace(/\/$/, '');
+  _scGlow(ctx, _sUrl, W / 2, footerY + 54, CYAN, 18);
+
+  ctx.font = '400 22px "Rajdhani",Arial,sans-serif';
+  ctx.fillStyle = DIM2;
+  ctx.fillText('Football Time Machine', W / 2, footerY + 84);
+
+  // ── Crop to actual content height ─────────────────────────────────────────
+  const finalH = footerY + 120;
+  const out    = document.createElement('canvas');
+  out.width    = W;
+  out.height   = Math.min(finalH, H);
+  const outCtx = out.getContext('2d', { alpha: false });
+  outCtx.drawImage(canvas, 0, 0, W, out.height, 0, 0, W, out.height);
+
+  // ── Export ────────────────────────────────────────────────────────────────
+  return new Promise((resolve, reject) => {
+    try {
+      out.toBlob(blob => {
+        if (blob) { resolve(blob); return; }
+        try {
+          const dataUrl = out.toDataURL('image/png');
+          const [header, b64] = dataUrl.split(',');
+          const mime = (header.match(/:(.*?);/) || [])[1] || 'image/png';
+          const bstr = atob(b64);
+          const u8 = new Uint8Array(bstr.length);
+          for (let i = 0; i < bstr.length; i++) u8[i] = bstr.charCodeAt(i);
+          resolve(new Blob([u8], { type: mime }));
+        } catch (e2) { reject(e2); }
+      }, 'image/png');
+    } catch (e) { reject(e); }
+  });
 }

@@ -26,6 +26,18 @@ match_engine/webapp/_wp_sn_test.js
 .seed-progress.json
 match_engine/webapp/squads/.seed-progress.json
 
+# Squads JSON — contienen nombres de jugadores (datos personales RGPD)
+# Generar con: npm run seed
+match_engine/webapp/squads/*.json
+
+# Badges descargadas — marcas registradas, no versionar
+match_engine/webapp/public/img/badges/*.png
+match_engine/webapp/public/img/badges/*.jpg
+match_engine/webapp/public/img/badges/*.jpeg
+match_engine/webapp/public/img/badges/*.gif
+match_engine/webapp/public/img/badges/*.webp
+match_engine/webapp/public/img/badges/*.svg
+
 # OS
 .DS_Store
 Thumbs.db

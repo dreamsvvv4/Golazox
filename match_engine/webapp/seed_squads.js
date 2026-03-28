@@ -37,10 +37,10 @@ const ONLY_NEW = hasFlag('--only-new');
 
 // ── Años por competición ───────────────────────────────────────
 // (año de inicio de temporada, ej. 2010 = temporada 2010/11)
-const WORLD_CUPS    = [1966,1970,1974,1978,1982,1986,1990,1994,1998,2002,2006,2010,2014,2018,2022];
-const EUROS         = [1996,2000,2004,2008,2012,2016,2020];
-const COPA_AMERICA  = [1975,1979,1983,1987,1991,1993,1995,1997,1999,2001,2004,2007,2011,2015,2016,2019,2021];
-const AFCON         = [1994,1996,1998,2000,2002,2004,2006,2008,2010,2012,2013,2015,2017,2019,2021,2023];
+const WORLD_CUPS    = [1966,1970,1974,1978,1982,1986,1990,1994,1998,2002,2006,2010,2014,2018,2022,2025];
+const EUROS         = [1996,2000,2004,2008,2012,2016,2020,2025];
+const COPA_AMERICA  = [1975,1979,1983,1987,1991,1993,1995,1997,1999,2001,2004,2007,2011,2015,2016,2019,2021,2025];
+const AFCON         = [1994,1996,1998,2000,2002,2004,2006,2008,2010,2012,2013,2015,2017,2019,2021,2023,2025];
 
 const uniq = (...arrs) => [...new Set(arrs.flat())].sort((a, b) => a - b);
 
@@ -74,7 +74,8 @@ const NATIONAL_TEAMS = [
   })),
 
   // ── Asia / Oceanía ── Mundial
-  ...['japan','south korea','australia','saudi arabia','iran'].map(t => ({
+  ...['japan','south korea','australia','saudi arabia','iran',
+      'china','iraq','jordan','uzbekistan','new zealand'].map(t => ({
     team: t,
     years: WORLD_CUPS,
     region: 'Asia/Oceanía',
@@ -128,6 +129,42 @@ const CLUB_TEAMS = [
 
   // Escocia
   { team: 'Celtic',             years: [1967,1969,1970],                                 region: 'Escocia' },
+];
+
+// ── Selecciones confirmadas / probables para el Mundial 2026 (48 equipos) ─────
+// Solo descargamos la plantilla actual (temporada 2025/26 = año 2025)
+const WC2026_NATIONAL = [
+  // UEFA (16 clasificados directos + playoffs)
+  ...['spain','germany','france','italy','england','netherlands','portugal',
+      'belgium','croatia','czech republic','poland','denmark','sweden',
+      'switzerland','austria','scotland','wales','turkey','serbia','ukraine',
+      'romania','hungary','slovakia','slovenia','albania','norway','finland',
+      'greece','ireland','northern ireland','russia','iceland','bosnia'].map(t => ({
+    team: t, years: [2025], region: 'WC 2026 – UEFA',
+  })),
+  // CONMEBOL (6 + playoff)
+  ...['argentina','brasil','uruguay','colombia','chile','ecuador',
+      'paraguay','peru','venezuela','bolivia'].map(t => ({
+    team: t, years: [2025], region: 'WC 2026 – CONMEBOL',
+  })),
+  // CONCACAF (6 + playoff)
+  ...['usa','mexico','canada','costa rica','panama','honduras',
+      'jamaica','el salvador','haiti','trinidad and tobago'].map(t => ({
+    team: t, years: [2025], region: 'WC 2026 – CONCACAF',
+  })),
+  // CAF (9 + playoff)
+  ...['morocco','senegal','nigeria','egypt','ivory coast','ghana',
+      'cameroon','tunisia','mali','algeria','south africa',
+      'democratic republic of congo','cape verde'].map(t => ({
+    team: t, years: [2025], region: 'WC 2026 – CAF',
+  })),
+  // AFC (8.5 + playoff)
+  ...['japan','south korea','iran','saudi arabia','australia',
+      'china','iraq','jordan','uzbekistan','oman','bahrain','north korea'].map(t => ({
+    team: t, years: [2025], region: 'WC 2026 – AFC',
+  })),
+  // OFC
+  { team: 'new zealand', years: [2025], region: 'WC 2026 – OFC' },
 ];
 
 // ── Solo campeones (modo --batch winners) ─────────────────────
@@ -247,6 +284,7 @@ function buildQueue() {
   if (BATCH === 'national' || BATCH === 'all') catalog.push(...NATIONAL_TEAMS);
   if (BATCH === 'winners')                     catalog.push(...WINNERS_TEAMS);
   if (BATCH === 'extra')                       catalog.push(...EXTRA_CLUBS);
+  if (BATCH === 'wc2026')                      catalog.push(...WC2026_NATIONAL);
 
   if (ONLY_TEAM) {
     const key = ONLY_TEAM.toLowerCase();

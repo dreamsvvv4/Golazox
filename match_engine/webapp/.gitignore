@@ -1,0 +1,31 @@
+# Dependencias Node
+node_modules/
+
+# Variables de entorno (NUNCA subir al repo)
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# Cache de squads (datos regenerables con seed)
+squads/.seed-progress.json
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Mensajes del formulario de contacto (datos privados)
+contact_messages.json
+
+# Archivos de debug y test (no deben ir a producción)
+_dbg_*.js
+_debug_*.js
+_smoke_*.js
+_sn_debug*.js
+_test_*.js
+_wp_*.js
