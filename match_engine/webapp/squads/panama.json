@@ -1,5 +1,144 @@
 {
   "slug": "panama",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/panama.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Luis Mejía",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Orlando Mosquera",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Andrew Dykstra",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Erick Davis",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "César Blackman",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Fidel Escobar",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Andrés Andrade",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Édgar Bárcenas",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Harold Cummings",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Eric Palmer-Brown",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Gilberto Hernández",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Azmahar Ariano",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Adalberto Carrasquilla",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Aníbal Godoy",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Éric Davis",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Freddy Góndola",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "José Fajardo",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Ismael Díaz",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Cecilio Waterman",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "José Barcenas",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Rolando Blackburn",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Abdiel Ayarza",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Alberth Elis",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Jairo Moreno",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Gonzalo Castillo",
+          "position": "ST",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 64,
+        "defense": 66,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Panama national team (2025)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/panama.png",
+  "name": "Panama"
 }

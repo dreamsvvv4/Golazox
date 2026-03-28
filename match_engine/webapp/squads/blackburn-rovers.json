@@ -1,5 +1,126 @@
 {
   "slug": "blackburn-rovers",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Thomas Kaminski",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Aynsley Pears",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Derrick Williams",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Barry Douglas",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Ryan Hedges",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Tyler Morton",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Scott Wharton",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Bradley Dack",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Ben Brereton",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Joe Rankin-Costello",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Sammie Szmodics",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Dominic Hyam",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Harry Leonard",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Tyrhys Dolan",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Jake Garrett",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Lewis Travis",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Sonny Evans",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "John Buckley",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Joel Mumbongo",
+          "position": "ST",
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Blackburn Rovers (2025/2026)",
+      "teamLabel": "Blackburn Rovers (2025-26)"
+    }
+  },
+  "id": 164,
+  "name": "Blackburn Rovers",
   "badgeLocalPath": "/img/badges/blackburn-rovers.png"
 }

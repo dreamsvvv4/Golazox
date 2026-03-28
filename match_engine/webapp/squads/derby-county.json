@@ -1,5 +1,126 @@
 {
   "slug": "derby-county",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Joe Wildsmith",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Josh Barnes",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Curtis Davies",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Conor Hourihane",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Liam Thompson",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Kane Wilson",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Nathaniel Mendez-Laing",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Craig Forsyth",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Tom Barkhuizen",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Korey Smith",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Eiran Cashin",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "James Chester",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Louie Watson",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Dwight Gayle",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "David McGoldrick",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Callum Elder",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Haydon Roberts",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Max Bird",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Isaac Hutchinson",
+          "position": "RW",
+          "rating": 69
+        },
+        {
+          "name": "Martyn Waghorn",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Jake Rooney",
+          "position": "CM",
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Derby County (2025/2026)",
+      "teamLabel": "Derby County (2025-26)"
+    }
+  },
+  "id": 1246,
+  "name": "Derby County",
   "badgeLocalPath": "/img/badges/derby-county.png"
 }

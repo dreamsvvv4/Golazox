@@ -1,6 +1,277 @@
 {
   "slug": "club-atletico-river-plate",
   "seasons": {
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Alejandro Saccone",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Franco Costanzo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "José María Buljubasich",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ángel Comizzo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Germán Lux",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Pablo Carrizo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Celso Ayala",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Mario Yepes",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Javier Gandolfi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Matías Lequi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ariel Garcé",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pedro Sarabia",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Martín Demichelis",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ricardo Rojas",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alejandro Escalona",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jersson González",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gustavo Lombardi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Andrés Aimar",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 86
+        },
+        {
+          "name": "Claudio Husaín",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Leonardo Astrada",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Esteban Cambiasso",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Guillermo Pereyra",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Cristian Ledesma",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucho González",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Eduardo Coudet",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ariel Franco",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Diego Barrado",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcelo Escudero",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Pablo Raponi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Víctor Zapata",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emiliano Díaz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ariel Ortega",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Andrés D'Alessandro",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alejandro Domínguez",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Damián Álvarez",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nelson Cuevas",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniel Fonseca",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Maxi López",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Martín Cardetti",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Esnáider",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Adrián Romero",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Cavenaghi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Esteban Fuertes",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — River Plate (2001/2002)",
+      "teamLabel": "River Plate (2001-02)"
+    },
     "2015": {
       "formation": "4-4-2",
       "players": [
@@ -120,7 +391,7 @@
         },
         {
           "name": "Gonzalo Montiel",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
@@ -297,7 +568,7 @@
       "teamLabel": "River Plate (2015-16)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ezequiel Centurión",
@@ -341,15 +612,15 @@
         },
         {
           "name": "Matías Viña",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Marcos Acuña",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Gonzalo Montiel",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Fabricio Bustos",
@@ -439,5 +710,6 @@
     }
   },
   "id": 209,
-  "name": "River Plate"
+  "name": "River Plate",
+  "badgeLocalPath": "/img/badges/river-plate.png"
 }

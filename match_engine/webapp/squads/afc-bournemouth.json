@@ -2,27 +2,32 @@
   "slug": "afc-bournemouth",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Djordje Petrovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Christos Mandas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Fraser Forster",
-          "position": "GK"
+          "position": "GK",
+          "rating": 73
         },
         {
           "name": "Bafodé Diakité",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marcos Senesi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Veljko Milosavljevic",
@@ -70,7 +75,7 @@
         },
         {
           "name": "Ryan Christie",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Justin Kluivert",

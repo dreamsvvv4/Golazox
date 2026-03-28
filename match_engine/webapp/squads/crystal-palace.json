@@ -70,7 +70,7 @@
         },
         {
           "name": "Cheikhou Kouyaté",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Conor Gallagher",
@@ -94,15 +94,17 @@
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Wilfried Zaha",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Michael Olise",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Jesurun Rak-Sakyi",
@@ -267,11 +269,12 @@
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Wilfried Zaha",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "John-Kymani Gordon",
@@ -283,7 +286,8 @@
         },
         {
           "name": "Michael Olise",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Malcolm Ebiowei",
@@ -372,7 +376,7 @@
         },
         {
           "name": "Daniel Muñoz",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Nathaniel Clyne",
@@ -392,7 +396,7 @@
         },
         {
           "name": "Jefferson Lerma",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Jaïro Riedewald",
@@ -424,7 +428,8 @@
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Matheus França",
@@ -440,7 +445,8 @@
         },
         {
           "name": "Michael Olise",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Jesurun Rak-Sakyi",
@@ -545,11 +551,11 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Daniel Muñoz",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Nathaniel Clyne",
@@ -573,7 +579,7 @@
         },
         {
           "name": "Jefferson Lerma",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "David Ozoh",
@@ -597,7 +603,8 @@
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Daichi Kamada",
@@ -617,7 +624,7 @@
         },
         {
           "name": "Ismaïla Sarr",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Romain Esse",
@@ -662,119 +669,147 @@
       "teamLabel": "Crystal Palace (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Dean Henderson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Walter Benítez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Remi Matthews",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Maxence Lacroix",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Chris Richards",
-          "position": "CB"
+          "position": "CB",
+          "rating": 77
         },
         {
           "name": "Jaydee Canvot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 69
         },
         {
           "name": "Chadi Riad",
-          "position": "CB"
+          "position": "CB",
+          "rating": 72
         },
         {
           "name": "Tyrick Mitchell",
-          "position": "CB"
+          "position": "LB",
+          "rating": 82
         },
         {
           "name": "Borna Sosa",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Rio Cardines",
-          "position": "CB"
+          "position": "CB",
+          "rating": 68
         },
         {
           "name": "Daniel Muñoz",
-          "position": "CB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Caleb Kporha",
-          "position": "CB"
+          "position": "CB",
+          "rating": 69
         },
         {
           "name": "Nathaniel Clyne",
-          "position": "CB"
+          "position": "RB",
+          "rating": 73
         },
         {
           "name": "Adam Wharton",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Cheick Doucouré",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Jefferson Lerma",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Kaden Rodney",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Will Hughes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 75
         },
         {
           "name": "Daichi Kamada",
-          "position": "CM"
+          "position": "AM",
+          "rating": 82
         },
         {
           "name": "Justin Devenny",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Ismaïla Sarr",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Yéremy Pino",
-          "position": "ST"
+          "position": "RW",
+          "rating": 82
         },
         {
           "name": "Brennan Johnson",
-          "position": "ST"
+          "position": "RW",
+          "rating": 82
         },
         {
           "name": "Evann Guessand",
-          "position": "ST"
+          "position": "ST",
+          "rating": 77
         },
         {
           "name": "Jørgen Strand Larsen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jean-Philippe Mateta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 84
         },
         {
           "name": "Christantus Uche",
-          "position": "ST"
+          "position": "RW",
+          "rating": 71
         },
         {
           "name": "Eddie Nketiah",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {

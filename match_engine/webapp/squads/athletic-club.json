@@ -2,27 +2,32 @@
   "slug": "athletic-club",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Unai Simón",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Álex Padilla",
-          "position": "GK"
+          "position": "GK",
+          "rating": 73
         },
         {
           "name": "Dani Vivian",
-          "position": "CB"
+          "position": "CB",
+          "rating": 86
         },
         {
           "name": "Aitor Paredes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Aymeric Laporte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Yeray Álvarez",
@@ -86,7 +91,8 @@
         },
         {
           "name": "Nico Williams",
-          "position": "ST"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Álex Berenguer",
@@ -172,10 +178,16 @@
         },
         {
           "name": "Nico Williams",
-          "position": "LW"
+          "position": "LW",
+          "rating": 85
         }
       ],
-      "ratings": null,
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 82
+      },
       "source": "Wikipedia — \"2025–26 Athletic Bilbao season\"",
       "teamLabel": "Athletic de Bilbao (2026)"
     }

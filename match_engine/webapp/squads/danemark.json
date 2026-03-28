@@ -544,10 +544,6 @@
           "position": "CM"
         },
         {
-          "name": "Allan Hansen",
-          "position": "CM"
-        },
-        {
           "name": "Carsten Nielsen",
           "position": "CM"
         },
@@ -2754,7 +2750,7 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Johan Absalonsen",
@@ -2963,7 +2959,7 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Viktor Fischer",
@@ -3084,7 +3080,7 @@
         },
         {
           "name": "Peter Ankersen",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lars Jacobsen",
@@ -3096,7 +3092,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Niki Zimling",
@@ -3148,7 +3144,7 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Lucas Andersen",
@@ -3285,7 +3281,7 @@
         },
         {
           "name": "Peter Ankersen",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Jens Stryger",
@@ -3293,7 +3289,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Lasse Schöne",
@@ -3321,7 +3317,7 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Nicolaj Thomsen",
@@ -3482,7 +3478,7 @@
         },
         {
           "name": "Peter Ankersen",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Simon Vollesen",
@@ -3490,7 +3486,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Lukas Lerager",
@@ -3502,7 +3498,7 @@
         },
         {
           "name": "Christian Nørgaard",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Christian Bannis",
@@ -3550,7 +3546,7 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Pione Sisto",
@@ -3699,7 +3695,7 @@
         },
         {
           "name": "Joakim Maehle",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kristian Pedersen",
@@ -3719,11 +3715,11 @@
         },
         {
           "name": "Alexander Bah",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Oliver Abildgaard",
@@ -3735,7 +3731,7 @@
         },
         {
           "name": "Christian Nørgaard",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Thomas Delaney",
@@ -3767,11 +3763,11 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Mikkel Damsgaard",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Lucas Andersen",
@@ -3791,11 +3787,11 @@
         },
         {
           "name": "Jesper Lindstrøm",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Andreas Skov Olsen",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Yussuf Poulsen",
@@ -3884,7 +3880,7 @@
         },
         {
           "name": "Joakim Maehle",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Mads Pedersen",
@@ -3896,7 +3892,7 @@
         },
         {
           "name": "Alexander Bah",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Rasmus Kristensen",
@@ -3908,11 +3904,11 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Christian Nørgaard",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Morten Hjulmand",
@@ -3944,11 +3940,11 @@
         },
         {
           "name": "Christian Eriksen",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Mikkel Damsgaard",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Jacob Bruun Larsen",
@@ -3956,11 +3952,11 @@
         },
         {
           "name": "Jesper Lindstrøm",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Andreas Skov Olsen",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Rasmus Højlund",
@@ -3995,9 +3991,256 @@
       },
       "source": "Transfermarkt — denmark (2022/2023)",
       "teamLabel": "denmark (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Filip Jørgensen",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mads Hermansen",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Oliver Christensen",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Kasper Schmeichel",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Patrick Dorgu",
+          "position": "LB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Lucas Høgsberg",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Victor Kristiansen",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Rasmus Kristensen",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Andreas Christensen",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Victor Nelsson",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Joakim Maehle",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Mads Roerslev",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Anton Gaaei",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jannik Vestergaard",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Morten Hjulmand",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Victor Froholdt",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Mikkel Damsgaard",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Morten Frendrup",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Pierre-Emile Højbjerg",
+          "position": "DM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Matt O'Riley",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Christian Nørgaard",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Philip Billing",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nikolas Nartey",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Carlo Holse",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Albert Grønbaek",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Rasmus Højlund",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Mika Biereth",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Gustav Isaksen",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Conrad Harder",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Anders Dreyer",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "William Osula",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Andreas Skov Olsen",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mathias Kvistgaarden",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jacob Bruun Larsen",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jesper Lindstrøm",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jonas Wind",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 83,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — denmark (2025/2026)",
+      "teamLabel": "denmark (2025-26)"
     }
   },
   "id": 3436,
-  "name": "denmark",
+  "name": "Dinamarca",
   "badgeLocalPath": "/img/badges/danemark.png"
 }

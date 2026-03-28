@@ -2,119 +2,147 @@
   "slug": "lazio-rom",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Edoardo Motta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Ivan Provedel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Alessio Furlanetto",
-          "position": "GK"
+          "position": "GK",
+          "rating": 65
         },
         {
           "name": "Mario Gila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Oliver Provstgaard",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Alessio Romagnoli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Samuel Gigot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Patric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 77
         },
         {
           "name": "Nuno Tavares",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Luca Pellegrini",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Adam Marusic",
-          "position": "CB"
+          "position": "RB",
+          "rating": 80
         },
         {
           "name": "Manuel Lazzari",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Elseid Hysaj",
-          "position": "CB"
+          "position": "RB",
+          "rating": 74
         },
         {
           "name": "Nicolò Rovella",
-          "position": "CM"
+          "position": "DM",
+          "rating": 84
         },
         {
           "name": "Reda Belahyane",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Danilo Cataldi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Kenneth Taylor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Fisayo Dele-Bashiru",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Toma Bašić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 75
         },
         {
           "name": "Daniel Maldini",
-          "position": "CM"
+          "position": "AM",
+          "rating": 82
         },
         {
           "name": "Adrian Przyborek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Mattia Zaccagni",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Gustav Isaksen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Tijjani Noslin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 77
         },
         {
           "name": "Matteo Cancellieri",
-          "position": "ST"
+          "position": "LW",
+          "rating": 75
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Petar Ratkov",
-          "position": "ST"
+          "position": "ST",
+          "rating": 73
         },
         {
           "name": "Boulaye Dia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -128,5 +156,6 @@
     }
   },
   "id": 398,
-  "name": "Lazio"
+  "name": "Lazio",
+  "badgeLocalPath": "/img/badges/ss-lazio.png"
 }

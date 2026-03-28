@@ -167,7 +167,7 @@
       "teamLabel": "Al-Ittihad (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Predrag Rajković",
@@ -187,11 +187,11 @@
         },
         {
           "name": "Jan-Carlo Simić",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Danilo Pereira",
-          "position": "CB"
+          "position": "DM"
         },
         {
           "name": "Saad Al-Mousa",
@@ -305,5 +305,6 @@
     }
   },
   "id": 8023,
-  "name": "Al-Ittihad"
+  "name": "Al-Ittihad",
+  "badgeLocalPath": "/img/badges/al-ittihad.png"
 }

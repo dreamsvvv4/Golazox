@@ -2,27 +2,32 @@
   "slug": "atalanta-bc",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marco Carnesecchi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 84
         },
         {
           "name": "Marco Sportiello",
-          "position": "GK"
+          "position": "GK",
+          "rating": 78
         },
         {
           "name": "Francesco Rossi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 70
         },
         {
           "name": "Giorgio Scalvini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Honest Ahanor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Isak Hien",

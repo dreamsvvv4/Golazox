@@ -231,7 +231,7 @@
         },
         {
           "name": "Kevin Mbabu",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Cédric Soares",
@@ -251,7 +251,7 @@
         },
         {
           "name": "João Palhinha",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Nathaniel Chalobah",
@@ -271,7 +271,7 @@
         },
         {
           "name": "Saša Lukić",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Tom Cairney",
@@ -412,7 +412,7 @@
         },
         {
           "name": "Timothy Castagne",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kenny Tete",
@@ -420,7 +420,7 @@
         },
         {
           "name": "Kevin Mbabu",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Devan Tanton",
@@ -428,7 +428,7 @@
         },
         {
           "name": "João Palhinha",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Andreas Pereira",
@@ -440,7 +440,7 @@
         },
         {
           "name": "Saša Lukić",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Tom Cairney",
@@ -565,11 +565,11 @@
         },
         {
           "name": "Timothy Castagne",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Sander Berge",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Andreas Pereira",
@@ -577,7 +577,7 @@
         },
         {
           "name": "Saša Lukić",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Harrison Reed",
@@ -646,103 +646,127 @@
       "teamLabel": "Fulham (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Bernd Leno",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Benjamin Lecomte",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Calvin Bassey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joachim Andersen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Issa Diop",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Jorge Cuenca",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Antonee Robinson",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Ryan Sessegnon",
-          "position": "CB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Kenny Tete",
-          "position": "CB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Timothy Castagne",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Sander Berge",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Saša Lukić",
-          "position": "CM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Harrison Reed",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Tom Cairney",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Emile Smith Rowe",
-          "position": "CM"
+          "position": "AM",
+          "rating": 84
         },
         {
           "name": "Josh King",
-          "position": "CM"
+          "position": "ST",
+          "rating": 75
         },
         {
           "name": "Kevin",
-          "position": "ST"
+          "position": "CM",
+          "rating": 71
         },
         {
           "name": "Alex Iwobi",
-          "position": "ST"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Oscar Bobb",
-          "position": "ST"
+          "position": "RW",
+          "rating": 84
         },
         {
           "name": "Harry Wilson",
-          "position": "ST"
+          "position": "RW",
+          "rating": 78
         },
         {
           "name": "Samuel Chukwueze",
-          "position": "ST"
+          "position": "RW",
+          "rating": 82
         },
         {
           "name": "Rodrigo Muniz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Raúl Jiménez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jonah Kusi-Asare",
-          "position": "ST"
+          "position": "ST",
+          "rating": 72
         }
       ],
       "ratings": {

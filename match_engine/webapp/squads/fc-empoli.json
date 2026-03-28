@@ -1,5 +1,126 @@
 {
   "slug": "fc-empoli",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "3-4-2-1",
+      "players": [
+        {
+          "name": "Guglielmo Vicario",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Filippo Perucchini",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Mattia Destro",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Liam Henderson",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sebastiano Luperto",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Peřan",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Tyrion Ebuehi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Liberato Cacace",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Szymon Zurkowski",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Filippo Bandinelli",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Samuele Ricci",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Nicola Haas",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lorenzo Tonelli",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Andrea Cambiaso",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Petar Stojanovic",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Razvan Marin",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Młynarski",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Patrick Cutrone",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Matteo Cancellieri",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Martin Bijol",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Cerri",
+          "position": "ST",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — FC Empoli (2025/2026)",
+      "teamLabel": "FC Empoli (2025-26)"
+    }
+  },
+  "id": 749,
+  "name": "FC Empoli",
   "badgeLocalPath": "/img/badges/fc-empoli.png"
 }

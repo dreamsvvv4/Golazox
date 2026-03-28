@@ -1,5 +1,259 @@
 {
   "slug": "rc-deportivo",
-  "seasons": {},
+  "seasons": {
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dani Giménez",
+          "position": "GK"
+        },
+        {
+          "name": "David Simón",
+          "position": "RB"
+        },
+        {
+          "name": "Caballo",
+          "position": "LB"
+        },
+        {
+          "name": "Domingos Duarte",
+          "position": "CB"
+        },
+        {
+          "name": "Pablo Marí",
+          "position": "CB"
+        },
+        {
+          "name": "Álex Bergantiños",
+          "position": "CM"
+        },
+        {
+          "name": "Edu Expósito",
+          "position": "CM"
+        },
+        {
+          "name": "Vicente Gómez",
+          "position": "CM"
+        },
+        {
+          "name": "Quique",
+          "position": "ST"
+        },
+        {
+          "name": "Carlos Fernández",
+          "position": "ST"
+        },
+        {
+          "name": "Borja Valle",
+          "position": "ST"
+        },
+        {
+          "name": "Ortolá",
+          "position": "GK"
+        },
+        {
+          "name": "Fede Cartabia",
+          "position": "ST"
+        },
+        {
+          "name": "Bóveda",
+          "position": "RB"
+        },
+        {
+          "name": "Saúl",
+          "position": "LB"
+        },
+        {
+          "name": "Pedro",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Cobo",
+          "position": "GK"
+        },
+        {
+          "name": "Moreno",
+          "position": "CM"
+        },
+        {
+          "name": "Mosquera",
+          "position": "CM"
+        },
+        {
+          "name": "Carles Gil",
+          "position": "CM"
+        },
+        {
+          "name": "Christian Santos",
+          "position": "ST"
+        },
+        {
+          "name": "Krohn-Dehli",
+          "position": "CM"
+        },
+        {
+          "name": "Somma",
+          "position": "CB"
+        },
+        {
+          "name": "Nahuel",
+          "position": "ST"
+        },
+        {
+          "name": "Vítor Silva",
+          "position": "CM"
+        },
+        {
+          "name": "Íñigo López",
+          "position": "CB"
+        },
+        {
+          "name": "Gerard Valentín",
+          "position": "RB"
+        },
+        {
+          "name": "Montiel",
+          "position": "CM"
+        },
+        {
+          "name": "Dubarbier",
+          "position": "LB"
+        },
+        {
+          "name": "Víctor García",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 70,
+        "midfield": 66,
+        "defense": 64,
+        "goalkeeping": 66
+      },
+      "source": "BDFutbol — Deportivo de La Coruña 2018-19 Segunda División",
+      "teamLabel": "Deportivo de La Coruña 2018-19 Segunda División"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Ian Mackay",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Helton Leite",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Ximo Navarro",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Pablo Martínez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Marcos Almeida",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Barbosa",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Jaime Sarmiento",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Diego Villares",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Trilli",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Josep Biel",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Yeremay Hernández",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "David Mella",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Hugo Novoa",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Samuél Lino",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Claudio Beauvue",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Lucas Pérez",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Miku",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Galán",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Araujo",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Borja Jiménez",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Samu",
+          "position": "RW",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 72,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — RC Deportivo La Coruña (2025/2026)",
+      "teamLabel": "Deportivo La Coruña (2025-26)"
+    }
+  },
+  "id": 660,
+  "name": "RC Deportivo La Coruña",
   "badgeLocalPath": "/img/badges/rc-deportivo.png"
 }

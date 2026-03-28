@@ -2,7 +2,7 @@
   "slug": "1-fsv-mainz-05",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Robin Zentner",
@@ -62,7 +62,7 @@
         },
         {
           "name": "Silvan Widmer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kaishu Sano",
@@ -140,5 +140,6 @@
     }
   },
   "id": 39,
-  "name": "Mainz 05"
+  "name": "Mainz 05",
+  "badgeLocalPath": "/img/badges/mainz-05.png"
 }

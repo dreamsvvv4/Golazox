@@ -1,5 +1,37 @@
 {
   "slug": "holstein-kiel",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Timon Weiner", "position": "GK", "rating": 71 },
+        { "name": "Thomas Dähne", "position": "GK", "rating": 69 },
+        { "name": "Timo Becker", "position": "CB", "rating": 72 },
+        { "name": "Finn Porath", "position": "CB", "rating": 72 },
+        { "name": "Marco Komenda", "position": "CB", "rating": 71 },
+        { "name": "Lasse Rosenboom", "position": "LB", "rating": 72 },
+        { "name": "Lewis Holtby", "position": "CM", "rating": 73 },
+        { "name": "Benedikt Pichler", "position": "RW", "rating": 73 },
+        { "name": "Phil Harres", "position": "DM", "rating": 72 },
+        { "name": "Steven Skrzybski", "position": "LW", "rating": 72 },
+        { "name": "Armin Gigovic", "position": "RB", "rating": 71 },
+        { "name": "Shuto Machino", "position": "ST", "rating": 74 },
+        { "name": "Harres", "position": "CM", "rating": 71 },
+        { "name": "Tore Reginiussen", "position": "CB", "rating": 70 },
+        { "name": "Aleksandar Ignjovski", "position": "RB", "rating": 70 },
+        { "name": "Jonas Sterner", "position": "DM", "rating": 71 },
+        { "name": "Fabian Reese", "position": "RW", "rating": 73 },
+        { "name": "Kwasi Okyere Wriedt", "position": "ST", "rating": 72 },
+        { "name": "Noah Atubolu", "position": "GK", "rating": 72 },
+        { "name": "Nicolai Remberg", "position": "CM", "rating": 72 },
+        { "name": "Marko Ivezic", "position": "LW", "rating": 71 }
+      ],
+      "ratings": { "attack": 70, "midfield": 70, "defense": 69, "goalkeeping": 69 },
+      "source": "Transfermarkt — Holstein Kiel (2025/2026)",
+      "teamLabel": "Holstein Kiel (2025-26)"
+    }
+  },
+  "id": 1503,
+  "name": "Holstein Kiel",
   "badgeLocalPath": "/img/badges/holstein-kiel.png"
 }

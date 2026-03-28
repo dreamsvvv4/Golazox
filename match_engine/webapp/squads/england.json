@@ -690,10 +690,6 @@
           "position": "CB"
         },
         {
-          "name": "Gary Stevens",
-          "position": "CB"
-        },
-        {
           "name": "Viv Anderson",
           "position": "CB"
         },
@@ -2534,7 +2530,7 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Glen Johnson",
@@ -2614,7 +2610,7 @@
         },
         {
           "name": "Wilfried Zaha",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Theo Walcott",
@@ -2715,7 +2711,7 @@
         },
         {
           "name": "Luke Shaw",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Leighton Baines",
@@ -2916,7 +2912,7 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Nathaniel Clyne",
@@ -2964,7 +2960,8 @@
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Raheem Sterling",
@@ -2980,7 +2977,8 @@
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Daniel Sturridge",
@@ -3089,19 +3087,19 @@
         },
         {
           "name": "Luke Shaw",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Ashley Young",
@@ -3109,7 +3107,7 @@
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Jordan Henderson",
@@ -3169,7 +3167,8 @@
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Demarai Gray",
@@ -3185,7 +3184,8 @@
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Wayne Rooney",
@@ -3254,23 +3254,23 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Reece James",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Ainsley Maitland-Niles",
@@ -3290,7 +3290,8 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "James Ward-Prowse",
@@ -3298,7 +3299,8 @@
         },
         {
           "name": "Phil Foden",
-          "position": "CM"
+          "position": "AM",
+          "rating": 90
         },
         {
           "name": "Mason Mount",
@@ -3306,7 +3308,8 @@
         },
         {
           "name": "Jude Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 92
         },
         {
           "name": "Jadon Sancho",
@@ -3314,7 +3317,8 @@
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Jack Grealish",
@@ -3330,7 +3334,8 @@
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Mason Greenwood",
@@ -3338,7 +3343,8 @@
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Dominic Calvert-Lewin",
@@ -3415,11 +3421,11 @@
         },
         {
           "name": "Luke Shaw",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Tyrick Mitchell",
@@ -3427,11 +3433,11 @@
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Reece James",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Ben White",
@@ -3447,11 +3453,11 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kalvin Phillips",
@@ -3463,7 +3469,8 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "James Ward-Prowse",
@@ -3475,11 +3482,13 @@
         },
         {
           "name": "Jude Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 92
         },
         {
           "name": "Phil Foden",
-          "position": "CM"
+          "position": "AM",
+          "rating": 90
         },
         {
           "name": "Mason Mount",
@@ -3495,7 +3504,8 @@
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Jack Grealish",
@@ -3503,7 +3513,8 @@
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Raheem Sterling",
@@ -3511,15 +3522,18 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Ollie Watkins",
-          "position": "ST"
+          "position": "ST",
+          "rating": 85
         },
         {
           "name": "Tammy Abraham",
@@ -3544,167 +3558,207 @@
       "teamLabel": "england (2022-23)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 85
         },
         {
           "name": "James Trafford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Dean Henderson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Levi Colwill",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Marc Guéhi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Ezri Konsa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "John Stones",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Jarell Quansah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Trevoh Chalobah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB",
+          "rating": 80
         },
         {
           "name": "Myles Lewis-Skelly",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Djed Spence",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Nico O'Reilly",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "CB"
+          "position": "RB",
+          "rating": 88
         },
         {
           "name": "Tino Livramento",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Reece James",
-          "position": "CB"
+          "position": "RB",
+          "rating": 85
         },
         {
           "name": "Kyle Walker",
-          "position": "CB"
+          "position": "RB",
+          "rating": 82
         },
         {
           "name": "Adam Wharton",
-          "position": "CM"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Jordan Henderson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "Curtis Jones",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Conor Gallagher",
-          "position": "CM"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Elliot Anderson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ruben Loftus-Cheek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Alex Scott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jude Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 91
         },
         {
           "name": "Phil Foden",
-          "position": "CM"
+          "position": "AM",
+          "rating": 89
         },
         {
           "name": "Cole Palmer",
-          "position": "CM"
+          "position": "AM",
+          "rating": 88
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Morgan Gibbs-White",
-          "position": "CM"
+          "position": "AM",
+          "rating": 84
         },
         {
           "name": "Morgan Rogers",
-          "position": "CM"
+          "position": "LW",
+          "rating": 80
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Noni Madueke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Ollie Watkins",
-          "position": "ST"
+          "position": "ST",
+          "rating": 85
         },
         {
           "name": "Dominic Solanke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ivan Toney",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -3761,7 +3815,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Nico O'Reilly",
@@ -3797,7 +3851,8 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "Elliot Anderson",
@@ -3805,19 +3860,23 @@
         },
         {
           "name": "Kobbie Mainoo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Jude Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 92
         },
         {
           "name": "Cole Palmer",
-          "position": "CM"
+          "position": "AM",
+          "rating": 88
         },
         {
           "name": "Phil Foden",
-          "position": "CM"
+          "position": "AM",
+          "rating": 90
         },
         {
           "name": "Morgan Rogers",
@@ -3825,11 +3884,13 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Marcus Rashford",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Harvey Barnes",
@@ -3837,7 +3898,8 @@
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Noni Madueke",
@@ -3845,11 +3907,13 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Dominic Solanke",
@@ -3871,6 +3935,6 @@
     }
   },
   "id": 3299,
-  "name": "england",
+  "name": "England",
   "badgeLocalPath": "/img/badges/england.png"
 }

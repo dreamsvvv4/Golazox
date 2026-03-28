@@ -94,7 +94,7 @@
         },
         {
           "name": "Franck Kessié",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Mohammed Al-Majhad",
@@ -150,7 +150,7 @@
         },
         {
           "name": "Firas Al-Buraikan",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Hassan Al-Ali",
@@ -171,7 +171,7 @@
       "teamLabel": "Al-Ahli (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Edouard Mendy",
@@ -235,7 +235,7 @@
         },
         {
           "name": "Franck Kessié",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Enzo Millot",
@@ -271,7 +271,7 @@
         },
         {
           "name": "Firas Al-Buraikan",
-          "position": "ST"
+          "position": "LW"
         }
       ],
       "ratings": {
@@ -285,5 +285,6 @@
     }
   },
   "id": 18487,
-  "name": "Al-Ahli"
+  "name": "Al-Ahli",
+  "badgeLocalPath": "/img/badges/al-ahli.png"
 }

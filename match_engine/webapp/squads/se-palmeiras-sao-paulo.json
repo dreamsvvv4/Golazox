@@ -2,7 +2,7 @@
   "slug": "se-palmeiras-sao-paulo",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Carlos Miguel",
@@ -98,7 +98,7 @@
         },
         {
           "name": "Jhon Arias",
-          "position": "ST"
+          "position": "CM"
         },
         {
           "name": "Allan",
@@ -136,5 +136,6 @@
     }
   },
   "id": 1023,
-  "name": "Palmeiras"
+  "name": "Palmeiras",
+  "badgeLocalPath": "/img/badges/palmeiras.png"
 }

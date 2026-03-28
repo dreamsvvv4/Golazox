@@ -1,5 +1,459 @@
 {
   "slug": "venezuela",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/venezuela.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "José Contreras",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Wuilker Fariñez",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Miguel Silva",
+          "position": "GK",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Joel Graterol",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Cristopher Varela",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Rafael Romo",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Javier Otero",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Alain Baroja",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jon Aramburu",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Nahuel Ferraresi",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Christian Makoun",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Miguel Navarro",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Carlos Vivas",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Teo Quintero",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Adrián Palacios",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yordan Osorio",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Alessandro Milani",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Thomás Gutiérrez",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Bianneider Tamayo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Josua Mejías",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Luis Balbo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Adrián Cova",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ronald Hernández",
+          "position": "LB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Jhon Chancellor",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Francisco La Mantia",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Alexander González",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Delvin Alfonzo",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Carlos Rojas",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Wilker Ángel",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Roberto Rosales",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Anthony Graterol",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Yangel Herrera",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Jefferson Savarino",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Cristian Cásseres Jr.",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Telasco Segovia",
+          "position": "AM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Daniel Pereira",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "José Martínez",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Wikelman Carmona",
+          "position": "AM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Kervin Andrade",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jesús Bueno",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jeferson Caraballo",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "José Hernández",
+          "position": "CM",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Leonardo Flores",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Bryant Ortega",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Carlos Faya",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Juanpi",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Maurice Cova",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Júnior Moreno",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jorge Yriarte",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Edson Castillo",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Tomás Rincón",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Yeferson Soteldo",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "David Martínez",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Kevin Kelsy",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jhonder Cádiz",
+          "position": "ST",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Josef Martínez",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jesús Ramírez",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alejandro Marqués",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Keiber Lamadrid",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Gleiker Mendoza",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ender Echenique",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Saúl Guarirapa",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Freddy Vargas",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jhon Murillo",
+          "position": "RW",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Eduard Bello",
+          "position": "LW",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Matías Lacava",
+          "position": "ST",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Edson Tortolero",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jovanny Bolívar",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Bryan Castillo",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Salomón Rondón",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jan Hurtado",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Erickson Gallardo",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Moises Tablante",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 68,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — venezuela (2025/2026)",
+      "teamLabel": "venezuela (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/venezuela.png",
+  "id": 3504,
+  "name": "venezuela"
 }

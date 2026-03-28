@@ -301,8 +301,382 @@
       },
       "source": "Transfermarkt — Estados Unidos (2019/2020)",
       "teamLabel": "Estados Unidos (2019-20)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Matt Turner",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Patrick Schulte",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Chris Brady",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Roman Celentano",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Zack Steffen",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Matt Freese",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jonathan Klinsmann",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sergiño Dest",
+          "position": "RB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Auston Trusty",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Joe Scally",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mark McKenzie",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Miles Robinson",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "John Tolkin",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Marlon Fossey",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Walker Zimmerman",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "DeJuan Jones",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Tristan Blackmon",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "George Campbell",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Shaq Moore",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Nathan Harriel",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Tim Ream",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Noahkai Banks",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Alex Freeman",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Malik Tillman",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Weston McKennie",
+          "position": "CM",
+          "marketValue": 24000000,
+          "rating": 86
+        },
+        {
+          "name": "Yunus Musah",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Johnny Cardoso",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Timothy Weah",
+          "position": "RB",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Tyler Adams",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Giovanni Reyna",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Tanner Tessmann",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Diego Luna",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Paxten Aaronson",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jack McGlynn",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Quinn Sullivan",
+          "position": "AM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Cristian Roldán",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Benja Cremaschi",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Brian Gutiérrez",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "James Sands",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Aidan Morris",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Timothy Tillman",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Caden Clark",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Emeka Eneli",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Luca de la Torre",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Sebastian Berhalter",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Matko Miljevic",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Folarin Balogun",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Ricardo Pepi",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Christian Pulisic",
+          "position": "LW",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Josh Sargent",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Haji Wright",
+          "position": "ST",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Álex Zendejas",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Brian White",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Damion Downs",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Patrick Agyemang",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Indiana Vassilev",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Max Arfsten",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — usa (2025/2026)",
+      "teamLabel": "usa (2025-26)"
     }
   },
   "id": 3505,
-  "name": "Estados Unidos"
+  "name": "Estados Unidos",
+  "badgeLocalPath": "/img/badges/united-states.png"
 }

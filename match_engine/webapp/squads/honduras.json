@@ -1,5 +1,303 @@
 {
   "slug": "honduras",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/honduras.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Edrick Menjívar",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Luis López",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Harold Fonseca",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Marlon Licona",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Luis Ortiz",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Joseph Rosales",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Denil Maldonado",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Andy Nájar",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Devron García",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luis Vega",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Julián Martínez",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Getsel Montes",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Franklin Flores",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Elison Rivas",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Marcelo Santos",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Cristopher Meléndez",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Deyron Martínez",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Luis Crisanto",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "David Ruíz",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Kervin Arriaga",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bryan Acosta",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Deybi Flores",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jorge Álvarez",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Carlos Mejía",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Carlos Pineda",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Alexy Vega",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alexander López",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Henry Gomez",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jack Jean-Baptiste",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Denis Meléndez",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Jonathan Núñez",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Raul García",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Héctor Aranda",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Luis Palma",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rigoberto Rivas",
+          "position": "ST",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Choco Lozano",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Romell Quioto",
+          "position": "RW",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Alenis Vargas",
+          "position": "RW",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "José Pinto",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Edwin Rodríguez",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jorge Benguché",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Dixon Ramírez",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Cristian Sacaza",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Eddie Hernández",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Yustin Arboleda",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Marlon Ramírez",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Dereck Moncada",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — honduras (2025/2026)",
+      "teamLabel": "honduras (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/honduras.png",
+  "id": 3590,
+  "name": "honduras"
 }

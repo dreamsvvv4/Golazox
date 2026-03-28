@@ -1,5 +1,126 @@
 {
   "slug": "ac-monza",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "3-4-2-1",
+      "players": [
+        {
+          "name": "Michele Di Gregorio",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Stefano Cragno",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Pablo Marí",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Luca Marrone",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Luca Caldirola",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Michele Soriano",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Dany Mota",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Roberto Gagliardini",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Matteo Pessina",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Samuele Birindelli",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Valentin Carboni",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Stefano Sensi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Gianluca Caprari",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Lorenzo Pirola",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Daniel Maldini",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Andrea Petagna",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Augusto",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Armando Izzo",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Leonardo Carboni",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Andrea Colpani",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Gianluca Gaetano",
+          "position": "CM",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 72,
+        "midfield": 72,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — AC Monza (2025/2026)",
+      "teamLabel": "AC Monza (2025-26)"
+    }
+  },
+  "id": 2919,
+  "name": "AC Monza",
   "badgeLocalPath": "/img/badges/ac-monza.png"
 }

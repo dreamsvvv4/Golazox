@@ -1,5 +1,309 @@
 {
   "slug": "uruguay",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/uruguay.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Franco Israel",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Sergio Rochet",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Santiago Mele",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 75
+        },
+        {
+          "name": "Cristopher Fiermarín",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Kevin Martínez",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Paulo Da Costa",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "Ronald Araujo",
+          "position": "CB",
+          "marketValue": 55000000,
+          "rating": 86
+        },
+        {
+          "name": "José María Giménez",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Mathías Olivera",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Maxi Araújo",
+          "position": "LB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Joaquín Piquerez",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Santiago Bueno",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Matías Viña",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Juan Manuel Sanabria",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Sebastián Cáceres",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Nicolás Marichal",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Marcelo Saracchi",
+          "position": "LB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Santiago Mouriño",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "José Luis Rodríguez",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Guillermo Varela",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Kevin Amaro",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Brian Barboza",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM",
+          "marketValue": 130000000,
+          "rating": 91
+        },
+        {
+          "name": "Nicolás de la Cruz",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Lucas Torreira",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Rodrigo Zalazar",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Giorgian de Arrascaeta",
+          "position": "AM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Manuel Ugarte",
+          "position": "DM",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Rodrigo Bentancur",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 83
+        },
+        {
+          "name": "Emiliano Martínez",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Nahitan Nández",
+          "position": "DM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Nicolás Fonseca",
+          "position": "CM",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "Santiago Homenchenko",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Julio Daguer",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 71
+        },
+        {
+          "name": "Pablo Alcoba",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Facundo Torres",
+          "position": "RW",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Darwin Núñez",
+          "position": "LW",
+          "marketValue": 65000000,
+          "rating": 87
+        },
+        {
+          "name": "Facundo Pellistri",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luciano Rodríguez",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Brian Rodríguez",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Cristian Olivera",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Federico Viñas",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Agustín Álvarez",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rodrigo Aguirre",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ignacio Laquintana",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Facundo Martínez",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Luciano González",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Nicolas Azambuja",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — uruguay (2025/2026)",
+      "teamLabel": "uruguay (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/uruguay.png",
+  "id": 3449,
+  "name": "uruguay"
 }

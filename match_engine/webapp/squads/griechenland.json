@@ -109,8 +109,226 @@
       },
       "source": "Transfermarkt — greece (2004/2005)",
       "teamLabel": "greece (2004-05)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Odysseas Vlachodimos",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Konstantinos Tzolakis",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Christos Mandas",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Konstantinos Mavropanos",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Konstantinos Tsimikas",
+          "position": "LB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Konstantinos Koulierakis",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Georgios Vagiannidis",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Panagiotis Retsos",
+          "position": "RB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Georgios Kyriakopoulos",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Lazaros Rota",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Pantelis Hatzidiakos",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Dimitrios Giannoulis",
+          "position": "LB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Giannis Michailidis",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Marios Vichos",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Giannis Konstantelias",
+          "position": "RW",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Christos Zafeiris",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Konstantinos Karetsas",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Anastasios Bakasetas",
+          "position": "AM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Christos Mouzakitis",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Sotiris Alexandropoulos",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Manolis Siopis",
+          "position": "DM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Dimitrios Pelkas",
+          "position": "AM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Petros Mantalos",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dimitrios Kourbelis",
+          "position": "DM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Konstantinos Galanopoulos",
+          "position": "DM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Nectarios Triantis",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Vangelis Pavlidis",
+          "position": "ST",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Christos Tzolis",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Fotis Ioannidis",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Anastasios Douvikas",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Georgios Masouras",
+          "position": "LW",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Taxiarchis Fountas",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Charalampos Kostoulas",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Andreas Tetteh",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — greece (2025/2026)",
+      "teamLabel": "greece (2025-26)"
     }
   },
   "id": 3378,
-  "name": "greece"
+  "name": "Grecia",
+  "badgeLocalPath": "/img/badges/greece.png"
 }

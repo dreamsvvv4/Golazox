@@ -3355,7 +3355,7 @@
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Antoine Griezmann",
@@ -3363,7 +3363,7 @@
         },
         {
           "name": "Ousmane Dembélé",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Anthony Martial",
@@ -3520,11 +3520,12 @@
         },
         {
           "name": "Kylian Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "Ousmane Dembélé",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Anthony Martial",
@@ -3653,7 +3654,7 @@
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Jonathan Ikoné",
@@ -3665,7 +3666,8 @@
         },
         {
           "name": "Kylian Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "Anthony Martial",
@@ -3778,7 +3780,8 @@
         },
         {
           "name": "Aurélien Tchouaméni",
-          "position": "CM"
+          "position": "DM",
+          "rating": 87
         },
         {
           "name": "Boubacar Kamara",
@@ -3814,7 +3817,7 @@
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Moussa Diaby",
@@ -3826,7 +3829,8 @@
         },
         {
           "name": "Kylian Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "Christopher Nkunku",
@@ -3838,7 +3842,7 @@
         },
         {
           "name": "Ousmane Dembélé",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Marcus Thuram",
@@ -3865,6 +3869,235 @@
       },
       "source": "Transfermarkt — france (2022/2023)",
       "teamLabel": "france (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mike Maignan",
+          "position": "GK",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Lucas Chevalier",
+          "position": "GK",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Brice Samba",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Benjamin Pavard",
+          "position": "RB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Theo Hernández",
+          "position": "LB",
+          "marketValue": 50000000,
+          "rating": 88
+        },
+        {
+          "name": "Malo Gusto",
+          "position": "RB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "William Saliba",
+          "position": "CB",
+          "marketValue": 80000000,
+          "rating": 86
+        },
+        {
+          "name": "Ibrahima Konaté",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 86
+        },
+        {
+          "name": "Pierre Kalulu",
+          "position": "RB",
+          "marketValue": 26000000,
+          "rating": 86
+        },
+        {
+          "name": "Loïc Badé",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jules Koundé",
+          "position": "RB",
+          "marketValue": 60000000,
+          "rating": 86
+        },
+        {
+          "name": "Dayot Upamecano",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 84
+        },
+        {
+          "name": "Lucas Hernández",
+          "position": "LB",
+          "marketValue": 32000000,
+          "rating": 84
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Jonathan Clauss",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Eduardo Camavinga",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Khéphren Thuram",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Mattéo Guendouzi",
+          "position": "CM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "position": "DM",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Manu Koné",
+          "position": "CM",
+          "marketValue": 26000000,
+          "rating": 86
+        },
+        {
+          "name": "Adrien Rabiot",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Rayan Cherki",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Warren Zaïre-Emery",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 82
+        },
+        {
+          "name": "N'Golo Kanté",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "ST",
+          "marketValue": 160000000,
+          "rating": 95
+        },
+        {
+          "name": "Bradley Barcola",
+          "position": "LW",
+          "marketValue": 65000000,
+          "rating": 88
+        },
+        {
+          "name": "Désiré Doué",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Maghnes Akliouche",
+          "position": "AM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Hugo Ekitiké",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "position": "RW",
+          "marketValue": 55000000,
+          "rating": 87
+        },
+        {
+          "name": "Michael Olise",
+          "position": "RW",
+          "marketValue": 65000000,
+          "rating": 89
+        },
+        {
+          "name": "Marcus Thuram",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 85
+        },
+        {
+          "name": "Christopher Nkunku",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Kingsley Coman",
+          "position": "RW",
+          "marketValue": 35000000,
+          "rating": 83
+        },
+        {
+          "name": "Randal Kolo Muani",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 83
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — france (2025/2026)",
+      "teamLabel": "france (2025-26)"
     }
   },
   "id": 3377,

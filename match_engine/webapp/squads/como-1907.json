@@ -1,8 +1,11 @@
 {
   "slug": "como-1907",
+  "name": "Como 1907",
+  "badgeLocalPath": "/img/badges/como-1907.png",
+  "id": 19041,
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Jean Butez",
@@ -119,10 +122,8 @@
         "defense": 64,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Nice (2025/2026)",
-      "teamLabel": "Nice (2025-26)"
+      "source": "Transfermarkt — Como 1907 (2025/2026)",
+      "teamLabel": "Como 1907 (2025-26)"
     }
-  },
-  "id": 1047,
-  "name": "Nice"
+  }
 }

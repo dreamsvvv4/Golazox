@@ -2187,6 +2187,229 @@
       "source": "Transfermarkt — spain (2004/2005)",
       "teamLabel": "spain (2004-05)"
     },
+    "2005": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Iker Casillas",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 88
+        },
+        {
+          "name": "Víctor Valdés",
+          "position": "GK",
+          "marketValue": 11000000,
+          "rating": 86
+        },
+        {
+          "name": "Pepe Reina",
+          "position": "GK",
+          "marketValue": 4500000,
+          "rating": 84
+        },
+        {
+          "name": "Santiago Cañizares",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Sergio Ramos",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 91
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB",
+          "marketValue": 22500000,
+          "rating": 90
+        },
+        {
+          "name": "Míchel Salgado",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 86
+        },
+        {
+          "name": "Carlos Marchena",
+          "position": "CB",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Pablo Ibáñez",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Asier del Horno",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Juanito",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Enrique Romero",
+          "position": "CB",
+          "marketValue": 2750000,
+          "rating": 77
+        },
+        {
+          "name": "Antonio López",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Xabi Alonso",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 91
+        },
+        {
+          "name": "Xavi",
+          "position": "CM",
+          "marketValue": 21000000,
+          "rating": 85
+        },
+        {
+          "name": "Juan Carlos Valerón",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "David Albelda",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Rubén Baraja",
+          "position": "CM",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Guti",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Sergio González",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Iván de la Peña",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Pablo Orbaiz",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Alberto Rivera",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "David Villa",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 89
+        },
+        {
+          "name": "Raúl",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 88
+        },
+        {
+          "name": "Raúl Tamudo",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 88
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Fernando Torres",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 87
+        },
+        {
+          "name": "Vicente",
+          "position": "ST",
+          "marketValue": 22500000,
+          "rating": 86
+        },
+        {
+          "name": "Joaquín",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Albert Luque",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mista",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luis García",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Antonio Guayre",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 89,
+        "defense": 78,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — España (2005/2006)",
+      "teamLabel": "España (2005-06)"
+    },
     "2006": {
       "formation": "4-4-2",
       "players": [
@@ -2574,7 +2797,7 @@
         },
         {
           "name": "Jesús Navas",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "David Silva",
@@ -2735,7 +2958,7 @@
         },
         {
           "name": "Jesús Navas",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "David Silva",
@@ -2856,7 +3079,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Juanfran Torres",
@@ -2912,7 +3135,7 @@
         },
         {
           "name": "Jesús Navas",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Isco",
@@ -3069,7 +3292,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Héctor Bellerín",
@@ -3282,7 +3505,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lucas Vázquez",
@@ -3298,7 +3521,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Sergio Busquets",
@@ -3431,11 +3654,11 @@
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Héctor Bellerín",
@@ -3443,11 +3666,11 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Rodri",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Sergio Busquets",
@@ -3483,7 +3706,7 @@
         },
         {
           "name": "Jesús Navas",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Marco Asensio",
@@ -3491,7 +3714,8 @@
         },
         {
           "name": "Dani Olmo",
-          "position": "CM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Sergio Canales",
@@ -3523,7 +3747,7 @@
         },
         {
           "name": "Ferran Torres",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Gerard Moreno",
@@ -3600,15 +3824,15 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Rodri",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Hugo Guillamón",
@@ -3620,7 +3844,8 @@
         },
         {
           "name": "Pedri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 89
         },
         {
           "name": "Carlos Soler",
@@ -3632,11 +3857,13 @@
         },
         {
           "name": "Gavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 87
         },
         {
           "name": "Dani Olmo",
-          "position": "CM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Marco Asensio",
@@ -3652,7 +3879,8 @@
         },
         {
           "name": "Nico Williams",
-          "position": "ST"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Yéremy Pino",
@@ -3660,7 +3888,7 @@
         },
         {
           "name": "Ferran Torres",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Álvaro Morata",
@@ -3733,11 +3961,11 @@
         },
         {
           "name": "Alejandro Grimaldo",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Sergio Gómez",
@@ -3745,15 +3973,16 @@
         },
         {
           "name": "Pedro Porro",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Óscar Mingueza",
@@ -3761,7 +3990,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Martín Zubimendi",
@@ -3777,7 +4006,8 @@
         },
         {
           "name": "Pedri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 89
         },
         {
           "name": "Mikel Merino",
@@ -3797,11 +4027,12 @@
         },
         {
           "name": "Jesús Navas",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Dani Olmo",
-          "position": "CM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Oihan Sancet",
@@ -3817,7 +4048,8 @@
         },
         {
           "name": "Nico Williams",
-          "position": "ST"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Rodrigo Riquelme",
@@ -3829,7 +4061,7 @@
         },
         {
           "name": "Bryan Gil",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Bryan Zaragoza",
@@ -3837,7 +4069,8 @@
         },
         {
           "name": "Lamine Yamal",
-          "position": "ST"
+          "position": "RW",
+          "rating": 88
         },
         {
           "name": "Yéremy Pino",
@@ -3849,7 +4082,7 @@
         },
         {
           "name": "Ferran Torres",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Álvaro Morata",
@@ -3881,6 +4114,253 @@
       "source": "Transfermarkt — spain (2024/2025)",
       "teamLabel": "spain (2024-25)"
     },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "David Raya",
+          "position": "GK",
+          "marketValue": 40000000,
+          "rating": 85
+        },
+        {
+          "name": "Unai Simón",
+          "position": "GK",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Álex Remiro",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Robin Le Normand",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Dani Vivian",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Pedro Porro",
+          "position": "RB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Marc Cucurella",
+          "position": "LB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Marcos Llorente",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 86
+        },
+        {
+          "name": "Alejandro Grimaldo",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 85
+        },
+        {
+          "name": "Óscar Mingueza",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Pau Cubarsí",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 83
+        },
+        {
+          "name": "Dean Huijsen",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 82
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Raúl Asencio",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 80
+        },
+        {
+          "name": "Rodri",
+          "position": "DM",
+          "marketValue": 130000000,
+          "rating": 90
+        },
+        {
+          "name": "Pablo Barrios",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Pedri",
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 90
+        },
+        {
+          "name": "Gavi",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Fabián Ruiz",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Dani Olmo",
+          "position": "AM",
+          "marketValue": 60000000,
+          "rating": 87
+        },
+        {
+          "name": "Aleix García",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Martín Zubimendi",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 84
+        },
+        {
+          "name": "Mikel Merino",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 84
+        },
+        {
+          "name": "Isco",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 84
+        },
+        {
+          "name": "Fermín López",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Pablo Fornals",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Álex Baena",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Samu Aghehowa",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "RW",
+          "marketValue": 180000000,
+          "rating": 91
+        },
+        {
+          "name": "Yéremy Pino",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Nico Williams",
+          "position": "LW",
+          "marketValue": 70000000,
+          "rating": 88
+        },
+        {
+          "name": "Mikel Oyarzabal",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 85
+        },
+        {
+          "name": "Ferran Torres",
+          "position": "RW",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Ayoze Pérez",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 80
+        },
+        {
+          "name": "Jorge de Frutos",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Borja Iglesias",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jesús Rodríguez",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 88,
+        "defense": 77,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — spain (2025/2026)",
+      "teamLabel": "spain (2025-26)"
+    },
     "2026": {
       "formation": "4-3-3",
       "players": [
@@ -3902,11 +4382,12 @@
         },
         {
           "name": "Pedro Porro",
-          "position": "RB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Marcos Llorente",
-          "position": "RB"
+          "position": "CM"
         },
         {
           "name": "Pau Cubarsí",
@@ -3938,7 +4419,8 @@
         },
         {
           "name": "Pedri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 89
         },
         {
           "name": "Martín Zubimendi",
@@ -3946,7 +4428,8 @@
         },
         {
           "name": "Dani Olmo",
-          "position": "AM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Fermín López",
@@ -3966,7 +4449,8 @@
         },
         {
           "name": "Lamine Yamal",
-          "position": "RW"
+          "position": "RW",
+          "rating": 88
         },
         {
           "name": "Víctor Muñoz",
@@ -3978,11 +4462,12 @@
         },
         {
           "name": "Nico Williams",
-          "position": "LW"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Ferran Torres",
-          "position": "LW"
+          "position": "RW"
         },
         {
           "name": "Ander Barrenetxea",

@@ -1,5 +1,126 @@
 {
   "slug": "coventry-city",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Simon Moore",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Ben Willson",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Jonathan Panzo",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Kyle McFadzean",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Dominic Hyam",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Victor Torp",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Haji Wright",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Callum O'Hare",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Gustavo Hamer",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Milan van Ewijk",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Joel Latibeaudiere",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Liam Kelly",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Ben Sheaf",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Jake Bidwell",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Brandon Thomas-Asante",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Matty Godden",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Todd Kane",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Kasey Palmer",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Luis Binks",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Jamie Allen",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Fabio Tavares",
+          "position": "LW",
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Coventry City (2025/2026)",
+      "teamLabel": "Coventry City (2025-26)"
+    }
+  },
+  "id": 1162,
+  "name": "Coventry City",
   "badgeLocalPath": "/img/badges/coventry-city.png"
 }

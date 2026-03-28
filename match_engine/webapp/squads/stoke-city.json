@@ -1,5 +1,126 @@
 {
   "slug": "stoke-city",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Viktor Johansson",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Tommy Simkin",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Josh Tymon",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Morgan Fox",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Ben Wilmot",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Aden Flint",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Phil Jagielka",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Sam Clucas",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Campbell",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Nick Powell",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Jacob Brown",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Connor Taylor",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Dujon Sterling",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Ki-Jana Hoever",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Tom Ince",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Steven Fletcher",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Will Smallbone",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Niall Ennis",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Mehdi Leris",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Teden Mengi",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Andre Vidigal",
+          "position": "LW",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 64,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Stoke City (2025/2026)",
+      "teamLabel": "Stoke City (2025-26)"
+    }
+  },
+  "id": 512,
+  "name": "Stoke City",
   "badgeLocalPath": "/img/badges/stoke-city.png"
 }

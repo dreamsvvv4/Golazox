@@ -1,5 +1,105 @@
 {
   "slug": "ipswich-town",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Arijanet Muric",
+          "position": "GK"
+        },
+        {
+          "name": "Leif Davis",
+          "position": "RB"
+        },
+        {
+          "name": "Cameron Burgess",
+          "position": "CB"
+        },
+        {
+          "name": "Axel Tuanzebe",
+          "position": "CB"
+        },
+        {
+          "name": "Harry Clarke",
+          "position": "LB"
+        },
+        {
+          "name": "Massimo Luongo",
+          "position": "CM"
+        },
+        {
+          "name": "Sam Morsy",
+          "position": "CM"
+        },
+        {
+          "name": "Conor Chaplin",
+          "position": "AM"
+        },
+        {
+          "name": "Wes Burns",
+          "position": "RW"
+        },
+        {
+          "name": "George Hirst",
+          "position": "ST"
+        },
+        {
+          "name": "Omari Hutchinson",
+          "position": "LW"
+        },
+        {
+          "name": "Christian Walton",
+          "position": "GK"
+        },
+        {
+          "name": "Janoi Donacien",
+          "position": "RB"
+        },
+        {
+          "name": "Luke Woolfenden",
+          "position": "CB"
+        },
+        {
+          "name": "Elkan Baggott",
+          "position": "LB"
+        },
+        {
+          "name": "Ben Johnson",
+          "position": "CM"
+        },
+        {
+          "name": "Jack Taylor",
+          "position": "CM"
+        },
+        {
+          "name": "Marcus Harness",
+          "position": "RW"
+        },
+        {
+          "name": "Freddie Ladapo",
+          "position": "ST"
+        },
+        {
+          "name": "Nathan Broadhead",
+          "position": "AM"
+        },
+        {
+          "name": "Kyle Edwards",
+          "position": "LW"
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 70
+      },
+      "source": "Transfermarkt — Ipswich Town 2024-25 Championship",
+      "teamLabel": "Ipswich Town 2024-25 Championship"
+    }
+  },
+  "id": 677,
+  "name": "Ipswich Town",
   "badgeLocalPath": "/img/badges/ipswich-town.png"
 }

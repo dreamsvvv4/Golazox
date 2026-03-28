@@ -476,10 +476,6 @@
           "position": "ST"
         },
         {
-          "name": "Jan Peters",
-          "position": "ST"
-        },
-        {
           "name": "Harry Lubse",
           "position": "ST"
         }
@@ -3054,7 +3050,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Terence Kongolo",
@@ -3082,11 +3078,11 @@
         },
         {
           "name": "Hans Hateboer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Denzel Dumfries",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Marten de Roon",
@@ -3122,7 +3118,8 @@
         },
         {
           "name": "Frenkie de Jong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 87
         },
         {
           "name": "Wesley Sneijder",
@@ -3219,7 +3216,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Sven Botman",
@@ -3235,7 +3232,7 @@
         },
         {
           "name": "Owen Wijndal",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Patrick van Aanholt",
@@ -3243,11 +3240,11 @@
         },
         {
           "name": "Hans Hateboer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Denzel Dumfries",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Joël Veltman",
@@ -3259,7 +3256,7 @@
         },
         {
           "name": "Ryan Gravenberch",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Marten de Roon",
@@ -3271,7 +3268,8 @@
         },
         {
           "name": "Frenkie de Jong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 87
         },
         {
           "name": "Georginio Wijnaldum",
@@ -3323,7 +3321,7 @@
         },
         {
           "name": "Donyell Malen",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Luuk de Jong",
@@ -3388,7 +3386,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Daley Blind",
@@ -3400,11 +3398,11 @@
         },
         {
           "name": "Owen Wijndal",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Tyrell Malacia",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jeremie Frimpong",
@@ -3416,11 +3414,11 @@
         },
         {
           "name": "Hans Hateboer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Denzel Dumfries",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Devyne Rensch",
@@ -3432,7 +3430,7 @@
         },
         {
           "name": "Ryan Gravenberch",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Marten de Roon",
@@ -3440,7 +3438,7 @@
         },
         {
           "name": "Jerdy Schouten",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Jordy Clasie",
@@ -3448,7 +3446,8 @@
         },
         {
           "name": "Frenkie de Jong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 87
         },
         {
           "name": "Georginio Wijnaldum",
@@ -3472,7 +3471,8 @@
         },
         {
           "name": "Xavi Simons",
-          "position": "CM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Arnaut Danjuma",
@@ -3484,7 +3484,7 @@
         },
         {
           "name": "Cody Gakpo",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Steven Bergwijn",
@@ -3500,7 +3500,7 @@
         },
         {
           "name": "Donyell Malen",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Wout Weghorst",
@@ -3527,9 +3527,250 @@
       },
       "source": "Transfermarkt — netherlands (2022/2023)",
       "teamLabel": "netherlands (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Mark Flekken",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Kjell Scherpen",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Nick Olij",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Robin Roefs",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Virgil van Dijk",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 89
+        },
+        {
+          "name": "Jeremie Frimpong",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Matthijs de Ligt",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Jurriën Timber",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Nathan Aké",
+          "position": "LB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Jorrel Hato",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Lutsharel Geertruida",
+          "position": "RB",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Stefan de Vrij",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 86
+        },
+        {
+          "name": "Quilindschy Hartman",
+          "position": "CB",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Denzel Dumfries",
+          "position": "RB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Micky van de Ven",
+          "position": "CB",
+          "marketValue": 55000000,
+          "rating": 84
+        },
+        {
+          "name": "Ian Maatsen",
+          "position": "CB",
+          "marketValue": 32000000,
+          "rating": 83
+        },
+        {
+          "name": "Youri Baas",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Ryan Gravenberch",
+          "position": "DM",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 88
+        },
+        {
+          "name": "Teun Koopmeiners",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Frenkie de Jong",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 87
+        },
+        {
+          "name": "Jerdy Schouten",
+          "position": "DM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Mats Wieffer",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Quinten Timber",
+          "position": "DM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Justin Kluivert",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Xavi Simons",
+          "position": "AM",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Kenneth Taylor",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Sem Steijn",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luciano Valente",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Brian Brobbey",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Noa Lang",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Cody Gakpo",
+          "position": "LW",
+          "marketValue": 60000000,
+          "rating": 84
+        },
+        {
+          "name": "Emmanuel Emegha",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Memphis Depay",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Donyell Malen",
+          "position": "RW",
+          "marketValue": 28000000,
+          "rating": 82
+        },
+        {
+          "name": "Wout Weghorst",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 89,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — netherlands (2025/2026)",
+      "teamLabel": "netherlands (2025-26)"
     }
   },
   "id": 3379,
-  "name": "netherlands",
+  "name": "Países Bajos",
   "badgeLocalPath": "/img/badges/niederlande.png"
 }

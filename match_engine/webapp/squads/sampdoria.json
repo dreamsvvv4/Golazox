@@ -1,5 +1,105 @@
 {
   "slug": "sampdoria",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Emil Audero",
+          "position": "GK"
+        },
+        {
+          "name": "Bartosz Bereszynski",
+          "position": "RB"
+        },
+        {
+          "name": "Omar Colley",
+          "position": "CB"
+        },
+        {
+          "name": "Lorenzo Tonelli",
+          "position": "CB"
+        },
+        {
+          "name": "Tommaso Augello",
+          "position": "LB"
+        },
+        {
+          "name": "Morten Thorsby",
+          "position": "CM"
+        },
+        {
+          "name": "Albin Ekdal",
+          "position": "CM"
+        },
+        {
+          "name": "Mehdi Leris",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Candreva",
+          "position": "RW"
+        },
+        {
+          "name": "Francesco Caputo",
+          "position": "ST"
+        },
+        {
+          "name": "Manolo Gabbiadini",
+          "position": "LW"
+        },
+        {
+          "name": "Weston McKennie",
+          "position": "GK"
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "RB"
+        },
+        {
+          "name": "Alex Ferrari",
+          "position": "CB"
+        },
+        {
+          "name": "Matteo Leverbe",
+          "position": "LB"
+        },
+        {
+          "name": "Ronaldo Vieira",
+          "position": "CM"
+        },
+        {
+          "name": "Mikkel Damsgaard",
+          "position": "AM"
+        },
+        {
+          "name": "Nicola Murru",
+          "position": "LB"
+        },
+        {
+          "name": "Bogdan Stancu",
+          "position": "ST"
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM"
+        },
+        {
+          "name": "Manolo Portanova",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Sampdoria 2024-25 Serie B",
+      "teamLabel": "UC Sampdoria 2024-25 Serie B"
+    }
+  },
+  "id": 70,
+  "name": "UC Sampdoria",
   "badgeLocalPath": "/img/badges/sampdoria.png"
 }

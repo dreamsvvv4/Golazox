@@ -2,7 +2,7 @@
   "slug": "marokko",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Yassine Bounou",
@@ -42,7 +42,7 @@
         },
         {
           "name": "Anass Salah-Eddine",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 5000000,
           "rating": 91
         },
@@ -54,19 +54,19 @@
         },
         {
           "name": "Achraf Hakimi",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 60000000,
-          "rating": 87
+          "rating": 90
         },
         {
           "name": "Noussair Mazraoui",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 32000000,
           "rating": 87
         },
         {
           "name": "Zakaria El Ouahdi",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 10000000,
           "rating": 82
         },
@@ -90,13 +90,13 @@
         },
         {
           "name": "Adam Aznou",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 3000000,
           "rating": 78
         },
         {
           "name": "Omar El Hilali",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 3000000,
           "rating": 78
         },
@@ -114,7 +114,7 @@
         },
         {
           "name": "Adam Masina",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 1500000,
           "rating": 75
         },
@@ -192,25 +192,25 @@
         },
         {
           "name": "Abdelhamid Ait Boudlal",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
-          "rating": null
+          "rating": 74
         },
         {
           "name": "Fouad Zahouani",
-          "position": "CB",
+          "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 72
         },
         {
           "name": "Bilal El Khannouss",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 30000000,
           "rating": 87
         },
         {
           "name": "Sofyan Amrabat",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 22000000,
           "rating": 86
         },
@@ -324,43 +324,43 @@
         },
         {
           "name": "Eliesse Ben Seghir",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 30000000,
           "rating": 87
         },
         {
           "name": "Brahim Díaz",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 35000000,
           "rating": 87
         },
         {
           "name": "Amine Adli",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 22000000,
           "rating": 86
         },
         {
           "name": "Abde Ezzalzouli",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 15000000,
           "rating": 84
         },
         {
           "name": "Ilias Akhomach",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 15000000,
           "rating": 84
         },
         {
           "name": "Sofiane Diop",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 12000000,
           "rating": 83
         },
         {
           "name": "Osame Sahraoui",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 12000000,
           "rating": 83
         },
@@ -372,13 +372,13 @@
         },
         {
           "name": "Soufiane Rahimi",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 7500000,
           "rating": 81
         },
         {
           "name": "Tarik Tissoudali",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 5000000,
           "rating": 80
         },
@@ -396,13 +396,13 @@
         },
         {
           "name": "Mounir Chouiar",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 3000000,
           "rating": 78
         },
         {
           "name": "Chemsdine Talbi",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 3000000,
           "rating": 78
         },
@@ -494,7 +494,7 @@
           "name": "Youness El Kaabi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         }
       ],
       "ratings": {
@@ -508,5 +508,6 @@
     }
   },
   "id": 3575,
-  "name": "MArruecos"
+  "name": "Marruecos",
+  "badgeLocalPath": "/img/badges/marruecos.png"
 }

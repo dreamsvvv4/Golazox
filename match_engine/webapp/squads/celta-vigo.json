@@ -2,27 +2,32 @@
   "slug": "celta-vigo",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ionuț Radu",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Iván Villar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Marc Vidal",
-          "position": "GK"
+          "position": "GK",
+          "rating": 73
         },
         {
           "name": "Javi Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carl Starfelt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Carlos Domínguez",
@@ -128,5 +133,6 @@
     }
   },
   "id": 940,
-  "name": "Celta Vigo"
+  "name": "Celta Vigo",
+  "badgeLocalPath": "/img/badges/rc-celta-vigo.png"
 }

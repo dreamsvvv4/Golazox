@@ -58,7 +58,7 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Ben Johnson",
@@ -74,7 +74,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Conor Coventry",
@@ -98,7 +98,8 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "Pablo Fornals",
@@ -138,7 +139,8 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Andriy Yarmolenko",
@@ -199,7 +201,7 @@
         },
         {
           "name": "Thilo Kehrer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Craig Dawson",
@@ -247,7 +249,7 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Harrison Ashby",
@@ -255,7 +257,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Flynn Downes",
@@ -279,7 +281,8 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "Pablo Fornals",
@@ -323,7 +326,8 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Gianluca Scamacca",
@@ -384,7 +388,7 @@
         },
         {
           "name": "Thilo Kehrer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kaelan Casey",
@@ -416,15 +420,15 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Edson Álvarez",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Kalvin Phillips",
@@ -480,7 +484,8 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Danny Ings",
@@ -561,19 +566,19 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Edson Álvarez",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Guido Rodríguez",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Carlos Soler",
@@ -605,7 +610,8 @@
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Luís Guilherme",
@@ -617,7 +623,8 @@
         },
         {
           "name": "Niclas Füllkrug",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         },
         {
           "name": "Danny Ings",
@@ -638,103 +645,127 @@
       "teamLabel": "West Ham United (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Mads Hermansen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alphonse Areola",
-          "position": "GK"
+          "position": "GK",
+          "rating": 78
         },
         {
           "name": "Lukasz Fabianski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 70
         },
         {
           "name": "Jean-Clair Todibo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 86
         },
         {
           "name": "Maximilian Kilman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Axel Disasi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Konstantinos Mavropanos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Ezra Mayers",
-          "position": "CB"
+          "position": "LB",
+          "rating": 70
         },
         {
           "name": "El Hadji Malick Diouf",
-          "position": "CB"
+          "position": "LB",
+          "rating": 76
         },
         {
           "name": "Oliver Scarles",
-          "position": "CB"
+          "position": "LB",
+          "rating": 70
         },
         {
           "name": "Aaron Wan-Bissaka",
-          "position": "CB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Kyle Walker-Peters",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Soungoutou Magassa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Freddie Potts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Mohamadou Kanté",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Mateus Fernandes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 81
         },
         {
           "name": "Crysencio Summerville",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Keiber Lamadrid",
-          "position": "ST"
+          "position": "LW",
+          "rating": 71
         },
         {
           "name": "Jarrod Bowen",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Adama Traoré",
-          "position": "ST"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Taty Castellanos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Pablo",
-          "position": "ST"
+          "position": "CB",
+          "rating": 69
         },
         {
           "name": "Callum Wilson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {

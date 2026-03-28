@@ -1,5 +1,126 @@
 {
   "slug": "stade-reims",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Yehvann Diouf",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Andrew Red",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Emmanuel Agbadou",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Thomas Foket",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Ghislain Konan",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "El Bilal Touré",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jens Cajuste",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mukarime",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Mitchell van Bergen",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Miķels Rajkovics",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Alexis Flips",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Emmanuel Ntim",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Yunis Abdelhamid",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Kamory Doumbia",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Bradley Locko",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Patrick Pentz",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Fraser Hornby",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Hugo Ekitike",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Nathanael Mbuku",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Maxime Busi",
+          "position": "RB",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — Stade de Reims (2025/2026)",
+      "teamLabel": "Stade de Reims (2025-26)"
+    }
+  },
+  "id": 1421,
+  "name": "Stade de Reims",
   "badgeLocalPath": "/img/badges/stade-reims.png"
 }

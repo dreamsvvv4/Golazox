@@ -2,7 +2,7 @@
   "slug": "real-betis-sevilla",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Álvaro Valles",
@@ -38,7 +38,7 @@
         },
         {
           "name": "Ricardo Rodríguez",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ángel Ortiz",
@@ -50,7 +50,7 @@
         },
         {
           "name": "Sofyan Amrabat",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Marc Roca",
@@ -82,7 +82,7 @@
         },
         {
           "name": "Abde Ezzalzouli",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Rodrigo Riquelme",
@@ -124,5 +124,6 @@
     }
   },
   "id": 150,
-  "name": "Monterrey"
+  "name": "Monterrey",
+  "badgeLocalPath": "/img/badges/monterrey.png"
 }

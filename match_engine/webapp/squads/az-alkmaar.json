@@ -1,5 +1,126 @@
 {
   "slug": "az-alkmaar",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mathew Ryan",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Luke Humphreys",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Yukinari Sugawara",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Milos Kerkez",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Levi Smeets",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Maximiliano Romani",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Sven Mijnans",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Vangelis Pavlidis",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jesper Karlsson",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Jens Odgaard",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Pascal Jansen",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Bruno Martins Indi",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Zakaria Aboukhlal",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Sam Beukema",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Patrik Walemark",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Mayckel Lahdo",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Mexx Meerdink",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Dani de Wit",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Peer Koopmeiners",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Ruben van Bommel",
+          "position": "CM",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — AZ Alkmaar (2025/2026)",
+      "teamLabel": "AZ Alkmaar (2025-26)"
+    }
+  },
+  "id": 1232,
+  "name": "AZ Alkmaar",
   "badgeLocalPath": "/img/badges/az-alkmaar.png"
 }

@@ -2,7 +2,7 @@
   "slug": "fc-kopenhagen",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Dominik Kotarski",
@@ -38,7 +38,7 @@
         },
         {
           "name": "Birger Meling",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Rodrigo Huescas",
@@ -98,7 +98,7 @@
         },
         {
           "name": "Mohamed Elyounoussi",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Youssoufa Moukoko",
@@ -110,7 +110,7 @@
         },
         {
           "name": "Viktor Claesson",
-          "position": "ST"
+          "position": "CM"
         },
         {
           "name": "Andreas Cornelius",
@@ -128,5 +128,6 @@
     }
   },
   "id": 190,
-  "name": "FC Copenhagen"
+  "name": "FC Copenhagen",
+  "badgeLocalPath": "/img/badges/fc-kopenhagen.png"
 }

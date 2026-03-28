@@ -2,131 +2,162 @@
   "slug": "rasenballsport-leipzig",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Maarten Vandevoordt",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Péter Gulácsi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Leopold Zingerle",
-          "position": "GK"
+          "position": "GK",
+          "rating": 70
         },
         {
           "name": "Castello Lukeba",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "El Chadaille Bitshiabu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Willi Orbán",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Klostermann",
-          "position": "CB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Jonathan Norbye",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "David Raum",
-          "position": "CB"
+          "position": "LB",
+          "rating": 82
         },
         {
           "name": "Max Finkgräfe",
-          "position": "CB"
+          "position": "LB",
+          "rating": 71
         },
         {
           "name": "Ridle Baku",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Benjamin Henrichs",
-          "position": "CB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Kosta Nedeljkovic",
-          "position": "CB"
+          "position": "RB",
+          "rating": 73
         },
         {
           "name": "Nicolas Seiwald",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Benno Kaltefleiter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Assan Ouédraogo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ezechiel Banzuzi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 69
         },
         {
           "name": "Xaver Schlager",
-          "position": "CM"
+          "position": "CM",
+          "rating": 81
         },
         {
           "name": "Christoph Baumgartner",
-          "position": "CM"
+          "position": "AM",
+          "rating": 82
         },
         {
           "name": "Brajan Gruda",
-          "position": "CM"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Andrija Maksimovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 71
         },
         {
           "name": "Viggo Gebel",
-          "position": "CM"
+          "position": "LW",
+          "rating": 70
         },
         {
           "name": "Yan Diomande",
-          "position": "ST"
+          "position": "ST",
+          "rating": 74
         },
         {
           "name": "Antonio Nusa",
-          "position": "ST"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Suleman Sani",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Tidiam Gomis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Ayodele Thomas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Johan Bakayoko",
-          "position": "ST"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Rômulo",
-          "position": "ST"
+          "position": "LW",
+          "rating": 74
         },
         {
           "name": "Conrad Harder",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Samba Konaté",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {

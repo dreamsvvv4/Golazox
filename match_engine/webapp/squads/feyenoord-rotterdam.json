@@ -340,6 +340,175 @@
       "source": "Transfermarkt — Feyenoord (1982/1983)",
       "teamLabel": "Feyenoord (1982-83)"
     },
+    "1995": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ed de Goey",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ronald Koeman",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bernard Schuiteman",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Errol Refos",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Henk Fraser",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ruud Heus",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian Gyan",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ulrich van Gobbel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Clemens Zwijnenberg",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "George Boateng",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Rob Maas",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Peter Bosz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Orlando Trustfull",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jean-Paul van Gastel",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Denis Klyuev",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tomasz Iwan",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rob Witschge",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gláucio",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Regi Blinker",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gaston Taument",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Chaly Jones",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Henk Vos",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mike Obiku",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Aurelio Vidmar",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Feyenord (1995/1996)",
+      "teamLabel": "Feyenord (1995-96)"
+    },
     "2001": {
       "formation": "4-4-2",
       "players": [
@@ -441,10 +610,6 @@
         },
         {
           "name": "Igor Korneev",
-          "position": "ST"
-        },
-        {
-          "name": "Leonardo",
           "position": "ST"
         },
         {

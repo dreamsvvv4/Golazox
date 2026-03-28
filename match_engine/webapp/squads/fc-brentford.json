@@ -2,27 +2,32 @@
   "slug": "fc-brentford",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Caoimhín Kelleher",
-          "position": "GK"
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Hákon Valdimarsson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 76
         },
         {
           "name": "Ellery Balcombe",
-          "position": "GK"
+          "position": "GK",
+          "rating": 71
         },
         {
           "name": "Julian Eyestone",
-          "position": "GK"
+          "position": "CB",
+          "rating": 69
         },
         {
           "name": "Sepp van den Berg",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Nathan Collins",
@@ -30,7 +35,7 @@
         },
         {
           "name": "Kristoffer Ajer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Ethan Pinnock",
@@ -46,7 +51,7 @@
         },
         {
           "name": "Aaron Hickey",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Vitaly Janelt",
@@ -74,7 +79,7 @@
         },
         {
           "name": "Mikkel Damsgaard",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Antoni Milambo",
@@ -120,5 +125,6 @@
     }
   },
   "id": 1148,
-  "name": "Brentford"
+  "name": "Brentford",
+  "badgeLocalPath": "/img/badges/brentford-fc.png"
 }

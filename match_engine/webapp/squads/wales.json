@@ -1,5 +1,231 @@
 {
   "slug": "wales",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/wales.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Danny Ward",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Adam Davies",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Tom King",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Neco Williams",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Joe Rodon",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ben Cabango",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Ben Davies",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jay Dasilva",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Chris Mepham",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Rhys Norrington-Davies",
+          "position": "LB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Dylan Lawlor",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ronan Kpakio",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ethan Ampadu",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jordan James",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Liam Cullen",
+          "position": "CM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Rubin Colwill",
+          "position": "AM",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Tom Lawrence",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Joel Colwill",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Kai Andrews",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Josh Sheehan",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Charlie Crew",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Joe Allen",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 76
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "David Brooks",
+          "position": "AM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Brennan Johnson",
+          "position": "RW",
+          "marketValue": 35000000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel James",
+          "position": "LW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Sorba Thomas",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Nathan Broadhead",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Lewis Koumas",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kieffer Moore",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Isaak Davies",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Rabbi Matondo",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mark Harris",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — wales (2025/2026)",
+      "teamLabel": "wales (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/wales.png",
+  "id": 3864,
+  "name": "wales"
 }

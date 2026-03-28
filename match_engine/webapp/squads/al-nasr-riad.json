@@ -2,7 +2,7 @@
   "slug": "al-nasr-riad",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Bento",
@@ -42,7 +42,7 @@
         },
         {
           "name": "Nawaf Boushal",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 1400000,
           "rating": 82
         },
@@ -84,7 +84,7 @@
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 9000000,
           "rating": 85
         },
@@ -108,7 +108,7 @@
         },
         {
           "name": "Sami Al-Najei",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 400000,
           "rating": 78
         },
@@ -126,7 +126,7 @@
         },
         {
           "name": "Sadio Mané",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 7000000,
           "rating": 89
         },
@@ -138,7 +138,7 @@
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 22000000,
           "rating": 83
         },
@@ -184,5 +184,6 @@
     }
   },
   "id": 18544,
-  "name": "Al-Nassr"
+  "name": "Al-Nassr",
+  "badgeLocalPath": "/img/badges/al-nasr-riad.png"
 }

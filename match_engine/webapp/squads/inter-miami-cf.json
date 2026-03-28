@@ -1,113 +1,129 @@
 {
   "slug": "inter-miami-cf",
+  "name": "Inter Miami CF",
+  "badgeLocalPath": "/img/badges/inter-miami-cf.png",
   "seasons": {
     "2023": {
-      "found": true,
       "formation": "4-3-3",
       "players": [
         {
-          "name": "Luis Barraza",
+          "name": "Drake Callender",
           "position": "GK"
         },
         {
-          "name": "Gonzalo Luján",
+          "name": "DeAndre Yedlin",
           "position": "RB"
         },
         {
-          "name": "Sergio Reguilón",
+          "name": "Sergio Busquets",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Tomás Avilés",
           "position": "CB"
         },
         {
-          "name": "Facundo Mura",
-          "position": "CB"
+          "name": "Jordi Alba",
+          "position": "LB",
+          "rating": 81
         },
         {
-          "name": "Micael",
-          "position": "LB"
-        },
-        {
-          "name": "Rodrigo De Paul",
-          "position": "DM"
-        },
-        {
-          "name": "Telasco Segovia",
+          "name": "Benjamín Cremaschi",
           "position": "CM"
         },
         {
-          "name": "Santiago Morales",
+          "name": "Diego Gómez",
           "position": "CM"
         },
         {
-          "name": "Luis Suárez",
+          "name": "Facundo Farías",
           "position": "RW"
         },
         {
           "name": "Lionel Messi",
+          "position": "RW",
+          "rating": 91
+        },
+        {
+          "name": "Robert Taylor",
           "position": "ST"
         },
         {
-          "name": "Germán Berterame",
+          "name": "Josef Martínez",
           "position": "LW"
         }
       ],
-      "ratings": null,
-      "source": "Wikipedia — \"Inter Miami CF\"",
+      "ratings": {
+        "attack": 80,
+        "midfield": 78,
+        "defense": 69,
+        "goalkeeping": 68
+      },
+      "source": "Wikipedia — Inter Miami CF · MLS 2023",
       "teamLabel": "Inter Miami (2023)"
     },
     "2025": {
-      "found": true,
       "formation": "4-3-3",
       "players": [
         {
-          "name": "Luis Barraza",
+          "name": "Oscar Ustari",
           "position": "GK"
         },
         {
-          "name": "Gonzalo Luján",
+          "name": "Marcelo Weigandt",
           "position": "RB"
         },
         {
-          "name": "Sergio Reguilón",
+          "name": "Tomás Avilés",
           "position": "CB"
         },
         {
-          "name": "Facundo Mura",
+          "name": "Ian Fray",
           "position": "CB"
         },
         {
-          "name": "Micael",
-          "position": "LB"
+          "name": "Jordi Alba",
+          "position": "LB",
+          "rating": 79
         },
         {
-          "name": "Rodrigo De Paul",
-          "position": "DM"
+          "name": "Sergio Busquets",
+          "position": "DM",
+          "rating": 80
         },
         {
-          "name": "Telasco Segovia",
+          "name": "Xavi Simons",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Diego Gómez",
           "position": "CM"
-        },
-        {
-          "name": "Santiago Morales",
-          "position": "CM"
-        },
-        {
-          "name": "Luis Suárez",
-          "position": "RW"
         },
         {
           "name": "Lionel Messi",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
-          "name": "Germán Berterame",
+          "name": "Luis Suárez",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Robbie Robinson",
           "position": "LW"
         }
       ],
-      "ratings": null,
-      "source": "Wikipedia — \"Inter Miami CF\"",
-      "teamLabel": "inter Miami (2025)"
+      "ratings": {
+        "attack": 84,
+        "midfield": 80,
+        "defense": 70,
+        "goalkeeping": 69
+      },
+      "source": "Wikipedia — Inter Miami CF · MLS 2025",
+      "teamLabel": "Inter Miami (2025)"
     }
-  },
-  "badgeLocalPath": "/img/badges/inter-miami-cf.png",
-  "name": "inter Miami"
+  }
 }

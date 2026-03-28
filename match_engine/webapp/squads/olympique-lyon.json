@@ -642,7 +642,7 @@
         },
         {
           "name": "Miralem Pjanić",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Clément Grenier",
@@ -711,123 +711,152 @@
       "teamLabel": "Lyon (2008-09)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Dominik Greif",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Rémy Descamps",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Lassine Diarra",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Moussa Niakhaté",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Clinton Mata",
-          "position": "CB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Ruben Kluivert",
-          "position": "CB"
+          "position": "CB",
+          "rating": 75
         },
         {
           "name": "Noham Kamara",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Abner",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Nicolás Tagliafico",
-          "position": "CB"
+          "position": "LB",
+          "rating": 80
         },
         {
           "name": "Achraf Laâziri",
-          "position": "CB"
+          "position": "RB",
+          "rating": 71
         },
         {
           "name": "Ainsley Maitland-Niles",
-          "position": "CB"
+          "position": "RB",
+          "rating": 73
         },
         {
           "name": "Hans Hateboer",
-          "position": "CB"
+          "position": "RB",
+          "rating": 74
         },
         {
           "name": "Steeve Kango",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Tyler Morton",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tanner Tessmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Orel Mangala",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Mathys De Carvalho",
-          "position": "CM"
+          "position": "CM",
+          "rating": 69
         },
         {
           "name": "Corentin Tolisso",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Khalis Merah",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Pavel Sulc",
-          "position": "CM"
+          "position": "AM",
+          "rating": 78
         },
         {
           "name": "Adam Karabec",
-          "position": "CM"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Noah Nartey",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Malick Fofana",
-          "position": "ST"
+          "position": "LW",
+          "rating": 84
         },
         {
           "name": "Afonso Moreira",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Rémi Himbert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 68
         },
         {
           "name": "Ernest Nuamah",
-          "position": "ST"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Rachid Ghezzal",
-          "position": "ST"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Endrick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         },
         {
           "name": "Roman Yaremchuk",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {

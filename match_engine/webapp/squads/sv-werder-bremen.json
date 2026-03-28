@@ -2,7 +2,7 @@
   "slug": "sv-werder-bremen",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Mio Backhaus",
@@ -38,7 +38,7 @@
         },
         {
           "name": "Maximilian Wöber",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Julián Malatini",
@@ -62,7 +62,7 @@
         },
         {
           "name": "Yukinari Sugawara",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Mitchell Weiser",
@@ -86,7 +86,7 @@
         },
         {
           "name": "Romano Schmid",
-          "position": "CM"
+          "position": "LW"
         },
         {
           "name": "Cameron Puertas",
@@ -135,6 +135,7 @@
       "teamLabel": "Werder Bremen (2025-26)"
     }
   },
-  "id": 86,
-  "name": "Werder Bremen"
+  "id": 66,
+  "name": "Werder Bremen",
+  "badgeLocalPath": "/img/badges/werder-bremen.png"
 }

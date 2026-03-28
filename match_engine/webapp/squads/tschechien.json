@@ -1909,7 +1909,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Kamil Vacek",
@@ -1965,7 +1965,7 @@
         },
         {
           "name": "Antonín Barák",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Borek Dockal",
@@ -2110,7 +2110,7 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Radim Reznik",
@@ -2118,7 +2118,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Ondrej Petrak",
@@ -2166,7 +2166,7 @@
         },
         {
           "name": "Antonín Barák",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Borek Dockal",
@@ -2311,7 +2311,7 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Michal Sacek",
@@ -2323,7 +2323,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Lukas Kalvach",
@@ -2383,7 +2383,7 @@
         },
         {
           "name": "Antonín Barák",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Lukas Provod",
@@ -2548,7 +2548,7 @@
         },
         {
           "name": "Vladimír Coufal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Milan Havel",
@@ -2556,7 +2556,7 @@
         },
         {
           "name": "Tomáš Souček",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Lukas Kalvach",
@@ -2592,7 +2592,7 @@
         },
         {
           "name": "Antonín Barák",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Ondrej Lingr",
@@ -2632,7 +2632,7 @@
         },
         {
           "name": "Jan Kuchta",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Mojmír Chytil",
@@ -2659,9 +2659,298 @@
       },
       "source": "Transfermarkt — czech republic (2022/2023)",
       "teamLabel": "czech republic (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lukas Hornicek",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Matej Kovar",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Vitezslav Jaros",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jindrich Stanek",
+          "position": "GK",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Jakub Markovic",
+          "position": "GK",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Martin Jedlicka",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ladislav Krejčí",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Martin Vitík",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Robin Hranac",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Stepan Chaloupek",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "David Zima",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "David Jurásek",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Vladimír Coufal",
+          "position": "RB",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "Vaclav Jemelka",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Tomas Holes",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Martin Cedidla",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jaroslav Zelený",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Jan Boril",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Pavel Sulc",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Tomáš Souček",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Michal Sadílek",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lukas Provod",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Adam Karabec",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lukas Cerv",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "David Doudera",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Matej Rynes",
+          "position": "LB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Matej Sin",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Patrik Hellebrand",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ondrej Lingr",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Alex Král",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Michal Beran",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Krystof Danek",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jiri Boula",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Tomas Ladra",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Filip Zorvan",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Patrik Schick",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Adam Hlozek",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Vaclav Cerny",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Vasil Kusej",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Mojmír Chytil",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Tomas Chory",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jan Kuchta",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Vaclav Sejk",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Matej Vydra",
+          "position": "ST",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Jan Kliment",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jan Chramosta",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 74,
+        "defense": 80,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — czech republic (2025/2026)",
+      "teamLabel": "czech republic (2025-26)"
     }
   },
   "id": 3445,
-  "name": "czech republic",
+  "name": "Rep. Checa",
   "badgeLocalPath": "/img/badges/tschechien.png"
 }

@@ -792,7 +792,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jérôme Boateng",
@@ -812,7 +812,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Diego Contento",
@@ -844,7 +844,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Bastian Schweinsteiger",
@@ -856,7 +856,7 @@
         },
         {
           "name": "Xherdan Shaqiri",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Patrick Weihrauch",
@@ -872,7 +872,8 @@
         },
         {
           "name": "Thomas Müller",
-          "position": "ST"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Mario Gómez",
@@ -925,7 +926,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jérôme Boateng",
@@ -973,7 +974,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Benno Schmitz",
@@ -1005,7 +1006,7 @@
         },
         {
           "name": "Xherdan Shaqiri",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Patrick Weihrauch",
@@ -1021,7 +1022,8 @@
         },
         {
           "name": "Thomas Müller",
-          "position": "ST"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Mario Mandžukić",
@@ -1062,7 +1064,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Niklas Süle",
@@ -1098,7 +1100,7 @@
         },
         {
           "name": "Alphonso Davies",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Álvaro Odriozola",
@@ -1106,7 +1108,7 @@
         },
         {
           "name": "Joshua Kimmich",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Paul Will",
@@ -1162,15 +1164,16 @@
         },
         {
           "name": "Jamal Musiala",
-          "position": "CM"
+          "position": "AM",
+          "rating": 90
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Leon Dajaku",
@@ -1178,11 +1181,12 @@
         },
         {
           "name": "Serge Gnabry",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Thomas Müller",
-          "position": "ST"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Robert Lewandowski",
@@ -1231,7 +1235,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Niklas Süle",
@@ -1263,7 +1267,7 @@
         },
         {
           "name": "Alphonso Davies",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Lucas Hernández",
@@ -1279,11 +1283,11 @@
         },
         {
           "name": "Bouna Sarr",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Josip Stanisic",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Kilian Senkbeil",
@@ -1291,7 +1295,7 @@
         },
         {
           "name": "Joshua Kimmich",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Marc Roca",
@@ -1331,7 +1335,8 @@
         },
         {
           "name": "Jamal Musiala",
-          "position": "CM"
+          "position": "AM",
+          "rating": 90
         },
         {
           "name": "Fiete Arp",
@@ -1343,7 +1348,7 @@
         },
         {
           "name": "Kingsley Coman",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Leon Dajaku",
@@ -1351,7 +1356,7 @@
         },
         {
           "name": "Leroy Sané",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Douglas Costa",
@@ -1363,11 +1368,12 @@
         },
         {
           "name": "Serge Gnabry",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Thomas Müller",
-          "position": "ST"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Armindo Sieb",
@@ -1400,7 +1406,7 @@
       "teamLabel": "Bayern Munich (2020-21)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Manuel Neuer",
@@ -1434,7 +1440,7 @@
         },
         {
           "name": "Alphonso Davies",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 45000000,
           "rating": 95
         },
@@ -1446,19 +1452,19 @@
         },
         {
           "name": "Josip Stanisic",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 35000000,
           "rating": 94
         },
         {
           "name": "Konrad Laimer",
-          "position": "CB",
+          "position": "CM",
           "marketValue": 32000000,
           "rating": 94
         },
         {
           "name": "Hiroki Ito",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 18000000,
           "rating": 92
         },
@@ -1482,7 +1488,7 @@
         },
         {
           "name": "Joshua Kimmich",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 40000000,
           "rating": 95
         },
@@ -1506,7 +1512,7 @@
         },
         {
           "name": "Jamal Musiala",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 120000000,
           "rating": 90
         },
@@ -1518,15 +1524,15 @@
         },
         {
           "name": "Luis Díaz",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 70000000,
           "rating": 95
         },
         {
           "name": "Michael Olise",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 140000000,
-          "rating": 95
+          "rating": 90
         },
         {
           "name": "Harry Kane",
@@ -1542,7 +1548,7 @@
         },
         {
           "name": "Serge Gnabry",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 20000000,
           "rating": 85
         }

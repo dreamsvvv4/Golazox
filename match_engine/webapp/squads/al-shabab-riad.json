@@ -2,7 +2,7 @@
   "slug": "al-shabab-riad",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marcelo Grohe",
@@ -94,7 +94,7 @@
         },
         {
           "name": "Yannick Carrasco",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Abdullah Matuq",
@@ -140,5 +140,6 @@
     }
   },
   "id": 9840,
-  "name": "Al-Shabab"
+  "name": "Al-Shabab",
+  "badgeLocalPath": "/img/badges/al-shabab.png"
 }

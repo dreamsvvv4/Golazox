@@ -1,5 +1,126 @@
 {
   "slug": "angers",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Paul Bernardoni",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Alexandre Letellier",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Abdoulaye Bamba",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Mathias Pereira Lage",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Vincent Manceau",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Hamza Mendyl",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Mateo Pavlovic",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Sofiane Boufal",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Romain Thomas",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Enzo Ebosse",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jimmy Cabot",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Angelo Fulgini",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Liam Boyce",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Abdel Bouda",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Stephane Bahoken",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Loic Perrin",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "El Melali",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Mory Conde",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Lassana Coulibaly",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Pierrick Capelle",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Sada Thioub",
+          "position": "LW",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 68,
+        "defense": 68,
+        "goalkeeping": 68
+      },
+      "source": "Transfermarkt — SCO Angers (2025/2026)",
+      "teamLabel": "SCO Angers (2025-26)"
+    }
+  },
+  "id": 3284,
+  "name": "SCO Angers",
   "badgeLocalPath": "/img/badges/angers.png"
 }

@@ -1,5 +1,47 @@
 {
   "slug": "flamengo",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/flamengo.png"
+  "name": "Flamengo",
+  "badgeLocalPath": "/img/badges/flamengo.png",
+  "seasons": {
+    "2018": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Diego Alves",     "position": "GK", "rating": 80 },
+        { "name": "Pará",            "position": "RB", "rating": 74 },
+        { "name": "Réver",           "position": "CB", "rating": 76 },
+        { "name": "Léo Duarte",      "position": "CB", "rating": 74 },
+        { "name": "Trauco",          "position": "LB", "rating": 76 },
+        { "name": "Willian Arão",    "position": "DM", "rating": 78 },
+        { "name": "Diego",           "position": "CM", "rating": 82 },
+        { "name": "Everton Ribeiro", "position": "AM", "rating": 83 },
+        { "name": "Berrío",          "position": "RW", "rating": 78 },
+        { "name": "Paolo Guerrero",  "position": "ST", "rating": 82 },
+        { "name": "Vinicius Junior", "position": "LW", "rating": 80 }
+      ],
+      "ratings": { "attack": 82, "midfield": 80, "defense": 74, "goalkeeping": 76 },
+      "source": "Flamengo — Brasileirão 2018 (Vinicius Jr. last season before Real Madrid)",
+      "teamLabel": "Flamengo (2018)",
+      "badgeUrl": "/img/badges/flamengo.png"
+    },
+    "2022": {
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "Hugo Souza",       "position": "GK", "rating": 78 },
+        { "name": "Rodinei",          "position": "RB", "rating": 77 },
+        { "name": "David Luiz",       "position": "CB", "rating": 83 },
+        { "name": "Léo Pereira",      "position": "CB", "rating": 80 },
+        { "name": "Filipe Luís",      "position": "LB", "rating": 81 },
+        { "name": "João Gomes",       "position": "DM", "rating": 81 },
+        { "name": "Arturo Vidal",     "position": "CM", "rating": 83 },
+        { "name": "Giorgian de Arrascaeta", "position": "AM", "rating": 86 },
+        { "name": "Everton Ribeiro",  "position": "RW", "rating": 84 },
+        { "name": "Pedro",            "position": "ST", "rating": 85 },
+        { "name": "Gabriel Barbosa",  "position": "LW", "rating": 86 }
+      ],
+      "ratings": { "attack": 87, "midfield": 84, "defense": 79, "goalkeeping": 74 },
+      "source": "Flamengo — Copa Libertadores 2022 winner",
+      "teamLabel": "Flamengo (2022)",
+      "badgeUrl": "/img/badges/flamengo.png"
+    }
+  }
 }

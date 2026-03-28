@@ -114,7 +114,7 @@
         },
         {
           "name": "Gylfi Sigurdsson",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Charlie Whitaker",
@@ -126,7 +126,8 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Alex Iwobi",
@@ -255,7 +256,7 @@
         },
         {
           "name": "Amadou Onana",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "James Garner",
@@ -267,7 +268,7 @@
         },
         {
           "name": "Idrissa Gueye",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "André Gomes",
@@ -303,7 +304,8 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Alex Iwobi",
@@ -420,7 +422,7 @@
         },
         {
           "name": "Amadou Onana",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "James Garner",
@@ -428,7 +430,7 @@
         },
         {
           "name": "Idrissa Gueye",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "André Gomes",
@@ -581,7 +583,7 @@
         },
         {
           "name": "Idrissa Gueye",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Luke Butterfield",
@@ -637,7 +639,7 @@
         },
         {
           "name": "Jesper Lindstrøm",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Beto",
@@ -674,107 +676,132 @@
       "teamLabel": "Everton (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Mark Travers",
-          "position": "GK"
+          "position": "GK",
+          "rating": 76
         },
         {
           "name": "Tom King",
-          "position": "GK"
+          "position": "GK",
+          "rating": 68
         },
         {
           "name": "Jarrad Branthwaite",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "James Tarkowski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Michael Keane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 75
         },
         {
           "name": "Vitaliy Mykolenko",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Adam Aznou",
-          "position": "CB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Jake O'Brien",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nathan Patterson",
-          "position": "CB"
+          "position": "RB",
+          "rating": 76
         },
         {
           "name": "Séamus Coleman",
-          "position": "CB"
+          "position": "RB",
+          "rating": 73
         },
         {
           "name": "James Garner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Idrissa Gueye",
-          "position": "CM"
+          "position": "DM",
+          "rating": 79
         },
         {
           "name": "Kiernan Dewsbury-Hall",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Carlos Alcaraz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Tim Iroegbunam",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Harrison Armstrong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 72
         },
         {
           "name": "Merlin Röhl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jack Grealish",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Tyrique George",
-          "position": "ST"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Dwight McNeil",
-          "position": "ST"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Iliman Ndiaye",
-          "position": "ST"
+          "position": "LW",
+          "rating": 82
         },
         {
           "name": "Tyler Dibling",
-          "position": "ST"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Thierno Barry",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Beto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 79
         }
       ],
       "ratings": {

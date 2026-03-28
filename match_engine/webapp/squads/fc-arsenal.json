@@ -791,103 +791,127 @@
       "teamLabel": "Arsenal (2004-05)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "David Raya",
-          "position": "GK"
+          "position": "GK",
+          "rating": 87
         },
         {
           "name": "Kepa Arrizabalaga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "William Saliba",
-          "position": "CB"
+          "position": "CB",
+          "rating": 89
         },
         {
           "name": "Gabriel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 87
         },
         {
           "name": "Piero Hincapié",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Cristhian Mosquera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Riccardo Calafiori",
-          "position": "CB"
+          "position": "CB",
+          "rating": 86
         },
         {
           "name": "Myles Lewis-Skelly",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Jurriën Timber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 86
         },
         {
           "name": "Ben White",
-          "position": "CB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Martín Zubimendi",
-          "position": "CM"
+          "position": "DM",
+          "rating": 87
         },
         {
           "name": "Christian Nørgaard",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Declan Rice",
-          "position": "CM"
+          "position": "DM",
+          "rating": 89
         },
         {
           "name": "Mikel Merino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 85
         },
         {
           "name": "Martin Ødegaard",
-          "position": "CM"
+          "position": "AM",
+          "rating": 89
         },
         {
           "name": "Eberechi Eze",
-          "position": "CM"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Gabriel Martinelli",
-          "position": "ST"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Leandro Trossard",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST"
+          "position": "RW",
+          "rating": 90
         },
         {
           "name": "Noni Madueke",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Max Dowman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 68
         },
         {
           "name": "Viktor Gyökeres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 88
         },
         {
           "name": "Kai Havertz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Gabriel Jesus",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {

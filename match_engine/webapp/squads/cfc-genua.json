@@ -1,5 +1,126 @@
 {
   "slug": "cfc-genua",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "3-5-2",
+      "players": [
+        {
+          "name": "Josep Martínez",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Geronimo Rulli",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Johan Vasquez",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Matturro",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Radu Dragusin",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Alberto Gudmundsson",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Morten Thorsby",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Milan Badelj",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Aaron Martin",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Silvan Hefti",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Junior Messias",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Caleb Ekuban",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Ruslan Malinovskiy",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Kevin Strootman",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Filippo Melegoni",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Manolo Portanova",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Paulo Fonseca",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Nauten Ciervo",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Thomas Pjaca",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "George Pusula",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Vitinha",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Genoa CFC (2025/2026)",
+      "teamLabel": "Genoa CFC (2025-26)"
+    }
+  },
+  "id": 252,
+  "name": "Genoa CFC",
   "badgeLocalPath": "/img/badges/cfc-genua.png"
 }

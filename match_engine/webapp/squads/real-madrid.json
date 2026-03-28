@@ -81,10 +81,6 @@
           "position": "CM"
         },
         {
-          "name": "Navarro",
-          "position": "ST"
-        },
-        {
           "name": "Azcárate",
           "position": "CB"
         },
@@ -1474,6 +1470,123 @@
       "source": "BDFutbol — Real Madrid 1987-88 Primera División",
       "teamLabel": "Real Madrid 1987-88 Primera División"
     },
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Buyo",
+          "position": "GK"
+        },
+        {
+          "name": "Quique",
+          "position": "RB"
+        },
+        {
+          "name": "Lasa",
+          "position": "LB"
+        },
+        {
+          "name": "Sanchis",
+          "position": "CB"
+        },
+        {
+          "name": "Hierro",
+          "position": "CB"
+        },
+        {
+          "name": "Amavisca",
+          "position": "CM"
+        },
+        {
+          "name": "Luis Enrique",
+          "position": "CM"
+        },
+        {
+          "name": "Laudrup",
+          "position": "CM"
+        },
+        {
+          "name": "Martín Vázquez",
+          "position": "CM"
+        },
+        {
+          "name": "Zamorano",
+          "position": "ST"
+        },
+        {
+          "name": "Raúl",
+          "position": "ST"
+        },
+        {
+          "name": "Cañizares",
+          "position": "GK"
+        },
+        {
+          "name": "Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Milla",
+          "position": "CM"
+        },
+        {
+          "name": "Míchel",
+          "position": "CM"
+        },
+        {
+          "name": "Alfonso",
+          "position": "ST"
+        },
+        {
+          "name": "Contreras",
+          "position": "GK"
+        },
+        {
+          "name": "Chendo",
+          "position": "RB"
+        },
+        {
+          "name": "Alkorta",
+          "position": "CB"
+        },
+        {
+          "name": "Sandro",
+          "position": "CM"
+        },
+        {
+          "name": "Dubovský",
+          "position": "ST"
+        },
+        {
+          "name": "Butragueño",
+          "position": "ST"
+        },
+        {
+          "name": "Marcos",
+          "position": "LB"
+        },
+        {
+          "name": "Nando",
+          "position": "CB"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Rivera",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 71,
+        "defense": 77,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Real Madrid 1994-95 Primera División",
+      "teamLabel": "Real Madrid 1994-95 Primera División"
+    },
     "1996": {
       "formation": "4-4-2",
       "players": [
@@ -2614,7 +2727,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Fabinho",
@@ -2658,7 +2772,7 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "José Callejón",
@@ -2735,7 +2849,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Álvaro Arbeloa",
@@ -2755,7 +2869,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Omar Mascarell",
@@ -2799,7 +2914,7 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Cristiano Ronaldo",
@@ -2896,7 +3011,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Álvaro Arbeloa",
@@ -2908,7 +3023,7 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Asier Illarramendi",
@@ -2952,7 +3067,7 @@
         },
         {
           "name": "James Rodríguez",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Isco",
@@ -2972,7 +3087,7 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Cristiano Ronaldo",
@@ -3049,7 +3164,7 @@
         },
         {
           "name": "Philipp Lienhart",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Marcelo",
@@ -3057,7 +3172,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lucas Vázquez",
@@ -3069,7 +3184,7 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Álvaro Tejero",
@@ -3077,7 +3192,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Toni Kroos",
@@ -3093,7 +3209,7 @@
         },
         {
           "name": "James Rodríguez",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Isco",
@@ -3178,7 +3294,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Cristiano Ronaldo",
@@ -3218,7 +3335,7 @@
         },
         {
           "name": "James Rodríguez",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Asensio",
@@ -3323,7 +3440,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lucas Vázquez",
@@ -3331,11 +3448,11 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Achraf Hakimi",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Álvaro Tejero",
@@ -3343,7 +3460,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Toni Kroos",
@@ -3444,7 +3562,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Kroos",
@@ -3601,7 +3720,8 @@
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Kroos",
@@ -3633,7 +3753,8 @@
         },
         {
           "name": "Rodrygo",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Marcelo",
@@ -3770,7 +3891,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Antonio Rüdiger",
@@ -3794,7 +3915,7 @@
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lucas Vázquez",
@@ -3810,11 +3931,13 @@
         },
         {
           "name": "Aurélien Tchouaméni",
-          "position": "CM"
+          "position": "DM",
+          "rating": 87
         },
         {
           "name": "Casemiro",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Mario Martín",
@@ -3858,7 +3981,7 @@
         },
         {
           "name": "Vinicius Junior",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Eden Hazard",
@@ -3866,7 +3989,8 @@
         },
         {
           "name": "Rodrygo",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Karim Benzema",
@@ -3927,7 +4051,7 @@
         },
         {
           "name": "David Alaba",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jacobo Ramón",
@@ -3963,11 +4087,11 @@
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Daniel Carvajal",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Lucas Vázquez",
@@ -3987,7 +4111,8 @@
         },
         {
           "name": "Aurélien Tchouaméni",
-          "position": "CM"
+          "position": "DM",
+          "rating": 87
         },
         {
           "name": "Mario Martín",
@@ -4015,7 +4140,8 @@
         },
         {
           "name": "Jude Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 92
         },
         {
           "name": "Arda Güler",
@@ -4027,7 +4153,7 @@
         },
         {
           "name": "Vinicius Junior",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Víctor Muñoz",
@@ -4039,7 +4165,8 @@
         },
         {
           "name": "Rodrygo",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Brahim Díaz",
@@ -4051,7 +4178,8 @@
         },
         {
           "name": "Kylian Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "Endrick",
@@ -4072,171 +4200,212 @@
       "teamLabel": "Real Madrid (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Courtois",
-          "position": "GK"
+          "position": "GK",
+          "rating": 91
         },
         {
           "name": "Huijsen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Álvaro Carreras",
-          "position": "LB"
+          "position": "LB",
+          "rating": 80
         },
         {
           "name": "Asencio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Militão",
-          "position": "CB"
+          "position": "CB",
+          "rating": 88
         },
         {
           "name": "Valverde",
-          "position": "CM"
+          "position": "CM",
+          "rating": 90
         },
         {
           "name": "Tchouaméni",
-          "position": "CM"
+          "position": "DM",
+          "rating": 88
         },
         {
           "name": "Güler",
-          "position": "CM"
+          "position": "AM",
+          "rating": 86
         },
         {
           "name": "Bellingham",
-          "position": "CM"
+          "position": "AM",
+          "rating": 91
         },
         {
           "name": "Vinícius",
-          "position": "ST"
+          "position": "LW",
+          "rating": 93
         },
         {
           "name": "Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 94
         },
         {
           "name": "Lunin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Camavinga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 87
         },
         {
           "name": "Gonzalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Brahim Díaz",
-          "position": "ST"
+          "position": "RW",
+          "rating": 84
         },
         {
           "name": "Mastantuono",
-          "position": "ST"
+          "position": "AM",
+          "rating": 84
         },
         {
           "name": "Mestre",
-          "position": "GK"
+          "position": "GK",
+          "rating": 68
         },
         {
           "name": "Rodrygo",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Alexander-Arnold",
-          "position": "RB"
+          "position": "RB",
+          "rating": 88
         },
         {
           "name": "Dani Ceballos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Fran García",
-          "position": "LB"
+          "position": "LB",
+          "rating": 80
         },
         {
           "name": "Alaba",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Pitarch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Mendy",
-          "position": "LB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Jiménez",
-          "position": "RB"
+          "position": "LB",
+          "rating": 70
         },
         {
           "name": "Endrick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         },
         {
           "name": "Cestero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Palacios",
-          "position": "ST"
+          "position": "CM",
+          "rating": 71
         },
         {
           "name": "Manuel Ángel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Valdepeñas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 68
         },
         {
           "name": "Aguado",
-          "position": "LB"
+          "position": "LB",
+          "rating": 68
         },
         {
           "name": "Yáñez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 67
         },
         {
           "name": "Fran González",
-          "position": "GK"
+          "position": "GK",
+          "rating": 65
         },
         {
           "name": "Joan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Leiva",
-          "position": "ST"
+          "position": "ST",
+          "rating": 68
         },
         {
           "name": "Fati",
-          "position": "CB"
+          "position": "CB",
+          "rating": 71
         },
         {
           "name": "Mesonero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 67
         },
         {
           "name": "Fortuny",
-          "position": "ST"
+          "position": "RW",
+          "rating": 66
         },
         {
           "name": "Navarro",
-          "position": "GK"
+          "position": "GK",
+          "rating": 65
         }
       ],
       "ratings": {
@@ -4321,7 +4490,8 @@
         },
         {
           "name": "Rodrygo",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Rüdiger",

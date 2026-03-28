@@ -2,123 +2,152 @@
   "slug": "eintracht-frankfurt",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Kauã Santos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Michael Zetterer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Jens Grahl",
-          "position": "GK"
+          "position": "GK",
+          "rating": 72
         },
         {
           "name": "Amil Siljevic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 68
         },
         {
           "name": "Arthur Theate",
-          "position": "CB"
+          "position": "LB",
+          "rating": 82
         },
         {
           "name": "Nnamdi Collins",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Robin Koch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Aurèle Amenda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nathaniel Brown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Keita Kosugi",
-          "position": "CB"
+          "position": "RB",
+          "rating": 70
         },
         {
           "name": "Rasmus Kristensen",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Elias Baum",
-          "position": "CB"
+          "position": "CB",
+          "rating": 68
         },
         {
           "name": "Timothy Chandler",
-          "position": "CB"
+          "position": "RB",
+          "rating": 71
         },
         {
           "name": "Ellyes Skhiri",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Hugo Larsson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 81
         },
         {
           "name": "Oscar Højlund",
-          "position": "CM"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mahmoud Dahoud",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Can Uzun",
-          "position": "CM"
+          "position": "AM",
+          "rating": 81
         },
         {
           "name": "Farès Chaïbi",
-          "position": "CM"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Love Arrhov",
-          "position": "CM"
+          "position": "RW",
+          "rating": 72
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "AM",
+          "rating": 81
         },
         {
           "name": "Jean-Mattéo Bahoya",
-          "position": "ST"
+          "position": "LW",
+          "rating": 75
         },
         {
           "name": "Ritsu Doan",
-          "position": "ST"
+          "position": "RW",
+          "rating": 84
         },
         {
           "name": "Ansgar Knauff",
-          "position": "ST"
+          "position": "RW",
+          "rating": 78
         },
         {
           "name": "Ayoube Amaimouni-Echghouyab",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Jonathan Burkardt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Arnaud Kalimuendo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Younes Ebnoutalib",
-          "position": "ST"
+          "position": "ST",
+          "rating": 72
         },
         {
           "name": "Michy Batshuayi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 77
         }
       ],
       "ratings": {

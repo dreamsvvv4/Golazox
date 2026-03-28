@@ -2,7 +2,7 @@
   "slug": "eidsvold-turn-fotball",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Simen Lillevik Kjellevold",
@@ -124,5 +124,6 @@
     }
   },
   "id": 6493,
-  "name": "Lille"
+  "name": "Lille",
+  "badgeLocalPath": "/img/badges/lille.png"
 }

@@ -2,7 +2,7 @@
   "slug": "deportivo-guadalajara",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Raúl Rangel",
@@ -90,7 +90,7 @@
         },
         {
           "name": "Roberto Alvarado",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Hugo Camberos",
@@ -124,5 +124,6 @@
     }
   },
   "id": 6711,
-  "name": "Guadalajara"
+  "name": "Guadalajara",
+  "badgeLocalPath": "/img/badges/guadalajara.png"
 }

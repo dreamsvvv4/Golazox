@@ -2,7 +2,7 @@
   "slug": "al-qadisiyah-fc",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Koen Casteels",
@@ -34,7 +34,7 @@
         },
         {
           "name": "Yasser Al-Shahrani",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Mohammed Qassim",
@@ -108,5 +108,6 @@
     }
   },
   "id": 26069,
-  "name": "Al-Qadsiah"
+  "name": "Al-Qadsiah",
+  "badgeLocalPath": "/img/badges/al-qadsiah.png"
 }

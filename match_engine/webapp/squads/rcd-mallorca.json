@@ -2,7 +2,7 @@
   "slug": "rcd-mallorca",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Leo Román",
@@ -34,7 +34,7 @@
         },
         {
           "name": "Johan Mojica",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Toni Lato",
@@ -120,5 +120,6 @@
     }
   },
   "id": 237,
-  "name": "Mallorca"
+  "name": "Mallorca",
+  "badgeLocalPath": "/img/badges/real-club-deportivo-mallorca.png"
 }

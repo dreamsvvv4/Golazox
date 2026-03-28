@@ -2,7 +2,7 @@
   "slug": "fc-stade-rennes",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Brice Samba",
@@ -42,7 +42,7 @@
         },
         {
           "name": "Przemyslaw Frankowski",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Djaoui Cissé",
@@ -58,7 +58,7 @@
         },
         {
           "name": "Glen Kamara",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Ludovic Blas",
@@ -108,5 +108,6 @@
     }
   },
   "id": 273,
-  "name": "Rennes"
+  "name": "Rennes",
+  "badgeLocalPath": "/img/badges/fc-stade-rennes.png"
 }

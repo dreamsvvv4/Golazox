@@ -106,7 +106,7 @@
         },
         {
           "name": "Luis Díaz",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Marlon Hairston",
@@ -139,7 +139,7 @@
       "teamLabel": "Columbus Crew (2020-21)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Patrick Schulte",
@@ -273,5 +273,6 @@
     }
   },
   "id": 813,
-  "name": "Columbus Crew"
+  "name": "Columbus Crew",
+  "badgeLocalPath": "/img/badges/columbus-crew.png"
 }

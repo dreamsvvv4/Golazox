@@ -163,7 +163,7 @@
       "teamLabel": "Seattle Sounders (2016-17)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Andrew Thomas",
@@ -289,5 +289,6 @@
     }
   },
   "id": 9636,
-  "name": "Seattle Sounders"
+  "name": "Seattle Sounders",
+  "badgeLocalPath": "/img/badges/seattle-sounders.png"
 }

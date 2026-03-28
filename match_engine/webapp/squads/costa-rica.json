@@ -1,5 +1,333 @@
 {
   "slug": "costa-rica",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/costa-rica.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 86
+        },
+        {
+          "name": "Patrick Sequeira",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Kevin Chamorro",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alexandre Lezcano",
+          "position": "GK",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Esteban Alvarado",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Anthony Walker",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Jeyland Mitchell",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Juan Pablo Vargas",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Julio Cascante",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Francisco Calvo",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Alexis Gamboa",
+          "position": "RB",
+          "marketValue": 375000,
+          "rating": 69
+        },
+        {
+          "name": "Fernán Faerron",
+          "position": "LB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Joseph Mora",
+          "position": "LB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Joseth Peraza",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Santiago van der Putten",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Gerald Taylor",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Haxzel Quirós",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Kevin Espinoza",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Guillermo Villalobos",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Ryan Bolaños",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Yostin Salinas",
+          "position": "LB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Kenay Myrie",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Kendall Waston",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Orlando Galo",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Allan Cruz",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Carlos Mora",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jefferson Brenes",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Brandon Aguilera",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Cristopher Núñez",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Sebastián Acuña",
+          "position": "CM",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Creichel Pérez",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Rashir Parkins",
+          "position": "CM",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Alejandro Bran",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Aarón Suárez",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Celso Borges",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Aaron Murillo",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Manfred Ugalde",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Alonso Martínez",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Josimar Alcócer",
+          "position": "ST",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Andy Rojas",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kenneth Vargas",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Ariel Lassiter",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Diego Campos",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Álvaro Zamora",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Anthony Contreras",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Warren Madrigal",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Joel Campbell",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Anthony Hernández",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Josimar Méndez",
+          "position": "ST",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Orlando Sinclair",
+          "position": "ST",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Mauricio Villalobos",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Randy Vega",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 62,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — costa rica (2025/2026)",
+      "teamLabel": "costa rica (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/costa-rica.png",
+  "id": 8497,
+  "name": "costa rica"
 }

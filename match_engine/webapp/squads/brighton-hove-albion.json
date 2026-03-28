@@ -34,7 +34,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jan Paul van Hecke",
@@ -62,7 +62,7 @@
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Michal Karbownik",
@@ -110,7 +110,7 @@
         },
         {
           "name": "Pascal Groß",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Steven Alzate",
@@ -134,7 +134,7 @@
         },
         {
           "name": "Leandro Trossard",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Abdallah Sima",
@@ -279,7 +279,7 @@
         },
         {
           "name": "Pascal Groß",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Yasin Ayari",
@@ -319,11 +319,11 @@
         },
         {
           "name": "Leandro Trossard",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Kaoru Mitoma",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Jeremy Sarmiento",
@@ -464,7 +464,7 @@
         },
         {
           "name": "Pascal Groß",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Mahmoud Dahoud",
@@ -512,11 +512,11 @@
         },
         {
           "name": "Kaoru Mitoma",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Simon Adingra",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Ansu Fati",
@@ -641,7 +641,7 @@
         },
         {
           "name": "Ferdi Kadıoğlu",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jacob Slater",
@@ -729,11 +729,11 @@
         },
         {
           "name": "Kaoru Mitoma",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Simon Adingra",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Jeremy Sarmiento",
@@ -786,111 +786,137 @@
       "teamLabel": "Brighton (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Bart Verbruggen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Jason Steele",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Tom McGill",
-          "position": "GK"
+          "position": "GK",
+          "rating": 68
         },
         {
           "name": "Jan Paul van Hecke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Olivier Boscagli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Igor Julio",
-          "position": "CB"
+          "position": "LB",
+          "rating": 80
         },
         {
           "name": "Adam Webster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 77
         },
         {
           "name": "Lewis Dunk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Ferdi Kadıoğlu",
-          "position": "CB"
+          "position": "LB",
+          "rating": 83
         },
         {
           "name": "Maxim De Cuyper",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Joël Veltman",
-          "position": "CB"
+          "position": "RB",
+          "rating": 74
         },
         {
           "name": "Carlos Baleba",
-          "position": "CM"
+          "position": "DM",
+          "rating": 84
         },
         {
           "name": "Mats Wieffer",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Jack Hinshelwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Yasin Ayari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Gómez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matt O'Riley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Pascal Groß",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "James Milner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 72
         },
         {
           "name": "Kaoru Mitoma",
-          "position": "ST"
+          "position": "LW",
+          "rating": 87
         },
         {
           "name": "Yankuba Minteh",
-          "position": "ST"
+          "position": "RW",
+          "rating": 82
         },
         {
           "name": "Solly March",
-          "position": "ST"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Georginio Rutter",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Charalampos Kostoulas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 70
         },
         {
           "name": "Stefanos Tzimas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Danny Welbeck",
-          "position": "ST"
+          "position": "ST",
+          "rating": 76
         }
       ],
       "ratings": {

@@ -267,7 +267,7 @@
         },
         {
           "name": "Bernardo Silva",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Thomas Lemar",
@@ -311,7 +311,8 @@
         },
         {
           "name": "Kylian Mbappé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "Radamel Falcao",
@@ -348,119 +349,147 @@
       "teamLabel": "Monaco (2016-17)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Philipp Köhn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukas Hradecky",
-          "position": "GK"
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Jules Stawiecki",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Yann Lienard",
-          "position": "GK"
+          "position": "GK",
+          "rating": 65
         },
         {
           "name": "Thilo Kehrer",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Christian Mawissa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Wout Faes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Mohammed Salisu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Eric Dier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Caio Henrique",
-          "position": "CB"
+          "position": "LB",
+          "rating": 83
         },
         {
           "name": "Kassoum Ouattara",
-          "position": "CB"
+          "position": "RB",
+          "rating": 71
         },
         {
           "name": "Vanderson",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Jordan Teze",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Denis Zakaria",
-          "position": "CM"
+          "position": "DM",
+          "rating": 79
         },
         {
           "name": "Aladji Bamba",
-          "position": "CM"
+          "position": "CM",
+          "rating": 69
         },
         {
           "name": "Lamine Camara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Mamadou Coulibaly",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Paul Pogba",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Krépin Diatta",
-          "position": "CM"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Aleksandr Golovin",
-          "position": "CM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Stanis Idumbo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 71
         },
         {
           "name": "Simon Adingra",
-          "position": "ST"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Takumi Minamino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ansu Fati",
-          "position": "ST"
+          "position": "LW",
+          "rating": 80
         },
         {
           "name": "Maghnes Akliouche",
-          "position": "ST"
+          "position": "AM",
+          "rating": 82
         },
         {
           "name": "Folarin Balogun",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mika Biereth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Paris Brunner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 77
         }
       ],
       "ratings": {

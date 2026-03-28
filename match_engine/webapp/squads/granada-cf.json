@@ -165,8 +165,127 @@
       },
       "source": "BDFutbol — Granada 2022-23 Segunda División",
       "teamLabel": "Granada 2022-23 Segunda División"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Aarón Escandell",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Lucá Zidane",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Ricard Artero",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Ignasi Miquel",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Rubén Durán",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Pablo Conte",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Gonzalo Villar",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Radosav Petrovic",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Moisés Doval",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Antonio Puertas",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Bryan Zaragoza",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Uzuni",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Carlos Neva",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Tsitaishvili",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Torrente",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Lucas Boyé",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Miguel Rubio",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Perea",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yan Brice Eteki",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Víctor Díaz",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Meseguer",
+          "position": "CM",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — Granada CF (2025/2026)",
+      "teamLabel": "Granada CF (2025-26)"
     }
   },
-  "name": "Granada",
+  "id": 16795,
+  "name": "Granada CF",
   "badgeLocalPath": "/img/badges/granada-cf.png"
 }

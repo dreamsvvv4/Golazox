@@ -1,5 +1,37 @@
 {
   "slug": "us-lecce",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Wladimiro Falcone", "position": "GK", "rating": 74 },
+        { "name": "Gabriel Brancolini", "position": "GK", "rating": 68 },
+        { "name": "Hjulmand", "position": "DM", "rating": 74 },
+        { "name": "Frederic Guilbert", "position": "RB", "rating": 73 },
+        { "name": "Antonino Gallo", "position": "LB", "rating": 73 },
+        { "name": "Sebastiano Luperto", "position": "CB", "rating": 73 },
+        { "name": "Lassana Coulibaly", "position": "DM", "rating": 72 },
+        { "name": "Gabriel Strefezza", "position": "RW", "rating": 74 },
+        { "name": "Pontus Almqvist", "position": "LW", "rating": 73 },
+        { "name": "Lorenzo Colombo", "position": "ST", "rating": 74 },
+        { "name": "Hamza Rafia", "position": "CM", "rating": 73 },
+        { "name": "Mats Lemmens", "position": "CB", "rating": 72 },
+        { "name": "Andrea Pongracic", "position": "CB", "rating": 74 },
+        { "name": "Ylber Ramadani", "position": "DM", "rating": 73 },
+        { "name": "Roberto Piccoli", "position": "ST", "rating": 73 },
+        { "name": "Alberto Baschirotto", "position": "CB", "rating": 73 },
+        { "name": "Valentin Gendrey", "position": "RB", "rating": 73 },
+        { "name": "Alexis Blin", "position": "CM", "rating": 72 },
+        { "name": "Emmanuel Tufan", "position": "CM", "rating": 72 },
+        { "name": "Nikola Krstovic", "position": "ST", "rating": 74 },
+        { "name": "Kristoffer Askildsen", "position": "CM", "rating": 72 }
+      ],
+      "ratings": { "attack": 70, "midfield": 70, "defense": 70, "goalkeeping": 70 },
+      "source": "Transfermarkt — US Lecce (2025/2026)",
+      "teamLabel": "US Lecce (2025-26)"
+    }
+  },
+  "id": 1005,
+  "name": "US Lecce",
   "badgeLocalPath": "/img/badges/us-lecce.png"
 }

@@ -22,7 +22,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jamaal Lascelles",
@@ -46,7 +46,7 @@
         },
         {
           "name": "Jamal Lewis",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Paul Dummett",
@@ -54,11 +54,11 @@
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Emil Krafth",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Javier Manquillo",
@@ -118,7 +118,7 @@
         },
         {
           "name": "Ryan Fraser",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Miguel Almirón",
@@ -183,7 +183,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jamaal Lascelles",
@@ -207,7 +207,7 @@
         },
         {
           "name": "Jamal Lewis",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Paul Dummett",
@@ -215,11 +215,11 @@
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Emil Krafth",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Javier Manquillo",
@@ -275,7 +275,8 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Allan Saint-Maximin",
@@ -283,7 +284,7 @@
         },
         {
           "name": "Ryan Fraser",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Miguel Almirón",
@@ -352,7 +353,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jamaal Lascelles",
@@ -372,7 +373,7 @@
         },
         {
           "name": "Jamal Lewis",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Paul Dummett",
@@ -388,11 +389,11 @@
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Emil Krafth",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Javier Manquillo",
@@ -460,7 +461,8 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Harvey Barnes",
@@ -468,7 +470,7 @@
         },
         {
           "name": "Ryan Fraser",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Amadou Diallo",
@@ -545,7 +547,7 @@
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Jamaal Lascelles",
@@ -561,7 +563,7 @@
         },
         {
           "name": "Jamal Lewis",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Alex Murphy",
@@ -573,11 +575,11 @@
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Emil Krafth",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Harrison Ashby",
@@ -621,7 +623,8 @@
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Harvey Barnes",
@@ -666,111 +669,137 @@
       "teamLabel": "Newcastle United (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Aaron Ramsdale",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Nick Pope",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Mark Gillespie",
-          "position": "GK"
+          "position": "GK",
+          "rating": 70
         },
         {
           "name": "John Ruddy",
-          "position": "GK"
+          "position": "GK",
+          "rating": 68
         },
         {
           "name": "Malick Thiaw",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Sven Botman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 83
         },
         {
           "name": "Fabian Schär",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dan Burn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lewis Hall",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Alex Murphy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Tino Livramento",
-          "position": "CB"
+          "position": "RB",
+          "rating": 81
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB",
+          "rating": 81
         },
         {
           "name": "Emil Krafth",
-          "position": "CB"
+          "position": "RB",
+          "rating": 72
         },
         {
           "name": "Sandro Tonali",
-          "position": "CM"
+          "position": "CM",
+          "rating": 85
         },
         {
           "name": "Bruno Guimarães",
-          "position": "CM"
+          "position": "DM",
+          "rating": 91
         },
         {
           "name": "Jacob Ramsey",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Joelinton",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Miley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 77
         },
         {
           "name": "Joe Willock",
-          "position": "CM"
+          "position": "CM",
+          "rating": 77
         },
         {
           "name": "Anthony Gordon",
-          "position": "ST"
+          "position": "LW",
+          "rating": 83
         },
         {
           "name": "Harvey Barnes",
-          "position": "ST"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "Anthony Elanga",
-          "position": "ST"
+          "position": "LW",
+          "rating": 82
         },
         {
           "name": "Jacob Murphy",
-          "position": "ST"
+          "position": "RW",
+          "rating": 78
         },
         {
           "name": "Nick Woltemade",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Yoane Wissa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 84
         },
         {
           "name": "William Osula",
-          "position": "ST"
+          "position": "ST",
+          "rating": 76
         }
       ],
       "ratings": {

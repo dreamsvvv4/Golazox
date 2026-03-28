@@ -220,103 +220,127 @@
       "teamLabel": "Marseille (1993-94)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jeffrey de Lange",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Jelle Van Neck",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Théo Vermot",
-          "position": "GK"
+          "position": "GK",
+          "rating": 65
         },
         {
           "name": "Nayef Aguerd",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Leonardo Balerdi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Benjamin Pavard",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Facundo Medina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "CJ Egan-Riley",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Emerson",
-          "position": "CB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Arthur Vermeeren",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM",
+          "rating": 83
         },
         {
           "name": "Geoffrey Kondogbia",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Tochukwu Nnadi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Quinten Timber",
-          "position": "CM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Bilal Nadir",
-          "position": "CM"
+          "position": "CM",
+          "rating": 70
         },
         {
           "name": "Timothy Weah",
-          "position": "CM"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Ethan Nwaneri",
-          "position": "CM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Himad Abdelli",
-          "position": "CM"
+          "position": "AM",
+          "rating": 78
         },
         {
           "name": "Igor Paixão",
-          "position": "ST"
+          "position": "LW",
+          "rating": 82
         },
         {
           "name": "Hamed Traoré",
-          "position": "ST"
+          "position": "CM",
+          "rating": 81
         },
         {
           "name": "Mason Greenwood",
-          "position": "ST"
+          "position": "RW",
+          "rating": 86
         },
         {
           "name": "Amine Gouiri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pierre-Emerick Aubameyang",
-          "position": "ST"
+          "position": "ST",
+          "rating": 76
         }
       ],
       "ratings": {

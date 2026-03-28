@@ -1,5 +1,126 @@
 {
   "slug": "sunderland",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Anthony Patterson",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Ron-Robert Zieler",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Dennis Cirkin",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Trai Hume",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Danny Batth",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Dan Neil",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Patrick Roberts",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Luke O'Nien",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Ellis Simms",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Amad Diallo",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Edouard Michut",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Leon Dajaku",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Pierre Ekwah",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Jack Clarke",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Nathaniel Mendez-Laing",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Ross Stewart",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Niall Huggins",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Bailey Wright",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Bradley Dack",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Abdoullah Ba",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Adil Aouchiche",
+          "position": "AM",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 66,
+        "defense": 66,
+        "goalkeeping": 66
+      },
+      "source": "Transfermarkt — Sunderland AFC (2025/2026)",
+      "teamLabel": "Sunderland (2025-26)"
+    }
+  },
+  "id": 289,
+  "name": "Sunderland",
   "badgeLocalPath": "/img/badges/sunderland.png"
 }

@@ -1,5 +1,126 @@
 {
   "slug": "middlesbrough",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Seny Dieng",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Luke Daniels",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Dael Fry",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Anfernee Dijksteel",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Marc Bola",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Daniel Ayala",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Jonny Howson",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Marcus Tavernier",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Isaiah Jones",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Chuba Akpom",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Paddy McNair",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Matt Crooks",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Riley McGree",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Hayden Hackney",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Zach Hemming",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Alex Bangura",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Rav van den Berg",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Cameron Archer",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Tommy Smith",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Luke Ayling",
+          "position": "RB",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 65,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Middlesbrough FC (2025/2026)",
+      "teamLabel": "Middlesbrough (2025-26)"
+    }
+  },
+  "id": 1453,
+  "name": "Middlesbrough",
   "badgeLocalPath": "/img/badges/middlesbrough.png"
 }

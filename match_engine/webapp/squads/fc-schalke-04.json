@@ -1,5 +1,126 @@
 {
   "slug": "fc-schalke-04",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Justin Heekeren",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Michael Langer",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Timo Baumgartl",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ibrahima Cissé",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Leo Greiml",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Thomas Ouwejan",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Tobias Mohr",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Tom Kräß",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Kenan Karaman",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Jessic Ngankam",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Yusuf Kabadayi",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Martin Wasinski",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Simon Terodde",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Marius Lode",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Cedric Brunner",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Mehmet-Can Aydin",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Lino Tempelmann",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rodrigo Zalazar",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Paul Seguin",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Soichiro Kozuki",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Michael Frey",
+          "position": "ST",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 68,
+        "defense": 67,
+        "goalkeeping": 68
+      },
+      "source": "Transfermarkt — FC Schalke 04 (2025/2026)",
+      "teamLabel": "FC Schalke 04 (2025-26)"
+    }
+  },
+  "id": 33,
+  "name": "FC Schalke 04",
   "badgeLocalPath": "/img/badges/fc-schalke-04.png"
 }

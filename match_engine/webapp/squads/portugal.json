@@ -1000,10 +1000,6 @@
           "position": "ST"
         },
         {
-          "name": "João Pinto",
-          "position": "ST"
-        },
-        {
           "name": "Paulo Alves",
           "position": "ST"
         },
@@ -1178,10 +1174,6 @@
         },
         {
           "name": "Luís Figo",
-          "position": "ST"
-        },
-        {
-          "name": "João Pinto",
           "position": "ST"
         },
         {
@@ -2736,7 +2728,7 @@
         },
         {
           "name": "Danilo Pereira",
-          "position": "CB"
+          "position": "DM"
         },
         {
           "name": "Luís Neto",
@@ -2764,7 +2756,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Cédric Soares",
@@ -2804,7 +2796,7 @@
         },
         {
           "name": "Bernardo Silva",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "João Mário",
@@ -2877,7 +2869,7 @@
         },
         {
           "name": "Danilo Pereira",
-          "position": "CB"
+          "position": "DM"
         },
         {
           "name": "José Fonte",
@@ -2921,7 +2913,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Cédric Soares",
@@ -2965,7 +2957,7 @@
         },
         {
           "name": "Bernardo Silva",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "João Mário",
@@ -2977,7 +2969,7 @@
         },
         {
           "name": "Bruno Fernandes",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Manuel Fernandes",
@@ -3058,7 +3050,7 @@
         },
         {
           "name": "Danilo Pereira",
-          "position": "CB"
+          "position": "DM"
         },
         {
           "name": "Domingos Duarte",
@@ -3090,7 +3082,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Nélson Semedo",
@@ -3122,11 +3114,11 @@
         },
         {
           "name": "Bruno Fernandes",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Bernardo Silva",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Francisco Trincão",
@@ -3134,7 +3126,7 @@
         },
         {
           "name": "Diogo Jota",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Gonçalo Guedes",
@@ -3146,7 +3138,7 @@
         },
         {
           "name": "Pedro Neto",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "João Félix",
@@ -3215,7 +3207,7 @@
         },
         {
           "name": "Danilo Pereira",
-          "position": "CB"
+          "position": "DM"
         },
         {
           "name": "Domingos Duarte",
@@ -3231,7 +3223,7 @@
         },
         {
           "name": "Nuno Mendes",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Raphaël Guerreiro",
@@ -3243,7 +3235,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Matheus Nunes",
@@ -3251,7 +3243,7 @@
         },
         {
           "name": "Diogo Dalot",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Cédric Soares",
@@ -3259,11 +3251,12 @@
         },
         {
           "name": "Vitinha",
-          "position": "CM"
+          "position": "CM",
+          "rating": 86
         },
         {
           "name": "João Palhinha",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Rúben Neves",
@@ -3279,11 +3272,11 @@
         },
         {
           "name": "Bernardo Silva",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Bruno Fernandes",
-          "position": "CM"
+          "position": "AM"
         },
         {
           "name": "Otávio",
@@ -3295,11 +3288,11 @@
         },
         {
           "name": "Rafael Leão",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Diogo Jota",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Gonçalo Guedes",
@@ -3311,7 +3304,7 @@
         },
         {
           "name": "Pedro Neto",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "João Félix",
@@ -3338,9 +3331,214 @@
       },
       "source": "Transfermarkt — portugal (2022/2023)",
       "teamLabel": "portugal (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Diogo Costa",
+          "position": "GK",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "José Sá",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Rui Silva",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "João Carvalho",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Nuno Mendes",
+          "position": "LB",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Gonçalo Inácio",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "António Silva",
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "Diogo Dalot",
+          "position": "RB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Nuno Tavares",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "João Cancelo",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 86
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Renato Veiga",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "João Neves",
+          "position": "DM",
+          "marketValue": 60000000,
+          "rating": 91
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "RW",
+          "marketValue": 60000000,
+          "rating": 92
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "AM",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "CM",
+          "marketValue": 27000000,
+          "rating": 86
+        },
+        {
+          "name": "Vitinha",
+          "position": "CM",
+          "marketValue": 55000000,
+          "rating": 86
+        },
+        {
+          "name": "João Palhinha",
+          "position": "DM",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Rúben Neves",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Rodrigo Mora",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 99
+        },
+        {
+          "name": "Gonçalo Ramos",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Rafael Leão",
+          "position": "LW",
+          "marketValue": 75000000,
+          "rating": 89
+        },
+        {
+          "name": "Francisco Conceição",
+          "position": "ST",
+          "marketValue": 36000000,
+          "rating": 88
+        },
+        {
+          "name": "Pedro Gonçalves",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Geovany Quenda",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Diogo Jota",
+          "position": "LW",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "João Félix",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 84
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "RW",
+          "marketValue": 55000000,
+          "rating": 83
+        },
+        {
+          "name": "Carlos Forbs",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 84,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — portugal (2025/2026)",
+      "teamLabel": "portugal (2025-26)"
     }
   },
   "id": 3300,
-  "name": "portugal",
+  "name": "Portugal",
   "badgeLocalPath": "/img/badges/portugal.png"
 }

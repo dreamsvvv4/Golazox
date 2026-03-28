@@ -1,5 +1,126 @@
 {
   "slug": "hannover-96",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Ron-Robert Zieler",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Max Christiansen",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Bright Arrey-Mbi",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jannes Horn",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Marcel Halstenberg",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Sei Muroya",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Cedric Teuchert",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Maximilian Beier",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Fabian Kunze",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Nicolai Müller",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Max Besuschkow",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Lars Denecke",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Havard Nielsen",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Derrick Köhn",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Dzenis Burnic",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Phil",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Pascal Breier",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Loukas Lacroix",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Julian Börner",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Nicolo Tresoldi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Enzo Leopold",
+          "position": "CM",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 68,
+        "defense": 67,
+        "goalkeeping": 68
+      },
+      "source": "Transfermarkt — Hannover 96 (2025/2026)",
+      "teamLabel": "Hannover 96 (2025-26)"
+    }
+  },
+  "id": 534,
+  "name": "Hannover 96",
   "badgeLocalPath": "/img/badges/hannover-96.png"
 }

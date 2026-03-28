@@ -199,7 +199,7 @@
       "teamLabel": "LA Galaxy (2011-12)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Novak Mićović",
@@ -321,5 +321,6 @@
     }
   },
   "id": 1061,
-  "name": "LA Galaxy"
+  "name": "LA Galaxy",
+  "badgeLocalPath": "/img/badges/la-galaxy.png"
 }

@@ -2,7 +2,7 @@
   "slug": "galatasaray-istanbul",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Uğurcan Çakır",
@@ -22,7 +22,7 @@
         },
         {
           "name": "Wilfried Singo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Davinson Sánchez",
@@ -42,7 +42,7 @@
         },
         {
           "name": "Ismail Jakobs",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Eren Elmalı",
@@ -54,11 +54,11 @@
         },
         {
           "name": "Roland Sallai",
-          "position": "CB"
+          "position": "RW"
         },
         {
           "name": "Lucas Torreira",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Mario Lemina",
@@ -98,11 +98,11 @@
         },
         {
           "name": "Leroy Sané",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Yunus Akgün",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Yáser Asprilla",
@@ -132,5 +132,6 @@
     }
   },
   "id": 141,
-  "name": "Galatasaray"
+  "name": "Galatasaray",
+  "badgeLocalPath": "/img/badges/galatasaray.png"
 }

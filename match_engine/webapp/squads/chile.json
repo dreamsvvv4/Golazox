@@ -1,5 +1,399 @@
 {
   "slug": "chile",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/chile.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Brayan Cortés",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Thomas Gillier",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Gabriel Castellón",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lawrence Vigouroux",
+          "position": "GK",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Sebastián Mella",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Vicente Reyes",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Jaime Vargas",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Gabriel Suazo",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Guillermo Maripán",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Paulo Díaz",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Fabián Hormazábal",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Benjamín Kuscevic",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daniel González",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Sebastián Vegas",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Francisco Sierralta",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nicolás Díaz",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Iván Román",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Francisco Salinas",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Esteban Matus",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ian Garguez",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Igor Lichnovsky",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Branco Ampuero",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Nicolás Fernández",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Erick Wiemberg",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Dylan Escobar",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Ignacio Tapia",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Arturo Vidal",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 86
+        },
+        {
+          "name": "Marcelino Núñez",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Felipe Loyola",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Vicente Pizarro",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Echeverría",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Lucas Assadi",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Diego Valdés",
+          "position": "AM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Lautaro Millán",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Javier Altamirano",
+          "position": "CM",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Ignacio Saavedra",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Luciano Cabral",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Matías Sepúlveda",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Ureña",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Alfred Canales",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Charles Aránguiz",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Álvaro Madrid",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Agustín Arce",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Esteban Pavez",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Marcelo Díaz",
+          "position": "CM",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "LW",
+          "marketValue": 1400000,
+          "rating": 84
+        },
+        {
+          "name": "Darío Osorio",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ben Brereton Díaz",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alexander Aravena",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Gonzalo Tapia",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Víctor Dávila",
+          "position": "RW",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Lucas Cepeda",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Clemente Montes",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Maximiliano Guerrero",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Maximiliano Gutiérrez",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Cristian Cuevas",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ariel Uribe",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pablo Aránguiz",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Emiliano Ramos",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Steffan Pino",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Nicolás Guerra",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Fernando Zampedri",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Eduardo Vargas",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — chile (2025/2026)",
+      "teamLabel": "chile (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/chile.png",
+  "id": 3700,
+  "name": "chile"
 }

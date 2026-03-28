@@ -82,7 +82,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Rodrigo Bentancur",
@@ -130,7 +130,7 @@
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Giovani Lo Celso",
@@ -150,7 +150,7 @@
         },
         {
           "name": "Bryan Gil",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Steven Bergwijn",
@@ -178,7 +178,8 @@
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Dane Scarlett",
@@ -247,7 +248,8 @@
         },
         {
           "name": "Pedro Porro",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Emerson Royal",
@@ -259,7 +261,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Rodrigo Bentancur",
@@ -291,7 +293,7 @@
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Alfie Devine",
@@ -307,11 +309,11 @@
         },
         {
           "name": "Bryan Gil",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Romaine Mundle",
@@ -327,7 +329,8 @@
         },
         {
           "name": "Harry Kane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 91
         },
         {
           "name": "Richarlison",
@@ -420,7 +423,8 @@
         },
         {
           "name": "Pedro Porro",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Emerson Royal",
@@ -436,7 +440,7 @@
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Oliver Skipp",
@@ -456,7 +460,7 @@
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Giovani Lo Celso",
@@ -472,7 +476,7 @@
         },
         {
           "name": "Bryan Gil",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Manor Solomon",
@@ -480,7 +484,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Yago Santiago",
@@ -593,7 +597,8 @@
         },
         {
           "name": "Pedro Porro",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Rodrigo Bentancur",
@@ -625,7 +630,7 @@
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "James Maddison",
@@ -698,119 +703,147 @@
       "teamLabel": "Tottenham Hotspur (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Guglielmo Vicario",
-          "position": "GK"
+          "position": "GK",
+          "rating": 83
         },
         {
           "name": "Antonín Kinský",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Brandon Austin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 66
         },
         {
           "name": "Micky van de Ven",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 87
         },
         {
           "name": "Radu Drăgușin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kevin Danso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 81
         },
         {
           "name": "Ben Davies",
-          "position": "CB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Destiny Udogie",
-          "position": "CB"
+          "position": "LB",
+          "rating": 84
         },
         {
           "name": "Djed Spence",
-          "position": "CB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Souza",
-          "position": "CB"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Pedro Porro",
-          "position": "CB"
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Rodrigo Bentancur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "João Palhinha",
-          "position": "CM"
+          "position": "DM",
+          "rating": 84
         },
         {
           "name": "Yves Bissouma",
-          "position": "CM"
+          "position": "DM",
+          "rating": 81
         },
         {
           "name": "Lucas Bergvall",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Archie Gray",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Conor Gallagher",
-          "position": "CM"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Pape Matar Sarr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Xavi Simons",
-          "position": "CM"
+          "position": "AM",
+          "rating": 87
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "CM"
+          "position": "RW",
+          "rating": 83
         },
         {
           "name": "James Maddison",
-          "position": "CM"
+          "position": "AM",
+          "rating": 83
         },
         {
           "name": "Wilson Odobert",
-          "position": "ST"
+          "position": "LW",
+          "rating": 82
         },
         {
           "name": "Mohammed Kudus",
-          "position": "ST"
+          "position": "RW",
+          "rating": 84
         },
         {
           "name": "Dominic Solanke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 84
         },
         {
           "name": "Richarlison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         },
         {
           "name": "Mathys Tel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 85
         },
         {
           "name": "Randal Kolo Muani",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         }
       ],
       "ratings": {

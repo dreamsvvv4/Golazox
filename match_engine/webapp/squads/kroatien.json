@@ -1596,7 +1596,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Ivo Ilicevic",
@@ -1721,7 +1721,7 @@
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Milan Badelj",
@@ -1765,7 +1765,7 @@
         },
         {
           "name": "Andrej Kramaric",
-          "position": "CM"
+          "position": "ST"
         },
         {
           "name": "Alen Halilovic",
@@ -1777,7 +1777,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Marko Pjaca",
@@ -1785,7 +1785,7 @@
         },
         {
           "name": "Ante Rebić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Anas Sharbini",
@@ -1894,7 +1894,7 @@
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Milan Badelj",
@@ -1926,7 +1926,7 @@
         },
         {
           "name": "Andrej Kramaric",
-          "position": "CM"
+          "position": "ST"
         },
         {
           "name": "Ante Coric",
@@ -1938,7 +1938,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Marko Pjaca",
@@ -2043,7 +2043,7 @@
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Milan Badelj",
@@ -2075,7 +2075,7 @@
         },
         {
           "name": "Andrej Kramaric",
-          "position": "CM"
+          "position": "ST"
         },
         {
           "name": "Nikola Vlašić",
@@ -2083,11 +2083,11 @@
         },
         {
           "name": "Ante Rebić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Marko Pjaca",
@@ -2192,11 +2192,11 @@
         },
         {
           "name": "Josip Juranovic",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Milan Badelj",
@@ -2228,11 +2228,11 @@
         },
         {
           "name": "Andrej Kramaric",
-          "position": "CM"
+          "position": "ST"
         },
         {
           "name": "Ante Rebić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Josip Brekalo",
@@ -2244,7 +2244,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Bruno Petkovic",
@@ -2293,7 +2293,7 @@
         },
         {
           "name": "Josko Gvardiol",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Duje Caleta-Car",
@@ -2325,7 +2325,7 @@
         },
         {
           "name": "Borna Sosa",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Borna Barisic",
@@ -2337,15 +2337,15 @@
         },
         {
           "name": "Josip Stanisic",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Josip Juranovic",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Marcelo Brozović",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Nikola Moro",
@@ -2377,11 +2377,11 @@
         },
         {
           "name": "Andrej Kramaric",
-          "position": "CM"
+          "position": "ST"
         },
         {
           "name": "Luka Ivanušec",
-          "position": "CM"
+          "position": "RW"
         },
         {
           "name": "Lovro Majer",
@@ -2397,7 +2397,7 @@
         },
         {
           "name": "Ivan Perišić",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Bruno Petkovic",
@@ -2420,9 +2420,226 @@
       },
       "source": "Transfermarkt — croatia (2022/2023)",
       "teamLabel": "croatia (2022-23)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dominik Livakovic",
+          "position": "GK",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Dominik Kotarski",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ivica Ivusic",
+          "position": "GK",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Ivor Pandur",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Josko Gvardiol",
+          "position": "LB",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Josip Sutalo",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Luka Vuskovic",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Marin Pongracic",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Duje Caleta-Car",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Martin Erlić",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Borna Sosa",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Josip Juranovic",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Domagoj Bradarić",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Josip Stanisic",
+          "position": "RB",
+          "marketValue": 28000000,
+          "rating": 78
+        },
+        {
+          "name": "Ivan Smolcic",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 88
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Luka Sucic",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Lovro Majer",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Martin Baturina",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Mario Pašalić",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Petar Sučić",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Kristijan Jakic",
+          "position": "DM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Nikola Vlašić",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nikola Moro",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Toni Fruk",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Andrej Kramaric",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Igor Matanovic",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Petar Musa",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Ante Budimir",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Marco Pašalić",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Franjo Ivanović",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Mislav Orsic",
+          "position": "LW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Ivan Perišić",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 83,
+        "defense": 77,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — croatia (2025/2026)",
+      "teamLabel": "croatia (2025-26)"
     }
   },
   "id": 3556,
-  "name": "croatia",
+  "name": "Croacia",
   "badgeLocalPath": "/img/badges/kroatien.png"
 }

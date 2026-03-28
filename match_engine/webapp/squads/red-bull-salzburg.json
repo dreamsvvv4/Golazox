@@ -2,7 +2,7 @@
   "slug": "red-bull-salzburg",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Alexander Schlager",
@@ -38,7 +38,7 @@
         },
         {
           "name": "Aleksa Terzic",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Frans Krätzig",
@@ -50,7 +50,7 @@
         },
         {
           "name": "Stefan Lainer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Soumaïla Diabaté",
@@ -136,5 +136,6 @@
     }
   },
   "id": 409,
-  "name": "Red Bull Salzburg"
+  "name": "Red Bull Salzburg",
+  "badgeLocalPath": "/img/badges/red-bull-salzburg.png"
 }

@@ -2,7 +2,7 @@
   "slug": "sporting-lissabon",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Rui Silva",
@@ -58,7 +58,7 @@
         },
         {
           "name": "Hidemasa Morita",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Giorgi Kochorashvili",
@@ -112,5 +112,6 @@
     }
   },
   "id": 336,
-  "name": "Braga"
+  "name": "Braga",
+  "badgeLocalPath": "/img/badges/braga.png"
 }

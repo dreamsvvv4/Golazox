@@ -1,5 +1,477 @@
 {
   "slug": "nigeria",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/nigeria.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Maduka Okoye",
+          "position": "GK",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Stanley Nwabali",
+          "position": "GK",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Francis Uzoho",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Adebayo Adeleye",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Amas Obasogie",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Adamu Mohammed Abubakar",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Kayode Bankole",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Mustapha Lawal",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Badmus Nurudeen",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 62
+        },
+        {
+          "name": "Ebenezar Harcourt",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 61
+        },
+        {
+          "name": "Calvin Bassey",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Ola Aina",
+          "position": "RB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Igoh Ogbu",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Bright Osayi-Samuel",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Felix Agu",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jordan Torunarigha",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Zaidu Sanusi",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Bruno Onyemaechi",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Chidozie Awaziem",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "William Troost-Ekong",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Semi Ajayi",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ryan Alebiosu",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Benjamin Fredrick",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ifeanyi Onyebuchi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Stephen Manyo",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Nduka Junior",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Leonard Ngenge",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 67
+        },
+        {
+          "name": "Taiwo Abdulrafiu",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Austin Harrison",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Sodiq Ismaila",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Afeez Bankole",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Waliu Ojetoye",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "DM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Raphael Onyedika",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Frank Onyeka",
+          "position": "DM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Joe Aribo",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Fisayo Dele-Bashiru",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alhassan Yusuf",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ebenezer Akinsanmiro",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tochukwu Nnadi",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Usman Mohammed",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Chinemerem Ugwueze",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Papa Daniel",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Olamilekan Adedayo",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Qudus Akanni",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": 72
+        },
+        {
+          "name": "Saviour Isaac",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Tochukwu Raymond",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Taofeek Otaniyi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Hadi Haruna",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Alex Oyowah",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 64
+        },
+        {
+          "name": "Victor Boniface",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Victor Osimhen",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 87
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Nathan Tella",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Samuel Chukwueze",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ademola Lookman",
+          "position": "LW",
+          "marketValue": 55000000,
+          "rating": 85
+        },
+        {
+          "name": "Terem Moffi",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Moses Simon",
+          "position": "LW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Paul Onuachu",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Akor Adams",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Tolu Arokodare",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Chidera Ejuke",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Kelechi Iheanacho",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Umar Sadiq",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Christantus Uche",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Cyriel Dessers",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Olakunle Olusegun",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ahmed Musa",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Salim Fago Lawal",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Anas Yusuf",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": 70
+        },
+        {
+          "name": "Vincent Temitope",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 68
+        },
+        {
+          "name": "Jabbar Malik",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Shola Adelani",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": 66
+        },
+        {
+          "name": "Godwin Obaje",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Alimi Sikiru",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 63
+        },
+        {
+          "name": "Antoine Ijoma",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 62
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 79,
+        "defense": 72,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — nigeria (2025/2026)",
+      "teamLabel": "nigeria (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/nigeria.png",
+  "id": 3444,
+  "name": "nigeria"
 }

@@ -2,27 +2,32 @@
   "slug": "fc-girona",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 88
         },
         {
           "name": "Paulo Gazzaniga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Rubén Blanco",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vladyslav Krapyvtsov",
-          "position": "GK"
+          "position": "CB",
+          "rating": 70
         },
         {
           "name": "Juan Carlos",
-          "position": "GK"
+          "position": "CB",
+          "rating": 71
         },
         {
           "name": "Vitor Reis",
@@ -86,7 +91,7 @@
         },
         {
           "name": "Bryan Gil",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Joel Roca",
@@ -124,5 +129,6 @@
     }
   },
   "id": 12321,
-  "name": "Girona"
+  "name": "Girona",
+  "badgeLocalPath": "/img/badges/girona-fc.png"
 }

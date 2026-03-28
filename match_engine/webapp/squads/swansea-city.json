@@ -1,5 +1,126 @@
 {
   "slug": "swansea-city",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "3-4-3",
+      "players": [
+        {
+          "name": "Andy Fisher",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Steven Benda",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Ryan Manning",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Kyle Naughton",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Ben Cabango",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Brandon Cooper",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Nathan Wood",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Liam Cullen",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Ollie Cooper",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Joe Allen",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Hannes Wolf",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Joel Piroe",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Matty Sorinola",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Michael Obafemi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Kyle Joseph",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Nathan Tjoe-A-On",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Fin Stevens",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Matt Grimes",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Josh Thomas",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Harry Darling",
+          "position": "CB",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Swansea City (2025/2026)",
+      "teamLabel": "Swansea City (2025-26)"
+    }
+  },
+  "id": 2288,
+  "name": "Swansea City",
   "badgeLocalPath": "/img/badges/swansea-city.png"
 }

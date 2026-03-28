@@ -31,15 +31,16 @@
         },
         {
           "name": "John McGinn",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Youri Tielemans",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Ollie Watkins",
-          "position": "RW"
+          "position": "ST",
+          "rating": 85
         },
         {
           "name": "Tammy Abraham",
@@ -50,7 +51,12 @@
           "position": "LW"
         }
       ],
-      "ratings": null,
+      "ratings": {
+        "attack": 78,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 83
+      },
       "source": "Wikipedia — \"Aston Villa F.C.\"",
       "teamLabel": "Aston Villa (2026)"
     }

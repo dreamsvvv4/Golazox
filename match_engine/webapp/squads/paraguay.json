@@ -1,5 +1,249 @@
 {
   "slug": "paraguay",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/paraguay.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Carlos Coronel",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Juan Espínola",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Roberto Fernández",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Aldo Pérez",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Orlando Gill",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 65
+        },
+        {
+          "name": "Júnior Alonso",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Gustavo Gómez",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Omar Alderete",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Diego León",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alexis Duarte",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Fabián Balbuena",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Agustín Sández",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Gustavo Velázquez",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Juan José Cáceres",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ronaldo Dejesús",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Blas Riveros",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Alan Benítez",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Julio Enciso",
+          "position": "AM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Mathías Villasanti",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Kaku",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Andrés Cubas",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Braian Ojeda",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rubén Lezcano",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Damián Bobadilla",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Matías Galarza",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Lucas Romero",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Hugo Cuenca",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "AM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Ramón Sosa",
+          "position": "RW",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Antonio Sanabria",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Isidro Pitta",
+          "position": "ST",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Álex Arce",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ángel Romero",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ronaldo Martínez",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Gabriel Ávalos",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Diego González",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Adrián Alcaraz",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — paraguay (2025/2026)",
+      "teamLabel": "paraguay (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/paraguay.png",
+  "id": 3581,
+  "name": "paraguay"
 }

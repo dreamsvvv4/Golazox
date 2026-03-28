@@ -2,7 +2,7 @@
   "slug": "ac-florenz",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "David de Gea",
@@ -102,7 +102,7 @@
         },
         {
           "name": "Albert Gudmundsson",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Moise Kean",
@@ -124,5 +124,6 @@
     }
   },
   "id": 430,
-  "name": "Fiorentina"
+  "name": "Fiorentina",
+  "badgeLocalPath": "/img/badges/ac-florenz.png"
 }

@@ -1,5 +1,126 @@
 {
   "slug": "cagliari",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Simone Scuffet",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Antonio Bonello",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Yerry Mina",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Adam Obert",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Georgios Kourfalidis",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Nicolò Zaniolo",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Paolo Azzi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Zito Luvumbo",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Gianluca Lapadula",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Razvan Marin",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pasquale Mazzocchi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Alessandro Deiola",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Leonardo Pavoletti",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Davide Mancosu",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Nahitan Nandez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Luca Gagliano",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Viola Augello",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Javi Manquillo",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Claudio Ranieri",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Federico Capradossi",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Wilfrid Gnonto",
+          "position": "LW",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — Cagliari Calcio (2025/2026)",
+      "teamLabel": "Cagliari Calcio (2025-26)"
+    }
+  },
+  "id": 1390,
+  "name": "Cagliari Calcio",
   "badgeLocalPath": "/img/badges/cagliari.png"
 }

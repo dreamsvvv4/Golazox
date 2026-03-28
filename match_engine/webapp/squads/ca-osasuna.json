@@ -1,28 +1,174 @@
 {
   "slug": "ca-osasuna",
   "seasons": {
-    "2025": {
+    "2008": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Sergio Herrera",
+          "name": "Roberto",
           "position": "GK"
+        },
+        {
+          "name": "Azpilicueta",
+          "position": "RB"
+        },
+        {
+          "name": "Monreal",
+          "position": "LB"
+        },
+        {
+          "name": "Miguel Flaño",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio Fernández",
+          "position": "CB"
+        },
+        {
+          "name": "Nekounam",
+          "position": "CM"
+        },
+        {
+          "name": "Juanfran",
+          "position": "CM"
+        },
+        {
+          "name": "Plašil",
+          "position": "CM"
+        },
+        {
+          "name": "Puñal",
+          "position": "CM"
+        },
+        {
+          "name": "Masoud",
+          "position": "CM"
+        },
+        {
+          "name": "Pandiani",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Vadócz",
+          "position": "CM"
+        },
+        {
+          "name": "Portillo",
+          "position": "ST"
+        },
+        {
+          "name": "Josetxo",
+          "position": "CB"
+        },
+        {
+          "name": "Héctor Font",
+          "position": "CM"
+        },
+        {
+          "name": "Andrés Fernández",
+          "position": "GK"
+        },
+        {
+          "name": "Kike Sola",
+          "position": "ST"
+        },
+        {
+          "name": "Dady",
+          "position": "ST"
+        },
+        {
+          "name": "Cruchaga",
+          "position": "CB"
+        },
+        {
+          "name": "Javier Flaño",
+          "position": "RB"
+        },
+        {
+          "name": "Oier",
+          "position": "CB"
+        },
+        {
+          "name": "Ezquerro",
+          "position": "ST"
+        },
+        {
+          "name": "Rovérsio",
+          "position": "CB"
+        },
+        {
+          "name": "Delporte",
+          "position": "CM"
+        },
+        {
+          "name": "Antonio Hidalgo",
+          "position": "CM"
+        },
+        {
+          "name": "Jokin",
+          "position": "CM"
+        },
+        {
+          "name": "Sunny",
+          "position": "CM"
+        },
+        {
+          "name": "Rúper",
+          "position": "CM"
+        },
+        {
+          "name": "Echaide",
+          "position": "CB"
+        },
+        {
+          "name": "Tiago Gomes",
+          "position": "LB"
+        },
+        {
+          "name": "Margairaz",
+          "position": "CM"
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 69,
+        "defense": 78,
+        "goalkeeping": 69
+      },
+      "source": "BDFutbol — Osasuna 2008-09 Primera División",
+      "teamLabel": "Osasuna 2008-09 Primera División"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sergio Herrera",
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Aitor Fernández",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Enzo Boyomo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jorge Herrando",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Alejandro Catena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Abel Bretones",

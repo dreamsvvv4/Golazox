@@ -111,27 +111,32 @@
       "teamLabel": "Real Sociedad 1982-83 Primera División"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Álex Remiro",
-          "position": "GK"
+          "position": "GK",
+          "rating": 84
         },
         {
           "name": "Unai Marrero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 72
         },
         {
           "name": "Jon Martín",
-          "position": "CB"
+          "position": "GK",
+          "rating": 70
         },
         {
           "name": "Igor Zubeldia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 82
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aritz Elustondo",
@@ -199,7 +204,7 @@
         },
         {
           "name": "Takefusa Kubo",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Mikel Oyarzabal",

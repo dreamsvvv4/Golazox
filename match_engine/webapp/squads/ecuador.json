@@ -1,5 +1,243 @@
 {
   "slug": "ecuador",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/ecuador.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Moisés Ramírez",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "David Cabezas",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Cristhian Loor",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Hernán Galíndez",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Gonzalo Valle",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Piero Hincapié",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Willian Pacho",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "LB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Joel Ordóñez",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Félix Torres",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jhoanner Chávez",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Angelo Preciado",
+          "position": "RB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Yaimar Medina",
+          "position": "RB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Cristian Ramírez",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Xavier Arreaga",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Léo Realpe",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "DM",
+          "marketValue": 80000000,
+          "rating": 86
+        },
+        {
+          "name": "Kendry Páez",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Alan Franco",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Pedro Vite",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Denil Castillo",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jhegson Méndez",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jordy Alcívar",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Patrik Mercado",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Darwin Guagua",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": 73
+        },
+        {
+          "name": "Gonzalo Plata",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alan Minda",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Keny Arroyo",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Leonardo Campana",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "John Mercado",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "John Yeboah",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Kevin Rodríguez",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Enner Valencia",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nilson Angulo",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Janner Corozo",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bryan Ramírez",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jeremy Arévalo",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — ecuador (2025/2026)",
+      "teamLabel": "ecuador (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/ecuador.png",
+  "id": 5750,
+  "name": "ecuador"
 }

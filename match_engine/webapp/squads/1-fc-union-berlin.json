@@ -2,7 +2,7 @@
   "slug": "1-fc-union-berlin",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Frederik Rönnow",
@@ -46,7 +46,7 @@
         },
         {
           "name": "Josip Juranovic",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Christopher Trimmel",
@@ -120,5 +120,6 @@
     }
   },
   "id": 89,
-  "name": "Union Berlin"
+  "name": "Union Berlin",
+  "badgeLocalPath": "/img/badges/fc-union-berlin.png"
 }

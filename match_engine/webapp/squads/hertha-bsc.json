@@ -1,5 +1,37 @@
 {
   "slug": "hertha-bsc",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Oliver Christensen", "position": "GK", "rating": 74 },
+        { "name": "Tjark Ernst", "position": "GK", "rating": 70 },
+        { "name": "Agustin Rogel", "position": "CB", "rating": 74 },
+        { "name": "Marc Oliver Kempf", "position": "CB", "rating": 74 },
+        { "name": "Linus Gechter", "position": "CB", "rating": 74 },
+        { "name": "Marton Dardai", "position": "CM", "rating": 74 },
+        { "name": "Jonjoe Kenny", "position": "RB", "rating": 73 },
+        { "name": "Fabian Reese", "position": "RW", "rating": 75 },
+        { "name": "Toni Leistner", "position": "CB", "rating": 73 },
+        { "name": "Haris Tabakovic", "position": "ST", "rating": 75 },
+        { "name": "Florian Niederlechner", "position": "ST", "rating": 73 },
+        { "name": "Diego Demme", "position": "DM", "rating": 74 },
+        { "name": "Suat Serdar", "position": "CM", "rating": 74 },
+        { "name": "Nathan de Medina", "position": "LB", "rating": 73 },
+        { "name": "Chidera Ejuke", "position": "LW", "rating": 74 },
+        { "name": "Ivan Sunjic", "position": "DM", "rating": 73 },
+        { "name": "Ahmed Kutucu", "position": "ST", "rating": 72 },
+        { "name": "Michal Karbownik", "position": "LB", "rating": 72 },
+        { "name": "Palko Dardai", "position": "LW", "rating": 73 },
+        { "name": "Nikos Zografakis", "position": "CM", "rating": 71 },
+        { "name": "Fabian Lustenberger", "position": "CM", "rating": 71 }
+      ],
+      "ratings": { "attack": 69, "midfield": 69, "defense": 68, "goalkeeping": 68 },
+      "source": "Transfermarkt — Hertha BSC (2025/2026)",
+      "teamLabel": "Hertha BSC (2025-26)"
+    }
+  },
+  "id": 86,
+  "name": "Hertha BSC",
   "badgeLocalPath": "/img/badges/hertha-bsc.png"
 }

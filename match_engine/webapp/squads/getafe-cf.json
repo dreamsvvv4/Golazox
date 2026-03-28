@@ -1,6 +1,119 @@
 {
   "slug": "getafe-cf",
   "seasons": {
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Abbondanzieri",
+          "position": "GK"
+        },
+        {
+          "name": "Contra",
+          "position": "RB"
+        },
+        {
+          "name": "Paredes",
+          "position": "LB"
+        },
+        {
+          "name": "Belenguer",
+          "position": "CB"
+        },
+        {
+          "name": "Alexis",
+          "position": "CB"
+        },
+        {
+          "name": "Casquero",
+          "position": "CM"
+        },
+        {
+          "name": "Celestini",
+          "position": "CM"
+        },
+        {
+          "name": "Mario Cotelo",
+          "position": "CM"
+        },
+        {
+          "name": "Nacho",
+          "position": "CM"
+        },
+        {
+          "name": "Manu del Moral",
+          "position": "ST"
+        },
+        {
+          "name": "Güiza",
+          "position": "ST"
+        },
+        {
+          "name": "Luis García",
+          "position": "GK"
+        },
+        {
+          "name": "Redondo",
+          "position": "CM"
+        },
+        {
+          "name": "Cortés",
+          "position": "RB"
+        },
+        {
+          "name": "Pachón",
+          "position": "ST"
+        },
+        {
+          "name": "Pulido",
+          "position": "CB"
+        },
+        {
+          "name": "Arroyo",
+          "position": "GK"
+        },
+        {
+          "name": "Vivar Dorado",
+          "position": "CM"
+        },
+        {
+          "name": "Sousa",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Aguilar",
+          "position": "CM"
+        },
+        {
+          "name": "Paunović",
+          "position": "ST"
+        },
+        {
+          "name": "Tena",
+          "position": "CB"
+        },
+        {
+          "name": "Verpakovskis",
+          "position": "ST"
+        },
+        {
+          "name": "Albín",
+          "position": "CM"
+        },
+        {
+          "name": "Licht",
+          "position": "LB"
+        }
+      ],
+      "ratings": {
+        "attack": 71,
+        "midfield": 81,
+        "defense": 76,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Getafe 2006-07 Primera División",
+      "teamLabel": "Getafe 2006-07 Primera División"
+    },
     "2020": {
       "formation": "4-4-2",
       "players": [

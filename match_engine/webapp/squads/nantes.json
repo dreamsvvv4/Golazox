@@ -1,5 +1,126 @@
 {
   "slug": "nantes",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Alban Lafönt",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Romain Salin",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Nicolas Pallois",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jean-Charles Castelletto",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Quentin Merlin",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Grégoire Dreyer",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Pedro Chirivella",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Moses Simon",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Florian Crépin",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Nathan Trott",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Andrei Girotto",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Ludovic Blas",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Mostafa Mohamed",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Kwon Chang-hoon",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Osman Bukari",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Dennis Appiah",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Marcus Coco",
+          "position": "LM",
+          "rating": 72
+        },
+        {
+          "name": "Kalifa Coulibaly",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Ignatius Ganago",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Jonah Ayunga",
+          "position": "ST",
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 72,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — FC Nantes (2025/2026)",
+      "teamLabel": "FC Nantes (2025-26)"
+    }
+  },
+  "id": 955,
+  "name": "FC Nantes",
   "badgeLocalPath": "/img/badges/nantes.png"
 }

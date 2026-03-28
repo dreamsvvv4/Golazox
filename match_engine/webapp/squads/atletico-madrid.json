@@ -335,10 +335,6 @@
           "position": "CB"
         },
         {
-          "name": "Luis García",
-          "position": "RB"
-        },
-        {
           "name": "Pizo Gómez",
           "position": "CM"
         },
@@ -1154,7 +1150,7 @@
         },
         {
           "name": "Yannick Carrasco",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Samuel Villa",
@@ -1307,11 +1303,11 @@
         },
         {
           "name": "Yannick Carrasco",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Diogo Jota",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Nicolás Schiappacasse",
@@ -1416,11 +1412,11 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM"
         },
         {
           "name": "Kieran Trippier",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Sime Vrsaljko",
@@ -1436,7 +1432,7 @@
         },
         {
           "name": "Lucas Torreira",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Geoffrey Kondogbia",
@@ -1476,7 +1472,7 @@
         },
         {
           "name": "Yannick Carrasco",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Vitolo",
@@ -1529,99 +1525,122 @@
       "teamLabel": "Atletico Madrid (2020-21)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Jan Oblak",
-          "position": "GK"
+          "position": "GK",
+          "rating": 88
         },
         {
           "name": "Juan Musso",
-          "position": "GK"
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Dávid Hancko",
-          "position": "CB"
+          "position": "LB",
+          "rating": 83
         },
         {
           "name": "Marc Pubill",
-          "position": "CB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Robin Le Normand",
-          "position": "CB"
+          "position": "CB",
+          "rating": 86
         },
         {
           "name": "José María Giménez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Clément Lenglet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matteo Ruggeri",
-          "position": "CB"
+          "position": "LB",
+          "rating": 81
         },
         {
           "name": "Marcos Llorente",
-          "position": "CB"
+          "position": "CM",
+          "rating": 82
         },
         {
           "name": "Nahuel Molina",
-          "position": "CB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Pablo Barrios",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Johnny Cardoso",
-          "position": "CM"
+          "position": "DM",
+          "rating": 82
         },
         {
           "name": "Rodrigo Mendoza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 68
         },
         {
           "name": "Obed Vargas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Álex Baena",
-          "position": "ST"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Nico González",
-          "position": "ST"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Thiago Almada",
-          "position": "ST"
+          "position": "AM",
+          "rating": 82
         },
         {
           "name": "Giuliano Simeone",
-          "position": "ST"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Ademola Lookman",
-          "position": "ST"
+          "position": "RW",
+          "rating": 88
         },
         {
           "name": "Antoine Griezmann",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Julián Alvarez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 90
         },
         {
           "name": "Alexander Sørloth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         }
       ],
       "ratings": {

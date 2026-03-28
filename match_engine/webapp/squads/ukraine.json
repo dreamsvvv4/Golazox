@@ -1,5 +1,279 @@
 {
   "slug": "ukraine",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/ukraine.png"
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Anatoliy Trubin",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Andriy Lunin",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 85
+        },
+        {
+          "name": "Dmytro Riznyk",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Georgiy Bushchan",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Yevgen Volynets",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ilya Zabarnyi",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "LB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Mykola Matvienko",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Taras Mykhavko",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Valeriy Bondar",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Oleksandr Zinchenko",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Yukhym Konoplya",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Oleksandr Tymchyk",
+          "position": "RB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Bogdan Mykhaylichenko",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Maksym Taloverov",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Yevgen Cheberko",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Oleksandr Martynyuk",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Oleksandr Svatok",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Oleksandr Karavaev",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Oleksiy Sych",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Yegor Yarmolyuk",
+          "position": "DM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Georgiy Sudakov",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Volodymyr Brazhko",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mykola Shaparenko",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Artem Bondarenko",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Oleg Ocheretko",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Oleksandr Pikhalyonok",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Vitaliy Buyalskyi",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mykola Mykhaylenko",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ruslan Malinovskyi",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ivan Kalyuzhnyi",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Yegor Nazaryna",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Viktor Tsygankov",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Vladyslav Vanat",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Artem Dovbyk",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 83
+        },
+        {
+          "name": "Oleksandr Zubkov",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nazar Voloshyn",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Vladyslav Kabaev",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Oleksiy Gutsulyak",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Oleksandr Nazarenko",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Roman Yaremchuk",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Andriy Yarmolenko",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Vladyslav Veleten",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 80,
+        "defense": 76,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — ukraine (2025/2026)",
+      "teamLabel": "ukraine (2025-26)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/ukraine.png",
+  "id": 3699,
+  "name": "ukraine"
 }

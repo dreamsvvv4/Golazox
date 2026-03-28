@@ -344,28 +344,170 @@
       "source": "BDFutbol — Betis 1996-97 Primera División",
       "teamLabel": "Betis 1996-97 Primera División"
     },
-    "2025": {
+    "2009": {
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Álvaro Valles",
+          "name": "Goitia",
           "position": "GK"
+        },
+        {
+          "name": "Damià",
+          "position": "RB"
+        },
+        {
+          "name": "Fernando Vega",
+          "position": "LB"
+        },
+        {
+          "name": "Carlos García",
+          "position": "CB"
+        },
+        {
+          "name": "Melli",
+          "position": "CB"
+        },
+        {
+          "name": "Arzu",
+          "position": "CM"
+        },
+        {
+          "name": "Nacho",
+          "position": "CM"
+        },
+        {
+          "name": "Iriney",
+          "position": "CM"
+        },
+        {
+          "name": "Juanma",
+          "position": "CM"
+        },
+        {
+          "name": "Emaná",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio García",
+          "position": "ST"
+        },
+        {
+          "name": "Ricardo",
+          "position": "GK"
+        },
+        {
+          "name": "Pavone",
+          "position": "ST"
+        },
+        {
+          "name": "Mehmet Aurelio",
+          "position": "CM"
+        },
+        {
+          "name": "Nélson",
+          "position": "RB"
+        },
+        {
+          "name": "Caffa",
+          "position": "CM"
+        },
+        {
+          "name": "Casto",
+          "position": "GK"
+        },
+        {
+          "name": "Jonathan Pereira",
+          "position": "ST"
+        },
+        {
+          "name": "Capi",
+          "position": "CM"
+        },
+        {
+          "name": "Juande",
+          "position": "CM"
+        },
+        {
+          "name": "Rodri",
+          "position": "DM"
+        },
+        {
+          "name": "Rivas",
+          "position": "CB"
+        },
+        {
+          "name": "Odonkor",
+          "position": "CM"
+        },
+        {
+          "name": "Sunny",
+          "position": "CM"
+        },
+        {
+          "name": "Nano Rivas",
+          "position": "CB"
+        },
+        {
+          "name": "Dani",
+          "position": "ST"
+        },
+        {
+          "name": "Sergio León",
+          "position": "ST"
+        },
+        {
+          "name": "Israel",
+          "position": "CM"
+        },
+        {
+          "name": "Òscar López",
+          "position": "LB"
+        },
+        {
+          "name": "Miki Roqué",
+          "position": "CB"
+        },
+        {
+          "name": "Xisco",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 65,
+        "defense": 65,
+        "goalkeeping": 63
+      },
+      "source": "BDFutbol — Betis 2009-10 Segunda División",
+      "teamLabel": "Betis 2009-10 Segunda División"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Álvaro Valles",
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pau López",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Adrián San Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 73
         },
         {
           "name": "Natan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Valentín Gómez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Diego Llorente",
@@ -381,7 +523,7 @@
         },
         {
           "name": "Ricardo Rodríguez",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ángel Ortiz",
@@ -393,7 +535,7 @@
         },
         {
           "name": "Sofyan Amrabat",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Marc Roca",
@@ -425,7 +567,7 @@
         },
         {
           "name": "Abde Ezzalzouli",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Rodrigo Riquelme",
@@ -464,59 +606,6 @@
       },
       "source": "Transfermarkt — Real Betis (2025/2026)",
       "teamLabel": "Real Betis (2025-26)"
-    },
-    "2026": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "Marcel Dandjinou",
-          "position": "GK"
-        },
-        {
-          "name": "Tamimou Ouorou",
-          "position": "RB"
-        },
-        {
-          "name": "Yohan Roche",
-          "position": "CB"
-        },
-        {
-          "name": "Olivier Verdon",
-          "position": "CB"
-        },
-        {
-          "name": "Rachid Moumini",
-          "position": "LB"
-        },
-        {
-          "name": "Rodrigue Fassinou",
-          "position": "DM"
-        },
-        {
-          "name": "Attidjikou Samadou",
-          "position": "CM"
-        },
-        {
-          "name": "Mattéo Ahlinvi",
-          "position": "CM"
-        },
-        {
-          "name": "Steve Mounié",
-          "position": "RW"
-        },
-        {
-          "name": "Aiyegun Tosin",
-          "position": "ST"
-        },
-        {
-          "name": "Adam Akimey",
-          "position": "LW"
-        }
-      ],
-      "ratings": null,
-      "source": "Wikipedia — \"Benin national football team\"",
-      "teamLabel": "Betis (2026)"
     }
   },
   "name": "Betis",

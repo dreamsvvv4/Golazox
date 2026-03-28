@@ -1,5 +1,265 @@
 {
   "slug": "deportivo-alaves",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/deportivo-alaves.png"
+  "seasons": {
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Kike",
+          "position": "GK"
+        },
+        {
+          "name": "Geli",
+          "position": "RB"
+        },
+        {
+          "name": "Llorens",
+          "position": "LB"
+        },
+        {
+          "name": "Coloccini",
+          "position": "CB"
+        },
+        {
+          "name": "Téllez",
+          "position": "CB"
+        },
+        {
+          "name": "Astudillo",
+          "position": "CM"
+        },
+        {
+          "name": "Pablo",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Cruyff",
+          "position": "CM"
+        },
+        {
+          "name": "Ibon Begoña",
+          "position": "CM"
+        },
+        {
+          "name": "Rubén Navarro",
+          "position": "ST"
+        },
+        {
+          "name": "Magno",
+          "position": "ST"
+        },
+        {
+          "name": "Herrera",
+          "position": "GK"
+        },
+        {
+          "name": "Turiel",
+          "position": "CM"
+        },
+        {
+          "name": "Iván Alonso",
+          "position": "ST"
+        },
+        {
+          "name": "Karmona",
+          "position": "CB"
+        },
+        {
+          "name": "Witschge",
+          "position": "CM"
+        },
+        {
+          "name": "Juan Pablo",
+          "position": "GK"
+        },
+        {
+          "name": "Mara",
+          "position": "ST"
+        },
+        {
+          "name": "Vučko",
+          "position": "ST"
+        },
+        {
+          "name": "Lombardi",
+          "position": "RB"
+        },
+        {
+          "name": "Kanu",
+          "position": "RB"
+        },
+        {
+          "name": "Desio",
+          "position": "CM"
+        },
+        {
+          "name": "Ochoa",
+          "position": "CB"
+        },
+        {
+          "name": "Brandán",
+          "position": "LB"
+        },
+        {
+          "name": "Eggen",
+          "position": "CB"
+        },
+        {
+          "name": "De la Cruz",
+          "position": "CM"
+        },
+        {
+          "name": "Sarriegi",
+          "position": "CB"
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 70,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Alavés 2001-02 Primera División",
+      "teamLabel": "Alavés 2001-02 Primera División"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pacheco",
+          "position": "GK"
+        },
+        {
+          "name": "Ximo",
+          "position": "RB"
+        },
+        {
+          "name": "Duarte",
+          "position": "LB"
+        },
+        {
+          "name": "Laguardia",
+          "position": "CB"
+        },
+        {
+          "name": "Maripán",
+          "position": "CB"
+        },
+        {
+          "name": "Aguirregabiria",
+          "position": "RB"
+        },
+        {
+          "name": "Pina",
+          "position": "CM"
+        },
+        {
+          "name": "Manu García",
+          "position": "CM"
+        },
+        {
+          "name": "Wakaso",
+          "position": "CM"
+        },
+        {
+          "name": "Jony",
+          "position": "ST"
+        },
+        {
+          "name": "Calleri",
+          "position": "ST"
+        },
+        {
+          "name": "Sivera",
+          "position": "GK"
+        },
+        {
+          "name": "Borja Bastón",
+          "position": "ST"
+        },
+        {
+          "name": "Brašanac",
+          "position": "CM"
+        },
+        {
+          "name": "Ibai Gómez",
+          "position": "ST"
+        },
+        {
+          "name": "Guidetti",
+          "position": "ST"
+        },
+        {
+          "name": "Álex Domínguez",
+          "position": "GK"
+        },
+        {
+          "name": "Sobrino",
+          "position": "ST"
+        },
+        {
+          "name": "Burgui",
+          "position": "ST"
+        },
+        {
+          "name": "Inui",
+          "position": "CM"
+        },
+        {
+          "name": "Vigaray",
+          "position": "RB"
+        },
+        {
+          "name": "Twumasi",
+          "position": "ST"
+        },
+        {
+          "name": "Rolán",
+          "position": "ST"
+        },
+        {
+          "name": "Rodrigo Ely",
+          "position": "CB"
+        },
+        {
+          "name": "Adrián Marín",
+          "position": "LB"
+        },
+        {
+          "name": "Dani Torres",
+          "position": "CM"
+        },
+        {
+          "name": "Álex Blanco",
+          "position": "ST"
+        },
+        {
+          "name": "Diéguez",
+          "position": "CB"
+        },
+        {
+          "name": "Perera",
+          "position": "CM"
+        },
+        {
+          "name": "Paulino",
+          "position": "ST"
+        },
+        {
+          "name": "Lupu",
+          "position": "ST"
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 70,
+        "goalkeeping": 73
+      },
+      "source": "BDFutbol — Alavés 2018-19 Primera División",
+      "teamLabel": "Alavés 2018-19 Primera División"
+    }
+  },
+  "badgeLocalPath": "/img/badges/deportivo-alaves.png",
+  "name": "Alaves"
 }

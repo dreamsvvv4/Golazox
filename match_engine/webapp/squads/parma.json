@@ -1,5 +1,126 @@
 {
   "slug": "parma",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Zion Suzuki",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Luca Corvi",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Enrico Del Prato",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Woyo Coulibaly",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Botond Balogh",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Filippo Pittarello",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Pontus Almqvist",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Ange-Yoan Bonny",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Dennis Man",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Bernabé Zaccagni",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Osorio",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Hernani",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Simon Sohm",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Franco Vazquez",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Enrico Delprato",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jannis Marusic",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Ibrahim Sangare",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Adrian Benedyczak",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Leandro Castan",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Emanuele Valeri",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Valentin Mihaila",
+          "position": "LW",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — Parma Calcio (2025/2026)",
+      "teamLabel": "Parma Calcio (2025-26)"
+    }
+  },
+  "id": 99,
+  "name": "Parma Calcio",
   "badgeLocalPath": "/img/badges/parma.png"
 }

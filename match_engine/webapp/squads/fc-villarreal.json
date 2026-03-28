@@ -2,7 +2,7 @@
   "slug": "fc-villarreal",
   "seasons": {
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Luiz Júnior",
@@ -90,11 +90,11 @@
         },
         {
           "name": "Tajon Buchanan",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Nicolas Pépé",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Georges Mikautadze",
@@ -128,5 +128,6 @@
     }
   },
   "id": 1050,
-  "name": "Villarreal"
+  "name": "Villarreal",
+  "badgeLocalPath": "/img/badges/villarreal-cf.png"
 }
