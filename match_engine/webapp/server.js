@@ -768,8 +768,11 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     if (result.found && result.players && result.players.length > 0) {
       const formationOverride = String(req.query.formation || '').replace(/[^0-9\-]/g, '').trim();
       const lineup = buildLineupFromCache(result, formationOverride || '');
-      // Use deriveRatings (same as simulation) so lookup preview shows consistent player ratings
-      const computedRatings = deriveRatings(team, era, result.ratings);
+      // Resolve to catalog display name (same as /simulate) so deriveRatings hint tokens match
+      const slug         = _resolveTeamSlug(team);
+      const catalogEntry = CATALOG.find(c => c.slug === slug);
+      const displayName  = catalogEntry ? catalogEntry.nameEn : team;
+      const computedRatings = deriveRatings(displayName, era, result.ratings);
       displayResult = { ...result, ...lineup, ratings: computedRatings };
     }
     res.set('Cache-Control', 'no-store');
