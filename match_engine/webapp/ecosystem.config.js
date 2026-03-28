@@ -12,8 +12,10 @@
  *   SITE_URL    = "https://golazox.com"
  *   NODE_ENV    = "production"
  *   PORT        = 3000          (Hostinger assigns this automatically)
- *   EMAIL_USER  = "vvvfbo@gmail.com"
- *   EMAIL_PASS  = "<Gmail App Password>"   ← set ONLY in Hostinger panel, never en código
+ *   EMAIL_USER  = "info@golazox.com"
+ *   EMAIL_PASS  = "<password del buzon info@golazox.com>"  ← set ONLY in Hostinger panel, never en código
+ *   EMAIL_HOST  = "smtp.hostinger.com"   (o mail.golazox.com — ver Hostinger → Email → Configure)
+ *   EMAIL_PORT  = "465"                  (SSL) o "587" (STARTTLS)
  */
 module.exports = {
   apps: [
@@ -34,8 +36,8 @@ module.exports = {
         NODE_ENV:   'production',
         PORT:       process.env.PORT || 3000,
         SITE_URL:   process.env.SITE_URL  || 'https://golazox.com',
-        EMAIL_USER: process.env.EMAIL_USER || 'vvvfbo@gmail.com',
-        // EMAIL_PASS: set this ONLY via Hostinger environment variables panel — never hardcode it here
+        EMAIL_USER: process.env.EMAIL_USER || 'info@golazox.com',
+        // EMAIL_PASS, EMAIL_HOST, EMAIL_PORT: set ONLY via Hostinger environment variables panel
       },
       // Log files
       out_file:   './logs/out.log',

@@ -935,16 +935,24 @@ const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
 </html>`;
 
 const OWNER_NAME  = process.env.OWNER_NAME  || 'Victor Vega Viyuela';
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'vvvfbo@gmail.com'; // NEVER rendered in HTML
-const SITE_URL    = process.env.SITE_URL    || 'https://tudominio.com';
+const OWNER_EMAIL = process.env.OWNER_EMAIL || 'info@golazox.com'; // NEVER rendered in HTML
+const SITE_URL    = process.env.SITE_URL    || 'https://golazox.com';
 const CONTACT_FILE = path.join(__dirname, 'contact_messages.json');
 
 // ── Nodemailer transporter (optional — only active when EMAIL_PASS is set) ──
-// Set env vars: EMAIL_USER=vvvfbo@gmail.com  EMAIL_PASS=<Gmail App Password>
-// Gmail → Google Account → Security → 2-Step Verification → App Passwords
+// Set env vars in Hostinger panel:
+//   EMAIL_USER = info@golazox.com
+//   EMAIL_PASS = <password del buzón info@golazox.com en Hostinger>
+//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com — ver panel Hostinger → Email → Configure)
+//   EMAIL_PORT = 465  (SSL) o 587 (STARTTLS)
+const _emailHost = process.env.EMAIL_HOST || 'smtp.hostinger.com';
+const _emailPort = parseInt(process.env.EMAIL_PORT || '465', 10);
+const _emailSecure = _emailPort === 465; // true = SSL, false = STARTTLS
 const _mailer = (process.env.EMAIL_USER && process.env.EMAIL_PASS)
   ? nodemailer.createTransport({
-      host: 'smtp.gmail.com', port: 587, secure: false,
+      host:   _emailHost,
+      port:   _emailPort,
+      secure: _emailSecure,
       auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
     })
   : null;
