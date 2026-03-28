@@ -628,7 +628,7 @@ const _apiBotBlock = (req, res, next) => {
   next();
 };
 // Sólo se aplica a los endpoints de datos — NO a ficheros estáticos ni HTML
-app.use(['/simulate', '/lookup', '/catalog', '/suggest', '/referees'], _apiBotBlock);
+app.use(['/simulate', '/simulate-bulk', '/lookup', '/catalog', '/suggest', '/referees'], _apiBotBlock);
 
 // ── 2. Presupuesto global de peticiones: 200 req / 5 min por IP ──────────
 // Capa compartida para TODAS las rutas. Un usuario legítimo rara vez supera
@@ -891,6 +891,93 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
   } catch (err) {
     console.error('[/simulate error]', err.message);
     res.status(500).json({ error: 'Simulation failed. Check server logs.' });
+  }
+});
+
+// ── POST /simulate-bulk ───────────────────────────────────────────────────
+// Batch simulator for tournaments. Accepts up to 50 match pairs, returns
+// minimal results (score + optional penalties) — no narrative, no badges.
+// Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
+app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
+  try {
+    const { matches, lang: reqLang = 'es' } = req.body;
+    const lang = reqLang === 'en' ? 'en' : 'es';
+
+    if (!Array.isArray(matches) || matches.length === 0) {
+      return res.status(400).json({ error: 'matches array required' });
+    }
+    if (matches.length > 50) {
+      return res.status(400).json({ error: 'max 50 matches per bulk call' });
+    }
+
+    const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
+
+    // Build pairs and collect unique team lookup keys
+    const teamPairs = matches.map((m, i) => ({
+      slugA:    _resolveTeamSlug(sanitise(m.teamA)),
+      slugB:    _resolveTeamSlug(sanitise(m.teamB)),
+      eraA:     sanitise(m.eraA || ''),
+      eraB:     sanitise(m.eraB || ''),
+      salt:     (Math.trunc(Number(m.salt || i)) || 0) & 0x7fffffff,
+      penalties: !!m.penalties,
+      isFinal:  !!m.isFinal,
+    }));
+
+    // Resolve unique team lookups in parallel (shared cache)
+    const teamCache = new Map();
+    const lookupKey = (slug, era) => `${slug}::${era}`;
+    const uniqueKeys = new Set();
+    teamPairs.forEach(p => {
+      uniqueKeys.add(lookupKey(p.slugA, p.eraA));
+      uniqueKeys.add(lookupKey(p.slugB, p.eraB));
+    });
+    await Promise.all([...uniqueKeys].map(async key => {
+      const sep = key.indexOf('::');
+      const slug = key.slice(0, sep);
+      const era  = key.slice(sep + 2);
+      const r = await lookupTeam(slug, era).catch(() => ({ found: false }));
+      teamCache.set(key, r);
+    }));
+
+    // Simulate each match (synchronous — no timeline/narrative needed)
+    const results = teamPairs.map(pair => {
+      const luA = teamCache.get(lookupKey(pair.slugA, pair.eraA)) || { found: false };
+      const luB = teamCache.get(lookupKey(pair.slugB, pair.eraB)) || { found: false };
+      if (!luA.found || !luB.found) return { scoreA: 0, scoreB: 0, penA: null, penB: null };
+
+      const entryA = CATALOG.find(c => c.slug === pair.slugA);
+      const entryB = CATALOG.find(c => c.slug === pair.slugB);
+      const dispA  = entryA ? (lang === 'en' ? entryA.nameEn : entryA.nameEs) : pair.slugA;
+      const dispB  = entryB ? (lang === 'en' ? entryB.nameEn : entryB.nameEs) : pair.slugB;
+
+      const params = {
+        teamA: dispA, teamB: dispB,
+        eraA: pair.eraA, eraB: pair.eraB,
+        formationA: luA.formation || '', formationB: luB.formation || '',
+        cachedLineupA: luA, cachedLineupB: luB,
+        matchMode: '11v11',
+        matchSalt: pair.salt,
+        refereeId: null, isFinal: pair.isFinal, weatherId: null,
+      };
+
+      const sim = simulateMatch(params);
+      const { teamA: scoreA, teamB: scoreB } = sim.finalScore;
+      let penA = null, penB = null;
+
+      if (pair.penalties && scoreA === scoreB) {
+        const pen = simulateMatch({ ...params, matchMode: 'penalties', matchSalt: (pair.salt + 37) & 0x7fffffff });
+        penA = pen.finalScore.teamA;
+        penB = pen.finalScore.teamB;
+        if (penA === penB) { penA = 5; penB = 4; }  // guaranteed winner
+      }
+
+      return { scoreA, scoreB, penA, penB };
+    });
+
+    res.set('Cache-Control', 'no-store').json(results);
+  } catch (err) {
+    console.error('[/simulate-bulk error]', err.message);
+    res.status(500).json({ error: 'Bulk simulation failed.' });
   }
 });
 

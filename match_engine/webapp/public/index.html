@@ -53,7 +53,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
 
-  <link rel="stylesheet" href="style.css?v=45" />
+  <link rel="stylesheet" href="style.css?v=46" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
@@ -96,12 +96,19 @@
         <button class="btn-lang" id="lang-toggle" onclick="setLang(_lang==='es'?'en':'es')" title="Switch language">EN</button>
       </div>
     </div>
+    <!-- ── Main mode tabs ─── -->
+    <div class="main-tabs-bar">
+      <button class="main-tab-btn main-tab-active" data-tab="match" onclick="TRN.switchMainTab('match')">⚽ Partido</button>
+      <button class="main-tab-btn" data-tab="trn" onclick="TRN.switchMainTab('trn')">🏆 Torneo</button>
+    </div>
   </header>
 
   <!-- ═══════════════════════════════════════════
        MAIN CONTENT
   ══════════════════════════════════════════════ -->
   <main class="main-wrap">
+  <!-- ── MATCH MODE wrap ─────────────────────── -->
+  <div id="main-match-wrap">
 
     <!-- ── INPUT PANEL ────────────────────────── -->
     <section class="input-panel glass-card">
@@ -516,6 +523,166 @@
 
     </section>
     <!-- /results -->
+  </div><!-- /main-match-wrap -->
+
+  <!-- ── TOURNAMENT MODE wrap ──────────────────────────────────── -->
+  <div id="main-trn-wrap" class="hidden">
+
+    <!-- Wizard (steps 1-3) -->
+    <div id="trn-wizard">
+
+      <!-- Hero header -->
+      <div class="trn-hero">
+        <div class="trn-hero-eyebrow">MODO TORNEO</div>
+        <h1 class="trn-hero-title">Football Time Machine</h1>
+        <p class="trn-hero-sub">Simula tu propia competición con equipos de cualquier época</p>
+        <!-- Stepper -->
+        <div class="trn-stepper">
+          <div class="trn-step-node trn-step-node-active" data-step="1"><span>1</span></div>
+          <div class="trn-step-line" id="trn-line-1-2"></div>
+          <div class="trn-step-node" data-step="2"><span>2</span></div>
+          <div class="trn-step-line" id="trn-line-2-3"></div>
+          <div class="trn-step-node" data-step="3"><span>3</span></div>
+        </div>
+        <div class="trn-stepper-labels">
+          <span>Formato</span>
+          <span>Reglas</span>
+          <span>Equipos</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Formato -->
+      <div id="trn-step-1" class="trn-step glass-card">
+        <div class="trn-step-heading">
+          <span class="trn-step-num">01</span>
+          <h2 class="trn-step-title">Elige el formato</h2>
+        </div>
+        <div class="trn-fmt-grid">
+          <button class="trn-fmt-card" data-fmt="copa" onclick="TRN.selectFormat('copa')">
+            <div class="trn-fmt-icon-wrap">🏆</div>
+            <div class="trn-fmt-body">
+              <div class="trn-fmt-name">Copa</div>
+              <div class="trn-fmt-desc">Eliminación directa · Rondas hasta la Final</div>
+            </div>
+            <div class="trn-fmt-arrow">›</div>
+          </button>
+          <button class="trn-fmt-card" data-fmt="liga" onclick="TRN.selectFormat('liga')">
+            <div class="trn-fmt-icon-wrap">📊</div>
+            <div class="trn-fmt-body">
+              <div class="trn-fmt-name">Liga</div>
+              <div class="trn-fmt-desc">Todos contra todos · Clasificación por puntos</div>
+            </div>
+            <div class="trn-fmt-arrow">›</div>
+          </button>
+          <button class="trn-fmt-card" data-fmt="champions" onclick="TRN.selectFormat('champions')">
+            <div class="trn-fmt-icon-wrap">⭐</div>
+            <div class="trn-fmt-body">
+              <div class="trn-fmt-name">Champions</div>
+              <div class="trn-fmt-desc">Fase de grupos + Eliminatorias</div>
+            </div>
+            <div class="trn-fmt-arrow">›</div>
+          </button>
+        </div>
+        <div class="trn-num-teams-row">
+          <label class="trn-label" for="trn-num-teams">Nº de equipos</label>
+          <select id="trn-num-teams" class="inp trn-select">
+            <option value="16">16 equipos</option>
+          </select>
+        </div>
+        <div class="trn-step-actions">
+          <button class="btn-primary trn-btn-next" onclick="TRN.goStep2()">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Reglas -->
+      <div id="trn-step-2" class="trn-step glass-card hidden">
+        <div class="trn-step-heading">
+          <span class="trn-step-num">02</span>
+          <h2 class="trn-step-title">Reglas del torneo</h2>
+        </div>
+        <div class="trn-rules-list">
+          <label class="trn-rule-row">
+            <input type="checkbox" id="trn-rule-idavuelta" />
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Partidos de ida y vuelta</span>
+              <span class="trn-rule-hint">Prórroga en la vuelta si hay empate en el global</span>
+            </div>
+          </label>
+          <label class="trn-rule-row">
+            <input type="checkbox" id="trn-rule-penalties" checked />
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Tandas de penaltis</span>
+              <span class="trn-rule-hint">Si hay empate al final del tiempo reglamentario</span>
+            </div>
+          </label>
+        </div>
+        <div class="trn-step-actions">
+          <button class="btn-secondary" onclick="TRN.goBack(1)">← Atrás</button>
+          <button class="btn-primary trn-btn-next" onclick="TRN.goStep3()">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Equipos -->
+      <div id="trn-step-3" class="trn-step glass-card hidden">
+        <div class="trn-step-heading">
+          <span class="trn-step-num">03</span>
+          <h2 class="trn-step-title">Añade equipos
+            <span id="trn-teams-count" class="trn-teams-count">0 / 16</span>
+          </h2>
+        </div>
+
+        <div class="trn-search-wrap">
+          <input id="trn-search-input" class="inp" type="search"
+                 placeholder="🔍 Busca un equipo de la base de datos…"
+                 autocomplete="off" oninput="TRN.onTeamSearch(this.value)" />
+          <div id="trn-search-results" class="trn-search-results hidden"></div>
+        </div>
+
+        <div id="trn-teams-list" class="trn-teams-list"></div>
+
+        <div id="trn-step-3-actions" class="trn-step-actions">
+          <button class="btn-secondary" onclick="TRN.goBack(2)">← Atrás</button>
+          <button id="trn-btn-random" class="btn-secondary" onclick="TRN.fillRandom()">⚡ Aleatorio</button>
+          <button id="trn-btn-simulate" class="btn-primary trn-btn-next" disabled onclick="TRN.runSimulation()">▶ Simular torneo</button>
+        </div>
+
+        <div id="trn-progress" class="trn-progress hidden">
+          <div class="trn-spinner"></div>
+          <span id="trn-progress-text">Simulando…</span>
+        </div>
+      </div>
+
+    </div><!-- /trn-wizard -->
+
+    <!-- ── Dashboard ────────────────────────── -->
+    <div id="trn-dashboard" class="hidden">
+
+      <!-- Champion poster — same vibe as score-poster -->
+      <div class="trn-champ-poster glass-card">
+        <div class="trn-champ-eyebrow">CAMPEÓN DEL TORNEO</div>
+        <div class="trn-champ-trophy-big">🏆</div>
+        <div class="trn-champ-name" id="trn-champ-name">—</div>
+        <div class="trn-champ-format" id="trn-champ-format"></div>
+        <button class="btn-secondary trn-btn-over" onclick="TRN.startOver()">↩ Nuevo torneo</button>
+      </div>
+
+      <!-- Dashboard tabs — same style as input-panel mode pills -->
+      <div class="trn-dash-tabs-wrap glass-card">
+        <div class="trn-dash-tabs">
+          <button class="trn-dash-tab trn-dash-tab-active" data-tab="summary"  onclick="TRN.switchDashTab('summary')">Resumen</button>
+          <button class="trn-dash-tab" data-tab="bracket"  onclick="TRN.switchDashTab('bracket')">Cuadro</button>
+          <button class="trn-dash-tab" data-tab="calendar" onclick="TRN.switchDashTab('calendar')">Calendario</button>
+          <button class="trn-dash-tab" data-tab="stats"    onclick="TRN.switchDashTab('stats')">Estadísticas</button>
+        </div>
+      </div>
+
+      <div id="trn-tab-summary"  class="trn-tab-panel glass-card"></div>
+      <div id="trn-tab-bracket"  class="trn-tab-panel glass-card hidden"></div>
+      <div id="trn-tab-calendar" class="trn-tab-panel glass-card hidden"></div>
+      <div id="trn-tab-stats"    class="trn-tab-panel glass-card hidden"></div>
+    </div>
+
+  </div><!-- /main-trn-wrap -->
 
   </main>
 
@@ -541,6 +708,7 @@
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
   <script src="app.js?v=50"></script>
+  <script src="tournament.js?v=1"></script>
 
   <!-- PWA Install prompt logic -->
   <script>
