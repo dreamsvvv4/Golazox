@@ -710,8 +710,8 @@ app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
 app.get('/badges', _rateLimit(30, 60000), (_req, res) => {
   const rows = _allTeams.map(t =>
     `<div class="bg-card">`+
-    `<img src="${t.badge.replace(/"/g,'&quot;')}" alt="" onerror="this.src='/img/badges/_placeholder.svg'">` +
-    `<div class="bg-name">${t.name.replace(/</g,'&lt;')}</div>`+
+    `<img src="${_esc(t.badge)}" alt="" onerror="this.src='/img/badges/_placeholder.svg'">` +
+    `<div class="bg-name">${_esc(t.name)}</div>`+
     `</div>`
   ).join('');
   res.set('Cache-Control', 'no-store');
@@ -920,7 +920,7 @@ const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>${title} — GolazoX</title>
-  <link rel="icon" type="image/png" href="/golazox-logo.png"/>
+  <link rel="icon" type="image/png" href="/golazox-coin.png"/>
   <link rel="stylesheet" href="/style.css?v=21"/>
   <style>
     body { max-width: 760px; margin: 3rem auto; padding: 0 1.5rem; }
@@ -966,10 +966,10 @@ async function _sendContactEmail({ name, email, subject, message }) {
       replyTo: email,
       subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} – ${name}`,
       text:    `De: ${name} <${email}>\n\nAsunto: ${subject || '(sin asunto)'}\n\n${message}`,
-      html:    `<p><strong>De:</strong> ${name} &lt;${email}&gt;</p>
-                <p><strong>Asunto:</strong> ${subject || '(sin asunto)'}</p>
+      html:    `<p><strong>De:</strong> ${_esc(name)} &lt;${_esc(email)}&gt;</p>
+                <p><strong>Asunto:</strong> ${_esc(subject || '(sin asunto)')}</p>
                 <hr>
-                <p style="white-space:pre-wrap">${message.replace(/</g,'&lt;')}</p>`,
+                <p style="white-space:pre-wrap">${_esc(message)}</p>`,
     });
     console.log(`[mail] Contact email sent for ${email}`);
   } catch (err) {
@@ -1012,7 +1012,7 @@ app.get('/legal', (req, res) => {
   res.type('text/html').send(LEGAL_HTML('Aviso Legal', `
     <h1>Aviso Legal</h1>
     <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX — Football Time Machine\", es un proyecto
-    personal de carácter no comercial y sin ánimo de lucro. Titular: ${OWNER_NAME}.
+    personal de carácter no comercial y sin ánimo de lucro. Titular: ${_esc(OWNER_NAME)}.
     Contacto: <a href=\"/contact\">Formulario de contacto</a>.</p>
     <h2>Objeto y naturaleza del servicio</h2>
     <p>GolazoX es un simulador probabilístico de partidos de fútbol históricos con fines exclusivamente lúdicos
@@ -1049,7 +1049,7 @@ app.get('/privacy', (req, res) => {
     <h1>Privacy Policy</h1>
     <p>Last updated: ${new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Data Controller</h2>
-    <p>${OWNER_NAME} — <a href="/contact?lang=en">Contact form</a></p>
+    <p>${_esc(OWNER_NAME)} — <a href="/contact?lang=en">Contact form</a></p>
     <h2>Data We Collect</h2>
     <p>GolazoX <strong>does not require registration</strong>, does not use tracking cookies, and does not actively
     collect personally identifiable information.</p>
@@ -1078,7 +1078,7 @@ app.get('/privacy', (req, res) => {
     <h1>Política de Privacidad</h1>
     <p>Última actualización: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Responsable del tratamiento</h2>
-    <p>${OWNER_NAME} — <a href="/contact">Formulario de contacto</a></p>
+    <p>${_esc(OWNER_NAME)} — <a href="/contact">Formulario de contacto</a></p>
     <h2>Datos que recopilamos</h2>
     <p>GolazoX <strong>no solicita registro</strong>, no usa cookies de seguimiento y no recopila datos personales
     identificativos de forma activa.</p>
