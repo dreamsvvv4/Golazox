@@ -4032,6 +4032,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   gap: .85rem;
   padding: .75rem 0 0;
   border-top: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 .trn-label {
   font: 600 .75rem/1 var(--font);
@@ -4040,7 +4041,35 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   text-transform: uppercase;
   flex-shrink: 0;
 }
-.trn-select { width: auto; min-width: 130px; }
+/* ── Pill number picker (replaces <select>) ── */
+.trn-num-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.trn-num-pill {
+  font: 700 .82rem/1 var(--font);
+  padding: .38rem .7rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.13);
+  color: rgba(255,255,255,.55);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s, box-shadow .15s;
+  min-width: 2.4rem;
+  text-align: center;
+}
+.trn-num-pill:hover {
+  background: rgba(0,212,255,.1);
+  border-color: rgba(0,212,255,.4);
+  color: #fff;
+}
+.trn-num-pill-active {
+  background: rgba(0,212,255,.18) !important;
+  border-color: var(--neon) !important;
+  color: var(--neon) !important;
+  box-shadow: 0 0 8px rgba(0,212,255,.25);
+}
 
 /* -- Rules toggles */
 .trn-rules-list {

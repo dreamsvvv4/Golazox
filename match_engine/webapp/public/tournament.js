@@ -97,17 +97,25 @@ const TRN = (() => {
   }
 
   function _buildNumTeamsPicker() {
-    const sel = $('trn-num-teams');
-    if (!sel || !_fmt) return;
+    const wrap = $('trn-num-teams');
+    if (!wrap || !_fmt) return;
     const counts = VALID_COUNTS[_fmt] || [8, 16];
-    sel.innerHTML = counts.map(n => `<option value="${n}">${n} equipos</option>`).join('');
     _numTeams = counts.includes(_numTeams) ? _numTeams : counts[Math.floor(counts.length / 2)];
-    sel.value = _numTeams;
+    wrap.innerHTML = counts.map(n =>
+      `<button class="trn-num-pill${n === _numTeams ? ' trn-num-pill-active' : ''}" onclick="TRN.setNumTeams(${n})">${n}</button>`
+    ).join('');
   }
+  function setNumTeams(n) {
+    _numTeams = n;
+    // Update pill active state
+    const wrap = $('trn-num-teams');
+    if (wrap) wrap.querySelectorAll('.trn-num-pill').forEach(b => b.classList.toggle('trn-num-pill-active', +b.textContent === n));
+  }
+
 
   function goStep2() {
     if (!_fmt) { _showToast('âš  Selecciona un formato primero.'); return; }
-    _numTeams = +($('trn-num-teams')?.value || 16);
+    // _numTeams already updated by setNumTeams / _buildNumTeamsPicker
     const container = $('trn-rules-list');
     if (container) {
       let html = '';
@@ -195,7 +203,7 @@ const TRN = (() => {
       _rules.grupasIdaVuelta = !!$('trn-rule-grupos-idavuelta')?.checked;
       _rules.koIdaVuelta     = !!$('trn-rule-ko-idavuelta')?.checked;
     }
-    _numTeams = +($('trn-num-teams')?.value || _numTeams);
+    // _numTeams already held in state
     _teams = [];
     _draw = [];
     _groupsDraw = [];
@@ -653,13 +661,7 @@ const TRN = (() => {
         _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
       });
       _numTeams = _teams.length;
-      const numSel = $('trn-num-teams');
-      if (numSel && ![...numSel.options].some(o => +o.value === _numTeams)) {
-        const opt = document.createElement('option');
-        opt.value = _numTeams; opt.textContent = _numTeams + ' equipos';
-        numSel.appendChild(opt);
-      }
-      if (numSel) numSel.value = _numTeams;
+      _buildNumTeamsPicker();
       closeLeagueLoader();
       _renderTeamSlots();
       const leagueName = _esc(groupKey.replace(/^\S+\s*/, ''));
@@ -2254,6 +2256,7 @@ const TRN = (() => {
     reshuffleDraw,
     reshuffleGroupsDraw,
     openLeagueLoader,
+    setNumTeams,
     closeLeagueLoader,
     loadRealLeague,
   };
