@@ -270,6 +270,15 @@
       </div>
     </div>
 
+    <!-- ── TOURNAMENT MATCH MODAL ───────────────────── -->
+    <div id="trn-match-modal" class="trn-modal-overlay hidden" onclick="TRN.closeMatchModal()">
+      <div class="trn-modal-inner" onclick="event.stopPropagation()">
+        <button class="trn-modal-close" onclick="TRN.closeMatchModal()">✕</button>
+        <div id="trn-modal-header"></div>
+        <div id="trn-modal-body"></div>
+      </div>
+    </div>
+
     <!-- ── STATS MODAL (radar) ──────────────────────── -->
     <div id="stats-modal" class="stats-modal hidden">
       <div class="stats-modal-inner" id="stats-modal-inner">
@@ -528,6 +537,13 @@
   <!-- ── TOURNAMENT MODE wrap ──────────────────────────────────── -->
   <div id="main-trn-wrap" class="hidden">
 
+    <div class="trn-coming-soon">
+      <div class="trn-cs-icon">🏆</div>
+      <h2 class="trn-cs-title">Modo Torneo</h2>
+      <p class="trn-cs-sub">Simula tu propia competición con equipos de cualquier época</p>
+      <span class="trn-cs-badge">Próximamente</span>
+    </div>
+
     <!-- Wizard (steps 1-3) -->
     <div id="trn-wizard">
 
@@ -678,10 +694,6 @@
 
       <div id="trn-tab-summary"  class="trn-tab-panel glass-card"></div>
       <div id="trn-tab-bracket"  class="trn-tab-panel glass-card hidden"></div>
-      <div id="trn-tab-calendar" class="trn-tab-panel glass-card hidden"></div>
-      <div id="trn-tab-stats"    class="trn-tab-panel glass-card hidden"></div>
-    </div>
-
   </div><!-- /main-trn-wrap -->
 
   </main>
@@ -708,7 +720,22 @@
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
   <script src="app.js?v=50"></script>
-  <script src="tournament.js?v=1"></script>
+  <!-- tournament.js: coming soon -->
+  <script>
+    // Minimal TRN shim — tabs work without tournament.js loaded
+    window.TRN = {
+      switchMainTab: function(tab) {
+        var match = document.getElementById('main-match-wrap');
+        var trn   = document.getElementById('main-trn-wrap');
+        if (match) match.classList.toggle('hidden', tab !== 'match');
+        if (trn)   trn.classList.toggle('hidden', tab !== 'trn');
+        document.querySelectorAll('.main-tab-btn').forEach(function(b) {
+          b.classList.toggle('main-tab-active', b.dataset.tab === tab);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+  </script>
 
   <!-- PWA Install prompt logic -->
   <script>
