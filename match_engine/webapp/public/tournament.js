@@ -252,24 +252,8 @@ const TRN = (() => {
   function _generateDraw() {
     const shuffled = [..._teams].sort(() => Math.random() - 0.5);
     _draw = [];
-    // Seeded draw: first numSeeds teams never face each other in round 1
-    const numSeeds = Math.min(Math.floor(_numTeams / 4), 8);
-    if (numSeeds >= 2) {
-      const seeds    = shuffled.slice(0, numSeeds);
-      const unseeded = shuffled.slice(numSeeds);
-      // shuffle both pots separately
-      seeds.sort(() => Math.random() - 0.5);
-      unseeded.sort(() => Math.random() - 0.5);
-      // pair each seed with an unseeded team
-      for (let i = 0; i < seeds.length; i++)
-        _draw.push({ a: seeds[i], b: unseeded[i], seededA: true });
-      // pair remaining unseeded among themselves
-      for (let i = seeds.length; i < unseeded.length; i += 2)
-        _draw.push({ a: unseeded[i], b: unseeded[i + 1] });
-    } else {
-      for (let i = 0; i < shuffled.length; i += 2)
-        _draw.push({ a: shuffled[i], b: shuffled[i + 1] });
-    }
+    for (let i = 0; i < shuffled.length; i += 2)
+      _draw.push({ a: shuffled[i], b: shuffled[i + 1] });
   }
 
   function _generateGroupsDraw() {
@@ -315,10 +299,9 @@ const TRN = (() => {
         <button class="trn-draw-reshuffle" onclick="TRN.reshuffleDraw()">🔀 Nuevo sorteo</button>
       </div><div class="trn-copa-draw-grid">`;
       _draw.forEach((m, i) => {
-        const seedStar = m.seededA ? ' <span class="trn-draw-seed">\u2605</span>' : '';
-        html += `<div class="trn-copa-draw-match${m.seededA ? ' trn-copa-draw-seeded' : ''}">
+        html += `<div class="trn-copa-draw-match">
           <span class="trn-draw-num">${i + 1}</span>
-          <div class="trn-copa-draw-side">${_badgeImg(m.a.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.a.name)}</span>${seedStar}</div>
+          <div class="trn-copa-draw-side">${_badgeImg(m.a.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.a.name)}</span></div>
           <span class="trn-copa-draw-vs">vs</span>
           <div class="trn-copa-draw-side trn-copa-draw-side-b">${_badgeImg(m.b.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.b.name)}</span></div>
         </div>`;
