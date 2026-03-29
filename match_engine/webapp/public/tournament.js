@@ -307,7 +307,7 @@ const TRN = (() => {
         const slug  = _esc(t.slug  || name);
         const badge = _esc(t.badge || '');
         const meta  = t.era ? _esc(t.era) : '';
-        return `<div class="trn-search-item" onclick="TRN.addTeam('${slug}','${name}','','${badge}')">
+        return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}')">
           <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <span class="trn-search-item-name">${name}</span>
           ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}
@@ -326,6 +326,89 @@ const TRN = (() => {
     _renderTeamSlots();
   }
 
+  async function previewTeam(slug, name, badge) {
+    const panel = $('trn-team-preview');
+    if (!panel) return;
+
+    // Close dropdown, show loading immediately
+    const res = $('trn-search-results');
+    if (res) res.classList.add('hidden');
+
+    const safeSlug  = _esc(slug);
+    const safeName  = _esc(name);
+    const safeBadge = _esc(badge);
+
+    panel.innerHTML = `<div class="trn-preview-loading"><div class="trn-spinner"></div>Cargando plantilla…</div>`;
+    panel.classList.remove('hidden');
+
+    const GK_SET  = new Set(['GK']);
+    const DEF_SET = new Set(['CB','LB','RB','WB','LWB','RWB','SW']);
+    const MID_SET = new Set(['CM','CDM','CAM','LM','RM','DM','LCM','RCM']);
+    const ATT_SET = new Set(['ST','CF','LW','RW','SS','FW']);
+
+    const renderRow = (p, posClass, posLabel) => {
+      const rt = Math.round(p.rating || 0);
+      const rCls = rt >= 90 ? 'rtg-gold' : rt >= 80 ? 'rtg-cyan' : '';
+      return `<div class="trn-preview-pos-row">
+        <span class="trn-preview-pos-label ${posClass}">${_esc(posLabel)}</span>
+        <span class="trn-preview-player-name">${_esc(p.name || '—')}</span>
+        ${rt > 0 ? `<span class="trn-preview-rating ${rCls}">${rt}</span>` : ''}
+      </div>`;
+    };
+
+    try {
+      const r = await fetch(`/lookup?team=${encodeURIComponent(slug)}`);
+      const data = await r.json();
+
+      const badgeUrl = _esc(data.badgeUrl || badge || '/img/badges/_placeholder.svg');
+      const formation = data.formation ? _esc(data.formation) : '';
+
+      let playersHtml = '';
+      if (data.found && Array.isArray(data.players) && data.players.length > 0) {
+        const gk    = data.players.filter(p => GK_SET.has(p.position));
+        const def   = data.players.filter(p => DEF_SET.has(p.position));
+        const mid   = data.players.filter(p => MID_SET.has(p.position));
+        const att   = data.players.filter(p => ATT_SET.has(p.position));
+        const other = data.players.filter(p =>
+          !GK_SET.has(p.position) && !DEF_SET.has(p.position) &&
+          !MID_SET.has(p.position) && !ATT_SET.has(p.position));
+        playersHtml = [
+          ...gk.map(p    => renderRow(p, 'pos-gk',  'POR')),
+          ...def.map(p   => renderRow(p, 'pos-def', 'DEF')),
+          ...mid.map(p   => renderRow(p, 'pos-mid', 'MED')),
+          ...att.map(p   => renderRow(p, 'pos-att', 'DEL')),
+          ...other.map(p => renderRow(p, '',        p.position || '?')),
+        ].join('');
+      }
+
+      panel.innerHTML = `
+        <div class="trn-preview-header">
+          <img class="trn-preview-badge" src="${badgeUrl}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <div class="trn-preview-meta">
+            <div class="trn-preview-team-name">${safeName}</div>
+            ${formation ? `<span class="trn-preview-formation">⬢ ${formation}</span>` : ''}
+          </div>
+        </div>
+        ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
+        <div class="trn-preview-actions">
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
+        </div>`;
+    } catch (_err) {
+      panel.innerHTML = `
+        <div class="trn-preview-header">
+          <img class="trn-preview-badge" src="${safeBadge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <div class="trn-preview-meta">
+            <div class="trn-preview-team-name">${safeName}</div>
+          </div>
+        </div>
+        <div class="trn-preview-actions">
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
+        </div>`;
+    }
+  }
+
   function clearSearch() {
     const inp = $('trn-search-input');
     if (inp) inp.value = '';
@@ -333,6 +416,8 @@ const TRN = (() => {
     if (res) { res.innerHTML = ''; res.classList.add('hidden'); }
     const clr = $('trn-search-clear');
     if (clr) clr.classList.add('hidden');
+    const prev = $('trn-team-preview');
+    if (prev) { prev.innerHTML = ''; prev.classList.add('hidden'); }
   }
 
   function removeTeam(idx) {
@@ -1306,6 +1391,7 @@ const TRN = (() => {
     onTeamSearch,
     clearSearch,
     addTeam,
+    previewTeam,
     removeTeam,
     fillRandom,
     runSimulation,
