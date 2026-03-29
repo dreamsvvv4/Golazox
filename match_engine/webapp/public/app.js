@@ -253,6 +253,14 @@ function _badgeFallback(teamName) {
 // ── Match mode state ───────────────────────────────────────────
 let _matchMode = '11v11';
 
+function toggleHaptic() {
+  const next = !_HFX.isOn();
+  _HFX.toggle(next);
+  const btn = document.getElementById('btn-haptic');
+  if (btn) btn.classList.toggle('btn-haptic--on', next);
+  showToast(next ? '📳 Vibración activada' : '🔇 Vibración desactivada');
+}
+
 function setMatchMode(mode) {
   _matchMode = mode;
   ['11v11','5v5','3v3','penalties'].forEach(m => {
@@ -464,6 +472,164 @@ let _shareData       = null;     // data snapshot for share card generation
 // ── Analytics helper (GA4 via existing gtag) ─────────────────
 function _gx(event, params) {
   try { if (typeof gtag === 'function') gtag('event', event, params || {}); } catch(_) {}
+}
+
+// ── Haptic feedback (vibration API, opt-in) ──────────────────
+const _HFX = (() => {
+  let _on = false;
+  try { _on = localStorage.getItem('gx_haptic') !== '0'; } catch(_) {}
+  function _vib(pattern) {
+    if (_on && navigator.vibrate) { try { navigator.vibrate(pattern); } catch(_) {} }
+  }
+  return {
+    goal:   () => _vib([60, 30, 80, 30, 120]),
+    card:   () => _vib([200]),
+    red:    () => _vib([300, 60, 300]),
+    whistle:() => _vib([40]),
+    toggle: (on) => { _on = on; try { localStorage.setItem('gx_haptic', on ? '1' : '0'); } catch(_) {} },
+    isOn:   () => _on,
+  };
+})();
+
+// ── Match History (last 20 results) ──────────────────────────
+const _HIST_KEY = 'gx_match_history';
+function _histSave(payload, data) {
+  try {
+    const hist = _histLoad();
+    const scoreA = data.finalScore?.teamA ?? 0;
+    const scoreB = data.finalScore?.teamB ?? 0;
+    const entry = {
+      ts: Date.now(),
+      slugA: payload.teamA, nameA: payload.teamA, eraA: payload.eraA || '',
+      slugB: payload.teamB, nameB: payload.teamB, eraB: payload.eraB || '',
+      scoreA, scoreB, mode: payload.matchMode || '11v11',
+      momName: data.stats?.manOfMatch?.name || null,
+      badgeA: data.badgeA || null, badgeB: data.badgeB || null,
+    };
+    hist.unshift(entry);
+    localStorage.setItem(_HIST_KEY, JSON.stringify(hist.slice(0, 20)));
+    _histRender();
+  } catch(_) {}
+}
+function _histLoad() {
+  try { return JSON.parse(localStorage.getItem(_HIST_KEY) || '[]'); } catch(_) { return []; }
+}
+function clearMatchHistory() {
+  try { localStorage.removeItem(_HIST_KEY); } catch(_) {}
+  _histRender();
+}
+function _histRender() {
+  const el = document.getElementById('match-history-list');
+  if (!el) return;
+  const hist = _histLoad();
+  const wrap = document.getElementById('match-history-wrap');
+  if (wrap) wrap.classList.toggle('hidden', hist.length === 0);
+  if (!hist.length) return;
+  el.innerHTML = hist.map((h, i) => {
+    const date = new Date(h.ts).toLocaleDateString('es-ES', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' });
+    const eA = h.eraA ? ` <small>'${String(h.eraA).slice(-2)}</small>` : '';
+    const eB = h.eraB ? ` <small>'${String(h.eraB).slice(-2)}</small>` : '';
+    const badgeSrcA = h.badgeA || `/img/badges/${h.slugA}.svg`;
+    const badgeSrcB = h.badgeB || `/img/badges/${h.slugB}.svg`;
+    const PH = '/img/badges/_placeholder.svg';
+    return `<div class="mh-row" onclick="histReplay(${i})" title="Volver a simular este partido">
+      <img class="mh-badge" src="${escHtml(badgeSrcA)}" onerror="this.src='${PH}'" alt="">
+      <span class="mh-name">${escHtml(h.nameA)}${eA}</span>
+      <span class="mh-score">${h.scoreA}–${h.scoreB}</span>
+      <span class="mh-name mh-name-b">${escHtml(h.nameB)}${eB}</span>
+      <img class="mh-badge" src="${escHtml(badgeSrcB)}" onerror="this.src='${PH}'" alt="">
+      <span class="mh-date">${date}</span>
+    </div>`;
+  }).join('');
+}
+function histReplay(idx) {
+  const hist = _histLoad();
+  const h = hist[idx];
+  if (!h) return;
+  // Pre-fill team hidden inputs and select era
+  document.getElementById('teamA').value = h.slugA;
+  document.getElementById('teamB').value = h.slugB;
+  _populateEraSelect(h.slugA, 'A');
+  _populateEraSelect(h.slugB, 'B');
+  if (h.eraA) { const sel = document.getElementById('eraA'); if (sel) sel.value = h.eraA; }
+  if (h.eraB) { const sel = document.getElementById('eraB'); if (sel) sel.value = h.eraB; }
+  _pickerState.A = { type: null, league: null }; _renderPicker('A');
+  _pickerState.B = { type: null, league: null }; _renderPicker('B');
+  _updateClashButton();
+  // Scroll to top
+  document.getElementById('col-a')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  showToast('♻ Equipos restaurados · Pulsa ⚔ para simular');
+}
+
+// ── Surprise Me — random matchup ─────────────────────────────
+function surpriseMe() {
+  if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
+  // Exclude special/historica/fantasy entries for better game quality
+  const pool = _catalog.filter(c =>
+    c.group !== '🌐 Continentes Históricos' &&
+    c.group !== '⭐ Fantasy XI' &&
+    c.seasons?.length
+  );
+  if (pool.length < 2) return;
+  const pick = () => pool[Math.floor(Math.random() * pool.length)];
+  let tA = pick(), tB;
+  do { tB = pick(); } while (tB.slug === tA.slug);
+  const seasons = s => s.seasons || [];
+  const randEra = t => { const s = seasons(t); return s.length ? s[Math.floor(Math.random() * s.length)] : ''; };
+  const eA = randEra(tA);
+  const eB = randEra(tB);
+  document.getElementById('teamA').value = tA.slug;
+  document.getElementById('teamB').value = tB.slug;
+  _populateEraSelect(tA.slug, 'A');
+  _populateEraSelect(tB.slug, 'B');
+  if (eA) { const sel = document.getElementById('eraA'); if (sel) sel.value = eA; }
+  if (eB) { const sel = document.getElementById('eraB'); if (sel) sel.value = eB; }
+  _pickerState.A = { type: null, league: null }; _renderPicker('A');
+  _pickerState.B = { type: null, league: null }; _renderPicker('B');
+  _updateClashButton();
+  _gx('surprise_me');
+  showToast('⚡ ¡Enfrentamiento aleatorio!');
+}
+
+// ── URL deep-link (share + auto-fill on load) ─────────────────
+function _deepLinkShare() {
+  if (!_shareData) return;
+  const base = ((window.GOLAZOX_CONFIG?.siteUrl) || location.origin).replace(/\/$/, '');
+  const url = `${base}/?a=${encodeURIComponent(_shareData.teamA + ((_shareData.eraA) ? ':' + _shareData.eraA : ''))}&b=${encodeURIComponent(_shareData.teamB + ((_shareData.eraB) ? ':' + _shareData.eraB : ''))}&mode=${encodeURIComponent(_shareData.matchMode || '11v11')}`;
+  try {
+    navigator.clipboard.writeText(url).then(() => showToast('🔗 Enlace copiado al portapapeles'));
+  } catch(_) { showToast(url); }
+  _gx('share_deeplink', { team_a: _shareData.teamA, team_b: _shareData.teamB });
+}
+function _deepLinkRestore() {
+  try {
+    const p = new URLSearchParams(location.search);
+    const a = p.get('a'), b = p.get('b'), mode = p.get('m') || p.get('mode');
+    if (!a || !b) return;
+    const [slugA, eraA = ''] = a.split(':');
+    const [slugB, eraB = ''] = b.split(':');
+    const restore = () => {
+      document.getElementById('teamA').value = slugA;
+      document.getElementById('teamB').value = slugB;
+      _populateEraSelect(slugA, 'A');
+      _populateEraSelect(slugB, 'B');
+      if (eraA) { const s = document.getElementById('eraA'); if (s) s.value = eraA; }
+      if (eraB) { const s = document.getElementById('eraB'); if (s) s.value = eraB; }
+      _pickerState.A = { type: null, league: null }; _renderPicker('A');
+      _pickerState.B = { type: null, league: null }; _renderPicker('B');
+      if (mode) setMatchMode(mode);
+      _updateClashButton();
+    };
+    // Wait for catalog to be ready
+    if (_catalogReady) restore();
+    else {
+      const orig = _fetchCatalog;
+      const _poll = setInterval(() => { if (_catalogReady) { clearInterval(_poll); restore(); } }, 200);
+      setTimeout(() => clearInterval(_poll), 8000);
+    }
+    // Clean URL without reload
+    history.replaceState({}, '', location.pathname);
+  } catch(_) {}
 }
 
 function selectStadium(stadiumId) {
@@ -910,7 +1076,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') handleSimulate(); });
   });
+  // Render match history and restore URL deep-link if present
+  _histRender();
+  _deepLinkRestore();
+  // Sync haptic button state
+  const _hBtn = document.getElementById('btn-haptic');
+  if (_hBtn) _hBtn.classList.toggle('btn-haptic--on', _HFX.isOn());
 
+  // 
   // Init team pickers (catalog fills them when it arrives)
   _initTeamPicker('A');
   _initTeamPicker('B');
@@ -1283,6 +1456,8 @@ async function handleSimulate() {
 
     const data = await response.json();
     _gx('simulate_match_success', { team_a: teamA, team_b: teamB, mode: _matchMode });
+    // Save to match history
+    _histSave(payload, data);
     // Track sim count for unlock system
     try { const n = (parseInt(localStorage.getItem('gx_sim_count')||'0')||0)+1; localStorage.setItem('gx_sim_count', n); if (n >= 5) localStorage.setItem('gx_unlocked','1'); } catch(_) {}
     showPreMatch(data, payload);
@@ -4109,6 +4284,12 @@ function addFeedEvent(ev) {
 }
 
 function triggerEventOverlay(type, name, score, side) {
+  // Haptic feedback
+  if (type === 'goal' || type === 'penalty' || type === 'pen_winner') _HFX.goal();
+  else if (type === 'red') _HFX.red();
+  else if (type === 'yellow') _HFX.card();
+  else if (type === 'kick_off' || type === 'fulltime') _HFX.whistle();
+
   // Cancel any stale hide timers from previous overlay events
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1); _overlayHideTimer1 = null; }
   if (_overlayHideTimer2) { clearTimeout(_overlayHideTimer2); _overlayHideTimer2 = null; }

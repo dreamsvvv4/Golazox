@@ -172,6 +172,10 @@
             <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')" data-i18n="mode-penalties">🥅 Penaltis</button>
           </div>
         </div>
+        <div class="extra-actions-row">
+          <button class="btn-surprise" onclick="surpriseMe()" title="Enfrentamiento aleatorio">⚡ Sorpréndeme</button>
+          <button class="btn-haptic" id="btn-haptic" onclick="toggleHaptic()" title="Vibración en eventos del partido">📳</button>
+        </div>
       </div>
 
       <!-- ── Stadium visual picker ─────────────────────────── -->
@@ -197,7 +201,16 @@
           <!-- filled by JS -->
         </div>
       </div>
+MATCH HISTORY ──────────────────────── -->
+    <details id="match-history-wrap" class="match-history-wrap glass-card hidden">
+      <summary class="mh-summary">
+        <span>🕹 Últimas simulaciones</span>
+        <button class="mh-clear-btn" onclick="event.preventDefault();clearMatchHistory()" title="Borrar historial">✕</button>
+      </summary>
+      <div id="match-history-list" class="mh-list"></div>
+    </details>
 
+    <!-- ── 
       <div id="error-msg" class="error-msg hidden"></div>
     </section>
 
@@ -385,6 +398,7 @@
         <!-- Share -->
         <div class="share-row">
           <button class="btn-share" onclick="shareResult()" data-i18n="btn-share">📤 Compartir resultado</button>
+          <button class="btn-ghost btn-deeplink" onclick="_deepLinkShare()" title="Copiar enlace a este partido">🔗 Enlace</button>
         </div>
       </div>
 
