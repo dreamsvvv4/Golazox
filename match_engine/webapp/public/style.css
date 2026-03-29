@@ -5479,9 +5479,9 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 ══════════════════════════════════════════════════════════════ */
 .trn-bkt-scroll {
   overflow-x: auto;
-  padding: 0 .5rem 1.2rem;
-  margin: 0 -.5rem;
+  padding: 0 0 1.2rem;
   -webkit-overflow-scrolling: touch;
+  /* Note: negative margin removed — it caused scroll detection issues on mobile */
 }
 .trn-bkt-tree {
   display: flex;
@@ -5489,6 +5489,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   min-width: max-content;
   position: relative;
   gap: 0;
+  padding-right: 1.5rem; /* ensure champion card is fully scrollable */
 }
 .trn-bkt-col {
   position: relative;

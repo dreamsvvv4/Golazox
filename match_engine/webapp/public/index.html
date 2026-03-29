@@ -546,29 +546,6 @@ MATCH HISTORY ──────────────────────
     <!-- ── Wizard ─────────────────────────────────────────────── -->
     <div id="trn-wizard">
 
-      <!-- Resume saved tournament banner -->
-      <div id="trn-resume-banner" class="trn-resume-banner hidden">
-        <div class="trn-resume-info">
-          <span class="trn-resume-icon">💾</span>
-          <div>
-            <div class="trn-resume-title">Torneo guardado</div>
-            <div id="trn-resume-desc" class="trn-resume-desc"></div>
-          </div>
-        </div>
-        <div class="trn-resume-actions">
-          <button class="btn-primary trn-resume-btn" onclick="TRN.resumeTournament()">Reanudar</button>
-          <button class="btn-ghost trn-resume-discard" onclick="TRN.discardSaved()">Descartar</button>
-        </div>
-      </div>
-
-      <!-- Tournament history -->
-      <div id="trn-history-section" class="trn-history-section hidden">
-        <div class="trn-hist-header">📜 Últimos torneos
-          <button class="trn-hist-clear" onclick="TRN.clearHistory()">Borrar historial</button>
-        </div>
-        <div id="trn-history-list"></div>
-      </div>
-
       <!-- Step progress bar -->
       <div class="trn-stepbar">
         <div class="trn-stepbar-item trn-stepbar-active" data-step="1">

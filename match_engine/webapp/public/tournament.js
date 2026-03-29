@@ -64,7 +64,6 @@ const TRN = (() => {
       b.classList.toggle('main-tab-active', b.dataset.tab === tab));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (tab === 'trn' && !_fmt && !_data) showStep(1);
-    if (tab === 'trn') _checkResume();
   }
 
   // ── Wizard step navigation ───────────────────────────────
@@ -899,119 +898,12 @@ const TRN = (() => {
       await _showChampionReveal(_data);
       _renderDashboard();
       show($('trn-dashboard'));
-      _saveState();
     } catch (err) {
       _stopTrnLoadCycle();
       console.error('[TRN]', err);
       $('trn-progress-text').textContent = '⚠ Error en la simulación. Inténtalo de nuevo.';
       show($('trn-step-3-actions'));
     }
-  }
-
-  // ── localStorage persistence ──────────────────────────────────
-  const _LS_KEY = 'trn_v2_state';
-  function _saveState() {
-    try {
-      localStorage.setItem(_LS_KEY, JSON.stringify({
-        fmt: _fmt, numTeams: _numTeams, rules: _rules,
-        teams: _teams, badges: _badgeCache, data: _data
-      }));
-      _pushHistory(_data);
-    } catch (_) {}
-  }
-  function _loadState() {
-    try {
-      const raw = localStorage.getItem(_LS_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (_) { return null; }
-  }
-  function _deleteState() {
-    try { localStorage.removeItem(_LS_KEY); } catch (_) {}
-  }
-  function _checkResume() {
-    const banner = $('trn-resume-banner');
-    _renderHistory();  // always refresh history section
-    if (!banner) return;
-    if (_data) { banner.classList.add('hidden'); return; }
-    const saved = _loadState();
-    if (!saved?.data) { banner.classList.add('hidden'); return; }
-    const fmtLabel = saved.fmt === 'copa' ? '🏆 Copa' : saved.fmt === 'liga' ? '📊 Liga' : '⭐ Champions';
-    const desc = $('trn-resume-desc');
-    if (desc) desc.textContent = `${fmtLabel} · ${saved.teams?.length || 0} equipos`;
-    banner.classList.remove('hidden');
-    _renderHistory();
-  }
-  function resumeTournament() {
-    const saved = _loadState();
-    if (!saved?.data) return;
-    _fmt = saved.fmt; _numTeams = saved.numTeams; _rules = saved.rules;
-    _teams = saved.teams; _badgeCache = saved.badges || {};
-    _data = saved.data; _tab = 'summary';
-    _computeTournamentStats(_data);
-    _buildMatchCache(_data);
-    hide($('trn-wizard'));
-    _renderDashboard();
-    show($('trn-dashboard'));
-    const banner = $('trn-resume-banner');
-    if (banner) banner.classList.add('hidden');
-  }
-  function discardSaved() {
-    _deleteState();
-    const banner = $('trn-resume-banner');
-    if (banner) banner.classList.add('hidden');
-  }
-
-  // ── Historial de torneos ───────────────────────────────────
-  const _LS_HIST = 'trn_v2_history';
-  function _pushHistory(data) {
-    try {
-      const hist = _loadHistory();
-      const fmtLabel = data.format === 'liga' ? '📊 Liga' :
-                          data.format === 'copa' && data.copaMode === 'groups' ? '🏆 Copa G' :
-                          data.format === 'copa' ? '🏆 Copa' : '⭐ Champions';
-      const thirdName = data.thirdPlace?.winner?.name || null;
-      const entry = {
-        ts: Date.now(),
-        fmt: data.format,
-        fmtLabel,
-        champion: data.champion?.name || '—',
-        champSlug: data.champion?.slug || '',
-        teams: _teams.length,
-        pichichi: data.pichichi?.[0]?.name || null,
-        thirdPlace: thirdName,
-      };
-      hist.unshift(entry);
-      localStorage.setItem(_LS_HIST, JSON.stringify(hist.slice(0, 8)));
-    } catch (_) {}
-  }
-  function _loadHistory() {
-    try { return JSON.parse(localStorage.getItem(_LS_HIST) || '[]'); } catch (_) { return []; }
-  }
-  function clearHistory() {
-    try { localStorage.removeItem(_LS_HIST); } catch (_) {}
-    _renderHistory();
-  }
-  function _renderHistory() {
-    const el = $('trn-history-list');
-    const section = $('trn-history-section');
-    if (!el) return;
-    const hist = _loadHistory();
-    if (!hist.length) {
-      if (section) section.classList.add('hidden');
-      el.innerHTML = '';
-      return;
-    }
-    if (section) section.classList.remove('hidden');
-    el.innerHTML = hist.map((h, i) => {
-      const date = new Date(h.ts).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
-      return `<div class="trn-hist-row">
-        <span class="trn-hist-date">${date}</span>
-        <span class="trn-hist-fmt">${h.fmtLabel}</span>
-        <span class="trn-hist-champ">${_esc(h.champion)}</span>
-        ${h.pichichi ? `<span class="trn-hist-pich">⚽ ${_esc(h.pichichi)}</span>` : ''}
-        <span class="trn-hist-teams">${h.teams} eq</span>
-      </div>`;
-    }).join('');
   }
 
   // ── Compartir resultado — Canvas poster ───────────────────
@@ -2077,19 +1969,6 @@ const TRN = (() => {
     if (tab === 'stats')    _renderStats();
   }
 
-  // ── Bracket tab ──────────────────────────────────────────
-  function _renderBracket() {
-    const el = $('trn-tab-bracket');
-    if (!el || !_data) return;
-    const d = _data;
-    if (d.format === 'liga') {
-      el.innerHTML = '<p style="padding:2rem;text-align:center;color:var(--grey)">El cuadro no aplica para formato Liga.<br><small>Consulta la clasificación en Resumen.</small></p>';
-      return;
-    }
-    const rounds = d.koRounds || d.rounds || [];
-    el.innerHTML = `<div class="trn-bkt-scroll">${_renderVisualBracket(rounds)}</div>`;
-  }
-
   // ── Calendar tab ─────────────────────────────────────────
   function _renderCalendar() {
     const el = $('trn-tab-calendar');
@@ -2561,9 +2440,9 @@ const TRN = (() => {
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
             <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
-            <span class="trn-stats-mp">${r.mp} PJ</span>
-          </div>`).join('')}
-      </div>
+    _loadDreamXI(d);
+    _loadDreamXI(d);
+  }
       ${_renderDestacados(allMatches)}`;
   }
 
@@ -2623,7 +2502,6 @@ const TRN = (() => {
   // ── Start over ───────────────────────────────────────────
   function startOver() {
     _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {}; _modalIdx = -1;
-    _deleteState();
     hide($('trn-dashboard'));
     const wizard = $('trn-wizard');
     if (wizard) show(wizard);
@@ -2845,9 +2723,6 @@ const TRN = (() => {
     closeMatchModal,
     prevMatch,
     nextMatch,
-    resumeTournament,
-    discardSaved,
-    clearHistory,
     shareTournament,
     reshuffleDraw,
     reshuffleGroupsDraw,
@@ -2856,4 +2731,5 @@ const TRN = (() => {
     closeLeagueLoader,
     loadRealLeague,
   };
+
 })();
