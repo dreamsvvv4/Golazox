@@ -4,13 +4,15 @@
 
 const TRN = (() => {
   // ── State ───────────────────────────────────────────────
-  let _fmt      = null;   // 'copa' | 'liga' | 'champions'
-  let _numTeams = 16;
-  let _rules    = { idaVuelta: false, penalties: true };
-  let _teams    = [];     // [{ slug, era, name }]
-  let _data     = null;   // computed tournament result
-  let _tab      = 'summary';
-  let _matchCache = [];   // flat list for modal lookup
+  let _fmt        = null;   // 'copa' | 'liga' | 'champions'
+  let _numTeams   = 16;
+  let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true };
+  let _teams      = [];     // [{ slug, era, name }]
+  let _draw       = [];     // Copa: [{ a, b }] first-round pairings
+  let _groupsDraw = [];     // Champions: [[t1,t2,t3,t4], ...] pre-drawn groups
+  let _data       = null;   // computed tournament result
+  let _tab        = 'summary';
+  let _matchCache = [];     // flat list for modal lookup
 
   const VALID_COUNTS = {
     copa:      [4, 8, 16, 32],
@@ -77,18 +79,85 @@ const TRN = (() => {
   function goStep2() {
     if (!_fmt) { alert('Selecciona un formato.'); return; }
     _numTeams = +($('trn-num-teams')?.value || 16);
-    $('trn-rule-idavuelta').checked = (_fmt === 'champions');
-    $('trn-rule-penalties').checked = true;
+    const container = $('trn-rules-list');
+    if (container) {
+      let html = '';
+      if (_fmt === 'copa') {
+        html = `
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Formato de partido</span>
+              <span class="trn-rule-hint">Partido único (estilo FA Cup) · Activo = Ida y Vuelta (estilo Copa del Rey)</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
+              <div class="trn-toggle"></div>
+            </div>
+          </label>
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Desempate</span>
+              <span class="trn-rule-hint">Inactivo = Penaltis directos al 90' · Activo = Prórroga + Penaltis</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
+              <div class="trn-toggle"></div>
+            </div>
+          </label>`;
+      } else if (_fmt === 'liga') {
+        html = `
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Vueltas</span>
+              <span class="trn-rule-hint">Inactivo = Solo Ida (torneo rápido) · Activo = Ida y Vuelta (temporada completa)</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
+              <div class="trn-toggle"></div>
+            </div>
+          </label>`;
+      } else if (_fmt === 'champions') {
+        html = `
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Fase de grupos</span>
+              <span class="trn-rule-hint">Partido único (estilo Mundial) · Activo = Ida y Vuelta (estilo Champions)</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
+              <div class="trn-toggle"></div>
+            </div>
+          </label>
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Fase eliminatoria</span>
+              <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO · La final siempre a partido único</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
+              <div class="trn-toggle"></div>
+            </div>
+          </label>`;
+      }
+      container.innerHTML = html;
+    }
     showStep(2);
   }
 
   function goStep3() {
-    _rules = {
-      idaVuelta: !!$('trn-rule-idavuelta')?.checked,
-      penalties: !!$('trn-rule-penalties')?.checked,
-    };
+    if (_fmt === 'copa') {
+      _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
+      _rules.extraTime = !!$('trn-rule-extratime')?.checked;
+    } else if (_fmt === 'liga') {
+      _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
+    } else if (_fmt === 'champions') {
+      _rules.grupasIdaVuelta = !!$('trn-rule-grupos-idavuelta')?.checked;
+      _rules.koIdaVuelta     = !!$('trn-rule-ko-idavuelta')?.checked;
+    }
     _numTeams = +($('trn-num-teams')?.value || _numTeams);
     _teams = [];
+    _draw = [];
+    _groupsDraw = [];
     _renderTeamSlots();
     showStep(3);
   }
@@ -119,6 +188,86 @@ const TRN = (() => {
     if (simBtn) simBtn.disabled = (_teams.length !== _numTeams);
     const randomBtn = $('trn-btn-random');
     if (randomBtn) randomBtn.style.display = _teams.length < _numTeams ? '' : 'none';
+    _updatePreDraw();
+  }
+
+  // ── Pre-draw: Copa bracket & Champions group draw ─────────
+  function _generateDraw() {
+    const shuffled = [..._teams].sort(() => Math.random() - 0.5);
+    _draw = [];
+    for (let i = 0; i < shuffled.length; i += 2)
+      _draw.push({ a: shuffled[i], b: shuffled[i + 1] });
+  }
+
+  function _generateGroupsDraw() {
+    const shuffled = [..._teams].sort(() => Math.random() - 0.5);
+    const GRP_SIZE = 4;
+    const n = Math.ceil(shuffled.length / GRP_SIZE);
+    _groupsDraw = Array.from({ length: n }, (_, g) => shuffled.slice(g * GRP_SIZE, (g + 1) * GRP_SIZE));
+  }
+
+  function reshuffleDraw() {
+    if (_teams.length !== _numTeams) return;
+    _generateDraw();
+    _renderPreDraw();
+  }
+
+  function reshuffleGroupsDraw() {
+    if (_teams.length !== _numTeams) return;
+    _generateGroupsDraw();
+    _renderPreDraw();
+  }
+
+  function _updatePreDraw() {
+    const el = $('trn-pre-draw');
+    if (!el) return;
+    if (_teams.length < _numTeams || _fmt === 'liga') { el.classList.add('hidden'); return; }
+    if (_fmt === 'copa'      && _draw.length !== _numTeams / 2) _generateDraw();
+    if (_fmt === 'champions' && _groupsDraw.length === 0)        _generateGroupsDraw();
+    _renderPreDraw();
+  }
+
+  function _renderPreDraw() {
+    const el = $('trn-pre-draw');
+    if (!el) return;
+    el.classList.remove('hidden');
+    if (_fmt === 'copa') {
+      const ROUND_NAMES = {
+        4: 'Semifinales', 8: 'Cuartos de final',
+        16: 'Octavos de final', 32: 'Dieciseisavos', 64: 'Treinta y dos avos',
+      };
+      const roundName = ROUND_NAMES[_numTeams] || `Primera ronda (${_numTeams / 2} eliminatorias)`;
+      let html = `<div class="trn-draw-header">
+        <span class="trn-label">🎲 ${_esc(roundName)}</span>
+        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleDraw()">🔀 Nuevo sorteo</button>
+      </div><div class="trn-copa-draw-grid">`;
+      _draw.forEach((m, i) => {
+        html += `<div class="trn-copa-draw-match">
+          <span class="trn-draw-num">${i + 1}</span>
+          <span class="trn-copa-draw-team">${_esc(m.a.name)}</span>
+          <span class="trn-copa-draw-vs">vs</span>
+          <span class="trn-copa-draw-team trn-copa-draw-team-b">${_esc(m.b.name)}</span>
+        </div>`;
+      });
+      html += `</div>`;
+      el.innerHTML = html;
+    } else if (_fmt === 'champions') {
+      let html = `<div class="trn-draw-header">
+        <span class="trn-label">🎲 Sorteo de grupos</span>
+        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleGroupsDraw()">🔀 Nuevo sorteo</button>
+      </div><div class="trn-groups-draw-grid">`;
+      _groupsDraw.forEach((grp, g) => {
+        html += `<div class="trn-group-draw-card">
+          <div class="trn-group-draw-label">Grupo ${String.fromCharCode(65 + g)}</div>
+          ${grp.map(t => `<div class="trn-group-draw-team">${_esc(t.name)}</div>`).join('')}
+        </div>`;
+      });
+      html += `</div>`;
+      el.innerHTML = html;
+    } else {
+      el.innerHTML = '';
+      el.classList.add('hidden');
+    }
   }
 
   // Team search (debounced)
@@ -251,7 +400,10 @@ const TRN = (() => {
     const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final',
       16: 'Octavos de final', 32: 'Dieciseisavos de final', 64: 'Treinta y dos avos' };
 
-    let bracket = [..._teams].sort(() => Math.random() - 0.5);
+    // Use pre-generated draw if available, otherwise shuffle now
+    let bracket = (_draw.length === _numTeams / 2)
+      ? _draw.flatMap(m => [m.a, m.b])
+      : [..._teams].sort(() => Math.random() - 0.5);
     const rounds = [];
 
     while (bracket.length > 1) {
@@ -361,10 +513,11 @@ const TRN = (() => {
 
   // ── CHAMPIONS ────────────────────────────────────────────
   async function _simulateChampions() {
-    const teams = [..._teams].sort(() => Math.random() - 0.5);
     const GRP_SIZE = 4;
-    const numGroups = Math.ceil(teams.length / GRP_SIZE);
-    const groups = Array.from({ length: numGroups }, (_, g) => teams.slice(g * GRP_SIZE, (g + 1) * GRP_SIZE));
+    const groups = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: Math.ceil(s.length / GRP_SIZE) }, (_, g) => s.slice(g * GRP_SIZE, (g + 1) * GRP_SIZE));
+    })();
 
     // Group stage
     _setProgress('Simulando fase de grupos…');
@@ -376,8 +529,10 @@ const TRN = (() => {
       table.forEach((r, i) => { idxG[r.slug] = i; });
       const grpFixtures = [];
       for (let i = 0; i < grp.length; i++)
-        for (let j = i + 1; j < grp.length; j++)
+        for (let j = i + 1; j < grp.length; j++) {
           grpFixtures.push({ a: grp[i], b: grp[j] });
+          if (_rules.grupasIdaVuelta) grpFixtures.push({ a: grp[j], b: grp[i] });
+        }
 
       const specs = grpFixtures.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '', salt: (g + 1) * 300 + i, penalties: false,
@@ -406,13 +561,14 @@ const TRN = (() => {
     qualifiers.sort(() => Math.random() - 0.5);
 
     // Reuse copa logic for KO rounds
-    const koData = await _simulateCopa_internal(qualifiers, true);
+    const koData = await _simulateCopa_internal(qualifiers, { idaVuelta: _rules.koIdaVuelta });
 
     return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
-  // Internal copa simulation (reused for Champions KO rounds)
-  async function _simulateCopa_internal(teamList, usePenalties) {
+  // Internal copa simulation (reused for Champions KO rounds) — supports ida y vuelta
+  async function _simulateCopa_internal(teamList, rules = {}) {
+    const { idaVuelta = false } = rules;
     const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final', 16: 'Octavos de final', 32: 'Dieciseisavos de final' };
     let bracket = [...teamList].sort(() => Math.random() - 0.5);
     const rounds = [];
@@ -420,29 +576,53 @@ const TRN = (() => {
     while (bracket.length > 1) {
       const n = bracket.length;
       const label = ROUND_LABELS[n] || `Ronda ${n}`;
-      _setProgress(`Champions KO — ${label}…`);
       const isFinal = n === 2;
+      _setProgress(`Eliminatoria — ${label}…`);
       const specs = [];
 
       for (let i = 0; i < n; i += 2) {
         const a = bracket[i], b = bracket[i + 1];
-        specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era || '', eraB: b.era || '', salt: n * 500 + i, penalties: usePenalties, isFinal });
+        if (idaVuelta && !isFinal) {
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*100+i,    penalties: false });
+          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era||'', eraB: a.era||'', salt: n*100+i+50, penalties: false });
+        } else {
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*500+i, penalties: true, isFinal });
+        }
       }
 
       const results = await _bulkSim(specs);
       const winners = [];
       const matches = [];
+      let ri = 0;
 
-      for (let i = 0, ri = 0; i < n; i += 2, ri++) {
+      for (let i = 0; i < n; i += 2) {
         const a = bracket[i], b = bracket[i + 1];
-        const r = results[ri];
-        let winner;
-        if (r.penA !== null) winner = r.penA > r.penB ? a : b;
-        else winner = r.scoreA >= r.scoreB ? a : b;
-        matches.push({ a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB,
-          scorersA: r.scorersA || [], scorersB: r.scorersB || [],
-          mom: r.mom || null, stats: r.stats || null, winner, legs: 1 });
-        winners.push(winner);
+        if (idaVuelta && !isFinal) {
+          const r1 = results[ri++];
+          const r2 = results[ri++];
+          const aggA = r1.scoreA + r2.scoreB;
+          const aggB = r1.scoreB + r2.scoreA;
+          let winner, penA = null, penB = null;
+          if (aggA > aggB) winner = a;
+          else if (aggB > aggA) winner = b;
+          else {
+            const penRes = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*200+i, penalties: true }]);
+            penA = penRes[0].penA; penB = penRes[0].penB;
+            winner = (penA !== null && penA > penB) ? a : b;
+          }
+          matches.push({ a, b, r1, r2, aggA, aggB, penA, penB, winner, legs: 2 });
+          winners.push(winner);
+        } else {
+          const r = results[ri++];
+          let winner;
+          if (r.penA !== null) winner = r.penA > r.penB ? a : b;
+          else if (r.scoreA !== r.scoreB) winner = r.scoreA > r.scoreB ? a : b;
+          else winner = Math.random() < 0.5 ? a : b;
+          matches.push({ a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB,
+            scorersA: r.scorersA||[], scorersB: r.scorersB||[],
+            mom: r.mom||null, stats: r.stats||null, winner, legs: 1 });
+          winners.push(winner);
+        }
       }
 
       rounds.push({ label, matches });
@@ -693,12 +873,13 @@ const TRN = (() => {
     const winA = m.winner?.slug === m.a?.slug;
     const winB = m.winner?.slug === m.b?.slug;
     let score = '';
+    const penLabel = (_data?.format === 'copa' && _rules.extraTime) ? 'AET' : 'p';
     if (m.legs === 2) {
       score = `<span class="trn-match-agg">${m.aggA} – ${m.aggB}</span>`;
       if (m.penA !== null) score += `<span class="trn-match-pen">(p: ${m.penA}–${m.penB})</span>`;
     } else {
       score = `<span class="trn-match-score">${m.scoreA} – ${m.scoreB}</span>`;
-      if (m.penA !== null) score += `<span class="trn-match-pen">(${m.penA}–${m.penB} p)</span>`;
+      if (m.penA !== null) score += `<span class="trn-match-pen">(${m.penA}–${m.penB} ${penLabel})</span>`;
     }
     return `<div class="trn-bracket-match">
       <span class="trn-bm-team ${winA ? 'trn-bm-winner' : ''}">${_esc(m.a?.name || '—')}</span>
@@ -883,7 +1064,7 @@ const TRN = (() => {
 
   // ── Start over ───────────────────────────────────────────
   function startOver() {
-    _fmt = null; _teams = []; _data = null; _tab = 'summary'; _matchCache = [];
+    _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = [];
     hide($('trn-dashboard'));
     const wizard = $('trn-wizard');
     if (wizard) show(wizard);
@@ -990,5 +1171,7 @@ const TRN = (() => {
     startOver,
     openMatchModal,
     closeMatchModal,
+    reshuffleDraw,
+    reshuffleGroupsDraw,
   };
 })();

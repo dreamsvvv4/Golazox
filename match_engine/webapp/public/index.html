@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -601,27 +601,8 @@
           <h2 class="trn-step-title">Reglas del torneo</h2>
           <p class="trn-step-hint">Personaliza cómo se deciden los enfrentamientos</p>
         </div>
-        <div class="trn-rules-list">
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Partidos de ida y vuelta</span>
-              <span class="trn-rule-hint">Prórroga en la vuelta si hay empate en el global</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Tandas de penaltis</span>
-              <span class="trn-rule-hint">Si hay empate al final del tiempo reglamentario</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-penalties" checked class="trn-toggle-input" />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>
+        <div id="trn-rules-list" class="trn-rules-list">
+          <!-- Filled dynamically by TRN.goStep2() based on selected format -->
         </div>
         <div class="trn-step-actions">
           <button class="btn-secondary" onclick="TRN.goBack(1)">← Atrás</button>
@@ -651,6 +632,8 @@
         </div>
 
         <div id="trn-teams-list" class="trn-teams-list"></div>
+
+        <div id="trn-pre-draw" class="trn-pre-draw hidden"></div>
 
         <div id="trn-step-3-actions" class="trn-step-actions">
           <button class="btn-secondary" onclick="TRN.goBack(2)">← Atrás</button>
