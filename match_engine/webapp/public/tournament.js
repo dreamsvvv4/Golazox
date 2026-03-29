@@ -398,15 +398,43 @@ const TRN = (() => {
         res.classList.remove('hidden');
         return;
       }
+
+      // If the query contains a year, use it as the preferred era when previewing
+      const queryYearMatch = q.match(/\b(19[5-9]\d|20[0-2]\d)\b/);
+      const queryYear = queryYearMatch ? queryYearMatch[1] : '';
+
       res.innerHTML = data.map(t => {
         const name  = _esc(t.nameEs || t.name || t.nameEn || t.slug || '');
         const slug  = _esc(t.slug  || name);
         const badge = _esc(t.badge || '');
         const ls    = t.latestSeason || '';
-        const meta  = ls && ls !== 'all-time' ? `'${String(ls).slice(-2)}` : (ls === 'all-time' ? 'All-Time' : '');
-        // cache seasons for era picker in previewTeam
+        const seasons = t.seasons || [];
 
-        if (t.seasons && t.slug) _seasonCache[t.slug] = t.seasons;
+        // Cache seasons for the era picker shown in previewTeam
+        if (seasons.length && t.slug) _seasonCache[t.slug] = seasons;
+
+        // Best era to preview: prefer query year (exact or nearest), else latest
+        let bestEra = ls;
+        if (queryYear && seasons.length) {
+          bestEra = seasons.includes(queryYear)
+            ? queryYear
+            : seasons.reduce((best, s) =>
+                Math.abs(+s - +queryYear) < Math.abs(+best - +queryYear) ? s : best);
+        }
+
+        // Meta badge: if team has multiple seasons show the vintage range, else just latest
+        const sortedSeasons = [...seasons].sort((a, b) => +a - +b);
+        const oldest = sortedSeasons[0];
+        let meta;
+        if (seasons.length > 1 && oldest && ls) {
+          meta = `'${String(oldest).slice(-2)}–'${String(ls).slice(-2)}`;
+        } else if (ls && ls !== 'all-time') {
+          meta = `'${String(ls).slice(-2)}`;
+        } else if (ls === 'all-time') {
+          meta = 'All-Time';
+        } else {
+          meta = '';
+        }
 
         const isLocked = !_isUnlocked() && !!_LOCKED_TEAMS[t.slug];
         if (isLocked) {
@@ -417,7 +445,7 @@ const TRN = (() => {
             <span class="trn-si-lock">🔒</span>
           </div>`;
         }
-        return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}','${_esc(ls)}')">
+        return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}','${_esc(bestEra)}')">
           <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <span class="trn-search-item-name">${name}</span>
           ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}

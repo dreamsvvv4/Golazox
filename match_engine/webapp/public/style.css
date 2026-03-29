@@ -4217,9 +4217,12 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   flex: 1;
 }
 .trn-search-item-meta {
-  font-size: .72rem;
-  color: var(--grey);
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--neon);
+  opacity: .75;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 .trn-search-empty {
   padding: .8rem 1rem;
