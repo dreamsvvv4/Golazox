@@ -5505,6 +5505,73 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   letter-spacing: .12em;
   text-transform: uppercase;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TOURNAMENT — Dream XI (Once Ideal del Torneo)
+══════════════════════════════════════════════════════════════ */
+.trn-xi-loading { text-align: center; padding: 1.2rem 0; }
+.trn-xi-pitch {
+  background: linear-gradient(180deg, #0a2e1a 0%, #0d3b22 50%, #0a2e1a 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: .75rem;
+  padding: .9rem .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-bottom: .5rem;
+  position: relative;
+  overflow: hidden;
+}
+.trn-xi-pitch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 49%, rgba(255,255,255,.03) 50%, transparent 51%),
+    linear-gradient(90deg, transparent 10%, rgba(255,255,255,.025) 10%, rgba(255,255,255,.025) 11%, transparent 11%,
+      transparent 89%, rgba(255,255,255,.025) 89%, rgba(255,255,255,.025) 90%, transparent 90%);
+  pointer-events: none;
+}
+.trn-xi-line {
+  display: flex;
+  justify-content: center;
+  gap: .3rem;
+  position: relative;
+}
+.trn-xi-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 58px;
+  gap: .18rem;
+}
+.trn-xi-badge {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
+}
+.trn-xi-name {
+  font: 700 .65rem/1.1 var(--font);
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 56px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.9);
+}
+.trn-xi-stat {
+  font: 600 .6rem/1 var(--font);
+  color: var(--neon);
+  text-align: center;
+  letter-spacing: .02em;
+}
+@media (max-width: 400px) {
+  .trn-xi-player { width: 48px; }
+  .trn-xi-name   { font-size: .58rem; max-width: 46px; }
+  .trn-xi-badge  { width: 22px; height: 22px; }
+}
 .trn-bkt-spacer {
   width: 36px;
   flex-shrink: 0;

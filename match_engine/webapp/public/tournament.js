@@ -1909,18 +1909,18 @@ const TRN = (() => {
     function _processLeg(leg, teamA, teamB) {
       (leg.scorersA || []).forEach(s => {
         const key = s.name + '|' + (teamA?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamA) || '', teamSlug: teamA?.slug || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamA) || '', teamSlug: teamA?.slug || '', era: teamA?.era || '', goals: 0 };
         scorers[key].goals++;
       });
       (leg.scorersB || []).forEach(s => {
         const key = s.name + '|' + (teamB?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamB) || '', teamSlug: teamB?.slug || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamB) || '', teamSlug: teamB?.slug || '', era: teamB?.era || '', goals: 0 };
         scorers[key].goals++;
       });
       if (leg.mom) {
         const momTeam = leg.mom.team === 'A' ? teamA : teamB;
         const key = leg.mom.name + '|' + (momTeam?.slug || '');
-        if (!moms[key]) moms[key] = { name: leg.mom.name, team: _tLabel(momTeam) || '', teamSlug: momTeam?.slug || '', count: 0 };
+        if (!moms[key]) moms[key] = { name: leg.mom.name, team: _tLabel(momTeam) || '', teamSlug: momTeam?.slug || '', era: momTeam?.era || '', count: 0 };
         moms[key].count++;
       }
     }
@@ -1936,8 +1936,10 @@ const TRN = (() => {
       }
     });
 
-    data.pichichi = Object.values(scorers).sort((a, b) => b.goals - a.goals).slice(0, 10);
-    data.mvp = Object.values(moms).sort((a, b) => b.count - a.count).slice(0, 5);
+    data.pichichi    = Object.values(scorers).sort((a, b) => b.goals - a.goals).slice(0, 10);
+    data.mvp         = Object.values(moms).sort((a, b) => b.count - a.count).slice(0, 5);
+    data._scorersAll = Object.values(scorers);
+    data._momsAll    = Object.values(moms);
   }
 
   function _renderStatCards() {
@@ -2374,7 +2376,124 @@ const TRN = (() => {
       console.error('[_renderSummary]', err);
       el.innerHTML = `<p style="padding:1rem;color:rgba(255,255,255,.5)">Error al renderizar resumen: ${_esc(err.message)}</p>`;
     }
+  }Dream XI ─────────────────────────────────────────────
+  async function _buildDreamXI(d) {
+    // Build composite player score: goals×1 + MOM×2
+    const pm = {};
+    (d._scorersAll || d.pichichi || []).forEach(r => {
+      const k = r.name + '|' + r.teamSlug;
+      if (!pm[k]) pm[k] = { name: r.name, team: r.team, teamSlug: r.teamSlug, era: r.era || '', goals: 0, mom: 0 };
+      pm[k].goals += (r.goals || 0);
+    });
+    (d._momsAll || d.mvp || []).forEach(r => {
+      const k = r.name + '|' + r.teamSlug;
+      if (!pm[k]) pm[k] = { name: r.name, team: r.team, teamSlug: r.teamSlug, era: r.era || '', goals: 0, mom: 0 };
+      pm[k].mom += (r.count || 0);
+    });
+    const players = Object.values(pm)
+      .map(p => ({ ...p, score: p.goals + p.mom * 2 }))
+      .filter(p => p.score > 0)
+      .sort((a, b) => b.score - a.score);
+    if (players.length < 3) return null;
+
+    // Fetch positions from /lookup for all unique team slugs in top 30
+    const top30 = players.slice(0, 30);
+    const teamKeys = [...new Set(top30.map(p => p.teamSlug + '|' + (p.era || '')))].filter(k => k.split('|')[0]);
+    const lookupResults = await Promise.allSettled(teamKeys.map(k => {
+      cdiv id="trn-xi-section">
+        <h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3>
+        <div class="trn-xi-loading"><div class="trn-spinner"></div></div>
+      </div>
+      <h3 class="trn-section-h trn-section-h-mtf('|');
+      const slug = k.slice(0, idx);
+      const era  = k.slice(idx + 1);
+      return fetch(`/lookup?team=${encodeURIComponent(slug)}&era=${encodeURIComponent(era)}`)
+        .then(r => r.ok ? r.json() : null).catch(() => null);
+    }));
+
+    // Map lowercase name → position string
+    const nameToPos = {};
+    lookupResults.forEach(res => {
+      const ld = res.value;
+      if (!ld?.players) return;
+      ld.players.forEach(p => { if (p.name) nameToPos[p.name.toLowerCase()] = p.position; });
+    });
+
+    // Position groups
+    const GK_SET  = new Set(['GK']);
+    const DEF_SET = new Set(['CB','LB','RB','WB','LWB','RWB','SW']);
+    const MID_SET = new Set(['CM','CDM','CAM','LM','RM','DM','LCM','RCM']);
+    const ATT_SET = new Set(['ST','CF','LW','RW','SS','FW']);
+    const posGroup = pos => GK_SET.has(pos) ? 'gk' : DEF_SET.has(pos) ? 'def' : MID_SET.has(pos) ? 'mid' : ATT_SET.has(pos) ? 'att' : 'unk';
+
+    const tagged = players.map(p => {
+      const pos = nameToPos[p.name.toLowerCase()];
+      return { ...p, pos: pos || '?', group: pos ? posGroup(pos) : 'unk' };
+    });
+
+    // Greedy selection: 1 GK, 4 DEF, 3 MID, 3 ATT
+    const quotas = { gk: 1, def: 4, mid: 3, att: 3 };
+    const selected = { gk: [], def: [], mid: [], att: [] };
+    const used = new Set();
+
+    // Pass 1: native position
+    for (const p of tagged) {
+      const key = p.name + '|' + p.teamSlug;
+      if (used.has(key)) continue;
+      const g = p.group;
+      if (selected[g] && selected[g].length < quotas[g]) {
+        selected[g].push(p);
+        used.add(key);
+      }
+    }
+    // Pass 2: fill gaps from remaining players in score order
+    const remaining = tagged.filter(p => !used.has(p.name + '|' + p.teamSlug));
+    for (const g of ['gk','def','mid','att']) {
+      while (selected[g].length < quotas[g] && remaining.length) {
+        const p = remaining.shift();
+        selected[g].push({ ...p, pos: '?' });
+        used.add(p.name + '|' + p.teamSlug);
+      }
+    }
+    return selected;
   }
+
+  function _renderXIHtml(xi) {
+    if (!xi) return `<p class="trn-lu-empty">Datos insuficientes para el Once Ideal</p>`;
+    const card = p => {
+      const stat = p.goals > 0 && p.mom > 0 ? `${p.goals}⚽ ${p.mom}⭐`
+                 : p.goals > 0 ? `${p.goals}⚽`
+                 : p.mom > 0   ? `${p.mom}⭐`
+                 : '';
+      const last = _esc(p.name.split(/\s+/).slice(-1)[0] || p.name);
+      return `<div class="trn-xi-player">
+        ${_badgeImg(p.teamSlug, 'trn-xi-badge')}
+        <div class="trn-xi-name">${last}</div>
+        ${stat ? `<div class="trn-xi-stat">${stat}</div>` : ''}
+      </div>`;
+    };
+    const line = (arr, cls) => arr?.length
+      ? `<div class="trn-xi-line ${cls}">${arr.map(card).join('')}</div>` : '';
+    return `<div class="trn-xi-pitch">
+      ${line(xi.att, 'trn-xi-att')}
+      ${line(xi.mid, 'trn-xi-mid')}
+      ${line(xi.def, 'trn-xi-def')}
+      ${line(xi.gk,  'trn-xi-gk')}
+    </div>`;
+  }
+
+  async function _loadDreamXI(d) {
+    const sec = document.getElementById('trn-xi-section');
+    if (!sec) return;
+    try {
+      const xi = await _buildDreamXI(d);
+      sec.innerHTML = `<h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3>${_renderXIHtml(xi)}`;
+    } catch (_e) {
+      sec.innerHTML = `<h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3><p class="trn-lu-empty">Sin datos suficientes</p>`;
+    }
+  }
+
+  // ── 
 
   // ── Stats tab ────────────────────────────────────────────
   function _renderStats() {
