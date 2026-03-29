@@ -2281,26 +2281,88 @@ const TRN = (() => {
     if (!el || !_data) return;
     const d = _data;
 
-    if (d.format === 'liga') {
-      const medals = ['🥇', '🥈', '🥉'];
-      const top5 = d.table.slice(0, 5);
-      el.innerHTML = _renderStatCards() + `
-        <h3 class="trn-section-h">🥇 TOP 5</h3>
-        <div class="trn-mini-table">
-          ${top5.map((r, i) => `
-            <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
-              <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
-              ${_badgeImg(r.slug, 'trn-mini-badge')}
-              <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
-              <span class="trn-mini-pts">${r.pts} pts</span>
-              <span class="trn-mini-gd">${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</span>
-            </div>`).join('')}
-        </div>`;
-      return;
-    }
+    try {
+      if (d.format === 'liga') {
+        const medals = ['🥇', '🥈', '🥉'];
+        const top5 = (d.table || []).slice(0, 5);
+        el.innerHTML = _renderStatCards() + `
+          <h3 class="trn-section-h">🥇 TOP 5</h3>
+          <div class="trn-mini-table">
+            ${top5.map((r, i) => `
+              <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
+                <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
+                ${_badgeImg(r.slug, 'trn-mini-badge')}
+                <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
+                <span class="trn-mini-pts">${r.pts} pts</span>
+                <span class="trn-mini-gd">${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</span>
+              </div>`).join('')}
+          </div>`;
+        return;
+      }
 
-    // Copa and champions: show stat cards + champion path
-    el.innerHTML = _renderStatCards() + _renderChampionPath(d);
+      // Copa (KO or groups) and legacy Champions
+      let html = _renderStatCards();
+
+      // Champion path (bonus section — doesn't fail the whole render)
+      try { html += _renderChampionPath(d); } catch(_) {}
+
+      // Round results
+      if (d.groups) {
+        // Groups mode
+        html += `<h3 class="trn-section-h trn-section-h-mt">📊 Grupos</h3>`;
+        (d.groups || []).forEach((g, gi) => {
+          const openAttr = gi === 0 ? ' open' : '';
+          html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.table.length}</span></summary>`;
+          html += '<div class="trn-mini-table" style="margin:.4rem 0 .3rem">';
+          (g.table || []).forEach((r, i) => {
+            const q = i < 2;
+            html += `<div class="trn-mini-row${i===0?' trn-mini-row-top':''}">
+              ${_badgeImg(r.slug,'trn-mini-badge')}
+              <span class="trn-mini-team${q?' trn-q':''}">${_esc(_tLabel(r))}</span>
+              <span class="trn-mini-pts">${r.pts}p</span>
+              <span class="trn-mini-gd">${r.gf}-${r.ga}</span>
+            </div>`;
+          });
+          html += '</div></details>';
+        });
+        html += `<h3 class="trn-section-h trn-section-h-mt">🏆 Eliminatorias</h3>`;
+        [...(d.koRounds || [])].reverse().forEach((r, ri) => {
+          const openAttr = ri === 0 ? ' open' : '';
+          html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+          r.matches.forEach(m => {
+            const penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+          });
+          html += '</details>';
+        });
+      } else {
+        // Copa KO
+        html += `<h3 class="trn-section-h trn-section-h-mt">🏆 Resultados por ronda</h3>`;
+        [...(d.rounds || [])].reverse().forEach((r, ri) => {
+          const openAttr = ri === 0 ? ' open' : '';
+          html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+          r.matches.forEach(m => {
+            const penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
+            if (m.legs === 2) {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+            } else {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+            }
+          });
+          html += '</details>';
+        });
+        if (d.thirdPlace) {
+          const m = d.thirdPlace, penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
+          html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+        }
+      }
+
+      el.innerHTML = html;
+    } catch (err) {
+      console.error('[_renderSummary]', err);
+      el.innerHTML = `<p style="padding:1rem;color:rgba(255,255,255,.5)">Error al renderizar resumen: ${_esc(err.message)}</p>`;
+    }
   }
 
   // ── Stats tab ────────────────────────────────────────────
