@@ -4441,6 +4441,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-mini-team { flex: 1; font: 600 .92rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.84); }
 .trn-mini-pts  { font: 700 .92rem/1 'Rajdhani', sans-serif; color: var(--neon); }
 .trn-mini-gd   { font-size: .76rem; color: rgba(255,255,255,.38); min-width: 2.8rem; text-align: right; }
+.trn-mini-badge { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 
 /* Summary text / rounds */
 .trn-summary-text  { font-size: .88rem; color: rgba(255,255,255,.5); margin: 0 0 .9rem; }
@@ -4499,8 +4500,28 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 }
 .trn-td-pts { font-weight: 700; color: var(--neon); }
 .trn-tr-qual td:first-child { border-left: 3px solid rgba(0,212,255,.5); }
-.trn-tr-rel  td:first-child { border-left: 3px solid rgba(255,60,60,.45); }
+.trn-tr-champ td:first-child { border-left: 3px solid rgba(255,215,0,.75); }
+.trn-tr-champ { background: rgba(255,215,0,.04); }
+.trn-tr-euro  td:first-child { border-left: 3px solid rgba(255,140,0,.55); }
+.trn-tr-rel   td:first-child { border-left: 3px solid rgba(255,60,60,.45); }
 .trn-table-sm th, .trn-table-sm td { padding: .3rem .38rem; font-size: .78rem; }
+
+/* Zone legend */
+.trn-zone-legend {
+  display: flex; align-items: center; gap: .55rem;
+  flex-wrap: wrap;
+  margin-top: .75rem;
+  font-size: .72rem; color: rgba(255,255,255,.4);
+}
+.trn-zl-pip {
+  display: inline-block; width: 8px; height: 8px;
+  border-radius: 2px; flex-shrink: 0;
+}
+.trn-zl-champ { background: rgba(255,215,0,.75); }
+.trn-zl-qual  { background: rgba(0,212,255,.55); }
+.trn-zl-euro  { background: rgba(255,140,0,.55); }
+.trn-zl-rel   { background: rgba(255,60,60,.5); }
+.trn-zl-text  { margin-right: .4rem; }
 
 /* Groups grid */
 .trn-groups-grid {
@@ -4544,20 +4565,39 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-match-pen   { font-size: .7rem; color: rgba(255,255,255,.35); margin-left: .25rem; }
 
 /* Calendar */
-.trn-cal-jornada { margin-bottom: 1.1rem; }
+.trn-cal-jornada { margin-bottom: .9rem; }
 .trn-cal-jornada-label {
   font: 700 .72rem/1 'Rajdhani', sans-serif;
   letter-spacing: .12em; text-transform: uppercase;
-  color: rgba(255,255,255,.35); margin-bottom: .4rem;
-  padding-bottom: .28rem; border-bottom: 1px solid rgba(255,255,255,.06);
+  color: rgba(255,255,255,.38); margin-bottom: .4rem;
+  padding: .32rem 0 .28rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: .45rem;
+}
+.trn-cal-jornada-label::-webkit-details-marker { display: none; }
+.trn-cal-jornada-label::marker                 { display: none; }
+details.trn-cal-jornada > summary.trn-cal-jornada-label::after {
+  content: '▸'; margin-left: auto; font-size: .7rem; color: rgba(255,255,255,.22);
+}
+details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: '▾'; }
+.trn-jornada-cnt {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.4rem; height: 1.1rem; padding: 0 .28rem;
+  font: 600 .63rem/1 'Rajdhani', sans-serif;
+  background: rgba(0,212,255,.09); border: 1px solid rgba(0,212,255,.18);
+  color: rgba(0,212,255,.55); border-radius: 99px;
 }
 .trn-cal-match {
   display: flex; align-items: center; padding: .32rem .1rem;
   font-size: .84rem; border-bottom: 1px solid rgba(255,255,255,.04); gap: .4rem;
 }
-.trn-cal-team-a { flex: 1; text-align: right; color: rgba(255,255,255,.72); }
-.trn-cal-team-b { flex: 1; text-align: left;  color: rgba(255,255,255,.72); }
-.trn-cal-score  {
+.trn-cal-team-side {
+  flex: 1; display: flex; align-items: center; gap: .3rem; min-width: 0;
+}
+.trn-cal-side-right { justify-content: flex-end; }
+.trn-cal-tname { color: rgba(255,255,255,.72); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.trn-cal-badge { width: 16px; height: 16px; object-fit: contain; flex-shrink: 0; }
+.trn-cal-score {
   flex-shrink: 0; min-width: 4.5rem; text-align: center;
   font: 700 .88rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.9);
 }
@@ -4570,6 +4610,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 }
 .trn-stats-pos  { width: 1.4rem; text-align: center; font: 700 .78rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.3); }
 .trn-stats-team { flex: 1; font: 600 .9rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.84); }
+.trn-stats-badge { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
 .trn-stats-gf   { font: 700 .88rem/1 'Rajdhani', sans-serif; color: rgba(0,212,255,.82); }
 .trn-stats-mp   { font-size: .76rem; color: rgba(255,255,255,.3); }
 
@@ -4766,6 +4807,18 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   font-weight: 400;
   color: rgba(255,255,255,.55);
 }
+
+/* Two-leg breakdown row */
+.trn-modal-legs {
+  display: flex; align-items: center; justify-content: center;
+  gap: .6rem; flex-wrap: wrap;
+  font-size: .78rem; color: rgba(255,255,255,.45);
+  margin: -.45rem 0 .8rem;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.trn-modal-leg strong { color: rgba(255,255,255,.75); font-size: .82rem; }
+.trn-modal-leg-sep { color: rgba(255,255,255,.2); }
 
 /* Scorers two-column layout */
 .trn-modal-scorers-row {

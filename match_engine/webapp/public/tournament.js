@@ -893,18 +893,18 @@ const TRN = (() => {
     function _processLeg(leg, teamA, teamB) {
       (leg.scorersA || []).forEach(s => {
         const key = s.name + '|' + (teamA?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: teamA?.name || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: teamA?.name || '', teamSlug: teamA?.slug || '', goals: 0 };
         scorers[key].goals++;
       });
       (leg.scorersB || []).forEach(s => {
         const key = s.name + '|' + (teamB?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: teamB?.name || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: teamB?.name || '', teamSlug: teamB?.slug || '', goals: 0 };
         scorers[key].goals++;
       });
       if (leg.mom) {
         const momTeam = leg.mom.team === 'A' ? teamA : teamB;
         const key = leg.mom.name + '|' + (momTeam?.slug || '');
-        if (!moms[key]) moms[key] = { name: leg.mom.name, team: momTeam?.name || '', count: 0 };
+        if (!moms[key]) moms[key] = { name: leg.mom.name, team: momTeam?.name || '', teamSlug: momTeam?.slug || '', count: 0 };
         moms[key].count++;
       }
     }
@@ -994,13 +994,15 @@ const TRN = (() => {
     const d = _data;
 
     if (d.format === 'liga') {
+      const medals = ['🥇', '🥈', '🥉'];
       const top5 = d.table.slice(0, 5);
       el.innerHTML = _renderStatCards() + `
         <h3 class="trn-section-h">🥇 TOP 5</h3>
         <div class="trn-mini-table">
           ${top5.map((r, i) => `
             <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
-              <span class="trn-mini-pos">${i + 1}</span>
+              <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
+              ${_badgeImg(r.slug, 'trn-mini-badge')}
               <span class="trn-mini-team">${_esc(r.name)}</span>
               <span class="trn-mini-pts">${r.pts} pts</span>
               <span class="trn-mini-gd">${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</span>
@@ -1049,6 +1051,25 @@ const TRN = (() => {
     }
   }
 
+  function _zoneClass(i, total) {
+    if (i === 0) return 'trn-tr-champ';
+    if (total >= 10) {
+      if (i < 4)          return 'trn-tr-qual';
+      if (i < 6)          return 'trn-tr-euro';
+      if (i >= total - 3) return 'trn-tr-rel';
+    } else if (total >= 7) {
+      if (i < 3)          return 'trn-tr-qual';
+      if (i < 4)          return 'trn-tr-euro';
+      if (i >= total - 2) return 'trn-tr-rel';
+    } else if (total >= 5) {
+      if (i < 2)          return 'trn-tr-qual';
+      if (i >= total - 1) return 'trn-tr-rel';
+    } else {
+      if (i >= total - 1) return 'trn-tr-rel';
+    }
+    return '';
+  }
+
   // ── Bracket / Table tab ──────────────────────────────────
   function _renderBracket() {
     const el = $('trn-tab-bracket');
@@ -1069,7 +1090,7 @@ const TRN = (() => {
             </tr></thead>
             <tbody>
               ${d.table.map((r, i) => `
-                <tr class="${i < 4 ? 'trn-tr-qual' : i >= d.table.length - 3 ? 'trn-tr-rel' : ''}">
+                <tr class="${_zoneClass(i, d.table.length)}">
                   <td>${i + 1}</td>
                   <td class="trn-td-team trn-td-badge-team">
                     <img class="trn-table-badge" src="${_badge(r.slug) || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
@@ -1082,6 +1103,12 @@ const TRN = (() => {
                 </tr>`).join('')}
             </tbody>
           </table>
+        </div>
+        <div class="trn-zone-legend">
+          <span class="trn-zl-pip trn-zl-champ"></span><span class="trn-zl-text">Campeón</span>
+          <span class="trn-zl-pip trn-zl-qual"></span><span class="trn-zl-text">Champions</span>
+          <span class="trn-zl-pip trn-zl-euro"></span><span class="trn-zl-text">Europa</span>
+          <span class="trn-zl-pip trn-zl-rel"></span><span class="trn-zl-text">Descenso</span>
         </div>`;
     } else if (d.format === 'copa') {
       el.innerHTML = `<h3 class="trn-section-h">\uD83C\uDFC6 Cuadro</h3>
@@ -1092,14 +1119,16 @@ const TRN = (() => {
       (d.groups || []).forEach(g => {
         html += `<div class="trn-group-card"><div class="trn-group-label">${_esc(g.label)}</div>
           <table class="trn-table trn-table-sm">
-            <thead><tr><th class="trn-th-team">Equipo</th><th>Pts</th><th>DG</th></tr></thead>
+            <thead><tr><th class="trn-th-team">Equipo</th><th title="Partidos jugados">PJ</th><th title="Ganados">G</th><th title="Empatados">E</th><th title="Perdidos">P</th><th title="Goles favor">GF</th><th title="Goles contra">GC</th><th class="trn-th-pts">Pts</th></tr></thead>
             <tbody>${g.table.map((r, i) => `
               <tr class="${i < 2 ? 'trn-tr-qual' : ''}">
                 <td class="trn-td-team trn-td-badge-team">
                   <img class="trn-table-badge" src="${_badge(r.slug) || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
                   ${_esc(r.name)}
                 </td>
-                <td>${r.pts}</td><td>${r.gf-r.ga>0?'+':''}${r.gf-r.ga}</td>
+                <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
+                <td>${r.gf}</td><td>${r.ga}</td>
+                <td class="trn-td-pts">${r.pts}</td>
               </tr>`).join('')}
             </tbody></table></div>`;
       });
@@ -1141,10 +1170,18 @@ const TRN = (() => {
             [...(m.r1?.scorersB || []), ...(m.r2?.scorersA || [])],
             nameA, nameB)
         : _fmtScorers(m.scorersA, m.scorersB, nameA, nameB);
+      const bA = _esc(_badge(m.a?.slug) || '/img/badges/_placeholder.svg');
+      const bB = _esc(_badge(m.b?.slug) || '/img/badges/_placeholder.svg');
       return `<div class="trn-cal-match" onclick="TRN.openMatchModal(${idx})">
-        <span class="trn-cal-team-a">${_esc(nameA)}</span>
+        <span class="trn-cal-team-side">
+          <img class="trn-cal-badge" src="${bA}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <span class="trn-cal-tname">${_esc(nameA)}</span>
+        </span>
         <span class="trn-cal-score">${scoreStr}</span>
-        <span class="trn-cal-team-b">${_esc(nameB)}</span>
+        <span class="trn-cal-team-side trn-cal-side-right">
+          <span class="trn-cal-tname">${_esc(nameB)}</span>
+          <img class="trn-cal-badge" src="${bB}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+        </span>
         ${scorerHtml}
       </div>`;
     }
@@ -1157,19 +1194,20 @@ const TRN = (() => {
       let j = 0, i = 0;
       while (i < total) {
         j++;
-        html += `<div class="trn-cal-jornada"><div class="trn-cal-jornada-label">Jornada ${j}</div>`;
         const end = Math.min(i + chunk, total);
+        const cnt = end - i;
+        html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Jornada ${j} <span class="trn-jornada-cnt">${cnt}</span></summary>`;
         for (let k = i; k < end; k++) {
           const m = d.matches[k];
           html += _matchCard(m, m.a.name, m.b.name, `${m.scoreA ?? '?'} – ${m.scoreB ?? '?'}`);
         }
-        html += `</div>`;
+        html += `</details>`;
         i = end;
       }
     } else if (d.format === 'copa') {
       html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
       [...d.rounds].reverse().forEach(r => {
-        html += `<div class="trn-cal-jornada"><div class="trn-cal-jornada-label">${_esc(r.label)}</div>`;
+        html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
           if (m.legs === 2) {
@@ -1180,27 +1218,27 @@ const TRN = (() => {
               `${m.scoreA} – ${m.scoreB}${penStr}`);
           }
         });
-        html += `</div>`;
+        html += `</details>`;
       });
     } else {
       // champions: groups matches + KO
       html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
       (d.groups || []).forEach(g => {
-        html += `<div class="trn-cal-jornada"><div class="trn-cal-jornada-label">${_esc(g.label)}</div>`;
+        html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
         g.matches.forEach(m => {
           html += _matchCard(m, m.a.name, m.b.name, `${m.scoreA} – ${m.scoreB}`);
         });
-        html += `</div>`;
+        html += `</details>`;
       });
       html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
       [...(d.koRounds || [])].reverse().forEach(r => {
-        html += `<div class="trn-cal-jornada"><div class="trn-cal-jornada-label">${_esc(r.label)}</div>`;
+        html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
           html += _matchCard(m, m.a.name, m.b.name,
             `${m.scoreA} – ${m.scoreB}${penStr}`);
         });
-        html += `</div>`;
+        html += `</details>`;
       });
     }
 
@@ -1216,7 +1254,7 @@ const TRN = (() => {
     // Aggregate all matches
     const allMatches = _getAllMatches(d);
     const totals = {};
-    _teams.forEach(t => { totals[t.slug] = { name: t.name, gf: 0, ga: 0, mp: 0, w: 0 }; });
+    _teams.forEach(t => { totals[t.slug] = { name: t.name, slug: t.slug, gf: 0, ga: 0, mp: 0, w: 0 }; });
 
     allMatches.forEach(m => {
       const sa = m.scoreA ?? 0, sb = m.scoreB ?? 0;
@@ -1234,6 +1272,7 @@ const TRN = (() => {
         ${(d.pichichi || []).slice(0, 10).map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
+            ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles">${r.goals} goles</span>
             <span class="trn-stats-mp trn-stats-club">${_esc(r.team)}</span>
@@ -1245,6 +1284,7 @@ const TRN = (() => {
         ${(d.mvp || []).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
+            ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf">${r.count}× MOM</span>
             <span class="trn-stats-mp trn-stats-club">${_esc(r.team)}</span>
@@ -1255,6 +1295,7 @@ const TRN = (() => {
         ${top.map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
+            ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles">${r.gf} goles</span>
             <span class="trn-stats-mp" title="Partidos">${r.mp} partidos</span>
@@ -1265,6 +1306,7 @@ const TRN = (() => {
         ${Object.values(totals).filter(r => r.mp > 0).sort((a, b) => a.ga - b.ga).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
+            ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
             <span class="trn-stats-mp">${r.mp} partidos</span>
@@ -1329,7 +1371,12 @@ const TRN = (() => {
           <span>${_esc(nameB)}</span>
           <img class="trn-modal-badge" src="${_esc(mBadgeB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
         </div>
-      </div>`;
+      </div>
+      ${m.legs === 2 ? `<div class="trn-modal-legs">
+        <span class="trn-modal-leg">Ida: <strong>${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'}</strong></span>
+        <span class="trn-modal-leg-sep">&middot;</span>
+        <span class="trn-modal-leg">Vuelta: <strong>${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</strong></span>
+      </div>` : ''}`;
 
     const grpScorers = (list) => {
       if (!list.length) return '<span class="trn-modal-no-goals">—</span>';
