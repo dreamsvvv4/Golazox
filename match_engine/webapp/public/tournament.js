@@ -1,9 +1,9 @@
-// tournament.js â€” GolazoX Tournament Engine v2.0
+// tournament.js — GolazoX Tournament Engine v2.0
 // Handles Wizard UI + bulk simulation + Dashboard (4 tabs)
 'use strict';
 
 const TRN = (() => {
-  // â”€â”€ State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── State ───────────────────────────────────────────────
   let _fmt        = null;   // 'copa' | 'liga' | 'champions'
   let _numTeams   = 16;
   let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: false };
@@ -13,7 +13,7 @@ const TRN = (() => {
   let _data       = null;   // computed tournament result
   let _tab        = 'summary';
   let _matchCache = [];     // flat list for modal lookup
-  let _badgeCache  = {};     // slug â†’ badge URL
+  let _badgeCache  = {};     // slug → badge URL
   let _seasonCache = {};     // slug → seasons[] from suggest results
   let _modalIdx   = -1;     // current match in modal for prev/next nav
   let _trnCatalog  = null;   // cached catalog for league loader
@@ -24,7 +24,7 @@ const TRN = (() => {
     champions: [8, 12, 16, 20, 24, 32],
   };
 
-  // â”€â”€ DOM helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── DOM helpers ─────────────────────────────────────────
   const $ = id => document.getElementById(id);
   const show = el => el && el.classList.remove('hidden');
   const hide = el => el && el.classList.add('hidden');
@@ -32,12 +32,12 @@ const TRN = (() => {
   // _lang is defined in app.js as a top-level let (shared global scope)
   const _getLang = () => { try { return _lang || 'es'; } catch(_) { return 'es'; } };
 
-  // â”€â”€ Locked legendary teams (unlock: 5 sims or Twitter share) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Locked legendary teams (unlock: 5 sims or Twitter share) ──────────────
   const _LOCKED_TEAMS = {
     'brasilien':         { label: 'Brasil \'70' },
     'ajax-amsterdam':    { label: 'Ajax Amsterdam \'72' },
-    'america-historica': { label: 'AmÃ©rica HistÃ³rica' },
-    'europa-historica':  { label: 'Europa HistÃ³rica' },
+    'america-historica': { label: 'América Histórica' },
+    'europa-historica':  { label: 'Europa Histórica' },
   };
   function _isUnlocked() {
     try { return localStorage.getItem('gx_unlocked') === '1'; } catch(_) { return false; }
@@ -55,7 +55,7 @@ const TRN = (() => {
     return yr ? `${t.name} '${yr.slice(2)}` : (t.name || '?');
   };
 
-  // â”€â”€ Main tab switching (âš½ Partido / ðŸ† Torneo) â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Main tab switching (⚽ Partido / 🏆 Torneo) ─────────
   function switchMainTab(tab) {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
@@ -66,7 +66,7 @@ const TRN = (() => {
     if (tab === 'trn') _checkResume();
   }
 
-  // â”€â”€ Wizard step navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Wizard step navigation ───────────────────────────────
   function showStep(n) {
     for (let i = 1; i <= 3; i++) {
       const el = $(`trn-step-${i}`);
@@ -114,7 +114,7 @@ const TRN = (() => {
 
 
   function goStep2() {
-    if (!_fmt) { _showToast('âš  Selecciona un formato primero.'); return; }
+    if (!_fmt) { _showToast('⚠ Selecciona un formato primero.'); return; }
     // _numTeams already updated by setNumTeams / _buildNumTeamsPicker
     const container = $('trn-rules-list');
     if (container) {
@@ -124,7 +124,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">Formato de partido</span>
-              <span class="trn-rule-hint">Partido Ãºnico (estilo FA Cup) Â· Activo = Ida y Vuelta (estilo Copa del Rey)</span>
+              <span class="trn-rule-hint">Partido único (estilo FA Cup) · Activo = Ida y Vuelta (estilo Copa del Rey)</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
@@ -134,7 +134,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">Desempate</span>
-              <span class="trn-rule-hint">Inactivo = Penaltis directos al 90' Â· Activo = PrÃ³rroga + Penaltis</span>
+              <span class="trn-rule-hint">Inactivo = Penaltis directos al 90' · Activo = Prórroga + Penaltis</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
@@ -143,8 +143,8 @@ const TRN = (() => {
           </label>
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Partido por el 3Âº puesto</span>
-              <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolaciÃ³n</span>
+              <span class="trn-rule-name">Partido por el 3º puesto</span>
+              <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
@@ -156,7 +156,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">Vueltas</span>
-              <span class="trn-rule-hint">Inactivo = Solo Ida (torneo rÃ¡pido) Â· Activo = Ida y Vuelta (temporada completa)</span>
+              <span class="trn-rule-hint">Inactivo = Solo Ida (torneo rápido) · Activo = Ida y Vuelta (temporada completa)</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
@@ -168,7 +168,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">Fase de grupos</span>
-              <span class="trn-rule-hint">Partido Ãºnico (estilo Mundial) Â· Activo = Ida y Vuelta (estilo Champions)</span>
+              <span class="trn-rule-hint">Partido único (estilo Mundial) · Activo = Ida y Vuelta (estilo Champions)</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
@@ -178,7 +178,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">Fase eliminatoria</span>
-              <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO Â· La final siempre a partido Ãºnico</span>
+              <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO · La final siempre a partido único</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
@@ -218,7 +218,7 @@ const TRN = (() => {
 
   function goBack(step) { showStep(step); }
 
-  // â”€â”€ Step 3: Team management â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Step 3: Team management ──────────────────────────────
   function _renderTeamSlots() {
     const container = $('trn-teams-list');
     if (!container) return;
@@ -228,9 +228,9 @@ const TRN = (() => {
         ${_badgeImg(t.slug, 'trn-slot-badge')}
         <span class="trn-slot-name">${_esc(t.name)}</span>
         ${yr ? `<span class="trn-slot-era">'${yr.slice(2)}</span>` : ''}
-        <button class="trn-slot-remove" onclick="TRN.removeTeam(${i})" title="Quitar">âœ•</button>
+        <button class="trn-slot-remove" onclick="TRN.removeTeam(${i})" title="Quitar">✕</button>
       </div>`;
-    }).join('') || '<p class="trn-teams-empty">NingÃºn equipo aÃ±adido todavÃ­a.<br><span style="font-size:.75rem;opacity:.6">Busca por nombre, paÃ­s o usa âš¡ Aleatorio</span></p>';
+    }).join('') || '<p class="trn-teams-empty">Ningún equipo añadido todavía.<br><span style="font-size:.75rem;opacity:.6">Busca por nombre, país o usa ⚡ Aleatorio</span></p>';
 
     // Update count display
     const countEl = $('trn-teams-count');
@@ -248,7 +248,7 @@ const TRN = (() => {
     _updatePreDraw();
   }
 
-  // â”€â”€ Pre-draw: Copa bracket & Champions group draw â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Pre-draw: Copa bracket & Champions group draw ─────────
   function _generateDraw() {
     const shuffled = [..._teams].sort(() => Math.random() - 0.5);
     _draw = [];
@@ -311,8 +311,8 @@ const TRN = (() => {
       };
       const roundName = ROUND_NAMES[_numTeams] || `Primera ronda (${_numTeams / 2} eliminatorias)`;
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">ðŸŽ² ${_esc(roundName)}</span>
-        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleDraw()">ðŸ”€ Nuevo sorteo</button>
+        <span class="trn-label">🎲 ${_esc(roundName)}</span>
+        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleDraw()">🔀 Nuevo sorteo</button>
       </div><div class="trn-copa-draw-grid">`;
       _draw.forEach((m, i) => {
         const seedStar = m.seededA ? ' <span class="trn-draw-seed">\u2605</span>' : '';
@@ -327,8 +327,8 @@ const TRN = (() => {
       el.innerHTML = html;
     } else if (_fmt === 'champions') {
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">ðŸŽ² Sorteo de grupos</span>
-        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleGroupsDraw()">ðŸ”€ Nuevo sorteo</button>
+        <span class="trn-label">🎲 Sorteo de grupos</span>
+        <button class="trn-draw-reshuffle" onclick="TRN.reshuffleGroupsDraw()">🔀 Nuevo sorteo</button>
       </div><div class="trn-groups-draw-grid">`;
       _groupsDraw.forEach((grp, g) => {
         html += `<div class="trn-group-draw-card">
@@ -431,7 +431,7 @@ const TRN = (() => {
             <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
             <span class="trn-search-item-name">${name}</span>
             ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}
-            <span class="trn-si-lock">ðŸ”’</span>
+            <span class="trn-si-lock">🔒</span>
           </div>`;
         }
         return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}','${_esc(ls)}')">
@@ -448,8 +448,8 @@ const TRN = (() => {
     const n = parseInt(localStorage.getItem('gx_sim_count') || '0', 10) || 0;
     const remaining = Math.max(0, 5 - n);
     const msg = remaining > 0
-      ? `ðŸ”’ Equipo legendario bloqueado Â· ${remaining} simulaciÃ³n${remaining !== 1 ? 'es' : ''} mÃ¡s para desbloquear`
-      : 'ðŸ”’ Equipo legendario bloqueado Â· Comparte en Twitter para desbloquear';
+      ? `🔒 Equipo legendario bloqueado · ${remaining} simulación${remaining !== 1 ? 'es' : ''} más para desbloquear`
+      : '🔒 Equipo legendario bloqueado · Comparte en Twitter para desbloquear';
     _showToast(msg);
   }
 
@@ -474,7 +474,7 @@ const TRN = (() => {
     const safeName  = _esc(name);
     const safeBadge = _esc(badge);
 
-    panel.innerHTML = `<div class="trn-preview-loading"><div class="trn-spinner"></div>Cargando plantillaâ€¦</div>`;
+    panel.innerHTML = `<div class="trn-preview-loading"><div class="trn-spinner"></div>Cargando plantilla…</div>`;
     panel.classList.remove('hidden');
 
     const GK_SET  = new Set(['GK']);
@@ -487,7 +487,7 @@ const TRN = (() => {
       const rCls = rt >= 90 ? 'rtg-gold' : rt >= 80 ? 'rtg-cyan' : '';
       return `<div class="trn-preview-pos-row">
         <span class="trn-preview-pos-label ${posClass}">${_esc(posLabel)}</span>
-        <span class="trn-preview-player-name">${_esc(p.name || 'â€”')}</span>
+        <span class="trn-preview-player-name">${_esc(p.name || '—')}</span>
         ${rt > 0 ? `<span class="trn-preview-rating ${rCls}">${rt}</span>` : ''}
       </div>`;
     };
@@ -537,13 +537,13 @@ const TRN = (() => {
           <img class="trn-preview-badge" src="${badgeUrl}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <div class="trn-preview-meta">
             <div class="trn-preview-team-name">${safeName}${resolvedEra ? ` <span class="trn-preview-season">'${resolvedEra.slice(-2)}</span>` : ''}</div>
-            ${formation ? `<span class="trn-preview-formation">â¬¢ ${formation}</span>` : ''}
+            ${formation ? `<span class="trn-preview-formation">⬢ ${formation}</span>` : ''}
           </div>
         </div>
         ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
         <div class="trn-preview-actions">
-          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(resolvedEra)}','${safeBadge}')">âœ“ AÃ±adir equipo</button>
-          <button class="btn-secondary" onclick="TRN.clearSearch()">â† Volver</button>
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(resolvedEra)}','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
         </div>`;
     } catch (_err) {
       panel.innerHTML = `
@@ -554,8 +554,8 @@ const TRN = (() => {
           </div>
         </div>
         <div class="trn-preview-actions">
-          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(era)}','${safeBadge}')">âœ“ AÃ±adir equipo</button>
-          <button class="btn-secondary" onclick="TRN.clearSearch()">â† Volver</button>
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(era)}','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
         </div>`;
     }
   }
@@ -648,29 +648,62 @@ const TRN = (() => {
     }
   }
 
+  // Returns the nearest valid count >= n for the current format.
+  // Prefers rounding UP to include all real-league teams; caps at max if too many.
+  function _snapCount(n) {
+    const counts = VALID_COUNTS[_fmt] || [8, 16];
+    if (counts.includes(n)) return n;
+    const roundUp = counts.find(c => c >= n);
+    return roundUp !== undefined ? roundUp : counts[counts.length - 1];
+  }
+
   async function loadRealLeague(groupKey) {
     try {
       const catalog = await _getTrnCatalog();
       const leagueTeams = catalog.filter(c => c.group === groupKey);
       if (!leagueTeams.length) { _showToast('Sin equipos en esta liga'); return; }
-      _teams = [];
-      leagueTeams.forEach(t => {
+
+      const teamFromEntry = t => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
         const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
-        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
-      });
-      setNumTeams(_teams.length);
+        return { slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era };
+      };
+
+      _teams = leagueTeams.map(teamFromEntry);
+      const target = _snapCount(_teams.length);
+
+      // Trim if league is larger than the largest valid count
+      if (_teams.length > target) _teams = _teams.slice(0, target);
+
+      // Fill with random teams from other groups if league is smaller than target
+      if (_teams.length < target) {
+        const needed  = target - _teams.length;
+        const already = new Set(_teams.map(t => t.slug));
+        const pool    = catalog.filter(t => !already.has(t.slug))
+                                .sort(() => Math.random() - 0.5)
+                                .slice(0, needed);
+        pool.forEach(t => _teams.push(teamFromEntry(t)));
+      }
+
+      // Update pill picker to the snapped count (pill will exist and highlight)
+      setNumTeams(target);
+      _buildNumTeamsPicker(); // rebuild pills so target pill is active
       closeLeagueLoader();
       _renderTeamSlots();
+
       const leagueName = _esc(groupKey.replace(/^\S+\s*/, ''));
-      _showToast('\u2705 ' + _teams.length + ' equipos de ' + leagueName + ' cargados');
+      const filled = target - leagueTeams.length;
+      const msg = filled > 0
+        ? `✅ ${leagueTeams.length} eq. de ${leagueName} + ${filled} aleatorios`
+        : `✅ ${_teams.length} equipos de ${leagueName} cargados`;
+      _showToast(msg);
       try { _gx('trn_load_real_league', { league: groupKey, count: _teams.length }); } catch(_) {}
     } catch (_) {
       _showToast('Error al cargar la liga.');
     }
   }
-  // â”€â”€ Bulk simulation call â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Bulk simulation call ─────────────────────────────────
   async function _bulkSim(matchSpecs) {
     // Split into batches of 50 if needed
     const BATCH = 50;
@@ -689,12 +722,12 @@ const TRN = (() => {
     return all;
   }
 
-  // â”€â”€ Run simulation entry point â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Run simulation entry point ───────────────────────────
   async function runSimulation() {
     if (_teams.length !== _numTeams) return;
     show($('trn-progress'));
     hide($('trn-step-3-actions'));
-    _setProgress('Iniciando simulaciÃ³nâ€¦', 0);
+    _setProgress('Iniciando simulación…', 0);
     try { _gx('trn_simulate_start', { format: _fmt, teams: _numTeams }); } catch(_) {}
 
     try {
@@ -716,12 +749,12 @@ const TRN = (() => {
     } catch (err) {
       _stopTrnLoadCycle();
       console.error('[TRN]', err);
-      $('trn-progress-text').textContent = 'âš  Error en la simulaciÃ³n. IntÃ©ntalo de nuevo.';
+      $('trn-progress-text').textContent = '⚠ Error en la simulación. Inténtalo de nuevo.';
       show($('trn-step-3-actions'));
     }
   }
 
-  // â”€â”€ localStorage persistence â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── localStorage persistence ──────────────────────────────────
   const _LS_KEY = 'trn_v2_state';
   function _saveState() {
     try {
@@ -748,9 +781,9 @@ const TRN = (() => {
     if (_data) { banner.classList.add('hidden'); return; }
     const saved = _loadState();
     if (!saved?.data) { banner.classList.add('hidden'); return; }
-    const fmtLabel = saved.fmt === 'copa' ? 'ðŸ† Copa' : saved.fmt === 'liga' ? 'ðŸ“Š Liga' : 'â­ Champions';
+    const fmtLabel = saved.fmt === 'copa' ? '🏆 Copa' : saved.fmt === 'liga' ? '📊 Liga' : '⭐ Champions';
     const desc = $('trn-resume-desc');
-    if (desc) desc.textContent = `${fmtLabel} Â· ${saved.teams?.length || 0} equipos`;
+    if (desc) desc.textContent = `${fmtLabel} · ${saved.teams?.length || 0} equipos`;
     banner.classList.remove('hidden');
     _renderHistory();
   }
@@ -774,18 +807,18 @@ const TRN = (() => {
     if (banner) banner.classList.add('hidden');
   }
 
-  // â”€â”€ Historial de torneos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Historial de torneos ───────────────────────────────────
   const _LS_HIST = 'trn_v2_history';
   function _pushHistory(data) {
     try {
       const hist = _loadHistory();
-      const fmtLabel = data.format === 'copa' ? 'ðŸ† Copa' : data.format === 'liga' ? 'ðŸ“Š Liga' : 'â­ Champions';
+      const fmtLabel = data.format === 'copa' ? '🏆 Copa' : data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
       const thirdName = data.thirdPlace?.winner?.name || null;
       const entry = {
         ts: Date.now(),
         fmt: data.format,
         fmtLabel,
-        champion: data.champion?.name || 'â€”',
+        champion: data.champion?.name || '—',
         champSlug: data.champion?.slug || '',
         teams: _teams.length,
         pichichi: data.pichichi?.[0]?.name || null,
@@ -819,36 +852,36 @@ const TRN = (() => {
         <span class="trn-hist-date">${date}</span>
         <span class="trn-hist-fmt">${h.fmtLabel}</span>
         <span class="trn-hist-champ">${_esc(h.champion)}</span>
-        ${h.pichichi ? `<span class="trn-hist-pich">âš½ ${_esc(h.pichichi)}</span>` : ''}
+        ${h.pichichi ? `<span class="trn-hist-pich">⚽ ${_esc(h.pichichi)}</span>` : ''}
         <span class="trn-hist-teams">${h.teams} eq</span>
       </div>`;
     }).join('');
   }
 
-  // â”€â”€ Compartir resultado â€” Canvas poster â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Compartir resultado — Canvas poster ───────────────────
   async function shareTournament() {
     if (!_data) return;
     try { _gx('trn_share', { format: _data.format }); } catch(_) {}
     const btn = document.querySelector('.trn-share-btn');
-    if (btn) { btn.disabled = true; btn.textContent = 'â³ Generandoâ€¦'; }
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Generando…'; }
     try {
       const blob = await _generateTrnPoster(_data);
       const champSlug = _data.champion?.slug || 'torneo';
       const fileName = `golazox-${champSlug}.png`;
       const file = new File([blob], fileName, { type: 'image/png' });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: `ðŸ† ${_data.champion?.name || 'GolazoX'} â€” GolazoX` });
+        await navigator.share({ files: [file], title: `🏆 ${_data.champion?.name || 'GolazoX'} — GolazoX` });
       } else {
         _scDownload(blob, fileName);
-        _showToast('ðŸ–¼ PÃ³ster descargado');
+        _showToast('🖼 Póster descargado');
       }
     } catch (err) {
       if (err?.name !== 'AbortError') {
         console.error('[TRN poster]', err);
-        _showToast('âš  No se pudo generar el pÃ³ster');
+        _showToast('⚠ No se pudo generar el póster');
       }
     } finally {
-      if (btn) { btn.disabled = false; btn.textContent = 'ðŸ“¤ Compartir'; }
+      if (btn) { btn.disabled = false; btn.textContent = '📤 Compartir'; }
     }
   }
 
@@ -878,7 +911,7 @@ const TRN = (() => {
     const DIM     = 'rgba(255,255,255,0.55)';
     const DIM2    = 'rgba(255,255,255,0.28)';
 
-    // â”€â”€ Background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Background ──────────────────────────────────────────
     ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, W, H);
     const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
     bgGrad.addColorStop(0,   '#070710');
@@ -914,7 +947,7 @@ const TRN = (() => {
     topBar.addColorStop(1, 'rgba(0,212,255,0)');
     ctx.fillStyle = topBar; ctx.fillRect(0, 0, W, 3);
 
-    // â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Header ──────────────────────────────────────────────
     ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     ctx.font = 'bold 100px "Rajdhani",Arial,sans-serif';
     _scGlow(ctx, 'GOLAZOX', W / 2, 108, CYAN, 40);
@@ -934,21 +967,21 @@ const TRN = (() => {
 
     _scDivider(ctx, 262, W);
 
-    // â”€â”€ Load champion badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Load champion badge ──────────────────────────────────
     const champSlug   = d.champion?.slug || '';
     const champBadge  = _badge(champSlug) || `/img/badges/${champSlug}.svg`;
     const imgChamp    = await _scLoadImg(champBadge);
 
-    // â”€â”€ Champion section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Champion section ─────────────────────────────────────
     const CHAMP_CY = 460;
     _scBadge(ctx, imgChamp, W / 2, CHAMP_CY, 168, GOLD, d.champion?.name);
 
     ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
     ctx.fillStyle = GOLD + 'cc';
-    ctx.fillText('CAMPEÃ“N DEL TORNEO', W / 2, 655);
+    ctx.fillText('CAMPEÓN DEL TORNEO', W / 2, 655);
 
-    const champName = _scSafe(d.champion?.name || 'â€”');
+    const champName = _scSafe(d.champion?.name || '—');
     const champFontSz = champName.length > 18 ? 52 : champName.length > 14 ? 62 : champName.length > 10 ? 72 : 80;
     ctx.font = `bold ${champFontSz}px "Rajdhani",Arial,sans-serif`;
     _scGlow(ctx, champName, W / 2, 720, WHITE, 12);
@@ -964,15 +997,15 @@ const TRN = (() => {
     _scDivider(ctx, 800, W);
     let curY = 854;
 
-    // â”€â”€ Result section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Result section ────────────────────────────────────────
     if (d.format === 'liga' && d.table) {
       ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
       ctx.fillStyle = DIM2; ctx.textAlign = 'center';
-      ctx.fillText('CLASIFICACIÃ“N FINAL', W / 2, curY);
+      ctx.fillText('CLASIFICACIÓN FINAL', W / 2, curY);
       curY += 56;
 
       const podium  = d.table.slice(0, 3);
-      const medals  = ['ðŸ¥‡', 'ðŸ¥ˆ', 'ðŸ¥‰'];
+      const medals  = ['🥇', '🥈', '🥉'];
       const pillClr = [
         'rgba(255,215,0,0.12)', 'rgba(200,200,200,0.10)', 'rgba(205,127,50,0.10)',
       ];
@@ -998,13 +1031,13 @@ const TRN = (() => {
         // Points
         ctx.textAlign = 'right'; ctx.font = '600 38px "Rajdhani",Arial,sans-serif';
         ctx.fillStyle = DIM;
-        ctx.fillText(`${t.pts ?? 'â€”'} pts`, W - 80, rowY + 22);
+        ctx.fillText(`${t.pts ?? '—'} pts`, W - 80, rowY + 22);
         ctx.textAlign = 'center';
       }
       curY += podium.length * 96 + 40;
 
     } else {
-      // Copa / Champions â€” show final match
+      // Copa / Champions — show final match
       const rounds   = d.format === 'copa' ? d.rounds : d.koRounds;
       const lastRnd  = rounds?.[rounds.length - 1];
       const fin      = lastRnd?.matches?.[0];
@@ -1029,7 +1062,7 @@ const TRN = (() => {
         const sA = fin.scoreA ?? '?', sB = fin.scoreB ?? '?';
         ctx.font = 'bold 120px "Rajdhani",Arial,sans-serif';
         ctx.textAlign = 'center';
-        _scGlow(ctx, `${sA}â€“${sB}`, W / 2, BADGE_CY + 48, WHITE, 15);
+        _scGlow(ctx, `${sA}–${sB}`, W / 2, BADGE_CY + 48, WHITE, 15);
 
         // Team names
         curY = BADGE_CY + 116;
@@ -1044,7 +1077,7 @@ const TRN = (() => {
           curY += 42;
           ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
           ctx.fillStyle = GOLD; ctx.textAlign = 'center';
-          ctx.fillText(`(Penaltis: ${fin.penA}â€“${fin.penB})`, W / 2, curY);
+          ctx.fillText(`(Penaltis: ${fin.penA}–${fin.penB})`, W / 2, curY);
         }
         curY += 60;
       }
@@ -1053,7 +1086,7 @@ const TRN = (() => {
     _scDivider(ctx, curY, W);
     curY += 54;
 
-    // â”€â”€ Individual Awards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Individual Awards ─────────────────────────────────────
     ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
     ctx.fillStyle = DIM2; ctx.textAlign = 'center';
     ctx.fillText('PREMIOS INDIVIDUALES', W / 2, curY);
@@ -1065,7 +1098,7 @@ const TRN = (() => {
       _scBadge(ctx, imgP, 100, curY + 22, 36, CYAN, p.team);
       ctx.textAlign = 'left';
       ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = CYAN;
-      ctx.fillText('âš½ PICHICHI', 152, curY + 6);
+      ctx.fillText('⚽ PICHICHI', 152, curY + 6);
       ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
       ctx.fillText(_scSafe(p.name), 152, curY + 42);
       ctx.textAlign = 'right';
@@ -1083,12 +1116,12 @@ const TRN = (() => {
       _scBadge(ctx, imgM, 100, curY + 22, 36, MAGENTA, m.team);
       ctx.textAlign = 'left';
       ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = MAGENTA;
-      ctx.fillText('â­ MVP', 152, curY + 6);
+      ctx.fillText('⭐ MVP', 152, curY + 6);
       ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
       ctx.fillText(_scSafe(m.name), 152, curY + 42);
       ctx.textAlign = 'right';
       ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
-      ctx.fillText(`${m.count}Ã—`, W - 80, curY + 32);
+      ctx.fillText(`${m.count}×`, W - 80, curY + 32);
       ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
       ctx.fillText('MOM', W - 80, curY + 58);
       ctx.textAlign = 'center';
@@ -1097,7 +1130,7 @@ const TRN = (() => {
 
     _scDivider(ctx, curY, W);
 
-    // â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Footer ───────────────────────────────────────────────
     const footerY = curY + 24;
     const botBar  = ctx.createLinearGradient(0, 0, W, 0);
     botBar.addColorStop(0, 'rgba(0,212,255,0)');
@@ -1115,7 +1148,7 @@ const TRN = (() => {
     ctx.fillStyle = DIM2;
     ctx.fillText('Football Time Machine', W / 2, footerY + 88);
 
-    // â”€â”€ Crop to content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Crop to content ───────────────────────────────────────
     const finalH  = footerY + 124;
     const out     = document.createElement('canvas');
     out.width = W; out.height = Math.min(finalH, H);
@@ -1155,16 +1188,16 @@ const TRN = (() => {
   }
 
   const _TRN_LOADING_MSGS = [
-    'Calculando xG con distribuciÃ³n de Poissonâ€¦',
-    'Simulando 30 000 escenarios por partidoâ€¦',
-    'Aplicando ratings histÃ³ricos de plantillaâ€¦',
-    'Resolviendo eliminatorias y desempatesâ€¦',
-    'Calculando diferencia de goles y puntosâ€¦',
-    'Determinando MVP y Pichichi del torneoâ€¦',
-    'Compilando la tabla de clasificaciÃ³nâ€¦',
-    'Construyendo el cuadro de eliminatoriasâ€¦',
-    'Generando estadÃ­sticas comparadasâ€¦',
-    'Finalizando resultados del torneoâ€¦',
+    'Calculando xG con distribución de Poisson…',
+    'Simulando 30 000 escenarios por partido…',
+    'Aplicando ratings históricos de plantilla…',
+    'Resolviendo eliminatorias y desempates…',
+    'Calculando diferencia de goles y puntos…',
+    'Determinando MVP y Pichichi del torneo…',
+    'Compilando la tabla de clasificación…',
+    'Construyendo el cuadro de eliminatorias…',
+    'Generando estadísticas comparadas…',
+    'Finalizando resultados del torneo…',
   ];
   let _trnLoadTimer = null;
   function _startTrnLoadCycle() {
@@ -1193,7 +1226,7 @@ const TRN = (() => {
     if (pct !== undefined && pct < 10) _startTrnLoadCycle();
   }
 
-  // â”€â”€ Match cache (built once after simulation, used by bracket + calendar) â”€
+  // ── Match cache (built once after simulation, used by bracket + calendar) ─
   function _buildMatchCache(data) {
     _matchCache = [];
     const add = (m, ctx) => {
@@ -1202,18 +1235,18 @@ const TRN = (() => {
     };
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
-      data.matches.forEach((m, i) => add(m, `Jornada ${Math.floor(i / chunk) + 1} Â· Liga`));
+      data.matches.forEach((m, i) => add(m, `Jornada ${Math.floor(i / chunk) + 1} · Liga`));
     } else if (data.format === 'copa') {
-      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' Â· Copa')));
-      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto Â· Copa');
+      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' · Copa')));
+      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Copa');
     } else {
       (data.groups || []).forEach(g => g.matches.forEach(m => add(m, g.label)));
-      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' Â· Champions')));
-      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto Â· Champions');
+      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' · Champions')));
+      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Champions');
     }
   }
 
-  // â”€â”€ Champion reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Champion reveal ──────────────────────────────────────
   function _confetti() {
     const el = $('trn-confetti');
     if (!el) return;
@@ -1242,11 +1275,11 @@ const TRN = (() => {
     const imgEl = $('trn-reveal-badge');
     if (imgEl) { imgEl.src = badge || '/img/badges/_placeholder.svg'; }
     const nameEl = $('trn-reveal-name');
-    if (nameEl) nameEl.textContent = data.champion?.name || 'â€”';
+    if (nameEl) nameEl.textContent = data.champion?.name || '—';
     const fmtEl = $('trn-reveal-format');
     if (fmtEl) fmtEl.textContent =
-      data.format === 'copa' ? 'ðŸ† Copa Â· CampeÃ³n' :
-      data.format === 'liga' ? 'ðŸ“Š Liga Â· CampeÃ³n' : 'â­ Champions Â· CampeÃ³n';
+      data.format === 'copa' ? '🏆 Copa · Campeón' :
+      data.format === 'liga' ? '📊 Liga · Campeón' : '⭐ Champions · Campeón';
     el.classList.remove('hidden');
     _confetti();
     await new Promise(res => {
@@ -1255,7 +1288,7 @@ const TRN = (() => {
     });
   }
 
-  // â”€â”€ Visual bracket (KO tree) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Visual bracket (KO tree) ─────────────────────────────
   function _computeBracketPositions(rounds) {
     const MATCH_H = 84, PAIR_GAP = 8, INTER_PAIR = 16;
     const positions = [];
@@ -1357,7 +1390,7 @@ const TRN = (() => {
     return html;
   }
 
-  // â”€â”€ COPA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── COPA ─────────────────────────────────────────────────
   async function _simulateCopa() {
     const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final',
       16: 'Octavos de final', 32: 'Dieciseisavos de final', 64: 'Treinta y dos avos' };
@@ -1373,7 +1406,7 @@ const TRN = (() => {
     while (bracket.length > 1) {
       const n = bracket.length;
       const label = ROUND_LABELS[n] || `Ronda (${n})`;
-      _setProgress(`Simulando ${label}â€¦`, 5 + Math.round((roundsDone / totalRounds) * 90));
+      _setProgress(`Simulando ${label}…`, 5 + Math.round((roundsDone / totalRounds) * 90));
       const isFinal = n === 2;
       const specs = [];
 
@@ -1404,7 +1437,7 @@ const TRN = (() => {
           if (aggA > aggB) winner = a;
           else if (aggB > aggA) winner = b;
           else {
-            // Tie on agg â€” simulate penalties inline via another spec
+            // Tie on agg — simulate penalties inline via another spec
             const penSpecs = [{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 200 + i, penalties: true }];
             const penRes = await _bulkSim(penSpecs);
             penA = penRes[0].penA; penB = penRes[0].penB;
@@ -1430,10 +1463,10 @@ const TRN = (() => {
       roundsDone++;
     }
 
-    // â”€â”€ Partido por el Tercer Puesto (opcional) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Partido por el Tercer Puesto (opcional) ───────────
     let thirdPlace = null;
     if (_rules.tercerPuesto && rounds.length >= 2) {
-      _setProgress('Simulando 3Âº puestoâ€¦', 97);
+      _setProgress('Simulando 3º puesto…', 97);
       const semiRound = rounds[rounds.length - 2];
       const losers = semiRound.matches.map(m => (m.winner?.slug === m.a?.slug ? m.b : m.a)).filter(Boolean);
       if (losers.length === 2) {
@@ -1453,7 +1486,7 @@ const TRN = (() => {
     return { match: { a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB, scorersA: r.scorersA||[], scorersB: r.scorersB||[], mom: r.mom||null, stats: r.stats||null, winner, legs: 1 }, winner };
   }
 
-  // â”€â”€ LIGA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── LIGA ─────────────────────────────────────────────────
   async function _simulateLiga() {
     const teams = [..._teams];
     const table = teams.map(t => ({ ...t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
@@ -1471,7 +1504,7 @@ const TRN = (() => {
     const BATCH = 50;
     for (let b = 0; b < fixtures.length; b += BATCH) {
       const chunk = fixtures.slice(b, b + BATCH);
-      _setProgress(`Simulando jornadasâ€¦ (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length} partidos)`, 5 + Math.round(b / fixtures.length * 90));
+      _setProgress(`Simulando jornadas… (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length} partidos)`, 5 + Math.round(b / fixtures.length * 90));
       const specs = chunk.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era, eraB: f.b.era, salt: b + i + 9000, penalties: false,
       }));
@@ -1496,7 +1529,7 @@ const TRN = (() => {
     return { format: 'liga', champion: table[0], table, matches: fixtures, teams: _teams };
   }
 
-  // â”€â”€ CHAMPIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── CHAMPIONS ────────────────────────────────────────────
   async function _simulateChampions() {
     const GRP_SIZE = 4;
     const groups = _groupsDraw.length > 0 ? _groupsDraw : (() => {
@@ -1509,7 +1542,7 @@ const TRN = (() => {
     const groupData = [];
     for (let g = 0; g < groups.length; g++) {
       const grpPct = 5 + Math.round((g / totalGroups) * 55);
-      _setProgress(`Simulando gruposâ€¦ (${g + 1}/${totalGroups})`, grpPct);
+      _setProgress(`Simulando grupos… (${g + 1}/${totalGroups})`, grpPct);
       const grp = groups[g];
       const table = grp.map(t => ({ ...t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
       const idxG = {};
@@ -1564,7 +1597,7 @@ const TRN = (() => {
     return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
-  // Internal copa simulation (reused for Champions KO rounds) â€” supports ida y vuelta
+  // Internal copa simulation (reused for Champions KO rounds) — supports ida y vuelta
   async function _simulateCopa_internal(teamList, rules = {}) {
     const { idaVuelta = false, startPct = 5 } = rules;
     const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final', 16: 'Octavos de final', 32: 'Dieciseisavos de final' };
@@ -1577,7 +1610,7 @@ const TRN = (() => {
       const n = bracket.length;
       const label = ROUND_LABELS[n] || `Ronda ${n}`;
       const isFinal = n === 2;
-      _setProgress(`Eliminatoria â€” ${label}â€¦`, startPct + Math.round((roundsDone / totalRounds) * (90 - startPct)));
+      _setProgress(`Eliminatoria — ${label}…`, startPct + Math.round((roundsDone / totalRounds) * (90 - startPct)));
       const specs = [];
 
       for (let i = 0; i < n; i += 2) {
@@ -1633,7 +1666,7 @@ const TRN = (() => {
     return { champion: bracket[0], rounds };
   }
 
-  // â”€â”€ Champion path through the tournament â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Champion path through the tournament ─────────────────
   function _renderChampionPath(data) {
     const champSlug = data.champion?.slug;
     if (!champSlug) return '';
@@ -1676,7 +1709,7 @@ const TRN = (() => {
     if (!path.length) return '';
     const rCls = { w: 'trn-path-w', d: 'trn-path-d', l: 'trn-path-l' };
     const rLabel = { w: 'V', d: 'E', l: 'D' };
-    return `<h3 class="trn-section-h trn-section-h-mt">ðŸ“ Camino al t\u00edtulo</h3>
+    return `<h3 class="trn-section-h trn-section-h-mt">📍 Camino al t\u00edtulo</h3>
       <div class="trn-champ-path">
         ${path.map(p => {
           const penStr = p.penA !== null ? ` (${p.isA ? p.penA : p.penB}\u2013${p.isA ? p.penB : p.penA}p)` : '';
@@ -1692,7 +1725,7 @@ const TRN = (() => {
       </div>`;
   }
 
-  // â”€â”€ Compute tournament-wide stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Compute tournament-wide stats ─────────────────────
   function _computeTournamentStats(data) {
     const allMatches = _getAllMatches(data);
     const scorers = {};
@@ -1739,26 +1772,26 @@ const TRN = (() => {
     return `
       <div class="trn-stat-cards">
         <div class="trn-stat-card trn-stat-card-champ">
-          <div class="trn-stat-card-icon">ðŸ†</div>
-          <div class="trn-stat-card-label">CampeÃ³n</div>
-          <div class="trn-stat-card-value">${_esc(d.champion?.name || 'â€”')}</div>
+          <div class="trn-stat-card-icon">🏆</div>
+          <div class="trn-stat-card-label">Campeón</div>
+          <div class="trn-stat-card-value">${_esc(d.champion?.name || '—')}</div>
         </div>
         <div class="trn-stat-card trn-stat-card-pich">
-          <div class="trn-stat-card-icon">âš½</div>
+          <div class="trn-stat-card-icon">⚽</div>
           <div class="trn-stat-card-label">Pichichi</div>
-          <div class="trn-stat-card-value">${pichichi ? _esc(pichichi.name) : 'â€”'}</div>
-          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} goles Â· ${_esc(pichichi.team)}</div>` : ''}
+          <div class="trn-stat-card-value">${pichichi ? _esc(pichichi.name) : '—'}</div>
+          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} goles · ${_esc(pichichi.team)}</div>` : ''}
         </div>
         <div class="trn-stat-card trn-stat-card-mvp">
-          <div class="trn-stat-card-icon">â­</div>
+          <div class="trn-stat-card-icon">⭐</div>
           <div class="trn-stat-card-label">MVP</div>
-          <div class="trn-stat-card-value">${mvp ? _esc(mvp.name) : 'â€”'}</div>
-          ${mvp ? `<div class="trn-stat-card-sub">${mvp.count}Ã— MOM Â· ${_esc(mvp.team)}</div>` : ''}
+          <div class="trn-stat-card-value">${mvp ? _esc(mvp.name) : '—'}</div>
+          ${mvp ? `<div class="trn-stat-card-sub">${mvp.count}× MOM · ${_esc(mvp.team)}</div>` : ''}
         </div>
       </div>`;
   }
 
-  // â”€â”€ Dashboard rendering â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Dashboard rendering ──────────────────────────────────
   function _renderDashboard() {
     if (!_data) return;
 
@@ -1772,10 +1805,10 @@ const TRN = (() => {
     const champBadge = _badge(champ?.slug);
     const champBadgeEl = $('trn-champ-badge-img');
     if (champBadgeEl) champBadgeEl.src = champBadge || '/img/badges/_placeholder.svg';
-    $('trn-champ-name').textContent = champ?.name || 'â€”';
+    $('trn-champ-name').textContent = champ?.name || '—';
     $('trn-champ-format').textContent =
-      _data.format === 'copa' ? 'ðŸ† Copa' :
-      _data.format === 'liga' ? 'ðŸ“Š Liga' : 'â­ Champions';
+      _data.format === 'copa' ? '🏆 Copa' :
+      _data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
 
     // Runner-up on poster
     const runnerUpEl = $('trn-champ-runnerup');
@@ -1816,7 +1849,7 @@ const TRN = (() => {
     if (tab === 'stats')    _renderStats();
   }
 
-  // â”€â”€ Swipe gestures on dashboard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Swipe gestures on dashboard ──────────────────────────
   const _TAB_ORDER = ['summary', 'bracket', 'calendar', 'stats'];
   (function _initSwipe() {
     let _sx = 0, _sy = 0;
@@ -1837,17 +1870,17 @@ const TRN = (() => {
     }, { passive: true });
   })();
 
-  // â”€â”€ Summary tab â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Summary tab ──────────────────────────────────────────
   function _renderSummary() {
     const el = $('trn-tab-summary');
     if (!el || !_data) return;
     const d = _data;
 
     if (d.format === 'liga') {
-      const medals = ['ðŸ¥‡', 'ðŸ¥ˆ', 'ðŸ¥‰'];
+      const medals = ['🥇', '🥈', '🥉'];
       const top5 = d.table.slice(0, 5);
       el.innerHTML = _renderStatCards() + `
-        <h3 class="trn-section-h">ðŸ¥‡ TOP 5</h3>
+        <h3 class="trn-section-h">🥇 TOP 5</h3>
         <div class="trn-mini-table">
           ${top5.map((r, i) => `
             <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
@@ -1858,7 +1891,11 @@ const TRN = (() => {
               <span class="trn-mini-gd">${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</span>
             </div>`).join('')}
         </div>`;
-    } else if (d.format === 'copa') {
+      return;
+    }
+
+    let html = '';
+    if (d.format === 'copa') {
       html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
       [...d.rounds].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
@@ -1901,7 +1938,7 @@ const TRN = (() => {
     el.innerHTML = html;
   }
 
-  // â”€â”€ Stats tab â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Stats tab ────────────────────────────────────────────
   function _renderStats() {
     const el = $('trn-tab-stats');
     if (!el || !_data) return;
@@ -1923,7 +1960,7 @@ const TRN = (() => {
     const top = sorted.slice(0, 10);
 
     el.innerHTML = `
-      <h3 class="trn-section-h">âš½ Pichichi</h3>
+      <h3 class="trn-section-h">⚽ Pichichi</h3>
       <div class="trn-stats-list">
         ${(d.pichichi || []).slice(0, 10).map((r, i) => `
           <div class="trn-stats-row">
@@ -1935,18 +1972,18 @@ const TRN = (() => {
           </div>`).join('')}
       </div>
       ${(d.mvp || []).length ? `
-      <h3 class="trn-section-h trn-section-h-mt">â­ Mejor Jugador (MOM)</h3>
+      <h3 class="trn-section-h trn-section-h-mt">⭐ Mejor Jugador (MOM)</h3>
       <div class="trn-stats-list">
         ${(d.mvp || []).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-gf">${r.count}Ã— MOM</span>
+            <span class="trn-stats-gf">${r.count}× MOM</span>
             <span class="trn-stats-mp trn-stats-club">${_esc(r.team)}</span>
           </div>`).join('')}
       </div>` : ''}
-      <h3 class="trn-section-h trn-section-h-mt">âš½ Equipos mÃ¡s goleadores</h3>
+      <h3 class="trn-section-h trn-section-h-mt">⚽ Equipos más goleadores</h3>
       <div class="trn-stats-list">
         ${top.map((r, i) => `
           <div class="trn-stats-row">
@@ -1958,7 +1995,7 @@ const TRN = (() => {
             <span class="trn-stats-mp" title="Partidos">${r.mp} PJ</span>
           </div>`).join('')}
       </div>
-      <h3 class="trn-section-h trn-section-h-mt">ðŸ›¡ Defensas mÃ¡s sÃ³lidas</h3>
+      <h3 class="trn-section-h trn-section-h-mt">🛡 Defensas más sólidas</h3>
       <div class="trn-stats-list">
         ${Object.values(totals).filter(r => r.mp > 0).sort((a, b) => a.ga - b.ga).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
@@ -1973,7 +2010,7 @@ const TRN = (() => {
       ${_renderDestacados(allMatches)}`;
   }
 
-  // â”€â”€ Form guide (last N results for a team in Liga) â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Form guide (last N results for a team in Liga) ────────
   function _formGuide(slug, matches, n = 5) {
     const results = [];
     (matches || []).forEach(m => {
@@ -1985,7 +2022,7 @@ const TRN = (() => {
       .join('');
   }
 
-  // â”€â”€ Resultados destacados for stats tab â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Resultados destacados for stats tab ────────────────────
   function _renderDestacados(allMatches) {
     const singles = allMatches.filter(m => m.legs !== 2 && m.scoreA !== undefined);
     const byMargin = [...singles].sort((a, b) => Math.abs(b.scoreA - b.scoreB) - Math.abs(a.scoreA - a.scoreB)).slice(0, 3);
@@ -2023,7 +2060,7 @@ const TRN = (() => {
     return [...grpMatches, ...koMatches, ...extra];
   }
 
-  // â”€â”€ Start over â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Start over ───────────────────────────────────────────
   function startOver() {
     _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {}; _modalIdx = -1;
     _deleteState();
@@ -2034,7 +2071,7 @@ const TRN = (() => {
     showStep(1);
   }
 
-  // â”€â”€ Match modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Match modal ──────────────────────────────────────────
   function openMatchModal(idx) {
     const entry = _matchCache[idx];
     if (!entry) return;
@@ -2062,9 +2099,9 @@ const TRN = (() => {
     const isWinA = m.penA !== null ? m.penA > m.penB : scoreA > scoreB;
     const isWinB = m.penA !== null ? m.penB > m.penA : scoreB > scoreA;
     const penStr = m.penA !== null
-      ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}â€“${m.penB}</div>` : '';
+      ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
     const legsStr = m.legs === 2
-      ? `<div class="trn-modal-legs-sub">IdaÂ ${m.r1?.scoreA ?? '?'}â€“${m.r1?.scoreB ?? '?'} Â· VueltaÂ ${m.r2?.scoreA ?? '?'}â€“${m.r2?.scoreB ?? '?'}</div>` : '';
+      ? `<div class="trn-modal-legs-sub">Ida ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · Vuelta ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
 
     const badgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
     const badgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
@@ -2077,7 +2114,7 @@ const TRN = (() => {
           <span class="trn-modal-teamname">${_esc(nameA)}</span>
         </div>
         <div class="trn-modal-score-block">
-          <span class="trn-modal-score-big">${scoreA}Â â€“Â ${scoreB}</span>
+          <span class="trn-modal-score-big">${scoreA} – ${scoreB}</span>
           ${legsStr}${penStr}
         </div>
         <div class="trn-modal-team trn-modal-team-b${isWinB ? ' trn-modal-winner' : isWinA ? ' trn-modal-loser' : ''}">
@@ -2098,8 +2135,8 @@ const TRN = (() => {
           const isA = g.side === 'A';
           return `<div class="trn-modal-tl-row${isA ? ' trn-tl-a' : ' trn-tl-b'}">
             ${isA
-              ? `<span class="trn-tl-name">${_esc(g.name)}</span><span class="trn-tl-icon">âš½</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-score">${rA}â€“${rB}</span><span class="trn-tl-spacer"></span>`
-              : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}â€“${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">âš½</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
+              ? `<span class="trn-tl-name">${_esc(g.name)}</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-spacer"></span>`
+              : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
           </div>`;
         }).join('')}</div>`
       : `<div class="trn-modal-no-goals-row">Sin goles</div>`;
@@ -2131,11 +2168,11 @@ const TRN = (() => {
 
     body.innerHTML = `
       ${tlHtml}
-      ${mom ? `<div class="trn-modal-mom">â­ <strong>${_esc(mom.name)}</strong> <span class="trn-modal-mom-team">${_esc(momTeam)}</span></div>` : ''}
+      ${mom ? `<div class="trn-modal-mom">⭐ <strong>${_esc(mom.name)}</strong> <span class="trn-modal-mom-team">${_esc(momTeam)}</span></div>` : ''}
       <div class="trn-modal-stats">
-        ${bar(possA, possB, 'PosesiÃ³n %')}
+        ${bar(possA, possB, 'Posesión %')}
         ${bar(shotA, shotB, 'Tiros')}
-        ${cornA || cornB ? bar(cornA, cornB, 'CÃ³rners') : ''}
+        ${cornA || cornB ? bar(cornA, cornB, 'Córners') : ''}
         ${saveA || saveB ? bar(saveA, saveB, 'Paradas') : ''}
         ${foulA || foulB ? bar(foulA, foulB, 'Faltas') : ''}
       </div>
@@ -2183,12 +2220,12 @@ const TRN = (() => {
           : (d?.source ? String(d.source).match(/\((\d{4})/)?.[1] : null);
         const title = t ? `${_esc(t.name)}${yr ? ` <span class="trn-lu-yr">'${yr.slice(2)}</span>` : ''}` : _esc(d?.source || '?');
         if (!d?.found || !Array.isArray(d.players) || !d.players.length) {
-          return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">Sin alineaciÃ³n</p></div>`;
+          return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">Sin alineación</p></div>`;
         }
         const sorted = [...d.players].sort((a, b) => posRank(a) - posRank(b)).slice(0, 11);
         const rows = sorted.map(p => `<div class="trn-preview-pos-row">
           <span class="trn-preview-pos-label ${posClass(p)}">${_esc(posLabel(p))}</span>
-          <span class="trn-preview-player-name">${_esc(p.name || 'â€”')}</span>
+          <span class="trn-preview-player-name">${_esc(p.name || '—')}</span>
         </div>`).join('');
         return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><div class="trn-preview-players" style="max-height:none;margin-bottom:0">${rows}</div></div>`;
       };
@@ -2210,7 +2247,7 @@ const TRN = (() => {
     if (_modalIdx < _matchCache.length - 1) openMatchModal(_modalIdx + 1);
   }
 
-  // â”€â”€ Global keyboard shortcuts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Global keyboard shortcuts ─────────────────────────
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const modal = $('trn-match-modal');
@@ -2226,7 +2263,7 @@ const TRN = (() => {
     }
   });
 
-  // â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Public API ───────────────────────────────────────────
   return {
     switchMainTab,
     selectFormat,
