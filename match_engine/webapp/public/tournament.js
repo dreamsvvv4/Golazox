@@ -742,6 +742,7 @@ const TRN = (() => {
   }
   function _checkResume() {
     const banner = $('trn-resume-banner');
+    _renderHistory();  // always refresh history section
     if (!banner) return;
     if (_data) { banner.classList.add('hidden'); return; }
     const saved = _loadState();
@@ -802,9 +803,15 @@ const TRN = (() => {
   }
   function _renderHistory() {
     const el = $('trn-history-list');
+    const section = $('trn-history-section');
     if (!el) return;
     const hist = _loadHistory();
-    if (!hist.length) { el.innerHTML = '<p class="trn-hist-empty">NingÃºn torneo completado todavÃ­a.</p>'; return; }
+    if (!hist.length) {
+      if (section) section.classList.add('hidden');
+      el.innerHTML = '';
+      return;
+    }
+    if (section) section.classList.remove('hidden');
     el.innerHTML = hist.map((h, i) => {
       const date = new Date(h.ts).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
       return `<div class="trn-hist-row">
