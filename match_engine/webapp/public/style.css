@@ -4023,7 +4023,8 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   transition: background .1s;
 }
 .trn-search-item:last-child { border-bottom: none; }
-.trn-search-item:hover { background: rgba(0,212,255,.08); }
+.trn-search-item:hover  { background: rgba(0,212,255,.08); }
+.trn-search-item.trn-si-focused { background: rgba(0,212,255,.14); outline: 1px solid rgba(0,212,255,.3); }
 .trn-search-item-name {
   font: 500 .9rem/1 var(--font);
   color: var(--white);
@@ -4374,7 +4375,50 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   letter-spacing: .04em;
   margin-bottom: .4rem;
 }
-.trn-champ-format { font-size: .82rem; color: rgba(255,255,255,.42); margin-bottom: 1.2rem; }
+.trn-champ-format { font-size: .82rem; color: rgba(255,255,255,.42); margin-bottom: .6rem; }
+
+/* Runner-up chip below champion's name */
+.trn-champ-runnerup {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 99px; padding: .28rem .75rem;
+  font: 600 .78rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.42);
+  margin-bottom: 1.1rem;
+}
+.trn-champ-runnerup::before { content: '🥈 '; font-size: .8rem; }
+.trn-ru-badge { width: 18px; height: 18px; object-fit: contain; }
+.trn-ru-name  { color: rgba(255,255,255,.62); }
+
+/* Podio cards (copa/champions summary) */
+.trn-copa-podio {
+  display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 1rem;
+}
+.trn-podio-card {
+  flex: 1; min-width: 120px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: .3rem; padding: .9rem .7rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.trn-podio-winner {
+  background: rgba(255,215,0,.06);
+  border-color: rgba(255,215,0,.25);
+}
+.trn-podio-badge { width: 48px; height: 48px; object-fit: contain; }
+.trn-podio-label {
+  font: 700 .65rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+.trn-podio-name {
+  font: 700 .88rem/1.2 'Rajdhani', sans-serif;
+  color: #fff; max-width: 100%;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .trn-btn-over { display: inline-flex; }
 
 /* Dashboard tab bar — same look as mode-pills */
@@ -4442,6 +4486,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-mini-pts  { font: 700 .92rem/1 'Rajdhani', sans-serif; color: var(--neon); }
 .trn-mini-gd   { font-size: .76rem; color: rgba(255,255,255,.38); min-width: 2.8rem; text-align: right; }
 .trn-mini-badge { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.trn-mini-badge-xs { width: 14px; height: 14px; object-fit: contain; flex-shrink: 0; }
 
 /* Summary text / rounds */
 .trn-summary-text  { font-size: .88rem; color: rgba(255,255,255,.5); margin: 0 0 .9rem; }
@@ -4612,6 +4657,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .trn-stats-team { flex: 1; font: 600 .9rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.84); }
 .trn-stats-badge { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
 .trn-stats-gf   { font: 700 .88rem/1 'Rajdhani', sans-serif; color: rgba(0,212,255,.82); }
+.trn-stats-ratio { font: 600 .74rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.32); }
 .trn-stats-mp   { font-size: .76rem; color: rgba(255,255,255,.3); }
 
 /* Qualifier highlight */

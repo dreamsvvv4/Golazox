@@ -279,8 +279,54 @@ const TRN = (() => {
 
   // Team search (debounced)
   let _searchTimer = null;
+  let _kbFocus = -1;  // keyboard-focused search result index
+
+  function _setKbFocus(idx) {
+    const items = $('trn-search-results')?.querySelectorAll('.trn-search-item');
+    if (!items || !items.length) return;
+    if (_kbFocus >= 0 && items[_kbFocus]) items[_kbFocus].classList.remove('trn-si-focused');
+    _kbFocus = Math.max(-1, Math.min(idx, items.length - 1));
+    if (_kbFocus >= 0 && items[_kbFocus]) {
+      items[_kbFocus].classList.add('trn-si-focused');
+      items[_kbFocus].scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function onSearchKeydown(e) {
+    const res = $('trn-search-results');
+    const hidden = !res || res.classList.contains('hidden');
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        if (hidden) return;
+        _setKbFocus(_kbFocus + 1);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        if (hidden) return;
+        _setKbFocus(_kbFocus - 1);
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (hidden) return;
+        if (_kbFocus >= 0) {
+          const focused = res.querySelectorAll('.trn-search-item')[_kbFocus];
+          if (focused) focused.click();
+        } else {
+          // If preview panel is open and no item focused, submit add
+          const addBtn = $('trn-team-preview')?.querySelector('.btn-primary');
+          if (addBtn) addBtn.click();
+        }
+        break;
+      case 'Escape':
+        clearSearch();
+        break;
+    }
+  }
+
   function onTeamSearch(val) {
     clearTimeout(_searchTimer);
+    _kbFocus = -1;
     const q = val.trim();
     const res = $('trn-search-results');
     const clr = $('trn-search-clear');
@@ -969,6 +1015,27 @@ const TRN = (() => {
       _data.format === 'copa' ? '🏆 Copa' :
       _data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
 
+    // Runner-up on poster
+    const runnerUpEl = $('trn-champ-runnerup');
+    if (runnerUpEl) {
+      let ru = null;
+      if (_data.format === 'copa') {
+        const fin = _data.rounds[_data.rounds.length - 1]?.matches[0];
+        if (fin) ru = fin.winner?.slug === fin.a?.slug ? fin.b : fin.a;
+      } else if (_data.format === 'champions') {
+        const fin = _data.koRounds?.[_data.koRounds.length - 1]?.matches[0];
+        if (fin) ru = fin.winner?.slug === fin.a?.slug ? fin.b : fin.a;
+      } else if (_data.format === 'liga') {
+        ru = _data.table[1] || null;
+      }
+      if (ru) {
+        runnerUpEl.innerHTML = `${_badgeImg(ru.slug, 'trn-ru-badge')}<span class="trn-ru-name">${_esc(ru.name)}</span>`;
+        runnerUpEl.classList.remove('hidden');
+      } else {
+        runnerUpEl.classList.add('hidden');
+      }
+    }
+
     switchDashTab(_tab);
   }
 
@@ -1009,11 +1076,23 @@ const TRN = (() => {
             </div>`).join('')}
         </div>`;
     } else if (d.format === 'copa') {
+      const final = d.rounds[d.rounds.length - 1]?.matches[0];
+      const runnerUp = final ? (final.winner?.slug === final.a?.slug ? final.b : final.a) : null;
       el.innerHTML = _renderStatCards() + `
-        <h3 class="trn-section-h">📋 Resumen Copa</h3>
-        <p class="trn-summary-text">
-          ${d.rounds.length} rondas simuladas · ${d.teams.length} equipos participantes
-        </p>
+        <h3 class="trn-section-h">🏆 Copa · Podio</h3>
+        <div class="trn-copa-podio">
+          <div class="trn-podio-card trn-podio-winner">
+            ${_badgeImg(d.champion?.slug, 'trn-podio-badge')}
+            <span class="trn-podio-label">🥇 Campeón</span>
+            <span class="trn-podio-name">${_esc(d.champion?.name || '—')}</span>
+          </div>
+          ${runnerUp ? `<div class="trn-podio-card trn-podio-runner">
+            ${_badgeImg(runnerUp.slug, 'trn-podio-badge')}
+            <span class="trn-podio-label">🥈 Subcampeón</span>
+            <span class="trn-podio-name">${_esc(runnerUp.name || '—')}</span>
+          </div>` : ''}
+        </div>
+        <h3 class="trn-section-h trn-section-h-mt">📄 Rondas</h3>
         <div class="trn-summary-rounds">
           ${d.rounds.map(r => `
             <div class="trn-summary-rnd">
@@ -1025,11 +1104,23 @@ const TRN = (() => {
       // champions
       const numGroups = d.groups?.length || 0;
       const numKO = d.koRounds?.length || 0;
+      const koFinal = d.koRounds?.[d.koRounds.length - 1]?.matches[0];
+      const runnerUp = koFinal ? (koFinal.winner?.slug === koFinal.a?.slug ? koFinal.b : koFinal.a) : null;
       el.innerHTML = _renderStatCards() + `
-        <h3 class="trn-section-h">📋 Resumen Champions</h3>
-        <p class="trn-summary-text">
-          ${numGroups} grupos · ${numKO} rondas KO · ${d.teams.length} equipos
-        </p>
+        <h3 class="trn-section-h">⭐ Champions · Podio</h3>
+        <div class="trn-copa-podio">
+          <div class="trn-podio-card trn-podio-winner">
+            ${_badgeImg(d.champion?.slug, 'trn-podio-badge')}
+            <span class="trn-podio-label">🥇 Campeón</span>
+            <span class="trn-podio-name">${_esc(d.champion?.name || '—')}</span>
+          </div>
+          ${runnerUp ? `<div class="trn-podio-card trn-podio-runner">
+            ${_badgeImg(runnerUp.slug, 'trn-podio-badge')}
+            <span class="trn-podio-label">🥈 Finalista</span>
+            <span class="trn-podio-name">${_esc(runnerUp.name || '—')}</span>
+          </div>` : ''}
+        </div>
+        <h3 class="trn-section-h trn-section-h-mt">🌐 Clasificados por grupo</h3>
         <div class="trn-groups-mini">
           ${(d.groups || []).map(g => `
             <div class="trn-group-mini-card">
@@ -1037,12 +1128,14 @@ const TRN = (() => {
               ${g.table.slice(0, 2).map((r, i) => `
                 <div class="trn-group-mini-row trn-q">
                   <span class="trn-mini-pos">${i + 1}</span>
+                  ${_badgeImg(r.slug, 'trn-mini-badge-xs')}
                   <span class="trn-mini-team">${_esc(r.name)}</span>
                   <span class="trn-mini-pts">${r.pts}</span>
                 </div>`).join('')}
               ${g.table.slice(2).map((r, i) => `
                 <div class="trn-group-mini-row">
                   <span class="trn-mini-pos">${i + 3}</span>
+                  ${_badgeImg(r.slug, 'trn-mini-badge-xs')}
                   <span class="trn-mini-team">${_esc(r.name)}</span>
                   <span class="trn-mini-pts">${r.pts}</span>
                 </div>`).join('')}
@@ -1297,8 +1390,9 @@ const TRN = (() => {
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-gf" title="Goles">${r.gf} goles</span>
-            <span class="trn-stats-mp" title="Partidos">${r.mp} partidos</span>
+            <span class="trn-stats-gf" title="Goles">${r.gf} G</span>
+            <span class="trn-stats-ratio">${r.mp ? (r.gf / r.mp).toFixed(1) : '0.0'}/p</span>
+            <span class="trn-stats-mp" title="Partidos">${r.mp} PJ</span>
           </div>`).join('')}
       </div>
       <h3 class="trn-section-h trn-section-h-mt">🛡 Defensas más sólidas</h3>
@@ -1309,7 +1403,8 @@ const TRN = (() => {
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
-            <span class="trn-stats-mp">${r.mp} partidos</span>
+            <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
+            <span class="trn-stats-mp">${r.mp} PJ</span>
           </div>`).join('')}
       </div>`;
   }
@@ -1418,6 +1513,10 @@ const TRN = (() => {
           <span class="trn-modal-stat-label">Tiros</span>
           <span class="trn-modal-stat-val">${shotsB}</span>
         </div>
+        <div class="trn-modal-poss-bar">
+          <div class="trn-modal-poss-a" style="width:${shotsA + shotsB > 0 ? Math.round(shotsA / (shotsA + shotsB) * 100) : 50}%"></div>
+          <div class="trn-modal-poss-b" style="width:${shotsA + shotsB > 0 ? Math.round(shotsB / (shotsA + shotsB) * 100) : 50}%"></div>
+        </div>
       </div>`;
 
     modal.classList.remove('hidden');
@@ -1436,6 +1535,7 @@ const TRN = (() => {
     goStep3,
     goBack,
     onTeamSearch,
+    onSearchKeydown,
     clearSearch,
     addTeam,
     previewTeam,

@@ -625,7 +625,9 @@
             <span class="trn-search-icon-prefix">🔍</span>
             <input id="trn-search-input" type="search"
                    placeholder="Busca por nombre, país o era…"
-                   autocomplete="off" oninput="TRN.onTeamSearch(this.value)" />
+                   autocomplete="off"
+                   oninput="TRN.onTeamSearch(this.value)"
+                   onkeydown="TRN.onSearchKeydown(event)" />
             <button class="trn-search-clear hidden" id="trn-search-clear" onclick="TRN.clearSearch()" title="Limpiar">✕</button>
           </div>
           <div id="trn-search-results" class="trn-search-results hidden"></div>
@@ -658,6 +660,7 @@
         <div class="trn-champ-eyebrow">CAMPEÓN DEL TORNEO</div>
         <div class="trn-champ-trophy-big">🏆</div>        <img id="trn-champ-badge-img" class="trn-champ-badge-big" src="/img/badges/_placeholder.svg" onerror="this.style.display='none'" alt="" />        <div class="trn-champ-name" id="trn-champ-name">—</div>
         <div class="trn-champ-format" id="trn-champ-format"></div>
+        <div id="trn-champ-runnerup" class="trn-champ-runnerup hidden"></div>
         <button class="btn-secondary trn-btn-over" onclick="TRN.startOver()">↩ Nuevo torneo</button>
       </div>
 
