@@ -532,7 +532,7 @@ function _histRender() {
     const badgeSrcA = h.badgeA || `/img/badges/${h.slugA}.svg`;
     const badgeSrcB = h.badgeB || `/img/badges/${h.slugB}.svg`;
     const PH = '/img/badges/_placeholder.svg';
-    return `<div class="mh-row" onclick="histReplay(${i})" title="Volver a simular este partido">
+    return `<div class="mh-row" data-hist-idx="${i}" title="Volver a simular este partido">
       <img class="mh-badge" src="${escHtml(badgeSrcA)}" onerror="this.src='${PH}'" alt="">
       <span class="mh-name">${escHtml(h.nameA)}${eA}</span>
       <span class="mh-score">${h.scoreA}–${h.scoreB}</span>
@@ -1096,6 +1096,87 @@ document.addEventListener('DOMContentLoaded', () => {
     window._refereesData = list;
     _buildRefereePicker(list);
   }).catch(() => {});
+
+  // ── Static event listeners (replaces inline onclick= in index.html) ──────
+  const _on = (id, fn) => { const el = document.getElementById(id); if (el) el.addEventListener('click', fn); };
+
+  // Header & main tabs
+  _on('lang-toggle', () => setLang(_lang === 'es' ? 'en' : 'es'));
+  document.querySelector('.main-tabs-bar')?.addEventListener('click', e => {
+    const btn = e.target.closest('.main-tab-btn');
+    if (btn) TRN.switchMainTab(btn.dataset.tab);
+  });
+
+  // Match input
+  _on('lookupA', () => handleLookup('A'));
+  _on('lookupB', () => handleLookup('B'));
+  document.querySelector('.mode-pills')?.addEventListener('click', e => {
+    const pill = e.target.closest('.mode-pill');
+    if (pill) setMatchMode(pill.dataset.mode);
+  });
+  _on('btn-surprise', () => surpriseMe());
+  _on('btn-haptic',   () => toggleHaptic());
+
+  // Match history clear
+  _on('mh-clear-btn', e => { e.preventDefault(); clearMatchHistory(); });
+  // Match history replay (delegation)
+  document.getElementById('match-history-list')?.addEventListener('click', e => {
+    const row = e.target.closest('.mh-row');
+    if (row) histReplay(+row.dataset.histIdx);
+  });
+
+  // Pre-match speed pills (delegation)
+  document.getElementById('pm-speed-pills')?.addEventListener('click', e => {
+    const pill = e.target.closest('.pm-speed-pill');
+    if (pill) selectSpeed(pill);
+  });
+  _on('pm-start-btn',      () => skipPreMatch());
+  _on('btn-skip',          () => skipLive());
+  _on('stats-modal-close', () => toggleStatsModal());
+
+  // Match result
+  _on('btn-share',    () => shareResult());
+  _on('btn-deeplink', () => _deepLinkShare());
+
+  // Match analysis heatmap tabs (delegation on persistent container)
+  document.getElementById('match-analysis-card')?.addEventListener('click', e => {
+    const tab = e.target.closest('.ma-hm-tab');
+    if (tab) _switchHmTab(tab.dataset.team, tab);
+  });
+
+  // Tournament format cards
+  document.querySelector('.trn-fmt-grid')?.addEventListener('click', e => {
+    const card = e.target.closest('.trn-fmt-card');
+    if (card) TRN.selectFormat(card.dataset.fmt);
+  });
+
+  // Tournament wizard nav
+  _on('trn-next-1',       () => TRN.goStep2());
+  _on('trn-back-1',       () => TRN.goBack(1));
+  _on('trn-next-2',       () => TRN.goStep3());
+  _on('trn-back-2',       () => TRN.goBack(2));
+  _on('trn-search-clear', () => TRN.clearSearch());
+  _on('trn-btn-liga',     () => TRN.openLeagueLoader());
+  _on('trn-btn-random',   () => TRN.fillRandom());
+  _on('trn-btn-simulate', () => TRN.runSimulation());
+
+  // Tournament search input events
+  document.getElementById('trn-search-input')?.addEventListener('input',   e => TRN.onTeamSearch(e.target.value));
+  document.getElementById('trn-search-input')?.addEventListener('keydown', e => TRN.onSearchKeydown(e));
+
+  // Tournament dashboard
+  _on('trn-share-btn', () => TRN.shareTournament());
+  _on('trn-btn-over',  () => TRN.startOver());
+  document.querySelector('.trn-dash-tabs')?.addEventListener('click', e => {
+    const tab = e.target.closest('.trn-dash-tab');
+    if (tab) TRN.switchDashTab(tab.dataset.tab);
+  });
+
+  // Tournament match modal
+  _on('trn-match-modal', e => { if (e.target === document.getElementById('trn-match-modal')) TRN.closeMatchModal(); });
+  _on('trn-modal-close', () => TRN.closeMatchModal());
+  _on('trn-modal-prev',  () => TRN.prevMatch());
+  _on('trn-modal-next',  () => TRN.nextMatch());
 });
 
 // ── Referee picker builder (called after /referees load) ─────────
@@ -3929,9 +4010,9 @@ function renderMatchAnalysis(teamA, teamB) {
     <div class="ma-body">
       <div class="ma-heatmap-wrap">
         <div class="ma-hm-tabs">
-          <button class="ma-hm-tab active" data-team="global" onclick="_switchHmTab('global',this)">Global</button>
-          <button class="ma-hm-tab" data-team="a" onclick="_switchHmTab('a',this)">${escHtml(teamA)}</button>
-          <button class="ma-hm-tab" data-team="b" onclick="_switchHmTab('b',this)">${escHtml(teamB)}</button>
+          <button class="ma-hm-tab active" data-team="global">Global</button>
+          <button class="ma-hm-tab" data-team="a">${escHtml(teamA)}</button>
+          <button class="ma-hm-tab" data-team="b">${escHtml(teamB)}</button>
         </div>
         <div class="ma-hm-frame">
           <canvas id="ma-canvas-global" class="ma-canvas" width="240" height="360"></canvas>

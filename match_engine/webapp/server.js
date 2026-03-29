@@ -518,7 +518,7 @@ app.use((_req, res, next) => {
   res.set('Content-Security-Policy',
     "default-src 'self'; " +
     "img-src 'self' data: blob: https://www.thesportsdb.com https://media.api-sports.io https://flagcdn.com; " +
-    "script-src 'self' 'unsafe-inline'; " +  // TODO: migrate 15 onclick= handlers to addEventListener() then replace unsafe-inline with nonce-{generated per request}
+    "script-src 'self'; " +
     "style-src 'self' 'unsafe-inline'; " +
     "font-src 'self'; " +
     "connect-src 'self'; " +
