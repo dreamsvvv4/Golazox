@@ -826,7 +826,7 @@ const TRN = (() => {
 
   function _renderVisualBracket(rounds) {
     if (!rounds || !rounds.length) return '<p style="color:var(--grey);padding:1rem">Sin datos</p>';
-    const MATCH_H = 84, HEADER_H = 26, COL_W = 182, SW = 36;
+    const MATCH_H = 84, HEADER_H = 26, COL_W = 210, SW = 36;
     const pos = _computeBracketPositions(rounds);
     const maxBottom = Math.max(...pos.map(p => p.length ? p[p.length - 1].top + MATCH_H : 0));
     const totalH = maxBottom + HEADER_H + 8;
