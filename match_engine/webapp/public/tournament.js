@@ -199,6 +199,10 @@ const TRN = (() => {
     _draw = [];
     _groupsDraw = [];
     _renderTeamSlots();
+    // Show league-loader button only for liga format
+    const ligaBtn = $('trn-btn-liga');
+    if (ligaBtn) ligaBtn.classList.toggle('hidden', _fmt !== 'liga');
+    closeLeagueLoader();
     showStep(3);
     try { _gx('trn_step3_view', { format: _fmt, teams: _numTeams }); } catch(_) {}
   }
@@ -601,11 +605,11 @@ const TRN = (() => {
       });
       const groups = Object.entries(groupMap).sort((a, b) => b[1] - a[1]);
       if (!groups.length) { panel.innerHTML = '<p class="trn-ll-empty">Sin ligas disponibles</p>'; return; }
-      let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga real</div><div class="trn-ll-grid">';
+      let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga</div><div class="trn-ll-grid">';
       groups.forEach(([g, count]) => {
         const emoji = g.match(/^(\S+)/)?.[1] || '\uD83C\uDFC6';
         const name  = _esc(g.replace(/^\S+\s*/, ''));
-        html += '<button class="trn-ll-btn" onclick="TRN.loadRealLeague(' + JSON.stringify(g) + ')">' +
+        html += '<button class="trn-ll-btn" data-league="' + _esc(g) + '" onclick="TRN.loadRealLeague(this.dataset.league)">' +
           '<span class="trn-ll-icon">' + emoji + '</span>' +
           '<span class="trn-ll-name">' + name + '</span>' +
           '<span class="trn-ll-count">' + count + ' eq.</span>' +
