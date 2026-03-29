@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>GolazoX — Football Time Machine</title>
+  <title>GolazoX â€” Football Time Machine</title>
   <meta name="color-scheme" content="dark" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/golazox-coin.png" />
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- PWA / móvil -->
+  <!-- PWA / mÃ³vil -->
   <meta name="theme-color" content="#0a0f1a" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -26,13 +26,13 @@
   <meta name="msapplication-tap-highlight" content="no" />
 
   <!-- SEO description -->
-  <meta name="description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta name="description" content="Simula partidos histÃ³ricos de fÃºtbol con el motor probabilÃ­stico de Monte Carlo. Cualquier equipo, cualquier era." />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="GolazoX" />
-  <meta property="og:title" content="GolazoX — Football Time Machine" />
-  <meta property="og:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta property="og:title" content="GolazoX â€” Football Time Machine" />
+  <meta property="og:description" content="Simula partidos histÃ³ricos de fÃºtbol con el motor probabilÃ­stico de Monte Carlo. Cualquier equipo, cualquier era." />
   <meta property="og:image" content="https://golazox.com/og-image.png?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -43,12 +43,12 @@
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GolazoX — Football Time Machine" />
-  <meta name="twitter:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo." />
+  <meta name="twitter:title" content="GolazoX â€” Football Time Machine" />
+  <meta name="twitter:description" content="Simula partidos histÃ³ricos de fÃºtbol con el motor probabilÃ­stico de Monte Carlo." />
   <meta name="twitter:image" content="https://golazox.com/og-image.png?v=2" />
   <meta name="twitter:image:alt" content="GolazoX Football Time Machine" />
 
-  <!-- Fuente Rajdhani — auto-alojada (public/fonts/) sin tracking de Google -->
+  <!-- Fuente Rajdhani â€” auto-alojada (public/fonts/) sin tracking de Google -->
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-500.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
@@ -67,19 +67,19 @@
 <body>
 <div id="wx-overlay" aria-hidden="true"></div>
 
-  <!-- ── PWA Install Bottom Sheet ─────────────────────── -->
+  <!-- â”€â”€ PWA Install Bottom Sheet â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <div id="pwa-install-sheet" class="pwa-sheet" aria-live="polite" role="dialog" aria-labelledby="pwa-sheet-title" hidden>
     <div class="pwa-sheet-inner">
       <div class="pwa-sheet-logo">
         <img src="/golazox-wordmark.png?v=2" alt="GolazOX" class="pwa-sheet-wordmark" />
       </div>
       <div class="pwa-sheet-text">
-        <p class="pwa-sheet-title" id="pwa-sheet-title">Juega sin conexión, sin navegador</p>
-        <p class="pwa-sheet-sub">Instala la Máquina del Tiempo en tu pantalla de inicio — acceso instantáneo, cero anuncios.</p>
+        <p class="pwa-sheet-title" id="pwa-sheet-title">Juega sin conexiÃ³n, sin navegador</p>
+        <p class="pwa-sheet-sub">Instala la MÃ¡quina del Tiempo en tu pantalla de inicio â€” acceso instantÃ¡neo, cero anuncios.</p>
       </div>
       <div class="pwa-sheet-actions">
-        <button id="pwa-install-btn" class="pwa-btn pwa-btn-install">⚡ Instalar</button>
-        <button id="pwa-dismiss-btn" class="pwa-btn pwa-btn-later">Más tarde</button>
+        <button id="pwa-install-btn" class="pwa-btn pwa-btn-install">âš¡ Instalar</button>
+        <button id="pwa-dismiss-btn" class="pwa-btn pwa-btn-later">MÃ¡s tarde</button>
       </div>
     </div>
   </div>
@@ -92,25 +92,25 @@
         <span class="logo-sub">Football Time Machine</span>
       </div>
       <div class="header-right">
-        <span class="tagline" data-i18n="tagline">Cualquier equipo · Cualquier época · Cualquier rivalidad</span>
+        <span class="tagline" data-i18n="tagline">Cualquier equipo Â· Cualquier Ã©poca Â· Cualquier rivalidad</span>
         <button class="btn-lang" id="lang-toggle" onclick="setLang(_lang==='es'?'en':'es')" title="Switch language">EN</button>
       </div>
     </div>
-    <!-- ── Main mode tabs ─── -->
+    <!-- â”€â”€ Main mode tabs â”€â”€â”€ -->
     <div class="main-tabs-bar">
-      <button class="main-tab-btn main-tab-active" data-tab="match" onclick="TRN.switchMainTab('match')">⚽ Partido</button>
-      <button class="main-tab-btn" data-tab="trn" onclick="TRN.switchMainTab('trn')">🏆 Torneo</button>
+      <button class="main-tab-btn main-tab-active" data-tab="match" onclick="TRN.switchMainTab('match')">âš½ Partido</button>
+      <button class="main-tab-btn" data-tab="trn" onclick="TRN.switchMainTab('trn')">ðŸ† Torneo</button>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        MAIN CONTENT
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <main class="main-wrap">
-  <!-- ── MATCH MODE wrap ─────────────────────── -->
+  <!-- â”€â”€ MATCH MODE wrap â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <div id="main-match-wrap">
 
-    <!-- ── INPUT PANEL ────────────────────────── -->
+    <!-- â”€â”€ INPUT PANEL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="input-panel glass-card">
       <div class="teams-grid">
 
@@ -120,13 +120,13 @@
           <div class="team-picker" id="picker-A"></div>
           <input type="hidden" id="teamA" value="">
           <select id="eraA" class="inp inp-sub era-select" disabled>
-            <option value="">⏳ Selecciona un equipo primero</option>
+            <option value="">â³ Selecciona un equipo primero</option>
           </select>
           <select id="formationA" class="inp inp-sub select-formation">
-            <option value="">Formación (automática)</option>
+            <option value="">FormaciÃ³n (automÃ¡tica)</option>
           </select>
           <button class="btn-lookup" id="lookupA" onclick="handleLookup('A')" disabled>
-            🔍 Buscar alineación
+            ðŸ” Buscar alineaciÃ³n
           </button>
           <div class="lookup-preview hidden" id="preview-A">
             <div class="lookup-source" id="preview-source-A"></div>
@@ -146,13 +146,13 @@
           <div class="team-picker" id="picker-B"></div>
           <input type="hidden" id="teamB" value="">
           <select id="eraB" class="inp inp-sub era-select" disabled>
-            <option value="">⏳ Selecciona un equipo primero</option>
+            <option value="">â³ Selecciona un equipo primero</option>
           </select>
           <select id="formationB" class="inp inp-sub select-formation">
-            <option value="">Formación (automática)</option>
+            <option value="">FormaciÃ³n (automÃ¡tica)</option>
           </select>
           <button class="btn-lookup" id="lookupB" onclick="handleLookup('B')" disabled>
-            🔍 Buscar alineación
+            ðŸ” Buscar alineaciÃ³n
           </button>
           <div class="lookup-preview hidden" id="preview-B">
             <div class="lookup-source" id="preview-source-B"></div>
@@ -161,7 +161,7 @@
         </div>
       </div>
 
-      <!-- ── Match mode ──────────────────────── -->
+      <!-- â”€â”€ Match mode â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="extra-options-row">
         <div class="mode-selector">
           <span class="mode-lbl">Modo:</span>
@@ -169,30 +169,30 @@
             <button class="mode-pill mode-pill-active" id="mode-11v11"    onclick="setMatchMode('11v11')">11 vs 11</button>
             <button class="mode-pill" id="mode-5v5"        onclick="setMatchMode('5v5')">5 vs 5</button>
             <button class="mode-pill" id="mode-3v3"        onclick="setMatchMode('3v3')">3 vs 3</button>
-            <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')" data-i18n="mode-penalties">🥅 Penaltis</button>
+            <button class="mode-pill" id="mode-penalties"  onclick="setMatchMode('penalties')" data-i18n="mode-penalties">ðŸ¥… Penaltis</button>
           </div>
         </div>
       </div>
 
-      <!-- ── Stadium visual picker ─────────────────────────── -->
+      <!-- â”€â”€ Stadium visual picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="stadium-picker-section">
-        <div class="stadium-picker-lbl">🏟️ ESTADIO</div>
+        <div class="stadium-picker-lbl">ðŸŸï¸ ESTADIO</div>
         <div class="stadium-picker-row" id="stadium-picker-row">
           <!-- filled by JS -->
         </div>
       </div>
 
-      <!-- ── Referee picker ────────────────────────────────── -->
+      <!-- â”€â”€ Referee picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="referee-picker-section">
-        <div class="referee-picker-lbl">🟥 <span data-i18n="ref-section-label">ÁRBITRO</span></div>
+        <div class="referee-picker-lbl">ðŸŸ¥ <span data-i18n="ref-section-label">ÃRBITRO</span></div>
         <div class="referee-picker-row" id="referee-picker-row">
           <!-- filled by JS after /referees fetch -->
         </div>
       </div>
 
-      <!-- ── Weather picker ───────────────────────────────── -->
+      <!-- â”€â”€ Weather picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="weather-picker-section">
-        <div class="weather-picker-lbl">🌤️ <span data-i18n="weather-section-label">CLIMA</span></div>
+        <div class="weather-picker-lbl">ðŸŒ¤ï¸ <span data-i18n="weather-section-label">CLIMA</span></div>
         <div class="weather-picker-row" id="weather-picker-row">
           <!-- filled by JS -->
         </div>
@@ -201,29 +201,29 @@
       <div id="error-msg" class="error-msg hidden"></div>
     </section>
 
-    <!-- ── LOADING INDICATOR ──────────────────── -->
+    <!-- â”€â”€ LOADING INDICATOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="loader" class="loader hidden">
       <div class="spinner"></div>
-      <span>Simulando 30 000 partidos…</span>
+      <span>Simulando 30 000 partidosâ€¦</span>
     </div>
 
-    <!-- ── PRE-MATCH PRESENTATION ────────────── -->
+    <!-- â”€â”€ PRE-MATCH PRESENTATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="prematch-screen" class="prematch-screen glass-card hidden">
-      <div class="pm-eyebrow">PRESENTACIÓN DE EQUIPOS</div>
+      <div class="pm-eyebrow">PRESENTACIÃ“N DE EQUIPOS</div>
       <div class="pm-intro" id="pm-intro"></div>
       <div class="pm-matchup">
         <div class="pm-team-block" id="pm-block-a"></div>
         <div class="pm-center-col">
           <div class="pm-vs-text">VS</div>
           <div class="pm-stadium-info hidden" id="pm-stadium-info"></div>
-          <div class="pm-speed-label">Duración del partido</div>
+          <div class="pm-speed-label">DuraciÃ³n del partido</div>
           <div class="pm-speed-pills" id="pm-speed-pills">
-            <button class="pm-speed-pill" data-tick="0"   onclick="selectSpeed(this)">⚡ Directo</button>
+            <button class="pm-speed-pill" data-tick="0"   onclick="selectSpeed(this)">âš¡ Directo</button>
             <button class="pm-speed-pill" data-tick="333" onclick="selectSpeed(this)">30 seg</button>
             <button class="pm-speed-pill pm-speed-active" data-tick="667" onclick="selectSpeed(this)">1 min</button>
             <button class="pm-speed-pill" data-tick="2000" onclick="selectSpeed(this)">3 min</button>
           </div>
-          <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()" data-i18n="pm-start-btn">▶ Iniciar partido</button>
+          <button class="pm-start-btn" id="pm-start-btn" onclick="skipPreMatch()" data-i18n="pm-start-btn">â–¶ Iniciar partido</button>
           <div class="pm-radar-row" id="pm-radar-row">
             <!-- radar-card moved here by showPreMatch() -->
           </div>
@@ -232,12 +232,12 @@
       </div>
     </div>
 
-    <!-- ── LIVE MATCH VIEWER ─────────────────── -->
+    <!-- â”€â”€ LIVE MATCH VIEWER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="live-viewer" class="live-viewer glass-card hidden">
       <div class="live-header">
         <span class="live-dot"></span>
         <span class="live-badge">EN DIRECTO</span>
-        <button class="btn-skip" onclick="skipLive()">⏭ Saltar</button>
+        <button class="btn-skip" onclick="skipLive()">â­ Saltar</button>
       </div>
       <div class="live-scoreboard">
         <div class="live-team-side">
@@ -270,19 +270,19 @@
       </div>
     </div>
 
-    <!-- ── TOURNAMENT MATCH MODAL ───────────────────── -->
+    <!-- â”€â”€ TOURNAMENT MATCH MODAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="trn-match-modal" class="trn-modal-overlay hidden" onclick="TRN.closeMatchModal()">
       <div class="trn-modal-inner" onclick="event.stopPropagation()">
-        <button class="trn-modal-close" onclick="TRN.closeMatchModal()">✕</button>
+        <button class="trn-modal-close" onclick="TRN.closeMatchModal()">âœ•</button>
         <div id="trn-modal-header"></div>
         <div id="trn-modal-body"></div>
       </div>
     </div>
 
-    <!-- ── STATS MODAL (radar) ──────────────────────── -->
+    <!-- â”€â”€ STATS MODAL (radar) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="stats-modal" class="stats-modal hidden">
       <div class="stats-modal-inner" id="stats-modal-inner">
-        <button class="stats-modal-close" onclick="toggleStatsModal()">✕</button>
+        <button class="stats-modal-close" onclick="toggleStatsModal()">âœ•</button>
         <div class="radar-card glass-card" id="radar-card">
           <div class="radar-legend" id="radar-legend"></div>
           <svg class="radar-svg" id="radar-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -290,12 +290,12 @@
       </div>
     </div>
 
-    <!-- ── GOAL / CARD OVERLAY ──────────────── -->
+    <!-- â”€â”€ GOAL / CARD OVERLAY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <div id="event-overlay" class="event-overlay hidden">
       <div id="event-overlay-inner" class="eo-inner"></div>
     </div>
 
-    <!-- ── PENALTY KICK ANIMATION OVERLAY ── -->
+    <!-- â”€â”€ PENALTY KICK ANIMATION OVERLAY â”€â”€ -->
     <div id="pen-kick-overlay" class="pko-overlay hidden">
       <div class="pko-inner">
         <div class="pko-score-bar" id="pko-score-bar"></div>
@@ -329,13 +329,13 @@
             </g>
           </svg>
           <!-- Ball -->
-          <div class="pko-ball" id="pko-ball">⚽</div>
+          <div class="pko-ball" id="pko-ball">âš½</div>
         </div>
         <div class="pko-result-label" id="pko-result-label"></div>
       </div>
     </div>
 
-    <!-- ── PENALTY SHOOTOUT CINEMATIC SPLASH ── -->
+    <!-- â”€â”€ PENALTY SHOOTOUT CINEMATIC SPLASH â”€â”€ -->
     <div id="pen-shootout-overlay" class="pso-overlay hidden">
       <div class="pso-spotlights">
         <div class="pso-spot pso-spot-1"></div>
@@ -343,7 +343,7 @@
         <div class="pso-spot pso-spot-3"></div>
       </div>
       <div class="pso-inner">
-        <div class="pso-label">🎯 <span id="pso-title-text">TANDAS DE PENALTIS</span></div>
+        <div class="pso-label">ðŸŽ¯ <span id="pso-title-text">TANDAS DE PENALTIS</span></div>
         <div class="pso-teams-row">
           <span class="pso-team-a">-</span>
           <span class="pso-vs">VS</span>
@@ -353,12 +353,12 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          RESULTS  (hidden until simulation runs)
-    ══════════════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <section id="results" class="results hidden">
 
-      <!-- ── SCORE POSTER ─────────────────────── -->
+      <!-- â”€â”€ SCORE POSTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="score-poster glass-card">
         <div class="poster-teams">
           <div class="poster-team" id="poster-team-a">
@@ -369,7 +369,7 @@
           <div class="poster-score-block">
             <div class="poster-score" id="poster-score">- : -</div>
             <div class="poster-label" id="poster-label">RESULTADO FINAL</div>
-            <div class="poster-context" id="poster-context">Partido de leyenda · Campo neutral</div>
+            <div class="poster-context" id="poster-context">Partido de leyenda Â· Campo neutral</div>
           </div>
           <div class="poster-team" id="poster-team-b">
             <img class="poster-badge" id="badge-b" src="" alt="" style="display:none" onerror="this.style.display='none'" />
@@ -381,29 +381,29 @@
         <!-- Scorers row -->
         <div class="scorers-row">
           <div class="scorers-side" id="scorers-a"></div>
-          <div class="scorers-mid">⚽</div>
+          <div class="scorers-mid">âš½</div>
           <div class="scorers-side scorers-right" id="scorers-b"></div>
         </div>
 
         <!-- Cards row -->
         <div class="cards-row" id="cards-row">
           <div class="cards-side" id="cards-a"></div>
-          <div class="cards-mid">🟨🟥</div>
+          <div class="cards-mid">ðŸŸ¨ðŸŸ¥</div>
           <div class="cards-side cards-right" id="cards-b"></div>
         </div>
         <!-- Share -->
         <div class="share-row">
-          <button class="btn-share" onclick="shareResult()" data-i18n="btn-share">📤 Compartir resultado</button>
+          <button class="btn-share" onclick="shareResult()" data-i18n="btn-share">ðŸ“¤ Compartir resultado</button>
         </div>
       </div>
 
-      <!-- ── CRÓNICA DEL PARTIDO ───────────────────────── -->
+      <!-- â”€â”€ CRÃ“NICA DEL PARTIDO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="timeline-card glass-card">
-        <h2 class="section-title" data-i18n="section-timeline">Crónica del partido</h2>
+        <h2 class="section-title" data-i18n="section-timeline">CrÃ³nica del partido</h2>
         <div class="timeline-header" id="timeline-header"></div>
         <div class="timeline-events" id="timeline-events"></div>
       </div>
-      <!-- ── TANDA DE PENALTIS ────────────────────── -->
+      <!-- â”€â”€ TANDA DE PENALTIS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="penalty-card glass-card hidden" id="penalty-card">
         <canvas id="pen-confetti-canvas" class="pen-confetti-canvas"></canvas>
         <h2 class="section-title" data-i18n="pen-shootout-title">Tanda de Penaltis</h2>
@@ -411,7 +411,7 @@
         <div class="pen-rows"  id="pen-rows"></div>
         <div class="pen-result" id="pen-result"></div>
       </div>
-      <!-- ── PROBABILIDADES ───────────────────────── -->
+      <!-- â”€â”€ PROBABILIDADES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="probs-card glass-card">
         <h2 class="section-title" data-i18n="section-probs">Probabilidades</h2>
         <div class="probs-grid">
@@ -441,16 +441,16 @@
         <!-- xG row -->
         <div class="xg-row">
           <span>xG <span id="xg-a">-</span></span>
-          <span class="xg-sep">·</span>
+          <span class="xg-sep">Â·</span>
           <span>xG <span id="xg-b">-</span></span>
-          <span class="xg-sep">·</span>
+          <span class="xg-sep">Â·</span>
           <span id="sim-iters" class="xg-note"></span>
         </div>
       </div>
 
-      <!-- ── ESTADÍSTICAS COMPARADAS ─────────────── -->
+      <!-- â”€â”€ ESTADÃSTICAS COMPARADAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="stats-card glass-card">
-        <h2 class="section-title" data-i18n="section-stats">Estadísticas comparadas</h2>
+        <h2 class="section-title" data-i18n="section-stats">EstadÃ­sticas comparadas</h2>
         <div class="hth-names">
           <span id="hth-name-a">Equipo A</span>
           <span id="hth-name-b">Equipo B</span>
@@ -458,13 +458,13 @@
         <div id="hth-rows"></div>
       </div>
 
-      <!-- ── ANÁLISIS DEL PARTIDO (heatmap + distancias) ─────────── -->
+      <!-- â”€â”€ ANÃLISIS DEL PARTIDO (heatmap + distancias) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="match-analysis-card glass-card hidden" id="match-analysis-card"></div>
 
-      <!-- ── MEJOR JUGADOR + PUNTOS CLAVE ───────────────── -->
+      <!-- â”€â”€ MEJOR JUGADOR + PUNTOS CLAVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="mom-card glass-card">
         <div class="mom-left">
-          <div class="mom-icon">⭐</div>
+          <div class="mom-icon">â­</div>
           <div class="mom-body">
             <div class="mom-badge" data-i18n="mom-badge-text">MEJOR JUGADOR DEL PARTIDO</div>
             <div class="mom-name" id="mom-name">-</div>
@@ -475,7 +475,7 @@
         <div class="key-moments" id="key-moments" style="display:none"></div>
       </div>
 
-      <!-- ── ALINEACIONES ───────────────────────────── -->
+      <!-- â”€â”€ ALINEACIONES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
       <div class="lineups-wrap">
         <div class="lineup-card glass-card" id="lineup-card-a">
           <h2 class="section-title" id="lineup-title-a">Team A Lineup</h2>
@@ -534,184 +534,34 @@
     <!-- /results -->
   </div><!-- /main-match-wrap -->
 
-  <!-- ── TOURNAMENT MODE wrap ──────────────────────────────────── -->
+  <!-- â”€â”€ TOURNAMENT MODE wrap â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <div id="main-trn-wrap" class="hidden">
 
     <div class="trn-coming-soon">
-      <div class="trn-cs-icon">🏆</div>
+      <div class="trn-cs-icon">ðŸ†</div>
       <h2 class="trn-cs-title">Modo Torneo</h2>
-      <p class="trn-cs-sub">Simula tu propia competición con equipos de cualquier época</p>
-      <span class="trn-cs-badge">Próximamente</span>
+      <p class="trn-cs-sub">Simula tu propia competiciÃ³n con equipos de cualquier Ã©poca</p>
+      <span class="trn-cs-badge">PrÃ³ximamente</span>
     </div>
 
-    <!-- Wizard (steps 1-3) -->
-    <div id="trn-wizard">
-
-      <!-- Hero header -->
-      <div class="trn-hero">
-        <div class="trn-hero-eyebrow">MODO TORNEO</div>
-        <h1 class="trn-hero-title">Football Time Machine</h1>
-        <p class="trn-hero-sub">Simula tu propia competición con equipos de cualquier época</p>
-        <!-- Stepper -->
-        <div class="trn-stepper">
-          <div class="trn-step-node trn-step-node-active" data-step="1"><span>1</span></div>
-          <div class="trn-step-line" id="trn-line-1-2"></div>
-          <div class="trn-step-node" data-step="2"><span>2</span></div>
-          <div class="trn-step-line" id="trn-line-2-3"></div>
-          <div class="trn-step-node" data-step="3"><span>3</span></div>
-        </div>
-        <div class="trn-stepper-labels">
-          <span>Formato</span>
-          <span>Reglas</span>
-          <span>Equipos</span>
-        </div>
-      </div>
-
-      <!-- Step 1: Formato -->
-      <div id="trn-step-1" class="trn-step glass-card">
-        <div class="trn-step-heading">
-          <span class="trn-step-num">01</span>
-          <h2 class="trn-step-title">Elige el formato</h2>
-        </div>
-        <div class="trn-fmt-grid">
-          <button class="trn-fmt-card" data-fmt="copa" onclick="TRN.selectFormat('copa')">
-            <div class="trn-fmt-icon-wrap">🏆</div>
-            <div class="trn-fmt-body">
-              <div class="trn-fmt-name">Copa</div>
-              <div class="trn-fmt-desc">Eliminación directa · Rondas hasta la Final</div>
-            </div>
-            <div class="trn-fmt-arrow">›</div>
-          </button>
-          <button class="trn-fmt-card" data-fmt="liga" onclick="TRN.selectFormat('liga')">
-            <div class="trn-fmt-icon-wrap">📊</div>
-            <div class="trn-fmt-body">
-              <div class="trn-fmt-name">Liga</div>
-              <div class="trn-fmt-desc">Todos contra todos · Clasificación por puntos</div>
-            </div>
-            <div class="trn-fmt-arrow">›</div>
-          </button>
-          <button class="trn-fmt-card" data-fmt="champions" onclick="TRN.selectFormat('champions')">
-            <div class="trn-fmt-icon-wrap">⭐</div>
-            <div class="trn-fmt-body">
-              <div class="trn-fmt-name">Champions</div>
-              <div class="trn-fmt-desc">Fase de grupos + Eliminatorias</div>
-            </div>
-            <div class="trn-fmt-arrow">›</div>
-          </button>
-        </div>
-        <div class="trn-num-teams-row">
-          <label class="trn-label" for="trn-num-teams">Nº de equipos</label>
-          <select id="trn-num-teams" class="inp trn-select">
-            <option value="16">16 equipos</option>
-          </select>
-        </div>
-        <div class="trn-step-actions">
-          <button class="btn-primary trn-btn-next" onclick="TRN.goStep2()">Siguiente →</button>
-        </div>
-      </div>
-
-      <!-- Step 2: Reglas -->
-      <div id="trn-step-2" class="trn-step glass-card hidden">
-        <div class="trn-step-heading">
-          <span class="trn-step-num">02</span>
-          <h2 class="trn-step-title">Reglas del torneo</h2>
-        </div>
-        <div class="trn-rules-list">
-          <label class="trn-rule-row">
-            <input type="checkbox" id="trn-rule-idavuelta" />
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Partidos de ida y vuelta</span>
-              <span class="trn-rule-hint">Prórroga en la vuelta si hay empate en el global</span>
-            </div>
-          </label>
-          <label class="trn-rule-row">
-            <input type="checkbox" id="trn-rule-penalties" checked />
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Tandas de penaltis</span>
-              <span class="trn-rule-hint">Si hay empate al final del tiempo reglamentario</span>
-            </div>
-          </label>
-        </div>
-        <div class="trn-step-actions">
-          <button class="btn-secondary" onclick="TRN.goBack(1)">← Atrás</button>
-          <button class="btn-primary trn-btn-next" onclick="TRN.goStep3()">Siguiente →</button>
-        </div>
-      </div>
-
-      <!-- Step 3: Equipos -->
-      <div id="trn-step-3" class="trn-step glass-card hidden">
-        <div class="trn-step-heading">
-          <span class="trn-step-num">03</span>
-          <h2 class="trn-step-title">Añade equipos
-            <span id="trn-teams-count" class="trn-teams-count">0 / 16</span>
-          </h2>
-        </div>
-
-        <div class="trn-search-wrap">
-          <input id="trn-search-input" class="inp" type="search"
-                 placeholder="🔍 Busca un equipo de la base de datos…"
-                 autocomplete="off" oninput="TRN.onTeamSearch(this.value)" />
-          <div id="trn-search-results" class="trn-search-results hidden"></div>
-        </div>
-
-        <div id="trn-teams-list" class="trn-teams-list"></div>
-
-        <div id="trn-step-3-actions" class="trn-step-actions">
-          <button class="btn-secondary" onclick="TRN.goBack(2)">← Atrás</button>
-          <button id="trn-btn-random" class="btn-secondary" onclick="TRN.fillRandom()">⚡ Aleatorio</button>
-          <button id="trn-btn-simulate" class="btn-primary trn-btn-next" disabled onclick="TRN.runSimulation()">▶ Simular torneo</button>
-        </div>
-
-        <div id="trn-progress" class="trn-progress hidden">
-          <div class="trn-spinner"></div>
-          <span id="trn-progress-text">Simulando…</span>
-        </div>
-      </div>
-
-    </div><!-- /trn-wizard -->
-
-    <!-- ── Dashboard ────────────────────────── -->
-    <div id="trn-dashboard" class="hidden">
-
-      <!-- Champion poster — same vibe as score-poster -->
-      <div class="trn-champ-poster glass-card">
-        <div class="trn-champ-eyebrow">CAMPEÓN DEL TORNEO</div>
-        <div class="trn-champ-trophy-big">🏆</div>
-        <div class="trn-champ-name" id="trn-champ-name">—</div>
-        <div class="trn-champ-format" id="trn-champ-format"></div>
-        <button class="btn-secondary trn-btn-over" onclick="TRN.startOver()">↩ Nuevo torneo</button>
-      </div>
-
-      <!-- Dashboard tabs — same style as input-panel mode pills -->
-      <div class="trn-dash-tabs-wrap glass-card">
-        <div class="trn-dash-tabs">
-          <button class="trn-dash-tab trn-dash-tab-active" data-tab="summary"  onclick="TRN.switchDashTab('summary')">Resumen</button>
-          <button class="trn-dash-tab" data-tab="bracket"  onclick="TRN.switchDashTab('bracket')">Cuadro</button>
-          <button class="trn-dash-tab" data-tab="calendar" onclick="TRN.switchDashTab('calendar')">Calendario</button>
-          <button class="trn-dash-tab" data-tab="stats"    onclick="TRN.switchDashTab('stats')">Estadísticas</button>
-        </div>
-      </div>
-
-      <div id="trn-tab-summary"  class="trn-tab-panel glass-card"></div>
-      <div id="trn-tab-bracket"  class="trn-tab-panel glass-card hidden"></div>
   </div><!-- /main-trn-wrap -->
 
   </main>
 
   <footer class="site-footer">
-    <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>
+    <p>Simulador de Partidos de FÃºtbol Â· Motor probabilÃ­stico (Poisson xG + Monte Carlo) Â· Solo para entretenimiento</p>
     <p class="footer-legal footer-disclaimer">
-      GolazoX es un proyecto independiente sin afiliación, patrocinio ni respaldo de FIFA, UEFA, ningún club de fútbol,
-      ni ningún jugador mencionado. Los nombres de equipos y jugadores se usan con fines estadísticos, históricos
-      y de entretenimiento, bajo la doctrina de uso referencial de figuras públicas en el ejercicio de su actividad profesional.
-      Los escudos mostrados son representaciones genéricas de identificación y no son marcas oficiales.
+      GolazoX es un proyecto independiente sin afiliaciÃ³n, patrocinio ni respaldo de FIFA, UEFA, ningÃºn club de fÃºtbol,
+      ni ningÃºn jugador mencionado. Los nombres de equipos y jugadores se usan con fines estadÃ­sticos, histÃ³ricos
+      y de entretenimiento, bajo la doctrina de uso referencial de figuras pÃºblicas en el ejercicio de su actividad profesional.
+      Los escudos mostrados son representaciones genÃ©ricas de identificaciÃ³n y no son marcas oficiales.
       Datos de plantilla parcialmente derivados de Wikipedia (CC BY-SA 4.0).
     </p>
     <p class="footer-links">
       <a href="/legal" class="footer-link">Aviso Legal</a>
-      &nbsp;·&nbsp;
-      <a href="/privacy" class="footer-link">Política de Privacidad</a>
-      &nbsp;·&nbsp;
+      &nbsp;Â·&nbsp;
+      <a href="/privacy" class="footer-link">PolÃ­tica de Privacidad</a>
+      &nbsp;Â·&nbsp;
       <a href="/contact" class="footer-link">Contacto</a>
     </p>
   </footer>
@@ -722,7 +572,7 @@
   <script src="app.js?v=50"></script>
   <!-- tournament.js: coming soon -->
   <script>
-    // Minimal TRN shim — tabs work without tournament.js loaded
+    // Minimal TRN shim â€” tabs work without tournament.js loaded
     window.TRN = {
       switchMainTab: function(tab) {
         var match = document.getElementById('main-match-wrap');
@@ -822,7 +672,7 @@
               if (!newSW) return;
               newSW.addEventListener('statechange', function () {
                 if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available — tell SW to skip waiting so it activates now
+                  // New version available â€” tell SW to skip waiting so it activates now
                   newSW.postMessage({ type: 'SKIP_WAITING' });
                 }
               });
