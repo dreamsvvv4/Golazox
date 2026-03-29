@@ -546,6 +546,14 @@
         </div>
       </div>
 
+      <!-- Tournament history -->
+      <div id="trn-history-section" class="trn-history-section hidden">
+        <div class="trn-hist-header">📜 Últimos torneos
+          <button class="trn-hist-clear" onclick="TRN.clearHistory()">Borrar historial</button>
+        </div>
+        <div id="trn-history-list"></div>
+      </div>
+
       <!-- Step progress bar -->
       <div class="trn-stepbar">
         <div class="trn-stepbar-item trn-stepbar-active" data-step="1">
@@ -679,6 +687,7 @@
         <div class="trn-champ-trophy-big">🏆</div>        <img id="trn-champ-badge-img" class="trn-champ-badge-big" src="/img/badges/_placeholder.svg" onerror="this.style.display='none'" alt="" />        <div class="trn-champ-name" id="trn-champ-name">—</div>
         <div class="trn-champ-format" id="trn-champ-format"></div>
         <div id="trn-champ-runnerup" class="trn-champ-runnerup hidden"></div>
+        <button class="btn-ghost trn-share-btn" onclick="TRN.shareTournament()">📤 Compartir</button>
         <button class="btn-secondary trn-btn-over" onclick="TRN.startOver()">↩ Nuevo torneo</button>
       </div>
 

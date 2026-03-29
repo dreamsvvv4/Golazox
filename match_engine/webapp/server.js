@@ -990,6 +990,9 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
         stats: {
           possession: sim.stats?.possession || { teamA: 50, teamB: 50 },
           shots:      sim.stats?.shots      || { teamA: 0,  teamB: 0  },
+          corners:    sim.stats?.corners    || { teamA: 0,  teamB: 0  },
+          fouls:      sim.stats?.fouls      || { teamA: 0,  teamB: 0  },
+          saves:      sim.stats?.saves      || { teamA: 0,  teamB: 0  },
         },
       };
     });

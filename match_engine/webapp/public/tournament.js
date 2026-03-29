@@ -6,7 +6,7 @@ const TRN = (() => {
   // ── State ───────────────────────────────────────────────
   let _fmt        = null;   // 'copa' | 'liga' | 'champions'
   let _numTeams   = 16;
-  let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true };
+  let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: false };
   let _teams      = [];     // [{ slug, era, name }]
   let _draw       = [];     // Copa: [{ a, b }] first-round pairings
   let _groupsDraw = [];     // Champions: [[t1,t2,t3,t4], ...] pre-drawn groups
@@ -111,6 +111,16 @@ const TRN = (() => {
               <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
               <div class="trn-toggle"></div>
             </div>
+          </label>
+          <label class="trn-rule-row">
+            <div class="trn-rule-body">
+              <span class="trn-rule-name">Partido por el 3º puesto</span>
+              <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
+            </div>
+            <div class="trn-toggle-wrap">
+              <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
+              <div class="trn-toggle"></div>
+            </div>
           </label>`;
       } else if (_fmt === 'liga') {
         html = `
@@ -156,6 +166,7 @@ const TRN = (() => {
     if (_fmt === 'copa') {
       _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
       _rules.extraTime = !!$('trn-rule-extratime')?.checked;
+      _rules.tercerPuesto = !!$('trn-rule-3rd')?.checked;
     } else if (_fmt === 'liga') {
       _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
     } else if (_fmt === 'champions') {
@@ -563,6 +574,7 @@ const TRN = (() => {
         fmt: _fmt, numTeams: _numTeams, rules: _rules,
         teams: _teams, badges: _badgeCache, data: _data
       }));
+      _pushHistory(_data);
     } catch (_) {}
   }
   function _loadState() {
@@ -584,6 +596,7 @@ const TRN = (() => {
     const desc = $('trn-resume-desc');
     if (desc) desc.textContent = `${fmtLabel} · ${saved.teams?.length || 0} equipos`;
     banner.classList.remove('hidden');
+    _renderHistory();
   }
   function resumeTournament() {
     const saved = _loadState();
@@ -605,6 +618,91 @@ const TRN = (() => {
     if (banner) banner.classList.add('hidden');
   }
 
+  // ── Historial de torneos ───────────────────────────────────
+  const _LS_HIST = 'trn_v2_history';
+  function _pushHistory(data) {
+    try {
+      const hist = _loadHistory();
+      const fmtLabel = data.format === 'copa' ? '🏆 Copa' : data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
+      const thirdName = data.thirdPlace?.winner?.name || null;
+      const entry = {
+        ts: Date.now(),
+        fmt: data.format,
+        fmtLabel,
+        champion: data.champion?.name || '—',
+        champSlug: data.champion?.slug || '',
+        teams: _teams.length,
+        pichichi: data.pichichi?.[0]?.name || null,
+        thirdPlace: thirdName,
+      };
+      hist.unshift(entry);
+      localStorage.setItem(_LS_HIST, JSON.stringify(hist.slice(0, 8)));
+    } catch (_) {}
+  }
+  function _loadHistory() {
+    try { return JSON.parse(localStorage.getItem(_LS_HIST) || '[]'); } catch (_) { return []; }
+  }
+  function clearHistory() {
+    try { localStorage.removeItem(_LS_HIST); } catch (_) {}
+    _renderHistory();
+  }
+  function _renderHistory() {
+    const el = $('trn-history-list');
+    if (!el) return;
+    const hist = _loadHistory();
+    if (!hist.length) { el.innerHTML = '<p class="trn-hist-empty">Ningún torneo completado todavía.</p>'; return; }
+    el.innerHTML = hist.map((h, i) => {
+      const date = new Date(h.ts).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+      return `<div class="trn-hist-row">
+        <span class="trn-hist-date">${date}</span>
+        <span class="trn-hist-fmt">${h.fmtLabel}</span>
+        <span class="trn-hist-champ">${_esc(h.champion)}</span>
+        ${h.pichichi ? `<span class="trn-hist-pich">⚽ ${_esc(h.pichichi)}</span>` : ''}
+        <span class="trn-hist-teams">${h.teams} eq</span>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Compartir resultado ────────────────────────────────────
+  function shareTournament() {
+    if (!_data) return;
+    const d = _data;
+    const fmtLabel = d.format === 'copa' ? '🏆 Copa' : d.format === 'liga' ? '📊 Liga' : '⭐ Champions';
+    const lines = [`${fmtLabel} — GolazoX`, ``, `🥇 Campeón: ${d.champion?.name || '—'}`];
+    if (d.format === 'liga' && d.table) {
+      lines.push(`🥈 ${d.table[1]?.name || '—'}`, `🥉 ${d.table[2]?.name || '—'}`);
+    } else if (d.format === 'copa') {
+      const fin = d.rounds[d.rounds.length - 1]?.matches[0];
+      const ru = fin ? (fin.winner?.slug === fin.a?.slug ? fin.b : fin.a) : null;
+      if (ru) lines.push(`🥈 Finalista: ${ru.name}`);
+      if (d.thirdPlace?.winner) lines.push(`🥉 3er puesto: ${d.thirdPlace.winner.name}`);
+    } else if (d.format === 'champions') {
+      const fin = d.koRounds?.[d.koRounds.length - 1]?.matches[0];
+      const ru = fin ? (fin.winner?.slug === fin.a?.slug ? fin.b : fin.a) : null;
+      if (ru) lines.push(`🥈 Finalista: ${ru.name}`);
+      if (d.thirdPlace?.winner) lines.push(`🥉 3er puesto: ${d.thirdPlace.winner.name}`);
+    }
+    if (d.pichichi?.[0]) lines.push(``, `⚽ Pichichi: ${d.pichichi[0].name} (${d.pichichi[0].goals} goles)`);
+    if (d.mvp?.[0]) lines.push(`⭐ MVP: ${d.mvp[0].name}`);
+    lines.push(``, `golazox.com`);
+    const text = lines.join('\n');
+    navigator.clipboard?.writeText(text).then(() => _showToast('¡Copiado al portapapeles!')).catch(() => _showToast(text, true));
+  }
+
+  function _showToast(msg, fallback = false) {
+    let el = $('trn-toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'trn-toast';
+      el.className = 'trn-toast';
+      document.body.appendChild(el);
+    }
+    el.textContent = fallback ? 'No se pudo copiar' : msg;
+    el.classList.add('trn-toast--show');
+    clearTimeout(el._t);
+    el._t = setTimeout(() => el.classList.remove('trn-toast--show'), 2800);
+  }
+
   function _setProgress(txt, pct) {
     const el = $('trn-progress-text');
     if (el) el.textContent = txt;
@@ -617,10 +715,21 @@ const TRN = (() => {
   // ── Match cache (built once after simulation, used by bracket + calendar) ─
   function _buildMatchCache(data) {
     _matchCache = [];
-    _getAllMatches(data).forEach(m => {
+    const add = (m, ctx) => {
       m._cacheIdx = _matchCache.length;
-      _matchCache.push({ m, nameA: m.a?.name || '?', nameB: m.b?.name || '?' });
-    });
+      _matchCache.push({ m, nameA: m.a?.name || '?', nameB: m.b?.name || '?', ctx: ctx || '' });
+    };
+    if (data.format === 'liga') {
+      const chunk = Math.max(1, Math.floor(data.teams.length / 2));
+      data.matches.forEach((m, i) => add(m, `Jornada ${Math.floor(i / chunk) + 1} · Liga`));
+    } else if (data.format === 'copa') {
+      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' · Copa')));
+      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Copa');
+    } else {
+      (data.groups || []).forEach(g => g.matches.forEach(m => add(m, g.label)));
+      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' · Champions')));
+      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Champions');
+    }
   }
 
   // ── Champion reveal ──────────────────────────────────────
@@ -840,7 +949,27 @@ const TRN = (() => {
       roundsDone++;
     }
 
-    return { format: 'copa', champion: bracket[0], rounds, teams: _teams };
+    // ── Partido por el Tercer Puesto (opcional) ───────────
+    let thirdPlace = null;
+    if (_rules.tercerPuesto && rounds.length >= 2) {
+      _setProgress('Simulando 3º puesto…', 97);
+      const semiRound = rounds[rounds.length - 2];
+      const losers = semiRound.matches.map(m => (m.winner?.slug === m.a?.slug ? m.b : m.a)).filter(Boolean);
+      if (losers.length === 2) {
+        const { match } = await _simSingleKO(losers[0], losers[1], 9999);
+        thirdPlace = match;
+      }
+    }
+
+    return { format: 'copa', champion: bracket[0], rounds, thirdPlace, teams: _teams };
+  }
+
+  // Helper: simulate a single knockout match
+  async function _simSingleKO(a, b, salt) {
+    const res = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt, penalties: true }]);
+    const r = res[0];
+    const winner = r.penA !== null ? (r.penA > r.penB ? a : b) : (r.scoreA > r.scoreB ? a : b);
+    return { match: { a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB, scorersA: r.scorersA||[], scorersB: r.scorersB||[], mom: r.mom||null, stats: r.stats||null, winner, legs: 1 }, winner };
   }
 
   // ── LIGA ─────────────────────────────────────────────────
@@ -1294,6 +1423,21 @@ const TRN = (() => {
             </div>`).join('')}
         </div>` + _renderChampionPath(d);
     }
+    // 3rd-place match
+    if (_data?.thirdPlace) {
+      const tp = _data.thirdPlace;
+      const scoreStr = tp.penA !== null
+        ? `${tp.scoreA}–${tp.scoreB} (p: ${tp.winner?.slug === tp.a?.slug ? tp.penA : tp.penB}–${tp.winner?.slug === tp.a?.slug ? tp.penB : tp.penA})`
+        : `${tp.scoreA}–${tp.scoreB}`;
+      el.innerHTML += `<h3 class="trn-section-h trn-section-h-mt">🥉 Tercer Puesto</h3>
+        <div class="trn-tp-match">
+          ${_badgeImg(tp.a?.slug, 'trn-tp-badge')}
+          <span class="trn-tp-name">${_esc(tp.a?.name || '?')}</span>
+          <span class="trn-tp-score">${scoreStr}</span>
+          <span class="trn-tp-name">${_esc(tp.b?.name || '?')}</span>
+          ${_badgeImg(tp.b?.slug, 'trn-tp-badge')}
+        </div>`;
+    }
   }
 
   function _zoneClass(i, total) {
@@ -1605,12 +1749,13 @@ const TRN = (() => {
   }
 
   function _getAllMatches(d) {
+    const extra = d.thirdPlace ? [d.thirdPlace] : [];
     if (d.format === 'liga') return d.matches;
-    if (d.format === 'copa') return d.rounds.flatMap(r => r.matches);
+    if (d.format === 'copa') return [...d.rounds.flatMap(r => r.matches), ...extra];
     // champions
     const grpMatches = (d.groups || []).flatMap(g => g.matches);
     const koMatches  = (d.koRounds || []).flatMap(r => r.matches);
-    return [...grpMatches, ...koMatches];
+    return [...grpMatches, ...koMatches, ...extra];
   }
 
   // ── Start over ───────────────────────────────────────────
@@ -1629,95 +1774,108 @@ const TRN = (() => {
     const entry = _matchCache[idx];
     if (!entry) return;
     _modalIdx = idx;
-    const { m, nameA, nameB } = entry;
+    const { m, nameA, nameB, ctx } = entry;
 
     const modal  = $('trn-match-modal');
     const header = $('trn-modal-header');
     const body   = $('trn-modal-body');
     if (!modal || !header || !body) return;
 
-    // Resolve scores (could be legs=2)
-    let scoreStr, scorersA, scorersB;
+    // Resolve aggregate scores & scorer lists
+    let scoreA, scoreB, scorersA, scorersB;
     if (m.legs === 2) {
-      const pen  = m.penA !== null ? ` <span class="trn-modal-pen">(${m.penA}–${m.penB} p)</span>` : '';
-      scoreStr   = `${m.aggA} – ${m.aggB}${pen}`;
-      scorersA   = [...(m.r1?.scorersA || []), ...(m.r2?.scorersB || [])];
-      scorersB   = [...(m.r1?.scorersB || []), ...(m.r2?.scorersA || [])];
+      scoreA   = m.aggA; scoreB = m.aggB;
+      scorersA = [...(m.r1?.scorersA || []), ...(m.r2?.scorersB || [])];
+      scorersB = [...(m.r1?.scorersB || []), ...(m.r2?.scorersA || [])];
     } else {
-      const pen  = m.penA !== null ? ` <span class="trn-modal-pen">(${m.penA}–${m.penB} p)</span>` : '';
-      scoreStr   = `${m.scoreA} – ${m.scoreB}${pen}`;
-      scorersA   = m.scorersA || [];
-      scorersB   = m.scorersB || [];
+      scoreA   = m.scoreA ?? 0; scoreB = m.scoreB ?? 0;
+      scorersA = m.scorersA || [];
+      scorersB = m.scorersB || [];
     }
 
-    const mBadgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
-    const mBadgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
+    // Who won?
+    const isWinA = m.penA !== null ? m.penA > m.penB : scoreA > scoreB;
+    const isWinB = m.penA !== null ? m.penB > m.penA : scoreB > scoreA;
+    const penStr = m.penA !== null
+      ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
+    const legsStr = m.legs === 2
+      ? `<div class="trn-modal-legs-sub">Ida ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · Vuelta ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
+
+    const badgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
+    const badgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
+
     header.innerHTML = `
+      ${ctx ? `<div class="trn-modal-ctx">${_esc(ctx)}</div>` : ''}
       <div class="trn-modal-teams">
-        <div class="trn-modal-team trn-modal-team-a">
-          <img class="trn-modal-badge" src="${_esc(mBadgeA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-          <span>${_esc(nameA)}</span>
+        <div class="trn-modal-team trn-modal-team-a${isWinA ? ' trn-modal-winner' : isWinB ? ' trn-modal-loser' : ''}">
+          <img class="trn-modal-badge" src="${_esc(badgeA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <span class="trn-modal-teamname">${_esc(nameA)}</span>
         </div>
-        <span class="trn-modal-score-big">${scoreStr}</span>
-        <div class="trn-modal-team trn-modal-team-b">
-          <span>${_esc(nameB)}</span>
-          <img class="trn-modal-badge" src="${_esc(mBadgeB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+        <div class="trn-modal-score-block">
+          <span class="trn-modal-score-big">${scoreA} – ${scoreB}</span>
+          ${legsStr}${penStr}
         </div>
-      </div>
-      ${m.legs === 2 ? `<div class="trn-modal-legs">
-        <span class="trn-modal-leg">Ida: <strong>${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'}</strong></span>
-        <span class="trn-modal-leg-sep">&middot;</span>
-        <span class="trn-modal-leg">Vuelta: <strong>${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</strong></span>
-      </div>` : ''}`;
-
-    const grpScorers = (list) => {
-      if (!list.length) return '<span class="trn-modal-no-goals">—</span>';
-      const g = {};
-      list.forEach(s => { if (!g[s.name]) g[s.name] = []; g[s.name].push(s.minute); });
-      return Object.entries(g).map(([n, mins]) =>
-        `<div class="trn-modal-scorer">${_esc(n)} <span class="trn-modal-mins">${mins.map(x => x + `'`).join(' ')}</span></div>`
-      ).join('');
-    };
-
-    // Pick stats — for legs=2 use r1 stats as representative
-    const statsObj   = m.legs === 2 ? m.r1 : m;
-    const possA      = statsObj?.stats?.possession?.teamA ?? 50;
-    const possB      = statsObj?.stats?.possession?.teamB ?? 50;
-    const shotsA     = statsObj?.stats?.shots?.teamA ?? 0;
-    const shotsB     = statsObj?.stats?.shots?.teamB ?? 0;
-    const mom        = m.legs === 2 ? (m.r1?.mom || m.r2?.mom || null) : (m.mom || null);
-    const momTeamName = mom ? (mom.team === 'A' ? nameA : nameB) : null;
-
-    body.innerHTML = `
-      <div class="trn-modal-scorers-row">
-        <div class="trn-modal-scorers-col">${grpScorers(scorersA)}</div>
-        <div class="trn-modal-scorers-sep"></div>
-        <div class="trn-modal-scorers-col trn-modal-scorers-col-b">${grpScorers(scorersB)}</div>
-      </div>
-      ${mom ? `<div class="trn-modal-mom">⭐ MOM: <strong>${_esc(mom.name)}</strong> <span class="trn-modal-mom-team">(${_esc(momTeamName)})</span></div>` : ''}
-      <div class="trn-modal-stats">
-        <div class="trn-modal-stat-row">
-          <span class="trn-modal-stat-val">${possA}%</span>
-          <span class="trn-modal-stat-label">Posesión</span>
-          <span class="trn-modal-stat-val">${possB}%</span>
-        </div>
-        <div class="trn-modal-poss-bar">
-          <div class="trn-modal-poss-a" style="width:${possA}%"></div>
-          <div class="trn-modal-poss-b" style="width:${possB}%"></div>
-        </div>
-        <div class="trn-modal-stat-row">
-          <span class="trn-modal-stat-val">${shotsA}</span>
-          <span class="trn-modal-stat-label">Tiros</span>
-          <span class="trn-modal-stat-val">${shotsB}</span>
-        </div>
-        <div class="trn-modal-poss-bar">
-          <div class="trn-modal-poss-a" style="width:${shotsA + shotsB > 0 ? Math.round(shotsA / (shotsA + shotsB) * 100) : 50}%"></div>
-          <div class="trn-modal-poss-b" style="width:${shotsA + shotsB > 0 ? Math.round(shotsB / (shotsA + shotsB) * 100) : 50}%"></div>
+        <div class="trn-modal-team trn-modal-team-b${isWinB ? ' trn-modal-winner' : isWinA ? ' trn-modal-loser' : ''}">
+          <span class="trn-modal-teamname">${_esc(nameB)}</span>
+          <img class="trn-modal-badge" src="${_esc(badgeB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
         </div>
       </div>`;
 
+    // Goal timeline
+    const allGoals = [
+      ...scorersA.map(s => ({ ...s, side: 'A' })),
+      ...scorersB.map(s => ({ ...s, side: 'B' })),
+    ].sort((a, b) => a.minute - b.minute);
+    let rA = 0, rB = 0;
+    const tlHtml = allGoals.length
+      ? `<div class="trn-modal-timeline">${allGoals.map(g => {
+          g.side === 'A' ? rA++ : rB++;
+          const isA = g.side === 'A';
+          return `<div class="trn-modal-tl-row${isA ? ' trn-tl-a' : ' trn-tl-b'}">
+            ${isA
+              ? `<span class="trn-tl-name">${_esc(g.name)}</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-spacer"></span>`
+              : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
+          </div>`;
+        }).join('')}</div>`
+      : `<div class="trn-modal-no-goals-row">Sin goles</div>`;
+
+    // Stats
+    const st  = m.legs === 2 ? m.r1 : m;
+    const s   = st?.stats || {};
+    const possA  = s.possession?.teamA ?? 50, possB  = s.possession?.teamB ?? 50;
+    const shotA  = s.shots?.teamA    ?? 0,    shotB  = s.shots?.teamB    ?? 0;
+    const cornA  = s.corners?.teamA  ?? 0,    cornB  = s.corners?.teamB  ?? 0;
+    const foulA  = s.fouls?.teamA    ?? 0,    foulB  = s.fouls?.teamB    ?? 0;
+    const saveA  = s.saves?.teamA    ?? 0,    saveB  = s.saves?.teamB    ?? 0;
+    const mom = m.legs === 2 ? (m.r1?.mom || m.r2?.mom || null) : (m.mom || null);
+    const momTeam = mom ? (mom.team === 'A' ? nameA : nameB) : null;
+
+    const bar = (vA, vB, lbl) => {
+      const t = vA + vB || 1;
+      const w = Math.round(vA / t * 100);
+      return `<div class="trn-modal-stat-row">
+        <span class="trn-modal-stat-val">${vA}</span>
+        <span class="trn-modal-stat-label">${lbl}</span>
+        <span class="trn-modal-stat-val">${vB}</span>
+      </div>
+      <div class="trn-modal-poss-bar">
+        <div class="trn-modal-poss-a" style="width:${w}%"></div>
+        <div class="trn-modal-poss-b" style="width:${100-w}%"></div>
+      </div>`;
+    };
+
+    body.innerHTML = `
+      ${tlHtml}
+      ${mom ? `<div class="trn-modal-mom">⭐ <strong>${_esc(mom.name)}</strong> <span class="trn-modal-mom-team">${_esc(momTeam)}</span></div>` : ''}
+      <div class="trn-modal-stats">
+        ${bar(possA, possB, 'Posesión %')}
+        ${bar(shotA, shotB, 'Tiros')}
+        ${cornA || cornB ? bar(cornA, cornB, 'Córners') : ''}
+        ${saveA || saveB ? bar(saveA, saveB, 'Paradas') : ''}
+        ${foulA || foulB ? bar(foulA, foulB, 'Faltas') : ''}
+      </div>`;
+
     modal.classList.remove('hidden');
-    // Update nav counter & button states
     const counter = $('trn-modal-counter');
     if (counter) counter.textContent = `${_modalIdx + 1} / ${_matchCache.length}`;
     const prev = $('trn-modal-prev'), next = $('trn-modal-next');
@@ -1776,6 +1934,8 @@ const TRN = (() => {
     nextMatch,
     resumeTournament,
     discardSaved,
+    clearHistory,
+    shareTournament,
     reshuffleDraw,
     reshuffleGroupsDraw,
   };
