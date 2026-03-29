@@ -165,74 +165,6 @@ const TRN = (() => {
     if (_teams.length === _numTeams) _updatePreDraw();
   }
 
-  function _rebuildCopaDetailRules() {
-    const detailEl = $('trn-copa-detail-rules');
-    if (!detailEl) return;
-    if (_rules.copaMode === 'groups') {
-      detailEl.innerHTML = `
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">Fase de grupos</span>
-            <span class="trn-rule-hint">Partido único · Activo = Ida y Vuelta en grupos</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">Fase eliminatoria</span>
-            <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO · La final siempre a partido único</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>`;
-    } else {
-      detailEl.innerHTML = `
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">Formato de partido</span>
-            <span class="trn-rule-hint">Partido único (FA Cup) · Activo = Ida y Vuelta (Copa del Rey)</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">Desempate</span>
-            <span class="trn-rule-hint">Inactivo = Penaltis directos · Activo = Prórroga + Penaltis</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">Partido por el 3º puesto</span>
-            <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>`;
-    }
-  }
-
-  function onCopaGroupsChange(checked) {
-    _rules.copaMode = checked ? 'groups' : 'ko';
-    _buildNumTeamsPicker();
-    _rebuildCopaDetailRules();
-    _draw = []; _groupsDraw = [];
-    if (_teams.length === _numTeams) _updatePreDraw();
-  }
-
   function _buildNumTeamsPicker() {
     const wrap = $('trn-num-teams');
     if (!wrap || !_fmt) return;
@@ -2723,12 +2655,6 @@ const TRN = (() => {
     closeMatchModal,
     prevMatch,
     nextMatch,
-    shareTournament,
-    reshuffleDraw,
-    reshuffleGroupsDraw,
-    openLeagueLoader,
-    setNumTeams,
-    closeLeagueLoader,
     loadRealLeague,
   };
 
