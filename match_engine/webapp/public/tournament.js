@@ -2329,8 +2329,8 @@ const TRN = (() => {
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
+            <span class="trn-stats-club">${_esc(r.team)}</span>
             <span class="trn-stats-gf" title="Goles">${r.goals} goles</span>
-            <span class="trn-stats-mp trn-stats-club">${_esc(r.team)}</span>
           </div>`).join('')}
       </div>
       ${(d.mvp || []).length ? `
@@ -2341,8 +2341,8 @@ const TRN = (() => {
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
+            <span class="trn-stats-club">${_esc(r.team)}</span>
             <span class="trn-stats-gf">${r.count}× MOM</span>
-            <span class="trn-stats-mp trn-stats-club">${_esc(r.team)}</span>
           </div>`).join('')}
       </div>` : ''}
       <h3 class="trn-section-h trn-section-h-mt">⚽ Equipos más goleadores</h3>
@@ -2461,9 +2461,9 @@ const TRN = (() => {
     }
 
     // Who won?
-    const isWinA = m.penA !== null ? m.penA > m.penB : scoreA > scoreB;
-    const isWinB = m.penA !== null ? m.penB > m.penA : scoreB > scoreA;
-    const penStr = m.penA !== null
+    const isWinA = m.penA != null ? m.penA > m.penB : scoreA > scoreB;
+    const isWinB = m.penA != null ? m.penB > m.penA : scoreB > scoreA;
+    const penStr = m.penA != null && typeof m.penA === 'number'
       ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
     const legsStr = m.legs === 2
       ? `<div class="trn-modal-legs-sub">Ida ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · Vuelta ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
@@ -2483,8 +2483,8 @@ const TRN = (() => {
           ${legsStr}${penStr}
         </div>
         <div class="trn-modal-team trn-modal-team-b${isWinB ? ' trn-modal-winner' : isWinA ? ' trn-modal-loser' : ''}">
-          <span class="trn-modal-teamname">${_esc(nameB)}</span>
           <img class="trn-modal-badge" src="${_esc(badgeB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <span class="trn-modal-teamname">${_esc(nameB)}</span>
         </div>
       </div>`;
 
