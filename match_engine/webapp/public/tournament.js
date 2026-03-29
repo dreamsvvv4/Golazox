@@ -6,7 +6,7 @@ const TRN = (() => {
   // ── State ───────────────────────────────────────────────
   let _fmt        = null;   // 'copa' | 'liga' | 'champions'
   let _numTeams   = 16;
-  let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: false };
+  let _rules      = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: false, copaMode: 'ko' };
   let _teams      = [];     // [{ slug, era, name }]
   let _draw       = [];     // Copa: [{ a, b }] first-round pairings
   let _groupsDraw = [];     // Champions: [[t1,t2,t3,t4], ...] pre-drawn groups
@@ -19,9 +19,10 @@ const TRN = (() => {
   let _trnCatalog  = null;   // cached catalog for league loader
 
   const VALID_COUNTS = {
-    copa:      [4, 8, 16, 32],
-    liga:      [4, 6, 8, 10, 12, 14, 16, 18, 20],
-    champions: [8, 12, 16, 20, 24, 32],
+    copa:        [4, 8, 16, 32],
+    copa_groups: [8, 12, 16, 20, 24, 32],
+    liga:        [4, 6, 8, 10, 12, 14, 16, 18, 20],
+    champions:   [8, 12, 16, 20, 24, 32],  // kept for backward compat
   };
 
   // ── DOM helpers ─────────────────────────────────────────
@@ -90,16 +91,154 @@ const TRN = (() => {
   function selectFormat(fmt) {
     _fmt = fmt;
     _teams = [];
+    if (fmt === 'copa') _rules.copaMode = 'ko';
     try { _gx('trn_format_select', { format: fmt }); } catch(_) {}
     document.querySelectorAll('.trn-fmt-card').forEach(c =>
       c.classList.toggle('trn-fmt-selected', c.dataset.fmt === fmt));
     _buildNumTeamsPicker();
   }
 
+  function _rebuildCopaDetailRules() {
+    const detailEl = $('trn-copa-detail-rules');
+    if (!detailEl) return;
+    if (_rules.copaMode === 'groups') {
+      detailEl.innerHTML = `
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Fase de grupos</span>
+            <span class="trn-rule-hint">Partido único · Activo = Ida y Vuelta en grupos</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Fase eliminatoria</span>
+            <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO · La final siempre a partido único</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>`;
+    } else {
+      detailEl.innerHTML = `
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Formato de partido</span>
+            <span class="trn-rule-hint">Partido único (FA Cup) · Activo = Ida y Vuelta (Copa del Rey)</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Desempate</span>
+            <span class="trn-rule-hint">Inactivo = Penaltis directos · Activo = Prórroga + Penaltis</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Partido por el 3º puesto</span>
+            <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>`;
+    }
+  }
+
+  function onCopaGroupsChange(checked) {
+    _rules.copaMode = checked ? 'groups' : 'ko';
+    _buildNumTeamsPicker();
+    _rebuildCopaDetailRules();
+    _draw = []; _groupsDraw = [];
+    if (_teams.length === _numTeams) _updatePreDraw();
+  }
+
+  function _rebuildCopaDetailRules() {
+    const detailEl = $('trn-copa-detail-rules');
+    if (!detailEl) return;
+    if (_rules.copaMode === 'groups') {
+      detailEl.innerHTML = `
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Fase de grupos</span>
+            <span class="trn-rule-hint">Partido único · Activo = Ida y Vuelta en grupos</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Fase eliminatoria</span>
+            <span class="trn-rule-hint">Activo = Ida y Vuelta en rondas KO · La final siempre a partido único</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>`;
+    } else {
+      detailEl.innerHTML = `
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Formato de partido</span>
+            <span class="trn-rule-hint">Partido único (FA Cup) · Activo = Ida y Vuelta (Copa del Rey)</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Desempate</span>
+            <span class="trn-rule-hint">Inactivo = Penaltis directos · Activo = Prórroga + Penaltis</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>
+        <label class="trn-rule-row">
+          <div class="trn-rule-body">
+            <span class="trn-rule-name">Partido por el 3º puesto</span>
+            <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
+          </div>
+          <div class="trn-toggle-wrap">
+            <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
+            <div class="trn-toggle"></div>
+          </div>
+        </label>`;
+    }
+  }
+
+  function onCopaGroupsChange(checked) {
+    _rules.copaMode = checked ? 'groups' : 'ko';
+    _buildNumTeamsPicker();
+    _rebuildCopaDetailRules();
+    _draw = []; _groupsDraw = [];
+    if (_teams.length === _numTeams) _updatePreDraw();
+  }
+
   function _buildNumTeamsPicker() {
     const wrap = $('trn-num-teams');
     if (!wrap || !_fmt) return;
-    const counts = VALID_COUNTS[_fmt] || [8, 16];
+    const key = (_fmt === 'copa' && _rules.copaMode === 'groups') ? 'copa_groups' : _fmt;
+    const counts = VALID_COUNTS[key] || [8, 16];
     _numTeams = counts.includes(_numTeams) ? _numTeams : counts[Math.floor(counts.length / 2)];
     wrap.innerHTML = counts.map(n =>
       `<button class="trn-num-pill${n === _numTeams ? ' trn-num-pill-active' : ''}" onclick="TRN.setNumTeams(${n})">${n}</button>`
@@ -123,34 +262,20 @@ const TRN = (() => {
         html = `
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Formato de partido</span>
-              <span class="trn-rule-hint">Partido único (estilo FA Cup) · Activo = Ida y Vuelta (estilo Copa del Rey)</span>
+              <span class="trn-rule-name">Modalidad</span>
+              <span class="trn-rule-hint">Inactivo = Solo Eliminatoria (KO) · Activo = Fase de Grupos + Eliminatoria</span>
             </div>
             <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
+              <input type="checkbox" id="trn-rule-copa-groups" class="trn-toggle-input"${_rules.copaMode === 'groups' ? ' checked' : ''} onchange="TRN.onCopaGroupsChange(this.checked)" />
               <div class="trn-toggle"></div>
             </div>
           </label>
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Desempate</span>
-              <span class="trn-rule-hint">Inactivo = Penaltis directos al 90' · Activo = Prórroga + Penaltis</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">Partido por el 3º puesto</span>
-              <span class="trn-rule-hint">Activo = Los semifinalistas eliminados disputan un partido de consolación</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>`;
+          <div id="trn-copa-detail-rules"></div>`;
+        container.innerHTML = html;
+        _rebuildCopaDetailRules();
+        showStep(2);
+        try { _gx('trn_step2_view', { format: _fmt }); } catch(_) {}
+        return;
       } else if (_fmt === 'liga') {
         html = `
           <label class="trn-rule-row">
@@ -163,7 +288,7 @@ const TRN = (() => {
               <div class="trn-toggle"></div>
             </div>
           </label>`;
-      } else if (_fmt === 'champions') {
+      } else if (_fmt === 'champions' || (_fmt === 'copa' && _rules.copaMode === 'groups')) {
         html = `
           <label class="trn-rule-row">
             <div class="trn-rule-body">
@@ -194,12 +319,18 @@ const TRN = (() => {
 
   function goStep3() {
     if (_fmt === 'copa') {
-      _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
-      _rules.extraTime = !!$('trn-rule-extratime')?.checked;
-      _rules.tercerPuesto = !!$('trn-rule-3rd')?.checked;
+      _rules.copaMode = $('trn-rule-copa-groups')?.checked ? 'groups' : 'ko';
+      if (_rules.copaMode === 'groups') {
+        _rules.grupasIdaVuelta = !!$('trn-rule-grupos-idavuelta')?.checked;
+        _rules.koIdaVuelta     = !!$('trn-rule-ko-idavuelta')?.checked;
+      } else {
+        _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
+        _rules.extraTime = !!$('trn-rule-extratime')?.checked;
+        _rules.tercerPuesto = !!$('trn-rule-3rd')?.checked;
+      }
     } else if (_fmt === 'liga') {
       _rules.idaVuelta = !!$('trn-rule-idavuelta')?.checked;
-    } else if (_fmt === 'champions') {
+    } else if (_fmt === 'champions' || (_fmt === 'copa' && _rules.copaMode === 'groups')) {
       _rules.grupasIdaVuelta = !!$('trn-rule-grupos-idavuelta')?.checked;
       _rules.koIdaVuelta     = !!$('trn-rule-ko-idavuelta')?.checked;
     }
@@ -279,8 +410,9 @@ const TRN = (() => {
     const el = $('trn-pre-draw');
     if (!el) return;
     if (_teams.length < _numTeams || _fmt === 'liga') { el.classList.add('hidden'); return; }
-    if (_fmt === 'copa'      && _draw.length !== _numTeams / 2) _generateDraw();
-    if (_fmt === 'champions' && _groupsDraw.length === 0)        _generateGroupsDraw();
+    const _useGroups = (_fmt === 'champions') || (_fmt === 'copa' && _rules.copaMode === 'groups');
+    if (!_useGroups && _draw.length !== _numTeams / 2) _generateDraw();
+    if (_useGroups && _groupsDraw.length === 0)         _generateGroupsDraw();
     _renderPreDraw();
   }
 
@@ -743,7 +875,8 @@ const TRN = (() => {
 
     try {
       let data;
-      if (_fmt === 'copa')        data = await _simulateCopa();
+      if (_fmt === 'copa' && _rules.copaMode === 'groups') data = await _simulateCopaGrupos();
+      else if (_fmt === 'copa')   data = await _simulateCopa();
       else if (_fmt === 'liga')   data = await _simulateLiga();
       else                        data = await _simulateChampions();
 
@@ -823,7 +956,9 @@ const TRN = (() => {
   function _pushHistory(data) {
     try {
       const hist = _loadHistory();
-      const fmtLabel = data.format === 'copa' ? '🏆 Copa' : data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
+      const fmtLabel = data.format === 'liga' ? '📊 Liga' :
+                          data.format === 'copa' && data.copaMode === 'groups' ? '🏆 Copa G' :
+                          data.format === 'copa' ? '🏆 Copa' : '⭐ Champions';
       const thirdName = data.thirdPlace?.winner?.name || null;
       const entry = {
         ts: Date.now(),
@@ -1247,13 +1382,15 @@ const TRN = (() => {
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
       data.matches.forEach((m, i) => add(m, `Jornada ${Math.floor(i / chunk) + 1} · Liga`));
-    } else if (data.format === 'copa') {
+    } else if (data.format === 'copa' && !data.groups) {
       data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' · Copa')));
       if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Copa');
     } else {
+      // Copa groups mode or old Champions
+      const label = data.format === 'copa' ? 'Copa' : 'Champions';
       (data.groups || []).forEach(g => g.matches.forEach(m => add(m, g.label)));
-      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' · Champions')));
-      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Champions');
+      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' · ' + label)));
+      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · ' + label);
     }
   }
 
@@ -1289,8 +1426,9 @@ const TRN = (() => {
     if (nameEl) nameEl.textContent = data.champion?.name || '—';
     const fmtEl = $('trn-reveal-format');
     if (fmtEl) fmtEl.textContent =
-      data.format === 'copa' ? '🏆 Copa · Campeón' :
-      data.format === 'liga' ? '📊 Liga · Campeón' : '⭐ Champions · Campeón';
+      data.format === 'liga' ? '📊 Liga · Campeón' :
+      (data.format === 'copa' && data.copaMode === 'groups') ? '🏆 Copa · Grupos · Campeón' :
+      data.format === 'copa' ? '🏆 Copa · Campeón' : '⭐ Champions · Campeón';
     el.classList.remove('hidden');
     _confetti();
     await new Promise(res => {
@@ -1608,6 +1746,22 @@ const TRN = (() => {
     return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
+  // ── COPA GRUPOS (Fase de Grupos + Eliminatoria) ──────────────────────────
+  async function _simulateCopaGrupos() {
+    const result = await _simulateChampions();
+    result.format = 'copa';
+    result.copaMode = 'groups';
+    return result;
+  }
+
+  // ── COPA GRUPOS (Fase de Grupos + Eliminatoria) ──────────────────────────
+  async function _simulateCopaGrupos() {
+    const result = await _simulateChampions();
+    result.format = 'copa';
+    result.copaMode = 'groups';
+    return result;
+  }
+
   // Internal copa simulation (reused for Champions KO rounds) — supports ida y vuelta
   async function _simulateCopa_internal(teamList, rules = {}) {
     const { idaVuelta = false, startPct = 5 } = rules;
@@ -1683,7 +1837,7 @@ const TRN = (() => {
     if (!champSlug) return '';
     const path = [];
 
-    if (data.format === 'champions') {
+    if (data.format === 'champions' || (data.format === 'copa' && data.groups)) {
       // Group stage matches
       const champGroup = (data.groups || []).find(g => g.table.some(r => r.slug === champSlug));
       if (champGroup) {
@@ -1802,6 +1956,54 @@ const TRN = (() => {
       </div>`;
   }
 
+  // ── Calendar match card helper ──────────────────────────
+  function _matchCard(m, nameA, nameB, score) {
+    const idx = m._cacheIdx ?? 0;
+    const slugA = m.a?.slug, slugB = m.b?.slug;
+    const bA = _badge(slugA) || '/img/badges/_placeholder.svg';
+    const bB = _badge(slugB) || '/img/badges/_placeholder.svg';
+    const isWinA = m.winner?.slug && m.winner.slug === slugA;
+    const isWinB = m.winner?.slug && m.winner.slug === slugB;
+    const scorersA = (m.scorersA || (m.r1 ? [...(m.r1.scorersA||[]),...(m.r2?.scorersB||[])] : [])).map(s=>_esc(s.name)).join(', ');
+    const scorersB = (m.scorersB || (m.r1 ? [...(m.r1.scorersB||[]),...(m.r2?.scorersA||[])] : [])).map(s=>_esc(s.name)).join(', ');
+    return `<div class="trn-cal-match${isWinA ? ' trn-cal-win-a' : isWinB ? ' trn-cal-win-b' : ''}" onclick="TRN.openMatchModal(${idx})">
+      <div class="trn-cal-team-side">
+        <img class="trn-cal-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+        <span class="trn-cal-tname${isWinA ? ' trn-q' : ''}">${_esc(nameA)}</span>
+      </div>
+      <div class="trn-cal-score">${score}</div>
+      <div class="trn-cal-team-side trn-cal-side-right">
+        <span class="trn-cal-tname${isWinB ? ' trn-q' : ''}">${_esc(nameB)}</span>
+        <img class="trn-cal-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+      </div>
+      ${(scorersA || scorersB) ? `<div class="trn-cal-scorers"><span class="trn-cal-scorer-a">${scorersA}</span><span class="trn-cal-scorer-sep"></span><span class="trn-cal-scorer-b">${scorersB}</span></div>` : ''}
+    </div>`;
+  }
+
+  // ── Calendar match card helper ──────────────────────────
+  function _matchCard(m, nameA, nameB, score) {
+    const idx = m._cacheIdx ?? 0;
+    const slugA = m.a?.slug, slugB = m.b?.slug;
+    const bA = _badge(slugA) || '/img/badges/_placeholder.svg';
+    const bB = _badge(slugB) || '/img/badges/_placeholder.svg';
+    const isWinA = m.winner?.slug && m.winner.slug === slugA;
+    const isWinB = m.winner?.slug && m.winner.slug === slugB;
+    const scorersA = (m.scorersA || (m.r1 ? [...(m.r1.scorersA||[]),...(m.r2?.scorersB||[])] : [])).map(s=>_esc(s.name)).join(', ');
+    const scorersB = (m.scorersB || (m.r1 ? [...(m.r1.scorersB||[]),...(m.r2?.scorersA||[])] : [])).map(s=>_esc(s.name)).join(', ');
+    return `<div class="trn-cal-match${isWinA ? ' trn-cal-win-a' : isWinB ? ' trn-cal-win-b' : ''}" onclick="TRN.openMatchModal(${idx})">
+      <div class="trn-cal-team-side">
+        <img class="trn-cal-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+        <span class="trn-cal-tname${isWinA ? ' trn-q' : ''}">${_esc(nameA)}</span>
+      </div>
+      <div class="trn-cal-score">${score}</div>
+      <div class="trn-cal-team-side trn-cal-side-right">
+        <span class="trn-cal-tname${isWinB ? ' trn-q' : ''}">${_esc(nameB)}</span>
+        <img class="trn-cal-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+      </div>
+      ${(scorersA || scorersB) ? `<div class="trn-cal-scorers"><span class="trn-cal-scorer-a">${scorersA}</span><span class="trn-cal-scorer-sep"></span><span class="trn-cal-scorer-b">${scorersB}</span></div>` : ''}
+    </div>`;
+  }
+
   // ── Dashboard rendering ──────────────────────────────────
   function _renderDashboard() {
     if (!_data) return;
@@ -1818,18 +2020,17 @@ const TRN = (() => {
     if (champBadgeEl) champBadgeEl.src = champBadge || '/img/badges/_placeholder.svg';
     $('trn-champ-name').textContent = champ?.name || '—';
     $('trn-champ-format').textContent =
-      _data.format === 'copa' ? '🏆 Copa' :
-      _data.format === 'liga' ? '📊 Liga' : '⭐ Champions';
+      _data.format === 'liga' ? '📊 Liga' :
+      (_data.format === 'copa' && _data.copaMode === 'groups') ? '🏆 Copa · Grupos' :
+      _data.format === 'copa' ? '🏆 Copa' : '⭐ Champions';
 
     // Runner-up on poster
     const runnerUpEl = $('trn-champ-runnerup');
     if (runnerUpEl) {
       let ru = null;
-      if (_data.format === 'copa') {
-        const fin = _data.rounds[_data.rounds.length - 1]?.matches[0];
-        if (fin) ru = fin.winner?.slug === fin.a?.slug ? fin.b : fin.a;
-      } else if (_data.format === 'champions') {
-        const fin = _data.koRounds?.[_data.koRounds.length - 1]?.matches[0];
+      if (_data.format === 'copa' || _data.format === 'champions') {
+        const finalRounds = _data.koRounds || _data.rounds;
+        const fin = finalRounds?.[finalRounds.length - 1]?.matches[0];
         if (fin) ru = fin.winner?.slug === fin.a?.slug ? fin.b : fin.a;
       } else if (_data.format === 'liga') {
         ru = _data.table[1] || null;
@@ -1858,6 +2059,196 @@ const TRN = (() => {
     if (tab === 'bracket')  _renderBracket();
     if (tab === 'calendar') _renderCalendar();
     if (tab === 'stats')    _renderStats();
+  }
+
+  // ── Bracket tab ──────────────────────────────────────────
+  function _renderBracket() {
+    const el = $('trn-tab-bracket');
+    if (!el || !_data) return;
+    const d = _data;
+    if (d.format === 'liga') {
+      el.innerHTML = '<p style="padding:2rem;text-align:center;color:var(--grey)">El cuadro no aplica para formato Liga.<br><small>Consulta la clasificación en Resumen.</small></p>';
+      return;
+    }
+    const rounds = d.koRounds || d.rounds || [];
+    el.innerHTML = `<div class="trn-bkt-scroll">${_renderVisualBracket(rounds)}</div>`;
+  }
+
+  // ── Calendar tab ─────────────────────────────────────────
+  function _renderCalendar() {
+    const el = $('trn-tab-calendar');
+    if (!el || !_data) return;
+    const d = _data;
+    let html = '';
+
+    if (d.format === 'liga') {
+      html = `<h3 class="trn-section-h">📅 Partidos</h3>`;
+      const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
+      const matches = d.matches || [];
+      for (let i = 0; i < matches.length; i += matchesPerJornada) {
+        const jornada = matches.slice(i, i + matchesPerJornada);
+        const jNum = Math.floor(i / matchesPerJornada) + 1;
+        const openAttr = jNum === 1 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
+        jornada.forEach(m => {
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
+        });
+        html += '</details>';
+      }
+    } else if (d.groups) {
+      // Copa groups mode or old champions
+      html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
+      (d.groups || []).forEach((g, gi) => {
+        const openAttr = gi === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
+        // Group table first
+        html += '<div class="trn-mini-table" style="margin:.5rem 0 .3rem">';
+        g.table.forEach((r, i) => {
+          const medals = ['🥇','🥈','🥉'];
+          const qualifier = i < 2;
+          html += `<div class="trn-mini-row${i===0?' trn-mini-row-top':''}">
+            <span class="trn-mini-pos">${medals[i]||String(i+1)}</span>
+            ${_badgeImg(r.slug,'trn-mini-badge')}
+            <span class="trn-mini-team${qualifier?' trn-q':''}">${_esc(_tLabel(r))}</span>
+            <span class="trn-mini-pts">${r.pts}p</span>
+            <span class="trn-mini-gd">${r.gf}-${r.ga}</span>
+          </div>`;
+        });
+        html += '</div>';
+        // Group matches
+        g.matches.forEach(m => {
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
+        });
+        html += '</details>';
+      });
+      html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
+      [...(d.koRounds || [])].reverse().forEach((r, ri) => {
+        const openAttr = ri === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+        r.matches.forEach(m => {
+          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+        });
+        html += '</details>';
+      });
+    } else {
+      // Copa KO mode
+      html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
+      [...(d.rounds || [])].reverse().forEach((r, ri) => {
+        const openAttr = ri === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+        r.matches.forEach(m => {
+          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+          if (m.legs === 2) {
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+          } else {
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+          }
+        });
+        html += '</details>';
+      });
+      if (d.thirdPlace) {
+        const m = d.thirdPlace, penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+        html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+        html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+      }
+    }
+    el.innerHTML = html;
+  }
+
+  // ── Bracket tab ──────────────────────────────────────────
+  function _renderBracket() {
+    const el = $('trn-tab-bracket');
+    if (!el || !_data) return;
+    const d = _data;
+    if (d.format === 'liga') {
+      el.innerHTML = '<p style="padding:2rem;text-align:center;color:var(--grey)">El cuadro no aplica para formato Liga.<br><small>Consulta la clasificación en Resumen.</small></p>';
+      return;
+    }
+    const rounds = d.koRounds || d.rounds || [];
+    el.innerHTML = `<div class="trn-bkt-scroll">${_renderVisualBracket(rounds)}</div>`;
+  }
+
+  // ── Calendar tab ─────────────────────────────────────────
+  function _renderCalendar() {
+    const el = $('trn-tab-calendar');
+    if (!el || !_data) return;
+    const d = _data;
+    let html = '';
+
+    if (d.format === 'liga') {
+      html = `<h3 class="trn-section-h">📅 Partidos</h3>`;
+      const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
+      const matches = d.matches || [];
+      for (let i = 0; i < matches.length; i += matchesPerJornada) {
+        const jornada = matches.slice(i, i + matchesPerJornada);
+        const jNum = Math.floor(i / matchesPerJornada) + 1;
+        const openAttr = jNum === 1 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
+        jornada.forEach(m => {
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
+        });
+        html += '</details>';
+      }
+    } else if (d.groups) {
+      // Copa groups mode or old champions
+      html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
+      (d.groups || []).forEach((g, gi) => {
+        const openAttr = gi === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
+        // Group table first
+        html += '<div class="trn-mini-table" style="margin:.5rem 0 .3rem">';
+        g.table.forEach((r, i) => {
+          const medals = ['🥇','🥈','🥉'];
+          const qualifier = i < 2;
+          html += `<div class="trn-mini-row${i===0?' trn-mini-row-top':''}">
+            <span class="trn-mini-pos">${medals[i]||String(i+1)}</span>
+            ${_badgeImg(r.slug,'trn-mini-badge')}
+            <span class="trn-mini-team${qualifier?' trn-q':''}">${_esc(_tLabel(r))}</span>
+            <span class="trn-mini-pts">${r.pts}p</span>
+            <span class="trn-mini-gd">${r.gf}-${r.ga}</span>
+          </div>`;
+        });
+        html += '</div>';
+        // Group matches
+        g.matches.forEach(m => {
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
+        });
+        html += '</details>';
+      });
+      html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
+      [...(d.koRounds || [])].reverse().forEach((r, ri) => {
+        const openAttr = ri === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+        r.matches.forEach(m => {
+          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+        });
+        html += '</details>';
+      });
+    } else {
+      // Copa KO mode
+      html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
+      [...(d.rounds || [])].reverse().forEach((r, ri) => {
+        const openAttr = ri === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+        r.matches.forEach(m => {
+          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+          if (m.legs === 2) {
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+          } else {
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+          }
+        });
+        html += '</details>';
+      });
+      if (d.thirdPlace) {
+        const m = d.thirdPlace, penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
+        html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+        html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+      }
+    }
+    el.innerHTML = html;
   }
 
   // ── Swipe gestures on dashboard ──────────────────────────
@@ -1905,48 +2296,8 @@ const TRN = (() => {
       return;
     }
 
-    let html = '';
-    if (d.format === 'copa') {
-      html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
-      [...d.rounds].reverse().forEach((r, ri) => {
-        const openAttr = ri === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
-        r.matches.forEach(m => {
-          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-          if (m.legs === 2) {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
-              `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
-          } else {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
-              `${m.scoreA} – ${m.scoreB}${penStr}`);
-          }
-        });
-        html += `</details>`;
-      });
-    } else {
-      // champions: groups matches + KO
-      html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
-      (d.groups || []).forEach((g, gi) => {
-        const openAttr = gi === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
-        g.matches.forEach(m => {
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
-        });
-        html += `</details>`;
-      });
-      html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
-      [...(d.koRounds || [])].reverse().forEach((r, ri) => {
-        const openAttr = ri === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
-        r.matches.forEach(m => {
-          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
-            `${m.scoreA} – ${m.scoreB}${penStr}`);
-        });
-        html += `</details>`;
-      });
-    }
-    el.innerHTML = html;
+    // Copa and champions: show stat cards + champion path
+    el.innerHTML = _renderStatCards() + _renderChampionPath(d);
   }
 
   // ── Stats tab ────────────────────────────────────────────
@@ -2064,11 +2415,14 @@ const TRN = (() => {
   function _getAllMatches(d) {
     const extra = d.thirdPlace ? [d.thirdPlace] : [];
     if (d.format === 'liga') return d.matches;
-    if (d.format === 'copa') return [...d.rounds.flatMap(r => r.matches), ...extra];
-    // champions
-    const grpMatches = (d.groups || []).flatMap(g => g.matches);
-    const koMatches  = (d.koRounds || []).flatMap(r => r.matches);
-    return [...grpMatches, ...koMatches, ...extra];
+    if (d.groups || d.koRounds) {
+      // Copa groups mode or old Champions
+      const grpMatches = (d.groups || []).flatMap(g => g.matches);
+      const koMatches  = (d.koRounds || []).flatMap(r => r.matches);
+      return [...grpMatches, ...koMatches, ...extra];
+    }
+    // Copa KO mode
+    return [...(d.rounds || []).flatMap(r => r.matches), ...extra];
   }
 
   // ── Start over ───────────────────────────────────────────
