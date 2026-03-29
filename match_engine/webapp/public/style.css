@@ -4155,6 +4155,12 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   padding: .22rem .65rem;
   letter-spacing: .05em;
 }
+.trn-preview-season {
+  font: 700 .7rem/1 var(--font);
+  color: var(--neon);
+  opacity: .75;
+  margin-left: .18rem;
+}
 .trn-preview-players {
   display: flex;
   flex-direction: column;

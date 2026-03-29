@@ -34,6 +34,12 @@ const TRN = (() => {
     const b = _badge(slug);
     return `<img class="${cls || 'trn-badge'}" src="${b || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">`;
   };
+  // Returns display label "Team Name '09" (or just "Team Name" if no era)
+  const _tLabel = (t) => {
+    if (!t) return '?';
+    const yr = t.era ? String(t.era).match(/\d{4}/)?.[0] : null;
+    return yr ? `${t.name} '${yr.slice(2)}` : (t.name || '?');
+  };
 
   // ── Main tab switching (⚽ Partido / 🏆 Torneo) ─────────
   function switchMainTab(tab) {
@@ -187,13 +193,15 @@ const TRN = (() => {
   function _renderTeamSlots() {
     const container = $('trn-teams-list');
     if (!container) return;
-    container.innerHTML = _teams.map((t, i) =>
-      `<div class="trn-team-slot">
+    container.innerHTML = _teams.map((t, i) => {
+      const yr = t.era ? String(t.era).match(/\d{4}/)?.[0] : null;
+      return `<div class="trn-team-slot">
         ${_badgeImg(t.slug, 'trn-slot-badge')}
         <span class="trn-slot-name">${_esc(t.name)}</span>
+        ${yr ? `<span class="trn-slot-era">'${yr.slice(2)}</span>` : ''}
         <button class="trn-slot-remove" onclick="TRN.removeTeam(${i})" title="Quitar">✕</button>
-      </div>`
-    ).join('') || '<p class="trn-teams-empty">Ningún equipo añadido todavía.<br><span style="font-size:.75rem;opacity:.6">Busca por nombre, país o usa ⚡ Aleatorio</span></p>';
+      </div>`;
+    }).join('') || '<p class="trn-teams-empty">Ningún equipo añadido todavía.<br><span style="font-size:.75rem;opacity:.6">Busca por nombre, país o usa ⚡ Aleatorio</span></p>';
 
     // Update count display
     const countEl = $('trn-teams-count');
@@ -382,8 +390,9 @@ const TRN = (() => {
         const name  = _esc(t.nameEs || t.name || t.nameEn || t.slug || '');
         const slug  = _esc(t.slug  || name);
         const badge = _esc(t.badge || '');
-        const meta  = t.era ? _esc(t.era) : '';
-        return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}')">
+        const ls    = t.latestSeason || '';
+        const meta  = ls && ls !== 'all-time' ? `'${String(ls).slice(-2)}` : (ls === 'all-time' ? 'All-Time' : '');
+        return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}','${_esc(ls)}')">
           <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <span class="trn-search-item-name">${name}</span>
           ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}
@@ -402,7 +411,7 @@ const TRN = (() => {
     _renderTeamSlots();
   }
 
-  async function previewTeam(slug, name, badge) {
+  async function previewTeam(slug, name, badge, era = '') {
     const panel = $('trn-team-preview');
     if (!panel) return;
 
@@ -438,6 +447,8 @@ const TRN = (() => {
 
       const badgeUrl = _esc(data.badgeUrl || badge || '/img/badges/_placeholder.svg');
       const formation = data.formation ? _esc(data.formation) : '';
+      const srcYear = data?.source ? (String(data.source).match(/\((\d{4})/)?.[1] || '') : '';
+      const resolvedEra = srcYear || era || '';
 
       let playersHtml = '';
       if (data.found && Array.isArray(data.players) && data.players.length > 0) {
@@ -461,13 +472,13 @@ const TRN = (() => {
         <div class="trn-preview-header">
           <img class="trn-preview-badge" src="${badgeUrl}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <div class="trn-preview-meta">
-            <div class="trn-preview-team-name">${safeName}</div>
+            <div class="trn-preview-team-name">${safeName}${resolvedEra ? ` <span class="trn-preview-season">'${resolvedEra.slice(-2)}</span>` : ''}</div>
             ${formation ? `<span class="trn-preview-formation">⬢ ${formation}</span>` : ''}
           </div>
         </div>
         ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
         <div class="trn-preview-actions">
-          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(resolvedEra)}','${safeBadge}')">✓ Añadir equipo</button>
           <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
         </div>`;
     } catch (_err) {
@@ -475,11 +486,11 @@ const TRN = (() => {
         <div class="trn-preview-header">
           <img class="trn-preview-badge" src="${safeBadge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <div class="trn-preview-meta">
-            <div class="trn-preview-team-name">${safeName}</div>
+            <div class="trn-preview-team-name">${safeName}${era ? ` <span class="trn-preview-season">'${String(era).slice(-2)}</span>` : ''}</div>
           </div>
         </div>
         <div class="trn-preview-actions">
-          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','','${safeBadge}')">✓ Añadir equipo</button>
+          <button class="btn-primary" style="flex:1" onclick="TRN.addTeam('${safeSlug}','${safeName}','${_esc(era)}','${safeBadge}')">✓ Añadir equipo</button>
           <button class="btn-secondary" onclick="TRN.clearSearch()">← Volver</button>
         </div>`;
     }
@@ -513,7 +524,9 @@ const TRN = (() => {
       const picks = pool.sort(() => Math.random() - 0.5).slice(0, needed);
       picks.forEach(t => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
-        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era: '' });
+        const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
+        const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
+        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
       });
       _renderTeamSlots();
     } catch (_) { /* ignore */ }
@@ -717,7 +730,7 @@ const TRN = (() => {
     _matchCache = [];
     const add = (m, ctx) => {
       m._cacheIdx = _matchCache.length;
-      _matchCache.push({ m, nameA: m.a?.name || '?', nameB: m.b?.name || '?', ctx: ctx || '' });
+      _matchCache.push({ m, nameA: _tLabel(m.a) || '?', nameB: _tLabel(m.b) || '?', ctx: ctx || '' });
     };
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
@@ -812,13 +825,13 @@ const TRN = (() => {
     return `<div class="trn-bkt-match" style="top:${topPx}px" onclick="TRN.openMatchModal(${idx})">
       <div class="trn-bkt-team ${isWinA ? 'trn-bkt-winner' : 'trn-bkt-loser'}">
         <img class="trn-bkt-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-        <span class="trn-bkt-tname">${_esc(m.a?.name || '\u2014')}</span>
+        <span class="trn-bkt-tname">${_esc(_tLabel(m.a) || '\u2014')}</span>
         ${isWinA ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
       </div>
       <div class="trn-bkt-score-mid">${_esc(score)}</div>
       <div class="trn-bkt-team ${isWinB ? 'trn-bkt-winner' : 'trn-bkt-loser'}">
         <img class="trn-bkt-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-        <span class="trn-bkt-tname">${_esc(m.b?.name || '\u2014')}</span>
+        <span class="trn-bkt-tname">${_esc(_tLabel(m.b) || '\u2014')}</span>
         ${isWinB ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
       </div>
     </div>`;
@@ -869,7 +882,7 @@ const TRN = (() => {
       html += `<div class="trn-bkt-col-label">\uD83C\uDFC6</div>`;
       html += `<div class="trn-bkt-champion-card" style="top:${Math.max(8,champY-50)}px">`;
       html += `<img class="trn-bkt-champ-badge" src="${_esc(badgeUrl)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">`;
-      html += `<div class="trn-bkt-champ-name">${_esc(champ.name)}</div>`;
+      html += `<div class="trn-bkt-champ-name">${_esc(_tLabel(champ))}</div>`;
       html += '</div></div>';
     }
     html += '</div>';
@@ -1203,7 +1216,7 @@ const TRN = (() => {
           return `<div class="trn-path-row">
             <span class="trn-path-round">${_esc(p.round)}</span>
             ${_badgeImg(p.opp?.slug, 'trn-path-badge')}
-            <span class="trn-path-opp">${_esc(p.opp?.name || '?')}</span>
+            <span class="trn-path-opp">${_esc(_tLabel(p.opp) || '?')}</span>
             <span class="trn-path-score">${scoreStr}</span>
             <span class="trn-path-res ${rCls[p.result]}">${rLabel[p.result]}</span>
           </div>`;
@@ -1220,18 +1233,18 @@ const TRN = (() => {
     function _processLeg(leg, teamA, teamB) {
       (leg.scorersA || []).forEach(s => {
         const key = s.name + '|' + (teamA?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: teamA?.name || '', teamSlug: teamA?.slug || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamA) || '', teamSlug: teamA?.slug || '', goals: 0 };
         scorers[key].goals++;
       });
       (leg.scorersB || []).forEach(s => {
         const key = s.name + '|' + (teamB?.slug || '');
-        if (!scorers[key]) scorers[key] = { name: s.name, team: teamB?.name || '', teamSlug: teamB?.slug || '', goals: 0 };
+        if (!scorers[key]) scorers[key] = { name: s.name, team: _tLabel(teamB) || '', teamSlug: teamB?.slug || '', goals: 0 };
         scorers[key].goals++;
       });
       if (leg.mom) {
         const momTeam = leg.mom.team === 'A' ? teamA : teamB;
         const key = leg.mom.name + '|' + (momTeam?.slug || '');
-        if (!moms[key]) moms[key] = { name: leg.mom.name, team: momTeam?.name || '', teamSlug: momTeam?.slug || '', count: 0 };
+        if (!moms[key]) moms[key] = { name: leg.mom.name, team: _tLabel(momTeam) || '', teamSlug: momTeam?.slug || '', count: 0 };
         moms[key].count++;
       }
     }
@@ -1310,7 +1323,7 @@ const TRN = (() => {
         ru = _data.table[1] || null;
       }
       if (ru) {
-        runnerUpEl.innerHTML = `${_badgeImg(ru.slug, 'trn-ru-badge')}<span class="trn-ru-name">${_esc(ru.name)}</span>`;
+        runnerUpEl.innerHTML = `${_badgeImg(ru.slug, 'trn-ru-badge')}<span class="trn-ru-name">${_esc(_tLabel(ru))}</span>`;
         runnerUpEl.classList.remove('hidden');
       } else {
         runnerUpEl.classList.add('hidden');
@@ -1351,7 +1364,7 @@ const TRN = (() => {
             <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
               <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
               ${_badgeImg(r.slug, 'trn-mini-badge')}
-              <span class="trn-mini-team">${_esc(r.name)}</span>
+              <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
               <span class="trn-mini-pts">${r.pts} pts</span>
               <span class="trn-mini-gd">${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</span>
             </div>`).join('')}
@@ -1365,12 +1378,12 @@ const TRN = (() => {
           <div class="trn-podio-card trn-podio-winner">
             ${_badgeImg(d.champion?.slug, 'trn-podio-badge')}
             <span class="trn-podio-label">🥇 Campeón</span>
-            <span class="trn-podio-name">${_esc(d.champion?.name || '—')}</span>
+            <span class="trn-podio-name">${_esc(_tLabel(d.champion) || '—')}</span>
           </div>
           ${runnerUp ? `<div class="trn-podio-card trn-podio-runner">
             ${_badgeImg(runnerUp.slug, 'trn-podio-badge')}
             <span class="trn-podio-label">🥈 Subcampeón</span>
-            <span class="trn-podio-name">${_esc(runnerUp.name || '—')}</span>
+            <span class="trn-podio-name">${_esc(_tLabel(runnerUp) || '—')}</span>
           </div>` : ''}
         </div>
         <h3 class="trn-section-h trn-section-h-mt">📄 Rondas</h3>
@@ -1393,12 +1406,12 @@ const TRN = (() => {
           <div class="trn-podio-card trn-podio-winner">
             ${_badgeImg(d.champion?.slug, 'trn-podio-badge')}
             <span class="trn-podio-label">🥇 Campeón</span>
-            <span class="trn-podio-name">${_esc(d.champion?.name || '—')}</span>
+            <span class="trn-podio-name">${_esc(_tLabel(d.champion) || '—')}</span>
           </div>
           ${runnerUp ? `<div class="trn-podio-card trn-podio-runner">
             ${_badgeImg(runnerUp.slug, 'trn-podio-badge')}
             <span class="trn-podio-label">🥈 Finalista</span>
-            <span class="trn-podio-name">${_esc(runnerUp.name || '—')}</span>
+            <span class="trn-podio-name">${_esc(_tLabel(runnerUp) || '—')}</span>
           </div>` : ''}
         </div>
         <h3 class="trn-section-h trn-section-h-mt">🌐 Clasificados por grupo</h3>
@@ -1410,14 +1423,14 @@ const TRN = (() => {
                 <div class="trn-group-mini-row trn-q">
                   <span class="trn-mini-pos">${i + 1}</span>
                   ${_badgeImg(r.slug, 'trn-mini-badge-xs')}
-                  <span class="trn-mini-team">${_esc(r.name)}</span>
+                  <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
                   <span class="trn-mini-pts">${r.pts}</span>
                 </div>`).join('')}
               ${g.table.slice(2).map((r, i) => `
                 <div class="trn-group-mini-row">
                   <span class="trn-mini-pos">${i + 3}</span>
                   ${_badgeImg(r.slug, 'trn-mini-badge-xs')}
-                  <span class="trn-mini-team">${_esc(r.name)}</span>
+                  <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
                   <span class="trn-mini-pts">${r.pts}</span>
                 </div>`).join('')}
             </div>`).join('')}
@@ -1484,7 +1497,7 @@ const TRN = (() => {
                   <td>${i + 1}</td>
                   <td class="trn-td-team trn-td-badge-team">
                     <img class="trn-table-badge" src="${_badge(r.slug) || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-                    ${_esc(r.name)}
+                    ${_esc(_tLabel(r))}
                   </td>
                   <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
                   <td>${r.gf}</td><td>${r.ga}</td>
@@ -1515,7 +1528,7 @@ const TRN = (() => {
               <tr class="${i < 2 ? 'trn-tr-qual' : ''}">
                 <td class="trn-td-team trn-td-badge-team">
                   <img class="trn-table-badge" src="${_badge(r.slug) || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-                  ${_esc(r.name)}
+                  ${_esc(_tLabel(r))}
                 </td>
                 <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
                 <td>${r.gf}</td><td>${r.ga}</td>
@@ -1590,7 +1603,7 @@ const TRN = (() => {
         html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Jornada ${j} <span class="trn-jornada-cnt">${cnt}</span></summary>`;
         for (let k = i; k < end; k++) {
           const m = d.matches[k];
-          html += _matchCard(m, m.a.name, m.b.name, `${m.scoreA ?? '?'} – ${m.scoreB ?? '?'}`);
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA ?? '?'} – ${m.scoreB ?? '?'}`);
         }
         html += `</details>`;
         i = end;
@@ -1602,10 +1615,10 @@ const TRN = (() => {
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
           if (m.legs === 2) {
-            html += _matchCard(m, m.a.name, m.b.name,
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
               `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
           } else {
-            html += _matchCard(m, m.a.name, m.b.name,
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
               `${m.scoreA} – ${m.scoreB}${penStr}`);
           }
         });
@@ -1617,7 +1630,7 @@ const TRN = (() => {
       (d.groups || []).forEach(g => {
         html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
         g.matches.forEach(m => {
-          html += _matchCard(m, m.a.name, m.b.name, `${m.scoreA} – ${m.scoreB}`);
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
         });
         html += `</details>`;
       });
@@ -1626,7 +1639,7 @@ const TRN = (() => {
         html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-          html += _matchCard(m, m.a.name, m.b.name,
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b),
             `${m.scoreA} – ${m.scoreB}${penStr}`);
         });
         html += `</details>`;
@@ -1645,7 +1658,7 @@ const TRN = (() => {
     // Aggregate all matches
     const allMatches = _getAllMatches(d);
     const totals = {};
-    _teams.forEach(t => { totals[t.slug] = { name: t.name, slug: t.slug, gf: 0, ga: 0, mp: 0, w: 0 }; });
+    _teams.forEach(t => { totals[t.slug] = { name: _tLabel(t), slug: t.slug, gf: 0, ga: 0, mp: 0, w: 0 }; });
 
     allMatches.forEach(m => {
       const sa = m.scoreA ?? 0, sb = m.scoreB ?? 0;

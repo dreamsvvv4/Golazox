@@ -704,13 +704,20 @@ app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
         t.nameEs.toLowerCase().includes(q) ||
         t.slug.toLowerCase().includes(q)
       ).slice(0, 15);
-  const result = matches.map(t => ({
-    name:   t.nameEs || t.nameEn,
-    nameEs: t.nameEs,
-    nameEn: t.nameEn,
-    slug:   t.slug,
-    badge:  t.badge,
-  }));
+  const result = matches.map(t => {
+    const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
+    const latestSeason = nums.length
+      ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0))
+      : ((t.seasons || []).includes('all-time') ? 'all-time' : '');
+    return {
+      name:   t.nameEs || t.nameEn,
+      nameEs: t.nameEs,
+      nameEn: t.nameEn,
+      slug:   t.slug,
+      badge:  t.badge,
+      latestSeason,
+    };
+  });
   res.set('Cache-Control', 'no-store');
   res.json(result);
 });
