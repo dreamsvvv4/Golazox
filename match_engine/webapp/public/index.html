@@ -531,6 +531,21 @@
     <!-- ── Wizard ─────────────────────────────────────────────── -->
     <div id="trn-wizard">
 
+      <!-- Resume saved tournament banner -->
+      <div id="trn-resume-banner" class="trn-resume-banner hidden">
+        <div class="trn-resume-info">
+          <span class="trn-resume-icon">💾</span>
+          <div>
+            <div class="trn-resume-title">Torneo guardado</div>
+            <div id="trn-resume-desc" class="trn-resume-desc"></div>
+          </div>
+        </div>
+        <div class="trn-resume-actions">
+          <button class="btn-primary trn-resume-btn" onclick="TRN.resumeTournament()">Reanudar</button>
+          <button class="btn-ghost trn-resume-discard" onclick="TRN.discardSaved()">Descartar</button>
+        </div>
+      </div>
+
       <!-- Step progress bar -->
       <div class="trn-stepbar">
         <div class="trn-stepbar-item trn-stepbar-active" data-step="1">
@@ -685,6 +700,20 @@
   </div><!-- /main-trn-wrap -->
 
   </main>
+
+  <!-- ── Tournament Match Detail Modal ──────────────────────── -->
+  <div id="trn-match-modal" class="trn-modal-overlay hidden" onclick="if(event.target===this)TRN.closeMatchModal()">
+    <div class="trn-modal-inner">
+      <button class="trn-modal-close" onclick="TRN.closeMatchModal()" aria-label="Cerrar">✕</button>
+      <div id="trn-modal-header"></div>
+      <div id="trn-modal-body"></div>
+      <div class="trn-modal-nav">
+        <button class="trn-modal-nav-btn" id="trn-modal-prev" onclick="TRN.prevMatch()" title="Anterior (←)">&#8592;</button>
+        <span id="trn-modal-counter" class="trn-modal-counter"></span>
+        <button class="trn-modal-nav-btn" id="trn-modal-next" onclick="TRN.nextMatch()" title="Siguiente (→)">&#8594;</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ── Tournament Champion Reveal Overlay ──────────────────── -->
   <div id="trn-champion-reveal" class="trn-reveal-overlay hidden">

@@ -4375,6 +4375,63 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-path-d { background: rgba(255,255,255,.08); color: rgba(255,255,255,.5); }
 .trn-path-l { background: rgba(255,60,60,.12); color: rgba(255,80,80,.8); }
 
+/* ── Resume banner */
+.trn-resume-banner {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: .75rem;
+  background: rgba(0,212,255,.07);
+  border: 1px solid rgba(0,212,255,.25);
+  border-radius: .75rem;
+  padding: .85rem 1rem;
+  margin-bottom: 1rem;
+}
+.trn-resume-info { display: flex; align-items: center; gap: .65rem; }
+.trn-resume-icon { font-size: 1.3rem; }
+.trn-resume-title { font: 700 .92rem/1 var(--font); color: var(--neon); }
+.trn-resume-desc { font: 400 .78rem/1.3 var(--font); color: rgba(255,255,255,.6); margin-top: .2rem; }
+.trn-resume-actions { display: flex; gap: .5rem; }
+.trn-resume-btn { font-size: .82rem; padding: .45rem 1rem; }
+.trn-resume-discard { font-size: .82rem; padding: .45rem .8rem; background: none; border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.5); border-radius: .45rem; cursor: pointer; transition: color .15s, border-color .15s; }
+.trn-resume-discard:hover { color: #fff; border-color: rgba(255,255,255,.3); }
+
+/* ── Form guide dots */
+.trn-th-form, .trn-td-form { white-space: nowrap; }
+.trn-form { display: inline-block; width: 1.3rem; height: 1.3rem; line-height: 1.3rem; text-align: center; border-radius: 3px; font: 700 .6rem/1.3rem var(--font); margin-right: 1px; }
+.trn-form-w { background: rgba(0,212,255,.15); color: var(--neon); }
+.trn-form-d { background: rgba(255,255,255,.1); color: rgba(255,255,255,.55); }
+.trn-form-l { background: rgba(255,60,60,.14); color: rgba(255,80,80,.85); }
+
+/* ── Match modal nav (prev/next) */
+.trn-modal-nav {
+  display: flex; align-items: center; justify-content: center; gap: .75rem;
+  margin-top: 1rem; padding-top: .75rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.trn-modal-nav-btn {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.7); border-radius: .45rem;
+  width: 2.2rem; height: 2.2rem; cursor: pointer; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.trn-modal-nav-btn:hover:not(:disabled) { background: rgba(0,212,255,.12); color: var(--neon); border-color: rgba(0,212,255,.25); }
+.trn-modal-nav-btn:disabled { opacity: .28; cursor: default; }
+.trn-modal-counter { font: 500 .78rem/1 var(--font); color: rgba(255,255,255,.4); min-width: 4rem; text-align: center; }
+
+/* ── Resultados Destacados cards */
+.trn-dest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: .55rem; }
+.trn-dest-card {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+  border-radius: .55rem; padding: .65rem .75rem; text-align: center;
+  transition: background .15s;
+}
+.trn-dest-card:hover { background: rgba(0,212,255,.06); border-color: rgba(0,212,255,.2); }
+.trn-dest-label { font: 700 .63rem/1 var(--font); letter-spacing: .06em; text-transform: uppercase; color: var(--grey); margin-bottom: .5rem; display: block; }
+.trn-dest-match { display: flex; align-items: center; justify-content: center; gap: .45rem; margin-bottom: .38rem; }
+.trn-dest-badge { width: 22px; height: 22px; object-fit: contain; }
+.trn-dest-score { font: 800 1.1rem/1 var(--font); color: #fff; }
+.trn-dest-teams { font: 400 .71rem/1.3 var(--font); color: rgba(255,255,255,.5); }
+
 
 /* ══════════════════════════════════════════════════════════
    TOURNAMENT — Dashboard

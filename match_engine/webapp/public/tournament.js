@@ -14,6 +14,7 @@ const TRN = (() => {
   let _tab        = 'summary';
   let _matchCache = [];     // flat list for modal lookup
   let _badgeCache  = {};     // slug → badge URL
+  let _modalIdx   = -1;     // current match in modal for prev/next nav
 
   const VALID_COUNTS = {
     copa:      [4, 8, 16, 32],
@@ -42,6 +43,7 @@ const TRN = (() => {
       b.classList.toggle('main-tab-active', b.dataset.tab === tab));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (tab === 'trn' && !_fmt && !_data) showStep(1);
+    if (tab === 'trn') _checkResume();
   }
 
   // ── Wizard step navigation ───────────────────────────────
@@ -545,11 +547,62 @@ const TRN = (() => {
       await _showChampionReveal(_data);
       _renderDashboard();
       show($('trn-dashboard'));
+      _saveState();
     } catch (err) {
       console.error('[TRN]', err);
       $('trn-progress-text').textContent = '⚠ Error en la simulación. Inténtalo de nuevo.';
       show($('trn-step-3-actions'));
     }
+  }
+
+  // ── localStorage persistence ──────────────────────────────────
+  const _LS_KEY = 'trn_v2_state';
+  function _saveState() {
+    try {
+      localStorage.setItem(_LS_KEY, JSON.stringify({
+        fmt: _fmt, numTeams: _numTeams, rules: _rules,
+        teams: _teams, badges: _badgeCache, data: _data
+      }));
+    } catch (_) {}
+  }
+  function _loadState() {
+    try {
+      const raw = localStorage.getItem(_LS_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (_) { return null; }
+  }
+  function _deleteState() {
+    try { localStorage.removeItem(_LS_KEY); } catch (_) {}
+  }
+  function _checkResume() {
+    const banner = $('trn-resume-banner');
+    if (!banner) return;
+    if (_data) { banner.classList.add('hidden'); return; }
+    const saved = _loadState();
+    if (!saved?.data) { banner.classList.add('hidden'); return; }
+    const fmtLabel = saved.fmt === 'copa' ? '🏆 Copa' : saved.fmt === 'liga' ? '📊 Liga' : '⭐ Champions';
+    const desc = $('trn-resume-desc');
+    if (desc) desc.textContent = `${fmtLabel} · ${saved.teams?.length || 0} equipos`;
+    banner.classList.remove('hidden');
+  }
+  function resumeTournament() {
+    const saved = _loadState();
+    if (!saved?.data) return;
+    _fmt = saved.fmt; _numTeams = saved.numTeams; _rules = saved.rules;
+    _teams = saved.teams; _badgeCache = saved.badges || {};
+    _data = saved.data; _tab = 'summary';
+    _computeTournamentStats(_data);
+    _buildMatchCache(_data);
+    hide($('trn-wizard'));
+    _renderDashboard();
+    show($('trn-dashboard'));
+    const banner = $('trn-resume-banner');
+    if (banner) banner.classList.add('hidden');
+  }
+  function discardSaved() {
+    _deleteState();
+    const banner = $('trn-resume-banner');
+    if (banner) banner.classList.add('hidden');
   }
 
   function _setProgress(txt, pct) {
@@ -1240,7 +1293,10 @@ const TRN = (() => {
                 </div>`).join('')}
             </div>`).join('')}
         </div>` + _renderChampionPath(d);
-    }(i, total) {
+    }
+  }
+
+  function _zoneClass(i, total) {
     if (i === 0) return 'trn-tr-champ';
     if (total >= 10) {
       if (i < 4)          return 'trn-tr-qual';
@@ -1276,6 +1332,7 @@ const TRN = (() => {
               <th title="Empatados">E</th><th title="Perdidos">P</th>
               <th title="Goles a favor">GF</th><th title="Goles en contra">GC</th>
               <th title="Diferencia">DG</th><th class="trn-th-pts">Pts</th>
+              <th title="Últimos 5" class="trn-th-form">Forma</th>
             </tr></thead>
             <tbody>
               ${d.table.map((r, i) => `
@@ -1289,6 +1346,7 @@ const TRN = (() => {
                   <td>${r.gf}</td><td>${r.ga}</td>
                   <td>${r.gf - r.ga > 0 ? '+' : ''}${r.gf - r.ga}</td>
                   <td class="trn-td-pts">${r.pts}</td>
+                  <td class="trn-td-form">${_formGuide(r.slug, d.matches)}</td>
                 </tr>`).join('')}
             </tbody>
           </table>
@@ -1502,6 +1560,47 @@ const TRN = (() => {
             <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
             <span class="trn-stats-mp">${r.mp} PJ</span>
           </div>`).join('')}
+      </div>
+      ${_renderDestacados(allMatches)}`;
+  }
+
+  // ── Form guide (last N results for a team in Liga) ────────
+  function _formGuide(slug, matches, n = 5) {
+    const results = [];
+    (matches || []).forEach(m => {
+      if (m.a?.slug === slug) results.push(m.scoreA > m.scoreB ? 'w' : m.scoreA < m.scoreB ? 'l' : 'd');
+      else if (m.b?.slug === slug) results.push(m.scoreB > m.scoreA ? 'w' : m.scoreB < m.scoreA ? 'l' : 'd');
+    });
+    return results.slice(-n)
+      .map(r => `<span class="trn-form trn-form-${r}">${r.toUpperCase()}</span>`)
+      .join('');
+  }
+
+  // ── Resultados destacados for stats tab ────────────────────
+  function _renderDestacados(allMatches) {
+    const singles = allMatches.filter(m => m.legs !== 2 && m.scoreA !== undefined);
+    const byMargin = [...singles].sort((a, b) => Math.abs(b.scoreA - b.scoreB) - Math.abs(a.scoreA - a.scoreB)).slice(0, 3);
+    const byGoals  = [...singles].sort((a, b) => (b.scoreA + b.scoreB) - (a.scoreA + a.scoreB)).slice(0, 3);
+    const card = (m, label) => {
+      if (!m) return '';
+      return `<div class="trn-dest-card" onclick="TRN.openMatchModal(${m._cacheIdx ?? 0})" style="cursor:pointer">
+        <div class="trn-dest-label">${label}</div>
+        <div class="trn-dest-match">
+          ${_badgeImg(m.a?.slug, 'trn-dest-badge')}
+          <span class="trn-dest-score">${m.scoreA}\u2013${m.scoreB}</span>
+          ${_badgeImg(m.b?.slug, 'trn-dest-badge')}
+        </div>
+        <div class="trn-dest-teams">${_esc(m.a?.name || '?')} vs ${_esc(m.b?.name || '?')}</div>
+      </div>`;
+    };
+    if (!byMargin.length) return '';
+    return `
+      <h3 class="trn-section-h trn-section-h-mt">\ud83d\udcca Resultados destacados</h3>
+      <div class="trn-dest-grid">
+        ${byMargin.map((m, i) => card(m, i === 0 ? '\ud83e\udd47 Mayor goleada' : `Goleada #${i + 1}`)).join('')}
+      </div>
+      <div class="trn-dest-grid" style="margin-top:.5rem">
+        ${byGoals.map((m, i) => card(m, i === 0 ? '\u26bd M\u00e1s goles' : `Golazos #${i + 1}`)).join('')}
       </div>`;
   }
 
@@ -1516,7 +1615,8 @@ const TRN = (() => {
 
   // ── Start over ───────────────────────────────────────────
   function startOver() {
-    _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {};
+    _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {}; _modalIdx = -1;
+    _deleteState();
     hide($('trn-dashboard'));
     const wizard = $('trn-wizard');
     if (wizard) show(wizard);
@@ -1528,6 +1628,7 @@ const TRN = (() => {
   function openMatchModal(idx) {
     const entry = _matchCache[idx];
     if (!entry) return;
+    _modalIdx = idx;
     const { m, nameA, nameB } = entry;
 
     const modal  = $('trn-match-modal');
@@ -1616,6 +1717,12 @@ const TRN = (() => {
       </div>`;
 
     modal.classList.remove('hidden');
+    // Update nav counter & button states
+    const counter = $('trn-modal-counter');
+    if (counter) counter.textContent = `${_modalIdx + 1} / ${_matchCache.length}`;
+    const prev = $('trn-modal-prev'), next = $('trn-modal-next');
+    if (prev) prev.disabled = _modalIdx <= 0;
+    if (next) next.disabled = _modalIdx >= _matchCache.length - 1;
   }
 
   function closeMatchModal() {
@@ -1623,11 +1730,26 @@ const TRN = (() => {
     if (modal) modal.classList.add('hidden');
   }
 
+  function prevMatch() {
+    if (_modalIdx > 0) openMatchModal(_modalIdx - 1);
+  }
+  function nextMatch() {
+    if (_modalIdx < _matchCache.length - 1) openMatchModal(_modalIdx + 1);
+  }
+
   // ── Global keyboard shortcuts ─────────────────────────
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const modal = $('trn-match-modal');
       if (modal && !modal.classList.contains('hidden')) { closeMatchModal(); return; }
+    }
+    if (e.key === 'ArrowLeft') {
+      const modal = $('trn-match-modal');
+      if (modal && !modal.classList.contains('hidden')) { prevMatch(); return; }
+    }
+    if (e.key === 'ArrowRight') {
+      const modal = $('trn-match-modal');
+      if (modal && !modal.classList.contains('hidden')) { nextMatch(); return; }
     }
   });
 
@@ -1650,6 +1772,10 @@ const TRN = (() => {
     startOver,
     openMatchModal,
     closeMatchModal,
+    prevMatch,
+    nextMatch,
+    resumeTournament,
+    discardSaved,
     reshuffleDraw,
     reshuffleGroupsDraw,
   };
