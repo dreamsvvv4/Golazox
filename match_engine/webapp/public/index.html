@@ -654,8 +654,7 @@
 
       <div class="trn-champ-poster glass-card">
         <div class="trn-champ-eyebrow">CAMPEÓN DEL TORNEO</div>
-        <div class="trn-champ-trophy-big">🏆</div>
-        <div class="trn-champ-name" id="trn-champ-name">—</div>
+        <div class="trn-champ-trophy-big">🏆</div>        <img id="trn-champ-badge-img" class="trn-champ-badge-big" src="/img/badges/_placeholder.svg" onerror="this.style.display='none'" alt="" />        <div class="trn-champ-name" id="trn-champ-name">—</div>
         <div class="trn-champ-format" id="trn-champ-format"></div>
         <button class="btn-secondary trn-btn-over" onclick="TRN.startOver()">↩ Nuevo torneo</button>
       </div>
@@ -678,6 +677,18 @@
   </div><!-- /main-trn-wrap -->
 
   </main>
+
+  <!-- ── Tournament Champion Reveal Overlay ──────────────────── -->
+  <div id="trn-champion-reveal" class="trn-reveal-overlay hidden">
+    <div id="trn-confetti"></div>
+    <div class="trn-reveal-inner">
+      <div class="trn-reveal-trophy">🏆</div>
+      <img id="trn-reveal-badge" class="trn-reveal-badge" src="" alt="" />
+      <div id="trn-reveal-name"  class="trn-reveal-name"></div>
+      <div id="trn-reveal-format" class="trn-reveal-format"></div>
+      <div class="trn-reveal-hint">Toca para continuar</div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>

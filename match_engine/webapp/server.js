@@ -693,14 +693,24 @@ app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
 });
 
 // ── GET /suggest ─────────────────────────────
-// Query: ?q=bar  → returns up to 15 matching {name, badge} objects for autocomplete
+// Query: ?q=bar  → returns up to 15 matching {name, slug, badge} objects for autocomplete
 // Rate: 40/min — fast autocomplete, pero con margen para que un bot necesite más.
 app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
   const q = String(req.query.q || '').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
   const matches = q.length < 1
-    ? SQUAD_SUGGESTIONS.slice(0, 20)
-    : SQUAD_SUGGESTIONS.filter(s => s.toLowerCase().includes(q)).slice(0, 15);
-  const result = matches.map(name => ({ name, badge: _badgeFor(name) }));
+    ? CATALOG.slice(0, 20)
+    : CATALOG.filter(t =>
+        t.nameEn.toLowerCase().includes(q) ||
+        t.nameEs.toLowerCase().includes(q) ||
+        t.slug.toLowerCase().includes(q)
+      ).slice(0, 15);
+  const result = matches.map(t => ({
+    name:   t.nameEs || t.nameEn,
+    nameEs: t.nameEs,
+    nameEn: t.nameEn,
+    slug:   t.slug,
+    badge:  t.badge,
+  }));
   res.set('Cache-Control', 'no-store');
   res.json(result);
 });
@@ -961,7 +971,8 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       };
 
       const sim = simulateMatch(params);
-      const { teamA: scoreA, teamB: scoreB } = sim.finalScore;
+      const { teamA: scoreA, teamB: scoreB, scorersA, scorersB, penalties: penDetails } = sim.finalScore;
+      const mom = sim.stats?.manOfMatch || null;
       let penA = null, penB = null;
 
       if (pair.penalties && scoreA === scoreB) {
@@ -971,7 +982,16 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
         if (penA === penB) { penA = 5; penB = 4; }  // guaranteed winner
       }
 
-      return { scoreA, scoreB, penA, penB };
+      return {
+        scoreA, scoreB, penA, penB,
+        scorersA: scorersA || [],
+        scorersB: scorersB || [],
+        mom: mom ? { name: mom.name, team: mom.team, reason: mom.reason } : null,
+        stats: {
+          possession: sim.stats?.possession || { teamA: 50, teamB: 50 },
+          shots:      sim.stats?.shots      || { teamA: 0,  teamB: 0  },
+        },
+      };
     });
 
     res.set('Cache-Control', 'no-store').json(results);
