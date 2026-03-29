@@ -4096,6 +4096,17 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-search-item:last-child { border-bottom: none; }
 .trn-search-item:hover  { background: rgba(0,212,255,.08); }
 .trn-search-item.trn-si-focused { background: rgba(0,212,255,.14); outline: 1px solid rgba(0,212,255,.3); }
+.trn-search-item-locked {
+  opacity: .65;
+  cursor: not-allowed;
+  filter: grayscale(40%);
+}
+.trn-search-item-locked:hover { background: rgba(255,45,120,.06); }
+.trn-si-lock {
+  font-size: .95rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
 .trn-search-item-name {
   font: 500 .9rem/1 var(--font);
   color: var(--white);
@@ -5217,6 +5228,37 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 }
 .trn-modal-poss-a { background: #4fa3ff; height: 100%; }
 .trn-modal-poss-b { background: #ff6b6b; height: 100%; }
+
+/* Lineup section inside match modal */
+.trn-modal-lu-section {
+  margin-top: .85rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: .65rem;
+}
+.trn-modal-lu-btn {
+  width: 100%; background: rgba(0,212,255,.07);
+  border: 1px solid rgba(0,212,255,.18); border-radius: .45rem;
+  color: var(--neon); font: 600 .82rem/1 var(--font);
+  padding: .5rem .8rem; cursor: pointer; text-align: left;
+  transition: background .13s;
+}
+.trn-modal-lu-btn:hover { background: rgba(0,212,255,.14); }
+.trn-modal-lu-area { margin-top: .55rem; }
+.trn-lu-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .6rem;
+}
+.trn-lu-col { min-width: 0; }
+.trn-lu-title {
+  font: 700 .8rem/1.2 var(--font); color: rgba(255,255,255,.85);
+  margin-bottom: .4rem; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;
+}
+.trn-lu-yr { color: var(--neon); font-size: .7rem; opacity: .8; }
+.trn-lu-empty { font-size: .75rem; color: var(--grey); padding: .4rem 0; margin: 0; }
+.trn-lu-loading { text-align: center; padding: .9rem 0; }
+@media (max-width: 420px) {
+  .trn-lu-grid { grid-template-columns: 1fr; }
+}
 
 /* ══════════════════════════════════════════════════════════════
    TOURNAMENT — Modal + stat cards responsive

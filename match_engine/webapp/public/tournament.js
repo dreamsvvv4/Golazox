@@ -29,6 +29,18 @@ const TRN = (() => {
   const _esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   // _lang is defined in app.js as a top-level let (shared global scope)
   const _getLang = () => { try { return _lang || 'es'; } catch(_) { return 'es'; } };
+
+  // ── Locked legendary teams (unlock: 5 sims or Twitter share) ──────────────
+  const _LOCKED_TEAMS = {
+    'brasilien':         { label: 'Brasil \'70' },
+    'ajax-amsterdam':    { label: 'Ajax Amsterdam \'72' },
+    'america-historica': { label: 'América Histórica' },
+    'europa-historica':  { label: 'Europa Histórica' },
+  };
+  function _isUnlocked() {
+    try { return localStorage.getItem('gx_unlocked') === '1'; } catch(_) { return false; }
+  }
+
   const _badge    = (slug) => _badgeCache[slug] || '';
   const _badgeImg = (slug, cls) => {
     const b = _badge(slug);
@@ -76,6 +88,7 @@ const TRN = (() => {
   function selectFormat(fmt) {
     _fmt = fmt;
     _teams = [];
+    try { _gx('trn_format_select', { format: fmt }); } catch(_) {}
     document.querySelectorAll('.trn-fmt-card').forEach(c =>
       c.classList.toggle('trn-fmt-selected', c.dataset.fmt === fmt));
     _buildNumTeamsPicker();
@@ -166,6 +179,7 @@ const TRN = (() => {
       container.innerHTML = html;
     }
     showStep(2);
+    try { _gx('trn_step2_view', { format: _fmt }); } catch(_) {}
   }
 
   function goStep3() {
@@ -185,6 +199,7 @@ const TRN = (() => {
     _groupsDraw = [];
     _renderTeamSlots();
     showStep(3);
+    try { _gx('trn_step3_view', { format: _fmt, teams: _numTeams }); } catch(_) {}
   }
 
   function goBack(step) { showStep(step); }
@@ -392,6 +407,15 @@ const TRN = (() => {
         const badge = _esc(t.badge || '');
         const ls    = t.latestSeason || '';
         const meta  = ls && ls !== 'all-time' ? `'${String(ls).slice(-2)}` : (ls === 'all-time' ? 'All-Time' : '');
+        const isLocked = !_isUnlocked() && !!_LOCKED_TEAMS[t.slug];
+        if (isLocked) {
+          return `<div class="trn-search-item trn-search-item-locked" onclick="TRN.showLockedHint()">
+            <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+            <span class="trn-search-item-name">${name}</span>
+            ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}
+            <span class="trn-si-lock">🔒</span>
+          </div>`;
+        }
         return `<div class="trn-search-item" onclick="TRN.previewTeam('${slug}','${name}','${badge}','${_esc(ls)}')">
           <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <span class="trn-search-item-name">${name}</span>
@@ -400,6 +424,10 @@ const TRN = (() => {
       }).join('');
       res.classList.remove('hidden');
     } catch (_) { /* ignore network errors */ }
+  }
+
+  function showLockedHint() {
+    _showToast('🔒 Equipo legendario bloqueado · Simula 5 partidos o comparte en Twitter para desbloquear');
   }
 
   function addTeam(slug, name, era = '', badge = '') {
@@ -556,7 +584,8 @@ const TRN = (() => {
     if (_teams.length !== _numTeams) return;
     show($('trn-progress'));
     hide($('trn-step-3-actions'));
-    $('trn-progress-text').textContent = 'Iniciando simulación…';
+    _setProgress('Iniciando simulación…', 0);
+    try { _gx('trn_simulate_start', { format: _fmt, teams: _numTeams }); } catch(_) {}
 
     try {
       let data;
@@ -564,7 +593,9 @@ const TRN = (() => {
       else if (_fmt === 'liga')   data = await _simulateLiga();
       else                        data = await _simulateChampions();
 
+      _stopTrnLoadCycle();
       _data = data;
+      try { _gx('trn_simulate_success', { format: _fmt, champion: _data.champion?.name }); } catch(_) {}
       _computeTournamentStats(_data);
       _buildMatchCache(_data);
       hide($('trn-step-3'));
@@ -573,6 +604,7 @@ const TRN = (() => {
       show($('trn-dashboard'));
       _saveState();
     } catch (err) {
+      _stopTrnLoadCycle();
       console.error('[TRN]', err);
       $('trn-progress-text').textContent = '⚠ Error en la simulación. Inténtalo de nuevo.';
       show($('trn-step-3-actions'));
@@ -676,30 +708,319 @@ const TRN = (() => {
     }).join('');
   }
 
-  // ── Compartir resultado ────────────────────────────────────
-  function shareTournament() {
+  // ── Compartir resultado — Canvas poster ───────────────────
+  async function shareTournament() {
     if (!_data) return;
-    const d = _data;
-    const fmtLabel = d.format === 'copa' ? '🏆 Copa' : d.format === 'liga' ? '📊 Liga' : '⭐ Champions';
-    const lines = [`${fmtLabel} — GolazoX`, ``, `🥇 Campeón: ${d.champion?.name || '—'}`];
-    if (d.format === 'liga' && d.table) {
-      lines.push(`🥈 ${d.table[1]?.name || '—'}`, `🥉 ${d.table[2]?.name || '—'}`);
-    } else if (d.format === 'copa') {
-      const fin = d.rounds[d.rounds.length - 1]?.matches[0];
-      const ru = fin ? (fin.winner?.slug === fin.a?.slug ? fin.b : fin.a) : null;
-      if (ru) lines.push(`🥈 Finalista: ${ru.name}`);
-      if (d.thirdPlace?.winner) lines.push(`🥉 3er puesto: ${d.thirdPlace.winner.name}`);
-    } else if (d.format === 'champions') {
-      const fin = d.koRounds?.[d.koRounds.length - 1]?.matches[0];
-      const ru = fin ? (fin.winner?.slug === fin.a?.slug ? fin.b : fin.a) : null;
-      if (ru) lines.push(`🥈 Finalista: ${ru.name}`);
-      if (d.thirdPlace?.winner) lines.push(`🥉 3er puesto: ${d.thirdPlace.winner.name}`);
+    try { _gx('trn_share', { format: _data.format }); } catch(_) {}
+    const btn = document.querySelector('.trn-share-btn');
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Generando…'; }
+    try {
+      const blob = await _generateTrnPoster(_data);
+      const champSlug = _data.champion?.slug || 'torneo';
+      const fileName = `golazox-${champSlug}.png`;
+      const file = new File([blob], fileName, { type: 'image/png' });
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file], title: `🏆 ${_data.champion?.name || 'GolazoX'} — GolazoX` });
+      } else {
+        _scDownload(blob, fileName);
+        _showToast('🖼 Póster descargado');
+      }
+    } catch (err) {
+      if (err?.name !== 'AbortError') {
+        console.error('[TRN poster]', err);
+        _showToast('⚠ No se pudo generar el póster');
+      }
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = '📤 Compartir'; }
     }
-    if (d.pichichi?.[0]) lines.push(``, `⚽ Pichichi: ${d.pichichi[0].name} (${d.pichichi[0].goals} goles)`);
-    if (d.mvp?.[0]) lines.push(`⭐ MVP: ${d.mvp[0].name}`);
-    lines.push(``, `golazox.com`);
-    const text = lines.join('\n');
-    navigator.clipboard?.writeText(text).then(() => _showToast('¡Copiado al portapapeles!')).catch(() => _showToast(text, true));
+  }
+
+  /** Generate a Canvas infographic PNG blob for the tournament result. */
+  async function _generateTrnPoster(d) {
+    await document.fonts.ready;
+    await Promise.allSettled([
+      'bold 100px "Rajdhani"', 'bold 78px "Rajdhani"',
+      'bold 60px "Rajdhani"', 'bold 48px "Rajdhani"',
+      '700 38px "Rajdhani"',  '700 30px "Rajdhani"',
+      '600 28px "Rajdhani"',  '500 32px "Rajdhani"',
+      '400 24px "Rajdhani"',
+    ].map(f => document.fonts.load(f).catch(() => null)));
+
+    const W = 1080, H = 4000;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d', { alpha: false });
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    const CYAN    = '#00d4ff';
+    const MAGENTA = '#ff2d78';
+    const GOLD    = '#ffd700';
+    const WHITE   = '#ffffff';
+    const DIM     = 'rgba(255,255,255,0.55)';
+    const DIM2    = 'rgba(255,255,255,0.28)';
+
+    // ── Background ──────────────────────────────────────────
+    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, W, H);
+    const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+    bgGrad.addColorStop(0,   '#070710');
+    bgGrad.addColorStop(0.5, '#0b0d1a');
+    bgGrad.addColorStop(1,   '#110418');
+    ctx.fillStyle = bgGrad; ctx.fillRect(0, 0, W, H);
+
+    // Grid lines
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= W; x += 54) {
+      ctx.strokeStyle = `rgba(0,212,255,${x % 162 === 0 ? 0.06 : 0.022})`;
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y <= H; y += 54) {
+      ctx.strokeStyle = `rgba(0,212,255,${y % 162 === 0 ? 0.06 : 0.022})`;
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+
+    // Glow orbs
+    const addOrb = (x, y, r, color) => {
+      const rg = ctx.createRadialGradient(x, y, 0, x, y, r);
+      rg.addColorStop(0, color + '22'); rg.addColorStop(1, color + '00');
+      ctx.fillStyle = rg; ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    };
+    addOrb(540, 420, 420, '#00d4ff');
+    addOrb(160, 1000, 340, '#ff2d78');
+    addOrb(920, 1000, 340, '#8800ff');
+
+    // Top neon bar
+    const topBar = ctx.createLinearGradient(0, 0, W, 0);
+    topBar.addColorStop(0, 'rgba(0,212,255,0)');
+    topBar.addColorStop(0.5, 'rgba(0,212,255,0.9)');
+    topBar.addColorStop(1, 'rgba(0,212,255,0)');
+    ctx.fillStyle = topBar; ctx.fillRect(0, 0, W, 3);
+
+    // ── Header ──────────────────────────────────────────────
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = 'bold 100px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, 'GOLAZOX', W / 2, 108, CYAN, 40);
+
+    ctx.font = '500 30px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM;
+    ctx.fillText('FOOTBALL TIME MACHINE', W / 2, 152);
+
+    _scDivider(ctx, 175, W);
+
+    // Format label
+    const fmtLabel = d.format === 'copa' ? 'COPA' : d.format === 'liga' ? 'LIGA' : 'CHAMPIONS';
+    ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = GOLD;
+    ctx.textAlign = 'center';
+    ctx.fillText(fmtLabel, W / 2, 238);
+
+    _scDivider(ctx, 262, W);
+
+    // ── Load champion badge ──────────────────────────────────
+    const champSlug   = d.champion?.slug || '';
+    const champBadge  = _badge(champSlug) || `/img/badges/${champSlug}.svg`;
+    const imgChamp    = await _scLoadImg(champBadge);
+
+    // ── Champion section ─────────────────────────────────────
+    const CHAMP_CY = 460;
+    _scBadge(ctx, imgChamp, W / 2, CHAMP_CY, 168, GOLD, d.champion?.name);
+
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = GOLD + 'cc';
+    ctx.fillText('CAMPEÓN DEL TORNEO', W / 2, 655);
+
+    const champName = _scSafe(d.champion?.name || '—');
+    const champFontSz = champName.length > 18 ? 52 : champName.length > 14 ? 62 : champName.length > 10 ? 72 : 80;
+    ctx.font = `bold ${champFontSz}px "Rajdhani",Arial,sans-serif`;
+    _scGlow(ctx, champName, W / 2, 720, WHITE, 12);
+
+    // Era label
+    const champEra = d.champion?.era ? String(d.champion.era).match(/\d{4}/)?.[0] : null;
+    if (champEra) {
+      ctx.font = '500 36px "Rajdhani",Arial,sans-serif';
+      ctx.fillStyle = CYAN + 'cc';
+      ctx.fillText(`'${champEra.slice(2)}`, W / 2, 768);
+    }
+
+    _scDivider(ctx, 800, W);
+    let curY = 854;
+
+    // ── Result section ────────────────────────────────────────
+    if (d.format === 'liga' && d.table) {
+      ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
+      ctx.fillStyle = DIM2; ctx.textAlign = 'center';
+      ctx.fillText('CLASIFICACIÓN FINAL', W / 2, curY);
+      curY += 56;
+
+      const podium  = d.table.slice(0, 3);
+      const medals  = ['🥇', '🥈', '🥉'];
+      const pillClr = [
+        'rgba(255,215,0,0.12)', 'rgba(200,200,200,0.10)', 'rgba(205,127,50,0.10)',
+      ];
+
+      for (let i = 0; i < podium.length; i++) {
+        const t    = podium[i];
+        const rowY = curY + i * 96;
+        // Pill background
+        ctx.fillStyle = pillClr[i];
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(60, rowY - 28, W - 120, 76, 12);
+        else                ctx.rect(60, rowY - 28, W - 120, 76);
+        ctx.fill();
+        // Medal emoji
+        ctx.font = '44px Arial,sans-serif';
+        ctx.textAlign = 'left'; ctx.fillStyle = WHITE;
+        ctx.fillText(medals[i], 82, rowY + 22);
+        // Team name
+        const tName = _scSafe(t.name || '').slice(0, 22);
+        ctx.font = `bold 46px "Rajdhani",Arial,sans-serif`;
+        ctx.fillStyle = i === 0 ? GOLD : WHITE;
+        ctx.fillText(tName, 148, rowY + 22);
+        // Points
+        ctx.textAlign = 'right'; ctx.font = '600 38px "Rajdhani",Arial,sans-serif';
+        ctx.fillStyle = DIM;
+        ctx.fillText(`${t.pts ?? '—'} pts`, W - 80, rowY + 22);
+        ctx.textAlign = 'center';
+      }
+      curY += podium.length * 96 + 40;
+
+    } else {
+      // Copa / Champions — show final match
+      const rounds   = d.format === 'copa' ? d.rounds : d.koRounds;
+      const lastRnd  = rounds?.[rounds.length - 1];
+      const fin      = lastRnd?.matches?.[0];
+
+      if (fin) {
+        ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
+        ctx.fillStyle = DIM2; ctx.textAlign = 'center';
+        ctx.fillText('GRAN FINAL', W / 2, curY);
+        curY += 60;
+
+        const [imgA, imgB] = await Promise.all([
+          _scLoadImg(_badge(fin.a?.slug) || `/img/badges/${fin.a?.slug || '_placeholder'}.svg`),
+          _scLoadImg(_badge(fin.b?.slug) || `/img/badges/${fin.b?.slug || '_placeholder'}.svg`),
+        ]);
+
+        const BADGE_R = 90, BADGE_CY = curY + 95;
+        const AX = W / 2 - 280, BX = W / 2 + 280;
+        _scBadge(ctx, imgA, AX, BADGE_CY, BADGE_R, CYAN,    fin.a?.name);
+        _scBadge(ctx, imgB, BX, BADGE_CY, BADGE_R, MAGENTA, fin.b?.name);
+
+        // Score
+        const sA = fin.scoreA ?? '?', sB = fin.scoreB ?? '?';
+        ctx.font = 'bold 120px "Rajdhani",Arial,sans-serif';
+        ctx.textAlign = 'center';
+        _scGlow(ctx, `${sA}–${sB}`, W / 2, BADGE_CY + 48, WHITE, 15);
+
+        // Team names
+        curY = BADGE_CY + 116;
+        ctx.font = '500 30px "Rajdhani",Arial,sans-serif';
+        ctx.fillStyle = CYAN + 'cc'; ctx.textAlign = 'center';
+        ctx.fillText(_scSafe((fin.a?.name || '').slice(0, 15)), AX, curY);
+        ctx.fillStyle = MAGENTA + 'cc';
+        ctx.fillText(_scSafe((fin.b?.name || '').slice(0, 15)), BX, curY);
+
+        // Penalties if applicable
+        if (fin.penA !== null && fin.penA !== undefined) {
+          curY += 42;
+          ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
+          ctx.fillStyle = GOLD; ctx.textAlign = 'center';
+          ctx.fillText(`(Penaltis: ${fin.penA}–${fin.penB})`, W / 2, curY);
+        }
+        curY += 60;
+      }
+    }
+
+    _scDivider(ctx, curY, W);
+    curY += 54;
+
+    // ── Individual Awards ─────────────────────────────────────
+    ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2; ctx.textAlign = 'center';
+    ctx.fillText('PREMIOS INDIVIDUALES', W / 2, curY);
+    curY += 56;
+
+    if (d.pichichi?.[0]) {
+      const p = d.pichichi[0];
+      const imgP = await _scLoadImg(_badge(p.teamSlug) || `/img/badges/${p.teamSlug || '_placeholder'}.svg`);
+      _scBadge(ctx, imgP, 100, curY + 22, 36, CYAN, p.team);
+      ctx.textAlign = 'left';
+      ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = CYAN;
+      ctx.fillText('⚽ PICHICHI', 152, curY + 6);
+      ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
+      ctx.fillText(_scSafe(p.name), 152, curY + 42);
+      ctx.textAlign = 'right';
+      ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
+      ctx.fillText(`${p.goals}`, W - 80, curY + 32);
+      ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
+      ctx.fillText('goles', W - 80, curY + 58);
+      ctx.textAlign = 'center';
+      curY += 110;
+    }
+
+    if (d.mvp?.[0]) {
+      const m = d.mvp[0];
+      const imgM = await _scLoadImg(_badge(m.teamSlug) || `/img/badges/${m.teamSlug || '_placeholder'}.svg`);
+      _scBadge(ctx, imgM, 100, curY + 22, 36, MAGENTA, m.team);
+      ctx.textAlign = 'left';
+      ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = MAGENTA;
+      ctx.fillText('⭐ MVP', 152, curY + 6);
+      ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
+      ctx.fillText(_scSafe(m.name), 152, curY + 42);
+      ctx.textAlign = 'right';
+      ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
+      ctx.fillText(`${m.count}×`, W - 80, curY + 32);
+      ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
+      ctx.fillText('MOM', W - 80, curY + 58);
+      ctx.textAlign = 'center';
+      curY += 110;
+    }
+
+    _scDivider(ctx, curY, W);
+
+    // ── Footer ───────────────────────────────────────────────
+    const footerY = curY + 24;
+    const botBar  = ctx.createLinearGradient(0, 0, W, 0);
+    botBar.addColorStop(0, 'rgba(0,212,255,0)');
+    botBar.addColorStop(0.5, 'rgba(0,212,255,0.75)');
+    botBar.addColorStop(1, 'rgba(0,212,255,0)');
+    ctx.fillStyle = botBar; ctx.fillRect(0, footerY, W, 2);
+
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 36px "Rajdhani",Arial,sans-serif';
+    const _sUrl = ((window.GOLAZOX_CONFIG?.siteUrl) || 'golazox.com')
+      .replace(/^https?:\/\//, '').replace(/\/$/, '');
+    _scGlow(ctx, _sUrl, W / 2, footerY + 56, CYAN, 18);
+
+    ctx.font = '400 22px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText('Football Time Machine', W / 2, footerY + 88);
+
+    // ── Crop to content ───────────────────────────────────────
+    const finalH  = footerY + 124;
+    const out     = document.createElement('canvas');
+    out.width = W; out.height = Math.min(finalH, H);
+    const outCtx  = out.getContext('2d', { alpha: false });
+    outCtx.drawImage(canvas, 0, 0, W, out.height, 0, 0, W, out.height);
+
+    return new Promise((resolve, reject) => {
+      try {
+        out.toBlob(blob => {
+          if (blob) { resolve(blob); return; }
+          try {
+            const dataUrl  = out.toDataURL('image/png');
+            const [hdr, b64] = dataUrl.split(',');
+            const mime     = (hdr.match(/:(.*?);/) || [])[1] || 'image/png';
+            const bstr     = atob(b64);
+            const u8       = new Uint8Array(bstr.length);
+            for (let i = 0; i < bstr.length; i++) u8[i] = bstr.charCodeAt(i);
+            resolve(new Blob([u8], { type: mime }));
+          } catch (e2) { reject(e2); }
+        }, 'image/png');
+      } catch (e) { reject(e); }
+    });
   }
 
   function _showToast(msg, fallback = false) {
@@ -716,13 +1037,43 @@ const TRN = (() => {
     el._t = setTimeout(() => el.classList.remove('trn-toast--show'), 2800);
   }
 
+  const _TRN_LOADING_MSGS = [
+    'Calculando xG con distribución de Poisson…',
+    'Simulando 30 000 escenarios por partido…',
+    'Aplicando ratings históricos de plantilla…',
+    'Resolviendo eliminatorias y desempates…',
+    'Calculando diferencia de goles y puntos…',
+    'Determinando MVP y Pichichi del torneo…',
+    'Compilando la tabla de clasificación…',
+    'Construyendo el cuadro de eliminatorias…',
+    'Generando estadísticas comparadas…',
+    'Finalizando resultados del torneo…',
+  ];
+  let _trnLoadTimer = null;
+  function _startTrnLoadCycle() {
+    _stopTrnLoadCycle();
+    let i = 0;
+    const el = $('trn-progress-text');
+    if (!el) return;
+    _trnLoadTimer = setInterval(() => {
+      i = (i + 1) % _TRN_LOADING_MSGS.length;
+      if (el && el.isConnected) el.textContent = _TRN_LOADING_MSGS[i];
+    }, 700);
+  }
+  function _stopTrnLoadCycle() {
+    if (_trnLoadTimer) { clearInterval(_trnLoadTimer); _trnLoadTimer = null; }
+  }
+
   function _setProgress(txt, pct) {
+    _stopTrnLoadCycle();
     const el = $('trn-progress-text');
     if (el) el.textContent = txt;
     if (pct !== undefined) {
       const bar = $('trn-progress-bar');
       if (bar) bar.style.width = Math.round(Math.min(100, Math.max(0, pct))) + '%';
     }
+    // If near the start, begin cycling
+    if (pct !== undefined && pct < 10) _startTrnLoadCycle();
   }
 
   // ── Match cache (built once after simulation, used by bracket + calendar) ─
@@ -1886,6 +2237,10 @@ const TRN = (() => {
         ${cornA || cornB ? bar(cornA, cornB, 'Córners') : ''}
         ${saveA || saveB ? bar(saveA, saveB, 'Paradas') : ''}
         ${foulA || foulB ? bar(foulA, foulB, 'Faltas') : ''}
+      </div>
+      <div class="trn-modal-lu-section">
+        <button class="trn-modal-lu-btn" onclick="TRN.loadModalLineups()">👥 Alineaciones</button>
+        <div id="trn-modal-lu-area" class="trn-modal-lu-area hidden"></div>
       </div>`;
 
     modal.classList.remove('hidden');
@@ -1896,6 +2251,53 @@ const TRN = (() => {
     if (next) next.disabled = _modalIdx >= _matchCache.length - 1;
   }
 
+
+  async function loadModalLineups() {
+    const area = $('trn-modal-lu-area');
+    if (!area) return;
+    // Toggle visibility
+    if (!area.classList.contains('hidden')) { area.classList.add('hidden'); return; }
+    area.classList.remove('hidden');
+    if (area.dataset.loaded === '1') return; // already fetched
+    const entry = _matchCache[_modalIdx];
+    if (!entry) return;
+    const { m } = entry;
+    const slugA = m.a?.slug, eraA = m.a?.era || '';
+    const slugB = m.b?.slug, eraB = m.b?.era || '';
+    if (!slugA || !slugB) { area.innerHTML = '<p class="trn-lu-empty">Sin datos de plantilla</p>'; return; }
+    area.innerHTML = '<div class="trn-lu-loading"><div class="trn-spinner"></div></div>';
+    try {
+      const [dA, dB] = await Promise.all([
+        fetch(`/lookup?team=${encodeURIComponent(slugA)}&era=${encodeURIComponent(eraA)}`).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch(`/lookup?team=${encodeURIComponent(slugB)}&era=${encodeURIComponent(eraB)}`).then(r => r.ok ? r.json() : null).catch(() => null),
+      ]);
+      const GK_SET  = new Set(['GK']);
+      const DEF_SET = new Set(['CB','LB','RB','WB','LWB','RWB','SW']);
+      const MID_SET = new Set(['CM','CDM','CAM','LM','RM','DM','LCM','RCM']);
+      const ATT_SET = new Set(['ST','CF','LW','RW','SS','FW']);
+      const posRank  = p => GK_SET.has(p.position) ? 0 : DEF_SET.has(p.position) ? 1 : MID_SET.has(p.position) ? 2 : ATT_SET.has(p.position) ? 3 : 4;
+      const posClass = p => GK_SET.has(p.position) ? 'pos-gk' : DEF_SET.has(p.position) ? 'pos-def' : MID_SET.has(p.position) ? 'pos-mid' : ATT_SET.has(p.position) ? 'pos-att' : '';
+      const posLabel = p => GK_SET.has(p.position) ? 'POR' : DEF_SET.has(p.position) ? 'DEF' : MID_SET.has(p.position) ? 'MED' : ATT_SET.has(p.position) ? 'DEL' : (p.position || '?');
+      const buildCol = (d, t) => {
+        const yr = t?.era ? String(t.era).match(/\d{4}/)?.[0]
+          : (d?.source ? String(d.source).match(/\((\d{4})/)?.[1] : null);
+        const title = t ? `${_esc(t.name)}${yr ? ` <span class="trn-lu-yr">'${yr.slice(2)}</span>` : ''}` : _esc(d?.source || '?');
+        if (!d?.found || !Array.isArray(d.players) || !d.players.length) {
+          return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">Sin alineación</p></div>`;
+        }
+        const sorted = [...d.players].sort((a, b) => posRank(a) - posRank(b)).slice(0, 11);
+        const rows = sorted.map(p => `<div class="trn-preview-pos-row">
+          <span class="trn-preview-pos-label ${posClass(p)}">${_esc(posLabel(p))}</span>
+          <span class="trn-preview-player-name">${_esc(p.name || '—')}</span>
+        </div>`).join('');
+        return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><div class="trn-preview-players" style="max-height:none;margin-bottom:0">${rows}</div></div>`;
+      };
+      area.innerHTML = `<div class="trn-lu-grid">${buildCol(dA, m.a)}${buildCol(dB, m.b)}</div>`;
+      area.dataset.loaded = '1';
+    } catch (_) {
+      area.innerHTML = '<p class="trn-lu-empty">Error al cargar alineaciones</p>';
+    }
+  }
   function closeMatchModal() {
     const modal = $('trn-match-modal');
     if (modal) modal.classList.add('hidden');
@@ -1936,6 +2338,7 @@ const TRN = (() => {
     clearSearch,
     addTeam,
     previewTeam,
+    showLockedHint,
     removeTeam,
     fillRandom,
     runSimulation,

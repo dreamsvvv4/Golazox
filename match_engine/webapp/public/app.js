@@ -461,6 +461,11 @@ let _selectedReferee = null;     // full referee object from /referees
 let _selectedWeather = null;     // weather object from WEATHER array
 let _shareData       = null;     // data snapshot for share card generation
 
+// ── Analytics helper (GA4 via existing gtag) ─────────────────
+function _gx(event, params) {
+  try { if (typeof gtag === 'function') gtag('event', event, params || {}); } catch(_) {}
+}
+
 function selectStadium(stadiumId) {
   _selectedStadium = STADIUMS.find(s => s.id === stadiumId) || null;
   // Update visual picker active state
@@ -1221,8 +1226,7 @@ async function handleSimulate() {
   }
 
   clearError();
-
-  // ── Clear previous match state ────────────────────────────────
+  _gx('simulate_match_start', { team_a: teamA, team_b: teamB, mode: _matchMode });
   ['prematch-screen', 'live-viewer', 'event-overlay'].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -1278,6 +1282,9 @@ async function handleSimulate() {
     }
 
     const data = await response.json();
+    _gx('simulate_match_success', { team_a: teamA, team_b: teamB, mode: _matchMode });
+    // Track sim count for unlock system
+    try { const n = (parseInt(localStorage.getItem('gx_sim_count')||'0')||0)+1; localStorage.setItem('gx_sim_count', n); if (n >= 5) localStorage.setItem('gx_unlocked','1'); } catch(_) {}
     showPreMatch(data, payload);
 
   } catch (err) {
@@ -4327,6 +4334,9 @@ function _openSharePanel(data) {
   // Option: X / Twitter
   document.getElementById('sopt-twitter').addEventListener('click', () => {
     closePanel();
+    _gx('share_result', { method: 'twitter' });
+    // Grant unlock on Twitter share
+    try { localStorage.setItem('gx_unlocked','1'); } catch(_) {}
     window.open(`https://twitter.com/intent/tweet?text=${encodedText}`, '_blank', 'noopener,noreferrer');
   });
 }
@@ -4569,9 +4579,53 @@ function _penConfetti() {
 
 // ── UI state helpers ──────────────────────────────────────
 function setLoading(on) {
-  document.getElementById('loader').classList.toggle('hidden', !on);
+  const loaderEl = document.getElementById('loader');
+  loaderEl.classList.toggle('hidden', !on);
   const clashBtn = document.getElementById('vs-clash');
   if (clashBtn) clashBtn.disabled = on;
+  if (on) _startLoadingCycle();
+  else     _stopLoadingCycle();
+}
+
+const _LOADING_MSGS_ES = [
+  'Calculando xG con distribución de Poisson…',
+  'Simulando 30 000 escenarios de partido…',
+  'Analizando estilo de juego y tácticas…',
+  'Aplicando ratings históricos de plantilla…',
+  'Procesando presión del árbitro y clima…',
+  'Calculando probabilidades de penaltis…',
+  'Determinando el MVP del partido…',
+  'Generando crónica del partido…',
+  'Compilando estadísticas comparadas…',
+  'Finalizando resultado…',
+];
+const _LOADING_MSGS_EN = [
+  'Computing xG via Poisson distribution…',
+  'Simulating 30,000 match scenarios…',
+  'Analysing playing style and tactics…',
+  'Applying historical squad ratings…',
+  'Processing referee pressure and weather…',
+  'Computing penalty probabilities…',
+  'Determining man of the match…',
+  'Generating match chronicle…',
+  'Compiling comparative statistics…',
+  'Finalising result…',
+];
+let _loadingCycleTimer = null;
+function _startLoadingCycle() {
+  _stopLoadingCycle();
+  const msgs = _lang === 'en' ? _LOADING_MSGS_EN : _LOADING_MSGS_ES;
+  let i = 0;
+  const span = document.querySelector('#loader span');
+  if (!span) return;
+  span.textContent = msgs[0];
+  _loadingCycleTimer = setInterval(() => {
+    i = (i + 1) % msgs.length;
+    if (span && span.isConnected) span.textContent = msgs[i];
+  }, 620);
+}
+function _stopLoadingCycle() {
+  if (_loadingCycleTimer) { clearInterval(_loadingCycleTimer); _loadingCycleTimer = null; }
 }
 
 function showError(msg) {
