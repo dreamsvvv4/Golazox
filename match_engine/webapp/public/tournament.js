@@ -15,6 +15,7 @@ const TRN = (() => {
   let _matchCache = [];     // flat list for modal lookup
   let _badgeCache  = {};     // slug â†’ badge URL
   let _modalIdx   = -1;     // current match in modal for prev/next nav
+  let _trnCatalog  = null;   // cached catalog for league loader
 
   const VALID_COUNTS = {
     copa:      [4, 8, 16, 32],
@@ -549,9 +550,7 @@ const TRN = (() => {
     const needed = _numTeams - _teams.length;
     if (needed <= 0) return;
     try {
-      const r = await fetch('/catalog');
-      if (!r.ok) return;
-      const catalog = await r.json();
+      const catalog = await _getTrnCatalog();
       const existing = new Set(_teams.map(t => t.slug));
       const pool = catalog.filter(t => !existing.has(t.slug));
       const picks = pool.sort(() => Math.random() - 0.5).slice(0, needed);
@@ -565,6 +564,89 @@ const TRN = (() => {
     } catch (_) { /* ignore */ }
   }
 
+  // -- Catalog cache helper -------------------------------------------
+  async function _getTrnCatalog() {
+    if (_trnCatalog) return _trnCatalog;
+    const r = await fetch('/catalog');
+    if (!r.ok) throw new Error('catalog unavailable');
+    _trnCatalog = await r.json();
+    return _trnCatalog;
+  }
+
+  // -- Real league loader -----------------------------------------------
+  function openLeagueLoader() {
+    const panel = $('trn-league-loader');
+    if (!panel) return;
+    if (!panel.classList.contains('hidden')) { panel.classList.add('hidden'); return; }
+    panel.classList.remove('hidden');
+    _renderLeagueLoader(panel);
+  }
+
+  function closeLeagueLoader() {
+    const panel = $('trn-league-loader');
+    if (panel) panel.classList.add('hidden');
+  }
+
+  async function _renderLeagueLoader(panel) {
+    panel.innerHTML = '<div class="trn-ll-loading"><div class="trn-spinner"></div></div>';
+    try {
+      const catalog = await _getTrnCatalog();
+      const groupMap = {};
+      const EXCL = new Set(['Selecciones','Fantasy XI','Continentes Hist\u00f3ricos','Am\u00e9rica del Sur','Otros']);
+      catalog.forEach(c => {
+        if (!c.group) return;
+        const gName = c.group.replace(/^\S+\s*/, '');
+        if (EXCL.has(gName)) return;
+        groupMap[c.group] = (groupMap[c.group] || 0) + 1;
+      });
+      const groups = Object.entries(groupMap).sort((a, b) => b[1] - a[1]);
+      if (!groups.length) { panel.innerHTML = '<p class="trn-ll-empty">Sin ligas disponibles</p>'; return; }
+      let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga real</div><div class="trn-ll-grid">';
+      groups.forEach(([g, count]) => {
+        const emoji = g.match(/^(\S+)/)?.[1] || '\uD83C\uDFC6';
+        const name  = _esc(g.replace(/^\S+\s*/, ''));
+        html += '<button class="trn-ll-btn" onclick="TRN.loadRealLeague(' + JSON.stringify(g) + ')">' +
+          '<span class="trn-ll-icon">' + emoji + '</span>' +
+          '<span class="trn-ll-name">' + name + '</span>' +
+          '<span class="trn-ll-count">' + count + ' eq.</span>' +
+          '</button>';
+      });
+      html += '</div>';
+      panel.innerHTML = html;
+    } catch (_) {
+      panel.innerHTML = '<p class="trn-ll-empty">Error al cargar ligas.</p>';
+    }
+  }
+
+  async function loadRealLeague(groupKey) {
+    try {
+      const catalog = await _getTrnCatalog();
+      const leagueTeams = catalog.filter(c => c.group === groupKey);
+      if (!leagueTeams.length) { _showToast('Sin equipos en esta liga'); return; }
+      _teams = [];
+      leagueTeams.forEach(t => {
+        if (t.badge) _badgeCache[t.slug] = t.badge;
+        const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
+        const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
+        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
+      });
+      _numTeams = _teams.length;
+      const numSel = $('trn-num-teams');
+      if (numSel && ![...numSel.options].some(o => +o.value === _numTeams)) {
+        const opt = document.createElement('option');
+        opt.value = _numTeams; opt.textContent = _numTeams + ' equipos';
+        numSel.appendChild(opt);
+      }
+      if (numSel) numSel.value = _numTeams;
+      closeLeagueLoader();
+      _renderTeamSlots();
+      const leagueName = _esc(groupKey.replace(/^\S+\s*/, ''));
+      _showToast('\u2705 ' + _teams.length + ' equipos de ' + leagueName + ' cargados');
+      try { _gx('trn_load_real_league', { league: groupKey, count: _teams.length }); } catch(_) {}
+    } catch (_) {
+      _showToast('Error al cargar la liga.');
+    }
+  }
   // â”€â”€ Bulk simulation call â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   async function _bulkSim(matchSpecs) {
     // Split into batches of 50 if needed
@@ -2028,8 +2110,8 @@ const TRN = (() => {
         ${foulA || foulB ? bar(foulA, foulB, 'Faltas') : ''}
       </div>
       <div class="trn-modal-lu-section">
-        <button class="trn-modal-lu-btn" onclick="TRN.loadModalLineups()">ðŸ‘¥ Alineaciones</button>
-        <div id="trn-modal-lu-area" class="trn-modal-lu-area hidden"></div>
+        <div class="trn-modal-lu-hdr">👥 Alineaciones</div>
+        <div id="trn-modal-lu-area" class="trn-modal-lu-area"></div>
       </div>`;
 
     modal.classList.remove('hidden');
@@ -2038,16 +2120,15 @@ const TRN = (() => {
     const prev = $('trn-modal-prev'), next = $('trn-modal-next');
     if (prev) prev.disabled = _modalIdx <= 0;
     if (next) next.disabled = _modalIdx >= _matchCache.length - 1;
+    loadModalLineups(); // auto-load
   }
 
 
   async function loadModalLineups() {
     const area = $('trn-modal-lu-area');
     if (!area) return;
-    // Toggle visibility
-    if (!area.classList.contains('hidden')) { area.classList.add('hidden'); return; }
-    area.classList.remove('hidden');
-    if (area.dataset.loaded === '1') return; // already fetched
+    // Skip if already loaded
+    if (area.dataset.loaded === '1') return;
     const entry = _matchCache[_modalIdx];
     if (!entry) return;
     const { m } = entry;
@@ -2143,5 +2224,8 @@ const TRN = (() => {
     shareTournament,
     reshuffleDraw,
     reshuffleGroupsDraw,
+    openLeagueLoader,
+    closeLeagueLoader,
+    loadRealLeague,
   };
 })();

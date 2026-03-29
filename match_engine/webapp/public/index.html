@@ -481,6 +481,7 @@ MATCH HISTORY ──────────────────────
       </div>
 
       <!-- ── ALINEACIONES ───────────────────────────── -->
+      <h2 class="section-title section-title-lineups" data-i18n="section-lineup">ALINEACIONES</h2>
       <div class="lineups-wrap">
         <div class="lineup-card glass-card" id="lineup-card-a">
           <h2 class="section-title" id="lineup-title-a">Team A Lineup</h2>
@@ -678,9 +679,13 @@ MATCH HISTORY ──────────────────────
 
         <div id="trn-step-3-actions" class="trn-step-actions">
           <button class="btn-secondary" onclick="TRN.goBack(2)">← Atrás</button>
+          <button id="trn-btn-liga" class="btn-secondary trn-btn-liga" onclick="TRN.openLeagueLoader()">📋 Liga real</button>
           <button id="trn-btn-random" class="btn-secondary" onclick="TRN.fillRandom()">⚡ Aleatorio</button>
           <button id="trn-btn-simulate" class="btn-primary trn-btn-simulate" disabled onclick="TRN.runSimulation()">▶ Simular torneo</button>
         </div>
+
+        <!-- League loader panel -->
+        <div id="trn-league-loader" class="trn-league-loader hidden"></div>
 
         <div id="trn-progress" class="trn-progress hidden">
           <div class="trn-spinner"></div>

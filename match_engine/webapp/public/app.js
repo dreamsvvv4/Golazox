@@ -1609,6 +1609,7 @@ function renderResult(data, payload) {
   renderLineup('b', lineups.teamB, payload.teamB, payload.eraB, data.badgeB || _badgeFallback(payload.teamB));
 
   // ── Snapshot para share card ──────────────────────────────
+  // ── Snapshot para share card ──────────────────────────────
   _shareData = {
     teamA:    payload.teamA,
     teamB:    payload.teamB,
@@ -1627,7 +1628,6 @@ function renderResult(data, payload) {
     stadium:  _selectedStadium,
     weather:  _selectedWeather,
     matchMode: payload.matchMode,
-    // Extended share data: match stats + lineups
     matchStats: isPenMode ? null : {
       possession: data.stats?.possession || { teamA: 50, teamB: 50 },
       shots:      data.stats?.shots      || { teamA: 0,  teamB: 0  },
@@ -1661,6 +1661,14 @@ const POS_DESCRIPTIONS = {
 };
 
 function renderLineup(side, lineup, teamName, era, badgeUrl) {
+  // Guard: no lineup data available
+  if (!lineup || !Array.isArray(lineup.players) || !lineup.players.length) {
+    const card = document.getElementById(`lineup-card-${side}`);
+    if (card) card.style.opacity = '0.35';
+    const titleEl = document.getElementById(`lineup-title-${side}`);
+    if (titleEl) titleEl.textContent = era ? `${teamName} · ${era}` : teamName;
+    return;
+  }
   const titleEl = document.getElementById(`lineup-title-${side}`);
   titleEl.textContent = '';
   if (badgeUrl) {
