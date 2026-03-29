@@ -598,7 +598,10 @@ const TRN = (() => {
 
   function addTeam(slug, name, era = '', badge = '') {
     if (_teams.length >= _numTeams) return;
-    if (_teams.some(t => t.slug === slug)) return;
+    if (_teams.some(t => t.slug === slug && (t.era || '') === (era || ''))) {
+      _showToast('⚠ Ya tienes ese equipo con la misma temporada.');
+      return;
+    }
     if (badge) _badgeCache[slug] = badge;
     _teams.push({ slug, name, era });
     clearSearch();
