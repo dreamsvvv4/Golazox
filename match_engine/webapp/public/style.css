@@ -4339,6 +4339,42 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 @media (max-width: 480px) {
   .trn-copa-draw-grid { grid-template-columns: 1fr; }
 }
+/* ── Seeded draw star */
+.trn-draw-seed { color: var(--gold); font-size: .65rem; margin-left: .2rem; vertical-align: middle; }
+.trn-copa-draw-seeded { background: rgba(245,197,24,.04); border-color: rgba(245,197,24,.18); }
+
+/* ── Progress bar */
+.trn-progress { flex-wrap: wrap; }
+.trn-progress-inner { display: flex; flex-direction: column; flex: 1; gap: .25rem; }
+.trn-progress-track { height: 3px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
+.trn-progress-bar { height: 100%; background: var(--neon); border-radius: 2px; width: 0; transition: width .35s ease; box-shadow: 0 0 6px rgba(0,212,255,.5); }
+
+/* ── Champion path */
+.trn-champ-path { display: flex; flex-direction: column; gap: .28rem; margin-top: .5rem; }
+.trn-path-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .38rem .6rem;
+  background: rgba(255,255,255,.03);
+  border-radius: .4rem;
+}
+.trn-path-round {
+  font: 700 .65rem/1 var(--font);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--grey);
+  width: 7rem;
+  flex-shrink: 0;
+}
+.trn-path-badge { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
+.trn-path-opp { flex: 1; font: 500 .88rem/1 var(--font); color: rgba(255,255,255,.8); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trn-path-score { font: 700 .88rem/1 var(--font); color: rgba(255,255,255,.9); flex-shrink: 0; }
+.trn-path-res { font: 700 .68rem/1 var(--font); width: 1.4rem; text-align: center; border-radius: 3px; padding: .1rem 0; flex-shrink: 0; }
+.trn-path-w { background: rgba(0,212,255,.15); color: var(--neon); }
+.trn-path-d { background: rgba(255,255,255,.08); color: rgba(255,255,255,.5); }
+.trn-path-l { background: rgba(255,60,60,.12); color: rgba(255,80,80,.8); }
+
 
 /* ══════════════════════════════════════════════════════════
    TOURNAMENT — Dashboard

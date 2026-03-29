@@ -202,8 +202,24 @@ const TRN = (() => {
   function _generateDraw() {
     const shuffled = [..._teams].sort(() => Math.random() - 0.5);
     _draw = [];
-    for (let i = 0; i < shuffled.length; i += 2)
-      _draw.push({ a: shuffled[i], b: shuffled[i + 1] });
+    // Seeded draw: first numSeeds teams never face each other in round 1
+    const numSeeds = Math.min(Math.floor(_numTeams / 4), 8);
+    if (numSeeds >= 2) {
+      const seeds    = shuffled.slice(0, numSeeds);
+      const unseeded = shuffled.slice(numSeeds);
+      // shuffle both pots separately
+      seeds.sort(() => Math.random() - 0.5);
+      unseeded.sort(() => Math.random() - 0.5);
+      // pair each seed with an unseeded team
+      for (let i = 0; i < seeds.length; i++)
+        _draw.push({ a: seeds[i], b: unseeded[i], seededA: true });
+      // pair remaining unseeded among themselves
+      for (let i = seeds.length; i < unseeded.length; i += 2)
+        _draw.push({ a: unseeded[i], b: unseeded[i + 1] });
+    } else {
+      for (let i = 0; i < shuffled.length; i += 2)
+        _draw.push({ a: shuffled[i], b: shuffled[i + 1] });
+    }
   }
 
   function _generateGroupsDraw() {
@@ -249,9 +265,10 @@ const TRN = (() => {
         <button class="trn-draw-reshuffle" onclick="TRN.reshuffleDraw()">🔀 Nuevo sorteo</button>
       </div><div class="trn-copa-draw-grid">`;
       _draw.forEach((m, i) => {
-        html += `<div class="trn-copa-draw-match">
+        const seedStar = m.seededA ? ' <span class="trn-draw-seed">\u2605</span>' : '';
+        html += `<div class="trn-copa-draw-match${m.seededA ? ' trn-copa-draw-seeded' : ''}">
           <span class="trn-draw-num">${i + 1}</span>
-          <div class="trn-copa-draw-side">${_badgeImg(m.a.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.a.name)}</span></div>
+          <div class="trn-copa-draw-side">${_badgeImg(m.a.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.a.name)}</span>${seedStar}</div>
           <span class="trn-copa-draw-vs">vs</span>
           <div class="trn-copa-draw-side trn-copa-draw-side-b">${_badgeImg(m.b.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.b.name)}</span></div>
         </div>`;
@@ -535,9 +552,13 @@ const TRN = (() => {
     }
   }
 
-  function _setProgress(txt) {
+  function _setProgress(txt, pct) {
     const el = $('trn-progress-text');
     if (el) el.textContent = txt;
+    if (pct !== undefined) {
+      const bar = $('trn-progress-bar');
+      if (bar) bar.style.width = Math.round(Math.min(100, Math.max(0, pct))) + '%';
+    }
   }
 
   // ── Match cache (built once after simulation, used by bracket + calendar) ─
@@ -703,11 +724,13 @@ const TRN = (() => {
       ? _draw.flatMap(m => [m.a, m.b])
       : [..._teams].sort(() => Math.random() - 0.5);
     const rounds = [];
+    const totalRounds = Math.ceil(Math.log2(_numTeams));
+    let roundsDone = 0;
 
     while (bracket.length > 1) {
       const n = bracket.length;
       const label = ROUND_LABELS[n] || `Ronda (${n})`;
-      _setProgress(`Simulando ${label}…`);
+      _setProgress(`Simulando ${label}…`, 5 + Math.round((roundsDone / totalRounds) * 90));
       const isFinal = n === 2;
       const specs = [];
 
@@ -761,6 +784,7 @@ const TRN = (() => {
 
       rounds.push({ label, matches });
       bracket = winners;
+      roundsDone++;
     }
 
     return { format: 'copa', champion: bracket[0], rounds, teams: _teams };
@@ -784,7 +808,7 @@ const TRN = (() => {
     const BATCH = 50;
     for (let b = 0; b < fixtures.length; b += BATCH) {
       const chunk = fixtures.slice(b, b + BATCH);
-      _setProgress(`Simulando jornadas… (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length} partidos)`);
+      _setProgress(`Simulando jornadas… (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length} partidos)`, 5 + Math.round(b / fixtures.length * 90));
       const specs = chunk.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era, eraB: f.b.era, salt: b + i + 9000, penalties: false,
       }));
@@ -818,9 +842,11 @@ const TRN = (() => {
     })();
 
     // Group stage
-    _setProgress('Simulando fase de grupos…');
+    const totalGroups = groups.length;
     const groupData = [];
     for (let g = 0; g < groups.length; g++) {
+      const grpPct = 5 + Math.round((g / totalGroups) * 55);
+      _setProgress(`Simulando grupos… (${g + 1}/${totalGroups})`, grpPct);
       const grp = groups[g];
       const table = grp.map(t => ({ ...t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
       const idxG = {};
@@ -858,24 +884,37 @@ const TRN = (() => {
     const qualifiers = groupData.flatMap(g => g.table.slice(0, 2));
     qualifiers.sort(() => Math.random() - 0.5);
 
+    // Seeded KO: group winners in one pot, runners-up in another
+    const groupWinners  = groupData.map(g => g.table[0]);
+    const groupRunners  = groupData.map(g => g.table[1]);
+    groupWinners.sort(() => Math.random() - 0.5);
+    groupRunners.sort(() => Math.random() - 0.5);
+    // Pair winners vs runners (no same-group clashes in R16)
+    const seededKO = [];
+    for (let i = 0; i < groupWinners.length; i++)
+      seededKO.push(groupWinners[i], groupRunners[i]);
+
+    _setProgress('Simulando eliminatorias\u2026', 62);
     // Reuse copa logic for KO rounds
-    const koData = await _simulateCopa_internal(qualifiers, { idaVuelta: _rules.koIdaVuelta });
+    const koData = await _simulateCopa_internal(seededKO, { idaVuelta: _rules.koIdaVuelta, startPct: 62 });
 
     return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
   // Internal copa simulation (reused for Champions KO rounds) — supports ida y vuelta
   async function _simulateCopa_internal(teamList, rules = {}) {
-    const { idaVuelta = false } = rules;
+    const { idaVuelta = false, startPct = 5 } = rules;
     const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final', 16: 'Octavos de final', 32: 'Dieciseisavos de final' };
-    let bracket = [...teamList].sort(() => Math.random() - 0.5);
+    let bracket = [...teamList];
     const rounds = [];
+    const totalRounds = Math.ceil(Math.log2(teamList.length));
+    let roundsDone = 0;
 
     while (bracket.length > 1) {
       const n = bracket.length;
       const label = ROUND_LABELS[n] || `Ronda ${n}`;
       const isFinal = n === 2;
-      _setProgress(`Eliminatoria — ${label}…`);
+      _setProgress(`Eliminatoria — ${label}…`, startPct + Math.round((roundsDone / totalRounds) * (90 - startPct)));
       const specs = [];
 
       for (let i = 0; i < n; i += 2) {
@@ -925,9 +964,69 @@ const TRN = (() => {
 
       rounds.push({ label, matches });
       bracket = winners;
+      roundsDone++;
     }
 
     return { champion: bracket[0], rounds };
+  }
+
+  // ── Champion path through the tournament ─────────────────
+  function _renderChampionPath(data) {
+    const champSlug = data.champion?.slug;
+    if (!champSlug) return '';
+    const path = [];
+
+    if (data.format === 'champions') {
+      // Group stage matches
+      const champGroup = (data.groups || []).find(g => g.table.some(r => r.slug === champSlug));
+      if (champGroup) {
+        champGroup.matches.forEach(m => {
+          const isA = m.a?.slug === champSlug;
+          const isB = m.b?.slug === champSlug;
+          if (!isA && !isB) return;
+          const opp  = isA ? m.b : m.a;
+          const gfC  = isA ? m.scoreA : m.scoreB;
+          const gaC  = isA ? m.scoreB : m.scoreA;
+          path.push({ round: champGroup.label, opp, gfC, gaC, result: gfC > gaC ? 'w' : gaC > gfC ? 'l' : 'd', legs: 1, penA: null });
+        });
+      }
+    }
+
+    const rounds = data.format === 'copa' ? data.rounds : (data.koRounds || []);
+    rounds.forEach(r => {
+      r.matches.forEach(m => {
+        const isA = m.a?.slug === champSlug;
+        const isB = m.b?.slug === champSlug;
+        if (!isA && !isB) return;
+        const opp = isA ? m.b : m.a;
+        const gfC = m.legs === 2
+          ? (isA ? m.aggA : m.aggB)
+          : (isA ? m.scoreA : m.scoreB);
+        const gaC = m.legs === 2
+          ? (isA ? m.aggB : m.aggA)
+          : (isA ? m.scoreB : m.scoreA);
+        const result = gfC > gaC ? 'w' : gaC > gfC ? 'l' : 'd';
+        path.push({ round: r.label, opp, gfC, gaC, result, legs: m.legs, penA: m.penA, penB: m.penB, aggA: m.aggA, aggB: m.aggB, isA });
+      });
+    });
+
+    if (!path.length) return '';
+    const rCls = { w: 'trn-path-w', d: 'trn-path-d', l: 'trn-path-l' };
+    const rLabel = { w: 'V', d: 'E', l: 'D' };
+    return `<h3 class="trn-section-h trn-section-h-mt">📍 Camino al t\u00edtulo</h3>
+      <div class="trn-champ-path">
+        ${path.map(p => {
+          const penStr = p.penA !== null ? ` (${p.isA ? p.penA : p.penB}\u2013${p.isA ? p.penB : p.penA}p)` : '';
+          const scoreStr = p.legs === 2 ? `${p.gfC}\u2013${p.gaC}${penStr}<small> agg</small>` : `${p.gfC}\u2013${p.gaC}${penStr}`;
+          return `<div class="trn-path-row">
+            <span class="trn-path-round">${_esc(p.round)}</span>
+            ${_badgeImg(p.opp?.slug, 'trn-path-badge')}
+            <span class="trn-path-opp">${_esc(p.opp?.name || '?')}</span>
+            <span class="trn-path-score">${scoreStr}</span>
+            <span class="trn-path-res ${rCls[p.result]}">${rLabel[p.result]}</span>
+          </div>`;
+        }).join('')}
+      </div>`;
   }
 
   // ── Compute tournament-wide stats ─────────────────────
@@ -1099,7 +1198,7 @@ const TRN = (() => {
               <span class="trn-rnd-label">${_esc(r.label)}</span>
               <span class="trn-rnd-count">${r.matches.length} ${r.matches[0]?.legs === 2 ? 'cruces' : 'partidos'}</span>
             </div>`).join('')}
-        </div>`;
+        </div>` + _renderChampionPath(d);
     } else {
       // champions
       const numGroups = d.groups?.length || 0;
@@ -1140,11 +1239,8 @@ const TRN = (() => {
                   <span class="trn-mini-pts">${r.pts}</span>
                 </div>`).join('')}
             </div>`).join('')}
-        </div>`;
-    }
-  }
-
-  function _zoneClass(i, total) {
+        </div>` + _renderChampionPath(d);
+    }(i, total) {
     if (i === 0) return 'trn-tr-champ';
     if (total >= 10) {
       if (i < 4)          return 'trn-tr-qual';
@@ -1526,6 +1622,14 @@ const TRN = (() => {
     const modal = $('trn-match-modal');
     if (modal) modal.classList.add('hidden');
   }
+
+  // ── Global keyboard shortcuts ─────────────────────────
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = $('trn-match-modal');
+      if (modal && !modal.classList.contains('hidden')) { closeMatchModal(); return; }
+    }
+  });
 
   // ── Public API ───────────────────────────────────────────
   return {
