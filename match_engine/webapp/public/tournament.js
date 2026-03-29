@@ -14,6 +14,7 @@ const TRN = (() => {
   let _tab        = 'summary';
   let _matchCache = [];     // flat list for modal lookup
   let _badgeCache  = {};     // slug â†’ badge URL
+  let _seasonCache = {};     // slug → seasons[] from suggest results
   let _modalIdx   = -1;     // current match in modal for prev/next nav
   let _trnCatalog  = null;   // cached catalog for league loader
 
@@ -412,6 +413,10 @@ const TRN = (() => {
         const badge = _esc(t.badge || '');
         const ls    = t.latestSeason || '';
         const meta  = ls && ls !== 'all-time' ? `'${String(ls).slice(-2)}` : (ls === 'all-time' ? 'All-Time' : '');
+        // cache seasons for era picker in previewTeam
+
+        if (t.seasons && t.slug) _seasonCache[t.slug] = t.seasons;
+
         const isLocked = !_isUnlocked() && !!_LOCKED_TEAMS[t.slug];
         if (isLocked) {
           return `<div class="trn-search-item trn-search-item-locked" onclick="TRN.showLockedHint()">
@@ -479,14 +484,26 @@ const TRN = (() => {
       </div>`;
     };
 
+    // Build era picker HTML if we have multiple seasons cached
+    const _sc = _seasonCache[slug] || [];
+    const _yrSeasons = _sc.filter(s => /^\d{4}$/.test(s)).sort((a, b) => b - a);
+    const _activeEra = era || (_yrSeasons[0] || '');
+    let eraPickerHtml = '';
+    if (_yrSeasons.length > 1) {
+      const chips = _yrSeasons.map(y =>
+        `<button class="trn-era-chip${y === _activeEra ? ' trn-era-chip-active' : ''}" onclick="TRN.previewTeam('${safeSlug}','${safeName}','${safeBadge}','${_esc(y)}')">${y}</button>`
+      ).join('');
+      eraPickerHtml = `<div class="trn-era-picker"><span class="trn-era-label">Temporada:</span><div class="trn-era-chips">${chips}</div></div>`;
+    }
+
     try {
-      const r = await fetch(`/lookup?team=${encodeURIComponent(slug)}`);
+      const r = await fetch(`/lookup?team=${encodeURIComponent(slug)}&era=${encodeURIComponent(_activeEra)}`);
       const data = await r.json();
 
       const badgeUrl = _esc(data.badgeUrl || badge || '/img/badges/_placeholder.svg');
       const formation = data.formation ? _esc(data.formation) : '';
       const srcYear = data?.source ? (String(data.source).match(/\((\d{4})/)?.[1] || '') : '';
-      const resolvedEra = srcYear || era || '';
+      const resolvedEra = srcYear || _activeEra || '';
 
       let playersHtml = '';
       if (data.found && Array.isArray(data.players) && data.players.length > 0) {
@@ -507,6 +524,7 @@ const TRN = (() => {
       }
 
       panel.innerHTML = `
+        ${eraPickerHtml}
         <div class="trn-preview-header">
           <img class="trn-preview-badge" src="${badgeUrl}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
           <div class="trn-preview-meta">

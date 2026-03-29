@@ -4217,6 +4217,38 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   gap: .9rem;
   margin-bottom: .85rem;
 }
+/* ── Era picker (season chips above preview) ── */
+.trn-era-picker {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-bottom: .85rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.trn-era-label {
+  font: 700 .68rem/1 var(--font);
+  color: rgba(255,255,255,.45);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.trn-era-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.trn-era-chip {
+  font: 600 .75rem/1 var(--font);
+  padding: .28rem .65rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.trn-era-chip:hover { background: rgba(0,212,255,.15); border-color: rgba(0,212,255,.4); color: #fff; }
+.trn-era-chip-active { background: rgba(0,212,255,.2) !important; border-color: var(--neon) !important; color: var(--neon) !important; }
 .trn-preview-badge {
   width: 52px; height: 52px;
   object-fit: contain;

@@ -716,6 +716,7 @@ app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
       slug:   t.slug,
       badge:  t.badge,
       latestSeason,
+      seasons: nums.sort((a, b) => b - a),  // all year seasons, newest first
     };
   });
   res.set('Cache-Control', 'no-store');
