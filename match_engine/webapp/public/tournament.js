@@ -660,8 +660,7 @@ const TRN = (() => {
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
         _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
       });
-      _numTeams = _teams.length;
-      _buildNumTeamsPicker();
+      setNumTeams(_teams.length);
       closeLeagueLoader();
       _renderTeamSlots();
       const leagueName = _esc(groupKey.replace(/^\S+\s*/, ''));
