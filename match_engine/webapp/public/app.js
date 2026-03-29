@@ -42,12 +42,12 @@ const I18N = {
     'km-title':'Puntos clave','km-reds':'Tanda de tarjetas rojas — el árbitro se mostró muy estricto','km-clutch':'Factor decisivo','km-clean-sheet':'Portería a cero','km-thrashing':'Goleada','km-draw':'Empate muy disputado','km-extra-time':'Se decidió en los penaltis',
     'mom-badge-text':'MEJOR JUGADOR','bench-label':'BANQUILLO','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Cambio realizado','tooltip-copied':'Resultado copiado ✓','tooltip-copy-fail':'No se pudo copiar',
-    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'LESIÓN',
+    'ev-goal':'¡GOL!','ev-yellow':'TARJETA AMARILLA','ev-red':'TARJETA ROJA','ev-pen_winner':'¡GANADOR!','ev-injury':'LESIÓN','ev-sub':'CAMBIO',
     'ev-penalty':'PENALTI MARCADO','ev-penalty-miss':'PENALTI FALLADO','ev-corner':'CÓRNER','ev-freekick':'FALTA DIRECTA',
     'ev-kickoff':'INICIO DEL PARTIDO','ev-fulltime':'PITIDO FINAL',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. fallado','ev-tag-corner':'córner','ev-tag-fk':'falta directa',
     'phase-playing':'EN JUEGO','phase-corner':'🚩 CÓRNER','phase-freekick':'🎯 FALTA DIRECTA',
-    'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL','phase-injury':'🩹 LESIÓN',
+    'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL','phase-injury':'🩹 LESIÓN','phase-sub':'🔄 CAMBIO',
     'pos-GK':'Portero','pos-RB':'Lateral Der.','pos-CB':'Central','pos-LB':'Lateral Izq.','pos-DM':'Mediocentro Def.',
     'pos-CM':'Centrocampista','pos-RM':'Interior Der.','pos-LM':'Interior Izq.','pos-AM':'Mediapunta',
     'pos-RW':'Extremo Der.','pos-LW':'Extremo Izq.','pos-ST':'Delantero Centro',
@@ -97,12 +97,12 @@ const I18N = {
     'km-title':'Key moments','km-reds':'Lots of red cards — the referee was very strict','km-clutch':'Decisive factor','km-clean-sheet':'Clean sheet','km-thrashing':'Dominant victory','km-draw':'Closely contested draw','km-extra-time':'Decided on penalties',
     'mom-badge-text':'PLAYER OF THE MATCH','bench-label':'BENCH','ovr-lbl':'OVR',
     'sub-change-toast':'✅ Substitution made','tooltip-copied':'Result copied ✓','tooltip-copy-fail':'Could not copy',
-    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'INJURY',
+    'ev-goal':'GOAL!','ev-yellow':'YELLOW CARD','ev-red':'RED CARD','ev-pen_winner':'WINNER!','ev-injury':'INJURY','ev-sub':'SUBSTITUTION',
     'ev-penalty':'PENALTY SCORED','ev-penalty-miss':'PENALTY MISSED','ev-corner':'CORNER','ev-freekick':'FREE KICK',
     'ev-kickoff':'KICK OFF','ev-fulltime':'FULL TIME',
     'ev-tag-pen':'pen.','ev-tag-miss':'pen. missed','ev-tag-corner':'corner','ev-tag-fk':'free kick',
     'phase-playing':'IN PLAY','phase-corner':'🚩 CORNER','phase-freekick':'🎯 FREE KICK',
-    'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL','phase-injury':'🩹 INJURY',
+    'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL','phase-injury':'🩹 INJURY','phase-sub':'🔄 SUBSTITUTION',
     'pos-GK':'Goalkeeper','pos-RB':'Right Back','pos-CB':'Centre Back','pos-LB':'Left Back','pos-DM':'Def. Midfielder',
     'pos-CM':'Midfielder','pos-RM':'Right Mid','pos-LM':'Left Mid','pos-AM':'Attacking Mid',
     'pos-RW':'Right Winger','pos-LW':'Left Winger','pos-ST':'Striker',
@@ -1674,10 +1674,13 @@ function animateTimeline(events, teamA, teamB, msPerMinute = 1000) {
       case 'corner':       icon = '🚩'; suffix = ` <span class="t-tag t-tag-corner">${t('ev-tag-corner')}</span>`; break;
       case 'freekick':     icon = '🎯'; suffix = ` <span class="t-tag t-tag-fk">${t('ev-tag-fk')}</span>`; break;
       case 'injury':       icon = '🩹'; suffix = ''; break;
+      case 'sub':          icon = '🔄'; suffix = ev.playerIn ? ` ▲ <span class="t-sub-in">${escHtml(ev.playerIn)}</span>` : ''; break;
       default:             icon = '•';  suffix = '';
     }
-    const isA      = ev.side === 'A';
-    const nameStr  = ev.player ? escHtml(ev.player) : '';
+    const isA     = ev.side === 'A';
+    const nameStr = ev.type === 'sub'
+      ? (ev.playerOut ? escHtml(ev.playerOut) : '')
+      : (ev.player ? escHtml(ev.player) : '');
     const label    = `${icon}${nameStr ? ' ' + nameStr : ''}${suffix}`;
     const narHtml  = ev.narrative
       ? `<div class="t-narration${isA ? ' t-nar-a' : ' t-nar-b'} t-nar-pending" data-nar="${escHtml(ev.narrative)}"></div>`
@@ -3442,6 +3445,22 @@ function animatePitchEvent(type, ev) {
     if (injured) {
       injured.style.opacity = '0.3';
       setTimeout(() => { injured.style.opacity = ''; }, 2000);
+    }
+    setTimeout(() => { setPhase(t('phase-playing')); }, 1600);
+
+  } else if (type === 'sub') {
+    setPhase(`${t('phase-sub')} — ${teamLabel}`);
+    // Swap the injured dot for the substitute
+    const dotOut = _findDotByName(ev.playerOut);
+    const dotIn  = _findDotByName(ev.playerIn);
+    if (dotOut) {
+      dotOut.style.opacity = '0.15';
+      setTimeout(() => { if (dotOut) dotOut.style.opacity = ''; }, 2400);
+    }
+    if (dotIn) {
+      dotIn.style.opacity = '1';
+      dotIn.style.filter  = 'brightness(1.8)';
+      setTimeout(() => { if (dotIn) dotIn.style.filter = ''; }, 1800);
     }
     setTimeout(() => { setPhase(t('phase-playing')); }, 1600);
   }

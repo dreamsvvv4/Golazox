@@ -995,7 +995,7 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
     weather:  weatherId ? { id: weatherId, goalMult: weatherFx.goalMult, foulMult: weatherFx.foulMult } : null,
     ...(()=>{
       const stats    = buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineupA, lineupB, xgA, xgB, fa, fb, saltedSeed, { referee, weatherFoulMult: weatherFx.foulMult });
-      const timeline = buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, stats.notableEvents, referee, ratingsA, ratingsB);
+      const timeline = buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, stats.notableEvents, referee, ratingsA, ratingsB, benchA, benchB);
       const referee_stats = buildRefereeStats(timeline, stats, matchPenalties);
       return { stats, timeline, referee_stats };
     })(),
@@ -1081,7 +1081,7 @@ function buildStats(teamA, teamB, ratingsA, ratingsB, scorersA, scorersB, lineup
  *
  * @returns {Array<{minute, type, side, player, scoreA, scoreB}>}
  */
-function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, notableEvents, referee = null, ratingsA = null, ratingsB = null) {
+function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB, matchPenalties, notableEvents, referee = null, ratingsA = null, ratingsB = null, benchA = [], benchB = []) {
   const all = [];
 
   // Each card/penalty event carries referee identity so the narrator can personalise phrases.
@@ -1102,8 +1102,47 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
   (cardsB?.yellow || []).forEach(e => all.push({ minute: e.minute, type: 'yellow', side: 'B', player: e.name, playerRating: defB, ...refTag }));
   (cardsA?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'A', player: e.name, playerRating: defA, ...refTag }));
   (cardsB?.red    || []).forEach(e => all.push({ minute: e.minute, type: 'red',    side: 'B', player: e.name, playerRating: defB, ...refTag }));
-  (injuriesA    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'A', player: e.name, playerRating: atkA }));
-  (injuriesB    || []).forEach(e => all.push({ minute: e.minute, type: 'injury',  side: 'B', player: e.name, playerRating: atkB }));
+
+  // Injuries + automatic substitution: pick a bench player of the same/similar position
+  const _posGroup = p => {
+    if (!p) return 'out';
+    if (p === 'GK') return 'GK';
+    if (['CB','RB','LB'].includes(p)) return 'DEF';
+    if (['DM','CM','RM','LM'].includes(p)) return 'MID';
+    return 'ATT'; // AM, RW, LW, ST
+  };
+  const _pickSub = (injuredPos, usedSubs, bench) => {
+    if (!bench || !bench.length) return null;
+    const group = _posGroup(injuredPos);
+    // Prefer same positional group, then any available
+    const available = bench.filter(p => !usedSubs.has(p.name));
+    const sameGroup = available.filter(p => _posGroup(p.position) === group);
+    return (sameGroup[0] || available[0]) || null;
+  };
+  const usedSubsA = new Set(), usedSubsB = new Set();
+  const injAList  = injuriesA || [];
+  const injBList  = injuriesB || [];
+  const _findStarterPos = (players, name) => (players || []).find(p => p.name === name)?.position;
+
+  // Collect starter lists for position lookup
+  // (injuriesA/B only carry name+minute — position must be looked up from scorersA/B context or bench)
+  // We approximate: flag the injury event and attach sub info
+  injAList.forEach(e => {
+    all.push({ minute: e.minute, type: 'injury', side: 'A', player: e.name, playerRating: atkA });
+    const sub = _pickSub(e.position, usedSubsA, benchA);
+    if (sub) {
+      usedSubsA.add(sub.name);
+      all.push({ minute: e.minute + 1, type: 'sub', side: 'A', playerOut: e.name, playerIn: sub.name });
+    }
+  });
+  injBList.forEach(e => {
+    all.push({ minute: e.minute, type: 'injury', side: 'B', player: e.name, playerRating: atkB });
+    const sub = _pickSub(e.position, usedSubsB, benchB);
+    if (sub) {
+      usedSubsB.add(sub.name);
+      all.push({ minute: e.minute + 1, type: 'sub', side: 'B', playerOut: e.name, playerIn: sub.name });
+    }
+  });
   (matchPenalties || []).forEach(e =>
     all.push({ minute: e.minute, type: e.scored ? 'penalty' : 'penalty_miss', side: e.side, player: e.taker,
                playerRating: e.side === 'A' ? atkA : atkB,
