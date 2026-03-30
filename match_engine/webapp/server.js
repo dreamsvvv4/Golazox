@@ -65,7 +65,13 @@ const _GROUP_ORDER = [
   '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
   '🇸🇦 Saudi Pro League', '🇺🇸 MLS', '🌎 América del Sur', '🌍 Otros',
 ];
-// group, nameEn, nameEs are now stored in each squad JSON — maps removed.
+// group, nameEn, nameEs: stored in each squad JSON, with squads-meta.json as overlay.
+// squads-meta.json maps slug → { group, nameEn, nameEs } and overrides per-file values.
+// This allows correct metadata even for squad files that are gitignored (seeded on server).
+const _SQUADS_META = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8')); }
+  catch (_) { return {}; }
+})();
 
 
 // Catalog: name + slug + available seasons (only teams with ≥1 season)
@@ -81,9 +87,10 @@ for (const file of _squadFiles) {
     }).sort((a, b) => Number(b) - Number(a)); // newest first
     if (seasons.length === 0) continue;
     const slug = d.slug || file.replace('.json', '');
-    const group = d.group || '🌍 Otros';
-    const nameEn = d.nameEn || d.name || slug;
-    const nameEs = d.nameEs || d.nameEn || d.name || slug;
+    const _meta = _SQUADS_META[slug] || {};
+    const group = _meta.group || d.group || '🌍 Otros';
+    const nameEn = _meta.nameEn || d.nameEn || d.name || slug;
+    const nameEs = _meta.nameEs || d.nameEs || d.nameEn || d.name || slug;
     const badge = d.badgeLocalPath || BADGE_PLACEHOLDER;
     // Compute team OVR: average of deriveRatings() using good scraped data when available,
     // otherwise pure name-based heuristic. Stored so the tournament can bias match xG.
