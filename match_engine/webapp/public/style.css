@@ -69,9 +69,7 @@
   --shadow-neon: 0 0 24px rgba(0,212,255,0.18);
 }
 
-html { font-size: 16px; scroll-behavior: smooth; overscroll-behavior-y: none;
-       overflow-x: hidden;        /* prevent horizontal layout shift */
-       scrollbar-gutter: stable;  /* reserve scrollbar space always — no reflow */ }
+html { font-size: 16px; scroll-behavior: smooth; overscroll-behavior-y: none; }
 
 /* ── Native-app touch behaviour ───────────────────────────── */
 /* Cancel the tap flash on every element (iOS/Android highlight) */
