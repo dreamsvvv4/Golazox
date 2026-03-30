@@ -802,8 +802,17 @@ const TRN = (() => {
       const PH = '/img/badges/_placeholder.svg';
       let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga</div><div class="trn-ll-grid">';
       groups.forEach(([g, count]) => {
-        const rawPrefix = g.match(/^(\S+)/)?.[1] || '';
-        const flag = _toFlag(rawPrefix) || rawPrefix || '\uD83C\uDFC6';
+        const llMeta = (typeof _LEAGUE_META !== 'undefined' && _LEAGUE_META[g]) || null;
+        let flagHtml;
+        if (llMeta?.iso) {
+          flagHtml = `<img class="trn-ll-flag-img" src="https://flagcdn.com/w40/${_esc(llMeta.iso)}.png" alt="" loading="lazy">`;
+        } else if (llMeta?.svg) {
+          flagHtml = `<img class="trn-ll-flag-img trn-ll-flag-img-svg" src="${_esc(llMeta.svg)}" alt="" loading="lazy">`;
+        } else {
+          const rawPrefix = g.match(/^(\S+)/)?.[1] || '';
+          const emojiFlag = _toFlag(rawPrefix) || rawPrefix || '\uD83C\uDFC6';
+          flagHtml = `<span class="trn-ll-flag-big">${emojiFlag}</span>`;
+        }
         const name  = _esc(g.replace(/^\S+\s*/, ''));
         const bdgs  = (groupBadges[g] || []).slice(0, 4);
         while (bdgs.length < 4) bdgs.push(PH);
@@ -812,7 +821,7 @@ const TRN = (() => {
         ).join('');
         html += `<button class="trn-ll-btn" data-league="${_esc(g)}">
           <div class="trn-ll-card-top">
-            <span class="trn-ll-flag-big">${flag}</span>
+            ${flagHtml}
             <span class="trn-ll-count">${count} eq.</span>
           </div>
           <span class="trn-ll-name">${name}</span>

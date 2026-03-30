@@ -5963,6 +5963,8 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .trn-ll-btn-disabled { opacity: .35; cursor: not-allowed; }
 .trn-ll-card-top { display: flex; align-items: center; justify-content: space-between; }
 .trn-ll-flag-big { font-size: 1.5rem; line-height: 1; }
+.trn-ll-flag-img { width: 32px; height: 22px; object-fit: cover; border-radius: 2px; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,.4); display: block; }
+.trn-ll-flag-img-svg { object-fit: contain; }
 .trn-ll-flag, .trn-ll-icon { font-size: 1rem; line-height: 1; }
 .trn-ll-name { font-size: .85rem; font-weight: 700; flex: 1; }
 .trn-ll-count { font-size: .7rem; color: var(--neon); opacity: .7; white-space: nowrap; }
