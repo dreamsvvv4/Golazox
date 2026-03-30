@@ -5822,6 +5822,122 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 }
 
 
+/* ── Liga Clasificación table (enhanced) ──────────────────── */
+.trn-cls-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,212,255,.18) transparent;
+}
+.trn-cls-wrap::-webkit-scrollbar { height: 3px; }
+.trn-cls-wrap::-webkit-scrollbar-thumb { background: rgba(0,212,255,.2); border-radius: 2px; }
+
+/* Grid: # | badge | name | PJ | G | E | P | GF | GC | DIF | PTS */
+.trn-cls-table {
+  min-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.trn-cls-header,
+.trn-cls-row {
+  display: grid;
+  grid-template-columns: 2rem 22px 1fr 2.5rem 2.5rem 2.5rem 2.5rem 2.8rem 2.8rem 3rem 3.8rem;
+  align-items: center;
+  gap: .3rem;
+  padding: .42rem .65rem;
+}
+.trn-cls-header {
+  font: 700 .58rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding-bottom: .55rem;
+  margin-bottom: 2px;
+}
+.trn-cls-header span { text-align: center; }
+.trn-cls-header span:first-child { text-align: center; }
+.trn-cls-header span:nth-child(3) { text-align: left; padding-left: .2rem; }
+
+@keyframes cls-row-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: none; }
+}
+.trn-cls-row {
+  border-radius: .5rem;
+  background: rgba(255,255,255,.025);
+  border: 1px solid transparent;
+  animation: cls-row-in .32s ease both;
+  animation-delay: calc(var(--row-i, 0) * 45ms);
+  transition: background .13s, border-color .13s, box-shadow .13s, transform .1s;
+  cursor: default;
+}
+.trn-cls-row:hover {
+  background: rgba(255,255,255,.06);
+  transform: translateX(3px);
+}
+/* Podium highlights */
+.trn-cls-pos-1 {
+  background: linear-gradient(90deg, rgba(255,215,0,.1) 0%, rgba(255,215,0,.04) 60%, transparent 100%);
+  border-color: rgba(255,215,0,.22);
+  box-shadow: inset 3px 0 0 rgba(255,215,0,.55);
+}
+.trn-cls-pos-2 {
+  background: linear-gradient(90deg, rgba(210,210,225,.08) 0%, rgba(210,210,225,.03) 60%, transparent 100%);
+  border-color: rgba(192,200,220,.15);
+  box-shadow: inset 3px 0 0 rgba(192,200,220,.5);
+}
+.trn-cls-pos-3 {
+  background: linear-gradient(90deg, rgba(205,127,50,.08) 0%, rgba(205,127,50,.03) 60%, transparent 100%);
+  border-color: rgba(205,127,50,.18);
+  box-shadow: inset 3px 0 0 rgba(205,140,55,.55);
+}
+/* Per-cell styles */
+.trn-cls-pos-cell {
+  font: 700 .78rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.3);
+  text-align: center;
+}
+.trn-cls-pos-1 .trn-cls-pos-cell,
+.trn-cls-pos-2 .trn-cls-pos-cell,
+.trn-cls-pos-3 .trn-cls-pos-cell { font-size: .9rem; }
+.trn-cls-badge { width: 22px; height: 22px; object-fit: contain; }
+.trn-cls-name {
+  font: 600 .9rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.88);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  padding-left: .2rem;
+}
+.trn-cls-pos-1 .trn-cls-name { color: #fff; font-weight: 800; }
+.trn-cls-num {
+  font: 600 .8rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.42);
+  text-align: center;
+}
+/* Goal difference colouring */
+.trn-cls-dif-pos { color: #4ade80 !important; font-weight: 700; }
+.trn-cls-dif-neg { color: #f87171 !important; font-weight: 700; }
+.trn-cls-dif-neu { color: rgba(255,255,255,.28) !important; }
+/* PTS badge */
+.trn-cls-pts-val {
+  font: 800 .95rem/1 'Rajdhani', sans-serif;
+  color: var(--neon);
+  text-align: center;
+  background: rgba(0,212,255,.1);
+  border: 1px solid rgba(0,212,255,.22);
+  border-radius: .4rem;
+  padding: .22rem .35rem;
+  letter-spacing: .02em;
+}
+.trn-cls-pos-1 .trn-cls-pts-val {
+  color: #ffd700;
+  background: rgba(255,215,0,.12);
+  border-color: rgba(255,215,0,.3);
+  box-shadow: 0 0 8px rgba(255,215,0,.2);
+}
+
 /* ══════════════════════════════════════════════════════════
    DESKTOP LAYOUT  (min-width: 1100px)
    Two-column tournament dashboard: sticky champion poster

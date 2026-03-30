@@ -1990,21 +1990,39 @@ const TRN = (() => {
     const d = _data;
     if (d.format === 'liga') {
       const table = d.table || [];
-      const medals = ['🥇', '🥈', '🥉'];
-      const rows = table.map((r, i) => `
-        <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
-          <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
-          ${_badgeImg(r.slug, 'trn-mini-badge')}
-          <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
-          <span class="trn-mini-pts">${r.pts} pts</span>
-          <span class="trn-mini-gd trn-mini-gd-full">
-            <span>${r.p ?? 0} PJ</span>
-            <span>${r.w ?? 0}G ${r.d ?? 0}E ${r.l ?? 0}P</span>
-            <span>${r.gf ?? 0}:${r.ga ?? 0}</span>
-          </span>
-        </div>`).join('');
-      el.innerHTML = `<h3 class="trn-section-h">📊 Clasificación</h3>
-        <div class="trn-mini-table">${rows || '<p class="trn-lu-empty">Sin datos</p>'}</div>`;
+      const podiumClass = ['trn-cls-pos-1', 'trn-cls-pos-2', 'trn-cls-pos-3'];
+      const posLabel = (i) => i < 3 ? ['🥇','🥈','🥉'][i] : String(i + 1);
+      const rows = table.map((r, i) => {
+        const gd = (r.gf ?? 0) - (r.ga ?? 0);
+        const gdStr = gd > 0 ? `+${gd}` : String(gd);
+        const gdCls = gd > 0 ? 'trn-cls-dif-pos' : gd < 0 ? 'trn-cls-dif-neg' : 'trn-cls-dif-neu';
+        return `
+        <div class="trn-cls-row ${podiumClass[i] || ''}" style="--row-i:${i}">
+          <span class="trn-cls-pos-cell">${posLabel(i)}</span>
+          ${_badgeImg(r.slug, 'trn-cls-badge')}
+          <span class="trn-cls-name">${_esc(_tLabel(r))}</span>
+          <span class="trn-cls-num">${r.p ?? 0}</span>
+          <span class="trn-cls-num">${r.w ?? 0}</span>
+          <span class="trn-cls-num">${r.d ?? 0}</span>
+          <span class="trn-cls-num">${r.l ?? 0}</span>
+          <span class="trn-cls-num">${r.gf ?? 0}</span>
+          <span class="trn-cls-num">${r.ga ?? 0}</span>
+          <span class="trn-cls-num ${gdCls}">${gdStr}</span>
+          <span class="trn-cls-pts-val">${r.pts}</span>
+        </div>`;
+      }).join('');
+      el.innerHTML = `
+        <h3 class="trn-section-h">📊 Clasificación</h3>
+        <div class="trn-cls-wrap">
+          <div class="trn-cls-table">
+            <div class="trn-cls-header">
+              <span>#</span><span></span><span>Equipo</span>
+              <span>PJ</span><span>G</span><span>E</span><span>P</span>
+              <span>GF</span><span>GC</span><span>DIF</span><span>PTS</span>
+            </div>
+            ${rows || '<p class="trn-lu-empty">Sin datos</p>'}
+          </div>
+        </div>`;
       return;
     }
     const rounds = d.koRounds || d.rounds || [];
@@ -2451,6 +2469,12 @@ const TRN = (() => {
   // ── Start over ───────────────────────────────────────────
   function startOver() {
     _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {}; _modalIdx = -1;
+    // Reset simulation state so step 3 is clean on re-entry
+    _stopTrnLoadCycle();
+    hide($('trn-progress'));
+    show($('trn-step-3-actions'));
+    const pb = $('trn-progress-bar');
+    if (pb) pb.style.width = '0%';
     hide($('trn-dashboard'));
     const wizard = $('trn-wizard');
     if (wizard) show(wizard);
