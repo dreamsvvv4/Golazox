@@ -2,99 +2,145 @@
   "slug": "montpellier-hsc",
   "seasons": {
     "2025": {
-      "formation": "4-3-3",
+      "formation": "4-4-2",
       "players": [
         {
           "name": "Simon Ngapandouetnbu",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Viktor Dzodic",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
         },
         {
           "name": "Mathieu Michel",
-          "position": "GK"
-        },
-        {
-          "name": "Naoufel El Hannach",
-          "position": "CB"
-        },
-        {
-          "name": "Yaël Mouanga",
-          "position": "CB"
-        },
-        {
-          "name": "Julien Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "Christopher Jullien",
-          "position": "CB"
-        },
-        {
-          "name": "Théo Sainte-Luce",
-          "position": "CB"
-        },
-        {
-          "name": "Lucas Mincarelli",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
         },
         {
           "name": "Enzo Tchato",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Naoufel El Hannach",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Yaël Mouanga",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Julien Laporte",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Christopher Jullien",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Théo Sainte-Luce",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lucas Mincarelli",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
         },
         {
           "name": "Wilfried Ndollo Bille",
-          "position": "CB"
-        },
-        {
-          "name": "Everson Jr",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
         },
         {
           "name": "Khalil Fayad",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
         },
         {
           "name": "Théo Chennahi",
-          "position": "CM"
-        },
-        {
-          "name": "Nabil Homssa",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
           "name": "Téji Savanier",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Everson Jr",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
           "name": "Ayanda Sishuba",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Nabil Homssa",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
         },
         {
           "name": "Nathanaël Mbuku",
-          "position": "ST"
-        },
-        {
-          "name": "Yanis Issoufou",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Nicolas Pays",
-          "position": "ST"
-        },
-        {
-          "name": "Axel Guéguin",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
           "name": "Alexandre Mendy",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yanis Issoufou",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
         },
         {
           "name": "Enzo Molebe",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Axel Guéguin",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
         }
       ],
       "ratings": {
@@ -107,10 +153,8 @@
       "teamLabel": "Montpellier (2025-26)"
     }
   },
-  "badgeLocalPath": "/img/badges/montpellier-hsc.png",
   "id": 969,
   "name": "Montpellier",
-  "group": "🇫🇷 Ligue 1",
-  "nameEs": "Montpellier HSC",
-  "nameEn": "Montpellier HSC"
+  "group": "🇫🇷 Ligue 2",
+  "badgeLocalPath": "/img/badges/montpellier-hsc.png"
 }

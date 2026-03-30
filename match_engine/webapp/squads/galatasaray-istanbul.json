@@ -1,6 +1,1223 @@
 {
   "slug": "galatasaray-istanbul",
   "seasons": {
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Claudio Taffarel",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 86
+        },
+        {
+          "name": "Kerem İnan",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mehmet Bölükbaşı",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Recep Ata",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vedat İnceefe",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bülent Korkmaz",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gheorghe Popescu",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emre Aşık",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hakan Ünsal",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ergün Penbe",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sabri Sarıoğlu",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emrah Eren",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fatih Akyel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Capone",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gheorghe Hagi",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ümit Aydın",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ahmet Yıldırım",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Suat Kaya",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bülent Akın",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emre Belözoğlu",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ufuk Talay",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sedat Yeşilkaya",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Okan Buruk",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ümit Davala",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Faruk Atalay",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hasan Şaş",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sedat Debreli",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jardel",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Serkan Aykut",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Burak Akdiş",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Arif Erdem",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Márcio Mixirica",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 65,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Galatasaray (2000/2001)",
+      "teamLabel": "Galatasaray (2000-01)"
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Faryd Mondragón",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Aykut Erçetin",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kerem İnan",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mehmet Bölükbaşı",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mehmet Polat",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bülent Korkmaz",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emre Aşık",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mohamed Sarr",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Suat Usta",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sergio Almaguer",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vedat İnceefe",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "İlker Erbay",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Görkem Görk",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gustavo Victoria",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Servet Gökçen",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hakan Ünsal",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ergün Penbe",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Abel Xavier",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sabri Sarıoğlu",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Batista",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Suat Kaya",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Cihan Haspolatlı",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ayhan Akman",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Volkan Arslan",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ümit Davala",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Faruk Atalay",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Haim Revivo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sinan Turan",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Onur Çubukçu",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Felipe Loureiro",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Elvir Baljic",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hasan Şaş",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fabio Pinto",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Arif Erdem",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Berkant Göktan",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ümit Karan",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sedat Debreli",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ali Lukunku",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 65,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Galatasaray (2002/2003)",
+      "teamLabel": "Galatasaray (2002-03)"
+    },
+    "2012": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Ufuk Ceylan",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Aykut Erçetin",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Eray İşcan",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Semih Kaya",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Dany Nounkeu",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Emmanuel Eboué",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Hakan Balta",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sabri Sarıoğlu",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Gökhan Zan",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tomas Ujfalusi",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Çağlar Birinci",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Cris",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Wesley Sneijder",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 88
+        },
+        {
+          "name": "Selçuk İnan",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Felipe Melo",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Albert Riera",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Hamit Altıntop",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Emre Çolak",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Yekta Kurtuluş",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Engin Baytar",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ceyhun Gülselam",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Furkan Özçal",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 90
+        },
+        {
+          "name": "Burak Yılmaz",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Nordin Amrabat",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Umut Bulut",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Johan Elmander",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Milan Baros",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Aydın Yılmaz",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Necati Ateş",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Sercan Yıldırım",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Yiğit Gökoğlan",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 65,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Galatasaray (2012/2013)",
+      "teamLabel": "Galatasaray (2012-13)"
+    },
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Okan Kocuk",
+          "position": "GK",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Batuhan Şen",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Berk Balaban",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Marcelo Saracchi",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Christian Luyindama",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Marcão",
+          "position": "CB",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Ömer Bayram",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Martin Linnes",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Mariano",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ryan Donk",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Emre Taşdemir",
+          "position": "CB",
+          "marketValue": 525000,
+          "rating": 71
+        },
+        {
+          "name": "Ahmet Çalık",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Şener Özbayraklı",
+          "position": "CB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Gökay Güney",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Süleyman Luş",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Kaan Arslan",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Emin Bayram",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Ercan Şirin",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Steven Nzonzi",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Mario Lemina",
+          "position": "CM",
+          "marketValue": 10500000,
+          "rating": 83
+        },
+        {
+          "name": "Jean Michaël Seri",
+          "position": "CM",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Sofiane Feghouli",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Younès Belhanda",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Emre Akbaba",
+          "position": "CM",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Taylan Antalyalı",
+          "position": "CM",
+          "marketValue": 950000,
+          "rating": 73
+        },
+        {
+          "name": "Jimmy Durmaz",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Selçuk İnan",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Atalay Babacan",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ferhan Evren",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Henry Onyekuru",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Radamel Falcao",
+          "position": "ST",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Mbaye Diagne",
+          "position": "ST",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Florin Andone",
+          "position": "ST",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Ryan Babel",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Konstantinos Mitroglou",
+          "position": "ST",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Yunus Akgün",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Emre Mor",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Adem Büyük",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jesse Sekidika",
+          "position": "ST",
+          "marketValue": 725000,
+          "rating": 72
+        },
+        {
+          "name": "Erencan Yardımcı",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 65,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Galatasaray (2019/2020)",
+      "teamLabel": "Galatasaray (2019-20)"
+    },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Günay Güvenç",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Batuhan Şen",
+          "position": "GK",
+          "marketValue": 425000,
+          "rating": 70
+        },
+        {
+          "name": "Jankat Yılmaz",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Atakan Ordu",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Victor Nelsson",
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Sacha Boey",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Abdülkerim Bardakcı",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Angeliño",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Derrick Köhn",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Emin Bayram",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "marketValue": 3700000,
+          "rating": 78
+        },
+        {
+          "name": "Léo Dubois",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kazımcan Karataş",
+          "position": "CB",
+          "marketValue": 1900000,
+          "rating": 76
+        },
+        {
+          "name": "Ali Turap Bülbül",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Ali Yeşilyurt",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Lucas Torreira",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Tanguy Ndombélé",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Kaan Ayhan",
+          "position": "CM",
+          "marketValue": 4700000,
+          "rating": 79
+        },
+        {
+          "name": "Kerem Demirbay",
+          "position": "CM",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Berkan Kutlu",
+          "position": "CM",
+          "marketValue": 3800000,
+          "rating": 79
+        },
+        {
+          "name": "Sérgio Oliveira",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Fredrik Midtsjø",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Eyüp Aydın",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Efe Akman",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Hamza Akman",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Gökdeniz Gürpüz",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Baran Aksaka",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Barış Alper Yılmaz",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Hakim Ziyech",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 85
+        },
+        {
+          "name": "Nicolò Zaniolo",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Dries Mertens",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 85
+        },
+        {
+          "name": "Mauro Icardi",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Kerem Aktürkoğlu",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Wilfried Zaha",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Tetê",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Yunus Akgün",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Carlos Vinícius",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Olimpiu Moruțan",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yusuf Demir",
+          "position": "ST",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "Cédric Bakambu",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Emre Kılınç",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Halil Dervişoğlu",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Baran Demiroğlu",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Caner Doğan",
+          "position": "ST",
+          "marketValue": 25000,
+          "rating": 62
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 65,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Galatasaray (2023/2024)",
+      "teamLabel": "Galatasaray (2023-24)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

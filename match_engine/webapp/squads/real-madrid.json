@@ -1,237 +1,176 @@
 {
   "slug": "real-madrid",
   "seasons": {
-    "1950": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Juan Alonso",
-          "position": "GK"
-        },
-        {
-          "name": "Navarro",
-          "position": "RB"
-        },
-        {
-          "name": "Hon",
-          "position": "CB"
-        },
-        {
-          "name": "Pont",
-          "position": "CB"
-        },
-        {
-          "name": "Miguel Muñoz",
-          "position": "CM"
-        },
-        {
-          "name": "Montalvo",
-          "position": "CM"
-        },
-        {
-          "name": "Narro",
-          "position": "CM"
-        },
-        {
-          "name": "Luciano",
-          "position": "CM"
-        },
-        {
-          "name": "Olmedo",
-          "position": "CM"
-        },
-        {
-          "name": "Pahiño",
-          "position": "ST"
-        },
-        {
-          "name": "Molowny",
-          "position": "ST"
-        },
-        {
-          "name": "García Martín",
-          "position": "GK"
-        },
-        {
-          "name": "Clemente",
-          "position": "CB"
-        },
-        {
-          "name": "Macala",
-          "position": "ST"
-        },
-        {
-          "name": "Cabrera",
-          "position": "ST"
-        },
-        {
-          "name": "Arsuaga",
-          "position": "ST"
-        },
-        {
-          "name": "Oliva",
-          "position": "CB"
-        },
-        {
-          "name": "Imbelloni",
-          "position": "ST"
-        },
-        {
-          "name": "Roque Olsen",
-          "position": "CM"
-        },
-        {
-          "name": "Azcárate",
-          "position": "CB"
-        },
-        {
-          "name": "García",
-          "position": "CB"
-        },
-        {
-          "name": "Nemes",
-          "position": "ST"
-        },
-        {
-          "name": "Pachicho",
-          "position": "ST"
-        },
-        {
-          "name": "Alonso",
-          "position": "RB"
-        },
-        {
-          "name": "Sobrado",
-          "position": "CM"
-        },
-        {
-          "name": "Ricardo",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1950-51 Primera División",
-      "teamLabel": "Real Madrid 1950-51 Primera División"
-    },
     "1956": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Juanito Alonso",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Javier Berasaluce",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Juan Visa",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Juanito",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ángel Atienza",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Joaquín Navarro",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Becerril",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Joaquín Oliva",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Cela",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rafael Lesmes",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pedro Casado",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Marquitos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Manuel Torres",
-          "position": "CB"
-        },
-        {
-          "name": "Miguel Muñoz",
-          "position": "CM"
-        },
-        {
-          "name": "Antonio Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "José Rubio",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Santisteban",
-          "position": "CM"
-        },
-        {
-          "name": "José María Zárraga",
-          "position": "CM"
-        },
-        {
-          "name": "Ramón Marsal",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Raymond Kopa",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 89
         },
         {
-          "name": "Paco Gento",
-          "position": "ST"
+          "name": "Miguel Muñoz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
-          "name": "Joseíto",
-          "position": "ST"
+          "name": "Antonio Ruiz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "José Rubio",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "José María Zárraga",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ramón Marsal",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Alfredo di Stéfano",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 98
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Joseíto",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Héctor Rial",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Roque Olsen",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Luis Molowny",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Enrique Mateos",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Luis Pérez-Payá",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -243,443 +182,164 @@
       "source": "Transfermarkt — Real Madrid (1956/1957)",
       "teamLabel": "Real Madrid (1956-57)"
     },
-    "1957": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Juanito Alonso",
-          "position": "GK"
-        },
-        {
-          "name": "Javier Berasaluce",
-          "position": "GK"
-        },
-        {
-          "name": "Rogelio Domínguez",
-          "position": "GK"
-        },
-        {
-          "name": "Ángel Atienza",
-          "position": "CB"
-        },
-        {
-          "name": "José Becerril",
-          "position": "CB"
-        },
-        {
-          "name": "José Santamaría",
-          "position": "CB"
-        },
-        {
-          "name": "Rafael Lesmes",
-          "position": "CB"
-        },
-        {
-          "name": "Marquitos",
-          "position": "CB"
-        },
-        {
-          "name": "Miguel Muñoz",
-          "position": "CM"
-        },
-        {
-          "name": "Antonio Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "José Rubio",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Santisteban",
-          "position": "CM"
-        },
-        {
-          "name": "José María Zárraga",
-          "position": "CM"
-        },
-        {
-          "name": "Chus Pereda",
-          "position": "CM"
-        },
-        {
-          "name": "Ramón Marsal",
-          "position": "CM"
-        },
-        {
-          "name": "Raymond Kopa",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Joseíto",
-          "position": "ST"
-        },
-        {
-          "name": "Alfredo di Stéfano",
-          "position": "ST"
-        },
-        {
-          "name": "Héctor Rial",
-          "position": "ST"
-        },
-        {
-          "name": "Enrique Mateos",
-          "position": "ST"
-        },
-        {
-          "name": "Isidro Brunet",
-          "position": "ST"
-        },
-        {
-          "name": "Carlos Cela",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Real Madrid (1957/1958)",
-      "teamLabel": "Real Madrid (1957-58)"
-    },
-    "1958": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Juanito Alonso",
-          "position": "GK"
-        },
-        {
-          "name": "Rogelio Domínguez",
-          "position": "GK"
-        },
-        {
-          "name": "Ángel Atienza",
-          "position": "CB"
-        },
-        {
-          "name": "Miche",
-          "position": "CB"
-        },
-        {
-          "name": "José Santamaría",
-          "position": "CB"
-        },
-        {
-          "name": "Rafael Lesmes",
-          "position": "CB"
-        },
-        {
-          "name": "Marquitos",
-          "position": "CB"
-        },
-        {
-          "name": "Antonio Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Manuel Villa",
-          "position": "CM"
-        },
-        {
-          "name": "Ángel Segurola",
-          "position": "CM"
-        },
-        {
-          "name": "Falín",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Santisteban",
-          "position": "CM"
-        },
-        {
-          "name": "Héctor Ramos",
-          "position": "CM"
-        },
-        {
-          "name": "José María Zárraga",
-          "position": "CM"
-        },
-        {
-          "name": "Ramón Marsal",
-          "position": "CM"
-        },
-        {
-          "name": "Raymond Kopa",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Joseíto",
-          "position": "ST"
-        },
-        {
-          "name": "Alfredo di Stéfano",
-          "position": "ST"
-        },
-        {
-          "name": "Héctor Rial",
-          "position": "ST"
-        },
-        {
-          "name": "Ferenc Puskás",
-          "position": "ST"
-        },
-        {
-          "name": "Enrique Mateos",
-          "position": "ST"
-        },
-        {
-          "name": "Jesús Herrera",
-          "position": "ST"
-        },
-        {
-          "name": "Joaquín García",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Real Madrid (1958/1959)",
-      "teamLabel": "Real Madrid (1958-59)"
-    },
-    "1959": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Juanito Alonso",
-          "position": "GK"
-        },
-        {
-          "name": "Rogelio Domínguez",
-          "position": "GK"
-        },
-        {
-          "name": "Juan Bagur",
-          "position": "GK"
-        },
-        {
-          "name": "Miche",
-          "position": "CB"
-        },
-        {
-          "name": "Pantaleon",
-          "position": "CB"
-        },
-        {
-          "name": "José Santamaría",
-          "position": "CB"
-        },
-        {
-          "name": "Rafael Lesmes",
-          "position": "CB"
-        },
-        {
-          "name": "Pachín",
-          "position": "CB"
-        },
-        {
-          "name": "Marquitos",
-          "position": "CB"
-        },
-        {
-          "name": "Antonio Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Santisteban",
-          "position": "CM"
-        },
-        {
-          "name": "Didi",
-          "position": "CM"
-        },
-        {
-          "name": "José María Zárraga",
-          "position": "CM"
-        },
-        {
-          "name": "Luis del Sol",
-          "position": "CM"
-        },
-        {
-          "name": "Felo",
-          "position": "CM"
-        },
-        {
-          "name": "José Maria Vidal",
-          "position": "CM"
-        },
-        {
-          "name": "Ramón Marsal",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Manolín Bueno",
-          "position": "ST"
-        },
-        {
-          "name": "Canário",
-          "position": "ST"
-        },
-        {
-          "name": "Alfredo di Stéfano",
-          "position": "ST"
-        },
-        {
-          "name": "Héctor Rial",
-          "position": "ST"
-        },
-        {
-          "name": "Ferenc Puskás",
-          "position": "ST"
-        },
-        {
-          "name": "Enrique Mateos",
-          "position": "ST"
-        },
-        {
-          "name": "Pepillo García",
-          "position": "ST"
-        },
-        {
-          "name": "Jesús Herrera",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Real Madrid (1959/1960)",
-      "teamLabel": "Real Madrid (1959-60)"
-    },
     "1960": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Juanito Alonso",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rogelio Domínguez",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Vicente Train",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Miche",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Santamaría",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pedro Casado",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pachín",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Marquitos",
-          "position": "CB"
-        },
-        {
-          "name": "Antonio Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "Juan Santisteban",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Didi",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Antonio Ruiz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Santisteban",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José María Zárraga",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Luis del Sol",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Felo",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Maria Vidal",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ramón Marsal",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Manolín Bueno",
-          "position": "ST"
-        },
-        {
-          "name": "Canário",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Alfredo di Stéfano",
-          "position": "ST"
-        },
-        {
-          "name": "Héctor Rial",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 98
         },
         {
           "name": "Ferenc Puskás",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 96
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Manolín Bueno",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Canário",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Héctor Rial",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Agne Simonsson",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Enrique Mateos",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pepillo García",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Jesús Herrera",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -691,221 +351,158 @@
       "source": "Transfermarkt — Real Madrid (1960/1961)",
       "teamLabel": "Real Madrid (1960-61)"
     },
-    "1962": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Vicente",
-          "position": "GK"
-        },
-        {
-          "name": "Isidro",
-          "position": "RB"
-        },
-        {
-          "name": "Casado",
-          "position": "LB"
-        },
-        {
-          "name": "Santamaría",
-          "position": "CB"
-        },
-        {
-          "name": "Pachín",
-          "position": "CB"
-        },
-        {
-          "name": "Muller",
-          "position": "CM"
-        },
-        {
-          "name": "Félix Ruiz",
-          "position": "CM"
-        },
-        {
-          "name": "Puskás",
-          "position": "ST"
-        },
-        {
-          "name": "Amancio",
-          "position": "ST"
-        },
-        {
-          "name": "Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Di Stéfano",
-          "position": "ST"
-        },
-        {
-          "name": "Araquistain",
-          "position": "GK"
-        },
-        {
-          "name": "Zoco",
-          "position": "CM"
-        },
-        {
-          "name": "Tejada",
-          "position": "ST"
-        },
-        {
-          "name": "Miera",
-          "position": "CB"
-        },
-        {
-          "name": "Evaristo",
-          "position": "ST"
-        },
-        {
-          "name": "Fermín",
-          "position": "GK"
-        },
-        {
-          "name": "Yanko",
-          "position": "ST"
-        },
-        {
-          "name": "Bueno",
-          "position": "ST"
-        },
-        {
-          "name": "Felo",
-          "position": "CM"
-        },
-        {
-          "name": "Marquitos",
-          "position": "RB"
-        },
-        {
-          "name": "Simonsson",
-          "position": "ST"
-        },
-        {
-          "name": "Vidal",
-          "position": "CM"
-        },
-        {
-          "name": "Pantaleón II",
-          "position": "CB"
-        },
-        {
-          "name": "Moncho",
-          "position": "GK"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1962-63 Primera División",
-      "teamLabel": "Real Madrid 1962-63 Primera División"
-    },
     "1966": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "José Araquistáin",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Antonio Betancort",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Andrés Junquera",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Fernando Zunzunegui",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Antonio Calpe",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pedro de Felipe",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Vicente Miera",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Manuel Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pachín",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ignacio Zoco",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Félix Ruiz",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Chato González",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Juanito",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Fernando Rovira",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Manuel Velázquez",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Fernand Goyvaerts",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Gento",
-          "position": "ST"
-        },
-        {
-          "name": "Manolín Bueno",
-          "position": "ST"
-        },
-        {
-          "name": "Amancio",
-          "position": "ST"
-        },
-        {
-          "name": "Fernando Serena",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ferenc Puskás",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 96
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Manolín Bueno",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Amancio",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Serena",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ramón Grosso",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Veloso",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Jaime Blanco",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -917,209 +514,134 @@
       "source": "Transfermarkt — Real Madrid (1966/1967)",
       "teamLabel": "Real Madrid (1966-67)"
     },
-    "1972": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "García Remón",
-          "position": "GK"
-        },
-        {
-          "name": "José Luis",
-          "position": "RB"
-        },
-        {
-          "name": "Touriño",
-          "position": "CB"
-        },
-        {
-          "name": "Benito",
-          "position": "CB"
-        },
-        {
-          "name": "Verdugo",
-          "position": "CB"
-        },
-        {
-          "name": "Pirri",
-          "position": "CM"
-        },
-        {
-          "name": "Zoco",
-          "position": "CM"
-        },
-        {
-          "name": "Velázquez",
-          "position": "CM"
-        },
-        {
-          "name": "Santillana",
-          "position": "ST"
-        },
-        {
-          "name": "Amancio",
-          "position": "ST"
-        },
-        {
-          "name": "Aguilar",
-          "position": "ST"
-        },
-        {
-          "name": "Miguel Ángel",
-          "position": "GK"
-        },
-        {
-          "name": "Grande",
-          "position": "CM"
-        },
-        {
-          "name": "Grosso",
-          "position": "ST"
-        },
-        {
-          "name": "Andrés",
-          "position": "CB"
-        },
-        {
-          "name": "González",
-          "position": "CM"
-        },
-        {
-          "name": "Junquera",
-          "position": "GK"
-        },
-        {
-          "name": "Anzarda",
-          "position": "ST"
-        },
-        {
-          "name": "Macanás",
-          "position": "ST"
-        },
-        {
-          "name": "Marañón",
-          "position": "ST"
-        },
-        {
-          "name": "Fermín",
-          "position": "CM"
-        },
-        {
-          "name": "Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Zunzunegui",
-          "position": "CB"
-        },
-        {
-          "name": "Ballester",
-          "position": "CB"
-        },
-        {
-          "name": "Fleitas",
-          "position": "ST"
-        },
-        {
-          "name": "Corral",
-          "position": "GK"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1972-73 Primera División",
-      "teamLabel": "Real Madrid 1972-73 Primera División"
-    },
     "1976": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Miguel Ángel",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Amador",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Mariano García Remón",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Juan Sol",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Benito Rubiñán",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Goyo Benito",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Paul Breitner",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Francisco Uría",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Isidoro San José",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Vicente del Bosque",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sánchez Barrios",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Alberto Vitoria",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Manuel Velázquez",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Henning Jensen",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Carlos Guerini",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ico Aguilar",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Santillana",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Roberto Martínez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pepe Macanás",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1136,91 +658,135 @@
       "players": [
         {
           "name": "Miguel Ángel",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Mariano García Remón",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Agustín",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ángel Pérez García",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Andrés Sabido",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Goyo Benito",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rafael García Cortés",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Isidoro San José",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Antonio García Navajas",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Uli Stielike",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ricardo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Vicente del Bosque",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Ángel",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Francisco García Hernández",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Miguel Ángel Portugal",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Laurie Cunningham",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Juanito",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Poli Rincón",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Santillana",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Isidro Díaz",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Francisco Pineda",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1236,92 +802,136 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "José Manuel Ochotorena",
-          "position": "GK"
+          "name": "Paco Buyo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 82
         },
         {
-          "name": "Paco Buyo",
-          "position": "GK"
+          "name": "José Manuel Ochotorena",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Agustín",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Antonio Maceda",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Manolo Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pepe Salguero",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Mino",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rafael Gordillo",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Chucho Solana",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Chendo",
-          "position": "CB"
-        },
-        {
-          "name": "Ricardo Gallego",
-          "position": "CM"
-        },
-        {
-          "name": "Milan Jankovic",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Míchel",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 86
+        },
+        {
+          "name": "Ricardo Gallego",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Milan Jankovic",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rafa Martín Vázquez",
-          "position": "CM"
-        },
-        {
-          "name": "Juanito",
-          "position": "ST"
-        },
-        {
-          "name": "Miguel Pardeza",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Hugo Sánchez",
-          "position": "ST"
-        },
-        {
-          "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 90
         },
         {
           "name": "Emilio Butragueño",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Juanito",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Miguel Pardeza",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jorge Valdano",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Santillana",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Cholo",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1333,515 +943,206 @@
       "source": "Transfermarkt — Real Madrid (1986/1987)",
       "teamLabel": "Real Madrid (1986-87)"
     },
-    "1987": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Buyo",
-          "position": "GK"
-        },
-        {
-          "name": "Chendo",
-          "position": "RB"
-        },
-        {
-          "name": "Camacho",
-          "position": "LB"
-        },
-        {
-          "name": "Tendillo",
-          "position": "CB"
-        },
-        {
-          "name": "Sanchis",
-          "position": "CB"
-        },
-        {
-          "name": "Gordillo",
-          "position": "CM"
-        },
-        {
-          "name": "Martín Vázquez",
-          "position": "CM"
-        },
-        {
-          "name": "Míchel",
-          "position": "CM"
-        },
-        {
-          "name": "Janković",
-          "position": "CM"
-        },
-        {
-          "name": "Hugo Sánchez",
-          "position": "ST"
-        },
-        {
-          "name": "Butragueño",
-          "position": "ST"
-        },
-        {
-          "name": "Ochotorena",
-          "position": "GK"
-        },
-        {
-          "name": "Solana",
-          "position": "LB"
-        },
-        {
-          "name": "Gallego",
-          "position": "CM"
-        },
-        {
-          "name": "Paco Llorente",
-          "position": "CM"
-        },
-        {
-          "name": "Santillana",
-          "position": "ST"
-        },
-        {
-          "name": "Agustín",
-          "position": "GK"
-        },
-        {
-          "name": "Maqueda",
-          "position": "CM"
-        },
-        {
-          "name": "Mino",
-          "position": "CB"
-        },
-        {
-          "name": "Muñoz Pérez",
-          "position": "LB"
-        },
-        {
-          "name": "Aldana",
-          "position": "CM"
-        },
-        {
-          "name": "Maceda",
-          "position": "CB"
-        },
-        {
-          "name": "Aragón",
-          "position": "CM"
-        },
-        {
-          "name": "León",
-          "position": "RB"
-        },
-        {
-          "name": "Mandiá",
-          "position": "CB"
-        },
-        {
-          "name": "Pardeza",
-          "position": "ST"
-        },
-        {
-          "name": "Julio Llorente",
-          "position": "RB"
-        },
-        {
-          "name": "Santi",
-          "position": "CM"
-        },
-        {
-          "name": "Valdano",
-          "position": "ST"
-        },
-        {
-          "name": "Felipe Herrero",
-          "position": "CB"
-        },
-        {
-          "name": "Aguilà",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1987-88 Primera División",
-      "teamLabel": "Real Madrid 1987-88 Primera División"
-    },
-    "1994": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Buyo",
-          "position": "GK"
-        },
-        {
-          "name": "Quique",
-          "position": "RB"
-        },
-        {
-          "name": "Lasa",
-          "position": "LB"
-        },
-        {
-          "name": "Sanchis",
-          "position": "CB"
-        },
-        {
-          "name": "Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "Amavisca",
-          "position": "CM"
-        },
-        {
-          "name": "Luis Enrique",
-          "position": "CM"
-        },
-        {
-          "name": "Laudrup",
-          "position": "CM"
-        },
-        {
-          "name": "Martín Vázquez",
-          "position": "CM"
-        },
-        {
-          "name": "Zamorano",
-          "position": "ST"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Cañizares",
-          "position": "GK"
-        },
-        {
-          "name": "Redondo",
-          "position": "CM"
-        },
-        {
-          "name": "Milla",
-          "position": "CM"
-        },
-        {
-          "name": "Míchel",
-          "position": "CM"
-        },
-        {
-          "name": "Alfonso",
-          "position": "ST"
-        },
-        {
-          "name": "Contreras",
-          "position": "GK"
-        },
-        {
-          "name": "Chendo",
-          "position": "RB"
-        },
-        {
-          "name": "Alkorta",
-          "position": "CB"
-        },
-        {
-          "name": "Sandro",
-          "position": "CM"
-        },
-        {
-          "name": "Dubovský",
-          "position": "ST"
-        },
-        {
-          "name": "Butragueño",
-          "position": "ST"
-        },
-        {
-          "name": "Marcos",
-          "position": "LB"
-        },
-        {
-          "name": "Nando",
-          "position": "CB"
-        },
-        {
-          "name": "Dani",
-          "position": "ST"
-        },
-        {
-          "name": "Rivera",
-          "position": "CM"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1994-95 Primera División",
-      "teamLabel": "Real Madrid 1994-95 Primera División"
-    },
-    "1996": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Illgner",
-          "position": "GK"
-        },
-        {
-          "name": "Panucci",
-          "position": "RB"
-        },
-        {
-          "name": "Roberto Carlos",
-          "position": "LB"
-        },
-        {
-          "name": "Alkorta",
-          "position": "CB"
-        },
-        {
-          "name": "Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "Seedorf",
-          "position": "CM"
-        },
-        {
-          "name": "Redondo",
-          "position": "CM"
-        },
-        {
-          "name": "Víctor",
-          "position": "CM"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Mijatović",
-          "position": "ST"
-        },
-        {
-          "name": "Šuker",
-          "position": "ST"
-        },
-        {
-          "name": "Cañizares",
-          "position": "GK"
-        },
-        {
-          "name": "Amavisca",
-          "position": "CM"
-        },
-        {
-          "name": "Sanchis",
-          "position": "CB"
-        },
-        {
-          "name": "Chendo",
-          "position": "RB"
-        },
-        {
-          "name": "Secretário",
-          "position": "RB"
-        },
-        {
-          "name": "Buyo",
-          "position": "GK"
-        },
-        {
-          "name": "Milla",
-          "position": "CM"
-        },
-        {
-          "name": "Lasa",
-          "position": "LB"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "Álvaro Benito",
-          "position": "CM"
-        },
-        {
-          "name": "Zé Roberto",
-          "position": "CM"
-        },
-        {
-          "name": "García Calvo",
-          "position": "CB"
-        },
-        {
-          "name": "Fernando Sanz",
-          "position": "CB"
-        },
-        {
-          "name": "Petković",
-          "position": "CM"
-        },
-        {
-          "name": "Irurzun",
-          "position": "ST"
-        },
-        {
-          "name": "Valbuena",
-          "position": "GK"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1996-97 Primera División",
-      "teamLabel": "Real Madrid 1996-97 Primera División"
-    },
     "1998": {
       "formation": "4-4-2",
       "players": [
         {
+          "name": "Iker Casillas",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
           "name": "Bodo Illgner",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pedro Contreras",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Albano Bizzarri",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Eduardo Almansa",
-          "position": "GK"
-        },
-        {
-          "name": "Iker Casillas",
-          "position": "GK"
-        },
-        {
-          "name": "Fernando Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "Manolo Sanchís",
-          "position": "CB"
-        },
-        {
-          "name": "Aitor Karanka",
-          "position": "CB"
-        },
-        {
-          "name": "Fernando Sanz",
-          "position": "CB"
-        },
-        {
-          "name": "Manuel Tena",
-          "position": "CB"
-        },
-        {
-          "name": "Rubio",
-          "position": "CB"
-        },
-        {
-          "name": "Robert Jarni",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Roberto Carlos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 91
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Manolo Sanchís",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Aitor Karanka",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Sanz",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Manuel Tena",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rubio",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Robert Jarni",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Javier Dorado",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Christian Panucci",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Roberto Rojas",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Fernando Redondo",
-          "position": "CM"
-        },
-        {
-          "name": "Iván Campo",
-          "position": "CM"
-        },
-        {
-          "name": "Jaime",
-          "position": "CM"
-        },
-        {
-          "name": "Christian Karembeu",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 89
         },
         {
           "name": "Clarence Seedorf",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Iván Campo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jaime",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian Karembeu",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Guti",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Alberto Rivera",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Álvaro Benito",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Tote",
-          "position": "CM"
-        },
-        {
-          "name": "Sávio",
-          "position": "ST"
-        },
-        {
-          "name": "Perica Ognjenovic",
-          "position": "ST"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Predrag Mijatović",
-          "position": "ST"
-        },
-        {
-          "name": "Davor Suker",
-          "position": "ST"
-        },
-        {
-          "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Samuel Eto'o",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 92
+        },
+        {
+          "name": "Raúl",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Davor Suker",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Predrag Mijatović",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 84
+        },
+        {
+          "name": "Sávio",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Perica Ognjenovic",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Pablo Villanueva",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1853,470 +1154,194 @@
       "source": "Transfermarkt — Real Madrid (1998/1999)",
       "teamLabel": "Real Madrid (1998-99)"
     },
-    "1999": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Casillas",
-          "position": "GK"
-        },
-        {
-          "name": "Míchel Salgado",
-          "position": "RB"
-        },
-        {
-          "name": "Roberto Carlos",
-          "position": "LB"
-        },
-        {
-          "name": "Júlio César",
-          "position": "CB"
-        },
-        {
-          "name": "Karanka",
-          "position": "CB"
-        },
-        {
-          "name": "Redondo",
-          "position": "CM"
-        },
-        {
-          "name": "Iván Helguera",
-          "position": "CM"
-        },
-        {
-          "name": "Sávio",
-          "position": "CM"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Morientes",
-          "position": "ST"
-        },
-        {
-          "name": "Bizzarri",
-          "position": "GK"
-        },
-        {
-          "name": "McManaman",
-          "position": "CM"
-        },
-        {
-          "name": "Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "Iván Campo",
-          "position": "CB"
-        },
-        {
-          "name": "Geremi",
-          "position": "RB"
-        },
-        {
-          "name": "Illgner",
-          "position": "GK"
-        },
-        {
-          "name": "Anelka",
-          "position": "ST"
-        },
-        {
-          "name": "Karembeu",
-          "position": "CM"
-        },
-        {
-          "name": "Sanchis",
-          "position": "CB"
-        },
-        {
-          "name": "Seedorf",
-          "position": "CM"
-        },
-        {
-          "name": "Ognjenović",
-          "position": "ST"
-        },
-        {
-          "name": "Baljić",
-          "position": "ST"
-        },
-        {
-          "name": "Meca",
-          "position": "ST"
-        },
-        {
-          "name": "Zárate",
-          "position": "ST"
-        },
-        {
-          "name": "Dorado",
-          "position": "LB"
-        },
-        {
-          "name": "Aganzo",
-          "position": "ST"
-        },
-        {
-          "name": "Eto'o",
-          "position": "ST"
-        },
-        {
-          "name": "Fernando",
-          "position": "CM"
-        },
-        {
-          "name": "Oliver",
-          "position": "GK"
-        },
-        {
-          "name": "Sestelo",
-          "position": "ST"
-        },
-        {
-          "name": "Corona",
-          "position": "CM"
-        },
-        {
-          "name": "Manu Sánchez",
-          "position": "CM"
-        },
-        {
-          "name": "Álvaro Benito",
-          "position": "CM"
-        },
-        {
-          "name": "Aranda",
-          "position": "ST"
-        },
-        {
-          "name": "Jarni",
-          "position": "CM"
-        },
-        {
-          "name": "César Navas",
-          "position": "CB"
-        },
-        {
-          "name": "Sousa",
-          "position": "CM"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 1999-00 Primera División",
-      "teamLabel": "Real Madrid 1999-00 Primera División"
-    },
-    "2000": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Casillas",
-          "position": "GK"
-        },
-        {
-          "name": "Míchel Salgado",
-          "position": "RB"
-        },
-        {
-          "name": "Roberto Carlos",
-          "position": "LB"
-        },
-        {
-          "name": "Karanka",
-          "position": "CB"
-        },
-        {
-          "name": "Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "Makélélé",
-          "position": "CM"
-        },
-        {
-          "name": "Iván Helguera",
-          "position": "CM"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "McManaman",
-          "position": "CM"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Figo",
-          "position": "ST"
-        },
-        {
-          "name": "César",
-          "position": "GK"
-        },
-        {
-          "name": "Sávio",
-          "position": "CM"
-        },
-        {
-          "name": "Munitis",
-          "position": "ST"
-        },
-        {
-          "name": "Morientes",
-          "position": "ST"
-        },
-        {
-          "name": "Geremi",
-          "position": "RB"
-        },
-        {
-          "name": "Carlos Sánchez",
-          "position": "GK"
-        },
-        {
-          "name": "Celades",
-          "position": "CM"
-        },
-        {
-          "name": "Solari",
-          "position": "CM"
-        },
-        {
-          "name": "Flávio Conceição",
-          "position": "CM"
-        },
-        {
-          "name": "Iván Campo",
-          "position": "CB"
-        },
-        {
-          "name": "Sanchis",
-          "position": "CB"
-        },
-        {
-          "name": "Tote",
-          "position": "ST"
-        },
-        {
-          "name": "Rivera",
-          "position": "CM"
-        },
-        {
-          "name": "Júlio César",
-          "position": "CB"
-        },
-        {
-          "name": "Rubén",
-          "position": "CB"
-        },
-        {
-          "name": "Corrales",
-          "position": "LB"
-        },
-        {
-          "name": "Zafra",
-          "position": "CM"
-        },
-        {
-          "name": "Meca",
-          "position": "ST"
-        },
-        {
-          "name": "Sestelo",
-          "position": "ST"
-        },
-        {
-          "name": "Illgner",
-          "position": "GK"
-        },
-        {
-          "name": "Manu Sánchez",
-          "position": "CM"
-        },
-        {
-          "name": "Robles",
-          "position": "CB"
-        },
-        {
-          "name": "Leo Bermejo",
-          "position": "LB"
-        },
-        {
-          "name": "Pavón",
-          "position": "CB"
-        },
-        {
-          "name": "Santos",
-          "position": "CM"
-        },
-        {
-          "name": "Corona",
-          "position": "CM"
-        },
-        {
-          "name": "Miñambres",
-          "position": "RB"
-        },
-        {
-          "name": "Álvaro Benito",
-          "position": "CM"
-        },
-        {
-          "name": "Ognjenović",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 2000-01 Primera División",
-      "teamLabel": "Real Madrid 2000-01 Primera División"
-    },
     "2002": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 88
         },
         {
           "name": "César Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Carlos Sánchez",
-          "position": "GK"
-        },
-        {
-          "name": "Fernando Hierro",
-          "position": "CB"
-        },
-        {
-          "name": "César Navas",
-          "position": "CB"
-        },
-        {
-          "name": "Juanjo Olalla",
-          "position": "CB"
-        },
-        {
-          "name": "Iván Helguera",
-          "position": "CB"
-        },
-        {
-          "name": "Raúl Bravo",
-          "position": "CB"
-        },
-        {
-          "name": "Francisco Pavón",
-          "position": "CB"
-        },
-        {
-          "name": "Rubén González",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Roberto Carlos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 91
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 78
+        },
+        {
+          "name": "César Navas",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juanjo Olalla",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Raúl Bravo",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Francisco Pavón",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rubén González",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Óscar Miñambres",
-          "position": "CB"
-        },
-        {
-          "name": "Borja Fernández",
-          "position": "CM"
-        },
-        {
-          "name": "Esteban Cambiasso",
-          "position": "CM"
-        },
-        {
-          "name": "Albert Celades",
-          "position": "CM"
-        },
-        {
-          "name": "Claude Makélélé",
-          "position": "CM"
-        },
-        {
-          "name": "Luis García",
-          "position": "CM"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "Flávio Conceição",
-          "position": "CM"
-        },
-        {
-          "name": "Steve McManaman",
-          "position": "CM"
-        },
-        {
-          "name": "Santiago Solari",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Zinédine Zidane",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 96
+        },
+        {
+          "name": "Claude Makélélé",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Borja Fernández",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Esteban Cambiasso",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Albert Celades",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luis García",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Guti",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Flávio Conceição",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Steve McManaman",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Santiago Solari",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Tote",
-          "position": "CM"
-        },
-        {
-          "name": "Álex Pérez",
-          "position": "ST"
-        },
-        {
-          "name": "Valdo",
-          "position": "ST"
-        },
-        {
-          "name": "Luís Figo",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 88
         },
         {
           "name": "Ronaldo",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Álex Pérez",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Valdo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luís Figo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Morientes",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Javier Portillo",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -2333,159 +1358,237 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 88
         },
         {
           "name": "Diego López",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2750000,
+          "rating": 77
         },
         {
           "name": "Kiko Casilla",
-          "position": "GK"
-        },
-        {
-          "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 450000,
+          "rating": 70
         },
         {
           "name": "Fabio Cannavaro",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 93
         },
         {
-          "name": "Jonathan Woodgate",
-          "position": "CB"
-        },
-        {
-          "name": "Iván Helguera",
-          "position": "CB"
-        },
-        {
-          "name": "Raúl Bravo",
-          "position": "CB"
-        },
-        {
-          "name": "Francisco Pavón",
-          "position": "CB"
-        },
-        {
-          "name": "Álvaro Mejía",
-          "position": "CB"
-        },
-        {
-          "name": "Sergio Alejandro",
-          "position": "CB"
+          "name": "Sergio Ramos",
+          "position": "CB",
+          "marketValue": 17500000,
+          "rating": 91
         },
         {
           "name": "Roberto Carlos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 91
         },
         {
-          "name": "Marcelo",
-          "position": "CB"
+          "name": "Jonathan Woodgate",
+          "position": "CB",
+          "marketValue": 11000000,
+          "rating": 83
         },
         {
           "name": "Cicinho",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Marcelo",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
         },
         {
           "name": "Miguel Torres",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CB",
+          "marketValue": 5300000,
+          "rating": 78
+        },
+        {
+          "name": "Raúl Bravo",
+          "position": "CB",
+          "marketValue": 3600000,
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Francisco Pavón",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Álvaro Mejía",
+          "position": "CB",
+          "marketValue": 1750000,
+          "rating": 75
         },
         {
           "name": "Óscar Miñambres",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
-          "name": "Mahamadou Diarra",
-          "position": "CM"
-        },
-        {
-          "name": "Fernando Gago",
-          "position": "CM"
-        },
-        {
-          "name": "Emerson",
-          "position": "CM"
-        },
-        {
-          "name": "Javi García",
-          "position": "CM"
-        },
-        {
-          "name": "Marcos Tébar",
-          "position": "CM"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "Rubén de la Red",
-          "position": "CM"
-        },
-        {
-          "name": "Pedro Mosquera",
-          "position": "CM"
-        },
-        {
-          "name": "Borja Valero",
-          "position": "CM"
-        },
-        {
-          "name": "Adrián González",
-          "position": "CM"
+          "name": "Sergio Alejandro",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
         },
         {
           "name": "David Beckham",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 19800000,
+          "rating": 87
+        },
+        {
+          "name": "Mahamadou Diarra",
+          "position": "CM",
+          "marketValue": 26000000,
+          "rating": 86
+        },
+        {
+          "name": "Guti",
+          "position": "CM",
+          "marketValue": 17800000,
+          "rating": 85
+        },
+        {
+          "name": "Fernando Gago",
+          "position": "CM",
+          "marketValue": 16500000,
+          "rating": 84
+        },
+        {
+          "name": "Emerson",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
         },
         {
           "name": "Júlio Baptista",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Rubén de la Red",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Javi García",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1100000,
+          "rating": 74
         },
         {
-          "name": "Robinho",
-          "position": "ST"
+          "name": "Marcos Tébar",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
-          "name": "Miguel Ángel Nieto",
-          "position": "ST"
+          "name": "Pedro Mosquera",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
-          "name": "José Antonio Reyes",
-          "position": "ST"
+          "name": "Borja Valero",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Adrián González",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
         },
         {
           "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Antonio Cassano",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 88
         },
         {
           "name": "Ruud van Nistelrooy",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 88
         },
         {
           "name": "Ronaldo",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 23000000,
+          "rating": 88
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 14300000,
+          "rating": 85
+        },
+        {
+          "name": "Robinho",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST",
+          "marketValue": 16700000,
+          "rating": 84
+        },
+        {
+          "name": "Antonio Cassano",
+          "position": "ST",
+          "marketValue": 8500000,
+          "rating": 82
         },
         {
           "name": "Álvaro Negredo",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Miguel Ángel Nieto",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -2497,302 +1600,212 @@
       "source": "Transfermarkt — Real Madrid (2006/2007)",
       "teamLabel": "Real Madrid (2006-07)"
     },
-    "2008": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Casillas",
-          "position": "GK"
-        },
-        {
-          "name": "Sergio Ramos",
-          "position": "RB"
-        },
-        {
-          "name": "Heinze",
-          "position": "LB"
-        },
-        {
-          "name": "Cannavaro",
-          "position": "CB"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Robben",
-          "position": "CM"
-        },
-        {
-          "name": "Marcelo",
-          "position": "CM"
-        },
-        {
-          "name": "Gago",
-          "position": "CM"
-        },
-        {
-          "name": "Raúl",
-          "position": "ST"
-        },
-        {
-          "name": "Higuaín",
-          "position": "ST"
-        },
-        {
-          "name": "Huntelaar",
-          "position": "ST"
-        },
-        {
-          "name": "Dudek",
-          "position": "GK"
-        },
-        {
-          "name": "Van der Vaart",
-          "position": "CM"
-        },
-        {
-          "name": "Sneijder",
-          "position": "CM"
-        },
-        {
-          "name": "Lass Diarra",
-          "position": "CM"
-        },
-        {
-          "name": "Guti",
-          "position": "CM"
-        },
-        {
-          "name": "Codina",
-          "position": "GK"
-        },
-        {
-          "name": "Drenthe",
-          "position": "CM"
-        },
-        {
-          "name": "Miguel Torres",
-          "position": "LB"
-        },
-        {
-          "name": "Metzelder",
-          "position": "CB"
-        },
-        {
-          "name": "Javi García",
-          "position": "CM"
-        },
-        {
-          "name": "Míchel Salgado",
-          "position": "RB"
-        },
-        {
-          "name": "Diarra",
-          "position": "CM"
-        },
-        {
-          "name": "Saviola",
-          "position": "ST"
-        },
-        {
-          "name": "Van Nistelrooy",
-          "position": "ST"
-        },
-        {
-          "name": "De la Red",
-          "position": "CM"
-        },
-        {
-          "name": "Parejo",
-          "position": "CM"
-        },
-        {
-          "name": "Bueno",
-          "position": "ST"
-        },
-        {
-          "name": "Palanca",
-          "position": "ST"
-        },
-        {
-          "name": "Faubert",
-          "position": "CM"
-        },
-        {
-          "name": "Kagelmacher",
-          "position": "CB"
-        },
-        {
-          "name": "Tébar",
-          "position": "CM"
-        },
-        {
-          "name": "Velayos",
-          "position": "RB"
-        },
-        {
-          "name": "Antón",
-          "position": "LB"
-        },
-        {
-          "name": "Agus",
-          "position": "CB"
-        },
-        {
-          "name": "Robinho",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 2008-09 Primera División",
-      "teamLabel": "Real Madrid 2008-09 Primera División"
-    },
     "2012": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 30000000,
+          "rating": 88
         },
         {
           "name": "Diego López",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 7500000,
+          "rating": 81
         },
         {
           "name": "Antonio Adán",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Jesús Fernández",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 91
         },
         {
           "name": "Raphaël Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Raúl Albiol",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Ricardo Carvalho",
-          "position": "CB"
-        },
-        {
-          "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 89
         },
         {
           "name": "Marcelo",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Pepe",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
         },
         {
           "name": "Fábio Coentrão",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Raúl Albiol",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
-          "name": "Xabi Alonso",
-          "position": "CM"
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
         },
         {
-          "name": "Lassana Diarra",
-          "position": "CM"
+          "name": "Ricardo Carvalho",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
-          "name": "Michael Essien",
-          "position": "CM"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Fabinho",
-          "position": "CM"
-        },
-        {
-          "name": "Omar Mascarell",
-          "position": "CM"
-        },
-        {
-          "name": "Luka Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Sami Khedira",
-          "position": "CM"
-        },
-        {
-          "name": "Esteban Granero",
-          "position": "CM"
-        },
-        {
-          "name": "Álex Fernández",
-          "position": "CM"
-        },
-        {
-          "name": "José Rodríguez",
-          "position": "CM"
-        },
-        {
-          "name": "Mesut Özil",
-          "position": "CM"
+          "name": "Diego Llorente",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Kaká",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 92
         },
         {
-          "name": "Denis Cheryshev",
-          "position": "ST"
+          "name": "Xabi Alonso",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 91
         },
         {
-          "name": "Ángel Di María",
-          "position": "LW"
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 91
         },
         {
-          "name": "José Callejón",
-          "position": "ST"
+          "name": "Mesut Özil",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
         },
         {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
+          "name": "Sami Khedira",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Lassana Diarra",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 83
+        },
+        {
+          "name": "Michael Essien",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Esteban Granero",
+          "position": "CM",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Álex Fernández",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "José Rodríguez",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Omar Mascarell",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 34000000,
+          "rating": 91
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST",
+          "marketValue": 34000000,
+          "rating": 88
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 88
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 85
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 83
+        },
+        {
+          "name": "José Callejón",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Denis Cheryshev",
+          "position": "ST",
+          "marketValue": 6500000,
+          "rating": 81
         }
       ],
       "ratings": {
@@ -2809,132 +1822,195 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 88
         },
         {
           "name": "Diego López",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
         },
         {
           "name": "Jesús Fernández",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 91
         },
         {
           "name": "Raphaël Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 24000000,
+          "rating": 89
         },
         {
           "name": "Marcelo",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Pepe",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
         },
         {
           "name": "Fábio Coentrão",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Álvaro Arbeloa",
-          "position": "CB"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "CB"
-        },
-        {
-          "name": "Asier Illarramendi",
-          "position": "CM"
-        },
-        {
-          "name": "Xabi Alonso",
-          "position": "CM"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
+          "position": "CB",
+          "marketValue": 12000000,
           "rating": 83
         },
         {
-          "name": "Omar Mascarell",
-          "position": "CM"
+          "name": "Álvaro Arbeloa",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
         },
         {
-          "name": "Luka Modrić",
-          "position": "CM"
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
-          "name": "Sami Khedira",
-          "position": "CM"
+          "name": "Lucas Vázquez",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
-          "name": "José Rodríguez",
-          "position": "CM"
-        },
-        {
-          "name": "Mesut Özil",
-          "position": "CM"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
+          "name": "Diego Llorente",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
         },
         {
           "name": "Kaká",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 92
         },
         {
-          "name": "Jesé",
-          "position": "ST"
+          "name": "Xabi Alonso",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 91
         },
         {
-          "name": "Burgui",
-          "position": "ST"
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 91
         },
         {
-          "name": "Gareth Bale",
-          "position": "ST"
+          "name": "Mesut Özil",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 88
         },
         {
-          "name": "Ángel Di María",
-          "position": "LW"
+          "name": "Sami Khedira",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
         },
         {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
+          "name": "Asier Illarramendi",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Isco",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 84
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 83
+        },
+        {
+          "name": "José Rodríguez",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Omar Mascarell",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 34000000,
+          "rating": 91
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 88
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 88
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Jesé",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
         },
         {
           "name": "Willian José",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
           "name": "Raúl de Tomás",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Burgui",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
         }
       ],
       "ratings": {
@@ -2951,167 +2027,249 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 88
         },
         {
           "name": "Keylor Navas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 84
         },
         {
           "name": "Fernando Pacheco",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
         },
         {
           "name": "Rubén Yáñez",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 91
         },
         {
           "name": "Raphaël Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Jaime Sánchez",
-          "position": "CB"
-        },
-        {
-          "name": "Diego Llorente",
-          "position": "CB"
-        },
-        {
-          "name": "Derik Osede",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 89
         },
         {
           "name": "Marcelo",
-          "position": "CB"
-        },
-        {
-          "name": "Fábio Coentrão",
-          "position": "CB"
-        },
-        {
-          "name": "Felipe Abner",
-          "position": "CB"
-        },
-        {
-          "name": "Javi Noblejas",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Pepe",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jaime Sánchez",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Derik Osede",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Felipe Abner",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Javi Noblejas",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Guillermo Varela",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
-        },
-        {
-          "name": "Asier Illarramendi",
-          "position": "CM"
-        },
-        {
-          "name": "Lucas Silva",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
-        },
-        {
-          "name": "Lucas Torró",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 91
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 55000000,
+          "rating": 91
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
-        },
-        {
-          "name": "Sami Khedira",
-          "position": "CM"
-        },
-        {
-          "name": "Álvaro Medrán",
-          "position": "CM"
-        },
-        {
-          "name": "Sergio Aguza",
-          "position": "CM"
-        },
-        {
-          "name": "Javi Muñoz",
-          "position": "CM"
-        },
-        {
-          "name": "James Rodríguez",
-          "position": "AM"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
         },
         {
           "name": "Martin Ødegaard",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 89
         },
         {
-          "name": "Jesé",
-          "position": "ST"
+          "name": "Sami Khedira",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
         },
         {
-          "name": "Gareth Bale",
-          "position": "ST"
+          "name": "James Rodríguez",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 85
         },
         {
-          "name": "Ángel Di María",
-          "position": "LW"
+          "name": "Asier Illarramendi",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
+          "name": "Isco",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 84
+        },
+        {
+          "name": "Lucas Silva",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Lucas Torró",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Álvaro Medrán",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sergio Aguza",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Javi Muñoz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 91
+        },
+        {
+          "name": "Ángel Di María",
+          "position": "ST",
+          "marketValue": 65000000,
+          "rating": 88
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 120000000,
+          "rating": 88
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Jesé",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Chicharito",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
         },
         {
           "name": "Raúl de Tomás",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Eero Markkanen",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Borja Mayoral",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -3128,124 +2286,183 @@
       "players": [
         {
           "name": "Keylor Navas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 84
         },
         {
           "name": "Kiko Casilla",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Rubén Yáñez",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
           "name": "Álex Craninx",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 91
         },
         {
           "name": "Raphaël Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Danilo",
-          "position": "CB"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Philipp Lienhart",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 89
         },
         {
           "name": "Marcelo",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Danilo",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 84
         },
         {
           "name": "Lucas Vázquez",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Pepe",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Philipp Lienhart",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Álvaro Tejero",
-          "position": "CB"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 91
         },
         {
-          "name": "Mateo Kovacic",
-          "position": "CM"
-        },
-        {
-          "name": "James Rodríguez",
-          "position": "AM"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
+          "name": "Toni Kroos",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
         },
         {
           "name": "Martin Ødegaard",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 89
         },
         {
-          "name": "Jesé",
-          "position": "ST"
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 87
         },
         {
-          "name": "Denis Cheryshev",
-          "position": "ST"
+          "name": "James Rodríguez",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 85
         },
         {
-          "name": "José Carlos Lazo",
-          "position": "ST"
+          "name": "Isco",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 84
         },
         {
-          "name": "Gareth Bale",
-          "position": "ST"
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 83
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 91
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 110000000,
+          "rating": 88
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Jesé",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Denis Cheryshev",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "José Carlos Lazo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Borja Mayoral",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -3262,266 +2479,382 @@
       "players": [
         {
           "name": "Keylor Navas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 84
         },
         {
-          "name": "Carvajal",
-          "position": "RB"
+          "name": "Kiko Casilla",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
-          "name": "Marcelo",
-          "position": "LB"
+          "name": "Rubén Yáñez",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 91
         },
         {
-          "name": "Nacho",
-          "position": "CB"
+          "name": "Achraf Hakimi",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 90
         },
         {
-          "name": "Varane",
-          "position": "CB"
+          "name": "Raphaël Varane",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 89
         },
         {
-          "name": "Kroos",
-          "position": "CM"
+          "name": "Marcelo",
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 88
         },
         {
-          "name": "Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
-        },
-        {
-          "name": "Benzema",
-          "position": "ST"
-        },
-        {
-          "name": "Casilla",
-          "position": "GK"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
-        },
-        {
-          "name": "Kovačić",
-          "position": "CM"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "ST"
-        },
-        {
-          "name": "Morata",
-          "position": "ST"
-        },
-        {
-          "name": "Yáñez",
-          "position": "GK"
+          "name": "Daniel Carvajal",
+          "position": "CB",
+          "marketValue": 32000000,
+          "rating": 87
         },
         {
           "name": "Danilo",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
         },
         {
-          "name": "James Rodríguez",
-          "position": "AM"
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
-          "name": "Asensio",
-          "position": "ST"
-        },
-        {
-          "name": "Bale",
-          "position": "ST"
-        },
-        {
-          "name": "Pepe",
-          "position": "CB"
-        },
-        {
-          "name": "Mariano",
-          "position": "ST"
-        },
-        {
-          "name": "Coentrão",
-          "position": "LB"
-        },
-        {
-          "name": "Tejero",
-          "position": "LB"
-        },
-        {
-          "name": "Hakimi",
-          "position": "RB"
+          "name": "Lucas Vázquez",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Fábio Coentrão",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Pepe",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Álvaro Tejero",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 91
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 89
+        },
+        {
+          "name": "Martin Ødegaard",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 89
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 87
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "Isco",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 83
         },
         {
           "name": "Enzo Zidane",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
         },
         {
-          "name": "Ødegaard",
-          "position": "CM"
+          "name": "Karim Benzema",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 91
         },
         {
-          "name": "Lucas Silva",
-          "position": "CM"
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 88
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Mariano Díaz",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
       },
-      "source": "BDFutbol — Real Madrid 2016-17 Primera División",
-      "teamLabel": "Real Madrid 2016-17 Primera División"
+      "source": "Transfermarkt — Real Madrid (2016/2017)",
+      "teamLabel": "Real Madrid (2016-17)"
     },
     "2017": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Keylor Navas",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 84
         },
         {
           "name": "Kiko Casilla",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Luca Zidane",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
           "name": "Moha Ramos",
-          "position": "GK"
-        },
-        {
-          "name": "Raphaël Varane",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Jesús Vallejo",
-          "position": "CB"
-        },
-        {
-          "name": "Manu Hernando",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 91
         },
         {
           "name": "Marcelo",
-          "position": "CB"
-        },
-        {
-          "name": "Theo Hernández",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 90
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "CB"
-        },
-        {
-          "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 90
         },
         {
           "name": "Achraf Hakimi",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 90
         },
         {
-          "name": "Álvaro Tejero",
-          "position": "CB"
+          "name": "Raphaël Varane",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 89
         },
         {
-          "name": "Casemiro",
-          "position": "DM",
+          "name": "Theo Hernández",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 88
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB",
+          "marketValue": 12000000,
           "rating": 83
         },
         {
-          "name": "Toni Kroos",
-          "position": "CM"
-        },
-        {
-          "name": "Mateo Kovacic",
-          "position": "CM"
-        },
-        {
-          "name": "Luka Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Dani Ceballos",
-          "position": "CM"
-        },
-        {
-          "name": "Jaime Seoane",
-          "position": "CM"
+          "name": "Marcos Llorente",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
         },
         {
           "name": "Luismi Quezada",
-          "position": "CM"
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
-          "name": "Marco Asensio",
-          "position": "CM"
+          "name": "Álvaro Tejero",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Manu Hernando",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 91
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 89
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 75000000,
+          "rating": 84
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 83
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "CM",
+          "marketValue": 75000000,
+          "rating": 83
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 82
         },
         {
           "name": "Óscar Rodríguez",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jaime Seoane",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
         },
         {
           "name": "Franchu",
-          "position": "CM"
-        },
-        {
-          "name": "Cristo",
-          "position": "ST"
-        },
-        {
-          "name": "Gareth Bale",
-          "position": "ST"
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 91
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 88
+        },
+        {
+          "name": "Gareth Bale",
+          "position": "ST",
+          "marketValue": 90000000,
+          "rating": 87
         },
         {
           "name": "Borja Mayoral",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Cristo",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
         }
       ],
       "ratings": {
@@ -3533,476 +2866,224 @@
       "source": "Transfermarkt — Real Madrid (2017/2018)",
       "teamLabel": "Real Madrid (2017-18)"
     },
-    "2018": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Courtois",
-          "position": "GK"
-        },
-        {
-          "name": "Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Marcelo",
-          "position": "LB"
-        },
-        {
-          "name": "Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Sergio Ramos",
-          "position": "CB"
-        },
-        {
-          "name": "Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Kroos",
-          "position": "CM"
-        },
-        {
-          "name": "Benzema",
-          "position": "ST"
-        },
-        {
-          "name": "Bale",
-          "position": "ST"
-        },
-        {
-          "name": "Asensio",
-          "position": "ST"
-        },
-        {
-          "name": "Keylor Navas",
-          "position": "GK"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "ST"
-        },
-        {
-          "name": "Nacho",
-          "position": "CB"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
-        },
-        {
-          "name": "Dani Ceballos",
-          "position": "CM"
-        },
-        {
-          "name": "Luca Zidane",
-          "position": "GK"
-        },
-        {
-          "name": "Odriozola",
-          "position": "RB"
-        },
-        {
-          "name": "Reguilón",
-          "position": "LB"
-        },
-        {
-          "name": "Vinícius",
-          "position": "ST"
-        },
-        {
-          "name": "Valverde",
-          "position": "CM"
-        },
-        {
-          "name": "Mariano",
-          "position": "ST"
-        },
-        {
-          "name": "Marcos Llorente",
-          "position": "CM"
-        },
-        {
-          "name": "Brahim Díaz",
-          "position": "ST"
-        },
-        {
-          "name": "Vallejo",
-          "position": "CB"
-        },
-        {
-          "name": "Javi Sánchez",
-          "position": "CB"
-        },
-        {
-          "name": "Cristo",
-          "position": "ST"
-        },
-        {
-          "name": "Casilla",
-          "position": "GK"
-        },
-        {
-          "name": "Mayoral",
-          "position": "ST"
-        },
-        {
-          "name": "Seoane",
-          "position": "CM"
-        },
-        {
-          "name": "Fidalgo",
-          "position": "CM"
-        },
-        {
-          "name": "Grau",
-          "position": "CM"
-        },
-        {
-          "name": "Franchu",
-          "position": "ST"
-        },
-        {
-          "name": "Lunin",
-          "position": "GK"
-        },
-        {
-          "name": "Dela",
-          "position": "CB"
-        },
-        {
-          "name": "Fran García",
-          "position": "LB"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 2018-19 Primera División",
-      "teamLabel": "Real Madrid 2018-19 Primera División"
-    },
-    "2020": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Courtois",
-          "position": "GK"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "RB"
-        },
-        {
-          "name": "Mendy",
-          "position": "LB"
-        },
-        {
-          "name": "Varane",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho",
-          "position": "CB"
-        },
-        {
-          "name": "Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Kroos",
-          "position": "CM"
-        },
-        {
-          "name": "Benzema",
-          "position": "ST"
-        },
-        {
-          "name": "Vinícius",
-          "position": "ST"
-        },
-        {
-          "name": "Asensio",
-          "position": "ST"
-        },
-        {
-          "name": "Lunin",
-          "position": "GK"
-        },
-        {
-          "name": "Valverde",
-          "position": "CM"
-        },
-        {
-          "name": "Isco",
-          "position": "CM"
-        },
-        {
-          "name": "Rodrygo",
-          "position": "RW",
-          "rating": 86
-        },
-        {
-          "name": "Marcelo",
-          "position": "LB"
-        },
-        {
-          "name": "Altube",
-          "position": "GK"
-        },
-        {
-          "name": "Sergio Ramos",
-          "position": "CB"
-        },
-        {
-          "name": "Militão",
-          "position": "CB"
-        },
-        {
-          "name": "Odriozola",
-          "position": "RB"
-        },
-        {
-          "name": "Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Mariano",
-          "position": "ST"
-        },
-        {
-          "name": "Hazard",
-          "position": "ST"
-        },
-        {
-          "name": "Ødegaard",
-          "position": "CM"
-        },
-        {
-          "name": "Miguel Gutiérrez",
-          "position": "LB"
-        },
-        {
-          "name": "Arribas",
-          "position": "ST"
-        },
-        {
-          "name": "Blanco",
-          "position": "CM"
-        },
-        {
-          "name": "Jović",
-          "position": "ST"
-        },
-        {
-          "name": "Marvin Park",
-          "position": "ST"
-        },
-        {
-          "name": "Chust",
-          "position": "CB"
-        },
-        {
-          "name": "Duro",
-          "position": "ST"
-        },
-        {
-          "name": "Mayoral",
-          "position": "ST"
-        },
-        {
-          "name": "Santos",
-          "position": "RB"
-        },
-        {
-          "name": "Aranda",
-          "position": "ST"
-        },
-        {
-          "name": "Luis López",
-          "position": "GK"
-        },
-        {
-          "name": "Pablo Ramón",
-          "position": "CB"
-        },
-        {
-          "name": "Cañizares",
-          "position": "GK"
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 2020-21 Primera División",
-      "teamLabel": "Real Madrid 2020-21 Primera División"
-    },
     "2022": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Thibaut Courtois",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 45000000,
+          "rating": 91
         },
         {
           "name": "Andriy Lunin",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 85
         },
         {
           "name": "Mario de Luis",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Luis López",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
           "name": "Lucas Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
         },
         {
           "name": "Diego Piñeiro",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Fran González",
-          "position": "GK"
-        },
-        {
-          "name": "Éder Militão",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "David Alaba",
-          "position": "LB"
-        },
-        {
-          "name": "Antonio Rüdiger",
-          "position": "CB"
-        },
-        {
-          "name": "Nacho Fernández",
-          "position": "CB"
-        },
-        {
-          "name": "Jesús Vallejo",
-          "position": "CB"
-        },
-        {
-          "name": "Marvel",
-          "position": "CB"
-        },
-        {
-          "name": "Ferland Mendy",
-          "position": "CB"
-        },
-        {
-          "name": "Daniel Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "CB"
-        },
-        {
-          "name": "Álvaro Odriozola",
-          "position": "CB"
-        },
-        {
-          "name": "Vinícius Tobias",
-          "position": "CB"
-        },
-        {
-          "name": "Aurélien Tchouaméni",
-          "position": "DM",
+          "position": "CB",
+          "marketValue": 40000000,
           "rating": 87
         },
         {
-          "name": "Casemiro",
-          "position": "DM",
-          "rating": 83
-        },
-        {
-          "name": "Mario Martín",
-          "position": "CM"
-        },
-        {
-          "name": "Federico Valverde",
-          "position": "CM"
-        },
-        {
-          "name": "Eduardo Camavinga",
-          "position": "CM"
-        },
-        {
-          "name": "Toni Kroos",
-          "position": "CM"
-        },
-        {
-          "name": "Dani Ceballos",
-          "position": "CM"
-        },
-        {
-          "name": "Luka Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Carlos Dotor",
-          "position": "CM"
-        },
-        {
-          "name": "Marco Asensio",
-          "position": "CM"
-        },
-        {
-          "name": "Sergio Arribas",
-          "position": "CM"
-        },
-        {
-          "name": "Nico Paz",
-          "position": "CM"
-        },
-        {
-          "name": "Vinicius Junior",
-          "position": "LW"
-        },
-        {
-          "name": "Eden Hazard",
-          "position": "ST"
-        },
-        {
-          "name": "Rodrygo",
-          "position": "RW",
+          "name": "Éder Militão",
+          "position": "CB",
+          "marketValue": 70000000,
           "rating": 86
         },
         {
+          "name": "Antonio Rüdiger",
+          "position": "CB",
+          "marketValue": 32000000,
+          "rating": 85
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Álvaro Odriozola",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Vinícius Tobias",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Marvel",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 91
+        },
+        {
+          "name": "Eduardo Camavinga",
+          "position": "CM",
+          "marketValue": 85000000,
+          "rating": 90
+        },
+        {
+          "name": "Toni Kroos",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 89
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "position": "CM",
+          "marketValue": 85000000,
+          "rating": 88
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 88
+        },
+        {
+          "name": "Nico Paz",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 85
+        },
+        {
+          "name": "Casemiro",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Sergio Arribas",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Carlos Dotor",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Mario Martín",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Vinicius Junior",
+          "position": "ST",
+          "marketValue": 150000000,
+          "rating": 93
+        },
+        {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 91
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 90
+        },
+        {
+          "name": "Eden Hazard",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 89
         },
         {
           "name": "Álvaro Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Mariano Díaz",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
         }
       ],
       "ratings": {
@@ -4019,175 +3100,255 @@
       "players": [
         {
           "name": "Thibaut Courtois",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 20000000,
+          "rating": 91
         },
         {
           "name": "Andriy Lunin",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 85
         },
         {
           "name": "Fran González",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
         },
         {
           "name": "Sergio Mestre",
-          "position": "GK"
-        },
-        {
-          "name": "Dean Huijsen",
-          "position": "CB"
-        },
-        {
-          "name": "Raúl Asencio",
-          "position": "CB"
-        },
-        {
-          "name": "Éder Militão",
-          "position": "CB"
-        },
-        {
-          "name": "Antonio Rüdiger",
-          "position": "CB"
-        },
-        {
-          "name": "David Alaba",
-          "position": "LB"
-        },
-        {
-          "name": "Jacobo Ramón",
-          "position": "CB"
-        },
-        {
-          "name": "Diego Aguado",
-          "position": "CB"
-        },
-        {
-          "name": "Jesús Vallejo",
-          "position": "CB"
-        },
-        {
-          "name": "Víctor Valdepeñas",
-          "position": "CB"
-        },
-        {
-          "name": "Mario Rivas",
-          "position": "CB"
-        },
-        {
-          "name": "Fran García",
-          "position": "CB"
-        },
-        {
-          "name": "Ferland Mendy",
-          "position": "CB"
-        },
-        {
-          "name": "Youssef Enríquez",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 88
         },
         {
-          "name": "Daniel Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Lucas Vázquez",
-          "position": "CB"
-        },
-        {
-          "name": "David Jiménez",
-          "position": "CB"
-        },
-        {
-          "name": "Jesús Fortea",
-          "position": "CB"
-        },
-        {
-          "name": "Lorenzo Aguado",
-          "position": "CB"
-        },
-        {
-          "name": "Aurélien Tchouaméni",
-          "position": "DM",
+          "name": "David Alaba",
+          "position": "CB",
+          "marketValue": 6000000,
           "rating": 87
         },
         {
-          "name": "Mario Martín",
-          "position": "CM"
-        },
-        {
-          "name": "Chema Andrés",
-          "position": "CM"
-        },
-        {
-          "name": "Federico Valverde",
-          "position": "CM"
-        },
-        {
-          "name": "Eduardo Camavinga",
-          "position": "CM"
-        },
-        {
-          "name": "Dani Ceballos",
-          "position": "CM"
-        },
-        {
-          "name": "Luka Modrić",
-          "position": "CM"
-        },
-        {
-          "name": "Jude Bellingham",
-          "position": "AM",
-          "rating": 92
-        },
-        {
-          "name": "Arda Güler",
-          "position": "CM"
-        },
-        {
-          "name": "Pol Fortuny",
-          "position": "CM"
-        },
-        {
-          "name": "Vinicius Junior",
-          "position": "LW"
-        },
-        {
-          "name": "Víctor Muñoz",
-          "position": "ST"
-        },
-        {
-          "name": "Hugo de Llanos",
-          "position": "ST"
-        },
-        {
-          "name": "Rodrygo",
-          "position": "RW",
+          "name": "Éder Militão",
+          "position": "CB",
+          "marketValue": 30000000,
           "rating": 86
         },
         {
-          "name": "Brahim Díaz",
-          "position": "ST"
+          "name": "Antonio Rüdiger",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
         },
         {
-          "name": "Daniel Yáñez",
-          "position": "ST"
+          "name": "Fran García",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 85
+        },
+        {
+          "name": "Dean Huijsen",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 82
+        },
+        {
+          "name": "Daniel Carvajal",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Raúl Asencio",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 80
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jacobo Ramón",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Diego Aguado",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Víctor Valdepeñas",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Youssef Enríquez",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "David Jiménez",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mario Rivas",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jesús Fortea",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Lorenzo Aguado",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Luka Modrić",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 91
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM",
+          "marketValue": 180000000,
+          "rating": 91
+        },
+        {
+          "name": "Eduardo Camavinga",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "position": "CM",
+          "marketValue": 75000000,
+          "rating": 88
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM",
+          "marketValue": 130000000,
+          "rating": 88
+        },
+        {
+          "name": "Arda Güler",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 87
+        },
+        {
+          "name": "Dani Ceballos",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mario Martín",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Chema Andrés",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pol Fortuny",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
         },
         {
           "name": "Kylian Mbappé",
           "position": "ST",
-          "rating": 96
+          "marketValue": 180000000,
+          "rating": 94
+        },
+        {
+          "name": "Vinicius Junior",
+          "position": "ST",
+          "marketValue": 170000000,
+          "rating": 93
+        },
+        {
+          "name": "Rodrygo",
+          "position": "ST",
+          "marketValue": 90000000,
+          "rating": 90
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 86
         },
         {
           "name": "Endrick",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 83
         },
         {
           "name": "Gonzalo García",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Víctor Muñoz",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Hugo de Llanos",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Daniel Yáñez",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
         }
       ],
       "ratings": {
@@ -4200,406 +3361,189 @@
       "teamLabel": "Real Madrid (2024-25)"
     },
     "2025": {
-      "formation": "4-3-3",
+      "formation": "4-4-2",
       "players": [
         {
-          "name": "Courtois",
+          "name": "Thibaut Courtois",
           "position": "GK",
+          "marketValue": 18000000,
           "rating": 91
         },
         {
-          "name": "Huijsen",
+          "name": "Andriy Lunin",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 85
+        },
+        {
+          "name": "Fran González",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Trent Alexander-Arnold",
           "position": "CB",
+          "marketValue": 65000000,
+          "rating": 88
+        },
+        {
+          "name": "David Alaba",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 87
+        },
+        {
+          "name": "Éder Militão",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 85
+        },
+        {
+          "name": "Ferland Mendy",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 85
+        },
+        {
+          "name": "Fran García",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Dean Huijsen",
+          "position": "CB",
+          "marketValue": 65000000,
           "rating": 82
         },
         {
           "name": "Álvaro Carreras",
-          "position": "LB",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 81
+        },
+        {
+          "name": "Raúl Asencio",
+          "position": "CB",
+          "marketValue": 25000000,
           "rating": 80
         },
         {
-          "name": "Asencio",
+          "name": "Daniel Carvajal",
           "position": "CB",
-          "rating": 84
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
-          "name": "Militão",
-          "position": "CB",
-          "rating": 88
-        },
-        {
-          "name": "Valverde",
+          "name": "Jude Bellingham",
           "position": "CM",
-          "rating": 90
-        },
-        {
-          "name": "Tchouaméni",
-          "position": "DM",
-          "rating": 88
-        },
-        {
-          "name": "Güler",
-          "position": "AM",
-          "rating": 86
-        },
-        {
-          "name": "Bellingham",
-          "position": "AM",
+          "marketValue": 140000000,
           "rating": 91
         },
         {
-          "name": "Vinícius",
-          "position": "LW",
-          "rating": 93
-        },
-        {
-          "name": "Mbappé",
-          "position": "ST",
-          "rating": 94
-        },
-        {
-          "name": "Lunin",
-          "position": "GK",
-          "rating": 83
-        },
-        {
-          "name": "Camavinga",
+          "name": "Eduardo Camavinga",
           "position": "CM",
-          "rating": 87
+          "marketValue": 50000000,
+          "rating": 89
         },
         {
-          "name": "Gonzalo",
-          "position": "ST",
-          "rating": 70
-        },
-        {
-          "name": "Brahim Díaz",
-          "position": "RW",
-          "rating": 84
-        },
-        {
-          "name": "Mastantuono",
-          "position": "AM",
-          "rating": 84
-        },
-        {
-          "name": "Mestre",
-          "position": "GK",
-          "rating": 68
-        },
-        {
-          "name": "Rodrygo",
-          "position": "RW",
-          "rating": 86
-        },
-        {
-          "name": "Rüdiger",
-          "position": "CB",
-          "rating": 85
-        },
-        {
-          "name": "Alexander-Arnold",
-          "position": "RB",
+          "name": "Aurélien Tchouaméni",
+          "position": "CM",
+          "marketValue": 75000000,
           "rating": 88
         },
         {
+          "name": "Federico Valverde",
+          "position": "CM",
+          "marketValue": 120000000,
+          "rating": 88
+        },
+        {
+          "name": "Arda Güler",
+          "position": "CM",
+          "marketValue": 90000000,
+          "rating": 87
+        },
+        {
+          "name": "Thiago Pitarch",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
           "name": "Dani Ceballos",
           "position": "CM",
-          "rating": 80
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
-          "name": "Carvajal",
-          "position": "RB",
-          "rating": 79
-        },
-        {
-          "name": "Fran García",
-          "position": "LB",
-          "rating": 80
-        },
-        {
-          "name": "Alaba",
-          "position": "CB",
+          "name": "Jorge Cestero",
+          "position": "CM",
+          "marketValue": 7500000,
           "rating": 81
-        },
-        {
-          "name": "Pitarch",
-          "position": "CM",
-          "rating": 68
-        },
-        {
-          "name": "Mendy",
-          "position": "LB",
-          "rating": 81
-        },
-        {
-          "name": "Jiménez",
-          "position": "LB",
-          "rating": 70
-        },
-        {
-          "name": "Endrick",
-          "position": "ST",
-          "rating": 83
-        },
-        {
-          "name": "Cestero",
-          "position": "CM",
-          "rating": 68
-        },
-        {
-          "name": "Palacios",
-          "position": "CM",
-          "rating": 71
         },
         {
           "name": "Manuel Ángel",
           "position": "CM",
-          "rating": 68
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
-          "name": "Valdepeñas",
-          "position": "CB",
-          "rating": 68
-        },
-        {
-          "name": "Aguado",
-          "position": "LB",
-          "rating": 68
-        },
-        {
-          "name": "Yáñez",
+          "name": "Kylian Mbappé",
           "position": "ST",
-          "rating": 67
+          "marketValue": 200000000,
+          "rating": 94
         },
         {
-          "name": "Fran González",
-          "position": "GK",
-          "rating": 65
-        },
-        {
-          "name": "Joan",
-          "position": "CB",
-          "rating": 70
-        },
-        {
-          "name": "Leiva",
+          "name": "Vinicius Junior",
           "position": "ST",
-          "rating": 68
-        },
-        {
-          "name": "Fati",
-          "position": "CB",
-          "rating": 71
-        },
-        {
-          "name": "Mesonero",
-          "position": "CM",
-          "rating": 67
-        },
-        {
-          "name": "Fortuny",
-          "position": "RW",
-          "rating": 66
-        },
-        {
-          "name": "Navarro",
-          "position": "GK",
-          "rating": 65
-        }
-      ],
-      "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
-      },
-      "source": "BDFutbol — Real Madrid 2025-26 Primera División",
-      "teamLabel": "Real Madrid 2025-26 Primera División"
-    },
-    "2026": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Courtois",
-          "position": "GK"
-        },
-        {
-          "name": "Huijsen",
-          "position": "CB"
-        },
-        {
-          "name": "Álvaro Carreras",
-          "position": "LB"
-        },
-        {
-          "name": "Asencio",
-          "position": "CB"
-        },
-        {
-          "name": "Militão",
-          "position": "CB"
-        },
-        {
-          "name": "Valverde",
-          "position": "CM"
-        },
-        {
-          "name": "Tchouaméni",
-          "position": "CM"
-        },
-        {
-          "name": "Güler",
-          "position": "CM"
-        },
-        {
-          "name": "Bellingham",
-          "position": "CM"
-        },
-        {
-          "name": "Vinícius",
-          "position": "ST"
-        },
-        {
-          "name": "Mbappé",
-          "position": "ST"
-        },
-        {
-          "name": "Lunin",
-          "position": "GK"
-        },
-        {
-          "name": "Camavinga",
-          "position": "CM"
-        },
-        {
-          "name": "Gonzalo",
-          "position": "ST"
-        },
-        {
-          "name": "Brahim Díaz",
-          "position": "ST"
-        },
-        {
-          "name": "Mastantuono",
-          "position": "ST"
-        },
-        {
-          "name": "Mestre",
-          "position": "GK"
+          "marketValue": 150000000,
+          "rating": 93
         },
         {
           "name": "Rodrygo",
-          "position": "RW",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 90
+        },
+        {
+          "name": "Gonzalo García",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST",
+          "marketValue": 35000000,
           "rating": 86
         },
         {
-          "name": "Rüdiger",
-          "position": "CB"
-        },
-        {
-          "name": "Alexander-Arnold",
-          "position": "RB"
-        },
-        {
-          "name": "Dani Ceballos",
-          "position": "CM"
-        },
-        {
-          "name": "Carvajal",
-          "position": "RB"
-        },
-        {
-          "name": "Fran García",
-          "position": "LB"
-        },
-        {
-          "name": "Alaba",
-          "position": "CB"
-        },
-        {
-          "name": "Pitarch",
-          "position": "CM"
-        },
-        {
-          "name": "Mendy",
-          "position": "LB"
-        },
-        {
-          "name": "Jiménez",
-          "position": "RB"
-        },
-        {
-          "name": "Endrick",
-          "position": "ST"
-        },
-        {
-          "name": "Cestero",
-          "position": "CM"
-        },
-        {
-          "name": "Palacios",
-          "position": "ST"
-        },
-        {
-          "name": "Manuel Ángel",
-          "position": "CM"
-        },
-        {
-          "name": "Valdepeñas",
-          "position": "CB"
-        },
-        {
-          "name": "Aguado",
-          "position": "LB"
-        },
-        {
-          "name": "Yáñez",
-          "position": "ST"
-        },
-        {
-          "name": "Fran González",
-          "position": "GK"
-        },
-        {
-          "name": "Joan",
-          "position": "CB"
-        },
-        {
-          "name": "Leiva",
-          "position": "ST"
-        },
-        {
-          "name": "Fati",
-          "position": "CB"
-        },
-        {
-          "name": "Mesonero",
-          "position": "CM"
-        },
-        {
-          "name": "Fortuny",
-          "position": "ST"
-        },
-        {
-          "name": "Navarro",
-          "position": "GK"
+          "name": "Franco Mastantuono",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 84
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 71,
-        "defense": 77,
-        "goalkeeping": 73
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 62
       },
-      "source": "BDFutbol — Real Madrid 2025-26 Primera División (≈2026)",
-      "teamLabel": "Real Madrid 2025-26 Primera División"
+      "source": "Transfermarkt — Real Madrid (2025/2026)",
+      "teamLabel": "Real Madrid (2025-26)"
     }
   },
   "id": 418,
   "name": "Real Madrid",
-  "badgeLocalPath": "/img/badges/real-madrid.png",
-  "group": "🇪🇸 La Liga",
   "nameEs": "Real Madrid",
   "nameEn": "Real Madrid"
 }

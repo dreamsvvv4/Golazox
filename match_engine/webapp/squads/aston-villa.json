@@ -826,69 +826,8 @@
       },
       "source": "Transfermarkt — Aston Villa (2025/2026)",
       "teamLabel": "Aston Villa (2025-26)"
-    },
-    "2026": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "Emiliano Martínez",
-          "position": "GK"
-        },
-        {
-          "name": "Matty Cash",
-          "position": "RB"
-        },
-        {
-          "name": "Victor Lindelöf",
-          "position": "CB"
-        },
-        {
-          "name": "Ezri Konsa",
-          "position": "CB"
-        },
-        {
-          "name": "Tyrone Mings",
-          "position": "LB"
-        },
-        {
-          "name": "Ross Barkley",
-          "position": "DM"
-        },
-        {
-          "name": "John McGinn",
-          "position": "DM"
-        },
-        {
-          "name": "Youri Tielemans",
-          "position": "DM"
-        },
-        {
-          "name": "Ollie Watkins",
-          "position": "ST",
-          "rating": 85
-        },
-        {
-          "name": "Tammy Abraham",
-          "position": "ST"
-        },
-        {
-          "name": "Jadon Sancho",
-          "position": "LW"
-        }
-      ],
-      "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 83
-      },
-      "source": "Wikipedia — \"Aston Villa F.C.\"",
-      "teamLabel": "Aston Villa (2026)"
     }
   },
-  "name": "Aston Villa",
-  "badgeLocalPath": "/img/badges/aston-villa.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
-  "id": 405
+  "id": 405,
+  "name": "Aston Villa"
 }

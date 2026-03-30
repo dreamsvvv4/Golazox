@@ -2,125 +2,175 @@
   "slug": "athletic-club",
   "seasons": {
     "2025": {
-      "formation": "4-3-3",
+      "formation": "4-4-2",
       "players": [
         {
           "name": "Unai Simón",
           "position": "GK",
-          "rating": 86
+          "marketValue": 25000000,
+          "rating": 84
         },
         {
           "name": "Álex Padilla",
           "position": "GK",
-          "rating": 73
+          "marketValue": 3000000,
+          "rating": 78
         },
         {
           "name": "Dani Vivian",
           "position": "CB",
+          "marketValue": 25000000,
           "rating": 86
         },
         {
           "name": "Aitor Paredes",
           "position": "CB",
-          "rating": 82
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Aymeric Laporte",
           "position": "CB",
-          "rating": 83
-        },
-        {
-          "name": "Yeray Álvarez",
-          "position": "CB"
-        },
-        {
-          "name": "Unai Egiluz",
-          "position": "CB"
-        },
-        {
-          "name": "Adama Boiro",
-          "position": "CB"
-        },
-        {
-          "name": "Yuri Berchiche",
-          "position": "CB"
+          "marketValue": 9000000,
+          "rating": 84
         },
         {
           "name": "Jesús Areso",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
           "name": "Andoni Gorosabel",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Adama Boiro",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yuri Berchiche",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
         },
         {
           "name": "Iñigo Lekue",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
         },
         {
-          "name": "Mikel Vesga",
-          "position": "CM"
+          "name": "Yeray Álvarez",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Unai Egiluz",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
         },
         {
           "name": "Mikel Jauregizar",
-          "position": "CM"
-        },
-        {
-          "name": "Beñat Prados",
-          "position": "CM"
-        },
-        {
-          "name": "Alejandro Rego",
-          "position": "CM"
-        },
-        {
-          "name": "Selton Sánchez",
-          "position": "CM"
-        },
-        {
-          "name": "Iñigo Ruiz de Galarreta",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
         },
         {
           "name": "Oihan Sancet",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
         },
         {
-          "name": "Unai Gómez",
-          "position": "CM"
-        },
-        {
-          "name": "Nico Williams",
-          "position": "LW",
+          "name": "Beñat Prados",
+          "position": "CM",
+          "marketValue": 18000000,
           "rating": 85
         },
         {
-          "name": "Álex Berenguer",
-          "position": "ST"
+          "name": "Unai Gómez",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
-          "name": "Nico Serrano",
-          "position": "ST"
+          "name": "Alejandro Rego",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Selton Sánchez",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Iñigo Ruiz de Galarreta",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mikel Vesga",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nico Williams",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 87
         },
         {
           "name": "Iñaki Williams",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 83
+        },
+        {
+          "name": "Álex Berenguer",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
           "name": "Robert Navarro",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Gorka Guruzeta",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
           "name": "Maroan Sannadi",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Nico Serrano",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
           "name": "Urko Izeta",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
         }
       ],
       "ratings": {
@@ -131,71 +181,10 @@
       },
       "source": "Transfermarkt — Athletic Bilbao (2025/2026)",
       "teamLabel": "Athletic Bilbao (2025-26)"
-    },
-    "2026": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "Unai Simón",
-          "position": "GK"
-        },
-        {
-          "name": "Andoni Gorosabel",
-          "position": "RB"
-        },
-        {
-          "name": "Dani Vivian",
-          "position": "CB"
-        },
-        {
-          "name": "Aitor Paredes",
-          "position": "CB"
-        },
-        {
-          "name": "Yeray Álvarez",
-          "position": "LB"
-        },
-        {
-          "name": "Mikel Vesga",
-          "position": "DM"
-        },
-        {
-          "name": "Oihan Sancet",
-          "position": "CM"
-        },
-        {
-          "name": "Iñigo Ruiz de Galarreta",
-          "position": "CM"
-        },
-        {
-          "name": "Álex Berenguer",
-          "position": "RW"
-        },
-        {
-          "name": "Iñaki Williams",
-          "position": "ST"
-        },
-        {
-          "name": "Nico Williams",
-          "position": "LW",
-          "rating": 85
-        }
-      ],
-      "ratings": {
-        "attack": 77,
-        "midfield": 78,
-        "defense": 80,
-        "goalkeeping": 82
-      },
-      "source": "Wikipedia — \"2025–26 Athletic Bilbao season\"",
-      "teamLabel": "Athletic de Bilbao (2026)"
     }
   },
-  "name": "Athletic de Bilbao",
-  "badgeLocalPath": "/img/badges/athletic-club.png",
   "id": 621,
-  "group": "🇪🇸 La Liga",
+  "name": "Athletic Bilbao",
   "nameEs": "Athletic Club",
   "nameEn": "Athletic Club"
 }

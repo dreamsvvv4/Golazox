@@ -1,848 +1,224 @@
 {
   "slug": "manchester-city",
   "seasons": {
-    "2000": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Nicky Weaver",
-          "position": "GK"
-        },
-        {
-          "name": "Tommy Wright",
-          "position": "GK"
-        },
-        {
-          "name": "Carlo Nash",
-          "position": "GK"
-        },
-        {
-          "name": "Richard McKinney",
-          "position": "GK"
-        },
-        {
-          "name": "Brian Murphy",
-          "position": "GK"
-        },
-        {
-          "name": "Richard Jobson",
-          "position": "CB"
-        },
-        {
-          "name": "Lee Crooks",
-          "position": "CB"
-        },
-        {
-          "name": "Gerard Wiekens",
-          "position": "CB"
-        },
-        {
-          "name": "Andy Morrison",
-          "position": "CB"
-        },
-        {
-          "name": "Spencer Prior",
-          "position": "CB"
-        },
-        {
-          "name": "Paul Ritchie",
-          "position": "CB"
-        },
-        {
-          "name": "Richard Dunne",
-          "position": "CB"
-        },
-        {
-          "name": "Steve Howey",
-          "position": "CB"
-        },
-        {
-          "name": "Rhys Day",
-          "position": "CB"
-        },
-        {
-          "name": "Danny Tiatto",
-          "position": "CB"
-        },
-        {
-          "name": "Danny Granville",
-          "position": "CB"
-        },
-        {
-          "name": "Richard Edghill",
-          "position": "CB"
-        },
-        {
-          "name": "Alf-Inge Haaland",
-          "position": "CB"
-        },
-        {
-          "name": "Laurent Charvet",
-          "position": "CB"
-        },
-        {
-          "name": "Kevin Horlock",
-          "position": "CM"
-        },
-        {
-          "name": "Jeff Whitley",
-          "position": "CM"
-        },
-        {
-          "name": "Tony Grant",
-          "position": "CM"
-        },
-        {
-          "name": "Dickson Etuhu",
-          "position": "CM"
-        },
-        {
-          "name": "Ian Bishop",
-          "position": "CM"
-        },
-        {
-          "name": "Jim Whitley",
-          "position": "CM"
-        },
-        {
-          "name": "Terry Dunfield",
-          "position": "CM"
-        },
-        {
-          "name": "Andrey Kanchelskis",
-          "position": "CM"
-        },
-        {
-          "name": "Shaun Holmes",
-          "position": "CM"
-        },
-        {
-          "name": "Mark Kennedy",
-          "position": "CM"
-        },
-        {
-          "name": "Terry Cooke",
-          "position": "ST"
-        },
-        {
-          "name": "Shaun Wright-Phillips",
-          "position": "ST"
-        },
-        {
-          "name": "George Weah",
-          "position": "ST"
-        },
-        {
-          "name": "Dino Toppmöller",
-          "position": "ST"
-        },
-        {
-          "name": "Paul Dickov",
-          "position": "ST"
-        },
-        {
-          "name": "Shaun Goater",
-          "position": "ST"
-        },
-        {
-          "name": "Danny Allsopp",
-          "position": "ST"
-        },
-        {
-          "name": "Gareth Taylor",
-          "position": "ST"
-        },
-        {
-          "name": "Darren Huckerby",
-          "position": "ST"
-        },
-        {
-          "name": "Paulo Wanchope",
-          "position": "ST"
-        },
-        {
-          "name": "Egil Østenstad",
-          "position": "ST"
-        }
-      ],
-      "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Manchester City (2000/2001)",
-      "teamLabel": "Manchester City (2000-01)"
-    },
-    "2004": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Kasper Schmeichel",
-          "position": "GK",
-          "marketValue": 250000,
-          "rating": 91
-        },
-        {
-          "name": "David James",
-          "position": "GK",
-          "marketValue": 4500000,
-          "rating": 85
-        },
-        {
-          "name": "Ronald Waterreus",
-          "position": "GK",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
-          "name": "Geert De Vlieger",
-          "position": "GK",
-          "marketValue": 1500000,
-          "rating": 75
-        },
-        {
-          "name": "Kevin Stuhr-Ellegaard",
-          "position": "GK",
-          "marketValue": 1500000,
-          "rating": 75
-        },
-        {
-          "name": "Nicky Weaver",
-          "position": "GK",
-          "marketValue": 700000,
-          "rating": 72
-        },
-        {
-          "name": "Sylvain Distin",
-          "position": "CB",
-          "marketValue": 7500000,
-          "rating": 81
-        },
-        {
-          "name": "Ben Thatcher",
-          "position": "CB",
-          "marketValue": 5250000,
-          "rating": 80
-        },
-        {
-          "name": "Danny Mills",
-          "position": "CB",
-          "marketValue": 6000000,
-          "rating": 80
-        },
-        {
-          "name": "Richard Dunne",
-          "position": "CB",
-          "marketValue": 4250000,
-          "rating": 79
-        },
-        {
-          "name": "David Sommeil",
-          "position": "CB",
-          "marketValue": 3000000,
-          "rating": 78
-        },
-        {
-          "name": "Jihai Sun",
-          "position": "CB",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
-          "name": "Mikkel Bischoff",
-          "position": "CB",
-          "marketValue": 1500000,
-          "rating": 75
-        },
-        {
-          "name": "Stephen Jordan",
-          "position": "CB",
-          "marketValue": 200000,
-          "rating": 67
-        },
-        {
-          "name": "Patrick McCarthy",
-          "position": "CB",
-          "marketValue": 200000,
-          "rating": 67
-        },
-        {
-          "name": "Nedum Onuoha",
-          "position": "CB",
-          "marketValue": 25000,
-          "rating": 62
-        },
-        {
-          "name": "Claudio Reyna",
-          "position": "CM",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Paul Bosvelt",
-          "position": "CM",
-          "marketValue": 2000000,
-          "rating": 76
-        },
-        {
-          "name": "Antoine Sibierski",
-          "position": "CM",
-          "marketValue": 2000000,
-          "rating": 76
-        },
-        {
-          "name": "Joey Barton",
-          "position": "CM",
-          "marketValue": 1750000,
-          "rating": 75
-        },
-        {
-          "name": "Christian Negouai",
-          "position": "CM",
-          "marketValue": 700000,
-          "rating": 72
-        },
-        {
-          "name": "Lee Croft",
-          "position": "CM",
-          "marketValue": 75000,
-          "rating": 63
-        },
-        {
-          "name": "Willo Flood",
-          "position": "CM",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Jonathan D'Laryea",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": null
-        },
-        {
-          "name": "Steve McManaman",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": null
-        },
-        {
-          "name": "Stephen Ireland",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": null
-        },
-        {
-          "name": "Nicolas Anelka",
-          "position": "ST",
-          "marketValue": 12800000,
-          "rating": 85
-        },
-        {
-          "name": "Shaun Wright-Phillips",
-          "position": "ST",
-          "marketValue": 9500000,
-          "rating": 82
-        },
-        {
-          "name": "Trevor Sinclair",
-          "position": "ST",
-          "marketValue": 5250000,
-          "rating": 80
-        },
-        {
-          "name": "Robbie Fowler",
-          "position": "ST",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Paulo Wanchope",
-          "position": "ST",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Kiki Musampa",
-          "position": "ST",
-          "marketValue": 2750000,
-          "rating": 77
-        },
-        {
-          "name": "Jon Macken",
-          "position": "ST",
-          "marketValue": 2250000,
-          "rating": 76
-        },
-        {
-          "name": "Bradley Wright-Phillips",
-          "position": "ST",
-          "marketValue": 300000,
-          "rating": 68
-        }
-      ],
-      "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Manchester City (2004/2005)",
-      "teamLabel": "Manchester City (2004-05)"
-    },
-    "2005": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "David James",
-          "position": "GK"
-        },
-        {
-          "name": "David Sommeil",
-          "position": "RB"
-        },
-        {
-          "name": "Ben Thatcher",
-          "position": "CB"
-        },
-        {
-          "name": "Sylvain Distin",
-          "position": "CB"
-        },
-        {
-          "name": "Nedum Onuoha",
-          "position": "LB"
-        },
-        {
-          "name": "Claudio Reyna",
-          "position": "DM"
-        },
-        {
-          "name": "Antoine Sibierski",
-          "position": "CM"
-        },
-        {
-          "name": "Kiki Musampa",
-          "position": "CM"
-        },
-        {
-          "name": "Robbie Fowler",
-          "position": "RW"
-        },
-        {
-          "name": "Jon Macken",
-          "position": "ST"
-        },
-        {
-          "name": "Bradley Wright-Phillips",
-          "position": "LW"
-        }
-      ],
-      "ratings": null,
-      "source": "Wikipedia — \"2004–05 Manchester City F.C. season\"",
-      "teamLabel": "Manchester City (2005)"
-    },
-    "2009": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Joe Hart",
-          "position": "GK",
-          "marketValue": 7000000,
-          "rating": 83
-        },
-        {
-          "name": "Shay Given",
-          "position": "GK",
-          "marketValue": 10000000,
-          "rating": 82
-        },
-        {
-          "name": "Márton Fülöp",
-          "position": "GK",
-          "marketValue": 3000000,
-          "rating": 78
-        },
-        {
-          "name": "Stuart Taylor",
-          "position": "GK",
-          "marketValue": 1500000,
-          "rating": 75
-        },
-        {
-          "name": "Gunnar Nielsen",
-          "position": "GK",
-          "marketValue": 250000,
-          "rating": 68
-        },
-        {
-          "name": "Javan Vidal",
-          "position": "CB",
-          "marketValue": 100000,
-          "rating": 86
-        },
-        {
-          "name": "Kolo Touré",
-          "position": "CB",
-          "marketValue": 20000000,
-          "rating": 85
-        },
-        {
-          "name": "Joleon Lescott",
-          "position": "CB",
-          "marketValue": 15000000,
-          "rating": 84
-        },
-        {
-          "name": "Vincent Kompany",
-          "position": "CB",
-          "marketValue": 12000000,
-          "rating": 83
-        },
-        {
-          "name": "Richard Dunne",
-          "position": "CB",
-          "marketValue": 11000000,
-          "rating": 83
-        },
-        {
-          "name": "Micah Richards",
-          "position": "CB",
-          "marketValue": 12000000,
-          "rating": 83
-        },
-        {
-          "name": "Pablo Zabaleta",
-          "position": "CB",
-          "marketValue": 9000000,
-          "rating": 82
-        },
-        {
-          "name": "Wayne Bridge",
-          "position": "CB",
-          "marketValue": 7000000,
-          "rating": 81
-        },
-        {
-          "name": "Nedum Onuoha",
-          "position": "CB",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Javier Garrido",
-          "position": "CB",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
-          "name": "Sylvinho",
-          "position": "CB",
-          "marketValue": 1000000,
-          "rating": 73
-        },
-        {
-          "name": "Dedryck Boyata",
-          "position": "CB",
-          "marketValue": 500000,
-          "rating": 70
-        },
-        {
-          "name": "Greg Cunningham",
-          "position": "CB",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Kieran Trippier",
-          "position": "RB",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Patrick Vieira",
-          "position": "CM",
-          "marketValue": 7500000,
-          "rating": 90
-        },
-        {
-          "name": "Nigel de Jong",
-          "position": "CM",
-          "marketValue": 14000000,
-          "rating": 88
-        },
-        {
-          "name": "Gareth Barry",
-          "position": "CM",
-          "marketValue": 18000000,
-          "rating": 85
-        },
-        {
-          "name": "Stephen Ireland",
-          "position": "CM",
-          "marketValue": 14000000,
-          "rating": 84
-        },
-        {
-          "name": "Michael Johnson",
-          "position": "CM",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Kelvin Etuhu",
-          "position": "CM",
-          "marketValue": 750000,
-          "rating": 72
-        },
-        {
-          "name": "Abdisalam Ibrahim",
-          "position": "CM",
-          "marketValue": 100000,
-          "rating": 64
-        },
-        {
-          "name": "Andrew Tutte",
-          "position": "CM",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Scott Kay",
-          "position": "CM",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Carlos Tevez",
-          "position": "ST",
-          "marketValue": 30000000,
-          "rating": 88
-        },
-        {
-          "name": "Emmanuel Adebayor",
-          "position": "ST",
-          "marketValue": 23000000,
-          "rating": 86
-        },
-        {
-          "name": "Robinho",
-          "position": "ST",
-          "marketValue": 28000000,
-          "rating": 84
-        },
-        {
-          "name": "Shaun Wright-Phillips",
-          "position": "ST",
-          "marketValue": 15000000,
-          "rating": 84
-        },
-        {
-          "name": "Craig Bellamy",
-          "position": "ST",
-          "marketValue": 13000000,
-          "rating": 83
-        },
-        {
-          "name": "Martin Petrov",
-          "position": "ST",
-          "marketValue": 9000000,
-          "rating": 82
-        },
-        {
-          "name": "Roque Santa Cruz",
-          "position": "ST",
-          "marketValue": 8000000,
-          "rating": 82
-        },
-        {
-          "name": "Benjani",
-          "position": "ST",
-          "marketValue": 5000000,
-          "rating": 80
-        },
-        {
-          "name": "Adam Johnson",
-          "position": "ST",
-          "marketValue": 4500000,
-          "rating": 79
-        },
-        {
-          "name": "Vladimír Weiss",
-          "position": "ST",
-          "marketValue": 1500000,
-          "rating": 75
-        },
-        {
-          "name": "David Ball",
-          "position": "ST",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Alex Nimely",
-          "position": "ST",
-          "marketValue": 50000,
-          "rating": 62
-        }
-      ],
-      "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
-      },
-      "source": "Transfermarkt — Manchester City (2009/2010)",
-      "teamLabel": "Manchester City (2009-10)"
-    },
     "2011": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Joe Hart",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 23500000,
+          "rating": 83
         },
         {
           "name": "Costel Pantilimon",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
         },
         {
           "name": "Stuart Taylor",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 750000,
+          "rating": 72
         },
         {
           "name": "Vincent Kompany",
-          "position": "CB"
-        },
-        {
-          "name": "Joleon Lescott",
-          "position": "CB"
-        },
-        {
-          "name": "Stefan Savic",
-          "position": "CB"
-        },
-        {
-          "name": "Kolo Touré",
-          "position": "CB"
-        },
-        {
-          "name": "Nedum Onuoha",
-          "position": "CB"
-        },
-        {
-          "name": "Dedryck Boyata",
-          "position": "CB"
-        },
-        {
-          "name": "Karim Rekik",
-          "position": "CB"
-        },
-        {
-          "name": "Gaël Clichy",
-          "position": "CB"
-        },
-        {
-          "name": "Aleksandar Kolarov",
-          "position": "CB"
-        },
-        {
-          "name": "Wayne Bridge",
-          "position": "CB"
-        },
-        {
-          "name": "Razak Nuhu",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
         },
         {
           "name": "Micah Richards",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 18500000,
+          "rating": 85
+        },
+        {
+          "name": "Joleon Lescott",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Aleksandar Kolarov",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 14500000,
+          "rating": 84
         },
         {
-          "name": "Nigel de Jong",
-          "position": "CM"
+          "name": "Stefan Savic",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
-          "name": "Gareth Barry",
-          "position": "CM"
+          "name": "Kolo Touré",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
-          "name": "Michael Johnson",
-          "position": "CM"
+          "name": "Nedum Onuoha",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
         },
         {
-          "name": "Owen Hargreaves",
-          "position": "CM"
+          "name": "Dedryck Boyata",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
-          "name": "Yaya Touré",
-          "position": "CM"
+          "name": "Wayne Bridge",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
-          "name": "James Milner",
-          "position": "CM"
+          "name": "Razak Nuhu",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
         },
         {
-          "name": "David Pizarro",
-          "position": "CM"
-        },
-        {
-          "name": "Abdul Razak",
-          "position": "CM"
+          "name": "Karim Rekik",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 91
+        },
+        {
+          "name": "Nigel de Jong",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 88
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "marketValue": 36500000,
+          "rating": 88
         },
         {
           "name": "Samir Nasri",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "James Milner",
+          "position": "CM",
+          "marketValue": 21000000,
+          "rating": 85
+        },
+        {
+          "name": "Gareth Barry",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "David Pizarro",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Michael Johnson",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Owen Hargreaves",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Abdul Razak",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Joan Román",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Denis Suárez",
-          "position": "CM"
-        },
-        {
-          "name": "Luca Scapuzzi",
-          "position": "ST"
-        },
-        {
-          "name": "Adam Johnson",
-          "position": "ST"
-        },
-        {
-          "name": "Shaun Wright-Phillips",
-          "position": "ST"
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
-        },
-        {
-          "name": "Mario Balotelli",
-          "position": "ST"
-        },
-        {
-          "name": "Edin Dzeko",
-          "position": "ST"
-        },
-        {
-          "name": "Emmanuel Adebayor",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 51000000,
+          "rating": 90
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 22500000,
+          "rating": 88
+        },
+        {
+          "name": "Mario Balotelli",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Edin Dzeko",
+          "position": "ST",
+          "marketValue": 29000000,
+          "rating": 87
+        },
+        {
+          "name": "Emmanuel Adebayor",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Adam Johnson",
+          "position": "ST",
+          "marketValue": 10500000,
+          "rating": 83
+        },
+        {
+          "name": "Shaun Wright-Phillips",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Luca Scapuzzi",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
         }
       ],
       "ratings": {
@@ -859,167 +235,249 @@
       "players": [
         {
           "name": "Joe Hart",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 24000000,
+          "rating": 83
         },
         {
           "name": "Costel Pantilimon",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
         },
         {
           "name": "Richard Wright",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
         },
         {
           "name": "Eirik Holmen",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Vincent Kompany",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
         },
         {
           "name": "Matija Nastasić",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 85
         },
         {
           "name": "Jack Rodwell",
-          "position": "CB"
-        },
-        {
-          "name": "Joleon Lescott",
-          "position": "CB"
-        },
-        {
-          "name": "Stefan Savic",
-          "position": "CB"
-        },
-        {
-          "name": "Kolo Touré",
-          "position": "CB"
-        },
-        {
-          "name": "Karim Rekik",
-          "position": "CB"
-        },
-        {
-          "name": "Dedryck Boyata",
-          "position": "CB"
-        },
-        {
-          "name": "Courtney Meppen-Walter",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Gaël Clichy",
-          "position": "CB"
-        },
-        {
-          "name": "Aleksandar Kolarov",
-          "position": "CB"
-        },
-        {
-          "name": "Wayne Bridge",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
         },
         {
           "name": "Micah Richards",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Joleon Lescott",
+          "position": "CB",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Aleksandar Kolarov",
+          "position": "CB",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Stefan Savic",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Maicon",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
         },
         {
-          "name": "Javi García",
-          "position": "CM"
+          "name": "Karim Rekik",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
-          "name": "Gareth Barry",
-          "position": "CM"
+          "name": "Dedryck Boyata",
+          "position": "CB",
+          "marketValue": 1750000,
+          "rating": 75
         },
         {
-          "name": "Nigel de Jong",
-          "position": "CM"
+          "name": "Wayne Bridge",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
-          "name": "George Evans",
-          "position": "CM"
-        },
-        {
-          "name": "Yaya Touré",
-          "position": "CM"
-        },
-        {
-          "name": "James Milner",
-          "position": "CM"
-        },
-        {
-          "name": "Abdisalam Ibrahim",
-          "position": "CM"
-        },
-        {
-          "name": "Abdul Razak",
-          "position": "CM"
-        },
-        {
-          "name": "Jérémy Hélan",
-          "position": "CM"
+          "name": "Courtney Meppen-Walter",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 44000000,
+          "rating": 91
+        },
+        {
+          "name": "Nigel de Jong",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 88
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "marketValue": 36000000,
+          "rating": 88
+        },
+        {
+          "name": "Javi García",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "James Milner",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 85
         },
         {
           "name": "Samir Nasri",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 21000000,
+          "rating": 85
+        },
+        {
+          "name": "Gareth Barry",
+          "position": "CM",
+          "marketValue": 8500000,
+          "rating": 82
         },
         {
           "name": "Denis Suárez",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
-          "name": "Scott Sinclair",
-          "position": "ST"
+          "name": "Abdisalam Ibrahim",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
-          "name": "Luca Scapuzzi",
-          "position": "ST"
+          "name": "George Evans",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
-          "name": "Adam Johnson",
-          "position": "ST"
+          "name": "Abdul Razak",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
-          "name": "Rony Lopes",
-          "position": "ST"
+          "name": "Jérémy Hélan",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
-        },
-        {
-          "name": "Mario Balotelli",
-          "position": "ST"
-        },
-        {
-          "name": "Edin Dzeko",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 90
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 27000000,
+          "rating": 88
+        },
+        {
+          "name": "Mario Balotelli",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Edin Dzeko",
+          "position": "ST",
+          "marketValue": 27000000,
+          "rating": 86
+        },
+        {
+          "name": "Adam Johnson",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Scott Sinclair",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
         },
         {
           "name": "John Guidetti",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Luca Scapuzzi",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Rony Lopes",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Alex Nimely",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1036,192 +494,285 @@
       "players": [
         {
           "name": "Ederson",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 70000000,
+          "rating": 88
         },
         {
           "name": "Claudio Bravo",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
         },
         {
           "name": "Arijanet Murić",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Daniel Grimshaw",
-          "position": "GK"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Nicolás Otamendi",
-          "position": "CB"
-        },
-        {
-          "name": "Danilo",
-          "position": "CB"
-        },
-        {
-          "name": "Eliaquim Mangala",
-          "position": "CB"
-        },
-        {
-          "name": "Vincent Kompany",
-          "position": "CB"
-        },
-        {
-          "name": "Philippe Sandler",
-          "position": "CB"
-        },
-        {
-          "name": "Pablo Marí",
-          "position": "CB"
-        },
-        {
-          "name": "Erik Palmer-Brown",
-          "position": "CB"
-        },
-        {
-          "name": "Eric García",
-          "position": "CB"
-        },
-        {
-          "name": "Cameron Humphreys",
-          "position": "CB"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Benjamin Mendy",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Nicolás Otamendi",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 84
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 84
+        },
+        {
+          "name": "Danilo",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 84
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 83
+        },
+        {
+          "name": "Eliaquim Mangala",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Vincent Kompany",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
         },
         {
           "name": "Kyle Walker",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 82
+        },
+        {
+          "name": "Philippe Sandler",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Pablo Marí",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Erik Palmer-Brown",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Eric García",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Cameron Humphreys",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Luke Bolton",
-          "position": "CB"
-        },
-        {
-          "name": "Fernandinho",
-          "position": "CM"
-        },
-        {
-          "name": "Luke Brattan",
-          "position": "CM"
-        },
-        {
-          "name": "Claudio Gomes",
-          "position": "CM"
-        },
-        {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
-        },
-        {
-          "name": "Fabian Delph",
-          "position": "CM"
-        },
-        {
-          "name": "Aleix García",
-          "position": "CM"
-        },
-        {
-          "name": "Douglas Luiz",
-          "position": "CM"
-        },
-        {
-          "name": "Mix Diskerud",
-          "position": "CM"
-        },
-        {
-          "name": "Felix Nmecha",
-          "position": "CM"
-        },
-        {
-          "name": "Adrián Bernabé",
-          "position": "CM"
-        },
-        {
-          "name": "Taylor Richards",
-          "position": "CM"
-        },
-        {
-          "name": "Nabil Touaizi",
-          "position": "CM"
-        },
-        {
-          "name": "Kevin De Bruyne",
-          "position": "AM"
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Bernardo Silva",
-          "position": "RW"
-        },
-        {
-          "name": "Phil Foden",
-          "position": "AM",
-          "rating": 90
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 92
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 91
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "marketValue": 130000000,
+          "rating": 90
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 90
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Fabian Delph",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Fernandinho",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Aleix García",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Douglas Luiz",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mix Diskerud",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
           "name": "Luka Ilic",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luke Brattan",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Anthony Cáceres",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
         },
         {
-          "name": "Jack Harrison",
-          "position": "ST"
+          "name": "Claudio Gomes",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
-          "name": "Marlos Moreno",
-          "position": "ST"
+          "name": "Felix Nmecha",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Adrián Bernabé",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Taylor Richards",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nabil Touaizi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST"
-        },
-        {
-          "name": "Leroy Sané",
-          "position": "LW"
-        },
-        {
-          "name": "Riyad Mahrez",
-          "position": "ST"
-        },
-        {
-          "name": "Brahim Díaz",
-          "position": "ST"
-        },
-        {
-          "name": "Patrick Roberts",
-          "position": "ST"
-        },
-        {
-          "name": "Ian Poveda",
-          "position": "ST"
-        },
-        {
-          "name": "Gabriel Jesus",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 140000000,
+          "rating": 90
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 65000000,
+          "rating": 90
+        },
+        {
+          "name": "Leroy Sané",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 86
+        },
+        {
+          "name": "Brahim Díaz",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 86
+        },
+        {
+          "name": "Riyad Mahrez",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 85
+        },
+        {
+          "name": "Gabriel Jesus",
+          "position": "ST",
+          "marketValue": 70000000,
+          "rating": 84
+        },
+        {
+          "name": "Patrick Roberts",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jack Harrison",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Marlos Moreno",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ian Poveda",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1238,145 +789,213 @@
       "players": [
         {
           "name": "Ederson",
-          "position": "GK"
-        },
-        {
-          "name": "Arijanet Murić",
-          "position": "GK"
-        },
-        {
-          "name": "Claudio Bravo",
-          "position": "GK"
-        },
-        {
-          "name": "Scott Carson",
-          "position": "GK"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Nicolás Otamendi",
-          "position": "CB"
-        },
-        {
-          "name": "Eric García",
-          "position": "CB"
-        },
-        {
-          "name": "Tosin Adarabioyo",
-          "position": "CB"
-        },
-        {
-          "name": "Taylor Harwood-Bellis",
-          "position": "CB"
-        },
-        {
-          "name": "Benjamin Mendy",
-          "position": "CB"
-        },
-        {
-          "name": "Oleksandr Zinchenko",
-          "position": "CB"
-        },
-        {
-          "name": "Angeliño",
-          "position": "CB"
-        },
-        {
-          "name": "Kyle Walker",
-          "position": "RB"
-        },
-        {
-          "name": "João Cancelo",
-          "position": "RB"
-        },
-        {
-          "name": "Alpha Diounkou",
-          "position": "CB"
-        },
-        {
-          "name": "Rodri",
-          "position": "DM"
-        },
-        {
-          "name": "Fernandinho",
-          "position": "CM"
-        },
-        {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
-        },
-        {
-          "name": "Adrián Bernabé",
-          "position": "CM"
-        },
-        {
-          "name": "Tommy Doyle",
-          "position": "CM"
-        },
-        {
-          "name": "Nabil Touaizi",
-          "position": "CM"
-        },
-        {
-          "name": "Kevin De Bruyne",
-          "position": "AM"
-        },
-        {
-          "name": "Bernardo Silva",
-          "position": "RW"
-        },
-        {
-          "name": "Phil Foden",
-          "position": "AM",
-          "rating": 90
-        },
-        {
-          "name": "David Silva",
-          "position": "CM"
-        },
-        {
-          "name": "Cole Palmer",
-          "position": "AM",
+          "position": "GK",
+          "marketValue": 56000000,
           "rating": 88
         },
         {
-          "name": "Ryotaro Meshino",
-          "position": "ST"
+          "name": "Arijanet Murić",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Claudio Bravo",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Scott Carson",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Benjamin Mendy",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB",
+          "marketValue": 36000000,
+          "rating": 86
+        },
+        {
+          "name": "Angeliño",
+          "position": "CB",
+          "marketValue": 17500000,
+          "rating": 85
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 84
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 36000000,
+          "rating": 84
+        },
+        {
+          "name": "Nicolás Otamendi",
+          "position": "CB",
+          "marketValue": 14500000,
+          "rating": 84
+        },
+        {
+          "name": "Oleksandr Zinchenko",
+          "position": "CB",
+          "marketValue": 24000000,
+          "rating": 83
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 82
+        },
+        {
+          "name": "Eric García",
+          "position": "CB",
+          "marketValue": 6300000,
+          "rating": 81
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Taylor Harwood-Bellis",
+          "position": "CB",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Alpha Diounkou",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 92
+        },
+        {
+          "name": "David Silva",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 91
+        },
+        {
+          "name": "Rodri",
+          "position": "CM",
+          "marketValue": 64000000,
+          "rating": 90
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "marketValue": 120000000,
+          "rating": 90
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM",
+          "marketValue": 27000000,
+          "rating": 90
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Fernandinho",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Adrián Bernabé",
+          "position": "CM",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Tommy Doyle",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nabil Touaizi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST"
-        },
-        {
-          "name": "Leroy Sané",
-          "position": "LW"
-        },
-        {
-          "name": "Riyad Mahrez",
-          "position": "ST"
-        },
-        {
-          "name": "Patrick Roberts",
-          "position": "ST"
-        },
-        {
-          "name": "Ian Poveda",
-          "position": "ST"
-        },
-        {
-          "name": "Gabriel Jesus",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 128000000,
+          "rating": 90
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 52000000,
+          "rating": 90
+        },
+        {
+          "name": "Leroy Sané",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 86
+        },
+        {
+          "name": "Riyad Mahrez",
+          "position": "ST",
+          "marketValue": 48000000,
+          "rating": 85
+        },
+        {
+          "name": "Gabriel Jesus",
+          "position": "ST",
+          "marketValue": 56000000,
+          "rating": 84
+        },
+        {
+          "name": "Patrick Roberts",
+          "position": "ST",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Ian Poveda",
+          "position": "ST",
+          "marketValue": 675000,
+          "rating": 72
+        },
+        {
+          "name": "Ryotaro Meshino",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
         }
       ],
       "ratings": {
@@ -1393,161 +1012,237 @@
       "players": [
         {
           "name": "Ederson",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 45000000,
+          "rating": 88
         },
         {
           "name": "Zack Steffen",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
         },
         {
           "name": "Scott Carson",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
         },
         {
           "name": "Cieran Slicker",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Rúben Dias",
-          "position": "CB"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Nathan Aké",
-          "position": "LB"
-        },
-        {
-          "name": "Philippe Sandler",
-          "position": "CB"
-        },
-        {
-          "name": "CJ Egan-Riley",
-          "position": "CB"
-        },
-        {
-          "name": "Luke Mbete",
-          "position": "CB"
-        },
-        {
-          "name": "Finley Burns",
-          "position": "CB"
-        },
-        {
-          "name": "Oleksandr Zinchenko",
-          "position": "CB"
-        },
-        {
-          "name": "Josh Wilson-Esbrand",
-          "position": "CB"
-        },
-        {
-          "name": "Benjamin Mendy",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 90
         },
         {
           "name": "João Cancelo",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 65000000,
+          "rating": 86
+        },
+        {
+          "name": "Nathan Aké",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 84
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Oleksandr Zinchenko",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 83
         },
         {
           "name": "Kyle Walker",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 82
+        },
+        {
+          "name": "Philippe Sandler",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "CJ Egan-Riley",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Luke Mbete",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Josh Wilson-Esbrand",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Finley Burns",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Benjamin Mendy",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 92
         },
         {
           "name": "Rodri",
-          "position": "DM"
-        },
-        {
-          "name": "Roméo Lavia",
-          "position": "CM"
-        },
-        {
-          "name": "Fernandinho",
-          "position": "CM"
-        },
-        {
-          "name": "Claudio Gomes",
-          "position": "CM"
-        },
-        {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
-        },
-        {
-          "name": "Tommy Doyle",
-          "position": "CM"
-        },
-        {
-          "name": "Yan Couto",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 90
         },
         {
           "name": "Phil Foden",
-          "position": "AM",
+          "position": "CM",
+          "marketValue": 90000000,
           "rating": 90
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "AM"
-        },
-        {
-          "name": "Bernardo Silva",
-          "position": "RW"
+          "position": "CM",
+          "marketValue": 85000000,
+          "rating": 90
         },
         {
           "name": "Cole Palmer",
-          "position": "AM",
+          "position": "CM",
+          "marketValue": 6000000,
           "rating": 88
         },
         {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Yan Couto",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
           "name": "James McAtee",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tommy Doyle",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Roméo Lavia",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Fernandinho",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Claudio Gomes",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
         },
         {
           "name": "Jack Grealish",
-          "position": "ST"
-        },
-        {
-          "name": "Samuel Edozie",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 70000000,
+          "rating": 90
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 70000000,
+          "rating": 90
         },
         {
           "name": "Riyad Mahrez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 85
         },
         {
           "name": "Kayky",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
         },
         {
           "name": "Oscar Bobb",
-          "position": "ST"
-        },
-        {
-          "name": "Ben Knight",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 84
         },
         {
           "name": "Gabriel Jesus",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 84
         },
         {
           "name": "Ferran Torres",
-          "position": "RW"
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 84
         },
         {
           "name": "Liam Delap",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Samuel Edozie",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ben Knight",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
         }
       ],
       "ratings": {
@@ -1564,142 +1259,207 @@
       "players": [
         {
           "name": "Ederson",
-          "position": "GK"
-        },
-        {
-          "name": "Stefan Ortega",
-          "position": "GK"
-        },
-        {
-          "name": "Zack Steffen",
-          "position": "GK"
-        },
-        {
-          "name": "Scott Carson",
-          "position": "GK"
-        },
-        {
-          "name": "Rúben Dias",
-          "position": "CB"
-        },
-        {
-          "name": "Nathan Aké",
-          "position": "LB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Manuel Akanji",
-          "position": "CB"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "Luke Mbete",
-          "position": "CB"
-        },
-        {
-          "name": "Sergio Gómez",
-          "position": "CB"
-        },
-        {
-          "name": "Josh Wilson-Esbrand",
-          "position": "CB"
-        },
-        {
-          "name": "Benjamin Mendy",
-          "position": "CB"
-        },
-        {
-          "name": "Nico O'Reilly",
-          "position": "CB"
-        },
-        {
-          "name": "João Cancelo",
-          "position": "RB"
-        },
-        {
-          "name": "Rico Lewis",
-          "position": "CB"
-        },
-        {
-          "name": "Kyle Walker",
-          "position": "RB"
-        },
-        {
-          "name": "Rodri",
-          "position": "DM"
-        },
-        {
-          "name": "Kalvin Phillips",
-          "position": "CM"
-        },
-        {
-          "name": "Máximo Perrone",
-          "position": "CM"
-        },
-        {
-          "name": "Claudio Gomes",
-          "position": "CM"
-        },
-        {
-          "name": "Shea Charles",
-          "position": "CM"
-        },
-        {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
-        },
-        {
-          "name": "Alex Robertson",
-          "position": "CM"
-        },
-        {
-          "name": "Phil Foden",
-          "position": "AM",
-          "rating": 90
-        },
-        {
-          "name": "Bernardo Silva",
-          "position": "RW"
-        },
-        {
-          "name": "Kevin De Bruyne",
-          "position": "AM"
-        },
-        {
-          "name": "Cole Palmer",
-          "position": "AM",
+          "position": "GK",
+          "marketValue": 40000000,
           "rating": 88
         },
         {
-          "name": "Jack Grealish",
-          "position": "ST"
+          "name": "Stefan Ortega",
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
         },
         {
-          "name": "Riyad Mahrez",
-          "position": "ST"
+          "name": "Zack Steffen",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
         },
         {
-          "name": "Ben Knight",
-          "position": "ST"
+          "name": "Scott Carson",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Manuel Akanji",
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 86
+        },
+        {
+          "name": "Nathan Aké",
+          "position": "CB",
+          "marketValue": 42000000,
+          "rating": 85
+        },
+        {
+          "name": "Rico Lewis",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 82
+        },
+        {
+          "name": "Sergio Gómez",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 80
+        },
+        {
+          "name": "Nico O'Reilly",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 79
+        },
+        {
+          "name": "Luke Mbete",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Josh Wilson-Esbrand",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Benjamin Mendy",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 92
+        },
+        {
+          "name": "Rodri",
+          "position": "CM",
+          "marketValue": 90000000,
+          "rating": 90
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM",
+          "marketValue": 110000000,
+          "rating": 90
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 88
+        },
+        {
+          "name": "Kalvin Phillips",
+          "position": "CM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Máximo Perrone",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Claudio Gomes",
+          "position": "CM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Alex Robertson",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Shea Charles",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
         },
         {
           "name": "Erling Haaland",
           "position": "ST",
+          "marketValue": 180000000,
           "rating": 95
         },
         {
           "name": "Julián Alvarez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 91
+        },
+        {
+          "name": "Jack Grealish",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Riyad Mahrez",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
         },
         {
           "name": "Liam Delap",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ben Knight",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
         }
       ],
       "ratings": {
@@ -1716,150 +1476,219 @@
       "players": [
         {
           "name": "Ederson",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 35000000,
+          "rating": 88
         },
         {
           "name": "Stefan Ortega",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
         },
         {
           "name": "Zack Steffen",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "True Grant",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Scott Carson",
-          "position": "GK"
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
         },
         {
           "name": "Rúben Dias",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 80000000,
+          "rating": 90
         },
         {
           "name": "Josko Gvardiol",
-          "position": "LB"
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 90
         },
         {
           "name": "Manuel Akanji",
-          "position": "CB"
-        },
-        {
-          "name": "Nathan Aké",
-          "position": "LB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Taylor Harwood-Bellis",
-          "position": "CB"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "position": "CB"
-        },
-        {
-          "name": "Max Alleyne",
-          "position": "CB"
-        },
-        {
-          "name": "Sergio Gómez",
-          "position": "CB"
-        },
-        {
-          "name": "Josh Wilson-Esbrand",
-          "position": "CB"
-        },
-        {
-          "name": "Matheus Nunes",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
         },
         {
           "name": "Rico Lewis",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "Taylor Harwood-Bellis",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Nathan Aké",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 85
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 84
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 84
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 83
         },
         {
           "name": "Kyle Walker",
-          "position": "RB"
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 82
         },
         {
           "name": "Issa Kaboré",
-          "position": "CB"
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Sergio Gómez",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 80
+        },
+        {
+          "name": "Josh Wilson-Esbrand",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Max Alleyne",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 92
         },
         {
           "name": "Rodri",
-          "position": "DM"
-        },
-        {
-          "name": "Kalvin Phillips",
-          "position": "CM"
-        },
-        {
-          "name": "Máximo Perrone",
-          "position": "CM"
-        },
-        {
-          "name": "Mahamadou Susoho",
-          "position": "CM"
-        },
-        {
-          "name": "Jacob Wright",
-          "position": "CM"
-        },
-        {
-          "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 120000000,
+          "rating": 90
         },
         {
           "name": "Phil Foden",
-          "position": "AM",
+          "position": "CM",
+          "marketValue": 150000000,
+          "rating": 90
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "marketValue": 50000000,
           "rating": 90
         },
         {
           "name": "Cole Palmer",
-          "position": "AM",
+          "position": "CM",
+          "marketValue": 80000000,
           "rating": 88
         },
         {
-          "name": "Bernardo Silva",
-          "position": "RW"
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
         },
         {
-          "name": "Kevin De Bruyne",
-          "position": "AM"
+          "name": "Kalvin Phillips",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
         },
         {
           "name": "James McAtee",
-          "position": "CM"
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
         },
         {
-          "name": "Jérémy Doku",
-          "position": "ST"
+          "name": "Máximo Perrone",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
         },
         {
-          "name": "Jack Grealish",
-          "position": "ST"
+          "name": "Mahamadou Susoho",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
         },
         {
-          "name": "Micah Hamilton",
-          "position": "ST"
-        },
-        {
-          "name": "Oscar Bobb",
-          "position": "ST"
+          "name": "Jacob Wright",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
         },
         {
           "name": "Erling Haaland",
           "position": "ST",
+          "marketValue": 180000000,
           "rating": 95
         },
         {
           "name": "Julián Alvarez",
-          "position": "ST"
+          "position": "ST",
+          "marketValue": 90000000,
+          "rating": 91
+        },
+        {
+          "name": "Jack Grealish",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Jérémy Doku",
+          "position": "ST",
+          "marketValue": 65000000,
+          "rating": 85
+        },
+        {
+          "name": "Oscar Bobb",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Micah Hamilton",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
         }
       ],
       "ratings": {
@@ -1872,7 +1701,7 @@
       "teamLabel": "Manchester City (2023-24)"
     },
     "2025": {
-      "formation": "4-3-3",
+      "formation": "4-4-2",
       "players": [
         {
           "name": "Gianluigi Donnarumma",
@@ -1884,7 +1713,7 @@
           "name": "James Trafford",
           "position": "GK",
           "marketValue": 25000000,
-          "rating": 85
+          "rating": 79
         },
         {
           "name": "Marcus Bettinelli",
@@ -1894,27 +1723,21 @@
         },
         {
           "name": "Josko Gvardiol",
-          "position": "LB",
-          "marketValue": 70000000,
-          "rating": 90
-        },
-        {
-          "name": "Marc Guéhi",
           "position": "CB",
-          "marketValue": 65000000,
+          "marketValue": 70000000,
           "rating": 90
         },
         {
           "name": "Rúben Dias",
           "position": "CB",
           "marketValue": 60000000,
-          "rating": 89
+          "rating": 90
         },
         {
-          "name": "Abdukodir Khusanov",
+          "name": "Rayan Aït-Nouri",
           "position": "CB",
-          "marketValue": 35000000,
-          "rating": 87
+          "marketValue": 40000000,
+          "rating": 88
         },
         {
           "name": "Rico Lewis",
@@ -1923,15 +1746,15 @@
           "rating": 87
         },
         {
-          "name": "Nico O'Reilly",
+          "name": "Marc Guéhi",
           "position": "CB",
-          "marketValue": 50000000,
+          "marketValue": 65000000,
           "rating": 85
         },
         {
-          "name": "Rayan Aït-Nouri",
+          "name": "Nathan Aké",
           "position": "CB",
-          "marketValue": 40000000,
+          "marketValue": 15000000,
           "rating": 85
         },
         {
@@ -1941,10 +1764,10 @@
           "rating": 84
         },
         {
-          "name": "Nathan Aké",
-          "position": "LB",
-          "marketValue": 15000000,
-          "rating": 84
+          "name": "Abdukodir Khusanov",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 83
         },
         {
           "name": "Matheus Nunes",
@@ -1959,46 +1782,52 @@
           "rating": 82
         },
         {
-          "name": "Rodri",
-          "position": "DM",
-          "marketValue": 65000000,
+          "name": "Nico O'Reilly",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 79
+        },
+        {
+          "name": "Bernardo Silva",
+          "position": "CM",
+          "marketValue": 27000000,
           "rating": 92
         },
         {
-          "name": "Tijjani Reijnders",
+          "name": "Rodri",
           "position": "CM",
-          "marketValue": 60000000,
+          "marketValue": 65000000,
           "rating": 90
         },
         {
           "name": "Phil Foden",
-          "position": "AM",
+          "position": "CM",
           "marketValue": 80000000,
           "rating": 90
-        },
-        {
-          "name": "Bernardo Silva",
-          "position": "RW",
-          "marketValue": 27000000,
-          "rating": 88
         },
         {
           "name": "Nico González",
           "position": "CM",
           "marketValue": 45000000,
-          "rating": 85
+          "rating": 88
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 87
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 86
         },
         {
           "name": "Sverre Nypan",
           "position": "CM",
           "marketValue": 15000000,
           "rating": 84
-        },
-        {
-          "name": "Mateo Kovacic",
-          "position": "CM",
-          "marketValue": 12000000,
-          "rating": 83
         },
         {
           "name": "Rayan Cherki",
@@ -2013,28 +1842,28 @@
           "rating": 95
         },
         {
+          "name": "Savinho",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
           "name": "Jérémy Doku",
           "position": "ST",
           "marketValue": 65000000,
-          "rating": 90
+          "rating": 85
+        },
+        {
+          "name": "Omar Marmoush",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 85
         },
         {
           "name": "Antoine Semenyo",
           "position": "ST",
           "marketValue": 75000000,
-          "rating": 90
-        },
-        {
-          "name": "Savinho",
-          "position": "RW",
-          "marketValue": 40000000,
-          "rating": 86
-        },
-        {
-          "name": "Omar Marmoush",
-          "position": "RW",
-          "marketValue": 60000000,
-          "rating": 85
+          "rating": 84
         }
       ],
       "ratings": {
@@ -2045,69 +1874,8 @@
       },
       "source": "Transfermarkt — Manchester City (2025/2026)",
       "teamLabel": "Manchester City (2025-26)"
-    },
-    "2026": {
-      "found": true,
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "James Trafford",
-          "position": "GK"
-        },
-        {
-          "name": "Rúben Dias",
-          "position": "RB"
-        },
-        {
-          "name": "John Stones",
-          "position": "CB"
-        },
-        {
-          "name": "Nathan Aké",
-          "position": "LB"
-        },
-        {
-          "name": "Marc Guéhi",
-          "position": "LB"
-        },
-        {
-          "name": "Tijjani Reijnders",
-          "position": "DM"
-        },
-        {
-          "name": "Mateo Kovačić",
-          "position": "CM"
-        },
-        {
-          "name": "Rayan Cherki",
-          "position": "CM"
-        },
-        {
-          "name": "Omar Marmoush",
-          "position": "RW"
-        },
-        {
-          "name": "Erling Haaland",
-          "position": "ST",
-          "rating": 95
-        },
-        {
-          "name": "Ryan McAidoo",
-          "position": "LW"
-        }
-      ],
-      "ratings": {
-        "attack": 84,
-        "midfield": 82,
-        "defense": 80,
-        "goalkeeping": 78
-      },
-      "source": "Wikipedia — \"Manchester City F.C.\"",
-      "teamLabel": "Manchester City (2026)"
     }
   },
   "id": 281,
-  "name": "Manchester City",
-  "badgeLocalPath": "/img/badges/manchester-city.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "name": "Manchester City"
 }
