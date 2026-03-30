@@ -747,7 +747,7 @@ const TRN = (() => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
         const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
-        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era });
+        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era, ovr: t.ovr || null });
       });
       _renderTeamSlots();
     } catch (_) { /* ignore */ }
@@ -845,7 +845,7 @@ const TRN = (() => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
         const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
-        return { slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era };
+        return { slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era, ovr: t.ovr || null };
       };
 
       _teams = leagueTeams.map(teamFromEntry);
@@ -1486,10 +1486,10 @@ const TRN = (() => {
         const a = bracket[i], b = bracket[i + 1];
         if (_rules.idaVuelta && !isFinal) {
           // Two legs
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i,       penalties: false });
-          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era, eraB: a.era, salt: n * 100 + i + 50, penalties: false });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i,       penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null });
+          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era, eraB: a.era, salt: n * 100 + i + 50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null });
         } else {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: _rules.penalties, isFinal });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: _rules.penalties, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null });
         }
       }
 
@@ -1552,7 +1552,7 @@ const TRN = (() => {
 
   // Helper: simulate a single knockout match
   async function _simSingleKO(a, b, salt) {
-    const res = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt, penalties: true }]);
+    const res = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt, penalties: true, ovrA: a.ovr||null, ovrB: b.ovr||null }]);
     const r = res[0];
     const winner = r.penA !== null ? (r.penA > r.penB ? a : b) : (r.scoreA > r.scoreB ? a : b);
     return { match: { a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB, scorersA: r.scorersA||[], scorersB: r.scorersB||[], mom: r.mom||null, stats: r.stats||null, winner, legs: 1 }, winner };
@@ -1600,6 +1600,7 @@ const TRN = (() => {
       _setProgress(`${t('trn-progress-league')} (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length})`, 5 + Math.round(b / fixtures.length * 90));
       const specs = chunk.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era, eraB: f.b.era, salt: b + i + 9000, penalties: false,
+        ovrA: f.a.ovr || null, ovrB: f.b.ovr || null,
       }));
       const res = await _bulkSim(specs);
       chunk.forEach((f, i) => {
@@ -1649,6 +1650,7 @@ const TRN = (() => {
 
       const specs = grpFixtures.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '', salt: (g + 1) * 300 + i, penalties: false,
+        ovrA: f.a.ovr || null, ovrB: f.b.ovr || null,
       }));
       const res = await _bulkSim(specs);
       grpFixtures.forEach((f, i) => {
@@ -1728,10 +1730,10 @@ const TRN = (() => {
       for (let i = 0; i < n; i += 2) {
         const a = bracket[i], b = bracket[i + 1];
         if (idaVuelta && !isFinal) {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*100+i,    penalties: false });
-          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era||'', eraB: a.era||'', salt: n*100+i+50, penalties: false });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*100+i,    penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null });
+          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era||'', eraB: a.era||'', salt: n*100+i+50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null });
         } else {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*500+i, penalties: true, isFinal });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*500+i, penalties: true, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null });
         }
       }
 

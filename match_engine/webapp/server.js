@@ -85,7 +85,16 @@ for (const file of _squadFiles) {
     const nameEn = d.nameEn || d.name || slug;
     const nameEs = d.nameEs || d.nameEn || d.name || slug;
     const badge = d.badgeLocalPath || BADGE_PLACEHOLDER;
-    CATALOG.push({ slug, nameEn, nameEs, name: nameEn, badge, seasons, group });
+    // Compute team OVR: average of deriveRatings() using good scraped data when available,
+    // otherwise pure name-based heuristic. Stored so the tournament can bias match xG.
+    const _latestSn      = seasons[0];
+    const _latestSnData  = d.seasons[_latestSn];
+    const _snRaw         = _latestSnData?.ratings;
+    const _snAvg         = _snRaw ? (_snRaw.attack + _snRaw.midfield + _snRaw.defense + (_snRaw.goalkeeping || 70)) / 4 : 0;
+    const _scrRatings    = (_snRaw && _snAvg >= 70) ? _snRaw : null;
+    const _dr            = deriveRatings(nameEs, _latestSn, _scrRatings);
+    const ovr            = Math.round((_dr.attack + _dr.midfield + _dr.defense + _dr.goalkeeping) / 4);
+    CATALOG.push({ slug, nameEn, nameEs, name: nameEn, badge, seasons, group, ovr });
   } catch (_) {}
 }
 // Sort by group order then alphabetically within group
@@ -551,7 +560,7 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 // Batch simulator for tournaments. Accepts up to 50 match pairs, returns
 // minimal results (score + optional penalties) — no narrative, no badges.
 // Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
-app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
+app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), async (req, res) => {
   try {
     const { matches, lang: reqLang = 'es' } = req.body;
     const lang = reqLang === 'en' ? 'en' : 'es';
@@ -566,6 +575,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
     const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
 
     // Build pairs and collect unique team lookup keys
+    const _clampOvr = (v) => (v != null) ? Math.max(60, Math.min(99, Math.trunc(Number(v)) || 0)) || null : null;
     const teamPairs = matches.map((m, i) => ({
       slugA:    _resolveTeamSlug(sanitise(m.teamA)),
       slugB:    _resolveTeamSlug(sanitise(m.teamB)),
@@ -574,6 +584,8 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       salt:     (Math.trunc(Number(m.salt || i)) || 0) & 0x7fffffff,
       penalties: !!m.penalties,
       isFinal:  !!m.isFinal,
+      ovrA:     _clampOvr(m.ovrA),
+      ovrB:     _clampOvr(m.ovrB),
     }));
 
     // Resolve unique team lookups in parallel (shared cache)
@@ -592,6 +604,15 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       teamCache.set(key, r);
     }));
 
+    // Convert OVR scalar (60–99) → synthetic ATK/MID/DEF/GK for biasing deriveRatings.
+    // The four offsets average to zero so avg(result) == ovr.
+    const _ovrToRatings = (ovr) => ({
+      attack:      Math.min(99, ovr + 3),
+      midfield:    ovr,
+      defense:     Math.max(60, ovr - 1),
+      goalkeeping: Math.max(60, ovr - 2),
+    });
+
     // Simulate each match (synchronous — no timeline/narrative needed)
     const results = teamPairs.map(pair => {
       const luA = teamCache.get(lookupKey(pair.slugA, pair.eraA)) || { found: false };
@@ -603,11 +624,16 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       const dispA  = entryA ? (lang === 'en' ? entryA.nameEn : entryA.nameEs) : pair.slugA;
       const dispB  = entryB ? (lang === 'en' ? entryB.nameEn : entryB.nameEs) : pair.slugB;
 
+      // When tournament provides ovr values, patch the lineup's ratings to ensure
+      // teams with higher overall strength generate proportionally more expected goals.
+      const effLuA = pair.ovrA ? { ...luA, ratings: _ovrToRatings(pair.ovrA) } : luA;
+      const effLuB = pair.ovrB ? { ...luB, ratings: _ovrToRatings(pair.ovrB) } : luB;
+
       const params = {
         teamA: dispA, teamB: dispB,
         eraA: pair.eraA, eraB: pair.eraB,
-        formationA: luA.formation || '', formationB: luB.formation || '',
-        cachedLineupA: luA, cachedLineupB: luB,
+        formationA: effLuA.formation || '', formationB: effLuB.formation || '',
+        cachedLineupA: effLuA, cachedLineupB: effLuB,
         matchMode: '11v11',
         matchSalt: pair.salt,
         refereeId: null, isFinal: pair.isFinal, weatherId: null,
@@ -619,7 +645,8 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       let penA = null, penB = null;
 
       if (pair.penalties && scoreA === scoreB) {
-        const pen = simulateMatch({ ...params, matchMode: 'penalties', matchSalt: (pair.salt + 37) & 0x7fffffff });
+        const penParams = { ...params, cachedLineupA: effLuA, cachedLineupB: effLuB };
+        const pen = simulateMatch({ ...penParams, matchMode: 'penalties', matchSalt: (pair.salt + 37) & 0x7fffffff });
         penA = pen.finalScore.teamA;
         penB = pen.finalScore.teamB;
         if (penA === penB) { penA = 5; penB = 4; }  // guaranteed winner
