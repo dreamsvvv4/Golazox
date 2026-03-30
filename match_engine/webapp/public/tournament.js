@@ -2187,7 +2187,9 @@ const TRN = (() => {
       console.error('[_renderSummary]', err);
       el.innerHTML = `<p style="padding:1rem;color:rgba(255,255,255,.5)">Error al renderizar resumen: ${_esc(err.message)}</p>`;
     }
-  }Dream XI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  }
+
+  // ── Dream XI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   async function _buildDreamXI(d) {
     // Build composite player score: goalsÃ—1 + MOMÃ—2
     const pm = {};
@@ -2210,12 +2212,8 @@ const TRN = (() => {
     // Fetch positions from /lookup for all unique team slugs in top 30
     const top30 = players.slice(0, 30);
     const teamKeys = [...new Set(top30.map(p => p.teamSlug + '|' + (p.era || '')))].filter(k => k.split('|')[0]);
-    const lookupResults = await Promise.allSettled(teamKeys.map(k => {
-      cdiv id="trn-xi-section">
-        <h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3>
-        <div class="trn-xi-loading"><div class="trn-spinner"></div></div>
-      </div>
-      <h3 class="trn-section-h trn-section-h-mtf('|');
+        const lookupResults = await Promise.allSettled(teamKeys.map(k => {
+      const idx = k.indexOf('|');
       const slug = k.slice(0, idx);
       const era  = k.slice(idx + 1);
       return fetch(`/lookup?team=${encodeURIComponent(slug)}&era=${encodeURIComponent(era)}`)
@@ -2372,10 +2370,14 @@ const TRN = (() => {
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
             <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
-    _loadDreamXI(d);
-    _loadDreamXI(d);
-  }
+          </div>`).join('')}
+      </div>
+      <div id="trn-xi-section">
+        <h3 class="trn-section-h">🌟 Once Ideal del Torneo</h3>
+        <div class="trn-xi-loading"><div class="trn-spinner"></div></div>
+      </div>
       ${_renderDestacados(allMatches)}`;
+    _loadDreamXI(d);
   }
 
   // â”€â”€ Form guide (last N results for a team in Liga) â”€â”€â”€â”€â”€â”€â”€â”€
