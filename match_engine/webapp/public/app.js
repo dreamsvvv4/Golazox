@@ -799,11 +799,11 @@ function _histRender() {
     const badgeSrcB = h.badgeB || `/img/badges/${h.slugB}.svg`;
     const PH = '/img/badges/_placeholder.svg';
     return `<div class="mh-row" data-hist-idx="${i}" title="Volver a simular este partido">
-      <img class="mh-badge" src="${escHtml(badgeSrcA)}" onerror="this.src='${PH}'" alt="">
+      <img class="mh-badge" src="${escHtml(badgeSrcA)}" alt="">
       <span class="mh-name">${escHtml(h.nameA)}${eA}</span>
       <span class="mh-score">${h.scoreA}–${h.scoreB}</span>
       <span class="mh-name mh-name-b">${escHtml(h.nameB)}${eB}</span>
-      <img class="mh-badge" src="${escHtml(badgeSrcB)}" onerror="this.src='${PH}'" alt="">
+      <img class="mh-badge" src="${escHtml(badgeSrcB)}" alt="">
       <span class="mh-date">${date}</span>
     </div>`;
   }).join('');
@@ -1418,7 +1418,7 @@ function _renderPicker(side) {
     const displayName = _entryName(entry) || chosenName;
     container.innerHTML =
       `<div class="tp-chosen">` +
-      `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
+      `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="">` +
       `<div class="tp-chosen-info">` +
         `<span class="tp-chosen-name">${escHtml(displayName)}</span>` +
         `<span class="tp-chosen-group">${escHtml(meta?.name || '')}</span>` +
@@ -1509,7 +1509,7 @@ function _renderPicker(side) {
       `<div class="tp-teams-grid">` +
       spTeams.map(t =>
         `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
-        `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy" onerror="this.src='${BADGE_PLACEHOLDER}'" >` +
+        `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
         `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
         `</button>`
       ).join('') +
@@ -1552,7 +1552,7 @@ function _renderPicker(side) {
     `<div class="tp-teams-grid">` +
     teams.map(t =>
       `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
-      `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy" onerror="this.src='${BADGE_PLACEHOLDER}'">` +
+      `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
       `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
       `</button>`
     ).join('') +
@@ -1606,6 +1606,20 @@ function _populateEraSelect(teamName, side) {
 const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
 function badgeOrPlaceholder(url) { return url || BADGE_PLACEHOLDER; }
 
+// Global image error fallback — replaces inline onerror attributes (CSP-safe)
+document.addEventListener('error', e => {
+  const img = e.target;
+  if (img.tagName !== 'IMG') return;
+  if (img.classList.contains('poster-badge') || img.id === 'trn-champ-badge-img') {
+    img.style.display = 'none';
+  } else if (img.classList.contains('spk-img') || img.classList.contains('ref-photo')) {
+    img.style.display = 'none';
+    if (img.nextElementSibling) img.nextElementSibling.style.display = 'flex';
+  } else if (!img.src.includes('_placeholder.svg')) {
+    img.src = BADGE_PLACEHOLDER;
+  }
+}, true);
+
 // ── Bootstrap ────────────────────────────────────────────
 window._refereesData = [];
 document.addEventListener('DOMContentLoaded', () => {
@@ -1640,7 +1654,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'spk-card';
       card.dataset.id = s.id;
       card.innerHTML =
-        `<img class="spk-img" src="${escHtml(s.img)}" alt="${escHtml(s.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>` +
+        `<img class="spk-img" src="${escHtml(s.img)}" alt="${escHtml(s.name)}" loading="lazy"/>` +
         `<div class="spk-img-placeholder" style="display:none">🏟️</div>` +
         `<div class="spk-name">${escHtml(s.name)}</div>` +
         `<div class="spk-city">${escHtml(s.city)}</div>`;
@@ -1795,8 +1809,7 @@ function _buildRefereePicker(referees) {
       const imgSrc = _refImgProxy(ref.img);
       card.innerHTML =
         `<div class="ref-photo-area">` +
-          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy"` +
-          ` onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` +
+          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy">` +
           `<div class="ref-initials-av" style="display:none;background:${grad}">${ini}</div>` +
         `</div>` +
         `<div class="ref-name">${escHtml(ref.name)}</div>` +
@@ -3301,7 +3314,7 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
 
   // Badge corner (team shield on card)
   const badgeCorner = badgeUrl
-    ? `<img class="pmc-badge" src="${escHtml(badgeUrl)}" alt="" onerror="this.src='${BADGE_PLACEHOLDER}'">`
+    ? `<img class="pmc-badge" src="${escHtml(badgeUrl)}" alt="">`
     : '';
 
   // Jersey number watermark
