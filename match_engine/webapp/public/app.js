@@ -26,7 +26,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
-    'btn-rivalry':'Rivalidades','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
+    'btn-rivalry':'Rivals','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
@@ -165,7 +165,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
-    'btn-rivalry':'Rivalries','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
+    'btn-rivalry':'Rivals','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
@@ -1028,7 +1028,7 @@ async function rivalryMe() {
   const match = HISTORIC_MATCHES[Math.floor(Math.random() * HISTORIC_MATCHES.length)];
   const entryA = _catalog.find(c => c.slug === match.a.slug);
   const entryB = _catalog.find(c => c.slug === match.b.slug);
-  if (!entryA || !entryB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivalidades')); return; }
+  if (!entryA || !entryB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivals')); return; }
 
   // Set teams + eras
   document.getElementById('teamA').value = match.a.slug;
@@ -1067,7 +1067,7 @@ async function rivalryMe() {
   } finally {
     if (btn)    { btn.disabled = false; btn.classList.remove('btn-rivalry--loading'); }
     if (iconEl) iconEl.textContent = '🔥';
-    if (lblEl)  lblEl.textContent  = t('btn-rivalry') || 'Rivalidades';
+    if (lblEl)  lblEl.textContent  = t('btn-rivalry') || 'Rivals';
   }
 
   _gx('rivalry_me', { rivalry: match.label });
@@ -1762,7 +1762,7 @@ function _updateClashButton() {
       <div class="clash-logo-wrap">
         <img class="clash-logo-img" src="/golazox-coin.png?v=2" alt="GolazOX" draggable="false" />
       </div>`;
-    if (lbl) { lbl.textContent = t('vs-simulate'); lbl.classList.add('visible'); }
+    if (lbl) { lbl.textContent = t('vs-simulate'); lbl.classList.add('visible'); lbl.onclick = handleSimulate; lbl.style.cursor = 'pointer'; }
     btn.onclick = handleSimulate;
   } else {
     // Default — lineups not ready yet
@@ -1770,7 +1770,7 @@ function _updateClashButton() {
     btn.style.removeProperty('--clash-a');
     btn.style.removeProperty('--clash-b');
     btn.innerHTML = '<span>VS</span>';
-    if (lbl) { lbl.textContent = ''; lbl.classList.remove('visible'); }
+    if (lbl) { lbl.textContent = ''; lbl.classList.remove('visible'); lbl.onclick = null; lbl.style.cursor = ''; }
     btn.onclick = null;
   }
 }
