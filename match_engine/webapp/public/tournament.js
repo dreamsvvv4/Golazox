@@ -104,8 +104,8 @@ const TRN = (() => {
       detailEl.innerHTML = `
         <label class="trn-rule-row">
           <div class="trn-rule-body">
-            <span class="trn-rule-name">Fase de grupos</span>
-            <span class="trn-rule-hint">Partido único por jornada · o activa ida y vuelta en grupos</span>
+            <span class="trn-rule-name">${t('trn-rule-group-stage')}</span>
+            <span class="trn-rule-hint">${t('trn-rule-group-hint')}</span>
           </div>
           <div class="trn-toggle-wrap">
             <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
@@ -114,8 +114,8 @@ const TRN = (() => {
         </label>
         <label class="trn-rule-row">
           <div class="trn-rule-body">
-            <span class="trn-rule-name">Fase eliminatoria</span>
-            <span class="trn-rule-hint">Ida y vuelta en rondas KO · la final siempre a partido único</span>
+            <span class="trn-rule-name">${t('trn-rule-ko-stage')}</span>
+            <span class="trn-rule-hint">${t('trn-rule-ko-hint')}</span>
           </div>
           <div class="trn-toggle-wrap">
             <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
@@ -126,8 +126,8 @@ const TRN = (() => {
       detailEl.innerHTML = `
         <label class="trn-rule-row">
           <div class="trn-rule-body">
-            <span class="trn-rule-name">Formato de partido</span>
-            <span class="trn-rule-hint">Partido único · o activa ida y vuelta por ronda</span>
+            <span class="trn-rule-name">${t('trn-rule-match-fmt')}</span>
+            <span class="trn-rule-hint">${t('trn-rule-match-fmt-hint')}</span>
           </div>
           <div class="trn-toggle-wrap">
             <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
@@ -136,8 +136,8 @@ const TRN = (() => {
         </label>
         <label class="trn-rule-row">
           <div class="trn-rule-body">
-            <span class="trn-rule-name">Desempate</span>
-            <span class="trn-rule-hint">Empate: penaltis directos · o activa prórroga primero</span>
+            <span class="trn-rule-name">${t('trn-rule-tiebreak')}</span>
+            <span class="trn-rule-hint">${t('trn-rule-tiebreak-hint')}</span>
           </div>
           <div class="trn-toggle-wrap">
             <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
@@ -146,8 +146,8 @@ const TRN = (() => {
         </label>
         <label class="trn-rule-row">
           <div class="trn-rule-body">
-            <span class="trn-rule-name">Partido por el 3er puesto</span>
-            <span class="trn-rule-hint">Los semifinalistas eliminados juegan por el 3er puesto</span>
+            <span class="trn-rule-name">${t('trn-rule-third')}</span>
+            <span class="trn-rule-hint">${t('trn-rule-third-hint')}</span>
           </div>
           <div class="trn-toggle-wrap">
             <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
@@ -184,7 +184,7 @@ const TRN = (() => {
 
 
   function goStep2() {
-    if (!_fmt) { _showToast('⚠ Selecciona un formato primero.'); return; }
+    if (!_fmt) { _showToast(t('trn-toast-no-fmt')); return; }
     // _numTeams already updated by setNumTeams / _buildNumTeamsPicker
     const container = $('trn-rules-list');
     if (container) {
@@ -193,8 +193,8 @@ const TRN = (() => {
         html = `
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Modalidad</span>
-              <span class="trn-rule-hint">Solo KO directo · o activa con fase de grupos previa</span>
+              <span class="trn-rule-name">${t('trn-rule-modality')}</span>
+              <span class="trn-rule-hint">${t('trn-rule-modality-hint')}</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-copa-groups" class="trn-toggle-input"${_rules.copaMode === 'groups' ? ' checked' : ''} />
@@ -211,8 +211,8 @@ const TRN = (() => {
         html = `
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Vueltas</span>
-              <span class="trn-rule-hint">Solo ida (más rápido) · o activa doble vuelta completa</span>
+              <span class="trn-rule-name">${t('trn-rule-legs')}</span>
+              <span class="trn-rule-hint">${t('trn-rule-legs-hint')}</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
@@ -223,8 +223,8 @@ const TRN = (() => {
         html = `
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Fase de grupos</span>
-              <span class="trn-rule-hint">Partido único en grupos · o activa ida y vuelta</span>
+              <span class="trn-rule-name">${t('trn-rule-group-stage')}</span>
+              <span class="trn-rule-hint">${t('trn-rule-group-hint2')}</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
@@ -233,8 +233,8 @@ const TRN = (() => {
           </label>
           <label class="trn-rule-row">
             <div class="trn-rule-body">
-              <span class="trn-rule-name">Fase eliminatoria</span>
-              <span class="trn-rule-hint">Ida y vuelta en rondas KO · la final siempre a partido único</span>
+              <span class="trn-rule-name">${t('trn-rule-ko-stage')}</span>
+              <span class="trn-rule-hint">${t('trn-rule-ko-hint')}</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
@@ -292,7 +292,7 @@ const TRN = (() => {
         ${yr ? `<span class="trn-slot-era">'${yr.slice(2)}</span>` : ''}
         <button class="trn-slot-remove" data-remove-idx="${i}" title="Quitar">✕</button>
       </div>`;
-    }).join('') || '<p class="trn-teams-empty">Ningún equipo añadido todavía.<br><span style="font-size:.75rem;opacity:.6">Busca por nombre, país o usa ⚡ Aleatorio</span></p>';
+    }).join('') || `<p class="trn-teams-empty">${t('trn-teams-empty-1')}<br><span style="font-size:.75rem;opacity:.6">${t('trn-teams-empty-2')}</span></p>`;
 
     // Update count display
     const countEl = $('trn-teams-count');
@@ -353,13 +353,13 @@ const TRN = (() => {
     el.classList.remove('hidden');
     if (_fmt === 'copa') {
       const ROUND_NAMES = {
-        4: 'Semifinales', 8: 'Cuartos de final',
-        16: 'Octavos de final', 32: 'Dieciseisavos', 64: 'Treinta y dos avos',
+        4: t('trn-round-semi'), 8: t('trn-round-qf'),
+        16: t('trn-round-r16'), 32: t('trn-round-r32'), 64: t('trn-round-r64'),
       };
-      const roundName = ROUND_NAMES[_numTeams] || `Primera ronda (${_numTeams / 2} eliminatorias)`;
+      const roundName = ROUND_NAMES[_numTeams] || `${t('trn-round-default')} (${_numTeams / 2})`;
       let html = `<div class="trn-draw-header">
         <span class="trn-label">🎲 ${_esc(roundName)}</span>
-        <button class="trn-draw-reshuffle" data-action="reshuffleDraw">🔀 Nuevo sorteo</button>
+        <button class="trn-draw-reshuffle" data-action="reshuffleDraw">${t('trn-draw-reshuffle')}</button>
       </div><div class="trn-copa-draw-grid">`;
       _draw.forEach((m, i) => {
         html += `<div class="trn-copa-draw-match">
@@ -373,12 +373,12 @@ const TRN = (() => {
       el.innerHTML = html;
     } else if (_fmt === 'champions') {
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">🎲 Sorteo de grupos</span>
-        <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">🔀 Nuevo sorteo</button>
+        <span class="trn-label">${t('trn-draw-groups-title')}</span>
+        <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">${t('trn-draw-reshuffle')}</button>
       </div><div class="trn-groups-draw-grid">`;
       _groupsDraw.forEach((grp, g) => {
         html += `<div class="trn-group-draw-card">
-          <div class="trn-group-draw-label">Grupo ${String.fromCharCode(65 + g)}</div>
+          <div class="trn-group-draw-label">${t('trn-draw-group-prefix')}${String.fromCharCode(65 + g)}</div>
           ${grp.map(t => `<div class="trn-group-draw-team">${_badgeImg(t.slug,'trn-draw-badge')} <span>${_esc(t.name)}</span></div>`).join('')}
         </div>`;
       });
@@ -522,15 +522,15 @@ const TRN = (() => {
     const n = parseInt(localStorage.getItem('gx_sim_count') || '0', 10) || 0;
     const remaining = Math.max(0, 5 - n);
     const msg = remaining > 0
-      ? `🔒 Equipo legendario bloqueado · ${remaining} simulación${remaining !== 1 ? 'es' : ''} más para desbloquear`
-      : '🔒 Equipo legendario bloqueado · Comparte en Twitter para desbloquear';
+      ? `🔒 ${t('trn-locked-prefix')} · ${remaining} ${remaining !== 1 ? t('trn-locked-sim-n') : t('trn-locked-sim-1')}`
+      : `🔒 ${t('trn-locked-prefix')} · ${t('trn-locked-share-cta')}`;
     _showToast(msg);
   }
 
   function addTeam(slug, name, era = '', badge = '') {
     if (_teams.length >= _numTeams) return;
     if (_teams.some(t => t.slug === slug && (t.era || '') === (era || ''))) {
-      _showToast('⚠ Ya tienes ese equipo con la misma temporada.');
+      _showToast(t('trn-toast-duplicate'));
       return;
     }
     if (badge) _badgeCache[slug] = badge;
@@ -745,7 +745,7 @@ const TRN = (() => {
     try {
       const catalog = await _getTrnCatalog();
       const leagueTeams = catalog.filter(c => c.group === groupKey);
-      if (!leagueTeams.length) { _showToast('Sin equipos en esta liga'); return; }
+      if (!leagueTeams.length) { _showToast(t('trn-toast-no-teams')); return; }
 
       const teamFromEntry = t => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
@@ -784,7 +784,7 @@ const TRN = (() => {
       _showToast(msg);
       try { _gx('trn_load_real_league', { league: groupKey, count: _teams.length }); } catch(_) {}
     } catch (_) {
-      _showToast('Error al cargar la liga.');
+      _showToast(t('trn-toast-league-err'));
     }
   }
   // ── Bulk simulation call ─────────────────────────────────
@@ -811,7 +811,7 @@ const TRN = (() => {
     if (_teams.length !== _numTeams) return;
     show($('trn-progress'));
     hide($('trn-step-3-actions'));
-    _setProgress('Iniciando simulación…', 0);
+    _setProgress(t('trn-progress-starting'), 0);
     try { _gx('trn_simulate_start', { format: _fmt, teams: _numTeams }); } catch(_) {}
 
     try {
@@ -833,7 +833,7 @@ const TRN = (() => {
     } catch (err) {
       _stopTrnLoadCycle();
       console.error('[TRN]', err);
-      $('trn-progress-text').textContent = '⚠ Error en la simulación. Inténtalo de nuevo.';
+      $('trn-progress-text').textContent = t('trn-sim-error');
       show($('trn-step-3-actions'));
     }
   }
@@ -853,12 +853,12 @@ const TRN = (() => {
         await navigator.share({ files: [file], title: `🏆 ${_data.champion?.name || 'GolazoX'} — GolazoX` });
       } else {
         _scDownload(blob, fileName);
-        _showToast('🖼 Póster descargado');
+        _showToast(t('trn-toast-poster-ok'));
       }
     } catch (err) {
       if (err?.name !== 'AbortError') {
         console.error('[TRN poster]', err);
-        _showToast('⚠ No se pudo generar el póster');
+        _showToast(t('trn-toast-poster-fail'));
       }
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = '📤 Compartir'; }
@@ -959,7 +959,7 @@ const TRN = (() => {
     ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
     ctx.fillStyle = GOLD + 'cc';
-    ctx.fillText('CAMPEÓN DEL TORNEO', W / 2, 655);
+    ctx.fillText(t('trn-poster-champ-lbl'), W / 2, 655);
 
     const champName = _scSafe(d.champion?.name || '—');
     const champFontSz = champName.length > 18 ? 52 : champName.length > 14 ? 62 : champName.length > 10 ? 72 : 80;
@@ -981,7 +981,7 @@ const TRN = (() => {
     if (d.format === 'liga' && d.table) {
       ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
       ctx.fillStyle = DIM2; ctx.textAlign = 'center';
-      ctx.fillText('CLASIFICACIÓN FINAL', W / 2, curY);
+      ctx.fillText(t('trn-poster-standings'), W / 2, curY);
       curY += 56;
 
       const podium  = d.table.slice(0, 3);
@@ -1025,7 +1025,7 @@ const TRN = (() => {
       if (fin) {
         ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
         ctx.fillStyle = DIM2; ctx.textAlign = 'center';
-        ctx.fillText('GRAN FINAL', W / 2, curY);
+        ctx.fillText(t('trn-poster-final'), W / 2, curY);
         curY += 60;
 
         const [imgA, imgB] = await Promise.all([
@@ -1069,7 +1069,7 @@ const TRN = (() => {
     // ── Individual Awards ─────────────────────────────────────
     ctx.font = '600 28px "Rajdhani",Arial,sans-serif';
     ctx.fillStyle = DIM2; ctx.textAlign = 'center';
-    ctx.fillText('PREMIOS INDIVIDUALES', W / 2, curY);
+    ctx.fillText(t('trn-poster-awards'), W / 2, curY);
     curY += 56;
 
     if (d.pichichi?.[0]) {
@@ -1078,14 +1078,14 @@ const TRN = (() => {
       _scBadge(ctx, imgP, 100, curY + 22, 36, CYAN, p.team);
       ctx.textAlign = 'left';
       ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = CYAN;
-      ctx.fillText('⚽ PICHICHI', 152, curY + 6);
+      ctx.fillText(t('trn-poster-pichichi'), 152, curY + 6);
       ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
       ctx.fillText(_scSafe(p.name), 152, curY + 42);
       ctx.textAlign = 'right';
       ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
       ctx.fillText(`${p.goals}`, W - 80, curY + 32);
       ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
-      ctx.fillText('goles', W - 80, curY + 58);
+      ctx.fillText(t('trn-poster-goals-lbl'), W - 80, curY + 58);
       ctx.textAlign = 'center';
       curY += 110;
     }
@@ -1096,14 +1096,14 @@ const TRN = (() => {
       _scBadge(ctx, imgM, 100, curY + 22, 36, MAGENTA, m.team);
       ctx.textAlign = 'left';
       ctx.font = 'bold 36px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = MAGENTA;
-      ctx.fillText('⭐ MVP', 152, curY + 6);
+      ctx.fillText(t('trn-poster-mvp'), 152, curY + 6);
       ctx.font = '500 30px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = WHITE;
       ctx.fillText(_scSafe(m.name), 152, curY + 42);
       ctx.textAlign = 'right';
       ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
       ctx.fillText(`${m.count}×`, W - 80, curY + 32);
       ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
-      ctx.fillText('MOM', W - 80, curY + 58);
+      ctx.fillText(t('trn-poster-mom'), W - 80, curY + 58);
       ctx.textAlign = 'center';
       curY += 110;
     }
@@ -1161,23 +1161,16 @@ const TRN = (() => {
       el.className = 'trn-toast';
       document.body.appendChild(el);
     }
-    el.textContent = fallback ? 'No se pudo copiar' : msg;
+    el.textContent = fallback ? t('trn-copy-fail') : msg;
     el.classList.add('trn-toast--show');
     clearTimeout(el._t);
     el._t = setTimeout(() => el.classList.remove('trn-toast--show'), 2800);
   }
 
-  const _TRN_LOADING_MSGS = [
-    'Calculando xG con distribución de Poisson…',
-    'Simulando 30 000 escenarios por partido…',
-    'Aplicando ratings históricos de plantilla…',
-    'Resolviendo eliminatorias y desempates…',
-    'Calculando diferencia de goles y puntos…',
-    'Determinando MVP y Pichichi del torneo…',
-    'Compilando la tabla de clasificación…',
-    'Construyendo el cuadro de eliminatorias…',
-    'Generando estadísticas comparadas…',
-    'Finalizando resultados del torneo…',
+  const _TRN_LOADING_MSGS = () => [
+    t('trn-loading-1'), t('trn-loading-2'), t('trn-loading-3'), t('trn-loading-4'),
+    t('trn-loading-5'), t('trn-loading-6'), t('trn-loading-7'), t('trn-loading-8'),
+    t('trn-loading-9'), t('trn-loading-10'),
   ];
   let _trnLoadTimer = null;
   function _startTrnLoadCycle() {
@@ -1186,8 +1179,8 @@ const TRN = (() => {
     const el = $('trn-progress-text');
     if (!el) return;
     _trnLoadTimer = setInterval(() => {
-      i = (i + 1) % _TRN_LOADING_MSGS.length;
-      if (el && el.isConnected) el.textContent = _TRN_LOADING_MSGS[i];
+      i = (i + 1) % _TRN_LOADING_MSGS().length;
+      if (el && el.isConnected) el.textContent = _TRN_LOADING_MSGS()[i];
     }, 700);
   }
   function _stopTrnLoadCycle() {
@@ -1215,16 +1208,16 @@ const TRN = (() => {
     };
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
-      data.matches.forEach((m, i) => add(m, `Jornada ${Math.floor(i / chunk) + 1} · Liga`));
+      data.matches.forEach((m, i) => add(m, `${t('trn-cal-jornada')} ${Math.floor(i / chunk) + 1} · ${t('trn-fmt-name-liga')}`));
     } else if (data.format === 'copa' && !data.groups) {
-      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' · Copa')));
-      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · Copa');
+      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' · ' + t('trn-fmt-name-copa'))));
+      if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + t('trn-fmt-name-copa'));
     } else {
       // Copa groups mode or old Champions
-      const label = data.format === 'copa' ? 'Copa' : 'Champions';
+      const label = data.format === 'copa' ? t('trn-fmt-name-copa') : t('trn-fmt-name-champions');
       (data.groups || []).forEach(g => g.matches.forEach(m => add(m, g.label)));
       (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' · ' + label)));
-      if (data.thirdPlace) add(data.thirdPlace, '3er Puesto · ' + label);
+      if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + label);
     }
   }
 
@@ -1260,9 +1253,9 @@ const TRN = (() => {
     if (nameEl) nameEl.textContent = data.champion?.name || '—';
     const fmtEl = $('trn-reveal-format');
     if (fmtEl) fmtEl.textContent =
-      data.format === 'liga' ? '📊 Liga · Campeón' :
-      (data.format === 'copa' && data.copaMode === 'groups') ? '🏆 Copa · Grupos · Campeón' :
-      data.format === 'copa' ? '🏆 Copa · Campeón' : '⭐ Champions · Campeón';
+      data.format === 'liga' ? t('trn-reveal-liga') :
+      (data.format === 'copa' && data.copaMode === 'groups') ? t('trn-reveal-copa-groups') :
+      data.format === 'copa' ? t('trn-reveal-copa') : t('trn-reveal-champions');
     el.classList.remove('hidden');
     _confetti();
     await new Promise(res => {
@@ -1375,8 +1368,10 @@ const TRN = (() => {
 
   // ── COPA ─────────────────────────────────────────────────
   async function _simulateCopa() {
-    const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final',
-      16: 'Octavos de final', 32: 'Dieciseisavos de final', 64: 'Treinta y dos avos' };
+    const ROUND_LABELS = {
+      2: t('trn-round-final'), 4: t('trn-round-semi'), 8: t('trn-round-qf'),
+      16: t('trn-round-r16'), 32: t('trn-round-r32'), 64: t('trn-round-r64')
+    };
 
     // Use pre-generated draw if available, otherwise shuffle now
     let bracket = (_draw.length === _numTeams / 2)
@@ -1388,8 +1383,8 @@ const TRN = (() => {
 
     while (bracket.length > 1) {
       const n = bracket.length;
-      const label = ROUND_LABELS[n] || `Ronda (${n})`;
-      _setProgress(`Simulando ${label}…`, 5 + Math.round((roundsDone / totalRounds) * 90));
+      const label = ROUND_LABELS[n] || `${t('trn-round-default')} (${n})`;
+      _setProgress(`${t('trn-progress-ko')} — ${label}…`, 5 + Math.round((roundsDone / totalRounds) * 90));
       const isFinal = n === 2;
       const specs = [];
 
@@ -1449,7 +1444,7 @@ const TRN = (() => {
     // ── Partido por el Tercer Puesto (opcional) ───────────
     let thirdPlace = null;
     if (_rules.tercerPuesto && rounds.length >= 2) {
-      _setProgress('Simulando 3º puesto…', 97);
+      _setProgress(t('trn-progress-3rd'), 97);
       const semiRound = rounds[rounds.length - 2];
       const losers = semiRound.matches.map(m => (m.winner?.slug === m.a?.slug ? m.b : m.a)).filter(Boolean);
       if (losers.length === 2) {
@@ -1487,7 +1482,7 @@ const TRN = (() => {
     const BATCH = 50;
     for (let b = 0; b < fixtures.length; b += BATCH) {
       const chunk = fixtures.slice(b, b + BATCH);
-      _setProgress(`Simulando jornadas… (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length} partidos)`, 5 + Math.round(b / fixtures.length * 90));
+      _setProgress(`${t('trn-progress-league')} (${Math.min(b + BATCH, fixtures.length)} / ${fixtures.length})`, 5 + Math.round(b / fixtures.length * 90));
       const specs = chunk.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era, eraB: f.b.era, salt: b + i + 9000, penalties: false,
       }));
@@ -1525,7 +1520,7 @@ const TRN = (() => {
     const groupData = [];
     for (let g = 0; g < groups.length; g++) {
       const grpPct = 5 + Math.round((g / totalGroups) * 55);
-      _setProgress(`Simulando grupos… (${g + 1}/${totalGroups})`, grpPct);
+      _setProgress(`${t('trn-progress-groups')} (${g + 1}/${totalGroups})`, grpPct);
       const grp = groups[g];
       const table = grp.map(t => ({ ...t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
       const idxG = {};
@@ -1556,7 +1551,7 @@ const TRN = (() => {
         else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
       });
       table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
-      groupData.push({ label: `Grupo ${String.fromCharCode(65 + g)}`, table, matches: grpFixtures });
+      groupData.push({ label: `${t('trn-draw-group-prefix')}${String.fromCharCode(65 + g)}`, table, matches: grpFixtures });
     }
 
     // Build KO bracket: top 2 of each group
@@ -1573,7 +1568,7 @@ const TRN = (() => {
     for (let i = 0; i < groupWinners.length; i++)
       seededKO.push(groupWinners[i], groupRunners[i]);
 
-    _setProgress('Simulando eliminatorias\u2026', 62);
+    _setProgress(t('trn-progress-ko'), 62);
     // Reuse copa logic for KO rounds
     const koData = await _simulateCopa_internal(seededKO, { idaVuelta: _rules.koIdaVuelta, startPct: 62 });
 
@@ -1599,7 +1594,10 @@ const TRN = (() => {
   // Internal copa simulation (reused for Champions KO rounds) — supports ida y vuelta
   async function _simulateCopa_internal(teamList, rules = {}) {
     const { idaVuelta = false, startPct = 5 } = rules;
-    const ROUND_LABELS = { 2: 'Final', 4: 'Semifinales', 8: 'Cuartos de final', 16: 'Octavos de final', 32: 'Dieciseisavos de final' };
+    const ROUND_LABELS = {
+      2: t('trn-round-final'), 4: t('trn-round-semi'), 8: t('trn-round-qf'),
+      16: t('trn-round-r16'), 32: t('trn-round-r32'), 64: t('trn-round-r64')
+    };
     let bracket = [...teamList];
     const rounds = [];
     const totalRounds = Math.ceil(Math.log2(teamList.length));
@@ -1607,9 +1605,9 @@ const TRN = (() => {
 
     while (bracket.length > 1) {
       const n = bracket.length;
-      const label = ROUND_LABELS[n] || `Ronda ${n}`;
+      const label = ROUND_LABELS[n] || `${t('trn-round-default')} ${n}`;
       const isFinal = n === 2;
-      _setProgress(`Eliminatoria — ${label}…`, startPct + Math.round((roundsDone / totalRounds) * (90 - startPct)));
+      _setProgress(`${t('trn-progress-ko')} — ${label}…`, startPct + Math.round((roundsDone / totalRounds) * (90 - startPct)));
       const specs = [];
 
       for (let i = 0; i < n; i += 2) {
@@ -1774,18 +1772,18 @@ const TRN = (() => {
       <div class="trn-stat-cards">
         <div class="trn-stat-card trn-stat-card-champ">
           <div class="trn-stat-card-icon">🏆</div>
-          <div class="trn-stat-card-label">Campeón</div>
+          <div class="trn-stat-card-label">${t('trn-stat-card-champ')}</div>
           <div class="trn-stat-card-value">${_esc(d.champion?.name || '—')}</div>
         </div>
         <div class="trn-stat-card trn-stat-card-pich">
           <div class="trn-stat-card-icon">⚽</div>
-          <div class="trn-stat-card-label">Pichichi</div>
+          <div class="trn-stat-card-label">${t('trn-stat-card-pich')}</div>
           <div class="trn-stat-card-value">${pichichi ? _esc(pichichi.name) : '—'}</div>
-          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} goles · ${_esc(pichichi.team)}</div>` : ''}
+          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} ${t('trn-stat-goals-unit')} · ${_esc(pichichi.team)}</div>` : ''}
         </div>
         <div class="trn-stat-card trn-stat-card-mvp">
           <div class="trn-stat-card-icon">⭐</div>
-          <div class="trn-stat-card-label">MVP</div>
+          <div class="trn-stat-card-label">${t('trn-stat-card-mvp')}</div>
           <div class="trn-stat-card-value">${mvp ? _esc(mvp.name) : '—'}</div>
           ${mvp ? `<div class="trn-stat-card-sub">${mvp.count}× MOM · ${_esc(mvp.team)}</div>` : ''}
         </div>
@@ -1881,7 +1879,10 @@ const TRN = (() => {
 
     // Rename bracket tab based on format
     const bracketTabBtn = document.querySelector('.trn-dash-tab[data-tab="bracket"]');
-    if (bracketTabBtn) bracketTabBtn.textContent = _data.format === 'liga' ? 'Clasificación' : 'Cuadro';
+    if (bracketTabBtn) {
+      bracketTabBtn.textContent = _data.format === 'liga' ? t('trn-tab-bracket-liga') : t('trn-tab-bracket-ko');
+      bracketTabBtn.dataset.trnFmt = _data.format;
+    }
 
     switchDashTab(_tab);
   }
@@ -1909,14 +1910,14 @@ const TRN = (() => {
     let html = '';
 
     if (d.format === 'liga') {
-      html = `<h3 class="trn-section-h">📅 Partidos</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-liga')}</h3>`;
       const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
       const matches = d.matches || [];
       for (let i = 0; i < matches.length; i += matchesPerJornada) {
         const jornada = matches.slice(i, i + matchesPerJornada);
         const jNum = Math.floor(i / matchesPerJornada) + 1;
         const openAttr = jNum === 1 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${t('trn-cal-jornada')} ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
         jornada.forEach(m => {
           html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
         });
@@ -1924,7 +1925,7 @@ const TRN = (() => {
       }
     } else if (d.groups) {
       // Copa groups mode or old champions
-      html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-groups')}</h3>`;
       (d.groups || []).forEach((g, gi) => {
         const openAttr = gi === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
@@ -1948,7 +1949,7 @@ const TRN = (() => {
         });
         html += '</details>';
       });
-      html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
+      html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-cal-calendar-ko')}</h3>`;
       [...(d.koRounds || [])].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -1960,7 +1961,7 @@ const TRN = (() => {
       });
     } else {
       // Copa KO mode
-      html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-copa')}</h3>`;
       [...(d.rounds || [])].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -1976,7 +1977,7 @@ const TRN = (() => {
       });
       if (d.thirdPlace) {
         const m = d.thirdPlace, penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-        html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-3rd')}</h3>`;
         html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
       }
     }
@@ -2012,15 +2013,15 @@ const TRN = (() => {
         </div>`;
       }).join('');
       el.innerHTML = `
-        <h3 class="trn-section-h">📊 Clasificación</h3>
+        <h3 class="trn-section-h">${t('trn-bracket-standings-h')}</h3>
         <div class="trn-cls-wrap">
           <div class="trn-cls-table">
             <div class="trn-cls-header">
-              <span>#</span><span></span><span>Equipo</span>
-              <span>PJ</span><span>G</span><span>E</span><span>P</span>
-              <span>GF</span><span>GC</span><span>DIF</span><span>PTS</span>
+              <span>#</span><span></span><span>${t('trn-col-team')}</span>
+              <span>${t('trn-col-pj-abbr')}</span><span>${t('trn-col-w-abbr')}</span><span>${t('trn-col-d-abbr')}</span><span>${t('trn-col-l-abbr')}</span>
+              <span>${t('trn-col-gf-abbr')}</span><span>${t('trn-col-gc-abbr')}</span><span>${t('trn-col-dif')}</span><span>${t('trn-col-pts')}</span>
             </div>
-            ${rows || '<p class="trn-lu-empty">Sin datos</p>'}
+            ${rows || `<p class="trn-lu-empty">${t('trn-col-sin-datos')}</p>`}
           </div>
         </div>`;
       return;
@@ -2037,14 +2038,14 @@ const TRN = (() => {
     let html = '';
 
     if (d.format === 'liga') {
-      html = `<h3 class="trn-section-h">📅 Partidos</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-liga')}</h3>`;
       const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
       const matches = d.matches || [];
       for (let i = 0; i < matches.length; i += matchesPerJornada) {
         const jornada = matches.slice(i, i + matchesPerJornada);
         const jNum = Math.floor(i / matchesPerJornada) + 1;
         const openAttr = jNum === 1 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${t('trn-cal-jornada')} ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
         jornada.forEach(m => {
           html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
         });
@@ -2052,7 +2053,7 @@ const TRN = (() => {
       }
     } else if (d.groups) {
       // Copa groups mode or old champions
-      html = `<h3 class="trn-section-h">📅 Fase de Grupos</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-groups')}</h3>`;
       (d.groups || []).forEach((g, gi) => {
         const openAttr = gi === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
@@ -2076,7 +2077,7 @@ const TRN = (() => {
         });
         html += '</details>';
       });
-      html += `<h3 class="trn-section-h trn-section-h-mt">📅 Eliminatorias</h3>`;
+      html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-cal-calendar-ko')}</h3>`;
       [...(d.koRounds || [])].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -2088,7 +2089,7 @@ const TRN = (() => {
       });
     } else {
       // Copa KO mode
-      html = `<h3 class="trn-section-h">📅 Resultados por ronda</h3>`;
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-copa')}</h3>`;
       [...(d.rounds || [])].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -2104,7 +2105,7 @@ const TRN = (() => {
       });
       if (d.thirdPlace) {
         const m = d.thirdPlace, penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-        html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-3rd')}</h3>`;
         html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
       }
     }
@@ -2143,7 +2144,7 @@ const TRN = (() => {
         const medals = ['🥇', '🥈', '🥉'];
         const top5 = (d.table || []).slice(0, 5);
         el.innerHTML = _renderStatCards() + `
-          <h3 class="trn-section-h">🥇 TOP 5</h3>
+          <h3 class="trn-section-h">${t('trn-summ-top5')}</h3>
           <div class="trn-mini-table">
             ${top5.map((r, i) => `
               <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
@@ -2166,7 +2167,7 @@ const TRN = (() => {
       // Round results
       if (d.groups) {
         // Groups mode
-        html += `<h3 class="trn-section-h trn-section-h-mt">📊 Grupos</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-groups-h')}</h3>`;
         (d.groups || []).forEach((g, gi) => {
           const openAttr = gi === 0 ? ' open' : '';
           html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.table.length}</span></summary>`;
@@ -2182,7 +2183,7 @@ const TRN = (() => {
           });
           html += '</div></details>';
         });
-        html += `<h3 class="trn-section-h trn-section-h-mt">🏆 Eliminatorias</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-ko-h')}</h3>`;
         [...(d.koRounds || [])].reverse().forEach((r, ri) => {
           const openAttr = ri === 0 ? ' open' : '';
           html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -2194,7 +2195,7 @@ const TRN = (() => {
         });
       } else {
         // Copa KO
-        html += `<h3 class="trn-section-h trn-section-h-mt">🏆 Resultados por ronda</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-rounds-h')}</h3>`;
         [...(d.rounds || [])].reverse().forEach((r, ri) => {
           const openAttr = ri === 0 ? ' open' : '';
           html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -2210,7 +2211,7 @@ const TRN = (() => {
         });
         if (d.thirdPlace) {
           const m = d.thirdPlace, penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
-          html += `<h3 class="trn-section-h trn-section-h-mt">🥉 3er Puesto</h3>`;
+          html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-3rd')}</h3>`;
           html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
         }
       }
@@ -2218,7 +2219,7 @@ const TRN = (() => {
       el.innerHTML = html;
     } catch (err) {
       console.error('[_renderSummary]', err);
-      el.innerHTML = `<p style="padding:1rem;color:rgba(255,255,255,.5)">Error al renderizar resumen: ${_esc(err.message)}</p>`;
+      el.innerHTML = `<p style="padding:1rem;color:rgba(255,255,255,.5)">${t('trn-render-error')}: ${_esc(err.message)}</p>`;
     }
   }
 
@@ -2301,7 +2302,7 @@ const TRN = (() => {
   }
 
   function _renderXIHtml(xi) {
-    if (!xi) return `<p class="trn-lu-empty">Datos insuficientes para el Once Ideal</p>`;
+    if (!xi) return `<p class="trn-lu-empty">${t('trn-xi-empty')}</p>`;
     const card = p => {
       const stat = p.goals > 0 && p.mom > 0 ? `${p.goals}⚽ ${p.mom}⭐`
                  : p.goals > 0 ? `${p.goals}⚽`
@@ -2329,9 +2330,9 @@ const TRN = (() => {
     if (!sec) return;
     try {
       const xi = await _buildDreamXI(d);
-      sec.innerHTML = `<h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3>${_renderXIHtml(xi)}`;
+      sec.innerHTML = `<h3 class="trn-section-h">${t('trn-stats-h-xi')}</h3>${_renderXIHtml(xi)}`;
     } catch (_e) {
-      sec.innerHTML = `<h3 class="trn-section-h">\uD83C\uDF1F Once Ideal del Torneo</h3><p class="trn-lu-empty">Sin datos suficientes</p>`;
+      sec.innerHTML = `<h3 class="trn-section-h">${t('trn-stats-h-xi')}</h3><p class="trn-lu-empty">${t('trn-xi-no-data')}</p>`;
     }
   }
 
@@ -2359,7 +2360,7 @@ const TRN = (() => {
     const top = sorted.slice(0, 10);
 
     el.innerHTML = `
-      <h3 class="trn-section-h">⚽ Pichichi</h3>
+      <h3 class="trn-section-h">${t('trn-stats-h-pichichi')}</h3>
       <div class="trn-stats-list">
         ${(d.pichichi || []).slice(0, 10).map((r, i) => `
           <div class="trn-stats-row">
@@ -2367,11 +2368,11 @@ const TRN = (() => {
             ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-club">${_esc(r.team)}</span>
-            <span class="trn-stats-gf" title="Goles">${r.goals} goles</span>
+            <span class="trn-stats-gf" title="${t('trn-col-goles')}">${r.goals} ${t('trn-stat-goals-unit')}</span>
           </div>`).join('')}
       </div>
       ${(d.mvp || []).length ? `
-      <h3 class="trn-section-h trn-section-h-mt">⭐ Mejor Jugador (MOM)</h3>
+      <h3 class="trn-section-h trn-section-h-mt">${t('trn-stats-h-mvp')}</h3>
       <div class="trn-stats-list">
         ${(d.mvp || []).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
@@ -2382,31 +2383,31 @@ const TRN = (() => {
             <span class="trn-stats-gf">${r.count}× MOM</span>
           </div>`).join('')}
       </div>` : ''}
-      <h3 class="trn-section-h trn-section-h-mt">⚽ Equipos más goleadores</h3>
+      <h3 class="trn-section-h trn-section-h-mt">${t('trn-stats-h-teams-goals')}</h3>
       <div class="trn-stats-list">
         ${top.map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-ratio">${r.mp ? (r.gf / r.mp).toFixed(1) : '0.0'}/p</span>
-            <span class="trn-stats-mp" title="Partidos">${r.mp} PJ</span>
-            <span class="trn-stats-gf" title="Goles">${r.gf} G</span>
+            <span class="trn-stats-ratio">${r.mp ? (r.gf / r.mp).toFixed(1) : '0.0'}${t('trn-col-per-match')}</span>
+            <span class="trn-stats-mp" title="${t('trn-col-pj')}">${r.mp} ${t('trn-col-pj-abbr')}</span>
+            <span class="trn-stats-gf" title="${t('trn-col-goles')}">${r.gf} G</span>
           </div>`).join('')}
       </div>
-      <h3 class="trn-section-h trn-section-h-mt">🛡 Defensas más sólidas</h3>
+      <h3 class="trn-section-h trn-section-h-mt">${t('trn-stats-h-defense')}</h3>
       <div class="trn-stats-list">
         ${Object.values(totals).filter(r => r.mp > 0).sort((a, b) => a.ga - b.ga).slice(0, 5).map((r, i) => `
           <div class="trn-stats-row">
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
-            <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
+            <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}${t('trn-col-w-pct')}</span>
+            <span class="trn-stats-gf" title="${t('trn-col-gc')}">${r.ga} ${t('trn-col-gc-abbr')}</span>
           </div>`).join('')}
       </div>
       <div id="trn-xi-section">
-        <h3 class="trn-section-h">🌟 Once Ideal del Torneo</h3>
+        <h3 class="trn-section-h">${t('trn-stats-h-xi')}</h3>
         <div class="trn-xi-loading"><div class="trn-spinner"></div></div>
       </div>
       ${_renderDestacados(allMatches)}`;
@@ -2550,7 +2551,7 @@ const TRN = (() => {
               : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
           </div>`;
         }).join('')}</div>`
-      : `<div class="trn-modal-no-goals-row">Sin goles</div>`;
+      : `<div class="trn-modal-no-goals-row">${t('trn-modal-no-goals')}</div>`;
 
     // Stats
     const st  = m.legs === 2 ? m.r1 : m;
@@ -2581,14 +2582,14 @@ const TRN = (() => {
       ${tlHtml}
       ${mom ? `<div class="trn-modal-mom">⭐ <strong>${_esc(mom.name)}</strong> <span class="trn-modal-mom-team">${_esc(momTeam)}</span></div>` : ''}
       <div class="trn-modal-stats">
-        ${bar(possA, possB, 'Posesión %')}
-        ${bar(shotA, shotB, 'Tiros')}
-        ${cornA || cornB ? bar(cornA, cornB, 'Córners') : ''}
-        ${saveA || saveB ? bar(saveA, saveB, 'Paradas') : ''}
-        ${foulA || foulB ? bar(foulA, foulB, 'Faltas') : ''}
+        ${bar(possA, possB, t('trn-modal-poss'))}
+        ${bar(shotA, shotB, t('trn-modal-shots'))}
+        ${cornA || cornB ? bar(cornA, cornB, t('trn-modal-corners')) : ''}
+        ${saveA || saveB ? bar(saveA, saveB, t('trn-modal-saves')) : ''}
+        ${foulA || foulB ? bar(foulA, foulB, t('trn-modal-fouls')) : ''}
       </div>
       <div class="trn-modal-lu-section">
-        <div class="trn-modal-lu-hdr">👥 Alineaciones</div>
+        <div class="trn-modal-lu-hdr">${t('trn-modal-lineups')}</div>
         <div id="trn-modal-lu-area" class="trn-modal-lu-area"></div>
       </div>`;
 
@@ -2631,7 +2632,7 @@ const TRN = (() => {
           : (d?.source ? String(d.source).match(/\((\d{4})/)?.[1] : null);
         const title = t ? `${_esc(t.name)}${yr ? ` <span class="trn-lu-yr">'${yr.slice(2)}</span>` : ''}` : _esc(d?.source || '?');
         if (!d?.found || !Array.isArray(d.players) || !d.players.length) {
-          return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">Sin alineación</p></div>`;
+          return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">${t('trn-xi-no-lineup')}</p></div>`;
         }
         const sorted = [...d.players].sort((a, b) => posRank(a) - posRank(b)).slice(0, 11);
         const rows = sorted.map(p => `<div class="trn-preview-pos-row">

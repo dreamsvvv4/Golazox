@@ -99,7 +99,7 @@
     <!-- ── Main mode tabs ─── -->
     <div class="main-tabs-bar">
       <button class="main-tab-btn main-tab-active" data-tab="match">⚽ Partido</button>
-      <button class="main-tab-btn" data-tab="trn">🏆 Torneo</button>
+      <button class="main-tab-btn" data-tab="trn" data-i18n="trn-tab-btn">🏆 Torneo</button>
     </div>
   </header>
 
@@ -545,32 +545,32 @@
       <div class="trn-stepbar">
         <div class="trn-stepbar-item trn-stepbar-active" data-step="1">
           <span class="trn-stepbar-num">1</span>
-          <span class="trn-stepbar-label">Formato</span>
+          <span class="trn-stepbar-label" data-i18n="trn-step-format">Formato</span>
         </div>
         <div class="trn-stepbar-line" id="trn-line-1-2"></div>
         <div class="trn-stepbar-item" data-step="2">
           <span class="trn-stepbar-num">2</span>
-          <span class="trn-stepbar-label">Reglas</span>
+          <span class="trn-stepbar-label" data-i18n="trn-step-rules">Reglas</span>
         </div>
         <div class="trn-stepbar-line" id="trn-line-2-3"></div>
         <div class="trn-stepbar-item" data-step="3">
           <span class="trn-stepbar-num">3</span>
-          <span class="trn-stepbar-label">Equipos</span>
+          <span class="trn-stepbar-label" data-i18n="trn-step-teams">Equipos</span>
         </div>
       </div>
 
       <!-- Step 1: Formato -->
       <div id="trn-step-1" class="trn-step">
         <div class="trn-step-header">
-          <h2 class="trn-step-title">Elige el formato</h2>
-          <p class="trn-step-hint">¿Cómo quieres que sea tu torneo?</p>
+          <h2 class="trn-step-title" data-i18n="trn-step1-title">Elige el formato</h2>
+          <p class="trn-step-hint" data-i18n="trn-step1-hint">¿Cómo quieres que sea tu torneo?</p>
         </div>
         <div class="trn-fmt-grid">
           <button class="trn-fmt-card" data-fmt="copa">
             <div class="trn-fmt-visual">🏆</div>
             <div class="trn-fmt-info">
-              <div class="trn-fmt-name">Copa</div>
-              <div class="trn-fmt-desc">Eliminatoria directa · o Fase de Grupos + KO</div>
+              <div class="trn-fmt-name" data-i18n="trn-fmt-copa-name">Copa</div>
+              <div class="trn-fmt-desc" data-i18n="trn-fmt-copa-desc">Eliminatoria directa · o Fase de Grupos + KO</div>
               <div class="trn-fmt-tags"><span>4–32 equipos (KO) / 8–32 (Grupos)</span><span>KO / Grupos+KO</span></div>
             </div>
             <div class="trn-fmt-check">✓</div>
@@ -578,8 +578,8 @@
           <button class="trn-fmt-card" data-fmt="liga">
             <div class="trn-fmt-visual">📊</div>
             <div class="trn-fmt-info">
-              <div class="trn-fmt-name">Liga</div>
-              <div class="trn-fmt-desc">Todos contra todos · Clasificación por puntos</div>
+              <div class="trn-fmt-name" data-i18n="trn-fmt-liga-name">Liga</div>
+              <div class="trn-fmt-desc" data-i18n="trn-fmt-liga-desc">Todos contra todos · Clasificación por puntos</div>
               <div class="trn-fmt-tags"><span>4–20 equipos</span><span>Round Robin</span></div>
             </div>
             <div class="trn-fmt-check">✓</div>
@@ -587,33 +587,33 @@
 
         </div>
         <div class="trn-num-teams-row">
-          <span class="trn-label">Nº de equipos</span>
+          <span class="trn-label" data-i18n="trn-num-teams-lbl">Nº de equipos</span>
           <div id="trn-num-teams" class="trn-num-pills"></div>
         </div>
         <div class="trn-step-actions">
-          <button class="btn-primary trn-btn-next" id="trn-next-1">Siguiente →</button>
+          <button class="btn-primary trn-btn-next" id="trn-next-1" data-i18n="trn-btn-next">Siguiente →</button>
         </div>
       </div>
 
       <!-- Step 2: Reglas -->
       <div id="trn-step-2" class="trn-step hidden">
         <div class="trn-step-header">
-          <h2 class="trn-step-title">Reglas del torneo</h2>
-          <p class="trn-step-hint">Personaliza cómo se deciden los enfrentamientos</p>
+          <h2 class="trn-step-title" data-i18n="trn-step2-title">Reglas del torneo</h2>
+          <p class="trn-step-hint" data-i18n="trn-step2-hint">Personaliza cómo se deciden los enfrentamientos</p>
         </div>
         <div id="trn-rules-list" class="trn-rules-list">
           <!-- Filled dynamically by TRN.goStep2() based on selected format -->
         </div>
         <div class="trn-step-actions">
-          <button class="btn-secondary" id="trn-back-1">← Atrás</button>
-          <button class="btn-primary trn-btn-next" id="trn-next-2">Continuar →</button>
+          <button class="btn-secondary" id="trn-back-1" data-i18n="trn-btn-back">← Atrás</button>
+          <button class="btn-primary trn-btn-next" id="trn-next-2" data-i18n="trn-btn-continue">Continuar →</button>
         </div>
       </div>
 
       <!-- Step 3: Equipos -->
       <div id="trn-step-3" class="trn-step hidden">
         <div class="trn-step-header">
-          <h2 class="trn-step-title">Añade equipos</h2>
+          <h2 class="trn-step-title" data-i18n="trn-step3-title">Añade equipos</h2>
           <div class="trn-progress-row">
             <span id="trn-teams-count" class="trn-count-num">0</span><span class="trn-count-sep">/</span><span id="trn-teams-total" class="trn-count-total">16</span>
             <div class="trn-count-bar"><div id="trn-count-fill" class="trn-count-fill"></div></div>
@@ -639,10 +639,10 @@
         <div id="trn-pre-draw" class="trn-pre-draw hidden"></div>
 
         <div id="trn-step-3-actions" class="trn-step-actions">
-          <button class="btn-secondary" id="trn-back-2">← Atrás</button>
-          <button id="trn-btn-liga" class="btn-secondary trn-btn-liga hidden">📋 Cargar liga</button>
-          <button id="trn-btn-random" class="btn-secondary">⚡ Aleatorio</button>
-          <button id="trn-btn-simulate" class="btn-primary trn-btn-simulate" disabled>▶ Simular torneo</button>
+          <button class="btn-secondary" id="trn-back-2" data-i18n="trn-btn-back">← Atrás</button>
+          <button id="trn-btn-liga" class="btn-secondary trn-btn-liga hidden" data-i18n="trn-btn-load-league">📋 Cargar liga</button>
+          <button id="trn-btn-random" class="btn-secondary" data-i18n="trn-btn-random">⚡ Aleatorio</button>
+          <button id="trn-btn-simulate" class="btn-primary trn-btn-simulate" disabled data-i18n="trn-btn-simulate">▶ Simular torneo</button>
         </div>
 
         <!-- League loader panel -->
@@ -663,20 +663,20 @@
     <div id="trn-dashboard" class="hidden">
 
       <div class="trn-champ-poster glass-card">
-        <div class="trn-champ-eyebrow">CAMPEÓN DEL TORNEO</div>
+        <div class="trn-champ-eyebrow" data-i18n="trn-champ-eyebrow">CAMPÉÓN DEL TORNEO</div>
         <div class="trn-champ-trophy-big">🏆</div>        <img id="trn-champ-badge-img" class="trn-champ-badge-big" src="/img/badges/_placeholder.svg" onerror="this.style.display='none'" alt="" />        <div class="trn-champ-name" id="trn-champ-name">—</div>
         <div class="trn-champ-format" id="trn-champ-format"></div>
         <div id="trn-champ-runnerup" class="trn-champ-runnerup hidden"></div>
-        <button class="btn-ghost trn-share-btn" id="trn-share-btn">📤 Compartir</button>
-        <button class="btn-secondary trn-btn-over" id="trn-btn-over">↩ Nuevo torneo</button>
+        <button class="btn-ghost trn-share-btn" id="trn-share-btn" data-i18n="trn-share-btn">📤 Compartir</button>
+        <button class="btn-secondary trn-btn-over" id="trn-btn-over" data-i18n="trn-btn-over">↩ Nuevo torneo</button>
       </div>
 
       <div class="trn-dash-tabs-wrap glass-card">
         <div class="trn-dash-tabs">
-          <button class="trn-dash-tab trn-dash-tab-active" data-tab="summary">Resumen</button>
-          <button class="trn-dash-tab" data-tab="bracket">Cuadro</button>
-          <button class="trn-dash-tab" data-tab="calendar">Calendario</button>
-          <button class="trn-dash-tab" data-tab="stats">Estadísticas</button>
+          <button class="trn-dash-tab trn-dash-tab-active" data-tab="summary" data-i18n="trn-tab-summary">Resumen</button>
+          <button class="trn-dash-tab" data-tab="bracket" data-i18n="trn-tab-bracket-ko">Cuadro</button>
+          <button class="trn-dash-tab" data-tab="calendar" data-i18n="trn-tab-calendar">Calendario</button>
+          <button class="trn-dash-tab" data-tab="stats" data-i18n="trn-tab-stats">Estadísticas</button>
         </div>
       </div>
 
@@ -712,7 +712,7 @@
       <img id="trn-reveal-badge" class="trn-reveal-badge" src="" alt="" />
       <div id="trn-reveal-name"  class="trn-reveal-name"></div>
       <div id="trn-reveal-format" class="trn-reveal-format"></div>
-      <div class="trn-reveal-hint">Toca para continuar</div>
+      <div class="trn-reveal-hint" data-i18n="trn-reveal-hint">Toca para continuar</div>
     </div>
   </div>
 
