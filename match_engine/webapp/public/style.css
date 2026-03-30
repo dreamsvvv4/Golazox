@@ -100,12 +100,17 @@ button, [role="button"], [role="tab"],
 
 body {
   font-family: var(--font);
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--white);
   min-height: 100vh;
+  /* Blueprint grid subtle overlay + ambient colour radials */
   background-image:
+    linear-gradient(rgba(0,212,255,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.028) 1px, transparent 1px),
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,100,180,0.18) 0%, transparent 70%),
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(123,47,247,0.12) 0%, transparent 70%);
+  background-size: 52px 52px, 52px 52px, 100% 100%, 100% 100%;
+  background-attachment: fixed, fixed, scroll, scroll;
 }
 
 /* ── Glass card ──────────────────────────────────────────── */
@@ -3865,6 +3870,16 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 #trn-wizard {
   max-width: 660px;
   margin: 0 auto;
+  /* Solid dark backdrop so grid lines never bleed through wizard content */
+  background: rgba(8,11,20,0.82);
+  border-radius: var(--radius-lg);
+  padding: .75rem 1rem 1.5rem;
+  border: 1px solid rgba(0,212,255,.08);
+  box-shadow:
+    0 0 60px rgba(0,212,255,0.09),
+    0 8px 40px rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* -- Step bar */
