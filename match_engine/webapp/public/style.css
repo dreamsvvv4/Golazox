@@ -1295,33 +1295,6 @@ body {
 }
 .btn-deeplink:hover { background: rgba(0,212,255,.08); color: var(--neon); border-color: var(--neon); }
 
-/* ── Surprise Me + Haptic row ────────────────────────────────── */
-.extra-actions-row {
-  display: flex; align-items: center; gap: .6rem; margin-top: .8rem;
-}
-.btn-surprise {
-  display: inline-flex; align-items: center; gap: .4rem;
-  padding: .35rem 1rem; border-radius: 20px; font-size: .78rem; font-weight: 700;
-  background: linear-gradient(135deg, rgba(123,47,247,.25), rgba(0,212,255,.15));
-  border: 1px solid rgba(123,47,247,.4); color: rgba(255,255,255,.8); cursor: pointer;
-  transition: all .2s; letter-spacing: .03em;
-}
-.btn-surprise:hover {
-  background: linear-gradient(135deg, rgba(123,47,247,.4), rgba(0,212,255,.25));
-  border-color: rgba(123,47,247,.7); color: #fff;
-  box-shadow: 0 0 14px rgba(123,47,247,.3);
-}
-.btn-haptic {
-  padding: .35rem .65rem; border-radius: 20px; font-size: .9rem;
-  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-  cursor: pointer; color: rgba(255,255,255,.35); transition: all .15s;
-}
-.btn-haptic:hover { background: rgba(255,255,255,.12); color: rgba(255,255,255,.7); }
-.btn-haptic--on { background: rgba(0,212,255,.12); border-color: rgba(0,212,255,.4); color: var(--neon); }
-.btn-haptic:focus-visible, .btn-surprise:focus-visible, .mode-pill:focus-visible, .vs-badge:focus-visible {
-  outline: 2px solid var(--neon); outline-offset: 2px;
-}
-
 /* ── Match History panel ─────────────────────────────────────── */
 .match-history-wrap {
   border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-md);
