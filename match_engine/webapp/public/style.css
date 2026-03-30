@@ -5948,22 +5948,26 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .trn-ll-close:hover { color: var(--accent-b); }
 .trn-ll-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: .5rem;
-  padding: .8rem;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: .65rem;
+  padding: 1rem;
 }
 .trn-ll-btn {
-  display: flex; align-items: center; gap: .5rem;
-  padding: .5rem .75rem; border-radius: var(--radius-sm);
+  display: flex; flex-direction: column; gap: .35rem;
+  padding: .75rem; border-radius: var(--radius-sm);
   background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
   color: var(--white); font-size: .78rem; cursor: pointer; text-align: left;
   transition: background .15s, border-color .15s;
 }
 .trn-ll-btn:hover { background: rgba(0,212,255,.12); border-color: rgba(0,212,255,.4); }
 .trn-ll-btn-disabled { opacity: .35; cursor: not-allowed; }
+.trn-ll-card-top { display: flex; align-items: center; justify-content: space-between; }
+.trn-ll-flag-big { font-size: 1.5rem; line-height: 1; }
 .trn-ll-flag, .trn-ll-icon { font-size: 1rem; line-height: 1; }
-.trn-ll-name { flex: 1; }
-.trn-ll-count { font-size: .7rem; color: var(--neon); opacity: .7; }
+.trn-ll-name { font-size: .85rem; font-weight: 700; flex: 1; }
+.trn-ll-count { font-size: .7rem; color: var(--neon); opacity: .7; white-space: nowrap; }
+.trn-ll-badges-row { display: flex; gap: .3rem; margin-top: .15rem; }
+.trn-ll-team-badge { width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
 .trn-ll-loading, .trn-ll-error, .trn-ll-empty { padding: 1rem; text-align: center; color: var(--grey); font-size: .82rem; }
 .trn-btn-league {
   font-size: .78rem; padding: .35rem .9rem; margin-left: .4rem;

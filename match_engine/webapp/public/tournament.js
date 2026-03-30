@@ -781,31 +781,43 @@ const TRN = (() => {
     try {
       const catalog = await _getTrnCatalog();
       const groupMap = {};
+      const groupBadges = {};
       const EXCL = new Set(['Selecciones','Fantasy XI','Continentes Hist\u00f3ricos','Am\u00e9rica del Sur','Otros']);
       catalog.forEach(c => {
         if (!c.group) return;
         const gName = c.group.replace(/^\S+\s*/, '');
         if (EXCL.has(gName)) return;
         groupMap[c.group] = (groupMap[c.group] || 0) + 1;
+        if (!groupBadges[c.group]) groupBadges[c.group] = [];
+        if (groupBadges[c.group].length < 4 && c.badge) groupBadges[c.group].push(c.badge);
       });
       const groups = Object.entries(groupMap).sort((a, b) => b[1] - a[1]);
       if (!groups.length) { panel.innerHTML = '<p class="trn-ll-empty">Sin ligas disponibles</p>'; return; }
-      let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga</div><div class="trn-ll-grid">';
       const _toFlag = code => {
         if (!code || code.length !== 2 || !/^[A-Za-z]{2}$/.test(code)) return null;
         const ch = code.toUpperCase();
         return String.fromCodePoint(ch.charCodeAt(0) - 65 + 0x1F1E6) +
                String.fromCodePoint(ch.charCodeAt(1) - 65 + 0x1F1E6);
       };
+      const PH = '/img/badges/_placeholder.svg';
+      let html = '<div class="trn-ll-title">\uD83C\uDFC6 Selecciona una liga</div><div class="trn-ll-grid">';
       groups.forEach(([g, count]) => {
         const rawPrefix = g.match(/^(\S+)/)?.[1] || '';
         const flag = _toFlag(rawPrefix) || rawPrefix || '\uD83C\uDFC6';
         const name  = _esc(g.replace(/^\S+\s*/, ''));
-        html += '<button class="trn-ll-btn" data-league="' + _esc(g) + '">' +
-          '<span class="trn-ll-icon">' + flag + '</span>' +
-          '<span class="trn-ll-name">' + name + '</span>' +
-          '<span class="trn-ll-count">' + count + ' eq.</span>' +
-          '</button>';
+        const bdgs  = (groupBadges[g] || []).slice(0, 4);
+        while (bdgs.length < 4) bdgs.push(PH);
+        const badgeRow = bdgs.map(b =>
+          `<img class="trn-ll-team-badge" src="${_esc(b)}" onerror="this.src='${PH}'" alt="">`
+        ).join('');
+        html += `<button class="trn-ll-btn" data-league="${_esc(g)}">
+          <div class="trn-ll-card-top">
+            <span class="trn-ll-flag-big">${flag}</span>
+            <span class="trn-ll-count">${count} eq.</span>
+          </div>
+          <span class="trn-ll-name">${name}</span>
+          <div class="trn-ll-badges-row">${badgeRow}</div>
+        </button>`;
       });
       html += '</div>';
       panel.innerHTML = html;
