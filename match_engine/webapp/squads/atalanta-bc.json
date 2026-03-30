@@ -1,6 +1,518 @@
 {
   "slug": "atalanta-bc",
   "seasons": {
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pierluigi Gollini",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Marco Sportiello",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Khadim Ndiaye",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Francesco Rossi",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ludovico Gelmi",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Robin Gosens",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Rafael Tolói",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Berat Djimsiti",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Mattia Caldara",
+          "position": "CB",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Hans Hateboer",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "José Luis Palomino",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 82
+        },
+        {
+          "name": "Simon Kjaer",
+          "position": "CB",
+          "marketValue": 5200000,
+          "rating": 80
+        },
+        {
+          "name": "Bosko Sutalo",
+          "position": "CB",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Roger Ibañez",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Guilherme Arana",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Andrea Masiello",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Martin Skrtel",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Caleb Okoli",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "David Heidenreich",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Rodrigo Guth",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Marten de Roon",
+          "position": "CM",
+          "marketValue": 19000000,
+          "rating": 85
+        },
+        {
+          "name": "Remo Freuler",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Josip Ilicic",
+          "position": "CM",
+          "marketValue": 17500000,
+          "rating": 85
+        },
+        {
+          "name": "Mario Pašalić",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Ruslan Malinovskyi",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Adrien Tamèze",
+          "position": "CM",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Lennart Czyborra",
+          "position": "CM",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Raoul Bellanova",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jacopo Da Riva",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Duván Zapata",
+          "position": "ST",
+          "marketValue": 36000000,
+          "rating": 88
+        },
+        {
+          "name": "Luis Muriel",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Papu Gómez",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Musa Barrow",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Roberto Piccoli",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ebrima Colley",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Amad Diallo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 69,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Atalanta (2019/2020)",
+      "teamLabel": "Atalanta (2019-20)"
+    },
+    "2024": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marco Carnesecchi",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Rui Patrício",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 85
+        },
+        {
+          "name": "Juan Musso",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Paolo Vismara",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Matevz Dajcar",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Francesco Rossi",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Giorgio Scalvini",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Isak Hien",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Odilon Kossounou",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Stefan Posch",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Matteo Ruggeri",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 82
+        },
+        {
+          "name": "Sead Kolasinac",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Ben Godfrey",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Berat Djimsiti",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Marco Palestra",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rafael Tolói",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Relja Obric",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tommaso Del Lungo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Pietro Comi",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Pietro Tornaghi",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Éderson",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 88
+        },
+        {
+          "name": "Raoul Bellanova",
+          "position": "CM",
+          "marketValue": 24000000,
+          "rating": 86
+        },
+        {
+          "name": "Charles De Ketelaere",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 85
+        },
+        {
+          "name": "Lazar Samardžić",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 84
+        },
+        {
+          "name": "Ibrahim Sulemana",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 82
+        },
+        {
+          "name": "Mario Pašalić",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Marco Brescianini",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Juan Cuadrado",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 81
+        },
+        {
+          "name": "Mitchel Bakker",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Marten de Roon",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Davide Zappacosta",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Daniel Maldini",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 80
+        },
+        {
+          "name": "Lorenzo Riccio",
+          "position": "CM",
+          "marketValue": 950000,
+          "rating": 73
+        },
+        {
+          "name": "Alberto Manzoni",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Lorenzo Bernasconi",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Federico Cassa",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Javison Idele",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Federico Steffanoni",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ademola Lookman",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 88
+        },
+        {
+          "name": "Mateo Retegui",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Gianluca Scamacca",
+          "position": "ST",
+          "marketValue": 24000000,
+          "rating": 84
+        },
+        {
+          "name": "Nicolò Zaniolo",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Vanja Vlahović",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Dominic Vavassori",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 69,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Atalanta (2024/2025)",
+      "teamLabel": "Atalanta (2024-25)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

@@ -1,6 +1,813 @@
 {
   "slug": "lazio-rom",
   "seasons": {
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marco Ballotta",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 80
+        },
+        {
+          "name": "Luca Marchegiani",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emanuele Concetti",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stefano Di Fiordo",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 98
+        },
+        {
+          "name": "Alessandro Nesta",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 93
+        },
+        {
+          "name": "Sinisa Mihajlovic",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stefano Lombardi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giovanni Lopez",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Maurizio Domizzi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giuseppe Favalli",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paolo Negro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giuseppe Pancaro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dario Marcolin",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Federico Crovari",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paul Okon",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Matías Almeyda",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roberto Baronio",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Valentino Sbaccanti",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dejan Stanković",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giorgio Venturin",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giampiero Pinzi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Guerino Gottardi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pavel Nedved",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Iván de la Peña",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian Vieri",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Sérgio Conceição",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 80
+        },
+        {
+          "name": "Roberto Rambaudi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Attilio Lombardo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emanuele Berrettoni",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roberto Mancini",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alessandro Iannuzzi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniele Morante",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Igor Protti",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcelo Salas",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alen Bokšić",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Lazio (1998/1999)",
+      "teamLabel": "Lazio (1998-99)"
+    },
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Luca Marchegiani",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Francesco Scotti",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paolo Orlandoni",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Diego Favazza",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Angelo Peruzzi",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alessandro Nesta",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 93
+        },
+        {
+          "name": "Emiliano Conti",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sinisa Mihajlovic",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniel Ola",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roberto Sensini",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Maurizio Domizzi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Francesco Colonnese",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emanuele Pesaresi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giuseppe Favalli",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pietro Varriale",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paolo Negro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giorgio Santarelli",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giuseppe Pancaro",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dino Baggio",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roberto Baronio",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Andrea Luciani",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Diego Simeone",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dejan Stanković",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Sebastián Verón",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Guerino Gottardi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Castromán",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pavel Nedved",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Iván de la Peña",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hernán Crespo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 85
+        },
+        {
+          "name": "Claudio López",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 80
+        },
+        {
+          "name": "Karel Poborský",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Attilio Lombardo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emanuele Berrettoni",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcelo Salas",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Simone Inzaghi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniele Ruggiu",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fabrizio Ravanelli",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Lazio (2000/2001)",
+      "teamLabel": "Lazio (2000-01)"
+    },
+    "2013": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Federico Marchetti",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Etrit Berisha",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Thomas Strakosha",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alessandro Berardi",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Albano Bizzarri",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Guido Guerrieri",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ștefan Radu",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Abdoulay Konko",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Michaël Ciani",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luis Pedro Cavanda",
+          "position": "CB",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Diego Novaretti",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "André Dias",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Vinícius Freitas",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Josip Elez",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Giuseppe Biava",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Marius Stankevicius",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luca Crescenzi",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Riccardo Serpieri",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Lorenzo Filippini",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Gianluca Pollace",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Andrea Sbraga",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Alessio Luciani",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Aurimas Vilkaitis",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ederson",
+          "position": "CM",
+          "marketValue": 3400000,
+          "rating": 88
+        },
+        {
+          "name": "Hernanes",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Cristian Ledesma",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Senad Lulic",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Biglia",
+          "position": "CM",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Ogenyi Onazi",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Álvaro González",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Lorik Cana",
+          "position": "CM",
+          "marketValue": 3800000,
+          "rating": 79
+        },
+        {
+          "name": "Gaël Kakuta",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Danilo Cataldi",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Joseph Minala",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Stefano Mauri",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Crecco",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Riccardo Perpetuini",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Giuseppe Capua",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Seyi Adeleke",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Antonio Candreva",
+          "position": "ST",
+          "marketValue": 16500000,
+          "rating": 84
+        },
+        {
+          "name": "Felipe Anderson",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Keita Baldé",
+          "position": "ST",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Libor Kozák",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Hélder Postiga",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Brayan Perea",
+          "position": "ST",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Sergio Floccari",
+          "position": "ST",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Pereirinha",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Miroslav Klose",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Emiliano Alfaro",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Antonio Rozzi",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Mamadou Tounkara",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ettore Mendicino",
+          "position": "ST",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Cristiano Lombardi",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Milos Antic",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Lazio (2013/2014)",
+      "teamLabel": "Lazio (2013-14)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

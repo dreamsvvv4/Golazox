@@ -1,6 +1,669 @@
 {
   "slug": "tottenham-hotspur",
   "seasons": {
+    "2017": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Hugo Lloris",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 87
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Paulo Gazzaniga",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alfie Whiteman",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Toby Alderweireld",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Danny Rose",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Ben Davies",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 85
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Kevin Wimmer",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Kyle Walker-Peters",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 82
+        },
+        {
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "marketValue": 32000000,
+          "rating": 80
+        },
+        {
+          "name": "Juan Foyth",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 90
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Victor Wanyama",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Mousa Dembélé",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Josh Onomah",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luke Amos",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Tashan Oakley-Boothe",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Anthony Georgiou",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 150000000,
+          "rating": 91
+        },
+        {
+          "name": "Heung-min Son",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 88
+        },
+        {
+          "name": "Erik Lamela",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Lucas Moura",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 82
+        },
+        {
+          "name": "Vincent Janssen",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Georges-Kevin N'Koudou",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Fernando Llorente",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Kazaiah Sterling",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Tottenham Hotspur (2017/2018)",
+      "teamLabel": "Tottenham Hotspur (2017-18)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Hugo Lloris",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 87
+        },
+        {
+          "name": "Paulo Gazzaniga",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alfie Whiteman",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Toby Alderweireld",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Ben Davies",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Danny Rose",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 55000000,
+          "rating": 85
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Juan Foyth",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Kyle Walker-Peters",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 82
+        },
+        {
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 80
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Timothy Eyoma",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 90
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM",
+          "marketValue": 90000000,
+          "rating": 90
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Victor Wanyama",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Mousa Dembélé",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Oliver Skipp",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Josh Onomah",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luke Amos",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "George Marsh",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 150000000,
+          "rating": 91
+        },
+        {
+          "name": "Heung-min Son",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 88
+        },
+        {
+          "name": "Erik Lamela",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Lucas Moura",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 82
+        },
+        {
+          "name": "Vincent Janssen",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Georges-Kevin N'Koudou",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Fernando Llorente",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kazaiah Sterling",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Tottenham Hotspur (2018/2019)",
+      "teamLabel": "Tottenham Hotspur (2018-19)"
+    },
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Hugo Lloris",
+          "position": "GK",
+          "marketValue": 14500000,
+          "rating": 87
+        },
+        {
+          "name": "Paulo Gazzaniga",
+          "position": "GK",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Michel Vorm",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Brandon Austin",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Alfie Whiteman",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ryan Sessegnon",
+          "position": "CB",
+          "marketValue": 31500000,
+          "rating": 87
+        },
+        {
+          "name": "Toby Alderweireld",
+          "position": "CB",
+          "marketValue": 24000000,
+          "rating": 86
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 48000000,
+          "rating": 85
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Ben Davies",
+          "position": "CB",
+          "marketValue": 17500000,
+          "rating": 85
+        },
+        {
+          "name": "Juan Foyth",
+          "position": "CB",
+          "marketValue": 13500000,
+          "rating": 84
+        },
+        {
+          "name": "Danny Rose",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Kyle Walker-Peters",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Japhet Tanganga",
+          "position": "CB",
+          "marketValue": 7200000,
+          "rating": 81
+        },
+        {
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "marketValue": 14500000,
+          "rating": 80
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Malachi Fagan-Walcott",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dennis Cirkin",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Christian Eriksen",
+          "position": "CM",
+          "marketValue": 68000000,
+          "rating": 90
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM",
+          "marketValue": 64000000,
+          "rating": 90
+        },
+        {
+          "name": "Tanguy Ndombélé",
+          "position": "CM",
+          "marketValue": 52000000,
+          "rating": 89
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Moussa Sissoko",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Gedson Fernandes",
+          "position": "CM",
+          "marketValue": 13500000,
+          "rating": 84
+        },
+        {
+          "name": "Giovani Lo Celso",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Oliver Skipp",
+          "position": "CM",
+          "marketValue": 7200000,
+          "rating": 81
+        },
+        {
+          "name": "Victor Wanyama",
+          "position": "CM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Harvey White",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 120000000,
+          "rating": 91
+        },
+        {
+          "name": "Heung-min Son",
+          "position": "ST",
+          "marketValue": 64000000,
+          "rating": 88
+        },
+        {
+          "name": "Steven Bergwijn",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Erik Lamela",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Lucas Moura",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 82
+        },
+        {
+          "name": "Georges-Kevin N'Koudou",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Troy Parrott",
+          "position": "ST",
+          "marketValue": 3600000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Tottenham Hotspur (2019/2020)",
+      "teamLabel": "Tottenham Hotspur (2019-20)"
+    },
     "2021": {
       "formation": "4-4-2",
       "players": [

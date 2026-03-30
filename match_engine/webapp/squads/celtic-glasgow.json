@@ -327,10 +327,771 @@
       },
       "source": "Transfermarkt — Celtic (1970/1971)",
       "teamLabel": "Celtic (1970-71)"
+    },
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fraser Forster",
+          "position": "GK",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Vasilios Barkas",
+          "position": "GK",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Craig Gordon",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Scott Bain",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Conor Hazard",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Shane Duffy",
+          "position": "CB",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Christopher Jullien",
+          "position": "CB",
+          "marketValue": 5200000,
+          "rating": 80
+        },
+        {
+          "name": "Diego Laxalt",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Kristoffer Ajer",
+          "position": "CB",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "Jozo Simunovic",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Boli Bolingoli",
+          "position": "CB",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Moritz Bauer",
+          "position": "CB",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Nir Bitton",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jeremie Frimpong",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Jack Hendry",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Hatem Abd Elhamed",
+          "position": "CB",
+          "marketValue": 725000,
+          "rating": 72
+        },
+        {
+          "name": "Greg Taylor",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Anthony Ralston",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Stephen Welsh",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Callum McGregor",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ryan Christie",
+          "position": "CM",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Olivier Ntcham",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "David Turnbull",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Tom Rogic",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Scott Brown",
+          "position": "CM",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Ismaila Soro",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jonny Hayes",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ewan Henderson",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Karamoko Dembélé",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Kundai Benyu",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Luca Connell",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Scott Robertson",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Calvin Miller",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Grant Savoury",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST",
+          "marketValue": 13500000,
+          "rating": 84
+        },
+        {
+          "name": "Mohamed Elyounoussi",
+          "position": "ST",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "James Forrest",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Albian Ajeti",
+          "position": "ST",
+          "marketValue": 4800000,
+          "rating": 79
+        },
+        {
+          "name": "Patryk Klimala",
+          "position": "ST",
+          "marketValue": 3600000,
+          "rating": 78
+        },
+        {
+          "name": "Scott Sinclair",
+          "position": "ST",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Leigh Griffiths",
+          "position": "ST",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Maryan Shved",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Mikey Johnston",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Daniel Arzani",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Lewis Morgan",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Vakoun Bayo",
+          "position": "ST",
+          "marketValue": 525000,
+          "rating": 71
+        },
+        {
+          "name": "Jonathan Afolabi",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 63,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Celtic (2019/2020)",
+      "teamLabel": "Celtic (2019-20)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Joe Hart",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 83
+        },
+        {
+          "name": "Benjamin Siegrist",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Conor Hazard",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Scott Bain",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Josip Juranovic",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Moritz Jenz",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Carl Starfelt",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Greg Taylor",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Alistair Johnston",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Alexandro Bernabei",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Anthony Ralston",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Stephen Welsh",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yuki Kobayashi",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Liam Scales",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Adam Montgomery",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Bosun Lawal",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Reo Hatate",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Callum McGregor",
+          "position": "CM",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Matt O'Riley",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Oliver Abildgaard",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Aaron Mooy",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "David Turnbull",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Tomoki Iwata",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Ismaila Soro",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Yosuke Ideguchi",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Liam Shaw",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "James McCarthy",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Scott Robertson",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ben Summers",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jota",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 85
+        },
+        {
+          "name": "Kyogo Furuhashi",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 82
+        },
+        {
+          "name": "Liel Abada",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Georgios Giakoumakis",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Sead Haksabanovic",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "James Forrest",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Hyeon-gyu Oh",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Rocco Vata",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 63,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Celtic (2022/2023)",
+      "teamLabel": "Celtic (2022-23)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Viljami Sinisalo",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kasper Schmeichel",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ross Doohan",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Kieran Tierney",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Alistair Johnston",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Auston Trusty",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Liam Scales",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Julián Araujo",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 79
+        },
+        {
+          "name": "Marcelo Saracchi",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Anthony Ralston",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Colby Donovan",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Adam Montgomery",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Dane Murray",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Benjamin Arthur",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Arne Engels",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Reo Hatate",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 83
+        },
+        {
+          "name": "Paulo Bernardo",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Callum McGregor",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luke McCowan",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joel Mvuka",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alex Oxlade-Chamberlain",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Odin Holm",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jota",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 85
+        },
+        {
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Benjamin Nygren",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Sebastian Tounekti",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Michel-Ange Balikwisha",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Junior Adamu",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Hyun-jun Yang",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kelechi Iheanacho",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tomas Cvancara",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "James Forrest",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Callum Osmand",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 63,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Celtic (2025/2026)",
+      "teamLabel": "Celtic (2025-26)"
     }
   },
   "id": 371,
   "name": "Celtic",
   "badgeLocalPath": "/img/badges/celtic-glasgow.png",
-  "group": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"
+  "group": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",
+  "nameEs": "Celtic de Glasgow",
+  "nameEn": "Celtic FC"
 }

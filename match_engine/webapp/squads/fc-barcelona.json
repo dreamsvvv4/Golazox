@@ -2605,6 +2605,247 @@
       "source": "BDFutbol — Barcelona 2022-23 Primera División",
       "teamLabel": "Barcelona 2022-23 Primera División"
     },
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marc-André ter Stegen",
+          "position": "GK",
+          "marketValue": 28000000,
+          "rating": 89
+        },
+        {
+          "name": "Iñaki Peña",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ander Astralaga",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Diego Kochen",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Áron Yaakobishvili",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Andreas Christensen",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Ronald Araujo",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 86
+        },
+        {
+          "name": "Jules Koundé",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 86
+        },
+        {
+          "name": "João Cancelo",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Eric García",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Alejandro Balde",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Pau Cubarsí",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Iñigo Martínez",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 83
+        },
+        {
+          "name": "Mikayil Faye",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Héctor Fort",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Marcos Alonso",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Pedri",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Gavi",
+          "position": "CM",
+          "marketValue": 90000000,
+          "rating": 88
+        },
+        {
+          "name": "Frenkie de Jong",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 87
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Fermín López",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Marc Casadó",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Oriol Romeu",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Unai Hernández",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pau Prim",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Aleix Garrido",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Robert Lewandowski",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 93
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "ST",
+          "marketValue": 90000000,
+          "rating": 91
+        },
+        {
+          "name": "Raphinha",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Vitor Roque",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "João Félix",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 84
+        },
+        {
+          "name": "Ferran Torres",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 84
+        },
+        {
+          "name": "Ansu Fati",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Abde Ezzalzouli",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Marc Guiu",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Pau Víctor",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ángel Alarcón",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 61,
+        "defense": 65,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Barcelona (2023/2024)",
+      "teamLabel": "Barcelona (2023-24)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

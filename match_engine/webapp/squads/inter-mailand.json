@@ -1385,6 +1385,235 @@
       "source": "Transfermarkt — Inter Milan (2010/2011)",
       "teamLabel": "Inter Milan (2010-11)"
     },
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ionuț Radu",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Samir Handanovič",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alex Cordaz",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "William Rovida",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Milan Škriniar",
+          "position": "CB",
+          "marketValue": 65000000,
+          "rating": 90
+        },
+        {
+          "name": "Alessandro Bastoni",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Federico Dimarco",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 89
+        },
+        {
+          "name": "Robin Gosens",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Denzel Dumfries",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Stefan de Vrij",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 85
+        },
+        {
+          "name": "Matteo Darmian",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Danilo D'Ambrosio",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Franco Carboni",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Andrea Ranocchia",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Aleksandar Kolarov",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mattia Zanotti",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Fabio Cortinovis",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Nicolò Barella",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Hakan Çalhanoğlu",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Marcelo Brozović",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "Arturo Vidal",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 86
+        },
+        {
+          "name": "Cesare Casadei",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 84
+        },
+        {
+          "name": "Roberto Gagliardini",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucien Agoumé",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Stefano Sensi",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Matías Vecino",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 79
+        },
+        {
+          "name": "Mattia Sangalli",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Lautaro Martínez",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 89
+        },
+        {
+          "name": "Andrea Pinamonti",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 84
+        },
+        {
+          "name": "Ivan Perišić",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Joaquín Correa",
+          "position": "ST",
+          "marketValue": 23000000,
+          "rating": 82
+        },
+        {
+          "name": "Martín Satriano",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Edin Dzeko",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Felipe Caicedo",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dennis Curatolo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 65,
+        "defense": 69,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Inter Milan (2021/2022)",
+      "teamLabel": "Inter Milan (2021-22)"
+    },
     "2023": {
       "found": true,
       "formation": "4-3-3",

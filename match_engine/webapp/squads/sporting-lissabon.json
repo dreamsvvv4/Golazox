@@ -1,6 +1,247 @@
 {
   "slug": "sporting-lissabon",
   "seasons": {
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Luís Maximiano",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Antonio Adán",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "João Virgínia",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Renan Ribeiro",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "André Paulo",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Diego Callai",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nuno Mendes",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 87
+        },
+        {
+          "name": "Pedro Porro",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 87
+        },
+        {
+          "name": "Gonçalo Inácio",
+          "position": "CB",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 83
+        },
+        {
+          "name": "Sebastián Coates",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Matheus Reis",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Nuno Santos",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ricardo Esgaio",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Gonçalo Esteves",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Zouhair Feddal",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Luís Neto",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nazinho",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "José Marsà",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "João Goulart",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Renato Veiga",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pablo Sarabia",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "João Palhinha",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Manuel Ugarte",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel Bragança",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Rúben Vinagre",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Dário Essugo",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pedro Gonçalves",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Marcus Edwards",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Paulinho",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 82
+        },
+        {
+          "name": "Tiago Tomás",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jovane Cabral",
+          "position": "ST",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Gonzalo Plata",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Bruno Tabata",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Islam Slimani",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Rodrigo Ribeiro",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Geny Catamo",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mamede",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 63,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Braga (2021/2022)",
+      "teamLabel": "Braga (2021-22)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

@@ -472,6 +472,434 @@
       },
       "source": "Transfermarkt — Sporting CP (2021/2022)",
       "teamLabel": "Sporting CP (2021-22)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Franco Israel",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Antonio Adán",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "André Paulo",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Diego Callai",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Diogo Pinto",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Francisco Silva",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gonçalo Inácio",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Pedro Porro",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 87
+        },
+        {
+          "name": "Nuno Santos",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Jeremiah St. Juste",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 83
+        },
+        {
+          "name": "Ousmane Diomande",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Matheus Reis",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Héctor Bellerín",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Sebastián Coates",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ricardo Esgaio",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "José Marsà",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Gonçalo Esteves",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Renato Veiga",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Nazinho",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tiago Ilori",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luís Neto",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Chico Lamba",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Diogo Travassos",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 84
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Manuel Ugarte",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel Bragança",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Sotiris Alexandropoulos",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mateo Tanlongo",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Dário Essugo",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Mateus Fernandes",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Eduardo Henrique",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pedro Gonçalves",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Marcus Edwards",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Abdul Fatawu",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 82
+        },
+        {
+          "name": "Paulinho",
+          "position": "ST",
+          "marketValue": 6500000,
+          "rating": 82
+        },
+        {
+          "name": "Jovane Cabral",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Arthur Gomes",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Youssef Chermiti",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Ribeiro",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Rochinha",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Afonso Moreira",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Sporting CP (2022/2023)",
+      "teamLabel": "Sporting CP (2022-23)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rui Silva",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "João Virgínia",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ousmane Diomande",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Gonçalo Inácio",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Zeno Debast",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Maxi Araújo",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Eduardo Quaresma",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Iván Fresneda",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Georgios Vagiannidis",
+          "position": "CB",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Nuno Santos",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ricardo Mangas",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Morten Hjulmand",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "João Simões",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 84
+        },
+        {
+          "name": "Daniel Bragança",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Giorgi Kochorashvili",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 91
+        },
+        {
+          "name": "Geovany Quenda",
+          "position": "ST",
+          "marketValue": 42000000,
+          "rating": 88
+        },
+        {
+          "name": "Pedro Gonçalves",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Geny Catamo",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Fotis Ioannidis",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Luís Guilherme",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Souleymane Faye",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Sporting CP (2025/2026)",
+      "teamLabel": "Sporting CP (2025-26)"
     }
   },
   "id": 336,

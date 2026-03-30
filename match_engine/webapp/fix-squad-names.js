@@ -252,27 +252,99 @@ const NAME_MAP = {
   // ══ Scottish Premiership ══════════════════════════════════════
   'dundee-united-fc':            { nameEs: 'Dundee United',          nameEn: 'Dundee United' },
 
-  // ══ Champions League / Europa teams ═══════════════════════════
-  'fc-red-bull-salzburg':        { nameEs: 'RB Salzburgo',           nameEn: 'RB Salzburg' },
-  'fc-copenhagen':               { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
-  'club-brugge-kv':              { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },  'galatasaray-sk':              { nameEs: 'Galatasaray',            nameEn: 'Galatasaray' },
-  'losc-lille':                  { nameEs: 'Lille OSC',              nameEn: 'Lille OSC' },
-  'stade-brest-29':              { nameEs: 'Stade Brest',            nameEn: 'Stade Brest' },
-  'sc-braga':                    { nameEs: 'SC Braga',               nameEn: 'SC Braga' },
-  'club-brugge':                 { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },
-  'fc-kobenhavn':                { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
-  'afc-bournemouth':             { nameEs: 'Bournemouth',            nameEn: 'AFC Bournemouth' },
-  'fc-watford':                  { nameEs: 'Watford FC',             nameEn: 'Watford FC' },
-
   // ══ Sudamérica ════════════════════════════════════════════════
   'boca-juniors':                { nameEs: 'Boca Juniors',           nameEn: 'Boca Juniors' },
   'river-plate':                 { nameEs: 'River Plate',            nameEn: 'River Plate' },
   'cr-flamengo':                 { nameEs: 'Flamengo',               nameEn: 'Flamengo' },
+  'flamengo-rio-de-janeiro':     { nameEs: 'Flamengo',               nameEn: 'Flamengo' },
   'se-palmeiras':                { nameEs: 'Palmeiras',              nameEn: 'Palmeiras' },
+  'se-palmeiras-sao-paulo':      { nameEs: 'Palmeiras',              nameEn: 'Palmeiras' },
   'ca-atletico-mineiro':         { nameEs: 'Atlético Mineiro',       nameEn: 'Atletico Mineiro' },
+  'atletico-mineiro':            { nameEs: 'Atlético Mineiro',       nameEn: 'Atletico Mineiro' },
+  'clube-atletico-mineiro':      { nameEs: 'Atlético Mineiro',       nameEn: 'Atletico Mineiro' },
   'fluminense-fc':               { nameEs: 'Fluminense',             nameEn: 'Fluminense' },
+  'fluminense-rio-de-janeiro':   { nameEs: 'Fluminense',             nameEn: 'Fluminense' },
   'sc-corinthians-paulista':     { nameEs: 'Corinthians',            nameEn: 'Corinthians' },
-  'estudiantes-de-la-plata':     { nameEs: 'Estudiantes',            nameEn: 'Estudiantes' },
+  'corinthians-sao-paulo':       { nameEs: 'Corinthians',            nameEn: 'Corinthians' },
+  'sao-paulo-fc':                { nameEs: 'São Paulo FC',           nameEn: 'São Paulo FC' },
+  'fc-sao-paulo':                { nameEs: 'São Paulo FC',           nameEn: 'São Paulo FC' },
+  'santos-fc':                   { nameEs: 'Santos FC',              nameEn: 'Santos FC' },
+  'fc-santos':                   { nameEs: 'Santos FC',              nameEn: 'Santos FC' },
+  'sc-internacional':            { nameEs: 'Internacional',          nameEn: 'SC Internacional' },
+  'estudiantes-de-la-plata':     { nameEs: 'Estudiantes',            nameEn: 'Estudiantes LP' },
+  'club-estudiantes-de-la-plata':{ nameEs: 'Estudiantes',            nameEn: 'Estudiantes LP' },
+  'racing-club-de-avellaneda':   { nameEs: 'Racing Club',            nameEn: 'Racing Club' },
+  'san-lorenzo':                 { nameEs: 'San Lorenzo',            nameEn: 'San Lorenzo' },
+  'ca-independiente':            { nameEs: 'Independiente',          nameEn: 'CA Independiente' },
+
+  // ══ Liga MX ═══════════════════════════════════════════════════
+  'tigres-uanl':                 { nameEs: 'Tigres UANL',            nameEn: 'Tigres UANL' },
+  'cf-monterrey':                { nameEs: 'CF Monterrey',           nameEn: 'Monterrey' },
+  'cd-guadalajara':              { nameEs: 'Chivas Guadalajara',     nameEn: 'Guadalajara (Chivas)' },
+  'deportivo-guadalajara':       { nameEs: 'Chivas Guadalajara',     nameEn: 'Guadalajara (Chivas)' },
+  'cruz-azul':                   { nameEs: 'Cruz Azul',              nameEn: 'Cruz Azul' },
+  'club-de-futbol-america':      { nameEs: 'Club América',           nameEn: 'Club América' },
+  'pumas-unam':                  { nameEs: 'Pumas UNAM',             nameEn: 'UNAM Pumas' },
+  'cf-pachuca':                  { nameEs: 'CF Pachuca',             nameEn: 'Pachuca' },
+  'club-leon':                   { nameEs: 'Club León',              nameEn: 'Club León' },
+  'deportivo-toluca':            { nameEs: 'Toluca FC',              nameEn: 'Deportivo Toluca' },
+
+  // ══ Türkiye Süper Lig ═════════════════════════════════════════
+  'galatasaray-sk':              { nameEs: 'Galatasaray',            nameEn: 'Galatasaray' },
+  'fenerbahce-sk':               { nameEs: 'Fenerbahçe',             nameEn: 'Fenerbahce' },
+  'besiktas-jk':                 { nameEs: 'Beşiktaş',               nameEn: 'Besiktas' },
+  'trabzonspor':                 { nameEs: 'Trabzonspor',            nameEn: 'Trabzonspor' },
+  'istanbul-basaksehir':         { nameEs: 'Başakşehir',             nameEn: 'Istanbul Basaksehir' },
+
+  // ══ Greek Super League ════════════════════════════════════════
+  'olympiakos-piräus':           { nameEs: 'Olympiacos',             nameEn: 'Olympiacos' },
+  'olympiakos-piraeus':          { nameEs: 'Olympiacos',             nameEn: 'Olympiacos' },
+  'paok-saloniki':               { nameEs: 'PAOK Salónica',          nameEn: 'PAOK FC' },
+  'panathinaikos-athen':         { nameEs: 'Panathinaikos',          nameEn: 'Panathinaikos' },
+  'aek-athen':                   { nameEs: 'AEK Atenas',             nameEn: 'AEK Athens' },
+
+  // ══ Belgian Pro League ════════════════════════════════════════
+  'rsc-anderlecht':              { nameEs: 'Anderlecht',             nameEn: 'RSC Anderlecht' },
+  'standard-luttich':            { nameEs: 'Standard Lieja',         nameEn: 'Standard Liège' },
+  'krc-genk':                    { nameEs: 'Genk',                   nameEn: 'KRC Genk' },
+  'royale-union-saint-gilloise': { nameEs: 'Union Saint-Gilloise',   nameEn: 'Union SG' },
+  'club-brugge-kv':              { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },
+  'club-brugge':                 { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },
+
+  // ══ Austrian Bundesliga ═══════════════════════════════════════
+  'sk-rapid-wien':               { nameEs: 'Rapid de Viena',         nameEn: 'Rapid Vienna' },
+  'fk-austria-wien':             { nameEs: 'Austria de Viena',       nameEn: 'Austria Vienna' },
+  'lask-linz':                   { nameEs: 'LASK Linz',              nameEn: 'LASK' },
+  'rz-pellets-wac':              { nameEs: 'Wolfsberg AC',           nameEn: 'RZ Pellets WAC' },
+
+  // ══ Scottish Premiership ══════════════════════════════════════
+  'celtic-glasgow':              { nameEs: 'Celtic de Glasgow',      nameEn: 'Celtic FC' },
+  'rangers-fc':                  { nameEs: 'Rangers',                nameEn: 'Glasgow Rangers' },
+  'glasgow-rangers':             { nameEs: 'Rangers',                nameEn: 'Glasgow Rangers' },
+  'fc-aberdeen':                 { nameEs: 'Aberdeen FC',            nameEn: 'Aberdeen' },
+  'heart-of-midlothian':         { nameEs: 'Hearts',                 nameEn: 'Hearts' },
+  'hibernian-fc':                { nameEs: 'Hibernian',              nameEn: 'Hibernian FC' },
+  'dundee-united-fc':            { nameEs: 'Dundee United',          nameEn: 'Dundee United' },
+  'motherwell-fc':               { nameEs: 'Motherwell FC',          nameEn: 'Motherwell' },
+
+  // ══ Eastern Europe / Ukraine ══════════════════════════════════
+  'dynamo-kiew':                 { nameEs: 'Dinamo de Kiev',         nameEn: 'Dynamo Kyiv' },
+  'gnk-dinamo-zagreb':           { nameEs: 'Dinamo de Zagreb',       nameEn: 'Dinamo Zagreb' },
+  'spartak-moskva':              { nameEs: 'Spartak Moscú',          nameEn: 'Spartak Moscow' },
+  'cska-moskva':                 { nameEs: 'CSKA Moscú',             nameEn: 'CSKA Moscow' },
+
+  // ══ Champions League / Europa teams ══════════════════════════
+  'fc-red-bull-salzburg':        { nameEs: 'RB Salzburgo',           nameEn: 'RB Salzburg' },
+  'red-bull-salzburg':           { nameEs: 'RB Salzburgo',           nameEn: 'RB Salzburg' },
+  'fc-copenhagen':               { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
+  'fc-kobenhavn':                { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
+  'losc-lille':                  { nameEs: 'Lille OSC',              nameEn: 'Lille OSC' },
+  'stade-brest-29':              { nameEs: 'Stade Brest',            nameEn: 'Stade Brest' },
+  'sc-braga':                    { nameEs: 'SC Braga',               nameEn: 'SC Braga' },
+  'bsc-young-boys':              { nameEs: 'Young Boys',             nameEn: 'Young Boys' },
+  'shakhtar-donetsk':            { nameEs: 'Shakhtar Donetsk',       nameEn: 'Shakhtar Donetsk' },
+  'afc-bournemouth':             { nameEs: 'Bournemouth',            nameEn: 'AFC Bournemouth' },
+  'fc-watford':                  { nameEs: 'Watford FC',             nameEn: 'Watford FC' },
   // ══ Fantasy / Special ════════════════════════════════════════
   'america-xi':                  { nameEs: 'América XI',             nameEn: 'America XI' },
   'best-xi-2025':                { nameEs: 'Mejores del Mundo 2025', nameEn: 'World Best XI 2025' },

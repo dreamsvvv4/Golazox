@@ -85,50 +85,62 @@ const NATIONAL_TEAMS = [
 // ── Catálogo de clubes (eras míticas) ─────────────────────────
 const CLUB_TEAMS = [
   // España
-  { team: 'Real Madrid',     years: [1956,1960,1966,1976,1980,1986,1998,2002,2006,2012,2013,2014,2015,2016,2017,2022], region: 'La Liga' },
-  { team: 'Barcelona',       years: [1985,1992,1995,1999,2006,2009,2010,2011,2014,2015], region: 'La Liga' },
-  { team: 'Atletico Madrid', years: [1974,1996,2004,2012,2013,2015,2016,2020],           region: 'La Liga' },
-  { team: 'Valencia',        years: [1999,2000,2001,2003],                               region: 'La Liga' },
-  { team: 'Deportivo',       years: [1999,2000,2003],                                    region: 'La Liga' },
-  { team: 'Sevilla',         years: [2006,2015,2016,2020],                               region: 'La Liga' },
+  { team: 'Real Madrid',     years: [1956,1960,1966,1976,1980,1986,1998,2002,2006,2012,2013,2014,2015,2016,2017,2022,2024,2025], region: 'La Liga' },
+  { team: 'Barcelona',       years: [1985,1992,1995,1999,2006,2009,2010,2011,2014,2015,2023,2025],                               region: 'La Liga' },
+  { team: 'Atletico Madrid', years: [1974,1996,2004,2012,2013,2015,2016,2020,2021,2022,2025],                                    region: 'La Liga' },
+  { team: 'Valencia',        years: [1999,2000,2001,2003],                                                                       region: 'La Liga' },
+  { team: 'Deportivo',       years: [1999,2000,2003],                                                                            region: 'La Liga' },
+  { team: 'Sevilla',         years: [2006,2015,2016,2020,2022,2023,2025],                                                        region: 'La Liga' },
+  { team: 'Villarreal',      years: [2005,2021,2025],                                                                            region: 'La Liga' },
 
   // Italia
-  { team: 'Juventus',        years: [1983,1985,1995,1996,1997,2002,2012,2015,2017,2018], region: 'Serie A' },
-  { team: 'AC Milan',        years: [1988,1989,1993,1994,2002,2006],                     region: 'Serie A' },
-  { team: 'Inter Milan',     years: [1964,1965,1988,1989,2004,2009,2010],                region: 'Serie A' },
-  { team: 'Roma',            years: [2001,2006],                                         region: 'Serie A' },
-  { team: 'Napoli',          years: [1986,1987,1988,2017,2022],                          region: 'Serie A' },
+  { team: 'Juventus',        years: [1983,1985,1995,1996,1997,2002,2012,2015,2017,2018,2019,2020,2021,2023,2025],                region: 'Serie A' },
+  { team: 'AC Milan',        years: [1988,1989,1993,1994,2002,2006,2022,2025],                                                   region: 'Serie A' },
+  { team: 'Inter Milan',     years: [1964,1965,1988,1989,2004,2009,2010,2021,2023,2024,2025],                                    region: 'Serie A' },
+  { team: 'Roma',            years: [2001,2006,2021,2022,2023,2024,2025],                                                        region: 'Serie A' },
+  { team: 'Napoli',          years: [1986,1987,1988,2017,2022,2023,2025],                                                        region: 'Serie A' },
+  { team: 'Lazio',           years: [1998,2000,2013,2025],                                                                       region: 'Serie A' },
+  { team: 'Atalanta',        years: [2019,2024,2025],                                                                            region: 'Serie A' },
+  { team: 'Fiorentina',      years: [1969,1999,2023,2025],                                                                       region: 'Serie A' },
 
   // Alemania
-  { team: 'Bayern Munich',   years: [1974,1975,1976,1999,2000,2001,2012,2013,2019,2020], region: 'Bundesliga' },
-  { team: 'Borussia Dortmund', years: [1996,1997,2011,2012],                             region: 'Bundesliga' },
-  { team: 'Bayer Leverkusen', years: [2002,2023],                                        region: 'Bundesliga' },
+  { team: 'Bayern Munich',   years: [1974,1975,1976,1999,2000,2001,2012,2013,2019,2020,2023,2025],                               region: 'Bundesliga' },
+  { team: 'Borussia Dortmund', years: [1996,1997,2011,2012,2019,2021,2022,2023,2024,2025],                                       region: 'Bundesliga' },
+  { team: 'Bayer Leverkusen', years: [2002,2023,2024,2025],                                                                      region: 'Bundesliga' },
+  { team: 'RB Leipzig',       years: [2020,2022,2025],                                                                           region: 'Bundesliga' },
+  { team: 'Eintracht Frankfurt', years: [2022,2025],                                                                             region: 'Bundesliga' },
 
   // Inglaterra
-  { team: 'Manchester United', years: [1994,1998,1999,2002,2007,2008],                   region: 'Premier League' },
-  { team: 'Arsenal',           years: [2001,2002,2003,2004],                             region: 'Premier League' },
-  { team: 'Liverpool',         years: [1977,1978,1984,2004,2008,2019],                   region: 'Premier League' },
-  { team: 'Chelsea',           years: [2004,2005,2011,2014],                             region: 'Premier League' },
-  { team: 'Manchester City',   years: [2011,2012,2018,2019,2021,2022,2023],              region: 'Premier League' },
+  { team: 'Manchester United', years: [1994,1998,1999,2002,2007,2008,2025],                                                      region: 'Premier League' },
+  { team: 'Arsenal',           years: [2001,2002,2003,2004,2023,2024,2025],                                                      region: 'Premier League' },
+  { team: 'Liverpool',         years: [1977,1978,1984,2004,2008,2019,2025],                                                      region: 'Premier League' },
+  { team: 'Chelsea',           years: [2004,2005,2011,2014,2021,2022,2023,2025],                                                  region: 'Premier League' },
+  { team: 'Manchester City',   years: [2011,2012,2018,2019,2021,2022,2023,2025],                                                  region: 'Premier League' },
+  { team: 'Tottenham Hotspur', years: [2017,2018,2019,2025],                                                                     region: 'Premier League' },
+  { team: 'Aston Villa',       years: [1982,2019,2024,2025],                                                                     region: 'Premier League' },
+  { team: 'Newcastle United',  years: [1996,1997,2023,2025],                                                                     region: 'Premier League' },
 
   // Francia
-  { team: 'Paris Saint-Germain', years: [2012,2015,2016,2019,2020],                      region: 'Ligue 1' },
-  { team: 'Lyon',               years: [2004,2005,2006,2007,2008],                       region: 'Ligue 1' },
-  { team: 'Marseille',          years: [1992,1993],                                      region: 'Ligue 1' },
-  { team: 'Monaco',             years: [2003,2016],                                      region: 'Ligue 1' },
+  { team: 'Paris Saint-Germain', years: [2012,2015,2016,2019,2020,2021,2022,2023,2025],                                          region: 'Ligue 1' },
+  { team: 'Lyon',               years: [2004,2005,2006,2007,2008,2025],                                                          region: 'Ligue 1' },
+  { team: 'Marseille',          years: [1992,1993,2020,2025],                                                                    region: 'Ligue 1' },
+  { team: 'Monaco',             years: [2003,2016,2017,2025],                                                                    region: 'Ligue 1' },
+  { team: 'Lille',              years: [2020,2025],                                                                              region: 'Ligue 1' },
 
   // Países Bajos
-  { team: 'Ajax',               years: [1971,1972,1973,1994,1995,2018],                  region: 'Eredivisie' },
-  { team: 'PSV',                years: [1987,1988,1991,1997,2005,2006],                  region: 'Eredivisie' },
-  { team: 'Feyenoord',          years: [1969,1982,2001,2016],                            region: 'Eredivisie' },
+  { team: 'Ajax',               years: [1971,1972,1973,1994,1995,2018,2019,2025],                                                region: 'Eredivisie' },
+  { team: 'PSV',                years: [1987,1988,1991,1997,2005,2006,2023,2025],                                                 region: 'Eredivisie' },
+  { team: 'Feyenoord',          years: [1969,1982,2001,2016,2023,2025],                                                          region: 'Eredivisie' },
 
   // Portugal
-  { team: 'Porto',              years: [1987,1994,2003,2004],                            region: 'Primeira Liga' },
-  { team: 'Benfica',            years: [1961,1962,1987,2014,2015,2022],                  region: 'Primeira Liga' },
-  { team: 'Sporting CP',        years: [1999,2001,2021],                                 region: 'Primeira Liga' },
+  { team: 'Porto',              years: [1987,1994,2003,2004,2011,2025],                                                          region: 'Primeira Liga' },
+  { team: 'Benfica',            years: [1961,1962,1987,2014,2015,2022,2023,2025],                                                region: 'Primeira Liga' },
+  { team: 'Sporting CP',        years: [1999,2001,2021,2022,2025],                                                               region: 'Primeira Liga' },
+  { team: 'Braga',              years: [2021,2025],                                                                              region: 'Primeira Liga' },
 
   // Escocia
-  { team: 'Celtic',             years: [1967,1969,1970],                                 region: 'Escocia' },
+  { team: 'Celtic',             years: [1967,1969,1970,2019,2022,2025],                                                          region: 'Escocia' },
+  { team: 'Rangers',            years: [2021,2022,2025],                                                                         region: 'Escocia' },
 ];
 
 // ── Selecciones confirmadas / probables para el Mundial 2026 (48 equipos) ─────
@@ -270,11 +282,63 @@ const EXTRA_CLUBS = [
       'Rangers','Club Brugge'].map(t => ({ team: t, years: CY, region: 'UCL recent' })),
 
   // ══ SUDAMÉRICA ════════════════════════════════════════════════
-  ...['Boca Juniors','River Plate','Flamengo','Palmeiras','Atletico Mineiro',
-      'Fluminense','Corinthians','Estudiantes'].map(t => ({ team: t, years: CY, region: 'Sudamérica' })),
+  { team: 'Boca Juniors',      years: [2000,2003,2007,2025],       region: 'Argentina' },   // Libertadores winners
+  { team: 'River Plate',       years: [1996,2015,2018,2025],       region: 'Argentina' },   // Libertadores winners
+  { team: 'Flamengo',          years: [1981,2019,2022,2025],       region: 'Brasil' },       // Libertadores winners
+  { team: 'Palmeiras',         years: [2020,2021,2025],            region: 'Brasil' },       // Libertadores winners
+  { team: 'Fluminense',        years: [2023,2025],                 region: 'Brasil' },       // Libertadores winners
+  { team: 'Corinthians',       years: [2012,2025],                 region: 'Brasil' },       // Libertadores + Brasileirao
+  { team: 'Atletico Mineiro',  years: [2021,2025],                 region: 'Brasil' },       // Libertadores winner
+  { team: 'Sao Paulo FC',      years: [1992,1993,2005,2025],       region: 'Brasil' },
+  { team: 'Santos FC',         years: [1962,1963,2011,2025],       region: 'Brasil' },       // Pelé + Neymar eras
+  { team: 'Internacional',     years: [2006,2010,2025],            region: 'Brasil' },
+  { team: 'Estudiantes',       years: [2009,2025],                 region: 'Argentina' },
+  { team: 'Racing Club',       years: [2001,2014,2025],            region: 'Argentina' },
+  { team: 'San Lorenzo',       years: [2014,2025],                 region: 'Argentina' },
 
   // ══ LIGA MX ═══════════════════════════════════════════════════
-  ...['Tigres UANL','Monterrey','Guadalajara'].map(t => ({ team: t, years: CY, region: 'Liga MX' })),
+  { team: 'Tigres UANL',       years: [2015,2016,2020,2025],       region: 'Liga MX' },      // Libertadores final 2020
+  { team: 'Monterrey',         years: [2011,2012,2019,2025],       region: 'Liga MX' },
+  { team: 'Guadalajara',       years: [2006,2017,2025],            region: 'Liga MX' },
+  { team: 'Cruz Azul',         years: [2021,2025],                 region: 'Liga MX' },
+  { team: 'Club America',      years: [2014,2018,2024,2025],       region: 'Liga MX' },
+  { team: 'Pumas UNAM',        years: [2004,2025],                 region: 'Liga MX' },
+  { team: 'Pachuca',           years: [2007,2025],                 region: 'Liga MX' },      // Champions Cup
+  { team: 'Toluca',            years: [2002,2025],                 region: 'Liga MX' },
+
+  // ══ TÜRKIYE SÜPER LIG ════════════════════════════════════════
+  { team: 'Galatasaray',       years: [2000,2002,2012,2019,2023,2025], region: 'Süper Lig' }, // UCL win 2000 + recent titles
+  { team: 'Fenerbahce',        years: [2005,2007,2014,2023,2025],  region: 'Süper Lig' },
+  { team: 'Besiktas',          years: [2003,2009,2017,2021,2025],  region: 'Süper Lig' },
+  { team: 'Trabzonspor',       years: [2022,2025],                 region: 'Süper Lig' },    // Şampiyonluk 2022
+
+  // ══ GREEK SUPER LEAGUE ═══════════════════════════════════════
+  { team: 'Olympiacos',        years: [1999,2000,2025],            region: 'Super League Grecia' },
+  { team: 'PAOK',              years: [2019,2025],                 region: 'Super League Grecia' },
+  { team: 'Panathinaikos',     years: [2025],                      region: 'Super League Grecia' },
+  { team: 'AEK Athens',        years: [2018,2023,2025],            region: 'Super League Grecia' },
+
+  // ══ BELGIAN PRO LEAGUE ═══════════════════════════════════════
+  { team: 'Anderlecht',        years: [1976,1978,2012,2017,2025],  region: 'Pro League Bélgica' },
+  { team: 'Standard Liege',    years: [2008,2009,2025],            region: 'Pro League Bélgica' },
+  { team: 'Genk',              years: [2002,2011,2019,2025],       region: 'Pro League Bélgica' },
+  { team: 'Club Brugge',       years: [2018,2020,2022,2025],       region: 'Pro League Bélgica' }, // UCL group stage regulars
+  { team: 'Union Saint Gilloise', years: [2022,2023,2025],         region: 'Pro League Bélgica' },
+
+  // ══ AUSTRIAN BUNDESLIGA ══════════════════════════════════════
+  { team: 'Red Bull Salzburg', years: [2018,2019,2020,2022,2025],  region: 'Bundesliga Austria' },
+  { team: 'Rapid Vienna',      years: [1996,2005,2025],            region: 'Bundesliga Austria' },
+  { team: 'Austria Vienna',    years: [2006,2013,2025],            region: 'Bundesliga Austria' },
+  { team: 'LASK',              years: [2020,2025],                 region: 'Bundesliga Austria' },
+
+  // ══ OTHER EUROPEAN ═══════════════════════════════════════════
+  { team: 'Dynamo Kyiv',       years: [1999,2000,2016,2025],       region: 'UPL Ucrania' },
+  { team: 'Shakhtar Donetsk',  years: [2009,2012,2021,2025],       region: 'UPL Ucrania' },  // UCL winner 2009
+  { team: 'Dinamo Zagreb',     years: [2019,2022,2025],            region: 'HNL Croacia' },
+  { team: 'Spartak Moscow',    years: [1995,2001,2017,2025],       region: 'RPL Rusia' },
+  { team: 'Young Boys',        years: [2018,2021,2025],            region: 'Super League Suiza' },
+  { team: 'FC Copenhagen',     years: [2006,2023,2025],            region: 'Superliga Dinamarca' },
+  { team: 'Sporting Kansas City', years: [2013,2025],              region: 'MLS' },  // duplicate-safe, seeder skips cached
 ];
 
 // ── Construir cola de descargas ────────────────────────────────
@@ -287,6 +351,8 @@ function buildQueue() {
   if (BATCH === 'winners')                     catalog.push(...WINNERS_TEAMS);
   if (BATCH === 'extra')                       catalog.push(...EXTRA_CLUBS);
   if (BATCH === 'wc2026')                      catalog.push(...WC2026_NATIONAL);
+  // --batch expand: solo CLUB_TEAMS (incluye mejoras recientes) sin selecciones nacionales
+  if (BATCH === 'expand')                      catalog.push(...CLUB_TEAMS, ...EXTRA_CLUBS);
 
   if (ONLY_TEAM) {
     const key = ONLY_TEAM.toLowerCase();

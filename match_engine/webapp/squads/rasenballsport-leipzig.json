@@ -1,6 +1,398 @@
 {
   "slug": "rasenballsport-leipzig",
   "seasons": {
+    "2020": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Péter Gulácsi",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Josep Martínez",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Philipp Tschauner",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Angeliño",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Ibrahima Konaté",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 86
+        },
+        {
+          "name": "Lukas Klostermann",
+          "position": "CB",
+          "marketValue": 27000000,
+          "rating": 86
+        },
+        {
+          "name": "Dayot Upamecano",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 84
+        },
+        {
+          "name": "Willi Orbán",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Marcel Halstenberg",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Konrad Laimer",
+          "position": "CB",
+          "marketValue": 26000000,
+          "rating": 83
+        },
+        {
+          "name": "Nordi Mukiele",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Hugo Novoa",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Marcel Sabitzer",
+          "position": "CM",
+          "marketValue": 42000000,
+          "rating": 88
+        },
+        {
+          "name": "Amadou Haidara",
+          "position": "CM",
+          "marketValue": 24000000,
+          "rating": 86
+        },
+        {
+          "name": "Dani Olmo",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 86
+        },
+        {
+          "name": "Tyler Adams",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Dominik Szoboszlai",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Justin Kluivert",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Lazar Samardžić",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 84
+        },
+        {
+          "name": "Kevin Kampl",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Eric Martel",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Joscha Wosz",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sidney Raebiger",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ademola Lookman",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 88
+        },
+        {
+          "name": "Emil Forsberg",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Christopher Nkunku",
+          "position": "ST",
+          "marketValue": 43000000,
+          "rating": 85
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST",
+          "marketValue": 21000000,
+          "rating": 85
+        },
+        {
+          "name": "Hee-chan Hwang",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 85
+        },
+        {
+          "name": "Alexander Sørloth",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Dennis Borkowski",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fabrice Hartmann",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 64,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — RB Leipzig (2020/2021)",
+      "teamLabel": "RB Leipzig (2020-21)"
+    },
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Péter Gulácsi",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Janis Blaswich",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ørjan Nyland",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jonas Nickisch",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Timo Schlieck",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Oskar Preil",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Josko Gvardiol",
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Mohamed Simakan",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Lukas Klostermann",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "David Raum",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 83
+        },
+        {
+          "name": "Konrad Laimer",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 83
+        },
+        {
+          "name": "Willi Orbán",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Abdou Diallo",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 82
+        },
+        {
+          "name": "Hugo Novoa",
+          "position": "CB",
+          "marketValue": 4300000,
+          "rating": 79
+        },
+        {
+          "name": "Marcel Halstenberg",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Sanoussy Ba",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Xaver Schlager",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Dani Olmo",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "Amadou Haidara",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Dominik Szoboszlai",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "Kevin Kampl",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Caden Clark",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Christopher Nkunku",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 85
+        },
+        {
+          "name": "André Silva",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Alexander Sørloth",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Timo Werner",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Emil Forsberg",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 64,
+        "defense": 64,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — RB Leipzig (2022/2023)",
+      "teamLabel": "RB Leipzig (2022-23)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

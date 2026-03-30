@@ -1,6 +1,458 @@
 {
   "slug": "fc-villarreal",
   "seasons": {
+    "2005": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sebastián Viera",
+          "position": "GK",
+          "marketValue": 2250000,
+          "rating": 76
+        },
+        {
+          "name": "Mariano Barbosa",
+          "position": "GK",
+          "marketValue": 2250000,
+          "rating": 76
+        },
+        {
+          "name": "Javier López Vallejo",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Juan Carlos",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Juan Pablo Sorín",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Jan Kromkamp",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Gonzalo Rodríguez",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Josemi",
+          "position": "CB",
+          "marketValue": 2750000,
+          "rating": 77
+        },
+        {
+          "name": "Rodolfo Arruabarrena",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Javi Venta",
+          "position": "CB",
+          "marketValue": 2250000,
+          "rating": 76
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CB",
+          "marketValue": 2250000,
+          "rating": 76
+        },
+        {
+          "name": "Juan Manuel Peña",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Quique Álvarez",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "César Arzo",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Carlos Alcántara",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Oscar López",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Juan Román Riquelme",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 89
+        },
+        {
+          "name": "Santi Cazorla",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 85
+        },
+        {
+          "name": "Alessio Tacchinardi",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Roger García",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Marcos Senna",
+          "position": "CM",
+          "marketValue": 1750000,
+          "rating": 75
+        },
+        {
+          "name": "Josico",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Héctor Font",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Javier Calleja",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Javi Rubio",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Marquitos",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Diego Forlán",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Luciano Figueroa",
+          "position": "ST",
+          "marketValue": 3750000,
+          "rating": 78
+        },
+        {
+          "name": "José Mari",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Guillermo Franco",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Xisco Nadal",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Antonio Guayre",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Villarreal (2005/2006)",
+      "teamLabel": "Villarreal (2005-06)"
+    },
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gerónimo Rulli",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Sergio Asenjo",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Iker Álvarez",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Filip Jørgensen",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Pau Torres",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Juan Foyth",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Alfonso Pedraza",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jorge Cuenca",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Aïssa Mandi",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alberto Moreno",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Mario Gaspar",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Raúl Albiol",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Rubén Peña",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Adrián Dela",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Dani Tasende",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Lanchi",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Manu Trigueros",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Dani Parejo",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 84
+        },
+        {
+          "name": "Giovani Lo Celso",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 84
+        },
+        {
+          "name": "Moi Gómez",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Francis Coquelin",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Manu Morlanes",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Étienne Capoue",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Vicente Iborra",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Carlo García",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Antonio Pacheco",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Arnaut Danjuma",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Yéremy Pino",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Gerard Moreno",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Samuel Chukwueze",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 83
+        },
+        {
+          "name": "Boulaye Dia",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Nicolas Jackson",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 83
+        },
+        {
+          "name": "Paco Alcácer",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Fer Niño",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Nikita Iosifov",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Dani Raba",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Juan Carlos Arana",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 66,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Villarreal (2021/2022)",
+      "teamLabel": "Villarreal (2021-22)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
