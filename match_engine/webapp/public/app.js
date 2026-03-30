@@ -1603,6 +1603,16 @@ document.addEventListener('DOMContentLoaded', () => {
   _on('btn-rivalry',  () => rivalryMe());
   _on('btn-haptic',   () => toggleHaptic());
 
+  // Persistent simulate handler — survives _updateClashButton() resets
+  document.getElementById('vs-clash')?.addEventListener('click', () => {
+    const b = document.getElementById('vs-clash');
+    if (b?.classList.contains('vs-ready') && !b.disabled) handleSimulate();
+  });
+  document.getElementById('vs-clash-label')?.addEventListener('click', () => {
+    const b = document.getElementById('vs-clash');
+    if (b?.classList.contains('vs-ready') && !b.disabled) handleSimulate();
+  });
+
   // Match history clear
   _on('mh-clear-btn', e => { e.preventDefault(); clearMatchHistory(); });
   // Match history replay (delegation)
@@ -1762,16 +1772,15 @@ function _updateClashButton() {
       <div class="clash-logo-wrap">
         <img class="clash-logo-img" src="/golazox-coin.png?v=2" alt="GolazOX" draggable="false" />
       </div>`;
-    if (lbl) { lbl.textContent = t('vs-simulate'); lbl.classList.add('visible'); lbl.onclick = handleSimulate; lbl.style.cursor = 'pointer'; }
-    btn.onclick = handleSimulate;
+    if (lbl) { lbl.textContent = t('vs-simulate'); lbl.classList.add('visible'); lbl.style.cursor = 'pointer'; }
+    // onclick handled by persistent addEventListener in DOMContentLoaded
   } else {
     // Default — lineups not ready yet
     btn.classList.remove('vs-ready', 'vs-teams-ready');
     btn.style.removeProperty('--clash-a');
     btn.style.removeProperty('--clash-b');
     btn.innerHTML = '<span>VS</span>';
-    if (lbl) { lbl.textContent = ''; lbl.classList.remove('visible'); lbl.onclick = null; lbl.style.cursor = ''; }
-    btn.onclick = null;
+    if (lbl) { lbl.textContent = ''; lbl.classList.remove('visible'); lbl.style.cursor = ''; }
   }
 }
 
