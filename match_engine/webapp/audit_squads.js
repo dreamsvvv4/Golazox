@@ -18,7 +18,7 @@ const VERBOSE    = process.argv.includes('--verbose');
 
 // ---------------------------------------------------------------------------
 const VALID_POSITIONS = new Set(['GK','CB','RB','LB','DM','CM','AM','RM','LM','RW','LW','ST','CF','SS']);
-const MOJIBAKE_RE     = /Ã|â€|Ã³|Ã¡|Ã©|Ã±/;          // UTF-8 re-encoded as latin1
+const MOJIBAKE_RE     = /Ã|â€|ó|á|é|ñ/;          // UTF-8 re-encoded as latin1
 const MIN_PLAYERS     = 8;   // threshold for CATALOG inclusion
 const MIN_RATED_PLAYERS = 11; // warn if playing-XI has fewer
 

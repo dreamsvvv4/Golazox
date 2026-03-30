@@ -1,9 +1,9 @@
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   Football Match Simulator â€” Stylesheet
-   Design: modern premium broadcast Â· dark mode Â· neon accents
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ═══════════════════════════════════════════════════════════
+   Football Match Simulator — Stylesheet
+   Design: modern premium broadcast · dark mode · neon accents
+   ═══════════════════════════════════════════════════════════ */
 
-/* â”€â”€ Fuente local Rajdhani (auto-alojada, sin tracking de Google) â”€â”€â”€â”€ */
+/* ── Fuente local Rajdhani (auto-alojada, sin tracking de Google) ──── */
 @font-face {
   font-family: 'Rajdhani';
   font-style: normal;
@@ -35,10 +35,10 @@
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* â”€â”€ Reset & tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Reset & tokens ──────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* â”€â”€ Global custom scrollbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Global custom scrollbar ─────────────────────────────── */
 ::-webkit-scrollbar              { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track        { background: transparent; }
 ::-webkit-scrollbar-thumb        { background: rgba(255,255,255,.12); border-radius: 99px; }
@@ -71,7 +71,7 @@
 
 html { font-size: 16px; scroll-behavior: smooth; overscroll-behavior-y: none; }
 
-/* â”€â”€ Native-app touch behaviour â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Native-app touch behaviour ───────────────────────────── */
 /* Cancel the tap flash on every element (iOS/Android highlight) */
 * { -webkit-tap-highlight-color: transparent; }
 /* Block pull-to-refresh and horizontal overscroll bounce on the body */
@@ -79,7 +79,7 @@ body {
   overscroll-behavior: none;
 }
 /* Eliminate 300 ms tap delay and disable double-tap-zoom on all
-   interactive controls â€” browser will not wait for a second tap. */
+   interactive controls — browser will not wait for a second tap. */
 a, button, label, select,
 input[type="button"], input[type="submit"], input[type="reset"],
 [role="button"], [role="tab"], [role="option"],
@@ -108,7 +108,7 @@ body {
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(123,47,247,0.12) 0%, transparent 70%);
 }
 
-/* â”€â”€ Glass card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Glass card ──────────────────────────────────────────── */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -120,7 +120,7 @@ body {
 }
 .glass-card:hover { border-color: var(--border-glow); }
 
-/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Header ──────────────────────────────────────────────── */
 .site-header {
   padding: 1.2rem 2rem;
   /* iOS notch / Dynamic Island safe area */
@@ -144,7 +144,7 @@ body {
   align-items: center;
   gap: .6rem;
 }
-/* â”€â”€ GolazOX CSS text wordmark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── GolazOX CSS text wordmark ───────────────────────────── */
 .logo-wordmark {
   display: flex;
   align-items: baseline;
@@ -172,7 +172,7 @@ body {
   text-shadow: none;
   position: relative;
 }
-/* â”€â”€ Logo animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Logo animations ────────────────────────────────────── */
 @keyframes gx-name-in {
   from { opacity: 0; letter-spacing: .45em; }
   to   { opacity: 1; letter-spacing: normal; }
@@ -182,7 +182,7 @@ body {
   60%  { transform: scale(1.04); }
   100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
 }
-/* Idle state: clean metal with subtle dark shadow only â€” no orange glow */
+/* Idle state: clean metal with subtle dark shadow only — no orange glow */
 @keyframes gx-pulse {
   0%, 100% { filter: drop-shadow(0 2px 8px rgba(0,0,0,.6)); }
   50%       { filter: drop-shadow(0 3px 12px rgba(0,0,0,.7)); }
@@ -205,7 +205,7 @@ body {
   cursor: pointer;
 }
 .logo-img:hover {
-  /* Spark burst on hover â€” overrides the idle pulse */
+  /* Spark burst on hover — overrides the idle pulse */
   animation: gx-spark 0.45s ease-out forwards;
   transform-origin: center;
 }
@@ -238,14 +238,14 @@ body {
 }
 .btn-lang:hover { background: rgba(0,212,255,.18); border-color: var(--neon); }
 
-/* â”€â”€ Main wrap â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Main wrap ───────────────────────────────────────────── */
 .main-wrap {
   max-width: 1200px; margin: 2.5rem auto;
   padding: 0 1.5rem;
   display: flex; flex-direction: column; gap: 2rem;
 }
 
-/* â”€â”€ Input panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Input panel ─────────────────────────────────────────── */
 .input-panel { padding: 2.2rem 2.2rem 1.8rem; }
 
 .teams-grid {
@@ -287,7 +287,7 @@ body {
 }
 .select-formation option { background: #131926; }
 
-/* â”€â”€ Team Picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Team Picker ─────────────────────────────────────────── */
 .team-picker { position: relative; width: 100%; }
 
 /* Loading state */
@@ -313,7 +313,7 @@ body {
 }
 .tp-retry-btn:hover { background: rgba(0,212,255,.1); }
 
-/* Step 1 â€” type selection */
+/* Step 1 — type selection */
 .tp-type-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -358,7 +358,7 @@ body {
 .tp-back-btn:hover { background: rgba(0,212,255,.1); }
 .tp-bread-label { font-size: .68rem; color: rgba(255,255,255,.28); }
 
-/* Nations grid â€” flag images */
+/* Nations grid — flag images */
 .tp-nations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
@@ -599,12 +599,12 @@ body {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: .55;   /* dimmed â€” indicates â€œnot fully readyâ€ */
+  opacity: .55;   /* dimmed — indicates “not fully ready” */
   pointer-events: none;
 }
-/* Play overlay â€” big centred â–¶ on top of dimmed coin */
+/* Play overlay — big centred ▶ on top of dimmed coin */
 .vs-badge.vs-teams-ready::after {
-  content: 'â–¶';
+  content: '▶';
   position: absolute;
   inset: 0;
   display: flex;
@@ -618,12 +618,12 @@ body {
 }
 .vs-badge.vs-teams-ready:hover  { transform: scale(1.08); }
 .vs-badge.vs-teams-ready:active { transform: scale(.93); animation: none; }
-/* Hide old inner spans â€” label is now a sibling */
+/* Hide old inner spans — label is now a sibling */
 .vs-badge.vs-teams-ready .clash-l1 { display: none; }
 .vs-badge.vs-teams-ready .clash-l2 { display: none; }
 }
 
-/* â”€â”€ Match mode + Stadium row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Match mode + Stadium row ────────────────────────────── */
 .extra-options-row {
   display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.2rem;
   margin-top: 1rem; padding-top: 2rem;
@@ -647,7 +647,7 @@ body {
   color: var(--neon); box-shadow: 0 0 8px rgba(0,212,255,.2);
 }
 
-/* â”€â”€ Stadium visual picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Stadium visual picker ───────────────────────────────── */
 .stadium-picker-section {
   margin-top: 1.4rem; padding-top: 1.2rem;
   border-top: 1px solid rgba(255,255,255,.08);
@@ -685,7 +685,7 @@ body {
   opacity: 1 !important;
 }
 .spk-active::after {
-  content: 'âœ“';
+  content: '✓';
   position: absolute; top: 4px; right: 6px;
   font-size: .85rem; font-weight: 800;
   color: var(--neon);
@@ -711,10 +711,10 @@ body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* Keep old stc-* for any legacy use â€” effectively hidden */
+/* Keep old stc-* for any legacy use — effectively hidden */
 .stadium-card { display: none !important; }
 
-/* â”€â”€ Referee picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Referee picker ───────────────────────────────────────── */
 .referee-picker-section {
   margin-top: 1.2rem; padding-top: 1.1rem;
   border-top: 1px solid rgba(255,255,255,.08);
@@ -749,7 +749,7 @@ body {
   opacity: 1 !important;
 }
 .ref-active::after {
-  content: 'âœ“';
+  content: '✓';
   position: absolute; top: 4px; right: 6px;
   font-size: .8rem; font-weight: 800;
   color: rgba(212,175,55,.9);
@@ -778,7 +778,7 @@ body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* â”€â”€ Weather picker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Weather picker ──────────────────────────────────────── */
 .weather-picker-section {
   margin-top: 1.2rem; padding-top: 1.1rem;
   border-top: 1px solid rgba(255,255,255,.08);
@@ -807,7 +807,7 @@ body {
   opacity: 1 !important;
 }
 .wth-active::after {
-  content: 'âœ“';
+  content: '✓';
   position: absolute; top: 3px; right: 5px;
   font-size: .75rem; font-weight: 800; color: var(--neon);
   text-shadow: 0 0 5px rgba(0,212,255,.6);
@@ -816,7 +816,7 @@ body {
 .wth-icon svg { width: 28px; height: 28px; display: block; flex-shrink: 0; }
 .wth-label { font-size: .6rem; font-weight: 600; color: rgba(255,255,255,.7); margin-top: .25rem; }
 
-/* â”€â”€ Prematch stadium info â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Prematch stadium info ───────────────────────────────── */
 .pm-stadium-info {
   font-size: .78rem; color: rgba(255,255,255,.55);
   margin-top: .5rem; text-align: center;
@@ -844,7 +844,7 @@ body {
 .btn-simulate:disabled { opacity: .5; cursor: not-allowed; transform: none; }
 .btn-icon { font-size: 1.1rem; }
 
-/* â”€â”€ Lookup button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Lookup button ───────────────────────────────────────── */
 .btn-lookup {
   margin-top: .6rem;
   width: 100%;
@@ -903,7 +903,7 @@ body {
 .btn-secondary:active { background: rgba(255,255,255,.17); }
 .btn-secondary:disabled { opacity: .35; cursor: not-allowed; }
 
-/* â”€â”€ Lookup preview panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Lookup preview panel ────────────────────────────────── */
 .lookup-preview {
   margin-top: .65rem;
   padding: 0;
@@ -935,7 +935,7 @@ body {
   padding: .28rem .28rem .32rem;
   margin-top: 0;
 }
-/* â”€â”€ Column header â”€â”€ */
+/* ── Column header ── */
 .lk-header {
   display: flex; flex-direction: row; align-items: center;
   gap: .4rem; padding: .06rem .5rem .06rem .36rem;
@@ -953,7 +953,7 @@ body {
   letter-spacing: .04em; color: rgba(255,255,255,.25); flex: 1; }
 .lk-h-pos  { width: 30px; flex-shrink: 0; font-size: .4rem; font-weight: 800;
   text-transform: uppercase; letter-spacing: .04em; color: rgba(255,255,255,.25); text-align: center; overflow: hidden; }
-/* â”€â”€ Player row â”€â”€ */
+/* ── Player row ── */
 .lk-jcard {
   display: flex; flex-direction: row; align-items: center;
   gap: .4rem; cursor: default;
@@ -976,7 +976,7 @@ body {
   position: relative;
 }
 .lk-jkit::after { display: none; }
-/* Rating number â€” fixed 32px column for all tiers */
+/* Rating number — fixed 32px column for all tiers */
 .lk-jovr {
   font-family: 'Rajdhani', monospace;
   font-size: .78rem; font-weight: 900; line-height: 1;
@@ -1030,7 +1030,7 @@ body {
 }
 .hidden { display: none !important; }
 
-/* â”€â”€ Loader â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Loader ──────────────────────────────────────────────── */
 .loader {
   display: flex; align-items: center; justify-content: center;
   gap: 1rem; color: var(--grey); font-size: .95rem;
@@ -1044,7 +1044,7 @@ body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* â”€â”€ Score poster â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Score poster ────────────────────────────────────────── */
 .score-poster {
   padding: 2.5rem 2rem;
   background: linear-gradient(145deg, rgba(0,30,60,0.6), rgba(20,0,50,0.6));
@@ -1093,7 +1093,7 @@ body {
 }
 .scorer-empty { opacity: .28; font-size: .85rem; }
 
-/* â”€â”€ Cards row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Cards row ───────────────────────────────────────────── */
 .cards-row {
   display: flex; align-items: flex-start; gap: 1rem;
   margin-top: .75rem; padding-top: .75rem;
@@ -1105,13 +1105,13 @@ body {
 .card-entry { color: var(--white); }
 .card-min { font-size: .72rem; opacity: .6; margin-left: .2rem; }
 
-/* â”€â”€ Winner / loser highlight â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Winner / loser highlight ────────────────────────────── */
 .poster-winner .poster-name {
   color: var(--gold);
   text-shadow: 0 0 20px rgba(245,197,24,.4);
 }
 .poster-winner::after {
-  content: 'ðŸ†';
+  content: '🏆';
   display: block; font-size: 1rem; margin-top: .3rem;
   text-align: center; line-height: 1;
 }
@@ -1156,7 +1156,7 @@ body {
 .xg-sep { opacity: .3; }
 .xg-note { margin-left: auto; font-style: italic; }
 
-/* â”€â”€ Ratings table â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Ratings table ───────────────────────────────────────── */
 .ratings-card { padding: 1.8rem 2rem; }
 .ratings-table-wrap { overflow-x: auto; }
 .ratings-table {
@@ -1183,7 +1183,7 @@ body {
 .medium { color: var(--gold); }
 .low    { color: #f87171; }
 
-/* â”€â”€ Lineups grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Lineups grid ────────────────────────────────────────── */
 .lineups-wrap {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
 }
@@ -1199,7 +1199,7 @@ body {
   border-radius: 20px; padding: .2rem .8rem; margin-bottom: 1rem;
 }
 
-/* â”€â”€ Pitch â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Pitch ───────────────────────────────────────────────── */
 .pitch-wrap {
   background: #07280d;
   border: 1px solid rgba(255,255,255,0.09);
@@ -1223,7 +1223,7 @@ body {
   display: flex; justify-content: center; gap: .55rem; flex-wrap: wrap;
 }
 
-/* â”€â”€ Player chip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Player chip ─────────────────────────────────────────── */
 @keyframes chipIn {
   from { opacity: 0; transform: translateY(10px) scale(.88); }
   to   { opacity: 1; transform: translateY(0)    scale(1); }
@@ -1264,7 +1264,7 @@ body {
   font-style: italic; line-height: 1.4;
 }
 
-/* â”€â”€ Share button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Share button ─────────────────────────────────────────── */
 .share-row { display: flex; justify-content: center; gap: .6rem; margin-top: 1.2rem; flex-wrap: wrap; }
 .btn-share {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -1351,7 +1351,7 @@ body {
 }
 .mh-date { font-size: .68rem; color: var(--grey); white-space: nowrap; }
 
-/* â”€â”€ Key moments (panel derecho dentro de mom-card) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Key moments (panel derecho dentro de mom-card) ────────── */
 .key-moments {
   flex: 1;
   padding-left: 1.4rem;
@@ -1371,7 +1371,7 @@ body {
 }
 
 
-/* â”€â”€ Match timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Match timeline ───────────────────────────────────────── */
 .timeline-card { padding: 1.8rem 2rem; }
 .timeline-header {
   display: grid; grid-template-columns: 1fr auto 1fr;
@@ -1410,7 +1410,7 @@ body {
 .t-anim-hidden  { opacity: 0; transform: translateY(4px); pointer-events: none; }
 .t-anim-reveal  { opacity: 1; transform: translateY(0); pointer-events: auto;
                   transition: opacity .35s ease, transform .35s ease; }
-/* Narration row â€” spans full width under the event */
+/* Narration row — spans full width under the event */
 .t-event-narrated { display: flex; flex-direction: column; padding: .3rem 0; }
 .t-event-narrated > :first-child { display: grid; grid-template-columns: 1fr 58px 1fr; align-items: center; gap: .5rem; }
 .t-narration {
@@ -1423,7 +1423,7 @@ body {
 .t-nar-b { text-align: left; }
 @keyframes t-cursor-blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-/* â”€â”€ Head-to-head stats bars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Head-to-head stats bars ──────────────────────────────── */
 .stats-card { padding: 1.8rem 2rem; }
 .hth-names {
   display: flex; justify-content: space-between;
@@ -1446,7 +1446,7 @@ body {
 .hth-fill-b { height: 6px; background: var(--accent-b); border-radius: 3px; width: 0; transition: width .9s cubic-bezier(.4,0,.2,1); }
 .stat-sep   { height: 1px; background: var(--border); margin: .4rem 0 1.1rem; }
 
-/* â”€â”€ Man of the Match â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Man of the Match ─────────────────────────────────────── */
 .mom-card {
   padding: 1.3rem 1.8rem;
   background: linear-gradient(135deg, rgba(245,197,24,.08), rgba(245,197,24,.02));
@@ -1462,7 +1462,7 @@ body {
 .mom-meta   { font-size: .8rem; color: var(--grey); margin-top: .2rem; }
 .mom-meta span { color: var(--gold); font-weight: 600; }
 
-/* â”€â”€ Toast notification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Toast notification ───────────────────────────────────── */
 .toast {
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(12px);
@@ -1475,7 +1475,7 @@ body {
 }
 .toast-show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* â”€â”€ Autocomplete dropdown â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Autocomplete dropdown ────────────────────────────────── */
 .ac-dropdown {
   position: absolute; left: 0; right: 0; top: calc(100% + 2px);
   z-index: 200;
@@ -1518,7 +1518,7 @@ body {
 /* The team-col needs relative positioning for the dropdown */
 .team-col { position: relative; }
 
-/* â”€â”€ Penalty card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Penalty card ─────────────────────────────────────────── */
 .penalty-card {
   padding: 1.8rem 2rem; position: relative; overflow: hidden;
   background: linear-gradient(145deg, rgba(245,197,24,.05), rgba(0,0,0,0));
@@ -1602,7 +1602,7 @@ body {
   transition: opacity .2s;
 }
 
-/* â”€â”€ Penalty kick animation overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Penalty kick animation overlay ──────────────────────── */
 .pko-overlay {
   position: fixed; inset: 0; z-index: 320;
   display: flex; align-items: center; justify-content: center;
@@ -1628,7 +1628,7 @@ body {
 }
 .pko-goal-svg { width: 100%; display: block; }
 
-/* GK dive animation â€” triggered by JS via class */
+/* GK dive animation — triggered by JS via class */
 .pko-gk { transform-origin: 100px 45px; transition: transform .35s cubic-bezier(.22,.68,0,1.2); }
 .pko-gk.dive-left  { transform: translateX(-38px) rotate(-25deg); }
 .pko-gk.dive-right { transform: translateX(38px)  rotate(25deg);  }
@@ -1685,7 +1685,7 @@ body {
 }
 .pen-winner strong { color: var(--gold); }
 
-/* â”€â”€ Team badge (poster + lineup) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Team badge (poster + lineup) ─────────────────────────── */
 .poster-badge {
   width: 72px; height: 72px; object-fit: contain;
   display: block; margin: 0 auto .7rem;
@@ -1699,7 +1699,7 @@ body {
   filter: drop-shadow(0 1px 4px rgba(0,0,0,.5));
 }
 
-/* â”€â”€ Player tooltip card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Player tooltip card ──────────────────────────────── */
 .player-tooltip {
   position: absolute; bottom: calc(100% + 7px); left: 50%;
   transform: translateX(-50%) translateY(4px);
@@ -1721,7 +1721,7 @@ body {
 .tooltip-name { display: block; font-size: .82rem; color: var(--white); font-weight: 700; }
 .tooltip-desc { display: block; font-size: .68rem; color: var(--grey); margin-top: .18rem; }
 
-/* â”€â”€ PRE-MATCH PLAYER CARD PRESENTATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── PRE-MATCH PLAYER CARD PRESENTATION ─────────────────── */
 .prematch-screen {
   position: relative; overflow: hidden;
   padding: 1.8rem 1.5rem 2rem;
@@ -1754,7 +1754,7 @@ body {
   width: 36px; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
 }
-/* â”€â”€ Pre-match intro block â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Pre-match intro block ─────────────────────────────────── */
 .pm-intro {
   text-align: center; margin: 0 auto 2rem; max-width: 580px;
   padding: 1.25rem 1.5rem 1.15rem;
@@ -1882,7 +1882,7 @@ body {
   font-size: .78rem;
 }
 
-/* â”€â”€ Radar row below pre-match start button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Radar row below pre-match start button ───────────────── */
 .pm-radar-row {
   margin-top: .7rem;
   display: flex; justify-content: center;
@@ -1956,7 +1956,7 @@ body {
 .pm-row   { display: flex; gap: .25rem; flex-wrap: nowrap; }
 .pm-row-b { justify-content: flex-end; }
 
-/* â”€â”€ Bench section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Bench section ─────────────────────────────────── */
 .pm-bench-label {
   font-size: .6rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
   color: rgba(255,255,255,.32); margin-top: .7rem; margin-bottom: .25rem;
@@ -1973,7 +1973,7 @@ body {
 .pm-bench-row::-webkit-scrollbar { display: none; }
 .pm-bench-row.pm-row-b { justify-content: flex-start; }
 
-/* Bench card modifier â€” real smaller size, no scale trick */
+/* Bench card modifier — real smaller size, no scale trick */
 .pm-card-bench {
   width: 64px !important;
   height: 76px !important;
@@ -2003,7 +2003,7 @@ body {
 }
 .pm-card.pm-starter, .pm-card.pm-sub { cursor: pointer; }
 
-/* â”€â”€ FIFA-style card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FIFA-style card ──────────────────────────────── */
 .pm-card {
   width: 78px; height: 92px;
   position: relative; border-radius: 9px; overflow: hidden; flex-shrink: 0;
@@ -2077,7 +2077,7 @@ body {
   min-height: calc(0.58rem * 1.2 * 2 + 0.24rem);
   max-height: calc(0.58rem * 1.2 * 2 + 0.24rem);
 }
-/* â”€â”€ Player card hover tooltip (derived stats) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Player card hover tooltip (derived stats) ────────────── */
 .pmc-tooltip {
   position: absolute;
   bottom: calc(100% + 5px); left: 50%;
@@ -2108,7 +2108,7 @@ body {
 .pmc-tip-val {
   font-size: .52rem; font-weight: 900; line-height: 1;
 }
-/* â”€â”€ Match analysis card (heatmap + distance) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Match analysis card (heatmap + distance) ─────────────── */
 .match-analysis-card {
   padding: 1rem 1.2rem;
 }
@@ -2133,7 +2133,7 @@ body {
   .ma-heatmap-wrap  { align-items: center; width: 100%; }
   .ma-distance      { min-width: 0; width: 100%; }
 }
-/* â”€â”€ Heatmap side (left) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Heatmap side (left) ─────────────────────────────────── */
 .ma-heatmap-wrap { flex-shrink: 0; display: flex; flex-direction: column; gap: .4rem; }
 .ma-hm-tabs {
   display: flex; gap: .32rem;
@@ -2181,7 +2181,7 @@ body {
   background: linear-gradient(90deg, #000080, #0030ff, #00c864, #c8e600, #ff7800, #ff1400);
   box-shadow: 0 0 6px rgba(255,100,0,.3);
 }
-/* â”€â”€ Distance side (right) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Distance side (right) ────────────────────────────────── */
 .ma-distance { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 0; }
 .ma-dist-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -2278,8 +2278,8 @@ body {
   100% { background-position: 300% 0; }
 }
 
-/* â”€â”€â”€ Tier styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-/* Elite â€” dark navy + gold foil */
+/* ─── Tier styles ─────────────────────────────────────────── */
+/* Elite — dark navy + gold foil */
 .pm-card-elite {
   background: linear-gradient(160deg, #0d1b3e 0%, #1a2d5a 45%, #0a1630 100%);
   border: 1.5px solid rgba(245,197,24,.65);
@@ -2298,7 +2298,7 @@ body {
 .pm-card-elite .pmc-stat-bar span { background: #f5c518; }
 .pm-card-elite:hover { box-shadow: 0 14px 40px rgba(245,197,24,.4), 0 0 22px rgba(245,197,24,.2); }
 
-/* Gold â€” classic FUT gold */
+/* Gold — classic FUT gold */
 .pm-card-gold {
   background: linear-gradient(160deg, #2e1f00 0%, #4a3200 45%, #2a1c00 100%);
   border: 1.5px solid rgba(218,165,32,.5);
@@ -2351,7 +2351,7 @@ body {
 .pm-card-bronze:hover { box-shadow: 0 7px 22px rgba(140,90,40,.2); }
 
 
-/* â”€â”€ LIVE MATCH VIEWER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── LIVE MATCH VIEWER ───────────────────────────────────── */
 .live-viewer {
   margin-bottom: var(--gap);
   padding: 1.25rem 1.5rem;
@@ -2361,7 +2361,7 @@ body {
 .live-header {
   display: flex; align-items: center; gap: .75rem; margin-bottom: .9rem;
   flex-wrap: wrap;
-  min-height: 2.4rem; /* reserve space â€” prevents layout jump when btn-skip appears */
+  min-height: 2.4rem; /* reserve space — prevents layout jump when btn-skip appears */
 }
 .live-dot {
   width: 10px; height: 10px; border-radius: 50%;
@@ -2528,7 +2528,7 @@ body {
 }
 
 
-/* â”€â”€ Radar chart â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Radar chart ─────────────────────────────────────────── */
 /* Inside stats modal: compact padding */
 .stats-modal .radar-card {
   max-width: none;
@@ -2559,7 +2559,7 @@ body {
   width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
 }
 
-/* â”€â”€ Live Smart-Dot Pitch â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Live Smart-Dot Pitch ─────────────────────────────────── */
 .live-pitch-wrap {
   width: 260px; flex-shrink: 0;
   display: flex; flex-direction: column; align-items: center; gap: .3rem;
@@ -2659,7 +2659,7 @@ body {
 }
 .radar-svg { width: 100%; height: 100%; display: block; overflow: visible; }
 
-/* â”€â”€ Penalty shootout cinematic splash â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Penalty shootout cinematic splash ──────────────────────── */
 .pso-overlay {
   position: fixed; inset: 0; z-index: 10000;
   display: flex; align-items: center; justify-content: center;
@@ -2732,7 +2732,7 @@ body {
   to   { transform: scale(1);   opacity: 1; }
 }
 
-/* â”€â”€ Event overlay (goal / card flash) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Event overlay (goal / card flash) ─────────────── */
 .event-overlay {
   position: fixed; inset: 0; z-index: 9999;
   display: flex; align-items: center; justify-content: center;
@@ -2789,7 +2789,7 @@ body {
 .live-fade-out { animation: live-exit .6s ease forwards; }
 @keyframes live-exit { to { opacity:0; transform: translateY(-18px); } }
 
-/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
   text-align: center; padding: 2rem;
   /* iOS home-indicator safe area */
@@ -2815,7 +2815,7 @@ body {
 }
 .footer-link:hover { color: rgba(0,212,255,.6); }
 
-/* â”€â”€ Share panel (multi-option, bottom sheet) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Share panel (multi-option, bottom sheet) ─────────────── */
 .share-panel-overlay {
   position: fixed; inset: 0; z-index: 9000;
   background: rgba(0,0,0,.65);
@@ -2878,25 +2878,25 @@ body {
 }
 .share-panel-cancel:hover { background: rgba(255,255,255,.1); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    RESPONSIVE
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 
-/* â”€â”€ 900px â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 900px ───────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .lineups-wrap { grid-template-columns: 1fr; }
   .poster-score { font-size: 3.5rem; }
 }
 
-/* â”€â”€ 640px Â· Mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 640px · Mobile ──────────────────────────────────────── */
 @media (max-width: 640px) {
 
-  /* â”€â”€ Layout & spacing â”€â”€ */
+  /* ── Layout & spacing ── */
   .main-wrap  { padding: 0 .7rem; gap: .8rem; margin-top: .8rem; }
   .results    { display: flex; flex-direction: column; gap: .7rem; }
   .glass-card { border-radius: 14px; }
 
-  /* â”€â”€ Header: one compact row, never wraps â”€â”€ */
+  /* ── Header: one compact row, never wraps ── */
   .site-header  {
     padding: .6rem .9rem;
     padding-top: max(.6rem, calc(.4rem + env(safe-area-inset-top, 0px)));
@@ -2910,17 +2910,17 @@ body {
   .tagline      { display: none; }
   .header-right { margin-left: auto; width: auto; justify-content: flex-end; }
 
-  /* â”€â”€ Input panel â”€â”€ */
+  /* ── Input panel ── */
   .input-panel  { padding: 1.1rem .9rem .95rem; }
   .teams-grid   { grid-template-columns: 1fr; gap: .65rem; margin-bottom: 1.4rem; }
   /* VS button: move below Team B and show centered as the simulate button */
   .vs-col       { display: flex; order: 3; justify-content: center; padding-top: .3rem; }
   .extra-options-row { gap: .65rem; margin-top: 0; padding-top: 1.8rem; }
 
-  /* â”€â”€ iOS: prevent tap-to-zoom on inputs (needs â‰¥16px) â”€â”€ */
+  /* ── iOS: prevent tap-to-zoom on inputs (needs ≥16px) ── */
   input.inp, select.inp { font-size: 16px; }
 
-  /* â”€â”€ Era + Formation side-by-side inside each team column â”€â”€ *
+  /* ── Era + Formation side-by-side inside each team column ── *
    *  (saves ~2 rows per team without touching the HTML)        */
   .team-col {
     display: grid;
@@ -2931,19 +2931,19 @@ body {
   .team-col .team-picker,
   .team-col .btn-lookup,
   .team-col .lookup-preview  { grid-column: 1 / -1; }
-  .team-col .era-select       { grid-column: 1; }   /* era â†’ left  */
-  .team-col .select-formation { grid-column: 2; }   /* formation â†’ right */
+  .team-col .era-select       { grid-column: 1; }   /* era → left  */
+  .team-col .select-formation { grid-column: 2; }   /* formation → right */
 
-  /* â”€â”€ Simulate button â”€â”€ */
+  /* ── Simulate button ── */
   .btn-row      { margin-top: .9rem; }
   .btn-simulate { width: 100%; justify-content: center; padding: .78rem 1.3rem; }
 
-  /* â”€â”€ Picker sections: tighter spacing â”€â”€ */
+  /* ── Picker sections: tighter spacing ── */
   .stadium-picker-section,
   .referee-picker-section,
   .weather-picker-section { margin-top: .85rem; padding-top: .85rem; }
 
-  /* â”€â”€ Live viewer: VERTICAL stack on mobile (pitch on top, feed below) â”€â”€ */
+  /* ── Live viewer: VERTICAL stack on mobile (pitch on top, feed below) ── */
   .live-viewer  { padding: .75rem .8rem; }
   .live-body    {
     display: flex;
@@ -2983,7 +2983,7 @@ body {
   /* Header: reserve height so Saltar button appearing doesn't shift things */
   .live-header { min-height: 2.2rem; }
 
-  /* â”€â”€ Score poster: compact 3-col TV-scoreboard layout â”€â”€ */
+  /* ── Score poster: compact 3-col TV-scoreboard layout ── */
   .score-poster  { padding: 1.2rem .9rem 1rem; }
   .poster-teams  { gap: .35rem .25rem; }
   .poster-badge  { width: 40px; height: 40px; margin-bottom: .3rem; }
@@ -3001,7 +3001,7 @@ body {
   .share-row     { margin-top: .7rem; }
   .btn-share     { width: 100%; justify-content: center; }
 
-  /* â”€â”€ Probabilities: keep 3-col, compact values â”€â”€ */
+  /* ── Probabilities: keep 3-col, compact values ── */
   .probs-card    { padding: 1rem .85rem; }
   .probs-grid    { gap: .5rem; }
   .prob-value    { font-size: 1.55rem; }
@@ -3010,36 +3010,36 @@ body {
   .xg-row        { font-size: .74rem; flex-wrap: wrap; gap: .3rem; }
   .xg-sep        { display: none; }
 
-  /* â”€â”€ Stats bars â”€â”€ */
+  /* ── Stats bars ── */
   .stats-card    { padding: 1rem .85rem; }
   .hth-names     { font-size: .76rem; margin-bottom: 1rem; }
   .hth-row       { grid-template-columns: 36px 1fr 54px 1fr 36px; gap: .28rem; margin-bottom: .85rem; }
   .hth-val       { font-size: .76rem; }
   .hth-label     { font-size: .58rem; }
 
-  /* â”€â”€ Timeline â”€â”€ */
+  /* ── Timeline ── */
   .timeline-card { padding: 1rem .85rem; }
   .t-event       { grid-template-columns: 1fr 42px 1fr; gap: .26rem; }
   .t-event-narrated > :first-child { grid-template-columns: 1fr 42px 1fr; }
   .t-left, .t-right  { font-size: .73rem; }
   .t-narration   { font-size: .76rem; }
 
-  /* â”€â”€ MOM â”€â”€ */
+  /* ── MOM ── */
   .mom-card  { padding: .85rem .95rem; flex-wrap: wrap; gap: 0; }
   .mom-left  { padding-right: 0; padding-bottom: .75rem; width: 100%; }
   .mom-divider { width: 100%; height: 1px; margin: 0 0 .75rem; }
   .key-moments { padding-left: 0; width: 100%; }
   .mom-name  { font-size: 1.05rem; }
 
-  /* â”€â”€ Penalty â”€â”€ */
+  /* ── Penalty ── */
   .penalty-card { padding: 1rem .85rem; }
 
-  /* â”€â”€ Lineups â”€â”€ */
+  /* ── Lineups ── */
   .lineups-wrap  { gap: .7rem; }
   .lineup-card   { padding: 1rem .7rem; }
   .section-title { font-size: .84rem; margin-bottom: .75rem; }
 
-  /* â”€â”€ Pre-match player presentation â”€â”€ */
+  /* ── Pre-match player presentation ── */
   .pm-matchup { grid-template-columns: 1fr; gap: .45rem; }
   .pm-center-col { flex-direction: row; flex-wrap: wrap; padding-top: .25rem; justify-content: center; gap: .4rem; }
   .pm-team-block-b { align-items: flex-start; }
@@ -3063,7 +3063,7 @@ body {
   .pm-start-btn { font-size: .8rem; padding: .65rem .8rem; }
 }
 
-/* â”€â”€ 480px Â· Small phones â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 480px · Small phones ────────────────────────────────── */
 @media (max-width: 480px) {
   html { font-size: 15px; }
 
@@ -3074,13 +3074,13 @@ body {
   .results      { gap: .55rem; }
   .glass-card   { border-radius: 12px; }
 
-  /* â”€â”€ Inputs â”€â”€ */
+  /* ── Inputs ── */
   .inp          { padding: .6rem .7rem; }
   input.inp, select.inp { font-size: 16px; }
   .btn-lookup   { font-size: .73rem; padding: .42rem .7rem; }
   .btn-simulate { font-size: .86rem; }
 
-  /* â”€â”€ Pickers: slightly more compact â”€â”€ */
+  /* ── Pickers: slightly more compact ── */
   .spk-card     { width: 84px; }
   .spk-img      { width: 84px; height: 47px; }
   .spk-img-placeholder { width: 84px; height: 47px; font-size: 1.2rem; }
@@ -3090,34 +3090,34 @@ body {
   .wth-icon     { font-size: 1.12rem; }
   .wth-label    { font-size: .5rem; }
 
-  /* â”€â”€ Live viewer: tiny phones â€” keep vertical stack, even more compact â”€â”€ */
+  /* ── Live viewer: tiny phones — keep vertical stack, even more compact ── */
   .live-pitch-svg  { height: 160px; }
   .live-pitch-wrap { max-height: 180px; }
   .live-timeline-wrap .timeline-card { min-height: 130px; max-height: 220px; }
 
-  /* â”€â”€ Score poster â”€â”€ */
+  /* ── Score poster ── */
   .poster-score { font-size: 2.2rem; }
   .poster-name  { font-size: .72rem; }
   .poster-badge { width: 34px; height: 34px; }
   .poster-era   { font-size: .58rem; }
 
-  /* â”€â”€ Probabilities â”€â”€ */
+  /* ── Probabilities ── */
   .prob-value   { font-size: 1.3rem; }
   .prob-label   { font-size: .6rem; }
 
-  /* â”€â”€ Stats â”€â”€ */
+  /* ── Stats ── */
   .hth-row      { grid-template-columns: 28px 1fr 44px 1fr 28px; gap: .2rem; }
   .hth-val      { font-size: .7rem; }
   .hth-label    { font-size: .53rem; }
 
-  /* â”€â”€ Timeline â”€â”€ */
+  /* ── Timeline ── */
   .t-event      { grid-template-columns: 1fr 32px 1fr; gap: .16rem; }
   .t-event-narrated > :first-child { grid-template-columns: 1fr 32px 1fr; }
   .t-left, .t-right { font-size: .67rem; }
   .t-min        { font-size: .53rem; padding: .06rem .2rem; min-width: 19px; }
   .t-narration  { font-size: .72rem; }
 
-  /* â”€â”€ Player chips (lineup pitch) â”€â”€ */
+  /* ── Player chips (lineup pitch) ── */
   .player-jersey svg { width: 33px; height: 37px; }
   .player-name  { font-size: .53rem; max-width: 48px; }
   .player-pos-lbl { font-size: .43rem; }
@@ -3125,18 +3125,18 @@ body {
   .pitch        { gap: .35rem; }
   .pitch-row    { gap: .28rem; }
 
-  /* â”€â”€ MOM â”€â”€ */
+  /* ── MOM ── */
   .mom-icon { font-size: 1.4rem; }
   .mom-name { font-size: .9rem; }
   .mom-meta { font-size: .72rem; }
   .mom-badge { font-size: .57rem; }
 
-  /* â”€â”€ Penalty â”€â”€ */
+  /* ── Penalty ── */
   .pen-row  { grid-template-columns: 1fr 28px 1fr; gap: .24rem; }
   .pen-name { font-size: .65rem; }
   .pen-kick { width: 20px; height: 20px; font-size: .57rem; }
 
-  /* â”€â”€ Pre-match player cards â”€â”€ */
+  /* ── Pre-match player cards ── */
   .pm-card    { width: 56px; height: 86px; }
   .pmc-ovr    { font-size: 1.0rem; }
   .pmc-name   { font-size: .46rem;
@@ -3149,7 +3149,7 @@ body {
   .pm-card-bench .pmc-ovr { font-size: .78rem; }
   .pm-card-bench .pmc-sil { flex: 1 1 0; }
 
-  /* â”€â”€ Overlays â”€â”€ */
+  /* ── Overlays ── */
   .pso-teams-row { font-size: .88rem; gap: .55rem; }
   .pso-countdown { font-size: 3.4rem; }
   .eo-inner  { padding: .95rem 1.1rem; min-width: 195px; }
@@ -3157,7 +3157,7 @@ body {
   .eo-score  { font-size: 1.55rem; }
   .eo-name   { font-size: .84rem; }
 
-  /* â”€â”€ Footer â”€â”€ */
+  /* ── Footer ── */
   .site-footer {
     padding: .9rem .75rem;
     padding-bottom: max(.9rem, calc(.6rem + env(safe-area-inset-bottom, 0px)));
@@ -3165,7 +3165,7 @@ body {
   }
 }
 
-/* â”€â”€ Touch devices: disable hover effects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Touch devices: disable hover effects ────────────────── */
 @media (hover: none) {
   .player-tooltip { display: none !important; }
   .player-chip:hover .player-jersey {
@@ -3176,14 +3176,14 @@ body {
   .spk-card:hover, .ref-card:hover, .wth-card:hover { transform: none; }
 }
 
-/* â”€â”€ Fade-in animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Fade-in animation ───────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .fade-in { animation: fadeUp .5s ease both; }
 
-/* â”€â”€ Missing event overlay type styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Missing event overlay type styles ──────────────────── */
 .eo-penalty {
   background: rgba(4,22,4,.96); border-color: rgba(34,197,94,.55);
   box-shadow: 0 0 80px rgba(34,197,94,.22), 0 0 160px rgba(34,197,94,.08);
@@ -3222,11 +3222,11 @@ body {
   margin-bottom: .1rem;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   PREMIUM UI v2  â€”  Glassmorphism Â· HUD Ratings Â· Clash Btn
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════════
+   PREMIUM UI v2  —  Glassmorphism · HUD Ratings · Clash Btn
+   ══════════════════════════════════════════════════════════ */
 
-/* â”€â”€ 1. Team Cards: Glass + Dot Texture + Ambient Glow â”€â”€â”€ */
+/* ── 1. Team Cards: Glass + Dot Texture + Ambient Glow ─── */
 .team-col {
   position: relative;
   border-radius: var(--radius-md);
@@ -3250,7 +3250,7 @@ body {
 #col-a { background-color: rgba(0, 22, 40, 0.78); }
 #col-b { background-color: rgba(35, 6, 18, 0.78); }
 
-/* Top-glow stripe â€” a thick luminous bar clamped to the card */
+/* Top-glow stripe — a thick luminous bar clamped to the card */
 .team-col::before {
   content: '';
   position: absolute;
@@ -3266,7 +3266,7 @@ body {
   transition: opacity .4s;
 }
 
-/* Ambient glow ring â€” sits behind the card */
+/* Ambient glow ring — sits behind the card */
 .team-col::after {
   content: '';
   position: absolute;
@@ -3291,7 +3291,7 @@ body {
   box-shadow: 0 0 60px 8px var(--team-glow, rgba(0,212,255,.28));
 }
 
-/* â”€â”€ 2. HUD Rating Numbers (tier text-shadows only; base layout in original block) â”€â”€ */
+/* ── 2. HUD Rating Numbers (tier text-shadows only; base layout in original block) ── */
 
 .lk-jcard-silver .lk-jovr { text-shadow: 0 0 8px rgba(138,174,200,.4); }
 .lk-jcard-gold   .lk-jovr { text-shadow: 0 0 10px rgba(245,184,39,.55); }
@@ -3323,7 +3323,7 @@ body {
 .lk-jcard-hero { background: rgba(255,255,255,.07) !important; }
 .lk-hero-star  { color: var(--gold); font-size: .6rem; margin-left: .15rem; }
 
-/* â”€â”€ Hero player banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Hero player banner ─────────────────────────────────── */
 .lk-hero {
   display: flex; align-items: center; gap: .6rem;
   padding: .55rem .65rem .5rem;
@@ -3369,7 +3369,7 @@ body {
 [data-tier="gold"]   .lk-hero-name { color: #f5b820; text-shadow: 0 0 12px rgba(245,184,32,.45); }
 [data-tier="silver"] .lk-hero-name { color: #9ab8d8; }
 
-/* â”€â”€ Mini tactical pitch â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Mini tactical pitch ────────────────────────────────── */
 .lk-mini-pitch {
   width: 52px; height: 62px; flex-shrink: 0;
 }
@@ -3380,13 +3380,13 @@ body {
 }
 .mp-dot:hover { r: 5.5; fill-opacity: 1; }
 
-/* â”€â”€ 3. VS â†’ SIMULAR Button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 3. VS → SIMULAR Button ─────────────────────────────── */
 .vs-badge {
   -webkit-appearance: none; appearance: none;
   font-family: 'Rajdhani', var(--font);
   cursor: default;
   outline: none;
-  padding: 0;    /* reset browser default â€” essential for coin to fill perfectly */
+  padding: 0;    /* reset browser default — essential for coin to fill perfectly */
   margin: 0;
   transition: width .55s cubic-bezier(.34,1.56,.64,1),
               height .55s cubic-bezier(.34,1.56,.64,1),
@@ -3394,7 +3394,7 @@ body {
               transform .3s ease;
 }
 
-/* â”€â”€â”€ Animations that breathe from the logo's red core â”€â”€â”€â”€ */
+/* ─── Animations that breathe from the logo's red core ──── */
 
 /* The outer ring pulses with team colors */
 @keyframes clash-glow {
@@ -3412,7 +3412,7 @@ body {
   }
 }
 
-/* The logo core glow â€” synchronized with clash-glow */
+/* The logo core glow — synchronized with clash-glow */
 @keyframes gx-core-pulse {
   0%,100% {
     filter:
@@ -3456,11 +3456,11 @@ body {
   animation: energy-flow 1.6s linear infinite;
 }
 
-/* â”€â”€â”€ The button shell â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── The button shell ──────────────────────────────────── */
 /*
   Design: the GolazOX metallic coin IS the button.
   The PNG (dark stone + silver disc + red GX core) fills the circle.
-  No mix-blend-mode, no mask tricks â€” just a clean coin.
+  No mix-blend-mode, no mask tricks — just a clean coin.
   ::before = spinning team-color ring outside the circle.
   box-shadow (via clash-glow) = pulsing outer glow.
 */
@@ -3475,13 +3475,13 @@ body {
   background: #07090f;
   border: 2px solid rgba(255,255,255,.18);
   border-radius: 50%;
-  /* NO overflow:hidden here â€” coin clip is handled by .clash-logo-wrap */
+  /* NO overflow:hidden here — coin clip is handled by .clash-logo-wrap */
   animation: clash-glow 2.2s ease-in-out infinite;
   isolation: isolate;
   transition: transform .3s ease;
 }
 
-/* Spinning team-color ring â€” sits outside the circle */
+/* Spinning team-color ring — sits outside the circle */
 .vs-badge.vs-ready::before {
   content: '';
   position: absolute;
@@ -3513,7 +3513,7 @@ body {
 .vs-badge.vs-ready:hover::before { animation-duration: 1.8s; }
 .vs-badge.vs-ready:active  { transform: scale(.92); animation: none; }
 
-/* â”€â”€â”€ Coin image fills the circle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Coin image fills the circle ───────────────────────── */
 /*
   Absolute fill: wrapper covers the full button disc reliably
   regardless of browser default padding/box-model quirks.
@@ -3531,13 +3531,13 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* fill â€” transparent corners outside coin disc are clipped */
+  object-fit: cover;    /* fill — transparent corners outside coin disc are clipped */
   object-position: center;
   animation: gx-core-pulse 2.2s ease-in-out infinite;
   pointer-events: none;
 }
 
-/* "â–¶ SIMULAR" label â€” sibling below the coin button */
+/* "▶ SIMULAR" label — sibling below the coin button */
 .vs-clash-label {
   display: none;
   font-size: .65rem;
@@ -3552,11 +3552,11 @@ body {
 .vs-badge.vs-ready .clash-l1 { display: none; }
 .vs-badge.vs-ready .clash-l2 { display: none; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════
    WEATHER ATMOSPHERE OVERLAY + PANEL REACTIONS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+═══════════════════════════════════════════════════════════ */
 
-/* Fixed overlay â€” transparent by default, animated by weather class */
+/* Fixed overlay — transparent by default, animated by weather class */
 #wx-overlay {
   position: fixed;
   inset: 0;
@@ -3566,7 +3566,7 @@ body {
   transition: background .6s ease;
 }
 
-/* â”€â”€ Burst opacity keyframe: fade in â†’ hold â†’ fade out in ~2.8s â”€â”€ */
+/* ── Burst opacity keyframe: fade in → hold → fade out in ~2.8s ── */
 @keyframes wx-burst-opacity {
   0%   { opacity: 0; }
   10%  { opacity: 1; }
@@ -3574,7 +3574,7 @@ body {
   100% { opacity: 0; }
 }
 
-/* â”€â”€ Rain drops â”€â”€ */
+/* ── Rain drops ── */
 @keyframes wx-rain-fall {
   from { background-position: 0 -100px; }
   to   { background-position: -30px 100vh; }
@@ -3604,7 +3604,7 @@ body.wx-burst[data-wx="storm"] #wx-overlay {
   animation: wx-rain-fall .38s linear infinite, wx-burst-opacity 2.8s ease forwards;
 }
 
-/* â”€â”€ Storm: panel edge flash (brief burst only) â”€â”€ */
+/* ── Storm: panel edge flash (brief burst only) ── */
 @keyframes wx-storm-flash {
   0%,87%,100% { box-shadow: var(--shadow, none); }
   88%  { box-shadow: 0 0 0 1px rgba(250,220,60,.4), 0 0 18px rgba(250,220,60,.25); }
@@ -3616,7 +3616,7 @@ body.wx-burst[data-wx="storm"] .glass-card {
 }
 body.wx-burst[data-wx="storm"] .glass-card:nth-child(2) { animation-delay: .5s; }
 
-/* â”€â”€ Snow flakes â”€â”€ */
+/* ── Snow flakes ── */
 @keyframes wx-snow-fall {
   from { background-position: 0 -50px; }
   to   { background-position: 20px 100vh; }
@@ -3631,7 +3631,7 @@ body.wx-burst[data-wx="snow"] #wx-overlay {
   animation: wx-snow-fall 4s linear infinite, wx-burst-opacity 2.8s ease forwards;
 }
 
-/* â”€â”€ Night: subtle dark tint (burst only) â”€â”€ */
+/* ── Night: subtle dark tint (burst only) ── */
 body.wx-burst[data-wx="night"] #wx-overlay {
   background: rgba(0,0,30,.38);
   animation: wx-burst-opacity 2.8s ease forwards;
@@ -3641,7 +3641,7 @@ body[data-wx="night"] .vs-badge.vs-ready {
   --clash-b: rgba(60, 20, 160, .6);
 }
 
-/* â”€â”€ Heat: coin shimmers â”€â”€ */
+/* ── Heat: coin shimmers ── */
 @keyframes wx-heat-shimmer {
   0%,100% { filter: brightness(1); }
   50%      { filter: brightness(1.08) saturate(1.2); }
@@ -3650,7 +3650,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   animation: gx-core-pulse 2.2s ease-in-out infinite, wx-heat-shimmer 1.2s ease-in-out infinite;
 }
 
-/* â”€â”€ Panel selection flash â”€â”€ */
+/* ── Panel selection flash ── */
 @keyframes col-flash-anim {
   0%  { box-shadow: 0 0 0 2px rgba(0,212,255,.7), 0 0 30px rgba(0,212,255,.3); }
   100%{ box-shadow: none; }
@@ -3660,7 +3660,7 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   border-radius: var(--radius-lg);
 }
 
-/* â”€â”€ Coin collapse on simulate â”€â”€ */
+/* ── Coin collapse on simulate ── */
 @keyframes coin-collapse {
   0%   { transform: scale(1); opacity: 1; }
   30%  { transform: scale(1.12); }
@@ -3670,9 +3670,9 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .coin-collapsing { animation: coin-collapse .42s cubic-bezier(.55,0,.7,1) forwards !important; }
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════
    PWA INSTALL BOTTOM SHEET
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+═══════════════════════════════════════════════════════════ */
 .pwa-sheet {
   position: fixed;
   bottom: 0; left: 0; right: 0;
