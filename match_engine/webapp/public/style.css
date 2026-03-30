@@ -6004,8 +6004,12 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   }
 
   /* All four tab panels share the same grid area;
-     only the active (non-hidden) one is ever displayed. */
-  .trn-tab-panel  { grid-area: panel; }
+     only the active (non-hidden) one is ever displayed.
+     min-width:0 prevents grid item from expanding beyond the 1fr column
+     (default min-width:auto lets content push the column wider, breaking scroll). */
+  .trn-tab-panel  { grid-area: panel; min-width: 0; overflow: hidden; }
+  /* Bracket tab specifically needs horizontal scroll, not overflow:hidden clip */
+  #trn-tab-bracket { overflow-x: auto; overflow-y: visible; }
 }
 
 /* ── Extra wide: give the poster a bit more room ── */
