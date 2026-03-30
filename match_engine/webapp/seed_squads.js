@@ -255,26 +255,60 @@ const EXTRA_CLUBS = [
   // ══ PREMIER LEAGUE ════════════════════════════════════════════
   ...['Tottenham Hotspur','Everton','Newcastle United','West Ham United',
       'Fulham','Crystal Palace','Brentford','Bournemouth','Brighton',
-      'Wolverhampton Wanderers','Leicester City','Leeds United',
-      'Burnley','Sheffield United','Watford'].map(t => ({ team: t, years: CY, region: 'Premier League' })),
+      'Wolverhampton Wanderers','Leeds United','Burnley',
+      'Sunderland','Nottingham Forest'].map(t => ({ team: t, years: CY, region: 'Premier League' })),
+
+  // ══ CHAMPIONSHIP ══════════════════════════════════════════════
+  ...['Birmingham City','Blackburn Rovers','Bristol City','Charlton Athletic',
+      'Coventry City','Derby County','Hull City','Ipswich Town','Leicester City',
+      'Middlesbrough','Millwall','Norwich City','Oxford United','Portsmouth',
+      'Preston North End','QPR','Sheffield United','Sheffield Wednesday',
+      'Southampton','Stoke City','Swansea City','Watford','WBA','Wrexham'].map(t => ({ team: t, years: CY, region: 'Championship' })),
 
   // ══ BUNDESLIGA ════════════════════════════════════════════════
   ...['RB Leipzig','Eintracht Frankfurt','Wolfsburg','Union Berlin',
-      'Freiburg','Hoffenheim','Mainz 05','Augsburg','Werder Bremen'].map(t => ({ team: t, years: CY, region: 'Bundesliga' })),
+      'Freiburg','Hoffenheim','Mainz 05','Augsburg','Werder Bremen',
+      'Heidenheim','FC Köln','St. Pauli','Hamburger SV','VfB Stuttgart',
+      'Borussia Mönchengladbach'].map(t => ({ team: t, years: CY, region: 'Bundesliga' })),
+
+  // ══ 2. BUNDESLIGA ═════════════════════════════════════════════
+  ...['Kaiserslautern','FC Magdeburg','Nürnberg','Arminia Bielefeld','Darmstadt',
+      'Dynamo Dresden','Eintracht Braunschweig','Fortuna Düsseldorf',
+      'Greuther Fürth','Hannover 96','Hertha BSC','Holstein Kiel',
+      'Karlsruher SC','Preußen Münster','SC Paderborn','Schalke',
+      'Elversberg','VfL Bochum'].map(t => ({ team: t, years: CY, region: '2. Bundesliga' })),
 
   // ══ SERIE A ═══════════════════════════════════════════════════
-  ...['Lazio','Atalanta','Fiorentina','Torino',
-      'Bologna','Monza','Hellas Verona','Udinese'].map(t => ({ team: t, years: CY, region: 'Serie A' })),
+  ...['Lazio','Atalanta','Fiorentina','Torino','Bologna','Monza',
+      'Hellas Verona','Udinese','Cagliari','Como','Genoa',
+      'Parma','Pisa','Lecce','Sassuolo','Cremonese'].map(t => ({ team: t, years: CY, region: 'Serie A' })),
+
+  // ══ SERIE B ═══════════════════════════════════════════════════
+  ...['Reggiana','Padova','Carrarese','Cesena','Pescara','Empoli','FC Südtirol',
+      'Frosinone','Mantova','Modena','Palermo','Spezia','Juve Stabia','Bari',
+      'Sampdoria','Avellino','Catanzaro','Venezia','Virtus Entella'].map(t => ({ team: t, years: CY, region: 'Serie B' })),
 
   // ══ LIGUE 1 ═══════════════════════════════════════════════════
   ...['Lens','Rennes','Toulouse','Lille','Nice','Monaco','Marseille','Lyon',
-      'Brest','Montpellier'].map(t => ({ team: t, years: CY, region: 'Ligue 1' })),
+      'Brest','Auxerre','Angers','Lorient','Nantes','Le Havre',
+      'Strasbourg'].map(t => ({ team: t, years: CY, region: 'Ligue 1' })),
+
+  // ══ LIGUE 2 ═══════════════════════════════════════════════════
+  ...['Saint-Etienne','Guingamp','Montpellier','Reims','Rodez',
+      'Amiens','Nancy','Clermont','Troyes','Annecy',
+      'Grenoble','Le Mans','Red Star','Bastia'].map(t => ({ team: t, years: CY, region: 'Ligue 2' })),
 
   // ══ LA LIGA ═══════════════════════════════════════════════════
   ...['Villarreal','Celta Vigo','Osasuna','Mallorca','Espanyol','Girona',
-      'Athletic Bilbao','Real Sociedad','Real Betis',
+      'Athletic Bilbao','Real Sociedad','Real Betis','Real Oviedo',
       'Sevilla','Rayo Vallecano','Valencia','Alavés','Getafe',
-      'Leganés','Real Valladolid'].map(t => ({ team: t, years: CY, region: 'La Liga' })),
+      'Elche','Levante'].map(t => ({ team: t, years: CY, region: 'La Liga' })),
+
+  // ══ LA LIGA 2 ═════════════════════════════════════════════════
+  ...['Albacete','Burgos CF','Cádiz','Castellón','Leganés','Mirandés',
+      'Córdoba','Cultural Leonesa','Deportivo','FC Andorra','Granada','Málaga',
+      'Racing Santander','Real Sociedad II','Real Valladolid','Real Zaragoza',
+      'Eibar','Huesca','Sporting Gijón','Almería','Las Palmas'].map(t => ({ team: t, years: CY, region: 'La Liga 2' })),
 
   // ══ UCL PARTICIPANTES ═════════════════════════════════════════
   ...['Galatasaray','Red Bull Salzburg','Shakhtar Donetsk',
