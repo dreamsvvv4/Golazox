@@ -1586,7 +1586,7 @@ function _populateEraSelect(teamName, side) {
     sel.innerHTML =
       `<option value="">${t('era-any')}</option>` +
       entry.seasons.map(y =>
-        `<option value="${y}"${y === prev ? ' selected' : ''}>${y === 'all-time' ? '★ All Time' : y}</option>`
+        `<option value="${y}"${y === prev ? ' selected' : ''}>${y === 'all-time' ? '★ All Time' : (() => { const n = parseInt(y,10); return n >= 1000 ? `${String(n).slice(2)}/${String(n+1).slice(2)}` : y; })()}</option>`
       ).join('');
     sel.disabled = false;
   } else {

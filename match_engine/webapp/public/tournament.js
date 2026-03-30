@@ -49,11 +49,19 @@ const TRN = (() => {
     const b = _badge(slug);
     return `<img class="${cls || 'trn-badge'}" src="${b || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">`;
   };
-  // Returns display label "Team Name '09" (or just "Team Name" if no era)
+  // Converts a 4-digit year key to season notation: "2025" → "25/26"
+  const _eraLabel = (yr) => {
+    const n = parseInt(yr, 10);
+    if (!n || n < 1000) return yr;
+    const s1 = String(n).slice(2);
+    const s2 = String(n + 1).slice(2);
+    return `${s1}/${s2}`;
+  };
+  // Returns display label "Team Name '25/26" (or just "Team Name" if no era)
   const _tLabel = (t) => {
     if (!t) return '?';
     const yr = t.era ? String(t.era).match(/\d{4}/)?.[0] : null;
-    return yr ? `${t.name} '${yr.slice(2)}` : (t.name || '?');
+    return yr ? `${t.name} '${_eraLabel(yr)}` : (t.name || '?');
   };
 
   // ── Main tab switching (⚽ Partido / 🏆 Torneo) ─────────
@@ -276,7 +284,7 @@ const TRN = (() => {
       return `<div class="trn-team-slot">
         ${_badgeImg(t.slug, 'trn-slot-badge')}
         <span class="trn-slot-name">${_esc(t.name)}</span>
-        ${yr ? `<span class="trn-slot-era">'${yr.slice(2)}</span>` : ''}
+        ${yr ? `<span class="trn-slot-era">'${_eraLabel(yr)}</span>` : ''}
         <button class="trn-slot-remove" data-remove-idx="${i}" title="Quitar">✕</button>
       </div>`;
     }).join('') || `<p class="trn-teams-empty">${t('trn-teams-empty-1')}<br><span style="font-size:.75rem;opacity:.6">${t('trn-teams-empty-2')}</span></p>`;
@@ -2700,7 +2708,7 @@ const TRN = (() => {
       const buildCol = (d, t) => {
         const yr = t?.era ? String(t.era).match(/\d{4}/)?.[0]
           : (d?.source ? String(d.source).match(/\((\d{4})/)?.[1] : null);
-        const title = t ? `${_esc(t.name)}${yr ? ` <span class="trn-lu-yr">'${yr.slice(2)}</span>` : ''}` : _esc(d?.source || '?');
+        const title = t ? `${_esc(t.name)}${yr ? ` <span class="trn-lu-yr">'${_eraLabel(yr)}</span>` : ''}` : _esc(d?.source || '?');
         if (!d?.found || !Array.isArray(d.players) || !d.players.length) {
           return `<div class="trn-lu-col"><div class="trn-lu-title">${title}</div><p class="trn-lu-empty">${t('trn-xi-no-lineup')}</p></div>`;
         }
