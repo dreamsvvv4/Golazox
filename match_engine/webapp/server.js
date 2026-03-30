@@ -162,10 +162,10 @@ app.use((_req, res, next) => {
   res.set('Content-Security-Policy',
     "default-src 'self'; " +
     "img-src 'self' data: blob: https://www.thesportsdb.com https://media.api-sports.io https://flagcdn.com; " +
-    "script-src 'self'; " +
+    "script-src 'self' https://www.googletagmanager.com; " +
     "style-src 'self' 'unsafe-inline'; " +
     "font-src 'self'; " +
-    "connect-src 'self'; " +
+    "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; " +
     "worker-src 'self'; " +
     "frame-ancestors 'none'; " +
     "base-uri 'self'; " +
@@ -237,7 +237,7 @@ app.get('/player_ratings.js', (_req, res) => {
 app.get('/config.js', (_req, res) => {
   const safeUrl = SITE_URL.replace(/[\\"'<>]/g, '');
   res.type('application/javascript').set('Cache-Control', 'public, max-age=3600').send(
-    `window.GOLAZOX_CONFIG=${JSON.stringify({ siteUrl: safeUrl, version: '1.0' })};`
+    `window.GOLAZOX_CONFIG=${JSON.stringify({ siteUrl: safeUrl, version: '2.0' })};`
   );
 });
 

@@ -10,6 +10,71 @@
 
 'use strict';
 
+// ── Google Analytics bootstrap ─────────────────────────────
+// Runs synchronously so the config call is queued before the async gtag.js resolves.
+// The external <script async> tag in index.html loads gtag.js from googletagmanager.com.
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-2BSP5YDS7N');
+
+// ── PWA Install prompt ──────────────────────────────────────
+(function () {
+  let _deferredInstall = null;
+  let _dismissed = false;
+  try {
+    const ts = localStorage.getItem('pwa_dismiss_ts');
+    if (ts && (Date.now() - parseInt(ts, 10)) < 7 * 24 * 60 * 60 * 1000) _dismissed = true;
+  } catch (_) {}
+  function _hideSheet() {
+    const sheet = document.getElementById('pwa-install-sheet');
+    if (!sheet) return;
+    sheet.classList.remove('pwa-sheet--visible');
+    setTimeout(() => { sheet.hidden = true; }, 380);
+  }
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    _deferredInstall = e;
+    if (_dismissed) return;
+    setTimeout(() => {
+      const sheet = document.getElementById('pwa-install-sheet');
+      if (sheet) { sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('pwa-sheet--visible')); }
+    }, 2500);
+  });
+  window.addEventListener('DOMContentLoaded', () => {
+    const installBtn = document.getElementById('pwa-install-btn');
+    const dismissBtn = document.getElementById('pwa-dismiss-btn');
+    if (installBtn) installBtn.addEventListener('click', () => {
+      if (!_deferredInstall) return;
+      _deferredInstall.prompt();
+      _deferredInstall.userChoice.then(() => { _deferredInstall = null; _hideSheet(); });
+    });
+    if (dismissBtn) dismissBtn.addEventListener('click', () => {
+      _dismissed = true;
+      try { localStorage.setItem('pwa_dismiss_ts', String(Date.now())); } catch (_) {}
+      _hideSheet();
+    });
+  });
+  window.addEventListener('appinstalled', () => { _hideSheet(); _dismissed = true; });
+})();
+
+// ── Service Worker registration ─────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload());
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).then((reg) => {
+      reg.addEventListener('updatefound', () => {
+        const newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', () => {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller)
+            newSW.postMessage({ type: 'SKIP_WAITING' });
+        });
+      });
+    }).catch((err) => console.warn('[PWA] SW registration failed:', err));
+  });
+}
+
 // ── Internationalisation (ES / EN) ────────────────────────────
 const I18N = {
   es: {

@@ -55,14 +55,8 @@
 
   <link rel="stylesheet" href="style.css?v=62" />
 
-  <!-- Google Analytics -->
+  <!-- Google Analytics — init handled by app.js; CSP allows googletagmanager.com -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2BSP5YDS7N');
-  </script>
 </head>
 <body>
 <div id="wx-overlay" aria-hidden="true"></div>
@@ -744,105 +738,9 @@
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=50"></script>
-  <script src="tournament.js?v=6"></script>
+  <script src="app.js?v=51"></script>
+  <script src="tournament.js?v=7"></script>
 
-  <!-- PWA Install prompt logic -->
-  <script>
-    (function () {
-      var _deferredInstall = null;
-      var _dismissed = false;
-
-      // Respect user's previous dismissal (stored for 7 days)
-      try {
-        var ts = localStorage.getItem('pwa_dismiss_ts');
-        if (ts && (Date.now() - parseInt(ts, 10)) < 7 * 24 * 60 * 60 * 1000) {
-          _dismissed = true;
-        }
-      } catch (_) {}
-
-      window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault();
-        _deferredInstall = e;
-        if (!_dismissed) {
-          // Small delay so the page settles first
-          setTimeout(function () {
-            var sheet = document.getElementById('pwa-install-sheet');
-            if (sheet) {
-              sheet.hidden = false;
-              // Trigger slide-up animation
-              requestAnimationFrame(function () { sheet.classList.add('pwa-sheet--visible'); });
-            }
-          }, 2500);
-        }
-      });
-
-      function _hideSheet() {
-        var sheet = document.getElementById('pwa-install-sheet');
-        if (!sheet) return;
-        sheet.classList.remove('pwa-sheet--visible');
-        setTimeout(function () { sheet.hidden = true; }, 380);
-      }
-
-      window.addEventListener('DOMContentLoaded', function () {
-        var installBtn  = document.getElementById('pwa-install-btn');
-        var dismissBtn  = document.getElementById('pwa-dismiss-btn');
-
-        if (installBtn) {
-          installBtn.addEventListener('click', function () {
-            if (!_deferredInstall) return;
-            _deferredInstall.prompt();
-            _deferredInstall.userChoice.then(function (result) {
-              _deferredInstall = null;
-              _hideSheet();
-            });
-          });
-        }
-
-        if (dismissBtn) {
-          dismissBtn.addEventListener('click', function () {
-            _dismissed = true;
-            try { localStorage.setItem('pwa_dismiss_ts', String(Date.now())); } catch (_) {}
-            _hideSheet();
-          });
-        }
-      });
-
-      // Hide once the app is actually installed
-      window.addEventListener('appinstalled', function () {
-        _hideSheet();
-        _dismissed = true;
-      });
-    })();
-  </script>
-  <!-- Registered last so it never blocks first-paint; runs async in background -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        // Auto-reload when a new SW takes control (ensures fresh CSS/JS on all devices)
-        navigator.serviceWorker.addEventListener('controllerchange', function () {
-          window.location.reload();
-        });
-        navigator.serviceWorker
-          .register('/sw.js', { scope: '/' })
-          .then(function (reg) {
-            // Activate the new SW immediately when an update is found
-            reg.addEventListener('updatefound', function () {
-              var newSW = reg.installing;
-              if (!newSW) return;
-              newSW.addEventListener('statechange', function () {
-                if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available — tell SW to skip waiting so it activates now
-                  newSW.postMessage({ type: 'SKIP_WAITING' });
-                }
-              });
-            });
-          })
-          .catch(function (err) {
-            console.warn('[PWA] Service worker registration failed:', err);
-          });
-      });
-    }
-  </script>
+  <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
 </body>
 </html>
