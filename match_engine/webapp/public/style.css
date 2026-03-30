@@ -5820,3 +5820,55 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   font-size: 1rem;
   color: rgba(255,255,255,.6);
 }
+
+
+/* ══════════════════════════════════════════════════════════
+   DESKTOP LAYOUT  (min-width: 1100px)
+   Two-column tournament dashboard: sticky champion poster
+   left + scrollable tab content right. Also widens all
+   containers on mid/large screens.
+══════════════════════════════════════════════════════════ */
+@media (min-width: 1100px) {
+
+  /* ── Widen global containers ── */
+  .header-inner  { max-width: 1520px; }
+  .main-wrap     { max-width: 1520px; }
+  #main-trn-wrap { max-width: 1520px; padding: 0 2rem 4rem; }
+
+  /* Wizard: a touch wider so team cards breathe */
+  #trn-wizard    { max-width: 780px; }
+
+  /* ── Tournament dashboard: sticky poster left · content right ── */
+  #trn-dashboard:not(.hidden) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+      "poster  tabs"
+      "poster  panel";
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .trn-champ-poster {
+    grid-area: poster;
+    position: sticky;
+    top: 10rem;           /* clear sticky header + tab bar */
+    margin-bottom: 0;
+  }
+
+  .trn-dash-tabs-wrap {
+    grid-area: tabs;
+    margin-bottom: 0;
+  }
+
+  /* All four tab panels share the same grid area;
+     only the active (non-hidden) one is ever displayed. */
+  .trn-tab-panel  { grid-area: panel; }
+}
+
+/* ── Extra wide: give the poster a bit more room ── */
+@media (min-width: 1400px) {
+  #trn-dashboard:not(.hidden) {
+    grid-template-columns: 380px 1fr;
+  }
+}
