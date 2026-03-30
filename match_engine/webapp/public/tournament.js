@@ -258,7 +258,6 @@ const TRN = (() => {
     _draw = [];
     _groupsDraw = [];
     _renderTeamSlots();
-    // Show league-loader button only for liga format
     const ligaBtn = $('trn-btn-liga');
     if (ligaBtn) ligaBtn.classList.toggle('hidden', _fmt !== 'liga');
     closeLeagueLoader();
@@ -2792,6 +2791,8 @@ const TRN = (() => {
     prevMatch,
     nextMatch,
     loadRealLeague,
+    openLeagueLoader,
+    closeLeagueLoader,
   };
 
 })();
