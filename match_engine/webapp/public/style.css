@@ -3545,6 +3545,44 @@ body {
 .vs-badge.vs-ready .clash-l1 { display: none; }
 .vs-badge.vs-ready .clash-l2 { display: none; }
 
+/* ── Rivalry & Surprise-mini buttons inside vs-col ─────────── */
+.btn-rivalry {
+  display: flex; align-items: center; gap: .35rem;
+  padding: .38rem .75rem;
+  border-radius: 20px;
+  font: 700 .72rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .06em; text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255,80,0,.18) 0%, rgba(255,0,80,.12) 100%);
+  border: 1px solid rgba(255,80,30,.45);
+  color: rgba(255,160,80,.95);
+  cursor: pointer;
+  transition: background .15s, transform .12s, box-shadow .15s;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(255,80,0,.15);
+}
+.btn-rivalry:hover {
+  background: linear-gradient(135deg, rgba(255,80,0,.28) 0%, rgba(255,0,80,.22) 100%);
+  box-shadow: 0 0 18px rgba(255,100,20,.35);
+  transform: scale(1.04);
+  color: #ffa050;
+}
+.btn-rivalry:active { transform: scale(.94); }
+.btn-rivalry-icon { font-size: .9rem; }
+.btn-rivalry-lbl  { font-size: .7rem; }
+
+.btn-surprise-mini {
+  width: 2rem; height: 2rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem;
+  background: rgba(0,212,255,.08);
+  border: 1px solid rgba(0,212,255,.22);
+  color: rgba(0,212,255,.7);
+  cursor: pointer;
+  transition: background .15s, transform .12s;
+}
+.btn-surprise-mini:hover { background: rgba(0,212,255,.18); transform: scale(1.1); }
+.btn-surprise-mini:active { transform: scale(.88); }
+
 /* ═══════════════════════════════════════════════════════════
    WEATHER ATMOSPHERE OVERLAY + PANEL REACTIONS
 ═══════════════════════════════════════════════════════════ */

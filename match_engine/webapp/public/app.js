@@ -26,6 +26,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
+    'btn-rivalry':'Rivalidades',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
@@ -164,6 +165,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
+    'btn-rivalry':'Rivalries',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
@@ -762,7 +764,87 @@ function surpriseMe() {
   showToast('⚡ ¡Enfrentamiento aleatorio!');
 }
 
-// ── URL deep-link (share + auto-fill on load) ─────────────────
+// ── Grandes Rivalidades Mundiales ─────────────────────────────
+const RIVALRIES = [
+  { label: 'El Clásico',            en: 'El Clásico',
+    a: { slug: 'real-madrid',                eras: ['1958','1960','1987','2000','2002','2012','2014','2018','2024'] },
+    b: { slug: 'fc-barcelona',               eras: ['1992','1999','2006','2009','2010','2011','2015','2022'] } },
+  { label: 'Derby della Madonnina', en: 'Derby della Madonnina',
+    a: { slug: 'inter-mailand',              eras: ['1965','1988','2006','2010','2023','2024'] },
+    b: { slug: 'ac-mailand',                 eras: ['1989','1994','2003','2006','2007'] } },
+  { label: 'El Superclásico',       en: 'El Superclásico',
+    a: { slug: 'club-atletico-boca-juniors', eras: ['1981','2007','2025'] },
+    b: { slug: 'club-atletico-river-plate',  eras: ['2001','2015','2025'] } },
+  { label: 'Der Klassiker',         en: 'Der Klassiker',
+    a: { slug: 'fc-bayern-munchen',          eras: ['1974','1975','2012','2013','2019','2020'] },
+    b: { slug: 'borussia-dortmund',          eras: ['1996','1997','2011','2012'] } },
+  { label: 'North West Derby',      en: 'North West Derby',
+    a: { slug: 'manchester-united',          eras: ['1994','1999','2007','2008'] },
+    b: { slug: 'fc-liverpool',               eras: ['1984','2009','2012','2019','2025'] } },
+  { label: 'Old Firm',              en: 'Old Firm',
+    a: { slug: 'celtic-glasgow',             eras: ['1967','1969','1970'] },
+    b: { slug: 'rangers',                    eras: ['2025'] } },
+  { label: 'O Clássico',            en: 'O Clássico',
+    a: { slug: 'benfica-lissabon',           eras: ['2014','2015','2022'] },
+    b: { slug: 'fc-porto',                   eras: ['1994','2003','2004'] } },
+  { label: 'La Eterna Rivalidad',   en: 'Brazil vs Argentina',
+    a: { slug: 'brasilien',                  eras: ['2002','2006','2021','2022'] },
+    b: { slug: 'argentinien',                eras: ['1986','2021','2022','2025'] } },
+  { label: 'Derby de Madrid',       en: 'Madrid Derby',
+    a: { slug: 'real-madrid',                eras: ['2000','2012','2014','2016','2018','2024'] },
+    b: { slug: 'atletico-madrid',            eras: ['2014','2016','2020','2022'] } },
+  { label: 'Derby d\'Italia',       en: 'Derby d\'Italia',
+    a: { slug: 'juventus-turin',             eras: ['1995','2012','2015','2017','2018'] },
+    b: { slug: 'inter-mailand',              eras: ['1965','2006','2010','2023','2024'] } },
+  { label: 'Manchester Derby',      en: 'Manchester Derby',
+    a: { slug: 'manchester-united',          eras: ['1994','1999','2007','2008','2011'] },
+    b: { slug: 'manchester-city',            eras: ['2012','2019','2023','2025'] } },
+  { label: 'Le Classique',          en: 'Le Classique',
+    a: { slug: 'fc-paris-saint-germain',     eras: ['2016','2019','2020'] },
+    b: { slug: 'olympique-marseille',        eras: ['1992','1993','2025'] } },
+  { label: 'La Roja vs La Seleção', en: 'Spain vs Portugal',
+    a: { slug: 'spanien',                    eras: ['2008','2010','2012','2024'] },
+    b: { slug: 'portugal',                   eras: ['2016','2022','2025'] } },
+  { label: 'Ajax vs Porto',         en: 'Ajax vs Porto',
+    a: { slug: 'ajax-amsterdam',             eras: ['1994','1995','2018'] },
+    b: { slug: 'fc-porto',                   eras: ['1994','2003','2004'] } },
+  { label: 'El Gran Duelo Europeo', en: 'Germany vs France',
+    a: { slug: 'deutschland',                eras: ['2014','2022','2025'] },
+    b: { slug: 'frankreich',                 eras: ['1998','2018','2022','2025'] } },
+];
+
+function rivalryMe() {
+  if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
+  const rivalry = RIVALRIES[Math.floor(Math.random() * RIVALRIES.length)];
+  const resolve = (side) => {
+    const entry = _catalog.find(c => c.slug === side.slug);
+    if (!entry) return null;
+    const available = entry.seasons || [];
+    if (!available.length) return null;
+    // Pick a classic era if it exists in catalog, else fall back to any available era
+    const valid = side.eras.filter(e => available.includes(e));
+    const era = valid.length
+      ? valid[Math.floor(Math.random() * valid.length)]
+      : available[Math.floor(Math.random() * available.length)];
+    return { slug: side.slug, era };
+  };
+  const tA = resolve(rivalry.a);
+  const tB = resolve(rivalry.b);
+  if (!tA || !tB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivalidades')); return; }
+
+  document.getElementById('teamA').value = tA.slug;
+  document.getElementById('teamB').value = tB.slug;
+  _populateEraSelect(tA.slug, 'A');
+  _populateEraSelect(tB.slug, 'B');
+  const selA = document.getElementById('eraA'); if (selA && tA.era) selA.value = tA.era;
+  const selB = document.getElementById('eraB'); if (selB && tB.era) selB.value = tB.era;
+  _pickerState.A = { type: null, league: null }; _renderPicker('A');
+  _pickerState.B = { type: null, league: null }; _renderPicker('B');
+  _updateClashButton();
+  _gx('rivalry_me', { rivalry: rivalry.label });
+  const name = _lang === 'en' ? rivalry.en : rivalry.label;
+  showToast(`🔥 ${name}`);
+}
 function _deepLinkShare() {
   if (!_shareData) return;
   const base = ((window.GOLAZOX_CONFIG?.siteUrl) || location.origin).replace(/\/$/, '');
@@ -1286,6 +1368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pill) setMatchMode(pill.dataset.mode);
   });
   _on('btn-surprise', () => surpriseMe());
+  _on('btn-rivalry',  () => rivalryMe());
   _on('btn-haptic',   () => toggleHaptic());
 
   // Match history clear
