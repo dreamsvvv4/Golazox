@@ -77,7 +77,6 @@ html { font-size: 16px; scroll-behavior: smooth; overscroll-behavior-y: none; }
 /* Block pull-to-refresh and horizontal overscroll bounce on the body */
 body {
   overscroll-behavior: none;
-  overflow-x: hidden; /* belt+suspenders: no horizontal page scroll on mobile */
 }
 /* Eliminate 300 ms tap delay and disable double-tap-zoom on all
    interactive controls — browser will not wait for a second tap. */
@@ -5072,6 +5071,36 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-match-score { font: 700 .95rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.9); }
 .trn-match-agg   { font: 700 .95rem/1 'Rajdhani', sans-serif; color: var(--neon); }
 .trn-match-pen   { font-size: .7rem; color: rgba(255,255,255,.35); margin-left: .25rem; }
+
+/* Calendar — group blocks */
+.trn-cal-groups-grid { display: flex; flex-direction: column; gap: .75rem; margin-bottom: .5rem; }
+.trn-cal-group-block {
+  background: var(--bg-card, rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: .55rem; overflow: hidden;
+}
+.trn-cal-group-header {
+  font: 700 .68rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(0,212,255,.75);
+  padding: .5rem .8rem .35rem;
+  background: rgba(0,212,255,.05);
+  border-bottom: 1px solid rgba(0,212,255,.1);
+}
+.trn-cal-grp-matches { border-top: 1px solid rgba(255,255,255,.06); }
+.trn-cal-grp-matches-lbl {
+  font: 700 .66rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.4); cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: .5rem;
+  padding: .42rem .7rem .38rem;
+}
+.trn-cal-grp-matches-lbl::-webkit-details-marker { display: none; }
+.trn-cal-grp-matches-lbl::marker { display: none; }
+.trn-cal-grp-matches > summary.trn-cal-grp-matches-lbl::after {
+  content: '▸'; margin-left: auto; font-size: .68rem; color: rgba(255,255,255,.25);
+}
+.trn-cal-grp-matches[open] > summary.trn-cal-grp-matches-lbl::after { content: '▾'; }
 
 /* Calendar — premium */
 .trn-cal-jornada { margin-bottom: 1rem; }

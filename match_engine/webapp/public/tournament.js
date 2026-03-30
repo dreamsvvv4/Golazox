@@ -485,25 +485,6 @@ const TRN = (() => {
     return html;
   }
 
-
-      let html = `<div class="trn-draw-header">
-        <span class="trn-label">${t('trn-draw-groups-title')}</span>
-        <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">${t('trn-draw-reshuffle')}</button>
-      </div><div class="trn-groups-draw-grid">`;
-      _groupsDraw.forEach((grp, g) => {
-        html += `<div class="trn-group-draw-card">
-          <div class="trn-group-draw-label">${t('trn-draw-group-prefix')}${String.fromCharCode(65 + g)}</div>
-          ${grp.map(t => `<div class="trn-group-draw-team">${_badgeImg(t.slug,'trn-draw-badge')} <span>${_esc(t.name)}</span></div>`).join('')}
-        </div>`;
-      });
-      html += `</div>`;
-      el.innerHTML = html;
-    } else {
-      el.innerHTML = '';
-      el.classList.add('hidden');
-    }
-  }
-
   // Team search (debounced)
   let _searchTimer = null;
   let _kbFocus = -1;  // keyboard-focused search result index
@@ -1585,13 +1566,34 @@ const TRN = (() => {
     const idx = {};
     table.forEach((r, i) => { idx[r.slug] = i; });
 
-    const fixtures = [];
-    for (let i = 0; i < teams.length; i++)
-      for (let j = i + 1; j < teams.length; j++) {
-        fixtures.push({ a: teams[i], b: teams[j] });
-        if (_rules.idaVuelta) fixtures.push({ a: teams[j], b: teams[i] });
+    // Build a proper round-robin schedule so each team plays once per matchday.
+    // Algorithm: fix teams[0], rotate the rest each round.
+    const buildRoundRobin = (arr) => {
+      const t = arr.length % 2 === 0 ? [...arr] : [...arr, null]; // null = bye
+      const m = t.length;
+      const rounds = [];
+      for (let r = 0; r < m - 1; r++) {
+        const round = [];
+        for (let i = 0; i < m / 2; i++) {
+          const a = t[i], b = t[m - 1 - i];
+          if (a && b) round.push({ a, b });
+        }
+        rounds.push(round);
+        const last = t.pop();
+        t.splice(1, 0, last); // rotate keeping t[0] fixed
       }
-    fixtures.sort(() => Math.random() - 0.5);
+      return rounds;
+    };
+
+    const homeRounds = buildRoundRobin(teams);
+    const allRounds = _rules.idaVuelta
+      ? [...homeRounds, ...homeRounds.map(r => r.map(m => ({ a: m.b, b: m.a })))]
+      : homeRounds;
+
+    // Flatten into fixtures preserving jornada index (1-based)
+    const fixtures = allRounds.flatMap((round, ri) =>
+      round.map(m => ({ a: m.a, b: m.b, jornada: ri + 1 }))
+    );
 
     const BATCH = 50;
     for (let b = 0; b < fixtures.length; b += BATCH) {
@@ -2025,45 +2027,71 @@ const TRN = (() => {
 
     if (d.format === 'liga') {
       html = `<h3 class="trn-section-h">${t('trn-cal-calendar-liga')}</h3>`;
-      const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
       const matches = d.matches || [];
-      for (let i = 0; i < matches.length; i += matchesPerJornada) {
-        const jornada = matches.slice(i, i + matchesPerJornada);
-        const jNum = Math.floor(i / matchesPerJornada) + 1;
+      // Group by jornada property (set by round-robin scheduler)
+      const byJornada = [];
+      matches.forEach(m => {
+        const j = (m.jornada || 1) - 1;
+        if (!byJornada[j]) byJornada[j] = [];
+        byJornada[j].push(m);
+      });
+      byJornada.forEach((jornada, ji) => {
+        const jNum = ji + 1;
         const openAttr = jNum === 1 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${t('trn-cal-jornada')} ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
         jornada.forEach(m => {
           html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
         });
         html += '</details>';
-      }
-    } else if (d.groups) {
-      // Copa groups mode or old champions
-      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-groups')}</h3>`;
-      (d.groups || []).forEach((g, gi) => {
-        const openAttr = gi === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
-        // Group table first
-        html += '<div class="trn-mini-table" style="margin:.5rem 0 .3rem">';
-        g.table.forEach((r, i) => {
-          const medals = ['🥇','🥈','🥉'];
-          const qualifier = i < 2;
-          html += `<div class="trn-mini-row${i===0?' trn-mini-row-top':''}">
-            <span class="trn-mini-pos">${medals[i]||String(i+1)}</span>
-            ${_badgeImg(r.slug,'trn-mini-badge')}
-            <span class="trn-mini-team${qualifier?' trn-q':''}">${_esc(_tLabel(r))}</span>
-            <span class="trn-mini-pts">${r.pts}p</span>
-            <span class="trn-mini-gd">${r.gf}-${r.ga}</span>
-          </div>`;
-        });
-        html += '</div>';
-        // Group matches
-        g.matches.forEach(m => {
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
-        });
-        html += '</details>';
       });
-      html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-cal-calendar-ko')}</h3>`;
+    } else if (d.groups) {
+      // Copa groups / champions — cls-table standings per group + collapsible matches
+      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-groups')}</h3>
+        <div class="trn-cal-groups-grid">`;
+      (d.groups || []).forEach((g) => {
+        const podiumClass = ['trn-cls-pos-1', 'trn-cls-pos-2', 'trn-cls-pos-3'];
+        const posLabel = (i) => i < 3 ? ['🥇','🥈','🥉'][i] : String(i + 1);
+        const rows = g.table.map((r, i) => {
+          const gd = (r.gf ?? 0) - (r.ga ?? 0);
+          const gdStr = gd > 0 ? `+${gd}` : String(gd);
+          const gdCls = gd > 0 ? 'trn-cls-dif-pos' : gd < 0 ? 'trn-cls-dif-neg' : 'trn-cls-dif-neu';
+          return `<div class="trn-cls-row ${podiumClass[i] || ''}" style="--row-i:${i}">
+            <span class="trn-cls-pos-cell">${posLabel(i)}</span>
+            ${_badgeImg(r.slug, 'trn-cls-badge')}
+            <span class="trn-cls-name">${_esc(_tLabel(r))}</span>
+            <span class="trn-cls-num">${r.p ?? 0}</span>
+            <span class="trn-cls-num">${r.w ?? 0}</span>
+            <span class="trn-cls-num">${r.d ?? 0}</span>
+            <span class="trn-cls-num">${r.l ?? 0}</span>
+            <span class="trn-cls-num">${r.gf ?? 0}</span>
+            <span class="trn-cls-num">${r.ga ?? 0}</span>
+            <span class="trn-cls-num ${gdCls}">${gdStr}</span>
+            <span class="trn-cls-pts-val">${r.pts}</span>
+          </div>`;
+        }).join('');
+        const matchesHtml = g.matches.map(m =>
+          _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`)
+        ).join('');
+        html += `<div class="trn-cal-group-block">
+          <div class="trn-cal-group-header">${_esc(g.label)}</div>
+          <div class="trn-cls-wrap">
+            <div class="trn-cls-table">
+              <div class="trn-cls-header">
+                <span>#</span><span></span><span>${t('trn-col-team')}</span>
+                <span>${t('trn-col-pj-abbr')}</span><span>${t('trn-col-w-abbr')}</span><span>${t('trn-col-d-abbr')}</span><span>${t('trn-col-l-abbr')}</span>
+                <span>${t('trn-col-gf-abbr')}</span><span>${t('trn-col-gc-abbr')}</span><span>${t('trn-col-dif')}</span><span>${t('trn-col-pts')}</span>
+              </div>
+              ${rows}
+            </div>
+          </div>
+          <details class="trn-cal-grp-matches">
+            <summary class="trn-cal-grp-matches-lbl">${t('trn-cal-matches-lbl')} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>
+            ${matchesHtml}
+          </details>
+        </div>`;
+      });
+      html += `</div>
+        <h3 class="trn-section-h trn-section-h-mt">${t('trn-cal-calendar-ko')}</h3>`;
       [...(d.koRounds || [])].reverse().forEach((r, ri) => {
         const openAttr = ri === 0 ? ' open' : '';
         html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -2142,88 +2170,6 @@ const TRN = (() => {
     }
     const rounds = d.koRounds || d.rounds || [];
     el.innerHTML = `<div class="trn-bkt-scroll">${_renderVisualBracket(rounds)}</div>`;
-  }
-
-  // ── Calendar tab ─────────────────────────────────────────
-  function _renderCalendar() {
-    const el = $('trn-tab-calendar');
-    if (!el || !_data) return;
-    const d = _data;
-    let html = '';
-
-    if (d.format === 'liga') {
-      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-liga')}</h3>`;
-      const matchesPerJornada = Math.max(1, Math.floor(_numTeams / 2));
-      const matches = d.matches || [];
-      for (let i = 0; i < matches.length; i += matchesPerJornada) {
-        const jornada = matches.slice(i, i + matchesPerJornada);
-        const jNum = Math.floor(i / matchesPerJornada) + 1;
-        const openAttr = jNum === 1 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${t('trn-cal-jornada')} ${jNum} <span class="trn-jornada-cnt">${jornada.length}</span></summary>`;
-        jornada.forEach(m => {
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
-        });
-        html += '</details>';
-      }
-    } else if (d.groups) {
-      // Copa groups mode or old champions
-      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-groups')}</h3>`;
-      (d.groups || []).forEach((g, gi) => {
-        const openAttr = gi === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(g.label)} <span class="trn-jornada-cnt">${g.matches.length}</span></summary>`;
-        // Group table first
-        html += '<div class="trn-mini-table" style="margin:.5rem 0 .3rem">';
-        g.table.forEach((r, i) => {
-          const medals = ['🥇','🥈','🥉'];
-          const qualifier = i < 2;
-          html += `<div class="trn-mini-row${i===0?' trn-mini-row-top':''}">
-            <span class="trn-mini-pos">${medals[i]||String(i+1)}</span>
-            ${_badgeImg(r.slug,'trn-mini-badge')}
-            <span class="trn-mini-team${qualifier?' trn-q':''}">${_esc(_tLabel(r))}</span>
-            <span class="trn-mini-pts">${r.pts}p</span>
-            <span class="trn-mini-gd">${r.gf}-${r.ga}</span>
-          </div>`;
-        });
-        html += '</div>';
-        // Group matches
-        g.matches.forEach(m => {
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`);
-        });
-        html += '</details>';
-      });
-      html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-cal-calendar-ko')}</h3>`;
-      [...(d.koRounds || [])].reverse().forEach((r, ri) => {
-        const openAttr = ri === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
-        r.matches.forEach(m => {
-          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
-        });
-        html += '</details>';
-      });
-    } else {
-      // Copa KO mode
-      html = `<h3 class="trn-section-h">${t('trn-cal-calendar-copa')}</h3>`;
-      [...(d.rounds || [])].reverse().forEach((r, ri) => {
-        const openAttr = ri === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
-        r.matches.forEach(m => {
-          const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-          if (m.legs === 2) {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
-          } else {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
-          }
-        });
-        html += '</details>';
-      });
-      if (d.thirdPlace) {
-        const m = d.thirdPlace, penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
-        html += `<h3 class="trn-section-h trn-section-h-mt">${t('trn-summ-3rd')}</h3>`;
-        html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
-      }
-    }
-    el.innerHTML = html;
   }
 
   // ── Swipe gestures on dashboard ──────────────────────────
