@@ -4834,6 +4834,12 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   /* prevent backdrop-filter from clipping scroll content in Chrome/Safari */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  /* allow bracket to overflow and scroll horizontally */
+  overflow-x: auto;
+  overflow-y: visible;
+  /* break out of the 1000px max-width constraint so the bracket can scroll */
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Section headings */
@@ -5480,10 +5486,9 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
    TOURNAMENT — Visual KO Bracket Tree
 ══════════════════════════════════════════════════════════════ */
 .trn-bkt-scroll {
-  overflow-x: auto;
+  overflow-x: visible;
   padding: 0 0 1.2rem;
   -webkit-overflow-scrolling: touch;
-  /* Note: negative margin removed — it caused scroll detection issues on mobile */
 }
 .trn-bkt-tree {
   display: flex;
@@ -5491,7 +5496,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   min-width: max-content;
   position: relative;
   gap: 0;
-  padding-right: 1.5rem; /* ensure champion card is fully scrollable */
+  padding-right: 2rem;
 }
 .trn-bkt-col {
   position: relative;
