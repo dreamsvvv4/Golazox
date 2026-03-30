@@ -850,6 +850,8 @@ function surpriseMe() {
   _populateEraSelect(tB.slug, 'B');
   if (eA) { const sel = document.getElementById('eraA'); if (sel) sel.value = eA; }
   if (eB) { const sel = document.getElementById('eraB'); if (sel) sel.value = eB; }
+  _updateLookupBtn('A');
+  _updateLookupBtn('B');
   _pickerState.A = { type: null, league: null }; _renderPicker('A');
   _pickerState.B = { type: null, league: null }; _renderPicker('B');
   _updateClashButton();
