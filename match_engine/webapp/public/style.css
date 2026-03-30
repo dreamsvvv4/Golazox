@@ -4848,17 +4848,27 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   box-shadow: 0 0 12px rgba(0,212,255,.18), inset 0 1px 0 rgba(0,212,255,.12);
 }
 
-/* Tab panels */
-.trn-tab-panel { padding: 1.4rem 1.3rem; }
+/* Dashboard: column stack so all children share the same width at every breakpoint */
+#trn-dashboard:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab panels — constrained width at every breakpoint */
+.trn-tab-panel {
+  padding: 1.4rem 1.3rem;
+  min-width: 0;        /* flex item never expands beyond container */
+  overflow: hidden;    /* clips any overflowing child */
+  box-sizing: border-box;
+}
 #trn-tab-bracket {
   padding: 1.2rem 1rem;
   /* prevent backdrop-filter from clipping scroll content in Chrome/Safari */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  /* allow bracket to overflow and scroll horizontally */
+  /* bracket scrolls horizontally instead of clipping */
   overflow-x: auto;
-  overflow-y: visible;
-  /* break out of the 1000px max-width constraint so the bracket can scroll */
+  overflow-y: hidden;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -5517,7 +5527,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   min-width: max-content;
   position: relative;
   gap: 0;
-  padding-right: 2rem;
+  padding-right: 160px; /* enough room for the 150px champion column */
 }
 .trn-bkt-col {
   position: relative;
@@ -5664,7 +5674,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   background: rgba(0,212,255,.22);
 }
 /* Champion end column */
-.trn-bkt-champ-col { width: 150px; }
+.trn-bkt-champ-col { width: 150px; position: relative; }
 .trn-bkt-champion-card {
   position: absolute;
   width: 138px;
@@ -5978,12 +5988,8 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   /* Wizard prominent */
   #trn-wizard    { max-width: 920px; }
 
-  /* ── Dashboard: stacked, full width ── */
-  #trn-dashboard:not(.hidden) {
-    display: flex;
-    flex-direction: column;
-    gap: .9rem;
-  }
+  /* ── Dashboard: add gap at desktop ── */
+  #trn-dashboard:not(.hidden) { gap: .9rem; }
 
   /* ── Champion: compact horizontal banner ── */
   .trn-champ-poster {
@@ -6031,7 +6037,6 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   /* ── Tab bar + panels: full width ── */
   .trn-dash-tabs-wrap { margin-bottom: 0; }
 
-  /* min-width:0 = grid item respects declared width, enables scroll children */
-  .trn-tab-panel  { min-width: 0; overflow: hidden; }
-  #trn-tab-bracket { overflow-x: auto; overflow-y: visible; }
+  /* bracket retains horizontal scroll at desktop too */
+  #trn-tab-bracket { overflow-x: auto; overflow-y: hidden; }
 }
