@@ -4576,6 +4576,55 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-draw-seed { color: var(--gold); font-size: .65rem; margin-left: .2rem; vertical-align: middle; }
 .trn-copa-draw-seeded { background: rgba(245,197,24,.04); border-color: rgba(245,197,24,.18); }
 
+/* ── Pre-draw bracket wrapper (horizontal scroll, no page bleed) */
+.trn-pre-draw-bkt-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: .8rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,212,255,.18) transparent;
+  margin: 0 -.15rem; /* slight negative offset to align with header */
+}
+.trn-pre-draw-bkt-wrap::-webkit-scrollbar { height: 4px; }
+.trn-pre-draw-bkt-wrap::-webkit-scrollbar-thumb { background: rgba(0,212,255,.2); border-radius: 2px; }
+
+/* Pre-draw bracket: real pairs — not interactive, no winner styling */
+.trn-bkt-preview { cursor: default; }
+.trn-bkt-preview:hover { border-color: var(--border); box-shadow: none; }
+.trn-bkt-preview .trn-bkt-team { opacity: 1; }
+
+/* Pre-draw bracket: TBD future-round slots */
+.trn-bkt-tbd { cursor: default; opacity: .28; }
+.trn-bkt-tbd:hover { border-color: var(--border); box-shadow: none; }
+
+/* TBD row placeholder bar */
+.trn-bkt-tbd-bar {
+  display: block;
+  height: .55rem;
+  width: 70%;
+  background: rgba(255,255,255,.12);
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* "vs" separator in preview cards */
+.trn-bkt-vs-lbl {
+  color: rgba(255,255,255,.22);
+  font-size: .6rem;
+  letter-spacing: .06em;
+}
+
+/* TBD champion placeholder */
+.trn-bkt-tbd-champ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  opacity: .3;
+}
+.trn-bkt-tbd-champ-icon { font-size: 1.8rem; line-height: 1; }
+
 /* ── Progress bar */
 .trn-progress { flex-wrap: wrap; }
 .trn-progress-inner { display: flex; flex-direction: column; flex: 1; gap: .25rem; }

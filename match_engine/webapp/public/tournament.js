@@ -352,26 +352,140 @@ const TRN = (() => {
     if (!el) return;
     el.classList.remove('hidden');
     if (_fmt === 'copa') {
-      const ROUND_NAMES = {
-        4: t('trn-round-semi'), 8: t('trn-round-qf'),
-        16: t('trn-round-r16'), 32: t('trn-round-r32'), 64: t('trn-round-r64'),
-      };
-      const roundName = ROUND_NAMES[_numTeams] || `${t('trn-round-default')} (${_numTeams / 2})`;
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">🎲 ${_esc(roundName)}</span>
+        <span class="trn-label">🎲 ${_esc(_roundLabel(_numTeams))}</span>
         <button class="trn-draw-reshuffle" data-action="reshuffleDraw">${t('trn-draw-reshuffle')}</button>
-      </div><div class="trn-copa-draw-grid">`;
-      _draw.forEach((m, i) => {
-        html += `<div class="trn-copa-draw-match">
-          <span class="trn-draw-num">${i + 1}</span>
-          <div class="trn-copa-draw-side">${_badgeImg(m.a.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.a.name)}</span></div>
-          <span class="trn-copa-draw-vs">vs</span>
-          <div class="trn-copa-draw-side trn-copa-draw-side-b">${_badgeImg(m.b.slug,'trn-draw-badge')}<span class="trn-copa-draw-team">${_esc(m.b.name)}</span></div>
+      </div><div class="trn-pre-draw-bkt-wrap">${_buildPreDrawBracket(_draw)}</div>`;
+      el.innerHTML = html;
+    } else if (_fmt === 'champions') {
+      let html = `<div class="trn-draw-header">
+        <span class="trn-label">${t('trn-draw-groups-title')}</span>
+        <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">${t('trn-draw-reshuffle')}</button>
+      </div><div class="trn-groups-draw-grid">`;
+      _groupsDraw.forEach((grp, g) => {
+        html += `<div class="trn-group-draw-card">
+          <div class="trn-group-draw-label">${t('trn-draw-group-prefix')}${String.fromCharCode(65 + g)}</div>
+          ${grp.map(t => `<div class="trn-group-draw-team">${_badgeImg(t.slug,'trn-draw-badge')} <span>${_esc(t.name)}</span></div>`).join('')}
         </div>`;
       });
       html += `</div>`;
       el.innerHTML = html;
-    } else if (_fmt === 'champions') {
+    } else {
+      el.innerHTML = '';
+      el.classList.add('hidden');
+    }
+  }
+
+  // Helper: round label for N teams
+  function _roundLabel(n) {
+    const map = {
+      2: t('trn-round-final'), 4: t('trn-round-semi'), 8: t('trn-round-qf'),
+      16: t('trn-round-r16'), 32: t('trn-round-r32'), 64: t('trn-round-r64'),
+    };
+    return map[n] || `${t('trn-round-default')} (${n / 2})`;
+  }
+
+  // Build full bracket preview HTML from a draw array.
+  // Round 1 shows the real pairs; subsequent rounds show TBD placeholder slots.
+  function _buildPreDrawBracket(draw) {
+    if (!draw || !draw.length) return '';
+    const MATCH_H = 84, HEADER_H = 26, SW = 36;
+
+    // Build synthetic rounds: R1 with real teams, then shrinking empty rounds
+    const rounds = [];
+    rounds.push({
+      label: _roundLabel(draw.length * 2),
+      matches: draw.map(m => ({ a: m.a, b: m.b }))
+    });
+    let count = Math.floor(draw.length / 2);
+    while (count >= 1) {
+      rounds.push({
+        label: _roundLabel(count * 2),
+        matches: Array.from({ length: count }, () => ({ a: null, b: null }))
+      });
+      count = Math.floor(count / 2);
+    }
+
+    const pos = _computeBracketPositions(rounds);
+    const maxBottom = Math.max(...pos.map(p => p.length ? p[p.length - 1].top + MATCH_H : 0));
+    const totalH = maxBottom + HEADER_H + 8;
+
+    let html = `<div class="trn-bkt-tree" style="height:${totalH}px">`;
+
+    for (let ri = 0; ri < rounds.length; ri++) {
+      const round = rounds[ri];
+      const isLast = ri === rounds.length - 1;
+      html += `<div class="trn-bkt-col" style="height:${totalH}px">`;
+      html += `<div class="trn-bkt-col-label">${_esc(round.label)}</div>`;
+
+      pos[ri].forEach(({ top }, mi) => {
+        const m = round.matches[mi];
+        const topPx = top + HEADER_H;
+        if (m.a && m.b) {
+          // Real draw pair — no winner/score yet
+          const bA = _badge(m.a.slug) || '/img/badges/_placeholder.svg';
+          const bB = _badge(m.b.slug) || '/img/badges/_placeholder.svg';
+          html += `<div class="trn-bkt-match trn-bkt-preview" style="top:${topPx}px">
+            <div class="trn-bkt-team">
+              <img class="trn-bkt-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span class="trn-bkt-tname">${_esc(_tLabel(m.a))}</span>
+            </div>
+            <div class="trn-bkt-score-mid trn-bkt-vs-lbl">vs</div>
+            <div class="trn-bkt-team">
+              <img class="trn-bkt-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span class="trn-bkt-tname">${_esc(_tLabel(m.b))}</span>
+            </div>
+          </div>`;
+        } else {
+          // TBD slot
+          html += `<div class="trn-bkt-match trn-bkt-tbd" style="top:${topPx}px">
+            <div class="trn-bkt-team"><span class="trn-bkt-tbd-bar"></span></div>
+            <div class="trn-bkt-score-mid trn-bkt-vs-lbl">vs</div>
+            <div class="trn-bkt-team"><span class="trn-bkt-tbd-bar"></span></div>
+          </div>`;
+        }
+      });
+
+      html += '</div>';
+
+      if (!isLast) {
+        html += `<div class="trn-bkt-spacer" style="height:${totalH}px">`;
+        const nextPos = pos[ri + 1];
+        for (let pi = 0; pi < nextPos.length; pi++) {
+          const m0 = pos[ri][pi * 2];
+          const m1 = pos[ri][pi * 2 + 1];
+          if (!m0) continue;
+          const f1y = HEADER_H + m0.top + MATCH_H / 2;
+          const f2y = m1 ? HEADER_H + m1.top + MATCH_H / 2 : f1y;
+          const ny  = HEADER_H + nextPos[pi].top + MATCH_H / 2;
+          html += `<div class="trn-bkt-line" style="top:${f1y - .5}px;left:0;width:${SW / 2}px"></div>`;
+          if (m1) {
+            html += `<div class="trn-bkt-line" style="top:${f2y - .5}px;left:0;width:${SW / 2}px"></div>`;
+            html += `<div class="trn-bkt-line" style="top:${Math.min(f1y, f2y)}px;left:${SW / 2 - .5}px;height:${Math.abs(f2y - f1y) + 1}px;width:1px"></div>`;
+          }
+          html += `<div class="trn-bkt-line" style="top:${ny - .5}px;left:${SW / 2}px;width:${SW / 2}px"></div>`;
+        }
+        html += '</div>';
+      }
+    }
+
+    // Trophy column at the end
+    const champY = HEADER_H + pos[rounds.length - 1][0].top + MATCH_H / 2;
+    html += `<div class="trn-bkt-spacer" style="height:${totalH}px">
+      <div class="trn-bkt-line" style="top:${champY - .5}px;left:0;width:${SW}px"></div>
+    </div>`;
+    html += `<div class="trn-bkt-col trn-bkt-champ-col" style="height:${totalH}px">
+      <div class="trn-bkt-col-label">🏆</div>
+      <div class="trn-bkt-champion-card trn-bkt-tbd-champ" style="top:${Math.max(8, champY - 30)}px">
+        <span class="trn-bkt-tbd-champ-icon">🏆</span>
+        <div class="trn-bkt-champ-name" style="opacity:.3">?</div>
+      </div>
+    </div>`;
+    html += '</div>';
+    return html;
+  }
+
+
       let html = `<div class="trn-draw-header">
         <span class="trn-label">${t('trn-draw-groups-title')}</span>
         <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">${t('trn-draw-reshuffle')}</button>
