@@ -1,6 +1,208 @@
 {
   "slug": "immigration-fc",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Zarif Irfan",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Shaiful Wazizi",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Farhan Abdul Majid",
+          "position": "GK",
+          "marketValue": 10000,
+          "rating": 62
+        },
+        {
+          "name": "Amirali Chegini",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Keron Ornchaiyaphum",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Aiman Yusni",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Rizal Ghazali",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Milani",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Loqman Hakim",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Nicholas Swirad",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Farid Nezal",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Hanafie Tokyo",
+          "position": "CB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Azmeer Aris",
+          "position": "CB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Heshamudin Ahmad",
+          "position": "CB",
+          "marketValue": 10000,
+          "rating": 62
+        },
+        {
+          "name": "Eduardo Sosa",
+          "position": "CM",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Fadzrul Danel",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Nik Akif",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Halim Saari",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Pedro Santos",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Mior Dani",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Rafael Holstein",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Zulfahmi Arifin",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Elvis Kamsoba",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "João Pedro",
+          "position": "ST",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Fayadh Zulkifi",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Nur Azfar Fikri",
+          "position": "ST",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Wilmar Jordán Gil",
+          "position": "ST",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Nik Sharif Haseefy",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Al-Hafiz Harun",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Syahmi Shamsudin",
+          "position": "ST",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Babacar Gueye",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Flamengo (2025/2026)",
+      "teamLabel": "Flamengo (2025-26)"
+    }
+  },
   "badgeLocalPath": "/img/badges/flamengo.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "id": 84287,
+  "name": "Flamengo"
 }

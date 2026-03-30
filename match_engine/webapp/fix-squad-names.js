@@ -36,6 +36,12 @@ const NAME_MAP = {
   'athletic-club':               { nameEs: 'Athletic Club',          nameEn: 'Athletic Club' },
   'real-madrid':                 { nameEs: 'Real Madrid',            nameEn: 'Real Madrid' },
   'real-sociedad-ii':            { nameEs: 'Real Sociedad B',        nameEn: 'Real Sociedad B' },
+  'rayo-vallecano-de-madrid':    { nameEs: 'Rayo Vallecano',         nameEn: 'Rayo Vallecano' },
+  'fc-valencia':                 { nameEs: 'Valencia CF',            nameEn: 'Valencia CF' },
+  'deportivo-alaves':            { nameEs: 'Deportivo Alavés',       nameEn: 'Deportivo Alavés' },
+  'getafe-cf':                   { nameEs: 'Getafe CF',              nameEn: 'Getafe CF' },
+  'cd-leganes':                  { nameEs: 'CD Leganés',             nameEn: 'CD Leganés' },
+  'real-valladolid':             { nameEs: 'Real Valladolid',        nameEn: 'Real Valladolid' },
 
   // ══ La Liga 2 ═════════════════════════════════════════════════
   'albacete':                    { nameEs: 'Albacete BP',            nameEn: 'Albacete BP' },
@@ -249,8 +255,24 @@ const NAME_MAP = {
   // ══ Champions League / Europa teams ═══════════════════════════
   'fc-red-bull-salzburg':        { nameEs: 'RB Salzburgo',           nameEn: 'RB Salzburg' },
   'fc-copenhagen':               { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
-  'club-brugge-kv':              { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },
+  'club-brugge-kv':              { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },  'galatasaray-sk':              { nameEs: 'Galatasaray',            nameEn: 'Galatasaray' },
+  'losc-lille':                  { nameEs: 'Lille OSC',              nameEn: 'Lille OSC' },
+  'stade-brest-29':              { nameEs: 'Stade Brest',            nameEn: 'Stade Brest' },
+  'sc-braga':                    { nameEs: 'SC Braga',               nameEn: 'SC Braga' },
+  'club-brugge':                 { nameEs: 'Club Brujas',            nameEn: 'Club Brugge' },
+  'fc-kobenhavn':                { nameEs: 'FC Copenhaguen',         nameEn: 'FC Copenhagen' },
+  'afc-bournemouth':             { nameEs: 'Bournemouth',            nameEn: 'AFC Bournemouth' },
+  'fc-watford':                  { nameEs: 'Watford FC',             nameEn: 'Watford FC' },
 
+  // ══ Sudamérica ════════════════════════════════════════════════
+  'boca-juniors':                { nameEs: 'Boca Juniors',           nameEn: 'Boca Juniors' },
+  'river-plate':                 { nameEs: 'River Plate',            nameEn: 'River Plate' },
+  'cr-flamengo':                 { nameEs: 'Flamengo',               nameEn: 'Flamengo' },
+  'se-palmeiras':                { nameEs: 'Palmeiras',              nameEn: 'Palmeiras' },
+  'ca-atletico-mineiro':         { nameEs: 'Atlético Mineiro',       nameEn: 'Atletico Mineiro' },
+  'fluminense-fc':               { nameEs: 'Fluminense',             nameEn: 'Fluminense' },
+  'sc-corinthians-paulista':     { nameEs: 'Corinthians',            nameEn: 'Corinthians' },
+  'estudiantes-de-la-plata':     { nameEs: 'Estudiantes',            nameEn: 'Estudiantes' },
   // ══ Fantasy / Special ════════════════════════════════════════
   'america-xi':                  { nameEs: 'América XI',             nameEn: 'America XI' },
   'best-xi-2025':                { nameEs: 'Mejores del Mundo 2025', nameEn: 'World Best XI 2025' },

@@ -1,6 +1,265 @@
 {
   "slug": "al-nasr-riad",
   "seasons": {
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Ospina",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nawaf Al-Aqidi",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Raghed Al-Najjar",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Amin Al-Bukhari",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Waleed Abdullah",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Faris Afandy",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Mohammed Al-Otaibi",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 84
+        },
+        {
+          "name": "Ghislain Konan",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alex Telles",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Sultan Al-Ghannam",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Abdulelah Al-Amri",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ayman Yahya",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ali Lajami",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Abdullah Madu",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Aziz Behich",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Nawaf Boushal",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Mohammed Al-Fatil",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mohammed Qassim",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Awad Aman",
+          "position": "CB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Abdulaziz Al-Faraj",
+          "position": "CB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Marzouq Tambakti",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Walid Ayyach Saber",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcelo Brozović",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 86
+        },
+        {
+          "name": "Otávio",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Seko Fofana",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Sami Al-Najei",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Abdullah Al-Khaibari",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Mukhtar Ali",
+          "position": "CM",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Abdulmajeed Al-Sulayhim",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ali Al-Hassan",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mohammed Suhluli",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sadio Mané",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 89
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 88
+        },
+        {
+          "name": "Talisca",
+          "position": "ST",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Abdulrahman Ghareeb",
+          "position": "ST",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Khalid Al-Ghannam",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Abdulfattah Adam",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Abdulaziz Al-Aliwa",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mohammed Marran",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Meshari Al-Nemer",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 65,
+        "defense": 66,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Al-Nassr (2023/2024)",
+      "teamLabel": "Al-Nassr (2023-24)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

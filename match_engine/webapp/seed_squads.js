@@ -260,7 +260,9 @@ const EXTRA_CLUBS = [
 
   // ══ LA LIGA ═══════════════════════════════════════════════════
   ...['Villarreal','Celta Vigo','Osasuna','Mallorca','Espanyol','Girona',
-      'Athletic Bilbao','Real Sociedad','Real Betis'].map(t => ({ team: t, years: CY, region: 'La Liga' })),
+      'Athletic Bilbao','Real Sociedad','Real Betis',
+      'Sevilla','Rayo Vallecano','Valencia','Alavés','Getafe',
+      'Leganés','Real Valladolid'].map(t => ({ team: t, years: CY, region: 'La Liga' })),
 
   // ══ UCL PARTICIPANTES ═════════════════════════════════════════
   ...['Galatasaray','Red Bull Salzburg','Shakhtar Donetsk',
