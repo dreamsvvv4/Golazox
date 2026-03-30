@@ -4076,11 +4076,15 @@ function _driftPlayers() {
           _heatmapData[team].push({ x: nx / W, y: ny / H });
         }
       }
-      // Distance accumulation
+      // Distance accumulation — weighted by position (GK covers ~5 km, defenders ~10, midfielders/forwards ~11-13)
       if (key && _prevPos[key]) {
         const dx = nx - _prevPos[key].x;
         const dy = ny - _prevPos[key].y;
-        _distanceData[key] = (_distanceData[key] || 0) + Math.sqrt(dx * dx + dy * dy);
+        const pos = g.dataset.pos || '';
+        const posFactor = pos === 'GK' ? 0.43
+          : (pos === 'CB' || pos === 'RB' || pos === 'LB') ? 0.78
+          : 1.0;
+        _distanceData[key] = (_distanceData[key] || 0) + Math.sqrt(dx * dx + dy * dy) * posFactor;
       }
       if (key) _prevPos[key] = { x: nx, y: ny, team };
     });
