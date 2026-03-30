@@ -4865,6 +4865,8 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 .trn-mini-team { flex: 1; font: 600 .92rem/1 'Rajdhani', sans-serif; color: rgba(255,255,255,.84); }
 .trn-mini-pts  { font: 700 .92rem/1 'Rajdhani', sans-serif; color: var(--neon); }
 .trn-mini-gd   { font-size: .76rem; color: rgba(255,255,255,.38); min-width: 2.8rem; text-align: right; }
+.trn-mini-gd-full { display: flex; gap: .7rem; font-size: .76rem; color: rgba(255,255,255,.38); }
+.trn-mini-gd-full span { white-space: nowrap; }
 .trn-mini-badge { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .trn-mini-badge-xs { width: 14px; height: 14px; object-fit: contain; flex-shrink: 0; }
 

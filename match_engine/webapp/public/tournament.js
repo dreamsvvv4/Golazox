@@ -1983,13 +1983,28 @@ const TRN = (() => {
     el.innerHTML = html;
   }
 
-  // ── Bracket tab ──────────────────────────────────────────
+  // ── Bracket tab (= Clasificación tab for Liga) ───────────
   function _renderBracket() {
     const el = $('trn-tab-bracket');
     if (!el || !_data) return;
     const d = _data;
     if (d.format === 'liga') {
-      el.innerHTML = '<p style="padding:2rem;text-align:center;color:var(--grey)">El cuadro no aplica para formato Liga.<br><small>Consulta la clasificación en Resumen.</small></p>';
+      const table = d.table || [];
+      const medals = ['🥇', '🥈', '🥉'];
+      const rows = table.map((r, i) => `
+        <div class="trn-mini-row ${i === 0 ? 'trn-mini-row-top' : ''}">
+          <span class="trn-mini-pos">${medals[i] || String(i + 1)}</span>
+          ${_badgeImg(r.slug, 'trn-mini-badge')}
+          <span class="trn-mini-team">${_esc(_tLabel(r))}</span>
+          <span class="trn-mini-pts">${r.pts} pts</span>
+          <span class="trn-mini-gd trn-mini-gd-full">
+            <span>${r.p ?? 0} PJ</span>
+            <span>${r.w ?? 0}G ${r.d ?? 0}E ${r.l ?? 0}P</span>
+            <span>${r.gf ?? 0}:${r.ga ?? 0}</span>
+          </span>
+        </div>`).join('');
+      el.innerHTML = `<h3 class="trn-section-h">📊 Clasificación</h3>
+        <div class="trn-mini-table">${rows || '<p class="trn-lu-empty">Sin datos</p>'}</div>`;
       return;
     }
     const rounds = d.koRounds || d.rounds || [];
