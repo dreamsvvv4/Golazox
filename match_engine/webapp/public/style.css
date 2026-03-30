@@ -5961,60 +5961,77 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 
 /* ══════════════════════════════════════════════════════════
    DESKTOP LAYOUT  (min-width: 1100px)
-   Two-column tournament dashboard: sticky champion poster
-   left + scrollable tab content right. Also widens all
-   containers on mid/large screens.
+   Champion = full-width horizontal banner.
+   Tabs + content panels span full width below it.
 ══════════════════════════════════════════════════════════ */
 @media (min-width: 1100px) {
 
   /* ── Header stays full-width ── */
   .header-inner  { max-width: 1520px; }
 
-  /* Partido stays focused at 1000px (set on #main-match-wrap above) */
-  /* .main-wrap at 1300px so torneo can use the extra room */
+  /* Partido stays focused */
   #main-match-wrap { max-width: 1000px; }
 
-  /* Tournament gets the full 1300px track */
+  /* Tournament uses the full trn-wrap */
   #main-trn-wrap { max-width: 1300px; padding: 0 1.5rem 4rem; }
 
-  /* Wizard fills ~70% of trn-wrap — prominent but not edge-to-edge */
+  /* Wizard prominent */
   #trn-wizard    { max-width: 920px; }
 
-  /* ── Tournament dashboard: sticky poster left · content right ── */
+  /* ── Dashboard: stacked, full width ── */
   #trn-dashboard:not(.hidden) {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    grid-template-areas:
-      "poster  tabs"
-      "poster  panel";
-    gap: 1.5rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
   }
 
+  /* ── Champion: compact horizontal banner ── */
   .trn-champ-poster {
-    grid-area: poster;
-    position: sticky;
-    top: 10rem;           /* clear sticky header + tab bar */
+    display: grid;
+    /* cols: trophy | badge | info (flex) | buttons */
+    grid-template-columns: 3rem 5rem 1fr auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 1.1rem;
+    row-gap: .05rem;
+    align-items: center;
+    text-align: left;
+    padding: .95rem 1.8rem;
     margin-bottom: 0;
   }
-
-  .trn-dash-tabs-wrap {
-    grid-area: tabs;
+  /* Row 0: eyebrow label spans full width */
+  .trn-champ-eyebrow {
+    grid-area: 1 / 1 / 2 / 5;
+    font-size: .6rem;
+    text-align: left;
+    margin-bottom: .3rem;
+  }
+  /* Left col: trophy emoji, spans info rows */
+  .trn-champ-trophy-big {
+    grid-area: 2 / 1 / 5 / 2;
+    font-size: 2.4rem;
+    margin: 0;
+    text-align: center;
+    align-self: center;
+  }
+  /* Second col: badge, spans info rows */
+  .trn-champ-badge-big {
+    grid-area: 2 / 2 / 5 / 3;
+    width: 64px; height: 64px;
+    margin: 0 auto;
     margin-bottom: 0;
   }
+  /* Info rows */
+  .trn-champ-name   { grid-area: 2 / 3 / 3 / 4; font-size: 1.6rem; margin: 0; }
+  .trn-champ-format { grid-area: 3 / 3 / 4 / 4; margin: 0; }
+  #trn-champ-runnerup { grid-area: 4 / 3 / 5 / 4; margin: 0; }
+  /* Buttons stacked in right column */
+  #trn-share-btn { grid-area: 2 / 4 / 3 / 5; justify-self: end; }
+  #trn-btn-over  { grid-area: 3 / 4 / 5 / 5; justify-self: end; align-self: center; }
 
-  /* All four tab panels share the same grid area;
-     only the active (non-hidden) one is ever displayed.
-     min-width:0 prevents grid item from expanding beyond the 1fr column
-     (default min-width:auto lets content push the column wider, breaking scroll). */
-  .trn-tab-panel  { grid-area: panel; min-width: 0; overflow: hidden; }
-  /* Bracket tab specifically needs horizontal scroll, not overflow:hidden clip */
+  /* ── Tab bar + panels: full width ── */
+  .trn-dash-tabs-wrap { margin-bottom: 0; }
+
+  /* min-width:0 = grid item respects declared width, enables scroll children */
+  .trn-tab-panel  { min-width: 0; overflow: hidden; }
   #trn-tab-bracket { overflow-x: auto; overflow-y: visible; }
-}
-
-/* ── Extra wide: give the poster a bit more room ── */
-@media (min-width: 1400px) {
-  #trn-dashboard:not(.hidden) {
-    grid-template-columns: 380px 1fr;
-  }
 }
