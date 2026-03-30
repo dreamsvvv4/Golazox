@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Raffaele Pissardo", "position": "GK", "rating": 71 },
-        { "name": "Luca Aquino", "position": "GK", "rating": 66 },
-        { "name": "Riccardo Dorval", "position": "CB", "rating": 72 },
-        { "name": "Vito Bellomo", "position": "CB", "rating": 71 },
-        { "name": "Di Cesare", "position": "CB", "rating": 71 },
-        { "name": "Dorval", "position": "RB", "rating": 71 },
-        { "name": "Fabrizio Caligara", "position": "LB", "rating": 70 },
-        { "name": "Nicoli", "position": "DM", "rating": 71 },
-        { "name": "Maita", "position": "CM", "rating": 73 },
-        { "name": "Sibilli", "position": "CM", "rating": 72 },
-        { "name": "Edoardo Lasagna", "position": "ST", "rating": 73 },
-        { "name": "Folorunsho", "position": "AM", "rating": 74 },
-        { "name": "Cheddira", "position": "ST", "rating": 74 },
-        { "name": "Mirco Antenucci", "position": "ST", "rating": 72 },
-        { "name": "D'Errico", "position": "LW", "rating": 71 },
-        { "name": "Ricci", "position": "RW", "rating": 70 },
-        { "name": "Pucino", "position": "RB", "rating": 71 },
-        { "name": "Viviani", "position": "DM", "rating": 72 },
-        { "name": "Matino", "position": "CB", "rating": 70 },
-        { "name": "Morachioli", "position": "LW", "rating": 69 },
-        { "name": "Aramu", "position": "AM", "rating": 70 }
+        {
+          "name": "Raffaele Pissardo",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Luca Aquino",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Riccardo Dorval",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Vito Bellomo",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Di Cesare",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Dorval",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Fabrizio Caligara",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Nicoli",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Maita",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sibilli",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Edoardo Lasagna",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Folorunsho",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Cheddira",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Mirco Antenucci",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "D'Errico",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Ricci",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Pucino",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Viviani",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Matino",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Morachioli",
+          "position": "LW",
+          "rating": 69
+        },
+        {
+          "name": "Aramu",
+          "position": "AM",
+          "rating": 70
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +122,6 @@
   },
   "id": 1208,
   "name": "SSC Bari",
-  "badgeLocalPath": "/img/badges/bari.png"
+  "badgeLocalPath": "/img/badges/bari.png",
+  "group": "🇮🇹 Serie B"
 }

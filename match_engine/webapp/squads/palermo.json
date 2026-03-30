@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Desplanches", "position": "GK", "rating": 72 },
-        { "name": "Audero", "position": "GK", "rating": 71 },
-        { "name": "Nedelcearu", "position": "CB", "rating": 73 },
-        { "name": "Ceccaroni", "position": "CB", "rating": 72 },
-        { "name": "Lucioni", "position": "CB", "rating": 73 },
-        { "name": "Aurelio", "position": "LB", "rating": 72 },
-        { "name": "Buttaro", "position": "RB", "rating": 70 },
-        { "name": "Segre", "position": "DM", "rating": 73 },
-        { "name": "Gomes", "position": "CM", "rating": 73 },
-        { "name": "De Luca", "position": "CM", "rating": 72 },
-        { "name": "Insigne", "position": "LW", "rating": 71 },
-        { "name": "Brunori", "position": "ST", "rating": 76 },
-        { "name": "Ranocchia", "position": "AM", "rating": 73 },
-        { "name": "Mancuso", "position": "ST", "rating": 72 },
-        { "name": "Raimondo", "position": "LW", "rating": 72 },
-        { "name": "Saric", "position": "RW", "rating": 73 },
-        { "name": "Graves", "position": "CB", "rating": 70 },
-        { "name": "Vasic", "position": "CM", "rating": 70 },
-        { "name": "Soleri", "position": "ST", "rating": 71 },
-        { "name": "Corona", "position": "RW", "rating": 70 },
-        { "name": "Lund", "position": "LB", "rating": 72 }
+        {
+          "name": "Desplanches",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Audero",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Nedelcearu",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ceccaroni",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lucioni",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Aurelio",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Buttaro",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Segre",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Gomes",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "De Luca",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Insigne",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Brunori",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ranocchia",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Mancuso",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Raimondo",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Saric",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Graves",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Vasic",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Soleri",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Corona",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Lund",
+          "position": "LB",
+          "rating": 72
+        }
       ],
       "ratings": {
         "attack": 67,
@@ -38,5 +122,6 @@
   },
   "id": 197,
   "name": "Palermo",
-  "badgeLocalPath": "/img/badges/palermo.png"
+  "badgeLocalPath": "/img/badges/palermo.png",
+  "group": "🇮🇹 Serie B"
 }

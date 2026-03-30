@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Kočo Stankov", "position": "GK", "rating": 72 },
-        { "name": "Giovanni Bonfanti", "position": "GK", "rating": 66 },
-        { "name": "Ricardo Mangas", "position": "CB", "rating": 73 },
-        { "name": "Caio Secco", "position": "CB", "rating": 72 },
-        { "name": "Henrique Araújo", "position": "CB", "rating": 71 },
-        { "name": "Fabio Espinho", "position": "LB", "rating": 73 },
-        { "name": "Nuno Moreira", "position": "RB", "rating": 72 },
-        { "name": "Godfried Frempong", "position": "DM", "rating": 72 },
-        { "name": "Léo Bolgado", "position": "CM", "rating": 73 },
-        { "name": "Lucas Silva", "position": "CM", "rating": 72 },
-        { "name": "Zach Musah", "position": "AM", "rating": 72 },
-        { "name": "Paná", "position": "RW", "rating": 73 },
-        { "name": "Joel Tagueu", "position": "LW", "rating": 73 },
-        { "name": "El Yamiq", "position": "ST", "rating": 73 },
-        { "name": "Miguel Rodrigues", "position": "RW", "rating": 71 },
-        { "name": "Sandro Cruz", "position": "LW", "rating": 71 },
-        { "name": "Vasco Fernandes", "position": "LB", "rating": 70 },
-        { "name": "Nilton Varela", "position": "CM", "rating": 70 },
-        { "name": "Kenji Gorré", "position": "AM", "rating": 71 },
-        { "name": "Dário Essugo", "position": "DM", "rating": 73 },
-        { "name": "Romari", "position": "ST", "rating": 71 }
+        {
+          "name": "Kočo Stankov",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Giovanni Bonfanti",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Ricardo Mangas",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Caio Secco",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Henrique Araújo",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Fabio Espinho",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Nuno Moreira",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Godfried Frempong",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Léo Bolgado",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Lucas Silva",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Zach Musah",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Paná",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Joel Tagueu",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "El Yamiq",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Miguel Rodrigues",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Sandro Cruz",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Vasco Fernandes",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Nilton Varela",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Kenji Gorré",
+          "position": "AM",
+          "rating": 71
+        },
+        {
+          "name": "Dário Essugo",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Romari",
+          "position": "ST",
+          "rating": 71
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +122,6 @@
   },
   "id": 14553,
   "name": "Casa Pia AC",
-  "badgeLocalPath": "/img/badges/casa-pia.png"
+  "badgeLocalPath": "/img/badges/casa-pia.png",
+  "group": "🇵🇹 Liga Portugal"
 }

@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Arthur Desmas", "position": "GK", "rating": 75 },
-        { "name": "Guillaume Lebeau", "position": "GK", "rating": 67 },
-        { "name": "Emmanuel Léa Siliki", "position": "CB", "rating": 74 },
-        { "name": "Arouna Sangaré", "position": "CB", "rating": 73 },
-        { "name": "Daler Kuzyaev", "position": "CB", "rating": 72 },
-        { "name": "Yannick Gomis", "position": "LB", "rating": 73 },
-        { "name": "Léon Dicko", "position": "RB", "rating": 72 },
-        { "name": "Loic Nego", "position": "RB", "rating": 72 },
-        { "name": "Pape Gueye", "position": "DM", "rating": 76 },
-        { "name": "Joris Chotard", "position": "CM", "rating": 74 },
-        { "name": "Nabil Alioui", "position": "LW", "rating": 73 },
-        { "name": "Doudou Fofana", "position": "CM", "rating": 73 },
-        { "name": "Yassine Jebbour", "position": "LW", "rating": 73 },
-        { "name": "Ibrahima Guirassy", "position": "RW", "rating": 72 },
-        { "name": "Casimir Ninga", "position": "ST", "rating": 72 },
-        { "name": "Josué Casimir", "position": "ST", "rating": 73 },
-        { "name": "Lenny Nangis", "position": "LW", "rating": 72 },
-        { "name": "Amani", "position": "AM", "rating": 71 },
-        { "name": "Yero Yero", "position": "CB", "rating": 71 },
-        { "name": "Ambata", "position": "RB", "rating": 70 },
-        { "name": "Hassane Camara", "position": "LB", "rating": 73 }
+        {
+          "name": "Arthur Desmas",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Guillaume Lebeau",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Emmanuel Léa Siliki",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Arouna Sangaré",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Daler Kuzyaev",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yannick Gomis",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Léon Dicko",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Loic Nego",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Pape Gueye",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Joris Chotard",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nabil Alioui",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Doudou Fofana",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Yassine Jebbour",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Ibrahima Guirassy",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Casimir Ninga",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Josué Casimir",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Lenny Nangis",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Amani",
+          "position": "AM",
+          "rating": 71
+        },
+        {
+          "name": "Yero Yero",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Ambata",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Hassane Camara",
+          "position": "LB",
+          "rating": 73
+        }
       ],
       "ratings": {
         "attack": 66,
@@ -38,5 +122,6 @@
   },
   "id": 1174,
   "name": "Le Havre",
-  "badgeLocalPath": "/img/badges/le-havre.png"
+  "badgeLocalPath": "/img/badges/le-havre.png",
+  "group": "🇫🇷 Ligue 1"
 }

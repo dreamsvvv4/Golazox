@@ -4,27 +4,90 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Kike Royo", "position": "GK" },
-        { "name": "Carlos Martínez", "position": "RB" },
-        { "name": "Sergio Asenjo", "position": "CB" },
-        { "name": "Iñaki Bea", "position": "CB" },
-        { "name": "David Cordero", "position": "LB" },
-        { "name": "Íñigo Vicente", "position": "CM" },
-        { "name": "Ander Herrera", "position": "CM" },
-        { "name": "Kike García", "position": "CM" },
-        { "name": "Saúl García", "position": "RW" },
-        { "name": "Álvaro Rey", "position": "ST" },
-        { "name": "Ekaitz Jiménez", "position": "LW" },
-        { "name": "Joaquín Ardaiz", "position": "GK" },
-        { "name": "Diego Torres", "position": "RB" },
-        { "name": "Joseba Zaldua", "position": "CB" },
-        { "name": "Pablo Rodríguez", "position": "LB" },
-        { "name": "Pedro Dueñas", "position": "CM" },
-        { "name": "Sergio Ruiz", "position": "CM" },
-        { "name": "Jordi Escobar", "position": "RW" },
-        { "name": "Pablo Larrea", "position": "ST" },
-        { "name": "García Trujillo", "position": "LW" },
-        { "name": "Unai Elgezabal", "position": "CB" }
+        {
+          "name": "Kike Royo",
+          "position": "GK"
+        },
+        {
+          "name": "Carlos Martínez",
+          "position": "RB"
+        },
+        {
+          "name": "Sergio Asenjo",
+          "position": "CB"
+        },
+        {
+          "name": "Iñaki Bea",
+          "position": "CB"
+        },
+        {
+          "name": "David Cordero",
+          "position": "LB"
+        },
+        {
+          "name": "Íñigo Vicente",
+          "position": "CM"
+        },
+        {
+          "name": "Ander Herrera",
+          "position": "CM"
+        },
+        {
+          "name": "Kike García",
+          "position": "CM"
+        },
+        {
+          "name": "Saúl García",
+          "position": "RW"
+        },
+        {
+          "name": "Álvaro Rey",
+          "position": "ST"
+        },
+        {
+          "name": "Ekaitz Jiménez",
+          "position": "LW"
+        },
+        {
+          "name": "Joaquín Ardaiz",
+          "position": "GK"
+        },
+        {
+          "name": "Diego Torres",
+          "position": "RB"
+        },
+        {
+          "name": "Joseba Zaldua",
+          "position": "CB"
+        },
+        {
+          "name": "Pablo Rodríguez",
+          "position": "LB"
+        },
+        {
+          "name": "Pedro Dueñas",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio Ruiz",
+          "position": "CM"
+        },
+        {
+          "name": "Jordi Escobar",
+          "position": "RW"
+        },
+        {
+          "name": "Pablo Larrea",
+          "position": "ST"
+        },
+        {
+          "name": "García Trujillo",
+          "position": "LW"
+        },
+        {
+          "name": "Unai Elgezabal",
+          "position": "CB"
+        }
       ],
       "ratings": {
         "attack": 66,
@@ -38,5 +101,6 @@
   },
   "id": 134698,
   "name": "CD Mirandés",
-  "badgeLocalPath": "/img/badges/cd-mirandes.png"
+  "badgeLocalPath": "/img/badges/cd-mirandes.png",
+  "group": "🇪🇸 La Liga 2"
 }

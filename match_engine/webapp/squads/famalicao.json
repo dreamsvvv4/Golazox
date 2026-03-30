@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Rafael Defendi", "position": "GK", "rating": 72 },
-        { "name": "Elisson", "position": "GK", "rating": 67 },
-        { "name": "Iván González", "position": "CB", "rating": 72 },
-        { "name": "Pedro Tiba", "position": "CB", "rating": 71 },
-        { "name": "Camaro", "position": "CB", "rating": 71 },
-        { "name": "Anderson Luis", "position": "LB", "rating": 72 },
-        { "name": "Diogo Figueiras", "position": "RB", "rating": 71 },
-        { "name": "Cádiz", "position": "DM", "rating": 72 },
-        { "name": "Fábio Martins", "position": "RM", "rating": 73 },
-        { "name": "Schettine", "position": "LM", "rating": 72 },
-        { "name": "Marco Marafona", "position": "CM", "rating": 71 },
-        { "name": "Gustavo Assunção", "position": "DM", "rating": 73 },
-        { "name": "Bruno Costa", "position": "RW", "rating": 73 },
-        { "name": "Seferovic", "position": "ST", "rating": 73 },
-        { "name": "Willyan Rocha", "position": "CB", "rating": 70 },
-        { "name": "João Pedro Sousa", "position": "LM", "rating": 71 },
-        { "name": "Fali Candé", "position": "LW", "rating": 72 },
-        { "name": "Ivo Pinto", "position": "RB", "rating": 70 },
-        { "name": "Léo Artur", "position": "ST", "rating": 70 },
-        { "name": "Toni Martinez", "position": "ST", "rating": 72 },
-        { "name": "Helibelton Palacios", "position": "RB", "rating": 71 }
+        {
+          "name": "Rafael Defendi",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Elisson",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Iván González",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Pedro Tiba",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Camaro",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Anderson Luis",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Diogo Figueiras",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Cádiz",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Fábio Martins",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Schettine",
+          "position": "LM",
+          "rating": 72
+        },
+        {
+          "name": "Marco Marafona",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Gustavo Assunção",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Bruno Costa",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Seferovic",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Willyan Rocha",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "João Pedro Sousa",
+          "position": "LM",
+          "rating": 71
+        },
+        {
+          "name": "Fali Candé",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Ivo Pinto",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Léo Artur",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Toni Martinez",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Helibelton Palacios",
+          "position": "RB",
+          "rating": 71
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +122,6 @@
   },
   "id": 8986,
   "name": "FC Famalicão",
-  "badgeLocalPath": "/img/badges/famalicao.png"
+  "badgeLocalPath": "/img/badges/famalicao.png",
+  "group": "🇵🇹 Liga Portugal"
 }

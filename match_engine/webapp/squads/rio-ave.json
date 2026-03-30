@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Cláudio Ramos", "position": "GK", "rating": 73 },
-        { "name": "Jhonatan", "position": "GK", "rating": 68 },
-        { "name": "Aderllan Santos", "position": "CB", "rating": 73 },
-        { "name": "Nico Diguiny", "position": "CB", "rating": 72 },
-        { "name": "Jambor", "position": "CB", "rating": 71 },
-        { "name": "Marcelo", "position": "LB", "rating": 72 },
-        { "name": "Costinha", "position": "RB", "rating": 72 },
-        { "name": "Fábio Pacheco", "position": "DM", "rating": 73 },
-        { "name": "Tarantini", "position": "CM", "rating": 73 },
-        { "name": "Hélder Ferreira", "position": "CM", "rating": 72 },
-        { "name": "Joca", "position": "AM", "rating": 72 },
-        { "name": "Ronan", "position": "RW", "rating": 72 },
-        { "name": "Ivo Rodrigues", "position": "LW", "rating": 72 },
-        { "name": "Aziz", "position": "RW", "rating": 71 },
-        { "name": "Mohamed El Ouriachi", "position": "LW", "rating": 72 },
-        { "name": "Ukra", "position": "ST", "rating": 72 },
-        { "name": "Bruno Moreira", "position": "ST", "rating": 71 },
-        { "name": "Guga", "position": "RB", "rating": 71 },
-        { "name": "Kamal Gomes", "position": "CM", "rating": 71 },
-        { "name": "Mazinho", "position": "LB", "rating": 70 },
-        { "name": "Pipinha", "position": "AM", "rating": 70 }
+        {
+          "name": "Cláudio Ramos",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Jhonatan",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Aderllan Santos",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Nico Diguiny",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jambor",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Marcelo",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Costinha",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Fábio Pacheco",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Tarantini",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Hélder Ferreira",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Joca",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Ronan",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Ivo Rodrigues",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Aziz",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Mohamed El Ouriachi",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Ukra",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Bruno Moreira",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Guga",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Kamal Gomes",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Mazinho",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Pipinha",
+          "position": "AM",
+          "rating": 70
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +122,6 @@
   },
   "id": 2121,
   "name": "Rio Ave FC",
-  "badgeLocalPath": "/img/badges/rio-ave.png"
+  "badgeLocalPath": "/img/badges/rio-ave.png",
+  "group": "🇵🇹 Liga Portugal"
 }

@@ -4,34 +4,124 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Marcin Bulka", "position": "GK", "rating": 76 },
-        { "name": "Dominique Siébàtcheu", "position": "GK", "rating": 68 },
-        { "name": "Dante", "position": "CB", "rating": 75 },
-        { "name": "Jean-Clair Todibo", "position": "CB", "rating": 78 },
-        { "name": "Joe Bryan", "position": "LB", "rating": 74 },
-        { "name": "Jonathan Clauss", "position": "RB", "rating": 76 },
-        { "name": "Khephren Thuram", "position": "CM", "rating": 78 },
-        { "name": "Sofiane Diop", "position": "LW", "rating": 76 },
-        { "name": "Ross Barkley", "position": "CM", "rating": 74 },
-        { "name": "Pablo Rosario", "position": "DM", "rating": 74 },
-        { "name": "Nicolas Pepe", "position": "RW", "rating": 75 },
-        { "name": "Morgan", "position": "CB", "rating": 74 },
-        { "name": "Gauthier Lloris", "position": "RB", "rating": 73 },
-        { "name": "Hicham Boudaoui", "position": "CM", "rating": 74 },
-        { "name": "Terem Moffi", "position": "ST", "rating": 76 },
-        { "name": "Jeppe Strandballe", "position": "LW", "rating": 73 },
-        { "name": "Alexis Beka Beka", "position": "DM", "rating": 73 },
-        { "name": "Evann Guessand", "position": "ST", "rating": 74 },
-        { "name": "Loucas De La Torre", "position": "CM", "rating": 73 },
-        { "name": "Youcef Atal", "position": "RB", "rating": 73 },
-        { "name": "Mohamed-Ali Cho", "position": "RW", "rating": 74 }
+        {
+          "name": "Marcin Bulka",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Dominique Siébàtcheu",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Dante",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jean-Clair Todibo",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Joe Bryan",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Jonathan Clauss",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Khephren Thuram",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Sofiane Diop",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Ross Barkley",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pablo Rosario",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Nicolas Pepe",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Morgan",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Gauthier Lloris",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Hicham Boudaoui",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Terem Moffi",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jeppe Strandballe",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Alexis Beka Beka",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Evann Guessand",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Loucas De La Torre",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Youcef Atal",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Mohamed-Ali Cho",
+          "position": "RW",
+          "rating": 74
+        }
       ],
-      "ratings": { "attack": 74, "midfield": 74, "defense": 73, "goalkeeping": 73 },
+      "ratings": {
+        "attack": 74,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
       "source": "Transfermarkt — OGC Nice (2025/2026)",
       "teamLabel": "OGC Nice (2025-26)"
     }
   },
   "id": 417,
   "name": "OGC Nice",
-  "badgeLocalPath": "/img/badges/nice.png"
+  "badgeLocalPath": "/img/badges/nice.png",
+  "group": "🇫🇷 Ligue 1"
 }

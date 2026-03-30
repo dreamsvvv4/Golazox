@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Michael Cooper", "position": "GK", "rating": 72 },
-        { "name": "Callum Burton", "position": "GK", "rating": 66 },
-        { "name": "Dan Scarr", "position": "CB", "rating": 71 },
-        { "name": "Macaulay Gillesphey", "position": "CB", "rating": 71 },
-        { "name": "Nigel Lonwijk", "position": "CB", "rating": 70 },
-        { "name": "Bali Mumba", "position": "RB", "rating": 72 },
-        { "name": "Mickel Miller", "position": "LB", "rating": 70 },
-        { "name": "Jordan Houghton", "position": "DM", "rating": 72 },
-        { "name": "Adam Randell", "position": "CM", "rating": 71 },
-        { "name": "Finn Azaz", "position": "AM", "rating": 73 },
-        { "name": "Ryan Hardie", "position": "ST", "rating": 73 },
-        { "name": "Niall Ennis", "position": "ST", "rating": 71 },
-        { "name": "Morgan Whittaker", "position": "RW", "rating": 73 },
-        { "name": "Mustapha Bundu", "position": "LW", "rating": 71 },
-        { "name": "Brendan Galloway", "position": "LB", "rating": 70 },
-        { "name": "Callum Wright", "position": "CM", "rating": 70 },
-        { "name": "Danny Mayor", "position": "AM", "rating": 70 },
-        { "name": "Lewis Warrington", "position": "CM", "rating": 70 },
-        { "name": "Freddie Issaka", "position": "RB", "rating": 68 },
-        { "name": "Darko Gyabi", "position": "CM", "rating": 72 },
-        { "name": "Ben Waine", "position": "ST", "rating": 70 }
+        {
+          "name": "Michael Cooper",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Callum Burton",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Dan Scarr",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Macaulay Gillesphey",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Nigel Lonwijk",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Bali Mumba",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Mickel Miller",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Jordan Houghton",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Adam Randell",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Finn Azaz",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Ryan Hardie",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Niall Ennis",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Morgan Whittaker",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Mustapha Bundu",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Brendan Galloway",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Callum Wright",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Danny Mayor",
+          "position": "AM",
+          "rating": 70
+        },
+        {
+          "name": "Lewis Warrington",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Freddie Issaka",
+          "position": "RB",
+          "rating": 68
+        },
+        {
+          "name": "Darko Gyabi",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Ben Waine",
+          "position": "ST",
+          "rating": 70
+        }
       ],
       "ratings": {
         "attack": 63,
@@ -38,5 +122,6 @@
   },
   "id": 1199,
   "name": "Plymouth Argyle",
-  "badgeLocalPath": "/img/badges/plymouth-argyle.png"
+  "badgeLocalPath": "/img/badges/plymouth-argyle.png",
+  "group": "🌍 Otros"
 }

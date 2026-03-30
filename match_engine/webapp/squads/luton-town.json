@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Thomas Kaminski", "position": "GK", "rating": 73 },
-        { "name": "James Shea", "position": "GK", "rating": 67 },
-        { "name": "Tom Lockyer", "position": "CB", "rating": 74 },
-        { "name": "Kal Naismith", "position": "CB", "rating": 73 },
-        { "name": "Reece Burke", "position": "CB", "rating": 72 },
-        { "name": "Amari'i Bell", "position": "LB", "rating": 72 },
-        { "name": "Pelly Ruddock Mpanzu", "position": "DM", "rating": 73 },
-        { "name": "Jordan Clark", "position": "RM", "rating": 72 },
-        { "name": "Luke Berry", "position": "CM", "rating": 72 },
-        { "name": "Glen Rea", "position": "DM", "rating": 70 },
-        { "name": "Harry Cornick", "position": "LW", "rating": 72 },
-        { "name": "Sonny Bradley", "position": "CB", "rating": 71 },
-        { "name": "Danny Hylton", "position": "ST", "rating": 70 },
-        { "name": "James Collins", "position": "ST", "rating": 72 },
-        { "name": "Elijah Adebayo", "position": "ST", "rating": 73 },
-        { "name": "Carlton Morris", "position": "ST", "rating": 74 },
-        { "name": "Cauley Woodrow", "position": "ST", "rating": 72 },
-        { "name": "Ryan Giles", "position": "LB", "rating": 72 },
-        { "name": "Jacob Brown", "position": "RW", "rating": 71 },
-        { "name": "Fred Onyedinma", "position": "RW", "rating": 71 },
-        { "name": "Chiedozie Ogbene", "position": "RW", "rating": 73 }
+        {
+          "name": "Thomas Kaminski",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "James Shea",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Tom Lockyer",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Kal Naismith",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Reece Burke",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Amari'i Bell",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Pelly Ruddock Mpanzu",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Jordan Clark",
+          "position": "RM",
+          "rating": 72
+        },
+        {
+          "name": "Luke Berry",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Glen Rea",
+          "position": "DM",
+          "rating": 70
+        },
+        {
+          "name": "Harry Cornick",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Sonny Bradley",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Danny Hylton",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "James Collins",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Elijah Adebayo",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Carlton Morris",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Cauley Woodrow",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Ryan Giles",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Jacob Brown",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Fred Onyedinma",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Chiedozie Ogbene",
+          "position": "RW",
+          "rating": 73
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +122,6 @@
   },
   "id": 1179,
   "name": "Luton Town",
-  "badgeLocalPath": "/img/badges/luton-town.png"
+  "badgeLocalPath": "/img/badges/luton-town.png",
+  "group": "🌍 Otros"
 }

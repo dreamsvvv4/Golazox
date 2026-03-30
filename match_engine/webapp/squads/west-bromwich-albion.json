@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Alex Palmer", "position": "GK", "rating": 74 },
-        { "name": "Josh Griffiths", "position": "GK", "rating": 66 },
-        { "name": "Dara O'Shea", "position": "CB", "rating": 75 },
-        { "name": "Kyle Bartley", "position": "CB", "rating": 73 },
-        { "name": "Cedric Kipre", "position": "CB", "rating": 72 },
-        { "name": "Conor Townsend", "position": "LB", "rating": 73 },
-        { "name": "Darnell Furlong", "position": "RB", "rating": 73 },
-        { "name": "Jake Livermore", "position": "DM", "rating": 72 },
-        { "name": "Okay Yokuslu", "position": "DM", "rating": 73 },
-        { "name": "Tom Rogic", "position": "CM", "rating": 72 },
-        { "name": "Alex Mowatt", "position": "CM", "rating": 72 },
-        { "name": "Grady Diangana", "position": "LW", "rating": 74 },
-        { "name": "Karlan Grant", "position": "RW", "rating": 73 },
-        { "name": "Jed Wallace", "position": "RW", "rating": 74 },
-        { "name": "Daryl Dike", "position": "ST", "rating": 72 },
-        { "name": "Brandon Thomas-Asante", "position": "ST", "rating": 73 },
-        { "name": "John Swift", "position": "AM", "rating": 74 },
-        { "name": "Callum Robinson", "position": "LW", "rating": 72 },
-        { "name": "Matt Clarke", "position": "CB", "rating": 71 },
-        { "name": "Adam Reach", "position": "CM", "rating": 71 },
-        { "name": "Jayson Molumby", "position": "CM", "rating": 72 }
+        {
+          "name": "Alex Palmer",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Josh Griffiths",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Dara O'Shea",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Kyle Bartley",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Cedric Kipre",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Conor Townsend",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Darnell Furlong",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Jake Livermore",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Okay Yokuslu",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Tom Rogic",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Alex Mowatt",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Grady Diangana",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Karlan Grant",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Jed Wallace",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Daryl Dike",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Brandon Thomas-Asante",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "John Swift",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Callum Robinson",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Matt Clarke",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Adam Reach",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Jayson Molumby",
+          "position": "CM",
+          "rating": 72
+        }
       ],
       "ratings": {
         "attack": 67,
@@ -38,5 +122,6 @@
   },
   "id": 984,
   "name": "West Brom",
-  "badgeLocalPath": "/img/badges/west-bromwich-albion.png"
+  "badgeLocalPath": "/img/badges/west-bromwich-albion.png",
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship"
 }

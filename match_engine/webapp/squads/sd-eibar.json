@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-2-3-1",
       "players": [
-        { "name": "Asier Riesgo", "position": "GK", "rating": 72 },
-        { "name": "Yoel Domínguez", "position": "GK", "rating": 66 },
-        { "name": "Quique González", "position": "CB", "rating": 72 },
-        { "name": "Arbilla", "position": "CB", "rating": 70 },
-        { "name": "Esteban Burgos", "position": "CB", "rating": 69 },
-        { "name": "Muguruza", "position": "CB", "rating": 68 },
-        { "name": "Coronado", "position": "RB", "rating": 70 },
-        { "name": "Jon Cuesta", "position": "LB", "rating": 70 },
-        { "name": "Imanol Sariegi", "position": "DM", "rating": 72 },
-        { "name": "Marc Cucurella", "position": "DM", "rating": 71 },
-        { "name": "Diédhiou", "position": "CM", "rating": 70 },
-        { "name": "Corpas", "position": "AM", "rating": 72 },
-        { "name": "Stoichkov", "position": "RW", "rating": 72 },
-        { "name": "Sergio Álvarez", "position": "LW", "rating": 70 },
-        { "name": "Kike García", "position": "ST", "rating": 75 },
-        { "name": "Fidel", "position": "ST", "rating": 71 },
-        { "name": "Orellana", "position": "AM", "rating": 71 },
-        { "name": "Pereira", "position": "CM", "rating": 68 },
-        { "name": "Miguel Rubio", "position": "CB", "rating": 68 },
-        { "name": "Edu Expósito", "position": "CM", "rating": 71 },
-        { "name": "Blanco Leschuk", "position": "ST", "rating": 70 }
+        {
+          "name": "Asier Riesgo",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Yoel Domínguez",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Quique González",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Arbilla",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Esteban Burgos",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Muguruza",
+          "position": "CB",
+          "rating": 68
+        },
+        {
+          "name": "Coronado",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Jon Cuesta",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Imanol Sariegi",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Marc Cucurella",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Diédhiou",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Corpas",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Stoichkov",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Sergio Álvarez",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Kike García",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Fidel",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Orellana",
+          "position": "AM",
+          "rating": 71
+        },
+        {
+          "name": "Pereira",
+          "position": "CM",
+          "rating": 68
+        },
+        {
+          "name": "Miguel Rubio",
+          "position": "CB",
+          "rating": 68
+        },
+        {
+          "name": "Edu Expósito",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Blanco Leschuk",
+          "position": "ST",
+          "rating": 70
+        }
       ],
       "ratings": {
         "attack": 62,
@@ -38,5 +122,6 @@
   },
   "id": 1537,
   "name": "SD Éibar",
-  "badgeLocalPath": "/img/badges/sd-eibar.png"
+  "badgeLocalPath": "/img/badges/sd-eibar.png",
+  "group": "🇪🇸 La Liga 2"
 }

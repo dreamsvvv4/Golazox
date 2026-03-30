@@ -4,27 +4,90 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "David Gil", "position": "GK" },
-        { "name": "Álvaro Garrido", "position": "RB" },
-        { "name": "José León", "position": "CB" },
-        { "name": "Samu García", "position": "CB" },
-        { "name": "Borja Granero", "position": "LB" },
-        { "name": "Dani Romera", "position": "CM" },
-        { "name": "Juanra", "position": "CM" },
-        { "name": "Adri Hernández", "position": "CM" },
-        { "name": "Alberto Quiles", "position": "CM" },
-        { "name": "Caye Quintana", "position": "ST" },
-        { "name": "Marco Sangalli", "position": "ST" },
-        { "name": "Aarón Felipe", "position": "GK" },
-        { "name": "Carlos García", "position": "RB" },
-        { "name": "David Segura", "position": "CB" },
-        { "name": "Nacho Miramón", "position": "LB" },
-        { "name": "Joselu García", "position": "CM" },
-        { "name": "Víctor Meseguer", "position": "CM" },
-        { "name": "Alberto Mesa", "position": "RW" },
-        { "name": "Javi Forján", "position": "ST" },
-        { "name": "Víctor Díaz", "position": "LW" },
-        { "name": "Curro Sánchez", "position": "CB" }
+        {
+          "name": "David Gil",
+          "position": "GK"
+        },
+        {
+          "name": "Álvaro Garrido",
+          "position": "RB"
+        },
+        {
+          "name": "José León",
+          "position": "CB"
+        },
+        {
+          "name": "Samu García",
+          "position": "CB"
+        },
+        {
+          "name": "Borja Granero",
+          "position": "LB"
+        },
+        {
+          "name": "Dani Romera",
+          "position": "CM"
+        },
+        {
+          "name": "Juanra",
+          "position": "CM"
+        },
+        {
+          "name": "Adri Hernández",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Quiles",
+          "position": "CM"
+        },
+        {
+          "name": "Caye Quintana",
+          "position": "ST"
+        },
+        {
+          "name": "Marco Sangalli",
+          "position": "ST"
+        },
+        {
+          "name": "Aarón Felipe",
+          "position": "GK"
+        },
+        {
+          "name": "Carlos García",
+          "position": "RB"
+        },
+        {
+          "name": "David Segura",
+          "position": "CB"
+        },
+        {
+          "name": "Nacho Miramón",
+          "position": "LB"
+        },
+        {
+          "name": "Joselu García",
+          "position": "CM"
+        },
+        {
+          "name": "Víctor Meseguer",
+          "position": "CM"
+        },
+        {
+          "name": "Alberto Mesa",
+          "position": "RW"
+        },
+        {
+          "name": "Javi Forján",
+          "position": "ST"
+        },
+        {
+          "name": "Víctor Díaz",
+          "position": "LW"
+        },
+        {
+          "name": "Curro Sánchez",
+          "position": "CB"
+        }
       ],
       "ratings": {
         "attack": 62,
@@ -38,5 +101,6 @@
   },
   "id": 14143,
   "name": "AD Ceuta",
-  "badgeLocalPath": "/img/badges/ceuta.png"
+  "badgeLocalPath": "/img/badges/ceuta.png",
+  "group": "🇪🇸 La Liga 2"
 }

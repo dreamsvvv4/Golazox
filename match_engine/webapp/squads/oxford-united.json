@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Simon Eastwood", "position": "GK", "rating": 70 },
-        { "name": "Jack Stevens", "position": "GK", "rating": 67 },
-        { "name": "Ciaron Brown", "position": "CB", "rating": 71 },
-        { "name": "Aaron Ramsdale", "position": "CB", "rating": 70 },
-        { "name": "Elliott Moore", "position": "CB", "rating": 70 },
-        { "name": "Sam Long", "position": "RB", "rating": 70 },
-        { "name": "Josh Murphy", "position": "LM", "rating": 71 },
-        { "name": "Cameron Brannagan", "position": "CM", "rating": 74 },
-        { "name": "Mark Sykes", "position": "RM", "rating": 70 },
-        { "name": "Gatlin O'Donkor", "position": "LB", "rating": 68 },
-        { "name": "Will Goodwin", "position": "CM", "rating": 70 },
-        { "name": "Marcus McGuane", "position": "CM", "rating": 71 },
-        { "name": "Matty Taylor", "position": "ST", "rating": 72 },
-        { "name": "Gavin Whyte", "position": "RW", "rating": 70 },
-        { "name": "Josh Smile", "position": "LW", "rating": 70 },
-        { "name": "Tyler Goodrham", "position": "RW", "rating": 71 },
-        { "name": "Ruben Rodrigues", "position": "AM", "rating": 72 },
-        { "name": "Billy Bodin", "position": "LW", "rating": 70 },
-        { "name": "Ethan Adeyinka", "position": "ST", "rating": 71 },
-        { "name": "Dan Agyei", "position": "ST", "rating": 70 },
-        { "name": "Idris El Mizouni", "position": "DM", "rating": 71 }
+        {
+          "name": "Simon Eastwood",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Jack Stevens",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Ciaron Brown",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Aaron Ramsdale",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Elliott Moore",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Sam Long",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Josh Murphy",
+          "position": "LM",
+          "rating": 71
+        },
+        {
+          "name": "Cameron Brannagan",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mark Sykes",
+          "position": "RM",
+          "rating": 70
+        },
+        {
+          "name": "Gatlin O'Donkor",
+          "position": "LB",
+          "rating": 68
+        },
+        {
+          "name": "Will Goodwin",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Marcus McGuane",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Matty Taylor",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Gavin Whyte",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Josh Smile",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Tyler Goodrham",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Ruben Rodrigues",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Billy Bodin",
+          "position": "LW",
+          "rating": 70
+        },
+        {
+          "name": "Ethan Adeyinka",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Dan Agyei",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Idris El Mizouni",
+          "position": "DM",
+          "rating": 71
+        }
       ],
       "ratings": {
         "attack": 62,
@@ -38,5 +122,6 @@
   },
   "id": 1091,
   "name": "Oxford United",
-  "badgeLocalPath": "/img/badges/oxford-united.png"
+  "badgeLocalPath": "/img/badges/oxford-united.png",
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship"
 }

@@ -4,34 +4,124 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Marcel Schuhen", "position": "GK", "rating": 73 },
-        { "name": "Florian Stritzel", "position": "GK", "rating": 68 },
-        { "name": "Clemens Riedel", "position": "CB", "rating": 72 },
-        { "name": "Patric Pfeiffer", "position": "CB", "rating": 73 },
-        { "name": "Anton Stach", "position": "CM", "rating": 74 },
-        { "name": "Fabian Nürnberger", "position": "DM", "rating": 72 },
-        { "name": "Mathias Honsak", "position": "RW", "rating": 73 },
-        { "name": "Philipp Tietz", "position": "ST", "rating": 73 },
-        { "name": "Braydon Manu", "position": "LW", "rating": 73 },
-        { "name": "Klaus Gjasula", "position": "DM", "rating": 73 },
-        { "name": "Aleksandar Vukotic", "position": "CB", "rating": 72 },
-        { "name": "Christoph Zimmermann", "position": "CB", "rating": 72 },
-        { "name": "Tobias Kempe", "position": "CM", "rating": 72 },
-        { "name": "Isac Lidberg", "position": "ST", "rating": 73 },
-        { "name": "Luca Pfeiffer", "position": "ST", "rating": 72 },
-        { "name": "Marvin Mehlem", "position": "LW", "rating": 72 },
-        { "name": "Jannik Müller", "position": "LB", "rating": 72 },
-        { "name": "Aaron Seydel", "position": "ST", "rating": 71 },
-        { "name": "Emir Karic", "position": "RB", "rating": 71 },
-        { "name": "Fabian Holland", "position": "LB", "rating": 71 },
-        { "name": "Mathias Wittek", "position": "LB", "rating": 70 }
+        {
+          "name": "Marcel Schuhen",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Florian Stritzel",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Clemens Riedel",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Patric Pfeiffer",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Anton Stach",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Fabian Nürnberger",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Mathias Honsak",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Philipp Tietz",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Braydon Manu",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Klaus Gjasula",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Aleksandar Vukotic",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Christoph Zimmermann",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Tobias Kempe",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Isac Lidberg",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Luca Pfeiffer",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Marvin Mehlem",
+          "position": "LW",
+          "rating": 72
+        },
+        {
+          "name": "Jannik Müller",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Aaron Seydel",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Emir Karic",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Fabian Holland",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Mathias Wittek",
+          "position": "LB",
+          "rating": 70
+        }
       ],
-      "ratings": { "attack": 67, "midfield": 67, "defense": 67, "goalkeeping": 67 },
+      "ratings": {
+        "attack": 67,
+        "midfield": 67,
+        "defense": 67,
+        "goalkeeping": 67
+      },
       "source": "Transfermarkt — SV Darmstadt 98 (2025/2026)",
       "teamLabel": "SV Darmstadt 98 (2025-26)"
     }
   },
   "id": 5390,
   "name": "SV Darmstadt 98",
-  "badgeLocalPath": "/img/badges/darmstadt.png"
+  "badgeLocalPath": "/img/badges/darmstadt.png",
+  "group": "🇩🇪 2. Bundesliga"
 }

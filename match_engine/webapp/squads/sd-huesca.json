@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Javier Riesgo", "position": "GK", "rating": 74 },
-        { "name": "José García Guerrero", "position": "GK", "rating": 67 },
-        { "name": "Insua", "position": "CB", "rating": 72 },
-        { "name": "Mario González", "position": "CB", "rating": 70 },
-        { "name": "David Ferreiro", "position": "CB", "rating": 69 },
-        { "name": "Blasco", "position": "CB", "rating": 68 },
-        { "name": "Fran Cruz", "position": "RB", "rating": 70 },
-        { "name": "Samu", "position": "LB", "rating": 69 },
-        { "name": "Mosquera", "position": "DM", "rating": 73 },
-        { "name": "Borja García", "position": "CM", "rating": 72 },
-        { "name": "Pablo Espejel", "position": "CM", "rating": 70 },
-        { "name": "Óscar Sielva", "position": "CM", "rating": 69 },
-        { "name": "Gerard Valentín", "position": "RW", "rating": 72 },
-        { "name": "Florent Mollet", "position": "LW", "rating": 71 },
-        { "name": "Álvaro Peña", "position": "AM", "rating": 70 },
-        { "name": "Samu Obeng", "position": "ST", "rating": 73 },
-        { "name": "Juanma", "position": "ST", "rating": 70 },
-        { "name": "Luis López", "position": "ST", "rating": 68 },
-        { "name": "Enzo Lombardo", "position": "LW", "rating": 68 },
-        { "name": "Gato", "position": "RB", "rating": 69 },
-        { "name": "Pulido", "position": "DM", "rating": 69 }
+        {
+          "name": "Javier Riesgo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "José García Guerrero",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Insua",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Mario González",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "David Ferreiro",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Blasco",
+          "position": "CB",
+          "rating": 68
+        },
+        {
+          "name": "Fran Cruz",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Samu",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Mosquera",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Borja García",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Pablo Espejel",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Óscar Sielva",
+          "position": "CM",
+          "rating": 69
+        },
+        {
+          "name": "Gerard Valentín",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Florent Mollet",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Álvaro Peña",
+          "position": "AM",
+          "rating": 70
+        },
+        {
+          "name": "Samu Obeng",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Juanma",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Luis López",
+          "position": "ST",
+          "rating": 68
+        },
+        {
+          "name": "Enzo Lombardo",
+          "position": "LW",
+          "rating": 68
+        },
+        {
+          "name": "Gato",
+          "position": "RB",
+          "rating": 69
+        },
+        {
+          "name": "Pulido",
+          "position": "DM",
+          "rating": 69
+        }
       ],
       "ratings": {
         "attack": 60,
@@ -38,5 +122,6 @@
   },
   "id": 1340,
   "name": "SD Huesca",
-  "badgeLocalPath": "/img/badges/sd-huesca.png"
+  "badgeLocalPath": "/img/badges/sd-huesca.png",
+  "group": "🇪🇸 La Liga 2"
 }

@@ -176,31 +176,95 @@
         "goalkeeping": 66
       },
       "source": "BDFutbol — Leganés 2022-23 Segunda División",
-      "teamLabel": "Leganés 2022-23 Segunda División"    },
+      "teamLabel": "Leganés 2022-23 Segunda División"
+    },
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Cuellar", "position": "GK" },
-        { "name": "Franquesa", "position": "RB" },
-        { "name": "Tarín", "position": "CB" },
-        { "name": "Nastasic", "position": "CB" },
-        { "name": "Javi hernández", "position": "LB" },
-        { "name": "Valentín Vada", "position": "CM" },
-        { "name": "Recio", "position": "CM" },
-        { "name": "Miguel de la Fuente", "position": "CM" },
-        { "name": "Dani Ojeda", "position": "CM" },
-        { "name": "Diego García", "position": "ST" },
-        { "name": "Youssouf", "position": "ST" },
-        { "name": "Pichu Atienza", "position": "GK" },
-        { "name": "Dauda", "position": "CB" },
-        { "name": "Omeruo", "position": "CB" },
-        { "name": "Sergio González", "position": "LB" },
-        { "name": "Arnáiz", "position": "RW" },
-        { "name": "Toni García", "position": "CM" },
-        { "name": "En-Nesyri", "position": "ST" },
-        { "name": "Raba", "position": "CM" },
-        { "name": "Szymanowski", "position": "LW" },
-        { "name": "Palomino", "position": "CB" }
+        {
+          "name": "Cuellar",
+          "position": "GK"
+        },
+        {
+          "name": "Franquesa",
+          "position": "RB"
+        },
+        {
+          "name": "Tarín",
+          "position": "CB"
+        },
+        {
+          "name": "Nastasic",
+          "position": "CB"
+        },
+        {
+          "name": "Javi hernández",
+          "position": "LB"
+        },
+        {
+          "name": "Valentín Vada",
+          "position": "CM"
+        },
+        {
+          "name": "Recio",
+          "position": "CM"
+        },
+        {
+          "name": "Miguel de la Fuente",
+          "position": "CM"
+        },
+        {
+          "name": "Dani Ojeda",
+          "position": "CM"
+        },
+        {
+          "name": "Diego García",
+          "position": "ST"
+        },
+        {
+          "name": "Youssouf",
+          "position": "ST"
+        },
+        {
+          "name": "Pichu Atienza",
+          "position": "GK"
+        },
+        {
+          "name": "Dauda",
+          "position": "CB"
+        },
+        {
+          "name": "Omeruo",
+          "position": "CB"
+        },
+        {
+          "name": "Sergio González",
+          "position": "LB"
+        },
+        {
+          "name": "Arnáiz",
+          "position": "RW"
+        },
+        {
+          "name": "Toni García",
+          "position": "CM"
+        },
+        {
+          "name": "En-Nesyri",
+          "position": "ST"
+        },
+        {
+          "name": "Raba",
+          "position": "CM"
+        },
+        {
+          "name": "Szymanowski",
+          "position": "LW"
+        },
+        {
+          "name": "Palomino",
+          "position": "CB"
+        }
       ],
       "ratings": {
         "attack": 67,
@@ -209,8 +273,10 @@
         "goalkeeping": 66
       },
       "source": "Transfermarkt — Leganés 2024-25 La Liga 2",
-      "teamLabel": "Leganés 2024-25 La Liga 2"    }
+      "teamLabel": "Leganés 2024-25 La Liga 2"
+    }
   },
   "name": "Leganes",
-  "badgeLocalPath": "/img/badges/cd-leganes.png"
+  "badgeLocalPath": "/img/badges/cd-leganes.png",
+  "group": "🇪🇸 La Liga 2"
 }

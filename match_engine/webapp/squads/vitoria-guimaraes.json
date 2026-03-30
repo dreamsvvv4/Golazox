@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Trmal", "position": "GK", "rating": 73 },
-        { "name": "Miguel Santos", "position": "GK", "rating": 67 },
-        { "name": "Luís Semedo", "position": "CB", "rating": 73 },
-        { "name": "Alfa Semedo", "position": "CB", "rating": 73 },
-        { "name": "Estupiñán", "position": "CB", "rating": 72 },
-        { "name": "Florentin Matei", "position": "LB", "rating": 72 },
-        { "name": "Rafael Martins", "position": "RB", "rating": 72 },
-        { "name": "José Aja", "position": "DM", "rating": 73 },
-        { "name": "Edwards", "position": "CM", "rating": 74 },
-        { "name": "Nélson da Luz", "position": "CM", "rating": 72 },
-        { "name": "Neyou", "position": "DM", "rating": 73 },
-        { "name": "Rúben Lameiras", "position": "LW", "rating": 73 },
-        { "name": "André Almeida", "position": "RW", "rating": 73 },
-        { "name": "Jota", "position": "AM", "rating": 73 },
-        { "name": "Kiko", "position": "ST", "rating": 73 },
-        { "name": "Óscar Estupiñán", "position": "ST", "rating": 74 },
-        { "name": "Kaio César", "position": "ST", "rating": 72 },
-        { "name": "Sunzu", "position": "CB", "rating": 71 },
-        { "name": "Janvier", "position": "LB", "rating": 71 },
-        { "name": "Manu Silva", "position": "RW", "rating": 71 },
-        { "name": "Al-Musrati", "position": "DM", "rating": 73 }
+        {
+          "name": "Trmal",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Miguel Santos",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Luís Semedo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Alfa Semedo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Estupiñán",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Florentin Matei",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Rafael Martins",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "José Aja",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Edwards",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nélson da Luz",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Neyou",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Rúben Lameiras",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "André Almeida",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Jota",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Kiko",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Óscar Estupiñán",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Kaio César",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Sunzu",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Janvier",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Manu Silva",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Al-Musrati",
+          "position": "DM",
+          "rating": 73
+        }
       ],
       "ratings": {
         "attack": 68,
@@ -38,5 +122,6 @@
   },
   "id": 2085,
   "name": "Vitória SC",
-  "badgeLocalPath": "/img/badges/vitoria-guimaraes.png"
+  "badgeLocalPath": "/img/badges/vitoria-guimaraes.png",
+  "group": "🇵🇹 Liga Portugal"
 }

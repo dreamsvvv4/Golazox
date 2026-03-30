@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Benoit Costil", "position": "GK", "rating": 74 },
-        { "name": "Matthieu Peyrard", "position": "GK", "rating": 68 },
-        { "name": "Théo Pellenard", "position": "CB", "rating": 73 },
-        { "name": "Jenz", "position": "CB", "rating": 73 },
-        { "name": "Jubal", "position": "LB", "rating": 73 },
-        { "name": "Akueson", "position": "RB", "rating": 72 },
-        { "name": "Sinayoko", "position": "CB", "rating": 71 },
-        { "name": "Niang", "position": "DM", "rating": 73 },
-        { "name": "Bamba", "position": "CM", "rating": 73 },
-        { "name": "Sakhi", "position": "CM", "rating": 72 },
-        { "name": "Traoré", "position": "LW", "rating": 74 },
-        { "name": "Charbonnier", "position": "ST", "rating": 74 },
-        { "name": "Perrin", "position": "RW", "rating": 72 },
-        { "name": "Lomotey", "position": "ST", "rating": 73 },
-        { "name": "M'Changama", "position": "AM", "rating": 73 },
-        { "name": "Boutaib", "position": "ST", "rating": 72 },
-        { "name": "Hein", "position": "LW", "rating": 71 },
-        { "name": "Kalulu", "position": "RB", "rating": 72 },
-        { "name": "Remy", "position": "CB", "rating": 70 },
-        { "name": "Aouchiche", "position": "CM", "rating": 72 },
-        { "name": "Courtet", "position": "RW", "rating": 71 }
+        {
+          "name": "Benoit Costil",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Matthieu Peyrard",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Théo Pellenard",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jenz",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jubal",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Akueson",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Sinayoko",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Niang",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Bamba",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sakhi",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Traoré",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Charbonnier",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Perrin",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Lomotey",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "M'Changama",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Boutaib",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Hein",
+          "position": "LW",
+          "rating": 71
+        },
+        {
+          "name": "Kalulu",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Remy",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Aouchiche",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Courtet",
+          "position": "RW",
+          "rating": 71
+        }
       ],
       "ratings": {
         "attack": 67,
@@ -38,5 +122,6 @@
   },
   "id": 3474,
   "name": "AJ Auxerre",
-  "badgeLocalPath": "/img/badges/auxerre.png"
+  "badgeLocalPath": "/img/badges/auxerre.png",
+  "group": "🇫🇷 Ligue 1"
 }

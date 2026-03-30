@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Alexander Nübel", "position": "GK", "rating": 82 },
-        { "name": "Fabian Bredlow", "position": "GK", "rating": 72 },
-        { "name": "Waldemar Anton", "position": "CB", "rating": 80 },
-        { "name": "Dan-Axel Zagadou", "position": "CB", "rating": 79 },
-        { "name": "Jeff Chabot", "position": "CB", "rating": 77 },
-        { "name": "Maximilian Mittelstädt", "position": "LB", "rating": 80 },
-        { "name": "Pascal Stenzel", "position": "RB", "rating": 76 },
-        { "name": "Atakan Karazor", "position": "DM", "rating": 78 },
-        { "name": "Angelo Stiller", "position": "CM", "rating": 81 },
-        { "name": "Enzo Millot", "position": "CM", "rating": 78 },
-        { "name": "Jamie Leweling", "position": "RW", "rating": 78 },
-        { "name": "Nick Woltemade", "position": "LW", "rating": 76 },
-        { "name": "Chris Führich", "position": "LW", "rating": 79 },
-        { "name": "Deniz Undav", "position": "ST", "rating": 82 },
-        { "name": "Ermedin Demirovic", "position": "ST", "rating": 80 },
-        { "name": "Serhou Guirassy", "position": "ST", "rating": 83 },
-        { "name": "Silas Katompa Mvumpa", "position": "RW", "rating": 76 },
-        { "name": "Josha Vagnoman", "position": "RB", "rating": 77 },
-        { "name": "Hiroki Ito", "position": "CB", "rating": 79 },
-        { "name": "Yannik Keitel", "position": "DM", "rating": 76 },
-        { "name": "Thomas Kastanaras", "position": "AM", "rating": 74 }
+        {
+          "name": "Alexander Nübel",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Fabian Bredlow",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Waldemar Anton",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Dan-Axel Zagadou",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jeff Chabot",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Maximilian Mittelstädt",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Pascal Stenzel",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Atakan Karazor",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Angelo Stiller",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Enzo Millot",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jamie Leweling",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Nick Woltemade",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Chris Führich",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Deniz Undav",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Ermedin Demirovic",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Serhou Guirassy",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Silas Katompa Mvumpa",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Josha Vagnoman",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Hiroki Ito",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yannik Keitel",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Thomas Kastanaras",
+          "position": "AM",
+          "rating": 74
+        }
       ],
       "ratings": {
         "attack": 80,
@@ -38,5 +122,6 @@
   },
   "id": 79,
   "name": "VfB Stuttgart",
-  "badgeLocalPath": "/img/badges/vfb-stuttgart.png"
+  "badgeLocalPath": "/img/badges/vfb-stuttgart.png",
+  "group": "🇩🇪 Bundesliga"
 }

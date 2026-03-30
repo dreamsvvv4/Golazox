@@ -6,106 +6,383 @@
     "1974": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Dino Zoff",            "position": "GK", "rating": 92 },
-        { "name": "Berti Vogts",          "position": "RB", "rating": 89 },
-        { "name": "Franz Beckenbauer",    "position": "CB", "rating": 96 },
-        { "name": "Ruud Krol",            "position": "CB", "rating": 89 },
-        { "name": "Paul Breitner",        "position": "LB", "rating": 90 },
-        { "name": "Johan Neeskens",       "position": "DM", "rating": 91 },
-        { "name": "Günter Netzer",        "position": "CM", "rating": 90 },
-        { "name": "Johan Cruyff",         "position": "CAM","rating": 96 },
-        { "name": "Kevin Keegan",         "position": "RW", "rating": 91 },
-        { "name": "Gerd Müller",          "position": "ST", "rating": 94 },
-        { "name": "Oleg Blokhin",         "position": "LW", "rating": 89 }
+        {
+          "name": "Dino Zoff",
+          "position": "GK",
+          "rating": 92
+        },
+        {
+          "name": "Berti Vogts",
+          "position": "RB",
+          "rating": 89
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "position": "CB",
+          "rating": 96
+        },
+        {
+          "name": "Ruud Krol",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Paul Breitner",
+          "position": "LB",
+          "rating": 90
+        },
+        {
+          "name": "Johan Neeskens",
+          "position": "DM",
+          "rating": 91
+        },
+        {
+          "name": "Günter Netzer",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Johan Cruyff",
+          "position": "CAM",
+          "rating": 96
+        },
+        {
+          "name": "Kevin Keegan",
+          "position": "RW",
+          "rating": 91
+        },
+        {
+          "name": "Gerd Müller",
+          "position": "ST",
+          "rating": 94
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "LW",
+          "rating": 89
+        }
       ],
       "bench": [
-        { "name": "Sepp Maier",           "position": "GK", "rating": 90 },
-        { "name": "Giacinto Facchetti",   "position": "LB", "rating": 92 },
-        { "name": "Gianni Rivera",        "position": "CAM","rating": 90 },
-        { "name": "Luigi Riva",           "position": "LW", "rating": 91 },
-        { "name": "Allan Simonsen",       "position": "RW", "rating": 89 }
+        {
+          "name": "Sepp Maier",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Giacinto Facchetti",
+          "position": "LB",
+          "rating": 92
+        },
+        {
+          "name": "Gianni Rivera",
+          "position": "CAM",
+          "rating": 90
+        },
+        {
+          "name": "Luigi Riva",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Allan Simonsen",
+          "position": "RW",
+          "rating": 89
+        }
       ],
-      "ratings": { "attack": 93, "midfield": 92, "defense": 91, "goalkeeping": 91 },
+      "ratings": {
+        "attack": 93,
+        "midfield": 92,
+        "defense": 91,
+        "goalkeeping": 91
+      },
       "source": "Fantasy — Europa All Stars XI Años 70 (Cruyff / Müller / Beckenbauer)",
       "teamLabel": "Europa All Stars (Años 70)"
     },
     "1994": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Peter Schmeichel",     "position": "GK", "rating": 92 },
-        { "name": "Lilian Thuram",        "position": "RB", "rating": 90 },
-        { "name": "Franco Baresi",        "position": "CB", "rating": 95 },
-        { "name": "Marcel Desailly",      "position": "CB", "rating": 91 },
-        { "name": "Paolo Maldini",        "position": "LB", "rating": 96 },
-        { "name": "Roy Keane",            "position": "DM", "rating": 90 },
-        { "name": "Luis Figo",            "position": "CM", "rating": 92 },
-        { "name": "Zinedine Zidane",      "position": "CAM","rating": 96 },
-        { "name": "Ryan Giggs",           "position": "LW", "rating": 91 },
-        { "name": "Roberto Baggio",       "position": "RW", "rating": 93 },
-        { "name": "Marco van Basten",     "position": "ST", "rating": 94 }
+        {
+          "name": "Peter Schmeichel",
+          "position": "GK",
+          "rating": 92
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "RB",
+          "rating": 90
+        },
+        {
+          "name": "Franco Baresi",
+          "position": "CB",
+          "rating": 95
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "CB",
+          "rating": 91
+        },
+        {
+          "name": "Paolo Maldini",
+          "position": "LB",
+          "rating": 96
+        },
+        {
+          "name": "Roy Keane",
+          "position": "DM",
+          "rating": 90
+        },
+        {
+          "name": "Luis Figo",
+          "position": "CM",
+          "rating": 92
+        },
+        {
+          "name": "Zinedine Zidane",
+          "position": "CAM",
+          "rating": 96
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Roberto Baggio",
+          "position": "RW",
+          "rating": 93
+        },
+        {
+          "name": "Marco van Basten",
+          "position": "ST",
+          "rating": 94
+        }
       ],
       "bench": [
-        { "name": "Edwin van der Sar",    "position": "GK", "rating": 89 },
-        { "name": "Ronald Koeman",        "position": "CB", "rating": 90 },
-        { "name": "Matthias Sammer",      "position": "CB", "rating": 91 },
-        { "name": "Paul Gascoigne",       "position": "CM", "rating": 89 },
-        { "name": "Alan Shearer",         "position": "ST", "rating": 91 }
+        {
+          "name": "Edwin van der Sar",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Ronald Koeman",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Matthias Sammer",
+          "position": "CB",
+          "rating": 91
+        },
+        {
+          "name": "Paul Gascoigne",
+          "position": "CM",
+          "rating": 89
+        },
+        {
+          "name": "Alan Shearer",
+          "position": "ST",
+          "rating": 91
+        }
       ],
-      "ratings": { "attack": 93, "midfield": 93, "defense": 93, "goalkeeping": 91 },
+      "ratings": {
+        "attack": 93,
+        "midfield": 93,
+        "defense": 93,
+        "goalkeeping": 91
+      },
       "source": "Fantasy — Europa All Stars XI Años 90 (Zidane / Maldini / Baresi / van Basten)",
       "teamLabel": "Europa All Stars (Años 90)"
     },
     "2006": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Gianluigi Buffon",     "position": "GK", "rating": 94 },
-        { "name": "Philipp Lahm",         "position": "RB", "rating": 90 },
-        { "name": "Fabio Cannavaro",      "position": "CB", "rating": 92 },
-        { "name": "Alessandro Nesta",     "position": "CB", "rating": 92 },
-        { "name": "Ashley Cole",          "position": "LB", "rating": 89 },
-        { "name": "Andrea Pirlo",         "position": "DM", "rating": 92 },
-        { "name": "Xavi Hernández",       "position": "CM", "rating": 93 },
-        { "name": "Andrés Iniesta",       "position": "CAM","rating": 93 },
-        { "name": "Cristiano Ronaldo",    "position": "RW", "rating": 95 },
-        { "name": "Thierry Henry",        "position": "ST", "rating": 93 },
-        { "name": "Andriy Shevchenko",    "position": "LW", "rating": 91 }
+        {
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 94
+        },
+        {
+          "name": "Philipp Lahm",
+          "position": "RB",
+          "rating": 90
+        },
+        {
+          "name": "Fabio Cannavaro",
+          "position": "CB",
+          "rating": 92
+        },
+        {
+          "name": "Alessandro Nesta",
+          "position": "CB",
+          "rating": 92
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "LB",
+          "rating": 89
+        },
+        {
+          "name": "Andrea Pirlo",
+          "position": "DM",
+          "rating": 92
+        },
+        {
+          "name": "Xavi Hernández",
+          "position": "CM",
+          "rating": 93
+        },
+        {
+          "name": "Andrés Iniesta",
+          "position": "CAM",
+          "rating": 93
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "RW",
+          "rating": 95
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Andriy Shevchenko",
+          "position": "LW",
+          "rating": 91
+        }
       ],
       "bench": [
-        { "name": "Iker Casillas",        "position": "GK", "rating": 93 },
-        { "name": "Carles Puyol",         "position": "CB", "rating": 91 },
-        { "name": "Steven Gerrard",       "position": "CM", "rating": 91 },
-        { "name": "Paul Scholes",         "position": "CM", "rating": 90 },
-        { "name": "Francesco Totti",      "position": "CAM","rating": 92 }
+        {
+          "name": "Iker Casillas",
+          "position": "GK",
+          "rating": 93
+        },
+        {
+          "name": "Carles Puyol",
+          "position": "CB",
+          "rating": 91
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Francesco Totti",
+          "position": "CAM",
+          "rating": 92
+        }
       ],
-      "ratings": { "attack": 93, "midfield": 93, "defense": 92, "goalkeeping": 93 },
+      "ratings": {
+        "attack": 93,
+        "midfield": 93,
+        "defense": 92,
+        "goalkeeping": 93
+      },
       "source": "Fantasy — Europa All Stars XI Años 2000 (Ronaldo / Henry / Pirlo / Xavi)",
       "teamLabel": "Europa All Stars (Años 2000)"
     },
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Thibaut Courtois",     "position": "GK", "rating": 90 },
-        { "name": "Trent Alexander-Arnold","position": "RB","rating": 88 },
-        { "name": "Rúben Dias",           "position": "CB", "rating": 89 },
-        { "name": "Virgil van Dijk",      "position": "CB", "rating": 90 },
-        { "name": "Theo Hernández",       "position": "LB", "rating": 87 },
-        { "name": "Rodri",                "position": "DM", "rating": 91 },
-        { "name": "Jude Bellingham",      "position": "CM", "rating": 90 },
-        { "name": "Kevin De Bruyne",      "position": "CAM","rating": 91 },
-        { "name": "Lamine Yamal",         "position": "RW", "rating": 88 },
-        { "name": "Erling Haaland",       "position": "ST", "rating": 91 },
-        { "name": "Kylian Mbappé",        "position": "LW", "rating": 92 }
+        {
+          "name": "Thibaut Courtois",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "RB",
+          "rating": 88
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Virgil van Dijk",
+          "position": "CB",
+          "rating": 90
+        },
+        {
+          "name": "Theo Hernández",
+          "position": "LB",
+          "rating": 87
+        },
+        {
+          "name": "Rodri",
+          "position": "DM",
+          "rating": 91
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "CAM",
+          "rating": 91
+        },
+        {
+          "name": "Lamine Yamal",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Erling Haaland",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Kylian Mbappé",
+          "position": "LW",
+          "rating": 92
+        }
       ],
       "bench": [
-        { "name": "Gianluigi Donnarumma", "position": "GK", "rating": 88 },
-        { "name": "Antonio Rüdiger",      "position": "CB", "rating": 88 },
-        { "name": "Jamal Musiala",        "position": "CAM","rating": 89 },
-        { "name": "Phil Foden",           "position": "CM", "rating": 88 },
-        { "name": "Harry Kane",           "position": "ST", "rating": 91 }
+        {
+          "name": "Gianluigi Donnarumma",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Jamal Musiala",
+          "position": "CAM",
+          "rating": 89
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "rating": 91
+        }
       ],
-      "ratings": { "attack": 91, "midfield": 91, "defense": 90, "goalkeeping": 90 },
+      "ratings": {
+        "attack": 91,
+        "midfield": 91,
+        "defense": 90,
+        "goalkeeping": 90
+      },
       "source": "Fantasy — Europa All Stars XI Actualidad 2025",
       "teamLabel": "Europa All Stars"
     }
-  }
+  },
+  "group": "⭐ Fantasy XI"
 }

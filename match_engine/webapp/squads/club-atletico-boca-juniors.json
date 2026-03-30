@@ -4,38 +4,136 @@
     "1981": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Hugo Gatti",           "position": "GK", "rating": 85 },
-        { "name": "Jorge Benítez",        "position": "RB", "rating": 76 },
-        { "name": "Carlos Boggio",        "position": "CB", "rating": 78 },
-        { "name": "Roberto Mouzo",        "position": "CB", "rating": 81 },
-        { "name": "Rubén Suñé",          "position": "LB", "rating": 78 },
-        { "name": "Eduardo Commisso",    "position": "DM", "rating": 79 },
-        { "name": "Hugo Perotti",         "position": "CM", "rating": 81 },
-        { "name": "Diego Maradona",       "position": "AM", "rating": 96 },
-        { "name": "Ricardo Gareca",       "position": "RW", "rating": 79 },
-        { "name": "Miguel Ángel Brindisi","position": "ST", "rating": 80 },
-        { "name": "Daniel Gómez",         "position": "LW", "rating": 76 }
+        {
+          "name": "Hugo Gatti",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Jorge Benítez",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Boggio",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Mouzo",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Rubén Suñé",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Eduardo Commisso",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Hugo Perotti",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Diego Maradona",
+          "position": "AM",
+          "rating": 96
+        },
+        {
+          "name": "Ricardo Gareca",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Ángel Brindisi",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Daniel Gómez",
+          "position": "LW",
+          "rating": 76
+        }
       ],
-      "ratings": { "attack": 91, "midfield": 87, "defense": 81, "goalkeeping": 83 },
+      "ratings": {
+        "attack": 91,
+        "midfield": 87,
+        "defense": 81,
+        "goalkeeping": 83
+      },
       "source": "Boca Juniors — Campeón Metropolitano 1981 (era Maradona)",
       "teamLabel": "Boca Juniors (1981 — Maradona)"
     },
     "2007": {
       "formation": "4-2-3-1",
       "players": [
-        { "name": "Roberto Abbondanzieri", "position": "GK", "rating": 82 },
-        { "name": "Claudio Morel Rodríguez","position": "RB", "rating": 77 },
-        { "name": "Rolando Schiavi",       "position": "CB", "rating": 80 },
-        { "name": "Nicolás Burdisso",      "position": "CB", "rating": 82 },
-        { "name": "Clemente Rodríguez",    "position": "LB", "rating": 79 },
-        { "name": "Jonás Gutiérrez",       "position": "DM", "rating": 80 },
-        { "name": "Rodrigo Palacio",       "position": "RW", "rating": 83 },
-        { "name": "Juan Román Riquelme",   "position": "AM", "rating": 93 },
-        { "name": "Gabriel Paletta",       "position": "DM", "rating": 78 },
-        { "name": "Luciano Figueroa",      "position": "ST", "rating": 80 },
-        { "name": "Martín Palermo",        "position": "ST", "rating": 84 }
+        {
+          "name": "Roberto Abbondanzieri",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Claudio Morel Rodríguez",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Rolando Schiavi",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Nicolás Burdisso",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Clemente Rodríguez",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Jonás Gutiérrez",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Rodrigo Palacio",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Juan Román Riquelme",
+          "position": "AM",
+          "rating": 93
+        },
+        {
+          "name": "Gabriel Paletta",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Luciano Figueroa",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Martín Palermo",
+          "position": "ST",
+          "rating": 84
+        }
       ],
-      "ratings": { "attack": 88, "midfield": 89, "defense": 83, "goalkeeping": 81 },
+      "ratings": {
+        "attack": 88,
+        "midfield": 89,
+        "defense": 83,
+        "goalkeeping": 81
+      },
       "source": "Boca Juniors — Copa Libertadores 2007 (era Riquelme)",
       "teamLabel": "Boca Juniors (2007 — Riquelme)"
     },
@@ -199,5 +297,6 @@
   },
   "id": 189,
   "name": "Boca Juniors",
-  "badgeLocalPath": "/img/badges/boca-juniors.png"
+  "badgeLocalPath": "/img/badges/boca-juniors.png",
+  "group": "🌎 América del Sur"
 }

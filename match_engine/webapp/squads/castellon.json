@@ -4,27 +4,90 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Álvaro Fernández", "position": "GK" },
-        { "name": "Alberto Perea", "position": "RB" },
-        { "name": "Andrei Ratiu", "position": "CB" },
-        { "name": "Carlos Álvarez", "position": "CB" },
-        { "name": "Pau Resta", "position": "LB" },
-        { "name": "Iván Balliu", "position": "CM" },
-        { "name": "Sergi Palencia", "position": "CM" },
-        { "name": "Iñaki Gabilondo", "position": "CM" },
-        { "name": "Sergio Bermejo", "position": "RW" },
-        { "name": "Aridane Hernández", "position": "ST" },
-        { "name": "Nacho Gil", "position": "LW" },
-        { "name": "Jordi Sánchez", "position": "GK" },
-        { "name": "Higinio Marín", "position": "RB" },
-        { "name": "Pablo Íñiguez", "position": "CB" },
-        { "name": "Lluís Sastre", "position": "LB" },
-        { "name": "Víctor Mena", "position": "CM" },
-        { "name": "Marc Mateu", "position": "CM" },
-        { "name": "Jorge Fernández", "position": "RW" },
-        { "name": "Alfredo Ortuño", "position": "ST" },
-        { "name": "Dani Vega", "position": "LW" },
-        { "name": "Pol Valentín", "position": "CB" }
+        {
+          "name": "Álvaro Fernández",
+          "position": "GK"
+        },
+        {
+          "name": "Alberto Perea",
+          "position": "RB"
+        },
+        {
+          "name": "Andrei Ratiu",
+          "position": "CB"
+        },
+        {
+          "name": "Carlos Álvarez",
+          "position": "CB"
+        },
+        {
+          "name": "Pau Resta",
+          "position": "LB"
+        },
+        {
+          "name": "Iván Balliu",
+          "position": "CM"
+        },
+        {
+          "name": "Sergi Palencia",
+          "position": "CM"
+        },
+        {
+          "name": "Iñaki Gabilondo",
+          "position": "CM"
+        },
+        {
+          "name": "Sergio Bermejo",
+          "position": "RW"
+        },
+        {
+          "name": "Aridane Hernández",
+          "position": "ST"
+        },
+        {
+          "name": "Nacho Gil",
+          "position": "LW"
+        },
+        {
+          "name": "Jordi Sánchez",
+          "position": "GK"
+        },
+        {
+          "name": "Higinio Marín",
+          "position": "RB"
+        },
+        {
+          "name": "Pablo Íñiguez",
+          "position": "CB"
+        },
+        {
+          "name": "Lluís Sastre",
+          "position": "LB"
+        },
+        {
+          "name": "Víctor Mena",
+          "position": "CM"
+        },
+        {
+          "name": "Marc Mateu",
+          "position": "CM"
+        },
+        {
+          "name": "Jorge Fernández",
+          "position": "RW"
+        },
+        {
+          "name": "Alfredo Ortuño",
+          "position": "ST"
+        },
+        {
+          "name": "Dani Vega",
+          "position": "LW"
+        },
+        {
+          "name": "Pol Valentín",
+          "position": "CB"
+        }
       ],
       "ratings": {
         "attack": 65,
@@ -38,5 +101,6 @@
   },
   "id": 3839,
   "name": "UD Castellón",
-  "badgeLocalPath": "/img/badges/castellon.png"
+  "badgeLocalPath": "/img/badges/castellon.png",
+  "group": "🇪🇸 La Liga 2"
 }

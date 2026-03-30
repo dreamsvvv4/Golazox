@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-4-2",
       "players": [
-        { "name": "Micai", "position": "GK", "rating": 70 },
-        { "name": "Matosevic", "position": "GK", "rating": 67 },
-        { "name": "Rigione", "position": "CB", "rating": 71 },
-        { "name": "Camporese", "position": "CB", "rating": 71 },
-        { "name": "Venturi", "position": "CB", "rating": 69 },
-        { "name": "Cimino", "position": "LB", "rating": 69 },
-        { "name": "D'Orazio", "position": "RB", "rating": 70 },
-        { "name": "Brescianini", "position": "DM", "rating": 73 },
-        { "name": "Voca", "position": "CM", "rating": 71 },
-        { "name": "Gargiulo", "position": "CM", "rating": 70 },
-        { "name": "Florenzi", "position": "LM", "rating": 70 },
-        { "name": "Marras", "position": "RM", "rating": 71 },
-        { "name": "Nasti", "position": "ST", "rating": 72 },
-        { "name": "Larrivey", "position": "ST", "rating": 71 },
-        { "name": "Gori", "position": "LM", "rating": 69 },
-        { "name": "Brignola", "position": "RW", "rating": 70 },
-        { "name": "Rispoli", "position": "RB", "rating": 69 },
-        { "name": "Meroni", "position": "CB", "rating": 69 },
-        { "name": "Boultam", "position": "ST", "rating": 70 },
-        { "name": "D'Urso", "position": "AM", "rating": 69 },
-        { "name": "Lami", "position": "LM", "rating": 68 }
+        {
+          "name": "Micai",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Matosevic",
+          "position": "GK",
+          "rating": 67
+        },
+        {
+          "name": "Rigione",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Camporese",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Venturi",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Cimino",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "D'Orazio",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Brescianini",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Voca",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Gargiulo",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Florenzi",
+          "position": "LM",
+          "rating": 70
+        },
+        {
+          "name": "Marras",
+          "position": "RM",
+          "rating": 71
+        },
+        {
+          "name": "Nasti",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Larrivey",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Gori",
+          "position": "LM",
+          "rating": 69
+        },
+        {
+          "name": "Brignola",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Rispoli",
+          "position": "RB",
+          "rating": 69
+        },
+        {
+          "name": "Meroni",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Boultam",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "D'Urso",
+          "position": "AM",
+          "rating": 69
+        },
+        {
+          "name": "Lami",
+          "position": "LM",
+          "rating": 68
+        }
       ],
       "ratings": {
         "attack": 62,
@@ -38,5 +122,6 @@
   },
   "id": 2114,
   "name": "Cosenza Calcio",
-  "badgeLocalPath": "/img/badges/cosenza.png"
+  "badgeLocalPath": "/img/badges/cosenza.png",
+  "group": "🌍 Otros"
 }

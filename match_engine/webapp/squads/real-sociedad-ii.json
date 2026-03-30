@@ -4,27 +4,90 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Aihen Muñoz", "position": "GK" },
-        { "name": "Aritz Elustondo", "position": "RB" },
-        { "name": "Ander Guevara", "position": "CB" },
-        { "name": "Pablo Marín", "position": "CB" },
-        { "name": "Beñat Turrientes", "position": "LB" },
-        { "name": "Kieran Tierney", "position": "CM" },
-        { "name": "Martín Zubimendi", "position": "CM" },
-        { "name": "Luka Sucic", "position": "CM" },
-        { "name": "Takefusa Kubo", "position": "RW" },
-        { "name": "Saheed Adegoke", "position": "ST" },
-        { "name": "Brais Méndez", "position": "LW" },
-        { "name": "Ander Barrenetxea", "position": "GK" },
-        { "name": "Jon Pacheco", "position": "RB" },
-        { "name": "Jesús Alfaro", "position": "CB" },
-        { "name": "Álvaro Odriozola", "position": "LB" },
-        { "name": "Iñigo Martínez", "position": "CM" },
-        { "name": "Hamari Traoré", "position": "CM" },
-        { "name": "Mikel Oyarzabal", "position": "RW" },
-        { "name": "Ander Guevara Jr", "position": "ST" },
-        { "name": "Nabil Bahoui", "position": "LW" },
-        { "name": "Diego Rico", "position": "CB" }
+        {
+          "name": "Aihen Muñoz",
+          "position": "GK"
+        },
+        {
+          "name": "Aritz Elustondo",
+          "position": "RB"
+        },
+        {
+          "name": "Ander Guevara",
+          "position": "CB"
+        },
+        {
+          "name": "Pablo Marín",
+          "position": "CB"
+        },
+        {
+          "name": "Beñat Turrientes",
+          "position": "LB"
+        },
+        {
+          "name": "Kieran Tierney",
+          "position": "CM"
+        },
+        {
+          "name": "Martín Zubimendi",
+          "position": "CM"
+        },
+        {
+          "name": "Luka Sucic",
+          "position": "CM"
+        },
+        {
+          "name": "Takefusa Kubo",
+          "position": "RW"
+        },
+        {
+          "name": "Saheed Adegoke",
+          "position": "ST"
+        },
+        {
+          "name": "Brais Méndez",
+          "position": "LW"
+        },
+        {
+          "name": "Ander Barrenetxea",
+          "position": "GK"
+        },
+        {
+          "name": "Jon Pacheco",
+          "position": "RB"
+        },
+        {
+          "name": "Jesús Alfaro",
+          "position": "CB"
+        },
+        {
+          "name": "Álvaro Odriozola",
+          "position": "LB"
+        },
+        {
+          "name": "Iñigo Martínez",
+          "position": "CM"
+        },
+        {
+          "name": "Hamari Traoré",
+          "position": "CM"
+        },
+        {
+          "name": "Mikel Oyarzabal",
+          "position": "RW"
+        },
+        {
+          "name": "Ander Guevara Jr",
+          "position": "ST"
+        },
+        {
+          "name": "Nabil Bahoui",
+          "position": "LW"
+        },
+        {
+          "name": "Diego Rico",
+          "position": "CB"
+        }
       ],
       "ratings": {
         "attack": 66,
@@ -38,5 +101,6 @@
   },
   "id": 3850,
   "name": "Real Sociedad B",
-  "badgeLocalPath": "/img/badges/real-sociedad-ii.png"
+  "badgeLocalPath": "/img/badges/real-sociedad-ii.png",
+  "group": "🇪🇸 La Liga 2"
 }

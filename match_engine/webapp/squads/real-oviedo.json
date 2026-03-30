@@ -149,27 +149,90 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Sulaimana", "position": "GK" },
-        { "name": "Lucas Ahijado", "position": "RB" },
-        { "name": "Dani Calvo", "position": "CB" },
-        { "name": "Costas", "position": "CB" },
-        { "name": "Christian Joel", "position": "LB" },
-        { "name": "Borja Sánchez", "position": "CM" },
-        { "name": "Obeng", "position": "CM" },
-        { "name": "Claudio Medina", "position": "CM" },
-        { "name": "Diegui Johannesson", "position": "RW" },
-        { "name": "Bastón", "position": "ST" },
-        { "name": "Colombatto", "position": "LW" },
-        { "name": "Caballero", "position": "GK" },
-        { "name": "Pomares", "position": "RB" },
-        { "name": "Luismi Cruz", "position": "CB" },
-        { "name": "Mier", "position": "LB" },
-        { "name": "Javi Mier", "position": "CM" },
-        { "name": "Yuri", "position": "CM" },
-        { "name": "Santos", "position": "RW" },
-        { "name": "Rodri", "position": "ST" },
-        { "name": "Santi Cazorla", "position": "AM" },
-        { "name": "Blanco", "position": "RW" }
+        {
+          "name": "Sulaimana",
+          "position": "GK"
+        },
+        {
+          "name": "Lucas Ahijado",
+          "position": "RB"
+        },
+        {
+          "name": "Dani Calvo",
+          "position": "CB"
+        },
+        {
+          "name": "Costas",
+          "position": "CB"
+        },
+        {
+          "name": "Christian Joel",
+          "position": "LB"
+        },
+        {
+          "name": "Borja Sánchez",
+          "position": "CM"
+        },
+        {
+          "name": "Obeng",
+          "position": "CM"
+        },
+        {
+          "name": "Claudio Medina",
+          "position": "CM"
+        },
+        {
+          "name": "Diegui Johannesson",
+          "position": "RW"
+        },
+        {
+          "name": "Bastón",
+          "position": "ST"
+        },
+        {
+          "name": "Colombatto",
+          "position": "LW"
+        },
+        {
+          "name": "Caballero",
+          "position": "GK"
+        },
+        {
+          "name": "Pomares",
+          "position": "RB"
+        },
+        {
+          "name": "Luismi Cruz",
+          "position": "CB"
+        },
+        {
+          "name": "Mier",
+          "position": "LB"
+        },
+        {
+          "name": "Javi Mier",
+          "position": "CM"
+        },
+        {
+          "name": "Yuri",
+          "position": "CM"
+        },
+        {
+          "name": "Santos",
+          "position": "RW"
+        },
+        {
+          "name": "Rodri",
+          "position": "ST"
+        },
+        {
+          "name": "Santi Cazorla",
+          "position": "AM"
+        },
+        {
+          "name": "Blanco",
+          "position": "RW"
+        }
       ],
       "ratings": {
         "attack": 70,
@@ -182,5 +245,6 @@
     }
   },
   "name": "Real Oviedo",
-  "badgeLocalPath": "/img/badges/real-oviedo.png"
+  "badgeLocalPath": "/img/badges/real-oviedo.png",
+  "group": "🇪🇸 La Liga"
 }

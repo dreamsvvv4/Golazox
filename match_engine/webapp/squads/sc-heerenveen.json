@@ -4,27 +4,111 @@
     "2025": {
       "formation": "4-3-3",
       "players": [
-        { "name": "Erwin Mulder", "position": "GK", "rating": 73 },
-        { "name": "Xavier Mous", "position": "GK", "rating": 70 },
-        { "name": "Pawel Bochniewicz", "position": "CB", "rating": 74 },
-        { "name": "Sherel Floranus", "position": "CB", "rating": 73 },
-        { "name": "Dave Bulthuis", "position": "CB", "rating": 72 },
-        { "name": "Lutsharel Geertruida", "position": "RB", "rating": 74 },
-        { "name": "Sven Botman", "position": "CB", "rating": 73 },
-        { "name": "Flávio", "position": "LB", "rating": 72 },
-        { "name": "Joey Veerman", "position": "CM", "rating": 78 },
-        { "name": "Tibor Halilovic", "position": "AM", "rating": 73 },
-        { "name": "Rodolphe Melin", "position": "DM", "rating": 72 },
-        { "name": "Sander Dröge", "position": "RW", "rating": 73 },
-        { "name": "Tadashi Isa", "position": "LW", "rating": 73 },
-        { "name": "Thom Haye", "position": "CM", "rating": 73 },
-        { "name": "Oliver Antman", "position": "AM", "rating": 72 },
-        { "name": "Henk Veerman", "position": "ST", "rating": 74 },
-        { "name": "Rami Kaib", "position": "ST", "rating": 72 },
-        { "name": "Chidera Ejuke", "position": "LW", "rating": 73 },
-        { "name": "Sam Kersten", "position": "CB", "rating": 71 },
-        { "name": "Damil Dankerlui", "position": "RB", "rating": 72 },
-        { "name": "Eros Maddy", "position": "ST", "rating": 71 }
+        {
+          "name": "Erwin Mulder",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Xavier Mous",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Pawel Bochniewicz",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Sherel Floranus",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Dave Bulthuis",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lutsharel Geertruida",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Flávio",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Joey Veerman",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Tibor Halilovic",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Rodolphe Melin",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Sander Dröge",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Tadashi Isa",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Thom Haye",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Oliver Antman",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Henk Veerman",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Rami Kaib",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Chidera Ejuke",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Sam Kersten",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Damil Dankerlui",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Eros Maddy",
+          "position": "ST",
+          "rating": 71
+        }
       ],
       "ratings": {
         "attack": 70,
@@ -38,5 +122,6 @@
   },
   "id": 251,
   "name": "SC Heerenveen",
-  "badgeLocalPath": "/img/badges/sc-heerenveen.png"
+  "badgeLocalPath": "/img/badges/sc-heerenveen.png",
+  "group": "🇳🇱 Eredivisie"
 }
