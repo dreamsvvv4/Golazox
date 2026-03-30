@@ -3584,17 +3584,20 @@ body {
 .btn-rivalry--loading { animation: pulse-rivalry .9s ease-in-out infinite; }
 
 .btn-surprise-mini {
-  width: 2rem; height: 2rem; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .85rem;
+  display: flex; align-items: center; gap: .28rem;
+  padding: .32rem .65rem;
+  border-radius: 20px;
+  font: 700 .65rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .06em; text-transform: uppercase;
   background: rgba(0,212,255,.08);
-  border: 1px solid rgba(0,212,255,.22);
-  color: rgba(0,212,255,.7);
+  border: 1px solid rgba(0,212,255,.25);
+  color: rgba(0,212,255,.85);
   cursor: pointer;
   transition: background .15s, transform .12s;
+  white-space: nowrap;
 }
-.btn-surprise-mini:hover { background: rgba(0,212,255,.18); transform: scale(1.1); }
-.btn-surprise-mini:active { transform: scale(.88); }
+.btn-surprise-mini:hover { background: rgba(0,212,255,.18); transform: scale(1.05); }
+.btn-surprise-mini:active { transform: scale(.92); }
 
 /* ═══════════════════════════════════════════════════════════
    WEATHER ATMOSPHERE OVERLAY + PANEL REACTIONS

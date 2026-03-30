@@ -26,7 +26,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
-    'btn-rivalry':'Rivals','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
+    'btn-rivalry':'Rivals','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
@@ -165,7 +165,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
-    'btn-rivalry':'Rivals','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
+    'btn-rivalry':'Rivals','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
@@ -1934,11 +1934,12 @@ async function handleLookup(side) {
 
 // ── Main handler — called by the "Simulate Match" button ──
 async function handleSimulate() {
-  // Coin collapse animation before transitioning
+  // Show inline loading state on VS button (keep it visible so user sees feedback)
   const vsBtn = document.getElementById('vs-clash');
+  const vsLblEl = document.getElementById('vs-clash-label');
   if (vsBtn?.classList.contains('vs-ready')) {
-    vsBtn.classList.add('coin-collapsing');
-    await new Promise(r => setTimeout(r, 420));
+    vsBtn.disabled = true;
+    if (vsLblEl) vsLblEl.textContent = t('vs-recalc') || '⏳ Simulando…';
   }
 
   // Brief weather burst effect at simulation start
@@ -2035,9 +2036,7 @@ async function handleSimulate() {
     showError(isNotFound ? err.message : `${t('sim-error-prefix')} ${err.message}`);
   } finally {
     setLoading(false);
-    // Restore the coin button (remove collapse animation so it reappears)
-    const _vsBtn = document.getElementById('vs-clash');
-    if (_vsBtn) _vsBtn.classList.remove('coin-collapsing');
+    _updateClashButton();  // restores vs-ready state + re-enables button
     document.body.classList.remove('wx-burst');
   }
 }
