@@ -97,64 +97,63 @@ const TRN = (() => {
     _buildNumTeamsPicker();
   }
 
+  // Renders one toggle row with a dynamic hint that updates on change
+  function _ruleRow(id, nameKey, offKey, onKey, checked) {
+    return `
+      <label class="trn-rule-row">
+        <div class="trn-rule-body">
+          <span class="trn-rule-name">${t(nameKey)}</span>
+          <span class="trn-rule-hint" id="hint-${id}">${checked ? t(onKey) : t(offKey)}</span>
+        </div>
+        <div class="trn-toggle-wrap">
+          <input type="checkbox" id="${id}" class="trn-toggle-input"${checked ? ' checked' : ''} />
+          <div class="trn-toggle"></div>
+        </div>
+      </label>`;
+  }
+
+  // Wire all dynamic hints in a container after innerHTML has been set
+  function _wireRuleHints(container) {
+    container.querySelectorAll('.trn-toggle-input').forEach(cb => {
+      const hintId = 'hint-' + cb.id;
+      const hintEl = document.getElementById(hintId);
+      if (!hintEl) return;
+      const offText = cb.dataset.off;
+      const onText  = cb.dataset.on;
+      if (!offText || !onText) return;
+      cb.addEventListener('change', () => { hintEl.textContent = cb.checked ? onText : offText; });
+    });
+  }
+
   function _rebuildCopaDetailRules() {
     const detailEl = $('trn-copa-detail-rules');
     if (!detailEl) return;
     if (_rules.copaMode === 'groups') {
-      detailEl.innerHTML = `
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">${t('trn-rule-group-stage')}</span>
-            <span class="trn-rule-hint">${t('trn-rule-group-hint')}</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">${t('trn-rule-ko-stage')}</span>
-            <span class="trn-rule-hint">${t('trn-rule-ko-hint')}</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>`;
+      detailEl.innerHTML =
+        _ruleRow('trn-rule-grupos-idavuelta', 'trn-rule-group-stage',  'trn-rule-group-hint-off',  'trn-rule-group-hint-on',  false) +
+        _ruleRow('trn-rule-ko-idavuelta',     'trn-rule-ko-stage',     'trn-rule-ko-hint-off',     'trn-rule-ko-hint-on',     true);
     } else {
-      detailEl.innerHTML = `
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">${t('trn-rule-match-fmt')}</span>
-            <span class="trn-rule-hint">${t('trn-rule-match-fmt-hint')}</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">${t('trn-rule-tiebreak')}</span>
-            <span class="trn-rule-hint">${t('trn-rule-tiebreak-hint')}</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-extratime" class="trn-toggle-input" checked />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>
-        <label class="trn-rule-row">
-          <div class="trn-rule-body">
-            <span class="trn-rule-name">${t('trn-rule-third')}</span>
-            <span class="trn-rule-hint">${t('trn-rule-third-hint')}</span>
-          </div>
-          <div class="trn-toggle-wrap">
-            <input type="checkbox" id="trn-rule-3rd" class="trn-toggle-input" />
-            <div class="trn-toggle"></div>
-          </div>
-        </label>`;
+      detailEl.innerHTML =
+        _ruleRow('trn-rule-idavuelta',  'trn-rule-match-fmt', 'trn-rule-match-fmt-off', 'trn-rule-match-fmt-on', false) +
+        _ruleRow('trn-rule-extratime',  'trn-rule-tiebreak',  'trn-rule-tiebreak-off',  'trn-rule-tiebreak-on',  true)  +
+        _ruleRow('trn-rule-3rd',        'trn-rule-third',     'trn-rule-third-off',     'trn-rule-third-on',     false);
     }
+    // Patch data attributes for the listener (keys resolved at render time)
+    detailEl.querySelectorAll('.trn-toggle-input').forEach(cb => {
+      const hintEl = document.getElementById('hint-' + cb.id);
+      if (!hintEl) return;
+      const baseKey = cb.id.replace('trn-rule-', 'trn-rule-');
+      // Map id → off/on keys
+      const map = {
+        'trn-rule-grupos-idavuelta': ['trn-rule-group-hint-off', 'trn-rule-group-hint-on'],
+        'trn-rule-ko-idavuelta':     ['trn-rule-ko-hint-off',    'trn-rule-ko-hint-on'],
+        'trn-rule-idavuelta':        ['trn-rule-match-fmt-off',  'trn-rule-match-fmt-on'],
+        'trn-rule-extratime':        ['trn-rule-tiebreak-off',   'trn-rule-tiebreak-on'],
+        'trn-rule-3rd':              ['trn-rule-third-off',      'trn-rule-third-on'],
+      };
+      const [offKey, onKey] = map[cb.id] || ['', ''];
+      cb.addEventListener('change', () => { hintEl.textContent = cb.checked ? t(onKey) : t(offKey); });
+    });
   }
 
   function onCopaGroupsChange(checked) {
@@ -194,7 +193,7 @@ const TRN = (() => {
           <label class="trn-rule-row">
             <div class="trn-rule-body">
               <span class="trn-rule-name">${t('trn-rule-modality')}</span>
-              <span class="trn-rule-hint">${t('trn-rule-modality-hint')}</span>
+              <span class="trn-rule-hint" id="hint-trn-rule-copa-groups">${_rules.copaMode === 'groups' ? t('trn-rule-modality-on') : t('trn-rule-modality-off')}</span>
             </div>
             <div class="trn-toggle-wrap">
               <input type="checkbox" id="trn-rule-copa-groups" class="trn-toggle-input"${_rules.copaMode === 'groups' ? ' checked' : ''} />
@@ -203,46 +202,35 @@ const TRN = (() => {
           </label>
           <div id="trn-copa-detail-rules"></div>`;
         container.innerHTML = html;
+        // Wire dynamic hint for the top modality toggle
+        const mCb = $('trn-rule-copa-groups');
+        const mHint = $('hint-trn-rule-copa-groups');
+        if (mCb && mHint) mCb.addEventListener('change', () => {
+          mHint.textContent = mCb.checked ? t('trn-rule-modality-on') : t('trn-rule-modality-off');
+        });
         _rebuildCopaDetailRules();
         showStep(2);
         try { _gx('trn_step2_view', { format: _fmt }); } catch(_) {}
         return;
       } else if (_fmt === 'liga') {
-        html = `
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">${t('trn-rule-legs')}</span>
-              <span class="trn-rule-hint">${t('trn-rule-legs-hint')}</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-idavuelta" class="trn-toggle-input" />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>`;
+        html = _ruleRow('trn-rule-idavuelta', 'trn-rule-legs', 'trn-rule-legs-off', 'trn-rule-legs-on', false);
       } else if (_fmt === 'champions' || (_fmt === 'copa' && _rules.copaMode === 'groups')) {
-        html = `
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">${t('trn-rule-group-stage')}</span>
-              <span class="trn-rule-hint">${t('trn-rule-group-hint2')}</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-grupos-idavuelta" class="trn-toggle-input" />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>
-          <label class="trn-rule-row">
-            <div class="trn-rule-body">
-              <span class="trn-rule-name">${t('trn-rule-ko-stage')}</span>
-              <span class="trn-rule-hint">${t('trn-rule-ko-hint')}</span>
-            </div>
-            <div class="trn-toggle-wrap">
-              <input type="checkbox" id="trn-rule-ko-idavuelta" class="trn-toggle-input" checked />
-              <div class="trn-toggle"></div>
-            </div>
-          </label>`;
+        html =
+          _ruleRow('trn-rule-grupos-idavuelta', 'trn-rule-group-stage', 'trn-rule-group-hint-off', 'trn-rule-group-hint-on', false) +
+          _ruleRow('trn-rule-ko-idavuelta',     'trn-rule-ko-stage',    'trn-rule-ko-hint-off',    'trn-rule-ko-hint-on',    true);
       }
       container.innerHTML = html;
+      // Wire dynamic hints for all rendered toggles
+      const map = {
+        'trn-rule-idavuelta':        ['trn-rule-legs-off',       'trn-rule-legs-on'],
+        'trn-rule-grupos-idavuelta': ['trn-rule-group-hint-off', 'trn-rule-group-hint-on'],
+        'trn-rule-ko-idavuelta':     ['trn-rule-ko-hint-off',    'trn-rule-ko-hint-on'],
+      };
+      container.querySelectorAll('.trn-toggle-input').forEach(cb => {
+        const hintEl = document.getElementById('hint-' + cb.id);
+        const [offKey, onKey] = map[cb.id] || [];
+        if (hintEl && offKey) cb.addEventListener('change', () => { hintEl.textContent = cb.checked ? t(onKey) : t(offKey); });
+      });
     }
     showStep(2);
     try { _gx('trn_step2_view', { format: _fmt }); } catch(_) {}
