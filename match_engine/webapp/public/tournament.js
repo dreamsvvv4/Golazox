@@ -2371,9 +2371,9 @@ const TRN = (() => {
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-gf" title="Goles">${r.gf} G</span>
             <span class="trn-stats-ratio">${r.mp ? (r.gf / r.mp).toFixed(1) : '0.0'}/p</span>
             <span class="trn-stats-mp" title="Partidos">${r.mp} PJ</span>
+            <span class="trn-stats-gf" title="Goles">${r.gf} G</span>
           </div>`).join('')}
       </div>
       <h3 class="trn-section-h trn-section-h-mt">🛡 Defensas más sólidas</h3>
@@ -2383,8 +2383,8 @@ const TRN = (() => {
             <span class="trn-stats-pos">${i + 1}</span>
             ${_badgeImg(r.slug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
-            <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
             <span class="trn-stats-ratio">${r.mp ? (r.w / r.mp * 100).toFixed(0) : '0'}% V</span>
+            <span class="trn-stats-gf" title="Goles en contra">${r.ga} GC</span>
           </div>`).join('')}
       </div>
       <div id="trn-xi-section">
