@@ -3570,6 +3570,19 @@ body {
 .btn-rivalry-icon { font-size: .9rem; }
 .btn-rivalry-lbl  { font-size: .7rem; }
 
+.btn-rivalry--loading {
+  opacity: .7;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(0,212,255,.12) 0%, rgba(0,180,255,.08) 100%);
+  border-color: rgba(0,212,255,.3);
+  color: rgba(0,212,255,.8);
+}
+@keyframes pulse-rivalry {
+  0%,100% { box-shadow: 0 0 8px rgba(0,212,255,.1); }
+  50%      { box-shadow: 0 0 20px rgba(0,212,255,.45); }
+}
+.btn-rivalry--loading { animation: pulse-rivalry .9s ease-in-out infinite; }
+
 .btn-surprise-mini {
   width: 2rem; height: 2rem; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;

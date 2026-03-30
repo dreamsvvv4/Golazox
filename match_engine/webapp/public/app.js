@@ -26,7 +26,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
-    'btn-rivalry':'Rivalidades',
+    'btn-rivalry':'Rivalidades','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
@@ -165,7 +165,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
-    'btn-rivalry':'Rivalries',
+    'btn-rivalry':'Rivalries','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
@@ -764,86 +764,190 @@ function surpriseMe() {
   showToast('⚡ ¡Enfrentamiento aleatorio!');
 }
 
-// ── Grandes Rivalidades Mundiales ─────────────────────────────
-const RIVALRIES = [
-  { label: 'El Clásico',            en: 'El Clásico',
-    a: { slug: 'real-madrid',                eras: ['1958','1960','1987','2000','2002','2012','2014','2018','2024'] },
-    b: { slug: 'fc-barcelona',               eras: ['1992','1999','2006','2009','2010','2011','2015','2022'] } },
-  { label: 'Derby della Madonnina', en: 'Derby della Madonnina',
-    a: { slug: 'inter-mailand',              eras: ['1965','1988','2006','2010','2023','2024'] },
-    b: { slug: 'ac-mailand',                 eras: ['1989','1994','2003','2006','2007'] } },
-  { label: 'El Superclásico',       en: 'El Superclásico',
-    a: { slug: 'club-atletico-boca-juniors', eras: ['1981','2007','2025'] },
-    b: { slug: 'club-atletico-river-plate',  eras: ['2001','2015','2025'] } },
-  { label: 'Der Klassiker',         en: 'Der Klassiker',
-    a: { slug: 'fc-bayern-munchen',          eras: ['1974','1975','2012','2013','2019','2020'] },
-    b: { slug: 'borussia-dortmund',          eras: ['1996','1997','2011','2012'] } },
-  { label: 'North West Derby',      en: 'North West Derby',
-    a: { slug: 'manchester-united',          eras: ['1994','1999','2007','2008'] },
-    b: { slug: 'fc-liverpool',               eras: ['1984','2009','2012','2019','2025'] } },
-  { label: 'Old Firm',              en: 'Old Firm',
-    a: { slug: 'celtic-glasgow',             eras: ['1967','1969','1970'] },
-    b: { slug: 'rangers',                    eras: ['2025'] } },
-  { label: 'O Clássico',            en: 'O Clássico',
-    a: { slug: 'benfica-lissabon',           eras: ['2014','2015','2022'] },
-    b: { slug: 'fc-porto',                   eras: ['1994','2003','2004'] } },
-  { label: 'La Eterna Rivalidad',   en: 'Brazil vs Argentina',
-    a: { slug: 'brasilien',                  eras: ['2002','2006','2021','2022'] },
-    b: { slug: 'argentinien',                eras: ['1986','2021','2022','2025'] } },
-  { label: 'Derby de Madrid',       en: 'Madrid Derby',
-    a: { slug: 'real-madrid',                eras: ['2000','2012','2014','2016','2018','2024'] },
-    b: { slug: 'atletico-madrid',            eras: ['2014','2016','2020','2022'] } },
-  { label: 'Derby d\'Italia',       en: 'Derby d\'Italia',
-    a: { slug: 'juventus-turin',             eras: ['1995','2012','2015','2017','2018'] },
-    b: { slug: 'inter-mailand',              eras: ['1965','2006','2010','2023','2024'] } },
-  { label: 'Manchester Derby',      en: 'Manchester Derby',
-    a: { slug: 'manchester-united',          eras: ['1994','1999','2007','2008','2011'] },
-    b: { slug: 'manchester-city',            eras: ['2012','2019','2023','2025'] } },
-  { label: 'Le Classique',          en: 'Le Classique',
-    a: { slug: 'fc-paris-saint-germain',     eras: ['2016','2019','2020'] },
-    b: { slug: 'olympique-marseille',        eras: ['1992','1993','2025'] } },
-  { label: 'La Roja vs La Seleção', en: 'Spain vs Portugal',
-    a: { slug: 'spanien',                    eras: ['2008','2010','2012','2024'] },
-    b: { slug: 'portugal',                   eras: ['2016','2022','2025'] } },
-  { label: 'Ajax vs Porto',         en: 'Ajax vs Porto',
-    a: { slug: 'ajax-amsterdam',             eras: ['1994','1995','2018'] },
-    b: { slug: 'fc-porto',                   eras: ['1994','2003','2004'] } },
-  { label: 'El Gran Duelo Europeo', en: 'Germany vs France',
-    a: { slug: 'deutschland',                eras: ['2014','2022','2025'] },
-    b: { slug: 'frankreich',                 eras: ['1998','2018','2022','2025'] } },
+// ── Partidos Históricos / Grandes Rivalidades ─────────────────
+// Each entry is a SPECIFIC dream match with exact team eras.
+// Covers real finals that happened + fantasy cross-era clashes fans debate.
+const HISTORIC_MATCHES = [
+  // ── Selecciones: finales y sueños ──────────────────────────
+  { label: '¿Pelé o Maradona?',              en: 'Pelé vs Maradona',
+    desc: 'Brasil \'70 · Argentina \'86',
+    a: { slug: 'brasilien',                  era: '1970' },
+    b: { slug: 'argentinien',                era: '1986' } },
+  { label: 'La Tragedia del 82',             en: 'The Tragedy of \'82',
+    desc: 'Brasil \'82 · Alemania \'82',
+    a: { slug: 'brasilien',                  era: '1982' },
+    b: { slug: 'deutschland',                era: '1982' } },
+  { label: 'Final EE.UU. 1994',             en: 'USA \'94 World Cup Final',
+    desc: 'Brasil \'94 · Italia \'94',
+    a: { slug: 'brasilien',                  era: '1994' },
+    b: { slug: 'italien',                    era: '1994' } },
+  { label: 'Beckenbauer vs Cruyff',          en: 'Beckenbauer vs Cruyff',
+    desc: 'Alemania \'74 · Holanda \'74',
+    a: { slug: 'deutschland',                era: '1974' },
+    b: { slug: 'niederlande',                era: '1974' } },
+  { label: 'Final Sudáfrica 2010',           en: '2010 World Cup Final',
+    desc: 'España \'10 · Holanda \'10',
+    a: { slug: 'spanien',                    era: '2010' },
+    b: { slug: 'niederlande',                era: '2010' } },
+  { label: 'El Séptimo Cielo',               en: 'The Seventh Heaven',
+    desc: 'Alemania \'14 · Argentina \'14',
+    a: { slug: 'deutschland',                era: '2014' },
+    b: { slug: 'argentinien',                era: '2014' } },
+  { label: 'Francia 98 vs Brasil 98',        en: 'France \'98 vs Brazil \'98',
+    desc: 'Francia \'98 · Brasil \'98',
+    a: { slug: 'frankreich',                 era: '1998' },
+    b: { slug: 'brasilien',                  era: '1998' } },
+  // ── El Clásico y sus versiones míticas ────────────────────
+  { label: 'Galácticos vs Los Invencibles',  en: 'Galacticos vs The Invincibles',
+    desc: 'Real Madrid \'02 · Arsenal \'04',
+    a: { slug: 'real-madrid',                era: '2002' },
+    b: { slug: 'fc-arsenal',                 era: '2004' } },
+  { label: 'El Treble vs Los Invencibles',   en: 'Treble vs The Invincibles',
+    desc: 'Manchester United \'99 · Arsenal \'04',
+    a: { slug: 'manchester-united',          era: '1999' },
+    b: { slug: 'fc-arsenal',                 era: '2004' } },
+  { label: 'MSN vs BBC',                     en: 'MSN vs BBC',
+    desc: 'Barcelona \'15 · Real Madrid \'15',
+    a: { slug: 'fc-barcelona',               era: '2015' },
+    b: { slug: 'real-madrid',                era: '2015' } },
+  { label: 'Mou vs Pep: El Clásico',         en: 'Mourinho vs Guardiola',
+    desc: 'Real Madrid \'12 · Barcelona \'11',
+    a: { slug: 'real-madrid',                era: '2012' },
+    b: { slug: 'fc-barcelona',               era: '2011' } },
+  { label: 'Di Stéfano vs el Dream Team',    en: 'Di Stéfano vs the Dream Team',
+    desc: 'Real Madrid \'60 · Barcelona \'92',
+    a: { slug: 'real-madrid',                era: '1960' },
+    b: { slug: 'fc-barcelona',               era: '1992' } },
+  // ── Duelos legendarios europeos ───────────────────────────
+  { label: 'Maradona vs Messi',              en: 'Maradona vs Messi',
+    desc: 'Nápoles \'88 · Barcelona \'09',
+    a: { slug: 'ssc-neapel',                 era: '1988' },
+    b: { slug: 'fc-barcelona',               era: '2009' } },
+  { label: 'La Final de Múnich 99',          en: 'Munich \'99 Final',
+    desc: 'Manchester United \'99 · Bayern \'99',
+    a: { slug: 'manchester-united',          era: '1999' },
+    b: { slug: 'fc-bayern-munchen',          era: '1999' } },
+  { label: 'El Milagro de Estambul',         en: 'The Istanbul Miracle',
+    desc: 'AC Milán \'03 · Liverpool \'05',
+    a: { slug: 'ac-mailand',                 era: '2003' },
+    b: { slug: 'fc-liverpool',               era: '2005' } },
+  { label: 'La Semifinal de Milán',          en: 'The Milan Semi \'10',
+    desc: 'Inter \'10 · Barcelona \'10',
+    a: { slug: 'inter-mailand',              era: '2010' },
+    b: { slug: 'fc-barcelona',              era: '2010' } },
+  { label: 'La Final de Ámsterdam',          en: 'Amsterdam \'95 Final',
+    desc: 'Ajax \'95 · Juventus \'96',
+    a: { slug: 'ajax-amsterdam',             era: '1995' },
+    b: { slug: 'juventus-turin',             era: '1996' } },
+  { label: 'Platini vs el Dream Team',       en: 'Platini vs the Dream Team',
+    desc: 'Juventus \'85 · Barcelona \'92',
+    a: { slug: 'juventus-turin',             era: '1985' },
+    b: { slug: 'fc-barcelona',              era: '1992' } },
+  { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',
+    desc: 'Bayern \'13 · Dortmund \'12',
+    a: { slug: 'fc-bayern-munchen',          era: '2013' },
+    b: { slug: 'borussia-dortmund',          era: '2012' } },
+  { label: 'Los Reyes de Europa: \'73 vs \'74', en: 'Kings of Europe: \'73 vs \'74',
+    desc: 'Ajax \'73 · Bayern \'74',
+    a: { slug: 'ajax-amsterdam',             era: '1973' },
+    b: { slug: 'fc-bayern-munchen',          era: '1974' } },
+  { label: 'Milán \'94 vs Liverpool \'84',   en: 'Milan \'94 vs Liverpool \'84',
+    desc: 'AC Milán \'94 · Liverpool \'84',
+    a: { slug: 'ac-mailand',                 era: '1994' },
+    b: { slug: 'fc-liverpool',              era: '1984' } },
+  { label: 'Grande Inter vs el Madrid \'66', en: 'Grande Inter vs Real Madrid \'66',
+    desc: 'Inter \'65 · Real Madrid \'66',
+    a: { slug: 'inter-mailand',              era: '1965' },
+    b: { slug: 'real-madrid',                era: '1966' } },
+  // ── Sueños ──────────────────────────────────────────────
+  { label: 'El Superclásico',                en: 'El Superclásico',
+    desc: 'Boca \'07 · River \'15',
+    a: { slug: 'club-atletico-boca-juniors', era: '2007' },
+    b: { slug: 'club-atletico-river-plate',  era: '2015' } },
+  { label: 'Ronaldo vs Ronaldo',             en: 'Ronaldo vs Ronaldo',
+    desc: 'Brasil \'02 · Real Madrid \'18',
+    a: { slug: 'brasilien',                  era: '2002' },
+    b: { slug: 'real-madrid',                era: '2018' } },
+  { label: 'Pep vs Jupp',                    en: 'Pep vs Jupp',
+    desc: 'Barcelona \'11 · Bayern \'13',
+    a: { slug: 'fc-barcelona',               era: '2011' },
+    b: { slug: 'fc-bayern-munchen',          era: '2013' } },
+  { label: 'Londres vs Madrid en Kiev',      en: 'London vs Madrid in Kyiv',
+    desc: 'Liverpool \'19 · Real Madrid \'18',
+    a: { slug: 'fc-liverpool',              era: '2019' },
+    b: { slug: 'real-madrid',               era: '2018' } },
+  { label: 'Porto de Mourinho vs Galácticos',en: 'Mourinho\'s Porto vs Galácticos',
+    desc: 'Porto \'04 · Real Madrid \'02',
+    a: { slug: 'fc-porto',                   era: '2004' },
+    b: { slug: 'real-madrid',                era: '2002' } },
+  { label: 'Los Profetas del Fútbol Total',  en: 'Prophets of Total Football',
+    desc: 'Ajax \'71 · AC Milán \'63',
+    a: { slug: 'ajax-amsterdam',             era: '1971' },
+    b: { slug: 'ac-mailand',                 era: '1963' } },
+  { label: 'La Décima vs el Doblete Atlético',en: 'La Décima vs Atlético\'s Double',
+    desc: 'Real Madrid \'14 · Atlético \'16',
+    a: { slug: 'real-madrid',                era: '2014' },
+    b: { slug: 'atletico-madrid',            era: '2016' } },
+  { label: 'Maradona en Nápoles vs Liverpool 84', en: 'Maradona\'s Napoli vs Liverpool \'84',
+    desc: 'Nápoles \'87 · Liverpool \'84',
+    a: { slug: 'ssc-neapel',                 era: '1987' },
+    b: { slug: 'fc-liverpool',              era: '1984' } },
 ];
 
-function rivalryMe() {
+async function rivalryMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
-  const rivalry = RIVALRIES[Math.floor(Math.random() * RIVALRIES.length)];
-  const resolve = (side) => {
-    const entry = _catalog.find(c => c.slug === side.slug);
-    if (!entry) return null;
-    const available = entry.seasons || [];
-    if (!available.length) return null;
-    // Pick a classic era if it exists in catalog, else fall back to any available era
-    const valid = side.eras.filter(e => available.includes(e));
-    const era = valid.length
-      ? valid[Math.floor(Math.random() * valid.length)]
-      : available[Math.floor(Math.random() * available.length)];
-    return { slug: side.slug, era };
-  };
-  const tA = resolve(rivalry.a);
-  const tB = resolve(rivalry.b);
-  if (!tA || !tB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivalidades')); return; }
 
-  document.getElementById('teamA').value = tA.slug;
-  document.getElementById('teamB').value = tB.slug;
-  _populateEraSelect(tA.slug, 'A');
-  _populateEraSelect(tB.slug, 'B');
-  const selA = document.getElementById('eraA'); if (selA && tA.era) selA.value = tA.era;
-  const selB = document.getElementById('eraB'); if (selB && tB.era) selB.value = tB.era;
+  const match = HISTORIC_MATCHES[Math.floor(Math.random() * HISTORIC_MATCHES.length)];
+  const entryA = _catalog.find(c => c.slug === match.a.slug);
+  const entryB = _catalog.find(c => c.slug === match.b.slug);
+  if (!entryA || !entryB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivalidades')); return; }
+
+  // Set teams + eras
+  document.getElementById('teamA').value = match.a.slug;
+  document.getElementById('teamB').value = match.b.slug;
+  _populateEraSelect(match.a.slug, 'A');
+  _populateEraSelect(match.b.slug, 'B');
+  const selA = document.getElementById('eraA');
+  const selB = document.getElementById('eraB');
+  if (selA && match.a.era) selA.value = match.a.era;
+  if (selB && match.b.era) selB.value = match.b.era;
+  _eraConfirmed.A = true;
+  _eraConfirmed.B = true;
+  _lookupCache.A = null;
+  _lookupCache.B = null;
   _pickerState.A = { type: null, league: null }; _renderPicker('A');
   _pickerState.B = { type: null, league: null }; _renderPicker('B');
   _updateClashButton();
-  _gx('rivalry_me', { rivalry: rivalry.label });
-  const name = _lang === 'en' ? rivalry.en : rivalry.label;
-  showToast(`🔥 ${name}`);
+
+  // Show loading state on button
+  const btn = document.getElementById('btn-rivalry');
+  const iconEl = btn?.querySelector('.btn-rivalry-icon');
+  const lblEl  = btn?.querySelector('.btn-rivalry-lbl');
+  if (btn)    { btn.disabled = true; btn.classList.add('btn-rivalry--loading'); }
+  if (iconEl) iconEl.textContent = '⏳';
+  if (lblEl)  lblEl.textContent  = t('rivalry-loading') || 'Buscando…';
+
+  const name = _lang === 'en' ? match.en : match.label;
+  showToast(`🔥 ${name}…`);
+
+  // Scroll to top of input panel so teams are visible while loading
+  document.querySelector('.input-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Auto-download lineups for both teams concurrently
+  try {
+    await Promise.all([handleLookup('A'), handleLookup('B')]);
+  } finally {
+    if (btn)    { btn.disabled = false; btn.classList.remove('btn-rivalry--loading'); }
+    if (iconEl) iconEl.textContent = '🔥';
+    if (lblEl)  lblEl.textContent  = t('btn-rivalry') || 'Rivalidades';
+  }
+
+  _gx('rivalry_me', { rivalry: match.label });
+
+  // Scroll VS button into view and flash a hint
+  const vsLbl = document.getElementById('vs-clash-label');
+  document.getElementById('vs-clash')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  showToast(`✅ ${match.desc} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
 }
 function _deepLinkShare() {
   if (!_shareData) return;
