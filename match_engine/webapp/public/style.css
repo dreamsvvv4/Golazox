@@ -245,9 +245,15 @@ body {
 
 /* ── Main wrap ───────────────────────────────────────────── */
 .main-wrap {
-  max-width: 1200px; margin: 2.5rem auto;
+  max-width: 1300px; margin: 2.5rem auto;
   padding: 0 1.5rem;
   display: flex; flex-direction: column; gap: 2rem;
+}
+/* Match tab content stays focused and centered */
+#main-match-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* ── Input panel ─────────────────────────────────────────── */
@@ -5961,13 +5967,18 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 ══════════════════════════════════════════════════════════ */
 @media (min-width: 1100px) {
 
-  /* ── Widen global containers ── */
+  /* ── Header stays full-width ── */
   .header-inner  { max-width: 1520px; }
-  .main-wrap     { max-width: 1520px; }
-  #main-trn-wrap { max-width: 1520px; padding: 0 2rem 4rem; }
 
-  /* Wizard: a touch wider so team cards breathe */
-  #trn-wizard    { max-width: 780px; }
+  /* Partido stays focused at 1000px (set on #main-match-wrap above) */
+  /* .main-wrap at 1300px so torneo can use the extra room */
+  #main-match-wrap { max-width: 1000px; }
+
+  /* Tournament gets the full 1300px track */
+  #main-trn-wrap { max-width: 1300px; padding: 0 1.5rem 4rem; }
+
+  /* Wizard fills ~70% of trn-wrap — prominent but not edge-to-edge */
+  #trn-wizard    { max-width: 920px; }
 
   /* ── Tournament dashboard: sticky poster left · content right ── */
   #trn-dashboard:not(.hidden) {
