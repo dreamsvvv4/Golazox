@@ -439,8 +439,8 @@ const TM_CLUBS = {
   // ── Ligue 1 additions ─────────────────────────────────────────
   'angers':                    { id: 3284,  slug: 'angers' },
   'sco angers':                { id: 3284,  slug: 'angers' },
-  'lorient':                   { id: 1158,  slug: 'lorient' },
-  'fc lorient':                { id: 1158,  slug: 'lorient' },
+  'lorient':                   { id: 1158,  slug: 'fc-lorient' },
+  'fc lorient':                { id: 1158,  slug: 'fc-lorient' },
   'le havre':                  { id: 1174,  slug: 'le-havre' },
   // ── Ligue 2 additions ─────────────────────────────────────────
   'guingamp':                  { id: 296,   slug: 'guingamp' },
