@@ -328,9 +328,10 @@ function buildBench(teamInput, eraInput, knownSquadMatch, maxSize = 7, starterNa
         bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM',
                      rating: p.rating || undefined, isReal: true });
       });
-  } else if (knownSquadMatch && knownSquadMatch.players.length > 0) {
-    // Fall back to extra players from the starting pool (scraped squads)
-    const extras = knownSquadMatch.players
+  } else if (knownSquadMatch) {
+    // Fall back to extra players from the full squad when available (scraped/override squads)
+    const pool = (knownSquadMatch.allPlayers || knownSquadMatch.players || []);
+    const extras = pool
       .filter(p => !starterNames.has(p.name))
       .slice(0, maxSize);
     extras.forEach((p, i) => {
@@ -1129,10 +1130,12 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
   const _pickSub = (injuredPos, usedSubs, bench) => {
     if (!bench || !bench.length) return null;
     const group = _posGroup(injuredPos);
-    // Prefer same positional group, then any available
-    const available = bench.filter(p => !usedSubs.has(p.name));
-    const sameGroup = available.filter(p => _posGroup(p.position) === group);
-    return (sameGroup[0] || available[0]) || null;
+    // Only real bench players; never use GK to replace an outfield player
+    const real = bench.filter(p => p.isReal === true && !usedSubs.has(p.name));
+    const pool = group !== 'GK' ? real.filter(p => p.position !== 'GK') : real;
+    if (!pool.length) return null;
+    const sameGroup = pool.filter(p => _posGroup(p.position) === group);
+    return sameGroup[0] || pool[0];
   };
   const usedSubsA = new Set(), usedSubsB = new Set();
   const injAList  = injuriesA || [];
