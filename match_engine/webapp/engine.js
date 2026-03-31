@@ -97,20 +97,20 @@ const FORMATION_TEMPLATES = {
 const DEFAULT_FORMATION = '4-3-3';
 
 // Generic player names pool (used when no real squad is known)
-// Named with football-flavoured generic identifiers to make output readable.
+// Real-looking surnames so they read naturally in the event feed.
 const GENERIC_NAMES = {
-  GK:  ['Keeper', 'Portero', 'Goleiro'],
-  RB:  ['Right-Back', 'Lateral D', 'Terzino D'],
-  CB:  ['Stopper', 'Centre-Back', 'Difensore'],
-  LB:  ['Left-Back', 'Lateral I', 'Terzino S'],
-  DM:  ['Anchor', 'Mediano', 'Pivote'],
-  CM:  ['Midfielder', 'Centrocampista', 'Milieu'],
-  AM:  ['Trequartista', 'Mediapunta', 'Enganche'],
-  RM:  ['Right-Mid', 'Interior D', 'Carrilero D'],
-  LM:  ['Left-Mid', 'Interior I', 'Carrilero I'],
-  RW:  ['Right-Wing', 'Extremo D', 'Ala D'],
-  LW:  ['Left-Wing', 'Extremo I', 'Ala I'],
-  ST:  ['Striker', 'Delantero', 'Centravanti'],
+  GK:  ['García', 'Müller', 'Rossi'],
+  RB:  ['Santos', 'Fernández', 'Becker'],
+  CB:  ['Martínez', 'Silva', 'Wagner'],
+  LB:  ['López', 'Costa', 'Fischer'],
+  DM:  ['Rodríguez', 'Moreira', 'Schulz'],
+  CM:  ['González', 'Ferreira', 'Schneider'],
+  AM:  ['Hernández', 'Carvalho', 'Meyer'],
+  RM:  ['Díaz', 'Oliveira', 'Braun'],
+  LM:  ['Torres', 'Sousa', 'Klein'],
+  RW:  ['Ramírez', 'Alves', 'Weber'],
+  LW:  ['Flores', 'Pereira', 'Hartmann'],
+  ST:  ['Sánchez', 'Lima', 'Hoffmann'],
 };
 
 // Squad database — loaded from squads.js (60+ historical & modern teams).
