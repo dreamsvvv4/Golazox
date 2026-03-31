@@ -2081,12 +2081,6 @@ async function handleSimulate() {
     if (vsLblEl) vsLblEl.textContent = t('vs-recalc') || '⏳ Simulando…';
   }
 
-  // Brief weather burst effect at simulation start
-  if (_selectedWeather) {
-    document.body.classList.add('wx-burst');
-    setTimeout(() => document.body.classList.remove('wx-burst'), 2800);
-  }
-
   // Resolve slug → localized display name for the match UI
   const slugA = document.getElementById('teamA').value.trim();
   const slugB = document.getElementById('teamB').value.trim();
@@ -2176,7 +2170,7 @@ async function handleSimulate() {
   } finally {
     setLoading(false);
     _updateClashButton();  // restores vs-ready state + re-enables button
-    document.body.classList.remove('wx-burst');
+
   }
 }
 
