@@ -549,6 +549,19 @@ function saveToSquadsDir(teamName, era, squadData) {
   if (!squadData || squadData.source?.startsWith('Local DB')) return;
   if (!squadData.players || squadData.players.length < 8) return;
 
+  // Guard: if the scraped teamLabel doesn't loosely match what we were searching for,
+  // skip the save. Prevents "New England Revolution" from overwriting "England".
+  if (squadData.teamLabel) {
+    const normalize = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const query     = normalize(teamName);
+    const label     = normalize(squadData.teamLabel);
+    // The query must appear inside the label OR the label inside the query
+    if (!label.includes(query) && !query.includes(label)) {
+      console.warn(`[squads] Skipping save: query "${teamName}" doesn't match scraped label "${squadData.teamLabel}"`);
+      return;
+    }
+  }
+
   // Always use the canonical TM slug when the team is known, so all scrapers
   // (BDFutbol, SportsDB, Wikipedia, Transfermarkt) write to the same file.
   const slug     = _resolveSlug(teamName);
