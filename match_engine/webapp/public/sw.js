@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v32';
+const CACHE_VERSION  = 'v34';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -90,11 +90,11 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // ── app.js, style.css ─────────────────────────────────────────────────────
+  // ── app.js, style.css, tournament.js ─────────────────────────────────────
   // If the URL has a version query (?v=49) treat it as network-only so the
   // browser ALWAYS gets the exact versioned file from the server — never
   // from cache. Versioned assets are immutable: a new version = new URL.
-  if (p === '/app.js' || p === '/style.css') {
+  if (p === '/app.js' || p === '/style.css' || p === '/tournament.js') {
     if (url.search) {
       // Has ?v=... → always fetch fresh, never cache
       event.respondWith(fetch(request).catch(() => caches.match(request)));

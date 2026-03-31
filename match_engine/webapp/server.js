@@ -91,7 +91,7 @@ for (const file of _squadFiles) {
     const group = _meta.group || d.group || '🌍 Otros';
     const nameEn = _meta.nameEn || d.nameEn || d.name || slug;
     const nameEs = _meta.nameEs || d.nameEs || d.nameEn || d.name || slug;
-    const badge = d.badgeLocalPath || BADGE_PLACEHOLDER;
+    const badge = _meta.badgeLocalPath || d.badgeLocalPath || BADGE_PLACEHOLDER;
     // Compute team OVR: average of deriveRatings() using good scraped data when available,
     // otherwise pure name-based heuristic. Stored so the tournament can bias match xG.
     const _latestSn      = seasons[0];

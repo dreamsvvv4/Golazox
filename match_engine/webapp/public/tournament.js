@@ -21,7 +21,7 @@ const TRN = (() => {
   const VALID_COUNTS = {
     copa:        [4, 8, 16, 32],
     copa_groups: [8, 12, 16, 20, 24, 32],
-    liga:        [4, 6, 8, 10, 12, 14, 16, 18, 20],
+    liga:        [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
     champions:   [8, 12, 16, 20, 24, 32],  // kept for backward compat
   };
 
@@ -346,13 +346,14 @@ const TRN = (() => {
     const el = $('trn-pre-draw');
     if (!el) return;
     el.classList.remove('hidden');
-    if (_fmt === 'copa') {
+    const _useGroups = (_fmt === 'champions') || (_fmt === 'copa' && _rules.copaMode === 'groups');
+    if (_fmt === 'copa' && !_useGroups) {
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">� ${_esc(_roundLabel(_numTeams))}</span>
+        <span class="trn-label">🏆 ${_esc(_roundLabel(_numTeams))}</span>
         <button class="trn-draw-reshuffle" data-action="reshuffleDraw">${t('trn-draw-reshuffle')}</button>
       </div><div class="trn-pre-draw-bkt-wrap">${_buildPreDrawBracket(_draw)}</div>`;
       el.innerHTML = html;
-    } else if (_fmt === 'champions') {
+    } else if (_useGroups) {
       let html = `<div class="trn-draw-header">
         <span class="trn-label">${t('trn-draw-groups-title')}</span>
         <button class="trn-draw-reshuffle" data-action="reshuffleGroupsDraw">${t('trn-draw-reshuffle')}</button>
@@ -2340,20 +2341,35 @@ const TRN = (() => {
         .then(r => r.ok ? r.json() : null).catch(() => null);
     }));
 
-    // Map lowercase name → position string
-    const nameToPos = {};
-    lookupResults.forEach(res => {
-      const ld = res.value;
-      if (!ld?.players) return;
-      ld.players.forEach(p => { if (p.name) nameToPos[p.name.toLowerCase()] = p.position; });
-    });
-
-    // Position groups
+    // Position groups (defined early so posGroup is available below)
     const GK_SET  = new Set(['GK']);
     const DEF_SET = new Set(['CB','LB','RB','WB','LWB','RWB','SW']);
     const MID_SET = new Set(['CM','CDM','CAM','LM','RM','DM','LCM','RCM']);
     const ATT_SET = new Set(['ST','CF','LW','RW','SS','FW']);
     const posGroup = pos => GK_SET.has(pos) ? 'gk' : DEF_SET.has(pos) ? 'def' : MID_SET.has(pos) ? 'mid' : ATT_SET.has(pos) ? 'att' : 'unk';
+
+    // Map lowercase name → position string; also build supplementary pool per group
+    // (players from looked-up rosters who didn't score/win MOM — used to fill empty slots)
+    const nameToPos = {};
+    const suppByGroup = { gk: [], def: [], mid: [], att: [] };
+    lookupResults.forEach((res, i) => {
+      const ld = res.value;
+      if (!ld?.players) return;
+      const tk    = teamKeys[i];
+      const sep   = tk.indexOf('|');
+      const tSlug = tk.slice(0, sep);
+      const tEra  = tk.slice(sep + 1);
+      const tName = top30.find(p => p.teamSlug === tSlug)?.team || '';
+      ld.players.forEach(p => {
+        if (!p.name) return;
+        nameToPos[p.name.toLowerCase()] = p.position;
+        // Add to supplementary if not already in scoring pool
+        if (!pm[p.name + '|' + tSlug]) {
+          const g = posGroup(p.position);
+          if (suppByGroup[g]) suppByGroup[g].push({ name: p.name, team: tName, teamSlug: tSlug, era: tEra, goals: 0, mom: 0, score: 0, pos: p.position, group: g });
+        }
+      });
+    });
 
     const tagged = players.map(p => {
       const pos = nameToPos[p.name.toLowerCase()];
@@ -2375,13 +2391,25 @@ const TRN = (() => {
         used.add(key);
       }
     }
-    // Pass 2: fill gaps from remaining players in score order
+    // Pass 2: fill gaps using remaining scorers/MOM in score order
     const remaining = tagged.filter(p => !used.has(p.name + '|' + p.teamSlug));
     for (const g of ['gk','def','mid','att']) {
       while (selected[g].length < quotas[g] && remaining.length) {
         const p = remaining.shift();
         selected[g].push({ ...p, pos: '?' });
         used.add(p.name + '|' + p.teamSlug);
+      }
+    }
+    // Pass 3: fill any still-empty slots from supplementary lineup pool
+    // (defenders/GKs who played but didn't score — common in short tournaments)
+    for (const g of ['gk', 'def', 'mid', 'att']) {
+      let si = 0;
+      while (selected[g].length < quotas[g] && si < suppByGroup[g].length) {
+        const p = suppByGroup[g][si++];
+        if (!used.has(p.name + '|' + p.teamSlug)) {
+          selected[g].push(p);
+          used.add(p.name + '|' + p.teamSlug);
+        }
       }
     }
     return selected;
