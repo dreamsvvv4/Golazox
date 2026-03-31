@@ -778,30 +778,70 @@ function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE, e
 // Kicker selection weights by position (best penalty takers first)
 const PENALTY_KICK_WEIGHTS = { ST:5, AM:4, RW:4, LW:4, CM:3, RM:3, LM:3, DM:2, RB:1.5, LB:1.5, CB:1, GK:0.3 };
 
-function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA = new Set(), excludedB = new Set()) {
+// Penalty specialists — historically near-perfect takers: minimal random error
+const PEN_SPECIALISTS = new Set([
+  'Gaizka Mendieta','Ronald Koeman','Cristiano Ronaldo','Matt Le Tissier',
+  'Andrea Pirlo','Xabi Alonso','Zico','Michel Platini','Giovanni van Bronckhorst',
+  'Roberto Carlos','Zlatan Ibrahimovic','Robert Lewandowski','Luka Modric',
+  'David Beckham','Paul Scholes','Juninho Pernambucano',
+]);
+
+function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA = new Set(), excludedB = new Set(), preserveOrder = false) {
   const rand = mulberry32(seed + 13);
 
-  // Conversion rate: base 76%, adjusted by attacker quality and opposing GK
-  const convA = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsA.attack      - 75) / 150 - (ratingsB.goalkeeping - 72) / 90));
-  const convB = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsB.attack      - 75) / 150 - (ratingsA.goalkeeping - 72) / 90));
+  // Find GKs (needed for per-kick metadata and reflex modifier)
+  const gkA = lineupA.players.find(p => p.position === 'GK') || { name: 'Portero', rating: 72 };
+  const gkB = lineupB.players.find(p => p.position === 'GK') || { name: 'Portero', rating: 72 };
+
+  // GK reflex quality modifier (each team's GK affects the opponent's conversion)
+  const gkRatA = Math.max(60, Math.min(99, gkA.rating || ratingsA.goalkeeping || 72));
+  const gkRatB = Math.max(60, Math.min(99, gkB.rating || ratingsB.goalkeeping || 72));
+  const gkModA = (gkRatA - 72) / 260; // A's GK saves more (reduces B's conv)
+  const gkModB = (gkRatB - 72) / 260; // B's GK saves more (reduces A's conv)
+
+  // Team base conversion including GK modifier
+  const baseConvA = 0.76 + (ratingsA.attack - 75) / 150 - gkModB;
+  const baseConvB = 0.76 + (ratingsB.attack - 75) / 150 - gkModA;
 
   // Sort players by penalty-taking priority — exclude red-carded and injured players
+  // preserveOrder=true: respect caller's array order (user-defined taker sequence)
   const byWeight = p => PENALTY_KICK_WEIGHTS[p.position] || 0;
-  const kickersA = [...lineupA.players].filter(p => !excludedA.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
-  const kickersB = [...lineupB.players].filter(p => !excludedB.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
+  const filteredA = [...lineupA.players].filter(p => !excludedA.has(p.name) && p.position !== 'GK');
+  const filteredB = [...lineupB.players].filter(p => !excludedB.has(p.name) && p.position !== 'GK');
+  const kickersA = preserveOrder ? filteredA : filteredA.sort((a, b) => byWeight(b) - byWeight(a));
+  const kickersB = preserveOrder ? filteredB : filteredB.sort((a, b) => byWeight(b) - byWeight(a));
   // Safety: if all players excluded (shouldn't happen), fall back to full squad minus GK
   const safeA = kickersA.length ? kickersA : lineupA.players.filter(p => p.position !== 'GK');
   const safeB = kickersB.length ? kickersB : lineupB.players.filter(p => p.position !== 'GK');
+
+  // Per-kick conversion probability
+  function kickProb(player, baseConv, kickIdx, isSd) {
+    // Individual rating bonus (ratings roughly 60-95, centered at 75)
+    const pRat = Math.max(60, Math.min(99, player.rating || 75));
+    const playerBonus = (pRat - 75) / 170;
+    // Specialist trait: reduces random error, raises floor significantly
+    const specBonus = PEN_SPECIALISTS.has(player.name) ? 0.08 : 0;
+    // Stage fright: kicks 4+ in regulation, all sudden death kicks
+    const fright    = kickIdx >= 3 || isSd;
+    const frightDrop = fright ? (isSd ? 0.07 : 0.04) : 0;
+    // Specialists feel pressure less
+    const netFright  = specBonus > 0 ? frightDrop * 0.3 : frightDrop;
+    return Math.min(0.94, Math.max(0.48, baseConv + playerBonus + specBonus - netFright));
+  }
 
   const shotsA = [], shotsB = [];
   let scoreA = 0, scoreB = 0;
 
   // Regulation 5 kicks
   for (let r = 0; r < 5; r++) {
-    const goA = rand() < convA;
-    const goB = rand() < convB;
-    shotsA.push({ name: safeA[r % safeA.length].name, scored: goA });
-    shotsB.push({ name: safeB[r % safeB.length].name, scored: goB });
+    const pA = safeA[r % safeA.length];
+    const pB = safeB[r % safeB.length];
+    const pA_spec = PEN_SPECIALISTS.has(pA.name);
+    const pB_spec = PEN_SPECIALISTS.has(pB.name);
+    const goA = rand() < kickProb(pA, baseConvA, r, false);
+    const goB = rand() < kickProb(pB, baseConvB, r, false);
+    shotsA.push({ name: pA.name, position: pA.position, scored: goA, isSpecialist: pA_spec, stageFright: r >= 3, gkName: gkB.name });
+    shotsB.push({ name: pB.name, position: pB.position, scored: goB, isSpecialist: pB_spec, stageFright: r >= 3, gkName: gkA.name });
     if (goA) scoreA++;
     if (goB) scoreB++;
     // Early finish: mathematically impossible to catch up
@@ -812,10 +852,14 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA
   // Sudden death — max 20 extra rounds (40 kicks), statistically impossible to exhaust
   let sd = 5;
   for (let round = 0; round < 20 && scoreA === scoreB; round++) {
-    const goA = rand() < convA;
-    const goB = rand() < convB;
-    shotsA.push({ name: safeA[sd % safeA.length].name, scored: goA });
-    shotsB.push({ name: safeB[sd % safeB.length].name, scored: goB });
+    const pA = safeA[sd % safeA.length];
+    const pB = safeB[sd % safeB.length];
+    const pA_spec = PEN_SPECIALISTS.has(pA.name);
+    const pB_spec = PEN_SPECIALISTS.has(pB.name);
+    const goA = rand() < kickProb(pA, baseConvA, sd, true);
+    const goB = rand() < kickProb(pB, baseConvB, sd, true);
+    shotsA.push({ name: pA.name, position: pA.position, scored: goA, isSpecialist: pA_spec, stageFright: true, gkName: gkB.name });
+    shotsB.push({ name: pB.name, position: pB.position, scored: goB, isSpecialist: pB_spec, stageFright: true, gkName: gkA.name });
     if (goA) scoreA++;
     if (goB) scoreB++;
     if (goA !== goB) break; // one scored and the other missed → winner decided
@@ -831,6 +875,8 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA
     shotsA,
     shotsB,
     suddenDeath: shotsA.length > 5,
+    gkA: gkA.name,
+    gkB: gkB.name,
   };
 }
 
@@ -853,13 +899,29 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   }
   // Fast path: penalties-only shootout — no 90-min match simulated
   if (matchMode === 'penalties') {
-    const lineupA  = cachedLineupA ? buildLineupFromCache(cachedLineupA, '') : buildLineup(teamA, eraA, '');
-    const lineupB  = cachedLineupB ? buildLineupFromCache(cachedLineupB, '') : buildLineup(teamB, eraB, '');
+    // When an override is present (allPlayers set by server), use the players directly
+    // so the user's custom kick order is preserved without re-sorting by position weight.
+    const preserveOrder = !!(cachedLineupA?.allPlayers || cachedLineupB?.allPlayers);
+    const mkLineup = (cached, tA, eA) => {
+      if (!cached) return buildLineup(tA, eA, '');
+      if (cached.allPlayers) {
+        // Override: use players as-is (first 5 non-GK = user takers in order; rest = fillers)
+        const p = (cached.players || []).map(pl => ({
+          ...pl,
+          rating: (pl.rating && pl.rating > 0) ? pl.rating : (_calcRating(pl.name, pl.marketValue) ?? 72),
+          position: _getPos(pl.name) || pl.position,
+        }));
+        return { players: p, formation: cached.formation || DEFAULT_FORMATION, name: cached.teamLabel || tA };
+      }
+      return buildLineupFromCache(cached, '');
+    };
+    const lineupA  = mkLineup(cachedLineupA, teamA, eraA);
+    const lineupB  = mkLineup(cachedLineupB, teamB, eraB);
     const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
     const ratingsB = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
     const seed       = [...(teamA + teamB + eraA + eraB)].reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) >>> 0, 17);
     const saltedSeed = (seed ^ ((matchSalt | 0) >>> 0)) >>> 0;
-    const penalties  = simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed);
+    const penalties  = simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed, new Set(), new Set(), preserveOrder);
     return {
       lineups: {
         teamA: { ...lineupA, xg: 0, bench: [] },

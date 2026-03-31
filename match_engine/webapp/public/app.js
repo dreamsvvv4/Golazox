@@ -94,6 +94,14 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
+    'tab-match':'Partido','tab-pen':'Penaltis',
+    'pen-tab-title':'Tanda de Penaltis','pen-tab-sub':'Elige dos equipos y lanza directamente a los penaltis',
+    'pen-team-a':'EQUIPO A','pen-team-b':'EQUIPO B',
+    'pen-shoot-btn':'¡Lanzar Penaltis!','pen-error-no-teams':'Elige los dos equipos antes de lanzar.',
+    'pen-role-kicker':'TIRADOR','pen-role-gk':'PORTERO',
+    'pen-narr-intro':'Llegó el momento de la verdad…','pen-status-round':'Turno','pen-status-sd':'MUERTE SÚBITA','pen-status-done':'FIN DE LA TANDA',
+    'pen-winner-dismiss':'Ver resultado','pen-replay-btn':'Repetir tanda','pen-new-btn':'Nueva tanda',
+    'era-placeholder':'Selecciona un equipo primero',
     'tp-clubs':'Clubes','tp-nations':'Selecciones','tp-special':'Especial','tp-back':'‹ Volver','tp-nations-label':'Selecciones nacionales','tp-leagues-label':'Elige una liga','tp-special-label':'Fantasy & All-Time XIs',
     'tp-loading':'Cargando equipos…','tp-retry':'↺ Reintentar','tp-change-title':'Cambiar',
     'vs-play':'JUGAR','vs-simulate':'▶ SIMULAR','vs-recalc':'⏳ Recalculando…',
@@ -250,6 +258,14 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
+    'tab-match':'Match','tab-pen':'Penalties',
+    'pen-tab-title':'Penalty Shootout','pen-tab-sub':'Pick two teams and go straight to penalties',
+    'pen-team-a':'TEAM A','pen-team-b':'TEAM B',
+    'pen-shoot-btn':'Take Penalties!','pen-error-no-teams':'Select both teams before shooting.',
+    'pen-role-kicker':'KICKER','pen-role-gk':'GOALKEEPER',
+    'pen-narr-intro':'The moment of truth has arrived…','pen-status-round':'Round','pen-status-sd':'SUDDEN DEATH','pen-status-done':'SHOOTOUT OVER',
+    'pen-winner-dismiss':'See result','pen-replay-btn':'Replay shootout','pen-new-btn':'New shootout',
+    'era-placeholder':'Select a team first',
     'tp-clubs':'Clubs','tp-nations':'National teams','tp-special':'Special','tp-back':'‹ Back','tp-nations-label':'National teams','tp-leagues-label':'Choose a league','tp-special-label':'Fantasy & All-Time XIs',
     'tp-loading':'Loading teams…','tp-retry':'↺ Retry','tp-change-title':'Change',
     'vs-play':'PLAY','vs-simulate':'▶ SIMULATE','vs-recalc':'⏳ Recalculating…',
@@ -464,6 +480,7 @@ function applyI18n() {
   if (typeof setMatchMode === 'function' && typeof _matchMode !== 'undefined') setMatchMode(_matchMode);
   // Re-render team pickers so type-select labels (Clubs/Nations/Back…) update
   if (typeof _renderPicker === 'function') { _renderPicker('A'); _renderPicker('B'); }
+  if (typeof _renderPenPicker === 'function') { _renderPenPicker('A'); _renderPenPicker('B'); }
   // Footer
   const ftTag = document.querySelector('.site-footer > p:first-child');
   if (ftTag) ftTag.textContent = t('footer-tagline');
@@ -557,7 +574,8 @@ function setMatchMode(mode) {
 // ── Estadios míticos ────────────────────────────────────────────
 // Local image paths
 const _imgProxy    = f => `/img/stadiums/${f}`;
-const _refImgProxy = f => `/img/referees/${f}`;
+const _REF_IMG_VER  = Date.now();
+const _refImgProxy = f => `/img/referees/${encodeURIComponent(f)}?v=${_REF_IMG_VER}`;
 
 // Palette for initials-avatar fallback (one per referee, hashed from id)
 const _AVATAR_COLORS = [
@@ -1300,6 +1318,874 @@ _fetchCatalog();
 // ── Team Picker ───────────────────────────────────────────
 const _pickerState = { A: { type: null, league: null }, B: { type: null, league: null } };
 
+// ── Penalties Tab Pickers ─────────────────────────────────
+const _penPickerState = { A: { type: null, league: null }, B: { type: null, league: null } };
+let _penPickersInited = false;
+
+// ── Penalties Tab: takers & shootout ─────────────────────
+const PEN_WEIGHTS = { ST:5, AM:4, RW:4, LW:4, CM:3, RM:3, LM:3, DM:2, RB:1.5, LB:1.5, CB:1, GK:0 };
+let _penTakersA = [], _penTakersB = [];      // ordered 5-taker list
+let _penBenchA  = [], _penBenchB  = [];      // remaining outfield players (bench pool)
+let _penGkA     = null,  _penGkB  = null;    // GK objects
+
+function _penFetchTakers() {
+  const teamA = document.getElementById('pen-teamA')?.value;
+  const teamB = document.getElementById('pen-teamB')?.value;
+  const eraA  = document.getElementById('pen-eraA')?.value  || '';
+  const eraB  = document.getElementById('pen-eraB')?.value  || '';
+  if (!teamA || !teamB) return;
+
+  const sec     = document.getElementById('pen-takers-section');
+  const load    = document.getElementById('pen-takers-loading');
+  const ready   = document.getElementById('pen-takers-ready');
+  if (sec)   sec.classList.remove('hidden');
+  if (load)  load.classList.remove('hidden');
+  if (ready) ready.classList.add('hidden');
+  document.getElementById('pen-tv-panel')?.classList.add('hidden');
+
+  const fetchTeam = (slug, era) =>
+    fetch(`/lookup?team=${encodeURIComponent(slug)}&era=${encodeURIComponent(era)}`)
+      .then(r => r.json()).catch(() => ({ found: false }));
+
+  Promise.all([fetchTeam(teamA, eraA), fetchTeam(teamB, eraB)]).then(([luA, luB]) => {
+    const processSquad = (players) => {
+      const all = players || [];
+      const gk  = all.find(p => p.position === 'GK') || null;
+      const out = all.filter(p => p.position !== 'GK')
+        .sort((a, b) => (PEN_WEIGHTS[b.position] || 0) - (PEN_WEIGHTS[a.position] || 0));
+      const takers = out.slice(0, 5);
+      const bench  = out.slice(5);
+      return { gk, takers, bench };
+    };
+
+    const sqA = processSquad(luA.players);
+    const sqB = processSquad(luB.players);
+    _penTakersA = sqA.takers;  _penBenchA = sqA.bench;  _penGkA = sqA.gk;
+    _penTakersB = sqB.takers;  _penBenchB = sqB.bench;  _penGkB = sqB.gk;
+
+    const titleA = document.getElementById('pen-takers-title-a');
+    const titleB = document.getElementById('pen-takers-title-b');
+    if (titleA) titleA.textContent = luA.teamLabel || teamA;
+    if (titleB) titleB.textContent = luB.teamLabel || teamB;
+
+    _renderPenTakersList('a');
+    _renderPenTakersList('b');
+
+    if (load)  load.classList.add('hidden');
+    if (ready) ready.classList.remove('hidden');
+  });
+}
+
+function _renderPenTakersList(side) {
+  const list    = document.getElementById(`pen-takers-${side}`);
+  const benchEl = document.getElementById(`pen-bench-${side}`);
+  const gkEl    = document.getElementById(`pen-gk-row-${side}`);
+  const takers  = side === 'a' ? _penTakersA : _penTakersB;
+  const bench   = side === 'a' ? _penBenchA  : _penBenchB;
+  const gk      = side === 'a' ? _penGkA     : _penGkB;
+
+  // Goalkeeper row
+  if (gkEl) {
+    if (gk) {
+      gkEl.innerHTML =
+        `<span class="pen-gk-icon">🧤</span>` +
+        `<span class="pen-taker-pos" data-pos="GK">GK</span>` +
+        `<span class="pen-taker-name">${escHtml(gk.name)}</span>` +
+        `<span></span>`;
+      gkEl.classList.remove('hidden');
+    } else {
+      gkEl.classList.add('hidden');
+    }
+  }
+
+  // Takers list
+  if (!list) return;
+  list.innerHTML = takers.map((p, i) =>
+    `<li class="pen-taker-item" draggable="true" data-idx="${i}">` +
+    `<span class="pen-taker-num">${i+1}</span>` +
+    `<span class="pen-taker-pos" data-pos="${escHtml(p.position)}">${escHtml(p.position)}</span>` +
+    `<span class="pen-taker-name">${escHtml(p.name)}</span>` +
+    `<button class="pen-taker-swap-btn" data-side="${side}" data-idx="${i}" title="Cambiar tirador">⇄</button>` +
+    `</li>`
+  ).join('');
+  _wirePenDrag(list, side);
+  // Swap buttons
+  list.querySelectorAll('.pen-taker-swap-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      _penOpenSwapMenu(side, +btn.dataset.idx);
+    });
+  });
+
+  // Bench (suplentes) list
+  if (benchEl) {
+    if (bench.length) {
+      benchEl.innerHTML = bench.map((p, i) =>
+        `<li class="pen-bench-item" data-side="${side}" data-bench-idx="${i}" title="Añadir al equipo de penaltis">` +
+        `<span></span>` +
+        `<span class="pen-taker-pos" data-pos="${escHtml(p.position)}">${escHtml(p.position)}</span>` +
+        `<span class="pen-taker-name">${escHtml(p.name)}</span>` +
+        `<span class="pen-bench-add-icon">＋</span>` +
+        `</li>`
+      ).join('');
+      // Clicking a bench player → choose which taker to replace
+      benchEl.querySelectorAll('.pen-bench-item').forEach(item => {
+        item.addEventListener('click', () => {
+          _penOpenBenchToTakerMenu(side, +item.dataset.benchIdx);
+        });
+      });
+    } else {
+      benchEl.innerHTML = `<li class="pen-bench-empty">Sin suplentes</li>`;
+    }
+  }
+}
+
+// Swap popup — click swap icon → show bench choices inline
+let _penSwapMenu = null;
+function _penOpenSwapMenu(side, takerIdx) {
+  // Close any open menu
+  if (_penSwapMenu) { _penSwapMenu.remove(); _penSwapMenu = null; }
+  const bench = side === 'a' ? _penBenchA : _penBenchB;
+  const takers = side === 'a' ? _penTakersA : _penTakersB;
+  const anchor = document.querySelector(`#pen-takers-${side} [data-idx="${takerIdx}"]`);
+  if (!anchor) return;
+
+  const menu = document.createElement('div');
+  menu.className = 'pen-swap-menu';
+  menu.innerHTML =
+    `<div class="pen-swap-menu-title">Sustituir a <strong>${escHtml(takers[takerIdx].name)}</strong></div>` +
+    (bench.length
+      ? bench.map((p, bi) =>
+          `<button class="pen-swap-option" data-bench-idx="${bi}">` +
+          `<span class="pen-taker-pos" data-pos="${escHtml(p.position)}">${escHtml(p.position)}</span> ${escHtml(p.name)}` +
+          `</button>`
+        ).join('')
+      : `<div class="pen-swap-menu-empty">Sin suplentes disponibles</div>`
+    ) +
+    `<button class="pen-swap-cancel">✕ Cancelar</button>`;
+
+  // Position below the taker row
+  const rect = anchor.getBoundingClientRect();
+  const parentRect = anchor.closest('.pen-takers-col')?.getBoundingClientRect() || rect;
+  menu.style.top  = `${rect.bottom - parentRect.top + 4}px`;
+  anchor.closest('.pen-takers-col').style.position = 'relative';
+  anchor.closest('.pen-takers-col').appendChild(menu);
+  _penSwapMenu = menu;
+
+  menu.querySelectorAll('.pen-swap-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bi = +btn.dataset.benchIdx;
+      const arr  = side === 'a' ? _penTakersA : _penTakersB;
+      const brr  = side === 'a' ? _penBenchA  : _penBenchB;
+      const outgoing = arr[takerIdx];
+      arr[takerIdx] = brr[bi];
+      brr.splice(bi, 1, outgoing);
+      _renderPenTakersList(side);
+      _penSwapMenu = null;
+    });
+  });
+  menu.querySelector('.pen-swap-cancel')?.addEventListener('click', () => {
+    menu.remove(); _penSwapMenu = null;
+  });
+  // Close on outside click
+  setTimeout(() => {
+    const closer = () => { menu.remove(); _penSwapMenu = null; document.removeEventListener('click', closer); };
+    document.addEventListener('click', closer);
+  }, 10);
+}
+
+// Bench item clicked → choose which taker slot to replace
+function _penOpenBenchToTakerMenu(side, benchIdx) {
+  if (_penSwapMenu) { _penSwapMenu.remove(); _penSwapMenu = null; }
+  const takers = side === 'a' ? _penTakersA : _penTakersB;
+  const bench  = side === 'a' ? _penBenchA  : _penBenchB;
+  const anchor = document.querySelector(`#pen-bench-${side} [data-bench-idx="${benchIdx}"]`);
+  if (!anchor) return;
+
+  const incoming = bench[benchIdx];
+  const menu = document.createElement('div');
+  menu.className = 'pen-swap-menu';
+  menu.innerHTML =
+    `<div class="pen-swap-menu-title">Poner a <strong>${escHtml(incoming.name)}</strong> en lugar de…</div>` +
+    takers.map((p, ti) =>
+      `<button class="pen-swap-option" data-taker-idx="${ti}">` +
+      `<span class="pen-taker-pos" data-pos="${escHtml(p.position)}">${escHtml(p.position)}</span> ${escHtml(p.name)}` +
+      `</button>`
+    ).join('') +
+    `<button class="pen-swap-cancel">✕ Cancelar</button>`;
+
+  const rect = anchor.getBoundingClientRect();
+  const col  = anchor.closest('.pen-takers-col');
+  const colRect = col?.getBoundingClientRect() || rect;
+  col.style.position = 'relative';
+  menu.style.top = `${rect.bottom - colRect.top + 4}px`;
+  col.appendChild(menu);
+  _penSwapMenu = menu;
+
+  menu.querySelectorAll('.pen-swap-option').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const ti = +btn.dataset.takerIdx;
+      const arr = side === 'a' ? _penTakersA : _penTakersB;
+      const brr = side === 'a' ? _penBenchA  : _penBenchB;
+      const outgoing = arr[ti];
+      arr[ti] = brr[benchIdx];
+      brr.splice(benchIdx, 1, outgoing);
+      _renderPenTakersList(side);
+      _penSwapMenu = null;
+    });
+  });
+  menu.querySelector('.pen-swap-cancel')?.addEventListener('click', () => {
+    menu.remove(); _penSwapMenu = null;
+  });
+  setTimeout(() => {
+    const closer = () => { menu.remove(); _penSwapMenu = null; document.removeEventListener('click', closer); };
+    document.addEventListener('click', closer);
+  }, 10);
+}
+
+function _wirePenDrag(list, side) {
+  let dragSrc = null;
+  list.querySelectorAll('.pen-taker-item').forEach(item => {
+    item.addEventListener('dragstart', () => { dragSrc = item; item.classList.add('dragging'); });
+    item.addEventListener('dragend',   () => {
+      item.classList.remove('dragging');
+      list.querySelectorAll('.pen-taker-item').forEach(i => i.classList.remove('drag-over'));
+    });
+    item.addEventListener('dragover',  e => { e.preventDefault(); if (item !== dragSrc) item.classList.add('drag-over'); });
+    item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+    item.addEventListener('drop', e => {
+      e.preventDefault();
+      item.classList.remove('drag-over');
+      if (!dragSrc || dragSrc === item) return;
+      const arr  = side === 'a' ? _penTakersA : _penTakersB;
+      const from = +dragSrc.dataset.idx;
+      const to   = +item.dataset.idx;
+      const [removed] = arr.splice(from, 1);
+      arr.splice(to, 0, removed);
+      _renderPenTakersList(side);
+    });
+  });
+}
+
+// Build the full override payload: takers (in user order) + bench + GK = at least 8 players
+function _penBuildOverride(side) {
+  const takers = side === 'a' ? _penTakersA : _penTakersB;
+  const bench  = side === 'a' ? _penBenchA  : _penBenchB;
+  const gk     = side === 'a' ? _penGkA     : _penGkB;
+  if (!takers.length) return undefined;
+  const all = [...takers, ...bench];
+  if (gk) all.push(gk);
+  return all.length >= 8 ? all : undefined;
+}
+
+// ── Animated TV penalty shootout ─────────────────────────
+let _penAnimating = false;  // guard: prevent double-click mid-animation
+
+const _penNarratives = {
+  approachReg: ['Se acerca {player} al punto fatídico…','Los nervios se disparan, {player} recoge el balón…','{player} coge carrerilla, el portero aguarda…','Silencio en el estadio, {player} se prepara para tirar…'],
+  approachFright: ['Todo el peso de la tanda cae sobre {player}…','El estadio contiene la respiración. {player} no puede fallar…','Este penalti puede decidirlo todo. {player} camina solo…','Un ciudad entera reza mientras {player} se coloca el balón…'],
+  approachSd: ['MUERTE SÚBITA — {player} debe marcar o todo habrá terminado…','El momento más duro de su carrera: {player} frente al portero…','Un solo fallo y es el final. {player} mira la portería…'],
+  scored: ['⚽ ¡GOL! ¡{player} lo clava en la escuadra!','⚽ ¡Imparable! ¡{player} marca a lo grande!','⚽ ¡No hay portero que lo pare! ¡{player}!','⚽ ¡Fantástico! ¡{player} bate al portero sin piedad!'],
+  specialistScored: ['⚽ ¡Cómo iba a fallar {player}! ¡Un maestro del punto de penalti!','⚽ ¡{player} nunca falla desde los once metros! ¡Magistral!'],
+  saved: ['🧤 ¡PARADÓN de {gk}! ¡Se lanza al lado correcto!','🧤 ¡Increíble, {gk} lo adivina! ¡Gran parada!','🧤 ¡{gk} vuela a su palo y lo detiene! ¡Épico!'],
+  savedFright: ['🧤 ¡{gk} vuela y lo coge! ¡Bajo presión extrema!','🧤 ¡EL PORTERO PARA EL PENALTI! ¡{gk} es un héroe!'],
+  missed: ['🔴 ¡Fuera! ¡{player} manda el balón por encima del larguero!','🔴 ¡Al poste! ¡Qué fallo de {player} en el momento crucial!','🔴 ¡Afuera! ¡{player} se ha puesto nervioso y ha errado!'],
+  en: {
+    approachReg: ['{player} steps up to the spot…','The crowd holds its breath as {player} places the ball…','{player} runs up, the goalkeeper waits…'],
+    approachFright: ['The pressure is immense — {player} must deliver…','Everything on the line. {player} walks to the spot alone…'],
+    approachSd: ['SUDDEN DEATH — {player} cannot miss or it is over…','The longest walk of {player}\'s career…'],
+    scored: ['⚽ GOAL! {player} buries it in the corner!','⚽ Unstoppable! {player} scores emphatically!','⚽ Right in the net! {player} delivers!'],
+    specialistScored: ['⚽ Of course {player} scores — a penalty specialist!'],
+    saved: ['🧤 SAVED by {gk}! Dives the right way!','🧤 What a stop by {gk}! He guesses correctly!'],
+    savedFright: ['🧤 {gk} flies across and stops it! Heroic!'],
+    missed: ['🔴 MISSED! {player} blazes it over the bar!','🔴 Off the post! {player} cannot believe it!'],
+  }
+};
+
+function _penNarr(key, vars) {
+  const pool = _lang === 'en'
+    ? (_penNarratives.en[key] || _penNarratives[key])
+    : _penNarratives[key];
+  const template = pool[Math.floor(Math.random() * pool.length)];
+  return template.replace('{player}', vars.player || '').replace('{gk}', vars.gk || '');
+}
+
+function _penSleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+async function _penSetNarrative(text, instant) {
+  const el = document.getElementById('pen-tv-narrative-text');
+  if (!el) return;
+  if (!instant) {
+    el.classList.add('fading');
+    await _penSleep(250);
+  }
+  el.textContent = text;
+  el.classList.remove('fading');
+}
+
+function _penInitScoreboard(nameA, nameB, circlesA, circlesB) {
+  const nameElA = document.getElementById('pen-tv-name-a');
+  const nameElB = document.getElementById('pen-tv-name-b');
+  const cirElA  = document.getElementById('pen-tv-circles-a');
+  const cirElB  = document.getElementById('pen-tv-circles-b');
+  if (nameElA) nameElA.textContent = nameA;
+  if (nameElB) nameElB.textContent = nameB;
+  // Build placeholder circles from predicted shot counts
+  const makeCirs = (count, isSd) => Array.from({ length: count }, (_, i) => {
+    const c = document.createElement('div');
+    c.className = 'pen-circle' + (isSd ? ' sd' : '');
+    c.dataset.idx = i;
+    return c;
+  });
+  if (cirElA) {
+    cirElA.innerHTML = '';
+    makeCirs(Math.min(5, circlesA), false).forEach(c => cirElA.appendChild(c));
+  }
+  if (cirElB) {
+    cirElB.innerHTML = '';
+    makeCirs(Math.min(5, circlesB), false).forEach(c => cirElB.appendChild(c));
+  }
+}
+
+function _penAddCircle(side, isSd) {
+  const cirEl = document.getElementById(`pen-tv-circles-${side}`);
+  if (!cirEl) return;
+  const c = document.createElement('div');
+  c.className = 'pen-circle' + (isSd ? ' sd' : '');
+  cirEl.appendChild(c);
+  return c;
+}
+
+function _penFillCircle(side, kickIdx, scored, isSd) {
+  const cirEl = document.getElementById(`pen-tv-circles-${side}`);
+  if (!cirEl) return;
+  let c = cirEl.querySelectorAll('.pen-circle')[kickIdx];
+  if (!c) c = _penAddCircle(side, isSd);
+  c.classList.remove('active');
+  c.classList.add(scored ? 'scored' : 'missed');
+  c.textContent = scored ? '⚽' : '✕';
+}
+
+function _penSetActiveCircle(side, kickIdx, isSd) {
+  const cirEl = document.getElementById(`pen-tv-circles-${side}`);
+  if (!cirEl) return;
+  cirEl.querySelectorAll('.pen-circle').forEach(c => c.classList.remove('active'));
+  let c = cirEl.querySelectorAll('.pen-circle')[kickIdx];
+  if (!c) c = _penAddCircle(side, isSd);
+  c.classList.add('active');
+}
+
+function _penAddHistoryRow(round, kA, kB, isSd) {
+  const hist = document.getElementById('pen-tv-history');
+  if (!hist) return;
+  hist.classList.add('has-rows');
+  const row = document.createElement('div');
+  row.className = `pen-tv-hrow${isSd ? ' pen-hrow-sd' : ''}`;
+  const renderKick = (k, align) => {
+    if (!k) return `<div class="pen-hcol-${align}"></div>`;
+    const cls = k.scored ? 'pen-hrow-scored' : 'pen-hrow-missed';
+    const icon = k.scored ? '⚽' : '✕';
+    return align === 'a'
+      ? `<div class="pen-hcol-a ${cls}"><span class="pen-hname">${escHtml(k.name)}</span><span class="pen-hicon">${icon}</span></div>`
+      : `<div class="pen-hcol-b ${cls}"><span class="pen-hicon">${icon}</span><span class="pen-hname">${escHtml(k.name)}</span></div>`;
+  };
+  row.innerHTML = `${renderKick(kA,'a')}<div class="pen-hcol-n">${isSd ? 'SD' : round}</div>${renderKick(kB,'b')}`;
+  hist.appendChild(row);
+}
+
+// ── Goal Visualization: zone map & helpers ───────────────
+// Ball rests at SVG position (300, 278). Zone coords = absolute SVG position.
+const PEN_GOAL_ZONES = {
+  tl:       { x: 190, y: 100, gkX: -92, gkY: -28 },
+  tc:       { x: 300, y: 100, gkX:   0, gkY: -28 },
+  tr:       { x: 410, y: 100, gkX:  92, gkY: -28 },
+  ml:       { x: 190, y: 165, gkX: -88, gkY:   0 },
+  mc:       { x: 300, y: 165, gkX:   0, gkY:   0 },
+  mr:       { x: 410, y: 165, gkX:  88, gkY:   0 },
+  bl:       { x: 190, y: 232, gkX: -65, gkY:  20 },
+  bc:       { x: 300, y: 232, gkX:   0, gkY:  20 },
+  br:       { x: 410, y: 232, gkX:  65, gkY:  20 },
+  'out-l':  { x:  25, y: 190, gkX: -12, gkY:   0, miss: true },
+  'out-r':  { x: 575, y: 190, gkX:  12, gkY:   0, miss: true },
+  'out-top':{ x: 300, y:  10, gkX:   0, gkY: -12, miss: true },
+};
+
+function _penGetZone(scored) {
+  if (scored) {
+    const zones   = ['tl','tr','bl','br','ml','mr','tc','bc'];
+    const weights = [ 14,  14,  10,  10,   7,   7,   5,   5];
+    let r = Math.random() * weights.reduce((a,b)=>a+b,0);
+    for (let i=0; i<zones.length; i++) { r -= weights[i]; if (r<=0) return {key:zones[i], type:'goal'}; }
+    return {key:'tl', type:'goal'};
+  }
+  if (Math.random() < 0.28) {
+    const m = ['out-l','out-r','out-top'];
+    return {key: m[Math.floor(Math.random()*3)], type:'miss'};
+  }
+  const sv = ['tl','tr','bl','br','ml','mr'];
+  return {key: sv[Math.floor(Math.random()*sv.length)], type:'save'};
+}
+
+function _penResetGoal() {
+  const bg  = document.getElementById('pg-ball-g');
+  const gk  = document.getElementById('pg-gk');
+  const tp  = document.getElementById('pg-traj');
+  const tg  = document.getElementById('pg-traj-glow');
+  const nf  = document.getElementById('pg-net-flash');
+  const bgl = document.getElementById('pg-ball-glow-c');
+  if (bg)  { bg.style.transition  = 'none'; bg.style.transform  = 'translate(0px,0px)'; }
+  if (gk)  { gk.style.transition  = 'none'; gk.style.transform  = 'translate(0px,0px)'; }
+  if (tp)  { tp.setAttribute('d','M300,278 L300,278');  tp.style.opacity = '0';  tp.style.transition = 'none'; }
+  if (tg)  { tg.setAttribute('d','M300,278 L300,278');  tg.style.opacity = '0';  tg.style.transition = 'none'; }
+  if (nf)  { nf.style.opacity = '0'; nf.style.transition = 'none'; }
+  if (bgl) { bgl.style.opacity = '0'; }
+  ['pg-burst-gol','pg-burst-save','pg-burst-miss'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.transition = 'none'; el.style.opacity = '0'; }
+  });
+  // Update burst labels for current language
+  const isEN = _lang === 'en';
+  const gTxt  = document.getElementById('pg-burst-gol-txt');  if (gTxt)  gTxt.textContent  = isEN ? 'GOAL!'   : '¡GOL!';
+  const sTxt  = document.getElementById('pg-burst-save-txt'); if (sTxt)  sTxt.textContent  = isEN ? 'SAVED!'  : '¡PARADA!';
+  const mTxt  = document.getElementById('pg-burst-miss-txt'); if (mTxt)  mTxt.textContent  = isEN ? 'MISS!'   : 'FALLO';
+  const hudTxt = document.getElementById('pg-hud-txt');
+  if (hudTxt) hudTxt.textContent = isEN ? '● SIMULATION ACTIVE' : '● SIMULACIÓN ACTIVA';
+}
+
+// ── Coin flip before penalty shootout ─────────────────────────────────────
+function _penCoinFlip(nameA, nameB) {
+  return new Promise(resolve => {
+    const isEN = _lang === 'en';
+    const modal    = document.getElementById('pen-coin-modal');
+    const coin     = document.getElementById('pen-coin');
+    const resultEl = document.getElementById('pen-coin-result');
+    const faceEl   = document.getElementById('pen-coin-result-face');
+    const teamEl   = document.getElementById('pen-coin-result-team');
+    const subEl    = document.getElementById('pen-coin-result-sub');
+    const labelTop = document.getElementById('pen-coin-label-top');
+    if (!modal || !coin) { resolve('a'); return; }
+
+    const isHeads = Math.random() < 0.5;
+    const winner  = isHeads ? nameA : nameB;
+    const faceTxt = isHeads
+      ? (isEN ? '⚪  HEADS'  : '⚪  CARA')
+      : (isEN ? '⚫  TAILS'  : '⚫  CRUZ');
+    const subTxt = isEN
+      ? `${winner} will take the first kick`
+      : `${winner} lanza primero`;
+
+    if (labelTop) labelTop.textContent = isEN ? 'COIN TOSS' : 'SORTEO';
+
+    // Reset state
+    coin.className = 'pen-coin';
+    resultEl.classList.add('hidden');
+    modal.classList.remove('hidden');
+
+    // Start spin after a short beat
+    setTimeout(() => {
+      coin.classList.add(isHeads ? 'spin-heads' : 'spin-tails');
+    }, 250);
+
+    // Show result after coin lands
+    setTimeout(() => {
+      faceEl.textContent = faceTxt;
+      teamEl.textContent = winner;
+      subEl.textContent  = subTxt;
+      resultEl.classList.remove('hidden');
+    }, 2200);
+
+    // Auto-dismiss after result shown
+    const done = () => {
+      modal.classList.add('hidden');
+      modal.removeEventListener('click', done);
+      resolve(isHeads ? 'a' : 'b');
+    };
+    setTimeout(done, 4000);
+    // Click to skip (after spin starts)
+    setTimeout(() => modal.addEventListener('click', done), 500);
+  });
+}
+
+async function _penAnimateGoalKick(zoneKey, type) {
+  const zone = PEN_GOAL_ZONES[zoneKey];
+  if (!zone) return;
+  const { x: tx, y: ty, gkX, gkY } = zone;
+
+  const ballBX = tx - 300; // translate offset from ball origin (300,278)
+  const ballBY = ty - 278;
+  const isMiss = type === 'miss';
+  const isSave = type === 'save';
+  const isGoal = type === 'goal';
+
+  const bg  = document.getElementById('pg-ball-g');
+  const gk  = document.getElementById('pg-gk');
+  const tp  = document.getElementById('pg-traj');
+  const tg  = document.getElementById('pg-traj-glow');
+  const nf  = document.getElementById('pg-net-flash');
+  const bgl = document.getElementById('pg-ball-glow-c');
+  const hudTxt = document.getElementById('pg-hud-txt');
+
+  const BALL_DUR = 560; // ms — ball flight duration
+  const isEN = _lang === 'en';
+
+  // GK dive: for save = full dive; for goal = partial (beaten); for miss = brief wrong-dive
+  const gkDiveX = isSave ? gkX : (isGoal ? gkX * 0.48 : (Math.random()<.5 ? 28 : -28));
+  const gkDiveY = isSave ? gkY : (isGoal ? gkY * 0.48 : 0);
+  // No rotation — translate-only dive looks cleaner with a static SVG figure
+
+  // Show HUD status
+  if (hudTxt) hudTxt.textContent = isEN ? '◉ KICK IN PROGRESS…' : '◉ LANZAMIENTO EN CURSO…';
+
+  // Show trajectory lines
+  if (tp) tp.style.opacity = '0.8';
+  if (tg) tg.style.opacity = '0.4';
+
+  // Draw trajectory with rAF loop (rAF handles eased line growth)
+  const t0 = performance.now();
+  const drawLine = (now) => {
+    const p  = Math.min(1, (now - t0) / BALL_DUR);
+    const ep = p * p; // ease-in
+    const cx = (300 + (tx-300) * ep).toFixed(1);
+    const cy = (278 + (ty-278) * ep).toFixed(1);
+    const d  = `M300,278 L${cx},${cy}`;
+    if (tp) tp.setAttribute('d', d);
+    if (tg) tg.setAttribute('d', d);
+    if (p < 1) requestAnimationFrame(drawLine);
+  };
+  requestAnimationFrame(drawLine);
+
+  // GK starts diving 180ms after kick
+  setTimeout(() => {
+    if (!gk) return;
+    gk.style.transition = `transform 0.50s cubic-bezier(.22,.68,0,1.12)`;
+    gk.style.transform  = `translate(${gkDiveX}px,${gkDiveY}px)`;
+  }, 180);
+
+  // Ball launches 55ms in
+  await _penSleep(55);
+  if (bg) {
+    bg.style.transition = `transform ${BALL_DUR}ms ease-in`;
+    bg.style.transform  = `translate(${ballBX}px,${ballBY}px)${isMiss ? ' scale(0.55)' : ''}`;
+  }
+  if (bgl) bgl.style.opacity = '0.75';
+
+  // Ball lands
+  await _penSleep(BALL_DUR + 60);
+  if (bgl) { bgl.style.transition = 'opacity 0.3s'; bgl.style.opacity = '0'; }
+
+  // Net flash (goal only)
+  if (isGoal && nf) {
+    nf.setAttribute('cx', tx); nf.setAttribute('cy', ty);
+    nf.style.transition = 'opacity 0.1s'; nf.style.opacity = '0.85';
+    await _penSleep(110);
+    nf.style.transition = 'opacity 0.7s'; nf.style.opacity  = '0';
+  }
+
+  // Burst text
+  const burstId = isGoal ? 'pg-burst-gol' : (isSave ? 'pg-burst-save' : 'pg-burst-miss');
+  const burst   = document.getElementById(burstId);
+  if (burst) {
+    burst.style.transition = 'opacity 0.14s';
+    burst.style.opacity    = '1';
+    await _penSleep(1050);
+    burst.style.transition = 'opacity 0.45s';
+    burst.style.opacity    = '0';
+  } else {
+    await _penSleep(1050);
+  }
+
+  // Fade trajectory
+  if (tp) { tp.style.transition = 'opacity 0.3s'; tp.style.opacity = '0'; }
+  if (tg) { tg.style.transition = 'opacity 0.3s'; tg.style.opacity = '0'; }
+  if (hudTxt) hudTxt.textContent = isEN ? '● SIMULATION ACTIVE' : '● SIMULACIÓN ACTIVA';
+}
+
+async function _animatePenShootout(data, nameA, nameB) {
+  const pen = data?.finalScore?.penalties;
+  if (!pen) return;
+  _penAnimating = true;
+
+  // Reset TV panel
+  const tvPanel = document.getElementById('pen-tv-panel');
+  const histEl  = document.getElementById('pen-tv-history');
+  const footerEl = document.getElementById('pen-tv-footer');
+  const overlayEl = document.getElementById('pen-tv-winner-overlay');
+  const statusEl  = document.getElementById('pen-tv-status');
+
+  if (histEl)   { histEl.innerHTML = ''; histEl.classList.remove('has-rows'); }
+  if (footerEl)  footerEl.classList.add('hidden');
+  if (overlayEl) overlayEl.classList.add('hidden');
+  tvPanel.classList.remove('hidden');
+  _penResetGoal();
+  tvPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const kicks = Math.max(pen.shotsA.length, pen.shotsB.length);
+  _penInitScoreboard(nameA, nameB, pen.shotsA.length, pen.shotsB.length);
+  document.getElementById('pen-tv-score').textContent = '0–0';
+
+  // GK names from lineups (or from shot metadata)
+  const lineupPlayers = (side) => data?.lineups?.[side]?.players || [];
+  const gkA = lineupPlayers('teamA').find(p => p.position === 'GK')?.name || pen.gkA || t('pen-role-gk');
+  const gkB = lineupPlayers('teamB').find(p => p.position === 'GK')?.name || pen.gkB || t('pen-role-gk');
+
+  await _penSetNarrative(t('pen-narr-intro'), true);
+  await _penSleep(1000);
+
+  let scoreA = 0, scoreB = 0;
+
+  for (let i = 0; i < kicks; i++) {
+    const isSd = i >= 5;
+    const kA = pen.shotsA[i];
+    const kB = pen.shotsB[i];
+
+    // ── Kick A ──────────────────────────────────────────
+    if (kA) {
+      _penResetGoal();
+      const zA = _penGetZone(kA.scored);
+      _penSetActiveCircle('a', i, isSd);
+
+      // Update duel display
+      const kickerEl = document.getElementById('pen-tv-kicker-name');
+      const gkEl     = document.getElementById('pen-tv-gk-name');
+      if (kickerEl) { kickerEl.textContent = kA.name; kickerEl.className = 'pen-tv-duel-name duel-kicker'; }
+      if (gkEl)     { gkEl.textContent = gkB; gkEl.className = 'pen-tv-duel-name duel-gk'; }
+
+      // Approach narrative + suspense
+      const narrKey = isSd ? 'approachSd' : (kA.stageFright ? 'approachFright' : 'approachReg');
+      await _penSetNarrative(_penNarr(narrKey, { player: kA.name, gk: gkB }));
+      await _penSleep(1400 + Math.random() * 900);
+
+      // Ball animation fires in background; we wait 680ms then show result text
+      const animA = _penAnimateGoalKick(zA.key, zA.type);
+      await _penSleep(680);
+
+      const narrKA = kA.scored ? (kA.isSpecialist ? 'specialistScored' : 'scored')
+                                : (zA.type === 'miss' ? 'missed' : 'saved');
+      await _penSetNarrative(_penNarr(narrKA, { player: kA.name, gk: gkB }));
+      if (kA.scored) scoreA++;
+      _penFillCircle('a', i, kA.scored, isSd);
+      document.getElementById('pen-tv-score').textContent = `${scoreA}–${scoreB}`;
+      await animA;
+      await _penSleep(280);
+    }
+
+    // ── Kick B ──────────────────────────────────────────
+    if (kB) {
+      _penResetGoal();
+      const zB = _penGetZone(kB.scored);
+      _penSetActiveCircle('b', i, isSd);
+
+      const kickerEl = document.getElementById('pen-tv-kicker-name');
+      const gkEl     = document.getElementById('pen-tv-gk-name');
+      if (kickerEl) { kickerEl.textContent = kB.name; kickerEl.className = 'pen-tv-duel-name duel-kicker'; }
+      if (gkEl)     { gkEl.textContent = gkA; gkEl.className = 'pen-tv-duel-name duel-gk'; }
+
+      const narrKey = isSd ? 'approachSd' : (kB.stageFright ? 'approachFright' : 'approachReg');
+      await _penSetNarrative(_penNarr(narrKey, { player: kB.name, gk: gkA }));
+      await _penSleep(1400 + Math.random() * 900);
+
+      const animB = _penAnimateGoalKick(zB.key, zB.type);
+      await _penSleep(680);
+
+      const narrKB = kB.scored ? (kB.isSpecialist ? 'specialistScored' : 'scored')
+                                : (zB.type === 'miss' ? 'missed' : 'saved');
+      await _penSetNarrative(_penNarr(narrKB, { player: kB.name, gk: gkA }));
+      if (kB.scored) scoreB++;
+      _penFillCircle('b', i, kB.scored, isSd);
+      document.getElementById('pen-tv-score').textContent = `${scoreA}–${scoreB}`;
+      await animB;
+      await _penSleep(280);
+    }
+
+    // Add row to history
+    _penAddHistoryRow(i + 1, kA, kB, isSd);
+
+    // SD status label
+    if (isSd && statusEl) statusEl.textContent = t('pen-status-sd');
+    else if (statusEl)    statusEl.textContent = `${t('pen-status-round')} ${i+1}`;
+  }
+
+  // Finalise
+  if (statusEl) statusEl.textContent = t('pen-status-done');
+  await _penSetNarrative('');
+
+  // Show footer with stats
+  const scoredA = pen.shotsA.filter(s => s.scored).length;
+  const scoredB = pen.shotsB.filter(s => s.scored).length;
+  const savesA  = pen.shotsB.length - scoredB;
+  const savesB  = pen.shotsA.length - scoredA;
+  const winnerName = pen.winner === 'A' ? nameA : nameB;
+  if (footerEl) {
+    document.getElementById('pen-tv-final-score').innerHTML =
+      `🏆 <strong>${escHtml(winnerName)}</strong> ${t('pen-winner-suffix')} ${pen.scoreA}–${pen.scoreB}${pen.suddenDeath ? ' ' + t('pen-winner-sd') : ''}`;
+    document.getElementById('pen-tv-final-stats').innerHTML =
+      `<span>⚽ ${escHtml(nameA.split(' ')[0])} ${scoredA}</span>` +
+      `<span>🧤 ${escHtml(gkA)} ${savesA}</span>` +
+      `<span>🧤 ${escHtml(gkB)} ${savesB}</span>` +
+      `<span>⚽ ${escHtml(nameB.split(' ')[0])} ${scoredB}</span>`;
+    footerEl.classList.remove('hidden');
+  }
+
+  // Winner overlay
+  await _penSleep(400);
+  if (overlayEl) {
+    document.getElementById('pen-tv-winner-name').textContent = winnerName;
+    document.getElementById('pen-tv-winner-sub').textContent =
+      `${pen.scoreA}–${pen.scoreB}${pen.suddenDeath ? ' · ' + t('pen-winner-sd') : ''}`;
+    overlayEl.classList.remove('hidden');
+  }
+
+  _penAnimating = false;
+}
+
+function _penShowResults(data, nameA, nameB) {
+  // Delegate to animated version — kept for backward compat
+  _animatePenShootout(data, nameA, nameB);
+}
+
+function _renderPenPicker(side) {
+  // Reuse _renderPicker logic but targeting pen-picker-${side} and pen-team${side}
+  const container = document.getElementById(`pen-picker-${side}`);
+  if (!container) return;
+  const chosenName = document.getElementById(`pen-team${side}`)?.value || '';
+  const st = _penPickerState[side];
+
+  if (chosenName) {
+    const entry = _catalog.find(c => c.slug === chosenName || c.name === chosenName);
+    const badge = entry?.badge || BADGE_PLACEHOLDER;
+    const meta  = _LEAGUE_META[entry?.group];
+    const displayName = _entryName(entry) || chosenName;
+    container.innerHTML =
+      `<div class="tp-chosen">` +
+      `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="">` +
+      `<div class="tp-chosen-info">` +
+        `<span class="tp-chosen-name">${escHtml(displayName)}</span>` +
+        `<span class="tp-chosen-group">${escHtml(meta?.name || '')}</span>` +
+      `</div>` +
+      `<button class="tp-change-btn" data-pen-side="${side}" data-pa="reset" title="${t('tp-change-title')}">&#10005;</button>` +
+      `</div>`;
+    _updatePenShootBtn();
+    return;
+  }
+
+  if (!_catalogReady && !_catalog.length) {
+    container.innerHTML = `<div class="tp-loading"><span class="tp-loading-spinner"></span><span class="tp-loading-text">${t('tp-loading')}</span></div>`;
+    return;
+  }
+
+  if (!st.type) {
+    container.innerHTML =
+      `<div class="tp-type-row">` +
+      `<button class="tp-type-btn" data-pen-side="${side}" data-pa="type" data-pv="club">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h12M8 2v3a4 4 0 008 0V2M7 7H4a2 2 0 000 4h3m10-4h3a2 2 0 010 4h-3M9 21h6m-3-7v7M8 14a4 4 0 018 0"/></svg>` +
+      `<span class="tp-type-label">${t('tp-clubs')}</span></button>` +
+      `<button class="tp-type-btn" data-pen-side="${side}" data-pa="type" data-pv="seleccion">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>` +
+      `<span class="tp-type-label">${t('tp-nations')}</span></button>` +
+      `<button class="tp-type-btn" data-pen-side="${side}" data-pa="type" data-pv="special">` +
+      `<svg class="tp-type-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>` +
+      `<span class="tp-type-label">${t('tp-special')}</span></button>` +
+      `</div>`;
+    return;
+  }
+
+  // League / team list — delegate to same helpers as main picker but with pen state
+  // Temporarily swap pickerState so _renderPicker can reuse its full logic
+  const saved = _pickerState[side];
+  _pickerState[side] = st;
+  // Swap container id temporarily
+  const realId = `picker-${side}`;
+  const penId  = `pen-picker-${side}`;
+  const realEl = document.getElementById(realId);
+  // Detach real picker, attach pen picker in its place
+  if (realEl) realEl.id = `_picker-${side}-stash`;
+  container.id = realId;
+  _renderPicker(side);
+  container.id = penId;
+  if (realEl) realEl.id = realId;
+  _pickerState[side] = saved;
+  // Re-add pen-side attribute so event delegation works
+  container.querySelectorAll('[data-pa]').forEach(b => b.dataset.penSide = side);
+}
+
+function _penPickerSelectTeam(side, slugVal) {
+  document.getElementById(`pen-team${side}`).value = slugVal;
+  // Populate era select
+  const sel = document.getElementById(`pen-era${side}`);
+  if (sel) {
+    const entry = _catalog.find(c => c.slug === slugVal);
+    if (entry && entry.seasons.length) {
+      sel.innerHTML = `<option value="">${t('era-any')}</option>` +
+        entry.seasons.map(y => {
+          const n = parseInt(y, 10);
+          const label = n >= 1000 ? `${String(n).slice(2)}/${String(n+1).slice(2)}` : (y === 'all-time' ? '★ All Time' : y);
+          return `<option value="${y}">${label}</option>`;
+        }).join('');
+      sel.disabled = false;
+    } else {
+      sel.innerHTML = `<option value="">${t('era-no-seasons')}</option>`;
+      sel.disabled = true;
+    }
+  }
+  _penPickerState[side] = { type: null, league: null };
+  _renderPenPicker(side);
+  _updatePenShootBtn();
+  // Fetch takers as soon as both teams are selected
+  const bothSet = document.getElementById('pen-teamA')?.value && document.getElementById('pen-teamB')?.value;
+  if (bothSet) _penFetchTakers();
+}
+
+function _updatePenShootBtn() {
+  const btn = document.getElementById('pen-shoot-btn');
+  if (!btn) return;
+  const a = document.getElementById('pen-teamA')?.value;
+  const b = document.getElementById('pen-teamB')?.value;
+  btn.disabled = !(a && b);
+}
+
+function _initPenPickers() {
+  if (_penPickersInited) return;
+  _penPickersInited = true;
+  ['A', 'B'].forEach(side => {
+    const container = document.getElementById(`pen-picker-${side}`);
+    if (!container || container._wirePen) return;
+    container._wirePen = true;
+    container.addEventListener('click', e => {
+      const btn = e.target.closest('[data-pa]');
+      if (!btn) return;
+      const penSide = btn.dataset.penSide || side;
+      const a = btn.dataset.pa, v = btn.dataset.pv || '';
+      if (a === 'type') {
+        _penPickerState[penSide] = { type: v, league: null };
+        _renderPenPicker(penSide);
+      } else if (a === 'league') {
+        _penPickerState[penSide].league = v;
+        _renderPenPicker(penSide);
+      } else if (a === 'team') {
+        _penPickerSelectTeam(penSide, v);
+      } else if (a === 'reset') {
+        _penPickerState[penSide] = { type: null, league: null };
+        const input = document.getElementById(`pen-team${penSide}`);
+        if (input) input.value = '';
+        const era = document.getElementById(`pen-era${penSide}`);
+        if (era) { era.innerHTML = `<option value="">${t('era-placeholder')}</option>`; era.disabled = true; }
+        _renderPenPicker(penSide);
+        _updatePenShootBtn();
+      } else if (a === 'back') {
+        _penPickerState[penSide] = { type: _penPickerState[penSide]?.type || 'club', league: null };
+        _renderPenPicker(penSide);
+      } else if (a === 'backtype') {
+        _penPickerState[penSide] = { type: null, league: null };
+        _renderPenPicker(penSide);
+      }
+    });
+    _renderPenPicker(side);
+  });
+}
+
 // Map slug → ISO 3166-1 alpha-2 for flagcdn.com images (no emoji, works on Windows)
 const _NATION_ISO = {
   // Slugs alemán (originales)
@@ -1669,7 +2555,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const neutroCard = document.createElement('div');
     neutroCard.className = 'spk-card spk-active';
     neutroCard.dataset.id = '';
-    neutroCard.innerHTML = `<div class="spk-img-placeholder">🏟️</div><div class="spk-name">${t('stadium-neutro')}</div>`;
+    neutroCard.innerHTML =
+      `<div class="spk-card-inner">` +
+        `<img class="spk-img spk-img--neutro" src="/img/stadiums/estadio_3d.jpg" alt="Neutro">` +
+      `</div>` +
+      `<div class="spk-name">${t('stadium-neutro')}</div>`;
     neutroCard.onclick = () => selectStadium('');
     pickerRow.appendChild(neutroCard);
 
@@ -1678,8 +2568,15 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'spk-card';
       card.dataset.id = s.id;
       card.innerHTML =
-        `<img class="spk-img" src="${escHtml(s.img)}" alt="${escHtml(s.name)}" loading="lazy"/>` +
-        `<div class="spk-img-placeholder" style="display:none">🏟️</div>` +
+        `<div class="spk-card-inner">` +
+          `<img class="spk-img" src="${escHtml(s.img)}" alt="${escHtml(s.name)}" loading="lazy"` +
+            ` onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` +
+          `<div class="spk-img-placeholder" style="display:none">🏟️</div>` +
+          `<div class="spk-overlay">` +
+            `<span class="spk-cap">👥 ${s.capacity ? s.capacity.toLocaleString() : '—'}</span>` +
+            `<span class="spk-climate">${escHtml(s.climate || '')}</span>` +
+          `</div>` +
+        `</div>` +
         `<div class="spk-name">${escHtml(s.name)}</div>` +
         `<div class="spk-city">${escHtml(s.city)}</div>`;
       card.onclick = () => selectStadium(s.id);
@@ -1703,6 +2600,129 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init team pickers (catalog fills them when it arrives)
   _initTeamPicker('A');
   _initTeamPicker('B');
+
+  // ── Penalties Tab: event wiring ──────────────────────────
+  // Pen shoot button — runs animated TV penalty shootout
+  document.getElementById('pen-shoot-btn')?.addEventListener('click', async () => {
+    if (_penAnimating) return;  // guard: disallow while animation runs
+    const teamA = document.getElementById('pen-teamA')?.value;
+    const teamB = document.getElementById('pen-teamB')?.value;
+    const eraA  = document.getElementById('pen-eraA')?.value  || '';
+    const eraB  = document.getElementById('pen-eraB')?.value  || '';
+    const errEl = document.getElementById('pen-tab-error');
+    if (!teamA || !teamB) {
+      if (errEl) { errEl.textContent = t('pen-error-no-teams'); errEl.classList.remove('hidden'); }
+      return;
+    }
+    if (errEl) errEl.classList.add('hidden');
+    // Hide TV panel while fetching
+    document.getElementById('pen-tv-panel')?.classList.add('hidden');
+
+    const btn = document.getElementById('pen-shoot-btn');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = '⏳';
+
+    const luA = _catalog.find(c => c.slug === teamA);
+    const luB = _catalog.find(c => c.slug === teamB);
+    const nameA = luA ? _entryName(luA) : teamA;
+    const nameB = luB ? _entryName(luB) : teamB;
+
+    try {
+      const body = {
+        teamA, teamB, eraA, eraB,
+        matchMode: 'penalties',
+        matchSalt: Math.floor(Math.random() * 0x7fffffff),
+        lang: _lang,
+        playersOverrideA: _penBuildOverride('a'),
+        playersOverrideB: _penBuildOverride('b'),
+      };
+      const res  = await fetch('/simulate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      const data = await res.json();
+      btn.disabled = false;
+      btn.querySelector('span').textContent = t('pen-shoot-btn');
+      // Coin flip — returns 'a' or 'b'
+      const firstSide = await _penCoinFlip(nameA, nameB);
+      // If B won the toss, swap everything so 'A slot' = first kicker visually
+      let displayData = data;
+      let dispNameA = nameA, dispNameB = nameB;
+      if (firstSide === 'b') {
+        dispNameA = nameB;
+        dispNameB = nameA;
+        const pen = data?.finalScore?.penalties;
+        if (pen) {
+          displayData = {
+            ...data,
+            finalScore: {
+              ...data.finalScore,
+              penalties: {
+                ...pen,
+                shotsA:  pen.shotsB,
+                shotsB:  pen.shotsA,
+                scoreA:  pen.scoreB,
+                scoreB:  pen.scoreA,
+                winner:  pen.winner === 'A' ? 'B' : 'A',
+              },
+            },
+            lineups: { teamA: data.lineups?.teamB, teamB: data.lineups?.teamA },
+          };
+        }
+      }
+      // Launch animated shootout
+      _animatePenShootout(displayData, dispNameA, dispNameB);
+    } catch(e) {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = t('pen-shoot-btn');
+      if (errEl) { errEl.textContent = t('sim-error-prefix') + ' ' + e.message; errEl.classList.remove('hidden'); }
+    }
+  });
+
+  // Replay button
+  document.getElementById('pen-tab-replay-btn')?.addEventListener('click', () => {
+    document.getElementById('pen-tv-panel')?.classList.add('hidden');
+    document.getElementById('pen-shoot-btn')?.click();
+  });
+
+  // Nueva tanda — hide TV panel, scroll to team pickers, reset takers so user re-picks
+  document.getElementById('pen-tab-new-btn')?.addEventListener('click', () => {
+    document.getElementById('pen-tv-panel')?.classList.add('hidden');
+    document.getElementById('pen-takers-section')?.classList.add('hidden');
+    _penTakersA = []; _penTakersB = [];
+    _penBenchA  = []; _penBenchB  = [];
+    _penGkA = null;   _penGkB = null;
+    // Scroll back up to the team picker area
+    const pickerArea = document.getElementById('pen-picker-A');
+    pickerArea?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Dismiss winner overlay → show footer result
+  document.getElementById('pen-tv-dismiss-btn')?.addEventListener('click', () => {
+    document.getElementById('pen-tv-winner-overlay')?.classList.add('hidden');
+  });
+
+  // Era changes → re-fetch takers
+  ['pen-eraA', 'pen-eraB'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', _penFetchTakers);
+  });
+
+  // Pen tab surprise button
+  document.getElementById('pen-btn-surprise')?.addEventListener('click', () => {
+    if (!_catalog.length) return;
+    const pool = _catalog.filter(c => c.seasons && c.seasons.length > 0);
+    if (pool.length < 2) return;
+    const idxA = Math.floor(Math.random() * pool.length);
+    let idxB = Math.floor(Math.random() * (pool.length - 1));
+    if (idxB >= idxA) idxB++;
+    _penPickerSelectTeam('A', pool[idxA].slug);
+    _penPickerSelectTeam('B', pool[idxB].slug);
+    // Auto-select a random season for each side
+    ['A', 'B'].forEach((side, si) => {
+      const sel = document.getElementById(`pen-era${side}`);
+      if (sel && sel.options.length > 1) {
+        sel.selectedIndex = 1 + Math.floor(Math.random() * (sel.options.length - 1));
+      }
+    });
+    _penFetchTakers();
+  });
 
   // Build weather picker
   _buildWeatherPicker();
@@ -1811,12 +2831,16 @@ function _buildRefereePicker(referees) {
   const row = document.getElementById('referee-picker-row');
   if (!row) return;
   row.innerHTML = '';
-  // "Random / None" option
+
+  // "Random / None" option — usa imagen 3D del árbitro genérico
   const noneCard = document.createElement('div');
   noneCard.className = 'ref-card ref-active';
   noneCard.dataset.id = '';
   noneCard.innerHTML =
-    `<div class="ref-photo-area"><div class="ref-initials-av" style="background:linear-gradient(135deg,#444,#888)">?</div></div>` +
+    `<div class="ref-photo-area ref-photo-area--rnd">` +
+      `<img class="ref-photo ref-photo--rnd" src="/img/referees/arbitro_3d.jpg" alt="Aleatorio">` +
+      `<div class="ref-rnd-badge">?</div>` +
+    `</div>` +
     `<div class="ref-name">${t('ref-random')}</div>`;
   noneCard.onclick = () => selectReferee('');
   row.appendChild(noneCard);
@@ -1833,7 +2857,8 @@ function _buildRefereePicker(referees) {
       const imgSrc = _refImgProxy(ref.img);
       card.innerHTML =
         `<div class="ref-photo-area">` +
-          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy">` +
+          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display=''">` +
           `<div class="ref-initials-av" style="display:none;background:${grad}">${ini}</div>` +
         `</div>` +
         `<div class="ref-name">${escHtml(ref.name)}</div>` +

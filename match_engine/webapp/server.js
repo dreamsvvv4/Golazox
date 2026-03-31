@@ -208,6 +208,16 @@ app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   immutable: true,
 }));
 
+// Imágenes de árbitros y estadios — nunca cachear (se pueden sustituir en cualquier momento)
+app.use('/img/referees', express.static(path.join(__dirname, 'public', 'img', 'referees'), {
+  etag: false, lastModified: false,
+  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
+}));
+app.use('/img/stadiums', express.static(path.join(__dirname, 'public', 'img', 'stadiums'), {
+  etag: false, lastModified: false,
+  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
+}));
+
 // Service Worker — must be served from the root scope with the correct header
 // so it can intercept all requests under '/'.
 // The Service-Worker-Allowed header grants it scope beyond its script directory.

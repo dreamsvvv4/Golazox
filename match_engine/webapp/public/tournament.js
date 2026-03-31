@@ -64,14 +64,16 @@ const TRN = (() => {
     return yr ? `${t.name} '${_eraLabel(yr)}` : (t.name || '?');
   };
 
-  // ── Main tab switching (⚽ Partido / 🏆 Torneo) ─────────
+  // ── Main tab switching (⚽ Partido / 🥅 Penaltis / 🏆 Torneo) ─────────
   function switchMainTab(tab) {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
+    $('main-pen-wrap') && $('main-pen-wrap').classList.toggle('hidden', tab !== 'pen');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
     document.querySelectorAll('.main-tab-btn').forEach(b =>
       b.classList.toggle('main-tab-active', b.dataset.tab === tab));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (tab === 'trn' && !_fmt && !_data) showStep(1);
+    if (tab === 'pen' && typeof _initPenPickers === 'function') _initPenPickers();
   }
 
   // ── Wizard step navigation ───────────────────────────────
