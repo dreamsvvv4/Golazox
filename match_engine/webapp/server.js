@@ -524,8 +524,8 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
     };
     const cleanOverrideA = sanitisePlayers(playersOverrideA);
     const cleanOverrideB = sanitisePlayers(playersOverrideB);
-    if (cleanOverrideA) luA.players = cleanOverrideA;
-    if (cleanOverrideB) luB.players = cleanOverrideB;
+    if (cleanOverrideA) { luA.allPlayers = luA.players; luA.players = cleanOverrideA; }
+    if (cleanOverrideB) { luB.allPlayers = luB.players; luB.players = cleanOverrideB; }
 
     const params = {
       teamA:      dispA,
