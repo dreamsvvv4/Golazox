@@ -744,16 +744,19 @@ function pickInjuries(players, rand) {
 // Only missed penalties are generated as standalone events.
 // Scored penalties are already reflected in scorersA/B via pickScorers,
 // so showing a second ⚽ here would mismatch the final score.
-function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE) {
+function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE, excludedA = new Set(), excludedB = new Set()) {
   const rand   = mulberry32(seed + 19);
   // P(penalty) = 0.42 × referee.penalty_rate
   const nPen   = poissonSample(calcPenaltyRate(0.42, referee), rand);  // base: ~1 penalty every 2.5 games
   const result = [];
   for (let i = 0; i < Math.min(nPen, 2); i++) {
-    const side   = rand() < 0.5 ? 'A' : 'B';
-    const lineup = side === 'A' ? lineupA : lineupB;
-    const best   = lineup.players.filter(p => ['ST','AM','RW','LW','CM'].includes(p.position));
-    const taker  = best.length ? best[Math.floor(rand() * best.length)] : lineup.players[Math.floor(rand() * lineup.players.length)];
+    const side     = rand() < 0.5 ? 'A' : 'B';
+    const lineup   = side === 'A' ? lineupA : lineupB;
+    const excluded = side === 'A' ? excludedA : excludedB;
+    const best   = lineup.players.filter(p => !excluded.has(p.name) && ['ST','AM','RW','LW','CM'].includes(p.position));
+    const any    = lineup.players.filter(p => !excluded.has(p.name));
+    const pool   = best.length ? best : any;
+    const taker  = pool.length ? pool[Math.floor(rand() * pool.length)] : lineup.players[0];
     // Always scored=false: penalty misses are the only events worth showing
     // independently. Goals from penalty are already in scorersA/B.
     result.push({
@@ -774,17 +777,20 @@ function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE) {
 // Kicker selection weights by position (best penalty takers first)
 const PENALTY_KICK_WEIGHTS = { ST:5, AM:4, RW:4, LW:4, CM:3, RM:3, LM:3, DM:2, RB:1.5, LB:1.5, CB:1, GK:0.3 };
 
-function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed) {
+function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA = new Set(), excludedB = new Set()) {
   const rand = mulberry32(seed + 13);
 
   // Conversion rate: base 76%, adjusted by attacker quality and opposing GK
   const convA = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsA.attack      - 75) / 150 - (ratingsB.goalkeeping - 72) / 90));
   const convB = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsB.attack      - 75) / 150 - (ratingsA.goalkeeping - 72) / 90));
 
-  // Sort players by penalty-taking priority
+  // Sort players by penalty-taking priority — exclude red-carded and injured players
   const byWeight = p => PENALTY_KICK_WEIGHTS[p.position] || 0;
-  const kickersA = [...lineupA.players].sort((a, b) => byWeight(b) - byWeight(a));
-  const kickersB = [...lineupB.players].sort((a, b) => byWeight(b) - byWeight(a));
+  const kickersA = [...lineupA.players].filter(p => !excludedA.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
+  const kickersB = [...lineupB.players].filter(p => !excludedB.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
+  // Safety: if all players excluded (shouldn't happen), fall back to full squad minus GK
+  const safeA = kickersA.length ? kickersA : lineupA.players.filter(p => p.position !== 'GK');
+  const safeB = kickersB.length ? kickersB : lineupB.players.filter(p => p.position !== 'GK');
 
   const shotsA = [], shotsB = [];
   let scoreA = 0, scoreB = 0;
@@ -793,8 +799,8 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed) {
   for (let r = 0; r < 5; r++) {
     const goA = rand() < convA;
     const goB = rand() < convB;
-    shotsA.push({ name: kickersA[r].name, scored: goA });
-    shotsB.push({ name: kickersB[r].name, scored: goB });
+    shotsA.push({ name: safeA[r % safeA.length].name, scored: goA });
+    shotsB.push({ name: safeB[r % safeB.length].name, scored: goB });
     if (goA) scoreA++;
     if (goB) scoreB++;
     // Early finish: mathematically impossible to catch up
@@ -807,8 +813,8 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed) {
   for (let round = 0; round < 20 && scoreA === scoreB; round++) {
     const goA = rand() < convA;
     const goB = rand() < convB;
-    shotsA.push({ name: kickersA[sd % kickersA.length].name, scored: goA });
-    shotsB.push({ name: kickersB[sd % kickersB.length].name, scored: goB });
+    shotsA.push({ name: safeA[sd % safeA.length].name, scored: goA });
+    shotsB.push({ name: safeB[sd % safeB.length].name, scored: goB });
     if (goA) scoreA++;
     if (goB) scoreB++;
     if (goA !== goB) break; // one scored and the other missed → winner decided
@@ -961,8 +967,17 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   scorersB = _fixRedCardScorers(scorersB, cardsB.red, lineupB.players, fixRand);
   const injuriesA     = pickInjuries(lineupA.players, mulberry32(saltedSeed + 11));
   const injuriesB     = pickInjuries(lineupB.players, mulberry32(saltedSeed + 13));
-  const matchPenalties = pickMatchPenalties(lineupA, lineupB, saltedSeed, referee);
-  const penalties      = (fa === fb) ? simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed) : null;
+  // Build excluded-player sets (red cards + injuries) before picking penalties
+  const excludedA = new Set([
+    ...(cardsA.red    || []).map(c => c.name),
+    ...(injuriesA     || []).map(i => i.name),
+  ]);
+  const excludedB = new Set([
+    ...(cardsB.red    || []).map(c => c.name),
+    ...(injuriesB     || []).map(i => i.name),
+  ]);
+  const matchPenalties = pickMatchPenalties(lineupA, lineupB, saltedSeed, referee, excludedA, excludedB);
+  const penalties      = (fa === fb) ? simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed, excludedA, excludedB) : null;
 
   return {
     lineups: {

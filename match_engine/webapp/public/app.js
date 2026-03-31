@@ -4787,6 +4787,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
   }
   let _preAcc = isPenMode ? 0 : (900 + 3000 + 350);
   events.forEach(ev => {
+    if (ev.type === 'sub') return; // subs don't show an overlay, no hold time needed
     const fireAt  = ev.minute * TICK;
     const startAt = Math.max(fireAt, _preAcc);
     _preAcc = startAt + _holdMs(ev.type) + 350;
@@ -4812,7 +4813,8 @@ function playLiveMatch(data, payload, tickMs = 300) {
   events.forEach(ev => {
     const fireAt  = ev.minute * TICK;
     const startAt = Math.max(fireAt, accDelay);
-    accDelay      = startAt + _holdMs(ev.type) + 350;
+    // Subs don't show an overlay — no hold time, don't advance the queue
+    if (ev.type !== 'sub') accDelay = startAt + _holdMs(ev.type) + 350;
 
     _eventTimers.push(setTimeout(() => {
       if (ev.type === 'goal') {
@@ -4841,8 +4843,20 @@ function playLiveMatch(data, payload, tickMs = 300) {
         setTimeout(() => changed.classList.remove('pulse'), 450);
         triggerEventOverlay('penalty', ev.name, `${scoreA} - ${scoreB}`, ev.side);
         animatePitchEvent('goal', ev);
+      } else if (ev.type === 'sub') {
+        // Substitution from injury: only animate the pitch swap — no overlay.
+        // The injury overlay (fired 1 min earlier) already communicated the incident.
+        animatePitchEvent('sub', ev);
+      } else if (ev.type === 'red') {
+        // Red card: always show overlay with the carded player's name.
+        triggerEventOverlay('red', ev.name || ev.player || '', null, ev.side);
+        animatePitchEvent('red', ev);
+      } else if (ev.type === 'injury') {
+        // Injury: show overlay, then after it finishes trigger a silent sub animation if applicable.
+        triggerEventOverlay('injury', ev.name || ev.player || '', null, ev.side);
+        animatePitchEvent('injury', ev);
       } else {
-        triggerEventOverlay(ev.type, ev.name, null, ev.side);
+        triggerEventOverlay(ev.type, ev.name || ev.player || '', null, ev.side);
         animatePitchEvent(ev.type, ev);
       }
       // Note: regular events are already rendered by animateTimeline — no addFeedEvent here
