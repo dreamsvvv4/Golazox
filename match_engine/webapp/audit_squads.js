@@ -13,12 +13,17 @@
 const fs   = require('fs');
 const path = require('path');
 
-const SQUADS_DIR = path.join(__dirname, 'squads');
-const VERBOSE    = process.argv.includes('--verbose');
+const SQUADS_DIR  = path.join(__dirname, 'squads');
+const META_PATH   = path.join(__dirname, 'squads-meta.json');
+const VERBOSE     = process.argv.includes('--verbose');
+
+// Load squads-meta.json overlay (used for badge path fallback)
+let squadsMeta = {};
+try { squadsMeta = JSON.parse(fs.readFileSync(META_PATH, 'utf8')); } catch (_) {}
 
 // ---------------------------------------------------------------------------
-const VALID_POSITIONS = new Set(['GK','CB','RB','LB','DM','CM','AM','RM','LM','RW','LW','ST','CF','SS']);
-const MOJIBAKE_RE     = /Ã|â€|ó|á|é|ñ/;          // UTF-8 re-encoded as latin1
+const VALID_POSITIONS = new Set(['GK','CB','RB','LB','DM','CM','AM','CAM','RM','LM','RW','LW','ST','CF','SS']);
+const MOJIBAKE_RE     = /Ã±|Ã¡|Ã©|Ã³|Ã\u00fa|Ã\u00fc|â€™|â€œ|â€|Â·/;  // UTF-8 bytes re-decoded as latin1
 const MIN_PLAYERS     = 8;   // threshold for CATALOG inclusion
 const MIN_RATED_PLAYERS = 11; // warn if playing-XI has fewer
 
@@ -126,8 +131,9 @@ for (const fname of files) {
     warn(fname, `season ${latest}: no source field`);
   }
 
-  // 9. Badge path
-  const badge = data.badgeLocalPath;
+  // 9. Badge path — check squad JSON first, then squads-meta.json overlay
+  const slug  = fname.replace('.json', '');
+  const badge = data.badgeLocalPath || (squadsMeta[slug] && squadsMeta[slug].badgeLocalPath);
   if (!badge) {
     warn(fname, 'no badgeLocalPath');
   } else {
