@@ -715,7 +715,11 @@ function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
   // Only set id if provided — never overwrite an existing id with null
   if (id != null) data.id = id;
   data.slug  = slug;
+  // Never overwrite existing identity/group metadata — protects national team files
+  // from being contaminated by club teams that share a similar slug (e.g. "england"
+  // being overwritten by "New England Revolution").
   if (!data.name) data.name = teamName;
+  // group, nameEs, nameEn: preserve if already set
   data.seasons             = data.seasons || {};
   data.seasons[saisonId]   = squadData;
   try { fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8'); _teamFileCache.set(slug, data); }
