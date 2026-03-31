@@ -828,7 +828,7 @@ function histReplay(idx) {
 }
 
 // ── Surprise Me — random matchup ─────────────────────────────
-function surpriseMe() {
+async function surpriseMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
   // Exclude special/historica/fantasy entries for better game quality
   const pool = _catalog.filter(c =>
@@ -850,13 +850,33 @@ function surpriseMe() {
   _populateEraSelect(tB.slug, 'B');
   if (eA) { const sel = document.getElementById('eraA'); if (sel) sel.value = eA; }
   if (eB) { const sel = document.getElementById('eraB'); if (sel) sel.value = eB; }
+  _eraConfirmed.A = true;
+  _eraConfirmed.B = true;
+  _lookupCache.A = null;
+  _lookupCache.B = null;
   _updateLookupBtn('A');
   _updateLookupBtn('B');
   _pickerState.A = { type: null, league: null }; _renderPicker('A');
   _pickerState.B = { type: null, league: null }; _renderPicker('B');
   _updateClashButton();
+
+  // Show loading state on button
+  const btn = document.getElementById('btn-surprise');
+  const iconEl = btn?.querySelector('.btn-surprise-icon');
+  if (btn)    { btn.disabled = true; }
+  if (iconEl) iconEl.textContent = '⏳';
+  showToast('⚡ ¡Buscando alineaciones…');
+
+  // Auto-download lineups for both teams concurrently
+  try {
+    await Promise.all([handleLookup('A'), handleLookup('B')]);
+  } finally {
+    if (btn)    { btn.disabled = false; }
+    if (iconEl) iconEl.textContent = '⚡';
+  }
+
   _gx('surprise_me');
-  showToast('⚡ ¡Enfrentamiento aleatorio!');
+  showToast(`✅ ${(tA.nameEs || tA.name)} · ${(tB.nameEs || tB.name)} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
 }
 
 // ── Partidos Históricos / Grandes Rivalidades ─────────────────
@@ -1153,9 +1173,6 @@ async function rivalryMe() {
   const name = _lang === 'en' ? match.en : match.label;
   showToast(`🔥 ${name}…`);
 
-  // Scroll to top of input panel so teams are visible while loading
-  document.querySelector('.input-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
   // Auto-download lineups for both teams concurrently
   try {
     await Promise.all([handleLookup('A'), handleLookup('B')]);
@@ -1167,9 +1184,6 @@ async function rivalryMe() {
 
   _gx('rivalry_me', { rivalry: match.label });
 
-  // Scroll VS button into view and flash a hint
-  const vsLbl = document.getElementById('vs-clash-label');
-  document.getElementById('vs-clash')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   showToast(`✅ ${match.desc} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
 }
 function _deepLinkShare() {

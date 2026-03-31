@@ -37,8 +37,8 @@ const TRN = (() => {
   const _LOCKED_TEAMS = {
     'brasilien':         { label: 'Brasil \'70' },
     'ajax-amsterdam':    { label: 'Ajax Amsterdam \'72' },
-    'america-historica': { label: 'Am×rica Hist×rica' },
-    'europa-historica':  { label: 'Europa Hist×rica' },
+    'america-historica': { label: 'América Histórica' },
+    'europa-historica':  { label: 'Europa Histórica' },
   };
   function _isUnlocked() {
     try { return localStorage.getItem('gx_unlocked') === '1'; } catch(_) { return false; }
@@ -709,7 +709,7 @@ const TRN = (() => {
         </div>
         ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">✓ A×adir equipo</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">✓ Añadir equipo</button>
           <button class="btn-secondary trn-preview-back">→ Volver</button>
         </div>`;
     } catch (_err) {
@@ -721,7 +721,7 @@ const TRN = (() => {
           </div>
         </div>
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">✓ A×adir equipo</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">✓ Añadir equipo</button>
           <button class="btn-secondary trn-preview-back">→ Volver</button>
         </div>`;
     }
@@ -2599,7 +2599,7 @@ const TRN = (() => {
     const penStr = m.penA != null && typeof m.penA === 'number'
       ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
     const legsStr = m.legs === 2
-      ? `<div class="trn-modal-legs-sub">Ida×${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} × Vuelta×${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
+      ? `<div class="trn-modal-legs-sub">Ida: ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · Vuelta: ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
 
     const badgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
     const badgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
@@ -2612,7 +2612,7 @@ const TRN = (() => {
           <span class="trn-modal-teamname">${_esc(nameA)}</span>
         </div>
         <div class="trn-modal-score-block">
-          <span class="trn-modal-score-big">${scoreA}×–×${scoreB}</span>
+          <span class="trn-modal-score-big">${scoreA}–${scoreB}</span>
           ${legsStr}${penStr}
         </div>
         <div class="trn-modal-team trn-modal-team-b${isWinB ? ' trn-modal-winner' : isWinA ? ' trn-modal-loser' : ''}">
