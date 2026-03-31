@@ -4783,11 +4783,11 @@ function playLiveMatch(data, payload, tickMs = 300) {
     if (type === 'corner')      return 1100;
     if (type === 'freekick')    return 1200;
     if (type === 'injury')      return 1600;
+    if (type === 'sub')         return 1400;
     return 1800; // yellow/red
   }
   let _preAcc = isPenMode ? 0 : (900 + 3000 + 350);
   events.forEach(ev => {
-    if (ev.type === 'sub') return; // subs don't show an overlay, no hold time needed
     const fireAt  = ev.minute * TICK;
     const startAt = Math.max(fireAt, _preAcc);
     _preAcc = startAt + _holdMs(ev.type) + 350;
@@ -4813,8 +4813,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
   events.forEach(ev => {
     const fireAt  = ev.minute * TICK;
     const startAt = Math.max(fireAt, accDelay);
-    // Subs don't show an overlay — no hold time, don't advance the queue
-    if (ev.type !== 'sub') accDelay = startAt + _holdMs(ev.type) + 350;
+    accDelay = startAt + _holdMs(ev.type) + 350;
 
     _eventTimers.push(setTimeout(() => {
       if (ev.type === 'goal') {
@@ -4844,8 +4843,9 @@ function playLiveMatch(data, payload, tickMs = 300) {
         triggerEventOverlay('penalty', ev.name, `${scoreA} - ${scoreB}`, ev.side);
         animatePitchEvent('goal', ev);
       } else if (ev.type === 'sub') {
-        // Substitution from injury: only animate the pitch swap — no overlay.
-        // The injury overlay (fired 1 min earlier) already communicated the incident.
+        // Substitution: overlay showing playerOut ▼ / playerIn ▲ + pitch dot swap.
+        const subName = `${ev.playerOut || ''} ▼  ${ev.playerIn || ''} ▲`;
+        triggerEventOverlay('sub', subName, null, ev.side);
         animatePitchEvent('sub', ev);
       } else if (ev.type === 'red') {
         // Red card: always show overlay with the carded player's name.
@@ -5028,6 +5028,7 @@ function triggerEventOverlay(type, name, score, side) {
                 : type === 'corner' ? '🚩'
                 : type === 'freekick' ? '🎯'
                 : type === 'injury' ? '🩹'
+                : type === 'sub' ? '🔄'
                 : type === 'kick_off' ? '🔔'
                 : type === 'fulltime' ? '⏱'
                 : '🟥';
@@ -5039,6 +5040,7 @@ function triggerEventOverlay(type, name, score, side) {
                  : type === 'corner'       ? 'ev-corner'
                  : type === 'freekick'     ? 'ev-freekick'
                  : type === 'injury'       ? 'ev-injury'
+                 : type === 'sub'          ? 'ev-sub'
                  : type === 'kick_off'     ? 'ev-kickoff'
                  : type === 'fulltime'     ? 'ev-fulltime'
                  : 'ev-red';
@@ -5047,6 +5049,7 @@ function triggerEventOverlay(type, name, score, side) {
                 : (type === 'penalty-miss') ? 1800
                 : (type === 'corner' || type === 'freekick') ? 1100
                 : (type === 'injury') ? 1600
+                : (type === 'sub') ? 1400
                 : (type === 'kick_off' || type === 'fulltime') ? 3000
                 : 1800;
 
