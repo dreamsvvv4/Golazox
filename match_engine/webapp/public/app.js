@@ -1480,7 +1480,9 @@ function _renderPicker(side) {
 
   // ── Selecciones — flag image grid ──────────────────────────────
   if (st.type === 'seleccion') {
-    const nations = _catalog.filter(c => c.group === '🌍 Selecciones');
+    const nations = _catalog
+      .filter(c => c.group === '🌍 Selecciones')
+      .sort((a, b) => _entryName(a).localeCompare(_entryName(b), _lang, { sensitivity: 'base' }));
     container.innerHTML =
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-nations-label')}</span></div>` +
       `<div class="tp-nations-grid">` +
