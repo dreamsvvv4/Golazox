@@ -279,13 +279,14 @@ const TRN = (() => {
   function _renderTeamSlots() {
     const container = $('trn-teams-list');
     if (!container) return;
+    const _removeLabel = t('trn-remove-team');
     container.innerHTML = _teams.map((t, i) => {
       const yr = t.era ? String(t.era).match(/\d{4}/)?.[0] : null;
       return `<div class="trn-team-slot">
         ${_badgeImg(t.slug, 'trn-slot-badge')}
         <span class="trn-slot-name">${_esc(t.name)}</span>
         ${yr ? `<span class="trn-slot-era">'${_eraLabel(yr)}</span>` : ''}
-        <button class="trn-slot-remove" data-remove-idx="${i}" title="Quitar">✕</button>
+        <button class="trn-slot-remove" data-remove-idx="${i}" title="${_removeLabel}">✕</button>
       </div>`;
     }).join('') || `<p class="trn-teams-empty">${t('trn-teams-empty-1')}<br><span style="font-size:.75rem;opacity:.6">${t('trn-teams-empty-2')}</span></p>`;
 
@@ -548,7 +549,7 @@ const TRN = (() => {
       if (!r.ok) return;
       const data = await r.json();
       if (!data.length) {
-        res.innerHTML = '<div class="trn-search-empty">Sin resultados</div>';
+        res.innerHTML = `<div class="trn-search-empty">${t('trn-search-no-results')}</div>`;
         res.classList.remove('hidden');
         return;
       }
@@ -1169,7 +1170,7 @@ const TRN = (() => {
           curY += 42;
           ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
           ctx.fillStyle = GOLD; ctx.textAlign = 'center';
-          ctx.fillText(`(Penaltis: ${fin.penA}–${fin.penB})`, W / 2, curY);
+          ctx.fillText(`(${t('trn-modal-pens')} ${fin.penA}–${fin.penB})`, W / 2, curY);
         }
         curY += 60;
       }
@@ -1427,7 +1428,7 @@ const TRN = (() => {
   }
 
   function _renderVisualBracket(rounds) {
-    if (!rounds || !rounds.length) return '<p style="color:var(--grey);padding:1rem">Sin datos</p>';
+    if (!rounds || !rounds.length) return `<p style="color:var(--grey);padding:1rem">${t('trn-col-sin-datos')}</p>`;
     const MATCH_H = 84, HEADER_H = 26, COL_W = 210, SW = 36;
     const pos = _computeBracketPositions(rounds);
     const maxBottom = Math.max(...pos.map(p => p.length ? p[p.length - 1].top + MATCH_H : 0));
@@ -2117,7 +2118,7 @@ const TRN = (() => {
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
           if (m.legs === 2) {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
           } else {
             html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
           }
@@ -2133,7 +2134,7 @@ const TRN = (() => {
         r.matches.forEach(m => {
           const penStr = m.penA !== null ? ` (p: ${m.penA}–${m.penB})` : '';
           if (m.legs === 2) {
-            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
           } else {
             html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
           }
@@ -2198,13 +2199,15 @@ const TRN = (() => {
   // ── Swipe gestures on dashboard ──────────────────────────
   const _TAB_ORDER = ['summary', 'bracket', 'calendar', 'stats'];
   (function _initSwipe() {
-    let _sx = 0, _sy = 0;
+    let _sx = 0, _sy = 0, _swipeLocked = false;
     document.addEventListener('touchstart', e => {
       _sx = e.touches[0].clientX;
       _sy = e.touches[0].clientY;
+      // Lock swipe if touch starts inside a horizontally-scrollable container
+      _swipeLocked = !!e.target.closest('[data-no-swipe], #trn-tab-bracket, .trn-bkt-scroll, .trn-pre-draw-bkt-wrap, .trn-table-wrap');
     }, { passive: true });
     document.addEventListener('touchend', e => {
-      if (!_data) return;
+      if (!_data || _swipeLocked) return;
       const dash = $('trn-dashboard');
       if (!dash || dash.classList.contains('hidden')) return;
       const dx = e.changedTouches[0].clientX - _sx;
@@ -2273,7 +2276,7 @@ const TRN = (() => {
           r.matches.forEach(m => {
             const penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
             if (m.legs === 2) {
-              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
             } else {
               html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
             }
@@ -2289,7 +2292,7 @@ const TRN = (() => {
           r.matches.forEach(m => {
             const penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
             if (m.legs === 2) {
-              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB} <small>(agg)</small>${penStr}`);
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
             } else {
               html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
             }
@@ -2559,12 +2562,12 @@ const TRN = (() => {
     };
     if (!byMargin.length) return '';
     return `
-      <h3 class="trn-section-h trn-section-h-mt">\ud83d\udcca Resultados destacados</h3>
+      <h3 class="trn-section-h trn-section-h-mt">${t('trn-stats-h-highlights')}</h3>
       <div class="trn-dest-grid">
-        ${byMargin.map((m, i) => card(m, i === 0 ? '\ud83e\udd47 Mayor goleada' : `Goleada #${i + 1}`)).join('')}
+        ${byMargin.map((m, i) => card(m, i === 0 ? t('trn-hl-top-win') : `${t('trn-hl-win')} #${i + 1}`)).join('')}
       </div>
       <div class="trn-dest-grid" style="margin-top:.5rem">
-        ${byGoals.map((m, i) => card(m, i === 0 ? '\u26bd M\u00e1s goles' : `Golazos #${i + 1}`)).join('')}
+        ${byGoals.map((m, i) => card(m, i === 0 ? t('trn-hl-top-goals') : `${t('trn-hl-goals')} #${i + 1}`)).join('')}
       </div>`;
   }
 
@@ -2625,9 +2628,9 @@ const TRN = (() => {
     const isWinA = m.penA != null ? m.penA > m.penB : scoreA > scoreB;
     const isWinB = m.penA != null ? m.penB > m.penA : scoreB > scoreA;
     const penStr = m.penA != null && typeof m.penA === 'number'
-      ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
+      ? `<div class="trn-modal-pen-row">${t('trn-modal-pens')} ${m.penA}–${m.penB}</div>` : '';
     const legsStr = m.legs === 2
-      ? `<div class="trn-modal-legs-sub">Ida: ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · Vuelta: ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
+      ? `<div class="trn-modal-legs-sub">${t('trn-modal-legs-ida')}: ${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} · ${t('trn-modal-legs-vuelta')}: ${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
 
     const badgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
     const badgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
@@ -2727,7 +2730,7 @@ const TRN = (() => {
     const { m } = entry;
     const slugA = m.a?.slug, eraA = m.a?.era || '';
     const slugB = m.b?.slug, eraB = m.b?.era || '';
-    if (!slugA || !slugB) { area.innerHTML = '<p class="trn-lu-empty">Sin datos de plantilla</p>'; return; }
+    if (!slugA || !slugB) { area.innerHTML = `<p class="trn-lu-empty">${t('trn-no-squad-data')}</p>`; return; }
     area.innerHTML = '<div class="trn-lu-loading"><div class="trn-spinner"></div></div>';
     try {
       const [dA, dB] = await Promise.all([

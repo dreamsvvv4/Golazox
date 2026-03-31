@@ -116,7 +116,7 @@ const I18N = {
     'phase-yellow':'🟨 T. AMARILLA','phase-red':'🟥 T. ROJA','phase-pen-miss':'❌ PENALTI FALLADO','phase-goal':'⚽ GOL','phase-injury':'🩹 LESIÓN','phase-sub':'🔄 CAMBIO',
     'pos-GK':'Portero','pos-RB':'Lateral Der.','pos-CB':'Central','pos-LB':'Lateral Izq.','pos-DM':'Mediocentro Def.',
     'pos-CM':'Centrocampista','pos-RM':'Interior Der.','pos-LM':'Interior Izq.','pos-AM':'Mediapunta',
-    'pos-RW':'Extremo Der.','pos-LW':'Extremo Izq.','pos-ST':'Delantero Centro',
+    'pos-RW':'Extremo Der.','pos-LW':'Extremo Izq.','pos-ST':'Delantero Centro','pos-CAM':'Mediapunta','pos-CF':'Delantero Centro','pos-SS':'Segunda Punta',
     'hth-possession':'Posesión','hth-shots':'Tiros','hth-corners':'Córneres','hth-saves':'Paradas','hth-fouls':'Faltas',
     'hth-attack':'Ataque','hth-midfield':'Centrocampo','hth-defense':'Defensa','hth-goalkeeping':'Portería',
     'radar-attack':'Ataque','radar-midfield':'Medio','radar-defense':'Defensa','radar-goalkeeping':'Portería','radar-physical':'Físico',
@@ -229,6 +229,9 @@ const I18N = {
     'trn-modal-legs-ida':'Ida','trn-modal-legs-vuelta':'Vuelta',
     'trn-sim-error':'⚠ Error en la simulación. Inténtalo de nuevo.',
     'trn-render-error':'Error al renderizar',
+    'trn-search-no-results':'Sin resultados',
+    'trn-remove-team':'Quitar',
+    'trn-no-squad-data':'Sin datos de plantilla',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -269,7 +272,7 @@ const I18N = {
     'phase-yellow':'🟨 YELLOW CARD','phase-red':'🟥 RED CARD','phase-pen-miss':'❌ PENALTY MISSED','phase-goal':'⚽ GOAL','phase-injury':'🩹 INJURY','phase-sub':'🔄 SUBSTITUTION',
     'pos-GK':'Goalkeeper','pos-RB':'Right Back','pos-CB':'Centre Back','pos-LB':'Left Back','pos-DM':'Def. Midfielder',
     'pos-CM':'Midfielder','pos-RM':'Right Mid','pos-LM':'Left Mid','pos-AM':'Attacking Mid',
-    'pos-RW':'Right Winger','pos-LW':'Left Winger','pos-ST':'Striker',
+    'pos-RW':'Right Winger','pos-LW':'Left Winger','pos-ST':'Striker','pos-CAM':'Attacking Mid','pos-CF':'Centre Forward','pos-SS':'Second Striker',
     'hth-possession':'Possession','hth-shots':'Shots','hth-corners':'Corners','hth-saves':'Saves','hth-fouls':'Fouls',
     'hth-attack':'Attack','hth-midfield':'Midfield','hth-defense':'Defense','hth-goalkeeping':'Goalkeeping',
     'radar-attack':'Attack','radar-midfield':'Mid','radar-defense':'Defense','radar-goalkeeping':'GK','radar-physical':'Physical',
@@ -382,6 +385,9 @@ const I18N = {
     'trn-modal-legs-ida':'Leg 1','trn-modal-legs-vuelta':'Leg 2',
     'trn-sim-error':'⚠ Simulation error. Please try again.',
     'trn-render-error':'Error rendering',
+    'trn-search-no-results':'No results',
+    'trn-remove-team':'Remove',
+    'trn-no-squad-data':'No squad data available',
   },
 };
 
