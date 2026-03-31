@@ -5137,30 +5137,56 @@ function shareResult() {
 }
 
 function _openSharePanel(data) {
-  const siteUrl = (window.GOLAZOX_CONFIG && window.GOLAZOX_CONFIG.siteUrl) || '';
+  const base = ((window.GOLAZOX_CONFIG?.siteUrl) || location.origin).replace(/\/$/, '');
+
+  // ── Deep link URL (encodes teams + era so the page auto-loads the match) ──
+  const deepLink = `${base}/?a=${encodeURIComponent(data.teamA + (data.eraA ? ':' + data.eraA : ''))}&b=${encodeURIComponent(data.teamB + (data.eraB ? ':' + data.eraB : ''))}&mode=${encodeURIComponent(data.matchMode || '11v11')}`;
+
+  // ── Rich share text ────────────────────────────────────────────────────────
   const scoreText = `${data.teamA} ${data.scoreA}\u2013${data.scoreB} ${data.teamB}`;
   const eraNote   = (data.eraA && data.eraA === data.eraB) ? ` [${data.eraA}]`
                   : (data.eraA || data.eraB) ? ` [${[data.eraA, data.eraB].filter(Boolean).join(' / ')}]` : '';
-  const shareText = `\u26BD ${scoreText}${eraNote}\nGolazoX.com${siteUrl ? '\n' + siteUrl : ''}`;
+
+  // Scorers line (up to 3 per side)
+  const fmtScorers = arr => (arr || []).slice(0, 3).map(g => `${g.name} ${g.minute || '?'}'`).join(', ');
+  const sA = fmtScorers(data.scorersA);
+  const sB = fmtScorers(data.scorersB);
+  const scorersLine = [sA && `\u26BD ${sA}`, sB && `\u26BD ${sB}`].filter(Boolean).join('\n');
+  const penLine = data.penalties ? `\ud83e\udd45 ${data.penalties.scoreA}\u2013${data.penalties.scoreB} pen.` : '';
+
+  const shareText = [
+    `\u26BD ${scoreText}${eraNote}`,
+    penLine,
+    scorersLine,
+    '',
+    `\ud83d\udd17 ${deepLink}`,
+    '#GolazoX #FootballTimeMachine',
+  ].filter(s => s !== undefined && s !== null).join('\n');
+
   const encodedText = encodeURIComponent(shareText);
 
   const existing = document.getElementById('share-panel-overlay');
   if (existing) existing.remove();
 
+  const isEN = _lang === 'en';
   const overlay = document.createElement('div');
   overlay.id = 'share-panel-overlay';
   overlay.className = 'share-panel-overlay';
   overlay.innerHTML = `
     <div class="share-panel">
-      <div class="share-panel-title">Compartir resultado</div>
+      <div class="share-panel-header">
+        <div class="share-panel-score">${data.teamA} <span class="share-panel-scorebox">${data.scoreA}\u2013${data.scoreB}</span> ${data.teamB}</div>
+        ${eraNote ? `<div class="share-panel-era">${eraNote.replace(/[\[\]]/g,'').trim()}</div>` : ''}
+      </div>
+      <div class="share-panel-title">${isEN ? 'Share' : 'Compartir'}</div>
       <div class="share-panel-options">
         <div class="share-opt" id="sopt-native">
-          <div class="share-opt-icon">\uD83D\uDCF8</div>
-          <div class="share-opt-label">Imagen</div>
+          <div class="share-opt-icon">\uD83D\uDDBC\uFE0F</div>
+          <div class="share-opt-label">${isEN ? 'Image' : 'Imagen'}</div>
         </div>
         <div class="share-opt" id="sopt-copy">
-          <div class="share-opt-icon">\uD83D\uDCCB</div>
-          <div class="share-opt-label">Copiar</div>
+          <div class="share-opt-icon">\uD83D\uDD17</div>
+          <div class="share-opt-label">${isEN ? 'Copy link' : 'Copiar enlace'}</div>
         </div>
         <div class="share-opt" id="sopt-whatsapp">
           <div class="share-opt-icon">\uD83D\uDCAC</div>
@@ -5171,8 +5197,8 @@ function _openSharePanel(data) {
           <div class="share-opt-label">X / Twitter</div>
         </div>
       </div>
-      <div class="share-panel-copied" id="share-copied">\u00A1Copiado al portapapeles!</div>
-      <button class="share-panel-cancel" id="share-cancel">Cancelar</button>
+      <div class="share-panel-copied" id="share-copied">${isEN ? '\u2713 Link copied!' : '\u2713 \u00a1Enlace copiado!'}</div>
+      <button class="share-panel-cancel" id="share-cancel">${isEN ? 'Cancel' : 'Cancelar'}</button>
     </div>
   `;
   document.body.appendChild(overlay);
@@ -5198,7 +5224,7 @@ function _openSharePanel(data) {
       const fileName = `golazox-${slug(data.teamA)}-vs-${slug(data.teamB)}.png`;
       const file = new File([blob], fileName, { type: 'image/png' });
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        navigator.share({ files: [file], title: `\u26BD ${scoreText}` }).catch(() => _scDownload(blob, fileName));
+        navigator.share({ files: [file], title: `\u26BD ${scoreText}`, url: deepLink }).catch(() => _scDownload(blob, fileName));
       } else {
         _scDownload(blob, fileName);
       }
@@ -5209,10 +5235,11 @@ function _openSharePanel(data) {
     });
   });
 
-  // Option: copy text
+  // Option: copy deep link
   document.getElementById('sopt-copy').addEventListener('click', () => {
+    const toCopy = deepLink;
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(shareText).then(() => {
+      navigator.clipboard.writeText(toCopy).then(() => {
         const el = document.getElementById('share-copied');
         if (el) { el.classList.add('visible'); setTimeout(() => el.classList.remove('visible'), 2200); }
       }).catch(() => showToast(t('tooltip-copy-fail')));
@@ -5231,9 +5258,10 @@ function _openSharePanel(data) {
   document.getElementById('sopt-twitter').addEventListener('click', () => {
     closePanel();
     _gx('share_result', { method: 'twitter' });
-    // Grant unlock on Twitter share
     try { localStorage.setItem('gx_unlocked','1'); } catch(_) {}
-    window.open(`https://twitter.com/intent/tweet?text=${encodedText}`, '_blank', 'noopener,noreferrer');
+    // Twitter has a 280-char limit — use a shorter version with just score + link + hashtag
+    const twitterText = `\u26BD ${scoreText}${eraNote}${penLine ? '\n' + penLine : ''}\n\n${deepLink}\n#GolazoX`;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`, '_blank', 'noopener,noreferrer');
   });
 }
 
