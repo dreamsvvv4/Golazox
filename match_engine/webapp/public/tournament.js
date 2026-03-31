@@ -13,8 +13,8 @@ const TRN = (() => {
   let _data       = null;   // computed tournament result
   let _tab        = 'summary';
   let _matchCache = [];     // flat list for modal lookup
-  let _badgeCache  = {};     // slug 뿯↽ badge URL
-  let _seasonCache = {};     // slug 뿯↽ seasons[] from suggest results
+  let _badgeCache  = {};     // slug → badge URL
+  let _seasonCache = {};     // slug → seasons[] from suggest results
   let _modalIdx   = -1;     // current match in modal for prev/next nav
   let _trnCatalog  = null;   // cached catalog for league loader
 
@@ -37,8 +37,8 @@ const TRN = (() => {
   const _LOCKED_TEAMS = {
     'brasilien':         { label: 'Brasil \'70' },
     'ajax-amsterdam':    { label: 'Ajax Amsterdam \'72' },
-    'america-historica': { label: 'Am뿯½rica Hist뿯½rica' },
-    'europa-historica':  { label: 'Europa Hist뿯½rica' },
+    'america-historica': { label: 'Am×rica Hist×rica' },
+    'europa-historica':  { label: 'Europa Hist×rica' },
   };
   function _isUnlocked() {
     try { return localStorage.getItem('gx_unlocked') === '1'; } catch(_) { return false; }
@@ -49,7 +49,7 @@ const TRN = (() => {
     const b = _badge(slug);
     return `<img class="${cls || 'trn-badge'}" src="${b || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">`;
   };
-  // Converts a 4-digit year key to season notation: "2025" 뿯↽ "25/26"
+  // Converts a 4-digit year key to season notation: "2025" → "25/26"
   const _eraLabel = (yr) => {
     const n = parseInt(yr, 10);
     if (!n || n < 1000) return yr;
@@ -64,7 +64,7 @@ const TRN = (() => {
     return yr ? `${t.name} '${_eraLabel(yr)}` : (t.name || '?');
   };
 
-  // ── Main tab switching (뿯⚽ Partido / 붿뿯붿 Torneo) ─────────
+  // ── Main tab switching (⚽ Partido / 🏆 Torneo) ─────────
   function switchMainTab(tab) {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
@@ -151,7 +151,7 @@ const TRN = (() => {
       const hintEl = document.getElementById('hint-' + cb.id);
       if (!hintEl) return;
       const baseKey = cb.id.replace('trn-rule-', 'trn-rule-');
-      // Map id 뿯↽ off/on keys
+      // Map id → off/on keys
       const map = {
         'trn-rule-grupos-idavuelta': ['trn-rule-group-hint-off', 'trn-rule-group-hint-on'],
         'trn-rule-ko-idavuelta':     ['trn-rule-ko-hint-off',    'trn-rule-ko-hint-on'],
@@ -348,7 +348,7 @@ const TRN = (() => {
     el.classList.remove('hidden');
     if (_fmt === 'copa') {
       let html = `<div class="trn-draw-header">
-        <span class="trn-label">�붿 ${_esc(_roundLabel(_numTeams))}</span>
+        <span class="trn-label">� ${_esc(_roundLabel(_numTeams))}</span>
         <button class="trn-draw-reshuffle" data-action="reshuffleDraw">${t('trn-draw-reshuffle')}</button>
       </div><div class="trn-pre-draw-bkt-wrap">${_buildPreDrawBracket(_draw)}</div>`;
       el.innerHTML = html;
@@ -470,9 +470,9 @@ const TRN = (() => {
       <div class="trn-bkt-line" style="top:${champY - .5}px;left:0;width:${SW}px"></div>
     </div>`;
     html += `<div class="trn-bkt-col trn-bkt-champ-col" style="height:${totalH}px">
-      <div class="trn-bkt-col-label">붿뿯붿</div>
+      <div class="trn-bkt-col-label">🏆</div>
       <div class="trn-bkt-champion-card trn-bkt-tbd-champ" style="top:${Math.max(8, champY - 30)}px">
-        <span class="trn-bkt-tbd-champ-icon">붿뿯붿</span>
+        <span class="trn-bkt-tbd-champ-icon">🏆</span>
         <div class="trn-bkt-champ-name" style="opacity:.3">?</div>
       </div>
     </div>`;
@@ -595,7 +595,7 @@ const TRN = (() => {
             <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
             <span class="trn-search-item-name">${name}</span>
             ${meta ? `<span class="trn-search-item-meta">${meta}</span>` : ''}
-            <span class="trn-si-lock">붿붿</span>
+            <span class="trn-si-lock">🔒</span>
           </div>`;
         }
         return `<div class="trn-search-item" data-slug="${slug}" data-name="${name}" data-badge="${badge}" data-era="${_esc(bestEra)}">
@@ -612,8 +612,8 @@ const TRN = (() => {
     const n = parseInt(localStorage.getItem('gx_sim_count') || '0', 10) || 0;
     const remaining = Math.max(0, 5 - n);
     const msg = remaining > 0
-      ? `붿붿 ${t('trn-locked-prefix')} 뿯½ ${remaining} ${remaining !== 1 ? t('trn-locked-sim-n') : t('trn-locked-sim-1')}`
-      : `붿붿 ${t('trn-locked-prefix')} 뿯½ ${t('trn-locked-share-cta')}`;
+      ? `🔒 ${t('trn-locked-prefix')} × ${remaining} ${remaining !== 1 ? t('trn-locked-sim-n') : t('trn-locked-sim-1')}`
+      : `🔒 ${t('trn-locked-prefix')} × ${t('trn-locked-share-cta')}`;
     _showToast(msg);
   }
 
@@ -709,8 +709,8 @@ const TRN = (() => {
         </div>
         ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">✓ A뿯½adir equipo</button>
-          <button class="btn-secondary trn-preview-back">뿯↽ Volver</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">✓ A×adir equipo</button>
+          <button class="btn-secondary trn-preview-back">→ Volver</button>
         </div>`;
     } catch (_err) {
       panel.innerHTML = `
@@ -721,8 +721,8 @@ const TRN = (() => {
           </div>
         </div>
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">✓ A뿯½adir equipo</button>
-          <button class="btn-secondary trn-preview-back">뿯↽ Volver</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">✓ A×adir equipo</button>
+          <button class="btn-secondary trn-preview-back">→ Volver</button>
         </div>`;
     }
   }
@@ -954,14 +954,14 @@ const TRN = (() => {
     if (!_data) return;
     try { _gx('trn_share', { format: _data.format }); } catch(_) {}
     const btn = document.querySelector('.trn-share-btn');
-    if (btn) { btn.disabled = true; btn.textContent = '뿯⎽ Generando…'; }
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Generando…'; }
     try {
       const blob = await _generateTrnPoster(_data);
       const champSlug = _data.champion?.slug || 'torneo';
       const fileName = `golazox-${champSlug}.png`;
       const file = new File([blob], fileName, { type: 'image/png' });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: `붿뿯붿 ${_data.champion?.name || 'GolazoX'} — GolazoX` });
+        await navigator.share({ files: [file], title: `🏆 ${_data.champion?.name || 'GolazoX'} — GolazoX` });
       } else {
         _scDownload(blob, fileName);
         _showToast(t('trn-toast-poster-ok'));
@@ -972,7 +972,7 @@ const TRN = (() => {
         _showToast(t('trn-toast-poster-fail'));
       }
     } finally {
-      if (btn) { btn.disabled = false; btn.textContent = '붿뿯붿 Compartir'; }
+      if (btn) { btn.disabled = false; btn.textContent = '🏆 Compartir'; }
     }
   }
 
@@ -1096,7 +1096,7 @@ const TRN = (() => {
       curY += 56;
 
       const podium  = d.table.slice(0, 3);
-      const medals  = ['붿붿', '붿붿', '붿붿'];
+      const medals  = ['🥇', '🥈', '🥉'];
       const pillClr = [
         'rgba(255,215,0,0.12)', 'rgba(200,200,200,0.10)', 'rgba(205,127,50,0.10)',
       ];
@@ -1212,7 +1212,7 @@ const TRN = (() => {
       ctx.fillText(_scSafe(m.name), 152, curY + 42);
       ctx.textAlign = 'right';
       ctx.font = 'bold 48px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = GOLD;
-      ctx.fillText(`${m.count}뿯½`, W - 80, curY + 32);
+      ctx.fillText(`${m.count}×`, W - 80, curY + 32);
       ctx.font = '500 24px "Rajdhani",Arial,sans-serif'; ctx.fillStyle = DIM;
       ctx.fillText(t('trn-poster-mom'), W - 80, curY + 58);
       ctx.textAlign = 'center';
@@ -1319,15 +1319,15 @@ const TRN = (() => {
     };
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
-      data.matches.forEach((m, i) => add(m, `${t('trn-cal-jornada')} ${Math.floor(i / chunk) + 1} 뿯½ ${t('trn-fmt-name-liga')}`));
+      data.matches.forEach((m, i) => add(m, `${t('trn-cal-jornada')} ${Math.floor(i / chunk) + 1} × ${t('trn-fmt-name-liga')}`));
     } else if (data.format === 'copa' && !data.groups) {
-      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' 뿯½ ' + t('trn-fmt-name-copa'))));
+      data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' × ' + t('trn-fmt-name-copa'))));
       if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + t('trn-fmt-name-copa'));
     } else {
       // Copa groups mode or old Champions
       const label = data.format === 'copa' ? t('trn-fmt-name-copa') : t('trn-fmt-name-champions');
       (data.groups || []).forEach(g => g.matches.forEach(m => add(m, g.label)));
-      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' 뿯½ ' + label)));
+      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' × ' + label)));
       if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + label);
     }
   }
@@ -1840,7 +1840,7 @@ const TRN = (() => {
     if (!path.length) return '';
     const rCls = { w: 'trn-path-w', d: 'trn-path-d', l: 'trn-path-l' };
     const rLabel = { w: 'V', d: 'E', l: 'D' };
-    return `<h3 class="trn-section-h trn-section-h-mt">붿뿯붿 Camino al t\u00edtulo</h3>
+    return `<h3 class="trn-section-h trn-section-h-mt">🏆 Camino al t\u00edtulo</h3>
       <div class="trn-champ-path">
         ${path.map(p => {
           const penStr = p.penA !== null ? ` (${p.isA ? p.penA : p.penB}\u2013${p.isA ? p.penB : p.penA}p)` : '';
@@ -1905,21 +1905,21 @@ const TRN = (() => {
     return `
       <div class="trn-stat-cards">
         <div class="trn-stat-card trn-stat-card-champ">
-          <div class="trn-stat-card-icon">붿뿯붿</div>
+          <div class="trn-stat-card-icon">🏆</div>
           <div class="trn-stat-card-label">${t('trn-stat-card-champ')}</div>
           <div class="trn-stat-card-value">${_esc(d.champion?.name || '—')}</div>
         </div>
         <div class="trn-stat-card trn-stat-card-pich">
-          <div class="trn-stat-card-icon">뿯⚽</div>
+          <div class="trn-stat-card-icon">⚽</div>
           <div class="trn-stat-card-label">${t('trn-stat-card-pich')}</div>
           <div class="trn-stat-card-value">${pichichi ? _esc(pichichi.name) : '—'}</div>
-          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} ${t('trn-stat-goals-unit')} 뿯½ ${_esc(pichichi.team)}</div>` : ''}
+          ${pichichi ? `<div class="trn-stat-card-sub">${pichichi.goals} ${t('trn-stat-goals-unit')} × ${_esc(pichichi.team)}</div>` : ''}
         </div>
         <div class="trn-stat-card trn-stat-card-mvp">
           <div class="trn-stat-card-icon">⭐</div>
           <div class="trn-stat-card-label">${t('trn-stat-card-mvp')}</div>
           <div class="trn-stat-card-value">${mvp ? _esc(mvp.name) : '—'}</div>
-          ${mvp ? `<div class="trn-stat-card-sub">${mvp.count}뿯½ MOM 뿯½ ${_esc(mvp.team)}</div>` : ''}
+          ${mvp ? `<div class="trn-stat-card-sub">${mvp.count}× MOM × ${_esc(mvp.team)}</div>` : ''}
         </div>
       </div>`;
   }
@@ -1988,9 +1988,9 @@ const TRN = (() => {
     if (champBadgeEl) champBadgeEl.src = champBadge || '/img/badges/_placeholder.svg';
     $('trn-champ-name').textContent = champ?.name || '—';
     $('trn-champ-format').textContent =
-      _data.format === 'liga' ? '붿뿯붿 Liga' :
-      (_data.format === 'copa' && _data.copaMode === 'groups') ? '붿뿯붿 Copa 뿯½ Grupos' :
-      _data.format === 'copa' ? '붿뿯붿 Copa' : '⭐ Champions';
+      _data.format === 'liga' ? '🏆 Liga' :
+      (_data.format === 'copa' && _data.copaMode === 'groups') ? '🏆 Copa × Grupos' :
+      _data.format === 'copa' ? '🏆 Copa' : '⭐ Champions';
 
     // Runner-up on poster
     const runnerUpEl = $('trn-champ-runnerup');
@@ -2148,15 +2148,15 @@ const TRN = (() => {
     el.innerHTML = html;
   }
 
-  // ── Bracket tab (= Clasificaci뿯½n tab for Liga) ───────────
+  // ── Bracket tab (= Clasificaci×n tab for Liga) ───────────
   function _renderBracket() {
     const el = $('trn-tab-bracket');
     if (!el || !_data) return;
     const d = _data;
     if (d.format === 'liga') {
       const table = d.table || [];
-      const podiumClass = ['trn-cls-pos-1', 'trn-cls-pos-2', 'trn-cls-pos-3'];
-      const posLabel = (i) => i < 3 ? ['붿붿','붿붿','붿붿'][i] : String(i + 1);
+      const podiumClass = ['trn-cls-pos-1', 'trn-cls-pos-2', '', ''];
+      const posLabel = (i) => i < 2 ? ['🥇', '🥈'][i] : String(i + 1);
       const rows = table.map((r, i) => {
         const gd = (r.gf ?? 0) - (r.ga ?? 0);
         const gdStr = gd > 0 ? `+${gd}` : String(gd);
@@ -2223,7 +2223,7 @@ const TRN = (() => {
 
     try {
       if (d.format === 'liga') {
-        const medals = ['붿붿', '붿붿', '붿붿'];
+        const medals = ['🥇', '🥈', '🥉'];
         const top5 = (d.table || []).slice(0, 5);
         el.innerHTML = _renderStatCards() + `
           <h3 class="trn-section-h">${t('trn-summ-top5')}</h3>
@@ -2311,7 +2311,7 @@ const TRN = (() => {
 
   // ── Dream XI ─────────────────────────────────────────────
   async function _buildDreamXI(d) {
-    // Build composite player score: goals뿯½1 + MOM뿯½2
+    // Build composite player score: goals×1 + MOM×2
     const pm = {};
     (d._scorersAll || d.pichichi || []).forEach(r => {
       const k = r.name + '|' + r.teamSlug;
@@ -2340,7 +2340,7 @@ const TRN = (() => {
         .then(r => r.ok ? r.json() : null).catch(() => null);
     }));
 
-    // Map lowercase name 뿯↽ position string
+    // Map lowercase name → position string
     const nameToPos = {};
     lookupResults.forEach(res => {
       const ld = res.value;
@@ -2390,8 +2390,8 @@ const TRN = (() => {
   function _renderXIHtml(xi) {
     if (!xi) return `<p class="trn-lu-empty">${t('trn-xi-empty')}</p>`;
     const card = p => {
-      const stat = p.goals > 0 && p.mom > 0 ? `${p.goals}뿯⚽ ${p.mom}⭐`
-                 : p.goals > 0 ? `${p.goals}뿯⚽`
+      const stat = p.goals > 0 && p.mom > 0 ? `${p.goals}⚽ ${p.mom}⭐`
+                 : p.goals > 0 ? `${p.goals}⚽`
                  : p.mom > 0   ? `${p.mom}⭐`
                  : '';
       const last = _esc(p.name.split(/\s+/).slice(-1)[0] || p.name);
@@ -2466,7 +2466,7 @@ const TRN = (() => {
             ${_badgeImg(r.teamSlug, 'trn-stats-badge')}
             <span class="trn-stats-team">${_esc(r.name)}</span>
             <span class="trn-stats-club">${_esc(r.team)}</span>
-            <span class="trn-stats-gf">${r.count}뿯½ MOM</span>
+            <span class="trn-stats-gf">${r.count}× MOM</span>
           </div>`).join('')}
       </div>` : ''}
       <h3 class="trn-section-h trn-section-h-mt">${t('trn-stats-h-teams-goals')}</h3>
@@ -2599,7 +2599,7 @@ const TRN = (() => {
     const penStr = m.penA != null && typeof m.penA === 'number'
       ? `<div class="trn-modal-pen-row">Penaltis: ${m.penA}–${m.penB}</div>` : '';
     const legsStr = m.legs === 2
-      ? `<div class="trn-modal-legs-sub">Ida뿯½${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} 뿯½ Vuelta뿯½${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
+      ? `<div class="trn-modal-legs-sub">Ida×${m.r1?.scoreA ?? '?'}–${m.r1?.scoreB ?? '?'} × Vuelta×${m.r2?.scoreA ?? '?'}–${m.r2?.scoreB ?? '?'}</div>` : '';
 
     const badgeA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
     const badgeB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
@@ -2612,7 +2612,7 @@ const TRN = (() => {
           <span class="trn-modal-teamname">${_esc(nameA)}</span>
         </div>
         <div class="trn-modal-score-block">
-          <span class="trn-modal-score-big">${scoreA}뿯½–뿯½${scoreB}</span>
+          <span class="trn-modal-score-big">${scoreA}×–×${scoreB}</span>
           ${legsStr}${penStr}
         </div>
         <div class="trn-modal-team trn-modal-team-b${isWinB ? ' trn-modal-winner' : isWinA ? ' trn-modal-loser' : ''}">
@@ -2633,8 +2633,8 @@ const TRN = (() => {
           const isA = g.side === 'A';
           return `<div class="trn-modal-tl-row${isA ? ' trn-tl-a' : ' trn-tl-b'}">
             ${isA
-              ? `<span class="trn-tl-name">${_esc(g.name)}</span><span class="trn-tl-icon">뿯⚽</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-spacer"></span>`
-              : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">뿯⚽</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
+              ? `<span class="trn-tl-name">${_esc(g.name)}</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-spacer"></span>`
+              : `<span class="trn-tl-spacer"></span><span class="trn-tl-score">${rA}–${rB}</span><span class="trn-tl-min">${g.minute}'</span><span class="trn-tl-icon">⚽</span><span class="trn-tl-name">${_esc(g.name)}</span>`}
           </div>`;
         }).join('')}</div>`
       : `<div class="trn-modal-no-goals-row">${t('trn-modal-no-goals')}</div>`;
