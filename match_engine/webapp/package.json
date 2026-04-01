@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "echo 'No build step — Express server'",
-    "start": "node server.js",
+    "start": "npx pm2 reload golazox 2>/dev/null || npx pm2 start ecosystem.config.js --env production",
     "start:prod": "NODE_ENV=production node server.js",
     "pm2:start": "npx pm2 start ecosystem.config.js --env production",
     "pm2:reload": "npx pm2 reload golazox",
