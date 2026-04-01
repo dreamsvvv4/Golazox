@@ -55,6 +55,144 @@ const PLAYER_POSITIONS_RAW = [
   ['antonio cabrini',          'LB'],
   ['julius cesar',             'GK'],
   ['julius cesar brasil',      'GK'],
+  // ── Laterales modernos frecuentemente clasificados como CB en scrapers ──
+  // Real Madrid
+  ['alvaro carreras',          'LB'],  // RM LB 2024-25
+  ['fran garcia',              'LB'],  // RM LB 2022-25 (distinto de Francesc Garcia)
+  ['lucas vazquez',            'RB'],  // RM RB suplente
+  ['nacho fernandez',          'CB'],  // RM CB
+  // Barcelona
+  ['jules kounde',             'RB'],  ['koundé',               'RB'],
+  ['gerard martin',            'LB'],  // Barça LB 2024-25
+  ['eric garcia',              'CB'],  // Barça CB
+  // Bayern Munich
+  ['alphonso davies',          'LB'],
+  ['noussair mazraoui',        'RB'],  ['mazraoui',             'RB'],
+  // Liverpool
+  ['conor bradley',            'RB'],
+  ['kostas tsimikas',          'LB'],  ['tsimikas',             'LB'],
+  ['jarell quansah',           'CB'],
+  // Man City
+  ['manuel akanji',            'CB'],  ['akanji',               'CB'],
+  ['joleon lescott',           'CB'],
+  // Tottenham / PL
+  ['pedro porro',              'RB'],
+  ['kieran trippier',          'RB'],  ['trippier',             'RB'],
+  ['nathaniel clyne',          'RB'],
+  ['ben davies',               'LB'],
+  ['ryan sessegnon',           'LB'],
+  ['sergio reguilon',          'LB'],  ['reguilón',             'LB'],
+  // Inter
+  ['benjamin pavard',          'RB'],  ['pavard',               'RB'],
+  ['denzel dumfries',          'RB'],
+  ['carlos augusto',           'LB'],  // Inter LB
+  ['matteo darmian',           'RB'],
+  ['michele di gregorio',      'GK'],
+  // Juventus
+  ['juan cuadrado',            'RB'],  ['cuadrado',             'RB'],
+  ['weston mckennie',          'CM'],
+  ['andrea cambiaso',          'RB'],  // Juve can play RB or LB — primary RB
+  ['nicolo fagioli',           'CM'],  ['nicolò fagioli',       'CM'],
+  ['timothy weah',             'RW'],
+  ['samuel mbangula',          'LW'],
+  ['jonas rouhi',              'LB'],
+  // AC Milan
+  ['davide calabria',          'RB'],  ['calabria',             'RB'],
+  ['theo hernandez',           'LB'],  // already overridden but duplicate for safety
+  ['pierre kalulu',            'CB'],  ['kalulu',               'CB'],
+  ['malick thiaw',             'CB'],  ['thiaw',                'CB'],
+  ['tijjani reijnders',        'CM'],
+  ['mike maignan',             'GK'],  // already GK in ratings
+  // Atletico Madrid
+  ['cesar azpilicueta',        'RB'],  ['azpilicueta',          'RB'],
+  ['marcos llorente',          'CM'],
+  ['nahuel molina',            'RB'],  // already ✓
+  ['reinildo',                 'LB'],  ['reinildo mandava',     'LB'],
+  ['rodrigo de paul',          'CM'],
+  ['thomas lemar',             'LW'],  ['lemar',                'LW'],
+  // Borussia Dortmund
+  ['marius wolf',              'RB'],
+  ['julian ryerson',           'RB'],  ['ryerson',              'RB'],
+  ['ramy bensebaini',          'LB'],  ['bensebaini',           'LB'],
+  ['niklas sule',              'CB'],  ['süle',                 'CB'], ['sule', 'CB'],
+  ['nico schlotterbeck',       'CB'],  // already ✓
+  ['emre can',                 'DM'],  // BVB/Juve DM
+  // Manchester United
+  ['diogo dalot',              'RB'],  ['dalot',                'RB'],
+  ['victor lindelof',          'CB'],
+  ['lisandro martinez',        'CB'],  ['martínez lisandro',    'CB'],
+  ['tyrell malacia',           'LB'],
+  ['luke shaw',                'LB'],
+  // Arsenal
+  ['cedric soares',            'RB'],  ['cedric',               'RB'],
+  ['takehiro tomiyasu',        'RB'],  ['tomiyasu',             'RB'],
+  ['kieran tierney',           'LB'],  ['tierney',              'LB'],
+  ['oleksandr zinchenko',      'LB'],  // already ✓
+  ['ben white',                'RB'],  // Arsenal play Ben White as RB
+  // PSG
+  ['achraf hakimi',            'RB'],  // already ✓ but extra safety
+  ['nuno mendes',              'LB'],  ['mendes',               'LB'],
+  ['milan skriniar',           'CB'],  ['škriniar',             'CB'], ['skriniar', 'CB'],
+  ['marquinhos',               'CB'],  // already overridden? Let me ensure
+  ['manuel ugarte',            'DM'],  // PSG DM
+  // Real Sociedad / Spain
+  ['andoni gorosabel',         'RB'],
+  ['aritz elustondo',          'CB'],
+  ['igor zubeldia',            'CB'],
+  ['mikel oyarzabal',          'LW'],  // override from AM to LW for accuracy
+  // Key forwards/wingers commonly mispositioned in scrapers
+  ['mo salah',                 'RW'],  ['mohamed salah',         'RW'],  // Liverpool RW not LW
+  ['raheem sterling',          'LW'],
+  ['gabriel martinelli',       'LW'],  // Arsenal LW
+  ['diogo jota',               'LW'],  // Liverpool LW/ST versatile
+  ['cody gakpo',               'LW'],  // Liverpool LW
+  ['nicolas jackson',          'ST'],  // Chelsea CF
+  ['roberto firmino',          'ST'],  // Liverpool CF
+  ['karim adeyemi',            'LW'],  ['adeyemi',               'LW'],
+  ['jamie gittens',            'LW'],  ['gittens',               'LW'],  // BVB LW
+  ['serhou guirassy',          'ST'],  ['guirassy',              'ST'],  // BVB/Stuttgart ST
+  ['julian brandt',            'AM'],  // BVB AM
+  // Key DMs/pivots not yet in positions map
+  ['fabinho',                  'DM'],  // Liverpool/PSG DM pivot
+  ['georginio wijnaldum',      'CM'],  ['wijnaldum',             'CM'],
+  ['jordan henderson',         'CM'],  // Liverpool CM captain
+  // Key forwards/wingers commonly mispositioned in scrapers
+  ['mo salah',                 'RW'],  ['mohamed salah',         'RW'],  // Liverpool RW
+  ['raheem sterling',          'LW'],
+  ['gabriel martinelli',       'LW'],  // Arsenal LW
+  ['diogo jota',               'LW'],  // Liverpool LW/ST
+  ['cody gakpo',               'LW'],  // Liverpool LW
+  ['nicolas jackson',          'ST'],  // Chelsea CF
+  ['roberto firmino',          'ST'],  // Liverpool CF
+  ['karim adeyemi',            'LW'],  ['adeyemi',               'LW'],
+  ['jamie gittens',            'LW'],  ['gittens',               'LW'],  // BVB LW
+  ['serhou guirassy',          'ST'],  ['guirassy',              'ST'],  // BVB/Stuttgart ST
+  ['julian brandt',            'AM'],  // BVB AM
+  // Key DMs/pivots not yet in positions map
+  ['fabinho',                  'DM'],  // Liverpool/PSG DM
+  ['georginio wijnaldum',      'CM'],  ['wijnaldum',             'CM'],
+  ['jordan henderson',         'CM'],  // Liverpool captain
+  ['jordan henderson',         'CM'],
+  // Ajax
+  ['devyne rensch',            'RB'],
+  ['jorrel hato',              'LB'],
+  // Misc Europe
+  ['pedro neto',               'RW'],  // already ✓  
+  ['noni madueke',             'RW'],  // already ✓
+  ['malo gusto',               'RB'],  // already ✓
+  ['jeremy doku',              'LW'],  ['jeremy doku',          'LW'],
+  ['ryan gravenberch',         'DM'],  // Liverpool CM/DM — listed DM for better 4-3-3 fit
+  ['manu kone',                'DM'],  ['kone manu',            'DM'],
+  ['boubacar kamara',          'DM'],  ['kamara boubacar',      'DM'],
+  ['ibrahim sangare',          'DM'],  ['sangaré',              'DM'],
+  ['dominik szoboszlai',       'AM'],  // Liverpool AM
+  ['dani olmo',                'AM'],  ['olmo dani',            'AM'],
+  ['joao felix',               'AM'],  // already might be — ensure AM
+  ['isco alarcon',             'AM'],  // already ✓ as isco
+  ['matteo guendouzi',         'CM'],  // already ✓
+  ['youri tielemans',          'CM'],  // already ✓
+  ['amadou onana',             'DM'],  // Aston Villa/Belgium DM
+  ['boubakar kouyate',         'DM'],
   // Centrocampistas que a veces aparecen como delanteros o defensas
   ['franz beckenbauer',        'CB'],
   ['lothar matthaus',          'CM'],
@@ -451,6 +589,7 @@ const PLAYER_RATINGS_RAW = [
   ['lionel messi',           99], ['leo messi',            99], ['messi',   99],
   ['cristiano ronaldo',      99],
   ['ronaldo nazario',        98], ['ronaldo nazário',      98], ['ronaldo fenomeno', 98],
+  ['ronaldo',                98],  // R9 alias — historical JSONs often store just 'Ronaldo'
   ['franz beckenbauer',      96],
   ['alfredo di stefano',     98],
   ['ferenc puskas',          96], ['puskás',               96], ['puskas',  96],
@@ -554,12 +693,81 @@ const PLAYER_RATINGS_RAW = [
   ['antoine griezmann',      89], ['griezmann',            89],
   ['ousmane dembele',        87], ['dembélé',              87], ['dembele', 87],
   ['marco reus',             86], ['reus',                 86],
-  ['thomas muller',          78], ['thomas müller',        78],
+  ['thomas muller',          86], ['thomas müller',        86],  // Raumdeuter, CL/WC winner
   ['franck ribery',          90],
   ['arjen robben',           89],
   ['lamine yamal',           88],
   ['fernando torres',        87],
   ['alvaro morata',          83], ['morata',               83],
+  // ── Jugadores históricos sin valor de mercado (scrapes antiguos) ──────────
+  // Liverpool
+  ['fabinho',                88], ['fabinho tavares',      88],
+  ['georginio wijnaldum',    85], ['wijnaldum',            85], ['gini wijnaldum', 85],
+  ['james milner',           81], ['milner',               81],
+  ['naby keita',             83], ['naby keïta',           83],
+  ['alex oxlade-chamberlain',82], ['oxlade-chamberlain',   82],
+  ['adam lallana',           82], ['lallana',              82],
+  ['joel matip',             83], ['matip',                83],
+  ['dejan lovren',           81], ['lovren',               81],
+  ['andy robertson',         86], // alias
+  ['roberto firmino',        84], ['firmino',              84],  // bump from 83
+  // Real Madrid clásicos sin datos TM
+  ['isco',                   85], ['isco alarcon',         85],
+  ['marcelo',                86], ['marcelo vieira',       86],
+  ['nacho',                  82], ['nacho fernandez',      82],
+  ['dani ceballos',          82],
+  ['marco asensio',          83],
+  // Ajax histórico
+  ['frank rijkaard',         89], ['rijkaard',             89],
+  ['ruud gullit',            93], ['gullit',               93],
+  ['marco van basten',       98], ['van basten',           98],
+  // Bayern histórico
+  ['philipp lahm',           92], ['lahm',                 92],
+  ['bastian schweinsteiger', 90], ['schweinsteiger',       90],
+  ['thomas muller',          78],
+  ['franck ribery',          90],
+  ['arjen robben',           89],
+  // Misc important players often without MV in scraped data
+  ['mesut ozil',             88], ['özil',                 88],
+  ['olivier giroud',         83], ['giroud',               83],
+  ['cesc fabregas',          87], ['fàbregas',             87],
+  ['santi cazorla',          85], ['cazorla',              85],
+  ['mikel arteta',           84], ['arteta',               84],
+  ['tomas rosicky',          84], ['rosický',              84],
+  ['robin van persie',       88], ['van persie',           88],
+  ['juan romero riquelme',   89], // alias
+  ['javier zanetti',         88], ['zanetti',              88],
+  ['gianluca zambrotta',     85], ['zambrotta',            85],
+  ['filippo inzaghi',        85], ['inzaghi',              85],
+  ['christian vieri',        88], ['vieri',                88],
+  ['hernan crespo',          85], ['crespo',               85],
+  ['andrei shevchenko',      91],
+  ['andriy shevchenko',      91],
+  ['clarence seedorf',       88], ['seedorf',              88],
+  ['edgar davids',           85], ['davids',               85],
+  ['paulo maldini',          97],      // typo alias
+  ['gianfranco zola',        87], ['zola',                 87],
+  ['pierre van hooijdonk',   83], ['van hooijdonk',        83],
+  ['marc overmars',          85], ['overmars',             85],
+  ['dennis bergkamp',        92], ['bergkamp',             92],
+  ['thierry henry',          93],
+  ['patrick kluivert',       85], ['kluivert',             85],
+  ['davor suker',            87], ['šuker',                87], ['suker', 87],
+  ['predrag mijatovic',      84],
+  ['robert prosinecki',      85],
+  ['fernando redondo',       89], ['redondo',              89],
+  ['nicolas anelka',         85], ['anelka',               85],
+  ['freddie ljungberg',      84], ['ljungberg',            84],
+  ['robert pires',           87], ['pirès',                87], ['pires', 87],
+  ['sylvain wiltord',        83], ['wiltord',              83],
+  ['ray parlour',            80], ['parlour',              80],
+  ['ashley cole',            86],
+  ['sol campbell',           87], ['campbell sol',         87],
+  ['tony adams',             85], ['adams',                85],
+  ['lee dixon',              82], ['dixon',                82],
+  ['nigel winterburn',       82], ['winterburn',           82],
+  ['martin keown',           82], ['keown',                82],
+  ['ian wright',             87], ['wright ian',           87],
   ['romelu lukaku',          85], ['lukaku',               85],
   ['pierre-emerick aubameyang', 84], ['aubameyang',        84],
   ['ciro immobile',          85], ['immobile',             85],
@@ -798,7 +1006,9 @@ const PLAYER_RATINGS_RAW = [
   ['vitinha',                87],
   ['joao felix',             84], ['jo�o f�lix',           84],
   ['rafael leao',            88], ['le�o',                 88],
-  ['cristiano ronaldo',      88], ['ronaldo',              88], ['cr7',     88],
+  // CR7 current form — DO NOT override the all-time 99 entry above (Map last-wins);
+  // actual rating is set by the definitive entry ['cristiano ronaldo', 99] earlier.
+  // ['cristiano ronaldo', 88] removed to avoid overwriting legendary peak.
   ['nuno mendes',            87], ['mendes nuno',          87],
   ['ruben neves',            85], ['neves ruben',          85],
   ['pedro neto',             83],
@@ -1039,7 +1249,8 @@ const PLAYER_RATINGS_RAW = [
   ['pervis estupinian',      85], ['estupi��n',            85], ['estupinian', 85],
   ['lautaro martinez',       89], ['lautaro mart�nez',     89],
   ['julian alvarez',         89], ['juli�n �lvarez',       89],
-  ['lionel messi',           88], ['messi',                88],
+  // Messi current form — same as CR7: definitive entry ['lionel messi', 99] wins.
+  // ['lionel messi', 88] removed to preserve the legendary all-time rating.
   ['paulo dybala',           86], ['dybala',               86],
   ['min-jae kim',            87], ['kim min-jae',          87],
   ['joel pohjanpalo',        82], ['pohjanpalo',           82],

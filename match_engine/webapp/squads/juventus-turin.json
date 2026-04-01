@@ -776,7 +776,7 @@
       "teamLabel": "Juventus (2002-03)"
     },
     "2012": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -949,7 +949,7 @@
       "teamLabel": "Juventus (2012-13)"
     },
     "2015": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Neto",
@@ -997,7 +997,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Patrice Evra",
@@ -1057,7 +1057,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Kwadwo Asamoah",
@@ -1114,7 +1114,7 @@
       "teamLabel": "Juventus (2015-16)"
     },
     "2017": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -1158,11 +1158,11 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Stephan Lichtsteiner",
@@ -1210,7 +1210,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Kwadwo Asamoah",
@@ -1259,7 +1259,7 @@
       "teamLabel": "Juventus (2017-18)"
     },
     "2018": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -1287,7 +1287,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Leonardo Bonucci",
@@ -1335,7 +1335,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Leonardo Spinazzola",
@@ -1351,7 +1351,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Francesco Pezziardi",
@@ -1403,7 +1403,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Manolo Portanova",
@@ -1508,7 +1508,7 @@
       "teamLabel": "Juventus (2018-19)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -1548,7 +1548,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 88
         },
@@ -1560,7 +1560,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 24000000,
           "rating": 86
         },
@@ -1584,7 +1584,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 9500000,
           "rating": 82
         },
@@ -1644,7 +1644,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 14500000,
           "rating": 81
         },
@@ -1749,7 +1749,7 @@
       "teamLabel": "Juventus (2019-20)"
     },
     "2020": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -1801,7 +1801,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 20000000,
           "rating": 85
         },
@@ -1819,7 +1819,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 7500000,
           "rating": 81
         },
@@ -1915,7 +1915,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 16000000,
           "rating": 81
         },
@@ -2102,13 +2102,13 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 6000000,
           "rating": 80
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 6000000,
           "rating": 80
         },
@@ -2180,7 +2180,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 8000000,
           "rating": 81
         },
@@ -2303,7 +2303,7 @@
       "teamLabel": "Juventus (2021-22)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "3-5-2",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -2355,7 +2355,7 @@
         },
         {
           "name": "Andrea Cambiaso",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 25000000,
           "rating": 87
         },
@@ -2391,7 +2391,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 2000000,
           "rating": 76
         },
@@ -2403,7 +2403,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 1000000,
           "rating": 73
         },
@@ -2550,7 +2550,7 @@
       "teamLabel": "Juventus (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Michele Di Gregorio",
@@ -2584,7 +2584,7 @@
         },
         {
           "name": "Andrea Cambiaso",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 30000000,
           "rating": 87
         },

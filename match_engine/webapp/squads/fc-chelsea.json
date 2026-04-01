@@ -537,7 +537,7 @@
       "teamLabel": "Chelsea (2004-05)"
     },
     "2005": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Petr Cech",
@@ -670,7 +670,7 @@
       "teamLabel": "Chelsea (2005-06)"
     },
     "2011": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Petr Cech",
@@ -811,7 +811,7 @@
       "teamLabel": "Chelsea (2011-12)"
     },
     "2012": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Petr Cech",
@@ -835,7 +835,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "John Terry",
@@ -843,7 +843,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "LB"
+          "position": "CB"
         },
         {
           "name": "Andreas Christensen",
@@ -960,7 +960,7 @@
       "teamLabel": "Chelsea (2012-13)"
     },
     "2014": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Thibaut Courtois",
@@ -984,7 +984,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Gary Cahill",
@@ -1004,7 +1004,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "LB"
+          "position": "CB"
         },
         {
           "name": "Kenneth Omeruo",
@@ -1052,7 +1052,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Oscar",
@@ -1125,7 +1125,7 @@
       "teamLabel": "Chelsea (2014-15)"
     },
     "2021": {
-      "formation": "4-4-2",
+      "formation": "3-4-3",
       "players": [
         {
           "name": "Edouard Mendy",
@@ -1169,7 +1169,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Malang Sarr",
@@ -1315,7 +1315,7 @@
       "teamLabel": "Chelsea (2021-22)"
     },
     "2022": {
-      "formation": "4-4-2",
+      "formation": "3-4-3",
       "players": [
         {
           "name": "Kepa Arrizabalaga",
@@ -1367,13 +1367,13 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 87
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -1385,7 +1385,7 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 65000000,
           "rating": 85
         },
@@ -1403,7 +1403,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 5000000,
           "rating": 80
         },
@@ -1559,7 +1559,7 @@
         },
         {
           "name": "Noni Madueke",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 30000000,
           "rating": 83
         },
@@ -1586,7 +1586,7 @@
       "teamLabel": "Chelsea (2022-23)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Robert Sánchez",
@@ -1650,13 +1650,13 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 28000000,
           "rating": 87
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 87
         },
@@ -1674,7 +1674,7 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 40000000,
           "rating": 85
         },
@@ -1686,7 +1686,7 @@
         },
         {
           "name": "Ian Maatsen",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 83
         },
@@ -1764,7 +1764,7 @@
         },
         {
           "name": "Cole Palmer",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 80000000,
           "rating": 88
         },
@@ -1776,7 +1776,7 @@
         },
         {
           "name": "Moisés Caicedo",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 75000000,
           "rating": 86
         },
@@ -1884,7 +1884,7 @@
         },
         {
           "name": "Noni Madueke",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 28000000,
           "rating": 83
         },
@@ -1935,7 +1935,7 @@
       "teamLabel": "Chelsea (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Robert Sánchez",
@@ -1969,7 +1969,7 @@
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 50000000,
           "rating": 87
         },
@@ -2011,7 +2011,7 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 60000000,
           "rating": 85
         },
@@ -2041,13 +2041,13 @@
         },
         {
           "name": "Cole Palmer",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 110000000,
           "rating": 88
         },
         {
           "name": "Moisés Caicedo",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 110000000,
           "rating": 86
         },
@@ -2101,7 +2101,7 @@
         },
         {
           "name": "Pedro Neto",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 60000000,
           "rating": 83
         },

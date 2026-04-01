@@ -126,11 +126,11 @@ const POS_AFFINITY = {
   LB:  ['LB','CB','DM'],
   DM:  ['DM','CM','CB'],
   CM:  ['CM','DM','AM','RM','LM'],
-  RM:  ['RM','CM','RW','AM'],
-  LM:  ['LM','CM','LW','AM'],
+  RM:  ['RM','CM','RW','LW','AM'],
+  LM:  ['LM','CM','LW','RW','AM'],
   AM:  ['AM','CM','RW','LW'],
-  RW:  ['RW','AM','ST','RM'],
-  LW:  ['LW','AM','ST','LM'],
+  RW:  ['RW','AM','LW','ST','RM'],   // LW can cover RW
+  LW:  ['LW','AM','RW','ST','LM'],   // RW can cover LW
   ST:  ['ST','LW','RW','AM'],
 };
 
@@ -153,7 +153,14 @@ function buildLineupFromCache(cached, formationOverride) {
       ...p,
       used: false,
       position: _getPos(p.name) || p.position,
-      rating: (p.rating && p.rating > 0) ? p.rating : (_calcRating(p.name, p.marketValue) ?? p.rating),
+      // Rating priority: 1) PLAYER_RATINGS_RAW name override (ground truth for legends)
+      //                  2) pre-stored JSON rating  3) computed from market value
+      rating: (() => {
+        const nameOvr = _calcRating(p.name, null); // name-only lookup (no MV)
+        if (nameOvr !== null) return nameOvr;       // e.g. Ronaldo→98, Zidane→96
+        if (p.rating && p.rating > 0) return p.rating;  // scraped / seeded JSON value
+        return _calcRating(p.name, p.marketValue) ?? undefined;
+      })(),
     }));
 
   // Count how many players of each position the template needs
@@ -195,18 +202,24 @@ function buildLineupFromCache(cached, formationOverride) {
       pool[exactUnreserved[0].i].used = true;
       return pool[exactUnreserved[0].i];
     }
-    // Fallback step 2: affinity chain; prefer LOWEST-rated to preserve stars for their natural slot
+    // Fallback step 2: scan ALL affinity positions and pick the highest-rated player found.
+    // Stars at their natural position are already protected by reservedByPos pre-reservation above,
+    // so there is no need to "save best for natural pos" here — that would only cause a high-rated
+    // LW (e.g. Vinicius) to lose an LM slot to a 70-rated CM just because CM comes first in the chain.
     const affinities = POS_AFFINITY[wantedPos] || [wantedPos, 'CM'];
+    let bestAffIdx = -1, bestAffRating = -1;
     for (const affPos of affinities.slice(1)) {
       const candidates = pool
         .map((p, i) => ({ p, i }))
-        .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === affPos)
-        .sort((a, b) => (a.p.rating || 0) - (b.p.rating || 0)); // ASC — save best for natural pos
-      if (candidates.length > 0) {
-        reservedIdx.delete(candidates[0].i); // no longer reserved — consumed here
-        pool[candidates[0].i].used = true;
-        return pool[candidates[0].i];
+        .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === affPos);
+      for (const { p, i } of candidates) {
+        if ((p.rating || 0) > bestAffRating) { bestAffRating = p.rating || 0; bestAffIdx = i; }
       }
+    }
+    if (bestAffIdx !== -1) {
+      reservedIdx.delete(bestAffIdx);
+      pool[bestAffIdx].used = true;
+      return pool[bestAffIdx];
     }
     // Last resort: highest-rated unused, skip reserved unless it's all that's left
     const remaining = pool

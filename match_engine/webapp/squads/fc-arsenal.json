@@ -791,7 +791,7 @@
       "teamLabel": "Arsenal (2004-05)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Aaron Ramsdale",
@@ -837,7 +837,7 @@
         },
         {
           "name": "Takehiro Tomiyasu",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -855,19 +855,19 @@
         },
         {
           "name": "Ben White",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 55000000,
           "rating": 84
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 38000000,
           "rating": 83
         },
         {
           "name": "Kieran Tierney",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 12000000,
           "rating": 83
         },
@@ -897,7 +897,7 @@
         },
         {
           "name": "Cédric Soares",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 2000000,
           "rating": 76
         },
@@ -915,13 +915,13 @@
         },
         {
           "name": "Martin Ødegaard",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 110000000,
           "rating": 89
         },
         {
           "name": "Declan Rice",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 120000000,
           "rating": 88
         },
@@ -933,7 +933,7 @@
         },
         {
           "name": "Thomas Partey",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 18000000,
           "rating": 84
         },
@@ -981,7 +981,7 @@
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 140000000,
           "rating": 90
         },
@@ -999,13 +999,13 @@
         },
         {
           "name": "Gabriel Martinelli",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 70000000,
           "rating": 85
         },
         {
           "name": "Leandro Trossard",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 35000000,
           "rating": 84
         },
@@ -1044,7 +1044,7 @@
       "teamLabel": "Arsenal (2023-24)"
     },
     "2024": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "David Raya",
@@ -1114,25 +1114,25 @@
         },
         {
           "name": "Takehiro Tomiyasu",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 18000000,
           "rating": 85
         },
         {
           "name": "Ben White",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 45000000,
           "rating": 84
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 20000000,
           "rating": 83
         },
         {
           "name": "Kieran Tierney",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 9000000,
           "rating": 82
         },
@@ -1186,7 +1186,7 @@
         },
         {
           "name": "Martin Ødegaard",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 85000000,
           "rating": 89
         },
@@ -1198,7 +1198,7 @@
         },
         {
           "name": "Declan Rice",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 120000000,
           "rating": 88
         },
@@ -1210,7 +1210,7 @@
         },
         {
           "name": "Thomas Partey",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 14000000,
           "rating": 84
         },
@@ -1240,7 +1240,7 @@
         },
         {
           "name": "Bukayo Saka",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 150000000,
           "rating": 90
         },
@@ -1252,7 +1252,7 @@
         },
         {
           "name": "Gabriel Martinelli",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 55000000,
           "rating": 85
         },
@@ -1264,7 +1264,7 @@
         },
         {
           "name": "Leandro Trossard",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 22000000,
           "rating": 84
         },

@@ -328,7 +328,7 @@
       "teamLabel": "Borussia Dortmund (1997-98)"
     },
     "2011": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Roman Weidenfeller",
@@ -461,7 +461,7 @@
       "teamLabel": "Borussia Dortmund (2011-12)"
     },
     "2012": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Roman Weidenfeller",
@@ -598,7 +598,7 @@
       "teamLabel": "Borussia Dortmund (2012-13)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Roman Bürki",
@@ -632,7 +632,7 @@
         },
         {
           "name": "Achraf Hakimi",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 54000000,
           "rating": 90
         },
@@ -650,7 +650,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 24000000,
           "rating": 86
         },
@@ -662,7 +662,7 @@
         },
         {
           "name": "Raphaël Guerreiro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 28000000,
           "rating": 84
         },
@@ -680,7 +680,7 @@
         },
         {
           "name": "Marius Wolf",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 6500000,
           "rating": 81
         },
@@ -833,7 +833,7 @@
       "teamLabel": "Borussia Dortmund (2019-20)"
     },
     "2021": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gregor Kobel",
@@ -885,13 +885,13 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 16000000,
           "rating": 84
         },
         {
           "name": "Raphaël Guerreiro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 84
         },
@@ -909,7 +909,7 @@
         },
         {
           "name": "Marius Wolf",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 6500000,
           "rating": 81
         },
@@ -1110,7 +1110,7 @@
       "teamLabel": "Borussia Dortmund (2021-22)"
     },
     "2022": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gregor Kobel",
@@ -1162,25 +1162,25 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 14000000,
           "rating": 84
         },
         {
           "name": "Raphaël Guerreiro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 20000000,
           "rating": 84
         },
         {
           "name": "Julian Ryerson",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 13000000,
           "rating": 83
         },
         {
           "name": "Marius Wolf",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 10000000,
           "rating": 82
         },
@@ -1345,7 +1345,7 @@
       "teamLabel": "Borussia Dortmund (2022-23)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gregor Kobel",
@@ -1385,31 +1385,31 @@
         },
         {
           "name": "Ian Maatsen",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 83
         },
         {
           "name": "Julian Ryerson",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 20000000,
           "rating": 83
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 10000000,
           "rating": 82
         },
         {
           "name": "Ramy Bensebaini",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 7000000,
           "rating": 81
         },
         {
           "name": "Marius Wolf",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 3000000,
           "rating": 78
         },
@@ -1574,7 +1574,7 @@
       "teamLabel": "Borussia Dortmund (2023-24)"
     },
     "2024": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gregor Kobel",
@@ -1626,7 +1626,7 @@
         },
         {
           "name": "Julian Ryerson",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 20000000,
           "rating": 83
         },
@@ -1644,13 +1644,13 @@
         },
         {
           "name": "Ramy Bensebaini",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 7000000,
           "rating": 81
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 7000000,
           "rating": 81
         },
@@ -1845,7 +1845,7 @@
       "teamLabel": "Borussia Dortmund (2024-25)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gregor Kobel",
@@ -1891,13 +1891,13 @@
         },
         {
           "name": "Julian Ryerson",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 25000000,
           "rating": 83
         },
         {
           "name": "Ramy Bensebaini",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 7000000,
           "rating": 81
         },
@@ -1909,7 +1909,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 4000000,
           "rating": 79
         },
