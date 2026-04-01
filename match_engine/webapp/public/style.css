@@ -4189,12 +4189,15 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   .pen-tab-panel  { padding: 1.2rem .75rem 1.6rem; }
   .pen-tab-title  { font-size: 1.4rem; }
 
-  /* ── Team picker grid ───────────────────────────────────── */
-  .pen-teams-grid { grid-template-columns: 1fr 44px 1fr; gap: .4rem; }
-
-  /* VS column: hide Aleatorio text, show only icon */
-  .btn-surprise-mini span:not(.btn-surprise-icon) { display: none; }
-  .btn-surprise-mini { padding: .5rem .55rem; }
+  /* ── Team picker grid: stack vertically on mobile ───────── */
+  .pen-teams-grid { grid-template-columns: 1fr; gap: .75rem; }
+  .pen-vs-col {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    gap: 1rem;
+  }
 
   /* Type buttons: less vertical padding */
   .pen-tab-panel .tp-type-btn { padding: .9rem .4rem; }
