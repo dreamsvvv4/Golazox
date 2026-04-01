@@ -529,8 +529,8 @@ const TM_CLUBS = {
   'istanbul basaksehir':       { id: 4904,  slug: 'istanbul-basaksehir' },
 
   // ── Greek Super League ───────────────────────────────────────
-  'olympiacos':                { id: 414,   slug: 'olympiakos-piräus' },
-  'olympiakos':                { id: 414,   slug: 'olympiakos-piräus' },
+  'olympiacos':                { id: 414,   slug: 'olympiakos-piraeus' },
+  'olympiakos':                { id: 414,   slug: 'olympiakos-piraeus' },
   'paok':                      { id: 760,   slug: 'paok-saloniki' },
   'panathinaikos':             { id: 1034,  slug: 'panathinaikos-athen' },
   'aek athens':                { id: 4,     slug: 'aek-athen' },
@@ -543,6 +543,12 @@ const TM_CLUBS = {
   'genk':                      { id: 210,   slug: 'krc-genk' },
   'krc genk':                  { id: 210,   slug: 'krc-genk' },
   'union saint gilloise':      { id: 72,    slug: 'royale-union-saint-gilloise' },
+  // ── Norwegian Eliteserien ─────────────────────────────────────
+  'bodo/glimt':                { id: 33985, slug: 'fk-bodo-glimt' },
+  'fk bodo glimt':             { id: 33985, slug: 'fk-bodo-glimt' },
+  // ── Other UCL ─────────────────────────────────────────────────
+  'qarabag':                   { id: 3036,  slug: 'qarabag-fk' },
+  'qarabag fk':                { id: 3036,  slug: 'qarabag-fk' },
 
   // ── Austrian Bundesliga ──────────────────────────────────────
   'rapid vienna':              { id: 6,     slug: 'sk-rapid-wien' },
