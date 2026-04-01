@@ -507,6 +507,22 @@ app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
   res.json(CATALOG);
 });
 
+// ── GET /catalog-groups ───────────────────────
+// Diagnostic: returns each team's slug, group, and source (meta vs file).
+// Publicly readable since /catalog already exposes group data.
+app.get('/catalog-groups', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
+  const groups = {};
+  for (const t of CATALOG) {
+    if (!groups[t.group]) groups[t.group] = [];
+    groups[t.group].push(t.slug);
+  }
+  const summary = Object.entries(groups)
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([g, slugs]) => ({ group: g, count: slugs.length, teams: slugs }));
+  res.json(summary);
+});
+
 // ── GET /suggest ─────────────────────────────
 // Query: ?q=bar  → returns up to 15 matching {name, slug, badge} objects for autocomplete
 // Rate: 40/min — fast autocomplete, pero con margen para que un bot necesite más.
