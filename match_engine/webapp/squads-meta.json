@@ -483,7 +483,8 @@
   "se-palmeiras": {
     "group": "🌎 América del Sur",
     "nameEn": "Palmeiras",
-    "nameEs": "Palmeiras"
+    "nameEs": "Palmeiras",
+    "badgeLocalPath": "/img/badges/palmeiras.png"
   },
   "flamengo-rio-de-janeiro": {
     "group": "🌎 América del Sur",
@@ -498,12 +499,14 @@
   "fc-sao-paulo": {
     "group": "🌎 América del Sur",
     "nameEn": "São Paulo FC",
-    "nameEs": "São Paulo"
+    "nameEs": "São Paulo",
+    "badgeLocalPath": "/img/badges/sao-paulo-fc.png"
   },
   "cd-cruz-azul": {
     "group": "🌎 América del Sur",
     "nameEn": "Cruz Azul",
-    "nameEs": "Cruz Azul"
+    "nameEs": "Cruz Azul",
+    "badgeLocalPath": "/img/badges/cruz-azul.png"
   },
   "cf-america": {
     "group": "🌎 América del Sur",
@@ -563,12 +566,14 @@
   "besiktas-jk": {
     "group": "🌍 Otros",
     "nameEn": "Beşiktaş JK",
-    "nameEs": "Beşiktaş"
+    "nameEs": "Beşiktaş",
+    "badgeLocalPath": "/img/badges/besiktas.png"
   },
   "fenerbahce-sk": {
     "group": "🌍 Otros",
     "nameEn": "Fenerbahçe SK",
-    "nameEs": "Fenerbahçe"
+    "nameEs": "Fenerbahçe",
+    "badgeLocalPath": "/img/badges/fenerbahce.png"
   },
   "trabzonspor": {
     "group": "🌍 Otros",
@@ -578,7 +583,8 @@
   "atalanta-bergamo": {
     "group": "🇮🇹 Serie A",
     "nameEn": "Atalanta BC",
-    "nameEs": "Atalanta Bergamo"
+    "nameEs": "Atalanta Bergamo",
+    "badgeLocalPath": "/img/badges/atalanta-bc.png"
   },
   "fc-bondues": {
     "group": "🇫🇷 Ligue 2",
