@@ -414,7 +414,15 @@ const I18N = {
   },
 };
 
-let _lang = (() => { try { return localStorage.getItem('golazox_lang') || 'es'; } catch(_) { return 'es'; } })();
+let _lang = (() => {
+  // ?lang=en in URL overrides localStorage (for hreflang / shortcut links)
+  try {
+    const p = new URLSearchParams(location.search);
+    const urlLang = p.get('lang');
+    if (urlLang === 'en' || urlLang === 'es') return urlLang;
+    return localStorage.getItem('golazox_lang') || 'es';
+  } catch(_) { return 'es'; }
+})();
 
 function t(key) {
   return (I18N[_lang] || I18N.es)[key] || I18N.es[key] || key;
@@ -1229,6 +1237,12 @@ function _deepLinkShare() {
 function _deepLinkRestore() {
   try {
     const p = new URLSearchParams(location.search);
+    // ?tab=pen / ?tab=trn — used by PWA shortcuts and hreflang links
+    const tabParam = p.get('tab');
+    if (tabParam && ['pen', 'trn', 'match'].includes(tabParam)) {
+      // Switch after DOM settles (TRN may not be defined yet at parse time)
+      setTimeout(() => { if (typeof TRN !== 'undefined') TRN.switchMainTab(tabParam); }, 0);
+    }
     const a = p.get('a'), b = p.get('b'), mode = p.get('m') || p.get('mode');
     if (!a || !b) return;
     const [slugA, eraA = ''] = a.split(':');
@@ -1252,7 +1266,7 @@ function _deepLinkRestore() {
       const _poll = setInterval(() => { if (_catalogReady) { clearInterval(_poll); restore(); } }, 200);
       setTimeout(() => clearInterval(_poll), 8000);
     }
-    // Clean URL without reload
+    // Clean URL without reload (remove a/b/mode/tab/lang/source params)
     history.replaceState({}, '', location.pathname);
   } catch(_) {}
 }

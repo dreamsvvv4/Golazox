@@ -55,6 +55,38 @@
 
   <link rel="stylesheet" href="style.css?v=63" />
 
+  <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
+  <link rel="alternate" hreflang="es" href="https://golazox.com/" />
+  <link rel="alternate" hreflang="en" href="https://golazox.com/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://golazox.com/" />
+
+  <!-- JSON-LD: WebApplication structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GolazoX — Football Time Machine",
+    "url": "https://golazox.com",
+    "description": "Simulador de partidos históricos de fútbol. Enfrenta cualquier equipo de cualquier era con el motor probabilístico de Monte Carlo. Incluye tanda de penaltis y torneos.",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "browserRequirements": "Requires JavaScript; Requires HTML5",
+    "inLanguage": ["es", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "creator": { "@type": "Organization", "name": "GolazoX", "url": "https://golazox.com" },
+    "featureList": [
+      "Simulador de partidos históricos de fútbol",
+      "Tanda de penaltis con animación TV",
+      "Torneos: liga, copa, champions",
+      "Más de 200 clubes y selecciones históricas",
+      "Motor Monte Carlo probabilístico"
+    ],
+    "screenshot": "https://golazox.com/og-image.png?v=2",
+    "image": "https://golazox.com/og-image.png?v=2"
+  }
+  </script>
+
   <!-- Google Analytics — init handled by app.js; CSP allows googletagmanager.com -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
 </head>
@@ -92,6 +124,8 @@
         <button class="btn-lang" id="lang-toggle" title="Switch language">EN</button>
       </div>
     </div>
+    <!-- H1 semántico para bots — visualmente oculto, no afecta el diseño -->
+    <h1 class="sr-only">GolazoX — Simulador de Fútbol Histórico · Football Time Machine</h1>
     <!-- ── Main mode tabs ─── -->
     <div class="main-tabs-bar">
       <button class="main-tab-btn main-tab-active" data-tab="match">⚽ <span data-i18n="tab-match">Partido</span></button>
