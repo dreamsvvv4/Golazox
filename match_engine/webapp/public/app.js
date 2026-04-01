@@ -61,7 +61,12 @@ gtag('config', 'G-2BSP5YDS7N');
 // ── Service Worker registration ─────────────────────────────
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload());
+    // Only reload on SW update (when there was already a controller).
+    // Skip reload on first install to avoid kicking users back to the Match tab.
+    const _hadSwController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (_hadSwController) window.location.reload();
+    });
     navigator.serviceWorker.register('/sw.js', { scope: '/' }).then((reg) => {
       reg.addEventListener('updatefound', () => {
         const newSW = reg.installing;
