@@ -1005,8 +1005,24 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
 });
 
 // ── Serve index.html for all other routes ─────
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Always serve with explicit charset=utf-8 to prevent the em-dash encoding
+// corruption seen in GA ("â€"" instead of "—").
+// Bots probing unknown paths (/cmd_sco, /wp-admin…) get a 404 status so
+// Google doesn't index phantom pages, but still receive the SPA HTML.
+app.get('*', (req, res) => {
+  const p = req.path;
+  const isBotProbe = p.length > 1;
+  const cleanUrl = (process.env.SITE_URL || 'https://tudominio.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  const html = fs.readFileSync(indexPath, 'utf8');
+  const injected = html.replace(
+    '<meta property="og:type" content="website" />',
+    `<meta property="og:type" content="website" />\n  <meta property="og:url" content="${cleanUrl}/" />\n  <link rel="canonical" href="${cleanUrl}/" />`
+  );
+  res.status(isBotProbe ? 404 : 200)
+     .set('Cache-Control', 'no-cache')
+     .type('text/html')
+     .send(injected);
 });
 
 // ── Process crash guards ─────────────────────
