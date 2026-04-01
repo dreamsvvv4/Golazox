@@ -4,6 +4,7 @@
   "description": "Probabilistic football match simulator – any team, any era",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'No build step — Express server'",
     "start": "node server.js",
     "start:prod": "NODE_ENV=production node server.js",
     "pm2:start": "npx pm2 start ecosystem.config.js --env production",
