@@ -6526,6 +6526,9 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   .trn-stepper-labels span { width: 70px; font-size: .63rem; }
   .trn-fmt-card { padding: .8rem 1rem; }
   .trn-fmt-icon-wrap { font-size: 1.4rem; }
+  /* Hide the tag pills — description already carries the info */
+  .trn-fmt-tags { display: none; }
+  .trn-fmt-desc { margin-bottom: 0; font-size: .76rem; }
   .trn-teams-list { grid-template-columns: 1fr; }
   .trn-groups-grid { grid-template-columns: 1fr 1fr; }
   .trn-groups-mini { grid-template-columns: 1fr 1fr; }
