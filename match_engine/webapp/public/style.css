@@ -3340,6 +3340,90 @@ body {
 #main-match-wrap,
 #main-trn-wrap { overflow-x: clip; }
 
+/* ══════════════════════════════════════════════════════════
+   MOBILE OVERFLOW GUARD v2 — full audit fixes (April 2026)
+══════════════════════════════════════════════════════════ */
+
+/* ── 1. Team-picker type labels: prevent wrapping in both tabs ── */
+@media (max-width: 600px) {
+  .tp-type-label {
+    font-size: .62rem;
+    letter-spacing: .02em;
+    overflow-wrap: break-word;
+  }
+  .tp-type-btn { padding: .8rem .3rem; }
+}
+
+/* ── 2. Tournament dashboard 4 tabs: 2-per-row on mobile ── */
+@media (max-width: 600px) {
+  .trn-dash-tab {
+    flex: 1 1 calc(50% - .15rem);
+    min-width: 0;
+    padding: .38rem .55rem;
+    font-size: .72rem;
+    letter-spacing: .03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+}
+
+/* ── 3. Live scoreboard: scale down on very small phones ── */
+@media (max-width: 380px) {
+  .live-scoreboard  { gap: .5rem; }
+  .live-team-side   { gap: .25rem; }
+  .live-team-badge  { width: 22px; height: 22px; }
+  .live-team-name   { max-width: 68px; font-size: .76rem; }
+  .live-score-num   { font-size: 2rem; min-width: 1.5rem; }
+  .live-score-block { gap: .3rem; }
+}
+
+/* ── 4. Score poster: guard long team names globally ── */
+.poster-name {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}
+@media (max-width: 480px) {
+  .poster-name { font-size: clamp(.82rem, 3.5vw, 1.25rem); }
+}
+
+/* ── 5. Penalty launch button: full width on tiny phones ── */
+@media (max-width: 400px) {
+  .pen-shoot-btn { width: 100%; justify-content: center; }
+}
+
+/* ── 6. Tournament step-3 actions: stack on tiny phones ── */
+@media (max-width: 380px) {
+  #trn-step-3-actions { flex-direction: column; }
+  #trn-step-3-actions > button { width: 100%; justify-content: center; }
+}
+
+/* ── 7. Coin flip result: guard long team names ── */
+.pen-coin-result-team {
+  max-width: 88vw;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* ── 8. Pre-match VS column: keep centered on all sizes ── */
+@media (max-width: 640px) {
+  .pm-center-col { padding: 0 .5rem; }
+}
+
+/* ── 9. Penalty TV footer buttons: never cut off ── */
+@media (max-width: 400px) {
+  .pen-tab-replay-btn,
+  .pen-tab-new-btn { padding: .5rem 1.2rem; font-size: .78rem; }
+}
+
+/* ── 10. Tournament stat cards: single column on very small ── */
+@media (max-width: 360px) {
+  .trn-stat-cards { grid-template-columns: 1fr; }
+}
+
 /* ── Touch devices: disable hover effects ────────────────── */
 @media (hover: none) {
   .player-tooltip { display: none !important; }
@@ -4199,9 +4283,13 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
     gap: 1rem;
   }
 
-  /* Type buttons: less vertical padding */
-  .pen-tab-panel .tp-type-btn { padding: .9rem .4rem; }
-  .pen-tab-panel .tp-type-svg { width: 1.9rem; height: 1.9rem; }
+  /* Type buttons: less vertical padding + tighter labels */
+  .pen-tab-panel .tp-type-btn   { padding: .9rem .4rem; }
+  .pen-tab-panel .tp-type-svg   { width: 1.9rem; height: 1.9rem; }
+  .pen-tab-panel .tp-type-label { font-size: .62rem; letter-spacing: .02em; overflow-wrap: break-word; }
+
+  /* Era selects inside penalty team columns: never overflow */
+  .pen-team-col .era-select { width: 100%; min-width: 0; box-sizing: border-box; }
 
   /* ── Takers: stack columns vertically ───────────────────── */
   .pen-takers-grid { grid-template-columns: 1fr; gap: .5rem 0; }
