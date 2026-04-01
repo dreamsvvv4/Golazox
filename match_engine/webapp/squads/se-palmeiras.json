@@ -1,0 +1,829 @@
+{
+  "slug": "se-palmeiras",
+  "seasons": {
+    "2020": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vinícius",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 92
+        },
+        {
+          "name": "Weverton",
+          "position": "GK",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Jailson",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Kaique Pereira",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mateus",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Michel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": 86
+        },
+        {
+          "name": "Emerson",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 84
+        },
+        {
+          "name": "Gustavo Gómez",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Jorge",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Marcos Rocha",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Luan",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Victor Luís",
+          "position": "CB",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Mayke",
+          "position": "CB",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Benjamín Kuscevic",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Alan Empereur",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Joaquín Piquerez",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Matías Viña",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Renan",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Freitas",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Naves",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Henri",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Esteves",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vanderlan",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Sena",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Garcia",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Danilo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 84
+        },
+        {
+          "name": "Danilo Barbosa",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Gustavo Scarpa",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Lima",
+          "position": "CM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Zé Rafael",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Matheus Fernandes",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Raphael Veiga",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Felipe Melo",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Miticov",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Patrick de Paula",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pedro Bicalho",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gabriel Menino",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ramon Cirino",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vitinho",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Yago Santos",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jhon Jhon",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dudu",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Gabriel Veron",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Luiz Adriano",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Deyverson",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rony",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Willian Bigode",
+          "position": "ST",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Rafael Elias",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Wesley",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Breno Lopes",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kevin",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gabriel Silva",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pedro Acácio",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vitinho",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcelinho",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Giovani",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Newton Williams",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Palmeiras (2020/2021)",
+      "teamLabel": "Palmeiras (2020-21)"
+    },
+    "2021": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vinícius",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 92
+        },
+        {
+          "name": "Weverton",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Marcelo Lomba",
+          "position": "GK",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Kaique Pereira",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mateus",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gustavo Gómez",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Jorge",
+          "position": "CB",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Luan",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Murilo",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Marcos Rocha",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Benjamín Kuscevic",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Mayke",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Joaquín Piquerez",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Lucas Freitas",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Renan",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Naves",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vanderlan",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Garcia",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Danilo",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 84
+        },
+        {
+          "name": "Patrick de Paula",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Gabriel Menino",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Gustavo Scarpa",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Zé Rafael",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Eduard Atuesta",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Jailson",
+          "position": "CM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Raphael Veiga",
+          "position": "CM",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pedro Bicalho",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jhon Jhon",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gabriel Veron",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Dudu",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Endrick",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 83
+        },
+        {
+          "name": "Bruno Tabata",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rony",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Deyverson",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Wesley",
+          "position": "ST",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Gabriel Silva",
+          "position": "ST",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Rafael Navarro",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Breno Lopes",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Miguel Merentiel",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Giovani",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "José Manuel López",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Palmeiras (2021/2022)",
+      "teamLabel": "Palmeiras (2021-22)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Carlos Miguel",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Marcelo Lomba",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Aranha",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Joaquín Piquerez",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Agustín Giay",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Bruno Fuchs",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Murilo",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Khellven",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Gustavo Gómez",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Luis Benedetti",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jefté",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Arthur Gabriel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emiliano Martínez",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 86
+        },
+        {
+          "name": "Andreas Pereira",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mauricio",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Marlon Freitas",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Lucas Evangelista",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Erick Belé",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luis Pacheco",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Larson",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Figueiredo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vitor Roque",
+          "position": "ST",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "José Manuel López",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Jhon Arias",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Allan",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Paulinho",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 82
+        },
+        {
+          "name": "Ramón Sosa",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luighi",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Felipe Anderson",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Riquelme Fillipi",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Palmeiras (2025/2026)",
+      "teamLabel": "Palmeiras (2025-26)"
+    }
+  },
+  "id": 1023,
+  "name": "Palmeiras",
+  "nameEs": "Palmeiras",
+  "nameEn": "Palmeiras",
+  "group": "🌎 América del Sur"
+}

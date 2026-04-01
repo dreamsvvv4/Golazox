@@ -26,9 +26,8 @@ match_engine/webapp/_wp_sn_test.js
 .seed-progress.json
 match_engine/webapp/squads/.seed-progress.json
 
-# Squads JSON — contienen nombres de jugadores (datos personales RGPD)
-# Generar con: npm run seed
-match_engine/webapp/squads/*.json
+# Squads JSON — versionar todos para que Hostinger reciba los datos por git
+# (anteriormente ignorados por RGPD/marcas, pero son datos públicos de plantillas históricas)
 
 # Badges descargadas — marcas registradas, no versionar
 match_engine/webapp/public/img/badges/*.png
