@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v44';
+const CACHE_VERSION  = 'v45';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;

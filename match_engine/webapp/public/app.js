@@ -1736,17 +1736,16 @@ function _penResetGoal() {
   const tg  = document.getElementById('pg-traj-glow');
   const nf  = document.getElementById('pg-net-flash');
   const bgl = document.getElementById('pg-ball-glow-c');
-  if (bg)  { bg.style.transition  = 'none'; bg.style.transform  = 'translate(0px,0px)'; }
-  if (gk)  { gk.style.transition  = 'none'; gk.style.transform  = 'translate(0px,0px)'; }
-  if (tp)  { tp.setAttribute('d','M300,278 L300,278');  tp.style.opacity = '0';  tp.style.transition = 'none'; }
-  if (tg)  { tg.setAttribute('d','M300,278 L300,278');  tg.style.opacity = '0';  tg.style.transition = 'none'; }
+  if (bg)  { bg.style.transition = 'none'; bg.style.transform = 'translate(0px,0px)'; }
+  if (gk)  { gk.style.transition = 'none'; gk.style.transform = 'translate(0px,0px) rotate(0deg)'; gk.style.transformOrigin = ''; }
+  if (tp)  { tp.setAttribute('d','M300,278 L300,278'); tp.style.opacity = '0'; tp.style.transition = 'none'; }
+  if (tg)  { tg.setAttribute('d','M300,278 L300,278'); tg.style.opacity = '0'; tg.style.transition = 'none'; }
   if (nf)  { nf.style.opacity = '0'; nf.style.transition = 'none'; }
   if (bgl) { bgl.style.opacity = '0'; }
   ['pg-burst-gol','pg-burst-save','pg-burst-miss'].forEach(id => {
     const el = document.getElementById(id);
     if (el) { el.style.transition = 'none'; el.style.opacity = '0'; }
   });
-  // Update burst labels for current language
   const isEN = _lang === 'en';
   const gTxt  = document.getElementById('pg-burst-gol-txt');  if (gTxt)  gTxt.textContent  = isEN ? 'GOAL!'   : '¡GOL!';
   const sTxt  = document.getElementById('pg-burst-save-txt'); if (sTxt)  sTxt.textContent  = isEN ? 'SAVED!'  : '¡PARADA!';
@@ -1814,80 +1813,143 @@ async function _penAnimateGoalKick(zoneKey, type, names = {}) {
   if (!zone) return;
   const { x: tx, y: ty, gkX, gkY } = zone;
 
-  const ballBX = tx - 300; // translate offset from ball origin (300,278)
-  const ballBY = ty - 278;
   const isMiss = type === 'miss';
   const isSave = type === 'save';
   const isGoal = type === 'goal';
+  // Panenka: centre goal — GK rushes out, ball chips over
+  const isPanenka = isGoal && (zoneKey === 'mc' || zoneKey === 'bc');
 
-  const bg  = document.getElementById('pg-ball-g');
-  const gk  = document.getElementById('pg-gk');
-  const tp  = document.getElementById('pg-traj');
-  const tg  = document.getElementById('pg-traj-glow');
-  const nf  = document.getElementById('pg-net-flash');
-  const bgl = document.getElementById('pg-ball-glow-c');
+  const bg     = document.getElementById('pg-ball-g');
+  const gk     = document.getElementById('pg-gk');
+  const tp     = document.getElementById('pg-traj');
+  const tg     = document.getElementById('pg-traj-glow');
+  const nf     = document.getElementById('pg-net-flash');
+  const bgl    = document.getElementById('pg-ball-glow-c');
   const hudTxt = document.getElementById('pg-hud-txt');
 
-  const BALL_DUR = 560; // ms — ball flight duration
+  const BALL_DUR = 560;
   const isEN = _lang === 'en';
 
-  // GK dive: save = full dive to intercept; goal = WRONG side (beaten); miss = random
-  // For goal, if ball goes to a side, GK dives the opposite direction
-  const wrongDiveX = gkX !== 0 ? -gkX * 0.75 : (Math.random() < .5 ? 68 : -68);
-  const wrongDiveY = gkX !== 0 ? -gkY * 0.4  : (Math.random() < .25 ? -15 : 0);
-  const gkDiveX = isSave ? gkX : (isGoal ? wrongDiveX : (Math.random() < .5 ? 32 : -32));
-  const gkDiveY = isSave ? gkY : (isGoal ? wrongDiveY : 0);
-  // No rotation — translate-only dive looks cleaner with a static SVG figure
+  // ── Bezier arc control point ──────────────────────────────────────────────
+  // High shots rise more; low shots stay flat; slight inward curl on sides
+  const arcH = ty < 130 ? -62 : (ty < 200 ? -34 : -14);
+  const arcX = (tx - 300) * 0.07;
+  const cpx  = (300 + tx) / 2 + arcX;
+  const cpy  = (278 + ty) / 2 + arcH;
 
-  // Show HUD status
-  if (hudTxt) hudTxt.textContent = isEN ? '◉ KICK IN PROGRESS…' : '◉ LANZAMIENTO EN CURSO…';
+  // ── GK dive parameters ────────────────────────────────────────────────────
+  let gkDiveX, gkDiveY, gkDur, gkDelay, gkRotate;
 
-  // Show trajectory lines
-  if (tp) tp.style.opacity = '0.8';
-  if (tg) tg.style.opacity = '0.4';
+  if (isSave) {
+    // Reads the shot early — full dive to intercept
+    gkDiveX  = gkX;
+    gkDiveY  = gkY;
+    gkDur    = 0.42;
+    gkDelay  = 75;
+    gkRotate = gkDiveX < -20 ? -26 : gkDiveX > 20 ? 26 : 0;
+    if (gkDiveY < -20) gkRotate = gkRotate < 0 ? gkRotate - 8 : gkRotate + 8;
+  } else if (isPanenka) {
+    // GK commits forward — chipped over
+    gkDiveX  = 0;
+    gkDiveY  = 42;
+    gkDur    = 0.36;
+    gkDelay  = 55;
+    gkRotate = 0;
+  } else if (isGoal) {
+    // Beaten: dives wrong way, reacts late
+    const wrongX = gkX !== 0 ? -gkX * 0.82 : (Math.random() < .5 ? 80 : -80);
+    const wrongY = gkX !== 0 ? gkY * 0.22 : 0;
+    gkDiveX  = wrongX;
+    gkDiveY  = wrongY;
+    gkDur    = 0.48;
+    gkDelay  = 295 + Math.random() * 90;
+    gkRotate = gkDiveX < -20 ? -20 : gkDiveX > 20 ? 20 : 0;
+  } else {
+    // Miss: irrelevant hopeful dive
+    const side = Math.random() < .5 ? 1 : -1;
+    gkDiveX  = side * (30 + Math.random() * 18);
+    gkDiveY  = -6;
+    gkDur    = 0.40;
+    gkDelay  = 155 + Math.random() * 65;
+    gkRotate = side * 14;
+  }
 
-  // Draw trajectory with rAF loop (rAF handles eased line growth)
-  const t0 = performance.now();
-  const drawLine = (now) => {
-    const p  = Math.min(1, (now - t0) / BALL_DUR);
-    const ep = p * p; // ease-in
-    const cx = (300 + (tx-300) * ep).toFixed(1);
-    const cy = (278 + (ty-278) * ep).toFixed(1);
-    const d  = `M300,278 L${cx},${cy}`;
-    if (tp) tp.setAttribute('d', d);
-    if (tg) tg.setAttribute('d', d);
-    if (p < 1) requestAnimationFrame(drawLine);
-  };
-  requestAnimationFrame(drawLine);
+  // ── HUD ───────────────────────────────────────────────────────────────────
+  if (hudTxt) hudTxt.textContent = isEN ? '\u25c9 KICK IN PROGRESS\u2026' : '\u25c9 LANZAMIENTO EN CURSO\u2026';
 
-  // GK starts diving 180ms after kick
+  // ── Show trajectory lines ─────────────────────────────────────────────────
+  if (tp) { tp.style.transition = 'none'; tp.style.opacity = '0.85'; }
+  if (tg) { tg.style.transition = 'none'; tg.style.opacity = '0.5';  }
+
+  // ── Schedule GK dive ──────────────────────────────────────────────────────
   setTimeout(() => {
     if (!gk) return;
-    gk.style.transition = `transform 0.50s cubic-bezier(.22,.68,0,1.12)`;
-    gk.style.transform  = `translate(${gkDiveX}px,${gkDiveY}px)`;
-  }, 180);
+    gk.style.transformOrigin = '300px 222px';
+    gk.style.transition = `transform ${gkDur}s cubic-bezier(.18,.72,0,1.05)`;
+    gk.style.transform  = `translate(${gkDiveX}px,${gkDiveY}px) rotate(${gkRotate}deg)`;
+  }, gkDelay);
 
-  // Ball launches 55ms in
-  await _penSleep(55);
-  if (bg) {
-    bg.style.transition = `transform ${BALL_DUR}ms ease-in`;
-    bg.style.transform  = `translate(${ballBX}px,${ballBY}px)${isMiss ? ' scale(0.55)' : ''}`;
-  }
-  if (bgl) bgl.style.opacity = '0.75';
+  // ── Ball + bezier path via rAF (ball tracks curved arc) ───────────────────
+  await _penSleep(40);
+  if (bgl) bgl.style.opacity = '0.8';
 
-  // Ball lands
-  await _penSleep(BALL_DUR + 60);
+  const t0 = performance.now();
+  await new Promise(resolve => {
+    const tick = (now) => {
+      const raw = Math.min(1, (now - t0) / BALL_DUR);
+      const ep  = raw * raw; // ease-in: ball accelerates
+
+      // Build growing bezier polyline
+      const steps = Math.max(2, Math.ceil(ep * 26));
+      const pts   = [];
+      for (let i = 0; i <= steps; i++) {
+        const s  = ep * (i / steps);
+        const px = (1-s)*(1-s)*300 + 2*(1-s)*s*cpx + s*s*tx;
+        const py = (1-s)*(1-s)*278 + 2*(1-s)*s*cpy + s*s*ty;
+        pts.push(i === 0 ? `M${px.toFixed(1)},${py.toFixed(1)}` : `L${px.toFixed(1)},${py.toFixed(1)}`);
+      }
+      const dStr = pts.join(' ');
+      if (tp) tp.setAttribute('d', dStr);
+      if (tg) tg.setAttribute('d', dStr);
+
+      // Ball tracks bezier tip
+      const bpx = (1-ep)*(1-ep)*300 + 2*(1-ep)*ep*cpx + ep*ep*tx;
+      const bpy = (1-ep)*(1-ep)*278 + 2*(1-ep)*ep*cpy + ep*ep*ty;
+      if (bg) bg.style.transform = `translate(${(bpx-300).toFixed(1)}px,${(bpy-278).toFixed(1)}px)`;
+
+      if (raw < 1) requestAnimationFrame(tick);
+      else resolve();
+    };
+    requestAnimationFrame(tick);
+  });
+
+  // ── Ball landed ───────────────────────────────────────────────────────────
   if (bgl) { bgl.style.transition = 'opacity 0.3s'; bgl.style.opacity = '0'; }
 
-  // Net flash (goal only)
-  if (isGoal && nf) {
-    nf.setAttribute('cx', tx); nf.setAttribute('cy', ty);
-    nf.style.transition = 'opacity 0.1s'; nf.style.opacity = '0.85';
-    await _penSleep(110);
-    nf.style.transition = 'opacity 0.7s'; nf.style.opacity  = '0';
+  // Save: GK spring-back after catch
+  if (isSave && gk) {
+    await _penSleep(105);
+    gk.style.transition = `transform 0.35s cubic-bezier(.22,.68,0,1.18)`;
+    gk.style.transform  = `translate(${(gkDiveX*0.60).toFixed(1)}px,${(gkDiveY*0.60).toFixed(1)}px) rotate(${(gkRotate*0.42).toFixed(1)}deg)`;
   }
 
-  // Burst text — show player/GK name in HUD strip
+  // ── Net flash (goal) ──────────────────────────────────────────────────────
+  if (isGoal && nf) {
+    nf.setAttribute('cx', tx); nf.setAttribute('cy', ty);
+    const topCorner = ty < 130;
+    nf.style.transition = 'opacity 0.08s'; nf.style.opacity = '0.92';
+    await _penSleep(88);
+    if (topCorner) {
+      // Double pulse for top corners
+      nf.style.transition = 'opacity 0.15s'; nf.style.opacity = '0.32';
+      await _penSleep(165);
+      nf.style.transition = 'opacity 0.08s'; nf.style.opacity = '0.76';
+      await _penSleep(88);
+    }
+    nf.style.transition = 'opacity 0.65s'; nf.style.opacity = '0';
+  }
+
+  // ── Burst text + HUD name ─────────────────────────────────────────────────
   const burstId = isGoal ? 'pg-burst-gol' : (isSave ? 'pg-burst-save' : 'pg-burst-miss');
   const burst   = document.getElementById(burstId);
   if (hudTxt) {
@@ -1897,17 +1959,17 @@ async function _penAnimateGoalKick(zoneKey, type, names = {}) {
   if (burst) {
     burst.style.transition = 'opacity 0.14s';
     burst.style.opacity    = '1';
-    await _penSleep(1050);
-    burst.style.transition = 'opacity 0.45s';
+    await _penSleep(1100);
+    burst.style.transition = 'opacity 0.5s';
     burst.style.opacity    = '0';
   } else {
-    await _penSleep(1050);
+    await _penSleep(1100);
   }
 
-  // Fade trajectory
+  // ── Fade trajectory ───────────────────────────────────────────────────────
   if (tp) { tp.style.transition = 'opacity 0.3s'; tp.style.opacity = '0'; }
   if (tg) { tg.style.transition = 'opacity 0.3s'; tg.style.opacity = '0'; }
-  if (hudTxt) hudTxt.textContent = isEN ? '● SIMULATION ACTIVE' : '● SIMULACIÓN ACTIVA';
+  if (hudTxt) hudTxt.textContent = isEN ? '\u25cf SIMULATION ACTIVE' : '\u25cf SIMULACI\u00d3N ACTIVA';
 }
 
 async function _animatePenShootout(data, nameA, nameB) {
