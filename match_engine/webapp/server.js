@@ -503,7 +503,7 @@ const _VALID_FORMATIONS = new Set([
 // Rate: 8/5min per IP (1.6/min) — it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
-  res.set('Cache-Control', 'public, max-age=300');
+  res.set('Cache-Control', 'no-store');
   res.json(CATALOG);
 });
 

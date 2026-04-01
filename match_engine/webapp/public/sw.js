@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v49';
+const CACHE_VERSION  = 'v50';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -110,9 +110,14 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // ── Catalog API (/catalog, /squads by slug) ───────────────────────────────
-  // Network-First: fresh data when online; cached fallback when offline.
-  if (p === '/catalog' || p.startsWith('/lineup/') || p.startsWith('/lookup')) {
+  // ── Catalog API ──────────────────────────────────────────────────────────
+  // /catalog is dynamic (changes on server restart) — always fetch from network,
+  // never cache. /lineup and /lookup use network-first with cache fallback.
+  if (p === '/catalog') {
+    event.respondWith(fetch(request));
+    return;
+  }
+  if (p.startsWith('/lineup/') || p.startsWith('/lookup')) {
     event.respondWith(_networkFirst(request, DYNAMIC_CACHE));
     return;
   }
