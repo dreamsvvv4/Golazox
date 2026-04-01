@@ -24,7 +24,7 @@ module.exports = {
       script:            'server.js',
       instances:         1,            // single instance — safe for in-memory SQUADS cache
       exec_mode:         'fork',
-      watch:             false,
+      watch:             ['squads-meta.json'],   // restart when league metadata changes
       max_memory_restart: '512M',      // restart if Node exceeds 512 MB RAM
       restart_delay:     3000,         // wait 3 s before restarting on crash
       max_restarts:      10,           // give up after 10 consecutive crashes
