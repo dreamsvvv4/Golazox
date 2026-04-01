@@ -1693,9 +1693,20 @@ body {
   width: min(420px, 92vw);
 }
 .pko-kicker-name {
-  font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,.9);
-  letter-spacing: .04em; text-align: center;
+  font-size: 1.15rem; font-weight: 800; letter-spacing: .06em; text-align: center;
+  opacity: 0; transform: translateY(8px);
+  min-height: 1.5rem;
 }
+.pko-kicker-name.show {
+  animation: pko-name-in .35s .15s cubic-bezier(.18,.89,.32,1.28) forwards;
+}
+@keyframes pko-name-in {
+  0%   { opacity: 0; transform: translateY(10px) scale(.85); }
+  100% { opacity: 1; transform: translateY(0)  scale(1); }
+}
+.pko-kicker-name.goal  { color: #86efac; text-shadow: 0 0 18px rgba(74,222,128,.5); }
+.pko-kicker-name.saved { color: #7dd3fc; text-shadow: 0 0 18px rgba(56,189,248,.5); }
+.pko-kicker-name.miss  { color: #fca5a5; text-shadow: 0 0 18px rgba(248,113,113,.4); }
 .pko-pitch {
   position: relative; width: 100%;
 }

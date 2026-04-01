@@ -6450,6 +6450,7 @@ function triggerPenKickAnim(kickerName, scored, penScoreA, penScoreB, teamA, tea
   ballEl.classList.remove('kick', 'miss-spin');
   gkEl.classList.remove('dive-left', 'dive-right', 'dive-up');
   lblEl.classList.remove('show', 'goal', 'miss', 'saved');
+  nameEl.classList.remove('show', 'goal', 'miss', 'saved');
   void ballEl.offsetWidth;
   nameEl.textContent = kickerName;
   lblEl.textContent  = '';
@@ -6529,6 +6530,8 @@ function triggerPenKickAnim(kickerName, scored, penScoreA, penScoreB, teamA, tea
     }
     lblEl.textContent = resultText;
     lblEl.classList.add('show', resultClass);
+    // Kicker name pops in just after the result burst
+    setTimeout(() => nameEl.classList.add('show', resultClass), 220);
   }, 1300);
 
   // 2600ms → fade out overlay
