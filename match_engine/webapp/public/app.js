@@ -1809,7 +1809,7 @@ function _penCoinFlip(nameA, nameB) {
   });
 }
 
-async function _penAnimateGoalKick(zoneKey, type) {
+async function _penAnimateGoalKick(zoneKey, type, names = {}) {
   const zone = PEN_GOAL_ZONES[zoneKey];
   if (!zone) return;
   const { x: tx, y: ty, gkX, gkY } = zone;
@@ -1831,9 +1831,12 @@ async function _penAnimateGoalKick(zoneKey, type) {
   const BALL_DUR = 560; // ms — ball flight duration
   const isEN = _lang === 'en';
 
-  // GK dive: for save = full dive; for goal = partial (beaten); for miss = brief wrong-dive
-  const gkDiveX = isSave ? gkX : (isGoal ? gkX * 0.48 : (Math.random()<.5 ? 28 : -28));
-  const gkDiveY = isSave ? gkY : (isGoal ? gkY * 0.48 : 0);
+  // GK dive: save = full dive to intercept; goal = WRONG side (beaten); miss = random
+  // For goal, if ball goes to a side, GK dives the opposite direction
+  const wrongDiveX = gkX !== 0 ? -gkX * 0.75 : (Math.random() < .5 ? 68 : -68);
+  const wrongDiveY = gkX !== 0 ? -gkY * 0.4  : (Math.random() < .25 ? -15 : 0);
+  const gkDiveX = isSave ? gkX : (isGoal ? wrongDiveX : (Math.random() < .5 ? 32 : -32));
+  const gkDiveY = isSave ? gkY : (isGoal ? wrongDiveY : 0);
   // No rotation — translate-only dive looks cleaner with a static SVG figure
 
   // Show HUD status
@@ -1884,9 +1887,13 @@ async function _penAnimateGoalKick(zoneKey, type) {
     nf.style.transition = 'opacity 0.7s'; nf.style.opacity  = '0';
   }
 
-  // Burst text
+  // Burst text — show player/GK name in HUD strip
   const burstId = isGoal ? 'pg-burst-gol' : (isSave ? 'pg-burst-save' : 'pg-burst-miss');
   const burst   = document.getElementById(burstId);
+  if (hudTxt) {
+    if (isGoal && names.kicker)  hudTxt.textContent = `\u26BD ${names.kicker}`;
+    else if (isSave && names.gk) hudTxt.textContent = `\u25A0 GK: ${names.gk}`;
+  }
   if (burst) {
     burst.style.transition = 'opacity 0.14s';
     burst.style.opacity    = '1';
@@ -1959,7 +1966,7 @@ async function _animatePenShootout(data, nameA, nameB) {
       await _penSleep(1400 + Math.random() * 900);
 
       // Ball animation fires in background; we wait 680ms then show result text
-      const animA = _penAnimateGoalKick(zA.key, zA.type);
+      const animA = _penAnimateGoalKick(zA.key, zA.type, { kicker: kA.name, gk: gkB });
       await _penSleep(680);
 
       const narrKA = kA.scored ? (kA.isSpecialist ? 'specialistScored' : 'scored')
@@ -1987,7 +1994,7 @@ async function _animatePenShootout(data, nameA, nameB) {
       await _penSetNarrative(_penNarr(narrKey, { player: kB.name, gk: gkA }));
       await _penSleep(1400 + Math.random() * 900);
 
-      const animB = _penAnimateGoalKick(zB.key, zB.type);
+      const animB = _penAnimateGoalKick(zB.key, zB.type, { kicker: kB.name, gk: gkA });
       await _penSleep(680);
 
       const narrKB = kB.scored ? (kB.isSpecialist ? 'specialistScored' : 'scored')
