@@ -3321,14 +3321,12 @@ body {
 /* ── Swap popup: centred bottom-sheet on mobile ─────────── */
 @media (max-width: 600px) {
   .pen-swap-menu {
-    position: fixed !important;
     left: 50% !important;
     top: auto !important;
-    bottom: 8vh;
-    transform: translateX(-50%);
-    min-width: 220px;
+    bottom: 8vh !important;
+    transform: translateX(-50%) !important;
+    min-width: 260px;
     max-width: 88vw;
-    z-index: 500;
   }
 }
 
@@ -4551,8 +4549,8 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 }
 /* Swap popup menu */
 .pen-swap-menu {
-  position: absolute;
-  z-index: 200;
+  position: fixed;
+  z-index: 9100;
   background: #1e2533;
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 10px;

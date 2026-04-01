@@ -1466,12 +1466,12 @@ function _penOpenSwapMenu(side, takerIdx) {
     ) +
     `<button class="pen-swap-cancel">✕ Cancelar</button>`;
 
-  // Position below the taker row
+  // Position near the button using fixed viewport coordinates
+  // (appended to body so overflow-x:clip on parent cannot clip it)
   const rect = anchor.getBoundingClientRect();
-  const parentRect = anchor.closest('.pen-takers-col')?.getBoundingClientRect() || rect;
-  menu.style.top  = `${rect.bottom - parentRect.top + 4}px`;
-  anchor.closest('.pen-takers-col').style.position = 'relative';
-  anchor.closest('.pen-takers-col').appendChild(menu);
+  menu.style.top  = `${Math.min(rect.bottom + 4, window.innerHeight - 320)}px`;
+  menu.style.left = `${Math.min(rect.left, window.innerWidth - 260)}px`;
+  document.body.appendChild(menu);
   _penSwapMenu = menu;
 
   menu.querySelectorAll('.pen-swap-option').forEach(btn => {
@@ -1517,11 +1517,9 @@ function _penOpenBenchToTakerMenu(side, benchIdx) {
     `<button class="pen-swap-cancel">✕ Cancelar</button>`;
 
   const rect = anchor.getBoundingClientRect();
-  const col  = anchor.closest('.pen-takers-col');
-  const colRect = col?.getBoundingClientRect() || rect;
-  col.style.position = 'relative';
-  menu.style.top = `${rect.bottom - colRect.top + 4}px`;
-  col.appendChild(menu);
+  menu.style.top  = `${Math.min(rect.bottom + 4, window.innerHeight - 320)}px`;
+  menu.style.left = `${Math.min(rect.left, window.innerWidth - 260)}px`;
+  document.body.appendChild(menu);
   _penSwapMenu = menu;
 
   menu.querySelectorAll('.pen-swap-option').forEach(btn => {
