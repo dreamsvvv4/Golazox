@@ -226,9 +226,9 @@ const NAME_TO_SLUG = {
   'montpellier':                  'montpellier-hsc',
   'nantes':                       'nantes',
   'nice':                         'ogc-nice',
-  'paris saint-germain':          'fc-paris-saint-germain',
+  'paris saint germain':          'fc-paris-saint-germain',
   'rennes':                       'fc-stade-rennes',
-  'saint-etienne':                'as-saint-etienne',
+  'saint etienne':                'as-saint-etienne',
   'strasbourg':                   'rc-strasbourg',
   'toulouse':                     'fc-toulouse',
   // ─── Francia — Ligue 2 ──────────────────────────────────────────────────────
@@ -259,14 +259,14 @@ const NAME_TO_SLUG = {
   'toronto fc':                   'toronto-fc',
   'vancouver whitecaps':          'vancouver-whitecaps',
   // ─── Saudi Pro League ───────────────────────────────────────────────────────
-  'al-ahli sfc':                  'al-ahli',
-  'al-ettifaq':                   'al-ettifaq',
-  'al-fateh sc':                  'al-fateh',
-  'al-hilal sfc':                 'al-hilal',
-  'al-ittihad':                   'al-ittihad',
-  'al-nassr fc':                  'al-nassr',
-  'al-qadsiah fc':                'al-qadsiah',
-  'al-shabab fc':                 'al-shabab',
+  'al ahli sfc':                  'al-ahli',
+  'al ettifaq':                   'al-ettifaq',
+  'al fateh sc':                  'al-fateh',
+  'al hilal sfc':                 'al-hilal',
+  'al ittihad':                   'al-ittihad',
+  'al nassr fc':                  'al-nassr',
+  'al qadsiah fc':                'al-qadsiah',
+  'al shabab fc':                 'al-shabab',
 };
 
 // ── 3. Flatten list.json into [{name, slug, wantedGroup}] ─────────────────────
