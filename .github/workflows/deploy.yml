@@ -1,0 +1,42 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [v3.0]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+
+      - name: Sync files to server
+        run: |
+          rsync -az \
+            -e "ssh -p 65002 -i ~/.ssh/id_deploy -o StrictHostKeyChecking=no" \
+            --exclude='node_modules/' \
+            --exclude='logs/' \
+            --exclude='contact_messages.json' \
+            --exclude='.git/' \
+            match_engine/webapp/ \
+            u990866731@147.93.88.37:~/domains/golazox.com/nodejs/
+
+      - name: Restart Node server
+        run: |
+          ssh -p 65002 -i ~/.ssh/id_deploy -o StrictHostKeyChecking=no \
+            u990866731@147.93.88.37 \
+            "cd ~/domains/golazox.com/nodejs && \
+             pkill -f 'server.js' 2>/dev/null; \
+             pkill -9 -f 'lsnode' 2>/dev/null; \
+             sleep 2; \
+             nohup /opt/alt/alt-nodejs22/root/usr/bin/node server.js >> logs/app.log 2>&1 & \
+             sleep 2; \
+             pgrep -a node | grep server.js && echo '✅ SERVER RUNNING' || echo '❌ SERVER NOT FOUND'"
