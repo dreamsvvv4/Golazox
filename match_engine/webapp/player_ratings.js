@@ -1447,6 +1447,84 @@ const PLAYER_RATINGS_RAW = [
   ['ricardo carvalho',       86], ['r.carvalho',           86],
   ['joao moutinho',          84], ['joão moutinho',        84], ['moutinho',        84],
   ['pepe kellermann',        86], ['pepe',                 86], // Pepe Portugal/RM CB
+
+  // ── Portugal squad depth ─────────────────────────────────────────
+  ['tiago mendes',           84], ['tiago',                84], // 2006 WC - Atlético CM
+  ['simao sabrosa',          85], ['simão',                85], ['simao',            85],
+  ['ricardo quaresma',       82], ['quaresma',             82],
+  ['nuno valente',           81],
+  ['miguel monteiro',        80], ['miguel',               80], // 2006 WC RB
+
+  // ── France squad depth ───────────────────────────────────────────
+  ['william gallas',         84], ['gallas',               84],
+  ['eric abidal',            83], ['abidal',               83], ['éric abidal',      83],
+  ['patrice evra',           84], ['evra',                 84],
+  ['willy sagnol',           83], ['sagnol',               83],
+  ['gregory coupet',         83], ['coupet',               83], ['grégory coupet',   83],
+  ['mikael silvestre',       82], ['mikaël silvestre',     82], // alias for name normalisation
+  ['florent malouda',        83], ['malouda',              83],
+  ['djibril cisse',          82], ['cissé',                82], ['cisse',            82],
+  ['sidney govou',           80], ['govou',                80],
+  ['youri djorkaeff',        83], // alias already present — guard duplicate
+  ['robert pires',           87], // alias already present
+  ['sylvain wiltord',        82],
+  ['maxime gonalons',        81],
+
+  // ── Italy 1982 WC winner squad depth ────────────────────────────
+  ['claudio gentile',        83], ['gentile',              83], // neutralised Maradona & Zico
+  ['giuseppe bergomi',       84], ['bergomi',              84],
+  ['alessandro altobelli',   83], ['altobelli',            83], // scored in 1982 WC final
+  ['gianpiero marini',       80], ['marini',               80],
+  ['gabriele oriali',        80], ['oriali',               80],
+  ['fulvio collovati',       81], ['collovati',            81],
+  ['claudio prandelli',      79], ['prandelli',            79],
+  ['antonio cabrini',        82], // alias already present
+  ['ivano bordon',           82], ['bordon',               82],
+  ['giovanni galli',         81], ['g.galli',              81],
+  ['daniela massaro',        80], ['massaro',              80],
+  ['roberto pruzzo',         81], ['pruzzo',               81],
+  ['giancarlo antognoni',    86], // alias already present
+  ['sergio brio',            79],
+
+  // ── Spain 2010 WC winner squad depth ────────────────────────────
+  ['joan capdevila',         82], ['capdevila',            82],
+  ['alvaro arbeloa',         82], ['arbeloa',              82], ['álvaro arbeloa',   82],
+  ['raul albiol',            83], ['albiol',               83], ['raúl albiol',      83],
+  ['jesus navas',            84], ['navas jesus',          84], ['jesús navas',      84],
+  ['juan mata',              85], ['mata',                 85],
+  ['pedro rodriguez',        84], ['pedro',                84], ['pedro rodríguez',  84],
+  ['fernando llorente',      83], ['llorente',             83],
+  ['carlos marchena',        81], ['marchena',             81],
+
+  // ── Brazil 1970 legendary squad depth ──────────────────────────
+  ['felix',                  82], ['félix miéle',          82], // 1970 WC GK - blamed for Italy goals
+  ['brito',                  83], ['brito roberto',        83], // 1970 WC CB
+  ['rivellino',              89], // spelling variant of rivelino used in some JSONs
+  ['everaldo',               82], // 1970 WC LB
+  ['paulo cesar lima',       81], ['paulo cesar',          81],
+  ['piazza',                 80], ['wilson piazza',        80],
+  ['clodoaldo',              83], // already inserted above — guard
+
+  // ── Argentina 1986 WC winner squad depth ────────────────────────
+  ['nery pumpido',           83], ['pumpido',              83], // 1986/1990 WC GK
+  ['jose luis brown',        81], ['brown jose',           81], // scored 1986 WC final goal
+  ['julio olarticoechea',    81], ['olarticoechea',        81],
+  ['sergio batista',         81], ['batista sergio',       81],
+  ['ricardo bochini',        84], ['bochini',              84], // Maradona's idol
+  ['néstor clausen',         80], ['clausen',              80],
+  ['oscar garrre',           80],
+  ['gerardo martino',        80], ['tata martino',         80],
+
+  // ── Netherlands 1988 EURO winner squad depth ────────────────────
+  ['hans van breukelen',     85], ['van breukelen',        85], // saved penalty in 1988 EURO SF
+  ['erwin koeman',           82], // Ronald's brother, also in 1988 squad
+  ['arnold muhren',          83], ['mühren',               83], ['muhren',           83],
+  ['wim kieft',              82], ['kieft',                82],
+  ['aron winter',            82], ['winter',               82],
+  ['adri van tiggelen',      81], ['van tiggelen',         81],
+  ['berry van aerle',        80], ['van aerle',            80],
+  ['gerald vanenburg',       81], ['vanenburg',            81],
+  ['john van t schip',       80], ['van t schip',          80],
 ];
 
 
