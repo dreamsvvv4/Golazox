@@ -7014,10 +7014,11 @@ async function _generateShareCard(d) {
   const finalScoreA = d.penalties ? (d.penalties.scoreA ?? d.scoreA) : d.scoreA;
   const finalScoreB = d.penalties ? (d.penalties.scoreB ?? d.scoreB) : d.scoreB;
 
-  // Pre-load both badges in parallel
-  const [imgA, imgB] = await Promise.all([
+  // Pre-load both badges + coin logo in parallel
+  const [imgA, imgB, imgCoin] = await Promise.all([
     _scLoadImg(d.badgeA),
     _scLoadImg(d.badgeB),
+    _scLoadImg('/golazox-coin.png'),
   ]);
 
   // ── 3. Background ─────────────────────────────────────────────────────────
@@ -7069,9 +7070,25 @@ async function _generateShareCard(d) {
   ctx.textAlign    = 'center';
   ctx.textBaseline = 'alphabetic';
 
-  // GOLAZOX wordmark
-  ctx.font = 'bold 88px "Rajdhani",Arial,sans-serif';
-  _scGlow(ctx, 'GOLAZOX', W / 2, 92, CYAN, 35);
+  // GOLAZOX header — coin + wordmark side by side
+  const HDR_COIN_R = 42, HDR_COIN_CX = W / 2 - 160, HDR_COIN_CY = 72;
+  if (imgCoin) {
+    ctx.save();
+    ctx.beginPath(); ctx.arc(HDR_COIN_CX, HDR_COIN_CY, HDR_COIN_R, 0, Math.PI * 2); ctx.clip();
+    ctx.drawImage(imgCoin, HDR_COIN_CX - HDR_COIN_R, HDR_COIN_CY - HDR_COIN_R, HDR_COIN_R * 2, HDR_COIN_R * 2);
+    ctx.restore();
+    // Glow ring
+    ctx.shadowColor = CYAN; ctx.shadowBlur = 18;
+    ctx.beginPath(); ctx.arc(HDR_COIN_CX, HDR_COIN_CY, HDR_COIN_R + 3, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN + '55'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.shadowBlur = 0;
+    // GOLAZOX text to the right
+    ctx.textAlign = 'left'; ctx.font = 'bold 88px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, 'GOLAZOX', HDR_COIN_CX + HDR_COIN_R + 18, 100, CYAN, 35);
+  } else {
+    ctx.font = 'bold 88px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, 'GOLAZOX', W / 2, 92, CYAN, 35);
+  }
 
   // Subtitle
   ctx.font = '500 28px "Rajdhani",Arial,sans-serif';
@@ -7190,69 +7207,141 @@ async function _generateShareCard(d) {
   curY += 32;
 
   // ── SCORERS ───────────────────────────────────────────────────────────────
-  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
-  ctx.font = '700 25px "Rajdhani",Arial,sans-serif';
-  ctx.fillStyle = DIM2;
-  ctx.fillText(isEN ? 'GOALSCORERS' : 'GOLEADORES', W / 2, curY);
-  curY += 16;
+  const sA = (d.scorersA || []).slice(0, 5);
+  const sB = (d.scorersB || []).slice(0, 5);
+  const rows = Math.max(sA.length, sB.length, 1);
 
-  // Team name colour-labels above their scorer column
-  ctx.font = '600 22px "Rajdhani",Arial,sans-serif';
-  ctx.textAlign = 'right'; ctx.fillStyle = CYAN + 'aa';
-  ctx.fillText(_scSafe(d.teamA).slice(0, 18), W / 2 - 22, curY);
-  ctx.textAlign = 'left';  ctx.fillStyle = MAGENTA + 'aa';
-  ctx.fillText(_scSafe(d.teamB).slice(0, 18), W / 2 + 22, curY);
-  curY += 8;
+  {
+    // Section header
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 27px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText(isEN ? 'GOALSCORERS' : 'GOLEADORES', W / 2, curY);
+    curY += 18;
 
-  const maxRows = 4;
-  const sA      = (d.scorersA || []).slice(0, maxRows);
-  const sB      = (d.scorersB || []).slice(0, maxRows);
-  const rows    = Math.max(sA.length, sB.length, 1);
+    // Team name subheaders
+    ctx.font = '700 24px "Rajdhani",Arial,sans-serif';
+    ctx.textAlign = 'right'; ctx.fillStyle = CYAN + 'cc';
+    ctx.fillText(_scSafe(d.teamA).slice(0, 20).toUpperCase(), W / 2 - 28, curY);
+    ctx.textAlign = 'left';  ctx.fillStyle = MAGENTA + 'cc';
+    ctx.fillText(_scSafe(d.teamB).slice(0, 20).toUpperCase(), W / 2 + 28, curY);
+    curY += 12;
 
-  // Vertical divider between the two scorer columns
-  ctx.fillStyle = 'rgba(255,255,255,0.12)';
-  ctx.fillRect(W / 2 - 1, curY, 2, rows * 52 + 20);
+    // Rows
+    const PILL_H = 56, PILL_GAP = 10;
+    const PILL_W = W / 2 - 60;  // half-width pill, 30px margin each side
 
-  ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
-  for (let i = 0; i < rows; i++) {
-    const ry = curY + 14 + i * 52;
-    const gA = sA[i];
-    const gB = sB[i];
+    for (let i = 0; i < rows; i++) {
+      const ry = curY + i * (PILL_H + PILL_GAP);
+      const gA = sA[i];
+      const gB = sB[i];
 
-    if (gA) {
-      const nm     = _scSafe(gA.name);
-      const minTxt = `${gA.minute || '?'}'`;
-      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
-      const nmW = ctx.measureText(nm).width;
-      ctx.textAlign = 'right'; ctx.fillStyle = CYAN;
-      ctx.fillText(nm, W / 2 - 15, ry);
-      ctx.font = '500 24px "Rajdhani",Arial,sans-serif';
-      ctx.fillStyle = CYAN + '88'; ctx.textAlign = 'right';
-      ctx.fillText(minTxt, W / 2 - 15 - nmW - 10, ry);
-      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
-    } else {
-      ctx.textAlign = 'right'; ctx.fillStyle = DIM2;
-      ctx.fillText('—', W / 2 - 30, ry);
+      // ── Team A pill (right-aligned, ends 4px from centre) ──
+      if (gA) {
+        // Pill background
+        ctx.save();
+        ctx.beginPath();
+        const pillAX = 30, pillAW = PILL_W;
+        ctx.roundRect(pillAX, ry, pillAW, PILL_H, 10);
+        ctx.fillStyle = 'rgba(0,212,255,0.10)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0,212,255,0.28)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.restore();
+
+        // Ball circle (left edge of pill)
+        const ballX = pillAX + 28, ballY = ry + PILL_H / 2;
+        ctx.beginPath(); ctx.arc(ballX, ballY, 10, 0, Math.PI * 2);
+        ctx.fillStyle = CYAN + 'cc'; ctx.fill();
+        // Draw ⚽ pattern (two halves) on the ball
+        ctx.beginPath(); ctx.arc(ballX, ballY, 10, -Math.PI/2, Math.PI/2);
+        ctx.fillStyle = 'rgba(0,0,0,0.45)'; ctx.fill();
+
+        // Name — truncate if too long
+        ctx.font = 'bold 34px "Rajdhani",Arial,sans-serif';
+        ctx.textBaseline = 'alphabetic';
+        const maxNmW = pillAW - 82;
+        let nm = _scSafe(gA.name);
+        while (nm.length > 3 && ctx.measureText(nm).width > maxNmW) nm = nm.slice(0, -1);
+        if (nm !== _scSafe(gA.name)) nm += '.';
+        ctx.textAlign = 'left'; ctx.fillStyle = WHITE;
+        ctx.fillText(nm, ballX + 18, ry + PILL_H * 0.66);
+
+        // Minute pill (right side of pill, neon color)
+        const minTxt = `${gA.minute || '?'}'`;
+        ctx.font = 'bold 26px "Rajdhani",Arial,sans-serif';
+        const minW = ctx.measureText(minTxt).width + 16;
+        const minX = pillAX + pillAW - minW - 4;
+        const minY = ry + (PILL_H - 28) / 2;
+        ctx.fillStyle = 'rgba(0,212,255,0.22)';
+        ctx.beginPath(); ctx.roundRect(minX, minY, minW, 28, 6); ctx.fill();
+        ctx.fillStyle = CYAN;
+        ctx.textAlign = 'center';
+        ctx.fillText(minTxt, minX + minW / 2, minY + 21);
+      } else {
+        // Empty slot — dash
+        ctx.font = '500 30px "Rajdhani",Arial,sans-serif';
+        ctx.textAlign = 'right'; ctx.fillStyle = DIM2;
+        ctx.textBaseline = 'middle';
+        ctx.fillText('—', W / 2 - 30, ry + PILL_H / 2);
+      }
+
+      // ── Team B pill (left-aligned, starts 4px from centre) ──
+      if (gB) {
+        const pillBX = W / 2 + 30;
+        const pillBW = PILL_W;
+
+        // Pill background
+        ctx.save();
+        ctx.beginPath();
+        ctx.roundRect(pillBX, ry, pillBW, PILL_H, 10);
+        ctx.fillStyle = 'rgba(255,45,120,0.10)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,45,120,0.28)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.restore();
+
+        // Minute pill (left side)
+        const minTxt = `${gB.minute || '?'}'`;
+        ctx.font = 'bold 26px "Rajdhani",Arial,sans-serif';
+        const minW = ctx.measureText(minTxt).width + 16;
+        const minX = pillBX + 4;
+        const minY = ry + (PILL_H - 28) / 2;
+        ctx.fillStyle = 'rgba(255,45,120,0.22)';
+        ctx.beginPath(); ctx.roundRect(minX, minY, minW, 28, 6); ctx.fill();
+        ctx.fillStyle = MAGENTA;
+        ctx.textAlign = 'center';
+        ctx.fillText(minTxt, minX + minW / 2, minY + 21);
+
+        // Name
+        ctx.font = 'bold 34px "Rajdhani",Arial,sans-serif';
+        ctx.textBaseline = 'alphabetic';
+        const nmStartX = minX + minW + 12;
+        const maxNmW = pillBW - minW - 52;
+        let nm = _scSafe(gB.name);
+        while (nm.length > 3 && ctx.measureText(nm).width > maxNmW) nm = nm.slice(0, -1);
+        if (nm !== _scSafe(gB.name)) nm += '.';
+        ctx.textAlign = 'left'; ctx.fillStyle = WHITE;
+        ctx.fillText(nm, nmStartX, ry + PILL_H * 0.66);
+
+        // Ball circle (right edge of pill)
+        const ballX = pillBX + pillBW - 28, ballY = ry + PILL_H / 2;
+        ctx.beginPath(); ctx.arc(ballX, ballY, 10, 0, Math.PI * 2);
+        ctx.fillStyle = MAGENTA + 'cc'; ctx.fill();
+        ctx.beginPath(); ctx.arc(ballX, ballY, 10, Math.PI/2, -Math.PI/2);
+        ctx.fillStyle = 'rgba(0,0,0,0.45)'; ctx.fill();
+      } else {
+        ctx.font = '500 30px "Rajdhani",Arial,sans-serif';
+        ctx.textAlign = 'left'; ctx.fillStyle = DIM2;
+        ctx.textBaseline = 'middle';
+        ctx.fillText('—', W / 2 + 30, ry + PILL_H / 2);
+      }
     }
-
-    if (gB) {
-      const nm     = _scSafe(gB.name);
-      const minTxt = `${gB.minute || '?'}'`;
-      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
-      const nmW = ctx.measureText(nm).width;
-      ctx.textAlign = 'left'; ctx.fillStyle = MAGENTA;
-      ctx.fillText(nm, W / 2 + 15, ry);
-      ctx.font = '500 24px "Rajdhani",Arial,sans-serif';
-      ctx.fillStyle = MAGENTA + '88'; ctx.textAlign = 'left';
-      ctx.fillText(minTxt, W / 2 + 15 + nmW + 10, ry);
-      ctx.font = '500 31px "Rajdhani",Arial,sans-serif';
-    } else {
-      ctx.textAlign = 'left'; ctx.fillStyle = DIM2;
-      ctx.fillText('—', W / 2 + 30, ry);
-    }
+    curY += rows * (PILL_H + PILL_GAP) + 24;
   }
 
-  curY += rows * 52 + 34;
   _scDivider(ctx, curY, W);
   curY += 42;
 
@@ -7594,15 +7683,37 @@ async function _generateShareCard(d) {
   botBar.addColorStop(1,   'rgba(0,212,255,0)');
   ctx.fillStyle = botBar; ctx.fillRect(0, footerY, W, 2);
 
-  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
-  ctx.font = '700 36px "Rajdhani",Arial,sans-serif';
   const _sUrl = ((window.GOLAZOX_CONFIG && window.GOLAZOX_CONFIG.siteUrl) || 'golazox.com')
     .replace(/^https?:\/\//, '').replace(/\/$/, '');
-  _scGlow(ctx, _sUrl, W / 2, footerY + 54, CYAN, 18);
 
-  ctx.font = '400 22px "Rajdhani",Arial,sans-serif';
-  ctx.fillStyle = DIM2;
-  ctx.fillText('Football Time Machine', W / 2, footerY + 84);
+  // Coin logo (circular crop) left of URL
+  const COIN_R = 38;
+  const COIN_CY = footerY + 52;
+  const COIN_CX = W / 2 - 110;
+  if (imgCoin) {
+    ctx.save();
+    ctx.beginPath(); ctx.arc(COIN_CX, COIN_CY, COIN_R, 0, Math.PI * 2); ctx.clip();
+    ctx.drawImage(imgCoin, COIN_CX - COIN_R, COIN_CY - COIN_R, COIN_R * 2, COIN_R * 2);
+    ctx.restore();
+    // Subtle ring
+    ctx.beginPath(); ctx.arc(COIN_CX, COIN_CY, COIN_R + 2, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0,212,255,0.35)'; ctx.lineWidth = 1.5; ctx.stroke();
+    // URL text to the right of coin
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 38px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, _sUrl, COIN_CX + COIN_R + 16, COIN_CY + 14, CYAN, 16);
+    ctx.font = '400 22px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText('Football Time Machine', COIN_CX + COIN_R + 16, COIN_CY + 38);
+  } else {
+    // Fallback: plain text
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.font = '700 36px "Rajdhani",Arial,sans-serif';
+    _scGlow(ctx, _sUrl, W / 2, footerY + 54, CYAN, 18);
+    ctx.font = '400 22px "Rajdhani",Arial,sans-serif';
+    ctx.fillStyle = DIM2;
+    ctx.fillText('Football Time Machine', W / 2, footerY + 84);
+  }
 
   // ── Crop to actual content height ─────────────────────────────────────────
   const finalH = footerY + 120;
