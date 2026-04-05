@@ -14,10 +14,10 @@ jobs:
 
       - name: Setup SSH key
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_deploy
+          echo "$SSH_PRIVATE_KEY_B64" | base64 -d > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
 
       - name: Sync files to server
