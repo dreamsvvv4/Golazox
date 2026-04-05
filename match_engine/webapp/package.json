@@ -14,10 +14,12 @@
     "dev": "node --watch server.js",
     "audit": "node audit_squads.js",
     "audit:verbose": "node audit_squads.js --verbose",
+    "audit:full": "node audit_squads.js --check-names --check-clones --verbose",
     "seed": "node seed_squads.js",
     "seed:bg": "node seed_squads_bg.js",
     "seed:dry": "node seed_squads_bg.js --dry-run",
-    "seed:once": "node seed_squads_bg.js --once"
+    "seed:once": "node seed_squads_bg.js --once",
+    "seed:badges": "node seed_squads_bg.js --badges-only --once"
   },
   "dependencies": {
     "cheerio": "^1.1.0",
