@@ -176,6 +176,18 @@ const GERMAN_SURNAMES    = new Set(['müller','schmidt','schneider','meyer','fis
   'lahm','schweinsteiger','ballack','klinsmann','bierhoff','matthäus','matthaeus']);
 
 // ═══════════════════════════════════════════════════════════════════════════
+// KNOWN CROSS-CULTURAL EXCEPTIONS
+// Players with German-looking surnames who are CONFIRMED members of a non-German
+// national team (descendants of German immigrants, common in South America).
+// Format: slug → Set of normalized player names (normName output)
+// Add here after manually verifying the player is correct.
+// ═══════════════════════════════════════════════════════════════════════════
+const CROSS_CULTURAL_OK = {
+  // Müller (Marcos Evangelista de Morais) — striker for Brazil, São Paulo FC, 1986-1998
+  'brasilien': new Set(['muller']),
+  // Schäfer (André Schäfer / András Schäfer) — midfielder for Hungary (German-Hungarian heritage)
+  'ungarn':    new Set(['schafer']),
+};
 
 const VALID_POSITIONS   = new Set(['GK','CB','RB','LB','DM','CM','AM','CAM','RM','LM','RW','LW','ST','CF','SS']);
 const MOJIBAKE_RE       = /Ã±|Ã¡|Ã©|Ã³|Ã\u00fa|Ã\u00fc|â€™|â€œ|â€|Â·/;
@@ -326,12 +338,15 @@ for (const fname of files) {
 
     // 12. NEW — German name patterns in non-German national teams
     if (isNatl && slug !== 'deutschland' && slug !== 'oesterreich' && slug !== 'schweiz') {
+      const exceptions = CROSS_CULTURAL_OK[slug] || new Set();
       for (const yr of seasonKeys) {
         const s = data.seasons[yr];
         const suspicious = (s.players || []).filter(p => {
           const parts = p.name.toLowerCase().split(/\s+/);
           const surname = parts[parts.length - 1];
-          return GERMAN_CHARS_RE.test(p.name) && GERMAN_SURNAMES.has(surname);
+          if (!GERMAN_CHARS_RE.test(p.name) || !GERMAN_SURNAMES.has(surname)) return false;
+          // Skip known cross-cultural players (confirmed correct squad)
+          return !exceptions.has(normName(surname));
         });
         if (suspicious.length > 0) {
           warn(fname, `season ${yr}: players with typical German surnames in national team: ${suspicious.map(p => p.name).join(', ')}`);
