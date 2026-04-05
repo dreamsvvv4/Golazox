@@ -1374,14 +1374,24 @@ body {
 /* ── Share button ─────────────────────────────────────────── */
 .share-row { display: flex; justify-content: center; gap: .6rem; margin-top: 1.2rem; flex-wrap: wrap; }
 .btn-share {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .45rem 1.4rem; font-size: .82rem; font-weight: 600;
-  letter-spacing: .04em; color: var(--grey);
-  background: transparent; border: 1px solid var(--border);
-  border-radius: 20px; cursor: pointer;
-  transition: background .15s, border-color .15s, color .15s;
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .65rem 2.2rem; font-size: .88rem; font-weight: 900;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(0,212,255,.22), rgba(0,212,255,.08));
+  border: 1.5px solid rgba(0,212,255,.55);
+  border-radius: 26px; cursor: pointer;
+  box-shadow: 0 0 22px rgba(0,212,255,.2), inset 0 1px 0 rgba(255,255,255,.1);
+  transition: all .2s;
 }
-.btn-share:hover { background: rgba(255,255,255,.07); color: var(--white); border-color: rgba(255,255,255,.25); }
+.btn-share:hover {
+  background: linear-gradient(135deg, rgba(0,212,255,.34), rgba(0,212,255,.16));
+  border-color: var(--neon); color: var(--neon);
+  box-shadow: 0 0 32px rgba(0,212,255,.38), inset 0 1px 0 rgba(255,255,255,.15);
+  transform: translateY(-1px);
+}
+.btn-share:active { transform: translateY(0); box-shadow: 0 0 16px rgba(0,212,255,.2); }
+.btn-share:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 .btn-deeplink {
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .45rem 1rem; font-size: .8rem; font-weight: 600;
@@ -3004,6 +3014,37 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .share-panel-cancel:hover { background: rgba(255,255,255,.1); }
+
+/* Share panel — card preview thumbnail */
+.share-preview-wrap {
+  margin-bottom: 1.1rem;
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+}
+.share-preview-img {
+  width: 100%; max-width: 340px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,212,255,.22);
+  box-shadow: 0 4px 20px rgba(0,0,0,.45);
+  display: block;
+  cursor: pointer;
+}
+.share-preview-img.hidden { display: none; }
+.share-preview-spinner {
+  display: flex; align-items: center; justify-content: center;
+  height: 56px; width: 100%;
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+  color: rgba(0,212,255,.5); text-transform: uppercase;
+  animation: share-preview-blink 1.2s ease-in-out infinite;
+}
+@keyframes share-preview-blink {
+  0%,100% { opacity: .4; } 50% { opacity: 1; }
+}
+/* Drag handle at top of sheet */
+.share-panel-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: rgba(255,255,255,.18);
+  margin: 0 auto .9rem;
+}
 
 /* ══════════════════════════════════════════════════════════
    RESPONSIVE

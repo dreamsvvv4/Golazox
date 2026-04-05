@@ -773,6 +773,7 @@ let _selectedStadium = null;
 let _selectedReferee = null;     // full referee object from /referees
 let _selectedWeather = null;     // weather object from WEATHER array
 let _shareData       = null;     // data snapshot for share card generation
+let _shareBlobCache  = null;     // pre-generated PNG blob, reused if card data unchanged
 
 // ── Analytics helper (GA4 via existing gtag) ─────────────────
 function _gx(event, params) {
@@ -3439,6 +3440,7 @@ function renderResult(data, payload) {
 
   // ── Snapshot para share card ──────────────────────────────
   // ── Snapshot para share card ──────────────────────────────
+  _shareBlobCache = null;  // invalidate on each new match result
   _shareData = {
     teamA:    payload.teamA,
     teamB:    payload.teamB,
@@ -6388,9 +6390,14 @@ function _openSharePanel(data) {
   overlay.className = 'share-panel-overlay';
   overlay.innerHTML = `
     <div class="share-panel">
+      <div class="share-panel-handle"></div>
       <div class="share-panel-header">
         <div class="share-panel-score">${data.teamA} <span class="share-panel-scorebox">${data.scoreA}\u2013${data.scoreB}</span> ${data.teamB}</div>
         ${eraNote ? `<div class="share-panel-era">${eraNote.replace(/[\[\]]/g,'').trim()}</div>` : ''}
+      </div>
+      <div class="share-preview-wrap" id="share-preview-wrap">
+        <div class="share-preview-spinner" id="share-preview-spinner">${isEN ? 'Generating card\u2026' : 'Generando tarjeta\u2026'}</div>
+        <img class="share-preview-img hidden" id="share-preview-img" alt="share card preview" />
       </div>
       <div class="share-panel-title">${isEN ? 'Share' : 'Compartir'}</div>
       <div class="share-panel-options">
@@ -6419,34 +6426,72 @@ function _openSharePanel(data) {
 
   requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('open')));
 
+  // ── Pre-generate the share card in the background, show as thumbnail ──────
+  let _previewObjUrl = null;
+  const _showPreview = blob => {
+    const img     = document.getElementById('share-preview-img');
+    const spinner = document.getElementById('share-preview-spinner');
+    if (!img) return;
+    if (_previewObjUrl) URL.revokeObjectURL(_previewObjUrl);
+    _previewObjUrl = URL.createObjectURL(blob);
+    img.src = _previewObjUrl;
+    img.onload = () => {
+      if (spinner) spinner.style.display = 'none';
+      img.classList.remove('hidden');
+    };
+    // Clicking the thumbnail also triggers native share/download
+    img.addEventListener('click', () => document.getElementById('sopt-native')?.click());
+  };
+
+  if (_shareBlobCache) {
+    _showPreview(_shareBlobCache);
+  } else {
+    _generateShareCard(data).then(blob => {
+      _shareBlobCache = blob;
+      _showPreview(blob);
+    }).catch(() => {
+      const spinner = document.getElementById('share-preview-spinner');
+      if (spinner) spinner.style.display = 'none';
+    });
+  }
+
   function closePanel() {
     overlay.classList.remove('open');
+    if (_previewObjUrl) { setTimeout(() => URL.revokeObjectURL(_previewObjUrl), 500); }
     setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 320);
   }
 
   overlay.addEventListener('click', e => { if (e.target === overlay) closePanel(); });
   document.getElementById('share-cancel').addEventListener('click', closePanel);
 
-  // Option: native share with image
+  // Option: native share with image — use cached blob if already generated
   document.getElementById('sopt-native').addEventListener('click', () => {
     closePanel();
-    const btn = document.querySelector('.btn-share');
-    if (btn) { btn.textContent = t('btn-share-loading'); btn.disabled = true; }
-    _generateShareCard(data).then(blob => {
-      if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
-      const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 30);
-      const fileName = `golazox-${slug(data.teamA)}-vs-${slug(data.teamB)}.png`;
+    const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 30);
+    const fileName = `golazox-${slug(data.teamA)}-vs-${slug(data.teamB)}.png`;
+    const doShare = blob => {
       const file = new File([blob], fileName, { type: 'image/png' });
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         navigator.share({ files: [file], title: `\u26BD ${scoreText}`, url: deepLink }).catch(() => _scDownload(blob, fileName));
       } else {
         _scDownload(blob, fileName);
       }
-    }).catch(err => {
-      console.error('[share]', err);
-      if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
-      showToast(t('tooltip-copy-fail'));
-    });
+    };
+    if (_shareBlobCache) {
+      doShare(_shareBlobCache);
+    } else {
+      const btn = document.querySelector('.btn-share');
+      if (btn) { btn.textContent = t('btn-share-loading'); btn.disabled = true; }
+      _generateShareCard(data).then(blob => {
+        _shareBlobCache = blob;
+        if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
+        doShare(blob);
+      }).catch(err => {
+        console.error('[share]', err);
+        if (btn) { btn.textContent = t('btn-share'); btn.disabled = false; }
+        showToast(t('tooltip-copy-fail'));
+      });
+    }
   });
 
   // Option: copy deep link
