@@ -4944,6 +4944,7 @@ let _heatmapData     = { a: [], b: [] }; // position samples per team
 let _distanceData    = {};               // player name → accumulated px distance
 let _prevPos         = {};               // last known position per player name
 let _distSamples     = 0;                // drift-tick distance samples taken this match (for km normalisation)
+const _lpVel         = new WeakMap();    // element → {vx, vy} velocity state
 
 function _lpHexGrid(W, H) {
   const s = 9;
@@ -5252,38 +5253,96 @@ function initPenaltyPitch(lineupA, lineupB) {
 
 function _startPitchDrift() {
   if (_attackBiasTimer) { clearTimeout(_attackBiasTimer); _attackBiasTimer = null; }
-  _pitchDriftInterval = setInterval(_driftPlayers, 600);
+  _pitchDriftInterval = setInterval(_driftPlayers, 750);
 }
+
+// Position-zone constraints: [yMin, yMax] as fraction of H (Team A orientation).
+// Team B zones are mirrored: zMin=(1-yMax)*H, zMax=(1-yMin)*H.
+// Kept tight so players look positionally disciplined.
+const _LP_ZONE = {
+  GK:  [0.02, 0.12],
+  SW:  [0.10, 0.24], CB:  [0.12, 0.26], RB:  [0.10, 0.30], LB:  [0.10, 0.30],
+  RWB: [0.14, 0.44], LWB: [0.14, 0.44],
+  CDM: [0.26, 0.44], DM:  [0.26, 0.44],
+  CM:  [0.35, 0.54], RM:  [0.30, 0.52], LM:  [0.30, 0.52],
+  AM:  [0.46, 0.62], CAM: [0.46, 0.62],
+  RW:  [0.55, 0.74], LW:  [0.55, 0.74],
+  CF:  [0.60, 0.78], SS:  [0.60, 0.78], ST:  [0.62, 0.80],
+};
 
 function _driftPlayers() {
   const W = _LP.W, H = _LP.H;
   _driftTick++;
-  // Every 4 ticks (~2.4s) trigger an attack/defense wave
-  if (_driftTick % 4 === 0 && !_attackBiasTimer) {
+  // Every 5 ticks (~3.75s) trigger an attack wave
+  if (_driftTick % 5 === 0 && !_attackBiasTimer) {
     _attackBias = Math.random() < .5 ? 1 : -1;
-    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 2400);
+    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 3000);
   }
-  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
-
-  // Move each player: pull toward home zone + jitter.
-  // Updating dataset.bx/by lets movement compound realistically.
-  const movePlayer = (g, yBias) => {
-    const hx = parseFloat(g.dataset.homex || g.dataset.bx);
-    const hy = parseFloat(g.dataset.homey || g.dataset.by);
+  // Velocity-based movement: each player has persistent vx/vy stored in _lpVel.
+  // A spring pulls toward home, random impulses add "intent", friction decays speed.
+  // Zone walls bounce velocity softly so direction never reverses abruptly.
+  const movePlayer = (g, isTeamA) => {
+    const pos  = g.dataset.pos || 'CM';
+    const isGK = pos === 'GK';
+    const isDef = (pos === 'CB' || pos === 'SW' || pos === 'RB' || pos === 'LB' || pos === 'RWB' || pos === 'LWB');
+    const hx = parseFloat(g.dataset.homex);
+    const hy = parseFloat(g.dataset.homey);
     const cx = parseFloat(g.dataset.bx);
     const cy = parseFloat(g.dataset.by);
-    // 8% pull toward home each tick + ±18px jitter + attack y-bias
-    const nx = clamp(cx + (hx - cx) * 0.08 + (Math.random() - .5) * 22, 6, W - 6);
-    const ny = clamp(cy + (hy - cy) * 0.08 + (Math.random() - .5) * 22 + (yBias || 0), 6, H - 6);
-    g.setAttribute('transform', `translate(${nx},${ny})`);
+    let { vx, vy } = _lpVel.get(g) || { vx: 0, vy: 0 };
+
+    // Spring force toward home slot
+    const spring = isGK ? 0.10 : (isDef ? 0.055 : 0.038);
+    const ax = (hx - cx) * spring;
+    const ay = (hy - cy) * spring;
+
+    // Tiny random impulse ("decision" to move)
+    const impMag = isGK ? 0.25 : (isDef ? 0.65 : 1.0);
+    const ix = (Math.random() - 0.5) * impMag;
+    const iy = (Math.random() - 0.5) * impMag;
+
+    // Attack-wave y-impulse (non-GK, forward push only)
+    const yImp = isGK ? 0
+      : (isTeamA
+          ? (_attackBias === 1 ? 0.25 : _attackBias === -1 ? -0.18 : 0)
+          : (_attackBias === -1 ? -0.25 : _attackBias === 1 ? 0.18 : 0));
+
+    // Integrate: friction → accelerate
+    const friction = isGK ? 0.68 : (isDef ? 0.72 : 0.76);
+    vx = vx * friction + ax + ix;
+    vy = vy * friction + ay + iy + yImp;
+
+    // Clamp max speed
+    const vMax = isGK ? 1.2 : (isDef ? 1.8 : 2.4);
+    const spd = Math.sqrt(vx * vx + vy * vy);
+    if (spd > vMax) { vx = vx / spd * vMax; vy = vy / spd * vMax; }
+
+    let nx = cx + vx;
+    let ny = cy + vy;
+
+    // Soft zone walls: bounce velocity when crossing boundary
+    const zone = _LP_ZONE[pos];
+    if (zone) {
+      const [zMin, zMax] = isTeamA
+        ? [zone[0] * H, zone[1] * H]
+        : [(1 - zone[1]) * H, (1 - zone[0]) * H];
+      if (ny < zMin) { ny = zMin; vy = Math.abs(vy) * 0.25; }
+      else if (ny > zMax) { ny = zMax; vy = -Math.abs(vy) * 0.25; }
+    }
+    // Pitch boundary
+    if (nx < 4)   { nx = 4;   vx =  Math.abs(vx) * 0.25; }
+    if (nx > W-4) { nx = W-4; vx = -Math.abs(vx) * 0.25; }
+    if (ny < 3)   { ny = 3;   vy =  Math.abs(vy) * 0.25; }
+    if (ny > H-3) { ny = H-3; vy = -Math.abs(vy) * 0.25; }
+
+    g.setAttribute('transform', `translate(${nx.toFixed(1)},${ny.toFixed(1)})`);
     g.dataset.bx = nx;
     g.dataset.by = ny;
+    _lpVel.set(g, { vx, vy });
   };
 
-  const yBiasA = _attackBias === 1 ? 6 : _attackBias === -1 ? -4 : 0;
-  const yBiasB = _attackBias === -1 ? -6 : _attackBias === 1 ? 4 : 0;
-  _pitchDots.a.forEach(g => movePlayer(g, yBiasA));
-  _pitchDots.b.forEach(g => movePlayer(g, yBiasB));
+  _pitchDots.a.forEach(g => movePlayer(g, true));
+  _pitchDots.b.forEach(g => movePlayer(g, false));
 
   // ── Heatmap + distance tracking (every other tick) ───────────────────
   if (_driftTick % 2 === 0) {
@@ -5293,52 +5352,63 @@ function _driftPlayers() {
       const ny   = parseFloat(g.dataset.by);
       const team = g.dataset.team;
       const key  = g.dataset.name;
-      // Heatmap sample (normalised 0-1, cap at 800 per team)
       if (team === 'a' || team === 'b') {
         if (_heatmapData[team] && _heatmapData[team].length < 800) {
           _heatmapData[team].push({ x: nx / W, y: ny / H });
         }
       }
-      // Distance accumulation — weighted by position (GK covers ~5 km, defenders ~10, midfielders/forwards ~11-13)
       if (key && _prevPos[key]) {
         const dx = nx - _prevPos[key].x;
         const dy = ny - _prevPos[key].y;
         const pos = g.dataset.pos || '';
         const posFactor = pos === 'GK' ? 0.43
-          : (pos === 'CB' || pos === 'RB' || pos === 'LB') ? 0.78
-          : 1.0;
+          : (pos === 'CB' || pos === 'RB' || pos === 'LB') ? 0.78 : 1.0;
         _distanceData[key] = (_distanceData[key] || 0) + Math.sqrt(dx * dx + dy * dy) * posFactor;
       }
       if (key) _prevPos[key] = { x: nx, y: ny, team };
     });
   }
 
-  // Ball: 40% chance "pass" near a random player, else roll freely across the whole field
+  // ── Ball movement: follows current owner, passes every ~4 ticks ──────
   if (_pitchDots.ball) {
-    const allDots = [..._pitchDots.a, ..._pitchDots.b];
+    const cl = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    const allDots = [..._pitchDots.a, ..._pitchDots.b].filter(g => g.dataset.pos !== 'GK');
     let nbx, nby;
-    if (allDots.length > 0 && Math.random() < 0.4) {
-      const target = allDots[Math.floor(Math.random() * allDots.length)];
-      nbx = clamp(parseFloat(target.dataset.bx) + (Math.random() - .5) * 14, 4, W - 4);
-      nby = clamp(parseFloat(target.dataset.by) + (Math.random() - .5) * 14, 4, H - 4);
+
+    const shouldPass = (_driftTick % 4 === 0) && allDots.length > 1;
+    if (shouldPass) {
+      // Pass to a random nearby teammate (prefer same-team dot)
+      const ownerTeam = _lpBallOwnerEl ? _lpBallOwnerEl.dataset.team : null;
+      const teammates = (ownerTeam === 'a' ? _pitchDots.a : _pitchDots.b).filter(g => g !== _lpBallOwnerEl && g.dataset.pos !== 'GK');
+      if (teammates.length > 0) {
+        _lpBallOwnerEl = teammates[Math.floor(Math.random() * teammates.length)];
+      }
+    }
+    // Ball stays close to current owner
+    if (_lpBallOwnerEl) {
+      const ox = parseFloat(_lpBallOwnerEl.dataset.bx);
+      const oy = parseFloat(_lpBallOwnerEl.dataset.by);
+      nbx = cl(ox + (Math.random() - .5) * 8, 3, W - 3);
+      nby = cl(oy + (Math.random() - .5) * 8, 3, H - 3);
     } else {
       const bx = parseFloat(_pitchDots.ball.dataset.bx || _LP.cx);
       const by = parseFloat(_pitchDots.ball.dataset.by || _LP.cy);
-      nbx = clamp(bx + (Math.random() - .5) * 40, 4, W - 4);
-      nby = clamp(by + (Math.random() - .5) * 40, 4, H - 4);
+      nbx = cl(bx + (Math.random() - .5) * 18, 3, W - 3);
+      nby = cl(by + (Math.random() - .5) * 18, 3, H - 3);
     }
-    _pitchDots.ball.setAttribute('transform', `translate(${nbx},${nby})`);
+    _pitchDots.ball.setAttribute('transform', `translate(${nbx.toFixed(1)},${nby.toFixed(1)})`);
     _pitchDots.ball.dataset.bx = nbx;
     _pitchDots.ball.dataset.by = nby;
 
-    // Update particle stream
+    // Update particle stream (ball-owner → ball)
     if (_lpParticleEl) {
-      _lpParticleEl.setAttribute('x2', nbx);
-      _lpParticleEl.setAttribute('y2', nby);
+      _lpParticleEl.setAttribute('x2', nbx.toFixed(1));
+      _lpParticleEl.setAttribute('y2', nby.toFixed(1));
       if (_lpBallOwnerEl) {
-        const t = _lpBallOwnerEl.getAttribute('transform') || '';
-        const m = t.match(/translate\(([^,]+),([^)]+)\)/);
-        if (m) { _lpParticleEl.setAttribute('x1', m[1]); _lpParticleEl.setAttribute('y1', m[2]); }
+        const ox = parseFloat(_lpBallOwnerEl.dataset.bx);
+        const oy = parseFloat(_lpBallOwnerEl.dataset.by);
+        _lpParticleEl.setAttribute('x1', ox.toFixed(1));
+        _lpParticleEl.setAttribute('y1', oy.toFixed(1));
       }
     }
   }

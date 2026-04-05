@@ -2680,14 +2680,14 @@ body {
   border-radius: 8px; overflow: visible;
   filter: drop-shadow(0 0 6px rgba(0,212,255,.18)) drop-shadow(0 0 18px rgba(0,212,255,.08));
 }
-/* Player group: smooth movement */
+/* Player group: smooth movement — eased so players drift rather than teleport */
 .lp-player-g {
-  transition: transform .5s cubic-bezier(.25,.1,.25,1);
+  transition: transform .65s cubic-bezier(.33,.1,.33,1);
   cursor: pointer;
   will-change: transform;
 }
 .lp-ball-g {
-  transition: transform .3s cubic-bezier(.25,.1,.25,1);
+  transition: transform .4s cubic-bezier(.2,.6,.4,1);
   will-change: transform;
 }
 /* Smart dot glow: normal state */
