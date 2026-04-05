@@ -3,11 +3,13 @@
  * audit_squads.js — Validador de plantillas GolazOX
  *
  * USO:
- *   node audit_squads.js                     # Resumen básico
- *   node audit_squads.js --verbose            # Muestra también los OK
- *   node audit_squads.js --check-names        # Activa detección de jugadores erróneos
- *   node audit_squads.js --check-clones       # Detecta squads clonados/duplicados
- *   node audit_squads.js --check-names --check-clones --verbose  # Auditoría completa
+ *   node audit_squads.js                        # Resumen básico
+ *   node audit_squads.js --verbose               # Muestra también los OK
+ *   node audit_squads.js --check-names           # Activa detección de jugadores erróneos
+ *   node audit_squads.js --check-clones          # Detecta squads clonados/duplicados
+ *   node audit_squads.js --check-positions       # Detecta defensas todos como CB (scraper bug)
+ *   node audit_squads.js --fix-positions         # Auto-corrige posiciones mediante player_ratings overrides
+ *   node audit_squads.js --check-names --check-clones --check-positions --verbose  # Auditoría completa
  *
  * Checks:
  *   ❌ JSON parse error
@@ -23,6 +25,8 @@
  *   ⚠️  Sin fuente (source)
  *   ⚠️  Sin badge
  *   ⚠️  Squad desactualizado (último año > 2 años atrás)
+ *   ⚠️  Todos los defensas como CB (--check-positions) — posiciones erróneas del scraper
+ *   🔧 Auto-fix posiciones mediante getPlayerPosition() (--fix-positions)
  */
 
 'use strict';
@@ -31,9 +35,17 @@ const path = require('path');
 
 const SQUADS_DIR  = path.join(__dirname, 'squads');
 const META_PATH   = path.join(__dirname, 'squads-meta.json');
-const VERBOSE      = process.argv.includes('--verbose');
-const CHECK_NAMES  = process.argv.includes('--check-names');
-const CHECK_CLONES = process.argv.includes('--check-clones');
+const VERBOSE          = process.argv.includes('--verbose');
+const CHECK_NAMES      = process.argv.includes('--check-names');
+const CHECK_CLONES     = process.argv.includes('--check-clones');
+const CHECK_POSITIONS  = process.argv.includes('--check-positions') || process.argv.includes('--fix-positions');
+const FIX_POSITIONS    = process.argv.includes('--fix-positions');
+
+// Position override table from player_ratings.js (used by --check-positions / --fix-positions)
+let _getPlayerPosition = null;
+try {
+  ({ getPlayerPosition: _getPlayerPosition } = require('./player_ratings'));
+} catch (_) {}
 
 // Load squads-meta.json overlay (used for badge path fallback)
 let squadsMeta = {};
@@ -355,7 +367,34 @@ for (const fname of files) {
     }
   }
 
-  // 13. NEW — Clone fingerprint (for CHECK_CLONES pass)
+  // 13. NEW — Position check: all defenders as CB (scraper mis-classification)
+  if (CHECK_POSITIONS) {
+    for (const yr of seasonKeys) {
+      const s = data.seasons[yr];
+      const ps = s.players || [];
+      const defPlayers = ps.filter(p => ['CB','RB','LB'].includes(p.position));
+      if (defPlayers.length >= 3) {
+        const hasRB = defPlayers.some(p => p.position === 'RB');
+        const hasLB = defPlayers.some(p => p.position === 'LB');
+        if (!hasRB && !hasLB) {
+          // Check if any of these "CBs" are actually known laterals
+          const misclassed = _getPlayerPosition
+            ? defPlayers.filter(p => {
+                const ovr = _getPlayerPosition(p.name);
+                return ovr && (ovr === 'RB' || ovr === 'LB');
+              })
+            : [];
+          if (misclassed.length > 0) {
+            warn(fname, `season ${yr}: ALL ${defPlayers.length} defenders labelled CB — known laterals misclassified: ${misclassed.map(p => p.name + '→' + _getPlayerPosition(p.name)).join(', ')}`);
+          } else {
+            warn(fname, `season ${yr}: ALL ${defPlayers.length} defenders labelled CB — no RB/LB — possible scraper position normalization`);
+          }
+        }
+      }
+    }
+  }
+
+  // 14. NEW — Clone fingerprint (for CHECK_CLONES pass)
   if (CHECK_CLONES) {
     for (const yr of seasonKeys) {
       const s = data.seasons[yr];
@@ -369,6 +408,33 @@ for (const fname of files) {
 
   note(fname, `OK (${latest}, ${players.length} players, ratings=${JSON.stringify(ratings)})`);
   ok++;
+}
+
+// ── Position auto-fix pass ──────────────────────────────────────
+if (FIX_POSITIONS && _getPlayerPosition) {
+  let fixedFiles = 0, fixedPlayers = 0;
+  for (const fname of files) {
+    const fpath = path.join(SQUADS_DIR, fname);
+    let data;
+    try { data = JSON.parse(fs.readFileSync(fpath, 'utf8')); } catch (_) { continue; }
+    let dirty = false;
+    for (const yr of Object.keys(data.seasons || {})) {
+      for (const p of (data.seasons[yr].players || [])) {
+        const ovr = _getPlayerPosition(p.name);
+        if (ovr && ovr !== p.position) {
+          if (VERBOSE) console.log(`  FIX ${fname} ${yr}: ${p.name} ${p.position} → ${ovr}`);
+          p.position = ovr;
+          dirty = true;
+          fixedPlayers++;
+        }
+      }
+    }
+    if (dirty) {
+      fs.writeFileSync(fpath, JSON.stringify(data, null, 2), 'utf8');
+      fixedFiles++;
+    }
+  }
+  console.log(`\n🔧  --fix-positions: corrected ${fixedPlayers} player positions across ${fixedFiles} files`);
 }
 
 // ── Clone detection pass ───────────────────────────────────────
@@ -394,9 +460,11 @@ if (CHECK_CLONES) {
 console.log('\n══════════════════════════════════════════════════════');
 console.log(' GOLAZOX SQUAD AUDIT');
 console.log(`  Flags: ${[
-  CHECK_NAMES  ? '--check-names'  : '',
-  CHECK_CLONES ? '--check-clones' : '',
-  VERBOSE      ? '--verbose'      : '',
+  CHECK_NAMES      ? '--check-names'      : '',
+  CHECK_CLONES     ? '--check-clones'     : '',
+  CHECK_POSITIONS  ? '--check-positions'  : '',
+  FIX_POSITIONS    ? '--fix-positions'    : '',
+  VERBOSE          ? '--verbose'          : '',
 ].filter(Boolean).join(' ') || '(standard)'}`);
 console.log('══════════════════════════════════════════════════════');
 
@@ -418,9 +486,11 @@ console.log(`  Warnings      : ${warnings}  ⚠️`);
 console.log(`  OK/stubs      : ${ok}  ✅`);
 console.log('──────────────────────────────────────────────────────');
 console.log('  Tips:');
-console.log('    --check-names   → detecta jugadores en selección incorrecta');
-console.log('    --check-clones  → detecta plantillas clonadas entre equipos');
-console.log('    --verbose       → muestra también los OK');
+  console.log('    --check-names      → detecta jugadores en selección incorrecta');
+  console.log('    --check-clones     → detecta plantillas clonadas entre equipos');
+  console.log('    --check-positions  → detecta defensas todos como CB (scraper bug)');
+  console.log('    --fix-positions    → auto-corrige posiciones (aplica player_ratings overrides)');
+  console.log('    --verbose          → muestra también los OK');
 console.log('──────────────────────────────────────────────────────');
 
 if (errors > 0) process.exit(1);

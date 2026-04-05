@@ -596,7 +596,10 @@ const PLAYER_RATINGS_RAW = [
   ['eusebio',                94], ['eusébio',              94],
   ['garrincha',              94],
   ['george best',            95],
-  ['gerd muller',            95], ['gerd müller',          95], ['müller',  95],
+  ['gerd muller',            95], ['gerd müller',          95],
+  // NOTE: bare 'müller' intentionally removed — it caused false positives for non-German players
+  // (e.g. Brazilian Müller, Marcos Evangelista de Morais) who stored only their surname in the JSON.
+  // Gerd Müller is covered by full-name entries above.
   ['just fontaine',          89], ['fontaine',             89],
   ['raymond kopa',           89],
   ['sandor kocsis',          90], ['kocsis',               90],
