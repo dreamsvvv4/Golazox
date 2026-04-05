@@ -1160,8 +1160,57 @@
         {
           "name": "Iker Casillas",
           "position": "GK",
-          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Michel Salgado",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Fernando Hierro",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Iván Helguera",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Carlos",
+          "position": "LB",
+          "rating": 89
+        },
+        {
+          "name": "Luís Figo",
+          "position": "RM",
+          "rating": 91
+        },
+        {
+          "name": "Claude Makélélé",
+          "position": "CM",
           "rating": 88
+        },
+        {
+          "name": "Steve McManaman",
+          "position": "LM",
+          "rating": 77
+        },
+        {
+          "name": "Zinédine Zidane",
+          "position": "CM",
+          "rating": 96
+        },
+        {
+          "name": "Raúl",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Ronaldo",
+          "position": "ST",
+          "rating": 96
         },
         {
           "name": "César Sánchez",
@@ -1174,24 +1223,6 @@
           "position": "GK",
           "marketValue": 0,
           "rating": null
-        },
-        {
-          "name": "Roberto Carlos",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 91
-        },
-        {
-          "name": "Fernando Hierro",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 87
-        },
-        {
-          "name": "Iván Helguera",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 78
         },
         {
           "name": "César Navas",
@@ -1207,7 +1238,7 @@
         },
         {
           "name": "Raúl Bravo",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 0,
           "rating": null
         },
@@ -1225,7 +1256,7 @@
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
@@ -1234,18 +1265,6 @@
           "position": "CB",
           "marketValue": 0,
           "rating": null
-        },
-        {
-          "name": "Zinédine Zidane",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 96
-        },
-        {
-          "name": "Claude Makélélé",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 88
         },
         {
           "name": "Borja Fernández",
@@ -1273,18 +1292,12 @@
         },
         {
           "name": "Guti",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 0,
           "rating": null
         },
         {
           "name": "Flávio Conceição",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": null
-        },
-        {
-          "name": "Steve McManaman",
           "position": "CM",
           "marketValue": 0,
           "rating": null
@@ -1302,18 +1315,6 @@
           "rating": null
         },
         {
-          "name": "Raúl",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 88
-        },
-        {
-          "name": "Ronaldo",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 88
-        },
-        {
           "name": "Álex Pérez",
           "position": "ST",
           "marketValue": 0,
@@ -1321,12 +1322,6 @@
         },
         {
           "name": "Valdo",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": null
-        },
-        {
-          "name": "Luís Figo",
           "position": "ST",
           "marketValue": 0,
           "rating": null
@@ -1345,12 +1340,12 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
+        "attack": 93,
+        "midfield": 88,
+        "defense": 81,
+        "goalkeeping": 87
       },
-      "source": "Transfermarkt — Real Madrid (2002/2003)",
+      "source": "Transfermarkt — Real Madrid (2002/2003) [corrected positions and ratings]",
       "teamLabel": "Real Madrid (2002-03)"
     },
     "2006": {
