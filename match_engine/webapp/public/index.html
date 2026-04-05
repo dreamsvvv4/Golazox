@@ -337,7 +337,10 @@
       <div class="live-scoreboard">
         <div class="live-team-side">
           <img class="live-team-badge" id="live-badge-a" src="" alt="" style="display:none">
-          <span class="live-team-name" id="live-team-a">-</span>
+          <div class="live-team-info">
+            <span class="live-team-name" id="live-team-a">-</span>
+            <span class="live-team-era" id="live-era-a"></span>
+          </div>
         </div>
         <div class="live-score-block">
           <span class="live-score-num" id="live-score-a">0</span>
@@ -346,7 +349,10 @@
         </div>
         <div class="live-team-side live-team-side-b">
           <img class="live-team-badge" id="live-badge-b" src="" alt="" style="display:none">
-          <span class="live-team-name" id="live-team-b">-</span>
+          <div class="live-team-info">
+            <span class="live-team-name" id="live-team-b">-</span>
+            <span class="live-team-era" id="live-era-b"></span>
+          </div>
         </div>
       </div>
       <div class="live-clock-wrap">
@@ -1243,7 +1249,7 @@
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=52"></script>
+  <script src="app.js?v=53"></script>
   <script src="tournament.js?v=8"></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->

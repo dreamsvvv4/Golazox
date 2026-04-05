@@ -2412,11 +2412,13 @@ function _renderPicker(side) {
     const badge = entry?.badge || BADGE_PLACEHOLDER;
     const meta  = _LEAGUE_META[entry?.group];
     const displayName = _entryName(entry) || chosenName;
+    const chosenEra = document.getElementById(`era${side}`)?.value || '';
     container.innerHTML =
       `<div class="tp-chosen">` +
       `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="">` +
       `<div class="tp-chosen-info">` +
         `<span class="tp-chosen-name">${escHtml(displayName)}</span>` +
+        (chosenEra ? `<span class="tp-chosen-era">${escHtml(chosenEra)}</span>` : '') +
         `<span class="tp-chosen-group">${escHtml(meta?.name || '')}</span>` +
       `</div>` +
       `<button class="tp-change-btn" data-pa="reset" title="${t('tp-change-title')}">&#10005;</button>` +
@@ -2598,6 +2600,7 @@ function _populateEraSelect(teamName, side) {
     _eraConfirmed[side] = true;
     _updateLookupBtn(side);
     _updateClashButton();
+    _renderPicker(side);
   };
 }
 
@@ -5842,6 +5845,10 @@ function playLiveMatch(data, payload, tickMs = 300) {
   viewer.classList.remove('hidden', 'live-fade-out');
   document.getElementById('live-team-a').textContent  = payload.teamA;
   document.getElementById('live-team-b').textContent  = payload.teamB;
+  const liveEraA = document.getElementById('live-era-a');
+  const liveEraB = document.getElementById('live-era-b');
+  if (liveEraA) { liveEraA.textContent = payload.eraA || ''; liveEraA.style.display = payload.eraA ? '' : 'none'; }
+  if (liveEraB) { liveEraB.textContent = payload.eraB || ''; liveEraB.style.display = payload.eraB ? '' : 'none'; }
   const badgeAEl = document.getElementById('live-badge-a');
   const badgeBEl = document.getElementById('live-badge-b');
   if (badgeAEl) { badgeAEl.src = data.badgeA || ''; badgeAEl.style.display = data.badgeA ? '' : 'none'; }
