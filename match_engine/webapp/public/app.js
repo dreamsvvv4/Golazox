@@ -4144,13 +4144,12 @@ function _handlePmCardClick(card, side) {
   selected.innerHTML = bHtml;
   card.innerHTML = aHtml;
 
-  // Swap player data so DOM state stays consistent with visual content
-  const aName = selected.dataset.playerName, aPos = selected.dataset.playerPos, aTitle = selected.title;
+  // Swap player NAMES only — the position slot stays on the starter DOM node
+  // so the substituted player takes the starter's formation slot (e.g. GK→GK).
+  const aName = selected.dataset.playerName, aTitle = selected.title;
   selected.dataset.playerName = card.dataset.playerName;
-  selected.dataset.playerPos  = card.dataset.playerPos;
   selected.title              = card.title;
   card.dataset.playerName = aName;
-  card.dataset.playerPos  = aPos;
   card.title              = aTitle;
 
   // NOTE: pm-starter / pm-sub classes stay on their original DOM nodes.
