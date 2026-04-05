@@ -1320,6 +1320,133 @@ const PLAYER_RATINGS_RAW = [
   ['moisés caicedo',         88],
   ['joelinton',              82],
   ['sandro tonali',          85], ['tonali',               85],
+
+  // ════════════════════════════════════════════════════════════════════
+  // LEYENDAS HISTÓRICAS — players missing from old squad JSONs
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Alemania / Germany ───────────────────────────────────────────
+  ['jurgen klinsmann',       88], ['klinsmann',            88], ['jürgen klinsmann', 88],
+  ['rudi voller',            85], ['völler',               85], ['voller',           85],
+  ['andreas brehme',         87], ['brehme',               87], // scored winning penalty 1990 WC
+  ['jurgen kohler',          84], ['kohler',               84], ['jürgen kohler',    84],
+  ['thomas hassler',         83], ['häßler',               83], ['hässler',          83],
+  ['pierre littbarski',      82], ['littbarski',           82],
+  ['guido buchwald',         83], ['buchwald',             83], // marked Maradona 1990 SF
+  ['bodo illgner',           83], ['illgner',              83],
+  ['ulf kirsten',            82], ['kirsten',              82],
+  ['bernd schuster',         88], ['schuster',             88], // controversial genius
+  ['harold schumacher',      83], ['schumacher',           83], ['toni schumacher', 83],
+  ['heinz flohe',            82], ['flohe',                82],
+  ['rainer bonhof',          83], ['bonhof',               83],
+  ['wolfgang overath',       86], ['overath',              86], // 1966/70/74 playmaker
+  ['bernd holzenbein',       81], ['hölzenbein',           81],
+
+  // ── Argentina ────────────────────────────────────────────────────
+  ['jorge burruchaga',       83], ['burruchaga',           83], // scored 3-2 in 1986 WC final
+  ['claudio caniggia',       86], ['caniggia',             86],
+  ['jorge valdano',          82], ['valdano',              82],
+  ['oscar ruggeri',          83], ['ruggeri',              83],
+  ['daniel bertoni',         80], ['bertoni',              80],
+  ['leopoldo luque',         80], ['luque',                80],
+  ['rene houseman',          80], ['houseman',             80],
+  ['jorge carrascosa',       79], ['carrascosa',           79],
+  ['amelrico gallego',       81], ['gallego',              81], ['américo gallego', 81],
+  ['hugo gatti',             82], ['gatti',                82],
+  ['pedro pasculli',         79], ['pasculli',             79],
+  ['juan sebastian veron',   86], ['verón',                86], ['veron',           86],
+  ['marcelo gallardo',       83], ['gallardo',             83],
+
+  // ── Brasil / Brazil ───────────────────────────────────────────────
+  ['jairzinho',              88], // scored in every 1970 WC game
+  ['tostao',                 87], ['tostão',               87],
+  ['clodoaldo',              83],
+  ['bebeto',                 87], ['josé roberto gama',    87], // 1994 WC – baby celebration
+  ['leonidas',               87], ['leônidas',             87], ['leonidas da silva', 87],
+  ['ademir',                 86], // 1950 WC, top scorer
+  ['careca',                 87], // 1986/1990 WC striker
+  ['junior',                 84], ['junior leandro',       84], // 1982/1986 WC LB
+  ['cerezo',                 83], ['toninho cerezo',       83],
+  ['edu',                    82], ['edu coimbra',          82],
+  ['eder',                   83], ['éder',                 83], // 1982 WC – the Eder goal
+  ['paulo roberto falcao',   89], // covered above as falcão but add full name alias
+  ['didier',                 82],
+
+  // ── Francia / France ──────────────────────────────────────────────
+  ['alain giresse',          85], ['giresse',              85],
+  ['jean tigana',            84], ['tigana',               84],
+  ['luis fernandez',         82], ['fernandez luis',       82],
+  ['manuel amoros',          82], ['amoros',               82],
+  ['jean-pierre papin',      87], ['papin',                87],
+  ['youri djorkaeff',        83], ['djorkaeff',            83],
+  ['emmanuel petit',         85], ['petit',                85],
+  ['didier deschamps',       84], ['deschamps',            84],
+  ['marius tresor',          83], ['trésor',               83], ['tresor',          83],
+  ['bernard lacombe',        80], ['lacombe',              80],
+  ['dominique rocheteau',    82], ['rocheteau',            82],
+  ['david ginola',           82], ['ginola',               82],
+  ['zinedine zidane',        96], // alias redundancy guard
+
+  // ── Italia / Italy ────────────────────────────────────────────────
+  ['paolo rossi',            88], ['rossi',                88], // 1982 WC Golden Boot – 6 goals
+  ['marco tardelli',         83], ['tardelli',             83], // famous 1982 final goal scream
+  ['bruno conti',            83], ['conti',                83],
+  ['antonio cabrini',        82], ['cabrini',              82],
+  ['giancarlo antognoni',    86], ['antognoni',            86],
+  ['luigi riva',             89], ['riva',                 89], // Italy all-time top scorer (35 goals)
+  ['sandro mazzola',         87], ['mazzola',              87],
+  ['gianni rivera',          88], ['rivera',               88], // 1969 Ballon d'Or
+  ['roberto boninsegna',     85], ['boninsegna',           85],
+  ['franco causio',          82], ['causio',               82],
+  ['giuseppe meazza',        92], ['meazza',               92], // 1934/1938 WC winner, legend
+  ['silvio piola',           87], ['piola',                87], // 1938 WC
+  ['roberto bettega',        83], ['bettega',              83],
+  ['fabio capello',          82], ['capello',              82],
+  ['tarcisio burgnich',      83], ['burgnich',             83], // 1970 WC
+  ['romeo menti',            79],
+  ['giuseppe signori',       84], ['signori',              84], // 1994 WC
+  ['roberto donadoni',       83], ['donadoni',             83], // 1990 WC
+  ['dino baggio',            80], ['dino baggio dino',     80],
+
+  // ── Países Bajos / Netherlands ────────────────────────────────────
+  ['johan neeskens',         86], ['neeskens',             86], // Cruyff's partner
+  ['johnny rep',             83], ['rep',                  83],
+  ['rob rensenbrink',        84], ['rensenbrink',          84], // hit the post in 78 WC final!
+  ['arie haan',              83], ['haan',                 83],
+  ['willy van de kerkhof',   82], ['van de kerkhof',       82],
+  ['rene van de kerkhof',    80],
+  ['ronald koeman',          87], ['r.koeman',             87], // 1988 EURO – scored in final
+  ['dirk kuyt',              82], ['kuyt',                 82],
+  ['mark van bommel',        83], ['van bommel',           83],
+  ['cocu',                   84], ['philip cocu',          84],
+
+  // ── Croacia / Croatia ────────────────────────────────────────────
+  ['zvonimir boban',         86], ['boban',                86], // legendary captain 1998 WC
+  ['alen boksic',            84], ['bokšić',               84], ['boksic',          84],
+  ['igor stimac',            81], ['štimac',               81], ['stimac',          81],
+  ['mario stanic',           80], ['stanić',               80],
+  ['slaven bilic',           80], ['bilić',                80], ['bilic',           80],
+  ['dario simic',            81], ['šimić',                81], ['simic',           81],
+  ['nikola jerkan',          79], ['jerkan',               79],
+  ['igor tudor',             80], ['tudor',                80],
+  ['niko kovac',             81], ['kovač',                81], ['kovac',           81],
+
+  // ── Portugal historial ────────────────────────────────────────────
+  ['mario coluna',           86], ['coluna',               86], // 1966 WC – Benfica/Portugal captain
+  ['jose augusto',           82], ['josé augusto',         82],
+  ['antonio simoes',         82], ['simões',               82], ['simoes',          82],
+  ['paula torres',           79],
+  ['rui costa',              88], ['rui costa jorge',      88], // not the Fiorentina one
+  ['luis figo',              94], ['figo',                 94], ['luís figo',       94], // 2001 Ballon d'Or
+  ['joao pinto',             82], ['joão pinto',           82],
+  ['pauleta',                84], ['pedro de sa',          84],
+  ['nuno gomes',             82], ['nuno gomes junior',    82],
+  ['deco',                   89], // Barcelona/Chelsea playmaker
+  ['maniche',                82],
+  ['costinha',               80],
+  ['ricardo carvalho',       86], ['r.carvalho',           86],
+  ['joao moutinho',          84], ['joão moutinho',        84], ['moutinho',        84],
+  ['pepe kellermann',        86], ['pepe',                 86], // Pepe Portugal/RM CB
 ];
 
 
