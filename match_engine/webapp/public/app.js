@@ -2637,11 +2637,16 @@ function _populateEraSelect(teamName, side) {
   if (entry && entry.seasons.length) {
     const prev = sel.value;
     sel.innerHTML =
-      `<option value="">${t('era-any')}</option>` +
+      (entry.seasons.length > 1 ? `<option value="">${t('era-any')}</option>` : '') +
       entry.seasons.map(y =>
         `<option value="${y}"${y === prev ? ' selected' : ''}>${y === 'all-time' ? '★ All Time' : (() => { const n = parseInt(y,10); return n >= 1000 ? `${String(n).slice(2)}/${String(n+1).slice(2)}` : y; })()}</option>`
       ).join('');
     sel.disabled = false;
+    // Auto-select when there is exactly one season (no choice to make)
+    if (entry.seasons.length === 1) {
+      sel.value = entry.seasons[0];
+      _eraConfirmed[side] = true;
+    }
   } else {
     // No local seasons → era is not applicable; treat as auto-confirmed
     _eraConfirmed[side] = true;

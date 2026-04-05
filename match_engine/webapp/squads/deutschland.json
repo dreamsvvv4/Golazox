@@ -142,9 +142,9 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
+        "attack": 83,
+        "midfield": 82,
+        "defense": 85,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1966/1967)",
@@ -275,10 +275,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 84,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — germany (1970/1971)",
       "teamLabel": "germany (1970-71)"
@@ -372,10 +372,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 86,
+        "midfield": 87,
+        "defense": 85,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — germany (1972/1973)",
       "teamLabel": "germany (1972-73)"
@@ -513,10 +513,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 86,
+        "midfield": 87,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — germany (1974/1975)",
       "teamLabel": "germany (1974-75)"
@@ -644,7 +644,7 @@
       "ratings": {
         "attack": 79,
         "midfield": 80,
-        "defense": 87,
+        "defense": 81,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1978/1979)",
@@ -783,10 +783,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 82,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — germany (1980/1981)",
       "teamLabel": "germany (1980-81)"
@@ -916,10 +916,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 84,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (1982/1983)",
       "teamLabel": "germany (1982-83)"
@@ -1069,10 +1069,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 85,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (1986/1987)",
       "teamLabel": "germany (1986-87)"
@@ -1082,19 +1082,23 @@
       "players": [
         {
           "name": "Bodo Illgner",
-          "position": "GK"
+          "position": "GK",
+          "rating": 84
         },
         {
           "name": "Raimond Aumann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andreas Köpke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Manfred Binz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Klaus Augenthaler",
@@ -1102,27 +1106,33 @@
         },
         {
           "name": "Matthias Sammer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alois Reinhardt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 77
         },
         {
           "name": "Thomas Helmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Jürgen Kohler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 84
         },
         {
           "name": "Guido Buchwald",
-          "position": "CB"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Thomas Berthold",
-          "position": "CB"
+          "position": "RB",
+          "rating": 80
         },
         {
           "name": "Paul Steiner",
@@ -1130,7 +1140,8 @@
         },
         {
           "name": "Andreas Brehme",
-          "position": "CB"
+          "position": "LB",
+          "rating": 87
         },
         {
           "name": "Hans Pflügler",
@@ -1142,7 +1153,8 @@
         },
         {
           "name": "Thomas Strunz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 77
         },
         {
           "name": "Dieter Eilts",
@@ -1150,15 +1162,18 @@
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 93
         },
         {
           "name": "Olaf Thon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stefan Reuter",
-          "position": "CM"
+          "position": "RM",
+          "rating": 81
         },
         {
           "name": "Knut Reinhardt",
@@ -1170,19 +1185,23 @@
         },
         {
           "name": "Uwe Bein",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Thomas Doll",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pierre Littbarski",
-          "position": "CM"
+          "position": "LM",
+          "rating": 82
         },
         {
           "name": "Thomas Häßler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 83
         },
         {
           "name": "Andreas Möller",
@@ -1190,15 +1209,18 @@
         },
         {
           "name": "Frank Mill",
-          "position": "ST"
+          "position": "ST",
+          "rating": 76
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 77
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 85
         },
         {
           "name": "Stefan Kuntz",
@@ -1206,7 +1228,8 @@
         },
         {
           "name": "Karl-Heinz Riedle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Andreas Thom",
@@ -1214,14 +1237,15 @@
         },
         {
           "name": "Jürgen Klinsmann",
-          "position": "ST"
+          "position": "ST",
+          "rating": 88
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 89,
+        "midfield": 90,
+        "defense": 86,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — germany (1990/1991)",
       "teamLabel": "germany (1990-91)"
@@ -1367,10 +1391,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 82,
+        "midfield": 82,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (1994/1995)",
       "teamLabel": "germany (1994-95)"
@@ -1500,10 +1524,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 83,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (1996/1997)",
       "teamLabel": "germany (1996-97)"
@@ -1701,9 +1725,9 @@
         }
       ],
       "ratings": {
-        "attack": 79,
+        "attack": 80,
         "midfield": 80,
-        "defense": 87,
+        "defense": 82,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (1998/1999)",
@@ -1838,10 +1862,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 74,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt — germany (2000/2001)",
       "teamLabel": "germany (2000-01)"
@@ -2023,9 +2047,9 @@
         }
       ],
       "ratings": {
-        "attack": 79,
+        "attack": 81,
         "midfield": 80,
-        "defense": 87,
+        "defense": 82,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2002/2003)",
@@ -2204,10 +2228,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 75,
+        "midfield": 77,
+        "defense": 78,
+        "goalkeeping": 76
       },
       "source": "Transfermarkt — germany (2004/2005)",
       "teamLabel": "germany (2004-05)"
@@ -2353,10 +2377,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 83,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (2006/2007)",
       "teamLabel": "germany (2006-07)"
@@ -2518,10 +2542,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 84,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (2008/2009)",
       "teamLabel": "germany (2008-09)"
@@ -2704,10 +2728,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 85,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — germany (2010/2011)",
       "teamLabel": "germany (2010-11)"
@@ -2858,9 +2882,9 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
+        "attack": 83,
+        "midfield": 83,
+        "defense": 83,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2012/2013)",
@@ -3048,10 +3072,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 90,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — germany (2014/2015)",
       "teamLabel": "germany (2014-15)"
@@ -3218,10 +3242,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 82,
+        "midfield": 82,
+        "defense": 83,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — germany (2016/2017)",
       "teamLabel": "germany (2016-17)"
@@ -3373,10 +3397,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
+        "attack": 80,
         "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "defense": 80,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (2018/2019)",
       "teamLabel": "germany (2018-19)"
@@ -3532,8 +3556,8 @@
       ],
       "ratings": {
         "attack": 79,
-        "midfield": 80,
-        "defense": 87,
+        "midfield": 79,
+        "defense": 80,
         "goalkeeping": 80
       },
       "source": "Transfermarkt — germany (2020/2021)",
@@ -3698,8 +3722,8 @@
       "ratings": {
         "attack": 79,
         "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "defense": 80,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — germany (2022/2023)",
       "teamLabel": "germany (2022-23)"
@@ -3973,10 +3997,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
+        "attack": 81,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — germany (2025/2026)",
       "teamLabel": "germany (2025-26)"
