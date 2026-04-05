@@ -146,6 +146,15 @@ function buildLineupFromCache(cached, formationOverride) {
     : cached.formation;
   const template = FORMATION_TEMPLATES[formation] || FORMATION_TEMPLATES[DEFAULT_FORMATION];
 
+  // Team average from cached.ratings — used as fallback for players with no market value
+  // (common in all historical squads where TM data has marketValue: 0 / undefined).
+  // Spread: teamAvg ± 5 based on name hash, so unknown players on a great team still
+  // get sensible ratings (e.g. France 1998 ≈ 82 avg → unknown players rated ~77-87).
+  const _ratings = cached.ratings || {};
+  const teamAvg = (_ratings.attack && _ratings.midfield && _ratings.defense && _ratings.goalkeeping)
+    ? Math.round((_ratings.attack + _ratings.midfield + _ratings.defense + _ratings.goalkeeping) / 4)
+    : 72;
+
   // Build a mutable pool with fresh ratings; apply known-player position overrides
   // so e.g. Baresi stays CB even when BDFutbol lists all defenders as CB/def.
   const pool = cached.players
@@ -155,11 +164,21 @@ function buildLineupFromCache(cached, formationOverride) {
       position: _getPos(p.name) || p.position,
       // Rating priority: 1) PLAYER_RATINGS_RAW name override (ground truth for legends)
       //                  2) pre-stored JSON rating  3) computed from market value
+      //                  4) team-average fallback for historical squads with no MV data
       rating: (() => {
         const nameOvr = _calcRating(p.name, null); // name-only lookup (no MV)
         if (nameOvr !== null) return nameOvr;       // e.g. Ronaldo→98, Zidane→96
         if (p.rating && p.rating > 0) return p.rating;  // scraped / seeded JSON value
-        return _calcRating(p.name, p.marketValue) ?? undefined;
+        const mvRat = _calcRating(p.name, p.marketValue);
+        if (mvRat !== null) return mvRat;
+        // Fallback: spread BELOW team average so named/famous players always
+        // pre-reserve their positions ahead of unknown squad depth.
+        // Ceiling is teamAvg-6 so even modestly-rated explicit starters (e.g. ~80)
+        // reliably beat bench/unknown players on elite teams (avg ~87).
+        // Range: [max(58, teamAvg-14), teamAvg-6]
+        const h = [...(p.name || '')].reduce((a, c) => (a * 31 + c.charCodeAt(0)) & 0xfff, 0);
+        const ceil = Math.max(62, teamAvg - 6);
+        return Math.max(58, Math.min(ceil, teamAvg - 14 + (h % 9)));
       })(),
     }));
 

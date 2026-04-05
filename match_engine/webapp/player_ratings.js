@@ -627,7 +627,7 @@ const PLAYER_RATINGS_RAW = [
   // ── 1990s–2000s ──
   ['raul gonzalez',          88], ['raúl',                 88], ['raul',    88],
   ['Fernando Hierro',        87], ['hierro',               87],
-  ['ivan helguera',          78], ['helguera',             78],
+  ['ivan helguera',          82], ['helguera',             82],  // UCL 2002 starter
   ['davor suker',            87], ['šuker',                87], ['suker',   87],
   ['robert prosinecki',      85], ['prosinečki',           85],
   ['predrag mijatovic',      84], ['mijatović',            84],
