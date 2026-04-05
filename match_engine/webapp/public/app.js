@@ -3812,6 +3812,9 @@ function selectSpeed(btn) {
 function showPreMatch(data, payload) {
   _pmData    = data;
   _pmPayload = payload;
+  // Reset substitution state so stale references from a previous match don't interfere.
+  _pmSubState.a = null;
+  _pmSubState.b = null;
 
   // Penalties-only mode: bypass the full pre-match screen entirely
   if (payload.matchMode === 'penalties') {
@@ -4150,14 +4153,9 @@ function _handlePmCardClick(card, side) {
   card.dataset.playerPos  = aPos;
   card.title              = aTitle;
 
-  // Swap the pm-sub / pm-starter class marker
-  if (selectedIsSub) {
-    selected.classList.remove('pm-sub');  selected.classList.add('pm-starter');
-    card.classList.remove('pm-starter');  card.classList.add('pm-sub');
-  } else {
-    selected.classList.remove('pm-starter'); selected.classList.add('pm-sub');
-    card.classList.remove('pm-sub');         card.classList.add('pm-starter');
-  }
+  // NOTE: pm-starter / pm-sub classes stay on their original DOM nodes.
+  // The DOM node's physical position (starter row vs bench row) defines its role;
+  // we only update innerHTML + dataset to reflect the new player in that slot.
 
   // Show toast confirmation
   showToast(t('sub-change-toast'));
