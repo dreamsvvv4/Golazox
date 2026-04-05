@@ -1241,13 +1241,64 @@ function _deepLinkRestore() {
     // ?tab=pen / ?tab=trn — used by PWA shortcuts and hreflang links
     const tabParam = p.get('tab');
     if (tabParam && ['pen', 'trn', 'match'].includes(tabParam)) {
-      // Switch after DOM settles (TRN may not be defined yet at parse time)
       setTimeout(() => { if (typeof TRN !== 'undefined') TRN.switchMainTab(tabParam); }, 0);
     }
     const a = p.get('a'), b = p.get('b'), mode = p.get('m') || p.get('mode');
     if (!a || !b) return;
     const [slugA, eraA = ''] = a.split(':');
     const [slugB, eraB = ''] = b.split(':');
+
+    // ── Result params (sa/sb/ga/gb/pen) — show a result card instead of simulating
+    const sa = p.get('sa'), sb = p.get('sb');
+    if (sa !== null && sb !== null) {
+      const parseScorers = raw => (raw || '').split(',').filter(Boolean).map(s => {
+        const parts = s.trim().split(' ');
+        const minute = parseInt(parts[parts.length - 1], 10);
+        const name = isNaN(minute) ? s.trim() : parts.slice(0, -1).join(' ');
+        return { name, minute: isNaN(minute) ? '?' : minute };
+      });
+      const penRaw = p.get('pen');
+      const penParts = penRaw ? penRaw.split('-') : null;
+      const hasEra = !!(eraA || eraB);
+      const eraNote = (eraA && eraA === eraB) ? `[${eraA}]`
+        : (eraA || eraB) ? `[${[eraA, eraB].filter(Boolean).join(' / ')}]` : '';
+      const scorersA = parseScorers(p.get('ga'));
+      const scorersB = parseScorers(p.get('gb'));
+      const fmtList = arr => arr.length
+        ? arr.map(g => `⚽ ${g.name} ${g.minute}'`).join(' · ')
+        : '—';
+      // Show a lightweight "Shared result" banner above the input panel
+      const existing = document.getElementById('shared-result-banner');
+      if (existing) existing.remove();
+      const banner = document.createElement('div');
+      banner.id = 'shared-result-banner';
+      banner.className = 'shared-result-banner';
+      const isEN = _lang === 'en';
+      banner.innerHTML = `
+        <div class="srb-label">${isEN ? '🔗 Shared result' : '🔗 Resultado compartido'}</div>
+        <div class="srb-teams">
+          <span class="srb-team srb-team-a">${escHtml(slugA)}${eraA ? `<span class="srb-era">${escHtml(eraA)}</span>` : ''}</span>
+          <span class="srb-score">${escHtml(sa)} – ${escHtml(sb)}${penParts ? `<span class="srb-pen">(${penParts[0]}–${penParts[1]} pen.)</span>` : ''}</span>
+          <span class="srb-team srb-team-b">${escHtml(slugB)}${eraB ? `<span class="srb-era">${escHtml(eraB)}</span>` : ''}</span>
+        </div>
+        <div class="srb-scorers srb-scorers-a">${escHtml(fmtList(scorersA))}</div>
+        <div class="srb-scorers srb-scorers-b">${escHtml(fmtList(scorersB))}</div>
+        <div class="srb-cta">${isEN ? 'Simulate this matchup again ↓' : 'Simula este partido de nuevo ↓'}</div>
+      `;
+      // Insert before main-wrap
+      const main = document.querySelector('.main-wrap') || document.body;
+      main.parentNode.insertBefore(banner, main);
+      // Also set the share data so the share button works from the banner state
+      _shareData = {
+        teamA: slugA, teamB: slugB, eraA, eraB,
+        scoreA: parseInt(sa, 10), scoreB: parseInt(sb, 10),
+        scorersA, scorersB, matchMode: mode || '11v11',
+        penalties: penParts ? { scoreA: parseInt(penParts[0], 10), scoreB: parseInt(penParts[1], 10) } : null,
+        ratings: null, probabilities: null, badgeA: null, badgeB: null,
+        mom: null, stadium: null, weather: null, matchStats: null, lineupA: null, lineupB: null,
+      };
+    }
+
     const restore = () => {
       document.getElementById('teamA').value = slugA;
       document.getElementById('teamB').value = slugB;
@@ -1260,14 +1311,12 @@ function _deepLinkRestore() {
       if (mode) setMatchMode(mode);
       _updateClashButton();
     };
-    // Wait for catalog to be ready
     if (_catalogReady) restore();
     else {
-      const orig = _fetchCatalog;
       const _poll = setInterval(() => { if (_catalogReady) { clearInterval(_poll); restore(); } }, 200);
       setTimeout(() => clearInterval(_poll), 8000);
     }
-    // Clean URL without reload (remove a/b/mode/tab/lang/source params)
+    // Clean URL without reload
     history.replaceState({}, '', location.pathname);
   } catch(_) {}
 }
@@ -6355,8 +6404,23 @@ function shareResult() {
 function _openSharePanel(data) {
   const base = ((window.GOLAZOX_CONFIG?.siteUrl) || location.origin).replace(/\/$/, '');
 
-  // ── Deep link URL (encodes teams + era so the page auto-loads the match) ──
-  const deepLink = `${base}/?a=${encodeURIComponent(data.teamA + (data.eraA ? ':' + data.eraA : ''))}&b=${encodeURIComponent(data.teamB + (data.eraB ? ':' + data.eraB : ''))}&mode=${encodeURIComponent(data.matchMode || '11v11')}`;
+  // ── Deep link URL — encodes teams + era + result so the recipient sees
+  //    the exact score, not a fresh re-simulation ──────────────────────────
+  const _srz = s => (s || '').replace(/,/g, ' ').replace(/\|/g, ' ');  // sanitise separator chars
+  // Scorers compact: "Name1 Min1,Name2 Min2"
+  const fmtScorerParam = arr => (arr || []).slice(0, 5)
+    .map(g => `${_srz(g.name)} ${g.minute || '?'}`)
+    .join(',');
+  const p = new URLSearchParams();
+  p.set('a', data.teamA + (data.eraA ? ':' + data.eraA : ''));
+  p.set('b', data.teamB + (data.eraB ? ':' + data.eraB : ''));
+  p.set('mode', data.matchMode || '11v11');
+  p.set('sa', data.scoreA);
+  p.set('sb', data.scoreB);
+  if ((data.scorersA || []).length) p.set('ga', fmtScorerParam(data.scorersA));
+  if ((data.scorersB || []).length) p.set('gb', fmtScorerParam(data.scorersB));
+  if (data.penalties) p.set('pen', `${data.penalties.scoreA}-${data.penalties.scoreB}`);
+  const deepLink = `${base}/?${p.toString()}`;
 
   // ── Rich share text ────────────────────────────────────────────────────────
   const scoreText = `${data.teamA} ${data.scoreA}\u2013${data.scoreB} ${data.teamB}`;

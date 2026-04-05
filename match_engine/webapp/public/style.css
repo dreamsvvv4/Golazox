@@ -2903,6 +2903,57 @@ body {
 .live-fade-out { animation: live-exit .6s ease forwards; }
 @keyframes live-exit { to { opacity:0; transform: translateY(-18px); } }
 
+/* ── Shared result banner (shown when opening a result deep link) ─── */
+.shared-result-banner {
+  width: 100%; max-width: 720px;
+  margin: 0 auto 1.2rem;
+  padding: 1.1rem 1.4rem;
+  background: linear-gradient(135deg, rgba(0,212,255,.07), rgba(255,45,120,.05));
+  border: 1px solid rgba(0,212,255,.28);
+  border-radius: 14px;
+  animation: fadeSlideIn .35s ease;
+}
+.srb-label {
+  font-size: .62rem; font-weight: 900; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(0,212,255,.65);
+  margin-bottom: .65rem;
+}
+.srb-teams {
+  display: flex; align-items: center; justify-content: center;
+  gap: .8rem; margin-bottom: .55rem; flex-wrap: wrap;
+}
+.srb-team {
+  font-size: 1rem; font-weight: 800; color: #fff;
+  display: flex; flex-direction: column; align-items: center; gap: .1rem;
+}
+.srb-team-a { color: var(--neon); }
+.srb-team-b { color: #ff6b6b; }
+.srb-era {
+  font-size: .6rem; font-weight: 600; color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.07); border-radius: 8px;
+  padding: .1rem .35rem; letter-spacing: .04em;
+}
+.srb-score {
+  font-size: 1.55rem; font-weight: 900; color: #fff;
+  text-shadow: 0 0 18px rgba(255,255,255,.18);
+  display: flex; flex-direction: column; align-items: center; gap: .12rem;
+}
+.srb-pen {
+  font-size: .65rem; font-weight: 700; color: var(--gold);
+  display: block; text-align: center;
+}
+.srb-scorers {
+  font-size: .74rem; text-align: center; color: rgba(255,255,255,.55);
+  margin-bottom: .18rem; line-height: 1.55;
+}
+.srb-scorers-a { color: rgba(0,212,255,.72); }
+.srb-scorers-b { color: rgba(255,107,107,.72); }
+.srb-cta {
+  text-align: center; margin-top: .65rem;
+  font-size: .68rem; color: rgba(255,255,255,.3);
+  font-weight: 600; letter-spacing: .05em;
+}
+
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
   text-align: center; padding: 2rem;
