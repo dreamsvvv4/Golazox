@@ -1457,7 +1457,9 @@ body {
   align-items: center;
   font-size: .78rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .1em; margin-bottom: 1rem;
+  min-width: 0;
 }
+.timeline-header > * { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .timeline-header > *:first-child { justify-content: flex-end; text-align: right; }
 .timeline-header > *:last-child  { justify-content: flex-start; text-align: left; }
 .timeline-count { color: var(--grey); font-weight: 400; text-transform: none; letter-spacing: 0; }
@@ -3101,8 +3103,12 @@ body {
   .poster-teams  { gap: .35rem .25rem; }
   .poster-badge  { width: 40px; height: 40px; margin-bottom: .3rem; }
   .poster-name   {
-    font-size: .8rem;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;
+    font-size: clamp(.72rem, 3.2vw, .9rem);
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.25;
   }
   .poster-era    { font-size: .64rem; }
   .poster-score  { font-size: 2.5rem; }
@@ -3210,9 +3216,9 @@ body {
 
   /* ── Score poster ── */
   .poster-score { font-size: 2.2rem; }
-  .poster-name  { font-size: .72rem; }
-  .poster-badge { width: 34px; height: 34px; }
-  .poster-era   { font-size: .58rem; }
+  .poster-name  { font-size: clamp(.65rem, 2.8vw, .75rem); line-height: 1.2; }
+  .poster-badge { width: 32px; height: 32px; }
+  .poster-era   { font-size: .56rem; }
 
   /* ── Probabilities ── */
   .prob-value   { font-size: 1.3rem; }
@@ -3286,8 +3292,20 @@ body {
 @media (max-width: 540px) {
   .main-tab-btn { padding: .75rem 1.2rem; letter-spacing: .06em; font-size: .78rem; }
 }
+@media (max-width: 420px) {
+  .main-tabs-bar { justify-content: stretch; }
+  .main-tab-btn  {
+    flex: 1;
+    padding: .7rem .3rem;
+    letter-spacing: .02em;
+    font-size: .72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 @media (max-width: 400px) {
-  .main-tab-btn { padding: .65rem .75rem; letter-spacing: .03em; font-size: .72rem; }
+  .main-tab-btn { padding: .65rem .2rem; letter-spacing: 0; font-size: .68rem; }
 }
 
 /* ── Pen tab: add horizontal padding on mobile ───────────── */
@@ -3401,7 +3419,9 @@ body {
   min-width: 0;
 }
 @media (max-width: 480px) {
-  .poster-name { font-size: clamp(.82rem, 3.5vw, 1.25rem); }
+  .poster-teams { gap: .2rem .15rem; }
+  .poster-name  { font-size: clamp(.68rem, 3.2vw, .82rem); line-height: 1.2; }
+  .poster-score-block { padding: 0 .2rem; }
 }
 
 /* ── 5. Penalty launch button: full width on tiny phones ── */
