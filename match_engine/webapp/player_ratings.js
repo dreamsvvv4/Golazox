@@ -593,7 +593,8 @@ const PLAYER_RATINGS_RAW = [
   ['franz beckenbauer',      96],
   ['alfredo di stefano',     98],
   ['ferenc puskas',          96], ['puskás',               96], ['puskas',  96],
-  ['eusebio',                94], ['eusébio',              94],
+  ['eusebio',                94], ['eusébio',              94], // ← Portuguese legend ONLY — full alias kept
+  // NOTE: Eusébio Sacristán (Barcelona/Spain CM) has his own entry below
   ['garrincha',              94],
   ['george best',            95],
   ['gerd muller',            95], ['gerd müller',          95],
@@ -1525,6 +1526,113 @@ const PLAYER_RATINGS_RAW = [
   ['berry van aerle',        80], ['van aerle',            80],
   ['gerald vanenburg',       81], ['vanenburg',            81],
   ['john van t schip',       80], ['van t schip',          80],
+
+  // ════════════════════════════════════════════════════════════════════
+  // CLUBS EUROPEOS — jugadores sin override en eras icónicas
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Eusébio Sacristán (Spanish CM, Barça Dream Team) — NOT the Portuguese legend ──
+  ['eusebio sacristan',      82], ['eusébio sacristán',    82],
+
+  // ── Juventus ─────────────────────────────────────────────────────
+  ['stefano tacconi',        85], ['tacconi',              85], // Juve GK 1983-92, CL winner
+  ['zbigniew boniek',        87], ['boniek',               87], // Polish legend – Juve/Roma
+  ['massimo bonini',         80], ['bonini massimo',       80],
+  ['lionello manfredonia',   81], ['manfredonia',          81],
+  ['massimo briaschi',       79], ['briaschi',             79],
+  ['aldo serena',            82], ['serena aldo',          82],
+  ['stefano pioli',          76], ['pioli',                76],
+  ['sergio brio',            80], ['brio',                 80],
+  ['angelo peruzzi',         84], ['peruzzi',              84],
+  ['ciro ferrara',           85], ['ferrara ciro',         85],
+  ['mark iuliano',           82], ['iuliano',              82],
+  ['gianluca pessotto',      81], ['pessotto',             81],
+  ['antonio conte',          84], ['conte antonio',        84], // Juve CM before coaching career
+  ['angelo di livio',        82], ['di livio',             82],
+  ['nicola amoruso',         80], ['amoruso',              80],
+  ['daniel fonseca',         83], ['fonseca daniel',       83],
+
+  // ── Barcelona ────────────────────────────────────────────────────
+  ['carles busquets',        81], ['busquets carles',      81], // Sergio's father – Dream Team GK
+  ['jose ramon alexanko',    81], ['alexanko',             81],
+  ['miguel angel nadal',     83], ['nadal miguel',         83], // "The Beast of Barcelona"
+  ['albert ferrer',          82], ['ferrer albert',        82],
+  ['sergi barjuan',          82], ['barjuan',              82],
+  ['guillermo amor',         82], ['amor guillermo',       82],
+  ['txiki begiristain',      83], ['begiristain',          83],
+  ['julio salinas',          82], ['salinas julio',        82],
+  ['richard witschge',       80], ['witschge',             80],
+  ['oscar garcia',           79], ['óscar garcía',         79],
+
+  // ── Real Madrid ──────────────────────────────────────────────────
+  ['paco gento',             88], ['gento',                88], // 6× EC winner, legendary LW
+  ['miguel munoz',           81], ['muñoz',                81], ['munoz',            81],
+  ['marquitos',              80],
+  ['hector rial',            81], ['rial',                 81],
+  ['jose maria zarraga',     80], ['zárraga',              80], ['zarraga',          80],
+  ['santillana',             84], ['carlos santillana',    84],
+  ['pirri',                  83],
+  ['uli stielike',           84], ['stielike',             84],
+  ['manolo sanchis',         83], ['sanchis',              83],
+  ['christian karembeu',     83], ['karembeu',             83],
+  ['fernando morientes',     85], ['morientes',            85],
+  ['guti',                   83], ['josé maría gutiérrez', 83],
+
+  // ── AC Milan ─────────────────────────────────────────────────────
+  ['alessandro costacurta',  88], ['costacurta',           88], // Maldini's CB partner – legend
+  ['mauro tassotti',         82], ['tassotti',             82],
+  ['carlo ancelotti',        83], ['ancelotti carlo',      83], // as Milan CM player
+  ['alberico evani',         82], ['evani',                82],
+  ['daniele massaro',        82], ['massaro daniele',      82], // scored in 1994 CL final
+  ['dejan savicevic',        87], ['savicevic',            87], ['savičević',         87],
+  ['gianluca lentini',       82], ['lentini',              82],
+  ['sebastiano rossi',       83], ['s.rossi',              83], // Milan GK 1990-2002
+  ['demetrio albertini',     84], ['albertini',            84],
+  ['pietro virdis',          82], ['virdis',               82], // Milan ST 1984-90
+
+  // ── Liverpool ────────────────────────────────────────────────────
+  ['bruce grobbelaar',       84], ['grobbelaar',           84],
+  ['alan hansen',            88], ['hansen alan',          88],
+  ['mark lawrenson',         85], ['lawrenson',            85],
+  ['phil neal',              83], ['neal phil',            83],
+  ['alan kennedy',           81], ['kennedy alan',         81],
+  ['terry mcdermott',        83], ['mcdermott',            83],
+  ['phil thompson',          83], ['thompson phil',        83],
+  ['steve nicol',            83], ['nicol steve',          83],
+  ['ronnie whelan',          82], ['whelan ronnie',        82],
+  ['jan molby',              83], ['jan mølby',            83], ['mølby',             83], ['molby',             83],
+  ['john wark',              81], ['wark',                 81],
+
+  // ── Arsenal ──────────────────────────────────────────────────────
+  ['kolo toure',             83], ['kolo touré',           83],
+  ['gael clichy',            80], ['clichy',               80],
+  ['lauren',                 82], ['lauren etame',         82], // RB Invincibles
+  ['gilberto silva',         84], ['gilberto',             84], // "The Invisible Wall"
+  ['jose antonio reyes',     83], ['reyes jose',           83],
+  ['edu',                    79], ['edu gaspar',           79],
+  ['paul merson',            82], ['merson',               82],
+
+  // ── Bayern Munich ────────────────────────────────────────────────
+  ['georg schwarzenbeck',    83], ['schwarzenbeck',        83],
+  ['bernd durnberger',       80], ['dürnberger',           80],
+  ['conny torstensson',      80], ['torstensson',          80],
+  ['franz roth',             81], ['roth franz',           81],
+  ['stefan effenberg',       86], ['effenberg',            86],
+  ['giovane elber',          84], ['elber',                84],
+  ['mehmet scholl',          84], ['scholl',               84],
+
+  // ── Manchester United ────────────────────────────────────────────
+  ['andy cole',              85], ['cole andy',            85],
+  ['dwight yorke',           86], ['yorke',                86],
+  ['teddy sheringham',       83], ['sheringham',           83],
+  ['jaap stam',              87], ['stam',                 87], // arguably best CB of his era
+  ['denis irwin',            83], ['irwin denis',          83],
+  ['ronny johnsen',          81], ['johnsen',              81],
+  ['nicky butt',             82], ['butt nicky',           82],
+  ['jesper blomqvist',       79], ['blomqvist',            79],
+  ['gary pallister',         86], ['pallister',            86], // United CB '92-98 double
+  ['steve bruce',            83], ['bruce steve',          83], // United CB
+  ['peter schmeichel',       91], // alias guard
 ];
 
 
