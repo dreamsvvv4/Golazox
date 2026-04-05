@@ -3113,16 +3113,17 @@ body {
 
   /* ── Score poster: compact 3-col TV-scoreboard layout ── */
   .score-poster  { padding: 1.2rem .9rem 1rem; }
-  .poster-teams  { gap: .35rem .25rem; }
+  .poster-teams  { grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: .35rem .25rem; }
   .poster-badge  { width: 40px; height: 40px; margin-bottom: .3rem; }
   .poster-name   {
-    font-size: clamp(.72rem, 3.2vw, .9rem);
+    font-size: clamp(.68rem, 3vw, .88rem);
     white-space: normal;
-    overflow-wrap: break-word;
-    word-break: break-word;
+    overflow-wrap: anywhere;
+    /* word-break: break-word removed — iOS Safari breaks mid-glyph with it */
     max-width: 100%;
     line-height: 1.25;
   }
+  .poster-score-block { max-width: 42vw; }
   .poster-era    { font-size: .64rem; }
   .poster-score  { font-size: 2.5rem; }
   .poster-label  { font-size: .6rem; margin-top: .28rem; }
