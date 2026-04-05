@@ -640,9 +640,12 @@
           <div class="team-label label-a" data-i18n="pen-team-a">EQUIPO A</div>
           <div class="team-picker" id="pen-picker-A"></div>
           <input type="hidden" id="pen-teamA" value="">
-          <select id="pen-eraA" class="inp inp-sub era-select" disabled>
-            <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
-          </select>
+          <div class="pen-era-row">
+            <select id="pen-eraA" class="inp inp-sub era-select" disabled>
+              <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
+            </select>
+            <button class="btn-random-era" id="pen-random-eraA" title="Era aleatoria" disabled>🎲</button>
+          </div>
         </div>
 
         <!-- VS -->
@@ -659,9 +662,12 @@
           <div class="team-label label-b" data-i18n="pen-team-b">EQUIPO B</div>
           <div class="team-picker" id="pen-picker-B"></div>
           <input type="hidden" id="pen-teamB" value="">
-          <select id="pen-eraB" class="inp inp-sub era-select" disabled>
-            <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
-          </select>
+          <div class="pen-era-row">
+            <select id="pen-eraB" class="inp inp-sub era-select" disabled>
+              <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
+            </select>
+            <button class="btn-random-era" id="pen-random-eraB" title="Era aleatoria" disabled>🎲</button>
+          </div>
         </div>
       </div>
 
@@ -1249,7 +1255,7 @@
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=54"></script>
+  <script src="app.js?v=55"></script>
   <script src="tournament.js?v=8"></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->

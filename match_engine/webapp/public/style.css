@@ -4318,28 +4318,58 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   cursor: not-allowed;
   box-shadow: none;
 }
+/* Random-era button next to the era select */
+.pen-era-row {
+  display: flex; gap: .4rem; align-items: center;
+}
+.pen-era-row .era-select { flex: 1; min-width: 0; }
+.btn-random-era {
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(251,191,36,.4);
+  background: rgba(251,191,36,.08);
+  color: #fbbf24;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background .15s, transform .12s;
+  line-height: 1;
+}
+.btn-random-era:hover  { background: rgba(251,191,36,.2); transform: scale(1.08); }
+.btn-random-era:active { transform: scale(.92); }
+
 @media (max-width: 600px) {
   /* ── Penalties: panel & header ─────────────────────────── */
-  .pen-tab-panel  { padding: 1.2rem .75rem 1.6rem; }
-  .pen-tab-title  { font-size: 1.4rem; }
+  .pen-tab-panel   { padding: 1rem .65rem 1.4rem; }
+  .pen-tab-title   { font-size: 1.25rem; margin-bottom: .2rem; }
+  .pen-tab-subtitle{ font-size: .67rem; margin-bottom: 1.4rem; }
 
   /* ── Team picker grid: stack vertically on mobile ───────── */
-  .pen-teams-grid { grid-template-columns: 1fr; gap: .75rem; }
+  .pen-teams-grid  { grid-template-columns: 1fr; gap: .6rem; margin-bottom: 1.2rem; }
+  .pen-team-col    { gap: .5rem; }
   .pen-vs-col {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding-top: 0;
-    gap: 1rem;
+    gap: .8rem;
+    /* thin divider feel between Team A and Team B */
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    padding: .5rem 0;
   }
+  .pen-vs-badge { width: 40px; height: 40px; font-size: .78rem; }
 
-  /* Type buttons: less vertical padding + tighter labels */
-  .pen-tab-panel .tp-type-btn   { padding: .9rem .4rem; }
-  .pen-tab-panel .tp-type-svg   { width: 1.9rem; height: 1.9rem; }
-  .pen-tab-panel .tp-type-label { font-size: .62rem; letter-spacing: .02em; overflow-wrap: break-word; }
+  /* Type buttons: compact 3-col row inside each team column */
+  .pen-tab-panel .tp-type-btn   { padding: .75rem .3rem; }
+  .pen-tab-panel .tp-type-svg   { width: 1.7rem; height: 1.7rem; }
+  .pen-tab-panel .tp-type-label { font-size: .58rem; letter-spacing: .01em; }
 
-  /* Era selects inside penalty team columns: never overflow */
+  /* Era selects + random button never overflow */
   .pen-team-col .era-select { width: 100%; min-width: 0; box-sizing: border-box; }
+  .pen-era-row              { width: 100%; }
+  .btn-random-era           { width: 32px; height: 32px; font-size: .95rem; }
 
   /* ── Takers: stack columns vertically ───────────────────── */
   .pen-takers-grid { grid-template-columns: 1fr; gap: .5rem 0; }

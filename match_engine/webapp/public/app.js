@@ -2203,6 +2203,7 @@ function _penPickerSelectTeam(side, slugVal) {
   document.getElementById(`pen-team${side}`).value = slugVal;
   // Populate era select
   const sel = document.getElementById(`pen-era${side}`);
+  const rndBtn = document.getElementById(`pen-random-era${side}`);
   if (sel) {
     const entry = _catalog.find(c => c.slug === slugVal);
     if (entry && entry.seasons.length) {
@@ -2213,9 +2214,11 @@ function _penPickerSelectTeam(side, slugVal) {
           return `<option value="${y}">${label}</option>`;
         }).join('');
       sel.disabled = false;
+      if (rndBtn) rndBtn.disabled = false;
     } else {
       sel.innerHTML = `<option value="">${t('era-no-seasons')}</option>`;
       sel.disabled = true;
+      if (rndBtn) rndBtn.disabled = true;
     }
   }
   _penPickerState[side] = { type: null, league: null };
@@ -2795,7 +2798,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(id)?.addEventListener('change', _penFetchTakers);
   });
 
-  // Pen tab surprise button
+  // Pen tab surprise button (both teams + random eras)
   document.getElementById('pen-btn-surprise')?.addEventListener('click', () => {
     if (!_catalog.length) return;
     const pool = _catalog.filter(c => c.seasons && c.seasons.length > 0);
@@ -2806,13 +2809,24 @@ document.addEventListener('DOMContentLoaded', () => {
     _penPickerSelectTeam('A', pool[idxA].slug);
     _penPickerSelectTeam('B', pool[idxB].slug);
     // Auto-select a random season for each side
-    ['A', 'B'].forEach((side, si) => {
+    ['A', 'B'].forEach(side => {
       const sel = document.getElementById(`pen-era${side}`);
       if (sel && sel.options.length > 1) {
         sel.selectedIndex = 1 + Math.floor(Math.random() * (sel.options.length - 1));
       }
     });
     _penFetchTakers();
+  });
+
+  // Random-era buttons (🎲) — pick a random season for each side independently
+  ['A', 'B'].forEach(side => {
+    document.getElementById(`pen-random-era${side}`)?.addEventListener('click', () => {
+      const sel = document.getElementById(`pen-era${side}`);
+      if (!sel || sel.disabled || sel.options.length <= 1) return;
+      // options[0] is "any era" — pick from index 1 upward
+      sel.selectedIndex = 1 + Math.floor(Math.random() * (sel.options.length - 1));
+      sel.dispatchEvent(new Event('change'));
+    });
   });
 
   // Build weather picker
