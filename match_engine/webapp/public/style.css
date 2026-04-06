@@ -2692,7 +2692,7 @@ body {
 }
 /* Player group: smooth movement — eased so players drift rather than teleport */
 .lp-player-g {
-  transition: transform .65s cubic-bezier(.33,.1,.33,1);
+  transition: transform .38s cubic-bezier(.25,.46,.45,.94);
   cursor: pointer;
   will-change: transform;
 }

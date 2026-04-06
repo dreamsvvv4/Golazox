@@ -5309,30 +5309,29 @@ function initPenaltyPitch(lineupA, lineupB) {
 
 function _startPitchDrift() {
   if (_attackBiasTimer) { clearTimeout(_attackBiasTimer); _attackBiasTimer = null; }
-  _pitchDriftInterval = setInterval(_driftPlayers, 750);
+  _pitchDriftInterval = setInterval(_driftPlayers, 420);
 }
 
 // Position-zone constraints: [yMin, yMax] as fraction of H (Team A orientation).
-// Team B zones are mirrored: zMin=(1-yMax)*H, zMax=(1-yMin)*H.
-// Kept tight so players look positionally disciplined.
+// Wider zones allow realistic roaming while preserving shape.
 const _LP_ZONE = {
-  GK:  [0.02, 0.12],
-  SW:  [0.10, 0.24], CB:  [0.12, 0.26], RB:  [0.10, 0.30], LB:  [0.10, 0.30],
-  RWB: [0.14, 0.44], LWB: [0.14, 0.44],
-  CDM: [0.26, 0.44], DM:  [0.26, 0.44],
-  CM:  [0.35, 0.54], RM:  [0.30, 0.52], LM:  [0.30, 0.52],
-  AM:  [0.46, 0.62], CAM: [0.46, 0.62],
-  RW:  [0.55, 0.74], LW:  [0.55, 0.74],
-  CF:  [0.60, 0.78], SS:  [0.60, 0.78], ST:  [0.62, 0.80],
+  GK:  [0.01, 0.16],
+  SW:  [0.08, 0.28], CB:  [0.08, 0.30], RB:  [0.06, 0.38], LB:  [0.06, 0.38],
+  RWB: [0.12, 0.55], LWB: [0.12, 0.55],
+  CDM: [0.22, 0.48], DM:  [0.22, 0.48],
+  CM:  [0.28, 0.62], RM:  [0.24, 0.60], LM:  [0.24, 0.60],
+  AM:  [0.42, 0.70], CAM: [0.42, 0.70],
+  RW:  [0.48, 0.82], LW:  [0.48, 0.82],
+  CF:  [0.54, 0.86], SS:  [0.54, 0.86], ST:  [0.56, 0.88],
 };
 
 function _driftPlayers() {
   const W = _LP.W, H = _LP.H;
   _driftTick++;
-  // Every 5 ticks (~3.75s) trigger an attack wave
-  if (_driftTick % 5 === 0 && !_attackBiasTimer) {
+  // Every 8 ticks (~3.4s at 420ms) trigger an attack wave
+  if (_driftTick % 8 === 0 && !_attackBiasTimer) {
     _attackBias = Math.random() < .5 ? 1 : -1;
-    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 3000);
+    _attackBiasTimer = setTimeout(() => { _attackBias = 0; _attackBiasTimer = null; }, 2500);
   }
   // Velocity-based movement: each player has persistent vx/vy stored in _lpVel.
   // A spring pulls toward home, random impulses add "intent", friction decays speed.
@@ -5341,35 +5340,39 @@ function _driftPlayers() {
     const pos  = g.dataset.pos || 'CM';
     const isGK = pos === 'GK';
     const isDef = (pos === 'CB' || pos === 'SW' || pos === 'RB' || pos === 'LB' || pos === 'RWB' || pos === 'LWB');
+    const isMid = (pos === 'CM' || pos === 'RM' || pos === 'LM' || pos === 'CDM' || pos === 'DM' || pos === 'AM' || pos === 'CAM');
     const hx = parseFloat(g.dataset.homex);
     const hy = parseFloat(g.dataset.homey);
     const cx = parseFloat(g.dataset.bx);
     const cy = parseFloat(g.dataset.by);
     let { vx, vy } = _lpVel.get(g) || { vx: 0, vy: 0 };
 
-    // Spring force toward home slot
-    const spring = isGK ? 0.10 : (isDef ? 0.055 : 0.038);
+    // Spring force toward home slot — soft, players drift away naturally
+    const spring = isGK ? 0.06 : (isDef ? 0.028 : 0.018);
     const ax = (hx - cx) * spring;
     const ay = (hy - cy) * spring;
 
-    // Tiny random impulse ("decision" to move)
-    const impMag = isGK ? 0.25 : (isDef ? 0.65 : 1.0);
-    const ix = (Math.random() - 0.5) * impMag;
-    const iy = (Math.random() - 0.5) * impMag;
+    // Random impulse — much stronger so movement is clearly visible
+    const impMag = isGK ? 1.2 : (isDef ? 2.8 : (isMid ? 3.8 : 3.2));
+    const angle  = Math.random() * Math.PI * 2;
+    // Burst: 30% chance of a larger sprint impulse
+    const burst  = Math.random() < 0.30 ? 2.2 : 1.0;
+    const ix = Math.cos(angle) * impMag * burst * (Math.random() * 0.6 + 0.4);
+    const iy = Math.sin(angle) * impMag * burst * (Math.random() * 0.6 + 0.4);
 
-    // Attack-wave y-impulse (non-GK, forward push only)
+    // Attack-wave y-impulse (non-GK, forward push)
     const yImp = isGK ? 0
       : (isTeamA
-          ? (_attackBias === 1 ? 0.25 : _attackBias === -1 ? -0.18 : 0)
-          : (_attackBias === -1 ? -0.25 : _attackBias === 1 ? 0.18 : 0));
+          ? (_attackBias === 1 ? 1.8 : _attackBias === -1 ? -1.2 : 0)
+          : (_attackBias === -1 ? -1.8 : _attackBias === 1 ? 1.2 : 0));
 
-    // Integrate: friction → accelerate
-    const friction = isGK ? 0.68 : (isDef ? 0.72 : 0.76);
+    // Friction — lower = more momentum, more realistic gliding
+    const friction = isGK ? 0.75 : (isDef ? 0.80 : 0.84);
     vx = vx * friction + ax + ix;
     vy = vy * friction + ay + iy + yImp;
 
-    // Clamp max speed
-    const vMax = isGK ? 1.2 : (isDef ? 1.8 : 2.4);
+    // Clamp max speed (px per tick at 420ms)
+    const vMax = isGK ? 4.5 : (isDef ? 6.5 : (isMid ? 9.0 : 8.0));
     const spd = Math.sqrt(vx * vx + vy * vy);
     if (spd > vMax) { vx = vx / spd * vMax; vy = vy / spd * vMax; }
 
@@ -5409,7 +5412,7 @@ function _driftPlayers() {
       const team = g.dataset.team;
       const key  = g.dataset.name;
       if (team === 'a' || team === 'b') {
-        if (_heatmapData[team] && _heatmapData[team].length < 800) {
+        if (_heatmapData[team] && _heatmapData[team].length < 2000) {
           _heatmapData[team].push({ x: nx / W, y: ny / H });
         }
       }
