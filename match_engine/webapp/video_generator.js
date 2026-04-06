@@ -282,51 +282,43 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // 7. Click "Estadísticas" or "Cuadro" tab to show top scorers / bracket
-  const tabClicked = await page.evaluate(() => {
-    const tabs = [...document.querySelectorAll('button, [role="tab"], .trn-tab')];
-    // Try "Estadísticas" first (top scorers), then "Cuadro" (bracket)
-    const statsTab = tabs.find(t => t.offsetParent !== null &&
-      (t.textContent.includes('Estadística') || t.textContent.includes('Stats')));
-    if (statsTab) { statsTab.click(); return statsTab.textContent.trim(); }
-    const cuadroTab = tabs.find(t => t.offsetParent !== null && t.textContent.includes('Cuadro'));
-    if (cuadroTab) { cuadroTab.click(); return cuadroTab.textContent.trim(); }
-    return null;
-  });
-  if (tabClicked) {
-    console.log(`[ucl] Clicked tab: "${tabClicked}"`);
-    await wait(1000);
-  }
+  // Helper: click a tab by keyword and scroll through its content
+  const showTab = async (keyword) => {
+    const found = await page.evaluate((kw) => {
+      const tabs = [...document.querySelectorAll('button, [role="tab"]')];
+      const tab = tabs.find(t => t.offsetParent !== null && t.textContent.includes(kw));
+      if (tab) { tab.click(); return tab.textContent.trim(); }
+      return null;
+    }, keyword);
+    if (found) {
+      console.log(`[ucl] Tab → "${found}"`);
+      await wait(800);
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      await wait(300);
+      await page.evaluate(async () => {
+        await new Promise(resolve => {
+          let y = 0;
+          const max = document.body.scrollHeight - window.innerHeight;
+          const step = () => {
+            y = Math.min(y + 20, max);
+            window.scrollTo(0, y);
+            if (y < max) setTimeout(step, 80);
+            else setTimeout(resolve, 3500);
+          };
+          step();
+        });
+      });
+    }
+    return !!found;
+  };
 
-  // 8. Scroll down slowly to reveal top scorers / bracket
-  await page.evaluate(async () => {
-    await new Promise(resolve => {
-      let y = window.scrollY;
-      const max = document.body.scrollHeight - window.innerHeight;
-      const step = () => {
-        y = Math.min(y + 22, max);
-        window.scrollTo(0, y);
-        if (y < max) setTimeout(step, 90);
-        else setTimeout(resolve, 5000);  // Pause at bottom
-      };
-      step();
-    });
-  });
+  // 7. Recorre las 4 tabs en orden: Resumen → Cuadro → Calendario → Estadísticas
+  await showTab('Resumen', 'Resumen');
+  await showTab('Cuadro', 'Cuadro');
+  await showTab('Calendario', 'Calendario');
+  await showTab('Estadística', 'Estadísticas');
 
-  // 9. Click "Clasificación" / "Resumen" tab to show league table
-  const tab2Clicked = await page.evaluate(() => {
-    const tabs = [...document.querySelectorAll('button, [role="tab"]')];
-    const t = tabs.find(t => t.offsetParent !== null &&
-      (t.textContent.includes('Clasificación') || t.textContent.includes('Resumen') || t.textContent.includes('Tabla')));
-    if (t) { t.click(); return t.textContent.trim(); }
-    return null;
-  });
-  if (tab2Clicked) {
-    console.log(`[ucl] Second tab: "${tab2Clicked}"`);
-    await wait(800);
-  }
-
-  // 10. Scroll up briefly then back down for clean ending
+  // 8. Scroll back to top for clean ending
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   await wait(1500);
 
