@@ -297,10 +297,9 @@ async function recordUCL(page, recorder, outPath) {
     }, keyword);
     if (found) {
       console.log(`[ucl] Tab → "${found}"`);
-      await wait(600);
-      // Smooth scroll back to top — no jarring jump
+      // Snap to top FIRST (before any wait) — camera never records the old scroll position
       await scrollToTop();
-      await wait(500);
+      await wait(600);
 
       // Cuadro (bracket): scroll down slowly to PLAY-IN, then scroll right to reveal KO rounds
       if (keyword === 'Cuadro') {
