@@ -292,14 +292,17 @@ async function recordUCL(page, recorder, outPath) {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
       const tab = tabs.find(t => t.offsetParent !== null && t.textContent.includes(kw));
-      if (tab) { tab.click(); return tab.textContent.trim(); }
+      if (tab) {
+        tab.click();
+        // Reset scroll in the SAME synchronous block — before the browser paints any frame
+        window.scrollTo(0, 0);
+        return tab.textContent.trim();
+      }
       return null;
     }, keyword);
     if (found) {
       console.log(`[ucl] Tab → "${found}"`);
-      // Snap to top FIRST (before any wait) — camera never records the old scroll position
-      await scrollToTop();
-      await wait(600);
+      await wait(700);  // Hold at position 0 so the tab content renders cleanly
 
       // Cuadro (bracket): scroll down slowly to PLAY-IN, then scroll right to reveal KO rounds
       if (keyword === 'Cuadro') {
