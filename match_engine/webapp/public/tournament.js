@@ -628,7 +628,10 @@ const TRN = (() => {
       return;
     }
     if (badge) _badgeCache[slug] = badge;
-    _teams.push({ slug, name, era });
+    // Resolve OVR from catalog so the simulator can bias xG correctly
+    const catEntry = _trnCatalog ? _trnCatalog.find(c => c.slug === slug) : null;
+    const ovr = catEntry?.ovr || null;
+    _teams.push({ slug, name, era, ovr });
     clearSearch();
     _renderTeamSlots();
   }
@@ -1622,6 +1625,7 @@ const TRN = (() => {
       const specs = chunk.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era, eraB: f.b.era, salt: b + i + 9000, penalties: false,
         ovrA: f.a.ovr || null, ovrB: f.b.ovr || null,
+        homeAdvantage: true,  // team A is always “home” in this fixture
       }));
       const res = await _bulkSim(specs);
       chunk.forEach((f, i) => {
@@ -1672,6 +1676,7 @@ const TRN = (() => {
       const specs = grpFixtures.map((f, i) => ({
         teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '', salt: (g + 1) * 300 + i, penalties: false,
         ovrA: f.a.ovr || null, ovrB: f.b.ovr || null,
+        homeAdvantage: true,  // team A is always “home” in this fixture
       }));
       const res = await _bulkSim(specs);
       grpFixtures.forEach((f, i) => {

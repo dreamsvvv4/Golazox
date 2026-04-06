@@ -773,6 +773,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), as
       isFinal:  !!m.isFinal,
       ovrA:     _clampOvr(m.ovrA),
       ovrB:     _clampOvr(m.ovrB),
+      homeAdvantage: !!m.homeAdvantage,
     }));
 
     // Resolve unique team lookups in parallel (shared cache)
@@ -824,6 +825,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), as
         matchMode: '11v11',
         matchSalt: pair.salt,
         refereeId: null, isFinal: pair.isFinal, weatherId: null,
+        homeAdvantage: pair.homeAdvantage,
       };
 
       const sim = simulateMatch(params);
