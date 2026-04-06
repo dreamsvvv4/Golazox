@@ -53,7 +53,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
 
-  <link rel="stylesheet" href="style.css?v=63" />
+  <link rel="stylesheet" href="style.css?v=68" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1083,6 +1083,35 @@
           <h2 class="trn-step-title" data-i18n="trn-step1-title">Elige el formato</h2>
           <p class="trn-step-hint" data-i18n="trn-step1-hint">¿Cómo quieres que sea tu torneo?</p>
         </div>
+
+        <!-- Predefined official tournaments -->
+        <div class="trn-preset-section">
+          <div class="trn-preset-label" data-i18n="trn-preset-label">⭐ Torneos Oficiales</div>
+          <div class="trn-preset-grid">
+            <button class="trn-preset-card" data-preset="ucl2026">
+              <div class="trn-preset-trophy trn-trophy-ucl">
+                <img src="img/trophy-ucl.png" alt="Champions League Trophy" class="trn-trophy-img">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">UEFA Champions League</div>
+                <div class="trn-preset-season">2025/26</div>
+                <div class="trn-preset-meta">36 equipos · Fase de grupos + KO</div>
+              </div>
+            </button>
+            <button class="trn-preset-card" data-preset="wc2026">
+              <div class="trn-preset-trophy trn-trophy-wc">
+                <img src="img/trophy-wc.png" alt="FIFA World Cup Trophy" class="trn-trophy-img">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">FIFA World Cup</div>
+                <div class="trn-preset-season">2026</div>
+                <div class="trn-preset-meta">48 selecciones · 12 grupos + KO</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="trn-preset-divider"><span data-i18n="trn-custom-label">o crea tu propio torneo</span></div>
         <div class="trn-fmt-grid">
           <button class="trn-fmt-card" data-fmt="copa">
             <div class="trn-fmt-visual">🏆</div>
@@ -1150,6 +1179,9 @@
           <div id="trn-search-results" class="trn-search-results hidden"></div>
         </div>
 
+        <button id="trn-btn-catalog" class="trn-btn-catalog" data-action="toggleCatalogBrowser">📋 Explorar BD</button>
+        <div id="trn-catalog-browser" class="trn-catalog-browser hidden"></div>
+
         <div id="trn-team-preview" class="trn-team-preview hidden"></div>
 
         <div id="trn-teams-list" class="trn-teams-list"></div>
@@ -1166,12 +1198,14 @@
         <!-- League loader panel -->
         <div id="trn-league-loader" class="trn-league-loader hidden"></div>
 
-        <div id="trn-progress" class="trn-progress hidden">
-          <div class="trn-spinner"></div>
-          <div class="trn-progress-inner">
-            <span id="trn-progress-text">Simulando…</span>
-            <div class="trn-progress-track"><div id="trn-progress-bar" class="trn-progress-bar"></div></div>
-          </div>
+      </div>
+
+      <!-- Progress overlay — lives outside steps so it shows during preset simulation too -->
+      <div id="trn-progress" class="trn-progress hidden">
+        <div class="trn-spinner"></div>
+        <div class="trn-progress-inner">
+          <span id="trn-progress-text">Simulando…</span>
+          <div class="trn-progress-track"><div id="trn-progress-bar" class="trn-progress-bar"></div></div>
         </div>
       </div>
 
@@ -1205,6 +1239,20 @@
     </div><!-- /trn-dashboard -->
 
   </div><!-- /main-trn-wrap -->
+
+  <!-- noscript: rich text block for Googlebot first-wave crawl & JS-disabled browsers.
+       Summarises key content that JS would otherwise render. Hidden visually but crawlable. -->
+  <noscript>
+    <div style="background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;padding:2rem 1.2rem;max-width:760px;margin:0 auto">
+      <h2>GolazoX — Simulador de Fútbol Histórico</h2>
+      <p>Simula partidos entre más de 200 equipos históricos de fútbol desde cualquier era. Real Madrid 1960, Barcelona 2009, Brasil 1970, Argentina 2022… Motor Monte Carlo probabilístico. Gratis y sin registro.</p>
+      <h3>Equipos destacados</h3>
+      <p>Real Madrid · FC Barcelona · Bayern Múnich · AC Milán · Juventus · Liverpool · Manchester United · Ajax · Inter de Milán · Arsenal · Chelsea · Atlético de Madrid</p>
+      <h3>Selecciones nacionales</h3>
+      <p>Brasil · Argentina · Alemania · Francia · Italia · España · Holanda · Portugal · Inglaterra · Uruguay</p>
+      <p>Activa JavaScript para usar el simulador.</p>
+    </div>
+  </noscript>
 
   </main>
 
@@ -1255,8 +1303,8 @@
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=60"></script>
-  <script src="tournament.js?v=8"></script>
+  <script src="app.js?v=61"></script>
+  <script src="tournament.js?v=29"></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
 </body>

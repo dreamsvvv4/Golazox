@@ -17,6 +17,11 @@ const TRN = (() => {
   let _seasonCache = {};     // slug → seasons[] from suggest results
   let _modalIdx   = -1;     // current match in modal for prev/next nav
   let _trnCatalog  = null;   // cached catalog for league loader
+  let _activePreset = null;  // 'ucl2026' | 'wc2026' | null
+  let _uclFixtures  = null;  // pre-generated UCL league phase fixtures (144 matches)
+  let _uclDrawRunning = false;
+  let _potEditMode  = false; // pot editor: click-to-swap mode
+  let _potEditSel   = null;  // { slug, potIdx } of first selected team in swap
 
   const VALID_COUNTS = {
     copa:        [4, 8, 16, 32],
@@ -82,6 +87,11 @@ const TRN = (() => {
       const el = $(`trn-step-${i}`);
       if (el) el.classList.toggle('hidden', i !== n);
     }
+    // Restore stepbar (may have been hidden by preset screens)
+    const stepbar = document.querySelector('.trn-stepbar'); if (stepbar) show(stepbar);
+    // Also hide any open preset screens
+    const uclDraw = $('trn-ucl-draw'); if (uclDraw) hide(uclDraw);
+    const presetConfirm = $('trn-preset-confirm'); if (presetConfirm) hide(presetConfirm);
     // Update stepbar items
     document.querySelectorAll('.trn-stepbar-item').forEach(d => {
       const s = +d.dataset.step;
@@ -306,6 +316,9 @@ const TRN = (() => {
     const randomBtn = $('trn-btn-random');
     if (randomBtn) randomBtn.style.display = _teams.length < _numTeams ? '' : 'none';
     _updatePreDraw();
+    // Keep catalog browser in sync (mark added teams)
+    const cbPanel = $('trn-catalog-browser');
+    if (cbPanel && !cbPanel.classList.contains('hidden')) _refreshCatalogBrowserState(cbPanel);
   }
 
   // ── Pre-draw: Copa bracket & Champions group draw ─────────
@@ -716,8 +729,8 @@ const TRN = (() => {
         </div>
         ${playersHtml ? `<div class="trn-preview-players">${playersHtml}</div>` : ''}
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">✓ Añadir equipo</button>
-          <button class="btn-secondary trn-preview-back">→ Volver</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(resolvedEra)}" data-badge="${safeBadge}">${t('trn-add-team')}</button>
+          <button class="btn-secondary trn-preview-back">${t('trn-preview-back')}</button>
         </div>`;
     } catch (_err) {
       panel.innerHTML = `
@@ -728,8 +741,8 @@ const TRN = (() => {
           </div>
         </div>
         <div class="trn-preview-actions">
-          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">✓ Añadir equipo</button>
-          <button class="btn-secondary trn-preview-back">→ Volver</button>
+          <button class="btn-primary trn-preview-add" style="flex:1" data-slug="${safeSlug}" data-name="${safeName}" data-era="${_esc(era)}" data-badge="${safeBadge}">${t('trn-add-team')}</button>
+          <button class="btn-secondary trn-preview-back">${t('trn-preview-back')}</button>
         </div>`;
     }
   }
@@ -775,6 +788,95 @@ const TRN = (() => {
     if (!r.ok) throw new Error('catalog unavailable');
     _trnCatalog = await r.json();
     return _trnCatalog;
+  }
+
+  // -- Catalog DB browser -----------------------------------------------
+  let _catBrowserFilter = '';
+
+  async function toggleCatalogBrowser() {
+    const panel = $('trn-catalog-browser');
+    if (!panel) return;
+    if (!panel.classList.contains('hidden')) {
+      panel.classList.add('hidden');
+      return;
+    }
+    panel.classList.remove('hidden');
+    if (panel.dataset.loaded !== '1') {
+      panel.innerHTML = '<div class="trn-ll-loading"><div class="trn-spinner"></div></div>';
+      await _renderCatalogBrowser(panel);
+    } else {
+      _refreshCatalogBrowserState(panel);
+    }
+  }
+
+  async function _renderCatalogBrowser(panel) {
+    try {
+      const catalog = await _getTrnCatalog();
+      panel.dataset.loaded = '1';
+      _catBrowserFilter = '';
+
+      // Group teams
+      const groupMap = Object.create(null);
+      for (const e of catalog) {
+        const g = e.group || '🌍 Otros';
+        (groupMap[g] = groupMap[g] || []).push(e);
+      }
+
+      let html = `<div class="trn-cb-filterrow">
+        <span class="trn-cb-filter-icon">🔍</span>
+        <input id="trn-cb-filter" class="trn-cb-filter" type="search" placeholder="Filtrar equipos…" autocomplete="off">
+      </div><div id="trn-cb-groups" class="trn-cb-groups">`;
+
+      for (const [g, teams] of Object.entries(groupMap)) {
+        const open = Object.keys(groupMap).indexOf(g) < 3 ? ' open' : '';
+        html += `<details class="trn-cb-group"${open}><summary class="trn-cb-group-label">${_esc(g)} <span class="trn-cb-group-cnt">(${teams.length})</span></summary><div class="trn-cb-group-items">`;
+        for (const e of teams) {
+          const badge = e.badge || '/img/badges/_placeholder.svg';
+          const name  = e.nameEs || e.nameEn || e.slug;
+          const bestEra = (e.seasons || [])[0] || '';
+          const slug = _esc(e.slug); const nameE = _esc(name);
+          html += `<div class="trn-cb-item" data-slug="${slug}" data-name="${nameE}" data-badge="${_esc(badge)}" data-era="${_esc(bestEra)}">
+            <img class="trn-cb-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+            <span class="trn-cb-name">${nameE}</span>
+          </div>`;
+        }
+        html += `</div></details>`;
+      }
+      html += `</div>`;
+      panel.innerHTML = html;
+
+      // Filter input
+      const fi = panel.querySelector('#trn-cb-filter');
+      if (fi) {
+        fi.addEventListener('input', () => {
+          _catBrowserFilter = fi.value.trim().toLowerCase();
+          _refreshCatalogBrowserState(panel);
+        });
+      }
+
+      _refreshCatalogBrowserState(panel);
+    } catch (e) {
+      panel.innerHTML = `<div style="padding:.75rem;color:rgba(255,255,255,.5);font-size:.8rem">Error al cargar catálogo</div>`;
+    }
+  }
+
+  function _refreshCatalogBrowserState(panel) {
+    const existing = new Set(_teams.map(t => t.slug));
+    const q = _catBrowserFilter;
+    const items = panel.querySelectorAll('.trn-cb-item');
+    items.forEach(el => {
+      const slug = el.dataset.slug;
+      const name = el.dataset.name;
+      const added = existing.has(slug);
+      el.classList.toggle('trn-cb-item-added', added);
+      const matchesFilter = !q || name.toLowerCase().includes(q) || slug.includes(q);
+      el.style.display = matchesFilter ? '' : 'none';
+    });
+    // Update group counts visibility
+    panel.querySelectorAll('.trn-cb-group').forEach(grp => {
+      const visible = [...grp.querySelectorAll('.trn-cb-item')].some(el => el.style.display !== 'none');
+      grp.style.display = visible ? '' : 'none';
+    });
   }
 
   // -- Real league loader -----------------------------------------------
@@ -924,6 +1026,715 @@ const TRN = (() => {
     return all;
   }
 
+  // ── Predefined official tournament templates ─────────────
+
+  // FIFA World Cup 2026  — official groups (draw Dec 2025)
+  const _WC2026_GROUPS = [
+    { label: 'A', teams: [
+      { slug: 'mexiko',           era:'2025', name:'México',               badge:'/img/badges/mexico.png'       },
+      { slug: 'south-africa',     era:'2025', name:'Sudáfrica',            badge:'/img/badges/south-africa.png' },
+      { slug: 'south-korea',      era:'2025', name:'Corea del Sur',        badge:'/img/badges/south-korea.png'  },
+      { slug: 'tschechien',       era:'2025', name:'Rep. Checa',           badge:'/img/badges/tschechien.png'   },
+    ]},
+    { label: 'B', teams: [
+      { slug: 'kanada',           era:'2025', name:'Canadá',               badge:'/img/badges/canada.png'       },
+      { slug: 'bosnien-herzegowina', era:'2025', name:'Bosnia y Herz.',    badge:'/img/badges/bosnia.png'       },
+      { slug: 'katar',            era:'2025', name:'Catar',                badge:'/img/badges/katar.png'         },
+      { slug: 'schweiz',          era:'2025', name:'Suiza',                badge:'/img/badges/schweiz.png'      },
+    ]},
+    { label: 'C', teams: [
+      { slug: 'brasilien',        era:'2025', name:'Brasil',               badge:'/img/badges/brasilien.png'    },
+      { slug: 'marokko',          era:'2025', name:'Marruecos',            badge:'/img/badges/marruecos.png'    },
+      { slug: 'haiti',            era:'2025', name:'Haití',                badge:'/img/badges/haiti.png'        },
+      { slug: 'schottland',       era:'2025', name:'Escocia',              badge:'/img/badges/schottland.png'   },
+    ]},
+    { label: 'D', teams: [
+      { slug: 'united-states',    era:'2025', name:'Estados Unidos',       badge:'/img/badges/united-states.png'},
+      { slug: 'paraguay',         era:'2025', name:'Paraguay',             badge:'/img/badges/paraguay.png'     },
+      { slug: 'australien',       era:'2025', name:'Australia',            badge:'/img/badges/australia.png'    },
+      { slug: 'turkey',           era:'2025', name:'Turquía',              badge:'/img/badges/turkey.png'       },
+    ]},
+    { label: 'E', teams: [
+      { slug: 'deutschland',      era:'2025', name:'Alemania',             badge:'/img/badges/deutschland.png'  },
+      { slug: 'curacao',          era:'2025', name:'Curazao',              badge:'/img/badges/curacao.png'        },
+      { slug: 'ivory-coast',      era:'2025', name:'Costa de Marfil',      badge:'/img/badges/ivory-coast.png'  },
+      { slug: 'ecuador',          era:'2025', name:'Ecuador',              badge:'/img/badges/ecuador.png'      },
+    ]},
+    { label: 'F', teams: [
+      { slug: 'niederlande',      era:'2025', name:'Países Bajos',         badge:'/img/badges/niederlande.png'  },
+      { slug: 'japan',            era:'2025', name:'Japón',                badge:'/img/badges/japan.png'        },
+      { slug: 'schweden',         era:'2025', name:'Suecia',               badge:'/img/badges/schweden.png'     },
+      { slug: 'tunesien',         era:'2025', name:'Túnez',                badge:'/img/badges/tunisia.png'      },
+    ]},
+    { label: 'G', teams: [
+      { slug: 'belgien',          era:'2025', name:'Bélgica',              badge:'/img/badges/belgien.png'      },
+      { slug: 'agypten',          era:'2025', name:'Egipto',               badge:'/img/badges/egypt.png'        },
+      { slug: 'iran',             era:'2025', name:'Irán',                 badge:'/img/badges/iran.png'         },
+      { slug: 'neuseeland',       era:'2025', name:'Nueva Zelanda',        badge:'/img/badges/new-zealand.png'  },
+    ]},
+    { label: 'H', teams: [
+      { slug: 'spanien',          era:'2025', name:'España',               badge:'/img/badges/spanien.png'      },
+      { slug: 'kap-verde',        era:'2025', name:'Cabo Verde',           badge:'/img/badges/cape-verde.png'   },
+      { slug: 'saudi-arabien',    era:'2025', name:'Arabia Saudí',         badge:'/img/badges/saudi-arabia.png' },
+      { slug: 'uruguay',          era:'2025', name:'Uruguay',              badge:'/img/badges/uruguay.png'      },
+    ]},
+    { label: 'I', teams: [
+      { slug: 'frankreich',       era:'2025', name:'Francia',              badge:'/img/badges/frankreich.png'   },
+      { slug: 'senegal',          era:'2025', name:'Senegal',              badge:'/img/badges/senegal.png'      },
+      { slug: 'irak',             era:'2025', name:'Irak',                 badge:'/img/badges/iraq.png'         },
+      { slug: 'norwegen',         era:'2025', name:'Noruega',              badge:'/img/badges/noruega.png'      },
+    ]},
+    { label: 'J', teams: [
+      { slug: 'argentinien',      era:'2025', name:'Argentina',            badge:'/img/badges/argentinien.png'  },
+      { slug: 'algerien',         era:'2025', name:'Argelia',              badge:'/img/badges/algerien.png'     },
+      { slug: 'osterreich',       era:'2025', name:'Austria',              badge:'/img/badges/osterreich.png'   },
+      { slug: 'jordanien',        era:'2025', name:'Jordania',             badge:'/img/badges/jordan.png'       },
+    ]},
+    { label: 'K', teams: [
+      { slug: 'portugal',         era:'2025', name:'Portugal',             badge:'/img/badges/portugal.png'     },
+      { slug: 'kolumbien',        era:'2025', name:'Colombia',             badge:'/img/badges/colombia.png'     },
+      { slug: 'usbekistan',       era:'2025', name:'Uzbekistán',           badge:'/img/badges/uzbekistan.png'   },
+      { slug: 'kongo',            era:'2025', name:'R.D. Congo',           badge:'/img/badges/kongo.svg'        },
+    ]},
+    { label: 'L', teams: [
+      { slug: 'england',          era:'2025', name:'Inglaterra',           badge:'/img/badges/england.png'      },
+      { slug: 'kroatien',         era:'2025', name:'Croacia',              badge:'/img/badges/kroatien.png'     },
+      { slug: 'ghana',            era:'2025', name:'Ghana',                badge:'/img/badges/ghana.png'        },
+      { slug: 'panama',           era:'2025', name:'Panamá',               badge:'/img/badges/panama.png'       },
+    ]},
+  ];
+
+  // UEFA Champions League 2025/26 — 36 clubs in 9 groups of 4
+  const _UCL2026_GROUPS = [
+    { label: 'A', teams: [
+      { slug: 'real-madrid',         era:'2025', name:'Real Madrid',          badge:'/img/badges/real-madrid.png' },
+      { slug: 'fc-bayern-munchen',   era:'2025', name:'Bayern München',       badge:'/img/badges/fc-bayern-munchen.png' },
+      { slug: 'newcastle-united',    era:'2025', name:'Newcastle United',     badge:'/img/badges/newcastle-united.png' },
+      { slug: 'bodo-glimt',          era:'2025', name:'Bodø/Glimt',           badge:'/img/badges/fk-bod-glimt.png' },
+    ]},
+    { label: 'B', teams: [
+      { slug: 'fc-barcelona',        era:'2025', name:'Barcelona',            badge:'/img/badges/fc-barcelona.png' },
+      { slug: 'fc-paris-saint-germain', era:'2025', name:'Paris Saint-Germain', badge:'/img/badges/fc-paris-saint-germain.png' },
+      { slug: 'galatasaray',         era:'2025', name:'Galatasaray',          badge:'/img/badges/galatasaray.png' },
+      { slug: 'qarabag',             era:'2025', name:'Qarabağ',              badge:'/img/badges/qarabag-fk.png' },
+    ]},
+    { label: 'C', teams: [
+      { slug: 'fc-liverpool',        era:'2025', name:'Liverpool',            badge:'/img/badges/fc-liverpool.png' },
+      { slug: 'fc-arsenal',          era:'2025', name:'Arsenal',              badge:'/img/badges/fc-arsenal.png' },
+      { slug: 'as-monaco',           era:'2025', name:'AS Monaco',            badge:'/img/badges/as-monaco.png' },
+      { slug: 'union-saint-gilloise', era:'2025', name:'Union Saint-Gilloise', badge:'/img/badges/union-saint-gilloise.png' },
+    ]},
+    { label: 'D', teams: [
+      { slug: 'atletico-madrid',     era:'2025', name:'Atlético Madrid',      badge:'/img/badges/atletico-madrid.png' },
+      { slug: 'inter-mailand',       era:'2025', name:'Inter',                badge:'/img/badges/inter-mailand.png' },
+      { slug: 'ajax-amsterdam',      era:'2025', name:'Ajax',                 badge:'/img/badges/ajax-amsterdam.png' },
+      { slug: 'kairat-almaty',       era:'2025', name:'Kairat Almaty',        badge:'/img/badges/fc-kairat-almaty.png' },
+    ]},
+    { label: 'E', teams: [
+      { slug: 'fc-chelsea',          era:'2025', name:'Chelsea',              badge:'/img/badges/fc-chelsea.png' },
+      { slug: 'juventus-turin',      era:'2025', name:'Juventus',             badge:'/img/badges/juventus-turin.png' },
+      { slug: 'psv-eindhoven',       era:'2025', name:'PSV Eindhoven',        badge:'/img/badges/psv-eindhoven.png' },
+      { slug: 'pafos',               era:'2025', name:'Pafos FC',             badge:'/img/badges/pafos.png' },
+    ]},
+    { label: 'F', teams: [
+      { slug: 'manchester-city',     era:'2025', name:'Manchester City',      badge:'/img/badges/manchester-city.png' },
+      { slug: 'bayer-04-leverkusen', era:'2025', name:'Bayer Leverkusen',     badge:'/img/badges/bayer-04-leverkusen.png' },
+      { slug: 'club-brugge',         era:'2025', name:'Club Brugge',          badge:'/img/badges/club-brugge.png' },
+      { slug: 'fc-kopenhagen',       era:'2025', name:'Copenhagen',           badge:'/img/badges/fc-kopenhagen.png' },
+    ]},
+    { label: 'G', teams: [
+      { slug: 'borussia-dortmund',   era:'2025', name:'Borussia Dortmund',    badge:'/img/badges/borussia-dortmund.png' },
+      { slug: 'benfica-lissabon',    era:'2025', name:'Benfica',              badge:'/img/badges/benfica-lissabon.png' },
+      { slug: 'celtic-glasgow',      era:'2025', name:'Celtic',               badge:'/img/badges/celtic-glasgow.png' },
+      { slug: 'olympiacos',          era:'2025', name:'Olympiacos',           badge:'/img/badges/olympiakos-piraeus.png' },
+    ]},
+    { label: 'H', teams: [
+      { slug: 'atalanta-bc',         era:'2025', name:'Atalanta',             badge:'/img/badges/atalanta-bc.png' },
+      { slug: 'athletic-club',       era:'2025', name:'Athletic Club',        badge:'/img/badges/athletic-club.png' },
+      { slug: 'eintracht-frankfurt', era:'2025', name:'Eintracht Frankfurt',  badge:'/img/badges/eintracht-frankfurt.png' },
+      { slug: 'tottenham-hotspur',   era:'2025', name:'Tottenham Hotspur',    badge:'/img/badges/tottenham-hotspur.png' },
+    ]},
+    { label: 'I', teams: [
+      { slug: 'sporting-cp',         era:'2025', name:'Sporting CP',          badge:'/img/badges/sporting-cp.png' },
+      { slug: 'ssc-neapel',          era:'2025', name:'Napoli',               badge:'/img/badges/ssc-neapel.png' },
+      { slug: 'olympique-marseille', era:'2025', name:'Olympique Marseille',  badge:'/img/badges/olympique-marseille.png' },
+      { slug: 'villarreal-cf',       era:'2025', name:'Villarreal',           badge:'/img/badges/villarreal-cf.png' },
+    ]},
+  ];
+
+  // ── UCL 2025/26 — 4 pots × 9 teams (broadcast draw) ────────
+  const _UCL_POTS = [
+    { pot: 1, label: 'Bombo 1', color: '#c8a951', teams: [
+      { slug: 'real-madrid',         era:'2025', name:'Real Madrid'         },
+      { slug: 'fc-bayern-munchen',   era:'2025', name:'Bayern München'      },
+      { slug: 'manchester-city',     era:'2025', name:'Man City'            },
+      { slug: 'fc-paris-saint-germain', era:'2025', name:'PSG'              },
+      { slug: 'fc-liverpool',        era:'2025', name:'Liverpool'           },
+      { slug: 'fc-barcelona',        era:'2025', name:'Barcelona'           },
+      { slug: 'fc-arsenal',          era:'2025', name:'Arsenal'             },
+      { slug: 'atletico-madrid',     era:'2025', name:'Atlético Madrid'     },
+      { slug: 'inter-mailand',       era:'2025', name:'Inter'               },
+    ]},
+    { pot: 2, label: 'Bombo 2', color: '#a0a8c0', teams: [
+      { slug: 'fc-chelsea',          era:'2025', name:'Chelsea'             },
+      { slug: 'bayer-04-leverkusen', era:'2025', name:'Bayer Leverkusen'    },
+      { slug: 'juventus-turin',      era:'2025', name:'Juventus'            },
+      { slug: 'sporting-cp',         era:'2025', name:'Sporting CP'         },
+      { slug: 'psv-eindhoven',       era:'2025', name:'PSV Eindhoven'       },
+      { slug: 'club-brugge',         era:'2025', name:'Club Brugge'         },
+      { slug: 'borussia-dortmund',   era:'2025', name:'Borussia Dortmund'   },
+      { slug: 'benfica-lissabon',    era:'2025', name:'Benfica'             },
+      { slug: 'ajax-amsterdam',      era:'2025', name:'Ajax'                },
+    ]},
+    { pot: 3, label: 'Bombo 3', color: '#5b9bd5', teams: [
+      { slug: 'as-monaco',           era:'2025', name:'AS Monaco'           },
+      { slug: 'galatasaray',         era:'2025', name:'Galatasaray'         },
+      { slug: 'fc-kopenhagen',       era:'2025', name:'Copenhagen'          },
+      { slug: 'celtic-glasgow',      era:'2025', name:'Celtic'              },
+      { slug: 'eintracht-frankfurt', era:'2025', name:'Eintracht Frankfurt' },
+      { slug: 'tottenham-hotspur',   era:'2025', name:'Tottenham'           },
+      { slug: 'newcastle-united',    era:'2025', name:'Newcastle'           },
+      { slug: 'atalanta-bc',         era:'2025', name:'Atalanta'            },
+      { slug: 'athletic-club',       era:'2025', name:'Athletic Club'       },
+    ]},
+    { pot: 4, label: 'Bombo 4', color: '#e07b54', teams: [
+      { slug: 'ssc-neapel',          era:'2025', name:'Napoli'              },
+      { slug: 'olympique-marseille', era:'2025', name:'Marseille'           },
+      { slug: 'villarreal-cf',       era:'2025', name:'Villarreal'          },
+      { slug: 'union-saint-gilloise', era:'2025', name:'Union SG'           },
+      { slug: 'olympiacos',          era:'2025', name:'Olympiacos'          },
+      { slug: 'bodo-glimt',          era:'2025', name:'Bodø/Glimt'          },
+      { slug: 'qarabag',             era:'2025', name:'Qarabağ'             },
+      { slug: 'kairat-almaty',       era:'2025', name:'Kairat Almaty'       },
+      { slug: 'pafos',               era:'2025', name:'Pafos FC'            },
+    ]},
+  ];
+
+  function _showUCLDrawScreen() {
+    hide($('trn-step-1')); hide($('trn-step-2')); hide($('trn-step-3'));
+    const existing = $('trn-preset-confirm'); if (existing) hide(existing);
+    const stepbar = document.querySelector('.trn-stepbar'); if (stepbar) hide(stepbar);
+
+    let el = $('trn-ucl-draw');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'trn-ucl-draw';
+      el.className = 'trn-step trn-ucl-draw-wrap';
+      $('trn-wizard').appendChild(el);
+    }
+    _uclDrawRunning = false;
+    _potEditMode = false;
+    _potEditSel  = null;
+    show(el);
+    el.innerHTML = _buildUCLDrawHTML();
+
+    _wireUCLDrawButtons(el);
+
+    // Async badge load
+    _getTrnCatalog().then(cat => {
+      if (!Array.isArray(cat)) return;
+      _UCL_POTS.forEach(pot => pot.teams.forEach(t => {
+        const ce = cat.find(c => c.slug === t.slug);
+        if (ce && ce.badge) {
+          _badgeCache[t.slug] = ce.badge;
+          el.querySelectorAll(`.ucl-pot-team[data-slug="${t.slug}"] img`).forEach(img => img.src = ce.badge);
+        }
+      }));
+    }).catch(() => {});
+  }
+
+  function _wireUCLDrawButtons(el) {
+    el.querySelector('#ucl-start-btn')?.addEventListener('click', startUCLDraw);
+    el.querySelector('#ucl-cancel-btn')?.addEventListener('click', cancelPreset);
+    el.querySelector('#ucl-sim-btn')?.addEventListener('click', runPresetSimulation);
+    el.querySelector('#ucl-randomize-btn')?.addEventListener('click', randomizeUCLPots);
+    el.querySelector('#ucl-edit-btn')?.addEventListener('click', toggleUCLPotEditMode);
+    // Pot team click delegation for swap mode
+    const grid = el.querySelector('#ucl-pots-grid');
+    if (grid) {
+      grid.addEventListener('click', e => {
+        if (!_potEditMode) return;
+        const teamEl = e.target.closest('.ucl-pot-team');
+        if (!teamEl) return;
+        const slug = teamEl.dataset.slug;
+        const potIdx = _UCL_POTS.findIndex(p => p.teams.some(t => t.slug === slug));
+        if (potIdx === -1) return;
+        const teamIdx = _UCL_POTS[potIdx].teams.findIndex(t => t.slug === slug);
+        _openPresetReplace({ type: 'ucl', potIdx, teamIdx });
+      });
+    }
+  }
+
+  function _buildPotsHTML() {
+    return _UCL_POTS.map(pot => {
+      const teamRows = pot.teams.map(t =>
+        `<div class="ucl-pot-team${_potEditMode ? ' ucl-pot-editable' : ''}" data-slug="${_esc(t.slug)}" data-pot="${pot.pot}">
+          <img class="ucl-draw-team-badge" src="${_badgeCache[t.slug] || '/img/badges/_placeholder.svg'}"
+               onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <span class="ucl-draw-team-name">${_esc(t.name)}</span>
+        </div>`
+      ).join('');
+      return `<div class="ucl-pot" data-pot="${pot.pot}" style="--pot-clr:${_esc(pot.color)}">
+        <div class="ucl-pot-header">${_esc(pot.label)}</div>
+        <div class="ucl-pot-teams">${teamRows}</div>
+      </div>`;
+    }).join('');
+  }
+
+  function _buildUCLDrawHTML() {
+    return `
+      <div class="ucl-broadcast-header">
+        <div class="ucl-bh-stars">✦ ✦ ✦</div>
+        <div class="ucl-bh-title">UEFA Champions League</div>
+        <div class="ucl-bh-subtitle">SORTEO FASE DE LIGA · 2025/26</div>
+      </div>
+      <div class="ucl-pots-grid" id="ucl-pots-grid">${_buildPotsHTML()}</div>
+      <div class="ucl-draw-results-wrap">
+        <div class="ucl-draw-results-header">
+          <span class="ucl-draw-counter" id="ucl-counter">${t('trn-draw-init-hint')}</span>
+          <div class="ucl-progress-bar" style="margin-top:.35rem"><div class="ucl-progress-fill" id="ucl-progress-fill"></div></div>
+        </div>
+        <div class="ucl-draw-results" id="ucl-draw-results"></div>
+      </div>
+      <div class="ucl-draw-actions">
+        <button class="btn-secondary" id="ucl-cancel-btn">${t('trn-btn-back')}</button>
+        <div class="ucl-draw-tools">
+          <button class="btn-secondary ucl-tool-btn" id="ucl-randomize-btn" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>
+          <button class="btn-secondary ucl-tool-btn" id="ucl-edit-btn" title="${t('trn-btn-edit')}">✏️ ${t('trn-btn-edit').replace(/^✏️\s*/,'')}</button>
+        </div>
+        <button class="btn-primary ucl-start-btn" id="ucl-start-btn">
+          ▶&nbsp;${t('trn-draw-start').replace(/^▶[·\u00a0]*/,'') || 'SORTEAR'}
+        </button>
+        <button class="btn-primary ucl-sim-btn" id="ucl-sim-btn" style="display:none">
+          ${t('trn-btn-simulate-ucl')}
+        </button>
+      </div>
+    `;
+  }
+
+  function randomizeUCLPots() {
+    if (_uclDrawRunning) return;
+    const allTeams = _UCL_POTS.flatMap(p => p.teams);
+    for (let i = allTeams.length - 1; i > 0; i--) {
+      const j = 0 | Math.random() * (i + 1);
+      [allTeams[i], allTeams[j]] = [allTeams[j], allTeams[i]];
+    }
+    _UCL_POTS.forEach((pot, pi) => { pot.teams = allTeams.slice(pi * 9, (pi + 1) * 9); });
+    _uclFixtures = null;
+    _potEditSel  = null;
+    const grid = $('trn-ucl-draw')?.querySelector('#ucl-pots-grid');
+    if (grid) grid.innerHTML = _buildPotsHTML();
+    // Reset draw results panel
+    const counter = $('ucl-counter');
+    if (counter) counter.textContent = 'Pulsa SORTEAR para iniciar · 8 partidos por equipo (4🏠 · 4✈)';
+    const fill = $('ucl-progress-fill');
+    if (fill) fill.style.width = '0%';
+    const results = $('ucl-draw-results');
+    if (results) results.innerHTML = '';
+    const simBtn = $('ucl-sim-btn');
+    if (simBtn) simBtn.style.display = 'none';
+    const startBtn = $('ucl-start-btn');
+    if (startBtn) { startBtn.style.display = ''; startBtn.disabled = false; startBtn.textContent = '▶\u00a0SORTEAR'; }
+  }
+
+  function toggleUCLPotEditMode() {
+    if (_uclDrawRunning) return;
+    _potEditMode = !_potEditMode;
+    _potEditSel  = null;
+    const btn = $('trn-ucl-draw')?.querySelector('#ucl-edit-btn');
+    if (btn) btn.classList.toggle('btn-active', _potEditMode);
+    const grid = $('trn-ucl-draw')?.querySelector('#ucl-pots-grid');
+    if (grid) {
+      grid.classList.toggle('ucl-pots-edit-mode', _potEditMode);
+      grid.innerHTML = _buildPotsHTML();
+    }
+    // Re-wire delegation after innerHTML reset
+    if (grid && _potEditMode) {
+      // delegation is already set up on the persistent grid element; innerHTML change just re-populates content
+    }
+  }
+
+  async function startUCLDraw() {
+    if (_uclDrawRunning) return;
+    _uclDrawRunning = true;
+    const startBtn = $('ucl-start-btn');
+    if (startBtn) { startBtn.disabled = true; startBtn.textContent = '⏳ Sorteando...'; }
+
+    // Build pots → generate fixtures (reused by simulation)
+    const pots = _UCL_POTS.map(pot =>
+      pot.teams.map(pt => _teams.find(t => t.slug === pt.slug) || { slug: pt.slug, era:'2025', name: pt.name })
+    );
+    _uclFixtures = _generateUCLLeagueFixtures(pots);
+
+    // Build per-team opponent map: slug → [{slug, name, potNum, potColor, isHome}]
+    const teamOpponents = {};
+    _UCL_POTS.forEach(pot => pot.teams.forEach(t => { teamOpponents[t.slug] = []; }));
+    _uclFixtures.forEach(f => {
+      const hpot = _UCL_POTS.find(p => p.teams.some(t => t.slug === f.home.slug));
+      const apot = _UCL_POTS.find(p => p.teams.some(t => t.slug === f.away.slug));
+      if (teamOpponents[f.home.slug]) teamOpponents[f.home.slug].push(
+        { slug: f.away.slug, name: f.away.name, potNum: apot?.pot||0, potColor: apot?.color||'#888', isHome: true });
+      if (teamOpponents[f.away.slug]) teamOpponents[f.away.slug].push(
+        { slug: f.home.slug, name: f.home.name, potNum: hpot?.pot||0, potColor: hpot?.color||'#888', isHome: false });
+    });
+
+    const counter    = $('ucl-counter');
+    const progressFill = $('ucl-progress-fill');
+    const resultsEl  = $('ucl-draw-results');
+    let drawn = 0;
+
+    // Draw pot by pot (Bombo 1 → 4), random order within each pot
+    for (const pot of _UCL_POTS) {
+      // Pot section header in results
+      if (resultsEl) {
+        const sec = document.createElement('div');
+        sec.className = 'ucl-res-section';
+        sec.innerHTML = `<span style="color:${pot.color}">● ${_esc(pot.label)}</span>`;
+        resultsEl.appendChild(sec);
+      }
+
+      const shuffled = [...pot.teams].sort(() => Math.random() - 0.5);
+      for (const team of shuffled) {
+        drawn++;
+        const opps = (teamOpponents[team.slug] || []).slice().sort((a, b) => a.potNum - b.potNum || (a.isHome ? -1 : 1));
+
+        // Flash team card in pot grid
+        document.querySelectorAll('.ucl-pot-team.ucl-drawn-active').forEach(c => c.classList.remove('ucl-drawn-active'));
+        const card = document.querySelector(`.ucl-pot-team[data-slug="${team.slug}"]`);
+        if (card) {
+          card.classList.add('ucl-drawn', 'ucl-drawn-active');
+          card.style.setProperty('--drawn-clr', pot.color);
+        }
+
+        // Add row to results panel
+        if (resultsEl) {
+          const oppsHtml = opps.map(o => {
+            const ob = _badgeCache[o.slug] || '/img/badges/_placeholder.svg';
+            return `<span class="ucl-res-opp" style="--opp-clr:${o.potColor}">
+              <img src="${_esc(ob)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="" class="ucl-res-opp-badge">
+              <span class="ucl-res-opp-name">${_esc(o.name)}</span>
+              <span class="ucl-res-opp-ha">${o.isHome ? '🏠' : '✈'}</span>
+            </span>`;
+          }).join('');
+          const tb = _badgeCache[team.slug] || '/img/badges/_placeholder.svg';
+          const row = document.createElement('div');
+          row.className = 'ucl-res-row ucl-res-row-in';
+          row.innerHTML = `
+            <img src="${_esc(tb)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="" class="ucl-res-team-badge">
+            <span class="ucl-res-team-name" style="color:${pot.color}">${_esc(team.name)}</span>
+            <span class="ucl-res-arrow">→</span>
+            <div class="ucl-res-opps">${oppsHtml}</div>
+          `;
+          resultsEl.appendChild(row);
+          resultsEl.scrollTop = resultsEl.scrollHeight;
+          requestAnimationFrame(() => requestAnimationFrame(() => row.classList.remove('ucl-res-row-in')));
+        }
+
+        if (counter) counter.textContent = `${t('trn-draw-counter')} ${pot.pot} — ${drawn} / 36 ${t('trn-draw-drawn-of')}`;
+        if (progressFill) progressFill.style.width = Math.round((drawn / 36) * 100) + '%';
+        await new Promise(r => setTimeout(r, 160));
+      }
+    }
+
+    // Done
+    _uclDrawRunning = false;
+    if (counter) counter.textContent = `${t('trn-draw-complete')} — 36 ${t('trn-teams-unit')} · 144 ${t('trn-cal-matches-lbl').toLowerCase()}`;
+    const simBtn = $('ucl-sim-btn');
+    if (simBtn) { simBtn.style.display = ''; simBtn.classList.add('ucl-sim-ready'); }
+    if (startBtn) startBtn.style.display = 'none';
+  }
+
+  function loadPreset(presetId) {
+    const groups  = presetId === 'wc2026'  ? _WC2026_GROUPS : _UCL2026_GROUPS;
+    const isWC    = presetId === 'wc2026';
+
+    _fmt          = 'champions';
+    _activePreset = presetId;
+    _uclFixtures  = null;
+    _rules     = isWC
+      ? { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: true,  copaMode: 'groups' }
+      : { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: true,  extraTime: true, tercerPuesto: false, copaMode: 'groups' };
+    _teams     = [];
+    _groupsDraw = [];
+
+    groups.forEach(g => g.teams.forEach(t => {
+      _teams.push({ slug: t.slug, era: t.era, name: t.name, ovr: null });
+    }));
+    _numTeams   = _teams.length;
+    _groupsDraw = groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
+
+    // Pre-seed badge cache from inline badge fields (no network needed)
+    groups.forEach(g => g.teams.forEach(t => {
+      if (t.badge) _badgeCache[t.slug] = t.badge;
+    }));
+
+    // Load badges async in background — does not block navigation
+    _setPresetBadges(_teams);
+
+    // UCL → broadcast draw screen; WC → static confirm
+    if (presetId === 'ucl2026') {
+      _showUCLDrawScreen();
+    } else {
+      _showPresetConfirm(presetId);
+    }
+  }
+
+  function _setPresetBadges(teams) {
+    if (Array.isArray(_trnCatalog)) {
+      teams.forEach(t => {
+        const cat = _trnCatalog.find(c => c.slug === t.slug);
+        if (cat && cat.badge) _badgeCache[t.slug] = cat.badge;
+      });
+    } else {
+      fetch('/catalog').then(r => r.json()).then(d => {
+        if (!Array.isArray(d)) return;
+        _trnCatalog = d;
+        teams.forEach(t => {
+          const cat = d.find(c => c.slug === t.slug);
+          if (cat && cat.badge) {
+            _badgeCache[t.slug] = cat.badge;
+            document.querySelectorAll(`[data-slug="${t.slug}"] img.trn-badge`).forEach(img => { img.src = cat.badge; });
+          }
+        });
+      }).catch(() => {});
+    }
+  }
+
+  function _showPresetConfirm(presetId) {
+    const isWC    = presetId === 'wc2026';
+    const title   = isWC ? 'FIFA World Cup 2026' : 'UEFA Champions League 2025/26';
+    const iconHtml = isWC
+      ? `<img src="/img/trophy-wc.png"  class="trn-preset-confirm-trophy" alt="WC Trophy">`
+      : `<img src="/img/trophy-ucl.png" class="trn-preset-confirm-trophy" alt="UCL Trophy">`;
+    const numGrps = _groupsDraw.length;
+
+    hide($('trn-step-1'));
+    hide($('trn-step-2'));
+    hide($('trn-step-3'));
+    const stepbar = document.querySelector('.trn-stepbar'); if (stepbar) hide(stepbar);
+
+    let el = $('trn-preset-confirm');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'trn-preset-confirm';
+      el.className = 'trn-step';
+      $('trn-wizard').appendChild(el);
+    }
+    show(el);
+
+    const groupsHtml = _groupsDraw.map((grp, gi) => {
+      const lbl = String.fromCharCode(65 + gi);
+      const rows = grp.map(tm => {
+        const badge = _badgeCache[tm.slug] || tm.badge || '/img/badges/_placeholder.svg';
+        return `<div class="trn-pg-team" data-slug="${_esc(tm.slug)}">
+          <img class="trn-mini-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+          <span>${_esc(tm.name)}</span>
+        </div>`;
+      }).join('');
+      return `<div class="trn-pg-group"><div class="trn-pg-label">${_esc(t('trn-draw-group-prefix') || 'Grupo ')}${lbl}</div>${rows}</div>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div class="trn-preset-confirm-header">
+        <div class="trn-preset-confirm-icon">${iconHtml}</div>
+        <div>
+          <h2 class="trn-step-title" style="margin:0">${_esc(title)}</h2>
+          <p class="trn-step-hint" style="margin:.2rem 0 0">${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${isWC ? t('trn-preset-subtitle-wc') : t('trn-preset-subtitle-ucl')}</p>
+        </div>
+      </div>
+      <div class="trn-preset-groups-preview${isWC ? ' trn-preset-groups-wc' : ''}">${groupsHtml}</div>
+      <div class="trn-step-actions trn-preset-confirm-actions">
+        <button class="btn-secondary" id="preset-confirm-cancel">${t('trn-btn-back')}</button>
+        ${isWC ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
+        <button class="btn-primary" id="preset-confirm-run">▶ ${t(isWC ? 'trn-btn-simulate' : 'trn-btn-simulate-ucl').replace(/^▶\s*/,'').replace(/torneo$/,'')}&nbsp;${_esc(title)}</button>
+      </div>
+    `;
+
+    // Wire up buttons (CSP blocks inline onclick)
+    el.querySelector('#preset-confirm-cancel')?.addEventListener('click', cancelPreset);
+    el.querySelector('#preset-confirm-shuffle')?.addEventListener('click', shufflePresetGroups);
+    el.querySelector('#preset-confirm-run')?.addEventListener('click', runPresetSimulation);
+
+    // Click on team → open replace search (WC confirm)
+    if (isWC) {
+      el.querySelector('.trn-preset-groups-preview')?.addEventListener('click', e => {
+        const teamEl = e.target.closest('.trn-pg-team');
+        if (!teamEl) return;
+        const groupEl = teamEl.closest('.trn-pg-group');
+        const groupIdx = [...el.querySelectorAll('.trn-pg-group')].indexOf(groupEl);
+        const teamIdx  = [...groupEl.querySelectorAll('.trn-pg-team')].indexOf(teamEl);
+        _openPresetReplace({ type: 'wc', groupIdx, teamIdx });
+      });
+    }
+
+    // Retroactively update badge img src as catalog resolves
+    _getTrnCatalog().then(cat => {
+      if (!Array.isArray(cat)) return;
+      _teams.forEach(tm => {
+        const ce = cat.find(c => c.slug === tm.slug);
+        if (ce && ce.badge) {
+          _badgeCache[tm.slug] = ce.badge;
+          el.querySelectorAll(`[data-slug="${_esc(tm.slug)}"] img`).forEach(img => { img.src = ce.badge; });
+        }
+      });
+    }).catch(() => {});
+  }
+
+  // ── Preset team replace (WC confirm groups + UCL pots) ───────
+  let _replaceTarget = null;  // { groupIdx, teamIdx } | { potIdx, teamIdx }
+
+  async function _openPresetReplace(context) {
+    // context: { type:'wc'|'ucl', groupIdx?, potIdx?, teamIdx }
+    _replaceTarget = context;
+    let modal = document.getElementById('preset-replace-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'preset-replace-modal';
+      modal.className = 'preset-replace-modal hidden';
+      document.body.appendChild(modal);
+    }
+    modal.innerHTML = `
+      <div class="preset-replace-card">
+        <div class="preset-replace-header">
+          <span class="preset-replace-title">Cambiar equipo</span>
+          <button class="preset-replace-close" id="preset-replace-close">✕</button>
+        </div>
+        <div class="preset-replace-search-row">
+          <input id="preset-replace-input" class="preset-replace-input" type="search" placeholder="Busca equipo…" autocomplete="off" spellcheck="false">
+        </div>
+        <div id="preset-replace-results" class="preset-replace-results"></div>
+      </div>`;
+    modal.classList.remove('hidden');
+    const input = modal.querySelector('#preset-replace-input');
+    modal.querySelector('#preset-replace-close').addEventListener('click', _closePresetReplace);
+    modal.addEventListener('click', e => { if (e.target === modal) _closePresetReplace(); });
+    input.addEventListener('input', async () => {
+      const q = input.value.trim();
+      const res = modal.querySelector('#preset-replace-results');
+      if (q.length < 2) { res.innerHTML = ''; return; }
+      try {
+        const catalog = await _getTrnCatalog();
+        const ql = q.toLowerCase();
+        const matches = catalog.filter(e => {
+          const n = (e.nameEs || e.nameEn || '').toLowerCase();
+          return n.includes(ql) || e.slug.includes(ql);
+        }).slice(0, 8);
+        if (!matches.length) { res.innerHTML = `<div class="preset-replace-empty">Sin resultados</div>`; return; }
+        // One row per (team × season) so user can pick any era
+        res.innerHTML = matches.map(e => {
+          const badge   = e.badge || '/img/badges/_placeholder.svg';
+          const name    = e.nameEs || e.nameEn || e.slug;
+          const seasons = (e.seasons || []).slice().reverse(); // newest first
+          if (!seasons.length) seasons.push('');
+          return `<div class="preset-replace-group">
+            <div class="preset-replace-group-header">
+              <img class="preset-replace-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span class="preset-replace-group-name">${_esc(name)}</span>
+            </div>
+            <div class="preset-replace-eras">
+              ${seasons.map(era => `<div class="preset-replace-item" data-slug="${_esc(e.slug)}" data-name="${_esc(name)}" data-badge="${_esc(badge)}" data-era="${_esc(era)}">${era || '—'}</div>`).join('')}
+            </div>
+          </div>`;
+        }).join('');
+        res.querySelectorAll('.preset-replace-item').forEach(item => {
+          item.addEventListener('click', () => _applyPresetReplace(item.dataset));
+        });
+      } catch (_) {}
+    });
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function _closePresetReplace() {
+    const modal = document.getElementById('preset-replace-modal');
+    if (modal) modal.classList.add('hidden');
+    _replaceTarget = null;
+  }
+
+  function _applyPresetReplace({ slug, name, badge, era }) {
+    if (!_replaceTarget) return;
+    const newTeam = { slug, name, era: era || '2025', badge: badge || '/img/badges/_placeholder.svg', ovr: null };
+    // Resolve OVR from catalog if available
+    if (_trnCatalog) { const ce = _trnCatalog.find(c => c.slug === slug); if (ce?.ovr) newTeam.ovr = ce.ovr; }
+    if (badge) _badgeCache[slug] = badge;
+    if (_replaceTarget.type === 'wc') {
+      const { groupIdx, teamIdx } = _replaceTarget;
+      // Capture old team BEFORE overwriting
+      const oldSlugWC = _groupsDraw[groupIdx]?.[teamIdx]?.slug;
+      if (_groupsDraw[groupIdx]) _groupsDraw[groupIdx][teamIdx] = newTeam;
+      // Sync _teams using the old slug
+      const ti = _teams.findIndex(t => t.slug === (oldSlugWC || ''));
+      if (ti >= 0) _teams[ti] = newTeam; else _teams.push(newTeam);
+    } else if (_replaceTarget.type === 'ucl') {
+      const { potIdx, teamIdx } = _replaceTarget;
+      const oldSlug = _UCL_POTS[potIdx]?.teams[teamIdx]?.slug;
+      if (_UCL_POTS[potIdx]) _UCL_POTS[potIdx].teams[teamIdx] = { ...newTeam, pot: potIdx + 1 };
+      if (oldSlug) {
+        const ti = _teams.findIndex(t => t.slug === oldSlug);
+        if (ti >= 0) _teams[ti] = newTeam; else _teams.push(newTeam);
+      }
+      _uclFixtures = null;
+    }
+    _closePresetReplace();
+    // Re-render the appropriate screen
+    if (_activePreset === 'ucl2026') {
+      const grid = $('trn-ucl-draw')?.querySelector('#ucl-pots-grid');
+      if (grid) grid.innerHTML = _buildPotsHTML();
+    } else {
+      _showPresetConfirm(_activePreset);
+    }
+  }
+
+  function shufflePresetGroups() {
+    if (!_groupsDraw.length) return;
+    const groupSizes  = _groupsDraw.map(g => g.length);
+    const allTeams    = _groupsDraw.flat();
+    for (let i = allTeams.length - 1; i > 0; i--) {
+      const j = 0 | Math.random() * (i + 1);
+      [allTeams[i], allTeams[j]] = [allTeams[j], allTeams[i]];
+    }
+    let idx = 0;
+    _groupsDraw = groupSizes.map(size => { const g = allTeams.slice(idx, idx + size); idx += size; return g; });
+    _showPresetConfirm(_activePreset);
+  }
+
+  function cancelPreset() {
+    _teams = []; _groupsDraw = []; _fmt = null; _activePreset = null; _uclFixtures = null;
+    const conf = $('trn-preset-confirm'); if (conf) hide(conf);
+    const ucl  = $('trn-ucl-draw');      if (ucl)  hide(ucl);
+    showStep(1);
+  }
+
+  async function runPresetSimulation() {
+    const conf = $('trn-preset-confirm');
+    const ucl  = $('trn-ucl-draw');
+    if (conf) hide(conf);
+    if (ucl)  hide(ucl);
+    show($('trn-progress'));
+    _setProgress(t('trn-progress-starting'), 0);
+    try {
+      const data = _activePreset === 'ucl2026'
+        ? await _simulateUCLLeaguePhase()
+        : _activePreset === 'wc2026'
+          ? await _simulateWC2026()
+          : await _simulateChampions();
+      _stopTrnLoadCycle();
+      _data = data;
+      _computeTournamentStats(_data);
+      _buildMatchCache(_data);
+      await _showChampionReveal(_data);
+      _renderDashboard();
+      show($('trn-dashboard'));
+    } catch (err) {
+      _stopTrnLoadCycle();
+      console.error('[TRN preset]', err);
+      if ($('trn-progress-text')) $('trn-progress-text').textContent = t('trn-sim-error') || 'Error al simular';
+      hide($('trn-progress'));
+      // Re-show whichever preset screen was active
+      if (_activePreset === 'ucl2026' && ucl) show(ucl);
+      else if (conf) show(conf);
+    }
+  }
+
   // ── Run simulation entry point ───────────────────────────
   async function runSimulation() {
     if (_teams.length !== _numTeams) return;
@@ -951,7 +1762,8 @@ const TRN = (() => {
     } catch (err) {
       _stopTrnLoadCycle();
       console.error('[TRN]', err);
-      $('trn-progress-text').textContent = t('trn-sim-error');
+      if ($('trn-progress-text')) $('trn-progress-text').textContent = t('trn-sim-error') || 'Error al simular';
+      hide($('trn-progress'));
       show($('trn-step-3-actions'));
     }
   }
@@ -1157,7 +1969,8 @@ const TRN = (() => {
         _scBadge(ctx, imgB, BX, BADGE_CY, BADGE_R, MAGENTA, fin.b?.name);
 
         // Score
-        const sA = fin.scoreA ?? '?', sB = fin.scoreB ?? '?';
+        const sA = fin.legs === 2 ? (fin.aggA ?? '?') : (fin.scoreA ?? '?');
+        const sB = fin.legs === 2 ? (fin.aggB ?? '?') : (fin.scoreB ?? '?');
         ctx.font = 'bold 120px "Rajdhani",Arial,sans-serif';
         ctx.textAlign = 'center';
         _scGlow(ctx, `${sA}–${sB}`, W / 2, BADGE_CY + 48, WHITE, 15);
@@ -1305,6 +2118,7 @@ const TRN = (() => {
     if (_trnLoadTimer) { clearInterval(_trnLoadTimer); _trnLoadTimer = null; }
   }
 
+  // ── Simulation screen initialise (title, trophy, phase steps) ─
   function _setProgress(txt, pct) {
     _stopTrnLoadCycle();
     const el = $('trn-progress-text');
@@ -1327,6 +2141,10 @@ const TRN = (() => {
     if (data.format === 'liga') {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
       data.matches.forEach((m, i) => add(m, `${t('trn-cal-jornada')} ${Math.floor(i / chunk) + 1} × ${t('trn-fmt-name-liga')}`));
+    } else if (data.format === 'ucl-league') {
+      (data.leagueMatches || []).forEach((m, i) => add(m, `Fase de Liga — J${Math.floor(i / 36) + 1}`));
+      (data.playoffRound?.matches || []).forEach(m => add(m, 'Play-In'));
+      (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' × Champions')));
     } else if (data.format === 'copa' && !data.groups) {
       data.rounds.forEach(r => r.matches.forEach(m => add(m, r.label + ' × ' + t('trn-fmt-name-copa'))));
       if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + t('trn-fmt-name-copa'));
@@ -1337,6 +2155,140 @@ const TRN = (() => {
       (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' × ' + label)));
       if (data.thirdPlace) add(data.thirdPlace, t('trn-cal-3rd-suffix') + label);
     }
+  }
+
+  // ── Trophy SVG — format-specific (UCL, WC, generic) ─────
+  // pfx: unique ID prefix so gradient IDs never clash between poster and reveal
+  function _trophySVG(fmt, pfx) {
+    const p = pfx || 't' + (Math.random() * 1e5 | 0);
+    const isWC  = fmt === 'champions' && _activePreset === 'wc2026';
+    const isUCL = fmt === 'ucl-league' || (fmt === 'champions' && !isWC);
+    const isRv  = pfx === 'rv';
+    const sz    = isRv ? '94px' : '58px';
+    // Use real trophy PNGs for preset tournaments
+    if (isUCL && _activePreset)
+      return `<img src="/img/trophy-ucl.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="UCL Trophy">`;
+    if (isWC && _activePreset)
+      return `<img src="/img/trophy-wc.png"  class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="WC Trophy">`;
+
+    // ── UCL "Big-Ears" ──────────────────────────────────────
+    if (isUCL) return `<svg class="trn-trophy-svg" viewBox="0 0 80 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="${p}a" x1="14" y1="30" x2="66" y2="76" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#ffe878"/><stop offset="42%" stop-color="#c8a020"/><stop offset="100%" stop-color="#7a5800"/>
+        </linearGradient>
+        <linearGradient id="${p}b" x1="40" y1="60" x2="40" y2="102" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#d4a818"/><stop offset="100%" stop-color="#8a6000"/>
+        </linearGradient>
+        <linearGradient id="${p}c" x1="14" y1="91" x2="66" y2="91" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#9a7408"/><stop offset="45%" stop-color="#e0ba28"/><stop offset="100%" stop-color="#9a7408"/>
+        </linearGradient>
+      </defs>
+      <!-- Base -->
+      <rect x="23" y="100" width="34" height="6" rx="1" fill="#7a5800"/>
+      <rect x="16" y="90" width="48" height="11" rx="2" fill="url(#${p}c)"/>
+      <rect x="24" y="81" width="32" height="10" rx="2" fill="#c8a020"/>
+      <!-- Stem -->
+      <rect x="35" y="62" width="10" height="20" rx="3" fill="url(#${p}b)"/>
+      <ellipse cx="40" cy="62" rx="7" ry="2" fill="#9a7808"/>
+      <!-- Cup body -->
+      <path d="M18 33 Q13 51 15 63 Q21 75 40 77 Q59 75 65 63 Q67 51 62 33 Z" fill="url(#${p}a)" stroke="#8a6000" stroke-width=".8"/>
+      <!-- Left big ear — three layered arcs for depth -->
+      <path d="M19 42 Q1 42 1 54 Q1 66 19 66" fill="none" stroke="#7a5800" stroke-width="12" stroke-linecap="round"/>
+      <path d="M19 42 Q4 42 4 54 Q4 66 19 66"  fill="none" stroke="#b89010" stroke-width="9"  stroke-linecap="round"/>
+      <path d="M19 42 Q9 42 9 54 Q9 66 19 66"   fill="none" stroke="#d4a820" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M19 42 Q13 42 13 54 Q13 66 19 66" fill="none" stroke="#ead040" stroke-width="2"   stroke-linecap="round"/>
+      <!-- Right big ear -->
+      <path d="M61 42 Q79 42 79 54 Q79 66 61 66" fill="none" stroke="#7a5800" stroke-width="12" stroke-linecap="round"/>
+      <path d="M61 42 Q76 42 76 54 Q76 66 61 66"  fill="none" stroke="#b89010" stroke-width="9"  stroke-linecap="round"/>
+      <path d="M61 42 Q71 42 71 54 Q71 66 61 66"   fill="none" stroke="#d4a820" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M61 42 Q67 42 67 54 Q67 66 61 66"    fill="none" stroke="#ead040" stroke-width="2"   stroke-linecap="round"/>
+      <!-- Rim -->
+      <ellipse cx="40" cy="33" rx="22" ry="5.5" fill="#d0a820" stroke="#8a6000" stroke-width=".8"/>
+      <path d="M21 32 Q40 28 59 32" stroke="rgba(255,240,80,.45)" stroke-width="2" fill="none"/>
+      <!-- Reflection -->
+      <path d="M23 44 Q21 57 22 65" stroke="rgba(255,255,255,.36)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Star on rim -->
+      <polygon points="40,21 42,27 48.5,27 43.3,31 45.3,37 40,33 34.7,37 36.7,31 31.5,27 38,27" fill="#fff8c0" opacity=".92"/>
+    </svg>`;
+
+    // ── FIFA World Cup ──────────────────────────────────────
+    if (isWC) return `<svg class="trn-trophy-svg" viewBox="0 0 80 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="${p}a" cx="32" cy="10" r="24" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#fff0a0"/><stop offset="50%" stop-color="#c8a020"/><stop offset="100%" stop-color="#8a6000"/>
+        </radialGradient>
+        <linearGradient id="${p}b" x1="40" y1="20" x2="40" y2="82" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#e0b828"/><stop offset="100%" stop-color="#885e00"/>
+        </linearGradient>
+        <linearGradient id="${p}c" x1="14" y1="91" x2="66" y2="91" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#9a7408"/><stop offset="45%" stop-color="#e0ba28"/><stop offset="100%" stop-color="#9a7408"/>
+        </linearGradient>
+      </defs>
+      <!-- Base -->
+      <rect x="14" y="100" width="52" height="6" rx="1.5" fill="#7a5800"/>
+      <rect x="18" y="90" width="44" height="11" rx="2" fill="url(#${p}c)"/>
+      <rect x="24" y="81" width="32" height="10" rx="2.5" fill="#c8a020"/>
+      <!-- Column (tapered) -->
+      <path d="M34 52 L27 81 L53 81 L46 52 Z" fill="#9a7808"/>
+      <path d="M36 52 L30 81 L50 81 L44 52 Z" fill="#c8a020"/>
+      <path d="M38 52 L35 81 L45 81 L42 52 Z" fill="rgba(255,220,60,.18)"/>
+      <!-- Left figure: torso + arm reaching up -->
+      <path d="M34 52 Q26 46 21 35 Q17 25 22 18 Q27 11 33 20 Q37 28 37 37 L37 52 Z" fill="url(#${p}b)" stroke="#7a5800" stroke-width=".6"/>
+      <!-- Left arm highlight -->
+      <path d="M25 38 Q24 29 27 22" stroke="rgba(255,225,70,.48)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Right figure: torso + arm reaching up -->
+      <path d="M46 52 Q54 46 59 35 Q63 25 58 18 Q53 11 47 20 Q43 28 43 37 L43 52 Z" fill="url(#${p}b)" stroke="#7a5800" stroke-width=".6"/>
+      <!-- Right arm highlight -->
+      <path d="M55 38 Q56 29 53 22" stroke="rgba(255,225,70,.48)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Globe -->
+      <circle cx="40" cy="18" r="17" fill="url(#${p}a)" stroke="#8a6000" stroke-width="1.2"/>
+      <!-- Latitude lines -->
+      <ellipse cx="40" cy="18" rx="17" ry="6.5" fill="none" stroke="rgba(255,255,255,.28)" stroke-width=".9"/>
+      <ellipse cx="40" cy="18" rx="17" ry="12.5" fill="none" stroke="rgba(255,255,255,.14)" stroke-width=".9"/>
+      <!-- Meridian -->
+      <line x1="40" y1="1" x2="40" y2="35" stroke="rgba(255,255,255,.14)" stroke-width=".9"/>
+      <!-- Globe highlight -->
+      <path d="M27 8 Q24 13 24 18" stroke="rgba(255,255,255,.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>`;
+
+    // ── Generic Copa / Liga ─────────────────────────────────
+    return `<svg class="trn-trophy-svg" viewBox="0 0 80 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="${p}a" x1="12" y1="26" x2="68" y2="74" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#ffe878"/><stop offset="44%" stop-color="#c8a020"/><stop offset="100%" stop-color="#7a5800"/>
+        </linearGradient>
+        <linearGradient id="${p}c" x1="12" y1="91" x2="68" y2="91" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#9a7408"/><stop offset="45%" stop-color="#e0ba28"/><stop offset="100%" stop-color="#9a7408"/>
+        </linearGradient>
+      </defs>
+      <!-- Base -->
+      <rect x="18" y="100" width="44" height="6" rx="1.5" fill="#7a5800"/>
+      <rect x="14" y="89" width="52" height="12" rx="2" fill="url(#${p}c)"/>
+      <rect x="21" y="80" width="38" height="10" rx="2" fill="#c8a020"/>
+      <!-- Stem -->
+      <rect x="33" y="62" width="14" height="20" rx="4" fill="#b89010"/>
+      <ellipse cx="40" cy="62" rx="9" ry="2.5" fill="#9a7808"/>
+      <!-- Cup body (taller classic cup) -->
+      <path d="M15 28 Q10 47 12 62 Q18 75 40 77 Q62 75 68 62 Q70 47 65 28 Z" fill="url(#${p}a)" stroke="#8a6000" stroke-width=".8"/>
+      <!-- Left handle — three layers -->
+      <path d="M16 38 Q2 38 2 54 Q2 69 16 69"  fill="none" stroke="#7a5800" stroke-width="11" stroke-linecap="round"/>
+      <path d="M16 38 Q6 38 6 54 Q6 69 16 69"   fill="none" stroke="#b89010" stroke-width="7.5" stroke-linecap="round"/>
+      <path d="M16 38 Q10 38 10 54 Q10 69 16 69"  fill="none" stroke="#d4a820" stroke-width="4"   stroke-linecap="round"/>
+      <path d="M16 38 Q13 38 13 54 Q13 69 16 69"   fill="none" stroke="#ead040" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Right handle -->
+      <path d="M64 38 Q78 38 78 54 Q78 69 64 69"  fill="none" stroke="#7a5800" stroke-width="11" stroke-linecap="round"/>
+      <path d="M64 38 Q74 38 74 54 Q74 69 64 69"   fill="none" stroke="#b89010" stroke-width="7.5" stroke-linecap="round"/>
+      <path d="M64 38 Q70 38 70 54 Q70 69 64 69"   fill="none" stroke="#d4a820" stroke-width="4"   stroke-linecap="round"/>
+      <path d="M64 38 Q67 38 67 54 Q67 69 64 69"    fill="none" stroke="#ead040" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Rim -->
+      <ellipse cx="40" cy="28" rx="25" ry="5.5" fill="#d4a820" stroke="#8a6000" stroke-width=".8"/>
+      <path d="M17 27 Q40 23 63 27" stroke="rgba(255,240,80,.45)" stroke-width="2" fill="none"/>
+      <!-- Reflection -->
+      <path d="M20 40 Q18 54 19 64" stroke="rgba(255,255,255,.34)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Star -->
+      <polygon points="40,17 42,23.5 49,23.5 43.6,27.5 45.6,34 40,30.5 34.4,34 36.4,27.5 31,23.5 38,23.5" fill="#fff8c0" opacity=".92"/>
+    </svg>`;
   }
 
   // ── Champion reveal ──────────────────────────────────────
@@ -1364,6 +2316,9 @@ const TRN = (() => {
   async function _showChampionReveal(data) {
     const el = $('trn-champion-reveal');
     if (!el) return;
+    // Inject format-specific trophy
+    const trophyRevEl = el.querySelector('.trn-reveal-trophy');
+    if (trophyRevEl) trophyRevEl.innerHTML = _trophySVG(data.format, 'rv');
     const badge = _badge(data.champion?.slug);
     const imgEl = $('trn-reveal-badge');
     if (imgEl) { imgEl.src = badge || '/img/badges/_placeholder.svg'; }
@@ -1373,7 +2328,9 @@ const TRN = (() => {
     if (fmtEl) fmtEl.textContent =
       data.format === 'liga' ? t('trn-reveal-liga') :
       (data.format === 'copa' && data.copaMode === 'groups') ? t('trn-reveal-copa-groups') :
-      data.format === 'copa' ? t('trn-reveal-copa') : t('trn-reveal-champions');
+      data.format === 'copa' ? t('trn-reveal-copa') :
+      data.format === 'ucl-league' ? 'Champions League 2025/26' :
+      (data.format === 'champions' && _activePreset === 'wc2026') ? 'FIFA World Cup 2026' : t('trn-reveal-champions');
     el.classList.remove('hidden');
     _confetti();
     await new Promise(res => {
@@ -1648,6 +2605,138 @@ const TRN = (() => {
     return { format: 'liga', champion: table[0], table, matches: fixtures, teams: _teams };
   }
 
+  // ── UCL LEAGUE PHASE — fixture generator ─────────────────
+  // 4 pots of equal size; each team plays 2 per pot (1H, 1A) → 8 games total
+  function _generateUCLLeagueFixtures(pots) {
+    const _shu = a => { const b=[...a]; for(let i=b.length-1;i>0;i--){const j=0|Math.random()*(i+1);[b[i],b[j]]=[b[j],b[i]];}return b; };
+    const fixtures = [];
+    for (let pi = 0; pi < 4; pi++) {
+      for (let pj = pi; pj < 4; pj++) {
+        const A = _shu([...pots[pi]]);
+        const B = _shu([...pots[pj]]);
+        if (pi === pj) {
+          // Within-pot ring: 9 matches, each team 1H + 1A
+          for (let k = 0; k < A.length; k++)
+            fixtures.push({ home: A[k], away: A[(k+1) % A.length] });
+        } else {
+          // Cross-pot: 2 rounds via shift → 18 matches
+          for (let k = 0; k < A.length; k++) {
+            fixtures.push({ home: A[k], away: B[k] });
+            fixtures.push({ home: B[k], away: A[(k+1) % A.length] });
+          }
+        }
+      }
+    }
+    return fixtures; // 144 matches: 36 within-pot + 108 cross-pot
+  }
+
+  // ── UCL 2025/26 LEAGUE PHASE SIMULATION ──────────────────
+  async function _simulateUCLLeaguePhase() {
+    // Build 4 pots from _UCL_POTS → map to loaded _teams
+    const pots = _UCL_POTS.map(pot =>
+      pot.teams.map(pt => _teams.find(t => t.slug === pt.slug) || { slug: pt.slug, era: '2025', name: pt.name, ovr: null })
+    );
+
+    // Generate or reuse pre-drawn fixtures
+    const fixtures = _uclFixtures || _generateUCLLeagueFixtures(pots);
+
+    // Build table
+    const tableMap = {};
+    _teams.forEach(t => { tableMap[t.slug] = { ...t, p:0, w:0, d:0, l:0, gf:0, ga:0, pts:0 }; });
+
+    // Simulate all 144 matches in batches
+    const BATCH = 36;
+    const allFx = [];
+    for (let b = 0; b < fixtures.length; b += BATCH) {
+      const chunk = fixtures.slice(b, b + BATCH);
+      _setProgress(`Fase de Liga… (${b+chunk.length}/${fixtures.length})`, 5 + Math.round((b/fixtures.length)*50));
+      const specs = chunk.map((f, i) => ({
+        teamA: f.home.slug, teamB: f.away.slug,
+        eraA: f.home.era||'', eraB: f.away.era||'',
+        salt: 1000 + b + i, penalties: false, homeAdvantage: true,
+        ovrA: f.home.ovr||null, ovrB: f.away.ovr||null,
+      }));
+      const res = await _bulkSim(specs);
+      chunk.forEach((f, i) => {
+        const r = res[i];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB;
+        f.scorersA = r.scorersA||[]; f.scorersB = r.scorersB||[];
+        f.mom = r.mom||null; f.stats = r.stats||null;
+        f.a = f.home; f.b = f.away; // align with match card / stats expectations
+        const rH = tableMap[f.home.slug];
+        const rA = tableMap[f.away.slug];
+        if (!rH || !rA) return;
+        rH.p++; rA.p++;
+        rH.gf += r.scoreA; rH.ga += r.scoreB;
+        rA.gf += r.scoreB; rA.ga += r.scoreA;
+        if      (r.scoreA > r.scoreB) { rH.w++; rH.pts+=3; rA.l++; }
+        else if (r.scoreA < r.scoreB) { rA.w++; rA.pts+=3; rH.l++; }
+        else                           { rH.d++; rA.d++; rH.pts++; rA.pts++; }
+      });
+      allFx.push(...chunk);
+    }
+
+    // Sort table: pts > gd > gf
+    const leagueTable = Object.values(tableMap).sort((a,b) =>
+      b.pts-a.pts || (b.gf-b.ga)-(a.gf-a.ga) || b.gf-a.gf
+    );
+    leagueTable.forEach((r,i) => {
+      r.pos    = i+1;
+      r.status = i < 8 ? 'direct' : i < 24 ? 'playoff' : 'out';
+    });
+
+    // ── Playoff (ranks 9-24): seeded 9-16 host 2nd leg, unseeded 17-24 host 1st leg
+    _setProgress('Play-In…', 58);
+    const seeded   = leagueTable.slice(8,  16);    // 9-16
+    const unseeded = leagueTable.slice(16, 24);   // 17-24
+    // Pair: seed 9 vs seed 24, seed 10 vs seed 23, ...
+    const playoffPairs = seeded.map((s, i) => ({ a: unseeded[7-i], b: s }));
+    const playoffSpecs = playoffPairs.flatMap((p, i) => [
+      { teamA: p.a.slug, teamB: p.b.slug, eraA: p.a.era||'', eraB: p.b.era||'', salt: 5000+i, penalties: false, homeAdvantage: true, ovrA: p.a.ovr||null, ovrB: p.b.ovr||null },
+      { teamA: p.b.slug, teamB: p.a.slug, eraA: p.b.era||'', eraB: p.a.era||'', salt: 5100+i, penalties: false, homeAdvantage: true, ovrA: p.b.ovr||null, ovrB: p.a.ovr||null },
+    ]);
+    const playoffRes = await _bulkSim(playoffSpecs);
+    const playoffMatches = [], playoffWinners = [];
+    for (let i = 0; i < playoffPairs.length; i++) {
+      const { a, b } = playoffPairs[i];
+      const r1 = playoffRes[i*2], r2 = playoffRes[i*2+1];
+      const aggA = r1.scoreA + r2.scoreB;
+      const aggB = r1.scoreB + r2.scoreA;
+      let winner, penA = null, penB = null;
+      if      (aggA > aggB) winner = a;
+      else if (aggB > aggA) winner = b;
+      else {
+        const pen = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: 5200+i, penalties: true, homeAdvantage: false }]);
+        penA = pen[0].penA; penB = pen[0].penB;
+        winner = (penA||0) >= (penB||0) ? a : b;
+      }
+      playoffMatches.push({ a, b, r1, r2, aggA, aggB, penA, penB, winner, legs: 2 });
+      playoffWinners.push(winner);
+    }
+    const playoffRound = { label: 'Play-In', matches: playoffMatches };
+
+    // ── Round of 16: top 8 direct + 8 playoff winners
+    _setProgress('Octavos de final…', 67);
+    // Seeded (1-8) vs unseeded (playoff winners) — no same-team clash
+    const direct = leagueTable.slice(0, 8);
+    const r16Bracket = [];
+    const pwShuffle = [...playoffWinners].sort(() => Math.random() - 0.5);
+    // Alternate: direct[0], pwShuffle[0], direct[1], pwShuffle[1]...
+    for (let i = 0; i < 8; i++) { r16Bracket.push(direct[i]); r16Bracket.push(pwShuffle[i]); }
+
+    const koData = await _simulateCopa_internal(r16Bracket, { idaVuelta: true, startPct: 67 });
+
+    return {
+      format: 'ucl-league',
+      champion: koData.champion,
+      leagueTable,
+      leagueMatches: allFx,
+      playoffRound,
+      koRounds: koData.rounds,
+      teams: _teams,
+    };
+  }
+
   // ── CHAMPIONS ────────────────────────────────────────────
   async function _simulateChampions() {
     const GRP_SIZE = 4;
@@ -1718,12 +2807,102 @@ const TRN = (() => {
     return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
-  // ── COPA GRUPOS (Fase de Grupos + Eliminatoria) ──────────────────────────
-  async function _simulateCopaGrupos() {
-    const result = await _simulateChampions();
-    result.format = 'copa';
-    result.copaMode = 'groups';
-    return result;
+  // ── WORLD CUP 2026 — 48 teams, 12 groups → 32 team KO bracket ───────────
+  // Format: 12 groups of 4. Top 2 from each group (24) + 8 best 3rd-placed = 32
+  // KO: R32 → R16 → QF → SF → 3rd place → Final. Single-leg, ET+pen.
+  async function _simulateWC2026() {
+    const GRP_SIZE = 4;
+    const groups = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: Math.ceil(s.length / GRP_SIZE) }, (_, g) => s.slice(g * GRP_SIZE, (g + 1) * GRP_SIZE));
+    })();
+
+    // ── Group stage ───────────────────────────────────────────────────────
+    const totalGroups = groups.length;
+    const groupData   = [];
+
+    for (let g = 0; g < groups.length; g++) {
+      const grpPct = 5 + Math.round((g / totalGroups) * 55);
+      _setProgress(`${t('trn-progress-groups')} (${g + 1}/${totalGroups})`, grpPct);
+      const grp   = groups[g];
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idxG  = {};
+      table.forEach((r, i) => { idxG[r.slug] = i; });
+
+      const grpFixtures = [];
+      for (let i = 0; i < grp.length; i++)
+        for (let j = i + 1; j < grp.length; j++)
+          grpFixtures.push({ a: grp[i], b: grp[j] });
+
+      const specs = grpFixtures.map((f, i) => ({
+        teamA: f.a.slug, teamB: f.b.slug,
+        eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: (g + 1) * 300 + i, penalties: false,
+        ovrA: f.a.ovr || null, ovrB: f.b.ovr || null,
+        homeAdvantage: false,
+      }));
+      const res = await _bulkSim(specs);
+      grpFixtures.forEach((f, i) => {
+        const r = res[i];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB;
+        f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || [];
+        f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idxG[f.a.slug]];
+        const rB = table[idxG[f.b.slug]];
+        rA.p++; rB.p++;
+        rA.gf += r.scoreA; rA.ga += r.scoreB;
+        rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if      (r.scoreA > r.scoreB) { rA.w++; rA.pts += 3; rB.l++; }
+        else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 3; rA.l++; }
+        else                          { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      // Stamp group label on each row (used for bracket display)
+      const grpLabel = String.fromCharCode(65 + g);
+      table.forEach((r, i) => { r._grp = grpLabel; r._grpPos = i; });
+      groupData.push({ label: `${t('trn-draw-group-prefix')}${grpLabel}`, table, matches: grpFixtures });
+    }
+
+    // ── Collect 32 qualifiers ─────────────────────────────────────────────
+    const groupWinners = groupData.map(g => g.table[0]);   // 12
+    const groupRunners = groupData.map(g => g.table[1]);   // 12
+    // Rank all 3rd-placed teams by pts > GD > GF, take best 8
+    const thirds = groupData.map(g => g.table[2])
+      .sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+    const bestThirds  = thirds.slice(0, 8);   // 8
+    // thirds 9-12 are eliminated
+    thirds.slice(8).forEach(t => { t.status = 'out'; });
+
+    // Mark statuses for group table coloring
+    groupWinners.forEach(t  => { t.status = 'direct'; });
+    groupRunners.forEach(t  => { t.status = 'direct'; });
+    thirds.slice(0, 8).forEach(t => { t.status = 'playoff'; });  // best thirds → advance
+    thirds.slice(8).forEach(t   => { t.status = 'out'; });
+    groupData.forEach(g => { if (g.table[3]) g.table[3].status = 'out'; });
+
+    // ── Build R32 bracket (seeded: winners don't face each other in round 1) ──
+    // 12 winners vs 12 opponents drawn from runners∪thirds
+    // remaining 8 teams (all from runners∪thirds) pair among themselves
+    const shuffledWinners  = [...groupWinners].sort(() => Math.random() - 0.5);
+    const shuffledOthers   = [...groupRunners, ...bestThirds].sort(() => Math.random() - 0.5);
+    const winnersOpponents = shuffledOthers.slice(0, 12);
+    const remainingOthers  = shuffledOthers.slice(12);   // 8 teams
+
+    _setProgress(t('trn-progress-ko'), 65);
+    const r32 = [];
+    for (let i = 0; i < 12; i++) r32.push(shuffledWinners[i], winnersOpponents[i]);
+    for (let i = 0; i < 8;  i += 2) r32.push(remainingOthers[i], remainingOthers[i + 1]);
+
+    const koData = await _simulateCopa_internal(r32, { idaVuelta: false, startPct: 65 });
+
+    return {
+      format:     'champions',
+      champion:   koData.champion,
+      groups:     groupData,
+      koRounds:   koData.rounds,
+      thirdPlace: koData.thirdPlace || null,
+      teams:      _teams,
+    };
   }
 
   // ── COPA GRUPOS (Fase de Grupos + Eliminatoria) ──────────────────────────
@@ -1743,7 +2922,37 @@ const TRN = (() => {
     };
     let bracket = [...teamList];
     const rounds = [];
-    const totalRounds = Math.ceil(Math.log2(teamList.length));
+
+    // ── Handle non-power-of-2 bracket sizes with a play-in round ──────────
+    const _isPow2 = n => n > 0 && (n & (n - 1)) === 0;
+    if (!_isPow2(bracket.length) && bracket.length > 1) {
+      const n = bracket.length;
+      const prevPow2 = Math.pow(2, Math.floor(Math.log2(n)));
+      const playInCount = (n - prevPow2) * 2;  // these teams compete in play-in
+      const byeTeams = bracket.slice(0, n - playInCount);         // top seeds get byes
+      const playInTeams = bracket.slice(n - playInCount);        // bottom seeds play in
+      _setProgress(`${t('trn-progress-ko')} — play-in…`, startPct);
+      const specs = [];
+      for (let i = 0; i < playInTeams.length; i += 2) {
+        const a = playInTeams[i], b = playInTeams[i + 1];
+        specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: 9999+i, penalties: true, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: false });
+      }
+      const results = await _bulkSim(specs);
+      const playInWinners = [];
+      const playInMatches = [];
+      for (let i = 0; i < playInTeams.length; i += 2) {
+        const a = playInTeams[i], b = playInTeams[i + 1];
+        const r = results[i / 2];
+        const winner = (r.scoreA + (r.penA||0)) >= (r.scoreB + (r.penB||0)) ? a : b;
+        playInMatches.push({ a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB, scorersA: r.scorersA||[], scorersB: r.scorersB||[], mom: r.mom||null, stats: r.stats||null, winner, legs: 1 });
+        playInWinners.push(winner);
+      }
+      rounds.push({ label: 'Play-in', matches: playInMatches });
+      bracket = [...byeTeams, ...playInWinners];
+    }
+    // ──────────────────────────────────────────────────────────────────────
+
+    const totalRounds = Math.ceil(Math.log2(bracket.length));
     let roundsDone = 0;
 
     while (bracket.length > 1) {
@@ -1813,7 +3022,30 @@ const TRN = (() => {
     if (!champSlug) return '';
     const path = [];
 
-    if (data.format === 'champions' || (data.format === 'copa' && data.groups)) {
+    if (data.format === 'ucl-league') {
+      // League phase: show champion's position + W/D/L record in 8 games
+      const row = (data.leagueTable || []).find(r => r.slug === champSlug);
+      if (row) {
+        const leagueMatches = (data.leagueMatches || []).filter(m => m.home?.slug === champSlug || m.away?.slug === champSlug);
+        leagueMatches.forEach(m => {
+          const isHome = m.home?.slug === champSlug;
+          const opp  = isHome ? m.away : m.home;
+          const gfC  = isHome ? m.scoreA : m.scoreB;
+          const gaC  = isHome ? m.scoreB : m.scoreA;
+          path.push({ round: 'Fase de Liga', opp, gfC, gaC, result: gfC > gaC ? 'w' : gaC > gfC ? 'l' : 'd', legs: 1, penA: null });
+        });
+      }
+      // Playoff if champion came through it
+      if (data.playoffRound) {
+        data.playoffRound.matches.forEach(m => {
+          const isA = m.a?.slug === champSlug, isB = m.b?.slug === champSlug;
+          if (!isA && !isB) return;
+          const opp = isA ? m.b : m.a;
+          path.push({ round: 'Playoff', opp, gfC: isA ? m.aggA : m.aggB, gaC: isA ? m.aggB : m.aggA,
+            result: m.winner?.slug === champSlug ? 'w' : 'l', legs: 2, penA: m.penA, penB: m.penB, isA, aggA: m.aggA, aggB: m.aggB });
+        });
+      }
+    } else if (data.format === 'champions' || (data.format === 'copa' && data.groups)) {
       // Group stage matches
       const champGroup = (data.groups || []).find(g => g.table.some(r => r.slug === champSlug));
       if (champGroup) {
@@ -1958,30 +3190,6 @@ const TRN = (() => {
     </div>`;
   }
 
-  // ── Calendar match card helper ──────────────────────────
-  function _matchCard(m, nameA, nameB, score) {
-    const idx = m._cacheIdx ?? 0;
-    const slugA = m.a?.slug, slugB = m.b?.slug;
-    const bA = _badge(slugA) || '/img/badges/_placeholder.svg';
-    const bB = _badge(slugB) || '/img/badges/_placeholder.svg';
-    const isWinA = m.winner?.slug && m.winner.slug === slugA;
-    const isWinB = m.winner?.slug && m.winner.slug === slugB;
-    const scorersA = (m.scorersA || (m.r1 ? [...(m.r1.scorersA||[]),...(m.r2?.scorersB||[])] : [])).map(s=>_esc(s.name)).join(', ');
-    const scorersB = (m.scorersB || (m.r1 ? [...(m.r1.scorersB||[]),...(m.r2?.scorersA||[])] : [])).map(s=>_esc(s.name)).join(', ');
-    return `<div class="trn-cal-match${isWinA ? ' trn-cal-win-a' : isWinB ? ' trn-cal-win-b' : ''}" data-match-idx="${idx}">
-      <div class="trn-cal-team-side">
-        <img class="trn-cal-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-        <span class="trn-cal-tname${isWinA ? ' trn-q' : ''}">${_esc(nameA)}</span>
-      </div>
-      <div class="trn-cal-score">${score}</div>
-      <div class="trn-cal-team-side trn-cal-side-right">
-        <span class="trn-cal-tname${isWinB ? ' trn-q' : ''}">${_esc(nameB)}</span>
-        <img class="trn-cal-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-      </div>
-      ${(scorersA || scorersB) ? `<div class="trn-cal-scorers"><span class="trn-cal-scorer-a">${scorersA}</span><span class="trn-cal-scorer-sep"></span><span class="trn-cal-scorer-b">${scorersB}</span></div>` : ''}
-    </div>`;
-  }
-
   // ── Dashboard rendering ──────────────────────────────────
   function _renderDashboard() {
     if (!_data) return;
@@ -1990,6 +3198,10 @@ const TRN = (() => {
     const wizard = $('trn-wizard');
     if (wizard) hide(wizard);
     show($('trn-dashboard'));
+
+    // Inject format-specific trophy into poster
+    const trophyEl = document.querySelector('.trn-champ-trophy-big');
+    if (trophyEl) trophyEl.innerHTML = _trophySVG(_data.format, 'ps');
 
     // Champion poster
     const champ = _data.champion;
@@ -2000,13 +3212,15 @@ const TRN = (() => {
     $('trn-champ-format').textContent =
       _data.format === 'liga' ? '🏆 Liga' :
       (_data.format === 'copa' && _data.copaMode === 'groups') ? '🏆 Copa × Grupos' :
-      _data.format === 'copa' ? '🏆 Copa' : '⭐ Champions';
+      _data.format === 'copa' ? '🏆 Copa' :
+      _data.format === 'ucl-league' ? '⭐ Champions League 2025/26' :
+      (_activePreset === 'wc2026') ? '🌍 FIFA World Cup 2026' : '⭐ Champions';
 
     // Runner-up on poster
     const runnerUpEl = $('trn-champ-runnerup');
     if (runnerUpEl) {
       let ru = null;
-      if (_data.format === 'copa' || _data.format === 'champions') {
+      if (_data.format === 'copa' || _data.format === 'champions' || _data.format === 'ucl-league') {
         const finalRounds = _data.koRounds || _data.rounds;
         const fin = finalRounds?.[finalRounds.length - 1]?.matches[0];
         if (fin) ru = fin.winner?.slug === fin.a?.slug ? fin.b : fin.a;
@@ -2052,6 +3266,47 @@ const TRN = (() => {
     if (!el || !_data) return;
     const d = _data;
     let html = '';
+
+    if (d.format === 'ucl-league') {
+      html = `<h3 class="trn-section-h">Fase de Liga — ${(d.leagueMatches||[]).length} partidos</h3>`;
+      const lm = d.leagueMatches || [];
+      const batchSize = 36;
+      const numBatches = Math.ceil(lm.length / batchSize) || 1;
+      for (let bi = 0; bi < numBatches; bi++) {
+        const batch = lm.slice(bi * batchSize, (bi + 1) * batchSize);
+        const openAttr = bi === 0 ? ' open' : '';
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${bi + 1} <span class="trn-jornada-cnt">${batch.length}</span></summary>`;
+        batch.forEach(m => { html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`); });
+        html += '</details>';
+      }
+      if (d.playoffRound?.matches?.length) {
+        html += `<h3 class="trn-section-h trn-section-h-mt">🔵 Play-In (9-24)</h3>`;
+        html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Play-In <span class="trn-jornada-cnt">${d.playoffRound.matches.length}</span></summary>`;
+        d.playoffRound.matches.forEach(m => {
+          const penStr = m.penA != null ? ` (p: ${m.penA}–${m.penB})` : '';
+          html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
+        });
+        html += '</details>';
+      }
+      if (d.koRounds?.length) {
+        html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase Eliminatoria</h3>`;
+        [...d.koRounds].reverse().forEach((r, ri) => {
+          const openAttr = ri === 0 ? ' open' : '';
+          html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+          r.matches.forEach(m => {
+            const penStr = m.penA != null ? ` (p: ${m.penA}–${m.penB})` : '';
+            if (m.legs === 2) {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
+            } else {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+            }
+          });
+          html += '</details>';
+        });
+      }
+      el.innerHTML = html;
+      return;
+    }
 
     if (d.format === 'liga') {
       html = `<h3 class="trn-section-h">${t('trn-cal-calendar-liga')}</h3>`;
@@ -2200,8 +3455,78 @@ const TRN = (() => {
         </div>`;
       return;
     }
-    const rounds = d.koRounds || d.rounds || [];
-    el.innerHTML = `<div class="trn-bkt-scroll">${_renderVisualBracket(rounds)}</div>`;
+    // ── UCL League Phase — Playoff + KO bracket ──────────
+    if (d.format === 'ucl-league') {
+      let html = '';
+      if (d.playoffRound?.matches?.length) {
+        html += `<h3 class="trn-section-h">\uD83D\uDD35 Play-In \u2014 Clasificaci\u00F3n a Octavos</h3>
+          <div class="trn-bkt-playoff-grid">`;
+        d.playoffRound.matches.forEach(m => {
+          const isWinA = m.winner?.slug === m.a?.slug;
+          const bA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
+          const bB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
+          const penStr = m.penA != null ? ` (${m.penA}\u2013${m.penB}p)` : '';
+          const idx = m._cacheIdx ?? 0;
+          html += `<div class="trn-bkt-po-card" data-match-idx="${idx}">
+            <div class="trn-bkt-po-team${isWinA ? ' trn-bkt-winner' : ' trn-bkt-loser'}">
+              <img class="trn-bkt-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span class="trn-bkt-tname">${_esc(_tLabel(m.a) || '\u2014')}</span>
+              ${isWinA ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
+            </div>
+            <div class="trn-bkt-po-score">${m.aggA}\u2013${m.aggB}${penStr}</div>
+            <div class="trn-bkt-po-team${!isWinA ? ' trn-bkt-winner' : ' trn-bkt-loser'}">
+              <img class="trn-bkt-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span class="trn-bkt-tname">${_esc(_tLabel(m.b) || '\u2014')}</span>
+              ${!isWinA ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
+            </div>
+          </div>`;
+        });
+        html += `</div>`;
+      }
+      html += `<h3 class="trn-section-h trn-section-h-mt">\u26BD Fase Eliminatoria</h3>`;
+      html += `<div class="trn-bkt-scroll">${_renderVisualBracket(d.koRounds || [])}</div>`;
+      el.innerHTML = html;
+      return;
+    }
+
+    let allRounds = d.koRounds || d.rounds || [];
+    // Separate an optional Play-in round from the main KO tree
+    // (Play-in + same-size next round breaks _computeBracketPositions)
+    const playInRound = allRounds[0]?.label === 'Play-in' ? allRounds[0] : null;
+    const koRounds = playInRound ? allRounds.slice(1) : allRounds;
+
+    let html = '';
+    if (playInRound && playInRound.matches.length) {
+      html += `<h3 class="trn-section-h">🔵 Play-in</h3>
+        <div class="trn-bkt-playoff-grid">`;
+      playInRound.matches.forEach(m => {
+        const isWinA = m.winner?.slug === m.a?.slug;
+        const bA = _badge(m.a?.slug) || '/img/badges/_placeholder.svg';
+        const bB = _badge(m.b?.slug) || '/img/badges/_placeholder.svg';
+        const penStr = m.penA != null ? ` (${m.penA}\u2013${m.penB}p)` : '';
+        const score = m.legs === 2
+          ? `${m.aggA}\u2013${m.aggB}${penStr}`
+          : `${m.scoreA ?? '?'}\u2013${m.scoreB ?? '?'}${penStr}`;
+        const idx = m._cacheIdx ?? 0;
+        html += `<div class="trn-bkt-po-card" data-match-idx="${idx}">
+          <div class="trn-bkt-po-team${isWinA ? ' trn-bkt-winner' : ' trn-bkt-loser'}">
+            <img class="trn-bkt-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+            <span class="trn-bkt-tname">${_esc(_tLabel(m.a) || '\u2014')}</span>
+            ${isWinA ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
+          </div>
+          <div class="trn-bkt-po-score">${score}</div>
+          <div class="trn-bkt-po-team${!isWinA ? ' trn-bkt-winner' : ' trn-bkt-loser'}">
+            <img class="trn-bkt-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+            <span class="trn-bkt-tname">${_esc(_tLabel(m.b) || '\u2014')}</span>
+            ${!isWinA ? '<span class="trn-bkt-win-star">\u2605</span>' : ''}
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+      if (koRounds.length) html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase Eliminatoria</h3>`;
+    }
+    html += `<div class="trn-bkt-scroll">${_renderVisualBracket(koRounds)}</div>`;
+    el.innerHTML = html;
   }
 
   // ── Swipe gestures on dashboard ──────────────────────────
@@ -2257,6 +3582,74 @@ const TRN = (() => {
 
       // Champion path (bonus section — doesn't fail the whole render)
       try { html += _renderChampionPath(d); } catch(_) {}
+
+      // ── UCL League Phase format ────────────────────────────
+      if (d.format === 'ucl-league') {
+        // Full 36-team league table
+        html += `<h3 class="trn-section-h trn-section-h-mt">📊 Clasificación — Fase de Liga</h3>`;
+        html += `<div class="trn-ucl-table-wrap"><table class="trn-ucl-table">
+          <thead><tr>
+            <th>#</th><th></th><th>Club</th>
+            <th title="Partidos jugados">PJ</th><th title="Victorias">G</th><th title="Empates">E</th><th title="Derrotas">P</th>
+            <th title="Goles a favor">GF</th><th title="Goles en contra">GC</th><th title="Diferencia">DIF</th><th title="Puntos">PTS</th>
+          </tr></thead><tbody>`;
+        const statusColor = { direct:'#2a9', playoff:'#c8a030', out:'rgba(255,255,255,.25)' };
+        const statusLabel = { direct:'Octavos', playoff:'Playoff', out:'Eliminado' };
+        d.leagueTable.forEach((r, i) => {
+          const gd = r.gf - r.ga;
+          const sc = statusColor[r.status] || '';
+          const sl = statusLabel[r.status] || '';
+          let sep = '';
+          if (i === 7)  sep = ' trn-ucl-sep-direct';
+          if (i === 23) sep = ' trn-ucl-sep-out';
+          html += `<tr class="trn-ucl-row${sep}" style="--row-border:${sc}" title="${sl}">
+            <td class="trn-ucl-pos">${i+1}</td>
+            <td class="trn-ucl-badge">${_badgeImg(r.slug,'trn-mini-badge')}</td>
+            <td class="trn-ucl-name">${_esc(_tLabel(r))}</td>
+            <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
+            <td>${r.gf}</td><td>${r.ga}</td>
+            <td style="color:${gd>0?'#7adf7a':gd<0?'#f06':''}">${gd>0?'+':''}${gd}</td>
+            <td class="trn-ucl-pts">${r.pts}</td>
+          </tr>`;
+        });
+        html += `</tbody></table></div>`;
+
+        // Legend
+        html += `<div class="trn-ucl-legend">
+          <span style="border-left:3px solid #2a9;padding-left:.4rem">Directo a Octavos (1-8)</span>
+          <span style="border-left:3px solid #c8a030;padding-left:.4rem">Play-In (9-24)</span>
+          <span style="border-left:3px solid rgba(255,255,255,.25);padding-left:.4rem">Eliminados (25-36)</span>
+        </div>`;
+
+        // Playoff round
+        if (d.playoffRound) {
+          html += `<h3 class="trn-section-h trn-section-h-mt">🔵 Play-In (ida y vuelta)</h3>`;
+          html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Play-In <span class="trn-jornada-cnt">${d.playoffRound.matches.length}</span></summary>`;
+          d.playoffRound.matches.forEach(m => {
+            const penStr = m.penA != null ? ` (p: ${m.penA}–${m.penB})` : '';
+            html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
+          });
+          html += '</details>';
+        }
+
+        // KO rounds
+        html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase eliminatoria</h3>`;
+        [...(d.koRounds || [])].reverse().forEach((r, ri) => {
+          const openAttr = ri === 0 ? ' open' : '';
+          html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
+          r.matches.forEach(m => {
+            const penStr = m.penA != null && typeof m.penA === 'number' ? ` (p: ${m.penA}–${m.penB})` : '';
+            if (m.legs === 2) {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.aggA} – ${m.aggB}${penStr}`);
+            } else {
+              html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}${penStr}`);
+            }
+          });
+          html += '</details>';
+        });
+        el.innerHTML = html;
+        return;
+      }
 
       // Round results
       if (d.groups) {
@@ -2324,13 +3717,17 @@ const TRN = (() => {
   // ── Dream XI ─────────────────────────────────────────────
   async function _buildDreamXI(d) {
     // Build composite player score: goals×1 + MOM×2
+    // Guard: skip entries whose name is a placeholder (last word is all digits, or name is ≤2 chars)
+    const _validName = n => n && n.length > 2 && !/\s\d+$/.test(n) && !/^\d+$/.test(n);
     const pm = {};
     (d._scorersAll || d.pichichi || []).forEach(r => {
+      if (!_validName(r.name)) return;
       const k = r.name + '|' + r.teamSlug;
       if (!pm[k]) pm[k] = { name: r.name, team: r.team, teamSlug: r.teamSlug, era: r.era || '', goals: 0, mom: 0 };
       pm[k].goals += (r.goals || 0);
     });
     (d._momsAll || d.mvp || []).forEach(r => {
+      if (!_validName(r.name)) return;
       const k = r.name + '|' + r.teamSlug;
       if (!pm[k]) pm[k] = { name: r.name, team: r.team, teamSlug: r.teamSlug, era: r.era || '', goals: 0, mom: 0 };
       pm[k].mom += (r.count || 0);
@@ -2402,13 +3799,21 @@ const TRN = (() => {
         used.add(key);
       }
     }
-    // Pass 2: fill gaps using remaining scorers/MOM in score order
+    // Pass 2: fill gaps using remaining scorers/MOM — only if their position group matches
+    // (prevents field players being placed in the GK slot; those fall through to Pass 3)
     const remaining = tagged.filter(p => !used.has(p.name + '|' + p.teamSlug));
     for (const g of ['gk','def','mid','att']) {
-      while (selected[g].length < quotas[g] && remaining.length) {
-        const p = remaining.shift();
-        selected[g].push({ ...p, pos: '?' });
-        used.add(p.name + '|' + p.teamSlug);
+      let ri = 0;
+      while (selected[g].length < quotas[g] && ri < remaining.length) {
+        const p = remaining[ri];
+        const fits = p.group === g || (p.group === 'unk' && g !== 'gk');
+        if (fits) {
+          selected[g].push({ ...p, pos: p.pos || '?' });
+          used.add(p.name + '|' + p.teamSlug);
+          remaining.splice(ri, 1);
+        } else {
+          ri++;
+        }
       }
     }
     // Pass 3: fill any still-empty slots from supplementary lineup pool
@@ -2475,7 +3880,8 @@ const TRN = (() => {
     _teams.forEach(t => { totals[t.slug] = { name: _tLabel(t), slug: t.slug, gf: 0, ga: 0, mp: 0, w: 0 }; });
 
     allMatches.forEach(m => {
-      const sa = m.scoreA ?? 0, sb = m.scoreB ?? 0;
+      const sa = m.legs === 2 ? (m.aggA ?? 0) : (m.scoreA ?? 0);
+      const sb = m.legs === 2 ? (m.aggB ?? 0) : (m.scoreB ?? 0);
       const slugA = m.a?.slug, slugB = m.b?.slug;
       if (totals[slugA]) { totals[slugA].gf += sa; totals[slugA].ga += sb; totals[slugA].mp++; if (sa > sb) totals[slugA].w++; }
       if (totals[slugB]) { totals[slugB].gf += sb; totals[slugB].ga += sa; totals[slugB].mp++; if (sb > sa) totals[slugB].w++; }
@@ -2582,19 +3988,23 @@ const TRN = (() => {
   function _getAllMatches(d) {
     const extra = d.thirdPlace ? [d.thirdPlace] : [];
     if (d.format === 'liga') return d.matches;
+    if (d.format === 'ucl-league') {
+      const playoff = d.playoffRound ? d.playoffRound.matches : [];
+      const ko      = (d.koRounds || []).flatMap(r => r.matches);
+      return [...(d.leagueMatches || []), ...playoff, ...ko];
+    }
     if (d.groups || d.koRounds) {
-      // Copa groups mode or old Champions
       const grpMatches = (d.groups || []).flatMap(g => g.matches);
       const koMatches  = (d.koRounds || []).flatMap(r => r.matches);
       return [...grpMatches, ...koMatches, ...extra];
     }
-    // Copa KO mode
     return [...(d.rounds || []).flatMap(r => r.matches), ...extra];
   }
 
   // ── Start over ───────────────────────────────────────────
   function startOver() {
     _fmt = null; _teams = []; _draw = []; _groupsDraw = []; _data = null; _tab = 'summary'; _matchCache = []; _badgeCache = {}; _modalIdx = -1;
+    _activePreset = null; _uclFixtures = null; _potEditMode = false; _potEditSel = null;
     // Reset simulation state so step 3 is clean on re-entry
     _stopTrnLoadCycle();
     hide($('trn-progress'));
@@ -2602,6 +4012,8 @@ const TRN = (() => {
     const pb = $('trn-progress-bar');
     if (pb) pb.style.width = '0%';
     hide($('trn-dashboard'));
+    const conf = $('trn-preset-confirm'); if (conf) hide(conf);
+    const ucl  = $('trn-ucl-draw');      if (ucl)  hide(ucl);
     const wizard = $('trn-wizard');
     if (wizard) show(wizard);
     document.querySelectorAll('.trn-fmt-card').forEach(c => c.classList.remove('trn-fmt-selected'));
@@ -2819,6 +4231,16 @@ const TRN = (() => {
       const btn = e.target.closest('.trn-ll-btn');
       if (btn) loadRealLeague(btn.dataset.league);
     });
+    // Catalog DB browser
+    $('trn-btn-catalog')?.addEventListener('click', () => toggleCatalogBrowser());
+    $('trn-catalog-browser')?.addEventListener('click', e => {
+      const item = e.target.closest('.trn-cb-item');
+      if (!item) return;
+      const { slug, name, badge, era } = item.dataset;
+      if (_teams.some(t => t.slug === slug)) { removeTeam(_teams.findIndex(t => t.slug === slug)); return; }
+      addTeam(slug, name, era || '', badge || '');
+      _refreshCatalogBrowserState($('trn-catalog-browser'));
+    });
     $('trn-dashboard')?.addEventListener('click', e => {
       const m = e.target.closest('[data-match-idx]');
       if (m) openMatchModal(+m.dataset.matchIdx);
@@ -2871,6 +4293,10 @@ const TRN = (() => {
     loadRealLeague,
     openLeagueLoader,
     closeLeagueLoader,
+    loadPreset,
+    cancelPreset,
+    runPresetSimulation,
+    startUCLDraw,
   };
 
 })();

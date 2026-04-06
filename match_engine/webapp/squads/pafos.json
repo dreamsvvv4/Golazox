@@ -1,0 +1,130 @@
+{
+  "slug": "pafos",
+  "id": "pafos",
+  "name": "Pafos FC",
+  "nameEs": "Pafos FC",
+  "nameEn": "Pafos FC",
+  "group": "club",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 70,
+        "goalkeeping": 69
+      },
+      "players": [
+        {
+          "name": "Yannick Thoelen",
+          "position": "GK",
+          "marketValue": 3712941,
+          "rating": 69
+        },
+        {
+          "name": "Panagiotis Koutroubis",
+          "position": "GK",
+          "marketValue": 3427653,
+          "rating": 67
+        },
+        {
+          "name": "Christos Andreou",
+          "position": "GK",
+          "marketValue": 3422888,
+          "rating": 65
+        },
+        {
+          "name": "Artem Favorov",
+          "position": "CB",
+          "marketValue": 3547820,
+          "rating": 70
+        },
+        {
+          "name": "Pa Konate",
+          "position": "CB",
+          "marketValue": 3758787,
+          "rating": 70
+        },
+        {
+          "name": "Cosmin Moti",
+          "position": "CB",
+          "marketValue": 3336707,
+          "rating": 69
+        },
+        {
+          "name": "Nana Asante",
+          "position": "CB",
+          "marketValue": 3853700,
+          "rating": 68
+        },
+        {
+          "name": "Sagna Gilles",
+          "position": "RB",
+          "marketValue": 3039994,
+          "rating": 69
+        },
+        {
+          "name": "Nikola Ninaj",
+          "position": "LB",
+          "marketValue": 3736429,
+          "rating": 69
+        },
+        {
+          "name": "Marko Bakic",
+          "position": "DM",
+          "marketValue": 2818569,
+          "rating": 70
+        },
+        {
+          "name": "Mihail Caimacov",
+          "position": "CM",
+          "marketValue": 3633479,
+          "rating": 70
+        },
+        {
+          "name": "Aymen Tahar",
+          "position": "CM",
+          "marketValue": 3129426,
+          "rating": 69
+        },
+        {
+          "name": "Aleksandar Boljevic",
+          "position": "AM",
+          "marketValue": 3583833,
+          "rating": 71
+        },
+        {
+          "name": "Stipe Perica",
+          "position": "ST",
+          "marketValue": 3161512,
+          "rating": 71
+        },
+        {
+          "name": "Benjamin Tetteh",
+          "position": "LW",
+          "marketValue": 3771874,
+          "rating": 70
+        },
+        {
+          "name": "Renaud Emond",
+          "position": "RW",
+          "marketValue": 3360279,
+          "rating": 69
+        },
+        {
+          "name": "Orlando Sa",
+          "position": "ST",
+          "marketValue": 4020818,
+          "rating": 69
+        },
+        {
+          "name": "Ivan Trickovski",
+          "position": "CM",
+          "marketValue": 2731948,
+          "rating": 68
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/pafos.png"
+}

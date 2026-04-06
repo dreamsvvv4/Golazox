@@ -1,6 +1,33 @@
 {
   "slug": "united-states",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        { "name": "Matt Turner",       "position": "GK" },
+        { "name": "Joe Scally",         "position": "RB" },
+        { "name": "Chris Richards",     "position": "CB" },
+        { "name": "Tim Ream",           "position": "CB" },
+        { "name": "Antonee Robinson",   "position": "LB" },
+        { "name": "Tyler Adams",        "position": "DM" },
+        { "name": "Weston McKennie",    "position": "CM" },
+        { "name": "Yunus Musah",        "position": "CM" },
+        { "name": "Christian Pulisic",  "position": "RW" },
+        { "name": "Ricardo Pepi",       "position": "ST" },
+        { "name": "Tim Weah",           "position": "LW" },
+        { "name": "Ethan Horvath",      "position": "GK" },
+        { "name": "Walker Zimmerman",   "position": "CB" },
+        { "name": "Miles Robinson",     "position": "CB" },
+        { "name": "DeJuan Jones",       "position": "LB" },
+        { "name": "Brenden Aaronson",   "position": "CM" },
+        { "name": "Giovanni Reyna",     "position": "AM" },
+        { "name": "Josh Sargent",       "position": "ST" },
+        { "name": "Folarin Balogun",    "position": "ST" }
+      ],
+      "ratings": { "attack": 76, "midfield": 74, "defense": 72, "goalkeeping": 74 },
+      "source": "Manual — USMNT 2025"
+    }
+  },
   "badgeLocalPath": "/img/badges/united-states.png",
   "group": "🌍 Selecciones",
   "nameEn": "United States",

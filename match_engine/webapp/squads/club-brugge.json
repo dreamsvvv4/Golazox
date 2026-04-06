@@ -1,6 +1,60 @@
 {
   "slug": "club-brugge",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "found": true,
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dani van den Heuvel",
+          "position": "GK"
+        },
+        {
+          "name": "Faitout Maouassa",
+          "position": "RB"
+        },
+        {
+          "name": "Zaid Romero",
+          "position": "CB"
+        },
+        {
+          "name": "Hugo Siquet",
+          "position": "CB"
+        },
+        {
+          "name": "Denis Odoi",
+          "position": "LB"
+        },
+        {
+          "name": "Lynnt Audoor",
+          "position": "DM"
+        },
+        {
+          "name": "Ardon Jashari",
+          "position": "CM"
+        },
+        {
+          "name": "Christos Tzolis",
+          "position": "CM"
+        },
+        {
+          "name": "Romeo Vermant",
+          "position": "RW"
+        },
+        {
+          "name": "Kamal Sowah",
+          "position": "ST"
+        },
+        {
+          "name": "Roman Yaremchuk",
+          "position": "LW"
+        }
+      ],
+      "ratings": null,
+      "source": "Wikipedia — \"2024–25 Club Brugge KV season\"",
+      "teamLabel": "club-brugge (2025)"
+    }
+  },
   "badgeLocalPath": "/img/badges/club-brugge.png",
   "group": "🌍 Otros",
   "nameEs": "Club Brujas",

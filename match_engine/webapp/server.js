@@ -213,7 +213,7 @@ app.get('/partido/:matchup', (req, res) => {
   const raw = req.params.matchup || '';
   // Parse "slugA:eraA-vs-slugB:eraB"  or  "slugA-vs-slugB"
   const vsIdx = raw.indexOf('-vs-');
-  if (vsIdx === -1) return res.redirect(301, '/');
+  if (vsIdx === -1) return res.status(404).send('Not Found');
   const partA = raw.slice(0, vsIdx);   // e.g. "real-madrid:2002" or "real-madrid"
   const partB = raw.slice(vsIdx + 4);  // e.g. "barcelona:2009"
   const [slugA, eraA = ''] = partA.split(':');
@@ -221,8 +221,8 @@ app.get('/partido/:matchup', (req, res) => {
 
   const entryA = CATALOG.find(c => c.slug === slugA);
   const entryB = CATALOG.find(c => c.slug === slugB);
-  // If either team is unknown, fall back to homepage
-  if (!entryA || !entryB) return res.redirect(301, '/');
+  // If either team is unknown, return 404 so Google drops the URL from its crawl queue
+  if (!entryA || !entryB) return res.status(404).send('Not Found');
 
   const nameA = entryA.nameEs || entryA.nameEn;
   const nameB = entryB.nameEs || entryB.nameEn;

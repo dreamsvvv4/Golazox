@@ -1,0 +1,130 @@
+{
+  "slug": "bodo-glimt",
+  "id": "bodo-glimt",
+  "name": "Bodø/Glimt",
+  "nameEs": "Bodø/Glimt",
+  "nameEn": "Bodo/Glimt",
+  "group": "club",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Nikita Haikin",
+          "position": "GK",
+          "marketValue": 3063346,
+          "rating": 73
+        },
+        {
+          "name": "Simen Bolkan Nordli",
+          "position": "GK",
+          "marketValue": 3378477,
+          "rating": 70
+        },
+        {
+          "name": "Sondre Ferstad",
+          "position": "GK",
+          "marketValue": 3239474,
+          "rating": 69
+        },
+        {
+          "name": "Brice Wembangomo",
+          "position": "CB",
+          "marketValue": 3141740,
+          "rating": 74
+        },
+        {
+          "name": "Marius Lode",
+          "position": "CB",
+          "marketValue": 3985481,
+          "rating": 75
+        },
+        {
+          "name": "Victor Drosin",
+          "position": "CB",
+          "marketValue": 3293022,
+          "rating": 74
+        },
+        {
+          "name": "Stian Gregersen",
+          "position": "CB",
+          "marketValue": 3207102,
+          "rating": 73
+        },
+        {
+          "name": "Lars-Cato Bolme",
+          "position": "RB",
+          "marketValue": 3497144,
+          "rating": 73
+        },
+        {
+          "name": "Bergur Sigurdarson",
+          "position": "LB",
+          "marketValue": 4283258,
+          "rating": 73
+        },
+        {
+          "name": "Patrick Berg",
+          "position": "DM",
+          "marketValue": 4250963,
+          "rating": 76
+        },
+        {
+          "name": "Ulrik Saltnes",
+          "position": "CM",
+          "marketValue": 3277040,
+          "rating": 75
+        },
+        {
+          "name": "Amahl Pellegrino",
+          "position": "LW",
+          "marketValue": 4464916,
+          "rating": 76
+        },
+        {
+          "name": "Kasper Høgh",
+          "position": "ST",
+          "marketValue": 3731742,
+          "rating": 77
+        },
+        {
+          "name": "Albert Grønbæk",
+          "position": "AM",
+          "marketValue": 4366472,
+          "rating": 76
+        },
+        {
+          "name": "Hugo Vetlesen",
+          "position": "RW",
+          "marketValue": 4082578,
+          "rating": 74
+        },
+        {
+          "name": "Per Christian Ulvestad",
+          "position": "CM",
+          "marketValue": 3943738,
+          "rating": 74
+        },
+        {
+          "name": "Runar Espejord",
+          "position": "ST",
+          "marketValue": 3000735,
+          "rating": 74
+        },
+        {
+          "name": "Joel Mugisha",
+          "position": "LW",
+          "marketValue": 3700387,
+          "rating": 73
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/fk-bod-glimt.png"
+}

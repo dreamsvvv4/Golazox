@@ -5524,14 +5524,685 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 }
 .trn-fmt-selected .trn-fmt-check { color: var(--neon); }
 
-.trn-num-teams-row {
+/* ── Preset official tournament cards ─────────────────────── */
+.trn-preset-section {
+  margin-bottom: 1.4rem;
+}
+.trn-preset-label {
+  font: 700 .72rem/1 var(--font);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: .75rem;
+}
+.trn-preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+.trn-preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-md);
+  padding: 1.2rem .9rem 1rem;
+  cursor: pointer;
+  color: inherit;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, background .2s, transform .15s, box-shadow .2s;
+}
+.trn-preset-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .22s ease;
+}
+.trn-preset-card[data-preset="ucl2026"]::before { background: #1a73e8; }
+.trn-preset-card[data-preset="wc2026"]::before  { background: #e8a020; }
+.trn-preset-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.32);
+}
+.trn-preset-card[data-preset="ucl2026"]:hover {
+  border-color: rgba(26,115,232,.5);
+  background: rgba(26,115,232,.07);
+}
+.trn-preset-card[data-preset="wc2026"]:hover {
+  border-color: rgba(232,160,32,.5);
+  background: rgba(232,160,32,.06);
+}
+.trn-preset-card:hover::before { transform: scaleX(1); }
+.trn-preset-trophy {
+  width: 6rem;
+  height: 6.5rem;
   display: flex;
   align-items: center;
-  gap: .85rem;
-  padding: .75rem 0 0;
-  border-top: 1px solid var(--border);
+  justify-content: center;
+  margin-bottom: .7rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.5));
+  transition: filter .3s, transform .3s;
+}
+.trn-trophy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+.trn-preset-card:hover .trn-preset-trophy {
+  transform: scale(1.07) translateY(-3px);
+}
+.trn-preset-card[data-preset="ucl2026"]:hover .trn-preset-trophy {
+  filter: drop-shadow(0 6px 18px rgba(160,170,180,.45)) drop-shadow(0 0 10px rgba(200,30,30,.35));
+  animation: trn-trophy-glow 1.4s ease-in-out infinite;
+}
+.trn-preset-card[data-preset="wc2026"]:hover .trn-preset-trophy {
+  filter: drop-shadow(0 6px 18px rgba(232,160,32,.5)) drop-shadow(0 0 12px rgba(255,80,0,.3));
+  animation: trn-trophy-glow 1.4s ease-in-out infinite;
+}
+.trn-preset-info { width: 100%; }
+.trn-preset-name {
+  font: 700 .9rem/1.2 var(--font);
+  color: var(--white);
+  margin-bottom: .15rem;
+}
+.trn-preset-season {
+  font: 400 .75rem/1 var(--font);
+  color: var(--grey);
+  margin-bottom: .35rem;
+}
+.trn-preset-meta {
+  font: 400 .68rem/1 var(--font);
+  color: rgba(255,255,255,.35);
+  letter-spacing: .02em;
+}
+.trn-preset-divider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 1.1rem 0 1rem;
+  color: var(--grey);
+  font: 400 .72rem/1 var(--font);
+}
+.trn-preset-divider::before,
+.trn-preset-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Preset confirm screen ─────────────────────────────────── */
+.trn-preset-confirm-header {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: .75rem 1rem .5rem;
+}
+.trn-preset-confirm-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 3.8rem;
+  height: 3.8rem;
+}
+.trn-preset-confirm-trophy {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.5));
+}
+
+/* ── Preset cards & trophy — mobile ───────────────────────── */
+@media (max-width: 480px) {
+  .trn-preset-grid {
+    gap: .5rem;
+  }
+  .trn-preset-card {
+    padding: .9rem .65rem .8rem;
+  }
+  .trn-preset-trophy {
+    width: 5rem;
+    height: 5.5rem;
+    margin-bottom: .5rem;
+  }
+  .trn-preset-name {
+    font-size: .8rem;
+  }
+  .trn-preset-season {
+    font-size: .7rem;
+  }
+  .trn-preset-meta {
+    font-size: .62rem;
+  }
+  /* Confirm screen: stack trophy + title vertically on small screens */
+  .trn-preset-confirm-header {
+    flex-direction: row;
+    align-items: center;
+    gap: .65rem;
+    padding: .6rem .75rem .4rem;
+  }
+  .trn-preset-confirm-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  /* WC groups: horizontal scrollable strip on mobile */
+  .trn-preset-groups-preview.trn-preset-groups-wc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: .45rem;
+    padding: 0 .75rem .5rem;
+    /* stretch to full wizard width ignoring parent padding */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+  .trn-preset-groups-wc .trn-pg-group {
+    flex: 0 0 112px;
+    scroll-snap-align: start;
+    padding: .5rem .52rem .45rem;
+  }
+  .trn-preset-groups-wc .trn-pg-label {
+    font-size: .68rem;
+    margin-bottom: .35rem;
+  }
+  .trn-preset-groups-wc .trn-pg-team {
+    gap: .3rem;
+    padding: .15rem 0;
+  }
+  .trn-preset-groups-wc .trn-pg-team .trn-mini-badge {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .trn-preset-groups-wc .trn-pg-team span {
+    font-size: .7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 78px;
+  }
+}
+@media (max-width: 360px) {
+  .trn-preset-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: .4rem;
+  }
+  .trn-preset-trophy {
+    width: 4rem;
+    height: 4.5rem;
+  }
+  .trn-preset-name {
+    font-size: .75rem;
+  }
+  .trn-preset-groups-wc .trn-pg-group {
+    flex: 0 0 100px;
+  }
+  .trn-preset-groups-wc .trn-pg-team span {
+    max-width: 68px;
+  }
+}
+.trn-preset-groups-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: .5rem;
+  margin: .6rem 0 1rem;
+  padding: 0 1rem;
+}
+/* WC has 12 groups — exactly 6 per row */
+.trn-preset-groups-wc {
+  grid-template-columns: repeat(6, 1fr);
+  gap: .65rem;
+  max-height: none;
+  overflow-y: visible;
+}
+/* hide scrollbar on mobile strip */
+.trn-preset-groups-wc::-webkit-scrollbar { display: none; }
+.trn-preset-groups-wc { scrollbar-width: none; }
+.trn-pg-group {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-sm);
+  padding: .65rem .7rem .6rem;
+}
+.trn-pg-label {
+  font: 700 .72rem/1 var(--font);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: .5rem;
+}
+.trn-pg-team {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .2rem 0;
+}
+.trn-pg-team .trn-mini-badge {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0;
+}
+.trn-pg-team span {
+  font: 400 .78rem/1.2 var(--font);
+  color: rgba(255,255,255,.88);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.trn-preset-confirm-actions {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  padding: .25rem 1rem .75rem;
   flex-wrap: wrap;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   UCL 2025/26  BROADCAST DRAW SCREEN
+   Dark metallic blue · gold · silver · broadcast TV aesthetic
+══════════════════════════════════════════════════════════════ */
+
+/* Starfield overlay */
+.trn-ucl-draw-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 8%,  rgba(255,255,255,.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 30%, rgba(255,255,255,.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 12%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 62% 55%, rgba(255,255,255,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  80%, rgba(255,255,255,.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 70%, rgba(255,255,255,.4)  0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.trn-ucl-draw-wrap {
+  background: linear-gradient(160deg, #04091f 0%, #070d28 40%, #060b1e 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-md);
+}
+.trn-ucl-draw-wrap > * { position: relative; z-index: 1; }
+
+/* ── Broadcast header ───────────────────────────────────────── */
+.ucl-broadcast-header {
+  background: linear-gradient(90deg, #050c22 0%, #0d1a40 40%, #1a2155 60%, #0d1a40 80%, #050c22 100%);
+  border-bottom: 2px solid #c8a951;
+  padding: 1rem 1.5rem .85rem;
+  text-align: center;
+  position: relative;
+}
+.ucl-broadcast-header::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 50%;
+  transform: translateX(-50%);
+  width: 140px; height: 2px;
+  background: linear-gradient(90deg, transparent, #e8d070, transparent);
+}
+.ucl-bh-stars {
+  font-size: .8rem;
+  letter-spacing: .5em;
+  color: #c8a951;
+  margin-bottom: .3rem;
+  opacity: .9;
+}
+.ucl-bh-title {
+  font: 800 1.45rem/1 var(--font);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #c8a951 0%, #f0e070 40%, #c8a951 70%, #fff8d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: .3rem;
+}
+.ucl-bh-subtitle {
+  font: 500 .7rem/1 var(--font);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(200,169,81,.7);
+}
+
+/* ── Draw body layout ───────────────────────────────────────── */
+
+/* ── Pots grid (4 pots, 2×2) ───────────────────────────────── */
+.ucl-pots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+  padding: .75rem 1rem .5rem;
+}
+.ucl-pot {
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.ucl-pot-header {
+  background: linear-gradient(90deg, rgba(var(--pot-clr-r,100),var(--pot-clr-g,169),var(--pot-clr-b,81),.2), transparent);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: .35rem .6rem;
+  font: 700 .68rem/1 var(--font);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pot-clr, #c8a951);
+  border-left: 3px solid var(--pot-clr, #c8a951);
+}
+.ucl-pot-teams {
+  padding: .3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .18rem;
+}
+.ucl-pot-team {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .22rem .35rem;
+  border-radius: 4px;
+  transition: all .3s ease;
+  opacity: .45;
+  background: transparent;
+  border: 1px solid transparent;
+}
+.ucl-draw-team-badge {
+  width: 18px; height: 18px;
+  object-fit: contain; flex-shrink: 0;
+  filter: grayscale(0.2);
+  transition: filter .3s;
+}
+.ucl-draw-team-name {
+  font: 500 .75rem/1 var(--font);
+  color: rgba(255,255,255,.88);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .3s;
+}
+
+/* Drawn state: team lights up */
+.ucl-pot-team.ucl-drawn {
+  opacity: 1;
+  background: rgba(255,255,255,.04);
+  border-color: var(--drawn-clr, #c8a951);
+  box-shadow: 0 0 8px rgba(200,169,81,.25), inset 0 0 6px rgba(200,169,81,.06);
+  animation: ucl-card-flash .35s ease;
+}
+.ucl-pot-team.ucl-drawn .ucl-draw-team-badge { filter: grayscale(0); }
+.ucl-pot-team.ucl-drawn .ucl-draw-team-name  { color: rgba(255,255,255,.92); }
+
+@keyframes ucl-card-flash {
+  0%   { background: rgba(255,220,100,.22); box-shadow: 0 0 18px rgba(255,210,80,.55); }
+  100% { background: rgba(255,255,255,.04); }
+}
+
+/* ── Fixture reveal panel (replaces ball machine) ──────────── */
+.ucl-fixture-panel {
+  width: 210px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .65rem;
+}
+.ucl-fp-title {
+  font: 500 .75rem/1.4 var(--font);
+  color: rgba(200,169,81,.85);
+  text-align: center;
+  letter-spacing: .03em;
+}
+.ucl-fp-title small { color: rgba(255,255,255,.5); display: block; margin-top: .25rem; }
+.ucl-fp-current {
+  width: 100%;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  padding: .55rem .65rem;
+  min-height: 68px;
+}
+.ucl-fp-team-row {
+  display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem;
+}
+.ucl-fp-badge { width: 26px; height: 26px; object-fit: contain; }
+.ucl-fp-name  { font: 700 .8rem/1 var(--font); text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.ucl-fp-opps  { display: flex; flex-wrap: wrap; gap: .25rem; }
+.ucl-fp-opps span { font: 400 .65rem/1.3 var(--font); }
+
+/* Counter + progress */
+.ucl-draw-counter {
+  font: 400 .7rem/1 var(--font);
+  color: rgba(200,169,81,.75);
+  text-align: center;
+  letter-spacing: .04em;
+}
+.ucl-progress-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ucl-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c8a951, #f0e070);
+  border-radius: 3px;
+  transition: width .25s ease;
+}
+
+/* ── Draw results panel (appears below pots) ─────────────────── */
+.ucl-draw-results-wrap {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: .5rem 1rem .4rem;
+}
+.ucl-draw-results-header {
+  margin-bottom: .5rem;
+}
+.ucl-draw-counter {
+  font: 500 .72rem/1 var(--font);
+  color: rgba(200,169,81,.8);
+  letter-spacing: .04em;
+}
+.ucl-draw-results {
+  max-height: 240px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: .08rem;
+  padding-right: .25rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200,169,81,.3) transparent;
+}
+/* Pot section label */
+.ucl-res-section {
+  font: 700 .62rem/1 var(--font);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .45rem 0 .2rem;
+  opacity: .9;
+}
+/* Team draw row */
+.ucl-res-row {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .28rem .35rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.055);
+  transition: opacity .25s, transform .25s;
+  flex-wrap: wrap;
+}
+/* Slide-in animation */
+.ucl-res-row-in {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+.ucl-res-team-badge {
+  width: 18px; height: 18px; object-fit: contain; flex-shrink: 0;
+}
+.ucl-res-team-name {
+  font: 700 .72rem/1 var(--font);
+  min-width: 76px;
+  flex-shrink: 0;
+}
+.ucl-res-arrow {
+  color: rgba(255,255,255,.3);
+  font-size: .65rem;
+  flex-shrink: 0;
+}
+.ucl-res-opps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  flex: 1;
+  min-width: 0;
+}
+.ucl-res-opp {
+  display: inline-flex;
+  align-items: center;
+  gap: .22rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--opp-clr, rgba(255,255,255,.12));
+  border-radius: 3px;
+  padding: .12rem .3rem;
+}
+.ucl-res-opp-badge {
+  width: 13px; height: 13px; object-fit: contain;
+}
+.ucl-res-opp-name {
+  font: 400 .63rem/1 var(--font);
+  color: rgba(255,255,255,.75);
+  white-space: nowrap;
+}
+.ucl-res-opp-ha {
+  font-size: .6rem;
+  filter: grayscale(.3);
+}
+
+/* Animate card flash when picked */
+@keyframes ucl-card-flash {
+  0%   { box-shadow: 0 0 0 0 var(--drawn-clr, #c8a951); }
+  50%  { box-shadow: 0 0 12px 3px var(--drawn-clr, #c8a951); }
+  100% { box-shadow: 0 0 8px 0px var(--drawn-clr, #c8a951); }
+}
+
+/* Simulate ready button pulse */
+@keyframes ucl-sim-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,81,.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(200,169,81,0); }
+}
+.ucl-sim-ready {
+  animation: ucl-sim-pulse .7s ease 3;
+  background: linear-gradient(135deg, #c8a951, #e8c850) !important;
+  color: #0a0c18 !important;
+}
+
+/* Actions bar */
+.ucl-draw-actions {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  align-items: center;
+  padding: .75rem 1rem 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.ucl-draw-tools {
+  display: flex;
+  gap: .4rem;
+}
+.ucl-tool-btn {
+  font-size: .8rem !important;
+  padding: .35rem .7rem !important;
+}
+.btn-active {
+  background: rgba(100,160,255,.25) !important;
+  border-color: rgba(100,160,255,.6) !important;
+  color: #8bbfff !important;
+}
+
+/* Pot edit mode */
+.ucl-pots-edit-mode .ucl-pot-team {
+  cursor: pointer;
+  transition: background .15s, outline .15s;
+}
+.ucl-pot-editable:hover {
+  background: rgba(255,255,255,.1);
+  border-radius: 4px;
+}
+.ucl-edit-selected {
+  outline: 2px solid #5af !important;
+  outline-offset: 1px;
+  border-radius: 4px;
+  background: rgba(85,170,255,.18) !important;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .ucl-pots-grid { grid-template-columns: repeat(2, 1fr); }
+  .ucl-draw-results { max-height: 180px; }
+}
+
+/* ── UCL League Phase table ──────────────────────────────── */
+.trn-ucl-table-wrap {
+  overflow-x: auto;
+  margin: .5rem 0 .25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.07);
+}
+.trn-ucl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 400 .75rem/1 var(--font);
+  white-space: nowrap;
+}
+.trn-ucl-table thead tr {
+  background: rgba(255,255,255,.06);
+}
+.trn-ucl-table th {
+  font: 600 .65rem/1 var(--font);
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: .45rem .4rem;
+  text-align: center;
+}
+.trn-ucl-table th:nth-child(3) { text-align: left; }
+.trn-ucl-row { border-left: 3px solid var(--row-border, transparent); transition: background .15s; }
+.trn-ucl-row:hover { background: rgba(255,255,255,.04); }
+.trn-ucl-row td { padding: .38rem .4rem; text-align: center; color: rgba(255,255,255,.85); }
+.trn-ucl-sep-direct { border-bottom: 2px solid #2a9 !important; }
+.trn-ucl-sep-out    { border-bottom: 2px solid rgba(255,255,255,.15) !important; }
+.trn-ucl-pos  { color: rgba(255,255,255,.45); font-variant-numeric: tabular-nums; }
+.trn-ucl-badge { width: 28px; }
+.trn-ucl-badge .trn-mini-badge { width: 18px; height: 18px; }
+.trn-ucl-name { text-align: left !important; font-weight: 600; max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
+.trn-ucl-pts  { font-weight: 800; color: var(--white) !important; }
+.trn-ucl-legend {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  font: 400 .68rem/1 var(--font);
+  color: rgba(255,255,255,.5);
+  margin: .35rem 0 .75rem;
+}
+
 .trn-label {
   font: 600 .75rem/1 var(--font);
   color: var(--grey);
@@ -6293,7 +6964,24 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   text-transform: uppercase;
   margin-bottom: .7rem;
 }
-.trn-champ-trophy-big { font-size: 3.5rem; margin-bottom: .7rem; line-height: 1; }
+.trn-champ-trophy-big {
+  margin-bottom: .6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trn-champ-trophy-big .trn-trophy-svg {
+  width: 58px;
+  height: 78px;
+  animation: trn-trophy-glow 3s ease-in-out infinite;
+}
+.trn-trophy-ani {
+  animation: trn-trophy-glow 3s ease-in-out infinite;
+}
+.trn-trophy-ani-rv {
+  animation: trn-reveal-zoom .7s .05s ease both, trn-trophy-glow 2.4s .8s ease-in-out infinite;
+}
 .trn-champ-name {
   font: 700 2rem/1.1 'Rajdhani', sans-serif;
   color: #fff;
@@ -7073,10 +7761,52 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   height: 70px;
   object-fit: contain;
   filter: drop-shadow(0 0 16px rgba(255,215,0,.45));
+  animation: trn-badge-pulse 3.5s 1s ease-in-out infinite;
   margin-bottom: .4rem;
+}
+@keyframes trn-badge-pulse {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(255,215,0,.4))  drop-shadow(0 0 4px rgba(0,212,255,.2)); }
+  50%       { filter: drop-shadow(0 0 26px rgba(255,215,0,.75)) drop-shadow(0 0 10px rgba(0,212,255,.38)); }
 }
 /* Modal team header with badge */
 .trn-modal-team { display: flex; align-items: center; gap: .45rem; }
+
+/* ══════════════════════════════════════════════════════════════
+   TOURNAMENT — UCL Playoff Grid (bracket tab)
+══════════════════════════════════════════════════════════════ */
+.trn-bkt-playoff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: .5rem .75rem;
+  padding: .25rem 0 .75rem;
+}
+.trn-bkt-po-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: .5rem .6rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  transition: background .15s;
+}
+.trn-bkt-po-card:hover { background: rgba(255,255,255,.08); }
+.trn-bkt-po-team {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .75rem;
+}
+.trn-bkt-po-score {
+  text-align: center;
+  font: 600 .78rem/1 var(--font);
+  color: rgba(255,255,255,.45);
+  padding: .18rem 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin: .05rem 0;
+}
 
 /* ══════════════════════════════════════════════════════════════
    TOURNAMENT — Visual KO Bracket Tree
@@ -7304,6 +8034,10 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   animation: trn-confetti-fall linear both;
 }
 
+@keyframes trn-trophy-glow {
+  0%, 100% { filter: drop-shadow(0 2px 8px rgba(255,215,0,.5))  drop-shadow(0 0 4px rgba(255,165,0,.25)); }
+  50%       { filter: drop-shadow(0 2px 24px rgba(255,215,0,.9)) drop-shadow(0 0 14px rgba(255,200,0,.6)); }
+}
 @keyframes trn-reveal-zoom {
   0%   { transform: scale(.45); opacity: 0; }
   65%  { transform: scale(1.07); opacity: 1; }
@@ -7324,9 +8058,20 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   padding: 0 1.5rem;
 }
 .trn-reveal-trophy {
-  font-size: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
   animation: trn-reveal-zoom .7s .05s ease both;
+}
+.trn-reveal-trophy .trn-trophy-svg {
+  width: 94px;
+  height: 126px;
+  animation: trn-reveal-zoom .7s .05s ease both, trn-trophy-glow 2.4s .8s ease-in-out infinite;
+}
+.trn-reveal-trophy .trn-trophy-img {
+  width: 94px;
+  height: auto;
 }
 .trn-reveal-badge {
   width: 108px;
@@ -7373,6 +8118,179 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   background: rgba(0,0,0,.25);
   backdrop-filter: blur(6px);
 }
+/* ── Catalog DB browser ─────────────────────────────── */
+.trn-btn-catalog {
+  display: inline-flex; align-items: center; gap: .35rem;
+  margin: .7rem 0 0;
+  padding: .42rem 1rem;
+  background: rgba(0,212,255,.08);
+  border: 1px solid rgba(0,212,255,.28);
+  border-radius: 99px;
+  color: var(--neon);
+  font: 600 .78rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background .15s;
+}
+.trn-btn-catalog:hover { background: rgba(0,212,255,.16); }
+.trn-catalog-browser {
+  margin-top: .55rem;
+  border: 1px solid rgba(0,212,255,.18);
+  border-radius: var(--radius-md);
+  background: rgba(8,11,20,.92);
+  backdrop-filter: blur(8px);
+  max-height: 380px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.trn-catalog-browser.hidden { display: none !important; }
+.trn-cb-filterrow {
+  display: flex; align-items: center; gap: .45rem;
+  padding: .6rem .8rem .5rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  position: sticky; top: 0; z-index: 1;
+  background: rgba(8,11,20,.98);
+}
+.trn-cb-filter-icon { font-size: .8rem; }
+.trn-cb-filter {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: rgba(255,255,255,.85); font: 500 .82rem/1 'Rajdhani', sans-serif;
+  caret-color: var(--neon);
+}
+.trn-cb-filter::placeholder { color: rgba(255,255,255,.3); }
+.trn-cb-groups { padding: .3rem; }
+.trn-cb-group { border-bottom: 1px solid rgba(255,255,255,.05); }
+.trn-cb-group:last-child { border-bottom: none; }
+.trn-cb-group-label {
+  font: 700 .72rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(0,212,255,.7);
+  padding: .5rem .6rem .4rem;
+  cursor: pointer; list-style: none; user-select: none;
+  display: flex; align-items: center; gap: .4rem;
+}
+.trn-cb-group-label::-webkit-details-marker { display: none; }
+.trn-cb-group-cnt { color: rgba(255,255,255,.3); font-size: .65rem; }
+.trn-cb-group-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .28rem; padding: .2rem .3rem .5rem;
+}
+.trn-cb-item {
+  display: flex; align-items: center; gap: .38rem;
+  padding: .35rem .5rem; border-radius: .4rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .12s, border-color .12s;
+}
+.trn-cb-item:hover { background: rgba(0,212,255,.1); border-color: rgba(0,212,255,.3); }
+.trn-cb-item-added { background: rgba(0,212,255,.07); border-color: rgba(0,212,255,.35); opacity: .55; }
+.trn-cb-badge { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.trn-cb-name {
+  font: 500 .75rem/1.2 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.78);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ── Preset Replace Modal ───────────────────────────────────── */
+.preset-replace-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
+}
+.preset-replace-modal.hidden { display: none !important; }
+.preset-replace-card {
+  background: #0d1220;
+  border: 1px solid rgba(0,212,255,.25);
+  border-radius: .85rem;
+  width: 100%; max-width: 380px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.7);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.preset-replace-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.preset-replace-title {
+  font: 700 .82rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--neon);
+}
+.preset-replace-close {
+  background: transparent; border: none;
+  color: rgba(255,255,255,.4); cursor: pointer;
+  font-size: 1rem; padding: .2rem .45rem; border-radius: 4px;
+  transition: color .15s;
+}
+.preset-replace-close:hover { color: #fff; }
+.preset-replace-search-row {
+  padding: .65rem .9rem .6rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.preset-replace-input {
+  width: 100%; background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12); border-radius: .45rem;
+  color: #e2e8f0; font: 500 .9rem/1 'Rajdhani', sans-serif;
+  padding: .55rem .8rem; outline: none;
+  transition: border-color .15s;
+}
+.preset-replace-input:focus { border-color: var(--neon); }
+.preset-replace-input::placeholder { color: rgba(255,255,255,.3); }
+.preset-replace-results {
+  max-height: 280px; overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: .35rem .45rem;
+}
+.preset-replace-item {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .42rem .55rem; border-radius: .42rem;
+  cursor: pointer; transition: background .12s;
+}
+.preset-replace-item:hover { background: rgba(0,212,255,.1); }
+.preset-replace-badge { width: 22px; height: 22px; object-fit: contain; flex-shrink: 0; }
+.preset-replace-empty {
+  padding: .8rem .55rem;
+  font: 500 .82rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.3); text-align: center;
+}
+.preset-replace-group {
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: .45rem .55rem .4rem;
+}
+.preset-replace-group:last-child { border-bottom: none; }
+.preset-replace-group-header {
+  display: flex; align-items: center; gap: .5rem;
+  margin-bottom: .35rem;
+}
+.preset-replace-group-name {
+  font: 700 .82rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.9);
+}
+.preset-replace-eras {
+  display: flex; flex-wrap: wrap; gap: .3rem;
+}
+.preset-replace-item {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: .28rem .62rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: .35rem;
+  font: 600 .78rem/1 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,.8);
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.preset-replace-item:hover {
+  background: rgba(0,212,255,.18);
+  border-color: var(--neon);
+  color: #fff;
+}
+
 .trn-ll-header {
   display: flex;
   align-items: center;

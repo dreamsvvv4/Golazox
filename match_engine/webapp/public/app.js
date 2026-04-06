@@ -246,6 +246,23 @@ const I18N = {
     'trn-search-no-results':'Sin resultados',
     'trn-remove-team':'Quitar',
     'trn-no-squad-data':'Sin datos de plantilla',
+    // ── Preset cards ──────────────────────────────────────────
+    'trn-preset-label':'⭐ Torneos Oficiales',
+    'trn-custom-label':'o crea tu propio torneo',
+    'trn-btn-shuffle':'🔀 Aleatorizar',
+    'trn-btn-edit':'✏️ Editar',
+    'trn-btn-simulate-ucl':'⚽ Simular Champions',
+    'trn-preset-subtitle-wc':'Fase de grupos + Eliminatoria',
+    'trn-preset-subtitle-ucl':'Fase de grupos + KO ida y vuelta',
+    'trn-teams-unit':'equipos',
+    'trn-groups-unit':'grupos',
+    'trn-draw-start':'▶\u00a0SORTEAR',
+    'trn-draw-init-hint':'Pulsa SORTEAR para iniciar · 8 partidos por equipo (4🏠 · 4✈)',
+    'trn-draw-counter':'🎱 Bombo',
+    'trn-draw-drawn-of':'equipos sorteados',
+    'trn-draw-complete':'✓ Sorteo completado',
+    'trn-add-team':'✓ Añadir equipo',
+    'trn-preview-back':'→ Volver',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -411,6 +428,23 @@ const I18N = {
     'trn-search-no-results':'No results',
     'trn-remove-team':'Remove',
     'trn-no-squad-data':'No squad data available',
+    // ── Preset cards ──────────────────────────────────────────
+    'trn-preset-label':'⭐ Official Tournaments',
+    'trn-custom-label':'or create your own tournament',
+    'trn-btn-shuffle':'🔀 Shuffle',
+    'trn-btn-edit':'✏️ Edit',
+    'trn-btn-simulate-ucl':'⚽ Simulate Champions',
+    'trn-preset-subtitle-wc':'Group stage + Knockout',
+    'trn-preset-subtitle-ucl':'Group stage + KO two-legged',
+    'trn-teams-unit':'teams',
+    'trn-groups-unit':'groups',
+    'trn-draw-start':'▶\u00a0DRAW',
+    'trn-draw-init-hint':'Press DRAW to start · 8 matches per team (4🏠 · 4✈)',
+    'trn-draw-counter':'🎱 Pot',
+    'trn-draw-drawn-of':'teams drawn',
+    'trn-draw-complete':'✓ Draw complete',
+    'trn-add-team':'✓ Add team',
+    'trn-preview-back':'→ Back',
   },
 };
 
@@ -2955,6 +2989,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.trn-fmt-grid')?.addEventListener('click', e => {
     const card = e.target.closest('.trn-fmt-card');
     if (card) TRN.selectFormat(card.dataset.fmt);
+  });
+
+  // Predefined official tournament preset cards
+  document.querySelector('.trn-preset-grid')?.addEventListener('click', e => {
+    const card = e.target.closest('.trn-preset-card');
+    if (card && card.dataset.preset) TRN.loadPreset(card.dataset.preset);
   });
 
   // Tournament wizard nav

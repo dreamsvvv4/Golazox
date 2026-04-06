@@ -1,0 +1,130 @@
+{
+  "slug": "union-saint-gilloise",
+  "id": "union-saint-gilloise",
+  "name": "Union Saint-Gilloise",
+  "nameEs": "Union Saint-Gilloise",
+  "nameEn": "Union Saint-Gilloise",
+  "group": "seleccion",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "ratings": {
+        "attack": 77,
+        "midfield": 77,
+        "defense": 77,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Anthony Moris",
+          "position": "GK",
+          "marketValue": 4365888,
+          "rating": 75
+        },
+        {
+          "name": "Player 2",
+          "position": "GK",
+          "marketValue": 3463878,
+          "rating": 72
+        },
+        {
+          "name": "Player 3",
+          "position": "GK",
+          "marketValue": 2938902,
+          "rating": 70
+        },
+        {
+          "name": "Christian Burgess",
+          "position": "CB",
+          "marketValue": 4111660,
+          "rating": 76
+        },
+        {
+          "name": "Siebe Van Der Heyden",
+          "position": "CB",
+          "marketValue": 4197836,
+          "rating": 76
+        },
+        {
+          "name": "Player 6",
+          "position": "CB",
+          "marketValue": 3028099,
+          "rating": 75
+        },
+        {
+          "name": "Player 7",
+          "position": "CB",
+          "marketValue": 3025728,
+          "rating": 74
+        },
+        {
+          "name": "Alessio Castro-Montes",
+          "position": "RB",
+          "marketValue": 4172815,
+          "rating": 76
+        },
+        {
+          "name": "Player 9",
+          "position": "LB",
+          "marketValue": 3842932,
+          "rating": 75
+        },
+        {
+          "name": "Bart Nieuwkoop",
+          "position": "DM",
+          "marketValue": 4439040,
+          "rating": 76
+        },
+        {
+          "name": "Ilay Camara",
+          "position": "CM",
+          "marketValue": 4457611,
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Amoura",
+          "position": "LW",
+          "marketValue": 3452812,
+          "rating": 78
+        },
+        {
+          "name": "Victor Boniface",
+          "position": "ST",
+          "marketValue": 4261152,
+          "rating": 78
+        },
+        {
+          "name": "Loïc Lapoussin",
+          "position": "AM",
+          "marketValue": 4394163,
+          "rating": 77
+        },
+        {
+          "name": "Player 15",
+          "position": "RW",
+          "marketValue": 3504469,
+          "rating": 76
+        },
+        {
+          "name": "Player 16",
+          "position": "CM",
+          "marketValue": 3782553,
+          "rating": 76
+        },
+        {
+          "name": "Player 17",
+          "position": "ST",
+          "marketValue": 3150088,
+          "rating": 75
+        },
+        {
+          "name": "Player 18",
+          "position": "LW",
+          "marketValue": 3106847,
+          "rating": 74
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/union-saint-gilloise.png"
+}

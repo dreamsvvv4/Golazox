@@ -689,20 +689,35 @@ try {
 
 /** In-memory cache: slug → parsed team file object */
 const _teamFileCache = new Map();
+/** Tracks last-known mtimeMs per slug to auto-invalidate cache when files are edited */
+const _teamFileMtime = new Map();
 
-/** Read a team file; returns { slug, seasons:{} } if missing */
+/** Read a team file; returns { slug, seasons:{} } if missing.
+ *  Cache is automatically invalidated when the file's mtime changes,
+ *  so manual edits to squad JSON files are picked up without a server restart. */
 function _loadTeamFile(slug) {
-  if (_teamFileCache.has(slug)) return _teamFileCache.get(slug);
   const file = path.resolve(SQUADS_DIR, `${slug}.json`);
   // Path containment: reject any slug that escapes the squads directory
   if (!file.startsWith(SQUADS_DIR + path.sep) && file !== SQUADS_DIR) {
     console.warn('[squads] Blocked path traversal attempt for slug:', slug);
     return { slug, seasons: {} };
   }
+  // Cache-invalidation: compare stored mtime; re-read if the file was modified
+  if (_teamFileCache.has(slug)) {
+    try {
+      const stat = fs.statSync(file);
+      if (_teamFileMtime.get(slug) === stat.mtimeMs) return _teamFileCache.get(slug);
+      // file changed on disk — fall through to re-read below
+    } catch (_) {
+      return _teamFileCache.get(slug); // stat failed (deleted?), keep cached
+    }
+  }
   try {
     if (fs.existsSync(file)) {
+      const stat = fs.statSync(file);
       const data = JSON.parse(fs.readFileSync(file, 'utf8'));
       _teamFileCache.set(slug, data);
+      _teamFileMtime.set(slug, stat.mtimeMs);
       return data;
     }
   } catch (_) {}
@@ -728,8 +743,11 @@ function _saveTeamFile(slug, id, teamName, saisonId, squadData) {
   // group, nameEs, nameEn: preserve if already set
   data.seasons             = data.seasons || {};
   data.seasons[saisonId]   = squadData;
-  try { fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8'); _teamFileCache.set(slug, data); }
-  catch (e) { console.warn('[squads] No se pudo guardar:', e.message); }
+  try {
+    fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
+    _teamFileCache.set(slug, data);
+    try { _teamFileMtime.set(slug, fs.statSync(file).mtimeMs); } catch (_) {}
+  } catch (e) { console.warn('[squads] No se pudo guardar:', e.message); }
 }
 
 // ─────────────────────────────────────────────────────────────

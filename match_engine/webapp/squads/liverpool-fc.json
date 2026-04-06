@@ -1,61 +1,59 @@
 {
-  "slug": "villarreal-cf",
+  "slug": "liverpool-fc",
   "seasons": {
     "2025": {
       "found": true,
       "formation": "4-3-3",
       "players": [
         {
-          "name": "Enrique Bartual",
+          "name": "Alisson Becker",
           "position": "GK"
         },
         {
-          "name": "Daniel Budesca",
+          "name": "Joe Gomez",
           "position": "RB"
         },
         {
-          "name": "Baye Mbaye",
+          "name": "Virgil van Dijk",
           "position": "CB"
         },
         {
-          "name": "Kevin Jesús Martel",
+          "name": "Ibrahima Konaté",
           "position": "CB"
         },
         {
-          "name": "Francisco Gil",
+          "name": "Milos Kerkez",
           "position": "LB"
         },
         {
-          "name": "captain",
+          "name": "Wataru Endo",
           "position": "DM"
         },
         {
-          "name": "Adrián Ruiz",
+          "name": "Florian Wirtz",
           "position": "CM"
         },
         {
-          "name": "Sergio Hinojosa",
+          "name": "Dominik Szoboszlai",
           "position": "CM"
         },
         {
-          "name": "Celso José Bermejo",
+          "name": "Alexander Isak",
           "position": "RW"
         },
         {
-          "name": "Eduardo Joel Sánchez",
+          "name": "Mohamed Salah",
           "position": "ST"
         },
         {
-          "name": "Jaime Fernández",
+          "name": "Federico Chiesa",
           "position": "LW"
         }
       ],
       "ratings": null,
-      "source": "Wikipedia — \"Villarreal CF C\"",
-      "teamLabel": "villarreal-cf (2025)"
+      "source": "Wikipedia — \"Liverpool F.C.\"",
+      "teamLabel": "liverpool-fc (2025)"
     }
   },
-  "badgeLocalPath": "/img/badges/villarreal-cf.png",
-  "group": "🇪🇸 La Liga",
-  "name": "villarreal-cf"
+  "name": "liverpool-fc"
 }

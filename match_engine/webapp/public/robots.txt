@@ -4,8 +4,12 @@ Allow: /
 # No indexar endpoints de API ni rutas internas
 Disallow: /simulate
 Disallow: /lookup
+Disallow: /catalog
 Disallow: /suggest
 Disallow: /badges
 Disallow: /referees
+Disallow: /legal
+Disallow: /privacy
+Disallow: /contact
 
 Sitemap: https://golazox.com/sitemap.xml
