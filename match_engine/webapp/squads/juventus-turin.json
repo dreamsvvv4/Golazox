@@ -30,11 +30,11 @@
         },
         {
           "name": "Antonio Cabrini",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Claudio Gentile",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Massimo Bonini",
@@ -82,10 +82,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 85,
+        "midfield": 88,
+        "defense": 88,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Juventus (1983/1984)",
       "teamLabel": "Juventus (1983-84)"
@@ -123,7 +123,7 @@
         },
         {
           "name": "Antonio Cabrini",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Massimo Bonini",
@@ -175,10 +175,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 87,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Juventus (1985/1986)",
       "teamLabel": "Juventus (1985-86)"
@@ -328,10 +328,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 88,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Juventus (1995/1996)",
       "teamLabel": "Juventus (1995-96)"
@@ -465,10 +465,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 88,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Juventus (1996/1997)",
       "teamLabel": "Juventus (1996-97)"
@@ -614,10 +614,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 89,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Juventus (1997/1998)",
       "teamLabel": "Juventus (1997-98)"
@@ -659,7 +659,7 @@
         },
         {
           "name": "Lilian Thuram",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Emiliano Moretti",
@@ -767,16 +767,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 84,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Juventus (2002/2003)",
       "teamLabel": "Juventus (2002-03)"
     },
     "2012": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -940,16 +940,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 82,
+        "midfield": 88,
+        "defense": 87,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt — Juventus (2012/2013)",
       "teamLabel": "Juventus (2012-13)"
     },
     "2015": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Neto",
@@ -997,7 +997,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Patrice Evra",
@@ -1057,7 +1057,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Kwadwo Asamoah",
@@ -1077,7 +1077,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST"
+          "position": "AM"
         },
         {
           "name": "Fabio Morselli",
@@ -1105,16 +1105,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 86,
+        "midfield": 88,
+        "defense": 89,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Juventus (2015/2016)",
       "teamLabel": "Juventus (2015-16)"
     },
     "2017": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -1158,11 +1158,11 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Stephan Lichtsteiner",
@@ -1210,7 +1210,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Kwadwo Asamoah",
@@ -1234,7 +1234,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST"
+          "position": "AM"
         },
         {
           "name": "Gonzalo Higuaín",
@@ -1250,16 +1250,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 88,
+        "midfield": 88,
+        "defense": 90,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Juventus (2017/2018)",
       "teamLabel": "Juventus (2017-18)"
     },
     "2018": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -1287,7 +1287,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Leonardo Bonucci",
@@ -1335,7 +1335,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Leonardo Spinazzola",
@@ -1351,7 +1351,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Francesco Pezziardi",
@@ -1403,7 +1403,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Manolo Portanova",
@@ -1443,7 +1443,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST"
+          "position": "AM"
         },
         {
           "name": "Giorgio Siani",
@@ -1499,16 +1499,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 90,
+        "midfield": 88,
+        "defense": 88,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Juventus (2018/2019)",
       "teamLabel": "Juventus (2018-19)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -1548,7 +1548,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 88
         },
@@ -1560,7 +1560,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CB",
+          "position": "DM",
           "marketValue": 24000000,
           "rating": 86
         },
@@ -1584,7 +1584,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 9500000,
           "rating": 82
         },
@@ -1644,7 +1644,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 14500000,
           "rating": 81
         },
@@ -1692,7 +1692,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 72000000,
           "rating": 86
         },
@@ -1740,16 +1740,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 89,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt — Juventus (2019/2020)",
       "teamLabel": "Juventus (2019-20)"
     },
     "2020": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gianluigi Buffon",
@@ -1801,7 +1801,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 20000000,
           "rating": 85
         },
@@ -1819,7 +1819,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 7500000,
           "rating": 81
         },
@@ -1915,7 +1915,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 16000000,
           "rating": 81
         },
@@ -1963,7 +1963,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 50000000,
           "rating": 86
         },
@@ -2023,10 +2023,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 87,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Juventus (2020/2021)",
       "teamLabel": "Juventus (2020-21)"
@@ -2102,13 +2102,13 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 6000000,
           "rating": 80
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 6000000,
           "rating": 80
         },
@@ -2180,7 +2180,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 8000000,
           "rating": 81
         },
@@ -2234,7 +2234,7 @@
         },
         {
           "name": "Paulo Dybala",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 35000000,
           "rating": 86
         },
@@ -2294,16 +2294,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 83,
+        "midfield": 82,
+        "defense": 84,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Juventus (2021/2022)",
       "teamLabel": "Juventus (2021-22)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "3-5-2",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -2355,7 +2355,7 @@
         },
         {
           "name": "Andrea Cambiaso",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 25000000,
           "rating": 87
         },
@@ -2391,7 +2391,7 @@
         },
         {
           "name": "Alex Sandro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 2000000,
           "rating": 76
         },
@@ -2403,7 +2403,7 @@
         },
         {
           "name": "Mattia De Sciglio",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 1000000,
           "rating": 73
         },
@@ -2451,7 +2451,7 @@
         },
         {
           "name": "Timothy Weah",
-          "position": "CM",
+          "position": "RW",
           "marketValue": 12000000,
           "rating": 83
         },
@@ -2541,16 +2541,16 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 80,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Juventus (2023/2024)",
       "teamLabel": "Juventus (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Michele Di Gregorio",
@@ -2584,7 +2584,7 @@
         },
         {
           "name": "Andrea Cambiaso",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 30000000,
           "rating": 87
         },
@@ -2704,10 +2704,10 @@
         }
       ],
       "ratings": {
-        "attack": 64,
-        "midfield": 62,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 79,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — Juventus (2025/2026)",
       "teamLabel": "Juventus (2025-26)"

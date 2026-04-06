@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>GolazoX — Football Time Machine</title>
+  <title>GolazoX ⚽ Simulador de Fútbol Histórico — Football Time Machine</title>
   <meta name="color-scheme" content="dark" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -26,13 +26,13 @@
   <meta name="msapplication-tap-highlight" content="no" />
 
   <!-- SEO description -->
-  <meta name="description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta name="description" content="⚽ Simula partidos entre +200 equipos históricos de fútbol. Real Madrid 2002 vs Barça 2009, Brasil 1970 vs Alemania 1974... Motor Monte Carlo. Gratis, sin registro." />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="GolazoX" />
-  <meta property="og:title" content="GolazoX — Football Time Machine" />
-  <meta property="og:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo. Cualquier equipo, cualquier era." />
+  <meta property="og:title" content="GolazoX ⚽ Simulador de Fútbol Histórico" />
+  <meta property="og:description" content="Simula partidos entre +200 equipos históricos. Real Madrid 2002 vs Barça 2009, Brasil 1970 vs Alemania 1974... Motor Monte Carlo. Gratis." />
   <meta property="og:image" content="https://golazox.com/og-image.png?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -43,8 +43,8 @@
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GolazoX — Football Time Machine" />
-  <meta name="twitter:description" content="Simula partidos históricos de fútbol con el motor probabilístico de Monte Carlo." />
+  <meta name="twitter:title" content="GolazoX ⚽ Simulador de Fútbol Histórico" />
+  <meta name="twitter:description" content="Simula partidos entre +200 equipos históricos. Real Madrid 2002 vs Barça 2009, Brasil 1970 vs Alemania 1974. Motor Monte Carlo. Gratis." />
   <meta name="twitter:image" content="https://golazox.com/og-image.png?v=2" />
   <meta name="twitter:image:alt" content="GolazoX Football Time Machine" />
 
@@ -53,7 +53,89 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
 
-  <link rel="stylesheet" href="style.css?v=63" />
+  <link rel="stylesheet" href="style.css?v=68" />
+
+  <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
+  <link rel="alternate" hreflang="es" href="https://golazox.com/" />
+  <link rel="alternate" hreflang="en" href="https://golazox.com/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://golazox.com/" />
+
+  <!-- JSON-LD: WebApplication structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GolazoX — Football Time Machine",
+    "url": "https://golazox.com",
+    "description": "Simulador de partidos históricos de fútbol. Enfrenta cualquier equipo de cualquier era con el motor probabilístico de Monte Carlo. Incluye tanda de penaltis y torneos.",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "browserRequirements": "Requires JavaScript; Requires HTML5",
+    "inLanguage": ["es", "en"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "creator": { "@type": "Organization", "name": "GolazoX", "url": "https://golazox.com" },
+    "featureList": [
+      "Simulador de partidos históricos de fútbol",
+      "Tanda de penaltis con animación TV",
+      "Torneos: liga, copa, champions",
+      "Más de 200 clubes y selecciones históricas",
+      "Motor Monte Carlo probabilístico"
+    ],
+    "screenshot": "https://golazox.com/og-image.png?v=2",
+    "image": "https://golazox.com/og-image.png?v=2"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage — shows expandable Q&As directly in Google results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es gratuito GolazoX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, GolazoX es completamente gratuito y no requiere registro. Puedes simular partidos históricos ilimitados desde el navegador o instalarlo como app en tu móvil."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué equipos puedo simular en GolazoX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Más de 200 equipos históricos: clubes como Real Madrid, FC Barcelona, Manchester United, Bayern Múnich, AC Milan o Juventus en diferentes eras (desde los años 50 hasta hoy), y selecciones nacionales como Brasil, Argentina, Alemania, España o Francia en sus mejores ediciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona el simulador de fútbol histórico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GolazoX usa un motor probabilístico de Monte Carlo que ejecuta miles de simulaciones por partido en milisegundos. Tiene en cuenta las alineaciones reales de cada era, las estadísticas de los jugadores y factores como la formación táctica. El resultado refleja las probabilidades reales de cada encuentro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo simular una tanda de penaltis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. GolazoX incluye un modo de tanda de penaltis con animación cinematográfica. Elige los cinco tiradores, arrastra para cambiar el orden y lanza la tanda con animación en tiempo real del portero y el balón."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede crear un torneo histórico de fútbol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. GolazoX tiene un modo torneo que permite crear campeonatos de liga, copa o Champions con equipos históricos de distintas eras. Puedes mezclar el Real Madrid de los 60 con el Barcelona de 2009 o la Alemania de 2014."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Analytics — init handled by app.js; CSP allows googletagmanager.com -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
@@ -92,9 +174,12 @@
         <button class="btn-lang" id="lang-toggle" title="Switch language">EN</button>
       </div>
     </div>
+    <!-- H1 semántico para bots — visualmente oculto, no afecta el diseño -->
+    <h1 class="sr-only">GolazoX — Simulador de Fútbol Histórico · Football Time Machine</h1>
     <!-- ── Main mode tabs ─── -->
     <div class="main-tabs-bar">
-      <button class="main-tab-btn main-tab-active" data-tab="match">⚽ Partido</button>
+      <button class="main-tab-btn main-tab-active" data-tab="match">⚽ <span data-i18n="tab-match">Partido</span></button>
+      <button class="main-tab-btn" data-tab="pen">🥅 <span data-i18n="tab-pen">Penaltis</span></button>
       <button class="main-tab-btn" data-tab="trn" data-i18n="trn-tab-btn">🏆 Torneo</button>
     </div>
   </header>
@@ -173,7 +258,6 @@
             <button class="mode-pill mode-pill-active" id="mode-11v11"    data-mode="11v11">11 vs 11</button>
             <button class="mode-pill" id="mode-5v5"        data-mode="5v5">5 vs 5</button>
             <button class="mode-pill" id="mode-3v3"        data-mode="3v3">3 vs 3</button>
-            <button class="mode-pill" id="mode-penalties"  data-mode="penalties" data-i18n="mode-penalties">🥅 Penaltis</button>
           </div>
         </div>
       </div>
@@ -253,7 +337,10 @@
       <div class="live-scoreboard">
         <div class="live-team-side">
           <img class="live-team-badge" id="live-badge-a" src="" alt="" style="display:none">
-          <span class="live-team-name" id="live-team-a">-</span>
+          <div class="live-team-info">
+            <span class="live-team-name" id="live-team-a">-</span>
+            <span class="live-team-era" id="live-era-a"></span>
+          </div>
         </div>
         <div class="live-score-block">
           <span class="live-score-num" id="live-score-a">0</span>
@@ -262,7 +349,10 @@
         </div>
         <div class="live-team-side live-team-side-b">
           <img class="live-team-badge" id="live-badge-b" src="" alt="" style="display:none">
-          <span class="live-team-name" id="live-team-b">-</span>
+          <div class="live-team-info">
+            <span class="live-team-name" id="live-team-b">-</span>
+            <span class="live-team-era" id="live-era-b"></span>
+          </div>
         </div>
       </div>
       <div class="live-clock-wrap">
@@ -301,7 +391,6 @@
     <div id="pen-kick-overlay" class="pko-overlay hidden">
       <div class="pko-inner">
         <div class="pko-score-bar" id="pko-score-bar"></div>
-        <div class="pko-kicker-name" id="pko-kicker-name"></div>
         <div class="pko-pitch">
           <!-- Goal frame -->
           <svg class="pko-goal-svg" viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg">
@@ -334,6 +423,7 @@
           <div class="pko-ball" id="pko-ball">⚽</div>
         </div>
         <div class="pko-result-label" id="pko-result-label"></div>
+        <div class="pko-kicker-name" id="pko-kicker-name"></div>
       </div>
     </div>
 
@@ -538,6 +628,431 @@
     <!-- /results -->
   </div><!-- /main-match-wrap -->
 
+  <!-- ── PENALTIES TAB wrap ────────────────────────────────────── -->
+  <div id="main-pen-wrap" class="hidden">
+    <section class="pen-tab-panel glass-card">
+      <div class="pen-tab-title">🥅 <span data-i18n="pen-tab-title">Tanda de Penaltis</span></div>
+      <div class="pen-tab-subtitle" data-i18n="pen-tab-sub">Elige dos equipos y lanza directamente a los penaltis</div>
+
+      <div class="pen-teams-grid">
+        <!-- Team A -->
+        <div class="pen-team-col">
+          <div class="team-label label-a" data-i18n="pen-team-a">EQUIPO A</div>
+          <div class="team-picker" id="pen-picker-A"></div>
+          <input type="hidden" id="pen-teamA" value="">
+          <div class="pen-era-row">
+            <select id="pen-eraA" class="inp inp-sub era-select" disabled>
+              <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
+            </select>
+            <button class="btn-random-era" id="pen-random-eraA" title="Era aleatoria" disabled>🎲</button>
+          </div>
+        </div>
+
+        <!-- VS -->
+        <div class="pen-vs-col">
+          <div class="pen-vs-badge">VS</div>
+          <button class="btn-surprise-mini" id="pen-btn-surprise" title="Aleatorio">
+            <span class="btn-surprise-icon">⚡</span>
+            <span data-i18n="btn-surprise">Aleatorio</span>
+          </button>
+        </div>
+
+        <!-- Team B -->
+        <div class="pen-team-col">
+          <div class="team-label label-b" data-i18n="pen-team-b">EQUIPO B</div>
+          <div class="team-picker" id="pen-picker-B"></div>
+          <input type="hidden" id="pen-teamB" value="">
+          <div class="pen-era-row">
+            <select id="pen-eraB" class="inp inp-sub era-select" disabled>
+              <option value="">⏳ <span data-i18n="era-placeholder">Selecciona un equipo primero</span></option>
+            </select>
+            <button class="btn-random-era" id="pen-random-eraB" title="Era aleatoria" disabled>🎲</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="pen-tab-error" class="error-msg hidden"></div>
+
+      <!-- Takers section (shown after both teams selected) -->
+      <div id="pen-takers-section" class="pen-takers-section hidden">
+        <div class="pen-takers-loading" id="pen-takers-loading">
+          <span class="tp-loading-spinner"></span>
+          <span data-i18n="pen-takers-loading">Cargando tiradores…</span>
+        </div>
+        <div id="pen-takers-ready" class="hidden">
+          <div class="pen-takers-grid">
+            <div class="pen-takers-col">
+              <div class="pen-takers-col-title" id="pen-takers-title-a"></div>
+              <div class="pen-gk-row hidden" id="pen-gk-row-a"></div>
+              <div class="pen-takers-hint" data-i18n="pen-takers-hint">↕ Arrastra · ⇄ Cambiar</div>
+              <ol class="pen-takers-list" id="pen-takers-a" data-side="a"></ol>
+              <div class="pen-bench-label" data-i18n="pen-bench-label">Suplentes</div>
+              <ol class="pen-bench-list" id="pen-bench-a"></ol>
+            </div>
+            <div class="pen-takers-divider"></div>
+            <div class="pen-takers-col">
+              <div class="pen-takers-col-title" id="pen-takers-title-b"></div>
+              <div class="pen-gk-row hidden" id="pen-gk-row-b"></div>
+              <div class="pen-takers-hint" data-i18n="pen-takers-hint">↕ Arrastra · ⇄ Cambiar</div>
+              <ol class="pen-takers-list" id="pen-takers-b" data-side="b"></ol>
+              <div class="pen-bench-label" data-i18n="pen-bench-label">Suplentes</div>
+              <ol class="pen-bench-list" id="pen-bench-b"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TV Shootout Panel (animated, replaces static results) -->
+      <div id="pen-tv-panel" class="pen-tv-panel hidden">
+
+        <!-- Top: TV-style 5-slot scoreboard -->
+        <div class="pen-tv-scoreboard">
+          <div class="pen-tv-team-side pen-tv-side-a">
+            <div class="pen-tv-team-name" id="pen-tv-name-a"></div>
+            <div class="pen-tv-circles" id="pen-tv-circles-a"></div>
+          </div>
+          <div class="pen-tv-center">
+            <div class="pen-tv-score" id="pen-tv-score">0–0</div>
+            <div class="pen-tv-status" id="pen-tv-status"></div>
+          </div>
+          <div class="pen-tv-team-side pen-tv-side-b">
+            <div class="pen-tv-circles" id="pen-tv-circles-b"></div>
+            <div class="pen-tv-team-name" id="pen-tv-name-b"></div>
+          </div>
+        </div>
+
+        <!-- ═══ Goal Animation Stage ═══ -->
+        <div class="pen-goal-stage" id="pen-goal-stage">
+          <svg id="pen-goal-svg" class="pen-goal-svg" viewBox="0 0 600 310" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="pg-bg" cx="50%" cy="35%" r="75%">
+                <stop offset="0%" stop-color="#091525"/>
+                <stop offset="100%" stop-color="#020509"/>
+              </radialGradient>
+              <filter id="pg-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="pg-glow2" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <clipPath id="pg-net-clip"><rect x="148" y="76" width="304" height="178"/></clipPath>
+            </defs>
+
+            <!-- Background -->
+            <rect width="600" height="310" fill="url(#pg-bg)"/>
+            <!-- Floodlights glow -->
+            <ellipse cx="60"  cy="12" rx="75" ry="22" fill="#1836a0" opacity="0.3"/>
+            <ellipse cx="540" cy="12" rx="75" ry="22" fill="#1836a0" opacity="0.3"/>
+            <!-- Stadium silhouette outlines -->
+            <path d="M0,0 L130,0 L130,55 L0,55 Z" fill="none" stroke="#1a2840" stroke-width="0.8" opacity="0.35"/>
+            <path d="M470,0 L600,0 L600,55 L470,55 Z" fill="none" stroke="#1a2840" stroke-width="0.8" opacity="0.35"/>
+            <!-- Atmospheric mist band -->
+            <rect x="0" y="85" width="600" height="100" fill="#0a1830" opacity="0.18"/>
+            <!-- Pitch surface -->
+            <rect x="0" y="262" width="600" height="48" fill="#0a1a08"/>
+            <!-- Pitch light stripes -->
+            <rect x="0"   y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
+            <rect x="150" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
+            <rect x="300" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
+            <rect x="450" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
+            <!-- Holographic pitch markings -->
+            <g opacity="0.18" stroke="#00ff88" stroke-width="0.7" fill="none">
+              <ellipse cx="300" cy="288" rx="128" ry="22"/>
+              <ellipse cx="300" cy="257" rx="60" ry="8"/>
+              <line x1="148" y1="262" x2="452" y2="262"/>
+              <rect x="214" y="250" width="172" height="16"/>
+              <circle cx="300" cy="278" r="2.5" fill="#00ff88" opacity="0.7"/>
+            </g>
+
+            <!-- Net background -->
+            <rect x="148" y="76" width="304" height="178" fill="#040e1c" opacity="0.85" rx="1"/>
+
+            <!-- Net grid — vertical lines -->
+            <g stroke="#1d4e82" stroke-width="0.75" opacity="0.65" clip-path="url(#pg-net-clip)">
+              <line x1="163" y1="76" x2="163" y2="254"/><line x1="178" y1="76" x2="178" y2="254"/>
+              <line x1="193" y1="76" x2="193" y2="254"/><line x1="208" y1="76" x2="208" y2="254"/>
+              <line x1="223" y1="76" x2="223" y2="254"/><line x1="238" y1="76" x2="238" y2="254"/>
+              <line x1="253" y1="76" x2="253" y2="254"/><line x1="268" y1="76" x2="268" y2="254"/>
+              <line x1="283" y1="76" x2="283" y2="254"/><line x1="298" y1="76" x2="298" y2="254"/>
+              <line x1="313" y1="76" x2="313" y2="254"/><line x1="328" y1="76" x2="328" y2="254"/>
+              <line x1="343" y1="76" x2="343" y2="254"/><line x1="358" y1="76" x2="358" y2="254"/>
+              <line x1="373" y1="76" x2="373" y2="254"/><line x1="388" y1="76" x2="388" y2="254"/>
+              <line x1="403" y1="76" x2="403" y2="254"/><line x1="418" y1="76" x2="418" y2="254"/>
+              <line x1="433" y1="76" x2="433" y2="254"/>
+            </g>
+            <!-- Net grid — horizontal lines -->
+            <g stroke="#1d4e82" stroke-width="0.75" opacity="0.65" clip-path="url(#pg-net-clip)">
+              <line x1="148" y1="91"  x2="452" y2="91"/> <line x1="148" y1="106" x2="452" y2="106"/>
+              <line x1="148" y1="121" x2="452" y2="121"/><line x1="148" y1="136" x2="452" y2="136"/>
+              <line x1="148" y1="151" x2="452" y2="151"/><line x1="148" y1="166" x2="452" y2="166"/>
+              <line x1="148" y1="181" x2="452" y2="181"/><line x1="148" y1="196" x2="452" y2="196"/>
+              <line x1="148" y1="211" x2="452" y2="211"/><line x1="148" y1="226" x2="452" y2="226"/>
+              <line x1="148" y1="241" x2="452" y2="241"/>
+            </g>
+
+            <!-- HUD zone dividers (holographic, dashed) -->
+            <g stroke="#00d4ff" stroke-width="0.6" opacity="0.1" stroke-dasharray="4,5" fill="none">
+              <line x1="249" y1="76" x2="249" y2="254"/>
+              <line x1="351" y1="76" x2="351" y2="254"/>
+              <line x1="148" y1="135" x2="452" y2="135"/>
+              <line x1="148" y1="195" x2="452" y2="195"/>
+            </g>
+
+            <!-- Goal frame posts & crossbar -->
+            <rect x="141" y="76" width="11" height="180" fill="#ccdde8" rx="2"/>
+            <rect x="448" y="76" width="11" height="180" fill="#ccdde8" rx="2"/>
+            <rect x="141" y="70" width="318" height="11" fill="#ccdde8" rx="2"/>
+            <line x1="141" y1="256" x2="459" y2="256" stroke="#ccdde8" stroke-width="4"/>
+            <!-- Post neon glow -->
+            <rect x="141" y="76" width="11" height="180" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
+            <rect x="448" y="76" width="11" height="180" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
+            <rect x="141" y="70" width="318" height="11" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
+
+            <!-- ── Goalkeeper ────────────── -->
+            <g id="pg-gk">
+              <!-- Shadow -->
+              <ellipse cx="300" cy="256" rx="22" ry="5" fill="rgba(0,0,0,0.45)"/>
+
+              <!-- Left boot -->
+              <ellipse cx="289" cy="252" rx="9" ry="5" fill="#1a1a1a"/>
+              <rect x="281" y="237" width="15" height="17" rx="3" fill="#1a1a1a"/>
+              <!-- Right boot -->
+              <ellipse cx="311" cy="252" rx="9" ry="5" fill="#1a1a1a"/>
+              <rect x="304" y="237" width="15" height="17" rx="3" fill="#1a1a1a"/>
+
+              <!-- Left shin / short -->
+              <rect x="283" y="218" width="13" height="21" rx="3" fill="#ff7820"/>
+              <rect x="283" y="218" width="13" height="8"  rx="2" fill="#e84a00"/>
+              <!-- Right shin / short -->
+              <rect x="305" y="218" width="13" height="21" rx="3" fill="#ff7820"/>
+              <rect x="305" y="218" width="13" height="8"  rx="2" fill="#e84a00"/>
+
+              <!-- Shirt body — tapered trapezoid via path -->
+              <path d="M278,215 Q275,200 270,193 L278,188 Q280,194 300,195 Q320,194 322,188 L330,193 Q325,200 322,215 Z" fill="#ff6a00"/>
+              <!-- Shirt chest highlight -->
+              <ellipse cx="300" cy="200" rx="11" ry="7" fill="#ff8c30" opacity="0.55"/>
+              <!-- Jersey number -->
+              <text x="300" y="208" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="'Arial Black',Impact,sans-serif" opacity="0.95">1</text>
+
+              <!-- Left upper arm -->
+              <path d="M278,190 Q267,193 258,196 Q256,200 258,205 Q265,203 278,198 Z" fill="#ff6a00"/>
+              <!-- Right upper arm -->
+              <path d="M322,190 Q333,193 342,196 Q344,200 342,205 Q335,203 322,198 Z" fill="#ff6a00"/>
+
+              <!-- Left glove — chunky but shaped -->
+              <ellipse cx="255" cy="205" rx="11" ry="8" fill="#f0c800" opacity="0.95"/>
+              <ellipse cx="255" cy="203" rx="8"  ry="5" fill="#ffd820" opacity="0.7"/>
+              <line x1="249" y1="205" x2="261" y2="205" stroke="#c8a000" stroke-width="1" opacity="0.6"/>
+              <line x1="251" y1="202" x2="251" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <line x1="255" y1="201" x2="255" y2="211" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <line x1="259" y1="202" x2="259" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <!-- Right glove -->
+              <ellipse cx="345" cy="205" rx="11" ry="8" fill="#f0c800" opacity="0.95"/>
+              <ellipse cx="345" cy="203" rx="8"  ry="5" fill="#ffd820" opacity="0.7"/>
+              <line x1="339" y1="205" x2="351" y2="205" stroke="#c8a000" stroke-width="1" opacity="0.6"/>
+              <line x1="341" y1="202" x2="341" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <line x1="345" y1="201" x2="345" y2="211" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <line x1="349" y1="202" x2="349" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+
+              <!-- Neck -->
+              <rect x="295" y="179" width="10" height="12" rx="3" fill="#e8bc7a"/>
+
+              <!-- Head — slightly oval -->
+              <ellipse cx="300" cy="169" rx="15" ry="16" fill="#e8bc7a"/>
+              <!-- Face shading / ear -->
+              <ellipse cx="285" cy="169" rx="3" ry="4.5" fill="#d8a86a"/>
+              <ellipse cx="315" cy="169" rx="3" ry="4.5" fill="#d8a86a"/>
+              <!-- Eyes -->
+              <ellipse cx="295" cy="166" rx="3" ry="3.2" fill="white"/>
+              <ellipse cx="305" cy="166" rx="3" ry="3.2" fill="white"/>
+              <circle  cx="295.8" cy="166.5" r="1.9" fill="#2a1800"/>
+              <circle  cx="305.8" cy="166.5" r="1.9" fill="#2a1800"/>
+              <circle  cx="296.4" cy="165.8" r="0.7" fill="white"/>
+              <circle  cx="306.4" cy="165.8" r="0.7" fill="white"/>
+              <!-- Eyebrows (focused) -->
+              <path d="M292,162 Q295.5,160.5 299,162" stroke="#6b3d0e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M301,162 Q304.5,160.5 308,162" stroke="#6b3d0e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Nose -->
+              <ellipse cx="300" cy="170" rx="2" ry="2.5" fill="#d8a870" opacity="0.7"/>
+              <!-- Mouth (determined) -->
+              <path d="M296,175 Q300,173 304,175" stroke="#a06030" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+              <!-- Keeper glove cuffs -->
+              <rect x="249" y="193" width="12" height="8" rx="3" fill="#ff6a00" opacity="0.9"/>
+              <rect x="339" y="193" width="12" height="8" rx="3" fill="#ff6a00" opacity="0.9"/>
+            </g>
+
+            <!-- Net flash zone (on goal) -->
+            <circle id="pg-net-flash" cx="300" cy="165" r="55" fill="#22ff88" opacity="0" filter="url(#pg-glow2)"/>
+
+            <!-- Trajectory line (drawn by JS) -->
+            <path id="pg-traj" d="M300,278 L300,278" stroke="#00d4ff" stroke-width="2.5" fill="none" opacity="0" stroke-linecap="round"/>
+            <path id="pg-traj-glow" d="M300,278 L300,278" stroke="#00d4ff" stroke-width="8" fill="none" opacity="0" filter="url(#pg-glow)" stroke-linecap="round"/>
+
+            <!-- ── Ball ────────────────── -->
+            <g id="pg-ball-g" style="transform:translate(0px,0px)">
+              <ellipse cx="300" cy="285" rx="8" ry="3" fill="rgba(0,0,0,0.45)"/>
+              <circle cx="300" cy="278" r="10" fill="white"/>
+              <circle id="pg-ball-glow-c" cx="300" cy="278" r="10" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="8" filter="url(#pg-glow)" opacity="0"/>
+              <!-- Ball pattern -->
+              <circle cx="300" cy="278" r="4.5" fill="#1a1a1a" opacity="0.65"/>
+              <circle cx="293" cy="273" r="2" fill="#1a1a1a" opacity="0.4"/>
+              <circle cx="307" cy="273" r="2" fill="#1a1a1a" opacity="0.4"/>
+              <circle cx="293" cy="283" r="2" fill="#1a1a1a" opacity="0.3"/>
+              <circle cx="307" cy="283" r="2" fill="#1a1a1a" opacity="0.3"/>
+            </g>
+
+            <!-- ── Burst texts ────────── -->
+            <g id="pg-burst-gol" opacity="0" filter="url(#pg-glow2)">
+              <text id="pg-burst-gol-txt" x="300" y="195" text-anchor="middle" font-size="58" font-weight="900" fill="#ffdd00" stroke="#ff6600" stroke-width="2" font-family="Impact,'Arial Black',sans-serif">¡GOL!</text>
+            </g>
+            <g id="pg-burst-save" opacity="0" filter="url(#pg-glow2)">
+              <text id="pg-burst-save-txt" x="300" y="195" text-anchor="middle" font-size="40" font-weight="900" fill="#ff3333" stroke="#aa0000" stroke-width="2" font-family="Impact,'Arial Black',sans-serif">¡PARADA!</text>
+            </g>
+            <g id="pg-burst-miss" opacity="0">
+              <text id="pg-burst-miss-txt" x="300" y="195" text-anchor="middle" font-size="40" font-weight="900" fill="#777" stroke="#444" stroke-width="1.5" font-family="Impact,'Arial Black',sans-serif">FALLO</text>
+            </g>
+
+            <!-- HUD status strip -->
+            <rect x="0" y="0" width="600" height="22" fill="rgba(0,0,0,0.55)"/>
+            <text id="pg-hud-txt" x="300" y="14" text-anchor="middle" font-size="8.5" font-weight="700" fill="#00d4ff" letter-spacing="2.5" font-family="'Courier New',monospace" opacity="0.8">● SIMULACIÓN ACTIVA</text>
+          </svg>
+        </div>
+
+        <!-- Duel face-off: kicker vs GK -->
+        <div class="pen-tv-duel" id="pen-tv-duel">
+          <div class="pen-tv-duel-slot pen-tv-kicker-slot" id="pen-tv-kicker-slot">
+            <div class="pen-tv-role-label">⚽ <span data-i18n="pen-role-kicker">TIRADOR</span></div>
+            <div class="pen-tv-duel-name" id="pen-tv-kicker-name">—</div>
+          </div>
+          <div class="pen-tv-duel-vs">⚡</div>
+          <div class="pen-tv-duel-slot pen-tv-gk-slot" id="pen-tv-gk-slot">
+            <div class="pen-tv-role-label">🧤 <span data-i18n="pen-role-gk">PORTERO</span></div>
+            <div class="pen-tv-duel-name" id="pen-tv-gk-name">—</div>
+          </div>
+        </div>
+
+        <!-- Narrative / suspense text -->
+        <div class="pen-tv-narrative" id="pen-tv-narrative">
+          <span class="pen-tv-narrative-text" id="pen-tv-narrative-text"></span>
+        </div>
+
+        <!-- Kick history rows (built up as kicks are revealed) -->
+        <div class="pen-tv-history" id="pen-tv-history"></div>
+
+        <!-- Replay button (shown after shootout ends) -->
+        <div class="pen-tv-footer hidden" id="pen-tv-footer">
+          <div class="pen-tv-final-score" id="pen-tv-final-score"></div>
+          <div class="pen-tv-final-stats" id="pen-tv-final-stats"></div>
+          <div class="pen-tv-footer-btns">
+            <button class="pen-tab-replay-btn" id="pen-tab-replay-btn">🔄 <span data-i18n="pen-replay-btn">Repetir</span></button>
+            <button class="pen-tab-new-btn" id="pen-tab-new-btn">🔀 <span data-i18n="pen-new-btn">Nueva tanda</span></button>
+          </div>
+        </div>
+
+        <!-- Winner celebration overlay -->
+        <div class="pen-tv-winner-overlay hidden" id="pen-tv-winner-overlay">
+          <div class="pen-tv-winner-content">
+            <div class="pen-tv-winner-trophy">🏆</div>
+            <div class="pen-tv-winner-name" id="pen-tv-winner-name"></div>
+            <div class="pen-tv-winner-sub" id="pen-tv-winner-sub"></div>
+            <button class="pen-tv-dismiss-btn" id="pen-tv-dismiss-btn" data-i18n="pen-winner-dismiss">Ver resultado</button>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="pen-shoot-btn" id="pen-shoot-btn" disabled>
+        <svg class="pen-shoot-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="6,1 11,6 6,11 1,6" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <polygon points="6,3.5 8.5,6 6,8.5 3.5,6" fill="currentColor" opacity=".5"/>
+        </svg>
+        <span data-i18n="pen-shoot-btn">¡Lanzar Penaltis!</span>
+      </button>
+    </section>
+  </div><!-- /main-pen-wrap -->
+
+  <!-- ── Coin flip modal (penalty) ────────────────────────────── -->
+  <div id="pen-coin-modal" class="pen-coin-modal hidden" role="dialog" aria-modal="true">
+    <div class="pen-coin-backdrop"></div>
+    <div class="pen-coin-box">
+      <div class="pen-coin-label-top" id="pen-coin-label-top">SORTEO</div>
+      <div class="pen-coin-scene">
+        <div class="pen-coin" id="pen-coin">
+
+          <!-- CARA -->
+          <div class="pen-coin-face pen-coin-heads">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="cg-h" cx="38%" cy="35%" r="60%">
+                  <stop offset="0%"   stop-color="#fff5a0"/>
+                  <stop offset="35%"  stop-color="#d4a017"/>
+                  <stop offset="75%"  stop-color="#8b6200"/>
+                  <stop offset="100%" stop-color="#5a3e00"/>
+                </radialGradient>
+                <radialGradient id="cg-rim-h" cx="50%" cy="50%" r="50%">
+                  <stop offset="85%" stop-color="transparent"/>
+                  <stop offset="100%" stop-color="rgba(0,0,0,.35)"/>
+                </radialGradient>
+              </defs>
+              <!-- Coin body -->
+              <circle cx="50" cy="50" r="49" fill="url(#cg-h)"/>
+              <circle cx="50" cy="50" r="49" fill="url(#cg-rim-h)"/>
+              <!-- Milled edge marks -->
+              <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,220,80,.35)" stroke-width="1" stroke-dasharray="2.5 2.2"/>
+              <!-- Inner ring -->
+              <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,220,80,.55)" stroke-width=".8"/>
+              <!-- Football icon (CARA) -->
+              <circle cx="50" cy="44" r="14" fill="none" stroke="#ffd700" stroke-width="1.4"/>
+              <circle cx="50" cy="44" r="5" fill="#ffd700" opacity=".9"/>
+              <line x1="50" y1="30" x2="50" y2="58" stroke="#ffd700" stroke-width=".8" opacity=".6"/>
+              <line x1="36" y1="44" x2="64" y2="44" stroke="#ffd700" stroke-width=".8" opacity=".6"/>
+              <line x1="40" y1="34" x2="60" y2="54" stroke="#ffd700" stroke-width=".6" opacity=".4"/>
+              <line x1="60" y1="34" x2="40" y2="54" stroke="#ffd700" stroke-width=".6" opacity=".4"/>
+              <!-- Label -->
+              <text x="50" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#ffd700" font-family="serif" letter-spacing="2">CARA</text>
+              <!-- Shine highlight -->
+              <ellipse cx="38" cy="32" rx="10" ry="6" fill="rgba(255,255,220,.22)" transform="rotate(-30 38 32)"/>
+            </svg>
+          </div>
+
+          <!-- CRUZ -->
+          <div class="pen-coin-face pen-coin-tails">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="cg-t" cx="38%" cy="35%" r="60%">
+                  <stop offset="0%"   stop-color="#ffe87a"/>
+                  <stop offset="35%"  stop-color="#b8860b"/>
+                  <stop offset="75%"  stop-color="#7a5200"/>
+                  <stop offset="100%" stop-color="#4a3000"/>
+                </radialGradient>
+                <radialGradient id="cg-rim-t" cx="50%" cy="50%" r="50%">
+                  <stop offset="85%" stop-color="transparent"/>
+                  <stop offset="100%" stop-color="rgba(0,0,0,.35)"/>
+                </radialGradient>
+              </defs>
+              <circle cx="50" cy="50" r="49" fill="url(#cg-t)"/>
+              <circle cx="50" cy="50" r="49" fill="url(#cg-rim-t)"/>
+              <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,200,60,.35)" stroke-width="1" stroke-dasharray="2.5 2.2"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,200,60,.55)" stroke-width=".8"/>
+              <!-- Star (CRUZ) -->
+              <polygon points="50,28 53.8,40.6 67,40.6 56.6,47.9 60.4,60.5 50,53.2 39.6,60.5 43.4,47.9 33,40.6 46.2,40.6" fill="none" stroke="#ffd700" stroke-width="1.4" stroke-linejoin="round"/>
+              <polygon points="50,33 52.8,41.7 62,41.7 54.6,46.9 57.4,55.6 50,50.4 42.6,55.6 45.4,46.9 38,41.7 47.2,41.7" fill="rgba(255,215,0,.18)"/>
+              <text x="50" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#ffd700" font-family="serif" letter-spacing="2">CRUZ</text>
+              <ellipse cx="38" cy="32" rx="10" ry="6" fill="rgba(255,255,220,.22)" transform="rotate(-30 38 32)"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+      <div class="pen-coin-result hidden" id="pen-coin-result">
+        <div class="pen-coin-result-face" id="pen-coin-result-face"></div>
+        <div class="pen-coin-result-team" id="pen-coin-result-team"></div>
+        <div class="pen-coin-result-sub" id="pen-coin-result-sub"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── TOURNAMENT MODE wrap ──────────────────────────────────── -->
   <div id="main-trn-wrap" class="hidden">
 
@@ -568,6 +1083,35 @@
           <h2 class="trn-step-title" data-i18n="trn-step1-title">Elige el formato</h2>
           <p class="trn-step-hint" data-i18n="trn-step1-hint">¿Cómo quieres que sea tu torneo?</p>
         </div>
+
+        <!-- Predefined official tournaments -->
+        <div class="trn-preset-section">
+          <div class="trn-preset-label" data-i18n="trn-preset-label">⭐ Torneos Oficiales</div>
+          <div class="trn-preset-grid">
+            <button class="trn-preset-card" data-preset="ucl2026">
+              <div class="trn-preset-trophy trn-trophy-ucl">
+                <img src="img/trophy-ucl.png" alt="Champions League Trophy" class="trn-trophy-img">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">UEFA Champions League</div>
+                <div class="trn-preset-season">2025/26</div>
+                <div class="trn-preset-meta">36 equipos · Fase de grupos + KO</div>
+              </div>
+            </button>
+            <button class="trn-preset-card" data-preset="wc2026">
+              <div class="trn-preset-trophy trn-trophy-wc">
+                <img src="img/trophy-wc.png" alt="FIFA World Cup Trophy" class="trn-trophy-img">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">FIFA World Cup</div>
+                <div class="trn-preset-season">2026</div>
+                <div class="trn-preset-meta">48 selecciones · 12 grupos + KO</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="trn-preset-divider"><span data-i18n="trn-custom-label">o crea tu propio torneo</span></div>
         <div class="trn-fmt-grid">
           <button class="trn-fmt-card" data-fmt="copa">
             <div class="trn-fmt-visual">🏆</div>
@@ -635,6 +1179,9 @@
           <div id="trn-search-results" class="trn-search-results hidden"></div>
         </div>
 
+        <button id="trn-btn-catalog" class="trn-btn-catalog" data-action="toggleCatalogBrowser">📋 Explorar BD</button>
+        <div id="trn-catalog-browser" class="trn-catalog-browser hidden"></div>
+
         <div id="trn-team-preview" class="trn-team-preview hidden"></div>
 
         <div id="trn-teams-list" class="trn-teams-list"></div>
@@ -651,12 +1198,14 @@
         <!-- League loader panel -->
         <div id="trn-league-loader" class="trn-league-loader hidden"></div>
 
-        <div id="trn-progress" class="trn-progress hidden">
-          <div class="trn-spinner"></div>
-          <div class="trn-progress-inner">
-            <span id="trn-progress-text">Simulando…</span>
-            <div class="trn-progress-track"><div id="trn-progress-bar" class="trn-progress-bar"></div></div>
-          </div>
+      </div>
+
+      <!-- Progress overlay — lives outside steps so it shows during preset simulation too -->
+      <div id="trn-progress" class="trn-progress hidden">
+        <div class="trn-spinner"></div>
+        <div class="trn-progress-inner">
+          <span id="trn-progress-text">Simulando…</span>
+          <div class="trn-progress-track"><div id="trn-progress-bar" class="trn-progress-bar"></div></div>
         </div>
       </div>
 
@@ -690,6 +1239,20 @@
     </div><!-- /trn-dashboard -->
 
   </div><!-- /main-trn-wrap -->
+
+  <!-- noscript: rich text block for Googlebot first-wave crawl & JS-disabled browsers.
+       Summarises key content that JS would otherwise render. Hidden visually but crawlable. -->
+  <noscript>
+    <div style="background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;padding:2rem 1.2rem;max-width:760px;margin:0 auto">
+      <h2>GolazoX — Simulador de Fútbol Histórico</h2>
+      <p>Simula partidos entre más de 200 equipos históricos de fútbol desde cualquier era. Real Madrid 1960, Barcelona 2009, Brasil 1970, Argentina 2022… Motor Monte Carlo probabilístico. Gratis y sin registro.</p>
+      <h3>Equipos destacados</h3>
+      <p>Real Madrid · FC Barcelona · Bayern Múnich · AC Milán · Juventus · Liverpool · Manchester United · Ajax · Inter de Milán · Arsenal · Chelsea · Atlético de Madrid</p>
+      <h3>Selecciones nacionales</h3>
+      <p>Brasil · Argentina · Alemania · Francia · Italia · España · Holanda · Portugal · Inglaterra · Uruguay</p>
+      <p>Activa JavaScript para usar el simulador.</p>
+    </div>
+  </noscript>
 
   </main>
 
@@ -740,8 +1303,8 @@
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
   <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=51"></script>
-  <script src="tournament.js?v=8"></script>
+  <script src="app.js?v=61"></script>
+  <script src="tournament.js?v=29"></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
 </body>

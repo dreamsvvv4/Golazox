@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v34';
+const CACHE_VERSION  = 'v68';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -72,6 +72,11 @@ self.addEventListener('fetch', event => {
 
   // ── Images: badges, flags, stadium photos ─────────────────────────────────
   // Cache-First with fallback fetch → images are large and change rarely.
+  // Excepción: estadios y árbitros no se cachean (pueden actualizarse en cualquier momento).
+  if (p.startsWith('/img/stadiums/') || p.startsWith('/img/referees/')) {
+    event.respondWith(fetch(request));
+    return;
+  }
   if (p.startsWith('/img/') || p.endsWith('.png') || p.endsWith('.jpg')
       || p.endsWith('.svg') || p.endsWith('.webp')) {
     event.respondWith(_cacheFirst(request, IMAGE_CACHE));
@@ -105,9 +110,14 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // ── Catalog API (/catalog, /squads by slug) ───────────────────────────────
-  // Network-First: fresh data when online; cached fallback when offline.
-  if (p === '/catalog' || p.startsWith('/lineup/') || p.startsWith('/lookup')) {
+  // ── Catalog API ──────────────────────────────────────────────────────────
+  // /catalog is dynamic (changes on server restart) — always fetch from network,
+  // never cache. /lineup and /lookup use network-first with cache fallback.
+  if (p === '/catalog') {
+    event.respondWith(fetch(request));
+    return;
+  }
+  if (p.startsWith('/lineup/') || p.startsWith('/lookup')) {
     event.respondWith(_networkFirst(request, DYNAMIC_CACHE));
     return;
   }

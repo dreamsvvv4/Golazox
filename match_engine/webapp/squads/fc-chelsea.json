@@ -96,7 +96,7 @@
         },
         {
           "name": "Christian Panucci",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
@@ -108,7 +108,7 @@
         },
         {
           "name": "Albert Ferrer",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
@@ -234,10 +234,10 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 83,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Chelsea (2000/2001)",
       "teamLabel": "Chelsea (2000-01)"
@@ -315,7 +315,7 @@
         },
         {
           "name": "Albert Ferrer",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Slavisa Jokanovic",
@@ -391,10 +391,10 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
       },
       "source": "Transfermarkt — Chelsea (2001/2002)",
       "teamLabel": "Chelsea (2001-02)"
@@ -528,16 +528,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 86,
+        "midfield": 87,
+        "defense": 89,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Chelsea (2004/2005)",
       "teamLabel": "Chelsea (2004-05)"
     },
     "2005": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Petr Cech",
@@ -661,16 +661,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 86,
+        "midfield": 87,
+        "defense": 89,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt — Chelsea (2005/2006)",
       "teamLabel": "Chelsea (2005-06)"
     },
     "2011": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Petr Cech",
@@ -706,7 +706,7 @@
         },
         {
           "name": "Ashley Cole",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ryan Bertrand",
@@ -802,16 +802,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 84,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Chelsea (2011/2012)",
       "teamLabel": "Chelsea (2011-12)"
     },
     "2012": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Petr Cech",
@@ -835,7 +835,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "John Terry",
@@ -843,7 +843,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "LB"
+          "position": "CB"
         },
         {
           "name": "Andreas Christensen",
@@ -851,7 +851,7 @@
         },
         {
           "name": "Ashley Cole",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ryan Bertrand",
@@ -951,16 +951,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 85,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt — Chelsea (2012/2013)",
       "teamLabel": "Chelsea (2012-13)"
     },
     "2014": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Thibaut Courtois",
@@ -984,7 +984,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Gary Cahill",
@@ -1004,7 +1004,7 @@
         },
         {
           "name": "Nathan Aké",
-          "position": "LB"
+          "position": "CB"
         },
         {
           "name": "Kenneth Omeruo",
@@ -1052,7 +1052,7 @@
         },
         {
           "name": "Juan Cuadrado",
-          "position": "CM"
+          "position": "RB"
         },
         {
           "name": "Oscar",
@@ -1084,7 +1084,7 @@
         },
         {
           "name": "Mohamed Salah",
-          "position": "LW"
+          "position": "RW"
         },
         {
           "name": "Victor Moses",
@@ -1116,16 +1116,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 84,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Chelsea (2014/2015)",
       "teamLabel": "Chelsea (2014-15)"
     },
     "2021": {
-      "formation": "4-4-2",
+      "formation": "3-4-3",
       "players": [
         {
           "name": "Edouard Mendy",
@@ -1169,7 +1169,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Malang Sarr",
@@ -1306,16 +1306,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 80,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — Chelsea (2021/2022)",
       "teamLabel": "Chelsea (2021-22)"
     },
     "2022": {
-      "formation": "4-4-2",
+      "formation": "3-4-3",
       "players": [
         {
           "name": "Kepa Arrizabalaga",
@@ -1367,13 +1367,13 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 87
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -1385,7 +1385,7 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 65000000,
           "rating": 85
         },
@@ -1403,7 +1403,7 @@
         },
         {
           "name": "César Azpilicueta",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 5000000,
           "rating": 80
         },
@@ -1517,7 +1517,7 @@
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 55000000,
           "rating": 89
         },
@@ -1547,7 +1547,7 @@
         },
         {
           "name": "João Félix",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 50000000,
           "rating": 84
         },
@@ -1559,7 +1559,7 @@
         },
         {
           "name": "Noni Madueke",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 30000000,
           "rating": 83
         },
@@ -1577,16 +1577,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 83,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Chelsea (2022/2023)",
       "teamLabel": "Chelsea (2022-23)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Robert Sánchez",
@@ -1650,13 +1650,13 @@
         },
         {
           "name": "Ben Chilwell",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 28000000,
           "rating": 87
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 87
         },
@@ -1674,19 +1674,19 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 40000000,
           "rating": 85
         },
         {
           "name": "Malo Gusto",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 35000000,
           "rating": 84
         },
         {
           "name": "Ian Maatsen",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 83
         },
@@ -1764,7 +1764,7 @@
         },
         {
           "name": "Cole Palmer",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 80000000,
           "rating": 88
         },
@@ -1776,7 +1776,7 @@
         },
         {
           "name": "Moisés Caicedo",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 75000000,
           "rating": 86
         },
@@ -1866,7 +1866,7 @@
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -1884,7 +1884,7 @@
         },
         {
           "name": "Noni Madueke",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 28000000,
           "rating": 83
         },
@@ -1926,16 +1926,16 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 73,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 71
       },
       "source": "Transfermarkt — Chelsea (2023/2024)",
       "teamLabel": "Chelsea (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Robert Sánchez",
@@ -1969,13 +1969,13 @@
         },
         {
           "name": "Marc Cucurella",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 50000000,
           "rating": 87
         },
         {
           "name": "Jorrel Hato",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -2011,13 +2011,13 @@
         },
         {
           "name": "Reece James",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 60000000,
           "rating": 85
         },
         {
           "name": "Malo Gusto",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 35000000,
           "rating": 84
         },
@@ -2041,13 +2041,13 @@
         },
         {
           "name": "Cole Palmer",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 110000000,
           "rating": 88
         },
         {
           "name": "Moisés Caicedo",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 110000000,
           "rating": 86
         },
@@ -2077,7 +2077,7 @@
         },
         {
           "name": "Jamie Gittens",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -2101,7 +2101,7 @@
         },
         {
           "name": "Pedro Neto",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 60000000,
           "rating": 83
         },
@@ -2119,10 +2119,10 @@
         }
       ],
       "ratings": {
-        "attack": 61,
-        "midfield": 66,
-        "defense": 64,
-        "goalkeeping": 64
+        "attack": 81,
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — Chelsea (2025/2026)",
       "teamLabel": "Chelsea (2025-26)"

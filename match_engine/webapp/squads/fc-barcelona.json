@@ -186,10 +186,10 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 84,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Barcelona (1985/1986)",
       "teamLabel": "Barcelona (1985-86)"
@@ -277,15 +277,15 @@
         },
         {
           "name": "Albert Ferrer",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
         {
-          "name": "Eusebio",
+          "name": "Eusébio Sacristán",
           "position": "CM",
           "marketValue": 0,
-          "rating": 94
+          "rating": 82
         },
         {
           "name": "Michael Laudrup",
@@ -367,10 +367,10 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 88,
+        "midfield": 90,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Barcelona (1992/1993)",
       "teamLabel": "Barcelona (1992-93)"
@@ -452,7 +452,7 @@
         },
         {
           "name": "Albert Ferrer",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 0,
           "rating": null
         },
@@ -572,10 +572,10 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 84,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Barcelona (1995/1996)",
       "teamLabel": "Barcelona (1995-96)"
@@ -747,16 +747,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 82,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Barcelona (1999/2000)",
       "teamLabel": "Barcelona (1999-00)"
     },
     "2006": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Víctor Valdés",
@@ -784,7 +784,7 @@
         },
         {
           "name": "Lilian Thuram",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 4900000,
           "rating": 88
         },
@@ -952,16 +952,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 90,
+        "midfield": 92,
+        "defense": 88,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Barcelona (2006/2007)",
       "teamLabel": "Barcelona (2006-07)"
     },
     "2009": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Víctor Valdés",
@@ -995,7 +995,7 @@
         },
         {
           "name": "Dani Alves",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 30000000,
           "rating": 87
         },
@@ -1151,16 +1151,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 93,
+        "midfield": 94,
+        "defense": 90,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Barcelona (2009/2010)",
       "teamLabel": "Barcelona (2009-10)"
     },
     "2010": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Víctor Valdés",
@@ -1206,7 +1206,7 @@
         },
         {
           "name": "Dani Alves",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -1314,7 +1314,7 @@
         },
         {
           "name": "Sergi Roberto",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 1500000,
           "rating": 75
         },
@@ -1374,16 +1374,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 94,
+        "midfield": 95,
+        "defense": 90,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Barcelona (2010/2011)",
       "teamLabel": "Barcelona (2010-11)"
     },
     "2011": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Víctor Valdés",
@@ -1423,7 +1423,7 @@
         },
         {
           "name": "Dani Alves",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 36000000,
           "rating": 88
         },
@@ -1537,7 +1537,7 @@
         },
         {
           "name": "Sergi Roberto",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 2500000,
           "rating": 77
         },
@@ -1597,16 +1597,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 95,
+        "midfield": 95,
+        "defense": 91,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Barcelona (2011/2012)",
       "teamLabel": "Barcelona (2011-12)"
     },
     "2014": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marc-André ter Stegen",
@@ -1640,7 +1640,7 @@
         },
         {
           "name": "Jordi Alba",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 86
         },
@@ -1664,7 +1664,7 @@
         },
         {
           "name": "Dani Alves",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 10000000,
           "rating": 82
         },
@@ -1730,7 +1730,7 @@
         },
         {
           "name": "Sergi Roberto",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 8000000,
           "rating": 82
         },
@@ -1796,16 +1796,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 90,
+        "midfield": 91,
+        "defense": 87,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Barcelona (2014/2015)",
       "teamLabel": "Barcelona (2014-15)"
     },
     "2015": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marc-André ter Stegen",
@@ -1839,7 +1839,7 @@
         },
         {
           "name": "Jordi Alba",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 35000000,
           "rating": 86
         },
@@ -1857,7 +1857,7 @@
         },
         {
           "name": "Dani Alves",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 9000000,
           "rating": 82
         },
@@ -1899,7 +1899,7 @@
         },
         {
           "name": "Sergi Roberto",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 20000000,
           "rating": 85
         },
@@ -2001,16 +2001,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 96,
+        "midfield": 91,
+        "defense": 87,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Barcelona (2015/2016)",
       "teamLabel": "Barcelona (2015-16)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Marc-André ter Stegen",
@@ -2056,13 +2056,13 @@
         },
         {
           "name": "Jules Koundé",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 45000000,
           "rating": 86
         },
         {
           "name": "João Cancelo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 25000000,
           "rating": 86
         },
@@ -2074,7 +2074,7 @@
         },
         {
           "name": "Alejandro Balde",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 40000000,
           "rating": 84
         },
@@ -2146,7 +2146,7 @@
         },
         {
           "name": "Sergi Roberto",
-          "position": "CM",
+          "position": "RB",
           "marketValue": 2500000,
           "rating": 77
         },
@@ -2182,13 +2182,13 @@
         },
         {
           "name": "Lamine Yamal",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 90000000,
           "rating": 91
         },
         {
           "name": "Raphinha",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 50000000,
           "rating": 89
         },
@@ -2200,7 +2200,7 @@
         },
         {
           "name": "João Félix",
-          "position": "ST",
+          "position": "AM",
           "marketValue": 30000000,
           "rating": 84
         },
@@ -2242,16 +2242,16 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 86,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Barcelona (2023/2024)",
       "teamLabel": "Barcelona (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Wojciech Szczęsny",
@@ -2285,19 +2285,19 @@
         },
         {
           "name": "Jules Koundé",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 65000000,
           "rating": 86
         },
         {
           "name": "João Cancelo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 9000000,
           "rating": 86
         },
         {
           "name": "Alejandro Balde",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 55000000,
           "rating": 84
         },
@@ -2315,7 +2315,7 @@
         },
         {
           "name": "Gerard Martín",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 80
         },
@@ -2345,7 +2345,7 @@
         },
         {
           "name": "Dani Olmo",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 60000000,
           "rating": 86
         },
@@ -2369,13 +2369,13 @@
         },
         {
           "name": "Lamine Yamal",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 200000000,
           "rating": 91
         },
         {
           "name": "Raphinha",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 80000000,
           "rating": 89
         },
@@ -2399,10 +2399,10 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 61,
-        "defense": 65,
-        "goalkeeping": 61
+        "attack": 88,
+        "midfield": 88,
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Barcelona (2025/2026)",
       "teamLabel": "Barcelona (2025-26)"

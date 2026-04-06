@@ -2,7 +2,7 @@
   "slug": "ajax-amsterdam",
   "seasons": {
     "1971": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Sies Wever",
@@ -90,16 +90,16 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 90,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Ajax (1971/1972)",
       "teamLabel": "Ajax (1971-72)"
     },
     "1972": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Sies Wever",
@@ -223,16 +223,16 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 90,
+        "midfield": 91,
+        "defense": 88,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Ajax (1972/1973)",
       "teamLabel": "Ajax (1972-73)"
     },
     "1973": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Sies Wever",
@@ -352,10 +352,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 88,
+        "midfield": 90,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt — Ajax (1973/1974)",
       "teamLabel": "Ajax (1973-74)"
@@ -572,7 +572,7 @@
       "teamLabel": "Ajax (1978-79)"
     },
     "1987": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Lloyd Doesburg",
@@ -720,16 +720,16 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 84,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Ajax (1987/1988)",
       "teamLabel": "Ajax (1987-88)"
     },
     "1994": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Edwin van der Sar",
@@ -846,7 +846,7 @@
       "teamLabel": "Ajax (1994-95)"
     },
     "1995": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Fred Grim",
@@ -954,10 +954,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 89,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Ajax (1995/1996)",
       "teamLabel": "Ajax (1995-96)"
@@ -1133,7 +1133,7 @@
       "teamLabel": "Ajax (2018-19)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "André Onana",
@@ -1173,7 +1173,7 @@
         },
         {
           "name": "Noussair Mazraoui",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 9500000,
           "rating": 87
         },
@@ -1251,7 +1251,7 @@
         },
         {
           "name": "Ryan Gravenberch",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 11000000,
           "rating": 87
         },
@@ -1371,10 +1371,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 87,
+        "midfield": 88,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Ajax (2019/2020)",
       "teamLabel": "Ajax (2019-20)"
@@ -1426,13 +1426,13 @@
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 10000000,
           "rating": 83
         },
         {
           "name": "Takehiro Tomiyasu",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 8000000,
           "rating": 82
         },
@@ -1546,10 +1546,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 82,
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — Ajax (2025/2026)",
       "teamLabel": "Ajax (2025-26)"

@@ -2,7 +2,7 @@
   "slug": "manchester-city",
   "seasons": {
     "2011": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Joe Hart",
@@ -222,10 +222,10 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 83,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — Manchester City (2011/2012)",
       "teamLabel": "Manchester City (2011-12)"
@@ -481,16 +481,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 86,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt — Manchester City (2012/2013)",
       "teamLabel": "Manchester City (2012-13)"
     },
     "2018": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ederson",
@@ -548,7 +548,7 @@
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 20000000,
           "rating": 83
         },
@@ -566,7 +566,7 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 50000000,
           "rating": 82
         },
@@ -620,7 +620,7 @@
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 130000000,
           "rating": 90
         },
@@ -716,7 +716,7 @@
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 140000000,
           "rating": 90
         },
@@ -728,7 +728,7 @@
         },
         {
           "name": "Leroy Sané",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 100000000,
           "rating": 86
         },
@@ -776,16 +776,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 93,
+        "midfield": 93,
+        "defense": 90,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Manchester City (2018/2019)",
       "teamLabel": "Manchester City (2018-19)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ederson",
@@ -819,7 +819,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 36000000,
           "rating": 86
         },
@@ -849,13 +849,13 @@
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 24000000,
           "rating": 83
         },
         {
           "name": "Kyle Walker",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 40000000,
           "rating": 82
         },
@@ -897,13 +897,13 @@
         },
         {
           "name": "Rodri",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 64000000,
           "rating": 90
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 120000000,
           "rating": 90
         },
@@ -951,7 +951,7 @@
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 128000000,
           "rating": 90
         },
@@ -963,7 +963,7 @@
         },
         {
           "name": "Leroy Sané",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 80000000,
           "rating": 86
         },
@@ -999,16 +999,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 91,
+        "midfield": 91,
+        "defense": 91,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Manchester City (2019/2020)",
       "teamLabel": "Manchester City (2019-20)"
     },
     "2021": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ederson",
@@ -1042,7 +1042,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 65000000,
           "rating": 86
         },
@@ -1066,13 +1066,13 @@
         },
         {
           "name": "Oleksandr Zinchenko",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 25000000,
           "rating": 83
         },
         {
           "name": "Kyle Walker",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 18000000,
           "rating": 82
         },
@@ -1120,7 +1120,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 80000000,
           "rating": 90
         },
@@ -1132,7 +1132,7 @@
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 85000000,
           "rating": 90
         },
@@ -1192,7 +1192,7 @@
         },
         {
           "name": "Raheem Sterling",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 70000000,
           "rating": 90
         },
@@ -1210,7 +1210,7 @@
         },
         {
           "name": "Oscar Bobb",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 0,
           "rating": 84
         },
@@ -1246,16 +1246,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 89,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Manchester City (2021/2022)",
       "teamLabel": "Manchester City (2021-22)"
     },
     "2022": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ederson",
@@ -1295,7 +1295,7 @@
         },
         {
           "name": "João Cancelo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 50000000,
           "rating": 86
         },
@@ -1325,7 +1325,7 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 13000000,
           "rating": 82
         },
@@ -1367,7 +1367,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 90000000,
           "rating": 90
         },
@@ -1379,7 +1379,7 @@
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 70000000,
           "rating": 90
         },
@@ -1463,16 +1463,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 91,
+        "midfield": 91,
+        "defense": 90,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Manchester City (2022/2023)",
       "teamLabel": "Manchester City (2022-23)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Ederson",
@@ -1560,7 +1560,7 @@
         },
         {
           "name": "Kyle Walker",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 13000000,
           "rating": 82
         },
@@ -1596,7 +1596,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 120000000,
           "rating": 90
         },
@@ -1608,7 +1608,7 @@
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 50000000,
           "rating": 90
         },
@@ -1674,13 +1674,13 @@
         },
         {
           "name": "Jérémy Doku",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 65000000,
           "rating": 85
         },
         {
           "name": "Oscar Bobb",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 25000000,
           "rating": 84
         },
@@ -1692,16 +1692,16 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 93,
+        "midfield": 94,
+        "defense": 91,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt — Manchester City (2023/2024)",
       "teamLabel": "Manchester City (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Gianluigi Donnarumma",
@@ -1795,7 +1795,7 @@
         },
         {
           "name": "Rodri",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 65000000,
           "rating": 90
         },
@@ -1843,13 +1843,13 @@
         },
         {
           "name": "Savinho",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 40000000,
           "rating": 86
         },
         {
           "name": "Jérémy Doku",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 65000000,
           "rating": 85
         },
@@ -1867,10 +1867,10 @@
         }
       ],
       "ratings": {
-        "attack": 63,
-        "midfield": 61,
-        "defense": 62,
-        "goalkeeping": 62
+        "attack": 88,
+        "midfield": 89,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt — Manchester City (2025/2026)",
       "teamLabel": "Manchester City (2025-26)"
@@ -1878,5 +1878,6 @@
   },
   "id": 281,
   "name": "Manchester City",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "badgeLocalPath": "/img/badges/manchester-city.png"
 }

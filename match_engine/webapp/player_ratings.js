@@ -55,6 +55,144 @@ const PLAYER_POSITIONS_RAW = [
   ['antonio cabrini',          'LB'],
   ['julius cesar',             'GK'],
   ['julius cesar brasil',      'GK'],
+  // ── Laterales modernos frecuentemente clasificados como CB en scrapers ──
+  // Real Madrid
+  ['alvaro carreras',          'LB'],  // RM LB 2024-25
+  ['fran garcia',              'LB'],  // RM LB 2022-25 (distinto de Francesc Garcia)
+  ['lucas vazquez',            'RB'],  // RM RB suplente
+  ['nacho fernandez',          'CB'],  // RM CB
+  // Barcelona
+  ['jules kounde',             'RB'],  ['koundé',               'RB'],
+  ['gerard martin',            'LB'],  // Barça LB 2024-25
+  ['eric garcia',              'CB'],  // Barça CB
+  // Bayern Munich
+  ['alphonso davies',          'LB'],
+  ['noussair mazraoui',        'RB'],  ['mazraoui',             'RB'],
+  // Liverpool
+  ['conor bradley',            'RB'],
+  ['kostas tsimikas',          'LB'],  ['tsimikas',             'LB'],
+  ['jarell quansah',           'CB'],
+  // Man City
+  ['manuel akanji',            'CB'],  ['akanji',               'CB'],
+  ['joleon lescott',           'CB'],
+  // Tottenham / PL
+  ['pedro porro',              'RB'],
+  ['kieran trippier',          'RB'],  ['trippier',             'RB'],
+  ['nathaniel clyne',          'RB'],
+  ['ben davies',               'LB'],
+  ['ryan sessegnon',           'LB'],
+  ['sergio reguilon',          'LB'],  ['reguilón',             'LB'],
+  // Inter
+  ['benjamin pavard',          'RB'],  ['pavard',               'RB'],
+  ['denzel dumfries',          'RB'],
+  ['carlos augusto',           'LB'],  // Inter LB
+  ['matteo darmian',           'RB'],
+  ['michele di gregorio',      'GK'],
+  // Juventus
+  ['juan cuadrado',            'RB'],  ['cuadrado',             'RB'],
+  ['weston mckennie',          'CM'],
+  ['andrea cambiaso',          'RB'],  // Juve can play RB or LB — primary RB
+  ['nicolo fagioli',           'CM'],  ['nicolò fagioli',       'CM'],
+  ['timothy weah',             'RW'],
+  ['samuel mbangula',          'LW'],
+  ['jonas rouhi',              'LB'],
+  // AC Milan
+  ['davide calabria',          'RB'],  ['calabria',             'RB'],
+  ['theo hernandez',           'LB'],  // already overridden but duplicate for safety
+  ['pierre kalulu',            'CB'],  ['kalulu',               'CB'],
+  ['malick thiaw',             'CB'],  ['thiaw',                'CB'],
+  ['tijjani reijnders',        'CM'],
+  ['mike maignan',             'GK'],  // already GK in ratings
+  // Atletico Madrid
+  ['cesar azpilicueta',        'RB'],  ['azpilicueta',          'RB'],
+  ['marcos llorente',          'CM'],
+  ['nahuel molina',            'RB'],  // already ✓
+  ['reinildo',                 'LB'],  ['reinildo mandava',     'LB'],
+  ['rodrigo de paul',          'CM'],
+  ['thomas lemar',             'LW'],  ['lemar',                'LW'],
+  // Borussia Dortmund
+  ['marius wolf',              'RB'],
+  ['julian ryerson',           'RB'],  ['ryerson',              'RB'],
+  ['ramy bensebaini',          'LB'],  ['bensebaini',           'LB'],
+  ['niklas sule',              'CB'],  ['süle',                 'CB'], ['sule', 'CB'],
+  ['nico schlotterbeck',       'CB'],  // already ✓
+  ['emre can',                 'DM'],  // BVB/Juve DM
+  // Manchester United
+  ['diogo dalot',              'RB'],  ['dalot',                'RB'],
+  ['victor lindelof',          'CB'],
+  ['lisandro martinez',        'CB'],  ['martínez lisandro',    'CB'],
+  ['tyrell malacia',           'LB'],
+  ['luke shaw',                'LB'],
+  // Arsenal
+  ['cedric soares',            'RB'],  ['cedric',               'RB'],
+  ['takehiro tomiyasu',        'RB'],  ['tomiyasu',             'RB'],
+  ['kieran tierney',           'LB'],  ['tierney',              'LB'],
+  ['oleksandr zinchenko',      'LB'],  // already ✓
+  ['ben white',                'RB'],  // Arsenal play Ben White as RB
+  // PSG
+  ['achraf hakimi',            'RB'],  // already ✓ but extra safety
+  ['nuno mendes',              'LB'],  ['mendes',               'LB'],
+  ['milan skriniar',           'CB'],  ['škriniar',             'CB'], ['skriniar', 'CB'],
+  ['marquinhos',               'CB'],  // already overridden? Let me ensure
+  ['manuel ugarte',            'DM'],  // PSG DM
+  // Real Sociedad / Spain
+  ['andoni gorosabel',         'RB'],
+  ['aritz elustondo',          'CB'],
+  ['igor zubeldia',            'CB'],
+  ['mikel oyarzabal',          'LW'],  // override from AM to LW for accuracy
+  // Key forwards/wingers commonly mispositioned in scrapers
+  ['mo salah',                 'RW'],  ['mohamed salah',         'RW'],  // Liverpool RW not LW
+  ['raheem sterling',          'LW'],
+  ['gabriel martinelli',       'LW'],  // Arsenal LW
+  ['diogo jota',               'LW'],  // Liverpool LW/ST versatile
+  ['cody gakpo',               'LW'],  // Liverpool LW
+  ['nicolas jackson',          'ST'],  // Chelsea CF
+  ['roberto firmino',          'ST'],  // Liverpool CF
+  ['karim adeyemi',            'LW'],  ['adeyemi',               'LW'],
+  ['jamie gittens',            'LW'],  ['gittens',               'LW'],  // BVB LW
+  ['serhou guirassy',          'ST'],  ['guirassy',              'ST'],  // BVB/Stuttgart ST
+  ['julian brandt',            'AM'],  // BVB AM
+  // Key DMs/pivots not yet in positions map
+  ['fabinho',                  'DM'],  // Liverpool/PSG DM pivot
+  ['georginio wijnaldum',      'CM'],  ['wijnaldum',             'CM'],
+  ['jordan henderson',         'CM'],  // Liverpool CM captain
+  // Key forwards/wingers commonly mispositioned in scrapers
+  ['mo salah',                 'RW'],  ['mohamed salah',         'RW'],  // Liverpool RW
+  ['raheem sterling',          'LW'],
+  ['gabriel martinelli',       'LW'],  // Arsenal LW
+  ['diogo jota',               'LW'],  // Liverpool LW/ST
+  ['cody gakpo',               'LW'],  // Liverpool LW
+  ['nicolas jackson',          'ST'],  // Chelsea CF
+  ['roberto firmino',          'ST'],  // Liverpool CF
+  ['karim adeyemi',            'LW'],  ['adeyemi',               'LW'],
+  ['jamie gittens',            'LW'],  ['gittens',               'LW'],  // BVB LW
+  ['serhou guirassy',          'ST'],  ['guirassy',              'ST'],  // BVB/Stuttgart ST
+  ['julian brandt',            'AM'],  // BVB AM
+  // Key DMs/pivots not yet in positions map
+  ['fabinho',                  'DM'],  // Liverpool/PSG DM
+  ['georginio wijnaldum',      'CM'],  ['wijnaldum',             'CM'],
+  ['jordan henderson',         'CM'],  // Liverpool captain
+  ['jordan henderson',         'CM'],
+  // Ajax
+  ['devyne rensch',            'RB'],
+  ['jorrel hato',              'LB'],
+  // Misc Europe
+  ['pedro neto',               'RW'],  // already ✓  
+  ['noni madueke',             'RW'],  // already ✓
+  ['malo gusto',               'RB'],  // already ✓
+  ['jeremy doku',              'LW'],  ['jeremy doku',          'LW'],
+  ['ryan gravenberch',         'DM'],  // Liverpool CM/DM — listed DM for better 4-3-3 fit
+  ['manu kone',                'DM'],  ['kone manu',            'DM'],
+  ['boubacar kamara',          'DM'],  ['kamara boubacar',      'DM'],
+  ['ibrahim sangare',          'DM'],  ['sangaré',              'DM'],
+  ['dominik szoboszlai',       'AM'],  // Liverpool AM
+  ['dani olmo',                'AM'],  ['olmo dani',            'AM'],
+  ['joao felix',               'AM'],  // already might be — ensure AM
+  ['isco alarcon',             'AM'],  // already ✓ as isco
+  ['matteo guendouzi',         'CM'],  // already ✓
+  ['youri tielemans',          'CM'],  // already ✓
+  ['amadou onana',             'DM'],  // Aston Villa/Belgium DM
+  ['boubakar kouyate',         'DM'],
   // Centrocampistas que a veces aparecen como delanteros o defensas
   ['franz beckenbauer',        'CB'],
   ['lothar matthaus',          'CM'],
@@ -451,13 +589,18 @@ const PLAYER_RATINGS_RAW = [
   ['lionel messi',           99], ['leo messi',            99], ['messi',   99],
   ['cristiano ronaldo',      99],
   ['ronaldo nazario',        98], ['ronaldo nazário',      98], ['ronaldo fenomeno', 98],
+  ['ronaldo',                98],  // R9 alias — historical JSONs often store just 'Ronaldo'
   ['franz beckenbauer',      96],
   ['alfredo di stefano',     98],
   ['ferenc puskas',          96], ['puskás',               96], ['puskas',  96],
-  ['eusebio',                94], ['eusébio',              94],
+  ['eusebio',                94], ['eusébio',              94], // ← Portuguese legend ONLY — full alias kept
+  // NOTE: Eusébio Sacristán (Barcelona/Spain CM) has his own entry below
   ['garrincha',              94],
   ['george best',            95],
-  ['gerd muller',            95], ['gerd müller',          95], ['müller',  95],
+  ['gerd muller',            95], ['gerd müller',          95],
+  // NOTE: bare 'müller' intentionally removed — it caused false positives for non-German players
+  // (e.g. Brazilian Müller, Marcos Evangelista de Morais) who stored only their surname in the JSON.
+  // Gerd Müller is covered by full-name entries above.
   ['just fontaine',          89], ['fontaine',             89],
   ['raymond kopa',           89],
   ['sandor kocsis',          90], ['kocsis',               90],
@@ -485,7 +628,7 @@ const PLAYER_RATINGS_RAW = [
   // ── 1990s–2000s ──
   ['raul gonzalez',          88], ['raúl',                 88], ['raul',    88],
   ['Fernando Hierro',        87], ['hierro',               87],
-  ['ivan helguera',          78], ['helguera',             78],
+  ['ivan helguera',          82], ['helguera',             82],  // UCL 2002 starter
   ['davor suker',            87], ['šuker',                87], ['suker',   87],
   ['robert prosinecki',      85], ['prosinečki',           85],
   ['predrag mijatovic',      84], ['mijatović',            84],
@@ -554,12 +697,81 @@ const PLAYER_RATINGS_RAW = [
   ['antoine griezmann',      89], ['griezmann',            89],
   ['ousmane dembele',        87], ['dembélé',              87], ['dembele', 87],
   ['marco reus',             86], ['reus',                 86],
-  ['thomas muller',          78], ['thomas müller',        78],
+  ['thomas muller',          86], ['thomas müller',        86],  // Raumdeuter, CL/WC winner
   ['franck ribery',          90],
   ['arjen robben',           89],
   ['lamine yamal',           88],
   ['fernando torres',        87],
   ['alvaro morata',          83], ['morata',               83],
+  // ── Jugadores históricos sin valor de mercado (scrapes antiguos) ──────────
+  // Liverpool
+  ['fabinho',                88], ['fabinho tavares',      88],
+  ['georginio wijnaldum',    85], ['wijnaldum',            85], ['gini wijnaldum', 85],
+  ['james milner',           81], ['milner',               81],
+  ['naby keita',             83], ['naby keïta',           83],
+  ['alex oxlade-chamberlain',82], ['oxlade-chamberlain',   82],
+  ['adam lallana',           82], ['lallana',              82],
+  ['joel matip',             83], ['matip',                83],
+  ['dejan lovren',           81], ['lovren',               81],
+  ['andy robertson',         86], // alias
+  ['roberto firmino',        84], ['firmino',              84],  // bump from 83
+  // Real Madrid clásicos sin datos TM
+  ['isco',                   85], ['isco alarcon',         85],
+  ['marcelo',                86], ['marcelo vieira',       86],
+  ['nacho',                  82], ['nacho fernandez',      82],
+  ['dani ceballos',          82],
+  ['marco asensio',          83],
+  // Ajax histórico
+  ['frank rijkaard',         89], ['rijkaard',             89],
+  ['ruud gullit',            93], ['gullit',               93],
+  ['marco van basten',       98], ['van basten',           98],
+  // Bayern histórico
+  ['philipp lahm',           92], ['lahm',                 92],
+  ['bastian schweinsteiger', 90], ['schweinsteiger',       90],
+  ['thomas muller',          78],
+  ['franck ribery',          90],
+  ['arjen robben',           89],
+  // Misc important players often without MV in scraped data
+  ['mesut ozil',             88], ['özil',                 88],
+  ['olivier giroud',         83], ['giroud',               83],
+  ['cesc fabregas',          87], ['fàbregas',             87],
+  ['santi cazorla',          85], ['cazorla',              85],
+  ['mikel arteta',           84], ['arteta',               84],
+  ['tomas rosicky',          84], ['rosický',              84],
+  ['robin van persie',       88], ['van persie',           88],
+  ['juan romero riquelme',   89], // alias
+  ['javier zanetti',         88], ['zanetti',              88],
+  ['gianluca zambrotta',     85], ['zambrotta',            85],
+  ['filippo inzaghi',        85], ['inzaghi',              85],
+  ['christian vieri',        88], ['vieri',                88],
+  ['hernan crespo',          85], ['crespo',               85],
+  ['andrei shevchenko',      91],
+  ['andriy shevchenko',      91],
+  ['clarence seedorf',       88], ['seedorf',              88],
+  ['edgar davids',           85], ['davids',               85],
+  ['paulo maldini',          97],      // typo alias
+  ['gianfranco zola',        87], ['zola',                 87],
+  ['pierre van hooijdonk',   83], ['van hooijdonk',        83],
+  ['marc overmars',          85], ['overmars',             85],
+  ['dennis bergkamp',        92], ['bergkamp',             92],
+  ['thierry henry',          93],
+  ['patrick kluivert',       85], ['kluivert',             85],
+  ['davor suker',            87], ['šuker',                87], ['suker', 87],
+  ['predrag mijatovic',      84],
+  ['robert prosinecki',      85],
+  ['fernando redondo',       89], ['redondo',              89],
+  ['nicolas anelka',         85], ['anelka',               85],
+  ['freddie ljungberg',      84], ['ljungberg',            84],
+  ['robert pires',           87], ['pirès',                87], ['pires', 87],
+  ['sylvain wiltord',        83], ['wiltord',              83],
+  ['ray parlour',            80], ['parlour',              80],
+  ['ashley cole',            86],
+  ['sol campbell',           87], ['campbell sol',         87],
+  ['tony adams',             85], ['adams',                85],
+  ['lee dixon',              82], ['dixon',                82],
+  ['nigel winterburn',       82], ['winterburn',           82],
+  ['martin keown',           82], ['keown',                82],
+  ['ian wright',             87], ['wright ian',           87],
   ['romelu lukaku',          85], ['lukaku',               85],
   ['pierre-emerick aubameyang', 84], ['aubameyang',        84],
   ['ciro immobile',          85], ['immobile',             85],
@@ -798,7 +1010,9 @@ const PLAYER_RATINGS_RAW = [
   ['vitinha',                87],
   ['joao felix',             84], ['jo�o f�lix',           84],
   ['rafael leao',            88], ['le�o',                 88],
-  ['cristiano ronaldo',      88], ['ronaldo',              88], ['cr7',     88],
+  // CR7 current form — DO NOT override the all-time 99 entry above (Map last-wins);
+  // actual rating is set by the definitive entry ['cristiano ronaldo', 99] earlier.
+  // ['cristiano ronaldo', 88] removed to avoid overwriting legendary peak.
   ['nuno mendes',            87], ['mendes nuno',          87],
   ['ruben neves',            85], ['neves ruben',          85],
   ['pedro neto',             83],
@@ -1039,7 +1253,8 @@ const PLAYER_RATINGS_RAW = [
   ['pervis estupinian',      85], ['estupi��n',            85], ['estupinian', 85],
   ['lautaro martinez',       89], ['lautaro mart�nez',     89],
   ['julian alvarez',         89], ['juli�n �lvarez',       89],
-  ['lionel messi',           88], ['messi',                88],
+  // Messi current form — same as CR7: definitive entry ['lionel messi', 99] wins.
+  // ['lionel messi', 88] removed to preserve the legendary all-time rating.
   ['paulo dybala',           86], ['dybala',               86],
   ['min-jae kim',            87], ['kim min-jae',          87],
   ['joel pohjanpalo',        82], ['pohjanpalo',           82],
@@ -1106,6 +1321,451 @@ const PLAYER_RATINGS_RAW = [
   ['moisés caicedo',         88],
   ['joelinton',              82],
   ['sandro tonali',          85], ['tonali',               85],
+
+  // ════════════════════════════════════════════════════════════════════
+  // LEYENDAS HISTÓRICAS — players missing from old squad JSONs
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Alemania / Germany ───────────────────────────────────────────
+  ['jurgen klinsmann',       88], ['klinsmann',            88], ['jürgen klinsmann', 88],
+  ['rudi voller',            85], ['völler',               85], ['voller',           85],
+  ['andreas brehme',         87], ['brehme',               87], // scored winning penalty 1990 WC
+  ['jurgen kohler',          84], ['kohler',               84], ['jürgen kohler',    84],
+  ['thomas hassler',         83], ['häßler',               83], ['hässler',          83],
+  ['pierre littbarski',      82], ['littbarski',           82],
+  ['guido buchwald',         83], ['buchwald',             83], // marked Maradona 1990 SF
+  ['bodo illgner',           83], ['illgner',              83],
+  ['ulf kirsten',            82], ['kirsten',              82],
+  ['bernd schuster',         88], ['schuster',             88], // controversial genius
+  ['harold schumacher',      83], ['schumacher',           83], ['toni schumacher', 83],
+  ['heinz flohe',            82], ['flohe',                82],
+  ['rainer bonhof',          83], ['bonhof',               83],
+  ['wolfgang overath',       86], ['overath',              86], // 1966/70/74 playmaker
+  ['bernd holzenbein',       81], ['hölzenbein',           81],
+
+  // ── Argentina ────────────────────────────────────────────────────
+  ['jorge burruchaga',       83], ['burruchaga',           83], // scored 3-2 in 1986 WC final
+  ['claudio caniggia',       86], ['caniggia',             86],
+  ['jorge valdano',          82], ['valdano',              82],
+  ['oscar ruggeri',          83], ['ruggeri',              83],
+  ['daniel bertoni',         80], ['bertoni',              80],
+  ['leopoldo luque',         80], ['luque',                80],
+  ['rene houseman',          80], ['houseman',             80],
+  ['jorge carrascosa',       79], ['carrascosa',           79],
+  ['amelrico gallego',       81], ['gallego',              81], ['américo gallego', 81],
+  ['hugo gatti',             82], ['gatti',                82],
+  ['pedro pasculli',         79], ['pasculli',             79],
+  ['juan sebastian veron',   86], ['verón',                86], ['veron',           86],
+  ['marcelo gallardo',       83], ['gallardo',             83],
+
+  // ── Brasil / Brazil ───────────────────────────────────────────────
+  ['jairzinho',              88], // scored in every 1970 WC game
+  ['tostao',                 87], ['tostão',               87],
+  ['clodoaldo',              83],
+  ['bebeto',                 87], ['josé roberto gama',    87], // 1994 WC – baby celebration
+  ['leonidas',               87], ['leônidas',             87], ['leonidas da silva', 87],
+  ['ademir',                 86], // 1950 WC, top scorer
+  ['careca',                 87], // 1986/1990 WC striker
+  ['junior',                 84], ['junior leandro',       84], // 1982/1986 WC LB
+  ['cerezo',                 83], ['toninho cerezo',       83],
+  ['edu',                    82], ['edu coimbra',          82],
+  ['eder',                   83], ['éder',                 83], // 1982 WC – the Eder goal
+  ['paulo roberto falcao',   89], // covered above as falcão but add full name alias
+  ['didier',                 82],
+
+  // ── Francia / France ──────────────────────────────────────────────
+  ['alain giresse',          85], ['giresse',              85],
+  ['jean tigana',            84], ['tigana',               84],
+  ['luis fernandez',         82], ['fernandez luis',       82],
+  ['manuel amoros',          82], ['amoros',               82],
+  ['jean-pierre papin',      87], ['papin',                87],
+  ['youri djorkaeff',        83], ['djorkaeff',            83],
+  ['emmanuel petit',         85], ['petit',                85],
+  ['didier deschamps',       84], ['deschamps',            84],
+  ['marius tresor',          83], ['trésor',               83], ['tresor',          83],
+  ['bernard lacombe',        80], ['lacombe',              80],
+  ['dominique rocheteau',    82], ['rocheteau',            82],
+  ['david ginola',           82], ['ginola',               82],
+  ['zinedine zidane',        96], // alias redundancy guard
+
+  // ── Italia / Italy ────────────────────────────────────────────────
+  ['paolo rossi',            88], ['rossi',                88], // 1982 WC Golden Boot – 6 goals
+  ['marco tardelli',         83], ['tardelli',             83], // famous 1982 final goal scream
+  ['bruno conti',            83], ['conti',                83],
+  ['antonio cabrini',        82], ['cabrini',              82],
+  ['giancarlo antognoni',    86], ['antognoni',            86],
+  ['luigi riva',             89], ['riva',                 89], // Italy all-time top scorer (35 goals)
+  ['sandro mazzola',         87], ['mazzola',              87],
+  ['gianni rivera',          88], ['rivera',               88], // 1969 Ballon d'Or
+  ['roberto boninsegna',     85], ['boninsegna',           85],
+  ['franco causio',          82], ['causio',               82],
+  ['giuseppe meazza',        92], ['meazza',               92], // 1934/1938 WC winner, legend
+  ['silvio piola',           87], ['piola',                87], // 1938 WC
+  ['roberto bettega',        83], ['bettega',              83],
+  ['fabio capello',          82], ['capello',              82],
+  ['tarcisio burgnich',      83], ['burgnich',             83], // 1970 WC
+  ['romeo menti',            79],
+  ['giuseppe signori',       84], ['signori',              84], // 1994 WC
+  ['roberto donadoni',       83], ['donadoni',             83], // 1990 WC
+  ['dino baggio',            80], ['dino baggio dino',     80],
+
+  // ── Países Bajos / Netherlands ────────────────────────────────────
+  ['johan neeskens',         86], ['neeskens',             86], // Cruyff's partner
+  ['johnny rep',             83], ['rep',                  83],
+  ['rob rensenbrink',        84], ['rensenbrink',          84], // hit the post in 78 WC final!
+  ['arie haan',              83], ['haan',                 83],
+  ['willy van de kerkhof',   82], ['van de kerkhof',       82],
+  ['rene van de kerkhof',    80],
+  ['ronald koeman',          87], ['r.koeman',             87], // 1988 EURO – scored in final
+  ['dirk kuyt',              82], ['kuyt',                 82],
+  ['mark van bommel',        83], ['van bommel',           83],
+  ['cocu',                   84], ['philip cocu',          84],
+
+  // ── Croacia / Croatia ────────────────────────────────────────────
+  ['zvonimir boban',         86], ['boban',                86], // legendary captain 1998 WC
+  ['alen boksic',            84], ['bokšić',               84], ['boksic',          84],
+  ['igor stimac',            81], ['štimac',               81], ['stimac',          81],
+  ['mario stanic',           80], ['stanić',               80],
+  ['slaven bilic',           80], ['bilić',                80], ['bilic',           80],
+  ['dario simic',            81], ['šimić',                81], ['simic',           81],
+  ['nikola jerkan',          79], ['jerkan',               79],
+  ['igor tudor',             80], ['tudor',                80],
+  ['niko kovac',             81], ['kovač',                81], ['kovac',           81],
+
+  // ── Portugal historial ────────────────────────────────────────────
+  ['mario coluna',           86], ['coluna',               86], // 1966 WC – Benfica/Portugal captain
+  ['jose augusto',           82], ['josé augusto',         82],
+  ['antonio simoes',         82], ['simões',               82], ['simoes',          82],
+  ['paula torres',           79],
+  ['rui costa',              88], ['rui costa jorge',      88], // not the Fiorentina one
+  ['luis figo',              94], ['figo',                 94], ['luís figo',       94], // 2001 Ballon d'Or
+  ['joao pinto',             82], ['joão pinto',           82],
+  ['pauleta',                84], ['pedro de sa',          84],
+  ['nuno gomes',             82], ['nuno gomes junior',    82],
+  ['deco',                   89], // Barcelona/Chelsea playmaker
+  ['maniche',                82],
+  ['costinha',               80],
+  ['ricardo carvalho',       86], ['r.carvalho',           86],
+  ['joao moutinho',          84], ['joão moutinho',        84], ['moutinho',        84],
+  ['pepe kellermann',        86], ['pepe',                 86], // Pepe Portugal/RM CB
+
+  // ── Portugal squad depth ─────────────────────────────────────────
+  ['tiago mendes',           84], ['tiago',                84], // 2006 WC - Atlético CM
+  ['simao sabrosa',          85], ['simão',                85], ['simao',            85],
+  ['ricardo quaresma',       82], ['quaresma',             82],
+  ['nuno valente',           81],
+  ['miguel monteiro',        80], ['miguel',               80], // 2006 WC RB
+
+  // ── France squad depth ───────────────────────────────────────────
+  ['william gallas',         84], ['gallas',               84],
+  ['eric abidal',            83], ['abidal',               83], ['éric abidal',      83],
+  ['patrice evra',           84], ['evra',                 84],
+  ['willy sagnol',           83], ['sagnol',               83],
+  ['gregory coupet',         83], ['coupet',               83], ['grégory coupet',   83],
+  ['mikael silvestre',       82], ['mikaël silvestre',     82], // alias for name normalisation
+  ['florent malouda',        83], ['malouda',              83],
+  ['djibril cisse',          82], ['cissé',                82], ['cisse',            82],
+  ['sidney govou',           80], ['govou',                80],
+  ['youri djorkaeff',        83], // alias already present — guard duplicate
+  ['robert pires',           87], // alias already present
+  ['sylvain wiltord',        82],
+  ['maxime gonalons',        81],
+
+  // ── Italy 1982 WC winner squad depth ────────────────────────────
+  ['claudio gentile',        83], ['gentile',              83], // neutralised Maradona & Zico
+  ['giuseppe bergomi',       84], ['bergomi',              84],
+  ['alessandro altobelli',   83], ['altobelli',            83], // scored in 1982 WC final
+  ['gianpiero marini',       80], ['marini',               80],
+  ['gabriele oriali',        80], ['oriali',               80],
+  ['fulvio collovati',       81], ['collovati',            81],
+  ['claudio prandelli',      79], ['prandelli',            79],
+  ['antonio cabrini',        82], // alias already present
+  ['ivano bordon',           82], ['bordon',               82],
+  ['giovanni galli',         81], ['g.galli',              81],
+  ['daniela massaro',        80], ['massaro',              80],
+  ['roberto pruzzo',         81], ['pruzzo',               81],
+  ['giancarlo antognoni',    86], // alias already present
+  ['sergio brio',            79],
+
+  // ── Spain 2010 WC winner squad depth ────────────────────────────
+  ['joan capdevila',         82], ['capdevila',            82],
+  ['alvaro arbeloa',         82], ['arbeloa',              82], ['álvaro arbeloa',   82],
+  ['raul albiol',            83], ['albiol',               83], ['raúl albiol',      83],
+  ['jesus navas',            84], ['navas jesus',          84], ['jesús navas',      84],
+  ['juan mata',              85], ['mata',                 85],
+  ['pedro rodriguez',        84], ['pedro',                84], ['pedro rodríguez',  84],
+  ['fernando llorente',      83], ['llorente',             83],
+  ['carlos marchena',        81], ['marchena',             81],
+
+  // ── Brazil 1970 legendary squad depth ──────────────────────────
+  ['felix',                  82], ['félix miéle',          82], // 1970 WC GK - blamed for Italy goals
+  ['brito',                  83], ['brito roberto',        83], // 1970 WC CB
+  ['rivellino',              89], // spelling variant of rivelino used in some JSONs
+  ['everaldo',               82], // 1970 WC LB
+  ['paulo cesar lima',       81], ['paulo cesar',          81],
+  ['piazza',                 80], ['wilson piazza',        80],
+  ['clodoaldo',              83], // already inserted above — guard
+
+  // ── Argentina 1986 WC winner squad depth ────────────────────────
+  ['nery pumpido',           83], ['pumpido',              83], // 1986/1990 WC GK
+  ['jose luis brown',        81], ['brown jose',           81], // scored 1986 WC final goal
+  ['julio olarticoechea',    81], ['olarticoechea',        81],
+  ['sergio batista',         81], ['batista sergio',       81],
+  ['ricardo bochini',        84], ['bochini',              84], // Maradona's idol
+  ['néstor clausen',         80], ['clausen',              80],
+  ['oscar garrre',           80],
+  ['gerardo martino',        80], ['tata martino',         80],
+
+  // ── Netherlands 1988 EURO winner squad depth ────────────────────
+  ['hans van breukelen',     85], ['van breukelen',        85], // saved penalty in 1988 EURO SF
+  ['erwin koeman',           82], // Ronald's brother, also in 1988 squad
+  ['arnold muhren',          83], ['mühren',               83], ['muhren',           83],
+  ['wim kieft',              82], ['kieft',                82],
+  ['aron winter',            82], ['winter',               82],
+  ['adri van tiggelen',      81], ['van tiggelen',         81],
+  ['berry van aerle',        80], ['van aerle',            80],
+  ['gerald vanenburg',       81], ['vanenburg',            81],
+  ['john van t schip',       80], ['van t schip',          80],
+
+  // ════════════════════════════════════════════════════════════════════
+  // CLUBS EUROPEOS — jugadores sin override en eras icónicas
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Eusébio Sacristán (Spanish CM, Barça Dream Team) — NOT the Portuguese legend ──
+  ['eusebio sacristan',      82], ['eusébio sacristán',    82],
+
+  // ── Juventus ─────────────────────────────────────────────────────
+  ['stefano tacconi',        85], ['tacconi',              85], // Juve GK 1983-92, CL winner
+  ['zbigniew boniek',        87], ['boniek',               87], // Polish legend – Juve/Roma
+  ['massimo bonini',         80], ['bonini massimo',       80],
+  ['lionello manfredonia',   81], ['manfredonia',          81],
+  ['massimo briaschi',       79], ['briaschi',             79],
+  ['aldo serena',            82], ['serena aldo',          82],
+  ['stefano pioli',          76], ['pioli',                76],
+  ['sergio brio',            80], ['brio',                 80],
+  ['angelo peruzzi',         84], ['peruzzi',              84],
+  ['ciro ferrara',           85], ['ferrara ciro',         85],
+  ['mark iuliano',           82], ['iuliano',              82],
+  ['gianluca pessotto',      81], ['pessotto',             81],
+  ['antonio conte',          84], ['conte antonio',        84], // Juve CM before coaching career
+  ['angelo di livio',        82], ['di livio',             82],
+  ['nicola amoruso',         80], ['amoruso',              80],
+  ['daniel fonseca',         83], ['fonseca daniel',       83],
+
+  // ── Barcelona ────────────────────────────────────────────────────
+  ['carles busquets',        81], ['busquets carles',      81], // Sergio's father – Dream Team GK
+  ['jose ramon alexanko',    81], ['alexanko',             81],
+  ['miguel angel nadal',     83], ['nadal miguel',         83], // "The Beast of Barcelona"
+  ['albert ferrer',          82], ['ferrer albert',        82],
+  ['sergi barjuan',          82], ['barjuan',              82],
+  ['guillermo amor',         82], ['amor guillermo',       82],
+  ['txiki begiristain',      83], ['begiristain',          83],
+  ['julio salinas',          82], ['salinas julio',        82],
+  ['richard witschge',       80], ['witschge',             80],
+  ['oscar garcia',           79], ['óscar garcía',         79],
+
+  // ── Real Madrid ──────────────────────────────────────────────────
+  ['paco gento',             88], ['gento',                88], // 6× EC winner, legendary LW
+  ['miguel munoz',           81], ['muñoz',                81], ['munoz',            81],
+  ['marquitos',              80],
+  ['hector rial',            81], ['rial',                 81],
+  ['jose maria zarraga',     80], ['zárraga',              80], ['zarraga',          80],
+  ['santillana',             84], ['carlos santillana',    84],
+  ['pirri',                  83],
+  ['uli stielike',           84], ['stielike',             84],
+  ['manolo sanchis',         83], ['sanchis',              83],
+  ['christian karembeu',     83], ['karembeu',             83],
+  ['fernando morientes',     85], ['morientes',            85],
+  ['guti',                   83], ['josé maría gutiérrez', 83],
+
+  // ── AC Milan ─────────────────────────────────────────────────────
+  ['alessandro costacurta',  88], ['costacurta',           88], // Maldini's CB partner – legend
+  ['mauro tassotti',         82], ['tassotti',             82],
+  ['carlo ancelotti',        83], ['ancelotti carlo',      83], // as Milan CM player
+  ['alberico evani',         82], ['evani',                82],
+  ['daniele massaro',        82], ['massaro daniele',      82], // scored in 1994 CL final
+  ['dejan savicevic',        87], ['savicevic',            87], ['savičević',         87],
+  ['gianluca lentini',       82], ['lentini',              82],
+  ['sebastiano rossi',       83], ['s.rossi',              83], // Milan GK 1990-2002
+  ['demetrio albertini',     84], ['albertini',            84],
+  ['pietro virdis',          82], ['virdis',               82], // Milan ST 1984-90
+
+  // ── Liverpool ────────────────────────────────────────────────────
+  ['bruce grobbelaar',       84], ['grobbelaar',           84],
+  ['alan hansen',            88], ['hansen alan',          88],
+  ['mark lawrenson',         85], ['lawrenson',            85],
+  ['phil neal',              83], ['neal phil',            83],
+  ['alan kennedy',           81], ['kennedy alan',         81],
+  ['terry mcdermott',        83], ['mcdermott',            83],
+  ['phil thompson',          83], ['thompson phil',        83],
+  ['steve nicol',            83], ['nicol steve',          83],
+  ['ronnie whelan',          82], ['whelan ronnie',        82],
+  ['jan molby',              83], ['jan mølby',            83], ['mølby',             83], ['molby',             83],
+  ['john wark',              81], ['wark',                 81],
+
+  // ── Arsenal ──────────────────────────────────────────────────────
+  ['kolo toure',             83], ['kolo touré',           83],
+  ['gael clichy',            80], ['clichy',               80],
+  ['lauren',                 82], ['lauren etame',         82], // RB Invincibles
+  ['gilberto silva',         84], ['gilberto',             84], // "The Invisible Wall"
+  ['jose antonio reyes',     83], ['reyes jose',           83],
+  ['edu',                    79], ['edu gaspar',           79],
+  ['paul merson',            82], ['merson',               82],
+
+  // ── Bayern Munich ────────────────────────────────────────────────
+  ['georg schwarzenbeck',    83], ['schwarzenbeck',        83],
+  ['bernd durnberger',       80], ['dürnberger',           80],
+  ['conny torstensson',      80], ['torstensson',          80],
+  ['franz roth',             81], ['roth franz',           81],
+  ['stefan effenberg',       86], ['effenberg',            86],
+  ['giovane elber',          84], ['elber',                84],
+  ['mehmet scholl',          84], ['scholl',               84],
+
+  // ── Manchester United ────────────────────────────────────────────
+  ['andy cole',              85], ['cole andy',            85],
+  ['dwight yorke',           86], ['yorke',                86],
+  ['teddy sheringham',       83], ['sheringham',           83],
+  ['jaap stam',              87], ['stam',                 87], // arguably best CB of his era
+  ['denis irwin',            83], ['irwin denis',          83],
+  ['ronny johnsen',          81], ['johnsen',              81],
+  ['nicky butt',             82], ['butt nicky',           82],
+  ['jesper blomqvist',       79], ['blomqvist',            79],
+  ['gary pallister',         86], ['pallister',            86], // United CB '92-98 double
+  ['steve bruce',            83], ['bruce steve',          83], // United CB
+  ['peter schmeichel',       91], // alias guard
+
+  // ════════════════════════════════════════════════════════════════════
+  // CLUBS EUROPEOS — 2ª tanda de overrides
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Grande Inter (1964-65) ───────────────────────────────────────
+  ['giuliano sarti',         87], ['sarti',                87], // legendary GK of Grande Inter
+  ['armando picchi',         84], ['picchi',               84], // Grande Inter captain/libero
+  ['saul malatrasi',         81], ['malatrasi',            81],
+  ['gianfranco bedin',       81], ['bedin',                81],
+  ['mario corso',            85], ['corso',                85], // "Corsino" – elegant Inter inside-forward
+  ['jair',                   84], // Brazilian winger Grande Inter
+  ['angelo domenghini',      82], ['domenghini',           82],
+  ['joaquin peiro',          81], ['peiró',                81], ['peiro',             81],
+  ['giorgio dellagiovanna',  80], ['dellagiovanna',        80],
+  ['renato cappellini',      79], ['cappellini renato',    79],
+
+  // ── Inter Milan 1988-2010 era ────────────────────────────────────
+  ['nicola berti',           83], ['berti nicola',         83],
+  ['aldo serena',            82], // already in list — alias guard
+  ['fausto pizzi',           79],
+  ['diego simeone',          83], ['simeone',              83], // CM Inter / Argentina
+  ['ronaldo nazario',        98], // alias guard — 2002/2003 Inter
+  ['cambiasso',              84], ['esteban cambiasso',    84], // key for 2010 treble
+  ['javier zanetti',         88], // alias guard
+  ['ivan cordoba',           83], ['córdoba',              83], ['cordoba ivan',       83],
+  ['maicon',                 86], ['maicon douglas',       86], // RB Inter/Brazil
+  ['samuel paulo',           87], ['samuel',               87], // Nigerian CB Inter
+  ['lucio',                  86], ['lucimar ferreira',     86], // Brazil/Inter CB
+  ['thiago motta',           83], ['motta thiago',         83],
+  ['marco materazzi',        82], ['materazzi',            82], // infamous 2006 WC
+
+  // ── Chelsea ──────────────────────────────────────────────────────
+  ['gianfranco zola',        87], // alias guard
+  ['roberto di matteo',      82], ['di matteo',            82],
+  ['jimmy floyd hasselbaink',85], ['hasselbaink',          85],
+  ['eidur gudjohnsen',       83], ['guðjohnsen',           83], ['gudjohnsen',         83],
+  ['geremi',                 81], ['geremi njitap',        81],
+  ['joe cole',               83], ['cole joe',             83],
+  ['arjen robben',           89], // alias guard
+  ['petr cech',              88], // alias guard
+  ['michael essien',         85], ['essien',               85], // Ghana/Chelsea 2004-12
+  ['florent malouda',        83], // alias guard
+  ['nicolas anelka',         85], // alias guard
+  ['frank lampard',          89], // alias guard
+  ['john terry',             87], // alias guard
+  ['didier drogba',          90], // alias guard
+
+  // ── Tottenham ────────────────────────────────────────────────────
+  ['jimmy greaves',          90], ['greaves',              90], // Spurs/England legend – 44 goals in 57 games
+  ['danny blanchflower',     87], ['blanchflower',         87], // Double-winning captain 1961
+  ['cliff jones',            82], ['jones cliff',          82], // Welsh winger, 1961 Double
+  ['paul gascoigne',         89], // alias guard
+  ['gary lineker',           87], // alias guard
+  ['harry kane',             91], // alias guard
+  ['son heung-min',          88], // alias guard
+  ['christian eriksen',      87], ['eriksen',              87],
+  ['jan vertonghen',         84], ['vertonghen',           84], // alias duplicate guard
+  ['toby alderweireld',      83], ['alderweireld',         83],
+  ['hugo lloris',            87], // alias guard
+  ['dele alli',              83], ['alli',                 83],
+
+  // ── AS Roma ──────────────────────────────────────────────────────
+  ['roberto boninsegna',     85], // alias guard
+  ['roberto pruzzo',         81], ['pruzzo',               81], // Roma ST — alias guard
+  ['agostino di bartolomei', 84], ['di bartolomei',        84], // tragic Roma captain
+  ['falcao',                 89], ['falcão',               89], // Brazilian CM Roma 1980-83
+  ['paulo roberto falcao',   89], // alias
+  ['gabriel batistuta',      92], // alias guard — Roma 2000-01
+  ['emerson palmieri',       83], ['emerson ferreira',     83], // Roma CM 2001 scudetto
+  ['daniele de rossi',       86], ['de rossi',             86],
+  ['antonio cassano',        83], ['cassano',              83],
+  ['edin dzeko',             84], ['džeko',                84], ['dzeko',              84],
+  ['Francesco totti',        92], ['totti',                92], // Roma legend
+
+  // ── Borussia Dortmund ────────────────────────────────────────────
+  ['karl-heinz riedle',      83], ['riedle',               83], // CL 1997 brace
+  ['andreas moller',         85], ['möller',               85], ['moller',             85],
+  ['stephane chapuisat',     83], ['chapuisat',            83], // Swiss ST BVB 1991-99
+  ['michael zorc',           83], ['zorc',                 83], // BVB legend
+  ['Lars Ricken',            82], ['ricken',               82], // CL 1997 chip vs Juventus
+  ['marco reus',             86], // alias guard
+  ['mats hummels',           88], // alias guard
+  ['mario gotze',            84], ['götze',                84], ['gotze',              84],
+  ['robert lewandowski',     93], // alias guard
+  ['ilkay gundogan',         86], // alias guard
+
+  // ── Ajax ─────────────────────────────────────────────────────────
+  ['litmanen',               87], ['jari litmanen',        87], // Finnish genius, Ajax MCL 1995
+  ['clarence seedorf',       88], // alias guard — Ajax before Milan
+  ['patrick kluivert',       85], // alias guard — Ajax CL winner 1995
+  ['frank de boer',          86], // alias guard — Ajax captain
+  ['edgar davids',           85], // alias guard
+  ['michael reiziger',       82], ['reiziger',             82], // Ajax/Barcelona RB
+  ['marc overmars',          85], // alias guard
+  ['danny blind',            80], ['blind danny',          80], // Ajax CB captain
+  ['mehmet scholl',          84], // alias guard (Bayern)
+  ['sjaak swart',            82],  // alias — but mainly alias for Golden Ajax era players
+  ['dusan tadic',            84], ['tadić',                84], ['tadic',              84], // 2019 CL SF - inspired
+  ['matthijs de ligt',       87], ['de ligt',              87],
+  ['frenkie de jong',        88], // alias guard
+  ['hakim ziyech',           84], ['ziyech',               84],
+
+  // ── Porto ────────────────────────────────────────────────────────
+  ['deco',                   89], // alias guard
+  ['costinha',               80], // alias guard
+  ['radamel falcao garcia',  88], ['falcao garcia',        88], // Porto striker 2009-11 alias
+  ['hulk',                   83], ['hulk porto',           83],
+
+  // ── Benfica ──────────────────────────────────────────────────────
+  ['jose augusto benfica',   82], // covered above
+  ['eusebio',                94], // alias guard
+  ['mario coluna',           86], // alias guard
+  ['beto bebeto da silva',   79],
+  ['joao mario',             82], ['joão mário',           82],
+
+  // ── Monaco ───────────────────────────────────────────────────────
+  ['kylian mbappe',          96], // alias guard
+  ['bernardo silva',         88], // alias guard — Monaco before City
+  ['thomas lemar',           83], ['lemar',                83],
+  ['fabinho',                88], // alias guard — Monaco before Liverpool
+  ['radamel falcao',         88], ['falcão',               88], ['falcao',             88],
+
+  // ── Marseille ────────────────────────────────────────────────────
+  ['rudi voller',            85], // alias guard — OM 1992-94
+  ['alen boksic marsella',   84], // alias guard
+  ['abedi pele',             86], ['abedi',                86], ['abedi ayew',         86], // Ghanaian legend, OM 1992-93 CL
+
+  // ── Lyon ─────────────────────────────────────────────────────────
+  ['juninho pernambucano',   89], ['juninho',              89], // OL legend — free kick master
+  ['michael essien lyon',    85], // before Chelsea
+  ['samuel eto',             92], // alias guard
+  ['karim benzema',          91], // alias guard – OL academy
 ];
 
 

@@ -94,10 +94,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 90,
+        "midfield": 87,
+        "defense": 89,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt — Bayern Munich (1974/1975)",
       "teamLabel": "Bayern Munich (1974-75)"
@@ -215,10 +215,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 90,
+        "midfield": 87,
+        "defense": 89,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt — Bayern Munich (1975/1976)",
       "teamLabel": "Bayern Munich (1975-76)"
@@ -328,10 +328,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 88,
+        "midfield": 86,
+        "defense": 88,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt — Bayern Munich (1976/1977)",
       "teamLabel": "Bayern Munich (1976-77)"
@@ -381,7 +381,7 @@
         },
         {
           "name": "Bixente Lizarazu",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Michael Tarnat",
@@ -469,10 +469,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 85,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt — Bayern Munich (1999/2000)",
       "teamLabel": "Bayern Munich (1999-00)"
@@ -514,7 +514,7 @@
         },
         {
           "name": "Bixente Lizarazu",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Michael Tarnat",
@@ -618,10 +618,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt — Bayern Munich (2000/2001)",
       "teamLabel": "Bayern Munich (2000-01)"
@@ -659,7 +659,7 @@
         },
         {
           "name": "Bixente Lizarazu",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Michael Tarnat",
@@ -759,10 +759,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 87,
+        "midfield": 88,
+        "defense": 85,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt — Bayern Munich (2001/2002)",
       "teamLabel": "Bayern Munich (2001-02)"
@@ -812,7 +812,7 @@
         },
         {
           "name": "Emre Can",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Diego Contento",
@@ -820,7 +820,7 @@
         },
         {
           "name": "Philipp Lahm",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Rafinha",
@@ -889,16 +889,16 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 88,
+        "midfield": 88,
+        "defense": 87,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt — Bayern Munich (2012/2013)",
       "teamLabel": "Bayern Munich (2012-13)"
     },
     "2013": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Manuel Neuer",
@@ -954,7 +954,7 @@
         },
         {
           "name": "Philipp Lahm",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Rafinha",
@@ -1035,16 +1035,16 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 90,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 93
       },
       "source": "Transfermarkt — Bayern Munich (2013/2014)",
       "teamLabel": "Bayern Munich (2013-14)"
     },
     "2019": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Manuel Neuer",
@@ -1072,7 +1072,7 @@
         },
         {
           "name": "Benjamin Pavard",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Javi Martínez",
@@ -1202,16 +1202,16 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 88,
+        "midfield": 87,
+        "defense": 86,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt — Bayern Munich (2019/2020)",
       "teamLabel": "Bayern Munich (2019-20)"
     },
     "2020": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Manuel Neuer",
@@ -1243,7 +1243,7 @@
         },
         {
           "name": "Benjamin Pavard",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Tanguy Nianzou",
@@ -1397,16 +1397,16 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 91,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt — Bayern Munich (2020/2021)",
       "teamLabel": "Bayern Munich (2020-21)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Manuel Neuer",
@@ -1446,7 +1446,7 @@
         },
         {
           "name": "Benjamin Pavard",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 50000000,
           "rating": 89
         },
@@ -1458,13 +1458,13 @@
         },
         {
           "name": "Alphonso Davies",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 50000000,
           "rating": 87
         },
         {
           "name": "Noussair Mazraoui",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 30000000,
           "rating": 87
         },
@@ -1482,7 +1482,7 @@
         },
         {
           "name": "Raphaël Guerreiro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 12000000,
           "rating": 84
         },
@@ -1548,7 +1548,7 @@
         },
         {
           "name": "Ryan Gravenberch",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 35000000,
           "rating": 87
         },
@@ -1602,7 +1602,7 @@
         },
         {
           "name": "Leroy Sané",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 70000000,
           "rating": 86
         },
@@ -1644,10 +1644,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 65
+        "attack": 87,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — Bayern Munich (2023/2024)",
       "teamLabel": "Bayern Munich (2023-24)"
@@ -1717,7 +1717,7 @@
         },
         {
           "name": "Raphaël Guerreiro",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 6000000,
           "rating": 88
         },
@@ -1801,10 +1801,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 87,
+        "midfield": 88,
+        "defense": 83,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — FC Bayern (2025/2026)",
       "teamLabel": "FC Bayern (2025-26)"

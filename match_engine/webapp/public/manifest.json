@@ -37,9 +37,23 @@
   "shortcuts": [
     {
       "name": "Simular partido",
-      "short_name": "Simular",
-      "description": "Abre el simulador directamente",
-      "url": "/?source=shortcut",
+      "short_name": "Partido",
+      "description": "Abre el simulador de partido directamente",
+      "url": "/?source=shortcut&tab=match",
+      "icons": [{ "src": "/golazox-coin.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Tanda de Penaltis",
+      "short_name": "Penaltis",
+      "description": "Lanza una tanda de penaltis histórica",
+      "url": "/?source=shortcut&tab=pen",
+      "icons": [{ "src": "/golazox-coin.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Crear Torneo",
+      "short_name": "Torneo",
+      "description": "Crea un torneo histórico de fútbol",
+      "url": "/?source=shortcut&tab=trn",
       "icons": [{ "src": "/golazox-coin.png", "sizes": "96x96" }]
     }
   ],

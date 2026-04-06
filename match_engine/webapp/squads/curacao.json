@@ -1,0 +1,130 @@
+{
+  "slug": "curacao",
+  "id": "curacao",
+  "name": "Curazao",
+  "nameEs": "Curazao",
+  "nameEn": "Curaçao",
+  "group": "seleccion",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "ratings": {
+        "attack": 67,
+        "midfield": 67,
+        "defense": 67,
+        "goalkeeping": 66
+      },
+      "players": [
+        {
+          "name": "Eloy Room",
+          "position": "GK",
+          "marketValue": 2694053,
+          "rating": 66
+        },
+        {
+          "name": "Etienne Vaessen",
+          "position": "GK",
+          "marketValue": 2655331,
+          "rating": 64
+        },
+        {
+          "name": "Martin Hiemstra",
+          "position": "GK",
+          "marketValue": 2828273,
+          "rating": 63
+        },
+        {
+          "name": "Darryl Lachman",
+          "position": "CB",
+          "marketValue": 3452123,
+          "rating": 67
+        },
+        {
+          "name": "Cuco Martina",
+          "position": "CB",
+          "marketValue": 2948977,
+          "rating": 66
+        },
+        {
+          "name": "Ethan Ndé",
+          "position": "CB",
+          "marketValue": 3868285,
+          "rating": 66
+        },
+        {
+          "name": "Giliano Wijnaldum",
+          "position": "CB",
+          "marketValue": 3860141,
+          "rating": 65
+        },
+        {
+          "name": "Andrés Römer",
+          "position": "RB",
+          "marketValue": 3574826,
+          "rating": 66
+        },
+        {
+          "name": "Mickel Miller",
+          "position": "LB",
+          "marketValue": 3447881,
+          "rating": 66
+        },
+        {
+          "name": "Elson Hooi",
+          "position": "CM",
+          "marketValue": 3030396,
+          "rating": 67
+        },
+        {
+          "name": "Charlton Vicento",
+          "position": "DM",
+          "marketValue": 3003194,
+          "rating": 67
+        },
+        {
+          "name": "Jordy Crijnssen",
+          "position": "CM",
+          "marketValue": 3295829,
+          "rating": 66
+        },
+        {
+          "name": "Jenning Wijnhard",
+          "position": "AM",
+          "marketValue": 3303965,
+          "rating": 68
+        },
+        {
+          "name": "Leandro Bacuna",
+          "position": "ST",
+          "marketValue": 3895445,
+          "rating": 68
+        },
+        {
+          "name": "Tjaronn Chery",
+          "position": "LW",
+          "marketValue": 3842447,
+          "rating": 67
+        },
+        {
+          "name": "Brandley Kuwas",
+          "position": "RW",
+          "marketValue": 2891876,
+          "rating": 66
+        },
+        {
+          "name": "Rangelo Janga",
+          "position": "ST",
+          "marketValue": 3411218,
+          "rating": 65
+        },
+        {
+          "name": "Raily Ignacio",
+          "position": "CM",
+          "marketValue": 3299672,
+          "rating": 65
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/curacao.png"
+}

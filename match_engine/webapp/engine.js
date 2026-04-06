@@ -126,11 +126,11 @@ const POS_AFFINITY = {
   LB:  ['LB','CB','DM'],
   DM:  ['DM','CM','CB'],
   CM:  ['CM','DM','AM','RM','LM'],
-  RM:  ['RM','CM','RW','AM'],
-  LM:  ['LM','CM','LW','AM'],
+  RM:  ['RM','CM','RW','LW','AM'],
+  LM:  ['LM','CM','LW','RW','AM'],
   AM:  ['AM','CM','RW','LW'],
-  RW:  ['RW','AM','ST','RM'],
-  LW:  ['LW','AM','ST','LM'],
+  RW:  ['RW','AM','LW','ST','RM'],   // LW can cover RW
+  LW:  ['LW','AM','RW','ST','LM'],   // RW can cover LW
   ST:  ['ST','LW','RW','AM'],
 };
 
@@ -146,6 +146,15 @@ function buildLineupFromCache(cached, formationOverride) {
     : cached.formation;
   const template = FORMATION_TEMPLATES[formation] || FORMATION_TEMPLATES[DEFAULT_FORMATION];
 
+  // Team average from cached.ratings — used as fallback for players with no market value
+  // (common in all historical squads where TM data has marketValue: 0 / undefined).
+  // Spread: teamAvg ± 5 based on name hash, so unknown players on a great team still
+  // get sensible ratings (e.g. France 1998 ≈ 82 avg → unknown players rated ~77-87).
+  const _ratings = cached.ratings || {};
+  const teamAvg = (_ratings.attack && _ratings.midfield && _ratings.defense && _ratings.goalkeeping)
+    ? Math.round((_ratings.attack + _ratings.midfield + _ratings.defense + _ratings.goalkeeping) / 4)
+    : 72;
+
   // Build a mutable pool with fresh ratings; apply known-player position overrides
   // so e.g. Baresi stays CB even when BDFutbol lists all defenders as CB/def.
   const pool = cached.players
@@ -153,7 +162,24 @@ function buildLineupFromCache(cached, formationOverride) {
       ...p,
       used: false,
       position: _getPos(p.name) || p.position,
-      rating: (p.rating && p.rating > 0) ? p.rating : (_calcRating(p.name, p.marketValue) ?? p.rating),
+      // Rating priority: 1) PLAYER_RATINGS_RAW name override (ground truth for legends)
+      //                  2) pre-stored JSON rating  3) computed from market value
+      //                  4) team-average fallback for historical squads with no MV data
+      rating: (() => {
+        const nameOvr = _calcRating(p.name, null); // name-only lookup (no MV)
+        if (nameOvr !== null) return nameOvr;       // e.g. Ronaldo→98, Zidane→96
+        if (p.rating && p.rating > 0) return p.rating;  // scraped / seeded JSON value
+        const mvRat = _calcRating(p.name, p.marketValue);
+        if (mvRat !== null) return mvRat;
+        // Fallback: spread BELOW team average so named/famous players always
+        // pre-reserve their positions ahead of unknown squad depth.
+        // Ceiling is teamAvg-6 so even modestly-rated explicit starters (e.g. ~80)
+        // reliably beat bench/unknown players on elite teams (avg ~87).
+        // Range: [max(58, teamAvg-14), teamAvg-6]
+        const h = [...(p.name || '')].reduce((a, c) => (a * 31 + c.charCodeAt(0)) & 0xfff, 0);
+        const ceil = Math.max(62, teamAvg - 6);
+        return Math.max(58, Math.min(ceil, teamAvg - 14 + (h % 9)));
+      })(),
     }));
 
   // Count how many players of each position the template needs
@@ -195,18 +221,24 @@ function buildLineupFromCache(cached, formationOverride) {
       pool[exactUnreserved[0].i].used = true;
       return pool[exactUnreserved[0].i];
     }
-    // Fallback step 2: affinity chain; prefer LOWEST-rated to preserve stars for their natural slot
+    // Fallback step 2: scan ALL affinity positions and pick the highest-rated player found.
+    // Stars at their natural position are already protected by reservedByPos pre-reservation above,
+    // so there is no need to "save best for natural pos" here — that would only cause a high-rated
+    // LW (e.g. Vinicius) to lose an LM slot to a 70-rated CM just because CM comes first in the chain.
     const affinities = POS_AFFINITY[wantedPos] || [wantedPos, 'CM'];
+    let bestAffIdx = -1, bestAffRating = -1;
     for (const affPos of affinities.slice(1)) {
       const candidates = pool
         .map((p, i) => ({ p, i }))
-        .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === affPos)
-        .sort((a, b) => (a.p.rating || 0) - (b.p.rating || 0)); // ASC — save best for natural pos
-      if (candidates.length > 0) {
-        reservedIdx.delete(candidates[0].i); // no longer reserved — consumed here
-        pool[candidates[0].i].used = true;
-        return pool[candidates[0].i];
+        .filter(({ p, i }) => !p.used && !reservedIdx.has(i) && p.position === affPos);
+      for (const { p, i } of candidates) {
+        if ((p.rating || 0) > bestAffRating) { bestAffRating = p.rating || 0; bestAffIdx = i; }
       }
+    }
+    if (bestAffIdx !== -1) {
+      reservedIdx.delete(bestAffIdx);
+      pool[bestAffIdx].used = true;
+      return pool[bestAffIdx];
     }
     // Last resort: highest-rated unused, skip reserved unless it's all that's left
     const remaining = pool
@@ -488,17 +520,18 @@ function deriveRatings(teamInput, eraInput, scraperRatings = null) {
 // ─────────────────────────────────────────────────────────────
 /**
  * Expected goals per 90 min.
- * Larger multipliers so rating differentials produce meaningful xG spread:
- *   - Equal teams (75 vs 75) → xG ≈ 1.15 each (varied by form factor)
- *   - Elite vs weak (95 vs 65) → xG ≈ 1.95 vs 0.35
+ * Coefficients tuned so rating differentials produce realistic win probabilities:
+ *   - Equal teams (ovr 80 each) → xG ≈ 1.20 each (2.4 goals/game)
+ *   - Elite vs weak (ovr 93 vs 71) → xG ≈ 1.96 vs 0.45 → ~80% win rate
+ *   - Top-of-table clash (ovr 93 vs 88) → xG ≈ 1.39 vs 1.05 → ~47% win rate
  */
 function calcXG(atkOwn, defOpp, midOwn, gkOpp) {
   const atkAdv = (atkOwn - defOpp) / 100;    // positive when attack > opponent defense
   const midAdv = (midOwn - 68)     / 100;    // midfield advantage over "average" tier
   const gkAdj  = (gkOpp  - 70)     / 100;    // positive = strong GK (suppresses goals)
-  const base   = 1.15;
-  const raw    = base + atkAdv * 2.2 + midAdv * 0.75 - gkAdj * 0.65;
-  return Math.max(0.30, Math.min(3.5, raw));
+  const base   = 1.05;   // slightly lower base so weak teams don't automatically get 1.15 xG
+  const raw    = base + atkAdv * 2.6 + midAdv * 0.90 - gkAdj * 0.75;
+  return Math.max(0.25, Math.min(3.5, raw));
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -778,30 +811,70 @@ function pickMatchPenalties(lineupA, lineupB, seed, referee = NEUTRAL_REFEREE, e
 // Kicker selection weights by position (best penalty takers first)
 const PENALTY_KICK_WEIGHTS = { ST:5, AM:4, RW:4, LW:4, CM:3, RM:3, LM:3, DM:2, RB:1.5, LB:1.5, CB:1, GK:0.3 };
 
-function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA = new Set(), excludedB = new Set()) {
+// Penalty specialists — historically near-perfect takers: minimal random error
+const PEN_SPECIALISTS = new Set([
+  'Gaizka Mendieta','Ronald Koeman','Cristiano Ronaldo','Matt Le Tissier',
+  'Andrea Pirlo','Xabi Alonso','Zico','Michel Platini','Giovanni van Bronckhorst',
+  'Roberto Carlos','Zlatan Ibrahimovic','Robert Lewandowski','Luka Modric',
+  'David Beckham','Paul Scholes','Juninho Pernambucano',
+]);
+
+function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA = new Set(), excludedB = new Set(), preserveOrder = false) {
   const rand = mulberry32(seed + 13);
 
-  // Conversion rate: base 76%, adjusted by attacker quality and opposing GK
-  const convA = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsA.attack      - 75) / 150 - (ratingsB.goalkeeping - 72) / 90));
-  const convB = Math.min(0.88, Math.max(0.58, 0.76 + (ratingsB.attack      - 75) / 150 - (ratingsA.goalkeeping - 72) / 90));
+  // Find GKs (needed for per-kick metadata and reflex modifier)
+  const gkA = lineupA.players.find(p => p.position === 'GK') || { name: 'Portero', rating: 72 };
+  const gkB = lineupB.players.find(p => p.position === 'GK') || { name: 'Portero', rating: 72 };
+
+  // GK reflex quality modifier (each team's GK affects the opponent's conversion)
+  const gkRatA = Math.max(60, Math.min(99, gkA.rating || ratingsA.goalkeeping || 72));
+  const gkRatB = Math.max(60, Math.min(99, gkB.rating || ratingsB.goalkeeping || 72));
+  const gkModA = (gkRatA - 72) / 260; // A's GK saves more (reduces B's conv)
+  const gkModB = (gkRatB - 72) / 260; // B's GK saves more (reduces A's conv)
+
+  // Team base conversion including GK modifier
+  const baseConvA = 0.76 + (ratingsA.attack - 75) / 150 - gkModB;
+  const baseConvB = 0.76 + (ratingsB.attack - 75) / 150 - gkModA;
 
   // Sort players by penalty-taking priority — exclude red-carded and injured players
+  // preserveOrder=true: respect caller's array order (user-defined taker sequence)
   const byWeight = p => PENALTY_KICK_WEIGHTS[p.position] || 0;
-  const kickersA = [...lineupA.players].filter(p => !excludedA.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
-  const kickersB = [...lineupB.players].filter(p => !excludedB.has(p.name)).sort((a, b) => byWeight(b) - byWeight(a));
+  const filteredA = [...lineupA.players].filter(p => !excludedA.has(p.name) && p.position !== 'GK');
+  const filteredB = [...lineupB.players].filter(p => !excludedB.has(p.name) && p.position !== 'GK');
+  const kickersA = preserveOrder ? filteredA : filteredA.sort((a, b) => byWeight(b) - byWeight(a));
+  const kickersB = preserveOrder ? filteredB : filteredB.sort((a, b) => byWeight(b) - byWeight(a));
   // Safety: if all players excluded (shouldn't happen), fall back to full squad minus GK
   const safeA = kickersA.length ? kickersA : lineupA.players.filter(p => p.position !== 'GK');
   const safeB = kickersB.length ? kickersB : lineupB.players.filter(p => p.position !== 'GK');
+
+  // Per-kick conversion probability
+  function kickProb(player, baseConv, kickIdx, isSd) {
+    // Individual rating bonus (ratings roughly 60-95, centered at 75)
+    const pRat = Math.max(60, Math.min(99, player.rating || 75));
+    const playerBonus = (pRat - 75) / 170;
+    // Specialist trait: reduces random error, raises floor significantly
+    const specBonus = PEN_SPECIALISTS.has(player.name) ? 0.08 : 0;
+    // Stage fright: kicks 4+ in regulation, all sudden death kicks
+    const fright    = kickIdx >= 3 || isSd;
+    const frightDrop = fright ? (isSd ? 0.07 : 0.04) : 0;
+    // Specialists feel pressure less
+    const netFright  = specBonus > 0 ? frightDrop * 0.3 : frightDrop;
+    return Math.min(0.94, Math.max(0.48, baseConv + playerBonus + specBonus - netFright));
+  }
 
   const shotsA = [], shotsB = [];
   let scoreA = 0, scoreB = 0;
 
   // Regulation 5 kicks
   for (let r = 0; r < 5; r++) {
-    const goA = rand() < convA;
-    const goB = rand() < convB;
-    shotsA.push({ name: safeA[r % safeA.length].name, scored: goA });
-    shotsB.push({ name: safeB[r % safeB.length].name, scored: goB });
+    const pA = safeA[r % safeA.length];
+    const pB = safeB[r % safeB.length];
+    const pA_spec = PEN_SPECIALISTS.has(pA.name);
+    const pB_spec = PEN_SPECIALISTS.has(pB.name);
+    const goA = rand() < kickProb(pA, baseConvA, r, false);
+    const goB = rand() < kickProb(pB, baseConvB, r, false);
+    shotsA.push({ name: pA.name, position: pA.position, scored: goA, isSpecialist: pA_spec, stageFright: r >= 3, gkName: gkB.name });
+    shotsB.push({ name: pB.name, position: pB.position, scored: goB, isSpecialist: pB_spec, stageFright: r >= 3, gkName: gkA.name });
     if (goA) scoreA++;
     if (goB) scoreB++;
     // Early finish: mathematically impossible to catch up
@@ -812,10 +885,14 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA
   // Sudden death — max 20 extra rounds (40 kicks), statistically impossible to exhaust
   let sd = 5;
   for (let round = 0; round < 20 && scoreA === scoreB; round++) {
-    const goA = rand() < convA;
-    const goB = rand() < convB;
-    shotsA.push({ name: safeA[sd % safeA.length].name, scored: goA });
-    shotsB.push({ name: safeB[sd % safeB.length].name, scored: goB });
+    const pA = safeA[sd % safeA.length];
+    const pB = safeB[sd % safeB.length];
+    const pA_spec = PEN_SPECIALISTS.has(pA.name);
+    const pB_spec = PEN_SPECIALISTS.has(pB.name);
+    const goA = rand() < kickProb(pA, baseConvA, sd, true);
+    const goB = rand() < kickProb(pB, baseConvB, sd, true);
+    shotsA.push({ name: pA.name, position: pA.position, scored: goA, isSpecialist: pA_spec, stageFright: true, gkName: gkB.name });
+    shotsB.push({ name: pB.name, position: pB.position, scored: goB, isSpecialist: pB_spec, stageFright: true, gkName: gkA.name });
     if (goA) scoreA++;
     if (goB) scoreB++;
     if (goA !== goB) break; // one scored and the other missed → winner decided
@@ -831,6 +908,8 @@ function simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, seed, excludedA
     shotsA,
     shotsB,
     suddenDeath: shotsA.length > 5,
+    gkA: gkA.name,
+    gkB: gkB.name,
   };
 }
 
@@ -846,20 +925,37 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
                          mode = 'visual', refereeStrictness = 0.5,
                          refereeId = null, isFinal = false,
                          weatherId = null,
-                         playStyleA = null, playStyleB = null }) {
+                         playStyleA = null, playStyleB = null,
+                         homeAdvantage = false }) {
   // Fast path: analysis mode skips lineup/event building entirely
   if (mode === 'analysis') {
     return analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, matchMode, matchSalt);
   }
   // Fast path: penalties-only shootout — no 90-min match simulated
   if (matchMode === 'penalties') {
-    const lineupA  = cachedLineupA ? buildLineupFromCache(cachedLineupA, '') : buildLineup(teamA, eraA, '');
-    const lineupB  = cachedLineupB ? buildLineupFromCache(cachedLineupB, '') : buildLineup(teamB, eraB, '');
+    // When an override is present (allPlayers set by server), use the players directly
+    // so the user's custom kick order is preserved without re-sorting by position weight.
+    const preserveOrder = !!(cachedLineupA?.allPlayers || cachedLineupB?.allPlayers);
+    const mkLineup = (cached, tA, eA) => {
+      if (!cached) return buildLineup(tA, eA, '');
+      if (cached.allPlayers) {
+        // Override: use players as-is (first 5 non-GK = user takers in order; rest = fillers)
+        const p = (cached.players || []).map(pl => ({
+          ...pl,
+          rating: (pl.rating && pl.rating > 0) ? pl.rating : (_calcRating(pl.name, pl.marketValue) ?? 72),
+          position: _getPos(pl.name) || pl.position,
+        }));
+        return { players: p, formation: cached.formation || DEFAULT_FORMATION, name: cached.teamLabel || tA };
+      }
+      return buildLineupFromCache(cached, '');
+    };
+    const lineupA  = mkLineup(cachedLineupA, teamA, eraA);
+    const lineupB  = mkLineup(cachedLineupB, teamB, eraB);
     const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
     const ratingsB = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
     const seed       = [...(teamA + teamB + eraA + eraB)].reduce((acc, c) => (acc * 31 + c.charCodeAt(0)) >>> 0, 17);
     const saltedSeed = (seed ^ ((matchSalt | 0) >>> 0)) >>> 0;
-    const penalties  = simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed);
+    const penalties  = simulatePenalties(lineupA, lineupB, ratingsA, ratingsB, saltedSeed, new Set(), new Set(), preserveOrder);
     return {
       lineups: {
         teamA: { ...lineupA, xg: 0, bench: [] },
@@ -937,16 +1033,23 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const referee  = applyBigMatchPressure(baseRef, !!isFinal, randRef);
 
   // 4. Per-match form/luck variance — uses saltedSeed so each play differs
+  // Range [0.90, 1.10]: tighter than before (was 0.82–1.18) so fewer random upsets per game
+  // while still giving each match meaningful variation. Over a full season the form averages
+  // close to 1.0, so expected season totals are accurate. Reduced variance means dominant
+  // teams accumulate points at a realistic rate — e.g. Real Madrid ~85 pts in a 38-game liga.
   const randForm = mulberry32(saltedSeed ^ 0xA3C5F1B7);
-  const formA = 0.82 + randForm() * 0.36;   // multiplier 0.82–1.18
-  const formB = 0.82 + randForm() * 0.36;
+  const formA = 0.90 + randForm() * 0.20;   // multiplier 0.90–1.10 (was 0.82–1.18)
+  const formB = 0.90 + randForm() * 0.20;
 
   // 5. Calculate xG (base formula × per-match form)
   const rawXgA = calcXG(ratingsA.attack, ratingsB.defense, ratingsA.midfield, ratingsB.goalkeeping);
   const rawXgB = calcXG(ratingsB.attack, ratingsA.defense, ratingsB.midfield, ratingsA.goalkeeping);
   const weatherFx  = WEATHER_EFFECTS[weatherId] || WEATHER_EFFECTS.sunny;
   const paXgBoost  = calcPlayAdvantageXgBoost(referee); // play_advantage > 1 → ref lets play flow → more open play
-  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
+  // Home advantage: hosting team generates ~0.18 extra expected goals per match
+  // (roughly equivalent to ~+5–6% win probability shift for the home side).
+  const homeBonus  = homeAdvantage ? 0.18 : 0;
+  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult * paXgBoost + homeBonus).toFixed(3);
   const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
 
   // 6. Monte Carlo

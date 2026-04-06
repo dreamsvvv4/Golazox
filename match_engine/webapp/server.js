@@ -202,10 +202,174 @@ app.get('/', (_req, res) => {
   res.set('Cache-Control', 'no-cache').type('text/html').send(injected);
 });
 
+// ── /partido/:matchup — SSR matchup pages for SEO ─────────────────
+// URL format: /partido/real-madrid:2002-vs-barcelona:2009
+// or without era: /partido/real-madrid-vs-barcelona
+// Generates a full HTML page with real content (title, description, h1, h2,
+// roster snippets, JSON-LD) that Google can index, while the SPA app loads
+// underneath so users can actually simulate the match.
+app.get('/partido/:matchup', (req, res) => {
+  const SITE_URL = (process.env.SITE_URL || 'https://golazox.com').replace(/\/$/, '');
+  const raw = req.params.matchup || '';
+  // Parse "slugA:eraA-vs-slugB:eraB"  or  "slugA-vs-slugB"
+  const vsIdx = raw.indexOf('-vs-');
+  if (vsIdx === -1) return res.status(404).send('Not Found');
+  const partA = raw.slice(0, vsIdx);   // e.g. "real-madrid:2002" or "real-madrid"
+  const partB = raw.slice(vsIdx + 4);  // e.g. "barcelona:2009"
+  const [slugA, eraA = ''] = partA.split(':');
+  const [slugB, eraB = ''] = partB.split(':');
+
+  const entryA = CATALOG.find(c => c.slug === slugA);
+  const entryB = CATALOG.find(c => c.slug === slugB);
+  // If either team is unknown, return 404 so Google drops the URL from its crawl queue
+  if (!entryA || !entryB) return res.status(404).send('Not Found');
+
+  const nameA = entryA.nameEs || entryA.nameEn;
+  const nameB = entryB.nameEs || entryB.nameEn;
+  const labelA = eraA ? `${nameA} ${eraA}` : nameA;
+  const labelB = eraB ? `${nameB} ${eraB}` : nameB;
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  // Build a short roster snippet (top 5 outfield players by highest rating)
+  const rosterSnippet = (slug, era) => {
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8'));
+      const seasons = Object.keys(d.seasons || {}).sort((a,b) => Number(b)-Number(a));
+      const key = era && d.seasons[era] ? era : seasons[0];
+      const players = (d.seasons[key]?.players || [])
+        .filter(p => p.position !== 'GK')
+        .slice(0, 6)
+        .map(p => p.name);
+      return players.join(', ');
+    } catch(_) { return ''; }
+  };
+  const playersA = rosterSnippet(slugA, eraA);
+  const playersB = rosterSnippet(slugB, eraB);
+
+  const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} — Simula el partido | GolazoX`;
+  const pageDesc    = `¿Quién ganaría ${esc(labelA)} contra ${esc(labelB)}? Simúlalo ahora con el motor de Monte Carlo de GolazoX. Estadísticas, alineaciones históricas y resultado en segundos.`;
+  const canonUrl    = `${SITE_URL}/partido/${esc(raw)}`;
+  const deepLink    = `${SITE_URL}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
+  const badgeA      = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${SITE_URL}${entryA.badge}` : '';
+  const badgeB      = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${SITE_URL}${entryB.badge}` : '';
+
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    'name': `${labelA} vs ${labelB}`,
+    'description': pageDesc.replace(/&\w+;/g, ' '),
+    'url': canonUrl,
+    'sport': 'Soccer',
+    'competitor': [
+      { '@type': 'SportsTeam', 'name': labelA, ...(badgeA ? { 'logo': badgeA } : {}) },
+      { '@type': 'SportsTeam', 'name': labelB, ...(badgeB ? { 'logo': badgeB } : {}) },
+    ],
+    'organizer': { '@type': 'Organization', 'name': 'GolazoX', 'url': SITE_URL },
+  });
+
+  const html = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>${pageTitle}</title>
+  <meta name="description" content="${pageDesc}"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="${canonUrl}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="${pageTitle}"/>
+  <meta property="og:description" content="${pageDesc}"/>
+  <meta property="og:url" content="${canonUrl}"/>
+  <meta property="og:image" content="${SITE_URL}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="${pageTitle}"/>
+  <meta name="twitter:description" content="${pageDesc}"/>
+  <script type="application/ld+json">${jsonLd}</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
+    .mp-wrap{max-width:700px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .mp-backlink{display:inline-block;color:#38bdf8;font-size:.85rem;margin-bottom:1.5rem;text-decoration:none}
+    .mp-backlink:hover{text-decoration:underline}
+    .mp-teams{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.4rem}
+    .mp-badge{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+    .mp-vs{font-size:1.3rem;font-weight:900;color:#7b2ff7;flex-shrink:0}
+    .mp-name{font-size:1.15rem;font-weight:700;line-height:1.2}
+    .mp-era{font-size:.8rem;color:#94a3b8;margin-top:.15rem}
+    h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:.6rem;color:#f1f5f9}
+    .mp-desc{color:#94a3b8;font-size:.95rem;line-height:1.6;margin-bottom:1.8rem}
+    .mp-rosters{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+    .mp-roster-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:.75rem;padding:1rem}
+    .mp-roster-title{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.5rem}
+    .mp-roster-names{font-size:.88rem;color:#cbd5e1;line-height:1.7}
+    .mp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1rem 2rem;border-radius:.75rem;font-size:1.05rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:1rem}
+    .mp-cta:hover{opacity:.92}
+    .mp-note{font-size:.8rem;color:#475569;text-align:center}
+    @media(max-width:480px){.mp-rosters{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="mp-wrap">
+  <a class="mp-backlink" href="/">← GolazoX — Football Time Machine</a>
+
+  <div class="mp-teams">
+    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" loading="eager"/>` : ''}
+    <div>
+      <div class="mp-name">${esc(nameA)}</div>
+      ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
+    </div>
+    <span class="mp-vs">VS</span>
+    <div>
+      <div class="mp-name">${esc(nameB)}</div>
+      ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
+    </div>
+    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" loading="eager"/>` : ''}
+  </div>
+
+  <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
+  <p class="mp-desc">
+    Simula este enfrentamiento histórico con el motor probabilístico de GolazoX.
+    El simulador ejecuta miles de partidos en segundos con las alineaciones reales de cada era
+    y te da el resultado más probable, las probabilidades y la estadística completa.
+  </p>
+
+  ${(playersA || playersB) ? `
+  <div class="mp-rosters">
+    ${playersA ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelA)}</div>
+      <div class="mp-roster-names">${esc(playersA)}&hellip;</div>
+    </div>` : ''}
+    ${playersB ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelB)}</div>
+      <div class="mp-roster-names">${esc(playersB)}&hellip;</div>
+    </div>` : ''}
+  </div>` : ''}
+
+  <a class="mp-cta" href="${deepLink}">
+    ⚽ Simular ${esc(labelA)} vs ${esc(labelB)} ahora
+  </a>
+  <p class="mp-note">Motor de Monte Carlo · Alineaciones históricas reales · Resultado en segundos</p>
+</div>
+</body>
+</html>`;
+
+  res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+});
+
 // Fuentes auto-alojadas: cache inmutable 1 año
 app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   maxAge: '1y',
   immutable: true,
+}));
+
+// Imágenes de árbitros y estadios — nunca cachear (se pueden sustituir en cualquier momento)
+app.use('/img/referees', express.static(path.join(__dirname, 'public', 'img', 'referees'), {
+  etag: false, lastModified: false,
+  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
+}));
+app.use('/img/stadiums', express.static(path.join(__dirname, 'public', 'img', 'stadiums'), {
+  etag: false, lastModified: false,
+  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
 }));
 
 // Service Worker — must be served from the root scope with the correct header
@@ -339,8 +503,24 @@ const _VALID_FORMATIONS = new Set([
 // Rate: 8/5min per IP (1.6/min) — it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
-  res.set('Cache-Control', 'public, max-age=300');
+  res.set('Cache-Control', 'no-store');
   res.json(CATALOG);
+});
+
+// ── GET /catalog-groups ───────────────────────
+// Diagnostic: returns each team's slug, group, and source (meta vs file).
+// Publicly readable since /catalog already exposes group data.
+app.get('/catalog-groups', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
+  const groups = {};
+  for (const t of CATALOG) {
+    if (!groups[t.group]) groups[t.group] = [];
+    groups[t.group].push(t.slug);
+  }
+  const summary = Object.entries(groups)
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([g, slugs]) => ({ group: g, count: slugs.length, teams: slugs }));
+  res.json(summary);
 });
 
 // ── GET /suggest ─────────────────────────────
@@ -593,6 +773,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), as
       isFinal:  !!m.isFinal,
       ovrA:     _clampOvr(m.ovrA),
       ovrB:     _clampOvr(m.ovrB),
+      homeAdvantage: !!m.homeAdvantage,
     }));
 
     // Resolve unique team lookups in parallel (shared cache)
@@ -644,6 +825,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), as
         matchMode: '11v11',
         matchSalt: pair.salt,
         refereeId: null, isFinal: pair.isFinal, weatherId: null,
+        homeAdvantage: pair.homeAdvantage,
       };
 
       const sim = simulateMatch(params);
@@ -995,8 +1177,24 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
 });
 
 // ── Serve index.html for all other routes ─────
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Always serve with explicit charset=utf-8 to prevent the em-dash encoding
+// corruption seen in GA ("â€"" instead of "—").
+// Bots probing unknown paths (/cmd_sco, /wp-admin…) get a 404 status so
+// Google doesn't index phantom pages, but still receive the SPA HTML.
+app.get('*', (req, res) => {
+  const p = req.path;
+  const isBotProbe = p.length > 1;
+  const cleanUrl = (process.env.SITE_URL || 'https://tudominio.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  const html = fs.readFileSync(indexPath, 'utf8');
+  const injected = html.replace(
+    '<meta property="og:type" content="website" />',
+    `<meta property="og:type" content="website" />\n  <meta property="og:url" content="${cleanUrl}/" />\n  <link rel="canonical" href="${cleanUrl}/" />`
+  );
+  res.status(isBotProbe ? 404 : 200)
+     .set('Cache-Control', 'no-cache')
+     .type('text/html')
+     .send(injected);
 });
 
 // ── Process crash guards ─────────────────────

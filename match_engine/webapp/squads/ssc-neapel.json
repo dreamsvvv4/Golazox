@@ -377,7 +377,7 @@
         },
         {
           "name": "Mário Rui",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Ivan Strinic",
@@ -502,7 +502,7 @@
       "teamLabel": "Napoli (2017-18)"
     },
     "2022": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Alex Meret",
@@ -546,15 +546,15 @@
         },
         {
           "name": "Mathías Olivera",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Mário Rui",
-          "position": "CB"
+          "position": "LB"
         },
         {
           "name": "Giovanni Di Lorenzo",
-          "position": "CB"
+          "position": "RB"
         },
         {
           "name": "Alessandro Zanoli",
@@ -566,7 +566,7 @@
         },
         {
           "name": "Stanislav Lobotka",
-          "position": "CM"
+          "position": "DM"
         },
         {
           "name": "Diego Demme",
@@ -602,7 +602,7 @@
         },
         {
           "name": "Khvicha Kvaratskhelia",
-          "position": "ST"
+          "position": "LW"
         },
         {
           "name": "Hirving Lozano",
@@ -610,7 +610,7 @@
         },
         {
           "name": "Matteo Politano",
-          "position": "ST"
+          "position": "RW"
         },
         {
           "name": "Adam Ounas",
@@ -639,7 +639,7 @@
       "teamLabel": "Napoli (2022-23)"
     },
     "2023": {
-      "formation": "4-4-2",
+      "formation": "4-3-3",
       "players": [
         {
           "name": "Alex Meret",
@@ -667,7 +667,7 @@
         },
         {
           "name": "Mathías Olivera",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 15000000,
           "rating": 85
         },
@@ -685,7 +685,7 @@
         },
         {
           "name": "Giovanni Di Lorenzo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 15000000,
           "rating": 83
         },
@@ -703,7 +703,7 @@
         },
         {
           "name": "Mário Rui",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 3500000,
           "rating": 78
         },
@@ -727,7 +727,7 @@
         },
         {
           "name": "Stanislav Lobotka",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 28000000,
           "rating": 87
         },
@@ -799,7 +799,7 @@
         },
         {
           "name": "Khvicha Kvaratskhelia",
-          "position": "ST",
+          "position": "LW",
           "marketValue": 80000000,
           "rating": 88
         },
@@ -841,7 +841,7 @@
         },
         {
           "name": "Matteo Politano",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 13000000,
           "rating": 82
         },
@@ -862,7 +862,7 @@
       "teamLabel": "Napoli (2023-24)"
     },
     "2025": {
-      "formation": "4-4-2",
+      "formation": "4-2-3-1",
       "players": [
         {
           "name": "Vanja Milinković-Savić",
@@ -908,7 +908,7 @@
         },
         {
           "name": "Mathías Olivera",
-          "position": "CB",
+          "position": "LB",
           "marketValue": 15000000,
           "rating": 85
         },
@@ -920,7 +920,7 @@
         },
         {
           "name": "Giovanni Di Lorenzo",
-          "position": "CB",
+          "position": "RB",
           "marketValue": 10000000,
           "rating": 83
         },
@@ -944,7 +944,7 @@
         },
         {
           "name": "Kevin De Bruyne",
-          "position": "CM",
+          "position": "AM",
           "marketValue": 10000000,
           "rating": 90
         },
@@ -968,7 +968,7 @@
         },
         {
           "name": "Stanislav Lobotka",
-          "position": "CM",
+          "position": "DM",
           "marketValue": 15000000,
           "rating": 84
         },
@@ -1016,7 +1016,7 @@
         },
         {
           "name": "Matteo Politano",
-          "position": "ST",
+          "position": "RW",
           "marketValue": 8000000,
           "rating": 82
         }

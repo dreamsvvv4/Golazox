@@ -1,10 +1,11 @@
 {
   "name": "football-match-simulator",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Probabilistic football match simulator – any team, any era",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "build": "echo 'No build step — Express server'",
+    "start": "npx pm2 reload golazox 2>/dev/null || npx pm2 start ecosystem.config.js --env production",
     "start:prod": "NODE_ENV=production node server.js",
     "pm2:start": "npx pm2 start ecosystem.config.js --env production",
     "pm2:reload": "npx pm2 reload golazox",
@@ -13,10 +14,12 @@
     "dev": "node --watch server.js",
     "audit": "node audit_squads.js",
     "audit:verbose": "node audit_squads.js --verbose",
+    "audit:full": "node audit_squads.js --check-names --check-clones --verbose",
     "seed": "node seed_squads.js",
     "seed:bg": "node seed_squads_bg.js",
     "seed:dry": "node seed_squads_bg.js --dry-run",
-    "seed:once": "node seed_squads_bg.js --once"
+    "seed:once": "node seed_squads_bg.js --once",
+    "seed:badges": "node seed_squads_bg.js --badges-only --once"
   },
   "dependencies": {
     "cheerio": "^1.1.0",

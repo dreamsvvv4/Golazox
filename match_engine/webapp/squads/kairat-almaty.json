@@ -1,0 +1,130 @@
+{
+  "slug": "kairat-almaty",
+  "id": "kairat-almaty",
+  "name": "FC Kairat Almaty",
+  "nameEs": "FC Kairat Almaty",
+  "nameEn": "Kairat Almaty",
+  "group": "club",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Aleksandr Mokin",
+          "position": "GK",
+          "marketValue": 3596414,
+          "rating": 70
+        },
+        {
+          "name": "Stas Pokatilov",
+          "position": "GK",
+          "marketValue": 3064441,
+          "rating": 67
+        },
+        {
+          "name": "Ilya Sidelnikov",
+          "position": "GK",
+          "marketValue": 3435440,
+          "rating": 66
+        },
+        {
+          "name": "Serikzhan Muzhikov",
+          "position": "CB",
+          "marketValue": 3889164,
+          "rating": 71
+        },
+        {
+          "name": "Abzal Beisebekov",
+          "position": "CB",
+          "marketValue": 3197108,
+          "rating": 70
+        },
+        {
+          "name": "Baurzhan Dzholchiev",
+          "position": "CB",
+          "marketValue": 3466632,
+          "rating": 70
+        },
+        {
+          "name": "Adlan Kidiraliev",
+          "position": "CB",
+          "marketValue": 4139587,
+          "rating": 69
+        },
+        {
+          "name": "Bakhytzhan Baydaulet",
+          "position": "RB",
+          "marketValue": 4054023,
+          "rating": 70
+        },
+        {
+          "name": "Dmitriy Shomko",
+          "position": "LB",
+          "marketValue": 2959934,
+          "rating": 70
+        },
+        {
+          "name": "Islambek Kuat",
+          "position": "CM",
+          "marketValue": 3524676,
+          "rating": 71
+        },
+        {
+          "name": "Yuriy Logvinenko",
+          "position": "DM",
+          "marketValue": 4166040,
+          "rating": 71
+        },
+        {
+          "name": "Sanat Zhanbekov",
+          "position": "CM",
+          "marketValue": 3870333,
+          "rating": 70
+        },
+        {
+          "name": "Mahi",
+          "position": "AM",
+          "marketValue": 3214601,
+          "rating": 72
+        },
+        {
+          "name": "Gafur Muxtorov",
+          "position": "ST",
+          "marketValue": 2909053,
+          "rating": 71
+        },
+        {
+          "name": "Aleksei Rubin",
+          "position": "LW",
+          "marketValue": 3007169,
+          "rating": 70
+        },
+        {
+          "name": "Temirlan Yerlanov",
+          "position": "RW",
+          "marketValue": 4144109,
+          "rating": 70
+        },
+        {
+          "name": "Nurtas Torebek",
+          "position": "ST",
+          "marketValue": 3930125,
+          "rating": 69
+        },
+        {
+          "name": "Azamat Nurgaliyev",
+          "position": "CM",
+          "marketValue": 3319486,
+          "rating": 69
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/fc-kairat-almaty.png"
+}
