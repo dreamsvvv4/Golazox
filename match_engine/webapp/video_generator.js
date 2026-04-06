@@ -205,132 +205,128 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   return `${titleA} vs ${titleB}${eraStr} — golazox.com`;
 }
 
-// ── Record UCL tournament draw + all matches + final standings ────────────────
+// ── Record UCL tournament: draw → server simulation (~32s) → show champion + tabs ──
 async function recordUCL(page, recorder, outPath) {
   await page.goto(`${BASE_URL}/?tab=trn`, { waitUntil: 'networkidle0', timeout: 30000 });
   await wait(1500);
 
   await recorder.start(outPath);
 
-  // 1. Click UCL preset card (data-preset="ucl2026") to open the draw/edit panel
+  // 1. Click UCL preset card to open the draw panel
   await page.waitForSelector('[data-preset="ucl2026"]', { timeout: 10000 });
   await page.click('[data-preset="ucl2026"]');
-  console.log('[ucl] Clicked preset card');
+  console.log('[ucl] Preset opened');
   await wait(2000);
 
-  // 2. Click "⏳ Sorteando..." button (#ucl-start-btn) to start the draw
-  const drewButton = await page.evaluate(() => {
-    const btn = document.querySelector('#ucl-start-btn');
-    if (btn) { 
-      btn.click();
-      return { found: true, text: btn.textContent.trim() };
-    }
-    return { found: false };
-  });
-  
-  if (drewButton.found) {
-    console.log(`[ucl] Clicked draw button: "${drewButton.text}"`);
-  }
-  
-  // 3. Wait for draw to complete (~15-20 seconds) — button will hide and #ucl-sim-btn will appear
-  console.log('[ucl] Waiting for draw to complete...');
-  let drawComplete = false;
-  for (let i = 0; i < 50; i++) {
+  // 2. Click SORTEAR (#ucl-start-btn) to run the animated draw
+  await page.evaluate(() => document.querySelector('#ucl-start-btn')?.click());
+  console.log('[ucl] Draw started...');
+
+  // 3. Wait for draw animation to complete (~6s) — #ucl-sim-btn appears when done
+  for (let i = 0; i < 30; i++) {
     await wait(400);
-    const simBtnExists = await page.evaluate(() => {
-      const simbtn = document.querySelector('#ucl-sim-btn');
-      return simbtn && simbtn.offsetParent !== null;  // visible
+    const simVisible = await page.evaluate(() => {
+      const btn = document.querySelector('#ucl-sim-btn');
+      return btn && btn.offsetParent !== null;
     });
-    if (simBtnExists) {
-      console.log('[ucl] Draw complete — Simular button appeared');
-      drawComplete = true;
+    if (simVisible) { console.log(`[ucl] Draw complete at ${(i * 0.4).toFixed(1)}s`); break; }
+  }
+  await wait(1000);  // Brief pause to show the draw result on screen
+
+  // 4. Click "⚽ Simular Champions" (#ucl-sim-btn) — triggers server-side simulation
+  const simText = await page.evaluate(() => {
+    const btn = document.querySelector('#ucl-sim-btn');
+    if (btn) { btn.click(); return btn.textContent.trim(); }
+    return null;
+  });
+  console.log(`[ucl] Simulation launched: "${simText}". Waiting for results (~30s)...`);
+
+  // 5. Wait for server simulation to complete — poll until spinner gone + content loaded
+  // The simulation calls /simulate-bulk multiple times and takes ~32 seconds
+  const simStart = Date.now();
+  for (let i = 0; i < 60; i++) {
+    await wait(2000);
+    const done = await page.evaluate(() => {
+      const spinner = document.querySelector('.trn-spinner');
+      const spinnerVisible = spinner && spinner.offsetParent !== null;
+      const textLen = document.body.innerText.length;
+      // Simulation done when spinner gone and content is rich (> 2000 chars)
+      return !spinnerVisible && textLen > 2000;
+    });
+    const elapsed = Math.round((Date.now() - simStart) / 1000);
+    if (done) {
+      console.log(`[ucl] Simulation complete at ${elapsed}s`);
       break;
     }
-  }
-
-  if (!drawComplete) {
-    console.log('[ucl] Draw button still processing... continuing anyway');
+    if (elapsed > 90) { console.log('[ucl] Timeout — proceeding anyway'); break; }
   }
 
   await wait(1500);
 
-  // 4. Click "#ucl-sim-btn" to start the tournament simulation
-  const startSim = await page.evaluate(() => {
-    const simBtn = document.querySelector('#ucl-sim-btn');
-    if (simBtn && simBtn.offsetParent !== null) { 
-      simBtn.click();
-      return { found: true, text: simBtn.textContent.trim() };
-    }
-    return { found: false };
-  });
-  
-  if (startSim.found) {
-    console.log(`[ucl] Started tournament via ucl-sim-btn: "${startSim.text}"`);
-    await wait(4000);
-  } else {
-    console.log('[ucl] Proceeding to find Siguiente buttons for phase simulation...');
-    await wait(2000);
-  }
-
-  // 5. Simulate all matches — click "Siguiente →" or "Simular" buttons repeatedly
-  for (let step = 0; step < 30; step++) {
-    const clicked = await page.evaluate(() => {
-      const btns = [...document.querySelectorAll('button')];
-      const btn = btns.find(b => {
-        const t = b.textContent.trim();
-        const visible = b.offsetParent !== null;
-        // Look for "Siguiente", "Simular", arrow buttons
-        return visible && (
-          t.includes('Siguiente') || t.includes('Next') || t === '→' ||
-          (t.includes('Simular') && !t.includes('Champions'))
-        ) && !t.includes('Atrás') && !t.includes('Back');
-      });
-      if (btn) { 
-        btn.click(); 
-        return btn.textContent.trim(); 
-      }
-      return null;
+  // 6. Scroll slowly from top to show the champion banner
+  console.log('[ucl] Scrolling to champion...');
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await wait(500);
+  // Slow scroll down to reveal champion + path to title
+  await page.evaluate(async () => {
+    await new Promise(resolve => {
+      let y = 0;
+      const target = Math.min(document.body.scrollHeight * 0.35, 1200);
+      const step = () => {
+        y = Math.min(y + 18, target);
+        window.scrollTo(0, y);
+        if (y < target) setTimeout(step, 80);
+        else setTimeout(resolve, 3000);  // Pause on champion
+      };
+      step();
     });
-    
-    if (clicked) {
-      console.log(`[ucl] Round ${step + 1}: "${clicked.substring(0, 25)}..."`);
-      await wait(3000);
-      // Scroll slowly to show results
-      await page.evaluate(() => {
-        window.scrollBy(0, 200);
-      });
-      await wait(400);
-    } else {
-      console.log(`[ucl] Tournament complete at round ${step}`);
-      break;
-    }
+  });
+
+  // 7. Click "Estadísticas" or "Cuadro" tab to show top scorers / bracket
+  const tabClicked = await page.evaluate(() => {
+    const tabs = [...document.querySelectorAll('button, [role="tab"], .trn-tab')];
+    // Try "Estadísticas" first (top scorers), then "Cuadro" (bracket)
+    const statsTab = tabs.find(t => t.offsetParent !== null &&
+      (t.textContent.includes('Estadística') || t.textContent.includes('Stats')));
+    if (statsTab) { statsTab.click(); return statsTab.textContent.trim(); }
+    const cuadroTab = tabs.find(t => t.offsetParent !== null && t.textContent.includes('Cuadro'));
+    if (cuadroTab) { cuadroTab.click(); return cuadroTab.textContent.trim(); }
+    return null;
+  });
+  if (tabClicked) {
+    console.log(`[ucl] Clicked tab: "${tabClicked}"`);
+    await wait(1000);
   }
 
-  // 6. Scroll down to show champion and cuadro de goleadores (top scorers)
-  await wait(2000);
-  console.log('[ucl] Scrolling to show champion & final standings...');
-  
+  // 8. Scroll down slowly to reveal top scorers / bracket
   await page.evaluate(async () => {
     await new Promise(resolve => {
       let y = window.scrollY;
       const max = document.body.scrollHeight - window.innerHeight;
-      const scrollStep = 28;
-      
-      const scroll = () => {
-        y = Math.min(y + scrollStep, max);
+      const step = () => {
+        y = Math.min(y + 22, max);
         window.scrollTo(0, y);
-        if (y < max) {
-          setTimeout(scroll, 110);
-        } else {
-          // Hold at bottom to display champion and top scorers
-          setTimeout(resolve, 7000);
-        }
+        if (y < max) setTimeout(step, 90);
+        else setTimeout(resolve, 5000);  // Pause at bottom
       };
-      setTimeout(scroll, 600);
+      step();
     });
   });
 
-  // 7. Scroll back to top for clean ending
+  // 9. Click "Clasificación" / "Resumen" tab to show league table
+  const tab2Clicked = await page.evaluate(() => {
+    const tabs = [...document.querySelectorAll('button, [role="tab"]')];
+    const t = tabs.find(t => t.offsetParent !== null &&
+      (t.textContent.includes('Clasificación') || t.textContent.includes('Resumen') || t.textContent.includes('Tabla')));
+    if (t) { t.click(); return t.textContent.trim(); }
+    return null;
+  });
+  if (tab2Clicked) {
+    console.log(`[ucl] Second tab: "${tab2Clicked}"`);
+    await wait(800);
+  }
+
+  // 10. Scroll up briefly then back down for clean ending
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   await wait(1500);
 
