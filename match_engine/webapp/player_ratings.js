@@ -1633,6 +1633,139 @@ const PLAYER_RATINGS_RAW = [
   ['gary pallister',         86], ['pallister',            86], // United CB '92-98 double
   ['steve bruce',            83], ['bruce steve',          83], // United CB
   ['peter schmeichel',       91], // alias guard
+
+  // ════════════════════════════════════════════════════════════════════
+  // CLUBS EUROPEOS — 2ª tanda de overrides
+  // ════════════════════════════════════════════════════════════════════
+
+  // ── Grande Inter (1964-65) ───────────────────────────────────────
+  ['giuliano sarti',         87], ['sarti',                87], // legendary GK of Grande Inter
+  ['armando picchi',         84], ['picchi',               84], // Grande Inter captain/libero
+  ['saul malatrasi',         81], ['malatrasi',            81],
+  ['gianfranco bedin',       81], ['bedin',                81],
+  ['mario corso',            85], ['corso',                85], // "Corsino" – elegant Inter inside-forward
+  ['jair',                   84], // Brazilian winger Grande Inter
+  ['angelo domenghini',      82], ['domenghini',           82],
+  ['joaquin peiro',          81], ['peiró',                81], ['peiro',             81],
+  ['giorgio dellagiovanna',  80], ['dellagiovanna',        80],
+  ['renato cappellini',      79], ['cappellini renato',    79],
+
+  // ── Inter Milan 1988-2010 era ────────────────────────────────────
+  ['nicola berti',           83], ['berti nicola',         83],
+  ['aldo serena',            82], // already in list — alias guard
+  ['fausto pizzi',           79],
+  ['diego simeone',          83], ['simeone',              83], // CM Inter / Argentina
+  ['ronaldo nazario',        98], // alias guard — 2002/2003 Inter
+  ['cambiasso',              84], ['esteban cambiasso',    84], // key for 2010 treble
+  ['javier zanetti',         88], // alias guard
+  ['ivan cordoba',           83], ['córdoba',              83], ['cordoba ivan',       83],
+  ['maicon',                 86], ['maicon douglas',       86], // RB Inter/Brazil
+  ['samuel paulo',           87], ['samuel',               87], // Nigerian CB Inter
+  ['lucio',                  86], ['lucimar ferreira',     86], // Brazil/Inter CB
+  ['thiago motta',           83], ['motta thiago',         83],
+  ['marco materazzi',        82], ['materazzi',            82], // infamous 2006 WC
+
+  // ── Chelsea ──────────────────────────────────────────────────────
+  ['gianfranco zola',        87], // alias guard
+  ['roberto di matteo',      82], ['di matteo',            82],
+  ['jimmy floyd hasselbaink',85], ['hasselbaink',          85],
+  ['eidur gudjohnsen',       83], ['guðjohnsen',           83], ['gudjohnsen',         83],
+  ['geremi',                 81], ['geremi njitap',        81],
+  ['joe cole',               83], ['cole joe',             83],
+  ['arjen robben',           89], // alias guard
+  ['petr cech',              88], // alias guard
+  ['michael essien',         85], ['essien',               85], // Ghana/Chelsea 2004-12
+  ['florent malouda',        83], // alias guard
+  ['nicolas anelka',         85], // alias guard
+  ['frank lampard',          89], // alias guard
+  ['john terry',             87], // alias guard
+  ['didier drogba',          90], // alias guard
+
+  // ── Tottenham ────────────────────────────────────────────────────
+  ['jimmy greaves',          90], ['greaves',              90], // Spurs/England legend – 44 goals in 57 games
+  ['danny blanchflower',     87], ['blanchflower',         87], // Double-winning captain 1961
+  ['cliff jones',            82], ['jones cliff',          82], // Welsh winger, 1961 Double
+  ['paul gascoigne',         89], // alias guard
+  ['gary lineker',           87], // alias guard
+  ['harry kane',             91], // alias guard
+  ['son heung-min',          88], // alias guard
+  ['christian eriksen',      87], ['eriksen',              87],
+  ['jan vertonghen',         84], ['vertonghen',           84], // alias duplicate guard
+  ['toby alderweireld',      83], ['alderweireld',         83],
+  ['hugo lloris',            87], // alias guard
+  ['dele alli',              83], ['alli',                 83],
+
+  // ── AS Roma ──────────────────────────────────────────────────────
+  ['roberto boninsegna',     85], // alias guard
+  ['roberto pruzzo',         81], ['pruzzo',               81], // Roma ST — alias guard
+  ['agostino di bartolomei', 84], ['di bartolomei',        84], // tragic Roma captain
+  ['falcao',                 89], ['falcão',               89], // Brazilian CM Roma 1980-83
+  ['paulo roberto falcao',   89], // alias
+  ['gabriel batistuta',      92], // alias guard — Roma 2000-01
+  ['emerson palmieri',       83], ['emerson ferreira',     83], // Roma CM 2001 scudetto
+  ['daniele de rossi',       86], ['de rossi',             86],
+  ['antonio cassano',        83], ['cassano',              83],
+  ['edin dzeko',             84], ['džeko',                84], ['dzeko',              84],
+  ['Francesco totti',        92], ['totti',                92], // Roma legend
+
+  // ── Borussia Dortmund ────────────────────────────────────────────
+  ['karl-heinz riedle',      83], ['riedle',               83], // CL 1997 brace
+  ['andreas moller',         85], ['möller',               85], ['moller',             85],
+  ['stephane chapuisat',     83], ['chapuisat',            83], // Swiss ST BVB 1991-99
+  ['michael zorc',           83], ['zorc',                 83], // BVB legend
+  ['Lars Ricken',            82], ['ricken',               82], // CL 1997 chip vs Juventus
+  ['marco reus',             86], // alias guard
+  ['mats hummels',           88], // alias guard
+  ['mario gotze',            84], ['götze',                84], ['gotze',              84],
+  ['robert lewandowski',     93], // alias guard
+  ['ilkay gundogan',         86], // alias guard
+
+  // ── Ajax ─────────────────────────────────────────────────────────
+  ['litmanen',               87], ['jari litmanen',        87], // Finnish genius, Ajax MCL 1995
+  ['clarence seedorf',       88], // alias guard — Ajax before Milan
+  ['patrick kluivert',       85], // alias guard — Ajax CL winner 1995
+  ['frank de boer',          86], // alias guard — Ajax captain
+  ['edgar davids',           85], // alias guard
+  ['michael reiziger',       82], ['reiziger',             82], // Ajax/Barcelona RB
+  ['marc overmars',          85], // alias guard
+  ['danny blind',            80], ['blind danny',          80], // Ajax CB captain
+  ['mehmet scholl',          84], // alias guard (Bayern)
+  ['sjaak swart',            82],  // alias — but mainly alias for Golden Ajax era players
+  ['dusan tadic',            84], ['tadić',                84], ['tadic',              84], // 2019 CL SF - inspired
+  ['matthijs de ligt',       87], ['de ligt',              87],
+  ['frenkie de jong',        88], // alias guard
+  ['hakim ziyech',           84], ['ziyech',               84],
+
+  // ── Porto ────────────────────────────────────────────────────────
+  ['deco',                   89], // alias guard
+  ['costinha',               80], // alias guard
+  ['radamel falcao garcia',  88], ['falcao garcia',        88], // Porto striker 2009-11 alias
+  ['hulk',                   83], ['hulk porto',           83],
+
+  // ── Benfica ──────────────────────────────────────────────────────
+  ['jose augusto benfica',   82], // covered above
+  ['eusebio',                94], // alias guard
+  ['mario coluna',           86], // alias guard
+  ['beto bebeto da silva',   79],
+  ['joao mario',             82], ['joão mário',           82],
+
+  // ── Monaco ───────────────────────────────────────────────────────
+  ['kylian mbappe',          96], // alias guard
+  ['bernardo silva',         88], // alias guard — Monaco before City
+  ['thomas lemar',           83], ['lemar',                83],
+  ['fabinho',                88], // alias guard — Monaco before Liverpool
+  ['radamel falcao',         88], ['falcão',               88], ['falcao',             88],
+
+  // ── Marseille ────────────────────────────────────────────────────
+  ['rudi voller',            85], // alias guard — OM 1992-94
+  ['alen boksic marsella',   84], // alias guard
+  ['abedi pele',             86], ['abedi',                86], ['abedi ayew',         86], // Ghanaian legend, OM 1992-93 CL
+
+  // ── Lyon ─────────────────────────────────────────────────────────
+  ['juninho pernambucano',   89], ['juninho',              89], // OL legend — free kick master
+  ['michael essien lyon',    85], // before Chelsea
+  ['samuel eto',             92], // alias guard
+  ['karim benzema',          91], // alias guard – OL academy
 ];
 
 
