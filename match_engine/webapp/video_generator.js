@@ -77,7 +77,9 @@ async function generateVideo(opts = {}) {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: WIDTH, height: HEIGHT, deviceScaleFactor: 1 });
+  // Use 720×1280 logical viewport — recorder scales it up to 1080×1920 output (1.5× zoom)
+  // This makes all text 50% larger and much more readable on TikTok
+  await page.setViewport({ width: 720, height: 1280, deviceScaleFactor: 1 });
 
   // Hide scrollbars, set dark theme body bg for clean recording
   await page.evaluateOnNewDocument(() => {
@@ -282,7 +284,7 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // Helper: click a tab by keyword and scroll through its content
+  // Helper: click a tab by keyword, scroll vertically + horizontal for Cuadro bracket
   const showTab = async (keyword) => {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
@@ -295,19 +297,40 @@ async function recordUCL(page, recorder, outPath) {
       await wait(800);
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       await wait(300);
-      await page.evaluate(async () => {
-        await new Promise(resolve => {
-          let y = 0;
-          const max = document.body.scrollHeight - window.innerHeight;
-          const step = () => {
-            y = Math.min(y + 20, max);
-            window.scrollTo(0, y);
-            if (y < max) setTimeout(step, 80);
-            else setTimeout(resolve, 3500);
-          };
-          step();
+
+      // Cuadro (bracket) has a horizontal scrollable container — scroll it left→right
+      if (keyword === 'Cuadro') {
+        await page.evaluate(async () => {
+          await new Promise(resolve => {
+            const el = document.querySelector('#trn-tab-bracket');
+            if (!el) return resolve();
+            let x = 0;
+            const max = el.scrollWidth - el.clientWidth;
+            const step = () => {
+              x = Math.min(x + 18, max);
+              el.scrollLeft = x;
+              if (x < max) setTimeout(step, 90);
+              else setTimeout(resolve, 4000);  // Pause at right edge
+            };
+            step();
+          });
         });
-      });
+      } else {
+        // All other tabs: normal vertical scroll
+        await page.evaluate(async () => {
+          await new Promise(resolve => {
+            let y = 0;
+            const max = document.body.scrollHeight - window.innerHeight;
+            const step = () => {
+              y = Math.min(y + 20, max);
+              window.scrollTo(0, y);
+              if (y < max) setTimeout(step, 80);
+              else setTimeout(resolve, 3500);
+            };
+            step();
+          });
+        });
+      }
     }
     return !!found;
   };
