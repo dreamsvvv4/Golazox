@@ -1509,11 +1509,11 @@ const TRN = (() => {
       for (let i = 0; i < n; i += 2) {
         const a = bracket[i], b = bracket[i + 1];
         if (_rules.idaVuelta && !isFinal) {
-          // Two legs
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i,       penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null });
-          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era, eraB: a.era, salt: n * 100 + i + 50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null });
+          // Two legs — each team plays at home once
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i,       penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: true });
+          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era, eraB: a.era, salt: n * 100 + i + 50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null, homeAdvantage: true });
         } else {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: _rules.penalties, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: _rules.penalties, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: !isFinal });
         }
       }
 
@@ -1576,7 +1576,7 @@ const TRN = (() => {
 
   // Helper: simulate a single knockout match
   async function _simSingleKO(a, b, salt) {
-    const res = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt, penalties: true, ovrA: a.ovr||null, ovrB: b.ovr||null }]);
+    const res = await _bulkSim([{ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt, penalties: true, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: false }]);
     const r = res[0];
     const winner = r.penA !== null ? (r.penA > r.penB ? a : b) : (r.scoreA > r.scoreB ? a : b);
     return { match: { a, b, scoreA: r.scoreA, scoreB: r.scoreB, penA: r.penA, penB: r.penB, scorersA: r.scorersA||[], scorersB: r.scorersB||[], mom: r.mom||null, stats: r.stats||null, winner, legs: 1 }, winner };
@@ -1756,10 +1756,11 @@ const TRN = (() => {
       for (let i = 0; i < n; i += 2) {
         const a = bracket[i], b = bracket[i + 1];
         if (idaVuelta && !isFinal) {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*100+i,    penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null });
-          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era||'', eraB: a.era||'', salt: n*100+i+50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null });
+          // Each leg played at the home ground of team A then team B
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*100+i,    penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: true });
+          specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era||'', eraB: a.era||'', salt: n*100+i+50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null, homeAdvantage: true });
         } else {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*500+i, penalties: true, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era||'', eraB: b.era||'', salt: n*500+i, penalties: true, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: !isFinal });
         }
       }
 
