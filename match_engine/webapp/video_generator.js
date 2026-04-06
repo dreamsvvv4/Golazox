@@ -72,14 +72,14 @@ async function generateVideo(opts = {}) {
       '--disable-setuid-sandbox',
       '--disable-gpu',
       '--disable-dev-shm-usage',
-      `--window-size=${WIDTH},${HEIGHT}`,
+      '--window-size=720,1280',   // logical viewport — DPR 1.5 scales to 1080x1920 physical
     ],
   });
 
   const page = await browser.newPage();
-  // Use 720×1280 logical viewport — recorder scales it up to 1080×1920 output (1.5× zoom)
-  // This makes all text 50% larger and much more readable on TikTok
-  await page.setViewport({ width: 720, height: 1280, deviceScaleFactor: 1 });
+  // deviceScaleFactor:1.5 → browser renders at 720×1280 CSS px (large text)
+  // but produces 1080×1920 physical pixels — no black bars, no distortion
+  await page.setViewport({ width: 720, height: 1280, deviceScaleFactor: 1.5 });
 
   // Hide scrollbars, set dark theme body bg for clean recording
   await page.evaluateOnNewDocument(() => {
