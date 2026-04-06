@@ -298,21 +298,37 @@ async function recordUCL(page, recorder, outPath) {
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       await wait(300);
 
-      // Cuadro (bracket) has a horizontal scrollable container — scroll it left→right
+      // Cuadro (bracket): scroll down to see PLAY-IN section, then scroll right to reveal KO rounds
       if (keyword === 'Cuadro') {
+        // First: scroll vertically to show the PLAY-IN / octavos section
+        await page.evaluate(async () => {
+          await new Promise(resolve => {
+            let y = 0;
+            const target = Math.min(document.body.scrollHeight * 0.4, 800);
+            const step = () => {
+              y = Math.min(y + 14, target);
+              window.scrollTo(0, y);
+              if (y < target) setTimeout(step, 80);
+              else setTimeout(resolve, 1500);
+            };
+            step();
+          });
+        });
+        // Then: scroll the bracket container RIGHT to reveal cuartos → semis → final
         await page.evaluate(async () => {
           await new Promise(resolve => {
             const el = document.querySelector('#trn-tab-bracket');
             if (!el) return resolve();
             let x = 0;
             const max = el.scrollWidth - el.clientWidth;
+            if (max <= 0) return setTimeout(resolve, 4000);
             const step = () => {
-              x = Math.min(x + 18, max);
+              x = Math.min(x + 14, max);
               el.scrollLeft = x;
-              if (x < max) setTimeout(step, 90);
-              else setTimeout(resolve, 4000);  // Pause at right edge
+              if (x < max) setTimeout(step, 100);
+              else setTimeout(resolve, 4000);  // Pause on the final
             };
-            step();
+            setTimeout(step, 500);
           });
         });
       } else {
