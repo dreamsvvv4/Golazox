@@ -2554,7 +2554,7 @@ function _renderPicker(side) {
         `</div>`;
       return;
     }
-    const spTeams = _catalog.filter(c => c.group === st.league);
+    const spTeams = _catalog.filter(c => c.group === st.league && c.badge && !c.badge.includes('_placeholder'));
     const spMeta  = _LEAGUE_META[st.league] || { name: st.league.replace(/^\S+ /,'') };
     const spName  = _lang === 'en' ? (spMeta.nameEn || spMeta.name) : spMeta.name;
     container.innerHTML =
@@ -2580,7 +2580,7 @@ function _renderPicker(side) {
       `<div class="tp-leagues-grid">` +
       leagues.map(g => {
         const meta  = _LEAGUE_META[g] || { name: g.replace(/^\S+ /,''), iso: null, tier: 1 };
-        const count = _catalog.filter(c => c.group === g).length;
+        const count = _catalog.filter(c => c.group === g && c.badge && !c.badge.includes('_placeholder')).length;
         const flagInner = meta.iso
           ? `<img class="tp-league-flag" src="https://flagcdn.com/w40/${meta.iso}.png" alt="" loading="lazy">`
           : meta.svg
@@ -2597,7 +2597,7 @@ function _renderPicker(side) {
   }
 
   // ── Clubs — team badge grid ────────────────────────────────
-  const teams = _catalog.filter(c => c.group === st.league);
+  const teams = _catalog.filter(c => c.group === st.league && c.badge && !c.badge.includes('_placeholder'));
   const lgMeta = _LEAGUE_META[st.league] || { name: st.league.replace(/^\S+ /,'') };
   const lgName  = _lang === 'en' ? (lgMeta.nameEn || lgMeta.name) : lgMeta.name;
   container.innerHTML =
@@ -5436,11 +5436,14 @@ function _driftPlayers() {
 
     const shouldPass = (_driftTick % 4 === 0) && allDots.length > 1;
     if (shouldPass) {
-      // Pass to a random nearby teammate (prefer same-team dot)
       const ownerTeam = _lpBallOwnerEl ? _lpBallOwnerEl.dataset.team : null;
-      const teammates = (ownerTeam === 'a' ? _pitchDots.a : _pitchDots.b).filter(g => g !== _lpBallOwnerEl && g.dataset.pos !== 'GK');
-      if (teammates.length > 0) {
-        _lpBallOwnerEl = teammates[Math.floor(Math.random() * teammates.length)];
+      // ~18% chance of turnover to opposing team (interception/loss of possession)
+      const turnover = Math.random() < 0.18;
+      const pool = turnover
+        ? (ownerTeam === 'a' ? _pitchDots.b : _pitchDots.a).filter(g => g.dataset.pos !== 'GK')
+        : (ownerTeam === 'a' ? _pitchDots.a : _pitchDots.b).filter(g => g !== _lpBallOwnerEl && g.dataset.pos !== 'GK');
+      if (pool.length > 0) {
+        _lpBallOwnerEl = pool[Math.floor(Math.random() * pool.length)];
       }
     }
     // Ball stays close to current owner
@@ -5513,6 +5516,9 @@ function animatePitchEvent(type, ev) {
 
   if (type === 'goal') {
     setPhase(`${t('phase-goal')} — ${teamLabel}`);
+    // Give ball to scorer immediately
+    const scorers = (ev.side === 'A' ? _pitchDots.a : _pitchDots.b).filter(g => g.dataset.pos !== 'GK');
+    if (scorers.length > 0) _lpBallOwnerEl = scorers[Math.floor(Math.random() * scorers.length)];
     const attackers = ev.side === 'A' ? _pitchDots.a : _pitchDots.b;
     attackers.forEach(g => {
       const goalY = ev.side === 'A' ? _LP.H * 0.88 : _LP.H * 0.12;
@@ -5527,7 +5533,13 @@ function animatePitchEvent(type, ev) {
       const by = ev.side === 'A' ? _LP.H * 0.92 : _LP.H * 0.08;
       _pitchDots.ball.setAttribute('transform', `translate(${bx},${by})`);
     }
-    setTimeout(() => { setPhase(t('phase-playing')); _resetToBase(); }, 2200);
+    // After celebration, kick-off: ball returns to centre with opposing team
+    setTimeout(() => {
+      setPhase(t('phase-playing'));
+      _resetToBase();
+      const kickoffPool = (ev.side === 'A' ? _pitchDots.b : _pitchDots.a).filter(g => g.dataset.pos !== 'GK');
+      if (kickoffPool.length > 0) _lpBallOwnerEl = kickoffPool[Math.floor(Math.random() * kickoffPool.length)];
+    }, 2200);
   } else if (type === 'yellow' || type === 'red') {
     setPhase(type === 'yellow'
       ? `${t('phase-yellow')} — ${teamLabel}`
@@ -5556,6 +5568,9 @@ function animatePitchEvent(type, ev) {
 
   } else if (type === 'corner') {
     setPhase(`${t('phase-corner')} — ${teamLabel}`);
+    // Corner taker gets possession
+    const cornerAttackers = (ev.side === 'A' ? _pitchDots.a : _pitchDots.b).filter(g => g.dataset.pos !== 'GK');
+    if (cornerAttackers.length > 0) _lpBallOwnerEl = cornerAttackers[Math.floor(Math.random() * cornerAttackers.length)];
     if (_pitchDots.ball) {
       const cornerX = Math.random() < 0.5 ? _LP.W * 0.97 : _LP.W * 0.03;
       const cornerY = ev.side === 'A' ? _LP.H * 0.98 : _LP.H * 0.02;
@@ -5572,6 +5587,9 @@ function animatePitchEvent(type, ev) {
 
   } else if (type === 'freekick') {
     setPhase(`${t('phase-freekick')} — ${teamLabel}`);
+    // Freekick team gets possession
+    const fkAttackers = (ev.side === 'A' ? _pitchDots.a : _pitchDots.b).filter(g => g.dataset.pos !== 'GK');
+    if (fkAttackers.length > 0) _lpBallOwnerEl = fkAttackers[Math.floor(Math.random() * fkAttackers.length)];
     // Ball to freekick spot
     if (_pitchDots.ball) {
       const fkX = _LP.cx + (Math.random() - .5) * 40;
