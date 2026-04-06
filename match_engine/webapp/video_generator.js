@@ -284,7 +284,23 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // Helper: click a tab by keyword, scroll vertically + horizontal for Cuadro bracket
+  // Smooth scroll to top (fast but not jarring — no instant jump)
+  const scrollToTop = () => page.evaluate(async () => {
+    await new Promise(resolve => {
+      const start = window.scrollY;
+      if (start === 0) return resolve();
+      let y = start;
+      const step = () => {
+        y = Math.max(y - 60, 0);
+        window.scrollTo(0, y);
+        if (y > 0) setTimeout(step, 30);
+        else resolve();
+      };
+      step();
+    });
+  });
+
+  // Helper: click a tab, smoothly scroll to top, then slowly scroll down to show all content
   const showTab = async (keyword) => {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
@@ -294,19 +310,20 @@ async function recordUCL(page, recorder, outPath) {
     }, keyword);
     if (found) {
       console.log(`[ucl] Tab → "${found}"`);
-      await wait(800);
-      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-      await wait(300);
+      await wait(600);
+      // Smooth scroll back to top — no jarring jump
+      await scrollToTop();
+      await wait(500);
 
-      // Cuadro (bracket): scroll down to see PLAY-IN section, then scroll right to reveal KO rounds
+      // Cuadro (bracket): scroll down slowly to PLAY-IN, then scroll right to reveal KO rounds
       if (keyword === 'Cuadro') {
-        // First: scroll vertically to show the PLAY-IN / octavos section
+        // Slowly scroll down to the bracket section
         await page.evaluate(async () => {
           await new Promise(resolve => {
             let y = 0;
             const target = Math.min(document.body.scrollHeight * 0.4, 800);
             const step = () => {
-              y = Math.min(y + 14, target);
+              y = Math.min(y + 15, target);
               window.scrollTo(0, y);
               if (y < target) setTimeout(step, 80);
               else setTimeout(resolve, 1500);
@@ -314,7 +331,7 @@ async function recordUCL(page, recorder, outPath) {
             step();
           });
         });
-        // Then: scroll the bracket container RIGHT to reveal cuartos → semis → final
+        // Slowly scroll the bracket container RIGHT: octavos → cuartos → semis → final
         await page.evaluate(async () => {
           await new Promise(resolve => {
             const el = document.querySelector('#trn-tab-bracket');
@@ -323,22 +340,22 @@ async function recordUCL(page, recorder, outPath) {
             const max = el.scrollWidth - el.clientWidth;
             if (max <= 0) return setTimeout(resolve, 4000);
             const step = () => {
-              x = Math.min(x + 14, max);
+              x = Math.min(x + 12, max);
               el.scrollLeft = x;
               if (x < max) setTimeout(step, 100);
-              else setTimeout(resolve, 4000);  // Pause on the final
+              else setTimeout(resolve, 3500);  // Pause on the final
             };
             setTimeout(step, 500);
           });
         });
       } else {
-        // All other tabs: normal vertical scroll
+        // All other tabs: slow continuous scroll down to show all content
         await page.evaluate(async () => {
           await new Promise(resolve => {
             let y = 0;
             const max = document.body.scrollHeight - window.innerHeight;
             const step = () => {
-              y = Math.min(y + 20, max);
+              y = Math.min(y + 15, max);
               window.scrollTo(0, y);
               if (y < max) setTimeout(step, 80);
               else setTimeout(resolve, 3500);
