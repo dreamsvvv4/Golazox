@@ -284,21 +284,8 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // Smooth scroll to top (fast but not jarring — no instant jump)
-  const scrollToTop = () => page.evaluate(async () => {
-    await new Promise(resolve => {
-      const start = window.scrollY;
-      if (start === 0) return resolve();
-      let y = start;
-      const step = () => {
-        y = Math.max(y - 60, 0);
-        window.scrollTo(0, y);
-        if (y > 0) setTimeout(step, 30);
-        else resolve();
-      };
-      step();
-    });
-  });
+  // Reset scroll position — instant (1 frame, invisible in video at 30fps)
+  const scrollToTop = () => page.evaluate(() => window.scrollTo(0, 0));
 
   // Helper: click a tab, smoothly scroll to top, then slowly scroll down to show all content
   const showTab = async (keyword) => {
