@@ -81,8 +81,12 @@ async function generateVideo(opts = {}) {
   // but produces 1080×1920 physical pixels — no black bars, no distortion
   await page.setViewport({ width: 720, height: 1280, deviceScaleFactor: 1.5 });
 
-  // Hide scrollbars, set dark theme body bg for clean recording
+  // Disable scroll anchoring globally — prevents browser from jumping to maintain visual position
+  // when tab content changes height. Also hide scrollbars.
   await page.evaluateOnNewDocument(() => {
+    const s = document.createElement('style');
+    s.textContent = '* { overflow-anchor: none !important; scroll-behavior: auto !important; }';
+    document.addEventListener('DOMContentLoaded', () => document.head.appendChild(s));
     document.documentElement.style.overflow = 'hidden';
   });
 
@@ -284,7 +288,18 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // showTab: click tab → let content render → force top → pause → scroll down slowly
+  // Reset ALL scroll positions — window + every scrollable container
+  const resetAllScroll = () => page.evaluate(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.querySelectorAll('*').forEach(el => {
+      if (el.scrollTop !== 0) el.scrollTop = 0;
+      if (el.scrollLeft !== 0) el.scrollLeft = 0;
+    });
+  });
+
+  // showTab: click tab → wait for render → hard-reset all scroll → pause → scroll down slowly
   const showTab = async (keyword) => {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
@@ -296,12 +311,11 @@ async function recordUCL(page, recorder, outPath) {
 
     console.log(`[ucl] Tab → "${found}"`);
 
-    // Wait for new tab content to fully render, then force position 0
-    await wait(400);
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await wait(400);
-    // Second reset in case the tab layout pushed scroll again
-    await page.evaluate(() => window.scrollTo(0, 0));
+    // Wait for tab content to render, then hard-reset every scrollable element
+    await wait(500);
+    await resetAllScroll();
+    await wait(150);
+    await resetAllScroll();  // Second pass — catches any delayed layout shifts
     await wait(600);  // Hold at top so viewer sees the tab heading
 
     if (keyword === 'Cuadro') {
