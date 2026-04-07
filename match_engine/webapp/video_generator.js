@@ -284,87 +284,86 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // Reset scroll position — instant (1 frame, invisible in video at 30fps)
-  const scrollToTop = () => page.evaluate(() => window.scrollTo(0, 0));
-
-  // Helper: click a tab, smoothly scroll to top, then slowly scroll down to show all content
+  // showTab: click tab → let content render → force top → pause → scroll down slowly
   const showTab = async (keyword) => {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
       const tab = tabs.find(t => t.offsetParent !== null && t.textContent.includes(kw));
-      if (tab) {
-        tab.click();
-        // Reset scroll in the SAME synchronous block — before the browser paints any frame
-        window.scrollTo(0, 0);
-        return tab.textContent.trim();
-      }
+      if (tab) { tab.click(); return tab.textContent.trim(); }
       return null;
     }, keyword);
-    if (found) {
-      console.log(`[ucl] Tab → "${found}"`);
-      await wait(700);  // Hold at position 0 so the tab content renders cleanly
+    if (!found) return false;
 
-      // Cuadro (bracket): scroll down slowly to PLAY-IN, then scroll right to reveal KO rounds
-      if (keyword === 'Cuadro') {
-        // Slowly scroll down to the bracket section
-        await page.evaluate(async () => {
-          await new Promise(resolve => {
-            let y = 0;
-            const target = Math.min(document.body.scrollHeight * 0.4, 800);
-            const step = () => {
-              y = Math.min(y + 15, target);
-              window.scrollTo(0, y);
-              if (y < target) setTimeout(step, 80);
-              else setTimeout(resolve, 1500);
-            };
-            step();
-          });
+    console.log(`[ucl] Tab → "${found}"`);
+
+    // Wait for new tab content to fully render, then force position 0
+    await wait(400);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await wait(400);
+    // Second reset in case the tab layout pushed scroll again
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await wait(600);  // Hold at top so viewer sees the tab heading
+
+    if (keyword === 'Cuadro') {
+      // Scroll down to show PLAY-IN section
+      await page.evaluate(async () => {
+        await new Promise(resolve => {
+          let y = 0;
+          const target = Math.min(document.body.scrollHeight * 0.4, 800);
+          const step = () => {
+            y = Math.min(y + 15, target);
+            window.scrollTo(0, y);
+            if (y < target) setTimeout(step, 80);
+            else setTimeout(resolve, 1500);
+          };
+          step();
         });
-        // Slowly scroll the bracket container RIGHT: octavos → cuartos → semis → final
-        await page.evaluate(async () => {
-          await new Promise(resolve => {
-            const el = document.querySelector('#trn-tab-bracket');
-            if (!el) return resolve();
-            let x = 0;
-            const max = el.scrollWidth - el.clientWidth;
-            if (max <= 0) return setTimeout(resolve, 4000);
-            const step = () => {
-              x = Math.min(x + 12, max);
-              el.scrollLeft = x;
-              if (x < max) setTimeout(step, 100);
-              else setTimeout(resolve, 3500);  // Pause on the final
-            };
-            setTimeout(step, 500);
-          });
+      });
+      // Scroll bracket container RIGHT to reveal KO rounds
+      await page.evaluate(async () => {
+        await new Promise(resolve => {
+          const el = document.querySelector('#trn-tab-bracket');
+          if (!el) return resolve();
+          let x = 0;
+          const max = el.scrollWidth - el.clientWidth;
+          if (max <= 0) return setTimeout(resolve, 4000);
+          const step = () => {
+            x = Math.min(x + 12, max);
+            el.scrollLeft = x;
+            if (x < max) setTimeout(step, 100);
+            else setTimeout(resolve, 3500);
+          };
+          setTimeout(step, 500);
         });
-      } else {
-        // All other tabs: slow continuous scroll down to show all content
-        await page.evaluate(async () => {
-          await new Promise(resolve => {
-            let y = 0;
-            const max = document.body.scrollHeight - window.innerHeight;
-            const step = () => {
-              y = Math.min(y + 15, max);
-              window.scrollTo(0, y);
-              if (y < max) setTimeout(step, 80);
-              else setTimeout(resolve, 3500);
-            };
-            step();
-          });
+      });
+    } else {
+      // Scroll slowly from top to bottom
+      await page.evaluate(async () => {
+        await new Promise(resolve => {
+          let y = 0;
+          const max = document.body.scrollHeight - window.innerHeight;
+          if (max <= 0) return setTimeout(resolve, 3000);
+          const step = () => {
+            y = Math.min(y + 15, max);
+            window.scrollTo(0, y);
+            if (y < max) setTimeout(step, 80);
+            else setTimeout(resolve, 3500);
+          };
+          step();
         });
-      }
+      });
     }
-    return !!found;
+    return true;
   };
 
-  // 7. Recorre las 4 tabs en orden: Resumen → Cuadro → Calendario → Estadísticas
-  await showTab('Resumen', 'Resumen');
-  await showTab('Cuadro', 'Cuadro');
-  await showTab('Calendario', 'Calendario');
-  await showTab('Estadística', 'Estadísticas');
+  // 7. Resumen → Cuadro → Calendario → Estadísticas
+  await showTab('Resumen');
+  await showTab('Cuadro');
+  await showTab('Calendario');
+  await showTab('Estadística');
 
-  // 8. Scroll back to top for clean ending
-  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  // 8. Clean ending
+  await page.evaluate(() => window.scrollTo(0, 0));
   await wait(1500);
 
   await recorder.stop();
