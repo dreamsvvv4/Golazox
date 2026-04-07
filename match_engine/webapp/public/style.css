@@ -5759,10 +5759,10 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   margin: .6rem 0 1rem;
   padding: 0 1rem;
 }
-/* WC has 12 groups — exactly 6 per row */
+/* WC has 12 groups — 3 per row for readability */
 .trn-preset-groups-wc {
-  grid-template-columns: repeat(6, 1fr);
-  gap: .65rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .6rem;
   max-height: none;
   overflow-y: visible;
 }
@@ -5776,8 +5776,8 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   padding: .65rem .7rem .6rem;
 }
 .trn-pg-label {
-  font: 700 .72rem/1 var(--font);
-  letter-spacing: .1em;
+  font: 700 .85rem/1 var(--font);
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--neon);
   margin-bottom: .5rem;
@@ -5789,13 +5789,13 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   padding: .2rem 0;
 }
 .trn-pg-team .trn-mini-badge {
-  width: 20px !important;
-  height: 20px !important;
+  width: 22px !important;
+  height: 22px !important;
   flex-shrink: 0;
 }
 .trn-pg-team span {
-  font: 400 .78rem/1.2 var(--font);
-  color: rgba(255,255,255,.88);
+  font: 400 .88rem/1.2 var(--font);
+  color: rgba(255,255,255,.95);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
