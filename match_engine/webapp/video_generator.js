@@ -269,24 +269,9 @@ async function recordUCL(page, recorder, outPath) {
 
   await wait(1500);
 
-  // 6. Scroll slowly from top to show the champion banner
-  console.log('[ucl] Scrolling to champion...');
+  // 6. Already on Resumen after simulation — reset to top and prepare for tab scrolls
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
   await wait(500);
-  // Slow scroll down to reveal champion + path to title
-  await page.evaluate(async () => {
-    await new Promise(resolve => {
-      let y = 0;
-      const target = Math.min(document.body.scrollHeight * 0.35, 1200);
-      const step = () => {
-        y = Math.min(y + 18, target);
-        window.scrollTo(0, y);
-        if (y < target) setTimeout(step, 80);
-        else setTimeout(resolve, 3000);  // Pause on champion
-      };
-      step();
-    });
-  });
 
   // Reset ALL scroll positions — window + every scrollable container
   const resetAllScroll = () => page.evaluate(() => {
@@ -299,7 +284,7 @@ async function recordUCL(page, recorder, outPath) {
     });
   });
 
-  // showTab: click tab → wait for render → hard-reset all scroll → pause → scroll down slowly
+  // showTab: click tab → wait for render → single hard-reset → pause → scroll down once
   const showTab = async (keyword) => {
     const found = await page.evaluate((kw) => {
       const tabs = [...document.querySelectorAll('button, [role="tab"]')];
@@ -311,12 +296,10 @@ async function recordUCL(page, recorder, outPath) {
 
     console.log(`[ucl] Tab → "${found}"`);
 
-    // Wait for tab content to render, then hard-reset every scrollable element
-    await wait(500);
+    // Wait for tab content to fully render, then single reset
+    await wait(600);
     await resetAllScroll();
-    await wait(150);
-    await resetAllScroll();  // Second pass — catches any delayed layout shifts
-    await wait(600);  // Hold at top so viewer sees the tab heading
+    await wait(700);  // Hold at top so viewer sees the tab heading
 
     if (keyword === 'Cuadro') {
       // Scroll down to show PLAY-IN section
@@ -333,7 +316,7 @@ async function recordUCL(page, recorder, outPath) {
           step();
         });
       });
-      // Scroll bracket container RIGHT to reveal KO rounds
+      // Scroll bracket container RIGHT to reveal KO rounds, with a mid-scroll pause
       await page.evaluate(async () => {
         await new Promise(resolve => {
           const el = document.querySelector('#trn-tab-bracket');
@@ -341,27 +324,44 @@ async function recordUCL(page, recorder, outPath) {
           let x = 0;
           const max = el.scrollWidth - el.clientWidth;
           if (max <= 0) return setTimeout(resolve, 4000);
+          const MID = max / 2;  // pause briefly at the midpoint
+          let pausedAtMid = false;
           const step = () => {
             x = Math.min(x + 12, max);
             el.scrollLeft = x;
-            if (x < max) setTimeout(step, 100);
-            else setTimeout(resolve, 3500);
+            if (x >= max) { setTimeout(resolve, 3500); return; }
+            // Pause at midpoint so viewer can read the left half of the bracket
+            if (!pausedAtMid && x >= MID) {
+              pausedAtMid = true;
+              setTimeout(step, 1200);
+            } else {
+              setTimeout(step, 100);
+            }
           };
           setTimeout(step, 500);
         });
       });
     } else {
-      // Scroll slowly from top to bottom
+      // Scroll slowly from top to bottom with reading pauses every ~350px
       await page.evaluate(async () => {
         await new Promise(resolve => {
           let y = 0;
+          let lastPause = 0;
+          const PAUSE_EVERY = 350;   // px between reading pauses
+          const PAUSE_MS    = 1200;  // ms to hold still
           const max = document.body.scrollHeight - window.innerHeight;
           if (max <= 0) return setTimeout(resolve, 3000);
           const step = () => {
             y = Math.min(y + 15, max);
             window.scrollTo(0, y);
-            if (y < max) setTimeout(step, 80);
-            else setTimeout(resolve, 3500);
+            if (y >= max) { setTimeout(resolve, 3500); return; }
+            // Insert a reading pause when we've scrolled another PAUSE_EVERY px
+            if (y - lastPause >= PAUSE_EVERY) {
+              lastPause = y;
+              setTimeout(step, PAUSE_MS);  // hold still so viewer can read
+            } else {
+              setTimeout(step, 80);
+            }
           };
           step();
         });
@@ -370,8 +370,31 @@ async function recordUCL(page, recorder, outPath) {
     return true;
   };
 
-  // 7. Resumen → Cuadro → Calendario → Estadísticas
-  await showTab('Resumen');
+  // 7. Resumen (already active — scroll without re-clicking) → Cuadro → Calendario → Estadísticas
+  console.log('[ucl] Tab → "Resumen" (already active)');
+  await wait(700);  // Hold at top so viewer sees the tab heading
+  await page.evaluate(async () => {
+    await new Promise(resolve => {
+      let y = 0;
+      let lastPause = 0;
+      const PAUSE_EVERY = 350;
+      const PAUSE_MS    = 1200;
+      const max = document.body.scrollHeight - window.innerHeight;
+      if (max <= 0) return setTimeout(resolve, 3000);
+      const step = () => {
+        y = Math.min(y + 15, max);
+        window.scrollTo(0, y);
+        if (y >= max) { setTimeout(resolve, 3500); return; }
+        if (y - lastPause >= PAUSE_EVERY) {
+          lastPause = y;
+          setTimeout(step, PAUSE_MS);
+        } else {
+          setTimeout(step, 80);
+        }
+      };
+      step();
+    });
+  });
   await showTab('Cuadro');
   await showTab('Calendario');
   await showTab('Estadística');
