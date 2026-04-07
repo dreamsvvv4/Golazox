@@ -24,14 +24,19 @@ process.env.FFMPEG_PATH = require('ffmpeg-static');
 
 const puppeteer               = require('puppeteer');
 const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
-const path  = require('path');
-const fs    = require('fs');
+const path    = require('path');
+const fs      = require('fs');
+const os      = require('os');
+const { execSync, spawnSync } = require('child_process');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const BASE_URL   = process.env.GOLAZOX_URL || 'https://golazox.com';
 const OUTPUT_DIR = path.join(__dirname, 'videos');
+const ASSETS_DIR = path.join(__dirname, 'assets');
 const WIDTH      = 1080;   // TikTok vertical 9:16
 const HEIGHT     = 1920;
+const MUSIC_FILE = path.join(ASSETS_DIR, 'music_epic.mp3');
+const MUSIC_VOLUME = 0.30;  // 0–1: background music level (30% so UI sounds stay audible)
 
 // Clásicos épicos para rotación automática
 const CLASICOS = [
@@ -57,6 +62,135 @@ function makeOutputPath() {
 }
 
 async function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ── ffmpeg helper ─────────────────────────────────────────────────────────────
+function ffmpeg(args) {
+  const ffmpegBin = process.env.FFMPEG_PATH;
+  const result = spawnSync(ffmpegBin, args, { stdio: ['ignore', 'pipe', 'pipe'] });
+  if (result.status !== 0) {
+    const errMsg = (result.stderr || '').toString().slice(-800);
+    throw new Error(`ffmpeg error (${result.status}):\n${errMsg}`);
+  }
+  return result;
+}
+
+/**
+ * createIntroVideo — generates a 5-second intro clip with:
+ *   • Dark gradient background
+ *   • "UEFA Champions League 2025/26" text fading in
+ *   • "golazox.com" subtitle
+ */
+function createIntroVideo(outFile, durationSec = 5) {
+  const w = WIDTH, h = HEIGHT;
+  const d = durationSec;
+  // lavfi: color + drawtext (two lines), fade-in 0→1s, fade-out last 0.5s
+  const vf = [
+    // Background gradient (dark blue → black)
+    `[0:v]scale=${w}:${h}[bg]`,
+    // Title text
+    `[bg]drawtext=text='UEFA Champions League':fontsize=80:fontcolor=white:x=(w-text_w)/2:y=h/2-120:alpha='if(lt(t,1),t,if(gt(t,${d-0.5}),${d}-t,1))':shadowx=3:shadowy=3:shadowcolor=0x00000080`,
+    // Subtitle text
+    `drawtext=text='2025/26':fontsize=100:fontcolor=gold:x=(w-text_w)/2:y=h/2+20:alpha='if(lt(t,1.2),max(0,t-0.2),if(gt(t,${d-0.5}),${d}-t,1))':shadowx=3:shadowy=3:shadowcolor=0x00000080`,
+    // Site text
+    `drawtext=text='golazox.com':fontsize=55:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=h/2+180:alpha='if(lt(t,1.5),max(0,t-0.5),if(gt(t,${d-0.5}),${d}-t,1))':shadowx=2:shadowy=2`,
+  ].join(',');
+
+  ffmpeg([
+    '-y',
+    '-f', 'lavfi', '-i', `color=c=0x0a1628:size=${w}x${h}:rate=30:duration=${d}`,
+    '-vf', vf,
+    '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '18',
+    '-pix_fmt', 'yuv420p',
+    '-an',
+    outFile,
+  ]);
+}
+
+/**
+ * postProcess — runs after Puppeteer recording:
+ *   1. Creates a 5s intro clip
+ *   2. Concatenates intro + main recording
+ *   3. Mixes looped background music at MUSIC_VOLUME
+ *
+ * Returns the final output path (overwrites outPath).
+ */
+async function postProcess(outPath, type) {
+  if (!fs.existsSync(MUSIC_FILE)) {
+    console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
+    return outPath;
+  }
+
+  const tmp = os.tmpdir();
+  const introPath  = path.join(tmp, 'golazox_intro.mp4');
+  const concatPath = path.join(tmp, 'golazox_concat.mp4');
+  const listFile   = path.join(tmp, 'golazox_list.txt');
+  const finalPath  = outPath.replace('.mp4', '_final.mp4');
+
+  console.log('[post] Creating intro clip...');
+  try {
+    createIntroVideo(introPath, 5);
+  } catch (e) {
+    console.warn('[post] Intro creation failed:', e.message.slice(0, 200), '— skipping intro');
+    // Fall through to just add music without intro
+  }
+
+  const hasIntro = fs.existsSync(introPath);
+
+  if (hasIntro) {
+    console.log('[post] Concatenating intro + main...');
+    fs.writeFileSync(listFile, `file '${introPath.replace(/\\/g, '/')}'\nfile '${outPath.replace(/\\/g, '/')}'`);
+    try {
+      ffmpeg(['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', concatPath]);
+    } catch (e) {
+      console.warn('[post] Concat failed:', e.message.slice(0, 200), '— using main only');
+      fs.copyFileSync(outPath, concatPath);
+    }
+  } else {
+    fs.copyFileSync(outPath, concatPath);
+  }
+
+  console.log('[post] Mixing background music...');
+  try {
+    ffmpeg([
+      '-y',
+      '-i', concatPath,
+      '-stream_loop', '-1', '-i', MUSIC_FILE,
+      '-filter_complex',
+        `[1:a]volume=${MUSIC_VOLUME}[music];[0:a]anull[orig];[orig][music]amix=inputs=2:duration=first:dropout_transition=3[aout]`,
+      '-map', '0:v', '-map', '[aout]',
+      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k',
+      '-shortest',
+      finalPath,
+    ]);
+    // Replace original with final
+    fs.renameSync(finalPath, outPath);
+    console.log('[post] Done — music mixed into', outPath);
+  } catch (e) {
+    // If video has no audio track, try without [orig]
+    console.warn('[post] amix failed (no source audio?), trying video-only mix...');
+    try {
+      ffmpeg([
+        '-y',
+        '-i', concatPath,
+        '-stream_loop', '-1', '-i', MUSIC_FILE,
+        '-filter_complex', `[1:a]volume=${MUSIC_VOLUME}[aout]`,
+        '-map', '0:v', '-map', '[aout]',
+        '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k',
+        '-shortest',
+        finalPath,
+      ]);
+      fs.renameSync(finalPath, outPath);
+      console.log('[post] Done — music added (no source audio) →', outPath);
+    } catch (e2) {
+      console.warn('[post] Music mix failed entirely:', e2.message.slice(0, 200));
+    }
+  }
+
+  // Cleanup temp files
+  [introPath, concatPath, listFile].forEach(f => { try { fs.unlinkSync(f); } catch {} });
+
+  return outPath;
+}
 
 // ── Main generator ────────────────────────────────────────────────────────────
 async function generateVideo(opts = {}) {
@@ -114,6 +248,9 @@ async function generateVideo(opts = {}) {
   } finally {
     await browser.close();
   }
+
+  // Post-process: add intro card + background music
+  await postProcess(outPath, type);
 
   console.log(`[video] Done → ${outPath}`);
   return { path: outPath, title: videoTitle };
