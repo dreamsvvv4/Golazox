@@ -75,35 +75,136 @@ function ffmpeg(args) {
 }
 
 /**
- * createIntroVideo — generates a 5-second intro clip with:
- *   • Dark gradient background
- *   • "UEFA Champions League 2025/26" text fading in
- *   • "golazox.com" subtitle
+ * createIntroVideo — generates a 5-second intro clip with branded images:
+ *   • Dark navy background
+ *   • golazox-coin.png  (top)
+ *   • golazox-wordmark.png (middle)
+ *   • trophy-ucl.png / trophy-wc.png (lower area)
+ *   • "Champions League 2025/26" text
+ *   • Global fade-in / fade-out
+ *
+ * All three PNGs are confirmed RGBA, so overlay is clean on the dark bg.
  */
-function createIntroVideo(outFile, durationSec = 5) {
+function createIntroVideo(outFile, durationSec = 5, type = 'ucl') {
   const w = WIDTH, h = HEIGHT;
   const d = durationSec;
-  // lavfi: color + drawtext (two lines), fade-in 0→1s, fade-out last 0.5s
-  const vf = [
-    // Background gradient (dark blue → black)
-    `[0:v]scale=${w}:${h}[bg]`,
-    // Title text
-    `[bg]drawtext=text='UEFA Champions League':fontsize=80:fontcolor=white:x=(w-text_w)/2:y=h/2-120:alpha='if(lt(t,1),t,if(gt(t,${d-0.5}),${d}-t,1))':shadowx=3:shadowy=3:shadowcolor=0x00000080`,
-    // Subtitle text
-    `drawtext=text='2025/26':fontsize=100:fontcolor=gold:x=(w-text_w)/2:y=h/2+20:alpha='if(lt(t,1.2),max(0,t-0.2),if(gt(t,${d-0.5}),${d}-t,1))':shadowx=3:shadowy=3:shadowcolor=0x00000080`,
-    // Site text
-    `drawtext=text='golazox.com':fontsize=55:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=h/2+180:alpha='if(lt(t,1.5),max(0,t-0.5),if(gt(t,${d-0.5}),${d}-t,1))':shadowx=2:shadowy=2`,
-  ].join(',');
+
+  const coinImg     = path.join(__dirname, 'public', 'golazox-coin.png');
+  const wordmarkImg = path.join(__dirname, 'public', 'golazox-wordmark.png');
+  const trophyImg   = path.join(__dirname, 'public', 'img', type === 'wc' ? 'trophy-wc.png' : 'trophy-ucl.png');
+
+  // Image layout for 1080×1920 physical pixels:
+  //   coin     530×471 → scaled to 280px wide  → h≈250  → top y=110
+  //   wordmark 1087×229 → scaled to 750px wide → h≈158  → top y=390
+  //   trophy   403×619 → scaled to 420px wide  → h≈644  → top y=590
+  //   text block at y=1340
+
+  const imgs = [
+    { file: coinImg,     scale: 280, y: 110 },
+    { file: wordmarkImg, scale: 750, y: 390 },
+    { file: trophyImg,   scale: 420, y: 590 },
+  ].filter(i => fs.existsSync(i.file));
+
+  // Background (dark navy radial gradient simulation via two color layers)
+  const inputs = [
+    '-f', 'lavfi', '-i', `color=c=0x0a1628:size=${w}x${h}:rate=30:duration=${d}`,
+  ];
+  imgs.forEach(i => inputs.push('-i', i.file));
+
+  const filterParts = [];
+  let lastLabel = '0:v';
+
+  imgs.forEach((img, idx) => {
+    const inputIdx   = idx + 1;
+    const scaledLbl  = `img${idx}`;
+    const compositeLbl = `c${idx}`;
+    filterParts.push(`[${inputIdx}:v]scale=${img.scale}:-1,format=rgba[${scaledLbl}]`);
+    filterParts.push(`[${lastLabel}][${scaledLbl}]overlay=(W-w)/2:${img.y}[${compositeLbl}]`);
+    lastLabel = compositeLbl;
+  });
+
+  // Titles — use drawtext with alpha fade expressions
+  // Windows Arial Black bold for punchy type
+  const titleText = type === 'ucl' ? 'UEFA Champions League' : 'FIFA World Cup';
+  const yearText  = '2025\\/26';  // escape slash for ffmpeg
+
+  // Font paths on Windows (drawtext requires explicit fontfile on some builds)
+  const fontBold = 'C\\\\:/Windows/Fonts/arialbd.ttf';
+  const fontReg  = 'C\\\\:/Windows/Fonts/arial.ttf';
+
+  const fadeInExpr  = (start) => `if(lt(t,${start}),0,min(1,(t-${start})/0.6))`;
+  const fadeOutExpr = (start, expr) => `min(${expr},if(gt(t,${d - 0.7}),max(0,(${d}-t)/0.7),1))`;
+  const alpha = (start) => fadeOutExpr(d - 0.7, fadeInExpr(start));
+
+  filterParts.push(
+    `[${lastLabel}]` +
+    `drawtext=fontfile='${fontBold}':text='${titleText}':fontsize=72:fontcolor=white:x=(w-text_w)/2:y=1350:shadowx=4:shadowy=4:shadowcolor=0x00000099:alpha='${alpha(1.4)}',` +
+    `drawtext=fontfile='${fontBold}':text='${yearText}':fontsize=104:fontcolor=FFD700:x=(w-text_w)/2:y=1470:shadowx=4:shadowy=4:shadowcolor=0x00000099:alpha='${alpha(1.7)}',` +
+    `drawtext=fontfile='${fontReg}':text='golazox.com':fontsize=52:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=1630:shadowx=2:shadowy=2:alpha='${alpha(2.0)}',` +
+    `fade=t=in:st=0:d=0.8,fade=t=out:st=${d - 0.8}:d=0.8` +
+    `[vout]`,
+  );
 
   ffmpeg([
     '-y',
-    '-f', 'lavfi', '-i', `color=c=0x0a1628:size=${w}x${h}:rate=30:duration=${d}`,
-    '-vf', vf,
+    ...inputs,
+    '-filter_complex', filterParts.join(';'),
+    '-map', '[vout]',
     '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '18',
     '-pix_fmt', 'yuv420p',
     '-an',
+    '-t', String(d),
     outFile,
   ]);
+}
+
+/**
+ * createShortClip — produces a ≤58s vertical clip from a full video.
+ * Strategy: take the LAST 53s of the main recording (champion reveal + results)
+ * and prepend the 5s intro → total ≤58s, perfect for Shorts/Reels.
+ *
+ * Output: <originalName>_short.mp4 in same folder.
+ */
+function createShortClip(fullVideoPath, type = 'ucl') {
+  const shortPath = fullVideoPath.replace('.mp4', '_short.mp4');
+  const tmp       = os.tmpdir();
+  const introPath = path.join(tmp, 'golazox_intro_short.mp4');
+  const trimPath  = path.join(tmp, 'golazox_trim.mp4');
+  const listFile  = path.join(tmp, 'golazox_short_list.txt');
+
+  console.log('[short] Creating intro...');
+  createIntroVideo(introPath, 5, type);
+
+  // Get total duration of the full video via ffprobe
+  const ffprobeBin = process.env.FFMPEG_PATH.replace('ffmpeg', 'ffprobe').replace(/ffmpeg\.exe$/, 'ffprobe.exe');
+  let duration = 60;
+  if (fs.existsSync(ffprobeBin)) {
+    const probe = spawnSync(ffprobeBin, [
+      '-v', 'quiet', '-print_format', 'json', '-show_format', fullVideoPath,
+    ], { stdio: ['ignore', 'pipe', 'pipe'] });
+    try {
+      const info = JSON.parse((probe.stdout || '').toString());
+      duration = parseFloat(info.format.duration);
+    } catch {}
+  }
+
+  // Trim: last 53s of full video (champion banner + tabs)
+  const trimStart = Math.max(0, duration - 53);
+  console.log(`[short] Trimming last 53s (start=${trimStart.toFixed(1)}s) of ${duration.toFixed(1)}s video...`);
+  ffmpeg([
+    '-y', '-ss', String(trimStart), '-i', fullVideoPath,
+    '-t', '53', '-c', 'copy', trimPath,
+  ]);
+
+  // Concat intro + trim
+  fs.writeFileSync(listFile, `file '${introPath.replace(/\\/g, '/')}'\nfile '${trimPath.replace(/\\/g, '/')}'`);
+  ffmpeg(['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', shortPath]);
+
+  // Cleanup temps
+  [introPath, trimPath, listFile].forEach(f => { try { fs.unlinkSync(f); } catch {} });
+
+  console.log(`[short] ✓ Short clip (58s) → ${shortPath}`);
+  return shortPath;
 }
 
 /**
@@ -111,6 +212,7 @@ function createIntroVideo(outFile, durationSec = 5) {
  *   1. Creates a 5s intro clip
  *   2. Concatenates intro + main recording
  *   3. Mixes looped background music at MUSIC_VOLUME
+ *   4. Creates a ≤58s short clip for Shorts/Reels
  *
  * Returns the final output path (overwrites outPath).
  */
@@ -128,7 +230,7 @@ async function postProcess(outPath, type) {
 
   console.log('[post] Creating intro clip...');
   try {
-    createIntroVideo(introPath, 5);
+    createIntroVideo(introPath, 5, type);
   } catch (e) {
     console.warn('[post] Intro creation failed:', e.message.slice(0, 200), '— skipping intro');
     // Fall through to just add music without intro
@@ -188,6 +290,13 @@ async function postProcess(outPath, type) {
 
   // Cleanup temp files
   [introPath, concatPath, listFile].forEach(f => { try { fs.unlinkSync(f); } catch {} });
+
+  // Also generate a ≤58s short clip for Shorts/Reels
+  try {
+    createShortClip(outPath, type);
+  } catch (e) {
+    console.warn('[post] Short clip failed:', e.message.slice(0, 150));
+  }
 
   return outPath;
 }
