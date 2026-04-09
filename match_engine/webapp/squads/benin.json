@@ -1,0 +1,91 @@
+{
+  "slug": "benin",
+  "name": "Benin",
+  "nameEn": "Benin",
+  "nameEs": "Benín",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/benin.png",
+  "id": "benin",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Saturnin Allagbé",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "David Kiki",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Khaled Adenon",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jodel Dossou",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Emmanuel Imorou",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Jordan Adéoti",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Sessi D'Almeida",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Cédric Hountondji",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Stéphane Sessègnon",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Datro Fofana",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "David Djigla",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Mickaël Aguemon",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Moise Adilehou",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Rodrigue Kossi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Anthony Nwakaeme",
+          "position": "RW",
+          "rating": 75
+        }
+      ]
+    }
+  }
+}

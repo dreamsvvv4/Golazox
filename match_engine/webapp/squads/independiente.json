@@ -1,6 +1,234 @@
 {
   "slug": "independiente",
-  "seasons": {},
+  "seasons": {
+    "1975": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Miguel Santoro",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Jorge Carrascosa",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Daniel Bertoni",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Francisco Sá",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Rubén Galván",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Ricardo Bochini",
+          "position": "AM",
+          "rating": 92
+        },
+        {
+          "name": "Gustavo Pereyra",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Carlos Irusta",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Mario Zanabria",
+          "position": "LM",
+          "rating": 81
+        },
+        {
+          "name": "Omar Alfaro",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Arsenio García",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Pedro Rago",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Ricardo Pavoni",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Independiente 🌍 Otros€” Copa Libertadores 1974-75 (cuarta consecutive, El Rey de Copas, Bochini)",
+      "teamLabel": "Independiente (1974-75)"
+    },
+    "1984": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Guido Petti",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Jorge Olguín",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Néstor Clausen",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Alfredo Graciani",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Carlos Giménez",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Ricardo Bochini",
+          "position": "AM",
+          "rating": 90
+        },
+        {
+          "name": "Jorge Burruchaga",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Héctor Enrique",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Pablo Comelles",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Héctor Troglio",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Carlos Reinoso",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Jorge Sívori",
+          "position": "LM",
+          "rating": 82
+        },
+        {
+          "name": "Ricky Álvarez",
+          "position": "AM",
+          "rating": 80
+        }
+      ],
+      "source": "Independiente <\r Otros�\u001d Copa Libertadores 1984 (Bochini, Burruchaga <\r Otros�\u001d séptima Copa)",
+      "teamLabel": "Independiente (1984)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Rodrigo Rey",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Lucas González",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Juan Insaurralde",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Alexander Barboza",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Alan Soñora",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Lucas Romero",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Iván Marcone",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rodrigo Dourado",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Silvio Romero",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Leandro Benegas",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Damián Batallini",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Santiago Toloza",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Jonás Aguirre",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Gabriel Hachen",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Alexis Canelo",
+          "position": "RW",
+          "rating": 76
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/independiente.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Club Independiente",
+  "nameEs": "Club Independiente",
+  "name": "Club Independiente"
 }

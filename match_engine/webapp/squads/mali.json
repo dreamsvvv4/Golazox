@@ -1,0 +1,91 @@
+{
+  "slug": "mali",
+  "name": "Mali",
+  "nameEn": "Mali",
+  "nameEs": "Malí",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/mali.png",
+  "id": "mali",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Djigui Diarra",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Hamari Traore",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Boubacar Kouyaté",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Falaye Sacko",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Yves Bissouma",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Adama Traoré",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Diadie Samassekou",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Lassana Coulibaly",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Moussa Djenepo",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Mory Koné",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kalifa Coulibaly",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Amadou Haidara",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Mohamed Camara",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "El Bilal Touré",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "DM",
+          "rating": 83
+        }
+      ]
+    }
+  }
+}

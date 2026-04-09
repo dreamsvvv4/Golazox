@@ -1,6 +1,133 @@
 {
   "slug": "eintracht-frankfurt",
   "seasons": {
+    "1960": {
+      "formation": "4-3-2",
+      "players": [
+        {
+          "name": "Egon Loy",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Friedel Lutz",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dieter Lindner",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Eberhard Schymik",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Willi Herbert",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hermann Höfer",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fritz Kübert",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lothar Schämer",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hans-Walter Eigenbrodt",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dieter Stinka",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alfred Pfaff",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ernst Kreuz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Wolfgang Solz",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erich Meier",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hans Weilbächer",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Richard Kreß",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alfred Horn",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erwin Stein",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dieter Kraft",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 62,
+        "defense": 62,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Eintracht Frankfurt (1960/1961)",
+      "teamLabel": "Eintracht Frankfurt (1960-61)"
+    },
     "2022": {
       "formation": "4-4-2",
       "players": [
@@ -227,7 +354,7 @@
         "defense": 62,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Eintracht Frankfurt (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Eintracht Frankfurt (2022/2023)",
       "teamLabel": "Eintracht Frankfurt (2022-23)"
     },
     "2025": {
@@ -385,7 +512,7 @@
         "defense": 62,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Eintracht Frankfurt (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Eintracht Frankfurt (2025/2026)",
       "teamLabel": "Eintracht Frankfurt (2025-26)"
     }
   },

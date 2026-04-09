@@ -83,7 +83,7 @@
           "rating": 77
         },
         {
-          "name": "Óscar Valentín",
+          "name": "�\u001cscar Valentín",
           "position": "CM",
           "marketValue": 2200000,
           "rating": 76
@@ -173,11 +173,14 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Rayo Vallecano (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Rayo Vallecano (2025/2026)",
       "teamLabel": "Rayo Vallecano (2025-26)"
     }
   },
   "id": 367,
   "name": "Rayo Vallecano",
-  "group": "🇪🇸 La Liga"
+  "group": "🇪🇸 La Liga",
+  "badgeLocalPath": "/img/badges/rayo-vallecano-de-madrid.png",
+  "nameEn": "Rayo Vallecano",
+  "nameEs": "Rayo Vallecano"
 }

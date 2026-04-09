@@ -1,128 +1,238 @@
 {
   "slug": "real-zaragoza",
   "seasons": {
+    "1995": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Andoni Cedrún",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Javier Aguado",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Quique Flores",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Miguel Pardeza",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Chema Lacruz",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Gus Poyet",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Nayim",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Alan Garay",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Hector Sanchez",
+          "position": "RM",
+          "rating": 78
+        },
+        {
+          "name": "Juan Eduardo Esnaider",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Óscar Sanzol",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Mikel Lasa",
+          "position": "LM",
+          "rating": 78
+        },
+        {
+          "name": "Abel Ruiz",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Txiki Begiristain",
+          "position": "RW",
+          "rating": 81
+        },
+        {
+          "name": "Victor Fernandez",
+          "position": "CM",
+          "rating": 79
+        }
+      ]
+    },
     "2006": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "César",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Diogo",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Juanfran",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sergio Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Zapater",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "D'Alessandro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Sergio García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ewerthon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
-          "name": "Óscar González",
-          "position": "CM"
+          "name": "�\u001cscar González",
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Celades",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Movilla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Zaparaín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Lafita",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Chus Herrero",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Ponzio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Longás",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Nery",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Aranzábal",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Cuartero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Carmelo Yuste",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ripa",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Eneko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Valero",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Goni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "César Jiménez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -131,7 +241,7 @@
         "defense": 79,
         "goalkeeping": 70
       },
-      "source": "BDFutbol — Zaragoza 2006-07 Primera División",
+      "source": "BDFutbol <\r Otros�\u001d Zaragoza 2006-07 Primera División",
       "teamLabel": "Zaragoza 2006-07 Primera División"
     },
     "2025": {
@@ -324,7 +434,7 @@
           "rating": 70
         },
         {
-          "name": "Sinan Bakış",
+          "name": "Sinan Bakı�x",
           "position": "ST",
           "marketValue": 300000,
           "rating": 68
@@ -336,13 +446,13 @@
         "defense": 67,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Real Zaragoza (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Real Zaragoza (2025/2026)",
       "teamLabel": "Real Zaragoza (2025-26)"
     }
   },
   "name": "Real Zaragoza",
   "badgeLocalPath": "/img/badges/real-zaragoza.png",
-  "group": "🇪🇸 La Liga 2",
+  "group": "🇪🇸 La Liga",
   "nameEs": "Real Zaragoza",
   "nameEn": "Real Zaragoza",
   "id": 142

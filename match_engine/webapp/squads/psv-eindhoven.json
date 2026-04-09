@@ -6,107 +6,133 @@
       "players": [
         {
           "name": "Patrick Lodewijks",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Hans van Breukelen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ronald Koeman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Stan Valckx",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "John Veldman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ivan Nielsen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Adick Koot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jan Heintze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric van Kessel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Berry van Aerle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric Gerets",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Edward Linskens",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Sören Lerby",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Cemal Yılmaz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Willy van de Kerkhof",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Anton Janssen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Roberto Lanckohr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Frank Arnesen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Hendrie Krüzen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Hallvar Thoresen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gerald Vanenburg",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Romário",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Wim Kieft",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Eric Viscaal",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Hans Gillhaus",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juul Ellerman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -115,7 +141,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — PSV (1987/1988)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (1987/1988)",
       "teamLabel": "PSV (1987-88)"
     },
     "1988": {
@@ -123,103 +149,128 @@
       "players": [
         {
           "name": "Patrick Lodewijks",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Wim de Ron",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Hans van Breukelen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Carlo l'Ami",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ronald Koeman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Stan Valckx",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "John Veldman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ivan Nielsen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Adick Koot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Bert Verhagen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jan Heintze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Berry van Aerle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric Gerets",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Edward Linskens",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Sören Lerby",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jozef Chovanec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Cemal Yılmaz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Anton Janssen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Hendrie Krüzen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Frank Berghuis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gerald Vanenburg",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Romário",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Wim Kieft",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Hans Gillhaus",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juul Ellerman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -228,7 +279,7 @@
         "defense": 86,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — PSV (1988/1989)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (1988/1989)",
       "teamLabel": "PSV (1988-89)"
     },
     "1991": {
@@ -236,95 +287,118 @@
       "players": [
         {
           "name": "Wim de Ron",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Hans van Breukelen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Gheorghe Popescu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Stan Valckx",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jan Heintze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Tom Van Mol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Adri van Tiggelen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Geoffrey Prommayon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Berry van Aerle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric Gerets",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jerry de Jong",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Edward Linskens",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Dick Schreuder",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jozef Chovanec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "François Gesthuizen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Erwin Koeman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Peter Hoekstra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gerald Vanenburg",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Romário",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Wim Kieft",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kalusha Bwalya",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Twan Scheepers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juul Ellerman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -333,7 +407,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — PSV (1991/1992)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (1991/1992)",
       "teamLabel": "PSV (1991-92)"
     },
     "1997": {
@@ -341,135 +415,168 @@
       "players": [
         {
           "name": "Wilburt Need",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Georg Koch",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ronald Waterreus",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Jan Willem van Ede",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Rob Peijnenburg",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Rob Wielaert",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "André Ooijer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jaap Stam",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Stan Valckx",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ernest Faber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Andrius Skerla",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sergey Temryukov",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Arthur Numan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Niclas Jensen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Zeljko Petrovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Chris van der Weerden",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Marciano Vink",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Wim Jonk",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Phillip Cocu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Vampeta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Igor Demo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Dmitriy Khokhlov",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tomasz Iwan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
-          "name": "Ovidiu Stîngă",
-          "position": "CM"
+          "name": "Ovidiu StîngĒ",
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Fachry Tuasamu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Arnold Bruggink",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Boudewijn Zenden",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Luc Nilis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Eidur Gudjohnsen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gilles De Bilde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Marc Degryse",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Peter Møller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Cláudio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -478,7 +585,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — PSV (1997/1998)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (1997/1998)",
       "teamLabel": "PSV (1997-98)"
     },
     "2005": {
@@ -486,143 +593,178 @@
       "players": [
         {
           "name": "Heurelho Gomes",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Edwin Zoetebier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Nathan Coe",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Alex",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "André Ooijer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric Addo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Wilfred Bouma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Young-pyo Lee",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "DaMarcus Beasley",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Michael Ball",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Pepe Plá",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Michael Reiziger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Michael Lamey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Timmy Simons",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Phillip Cocu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Csaba Fehér",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Theo Lucius",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Mika Väyrynen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jason Culina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Guy Dufour",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Johan Vonlanthen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lindsay Wilson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "John de Jong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Osmar Ferreyra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ibrahim Afellay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ismail Aissati",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lee Nguyen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jefferson Farfán",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Roy Beerens",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jan Vennegoor of Hesselink",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Arouna Koné",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Robert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gerald Sibon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Archie Thompson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Tim Janssen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -631,7 +773,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — PSV (2005/2006)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (2005/2006)",
       "teamLabel": "PSV (2005-06)"
     },
     "2006": {
@@ -639,139 +781,173 @@
       "players": [
         {
           "name": "Heurelho Gomes",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Oscar Moens",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ruud Boffin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Alex",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Carlos Salcido",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Alcides",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Manuel da Costa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Eric Addo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Dirk Marcellis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Olivier ter Horst",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Rens van Eijden",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Xiang Sun",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jan Kromkamp",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Michael Reiziger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Michael Lamey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Timmy Simons",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Phillip Cocu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Csaba Fehér",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Mika Väyrynen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jason Culina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ibrahim Afellay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
-          "name": "Édison Méndez",
-          "position": "CM"
+          "name": "�0dison Méndez",
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "John de Jong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ismail Aissati",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lee Nguyen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bilal El Yacoubi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Juan Carlos Carrizo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jefferson Farfán",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Roy Beerens",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jan Vennegoor of Hesselink",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Arouna Koné",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Patrick Kluivert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Diego Tardelli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Género Zeefuik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -780,7 +956,7 @@
         "defense": 83,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — PSV (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (2006/2007)",
       "teamLabel": "PSV (2006-07)"
     },
     "2023": {
@@ -1003,7 +1179,7 @@
         "defense": 81,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — PSV (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (2023/2024)",
       "teamLabel": "PSV (2023-24)"
     },
     "2025": {
@@ -1154,7 +1330,7 @@
           "rating": 78
         },
         {
-          "name": "Ivan Perišić",
+          "name": "Ivan Periši�!",
           "position": "ST",
           "marketValue": 1300000,
           "rating": 74
@@ -1166,7 +1342,7 @@
         "defense": 81,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — PSV (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” PSV (2025/2026)",
       "teamLabel": "PSV (2025-26)"
     }
   },

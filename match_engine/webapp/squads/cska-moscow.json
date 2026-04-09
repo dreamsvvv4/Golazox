@@ -1,6 +1,234 @@
 {
   "slug": "cska-moscow",
-  "seasons": {},
+  "seasons": {
+    "2005": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Igor Akinfeev",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Sergei Ignashevich",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Aleksei Berezutski",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Vasili Berezutski",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Yuri Zhirkov",
+          "position": "LM",
+          "rating": 83
+        },
+        {
+          "name": "Milos Krasic",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Dudu Cearense",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Elero Elihu",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Daniel Carvalho",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Vagner Love",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Evgeni Aldonin",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Jo",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Rolando",
+          "position": "LB",
+          "rating": 80
+        }
+      ],
+      "source": "CSKA Moscú - Copa UEFA 2004-05 (Akinfeev, Ignashevich, Vagner Love - primer titulo europeo ruso)",
+      "teamLabel": "CSKA Moscú (2004-05)"
+    },
+    "2016": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Igor Akinfeev",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Sergei Ignashevich",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Aleksei Berezutski",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Mario Fernandes",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Georgi Schennikov",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Vitinho",
+          "position": "RM",
+          "rating": 83
+        },
+        {
+          "name": "Aleksandr Golovin",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Pontus Wernbloom",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Alan Dzagoev",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Ahmed Musa",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Seydou Doumbia",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Bibras Natkho",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Pavel Mamaev",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "CSKA Moscú - Liga rusa 2015-16 + UCL (Golovin, Dzagoev, Akinfeev)",
+      "teamLabel": "CSKA Moscú (2015-16)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Igor Akinfeev",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Vyacheslav Karavaev",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Sergei Naumov",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Mario Fernandes",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Kristoffer Olsson",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Ilzat Akhmetov",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Nikola Vlasic",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Konstantin Kuchaev",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Anton Zabolotny",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Fedor Chalov",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Ali Gadzhibekov",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Artem Dzyuba",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Umarali Rahmonaliev",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rifat Zhemaletdinov",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Nikola Makarenko",
+          "position": "CB",
+          "rating": 74
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/cska-moscow.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "CSKA Moscow",
+  "nameEs": "CSKA Moscú",
+  "name": "CSKA Moscow"
 }

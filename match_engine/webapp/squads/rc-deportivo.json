@@ -1,128 +1,312 @@
 {
   "slug": "rc-deportivo",
   "seasons": {
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Songo'o",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Manuel Pablo",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Noureddine Naybet",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Sávio",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Donato",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Mauro Silva",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Fran",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Juan Carlos Valerón",
+          "position": "AM",
+          "rating": 90
+        },
+        {
+          "name": "Djalminha",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Diego Tristán",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Roy Makaay",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Víctor Sánchez",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Emerson",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Scaloni",
+          "position": "RB",
+          "rating": 79
+        }
+      ],
+      "source": "RC Deportivo <\r Otros�\u001d La Liga 1999-2000 (Super Depor, Makaay, Djalminha, Valerón)",
+      "teamLabel": "Deportivo La Coruña (1999-00)"
+    },
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Songo'o",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Manuel Pablo",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Noureddine Naybet",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Sávio",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Jorge Andrade",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Mauro Silva",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Fran",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Juan Carlos Valerón",
+          "position": "AM",
+          "rating": 89
+        },
+        {
+          "name": "Victor",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Diego Tristán",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Albert Luque",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Sergio",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Pandiani",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Luis Fernández",
+          "position": "CB",
+          "rating": 76
+        }
+      ],
+      "source": "RC Deportivo 🌍 Otros€” UCL QF 2003-04, deja 4-0 al AC Milan (Tris, Luque, Fran, Pandiani)",
+      "teamLabel": "Deportivo La Coruña (2003-04)"
+    },
     "2018": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Dani Giménez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "David Simón",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Caballo",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Domingos Duarte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Pablo Marí",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Álex Bergantiños",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Edu Expósito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Vicente Gómez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Quique",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Carlos Fernández",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Borja Valle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ortolá",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Fede Cartabia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Bóveda",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Saúl",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Álex Cobo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Moreno",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Mosquera",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Carles Gil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Christian Santos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Krohn-Dehli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Somma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nahuel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Vítor Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Íñigo López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Gerard Valentín",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Montiel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Dubarbier",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Víctor García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -131,7 +315,7 @@
         "defense": 64,
         "goalkeeping": 66
       },
-      "source": "BDFutbol — Deportivo de La Coruña 2018-19 Segunda División",
+      "source": "BDFutbol <\r Otros�\u001d Deportivo de La Coruña 2018-19 Segunda División",
       "teamLabel": "Deportivo de La Coruña 2018-19 Segunda División"
     },
     "2025": {
@@ -249,7 +433,7 @@
         "defense": 71,
         "goalkeeping": 71
       },
-      "source": "Transfermarkt — RC Deportivo La Coruña (2025/2026)",
+      "source": "Transfermarkt <\r Otros�\u001d RC Deportivo La Coruña (2025/2026)",
       "teamLabel": "Deportivo La Coruña (2025-26)"
     }
   },

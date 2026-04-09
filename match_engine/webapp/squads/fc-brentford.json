@@ -31,87 +31,108 @@
         },
         {
           "name": "Nathan Collins",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Kristoffer Ajer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Ethan Pinnock",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Rico Henry",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Michael Kayode",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Aaron Hickey",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Vitaly Janelt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Jordan Henderson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Yegor Yarmolyuk",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Mathias Jensen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Josh Dasilva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Keane Lewis-Potter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Mikkel Damsgaard",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Antoni Milambo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Fábio Carvalho",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Kevin Schade",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Reiss Nelson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Dango Ouattara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Romelle Donovan",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Igor Thiago",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Kaye Furo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         }
       ],
       "ratings": {
@@ -120,12 +141,14 @@
         "defense": 74,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — Brentford (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Brentford (2025/2026)",
       "teamLabel": "Brentford (2025-26)"
     }
   },
   "id": 1148,
   "name": "Brentford",
   "badgeLocalPath": "/img/badges/brentford-fc.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Brentford",
+  "nameEs": "Brentford"
 }

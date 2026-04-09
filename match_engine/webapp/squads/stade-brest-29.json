@@ -20,7 +20,7 @@
           "name": "Noah Jauny",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Soumaïla Coulibaly",
@@ -149,7 +149,7 @@
         "defense": 66,
         "goalkeeping": 65
       },
-      "source": "Transfermarkt — Brest (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Brest (2025/2026)",
       "teamLabel": "Brest (2025-26)"
     }
   },
@@ -157,5 +157,6 @@
   "name": "Brest",
   "nameEs": "Stade Brest",
   "nameEn": "Stade Brest",
-  "group": "🇫🇷 Ligue 1"
+  "group": "🇫🇷 Ligue 1",
+  "badgeLocalPath": "/img/badges/brest.png"
 }

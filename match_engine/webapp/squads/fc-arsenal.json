@@ -1,140 +1,352 @@
 {
   "slug": "fc-arsenal",
   "seasons": {
+    "1971": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bob Wilson",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Geoff Barnett",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Pat Rice",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Bob McNab",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Peter Simpson",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Frank McLintock",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Sammy Nelson",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Peter Storey",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "George Armstrong",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Alan Ball",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "George Graham",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Eddie Kelly",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Jon Sammels",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Charlie George",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Ray Kennedy",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "John Radford",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "John Roberts",
+          "position": "CB",
+          "rating": 80
+        }
+      ],
+      "source": "Arsenal Double 1970-71 🌍 Otros€” FA Cup & First Division",
+      "teamLabel": "Arsenal (1970-71)"
+    },
+    "1989": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "John Lukic",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Vince Bartram",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Lee Dixon",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Nigel Winterburn",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Tony Adams",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Steve Bould",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "David O'Leary",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Michael Thomas",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Paul Davis",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "David Rocastle",
+          "position": "RM",
+          "rating": 85
+        },
+        {
+          "name": "Kevin Richardson",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Brian Marwood",
+          "position": "LM",
+          "rating": 82
+        },
+        {
+          "name": "Alan Smith",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Paul Merson",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Perry Groves",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Niall Quinn",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "source": "Arsenal 🌍 Otros€” First Division champions 1988-89 (Michael Thomas last-minute title)",
+      "teamLabel": "Arsenal (1988-89)"
+    },
     "1994": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "David Seaman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Vince Bartram",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lee Harper",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Tony Adams",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Andy Linighan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Bould",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Martin Keown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Scott Marshall",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nigel Winterburn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pål Lydersen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gavin McGowan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lee Dixon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Morrow",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Paul Davis",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Eddie McGoldrick",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stefan Schwarz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Jensen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "David Hillier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ian Selley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Parlour",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stephen Hughes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Paul Merson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adrian Clarke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Glenn Helder",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jimmy Carter",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mark Flatts",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kevin Campbell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Wright",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Alan Smith",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "John Hartson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Paul Dickov",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Paul Shaw",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Chris Kiwomya",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -143,7 +355,7 @@
         "defense": 86,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Arsenal (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (1994/1995)",
       "teamLabel": "Arsenal (1994-95)"
     },
     "2001": {
@@ -151,151 +363,188 @@
       "players": [
         {
           "name": "Craig Holloway",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "David Seaman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Stuart Taylor",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Richard Wright",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Graham Stack",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Tony Adams",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Martin Keown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Matthew Upson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sol Campbell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Igors Stepanovs",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stathis Tavlaridis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kolo Touré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Cole",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Giovanni van Bronckhorst",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Juan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lee Dixon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Laurén",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Oleg Luzhnyi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Moritz Volz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Vieira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gilles Grimandi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Junichi Inamoto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Halls",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sebastian Svärd",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Parlour",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Edú Gaspar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Freddie Ljungberg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rohan Ricketts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Robert Pirès",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jermaine Pennant",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dennis Bergkamp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Wiltord",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Francis Jeffers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Thierry Henry",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nwankwo Kanu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jérémie Aliadière",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Carlin Itonga",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -304,7 +553,7 @@
         "defense": 86,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Arsenal (2001/2002)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2001/2002)",
       "teamLabel": "Arsenal (2001-02)"
     },
     "2002": {
@@ -312,147 +561,183 @@
       "players": [
         {
           "name": "Craig Holloway",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "David Seaman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Stuart Taylor",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Guillaume Warmuz",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rami Shaaban",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Matthew Upson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Martin Keown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pascal Cygan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sol Campbell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Igors Stepanovs",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stathis Tavlaridis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kolo Touré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ryan Garry",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Cole",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Giovanni van Bronckhorst",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Moritz Volz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Laurén",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Oleg Luzhnyi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Justin Hoyte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Vieira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gilberto Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sebastian Svärd",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steve Sidwell",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Parlour",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Edú Gaspar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Freddie Ljungberg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "David Bentley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Robert Pirès",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jerome Thomas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jermaine Pennant",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dennis Bergkamp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Wiltord",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Francis Jeffers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Thierry Henry",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nwankwo Kanu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jérémie Aliadière",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -461,7 +746,7 @@
         "defense": 88,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Arsenal (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2002/2003)",
       "teamLabel": "Arsenal (2002-03)"
     },
     "2003": {
@@ -469,316 +754,285 @@
       "players": [
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 88
         },
         {
-          "name": "Stuart Taylor",
-          "position": "GK"
+          "name": "Manuel Almunia",
+          "position": "GK",
+          "rating": 81
         },
         {
-          "name": "Rami Shaaban",
-          "position": "GK"
-        },
-        {
-          "name": "Graham Stack",
-          "position": "GK"
-        },
-        {
-          "name": "Craig Holloway",
-          "position": "GK"
-        },
-        {
-          "name": "Martin Keown",
-          "position": "CB"
-        },
-        {
-          "name": "Pascal Cygan",
-          "position": "CB"
-        },
-        {
-          "name": "Philippe Senderos",
-          "position": "CB"
-        },
-        {
-          "name": "Sol Campbell",
-          "position": "CB"
-        },
-        {
-          "name": "Stathis Tavlaridis",
-          "position": "CB"
-        },
-        {
-          "name": "Kolo Touré",
-          "position": "CB"
+          "name": "Lauren",
+          "position": "RB",
+          "rating": 83
         },
         {
           "name": "Ashley Cole",
-          "position": "LB"
+          "position": "LB",
+          "rating": 88
         },
         {
-          "name": "Giovanni van Bronckhorst",
-          "position": "CB"
+          "name": "Sol Campbell",
+          "position": "CB",
+          "rating": 88
         },
         {
-          "name": "Gaël Clichy",
-          "position": "CB"
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 86
         },
         {
-          "name": "Laurén",
-          "position": "CB"
-        },
-        {
-          "name": "Justin Hoyte",
-          "position": "CB"
-        },
-        {
-          "name": "Frank Simek",
-          "position": "CB"
-        },
-        {
-          "name": "Patrick Vieira",
-          "position": "CM"
+          "name": "Pascal Cygan",
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gilberto Silva",
-          "position": "CM"
+          "position": "DM",
+          "rating": 85
         },
         {
-          "name": "Ólafur Ingi Skúlason",
-          "position": "CM"
+          "name": "Patrick Vieira",
+          "position": "CM",
+          "rating": 92
         },
         {
-          "name": "Ray Parlour",
-          "position": "CM"
-        },
-        {
-          "name": "Edú Gaspar",
-          "position": "CM"
-        },
-        {
-          "name": "John Spicer",
-          "position": "CM"
-        },
-        {
-          "name": "Cesc Fàbregas",
-          "position": "CM"
+          "name": "Robert Pires",
+          "position": "LM",
+          "rating": 89
         },
         {
           "name": "Freddie Ljungberg",
-          "position": "CM"
+          "position": "RM",
+          "rating": 87
         },
         {
-          "name": "David Bentley",
-          "position": "CM"
+          "name": "Ray Parlour",
+          "position": "CM",
+          "rating": 82
         },
         {
-          "name": "Robert Pirès",
-          "position": "CM"
-        },
-        {
-          "name": "Quincy Owusu-Abeyie",
-          "position": "ST"
-        },
-        {
-          "name": "Jerome Thomas",
-          "position": "ST"
-        },
-        {
-          "name": "Ryan Smith",
-          "position": "ST"
-        },
-        {
-          "name": "José Antonio Reyes",
-          "position": "ST"
-        },
-        {
-          "name": "Dennis Bergkamp",
-          "position": "ST"
-        },
-        {
-          "name": "Sylvain Wiltord",
-          "position": "ST"
-        },
-        {
-          "name": "Francis Jeffers",
-          "position": "ST"
+          "name": "Edu",
+          "position": "CM",
+          "rating": 81
         },
         {
           "name": "Thierry Henry",
-          "position": "ST"
+          "position": "ST",
+          "rating": 95
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Jerome Pennant",
+          "position": "RM",
+          "rating": 79
         },
         {
           "name": "Nwankwo Kanu",
-          "position": "ST"
-        },
-        {
-          "name": "Jérémie Aliadière",
-          "position": "ST"
-        },
-        {
-          "name": "Michal Papadopulos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 83
         }
       ],
-      "ratings": {
-        "attack": 88,
-        "midfield": 89,
-        "defense": 87,
-        "goalkeeping": 85
-      },
-      "source": "Transfermarkt — Arsenal (2003/2004)",
-      "teamLabel": "Arsenal (2003-04)"
+      "source": "Arsenal Invincibles 🌍 Otros€” Premier League 2003-04, 49 unbeaten games",
+      "teamLabel": "Arsenal Invincibles (2003-04)"
     },
     "2004": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Stuart Taylor",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Manuel Almunia",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Chris Wright",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Michael Jordan",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Sol Campbell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kolo Touré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pascal Cygan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Philippe Senderos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Johan Djourou",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Cole",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Gaël Clichy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Daniel Karbassiyoon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Laurén",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emmanuel Eboué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Justin Hoyte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Frank Simek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Vieira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gilberto Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mathieu Flamini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sebastian Svärd",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jordan Fowler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Edú Gaspar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sebastian Larsson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Patrick Cregg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Freddie Ljungberg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Robert Pirès",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ryan Smith",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Quincy Owusu-Abeyie",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "José Antonio Reyes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jermaine Pennant",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dennis Bergkamp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Thierry Henry",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Robin van Persie",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jérémie Aliadière",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Arturo Lupoli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -787,8 +1041,100 @@
         "defense": 89,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Arsenal (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2004/2005)",
       "teamLabel": "Arsenal (2004-05)"
+    },
+    "2006": {
+      "formation": "4-5-1",
+      "players": [
+        {
+          "name": "Jens Lehmann",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Manuel Almunia",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Emmanuel Eboue",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "LB",
+          "rating": 88
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Philippe Senderos",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Gilberto Silva",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Cesc Fàbregas",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Robert Pires",
+          "position": "LM",
+          "rating": 86
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Mathieu Flamini",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Alexander Hleb",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST",
+          "rating": 94
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Robin van Persie",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Abou Diaby",
+          "position": "CM",
+          "rating": 79
+        }
+      ],
+      "source": "Arsenal 🌍 Otros€” UEFA Champions League Final 2006 (Paris, lost to Barcelona)",
+      "teamLabel": "Arsenal (2005-06)"
     },
     "2023": {
       "formation": "4-3-3",
@@ -1040,7 +1386,7 @@
         "defense": 85,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Arsenal (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2023/2024)",
       "teamLabel": "Arsenal (2023-24)"
     },
     "2024": {
@@ -1080,7 +1426,7 @@
           "name": "Tommy Setford",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Gabriel",
@@ -1164,25 +1510,25 @@
           "name": "Brayden Clarke",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michał Rosiak",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Josh Robinson",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Josh Nichols",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Martin Ødegaard",
@@ -1236,7 +1582,7 @@
           "name": "Jimi Gower",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Bukayo Saka",
@@ -1296,7 +1642,7 @@
           "name": "Ismeal Kabia",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1305,7 +1651,7 @@
         "defense": 87,
         "goalkeeping": 86
       },
-      "source": "Transfermarkt — Arsenal (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2024/2025)",
       "teamLabel": "Arsenal (2024-25)"
     },
     "2025": {
@@ -1438,12 +1784,217 @@
         "defense": 87,
         "goalkeeping": 86
       },
-      "source": "Transfermarkt — Arsenal (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2025/2026)",
       "teamLabel": "Arsenal (2025-26)"
+    },
+    "2003_scraped_REMOVED": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jens Lehmann",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Stuart Taylor",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Rami Shaaban",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Graham Stack",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Craig Holloway",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Martin Keown",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Pascal Cygan",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Philippe Senderos",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Stathis Tavlaridis",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Giovanni van Bronckhorst",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Gaël Clichy",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Laurén",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Justin Hoyte",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Frank Simek",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Patrick Vieira",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Gilberto Silva",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "�\u001clafur Ingi Skúlason",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Ray Parlour",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Edú Gaspar",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "John Spicer",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Cesc Fàbregas",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Freddie Ljungberg",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "David Bentley",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Robert Pirès",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Quincy Owusu-Abeyie",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Jerome Thomas",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Ryan Smith",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "José Antonio Reyes",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Francis Jeffers",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Thierry Henry",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Jérémie Aliadière",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Michal Papadopulos",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 89,
+        "defense": 87,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt 🌍 Otros€” Arsenal (2003/2004)",
+      "teamLabel": "Arsenal (2003-04)"
     }
   },
   "name": "Arsenal",
   "id": 11,
   "badgeLocalPath": "/img/badges/fc-arsenal.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Arsenal",
+  "nameEs": "Arsenal"
 }

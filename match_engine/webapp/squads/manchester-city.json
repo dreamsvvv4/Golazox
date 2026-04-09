@@ -1,6 +1,145 @@
 {
   "slug": "manchester-city",
   "seasons": {
+    "1968": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ken Mulhearn",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Tony Book",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Glyn Pardoe",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Mike Doyle",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Alan Oakes",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Colin Bell",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Mike Summerbee",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Francis Lee",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Neil Young",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Tony Coleman",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Joe Corrigan",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Derek Jeffries",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "George Heslop",
+          "position": "CB",
+          "rating": 80
+        }
+      ],
+      "source": "Manchester City <\r Otros�\u001d Primera División inglesa 1967-68 (Mercer/Allison, Colin Bell)",
+      "teamLabel": "Manchester City (1967-68)"
+    },
+    "1976": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Joe Corrigan",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Mike Doyle",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Willie Donachie",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Dave Watson",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Colin Bell",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Asa Hartford",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Mike Doyle",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Dennis Tueart",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Peter Barnes",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Joe Royle",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Brian Kidd",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Tommy Booth",
+          "position": "CB",
+          "rating": 80
+        }
+      ],
+      "source": "Manchester City 🌍 Otros€” League Cup winners 1975-76 (Tueart's overhead kick)",
+      "teamLabel": "Manchester City (1975-76)"
+    },
     "2011": {
       "formation": "4-3-3",
       "players": [
@@ -98,7 +237,7 @@
           "name": "Karim Rekik",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "David Silva",
@@ -158,19 +297,19 @@
           "name": "Abdul Razak",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Joan Román",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Denis Suárez",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
@@ -227,7 +366,7 @@
         "defense": 82,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — Manchester City (2011/2012)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2011/2012)",
       "teamLabel": "Manchester City (2011-12)"
     },
     "2012": {
@@ -255,7 +394,7 @@
           "name": "Eirik Holmen",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Vincent Kompany",
@@ -345,7 +484,7 @@
           "name": "Courtney Meppen-Walter",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "David Silva",
@@ -405,19 +544,19 @@
           "name": "George Evans",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Abdul Razak",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jérémy Hélan",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
@@ -471,13 +610,13 @@
           "name": "Rony Lopes",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Alex Nimely",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -486,7 +625,7 @@
         "defense": 85,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Manchester City (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2012/2013)",
       "teamLabel": "Manchester City (2012-13)"
     },
     "2018": {
@@ -514,7 +653,7 @@
           "name": "Daniel Grimshaw",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Benjamin Mendy",
@@ -592,19 +731,19 @@
           "name": "Eric García",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Cameron Humphreys",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Luke Bolton",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Bernardo Silva",
@@ -631,7 +770,7 @@
           "rating": 90
         },
         {
-          "name": "İlkay Gündoğan",
+          "name": "İlkay Gündo�xan",
           "position": "CM",
           "marketValue": 50000000,
           "rating": 89
@@ -688,31 +827,31 @@
           "name": "Claudio Gomes",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Felix Nmecha",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Adrián Bernabé",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Taylor Richards",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Nabil Touaizi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Raheem Sterling",
@@ -772,7 +911,7 @@
           "name": "Ian Poveda",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -781,7 +920,7 @@
         "defense": 90,
         "goalkeeping": 88
       },
-      "source": "Transfermarkt — Manchester City (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2018/2019)",
       "teamLabel": "Manchester City (2018-19)"
     },
     "2019": {
@@ -914,7 +1053,7 @@
           "rating": 90
         },
         {
-          "name": "İlkay Gündoğan",
+          "name": "İlkay Gündo�xan",
           "position": "CM",
           "marketValue": 40000000,
           "rating": 88
@@ -941,13 +1080,13 @@
           "name": "Tommy Doyle",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Nabil Touaizi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Raheem Sterling",
@@ -1004,7 +1143,7 @@
         "defense": 91,
         "goalkeeping": 88
       },
-      "source": "Transfermarkt — Manchester City (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2019/2020)",
       "teamLabel": "Manchester City (2019-20)"
     },
     "2021": {
@@ -1032,7 +1171,7 @@
           "name": "Cieran Slicker",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Rúben Dias",
@@ -1110,7 +1249,7 @@
           "name": "Benjamin Mendy",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Bernardo Silva",
@@ -1143,7 +1282,7 @@
           "rating": 88
         },
         {
-          "name": "İlkay Gündoğan",
+          "name": "İlkay Gündo�xan",
           "position": "CM",
           "marketValue": 25000000,
           "rating": 86
@@ -1242,7 +1381,7 @@
           "name": "Ben Knight",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1251,7 +1390,7 @@
         "defense": 88,
         "goalkeeping": 87
       },
-      "source": "Transfermarkt — Manchester City (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2021/2022)",
       "teamLabel": "Manchester City (2021-22)"
     },
     "2022": {
@@ -1357,7 +1496,7 @@
           "name": "Benjamin Mendy",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Bernardo Silva",
@@ -1396,7 +1535,7 @@
           "rating": 87
         },
         {
-          "name": "İlkay Gündoğan",
+          "name": "İlkay Gündo�xan",
           "position": "CM",
           "marketValue": 20000000,
           "rating": 85
@@ -1423,7 +1562,7 @@
           "name": "Shea Charles",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Erling Haaland",
@@ -1468,7 +1607,7 @@
         "defense": 90,
         "goalkeeping": 87
       },
-      "source": "Transfermarkt — Manchester City (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2022/2023)",
       "teamLabel": "Manchester City (2022-23)"
     },
     "2023": {
@@ -1697,7 +1836,7 @@
         "defense": 91,
         "goalkeeping": 88
       },
-      "source": "Transfermarkt — Manchester City (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2023/2024)",
       "teamLabel": "Manchester City (2023-24)"
     },
     "2025": {
@@ -1872,12 +2011,14 @@
         "defense": 86,
         "goalkeeping": 86
       },
-      "source": "Transfermarkt — Manchester City (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester City (2025/2026)",
       "teamLabel": "Manchester City (2025-26)"
     }
   },
   "id": 281,
   "name": "Manchester City",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
-  "badgeLocalPath": "/img/badges/manchester-city.png"
+  "badgeLocalPath": "/img/badges/manchester-city.png",
+  "nameEn": "Manchester City",
+  "nameEs": "Manchester City"
 }

@@ -6,111 +6,138 @@
       "players": [
         {
           "name": "Álvaro Valles",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Pau López",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Adrián San Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Natan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Valentín Gómez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Marc Bartra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Junior Firpo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ricardo Rodríguez",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Ángel Ortiz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Héctor Bellerín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sofyan Amrabat",
-          "position": "DM"
+          "position": "DM",
+          "rating": 76
         },
         {
           "name": "Marc Roca",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Sergi Altimira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Álvaro Fidalgo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Nelson Deossa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Abde Ezzalzouli",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         },
         {
           "name": "Rodrigo Riquelme",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Antony",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Pablo García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Aitor Ruibal",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Cucho Hernández",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Chimy Ávila",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Cédric Bakambu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -119,12 +146,14 @@
         "defense": 68,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — Monterrey (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Monterrey (2025/2026)",
       "teamLabel": "Monterrey (2025-26)"
     }
   },
   "id": 150,
   "name": "Monterrey",
   "badgeLocalPath": "/img/badges/monterrey.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Monterrey",
+  "nameEs": "Monterrey"
 }

@@ -1,6 +1,162 @@
 {
   "slug": "vasco-da-gama",
-  "seasons": {},
+  "seasons": {
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Carlos Germano",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Odvan",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Mauro Galvão",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Alejandro",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Junior Baiano",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Juninho Pernambucano",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Nasa",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Luisao",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Romario",
+          "position": "ST",
+          "rating": 95
+        },
+        {
+          "name": "Edmundo",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Luizão",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Anderson Luis",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Renato",
+          "position": "LM",
+          "rating": 80
+        }
+      ],
+      "source": "Vasco da Gama - Copa Libertadores 1998 (Romario, Edmundo, Juninho Pernambucano)",
+      "teamLabel": "Vasco da Gama (1998)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Léo Jardim",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Puma Rodriguez",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "João Victor",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Maicon",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Lucas Piton",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Matheus Carvalho",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "De Lucca",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Payet",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "David",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Vegetti",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Adson",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Hugo Moura",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Philippe Coutinho",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Rossi",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Pablo Galdames",
+          "position": "CM",
+          "rating": 75
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/vasco-da-gama.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "CR Vasco da Gama",
+  "nameEs": "CR Vasco da Gama",
+  "name": "CR Vasco da Gama"
 }

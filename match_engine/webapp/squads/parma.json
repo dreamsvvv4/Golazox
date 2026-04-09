@@ -1,6 +1,160 @@
 {
   "slug": "parma",
   "seasons": {
+    "1993": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Luca Bucci",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Massimo Crippa",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Lorenzo Minotti",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Apolloni",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Amedeo Carboni",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Dino Baggio",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Antonio Benarrivo",
+          "position": "RM",
+          "rating": 82
+        },
+        {
+          "name": "Roberto Sensini",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Gianfranco Zola",
+          "position": "AM",
+          "rating": 90
+        },
+        {
+          "name": "Faustino Asprilla",
+          "position": "LW",
+          "rating": 89
+        },
+        {
+          "name": "Tomas Brolin",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Stefano Cuoghi",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Marco Osio",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Alessandro Melli",
+          "position": "ST",
+          "rating": 80
+        }
+      ],
+      "source": "Parma 🌍 Otros€” UEFA Cup 1992-93 (Zola, Asprilla, Brolin 🌍 Otros€” Scala)",
+      "teamLabel": "Parma AC (1992-93)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 92
+        },
+        {
+          "name": "Massimo Baggio",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Lilian Thuram",
+          "position": "CB",
+          "rating": 92
+        },
+        {
+          "name": "Fabio Cannavaro",
+          "position": "CB",
+          "rating": 91
+        },
+        {
+          "name": "Dino Baggio",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Roberto Sensini",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Antonio Benarrivo",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Alain Boghossian",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Enrico Chiesa",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Stéphane Dalmat",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Hernán Crespo",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Ariel Ortega",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Christophe Dugarry",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Amoroso",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "source": "Parma 🌍 Otros€” UEFA Cup + Copa Italia 1998-99 (Buffon, Thuram, Cannavaro, Crespo)",
+      "teamLabel": "Parma AC (1998-99)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
@@ -116,7 +270,7 @@
         "defense": 72,
         "goalkeeping": 71
       },
-      "source": "Transfermarkt — Parma Calcio (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Parma Calcio (2025/2026)",
       "teamLabel": "Parma Calcio (2025-26)"
     }
   },

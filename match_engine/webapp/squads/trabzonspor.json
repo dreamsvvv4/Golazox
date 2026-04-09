@@ -5,7 +5,7 @@
       "formation": "4-4-2",
       "players": [
         {
-          "name": "Uğurcan Çakır",
+          "name": "U�xurcan �!akır",
           "position": "GK",
           "marketValue": 12000000,
           "rating": 83
@@ -77,7 +77,7 @@
           "rating": 73
         },
         {
-          "name": "Taha Altıkardeş",
+          "name": "Taha Altıkarde�x",
           "position": "CB",
           "marketValue": 850000,
           "rating": 73
@@ -101,16 +101,16 @@
           "rating": 70
         },
         {
-          "name": "Ali Şahin Yılmaz",
+          "name": "Ali �~ahin Yılmaz",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
-          "name": "Oğuzhan Yılmaz",
+          "name": "O�xuzhan Yılmaz",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Anastasios Bakasetas",
@@ -125,7 +125,7 @@
           "rating": 82
         },
         {
-          "name": "Abdülkadir Ömür",
+          "name": "Abdülkadir �\u0013mür",
           "position": "CM",
           "marketValue": 8000000,
           "rating": 82
@@ -197,10 +197,10 @@
           "rating": 62
         },
         {
-          "name": "Salih Malkoçoğlu",
+          "name": "Salih Malkoço�xlu",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Trezeguet",
@@ -233,7 +233,7 @@
           "rating": 78
         },
         {
-          "name": "Naci Ünüvar",
+          "name": "Naci �Snüvar",
           "position": "ST",
           "marketValue": 2500000,
           "rating": 77
@@ -278,13 +278,13 @@
           "name": "Abdurrahman Bayram",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Poyraz Yıldırım",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -293,7 +293,7 @@
         "defense": 68,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Trabzonspor (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Trabzonspor (2022/2023)",
       "teamLabel": "Trabzonspor (2022-23)"
     },
     "2025": {
@@ -315,13 +315,13 @@
           "name": "Ahmet Yıldırım",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Erol Can Çolak",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Arseniy Batagov",
@@ -360,7 +360,7 @@
           "rating": 70
         },
         {
-          "name": "Arda Öztürk",
+          "name": "Arda �\u0013ztürk",
           "position": "CB",
           "marketValue": 100000,
           "rating": 64
@@ -408,7 +408,7 @@
           "rating": 75
         },
         {
-          "name": "Salih Malkoçoğlu",
+          "name": "Salih Malkoço�xlu",
           "position": "CM",
           "marketValue": 1000000,
           "rating": 73
@@ -456,10 +456,10 @@
           "rating": 67
         },
         {
-          "name": "Onuralp Çakıroğlu",
+          "name": "Onuralp �!akıro�xlu",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -468,7 +468,7 @@
         "defense": 68,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Trabzonspor (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Trabzonspor (2025/2026)",
       "teamLabel": "Trabzonspor (2025-26)"
     }
   },
@@ -476,5 +476,6 @@
   "name": "Trabzonspor",
   "nameEs": "Trabzonspor",
   "nameEn": "Trabzonspor",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "badgeLocalPath": "/img/badges/trabzonspor.png"
 }

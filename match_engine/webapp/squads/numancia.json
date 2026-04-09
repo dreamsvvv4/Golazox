@@ -6,127 +6,158 @@
       "players": [
         {
           "name": "Juan Pablo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Juanra",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Cisma",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Boris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sergio Ortega",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Barkero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Nagore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Dimas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Goiria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Del Pino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Moreno",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kelemen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Bellvís",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Brit",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mario",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Palacios",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "De Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Quero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Aranda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Pavón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Felipe",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Raúl Bravo",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Álvaro Antón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jaio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Guayre",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Lago Junior",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Toché",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jesús Fernández",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Nandi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Platero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jarque",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -135,11 +166,13 @@
         "defense": 76,
         "goalkeeping": 72
       },
-      "source": "BDFutbol — Numancia 2008-09 Primera División",
+      "source": "BDFutbol <\r Otros�\u001d Numancia 2008-09 Primera División",
       "teamLabel": "Numancia 2008-09 Primera División"
     }
   },
   "name": "Numancia",
   "badgeLocalPath": "/img/badges/numancia.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Numancia",
+  "nameEs": "Numancia"
 }

@@ -98,13 +98,13 @@
           "name": "José Juan Manríquez",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Ricardo Chávez",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Lucas Zelarayán",
@@ -158,19 +158,19 @@
           "name": "Ramón García",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Victor Alvarado",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Orlando Vela",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "André-Pierre Gignac",
@@ -266,7 +266,7 @@
           "name": "Luis Cruz",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -275,7 +275,7 @@
         "defense": 65,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Tigres UANL (2015/2016)",
+      "source": "Transfermarkt 🌍 Otros€” Tigres UANL (2015/2016)",
       "teamLabel": "Tigres UANL (2015-16)"
     },
     "2016": {
@@ -303,7 +303,7 @@
           "name": "Miguel Ortega",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Javier Aquino",
@@ -387,19 +387,19 @@
           "name": "David Navarro",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "José Juan Manríquez",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Jair Díaz",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Guido Pizarro",
@@ -447,7 +447,7 @@
           "name": "Damián Torres",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "André-Pierre Gignac",
@@ -555,13 +555,13 @@
           "name": "Jorge Vázquez",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Rafael Durán",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -570,7 +570,7 @@
         "defense": 65,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Tigres UANL (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” Tigres UANL (2016/2017)",
       "teamLabel": "Tigres UANL (2016-17)"
     },
     "2020": {
@@ -598,19 +598,19 @@
           "name": "Arturo Delgado",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Carlos Galindo",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Erick González",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Carlos Salcedo",
@@ -682,13 +682,13 @@
           "name": "Jesús Garza",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
-          "name": "Érick Ávalos",
+          "name": "�0rick Ávalos",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Leonardo Fernández",
@@ -730,13 +730,13 @@
           "name": "José Solís",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "David Ayala",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Florian Thauvin",
@@ -796,13 +796,13 @@
           "name": "Adrián Garza",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Patrick Ogama",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -811,7 +811,7 @@
         "defense": 65,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Tigres UANL (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” Tigres UANL (2020/2021)",
       "teamLabel": "Tigres UANL (2020-21)"
     },
     "2025": {
@@ -819,107 +819,133 @@
       "players": [
         {
           "name": "Nahuel Guzmán",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Felipe Rodríguez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Antonio Carrera",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Joaquim",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jesús Angulo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Juan José Purata",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Rafael Guerrero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Francisco Reyes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Marco Farfán",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Osvaldo Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Fernando Ordóñez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jesús Garza",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Vladímir Loroña",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Rômulo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "César Araújo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Fernando Gorriarán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Juan Pablo Vigón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Juan Brunetta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Marcelo Flores",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Diego Sánchez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Diego Lainez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ozziel Herrera",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Rodrigo Aguirre",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Iván López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "André-Pierre Gignac",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -928,7 +954,7 @@
         "defense": 65,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Tigres UANL (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Tigres UANL (2025/2026)",
       "teamLabel": "Tigres UANL (2025-26)"
     }
   },

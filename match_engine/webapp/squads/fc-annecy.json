@@ -20,13 +20,13 @@
           "name": "Matéo Gonzalez",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 74
         },
         {
           "name": "Aymerick Nedelec",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 74
         },
         {
           "name": "Axel Drouhin",
@@ -92,7 +92,7 @@
           "name": "Esteban Riou",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 73
         },
         {
           "name": "Clément Billemaz",
@@ -146,13 +146,13 @@
           "name": "Nolan Ferro",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 73
         },
         {
           "name": "Wael Debbiche",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 73
         },
         {
           "name": "Ben Hamed Touré",
@@ -197,11 +197,14 @@
         "defense": 61,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Annecy (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Annecy (2025/2026)",
       "teamLabel": "Annecy (2025-26)"
     }
   },
   "id": 30204,
   "name": "Annecy",
-  "group": "🇫🇷 Ligue 2"
+  "group": "🇫🇷 Ligue 2",
+  "badgeLocalPath": "/img/badges/fc-annecy.png",
+  "nameEn": "Annecy",
+  "nameEs": "Annecy"
 }

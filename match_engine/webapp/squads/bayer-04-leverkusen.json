@@ -6,155 +6,193 @@
       "players": [
         {
           "name": "Hans Jörg Butt",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Frank Juric",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Tom Starke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Maurice Gillen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lúcio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Juan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emanuel Pogatetz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jan-Ingwer Callsen-Bracker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mile Bozic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Thomas Kleine",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Petr Coupek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Diego Placente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Boris Zivkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Frankie Hejduk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Zoltan Sebescen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Christoph Preuß",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Hanno Balitsch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pascal Ojigwe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Radoslaw Kaluzny",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Carsten Ramelow",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Bernd Schneider",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nasir El Kasmi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Daniel Bierofka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Marko Babic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jan Simak",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
-          "name": "Yıldıray Baştürk",
-          "position": "CM"
+          "name": "Yıldıray Ba�xtürk",
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ioannis Masmanidis",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Anel Dzaka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
-          "name": "Hüzeyfe Doğan",
-          "position": "CM"
+          "name": "Hüzeyfe Do�xan",
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "França",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dimitar Berbatov",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Thomas Brdaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sebastian Schoof",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -163,7 +201,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Bayer Leverkusen (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2002/2003)",
       "teamLabel": "Bayer Leverkusen (2002-03)"
     },
     "2023": {
@@ -171,87 +209,108 @@
       "players": [
         {
           "name": "Matej Kovar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Patrick Pentz",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukas Hradecky",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Niklas Lomb",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Edmond Tapsoba",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Piero Hincapié",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Odilon Kossounou",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jonathan Tah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Reno Münz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Madi Monamay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alejandro Grimaldo",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Jeremie Frimpong",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Josip Stanisic",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Arthur",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Timothy Fosu-Mensah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Granit Xhaka",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Robert Andrich",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Exequiel Palacios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nadiem Amiri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gustavo Puerta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Noah Mbamba",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Florian Wirtz",
@@ -260,43 +319,53 @@
         },
         {
           "name": "Jonas Hofmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ayman Aourir",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Francis Onyeka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Amine Adli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nathan Tella",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Victor Boniface",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Patrik Schick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Adam Hlozek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Borja Iglesias",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ken Izekor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -305,7 +374,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Bayer Leverkusen (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2023/2024)",
       "teamLabel": "Bayer Leverkusen (2023-24)"
     },
     "2024": {
@@ -333,13 +402,13 @@
           "name": "Simeon Rapsch",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Luca Novodomsky",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Jeremie Frimpong",
@@ -405,19 +474,19 @@
           "name": "Andrea Natali",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ben Hawighorst",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Othniël Raterink",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Florian Wirtz",
@@ -513,7 +582,7 @@
           "name": "Kerim Alajbegovic",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -522,7 +591,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Bayer Leverkusen (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2024/2025)",
       "teamLabel": "Bayer Leverkusen (2024-25)"
     },
     "2025": {
@@ -697,7 +766,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Bayer Leverkusen (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2025/2026)",
       "teamLabel": "Bayer Leverkusen (2025-26)"
     }
   },

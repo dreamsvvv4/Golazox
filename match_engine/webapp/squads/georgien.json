@@ -1,0 +1,91 @@
+{
+  "slug": "georgien",
+  "name": "Georgia",
+  "nameEn": "Georgia",
+  "nameEs": "Georgia",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/georgien.png",
+  "id": "georgien",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Giorgi Mamardashvili",
+          "position": "GK",
+          "rating": 86
+        },
+        {
+          "name": "Giorgi Lochoshvili",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Guram Kashia",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Solomon Kvirkvelia",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Lasha Dvali",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Giorgi Chakvetadze",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Otar Kiteishvili",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Zuriko Davitashvili",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Khvicha Kvaratskhelia",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Georges Mikautadze",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Saba Lobjanidze",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Tornike Okriashvili",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Levan Shengelia",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Giorgi Tsitaishvili",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Nika Kvekveskiri",
+          "position": "DM",
+          "rating": 76
+        }
+      ]
+    }
+  }
+}

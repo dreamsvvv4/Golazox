@@ -1,33 +1,9 @@
 {
   "slug": "south-africa",
-  "seasons": {
-    "2025": {
-      "formation": "4-4-2",
-      "players": [
-        { "name": "Ronwen Williams",    "position": "GK" },
-        { "name": "Reeve Frosler",      "position": "RB" },
-        { "name": "Mothobi Mvala",      "position": "CB" },
-        { "name": "Teboho Mokoena",     "position": "CB" },
-        { "name": "Terrence Mashego",   "position": "LB" },
-        { "name": "Ethan Brooks",       "position": "RM" },
-        { "name": "Sipho Mbule",        "position": "CM" },
-        { "name": "Bathusi Aubaas",     "position": "CM" },
-        { "name": "Bongokuhle Hlongwane", "position": "LM" },
-        { "name": "Evidence Makgopa",   "position": "ST" },
-        { "name": "Percy Tau",          "position": "ST" },
-        { "name": "Darren Keet",        "position": "GK" },
-        { "name": "Siyanda Xulu",       "position": "CB" },
-        { "name": "Grant Kekana",       "position": "CB" },
-        { "name": "Yusuf Maart",        "position": "DM" },
-        { "name": "Lyle Foster",        "position": "ST" },
-        { "name": "Kermit Erasmus",     "position": "LW" }
-      ],
-      "ratings": { "attack": 71, "midfield": 70, "defense": 69, "goalkeeping": 72 },
-      "source": "Manual — Bafana Bafana 2025"
-    }
-  },
+  "seasons": {},
   "badgeLocalPath": "/img/badges/south-africa.png",
   "group": "🌍 Selecciones",
   "nameEn": "South Africa",
-  "nameEs": "Sudáfrica"
+  "nameEs": "Sudáfrica",
+  "name": "South Africa"
 }

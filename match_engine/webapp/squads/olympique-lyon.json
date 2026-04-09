@@ -6,119 +6,148 @@
       "players": [
         {
           "name": "Grégory Coupet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Nicolas Puydebois",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joan Hartock",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Daniel Jaccard",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cláudio Caçapa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lamine Diatta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Éric Abidal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Berthod",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anthony Réveillère",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Johann Truchet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Michael Essien",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mahamadou Diarra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jérémy Clément",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Yohann Gomez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Florent Balmont",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Yacine Hima",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Juninho Pernambucano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Bryan Bergougnoux",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Hatem Ben Arfa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Florent Malouda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Idangar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sidney Govou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Wiltord",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Pierre-Alain Frau",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nilmar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Giovane Élber",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Julien Viale",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -127,7 +156,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lyon (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2004/2005)",
       "teamLabel": "Lyon (2004-05)"
     },
     "2005": {
@@ -135,115 +164,143 @@
       "players": [
         {
           "name": "Grégory Coupet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Vercoutre",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Riou",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joan Hartock",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cláudio Caçapa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Müller",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sylvain Monsoreau",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lamine Diatta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Éric Abidal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Berthod",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anthony Réveillère",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "François Clerc",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mahamadou Diarra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Benoît Pedretti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jérémy Clément",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Romain Beynié",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tiago Mendes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Juninho Pernambucano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Hatem Ben Arfa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Florent Malouda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sidney Govou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Wiltord",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fred",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "John Carew",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nilmar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Pierre-Alain Frau",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -252,7 +309,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lyon (2005/2006)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2005/2006)",
       "teamLabel": "Lyon (2005-06)"
     },
     "2006": {
@@ -260,143 +317,178 @@
       "players": [
         {
           "name": "Grégory Coupet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Vercoutre",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Riou",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joan Hartock",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alexandre Bouchard",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sébastien Squillaci",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Müller",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cláudio Caçapa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lamine Diatta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Éric Abidal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Berthod",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anthony Réveillère",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "François Clerc",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mourad Benhamida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mahamadou Diarra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jérémy Toulalan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alou Diarra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Benoît Pedretti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Fábio Santos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Romain Beynié",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tiago Mendes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kim Källström",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Juninho Pernambucano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Hatem Ben Arfa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Florent Malouda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Idangar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sidney Govou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sylvain Wiltord",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fred",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "John Carew",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Loïc Rémy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Grégory Bettiol",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -405,7 +497,7 @@
         "defense": 83,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Lyon (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2006/2007)",
       "teamLabel": "Lyon (2006-07)"
     },
     "2007": {
@@ -413,131 +505,163 @@
       "players": [
         {
           "name": "Grégory Coupet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Vercoutre",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Frédéric Roux",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joan Hartock",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Sébastien Squillaci",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anderson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jean-Alain Boumsong",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrick Müller",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sandy Paillot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mickaël Charvet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fabio Grosso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nadir Belhadj",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "François Clerc",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anthony Réveillère",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Toulalan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mathieu Bodmer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Fábio Santos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Marc Crosas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Romain Beynié",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kim Källström",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lossémy Karaboué",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Juninho Pernambucano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Hatem Ben Arfa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Anthony Mounier",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Abdul Kader Keita",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sidney Govou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "César Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fred",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Loïc Rémy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -546,7 +670,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lyon (2007/2008)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2007/2008)",
       "teamLabel": "Lyon (2007-08)"
     },
     "2008": {
@@ -554,151 +678,188 @@
       "players": [
         {
           "name": "Hugo Lloris",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Rémy Vercoutre",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joan Hartock",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Anthony Lopes",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jean-Alain Boumsong",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "John Mensah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Timothée Kolodziejczak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nicolas Seguin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Thomas Fontaine",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fabio Grosso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "François Clerc",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Anthony Réveillère",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lamine Gassama",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sébastien Faure",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Pied",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jérémy Toulalan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean Makoun",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mathieu Bodmer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Fábio Santos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Saïd Mehamha",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kim Källström",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Miralem Pjanić",
-          "position": "AM"
+          "position": "AM",
+          "rating": 81
         },
         {
           "name": "Clément Grenier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pierrick Valdivia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Yannis Tafer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ederson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Juninho Pernambucano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Anthony Mounier",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sidney Govou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Abdul Kader Keita",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "César Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Karim Benzema",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fred",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Frédéric Piquionne",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Alexandre Lacazette",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -707,7 +868,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lyon (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2008/2009)",
       "teamLabel": "Lyon (2008-09)"
     },
     "2025": {
@@ -865,7 +1026,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — Lyon (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Lyon (2025/2026)",
       "teamLabel": "Lyon (2025-26)"
     }
   },

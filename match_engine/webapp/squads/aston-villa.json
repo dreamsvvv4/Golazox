@@ -1,6 +1,86 @@
 {
   "slug": "aston-villa",
   "seasons": {
+    "1981": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jimmy Rimmer",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Kenny Swain",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Allan Evans",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Ken McNaught",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Colin Gibson",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Dennis Mortimer",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Gordon Cowans",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Des Bremner",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Tony Morley",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Peter Withe",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Gary Shaw",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Nigel Spink",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Andy Blair",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Pat Heard",
+          "position": "RM",
+          "rating": 75
+        },
+        {
+          "name": "David Geddis",
+          "position": "RW",
+          "rating": 78
+        }
+      ]
+    },
     "1982": {
       "formation": "4-4-2",
       "players": [
@@ -8,151 +88,151 @@
           "name": "Kevin Poole",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Jimmy Rimmer",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Nigel Spink",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Allan Evans",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ken McNaught",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Brendon Ormsby",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mark Jones",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Eamon Deacy",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Colin Gibson",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Pat Heard",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Kenny Swain",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gary Williams",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Andy Blair",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ray Walker",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Alan Curbishley",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dennis Mortimer",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Des Bremner",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gordon Cowans",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Birch",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mark Walters",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Tony Morley",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Gary Shaw",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Robert Hopkins",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Peter Withe",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "David Geddis",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -161,7 +241,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — Aston Villa (1982/1983)",
+      "source": "Transfermarkt 🌍 Otros€” Aston Villa (1982/1983)",
       "teamLabel": "Aston Villa (1982-83)"
     },
     "2019": {
@@ -267,7 +347,7 @@
           "name": "Kaine Kesler-Hayden",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Douglas Luiz",
@@ -315,7 +395,7 @@
           "name": "Jacob Ramsey",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jack Grealish",
@@ -393,7 +473,7 @@
           "name": "Cameron Archer",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -402,7 +482,7 @@
         "defense": 72,
         "goalkeeping": 71
       },
-      "source": "Transfermarkt — Aston Villa (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” Aston Villa (2019/2020)",
       "teamLabel": "Aston Villa (2019-20)"
     },
     "2024": {
@@ -436,7 +516,7 @@
           "name": "Sam Proctor",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Pau Torres",
@@ -514,13 +594,13 @@
           "name": "Travis Patterson",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Triston Rowe",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Boubacar Kamara",
@@ -592,7 +672,7 @@
           "name": "Aidan Borland",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Marcus Rashford",
@@ -640,19 +720,19 @@
           "name": "Ben Broggio",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Bradley Burrowes",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Kobei Moore",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -661,7 +741,7 @@
         "defense": 81,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — Aston Villa (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Aston Villa (2024/2025)",
       "teamLabel": "Aston Villa (2024-25)"
     },
     "2025": {
@@ -824,12 +904,14 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — Aston Villa (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Aston Villa (2025/2026)",
       "teamLabel": "Aston Villa (2025-26)"
     }
   },
   "id": 405,
   "name": "Aston Villa",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
-  "badgeLocalPath": "/img/badges/aston-villa.png"
+  "badgeLocalPath": "/img/badges/aston-villa.png",
+  "nameEn": "Aston Villa",
+  "nameEs": "Aston Villa"
 }

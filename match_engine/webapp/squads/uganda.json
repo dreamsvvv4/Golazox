@@ -1,0 +1,91 @@
+{
+  "slug": "uganda",
+  "name": "Uganda",
+  "nameEn": "Uganda",
+  "nameEs": "Uganda",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/uganda.png",
+  "id": "uganda",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Denis Onyango",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Timothy Awany",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Hassan Wasswa",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Murushid Juuko",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Joseph Ochaya",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Emmanuel Arnold Okwi",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Allan Kyambadde",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Kenneth Ssemakula",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Khalid Aucho",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Farouk Miya",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Patrick Kaddu",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Robert Ssekiganda",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Moses Waiswa",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Edrisa Lubega",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Abdu Lumala",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    }
+  }
+}

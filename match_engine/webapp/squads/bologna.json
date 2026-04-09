@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Lukasz Skorupski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Jesper Lindstrom",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Sam Beukema",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Lorenzo De Silvestri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Charalampos Lykogiannis",
-          "position": "LB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Remo Freuler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Nicola Moro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Alexis Saelemaekers",
-          "position": "AM"
+          "position": "AM",
+          "rating": 80
         },
         {
           "name": "Joshua Zirkzee",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Riccardo Orsolini",
-          "position": "LW"
+          "position": "LW",
+          "rating": 80
         },
         {
           "name": "Santiago Castro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Tommaso Corazza",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Stefan Posch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Nicolas Gonzalez",
-          "position": "LB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Lewis Ferguson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Oussama El Azzouzi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Dan Ndoye",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Thijs Dallinga",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Giovanni Fabbian",
-          "position": "AM"
+          "position": "AM",
+          "rating": 80
         },
         {
           "name": "Victor Kristiansen",
-          "position": "LB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Remo Freuler jr.",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         }
       ],
       "ratings": {
@@ -95,7 +116,7 @@
         "defense": 78,
         "goalkeeping": 77
       },
-      "source": "Transfermarkt — Bologna 2024-25 Serie A",
+      "source": "Transfermarkt 🌍 Otros€” Bologna 2024-25 Serie A",
       "teamLabel": "Bologna FC 2024-25 Serie A"
     }
   },

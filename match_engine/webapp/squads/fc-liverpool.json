@@ -1,104 +1,272 @@
 {
   "slug": "fc-liverpool",
   "seasons": {
+    "1965": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tommy Lawrence",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gerry Byrne",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Chris Lawler",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Ron Yeats",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Tommy Smith",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Willie Stevenson",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Gordon Milne",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Ian Callaghan",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Peter Thompson",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Roger Hunt",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Ian St. John",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Geoff Strong",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Alf Arrowsmith",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "source": "Liverpool 🌍 Otros€” FA Cup winners 1964-65 (Shankly era)",
+      "teamLabel": "Liverpool (1964-65)"
+    },
+    "1973": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ray Clemence",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Tommy Smith",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Emlyn Hughes",
+          "position": "LB",
+          "rating": 85
+        },
+        {
+          "name": "Larry Lloyd",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Chris Lawler",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Ian Callaghan",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Peter Cormack",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Brian Hall",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Steve Heighway",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Kevin Keegan",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "John Toshack",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Phil Boersma",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Alec Lindsay",
+          "position": "LB",
+          "rating": 79
+        }
+      ],
+      "source": "Liverpool 🌍 Otros€” League + UEFA Cup double 1972-73 (Shankly)",
+      "teamLabel": "Liverpool (1972-73)"
+    },
     "1977": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Ray Clemence",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Steve Ogrizovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Peter McDonnell",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Phil Thompson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Hansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tommy Smith",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Colin Irwin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joey Jones",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emlyn Hughes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Neal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Terry McDermott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Graeme Souness",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sammy Lee",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ian Callaghan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jimmy Case",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steve Heighway",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Kennedy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Howard Gayle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Johnson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Fairclough",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kevin Kewley",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Colin Russell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "John Toshack",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -107,7 +275,7 @@
         "defense": 84,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Liverpool (1977/1978)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (1977/1978)",
       "teamLabel": "Liverpool (1977-78)"
     },
     "1978": {
@@ -115,91 +283,113 @@
       "players": [
         {
           "name": "Ray Clemence",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Steve Ogrizovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Phil Thompson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Hansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joey Jones",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emlyn Hughes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Kennedy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Brian Kettle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Neal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Synan Braddish",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Terry McDermott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Graeme Souness",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sammy Lee",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jimmy Case",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steve Heighway",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Kennedy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kevin Sheedy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Howard Gayle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Johnson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Frank McGarvey",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Fairclough",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -208,7 +398,7 @@
         "defense": 85,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Liverpool (1978/1979)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (1978/1979)",
       "teamLabel": "Liverpool (1978-79)"
     },
     "1981": {
@@ -216,103 +406,128 @@
       "players": [
         {
           "name": "Steve Ogrizovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Bruce Grobbelaar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Avi Cohen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Thompson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Hansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mark Lawrenson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Kennedy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Nicol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Neal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Richard Money",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Terry McDermott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Graeme Souness",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Craig Johnston",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sammy Lee",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jimmy Case",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steve Heighway",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ray Kennedy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ronnie Whelan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kevin Sheedy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Howard Gayle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Johnson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Rush",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Fairclough",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Colin Russell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -321,7 +536,7 @@
         "defense": 85,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Liverpool (1981/1982)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (1981/1982)",
       "teamLabel": "Liverpool (1981-82)"
     },
     "1984": {
@@ -329,99 +544,123 @@
       "players": [
         {
           "name": "Bruce Grobbelaar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Bob Bolder",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Chris Pile",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Gary Ablett",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Thompson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Hansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gary Gillespie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mark Lawrenson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jim Beglin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alan Kennedy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Nicol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Phil Neal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jan Mølby",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ken DeMange",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kevin MacDonald",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Craig Johnston",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sammy Lee",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ronnie Whelan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Wark",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michael Robinson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Rush",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David Hodgson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Paul Walsh",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -430,163 +669,355 @@
         "defense": 86,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Liverpool (1984/1985)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (1984/1985)",
       "teamLabel": "Liverpool (1984-85)"
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bruce Grobbelaar",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Mark Lawrenson",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Alan Hansen",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Jim Beglin",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Steve Nicol",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Ronnie Whelan",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Jan Mølby",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Craig Johnston",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Kevin MacDonald",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "John Wark",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Steve McMahon",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Ian Rush",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Kenny Dalglish",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Paul Walsh",
+          "position": "ST",
+          "rating": 81
+        }
+      ],
+      "source": "Liverpool 🌍 Otros€” League + FA Cup double 1985-86 (Dalglish player-manager)",
+      "teamLabel": "Liverpool (1985-86)"
+    },
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sander Westerveld",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Jamie Carragher",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Stéphane Henchoz",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Markus Babbel",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Christian Ziege",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Danny Murphy",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Gary McAllister",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Vladimir Smicer",
+          "position": "RM",
+          "rating": 82
+        },
+        {
+          "name": "Emile Heskey",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Michael Owen",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Robbie Fowler",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Nick Barmby",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Patrik Berger",
+          "position": "LM",
+          "rating": 82
+        }
+      ],
+      "source": "Liverpool 🌍 Otros€” Treble 2000-01: UEFA Cup + FA Cup + League Cup (Houllier)",
+      "teamLabel": "Liverpool (2000-01)"
     },
     "2004": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Jerzy Dudek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Chris Kirkland",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Scott Carson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Paul Harrison",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Patrice Luzi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jamie Carragher",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sami Hyypiä",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stéphane Henchoz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Josemi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mauricio Pellegrino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Djimi Traoré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Zak Whitbread",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "John Arne Riise",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stephen Warnock",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Finnan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "David Raven",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Salif Diao",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Igor Biscan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steven Gerrard",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Welsh",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Darren Potter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Richie Partridge",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harry Kewell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mark Smyth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Robbie Foy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Luis García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Antonio Núñez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Florent Sinama-Pongolle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michael Owen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Djibril Cissé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Peter Crouch",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Neil Mellor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Anthony Le Tallec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -595,7 +1026,7 @@
         "defense": 83,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Liverpool (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2004/2005)",
       "teamLabel": "Liverpool (2004-05)"
     },
     "2005": {
@@ -603,151 +1034,188 @@
       "players": [
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jerzy Dudek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Scott Carson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "David Martin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jamie Carragher",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Daniel Agger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sami Hyypiä",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Josemi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Djimi Traoré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Carl Medjani",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Zak Whitbread",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Miki Roqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "John Arne Riise",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stephen Warnock",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jan Kromkamp",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Steve Finnan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Antonio Barragán",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "David Raven",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mohamed Sissoko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Salif Diao",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steven Gerrard",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "David Mannix",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Darren Potter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Paul Anderson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harry Kewell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Boudewijn Zenden",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Luis García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Florent Sinama-Pongolle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Djibril Cissé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Peter Crouch",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Robbie Fowler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Anthony Le Tallec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Besian Idrizaj",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -756,143 +1224,435 @@
         "defense": 83,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Liverpool (2005/2006)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2005/2006)",
       "teamLabel": "Liverpool (2005-06)"
+    },
+    "2007": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pepe Reina",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 84
+        },
+        {
+          "name": "Scott Carson",
+          "position": "GK",
+          "marketValue": 5250000,
+          "rating": 80
+        },
+        {
+          "name": "Charles Itandje",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "David Martin",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Jamie Carragher",
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Sami Hyypiä",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 85
+        },
+        {
+          "name": "John Arne Riise",
+          "position": "CB",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel Agger",
+          "position": "CB",
+          "marketValue": 10250000,
+          "rating": 82
+        },
+        {
+          "name": "Martin Skrtel",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Álvaro Arbeloa",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 82
+        },
+        {
+          "name": "Steve Finnan",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Fábio Aurélio",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jack Hobbs",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Emiliano Insúa",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Godwin Antwi",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Robbie Threlfall",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Stephen Darby",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Xabi Alonso",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 91
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "marketValue": 45000000,
+          "rating": 89
+        },
+        {
+          "name": "Javier Mascherano",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Mohamed Sissoko",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Leiva",
+          "position": "CM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Danny Guthrie",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jay Spearing",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mikel San José",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Damien Plessis",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Paul Anderson",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ryan Flynn",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ray Putterill",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Fernando Torres",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Ryan Babel",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Dirk Kuyt",
+          "position": "ST",
+          "marketValue": 12500000,
+          "rating": 82
+        },
+        {
+          "name": "Jermaine Pennant",
+          "position": "ST",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Yossi Benayoun",
+          "position": "ST",
+          "marketValue": 8250000,
+          "rating": 82
+        },
+        {
+          "name": "Andriy Voronin",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Harry Kewell",
+          "position": "ST",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Sebastián Leto",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Peter Crouch",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 78
+        },
+        {
+          "name": "Adam Hammill",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Nabil El Zhar",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Craig Lindfield",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Liverpool (2007/2008)",
+      "teamLabel": "Liverpool (2007-08)"
     },
     "2008": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Diego Cavalieri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Charles Itandje",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Martin Hansen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Péter Gulácsi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jamie Carragher",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Martin Skrtel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Daniel Agger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sami Hyypiä",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fábio Aurélio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emiliano Insúa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Philipp Degen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Stephen Darby",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Martin Kelly",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Leiva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Damien Plessis",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jay Spearing",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Steven Gerrard",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Albert Riera",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Andrea Dossena",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ryan Babel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dirk Kuyt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Yossi Benayoun",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jermaine Pennant",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nabil El Zhar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Andriy Voronin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Robbie Keane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David N'Gog",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Krisztián Németh",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -901,7 +1661,7 @@
         "defense": 84,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — Liverpool (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2008/2009)",
       "teamLabel": "Liverpool (2008-09)"
     },
     "2012": {
@@ -929,7 +1689,7 @@
           "name": "Danny Ward",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Daniel Agger",
@@ -989,31 +1749,31 @@
           "name": "Stephen Sama",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Conor Coady",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jack Robinson",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lloyd Jones",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jon Flanagan",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Steven Gerrard",
@@ -1139,19 +1899,19 @@
           "name": "Jordon Ibe",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Adam Morgan",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Jerome Sinclair",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1160,235 +1920,538 @@
         "defense": 81,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — Liverpool (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2012/2013)",
       "teamLabel": "Liverpool (2012-13)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Alisson",
+          "position": "GK",
+          "marketValue": 80000000,
+          "rating": 91
+        },
+        {
+          "name": "Simon Mignolet",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Loris Karius",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ádám Bogdán",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kamil Grabara",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Caoimhín Kelleher",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Virgil van Dijk",
+          "position": "CB",
+          "marketValue": 90000000,
+          "rating": 89
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "CB",
+          "marketValue": 80000000,
+          "rating": 88
+        },
+        {
+          "name": "Andrew Robertson",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 86
+        },
+        {
+          "name": "Joe Gomez",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 83
+        },
+        {
+          "name": "Joël Matip",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Nathaniel Clyne",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Alberto Moreno",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Dejan Lovren",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 81
+        },
+        {
+          "name": "Connor Randall",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ki-Jana Hoever",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 88
+        },
+        {
+          "name": "Marko Grujić",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Georginio Wijnaldum",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "Naby Keïta",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 83
+        },
+        {
+          "name": "Alex Oxlade-Chamberlain",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 82
+        },
+        {
+          "name": "Curtis Jones",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 82
+        },
+        {
+          "name": "Xherdan Shaqiri",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 82
+        },
+        {
+          "name": "James Milner",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 81
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 80
+        },
+        {
+          "name": "Ben Woodburn",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Isaac Christie-Davies",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mohamed Salah",
+          "position": "ST",
+          "marketValue": 150000000,
+          "rating": 91
+        },
+        {
+          "name": "Sadio Mané",
+          "position": "ST",
+          "marketValue": 120000000,
+          "rating": 89
+        },
+        {
+          "name": "Divock Origi",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Danny Ings",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Daniel Sturridge",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Roberto Firmino",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 83
+        },
+        {
+          "name": "Dominic Solanke",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 82
+        },
+        {
+          "name": "Sheyi Ojo",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Rafael Camacho",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rhian Brewster",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Liverpool (2018/2019)",
+      "teamLabel": "Liverpool (2018-19)"
     },
     "2019": {
       "formation": "4-3-3",
       "players": [
         {
           "name": "Alisson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Simon Mignolet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Adrián San Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Loris Karius",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Caoimhín Kelleher",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Andy Lonergan",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Vitezslav Jaros",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Ben Winterbottom",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Virgil van Dijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Gomez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joël Matip",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sepp van den Berg",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nat Phillips",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tom Clayton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Morgan Boyes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Billy Koumetio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Andrew Robertson",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Yasser Larouci",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tony Gallacher",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Adam Lewis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Neco Williams",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "James Norris",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Trent Alexander-Arnold",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Nathaniel Clyne",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Ki-Jana Hoever",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fabinho",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Jordan Henderson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pedro Chirivella",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Georginio Wijnaldum",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Naby Keïta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alex Oxlade-Chamberlain",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James Milner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Curtis Jones",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Herbie Kane",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Elijah Dixon-Bonner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Leighton Clarkson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jake Cain",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tom Hill",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jack Bearne",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Xherdan Shaqiri",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Adam Lallana",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ben Woodburn",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harvey Elliott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Isaac Christie-Davies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sadio Mané",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Takumi Minamino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Liam Millar",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Mohamed Salah",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Sheyi Ojo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Luis Longstaff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Roberto Firmino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Divock Origi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rhian Brewster",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joe Hardy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Layton Stewart",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1397,7 +2460,7 @@
         "defense": 90,
         "goalkeeping": 90
       },
-      "source": "Transfermarkt — Liverpool (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2019/2020)",
       "teamLabel": "Liverpool (2019-20)"
     },
     "2025": {
@@ -1578,12 +2641,14 @@
         "defense": 86,
         "goalkeeping": 87
       },
-      "source": "Transfermarkt — Liverpool (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Liverpool (2025/2026)",
       "teamLabel": "Liverpool (2025-26)"
     }
   },
   "id": 31,
   "name": "Liverpool",
   "badgeLocalPath": "/img/badges/fc-liverpool.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Liverpool FC",
+  "nameEs": "Liverpool FC"
 }

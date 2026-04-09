@@ -1,6 +1,234 @@
 {
   "slug": "zenit-st-petersburg",
-  "seasons": {},
+  "seasons": {
+    "2008": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Vyacheslav Malafeyev",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Aleksandr Anyukov",
+          "position": "RB",
+          "rating": 84
+        },
+        {
+          "name": "Nicolas Lombaerts",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Radek Sirl",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Domenico Criscito",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Igor Denisov",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Konstantin Zyryanov",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Pavel Pogrebnyak",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Andrei Arshavin",
+          "position": "AM",
+          "rating": 91
+        },
+        {
+          "name": "Fatih Tekke",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Danny",
+          "position": "LW",
+          "rating": 86
+        },
+        {
+          "name": "Samuel Inkoom",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Roman Shirikov",
+          "position": "RM",
+          "rating": 80
+        }
+      ],
+      "source": "Zenit San Petersburgo - Copa UEFA 2007-08 (Arshavin, Danny - primer titulo europeo)",
+      "teamLabel": "Zenit (2007-08)"
+    },
+    "2019": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mikhail Kerzhakov",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Aleksandr Anyukov",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Branislav Ivanovic",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Emanuel Mammana",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Domenico Criscito",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Leandro Paredes",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Matias Kranevitter",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Sardar Azmoun",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Aleksandr Kokorin",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Driussi",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Emile Obi",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Yuri Zhirkov",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Robert Mak",
+          "position": "RW",
+          "rating": 80
+        }
+      ],
+      "source": "Zenit San Petersburgo - Liga rusa 2018-19 (Paredes, Azmoun, Ivanovic)",
+      "teamLabel": "Zenit (2018-19)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mikhail Kerzhakov",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Vyacheslav Karavaev",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Yaroslav Rakitskiy",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Dejan Lovren",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Douglas Santos",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Claudinho",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Wendel",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Daler Kuzyaev",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Malcolm",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Artem Dzyuba",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Andrey Mostovoy",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Aleksei Sutormin",
+          "position": "RM",
+          "rating": 77
+        },
+        {
+          "name": "Artur Kaboré",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Sardar Azmoun",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Nikolai Kornev",
+          "position": "LB",
+          "rating": 74
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/zenit-st-petersburg.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Zenit Saint Petersburg",
+  "nameEs": "Zenit San Petersburgo",
+  "name": "Zenit Saint Petersburg"
 }

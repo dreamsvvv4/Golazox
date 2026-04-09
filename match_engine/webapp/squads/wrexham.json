@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Mark Howard",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Tom O'Connor",
-          "position": "RB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Shaun Brisley",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Jordan Davies",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Elliot Lee",
-          "position": "LB"
+          "position": "LB",
+          "rating": 84
         },
         {
           "name": "Luke Young",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Ben Tozer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Paul Mullin",
-          "position": "RW"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Ollie Palmer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Jordan Tunnicliffe",
-          "position": "LW"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "James Jones",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Christian Dibble",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Ollie Rathbone",
-          "position": "RB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Ryan Barnett",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Anthony Forde",
-          "position": "LB"
+          "position": "LB",
+          "rating": 84
         },
         {
           "name": "Will Boyle",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Callum McFadzean",
-          "position": "RW"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Josh Bray",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Reece Hughes",
-          "position": "LW"
+          "position": "LW",
+          "rating": 85
         },
         {
           "name": "Manny Monthe",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Harry McClure",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         }
       ],
       "ratings": {
@@ -95,12 +116,14 @@
         "defense": 65,
         "goalkeeping": 65
       },
-      "source": "Transfermarkt — Wrexham AFC 2024-25 Championship",
+      "source": "Transfermarkt 🌍 Otros€” Wrexham AFC 2024-25 Championship",
       "teamLabel": "Wrexham AFC 2024-25 Championship"
     }
   },
   "id": 67,
   "name": "Wrexham AFC",
   "badgeLocalPath": "/img/badges/wrexham.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+  "nameEn": "Wrexham AFC",
+  "nameEs": "Wrexham AFC"
 }

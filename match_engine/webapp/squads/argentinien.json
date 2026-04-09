@@ -6,99 +6,123 @@
       "players": [
         {
           "name": "Rolando Irusta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hugo Gatti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Antonio Roma",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Rafael Albrecht",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ferreiro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Perfumo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Silvio Marzolini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carmelo Simeone",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vicente de la Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Calics",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonio Rattín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Pastoriza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Varacka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alberto González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Solari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ermindo Onega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aníbal Tarabini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Más",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Chaldú",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alfredo Rojas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Onega",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Sarnari",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luis Artime",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -107,7 +131,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — argentina (1966/1967)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1966/1967)",
       "teamLabel": "argentina (1966-67)"
     },
     "1970": {
@@ -115,59 +139,73 @@
       "players": [
         {
           "name": "Agustín Cejas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Miguel Ángel Santoro",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Rubén Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Rogel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Perfumo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Malbernat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Pastoriza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Raimondo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Norberto Madurga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Brindisi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Más",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodolfo Fischer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcos Conigliaro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Onega",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -176,7 +214,7 @@
         "defense": 75,
         "goalkeeping": 78
       },
-      "source": "Transfermarkt — argentina (1970/1971)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1970/1971)",
       "teamLabel": "argentina (1970-71)"
     },
     "1974": {
@@ -184,167 +222,208 @@
       "players": [
         {
           "name": "Rubén Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Carnevali",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ubaldo Fillol",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Miguel Ángel Santoro",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Mouzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Rogel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Vicente Squeo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Paolino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hugo Bargas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cacho Heredia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Perfumo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Francisco Sá",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Tarantini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Carrascosa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rubén Oscar Glaría",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vicente Pernía",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Quique Wolff",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rubén Galván",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gerónimo Saccardi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enrique Chazarreta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Néstor Togneri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Horacio Galletti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Francisco Russo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Osvaldo Potente",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Telch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan José López",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Bochini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Trobbiani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Horacio Cordero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Babington",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Brindisi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "René Houseman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Bertoni",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rubén Ayala",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Edgardo Di Meola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Agustín Balbuena",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Kempes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Héctor Yazalde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roque Avallay",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Enzo Ferrero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Aldo Poy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -353,7 +432,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — argentina (1974/1975)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1974/1975)",
       "teamLabel": "argentina (1974-75)"
     },
     "1975": {
@@ -361,119 +440,148 @@
       "players": [
         {
           "name": "Hugo Gatti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ricardo La Volpe",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Rubén Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mario Killer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andrés Rebottaro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Pavoni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Rocchia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Pavon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Killer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Troncoso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Carrascosa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rubén Galván",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Américo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Eduardo Solari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julio Asad",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Osvaldo Ardiles",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Bochini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Trobbiani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Babington",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Daniel Valencia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Norberto Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Brindisi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Zanabria",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Alberto Ortiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Houseman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Kempes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leopoldo Luque",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramon Boveda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -482,7 +590,7 @@
         "defense": 80,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — argentina (1975/1976)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1975/1976)",
       "teamLabel": "argentina (1975-76)"
     },
     "1978": {
@@ -490,99 +598,123 @@
       "players": [
         {
           "name": "Héctor Baley",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ubaldo Fillol",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ricardo La Volpe",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Passarella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis Galván",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Killer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Olguín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Tarantini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rubén Pagnanini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rubén Galván",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Alfredo Bottaniz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Américo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Oviedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Villa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Osvaldo Ardiles",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Norberto Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Omar Larrosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Daniel Valencia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Alberto Ortiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Houseman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Bertoni",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Kempes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leopoldo Luque",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Humberto Bravo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -591,7 +723,7 @@
         "defense": 85,
         "goalkeeping": 88
       },
-      "source": "Transfermarkt — argentina (1978/1979)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1978/1979)",
       "teamLabel": "argentina (1978-79)"
     },
     "1979": {
@@ -599,163 +731,203 @@
       "players": [
         {
           "name": "Ricardo Ferrero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ubaldo Fillol",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Enrique Vidallé",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Passarella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Victorio Orlando Ocaño",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge García",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hugo Villaverde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Simón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Olguín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enzo Trossero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Van Tuyne",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Bordón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Tarantini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eduardo Saporiti",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Lopez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Américo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Oviedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Bujedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Osvaldo Díaz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Gáspari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Luis Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedro Larraquy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Osvaldo Ardiles",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Barbas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patricio Hernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Daniel Valencia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Bochini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Alberto Ortiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Orlando López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Houseman",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Bertoni",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Antonio Castro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leopoldo Luque",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Díaz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hugo Coscia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Fortunato",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Norberto Outes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jose Reinaldi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hugo Perotti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -764,7 +936,7 @@
         "defense": 84,
         "goalkeeping": 86
       },
-      "source": "Transfermarkt — argentina (1979/1980)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1979/1980)",
       "teamLabel": "argentina (1979-80)"
     },
     "1982": {
@@ -772,103 +944,128 @@
       "players": [
         {
           "name": "Héctor Baley",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ubaldo Fillol",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nery Pumpido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Passarella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis Galván",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Olguín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enzo Trossero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Van Tuyne",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Olarticoechea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Tarantini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Osvaldo Díaz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Bulleri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Américo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Osvaldo Ardiles",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Barbas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patricio Hernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Raúl Chaparro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Daniel Valencia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gabriel Calderón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Santiago Santamaría",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Daniel Bertoni",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Kempes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Díaz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -877,7 +1074,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1982/1983)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1982/1983)",
       "teamLabel": "argentina (1982-83)"
     },
     "1983": {
@@ -885,135 +1082,168 @@
       "players": [
         {
           "name": "Nery Pumpido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Carlos Delmenico",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ubaldo Fillol",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Mouzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Omar Jorge",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Brown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enzo Trossero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alfredo Killer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Héctor Cúper",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Garré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Olarticoechea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julián Camino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Clausen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis Amuchástegui",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Arregui",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Bujedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Russo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Marangoni",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Giusti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Daniel Ponce",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alejandro Sabella",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Trobbiani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Norberto Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Burruchaga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rubén Insúa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gabriel Calderón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alberto Márcico",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan José Urruti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Morete",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Victor Ramos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ricardo Gareca",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Rinaldi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1022,7 +1252,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1983/1984)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1983/1984)",
       "teamLabel": "argentina (1983-84)"
     },
     "1986": {
@@ -1030,99 +1260,123 @@
       "players": [
         {
           "name": "Luis Islas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nery Pumpido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hector Zelada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Passarella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Brown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Theiler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Garré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Olarticoechea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Cuciuffo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Clausen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Batista",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Héctor Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Giusti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Bochini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Burruchaga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gerardo Martino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Tapia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Trobbiani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Borghi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Almirón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro Pasculli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1131,7 +1385,7 @@
         "defense": 83,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — argentina (1986/1987)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1986/1987)",
       "teamLabel": "argentina (1986-87)"
     },
     "1987": {
@@ -1139,119 +1393,148 @@
       "players": [
         {
           "name": "Nery Pumpido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Goycochea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Luis Islas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jorge Bartero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Luis Brown",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Fabbri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Theiler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Garré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Olarticoechea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Cuciuffo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Batista",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedro Troglio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Giusti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roque Alfaro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Darío Siviski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oscar Acosta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Burruchaga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Tapia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jose Luis Rodriguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Gilberto Funes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oscar Dertycia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Alberto Percudani",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro Pasculli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1260,7 +1543,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1987/1988)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1987/1988)",
       "teamLabel": "argentina (1987-88)"
     },
     "1990": {
@@ -1268,119 +1551,148 @@
       "players": [
         {
           "name": "Fabián Cancelarich",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nery Pumpido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ángel Comizzo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Goycochea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Edgardo Bauza",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Fabbri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Lorenzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pedro Monzón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Serrizuela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Simón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Olarticoechea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabian Basualdo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Batista",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedro Troglio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Basualdo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Giusti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Néstor Gorosito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Burruchaga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Alfaro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Calderón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jorge Valdano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mauro Airez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gustavo Dezotti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1389,7 +1701,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1990/1991)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1990/1991)",
       "teamLabel": "argentina (1990-91)"
     },
     "1991": {
@@ -1397,135 +1709,168 @@
       "players": [
         {
           "name": "Fabián Cancelarich",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Goycochea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Alejandro Lanari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Néstor Fabbri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Gamboa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Vázquez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Craviotto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dante Unali",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Enrique",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Altamirano",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabian Basualdo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Villarreal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Darío Franco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Ludueña",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Astrada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo Zapata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Blas Giunta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Berti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gerardo Martino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Germán Martellotto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Rodríguez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Bisconti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Alfaro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Latorre",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Antonio Mohamed",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Victor Ferreyra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ariel Boldrini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Medina Bello",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1534,7 +1879,7 @@
         "defense": 83,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (1991/1992)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1991/1992)",
       "teamLabel": "argentina (1991-92)"
     },
     "1993": {
@@ -1542,143 +1887,178 @@
       "players": [
         {
           "name": "Luis Islas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Goycochea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Norberto Scoponi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Vázquez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Cáceres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Borelli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Mac Allister",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Altamirano",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Craviotto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabian Basualdo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Saldaña",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Redondo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Luis Villarreal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Darío Franco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo Zapata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alejandro Mancuso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Basualdo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Cagna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Monserrat",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hugo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Néstor Gorosito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Rodríguez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julio Zamora",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Medina Bello",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alberto Acosta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1687,7 +2067,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1993/1994)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1993/1994)",
       "teamLabel": "argentina (1993-94)"
     },
     "1994": {
@@ -1695,195 +2075,243 @@
       "players": [
         {
           "name": "Carlos Bossio",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Goycochea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Luis Islas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Norberto Scoponi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis Medero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Vázquez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Fabbri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oscar Ruggeri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Cáceres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Rotchen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Borelli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodolfo Arruabarrena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Craviotto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Redondo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Darío Franco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alejandro Mancuso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Basualdo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Jiménez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Cagna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Escudero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Monserrat",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hugo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Bassedas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Maradona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Espina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Néstor Gorosito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Rodríguez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Turu Flores",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sebastián Rambert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Medina Bello",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Beto Carranza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1892,7 +2320,7 @@
         "defense": 84,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — argentina (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1994/1995)",
       "teamLabel": "argentina (1994-95)"
     },
     "1995": {
@@ -1900,219 +2328,273 @@
       "players": [
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Carlos Bossio",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hernán Cristante",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oscar Passet",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Néstor Fabbri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Cáceres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Borelli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Rotchen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Schürrer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Trotta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Altamirano",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Ramírez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pineda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodolfo Arruabarrena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabian Basualdo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonardo Astrada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Galetto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gómez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Basualdo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jorge Jiménez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hugo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Escudero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Monserrat",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Berti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kily González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Bassedas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carlos Netto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Espina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodolfo Cardoso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Garnero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan José Borrelli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcelo Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Omar Asad",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hugo Castillo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Biaggio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Esnáider",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sebastián Rambert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Guillermo Barros Schelotto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alberto Acosta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2121,7 +2603,7 @@
         "defense": 83,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — argentina (1995/1996)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1995/1996)",
       "teamLabel": "argentina (1995-96)"
     },
     "1997": {
@@ -2129,191 +2611,238 @@
       "players": [
         {
           "name": "Carlos Roa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nacho González",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marcelo Ojeda",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eduardo Berizzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Cáceres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Paz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pellegrino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Rotchen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Cardozo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pineda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matías Almeyda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Astrada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Husaín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo Zapata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Cagna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Monserrat",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Berti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Bassedas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodolfo Cardoso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Néstor Gorosito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan José Borrelli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hugo Morales",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martín Posse",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcelo Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Luis Calderón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Cruz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Esnáider",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leo Biagini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2322,7 +2851,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1997/1998)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1997/1998)",
       "teamLabel": "argentina (1997-98)"
     },
     "1998": {
@@ -2330,131 +2859,163 @@
       "players": [
         {
           "name": "Carlos Roa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Carlos Bossio",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eduardo Berizzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Paz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pineda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hernán Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gustavo Lombardi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Matías Almeyda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo Zapata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Astrada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Cagna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Escudero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Berti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Bassedas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodolfo Cardoso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2463,7 +3024,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1998/1999)",
       "teamLabel": "argentina (1998-99)"
     },
     "1999": {
@@ -2471,211 +3032,263 @@
       "players": [
         {
           "name": "Franco Costanzo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Bonano",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Carlos Roa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Albano Bizzarri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gustavo Siviero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Coloccini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eduardo Berizzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pellegrino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Lussenhoff",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge San Esteban",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pochettino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sebastián Méndez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pineda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hugo Ibarra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gustavo Lombardi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Fernando Redondo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Husaín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nicolás Medina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Astrada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Cagna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santiago Solari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kily González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Guglielminpietro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Bassedas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcelo Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martín Palermo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Guillermo Barros Schelotto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Esnáider",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Darío Husaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Cruz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Pandolfi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Luis Calderón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2684,7 +3297,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (1999/2000)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (1999/2000)",
       "teamLabel": "argentina (1999-00)"
     },
     "2001": {
@@ -2692,127 +3305,158 @@
       "players": [
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franco Costanzo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gustavo Campagnuolo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Eduardo Berizzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pochettino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Sensini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Placente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Matías Almeyda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Husaín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Castromán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kily González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcelo Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Darío Husaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bernardo Romeo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Cruz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2821,7 +3465,7 @@
         "defense": 81,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (2001/2002)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2001/2002)",
       "teamLabel": "argentina (2001-02)"
     },
     "2002": {
@@ -2829,139 +3473,173 @@
       "players": [
         {
           "name": "Sebastián Saja",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Burgos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Bonano",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Chamot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Quiroga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mauricio Pochettino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Domínguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Placente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nelson Vivas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Lionel Scaloni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matías Almeyda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Husaín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Simeone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kily González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santiago Solari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcelo Gallardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gustavo López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio Caniggia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luciano Galletti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Javier Saviola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Claudio López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Cruz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2970,7 +3648,7 @@
         "defense": 81,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2002/2003)",
       "teamLabel": "argentina (2002-03)"
     },
     "2004": {
@@ -2978,183 +3656,228 @@
       "players": [
         {
           "name": "Roberto Abbondanzieri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franco Costanzo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Óscar Ustari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pablo Cavallero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Leo Franco",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Germán Lux",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gonzalo Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Quiroga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Heinze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leandro Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Coloccini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Placente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemente Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Lionel Scaloni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Ponzio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nicolás Medina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastián Battaglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Bernardi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucho González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mauro Rosales",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santiago Solari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kily González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Federico Insúa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés D'Alessandro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ibagaza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luciano Galletti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Santana",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mariano González",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "César Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Javier Saviola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luciano Figueroa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3163,7 +3886,7 @@
         "defense": 81,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2004/2005)",
       "teamLabel": "argentina (2004-05)"
     },
     "2006": {
@@ -3171,111 +3894,138 @@
       "players": [
         {
           "name": "Leo Franco",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Óscar Ustari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Abbondanzieri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Heinze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Coloccini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Fuentes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Pablo Sorín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leandro Cufré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemente Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodolfo Arruabarrena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lionel Scaloni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Ponzio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leandro Somoza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucho González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Bilos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Federico Insúa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -3284,31 +4034,38 @@
         },
         {
           "name": "Javier Saviola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Cruz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo Palacio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3317,7 +4074,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2006/2007)",
       "teamLabel": "argentina (2006-07)"
     },
     "2007": {
@@ -3325,167 +4082,208 @@
       "players": [
         {
           "name": "Óscar Ustari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Leo Franco",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roberto Abbondanzieri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Orión",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Pablo Carrizo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gabriel Heinze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ayala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Coloccini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eduardo Tuzzio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonathan Bottinelli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Fuentes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ezequiel Garay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gustavo Cabral",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cata Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemente Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Pinola",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodolfo Arruabarrena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Hugo Ibarra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Gago",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leandro Somoza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leonardo Ponzio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucho González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cristian Ledesma",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Ledesma",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jonás Gutiérrez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Aimar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Román Riquelme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Federico Insúa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Montenegro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Sosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Belluschi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Neri Cardozo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -3494,43 +4292,53 @@
         },
         {
           "name": "Javier Saviola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lisandro López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo Palacio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mariano Pavone",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Germán Denis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3539,7 +4347,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2007/2008)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2007/2008)",
       "teamLabel": "argentina (2007-08)"
     },
     "2010": {
@@ -3547,243 +4355,303 @@
       "players": [
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mariano Andújar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Óscar Ustari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Diego Pozo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nelson Ibáñez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Cristian Campestrini",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Adrián Gabbarini",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Coloccini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Heinze",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Pareja",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Matheu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matías Caruzzo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ignacio Canuto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Manuel Insaurralde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Mercado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paolo Goltz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ariel Garcé",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Guillermo Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonel Galeano",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mariano Echeverría",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cristian Ansaldi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabián Monzón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emiliano Insúa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemente Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cristian Villagra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Gago",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Bolatti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mercier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Franco Razzotti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Sebastián Verón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Walter Erviti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Walter Acevedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nicolás Olmedo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Méndez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Luis Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jonás Gutiérrez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Dátolo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Pastore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés D'Alessandro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastián Blanco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Sosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Federico Insúa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patricio Toranzo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Ortega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Facundo Bertoglio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -3792,47 +4660,58 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martín Palermo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mauro Boselli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Hauche",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Franco Jara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Pablo Pereyra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3841,7 +4720,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (2010/2011)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2010/2011)",
       "teamLabel": "argentina (2010-11)"
     },
     "2011": {
@@ -3849,323 +4728,403 @@
       "players": [
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mariano Andújar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Pablo Carrizo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Orión",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marcelo Barovero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Adrián Gabbarini",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Javier García",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Esteban Andrada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Emiliano Martínez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ezequiel Garay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mateo Musacchio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Pareja",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Burdisso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lisandro López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Fazio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Milito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julián Velázquez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonathan Bottinelli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leandro Desábato",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Tobio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sebastián Domínguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonatan Maidana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Germán Ré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Cellay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cristian Ansaldi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emiliano Insúa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabián Monzón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemente Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emiliano Papa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gastón Díaz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Pillud",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ismael Quílez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Zanetti",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Marcos Angeleri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Esteban Cambiasso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Gago",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fabián Rinaudo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Claudio Yacob",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Bolatti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodrigo Braña",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Agustín Pelletieri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Guiñazú",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Álvarez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tino Costa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucho González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Augusto Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Héctor Canteros",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Rojas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luciano Aued",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ariel Cabral",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Villar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jonás Gutiérrez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Zapata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Pastore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Piatti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Belluschi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Moralez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Walter Montillo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Sosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Váleri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mauro Formica",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés D'Alessandro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cristian Chávez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Morales",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matías Defederico",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Castro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Perotti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nicolás Bertolo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pablo Mouche",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -4174,79 +5133,98 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo Salvio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Manuel Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mauricio Sperduti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo Palacio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Milito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marco Ruben",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Germán Denis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jonatan Cristaldo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Franco Jara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mauro Boselli",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Viatri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gabriel Hauche",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Emmanuel Gigliotti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -4255,7 +5233,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2011/2012)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2011/2012)",
       "teamLabel": "argentina (2011-12)"
     },
     "2014": {
@@ -4263,143 +5241,178 @@
       "players": [
         {
           "name": "Willy Caballero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mariano Andújar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Orión",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nahuel Guzmán",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ezequiel Garay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Fazio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lisandro López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Roncaglia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hugo Campagnaro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José María Basanta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Santiago Vergini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emanuel Mammana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cristian Ansaldi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonel Vangioni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonathan Silva",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gino Peruzzi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Gago",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Álvarez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Pereyra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Augusto Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Pastore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Sosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -4408,31 +5421,38 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo Palacio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -4441,7 +5461,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2014/2015)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2014/2015)",
       "teamLabel": "argentina (2014-15)"
     },
     "2015": {
@@ -4449,127 +5469,158 @@
       "players": [
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mariano Andújar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nahuel Guzmán",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ezequiel Garay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mateo Musacchio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gonzalo Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Roncaglia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lucas Orbán",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Mercado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ramiro Funes Mori",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonatan Maidana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emmanuel Más",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Milton Casco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gino Peruzzi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Gago",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matías Kranevitter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Pereyra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Federico Mancuello",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Pastore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maxi Rodríguez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -4578,35 +5629,43 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Tevez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -4615,7 +5674,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2015/2016)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2015/2016)",
       "teamLabel": "argentina (2015-16)"
     },
     "2016": {
@@ -4623,123 +5682,153 @@
       "players": [
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nahuel Guzmán",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mariano Andújar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mateo Musacchio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ramiro Funes Mori",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Roncaglia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonatan Maidana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Mercado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Demichelis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Victor Cuesta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emmanuel Más",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonel Vangioni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Acuña",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Javier Pinola",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Zabaleta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Buffarini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matías Kranevitter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guido Pizarro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Augusto Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Gaitán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Pastore",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando Belluschi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lautaro Acosta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -4748,39 +5837,48 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ezequiel Lavezzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Pratto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Alario",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -4789,7 +5887,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — argentina (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2016/2017)",
       "teamLabel": "argentina (2016-17)"
     },
     "2018": {
@@ -4797,175 +5895,218 @@
       "players": [
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Romero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nahuel Guzmán",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franco Armani",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Willy Caballero",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Paulo Gazzaniga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Guido Herrera",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ramiro Funes Mori",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Federico Fazio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emanuel Mammana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Germán Pezzella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Mercado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Foyth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Kannemann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alan Franco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Acuña",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Nicolás Tagliafico",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Cristian Ansaldi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabricio Bustos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonel Di Plácido",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Renzo Saravia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leandro Paredes",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Lucas Biglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santiago Ascacíbar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Mascherano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodrigo Battaglia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gastón Giménez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Pereyra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Éver Banega",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodrigo De Paul",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Exequiel Palacios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Franco Vázquez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Manuel Lanzini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gonzalo Martínez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Perotti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Franco Cervi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matías Vargas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -4974,51 +6115,63 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo Salvio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Cristian Pavón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Maximiliano Meza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mauro Icardi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gonzalo Higuaín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Giovanni Simeone",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lautaro Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -5027,7 +6180,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2018/2019)",
       "teamLabel": "argentina (2018-19)"
     },
     "2019": {
@@ -5035,155 +6188,193 @@
       "players": [
         {
           "name": "Franco Armani",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Esteban Andrada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Musso",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Emiliano Martínez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Germán Pezzella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Rojo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ramiro Funes Mori",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Foyth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lisandro Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lucas Martínez Quarta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Figal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gabriel Mercado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Walter Kannemann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leonardo Balerdi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nehuén Pérez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Tagliafico",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Marcos Acuña",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Milton Casco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gonzalo Montiel",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Renzo Saravia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Leandro Paredes",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Guido Pizarro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guido Rodríguez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Iván Marcone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Exequiel Palacios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodrigo De Paul",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roberto Pereyra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nicolás Domínguez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alexis Mac Allister",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Manuel Lanzini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gonzalo Martínez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matías Zaracho",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Ocampos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matías Vargas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nico González",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -5192,51 +6383,63 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Erik Lamela",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Domingo Blanco",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lautaro Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Alario",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Darío Benedetto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matías Suárez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Adolfo Gaich",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -5245,7 +6448,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — argentina (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2019/2020)",
       "teamLabel": "argentina (2019-20)"
     },
     "2021": {
@@ -5253,111 +6456,138 @@
       "players": [
         {
           "name": "Juan Musso",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Emiliano Martínez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Esteban Andrada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Marchesín",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franco Armani",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Agustín Rossi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Lisandro Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Foyth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Germán Pezzella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lucas Martínez Quarta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Medina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Tagliafico",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Marcos Acuña",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Gonzalo Montiel",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Nahuel Molina",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Leandro Paredes",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Guido Rodríguez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Rodrigo De Paul",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Exequiel Palacios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nicolás Domínguez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Ocampos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nico González",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Papu Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -5366,35 +6596,43 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lautaro Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio Agüero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Alario",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julián Alvarez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -5403,7 +6641,7 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — argentina (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2021/2022)",
       "teamLabel": "argentina (2021-22)"
     },
     "2022": {
@@ -5411,127 +6649,158 @@
       "players": [
         {
           "name": "Emiliano Martínez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Musso",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerónimo Rulli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franco Armani",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Esteban Andrada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lisandro Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Foyth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Senesi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lucas Martínez Quarta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Facundo Medina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Otamendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Germán Pezzella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nehuén Pérez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nicolás Tagliafico",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Marcos Acuña",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Gonzalo Montiel",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Nahuel Molina",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Guido Rodríguez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Leandro Paredes",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Rodrigo De Paul",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Exequiel Palacios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alexis Mac Allister",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enzo Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Emiliano Buendía",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Manuel Lanzini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lucas Ocampos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nico González",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thiago Almada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Papu Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lionel Messi",
@@ -5540,35 +6809,43 @@
         },
         {
           "name": "Ángel Di María",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Maximiliano Meza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Dybala",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Ángel Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín Correa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lautaro Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julián Alvarez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lucas Boyé",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -5577,7 +6854,7 @@
         "defense": 85,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — argentina (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2022/2023)",
       "teamLabel": "argentina (2022-23)"
     },
     "2025": {
@@ -5860,7 +7137,7 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — argentina (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” argentina (2025/2026)",
       "teamLabel": "argentina (2025-26)"
     }
   },

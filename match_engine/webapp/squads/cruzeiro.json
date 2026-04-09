@@ -1,6 +1,162 @@
 {
   "slug": "cruzeiro",
-  "seasons": {},
+  "seasons": {
+    "1997": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dida",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Mancini",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Mauro Galvão",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Adriano",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Paulo Isidoro",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Cerezo",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Ronaldo Guiaro",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Ricardinho",
+          "position": "AM",
+          "rating": 87
+        },
+        {
+          "name": "Tulio",
+          "position": "RM",
+          "rating": 83
+        },
+        {
+          "name": "Marcio Santos",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Ronaldo",
+          "position": "ST",
+          "rating": 96
+        },
+        {
+          "name": "Djalminha",
+          "position": "LW",
+          "rating": 89
+        },
+        {
+          "name": "Marcelo Ramos",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "source": "Cruzeiro - Copa Libertadores 1997 (Ronaldo, Djalminha, Dida - doble con league)",
+      "teamLabel": "Cruzeiro (1997)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Rafael Cabral",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "William",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Zé Ivaldo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "João Marcelo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Marlon",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Lucas Silva",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Mateus Vital",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Ramiro",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Matheus Pereira",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Diogo Siston",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Nikão",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Bruno Rodrigues",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Cássio",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Edu",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Robert",
+          "position": "LW",
+          "rating": 75
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/cruzeiro.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Cruzeiro EC",
+  "nameEs": "Cruzeiro EC",
+  "name": "Cruzeiro EC"
 }

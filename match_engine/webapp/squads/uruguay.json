@@ -1,6 +1,603 @@
 {
   "slug": "uruguay",
   "seasons": {
+    "1950": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Aníbal Paz",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roque Máspoli",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Víctor Andrade",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Wílliam Martínez",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Carlos González",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Héctor Vilches",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luis De Angelis",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Matías González",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Eusebio Tejera",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Schúbert Gambetta",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Obdulio Varela",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rodolfo Pini",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Washington Ortuño",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ruben Vanoli",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Schiaffino",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Julio César Britos",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 86
+        },
+        {
+          "name": "Ernesto Vidal",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rubén Morán",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alcides Ghiggia",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Carlos Romero",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luis Alberto Rijo",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hugo Villamide",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nelson Cancela",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Burgueño",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Juan Ramón Orlandi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Julio Pérez",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Oscar Miguez",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Uruguay (1950/1951)",
+      "teamLabel": "Uruguay (1950-51)"
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Juan Castillo",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Martín Silva",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Diego Godín",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Diego Lugano",
+          "position": "CB",
+          "marketValue": 10500000,
+          "rating": 83
+        },
+        {
+          "name": "Martín Cáceres",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jorge Fucile",
+          "position": "CB",
+          "marketValue": 5200000,
+          "rating": 80
+        },
+        {
+          "name": "Maxi Pereira",
+          "position": "CB",
+          "marketValue": 5200000,
+          "rating": 80
+        },
+        {
+          "name": "Álvaro Pereira",
+          "position": "CB",
+          "marketValue": 3250000,
+          "rating": 78
+        },
+        {
+          "name": "Andrés Scotti",
+          "position": "CB",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Carlos Valdez",
+          "position": "CB",
+          "marketValue": 1100000,
+          "rating": 74
+        },
+        {
+          "name": "Mauricio Victorino",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Sebastián Coates",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sebastián Eguren",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Cristian Rodríguez",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Walter Gargano",
+          "position": "CM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Diego Pérez",
+          "position": "CM",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Egidio Arévalo Ríos",
+          "position": "CM",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Álvaro González",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Nicolás Lodeiro",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Ignacio González",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Álvaro Fernández",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jorge Rodríguez",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Gastón Ramírez",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 91
+        },
+        {
+          "name": "Diego Forlán",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Edinson Cavani",
+          "position": "ST",
+          "marketValue": 10500000,
+          "rating": 83
+        },
+        {
+          "name": "Jorge Martínez",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Sebastián Abreu",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sebastián Fernández",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Abel Hernández",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Uruguay (2010/2011)",
+      "teamLabel": "Uruguay (2010-11)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Martín Campaña",
+          "position": "GK",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Martín Silva",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Diego Godín",
+          "position": "CB",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "José María Giménez",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 85
+        },
+        {
+          "name": "Mauricio Lemos",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Diego Laxalt",
+          "position": "CB",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Sebastián Coates",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Martín Cáceres",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Maxi Pereira",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Erick Cabaco",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Marcelo Saracchi",
+          "position": "CB",
+          "marketValue": 1750000,
+          "rating": 75
+        },
+        {
+          "name": "Camilo Mayada",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Gastón Silva",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Emiliano Velázquez",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mathías Suárez",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Guillermo Varela",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Bruno Méndez",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Federico Valverde",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 88
+        },
+        {
+          "name": "Lucas Torreira",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Giorgian de Arrascaeta",
+          "position": "CM",
+          "marketValue": 7500000,
+          "rating": 84
+        },
+        {
+          "name": "Rodrigo Bentancur",
+          "position": "CM",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Gastón Ramírez",
+          "position": "CM",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Gastón Pereiro",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Nicolás Lodeiro",
+          "position": "CM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Matías Vecino",
+          "position": "CM",
+          "marketValue": 23000000,
+          "rating": 79
+        },
+        {
+          "name": "Nahitan Nández",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Carlos Sánchez",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Cristian Rodríguez",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "marketValue": 90000000,
+          "rating": 91
+        },
+        {
+          "name": "Edinson Cavani",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Maxi Gómez",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jonathan Urretaviscaya",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Cristhian Stuani",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Rodríguez",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Uruguay (2018/2019)",
+      "teamLabel": "Uruguay (2018-19)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
@@ -299,7 +896,7 @@
         "defense": 78,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — uruguay (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” uruguay (2025/2026)",
       "teamLabel": "uruguay (2025-26)"
     }
   },

@@ -6,123 +6,153 @@
       "players": [
         {
           "name": "Felip",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Cortés",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Poli",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Félix",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Arce",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jesús Vázquez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lolo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jorge Pérez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Pedro José",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Manuel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Moreno",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Amador",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Kalla",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Vítor Pereira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Edu Moya",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Pier",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Soler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Jonathan",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Renaldo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kiko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Asensio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ramírez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Roberto Morales",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juanra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Julen Gonzalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Acosta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Fran",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mañas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Torrecilla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Curro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -131,11 +161,13 @@
         "defense": 62,
         "goalkeeping": 67
       },
-      "source": "BDFutbol — Extremadura 2001-02 Segunda División",
+      "source": "BDFutbol <\r Otros�\u001d Extremadura 2001-02 Segunda División",
       "teamLabel": "Extremadura 2001-02 Segunda División"
     }
   },
   "name": "Extremadura",
   "badgeLocalPath": "/img/badges/extremadura.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Extremadura",
+  "nameEs": "Extremadura"
 }

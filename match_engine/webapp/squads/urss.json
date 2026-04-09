@@ -1,0 +1,331 @@
+{
+  "slug": "urss",
+  "name": "URSS",
+  "nameEn": "Soviet Union",
+  "nameEs": "Unión Soviética",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/rusia.png",
+  "id": "urss",
+  "seasons": {
+    "1966": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lev Yashin",
+          "position": "GK",
+          "rating": 97
+        },
+        {
+          "name": "Vladimir Ponomarev",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Albert Shesternyov",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Vasyl Turyansky",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Leonid Ostrovskiy",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Valeriy Voronin",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Gennady Logofet",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Igor Chislenko",
+          "position": "RM",
+          "rating": 85
+        },
+        {
+          "name": "Slava Metreveli",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Eduard Malofeev",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Galimzyan Khusainov",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Anzor Kavazashvili",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Viktor Serebryannikov",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Josif Sabo",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Anatoli Banishevskiy",
+          "position": "ST",
+          "rating": 83
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Anzor Kavazashvili",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Revas Dzodzuashvili",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Albert Shesternyov",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Vladimir Kaplichny",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Yevgeny Lovchev",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Gennady Logofet",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Murtaz Khurtsilava",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Anatoli Bishovets",
+          "position": "RW",
+          "rating": 86
+        },
+        {
+          "name": "Vladimir Muntian",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Givi Nodiya",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Gennady Evrushkin",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Viktor Serebryannikov",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "LW",
+          "rating": 88
+        },
+        {
+          "name": "Vitaly Khmelnitsky",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Nikolay Osyanin",
+          "position": "ST",
+          "rating": 81
+        }
+      ]
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rinat Dasayev",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Vagiz Khidiatullin",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Alexander Chivadze",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Tengiz Sulakvelidze",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Sergei Baltacha",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Vladimir Bessonov",
+          "position": "DM",
+          "rating": 85
+        },
+        {
+          "name": "Yuri Gavrilov",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Ramaz Shengelia",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Sergei Andreev",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Sergei Rodionov",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Alexander Demyanenko",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Khoren Oganesian",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Aleksandr Bubnov",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Vitaly Daraselia",
+          "position": "CM",
+          "rating": 82
+        }
+      ]
+    },
+    "1988": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rinat Dasayev",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Vasyl Rats",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Oleg Kuznetsov",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Vagiz Khidiatullin",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Vladimir Bessonov",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Alexei Mikhailichenko",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Aleksandr Zavarov",
+          "position": "AM",
+          "rating": 88
+        },
+        {
+          "name": "Sergei Litovchenko",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Igor Belanov",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Oleg Protasov",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Sergei Gotsmanov",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Victor Pasulko",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Gennadi Litovchenko",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Gela Ketashvili",
+          "position": "RB",
+          "rating": 78
+        }
+      ]
+    }
+  }
+}

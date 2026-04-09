@@ -1,144 +1,431 @@
 {
   "slug": "deutschland",
   "seasons": {
+    "1954": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fritz Herkenrath",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Toni Turek",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Heinz Kubsch",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Heinz Kwiatkowski",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Werner Liebrich",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erich Retter",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fritz Laband",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Josef Posipal",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erich Juskowiak",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Werner Kohlmeyer",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hans Bauer",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Herbert Erhardt",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fritz Walter",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Michael Pfeiffer",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gerhard Harpers",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Karl-Heinz Metzner",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Friedel Schicks",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Horst Eckel",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jakob Miltz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Karl Mai",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erich Schanko",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Josef Röhrig",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jupp Derwall",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Max Morlock",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alfred Pfaff",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hans Schäfer",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paul Mebus",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Uwe Seeler",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "Helmut Rahn",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Bernhard Termath",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alfred Beck",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Erwin Waldner",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Richard Kreß",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bernhard Klodt",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gerhard Kaufhold",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Klaus Stürmer",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Franz Islacker",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Richard Herrmann",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ulrich Biesinger",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ottmar Walter",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 80,
+        "defense": 87,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Germany (1954/1955)",
+      "teamLabel": "Germany (1954-55)"
+    },
     "1966": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Hans Tilkowski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Günter Bernard",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sepp Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franz Beckenbauer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Friedel Lutz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Klaus-Dieter Sieloff",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Willi Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Paul",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sepp Piontek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jürgen Kurbjuhn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hartmut Heidemann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Horst-Dieter Höttges",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Weber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Patzke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karl-Heinz Schnellinger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Max Lorenz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Peter Grosser",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hans Küppers",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Horst Szymaniak",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Ulsaß",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Werner Krämer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Günter Netzer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Wolfgang Overath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Emmerich",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bernd Rupp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Heinz Hornig",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Grabowski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alfred Heiß",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bernd Dörfel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Helmut Haller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Albert Brülls",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerd Müller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Uwe Seeler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sigfried Held",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -147,7 +434,7 @@
         "defense": 85,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (1966/1967)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1966/1967)",
       "teamLabel": "germany (1966-67)"
     },
     "1970": {
@@ -155,123 +442,153 @@
       "players": [
         {
           "name": "Volkmar Groß",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sepp Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Manfred Manglitz",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Horst Wolter",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franz Beckenbauer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Klaus-Dieter Sieloff",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Willi Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Klaus Fichtel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Horst-Dieter Höttges",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Weber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Willi Neuberger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Patzke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karl-Heinz Schnellinger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Bella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Berti Vogts",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Max Lorenz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Peter Dietrich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Heinz Flohe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Günter Netzer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Wolfgang Overath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Franz Roth",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hannes Löhr",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Erich Maas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Grabowski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stan Libuda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Helmut Haller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Uwe Seeler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerd Müller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jupp Heynckes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sigfried Held",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -280,7 +597,7 @@
         "defense": 83,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — germany (1970/1971)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1970/1971)",
       "teamLabel": "germany (1970-71)"
     },
     "1972": {
@@ -288,87 +605,108 @@
       "players": [
         {
           "name": "Wolfgang Kleff",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sepp Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franz Beckenbauer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Horst-Dieter Höttges",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Georg Schwarzenbeck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paul Breitner",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Bella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Berti Vogts",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rainer Bonhof",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Herbert Wimmer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Heinz Flohe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Günter Netzer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hannes Löhr",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Erwin Kremers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Grabowski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Reiner Geye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Uli Hoeneß",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerd Müller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sigfried Held",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Horst Köppel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jupp Heynckes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -377,7 +715,7 @@
         "defense": 85,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — germany (1972/1973)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1972/1973)",
       "teamLabel": "germany (1972-73)"
     },
     "1974": {
@@ -385,131 +723,163 @@
       "players": [
         {
           "name": "Sepp Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Norbert Nigbur",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Wolfgang Kleff",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Franz Beckenbauer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karl-Heinz Körbel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Horst-Dieter Höttges",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Weber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Georg Schwarzenbeck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Cullmann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernard Dietz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paul Breitner",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Helmut Kremers",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Berti Vogts",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rainer Bonhof",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hans-Josef Kapellmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Herbert Wimmer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Nickel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Heinz Flohe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Hölzenbein",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Günter Netzer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Wolfgang Overath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dieter Herzog",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Erwin Kremers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Reiner Geye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Grabowski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josef Pirrung",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rudolf Seliger",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Uli Hoeneß",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Erwin Kostedde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerd Müller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Wolfgang Seel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jupp Heynckes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -518,7 +888,7 @@
         "defense": 86,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — germany (1974/1975)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1974/1975)",
       "teamLabel": "germany (1974-75)"
     },
     "1978": {
@@ -526,119 +896,148 @@
       "players": [
         {
           "name": "Dieter Burdenski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sepp Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Rudi Kargus",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Karlheinz Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rolf Rüssmann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Georg Schwarzenbeck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Cullmann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gerd Zewe",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernard Dietz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Herbert Zimmermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Berti Vogts",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manfred Kaltz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Harald Konopka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Uli Stielike",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rainer Bonhof",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Herbert Neumann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hansi Müller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ronny Borchers",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Heinz Flohe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Manfred Burgsmüller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Hölzenbein",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Erich Beer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rüdiger Abramczik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Toppmöller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Fischer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Rummenigge",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dieter Müller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ronald Worm",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -647,7 +1046,7 @@
         "defense": 81,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (1978/1979)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1978/1979)",
       "teamLabel": "germany (1978-79)"
     },
     "1980": {
@@ -655,131 +1054,163 @@
       "players": [
         {
           "name": "Dieter Burdenski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Toni Schumacher",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Norbert Nigbur",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Walter Junghans",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Eike Immel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ditmar Jakobs",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hans-Peter Briegel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Cullmann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karlheinz Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernard Dietz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Herbert Zimmermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Kurt Niedermayer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manfred Kaltz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rainer Bonhof",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Caspar Memering",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Uli Stielike",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mirko Votava",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karl Allgöwer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hansi Müller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ronny Borchers",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schuster",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Felix Magath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Walter Kelsch",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl Del'Haye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Fischer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Harald Nickel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Rummenigge",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Horst Hrubesch",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -788,7 +1219,7 @@
         "defense": 84,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — germany (1980/1981)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1980/1981)",
       "teamLabel": "germany (1980-81)"
     },
     "1982": {
@@ -796,123 +1227,153 @@
       "players": [
         {
           "name": "Toni Schumacher",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Bernd Franke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Eike Immel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerd Strack",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hans-Peter Briegel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karlheinz Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wilfried Hannes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Holger Hieronymus",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paul Breitner",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Bernd Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manfred Kaltz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Dremmler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Uli Stielike",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stephan Engels",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karl Allgöwer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hansi Müller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pierre Littbarski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schuster",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Norbert Meier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Felix Magath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Frank Mill",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Fischer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Horst Hrubesch",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Rummenigge",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Milewski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Uwe Reinders",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -921,7 +1382,7 @@
         "defense": 85,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (1982/1983)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1982/1983)",
       "teamLabel": "germany (1982-83)"
     },
     "1986": {
@@ -929,143 +1390,178 @@
       "players": [
         {
           "name": "Toni Schumacher",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ulrich Stein",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Eike Immel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Thomas Hörster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matthias Herget",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Klaus Augenthaler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Norbert Eder",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jürgen Kohler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Wolfgang Funkel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Guido Buchwald",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hans-Peter Briegel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karlheinz Förster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Berthold",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ditmar Jakobs",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Brehme",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Frontzeck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ralf Falkenmayer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Wolfgang Rolff",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karl Allgöwer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Olaf Thon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Wolfram Wuttke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pierre Littbarski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Felix Magath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Rummenigge",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Uwe Rahn",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Frank Mill",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Herbert Waas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dieter Eckstein",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roland Wohlfarth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Heinz Gründel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Rummenigge",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Klaus Allofs",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dieter Hoeneß",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1074,7 +1570,7 @@
         "defense": 84,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (1986/1987)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1986/1987)",
       "teamLabel": "germany (1986-87)"
     },
     "1990": {
@@ -1102,7 +1598,8 @@
         },
         {
           "name": "Klaus Augenthaler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matthias Sammer",
@@ -1136,7 +1633,8 @@
         },
         {
           "name": "Paul Steiner",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Brehme",
@@ -1145,11 +1643,13 @@
         },
         {
           "name": "Hans Pflügler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Zorc",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Strunz",
@@ -1158,7 +1658,8 @@
         },
         {
           "name": "Dieter Eilts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
@@ -1177,11 +1678,13 @@
         },
         {
           "name": "Knut Reinhardt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Günter Hermann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Uwe Bein",
@@ -1199,13 +1702,14 @@
           "rating": 82
         },
         {
-          "name": "Thomas Häßler",
+          "name": "Thomas Hä�xler",
           "position": "CM",
           "rating": 83
         },
         {
           "name": "Andreas Möller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Frank Mill",
@@ -1224,7 +1728,8 @@
         },
         {
           "name": "Stefan Kuntz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Riedle",
@@ -1233,7 +1738,8 @@
         },
         {
           "name": "Andreas Thom",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Klinsmann",
@@ -1247,7 +1753,7 @@
         "defense": 86,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — germany (1990/1991)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1990/1991)",
       "teamLabel": "germany (1990-91)"
     },
     "1994": {
@@ -1255,139 +1761,173 @@
       "players": [
         {
           "name": "Bodo Illgner",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Reck",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andreas Köpke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Matthias Sammer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dirk Schuster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jürgen Kohler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Helmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Guido Buchwald",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Berthold",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Wörns",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Brehme",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dieter Eilts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Todt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Strunz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maurizio Gaudino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Basler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Reuter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ralf Weber",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Wagner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andreas Möller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Thomas Häßler",
-          "position": "CM"
+          "name": "Thomas Hä�xler",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mehmet Scholl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Effenberg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Olaf Marschall",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fredi Bobic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Andreas Thom",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karl-Heinz Riedle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stefan Kuntz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Klinsmann",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1396,7 +1936,7 @@
         "defense": 84,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1994/1995)",
       "teamLabel": "germany (1994-95)"
     },
     "1996": {
@@ -1404,123 +1944,153 @@
       "players": [
         {
           "name": "Andreas Köpke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Reck",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Matthias Sammer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stephan Paßlack",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Helmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Spanring",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Markus Babbel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jürgen Kohler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "René Schneider",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jörg Heinrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Tarnat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Steffen Freund",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Strunz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dieter Eilts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Todt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Basler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Reuter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jörg Albertz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andreas Möller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mehmet Scholl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Thomas Häßler",
-          "position": "CM"
+          "name": "Thomas Hä�xler",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dariusz Wosz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Bode",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fredi Bobic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stefan Kuntz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Klinsmann",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Bierhoff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1529,7 +2099,7 @@
         "defense": 84,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (1996/1997)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1996/1997)",
       "teamLabel": "germany (1996-97)"
     },
     "1998": {
@@ -1537,191 +2107,238 @@
       "players": [
         {
           "name": "Andreas Köpke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mustafa Dogan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Wörns",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Linke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stephan Paßlack",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jürgen Kohler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Helmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Markus Babbel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Yves Eigenrauch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jörg Heinrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Tarnat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marko Rehmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sven Kmetsch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Strunz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Nerlinger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Jeremies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carsten Ramelow",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Steffen Freund",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Olaf Thon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Basler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Reuter",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jörg Albertz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ralf Weber",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Reich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lars Ricken",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Beinlich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andreas Möller",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Effenberg",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Thomas Häßler",
-          "position": "CM"
+          "name": "Thomas Hä�xler",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dariusz Wosz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Bode",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Olaf Marschall",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fredi Bobic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carsten Jancker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Rink",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alexander Zickler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jürgen Klinsmann",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Bierhoff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1730,7 +2347,7 @@
         "defense": 82,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” germany (1998/1999)",
       "teamLabel": "germany (1998-99)"
     },
     "2000": {
@@ -1738,127 +2355,158 @@
       "players": [
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hans Jörg Butt",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Markus Babbel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ingo Hertzsch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Wörns",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Linke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jörg Heinrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marko Rehmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zoltan Sebescen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Frank Baumann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lothar Matthäus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Jeremies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carsten Ramelow",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Deisler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Beinlich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mehmet Scholl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Thomas Häßler",
-          "position": "CM"
+          "name": "Thomas Hä�xler",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dariusz Wosz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Bode",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ulf Kirsten",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alexander Zickler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paulo Rink",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michael Preetz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carsten Jancker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Bierhoff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1867,7 +2515,7 @@
         "defense": 75,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — germany (2000/2001)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2000/2001)",
       "teamLabel": "germany (2000-01)"
     },
     "2002": {
@@ -1875,175 +2523,218 @@
       "players": [
         {
           "name": "Frank Rost",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Timo Hildebrand",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hans Jörg Butt",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Wörns",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Linke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ingo Hertzsch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Arne Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christoph Metzelder",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jörg Heinrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Rahn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marko Rehmer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fabian Ernst",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Schindzielorz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Hanno Balitsch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Carsten Ramelow",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Frank Baumann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Kehl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Jeremies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Torsten Frings",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tim Borowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Deisler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Paul Freier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schneider",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Bierofka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jörg Böhme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lars Ricken",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mehmet Scholl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Bode",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Brdaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fredi Bobic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carsten Jancker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerald Asamoah",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martin Max",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alexander Zickler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Bierhoff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2052,7 +2743,7 @@
         "defense": 82,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2002/2003)",
       "teamLabel": "germany (2002-03)"
     },
     "2004": {
@@ -2060,171 +2751,213 @@
       "players": [
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Simon Jentzsch",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Timo Hildebrand",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thomas Linke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Frank Fahrenhorst",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Huth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Arne Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Wörns",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Rahn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Görlitz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Moritz Volz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Hinkel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Patrick Owomoyela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Carsten Ramelow",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Frank Baumann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dietmar Hamann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Kehl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jens Jeremies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Engelhardt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fabian Ernst",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Torsten Frings",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tim Borowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Hitzlsperger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Deisler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Paul Freier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schneider",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Ziege",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerald Asamoah",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fredi Bobic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Kevin Kuranyi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Brdaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Benjamin Lauth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2233,7 +2966,7 @@
         "defense": 78,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — germany (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2004/2005)",
       "teamLabel": "germany (2004-05)"
     },
     "2006": {
@@ -2241,139 +2974,173 @@
       "players": [
         {
           "name": "Timo Hildebrand",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Robert Enke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Kahn",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Nowotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Arne Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christoph Metzelder",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Huth",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alexander Madlung",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcell Jansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Malik Fathi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Patrick Owomoyela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Clemens Fritz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Torsten Frings",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fabian Ernst",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Kehl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tim Borowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Hitzlsperger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Deisler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schneider",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Paul Freier",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Piotr Trochowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Odonkor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Schlaudraff",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerald Asamoah",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mike Hanke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2382,7 +3149,7 @@
         "defense": 83,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2006/2007)",
       "teamLabel": "germany (2006-07)"
     },
     "2008": {
@@ -2390,155 +3157,193 @@
       "players": [
         {
           "name": "René Adler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tim Wiese",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Robert Enke",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Timo Hildebrand",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jens Lehmann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
-          "name": "Serdar Taşçı",
-          "position": "CB"
+          "name": "Serdar Ta�xçı",
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Arne Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Heiko Westermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marvin Compper",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christoph Metzelder",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcell Jansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Schäfer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Clemens Fritz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Hilbert",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Hinkel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Torsten Frings",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Simon Rolfes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jermaine Jones",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Hitzlsperger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gonzalo Castro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tim Borowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tobias Weis",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bernd Schneider",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Piotr Trochowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Marin",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Odonkor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Patrick Helmes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Kevin Kuranyi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stefan Kießling",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Oliver Neuville",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2547,7 +3352,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2008/2009)",
       "teamLabel": "germany (2008-09)"
     },
     "2010": {
@@ -2555,147 +3360,183 @@
       "players": [
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "René Adler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tim Wiese",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tobias Sippel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Hans Jörg Butt",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mats Hummels",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jérôme Boateng",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
-          "name": "Serdar Taşçı",
-          "position": "CB"
+          "name": "Serdar Ta�xçı",
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Holger Badstuber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Heiko Westermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Arne Friedrich",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcell Jansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dennis Aogo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Schmelzer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Schäfer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Kevin Großkreutz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andreas Beck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sascha Riether",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Träsch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stefan Reinartz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sami Khedira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lewis Holtby",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michael Ballack",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Gentner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thomas Hitzlsperger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mesut Özil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Marin",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Piotr Trochowski",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aaron Hunt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "André Schürrle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Müller",
@@ -2704,27 +3545,33 @@
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stefan Kießling",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Patrick Helmes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Cacau",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2733,7 +3580,7 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — germany (2010/2011)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2010/2011)",
       "teamLabel": "germany (2010-11)"
     },
     "2012": {
@@ -2741,123 +3588,153 @@
       "players": [
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "René Adler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ron-Robert Zieler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tim Wiese",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mats Hummels",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jérôme Boateng",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benedikt Höwedes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Holger Badstuber",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roman Neustädter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Heiko Westermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Schmelzer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dennis Aogo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Sebastian Jung",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lars Bender",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sven Bender",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christian Träsch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Simon Rolfes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
+          "name": "İlkay Gündo�xan",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sami Khedira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lewis Holtby",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mesut Özil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Reus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "André Schürrle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Thomas Müller",
@@ -2866,19 +3743,23 @@
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Cacau",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2887,7 +3768,7 @@
         "defense": 83,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2012/2013)",
       "teamLabel": "germany (2012-13)"
     },
     "2014": {
@@ -2895,159 +3776,198 @@
       "players": [
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ron-Robert Zieler",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Roman Weidenfeller",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jérôme Boateng",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mats Hummels",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Per Mertesacker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benedikt Höwedes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Shkodran Mustafi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robin Knoche",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matthias Ginter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Schmelzer",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcell Jansen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonas Hector",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Christian Günter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Lahm",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Kevin Großkreutz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sebastian Jung",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Erik Durm",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Oliver Sorg",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lars Bender",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Christoph Kramer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Rudy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sami Khedira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Max Meyer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maximilian Arnold",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leon Goretzka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Reus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mesut Özil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kevin Volland",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "André Schürrle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Karim Bellarabi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "André Hahn",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sidney Sam",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Thomas Müller",
@@ -3056,19 +3976,23 @@
         },
         {
           "name": "Max Kruse",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Klose",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3077,7 +4001,7 @@
         "defense": 88,
         "goalkeeping": 87
       },
-      "source": "Transfermarkt — germany (2014/2015)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2014/2015)",
       "teamLabel": "germany (2014-15)"
     },
     "2016": {
@@ -3085,143 +4009,178 @@
       "players": [
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Bernd Leno",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kevin Trapp",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jérôme Boateng",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mats Hummels",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Shkodran Mustafi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benedikt Höwedes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emre Can",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Matthias Ginter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonathan Tah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Niklas Süle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonas Hector",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benjamin Henrichs",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Christoph Kramer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Weigl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sebastian Rudy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Joshua Kimmich",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
+          "name": "İlkay Gündo�xan",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sami Khedira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bastian Schweinsteiger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Max Meyer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leon Goretzka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Yannick Gerhardt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Reus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mesut Özil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kevin Volland",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Brandt",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "André Schürrle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karim Bellarabi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leroy Sané",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Thomas Müller",
@@ -3230,15 +4189,18 @@
         },
         {
           "name": "Serge Gnabry",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Podolski",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3247,7 +4209,7 @@
         "defense": 83,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — germany (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2016/2017)",
       "teamLabel": "germany (2016-17)"
     },
     "2018": {
@@ -3255,115 +4217,143 @@
       "players": [
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Bernd Leno",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kevin Trapp",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Niklas Süle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emre Can",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Jonathan Tah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thilo Kehrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Matthias Ginter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mats Hummels",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jérôme Boateng",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nico Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marvin Plattenhardt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonas Hector",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joshua Kimmich",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Sebastian Rudy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
+          "name": "İlkay Gündo�xan",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leon Goretzka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sami Khedira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Reus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Brandt",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Mesut Özil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lars Stindl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Leroy Sané",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Serge Gnabry",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Thomas Müller",
@@ -3377,23 +4367,28 @@
         },
         {
           "name": "Timo Werner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mark Uth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nils Petersen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sandro Wagner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Gómez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3402,7 +4397,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2018/2019)",
       "teamLabel": "germany (2018-19)"
     },
     "2020": {
@@ -3410,135 +4405,168 @@
       "players": [
         {
           "name": "Bernd Leno",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kevin Trapp",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Baumann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Niklas Süle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matthias Ginter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Klostermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Emre Can",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Thilo Kehrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Jonathan Tah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robin Koch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Felix Uduokhai",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcel Halstenberg",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Niklas Stark",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robin Gosens",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Philipp Max",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nico Schulz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ridle Baku",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benjamin Henrichs",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Joshua Kimmich",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Leon Goretzka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Toni Kroos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
+          "name": "İlkay Gündo�xan",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Florian Neuhaus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nadiem Amiri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mahmoud Dahoud",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Suat Serdar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Brandt",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Jonas Hofmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Leroy Sané",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Serge Gnabry",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Kai Havertz",
@@ -3547,11 +4575,13 @@
         },
         {
           "name": "Timo Werner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luca Waldschmidt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3560,7 +4590,7 @@
         "defense": 80,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — germany (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2020/2021)",
       "teamLabel": "germany (2020-21)"
     },
     "2022": {
@@ -3568,95 +4598,118 @@
       "players": [
         {
           "name": "Marc-André ter Stegen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kevin Trapp",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Manuel Neuer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Baumann",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nico Schlotterbeck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Niklas Süle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Rüdiger",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonathan Tah",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Armel Bella-Kotchap",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matthias Ginter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Thilo Kehrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Lukas Klostermann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robin Gosens",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Raum",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Christian Günter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Benjamin Henrichs",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Joshua Kimmich",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Anton Stach",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Weigl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Leon Goretzka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "İlkay Gündoğan",
-          "position": "CM"
+          "name": "İlkay Gündo�xan",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Maximilian Arnold",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Florian Neuhaus",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jamal Musiala",
@@ -3665,31 +4718,38 @@
         },
         {
           "name": "Julian Brandt",
-          "position": "AM"
+          "position": "AM",
+          "rating": 79
         },
         {
           "name": "Jonas Hofmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Götze",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julian Draxler",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Leroy Sané",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Karim Adeyemi",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Serge Gnabry",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Thomas Müller",
@@ -3703,11 +4763,13 @@
         },
         {
           "name": "Youssoufa Moukoko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Timo Werner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Niclas Füllkrug",
@@ -3716,7 +4778,8 @@
         },
         {
           "name": "Lukas Nmecha",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3725,7 +4788,7 @@
         "defense": 80,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — germany (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2022/2023)",
       "teamLabel": "germany (2022-23)"
     },
     "2025": {
@@ -4002,7 +5065,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — germany (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” germany (2025/2026)",
       "teamLabel": "germany (2025-26)"
     }
   },

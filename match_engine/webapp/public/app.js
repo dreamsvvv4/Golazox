@@ -96,7 +96,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
-    'btn-rivalry':'Rivals','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!',
+    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tab-match':'Partido','tab-pen':'Penaltis',
@@ -278,7 +278,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
-    'btn-rivalry':'Rivals','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!',
+    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tab-match':'Match','tab-pen':'Penalties',
@@ -1030,6 +1030,7 @@ const HISTORIC_MATCHES = [
     b: { slug: 'juventus-turin',             era: '1996' } },
   { label: 'Platini vs el Dream Team',       en: 'Platini vs the Dream Team',
     desc: 'Juventus \'85 · Barcelona \'92',
+    competition: 'Partido de Ensueño', round: 'El Eterno Debate',
     a: { slug: 'juventus-turin',             era: '1985' },
     b: { slug: 'fc-barcelona',              era: '1992' } },
   { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',
@@ -1054,17 +1055,17 @@ const HISTORIC_MATCHES = [
     a: { slug: 'club-atletico-boca-juniors', era: '2007' },
     b: { slug: 'club-atletico-river-plate',  era: '2015' } },
   { label: 'Ronaldo vs Ronaldo',             en: 'Ronaldo vs Ronaldo',
-    desc: 'Brasil \'02 · Real Madrid \'18',
+    desc: 'Brasil \'02 · Real Madrid \'17',
     a: { slug: 'brasilien',                  era: '2002' },
-    b: { slug: 'real-madrid',                era: '2018' } },
+    b: { slug: 'real-madrid',                era: '2017' } },
   { label: 'Pep vs Jupp',                    en: 'Pep vs Jupp',
     desc: 'Barcelona \'11 · Bayern \'13',
     a: { slug: 'fc-barcelona',               era: '2011' },
     b: { slug: 'fc-bayern-munchen',          era: '2013' } },
   { label: 'Londres vs Madrid en Kiev',      en: 'London vs Madrid in Kyiv',
-    desc: 'Liverpool \'19 · Real Madrid \'18',
+    desc: 'Liverpool \'19 · Real Madrid \'17',
     a: { slug: 'fc-liverpool',              era: '2019' },
-    b: { slug: 'real-madrid',               era: '2018' } },
+    b: { slug: 'real-madrid',               era: '2017' } },
   { label: 'Porto de Mourinho vs Galácticos',en: 'Mourinho\'s Porto vs Galácticos',
     desc: 'Porto \'04 · Real Madrid \'02',
     a: { slug: 'fc-porto',                   era: '2004' },
@@ -1097,7 +1098,7 @@ const HISTORIC_MATCHES = [
     b: { slug: 'fc-barcelona',               era: '2011' } },
   { label: 'Inventores vs Maestros',         en: 'Inventors vs Masters',
     desc: 'England \'66 · Alemania \'74',
-    a: { slug: 'england',                    era: '1966' },
+    a: { slug: 'england',                    era: '2025' },
     b: { slug: 'deutschland',                era: '1974' } },
   { label: 'El Año de los Pequeños Gigantes',en: 'Year of the Small Giants',
     desc: 'Porto \'04 · Mónaco \'04',
@@ -1105,6 +1106,7 @@ const HISTORIC_MATCHES = [
     b: { slug: 'as-monaco',                  era: '2003' } },
   { label: 'La Final de París',              en: 'The Paris Final',
     desc: 'Portugal \'16 · Francia \'16',
+    year: '2016', round: 'Final', competition: 'Eurocopa 2016',
     a: { slug: 'portugal',                   era: '2016' },
     b: { slug: 'frankreich',                 era: '2016' } },
   { label: 'La Semifinal de San Petersburgo',en: 'The Saint Petersburg Semi',
@@ -1151,7 +1153,7 @@ const HISTORIC_MATCHES = [
     b: { slug: 'frankreich',                 era: '1982' } },
   { label: 'Wembley \'90 — Gazza llora',     en: 'Wembley \'90 — Gazza\'s tears',
     desc: 'Inglaterra \'90 · Alemania \'90',
-    a: { slug: 'england',                    era: '1990' },
+    a: { slug: 'england',                    era: '2025' },
     b: { slug: 'deutschland',                era: '1990' } },
   { label: 'Final Berlín 2006 — El Cabezazo',en: 'Berlin Final 2006 — The Headbutt',
     desc: 'Italia \'06 · Francia \'06',
@@ -1160,7 +1162,7 @@ const HISTORIC_MATCHES = [
   { label: 'La Mano de Dios',               en: 'The Hand of God',
     desc: 'Argentina \'86 · Inglaterra \'86',
     a: { slug: 'argentinien',                era: '1986' },
-    b: { slug: 'england',                    era: '1986' } },
+    b: { slug: 'england',                    era: '2025' } },
   { label: 'Final Buenos Aires \'78',        en: 'Buenos Aires Final \'78',
     desc: 'Argentina \'78 · Holanda \'78',
     a: { slug: 'argentinien',                era: '1978' },
@@ -1209,15 +1211,294 @@ const HISTORIC_MATCHES = [
     desc: 'Brasil \'70 · Holanda \'74',
     a: { slug: 'brasilien',                  era: '1970' },
     b: { slug: 'niederlande',                era: '1974' } },
+
+  // ── Partidos reales históricos con contexto ───────────────
+  { label: 'Final del Azteca \'70 — El Partido del Siglo', en: 'Azteca Final \'70 — Match of the Century',
+    desc: 'Brasil \'70 · Italia \'70',
+    year: '1970', round: 'Final', competition: 'Mundial México 1970',
+    a: { slug: 'brasilien',  era: '1970' },
+    b: { slug: 'italien',    era: '1970' } },
+  { label: 'El Milagro de Estambul — UCL 2005', en: 'The Istanbul Miracle — UCL 2005',
+    desc: 'Liverpool \'05 · AC Milán \'05',
+    year: '2005', round: 'Final', competition: 'Champions League 2004-05',
+    a: { slug: 'fc-liverpool',  era: '2005' },
+    b: { slug: 'ac-mailand',    era: '2005' } },
+  { label: 'Final de Qatar 2022 — El Más Grande', en: 'Qatar 2022 Final — The Greatest',
+    desc: 'Argentina \'22 · Francia \'22',
+    year: '2022', round: 'Final', competition: 'Mundial Qatar 2022',
+    a: { slug: 'argentinien', era: '2022' },
+    b: { slug: 'frankreich',  era: '2022' } },
+  { label: 'El Mineirazo 7-1', en: 'The Mineirazo 7-1',
+    desc: 'Brasil \'14 · Alemania \'14',
+    year: '2014', round: 'Semifinal', competition: 'Mundial Brasil 2014',
+    a: { slug: 'brasilien',   era: '2014' },
+    b: { slug: 'deutschland', era: '2014' } },
+  { label: 'La Noche de Sevilla \'82', en: 'The Night of Seville \'82',
+    desc: 'Italia \'82 · Alemania \'82',
+    year: '1982', round: 'Semifinal', competition: 'Mundial España 1982',
+    a: { slug: 'italien',     era: '1982' },
+    b: { slug: 'deutschland', era: '1982' } },
+  { label: 'Final Múnich 99 — El Último Minuto', en: 'Munich \'99 — The Last Minute',
+    desc: 'Manchester United \'99 · Bayern \'99',
+    year: '1999', round: 'Final', competition: 'Champions League 1998-99',
+    a: { slug: 'manchester-united', era: '1999' },
+    b: { slug: 'fc-bayern-munchen', era: '1999' } },
+  { label: 'El Maracanazo 1950', en: 'The Maracanazo 1950',
+    desc: 'Uruguay \'50 · Brasil \'50',
+    year: '1950', round: 'Final/Decisivo', competition: 'Mundial Brasil 1950',
+    a: { slug: 'uruguay',   era: '1950' },
+    b: { slug: 'brasilien', era: '1950' } },
+  { label: 'Francia Campeona en Casa \'98', en: 'France Champions at Home \'98',
+    desc: 'Francia \'98 · Brasil \'98',
+    year: '1998', round: 'Final', competition: 'Mundial Francia 1998',
+    a: { slug: 'frankreich', era: '1998' },
+    b: { slug: 'brasilien',  era: '1998' } },
+  { label: 'La Remontada del Barça — PSG 2017', en: 'The Comeback — Barça vs PSG 2017',
+    desc: 'Barcelona \'17 · PSG \'17',
+    year: '2017', round: 'Octavos (vuelta)', competition: 'Champions League 2016-17',
+    a: { slug: 'fc-barcelona',          era: '2017' },
+    b: { slug: 'fc-paris-saint-germain',era: '2017' } },
+  { label: 'La Décima — Real Madrid vs Atlético 2014', en: 'La Décima — Real Madrid vs Atlético 2014',
+    desc: 'Real Madrid \'14 · Atlético \'16',
+    year: '2014', round: 'Final', competition: 'Champions League 2013-14',
+    a: { slug: 'real-madrid',    era: '2014' },
+    b: { slug: 'atletico-madrid',era: '2014' } },
+  { label: 'El Milagro de Berna 1954', en: 'The Miracle of Bern 1954',
+    desc: 'Alemania \'54 · Hungría \'54',
+    year: '1954', round: 'Final', competition: 'Mundial Suiza 1954',
+    a: { slug: 'deutschland', era: '1954' },
+    b: { slug: 'ungarn',      era: '1954' } },
+  { label: 'La Mano de Dios — Cuartos \'86', en: 'Hand of God — QF \'86',
+    desc: 'Argentina \'86 · Inglaterra \'86',
+    year: '1986', round: 'Cuartos de Final', competition: 'Mundial México 1986',
+    a: { slug: 'argentinien', era: '1986' },
+    b: { slug: 'england',     era: '1986' } },
+  { label: 'Real Madrid vs Man City — Semifinal 2022', en: 'Real Madrid vs Man City — Semi 2022',
+    desc: 'Real Madrid \'22 · Man City \'22',
+    year: '2022', round: 'Semifinal (vuelta)', competition: 'Champions League 2021-22',
+    a: { slug: 'real-madrid',     era: '2022' },
+    b: { slug: 'manchester-city', era: '2022' } },
+  { label: 'Final Sudáfrica 2010 — España Campeona', en: 'South Africa 2010 Final — Spain Champions',
+    desc: 'España \'10 · Holanda \'10',
+    year: '2010', round: 'Final', competition: 'Mundial Sudáfrica 2010',
+    a: { slug: 'spanien',    era: '2010' },
+    b: { slug: 'niederlande',era: '2010' } },
+  { label: 'Semi UCL 2011 — Barça vs Real Madrid', en: 'UCL 2011 Semi — Barça vs Real Madrid',
+    desc: 'Barcelona \'11 · Real Madrid \'11',
+    year: '2011', round: 'Semifinal (vuelta)', competition: 'Champions League 2010-11',
+    a: { slug: 'fc-barcelona', era: '2011' },
+    b: { slug: 'real-madrid',  era: '2011' } },
+  { label: 'Final Brasil 2014 — El Séptimo Cielo', en: 'Brazil 2014 Final — The Seventh Heaven',
+    desc: 'Alemania \'14 · Argentina \'14',
+    year: '2014', round: 'Final', competition: 'Mundial Brasil 2014',
+    a: { slug: 'deutschland', era: '2014' },
+    b: { slug: 'argentinien', era: '2014' } },
+  { label: 'Final Moscú 2018 — Francia Bicampeona', en: 'Moscow 2018 Final — France Bicampeons',
+    desc: 'Francia \'18 · Croacia \'18',
+    year: '2018', round: 'Final', competition: 'Mundial Rusia 2018',
+    a: { slug: 'frankreich', era: '2018' },
+    b: { slug: 'kroatien',   era: '2018' } },
+  { label: 'Final Amsterdam 1995 — Ajax vs Juventus', en: 'Amsterdam 1995 Final — Ajax vs Juventus',
+    desc: 'Ajax \'95 · Juventus \'96',
+    year: '1995', round: 'Final', competition: 'Champions League 1994-95',
+    a: { slug: 'ajax-amsterdam', era: '1995' },
+    b: { slug: 'juventus-turin', era: '1995' } },
+  { label: 'Anfield 2019 — Liverpool vs Barcelona', en: 'Anfield 2019 — Liverpool vs Barcelona',
+    desc: 'Liverpool \'19 · Barcelona \'19',
+    year: '2019', round: 'Semifinal (vuelta)', competition: 'Champions League 2018-19',
+    a: { slug: 'fc-liverpool', era: '2019' },
+    b: { slug: 'fc-barcelona', era: '2019' } },
+  { label: 'Superclásico 2018 — Copa Libertadores Final', en: 'Superclásico 2018 — Libertadores Final',
+    desc: 'Boca \'18 · River \'18',
+    year: '2018', round: 'Final (vuelta)', competition: 'Copa Libertadores 2018',
+    a: { slug: 'club-atletico-boca-juniors', era: '2018' },
+    b: { slug: 'club-atletico-river-plate',  era: '2018' } },
+  { label: 'Final Berlín 2006 — El Cabezazo', en: 'Berlin 2006 Final — The Headbutt',
+    desc: 'Italia \'06 · Francia \'06',
+    year: '2006', round: 'Final', competition: 'Mundial Alemania 2006',
+    a: { slug: 'italien',    era: '2006' },
+    b: { slug: 'frankreich', era: '2006' } },
+  { label: 'Eintracht Frankfurt 1960 — La Gran Final', en: 'Eintracht Frankfurt 1960 — The Great Final',
+    desc: 'Real Madrid \'60 · Eintracht Frankfurt \'60',
+    year: '1960', round: 'Final', competition: 'Copa de Europa 1959-60',
+    a: { slug: 'real-madrid',         era: '1960' },
+    b: { slug: 'eintracht-frankfurt', era: '1960' } },
+  { label: 'Final Argentina 1978', en: 'Argentina 1978 Final',
+    desc: 'Argentina \'78 · Holanda \'78',
+    year: '1978', round: 'Final', competition: 'Mundial Argentina 1978',
+    a: { slug: 'argentinien', era: '1978' },
+    b: { slug: 'niederlande', era: '1978' } },
+  { label: 'Porto vs Mónaco — Final UCL 2004', en: 'Porto vs Monaco — UCL 2004 Final',
+    desc: 'Porto \'04 · Mónaco \'04',
+    year: '2004', round: 'Final', competition: 'Champions League 2003-04',
+    a: { slug: 'fc-porto',   era: '2004' },
+    b: { slug: 'as-monaco',  era: '2004' } },
+  { label: 'Cruyff vs Beckenbauer — Final 1974', en: 'Cruyff vs Beckenbauer — 1974 Final',
+    desc: 'Holanda \'74 · Alemania \'74',
+    year: '1974', round: 'Final', competition: 'Mundial Alemania 1974',
+    a: { slug: 'niederlande', era: '1974' },
+    b: { slug: 'deutschland', era: '1974' } },
+  { label: 'Los Leones de Lisboa 1967', en: 'The Lions of Lisbon 1967',
+    desc: 'Celtic \'67 · Inter \'67',
+    year: '1967', round: 'Final', competition: 'Copa de Europa 1966-67',
+    a: { slug: 'celtic-glasgow', era: '1967' },
+    b: { slug: 'inter-mailand',  era: '1967' } },
+  { label: 'Final del Bernabéu 1982 — La Naranja Mecánica', en: 'Bernabéu Final 1982',
+    desc: 'Italia \'82 · Alemania \'82',
+    year: '1982', round: 'Final', competition: 'Mundial España 1982',
+    a: { slug: 'italien',     era: '1982' },
+    b: { slug: 'deutschland', era: '1982' } },
+  { label: 'UCL 2011 Final — Barça vs Man Utd', en: 'UCL 2011 Final — Barça vs Man Utd',
+    desc: 'Barcelona \'11 · Man Utd \'11',
+    year: '2011', round: 'Final', competition: 'Champions League 2010-11',
+    a: { slug: 'fc-barcelona',        era: '2011' },
+    b: { slug: 'manchester-united',   era: '2011' } },
+  { label: 'Final México 1986 — Maradona Campeón', en: 'Mexico 1986 Final — Maradona Champion',
+    desc: 'Argentina \'86 · Alemania \'86',
+    year: '1986', round: 'Final', competition: 'Mundial México 1986',
+    a: { slug: 'argentinien', era: '1986' },
+    b: { slug: 'deutschland', era: '1986' } },
+  { label: 'Real Madrid vs Juventus — Final Kiev 2017', en: 'Real Madrid vs Juventus — Kiev Final 2017',
+    desc: 'Real Madrid \'17 · Juventus \'17',
+    year: '2017', round: 'Final', competition: 'Champions League 2016-17',
+    a: { slug: 'real-madrid',    era: '2017' },
+    b: { slug: 'juventus-turin', era: '2017' } },
+  { label: 'Francia vs Brasil — Cuartos \'86', en: 'France vs Brazil — QF \'86',
+    desc: 'Francia \'86 · Brasil \'86',
+    year: '1986', round: 'Cuartos de Final', competition: 'Mundial México 1986',
+    a: { slug: 'frankreich', era: '1986' },
+    b: { slug: 'brasilien',  era: '1986' } },
+  { label: 'Superclásico 2015 — Copa Libertadores', en: 'Superclásico 2015 — Libertadores',
+    desc: 'River \'15 · Boca \'15',
+    year: '2015', round: 'Final', competition: 'Copa Libertadores 2015',
+    a: { slug: 'club-atletico-river-plate',  era: '2015' },
+    b: { slug: 'club-atletico-boca-juniors', era: '2015' } },
+  { label: 'Final Corea 2002 — Brasil Pentacampeón', en: 'Korea 2002 Final — Brazil 5th Title',
+    desc: 'Brasil \'02 · Alemania \'02',
+    year: '2002', round: 'Final', competition: 'Mundial Corea/Japón 2002',
+    a: { slug: 'brasilien',   era: '2002' },
+    b: { slug: 'deutschland', era: '2002' } },
+  { label: 'AC Milán vs Liverpool — Final Atenas 2007', en: 'AC Milan vs Liverpool — Athens Final 2007',
+    desc: 'AC Milán \'07 · Liverpool \'07',
+    year: '2007', round: 'Final', competition: 'Champions League 2006-07',
+    a: { slug: 'ac-mailand',    era: '2007' },
+    b: { slug: 'fc-liverpool',  era: '2007' } },
+  { label: 'Final Euro 2012 — La Furia Roja', en: 'Euro 2012 Final — La Furia Roja',
+    desc: 'España \'12 · Italia \'12',
+    year: '2012', round: 'Final', competition: 'Eurocopa 2012',
+    a: { slug: 'spanien', era: '2012' },
+    b: { slug: 'italien', era: '2012' } },
+  { label: 'Chelsea vs Bayern — Final Múnich 2012', en: 'Chelsea vs Bayern — Munich Final 2012',
+    desc: 'Chelsea \'12 · Bayern \'13',
+    year: '2012', round: 'Final', competition: 'Champions League 2011-12',
+    a: { slug: 'fc-chelsea',        era: '2012' },
+    b: { slug: 'fc-bayern-munchen', era: '2012' } },
+  { label: 'Corea del Sur vs Italia — Octavos 2002', en: 'South Korea vs Italy — R16 2002',
+    desc: 'Corea \'02 · Italia \'02',
+    year: '2002', round: 'Octavos de Final', competition: 'Mundial Corea/Japón 2002',
+    a: { slug: 'sudkorea', era: '2002' },
+    b: { slug: 'italien',  era: '2002' } },
+  { label: 'UCL 2009 Final — Man Utd vs Barcelona', en: 'UCL 2009 Final — Man Utd vs Barça',
+    desc: 'Man Utd \'09 · Barcelona \'09',
+    year: '2009', round: 'Final', competition: 'Champions League 2008-09',
+    a: { slug: 'manchester-united', era: '2009' },
+    b: { slug: 'fc-barcelona',      era: '2009' } },
+  { label: 'Ghana vs Uruguay — Cuartos 2010', en: 'Ghana vs Uruguay — QF 2010',
+    desc: 'Ghana \'10 · Uruguay \'10',
+    year: '2010', round: 'Cuartos de Final', competition: 'Mundial Sudáfrica 2010',
+    a: { slug: 'ghana',   era: '2010' },
+    b: { slug: 'uruguay', era: '2010' } },
+  { label: 'Real Madrid vs Dortmund — Semi 2013', en: 'Real Madrid vs Dortmund — Semi 2013',
+    desc: 'Real Madrid \'13 · Dortmund \'13',
+    year: '2013', round: 'Semifinal', competition: 'Champions League 2012-13',
+    a: { slug: 'real-madrid',      era: '2013' },
+    b: { slug: 'borussia-dortmund',era: '2013' } },
+  { label: 'Final EE.UU. 1994 — Italia vs Brasil', en: 'USA 1994 Final — Italy vs Brazil',
+    desc: 'Italia \'94 · Brasil \'94',
+    year: '1994', round: 'Final', competition: 'Mundial EE.UU. 1994',
+    a: { slug: 'italien',   era: '1994' },
+    b: { slug: 'brasilien', era: '1994' } },
+  { label: 'Bayern vs Barcelona — Cuartos 2020', en: 'Bayern vs Barcelona — QF 2020',
+    desc: 'Bayern \'20 · Barcelona \'20',
+    year: '2020', round: 'Cuartos de Final', competition: 'Champions League 2019-20',
+    a: { slug: 'fc-bayern-munchen', era: '2020' },
+    b: { slug: 'fc-barcelona',      era: '2020' } },
+  { label: 'Francia vs Portugal — Semi 2006', en: 'France vs Portugal — Semi 2006',
+    desc: 'Francia \'06 · Portugal \'06',
+    year: '2006', round: 'Semifinal', competition: 'Mundial Alemania 2006',
+    a: { slug: 'frankreich', era: '2006' },
+    b: { slug: 'portugal',   era: '2006' } },
+  { label: 'Inter vs Bayern — Final Madrid 2010', en: 'Inter vs Bayern — Madrid Final 2010',
+    desc: 'Inter \'10 · Bayern \'10',
+    year: '2010', round: 'Final', competition: 'Champions League 2009-10',
+    a: { slug: 'inter-mailand',     era: '2010' },
+    b: { slug: 'fc-bayern-munchen', era: '2010' } },
+  { label: 'Camerún vs Argentina — Octavos 1990', en: 'Cameroon vs Argentina — R16 1990',
+    desc: 'Camerún \'90 · Argentina \'90',
+    year: '1990', round: 'Octavos de Final', competition: 'Mundial Italia 1990',
+    a: { slug: 'kamerun',      era: '1990' },
+    b: { slug: 'argentinien',  era: '1990' } },
+  { label: 'Croacia vs Inglaterra — Semi 2018', en: 'Croatia vs England — Semi 2018',
+    desc: 'Croacia \'18 · Inglaterra \'18',
+    year: '2018', round: 'Semifinal', competition: 'Mundial Rusia 2018',
+    a: { slug: 'kroatien', era: '2018' },
+    b: { slug: 'england',  era: '2018' } },
+  { label: 'Liverpool vs Tottenham — Final Madrid 2019', en: 'Liverpool vs Tottenham — Madrid Final 2019',
+    desc: 'Liverpool \'19 · Tottenham \'19',
+    year: '2019', round: 'Final', competition: 'Champions League 2018-19',
+    a: { slug: 'fc-liverpool',    era: '2019' },
+    b: { slug: 'tottenham-hotspur',era: '2019' } },
+  { label: 'Bélgica vs Brasil — Cuartos 2018', en: 'Belgium vs Brazil — QF 2018',
+    desc: 'Bélgica \'18 · Brasil \'18',
+    year: '2018', round: 'Cuartos de Final', competition: 'Mundial Rusia 2018',
+    a: { slug: 'belgien',   era: '2018' },
+    b: { slug: 'brasilien', era: '2018' } },
+  { label: 'Real Madrid vs Liverpool — Final Kiev 2018', en: 'Real Madrid vs Liverpool — Kiev Final 2018',
+    desc: 'Real Madrid \'18 · Liverpool \'18',
+    year: '2018', round: 'Final', competition: 'Champions League 2017-18',
+    a: { slug: 'real-madrid',  era: '2018' },
+    b: { slug: 'fc-liverpool', era: '2018' } },
+  { label: 'Man City vs Inter — Final Estambul 2023', en: 'Man City vs Inter — Istanbul Final 2023',
+    desc: 'Man City \'23 · Inter \'23',
+    year: '2023', round: 'Final', competition: 'Champions League 2022-23',
+    a: { slug: 'manchester-city', era: '2023' },
+    b: { slug: 'inter-mailand',   era: '2023' } },
+  { label: 'Uruguay vs Portugal — Octavos 2018', en: 'Uruguay vs Portugal — R16 2018',
+    desc: 'Uruguay \'18 · Portugal \'18',
+    year: '2018', round: 'Octavos de Final', competition: 'Mundial Rusia 2018',
+    a: { slug: 'uruguay',  era: '2018' },
+    b: { slug: 'portugal', era: '2018' } },
+  { label: 'Marruecos vs Portugal — Octavos 2022', en: 'Morocco vs Portugal — R16 2022',
+    desc: 'Marruecos \'22 · Portugal \'22',
+    year: '2022', round: 'Cuartos de Final', competition: 'Mundial Qatar 2022',
+    a: { slug: 'marokko',  era: '2022' },
+    b: { slug: 'portugal', era: '2022' } },
+  { label: 'Chelsea vs Man City — Final Oporto 2021', en: 'Chelsea vs Man City — Porto Final 2021',
+    desc: 'Chelsea \'21 · Man City \'21',
+    year: '2021', round: 'Final', competition: 'Champions League 2020-21',
+    a: { slug: 'fc-chelsea',        era: '2021' },
+    b: { slug: 'manchester-city',   era: '2021' } },
+  { label: 'PSV vs Benfica — Final 1988', en: 'PSV vs Benfica — 1988 Final',
+    desc: 'PSV \'88 · Benfica \'88',
+    year: '1988', round: 'Final', competition: 'Copa de Europa 1987-88',
+    a: { slug: 'psv-eindhoven',   era: '1988' },
+    b: { slug: 'benfica-lissabon',era: '1988' } },
 ];
 
 async function rivalryMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
 
-  const match = HISTORIC_MATCHES[Math.floor(Math.random() * HISTORIC_MATCHES.length)];
-  const entryA = _catalog.find(c => c.slug === match.a.slug);
-  const entryB = _catalog.find(c => c.slug === match.b.slug);
-  if (!entryA || !entryB) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivals')); return; }
+  // Filter to only matches where both teams exist in catalog
+  const available = HISTORIC_MATCHES.filter(m =>
+    _catalog.find(c => c.slug === m.a.slug) && _catalog.find(c => c.slug === m.b.slug)
+  );
+  if (!available.length) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivals')); return; }
+
+  const match = available[Math.floor(Math.random() * available.length)];
+
+  // Always clear stale banners before loading new match
+  _hideRivalryBanner();
+  _hideDerbyBanner();
 
   // Set teams + eras
   document.getElementById('teamA').value = match.a.slug;
@@ -1258,8 +1539,220 @@ async function rivalryMe() {
 
   _gx('rivalry_me', { rivalry: match.label });
 
+  _showRivalryBanner(match);
   showToast(`✅ ${match.desc} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
 }
+
+// ── Derbis ─────────────────────────────────────────────────────────────────
+const WORLD_DERBIES = [
+  { label: 'El Clásico',                    en: 'El Clásico',                  country: 'España',      flag: '🇪🇸',
+    desc: 'FC Barcelona vs Real Madrid',
+    a: { slug: 'fc-barcelona',                era: '2025' },
+    b: { slug: 'real-madrid',                 era: '2025' } },
+  { label: 'El Viejo Firm',                  en: 'The Old Firm',                country: 'Escocia',     flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    desc: 'Celtic vs Rangers',
+    a: { slug: 'celtic-glasgow',              era: '2025' },
+    b: { slug: 'glasgow-rangers',             era: '2025' } },
+  { label: 'Superclásico',                   en: 'Superclásico',                country: 'Argentina',   flag: '🇦🇷',
+    desc: 'Boca Juniors vs River Plate',
+    a: { slug: 'club-atletico-boca-juniors',  era: '2025' },
+    b: { slug: 'club-atletico-river-plate',   era: '2025' } },
+  { label: 'Derby della Madonnina',          en: 'Derby della Madonnina',       country: 'Italia',      flag: '🇮🇹',
+    desc: 'AC Milan vs Inter',
+    a: { slug: 'ac-mailand',                  era: '2025' },
+    b: { slug: 'inter-mailand',               era: '2025' } },
+  { label: 'Derby de Estambul',              en: 'Istanbul Derby',              country: 'Turquía',     flag: '🇹🇷',
+    desc: 'Fenerbahçe vs Galatasaray',
+    a: { slug: 'fenerbahce-sk',               era: '2025' },
+    b: { slug: 'galatasaray-istanbul',        era: '2025' } },
+  { label: 'Liverpool vs Manchester United', en: 'Liverpool vs Man Utd',        country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Liverpool vs Man Utd',
+    a: { slug: 'fc-liverpool',                era: '2025' },
+    b: { slug: 'manchester-united',           era: '2025' } },
+  { label: 'Der Klassiker',                  en: 'Der Klassiker',               country: 'Alemania',    flag: '🇩🇪',
+    desc: 'Bayern Munich vs Borussia Dortmund',
+    a: { slug: 'fc-bayern-munchen',           era: '2025' },
+    b: { slug: 'borussia-dortmund',           era: '2025' } },
+  { label: 'Derby del Norte de Londres',     en: 'North London Derby',          country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Arsenal vs Tottenham',
+    a: { slug: 'fc-arsenal',                  era: '2025' },
+    b: { slug: 'tottenham-hotspur',           era: '2025' } },
+  { label: 'Derby Paulista',                 en: 'Derby Paulista',              country: 'Brasil',      flag: '🇧🇷',
+    desc: 'Corinthians vs Palmeiras',
+    a: { slug: 'corinthians-sao-paulo',       era: '2025' },
+    b: { slug: 'se-palmeiras',                era: '2025' } },
+  { label: 'De Klassieker',                  en: 'De Klassieker',               country: 'Países Bajos',flag: '🇳🇱',
+    desc: 'Ajax vs Feyenoord',
+    a: { slug: 'ajax-amsterdam',             era: '2025' },
+    b: { slug: 'feyenoord-rotterdam',        era: '2025' } },
+  { label: 'Derby de Lisboa',                en: 'Lisboa Derby',                country: 'Portugal',    flag: '🇵🇹',
+    desc: 'Benfica vs Porto',
+    a: { slug: 'benfica-lissabon',           era: '2025' },
+    b: { slug: 'fc-porto',                   era: '2025' } },
+  { label: 'Le Classique',                   en: 'Le Classique',                country: 'Francia',     flag: '🇫🇷',
+    desc: 'Marseille vs PSG',
+    a: { slug: 'olympique-marseille',        era: '2025' },
+    b: { slug: 'fc-paris-saint-germain',     era: '2025' } },
+  { label: 'Derby de Mánchester',            en: 'Manchester Derby',            country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Manchester United vs Manchester City',
+    a: { slug: 'manchester-united',          era: '2025' },
+    b: { slug: 'manchester-city',            era: '2025' } },
+  { label: 'Merseyside Derby',               en: 'Merseyside Derby',            country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Liverpool vs Everton',
+    a: { slug: 'fc-liverpool',               era: '2025' },
+    b: { slug: 'fc-everton',                 era: '2025' } },
+  { label: 'Derby Eterno',                   en: 'Eternal Derby',               country: 'Serbia',      flag: '🇷🇸',
+    desc: 'Estrella Roja vs Partizan',
+    a: { slug: 'red-star-belgrade',          era: '2025' },
+    b: { slug: 'partizan',                   era: '2025' } },
+  { label: 'Derby de Madrid',                en: 'Madrid Derby',                country: 'España',      flag: '🇪🇸',
+    desc: 'Atlético de Madrid vs Real Madrid',
+    a: { slug: 'atletico-madrid',            era: '2025' },
+    b: { slug: 'real-madrid',                era: '2025' } },
+  { label: 'Revierderby',                    en: 'Revierderby',                 country: 'Alemania',    flag: '🇩🇪',
+    desc: 'Borussia Dortmund vs Schalke 04',
+    a: { slug: 'borussia-dortmund',          era: '2025' },
+    b: { slug: 'fc-schalke-04',              era: '2025' } },
+  { label: 'Fla-Flu',                        en: 'Fla-Flu',                     country: 'Brasil',      flag: '🇧🇷',
+    desc: 'Flamengo vs Fluminense',
+    a: { slug: 'flamengo',                   era: '2022' },
+    b: { slug: 'fluminense-rio-de-janeiro',  era: '2023' } },
+  { label: 'Derby de Lisboa — Águias',       en: 'Lisbon Derby — Eagles',       country: 'Portugal',    flag: '🇵🇹',
+    desc: 'Benfica vs Sporting CP',
+    a: { slug: 'benfica-lissabon',           era: '2025' },
+    b: { slug: 'sporting-cp',                era: '2025' } },
+  { label: 'Derby della Capitale',           en: 'Derby della Capitale',        country: 'Italia',      flag: '🇮🇹',
+    desc: 'Roma vs Lazio',
+    a: { slug: 'as-rom',                     era: '2025' },
+    b: { slug: 'lazio-rom',                  era: '2025' } },
+  { label: 'Derby Sevillano',                en: 'Seville Derby',               country: 'España',      flag: '🇪🇸',
+    desc: 'Sevilla vs Betis',
+    a: { slug: 'fc-sevilla',                 era: '2025' },
+    b: { slug: 'real-betis-balompie',        era: '2025' } },
+  { label: 'Clásico del Río de la Plata',   en: 'Uruguayan Clásico',           country: 'Uruguay',     flag: '🇺🇾',
+    desc: 'Nacional vs Peñarol',
+    a: { slug: 'nacional',                   era: '2025' },
+    b: { slug: 'penarol',                    era: '2025' } },
+];
+
+async function derbyMe() {
+  if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
+
+  // Filter to only derbies where both teams exist in catalog
+  const available = WORLD_DERBIES.filter(d =>
+    _catalog.find(c => c.slug === d.a.slug) && _catalog.find(c => c.slug === d.b.slug)
+  );
+  if (!available.length) return;
+
+  const derby = available[Math.floor(Math.random() * available.length)];
+
+  // Always clear stale banners before loading
+  _hideDerbyBanner();
+  _hideRivalryBanner();
+
+  // Pick best available era for each team
+  function _bestEra(slug, preferred) {
+    const entry = _catalog.find(c => c.slug === slug);
+    if (!entry) return preferred;
+    return (entry.seasons || []).includes(preferred) ? preferred : (entry.seasons[0] || preferred);
+  }
+  const eraA = _bestEra(derby.a.slug, derby.a.era);
+  const eraB = _bestEra(derby.b.slug, derby.b.era);
+
+  document.getElementById('teamA').value = derby.a.slug;
+  document.getElementById('teamB').value = derby.b.slug;
+  _populateEraSelect(derby.a.slug, 'A');
+  _populateEraSelect(derby.b.slug, 'B');
+  const selA = document.getElementById('eraA');
+  const selB = document.getElementById('eraB');
+  if (selA && eraA) selA.value = eraA;
+  if (selB && eraB) selB.value = eraB;
+  _eraConfirmed.A = true;
+  _eraConfirmed.B = true;
+  _lookupCache.A = null;
+  _lookupCache.B = null;
+  _pickerState.A = { type: null, league: null }; _renderPicker('A');
+  _pickerState.B = { type: null, league: null }; _renderPicker('B');
+  _updateClashButton();
+
+  const btn    = document.getElementById('btn-derby');
+  const iconEl = btn?.querySelector('.btn-derby-icon');
+  const lblEl  = btn?.querySelector('.btn-derby-lbl');
+  if (btn)    { btn.disabled = true; btn.classList.add('btn-derby--loading'); }
+  if (iconEl) iconEl.textContent = '⏳';
+  if (lblEl)  lblEl.textContent  = t('derby-loading') || 'Cargando…';
+
+  const name = _lang === 'en' ? derby.en : derby.label;
+  showToast(`⚽ ${name}…`);
+
+  _showDerbyBanner(derby);
+
+  try {
+    await Promise.all([handleLookup('A'), handleLookup('B')]);
+  } finally {
+    if (btn)    { btn.disabled = false; btn.classList.remove('btn-derby--loading'); }
+    if (iconEl) iconEl.textContent = '⚽';
+    if (lblEl)  lblEl.textContent  = t('btn-derby') || 'Derbis';
+  }
+
+  _gx('derby_me', { derby: derby.label });
+  showToast(`✅ ${derby.desc} · ${t('derby-ready') || '¡Pulsa ▶ para simular!'}`);
+}
+
+function _flagToISO(flag) {
+  if (!flag) return null;
+  if (flag === '🏴󠁧󠁢󠁳󠁣󠁴󠁿') return 'gb-sct';
+  if (flag === '🏴󠁧󠁢󠁥󠁮󠁧󠁿') return 'gb-eng';
+  if (flag === '🏴󠁧󠁢󠁷󠁬󠁳󠁿') return 'gb-wls';
+  const cps = [...flag].map(c => c.codePointAt(0));
+  if (cps.length === 2 && cps[0] >= 0x1F1E6 && cps[0] <= 0x1F1FF)
+    return String.fromCharCode(cps[0] - 0x1F1E6 + 65, cps[1] - 0x1F1E6 + 65).toLowerCase();
+  return null;
+}
+function _showDerbyBanner(derby) {
+  const banner = document.getElementById('derby-banner');
+  if (!banner) return;
+  const name = _lang === 'en' ? derby.en : derby.label;
+  const iconEl = document.getElementById('derby-banner-icon');
+  const iso = _flagToISO(derby.flag);
+  if (iso) {
+    iconEl.innerHTML = `<img src="https://flagcdn.com/w40/${iso}.webp" alt="${derby.country || ''}" class="derby-flag-img">`;
+  } else {
+    iconEl.textContent = derby.flag || '⚽';
+  }
+  document.getElementById('derby-banner-title').textContent = name;
+  document.getElementById('derby-banner-sub').textContent   = derby.country || '';
+  banner.classList.add('visible');
+  _hideRivalryBanner();
+}
+function _hideDerbyBanner() {
+  const banner = document.getElementById('derby-banner');
+  if (banner) banner.classList.remove('visible');
+}
+function _showRivalryBanner(match) {
+  const banner = document.getElementById('rivalry-banner');
+  if (!banner) return;
+  let mainText, subText;
+  if (match.competition) {
+    mainText = match.round ? `${match.round} ${match.competition}` : match.competition;
+    subText  = match.desc || '';
+  } else {
+    const name = _lang === 'en' ? (match.en || match.label) : match.label;
+    mainText = name;
+    subText  = match.desc || '';
+  }
+  const icon = mainText.includes('Mundial') ? '🌍' : mainText.includes('Libertadores') ? '🌎' : mainText.includes('Intercontinental') ? '🌐' : '🏆';
+  document.getElementById('rivalry-banner-icon').textContent = icon;
+  document.getElementById('rivalry-banner-comp').textContent = mainText;
+  document.getElementById('rivalry-banner-round').textContent = subText;
+  banner.classList.add('visible');
+  _hideDerbyBanner();
+}
+function _hideRivalryBanner() {
+  const banner = document.getElementById('rivalry-banner');
+  if (banner) banner.classList.remove('visible');
+}
+
 function _deepLinkShare() {
   if (!_shareData) return;
   const base = ((window.GOLAZOX_CONFIG?.siteUrl) || location.origin).replace(/\/$/, '');
@@ -2213,11 +2706,6 @@ async function _animatePenShootout(data, nameA, nameB) {
   _penAnimating = false;
 }
 
-function _penShowResults(data, nameA, nameB) {
-  // Delegate to animated version — kept for backward compat
-  _animatePenShootout(data, nameA, nameB);
-}
-
 function _renderPenPicker(side) {
   // Reuse _renderPicker logic but targeting pen-picker-${side} and pen-team${side}
   const container = document.getElementById(`pen-picker-${side}`);
@@ -2404,6 +2892,13 @@ const _NATION_ISO = {
   'switzerland':'ch',   'trinidad-and-tobago':'tt', 'tunisia':'tn', 'turkey':'tr',
   'ukraine':'ua',       'united-states':'us', 'uruguay':'uy',      'uzbekistan':'uz',
   'venezuela':'ve',     'wales':'gb-wls',
+  // Slugs alemán adicionales
+  'angola':'ao',        'bielorrussland':'by', 'benin':'bj',        'bolivien':'bo',
+  'burkina-faso':'bf',  'curacao':'cw',        'dominikanische-republik':'do', 'el-salvador':'sv',
+  'emirate':'ae',       'georgien':'ge',       'guatemala':'gt',    'israel':'il',
+  'katar':'qa',         'nordmazedonien':'mk', 'palastina':'ps',    'rumania':'ro',
+  'sambia':'zm',        'tadschikistan':'tj',  'thailand':'th',     'uganda':'ug',
+  // jugoslawien + urss: no ISO in flagcdn — uses local badge SVG fallback
 };
 const _LEAGUE_META = {
   '🇪🇸 La Liga':           { name:'La Liga',          iso:'es'     , tier:1 },
@@ -2447,6 +2942,8 @@ function _pickerSelectTeam(side, slugVal) {
   _populateEraSelect(slugVal, side);
   _updateClashButton();
   _renderPicker(side);
+  _hideDerbyBanner();
+  _hideRivalryBanner();
   // Flash the team panel to confirm selection
   const col = document.getElementById(`col-${side.toLowerCase()}`);
   if (col) {
@@ -2553,7 +3050,9 @@ function _renderPicker(side) {
         const iso = _NATION_ISO[n.slug.toLowerCase()];
         const flagHtml = iso
           ? `<img class="tp-flag-img" src="https://flagcdn.com/w40/${iso}.png" alt="" loading="lazy">`
-          : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
+          : n.badge && !n.badge.includes('_placeholder')
+            ? `<img class="tp-flag-img" src="${escHtml(n.badge)}" alt="" loading="lazy">`
+            : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
         return `<button class="tp-nation-card" data-pa="team" data-pv="${escHtml(n.slug)}">` +
           flagHtml +
           `<span class="tp-nation-name">${escHtml(_entryName(n))}</span>` +
@@ -2946,6 +3445,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   _on('btn-surprise', () => surpriseMe());
   _on('btn-rivalry',  () => rivalryMe());
+  _on('btn-derby',     () => derbyMe());
   _on('btn-haptic',   () => toggleHaptic());
 
   // Persistent simulate handler — survives _updateClashButton() resets

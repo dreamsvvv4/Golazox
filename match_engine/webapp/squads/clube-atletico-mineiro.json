@@ -26,7 +26,7 @@
           "name": "Gabriel Delfim",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Guilherme Arana",
@@ -98,25 +98,25 @@
           "name": "Hiago",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Micael",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Rubens",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Carlos Daniel",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Matías Zaracho",
@@ -170,19 +170,19 @@
           "name": "Guilherme Castilho",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Yan Phillipe",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Calebe",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Savinho",
@@ -248,25 +248,25 @@
           "name": "Echaporã",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Luiz Filipe",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Fábio Gomes",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Felipe Felicio",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -275,7 +275,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Atletico Mineiro (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Atletico Mineiro (2021/2022)",
       "teamLabel": "Atletico Mineiro (2021-22)"
     },
     "2025": {
@@ -303,7 +303,7 @@
           "name": "Robert",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Renan Lodi",
@@ -357,25 +357,25 @@
           "name": "Samuel",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Vitão",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Kauã Pascini",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Luís Gustavo",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Alexsander",
@@ -447,13 +447,13 @@
           "name": "Igor Toledo",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Índio",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Hulk",
@@ -495,7 +495,7 @@
           "name": "Cauã Soares",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -504,7 +504,7 @@
         "defense": 68,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Atletico Mineiro (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Atletico Mineiro (2025/2026)",
       "teamLabel": "Atletico Mineiro (2025-26)"
     }
   },
@@ -512,5 +512,6 @@
   "name": "Atletico Mineiro",
   "nameEs": "Atlético Mineiro",
   "nameEn": "Atletico Mineiro",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/clube-atletico-mineiro.png"
 }

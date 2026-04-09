@@ -1,6 +1,234 @@
 {
   "slug": "nacional",
-  "seasons": {},
+  "seasons": {
+    "1971": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rodolfo Rodriguez",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Nestor Montelongo",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Victor Esparrago",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Juan Martin Mugica",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Luis Garisto",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Ruben Sosa veteran",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Julio Morales",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Atilio Garcia",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Luis Artime",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Pedro Rocha",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Victor Esparrago",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Nestor Goncalves",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Carlos Marchetti",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Nacional - Copa Libertadores 1971 (Artime, Pedro Rocha, Esparrago)",
+      "teamLabel": "Nacional Montevideo (1971)"
+    },
+    "1988": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Alvez",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Jorge Da Silva",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Nelson Gutierrez",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Roberto Herrera",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Ruben Da Silva",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Carlos Aguilera",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Sergio Moran",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Ruben Sosa",
+          "position": "LW",
+          "rating": 88
+        },
+        {
+          "name": "Santiago Ostolaza",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Albin Juarez",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Carlos Aguilera",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Diego Aguirre",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Alvaro Moran",
+          "position": "ST",
+          "rating": 81
+        }
+      ],
+      "source": "Nacional - Copa Libertadores 1988 (Ruben Sosa, Aguilera, Aguirre)",
+      "teamLabel": "Nacional Montevideo (1988)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sergio Rochet",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Camilo Cándido",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Santiago Bueno",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mathías Laborda",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Matías Viña",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Bentancur",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Nicolás De La Cruz",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Facundo Torres",
+          "position": "RW",
+          "rating": 81
+        },
+        {
+          "name": "Brian Ocampo",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Gastón Pereiro",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Gonzalo Castellani",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ramón Arias",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Lucas Olaza",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Emmanuel Gigliotti",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Sebastián Coates",
+          "position": "CB",
+          "rating": 80
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/nacional.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Club Nacional",
+  "nameEs": "Club Nacional",
+  "name": "Club Nacional"
 }

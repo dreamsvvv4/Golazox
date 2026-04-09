@@ -6,95 +6,118 @@
       "players": [
         {
           "name": "Sléo Freiburghaus",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Luca Pappalardo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Simon Michellod",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Alexander Golay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Damien Mayagal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Epiphany Okondi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Anderson Gonçalves",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Raphaël Glauser",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Alex Hofmann",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Dieudonné Cheubou Ngoun",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Bryan Aleme",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Thomas Longué N'sombé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Yanis Arezki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Matias Hofmann",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "David Krasniqi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Pedro Teixeira",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jambaldorj Enkhtur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Diamantino Rocha",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ange Dakouri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Tiago Nassunculo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Gabriel Manzambi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Fábio Delgado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Loan Bueche",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -103,12 +126,14 @@
         "defense": 64,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — Freiburg (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Freiburg (2025/2026)",
       "teamLabel": "Freiburg (2025-26)"
     }
   },
   "id": 9127,
   "name": "Freiburg",
   "badgeLocalPath": "/img/badges/freiburg.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Freiburg",
+  "nameEs": "Freiburg"
 }

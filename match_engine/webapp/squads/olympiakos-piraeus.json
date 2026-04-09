@@ -1,5 +1,234 @@
 {
   "slug": "olympiakos-piraeus",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/olympiakos-piraeus.png"
+  "seasons": {
+    "1997": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Antonis Nikopolidis",
+          "position": "GK",
+          "rating": 86
+        },
+        {
+          "name": "Christos Kontis",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Nikos Dabizas",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Stylianos Manolas",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Nikos Kostenoglou",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Predrag Djordjevic",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Alexei Michailichenko",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Nikos Tsiantakis",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Giovanni",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Stelios Giannakopoulos",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Dimitris Mavrogenidis",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Krzysztof Warzycha",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Alexey Lebedenko",
+          "position": "ST",
+          "rating": 81
+        }
+      ],
+      "source": "Olympiacos - Liga griega 1996-97 + UCL (era Giovanni, Djordjevic, Dabizas)",
+      "teamLabel": "Olympiacos (1996-97)"
+    },
+    "2000": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Antonis Nikopolidis",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Christos Patsatzoglou",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Nikos Dabizas",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Traianos Dellas",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Nikos Kostenoglou",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Predrag Djordjevic",
+          "position": "DM",
+          "rating": 85
+        },
+        {
+          "name": "Stelios Giannakopoulos",
+          "position": "AM",
+          "rating": 88
+        },
+        {
+          "name": "Takis Fyssas",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Rivaldo",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Yiotis Tsiartas",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Dimitris Papadopoulos",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Costas Konstantinidis",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Milinko Pantic",
+          "position": "AM",
+          "rating": 82
+        }
+      ],
+      "source": "Olympiacos - Liga griega 1999-2000 (Nikopolidis, Stelios, Djordjevic)",
+      "teamLabel": "Olympiacos (1999-2000)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Tomas Vaclik",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Rodinei",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Pipa",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Oleg Reabciuk",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Guilherme Arana",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Andreas Bouchalakis",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Kostas Fortounis",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Mady Camara",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Yann M'Vila",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Ayoub El Kaabi",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Hwang Ui-jo",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Hamza Mendyl",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Giorgos Masouras",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Chiquinho",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Christos Dinas",
+          "position": "CB",
+          "rating": 74
+        }
+      ]
+    }
+  },
+  "badgeLocalPath": "/img/badges/olympiakos-piraeus.png",
+  "group": "🌍 Otros",
+  "nameEn": "Olympiakos Piraeus",
+  "nameEs": "Olympiakos Piraeus",
+  "name": "Olympiakos Piraeus"
 }

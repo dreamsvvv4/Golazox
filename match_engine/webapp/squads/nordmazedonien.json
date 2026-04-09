@@ -1,0 +1,91 @@
+{
+  "slug": "nordmazedonien",
+  "name": "Nordmazedonien",
+  "nameEn": "North Macedonia",
+  "nameEs": "Macedonia del Norte",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/nordmazedonien.png",
+  "id": "nordmazedonien",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Stole Dimitrievski",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Stefan Ristovski",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Egzon Bejtulai",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Darko Velkovski",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ezgjan Alioski",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Enis Bardhi",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Boban Nikolov",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Aleksandar Trajkovski",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Elif Elmas",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Goran Pandev",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Gjoko Zajkov",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Adis Jahovic",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Tihomir Kostadinov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ivan Trickovski",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Darko Churlinov",
+          "position": "LW",
+          "rating": 77
+        }
+      ]
+    }
+  }
+}

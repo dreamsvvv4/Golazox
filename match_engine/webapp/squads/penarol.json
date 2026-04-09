@@ -1,6 +1,234 @@
 {
   "slug": "penarol",
-  "seasons": {},
+  "seasons": {
+    "1966": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ladislao Mazurkiewicz",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Nestor Goncalves",
+          "position": "DM",
+          "rating": 87
+        },
+        {
+          "name": "Pedro Virgilio",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Nestor Montes",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Julio Rodriguez",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Washington Ortiz",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Pedro Rocha",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Ruben Moron",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Alberto Spencer",
+          "position": "ST",
+          "rating": 92
+        },
+        {
+          "name": "Juan Eduardo Hohberg",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Jorge Jara",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Ricardo Embon",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Nelson Cabrera",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Penarol - Copa Libertadores 1966 (Spencer, Mazurkiewicz, Rocha - tres Libertadores consecutivas)",
+      "teamLabel": "Penarol (1966)"
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rodolfo Rodriguez",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Nelson Gutierrez",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Sergio Mora",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Eduardo Acevedo",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Ricardo Perdomo",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Fernando Morena",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Jorge Castro",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Ruben Paz",
+          "position": "AM",
+          "rating": 85
+        },
+        {
+          "name": "Jorge Barrios",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Eduardo Acosta",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Victor Diogo",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "William Martinez",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Santiago Ostolaza",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Penarol - Copa Libertadores 1982 (Morena, Ruben Paz - quinta Libertadores)",
+      "teamLabel": "Penarol (1982)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Kevin Dawson",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Pedro Milans",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Gary Kagelmacher",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Guzmán Corujo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Javier Méndez",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Damián García",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Jesús Trindade",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Leo Fernández",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Agustín Álvarez Martínez",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Carlos De Pena",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Adrián Martínez",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Diego Rossi",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Nicolás Rossi",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Walter Gargano",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Facundo Pellistri",
+          "position": "RW",
+          "rating": 80
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/penarol.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Club Atlético Peñarol",
+  "nameEs": "Club Atlético Peñarol",
+  "name": "Club Atlético Peñarol"
 }

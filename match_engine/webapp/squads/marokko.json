@@ -1,6 +1,289 @@
 {
   "slug": "marokko",
   "seasons": {
+    "2022": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Yassine Bounou",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Munir El Kajoui",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Anas Zniti",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ahmed Reda Tagnaouti",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Nayef Aguerd",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 87
+        },
+        {
+          "name": "Noussair Mazraoui",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 87
+        },
+        {
+          "name": "Romain Saïss",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 79
+        },
+        {
+          "name": "Adam Masina",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Badr Benoun",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Sofiane Alakouch",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Achraf Dari",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jawad El Yamiq",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Samy Mmaee",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fahd Moufi",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Soufiane Chakla",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mohamed Chibi",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Souffian El Karouani",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Yahia Attiyat Allah",
+          "position": "CB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Sofyan Amrabat",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 86
+        },
+        {
+          "name": "Bilal El Khannouss",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 85
+        },
+        {
+          "name": "Imrân Louza",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Munir El Haddadi",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Sofiane Boufal",
+          "position": "CM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Selim Amallah",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Adel Taarabt",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ilias Chair",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Younès Belhanda",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Fayçal Fajr",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Abdelhamid Sabiri",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Aymen Barkok",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Azzedine Ounahi",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Yahya Jabrane",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Hakim Ziyech",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 84
+        },
+        {
+          "name": "Amine Harit",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Abde Ezzalzouli",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Youssef En-Nesyri",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 82
+        },
+        {
+          "name": "Abderrazak Hamdallah",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Soufiane Rahimi",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Zakaria Aboukhlal",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tarik Tissoudali",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ayoub El Kaabi",
+          "position": "ST",
+          "marketValue": 1900000,
+          "rating": 76
+        },
+        {
+          "name": "Ryan Mmaee",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Anass Zaroury",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Walid Cheddira",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 72,
+        "defense": 83,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Morocco (2022/2023)",
+      "teamLabel": "Morocco (2022-23)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
@@ -503,12 +786,14 @@
         "defense": 81,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — MArruecos (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” MArruecos (2025/2026)",
       "teamLabel": "MArruecos (2025-26)"
     }
   },
   "id": 3575,
   "name": "Marruecos",
   "badgeLocalPath": "/img/badges/marruecos.png",
-  "group": "🌍 Selecciones"
+  "group": "🌍 Selecciones",
+  "nameEn": "Morocco",
+  "nameEs": "Marruecos"
 }

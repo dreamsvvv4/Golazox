@@ -1,0 +1,91 @@
+{
+  "slug": "bielorrussland",
+  "name": "Weißrussland",
+  "nameEn": "Belarus",
+  "nameEs": "Bielorrusia",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/bielorrussland.png",
+  "id": "bielorrussland",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Andrei Gorbunov",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Nikita Naumov",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Aleksandr Martynovich",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Maksim Volkov",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Andrei Bordachev",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Stanislav Dragun",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Nikita Korzun",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pavel Nekhaychik",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Dmitri Baga",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Denis Laptev",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Igor Stasevich",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Timofei Kalachev",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Maksim Skavysh",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Artem Bykov",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Yegor Filipenko",
+          "position": "CB",
+          "rating": 73
+        }
+      ]
+    }
+  }
+}

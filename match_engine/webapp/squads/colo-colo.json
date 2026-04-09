@@ -1,6 +1,234 @@
 {
   "slug": "colo-colo",
-  "seasons": {},
+  "seasons": {
+    "1991": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fernando Astengo",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Héctor Puebla",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Jorge Aravena",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Lizandro Azócar",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Carlos Hurtado",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Patricio Mardones",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Marcelo Espina",
+          "position": "AM",
+          "rating": 87
+        },
+        {
+          "name": "Rubén Marcos",
+          "position": "RM",
+          "rating": 82
+        },
+        {
+          "name": "Leonel Contreras",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Lizama",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Esteban Paredes",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Carlos Cornejo",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Marcelo Barticciotto",
+          "position": "ST",
+          "rating": 85
+        }
+      ],
+      "source": "Colo-Colo <\r Otros�\u001d Copa Libertadores 1991 (único título chileno, Espina, Barticciotto)",
+      "teamLabel": "Colo-Colo (1991)"
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Cristian Álvarez",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Rodrigo Meléndez",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Gonzalo Fierro",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Rodrigo Goldberg",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Jean Beausejour",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Arturo Sanhueza",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Humberto Suazo",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Pablo Contreras",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Emilio Hernández",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Freddy González",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Reinaldo Navia",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Mathías Vidangossy",
+          "position": "LM",
+          "rating": 79
+        }
+      ],
+      "source": "Colo-Colo <\r Otros�\u001d Liga chilena 2006 (Humberto Suazo, joven Alexis Sánchez)",
+      "teamLabel": "Colo-Colo (2006)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Brayan Cortés",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Óscar Opazo",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Maximiliano Falcón",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Emiliano Amor",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jeyson Rojas",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Arturo Vidal",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Esteban Pavez",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Carlos Palacios",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Damián Pizarro",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Leonardo Gil",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Óscar Estupiñán",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Jordhy Thompson",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Vicente Pizarro",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Gabriel Suazo",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Lucas Cepeda",
+          "position": "RW",
+          "rating": 76
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/colo-colo.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Colo-Colo",
+  "nameEs": "Colo-Colo",
+  "name": "Colo-Colo"
 }

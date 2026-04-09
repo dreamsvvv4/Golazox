@@ -6,127 +6,158 @@
       "players": [
         {
           "name": "Federico Losas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Enrique Bologna",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Sebastián Anchoverri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Gastón Fernández",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Gonzalo Mottes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Milton Leyendeker",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Julián Velázquez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nicolás Pantaleone",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Tomás Migliore",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Santiago Acosta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nicolás Chaves",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Brian Calderara",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Simón Ávalos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ezequiel Moya",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Gonzalo Dell'Aquila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Francisco Facello",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Miguel Mellado",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tomás Pérez Serra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Luciano Perdomo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Maximiliano Meléndez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Álvaro Cuello",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lisandro Montenegro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lucas Bustos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lorenzo Brun",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Juan Cuevas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Misael Jaime",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Sebastián Ramírez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mario Sanabria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juan Barbieri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Favio Cabral",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Francisco Cristaldo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -135,12 +166,14 @@
         "defense": 65,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Bologna (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Bologna (2025/2026)",
       "teamLabel": "Bologna (2025-26)"
     }
   },
   "id": 2154,
   "name": "Bologna",
   "badgeLocalPath": "/img/badges/bologna.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Chacarita Juniors",
+  "nameEs": "Chacarita Juniors"
 }

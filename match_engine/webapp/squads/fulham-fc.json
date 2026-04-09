@@ -7,53 +7,68 @@
       "players": [
         {
           "name": "Bernd Leno",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Kenny Tete",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Calvin Bassey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Joachim Andersen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jorge Cuenca",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Harrison Reed",
-          "position": "DM"
+          "position": "DM",
+          "rating": 76
         },
         {
           "name": "Harry Wilson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tom Cairney",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Raúl Jiménez",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Rodrigo Muniz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Oscar Bobb",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         }
       ],
       "ratings": null,
-      "source": "Wikipedia — \"Fulham F.C.\"",
+      "source": "Wikipedia 🌍 Otros€” \"Fulham F.C.\"",
       "teamLabel": "fulham-fc (2025)"
     }
   },
-  "name": "fulham-fc"
+  "name": "fulham-fc",
+  "badgeLocalPath": "/img/badges/fc-fulham.png",
+  "nameEn": "fulham-fc",
+  "nameEs": "fulham-fc",
+  "group": "🌍 Otros"
 }

@@ -1,0 +1,91 @@
+{
+  "slug": "palastina",
+  "name": "Palästina",
+  "nameEn": "Palestine",
+  "nameEs": "Palestina",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/palastina.png",
+  "id": "palastina",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Rami Hamada",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Tamer Seyam",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Musab Battat",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Sameh Maraaba",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Saleh",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Oday Dabbagh",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Akram Khadir",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Mohammed Rashid",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Yashir Pinto",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Ali Saleh",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Khaled Salem",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Alexis Norambuena",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Dani Glück",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Mahmoud Abukawik",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Nail Salkic",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    }
+  }
+}

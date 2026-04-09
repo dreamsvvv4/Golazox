@@ -1,6 +1,314 @@
 {
   "slug": "dynamo-kyiv",
-  "seasons": {},
+  "seasons": {
+    "1975": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Evhen Rudakov",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Vasyl Bereznytsky",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Mykhailo Fomenko",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Stefan Reshko",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Viktor Matvienko",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Vladimir Muntian",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Vasyl Kolotov",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Viktor Zubarev",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "LW",
+          "rating": 94
+        },
+        {
+          "name": "Oleksandr Buryak",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Viktor Kolotov",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Vladimir Veremeyev",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Leonid Buryak",
+          "position": "AM",
+          "rating": 85
+        },
+        {
+          "name": "Ivan Belanov",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Volodymyr Onishchenko",
+          "position": "ST",
+          "rating": 85
+        }
+      ]
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Viktor Chanov",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Oleg Blokhin",
+          "position": "LW",
+          "rating": 93
+        },
+        {
+          "name": "Vasyl Rats",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Sergei Baltacha",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Anatoliy Demyanenko",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Oleksiy Mikhaylichenko",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Vasyl Evtushenko",
+          "position": "RM",
+          "rating": 83
+        },
+        {
+          "name": "Pavlo Yakovenko",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Igor Belanov",
+          "position": "AM",
+          "rating": 91
+        },
+        {
+          "name": "Vadym Yevtushenko",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Oleg Kuznetsov",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Ivan Yaremchuk",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Aleksander Zavarov",
+          "position": "AM",
+          "rating": 88
+        }
+      ],
+      "source": "Dynamo Kyiv <\r Otros�\u001d Recopa de Europa 1985-86 (Blokhin, Belanov Balón de Oro)",
+      "teamLabel": "Dynamo Kyiv (1985-86)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Olexandr Shovkovskiy",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Oleg Luzhny",
+          "position": "RB",
+          "rating": 86
+        },
+        {
+          "name": "Serhiy Fedorov",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Vladyslav Vashchuk",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Oleksiy Mikhaylichenko",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Andriy Husin",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Dmytro Mykhaylenko",
+          "position": "LM",
+          "rating": 81
+        },
+        {
+          "name": "Serhiy Rebrov",
+          "position": "AM",
+          "rating": 89
+        },
+        {
+          "name": "Andriy Shevchenko",
+          "position": "ST",
+          "rating": 95
+        },
+        {
+          "name": "Yuri Maximov",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Marc Caneira",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Georgi Peev",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Valentin Belkevich",
+          "position": "CM",
+          "rating": 84
+        }
+      ],
+      "source": "Dynamo Kyiv 🌍 Otros€” UCL Semifinal 1998-99 (Shevchenko 8 goles, Rebrov, Luzhny)",
+      "teamLabel": "Dynamo Kyiv (1998-99)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Heorhiy Bushchan",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Oleksandr Tymchyk",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Illya Zabarnyi",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Artem Shabanov",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Taras Stepanenko",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Mykola Shaparenko",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Vladyslav Vanat",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Oleksiy Kashchuk",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Artem Dovbyk",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Mykhailo Mudryk",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Georgiy Sudakov",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Viktor Tsygankov",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Denys Popov",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nazar Voloshyn",
+          "position": "LM",
+          "rating": 74
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/dynamo-kyiv.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Dynamo Kyiv",
+  "nameEs": "Dynamo Kiev",
+  "name": "Dynamo Kyiv"
 }

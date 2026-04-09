@@ -1,0 +1,91 @@
+{
+  "slug": "thailand",
+  "name": "Thailand",
+  "nameEn": "Thailand",
+  "nameEs": "Tailandia",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/thailand.png",
+  "id": "thailand",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Kawin Thamsatchanan",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Theerathon Bunmathan",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Pansa Hemviboon",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Tristan Do",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Peerapat Notechaiya",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Chanathip Songkrasin",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Sarach Yooyen",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Supachai Chaided",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Teerasil Dangda",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Supachok Sarachat",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Tristan Do",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Korrakot Wiriya-udomsiri",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ekanit Panya",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Pokklaw Anan",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jakkaphan Kaewprom",
+          "position": "AM",
+          "rating": 74
+        }
+      ]
+    }
+  }
+}

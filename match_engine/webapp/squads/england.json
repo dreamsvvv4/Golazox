@@ -1,6 +1,518 @@
 {
   "slug": "england",
   "seasons": {
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Peter Shilton",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "David Seaman",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Chris Woods",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gary Bailey",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mark Wright",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gary Mabbutt",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Dave Watson",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alvin Martin",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Terry Butcher",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Terry Fenwick",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gary Stevens",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kenny Sansom",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gary Stevens",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Viv Anderson",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bryan Robson",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Ricky Hill",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Peter Reid",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ray Wilkins",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gordon Cowans",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stewart Robson",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Steve Hodge",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Neil Webb",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Trevor Steven",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "John Barnes",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Glenn Hoddle",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gary Lineker",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 87
+        },
+        {
+          "name": "Peter Beardsley",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 84
+        },
+        {
+          "name": "Tony Woodcock",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Danny Wallace",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Chris Waddle",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Trevor Francis",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tony Cottee",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mark Hateley",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kerry Dixon",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 79,
+        "defense": 83,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — England (1986/1987)",
+      "teamLabel": "England (1986-87)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 85
+        },
+        {
+          "name": "Jack Butland",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Joe Hart",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Tom Heaton",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alex McCarthy",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Marcus Bettinelli",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nick Pope",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 88
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Danny Rose",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Phil Jones",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Luke Shaw",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 84
+        },
+        {
+          "name": "Gary Cahill",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Joe Gomez",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 83
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 82
+        },
+        {
+          "name": "Harry Maguire",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 81
+        },
+        {
+          "name": "Alfie Mawson",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ashley Young",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ben Chilwell",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ross Barkley",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "James Maddison",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 85
+        },
+        {
+          "name": "Dele Alli",
+          "position": "CM",
+          "marketValue": 60000000,
+          "rating": 83
+        },
+        {
+          "name": "Jesse Lingard",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Alex Oxlade-Chamberlain",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 82
+        },
+        {
+          "name": "Fabian Delph",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ruben Loftus-Cheek",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 82
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Jake Livermore",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 80
+        },
+        {
+          "name": "Harry Winks",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Nathaniel Chalobah",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lewis Cook",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Mason Mount",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 91
+        },
+        {
+          "name": "Raheem Sterling",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 89
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 86
+        },
+        {
+          "name": "Jadon Sancho",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 84
+        },
+        {
+          "name": "Jamie Vardy",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Demarai Gray",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Callum Wilson",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 79,
+        "defense": 83,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — England (2018/2019)",
+      "teamLabel": "England (2018-19)"
+    },
     "2025": {
       "formation": "4-4-2",
       "players": [
@@ -251,7 +763,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "DB local — England (2025)",
+      "source": "DB local 🌍 Otros€” England (2025)",
       "teamLabel": "England (2025)"
     }
   },
@@ -259,5 +771,6 @@
   "nameEs": "Inglaterra",
   "nameEn": "England",
   "group": "🌍 Selecciones",
-  "badgeLocalPath": "/img/badges/england.png"
+  "badgeLocalPath": "/img/badges/england.png",
+  "id": 3299
 }

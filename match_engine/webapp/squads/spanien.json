@@ -6,127 +6,158 @@
       "players": [
         {
           "name": "Antonio Betancort",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Ángel Iribar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Miguel Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ferran Olivella",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paco Santamaría",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gallego",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eladio Silvestre",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Severino Reija",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Feliciano Rivilla",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Violeta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Paquito García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ignacio Zoco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Glaría",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josep Fusté",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcial Pina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Aragonés",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis del Sol",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Suárez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adelardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Paco Gento",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Lapetra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Amancio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín Peiró",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Ansola",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vavá",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José María",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vicente Jara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Ufarte",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marcelino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -135,7 +166,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — spain (1966/1967)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1966/1967)",
       "teamLabel": "spain (1966-67)"
     },
     "1970": {
@@ -143,103 +174,128 @@
       "players": [
         {
           "name": "José Ángel Iribar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Sol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Hita",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gallego",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eladio Silvestre",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joaquim Rifé",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Francisco Melo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Violeta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Quique Costas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcial Pina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enrique Lora",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Rodilla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Aragonés",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adelardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Manuel Asensi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Txetxu Rojo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Amancio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carles Rexach",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Quini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón Grosso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Antón Arieta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Eulogio Gárate",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fidel Uriarte",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Ufarte",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -248,7 +304,7 @@
         "defense": 77,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — spain (1970/1971)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1970/1971)",
       "teamLabel": "spain (1970-71)"
     },
     "1974": {
@@ -256,119 +312,148 @@
       "players": [
         {
           "name": "Juan Antonio Deusto",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Ángel Iribar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Sol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jesús Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joaquín Irles",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Goyo Benito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Migueli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Luis Capón",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Benítez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Francisco Uría",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ángel María Villar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ángel Castellanos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ignacio Churruca",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Quique Costas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Claramunt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcial Pina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Planas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Manuel Asensi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Irureta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Amancio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carles Rexach",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Quini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Óscar Valdez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Eulogio Gárate",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roberto Martínez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Enrique Galán",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Antonio García Soriano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -377,7 +462,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — spain (1974/1975)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1974/1975)",
       "teamLabel": "spain (1974-75)"
     },
     "1978": {
@@ -385,191 +470,238 @@
       "players": [
         {
           "name": "Miguel Ángel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Javier Urruti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Luis Arconada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Luis Manzanedo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ángel Lanchas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Ramón Alexanko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Anero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Goyo Benito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Canito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Felipe",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Botubot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Migueli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Biosca",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Olmo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javier Escalza",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Verdugo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Francisco Uría",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Cundi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Gordillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Toño de la Cruz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Carrete",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ángel María Villar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcelino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Isidoro San José",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vicente del Bosque",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonio Guzmán",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Eugenio Leal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pirri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Mari Zamora",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tente Sánchez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julio Cardeñosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Manuel Asensi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Solsona",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Txetxu Rojo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roberto López Ufarte",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juanito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Enrique Saura",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dani",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carles Rexach",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Quini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Carlos Heredia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jesús Satrustegui",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Santillana",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Estanis Argote",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rafa Marañón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pichi Alonso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rubén Cano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -578,7 +710,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — spain (1978/1979)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1978/1979)",
       "teamLabel": "spain (1978-79)"
     },
     "1982": {
@@ -586,135 +718,168 @@
       "players": [
         {
           "name": "Javier Urruti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Miguel Ángel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Luis Arconada",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Ramón Alexanko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paco Bonet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Tendillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Jiménez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Maceda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Gordillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gerardo Miranda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan José",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Santi Urkiaga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Periko Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Muñoz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Francisco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Mari Zamora",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan José Estella",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tente Sánchez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcos Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Señor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Joaquín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Enrique Martín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roberto López Ufarte",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juanito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Carlos Pedraza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Enrique Saura",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pello Uralde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Quini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jesús Satrustegui",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Santillana",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -723,7 +888,7 @@
         "defense": 80,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — spain (1982/1983)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1982/1983)",
       "teamLabel": "spain (1982-83)"
     },
     "1986": {
@@ -731,115 +896,143 @@
       "players": [
         {
           "name": "Javier Urruti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Carlos Ablanedo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Carlos Arteche",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Maceda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andoni Goikoetxea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Genar Andrinua",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Gordillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Alberto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomás Reñones",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Chendo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eusebio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Muñoz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Quique Setién",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Francisco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ramón Calderé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Míchel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Joaquín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Señor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pello Uralde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lobo Carrasco",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Emilio Butragueño",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Poli Rincón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Salinas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eloy Olaya",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -848,7 +1041,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — spain (1986/1987)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1986/1987)",
       "teamLabel": "spain (1986-87)"
     },
     "1988": {
@@ -856,171 +1049,213 @@
       "players": [
         {
           "name": "Juan Carlos Ablanedo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Paco Buyo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jon Andoni Larrañaga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andoni Goikoetxea",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Tendillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Patxi Salinas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis García",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Genar Andrinua",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Gorriz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Patxi Ferreira",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Serna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Julio Alberto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nando",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Antonio Camacho",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Jiménez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Gordillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Chucho Solana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miquel Soler",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Chendo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luis López Rekarte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomás Reñones",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Quique Sánchez Flores",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eusebio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ricardo Gallego",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Muñoz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ramón Calderé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Míchel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Señor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Joaquín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Mari Bakero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rafa Martín Vázquez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Txiki Begiristain",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lobo Carrasco",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Salinas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Manolo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Emilio Butragueño",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eloy Olaya",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ramón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1029,7 +1264,7 @@
         "defense": 81,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — España (1988/1989)",
+      "source": "Transfermarkt <\r Otros�\u001d España (1988/1989)",
       "teamLabel": "España (1988-89)"
     },
     "1990": {
@@ -1037,135 +1272,168 @@
       "players": [
         {
           "name": "José Manuel Ochotorena",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juan Carlos Ablanedo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Alkorta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Genar Andrinua",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Sanchís",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Gorriz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nando",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanito Rodríguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Serna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manolo Jiménez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Chendo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Quique Sánchez Flores",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ricardo Bango",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guillermo Amor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Milla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Fernández",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Míchel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jon Andoni Goikoetxea",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rafa Paz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Villarroya",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Mari Bakero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rafa Martín Vázquez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Txiki Begiristain",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miguel Pardeza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Salinas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Emilio Butragueño",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eloy Olaya",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Manolo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ernesto Valverde",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Carlos Muñoz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1174,7 +1442,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — spain (1990/1991)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1990/1991)",
       "teamLabel": "spain (1990-91)"
     },
     "1994": {
@@ -1182,147 +1450,183 @@
       "players": [
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Julen Lopetegui",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Alkorta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanma López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paco Camarasa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Abelardo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Voro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Nadal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergi Barjuan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Otero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iñigo Larrainzar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Belsué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Albert Ferrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Donato",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pep Guardiola",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guillermo Amor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Luis Caminero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jon Andoni Goikoetxea",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adolfo Aldana",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Amavisca",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fran",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Chano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julen Guerrero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Mari Bakero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Felipe Miñambres",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ángel Cuéllar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Txiki Begiristain",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paquete Higuera",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juanele",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Antonio Pizzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Cuco Ziganda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pier",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Salinas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1331,7 +1635,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — spain (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1994/1995)",
       "teamLabel": "spain (1994-95)"
     },
     "1996": {
@@ -1339,127 +1643,158 @@
       "players": [
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Francisco Molina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ríos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanma López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Alkorta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Abelardo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Nadal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Agustín Aranzabal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergi Barjuan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Otero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Albert Ferrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Armando Álvarez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Belsué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pep Guardiola",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Donato",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Luis Caminero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guillermo Amor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jon Andoni Goikoetxea",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fran",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Amavisca",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julen Guerrero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Manjarín",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ismael Urzaiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Antonio Pizzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alfonso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Kiko Narváez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Julio Salinas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1468,7 +1803,7 @@
         "defense": 82,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — spain (1996/1997)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1996/1997)",
       "teamLabel": "spain (1996-97)"
     },
     "1998": {
@@ -1476,171 +1811,213 @@
       "players": [
         {
           "name": "Toni Jiménez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andoni Zubizarreta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Francisco Molina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Paco Jémez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Helguera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Santi Denia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roberto Ríos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcelino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rafael Alkorta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Abelardo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Nadal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Agustín Aranzabal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergi Barjuan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Albert Ferrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Juan Carlos Aguilera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Campo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Albert Celades",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ito",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vicente Engonga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guillermo Amor",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcos Vales",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fernando",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javi de Pedro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bittor Alkiza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Valerón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julen Guerrero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jordi Lardín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joseba Etxeberria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Sánchez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dani García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Santiago Ezquerro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ismael Urzaiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Juan Antonio Pizzi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alfonso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Mari",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Kiko Narváez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1649,7 +2026,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — spain (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” spain (1998/1999)",
       "teamLabel": "spain (1998-99)"
     },
     "2000": {
@@ -1657,183 +2034,228 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Juanmi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "César Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Esteban",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "José Francisco Molina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Paco Jémez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Helguera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Abelardo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juan Velasco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enrique Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergi Barjuan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Agustín Aranzabal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanfran",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Pablo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Campo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javier Farinós",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pep Guardiola",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Albert Celades",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rubén Baraja",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gerard López",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vicente Engonga",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gaizka Mendieta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fran",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Julen Guerrero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Cembranos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Valerón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Víctor Sánchez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Francisco Rufete",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joseba Etxeberria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro Munitis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Salva Ballesta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Catanha",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ismael Urzaiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Víctor Fernández",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl Tamudo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dani García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alfonso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1842,7 +2264,7 @@
         "defense": 80,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — spain (2000/2001)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2000/2001)",
       "teamLabel": "spain (2000-01)"
     },
     "2002": {
@@ -1850,175 +2272,218 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ricardo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pedro Contreras",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Fernando Hierro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Bravo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Martín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Marchena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "García Calvo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Helguera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel Nadal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
-          "name": "Óscar Téllez",
-          "position": "CB"
+          "name": "�\u001cscar Téllez",
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanfran",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergi Barjuan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Agustín Aranzabal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joan Capdevila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enrique Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Curro Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Orbaiz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Albelda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tiko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rubén Baraja",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio González",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gaizka Mendieta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis Enrique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javi de Pedro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Capi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Valerón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vicente",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Albert Luque",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joseba Etxeberria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro Munitis",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Mari",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Tristán",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl Tamudo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2027,7 +2492,7 @@
         "defense": 82,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — spain (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2002/2003)",
       "teamLabel": "spain (2002-03)"
     },
     "2004": {
@@ -2035,147 +2500,183 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Aranzubia",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Marchena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iván Helguera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Ibáñez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Martín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Bravo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Asier del Horno",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joan Capdevila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Enrique Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Pablo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Aitor López Rekarte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Albelda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gabri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Orbaiz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rubén Baraja",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Guti",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Carlos Valerón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vicente",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Albert Luque",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Antonio Reyes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joaquín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Víctor Sánchez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joseba Etxeberria",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miguel Ángel Angulo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl Tamudo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Salva Ballesta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2184,7 +2685,7 @@
         "defense": 82,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — spain (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2004/2005)",
       "teamLabel": "spain (2004-05)"
     },
     "2005": {
@@ -2407,7 +2908,7 @@
         "defense": 83,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — España (2005/2006)",
+      "source": "Transfermarkt <\r Otros�\u001d España (2005/2006)",
       "teamLabel": "España (2005-06)"
     },
     "2006": {
@@ -2415,135 +2916,168 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Santiago Cañizares",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Marchena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Ibáñez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Lopo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javi Navarro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joan Capdevila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mariano Pernía",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Puerta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Míchel Salgado",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ángel López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Albelda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcos Senna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Borja Oubiña",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Joaquín",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Antonio Reyes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luis García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miguel Ángel Angulo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Villa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Javier Arizmendi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2552,7 +3086,7 @@
         "defense": 83,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — spain (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2006/2007)",
       "teamLabel": "spain (2006-07)"
     },
     "2008": {
@@ -2560,139 +3094,173 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Andrés Palop",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Albiol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Marchena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pablo Ibáñez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanito",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Amorebieta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joan Capdevila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Fernando Navarro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andoni Iraola",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ángel López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Albelda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcos Senna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luis García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rubén de la Red",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santi Cazorla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Albert Riera",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Diego Capel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bojan Krkic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Villa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dani Güiza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Llorente",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Sergio García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2701,7 +3269,7 @@
         "defense": 90,
         "goalkeeping": 89
       },
-      "source": "Transfermarkt — spain (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2008/2009)",
       "teamLabel": "spain (2008-09)"
     },
     "2010": {
@@ -2709,135 +3277,168 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Víctor Valdés",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Diego López",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerard Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javi Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Albiol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carlos Marchena",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Monreal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Joan Capdevila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bruno Soriano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marcos Senna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santi Cazorla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Borja Valero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Navas",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pablo Hernández",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Villa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Llorente",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álvaro Negredo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Aritz Aduriz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dani Güiza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2846,7 +3447,7 @@
         "defense": 91,
         "goalkeeping": 90
       },
-      "source": "Transfermarkt — spain (2010/2011)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2010/2011)",
       "teamLabel": "spain (2010-11)"
     },
     "2012": {
@@ -2854,159 +3455,198 @@
       "players": [
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Víctor Valdés",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "David de Gea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerard Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javi Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Carles Puyol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Albiol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Álvaro Domínguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Monreal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jordi Alba",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Álvaro Arbeloa",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andoni Iraola",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Juanfran Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martín Montoya",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bruno Soriano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Javi García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santi Cazorla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thiago Alcántara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Beñat Etxebarria",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Navas",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Iker Muniain",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Markel Susaeta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Villa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Llorente",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álvaro Negredo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roberto Soldado",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Adrián López",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3015,7 +3655,7 @@
         "defense": 90,
         "goalkeeping": 89
       },
-      "source": "Transfermarkt — spain (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2012/2013)",
       "teamLabel": "spain (2012-13)"
     },
     "2014": {
@@ -3023,183 +3663,228 @@
       "players": [
         {
           "name": "David de Gea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kiko Casilla",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Víctor Valdés",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gerard Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Javi Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Azpilicueta",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Marc Bartra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Albiol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jordi Alba",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Juan Bernat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alberto Moreno",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Juanfran Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ander Iturraspe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ignacio Camacho",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xabi Alonso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bruno Soriano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mikel San José",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Santi Cazorla",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thiago Alcántara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Xavi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Navas",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Raúl García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Munir El Haddadi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nolito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Callejón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Costa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álvaro Negredo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paco Alcácer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerard Deulofeu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Villa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Fernando Torres",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3208,7 +3893,7 @@
         "defense": 85,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — spain (2014/2015)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2014/2015)",
       "teamLabel": "spain (2014-15)"
     },
     "2016": {
@@ -3216,203 +3901,253 @@
       "players": [
         {
           "name": "David de Gea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Rico",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Adrián San Miguel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Sergio Asenjo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Iker Casillas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pau López",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Gerard Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Azpilicueta",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Javi Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iñigo Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Gaspar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marc Bartra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jorge Meré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jordi Alba",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Nacho Monreal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Héctor Bellerín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lucas Vázquez",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Juanfran Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mikel San José",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Bruno Soriano",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thiago Alcántara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Saúl Ñíguez",
-          "position": "CM"
+          "name": "Saúl �\u0018íguez",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Cesc Fàbregas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ander Herrera",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergi Roberto",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Juan Mata",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Asensio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Denis Suárez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vitolo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nolito",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pedro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "José Callejón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Iñaki Williams",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Costa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paco Alcácer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Iago Aspas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mikel Oyarzabal",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Aritz Aduriz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3421,7 +4156,7 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — spain (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2016/2017)",
       "teamLabel": "spain (2016-17)"
     },
     "2018": {
@@ -3429,175 +4164,218 @@
       "players": [
         {
           "name": "David de Gea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kepa Arrizabalaga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pau López",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pepe Reina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marcos Alonso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gerard Piqué",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Azpilicueta",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Iñigo Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Hermoso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Yeray Álvarez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marc Bartra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jesús Vallejo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Raúl Albiol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jordi Alba",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "José Gayà",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Monreal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Lucas Vázquez",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Álvaro Odriozola",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jonny Otto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodri",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Saúl Ñíguez",
-          "position": "CM"
+          "name": "Saúl �\u0018íguez",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thiago Alcántara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergi Roberto",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Dani Ceballos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dani Parejo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrés Iniesta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marco Asensio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Isco",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Suso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Brais Méndez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Silva",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Paco Alcácer",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Iago Aspas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Diego Costa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3606,7 +4384,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — spain (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2018/2019)",
       "teamLabel": "spain (2018-19)"
     },
     "2020": {
@@ -3614,103 +4392,128 @@
       "players": [
         {
           "name": "David de Gea",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Kepa Arrizabalaga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Unai Simón",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Iñigo Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pau Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eric García",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "José Gayà",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sergio Reguilón",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Marc Cucurella",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Héctor Bellerín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rodri",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fabián Ruiz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Thiago Alcántara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergi Roberto",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Dani Ceballos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mikel Merino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "José Campaña",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Navas",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Marco Asensio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dani Olmo",
@@ -3719,39 +4522,48 @@
         },
         {
           "name": "Sergio Canales",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Óscar Rodríguez",
-          "position": "CM"
+          "name": "�\u001cscar Rodríguez",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ansu Fati",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Adama Traoré",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mikel Oyarzabal",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Rodrigo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ferran Torres",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Gerard Moreno",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3760,7 +4572,7 @@
         "defense": 85,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — spain (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2020/2021)",
       "teamLabel": "spain (2020-21)"
     },
     "2022": {
@@ -3768,79 +4580,98 @@
       "players": [
         {
           "name": "Unai Simón",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "David Raya",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Robert Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Arnau Tenas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pau Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Aymeric Laporte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Iñigo Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Eric García",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Alonso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "César Azpilicueta",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "José Gayà",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jordi Alba",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Alejandro Balde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Rodri",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Hugo Guillamón",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sergio Busquets",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedri",
@@ -3849,11 +4680,13 @@
         },
         {
           "name": "Carlos Soler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Koke",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gavi",
@@ -3867,15 +4700,18 @@
         },
         {
           "name": "Marco Asensio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Sarabia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ansu Fati",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nico Williams",
@@ -3884,23 +4720,28 @@
         },
         {
           "name": "Yéremy Pino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ferran Torres",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Raúl de Tomás",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Borja Iglesias",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -3909,7 +4750,7 @@
         "defense": 82,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — spain (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2022/2023)",
       "teamLabel": "spain (2022-23)"
     },
     "2024": {
@@ -3917,59 +4758,73 @@
       "players": [
         {
           "name": "David Raya",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Robert Sánchez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Álex Remiro",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Unai Simón",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pau Torres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robin Le Normand",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Aymeric Laporte",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dani Vivian",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Aitor Paredes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nacho Fernández",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pau Cubarsí",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Alejandro Grimaldo",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Marc Cucurella",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Sergio Gómez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pedro Porro",
@@ -3978,31 +4833,38 @@
         },
         {
           "name": "Marcos Llorente",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Carvajal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Óscar Mingueza",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rodri",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Martín Zubimendi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pepelu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marc Casadó",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pedri",
@@ -4011,23 +4873,28 @@
         },
         {
           "name": "Mikel Merino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fabián Ruiz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Barrios",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aleix García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jesús Navas",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Dani Olmo",
@@ -4036,15 +4903,18 @@
         },
         {
           "name": "Oihan Sancet",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Fermín López",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pablo Sarabia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nico Williams",
@@ -4053,19 +4923,23 @@
         },
         {
           "name": "Rodrigo Riquelme",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Álex Baena",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bryan Gil",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Bryan Zaragoza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lamine Yamal",
@@ -4074,35 +4948,43 @@
         },
         {
           "name": "Yéremy Pino",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mikel Oyarzabal",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Ferran Torres",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Álvaro Morata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Samu Aghehowa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Gerard Moreno",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ayoze Pérez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Joselu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -4111,7 +4993,7 @@
         "defense": 87,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — spain (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2024/2025)",
       "teamLabel": "spain (2024-25)"
     },
     "2025": {
@@ -4358,7 +5240,7 @@
         "defense": 87,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — spain (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” spain (2025/2026)",
       "teamLabel": "spain (2025-26)"
     }
   },

@@ -50,7 +50,6 @@
 :root {
   --bg:          #080b14;
   --bg-card:     rgba(255,255,255,0.04);
-  --bg-card-hov: rgba(255,255,255,0.07);
   --border:      rgba(255,255,255,0.09);
   --border-glow: rgba(0,212,255,0.35);
   --neon:        #00d4ff;
@@ -3834,12 +3833,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Soft radial corona that expands/contracts */
-@keyframes gx-corona {
-  0%,100% { opacity: .25; transform: scale(.88); }
-  50%      { opacity: .55; transform: scale(1.05); }
-}
-
 /* Energy SVG line in the button */
 @keyframes energy-flow {
   0%   { stroke-dashoffset: 80; opacity: .5; }
@@ -3950,7 +3943,90 @@ body {
   text-shadow: 0 0 8px rgba(0,212,255,.5);
 }
 .vs-clash-label.visible { display: block; }
-.vs-badge.vs-ready .clash-l1 { display: none; }
+
+/* ── Derby Banner ────────────────────────────────────────────── */
+.derby-banner {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: .18rem;
+  padding: .5rem .8rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0,180,80,.14) 0%, rgba(0,255,120,.07) 100%);
+  border: 1px solid rgba(0,200,80,.35);
+  box-shadow: 0 0 14px rgba(0,180,80,.18), inset 0 0 8px rgba(0,255,120,.04);
+  text-align: center;
+  min-width: 130px;
+  max-width: 170px;
+  width: max-content;
+  animation: derby-in .3s ease;
+}
+.derby-banner.visible { display: flex; }
+@keyframes derby-in {
+  from { opacity: 0; transform: translateY(-6px) scale(.95); }
+  to   { opacity: 1; transform: none; }
+}
+.derby-banner-icon  { font-size: 1.6rem; line-height: 1; display:flex; align-items:center; justify-content:center; }
+.derby-flag-img     { width: 36px; height: auto; border-radius: 4px; display: block; }
+.derby-banner-title {
+  font: 800 .75rem/1.15 'Rajdhani', sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #50ffaa;
+  text-shadow: 0 0 8px rgba(0,255,120,.45);
+  white-space: normal;
+  word-break: break-word;
+  max-width: 160px;
+}
+.derby-banner-sub {
+  font: 600 .6rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(80,220,130,.65);
+  white-space: normal;
+  word-break: break-word;
+  max-width: 160px;
+}
+
+/* ── Rivalry Banner ─────────────────────────────────────────── */
+.rivalry-banner {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: .18rem;
+  padding: .5rem .8rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255,200,0,.14) 0%, rgba(255,160,0,.07) 100%);
+  border: 1px solid rgba(255,200,0,.35);
+  box-shadow: 0 0 14px rgba(255,180,0,.18), inset 0 0 8px rgba(255,220,0,.04);
+  text-align: center;
+  min-width: 130px;
+  max-width: 170px;
+  width: max-content;
+  animation: derby-in .3s ease;
+}
+.rivalry-banner.visible { display: flex; }
+.rivalry-banner-icon  { font-size: 1.15rem; line-height: 1; }
+.rivalry-banner-comp {
+  font: 800 .72rem/1.15 'Rajdhani', sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #ffd040;
+  text-shadow: 0 0 8px rgba(255,200,0,.5);
+  white-space: normal;
+  word-break: break-word;
+  max-width: 160px;
+}
+.rivalry-banner-round {
+  font: 600 .6rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,200,80,.7);
+  white-space: normal;
+  word-break: break-word;
+  max-width: 160px;
+}
+
 .vs-badge.vs-ready .clash-l2 { display: none; }
 
 /* ── Rivalry & Surprise-mini buttons inside vs-col ─────────── */
@@ -3990,6 +4066,38 @@ body {
   50%      { box-shadow: 0 0 20px rgba(0,212,255,.45); }
 }
 .btn-rivalry--loading { animation: pulse-rivalry .9s ease-in-out infinite; }
+
+.btn-derby {
+  display: flex; align-items: center; gap: .35rem;
+  padding: .38rem .75rem;
+  border-radius: 20px;
+  font: 700 .72rem/1 'Rajdhani', sans-serif;
+  letter-spacing: .06em; text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(0,200,80,.18) 0%, rgba(0,255,120,.10) 100%);
+  border: 1px solid rgba(0,200,80,.45);
+  color: rgba(80,220,130,.95);
+  cursor: pointer;
+  transition: background .15s, transform .12s, box-shadow .15s;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(0,180,80,.15);
+}
+.btn-derby:hover {
+  background: linear-gradient(135deg, rgba(0,200,80,.30) 0%, rgba(0,255,120,.20) 100%);
+  box-shadow: 0 0 18px rgba(0,200,80,.35);
+  transform: scale(1.04);
+  color: #50ffaa;
+}
+.btn-derby:active { transform: scale(.94); }
+.btn-derby-icon { font-size: .9rem; }
+.btn-derby-lbl  { font-size: .7rem; }
+.btn-derby--loading {
+  opacity: .7;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(0,212,255,.12) 0%, rgba(0,180,255,.08) 100%);
+  border-color: rgba(0,212,255,.3);
+  color: rgba(0,212,255,.8);
+  animation: pulse-rivalry .9s ease-in-out infinite;
+}
 
 .btn-surprise-mini {
   display: flex; align-items: center; gap: .35rem;

@@ -1,6 +1,86 @@
 {
   "slug": "lazio-rom",
   "seasons": {
+    "1974": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Felice Pulici",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Petrini",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Giuseppe Wilson",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Polentes",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Martini",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Luciano Re Cecconi",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Mario Frustalupi",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Renzo Garlaschelli",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Giulio Vassallo",
+          "position": "LM",
+          "rating": 79
+        },
+        {
+          "name": "Giorgio Chinaglia",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Tommaso Maestrelli",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Odoacre Chierico",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Vincenzo D'Amico",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Roberto Garlaschelli",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pino Wilson",
+          "position": "CB",
+          "rating": 84
+        }
+      ]
+    },
     "1998": {
       "formation": "4-4-2",
       "players": [
@@ -14,13 +94,13 @@
           "name": "Luca Marchegiani",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Emanuele Concetti",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Stefano Di Fiordo",
@@ -38,121 +118,121 @@
           "name": "Sinisa Mihajlovic",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Stefano Lombardi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giovanni Lopez",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Fernando Couto",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Maurizio Domizzi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giuseppe Favalli",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paolo Negro",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giuseppe Pancaro",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dario Marcolin",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Federico Crovari",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Okon",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Matías Almeyda",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roberto Baronio",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Valentino Sbaccanti",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dejan Stanković",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giorgio Venturin",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giampiero Pinzi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Guerino Gottardi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Pavel Nedved",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Iván de la Peña",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Christian Vieri",
@@ -170,55 +250,55 @@
           "name": "Roberto Rambaudi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Attilio Lombardo",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Emanuele Berrettoni",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Roberto Mancini",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Alessandro Iannuzzi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Daniele Morante",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Igor Protti",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Marcelo Salas",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
-          "name": "Alen Bokšić",
+          "name": "Alen Bokši�!",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -227,7 +307,7 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — Lazio (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” Lazio (1998/1999)",
       "teamLabel": "Lazio (1998-99)"
     },
     "2000": {
@@ -237,31 +317,31 @@
           "name": "Luca Marchegiani",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Francesco Scotti",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Paolo Orlandoni",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Diego Favazza",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Angelo Peruzzi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Alessandro Nesta",
@@ -273,139 +353,139 @@
           "name": "Emiliano Conti",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Sinisa Mihajlovic",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Daniel Ola",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roberto Sensini",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Fernando Couto",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Maurizio Domizzi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Francesco Colonnese",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Emanuele Pesaresi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giuseppe Favalli",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Pietro Varriale",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paolo Negro",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giorgio Santarelli",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giuseppe Pancaro",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dino Baggio",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roberto Baronio",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Andrea Luciani",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Diego Simeone",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dejan Stanković",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Juan Sebastián Verón",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Guerino Gottardi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lucas Castromán",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Pavel Nedved",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Iván de la Peña",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Hernán Crespo",
@@ -423,43 +503,43 @@
           "name": "Karel Poborský",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Attilio Lombardo",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Emanuele Berrettoni",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Marcelo Salas",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Simone Inzaghi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Daniele Ruggiu",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Fabrizio Ravanelli",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -468,8 +548,88 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Lazio (2000/2001)",
+      "source": "Transfermarkt 🌍 Otros€” Lazio (2000/2001)",
       "teamLabel": "Lazio (2000-01)"
+    },
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Angelo Peruzzi",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Matías Almeyda",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Alessandro Nesta",
+          "position": "CB",
+          "rating": 93
+        },
+        {
+          "name": "Sinisa Mihajlovic",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Paolo Negro",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Pavel Nedved",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Juan Sebastian Verón",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Diego Simeone",
+          "position": "DM",
+          "rating": 87
+        },
+        {
+          "name": "Dejan Stankovic",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Hernán Crespo",
+          "position": "ST",
+          "rating": 92
+        },
+        {
+          "name": "Simone Inzaghi",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Fernando Couto",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Claudio López",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Roberto Muzzi",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Alessandro Mancini",
+          "position": "AM",
+          "rating": 79
+        }
+      ]
     },
     "2013": {
       "formation": "4-4-2",
@@ -796,7 +956,7 @@
           "name": "Milos Antic",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -805,7 +965,7 @@
         "defense": 60,
         "goalkeeping": 63
       },
-      "source": "Transfermarkt — Lazio (2013/2014)",
+      "source": "Transfermarkt 🌍 Otros€” Lazio (2013/2014)",
       "teamLabel": "Lazio (2013-14)"
     },
     "2025": {
@@ -902,7 +1062,7 @@
           "rating": 79
         },
         {
-          "name": "Toma Bašić",
+          "name": "Toma Baši�!",
           "position": "CM",
           "rating": 75
         },
@@ -958,7 +1118,7 @@
         "defense": 78,
         "goalkeeping": 78
       },
-      "source": "Transfermarkt — Lazio (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Lazio (2025/2026)",
       "teamLabel": "Lazio (2025-26)"
     }
   },

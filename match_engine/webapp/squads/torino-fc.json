@@ -1,6 +1,242 @@
 {
   "slug": "torino-fc",
-  "seasons": {},
+  "seasons": {
+    "1949": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Valerio Bacigalupo",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Aldo Ballarin",
+          "position": "RB",
+          "rating": 85
+        },
+        {
+          "name": "Ruggero Grava",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Mario Rigamonti",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Virgilio Maroso",
+          "position": "LB",
+          "rating": 85
+        },
+        {
+          "name": "Ezio Loik",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Romeo Menti",
+          "position": "RM",
+          "rating": 88
+        },
+        {
+          "name": "Eusebio Castigliano",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Franco Ossola",
+          "position": "LW",
+          "rating": 87
+        },
+        {
+          "name": "Valentino Mazzola",
+          "position": "AM",
+          "rating": 96
+        },
+        {
+          "name": "Guglielmo Gabetto",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Ferruccio Novo",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Emile Bongiorni",
+          "position": "ST",
+          "rating": 84
+        }
+      ],
+      "source": "Grande Torino - Serie A 1942-49, 5 Scudetti consecutivos (Valentino Mazzola, tragedia Superga)",
+      "teamLabel": "Grande Torino (1948-49)"
+    },
+    "1976": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Luciano Castellini",
+          "position": "GK",
+          "rating": 86
+        },
+        {
+          "name": "Claudio Sala",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Mauro Zaccarelli",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Eraldo Pecci",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Paolo Pulici",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Francesco Graziani",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Renato Zaccarelli",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Giorgio Ferrini",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Patrizio Sala",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Salvatore Sabatino",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Giulio Russo",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Angelo Cereser",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Dino Speggiorin",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Carmelo Orta",
+          "position": "RM",
+          "rating": 79
+        },
+        {
+          "name": "Nestor Combin",
+          "position": "CF",
+          "rating": 80
+        }
+      ]
+    },
+    "2025": {
+      "formation": "3-4-2-1",
+      "players": [
+        {
+          "name": "Vanja Milinkovic-Savic",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Alessandro Buongiorno",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Saul Coco",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nikola Vlasic",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Duvan Zapata",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Adam Masina",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Perr Schuurs",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ivan Ilic",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Sasa Lukic",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Nemanja Lazovic",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Karol Linetty",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Simone Verdi",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Ricardo Rodriguez",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Torsten Larsen",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Lazar Samardzic",
+          "position": "AM",
+          "rating": 78
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/torino-fc.png",
-  "group": "🇮🇹 Serie A"
+  "group": "🇮🇹 Serie A",
+  "nameEn": "Torino Fc",
+  "nameEs": "Torino Fc",
+  "name": "Torino Fc"
 }

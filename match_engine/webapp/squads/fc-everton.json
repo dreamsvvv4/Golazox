@@ -1,128 +1,238 @@
 {
   "slug": "fc-everton",
   "seasons": {
+    "1985": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Neville Southall",
+          "position": "GK",
+          "rating": 94
+        },
+        {
+          "name": "Gary Stevens",
+          "position": "RB",
+          "rating": 85
+        },
+        {
+          "name": "Derek Mountfield",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Kevin Ratcliffe",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Pat Van Den Hauwe",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Peter Reid",
+          "position": "DM",
+          "rating": 87
+        },
+        {
+          "name": "Paul Bracewell",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Kevin Sheedy",
+          "position": "LM",
+          "rating": 86
+        },
+        {
+          "name": "Trevor Steven",
+          "position": "RM",
+          "rating": 87
+        },
+        {
+          "name": "Gary Lineker",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Graeme Sharp",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Adrian Heath",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Andy Gray",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Alan Harper",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "John Bailey",
+          "position": "LB",
+          "rating": 78
+        }
+      ]
+    },
     "2021": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Asmir Begovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Andy Lonergan",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Harry Tyrer",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Michael Keane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Yerry Mina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Godfrey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mason Holgate",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jean-Philippe Gbamin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jarrad Branthwaite",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ryan Astley",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Reece Welch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Lucas Digne",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vitaliy Mykolenko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Niels Nkounkou",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nathan Patterson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jonjoe Kenny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Séamus Coleman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Allan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Donny van de Beek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "André Gomes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tom Davies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Fabian Delph",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tyler Onyango",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Isaac Price",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Abdoulaye Doucouré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dele Alli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gylfi Sigurdsson",
-          "position": "AM"
+          "position": "AM",
+          "rating": 81
         },
         {
           "name": "Charlie Whitaker",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Demarai Gray",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Anthony Gordon",
@@ -131,47 +241,58 @@
         },
         {
           "name": "Alex Iwobi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nathan Broadhead",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lewis Dobbin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Anwar El Ghazi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Andros Townsend",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Richarlison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dominic Calvert-Lewin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Moise Kean",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Salomón Rondón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Cenk Tosun",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ellis Simms",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -180,7 +301,7 @@
         "defense": 73,
         "goalkeeping": 74
       },
-      "source": "Transfermarkt — Everton (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Everton (2021/2022)",
       "teamLabel": "Everton (2021-22)"
     },
     "2022": {
@@ -188,119 +309,148 @@
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Asmir Begovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Eldin Jakupović",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Andy Lonergan",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "James Tarkowski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Godfrey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Conor Coady",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Michael Keane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Yerry Mina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mason Holgate",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jean-Philippe Gbamin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Reece Welch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vitaliy Mykolenko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ishé Samuels-Smith",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nathan Patterson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Séamus Coleman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kyle John",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Amadou Onana",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "James Garner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Allan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Idrissa Gueye",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "André Gomes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tom Davies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Warrington",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Isaac Price",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rúben Vinagre",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Abdoulaye Doucouré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dele Alli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sean McAllister",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Anthony Gordon",
@@ -309,43 +459,53 @@
         },
         {
           "name": "Alex Iwobi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dwight McNeil",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Demarai Gray",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Andros Townsend",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Stanley Mills",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dominic Calvert-Lewin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Neal Maupay",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Tom Cannon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ellis Simms",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Salomón Rondón",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -354,7 +514,7 @@
         "defense": 72,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — Everton (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Everton (2022/2023)",
       "teamLabel": "Everton (2022-23)"
     },
     "2023": {
@@ -362,139 +522,173 @@
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "João Virgínia",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Andy Lonergan",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Billy Crellin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jarrad Branthwaite",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "James Tarkowski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Godfrey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Michael Keane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mason Holgate",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Elijah Campbell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vitaliy Mykolenko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mackenzie Hunt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nathan Patterson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Young",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Séamus Coleman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Amadou Onana",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "James Garner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Idrissa Gueye",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "André Gomes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Warrington",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tyler Onyango",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jenson Metcalfe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Abdoulaye Doucouré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dele Alli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alex Iwobi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dwight McNeil",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jack Harrison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Arnaut Danjuma",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lewis Dobbin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dominic Calvert-Lewin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Beto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Neal Maupay",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Youssef Chermiti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Tom Cannon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -503,7 +697,7 @@
         "defense": 72,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — Everton (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Everton (2023/2024)",
       "teamLabel": "Everton (2023-24)"
     },
     "2024": {
@@ -511,159 +705,198 @@
       "players": [
         {
           "name": "Jordan Pickford",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "João Virgínia",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Asmir Begovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Zan-Luk Leban",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jarrad Branthwaite",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "James Tarkowski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Michael Keane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Mason Holgate",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Reece Welch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Bradley Moonan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vitaliy Mykolenko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jake O'Brien",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nathan Patterson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Young",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Séamus Coleman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Roman Dixon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Orel Mangala",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James Garner",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Idrissa Gueye",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Luke Butterfield",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Carlos Alcaraz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tim Iroegbunam",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harrison Armstrong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jenson Metcalfe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Callum Bates",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Abdoulaye Doucouré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Owen Barker",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dwight McNeil",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jack Harrison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Isaac Heath",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Coby Ebere",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Iliman Ndiaye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jesper Lindstrøm",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Beto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dominic Calvert-Lewin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Armando Broja",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Neal Maupay",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Youssef Chermiti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Martin Sherif",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -672,7 +905,7 @@
         "defense": 72,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — Everton (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Everton (2024/2025)",
       "teamLabel": "Everton (2024-25)"
     },
     "2025": {
@@ -810,12 +1043,14 @@
         "defense": 73,
         "goalkeeping": 74
       },
-      "source": "Transfermarkt — Everton (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Everton (2025/2026)",
       "teamLabel": "Everton (2025-26)"
     }
   },
   "badgeLocalPath": "/img/badges/fc-everton.png",
   "id": 29,
   "name": "Everton",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Everton FC",
+  "nameEs": "Everton FC"
 }

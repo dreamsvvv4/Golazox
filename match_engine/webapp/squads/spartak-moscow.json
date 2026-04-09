@@ -1,6 +1,234 @@
 {
   "slug": "spartak-moscow",
-  "seasons": {},
+  "seasons": {
+    "1994": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Stanislav Cherchesov",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Ramiz Mamedov",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Viktor Onopko",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Sergei Gorlukovich",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Andrei Tihonov",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Ilya Tsymbalar",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Valery Karpin",
+          "position": "AM",
+          "rating": 88
+        },
+        {
+          "name": "Vasili Kulkov",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Dmitri Alenichev",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Sergei Rodionov",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Nikolai Pisarev",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Yuri Nikiforov",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Andrei Pyatnitsky",
+          "position": "RM",
+          "rating": 81
+        }
+      ],
+      "source": "Spartak Moscú <\r Otros�\u001d UCL 1994-95 (7 triunfos en fase de grupos, Onopko, Karpin)",
+      "teamLabel": "Spartak Moscú (1994-95)"
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Aleksandr Filimonov",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Yuri Nikiforov",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Dmitry Parfyonov",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Andrei Tihonov",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Georgi Yartsev",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Ilya Tsymbalar",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Valery Karpin",
+          "position": "AM",
+          "rating": 86
+        },
+        {
+          "name": "Yegor Titov",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Dmitri Alenichev",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Andrei Tikhonov",
+          "position": "RM",
+          "rating": 83
+        },
+        {
+          "name": "Aleksandr Shirko",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Dmitry Popov",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Vasili Kulkov",
+          "position": "DM",
+          "rating": 82
+        }
+      ],
+      "source": "Spartak Moscú <\r Otros�\u001d Liga rusa 1998 (Alenichev, Tsymbalar, Karpin <\r Otros�\u001d era gloriosa)",
+      "teamLabel": "Spartak Moscú (1998)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Aleksandr Maksimenko",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Nail Umyarov",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Andrei Spuryacas",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Ilya Kutepov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jordan Larsson",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Mikhail Ignatov",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ruslan Zobnin",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Quincy Promes",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Victor Moses",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Aleksandr Sobolev",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Mikhail Pinegin",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ayrton Lucas",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Ezequiel Ponce",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Georgi Melkadze",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Nikolay Rasskazov",
+          "position": "RB",
+          "rating": 74
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/spartak-moscow.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Spartak Moscow",
+  "nameEs": "Spartak Moscú",
+  "name": "Spartak Moscow"
 }

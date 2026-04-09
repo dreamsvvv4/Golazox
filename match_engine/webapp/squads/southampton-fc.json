@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Fraser Forster",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Kyle Walker-Peters",
-          "position": "RB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Jan Bednarek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Mohammed Salisu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Romain Perraud",
-          "position": "LB"
+          "position": "LB",
+          "rating": 84
         },
         {
           "name": "Stuart Armstrong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "James Ward-Prowse",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Theo Walcott",
-          "position": "RW"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Sékou Mara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Adam Armstrong",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Ibrahima Diallo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Joe Lumley",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Tino Livramento",
-          "position": "RB"
+          "position": "RB",
+          "rating": 84
         },
         {
           "name": "Lyanco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Armel Bella-Kotchap",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Ainsley Maitland-Niles",
-          "position": "LB"
+          "position": "LB",
+          "rating": 84
         },
         {
           "name": "Romeo Lavia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Joe Aribo",
-          "position": "AM"
+          "position": "AM",
+          "rating": 85
         },
         {
           "name": "Nathan Tella",
-          "position": "RW"
+          "position": "RW",
+          "rating": 85
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Carlos Alcaraz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         }
       ],
       "ratings": {
@@ -95,12 +116,14 @@
         "defense": 71,
         "goalkeeping": 71
       },
-      "source": "Transfermarkt — Southampton FC 2024-25 Championship",
+      "source": "Transfermarkt 🌍 Otros€” Southampton FC 2024-25 Championship",
       "teamLabel": "Southampton FC 2024-25 Championship"
     }
   },
   "id": 180,
   "name": "Southampton FC",
   "badgeLocalPath": "/img/badges/southampton-fc.png",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+  "nameEn": "Southampton FC",
+  "nameEs": "Southampton FC"
 }

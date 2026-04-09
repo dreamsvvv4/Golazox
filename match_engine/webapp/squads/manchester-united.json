@@ -1,6 +1,165 @@
 {
   "slug": "manchester-united",
   "seasons": {
+    "1968": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Alex Stepney",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Jimmy Rimmer",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Shay Brennan",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Tony Dunne",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Bill Foulkes",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Nobby Stiles",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Pat Crerand",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "David Sadler",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "John Aston",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Brian Kidd",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Bobby Charlton",
+          "position": "CM",
+          "rating": 92
+        },
+        {
+          "name": "George Best",
+          "position": "RW",
+          "rating": 96
+        },
+        {
+          "name": "Denis Law",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "John Connelly",
+          "position": "RM",
+          "rating": 79
+        },
+        {
+          "name": "Carlo Sartori",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Manchester United 🌍 Otros€” European Cup winners 1967-68 (Busby, Best, Charlton, Law)",
+      "teamLabel": "Manchester United (1967-68)"
+    },
+    "1985": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gary Bailey",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "John Gidman",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Arthur Albiston",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Kevin Moran",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Paul McGrath",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Mike Duxbury",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Bryan Robson",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Remi Moses",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Gordon Strachan",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Arnold Muhren",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Jesper Olsen",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Mark Hughes",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Frank Stapleton",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Norman Whiteside",
+          "position": "AM",
+          "rating": 83
+        }
+      ],
+      "source": "Manchester United 🌍 Otros€” FA Cup winners 1984-85",
+      "teamLabel": "Manchester United (1984-85)"
+    },
     "1994": {
       "formation": "4-4-2",
       "players": [
@@ -14,13 +173,13 @@
           "name": "Gary Walsh",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Kevin Pilkington",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Gary Neville",
@@ -32,61 +191,61 @@
           "name": "Steve Bruce",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gary Pallister",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "David May",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Pat McGibbon",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Chris Casper",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Neil Whitworth",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Denis Irwin",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Parker",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Phil Neville",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "John O'Kane",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roy Keane",
@@ -116,37 +275,37 @@
           "name": "Nicky Butt",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Ince",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Simon Davies",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Andrey Kanchelskis",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Keith Gillespie",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lee Sharpe",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Éric Cantona",
@@ -158,49 +317,49 @@
           "name": "Ben Thornley",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Terry Cooke",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Brian McClair",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Mark Hughes",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Graeme Tomlinson",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Andy Cole",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Colin McKee",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Dion Dublin",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -209,7 +368,7 @@
         "defense": 86,
         "goalkeeping": 91
       },
-      "source": "Transfermarkt — Manchester United (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (1994/1995)",
       "teamLabel": "Manchester United (1994-95)"
     },
     "1998": {
@@ -225,31 +384,31 @@
           "name": "Nick Culkin",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Mark Bosnich",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Massimo Taibi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Raimond van der Gouw",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Kevin Pilkington",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Gary Neville",
@@ -261,79 +420,79 @@
           "name": "David May",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ronny Johnsen",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jaap Stam",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Wes Brown",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Chris Casper",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Danny Higginbotham",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mikaël Silvestre",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Quinton Fortune",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Denis Irwin",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Phil Neville",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "John Curtis",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Henning Berg",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Clegg",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roy Keane",
@@ -363,61 +522,61 @@
           "name": "Ryan Ford",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Teather",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Nicky Butt",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Phil Mulryne",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ronnie Wallwork",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mark Wilson",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jonathan Greening",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Twiss",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jesper Blomqvist",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jordi Cruijff",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ole Gunnar Solskjaer",
@@ -429,43 +588,43 @@
           "name": "Terry Cooke",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Alex Notman",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "David Healy",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Andy Cole",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Teddy Sheringham",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Dwight Yorke",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Erik Nevland",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -474,7 +633,7 @@
         "defense": 86,
         "goalkeeping": 90
       },
-      "source": "Transfermarkt — Manchester United (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (1998/1999)",
       "teamLabel": "Manchester United (1998-99)"
     },
     "1999": {
@@ -484,31 +643,31 @@
           "name": "Nick Culkin",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Paul Rachubka",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Mark Bosnich",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Raimond van der Gouw",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Massimo Taibi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Gary Neville",
@@ -520,85 +679,85 @@
           "name": "David May",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ronny Johnsen",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jaap Stam",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Wes Brown",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Danny Higginbotham",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "John O'Shea",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Denis Irwin",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Quinton Fortune",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mikaël Silvestre",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lee Roche",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Phil Neville",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "John Curtis",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Henning Berg",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Clegg",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roy Keane",
@@ -628,61 +787,61 @@
           "name": "Nicky Butt",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Stewart",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ronnie Wallwork",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mark Wilson",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jonathan Greening",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Richie Wellens",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Twiss",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jesper Blomqvist",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jordi Cruijff",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Luke Chadwick",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ole Gunnar Solskjaer",
@@ -694,37 +853,37 @@
           "name": "Alex Notman",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Erik Nevland",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Andy Cole",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Teddy Sheringham",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Dwight Yorke",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "David Healy",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -733,7 +892,7 @@
         "defense": 87,
         "goalkeeping": 91
       },
-      "source": "Transfermarkt — Manchester United (1999/2000)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (1999/2000)",
       "teamLabel": "Manchester United (1999-00)"
     },
     "2002": {
@@ -749,19 +908,19 @@
           "name": "Ben Williams",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Roy Carroll",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Ricardo",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Rio Ferdinand",
@@ -785,67 +944,67 @@
           "name": "David May",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "John O'Shea",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Wes Brown",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Tierney",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Quinton Fortune",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Danny Pugh",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mikaël Silvestre",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Kieran Richardson",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Phil Neville",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lee Roche",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mark Lynch",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Roy Keane",
@@ -875,31 +1034,31 @@
           "name": "Nicky Butt",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Juan Sebastián Verón",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Michael Stewart",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Darren Fletcher",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Luke Chadwick",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Ruud van Nistelrooy",
@@ -917,31 +1076,31 @@
           "name": "Jimmy Davis",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Mads Timm",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Diego Forlán",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Danny Webber",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Daniel Nardiello",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -950,7 +1109,89 @@
         "defense": 85,
         "goalkeeping": 87
       },
-      "source": "Transfermarkt — Manchester United (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (2002/2003)",
+      "teamLabel": "Manchester United (2002-03)"
+    },
+    "2003": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tim Howard",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Gary Neville",
+          "position": "RB",
+          "rating": 85
+        },
+        {
+          "name": "John O'Shea",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Mikael Silvestre",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Nicky Butt",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "LW",
+          "rating": 89
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "RW",
+          "rating": 87
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "position": "ST",
+          "rating": 92
+        },
+        {
+          "name": "Diego Forlán",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Ole Gunnar Solskjaer",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Phil Neville",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Eric Djemba-Djemba",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Manchester United 🌍 Otros€” Premier League 2002-03 (Fergie, Keane, van Nistelrooy era)",
       "teamLabel": "Manchester United (2002-03)"
     },
     "2007": {
@@ -993,7 +1234,7 @@
           "rating": 88
         },
         {
-          "name": "Nemanja Vidic‎",
+          "name": "Nemanja Vidic🌍 Otros€Ž",
           "position": "CB",
           "marketValue": 22000000,
           "rating": 86
@@ -1050,7 +1291,7 @@
           "name": "Richard Eckersley",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Scholes",
@@ -1116,7 +1357,7 @@
           "name": "Sam Hewson",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Wayne Rooney",
@@ -1182,7 +1423,7 @@
           "name": "Danny Welbeck",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1191,7 +1432,7 @@
         "defense": 87,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Manchester United (2007/2008)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (2007/2008)",
       "teamLabel": "Manchester United (2007-08)"
     },
     "2008": {
@@ -1234,7 +1475,7 @@
           "rating": 89
         },
         {
-          "name": "Nemanja Vidic‎",
+          "name": "Nemanja Vidic🌍 Otros€Ž",
           "position": "CB",
           "marketValue": 35000000,
           "rating": 87
@@ -1297,13 +1538,13 @@
           "name": "James Chester",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Richard Eckersley",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Paul Scholes",
@@ -1369,25 +1610,25 @@
           "name": "Tom Cleverley",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Danny Drinkwater",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Corry Evans",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Matty James",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Wayne Rooney",
@@ -1456,8 +1697,514 @@
         "defense": 88,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Manchester United (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (2008/2009)",
       "teamLabel": "Manchester United (2008-09)"
+    },
+    "2009": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Edwin van der Sar",
+          "position": "GK",
+          "marketValue": 4500000,
+          "rating": 89
+        },
+        {
+          "name": "Tomasz Kuszczak",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ben Foster",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ben Amos",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB",
+          "marketValue": 31000000,
+          "rating": 89
+        },
+        {
+          "name": "Nemanja Vidic‎",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CB",
+          "marketValue": 17500000,
+          "rating": 85
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 85
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB",
+          "marketValue": 27000000,
+          "rating": 84
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Wes Brown",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "John O'Shea",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Rafael",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Fábio",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ritchie De Laet",
+          "position": "CB",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Oliver Gill",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 88
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM",
+          "marketValue": 7500000,
+          "rating": 88
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM",
+          "marketValue": 26000000,
+          "rating": 86
+        },
+        {
+          "name": "Anderson",
+          "position": "CM",
+          "marketValue": 21000000,
+          "rating": 85
+        },
+        {
+          "name": "Darren Fletcher",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Owen Hargreaves",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Ji-sung Park",
+          "position": "CM",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Darron Gibson",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Matty James",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Rodrigo Possebon",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Corry Evans",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "marketValue": 53000000,
+          "rating": 89
+        },
+        {
+          "name": "Dimitar Berbatov",
+          "position": "ST",
+          "marketValue": 29000000,
+          "rating": 87
+        },
+        {
+          "name": "Michael Owen",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 87
+        },
+        {
+          "name": "Nani",
+          "position": "ST",
+          "marketValue": 12500000,
+          "rating": 83
+        },
+        {
+          "name": "Zoran Tosic",
+          "position": "ST",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Gabriel Obertan",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Mame Diouf",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Federico Macheda",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Joshua King",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Cameron Stewart",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Magnus Wolff Eikrem",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (2009/2010)",
+      "teamLabel": "Manchester United (2009-10)"
+    },
+    "2011": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David de Gea",
+          "position": "GK",
+          "marketValue": 17500000,
+          "rating": 87
+        },
+        {
+          "name": "Anders Lindegaard",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tomasz Kuszczak",
+          "position": "GK",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Ben Amos",
+          "position": "GK",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 89
+        },
+        {
+          "name": "Nemanja Vidic‎",
+          "position": "CB",
+          "marketValue": 25500000,
+          "rating": 86
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CB",
+          "marketValue": 27500000,
+          "rating": 86
+        },
+        {
+          "name": "Ashley Young",
+          "position": "CB",
+          "marketValue": 27000000,
+          "rating": 86
+        },
+        {
+          "name": "Phil Jones",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Chris Smalling",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB",
+          "marketValue": 15500000,
+          "rating": 84
+        },
+        {
+          "name": "Jonny Evans",
+          "position": "CB",
+          "marketValue": 9500000,
+          "rating": 82
+        },
+        {
+          "name": "Rafael",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Fábio",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Ritchie De Laet",
+          "position": "CB",
+          "marketValue": 1250000,
+          "rating": 74
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Reece Brown",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tom Thorpe",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marnick Vermijl",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Zeki Fryers",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 88
+        },
+        {
+          "name": "Ryan Giggs",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 88
+        },
+        {
+          "name": "Paul Pogba",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 86
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Anderson",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Darren Fletcher",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Tom Cleverley",
+          "position": "CM",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Ji-sung Park",
+          "position": "CM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Darron Gibson",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ravel Morrison",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Larnell Cole",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jesse Lingard",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "marketValue": 65000000,
+          "rating": 89
+        },
+        {
+          "name": "Nani",
+          "position": "ST",
+          "marketValue": 36500000,
+          "rating": 88
+        },
+        {
+          "name": "Michael Owen",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 87
+        },
+        {
+          "name": "Chicharito",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Dimitar Berbatov",
+          "position": "ST",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Mame Diouf",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Federico Macheda",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Will Keane",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Manchester United (2011/2012)",
+      "teamLabel": "Manchester United (2011-12)"
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -1625,12 +2372,14 @@
         "defense": 74,
         "goalkeeping": 75
       },
-      "source": "Transfermarkt — Manchester United (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Manchester United (2025/2026)",
       "teamLabel": "Manchester United (2025-26)"
     }
   },
   "id": 985,
   "name": "Manchester United",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
-  "badgeLocalPath": "/img/badges/manchester-united.png"
+  "badgeLocalPath": "/img/badges/manchester-united.png",
+  "nameEn": "Manchester United",
+  "nameEs": "Manchester United"
 }

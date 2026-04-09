@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Marvin Schwäbe",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Luca Kilian",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Timo Hübers",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Jeff Chabot",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Sava Cestic",
-          "position": "LB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Ellyes Skhiri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Denis Huseinbasic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Florian Kainz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Linton Maina",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Davie Selke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Steffen Tigges",
-          "position": "LW"
+          "position": "LW",
+          "rating": 80
         },
         {
           "name": "Jonas Urbig",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Nikolas Nartey",
-          "position": "RB"
+          "position": "RB",
+          "rating": 78
         },
         {
           "name": "Eric Martel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Julian Chabot",
-          "position": "LB"
+          "position": "LB",
+          "rating": 78
         },
         {
           "name": "Dejan Ljubicic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Damion Downs",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Jan Thielmann",
-          "position": "RW"
+          "position": "RW",
+          "rating": 80
         },
         {
           "name": "Tim Lemperle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Ondrej Duda",
-          "position": "AM"
+          "position": "AM",
+          "rating": 80
         },
         {
           "name": "Selim Amallah",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         }
       ],
       "ratings": {
@@ -95,7 +116,7 @@
         "defense": 75,
         "goalkeeping": 75
       },
-      "source": "Transfermarkt — 1. FC Köln 2024-25 Bundesliga",
+      "source": "Transfermarkt <\r Otros�\u001d 1. FC Köln 2024-25 Bundesliga",
       "teamLabel": "1. FC Köln 2024-25 Bundesliga"
     }
   },

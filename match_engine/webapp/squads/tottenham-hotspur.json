@@ -1,6 +1,155 @@
 {
   "slug": "tottenham-hotspur",
   "seasons": {
+    "1961": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bill Brown",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Peter Baker",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Ron Henry",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Danny Blanchflower",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Bill Brown",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Maurice Norman",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Dave Mackay",
+          "position": "DM",
+          "rating": 90
+        },
+        {
+          "name": "Cliff Jones",
+          "position": "LW",
+          "rating": 87
+        },
+        {
+          "name": "John White",
+          "position": "AM",
+          "rating": 87
+        },
+        {
+          "name": "Bobby Smith",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Les Allen",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Terry Medwin",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Terry Dyson",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Tony Marchi",
+          "position": "CB",
+          "rating": 79
+        }
+      ],
+      "source": "Tottenham Hotspur 🌍 Otros€” Double 1960-61 (Blanchflower/Mackay, primero en s. XX)",
+      "teamLabel": "Tottenham Hotspur (1960-61)"
+    },
+    "1963": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bill Brown",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Peter Baker",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Ron Henry",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Danny Blanchflower",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Maurice Norman",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Dave Mackay",
+          "position": "DM",
+          "rating": 90
+        },
+        {
+          "name": "Cliff Jones",
+          "position": "LW",
+          "rating": 87
+        },
+        {
+          "name": "John White",
+          "position": "AM",
+          "rating": 87
+        },
+        {
+          "name": "Bobby Smith",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Jimmy Greaves",
+          "position": "ST",
+          "rating": 94
+        },
+        {
+          "name": "Terry Medwin",
+          "position": "RW",
+          "rating": 81
+        },
+        {
+          "name": "Terry Dyson",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Frank Saul",
+          "position": "ST",
+          "rating": 79
+        }
+      ],
+      "source": "Tottenham Hotspur 🌍 Otros€” European Cup Winners' Cup 1962-63 (Greaves, Blanchflower)",
+      "teamLabel": "Tottenham Hotspur (1962-63)"
+    },
     "2017": {
       "formation": "4-4-2",
       "players": [
@@ -26,7 +175,7 @@
           "name": "Alfie Whiteman",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Toby Alderweireld",
@@ -152,13 +301,13 @@
           "name": "Tashan Oakley-Boothe",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Anthony Georgiou",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Harry Kane",
@@ -206,7 +355,7 @@
           "name": "Kazaiah Sterling",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -215,7 +364,7 @@
         "defense": 86,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2017/2018)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2017/2018)",
       "teamLabel": "Tottenham Hotspur (2017-18)"
     },
     "2018": {
@@ -243,7 +392,7 @@
           "name": "Alfie Whiteman",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Toby Alderweireld",
@@ -315,7 +464,7 @@
           "name": "Timothy Eyoma",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Christian Eriksen",
@@ -375,7 +524,7 @@
           "name": "George Marsh",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Harry Kane",
@@ -423,7 +572,7 @@
           "name": "Kazaiah Sterling",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -432,7 +581,7 @@
         "defense": 86,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2018/2019)",
       "teamLabel": "Tottenham Hotspur (2018-19)"
     },
     "2019": {
@@ -466,7 +615,7 @@
           "name": "Alfie Whiteman",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Ryan Sessegnon",
@@ -544,13 +693,13 @@
           "name": "Malachi Fagan-Walcott",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Dennis Cirkin",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Christian Eriksen",
@@ -610,7 +759,7 @@
           "name": "Harvey White",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Harry Kane",
@@ -661,7 +810,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2019/2020)",
       "teamLabel": "Tottenham Hotspur (2019-20)"
     },
     "2021": {
@@ -669,175 +818,218 @@
       "players": [
         {
           "name": "Pierluigi Gollini",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Hugo Lloris",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Brandon Austin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Davinson Sánchez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Eric Dier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Davies",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Japhet Tanganga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Rodon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cameron Carter-Vickers",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Maksim Paskotsi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Malachi Fagan-Walcott",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tobi Omole",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sergio Reguilón",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Ryan Sessegnon",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Emerson Royal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Matt Doherty",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marcel Lavinier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Brooklyn Lyons-Foster",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Rodrigo Bentancur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Skipp",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harry Winks",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harvey White",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kallum Cesay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Matthew Craig",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Michael Craig",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jamie Bowden",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tanguy Ndombélé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Moussa Sissoko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nile John",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dele Alli",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alfie Devine",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Heung-min Son",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Bryan Gil",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Steven Bergwijn",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jack Clarke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Romaine Mundle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "J'Neil Bennett",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lucas Moura",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dilan Markanday",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Harry Kane",
@@ -846,7 +1038,8 @@
         },
         {
           "name": "Dane Scarlett",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -855,7 +1048,7 @@
         "defense": 75,
         "goalkeeping": 75
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2021/2022)",
       "teamLabel": "Tottenham Hotspur (2021-22)"
     },
     "2022": {
@@ -863,51 +1056,63 @@
       "players": [
         {
           "name": "Hugo Lloris",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Fraser Forster",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alfie Whiteman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Brandon Austin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Eric Dier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Davinson Sánchez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Davies",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Clément Lenglet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Japhet Tanganga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ryan Sessegnon",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Djed Spence",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pedro Porro",
@@ -916,79 +1121,98 @@
         },
         {
           "name": "Emerson Royal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Matt Doherty",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Rodrigo Bentancur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Yves Bissouma",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Skipp",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Harvey White",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Matthew Craig",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "George Abbott",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pape Matar Sarr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Alfie Devine",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Heung-min Son",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Arnaut Danjuma",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Bryan Gil",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Romaine Mundle",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Yago Santiago",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lucas Moura",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Harry Kane",
@@ -997,7 +1221,8 @@
         },
         {
           "name": "Richarlison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1006,7 +1231,7 @@
         "defense": 79,
         "goalkeeping": 78
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2022/2023)",
       "teamLabel": "Tottenham Hotspur (2022-23)"
     },
     "2023": {
@@ -1014,75 +1239,93 @@
       "players": [
         {
           "name": "Guglielmo Vicario",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Hugo Lloris",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Fraser Forster",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Brandon Austin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alfie Whiteman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Micky van de Ven",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Radu Drăgușin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Davinson Sánchez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Eric Dier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Davies",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Joe Rodon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ashley Phillips",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Japhet Tanganga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Alfie Dorrington",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Destiny Udogie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sergio Reguilón",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Ryan Sessegnon",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Pedro Porro",
@@ -1091,91 +1334,113 @@
         },
         {
           "name": "Emerson Royal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Yves Bissouma",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rodrigo Bentancur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pierre-Emile Højbjerg",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Oliver Skipp",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pape Matar Sarr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tyrese Hall",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James Maddison",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Giovani Lo Celso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jamie Donley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Heung-min Son",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Bryan Gil",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Manor Solomon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Yago Santiago",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mikey Moore",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Brennan Johnson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Richarlison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Timo Werner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Alejo Veliz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dane Scarlett",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1184,7 +1449,7 @@
         "defense": 78,
         "goalkeeping": 78
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2023/2024)",
       "teamLabel": "Tottenham Hotspur (2023-24)"
     },
     "2024": {
@@ -1192,71 +1457,88 @@
       "players": [
         {
           "name": "Guglielmo Vicario",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Antonín Kinský",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Fraser Forster",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Brandon Austin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alfie Whiteman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Cristian Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Micky van de Ven",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kevin Danso",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Radu Drăgușin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Davies",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Alfie Dorrington",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dante Cassanova",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Maeson King",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Malachi Hardy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Destiny Udogie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Djed Spence",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sergio Reguilón",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Pedro Porro",
@@ -1265,95 +1547,118 @@
         },
         {
           "name": "Rodrigo Bentancur",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Yves Bissouma",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Archie Gray",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Bergvall",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pape Matar Sarr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Callum Olusesi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rio Kyerematen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dejan Kulusevski",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "James Maddison",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alfie Devine",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucá Williams-Barnett",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Heung-min Son",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Wilson Odobert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mikey Moore",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Brennan Johnson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Min-hyeok Yang",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Damola Ajayi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dominic Solanke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mathys Tel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Richarlison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Timo Werner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Will Lankshear",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dane Scarlett",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -1362,7 +1667,7 @@
         "defense": 77,
         "goalkeeping": 77
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2024/2025)",
       "teamLabel": "Tottenham Hotspur (2024-25)"
     },
     "2025": {
@@ -1515,12 +1820,14 @@
         "defense": 78,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — Tottenham Hotspur (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2025/2026)",
       "teamLabel": "Tottenham Hotspur (2025-26)"
     }
   },
   "badgeLocalPath": "/img/badges/tottenham-hotspur.png",
   "id": 148,
   "name": "Tottenham Hotspur",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Tottenham Hotspur",
+  "nameEs": "Tottenham Hotspur"
 }

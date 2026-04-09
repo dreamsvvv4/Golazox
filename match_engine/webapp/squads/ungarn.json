@@ -1,6 +1,199 @@
 {
   "slug": "ungarn",
   "seasons": {
+    "1954": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gyula Grosics",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": 88
+        },
+        {
+          "name": "János Palotai",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sándor Gellér",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lajos Faragó",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Géza Oláh",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tibor Komáromi",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Géza Gulyás",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gyula Lóránt",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Gyula Teleki",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pál Várhidi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mihály Lantos",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jenő Buzánszky",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Béla Kárpáti",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Antal Kotász",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "József Zakariás",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Imre Kovács",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ferenc Szojka",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "József Bozsik",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mihály Tóth",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 96
+        },
+        {
+          "name": "Sándor Kocsis",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": 90
+        },
+        {
+          "name": "Máté Fenyvesi",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Zoltán Czibor",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "József Tóth",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nándor Hidegkuti",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Károly Sándor",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "László Budai",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ferenc Machos",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lajos Csordás",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Péter Palotás",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 62,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Hungary (1954/1955)",
+      "teamLabel": "Hungary (1954-55)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
@@ -179,7 +372,7 @@
           "rating": 72
         },
         {
-          "name": "Bence Ötvös",
+          "name": "Bence �\u0013tvös",
           "position": "CM",
           "marketValue": 450000,
           "rating": 70
@@ -245,7 +438,7 @@
         "defense": 62,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — hungary (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” hungary (2025/2026)",
       "teamLabel": "hungary (2025-26)"
     }
   },

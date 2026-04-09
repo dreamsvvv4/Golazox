@@ -1,156 +1,273 @@
 {
   "slug": "as-rom",
   "seasons": {
+    "1983": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Franco Tancredi",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Odoacre Chierico",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Sebastiano Nela",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Ubaldo Righetti",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Lionello Manfredonia",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Paulo Roberto Falcão",
+          "position": "CM",
+          "rating": 94
+        },
+        {
+          "name": "Agostino Di Bartolomei",
+          "position": "DM",
+          "rating": 86
+        },
+        {
+          "name": "Carlos Cerezo",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Bruno Conti",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Roberto Pruzzo",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Francesco Graziani",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Maurizio Iorio",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Vincenzo D'Amico",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Toninho Cerezo",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Pietro Vierchowod",
+          "position": "CB",
+          "rating": 85
+        }
+      ]
+    },
     "2001": {
       "formation": "4-2-3-1",
       "players": [
         {
           "name": "Francesco Antonioli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Marco Amelia",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Sebastián Cejas",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Carlo Zotti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Marco Paoloni",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Ivan Pelizzoli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Antônio Carlos Zago",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aldair",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jonathan Zebina",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Walter Samuel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Saliou Lassissi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Damiano Ferronetti",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sebastiano Siviglia",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cesare Bovo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leandro Cufré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vincent Candela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cafu",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Christian Panucci",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Emerson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ivan Tomic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Gianni Guigou",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Daniele De Rossi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Emanuele Mancini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Francisco Lima",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Marcos Assunção",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Damiano Tommasi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alberto Aquilani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Diego Fuser",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mancini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Simone Pepe",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Francesco Totti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Antonio Cassano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Vincenzo Montella",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniele Martinetti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Abel Balbo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Gabriel Batistuta",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Marco Delvecchio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -159,7 +276,7 @@
         "defense": 84,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Roma (2001/2002)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2001/2002)",
       "teamLabel": "Roma (2001-02)"
     },
     "2003": {
@@ -169,127 +286,127 @@
           "name": "Cristiano Lupatelli",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Carlo Zotti",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Ivan Pelizzoli",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Marco Paoloni",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Gianluca Curci",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Mauro Rasera",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Cristian Chivu",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jonathan Zebina",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Saliou Lassissi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Walter Samuel",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Giuseppe Scurto",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Traianos Dellas",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Andrea Servi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Leandro Cufré",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Vincent Candela",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Andrea Briotti",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Simone Piva",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Christian Panucci",
           "position": "RB",
           "marketValue": 0,
-          "rating": null
+          "rating": 79
         },
         {
           "name": "Luigi Sartor",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gianluca Galasso",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Valerio Virga",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Emerson",
@@ -301,127 +418,127 @@
           "name": "Olivier Dacourt",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gianni Guigou",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Daniele De Rossi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Raffaele De Martino",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Francisco Lima",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Damiano Tommasi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Daniele Galloppa",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Gaetano D'Agostino",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Alberto Aquilani",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Adewale Dauda Wahab",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Davide Bombardini",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mancini",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Alessio Cerci",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Francesco Totti",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Antonio Cassano",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Vincenzo Montella",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "John Carew",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Marco Delvecchio",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Olasunkanmi Akande Ajide",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Daniele Corvia",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         },
         {
           "name": "Denis Boshnjaku",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -430,7 +547,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Roma (2003/2004)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2003/2004)",
       "teamLabel": "Roma (2003-04)"
     },
     "2006": {
@@ -438,163 +555,203 @@
       "players": [
         {
           "name": "Doni",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Gianluca Curci",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Carlo Zotti",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Pietro Pipolo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Júlio Sérgio",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Philippe Mexès",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cristian Chivu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Matteo Ferrari",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Samuel Kuffour",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gilberto Martínez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Rodrigo Defendi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gianluca Freddi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dario Polverini",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Max Tonetto",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leandro Cufré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fabrizio Grillo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marco Cassetti",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Christian Panucci",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Aleandro Rosi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Valerio Virga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Daniele De Rossi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ricardo Faty",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Massimiliano Marsili",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "David Pizarro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alberto Aquilani",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adewale Dauda Wahab",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Simone Palermo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Claudio Della Penna",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Andrea Giacomini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Simone Perrotta",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mancini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rodrigo Taddei",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Christian Wilhelmsson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Francesco Totti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
-          "name": "Mirko Vučinić",
-          "position": "ST"
+          "name": "Mirko Vučini�!",
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mido",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Francesco Tavano",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Vincenzo Montella",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Shabani Nonda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Stefano Okaka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -603,7 +760,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — Roma (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2006/2007)",
       "teamLabel": "Roma (2006-07)"
     },
     "2021": {
@@ -631,7 +788,7 @@
           "name": "Davide Mastrantonio",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Roger Ibañez",
@@ -709,19 +866,19 @@
           "name": "Dimitrios Keramitsis",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Jan Oliveras",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Filippo Missori",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lorenzo Pellegrini",
@@ -850,7 +1007,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Roma (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2021/2022)",
       "teamLabel": "Roma (2021-22)"
     },
     "2022": {
@@ -1145,7 +1302,7 @@
         "defense": 79,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — Roma (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2022/2023)",
       "teamLabel": "Roma (2022-23)"
     },
     "2023": {
@@ -1251,19 +1408,19 @@
           "name": "Matteo Plaia",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lovro Golic",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Mattia Mannini",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Lorenzo Pellegrini",
@@ -1404,7 +1561,7 @@
         "defense": 78,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — Roma (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2023/2024)",
       "teamLabel": "Roma (2023-24)"
     },
     "2024": {
@@ -1438,13 +1595,13 @@
           "name": "Giorgio De Marzi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Alessio Marcaccini",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 81
         },
         {
           "name": "Mats Hummels",
@@ -1528,7 +1685,7 @@
           "name": "Federico Nardin",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Manu Koné",
@@ -1651,7 +1808,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Roma (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2024/2025)",
       "teamLabel": "Roma (2024-25)"
     },
     "2025": {
@@ -1826,7 +1983,7 @@
         "defense": 77,
         "goalkeeping": 78
       },
-      "source": "Transfermarkt — Roma (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Roma (2025/2026)",
       "teamLabel": "Roma (2025-26)"
     }
   },

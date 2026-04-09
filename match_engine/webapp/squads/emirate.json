@@ -1,0 +1,91 @@
+{
+  "slug": "emirate",
+  "name": "Vereinigte Arabische Emirate",
+  "nameEn": "United Arab Emirates",
+  "nameEs": "Emiratos Árabes",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/saudi-arabia.png",
+  "id": "emirate",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Khalid Essa",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Bandar Al-Ahbabi",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Ismail Ahmed",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Walid Abbas",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Attas",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Ali Mabkhout",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Caio Canedo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Khalfan Mubarak",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Sebastian Tagliabue",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Fabio de Lima",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Khalil",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Ali Saleh",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Abdulla Ramadan",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Omar Abdulrahman",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Harib Abdalla",
+          "position": "LB",
+          "rating": 70
+        }
+      ]
+    }
+  }
+}

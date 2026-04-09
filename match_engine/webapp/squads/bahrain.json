@@ -1,0 +1,91 @@
+{
+  "slug": "bahrain",
+  "name": "Bahrain",
+  "nameEn": "Bahrain",
+  "nameEs": "Baréin",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/bahrain.png",
+  "id": "bahrain",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sayed Mohammed Jaffer",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Mohammed Al-Romaihi",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Waleed Al-Hayam",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Abdulla Yusuf",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Sayed Dhiya Saeed",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Komail Alaswad",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Mahdi Abdul Jabar",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Imad Raqeeb",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Moosa Al-Sennawi",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Harib Al-Sayed",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ábdullah Al-Hazaa",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Jassim Kasim",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Husain Al-Qaed",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Mahdi Abdulatif",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Sulaiman Isa",
+          "position": "LB",
+          "rating": 70
+        }
+      ]
+    }
+  }
+}

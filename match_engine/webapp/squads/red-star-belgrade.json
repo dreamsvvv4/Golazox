@@ -1,6 +1,167 @@
 {
   "slug": "red-star-belgrade",
-  "seasons": {},
+  "seasons": {
+    "1991": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Stevan Stojanovic",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Miodrag Belodedici",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Slobodan Marovic",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Refik Sabanadzovic",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Dragoslav Sekularac",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Robert Prosinecki",
+          "position": "AM",
+          "rating": 91
+        },
+        {
+          "name": "Dejan Savicevic",
+          "position": "AM",
+          "rating": 93
+        },
+        {
+          "name": "Dragan Stojkovic",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Darko Pancev",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Sinisa Mihajlovic",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Vladimir Juric",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Ilija Najdoski",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Slavoljub Muslin",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Vladislav Stojanovic",
+          "position": "GK",
+          "rating": 77
+        }
+      ],
+      "source": "Estrella Roja de Belgrado 🌍 Otros€” European Cup 1990-91 (Savicevic, Prosinecki, Pancev)",
+      "teamLabel": "Estrella Roja (1990-91)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Omri Glazer",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandar Dragovic",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Milan Gajic",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Uros Spajic",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Andrija Maksimovic",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Mirko Ivanić",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Guelor Kanga",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Osman Bukari",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Aleksander Katai",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "El Fardou Ben Nabouhane",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marko Gobeljic",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Tomane",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Njegos Petrovic",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Slavoljub Srnić",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Lamine Diack",
+          "position": "CB",
+          "rating": 74
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/red-star-belgrade.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "FK Crvena zvezda",
+  "nameEs": "Estrella Roja de Belgrado",
+  "name": "FK Crvena zvezda"
 }

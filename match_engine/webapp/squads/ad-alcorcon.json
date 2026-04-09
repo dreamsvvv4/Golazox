@@ -6,95 +6,118 @@
       "players": [
         {
           "name": "Criado",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Gordo",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Fonseca",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Abraham",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Pizarro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Luis López",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Chupe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Torregrosa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Carralero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Francis",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ramírez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Yuste II",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Somoza",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Carretero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Miguel Ángel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Felipe Herrero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Carmona",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Manolo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Simón",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Romero",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Gabi Sabas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Yébenes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Rubén",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -103,7 +126,7 @@
         "defense": 64,
         "goalkeeping": 67
       },
-      "source": "BDFutbol — Alcorcón 2000-01 Segunda División B",
+      "source": "BDFutbol <\r Otros�\u001d Alcorcón 2000-01 Segunda División B",
       "teamLabel": "Alcorcón 2000-01 Segunda División B"
     }
   },

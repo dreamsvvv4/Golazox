@@ -26,7 +26,7 @@
           "name": "Alfredo Cabañas",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Julio César Domínguez",
@@ -92,31 +92,31 @@
           "name": "Cristian Jiménez",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Rafael Guerrero",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Mauro Zaleta",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Rodrigo Huescas",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Josué Díaz",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Carlos Rodríguez",
@@ -194,19 +194,19 @@
           "name": "Jesús Haro",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Cristopher Benítez",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Jesús Martínez",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Roberto Alvarado",
@@ -272,7 +272,7 @@
           "name": "Edgar Gutiérrez",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -281,7 +281,7 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Cruz Azul (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Cruz Azul (2021/2022)",
       "teamLabel": "Cruz Azul (2021-22)"
     },
     "2025": {
@@ -429,7 +429,7 @@
           "name": "Bryan Gamboa",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -438,11 +438,14 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Cruz Azul (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Cruz Azul (2025/2026)",
       "teamLabel": "Cruz Azul (2025-26)"
     }
   },
   "id": 3711,
   "name": "Cruz Azul",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/cruz-azul.png",
+  "nameEn": "Cruz Azul",
+  "nameEs": "Cruz Azul"
 }

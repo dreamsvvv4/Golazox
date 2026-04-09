@@ -1,6 +1,166 @@
 {
   "slug": "glasgow-rangers",
   "seasons": {
+    "1972": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Peter McCloy",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Sandy Jardine",
+          "position": "RB",
+          "rating": 86
+        },
+        {
+          "name": "Colin Jackson",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Ronnie McKinnon",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Willie Mathieson",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "John Greig",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Alfie Conn",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Tommy McLean",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Willie Johnston",
+          "position": "LW",
+          "rating": 85
+        },
+        {
+          "name": "Colin Stein",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Derek Parlane",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Alex MacDonald",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Dave Smith",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Derek Johnstone",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Bobby Watson",
+          "position": "LM",
+          "rating": 78
+        }
+      ]
+    },
+    "1993": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Andy Goram",
+          "position": "GK",
+          "rating": 90
+        },
+        {
+          "name": "Gary Stevens",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Dave McPherson",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Richard Gough",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "David Robertson",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Stuart McCall",
+          "position": "DM",
+          "rating": 85
+        },
+        {
+          "name": "Ian Ferguson",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Trevor Steven",
+          "position": "RM",
+          "rating": 85
+        },
+        {
+          "name": "Brian Laudrup",
+          "position": "LW",
+          "rating": 90
+        },
+        {
+          "name": "Ally McCoist",
+          "position": "ST",
+          "rating": 89
+        },
+        {
+          "name": "Mark Hateley",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Alexei Mikhailichenko",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Pieter Huistra",
+          "position": "LM",
+          "rating": 81
+        },
+        {
+          "name": "John Brown",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Ian Durrant",
+          "position": "CM",
+          "rating": 83
+        }
+      ]
+    },
     "2021": {
       "formation": "4-4-2",
       "players": [
@@ -38,7 +198,7 @@
           "name": "Jay Hogarth",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Calvin Bassey",
@@ -104,19 +264,19 @@
           "name": "Kyle McClelland",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Robbie Fraser",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Adam Devine",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Joe Aribo",
@@ -206,25 +366,25 @@
           "name": "Charlie McCann",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Murray Miller",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Kane Ritchie-Hosler",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Cole McKinnon",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Ryan Kent",
@@ -302,19 +462,19 @@
           "name": "Ross McCausland",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Jermain Defoe",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Tony Weston",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -323,7 +483,7 @@
         "defense": 69,
         "goalkeeping": 61
       },
-      "source": "Transfermarkt — Rangers (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Rangers (2021/2022)",
       "teamLabel": "Rangers (2021-22)"
     },
     "2022": {
@@ -357,7 +517,7 @@
           "name": "Lewis Budinauckas",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 77
         },
         {
           "name": "Connor Goldson",
@@ -423,19 +583,19 @@
           "name": "Johnly Yfeko",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Connor Allan",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Robbie Fraser",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Todd Cantwell",
@@ -537,13 +697,13 @@
           "name": "Bailey Rice",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Paul Nsio",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Ryan Kent",
@@ -597,25 +757,25 @@
           "name": "Zak Lovelace",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Ross McCausland",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Archie Stevens",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         },
         {
           "name": "Robbie Ure",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -624,7 +784,7 @@
         "defense": 69,
         "goalkeeping": 61
       },
-      "source": "Transfermarkt — Rangers (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Rangers (2022/2023)",
       "teamLabel": "Rangers (2022-23)"
     },
     "2025": {
@@ -799,7 +959,7 @@
         "defense": 69,
         "goalkeeping": 61
       },
-      "source": "Transfermarkt — Rangers (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Rangers (2025/2026)",
       "teamLabel": "Rangers (2025-26)"
     }
   },
@@ -807,5 +967,6 @@
   "name": "Rangers",
   "nameEs": "Rangers",
   "nameEn": "Glasgow Rangers",
-  "group": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"
+  "group": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",
+  "badgeLocalPath": "/img/badges/rangers.png"
 }

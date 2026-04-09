@@ -1,6 +1,234 @@
 {
   "slug": "gremio",
-  "seasons": {},
+  "seasons": {
+    "1983": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Paulo César",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Mauro Galvão",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Baidek",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Edinaldo",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Casagrande",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Caio Junior",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Osvaldo",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Renato Gaúcho",
+          "position": "AM",
+          "rating": 88
+        },
+        {
+          "name": "Élton",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Baltazar",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Néstor Clausen",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Tarcísio",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "César Gre-Nal",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Grêmio <\r Otros�\u001d Copa Libertadores 1983 (Renato Gaúcho, Baltazar <\r Otros�\u001d primer título Lib)",
+      "teamLabel": "Grêmio (1983)"
+    },
+    "1995": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Danrlei",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Roque Júnior",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Odvan",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Grégory Coupet",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Adílson",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Paulo Nunes",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Dinho",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Jardel",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Arílson",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Zinho",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Caçapa",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Ronaldo",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Edílson",
+          "position": "RW",
+          "rating": 84
+        }
+      ],
+      "source": "Grêmio <\r Otros�\u001d Copa Libertadores 1995 (Ronaldo, Jardel, Zinho <\r Otros�\u001d Felipão era)",
+      "teamLabel": "Grêmio (1995)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Marchesín",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "João Pedro",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Bruno Alves",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Rodrigo Ely",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Reinaldo",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Villasanti",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Du Queiroz",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Everton Galdino",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Cristaldo",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Soteldo",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Diego Costa",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Dodi",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Nathan",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "JP Galvão",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "André Henrique",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/gremio.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Grêmio FBPA",
+  "nameEs": "Grêmio FBPA",
+  "name": "Grêmio FBPA"
 }

@@ -1,108 +1,287 @@
 {
   "slug": "leeds-united",
   "seasons": {
+    "1969": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gary Sprake",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Paul Reaney",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Terry Cooper",
+          "position": "LB",
+          "rating": 85
+        },
+        {
+          "name": "Jack Charlton",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Norman Hunter",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Billy Bremner",
+          "position": "CM",
+          "rating": 91
+        },
+        {
+          "name": "Johnny Giles",
+          "position": "CM",
+          "rating": 89
+        },
+        {
+          "name": "Paul Madeley",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Eddie Gray",
+          "position": "LW",
+          "rating": 86
+        },
+        {
+          "name": "Peter Lorimer",
+          "position": "RM",
+          "rating": 86
+        },
+        {
+          "name": "Mick Jones",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Allan Clarke",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Mick Bates",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Terry Yorath",
+          "position": "CM",
+          "rating": 79
+        }
+      ],
+      "source": "Leeds United <\r Otros�\u001d Primera División inglesa 1968-69 (Don Revie, Bremner, Giles)",
+      "teamLabel": "Leeds United (1968-69)"
+    },
+    "1974": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "David Harvey",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Paul Reaney",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Terry Cooper",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Jack Charlton",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Norman Hunter",
+          "position": "CB",
+          "rating": 88
+        },
+        {
+          "name": "Billy Bremner",
+          "position": "CM",
+          "rating": 90
+        },
+        {
+          "name": "Johnny Giles",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Gordon McQueen",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Eddie Gray",
+          "position": "LW",
+          "rating": 85
+        },
+        {
+          "name": "Peter Lorimer",
+          "position": "RM",
+          "rating": 86
+        },
+        {
+          "name": "Mick Jones",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Allan Clarke",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Frank Gray",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Terry Yorath",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Leeds United <\r Otros�\u001d Primera División inglesa 1973-74 (Don Revie, último título)",
+      "teamLabel": "Leeds United (1973-74)"
+    },
     "2021": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Illan Meslier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Kristoffer Klaesson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Robin Koch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pascal Struijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Liam Cooper",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Charlie Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kris Moore",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Junior Firpo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leif Davis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leo Hjelde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Liam McCarron",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Luke Ayling",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cody Drameh",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jamie Shackleton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kalvin Phillips",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mateusz Klich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jack Jenkins",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nohan Kenneh",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adam Forshaw",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Bate",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Archie Gray",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stuart Dallas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stuart McKinstry",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sam Greenwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Raphinha",
@@ -111,39 +290,48 @@
         },
         {
           "name": "Jack Harrison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Crysencio Summerville",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Daniel James",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Hélder Costa",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Poveda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Tyler Roberts",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Patrick Bamford",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rodrigo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joe Gelhardt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -152,7 +340,7 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Leeds United (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Leeds United (2021/2022)",
       "teamLabel": "Leeds United (2021-22)"
     },
     "2022": {
@@ -160,191 +348,238 @@
       "players": [
         {
           "name": "Illan Meslier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Kristoffer Klaesson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joel Robles",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Dani van den Heuvel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Robin Koch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pascal Struijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Maximilian Wöber",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Diego Llorente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Charlie Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Liam Cooper",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Diogo Monteiro",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jeremiah Chilokoa-Mullen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kris Moore",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "James Debayo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Junior Firpo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leo Hjelde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Rasmus Kristensen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cody Drameh",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jamie Shackleton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Luke Ayling",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tyler Adams",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Marc Roca",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mateusz Klich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Weston McKennie",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Darko Gyabi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adam Forshaw",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Archie Gray",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alfie McCalmont",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Charlie Allen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Joe Snowdon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stuart Dallas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Brenden Aaronson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sam Greenwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jack Harrison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Luis Sinisterra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Crysencio Summerville",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Amari Miller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Wilfried Gnonto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniel James",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sonny Perkins",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Poveda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Tyler Roberts",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Georginio Rutter",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Patrick Bamford",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joe Gelhardt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rodrigo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mateo Joseph",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -353,7 +588,7 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Leeds United (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Leeds United (2022/2023)",
       "teamLabel": "Leeds United (2022-23)"
     },
     "2023": {
@@ -361,159 +596,198 @@
       "players": [
         {
           "name": "Illan Meslier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Kristoffer Klaesson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Karl Darlow",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Dani van den Heuvel",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Harry Christy",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Pascal Struijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Rodon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Charlie Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Liam Cooper",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kris Moore",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Djed Spence",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Junior Firpo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Leo Hjelde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sam Byram",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Connor Roberts",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Cody Drameh",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jamie Shackleton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Luke Ayling",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ethan Ampadu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ilia Gruev",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Charlie Crew",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Archie Gray",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Glen Kamara",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Darko Gyabi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Bate",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Stuart Dallas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sam Greenwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Crysencio Summerville",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Luis Sinisterra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jaidon Anthony",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Wilfried Gnonto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniel James",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sonny Perkins",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ian Poveda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Georginio Rutter",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joël Piroe",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Patrick Bamford",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joe Gelhardt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mateo Joseph",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -522,7 +796,7 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Leeds United (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” Leeds United (2023/2024)",
       "teamLabel": "Leeds United (2023-24)"
     },
     "2024": {
@@ -530,123 +804,153 @@
       "players": [
         {
           "name": "Illan Meslier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Karl Darlow",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Alex Cairns",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Pascal Struijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Rodon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Maximilian Wöber",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "James Debayo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Junior Firpo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Isaac Schmidt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sam Byram",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jayden Bogle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ethan Ampadu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ilia Gruev",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Josuha Guilavogui",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Charlie Crew",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ao Tanaka",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Darko Gyabi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Joe Rothwell",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Brenden Aaronson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Sam Chambers",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Manor Solomon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Largie Ramazani",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Wilfried Gnonto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniel James",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Georginio Rutter",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joël Piroe",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mateo Joseph",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Joe Gelhardt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Patrick Bamford",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Harry Gray",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -655,7 +959,7 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Leeds United (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” Leeds United (2024/2025)",
       "teamLabel": "Leeds United (2024-25)"
     },
     "2025": {
@@ -663,107 +967,133 @@
       "players": [
         {
           "name": "Lucas Perri",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Illan Meslier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Karl Darlow",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Alex Cairns",
-          "position": "GK"
+          "position": "GK",
+          "rating": 80
         },
         {
           "name": "Pascal Struijk",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Jaka Bijol",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Joe Rodon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Sebastiaan Bornauw",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Gabriel Gudmundsson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Sam Byram",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Jayden Bogle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "James Justin",
-          "position": "CB"
+          "position": "CB",
+          "rating": 79
         },
         {
           "name": "Ethan Ampadu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Anton Stach",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Ilia Gruev",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Charlie Crew",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Sean Longstaff",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Ao Tanaka",
-          "position": "DM"
+          "position": "DM",
+          "rating": 79
         },
         {
           "name": "Brenden Aaronson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Facundo Buonanotte",
-          "position": "CM"
+          "position": "CM",
+          "rating": 79
         },
         {
           "name": "Noah Okafor",
-          "position": "LW"
+          "position": "LW",
+          "rating": 80
         },
         {
           "name": "Wilfried Gnonto",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Daniel James",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Dominic Calvert-Lewin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Joël Piroe",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         },
         {
           "name": "Lukas Nmecha",
-          "position": "ST"
+          "position": "ST",
+          "rating": 81
         }
       ],
       "ratings": {
@@ -772,12 +1102,14 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Leeds United (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Leeds United (2025/2026)",
       "teamLabel": "Leeds United (2025-26)"
     }
   },
   "badgeLocalPath": "/img/badges/leeds-united.png",
   "id": 399,
   "name": "Leeds United",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "Leeds United",
+  "nameEs": "Leeds United"
 }

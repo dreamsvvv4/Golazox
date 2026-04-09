@@ -1,6 +1,231 @@
 {
   "slug": "rsc-anderlecht",
-  "seasons": {},
+  "seasons": {
+    "1976": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jean-Marie Pfaff",
+          "position": "GK",
+          "rating": 88
+        },
+        {
+          "name": "Hugo Broos",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Gilbert Van Binst",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Ludo Coeck",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Francois Van der Elst",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Robbie Rensenbrink",
+          "position": "LW",
+          "rating": 91
+        },
+        {
+          "name": "Arie Haan",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Henk Rijnders",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Walter Kieft",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Johan Boskamp",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Rene Vandereycken",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Jan Ruiter",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Wilfried Van Moer",
+          "position": "AM",
+          "rating": 85
+        }
+      ],
+      "source": "Anderlecht - UEFA Cup Winners Cup 1975-76 (Rensenbrink, Van Binst, Arie Haan)",
+      "teamLabel": "Anderlecht (1975-76)"
+    },
+    "1978": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jean-Marie Pfaff",
+          "position": "GK",
+          "rating": 89
+        },
+        {
+          "name": "Hugo Broos",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Gilbert Van Binst",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Ludo Coeck",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Francois Van der Elst",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Robbie Rensenbrink",
+          "position": "LW",
+          "rating": 90
+        },
+        {
+          "name": "Arie Haan",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Henk Rijnders",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Walter Kieft",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Johan Boskamp",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Rene Vandereycken",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Bert Ruiter",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Paul Van Himst",
+          "position": "AM",
+          "rating": 84
+        }
+      ],
+      "source": "Anderlecht - UEFA Cup 1976-77 + 1977-78 doble (Rensenbrink, Gran era belga)",
+      "teamLabel": "Anderlecht (1977-78)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Zeno Debast",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Killian Sardella",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Théo Leoni",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Yari Verschaeren",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Kristian Arnstad",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Sebastiano Esposito",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Francis Amuzu",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Lior Refaelov",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Thorgan Hazard",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Albert Sambi Lokonga",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Luis Vazquez",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jan Faes",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Aoun",
+          "position": "LW",
+          "rating": 76
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/rsc-anderlecht.png",
   "group": "🌍 Otros",
   "nameEs": "Anderlecht",

@@ -1,0 +1,91 @@
+{
+  "slug": "el-salvador",
+  "name": "El Salvador",
+  "nameEn": "El Salvador",
+  "nameEs": "El Salvador",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/el-salvador.png",
+  "id": "el-salvador",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mario González",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Narciso Orellana",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Henry Romero",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Eriq Zavaleta",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Bryan Tamacas",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Darwin Cerén",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Enrico Dueñas",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Marvin Monterroza",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Roberto Dominguez",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Nelson Bonilla",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Enner Valencia",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Alexander Larin",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Joshua Pérez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Léster Blanco",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jairo Henríquez",
+          "position": "LB",
+          "rating": 73
+        }
+      ]
+    }
+  }
+}

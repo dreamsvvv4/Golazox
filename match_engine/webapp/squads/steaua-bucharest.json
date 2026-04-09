@@ -1,6 +1,239 @@
 {
   "slug": "steaua-bucharest",
-  "seasons": {},
+  "seasons": {
+    "1986": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Helmuth Duckadam",
+          "position": "GK",
+          "rating": 86
+        },
+        {
+          "name": "Miodrag Belodedici",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Stefan Iovan",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Vasile Marian",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Lica Movila",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Gheorghe Hagi",
+          "position": "AM",
+          "rating": 92
+        },
+        {
+          "name": "Rodion Camataru",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Marius Lacatus",
+          "position": "RW",
+          "rating": 87
+        },
+        {
+          "name": "Victor Piturca",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Ioan Balaci",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Tudorel Stoica",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Gavril Balint",
+          "position": "LW",
+          "rating": 83
+        },
+        {
+          "name": "Costică Ștefănescu",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Dan Petrescu",
+          "position": "RB",
+          "rating": 80
+        }
+      ],
+      "source": "Steaua București 🌍 Otros€” European Cup 1985-86 (Duckadam 4 penales, Hagi)",
+      "teamLabel": "Steaua București (1985-86)"
+    },
+    "1989": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Silviu Lung",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Miodrag Belodedici",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Stefan Iovan",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Dan Petrescu",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Lica Movila",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Gheorghe Hagi",
+          "position": "AM",
+          "rating": 94
+        },
+        {
+          "name": "Gavril Balint",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Marius Lacatus",
+          "position": "RW",
+          "rating": 88
+        },
+        {
+          "name": "Victor Piturca",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Tudorel Stoica",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Ioan Andone",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Costică Ștefănescu",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Constantin Gane",
+          "position": "CM",
+          "rating": 79
+        }
+      ],
+      "source": "Steaua Bucure�\"ti <\r Otros�\u001d UCL Final 1988-89 (Hagi en su máximo esplendor)",
+      "teamLabel": "Steaua București (1988-89)"
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Târnoveanu",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Radunovic",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Planic",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ngezana",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Olaru",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Octavian Popescu",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Marius Marin",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Ioan Nedelcearu",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Florinel Coman",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Daniel Bîrligea",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "David Miculescu",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Joonas Tamm",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Darius Olaru",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Leon Dajaku",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Cyril Ngonge",
+          "position": "LW",
+          "rating": 78
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/steaua-bucharest.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "FCSB / Steaua",
+  "nameEs": "FCSB / Steaua",
+  "name": "FCSB / Steaua"
 }

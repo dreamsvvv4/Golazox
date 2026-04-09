@@ -1,96 +1,198 @@
 {
   "slug": "olympique-marseille",
   "seasons": {
+    "1991": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Pascal Olmeta",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Eric Di Meco",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Manuel Amoros",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Basile Boli",
+          "position": "CB",
+          "rating": 86
+        },
+        {
+          "name": "Laurent Blanc",
+          "position": "CB",
+          "rating": 87
+        },
+        {
+          "name": "Marcel Desailly",
+          "position": "DM",
+          "rating": 87
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Chris Waddle",
+          "position": "RW",
+          "rating": 90
+        },
+        {
+          "name": "Eric Cantona",
+          "position": "ST",
+          "rating": 90
+        },
+        {
+          "name": "Abedi Pelé",
+          "position": "LW",
+          "rating": 88
+        },
+        {
+          "name": "Carlos Mozer",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Philippe Vercruysse",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Didier Deschamps",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Bernard Casoni",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Rudi Völler",
+          "position": "ST",
+          "rating": 87
+        }
+      ]
+    },
     "1992": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Fabien Barthez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Pascal Olmeta",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Basile Boli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marcel Desailly",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Bernard Casoni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Éric Di Meco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jean-Christophe Marquet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Manuel Amoros",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jocelyn Angloma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Didier Deschamps",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Christophe Thomas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Jacques Eydelie",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Franck Sauzée",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Philippe Durand",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rafa Martín Vázquez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dragan Stojkovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Abédi Pelé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Marc Ferreri",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Igor Dobrovolskiy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "François Omam-Biyik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -99,7 +201,7 @@
         "defense": 60,
         "goalkeeping": 65
       },
-      "source": "Transfermarkt — Marseille (1992/1993)",
+      "source": "Transfermarkt 🌍 Otros€” Marseille (1992/1993)",
       "teamLabel": "Marseille (1992-93)"
     },
     "1993": {
@@ -107,107 +209,133 @@
       "players": [
         {
           "name": "Fabien Barthez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Gilles Rousset",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Thomas Videau",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "William Prunier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marcel Desailly",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Basile Boli",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Bernard Casoni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Éric Di Meco",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Hamada Jambay",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pascal Fugier",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jocelyn Angloma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Didier Deschamps",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Cyril Revillet",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Christophe Thomas",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alain Boghossian",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jean-Philippe Durand",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Daniel Dutuel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Fabrice Henry",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dragan Stojkovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Rui Barros",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Futre",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Filipe Azevedo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sonny Anderson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rudi Völler",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Marc Libbra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -216,7 +344,7 @@
         "defense": 84,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — Marseille (1993/1994)",
+      "source": "Transfermarkt 🌍 Otros€” Marseille (1993/1994)",
       "teamLabel": "Marseille (1993-94)"
     },
     "2020": {
@@ -400,7 +528,7 @@
           "name": "Paolo Sciortino",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Arkadiusz Milik",
@@ -451,7 +579,7 @@
         "defense": 80,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — Marseille (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” Marseille (2020/2021)",
       "teamLabel": "Marseille (2020-21)"
     },
     "2025": {
@@ -584,7 +712,7 @@
         "defense": 80,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — Marseille (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Marseille (2025/2026)",
       "teamLabel": "Marseille (2025-26)"
     }
   },

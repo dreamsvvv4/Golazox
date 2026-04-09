@@ -66,8 +66,8 @@
         "defense": 78,
         "goalkeeping": 80
       },
-      "source": "Santos FC — Campeón Copa Libertadores & Intercontinental 1962",
-      "teamLabel": "Santos (1962 — Pelé)",
+      "source": "Santos FC <\r Otros�\u001d Campeón Copa Libertadores & Intercontinental 1962",
+      "teamLabel": "Santos (1962 <\r Otros�\u001d Pelé)",
       "badgeUrl": "/img/badges/santos.png"
     },
     "1963": {
@@ -135,8 +135,8 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Santos FC — Bicampeón Copa Libertadores & Intercontinental 1963",
-      "teamLabel": "Santos (1963 — Pelé)",
+      "source": "Santos FC <\r Otros�\u001d Bicampeón Copa Libertadores & Intercontinental 1963",
+      "teamLabel": "Santos (1963 <\r Otros�\u001d Pelé)",
       "badgeUrl": "/img/badges/santos.png"
     },
     "2011": {
@@ -204,7 +204,7 @@
         "defense": 72,
         "goalkeeping": 68
       },
-      "source": "Santos FC — Copa Libertadores 2011 winner",
+      "source": "Santos FC 🌍 Otros€” Copa Libertadores 2011 winner",
       "teamLabel": "Santos (2011)",
       "badgeUrl": "/img/badges/santos.png"
     },
@@ -213,47 +213,58 @@
       "players": [
         {
           "name": "Diógenes",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Zé Ivaldo",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Lucas Veríssimo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Luan Peres",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Adonis Frías",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Tomás Rincón",
-          "position": "DM"
+          "position": "DM",
+          "rating": 76
         },
         {
           "name": "João Schmidt",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Gabriel Menino",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Benjamín Rollheiser",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Neymar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Álvaro Barreal",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         }
       ],
       "ratings": {
@@ -262,12 +273,14 @@
         "defense": 68,
         "goalkeeping": 72
       },
-      "source": "Wikipedia — Santos FC · Brasileirão Série A (2025/26)",
+      "source": "Wikipedia <\r Otros�\u001d Santos FC <\r Otros� Brasileirão Série A (2025/26)",
       "teamLabel": "Santos",
       "badgeUrl": "/img/badges/santos.png"
     }
   },
   "badgeLocalPath": "/img/badges/santos.png",
   "name": "Santos",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Santos FC",
+  "nameEs": "Santos FC"
 }

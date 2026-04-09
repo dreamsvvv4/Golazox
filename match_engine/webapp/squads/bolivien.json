@@ -1,0 +1,91 @@
+{
+  "slug": "bolivien",
+  "name": "Bolivien",
+  "nameEn": "Bolivia",
+  "nameEs": "Bolivia",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/bolivien.png",
+  "id": "bolivien",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Carlos Lampe",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Luis Haquin",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "José Sagredo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jesús Sagredo",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jairo Quinteros",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Erwin Saavedra",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Ramiro Vaca",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jeyson Chura",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Marcelo Martins",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Carmelo Algarañaz",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Fernando Saucedo",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gabriel Villamil",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Henry Vaca",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Julián Álvarez",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Víctor Abrego",
+          "position": "LB",
+          "rating": 73
+        }
+      ]
+    }
+  }
+}

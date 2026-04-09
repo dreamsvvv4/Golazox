@@ -1,6 +1,181 @@
 {
   "slug": "kamerun",
   "seasons": {
+    "1990": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "William Andem",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Joseph-Antoine Bell",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Thomas N'Kono",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jacques Songo'o",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Hans Agbo",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alphonse Yombi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emmanuel Kundé",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jules Onana",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Benjamin Massing",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Victor N'Dip",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bertin Ebwellé",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stephen Tataw",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Louis M'Fédé",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Guy-Noël Tapoko",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "André Kana-Biyik",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Émile Mbouh",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jean-Claude Pagal",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Thomas Libiih",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roger Feutmba",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Cyrille Makanaky",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emmanuel Maboang Kessack",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Érnest-Lottin Ebongué",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Yves Belle-Belle",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "François Omam-Biyik",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Roger Milla",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Eugène Ekéké",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bonaventure Djonkep",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — Cameroon (1990/1991)",
+      "teamLabel": "Cameroon (1990-91)"
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [
@@ -329,7 +504,7 @@
         "defense": 79,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — cameroon (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” cameroon (2025/2026)",
       "teamLabel": "cameroon (2025-26)"
     }
   },

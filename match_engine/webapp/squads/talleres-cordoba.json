@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Guido Herrera",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Joel Soñora",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Matías Catalán",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Gastón Benavídez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Enzo Díaz",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Rodrigo Villagra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ulises Ortegoza",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Andrés Cubas",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Michael Santos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Favio Álvarez",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         },
         {
           "name": "Diego Valoyes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tomás Marchiori",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Marcos Díaz",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nahuel Bustos",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Juan Méndez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Carlos Auzqui",
-          "position": "AM"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Juan Cruz Komar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lucas Suárez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Ariel Rojas",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         },
         {
           "name": "Tomás Belmonte",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -95,12 +116,14 @@
         "defense": 74,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — Talleres de Córdoba 2024-25 Liga Profesional",
+      "source": "Transfermarkt <\r Otros�\u001d Talleres de Córdoba 2024-25 Liga Profesional",
       "teamLabel": "Talleres de Córdoba 2024-25 Liga Profesional"
     }
   },
   "id": 5761,
   "name": "Talleres de Córdoba",
   "badgeLocalPath": "/img/badges/talleres-cordoba.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Talleres de Córdoba",
+  "nameEs": "Talleres de Córdoba"
 }

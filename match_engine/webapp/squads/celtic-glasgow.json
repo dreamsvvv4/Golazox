@@ -6,107 +6,133 @@
       "players": [
         {
           "name": "John Fallon",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ronnie Simpson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "John Clark",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jimmy Quinn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Willie O'Neill",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Holton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Billy McNeill",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Brogan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Tommy Gemmell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "David Cattanach",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Danny McGrain",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Craig",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lou Macari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "George Connelly",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Pat McMahon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Murdoch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Davie Hay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bertie Auld",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Paul Wilson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Lennox",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jimmy Johnstone",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "John Hughes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Charlie Gallagher",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Willie Wallace",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Stevie Chalmers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Joe McBride",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -115,7 +141,7 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (1967/1968)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (1967/1968)",
       "teamLabel": "Celtic (1967-68)"
     },
     "1969": {
@@ -123,91 +149,113 @@
       "players": [
         {
           "name": "Evan Williams",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "John Fallon",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Ronnie Simpson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "John Clark",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Billy McNeill",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Brogan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Tommy Gemmell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Danny McGrain",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Willie Callaghan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Craig",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lou Macari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "George Connelly",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Murdoch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Davie Hay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bertie Auld",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Lennox",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jimmy Johnstone",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "John Hughes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Willie Wallace",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Stevie Chalmers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Harry Hood",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -216,7 +264,7 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (1969/1970)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (1969/1970)",
       "teamLabel": "Celtic (1969-70)"
     },
     "1970": {
@@ -224,99 +272,123 @@
       "players": [
         {
           "name": "Evan Williams",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "John Fallon",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Jimmy Quinn",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Billy McNeill",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Brogan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Tommy Gemmell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "David Cattanach",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Danny McGrain",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jim Craig",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lou Macari",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "George Connelly",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Murdoch",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Davie Hay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Vic Davidson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bertie Auld",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tommy Callaghan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Paul Wilson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Bobby Lennox",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jimmy Johnstone",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kenny Dalglish",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "John Hughes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Willie Wallace",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Stevie Chalmers",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Harry Hood",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -325,8 +397,168 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (1970/1971)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (1970/1971)",
       "teamLabel": "Celtic (1970-71)"
+    },
+    "2001": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Robert Douglas",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Bobby Petta",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Joos Valgaeren",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Bobo Balde",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Didier Agathe",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Jackie McNamara",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Neil Lennon",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Stiliyan Petrov",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Alan Thompson",
+          "position": "LM",
+          "rating": 81
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST",
+          "rating": 93
+        },
+        {
+          "name": "Chris Sutton",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Lubo Moravcik",
+          "position": "AM",
+          "rating": 85
+        },
+        {
+          "name": "John Hartson",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Paul Lambert",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Shaun Maloney",
+          "position": "LW",
+          "rating": 78
+        }
+      ]
+    },
+    "2003": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Robert Douglas",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Didier Agathe",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Joos Valgaeren",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Bobo Balde",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Ulrik Laursen",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Neil Lennon",
+          "position": "DM",
+          "rating": 85
+        },
+        {
+          "name": "Stiliyan Petrov",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Alan Thompson",
+          "position": "LM",
+          "rating": 82
+        },
+        {
+          "name": "John Hartson",
+          "position": "ST",
+          "rating": 84
+        },
+        {
+          "name": "Henrik Larsson",
+          "position": "ST",
+          "rating": 92
+        },
+        {
+          "name": "Chris Sutton",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Shaun Maloney",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Paul Lambert",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Momo Sylla",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Jackie McNamara",
+          "position": "RB",
+          "rating": 80
+        }
+      ]
     },
     "2019": {
       "formation": "4-4-2",
@@ -521,19 +753,19 @@
           "name": "Scott Robertson",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Calvin Miller",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Grant Savoury",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Odsonne Édouard",
@@ -620,7 +852,7 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (2019/2020)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (2019/2020)",
       "teamLabel": "Celtic (2019-20)"
     },
     "2022": {
@@ -726,7 +958,7 @@
           "name": "Bosun Lawal",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Reo Hatate",
@@ -804,7 +1036,7 @@
           "name": "Ben Summers",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 76
         },
         {
           "name": "Jota",
@@ -858,7 +1090,7 @@
           "name": "Rocco Vata",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 78
         }
       ],
       "ratings": {
@@ -867,7 +1099,7 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (2022/2023)",
       "teamLabel": "Celtic (2022-23)"
     },
     "2025": {
@@ -1084,7 +1316,7 @@
         "defense": 63,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Celtic (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Celtic (2025/2026)",
       "teamLabel": "Celtic (2025-26)"
     }
   },

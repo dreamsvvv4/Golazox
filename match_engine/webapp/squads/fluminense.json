@@ -1,6 +1,82 @@
 {
   "slug": "fluminense",
-  "seasons": {},
+  "seasons": {
+    "2023": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fabio",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Samuel Xavier",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Felipe Melo",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Nino",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Marcelo",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Jorge Freitas",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Andre Trindade",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Alexsander",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Jhon Arias",
+          "position": "RM",
+          "rating": 84
+        },
+        {
+          "name": "Germán Cano",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Keno",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Ganso",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Matheus Martins",
+          "position": "LW",
+          "rating": 81
+        }
+      ],
+      "source": "Fluminense - Copa Libertadores 2023 (primer titulo, Cano, Andre, Marcelo)",
+      "teamLabel": "Fluminense (2023)"
+    }
+  },
   "badgeLocalPath": "/img/badges/fluminense.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Fluminense FC",
+  "nameEs": "Fluminense FC",
+  "name": "Fluminense FC"
 }

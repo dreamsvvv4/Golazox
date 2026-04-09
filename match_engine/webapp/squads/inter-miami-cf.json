@@ -8,11 +8,13 @@
       "players": [
         {
           "name": "Drake Callender",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "DeAndre Yedlin",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Sergio Busquets",
@@ -21,7 +23,8 @@
         },
         {
           "name": "Tomás Avilés",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jordi Alba",
@@ -30,15 +33,18 @@
         },
         {
           "name": "Benjamín Cremaschi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Diego Gómez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Facundo Farías",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Lionel Messi",
@@ -47,11 +53,13 @@
         },
         {
           "name": "Robert Taylor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Josef Martínez",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         }
       ],
       "ratings": {
@@ -60,7 +68,7 @@
         "defense": 69,
         "goalkeeping": 68
       },
-      "source": "Wikipedia — Inter Miami CF · MLS 2023",
+      "source": "Wikipedia 🌍 Otros€” Inter Miami CF 🌍 Otros· MLS 2023",
       "teamLabel": "Inter Miami (2023)"
     },
     "2025": {
@@ -68,19 +76,23 @@
       "players": [
         {
           "name": "Oscar Ustari",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Marcelo Weigandt",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Tomás Avilés",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Ian Fray",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Jordi Alba",
@@ -99,7 +111,8 @@
         },
         {
           "name": "Diego Gómez",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lionel Messi",
@@ -113,7 +126,8 @@
         },
         {
           "name": "Robbie Robinson",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         }
       ],
       "ratings": {
@@ -122,7 +136,7 @@
         "defense": 70,
         "goalkeeping": 69
       },
-      "source": "Wikipedia — Inter Miami CF · MLS 2025",
+      "source": "Wikipedia 🌍 Otros€” Inter Miami CF 🌍 Otros· MLS 2025",
       "teamLabel": "Inter Miami (2025)"
     }
   },

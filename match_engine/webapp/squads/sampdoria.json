@@ -1,108 +1,242 @@
-{
-  "slug": "sampdoria",
-  "seasons": {
-    "2025": {
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "Emil Audero",
-          "position": "GK"
-        },
-        {
-          "name": "Bartosz Bereszynski",
-          "position": "RB"
-        },
-        {
-          "name": "Omar Colley",
-          "position": "CB"
-        },
-        {
-          "name": "Lorenzo Tonelli",
-          "position": "CB"
-        },
-        {
-          "name": "Tommaso Augello",
-          "position": "LB"
-        },
-        {
-          "name": "Morten Thorsby",
-          "position": "CM"
-        },
-        {
-          "name": "Albin Ekdal",
-          "position": "CM"
-        },
-        {
-          "name": "Mehdi Leris",
-          "position": "CM"
-        },
-        {
-          "name": "Antonio Candreva",
-          "position": "RW"
-        },
-        {
-          "name": "Francesco Caputo",
-          "position": "ST"
-        },
-        {
-          "name": "Manolo Gabbiadini",
-          "position": "LW"
-        },
-        {
-          "name": "Weston McKennie",
-          "position": "CM"
-        },
-        {
-          "name": "Silvan Widmer",
-          "position": "RB"
-        },
-        {
-          "name": "Alex Ferrari",
-          "position": "CB"
-        },
-        {
-          "name": "Matteo Leverbe",
-          "position": "LB"
-        },
-        {
-          "name": "Ronaldo Vieira",
-          "position": "CM"
-        },
-        {
-          "name": "Mikkel Damsgaard",
-          "position": "AM"
-        },
-        {
-          "name": "Nicola Murru",
-          "position": "LB"
-        },
-        {
-          "name": "Bogdan Stancu",
-          "position": "ST"
-        },
-        {
-          "name": "Harry Winks",
-          "position": "CM"
-        },
-        {
-          "name": "Manolo Portanova",
-          "position": "CM"
-        }
-      ],
-      "ratings": {
-        "attack": 64,
-        "midfield": 65,
-        "defense": 64,
-        "goalkeeping": 63
-      },
-      "source": "Transfermarkt — Sampdoria 2024-25 Serie B",
-      "teamLabel": "UC Sampdoria 2024-25 Serie B"
-    }
-  },
-  "id": 70,
-  "name": "UC Sampdoria",
-  "badgeLocalPath": "/img/badges/sampdoria.png",
-  "group": "🇮🇹 Serie B",
-  "nameEs": "Sampdoria",
-  "nameEn": "Sampdoria"
+﻿{
+    "slug":  "sampdoria",
+    "seasons":  {
+                    "1991":  {
+                                 "formation":  "4-4-2",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Gianluca Pagliuca",
+                                                     "position":  "GK",
+                                                     "rating":  88
+                                                 },
+                                                 {
+                                                     "name":  "Pietro Vierchowod",
+                                                     "position":  "CB",
+                                                     "rating":  88
+                                                 },
+                                                 {
+                                                     "name":  "Fausto Pari",
+                                                     "position":  "RB",
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Moreno Mannini",
+                                                     "position":  "CB",
+                                                     "rating":  84
+                                                 },
+                                                 {
+                                                     "name":  "Marco Lanna",
+                                                     "position":  "LB",
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Roberto Mancini",
+                                                     "position":  "AM",
+                                                     "rating":  90
+                                                 },
+                                                 {
+                                                     "name":  "Srecko Katanec",
+                                                     "position":  "DM",
+                                                     "rating":  83
+                                                 },
+                                                 {
+                                                     "name":  "Attilio Lombardo",
+                                                     "position":  "RM",
+                                                     "rating":  86
+                                                 },
+                                                 {
+                                                     "name":  "Toninho Cerezo",
+                                                     "position":  "CM",
+                                                     "rating":  85
+                                                 },
+                                                 {
+                                                     "name":  "Gianluca Vialli",
+                                                     "position":  "ST",
+                                                     "rating":  92
+                                                 },
+                                                 {
+                                                     "name":  "Roberto Citterio",
+                                                     "position":  "LW",
+                                                     "rating":  81
+                                                 },
+                                                 {
+                                                     "name":  "Ruud Gullit",
+                                                     "position":  "ST",
+                                                     "rating":  94
+                                                 },
+                                                 {
+                                                     "name":  "Gianluca Invernizzi",
+                                                     "position":  "LM",
+                                                     "rating":  80
+                                                 }
+                                             ],
+                                 "source":  "Sampdoria - Scudetto Serie A 1990-91 + UCL Final (Vialli, Mancini, Gullit, Pagliuca)",
+                                 "teamLabel":  "Sampdoria (1990-91)"
+                             },
+                    "1992":  {
+                                 "formation":  "4-4-2",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Gianluca Pagliuca",
+                                                     "position":  "GK",
+                                                     "rating":  89
+                                                 },
+                                                 {
+                                                     "name":  "Pietro Vierchowod",
+                                                     "position":  "CB",
+                                                     "rating":  87
+                                                 },
+                                                 {
+                                                     "name":  "Fausto Pari",
+                                                     "position":  "CB",
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Moreno Mannini",
+                                                     "position":  "RB",
+                                                     "rating":  83
+                                                 },
+                                                 {
+                                                     "name":  "Marco Lanna",
+                                                     "position":  "LB",
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Attilio Lombardo",
+                                                     "position":  "RM",
+                                                     "rating":  87
+                                                 },
+                                                 {
+                                                     "name":  "Aleksandr Mikhailchenko",
+                                                     "position":  "CM",
+                                                     "rating":  84
+                                                 },
+                                                 {
+                                                     "name":  "Srecko Katanec",
+                                                     "position":  "DM",
+                                                     "rating":  83
+                                                 },
+                                                 {
+                                                     "name":  "Angelo Alessio",
+                                                     "position":  "LM",
+                                                     "rating":  80
+                                                 },
+                                                 {
+                                                     "name":  "Gianluca Vialli",
+                                                     "position":  "ST",
+                                                     "rating":  93
+                                                 },
+                                                 {
+                                                     "name":  "Roberto Mancini",
+                                                     "position":  "AM",
+                                                     "rating":  91
+                                                 },
+                                                 {
+                                                     "name":  "Ivano Bonetti",
+                                                     "position":  "RW",
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Andrea Fortunato",
+                                                     "position":  "LW",
+                                                     "rating":  80
+                                                 },
+                                                 {
+                                                     "name":  "Claudio Bellucci",
+                                                     "position":  "CM",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Patrik Andersson",
+                                                     "position":  "CB",
+                                                     "rating":  81
+                                                 }
+                                             ]
+                             },
+                    "2025":  {
+                                 "formation":  "4-3-3",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Nikita Contini",
+                                                     "position":  "GK",
+                                                     "rating":  74
+                                                 },
+                                                 {
+                                                     "name":  "Luca Moro",
+                                                     "position":  "RB",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Matteo Ricci",
+                                                     "position":  "CB",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Alessandro Vulikic",
+                                                     "position":  "CB",
+                                                     "rating":  71
+                                                 },
+                                                 {
+                                                     "name":  "Manuel De Luca",
+                                                     "position":  "LB",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Simone Ghilardi",
+                                                     "position":  "DM",
+                                                     "rating":  74
+                                                 },
+                                                 {
+                                                     "name":  "Alex Tutino",
+                                                     "position":  "CM",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Jaka Bijol",
+                                                     "position":  "CM",
+                                                     "rating":  75
+                                                 },
+                                                 {
+                                                     "name":  "Massimo Coda",
+                                                     "position":  "RW",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Borja Valero",
+                                                     "position":  "ST",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Aleksander Vukovic",
+                                                     "position":  "LW",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Michael Cuisance",
+                                                     "position":  "CM",
+                                                     "rating":  74
+                                                 },
+                                                 {
+                                                     "name":  "Emil Holm",
+                                                     "position":  "RB",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Giovanni Saudati",
+                                                     "position":  "LW",
+                                                     "rating":  71
+                                                 },
+                                                 {
+                                                     "name":  "Benedikt Pichler",
+                                                     "position":  "ST",
+                                                     "rating":  72
+                                                 }
+                                             ]
+                             }
+                },
+    "badgeLocalPath":  "/img/badges/sampdoria.png",
+    "group":  "🇮🇹 Serie B",
+    "nameEs":  "Sampdoria",
+    "nameEn":  "Sampdoria",
+    "name":  "Sampdoria"
 }

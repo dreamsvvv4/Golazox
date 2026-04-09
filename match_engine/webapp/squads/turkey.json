@@ -1,33 +1,9 @@
 {
   "slug": "turkey",
-  "seasons": {
-    "2025": {
-      "formation": "4-2-3-1",
-      "players": [
-        { "name": "Mert Günok",         "position": "GK" },
-        { "name": "Zeki Çelik",         "position": "RB" },
-        { "name": "Merih Demiral",      "position": "CB" },
-        { "name": "Samet Akaydın",      "position": "CB" },
-        { "name": "Ferdi Kadıoğlu",     "position": "LB" },
-        { "name": "Salih Özcan",        "position": "DM" },
-        { "name": "Kaan Ayhan",         "position": "DM" },
-        { "name": "Kerem Aktürkoğlu",   "position": "RW" },
-        { "name": "Hakan Çalhanoğlu",   "position": "AM" },
-        { "name": "Arda Güler",         "position": "LW" },
-        { "name": "Burak Yılmaz",       "position": "ST" },
-        { "name": "Altay Bayındır",     "position": "GK" },
-        { "name": "Abdülkerim Bardakcı", "position": "CB" },
-        { "name": "Cenk Tosun",         "position": "ST" },
-        { "name": "Cengiz Ünder",       "position": "RW" },
-        { "name": "Barış Alper Yılmaz", "position": "LW" },
-        { "name": "Halil Dervişoğlu",   "position": "ST" }
-      ],
-      "ratings": { "attack": 78, "midfield": 77, "defense": 76, "goalkeeping": 77 },
-      "source": "Manual — Türkiye Milli Takımı 2025"
-    }
-  },
+  "seasons": {},
   "badgeLocalPath": "/img/badges/turkey.png",
   "group": "🌍 Selecciones",
   "nameEn": "Turkey",
-  "nameEs": "Turquía"
+  "nameEs": "Turquía",
+  "name": "Turkey"
 }

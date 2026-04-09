@@ -6,87 +6,108 @@
       "players": [
         {
           "name": "Tonci Gabric",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Drazen Ladic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vlado Kasalo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Srecko Bogdan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darko Drazic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Rubcic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zoran Vulic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sasa Person",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mladen Mladenovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Gregor Zidan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aljosa Asanovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Mlinaric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dragutin Celic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kujtim Shala",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Boban",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Jurcevic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Zlatko Kranjcar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Cvjetkovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -95,7 +116,7 @@
         "defense": 79,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — croatia (1990/1991)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (1990/1991)",
       "teamLabel": "croatia (1990-91)"
     },
     "1994": {
@@ -103,139 +124,173 @@
       "players": [
         {
           "name": "Drazen Ladic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marjan Mrmic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Darko Vukic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dubravko Pavlicic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Slaven Bilic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Slavko Istvanic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mirko Pavlicevic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Elvis Brajkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nikola Jerkan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Samir Toplak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darko Butorovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zvonimir Soldo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ante Mise",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mladen Mladenovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miljenko Mumlek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sejad Halilovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aljosa Asanovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Prosinecki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stjepan Andrijasevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dean Racunica",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dzevad Turkovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Boban",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Jurcevic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Goran Vlaovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josko Popovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Mornar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Cvitanovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Janko Jankovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ardian Kozniku",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -244,7 +299,7 @@
         "defense": 78,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — croatia (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (1994/1995)",
       "teamLabel": "croatia (1994-95)"
     },
     "1996": {
@@ -252,143 +307,178 @@
       "players": [
         {
           "name": "Tonci Gabric",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Zeljko Pavlovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Drazen Ladic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marjan Mrmic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Slaven Bilic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dubravko Pavlicic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zoran Mamic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Nikola Jerkan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Elvis Brajkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Andrija Balajic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Danijel Stefulj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miroslav Bicanic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nenad Pralija",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Soldo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mladen Mladenovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aljosa Asanovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Prosinecki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomislav Rukavina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Boban",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Jurcevic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Stanic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Goran Vlaovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Mornar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Vugrinec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Robert Spehar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vladimir Petrovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Pamic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Cvitanovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -397,7 +487,7 @@
         "defense": 83,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — croatia (1996/1997)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (1996/1997)",
       "teamLabel": "croatia (1996-97)"
     },
     "1998": {
@@ -405,135 +495,168 @@
       "players": [
         {
           "name": "Drazen Ladic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marjan Mrmic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vladimir Vasilj",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Goran Juric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Slaven Bilic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Tokic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stjepan Tomas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Cvitanovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Tudor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zoran Mamic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Damir Krznar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Anthony Seric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Saric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zvonimir Soldo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Krunoslav Jurcic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aljosa Asanovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Prosinecki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomislav Rukavina",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Boban",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Silvio Maric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Stanic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Goran Vlaovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Pamic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Vugrinec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jurica Vucko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Cvitanovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Petar Krpan",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ardian Kozniku",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -542,7 +665,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — croatia (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (1998/1999)",
       "teamLabel": "croatia (1998-99)"
     },
     "2000": {
@@ -550,119 +673,148 @@
       "players": [
         {
           "name": "Zeljko Pavlovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Drazen Ladic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Robert Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Tudor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stjepan Tomas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Cvitanovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Boris Zivkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Saric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Soldo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Igor Biscan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Krunoslav Jurcic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Prosinecki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Aljosa Asanovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Stanic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Bosnjak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bosko Balaban",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanko Bubalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josip Simic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Vugrinec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jurica Vucko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -671,7 +823,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — croatia (2000/2001)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2000/2001)",
       "teamLabel": "croatia (2000-01)"
     },
     "2002": {
@@ -679,179 +831,223 @@
       "players": [
         {
           "name": "Tomislav Butina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vladimir Vasilj",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Tokic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Goran Sablic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stjepan Tomas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Stimac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Tudor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Jarni",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Hrman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vlatko Djolonga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Anthony Seric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Boris Zivkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Saric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Tapalovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Srdjan Andric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jerko Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zvonimir Soldo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Robert Prosinecki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miljenko Mumlek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Babic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jasmin Agic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dovani Roso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Silvio Maric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Stanic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mario Bazina",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Goran Vlaovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomislav Maric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Suker",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mladen Petric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Alen Bokšić",
-          "position": "ST"
+          "name": "Alen Bokši�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Vugrinec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nino Bule",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marijo Maric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dado Prso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bosko Balaban",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -860,7 +1056,7 @@
         "defense": 79,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — croatia (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2002/2003)",
       "teamLabel": "croatia (2002-03)"
     },
     "2004": {
@@ -868,147 +1064,183 @@
       "players": [
         {
           "name": "Joey Didulica",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomislav Butina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vladimir Vasilj",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stjepan Tomas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Tudor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Tokic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mato Neretljak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Boris Zivkovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jerko Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Srdjan Andric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivica Banovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nenad Bjelica",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Safaric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Babic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kranjcar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jasmin Agic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dovani Roso",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Dado Prso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Klasnic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bosko Balaban",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomislav Sokota",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Mornar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nino Bule",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marijo Maric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1017,7 +1249,7 @@
         "defense": 80,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — croatia (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2004/2005)",
       "teamLabel": "croatia (2004-05)"
     },
     "2006": {
@@ -1025,183 +1257,228 @@
       "players": [
         {
           "name": "Joey Didulica",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Runje",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomislav Butina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivan Turina",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marin Skender",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Stjepan Tomas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Tudor",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Tokic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Goran Sablic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mato Neretljak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vedran Jese",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hrvoje Vejic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Knezevic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Anthony Seric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marijan Buljat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jerko Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sinisa Linic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Neven Vukman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Safaric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Babic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mladen Bartulovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Rapaic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kranjcar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Srebrenko Posavec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josip Balatinac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Bosnjak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Klasnic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Dado Prso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Bosko Balaban",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mladen Petric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Davor Vugrinec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Leon Benko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1210,7 +1487,7 @@
         "defense": 80,
         "goalkeeping": 80
       },
-      "source": "Transfermarkt — croatia (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2006/2007)",
       "teamLabel": "croatia (2006-07)"
     },
     "2008": {
@@ -1218,119 +1495,148 @@
       "players": [
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Runje",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Mario Galinovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivica Krizanac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Knezevic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Robert Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Simic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hrvoje Vejic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ognjen Vukojevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jerko Leko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Pokrivac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jurica Vranjes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kovac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Babic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kranjcar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mladen Petric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Igor Budan",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Klasnic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1339,7 +1645,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — croatia (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2008/2009)",
       "teamLabel": "croatia (2008-09)"
     },
     "2010": {
@@ -1347,135 +1653,168 @@
       "players": [
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Runje",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Goran Blazevic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gordon Schildenfeld",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivica Krizanac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jurica Buljat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Luka Vucko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hrvoje Cale",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Strinic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ognjen Vukojevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Nikola Pokrivac",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomislav Dujmovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mladen Bartulovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kranjcar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivo Ilicevic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Drago Gabric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mladen Petric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikica Jelavic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mate Bilic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1484,7 +1823,7 @@
         "defense": 79,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — croatia (2010/2011)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2010/2011)",
       "teamLabel": "croatia (2010-11)"
     },
     "2012": {
@@ -1492,139 +1831,173 @@
       "players": [
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Goran Blazevic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivan Kelava",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dario Kresic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Maloca",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gordon Schildenfeld",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Simunic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Knezevic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jurica Buljat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Strinic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Manuel Pamic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ognjen Vukojevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josip Radosevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomislav Dujmovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sammir",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Niko Kranjcar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Ivo Ilicevic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikica Jelavic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Vukusic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1633,7 +2006,7 @@
         "defense": 82,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — croatia (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2012/2013)",
       "teamLabel": "croatia (2012-13)"
     },
     "2014": {
@@ -1641,179 +2014,223 @@
       "players": [
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Lovre Kalinic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivan Vargic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Stipe Pletikosa",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oliver Zelenika",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tin Jedvaj",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matej Mitrovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gordon Schildenfeld",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marko Leskovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Igor Bubnjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Strinic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marin Leovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Hrvoje Milic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Danijel Pranjic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Tomecak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcelo Brozović",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ognjen Vukojevic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mato Jajalo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mate Males",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Mario Pašalić",
-          "position": "CM"
+          "name": "Mario Pašali�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Domagoj Antolic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Rog",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrej Kramaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Alen Halilovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Sammir",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Marko Pjaca",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Rebić",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Anas Sharbini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikica Jelavic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Eduardo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Duje Cop",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivica Olic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1822,7 +2239,7 @@
         "defense": 81,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — croatia (2014/2015)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2014/2015)",
       "teamLabel": "croatia (2014-15)"
     },
     "2016": {
@@ -1830,131 +2247,163 @@
       "players": [
         {
           "name": "Lovre Kalinic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dominik Livakovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivan Vargic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tin Jedvaj",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matej Mitrovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Gordon Schildenfeld",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Strinic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Pivaric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marin Leovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Darijo Srna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcelo Brozović",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Filip Bradaric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Rog",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Domagoj Antolic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrej Kramaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Coric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alen Halilovic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Marko Pjaca",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Duje Cop",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1963,7 +2412,7 @@
         "defense": 81,
         "goalkeeping": 81
       },
-      "source": "Transfermarkt — croatia (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2016/2017)",
       "teamLabel": "croatia (2016-17)"
     },
     "2018": {
@@ -1971,151 +2420,188 @@
       "players": [
         {
           "name": "Lovre Kalinic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dominik Livakovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Karlo Letica",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Simon Sluga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tin Jedvaj",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vedran Corluka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matej Mitrovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonio Milic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zoran Nizic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ivan Strinic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Pivaric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Borna Barisic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karlo Bartolec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marcelo Brozović",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Filip Bradaric",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Rakitic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Mario Pašalić",
-          "position": "CM"
+          "name": "Mario Pašali�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Rog",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrej Kramaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Nikola Vlašić",
-          "position": "CM"
+          "name": "Nikola Vlaši�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ante Rebić",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Marko Pjaca",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josip Brekalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Mario Mandžukić",
-          "position": "ST"
+          "name": "Mario Mandžuki�!",
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Nikola Kalinić",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marko Livaja",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ivan Santini",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Duje Cop",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2124,7 +2610,7 @@
         "defense": 86,
         "goalkeeping": 85
       },
-      "source": "Transfermarkt — croatia (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2018/2019)",
       "teamLabel": "croatia (2018-19)"
     },
     "2020": {
@@ -2132,131 +2618,163 @@
       "players": [
         {
           "name": "Dominik Livakovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivo Grbic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Lovre Kalinic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Simon Sluga",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marin Pongracic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Uremovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tin Jedvaj",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mile Skoric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Borna Barisic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Bradarić",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dario Melnjak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Juranovic",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Marcelo Brozović",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Milan Badelj",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Mario Pašalić",
-          "position": "CM"
+          "name": "Mario Pašali�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marko Rog",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Toma Bašić",
-          "position": "CM"
+          "name": "Toma Baši�!",
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Nikola Vlašić",
-          "position": "CM"
+          "name": "Nikola Vlaši�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrej Kramaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Rebić",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Josip Brekalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mislav Orsic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Bruno Petkovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Budimir",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Antonio Colak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2265,7 +2783,7 @@
         "defense": 83,
         "goalkeeping": 83
       },
-      "source": "Transfermarkt — croatia (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2020/2021)",
       "teamLabel": "croatia (2020-21)"
     },
     "2022": {
@@ -2273,143 +2791,178 @@
       "players": [
         {
           "name": "Dominik Livakovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivo Grbic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ivica Ivusic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Lovre Kalinic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Nediljko Labrovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Josko Gvardiol",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Duje Caleta-Car",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marin Pongracic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dejan Lovren",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Erlić",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Domagoj Vida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Sutalo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mile Skoric",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Borna Sosa",
-          "position": "LB"
+          "position": "LB",
+          "rating": 77
         },
         {
           "name": "Borna Barisic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Sime Vrsaljko",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josip Stanisic",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Josip Juranovic",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Marcelo Brozović",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Nikola Moro",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Kristijan Jakic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mateo Kovacic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Mario Pašalić",
-          "position": "CM"
+          "name": "Mario Pašali�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Sucic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Luka Modrić",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
-          "name": "Nikola Vlašić",
-          "position": "CM"
+          "name": "Nikola Vlaši�!",
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Andrej Kramaric",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Luka Ivanušec",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Lovro Majer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josip Brekalo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Mislav Orsic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
-          "name": "Ivan Perišić",
-          "position": "LW"
+          "name": "Ivan Periši�!",
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Bruno Petkovic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Ante Budimir",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marko Livaja",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2418,7 +2971,7 @@
         "defense": 85,
         "goalkeeping": 84
       },
-      "source": "Transfermarkt — croatia (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2022/2023)",
       "teamLabel": "croatia (2022-23)"
     },
     "2025": {
@@ -2545,13 +3098,13 @@
           "rating": 85
         },
         {
-          "name": "Mario Pašalić",
+          "name": "Mario Pašali�!",
           "position": "CM",
           "marketValue": 13000000,
           "rating": 83
         },
         {
-          "name": "Petar Sučić",
+          "name": "Petar Suči�!",
           "position": "CM",
           "marketValue": 12000000,
           "rating": 83
@@ -2563,7 +3116,7 @@
           "rating": 81
         },
         {
-          "name": "Nikola Vlašić",
+          "name": "Nikola Vlaši�!",
           "position": "AM",
           "marketValue": 7000000,
           "rating": 81
@@ -2605,7 +3158,7 @@
           "rating": 80
         },
         {
-          "name": "Marco Pašalić",
+          "name": "Marco Pašali�!",
           "position": "RW",
           "marketValue": 4000000,
           "rating": 79
@@ -2623,7 +3176,7 @@
           "rating": 75
         },
         {
-          "name": "Ivan Perišić",
+          "name": "Ivan Periši�!",
           "position": "LW",
           "marketValue": 1500000,
           "rating": 75
@@ -2635,7 +3188,7 @@
         "defense": 83,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — croatia (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” croatia (2025/2026)",
       "teamLabel": "croatia (2025-26)"
     }
   },

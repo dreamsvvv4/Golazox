@@ -6,167 +6,208 @@
       "players": [
         {
           "name": "Riesgo",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Miramón",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Jorge Sáenz",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sergio",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Omeruo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nyom",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Undabarrena",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Cissé",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Rubén Pardo",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Arnaiz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Juan Muñoz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Dani Jiménez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Fede Vico",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Raba",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Shibasaki",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Josema",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Belman",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Qasmi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Neyou",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Karrikaburu",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Franquesa",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Naim",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Narváez",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Parzyszek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Durmisi",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Lalo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Avilés",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Manu Garrido",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kravets",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Navarro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Garrido",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Luis Perea",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Camacho",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Dorian",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Christian Gómez",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Arauz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Caio Lopes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Rentero",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Armenteros",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Abajas",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Gil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -175,7 +216,7 @@
         "defense": 64,
         "goalkeeping": 66
       },
-      "source": "BDFutbol — Leganés 2022-23 Segunda División",
+      "source": "BDFutbol <\r Otros�\u001d Leganés 2022-23 Segunda División",
       "teamLabel": "Leganés 2022-23 Segunda División"
     },
     "2025": {
@@ -183,87 +224,108 @@
       "players": [
         {
           "name": "Cuellar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Franquesa",
-          "position": "RB"
+          "position": "RB",
+          "rating": 72
         },
         {
           "name": "Tarín",
-          "position": "CB"
+          "position": "CB",
+          "rating": 73
         },
         {
           "name": "Nastasic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 73
         },
         {
           "name": "Javi hernández",
-          "position": "LB"
+          "position": "LB",
+          "rating": 72
         },
         {
           "name": "Valentín Vada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Recio",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Miguel de la Fuente",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Dani Ojeda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Diego García",
-          "position": "ST"
+          "position": "ST",
+          "rating": 75
         },
         {
           "name": "Youssouf",
-          "position": "ST"
+          "position": "ST",
+          "rating": 75
         },
         {
           "name": "Pichu Atienza",
-          "position": "GK"
+          "position": "GK",
+          "rating": 74
         },
         {
           "name": "Dauda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 73
         },
         {
           "name": "Omeruo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 73
         },
         {
           "name": "Sergio González",
-          "position": "LB"
+          "position": "LB",
+          "rating": 72
         },
         {
           "name": "Arnáiz",
-          "position": "RW"
+          "position": "RW",
+          "rating": 74
         },
         {
           "name": "Toni García",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "En-Nesyri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 75
         },
         {
           "name": "Raba",
-          "position": "CM"
+          "position": "CM",
+          "rating": 73
         },
         {
           "name": "Szymanowski",
-          "position": "LW"
+          "position": "LW",
+          "rating": 74
         },
         {
           "name": "Palomino",
-          "position": "CB"
+          "position": "CB",
+          "rating": 73
         }
       ],
       "ratings": {
@@ -272,7 +334,7 @@
         "defense": 66,
         "goalkeeping": 66
       },
-      "source": "Transfermarkt — Leganés 2024-25 La Liga 2",
+      "source": "Transfermarkt <\r Otros�\u001d Leganés 2024-25 La Liga 2",
       "teamLabel": "Leganés 2024-25 La Liga 2"
     }
   },

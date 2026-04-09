@@ -6,135 +6,168 @@
       "players": [
         {
           "name": "André Biancarelli",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Stéphane Porato",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Tony Sylva",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Flavio Roma",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joseph Dayo Oshadogan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sébastien Squillaci",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Arnaud Lescure",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Julien Rodriguez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Gaël Givet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jim Ablancourt",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Patrice Evra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marco Ramos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Hassan El Fakiri",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Hugo Ibarra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
-          "name": "Édouard Cissé",
-          "position": "CM"
+          "name": "�0douard Cissé",
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Akis Zikos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nicolas Hislen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Laurent Mohellebi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Bernardi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jimmy Juan",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jérôme Rothen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Nicolas Maurice-Belay",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ludovic Giuly",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Laurent Lanteri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Souleymane Camara",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sébastien Carole",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Dado Prso",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Fernando Morientes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Shabani Nonda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Nicolas Raynier",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Emmanuel Adebayor",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sébastien Grax",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -143,171 +176,422 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Monaco (2003/2004)",
+      "source": "Transfermarkt 🌍 Otros€” Monaco (2003/2004)",
       "teamLabel": "Monaco (2003-04)"
+    },
+    "2004": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Flavio Roma",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Fabien Audard",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "André Biancarelli",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stéphane Ruffier",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Maicon",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 86
+        },
+        {
+          "name": "Patrice Evra",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 84
+        },
+        {
+          "name": "Sébastien Squillaci",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Gaël Givet",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Julien Rodriguez",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "François Modesto",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Hassan El Fakiri",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Joseph Dayo Oshadogan",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Arnaud Lescure",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Marco Ramos",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Massamba Sambou",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Olivier Veigneau",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Bernardi",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Akis Zikos",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Diego Pérez",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jaroslav Plasil",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Pontus Farnerud",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jimmy Juan",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Nicolas Maurice-Belay",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Marko Muslin",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Antoine Grauss",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Javier Saviola",
+          "position": "ST",
+          "marketValue": 11500000,
+          "rating": 83
+        },
+        {
+          "name": "Javier Chevantón",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Mohamed Kallon",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Emmanuel Adebayor",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Shabani Nonda",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Souleymane Camara",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Grégory Lacombe",
+          "position": "ST",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "David Gigliotti",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 68,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — AS Monaco (2004/2005)",
+      "teamLabel": "AS Monaco (2004-05)"
     },
     "2016": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Danijel Subasic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Morgan De Sanctis",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Seydou Sy",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Loïc Badiashile",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Kamil Glik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jemerson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Almamy Touré",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Marcel Tisserand",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Andrea Raggi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Abdou Diallo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Dinis Almeida",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Raphaël Diarra",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Safwan Mbaé",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kouadio-Yves Dabila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Benjamin Mendy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jorge",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Elderson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Djibril Sidibé",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nabil Dirar",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Yhoan Andzouana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Pierre-Daniel Nguinda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Fabinho",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Tiemoué Bakayoko",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Youssef Aït Bennasser",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kévin N'Doram",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Tristan Muyumba",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "João Moutinho",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adama Traoré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Jonathan Mexique",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Bernardo Silva",
-          "position": "RW"
+          "position": "RW",
+          "rating": 81
         },
         {
           "name": "Thomas Lemar",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Gabriel Boschilia",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dylan Beaulieu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ivan Cavaleiro",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Allan Saint-Maximin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Corentin Tirard",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Adrien Bongiovanni",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rony Lopes",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Gil Dias",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Irvin Cardona",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Kylian Mbappé",
@@ -316,27 +600,33 @@
         },
         {
           "name": "Radamel Falcao",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Valère Germain",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Guido Carrillo",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Corentin Jean",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lacina Traoré",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Ilyes Chaïbi",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -345,7 +635,7 @@
         "defense": 60,
         "goalkeeping": 64
       },
-      "source": "Transfermarkt — Monaco (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” Monaco (2016/2017)",
       "teamLabel": "Monaco (2016-17)"
     },
     "2017": {
@@ -433,7 +723,7 @@
           "name": "Safwan Mbaé",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Thomas Lemar",
@@ -499,7 +789,7 @@
           "name": "Ibrahima Diallo",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 80
         },
         {
           "name": "Kylian Mbappé",
@@ -577,7 +867,7 @@
           "name": "Adrien Bongiovanni",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -586,7 +876,7 @@
         "defense": 84,
         "goalkeeping": 82
       },
-      "source": "Transfermarkt — Monaco (2017/2018)",
+      "source": "Transfermarkt 🌍 Otros€” Monaco (2017/2018)",
       "teamLabel": "Monaco (2017-18)"
     },
     "2025": {
@@ -739,7 +1029,7 @@
         "defense": 79,
         "goalkeeping": 79
       },
-      "source": "Transfermarkt — Monaco (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Monaco (2025/2026)",
       "teamLabel": "Monaco (2025-26)"
     }
   },

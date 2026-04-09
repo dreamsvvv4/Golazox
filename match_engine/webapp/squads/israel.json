@@ -1,0 +1,91 @@
+{
+  "slug": "israel",
+  "name": "Israel",
+  "nameEn": "Israel",
+  "nameEs": "Israel",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/israel.png",
+  "id": "israel",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Ofir Marciano",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Orel Dgani",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Eran Zahavi",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Eli Dasa",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nir Bitton",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sheran Yeini",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Manor Solomon",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Dolev Haziza",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Lior Refaelov",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Munas Dabbur",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Oscar Gloukh",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Shon Weissman",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Dar Peretz",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Omri Gandelman",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ben Dayan",
+          "position": "CB",
+          "rating": 74
+        }
+      ]
+    }
+  }
+}

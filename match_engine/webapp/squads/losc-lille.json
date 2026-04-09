@@ -194,7 +194,7 @@
           "name": "Bica",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 82
         }
       ],
       "ratings": {
@@ -203,7 +203,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lille (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” Lille (2020/2021)",
       "teamLabel": "Lille (2020-21)"
     },
     "2025": {
@@ -384,7 +384,7 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lille (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Lille (2025/2026)",
       "teamLabel": "Lille (2025-26)"
     }
   },
@@ -392,5 +392,6 @@
   "name": "Lille",
   "nameEs": "Lille OSC",
   "nameEn": "Lille OSC",
-  "group": "🇫🇷 Ligue 1"
+  "group": "🇫🇷 Ligue 1",
+  "badgeLocalPath": "/img/badges/lille.png"
 }

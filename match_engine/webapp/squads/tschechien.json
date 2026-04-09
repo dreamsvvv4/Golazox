@@ -6,111 +6,138 @@
       "players": [
         {
           "name": "Petr Kouba",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pavel Srnicek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Stejskal",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Miroslav Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Suchoparek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Repka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Novotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Kotulek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Vesely",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Nemec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Frydek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lubos Kubik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vaclav Nemecek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivan Hasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radoslav Latal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roman Vonasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michal Bilek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patrik Berger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Smejkal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Hapal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Horst Siegl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pavel Kuka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Skuhravy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Petr Samec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Postulka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -119,7 +146,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (1994/1995)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (1994/1995)",
       "teamLabel": "czech republic (1994-95)"
     },
     "1996": {
@@ -127,171 +154,213 @@
       "players": [
         {
           "name": "Petr Kouba",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ludek Miklosko",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Pavel Srnicek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Michal Caloun",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ladislav Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Oldrich Machala",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Suchoparek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miroslav Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Krivanek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Repka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Hornak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lubos Kozel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karel Rada",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pavel Novotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Kotulek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Lerch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Nemec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Hasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marek Zubek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Bejbl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Richard Dostalek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vaclav Nemecek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Frydek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lubos Kubik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radoslav Latal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaromir Navratil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Cizek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Edvard Lasota",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Zdenek Svoboda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Sloncik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Hapal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patrik Berger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Verbir",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Wagner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Radovan Hromadko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pavel Kuka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Radek Drulak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Postulka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Kerbr",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -300,7 +369,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (1996/1997)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (1996/1997)",
       "teamLabel": "czech republic (1996-97)"
     },
     "1998": {
@@ -308,135 +377,168 @@
       "players": [
         {
           "name": "Petr Kouba",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Postulka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ladislav Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Suchoparek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Milan Fukal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karel Rada",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Vlcek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Hornak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Votava",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Novotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Repka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lubos Kozel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Kotulek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Nemec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Galasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Bejbl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivo Ulich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radoslav Latal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Cizek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roman Vonasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Edvard Lasota",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Lukes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patrik Berger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miroslav Baranek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Sloncik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Horst Siegl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Wagner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Radim Necas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pavel Kuka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vratislav Lokvenc",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -445,7 +547,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (1998/1999)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (1998/1999)",
       "teamLabel": "czech republic (1998-99)"
     },
     "2000": {
@@ -453,183 +555,228 @@
       "players": [
         {
           "name": "Pavel Srnicek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaromir Blazek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Radek Cerny",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ladislav Maier",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Suchoparek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Gabriel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Milan Fukal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Karel Rada",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Nikl",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Repka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rene Bolf",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Jarosik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Erich Brabec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Vlcek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Novotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Jankulovski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Dosek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Vesely",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Nemec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Bejbl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Polák",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roman Tyce",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ivo Ulich",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Horvath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radoslav Latal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Cizek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miroslav Baranek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patrik Berger",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radek Sloncik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Verbir",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Vlcek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vratislav Lokvenc",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Heinz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Pavel Kuka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Koller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "René Wagner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Kolomaznik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Kincl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josef Obajdin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Radim Necas",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -638,7 +785,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2000/2001)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2000/2001)",
       "teamLabel": "czech republic (2000-01)"
     },
     "2002": {
@@ -646,159 +793,198 @@
       "players": [
         {
           "name": "Antonín Kinský",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Radek Cerny",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Martin Vaniak",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Ujfalusi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Milan Fukal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Johana",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rene Bolf",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Novotny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Miroslav Holenak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Adam Petrous",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Jiránek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Jarosik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Jankulovski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pavel Mares",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Dosek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Antonin Mlejnsky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Grygera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Galasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Hübschman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vaclav Kolousek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Patrik Gedeon",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Horvath",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ales Pikl",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Richard Dostalek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stepan Vachousek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Miroslav Baranek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Simak",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Stajner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vratislav Lokvenc",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Koller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Kolomaznik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Dosek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -807,7 +993,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2002/2003)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2002/2003)",
       "teamLabel": "czech republic (2002-03)"
     },
     "2004": {
@@ -815,135 +1001,168 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaromir Blazek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Antonín Kinský",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Martin Vaniak",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Ujfalusi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Jarosik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radoslav Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Jiránek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Rene Bolf",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Rozehnal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Václav Drobný",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Vorisek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Jankulovski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pavel Mares",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Grygera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Galasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Hübschman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Roman Tyce",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Piták",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stepan Vachousek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rudi Skacel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimir Smicer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Jun",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Stajner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Koller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vratislav Lokvenc",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Heinz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -952,7 +1171,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2004/2005)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2004/2005)",
       "teamLabel": "czech republic (2004-05)"
     },
     "2006": {
@@ -960,155 +1179,193 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaromir Blazek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Antonín Kinský",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marek Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Ujfalusi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radoslav Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Rozehnal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Jiránek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Zapotocny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Jankulovski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Pavel Mares",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radek Sirl",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Grygera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Pospech",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Polák",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Galasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Abraham",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Jarolím",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Piták",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marek Matejovsky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Nedved",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Stepan Vachousek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Zelenka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Karel Poborský",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Vlcek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Jun",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Stajner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Koller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vratislav Lokvenc",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Heinz",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roman Bednar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Lafata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Kulic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1117,7 +1374,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2006/2007)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2006/2007)",
       "teamLabel": "czech republic (2006-07)"
     },
     "2008": {
@@ -1125,163 +1382,203 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaroslav Drobný",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Daniel Zitka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Lastuvka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaromir Blazek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Ujfalusi",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radoslav Kovac",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Simunek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Rozehnal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Holek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Rajnoch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Kudela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Jankulovski",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radek Sirl",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Grygera",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Pospech",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Kladrubsky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Josef Kaufman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Polák",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Galasek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Jarolím",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marek Matejovsky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rudi Skacel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lubos Kalouda",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marek Strestik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Vlcek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martin Fenin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Necid",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Sverkos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Miroslav Slepicka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Koller",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roman Bednar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Papadopulos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Marek Kulic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1290,7 +1587,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2008/2009)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2008/2009)",
       "teamLabel": "czech republic (2008-09)"
     },
     "2010": {
@@ -1298,163 +1595,203 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaroslav Drobný",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Lastuvka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Michal Danek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Suchy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Mazuch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roman Hubnik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Rajnoch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Holek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Limbersky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Zdenek Pospech",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Kusnir",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Hübschman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Polák",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Moravek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Mario Lička",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Petrzela",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Rudi Skacel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Cerny",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Cerny",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Libor Sionko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Rezek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Stajner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Necid",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Kadlec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martin Fenin",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Lukas Magera",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Pekhart",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roman Bednar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Sverkos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Hubnik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Papadopulos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Lafata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Blazek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1463,7 +1800,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2010/2011)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2010/2011)",
       "teamLabel": "czech republic (2010-11)"
     },
     "2012": {
@@ -1471,155 +1808,193 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jan Lastuvka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaroslav Drobný",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Kalas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Suchy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Rajnoch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Latka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roman Hubnik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Limbersky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Theodor Gebre Selassie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Frantisek Rajtoral",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Hübschman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Pospisil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimír Darida",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Petr Jiracek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josef Husbauer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Horava",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Petrzela",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ladislav Krejci",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vaclav Pilar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Borek Dockal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Kolar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Rezek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Stajner",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Kadlec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Libor Kozák",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Necid",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Baros",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matej Vydra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Pekhart",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Lafata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michal Ordos",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1628,7 +2003,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2012/2013)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2012/2013)",
       "teamLabel": "czech republic (2012-13)"
     },
     "2014": {
@@ -1636,179 +2011,223 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ales Hruska",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jiri Pavlenka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "David Bicik",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Marek Stech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ondrej Mazuch",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Suchy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Mario Holek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vaclav Prochazka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Hejda",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Limbersky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Adam Hlousek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Novak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jiri Fleisman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Theodor Gebre Selassie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Radim Reznik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Frantisek Rajtoral",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Vacha",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Hübschman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Pospisil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimír Darida",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josef Husbauer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Petr Jiracek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Horava",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ondrej Vanek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Kaderabek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Kopic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Petrzela",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ladislav Krejci",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vaclav Pilar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Borek Dockal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Kolar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Matej Vydra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Kadlec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Necid",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Tecl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Lafata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josef Sural",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -1817,7 +2236,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2014/2015)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2014/2015)",
       "teamLabel": "czech republic (2014-15)"
     },
     "2016": {
@@ -1825,199 +2244,248 @@
       "players": [
         {
           "name": "Petr Cech",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Koubek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jiri Pavlenka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jaroslav Drobný",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ales Hruska",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Kalas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Suchy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jakub Brabec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Pokorny",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michal Kadlec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Sivok",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roman Hubnik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jaromir Zmrhal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Frydek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Novak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Petr Mares",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Limbersky",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Theodor Gebre Selassie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Lukas Marecek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Kamil Vacek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Martin Pospisil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jakub Rada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Droppa",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimír Darida",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Horava",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Pavelka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jaroslav Plasil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Kaderabek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Kopic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ondrej Zahustel",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Milan Petrzela",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ladislav Krejci",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonín Barák",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Borek Dockal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Kolar",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Rosicky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Sykora",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jiri Skalak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Patrik Schick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matej Vydra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Necid",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Kadlec",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josef Sural",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Milan Skoda",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michael Krmencik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "David Lafata",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2026,7 +2494,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2016/2017)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2016/2017)",
       "teamLabel": "czech republic (2016-17)"
     },
     "2018": {
@@ -2034,175 +2502,218 @@
       "players": [
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jiri Pavlenka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Koubek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ondrej Kolar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Kalas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Marek Suchy",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jakub Brabec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Kudela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Boril",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jakub Jugas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Celustka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vaclav Jemelka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Patrizio Stronati",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Michael Lüftner",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jaromir Zmrhal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Novak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Martin Frydek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Daniel Pudil",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Theodor Gebre Selassie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Radim Reznik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Ondrej Petrak",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimír Darida",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Josef Husbauer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michal Travnik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "David Pavelka",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Horava",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Kaderabek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Kopic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Masopust",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jakub Jankto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Ladislav Krejci",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonín Barák",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Borek Dockal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jiri Skalak",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Sykora",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Patrik Schick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matej Vydra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michael Krmencik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Tecl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Martin Dolezal",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Josef Sural",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2211,7 +2722,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2018/2019)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2018/2019)",
       "teamLabel": "czech republic (2018-19)"
     },
     "2020": {
@@ -2219,235 +2730,293 @@
       "players": [
         {
           "name": "Ondrej Kolar",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jiri Pavlenka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Koubek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ales Mandous",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Filip Nguyen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jakub Markovic",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "David Zima",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Kalas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Holes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Boril",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jakub Brabec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Kudela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Petrasek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vaclav Jemelka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ales Mateju",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "David Hovorka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jaroslav Zelený",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Celustka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Karafiat",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Roman Hubnik",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Simon Gabriel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Filip Novak",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Michal Sacek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jan Juroska",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Lukas Kalvach",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adam Janos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alex Král",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Vladimír Darida",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Petr Sevcik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Marek Havlík",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Solil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Radim Breite",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Pavel Kaderabek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Masopust",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Kopic",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Tomas Malinsky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jakub Jankto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Daniel Holzer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonín Barák",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Lukas Provod",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adam Karabec",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Borek Dockal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Budinsky",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jachym Sip",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Cerny",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jakub Pesek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Antonin Rusek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Adam Hlozek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michael Krmencik",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Matej Vydra",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Zdenek Ondrasek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Tecl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Roman Potocny",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Poznar",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Michael Rabusic",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2456,7 +3025,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2020/2021)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2020/2021)",
       "teamLabel": "czech republic (2020-21)"
     },
     "2022": {
@@ -2464,191 +3033,238 @@
       "players": [
         {
           "name": "Jindrich Stanek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Jiri Pavlenka",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Ales Mandous",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomáš Vaclík",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Tomas Koubek",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Matous Trmal",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "Milan Heca",
-          "position": "GK"
+          "position": "GK",
+          "rating": 79
         },
         {
           "name": "David Zima",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ladislav Krejci",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Holes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jakub Brabec",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vaclav Jemelka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jaroslav Zelený",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ales Mateju",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Patrizio Stronati",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Matej Chalus",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Dominik Plechaty",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomas Petrasek",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Kudela",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Jaromir Zmrhal",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Ondrej Zmrzly",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 77
         },
         {
           "name": "Milan Havel",
-          "position": "CB"
+          "position": "CB",
+          "rating": 78
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 78
         },
         {
           "name": "Lukas Kalvach",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Petr Schwarz",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Alex Král",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Michal Sadílek",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Petr Sevcik",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Masopust",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Navratil",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jakub Jankto",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Antonín Barák",
-          "position": "RW"
+          "position": "RW",
+          "rating": 79
         },
         {
           "name": "Ondrej Lingr",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Adam Vlkanova",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Lukas Provod",
-          "position": "CM"
+          "position": "CM",
+          "rating": 78
         },
         {
           "name": "Jan Sykora",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Cerny",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jakub Pesek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Antonin Rusek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Patrik Schick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Adam Hlozek",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Jan Kuchta",
-          "position": "LW"
+          "position": "LW",
+          "rating": 79
         },
         {
           "name": "Mojmír Chytil",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Vaclav Jurecka",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Tomas Pekhart",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         },
         {
           "name": "Stanislav Tecl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 80
         }
       ],
       "ratings": {
@@ -2657,7 +3273,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2022/2023)",
       "teamLabel": "czech republic (2022-23)"
     },
     "2025": {
@@ -2946,7 +3562,7 @@
         "defense": 80,
         "goalkeeping": 76
       },
-      "source": "Transfermarkt — czech republic (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” czech republic (2025/2026)",
       "teamLabel": "czech republic (2025-26)"
     }
   },

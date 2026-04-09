@@ -1,100 +1,203 @@
 {
   "slug": "west-ham-united",
   "seasons": {
+    "1965": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jim Standen",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Joe Kirkup",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Ken Brown",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Bobby Moore",
+          "position": "CB",
+          "rating": 94
+        },
+        {
+          "name": "Jack Burkett",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Ronnie Boyce",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Eddie Bovington",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Peter Brabrook",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Martin Peters",
+          "position": "LM",
+          "rating": 89
+        },
+        {
+          "name": "Geoff Hurst",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "John Sissons",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Johnny Byrne",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Alan Sealey",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Brian Dear",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Charles",
+          "position": "LB",
+          "rating": 77
+        }
+      ]
+    },
     "2021": {
       "formation": "4-4-2",
       "players": [
         {
           "name": "Alphonse Areola",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukasz Fabianski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Darren Randolph",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "David Martin",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Kurt Zouma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Issa Diop",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Craig Dawson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Angelo Ogbonna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aji Alese",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jamal Baptiste",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Arthur Masuaku",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aaron Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emmanuel Longelo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Ben Johnson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ryan Fredericks",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Harrison Ashby",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Conor Coventry",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Keenan Appiah-Forson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Freddie Potts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pierre Ekwah",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ossama Ashley",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Declan Rice",
@@ -103,39 +206,48 @@
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Alex Král",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Mark Noble",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dan Chesters",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
-          "name": "Nikola Vlašić",
-          "position": "CM"
+          "name": "Nikola Vlaši�!",
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Manuel Lanzini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kamarai Swyer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Saïd Benrahma",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Armstrong Oko-Flex",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jarrod Bowen",
@@ -144,15 +256,18 @@
         },
         {
           "name": "Andriy Yarmolenko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Sonny Perkins",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michail Antonio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -161,7 +276,7 @@
         "defense": 75,
         "goalkeeping": 74
       },
-      "source": "Transfermarkt — West Ham United (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” West Ham United (2021/2022)",
       "teamLabel": "West Ham United (2021-22)"
     },
     "2022": {
@@ -169,115 +284,143 @@
       "players": [
         {
           "name": "Alphonse Areola",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukasz Fabianski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Darren Randolph",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Nathan Trott",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Krisztián Hegyi",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joseph Anang",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Nayef Aguerd",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kurt Zouma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Thilo Kehrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Craig Dawson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Angelo Ogbonna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jamal Baptiste",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Levi Laing",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Michael Forbes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kaelan Casey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emerson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aaron Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Oliver Scarles",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Regan Clayton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Johnson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Harrison Ashby",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Flynn Downes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Conor Coventry",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pierre Ekwah",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Keenan Appiah-Forson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Freddie Potts",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Declan Rice",
@@ -286,43 +429,53 @@
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Orford",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dan Chesters",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Paquetá",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
-          "name": "Nikola Vlašić",
-          "position": "CM"
+          "name": "Nikola Vlaši�!",
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Manuel Lanzini",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kamarai Swyer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Saïd Benrahma",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Maxwel Cornet",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Armstrong Oko-Flex",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jarrod Bowen",
@@ -331,19 +484,23 @@
         },
         {
           "name": "Gianluca Scamacca",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Danny Ings",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michail Antonio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Divin Mubama",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -352,7 +509,7 @@
         "defense": 75,
         "goalkeeping": 74
       },
-      "source": "Transfermarkt — West Ham United (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” West Ham United (2022/2023)",
       "teamLabel": "West Ham United (2022-23)"
     },
     "2023": {
@@ -360,127 +517,158 @@
       "players": [
         {
           "name": "Alphonse Areola",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukasz Fabianski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Joseph Anang",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jacob Knightbridge",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Nayef Aguerd",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kurt Zouma",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Konstantinos Mavropanos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Thilo Kehrer",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Kaelan Casey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Angelo Ogbonna",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Levi Laing",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emerson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aaron Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Oliver Scarles",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Johnson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Edson Álvarez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Kalvin Phillips",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Flynn Downes",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Conor Coventry",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James Ward-Prowse",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Pablo Fornals",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Orford",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Dan Chesters",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Paquetá",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "George Earthy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Kamarai Swyer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Saïd Benrahma",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Maxwel Cornet",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Mohammed Kudus",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jarrod Bowen",
@@ -489,19 +677,23 @@
         },
         {
           "name": "Danny Ings",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michail Antonio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Callum Marshall",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Divin Mubama",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -510,7 +702,7 @@
         "defense": 74,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — West Ham United (2023/2024)",
+      "source": "Transfermarkt 🌍 Otros€” West Ham United (2023/2024)",
       "teamLabel": "West Ham United (2023-24)"
     },
     "2024": {
@@ -518,95 +710,118 @@
       "players": [
         {
           "name": "Alphonse Areola",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Wes Foderingham",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Lukasz Fabianski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jean-Clair Todibo",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Maximilian Kilman",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Konstantinos Mavropanos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kaelan Casey",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ezra Mayers",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Emerson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Oliver Scarles",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aaron Cresswell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Aaron Wan-Bissaka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Vladimír Coufal",
-          "position": "RB"
+          "position": "RB",
+          "rating": 79
         },
         {
           "name": "Edson Álvarez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Tomáš Souček",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Guido Rodríguez",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Carlos Soler",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James Ward-Prowse",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Andrew Irving",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lewis Orford",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Lucas Paquetá",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Crysencio Summerville",
-          "position": "LW"
+          "position": "LW",
+          "rating": 81
         },
         {
           "name": "Mohammed Kudus",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Jarrod Bowen",
@@ -615,11 +830,13 @@
         },
         {
           "name": "Luís Guilherme",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Evan Ferguson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Niclas Füllkrug",
@@ -628,11 +845,13 @@
         },
         {
           "name": "Danny Ings",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Michail Antonio",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -641,7 +860,7 @@
         "defense": 73,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — West Ham United (2024/2025)",
+      "source": "Transfermarkt 🌍 Otros€” West Ham United (2024/2025)",
       "teamLabel": "West Ham United (2024-25)"
     },
     "2025": {
@@ -774,12 +993,14 @@
         "defense": 73,
         "goalkeeping": 73
       },
-      "source": "Transfermarkt — West Ham United (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” West Ham United (2025/2026)",
       "teamLabel": "West Ham United (2025-26)"
     }
   },
   "badgeLocalPath": "/img/badges/west-ham-united.png",
   "id": 379,
   "name": "West Ham United",
-  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League"
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+  "nameEn": "West Ham United",
+  "nameEs": "West Ham United"
 }

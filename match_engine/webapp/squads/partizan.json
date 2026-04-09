@@ -1,6 +1,234 @@
 {
   "slug": "partizan",
-  "seasons": {},
+  "seasons": {
+    "1966": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Milutin Soskic",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Fahrudin Jusufi",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Dusan Maravic",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Josip Pirmajer",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Ljubisa Spajic",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Velibor Vasovic",
+          "position": "DM",
+          "rating": 88
+        },
+        {
+          "name": "Vladica Kovacevic",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Mustafa Hasanagic",
+          "position": "RM",
+          "rating": 82
+        },
+        {
+          "name": "Vladica Popovic",
+          "position": "LM",
+          "rating": 82
+        },
+        {
+          "name": "Stjepan Lamza",
+          "position": "ST",
+          "rating": 83
+        },
+        {
+          "name": "Milan Galić",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Sava Antic",
+          "position": "AM",
+          "rating": 81
+        },
+        {
+          "name": "Rajko Mitić",
+          "position": "CM",
+          "rating": 80
+        }
+      ],
+      "source": "Partizan - Copa de Europa Final 1965-66 (Vasovic, Milan Galic - unico finalista yugoslavo)",
+      "teamLabel": "Partizan (1965-66)"
+    },
+    "1999": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Dusko Bakovic",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Goran Trobok",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Slobodan Krcmarevic",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Marko Perovic",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Mladen Krstajic",
+          "position": "LB",
+          "rating": 84
+        },
+        {
+          "name": "Zvonimir Vukic",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Saša Ilic",
+          "position": "AM",
+          "rating": 85
+        },
+        {
+          "name": "Goran Bunjevcevic",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Nikola Lazetić",
+          "position": "RM",
+          "rating": 82
+        },
+        {
+          "name": "Dragan Ciric",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Sasa Jevric",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Predrag Mijatovic",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Marko Pantelic",
+          "position": "AM",
+          "rating": 83
+        }
+      ],
+      "source": "Partizan - Liga yugoslava 1998-99 + UCL group stage (Ilic, Krstajic, Bunjevcevic)",
+      "teamLabel": "Partizan (1998-99)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Aleksandar Jovanovic",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Strahinja Erakovic",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Strahinja Pavlovic",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Djordje Jovanovic",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Filip Stevanovic",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Sasa Zdjelar",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Marko Jankovic",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Goran Causic",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Aleksandar Scekic",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Uros Duricic",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Lazar Markovic",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Petar Djordjevic",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Nemanja Jovic",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Sasa Ilic",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Stefan Pantovic",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/partizan.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "FK Partizan",
+  "nameEs": "FK Partizan",
+  "name": "FK Partizan"
 }

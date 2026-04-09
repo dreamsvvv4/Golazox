@@ -6,179 +6,223 @@
       "players": [
         {
           "name": "Aaron Ramsdale",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Robin Olsen",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Michael Verrips",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Adam Davies",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Wes Foderingham",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jake Eastwood",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "John Egan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Filip Uremovic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jack O'Connell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ben Davies",
-          "position": "LB"
+          "position": "LB",
+          "rating": 79
         },
         {
           "name": "Jack Robinson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Chris Basham",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Charlie Goode",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kyron Gordon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kacper Łopata",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Nicksoen Gomis",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Max Lowe",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Enda Stevens",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Rhys Norrington-Davies",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jayden Bogle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "George Baldock",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Femi Seriki",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Starbuck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sander Berge",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Regan Slater",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Adlène Guédioura",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Fleck",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Norwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ben Osborn",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Conor Hourihane",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Arblaster",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Morgan Gibbs-White",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Luke Freeman",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Zak Brunt",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Iliman Ndiaye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rhian Brewster",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Lys Mousset",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Oli McBurnie",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Oliver Burke",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "David McGoldrick",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniel Jebbison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Billy Sharp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Tyler Smith",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "William Osula",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -187,7 +231,7 @@
         "defense": 60,
         "goalkeeping": 62
       },
-      "source": "Transfermarkt — Sheffield United (2021/2022)",
+      "source": "Transfermarkt 🌍 Otros€” Sheffield United (2021/2022)",
       "teamLabel": "Sheffield United (2021-22)"
     },
     "2022": {
@@ -195,151 +239,188 @@
       "players": [
         {
           "name": "Wes Foderingham",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Adam Davies",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jordan Amissah",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Jake Eastwood",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Marcus Dewhurst",
-          "position": "GK"
+          "position": "GK",
+          "rating": 81
         },
         {
           "name": "Anel Ahmedhodzic",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "John Egan",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jack O'Connell",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jack Robinson",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Ciaran Clark",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Chris Basham",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Kyron Gordon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Max Lowe",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Rhys Norrington-Davies",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Enda Stevens",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jili Buyabu",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Jayden Bogle",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "George Baldock",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Joe Starbuck",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sai Sachdev",
-          "position": "CB"
+          "position": "CB",
+          "rating": 80
         },
         {
           "name": "Sander Berge",
-          "position": "DM"
+          "position": "DM",
+          "rating": 80
         },
         {
           "name": "Tommy Doyle",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Norwood",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "John Fleck",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ismaila Coulibaly",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Ben Osborn",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Andre Brooks",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Oliver Arblaster",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "James McAtee",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Reda Khadra",
-          "position": "CM"
+          "position": "CM",
+          "rating": 80
         },
         {
           "name": "Iliman Ndiaye",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Louie Marsh",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Oli McBurnie",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Rhian Brewster",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Daniel Jebbison",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "Billy Sharp",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         },
         {
           "name": "William Osula",
-          "position": "ST"
+          "position": "ST",
+          "rating": 82
         }
       ],
       "ratings": {
@@ -348,7 +429,7 @@
         "defense": 60,
         "goalkeeping": 62
       },
-      "source": "Transfermarkt — Sheffield United (2022/2023)",
+      "source": "Transfermarkt 🌍 Otros€” Sheffield United (2022/2023)",
       "teamLabel": "Sheffield United (2022-23)"
     },
     "2025": {
@@ -356,127 +437,158 @@
       "players": [
         {
           "name": "Michael Cooper",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Adam Davies",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Luke Faxon",
-          "position": "GK"
+          "position": "GK",
+          "rating": 86
         },
         {
           "name": "Mark McGuinness",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Japhet Tanganga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Tyler Bindon",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Ben Mee",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Harrison Burrows",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Sam McCallum",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Leo Hjelde",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Ki-Jana Hoever",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Femi Seriki",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Jamie Shackleton",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Mihail Polendakov",
-          "position": "CB"
+          "position": "CB",
+          "rating": 85
         },
         {
           "name": "Kalvin Phillips",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Jaïro Riedewald",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Djibril Soumaré",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Gustavo Hamer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Sydie Peck",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Andre Brooks",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Tom Davies",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Oliver Arblaster",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Alex Matos",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Joe Rothwell",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Callum O'Hare",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Tahith Chong",
-          "position": "CM"
+          "position": "CM",
+          "rating": 84
         },
         {
           "name": "Chiedozie Ogbene",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Tyrese Campbell",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Tom Cannon",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Danny Ings",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         },
         {
           "name": "Patrick Bamford",
-          "position": "ST"
+          "position": "ST",
+          "rating": 86
         }
       ],
       "ratings": {
@@ -485,7 +597,7 @@
         "defense": 60,
         "goalkeeping": 62
       },
-      "source": "Transfermarkt — Sheffield United (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Sheffield United (2025/2026)",
       "teamLabel": "Sheffield United (2025-26)"
     }
   },

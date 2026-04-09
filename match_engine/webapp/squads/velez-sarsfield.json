@@ -6,83 +6,103 @@
       "players": [
         {
           "name": "Lucas Hoyos",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Damián Fernández",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Valentín Gómez",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lautaro Giannetti",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nicolás Garayalde",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Tomás Guidara",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lucas Janson",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Walter Bou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Cristian Tarragona",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         },
         {
           "name": "Mauro Zárate",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Leonardo Burián",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Emiliano Amor",
-          "position": "RB"
+          "position": "RB",
+          "rating": 75
         },
         {
           "name": "Hernán De La Fuente",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lautaro Comas",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Máximo Perrone",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Gustavo Bou",
-          "position": "AM"
+          "position": "AM",
+          "rating": 77
         },
         {
           "name": "Ezequiel Centurión",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Juan Lucero",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Braian Romero",
-          "position": "LW"
+          "position": "LW",
+          "rating": 77
         },
         {
           "name": "Thiago Almada",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         }
       ],
       "ratings": {
@@ -91,12 +111,14 @@
         "defense": 73,
         "goalkeeping": 72
       },
-      "source": "Transfermarkt — Vélez Sarsfield 2024-25 Liga Profesional",
+      "source": "Transfermarkt <\r Otros�\u001d Vélez Sarsfield 2024-25 Liga Profesional",
       "teamLabel": "Vélez Sarsfield 2024-25 Liga Profesional"
     }
   },
   "id": 2438,
   "name": "Vélez Sarsfield",
   "badgeLocalPath": "/img/badges/velez-sarsfield.png",
-  "group": "🌎 América del Sur"
+  "group": "🌎 América del Sur",
+  "nameEn": "Vélez Sarsfield",
+  "nameEs": "Vélez Sarsfield"
 }

@@ -6,111 +6,138 @@
       "players": [
         {
           "name": "Dany Da Silva",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Léo Besson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Noah Noverraz",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Théo Barbet",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Breston Malula",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Rayan Kadima",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Nicola Sutter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lion de Oliveira",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Bastien Conus",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Issa Kaloga",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Patrick Sutter",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Hénoc Lukembila",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Johan Nkama",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Néhemie Lusuena",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Edmond Akichi",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Vasco Tritten",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Luca Gelato",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Ridge Mobulu",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Hugo Fargues",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Landry Nomel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mattéo Djoumgoué",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Keasse Bah",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Nathan Garcia",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Malko Sartoretti",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Loïc Socka Bongué",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "François Mendy",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Latta N'Dabrou",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -119,12 +146,14 @@
         "defense": 66,
         "goalkeeping": 65
       },
-      "source": "Transfermarkt — Brest (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Brest (2025/2026)",
       "teamLabel": "Brest (2025-26)"
     }
   },
   "id": 5499,
   "name": "Brest",
   "badgeLocalPath": "/img/badges/brest.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Brest",
+  "nameEs": "Brest"
 }

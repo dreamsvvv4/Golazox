@@ -1,0 +1,91 @@
+{
+  "slug": "sambia",
+  "name": "Sambia",
+  "nameEn": "Zambia",
+  "nameEs": "Zambia",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/sambia.png",
+  "id": "sambia",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lawrence Mulenga",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Kabaso Chongo",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Stoppila Sunzu",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Andrew Kangwa",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Enock Mwepu",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Moses Phiri",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Lubambo Musonda",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Lameck Banda",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Emmanuel Banda",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Kings Kangwa",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Fashion Sakala",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Roderick Kabwe",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Justin Shonga",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Benson Sakala",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    }
+  }
+}

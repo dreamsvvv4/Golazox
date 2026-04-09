@@ -6,115 +6,143 @@
       "players": [
         {
           "name": "Dominik Kotarski",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Rúnar Alex Rúnarsson",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Oscar Buur",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Gabriel Pereira",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Pantelis Hatzidiakos",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Junnosuke Suzuki",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Zanka",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Marcos López",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Birger Meling",
-          "position": "LB"
+          "position": "LB",
+          "rating": 75
         },
         {
           "name": "Rodrigo Huescas",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Aurélio Buta",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Kenay Myrie",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "William Clem",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Amir Richardson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Magnus Mattsson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Mads Emil Madsen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Thomas Delaney",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Oliver Højer",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jonathan Moalem",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Elias Achouri",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Robert",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Jordan Larsson",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Liam West",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Mohamed Elyounoussi",
-          "position": "RW"
+          "position": "RW",
+          "rating": 77
         },
         {
           "name": "Youssoufa Moukoko",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Viktor Dadason",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Viktor Claesson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Andreas Cornelius",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -123,12 +151,14 @@
         "defense": 60,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — FC Copenhagen (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” FC Copenhagen (2025/2026)",
       "teamLabel": "FC Copenhagen (2025-26)"
     }
   },
   "id": 190,
   "name": "FC Copenhagen",
   "badgeLocalPath": "/img/badges/fc-kopenhagen.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "FC Copenhagen",
+  "nameEs": "FC Copenhagen"
 }

@@ -6,111 +6,138 @@
       "players": [
         {
           "name": "Simen Lillevik Kjellevold",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Mehmet Rrahmani",
-          "position": "GK"
+          "position": "GK",
+          "rating": 77
         },
         {
           "name": "Mikkel Nordengen Knudsen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Henrik Osnes",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Christopher Notoane",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Kristian Bjerkenes Håkenstad",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Sebastian Stokke",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Henrik Thorkildsen",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Erik Ruud",
-          "position": "CB"
+          "position": "CB",
+          "rating": 76
         },
         {
           "name": "Lucas Kolstad",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Edin Øy",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Sean Manyi Tabe",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Alieu Bandeh",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Marius Damhaug",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Johan Andersson",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Oliver Stenseth",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Matias Velldal",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Runar Frøhaug Johnsen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Tengel Lia Fredriksen",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Jørgen Kolstad",
-          "position": "CM"
+          "position": "CM",
+          "rating": 76
         },
         {
           "name": "Lars Julian Fjeld",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Benedict Lethabo Notoane",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Simon Stenseth",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Kara Abdoulie Mai Bandeh",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Olav Dobloug Mengshoel",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Herman Henriksen",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         },
         {
           "name": "Martin Dencker Opsahl",
-          "position": "ST"
+          "position": "ST",
+          "rating": 78
         }
       ],
       "ratings": {
@@ -119,12 +146,14 @@
         "defense": 69,
         "goalkeeping": 60
       },
-      "source": "Transfermarkt — Lille (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Lille (2025/2026)",
       "teamLabel": "Lille (2025-26)"
     }
   },
   "id": 6493,
   "name": "Lille",
   "badgeLocalPath": "/img/badges/lille.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "Lille",
+  "nameEs": "Lille"
 }

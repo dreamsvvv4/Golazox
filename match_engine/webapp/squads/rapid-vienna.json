@@ -1,6 +1,234 @@
 {
   "slug": "rapid-vienna",
-  "seasons": {},
+  "seasons": {
+    "1985": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Michael Konsel",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Peter Hrstic",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Peter Pacult",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Reinhard Kienast",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Karl Brauneder",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Zlatko Kranjcar",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Hans Krankl",
+          "position": "ST",
+          "rating": 91
+        },
+        {
+          "name": "Peter Schöttel",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Reinhard Kienast",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Antonin Panenka",
+          "position": "AM",
+          "rating": 89
+        },
+        {
+          "name": "Rainer Huss",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Manfred Zsak",
+          "position": "LM",
+          "rating": 82
+        },
+        {
+          "name": "Kurt Russ",
+          "position": "CB",
+          "rating": 80
+        }
+      ],
+      "source": "Rapid Viena - Copa de Europa Final 1984-85 (Krankl, Panenka, Pacult)",
+      "teamLabel": "Rapid Viena (1984-85)"
+    },
+    "1996": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Michael Konsel",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Peter Schöttel",
+          "position": "CB",
+          "rating": 85
+        },
+        {
+          "name": "Carsten Jancker",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Dietmar Kühbauer",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Rene Wagner",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Andreas Heraf",
+          "position": "RB",
+          "rating": 81
+        },
+        {
+          "name": "Rene Hochgatterer",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Szabolcs Sáfár",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Mario Haas",
+          "position": "LW",
+          "rating": 84
+        },
+        {
+          "name": "Peter Pacult",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Vladimir Janocko",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Christian Prosenik",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Robert Pecl",
+          "position": "DM",
+          "rating": 80
+        }
+      ],
+      "source": "Rapid Viena - Copa UEFA + UCL 1995-96 (Konsel, Jancker, Kuehbauer)",
+      "teamLabel": "Rapid Viena (1995-96)"
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Paul Gartler",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Nermin Crnkic",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Leopold Querfeld",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Maximilian Hofmann",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jonas Auer",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Nicolas Kühn",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Moritz Oswald",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Patrick Greil",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Marco Grüll",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Guido Burgstaller",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Christoph Knasmüllner",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Nikolas Sattlberger",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Emirhan Demir",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Emanuel Aiwu",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ante Bajic",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    }
+  },
   "badgeLocalPath": "/img/badges/rapid-vienna.png",
-  "group": "🌍 Otros"
+  "group": "🌍 Otros",
+  "nameEn": "SK Rapid Wien",
+  "nameEs": "SK Rapid Wien",
+  "name": "SK Rapid Wien"
 }

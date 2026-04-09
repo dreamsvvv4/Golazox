@@ -1,6 +1,150 @@
 {
   "slug": "hamburger-sv",
   "seasons": {
+    "1976": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rudi Kargus",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Manfred Kaltz",
+          "position": "RB",
+          "rating": 86
+        },
+        {
+          "name": "Peter Nogly",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Horst Bertl",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Holger Hieronymus",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Caspar Memering",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Felix Magath",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Kevin Keegan",
+          "position": "AM",
+          "rating": 91
+        },
+        {
+          "name": "Horst Hrubesch",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Bernd Wehmeyer",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Willi Reimann",
+          "position": "LW",
+          "rating": 81
+        },
+        {
+          "name": "Uwe Bein",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Jimmy Hartwig",
+          "position": "CM",
+          "rating": 81
+        }
+      ],
+      "source": "Hamburger SV 🌍 Otros€” Bundesliga 1975-76 (Keegan debut era, Kaltz)",
+      "teamLabel": "Hamburger SV (1975-76)"
+    },
+    "1983": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Uli Stein",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Manfred Kaltz",
+          "position": "RB",
+          "rating": 87
+        },
+        {
+          "name": "Ditmar Jakobs",
+          "position": "CB",
+          "rating": 84
+        },
+        {
+          "name": "Thomas von Heesen",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Wolfram Wuttke",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Felix Magath",
+          "position": "CM",
+          "rating": 88
+        },
+        {
+          "name": "Bernd Wehmeyer",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Jürgen Milewski",
+          "position": "RM",
+          "rating": 81
+        },
+        {
+          "name": "Ivan Buljan",
+          "position": "LM",
+          "rating": 80
+        },
+        {
+          "name": "Horst Hrubesch",
+          "position": "ST",
+          "rating": 88
+        },
+        {
+          "name": "Klaus Allofs",
+          "position": "ST",
+          "rating": 87
+        },
+        {
+          "name": "Holger Hieronymus",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Jimmy Hartwig",
+          "position": "CM",
+          "rating": 81
+        }
+      ],
+      "source": "Hamburger SV <\r Otros�\u001d European Cup 1982-83 (único club alemán campeón con Magath, Allofs)",
+      "teamLabel": "Hamburger SV (1982-83)"
+    },
     "2025": {
       "formation": "4-2-3-1",
       "players": [
@@ -116,7 +260,7 @@
         "defense": 68,
         "goalkeeping": 68
       },
-      "source": "Transfermarkt — Hamburger SV (2025/2026)",
+      "source": "Transfermarkt 🌍 Otros€” Hamburger SV (2025/2026)",
       "teamLabel": "Hamburger SV (2025-26)"
     }
   },
