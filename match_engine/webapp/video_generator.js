@@ -846,12 +846,30 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
   const tmp = os.tmpdir();
   const scaledPath  = path.join(tmp, 'golazox_scaled.mp4');
 
-  // Crop the black right margin (OS DPI × CSS viewport > physical CSS pixels) then scale 3× to 1080×1920.
-  // Crop ratio = CSS content width / physical frame width (measured = 0.726 for this machine at ~138% DPI).
+  // Crop the black right margin only when the OS DPI scaling produced a wider-than-1080 capture.
+  // At 100% DPI (VPS / most Linux) the capture is already 1080×1920 — no crop needed.
+  // At 138% DPI (Windows dev machine) the captured frame is ~1486×1920 — crop to 1080.
   console.log('[post] Crop + upscale to 1080×1920...');
   try {
+    // Probe actual video width so we never over-crop
+    let capturedWidth = 0;
+    const ffprobeBin2 = process.env.FFMPEG_PATH.replace('ffmpeg', 'ffprobe').replace(/ffmpeg\.exe$/, 'ffprobe.exe');
+    if (fs.existsSync(ffprobeBin2)) {
+      const wProbe = spawnSync(ffprobeBin2, [
+        '-v', 'error', '-select_streams', 'v:0',
+        '-show_entries', 'stream=width',
+        '-of', 'default=noprint_wrappers=1:nokey=1',
+        outPath,
+      ], { stdio: ['ignore', 'pipe', 'pipe'] });
+      capturedWidth = parseInt((wProbe.stdout || '').toString().trim()) || 0;
+    }
+    const needsCrop = capturedWidth > 0 && capturedWidth > WIDTH + 50;
+    const vfFilter  = needsCrop
+      ? `crop=iw*${(WIDTH / capturedWidth).toFixed(4)}:ih:0:0,scale=${WIDTH}:${HEIGHT}:flags=lanczos`
+      : `scale=${WIDTH}:${HEIGHT}:flags=lanczos`;
+    console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, filter: ${vfFilter.slice(0, 60)}`);
     ffmpeg(['-y', '-i', outPath,
-      '-vf', `crop=iw*0.726:ih:0:0,scale=${WIDTH}:${HEIGHT}:flags=lanczos`,
+      '-vf', vfFilter,
       '-c:v', 'libx264', '-preset', 'fast', '-crf', '16', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
       scaledPath,
     ]);
@@ -859,11 +877,6 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     console.log('[post] Crop + upscale done');
   } catch (scaleErr) {
     console.warn('[post] Upscale failed, using original:', scaleErr.message.slice(0, 150));
-  }
-
-  // Apply goal overlays (burns "GOL! X-Y" flash at each goal timestamp)
-  if (matchMeta?.goalEvents?.length > 0) {
-    applyGoalOverlays(outPath, matchMeta.goalEvents);
   }
 
   const introPath   = path.join(tmp, 'golazox_intro.mp4');
@@ -1384,10 +1397,10 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   console.log('[match] Results revealed');
 
   // scroll-behavior:auto (injected via CSS) ensures renderResult's scrollIntoView is instant.
-  // Just hold 3.5s on the score, then scroll down through stats.
-  await wait(3500);
+  // Hold 2.5s on the score (slightly faster than before), then scroll down through stats.
+  await wait(2500);
 
-  // ── STEP 8: Slow cinematic scroll down through stats ──
+  // ── STEP 8: Cinematic scroll down through stats (slightly faster) ──
   await page.evaluate(async () => {
     await new Promise(resolve => {
       const totalH = Math.max(0, document.body.scrollHeight - window.innerHeight);
@@ -1399,7 +1412,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       // Pause zones as fractions of remaining distance below start
       const PAUSE_FRACS = [0.25, 0.55, 0.80];
       const pausedSet   = new Set();
-      const SPEED       = 7; // px/tick ≈ 210px/s
+      const SPEED       = 9; // px/tick ≈ 270px/s (was 7)
 
       const timer = setInterval(() => {
         if (pauseTicks > 0) { pauseTicks--; return; }
@@ -1407,7 +1420,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
         for (const pf of PAUSE_FRACS) {
           if (!pausedSet.has(pf) && frac >= pf - 0.012) {
             pausedSet.add(pf);
-            pauseTicks = 35; // ~1.15s pause at each zone
+            pauseTicks = 24; // ~0.8s pause at each zone (was 35)
             return;
           }
         }
@@ -1415,7 +1428,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
         window.scrollTo(0, y);
         if (y >= totalH) {
           clearInterval(timer);
-          setTimeout(resolve, 2000);
+          setTimeout(resolve, 1500); // was 2000
         }
       }, 33);
     });
