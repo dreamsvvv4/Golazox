@@ -1215,12 +1215,12 @@ async function generateVideo(opts = {}) {
       'html body { margin: 0 !important; overflow: hidden !important; background: #0a0f1e !important; }',
 
       // Header: strip horizontal padding so the full-width bar looks clean
-      'html body .site-header { padding-left: 0 !important; padding-right: 0 !important; }',
-      'html body .header-inner { padding-left: .6rem !important; padding-right: .6rem !important; max-width: none !important; }',
-      // Main layout: zero out all horizontal padding & margin
-      'html body .main-wrap { padding: 0 !important; margin: .4rem 0 !important; gap: .55rem !important; max-width: none !important; }',
-      'html body #main-match-wrap { padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }',
-      'html body .input-panel { padding: .8rem .55rem .7rem !important; }',
+      'html body .site-header { padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }',
+      'html body .header-inner { padding-left: .6rem !important; padding-right: .6rem !important; max-width: none !important; width: 100% !important; box-sizing: border-box !important; }',
+      // Main layout: zero out all horizontal padding & margin, force full width
+      'html body .main-wrap { padding: 0 !important; margin: .4rem 0 !important; gap: .55rem !important; max-width: none !important; width: 100% !important; box-sizing: border-box !important; }',
+      'html body #main-match-wrap { padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; box-sizing: border-box !important; }',
+      'html body .input-panel { padding: .8rem .55rem .7rem !important; width: 100% !important; box-sizing: border-box !important; }',
       'html body .glass-card { border-radius: 10px !important; }',
       'html body .live-viewer { padding-left: .3rem !important; padding-right: .3rem !important; }',
       // Live match: full-width column layout
