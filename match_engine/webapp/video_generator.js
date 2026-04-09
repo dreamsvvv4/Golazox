@@ -1186,15 +1186,29 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     // Pick random from source list
     const picked = randomPick(sourceList);
     rivalry = (sourceList === RIVALS_LIST || sourceList === DERBIES_LIST) ? picked : null;
-    clasico = {
-      teamA:     picked.a.slug,
-      eraA:      picked.a.era   || '',
-      teamB:     picked.b.slug,
-      eraB:      picked.b.era   || '',
-      stadiumId: picked.a.stadium || null,
-      refereeId: picked.a.referee || null,
-      weatherId: picked.a.weather || null,
-    };
+    if (picked.a) {
+      // RIVALS_LIST / DERBIES_LIST nested format: { a: { slug, era, stadium, ... }, b: { slug, era } }
+      clasico = {
+        teamA:     picked.a.slug,
+        eraA:      picked.a.era   || '',
+        teamB:     picked.b.slug,
+        eraB:      picked.b.era   || '',
+        stadiumId: picked.a.stadium || null,
+        refereeId: picked.a.referee || null,
+        weatherId: picked.a.weather || null,
+      };
+    } else {
+      // CLASICOS flat format: { teamA, eraA, teamB, eraB, stadiumId, refereeId, weatherId }
+      clasico = {
+        teamA:     picked.teamA,
+        eraA:      picked.eraA     || '',
+        teamB:     picked.teamB,
+        eraB:      picked.eraB     || '',
+        stadiumId: picked.stadiumId || null,
+        refereeId: picked.refereeId || null,
+        weatherId: picked.weatherId || null,
+      };
+    }
   }
 
   // Navigate with team slugs in the URL so _deepLinkRestore() sets the input values.
