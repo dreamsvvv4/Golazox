@@ -904,6 +904,9 @@ function histReplay(idx) {
 // ── Surprise Me — random matchup ─────────────────────────────
 async function surpriseMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
+  // Clear any active rivalry/derby banners before picking a random match
+  _hideRivalryBanner();
+  _hideDerbyBanner();
   // Exclude special/historica/fantasy entries for better game quality
   const pool = _catalog.filter(c =>
     c.group !== '🌐 Continentes Históricos' &&
@@ -6288,9 +6291,11 @@ function _heatVal(v, col0, col1, col2) {
 }
 
 function _pitchOverlay(ctx, CW, CH) {
-  ctx.globalAlpha = 0.60;
+  // Scale overlay opacity and line weight to canvas size — avoids harsh look on small mobile canvas
+  const scale = Math.min(1, CW / 120);
+  ctx.globalAlpha = 0.28 + 0.32 * scale;  // 0.28 at tiny sizes, 0.60 at full size
   ctx.strokeStyle = 'rgba(255,255,255,0.9)';
-  ctx.lineWidth = 1.2;
+  ctx.lineWidth = Math.max(0.5, 1.2 * scale);
   ctx.strokeRect(2, 2, CW - 4, CH - 4);
   ctx.beginPath(); ctx.moveTo(2, CH / 2); ctx.lineTo(CW - 2, CH / 2); ctx.stroke();
   ctx.beginPath(); ctx.arc(CW / 2, CH / 2, CW * 0.13, 0, Math.PI * 2); ctx.stroke();

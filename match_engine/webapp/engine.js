@@ -767,7 +767,8 @@ function pickInjuries(players, rand) {
     let r = rand() * total, player = avail[avail.length - 1];
     for (let j = 0; j < avail.length; j++) { r -= weights[j]; if (r <= 0) { player = avail[j]; break; } }
     used.add(player.name);
-    result.push({ name: player.name, minute: 12 + Math.floor(rand() * 72) }); // 12'–84'
+    // Include position so buildTimeline can pick the correct substitute (GK→GK, not outfield)
+    result.push({ name: player.name, position: player.position, minute: 12 + Math.floor(rand() * 72) });
   }
   return result.sort((a, b) => a.minute - b.minute);
 }
@@ -1233,9 +1234,14 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
   const _pickSub = (injuredPos, usedSubs, bench) => {
     if (!bench || !bench.length) return null;
     const group = _posGroup(injuredPos);
-    // Only real bench players; never use GK to replace an outfield player
     const real = bench.filter(p => p.isReal === true && !usedSubs.has(p.name));
-    const pool = group !== 'GK' ? real.filter(p => p.position !== 'GK') : real;
+    // If GK injured: MUST use backup GK; never send outfield player in goal
+    if (group === 'GK') {
+      const backupGK = real.find(p => p.position === 'GK');
+      return backupGK || null; // no backup GK on bench → no sub (rare)
+    }
+    // Outfield: never use GK as replacement
+    const pool = real.filter(p => p.position !== 'GK');
     if (!pool.length) return null;
     const sameGroup = pool.filter(p => _posGroup(p.position) === group);
     return sameGroup[0] || pool[0];
