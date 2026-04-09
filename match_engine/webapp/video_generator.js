@@ -1162,7 +1162,7 @@ async function generateVideo(opts = {}) {
   await postProcess(outPath, type, speedSegments, matchMeta);
 
   console.log(`[video] Done → ${outPath}`);
-  return { path: outPath, title: videoTitle };
+  return { path: outPath, title: videoTitle, matchMeta };
 }
 
 // ── Record a single match ─────────────────────────────────────────────────────
@@ -1944,7 +1944,9 @@ if (require.main === module) {
   if (!type && args.includes('--rivalry')) type = 'rivalry';
   if (!type && args.includes('--derby'))   type = 'derby';
 
-  const count = parseInt(get('--count') || '1', 10);
+  const count     = parseInt(get('--count') || '1', 10);
+  const doUpload  = args.includes('--upload');
+  const platforms = get('--platforms') || 'youtube';
 
   const opts = {
     type:      type,
@@ -1964,8 +1966,18 @@ if (require.main === module) {
     for (let i = 0; i < total; i++) {
       if (total > 1) console.log(`\n[batch] ──── Video ${i + 1} / ${total} ────`);
       try {
-        const { path: p, title: t } = await generateVideo({ ...opts });
+        const { path: p, title: t, matchMeta } = await generateVideo({ ...opts });
         console.log(`[batch] ✓ ${i + 1}/${total} → ${p}\n  ${t}`);
+        if (doUpload) {
+          try {
+            const { uploadAll } = require('./uploader.js');
+            const { title: uTitle, description, tags } = buildUploadMeta(t, matchMeta, type || 'match');
+            console.log(`[batch] 📤 Uploading to ${platforms}: ${uTitle}`);
+            await uploadAll({ file: p, title: uTitle, description, tags, platforms, type: type || 'match' });
+          } catch (upErr) {
+            console.error(`[batch] ✗ Upload error: ${upErr.message}`);
+          }
+        }
       } catch (err) {
         console.error(`[batch] ✗ ${i + 1}/${total} ERROR:`, err.message);
       }
@@ -1975,4 +1987,74 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { generateVideo };
+// ── Build title / description / tags for upload ─────────────────────────────
+function buildUploadMeta(videoTitle, matchMeta, type) {
+  if (!matchMeta) {
+    return {
+      title: videoTitle,
+      description: '⚽ Simulación generada por IA — golazox.com\n\n🌐 https://golazox.com\n\n#Futbol #Simulacion #GolazOX #Football #IA',
+      tags: ['futbol', 'simulacion', 'golazox', 'football', 'inteligencia artificial'],
+    };
+  }
+
+  const nameA = slugToDisplayName(matchMeta.teamA || '');
+  const nameB = slugToDisplayName(matchMeta.teamB || '');
+  const eraA  = matchMeta.eraA ? ` (${matchMeta.eraA})` : '';
+  const eraB  = matchMeta.eraB ? ` (${matchMeta.eraB})` : '';
+  const sA    = matchMeta.finalScore?.scoreA ?? '';
+  const sB    = matchMeta.finalScore?.scoreB ?? '';
+  const scoreStr = (sA !== '' && sB !== '') ? `${sA}-${sB}` : '';
+  const isRivalry = type === 'rivalry' || type === 'derby';
+  const rivalry   = matchMeta.rivalry;
+
+  // Title: compact, punchy, TikTok/Short-friendly
+  let title;
+  if (isRivalry && rivalry?.label) {
+    const labelEs = rivalry.label || rivalry.en || '';
+    title = scoreStr
+      ? `${labelEs}: ${nameA} vs ${nameB} — ${scoreStr} | GolazOX`
+      : `${labelEs}: ${nameA} vs ${nameB} | GolazOX`;
+  } else {
+    title = scoreStr
+      ? `${nameA}${eraA} vs ${nameB}${eraB} — ${scoreStr} | GolazOX`
+      : `${nameA}${eraA} vs ${nameB}${eraB} | GolazOX`;
+  }
+  // YouTube title max 100 chars
+  if (title.length > 98) title = title.slice(0, 95) + '...';
+
+  // Slug → simple tag (no dash)
+  const slugTag = (s) => (s || '').replace(/-/g, '');
+  const teamTagA = slugTag(matchMeta.teamA);
+  const teamTagB = slugTag(matchMeta.teamB);
+
+  // Hashtags
+  const baseHashtags = '#Futbol #FutbolHistorico #Simulacion #GolazOX #Football #IA #Deportes';
+  const teamHashtags = `#${teamTagA} #${teamTagB}`;
+  const rivalryHashtag = isRivalry ? '#Clasico #Derbi #Rivalidad' : '#PartidoHistorico';
+  const allHashtags = `${baseHashtags} ${teamHashtags} ${rivalryHashtag}`;
+
+  // Description body
+  const matchLine = isRivalry && rivalry?.desc
+    ? `${rivalry.desc} — Simulado con jugadores históricos`
+    : `${nameA}${eraA} vs ${nameB}${eraB} — Partido histórico simulado con jugadores reales`;
+  const resultLine = scoreStr ? `\n\nResultado final: ${nameA} ${sA} – ${sB} ${nameB}` : '';
+  const description = [
+    `⚽ ${matchLine}${resultLine}`,
+    '',
+    '🎮 Simula tu propia versión en golazox.com',
+    '👇 Elige equipos históricos, estadio, árbitro y clima',
+    '',
+    allHashtags,
+  ].join('\n');
+
+  const tags = [
+    'futbol', 'futbol historico', 'simulacion', 'golazox', 'football',
+    'inteligencia artificial', 'ia futbol', 'deportes',
+    nameA.toLowerCase(), nameB.toLowerCase(),
+    ...(isRivalry ? ['clasico', 'derbi', 'rivalidad futbol'] : ['partido historico']),
+  ].filter((v, i, a) => v && a.indexOf(v) === i); // unique, non-empty
+
+  return { title, description, tags };
+}
+
+module.exports = { generateVideo, buildUploadMeta };
