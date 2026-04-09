@@ -255,7 +255,47 @@ const DERBIES_LIST = [
     b: { slug: 'real-betis-balompie',         era: '2025' } },
 ];
 
-// Badge filename normalizer — squad slugs don't always match badge filenames 1:1
+// ── Master epic list: all rivalries + derbies combined ─────────────────────
+// Used as the default when no --type is specified. Every entry has a dramatic
+// label ('¿Pelé o Maradona?', 'El Milagro de Estambul', etc.) and the full
+// rivalry intro card, so videos always feel like special events.
+const EPIC_LIST = [...RIVALS_LIST, ...DERBIES_LIST];
+
+// ── No-repeat tracker ───────────────────────────────────────────────────────
+// Persists used match labels to videos/used_matches.json.
+// Resets automatically when all entries have been used.
+const USED_FILE = path.join(__dirname, 'videos', 'used_matches.json');
+
+function loadUsed() {
+  try { return JSON.parse(fs.readFileSync(USED_FILE, 'utf8')); } catch { return []; }
+}
+function saveUsed(arr) {
+  try {
+    if (!fs.existsSync(path.dirname(USED_FILE))) fs.mkdirSync(path.dirname(USED_FILE), { recursive: true });
+    fs.writeFileSync(USED_FILE, JSON.stringify(arr, null, 2));
+  } catch {}
+}
+
+function pickNoRepeat(list) {
+  let used = loadUsed();
+  const available = list.filter(m => {
+    const key = m.label || m.en || (m.teamA + m.teamB);
+    return !used.includes(key);
+  });
+  // Reset when everything has been used
+  if (available.length === 0) {
+    used = [];
+    saveUsed([]);
+    return randomPick(list);
+  }
+  const picked = randomPick(available);
+  const key = picked.label || picked.en || (picked.teamA + picked.teamB);
+  used.push(key);
+  saveUsed(used);
+  console.log(`[pick] "${key}" (${used.length}/${list.length} used)`);
+  return picked;
+}
+
 const BADGE_DIR = path.join(__dirname, 'public', 'img', 'badges');
 function _badgeFile(slug) {
   const direct = path.join(BADGE_DIR, `${slug}.png`);
@@ -975,9 +1015,9 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
   // For match type: always generate a dynamic intro with team badges + names.
   // For rivalry/derby type: generate a rivalry-specific intro.
   // For ucl/wc: use pre-rendered file or generate from scratch.
-  if ((type === 'match' || type === 'rivalry' || type === 'derby') && matchMeta) {
+  if ((type === 'match' || type === 'rivalry' || type === 'derby' || type === 'epic' || !type) && matchMeta) {
     if (matchMeta.rivalry) {
-      // Rivalry/Derby — premium title intro
+      // Epic/Rivalry/Derby — premium rivalry intro with dramatic title
       console.log(`[post] Generating rivalry intro: ${matchMeta.rivalry.label}...`);
       try {
         createRivalryIntroVideo(matchMeta.rivalry, introPath);
@@ -1035,11 +1075,12 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     console.warn('[post] CTA card failed:', e.message.slice(0, 150));
   }
 
-  // Hook card (3s — shows final score FIRST to hook viewers: "How did this happen?")
+  // Hook card: shows final score AFTER the match, just before CTA
+  // Placement: [INTRO] → [MATCH] → [HOOK score reveal] → [CTA]
   let hasHook = false;
-  if (type === 'match' && matchMeta?.finalScore) {
+  if ((type === 'match' || type === 'rivalry' || type === 'derby' || type === 'epic' || !type) && matchMeta?.finalScore) {
     try {
-      console.log('[post] Generating hook card...');
+      console.log('[post] Generating hook card (score reveal)...');
       createHookCard(
         matchMeta.finalScore.scoreA,
         matchMeta.finalScore.scoreB,
@@ -1054,12 +1095,12 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     }
   }
 
-  // Concat: [hook] + intro + main + CTA
+  // Concat: intro → match → score reveal → CTA
   console.log('[post] Concatenating parts...');
   const parts = [];
-  if (hasHook)  parts.push(hookPath.replace(/\\/g, '/'));
   if (hasIntro) parts.push(introPath.replace(/\\/g, '/'));
   parts.push(mainPath.replace(/\\/g, '/'));
+  if (hasHook)  parts.push(hookPath.replace(/\\/g, '/'));
   if (hasCta)   parts.push(ctaPath.replace(/\\/g, '/'));
   fs.writeFileSync(listFile, parts.map(p => `file '${p}'`).join('\n'));
   try {
@@ -1210,6 +1251,11 @@ async function generateVideo(opts = {}) {
     } else if (type === 'derby') {
       opts._list = DERBIES_LIST;
       ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
+    } else if (type === 'epic' || !type) {
+      // Default: pick from combined RIVALS+DERBIES, no repeat
+      opts._list = EPIC_LIST;
+      opts._noRepeat = true;
+      ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
     } else if (type === 'ucl') {
       ({ title: videoTitle, speedSegments } = await recordUCL(page, recorder, outPath));
     } else if (type === 'wc') {
@@ -1246,9 +1292,9 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       weatherId: opts.weatherId || null,
     };
   } else {
-    // Pick random from source list
-    const picked = randomPick(sourceList);
-    rivalry = (sourceList === RIVALS_LIST || sourceList === DERBIES_LIST) ? picked : null;
+    // Pick: no-repeat when flagged, otherwise random
+    const picked = opts._noRepeat ? pickNoRepeat(sourceList) : randomPick(sourceList);
+    rivalry = (sourceList !== CLASICOS) ? picked : null;
     if (picked.a) {
       // RIVALS_LIST / DERBIES_LIST nested format: { a: { slug, era, stadium, ... }, b: { slug, era } }
       clasico = {
@@ -2018,9 +2064,12 @@ if (require.main === module) {
   };
 
   // --rivalry and --derby are shorthand for --type rivalry/derby
+  // No --type = 'epic' (combined RIVALS+DERBIES, no repeat, dramatic intro)
   let type = get('--type');
   if (!type && args.includes('--rivalry')) type = 'rivalry';
   if (!type && args.includes('--derby'))   type = 'derby';
+  if (!type && args.includes('--match'))   type = 'match';
+  // Default (no flag) stays undefined → resolves to 'epic' inside generateVideo
 
   const count     = parseInt(get('--count') || '1', 10);
   const doUpload  = args.includes('--upload');
