@@ -954,18 +954,24 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       ], { stdio: ['ignore', 'pipe', 'pipe'] });
       capturedWidth = parseInt((wProbe.stdout || '').toString().trim()) || 0;
     }
-    const needsCrop = capturedWidth > 0 && capturedWidth > WIDTH + 50;
+    // Fallback: on Windows the DPI scale factor produces ~1486px wide captures.
+    // If ffprobe failed OR returned something wider than 1080, use 0.726 crop ratio.
+    if (capturedWidth === 0) {
+      capturedWidth = process.platform === 'win32' ? 1486 : WIDTH;
+    }
+    const needsCrop = capturedWidth > WIDTH + 50;
     // Add 30px dark margin on all 4 sides: scale content to 1020×1813, then pad to 1080×1920
     const MARGIN  = 30;
     const innerW  = WIDTH - MARGIN * 2;                          // 1020
     const innerH  = Math.round(innerW * HEIGHT / WIDTH);         // 1813
     const padX    = Math.round((WIDTH  - innerW) / 2);           // 30
     const padY    = Math.round((HEIGHT - innerH) / 2);           // 53
+    const cropRatio = needsCrop ? (WIDTH / capturedWidth).toFixed(4) : null;
     const scaleFilter = needsCrop
-      ? `crop=iw*${(WIDTH / capturedWidth).toFixed(4)}:ih:0:0,scale=${innerW}:${innerH}:flags=lanczos`
+      ? `crop=iw*${cropRatio}:ih:0:0,scale=${innerW}:${innerH}:flags=lanczos`
       : `scale=${innerW}:${innerH}:flags=lanczos`;
     const vfFilter = `${scaleFilter},pad=${WIDTH}:${HEIGHT}:${padX}:${padY}:color=0x05080f`;
-    console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, margin=${MARGIN}px`);
+    console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, cropRatio=${cropRatio}, margin=${MARGIN}px`);
     ffmpeg(['-y', '-i', outPath,
       '-vf', vfFilter,
       '-c:v', 'libx264', '-preset', 'fast', '-crf', '16', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
@@ -1342,10 +1348,25 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     });
   } catch (_) {} // already exposed if page was reused
 
-  // --preview: cut recording at 20s so we can quickly verify layout/flow
+  // --preview: cut recording at 20s, apply the same crop+pad as full video, then exit
   if (opts.preview) {
     setTimeout(async () => {
       try { await recorder.stop(); } catch {}
+      // Apply Windows DPI crop + 30px margin so preview looks identical to final video
+      try {
+        const prevScaled = outPath + '.preview.mp4';
+        const CW = process.platform === 'win32' ? 1486 : WIDTH;
+        const needsCrop = CW > WIDTH + 50;
+        const innerW = WIDTH - 60; // 1020
+        const innerH = Math.round(innerW * HEIGHT / WIDTH); // 1813
+        const cropF = needsCrop ? `crop=iw*${(WIDTH / CW).toFixed(4)}:ih:0:0,` : '';
+        ffmpeg(['-y', '-i', outPath,
+          '-vf', `${cropF}scale=${innerW}:${innerH}:flags=lanczos,pad=${WIDTH}:${HEIGHT}:30:${Math.round((HEIGHT - innerH) / 2)}:color=0x05080f`,
+          '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
+          prevScaled,
+        ]);
+        fs.renameSync(prevScaled, outPath);
+      } catch (pe) { console.warn('[preview] crop failed:', pe.message.slice(0, 100)); }
       console.log('[preview] 20s cut — video ready at', outPath);
       process.exit(0);
     }, 20000);
