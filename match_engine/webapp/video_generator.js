@@ -816,9 +816,30 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const fadeIn = (s) => `if(lt(t,${s}),0,min(1,(t-${s})/0.4))`;
   const alpha  = (s) => `min(${fadeIn(s)},if(gt(t,${d-0.5}),max(0,(${d}-t)/0.5),1))`;
 
-  // Title size adapts to length
-  const titleText = esc((rivalry.label || rivalry.en || '').toUpperCase());
-  const titleSize = titleText.length > 18 ? 88 : titleText.length > 12 ? 110 : 132;
+  // Title: split into two lines if too long, shrink font progressively
+  const titleRaw  = (rivalry.label || rivalry.en || '').toUpperCase();
+  const titleEsc  = esc(titleRaw);
+  // Approximate px-width at given Bebas Neue size: ~0.55 * fontSize per char
+  const approxW   = (txt, size) => txt.length * size * 0.55;
+  let titleSize, titleLines;
+  if (approxW(titleRaw, 110) <= 960) {
+    titleSize = 110; titleLines = [titleEsc];
+  } else if (approxW(titleRaw, 88) <= 960) {
+    titleSize = 88;  titleLines = [titleEsc];
+  } else if (approxW(titleRaw, 72) <= 960) {
+    titleSize = 72;  titleLines = [titleEsc];
+  } else {
+    // Split at 'VS' or middle word for two-line layout
+    titleSize = 88;
+    const mid = titleRaw.indexOf(' VS ');
+    if (mid !== -1) {
+      titleLines = [esc(titleRaw.slice(0, mid)), esc('VS ' + titleRaw.slice(mid + 4))];
+    } else {
+      const words = titleRaw.split(' ');
+      const half  = Math.ceil(words.length / 2);
+      titleLines  = [esc(words.slice(0, half).join(' ')), esc(words.slice(half).join(' '))];
+    }
+  }
 
   // Context line: country (for derbies) or category (for rivalries) — no emoji (not supported)
   const contextText = esc(rivalry.country || rivalry.category || '');
@@ -828,12 +849,14 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const texts = [
     // Top separator
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.5:x=(w-text_w)/2:y=248:alpha='${alpha(0.0)}'`,
-    // Big title
-    `drawtext=fontfile='${fontAlt}':text='${titleText}':fontsize=${titleSize}:fontcolor=FFD700:x=(w-text_w)/2:y=272:alpha='${alpha(0.05)}'`,
+    // Big title — 1 or 2 lines
+    ...titleLines.map((line, i) =>
+      `drawtext=fontfile='${fontAlt}':text='${line}':fontsize=${titleSize}:fontcolor=FFD700:x=(w-text_w)/2:y=${272 + i * (titleSize + 8)}:alpha='${alpha(0.05)}'`
+    ),
     // Context (country or category) — centered, subtle
-    `drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=436:alpha='${alpha(0.18)}'`,
+    `drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 10}:alpha='${alpha(0.18)}'`,
     // Mid separator
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=506:alpha='${alpha(0.2)}'`,
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 80}:alpha='${alpha(0.2)}'`,
     // VS (centered between badges)
     `drawtext=fontfile='${fontAlt}':text='VS':fontsize=120:fontcolor=white@0.9:x=(w-text_w)/2:y=658:alpha='${alpha(0.3)}'`,
     // Team names
@@ -892,10 +915,17 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       capturedWidth = parseInt((wProbe.stdout || '').toString().trim()) || 0;
     }
     const needsCrop = capturedWidth > 0 && capturedWidth > WIDTH + 50;
-    const vfFilter  = needsCrop
-      ? `crop=iw*${(WIDTH / capturedWidth).toFixed(4)}:ih:0:0,scale=${WIDTH}:${HEIGHT}:flags=lanczos`
-      : `scale=${WIDTH}:${HEIGHT}:flags=lanczos`;
-    console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, filter: ${vfFilter.slice(0, 60)}`);
+    // Add 30px dark margin on all 4 sides: scale content to 1020×1813, then pad to 1080×1920
+    const MARGIN  = 30;
+    const innerW  = WIDTH - MARGIN * 2;                          // 1020
+    const innerH  = Math.round(innerW * HEIGHT / WIDTH);         // 1813
+    const padX    = Math.round((WIDTH  - innerW) / 2);           // 30
+    const padY    = Math.round((HEIGHT - innerH) / 2);           // 53
+    const scaleFilter = needsCrop
+      ? `crop=iw*${(WIDTH / capturedWidth).toFixed(4)}:ih:0:0,scale=${innerW}:${innerH}:flags=lanczos`
+      : `scale=${innerW}:${innerH}:flags=lanczos`;
+    const vfFilter = `${scaleFilter},pad=${WIDTH}:${HEIGHT}:${padX}:${padY}:color=0x05080f`;
+    console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, margin=${MARGIN}px`);
     ffmpeg(['-y', '-i', outPath,
       '-vf', vfFilter,
       '-c:v', 'libx264', '-preset', 'fast', '-crf', '16', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
@@ -1116,12 +1146,12 @@ async function generateVideo(opts = {}) {
   });
 
   const page = await browser.newPage();
-  // DPR=3: CSS viewport stays 360×640 (mobile layout, all breakpoints fire normally).
-  // Physical render = 1080×1920 → screencast captures at 1080×1920 → crop+scale only 1.38×.
+  // DPR=3: CSS viewport 360×640 → physical 1080×1920.
+  // We wrap the app in a 12px CSS margin on all sides (36px physical) so the content
+  // floats inside a dark border — looks much cleaner as a vertical video.
   await page.setViewport({ width: 360, height: 640, deviceScaleFactor: 3 });
 
-  // Full-width CSS override: remove ALL horizontal padding/margin so content fills 360px.
-  // Uses highest-specificity selectors so they beat every @media override.
+  // Full-width CSS override + 12px margin wrapper for cinematic look.
   await page.evaluateOnNewDocument(() => {
     const s = document.createElement('style');
     s.textContent = [
@@ -1129,6 +1159,11 @@ async function generateVideo(opts = {}) {
       '::-webkit-scrollbar { display: none !important; }',
       // Kill ALL smooth scrolls — prevents trembling when renderResult() calls scrollIntoView
       'html, * { scroll-behavior: auto !important; }',
+
+      // Dark background that shows as the margin border
+      'html { background: #05080f !important; padding: 0 !important; margin: 0 !important; }',
+      // Body fills the full viewport
+      'html body { margin: 0 !important; overflow: hidden !important; background: #0a0f1e !important; }',
 
       // Header: strip horizontal padding so the full-width bar looks clean
       'html body .site-header { padding-left: 0 !important; padding-right: 0 !important; }',
