@@ -129,64 +129,94 @@ const CLASICOS = [
 // ── Rivalidades históricas (sync with HISTORIC_MATCHES in app.js) ──────────
 // label=título ES · en=título EN · country · flag · desc · competition · round
 const RIVALS_LIST = [
-  { label: '¿Pelé o Maradona?',              en: 'Pelé vs Maradona',            category: 'Rivalidades', flag: '⚽',
+  { label: '¿Pelé o Maradona?',              en: 'Pelé vs Maradona',            category: 'Partido de Ensueño', flag: '⚽',
     desc: 'Brasil \'70 · Argentina \'86',
+    goals: { a: ['Pelé', 'Jairzinho', 'Tostao'], b: ['Maradona', 'Burruchaga', 'Valdano'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'brasilien',                  era: '1970', stadium: 'maracana',  referee: 'collina',  weather: 'heat' },
     b: { slug: 'argentinien',                era: '1986' } },
-  { label: 'Final EE.UU. 1994',              en: 'USA \'94 World Cup Final',     category: 'Final', flag: '🏆',
-    desc: 'Brasil \'94 · Italia \'94',
-    a: { slug: 'brasilien',                  era: '1994', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
+  { label: 'Final EE.UU. 1994',              en: 'USA \'94 World Cup Final',     category: 'Rose Bowl · 17 Jul 1994', flag: '🏆',
+    desc: 'Brasil 0 - 0 Italia (3-2 pen)',
+    goals: { a: ['Romario', 'Bebeto', 'Branco (pen)'], b: ['Baggio', 'Costacurta', 'Maldini'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'brasilien',                  era: '1994', stadium: 'maracana',  referee: 'collina',  weather: 'heat' },
     b: { slug: 'italien',                    era: '1994' } },
-  { label: 'MSN vs BBC',                     en: 'MSN vs BBC',                   category: 'El Clásico', flag: '🇪🇸',
-    desc: 'Barcelona \'15 · Real Madrid \'15',
+  { label: 'MSN vs BBC',                     en: 'MSN vs BBC',                   category: 'El Clasico · Partido de Ensueño', flag: '🇪🇸',
+    desc: 'Barcelona \'15 · Real Madrid \'16',
+    goals: { a: ['Messi', 'Suarez', 'Neymar'], b: ['Ronaldo', 'Bale', 'Benzema'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-barcelona',               era: '2015', stadium: 'campnou',   referee: 'kuipers',  weather: 'sunny' },
     b: { slug: 'real-madrid',                era: '2015' } },
-  { label: 'Mou vs Pep: El Clásico',         en: 'Mourinho vs Guardiola',        category: 'El Clásico', flag: '🇪🇸',
-    desc: 'Real Madrid \'12 · Barcelona \'11',
+  { label: 'Mou vs Pep: El Clasico',         en: 'Mourinho vs Guardiola',        category: 'La Liga · Abr 2011', flag: '🇪🇸',
+    desc: 'Real Madrid 1 - 1 Barcelona',
+    goals: { a: ['Marcelo 82\u2019'], b: ['Messi 85\u2019'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'real-madrid',                era: '2012', stadium: 'bernabeu',  referee: 'collina',  weather: 'night' },
     b: { slug: 'fc-barcelona',               era: '2011' } },
-  { label: 'Galácticos vs Los Invencibles',  en: 'Galacticos vs The Invincibles', category: 'Partido de Ensueño', flag: '✨',
+  { label: 'Galacticos vs Los Invencibles',  en: 'Galacticos vs The Invincibles', category: 'Partido de Ensueño', flag: '✨',
     desc: 'Real Madrid \'02 · Arsenal \'04',
+    goals: { a: ['Zidane', 'Ronaldo', 'Raul'], b: ['Pires', 'Henry', 'Bergkamp'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'real-madrid',                era: '2002', stadium: 'bernabeu',  referee: 'collina',  weather: 'sunny' },
     b: { slug: 'fc-arsenal',                 era: '2004' } },
-  { label: 'La Final de Múnich 99',          en: 'Munich \'99 Final',            category: 'Final UCL', flag: '🏆',
-    desc: 'Manchester United \'99 · Bayern \'99',
-    a: { slug: 'manchester-united',          era: '1999', stadium: 'wembley',   referee: 'collina',  weather: 'night' },
-    b: { slug: 'fc-bayern-munchen',          era: '1999' } },
-  { label: 'El Milagro de Estambul',         en: 'The Istanbul Miracle',         category: 'Final UCL', flag: '🏆',
-    desc: 'AC Milán \'03 · Liverpool \'05',
+  { label: 'La Final de Munich 99',          en: 'Munich \'99 Final',            category: 'Camp Nou · 26 May 1999', flag: '🏆',
+    desc: 'Bayern 1 - 2 Manchester Utd',
+    goals: { a: ['Basler 6\u2019'], b: ['Sheringham 91\u2019', 'Solskjaer 93\u2019'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'fc-bayern-munchen',          era: '1999', stadium: 'campnou',   referee: 'collina',  weather: 'night' },
+    b: { slug: 'manchester-united',          era: '1999' } },
+  { label: 'El Milagro de Estambul',         en: 'The Istanbul Miracle',         category: 'Ataturk · 25 May 2005', flag: '🏆',
+    desc: 'AC Milan 3 - 3 Liverpool (3-2 pen)',
+    goals: { a: ['Maldini 1\u2019', 'Crespo 39\u2019', 'Crespo 44\u2019'], b: ['Gerrard 54\u2019', 'Smicer 56\u2019', 'Alonso 60\u2019'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'ac-mailand',                 era: '2003', stadium: 'sansiro',   referee: 'webb',     weather: 'night' },
     b: { slug: 'fc-liverpool',               era: '2005' } },
-  { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',        category: 'Final UCL', flag: '🏆',
-    desc: 'Bayern \'13 · Dortmund \'12',
+  { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',        category: 'Wembley · 25 May 2013', flag: '🏆',
+    desc: 'Bayern 2 - 1 Dortmund',
+    goals: { a: ['Mandzukic 60\u2019', 'Robben 89\u2019'], b: ['Gundogan 68\u2019 (pen)'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-bayern-munchen',          era: '2013', stadium: 'wembley',   referee: 'kuipers',  weather: 'night' },
     b: { slug: 'borussia-dortmund',          era: '2012' } },
   { label: 'Maradona vs Messi',              en: 'Maradona vs Messi',            category: 'Partido de Ensueño', flag: '✨',
-    desc: 'Nápoles \'88 · Barcelona \'09',
+    desc: 'Napoles \'88 · Barcelona \'09',
+    goals: { a: ['Maradona', 'Careca', 'Giordano'], b: ['Messi', 'Eto\'o', 'Henry'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'ssc-neapel',                 era: '1988', stadium: 'sansiro',   referee: 'collina',  weather: 'night' },
     b: { slug: 'fc-barcelona',               era: '2009' } },
   { label: 'Pep vs Jupp',                    en: 'Pep vs Jupp',                  category: 'Partido de Ensueño', flag: '✨',
     desc: 'Barcelona \'11 · Bayern \'13',
+    goals: { a: ['Messi', 'Xavi', 'Villa'], b: ['Robben', 'Muller', 'Ribery'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-barcelona',               era: '2011', stadium: 'campnou',   referee: 'kuipers',  weather: 'cloudy' },
     b: { slug: 'fc-bayern-munchen',          era: '2013' } },
-  { label: 'Francia 98 vs Brasil 98',        en: 'France \'98 vs Brazil \'98',   category: 'Final', flag: '🏆',
-    desc: 'Francia \'98 · Brasil \'98',
+  { label: 'Final Copa del Mundo 98',        en: 'World Cup Final \'98',         category: 'Saint-Denis · 12 Jul 1998', flag: '🏆',
+    desc: 'Francia 3 - 0 Brasil',
+    goals: { a: ['Zidane 12\u2019', 'Zidane 45\u2019', 'Petit 90+2\u2019'], b: [] },
+    question: 'Se repetira la historia en',
     a: { slug: 'frankreich',                 era: '1998', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
     b: { slug: 'brasilien',                  era: '1998' } },
-  { label: 'El Séptimo Cielo',               en: 'The Seventh Heaven',           category: 'Final', flag: '🏆',
-    desc: 'Alemania \'14 · Argentina \'14',
-    a: { slug: 'deutschland',                era: '2014', stadium: 'maracana',  referee: 'brych',    weather: 'sunny' },
-    b: { slug: 'argentinien',                era: '2014' } },
+  { label: 'El Septimo Cielo',               en: 'The Seventh Heaven',           category: 'Maracana · 13 Jul 2014', flag: '🏆',
+    desc: 'Argentina 0 - 1 Alemania',
+    goals: { a: [], b: ['Gotze 113\u2019'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'argentinien',                era: '2014', stadium: 'maracana',  referee: 'brych',    weather: 'sunny' },
+    b: { slug: 'deutschland',                era: '2014' } },
   { label: 'Ronaldo vs Ronaldo',             en: 'Ronaldo vs Ronaldo',           category: 'Partido de Ensueño', flag: '✨',
     desc: 'Brasil \'02 · Real Madrid \'17',
+    goals: { a: ['R9 Ronaldo', 'Rivaldo', 'Ronaldinho'], b: ['CR7 Ronaldo', 'Bale', 'Benzema'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'brasilien',                  era: '2002', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
     b: { slug: 'real-madrid',                era: '2017' } },
-  { label: 'Di Stéfano vs el Dream Team',    en: 'Di Stéfano vs the Dream Team', category: 'Partido de Ensueño', flag: '✨',
+  { label: 'Di Stefano vs el Dream Team',    en: 'Di Stéfano vs the Dream Team', category: 'Partido de Ensueño', flag: '✨',
     desc: 'Real Madrid \'60 · Barcelona \'92',
+    goals: { a: ['Di Stefano', 'Puskas', 'Gento'], b: ['Stoichkov', 'Laudrup', 'Koeman'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'real-madrid',                era: '1960', stadium: 'bernabeu',  referee: 'collina',  weather: 'sunny' },
     b: { slug: 'fc-barcelona',               era: '1992' } },
   { label: 'El Treble vs Los Invencibles',   en: 'Treble vs The Invincibles',    category: 'Partido de Ensueño', flag: '✨',
-    desc: 'Manchester United \'99 · Arsenal \'04',
+    desc: 'Manchester Utd \'99 · Arsenal \'04',
+    goals: { a: ['Sheringham', 'Solskjaer', 'Cole'], b: ['Henry', 'Pires', 'Bergkamp'] },
+    question: 'Se repetira la historia en',
     a: { slug: 'manchester-united',          era: '1999', stadium: 'wembley',   referee: 'webb',     weather: 'rain' },
     b: { slug: 'fc-arsenal',                 era: '2004' } },
 ];
@@ -829,10 +859,12 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     '-f', 'lavfi', '-i', `color=c=0x060912:size=${w}x${h}:rate=30:duration=${d}`,
   ];
   const imgDefs = [];
-  if (fs.existsSync(coinImg))     imgDefs.push({ file: coinImg,     key: 'rvcoin' });
-  if (badgeAFile)                 imgDefs.push({ file: badgeAFile,  key: 'rvba'   });
-  if (badgeBFile)                 imgDefs.push({ file: badgeBFile,  key: 'rvbb'   });
-  if (fs.existsSync(wordmarkImg)) imgDefs.push({ file: wordmarkImg, key: 'rvwm'   });
+  if (fs.existsSync(coinImg))     imgDefs.push({ file: coinImg,     key: 'rvcoin'  });
+  if (badgeAFile)                 imgDefs.push({ file: badgeAFile,  key: 'rvba'    });
+  if (badgeBFile)                 imgDefs.push({ file: badgeBFile,  key: 'rvbb'    });
+  if (fs.existsSync(wordmarkImg)) imgDefs.push({ file: wordmarkImg, key: 'rvwm'    });
+  const _qText = rivalry.question || '';
+  if (_qText && fs.existsSync(coinImg)) imgDefs.push({ file: coinImg, key: 'rvcoinq' });
   imgDefs.forEach(i => inputs.push('-i', i.file));
 
   const filterParts = [];
@@ -852,6 +884,21 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   if (badgeAFile)                            overlay('rvba',   280, '200-w/2', 570, 'rvl1');
   if (badgeBFile)                            overlay('rvbb',   280, '880-w/2', 570, 'rvl2');
   if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1630, 'rvl3');
+  // coin inline with question
+  const goalsA = (rivalry.goals && rivalry.goals.a) || [];
+  const goalsB = (rivalry.goals && rivalry.goals.b) || [];
+  const _maxGoals  = Math.max(goalsA.length, goalsB.length);
+  const _goalLineH = 46;
+  const _goalsY    = 1172;
+  const _questionY = _goalsY + _maxGoals * _goalLineH + (_maxGoals > 0 ? 24 : 0);
+  // coin replaces 'G' — renders [coin] olazoX? centered as a block
+  const _coinQLineY = _questionY + 48;
+  const _coinQW     = 40;
+  const _golazoxW   = 168; // approx Rajdhani Bold 48px * 7 chars 'olazoX?'
+  const _qGap       = 6;
+  const _coinQX     = Math.round((1080 - _coinQW - _qGap - _golazoxW) / 2);
+  const _golazoxTextX = _coinQX + _coinQW + _qGap;
+  if (imgDefs.find(i => i.key === 'rvcoinq')) overlay('rvcoinq', _coinQW, _coinQX, _coinQLineY - 2, 'rvl4');
 
   const fadeIn = (s) => `if(lt(t,${s}),0,min(1,(t-${s})/0.4))`;
   const alpha  = (s) => `min(${fadeIn(s)},if(gt(t,${d-0.5}),max(0,(${d}-t)/0.5),1))`;
@@ -862,11 +909,11 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   // Approximate px-width at given Bebas Neue size: ~0.55 * fontSize per char
   const approxW   = (txt, size) => txt.length * size * 0.55;
   let titleSize, titleLines;
-  if (approxW(titleRaw, 110) <= 960) {
+  if (approxW(titleRaw, 110) <= 900) {
     titleSize = 110; titleLines = [titleEsc];
-  } else if (approxW(titleRaw, 88) <= 960) {
+  } else if (approxW(titleRaw, 88) <= 900) {
     titleSize = 88;  titleLines = [titleEsc];
-  } else if (approxW(titleRaw, 72) <= 960) {
+  } else if (approxW(titleRaw, 72) <= 900) {
     titleSize = 72;  titleLines = [titleEsc];
   } else {
     // Split at 'VS' or middle word for two-line layout
@@ -882,9 +929,10 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   }
 
   // Context line: country (for derbies) or category (for rivalries) — no emoji (not supported)
-  const contextText = esc(rivalry.country || rivalry.category || '');
-  // Desc line: descriptive subtitle
-  const descText    = esc(rivalry.desc || '');
+  const contextText  = esc(rivalry.country || rivalry.category || '');
+  // Desc line: result score
+  const descText     = esc(rivalry.desc || '');
+  const questionText = esc(rivalry.question || '');
 
   const texts = [
     // Top separator
@@ -907,8 +955,18 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ...(eraB ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraB)}':fontsize=72:fontcolor=FFD700:x=880-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
     // Bottom separator
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=1062:alpha='${alpha(0.7)}'`,
-    // Desc
-    ...(descText ? [`drawtext=fontfile='${fontBold}':text='${descText}':fontsize=46:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
+    // Desc: score
+    ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
+    // Goals in two columns — team A left (x=200), team B right (x=880)
+    ...goalsA.map((g, i) =>
+      `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=200-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
+    ...goalsB.map((g, i) =>
+      `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=880-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
+    // Question hook — two lines: text centered, then [coin] olazoX? centered
+    ...(questionText ? [
+      `drawtext=fontfile='${fontBold}':text='${questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
+      `drawtext=fontfile='${fontBold}':text='olazoX?':fontsize=48:fontcolor=FFD700:x=${_golazoxTextX}:y=${_coinQLineY}:alpha='${alpha(1.0)}'`,
+    ] : []),
     // Tagline below wordmark
     `drawtext=fontfile='${fontBold}':text='Simula tu versi\u00f3n':fontsize=44:fontcolor=0x666666:x=(w-text_w)/2:y=1790:alpha='${alpha(1.4)}'`,
   ];
@@ -2097,6 +2155,7 @@ if (require.main === module) {
   const count     = parseInt(get('--count') || '1', 10);
   const doUpload  = args.includes('--upload');
   const platforms = get('--platforms') || 'youtube';
+  const cardOnly  = args.includes('--card-only');
 
   const opts = {
     type:      type,
@@ -2109,6 +2168,27 @@ if (require.main === module) {
     weatherId: get('--weatherId') || get('--weather'),
     preview:   args.includes('--preview'),
   };
+
+  // --card-only: generate just the rivalry intro card (5s), no simulation
+  // Optionally pass --entry N (0-based index) to preview a specific entry.
+  if (cardOnly) {
+    const resolvedType = type || 'epic';
+    const sourceList   = resolvedType === 'rivalry' ? RIVALS_LIST
+                       : resolvedType === 'derby'   ? DERBIES_LIST
+                       :                              EPIC_LIST;
+    const entryIdx = get('--entry') !== undefined ? parseInt(get('--entry'), 10) : -1;
+    const entry = (entryIdx >= 0 && entryIdx < sourceList.length)
+                ? sourceList[entryIdx]
+                : sourceList[Math.floor(Math.random() * sourceList.length)];
+    const outFile = path.join(__dirname, 'videos', 'preview_card.mp4');
+    console.log(`[card-only] Rendering intro card for: ${entry.label}`);
+    console.log(`[card-only] category: ${entry.category || '—'}`);
+    console.log(`[card-only] desc: ${entry.desc || '—'}`);
+    createRivalryIntroVideo(entry, outFile);
+    console.log(`[card-only] ✓ Saved → ${outFile}`);
+    process.exit(0);
+    return;
+  }
 
   (async () => {
     const total = Math.max(1, Math.min(count, 50)); // cap at 50 to avoid accidents
