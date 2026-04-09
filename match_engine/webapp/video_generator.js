@@ -223,64 +223,94 @@ const RIVALS_LIST = [
 
 // ── Grandes Derbis mundiales (sync with WORLD_DERBIES in app.js) ─────────────
 const DERBIES_LIST = [
-  { label: 'El Clásico',           en: 'El Clásico',           country: 'España',      flag: '🇪🇸',
+  { label: 'El Clasico',            en: 'El Clasico',           country: 'Espana',      flag: '\ud83c\uddea\ud83c\uddf8',
     desc: 'FC Barcelona vs Real Madrid',
+    history: 'El derby mas visto del planeta',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-barcelona',                era: '2025', stadium: 'campnou',  referee: 'lahoz',    weather: 'sunny' },
     b: { slug: 'real-madrid',                 era: '2025' } },
-  { label: 'El Viejo Firm',        en: 'The Old Firm',          country: 'Escocia',     flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+  { label: 'El Viejo Firm',         en: 'The Old Firm',          country: 'Escocia',     flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f',
     desc: 'Celtic vs Rangers',
+    history: 'El derby religioso mas antiguo',
+    question: 'Se repetira la historia en',
     a: { slug: 'celtic-glasgow',              era: '2025', stadium: 'wembley',  referee: 'clattenburg', weather: 'rain' },
     b: { slug: 'glasgow-rangers',             era: '2025' } },
-  { label: 'Superclásico',         en: 'Superclásico',          country: 'Argentina',   flag: '🇦🇷',
+  { label: 'Supercl\u00e1sico',    en: 'Superclasico',          country: 'Argentina',   flag: '\ud83c\udde6\ud83c\uddf7',
     desc: 'Boca Juniors vs River Plate',
+    history: 'La pasion eterna de Argentina',
+    question: 'Se repetira la historia en',
     a: { slug: 'club-atletico-boca-juniors',  era: '2025', stadium: 'maracana', referee: 'brych',    weather: 'sunny' },
     b: { slug: 'club-atletico-river-plate',   era: '2025' } },
-  { label: 'Derby della Madonnina',en: 'Derby della Madonnina', country: 'Italia',      flag: '🇮🇹',
+  { label: 'Derby della Madonnina', en: 'Derby della Madonnina', country: 'Italia',      flag: '\ud83c\uddee\ud83c\uddf9',
     desc: 'AC Milan vs Inter',
+    history: 'Milan dividida en azul y negro',
+    question: 'Se repetira la historia en',
     a: { slug: 'ac-mailand',                  era: '2025', stadium: 'sansiro',  referee: 'collina',  weather: 'night' },
     b: { slug: 'inter-mailand',               era: '2025' } },
-  { label: 'Der Klassiker',        en: 'Der Klassiker',         country: 'Alemania',    flag: '🇩🇪',
+  { label: 'Der Klassiker',         en: 'Der Klassiker',         country: 'Alemania',    flag: '\ud83c\udde9\ud83c\uddea',
     desc: 'Bayern Munich vs Borussia Dortmund',
+    history: 'La Bundesliga parada cada ano',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-bayern-munchen',           era: '2025', stadium: 'wembley',  referee: 'brych',    weather: 'cloudy' },
     b: { slug: 'borussia-dortmund',           era: '2025' } },
-  { label: 'Liverpool vs Man Utd', en: 'Liverpool vs Man Utd',  country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  { label: 'Liverpool vs Man Utd',  en: 'Liverpool vs Man Utd',  country: 'Inglaterra',  flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
     desc: 'Liverpool vs Manchester United',
+    history: 'El gran duelo de la Premier',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-liverpool',                era: '2025', stadium: 'anfield',  referee: 'webb',     weather: 'rain' },
     b: { slug: 'manchester-united',           era: '2025' } },
-  { label: 'Derby del Norte de Londres', en: 'North London Derby', country: 'Inglaterra', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  { label: 'Norte de Londres',      en: 'North London Derby',    country: 'Inglaterra',  flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
     desc: 'Arsenal vs Tottenham',
+    history: 'Arsenal vs Spurs - norte dividido',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-arsenal',                  era: '2025', stadium: 'wembley',  referee: 'clattenburg', weather: 'cloudy' },
     b: { slug: 'tottenham-hotspur',           era: '2025' } },
-  { label: 'Le Classique',         en: 'Le Classique',          country: 'Francia',     flag: '🇫🇷',
+  { label: 'Le Classique',          en: 'Le Classique',          country: 'Francia',     flag: '\ud83c\uddeb\ud83c\uddf7',
     desc: 'Marseille vs PSG',
+    history: 'OM vs PSG - el sur contra Paris',
+    question: 'Se repetira la historia en',
     a: { slug: 'olympique-marseille',         era: '2025', stadium: 'campnou',  referee: 'kuipers',  weather: 'sunny' },
     b: { slug: 'fc-paris-saint-germain',      era: '2025' } },
-  { label: 'Derby de Madrid',      en: 'Madrid Derby',          country: 'España',      flag: '🇪🇸',
-    desc: 'Atlético de Madrid vs Real Madrid',
+  { label: 'Derby de Madrid',       en: 'Madrid Derby',          country: 'Espana',      flag: '\ud83c\uddea\ud83c\uddf8',
+    desc: 'Atletico de Madrid vs Real Madrid',
+    history: 'Atletico vs Real - dos filosofias',
+    question: 'Se repetira la historia en',
     a: { slug: 'atletico-madrid',             era: '2025', stadium: 'bernabeu', referee: 'lahoz',    weather: 'sunny' },
     b: { slug: 'real-madrid',                 era: '2025' } },
-  { label: 'Derby della Capitale', en: 'Derby della Capitale',  country: 'Italia',      flag: '🇮🇹',
+  { label: 'Derby della Capitale',  en: 'Derby della Capitale',  country: 'Italia',      flag: '\ud83c\uddee\ud83c\uddf9',
     desc: 'Roma vs Lazio',
+    history: 'Roma vs Lazio - la Ciudad Eterna',
+    question: 'Se repetira la historia en',
     a: { slug: 'as-rom',                      era: '2025', stadium: 'sansiro',  referee: 'collina',  weather: 'night' },
     b: { slug: 'lazio-rom',                   era: '2025' } },
-  { label: 'Derby de Lisboa — Águias', en: 'Lisbon Derby — Eagles', country: 'Portugal', flag: '🇵🇹',
+  { label: 'Derby de Lisboa',       en: 'Lisbon Derby',          country: 'Portugal',    flag: '\ud83c\uddf5\ud83c\uddf9',
     desc: 'Benfica vs Sporting CP',
+    history: 'Aguilas vs Leones - derby luso',
+    question: 'Se repetira la historia en',
     a: { slug: 'benfica-lissabon',            era: '2025', stadium: 'wembley',  referee: 'merk',     weather: 'sunny' },
     b: { slug: 'sporting-cp',                 era: '2025' } },
-  { label: 'Derby de Mánchester',   en: 'Manchester Derby',      country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  { label: 'Derby de Manchestar',   en: 'Manchester Derby',      country: 'Inglaterra',  flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
     desc: 'Manchester United vs Manchester City',
+    history: 'United vs City - el norte dividido',
+    question: 'Se repetira la historia en',
     a: { slug: 'manchester-united',           era: '2025', stadium: 'wembley',  referee: 'webb',     weather: 'rain' },
     b: { slug: 'manchester-city',             era: '2025' } },
-  { label: 'Merseyside Derby',      en: 'Merseyside Derby',       country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  { label: 'Merseyside Derby',      en: 'Merseyside Derby',      country: 'Inglaterra',  flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
     desc: 'Liverpool vs Everton',
+    history: 'Liverpool vs Everton - familia rival',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-liverpool',                era: '2025', stadium: 'anfield',  referee: 'clattenburg', weather: 'rain' },
     b: { slug: 'fc-everton',                  era: '2025' } },
-  { label: 'Fla-Flu',              en: 'Fla-Flu',               country: 'Brasil',      flag: '🇧🇷',
+  { label: 'Fla-Flu',               en: 'Fla-Flu',               country: 'Brasil',      flag: '\ud83c\udde7\ud83c\uddf7',
     desc: 'Flamengo vs Fluminense',
+    history: 'Maracana lleno - el classico carioca',
+    question: 'Se repetira la historia en',
     a: { slug: 'flamengo',                    era: '2022', stadium: 'maracana', referee: 'brych',    weather: 'heat' },
     b: { slug: 'fluminense-rio-de-janeiro',   era: '2025' } },
-  { label: 'Derby Sevillano',       en: 'Seville Derby',         country: 'España',      flag: '🇪🇸',
+  { label: 'Derby Sevillano',        en: 'Seville Derby',         country: 'Espana',      flag: '\ud83c\uddea\ud83c\uddf8',
     desc: 'Sevilla vs Betis',
+    history: 'El mas caliente de Andalucia',
+    question: 'Se repetira la historia en',
     a: { slug: 'fc-sevilla',                  era: '2025', stadium: 'bernabeu', referee: 'lahoz',    weather: 'heat' },
     b: { slug: 'real-betis-balompie',         era: '2025' } },
 ];
@@ -890,7 +920,28 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const _maxGoals  = Math.max(goalsA.length, goalsB.length);
   const _goalLineH = 46;
   const _goalsY    = 1172;
-  const _questionY = _goalsY + _maxGoals * _goalLineH + (_maxGoals > 0 ? 24 : 0);
+  const _isDerby   = !!rivalry.country;
+  // History text for derbies — split into max 2 lines if too long (~38 chars at fontsize 40)
+  const historyRaw = rivalry.history || '';
+  const _histLineH = 50;
+  const _histMaxLen = 38;
+  let historyLines = [];
+  if (historyRaw) {
+    if (historyRaw.length <= _histMaxLen) {
+      historyLines = [esc(historyRaw)];
+    } else {
+      const _hw = historyRaw.split(' ');
+      let _hl1 = '', _hl2 = '';
+      for (const _w of _hw) {
+        if ((_hl1 + ' ' + _w).trim().length <= _histMaxLen) _hl1 = (_hl1 + ' ' + _w).trim();
+        else _hl2 = (_hl2 + ' ' + _w).trim();
+      }
+      historyLines = [esc(_hl1), esc(_hl2)].filter(Boolean);
+    }
+  }
+  const _questionY = _isDerby
+    ? 1092 + historyLines.length * _histLineH + 24
+    : _goalsY + _maxGoals * _goalLineH + (_maxGoals > 0 ? 24 : 0);
   // coin replaces 'G' — renders [coin] olazoX? centered as a block
   const _coinQLineY = _questionY + 48;
   const _coinQW     = 40;
@@ -955,13 +1006,19 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ...(eraB ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraB)}':fontsize=72:fontcolor=FFD700:x=880-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
     // Bottom separator
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=1062:alpha='${alpha(0.7)}'`,
-    // Desc: score
-    ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
-    // Goals in two columns — team A left (x=200), team B right (x=880)
-    ...goalsA.map((g, i) =>
-      `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=200-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
-    ...goalsB.map((g, i) =>
-      `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=880-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
+    // Bottom section: derby shows history lines, rivalry shows score + goals
+    ...(_isDerby ? [
+      ...historyLines.map((line, i) =>
+        `drawtext=fontfile='${fontBold}':text='${line}':fontsize=40:fontcolor=white@0.85:x=(w-text_w)/2:y=${1092 + i * _histLineH}:alpha='${alpha(0.8)}'`
+      ),
+    ] : [
+      ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
+      // Goals in two columns — team A left (x=200), team B right (x=880)
+      ...goalsA.map((g, i) =>
+        `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=200-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
+      ...goalsB.map((g, i) =>
+        `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=880-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
+    ]),
     // Question hook — two lines: text centered, then [coin] olazoX? centered
     ...(questionText ? [
       `drawtext=fontfile='${fontBold}':text='${questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
