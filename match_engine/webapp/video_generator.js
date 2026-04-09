@@ -1164,7 +1164,9 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
 
 // ── Main generator ────────────────────────────────────────────────────────────
 async function generateVideo(opts = {}) {
-  const type    = opts.type || process.env.VIDEO_TYPE || 'match';
+  // 'epic' is the default when no type is specified — uses EPIC_LIST with rivalry intros.
+  // 'match' explicitly picks from CLASICOS with match intro.
+  const type    = opts.type || process.env.VIDEO_TYPE || 'epic';
   const outPath = opts.outPath || makeOutputPath();
 
   console.log(`[video] Generating type=${type} → ${outPath}`);
