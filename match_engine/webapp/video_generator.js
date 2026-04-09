@@ -113,17 +113,17 @@ async function ensureFonts() {
 // Clásicos épicos para rotación automática
 // Slugs MUST match the squad JSON filenames in squads/ and badge PNGs in public/img/badges/
 const CLASICOS = [
-  { teamA: 'real-madrid',          eraA: '2026', teamB: 'fc-bayern-munchen',    eraB: '2026',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
-  { teamA: 'real-madrid',          eraA: '2002', teamB: 'fc-barcelona',         eraB: '2009',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
-  { teamA: 'ac-mailand',           eraA: '1989', teamB: 'fc-liverpool',         eraB: '2005',  stadiumId: 'sansiro',     refereeId: 'webb',        weatherId: 'cloudy' },
-  { teamA: 'brasilien',            eraA: '1970', teamB: 'argentinien',          eraB: '1986',  stadiumId: 'maracana',    refereeId: 'brych',       weatherId: 'heat' },
-  { teamA: 'fc-barcelona',         eraA: '2011', teamB: 'fc-bayern-munchen',    eraB: '2013',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'cloudy' },
-  { teamA: 'manchester-united',    eraA: '1999', teamB: 'fc-chelsea',           eraB: '2012',  stadiumId: 'wembley',     refereeId: 'webb',        weatherId: 'rain' },
-  { teamA: 'juventus-turin',       eraA: '1997', teamB: 'real-madrid',          eraB: '2018',  stadiumId: 'bernabeu',    refereeId: 'merk',        weatherId: 'night' },
-  { teamA: 'frankreich',           eraA: '1998', teamB: 'brasilien',            eraB: '2002',  stadiumId: 'maracana',    refereeId: 'brych',       weatherId: 'sunny' },
-  { teamA: 'atletico-madrid',      eraA: '2016', teamB: 'real-madrid',          eraB: '2016',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
-  { teamA: 'fc-liverpool',         eraA: '1984', teamB: 'as-rom',               eraB: '1984',  stadiumId: 'anfield',     refereeId: 'clattenburg', weatherId: 'rain' },
-  { teamA: 'fc-paris-saint-germain', eraA: '2017', teamB: 'fc-barcelona',       eraB: '2017',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'night' },
+  { label: 'Semifinal UCL',            category: 'Semifinal UCL',        teamA: 'real-madrid',          eraA: '2026', teamB: 'fc-bayern-munchen',    eraB: '2026',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
+  { label: 'El Cl\u00e1sico',          category: 'El Cl\u00e1sico',        teamA: 'real-madrid',          eraA: '2002', teamB: 'fc-barcelona',         eraB: '2009',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
+  { label: 'Final Copa de Europa',     category: 'Final Copa de Europa', teamA: 'ac-mailand',           eraA: '1989', teamB: 'fc-liverpool',         eraB: '2005',  stadiumId: 'sansiro',     refereeId: 'webb',        weatherId: 'cloudy' },
+  { label: 'Partido de Ensue\u00f1o',  category: 'Partido de Ensue\u00f1o', teamA: 'brasilien',            eraA: '1970', teamB: 'argentinien',          eraB: '1986',  stadiumId: 'maracana',    refereeId: 'brych',       weatherId: 'heat' },
+  { label: 'Semifinal UCL',            category: 'Semifinal UCL',        teamA: 'fc-barcelona',         eraA: '2011', teamB: 'fc-bayern-munchen',    eraB: '2013',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'cloudy' },
+  { label: 'Final UCL',               category: 'Final UCL',            teamA: 'manchester-united',    eraA: '1999', teamB: 'fc-chelsea',           eraB: '2012',  stadiumId: 'wembley',     refereeId: 'webb',        weatherId: 'rain' },
+  { label: 'Final UCL',               category: 'Final UCL',            teamA: 'juventus-turin',       eraA: '1997', teamB: 'real-madrid',          eraB: '2018',  stadiumId: 'bernabeu',    refereeId: 'merk',        weatherId: 'night' },
+  { label: 'Final Mundial',           category: 'Final Mundial',        teamA: 'frankreich',           eraA: '1998', teamB: 'brasilien',            eraB: '2002',  stadiumId: 'maracana',    refereeId: 'brych',       weatherId: 'sunny' },
+  { label: 'Final UCL',               category: 'Final UCL',            teamA: 'atletico-madrid',      eraA: '2016', teamB: 'real-madrid',          eraB: '2016',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
+  { label: 'Final Copa de Europa',     category: 'Final Copa de Europa', teamA: 'fc-liverpool',         eraA: '1984', teamB: 'as-rom',               eraB: '1984',  stadiumId: 'anfield',     refereeId: 'clattenburg', weatherId: 'rain' },
+  { label: 'Cuartos UCL',             category: 'Cuartos UCL',          teamA: 'fc-paris-saint-germain', eraA: '2017', teamB: 'fc-barcelona',       eraB: '2017',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'night' },
 ];
 
 // ── Rivalidades históricas (sync with HISTORIC_MATCHES in app.js) ──────────
@@ -292,6 +292,34 @@ const SLUG_NAME_ES = {
   'juventus-turin':         'Juventus',
   'fc-bayern-munchen':      'Bayern Múnich',
   'ac-monza':               'Monza',
+  'ac-mailand':             'AC Milán',
+  'inter-mailand':          'Inter de Milán',
+  'as-rom':                 'AS Roma',
+  'lazio-rom':              'Lazio',
+  'fc-liverpool':           'Liverpool',
+  'fc-arsenal':             'Arsenal',
+  'fc-chelsea':             'Chelsea',
+  'fc-barcelona':           'Barcelona',
+  'real-madrid':            'Real Madrid',
+  'atletico-madrid':        'Atlético de Madrid',
+  'fc-sevilla':             'Sevilla',
+  'real-betis-balompie':    'Real Betis',
+  'manchester-united':      'Manchester United',
+  'manchester-city':        'Manchester City',
+  'tottenham-hotspur':      'Tottenham',
+  'fc-everton':             'Everton',
+  'borussia-dortmund':      'Borussia Dortmund',
+  'celtic-glasgow':         'Celtic',
+  'glasgow-rangers':        'Rangers',
+  'olympique-marseille':    'Marsella',
+  'ssc-neapel':             'Nápoles',
+  'club-atletico-boca-juniors':  'Boca Juniors',
+  'club-atletico-river-plate':   'River Plate',
+  'flamengo':               'Flamengo',
+  'fluminense-rio-de-janeiro':   'Fluminense',
+  'benfica-lissabon':       'Benfica',
+  'sporting-cp':            'Sporting CP',
+  'ajax-amsterdam':         'Ajax',
 };
 
 function slugToDisplayName(slug) {
@@ -1470,6 +1498,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       finalScore,
       goalEvents,
       rivalry,
+      clasico: rivalry ? null : { label: clasico.label, category: clasico.category },
     },
   };
 }
@@ -2006,57 +2035,77 @@ function buildUploadMeta(videoTitle, matchMeta, type) {
   if (!matchMeta) {
     return {
       title: videoTitle,
-      description: '⚽ Simulación generada por IA — golazox.com\n\n🌐 https://golazox.com\n\n#Futbol #Simulacion #GolazOX #Football #IA',
+      description: '\u26bd Simulaci\u00f3n generada por IA \u2014 golazox.com\n\n\ud83c\udf10 https://golazox.com\n\n#Futbol #Simulacion #GolazOX #Football #IA',
       tags: ['futbol', 'simulacion', 'golazox', 'football', 'inteligencia artificial'],
     };
   }
 
   const nameA = slugToDisplayName(matchMeta.teamA || '');
   const nameB = slugToDisplayName(matchMeta.teamB || '');
-  const eraA  = matchMeta.eraA ? ` (${matchMeta.eraA})` : '';
-  const eraB  = matchMeta.eraB ? ` (${matchMeta.eraB})` : '';
-  const sA    = matchMeta.finalScore?.scoreA ?? '';
-  const sB    = matchMeta.finalScore?.scoreB ?? '';
+  const eraA  = matchMeta.eraA || '';
+  const eraB  = matchMeta.eraB || '';
+  const eraStrA = eraA ? ` '${eraA.slice(-2)}` : '';
+  const eraStrB = eraB ? ` '${eraB.slice(-2)}` : '';
+  const sA = matchMeta.finalScore?.scoreA ?? '';
+  const sB = matchMeta.finalScore?.scoreB ?? '';
   const scoreStr = (sA !== '' && sB !== '') ? `${sA}-${sB}` : '';
-  const isRivalry = type === 'rivalry' || type === 'derby';
-  const rivalry   = matchMeta.rivalry;
+  const rivalry = matchMeta.rivalry;
 
-  // Title: compact, punchy, TikTok/Short-friendly
-  let title;
-  if (isRivalry && rivalry?.label) {
-    const labelEs = rivalry.label || rivalry.en || '';
-    title = scoreStr
-      ? `${labelEs}: ${nameA} vs ${nameB} — ${scoreStr} | GolazOX`
-      : `${labelEs}: ${nameA} vs ${nameB} | GolazOX`;
-  } else {
-    title = scoreStr
-      ? `${nameA}${eraA} vs ${nameB}${eraB} — ${scoreStr} | GolazOX`
-      : `${nameA}${eraA} vs ${nameB}${eraB} | GolazOX`;
-  }
-  // YouTube title max 100 chars
-  if (title.length > 98) title = title.slice(0, 95) + '...';
+  // Context label: rivalry label > rivalry category > clasico label > clasico category > generic
+  const contextLabel =
+    rivalry?.label ||
+    rivalry?.category ||
+    matchMeta.clasico?.label ||
+    matchMeta.clasico?.category ||
+    (type === 'derby' ? 'Derbi' : type === 'rivalry' ? 'Rivalidad' : 'Partido Hist\u00f3rico');
 
   // Slug → simple tag (no dash)
   const slugTag = (s) => (s || '').replace(/-/g, '');
   const teamTagA = slugTag(matchMeta.teamA);
   const teamTagB = slugTag(matchMeta.teamB);
 
-  // Hashtags
+  // Category-based hashtags
+  const cat = (rivalry?.category || matchMeta.clasico?.category || '').toLowerCase();
+  const catHashtag =
+    cat.includes('final ucl') || cat.includes('copa de europa') ? '#UCL #ChampionsLeague #Final' :
+    cat.includes('final mundial') || cat.includes('mundial')    ? '#Mundial #WorldCup #Final' :
+    cat.includes('semifinal')                                   ? '#UCL #ChampionsLeague #Semifinal' :
+    cat.includes('cuartos')                                     ? '#UCL #ChampionsLeague' :
+    cat.includes('cl\u00e1sico') || cat.includes('clasico')     ? '#ElClasico #Clasico' :
+    cat.includes('derbi') || type === 'derby'                   ? '#Derbi #Derby' :
+    cat.includes('rivalidad') || type === 'rivalry'             ? '#Rivalidad #Clasico' :
+    '#PartidoHistorico';
+
   const baseHashtags = '#Futbol #FutbolHistorico #Simulacion #GolazOX #Football #IA #Deportes';
   const teamHashtags = `#${teamTagA} #${teamTagB}`;
-  const rivalryHashtag = isRivalry ? '#Clasico #Derbi #Rivalidad' : '#PartidoHistorico';
-  const allHashtags = `${baseHashtags} ${teamHashtags} ${rivalryHashtag}`;
+  const allHashtags = `${baseHashtags} ${catHashtag} ${teamHashtags}`;
 
-  // Description body
-  const matchLine = isRivalry && rivalry?.desc
-    ? `${rivalry.desc} — Simulado con jugadores históricos`
-    : `${nameA}${eraA} vs ${nameB}${eraB} — Partido histórico simulado con jugadores reales`;
-  const resultLine = scoreStr ? `\n\nResultado final: ${nameA} ${sA} – ${sB} ${nameB}` : '';
+  // Title format: TeamA vs TeamB | Context | GolazOX · score
+  // Score goes at the VERY END so viewers don't know the result before watching
+  const teamsStr = `${nameA}${eraStrA} vs ${nameB}${eraStrB}`;
+  const baseTitle = `${teamsStr} | ${contextLabel} | GolazOX`;
+  const scoreTag  = scoreStr ? ` \u00b7 ${scoreStr}` : '';
+  let title = baseTitle + scoreTag;
+  // YouTube title max 100 chars — trim teams before cutting context
+  if (title.length > 100) {
+    const shortTeams = `${nameA} vs ${nameB}`;
+    title = `${shortTeams} | ${contextLabel} | GolazOX${scoreTag}`;
+  }
+  if (title.length > 100) title = title.slice(0, 97) + '...';
+
+  // Description: context headline first, result at the end (spoiler at bottom)
+  const descContext = rivalry?.desc ||
+    `${nameA}${eraA ? ` (${eraA})` : ''} vs ${nameB}${eraB ? ` (${eraB})` : ''}`;
+  const resultLine = scoreStr
+    ? `\n\n\u2705 Resultado: ${nameA} ${sA} \u2013 ${sB} ${nameB}`
+    : '';
   const description = [
-    `⚽ ${matchLine}${resultLine}`,
+    `\u26bd ${contextLabel} \u2014 ${descContext}`,
+    `Simulado con jugadores hist\u00f3ricos reales en golazox.com`,
     '',
-    '🎮 Simula tu propia versión en golazox.com',
-    '👇 Elige equipos históricos, estadio, árbitro y clima',
+    '\ud83c\udfae Simula tu propia versi\u00f3n \u2192 golazox.com',
+    '\ud83d\udc47 Elige equipos, estadio, \u00e1rbitro y clima',
+    resultLine,
     '',
     allHashtags,
   ].join('\n');
@@ -2065,8 +2114,11 @@ function buildUploadMeta(videoTitle, matchMeta, type) {
     'futbol', 'futbol historico', 'simulacion', 'golazox', 'football',
     'inteligencia artificial', 'ia futbol', 'deportes',
     nameA.toLowerCase(), nameB.toLowerCase(),
-    ...(isRivalry ? ['clasico', 'derbi', 'rivalidad futbol'] : ['partido historico']),
-  ].filter((v, i, a) => v && a.indexOf(v) === i); // unique, non-empty
+    contextLabel.toLowerCase(),
+    ...(type === 'derby' ? ['derbi', 'derby futbol'] : []),
+    ...(type === 'rivalry' ? ['clasico', 'rivalidad futbol', 'partido historico'] : []),
+    ...(cat.includes('final') ? ['final champions', 'final ucl'] : []),
+  ].filter((v, i, a) => v && a.indexOf(v) === i);
 
   return { title, description, tags };
 }
