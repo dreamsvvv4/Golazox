@@ -126,6 +126,135 @@ const CLASICOS = [
   { teamA: 'fc-paris-saint-germain', eraA: '2017', teamB: 'fc-barcelona',       eraB: '2017',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'night' },
 ];
 
+// ── Rivalidades históricas (sync with HISTORIC_MATCHES in app.js) ──────────
+// label=título ES · en=título EN · country · flag · desc · competition · round
+const RIVALS_LIST = [
+  { label: '¿Pelé o Maradona?',              en: 'Pelé vs Maradona',            category: 'Rivalidades', flag: '⚽',
+    desc: 'Brasil \'70 · Argentina \'86',
+    a: { slug: 'brasilien',                  era: '1970', stadium: 'maracana',  referee: 'collina',  weather: 'heat' },
+    b: { slug: 'argentinien',                era: '1986' } },
+  { label: 'Final EE.UU. 1994',              en: 'USA \'94 World Cup Final',     category: 'Final', flag: '🏆',
+    desc: 'Brasil \'94 · Italia \'94',
+    a: { slug: 'brasilien',                  era: '1994', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
+    b: { slug: 'italien',                    era: '1994' } },
+  { label: 'MSN vs BBC',                     en: 'MSN vs BBC',                   category: 'El Clásico', flag: '🇪🇸',
+    desc: 'Barcelona \'15 · Real Madrid \'15',
+    a: { slug: 'fc-barcelona',               era: '2015', stadium: 'campnou',   referee: 'kuipers',  weather: 'sunny' },
+    b: { slug: 'real-madrid',                era: '2015' } },
+  { label: 'Mou vs Pep: El Clásico',         en: 'Mourinho vs Guardiola',        category: 'El Clásico', flag: '🇪🇸',
+    desc: 'Real Madrid \'12 · Barcelona \'11',
+    a: { slug: 'real-madrid',                era: '2012', stadium: 'bernabeu',  referee: 'collina',  weather: 'night' },
+    b: { slug: 'fc-barcelona',               era: '2011' } },
+  { label: 'Galácticos vs Los Invencibles',  en: 'Galacticos vs The Invincibles', category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Real Madrid \'02 · Arsenal \'04',
+    a: { slug: 'real-madrid',                era: '2002', stadium: 'bernabeu',  referee: 'collina',  weather: 'sunny' },
+    b: { slug: 'fc-arsenal',                 era: '2004' } },
+  { label: 'La Final de Múnich 99',          en: 'Munich \'99 Final',            category: 'Final UCL', flag: '🏆',
+    desc: 'Manchester United \'99 · Bayern \'99',
+    a: { slug: 'manchester-united',          era: '1999', stadium: 'wembley',   referee: 'collina',  weather: 'night' },
+    b: { slug: 'fc-bayern-munchen',          era: '1999' } },
+  { label: 'El Milagro de Estambul',         en: 'The Istanbul Miracle',         category: 'Final UCL', flag: '🏆',
+    desc: 'AC Milán \'03 · Liverpool \'05',
+    a: { slug: 'ac-mailand',                 era: '2003', stadium: 'sansiro',   referee: 'webb',     weather: 'night' },
+    b: { slug: 'fc-liverpool',               era: '2005' } },
+  { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',        category: 'Final UCL', flag: '🏆',
+    desc: 'Bayern \'13 · Dortmund \'12',
+    a: { slug: 'fc-bayern-munchen',          era: '2013', stadium: 'wembley',   referee: 'kuipers',  weather: 'night' },
+    b: { slug: 'borussia-dortmund',          era: '2012' } },
+  { label: 'Maradona vs Messi',              en: 'Maradona vs Messi',            category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Nápoles \'88 · Barcelona \'09',
+    a: { slug: 'ssc-neapel',                 era: '1988', stadium: 'sansiro',   referee: 'collina',  weather: 'night' },
+    b: { slug: 'fc-barcelona',               era: '2009' } },
+  { label: 'Pep vs Jupp',                    en: 'Pep vs Jupp',                  category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Barcelona \'11 · Bayern \'13',
+    a: { slug: 'fc-barcelona',               era: '2011', stadium: 'campnou',   referee: 'kuipers',  weather: 'cloudy' },
+    b: { slug: 'fc-bayern-munchen',          era: '2013' } },
+  { label: 'Francia 98 vs Brasil 98',        en: 'France \'98 vs Brazil \'98',   category: 'Final', flag: '🏆',
+    desc: 'Francia \'98 · Brasil \'98',
+    a: { slug: 'frankreich',                 era: '1998', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
+    b: { slug: 'brasilien',                  era: '1998' } },
+  { label: 'El Séptimo Cielo',               en: 'The Seventh Heaven',           category: 'Final', flag: '🏆',
+    desc: 'Alemania \'14 · Argentina \'14',
+    a: { slug: 'deutschland',                era: '2014', stadium: 'maracana',  referee: 'brych',    weather: 'sunny' },
+    b: { slug: 'argentinien',                era: '2014' } },
+  { label: 'Ronaldo vs Ronaldo',             en: 'Ronaldo vs Ronaldo',           category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Brasil \'02 · Real Madrid \'17',
+    a: { slug: 'brasilien',                  era: '2002', stadium: 'maracana',  referee: 'collina',  weather: 'sunny' },
+    b: { slug: 'real-madrid',                era: '2017' } },
+  { label: 'Di Stéfano vs el Dream Team',    en: 'Di Stéfano vs the Dream Team', category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Real Madrid \'60 · Barcelona \'92',
+    a: { slug: 'real-madrid',                era: '1960', stadium: 'bernabeu',  referee: 'collina',  weather: 'sunny' },
+    b: { slug: 'fc-barcelona',               era: '1992' } },
+  { label: 'El Treble vs Los Invencibles',   en: 'Treble vs The Invincibles',    category: 'Partido de Ensueño', flag: '✨',
+    desc: 'Manchester United \'99 · Arsenal \'04',
+    a: { slug: 'manchester-united',          era: '1999', stadium: 'wembley',   referee: 'webb',     weather: 'rain' },
+    b: { slug: 'fc-arsenal',                 era: '2004' } },
+];
+
+// ── Grandes Derbis mundiales (sync with WORLD_DERBIES in app.js) ─────────────
+const DERBIES_LIST = [
+  { label: 'El Clásico',           en: 'El Clásico',           country: 'España',      flag: '🇪🇸',
+    desc: 'FC Barcelona vs Real Madrid',
+    a: { slug: 'fc-barcelona',                era: '2025', stadium: 'campnou',  referee: 'lahoz',    weather: 'sunny' },
+    b: { slug: 'real-madrid',                 era: '2025' } },
+  { label: 'El Viejo Firm',        en: 'The Old Firm',          country: 'Escocia',     flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    desc: 'Celtic vs Rangers',
+    a: { slug: 'celtic-glasgow',              era: '2025', stadium: 'wembley',  referee: 'clattenburg', weather: 'rain' },
+    b: { slug: 'glasgow-rangers',             era: '2025' } },
+  { label: 'Superclásico',         en: 'Superclásico',          country: 'Argentina',   flag: '🇦🇷',
+    desc: 'Boca Juniors vs River Plate',
+    a: { slug: 'club-atletico-boca-juniors',  era: '2025', stadium: 'maracana', referee: 'brych',    weather: 'sunny' },
+    b: { slug: 'club-atletico-river-plate',   era: '2025' } },
+  { label: 'Derby della Madonnina',en: 'Derby della Madonnina', country: 'Italia',      flag: '🇮🇹',
+    desc: 'AC Milan vs Inter',
+    a: { slug: 'ac-mailand',                  era: '2025', stadium: 'sansiro',  referee: 'collina',  weather: 'night' },
+    b: { slug: 'inter-mailand',               era: '2025' } },
+  { label: 'Der Klassiker',        en: 'Der Klassiker',         country: 'Alemania',    flag: '🇩🇪',
+    desc: 'Bayern Munich vs Borussia Dortmund',
+    a: { slug: 'fc-bayern-munchen',           era: '2025', stadium: 'wembley',  referee: 'brych',    weather: 'cloudy' },
+    b: { slug: 'borussia-dortmund',           era: '2025' } },
+  { label: 'Liverpool vs Man Utd', en: 'Liverpool vs Man Utd',  country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Liverpool vs Manchester United',
+    a: { slug: 'fc-liverpool',                era: '2025', stadium: 'anfield',  referee: 'webb',     weather: 'rain' },
+    b: { slug: 'manchester-united',           era: '2025' } },
+  { label: 'Derby del Norte de Londres', en: 'North London Derby', country: 'Inglaterra', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Arsenal vs Tottenham',
+    a: { slug: 'fc-arsenal',                  era: '2025', stadium: 'wembley',  referee: 'clattenburg', weather: 'cloudy' },
+    b: { slug: 'tottenham-hotspur',           era: '2025' } },
+  { label: 'Le Classique',         en: 'Le Classique',          country: 'Francia',     flag: '🇫🇷',
+    desc: 'Marseille vs PSG',
+    a: { slug: 'olympique-marseille',         era: '2025', stadium: 'campnou',  referee: 'kuipers',  weather: 'sunny' },
+    b: { slug: 'fc-paris-saint-germain',      era: '2025' } },
+  { label: 'Derby de Madrid',      en: 'Madrid Derby',          country: 'España',      flag: '🇪🇸',
+    desc: 'Atlético de Madrid vs Real Madrid',
+    a: { slug: 'atletico-madrid',             era: '2025', stadium: 'bernabeu', referee: 'lahoz',    weather: 'sunny' },
+    b: { slug: 'real-madrid',                 era: '2025' } },
+  { label: 'Derby della Capitale', en: 'Derby della Capitale',  country: 'Italia',      flag: '🇮🇹',
+    desc: 'Roma vs Lazio',
+    a: { slug: 'as-rom',                      era: '2025', stadium: 'sansiro',  referee: 'collina',  weather: 'night' },
+    b: { slug: 'lazio-rom',                   era: '2025' } },
+  { label: 'Derby de Lisboa — Águias', en: 'Lisbon Derby — Eagles', country: 'Portugal', flag: '🇵🇹',
+    desc: 'Benfica vs Sporting CP',
+    a: { slug: 'benfica-lissabon',            era: '2025', stadium: 'wembley',  referee: 'merk',     weather: 'sunny' },
+    b: { slug: 'sporting-cp',                 era: '2025' } },
+  { label: 'Derby de Mánchester',   en: 'Manchester Derby',      country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Manchester United vs Manchester City',
+    a: { slug: 'manchester-united',           era: '2025', stadium: 'wembley',  referee: 'webb',     weather: 'rain' },
+    b: { slug: 'manchester-city',             era: '2025' } },
+  { label: 'Merseyside Derby',      en: 'Merseyside Derby',       country: 'Inglaterra',  flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    desc: 'Liverpool vs Everton',
+    a: { slug: 'fc-liverpool',                era: '2025', stadium: 'anfield',  referee: 'clattenburg', weather: 'rain' },
+    b: { slug: 'fc-everton',                  era: '2025' } },
+  { label: 'Fla-Flu',              en: 'Fla-Flu',               country: 'Brasil',      flag: '🇧🇷',
+    desc: 'Flamengo vs Fluminense',
+    a: { slug: 'flamengo',                    era: '2022', stadium: 'maracana', referee: 'brych',    weather: 'heat' },
+    b: { slug: 'fluminense-rio-de-janeiro',   era: '2023' } },
+  { label: 'Derby Sevillano',       en: 'Seville Derby',         country: 'España',      flag: '🇪🇸',
+    desc: 'Sevilla vs Betis',
+    a: { slug: 'fc-sevilla',                  era: '2025', stadium: 'bernabeu', referee: 'lahoz',    weather: 'heat' },
+    b: { slug: 'real-betis-balompie',         era: '2025' } },
+];
+
 // Badge filename normalizer — squad slugs don't always match badge filenames 1:1
 const BADGE_DIR = path.join(__dirname, 'public', 'img', 'badges');
 function _badgeFile(slug) {
@@ -610,6 +739,104 @@ function applyGoalOverlays(videoPath, goalEvents) {
   }
 }
 
+/**
+ * createRivalryIntroVideo — premium intro for Rivals / Derbis videos.
+ */
+function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
+  const w = WIDTH, h = HEIGHT, d = durationSec;
+  const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
+  const esc = (s) => String(s || '').replace(/['\\]/g, '').replace(/:/g, '\\:').replace(/%/g, '%%');
+
+  const nameA = slugToDisplayName(rivalry.a.slug);
+  const nameB = slugToDisplayName(rivalry.b.slug);
+  const eraA  = rivalry.a.era || '';
+  const eraB  = rivalry.b.era || '';
+  const badgeAFile  = _badgeFile(rivalry.a.slug);
+  const badgeBFile  = _badgeFile(rivalry.b.slug);
+  const coinImg     = path.join(__dirname, 'public', 'golazox-coin.png');
+  const wordmarkImg = path.join(__dirname, 'public', 'golazox-wordmark.png');
+
+  const inputs = [
+    '-f', 'lavfi', '-i', `color=c=0x0d1a2e:size=${w}x${h}:rate=30:duration=${d}`,
+    '-f', 'lavfi', '-i', `color=c=0x060912:size=${w}x${h}:rate=30:duration=${d}`,
+  ];
+  const imgDefs = [];
+  if (fs.existsSync(coinImg))     imgDefs.push({ file: coinImg,     key: 'rvcoin' });
+  if (badgeAFile)                 imgDefs.push({ file: badgeAFile,  key: 'rvba'   });
+  if (badgeBFile)                 imgDefs.push({ file: badgeBFile,  key: 'rvbb'   });
+  if (fs.existsSync(wordmarkImg)) imgDefs.push({ file: wordmarkImg, key: 'rvwm'   });
+  imgDefs.forEach(i => inputs.push('-i', i.file));
+
+  const filterParts = [];
+  let lastLabel = '0:v';
+  let inputIdx  = 2;
+
+  filterParts.push(`[0:v][1:v]blend=all_expr='A*(1-Y/H) + B*(Y/H)'[rvbg]`);
+  lastLabel = 'rvbg';
+
+  const overlay = (key, scaleW, x, y, lbl) => {
+    filterParts.push(`[${inputIdx}:v]scale=${scaleW}:-1,format=rgba[${key}]`);
+    filterParts.push(`[${lastLabel}][${key}]overlay=${x}:${y}[${lbl}]`);
+    lastLabel = lbl; inputIdx++;
+  };
+
+  if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,  'rvl0');
+  if (badgeAFile)                            overlay('rvba',   280, '200-w/2', 570, 'rvl1');
+  if (badgeBFile)                            overlay('rvbb',   280, '880-w/2', 570, 'rvl2');
+  if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1630, 'rvl3');
+
+  const fadeIn = (s) => `if(lt(t,${s}),0,min(1,(t-${s})/0.4))`;
+  const alpha  = (s) => `min(${fadeIn(s)},if(gt(t,${d-0.5}),max(0,(${d}-t)/0.5),1))`;
+
+  // Title size adapts to length
+  const titleText = esc((rivalry.label || rivalry.en || '').toUpperCase());
+  const titleSize = titleText.length > 18 ? 88 : titleText.length > 12 ? 110 : 132;
+
+  // Context line: country (for derbies) or category (for rivalries) — no emoji (not supported)
+  const contextText = esc(rivalry.country || rivalry.category || '');
+  // Desc line: descriptive subtitle
+  const descText    = esc(rivalry.desc || '');
+
+  const texts = [
+    // Top separator
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.5:x=(w-text_w)/2:y=248:alpha='${alpha(0.0)}'`,
+    // Big title
+    `drawtext=fontfile='${fontAlt}':text='${titleText}':fontsize=${titleSize}:fontcolor=FFD700:x=(w-text_w)/2:y=272:alpha='${alpha(0.05)}'`,
+    // Context (country or category) — centered, subtle
+    `drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=436:alpha='${alpha(0.18)}'`,
+    // Mid separator
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=506:alpha='${alpha(0.2)}'`,
+    // VS (centered between badges)
+    `drawtext=fontfile='${fontAlt}':text='VS':fontsize=120:fontcolor=white@0.9:x=(w-text_w)/2:y=658:alpha='${alpha(0.3)}'`,
+    // Team names
+    `drawtext=fontfile='${fontBold}':text='${esc(nameA.toUpperCase())}':fontsize=44:fontcolor=white:x=200-text_w/2:y=896:alpha='${alpha(0.55)}'`,
+    `drawtext=fontfile='${fontBold}':text='${esc(nameB.toUpperCase())}':fontsize=44:fontcolor=white:x=880-text_w/2:y=896:alpha='${alpha(0.55)}'`,
+    // Eras in Bebas
+    ...(eraA ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraA)}':fontsize=72:fontcolor=FFD700:x=200-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
+    ...(eraB ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraB)}':fontsize=72:fontcolor=FFD700:x=880-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
+    // Bottom separator
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=1062:alpha='${alpha(0.7)}'`,
+    // Desc
+    ...(descText ? [`drawtext=fontfile='${fontBold}':text='${descText}':fontsize=46:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
+    // Tagline below wordmark
+    `drawtext=fontfile='${fontBold}':text='Simula tu versi\u00f3n':fontsize=44:fontcolor=0x666666:x=(w-text_w)/2:y=1790:alpha='${alpha(1.4)}'`,
+  ];
+
+  filterParts.push(
+    `[${lastLabel}]` + texts.join(',') +
+    `,fade=t=in:st=0:d=0.6,fade=t=out:st=${d-0.6}:d=0.6[rvout]`,
+  );
+
+  ffmpeg([
+    '-y', ...inputs,
+    '-filter_complex', filterParts.join(';'),
+    '-map', '[rvout]',
+    '-c:v', 'libx264', '-preset', 'fast', '-crf', '15',
+    '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
+    outFile,
+  ]);
+}
+
 async function postProcess(outPath, type, speedSegments = [], matchMeta = null) {
   if (!fs.existsSync(MUSIC_FILE)) {
     console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
@@ -675,13 +902,24 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
   const finalPath  = outPath.replace('.mp4', '_final.mp4');
 
   // For match type: always generate a dynamic intro with team badges + names.
+  // For rivalry/derby type: generate a rivalry-specific intro.
   // For ucl/wc: use pre-rendered file or generate from scratch.
-  if (type === 'match' && matchMeta) {
-    console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
-    try {
-      createMatchIntroVideo(matchMeta.teamA, matchMeta.eraA || '', matchMeta.teamB, matchMeta.eraB || '', introPath);
-    } catch (e) {
-      console.warn('[post] Match intro failed:', e.message.slice(0, 200));
+  if ((type === 'match' || type === 'rivalry' || type === 'derby') && matchMeta) {
+    if (matchMeta.rivalry) {
+      // Rivalry/Derby — premium title intro
+      console.log(`[post] Generating rivalry intro: ${matchMeta.rivalry.label}...`);
+      try {
+        createRivalryIntroVideo(matchMeta.rivalry, introPath);
+      } catch (e) {
+        console.warn('[post] Rivalry intro failed:', e.message.slice(0, 200));
+      }
+    } else {
+      console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
+      try {
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.eraA || '', matchMeta.teamB, matchMeta.eraB || '', introPath);
+      } catch (e) {
+        console.warn('[post] Match intro failed:', e.message.slice(0, 200));
+      }
     }
   } else {
     // Look for a pre-rendered type-specific intro first (fastest, guaranteed quality)
@@ -890,6 +1128,12 @@ async function generateVideo(opts = {}) {
   try {
     if (type === 'match') {
       ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
+    } else if (type === 'rivalry') {
+      opts._list = RIVALS_LIST;
+      ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
+    } else if (type === 'derby') {
+      opts._list = DERBIES_LIST;
+      ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
     } else if (type === 'ucl') {
       ({ title: videoTitle, speedSegments } = await recordUCL(page, recorder, outPath));
     } else if (type === 'wc') {
@@ -910,13 +1154,35 @@ async function generateVideo(opts = {}) {
 
 // ── Record a single match ─────────────────────────────────────────────────────
 async function recordMatch(page, recorder, outPath, opts = {}) {
-  const clasico = opts.teamA ? {
-    teamA: opts.teamA, eraA: opts.eraA || '',
-    teamB: opts.teamB, eraB: opts.eraB || '',
-    stadiumId: opts.stadiumId || null,
-    refereeId: opts.refereeId || null,
-    weatherId: opts.weatherId || null,
-  } : randomPick(CLASICOS);
+  // Source list: RIVALS_LIST, DERBIES_LIST, or CLASICOS for plain 'match'
+  const sourceList = opts._list || CLASICOS;
+
+  let clasico;
+  let rivalry = null; // set if picked from RIVALS_LIST or DERBIES_LIST
+
+  if (opts.teamA) {
+    // Explicit teams from CLI args
+    clasico = {
+      teamA: opts.teamA, eraA: opts.eraA || '',
+      teamB: opts.teamB, eraB: opts.eraB || '',
+      stadiumId: opts.stadiumId || null,
+      refereeId: opts.refereeId || null,
+      weatherId: opts.weatherId || null,
+    };
+  } else {
+    // Pick random from source list
+    const picked = randomPick(sourceList);
+    rivalry = (sourceList === RIVALS_LIST || sourceList === DERBIES_LIST) ? picked : null;
+    clasico = {
+      teamA:     picked.a.slug,
+      eraA:      picked.a.era   || '',
+      teamB:     picked.b.slug,
+      eraB:      picked.b.era   || '',
+      stadiumId: picked.a.stadium || null,
+      refereeId: picked.a.referee || null,
+      weatherId: picked.a.weather || null,
+    };
+  }
 
   // Navigate with team slugs in the URL so _deepLinkRestore() sets the input values.
   const eraPartA = clasico.eraA ? `:${clasico.eraA}` : '';
@@ -1002,16 +1268,23 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   await page.evaluate(() => document.getElementById('preview-B').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(2800);  // viewers read the lineup
 
-  // ── STEP 3: Stadium picker — scroll to section label so it's clearly visible ──
+  // ── STEP 3: Stadium picker — scroll to section, select card, then scroll picker row to show it ──
   if (clasico.stadiumId) {
     await page.evaluate(() => {
       const el = document.querySelector('.stadium-picker-section') || document.getElementById('stadium-picker-row');
       if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
     });
-    await wait(1000);  // wait for smooth scroll
-    await page.evaluate((id) => window.selectStadium(id), clasico.stadiumId);
+    await wait(1000);
+    await page.evaluate((id) => {
+      window.selectStadium(id);
+      // Scroll horizontal picker row so selected card is fully visible
+      setTimeout(() => {
+        const card = document.querySelector(`.spk-card[data-id="${id}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }, 150);
+    }, clasico.stadiumId);
     console.log(`[match] Stadium: ${clasico.stadiumId}`);
-    await wait(1800);  // show the selected card highlighted
+    await wait(2000);  // show the selected card highlighted
   }
 
   // ── STEP 4: Referee picker ──
@@ -1021,9 +1294,15 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
     });
     await wait(1000);
-    await page.evaluate((id) => window.selectReferee(id), clasico.refereeId);
+    await page.evaluate((id) => {
+      window.selectReferee(id);
+      setTimeout(() => {
+        const card = document.querySelector(`.ref-card[data-id="${id}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }, 150);
+    }, clasico.refereeId);
     console.log(`[match] Referee: ${clasico.refereeId}`);
-    await wait(1800);
+    await wait(2000);
   }
 
   // ── STEP 5: Weather picker ──
@@ -1033,9 +1312,15 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
     });
     await wait(1000);
-    await page.evaluate((id) => window.selectWeather(id), clasico.weatherId);
+    await page.evaluate((id) => {
+      window.selectWeather(id);
+      setTimeout(() => {
+        const card = document.querySelector(`.wth-card[data-id="${id}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }, 150);
+    }, clasico.weatherId);
     console.log(`[match] Weather: ${clasico.weatherId}`);
-    await wait(1800);
+    await wait(2000);
   }
 
   // ── STEP 6: Brief scroll back up to show VS button, then click ──
@@ -1148,14 +1433,16 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   const titleA = clasico.teamA.replace(/-/g, ' ');
   const titleB = clasico.teamB.replace(/-/g, ' ');
   const eraStr = clasico.eraA && clasico.eraB ? ` (${clasico.eraA} vs ${clasico.eraB})` : '';
+  const titleLabel = rivalry ? (rivalry.label || rivalry.en) : `${titleA} vs ${titleB}`;
   return {
-    title: `${titleA} vs ${titleB}${eraStr} — golazox.com`,
+    title: `${titleLabel}${eraStr} — golazox.com`,
     speedSegments: [],
     matchMeta: {
       teamA: clasico.teamA, eraA: clasico.eraA,
       teamB: clasico.teamB, eraB: clasico.eraB,
       finalScore,
       goalEvents,
+      rivalry,
     },
   };
 }
@@ -1639,8 +1926,13 @@ if (require.main === module) {
     return i !== -1 ? args[i + 1] : undefined;
   };
 
+  // --rivalry and --derby are shorthand for --type rivalry/derby
+  let type = get('--type');
+  if (!type && args.includes('--rivalry')) type = 'rivalry';
+  if (!type && args.includes('--derby'))   type = 'derby';
+
   const opts = {
-    type:      get('--type'),
+    type:      type,
     teamA:     get('--teamA'),
     teamB:     get('--teamB'),
     eraA:      get('--eraA'),
