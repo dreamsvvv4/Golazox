@@ -954,10 +954,10 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       ], { stdio: ['ignore', 'pipe', 'pipe'] });
       capturedWidth = parseInt((wProbe.stdout || '').toString().trim()) || 0;
     }
-    // Fallback: on Windows the DPI scale factor produces ~1486px wide captures.
-    // If ffprobe failed OR returned something wider than 1080, use 0.726 crop ratio.
+    // If ffprobe failed, the recorder's videoFrame: {width:1080} already constrains
+    // the output — no crop needed, just pad.
     if (capturedWidth === 0) {
-      capturedWidth = process.platform === 'win32' ? 1486 : WIDTH;
+      capturedWidth = WIDTH;
     }
     const needsCrop = capturedWidth > WIDTH + 50;
     // Add 30px dark margin on all 4 sides: scale content to 1020×1813, then pad to 1080×1920
@@ -1355,7 +1355,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       // Apply Windows DPI crop + 30px margin so preview looks identical to final video
       try {
         const prevScaled = outPath + '.preview.mp4';
-        const CW = process.platform === 'win32' ? 1486 : WIDTH;
+        const CW = WIDTH; // recorder videoFrame already constrains to 1080px
         const needsCrop = CW > WIDTH + 50;
         const innerW = WIDTH - 60; // 1020
         const innerH = Math.round(innerW * HEIGHT / WIDTH); // 1813
