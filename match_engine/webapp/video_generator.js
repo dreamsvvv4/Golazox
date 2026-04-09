@@ -248,7 +248,7 @@ const DERBIES_LIST = [
   { label: 'Fla-Flu',              en: 'Fla-Flu',               country: 'Brasil',      flag: '🇧🇷',
     desc: 'Flamengo vs Fluminense',
     a: { slug: 'flamengo',                    era: '2022', stadium: 'maracana', referee: 'brych',    weather: 'heat' },
-    b: { slug: 'fluminense-rio-de-janeiro',   era: '2023' } },
+    b: { slug: 'fluminense-rio-de-janeiro',   era: '2025' } },
   { label: 'Derby Sevillano',       en: 'Seville Derby',         country: 'España',      flag: '🇪🇸',
     desc: 'Sevilla vs Betis',
     a: { slug: 'fc-sevilla',                  era: '2025', stadium: 'bernabeu', referee: 'lahoz',    weather: 'heat' },
@@ -1931,6 +1931,8 @@ if (require.main === module) {
   if (!type && args.includes('--rivalry')) type = 'rivalry';
   if (!type && args.includes('--derby'))   type = 'derby';
 
+  const count = parseInt(get('--count') || '1', 10);
+
   const opts = {
     type:      type,
     teamA:     get('--teamA'),
@@ -1943,15 +1945,21 @@ if (require.main === module) {
     preview:   args.includes('--preview'),
   };
 
-  generateVideo(opts)
-    .then(({ path: p, title: t }) => {
-      console.log(`\nVideo: ${p}\nTitle: ${t}`);
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error('[video] ERROR:', err.message);
-      process.exit(1);
-    });
+  (async () => {
+    const total = Math.max(1, Math.min(count, 50)); // cap at 50 to avoid accidents
+    console.log(`[batch] Generating ${total} video(s) — type=${type || 'match'}`);
+    for (let i = 0; i < total; i++) {
+      if (total > 1) console.log(`\n[batch] ──── Video ${i + 1} / ${total} ────`);
+      try {
+        const { path: p, title: t } = await generateVideo({ ...opts });
+        console.log(`[batch] ✓ ${i + 1}/${total} → ${p}\n  ${t}`);
+      } catch (err) {
+        console.error(`[batch] ✗ ${i + 1}/${total} ERROR:`, err.message);
+      }
+    }
+    if (total > 1) console.log(`\n[batch] Done — ${total} videos generated in ${process.uptime().toFixed(0)}s`);
+    process.exit(0);
+  })();
 }
 
 module.exports = { generateVideo };

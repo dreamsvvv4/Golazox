@@ -328,7 +328,7 @@ const PLAYER_RATINGS_RAW = [
   ['marc-andre ter stegen',  89], ['ter stegen',           89], ['marc-andré ter stegen', 89],
   ['jan oblak',              92], ['oblak',                92],
   // ── Actuales (2023-26) ──
-  ['alisson becker',         91], ['alisson',              91],
+  ['alisson becker',         91], // solo el portero del Liverpool — no el centrocampista del Fluminense
   ['ederson moraes',         88], ['ederson',              88],
   ['mike maignan',           87], ['maignan',              87],
   ['gregor kobel',           86], ['kobel',                86],

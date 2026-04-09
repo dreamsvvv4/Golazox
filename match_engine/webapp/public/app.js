@@ -1616,7 +1616,7 @@ const WORLD_DERBIES = [
   { label: 'Fla-Flu',                        en: 'Fla-Flu',                     country: 'Brasil',      flag: '🇧🇷',
     desc: 'Flamengo vs Fluminense',
     a: { slug: 'flamengo',                   era: '2022' },
-    b: { slug: 'fluminense-rio-de-janeiro',  era: '2023' } },
+    b: { slug: 'fluminense-rio-de-janeiro',  era: '2025' } },
   { label: 'Derby de Lisboa — Águias',       en: 'Lisbon Derby — Eagles',       country: 'Portugal',    flag: '🇵🇹',
     desc: 'Benfica vs Sporting CP',
     a: { slug: 'benfica-lissabon',           era: '2025' },
