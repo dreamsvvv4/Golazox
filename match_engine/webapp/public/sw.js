@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v68';
+const CACHE_VERSION  = 'v70';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -75,6 +75,12 @@ self.addEventListener('fetch', event => {
   // Excepción: estadios y árbitros no se cachean (pueden actualizarse en cualquier momento).
   if (p.startsWith('/img/stadiums/') || p.startsWith('/img/referees/')) {
     event.respondWith(fetch(request));
+    return;
+  }
+  // Badges: network-first so new/updated badges are always fetched fresh.
+  // Other images (stadiums already excluded above): cache-first.
+  if (p.startsWith('/img/badges/')) {
+    event.respondWith(_networkFirst(request, IMAGE_CACHE));
     return;
   }
   if (p.startsWith('/img/') || p.endsWith('.png') || p.endsWith('.jpg')
