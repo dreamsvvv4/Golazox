@@ -989,7 +989,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ? _histBaseY + historyLines.length * _histLineH + 24
     : _goalsY + _maxGoals * _goalLineH + (_maxGoals > 0 ? 24 : 0);
   // coin replaces 'G' — renders [coin] olazoX? centered as a block
-  const _coinQLineY = _questionY + 48;
+  const _coinQLineY = _questionY + 60;
   const _coinQW     = 40;
   const _golazoxW   = 168; // approx Rajdhani Bold 48px * 7 chars 'olazoX?'
   const _qGap       = 6;
