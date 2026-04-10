@@ -888,8 +888,19 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     '-f', 'lavfi', '-i', `color=c=0x0d1a2e:size=${w}x${h}:rate=30:duration=${d}`,
     '-f', 'lavfi', '-i', `color=c=0x060912:size=${w}x${h}:rate=30:duration=${d}`,
   ];
+  // Derby: use national team badge as country flag overlay (centered top, smaller)
+  const COUNTRY_SLUG = {
+    'Espana': 'spanien', 'Escocia': 'schottland', 'Argentina': 'argentinien',
+    'Italia': 'italien', 'Alemania': 'deutschland', 'Inglaterra': 'england',
+    'Francia': 'frankreich', 'Portugal': 'portugal', 'Brasil': 'brasilien',
+  };
+  const _isDerby   = !!rivalry.country;
+  const flagSlug   = _isDerby ? COUNTRY_SLUG[rivalry.country] : null;
+  const flagFile   = flagSlug ? _badgeFile(flagSlug) : null;
+
   const imgDefs = [];
   if (fs.existsSync(coinImg))     imgDefs.push({ file: coinImg,     key: 'rvcoin'  });
+  if (flagFile)                   imgDefs.push({ file: flagFile,    key: 'rvflag'  });
   if (badgeAFile)                 imgDefs.push({ file: badgeAFile,  key: 'rvba'    });
   if (badgeBFile)                 imgDefs.push({ file: badgeBFile,  key: 'rvbb'    });
   if (fs.existsSync(wordmarkImg)) imgDefs.push({ file: wordmarkImg, key: 'rvwm'    });
@@ -911,6 +922,7 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   };
 
   if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,  'rvl0');
+  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag',  80, '(W-w)/2', 248, 'rvlf');
   if (badgeAFile)                            overlay('rvba',   280, '200-w/2', 570, 'rvl1');
   if (badgeBFile)                            overlay('rvbb',   280, '880-w/2', 570, 'rvl2');
   if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1630, 'rvl3');
@@ -920,7 +932,6 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const _maxGoals  = Math.max(goalsA.length, goalsB.length);
   const _goalLineH = 46;
   const _goalsY    = 1172;
-  const _isDerby   = !!rivalry.country;
   // History text for derbies — split into max 2 lines if too long (~38 chars at fontsize 40)
   const historyRaw = rivalry.history || '';
   const _histLineH = 50;
@@ -992,8 +1003,8 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ...titleLines.map((line, i) =>
       `drawtext=fontfile='${fontAlt}':text='${line}':fontsize=${titleSize}:fontcolor=FFD700:x=(w-text_w)/2:y=${272 + i * (titleSize + 8)}:alpha='${alpha(0.05)}'`
     ),
-    // Context (country or category) — centered, subtle
-    `drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 10}:alpha='${alpha(0.18)}'`,
+    // Context (country or category) — only show as text when no flag overlay
+    ...(!_isDerby ? [`drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 10}:alpha='${alpha(0.18)}'`] : []),
     // Mid separator
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 80}:alpha='${alpha(0.2)}'`,
     // VS (centered between badges)
@@ -1019,9 +1030,9 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
       ...goalsB.map((g, i) =>
         `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=880-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
     ]),
-    // Question hook — two lines: text centered, then [coin] olazoX? centered
+    // Question hook — derbies ask 'Quien ganara', rivalries ask 'Se repetira'
     ...(questionText ? [
-      `drawtext=fontfile='${fontBold}':text='${questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
+      `drawtext=fontfile='${fontBold}':text='${_isDerby ? esc('Quien ganara este derby en') : questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
       `drawtext=fontfile='${fontBold}':text='olazoX?':fontsize=48:fontcolor=FFD700:x=${_golazoxTextX}:y=${_coinQLineY}:alpha='${alpha(1.0)}'`,
     ] : []),
     // Tagline below wordmark
