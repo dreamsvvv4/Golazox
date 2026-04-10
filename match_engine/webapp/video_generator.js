@@ -225,13 +225,13 @@ const RIVALS_LIST = [
 const DERBIES_LIST = [
   { label: 'El Clasico',            en: 'El Clasico',           country: 'Espana',      flag: '\ud83c\uddea\ud83c\uddf8',
     desc: 'FC Barcelona vs Real Madrid',
-    history: 'El derby mas visto del planeta',
+    history: 'El derbi mas visto del planeta',
     question: 'Se repetira la historia en',
     a: { slug: 'fc-barcelona',                era: '2025', stadium: 'campnou',  referee: 'lahoz',    weather: 'sunny' },
     b: { slug: 'real-madrid',                 era: '2025' } },
   { label: 'El Viejo Firm',         en: 'The Old Firm',          country: 'Escocia',     flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f',
     desc: 'Celtic vs Rangers',
-    history: 'El derby religioso mas antiguo',
+    history: 'El derbi religioso mas antiguo',
     question: 'Se repetira la historia en',
     a: { slug: 'celtic-glasgow',              era: '2025', stadium: 'wembley',  referee: 'clattenburg', weather: 'rain' },
     b: { slug: 'glasgow-rangers',             era: '2025' } },
@@ -285,7 +285,7 @@ const DERBIES_LIST = [
     b: { slug: 'lazio-rom',                   era: '2025' } },
   { label: 'Derby de Lisboa',       en: 'Lisbon Derby',          country: 'Portugal',    flag: '\ud83c\uddf5\ud83c\uddf9',
     desc: 'Benfica vs Sporting CP',
-    history: 'Aguilas vs Leones - derby luso',
+    history: 'Aguilas vs Leones - derbi luso',
     question: 'Se repetira la historia en',
     a: { slug: 'benfica-lissabon',            era: '2025', stadium: 'wembley',  referee: 'merk',     weather: 'sunny' },
     b: { slug: 'sporting-cp',                 era: '2025' } },
@@ -948,11 +948,19 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const _sepBotY= _isDerby ? 1132 : 1062;
   const _goalsY = _isDerby ? 1202 : 1172;
 
-  if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,  'rvl0');
-  // rvflag overlay position depends on titleLines — deferred after title computation
+  // Pre-compute flag y-position using same title-size logic (before titleLines is set)
+  const _titleRawPre  = (rivalry.label || rivalry.en || '').toUpperCase();
+  const _approxWPre   = (txt, sz) => txt.length * sz * 0.55;
+  const _titleSzPre   = _approxWPre(_titleRawPre, 110) <= 900 ? 110
+                      : _approxWPre(_titleRawPre, 88)  <= 900 ? 88 : 72;
+  const _titleLnsPre  = _approxWPre(_titleRawPre, _titleSzPre) <= 900 ? 1 : 2;
+  const _flagY = 272 + _titleLnsPre * (_titleSzPre + 8) + 20;
+
+  if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,     'rvl0');
+  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag', 150, '(W-w)/2', _flagY, 'rvlf');
   if (badgeAFile)                            overlay('rvba',   260, `200-w/2`, _badgeY, 'rvl1');
   if (badgeBFile)                            overlay('rvbb',   260, `880-w/2`, _badgeY, 'rvl2');
-  if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1700, 'rvl3');
+  if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1700,   'rvl3');
   // coin inline with question
   const goalsA = (rivalry.goals && rivalry.goals.a) || [];
   const goalsB = (rivalry.goals && rivalry.goals.b) || [];
@@ -1016,10 +1024,6 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
       titleLines  = [esc(words.slice(0, half).join(' ')), esc(words.slice(half).join(' '))];
     }
   }
-
-  // Flag y-position now known (titleLines computed above)
-  const _flagY = 272 + titleLines.length * (titleSize + 8) + 18;
-  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag', 150, '(W-w)/2', _flagY, 'rvlf');
 
   // Context line: country (for derbies) or category (for rivalries) — no emoji (not supported)
   const contextText  = esc(rivalry.country || rivalry.category || '');
