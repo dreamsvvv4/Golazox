@@ -870,7 +870,7 @@ function applyGoalOverlays(videoPath, goalEvents) {
 /**
  * createRivalryIntroVideo — premium intro for Rivals / Derbis videos.
  */
-function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
+async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const w = WIDTH, h = HEIGHT, d = durationSec;
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
   const esc = (s) => String(s || '').replace(/['\\]/g, '').replace(/:/g, '\\:').replace(/%/g, '%%');
@@ -888,15 +888,35 @@ function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     '-f', 'lavfi', '-i', `color=c=0x0d1a2e:size=${w}x${h}:rate=30:duration=${d}`,
     '-f', 'lavfi', '-i', `color=c=0x060912:size=${w}x${h}:rate=30:duration=${d}`,
   ];
-  // Derby: use national team badge as country flag overlay (centered top, smaller)
-  const COUNTRY_SLUG = {
-    'Espana': 'spanien', 'Escocia': 'schottland', 'Argentina': 'argentinien',
-    'Italia': 'italien', 'Alemania': 'deutschland', 'Inglaterra': 'england',
-    'Francia': 'frankreich', 'Portugal': 'portugal', 'Brasil': 'brasilien',
-  };
-  const _isDerby   = !!rivalry.country;
-  const flagSlug   = _isDerby ? COUNTRY_SLUG[rivalry.country] : null;
-  const flagFile   = flagSlug ? _badgeFile(flagSlug) : null;
+  // Derby: resolve flag PNG from emoji → ISO code → flagcdn.com (cached in public/img/flags/)
+  const _isDerby = !!rivalry.country;
+  function _emojiToISO(flag) {
+    if (!flag) return null;
+    const cps = [...flag].map(c => c.codePointAt(0));
+    if (cps.length >= 2 && cps[0] >= 0x1F1E6 && cps[0] <= 0x1F1FF)
+      return String.fromCharCode(cps[0] - 0x1F1E6 + 65, cps[1] - 0x1F1E6 + 65).toLowerCase();
+    return null;
+  }
+  let flagFile = null;
+  if (_isDerby) {
+    const iso = _emojiToISO(rivalry.flag);
+    if (iso) {
+      const flagDir  = path.join(__dirname, 'public', 'img', 'flags');
+      const flagPath = path.join(flagDir, `${iso}.png`);
+      if (!fs.existsSync(flagPath)) {
+        try {
+          fs.mkdirSync(flagDir, { recursive: true });
+          const https = require('https');
+          const file  = fs.createWriteStream(flagPath);
+          // Use flagcdn.com same as app.js but PNG format, 160px wide
+          await new Promise((res, rej) => {
+            https.get(`https://flagcdn.com/w160/${iso}.png`, r => { r.pipe(file); file.on('finish', res); }).on('error', rej);
+          });
+        } catch { /* skip flag if download fails */ }
+      }
+      if (fs.existsSync(flagPath)) flagFile = flagPath;
+    }
+  }
 
   const imgDefs = [];
   if (fs.existsSync(coinImg))     imgDefs.push({ file: coinImg,     key: 'rvcoin'  });
@@ -1152,7 +1172,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       // Epic/Rivalry/Derby — premium rivalry intro with dramatic title
       console.log(`[post] Generating rivalry intro: ${matchMeta.rivalry.label}...`);
       try {
-        createRivalryIntroVideo(matchMeta.rivalry, introPath);
+        await createRivalryIntroVideo(matchMeta.rivalry, introPath);
       } catch (e) {
         console.warn('[post] Rivalry intro failed:', e.message.slice(0, 200));
       }
@@ -2252,9 +2272,11 @@ if (require.main === module) {
     console.log(`[card-only] Rendering intro card for: ${entry.label}`);
     console.log(`[card-only] category: ${entry.category || '—'}`);
     console.log(`[card-only] desc: ${entry.desc || '—'}`);
-    createRivalryIntroVideo(entry, outFile);
-    console.log(`[card-only] ✓ Saved → ${outFile}`);
-    process.exit(0);
+    (async () => {
+      await createRivalryIntroVideo(entry, outFile);
+      console.log(`[card-only] ✓ Saved → ${outFile}`);
+      process.exit(0);
+    })();
     return;
   }
 
