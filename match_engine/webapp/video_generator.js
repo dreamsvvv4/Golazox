@@ -941,17 +941,23 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     lastLabel = lbl; inputIdx++;
   };
 
+  const _badgeY = _isDerby ? 640 : 570;
+  const _vsY    = _isDerby ? 728 : 658;
+  const _nameY  = _isDerby ? 966 : 896;
+  const _eraY   = _isDerby ? 1022 : 952;
+  const _sepBotY= _isDerby ? 1132 : 1062;
+  const _goalsY = _isDerby ? 1202 : 1172;
+
   if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,  'rvl0');
-  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag',  80, '(W-w)/2', 248, 'rvlf');
-  if (badgeAFile)                            overlay('rvba',   280, '200-w/2', 570, 'rvl1');
-  if (badgeBFile)                            overlay('rvbb',   280, '880-w/2', 570, 'rvl2');
+  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag', 150, '(W-w)/2', 395, 'rvlf');
+  if (badgeAFile)                            overlay('rvba',   260, `200-w/2`, _badgeY, 'rvl1');
+  if (badgeBFile)                            overlay('rvbb',   260, `880-w/2`, _badgeY, 'rvl2');
   if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1630, 'rvl3');
   // coin inline with question
   const goalsA = (rivalry.goals && rivalry.goals.a) || [];
   const goalsB = (rivalry.goals && rivalry.goals.b) || [];
   const _maxGoals  = Math.max(goalsA.length, goalsB.length);
   const _goalLineH = 46;
-  const _goalsY    = 1172;
   // History text for derbies — split into max 2 lines if too long (~38 chars at fontsize 40)
   const historyRaw = rivalry.history || '';
   const _histLineH = 50;
@@ -970,8 +976,9 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
       historyLines = [esc(_hl1), esc(_hl2)].filter(Boolean);
     }
   }
+  const _histBaseY  = _sepBotY + 30;
   const _questionY = _isDerby
-    ? 1092 + historyLines.length * _histLineH + 24
+    ? _histBaseY + historyLines.length * _histLineH + 24
     : _goalsY + _maxGoals * _goalLineH + (_maxGoals > 0 ? 24 : 0);
   // coin replaces 'G' — renders [coin] olazoX? centered as a block
   const _coinQLineY = _questionY + 48;
@@ -1028,19 +1035,19 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     // Mid separator
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 80}:alpha='${alpha(0.2)}'`,
     // VS (centered between badges)
-    `drawtext=fontfile='${fontAlt}':text='VS':fontsize=120:fontcolor=white@0.9:x=(w-text_w)/2:y=658:alpha='${alpha(0.3)}'`,
+    `drawtext=fontfile='${fontAlt}':text='VS':fontsize=120:fontcolor=white@0.9:x=(w-text_w)/2:y=${_vsY}:alpha='${alpha(0.3)}'`,
     // Team names
-    `drawtext=fontfile='${fontBold}':text='${esc(nameA.toUpperCase())}':fontsize=44:fontcolor=white:x=200-text_w/2:y=896:alpha='${alpha(0.55)}'`,
-    `drawtext=fontfile='${fontBold}':text='${esc(nameB.toUpperCase())}':fontsize=44:fontcolor=white:x=880-text_w/2:y=896:alpha='${alpha(0.55)}'`,
+    `drawtext=fontfile='${fontBold}':text='${esc(nameA.toUpperCase())}':fontsize=44:fontcolor=white:x=200-text_w/2:y=${_nameY}:alpha='${alpha(0.55)}'`,
+    `drawtext=fontfile='${fontBold}':text='${esc(nameB.toUpperCase())}':fontsize=44:fontcolor=white:x=880-text_w/2:y=${_nameY}:alpha='${alpha(0.55)}'`,
     // Eras in Bebas
-    ...(eraA ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraA)}':fontsize=72:fontcolor=FFD700:x=200-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
-    ...(eraB ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraB)}':fontsize=72:fontcolor=FFD700:x=880-text_w/2:y=952:alpha='${alpha(0.65)}'`] : []),
+    ...(eraA ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraA)}':fontsize=72:fontcolor=FFD700:x=200-text_w/2:y=${_eraY}:alpha='${alpha(0.65)}'`] : []),
+    ...(eraB ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraB)}':fontsize=72:fontcolor=FFD700:x=880-text_w/2:y=${_eraY}:alpha='${alpha(0.65)}'`] : []),
     // Bottom separator
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=1062:alpha='${alpha(0.7)}'`,
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${_sepBotY}:alpha='${alpha(0.7)}'`,
     // Bottom section: derby shows history lines, rivalry shows score + goals
     ...(_isDerby ? [
       ...historyLines.map((line, i) =>
-        `drawtext=fontfile='${fontBold}':text='${line}':fontsize=40:fontcolor=white@0.85:x=(w-text_w)/2:y=${1092 + i * _histLineH}:alpha='${alpha(0.8)}'`
+        `drawtext=fontfile='${fontBold}':text='${line}':fontsize=40:fontcolor=white@0.85:x=(w-text_w)/2:y=${_histBaseY + i * _histLineH}:alpha='${alpha(0.8)}'`
       ),
     ] : [
       ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
@@ -1052,7 +1059,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ]),
     // Question hook — derbies ask 'Quien ganara', rivalries ask 'Se repetira'
     ...(questionText ? [
-      `drawtext=fontfile='${fontBold}':text='${_isDerby ? esc('Quien ganara este derby en') : questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
+      `drawtext=fontfile='${fontBold}':text='${_isDerby ? esc('Quien ganara este derbi en') : questionText}':fontsize=36:fontcolor=white@0.9:x=(w-text_w)/2:y=${_questionY}:alpha='${alpha(1.0)}'`,
       `drawtext=fontfile='${fontBold}':text='olazoX?':fontsize=48:fontcolor=FFD700:x=${_golazoxTextX}:y=${_coinQLineY}:alpha='${alpha(1.0)}'`,
     ] : []),
     // Tagline below wordmark
