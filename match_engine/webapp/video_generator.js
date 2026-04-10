@@ -949,10 +949,10 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   const _goalsY = _isDerby ? 1202 : 1172;
 
   if (imgDefs.find(i => i.key === 'rvcoin')) overlay('rvcoin', 120, '(W-w)/2', 80,  'rvl0');
-  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag', 150, '(W-w)/2', 395, 'rvlf');
+  // rvflag overlay position depends on titleLines — deferred after title computation
   if (badgeAFile)                            overlay('rvba',   260, `200-w/2`, _badgeY, 'rvl1');
   if (badgeBFile)                            overlay('rvbb',   260, `880-w/2`, _badgeY, 'rvl2');
-  if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1630, 'rvl3');
+  if (imgDefs.find(i => i.key === 'rvwm'))   overlay('rvwm',   500, '(W-w)/2', 1700, 'rvl3');
   // coin inline with question
   const goalsA = (rivalry.goals && rivalry.goals.a) || [];
   const goalsB = (rivalry.goals && rivalry.goals.b) || [];
@@ -1017,6 +1017,10 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     }
   }
 
+  // Flag y-position now known (titleLines computed above)
+  const _flagY = 272 + titleLines.length * (titleSize + 8) + 18;
+  if (imgDefs.find(i => i.key === 'rvflag')) overlay('rvflag', 150, '(W-w)/2', _flagY, 'rvlf');
+
   // Context line: country (for derbies) or category (for rivalries) — no emoji (not supported)
   const contextText  = esc(rivalry.country || rivalry.category || '');
   // Desc line: result score
@@ -1032,8 +1036,8 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     ),
     // Context (country or category) — only show as text when no flag overlay
     ...(!_isDerby ? [`drawtext=fontfile='${fontBold}':text='${contextText}':fontsize=52:fontcolor=white@0.8:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 10}:alpha='${alpha(0.18)}'`] : []),
-    // Mid separator
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 80}:alpha='${alpha(0.2)}'`,
+    // Mid separator — only for rivalries (derby has flag in this space)
+    ...(!_isDerby ? [`drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=22:fontcolor=FFD700@0.35:x=(w-text_w)/2:y=${272 + titleLines.length * (titleSize + 8) + 80}:alpha='${alpha(0.2)}'`] : []),
     // VS (centered between badges)
     `drawtext=fontfile='${fontAlt}':text='VS':fontsize=120:fontcolor=white@0.9:x=(w-text_w)/2:y=${_vsY}:alpha='${alpha(0.3)}'`,
     // Team names
@@ -1050,7 +1054,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
         `drawtext=fontfile='${fontBold}':text='${line}':fontsize=40:fontcolor=white@0.85:x=(w-text_w)/2:y=${_histBaseY + i * _histLineH}:alpha='${alpha(0.8)}'`
       ),
     ] : [
-      ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=1092:alpha='${alpha(0.8)}'`] : []),
+      ...(descText ? [`drawtext=fontfile='${fontAlt}':text='${descText}':fontsize=64:fontcolor=FFD700:x=(w-text_w)/2:y=${_sepBotY + 30}:alpha='${alpha(0.8)}'`] : []),
       // Goals in two columns — team A left (x=200), team B right (x=880)
       ...goalsA.map((g, i) =>
         `drawtext=fontfile='${fontBold}':text='${esc(g)}':fontsize=36:fontcolor=white@0.9:x=200-text_w/2:y=${_goalsY + i * _goalLineH}:alpha='${alpha(0.85)}'`),
