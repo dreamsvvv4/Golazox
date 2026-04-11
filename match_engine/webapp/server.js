@@ -265,16 +265,27 @@ app.get('/partido/:matchup', (req, res) => {
 
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'SportsEvent',
-    'name': `${labelA} vs ${labelB}`,
-    'description': pageDesc.replace(/&\w+;/g, ' '),
-    'url': canonUrl,
-    'sport': 'Soccer',
-    'competitor': [
-      { '@type': 'SportsTeam', 'name': labelA, ...(badgeA ? { 'logo': badgeA } : {}) },
-      { '@type': 'SportsTeam', 'name': labelB, ...(badgeB ? { 'logo': badgeB } : {}) },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': _routeSiteUrl },
+          { '@type': 'ListItem', 'position': 2, 'name': `${labelA} vs ${labelB}` },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        'name': `${labelA} vs ${labelB} — Simulación de Fútbol`,
+        'description': pageDesc.replace(/&\w+;/g, ' '),
+        'url': canonUrl,
+        'inLanguage': 'es',
+        'about': [
+          { '@type': 'SportsTeam', 'name': labelA, 'sport': 'Soccer', ...(badgeA ? { 'logo': badgeA } : {}) },
+          { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
+        ],
+        'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
     ],
-    'organizer': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
   });
 
   const html = `<!DOCTYPE html>
