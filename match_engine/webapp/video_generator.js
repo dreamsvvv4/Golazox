@@ -1353,6 +1353,9 @@ async function generateVideo(opts = {}) {
       '--disable-setuid-sandbox',
       '--disable-gpu',
       '--disable-dev-shm-usage',
+      '--disable-application-cache',
+      '--disable-cache',
+      '--disk-cache-size=0',
       '--window-size=360,640',
       '--force-device-scale-factor=3', // 3× physical DPI → screencast at 1080×1920 (3× CSS viewport)
       '--disable-background-timer-throttling',
@@ -1802,7 +1805,9 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     speedSegments: [],
     matchMeta: {
       teamA: clasico.teamA, eraA: clasico.eraA,
+      introEraA: clasico.introEraA !== undefined ? clasico.introEraA : clasico.eraA,
       teamB: clasico.teamB, eraB: clasico.eraB,
+      introEraB: clasico.introEraB !== undefined ? clasico.introEraB : clasico.eraB,
       finalScore,
       goalEvents,
       rivalry,
