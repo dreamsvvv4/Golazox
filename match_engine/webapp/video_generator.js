@@ -113,7 +113,7 @@ async function ensureFonts() {
 // Clásicos épicos para rotación automática
 // Slugs MUST match the squad JSON filenames in squads/ and badge PNGs in public/img/badges/
 const CLASICOS = [
-  { label: 'Semifinal UCL',            category: 'Semifinal UCL',        teamA: 'real-madrid',          eraA: '2026', teamB: 'fc-bayern-munchen',    eraB: '2026',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
+  { label: 'Semifinal UCL',            category: 'Semifinal UCL',        teamA: 'real-madrid',          eraA: '2025', teamB: 'fc-bayern-munchen',    eraB: '2025',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
   { label: 'El Cl\u00e1sico',          category: 'El Cl\u00e1sico',        teamA: 'real-madrid',          eraA: '2002', teamB: 'fc-barcelona',         eraB: '2009',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
   { label: 'Final Copa de Europa',     category: 'Final Copa de Europa', teamA: 'ac-mailand',           eraA: '1989', teamB: 'fc-liverpool',         eraB: '2005',  stadiumId: 'sansiro',     refereeId: 'webb',        weatherId: 'cloudy' },
   { label: 'Partido de Ensue\u00f1o',  category: 'Partido de Ensue\u00f1o', teamA: 'brasilien',            eraA: '1970', teamB: 'argentinien',          eraB: '1986',  stadiumId: 'maracana',    refereeId: 'brych',       weatherId: 'heat' },
@@ -124,6 +124,9 @@ const CLASICOS = [
   { label: 'Final UCL',               category: 'Final UCL',            teamA: 'atletico-madrid',      eraA: '2016', teamB: 'real-madrid',          eraB: '2016',  stadiumId: 'bernabeu',    refereeId: 'collina',     weatherId: 'sunny' },
   { label: 'Final Copa de Europa',     category: 'Final Copa de Europa', teamA: 'fc-liverpool',         eraA: '1984', teamB: 'as-rom',               eraB: '1984',  stadiumId: 'anfield',     refereeId: 'clattenburg', weatherId: 'rain' },
   { label: 'Cuartos UCL',             category: 'Cuartos UCL',          teamA: 'fc-paris-saint-germain', eraA: '2017', teamB: 'fc-barcelona',       eraB: '2017',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'night' },
+  // 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wrexham scenarios virales
+  { label: 'Final UCL Imposible',     category: 'Final UCL',            teamA: 'wrexham',              eraA: '2025', teamB: 'real-madrid',          eraB: '2025',  stadiumId: 'wembley',     refereeId: 'collina',     weatherId: 'night' },
+  { label: 'Premier League Épica',    category: 'Premier League',       teamA: 'wrexham',              eraA: '2025', teamB: 'manchester-united',    eraB: '2025',  stadiumId: 'wembley',     refereeId: 'webb',        weatherId: 'rain' },
 ];
 
 // ── Rivalidades históricas (sync with HISTORIC_MATCHES in app.js) ──────────
@@ -465,7 +468,7 @@ function ffmpeg(args) {
  *
  * All three PNGs are confirmed RGBA, so overlay is clean on the dark bg.
  */
-function createIntroVideo(outFile, durationSec = 5, type = 'ucl') {
+function createIntroVideo(outFile, durationSec = 5, type = 'ucl', introTitle = null, introSub = null) {
   const w = WIDTH, h = HEIGHT;
   const d = durationSec;
 
@@ -509,11 +512,12 @@ function createIntroVideo(outFile, durationSec = 5, type = 'ucl') {
   const INTRO_LABELS = {
     ucl:   { title: 'UEFA Champions League', sub: '2025\/26' },
     wc:    { title: 'FIFA World Cup 2026',   sub: 'USA · Canada · Mexico' },
-    match: { title: 'Cl\u00e1sicos Eternos',         sub: 'golazox.com' },
+    match: { title: '\u00bfQui\u00e9n Ganar\u00e1 Hoy?',      sub: 'golazox.com' },
   };
   const labels    = INTRO_LABELS[type] || INTRO_LABELS.ucl;
-  const titleText = labels.title;
-  const yearText  = labels.sub;
+  // Allow caller to override subtitle (e.g. daily match: kick-off time)
+  const titleText = introTitle || labels.title;
+  const yearText  = introSub   || labels.sub;
 
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
 
@@ -535,7 +539,7 @@ function createIntroVideo(outFile, durationSec = 5, type = 'ucl') {
     ...inputs,
     '-filter_complex', filterParts.join(';'),
     '-map', '[vout]',
-    '-c:v', 'libx264', '-preset', 'fast', '-crf', '15',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
     '-pix_fmt', 'yuv420p',
     '-an',
     '-t', String(d),
@@ -548,7 +552,7 @@ function createIntroVideo(outFile, durationSec = 5, type = 'ucl') {
  * Shows both team badges (from local /img/badges/ cache), team names, eras,
  * a big "VS", the golazox coin + wordmark. Falls back to text-only if badge missing.
  */
-function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 5) {
+function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 5, labelText = null, subLabel = null) {
   const w = WIDTH, h = HEIGHT, d = durationSec;
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
 
@@ -595,7 +599,7 @@ function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 
 
   const texts = [
     // Thin gold separator lines above/below VS
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=28:fontcolor=FFD700:x=(w-text_w)/2:y=640:alpha='${alpha(0.3)}'`,
+    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=28:fontcolor=FFD700:x=(w-text_w)/2:y=600:alpha='${alpha(0.3)}'`,
     `drawtext=fontfile='${fontAlt}':text='VS':fontsize=175:fontcolor=white:x=(w-text_w)/2:y=648:shadowx=0:shadowy=0:shadowcolor=0x00000000:alpha='${alpha(0.4)}'`,
     `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=28:fontcolor=FFD700:x=(w-text_w)/2:y=810:alpha='${alpha(0.3)}'`,
     // Team names in uppercase
@@ -604,7 +608,8 @@ function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 
     `drawtext=fontfile='${fontBold}':text='${esc(nameB.toUpperCase())}':fontsize=52:fontcolor=white:x=835-text_w/2:y=925:alpha='${alpha(0.8)}'`,
     ...(eraB ? [`drawtext=fontfile='${fontBold}':text='${esc(eraB)}':fontsize=44:fontcolor=FFD700:x=835-text_w/2:y=990:alpha='${alpha(1.0)}'`] : []),
     // Label
-    `drawtext=fontfile='${fontBold}':text='CL\u00c1SICOS ETERNOS':fontsize=54:fontcolor=FFD700:x=(w-text_w)/2:y=1120:alpha='${alpha(1.3)}'`,
+    `drawtext=fontfile='${fontBold}':text='${esc(labelText || '\u00bfQui\u00e9n Ganar\u00e1 Hoy?')}':fontsize=54:fontcolor=FFD700:x=(w-text_w)/2:y=1120:alpha='${alpha(1.3)}'`,
+    ...(subLabel ? [`drawtext=fontfile='${fontReg}':text='${esc(subLabel)}':fontsize=42:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=1185:alpha='${alpha(1.5)}'`] : []),
     // URL footer
     `drawtext=fontfile='${fontReg}':text='golazox.com':fontsize=46:fontcolor=0x888888:x=(w-text_w)/2:y=1810:alpha='${alpha(1.8)}'`,
   ];
@@ -618,7 +623,7 @@ function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 
     '-y', ...inputs,
     '-filter_complex', filterParts.join(';'),
     '-map', '[vout]',
-    '-c:v', 'libx264', '-preset', 'fast', '-crf', '15',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
     '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
     outFile,
   ]);
@@ -642,7 +647,10 @@ function createShortClip(fullVideoPath, type = 'ucl') {
   createIntroVideo(introPath, 5, type);
 
   // Get total duration of the full video via ffprobe
-  const ffprobeBin = process.env.FFMPEG_PATH.replace('ffmpeg', 'ffprobe').replace(/ffmpeg\.exe$/, 'ffprobe.exe');
+  const ffprobeBin = path.join(
+    path.dirname(process.env.FFMPEG_PATH),
+    process.platform === 'win32' ? 'ffprobe.exe' : 'ffprobe'
+  );
   let duration = 60;
   if (fs.existsSync(ffprobeBin)) {
     const probe = spawnSync(ffprobeBin, [
@@ -734,7 +742,7 @@ function createCtaCard(outFile, durationSec = 5) {
     '-y', ...inputs,
     '-filter_complex', filterParts.join(';'),
     '-map', '[ctaout]',
-    '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '18',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
     '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
     outFile,
   ]);
@@ -813,7 +821,7 @@ function createHookCard(scoreA, scoreB, teamA, teamB, eraA, eraB, outFile, durat
     '-y', ...inputs,
     '-filter_complex', filterParts.join(';'),
     '-map', '[hkout]',
-    '-c:v', 'libx264', '-preset', 'fast', '-crf', '15',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
     '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
     outFile,
   ]);
@@ -855,7 +863,7 @@ function applyGoalOverlays(videoPath, goalEvents) {
     ffmpeg([
       '-y', '-i', videoPath,
       '-vf', overlayFilters,
-      '-c:v', 'libx264', '-preset', 'fast', '-crf', '16',
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
       '-pix_fmt', 'yuv420p', '-r', '30', '-an',
       outPath,
     ]);
@@ -1083,20 +1091,22 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
     '-y', ...inputs,
     '-filter_complex', filterParts.join(';'),
     '-map', '[rvout]',
-    '-c:v', 'libx264', '-preset', 'fast', '-crf', '15',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
     '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
     outFile,
   ]);
 }
 
-async function postProcess(outPath, type, speedSegments = [], matchMeta = null) {
+async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null) {
   if (!fs.existsSync(MUSIC_FILE)) {
     console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
     return outPath;
   }
 
   const tmp = os.tmpdir();
-  const scaledPath  = path.join(tmp, 'golazox_scaled.mp4');
+  // Use a unique suffix per run so parallel processes don't collide on temp files
+  const uid = `${Date.now()}_${process.pid}`;
+  const scaledPath  = path.join(tmp, `golazox_scaled_${uid}.mp4`);
 
   // Crop the black right margin only when the OS DPI scaling produced a wider-than-1080 capture.
   // At 100% DPI (VPS / most Linux) the capture is already 1080×1920 — no crop needed.
@@ -1105,7 +1115,10 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
   try {
     // Probe actual video width so we never over-crop
     let capturedWidth = 0;
-    const ffprobeBin2 = process.env.FFMPEG_PATH.replace('ffmpeg', 'ffprobe').replace(/ffmpeg\.exe$/, 'ffprobe.exe');
+    const ffprobeBin2 = path.join(
+      path.dirname(process.env.FFMPEG_PATH),
+      process.platform === 'win32' ? 'ffprobe.exe' : 'ffprobe'
+    );
     if (fs.existsSync(ffprobeBin2)) {
       const wProbe = spawnSync(ffprobeBin2, [
         '-v', 'error', '-select_streams', 'v:0',
@@ -1121,21 +1134,23 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       capturedWidth = WIDTH;
     }
     const needsCrop = capturedWidth > WIDTH + 50;
-    // Add 30px dark margin on all 4 sides: scale content to 1020×1813, then pad to 1080×1920
-    const MARGIN  = 30;
-    const innerW  = WIDTH - MARGIN * 2;                          // 1020
-    const innerH  = Math.round(innerW * HEIGHT / WIDTH);         // 1813
-    const padX    = Math.round((WIDTH  - innerW) / 2);           // 30
-    const padY    = Math.round((HEIGHT - innerH) / 2);           // 53
+    // No margin — scale content to full 1080×1920 for maximum sharpness
+    const MARGIN  = 0;
+    const innerW  = WIDTH;                                       // 1080
+    const innerH  = HEIGHT;                                      // 1920
+    const padX    = 0;
+    const padY    = 0;
     const cropRatio = needsCrop ? (WIDTH / capturedWidth).toFixed(4) : null;
     const scaleFilter = needsCrop
-      ? `crop=iw*${cropRatio}:ih:0:0,scale=${innerW}:${innerH}:flags=lanczos`
-      : `scale=${innerW}:${innerH}:flags=lanczos`;
-    const vfFilter = `${scaleFilter},pad=${WIDTH}:${HEIGHT}:${padX}:${padY}:color=0x05080f`;
+      ? `crop=iw*${cropRatio}:ih:0:0,scale=${innerW}:${innerH}:flags=lanczos+accurate_rnd+full_chroma_int`
+      : `scale=${innerW}:${innerH}:flags=lanczos+accurate_rnd+full_chroma_int`;
+    const vfFilter = padX > 0 || padY > 0
+      ? `${scaleFilter},pad=${WIDTH}:${HEIGHT}:${padX}:${padY}:color=0x05080f`
+      : scaleFilter;
     console.log(`[post] capturedWidth=${capturedWidth}, needsCrop=${needsCrop}, cropRatio=${cropRatio}, margin=${MARGIN}px`);
     ffmpeg(['-y', '-i', outPath,
       '-vf', vfFilter,
-      '-c:v', 'libx264', '-preset', 'fast', '-crf', '16', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
       scaledPath,
     ]);
     fs.renameSync(scaledPath, outPath);
@@ -1144,12 +1159,12 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     console.warn('[post] Upscale failed, using original:', scaleErr.message.slice(0, 150));
   }
 
-  const introPath   = path.join(tmp, 'golazox_intro.mp4');
-  const hookPath    = path.join(tmp, 'golazox_hook.mp4');
-  const speededPath = path.join(tmp, 'golazox_speeded.mp4');
-  const concatPath  = path.join(tmp, 'golazox_concat.mp4');
-  const ctaPath     = path.join(tmp, 'golazox_cta.mp4');
-  const listFile    = path.join(tmp, 'golazox_list.txt');
+  const introPath   = path.join(tmp, `golazox_intro_${uid}.mp4`);
+  const hookPath    = path.join(tmp, `golazox_hook_${uid}.mp4`);
+  const speededPath = path.join(tmp, `golazox_speeded_${uid}.mp4`);
+  const concatPath  = path.join(tmp, `golazox_concat_${uid}.mp4`);
+  const ctaPath     = path.join(tmp, `golazox_cta_${uid}.mp4`);
+  const listFile    = path.join(tmp, `golazox_list_${uid}.txt`);
 
   // Apply 3x speedup on simulation waiting segments before concat
   let mainPath = outPath;
@@ -1167,7 +1182,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
           `[0:v]trim=${e},setpts=PTS-STARTPTS[v3];` +
           `[v1][v2][v3]concat=n=3:v=1:a=0[outv]`,
         '-map', '[outv]',
-        '-c:v', 'libx264', '-preset', 'fast', '-crf', '16',
+        '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
         '-pix_fmt', 'yuv420p', '-r', '30', '-an',
         speededPath,
       ]);
@@ -1194,7 +1209,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     } else {
       console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
       try {
-        createMatchIntroVideo(matchMeta.teamA, matchMeta.eraA || '', matchMeta.teamB, matchMeta.eraB || '', introPath);
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 5, introTitle, introSub);
       } catch (e) {
         console.warn('[post] Match intro failed:', e.message.slice(0, 200));
       }
@@ -1212,7 +1227,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
       try {
         ffmpeg([
           '-y', '-i', preRenderedIntro,
-          '-c:v', 'libx264', '-preset', 'fast', '-crf', '16',
+          '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
           '-pix_fmt', 'yuv420p', '-r', '30', '-an',
           introPath,
         ]);
@@ -1223,7 +1238,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     } else {
       console.log(`[post] Generating ${type} intro from scratch...`);
       try {
-        createIntroVideo(introPath, 5, type);
+        createIntroVideo(introPath, 5, type, introTitle, introSub);
       } catch (e) {
         console.warn('[post] Intro creation failed:', e.message.slice(0, 200), '— skipping intro');
       }
@@ -1235,7 +1250,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
   // Build CTA card
   let hasCta = false;
   try {
-    createCtaCard(ctaPath, 4);
+    createCtaCard(ctaPath, 7);
     hasCta = fs.existsSync(ctaPath);
     if (hasCta) console.log('[post] CTA card created');
   } catch (e) {
@@ -1314,17 +1329,8 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null) 
     }
   }
 
-  // Cleanup temp files
-  [hookPath, introPath, concatPath, ctaPath, listFile].forEach(f => { try { fs.unlinkSync(f); } catch {} });
-
-  // Short clip generation disabled — use full video
-  if (false) {
-    try {
-      createShortClip(outPath, type);
-    } catch (e) {
-      console.warn('[post] Short clip failed:', e.message.slice(0, 150));
-    }
-  }
+  // Cleanup temp files (including finalPath which lives in videos/ dir)
+  [hookPath, introPath, concatPath, ctaPath, listFile, finalPath, speededPath].forEach(f => { try { fs.unlinkSync(f); } catch {} });
 
   return outPath;
 }
@@ -1401,10 +1407,10 @@ async function generateVideo(opts = {}) {
     // DPR=3 → physical 1080×1920 capture. videoFrame at 1080×1920 means no scaling
     // before encode — full native quality. postProcess then crop+scale is only 1.38×.
     videoFrame: { width: 1080, height: 1920 },
-    videoCrf: 18,
+    videoCrf: 14,
     videoCodec: 'libx264',
-    videoPreset: 'fast',
-    videoBitrate: 6000,
+    videoPreset: 'medium',
+    videoBitrate: 10000,
   });
 
   let videoTitle = 'GolazOX Simulación';
@@ -1437,7 +1443,7 @@ async function generateVideo(opts = {}) {
   }
 
   // Post-process: add intro card + background music (+ optional speedup)
-  await postProcess(outPath, type, speedSegments, matchMeta);
+  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub);
 
   console.log(`[video] Done → ${outPath}`);
   return { path: outPath, title: videoTitle, matchMeta };
@@ -1459,6 +1465,8 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       stadiumId: opts.stadiumId || null,
       refereeId: opts.refereeId || null,
       weatherId: opts.weatherId || null,
+      introEraA: opts.introEraA !== undefined ? opts.introEraA : (opts.eraA || ''),
+      introEraB: opts.introEraB !== undefined ? opts.introEraB : (opts.eraB || ''),
     };
   } else {
     // Pick: no-repeat when flagged, otherwise random
@@ -1493,10 +1501,21 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   const eraPartA = clasico.eraA ? `:${clasico.eraA}` : '';
   const eraPartB = clasico.eraB ? `:${clasico.eraB}` : '';
   const url = `${BASE_URL}/?tab=match&a=${encodeURIComponent(clasico.teamA + eraPartA)}&b=${encodeURIComponent(clasico.teamB + eraPartB)}`;
+  // Clear any persisted game state so no auto-restored match runs in the background
+  await page.evaluateOnNewDocument(() => {
+    try { localStorage.removeItem('golazox_state'); } catch {}
+    try { sessionStorage.clear(); } catch {}
+  });
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
   await wait(2000); // give _deepLinkRestore() time to populate inputs
 
   await recorder.start(outPath);
+
+  // Suppress event-overlay immediately — prevent any stale events showing over lineups
+  await page.evaluate(() => {
+    const ov = document.getElementById('event-overlay');
+    if (ov) ov.style.visibility = 'hidden';
+  });
 
   // ── Goal event tracking ───────────────────────────────────────────────────
   const recStartMs = Date.now();
@@ -1523,7 +1542,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
         const cropF = needsCrop ? `crop=iw*${(WIDTH / CW).toFixed(4)}:ih:0:0,` : '';
         ffmpeg(['-y', '-i', outPath,
           '-vf', `${cropF}scale=${innerW}:${innerH}:flags=lanczos,pad=${WIDTH}:${HEIGHT}:30:${Math.round((HEIGHT - innerH) / 2)}:color=0x05080f`,
-          '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
+          '-c:v', 'libx264', '-preset', 'medium', '-crf', '14', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
           prevScaled,
         ]);
         fs.renameSync(prevScaled, outPath);
@@ -1566,10 +1585,12 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   );
   console.log('[match] Lineup A loaded');
   // Smooth scroll to show the full lineup A (label is visible above it)
+  await page.evaluate(() => { document.getElementById('col-b').style.visibility = 'hidden'; });
   await page.evaluate(() => document.getElementById('col-a').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(400);
   await page.evaluate(() => document.getElementById('preview-A').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(2800);  // viewers read the lineup
+  await page.evaluate(() => { document.getElementById('col-b').style.visibility = ''; });
 
   // ── STEP 2: Click lookup B — show team B lineup ──
   console.log(`[match] Looking up team B: ${clasico.teamB} ${clasico.eraB}`);
@@ -1583,10 +1604,12 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     { timeout: 30000 },
   );
   console.log('[match] Lineup B loaded');
+  await page.evaluate(() => { document.getElementById('col-a').style.visibility = 'hidden'; });
   await page.evaluate(() => document.getElementById('col-b').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(400);
   await page.evaluate(() => document.getElementById('preview-B').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(2800);  // viewers read the lineup
+  await page.evaluate(() => { document.getElementById('col-a').style.visibility = ''; });
 
   // ── STEP 3: Stadium picker — scroll to section, select card, then scroll picker row to show it ──
   if (clasico.stadiumId) {
@@ -1659,9 +1682,15 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     { timeout: 15000 },
   );
 
-  // Show prematch for 1.5s (both lineups side by side), then start immediately
+  // Hide prematch screen — use display:none so it collapses and live-viewer rises up
   console.log('[match] Pre-match screen — starting simulation directly');
-  await wait(1500);
+  await page.evaluate(() => {
+    const s = document.getElementById('prematch-screen');
+    if (s) s.style.display = 'none';
+    // Also collapse the input panel so live-viewer takes the full viewport
+    const ip = document.querySelector('.input-panel');
+    if (ip) ip.style.display = 'none';
+  });
 
   // Select normal speed and start
   await page.evaluate(() => {
@@ -1675,6 +1704,20 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     () => !document.getElementById('live-viewer')?.classList.contains('hidden'),
     { timeout: 5000 },
   );
+
+  // Scroll to live viewer — now that input-panel is hidden it should be near top
+  await page.evaluate(() => {
+    const lv = document.getElementById('live-viewer');
+    if (lv) lv.scrollIntoView({ block: 'start', behavior: 'instant' });
+  });
+  await wait(300);
+
+  // Restore event-overlay now that the match is live — hide kick-off blast for 3.5s then show
+  await page.evaluate(() => {
+    const ov = document.getElementById('event-overlay');
+    if (ov) ov.style.visibility = 'hidden';
+    setTimeout(() => { if (ov) ov.style.visibility = ''; }, 3500);
+  });
 
   // Install goal tracker: MutationObserver watches score elements for changes
   await page.evaluate(() => {
@@ -2415,4 +2458,4 @@ function buildUploadMeta(videoTitle, matchMeta, type) {
   return { title, description, tags };
 }
 
-module.exports = { generateVideo, buildUploadMeta };
+module.exports = { generateVideo, buildUploadMeta, createMatchIntroVideo, createCtaCard };

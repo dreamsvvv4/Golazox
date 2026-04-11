@@ -3065,7 +3065,7 @@ function _renderPicker(side) {
       `<img class="tp-chosen-badge" src="${escHtml(badge)}" alt="">` +
       `<div class="tp-chosen-info">` +
         `<span class="tp-chosen-name">${escHtml(displayName)}</span>` +
-        (chosenEra ? `<span class="tp-chosen-era">${escHtml(chosenEra)}</span>` : '') +
+        (chosenEra ? `<span class="tp-chosen-era">${escHtml(displayEra(chosenEra))}</span>` : '') +
         `<span class="tp-chosen-group">${escHtml(meta?.name || '')}</span>` +
       `</div>` +
       `<button class="tp-change-btn" data-pa="reset" title="${t('tp-change-title')}">&#10005;</button>` +
@@ -3982,9 +3982,9 @@ function renderResult(data, payload) {
 
   // ── Score poster ───────────────────────────────────────
   document.getElementById('poster-name-a').textContent = payload.teamA;
-  document.getElementById('poster-era-a').textContent  = payload.eraA || '';
+  document.getElementById('poster-era-a').textContent  = displayEra(payload.eraA);
   document.getElementById('poster-name-b').textContent = payload.teamB;
-  document.getElementById('poster-era-b').textContent  = payload.eraB || '';
+  document.getElementById('poster-era-b').textContent  = displayEra(payload.eraB);
   animateScore(
     0, isPenMode ? (finalScore.penalties?.scoreA ?? 0) : finalScore.teamA,
     0, isPenMode ? (finalScore.penalties?.scoreB ?? 0) : finalScore.teamB
@@ -6613,8 +6613,8 @@ function playLiveMatch(data, payload, tickMs = 300) {
   document.getElementById('live-team-b').textContent  = payload.teamB;
   const liveEraA = document.getElementById('live-era-a');
   const liveEraB = document.getElementById('live-era-b');
-  if (liveEraA) { liveEraA.textContent = payload.eraA || ''; liveEraA.style.display = payload.eraA ? '' : 'none'; }
-  if (liveEraB) { liveEraB.textContent = payload.eraB || ''; liveEraB.style.display = payload.eraB ? '' : 'none'; }
+  if (liveEraA) { liveEraA.textContent = displayEra(payload.eraA); liveEraA.style.display = payload.eraA ? '' : 'none'; }
+  if (liveEraB) { liveEraB.textContent = displayEra(payload.eraB); liveEraB.style.display = payload.eraB ? '' : 'none'; }
   const badgeAEl = document.getElementById('live-badge-a');
   const badgeBEl = document.getElementById('live-badge-b');
   if (badgeAEl) { badgeAEl.src = data.badgeA || ''; badgeAEl.style.display = data.badgeA ? '' : 'none'; }
@@ -7527,6 +7527,13 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+// Converts a season key to a display label: '2025' → '25/26', historical years unchanged
+function displayEra(era) {
+  if (!era) return '';
+  const y = parseInt(era, 10);
+  if (!isNaN(y) && y >= 2010) return String(y).slice(2) + '/' + String(y + 1).slice(2);
+  return era;
 }
 
 // ════════════════════════════════════════════════════════════════════════════
