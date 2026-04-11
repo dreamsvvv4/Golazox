@@ -1,7 +1,76 @@
 {
   "slug": "al-qadsiah",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/al-qadsiah.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Bruno Souza",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Abdulelah Al-Amri",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Lasha Dvali",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mostafa Fathi",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Mohammed Al-Musawi",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Yacine Benzia",
+          "position": "RM",
+          "rating": 77
+        },
+        {
+          "name": "Nabil Bentaleb",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Walid Azaro",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Aboubakary Koita",
+          "position": "LM",
+          "rating": 75
+        },
+        {
+          "name": "Mostafa Mohamed",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Haythem Jouini",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 76,
+        "defense": 75,
+        "goalkeeping": 73
+      },
+      "source": "Al-Qadsiah — Saudi Pro League 2025",
+      "teamLabel": "Al-Qadsiah (2025)",
+      "badgeUrl": "/img/badges/al-qadsiah.png"
+    }
+  },
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Qadsiah",
   "nameEs": "Al-Qadsiah",

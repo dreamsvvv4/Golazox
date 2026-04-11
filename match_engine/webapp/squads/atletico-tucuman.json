@@ -1,0 +1,79 @@
+{
+  "slug": "atletico-tucuman",
+  "name": "Atlético Tucumán",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Atlético Tucumán",
+  "nameEs": "Atlético Tucumán",
+  "badgeLocalPath": "/img/badges/atletico-tucuman.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tomás Marchiori",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Cristian Erbes",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Marcos Miers",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Sebastián Medina",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Guillermo Acosta",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Ramiro Carrera",
+          "position": "RM",
+          "rating": 77
+        },
+        {
+          "name": "Fernando Juárez Jr.",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Aliendro Jr.",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Leandro Díaz Jr.",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Cristian Menéndez",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Guillermo Ortiz",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Atlético Tucumán — Argentine Primera 2025",
+      "teamLabel": "Atlético Tucumán (2025)",
+      "badgeUrl": "/img/badges/atletico-tucuman.png"
+    }
+  }
+}

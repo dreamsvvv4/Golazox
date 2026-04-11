@@ -1,0 +1,79 @@
+{
+  "slug": "al-khaleej",
+  "name": "Al-Khaleej",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Khaleej",
+  "nameEs": "Al-Khaleej",
+  "badgeLocalPath": "/img/badges/al-khaleej.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ahmed Al-Meshal",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Rayan Al-Ruwaili",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Khaled",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Abdullah Al-Bukairi",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Nasser Al-Obaid",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Faisal Al-Asiri",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Waleed Al-Bargi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sultan Al-Buqami",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Bassam Al-Ruwaili",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Yazeed Al-Safrani",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mohammed Al-Omairi",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Al-Khaleej — Saudi Pro League 2025",
+      "teamLabel": "Al-Khaleej (2025)",
+      "badgeUrl": "/img/badges/al-khaleej.png"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "defensa-y-justicia",
+  "name": "Defensa y Justicia",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Defensa y Justicia",
+  "nameEs": "Defensa y Justicia",
+  "badgeLocalPath": "/img/badges/defensa-y-justicia.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Leo La Tona",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Marcelo Benítez",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Francisco Gerometta",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Alejandro Gómez",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Emanuel Britez",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Rubén Sosa",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Brian Barrios",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Eric Ramírez",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Gustavo Fernández",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Maximiliano Ojeda",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Nicolás Fernández",
+          "position": "LW",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Defensa y Justicia — Argentine Primera 2025",
+      "teamLabel": "Defensa y Justicia (2025)",
+      "badgeUrl": "/img/badges/defensa-y-justicia.png"
+    }
+  }
+}

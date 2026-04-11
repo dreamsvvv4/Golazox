@@ -1,6 +1,76 @@
 {
   "slug": "estudiantes",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Leandro Chichizola",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Gastón Benedetti",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Emanuel Más",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nehuén Paz",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jorge Morel",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Mauro Méndez",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Zaid Romero",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Javier Correa",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Marcelino Moreno",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Marco Di Césare",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Leandro Díaz",
+          "position": "ST",
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 76
+      },
+      "source": "Estudiantes — Argentine Primera 2025",
+      "teamLabel": "Estudiantes (2025)",
+      "badgeUrl": "/img/badges/estudiantes.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/estudiantes.png",
   "group": "🌎 América del Sur",
   "nameEn": "Estudiantes",

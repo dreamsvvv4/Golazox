@@ -45,5 +45,50 @@ module.exports = {
       log_date_format: 'YYYY-MM-DD HH:mm:ss',
       merge_logs: true,
     },
+
+    // ── Social media auto-poster (TikTok) ───────────────────────────────────
+    // Runs daily at 12:00 and 20:00 — generates a video and posts to TikTok.
+    // Requires: TIKTOK_ACCESS_TOKEN + TIKTOK_OPEN_ID env vars.
+    // Test first with SOCIAL_DRY_RUN=1 (generates video but skips posting).
+    {
+      name:         'golazox-social',
+      script:       'social_scheduler.js',
+      cron_restart: '0 12,20 * * *',   // 12:00 and 20:00 UTC daily
+      autorestart:  false,             // don't restart on exit — wait for next cron
+      watch:        false,
+      max_memory_restart: '1G',        // Puppeteer needs more RAM
+      env_production: {
+        NODE_ENV:           'production',
+        GOLAZOX_URL:        'https://golazox.com',
+        SOCIAL_DRY_RUN:     '1',       // ← change to '0' once TikTok tokens are set
+        // TIKTOK_ACCESS_TOKEN: set in Hostinger panel
+        // TIKTOK_OPEN_ID:      set in Hostinger panel
+      },
+      out_file:   './logs/social.log',
+      error_file: './logs/social-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+    },
+
+    // ── Daily video generator + YouTube uploader ────────────────────────────
+    // Runs once at 07:00 UTC (09:00 Spain) — picks today's best match,
+    // generates a 60-second Shorts video and uploads it to YouTube.
+    // Requires: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN
+    // Test manually: node daily_matches.js --dry-run
+    {
+      name:         'golazox-daily',
+      script:       'daily_matches.js',
+      cron_restart: '0 7 * * *',   // 07:00 UTC = 09:00 Spain
+      autorestart:  false,         // run once — wait for next cron
+      watch:        false,
+      max_memory_restart: '1G',    // Puppeteer needs headroom
+      env_production: {
+        NODE_ENV:    'production',
+        GOLAZOX_URL: 'https://golazox.com',
+        AUTO_UPLOAD: '1',          // upload to YouTube after generation
+      },
+      out_file:   './logs/daily.log',
+      error_file: './logs/daily-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+    },
   ],
 };

@@ -1,6 +1,76 @@
 {
   "slug": "boca-juniors",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Sergio Romero",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Luis Advíncula",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Marcos Rojo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Cristian Lema",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Frank Fabra",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Juan Ramírez",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Pol Fernández",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Brian Aguirre",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Exequiel Zeballos",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Lucas Janson",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Edinson Cavani",
+          "position": "ST",
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Boca Juniors — Argentine Primera 2025",
+      "teamLabel": "Boca Juniors (2025)",
+      "badgeUrl": "/img/badges/boca-juniors.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/boca-juniors.png",
   "group": "🌎 América del Sur",
   "nameEs": "Boca Juniors",

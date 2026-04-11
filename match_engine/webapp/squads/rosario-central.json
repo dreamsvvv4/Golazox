@@ -1,0 +1,79 @@
+{
+  "slug": "rosario-central",
+  "name": "Rosario Central",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Rosario Central",
+  "nameEs": "Rosario Central",
+  "badgeLocalPath": "/img/badges/rosario-central.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Gaspar Servio",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Facundo Almada",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Damián Cruz",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Facundo Mallo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Alexis Delgado",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Gino Infantino",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Alan Marinelli",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Luca Martínez Dupuy",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Jaminton Campaz",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Alejo Véliz",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Cristian González",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "Rosario Central — Argentine Primera 2025",
+      "teamLabel": "Rosario Central (2025)",
+      "badgeUrl": "/img/badges/rosario-central.png"
+    }
+  }
+}

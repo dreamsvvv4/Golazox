@@ -1,6 +1,76 @@
 {
   "slug": "al-nassr",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Bento",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Otávio",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Aymeric Laporte",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Sultan Al-Ghannam",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Alex Telles",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Marcelo Brozović",
+          "position": "DM",
+          "rating": 83
+        },
+        {
+          "name": "Seko Fofana",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Anderson Talisca",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Sadio Mané",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Abdullah Al-Hamdan",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "position": "ST",
+          "rating": 87
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 83,
+        "defense": 80,
+        "goalkeeping": 82
+      },
+      "source": "Al-Nassr — Saudi Pro League 2025",
+      "teamLabel": "Al-Nassr (2025)",
+      "badgeUrl": "/img/badges/al-nassr.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-nassr.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEs": "Al-Nassr",

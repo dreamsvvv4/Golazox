@@ -1,0 +1,79 @@
+{
+  "slug": "atletico-goianiense",
+  "name": "Atlético Goianiense",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Atlético Goianiense",
+  "nameEs": "Atlético Goianiense",
+  "badgeLocalPath": "/img/badges/atletico-goianiense.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ronaldo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Maguinho",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Wanderson",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Índio",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jefferson",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Janderson",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Gabriel Baralhas",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Marlon Freitas Jr.",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Arthur",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Luiz Fernando",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Shaylon",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Atlético Goianiense — Brasileirão 2025",
+      "teamLabel": "Atlético Goianiense (2025)",
+      "badgeUrl": "/img/badges/atletico-goianiense.png"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "al-taawoun",
+  "name": "Al-Taawoun",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Taawoun",
+  "nameEs": "Al-Taawoun",
+  "badgeLocalPath": "/img/badges/al-taawoun.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mohammed Al-Deayea Jr.",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Sultan Al-Bishi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Alhussain",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ramadan Al-Ruwais",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Abdullah Al-Khaibari",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Abdulrahman Al-Khulaif",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Bassim Al-Suwat",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nawaf Al-Boushal",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Khalid Al-Rashidi",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Fawaz Al-Rashidi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Luís Henrique Tomás",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Al-Taawoun — Saudi Pro League 2025",
+      "teamLabel": "Al-Taawoun (2025)",
+      "badgeUrl": "/img/badges/al-taawoun.png"
+    }
+  }
+}

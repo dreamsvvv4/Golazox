@@ -1,6 +1,76 @@
 {
   "slug": "corinthians",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Hugo Souza",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Fagner",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Gil",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Cacá",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Hugo",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Raniele",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Breno Bidon",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Pedro Henrique",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Rodrigo Garro",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Ángel Romero",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Yuri Alberto",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Corinthians — Brasileirão 2025",
+      "teamLabel": "Corinthians (2025)",
+      "badgeUrl": "/img/badges/corinthians.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/corinthians.png",
   "group": "🌎 América del Sur",
   "nameEn": "Corinthians",

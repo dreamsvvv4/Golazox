@@ -1,0 +1,79 @@
+{
+  "slug": "banfield",
+  "name": "CA Banfield",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Banfield",
+  "nameEs": "Banfield",
+  "badgeLocalPath": "/img/badges/banfield.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lucas Lazzaretti",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Juan Cruz Cruz",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Emmanuel Ojeda",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Alejandro Cabrera",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Francisco Grahl",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Giuliano Galoppo",
+          "position": "RM",
+          "rating": 76
+        },
+        {
+          "name": "Alejandro Camargo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pablo Troyansky",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mauricio Cuero",
+          "position": "LM",
+          "rating": 75
+        },
+        {
+          "name": "Jesús Dátolo Jr.",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Nicolás Bertolo",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 75,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "CA Banfield — Argentine Primera 2025",
+      "teamLabel": "Banfield (2025)",
+      "badgeUrl": "/img/badges/banfield.png"
+    }
+  }
+}

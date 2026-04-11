@@ -1,6 +1,76 @@
 {
   "slug": "al-shabab",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Fawaz Al-Qarni",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Nasser Al-Dawsari",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Badr Benoun",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Hamdan Al-Shammari",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Guilherme Arana",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Luciano Vietto",
+          "position": "RM",
+          "rating": 77
+        },
+        {
+          "name": "Turki Al-Anazi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Hattan Bahabri",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Khaled Al-Ghannam",
+          "position": "LM",
+          "rating": 76
+        },
+        {
+          "name": "Saad Al-Sheeb",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Muhannad Asiri",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 74
+      },
+      "source": "Al-Shabab — Saudi Pro League 2025",
+      "teamLabel": "Al-Shabab (2025)",
+      "badgeUrl": "/img/badges/al-shabab.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-shabab.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Shabab",

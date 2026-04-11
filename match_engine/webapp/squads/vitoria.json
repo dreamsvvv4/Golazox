@@ -1,0 +1,79 @@
+{
+  "slug": "vitoria",
+  "name": "EC Vitória",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Vitória",
+  "nameEs": "Vitória",
+  "badgeLocalPath": "/img/badges/vitoria.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Lucas Arcanjo",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Raul Cáceres",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Camutanga",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Wagner Leonardo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "PK",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Léo Naldi",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Willian Oliveira",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Osvaldo",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Matheusinho",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Everaldo",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Janderson",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 76
+      },
+      "source": "EC Vitória — Brasileirão Serie A 2026",
+      "teamLabel": "Vitória (2026)",
+      "badgeUrl": "/img/badges/vitoria.png"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "criciuma",
+  "name": "Criciúma EC",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Criciúma",
+  "nameEs": "Criciúma",
+  "badgeLocalPath": "/img/badges/criciuma.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gustavo",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Wilker",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Rodrigo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Wanderson",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Pará",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Marcelo Hermes",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Barreto",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Arthur Caíke",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Fellipe Mateus",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Allano",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ronald",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Criciúma EC — Brasileirão 2025",
+      "teamLabel": "Criciúma (2025)",
+      "badgeUrl": "/img/badges/criciuma.png"
+    }
+  }
+}

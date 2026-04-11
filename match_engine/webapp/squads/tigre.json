@@ -1,0 +1,79 @@
+{
+  "slug": "tigre",
+  "name": "Club Atlético Tigre",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Tigre",
+  "nameEs": "Tigre",
+  "badgeLocalPath": "/img/badges/tigre.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Matías Mansilla",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Sebastián Prediger",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Federico Milo",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Juan Pablo Freytes",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Diego Sosa",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Tomás Pozzo",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Federico Ávalos",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Matías Pérez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Facundo Colidio",
+          "position": "LM",
+          "rating": 76
+        },
+        {
+          "name": "Diego Morales",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Sebastián Palacios",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Tigre — Argentine Primera 2025",
+      "teamLabel": "Tigre (2025)",
+      "badgeUrl": "/img/badges/tigre.png"
+    }
+  }
+}

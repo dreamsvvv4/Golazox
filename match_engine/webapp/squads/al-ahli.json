@@ -1,6 +1,76 @@
 {
   "slug": "al-ahli",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Édouard Mendy",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Siyabonga Ngezana",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Merih Demiral",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Roger Ibañez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yasser Al-Shahrani",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Ismaël Bennacer",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Gabri Veiga",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Riyad Mahrez",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Frank Kessié",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Allan Saint-Maximin",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Roberto Firmino",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 81,
+        "defense": 80,
+        "goalkeeping": 81
+      },
+      "source": "Al-Ahli — Saudi Pro League 2025",
+      "teamLabel": "Al-Ahli (2025)",
+      "badgeUrl": "/img/badges/al-ahli.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-ahli.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Ahli",

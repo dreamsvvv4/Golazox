@@ -1,6 +1,76 @@
 {
   "slug": "san-lorenzo",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ezequiel Unsain",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Juan Giménez",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Gastón Campi",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Federico Gattoni",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Nahuel Barrios",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Alexis Cuello",
+          "position": "RM",
+          "rating": 75
+        },
+        {
+          "name": "Diego Valdés",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fernando Márquez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Mariano Ojeda",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Adam Bareiro",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Iván Leguizamón",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "San Lorenzo — Argentine Primera 2025",
+      "teamLabel": "San Lorenzo (2025)",
+      "badgeUrl": "/img/badges/san-lorenzo.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/san-lorenzo.png",
   "group": "🌎 América del Sur",
   "nameEs": "San Lorenzo",

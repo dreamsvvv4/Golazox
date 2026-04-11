@@ -1,0 +1,79 @@
+{
+  "slug": "cuiaba",
+  "name": "Cuiabá EC",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Cuiabá",
+  "nameEs": "Cuiabá",
+  "badgeLocalPath": "/img/badges/cuiaba.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Walter",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Héctor Bustamante",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Marllon",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Francisco",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Rikelmi",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Clayson",
+          "position": "RM",
+          "rating": 75
+        },
+        {
+          "name": "Randon",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Rafael Gava",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jonathan Cafu",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Deyverson",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Isidro Pitta",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 74,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "Cuiabá EC — Brasileirão 2025",
+      "teamLabel": "Cuiabá (2025)",
+      "badgeUrl": "/img/badges/cuiaba.png"
+    }
+  }
+}

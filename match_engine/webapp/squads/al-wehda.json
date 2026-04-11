@@ -1,0 +1,78 @@
+{
+  "slug": "al-wehda",
+  "name": "Al-Wehda",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Wehda",
+  "nameEs": "Al-Wehda",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Essam Al-Subai",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Bandar Al-Hayyan",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Moustapha Wagué",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Hamad Al-Hamad",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Firas Jumah",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Badr Al-Khelaifi",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Ibrahim Al-Sulami",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Youssef El-Arabi",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Mohammed Fouzair",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Adam Ounas",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Abdulkarim Al-Qahtani",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 74,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Al-Wehda — Saudi Pro League 2025",
+      "teamLabel": "Al-Wehda (2025)",
+      "badgeUrl": "/img/badges/al-wehda.png"
+    }
+  }
+}

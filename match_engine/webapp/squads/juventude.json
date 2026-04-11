@@ -1,0 +1,79 @@
+{
+  "slug": "juventude",
+  "name": "EC Juventude",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Juventude",
+  "nameEs": "Juventude",
+  "badgeLocalPath": "/img/badges/_placeholder.svg",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gabriel Vasconcellos",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Soares",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Danilo Boza",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Zé Marcos",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Alan Ruschel",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Diego Gonçalves",
+          "position": "RM",
+          "rating": 76
+        },
+        {
+          "name": "Jadson",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Caíque Osório",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Lucas Barbosa",
+          "position": "LM",
+          "rating": 75
+        },
+        {
+          "name": "Erick Farias",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Gabriel Inocêncio",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "EC Juventude — Brasileirão 2025",
+      "teamLabel": "Juventude (2025)",
+      "badgeUrl": "/img/badges/_placeholder.svg"
+    }
+  }
+}

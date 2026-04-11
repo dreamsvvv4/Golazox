@@ -1,6 +1,76 @@
 {
   "slug": "river-plate",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Franco Armani",
+          "position": "GK",
+          "rating": 85
+        },
+        {
+          "name": "Gonzalo Montiel",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Paulo Díaz",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Germán Pezzella",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Enzo Díaz",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Santiago Simón",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Aliendro",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Nicolás Barco",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Ignacio Fernández",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Pablo Solari",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Borja",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 84
+      },
+      "source": "River Plate — Argentine Primera 2025",
+      "teamLabel": "River Plate (2025)",
+      "badgeUrl": "/img/badges/river-plate.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/river-plate.png",
   "group": "🌎 América del Sur",
   "nameEs": "River Plate",

@@ -963,47 +963,58 @@ const HISTORIC_MATCHES = [
   // ── Selecciones: finales y sueños ──────────────────────────
   { label: '¿Pelé o Maradona?',              en: 'Pelé vs Maradona',
     desc: 'Brasil \'70 · Argentina \'86',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'brasilien',                  era: '1970' },
     b: { slug: 'argentinien',                era: '1986' } },
   { label: 'La Tragedia del 82',             en: 'The Tragedy of \'82',
     desc: 'Brasil \'82 · Alemania \'82',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'brasilien',                  era: '1982' },
     b: { slug: 'deutschland',                era: '1982' } },
   { label: 'Final EE.UU. 1994',             en: 'USA \'94 World Cup Final',
     desc: 'Brasil \'94 · Italia \'94',
+    year: '1994', round: 'Final', competition: 'Mundial EE.UU. 1994',
     a: { slug: 'brasilien',                  era: '1994' },
     b: { slug: 'italien',                    era: '1994' } },
   { label: 'Beckenbauer vs Cruyff',          en: 'Beckenbauer vs Cruyff',
     desc: 'Alemania \'74 · Holanda \'74',
+    year: '1974', round: 'Final', competition: 'Mundial Alemania 1974',
     a: { slug: 'deutschland',                era: '1974' },
     b: { slug: 'niederlande',                era: '1974' } },
   { label: 'Final Sudáfrica 2010',           en: '2010 World Cup Final',
     desc: 'España \'10 · Holanda \'10',
+    year: '2010', round: 'Final', competition: 'Mundial Sudáfrica 2010',
     a: { slug: 'spanien',                    era: '2010' },
     b: { slug: 'niederlande',                era: '2010' } },
   { label: 'El Séptimo Cielo',               en: 'The Seventh Heaven',
     desc: 'Alemania \'14 · Argentina \'14',
+    year: '2014', round: 'Final', competition: 'Mundial Brasil 2014',
     a: { slug: 'deutschland',                era: '2014' },
     b: { slug: 'argentinien',                era: '2014' } },
   { label: 'Francia 98 vs Brasil 98',        en: 'France \'98 vs Brazil \'98',
     desc: 'Francia \'98 · Brasil \'98',
+    year: '1998', round: 'Final', competition: 'Mundial Francia 1998',
     a: { slug: 'frankreich',                 era: '1998' },
     b: { slug: 'brasilien',                  era: '1998' } },
   // ── El Clásico y sus versiones míticas ────────────────────
   { label: 'Galácticos vs Los Invencibles',  en: 'Galacticos vs The Invincibles',
     desc: 'Real Madrid \'02 · Arsenal \'04',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'real-madrid',                era: '2002' },
     b: { slug: 'fc-arsenal',                 era: '2004' } },
   { label: 'El Treble vs Los Invencibles',   en: 'Treble vs The Invincibles',
     desc: 'Manchester United \'99 · Arsenal \'04',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'manchester-united',          era: '1999' },
     b: { slug: 'fc-arsenal',                 era: '2004' } },
   { label: 'MSN vs BBC',                     en: 'MSN vs BBC',
     desc: 'Barcelona \'15 · Real Madrid \'15',
+    competition: 'El Clásico', round: 'El Gran Debate',
     a: { slug: 'fc-barcelona',               era: '2015' },
     b: { slug: 'real-madrid',                era: '2015' } },
   { label: 'Mou vs Pep: El Clásico',         en: 'Mourinho vs Guardiola',
     desc: 'Real Madrid \'12 · Barcelona \'11',
+    competition: 'El Clásico', round: 'Partido de Ensueño',
     a: { slug: 'real-madrid',                era: '2012' },
     b: { slug: 'fc-barcelona',               era: '2011' } },
   { label: 'Di Stéfano vs el Dream Team',    en: 'Di Stéfano vs the Dream Team',
@@ -1013,22 +1024,27 @@ const HISTORIC_MATCHES = [
   // ── Duelos legendarios europeos ───────────────────────────
   { label: 'Maradona vs Messi',              en: 'Maradona vs Messi',
     desc: 'Nápoles \'88 · Barcelona \'09',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'ssc-neapel',                 era: '1988' },
     b: { slug: 'fc-barcelona',               era: '2009' } },
   { label: 'La Final de Múnich 99',          en: 'Munich \'99 Final',
     desc: 'Manchester United \'99 · Bayern \'99',
+    year: '1999', round: 'Final', competition: 'Champions League 1998-99',
     a: { slug: 'manchester-united',          era: '1999' },
     b: { slug: 'fc-bayern-munchen',          era: '1999' } },
   { label: 'El Milagro de Estambul',         en: 'The Istanbul Miracle',
     desc: 'AC Milán \'03 · Liverpool \'05',
+    year: '2005', round: 'Final', competition: 'Champions League 2004-05',
     a: { slug: 'ac-mailand',                 era: '2003' },
     b: { slug: 'fc-liverpool',               era: '2005' } },
   { label: 'La Semifinal de Milán',          en: 'The Milan Semi \'10',
     desc: 'Inter \'10 · Barcelona \'10',
+    year: '2010', round: 'Semifinal', competition: 'Champions League 2009-10',
     a: { slug: 'inter-mailand',              era: '2010' },
     b: { slug: 'fc-barcelona',              era: '2010' } },
   { label: 'La Final de Ámsterdam',          en: 'Amsterdam \'95 Final',
     desc: 'Ajax \'95 · Juventus \'96',
+    competition: 'Partido de Ensueño', round: 'Final Soñada',
     a: { slug: 'ajax-amsterdam',             era: '1995' },
     b: { slug: 'juventus-turin',             era: '1996' } },
   { label: 'Platini vs el Dream Team',       en: 'Platini vs the Dream Team',
@@ -1038,73 +1054,90 @@ const HISTORIC_MATCHES = [
     b: { slug: 'fc-barcelona',              era: '1992' } },
   { label: 'Der Wembley-Klassiker',          en: 'The Wembley Klassiker',
     desc: 'Bayern \'13 · Dortmund \'12',
+    year: '2013', round: 'Final', competition: 'Champions League 2012-13',
     a: { slug: 'fc-bayern-munchen',          era: '2013' },
     b: { slug: 'borussia-dortmund',          era: '2012' } },
   { label: 'Los Reyes de Europa: \'73 vs \'74', en: 'Kings of Europe: \'73 vs \'74',
     desc: 'Ajax \'73 · Bayern \'74',
+    competition: 'Partido de Ensueño', round: 'Los Reyes de Europa',
     a: { slug: 'ajax-amsterdam',             era: '1973' },
     b: { slug: 'fc-bayern-munchen',          era: '1974' } },
   { label: 'Milán \'94 vs Liverpool \'84',   en: 'Milan \'94 vs Liverpool \'84',
     desc: 'AC Milán \'94 · Liverpool \'84',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'ac-mailand',                 era: '1994' },
     b: { slug: 'fc-liverpool',              era: '1984' } },
   { label: 'Grande Inter vs el Madrid \'66', en: 'Grande Inter vs Real Madrid \'66',
     desc: 'Inter \'65 · Real Madrid \'66',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'inter-mailand',              era: '1965' },
     b: { slug: 'real-madrid',                era: '1966' } },
   // ── Sueños ──────────────────────────────────────────────
   { label: 'El Superclásico',                en: 'El Superclásico',
     desc: 'Boca \'07 · River \'15',
+    competition: 'Partido de Ensueño', round: 'Superclásico',
     a: { slug: 'club-atletico-boca-juniors', era: '2007' },
     b: { slug: 'club-atletico-river-plate',  era: '2015' } },
   { label: 'Ronaldo vs Ronaldo',             en: 'Ronaldo vs Ronaldo',
     desc: 'Brasil \'02 · Real Madrid \'17',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'brasilien',                  era: '2002' },
     b: { slug: 'real-madrid',                era: '2017' } },
   { label: 'Pep vs Jupp',                    en: 'Pep vs Jupp',
     desc: 'Barcelona \'11 · Bayern \'13',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'fc-barcelona',               era: '2011' },
     b: { slug: 'fc-bayern-munchen',          era: '2013' } },
   { label: 'Londres vs Madrid en Kiev',      en: 'London vs Madrid in Kyiv',
     desc: 'Liverpool \'19 · Real Madrid \'17',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'fc-liverpool',              era: '2019' },
     b: { slug: 'real-madrid',               era: '2017' } },
   { label: 'Porto de Mourinho vs Galácticos',en: 'Mourinho\'s Porto vs Galácticos',
     desc: 'Porto \'04 · Real Madrid \'02',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'fc-porto',                   era: '2004' },
     b: { slug: 'real-madrid',                era: '2002' } },
   { label: 'Los Profetas del Fútbol Total',  en: 'Prophets of Total Football',
     desc: 'Ajax \'71 · AC Milán \'63',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'ajax-amsterdam',             era: '1971' },
     b: { slug: 'ac-mailand',                 era: '1963' } },
   { label: 'La Décima vs el Doblete Atlético',en: 'La Décima vs Atlético\'s Double',
     desc: 'Real Madrid \'14 · Atlético \'16',
+    competition: 'Partido de Ensueño', round: 'El Derbi Soñado',
     a: { slug: 'real-madrid',                era: '2014' },
     b: { slug: 'atletico-madrid',            era: '2016' } },
   { label: 'Maradona en Nápoles vs Liverpool 84', en: 'Maradona\'s Napoli vs Liverpool \'84',
     desc: 'Nápoles \'87 · Liverpool \'84',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'ssc-neapel',                 era: '1987' },
     b: { slug: 'fc-liverpool',              era: '1984' } },
 
   // ── Nuevos: equipos sin usar (Chelsea, Celtic, Benfica, Man City…) ──
   { label: 'Los Leones de Lisboa',           en: 'The Lions of Lisbon',
     desc: 'Celtic \'67 · Inter \'65',
+    competition: 'Partido de Ensueño', round: 'Los Leones de Lisboa',
     a: { slug: 'celtic-glasgow',             era: '1967' },
     b: { slug: 'inter-mailand',              era: '1965' } },
   { label: 'Eusébio vs Di Stéfano',          en: 'Eusébio vs Di Stéfano',
     desc: 'Benfica \'62 · Real Madrid \'60',
+    year: '1962', round: 'Final', competition: 'Copa de Europa 1961-62',
     a: { slug: 'benfica-lissabon',           era: '1962' },
     b: { slug: 'real-madrid',                era: '1960' } },
   { label: 'La Remontada Robada de Stamford', en: 'The Stamford Bridge Comeback',
     desc: 'Chelsea \'12 · Barcelona \'11',
+    year: '2012', round: 'Semifinal', competition: 'Champions League 2011-12',
     a: { slug: 'fc-chelsea',                 era: '2012' },
     b: { slug: 'fc-barcelona',               era: '2011' } },
   { label: 'Inventores vs Maestros',         en: 'Inventors vs Masters',
     desc: 'England \'66 · Alemania \'74',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'england',                    era: '2025' },
     b: { slug: 'deutschland',                era: '1974' } },
   { label: 'El Año de los Pequeños Gigantes',en: 'Year of the Small Giants',
     desc: 'Porto \'04 · Mónaco \'04',
+    year: '2004', round: 'Final', competition: 'Champions League 2003-04',
     a: { slug: 'fc-porto',                   era: '2004' },
     b: { slug: 'as-monaco',                  era: '2003' } },
   { label: 'La Final de París',              en: 'The Paris Final',
@@ -1114,104 +1147,129 @@ const HISTORIC_MATCHES = [
     b: { slug: 'frankreich',                 era: '2016' } },
   { label: 'La Semifinal de San Petersburgo',en: 'The Saint Petersburg Semi',
     desc: 'Bélgica \'18 · Francia \'18',
+    year: '2018', round: 'Semifinal', competition: 'Mundial Rusia 2018',
     a: { slug: 'belgien',                    era: '2018' },
     b: { slug: 'frankreich',                 era: '2018' } },
   { label: 'Los Diables Rouges vs Mbappé',   en: 'Les Diables vs Mbappé',
     desc: 'Bélgica \'22 · Francia \'22',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'belgien',                    era: '2022' },
     b: { slug: 'frankreich',                 era: '2022' } },
   { label: 'La Semifinal de Marsella \'98',  en: 'The Marseille Semi \'98',
     desc: 'Croacia \'98 · Francia \'98',
+    year: '1998', round: 'Semifinal', competition: 'Mundial Francia 1998',
     a: { slug: 'kroatien',                   era: '1998' },
     b: { slug: 'frankreich',                 era: '1998' } },
   { label: 'PSG \'20 vs los Reds de Klopp',  en: 'PSG \'20 vs Klopp\'s Reds',
     desc: 'PSG \'20 · Liverpool \'19',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'fc-paris-saint-germain',     era: '2020' },
     b: { slug: 'fc-liverpool',               era: '2019' } },
   { label: 'Los Campeones de Europa del 93', en: 'Champions of Europe \'93',
     desc: 'Marsella \'93 · AC Milán \'89',
+    competition: 'Partido de Ensueño', round: 'Los Campeones',
     a: { slug: 'olympique-marseille',        era: '1993' },
     b: { slug: 'ac-mailand',                 era: '1989' } },
   { label: 'Dos Tripletes del Siglo',        en: 'Two Trebles of the Century',
     desc: 'Man City \'23 · Bayern \'13',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'manchester-city',            era: '2023' },
     b: { slug: 'fc-bayern-munchen',          era: '2013' } },
 
   // ── Selecciones: Mundiales y Eurocopas soñadas ─────────────
   { label: 'El Mineirazo',                   en: 'The Mineirazo (7-1)',
     desc: 'Brasil \'14 · Alemania \'14',
+    year: '2014', round: 'Semifinal', competition: 'Mundial Brasil 2014',
     a: { slug: 'brasilien',                  era: '2014' },
     b: { slug: 'deutschland',                era: '2014' } },
   { label: 'La Final de Qatar 2022',         en: 'Qatar 2022 World Cup Final',
     desc: 'Argentina \'22 · Francia \'22',
+    year: '2022', round: 'Final', competition: 'Mundial Qatar 2022',
     a: { slug: 'argentinien',                era: '2022' },
     b: { slug: 'frankreich',                 era: '2022' } },
   { label: 'Cruyff vs Beckenbauer — Final \'74', en: 'Cruyff vs Beckenbauer — Final \'74',
     desc: 'Holanda \'74 · Alemania \'74',
+    year: '1974', round: 'Final', competition: 'Mundial Alemania 1974',
     a: { slug: 'niederlande',                era: '1974' },
     b: { slug: 'deutschland',                era: '1974' } },
   { label: 'La Noche de Sevilla',            en: 'The Night of Seville \'82',
     desc: 'Alemania \'82 · Francia \'82',
+    year: '1982', round: 'Semifinal', competition: 'Mundial España 1982',
     a: { slug: 'deutschland',                era: '1982' },
     b: { slug: 'frankreich',                 era: '1982' } },
   { label: 'Wembley \'90 — Gazza llora',     en: 'Wembley \'90 — Gazza\'s tears',
     desc: 'Inglaterra \'90 · Alemania \'90',
+    year: '1990', round: 'Semifinal', competition: 'Mundial Italia 1990',
     a: { slug: 'england',                    era: '2025' },
     b: { slug: 'deutschland',                era: '1990' } },
   { label: 'Final Berlín 2006 — El Cabezazo',en: 'Berlin Final 2006 — The Headbutt',
     desc: 'Italia \'06 · Francia \'06',
+    year: '2006', round: 'Final', competition: 'Mundial Alemania 2006',
     a: { slug: 'italien',                    era: '2006' },
     b: { slug: 'frankreich',                 era: '2006' } },
   { label: 'La Mano de Dios',               en: 'The Hand of God',
     desc: 'Argentina \'86 · Inglaterra \'86',
+    year: '1986', round: 'Cuartos de Final', competition: 'Mundial México 1986',
     a: { slug: 'argentinien',                era: '1986' },
     b: { slug: 'england',                    era: '2025' } },
   { label: 'Final Buenos Aires \'78',        en: 'Buenos Aires Final \'78',
     desc: 'Argentina \'78 · Holanda \'78',
+    year: '1978', round: 'Final', competition: 'Mundial Argentina 1978',
     a: { slug: 'argentinien',                era: '1978' },
     b: { slug: 'niederlande',                era: '1978' } },
   { label: 'Golden Goal — Euro 2000',        en: 'Golden Goal — Euro 2000',
     desc: 'Francia \'00 · Italia \'00',
+    year: '2000', round: 'Final', competition: 'Eurocopa 2000',
     a: { slug: 'frankreich',                 era: '2000' },
     b: { slug: 'italien',                    era: '2000' } },
   { label: 'Final del Bernabéu \'82',        en: 'Bernabéu Final 1982',
     desc: 'Italia \'82 · Alemania \'82',
+    year: '1982', round: 'Final', competition: 'Mundial España 1982',
     a: { slug: 'italien',                    era: '1982' },
     b: { slug: 'deutschland',                era: '1982' } },
   { label: 'Final del Azteca \'70',          en: 'Azteca Final 1970',
     desc: 'Brasil \'70 · Italia \'70',
+    year: '1970', round: 'Final', competition: 'Mundial México 1970',
     a: { slug: 'brasilien',                  era: '1970' },
     b: { slug: 'italien',                    era: '1970' } },
   { label: 'Final de Moscú 2018',            en: 'Moscow Final 2018',
     desc: 'Croacia \'18 · Francia \'18',
+    year: '2018', round: 'Final', competition: 'Mundial Rusia 2018',
     a: { slug: 'kroatien',                   era: '2018' },
     b: { slug: 'frankreich',                 era: '2018' } },
   { label: 'Argentina en Nápoles \'90',      en: 'Argentina in Naples \'90',
     desc: 'Argentina \'90 · Italia \'90',
+    year: '1990', round: 'Semifinal', competition: 'Mundial Italia 1990',
     a: { slug: 'argentinien',                era: '1990' },
     b: { slug: 'italien',                    era: '1990' } },
   { label: 'Golden Goal — Euro 96',          en: 'Golden Goal — Euro 96',
     desc: 'Chequia \'96 · Alemania \'96',
+    year: '1996', round: 'Final', competition: 'Eurocopa 1996',
     a: { slug: 'tschechien',                 era: '1996' },
     b: { slug: 'deutschland',                era: '1996' } },
   { label: '¡España aplasta a Alemania!',    en: 'Spain crushes Germany! — Euro\'12 SF',
     desc: 'España \'12 · Alemania \'12',
+    competition: 'Partido de Ensueño', round: 'La Gran Final',
     a: { slug: 'spanien',                    era: '2012' },
     b: { slug: 'deutschland',                era: '2012' } },
   { label: 'Portugal vs Francia — Semi \'06',en: 'Portugal vs France — \'06 WC Semi',
     desc: 'Portugal \'06 · Francia \'06',
+    year: '2006', round: 'Semifinal', competition: 'Mundial Alemania 2006',
     a: { slug: 'portugal',                   era: '2006' },
     b: { slug: 'frankreich',                 era: '2006' } },
   { label: 'Romario & Stoichkov — Semi \'94', en: 'Romario & Stoichkov — Semi \'94',
     desc: 'Brasil \'94 · Suecia \'94',
+    year: '1994', round: 'Semifinal', competition: 'Mundial EE.UU. 1994',
     a: { slug: 'brasilien',                  era: '1994' },
     b: { slug: 'schweden',                   era: '1994' } },
   { label: 'Dinamarca \'92 — La Sorpresa',   en: 'Denmark \'92 — The Surprise',
     desc: 'Dinamarca \'92 · Francia \'92',
+    competition: 'Partido de Ensueño', round: 'La Sorpresa',
     a: { slug: 'danemark',                   era: '1992' },
     b: { slug: 'frankreich',                 era: '1992' } },
   { label: 'El Choque de las Filosofías',    en: 'Clash of Philosophies',
     desc: 'Brasil \'70 · Holanda \'74',
+    competition: 'Partido de Ensueño', round: 'El Gran Debate',
     a: { slug: 'brasilien',                  era: '1970' },
     b: { slug: 'niederlande',                era: '1974' } },
 
@@ -1719,7 +1777,7 @@ function _showDerbyBanner(derby) {
   const iconEl = document.getElementById('derby-banner-icon');
   const iso = _flagToISO(derby.flag);
   if (iso) {
-    iconEl.innerHTML = `<img src="https://flagcdn.com/w40/${iso}.webp" alt="${derby.country || ''}" class="derby-flag-img">`;
+    iconEl.innerHTML = `<img src="/flag/${iso}" alt="${derby.country || ''}" class="derby-flag-img">`;
   } else {
     iconEl.textContent = derby.flag || '⚽';
   }
@@ -2919,6 +2977,8 @@ const _LEAGUE_META = {
   '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia':        { name:'Escocia',          nameEn:'Scotland',              iso:'gb-sct'  , tier:1 },
   '🇸🇦 Saudi Pro League': { name:'Saudi Pro League', iso:'sa'     , tier:1 },
   '🇺🇸 MLS':              { name:'MLS',              iso:'us'     , tier:1 },
+  '🇧🇷 Brasileirão':     { name:'Brasileirão',      nameEn:'Brasileirão',           iso:'br', tier:1 },
+  '🌎 Argentina Primera': { name:'Argentina Primera', nameEn:'Argentina Primera',    iso:'ar', tier:1 },
   '🌎 América del Sur':    { name:'América del Sur',  nameEn:'South America',         iso:null, svg:'/img/badges/_south-america.svg' , tier:1 },
   '🌍 Otros':            { name:'Otros',            nameEn:'Other',                 iso:null, svg:'/img/badges/_globe.svg'         , tier:1 },
   '⭐ Fantasy XI':        { name:'Fantasy XI',       nameEn:'Fantasy XI',            iso:null, svg:'/img/badges/_best-xi-history.svg', tier:1 },
@@ -3052,7 +3112,7 @@ function _renderPicker(side) {
       nations.map(n => {
         const iso = _NATION_ISO[n.slug.toLowerCase()];
         const flagHtml = iso
-          ? `<img class="tp-flag-img" src="https://flagcdn.com/w40/${iso}.png" alt="" loading="lazy">`
+          ? `<img class="tp-flag-img" src="/flag/${iso}" alt="" loading="lazy">`
           : n.badge && !n.badge.includes('_placeholder')
             ? `<img class="tp-flag-img" src="${escHtml(n.badge)}" alt="" loading="lazy">`
             : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
@@ -3118,7 +3178,7 @@ function _renderPicker(side) {
         const meta  = _LEAGUE_META[g] || { name: g.replace(/^\S+ /,''), iso: null, tier: 1 };
         const count = _catalog.filter(c => c.group === g && c.badge && !c.badge.includes('_placeholder')).length;
         const flagInner = meta.iso
-          ? `<img class="tp-league-flag" src="https://flagcdn.com/w40/${meta.iso}.png" alt="" loading="lazy">`
+          ? `<img class="tp-league-flag" src="/flag/${meta.iso}" alt="" loading="lazy">`
           : meta.svg
             ? `<img class="tp-league-flag tp-league-flag-svg" src="${meta.svg}" alt="" loading="lazy">`
             : `<span class="tp-league-flag-dot"></span>`;
@@ -6243,7 +6303,7 @@ function _drawHeatmapGlobal(canvasId) {
     const octx = off.getContext('2d');
     octx.fillStyle = '#000'; octx.fillRect(0, 0, CW, CH);
     octx.globalCompositeOperation = 'lighter';
-    const R = CW * 0.12;
+    const R = CW * 0.07;
     samples.forEach(({ x, y }) => {
       const px = x * CW, py = y * CH;
       const g = octx.createRadialGradient(px, py, 0, px, py, R);
@@ -6254,8 +6314,8 @@ function _drawHeatmapGlobal(canvasId) {
     return octx.getImageData(0, 0, CW, CH);
   };
 
-  const sa = _heatmapData.a.length >= 4 ? drawTeamLayer(_heatmapData.a, 'rgba(79,131,255,0.09)', '') : null;
-  const sb = _heatmapData.b.length >= 4 ? drawTeamLayer(_heatmapData.b, 'rgba(255,77,85,0.09)',  '') : null;
+  const sa = _heatmapData.a.length >= 4 ? drawTeamLayer(_heatmapData.a, 'rgba(79,131,255,0.14)', '') : null;
+  const sb = _heatmapData.b.length >= 4 ? drawTeamLayer(_heatmapData.b, 'rgba(255,77,85,0.14)',  '') : null;
 
   if (sa || sb) {
     const out = ctx.createImageData(CW, CH);
@@ -6327,12 +6387,12 @@ function _drawHeatmapCanvas(canvasId, samples) {
     octx.fillStyle = '#000';
     octx.fillRect(0, 0, CW, CH);
     octx.globalCompositeOperation = 'lighter';
-    const R = CW * 0.12;
+    const R = CW * 0.07;
     samples.forEach(({ x, y }) => {
       const px = x * CW, py = y * CH;
       const g = octx.createRadialGradient(px, py, 0, px, py, R);
-      g.addColorStop(0,   'rgba(255,255,255,0.07)');
-      g.addColorStop(0.4, 'rgba(255,255,255,0.025)');
+      g.addColorStop(0,   'rgba(255,255,255,0.12)');
+      g.addColorStop(0.4, 'rgba(255,255,255,0.045)');
       g.addColorStop(1,   'rgba(0,0,0,0)');
       octx.fillStyle = g;
       octx.beginPath();
@@ -6406,13 +6466,13 @@ function _refreshDistList() {
   }
 }
 
-// Realistic km scaling: drift samples fire every 2nd drift tick (600ms each).
-// 1-min mode (90×667ms) accumulates ~50 distance-samples → reference baseline.
-// Any speed mode is normalised so the final display always represents 90 min.
+// Realistic km scaling: drift samples fire every 2nd drift tick (420ms × 2 = 840ms each).
+// 1-min mode (90×667ms ≈ 60s real-time) accumulates ~71 distance-samples.
+// Multiplier 4.0 calibrated so midfielders show ~10-12 km, GKs ~5-6 km.
 function _pxToKm(px) {
-  const REF_SAMPLES = 50;  // calibrated for 1-min mode
+  const REF_SAMPLES = 71;  // calibrated for 1-min mode (60s / 0.84s per sample)
   const factor = _distSamples > 0 ? REF_SAMPLES / _distSamples : 1;
-  return (px / _LP.W * 2.2 * factor);
+  return (px / _LP.W * 4.0 * factor);
 }
 
 function renderMatchAnalysis(teamA, teamB) {

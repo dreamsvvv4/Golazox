@@ -1,0 +1,79 @@
+{
+  "slug": "al-najma",
+  "name": "Al-Najma",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Najma",
+  "nameEs": "Al-Najma",
+  "badgeLocalPath": "/img/badges/al-najma.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Khalid Al-Aqidi",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Qahtani",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Sami Al-Ghamdi",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ramzi Al-Haddad",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Yousuf Al-Saleh",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Ibrahim Al-Okaimi",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Abdulrahman Al-Harbi",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Fahad Al-Dosari",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Sultan Al-Ghannam Jr.",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Muhannad Al-Ismail",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Saad Al-Dawsari",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 72,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Al-Najma — Saudi Pro League 2025-26",
+      "teamLabel": "Al-Najma (2025)",
+      "badgeUrl": "/img/badges/al-najma.png"
+    }
+  }
+}

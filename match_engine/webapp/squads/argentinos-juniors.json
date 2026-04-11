@@ -1,0 +1,79 @@
+{
+  "slug": "argentinos-juniors",
+  "name": "Argentinos Juniors",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Argentinos Juniors",
+  "nameEs": "Argentinos Juniors",
+  "badgeLocalPath": "/img/badges/argentinos-juniors.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Lucas Hoyos",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Fabricio Oviedo",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Luciano Merino",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Diego Sosa",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Luciano Papagni",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Leonardo Rodríguez",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Fausto Vera Jr.",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Gabriel Hauche",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Braian Romero",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Matías Caruzzo Jr.",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Santiago Solari Jr.",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Argentinos Juniors — Argentine Primera 2025",
+      "teamLabel": "Argentinos Juniors (2025)",
+      "badgeUrl": "/img/badges/argentinos-juniors.png"
+    }
+  }
+}

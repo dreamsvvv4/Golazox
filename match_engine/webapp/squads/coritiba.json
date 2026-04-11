@@ -1,0 +1,79 @@
+{
+  "slug": "coritiba",
+  "name": "Coritiba FC",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Coritiba",
+  "nameEs": "Coritiba",
+  "badgeLocalPath": "/img/badges/coritiba-fc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Gabriel Vasconcelos",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Natanael",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Guilherme Biro",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Luciano Castán",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jamerson",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Andrey",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Sebastián Gómez",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Thiago Lopes",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Alef Manga",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Fabrício Daniel",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Igor Paixão",
+          "position": "ST",
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "source": "Coritiba FC — Brasileirão Serie A 2026",
+      "teamLabel": "Coritiba (2026)",
+      "badgeUrl": "/img/badges/coritiba-fc.png"
+    }
+  }
+}

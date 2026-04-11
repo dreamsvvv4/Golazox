@@ -1,0 +1,79 @@
+{
+  "slug": "deportivo-riestra",
+  "name": "Deportivo Riestra",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Deportivo Riestra",
+  "nameEs": "Deportivo Riestra",
+  "badgeLocalPath": "/img/badges/deportivo-riestra.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marcos Ledesma",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Leonel Juárez",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Diego Mondino",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Joaquín Novillo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Patricio Ostachuk",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Franco Paredes",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Claudio Mosca",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Villagra",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Adrián Arregui",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Giuliano Obiols",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Santiago López",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 73
+      },
+      "source": "Deportivo Riestra — Argentine Liga Profesional 2026",
+      "teamLabel": "Riestra (2026)",
+      "badgeUrl": "/img/badges/deportivo-riestra.png"
+    }
+  }
+}

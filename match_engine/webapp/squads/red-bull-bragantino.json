@@ -1,0 +1,79 @@
+{
+  "slug": "red-bull-bragantino",
+  "name": "Red Bull Bragantino",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Red Bull Bragantino",
+  "nameEs": "Red Bull Bragantino",
+  "badgeLocalPath": "/img/badges/red-bull-bragantino.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Cleiton",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Andrés Hurtado",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Pedro Henrique",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ruan Renato",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Luan Cândido",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Matheus Fernandes",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Jhon Jhon",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Raul",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Helinho",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Mosquito",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Eduardo Sasha",
+          "position": "LW",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 80
+      },
+      "source": "Red Bull Bragantino — Brasileirão 2025",
+      "teamLabel": "Red Bull Bragantino (2025)",
+      "badgeUrl": "/img/badges/red-bull-bragantino.png"
+    }
+  }
+}

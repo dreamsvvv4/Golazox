@@ -1,0 +1,79 @@
+{
+  "slug": "al-akhdood",
+  "name": "Al-Akhdood",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Akhdood",
+  "nameEs": "Al-Akhdood",
+  "badgeLocalPath": "/img/badges/al-okhdood.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Abdulhadi Al-Otaibi",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Turki Al-Muammar",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Sami Al-Tamimi",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Yami Jr.",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Tariq Al-Ahmadi",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Saleh Al-Shahrani",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Yasser Khater",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Hasan Al-Sulami",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Abdullah Al-Harbi",
+          "position": "LM",
+          "rating": 72
+        },
+        {
+          "name": "Saifan Al-Zahrani",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Sultan Al-Mutairi",
+          "position": "ST",
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Al-Akhdood — Saudi Pro League 2025",
+      "teamLabel": "Al-Akhdood (2025)",
+      "badgeUrl": "/img/badges/al-okhdood.png"
+    }
+  }
+}

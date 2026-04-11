@@ -1,0 +1,79 @@
+{
+  "slug": "al-fayha",
+  "name": "Al-Fayha",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Fayha",
+  "nameEs": "Al-Fayha",
+  "badgeLocalPath": "/img/badges/al-fayha.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Baba Sissoko",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Mohammed Al-Rashidi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Khalid Sharahili",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Mamadou Ndiaye",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Layth Nouri",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Yacine Brahimi",
+          "position": "RM",
+          "rating": 77
+        },
+        {
+          "name": "Abdelkarim Hassan",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Sofiane Bendebka",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Emeka Eze",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "André Carrillo",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Mohammed Al-Khaibari",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "source": "Al-Fayha — Saudi Pro League 2025-26",
+      "teamLabel": "Al-Fayha (2025)",
+      "badgeUrl": "/img/badges/al-fayha.png"
+    }
+  }
+}

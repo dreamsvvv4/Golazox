@@ -1,0 +1,78 @@
+{
+  "slug": "al-raed",
+  "name": "Al-Raed",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Raed",
+  "nameEs": "Al-Raed",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ziad Al-Amri",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Meshal Al-Romaih",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Sharif",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Mansour Al-Harithy",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ibrahim Al-Qahtani",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Turki Al-Ammar",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Ahmed Bamsaud",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Hamdan Konan",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Nakhli",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Muhannad Al-Shanqiti",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ali Al-Hassan",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Al-Raed — Saudi Pro League 2025",
+      "teamLabel": "Al-Raed (2025)",
+      "badgeUrl": "/img/badges/al-raed.png"
+    }
+  }
+}

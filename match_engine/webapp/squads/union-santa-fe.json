@@ -1,0 +1,79 @@
+{
+  "slug": "union-santa-fe",
+  "name": "Unión Santa Fe",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Unión Santa Fe",
+  "nameEs": "Unión Santa Fe",
+  "badgeLocalPath": "/img/badges/_placeholder.svg",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Sebastián Moyano",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Claudio Corvalán",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Jonathan Bottinelli",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Nicolás Paz",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Claudio Corvalán Jr.",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Mauro Pittón",
+          "position": "RM",
+          "rating": 76
+        },
+        {
+          "name": "Diego Zabala",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Jonatan Caballero",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Diego Villar Jr.",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Nicolás Miracco",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Facundo Farías",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Unión Santa Fe — Argentine Primera 2025",
+      "teamLabel": "Unión Santa Fe (2025)",
+      "badgeUrl": "/img/badges/union-santa-fe.png"
+    }
+  }
+}

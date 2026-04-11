@@ -1,0 +1,79 @@
+{
+  "slug": "godoy-cruz",
+  "name": "Godoy Cruz",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Godoy Cruz",
+  "nameEs": "Godoy Cruz",
+  "badgeLocalPath": "/img/badges/godoy-cruz.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Juan Espínola",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Damián Bracco",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Tadeo Allende",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nelson Acevedo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Washington Camacho",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Tomás Cardona",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Renzo López",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Juan Brunetta",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Rey",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Santiago García",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Javier Correa",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "Godoy Cruz — Argentine Primera 2025",
+      "teamLabel": "Godoy Cruz (2025)",
+      "badgeUrl": "/img/badges/godoy-cruz.png"
+    }
+  }
+}

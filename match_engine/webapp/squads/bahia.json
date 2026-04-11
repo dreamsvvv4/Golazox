@@ -1,0 +1,79 @@
+{
+  "slug": "bahia",
+  "name": "EC Bahia",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Bahia",
+  "nameEs": "Bahia",
+  "badgeLocalPath": "/img/badges/bahia.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Marcos Felipe",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Gilberto",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Gabriel Xavier",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Kanu",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luciano Juba",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Cauly",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Acevedo",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Thaciano",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Everton Ribeiro",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Ademir",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Everaldo",
+          "position": "ST",
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 77
+      },
+      "source": "EC Bahia — Brasileirão 2025",
+      "teamLabel": "Bahia (2025)",
+      "badgeUrl": "/img/badges/bahia.png"
+    }
+  }
+}

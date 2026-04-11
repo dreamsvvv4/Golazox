@@ -1,0 +1,79 @@
+{
+  "slug": "sarmiento",
+  "name": "CA Sarmiento",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Sarmiento",
+  "nameEs": "Sarmiento",
+  "badgeLocalPath": "/img/badges/sarmiento.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Alejandro Sánchez",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Miguel Torrente",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Jorge Ortiz",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Leonardo Burián",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Lucas Landa",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Ezequiel Cerutti",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Octavio Palacio",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Cristóbal Saborido",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Facundo Barceló",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Damián Macaluso",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Federico Vismara Jr.",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "CA Sarmiento — Argentine Primera 2025",
+      "teamLabel": "Sarmiento (2025)",
+      "badgeUrl": "/img/badges/sarmiento.png"
+    }
+  }
+}

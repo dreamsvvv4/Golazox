@@ -27,9 +27,11 @@
 
   <!-- SEO description -->
   <meta name="description" content="⚽ Simula partidos entre +200 equipos históricos de fútbol. Real Madrid 2002 vs Barça 2009, Brasil 1970 vs Alemania 1974... Motor Monte Carlo. Gratis, sin registro." />
+  <link rel="canonical" href="https://golazox.com/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
+  <meta property="og:url" content="https://golazox.com/" />
   <meta property="og:site_name" content="GolazoX" />
   <meta property="og:title" content="GolazoX ⚽ Simulador de Fútbol Histórico" />
   <meta property="og:description" content="Simula partidos entre +200 equipos históricos. Real Madrid 2002 vs Barça 2009, Brasil 1970 vs Alemania 1974... Motor Monte Carlo. Gratis." />
@@ -59,6 +61,22 @@
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
   <link rel="alternate" hreflang="en" href="https://golazox.com/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://golazox.com/" />
+
+  <!-- JSON-LD: Organization — establece GolazoX como entidad de marca -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GolazoX",
+    "url": "https://golazox.com",
+    "logo": "https://golazox.com/golazox-coin.png",
+    "description": "GolazoX es un simulador de fútbol histórico online. Permite enfrentar a los mejores equipos y jugadores de todas las épocas mediante un motor probabilístico Monte Carlo.",
+    "sameAs": [
+      "https://www.tiktok.com/@golazox",
+      "https://www.youtube.com/@golazox"
+    ]
+  }
+  </script>
 
   <!-- JSON-LD: WebApplication structured data -->
   <script type="application/ld+json">
@@ -1297,13 +1315,31 @@
   </div>
 
   <footer class="site-footer">
-    <p>Simulador de Partidos de Fútbol · Motor probabilístico (Poisson xG + Monte Carlo) · Solo para entretenimiento</p>
+    <!-- SEO content block: static text indexed by Googlebot before JS loads -->
+    <section class="sr-only" aria-label="Sobre GolazoX">
+      <h2>GolazoX — Simulador de Fútbol Histórico</h2>
+      <p>GolazoX es el simulador de fútbol histórico online más completo. Enfrenta a los mejores equipos y jugadores de todos los tiempos: Real Madrid, FC Barcelona, Manchester United, Bayern Múnich, AC Milan, Liverpool, Juventus, Ajax, Brasil, Argentina, Alemania y más de 500 equipos históricos.</p>
+      <h3>¿Qué puedes simular en GolazoX?</h3>
+      <ul>
+        <li>Partidos históricos entre clubs de la Liga española, Premier League, Bundesliga, Serie A y Ligue 1</li>
+        <li>Clásicos mundiales: Real Madrid 2002 vs Barcelona 2009, Brasil 1970 vs Alemania 1974, Argentina 1986 vs Francia 1998</li>
+        <li>Torneos completos: Champions League, Copa del Mundo, Eurocopa con equipos de distintas eras</li>
+        <li>Tandas de penaltis con animación en tiempo real</li>
+      </ul>
+      <h3>¿Cómo funciona el simulador?</h3>
+      <p>GolazoX usa un motor probabilístico de Monte Carlo con modelos xG (Expected Goals) basados en las estadísticas reales de cada jugador. El simulador ejecuta miles de partidos en milisegundos, considerando formaciones, rendimiento individual y factores tácticos de cada época.</p>
+      <h3>Partidos más populares</h3>
+      <ul>
+        <li><a href="/partido/real-madrid:2002-vs-fc-barcelona:2009">Real Madrid 2002 vs FC Barcelona 2009</a></li>
+        <li><a href="/partido/brasil:1970-vs-alemania:1974">Brasil 1970 vs Alemania 1974</a></li>
+        <li><a href="/partido/fc-barcelona:2009-vs-ac-mailand:1994">FC Barcelona 2009 vs AC Milan 1994</a></li>
+        <li><a href="/partido/manchester-united:1999-vs-fc-bayern-munchen:2001">Manchester United 1999 vs Bayern Múnich 2001</a></li>
+        <li><a href="/partido/argentina:1986-vs-brasil:1970">Argentina 1986 vs Brasil 1970</a></li>
+      </ul>
+    </section>
+    <p class="footer-tagline"><strong>GolazoX — Simulador de Fútbol Histórico</strong> · Enfrenta a los mejores equipos de todas las épocas · +500 plantillas históricas · Motor Monte Carlo · Gratis, sin registro</p>
     <p class="footer-legal footer-disclaimer">
-      GolazoX es un proyecto independiente sin afiliación, patrocinio ni respaldo de FIFA, UEFA, ningún club de fútbol,
-      ni ningún jugador mencionado. Los nombres de equipos y jugadores se usan con fines estadísticos, históricos
-      y de entretenimiento, bajo la doctrina de uso referencial de figuras públicas en el ejercicio de su actividad profesional.
-      Los escudos mostrados son representaciones genéricas de identificación y no son marcas oficiales.
-      Datos de plantilla parcialmente derivados de Wikipedia (CC BY-SA 4.0).
+      Simulador independiente de entretenimiento. Sin afiliación con FIFA, UEFA, clubes ni jugadores. Nombres usados con fines estadísticos e históricos. Escudos: representaciones genéricas. Datos parcialmente derivados de Wikipedia (CC BY-SA 4.0).
     </p>
     <p class="footer-links">
       <a href="/legal" class="footer-link">Aviso Legal</a>
@@ -1316,9 +1352,9 @@
 
   <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
   <script src="/config.js"></script>
-  <script src="/player_ratings.js?v=4"></script>
-  <script src="app.js?v=61"></script>
-  <script src="tournament.js?v=29"></script>
+  <script src="/player_ratings.js?v=4" defer></script>
+  <script src="app.js?v=61" defer></script>
+  <script src="tournament.js?v=29" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
 </body>

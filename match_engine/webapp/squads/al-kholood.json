@@ -1,0 +1,79 @@
+{
+  "slug": "al-kholood",
+  "name": "Al-Kholood",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Kholood",
+  "nameEs": "Al-Kholood",
+  "badgeLocalPath": "/img/badges/al-kholood.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Faisal Al-Ruwaili",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Abdullah Al-Zori",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Abdulelah Al-Amri",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Turki Al-Ammar Jr.",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Hamza Barry",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Hasan Al-Bahri",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Majdi Siddiq",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ramadan Al-Saqr",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Alhassan Yusuf",
+          "position": "LM",
+          "rating": 75
+        },
+        {
+          "name": "Yannick Bolasie",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Omar Al-Somah",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Al-Kholood — Saudi Pro League 2025-26",
+      "teamLabel": "Al-Kholood (2025)",
+      "badgeUrl": "/img/badges/al-kholood.png"
+    }
+  }
+}

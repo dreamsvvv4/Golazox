@@ -1,0 +1,79 @@
+{
+  "slug": "gimnasia-mendoza",
+  "name": "Gimnasia (Mendoza)",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Gimnasia Mendoza",
+  "nameEs": "Gimnasia (Mendoza)",
+  "badgeLocalPath": "/img/badges/gimnasia-y-esgrima-mendoza.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Javier Balbuena",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Tomás Mantia",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Sebastián Palacios Jr.",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Facundo Castro",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Juan Andrade",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Rodrigo Sánchez",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Hugo Leonel Rodríguez",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Matías Sánchez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Cristian Arona",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Javier Correa Jr.",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Maximiliano Parot",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Gimnasia (Mendoza) — Argentine Liga Profesional 2026",
+      "teamLabel": "Gimnasia Mendoza (2026)",
+      "badgeUrl": "/img/badges/gimnasia-y-esgrima-mendoza.png"
+    }
+  }
+}

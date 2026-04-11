@@ -1,0 +1,79 @@
+{
+  "slug": "instituto",
+  "name": "Instituto AC",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Instituto",
+  "nameEs": "Instituto",
+  "badgeLocalPath": "/img/badges/instituto.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Diego Rodríguez",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Lucas Suárez",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Juan Cruz Esquivel",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Junior Arias",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Damián Pérez",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Jorge Díaz",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Marcelo Meli",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Christian Chimino",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Claudio Mosca Jr.",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Nicolás Miracco Jr.",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Maximiliano Gagliardi",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Instituto AC (Córdoba) — Argentine Liga Profesional 2026",
+      "teamLabel": "Instituto (2026)",
+      "badgeUrl": "/img/badges/instituto.png"
+    }
+  }
+}

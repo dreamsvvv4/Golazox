@@ -1,0 +1,79 @@
+{
+  "slug": "central-cordoba",
+  "name": "Central Córdoba (SdE)",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Central Córdoba",
+  "nameEs": "Central Córdoba (SdE)",
+  "badgeLocalPath": "/img/badges/central-cordoba.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Cristian Corea",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Tavarone",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Néstor Breitenbruch",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nahuel Banegas",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jonathan Herrera Jr.",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Matías Giménez",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Alan Soñora",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Claudio Riaño",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Enzo Copetti",
+          "position": "LM",
+          "rating": 76
+        },
+        {
+          "name": "Nicolás Olmedo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Israel Escalada",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Central Córdoba (SdE) — Argentine Liga Profesional 2026",
+      "teamLabel": "Central Córdoba (2026)",
+      "badgeUrl": "/img/badges/central-cordoba.png"
+    }
+  }
+}

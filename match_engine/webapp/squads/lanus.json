@@ -1,0 +1,79 @@
+{
+  "slug": "lanus",
+  "name": "Lanús",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Lanús",
+  "nameEs": "Lanús",
+  "badgeLocalPath": "/img/badges/lanus.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Santiago Larrañaga",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Brahian Alemán",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Ezequiel Muñoz",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Emiliano Méndez",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Diego Braghieri",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Alexis Castro",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "José Pasquini",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Tomás Belmonte",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Nicolás Orsini",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Brian Mansilla",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Fernando Juárez",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Lanús — Argentine Primera 2025",
+      "teamLabel": "Lanús (2025)",
+      "badgeUrl": "/img/badges/lanus.png"
+    }
+  }
+}

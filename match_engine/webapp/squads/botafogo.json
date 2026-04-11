@@ -1,6 +1,76 @@
 {
   "slug": "botafogo",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "John",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Vitinho",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Bastos",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Alexander Barboza",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Cuiabano",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Marlon Freitas",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Gregore",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Luiz Henrique",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Thiago Almada",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Savarino",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Tiquinho Soares",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 82,
+        "defense": 79,
+        "goalkeeping": 81
+      },
+      "source": "Botafogo — Brasileirão 2025 (Copa Libertadores 2024 champion)",
+      "teamLabel": "Botafogo (2025)",
+      "badgeUrl": "/img/badges/botafogo.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/botafogo.png",
   "group": "🌎 América del Sur",
   "nameEn": "Botafogo FR",

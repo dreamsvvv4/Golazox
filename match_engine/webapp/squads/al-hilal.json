@@ -1,6 +1,76 @@
 {
   "slug": "al-hilal",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Yassine Bounou",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "João Cancelo",
+          "position": "RB",
+          "rating": 83
+        },
+        {
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Ali Al-Bulaihi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Renan Lodi",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Rúben Neves",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Michael",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Malcom",
+          "position": "RW",
+          "rating": 84
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Marcos Leonardo",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "ST",
+          "rating": 87
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 86
+      },
+      "source": "Al-Hilal — Saudi Pro League 2025",
+      "teamLabel": "Al-Hilal (2025)",
+      "badgeUrl": "/img/badges/al-hilal.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-hilal.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEs": "Al-Hilal",

@@ -1,7 +1,76 @@
 {
   "slug": "sao-paulo-fc",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/sao-paulo-fc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Rafael Cabral",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Igor Vinícius",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Arboleda",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Alan Franco",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Welington",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Pablo Maia",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Alisson",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Ferreira",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Wellington Rato",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Lucas Rodrigues",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Jonathan Calleri",
+          "position": "ST",
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 79
+      },
+      "source": "São Paulo FC — Brasileirão 2025",
+      "teamLabel": "São Paulo FC (2025)",
+      "badgeUrl": "/img/badges/sao-paulo-fc.png"
+    }
+  },
   "group": "🌎 América del Sur",
   "nameEs": "São Paulo FC",
   "nameEn": "São Paulo FC",

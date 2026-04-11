@@ -1,0 +1,79 @@
+{
+  "slug": "athletico-paranaense",
+  "name": "Athletico Paranaense",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Athletico Paranaense",
+  "nameEs": "Athletico Paranaense",
+  "badgeLocalPath": "/img/badges/athletico-paranaense.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Léo Linck",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Madson",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Thiago Heleno",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kaique Rocha",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Fernando",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Erick",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Christian",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Canobbio",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Zapelli",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Vitor Bueno",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Mastriani",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 78
+      },
+      "source": "Athletico Paranaense — Brasileirão 2025",
+      "teamLabel": "Athletico PR (2025)",
+      "badgeUrl": "/img/badges/athletico-paranaense.png"
+    }
+  }
+}

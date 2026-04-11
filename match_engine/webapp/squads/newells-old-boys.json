@@ -1,0 +1,79 @@
+{
+  "slug": "newells-old-boys",
+  "name": "Newell's Old Boys",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Newell's Old Boys",
+  "nameEs": "Newell's Old Boys",
+  "badgeLocalPath": "/img/badges/newells-old-boys.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Alan Aguerre",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Gustavo Velázquez",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Juan Cruz Komar",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Leo Villalba",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Braian Ojeda",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Cristian Ferreira",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Juanpi Añor",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Lemos",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Fausto Vera",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Julián Fernández",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Lucio Compagnucci",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "Newell's Old Boys — Argentine Primera 2025",
+      "teamLabel": "Newell's (2025)",
+      "badgeUrl": "/img/badges/newells-old-boys.png"
+    }
+  }
+}

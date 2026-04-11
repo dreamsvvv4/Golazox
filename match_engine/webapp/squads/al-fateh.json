@@ -1,6 +1,76 @@
 {
   "slug": "al-fateh",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Mohammed Al-Yami",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Murtaja Ghuloom",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Saud Abdul-Hamid",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Amro Tayssir",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Abdullah Otayf",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ahmad Noorollahi",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Abdulrahman Kheit",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Khalid Al-Meshal",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Waleed Al-Ahmad",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Faïd Al-Muwallad",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Abdulrahman Al-Ghareeb",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 75
+      },
+      "source": "Al-Fateh — Saudi Pro League 2025",
+      "teamLabel": "Al-Fateh (2025)",
+      "badgeUrl": "/img/badges/al-fateh.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-fateh.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Fateh",

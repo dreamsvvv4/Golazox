@@ -1,0 +1,79 @@
+{
+  "slug": "platense",
+  "name": "Club Atlético Platense",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Platense",
+  "nameEs": "Platense",
+  "badgeLocalPath": "/img/badges/platense.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lucas Acosta",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Jonatan Maidana",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Santiago Larrañaga II",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Lucas Florentin",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Federico Vismara",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Nahuel Zárate",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Lautaro Díaz",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Jonathan Herrera",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Mauro Bogado",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Milton Leyendeker",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gastón Lodico",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Platense — Argentine Primera 2025",
+      "teamLabel": "Platense (2025)",
+      "badgeUrl": "/img/badges/platense.png"
+    }
+  }
+}

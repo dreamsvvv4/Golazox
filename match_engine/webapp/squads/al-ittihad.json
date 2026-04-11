@@ -1,6 +1,76 @@
 {
   "slug": "al-ittihad",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marcelo Grohe",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Luiz Felipe",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Cédric Badolo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Fahad Al-Muwallad",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Nuno Tavares",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "N'Golo Kanté",
+          "position": "DM",
+          "rating": 84
+        },
+        {
+          "name": "Fabinho",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Mohamed Kanno",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Karim Benzema",
+          "position": "RW",
+          "rating": 83
+        },
+        {
+          "name": "Ivan Toney",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Jota",
+          "position": "LW",
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 82,
+        "defense": 77,
+        "goalkeeping": 76
+      },
+      "source": "Al-Ittihad — Saudi Pro League 2025",
+      "teamLabel": "Al-Ittihad (2025)",
+      "badgeUrl": "/img/badges/al-ittihad.png"
+    }
+  },
   "badgeLocalPath": "/img/badges/al-ittihad.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Ittihad",

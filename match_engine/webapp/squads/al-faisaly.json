@@ -1,0 +1,78 @@
+{
+  "slug": "al-faisaly",
+  "name": "Al-Faisaly",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Faisaly",
+  "nameEs": "Al-Faisaly",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Abdulelah Al-Sheeb",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Yasser Al-Bishi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Hussein Al-Shahrani",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Homoud Al-Khaldi",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Eid Al-Armar",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Yahia Al-Shehri",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Bayan Al-Kasim",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Musab Al-Juwayr",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sattam Al-Muwallad",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Mustafa Al-Bassas",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mohammed Al-Qahtani",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 74
+      },
+      "source": "Al-Faisaly — Saudi Pro League 2025",
+      "teamLabel": "Al-Faisaly (2025)",
+      "badgeUrl": "/img/badges/al-faisaly.png"
+    }
+  }
+}

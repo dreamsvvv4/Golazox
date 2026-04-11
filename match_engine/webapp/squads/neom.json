@@ -1,0 +1,79 @@
+{
+  "slug": "neom",
+  "name": "NEOM SC",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "NEOM SC",
+  "nameEs": "NEOM SC",
+  "badgeLocalPath": "/img/badges/neom.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Carlos Kameni Jr.",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Abdulrahman Al-Ghamdi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Walid Al-Hamdan",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ibrahim Al-Omar",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Talal Al-Abdulkarim",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Ruwaili",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Firas Al-Burayk",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Abdulaziz Al-Bishi",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Naif Al-Alawi",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Abdullah Al-Harbi Jr.",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Khalid Saleh",
+          "position": "LW",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "NEOM SC — Saudi Pro League 2025-26 (promoted)",
+      "teamLabel": "NEOM (2025)",
+      "badgeUrl": "/img/badges/neom.png"
+    }
+  }
+}

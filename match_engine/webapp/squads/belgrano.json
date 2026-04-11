@@ -1,0 +1,79 @@
+{
+  "slug": "belgrano",
+  "name": "Belgrano",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Belgrano",
+  "nameEs": "Belgrano",
+  "badgeLocalPath": "/img/badges/belgrano.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Nahuel Losada",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Rébola",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Juan Cruz Kainas",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Cano",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Rivero",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ulises Sánchez",
+          "position": "RM",
+          "rating": 75
+        },
+        {
+          "name": "Matías Suárez",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Facundo Melivillo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Rubén Botta",
+          "position": "LM",
+          "rating": 76
+        },
+        {
+          "name": "Abel Luciatti",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Lucas Passerini",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "source": "Belgrano — Argentine Primera 2025",
+      "teamLabel": "Belgrano (2025)",
+      "badgeUrl": "/img/badges/belgrano.png"
+    }
+  }
+}

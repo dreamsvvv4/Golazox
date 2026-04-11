@@ -5,11 +5,15 @@ node_modules/
 .env
 .env.local
 .env.production
+.env.social
 
 # Logs
 *.log
 npm-debug.log*
 logs/
+
+# Videos generados (demasiado grandes para git)
+videos/
 
 # Cache de squads (datos regenerables con seed)
 squads/.seed-progress.json

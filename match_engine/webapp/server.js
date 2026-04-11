@@ -63,13 +63,14 @@ const _GROUP_ORDER = [
   '🇫🇷 Ligue 1', '🇫🇷 Ligue 2',
   '🇳🇱 Eredivisie', '🇵🇹 Liga Portugal',
   '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
-  '🇸🇦 Saudi Pro League', '🇺🇸 MLS', '🌎 América del Sur', '🌍 Otros',
+  '🇸🇦 Saudi Pro League', '🇺🇸 MLS',
+  '🇧🇷 Brasileirão', '🌎 Argentina Primera', '🌎 América del Sur', '🌍 Otros',
 ];
 // group, nameEn, nameEs: stored in each squad JSON, with squads-meta.json as overlay.
 // squads-meta.json maps slug → { group, nameEn, nameEs } and overrides per-file values.
 // This allows correct metadata even for squad files that are gitignored (seeded on server).
 const _SQUADS_META = (() => {
-  try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8')); }
+  try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8').replace(/^\uFEFF/, '')); }
   catch (_) { return {}; }
 })();
 
@@ -168,7 +169,7 @@ app.use((_req, res, next) => {
   res.set('X-DNS-Prefetch-Control', 'off');  // Prevent DNS prefetch leaking browsed URLs
   res.set('Content-Security-Policy',
     "default-src 'self'; " +
-    "img-src 'self' data: blob: https://www.thesportsdb.com https://media.api-sports.io https://flagcdn.com; " +
+    "img-src 'self' data: blob:; " +
     "script-src 'self' https://www.googletagmanager.com; " +
     "style-src 'self' 'unsafe-inline'; " +
     "font-src 'self'; " +
@@ -209,7 +210,7 @@ app.get('/', (_req, res) => {
 // roster snippets, JSON-LD) that Google can index, while the SPA app loads
 // underneath so users can actually simulate the match.
 app.get('/partido/:matchup', (req, res) => {
-  const SITE_URL = (process.env.SITE_URL || 'https://golazox.com').replace(/\/$/, '');
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
   const raw = req.params.matchup || '';
   // Parse "slugA:eraA-vs-slugB:eraB"  or  "slugA-vs-slugB"
   const vsIdx = raw.indexOf('-vs-');
@@ -230,28 +231,37 @@ app.get('/partido/:matchup', (req, res) => {
   const labelB = eraB ? `${nameB} ${eraB}` : nameB;
   const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-  // Build a short roster snippet (top 5 outfield players by highest rating)
-  const rosterSnippet = (slug, era) => {
+  // Full roster for SEO page — all 11 players with position
+  const rosterFull = (slug, era) => {
     try {
-      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8'));
-      const seasons = Object.keys(d.seasons || {}).sort((a,b) => Number(b)-Number(a));
+      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
+      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
       const key = era && d.seasons[era] ? era : seasons[0];
-      const players = (d.seasons[key]?.players || [])
-        .filter(p => p.position !== 'GK')
-        .slice(0, 6)
-        .map(p => p.name);
-      return players.join(', ');
-    } catch(_) { return ''; }
+      return (d.seasons[key]?.players || []).slice(0, 11);
+    } catch (_) { return []; }
   };
-  const playersA = rosterSnippet(slugA, eraA);
-  const playersB = rosterSnippet(slugB, eraB);
+  const playersA = rosterFull(slugA, eraA);
+  const playersB = rosterFull(slugB, eraB);
+  // Also get 3 related matches for internal linking (same team A vs other rivals)
+  const relatedMatches = (() => {
+    const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','brasil','alemania','argentina'];
+    const related = [];
+    for (const r of rivals) {
+      if (r === slugA || r === slugB) continue;
+      const entry = CATALOG.find(c => c.slug === r);
+      if (!entry) continue;
+      related.push({ slug: r, name: entry.nameEs || entry.nameEn });
+      if (related.length >= 3) break;
+    }
+    return related;
+  })();
 
   const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} — Simula el partido | GolazoX`;
   const pageDesc    = `¿Quién ganaría ${esc(labelA)} contra ${esc(labelB)}? Simúlalo ahora con el motor de Monte Carlo de GolazoX. Estadísticas, alineaciones históricas y resultado en segundos.`;
-  const canonUrl    = `${SITE_URL}/partido/${esc(raw)}`;
-  const deepLink    = `${SITE_URL}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
-  const badgeA      = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${SITE_URL}${entryA.badge}` : '';
-  const badgeB      = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${SITE_URL}${entryB.badge}` : '';
+  const canonUrl    = `${_routeSiteUrl}/partido/${esc(raw)}`;
+  const deepLink    = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
+  const badgeA      = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
+  const badgeB      = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
 
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
@@ -264,7 +274,7 @@ app.get('/partido/:matchup', (req, res) => {
       { '@type': 'SportsTeam', 'name': labelA, ...(badgeA ? { 'logo': badgeA } : {}) },
       { '@type': 'SportsTeam', 'name': labelB, ...(badgeB ? { 'logo': badgeB } : {}) },
     ],
-    'organizer': { '@type': 'Organization', 'name': 'GolazoX', 'url': SITE_URL },
+    'organizer': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
   });
 
   const html = `<!DOCTYPE html>
@@ -280,7 +290,7 @@ app.get('/partido/:matchup', (req, res) => {
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
-  <meta property="og:image" content="${SITE_URL}/og-image.png?v=2"/>
+  <meta property="og:image" content="${_routeSiteUrl}/og-image.png?v=2"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="${pageTitle}"/>
   <meta name="twitter:description" content="${pageDesc}"/>
@@ -288,24 +298,36 @@ app.get('/partido/:matchup', (req, res) => {
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
-    .mp-wrap{max-width:700px;margin:0 auto;padding:2rem 1.2rem 4rem}
-    .mp-backlink{display:inline-block;color:#38bdf8;font-size:.85rem;margin-bottom:1.5rem;text-decoration:none}
-    .mp-backlink:hover{text-decoration:underline}
-    .mp-teams{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.4rem}
-    .mp-badge{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
-    .mp-vs{font-size:1.3rem;font-weight:900;color:#7b2ff7;flex-shrink:0}
-    .mp-name{font-size:1.15rem;font-weight:700;line-height:1.2}
-    .mp-era{font-size:.8rem;color:#94a3b8;margin-top:.15rem}
-    h1{font-size:1.55rem;font-weight:900;line-height:1.25;margin-bottom:.6rem;color:#f1f5f9}
-    .mp-desc{color:#94a3b8;font-size:.95rem;line-height:1.6;margin-bottom:1.8rem}
-    .mp-rosters{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
-    .mp-roster-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:.75rem;padding:1rem}
-    .mp-roster-title{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.5rem}
-    .mp-roster-names{font-size:.88rem;color:#cbd5e1;line-height:1.7}
-    .mp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1rem 2rem;border-radius:.75rem;font-size:1.05rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:1rem}
-    .mp-cta:hover{opacity:.92}
-    .mp-note{font-size:.8rem;color:#475569;text-align:center}
-    @media(max-width:480px){.mp-rosters{grid-template-columns:1fr}}
+    .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
+    .mp-backlink:hover{opacity:1;text-decoration:underline}
+    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
+    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
+    .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
+    h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
+    .mp-intro{color:#94a3b8;font-size:.97rem;line-height:1.7;margin-bottom:2rem;border-left:3px solid #7b2ff7;padding-left:1rem}
+    .mp-rosters{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2rem}
+    .mp-roster-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:.875rem;padding:1.2rem}
+    .mp-roster-title{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.8rem}
+    .mp-player-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.875rem}
+    .mp-player-row:last-child{border-bottom:0}
+    .mp-player-name{color:#e2e8f0}
+    .mp-player-pos{color:#64748b;font-size:.75rem;font-weight:600;min-width:2.5rem;text-align:right}
+    .mp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1.1rem 2rem;border-radius:.875rem;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:.8rem;transition:opacity .15s}
+    .mp-cta:hover{opacity:.9}
+    .mp-note{font-size:.8rem;color:#475569;text-align:center;margin-bottom:2.5rem}
+    .mp-related{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+    .mp-related-title{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.8rem}
+    .mp-related-links{display:flex;flex-wrap:wrap;gap:.5rem}
+    .mp-related-link{color:#38bdf8;font-size:.875rem;text-decoration:none;background:rgba(56,189,248,.07);padding:.3rem .8rem;border-radius:999px;border:1px solid rgba(56,189,248,.15)}
+    .mp-related-link:hover{background:rgba(56,189,248,.15)}
+    .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
+    .mp-footer a{color:#475569;text-decoration:none}
+    .mp-footer a:hover{text-decoration:underline}
+    @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
   </style>
 </head>
 <body>
@@ -314,12 +336,12 @@ app.get('/partido/:matchup', (req, res) => {
 
   <div class="mp-teams">
     ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" loading="eager"/>` : ''}
-    <div>
+    <div class="mp-team-info">
       <div class="mp-name">${esc(nameA)}</div>
       ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
     </div>
     <span class="mp-vs">VS</span>
-    <div>
+    <div class="mp-team-info">
       <div class="mp-name">${esc(nameB)}</div>
       ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
     </div>
@@ -327,28 +349,43 @@ app.get('/partido/:matchup', (req, res) => {
   </div>
 
   <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
-  <p class="mp-desc">
-    Simula este enfrentamiento histórico con el motor probabilístico de GolazoX.
-    El simulador ejecuta miles de partidos en segundos con las alineaciones reales de cada era
-    y te da el resultado más probable, las probabilidades y la estadística completa.
+  <p class="mp-intro">
+    Usa el simulador de fútbol histórico GolazoX para enfrentar a <strong>${esc(labelA)}</strong> y <strong>${esc(labelB)}</strong>.
+    Nuestro motor probabilístico ejecuta miles de simulaciones con las alineaciones reales de cada era,
+    el rendimiento histórico de cada jugador y factores tácticos para darte el resultado más probable.
+    Gratis, sin registro, en segundos.
   </p>
 
-  ${(playersA || playersB) ? `
+  ${(playersA.length || playersB.length) ? `
   <div class="mp-rosters">
-    ${playersA ? `<div class="mp-roster-card">
+    ${playersA.length ? `<div class="mp-roster-card">
       <div class="mp-roster-title">${esc(labelA)}</div>
-      <div class="mp-roster-names">${esc(playersA)}&hellip;</div>
+      ${playersA.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
     </div>` : ''}
-    ${playersB ? `<div class="mp-roster-card">
+    ${playersB.length ? `<div class="mp-roster-card">
       <div class="mp-roster-title">${esc(labelB)}</div>
-      <div class="mp-roster-names">${esc(playersB)}&hellip;</div>
+      ${playersB.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
     </div>` : ''}
   </div>` : ''}
 
   <a class="mp-cta" href="${deepLink}">
     ⚽ Simular ${esc(labelA)} vs ${esc(labelB)} ahora
   </a>
-  <p class="mp-note">Motor de Monte Carlo · Alineaciones históricas reales · Resultado en segundos</p>
+  <p class="mp-note">Motor Monte Carlo · +500 plantillas históricas · Resultado en segundos</p>
+
+  ${relatedMatches.length ? `
+  <div class="mp-related">
+    <div class="mp-related-title">Otros enfrentamientos</div>
+    <div class="mp-related-links">
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/partido/${encodeURIComponent(slugA + (eraA ? ':'+eraA : ''))}-vs-${encodeURIComponent(r.slug)}">${esc(labelA)} vs ${esc(r.name)}</a>`).join('')}
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/partido/${encodeURIComponent(r.slug)}-vs-${encodeURIComponent(slugB + (eraB ? ':'+eraB : ''))}">${esc(r.name)} vs ${esc(labelB)}</a>`).join('')}
+    </div>
+  </div>` : ''}
+
+  <div class="mp-footer">
+    <a href="/">GolazoX</a> · <a href="/legal">Aviso Legal</a> · <a href="/privacy">Privacidad</a>
+    · Simulador de fútbol histórico · Sin afiliación con FIFA, UEFA ni clubes
+  </div>
 </div>
 </body>
 </html>`;
@@ -382,20 +419,60 @@ app.get('/sw.js', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'sw.js'));
 });
 
-// Versioned assets (app.js?v=N, style.css?v=N) — always serve fresh, never cached.
-// The version query string already busts any CDN or browser cache.
+// Versioned assets (app.js?v=N, style.css?v=N) — serve minified in production.
+const IS_PROD = process.env.NODE_ENV === 'production';
 app.get('/app.js', (_req, res) => {
   res.set('Cache-Control', 'no-store');
   res.set('Content-Type', 'application/javascript');
-  res.sendFile(path.join(__dirname, 'public', 'app.js'));
+  const file = IS_PROD && fs.existsSync(path.join(__dirname, 'public', 'app.min.js'))
+    ? 'app.min.js' : 'app.js';
+  res.sendFile(path.join(__dirname, 'public', file));
 });
 app.get('/style.css', (_req, res) => {
   res.set('Cache-Control', 'no-store');
   res.set('Content-Type', 'text/css');
-  res.sendFile(path.join(__dirname, 'public', 'style.css'));
+  const file = IS_PROD && fs.existsSync(path.join(__dirname, 'public', 'style.min.css'))
+    ? 'style.min.css' : 'style.css';
+  res.sendFile(path.join(__dirname, 'public', file));
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// ── Flag proxy — caches country flags locally from flagcdn.com ────────────────
+// Subdivision codes not supported by flagcdn → map to closest alternative
+const _FLAG_ISO_MAP = {
+  'gb-eng': 'gb',   // England → UK flag
+  'gb-sct': 'gb',   // Scotland → UK flag (flagcdn has no gb-sct)
+  'gb-wls': 'gb',   // Wales → UK flag
+  'gb-nir': 'gb',   // Northern Ireland → UK flag
+};
+const _flagCache = new Map();
+app.get('/flag/:iso', async (req, res) => {
+  const rawIso = req.params.iso.replace(/[^a-z0-9-]/gi, '').toLowerCase().slice(0, 6);
+  if (!rawIso) return res.status(400).end();
+  const iso = _FLAG_ISO_MAP[rawIso] || rawIso.slice(0, 3);
+  if (_flagCache.has(iso)) {
+    const cached = _flagCache.get(iso);
+    return res.set('Content-Type', cached.type)
+              .set('Cache-Control', 'public, max-age=604800')
+              .send(cached.data);
+  }
+  try {
+    const upstream = await fetch(`https://flagcdn.com/w40/${iso}.png`);
+    if (!upstream.ok) return res.status(404).end();
+    const buf = Buffer.from(await upstream.arrayBuffer());
+    _flagCache.set(iso, { data: buf, type: 'image/png' });
+    res.set('Content-Type', 'image/png')
+       .set('Cache-Control', 'public, max-age=604800')
+       .send(buf);
+  } catch { res.status(502).end(); }
+});
+
+// Serve generated videos for Meta (Instagram/Facebook) API which requires a public URL
+app.use('/videos', express.static(path.join(__dirname, 'videos'), {
+  maxAge: '1h',
+  setHeaders: (res) => { res.set('Access-Control-Allow-Origin', '*'); },
+}));
 
 // Shared JS modules — served from webapp root (used by both Node.js and browser)
 app.get('/player_ratings.js', (_req, res) => {
@@ -747,7 +824,7 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 // Batch simulator for tournaments. Accepts up to 50 match pairs, returns
 // minimal results (score + optional penalties) — no narrative, no badges.
 // Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
-app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(15, 60000), async (req, res) => {
+app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
   try {
     const { matches, lang: reqLang = 'es' } = req.body;
     const lang = reqLang === 'en' ? 'en' : 'es';
@@ -1017,6 +1094,25 @@ app.get('/legal', (req, res) => {
     <p>Este aviso se rige por la legislación española (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
   `));
   }
+});
+
+// ── TikTok OAuth callback ─────────────────────────────────────────────────────
+app.get('/tiktok-callback', (req, res) => {
+  const code  = req.query.code  || '';
+  const error = req.query.error || '';
+  if (error) {
+    return res.type('text/html').send(`<h2 style="color:red;font-family:sans-serif">Error: ${_esc(error)}</h2>`);
+  }
+  res.type('text/html').send(`
+    <html><head><title>TikTok Auth</title></head>
+    <body style="font-family:sans-serif;max-width:600px;margin:60px auto;text-align:center">
+      <h2 style="color:green">✓ TikTok autorizado</h2>
+      <p>Copia este código y pégalo en el terminal:</p>
+      <code style="display:block;background:#f0f0f0;padding:16px;font-size:14px;word-break:break-all;border-radius:8px">${_esc(code)}</code>
+      <p style="margin-top:24px;color:#666">Luego ejecuta:<br>
+      <code>node uploader.js --auth-exchange-tiktok PEGA_EL_CODIGO_AQUI</code></p>
+    </body></html>
+  `);
 });
 
 app.get('/privacy', (req, res) => {

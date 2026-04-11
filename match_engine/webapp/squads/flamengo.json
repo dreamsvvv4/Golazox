@@ -72,6 +72,75 @@
       "teamLabel": "Flamengo (2018)",
       "badgeUrl": "/img/badges/flamengo.png"
     },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Agustín Rossi",
+          "position": "GK",
+          "rating": 84
+        },
+        {
+          "name": "Guillermo Varela",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Léo Pereira",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Fabrício Bruno",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Ayrton Lucas",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Erick Pulgar",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Gerson",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Nicolás De La Cruz",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Gonzalo Plata",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Pedro",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "Bruno Henrique",
+          "position": "LW",
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 83
+      },
+      "source": "Flamengo — Brasileirão 2025",
+      "teamLabel": "Flamengo (2025)",
+      "badgeUrl": "/img/badges/flamengo.png"
+    },
     "2022": {
       "formation": "4-2-3-1",
       "players": [

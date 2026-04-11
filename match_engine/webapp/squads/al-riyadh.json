@@ -1,0 +1,79 @@
+{
+  "slug": "al-riyadh",
+  "name": "Al-Riyadh FC",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Al-Riyadh",
+  "nameEs": "Al-Riyadh",
+  "badgeLocalPath": "/img/badges/al-riyadh-fc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Essam Al-Enzi",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Turki Abdullah",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Ghamdi",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Waleed Al-Buqami",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Rashed Al-Mutairi",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Sami Al-Khamees",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Abdullah Madkhali",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mohammed Madkhali",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Hussain Al-Mogahwi",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Yazeed Al-Rakeah",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Abdulaziz Al-Dawsari",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Al-Riyadh FC — Saudi Pro League 2025",
+      "teamLabel": "Al-Riyadh (2025)",
+      "badgeUrl": "/img/badges/al-riyadh-fc.png"
+    }
+  }
+}

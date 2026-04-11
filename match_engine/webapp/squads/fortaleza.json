@@ -1,0 +1,79 @@
+{
+  "slug": "fortaleza",
+  "name": "Fortaleza EC",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Fortaleza",
+  "nameEs": "Fortaleza",
+  "badgeLocalPath": "/img/badges/fortaleza.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "João Ricardo",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Tinga",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Titi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Brítez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Felipe Jonathan",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Matheus Rossetto",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Caio Alexandre",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Moisés",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Lucas Crispim",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Pikachu",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Juan Martín Lucero",
+          "position": "ST",
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 80
+      },
+      "source": "Fortaleza EC — Brasileirão 2025",
+      "teamLabel": "Fortaleza (2025)",
+      "badgeUrl": "/img/badges/fortaleza.png"
+    }
+  }
+}

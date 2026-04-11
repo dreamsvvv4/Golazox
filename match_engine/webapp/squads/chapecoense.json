@@ -1,0 +1,79 @@
+{
+  "slug": "chapecoense",
+  "name": "Chapecoense",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Chapecoense",
+  "nameEs": "Chapecoense",
+  "badgeLocalPath": "/img/badges/chapecoense.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Saulo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Matheus Ribeiro",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Alisson",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Léo Pereira Jr.",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Brenner",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Moisés",
+          "position": "RM",
+          "rating": 74
+        },
+        {
+          "name": "Anderson Leite",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Thomaz",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Vítor Feijão",
+          "position": "LM",
+          "rating": 74
+        },
+        {
+          "name": "Perotti",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Bassani",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Chapecoense — Brasileirão Serie A 2026",
+      "teamLabel": "Chapecoense (2026)",
+      "badgeUrl": "/img/badges/chapecoense.png"
+    }
+  }
+}

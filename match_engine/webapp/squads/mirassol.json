@@ -1,0 +1,79 @@
+{
+  "slug": "mirassol",
+  "name": "Mirassol FC",
+  "group": "🇧🇷 Brasileirão",
+  "nameEn": "Mirassol",
+  "nameEs": "Mirassol",
+  "badgeLocalPath": "/img/badges/mirassol.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alex Muralha",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Lucas Ramon",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Eduardo Bauermann",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Daniel Borges",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Guilherme Pato",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Gabriel Falcão",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Camilo",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Danielzinho",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Negueba",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Iury Castilho",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Edinho",
+          "position": "LW",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 75,
+        "goalkeeping": 75
+      },
+      "source": "Mirassol FC — Brasileirão Serie A 2026",
+      "teamLabel": "Mirassol (2026)",
+      "badgeUrl": "/img/badges/mirassol.png"
+    }
+  }
+}

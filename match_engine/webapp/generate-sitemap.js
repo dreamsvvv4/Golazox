@@ -60,6 +60,39 @@ const ICONIC = {
   'belgien':                ['1984','2018'],
   'Uruguay':                ['1966','1970'],
   'uruguay':                ['1966','1970'],
+  // ── Brasileirão ──
+  'flamengo':               ['2018','2022','2025'],
+  'fluminense':             ['2023','2025'],
+  'botafogo':               ['2025'],
+  'corinthians':            ['2025'],
+  'se-palmeiras':           ['2021','2025'],
+  'santos':                 ['1962','1963','2025'],
+  'fc-sao-paulo':           ['1992','1993','2005','2025'],
+  'clube-atletico-mineiro': ['2021','2025'],
+  'cruzeiro':               ['1997','2025'],
+  'sc-internacional':       ['2006','2010','2025'],
+  'gremio':                 ['1983','1995','2025'],
+  'vasco-da-gama':          ['1998','2025'],
+  'red-bull-bragantino':    ['2025'],
+  'bahia':                  ['2025'],
+  'athletico-paranaense':   ['2025'],
+  // ── Argentina ──
+  'river-plate':            ['2025'],
+  'boca-juniors':           ['2025'],
+  'racing-club':            ['2001','2025'],
+  'independiente':          ['1975','2025'],
+  'san-lorenzo':            ['2025'],
+  'talleres-cordoba':       ['2025'],
+  'estudiantes':            ['2025'],
+  'newells-old-boys':       ['2025'],
+  'rosario-central':        ['2025'],
+  'huracan':                ['2025'],
+  // ── Saudi Pro League ──
+  'al-hilal':               ['2025'],
+  'al-nassr':               ['2025'],
+  'al-ittihad':             ['2025'],
+  'al-ahli':                ['2025'],
+  'al-ettifaq':             ['2023','2025'],
 };
 
 // ── Rival pairs ───────────────────────────────────────────────────────────────
@@ -200,6 +233,55 @@ const RIVALS = [
   ['niederlande',            'portugal'],
   ['niederlande',            'england'],
   ['portugal',               'england'],
+  // ─ Superclásico ARG ─
+  ['river-plate',            'boca-juniors'],
+  // ─ Argentina derbies ─
+  ['river-plate',            'independiente'],
+  ['river-plate',            'racing-club'],
+  ['river-plate',            'san-lorenzo'],
+  ['river-plate',            'estudiantes'],
+  ['river-plate',            'newells-old-boys'],
+  ['boca-juniors',           'racing-club'],
+  ['boca-juniors',           'independiente'],
+  ['boca-juniors',           'san-lorenzo'],
+  ['boca-juniors',           'estudiantes'],
+  ['independiente',          'racing-club'],
+  // ─ Clássico Carioca ─
+  ['flamengo',               'fluminense'],
+  // ─ Brasileirão derbies ─
+  ['flamengo',               'botafogo'],
+  ['flamengo',               'vasco-da-gama'],
+  ['flamengo',               'corinthians'],
+  ['flamengo',               'se-palmeiras'],
+  ['flamengo',               'clube-atletico-mineiro'],
+  ['flamengo',               'sc-internacional'],
+  ['fluminense',             'botafogo'],
+  ['fluminense',             'vasco-da-gama'],
+  ['corinthians',            'se-palmeiras'],
+  ['corinthians',            'santos'],
+  ['corinthians',            'fc-sao-paulo'],
+  ['se-palmeiras',           'santos'],
+  ['se-palmeiras',           'fc-sao-paulo'],
+  ['santos',                 'fc-sao-paulo'],
+  ['sc-internacional',       'gremio'],
+  ['clube-atletico-mineiro', 'cruzeiro'],
+  // ─ Saudi derbies ─
+  ['al-hilal',               'al-nassr'],
+  ['al-hilal',               'al-ittihad'],
+  ['al-hilal',               'al-ahli'],
+  ['al-nassr',               'al-ittihad'],
+  ['al-nassr',               'al-ahli'],
+  // ─ LATAM vs Europe ─
+  ['flamengo',               'real-madrid'],
+  ['flamengo',               'fc-liverpool'],
+  ['flamengo',               'fc-barcelona'],
+  ['boca-juniors',           'real-madrid'],
+  ['boca-juniors',           'fc-barcelona'],
+  ['river-plate',            'real-madrid'],
+  ['river-plate',            'fc-barcelona'],
+  ['al-hilal',               'real-madrid'],
+  ['al-nassr',               'real-madrid'],
+  ['al-nassr',               'fc-paris-saint-germain'],
 ];
 
 // ── Generate matchup URLs ─────────────────────────────────────────────────────
@@ -221,6 +303,14 @@ for (const [slugA, slugB] of RIVALS) {
   }
 }
 
+// ── Top clubs for high-priority URLs ─────────────────────────────────────────
+const TOP_SLUGS = new Set([
+  'real-madrid','fc-barcelona','manchester-united','fc-liverpool','fc-chelsea',
+  'fc-arsenal','fc-bayern-munchen','ac-mailand','juventus','inter-mailand',
+  'fc-paris-saint-germain','ajax-amsterdam','brasil','alemania','argentina',
+  'espana','england','france','netherlands','italy',
+]);
+
 // ── Build XML ─────────────────────────────────────────────────────────────────
 const urlEntries = [
   // Homepage
@@ -232,13 +322,21 @@ const urlEntries = [
     <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/"/>
     <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/?lang=en"/>
   </url>`,
-  // Matchup pages
-  ...matchupSegs.map(seg => `  <url>
+  // Matchup pages — higher priority for top clubs
+  ...matchupSegs.map(seg => {
+    const [partA, partB] = seg.split('-vs-');
+    const slugA = (partA || '').split(':')[0];
+    const slugB = (partB || '').split(':')[0];
+    const isTop = TOP_SLUGS.has(slugA) && TOP_SLUGS.has(slugB);
+    const priority = isTop ? '0.9' : '0.7';
+    const changefreq = isTop ? 'weekly' : 'monthly';
+    return `  <url>
     <loc>${SITE_URL}/partido/${seg}</loc>
     <lastmod>${TODAY}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`),
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+  }),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

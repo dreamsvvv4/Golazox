@@ -1,0 +1,79 @@
+{
+  "slug": "huracan",
+  "name": "Huracán",
+  "group": "🌎 Argentina Primera",
+  "nameEn": "Huracán",
+  "nameEs": "Huracán",
+  "badgeLocalPath": "/img/badges/huracan.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Luciano Pocrnjic",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Hernán De La Fuente",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Lucas Merolla",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Gastón Togni",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Nicolás Tripichio",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Echeverría",
+          "position": "RM",
+          "rating": 75
+        },
+        {
+          "name": "Lucas Arce",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Walter Mazzantti",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Stiven Mendoza",
+          "position": "LM",
+          "rating": 75
+        },
+        {
+          "name": "Ignacio Pussetto",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Pedro Nolasco",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 75
+      },
+      "source": "Huracán — Argentine Primera 2025",
+      "teamLabel": "Huracán (2025)",
+      "badgeUrl": "/img/badges/huracan.png"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "damac",
+  "name": "Damac FC",
+  "group": "🇸🇦 Saudi Pro League",
+  "nameEn": "Damac",
+  "nameEs": "Damac",
+  "badgeLocalPath": "/img/badges/damac-fc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Khalid Al-Jumaie",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Bassam Al-Natour",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Saud Al-Muwallad",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ziyad Sharahili",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Tariq Al-Harbi",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Al-Shalhoub",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Ziyad Al-Sahafi",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ibrahim Al-Shahrani",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Faisal Al-Ghamdi",
+          "position": "LM",
+          "rating": 73
+        },
+        {
+          "name": "Abdulrahman Al-Obaid",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Salem Al-Dawsari Jr.",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "source": "Damac FC — Saudi Pro League 2025",
+      "teamLabel": "Damac (2025)",
+      "badgeUrl": "/img/badges/damac-fc.png"
+    }
+  }
+}

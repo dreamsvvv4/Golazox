@@ -72,6 +72,75 @@
       ],
       "source": "Fluminense - Copa Libertadores 2023 (primer titulo, Cano, Andre, Marcelo)",
       "teamLabel": "Fluminense (2023)"
+    },
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Fábio",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Samuel Xavier",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Nino",
+          "position": "CB",
+          "rating": 81
+        },
+        {
+          "name": "Manoel",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Diogo Barbosa",
+          "position": "LB",
+          "rating": 78
+        },
+        {
+          "name": "Martinelli",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Lima",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Keno",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Paulo Henrique Ganso",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Jhon Arias",
+          "position": "LW",
+          "rating": 82
+        },
+        {
+          "name": "Germán Cano",
+          "position": "ST",
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 80
+      },
+      "source": "Fluminense — Brasileirão 2025",
+      "teamLabel": "Fluminense (2025)",
+      "badgeUrl": "/img/badges/fluminense.png"
     }
   },
   "badgeLocalPath": "/img/badges/fluminense.png",
