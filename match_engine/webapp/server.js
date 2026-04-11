@@ -135,6 +135,17 @@ function _resolveTeamSlug(input) {
 }
 
 // ── Middleware ────────────────────────────────
+// ── www → non-www redirect (301) ─────────────────────────────────────────
+// Prevents duplicate content: www.golazox.com and golazox.com must not both
+// serve the same pages or Google will reject indexing requests.
+app.use((req, res, next) => {
+  const host = req.headers.host || '';
+  if (host.startsWith('www.')) {
+    return res.redirect(301, `https://${host.slice(4)}${req.url}`);
+  }
+  next();
+});
+
 // Gzip/Brotli compression for all text responses (HTML, CSS, JS, JSON).
 // Reduces bandwidth ~70-80% — essential for mobile performance and hosting costs.
 app.use(compress({ level: 6, threshold: 1024 }));
