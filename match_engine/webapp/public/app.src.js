@@ -3302,7 +3302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     neutroCard.dataset.id = '';
     neutroCard.innerHTML =
       `<div class="spk-card-inner">` +
-        `<img class="spk-img spk-img--neutro" src="/img/stadiums/estadio_3d.jpg" alt="Neutro">` +
+        `<img class="spk-img spk-img--neutro" src="/img/stadiums/estadio_3d.webp" alt="Neutro">` +
       `</div>` +
       `<div class="spk-name">${t('stadium-neutro')}</div>`;
     neutroCard.onclick = () => selectStadium('');
