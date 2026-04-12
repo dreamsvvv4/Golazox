@@ -7,9 +7,8 @@
   <meta name="color-scheme" content="dark" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/golazox-coin.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/golazox-coin.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/golazox-coin.png" />
+  <link rel="icon" type="image/webp" sizes="192x192" href="/golazox-coin-192.webp" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/golazox-coin-192.png" />
   <link rel="manifest" href="/manifest.json" />
 
   <!-- PWA / móvil -->
@@ -19,10 +18,10 @@
   <!-- black-translucent: status bar overlaps the app (uses our bg color), giving true edge-to-edge -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="GolazoX" />
-  <link rel="apple-touch-icon" href="/golazox-coin.png" />
+  <link rel="apple-touch-icon" href="/golazox-coin-192.png" />
   <!-- Windows / Edge tile -->
   <meta name="msapplication-TileColor" content="#0a0f1a" />
-  <meta name="msapplication-TileImage" content="/golazox-coin.png" />
+  <meta name="msapplication-TileImage" content="/golazox-coin-192.png" />
   <meta name="msapplication-tap-highlight" content="no" />
 
   <!-- SEO description -->
@@ -51,13 +50,29 @@
   <meta name="twitter:image:alt" content="GolazoX Football Time Machine" />
 
   <!-- Fuente Rajdhani — auto-alojada (public/fonts/) sin tracking de Google -->
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-500.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
-  <link rel="preload" as="image" href="/golazox-wordmark.webp?v=3" fetchpriority="high" type="image/webp" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-500.woff2" crossorigin fetchpriority="low" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin fetchpriority="low" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin fetchpriority="low" />
+  <link rel="preload" as="image"
+    imagesrcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w"
+    imagesizes="(max-width:640px) 150px, 295px"
+    fetchpriority="high" type="image/webp" />
 
-  <!-- Full stylesheet — preloaded above so browser fetches it early; render-blocking intentional (inline critical not enough for this SPA) -->
-  <link rel="stylesheet" href="style.min.css?v=69" />
+  <!-- Critical CSS — body bg + header + logo dimensions prevent FOUC and ensure LCP element renders without waiting for full CSS -->
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px}
+  body{background-color:#080b14;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif;min-height:100vh;overscroll-behavior:none}
+  .site-header{padding:1.2rem 2rem;padding-top:max(1.2rem,calc(.8rem + env(safe-area-inset-top,0px)));border-bottom:1px solid rgba(255,255,255,.09);background:rgba(0,0,0,.5);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem}
+  .logo-mark{flex-shrink:0;display:flex;align-items:center;gap:.6rem}
+  picture{display:block}img{max-width:100%;display:block}
+  .logo-img{height:62px;width:auto;max-width:280px;display:block;object-fit:contain;opacity:1}
+  @media(max-width:640px){.site-header{padding:.6rem .9rem;padding-top:max(.6rem,calc(.4rem + env(safe-area-inset-top,0px)))}.logo-img{height:36px}}
+  @media(max-width:480px){html{font-size:15px}.site-header{padding:.5rem .75rem}.logo-img{height:30px}}
+  </style>
+  <!-- Full stylesheet — loaded synchronously; critical CSS above covers above-fold until this loads -->
+  <link rel="stylesheet" href="style.min.css?v=70" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -170,8 +185,8 @@
     <div class="pwa-sheet-inner">
       <div class="pwa-sheet-logo">
         <picture>
-          <source srcset="/golazox-wordmark.webp?v=3" type="image/webp" />
-          <img src="/golazox-wordmark.png?v=2" alt="GolazOX" class="pwa-sheet-wordmark" width="272" height="57" />
+          <source srcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
+          <img src="/golazox-wordmark.png?v=2" alt="GolazOX" class="pwa-sheet-wordmark" width="300" height="63" loading="lazy" />
         </picture>
       </div>
       <div class="pwa-sheet-text">
@@ -189,8 +204,8 @@
       <div class="logo-mark">
         <a href="/" aria-label="GolazoX — Ir a la página principal" style="display:contents">
           <picture>
-            <source srcset="/golazox-wordmark.webp?v=3" type="image/webp" />
-            <img class="logo-img" src="/golazox-wordmark.png?v=2" alt="GolazOX" id="gx-wordmark" width="272" height="57" fetchpriority="high" />
+            <source srcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
+            <img class="logo-img" src="/golazox-wordmark.png?v=2" alt="GolazOX" id="gx-wordmark" width="300" height="63" fetchpriority="high" />
           </picture>
         </a>
       </div>
@@ -1132,7 +1147,7 @@
           <div class="trn-preset-grid">
             <button class="trn-preset-card" data-preset="ucl2026">
               <div class="trn-preset-trophy trn-trophy-ucl">
-                <img src="img/trophy-ucl.webp" alt="Champions League Trophy" class="trn-trophy-img" width="403" height="619">
+                <img src="img/trophy-ucl.webp" alt="Champions League Trophy" class="trn-trophy-img" width="403" height="619" loading="lazy">
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">UEFA Champions League</div>
@@ -1142,7 +1157,7 @@
             </button>
             <button class="trn-preset-card" data-preset="wc2026">
               <div class="trn-preset-trophy trn-trophy-wc">
-                <img src="img/trophy-wc.webp" alt="FIFA World Cup Trophy" class="trn-trophy-img" width="403" height="619">
+                <img src="img/trophy-wc.webp" alt="FIFA World Cup Trophy" class="trn-trophy-img" width="403" height="619" loading="lazy">
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">FIFA World Cup</div>
