@@ -3000,6 +3000,29 @@ const _LEAGUE_META = {
   '🌐 Continentes Históricos': { name:'Continentes Históricos', nameEn:'Historical Continents', iso:null, svg:'/img/badges/_europa-historica.svg', tier:1 },
 };
 
+// ── Preferred display order for the club league list ──────────
+const _LEAGUE_ORDER = [
+  '🇪🇸 La Liga',
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',
+  '🇮🇹 Serie A',
+  '🇩🇪 Bundesliga',
+  '🇫🇷 Ligue 1',
+  '🇧🇷 Brasileirão',
+  '🌎 Argentina Primera',
+  '🇳🇱 Eredivisie',
+  '🇵🇹 Liga Portugal',
+  '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
+  '🇺🇸 MLS',
+  '🇸🇦 Saudi Pro League',
+  '🇪🇸 La Liga 2',
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship',
+  '🇩🇪 2. Bundesliga',
+  '🇮🇹 Serie B',
+  '🇫🇷 Ligue 2',
+  '🌎 América del Sur',
+  '🌍 Otros',
+];
+
 function _pickerSelectType(side, type) {
   _pickerState[side] = { type, league: null };
   _renderPicker(side);
@@ -3185,7 +3208,14 @@ function _renderPicker(side) {
   if (!st.league) {
     const leagues = [...new Set(
       _catalog.filter(c => c.group !== '🌍 Selecciones' && c.group !== '⭐ Fantasy XI' && c.group !== '🌐 Continentes Históricos').map(c => c.group || '🌍 Otros')
-    )];
+    )].sort((a, b) => {
+      const ia = _LEAGUE_ORDER.indexOf(a);
+      const ib = _LEAGUE_ORDER.indexOf(b);
+      if (ia === -1 && ib === -1) return 0;
+      if (ia === -1) return 1;
+      if (ib === -1) return -1;
+      return ia - ib;
+    });
     container.innerHTML =
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-leagues-label')}</span></div>` +
       `<div class="tp-leagues-grid">` +

@@ -4124,6 +4124,11 @@ body {
 .btn-surprise-mini:active { transform: scale(.92); }
 .btn-surprise-icon { font-size: .9rem; }
 
+/* All three vs-col action buttons same full width */
+.vs-col .btn-rivalry,
+.vs-col .btn-derby,
+.vs-col .btn-surprise-mini { width: 100%; justify-content: center; }
+
 body[data-wx="night"] .vs-badge.vs-ready {
   --clash-a: rgba(100, 60, 200, .7);
   --clash-b: rgba(60, 20, 160, .6);
