@@ -1,0 +1,22 @@
+# Redirect www to non-www (301)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.golazox\.com [NC]
+RewriteRule ^(.*) https://golazox.com/$1 [R=301,L]
+
+PassengerAppRoot /home/u990866731/domains/golazox.com/nodejs
+PassengerAppType node
+PassengerNodejs /opt/alt/alt-nodejs20/root/bin/node
+PassengerStartupFile server.js
+PassengerBaseURI /
+PassengerRestartDir /home/u990866731/domains/golazox.com/nodejs/tmp
+SetEnv NODE_OPTIONS "--require /home/u990866731/domains/golazox.com/public_html/.builds/config/preload-timestamp.js"
+SetEnv LSNODE_CONSOLE_LOG console.log
+RewriteRule ^\.builds - [F,L]
+
+# Cache versioned static assets (SetEnvIfNoCase, compatible with LiteSpeed lsnode)
+SetEnvIfNoCase Request_URI "\.(min\.js|min\.css|webp|woff2)$" LONG_CACHE
+Header always set Cache-Control "public, max-age=31536000, immutable" env=LONG_CACHE
+Header always unset Expires env=LONG_CACHE
+
+SetEnvIfNoCase Request_URI "\.(png|jpg|jpeg|svg|ico)$" MED_CACHE
+Header always set Cache-Control "public, max-age=604800" env=MED_CACHE

@@ -1,0 +1,11 @@
+# Cache headers for static assets served directly by LiteSpeed
+<IfModule mod_headers.c>
+  # Versioned JS/CSS/fonts/WebP — 1 year immutable cache
+  <FilesMatch "\.(min\.js|min\.css|woff2?|webp)$">
+    Header always set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Images without versioned names — 1 week cache
+  <FilesMatch "\.(png|jpg|jpeg|svg|ico)$">
+    Header always set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
