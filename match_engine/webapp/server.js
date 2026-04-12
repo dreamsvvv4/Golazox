@@ -206,10 +206,10 @@ app.get('/', (_req, res) => {
   const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
   const html = fs.readFileSync(indexPath, 'utf8');
-  // Inject og:url and canonical just after the og:type meta tag
+  // Inject og:url only (canonical already in index.html; injecting both caused duplicates)
   const injected = html.replace(
     '<meta property="og:type" content="website" />',
-    `<meta property="og:type" content="website" />\n  <meta property="og:url" content="${cleanUrl}/" />\n  <link rel="canonical" href="${cleanUrl}/" />`
+    `<meta property="og:type" content="website" />\n  <meta property="og:url" content="${cleanUrl}/" />`
   );
   res.set('Cache-Control', 'no-cache').type('text/html').send(injected);
 });
@@ -854,8 +854,19 @@ app.get('/style.css', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', file));
 });
 
-// Badge images — versioned filenames change when updated; moderate cache
-app.use('/img/badges', express.static(path.join(__dirname, 'public', 'img', 'badges'), {
+// Badge images — serve WebP when available and browser accepts it (transparent format negotiation)
+app.use('/img/badges', (req, res, next) => {
+  const accepts = req.headers['accept'] || '';
+  if (accepts.includes('image/webp') && /\.(png|jpg)$/i.test(req.path)) {
+    const webpPath = path.join(__dirname, 'public', 'img', 'badges', req.path.replace(/\.(png|jpg)$/i, '.webp'));
+    if (fs.existsSync(webpPath)) {
+      return res.set('Cache-Control', 'public, max-age=604800')
+                .set('Content-Type', 'image/webp')
+                .sendFile(webpPath);
+    }
+  }
+  next();
+}, express.static(path.join(__dirname, 'public', 'img', 'badges'), {
   maxAge: '7d',
 }));
 
@@ -905,7 +916,13 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
   setHeaders: (res) => { res.set('Access-Control-Allow-Origin', '*'); },
 }));
 
-// Shared JS modules â€” served from webapp root (used by both Node.js and browser)
+// Shared JS modules — served from webapp root (used by both Node.js and browser)
+app.get('/player_ratings.min.js', (_req, res) => {
+  res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  res.type('application/javascript');
+  const f = require('fs').existsSync(require('path').join(__dirname,'public','player_ratings.min.js')) ? require('path').join(__dirname,'public','player_ratings.min.js') : require('path').join(__dirname,'player_ratings.js');
+  res.sendFile(f);
+});
 app.get('/player_ratings.js', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.type('application/javascript');
@@ -1012,7 +1029,7 @@ const _VALID_FORMATIONS = new Set([
 // Rate: 8/5min per IP (1.6/min) â€” it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
-  res.set('Cache-Control', 'no-store');
+  res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=60');
   res.json(CATALOG);
 });
 
@@ -1020,7 +1037,7 @@ app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
 // Diagnostic: returns each team's slug, group, and source (meta vs file).
 // Publicly readable since /catalog already exposes group data.
 app.get('/catalog-groups', (_req, res) => {
-  res.set('Cache-Control', 'no-store');
+  res.set('Cache-Control', 'public, max-age=3600');
   const groups = {};
   for (const t of CATALOG) {
     if (!groups[t.group]) groups[t.group] = [];

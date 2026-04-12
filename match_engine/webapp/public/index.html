@@ -55,29 +55,9 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin />
   <link rel="preload" as="image" href="/golazox-wordmark.webp?v=3" fetchpriority="high" type="image/webp" />
-  <link rel="preload" href="style.min.css?v=69" as="style" />
 
-  <!-- Critical above-fold CSS — prevents white flash and header CLS while full stylesheet loads -->
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#080b14;--border:rgba(255,255,255,.09);--border-glow:rgba(0,212,255,.35);--neon:#00d4ff;--neon2:#7b2ff7;--gold:#f5c518;--white:#f0f4ff;--grey:#8892a4;--accent-a:#00d4ff;--accent-b:#ff4d6d;--bg-card:rgba(255,255,255,.04);--radius-lg:18px;--radius-md:12px;--radius-sm:8px;--font:'Segoe UI',system-ui,-apple-system,sans-serif;--shadow:0 8px 40px rgba(0,0,0,.55)}
-    html{font-size:16px;scroll-behavior:smooth;overscroll-behavior-y:none}
-    body{font-family:var(--font);background-color:var(--bg);color:var(--white);min-height:100vh;background-image:linear-gradient(rgba(0,212,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.028) 1px,transparent 1px),radial-gradient(ellipse 80% 50% at 50% -10%,rgba(0,100,180,.18) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(123,47,247,.12) 0%,transparent 70%);background-size:52px 52px,52px 52px,100% 100%,100% 100%;background-attachment:fixed,fixed,scroll,scroll}
-    .site-header{padding:1.2rem 2rem;padding-top:max(1.2rem,calc(.8rem + env(safe-area-inset-top,0px)));padding-left:max(2rem,calc(1rem + env(safe-area-inset-left,0px)));padding-right:max(2rem,calc(1rem + env(safe-area-inset-right,0px)));border-bottom:1px solid var(--border);background:rgba(0,0,0,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:sticky;top:0;z-index:100}
-    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem}
-    .logo-mark{flex-shrink:0;position:relative;display:flex;align-items:center;gap:.6rem}
-    .logo-img{height:62px;width:auto;max-width:280px;display:block;object-fit:contain}
-    .logo-text{display:flex;flex-direction:column;gap:0;line-height:1}
-    .header-right{display:flex;align-items:center;gap:.75rem;margin-left:auto;flex-shrink:0}
-    .main-wrap{max-width:1300px;margin:2.5rem auto;padding:0 1.5rem;display:flex;flex-direction:column;gap:2rem}
-    .main-tabs-bar{display:flex;gap:.5rem;border-bottom:1px solid var(--border);padding-bottom:0;margin-bottom:.5rem}
-    .main-tab-btn{padding:.6rem 1.2rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--grey);font-family:var(--font);font-size:.88rem;font-weight:700;cursor:pointer;letter-spacing:.06em;transition:color .2s,border-color .2s}
-    .main-tab-btn.active{color:var(--neon);border-bottom-color:var(--neon)}
-  </style>
-
-  <!-- Full stylesheet — non-render-blocking, loads in background -->
-  <link rel="stylesheet" href="style.min.css?v=69" media="print" onload="this.onload=null;this.media='all'" />
-  <noscript><link rel="stylesheet" href="style.min.css?v=69" /></noscript>
+  <!-- Full stylesheet — preloaded above so browser fetches it early; render-blocking intentional (inline critical not enough for this SPA) -->
+  <link rel="stylesheet" href="style.min.css?v=69" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1378,9 +1358,9 @@
     </p>
   </footer>
 
-  <!-- Site config: injects GOLAZOX_CONFIG.siteUrl from env -->
-  <script src="/config.js"></script>
-  <script src="/player_ratings.js?v=4" defer></script>
+  <!-- Site config: inlined to avoid extra round-trip -->
+  <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
+  <script src="/player_ratings.min.js?v=5" defer></script>
   <script src="app.min.js?v=62" defer></script>
   <script src="tournament.min.js?v=30" defer></script>
 
