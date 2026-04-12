@@ -4107,15 +4107,22 @@ body {
   border-radius: 20px;
   font: 700 .72rem/1 'Rajdhani', sans-serif;
   letter-spacing: .06em; text-transform: uppercase;
-  background: rgba(0,212,255,.08);
-  border: 1px solid rgba(0,212,255,.25);
-  color: rgba(0,212,255,.85);
+  background: linear-gradient(135deg, rgba(251,191,36,.18) 0%, rgba(245,158,11,.12) 100%);
+  border: 1px solid rgba(251,191,36,.45);
+  color: rgba(255,220,80,.95);
   cursor: pointer;
-  transition: background .15s, transform .12s;
+  transition: background .15s, transform .12s, box-shadow .15s;
   white-space: nowrap;
+  box-shadow: 0 0 10px rgba(251,191,36,.15);
 }
-.btn-surprise-mini:hover { background: rgba(0,212,255,.18); transform: scale(1.05); }
+.btn-surprise-mini:hover {
+  background: linear-gradient(135deg, rgba(251,191,36,.30) 0%, rgba(245,158,11,.22) 100%);
+  box-shadow: 0 0 18px rgba(251,191,36,.35);
+  transform: scale(1.04);
+  color: #ffd050;
+}
 .btn-surprise-mini:active { transform: scale(.92); }
+.btn-surprise-icon { font-size: .9rem; }
 
 body[data-wx="night"] .vs-badge.vs-ready {
   --clash-a: rgba(100, 60, 200, .7);
@@ -4414,26 +4421,11 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   box-shadow: 0 0 18px rgba(0,212,255,.08), inset 0 1px 0 rgba(255,255,255,.1);
 }
 
-/* Surprise / Aleatorio button — gold themed */
-.btn-surprise-mini {
-  display: flex; align-items: center; gap: .4rem;
-  padding: .55rem .9rem;
-  border-radius: 50px;
-  font: 700 .72rem/1 var(--font);
-  letter-spacing: .07em; text-transform: uppercase;
-  background: linear-gradient(135deg, rgba(251,191,36,.2), rgba(245,158,11,.08));
-  border: 1px solid rgba(251,191,36,.45);
-  color: #fbbf24;
-  cursor: pointer;
-  transition: background .15s, transform .12s, box-shadow .15s;
-  white-space: nowrap;
+/* Surprise / Aleatorio button — gold themed (pen panel variant, same pill style) */
+.pen-vs-col .btn-surprise-mini {
+  padding: .38rem .75rem;
+  border-radius: 20px;
 }
-.btn-surprise-mini:hover {
-  background: linear-gradient(135deg, rgba(251,191,36,.32), rgba(245,158,11,.18));
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px rgba(251,191,36,.22);
-}
-.btn-surprise-mini:active { transform: scale(.92); }
 
 /* Type buttons inside pen-tab: larger with per-category accent */
 .pen-tab-panel .tp-type-row { gap: .65rem; }

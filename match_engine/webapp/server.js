@@ -202,6 +202,9 @@ app.use((_req, res, next) => {
 
 // â”€â”€ Dynamic index.html (injects og:url + canonical from SITE_URL env var) â”€â”€
 // Must come before express.static so the route wins over the static file handler.
+// ── sitemap_index.xml alias → prevents GSC 404 if that URL was submitted ──
+app.get('/sitemap_index.xml', (_req, res) => res.redirect(301, '/sitemap.xml'));
+
 app.get('/', (_req, res) => {
   const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
