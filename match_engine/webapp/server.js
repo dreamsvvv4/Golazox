@@ -1,6 +1,6 @@
-/**
- * Football Match Simulator — Express Backend
- * ─────────────────────────────────────────────
+﻿/**
+ * Football Match Simulator â€” Express Backend
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Start:  node server.js
  * API:    POST /simulate
  */
@@ -32,13 +32,13 @@ const SQUAD_SUGGESTIONS = [...new Set(
   Object.keys(SQUADS).map(k => k.replace(/\b\w/g, c => c.toUpperCase()))
 )].sort();
 
-// Badge map: lowercased name → local path (built from squads/ at startup)
+// Badge map: lowercased name â†’ local path (built from squads/ at startup)
 // Falls back to placeholder when nothing is found.
 const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
 const _squadFiles = fs.readdirSync(path.join(__dirname, 'squads'))
   .filter(f => f.endsWith('.json') && !f.startsWith('.'));
-const _badgeMap = new Map();  // name.lc → localPath
-const _allTeams = [];         // { name, badge, slug } — full list for /badges
+const _badgeMap = new Map();  // name.lc â†’ localPath
+const _allTeams = [];         // { name, badge, slug } â€” full list for /badges
 for (const file of _squadFiles) {
   try {
     const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', file), 'utf8'));
@@ -50,24 +50,24 @@ for (const file of _squadFiles) {
 }
 _allTeams.sort((a, b) => a.name.localeCompare(b.name));
 
-// ── League/group mapping: slug → display group ───────────────
+// â”€â”€ League/group mapping: slug â†’ display group â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Order determines display order in the UI.
 const _GROUP_ORDER = [
-  '⭐ Fantasy XI',
-  '🌐 Continentes Históricos',
-  '🌍 Selecciones',
-  '🇪🇸 La Liga', '🇪🇸 La Liga 2',
-  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League', '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship',
-  '🇩🇪 Bundesliga', '🇩🇪 2. Bundesliga',
-  '🇮🇹 Serie A', '🇮🇹 Serie B',
-  '🇫🇷 Ligue 1', '🇫🇷 Ligue 2',
-  '🇳🇱 Eredivisie', '🇵🇹 Liga Portugal',
-  '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
-  '🇸🇦 Saudi Pro League', '🇺🇸 MLS',
-  '🇧🇷 Brasileirão', '🌎 Argentina Primera', '🌎 América del Sur', '🌍 Otros',
+  'â­ Fantasy XI',
+  'ðŸŒ Continentes HistÃ³ricos',
+  'ðŸŒ Selecciones',
+  'ðŸ‡ªðŸ‡¸ La Liga', 'ðŸ‡ªðŸ‡¸ La Liga 2',
+  'ðŸ´ó §ó ¢ó ¥ó ®ó §ó ¿ Premier League', 'ðŸ´ó §ó ¢ó ¥ó ®ó §ó ¿ Championship',
+  'ðŸ‡©ðŸ‡ª Bundesliga', 'ðŸ‡©ðŸ‡ª 2. Bundesliga',
+  'ðŸ‡®ðŸ‡¹ Serie A', 'ðŸ‡®ðŸ‡¹ Serie B',
+  'ðŸ‡«ðŸ‡· Ligue 1', 'ðŸ‡«ðŸ‡· Ligue 2',
+  'ðŸ‡³ðŸ‡± Eredivisie', 'ðŸ‡µðŸ‡¹ Liga Portugal',
+  'ðŸ´ó §ó ¢ó ³ó £ó ´ó ¿ Escocia',
+  'ðŸ‡¸ðŸ‡¦ Saudi Pro League', 'ðŸ‡ºðŸ‡¸ MLS',
+  'ðŸ‡§ðŸ‡· BrasileirÃ£o', 'ðŸŒŽ Argentina Primera', 'ðŸŒŽ AmÃ©rica del Sur', 'ðŸŒ Otros',
 ];
 // group, nameEn, nameEs: stored in each squad JSON, with squads-meta.json as overlay.
-// squads-meta.json maps slug → { group, nameEn, nameEs } and overrides per-file values.
+// squads-meta.json maps slug â†’ { group, nameEn, nameEs } and overrides per-file values.
 // This allows correct metadata even for squad files that are gitignored (seeded on server).
 const _SQUADS_META = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8').replace(/^\uFEFF/, '')); }
@@ -75,7 +75,7 @@ const _SQUADS_META = (() => {
 })();
 
 
-// Catalog: name + slug + available seasons (only teams with ≥1 season)
+// Catalog: name + slug + available seasons (only teams with â‰¥1 season)
 // Built once at startup from squads/ JSON files. Used by the era dropdown in the UI.
 const CATALOG = [];
 for (const file of _squadFiles) {
@@ -89,7 +89,7 @@ for (const file of _squadFiles) {
     if (seasons.length === 0) continue;
     const slug = d.slug || file.replace('.json', '');
     const _meta = _SQUADS_META[slug] || {};
-    const group = _meta.group || d.group || '🌍 Otros';
+    const group = _meta.group || d.group || 'ðŸŒ Otros';
     const nameEn = _meta.nameEn || d.nameEn || d.name || slug;
     const nameEs = _meta.nameEs || d.nameEs || d.nameEn || d.name || slug;
     const badge = _meta.badgeLocalPath || d.badgeLocalPath || BADGE_PLACEHOLDER;
@@ -119,7 +119,7 @@ function _badgeFor(teamName) {
       || BADGE_PLACEHOLDER;
 }
 
-// Resolve a display name / slug / localized label → canonical squad slug
+// Resolve a display name / slug / localized label â†’ canonical squad slug
 // Used by /simulate so picker-submitted slugs and typed names both work.
 const _catalogNameMap = (() => {
   const m = new Map();
@@ -134,8 +134,8 @@ function _resolveTeamSlug(input) {
   return _catalogNameMap.get(input.trim().toLowerCase()) || input.trim();
 }
 
-// ── Middleware ────────────────────────────────
-// ── www → non-www redirect (301) ─────────────────────────────────────────
+// â”€â”€ Middleware â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€ www â†’ non-www redirect (301) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Prevents duplicate content: www.golazox.com and golazox.com must not both
 // serve the same pages or Google will reject indexing requests.
 app.use((req, res, next) => {
@@ -147,11 +147,11 @@ app.use((req, res, next) => {
 });
 
 // Gzip/Brotli compression for all text responses (HTML, CSS, JS, JSON).
-// Reduces bandwidth ~70-80% — essential for mobile performance and hosting costs.
+// Reduces bandwidth ~70-80% â€” essential for mobile performance and hosting costs.
 app.use(compress({ level: 6, threshold: 1024 }));
 app.use(express.json({ limit: '32kb' }));
 
-// ── Per-request timeout: 25 s hard cap ───────────────────────────────────
+// â”€â”€ Per-request timeout: 25 s hard cap â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Prevents a hung /simulate (e.g. external API not responding) from holding
 // a Node.js worker open indefinitely and eventually exhausting memory.
 app.use((req, res, next) => {
@@ -165,7 +165,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Security headers — registered FIRST so they apply to ALL responses,
+// Security headers â€” registered FIRST so they apply to ALL responses,
 // including static files (index.html, CSS, JS, images).
 // upgrade-insecure-requests is only valid (and needed) when serving over HTTPS.
 // On HTTP (local dev via LAN IP), it causes browsers to upgrade same-origin requests
@@ -200,10 +200,10 @@ app.use((_req, res, next) => {
   next();
 });
 
-// ── Dynamic index.html (injects og:url + canonical from SITE_URL env var) ──
+// â”€â”€ Dynamic index.html (injects og:url + canonical from SITE_URL env var) â”€â”€
 // Must come before express.static so the route wins over the static file handler.
 app.get('/', (_req, res) => {
-  const cleanUrl = (process.env.SITE_URL || 'https://tudominio.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
+  const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
   const html = fs.readFileSync(indexPath, 'utf8');
   // Inject og:url and canonical just after the og:type meta tag
@@ -214,7 +214,7 @@ app.get('/', (_req, res) => {
   res.set('Cache-Control', 'no-cache').type('text/html').send(injected);
 });
 
-// ── /partido/:matchup — SSR matchup pages for SEO ─────────────────
+// â”€â”€ /partido/:matchup â€” SSR matchup pages for SEO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // URL format: /partido/real-madrid:2002-vs-barcelona:2009
 // or without era: /partido/real-madrid-vs-barcelona
 // Generates a full HTML page with real content (title, description, h1, h2,
@@ -242,7 +242,7 @@ app.get('/partido/:matchup', (req, res) => {
   const labelB = eraB ? `${nameB} ${eraB}` : nameB;
   const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-  // Full roster for SEO page — all 11 players with position
+  // Full roster for SEO page â€” all 11 players with position
   const rosterFull = (slug, era) => {
     try {
       const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
@@ -267,8 +267,8 @@ app.get('/partido/:matchup', (req, res) => {
     return related;
   })();
 
-  const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} — Simula el partido | GolazoX`;
-  const pageDesc    = `¿Quién ganaría ${esc(labelA)} contra ${esc(labelB)}? Simúlalo ahora con el motor de Monte Carlo de GolazoX. Estadísticas, alineaciones históricas y resultado en segundos.`;
+  const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} â€” Simula el partido | GolazoX`;
+  const pageDesc    = `Â¿QuiÃ©n ganarÃ­a ${esc(labelA)} contra ${esc(labelB)}? SimÃºlalo ahora con el motor de Monte Carlo de GolazoX. EstadÃ­sticas, alineaciones histÃ³ricas y resultado en segundos.`;
   const canonUrl    = `${_routeSiteUrl}/partido/${esc(raw)}`;
   const deepLink    = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
   const badgeA      = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
@@ -286,7 +286,7 @@ app.get('/partido/:matchup', (req, res) => {
       },
       {
         '@type': 'WebPage',
-        'name': `${labelA} vs ${labelB} — Simulación de Fútbol`,
+        'name': `${labelA} vs ${labelB} â€” SimulaciÃ³n de FÃºtbol`,
         'description': pageDesc.replace(/&\w+;/g, ' '),
         'url': canonUrl,
         'inLanguage': 'es',
@@ -303,7 +303,7 @@ app.get('/partido/:matchup', (req, res) => {
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
   <meta name="robots" content="index,follow"/>
@@ -353,11 +353,11 @@ app.get('/partido/:matchup', (req, res) => {
   </style>
 </head>
 <body>
-<div class="mp-wrap">
-  <a class="mp-backlink" href="/">← GolazoX — Football Time Machine</a>
+<main class="mp-wrap">
+  <a class="mp-backlink" href="/">â† GolazoX â€” Football Time Machine</a>
 
   <div class="mp-teams">
-    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" loading="eager"/>` : ''}
+    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
     <div class="mp-team-info">
       <div class="mp-name">${esc(nameA)}</div>
       ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
@@ -367,14 +367,14 @@ app.get('/partido/:matchup', (req, res) => {
       <div class="mp-name">${esc(nameB)}</div>
       ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
     </div>
-    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" loading="eager"/>` : ''}
+    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
   </div>
 
-  <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
+  <h1>Â¿QuiÃ©n ganarÃ­a ${esc(labelA)} vs ${esc(labelB)}?</h1>
   <p class="mp-intro">
-    Usa el simulador de fútbol histórico GolazoX para enfrentar a <strong>${esc(labelA)}</strong> y <strong>${esc(labelB)}</strong>.
-    Nuestro motor probabilístico ejecuta miles de simulaciones con las alineaciones reales de cada era,
-    el rendimiento histórico de cada jugador y factores tácticos para darte el resultado más probable.
+    Usa el simulador de fÃºtbol histÃ³rico GolazoX para enfrentar a <strong>${esc(labelA)}</strong> y <strong>${esc(labelB)}</strong>.
+    Nuestro motor probabilÃ­stico ejecuta miles de simulaciones con las alineaciones reales de cada era,
+    el rendimiento histÃ³rico de cada jugador y factores tÃ¡cticos para darte el resultado mÃ¡s probable.
     Gratis, sin registro, en segundos.
   </p>
 
@@ -391,9 +391,9 @@ app.get('/partido/:matchup', (req, res) => {
   </div>` : ''}
 
   <a class="mp-cta" href="${deepLink}">
-    ⚽ Simular ${esc(labelA)} vs ${esc(labelB)} ahora
+    âš½ Simular ${esc(labelA)} vs ${esc(labelB)} ahora
   </a>
-  <p class="mp-note">Motor Monte Carlo · +500 plantillas históricas · Resultado en segundos</p>
+  <p class="mp-note">Motor Monte Carlo Â· +500 plantillas histÃ³ricas Â· Resultado en segundos</p>
 
   ${relatedMatches.length ? `
   <div class="mp-related">
@@ -405,23 +405,419 @@ app.get('/partido/:matchup', (req, res) => {
   </div>` : ''}
 
   <div class="mp-footer">
-    <a href="/">GolazoX</a> · <a href="/legal">Aviso Legal</a> · <a href="/privacy">Privacidad</a>
-    · Simulador de fútbol histórico · Sin afiliación con FIFA, UEFA ni clubes
+    <a href="/">GolazoX</a> Â· <a href="/legal">Aviso Legal</a> Â· <a href="/privacy">Privacidad</a>
+    Â· Simulador de fÃºtbol histÃ³rico Â· Sin afiliaciÃ³n con FIFA, UEFA ni clubes
   </div>
-</div>
+</main>
 </body>
 </html>`;
 
   res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
 });
 
-// Fuentes auto-alojadas: cache inmutable 1 año
+// â”€â”€ /match/:matchup â€” English SSR page (mirrors /partido/ for EN SEO) â”€â”€â”€â”€â”€â”€
+app.get('/match/:matchup', (req, res) => {
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
+  const raw = req.params.matchup || '';
+  const vsIdx = raw.indexOf('-vs-');
+  if (vsIdx === -1) return res.status(404).send('Not Found');
+  const partA = raw.slice(0, vsIdx);
+  const partB = raw.slice(vsIdx + 4);
+  const [slugA, eraA = ''] = partA.split(':');
+  const [slugB, eraB = ''] = partB.split(':');
+
+  const entryA = CATALOG.find(c => c.slug === slugA);
+  const entryB = CATALOG.find(c => c.slug === slugB);
+  if (!entryA || !entryB) return res.status(404).send('Not Found');
+
+  const nameA  = entryA.nameEn || entryA.nameEs;
+  const nameB  = entryB.nameEn || entryB.nameEs;
+  const labelA = eraA ? `${nameA} ${eraA}` : nameA;
+  const labelB = eraB ? `${nameB} ${eraB}` : nameB;
+  const esc    = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  const rosterFull = (slug, era) => {
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
+      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
+      const key = era && d.seasons[era] ? era : seasons[0];
+      return (d.seasons[key]?.players || []).slice(0, 11);
+    } catch (_) { return []; }
+  };
+  const playersA = rosterFull(slugA, eraA);
+  const playersB = rosterFull(slugB, eraB);
+
+  const relatedMatches = (() => {
+    const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','brasilien','deutschland','argentinien'];
+    const related = [];
+    for (const r of rivals) {
+      if (r === slugA || r === slugB) continue;
+      const entry = CATALOG.find(c => c.slug === r);
+      if (!entry) continue;
+      related.push({ slug: r, name: entry.nameEn || entry.nameEs });
+      if (related.length >= 3) break;
+    }
+    return related;
+  })();
+
+  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} â€” Simulate the Match | GolazoX`;
+  const pageDesc  = `Who would win: ${esc(labelA)} vs ${esc(labelB)}? Simulate it now with GolazoX's Monte Carlo engine. Real historical squads, stats, and result in seconds.`;
+  const canonUrl  = `${_routeSiteUrl}/match/${esc(raw)}`;
+  const esUrl     = `${_routeSiteUrl}/partido/${esc(raw)}`;
+  const deepLink  = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}&lang=en`;
+  const badgeA    = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
+  const badgeB    = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
+
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': _routeSiteUrl },
+          { '@type': 'ListItem', 'position': 2, 'name': `${labelA} vs ${labelB}` },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        'name': `${labelA} vs ${labelB} â€” Football Simulation`,
+        'description': pageDesc,
+        'url': canonUrl,
+        'inLanguage': 'en',
+        'about': [
+          { '@type': 'SportsTeam', 'name': labelA, 'sport': 'Soccer', ...(badgeA ? { 'logo': badgeA } : {}) },
+          { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
+        ],
+        'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
+    ],
+  });
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>${pageTitle}</title>
+  <meta name="description" content="${pageDesc}"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="es" href="${esUrl}"/>
+  <link rel="alternate" hreflang="en" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="x-default" href="${canonUrl}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="${pageTitle}"/>
+  <meta property="og:description" content="${pageDesc}"/>
+  <meta property="og:url" content="${canonUrl}"/>
+  <meta property="og:image" content="${_routeSiteUrl}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="${pageTitle}"/>
+  <meta name="twitter:description" content="${pageDesc}"/>
+  <script type="application/ld+json">${jsonLd}</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
+    .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
+    .mp-backlink:hover{opacity:1;text-decoration:underline}
+    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
+    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
+    .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
+    h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
+    .mp-intro{color:#94a3b8;font-size:.97rem;line-height:1.7;margin-bottom:2rem;border-left:3px solid #7b2ff7;padding-left:1rem}
+    .mp-rosters{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2rem}
+    .mp-roster-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:.875rem;padding:1.2rem}
+    .mp-roster-title{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.8rem}
+    .mp-player-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.875rem}
+    .mp-player-row:last-child{border-bottom:0}
+    .mp-player-name{color:#e2e8f0}
+    .mp-player-pos{color:#64748b;font-size:.75rem;font-weight:600;min-width:2.5rem;text-align:right}
+    .mp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1.1rem 2rem;border-radius:.875rem;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:.8rem;transition:opacity .15s}
+    .mp-cta:hover{opacity:.9}
+    .mp-note{font-size:.8rem;color:#475569;text-align:center;margin-bottom:2.5rem}
+    .mp-related{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+    .mp-related-title{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.8rem}
+    .mp-related-links{display:flex;flex-wrap:wrap;gap:.5rem}
+    .mp-related-link{color:#38bdf8;font-size:.875rem;text-decoration:none;background:rgba(56,189,248,.07);padding:.3rem .8rem;border-radius:999px;border:1px solid rgba(56,189,248,.15)}
+    .mp-related-link:hover{background:rgba(56,189,248,.15)}
+    .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
+    .mp-footer a{color:#475569;text-decoration:none}
+    .mp-footer a:hover{text-decoration:underline}
+    @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
+  </style>
+</head>
+<body>
+<main class="mp-wrap">
+  <a class="mp-backlink" href="/">â† GolazoX â€” Football Time Machine</a>
+
+  <div class="mp-teams">
+    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
+    <div class="mp-team-info">
+      <div class="mp-name">${esc(nameA)}</div>
+      ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
+    </div>
+    <span class="mp-vs">VS</span>
+    <div class="mp-team-info">
+      <div class="mp-name">${esc(nameB)}</div>
+      ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
+    </div>
+    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
+  </div>
+
+  <h1>Who would win: ${esc(labelA)} vs ${esc(labelB)}?</h1>
+  <p class="mp-intro">
+    Use GolazoX's historical football simulator to pit <strong>${esc(labelA)}</strong> against <strong>${esc(labelB)}</strong>.
+    Our probabilistic engine runs thousands of simulations using each era's real squads,
+    player historical performance and tactical factors to give you the most likely result.
+    Free, no sign-up, in seconds.
+  </p>
+
+  ${(playersA.length || playersB.length) ? `
+  <div class="mp-rosters">
+    ${playersA.length ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelA)}</div>
+      ${playersA.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
+    </div>` : ''}
+    ${playersB.length ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelB)}</div>
+      ${playersB.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
+    </div>` : ''}
+  </div>` : ''}
+
+  <a class="mp-cta" href="${deepLink}">
+    âš½ Simulate ${esc(labelA)} vs ${esc(labelB)} now
+  </a>
+  <p class="mp-note">Monte Carlo Engine Â· 500+ historical squads Â· Result in seconds</p>
+
+  ${relatedMatches.length ? `
+  <div class="mp-related">
+    <div class="mp-related-title">More matchups</div>
+    <div class="mp-related-links">
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/match/${encodeURIComponent(slugA + (eraA ? ':'+eraA : ''))}-vs-${encodeURIComponent(r.slug)}">${esc(labelA)} vs ${esc(r.name)}</a>`).join('')}
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/match/${encodeURIComponent(r.slug)}-vs-${encodeURIComponent(slugB + (eraB ? ':'+eraB : ''))}">${esc(r.name)} vs ${esc(labelB)}</a>`).join('')}
+    </div>
+  </div>` : ''}
+
+  <div class="mp-footer">
+    <a href="/">GolazoX</a> Â· <a href="/legal">Legal Notice</a> Â· <a href="/privacy">Privacy</a>
+    Â· Historical football simulator Â· Not affiliated with FIFA, UEFA or any club
+  </div>
+</main>
+</body>
+</html>`;
+
+  res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+});
+
+// â”€â”€ /partida/:matchup â€” Portuguese (PT-BR) SSR page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+app.get('/partida/:matchup', (req, res) => {
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
+  const raw = req.params.matchup || '';
+  const vsIdx = raw.indexOf('-vs-');
+  if (vsIdx === -1) return res.status(404).send('Not Found');
+  const partA = raw.slice(0, vsIdx);
+  const partB = raw.slice(vsIdx + 4);
+  const [slugA, eraA = ''] = partA.split(':');
+  const [slugB, eraB = ''] = partB.split(':');
+
+  const entryA = CATALOG.find(c => c.slug === slugA);
+  const entryB = CATALOG.find(c => c.slug === slugB);
+  if (!entryA || !entryB) return res.status(404).send('Not Found');
+
+  const nameA  = entryA.nameEs || entryA.nameEn;
+  const nameB  = entryB.nameEs || entryB.nameEn;
+  const labelA = eraA ? `${nameA} ${eraA}` : nameA;
+  const labelB = eraB ? `${nameB} ${eraB}` : nameB;
+  const esc    = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  const rosterFull = (slug, era) => {
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
+      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
+      const key = era && d.seasons[era] ? era : seasons[0];
+      return (d.seasons[key]?.players || []).slice(0, 11);
+    } catch (_) { return []; }
+  };
+  const playersA = rosterFull(slugA, eraA);
+  const playersB = rosterFull(slugB, eraB);
+
+  const relatedMatches = (() => {
+    const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','flamengo','brasilien','argentinien'];
+    const related = [];
+    for (const r of rivals) {
+      if (r === slugA || r === slugB) continue;
+      const entry = CATALOG.find(c => c.slug === r);
+      if (!entry) continue;
+      related.push({ slug: r, name: entry.nameEs || entry.nameEn });
+      if (related.length >= 3) break;
+    }
+    return related;
+  })();
+
+  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} â€” Simule a Partida | GolazoX`;
+  const pageDesc  = `Quem venceria ${esc(labelA)} contra ${esc(labelB)}? Simule agora com o motor Monte Carlo do GolazoX. Elencos histÃ³ricos reais, estatÃ­sticas e resultado em segundos.`;
+  const canonUrl  = `${_routeSiteUrl}/partida/${esc(raw)}`;
+  const esUrl     = `${_routeSiteUrl}/partido/${esc(raw)}`;
+  const enUrl     = `${_routeSiteUrl}/match/${esc(raw)}`;
+  const deepLink  = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
+  const badgeA    = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
+  const badgeB    = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
+
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': _routeSiteUrl },
+          { '@type': 'ListItem', 'position': 2, 'name': `${labelA} vs ${labelB}` },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        'name': `${labelA} vs ${labelB} â€” SimulaÃ§Ã£o de Futebol`,
+        'description': pageDesc,
+        'url': canonUrl,
+        'inLanguage': 'pt-BR',
+        'about': [
+          { '@type': 'SportsTeam', 'name': labelA, 'sport': 'Soccer', ...(badgeA ? { 'logo': badgeA } : {}) },
+          { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
+        ],
+        'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
+    ],
+  });
+
+  const html = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>${pageTitle}</title>
+  <meta name="description" content="${pageDesc}"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="pt-BR" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="es" href="${esUrl}"/>
+  <link rel="alternate" hreflang="en" href="${enUrl}"/>
+  <link rel="alternate" hreflang="x-default" href="${esUrl}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="${pageTitle}"/>
+  <meta property="og:description" content="${pageDesc}"/>
+  <meta property="og:url" content="${canonUrl}"/>
+  <meta property="og:image" content="${_routeSiteUrl}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="${pageTitle}"/>
+  <meta name="twitter:description" content="${pageDesc}"/>
+  <script type="application/ld+json">${jsonLd}</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
+    .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
+    .mp-backlink:hover{opacity:1;text-decoration:underline}
+    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
+    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
+    .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
+    h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
+    .mp-intro{color:#94a3b8;font-size:.97rem;line-height:1.7;margin-bottom:2rem;border-left:3px solid #7b2ff7;padding-left:1rem}
+    .mp-rosters{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2rem}
+    .mp-roster-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:.875rem;padding:1.2rem}
+    .mp-roster-title{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.8rem}
+    .mp-player-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.875rem}
+    .mp-player-row:last-child{border-bottom:0}
+    .mp-player-name{color:#e2e8f0}
+    .mp-player-pos{color:#64748b;font-size:.75rem;font-weight:600;min-width:2.5rem;text-align:right}
+    .mp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1.1rem 2rem;border-radius:.875rem;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:.8rem;transition:opacity .15s}
+    .mp-cta:hover{opacity:.9}
+    .mp-note{font-size:.8rem;color:#475569;text-align:center;margin-bottom:2.5rem}
+    .mp-related{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+    .mp-related-title{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.8rem}
+    .mp-related-links{display:flex;flex-wrap:wrap;gap:.5rem}
+    .mp-related-link{color:#38bdf8;font-size:.875rem;text-decoration:none;background:rgba(56,189,248,.07);padding:.3rem .8rem;border-radius:999px;border:1px solid rgba(56,189,248,.15)}
+    .mp-related-link:hover{background:rgba(56,189,248,.15)}
+    .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
+    .mp-footer a{color:#475569;text-decoration:none}
+    .mp-footer a:hover{text-decoration:underline}
+    @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
+  </style>
+</head>
+<body>
+<main class="mp-wrap">
+  <a class="mp-backlink" href="/">â† GolazoX â€” Football Time Machine</a>
+
+  <div class="mp-teams">
+    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
+    <div class="mp-team-info">
+      <div class="mp-name">${esc(nameA)}</div>
+      ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
+    </div>
+    <span class="mp-vs">VS</span>
+    <div class="mp-team-info">
+      <div class="mp-name">${esc(nameB)}</div>
+      ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
+    </div>
+    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
+  </div>
+
+  <h1>Quem venceria: ${esc(labelA)} vs ${esc(labelB)}?</h1>
+  <p class="mp-intro">
+    Use o simulador de futebol histÃ³rico GolazoX para enfrentar <strong>${esc(labelA)}</strong> e <strong>${esc(labelB)}</strong>.
+    Nosso motor probabilÃ­stico executa milhares de simulaÃ§Ãµes com os elencos reais de cada era,
+    o desempenho histÃ³rico de cada jogador e fatores tÃ¡ticos para te dar o resultado mais provÃ¡vel.
+    GrÃ¡tis, sem cadastro, em segundos.
+  </p>
+
+  ${(playersA.length || playersB.length) ? `
+  <div class="mp-rosters">
+    ${playersA.length ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelA)}</div>
+      ${playersA.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
+    </div>` : ''}
+    ${playersB.length ? `<div class="mp-roster-card">
+      <div class="mp-roster-title">${esc(labelB)}</div>
+      ${playersB.map(p => `<div class="mp-player-row"><span class="mp-player-name">${esc(p.name)}</span><span class="mp-player-pos">${esc(p.position)}</span></div>`).join('')}
+    </div>` : ''}
+  </div>` : ''}
+
+  <a class="mp-cta" href="${deepLink}">
+    âš½ Simular ${esc(labelA)} vs ${esc(labelB)} agora
+  </a>
+  <p class="mp-note">Motor Monte Carlo Â· +500 elencos histÃ³ricos Â· Resultado em segundos</p>
+
+  ${relatedMatches.length ? `
+  <div class="mp-related">
+    <div class="mp-related-title">Outros confrontos</div>
+    <div class="mp-related-links">
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/partida/${encodeURIComponent(slugA + (eraA ? ':'+eraA : ''))}-vs-${encodeURIComponent(r.slug)}">${esc(labelA)} vs ${esc(r.name)}</a>`).join('')}
+      ${relatedMatches.map(r => `<a class="mp-related-link" href="/partida/${encodeURIComponent(r.slug)}-vs-${encodeURIComponent(slugB + (eraB ? ':'+eraB : ''))}">${esc(r.name)} vs ${esc(labelB)}</a>`).join('')}
+    </div>
+  </div>` : ''}
+
+  <div class="mp-footer">
+    <a href="/">GolazoX</a> Â· <a href="/legal">Aviso Legal</a> Â· <a href="/privacy">Privacidade</a>
+    Â· Simulador de futebol histÃ³rico Â· Sem afiliaÃ§Ã£o com FIFA, UEFA ou clubes
+  </div>
+</main>
+</body>
+</html>`;
+
+  res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+});
+
+// Fuentes auto-alojadas: cache inmutable 1 aÃ±o
 app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   maxAge: '1y',
   immutable: true,
 }));
 
-// Imágenes de árbitros y estadios — nunca cachear (se pueden sustituir en cualquier momento)
+// ImÃ¡genes de Ã¡rbitros y estadios â€” nunca cachear (se pueden sustituir en cualquier momento)
 app.use('/img/referees', express.static(path.join(__dirname, 'public', 'img', 'referees'), {
   etag: false, lastModified: false,
   setHeaders: (res) => res.set('Cache-Control', 'no-store'),
@@ -431,7 +827,7 @@ app.use('/img/stadiums', express.static(path.join(__dirname, 'public', 'img', 's
   setHeaders: (res) => res.set('Cache-Control', 'no-store'),
 }));
 
-// Service Worker — must be served from the root scope with the correct header
+// Service Worker â€” must be served from the root scope with the correct header
 // so it can intercept all requests under '/'.
 // The Service-Worker-Allowed header grants it scope beyond its script directory.
 app.get('/sw.js', (_req, res) => {
@@ -441,7 +837,7 @@ app.get('/sw.js', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'sw.js'));
 });
 
-// Versioned assets (app.js?v=N, style.css?v=N) — serve minified in production.
+// Versioned assets (app.js?v=N, style.css?v=N) â€” serve minified in production.
 const IS_PROD = process.env.NODE_ENV === 'production';
 app.get('/app.js', (_req, res) => {
   res.set('Cache-Control', 'no-store');
@@ -460,13 +856,13 @@ app.get('/style.css', (_req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ── Flag proxy — caches country flags locally from flagcdn.com ────────────────
-// Subdivision codes not supported by flagcdn → map to closest alternative
+// â”€â”€ Flag proxy â€” caches country flags locally from flagcdn.com â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Subdivision codes not supported by flagcdn â†’ map to closest alternative
 const _FLAG_ISO_MAP = {
-  'gb-eng': 'gb',   // England → UK flag
-  'gb-sct': 'gb',   // Scotland → UK flag (flagcdn has no gb-sct)
-  'gb-wls': 'gb',   // Wales → UK flag
-  'gb-nir': 'gb',   // Northern Ireland → UK flag
+  'gb-eng': 'gb',   // England â†’ UK flag
+  'gb-sct': 'gb',   // Scotland â†’ UK flag (flagcdn has no gb-sct)
+  'gb-wls': 'gb',   // Wales â†’ UK flag
+  'gb-nir': 'gb',   // Northern Ireland â†’ UK flag
 };
 const _flagCache = new Map();
 app.get('/flag/:iso', async (req, res) => {
@@ -496,14 +892,14 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
   setHeaders: (res) => { res.set('Access-Control-Allow-Origin', '*'); },
 }));
 
-// Shared JS modules — served from webapp root (used by both Node.js and browser)
+// Shared JS modules â€” served from webapp root (used by both Node.js and browser)
 app.get('/player_ratings.js', (_req, res) => {
   res.type('application/javascript');
   res.sendFile(path.join(__dirname, 'player_ratings.js'));
 });
 
-// ── Config endpoint: injects site URL into the frontend ──────────────────────
-// Loaded as /config.js — exposes only safe, non-secret config to the client.
+// â”€â”€ Config endpoint: injects site URL into the frontend â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Loaded as /config.js â€” exposes only safe, non-secret config to the client.
 app.get('/config.js', (_req, res) => {
   const safeUrl = SITE_URL.replace(/[\\"'<>]/g, '');
   res.type('application/javascript').set('Cache-Control', 'public, max-age=3600').send(
@@ -520,17 +916,17 @@ const _rl = (max, windowMs) => rateLimit({
   message:         { error: 'Too many requests. Please wait.' },
   keyGenerator:    ipKeyGenerator,
 });
-const _rateLimit = _rl;  // alias — all call sites unchanged
+const _rateLimit = _rl;  // alias â€” all call sites unchanged
 
-// ════════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // CAPA DE SEGURIDAD ANTI-DDOS / ANTI-SCRAPING / ANTI-BRUTEFORCE
-// ════════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-// ── 1. Bloqueo de bots y clientes automatizados (API endpoints) ──────────
-// Regla: si el UA está vacío o coincide con herramientas CLI/scraping, devuelve
-// 403. Los navegadores reales siempre envían un UA con "Mozilla/". Los crawlers
-// SEO legítimos (Googlebot, Bingbot) nunca deberían llamar a los endpoints de
-// la API, pero si lo hacen no se les bloquea para no romper indexación.
+// â”€â”€ 1. Bloqueo de bots y clientes automatizados (API endpoints) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Regla: si el UA estÃ¡ vacÃ­o o coincide con herramientas CLI/scraping, devuelve
+// 403. Los navegadores reales siempre envÃ­an un UA con "Mozilla/". Los crawlers
+// SEO legÃ­timos (Googlebot, Bingbot) nunca deberÃ­an llamar a los endpoints de
+// la API, pero si lo hacen no se les bloquea para no romper indexaciÃ³n.
 const _BLOCKED_UA_RE = /^(curl|wget|python[\s\-/]|scrapy|go-http-client|java\/|okhttp\/|axios\/|node-fetch|got\/|libwww|libcurl|perl\/|ruby\/|php\/|nikto|sqlmap|masscan|nmap|zgrab|nuclei[/ ]|dirbuster|gobuster|wfuzz|ffuf|hydra[/ ]|acunetix|nessus|burp|zap\/)/i;
 
 const _apiBotBlock = (req, res, next) => {
@@ -541,33 +937,33 @@ const _apiBotBlock = (req, res, next) => {
   }
   next();
 };
-// Sólo se aplica a los endpoints de datos — NO a ficheros estáticos ni HTML
+// SÃ³lo se aplica a los endpoints de datos â€” NO a ficheros estÃ¡ticos ni HTML
 app.use(['/simulate', '/simulate-bulk', '/lookup', '/catalog', '/suggest', '/referees'], _apiBotBlock);
 
-// ── 2. Presupuesto global de peticiones: 200 req / 5 min por IP ──────────
-// Capa compartida para TODAS las rutas. Un usuario legítimo rara vez supera
+// â”€â”€ 2. Presupuesto global de peticiones: 200 req / 5 min por IP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Capa compartida para TODAS las rutas. Un usuario legÃ­timo rara vez supera
 // 40 req/min; un bot en paralelo lo satura en segundos.
-// Si se supera: 429 con Retry-After. Se registra IP + ruta para análisis.
+// Si se supera: 429 con Retry-After. Se registra IP + ruta para anÃ¡lisis.
 app.use(rateLimit({
   windowMs: 5 * 60 * 1000,   // ventana de 5 minutos
-  max:      200,              // máximo acumulado entre TODOS los endpoints
+  max:      200,              // mÃ¡ximo acumulado entre TODOS los endpoints
   standardHeaders: 'draft-6',
   legacyHeaders:   false,
   message:         { error: 'Rate limit global. Espera unos minutos.' },
   keyGenerator:    ipKeyGenerator,
   handler: (req, res, _next, options) => {
-    console.warn(`[security:global-rl] IP=${req.ip} ${req.method} ${req.path} → HTTP 429`);
+    console.warn(`[security:global-rl] IP=${req.ip} ${req.method} ${req.path} â†’ HTTP 429`);
     res.status(options.statusCode)
        .set('Retry-After', String(Math.ceil(options.windowMs / 1000)))
        .json(options.message);
   },
 }));
 
-// ── 3. Slow-down progresivo en /simulate ─────────────────────────────────
+// â”€â”€ 3. Slow-down progresivo en /simulate â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Las primeras 3 simulaciones/min: sin demora (flujo normal de usuario).
-// A partir de la 4ª: +1 s por llamada extra, máximo 6 s.
+// A partir de la 4Âª: +1 s por llamada extra, mÃ¡ximo 6 s.
 // Efecto: el usuario lo nota levemente; un script en bucle queda bloqueado
-// esperando sin consumir tus créditos de hosting en cómputo intensivo.
+// esperando sin consumir tus crÃ©ditos de hosting en cÃ³mputo intensivo.
 const _simulateSlowDown = slowDown({
   windowMs:     60_000,   // ventana de 1 minuto
   delayAfter:   3,        // sin demora en las primeras 3 llamadas
@@ -579,7 +975,7 @@ const _simulateSlowDown = slowDown({
   headers:      true,     // X-SlowDown-* headers para debug
 });
 
-// ── 4. Validación de Content-Type en /simulate ───────────────────────────
+// â”€â”€ 4. ValidaciÃ³n de Content-Type en /simulate â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Rechaza payloads que no sean JSON plano (bloquea formularios HTML y ataques
 // de tipo content-type confusion que intentan bypassar parsers).
 const _requireJSON = (req, res, next) => {
@@ -596,17 +992,17 @@ const _VALID_FORMATIONS = new Set([
   '4-1-2-1-2','1-2-1','1-1-2','2-1-1','1-1','1-2','2-1','3-2','2-3',
 ]);
 
-// ── GET /catalog ──────────────────────────────
+// â”€â”€ GET /catalog â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Returns the full catalog of local teams + their available seasons.
 // Cached for 5 min (re-run seed to update).
-// Rate: 8/5min per IP (1.6/min) — it's a ~150 kB JSON payload with all 471 teams;
+// Rate: 8/5min per IP (1.6/min) â€” it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
   res.set('Cache-Control', 'no-store');
   res.json(CATALOG);
 });
 
-// ── GET /catalog-groups ───────────────────────
+// â”€â”€ GET /catalog-groups â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Diagnostic: returns each team's slug, group, and source (meta vs file).
 // Publicly readable since /catalog already exposes group data.
 app.get('/catalog-groups', (_req, res) => {
@@ -622,9 +1018,9 @@ app.get('/catalog-groups', (_req, res) => {
   res.json(summary);
 });
 
-// ── GET /suggest ─────────────────────────────
-// Query: ?q=bar  → returns up to 15 matching {name, slug, badge} objects for autocomplete
-// Rate: 40/min — fast autocomplete, pero con margen para que un bot necesite más.
+// â”€â”€ GET /suggest â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Query: ?q=bar  â†’ returns up to 15 matching {name, slug, badge} objects for autocomplete
+// Rate: 40/min â€” fast autocomplete, pero con margen para que un bot necesite mÃ¡s.
 app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
   const q = String(req.query.q || '').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
   const matches = q.length < 1
@@ -653,7 +1049,7 @@ app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
   res.json(result);
 });
 
-// ── GET /badges ───────────────────────────────
+// â”€â”€ GET /badges â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Gallery page: returns all known teams with badges as HTML
 app.get('/badges', _rateLimit(30, 60000), (_req, res) => {
   const rows = _allTeams.map(t =>
@@ -672,16 +1068,16 @@ h1{color:#00d4ff;margin-bottom:1.2rem}input{background:#1a2236;color:#e2e8f0;bor
 .bg-card img{width:56px;height:56px;object-fit:contain;display:block;margin:0 auto 6px}
 .bg-name{font-size:.65rem;line-height:1.3;word-break:break-word;color:#94a3b8}
 </style></head><body>
-<h1>⚽ Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
-<input id="f" placeholder="Filtrar…" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
+<h1>âš½ Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
+<input id="f" placeholder="Filtrarâ€¦" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
 <div class="bg-grid">${rows}</div></body></html>`);
 });
 
-// ── GET /lookup ──────────────────────────────
+// â”€â”€ GET /lookup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Query: ?team=Arsenal&era=2004
 // Returns live squad data from local DB or TheSportsDB API
-// Rate: 15/min — cada lookup puede llegar a hacer una llamada externa; 15 es
-// más que suficiente para uso interactivo y inhibe el harvesting automatizado.
+// Rate: 15/min â€” cada lookup puede llegar a hacer una llamada externa; 15 es
+// mÃ¡s que suficiente para uso interactivo y inhibe el harvesting automatizado.
 app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
   try {
     const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
@@ -692,15 +1088,15 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
 
     const result  = await lookupTeam(team, era);
 
-    // Team not found — return a helpful error distinguishing offline vs unknown
+    // Team not found â€” return a helpful error distinguishing offline vs unknown
     if (!result.found) {
       const isOffline = process.env.OFFLINE_MODE === 'true';
       return res.status(404).json({
         found:   false,
         offline: isOffline,
         error:   isOffline
-          ? `"${team}" no está en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
-          : `No se encontró "${team}". Comprueba el nombre o prueba otra temporada.`,
+          ? `"${team}" no estÃ¡ en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
+          : `No se encontrÃ³ "${team}". Comprueba el nombre o prueba otra temporada.`,
       });
     }
 
@@ -727,14 +1123,14 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     res.json({ ...displayResult, badgeUrl });
   } catch (err) {
     console.error('[/lookup error]', err.message);
-    res.status(500).json({ found: false, error: 'Error al buscar el equipo. Inténtalo de nuevo.' });
+    res.status(500).json({ found: false, error: 'Error al buscar el equipo. IntÃ©ntalo de nuevo.' });
   }
 });
 
-// ── POST /simulate ────────────────────────────
+// â”€â”€ POST /simulate â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Body: { teamA, teamB, eraA, eraB, formationA, formationB }
 // Returns: { lineups, ratings, probabilities, finalScore, scorers, altScores, narrative }
-// Rate: 10/min hard block + slow-down progresivo a partir de la 4ª llamada.
+// Rate: 10/min hard block + slow-down progresivo a partir de la 4Âª llamada.
 // Content-Type: application/json requerido (bloquea formularios y payloads raw).
 app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), async (req, res) => {
   try {
@@ -784,10 +1180,10 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 
     // Reject simulation if either team was not found anywhere
     if (!luA.found) {
-      return res.status(404).json({ error: `¡Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}¡ Prueba sin año o con el nombre en inglés.` });
+      return res.status(404).json({ error: `Â¡Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}Â¡ Prueba sin aÃ±o o con el nombre en inglÃ©s.` });
     }
     if (!luB.found) {
-      return res.status(404).json({ error: `¡Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}¡ Prueba sin año o con el nombre en inglés.` });
+      return res.status(404).json({ error: `Â¡Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}Â¡ Prueba sin aÃ±o o con el nombre en inglÃ©s.` });
     }
 
     // Apply pre-match player overrides (from user substitutions in the pre-match screen).
@@ -842,9 +1238,9 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
   }
 });
 
-// ── POST /simulate-bulk ───────────────────────────────────────────────────
+// â”€â”€ POST /simulate-bulk â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Batch simulator for tournaments. Accepts up to 50 match pairs, returns
-// minimal results (score + optional penalties) — no narrative, no badges.
+// minimal results (score + optional penalties) â€” no narrative, no badges.
 // Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
 app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
   try {
@@ -891,7 +1287,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       teamCache.set(key, r);
     }));
 
-    // Convert OVR scalar (60–99) → synthetic ATK/MID/DEF/GK for biasing deriveRatings.
+    // Convert OVR scalar (60â€“99) â†’ synthetic ATK/MID/DEF/GK for biasing deriveRatings.
     // The four offsets average to zero so avg(result) == ovr.
     const _ovrToRatings = (ovr) => ({
       attack:      Math.min(99, ovr + 3),
@@ -900,7 +1296,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       goalkeeping: Math.max(60, ovr - 2),
     });
 
-    // Simulate each match (synchronous — no timeline/narrative needed)
+    // Simulate each match (synchronous â€” no timeline/narrative needed)
     const results = teamPairs.map(pair => {
       const luA = teamCache.get(lookupKey(pair.slugA, pair.eraA)) || { found: false };
       const luB = teamCache.get(lookupKey(pair.slugB, pair.eraB)) || { found: false };
@@ -962,17 +1358,17 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
   }
 });
 
-// ── GET /referees ─────────────────────────────────────────────────────────
+// â”€â”€ GET /referees â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Returns the full list of available referees (id, name, multipliers).
 // Used by the client to populate the referee picker.
 app.get('/referees', _rateLimit(30, 60000), (_req, res) => {
   res.json(REFEREES);
 });
 
-// Images are served as static files from public/img/ — no proxy needed.
-// ── HTML escape helper (XSS prevention) ───────────────────
+// Images are served as static files from public/img/ â€” no proxy needed.
+// â”€â”€ HTML escape helper (XSS prevention) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const _esc = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-// ── Language helper — reads cookie or ?lang= param ────────
+// â”€â”€ Language helper â€” reads cookie or ?lang= param â”€â”€â”€â”€â”€â”€â”€â”€
 const _lang = (req) => {
   const q = req.query && req.query.lang;
   if (q === 'en' || q === 'es') return q;
@@ -981,13 +1377,13 @@ const _lang = (req) => {
   if (m && (m[1] === 'en' || m[1] === 'es')) return m[1];
   return 'es';
 };
-// ── Páginas legales (LSSI-CE / RGPD) ─────────────────────
+// â”€â”€ PÃ¡ginas legales (LSSI-CE / RGPD) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>${title} — GolazoX</title>
+  <title>${title} â€” GolazoX</title>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
   <link rel="stylesheet" href="/style.css?v=21"/>
   <style>
@@ -999,7 +1395,7 @@ const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
     .back { display:inline-block; margin-top:2rem; font-size:.8rem; opacity:.5; }
   </style>
 </head>
-<body>${body}<a class="back" href="/">← Volver al simulador</a></body>
+<body>${body}<a class="back" href="/">â† Volver al simulador</a></body>
 </html>`;
 
 const OWNER_NAME  = process.env.OWNER_NAME  || 'Victor Vega Viyuela';
@@ -1007,11 +1403,11 @@ const OWNER_EMAIL = process.env.OWNER_EMAIL || 'info@golazox.com'; // NEVER rend
 const SITE_URL    = process.env.SITE_URL    || 'https://golazox.com';
 const CONTACT_FILE = path.join(__dirname, 'contact_messages.json');
 
-// ── Nodemailer transporter (optional — only active when EMAIL_PASS is set) ──
+// â”€â”€ Nodemailer transporter (optional â€” only active when EMAIL_PASS is set) â”€â”€
 // Set env vars in Hostinger panel:
 //   EMAIL_USER = info@golazox.com
-//   EMAIL_PASS = <password del buzón info@golazox.com en Hostinger>
-//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com — ver panel Hostinger → Email → Configure)
+//   EMAIL_PASS = <password del buzÃ³n info@golazox.com en Hostinger>
+//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com â€” ver panel Hostinger â†’ Email â†’ Configure)
 //   EMAIL_PORT = 465  (SSL) o 587 (STARTTLS)
 const _emailHost = process.env.EMAIL_HOST || 'smtp.hostinger.com';
 const _emailPort = parseInt(process.env.EMAIL_PORT || '465', 10);
@@ -1027,10 +1423,10 @@ const _mailer = (process.env.EMAIL_USER && process.env.EMAIL_PASS)
 if (_mailer) {
   _mailer.verify(err => {
     if (err) console.warn('[mail] SMTP verify failed:', err.message);
-    else     console.log('[mail] SMTP ready → will email', OWNER_EMAIL);
+    else     console.log('[mail] SMTP ready â†’ will email', OWNER_EMAIL);
   });
 } else {
-  console.log('[mail] No EMAIL_USER/EMAIL_PASS set — contact messages saved to file only.');
+  console.log('[mail] No EMAIL_USER/EMAIL_PASS set â€” contact messages saved to file only.');
 }
 
 async function _sendContactEmail({ name, email, subject, message }) {
@@ -1040,7 +1436,7 @@ async function _sendContactEmail({ name, email, subject, message }) {
       from:    `"GolazoX Contact" <${process.env.EMAIL_USER}>`,
       to:      OWNER_EMAIL,
       replyTo: email,
-      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} – ${name}`,
+      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} â€“ ${name}`,
       text:    `De: ${name} <${email}>\n\nAsunto: ${subject || '(sin asunto)'}\n\n${message}`,
       html:    `<p><strong>De:</strong> ${_esc(name)} &lt;${_esc(email)}&gt;</p>
                 <p><strong>Asunto:</strong> ${_esc(subject || '(sin asunto)')}</p>
@@ -1058,12 +1454,12 @@ app.get('/legal', (req, res) => {
   if (lang === 'en') {
     res.type('text/html').send(LEGAL_HTML('Legal Notice', `
     <h1>Legal Notice</h1>
-    <p><strong>Site Owner:</strong> \"GolazoX — Football Time Machine\" is a non-commercial personal fan project.
+    <p><strong>Site Owner:</strong> \"GolazoX â€” Football Time Machine\" is a non-commercial personal fan project.
     Owner: ${OWNER_NAME}. Contact: <a href=\"/contact?lang=en\">Contact form</a>.</p>
     <h2>Purpose and Nature of the Service</h2>
     <p>GolazoX is a probabilistic simulation engine for historical football teams, intended solely for entertainment
     purposes. It does not provide gambling services, official match predictions, or any official sports information.</p>
-    <h2>Intellectual Property — Code and Design</h2>
+    <h2>Intellectual Property â€” Code and Design</h2>
     <p>The source code, design, and simulation logic are the property of the site owner and are published under a
     personal non-commercial licence. Team and player names are used in a purely referential and informational capacity,
     under the descriptive trademark use doctrine and the public-domain nature of professional athletes\' public activities.</p>
@@ -1087,38 +1483,38 @@ app.get('/legal', (req, res) => {
   } else {
   res.type('text/html').send(LEGAL_HTML('Aviso Legal', `
     <h1>Aviso Legal</h1>
-    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX — Football Time Machine\", es un proyecto
-    personal de carácter no comercial y sin ánimo de lucro. Titular: ${_esc(OWNER_NAME)}.
+    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX â€” Football Time Machine\", es un proyecto
+    personal de carÃ¡cter no comercial y sin Ã¡nimo de lucro. Titular: ${_esc(OWNER_NAME)}.
     Contacto: <a href=\"/contact\">Formulario de contacto</a>.</p>
     <h2>Objeto y naturaleza del servicio</h2>
-    <p>GolazoX es un simulador probabilístico de partidos de fútbol históricos con fines exclusivamente lúdicos
-    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni información oficial.</p>
-    <h2>Propiedad intelectual — código y diseño</h2>
-    <p>El código fuente, diseño y lógica de simulación son propiedad del titular y se publican bajo licencia
-    personal no comercial. Los nombres de equipos y jugadores se usan con carácter referencial e informativo
-    bajo la doctrina de uso descriptivo de marcas y de figuras públicas en el ejercicio de su actividad profesional.</p>
+    <p>GolazoX es un simulador probabilÃ­stico de partidos de fÃºtbol histÃ³ricos con fines exclusivamente lÃºdicos
+    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni informaciÃ³n oficial.</p>
+    <h2>Propiedad intelectual â€” cÃ³digo y diseÃ±o</h2>
+    <p>El cÃ³digo fuente, diseÃ±o y lÃ³gica de simulaciÃ³n son propiedad del titular y se publican bajo licencia
+    personal no comercial. Los nombres de equipos y jugadores se usan con carÃ¡cter referencial e informativo
+    bajo la doctrina de uso descriptivo de marcas y de figuras pÃºblicas en el ejercicio de su actividad profesional.</p>
     <h2>Marcas registradas y escudos de terceros</h2>
     <p>Los logotipos e identificadores visuales de clubes y selecciones nacionales mostrados en este sitio son
     marcas registradas de sus respectivos titulares (clubes, federaciones nacionales, UEFA, FIFA y organismos
-    equivalentes). Su uso se limita exclusivamente a la identificación referencial de los equipos simulados
-    en un contexto no comercial, lúdico y educativo, sin que ello implique afiliación, patrocinio, asociación
+    equivalentes). Su uso se limita exclusivamente a la identificaciÃ³n referencial de los equipos simulados
+    en un contexto no comercial, lÃºdico y educativo, sin que ello implique afiliaciÃ³n, patrocinio, asociaciÃ³n
     ni respaldo por parte de ninguno de dichos titulares.</p>
-    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a través del
+    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a travÃ©s del
     <a href=\"/contact\">formulario de contacto</a> y atenderemos tu solicitud a la mayor brevedad posible.</p>
     <h2>Fuentes de datos</h2>
-    <p>Los datos de plantillas históricas se obtienen de fuentes de acceso público. Ninguna de
+    <p>Los datos de plantillas histÃ³ricas se obtienen de fuentes de acceso pÃºblico. Ninguna de
     estas fuentes constituye datos oficiales de los clubes o federaciones.</p>
-    <h2>Exclusión de responsabilidad</h2>
-    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabilístico.
+    <h2>ExclusiÃ³n de responsabilidad</h2>
+    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabilÃ­stico.
     No reflejan resultados reales ni constituyen predicciones. El titular no se responsabiliza del uso que los
-    usuarios hagan de los resultados ni de la exactitud de los datos históricos.</p>
-    <h2>Legislación aplicable</h2>
-    <p>Este aviso se rige por la legislación española (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
+    usuarios hagan de los resultados ni de la exactitud de los datos histÃ³ricos.</p>
+    <h2>LegislaciÃ³n aplicable</h2>
+    <p>Este aviso se rige por la legislaciÃ³n espaÃ±ola (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
   `));
   }
 });
 
-// ── TikTok OAuth callback ─────────────────────────────────────────────────────
+// â”€â”€ TikTok OAuth callback â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/tiktok-callback', (req, res) => {
   const code  = req.query.code  || '';
   const error = req.query.error || '';
@@ -1128,8 +1524,8 @@ app.get('/tiktok-callback', (req, res) => {
   res.type('text/html').send(`
     <html><head><title>TikTok Auth</title></head>
     <body style="font-family:sans-serif;max-width:600px;margin:60px auto;text-align:center">
-      <h2 style="color:green">✓ TikTok autorizado</h2>
-      <p>Copia este código y pégalo en el terminal:</p>
+      <h2 style="color:green">âœ“ TikTok autorizado</h2>
+      <p>Copia este cÃ³digo y pÃ©galo en el terminal:</p>
       <code style="display:block;background:#f0f0f0;padding:16px;font-size:14px;word-break:break-all;border-radius:8px">${_esc(code)}</code>
       <p style="margin-top:24px;color:#666">Luego ejecuta:<br>
       <code>node uploader.js --auth-exchange-tiktok PEGA_EL_CODIGO_AQUI</code></p>
@@ -1144,7 +1540,7 @@ app.get('/privacy', (req, res) => {
     <h1>Privacy Policy</h1>
     <p>Last updated: ${new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Data Controller</h2>
-    <p>${_esc(OWNER_NAME)} — <a href="/contact?lang=en">Contact form</a></p>
+    <p>${_esc(OWNER_NAME)} â€” <a href="/contact?lang=en">Contact form</a></p>
     <h2>Data We Collect</h2>
     <p>GolazoX <strong>does not require registration</strong>, does not use tracking cookies, and does not actively
     collect personally identifiable information.</p>
@@ -1169,38 +1565,38 @@ app.get('/privacy', (req, res) => {
     <p>Any changes will be published on this page with an updated date.</p>
   `, 'en'));
   } else {
-  res.type('text/html').send(LEGAL_HTML('Política de Privacidad', `
-    <h1>Política de Privacidad</h1>
-    <p>Última actualización: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
+  res.type('text/html').send(LEGAL_HTML('PolÃ­tica de Privacidad', `
+    <h1>PolÃ­tica de Privacidad</h1>
+    <p>Ãšltima actualizaciÃ³n: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Responsable del tratamiento</h2>
-    <p>${_esc(OWNER_NAME)} — <a href="/contact">Formulario de contacto</a></p>
+    <p>${_esc(OWNER_NAME)} â€” <a href="/contact">Formulario de contacto</a></p>
     <h2>Datos que recopilamos</h2>
     <p>GolazoX <strong>no solicita registro</strong>, no usa cookies de seguimiento y no recopila datos personales
     identificativos de forma activa.</p>
     <h2>Almacenamiento local (localStorage)</h2>
-    <p>La aplicación guarda en el almacenamiento local de tu navegador únicamente:</p>
+    <p>La aplicaciÃ³n guarda en el almacenamiento local de tu navegador Ãºnicamente:</p>
     <ul>
       <li><strong>golazox_lang</strong>: idioma preferido de la interfaz (ES/EN). No contiene datos personales.
-      No se transmite a ningún servidor. Se elimina al borrar los datos del navegador.</li>
+      No se transmite a ningÃºn servidor. Se elimina al borrar los datos del navegador.</li>
     </ul>
     <h2>Registros del servidor (logs)</h2>
-    <p>El servidor de alojamiento puede registrar automáticamente la dirección IP de las peticiones con fines
-    de seguridad y diagnóstico técnico. Estos registros se conservan un máximo de 30 días y no se ceden a terceros.</p>
+    <p>El servidor de alojamiento puede registrar automÃ¡ticamente la direcciÃ³n IP de las peticiones con fines
+    de seguridad y diagnÃ³stico tÃ©cnico. Estos registros se conservan un mÃ¡ximo de 30 dÃ­as y no se ceden a terceros.</p>
     <h2>Cookies</h2>
     <p>Este sitio web <strong>no utiliza cookies</strong> propias ni de terceros para seguimiento o publicidad.</p>
     <h2>Fuentes de datos externas</h2>
-    <p>Para obtener datos de plantillas históricas, la aplicación puede consultar APIs públicas
-    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias políticas de privacidad.</p>
+    <p>Para obtener datos de plantillas histÃ³ricas, la aplicaciÃ³n puede consultar APIs pÃºblicas
+    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias polÃ­ticas de privacidad.</p>
     <h2>Derechos del usuario</h2>
     <p>Dado que no tratamos datos personales identificativos, no aplica el ejercicio de derechos ARCO/ARCOPOL
     en sentido estricto. Para cualquier consulta: <a href="/contact">formulario de contacto</a>.</p>
-    <h2>Cambios en esta política</h2>
-    <p>Cualquier modificación se publicará en esta página con la fecha de actualización actualizada.</p>
+    <h2>Cambios en esta polÃ­tica</h2>
+    <p>Cualquier modificaciÃ³n se publicarÃ¡ en esta pÃ¡gina con la fecha de actualizaciÃ³n actualizada.</p>
   `));
   }
 });
 
-// ── Contact form ────────────────────────────────────────────────────────────
+// â”€â”€ Contact form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const _contactLimit = _rateLimit(5, 10 * 60 * 1000); // 5 sends per 10 minutes
 
 app.get('/contact', (req, res) => {
@@ -1247,9 +1643,9 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   // Honeypot check: bots fill the hidden 'url' field, humans leave it empty
   const honeypot = String(req.body.url || '').trim();
   if (honeypot.length > 0) {
-    // Silent reject — return success to not hint to bots
+    // Silent reject â€” return success to not hint to bots
     return res.type('text/html').send(LEGAL_HTML(lang === 'en' ? 'Message sent' : 'Mensaje enviado', `
-      <h1>${lang === 'en' ? 'Message received ✓' : 'Mensaje recibido ✓'}</h1>
+      <h1>${lang === 'en' ? 'Message received âœ“' : 'Mensaje recibido âœ“'}</h1>
       <p><a href="/">${lang === 'en' ? 'Back to simulator' : 'Volver al simulador'}</a></p>`, lang));
   }
   const name    = String(req.body.name    || '').slice(0, 120).trim();
@@ -1265,7 +1661,7 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).type('text/html').send(LEGAL_HTML(isEn ? 'Error' : 'Error', `
-      <h1>${isEn ? 'Invalid email' : 'Email no válido'}</h1>
+      <h1>${isEn ? 'Invalid email' : 'Email no vÃ¡lido'}</h1>
       <p><a href="/contact${isEn ? '?lang=en' : ''}">${isEn ? 'Back to form' : 'Volver al formulario'}</a>.</p>`, lang));
   }
 
@@ -1294,15 +1690,15 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   `, lang));
 });
 
-// ── Serve index.html for all other routes ─────
+// â”€â”€ Serve index.html for all other routes â”€â”€â”€â”€â”€
 // Always serve with explicit charset=utf-8 to prevent the em-dash encoding
-// corruption seen in GA ("â€"" instead of "—").
-// Bots probing unknown paths (/cmd_sco, /wp-admin…) get a 404 status so
+// corruption seen in GA ("Ã¢â‚¬"" instead of "â€”").
+// Bots probing unknown paths (/cmd_sco, /wp-adminâ€¦) get a 404 status so
 // Google doesn't index phantom pages, but still receive the SPA HTML.
 app.get('*', (req, res) => {
   const p = req.path;
   const isBotProbe = p.length > 1;
-  const cleanUrl = (process.env.SITE_URL || 'https://tudominio.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
+  const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
   const html = fs.readFileSync(indexPath, 'utf8');
   const injected = html.replace(
@@ -1315,7 +1711,7 @@ app.get('*', (req, res) => {
      .send(injected);
 });
 
-// ── Process crash guards ─────────────────────
+// â”€â”€ Process crash guards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 process.on('uncaughtException', (err) => {
   console.error('[uncaughtException]', err.message);
 });
@@ -1333,8 +1729,8 @@ app.listen(PORT, '0.0.0.0', () => {
       if (net.family === 'IPv4' && !net.internal) localIPs.push(net.address);
     }
   }
-  console.log(`\n  ⚽  Football Simulator running at:`);
+  console.log(`\n  âš½  Football Simulator running at:`);
   console.log(`       http://localhost:${PORT}`);
-  localIPs.forEach(ip => console.log(`       http://${ip}:${PORT}  ← use this on your iPhone`));
+  localIPs.forEach(ip => console.log(`       http://${ip}:${PORT}  â† use this on your iPhone`));
   console.log();
 });
