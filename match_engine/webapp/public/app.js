@@ -622,9 +622,9 @@ function setMatchMode(mode) {
 
 // ── Estadios míticos ────────────────────────────────────────────
 // Local image paths
-const _imgProxy    = f => `/img/stadiums/${f}`;
-const _REF_IMG_VER  = Date.now();
-const _refImgProxy = f => `/img/referees/${encodeURIComponent(f)}?v=${_REF_IMG_VER}`;
+const _imgProxy    = f => `/img/stadiums/${f.replace(/\.(jpg|jpeg|png)$/i, '.webp')}`;
+const _REF_IMG_VER  = 3;
+const _refImgProxy = f => `/img/referees/${encodeURIComponent(f.replace(/\.(jpg|jpeg|png)$/i, '.webp'))}?v=${_REF_IMG_VER}`;
 
 // Palette for initials-avatar fallback (one per referee, hashed from id)
 const _AVATAR_COLORS = [
@@ -3302,7 +3302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     neutroCard.dataset.id = '';
     neutroCard.innerHTML =
       `<div class="spk-card-inner">` +
-        `<img class="spk-img spk-img--neutro" src="/img/stadiums/estadio_3d.jpg" alt="Neutro">` +
+        `<img class="spk-img spk-img--neutro" src="/img/stadiums/estadio_3d.webp" alt="Neutro">` +
       `</div>` +
       `<div class="spk-name">${t('stadium-neutro')}</div>`;
     neutroCard.onclick = () => selectStadium('');
@@ -3601,7 +3601,7 @@ function _buildRefereePicker(referees) {
   noneCard.dataset.id = '';
   noneCard.innerHTML =
     `<div class="ref-photo-area ref-photo-area--rnd">` +
-      `<img class="ref-photo ref-photo--rnd" src="/img/referees/arbitro_3d.jpg" alt="Aleatorio">` +
+      `<img class="ref-photo ref-photo--rnd" src="/img/referees/arbitro_3d.webp" alt="Aleatorio">` +
       `<div class="ref-rnd-badge">?</div>` +
     `</div>` +
     `<div class="ref-name">${t('ref-random')}</div>`;

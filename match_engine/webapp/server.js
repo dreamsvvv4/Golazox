@@ -818,13 +818,37 @@ app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
 }));
 
 // ImÃ¡genes de Ã¡rbitros y estadios â€” nunca cachear (se pueden sustituir en cualquier momento)
-app.use('/img/referees', express.static(path.join(__dirname, 'public', 'img', 'referees'), {
-  etag: false, lastModified: false,
-  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
+app.use('/img/referees', (req, res, next) => {
+  const accepts = req.headers['accept'] || '';
+  if (accepts.includes('image/webp') && /\.(jpg|jpeg|png)$/i.test(req.path)) {
+    const webpFile = req.path.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    const webpPath = path.join(__dirname, 'public', 'img', 'referees', webpFile);
+    if (fs.existsSync(webpPath)) {
+      return res.set('Cache-Control', 'public, max-age=31536000, immutable')
+                .set('Content-Type', 'image/webp')
+                .sendFile(webpPath);
+    }
+  }
+  next();
+}, express.static(path.join(__dirname, 'public', 'img', 'referees'), {
+  maxAge: '7d',
+  setHeaders: (res) => res.set('Cache-Control', 'public, max-age=604800'),
 }));
-app.use('/img/stadiums', express.static(path.join(__dirname, 'public', 'img', 'stadiums'), {
-  etag: false, lastModified: false,
-  setHeaders: (res) => res.set('Cache-Control', 'no-store'),
+app.use('/img/stadiums', (req, res, next) => {
+  const accepts = req.headers['accept'] || '';
+  if (accepts.includes('image/webp') && /\.(jpg|jpeg|png)$/i.test(req.path)) {
+    const webpFile = req.path.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    const webpPath = path.join(__dirname, 'public', 'img', 'stadiums', webpFile);
+    if (fs.existsSync(webpPath)) {
+      return res.set('Cache-Control', 'public, max-age=31536000, immutable')
+                .set('Content-Type', 'image/webp')
+                .sendFile(webpPath);
+    }
+  }
+  next();
+}, express.static(path.join(__dirname, 'public', 'img', 'stadiums'), {
+  maxAge: '7d',
+  setHeaders: (res) => res.set('Cache-Control', 'public, max-age=604800'),
 }));
 
 // Service Worker â€” must be served from the root scope with the correct header
@@ -860,14 +884,15 @@ app.use('/img/badges', (req, res, next) => {
   if (accepts.includes('image/webp') && /\.(png|jpg)$/i.test(req.path)) {
     const webpPath = path.join(__dirname, 'public', 'img', 'badges', req.path.replace(/\.(png|jpg)$/i, '.webp'));
     if (fs.existsSync(webpPath)) {
-      return res.set('Cache-Control', 'public, max-age=604800')
+      return res.set('Cache-Control', 'public, max-age=31536000, immutable')
                 .set('Content-Type', 'image/webp')
                 .sendFile(webpPath);
     }
   }
   next();
 }, express.static(path.join(__dirname, 'public', 'img', 'badges'), {
-  maxAge: '7d',
+  maxAge: '30d',
+  setHeaders: (res) => res.set('Cache-Control', 'public, max-age=2592000'),
 }));
 
 // Long-cache for any request with ?v= (versioned static assets — safe to cache 1 year)

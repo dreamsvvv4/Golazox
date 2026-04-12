@@ -158,6 +158,8 @@
   </script>
 
   <!-- Google Analytics — init handled by app.js; CSP allows googletagmanager.com -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
 </head>
 <body>
@@ -1361,7 +1363,7 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=62" defer></script>
+  <script src="app.min.js?v=63" defer></script>
   <script src="tournament.min.js?v=30" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
