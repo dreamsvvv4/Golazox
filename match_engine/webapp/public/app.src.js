@@ -11,12 +11,27 @@
 'use strict';
 
 // ── Google Analytics bootstrap ─────────────────────────────
-// Runs synchronously so the config call is queued before the async gtag.js resolves.
-// The external <script async> tag in index.html loads gtag.js from googletagmanager.com.
+// dataLayer stub ensures gtag() calls are queued before gtag.js loads.
+// gtag.js is loaded lazily (after window.load + interaction) to avoid
+// blocking the main thread during LCP and TBT measurement window.
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-2BSP5YDS7N');
+(function () {
+  function _loadGtag() {
+    if (window._gtagLoaded) return;
+    window._gtagLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+  window.addEventListener('load', function () { setTimeout(_loadGtag, 3000); });
+  ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
+    window.addEventListener(e, _loadGtag, { once: true, passive: true });
+  });
+}());
 
 // ── PWA Install prompt ──────────────────────────────────────
 (function () {
