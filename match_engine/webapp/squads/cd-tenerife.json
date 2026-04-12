@@ -1,129 +1,129 @@
-{
-  "slug": "cd-tenerife",
-  "seasons": {
-    "2025": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Tomeu Nadal",
-          "position": "GK",
-          "rating": 73
-        },
-        {
-          "name": "Carlos Breijo",
-          "position": "GK",
-          "rating": 65
-        },
-        {
-          "name": "Sergio González",
-          "position": "CB",
-          "rating": 72
-        },
-        {
-          "name": "Mellot",
-          "position": "CB",
-          "rating": 72
-        },
-        {
-          "name": "Carlos Pomares",
-          "position": "CB",
-          "rating": 69
-        },
-        {
-          "name": "Aitor Sanz",
-          "position": "CB",
-          "rating": 70
-        },
-        {
-          "name": "Pablo Íñiguez",
-          "position": "RB",
-          "rating": 70
-        },
-        {
-          "name": "Teto",
-          "position": "LB",
-          "rating": 70
-        },
-        {
-          "name": "Giulio Maggiore",
-          "position": "CM",
-          "rating": 73
-        },
-        {
-          "name": "Karim Azamoum",
-          "position": "CM",
-          "rating": 72
-        },
-        {
-          "name": "Alberto",
-          "position": "CM",
-          "rating": 70
-        },
-        {
-          "name": "Álex Corredera",
-          "position": "CM",
-          "rating": 71
-        },
-        {
-          "name": "Luismi",
-          "position": "RM",
-          "rating": 71
-        },
-        {
-          "name": "Elady",
-          "position": "LM",
-          "rating": 72
-        },
-        {
-          "name": "Enric Gallego",
-          "position": "ST",
-          "rating": 73
-        },
-        {
-          "name": "Agus Medina",
-          "position": "ST",
-          "rating": 71
-        },
-        {
-          "name": "Fran Sol",
-          "position": "ST",
-          "rating": 72
-        },
-        {
-          "name": "Torres",
-          "position": "LM",
-          "rating": 68
-        },
-        {
-          "name": "Villar",
-          "position": "AM",
-          "rating": 69
-        },
-        {
-          "name": "Bermejo",
-          "position": "LM",
-          "rating": 69
-        },
-        {
-          "name": "Naranjo",
-          "position": "RB",
-          "rating": 67
-        }
-      ],
-      "ratings": {
-        "attack": 61,
-        "midfield": 62,
-        "defense": 61,
-        "goalkeeping": 61
-      },
-      "source": "Transfermarkt 🌍 Otros€” CD Tenerife (2025/2026)",
-      "teamLabel": "CD Tenerife (2025-26)"
-    }
-  },
-  "id": 5654,
-  "name": "CD Tenerife",
-  "badgeLocalPath": "/img/badges/cd-tenerife.png",
-  "group": "🌍 Otros",
-  "nameEn": "CD Tenerife",
-  "nameEs": "CD Tenerife"
+﻿{
+    "slug":  "cd-tenerife",
+    "seasons":  {
+                    "2025":  {
+                                 "formation":  "4-4-2",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Tomeu Nadal",
+                                                     "position":  "GK",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Carlos Breijo",
+                                                     "position":  "GK",
+                                                     "rating":  65
+                                                 },
+                                                 {
+                                                     "name":  "Sergio GonzÃ¡lez",
+                                                     "position":  "CB",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Mellot",
+                                                     "position":  "CB",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Carlos Pomares",
+                                                     "position":  "CB",
+                                                     "rating":  69
+                                                 },
+                                                 {
+                                                     "name":  "Aitor Sanz",
+                                                     "position":  "CB",
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Pablo ÃÃ±iguez",
+                                                     "position":  "RB",
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Teto",
+                                                     "position":  "LB",
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Giulio Maggiore",
+                                                     "position":  "CM",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Karim Azamoum",
+                                                     "position":  "CM",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Alberto",
+                                                     "position":  "CM",
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Ãlex Corredera",
+                                                     "position":  "CM",
+                                                     "rating":  71
+                                                 },
+                                                 {
+                                                     "name":  "Luismi",
+                                                     "position":  "RM",
+                                                     "rating":  71
+                                                 },
+                                                 {
+                                                     "name":  "Elady",
+                                                     "position":  "LM",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Enric Gallego",
+                                                     "position":  "ST",
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Agus Medina",
+                                                     "position":  "ST",
+                                                     "rating":  71
+                                                 },
+                                                 {
+                                                     "name":  "Fran Sol",
+                                                     "position":  "ST",
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Torres",
+                                                     "position":  "LM",
+                                                     "rating":  68
+                                                 },
+                                                 {
+                                                     "name":  "Villar",
+                                                     "position":  "AM",
+                                                     "rating":  69
+                                                 },
+                                                 {
+                                                     "name":  "Bermejo",
+                                                     "position":  "LM",
+                                                     "rating":  69
+                                                 },
+                                                 {
+                                                     "name":  "Naranjo",
+                                                     "position":  "RB",
+                                                     "rating":  67
+                                                 }
+                                             ],
+                                 "ratings":  {
+                                                 "attack":  61,
+                                                 "midfield":  62,
+                                                 "defense":  61,
+                                                 "goalkeeping":  61
+                                             },
+                                 "source":  "Transfermarkt ðŸŒ Otrosâ‚¬â€ CD Tenerife (2025/2026)",
+                                 "teamLabel":  "CD Tenerife (2025-26)"
+                             }
+                },
+    "id":  5654,
+    "name":  "CD Tenerife",
+    "badgeLocalPath":  "/img/badges/cd-tenerife.svg",
+    "group":  "ðŸŒ Otros",
+    "nameEn":  "CD Tenerife",
+    "nameEs":  "CD Tenerife"
 }
