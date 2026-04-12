@@ -840,18 +840,31 @@ app.get('/sw.js', (_req, res) => {
 // Versioned assets (app.js?v=N, style.css?v=N) â€” serve minified in production.
 const IS_PROD = process.env.NODE_ENV === 'production';
 app.get('/app.js', (_req, res) => {
-  res.set('Cache-Control', 'no-store');
+  res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.set('Content-Type', 'application/javascript');
   const file = IS_PROD && fs.existsSync(path.join(__dirname, 'public', 'app.min.js'))
     ? 'app.min.js' : 'app.js';
   res.sendFile(path.join(__dirname, 'public', file));
 });
 app.get('/style.css', (_req, res) => {
-  res.set('Cache-Control', 'no-store');
+  res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.set('Content-Type', 'text/css');
   const file = IS_PROD && fs.existsSync(path.join(__dirname, 'public', 'style.min.css'))
     ? 'style.min.css' : 'style.css';
   res.sendFile(path.join(__dirname, 'public', file));
+});
+
+// Badge images — versioned filenames change when updated; moderate cache
+app.use('/img/badges', express.static(path.join(__dirname, 'public', 'img', 'badges'), {
+  maxAge: '7d',
+}));
+
+// Long-cache for any request with ?v= (versioned static assets — safe to cache 1 year)
+app.use((req, res, next) => {
+  if (req.query.v && /\.(js|css|woff2?|png|webp|jpg|svg|ico)$/.test(req.path)) {
+    res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  next();
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -894,6 +907,7 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
 
 // Shared JS modules â€” served from webapp root (used by both Node.js and browser)
 app.get('/player_ratings.js', (_req, res) => {
+  res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.type('application/javascript');
   res.sendFile(path.join(__dirname, 'player_ratings.js'));
 });
