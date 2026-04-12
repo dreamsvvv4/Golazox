@@ -3620,7 +3620,7 @@ function _buildRefereePicker(referees) {
       const imgSrc = _refImgProxy(ref.img);
       card.innerHTML =
         `<div class="ref-photo-area">` +
-          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy"
+          `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy" width="90" height="90"
             onerror="this.style.display='none';this.nextElementSibling.style.display=''">` +
           `<div class="ref-initials-av" style="display:none;background:${grad}">${ini}</div>` +
         `</div>` +
