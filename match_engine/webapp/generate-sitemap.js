@@ -17,8 +17,8 @@ const TODAY    = new Date().toISOString().slice(0, 10);
 // Only seasons confirmed to exist in the squads/ folder are listed.
 const ICONIC = {
   // ── La Liga ──
-  'real-madrid':            ['1960','1966','1986','1998','2002','2006','2012','2014','2016','2017'],
-  'fc-barcelona':           ['1992','1995','2006','2009','2010','2011','2014','2015'],
+  'real-madrid':            ['1960','1966','1986','1998','2002','2006','2012','2014','2016','2017','2026'],
+  'fc-barcelona':           ['1992','1995','2006','2009','2010','2011','2014','2015','2026'],
   'atletico-madrid':        ['1974','1995','1996','2013','2016','2021'],
   'fc-sevilla':             ['2006','2015','2016','2020','2023'],
   // ── Bundesliga ──
@@ -26,11 +26,11 @@ const ICONIC = {
   'borussia-dortmund':      ['1997','2012','2019','2024'],
   'borussia-monchengladbach': ['1975','1977'],
   // ── Premier League ──
-  'fc-arsenal':             ['2002','2004','2023','2024'],
-  'fc-liverpool':           ['1977','1984','2005','2019'],
+  'fc-arsenal':             ['2002','2004','2023','2024','2026'],
+  'fc-liverpool':           ['1977','1984','2005','2019','2026'],
   'fc-chelsea':             ['2005','2012','2021'],
   'manchester-united':      ['1994','1999','2002','2008'],
-  'manchester-city':        ['2012','2019','2023'],
+  'manchester-city':        ['2012','2019','2023','2026'],
   // ── Serie A ──
   'ac-mailand':             ['1969','1989','1994','2003','2007'],
   'inter-mailand':          ['1965','1989','2010','2021'],
@@ -101,6 +101,11 @@ const ICONIC = {
 const RIVALS = [
   // ─ El Clásico ─
   ['real-madrid',            'fc-barcelona'],
+  // ─ Champions 2025-26 cuartos (actualidad) ─
+  ['fc-arsenal',             'real-madrid'],
+  ['inter-mailand',          'fc-barcelona'],
+  ['fc-paris-saint-germain', 'fc-arsenal'],
+  ['manchester-city',        'fc-paris-saint-germain'],
   // ─ Derby de Madrid ─
   ['real-madrid',            'atletico-madrid'],
   ['fc-barcelona',           'atletico-madrid'],
@@ -306,9 +311,9 @@ for (const [slugA, slugB] of RIVALS) {
 // ── Top clubs for high-priority URLs ─────────────────────────────────────────
 const TOP_SLUGS = new Set([
   'real-madrid','fc-barcelona','manchester-united','fc-liverpool','fc-chelsea',
-  'fc-arsenal','fc-bayern-munchen','ac-mailand','juventus','inter-mailand',
-  'fc-paris-saint-germain','ajax-amsterdam','brasil','alemania','argentina',
-  'espana','england','france','netherlands','italy',
+  'fc-arsenal','fc-bayern-munchen','ac-mailand','juventus-turin','inter-mailand',
+  'fc-paris-saint-germain','ajax-amsterdam','brasilien','deutschland','argentinien',
+  'spanien','england','frankreich','niederlande','italien','manchester-city',
 ]);
 
 // ── Build XML ─────────────────────────────────────────────────────────────────
@@ -322,20 +327,85 @@ const urlEntries = [
     <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/"/>
     <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/?lang=en"/>
   </url>`,
-  // Matchup pages — higher priority for top clubs
-  ...matchupSegs.map(seg => {
+  // ── Team profile pages ES + EN ─────────────────────────────────────────────
+  ...Object.entries(ICONIC).flatMap(([slug, seasons]) => {
+    const isTop      = TOP_SLUGS.has(slug);
+    const priority   = isTop ? '0.85' : '0.7';
+    const priorityEn = isTop ? '0.8'  : '0.65';
+    const changefreq = 'monthly';
+    const base = [
+      `  <url>
+    <loc>${SITE_URL}/equipo/${slug}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/equipo/${slug}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/team/${slug}"/>
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/team/${slug}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priorityEn}</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/equipo/${slug}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/team/${slug}"/>
+  </url>`,
+    ];
+    const seasonPages = seasons.flatMap(sv => [
+      `  <url>
+    <loc>${SITE_URL}/equipo/${slug}:${sv}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>${isTop ? '0.75' : '0.6'}</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/equipo/${slug}:${sv}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/team/${slug}:${sv}"/>
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/team/${slug}:${sv}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>${isTop ? '0.7' : '0.55'}</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/equipo/${slug}:${sv}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/team/${slug}:${sv}"/>
+  </url>`,
+    ]);
+    return [...base, ...seasonPages];
+  }),
+  // Matchup pages ES + EN + PT-BR — higher priority for top clubs
+  ...matchupSegs.flatMap(seg => {
     const [partA, partB] = seg.split('-vs-');
     const slugA = (partA || '').split(':')[0];
     const slugB = (partB || '').split(':')[0];
     const isTop = TOP_SLUGS.has(slugA) && TOP_SLUGS.has(slugB);
-    const priority = isTop ? '0.9' : '0.7';
+    const priority   = isTop ? '0.9' : '0.7';
+    const priorityEn = isTop ? '0.85' : '0.65';
+    const priorityPt = isTop ? '0.85' : '0.65';
     const changefreq = isTop ? 'weekly' : 'monthly';
-    return `  <url>
+    const hreflangTags = `
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/partido/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/match/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/partida/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/partido/${seg}"/>`;
+    return [
+      `  <url>
     <loc>${SITE_URL}/partido/${seg}</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`;
+    <priority>${priority}</priority>${hreflangTags}
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/match/${seg}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priorityEn}</priority>${hreflangTags}
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/partida/${seg}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priorityPt}</priority>${hreflangTags}
+  </url>`,
+    ];
   }),
 ];
 
@@ -348,4 +418,4 @@ ${urlEntries.join('\n')}
 
 const outPath = path.join(__dirname, 'public', 'sitemap.xml');
 fs.writeFileSync(outPath, xml, 'utf8');
-console.log(`✅ sitemap.xml written: ${urlEntries.length} URLs (${matchupSegs.length} matchups) → ${outPath}`);
+console.log(`✅ sitemap.xml written: ${urlEntries.length} URLs (${matchupSegs.length} matchups × 3 idiomas + team pages + homepage) → ${outPath}`);

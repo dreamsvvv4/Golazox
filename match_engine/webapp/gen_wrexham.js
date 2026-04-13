@@ -22,6 +22,8 @@ const { generateVideo } = require('./video_generator');
       weatherId:  'night',
       introTitle: '¿Y SI WREXHAM LLEGARA A LA FINAL?',
       introSub:   'Champions League · Final',
+      introEraA:  '',
+      introEraB:  '',
     });
     console.log('✅ Guardado:', result.path);
   } catch (err) {

@@ -164,7 +164,7 @@ const I18N = {
     // ── Tournament ────────────────────────────────────────────
     'trn-tab-btn':'🏆 Torneo',
     'trn-step-format':'Formato','trn-step-rules':'Reglas','trn-step-teams':'Equipos',
-    'trn-step1-title':'Elige el formato','trn-step1-hint':'¿Cómo quieres que sea tu torneo?',
+    'trn-step1-title':'Elige el formato','trn-step1-hint':'Elige un torneo oficial o crea uno personalizado',
     'trn-fmt-copa-name':'Copa','trn-fmt-copa-desc':'Eliminatoria directa · o Fase de Grupos + KO',
     'trn-fmt-copa-tag1':'4–32 equipos (KO) / 8–32 (Grupos)','trn-fmt-copa-tag2':'KO / Grupos+KO',
     'trn-fmt-liga-name':'Liga','trn-fmt-liga-desc':'Todos contra todos · Clasificación por puntos',
@@ -269,6 +269,9 @@ const I18N = {
     'trn-btn-simulate-ucl':'⚽ Simular Champions',
     'trn-preset-subtitle-wc':'Fase de grupos + Eliminatoria',
     'trn-preset-subtitle-ucl':'Fase de grupos + KO ida y vuelta',
+    'trn-preset-subtitle-euro':'6 grupos + KO · 24 selecciones',
+    'trn-preset-subtitle-copa-america':'4 grupos + KO · 16 selecciones',
+    'trn-preset-subtitle-libertadores':'8 grupos + KO ida y vuelta · 32 clubes',
     'trn-teams-unit':'equipos',
     'trn-groups-unit':'grupos',
     'trn-draw-start':'▶\u00a0SORTEAR',
@@ -346,7 +349,7 @@ const I18N = {
     // ── Tournament ────────────────────────────────────────────
     'trn-tab-btn':'🏆 Tournament',
     'trn-step-format':'Format','trn-step-rules':'Rules','trn-step-teams':'Teams',
-    'trn-step1-title':'Choose format','trn-step1-hint':'What kind of tournament do you want?',
+    'trn-step1-title':'Choose format','trn-step1-hint':'Pick an official tournament or build your own',
     'trn-fmt-copa-name':'Cup','trn-fmt-copa-desc':'Direct knockout · or Group Stage + KO',
     'trn-fmt-copa-tag1':'4–32 teams (KO) / 8–32 (Groups)','trn-fmt-copa-tag2':'KO / Groups+KO',
     'trn-fmt-liga-name':'League','trn-fmt-liga-desc':'Round robin · Points table',
@@ -451,6 +454,9 @@ const I18N = {
     'trn-btn-simulate-ucl':'⚽ Simulate Champions',
     'trn-preset-subtitle-wc':'Group stage + Knockout',
     'trn-preset-subtitle-ucl':'Group stage + KO two-legged',
+    'trn-preset-subtitle-euro':'6 groups + KO · 24 national teams',
+    'trn-preset-subtitle-copa-america':'4 groups + KO · 16 national teams',
+    'trn-preset-subtitle-libertadores':'8 groups + KO two-legged · 32 clubs',
     'trn-teams-unit':'teams',
     'trn-groups-unit':'groups',
     'trn-draw-start':'▶\u00a0DRAW',
@@ -3602,7 +3608,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Predefined official tournament preset cards
   document.querySelector('.trn-preset-grid')?.addEventListener('click', e => {
     const card = e.target.closest('.trn-preset-card');
-    if (card && card.dataset.preset) TRN.loadPreset(card.dataset.preset);
+    if (!card || !card.dataset.preset) return;
+    // Flash the selected-border effect before navigating (mirrors trn-fmt-selected)
+    document.querySelectorAll('.trn-preset-card').forEach(c => c.classList.remove('trn-preset-active'));
+    card.classList.add('trn-preset-active');
+    setTimeout(() => TRN.loadPreset(card.dataset.preset), 180);
   });
 
   // Tournament wizard nav
@@ -4554,8 +4564,106 @@ function showPreMatch(data, payload) {
   screen.classList.remove('hidden', 'pm-fade-out');
   screen.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+  // ── Init / clear pitch ───────────────────────────────────
+  const pitchField = document.getElementById('pm-pitch-field');
+  if (pitchField) {
+    // Remove previous player cards from pitch halves
+    ['pm-block-a', 'pm-block-b'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = '';
+    });
+    // Inject SVG field lines once
+    if (!pitchField.querySelector('.pm-pitch-svg')) {
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('class', 'pm-pitch-svg');
+      svg.setAttribute('viewBox', '0 0 200 100');
+      svg.setAttribute('preserveAspectRatio', 'none');
+      svg.innerHTML = `
+        <rect x="1" y="1" width="198" height="98" fill="none" stroke="rgba(255,255,255,.07)" stroke-width=".8"/>
+        <line x1="100" y1="1" x2="100" y2="99" stroke="rgba(255,255,255,.07)" stroke-width=".8"/>
+        <circle cx="100" cy="50" r="18" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".7"/>
+        <circle cx="100" cy="50" r="1.1" fill="rgba(255,255,255,.14)"/>
+        <rect x="1" y="30" width="22" height="40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".7"/>
+        <rect x="1" y="40" width="8" height="20" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".7"/>
+        <rect x="177" y="30" width="22" height="40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".7"/>
+        <rect x="191" y="40" width="8" height="20" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".7"/>
+        <circle cx="20" cy="50" r="1.1" fill="rgba(255,255,255,.14)"/>
+        <circle cx="180" cy="50" r="1.1" fill="rgba(255,255,255,.14)"/>`;
+      pitchField.insertBefore(svg, pitchField.firstChild);
+    }
+  }
+  // Clear bench area
+  const benchesEl = document.getElementById('pm-pitch-benches');
+  if (benchesEl) benchesEl.innerHTML = '';
+
   buildPreMatchSide('a', data.lineups.teamA, payload.teamA, payload.eraA, data.badgeA || _badgeFallback(payload.teamA), data.ratings.teamA);
   buildPreMatchSide('b', data.lineups.teamB, payload.teamB, payload.eraB, data.badgeB || _badgeFallback(payload.teamB), data.ratings.teamB);
+
+  // ── Hero bar: confrontation + strength ─────────────────
+  const heroBarEl = document.getElementById('pm-hero-bar');
+  if (heroBarEl && data.ratings) {
+    const rAh = data.ratings.teamA || {}, rBh = data.ratings.teamB || {};
+    const ovrA = Math.round(((rAh.attack||75)+(rAh.midfield||75)+(rAh.defense||75)+(rAh.goalkeeping||75))/4);
+    const ovrB = Math.round(((rBh.attack||75)+(rBh.midfield||75)+(rBh.defense||75)+(rBh.goalkeeping||75))/4);
+    const strA = Math.max(30, Math.min(70, 50 + (ovrA - ovrB)));
+    const baA  = data.badgeA || _badgeFallback(payload.teamA);
+    const baB  = data.badgeB || _badgeFallback(payload.teamB);
+    const hStad = _selectedStadium;
+    const stadLine = hStad
+      ? `<div class="pm-hero-stad">🏟️ ${escHtml(hStad.name)} · ${escHtml(hStad.city)}</div>`
+      : `<div class="pm-hero-stad">⚽ ${escHtml(t('pm-intro-neutral'))}</div>`;
+    heroBarEl.innerHTML = `
+      <div class="pm-hero-team pm-hero-team-a">
+        <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baA)}" alt="" onerror="this.style.display='none'"></div>
+        <div class="pm-hero-team-info">
+          <div class="pm-hero-team-name">${escHtml(payload.teamA)}</div>
+          ${payload.eraA ? `<div class="pm-hero-team-era">${escHtml(payload.eraA)}</div>` : ''}
+        </div>
+        <div class="pm-hero-ovr pm-hero-ovr-a">${ovrA}</div>
+      </div>
+      <div class="pm-hero-center">
+        ${stadLine}
+        <div class="pm-hero-vs-badge">VS</div>
+        <div class="pm-hero-strength-wrap">
+          <div class="pm-hero-str-track">
+            <div class="pm-hero-str-a" style="width:${strA}%"></div>
+            <div class="pm-hero-str-b" style="width:${100-strA}%"></div>
+          </div>
+          <div class="pm-hero-str-pct"><span>${strA}%</span><span>${100-strA}%</span></div>
+        </div>
+      </div>
+      <div class="pm-hero-team pm-hero-team-b">
+        <div class="pm-hero-ovr pm-hero-ovr-b">${ovrB}</div>
+        <div class="pm-hero-team-info pm-hero-info-b">
+          <div class="pm-hero-team-name">${escHtml(payload.teamB)}</div>
+          ${payload.eraB ? `<div class="pm-hero-team-era">${escHtml(payload.eraB)}</div>` : ''}
+        </div>
+        <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baB)}" alt="" onerror="this.style.display='none'"></div>
+      </div>`;
+  }
+
+  // ── Stat comparison bars ─────────────────────────────────
+  const statBarsEl = document.getElementById('pm-stat-bars');
+  if (statBarsEl && data.ratings) {
+    const rA2 = data.ratings.teamA || {}, rB2 = data.ratings.teamB || {};
+    const mkBar = (lbl, a, b) => {
+      const tot = (a||0)+(b||0)||1, pA = Math.round(((a||0)/tot)*100);
+      return `<div class="pm-stat-row">
+        <span class="pm-stat-v pm-stat-v-a">${a||'—'}</span>
+        <div class="pm-stat-track">
+          <div class="pm-stat-fill-a" style="width:${pA}%"></div>
+          <div class="pm-stat-fill-b" style="width:${100-pA}%"></div>
+          <span class="pm-stat-center-lbl">${lbl}</span>
+        </div>
+        <span class="pm-stat-v pm-stat-v-b">${b||'—'}</span>
+      </div>`;
+    };
+    statBarsEl.innerHTML =
+      mkBar(_lang==='en'?'ATK':'ATQ', rA2.attack,   rB2.attack)  +
+      mkBar(_lang==='en'?'MID':'MED', rA2.midfield, rB2.midfield)+
+      mkBar('DEF',                    rA2.defense,  rB2.defense);
+  }
 
   // ── Intro block ──────────────────────────────────────────
   const pmIntro = document.getElementById('pm-intro');
@@ -4616,23 +4724,8 @@ function showPreMatch(data, payload) {
           `pero el fútbol nunca sigue un guión. ¿Serán capaces las estrellas de marcar la diferencia?`;
       }
     }
-    pmIntro.innerHTML =
-      `<div class="pm-intro-matchup">${escHtml(nameA)}${eraStrA} <span class="pm-intro-vs">VS</span> ${escHtml(nameB)}${eraStrB}</div>` +
-      stadHtml +
-      `<p class="pm-intro-text">${preview}</p>`;
+    pmIntro.innerHTML = `<p class="pm-intro-text">${preview}</p>`;
     pmIntro.classList.remove('hidden');
-  }
-
-  // Show stadium info if selected
-  const pmStadInfo = document.getElementById('pm-stadium-info');
-  if (pmStadInfo) {
-    if (_selectedStadium) {
-      const s = _selectedStadium;
-      pmStadInfo.innerHTML = `<span class="pm-stad-icon">🏟️</span> <span class="pm-stad-name">${escHtml(s.name)}</span> <span class="pm-stad-loc">${escHtml(s.city)} · ${s.capacity.toLocaleString()}</span>`;
-      pmStadInfo.classList.remove('hidden');
-    } else {
-      pmStadInfo.classList.add('hidden');
-    }
   }
 
   // Reset speed pills to default (1 min)
@@ -4731,97 +4824,103 @@ function skipPreMatch() {
 function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
   const block = document.getElementById(`pm-block-${side}`);
   block.innerHTML = '';
+  const isB = side === 'b';
 
-  // ── Premium header with big badge ──────────────────────
-  const hdr = document.createElement('div');
-  hdr.className = `pm-team-hdr${side === 'b' ? ' pm-team-hdr-b' : ''}`;
-
-  // Big badge zone
-  const badgeZone = document.createElement('div');
-  badgeZone.className = 'pm-badge-zone';
-  if (badgeUrl) {
-    const img = document.createElement('img');
-    img.className = 'pm-badge-big';
-    img.src = badgeUrl;
-    img.alt = '';
-    img.onerror = () => { img.src = BADGE_PLACEHOLDER; };
-    badgeZone.appendChild(img);
-  } else {
-    badgeZone.innerHTML = `<div class="pm-badge-placeholder">${escHtml(teamName.slice(0,3).toUpperCase())}</div>`;
-  }
-
-  const info = document.createElement('div');
-  info.className = 'pm-hdr-info';
-  info.innerHTML =
-    `<div class="pm-hdr-name">${escHtml(teamName)}</div>` +
-    (era ? `<div class="pm-hdr-era">📅 ${escHtml(era)}</div>` : '') +
-    `<div class="pm-hdr-form"><span class="pm-form-tag">${escHtml(lineup.formation)}</span></div>`;
-
-  if (side === 'b') {
-    hdr.appendChild(info);
-    hdr.appendChild(badgeZone);
-  } else {
-    hdr.appendChild(badgeZone);
-    hdr.appendChild(info);
-  }
-  block.appendChild(hdr);
-
-  // ── Rating bar under header ─────────────────────────────
-  const overallRating = Math.round((ratings.attack + ratings.midfield + ratings.defense + ratings.goalkeeping) / 4);
-  const ratingBar = document.createElement('div');
-  ratingBar.className = `pm-rating-bar pm-rating-bar-${side}`;
-  ratingBar.innerHTML = `<span class="pm-rating-num">${overallRating}</span><span class="pm-rating-lbl">OVR</span>`;
-  block.appendChild(ratingBar);
-
-  // ── Rows (attack first → descending POS_ROW sort) — respect match mode ─
+  const { primary: pmKit1 } = _getKitColors(teamName, side.toLowerCase());
   const _nPM = { '3v3':3, '5v5':5, '11v11':11 }[_matchMode] || 11;
-  const rows = {};
-  lineup.players.slice(0, _nPM).forEach(p => {
-    const r = POS_ROW[p.position] ?? 3;
-    (rows[r] = rows[r] || []).push(p);
+  const starters = lineup.players.slice(0, _nPM);
+
+  // ── Group starters by position line ─────────────────────
+  const byLine = {};
+  starters.forEach(p => {
+    const line = _POS_PITCH_LINE[(p.position||'').toUpperCase()] ?? 3;
+    (byLine[line] = byLine[line] || []).push(p);
   });
-  const rowsWrap = document.createElement('div');
-  rowsWrap.className = 'pm-rows';
+  const lines = Object.keys(byLine).map(Number).sort((a, b) => a - b);
+  const numLines = lines.length;
+
+  // ── x% within the block: goal end → center ──────────────
+  // Team A: GK at left (small x%), strikers at right (large x%)
+  // Team B (mirror): GK at right (large x%), strikers at left (small x%)
+  const lineToX = (line) => {
+    if (numLines <= 1) return 50;
+    const idx = lines.indexOf(line);
+    return isB
+      ? 93 - (idx / (numLines - 1)) * 83   // 93% (GK far right) → 10% (ATT near center)
+      : 7  + (idx / (numLines - 1)) * 83;  // 7%  (GK far left)  → 90% (ATT near center)
+  };
+
   let cardIdx = 0;
-  const { primary: pmKit1, secondary: pmKit2 } = _getKitColors(teamName, side.toLowerCase());
-  Object.keys(rows).map(Number).sort((a, b) => b - a).forEach(rowKey => {
-    const rowEl = document.createElement('div');
-    rowEl.className = `pm-row${side === 'b' ? ' pm-row-b' : ''}`;
-    rows[rowKey].forEach(player => {
-      const card = buildPlayerCard(player, ratings, 60 + cardIdx * 45, side, badgeUrl, pmKit1, pmKit2);
+  lines.forEach(line => {
+    const group = byLine[line];
+    const xPct  = lineToX(line);
+    const n = group.length;
+    group.forEach((player, i) => {
+      // Tighter vertical spread for small groups so players stay central
+      // n=1→50%, n=2→33%+67%, n=3→25/50/75%, n=4→15..85%, n=5+→9..91%
+      const maxSpread = n === 1 ? 0 : n === 2 ? 34 : n === 3 ? 50 : n === 4 ? 70 : 82;
+      const startY   = 50 - maxSpread / 2;
+      const step      = n > 1 ? maxSpread / (n - 1) : 0;
+      const yPct      = n === 1 ? 50 : startY + step * i;
+      const card = buildPlayerCard(player, ratings, 40 + cardIdx * 35, side, badgeUrl, pmKit1, null);
       card.dataset.slot   = player.name;
       card.dataset.pmSide = side;
       card.classList.add('pm-starter');
-      card.title = `${player.name} ${t('pm-card-change')}`;
+      card.style.left = xPct + '%';
+      card.style.top  = yPct + '%';
       card.addEventListener('click', () => _handlePmCardClick(card, side));
-      rowEl.appendChild(card);
+      block.appendChild(card);
       cardIdx++;
     });
-    rowsWrap.appendChild(rowEl);
   });
-  block.appendChild(rowsWrap);
 
-  // ── Bench section — only if at least one real squad player ──────
-  const realBench = _matchMode === '11v11' ? (lineup.bench || []).filter(p => p.isReal).slice(0, 5) : [];
+  // ── Formation label overlay ──────────────────────────────
+  const fmtEl = document.createElement('div');
+  fmtEl.className = `pm-pitch-fmt${isB ? ' pm-pitch-fmt-b' : ''}`;
+  fmtEl.textContent = lineup.formation || '';
+  block.appendChild(fmtEl);
+
+  // ── Bench – appended to separate bench strip ─────────────
+  // Mix bench: non-GK sorted by rating desc so best players show first; GK at end (backup)
+  const _rawBench = _matchMode === '11v11' ? (lineup.bench || []).filter(p => p.isReal).slice(0, 5) : [];
+  const realBench = [
+    ..._rawBench.filter(p => p.position !== 'GK').sort((a, b) => calcPlayerRating(b, ratings) - calcPlayerRating(a, ratings)),
+    ..._rawBench.filter(p => p.position === 'GK'),
+  ];
   if (realBench.length > 0) {
-    const benchLabel = document.createElement('div');
-    benchLabel.className = 'pm-bench-label';
-    benchLabel.textContent = t('bench-label');
-    block.appendChild(benchLabel);
+    const benchesEl = document.getElementById('pm-pitch-benches');
+    if (benchesEl) {
+      const strip = document.createElement('div');
+      strip.className = `pm-pitch-bench${isB ? ' pm-pitch-bench-b' : ''}`;
 
-    const benchRow = document.createElement('div');
-    benchRow.className = `pm-bench-row${side === 'b' ? ' pm-row-b' : ''}`;
+      const hdr = document.createElement('div');
+      hdr.className = 'pm-bench-label';
+      hdr.innerHTML =
+        `<img class="pm-bench-badge" src="${escHtml(badgeUrl||'')}" alt="" onerror="this.style.display='none'">` +
+        `<span>${escHtml(teamName)}</span>`;
+      strip.appendChild(hdr);
+
+      const row = document.createElement('div');
+      row.className = 'pm-bench-row';
+      realBench.forEach((player, i) => {
+        const card = buildPlayerCard(player, ratings, 40 + (cardIdx + i) * 28, side, badgeUrl, pmKit1, null);
+        card.classList.add('pm-card-bench', 'pm-sub');
+        card.dataset.slot   = player.name;
+        card.dataset.pmSide = side;
+        card.addEventListener('click', () => _handlePmCardClick(card, side));
+        row.appendChild(card);
+      });
+      strip.appendChild(row);
+      benchesEl.appendChild(strip);
+    }
+
+    // Also add bench to pm-block for substitution state (hidden, clickable)
+    const hiddenBench = document.createElement('div');
+    hiddenBench.className = 'pm-bench-hidden';
     realBench.forEach((player, i) => {
-      const card = buildPlayerCard(player, ratings, 60 + (cardIdx + i) * 30, side, badgeUrl, pmKit1, pmKit2);
-      card.classList.add('pm-card-bench');
-      card.dataset.slot   = player.name;
-      card.dataset.pmSide = side;
-      card.classList.add('pm-sub');
-      card.title = `${player.name} ${t('pm-card-sub')}`;
-      card.addEventListener('click', () => _handlePmCardClick(card, side));
-      benchRow.appendChild(card);
+      // We added bench cards to the strip above; store refs in block for _readLineupFromDom compatibility
+      // (only .pm-starter cards are read, so bench can be invisible in block)
     });
-    block.appendChild(benchRow);
   }
 }
 
@@ -4896,6 +4995,26 @@ const _SILHOUETTE = `<svg viewBox="0 0 56 74" xmlns="http://www.w3.org/2000/svg"
 </svg>`;
 
 const _KIT_COLORS = { a: '#1a56db', b: '#c0392b' };
+
+// ── Pitch card: x-position line per position (Team A, left-to-right) ──
+const _POS_PITCH_LINE = {
+  GK:0,
+  SW:1, CB:1, LB:1, RB:1, LWB:1, RWB:1,
+  DM:2,
+  CM:3, LM:3, RM:3,
+  AM:4, CAM:4, SS:4,
+  LW:5, RW:5, ST:5, CF:5,
+};
+
+// ── Role micro-icons (show inside pitch card) ────────────────────────────
+const _POS_ROLE_ICON = {
+  GK:'🧤',
+  SW:'🛡', CB:'🛡', LB:'🛡', RB:'🛡', LWB:'🛡', RWB:'🛡',
+  DM:'⚙', CM:'⚙',
+  LM:'⚡', RM:'⚡', LW:'⚡', RW:'⚡',
+  AM:'✦', CAM:'✦', SS:'✦',
+  ST:'🎯', CF:'🎯',
+};
 
 // ── Team kit colors (primary shirt) — keyed by lowercase normalized name ──
 const _TEAM_KIT_MAP = {
@@ -5142,55 +5261,94 @@ const _STAT_MAP = {
 };
 
 function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverride, kit2Override) {
-  const rating   = calcPlayerRating(player, teamRatings);
-  const tier     = rating >= 90 ? 'elite' : rating >= 82 ? 'gold' : rating >= 72 ? 'silver' : 'bronze';
-  const parts    = player.name.split(/\s+/);
-  let display;
-  if (player.name.length <= 12 || parts.length === 1) {
-    display = player.name; // short or single-word: show full
-  } else {
-    // "F. APELLIDO" — initial + last word, readable and compact
-    display = parts[0][0] + '. ' + parts[parts.length - 1];
-  }
-  display = display.toUpperCase();
-  const kitColor = kitOverride || _KIT_COLORS[side] || _KIT_COLORS.a;
-  const kitColor2 = kit2Override || null;
-  const jerseyN  = _JERSEY_NUM[player.position] ?? 0;
+  const rating  = calcPlayerRating(player, teamRatings);
+  const tier    = rating >= 90 ? 'elite' : rating >= 82 ? 'gold' : rating >= 72 ? 'silver' : 'bronze';
+  // Last name only (cleaner on small pitch cards)
+  const display = (player.name || '').split(/\s+/).pop().toUpperCase().slice(0, 11);
+  const pos     = (player.position || '').toUpperCase();
+  const icon    = _POS_ROLE_ICON[pos] || '⚽';
 
-  // Hash for stat variation
+  // Name hash for stat variation
   let h = 0;
   for (let i = 0; i < player.name.length; i++) h = ((h * 31) + player.name.charCodeAt(i)) & 0xffff;
-
-  // Badge corner (team shield on card)
-  const badgeCorner = badgeUrl
-    ? `<img class="pmc-badge" src="${escHtml(badgeUrl)}" alt="">`
-    : '';
-
-  // Jersey number watermark
-  const jerseyNum = jerseyN ? `<div class="pmc-jersey-num">${jerseyN}</div>` : '';
 
   const card = document.createElement('div');
   card.className = `pm-card pm-card-${tier}`;
   card.style.animationDelay = `${delayMs}ms`;
-  card.style.setProperty('--kit', kitColor);
   card.title = player.name;
   card.dataset.playerName = player.name;
   card.dataset.playerPos  = player.position;
-  card.innerHTML =
-    `<div class="pmc-top">${badgeCorner}<div class="pmc-ovr-pos"><div class="pmc-ovr">${rating}</div><div class="pmc-pos-tag">${escHtml(player.position)}</div></div></div>` +
-    `<div class="pmc-sil">${_jerseyIcon(kitColor, jerseyN || '', kitColor2)}</div>` +
-    `<div class="pmc-name">${escHtml(display)}</div>`;
 
-  // ── Hover stats tooltip ──────────────────────────────────
-  const tipColor = tier === 'elite' ? '#f7d02e' : tier === 'gold' ? '#daa520' : tier === 'silver' ? '#c0c0e0' : '#c48040';
+  card.innerHTML =
+    `<div class="pm-card-inner">` +
+      `<div class="pc-role">${icon}</div>` +
+      `<div class="pc-ovr">${rating}</div>` +
+    `</div>` +
+    `<div class="pc-name">${escHtml(display)}</div>`;
+
+  // ── Portal tooltip — rendered in #pm-tt-portal (outside pitch overflow:hidden) ──
+  const tipColor = tier === 'elite' ? '#f7d02e' : tier === 'gold' ? '#daa520' : tier === 'silver' ? '#8fa5be' : '#b87840';
   const stats = _deriveStats(player.position, rating, h);
-  const tipHtml = stats.map(s =>
-    `<div class="pmc-tip-row"><span class="pmc-tip-lbl">${s.label}</span><span class="pmc-tip-val" style="color:${tipColor}">${s.val}</span></div>`
-  ).join('');
-  const tipEl = document.createElement('div');
-  tipEl.className = 'pmc-tooltip';
-  tipEl.innerHTML = tipHtml;
-  card.appendChild(tipEl);
+  const statRows = stats.map(s => {
+    const pct = Math.round(((s.val - 55) / (99 - 55)) * 100);
+    return `<div class="pmc-tip-row">` +
+      `<span class="pmc-tip-lbl">${s.label}</span>` +
+      `<div class="pmc-tip-bar" style="color:${tipColor}">` +
+        `<div class="pmc-tip-bar-fill" style="width:${pct}%"></div>` +
+      `</div>` +
+      `<span class="pmc-tip-val" style="color:${tipColor}">${s.val}</span>` +
+    `</div>`;
+  }).join('');
+  const noteText = _lang === 'en'
+    ? 'Stats estimated from overall rating + role profile'
+    : 'Stats estimadas por media + perfil de rol';
+  const tipHTML =
+    `<div class="pmc-tf-name">${escHtml(player.name)}</div>` +
+    `<div class="pmc-tf-pos">${escHtml(player.position)}</div>` +
+    `<div class="pmc-tf-divider"></div>` +
+    statRows +
+    `<div class="pmc-tf-note">${noteText}</div>`;
+
+  const _getPortal = () => document.getElementById('pm-tt-portal');
+  const TIP_W = 148, TIP_H = 180;
+
+  const _showPortalTip = () => {
+    const portal = _getPortal();
+    if (!portal) return;
+    portal.innerHTML = tipHTML;
+    portal.className = 'pmc-tooltip pmc-tooltip-active';
+
+    const r = card.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+
+    // Horizontal: center on card, clamp to viewport (fixed coords)
+    let left = cx - TIP_W / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - TIP_W - 8));
+
+    // Vertical: prefer above; flip below if not enough space
+    let top;
+    if (r.top - TIP_H - 10 >= 4) {
+      top = r.top - TIP_H - 10;   // above (fixed)
+    } else {
+      top = r.bottom + 10;         // below (fixed)
+    }
+
+    portal.style.transform = `translate(${left}px, ${top}px)`;
+  };
+
+  const _hidePortalTip = () => {
+    const portal = _getPortal();
+    if (portal) portal.className = 'pmc-tooltip';
+  };
+
+  card.addEventListener('mouseenter', _showPortalTip);
+  card.addEventListener('mouseleave', _hidePortalTip);
+
+  // Touch: show on tap, auto-hide after 2.2s
+  card.addEventListener('touchstart', () => {
+    _showPortalTip();
+    setTimeout(_hidePortalTip, 2200);
+  }, { passive: true });
 
   return card;
 }

@@ -350,24 +350,46 @@ const BENCH_TEMPLATE = ['GK', 'CB', 'LB', 'DM', 'CM', 'AM', 'ST'];
  */
 function buildBench(teamInput, eraInput, knownSquadMatch, maxSize = 7, starterNames = new Set()) {
   const bench = [];
-  // If the squad JSON already has an explicit bench array, prefer those players
+
+  // Collect candidate pool (not in starting XI)
+  let pool = [];
   const explicitBench = knownSquadMatch?.bench || [];
   if (explicitBench.length > 0) {
-    explicitBench
-      .filter(p => !starterNames.has(p.name))
-      .slice(0, maxSize)
-      .forEach((p, i) => {
-        bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM',
-                     rating: p.rating || undefined, isReal: true });
-      });
+    pool = explicitBench.filter(p => !starterNames.has(p.name));
   } else if (knownSquadMatch) {
-    // Fall back to extra players from the full squad when available (scraped/override squads)
-    const pool = (knownSquadMatch.allPlayers || knownSquadMatch.players || []);
-    const extras = pool
-      .filter(p => !starterNames.has(p.name))
-      .slice(0, maxSize);
-    extras.forEach((p, i) => {
-      bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM', isReal: true });
+    pool = (knownSquadMatch.allPlayers || knownSquadMatch.players || [])
+      .filter(p => !starterNames.has(p.name));
+  }
+
+  if (pool.length > 0) {
+    // ── Ensure positional diversity: 1 GK max, at least 1 forward ──
+    const _grp = p => {
+      const pos = (p.position || '').toUpperCase();
+      if (pos === 'GK') return 'GK';
+      if (['CB','LB','RB','LWB','RWB','SW'].includes(pos)) return 'DEF';
+      if (['ST','CF','LW','RW','AM','CAM','SS'].includes(pos)) return 'ATT';
+      return 'MID';
+    };
+    const gks  = pool.filter(p => _grp(p) === 'GK').slice(0, 1);
+    const atts = pool.filter(p => _grp(p) === 'ATT');
+    const mids = pool.filter(p => _grp(p) === 'MID');
+    const defs = pool.filter(p => _grp(p) === 'DEF');
+
+    // Fill slots: 1 GK, 1-2 ATT, 1-2 MID, 1 DEF (priority order)
+    const slots = [
+      ...gks,
+      ...atts.slice(0, 2),
+      ...mids.slice(0, 2),
+      ...defs.slice(0, 1),
+    ];
+    // Pad with highest-rated remaining players if not yet at maxSize
+    const usedNames = new Set(slots.map(p => p.name));
+    const rest = pool.filter(p => !usedNames.has(p.name));
+    const merged = [...slots, ...rest].slice(0, maxSize);
+
+    merged.forEach((p, i) => {
+      bench.push({ name: p.name, position: p.position || BENCH_TEMPLATE[i] || 'CM',
+                   rating: p.rating || undefined, isReal: true });
     });
   }
   // Fill remaining slots with generic names
@@ -1231,18 +1253,34 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
     if (['DM','CM','RM','LM'].includes(p)) return 'MID';
     return 'ATT'; // AM, RW, LW, ST
   };
-  const _pickSub = (injuredPos, usedSubs, bench) => {
+  // scoreOwn/scoreOpp at time of injury → tactical sub bias
+  const _scoreAt = (side, minute) => {
+    const own = (side === 'A' ? scorersA : scorersB).filter(e => e.minute <= minute).length;
+    const opp = (side === 'A' ? scorersB : scorersA).filter(e => e.minute <= minute).length;
+    return { own, opp };
+  };
+  const _pickSub = (injuredPos, usedSubs, bench, scoreOwn = 0, scoreOpp = 0) => {
     if (!bench || !bench.length) return null;
     const group = _posGroup(injuredPos);
     const real = bench.filter(p => p.isReal === true && !usedSubs.has(p.name));
-    // If GK injured: MUST use backup GK; never send outfield player in goal
+    // GK injured → MUST use backup GK
     if (group === 'GK') {
-      const backupGK = real.find(p => p.position === 'GK');
-      return backupGK || null; // no backup GK on bench → no sub (rare)
+      return real.find(p => p.position === 'GK') || null;
     }
-    // Outfield: never use GK as replacement
+    // Outfield: never put GK in field position
     const pool = real.filter(p => p.position !== 'GK');
     if (!pool.length) return null;
+    // Tactical bias: winning → prefer attacker; losing → prefer defender
+    const winning = scoreOwn > scoreOpp;
+    const losing  = scoreOwn < scoreOpp;
+    if (winning) {
+      const atk = pool.find(p => _posGroup(p.position) === 'ATT');
+      if (atk) return atk;
+    } else if (losing) {
+      const def = pool.find(p => _posGroup(p.position) === 'DEF');
+      if (def) return def;
+    }
+    // Neutral / no tactical option: same group first, then any
     const sameGroup = pool.filter(p => _posGroup(p.position) === group);
     return sameGroup[0] || pool[0];
   };
@@ -1256,7 +1294,8 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
   // We approximate: flag the injury event and attach sub info
   injAList.forEach(e => {
     all.push({ minute: e.minute, type: 'injury', side: 'A', player: e.name, playerRating: atkA });
-    const sub = _pickSub(e.position, usedSubsA, benchA);
+    const { own: sA, opp: sB } = _scoreAt('A', e.minute);
+    const sub = _pickSub(e.position, usedSubsA, benchA, sA, sB);
     if (sub) {
       usedSubsA.add(sub.name);
       all.push({ minute: e.minute + 1, type: 'sub', side: 'A', playerOut: e.name, playerIn: sub.name });
@@ -1264,7 +1303,8 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
   });
   injBList.forEach(e => {
     all.push({ minute: e.minute, type: 'injury', side: 'B', player: e.name, playerRating: atkB });
-    const sub = _pickSub(e.position, usedSubsB, benchB);
+    const { own: sB2, opp: sA2 } = _scoreAt('B', e.minute);
+    const sub = _pickSub(e.position, usedSubsB, benchB, sB2, sA2);
     if (sub) {
       usedSubsB.add(sub.name);
       all.push({ minute: e.minute + 1, type: 'sub', side: 'B', playerOut: e.name, playerIn: sub.name });

@@ -25,7 +25,6 @@ const { generateVideo } = require('./video_generator');
       introSub:   'La Liga · 11 Abril 2026',
       introEraA:  '',
       introEraB:  '',
-      preview:    true,
     });
     console.log('✅ Guardado:', result.path);
   } catch (err) {

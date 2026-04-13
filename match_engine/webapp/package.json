@@ -4,7 +4,7 @@
   "description": "Probabilistic football match simulator – any team, any era",
   "main": "server.js",
   "scripts": {
-    "build": "echo 'No build step — Express server'",
+    "build": "node _build_assets.js",
     "start": "npx pm2 reload golazox 2>/dev/null || npx pm2 start ecosystem.config.js --env production",
     "start:prod": "NODE_ENV=production node server.js",
     "pm2:start": "npx pm2 start ecosystem.config.js --env production",
@@ -24,16 +24,26 @@
   "dependencies": {
     "cheerio": "^1.1.0",
     "compression": "^1.8.1",
+    "dotenv": "^17.4.1",
     "express": "^4.19.2",
     "express-rate-limit": "^8.3.1",
     "express-slow-down": "^3.1.0",
-    "nodemailer": "^8.0.4"
+    "ffmpeg-static": "^5.3.0",
+    "form-data": "^4.0.5",
+    "googleapis": "^171.4.0",
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^8.0.4",
+    "puppeteer": "^19.11.1",
+    "puppeteer-screen-recorder": "^3.0.6",
+    "twitter-api-v2": "^1.29.0"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "esbuild": "^0.28.0",
     "jimp": "^0.22.12",
-    "pm2": "^6.0.14"
+    "pm2": "^6.0.14",
+    "sharp": "^0.34.5"
   }
 }

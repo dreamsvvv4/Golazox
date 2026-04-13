@@ -115,6 +115,8 @@ const TRN = (() => {
     document.querySelectorAll('.trn-fmt-card').forEach(c =>
       c.classList.toggle('trn-fmt-selected', c.dataset.fmt === fmt));
     _buildNumTeamsPicker();
+    _updateFmtPreview();
+    _updateNextBtn();
   }
 
   // Renders one toggle row with a dynamic hint that updates on change
@@ -194,11 +196,62 @@ const TRN = (() => {
       `<button class="trn-num-pill${n === _numTeams ? ' trn-num-pill-active' : ''}" data-n="${n}">${n}</button>`
     ).join('');
   }
+
+  function _updateFmtPreview() {
+    const panel = $('trn-fmt-preview');
+    if (!panel) return;
+    if (!_fmt || (_fmt !== 'copa' && _fmt !== 'liga')) { panel.classList.add('hidden'); return; }
+    const n = _numTeams || 16;
+    const lang = _getLang();
+    let iconText, titleHTML, statsHTML;
+    if (_fmt === 'copa') {
+      const isGroups = _rules.copaMode === 'groups';
+      iconText = '\uD83C\uDFC6';
+      titleHTML = lang === 'es' ? 'Copa <strong>GolazoX</strong>' : 'Cup <strong>GolazoX</strong>';
+      if (isGroups) {
+        const groups = Math.ceil(n / 4);
+        const groupMatches = groups * 6;
+        const koMatches = n / 2 - 1;
+        const total = groupMatches + Math.round(koMatches);
+        statsHTML = lang === 'es'
+          ? `<span>${n} equipos</span><span>${groups} grupos + KO</span><span>\u2248${total} partidos</span>`
+          : `<span>${n} teams</span><span>${groups} groups + KO</span><span>\u2248${total} matches</span>`;
+      } else {
+        const rounds = Math.round(Math.log2(n));
+        const total = n - 1;
+        statsHTML = lang === 'es'
+          ? `<span>${n} equipos</span><span>${rounds} rondas KO</span><span>${total} partidos</span>`
+          : `<span>${n} teams</span><span>${rounds} KO rounds</span><span>${total} matches</span>`;
+      }
+    } else {
+      iconText = '\uD83D\uDCCA';
+      titleHTML = lang === 'es' ? 'Liga <strong>GolazoX</strong>' : 'League <strong>GolazoX</strong>';
+      const matchdays = (n - 1) * 2;
+      const total = n * (n - 1);
+      statsHTML = lang === 'es'
+        ? `<span>${n} equipos</span><span>${matchdays} jornadas</span><span>${total} partidos</span>`
+        : `<span>${n} teams</span><span>${matchdays} matchdays</span><span>${total} matches</span>`;
+    }
+    const iconEl = $('trn-fmtp-icon');
+    const titleEl = $('trn-fmtp-title');
+    const statsEl = $('trn-fmtp-stats');
+    if (iconEl) iconEl.textContent = iconText;
+    if (titleEl) titleEl.innerHTML = titleHTML;
+    if (statsEl) statsEl.innerHTML = statsHTML;
+    panel.dataset.fmt = _fmt;
+    panel.classList.remove('hidden');
+  }
+
+  function _updateNextBtn() {
+    const btn = $('trn-next-1');
+    if (btn) btn.classList.toggle('trn-btn-next-ready', !!_fmt);
+  }
   function setNumTeams(n) {
     _numTeams = n;
     // Update pill active state
     const wrap = $('trn-num-teams');
     if (wrap) wrap.querySelectorAll('.trn-num-pill').forEach(b => b.classList.toggle('trn-num-pill-active', +b.textContent === n));
+    _updateFmtPreview();
   }
 
 
@@ -574,7 +627,7 @@ const TRN = (() => {
       const queryYear = queryYearMatch ? queryYearMatch[1] : '';
 
       res.innerHTML = data.map(t => {
-        const name  = _esc(t.nameEs || t.name || t.nameEn || t.slug || '');
+        const name  = _esc((_getLang() === 'en' ? (t.nameEn || t.nameEs) : (t.nameEs || t.nameEn)) || t.name || t.slug || '');
         const slug  = _esc(t.slug  || name);
         const badge = _esc(t.badge || '');
         const ls    = t.latestSeason || '';
@@ -775,7 +828,7 @@ const TRN = (() => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
         const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
-        _teams.push({ slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era, ovr: t.ovr || null });
+        _teams.push({ slug: t.slug, name: (_getLang() === 'en' ? (t.nameEn || t.nameEs) : (t.nameEs || t.nameEn)) || t.slug, era, ovr: t.ovr || null });
       });
       _renderTeamSlots();
     } catch (_) { /* ignore */ }
@@ -832,7 +885,7 @@ const TRN = (() => {
         html += `<details class="trn-cb-group"${open}><summary class="trn-cb-group-label">${_esc(g)} <span class="trn-cb-group-cnt">(${teams.length})</span></summary><div class="trn-cb-group-items">`;
         for (const e of teams) {
           const badge = e.badge || '/img/badges/_placeholder.svg';
-          const name  = e.nameEs || e.nameEn || e.slug;
+          const name  = (_getLang() === 'en' ? (e.nameEn || e.nameEs) : (e.nameEs || e.nameEn)) || e.slug;
           const bestEra = (e.seasons || [])[0] || '';
           const slug = _esc(e.slug); const nameE = _esc(name);
           html += `<div class="trn-cb-item" data-slug="${slug}" data-name="${nameE}" data-badge="${_esc(badge)}" data-era="${_esc(bestEra)}">
@@ -971,7 +1024,7 @@ const TRN = (() => {
         if (t.badge) _badgeCache[t.slug] = t.badge;
         const nums = (t.seasons || []).filter(s => /^\d{4}$/.test(s));
         const era  = nums.length ? String(nums.reduce((mx, s) => Math.max(mx, Number(s)), 0)) : '';
-        return { slug: t.slug, name: t.nameEs || t.nameEn || t.slug, era, ovr: t.ovr || null };
+        return { slug: t.slug, name: (_getLang() === 'en' ? (t.nameEn || t.nameEs) : (t.nameEs || t.nameEn)) || t.slug, era, ovr: t.ovr || null };
       };
 
       _teams = leagueTeams.map(teamFromEntry);
@@ -1210,6 +1263,126 @@ const TRN = (() => {
     ]},
   ];
 
+  // UEFA Euro 2024 — 6 groups × 4 = 24 teams
+  const _EURO2024_GROUPS = [
+    { label: 'A', teams: [
+      { slug: 'deutschland',  era:'2025', name:'Alemania',       badge:'/img/badges/deutschland.png' },
+      { slug: 'schottland',   era:'2025', name:'Escocia',        badge:'/img/badges/schottland.png'  },
+      { slug: 'ungarn',       era:'2025', name:'Hungría',        badge:'/img/badges/hungary.png'     },
+      { slug: 'schweiz',      era:'2025', name:'Suiza',          badge:'/img/badges/schweiz.png'     },
+    ]},
+    { label: 'B', teams: [
+      { slug: 'spanien',      era:'2025', name:'España',         badge:'/img/badges/spanien.png'     },
+      { slug: 'kroatien',     era:'2025', name:'Croacia',        badge:'/img/badges/kroatien.png'    },
+      { slug: 'italien',      era:'2025', name:'Italia',         badge:'/img/badges/italien.png'     },
+      { slug: 'albania',      era:'2025', name:'Albania',        badge:'/img/badges/albania.png'     },
+    ]},
+    { label: 'C', teams: [
+      { slug: 'slowenien',    era:'2025', name:'Eslovenia',      badge:'/img/badges/slovenia.png'    },
+      { slug: 'danemark',     era:'2025', name:'Dinamarca',      badge:'/img/badges/danemark.png'    },
+      { slug: 'serbia',       era:'2025', name:'Serbia',         badge:'/img/badges/serbia.png'      },
+      { slug: 'england',      era:'2025', name:'Inglaterra',     badge:'/img/badges/england.png'     },
+    ]},
+    { label: 'D', teams: [
+      { slug: 'niederlande',  era:'2025', name:'Países Bajos',   badge:'/img/badges/niederlande.png' },
+      { slug: 'frankreich',   era:'2025', name:'Francia',        badge:'/img/badges/frankreich.png'  },
+      { slug: 'poland',       era:'2025', name:'Polonia',        badge:'/img/badges/poland.png'      },
+      { slug: 'osterreich',   era:'2025', name:'Austria',        badge:'/img/badges/osterreich.png'  },
+    ]},
+    { label: 'E', teams: [
+      { slug: 'belgien',      era:'2025', name:'Bélgica',        badge:'/img/badges/belgien.png'     },
+      { slug: 'slowakei',     era:'2025', name:'Eslovaquia',     badge:'/img/badges/slovakia.png'    },
+      { slug: 'rumania',      era:'2025', name:'Rumanía',        badge:'/img/badges/rumania.png'     },
+      { slug: 'ukraine',      era:'2025', name:'Ucrania',        badge:'/img/badges/ukraine.png'     },
+    ]},
+    { label: 'F', teams: [
+      { slug: 'portugal',     era:'2025', name:'Portugal',       badge:'/img/badges/portugal.png'    },
+      { slug: 'tschechien',   era:'2025', name:'Rep. Checa',     badge:'/img/badges/tschechien.png'  },
+      { slug: 'georgien',     era:'2025', name:'Georgia',        badge:'/img/badges/georgien.png'    },
+      { slug: 'turkey',       era:'2025', name:'Turquía',        badge:'/img/badges/turkey.png'      },
+    ]},
+  ];
+
+  // Copa América 2024 — 4 groups × 4 = 16 teams
+  const _COPAMERICA2024_GROUPS = [
+    { label: 'A', teams: [
+      { slug: 'argentinien',  era:'2025', name:'Argentina',      badge:'/img/badges/argentinien.png' },
+      { slug: 'peru',         era:'2025', name:'Perú',           badge:'/img/badges/peru.png'        },
+      { slug: 'chile',        era:'2025', name:'Chile',          badge:'/img/badges/chile.png'       },
+      { slug: 'kanada',       era:'2025', name:'Canadá',         badge:'/img/badges/canada.png'      },
+    ]},
+    { label: 'B', teams: [
+      { slug: 'mexiko',       era:'2025', name:'México',         badge:'/img/badges/mexico.png'      },
+      { slug: 'ecuador',      era:'2025', name:'Ecuador',        badge:'/img/badges/ecuador.png'     },
+      { slug: 'venezuela',    era:'2025', name:'Venezuela',      badge:'/img/badges/venezuela.png'   },
+      { slug: 'jamaika',      era:'2025', name:'Jamaica',        badge:'/img/badges/jamaica.png'     },
+    ]},
+    { label: 'C', teams: [
+      { slug: 'united-states', era:'2025', name:'Estados Unidos', badge:'/img/badges/united-states.png' },
+      { slug: 'uruguay',      era:'2025', name:'Uruguay',        badge:'/img/badges/uruguay.png'     },
+      { slug: 'panama',       era:'2025', name:'Panamá',         badge:'/img/badges/panama.png'      },
+      { slug: 'bolivien',     era:'2025', name:'Bolivia',        badge:'/img/badges/bolivien.png'    },
+    ]},
+    { label: 'D', teams: [
+      { slug: 'brasilien',    era:'2025', name:'Brasil',         badge:'/img/badges/brasilien.png'   },
+      { slug: 'kolumbien',    era:'2025', name:'Colombia',       badge:'/img/badges/colombia.png'    },
+      { slug: 'paraguay',     era:'2025', name:'Paraguay',       badge:'/img/badges/paraguay.png'    },
+      { slug: 'costa-rica',   era:'2025', name:'Costa Rica',     badge:'/img/badges/costa-rica.png'  },
+    ]},
+  ];
+
+  // Copa Libertadores 2025 — 8 grupos × 4 = 32 clubes sudamericanos
+  const _LIBERTADORES2025_GROUPS = [
+    { label: 'A', teams: [
+      { slug: 'flamengo',              era:'2025', name:'Flamengo',          badge:'/img/badges/flamengo.png'              },
+      { slug: 'club-atletico-river-plate', era:'2025', name:'River Plate',   badge:'/img/badges/club-atletico-river-plate.png' },
+      { slug: 'nacional',              era:'2025', name:'Nacional',          badge:'/img/badges/nacional.png'              },
+      { slug: 'colo-colo',             era:'2025', name:'Colo-Colo',         badge:'/img/badges/colo-colo.png'             },
+    ]},
+    { label: 'B', teams: [
+      { slug: 'palmeiras',             era:'2025', name:'Palmeiras',         badge:'/img/badges/palmeiras.png'             },
+      { slug: 'boca-juniors',          era:'2025', name:'Boca Juniors',      badge:'/img/badges/boca-juniors.png'          },
+      { slug: 'penarol',               era:'2025', name:'Peñarol',           badge:'/img/badges/penarol.png'               },
+      { slug: 'talleres-cordoba',      era:'2025', name:'Talleres',          badge:'/img/badges/talleres-cordoba.png'      },
+    ]},
+    { label: 'C', teams: [
+      { slug: 'clube-atletico-mineiro', era:'2025', name:'Atlético Mineiro', badge:'/img/badges/clube-atletico-mineiro.png' },
+      { slug: 'racing-club',           era:'2025', name:'Racing Club',       badge:'/img/badges/racing-club.png'           },
+      { slug: 'sc-internacional',      era:'2025', name:'Internacional',     badge:'/img/badges/sc-internacional.png'      },
+      { slug: 'fluminense',            era:'2025', name:'Fluminense',        badge:'/img/badges/fluminense.png'            },
+    ]},
+    { label: 'D', teams: [
+      { slug: 'cruzeiro',              era:'2025', name:'Cruzeiro',          badge:'/img/badges/cruzeiro.png'              },
+      { slug: 'estudiantes',           era:'2025', name:'Estudiantes',       badge:'/img/badges/estudiantes.png'           },
+      { slug: 'gremio',                era:'2025', name:'Grêmio',            badge:'/img/badges/gremio.png'                },
+      { slug: 'velez-sarsfield',       era:'2025', name:'Vélez Sarsfield',   badge:'/img/badges/velez-sarsfield.png'       },
+    ]},
+    { label: 'E', teams: [
+      { slug: 'sao-paulo-fc',          era:'2025', name:'São Paulo',         badge:'/img/badges/sao-paulo-fc.png'          },
+      { slug: 'san-lorenzo',           era:'2025', name:'San Lorenzo',       badge:'/img/badges/san-lorenzo.png'           },
+      { slug: 'santos',                era:'2025', name:'Santos',            badge:'/img/badges/santos.png'                },
+      { slug: 'athletico-paranaense',  era:'2025', name:'Athletico PR',      badge:'/img/badges/athletico-paranaense.png'  },
+    ]},
+    { label: 'F', teams: [
+      { slug: 'corinthians',           era:'2025', name:'Corinthians',       badge:'/img/badges/corinthians.png'           },
+      { slug: 'independiente',         era:'2025', name:'Independiente',     badge:'/img/badges/independiente.png'         },
+      { slug: 'fortaleza',             era:'2025', name:'Fortaleza',         badge:'/img/badges/fortaleza.png'             },
+      { slug: 'huracan',               era:'2025', name:'Huracán',           badge:'/img/badges/huracan.png'               },
+    ]},
+    { label: 'G', teams: [
+      { slug: 'vasco-da-gama',         era:'2025', name:'Vasco da Gama',     badge:'/img/badges/vasco-da-gama.png'         },
+      { slug: 'lanus',                 era:'2025', name:'Lanús',             badge:'/img/badges/lanus.png'                 },
+      { slug: 'defensa-y-justicia',    era:'2025', name:'Defensa y Justicia', badge:'/img/badges/defensa-y-justicia.png'   },
+      { slug: 'godoy-cruz',            era:'2025', name:'Godoy Cruz',        badge:'/img/badges/godoy-cruz.png'            },
+    ]},
+    { label: 'H', teams: [
+      { slug: 'atletico-tucuman',      era:'2025', name:'Atlético Tucumán',  badge:'/img/badges/atletico-tucuman.png'      },
+      { slug: 'tigre',                 era:'2025', name:'Club Tigre',        badge:'/img/badges/tigre.png'                 },
+      { slug: 'cuiaba',                era:'2025', name:'Cuiabá',            badge:'/img/badges/cuiaba.png'                },
+      { slug: 'deportivo-riestra',     era:'2025', name:'Depo. Riestra',     badge:'/img/badges/deportivo-riestra.png'     },
+    ]},
+  ];
+
   function _showUCLDrawScreen() {
     hide($('trn-step-1')); hide($('trn-step-2')); hide($('trn-step-3'));
     const existing = $('trn-preset-confirm'); if (existing) hide(existing);
@@ -1445,14 +1618,27 @@ const TRN = (() => {
   }
 
   function loadPreset(presetId) {
-    const groups  = presetId === 'wc2026'  ? _WC2026_GROUPS : _UCL2026_GROUPS;
+    const _PRESET_GROUPS = {
+      'wc2026':          _WC2026_GROUPS,
+      'ucl2026':         _UCL2026_GROUPS,
+      'euro2024':        _EURO2024_GROUPS,
+      'copamerica2024':  _COPAMERICA2024_GROUPS,
+      'libertadores2025': _LIBERTADORES2025_GROUPS,
+    };
+    const groups  = _PRESET_GROUPS[presetId] || _UCL2026_GROUPS;
     const isWC    = presetId === 'wc2026';
 
     _fmt          = 'champions';
     _activePreset = presetId;
     _uclFixtures  = null;
-    _rules     = isWC
+    _rules = isWC
       ? { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: true,  copaMode: 'groups' }
+      : presetId === 'libertadores2025'
+        ? { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: true,  extraTime: true, tercerPuesto: false, copaMode: 'groups' }
+      : presetId === 'euro2024'
+        ? { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: false, copaMode: 'groups' }
+      : presetId === 'copamerica2024'
+        ? { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: true,  copaMode: 'groups' }
       : { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: true,  extraTime: true, tercerPuesto: false, copaMode: 'groups' };
     _teams     = [];
     _groupsDraw = [];
@@ -1471,7 +1657,7 @@ const TRN = (() => {
     // Load badges async in background — does not block navigation
     _setPresetBadges(_teams);
 
-    // UCL → broadcast draw screen; WC → static confirm
+    // UCL → broadcast draw screen; others → static confirm
     if (presetId === 'ucl2026') {
       _showUCLDrawScreen();
     } else {
@@ -1502,10 +1688,15 @@ const TRN = (() => {
 
   function _showPresetConfirm(presetId) {
     const isWC    = presetId === 'wc2026';
-    const title   = isWC ? 'FIFA World Cup 2026' : 'UEFA Champions League 2025/26';
-    const iconHtml = isWC
-      ? `<img src="/img/trophy-wc.png"  class="trn-preset-confirm-trophy" alt="WC Trophy">`
-      : `<img src="/img/trophy-ucl.png" class="trn-preset-confirm-trophy" alt="UCL Trophy">`;
+    const _PRESET_META = {
+      'wc2026':          { title: 'FIFA World Cup 2026',             icon: `<img src="/img/trophy-wc.png"  class="trn-preset-confirm-trophy" alt="WC Trophy">`, subtitle: t('trn-preset-subtitle-wc'),           gridClass: 'trn-preset-groups-wc' },
+      'euro2024':        { title: 'UEFA Euro 2024',                  icon: `<img src="/img/trophy-euro.png"          class="trn-preset-confirm-trophy" alt="Euro Trophy">`,         subtitle: t('trn-preset-subtitle-euro') || '6 grupos + KO · 24 selecciones',            gridClass: 'trn-preset-groups-euro' },
+      'copamerica2024':  { title: 'Copa América 2024',               icon: `<img src="/img/trophy-copa-america.png"  class="trn-preset-confirm-trophy" alt="Copa America Trophy">`, subtitle: t('trn-preset-subtitle-copa-america') || '4 grupos + KO · 16 selecciones',   gridClass: 'trn-preset-groups-copa-america' },
+      'libertadores2025':{ title: 'Copa Libertadores 2025',          icon: `<img src="/img/trophy-libertadores.png"  class="trn-preset-confirm-trophy" alt="Libertadores Trophy">`, subtitle: t('trn-preset-subtitle-libertadores') || '8 grupos + KO ida y vuelta · 32 clubes', gridClass: 'trn-preset-groups-libertadores' },
+    };
+    const meta  = _PRESET_META[presetId] || _PRESET_META['wc2026'];
+    const title = meta.title;
+    const iconHtml = isWC ? `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">` : meta.icon;
     const numGrps = _groupsDraw.length;
 
     hide($('trn-step-1'));
@@ -1539,14 +1730,14 @@ const TRN = (() => {
         <div class="trn-preset-confirm-icon">${iconHtml}</div>
         <div>
           <h2 class="trn-step-title" style="margin:0">${_esc(title)}</h2>
-          <p class="trn-step-hint" style="margin:.2rem 0 0">${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${isWC ? t('trn-preset-subtitle-wc') : t('trn-preset-subtitle-ucl')}</p>
+          <p class="trn-step-hint" style="margin:.2rem 0 0">${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}</p>
         </div>
       </div>
-      <div class="trn-preset-groups-preview${isWC ? ' trn-preset-groups-wc' : ''}">${groupsHtml}</div>
+      <div class="trn-preset-groups-preview${isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
       <div class="trn-step-actions trn-preset-confirm-actions">
         <button class="btn-secondary" id="preset-confirm-cancel">${t('trn-btn-back')}</button>
         ${isWC ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
-        <button class="btn-primary" id="preset-confirm-run">▶ ${t(isWC ? 'trn-btn-simulate' : 'trn-btn-simulate-ucl').replace(/^▶\s*/,'').replace(/torneo$/,'')}&nbsp;${_esc(title)}</button>
+        <button class="btn-primary" id="preset-confirm-run">▶ Simular &nbsp;${_esc(title)}</button>
       </div>
     `;
 
@@ -1616,14 +1807,14 @@ const TRN = (() => {
         const catalog = await _getTrnCatalog();
         const ql = q.toLowerCase();
         const matches = catalog.filter(e => {
-          const n = (e.nameEs || e.nameEn || '').toLowerCase();
+          const n = ((e.nameEs || '') + ' ' + (e.nameEn || '')).toLowerCase();
           return n.includes(ql) || e.slug.includes(ql);
         }).slice(0, 8);
         if (!matches.length) { res.innerHTML = `<div class="preset-replace-empty">Sin resultados</div>`; return; }
         // One row per (team × season) so user can pick any era
         res.innerHTML = matches.map(e => {
           const badge   = e.badge || '/img/badges/_placeholder.svg';
-          const name    = e.nameEs || e.nameEn || e.slug;
+          const name    = (_getLang() === 'en' ? (e.nameEn || e.nameEs) : (e.nameEs || e.nameEn)) || e.slug;
           const seasons = (e.seasons || []).slice().reverse(); // newest first
           if (!seasons.length) seasons.push('');
           return `<div class="preset-replace-group">
@@ -1716,7 +1907,13 @@ const TRN = (() => {
         ? await _simulateUCLLeaguePhase()
         : _activePreset === 'wc2026'
           ? await _simulateWC2026()
-          : await _simulateChampions();
+          : _activePreset === 'euro2024'
+            ? await _simulateEuro2024()
+            : _activePreset === 'copamerica2024'
+              ? await _simulateChampions()     // 4 groups, top 2 → QF
+              : _activePreset === 'libertadores2025'
+                ? await _simulateChampions()   // 8 groups, top 2, KO ida y vuelta
+                : await _simulateChampions();
       _stopTrnLoadCycle();
       _data = data;
       _computeTournamentStats(_data);
@@ -2161,15 +2358,29 @@ const TRN = (() => {
   // pfx: unique ID prefix so gradient IDs never clash between poster and reveal
   function _trophySVG(fmt, pfx) {
     const p = pfx || 't' + (Math.random() * 1e5 | 0);
-    const isWC  = fmt === 'champions' && _activePreset === 'wc2026';
-    const isUCL = fmt === 'ucl-league' || (fmt === 'champions' && !isWC);
-    const isRv  = pfx === 'rv';
-    const sz    = isRv ? '94px' : '58px';
+    const isWC   = fmt === 'champions' && _activePreset === 'wc2026';
+    const isEuro  = fmt === 'champions' && _activePreset === 'euro2024';
+    const isCopa  = fmt === 'champions' && _activePreset === 'copamerica2024';
+    const isLibt  = fmt === 'champions' && _activePreset === 'libertadores2025';
+    const isUCL   = fmt === 'ucl-league' || (fmt === 'champions' && !isWC && !isEuro && !isCopa && !isLibt);
+    const isRv    = pfx === 'rv';
+    const sz      = isRv ? '94px' : '58px';
+    // ── Custom Liga/Copa GolazoxX trophies (always) ─────────
+    if (fmt === 'liga' && !_activePreset)
+      return `<img src="/img/trophy-liga.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Liga Trophy">`;
+    if ((fmt === 'copa' || (fmt === 'copa' && _rules && _rules.copaMode === 'groups')) && !_activePreset)
+      return `<img src="/img/trophy-copa.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Copa Trophy">`;
     // Use real trophy PNGs for preset tournaments
     if (isUCL && _activePreset)
-      return `<img src="/img/trophy-ucl.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="UCL Trophy">`;
+      return `<img src="/img/trophy-ucl.png"          class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="UCL Trophy">`;
     if (isWC && _activePreset)
-      return `<img src="/img/trophy-wc.png"  class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="WC Trophy">`;
+      return `<img src="/img/trophy-wc.png"           class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="WC Trophy">`;
+    if (isEuro)
+      return `<img src="/img/trophy-euro.png"         class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Euro Trophy">`;
+    if (isCopa)
+      return `<img src="/img/trophy-copa-america.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Copa America Trophy">`;
+    if (isLibt)
+      return `<img src="/img/trophy-libertadores.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Libertadores Trophy">`;
 
     // ── UCL "Big-Ears" ──────────────────────────────────────
     if (isUCL) return `<svg class="trn-trophy-svg" viewBox="0 0 80 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2330,7 +2541,11 @@ const TRN = (() => {
       (data.format === 'copa' && data.copaMode === 'groups') ? t('trn-reveal-copa-groups') :
       data.format === 'copa' ? t('trn-reveal-copa') :
       data.format === 'ucl-league' ? 'Champions League 2025/26' :
-      (data.format === 'champions' && _activePreset === 'wc2026') ? 'FIFA World Cup 2026' : t('trn-reveal-champions');
+      _activePreset === 'wc2026'          ? 'FIFA World Cup 2026' :
+      _activePreset === 'euro2024'        ? 'UEFA Euro 2024' :
+      _activePreset === 'copamerica2024'  ? 'Copa América 2024' :
+      _activePreset === 'libertadores2025'? 'Copa Libertadores 2025' :
+      t('trn-reveal-champions');
     el.classList.remove('hidden');
     _confetti();
     await new Promise(res => {
@@ -2470,7 +2685,7 @@ const TRN = (() => {
           specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i,       penalties: false, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: true });
           specs.push({ teamA: b.slug, teamB: a.slug, eraA: b.era, eraB: a.era, salt: n * 100 + i + 50, penalties: false, ovrA: b.ovr||null, ovrB: a.ovr||null, homeAdvantage: true });
         } else {
-          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: _rules.penalties, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: !isFinal });
+          specs.push({ teamA: a.slug, teamB: b.slug, eraA: a.era, eraB: b.era, salt: n * 100 + i, penalties: true, isFinal, ovrA: a.ovr||null, ovrB: b.ovr||null, homeAdvantage: !isFinal });
         }
       }
 
@@ -2894,6 +3109,91 @@ const TRN = (() => {
     for (let i = 0; i < 8;  i += 2) r32.push(remainingOthers[i], remainingOthers[i + 1]);
 
     const koData = await _simulateCopa_internal(r32, { idaVuelta: false, startPct: 65 });
+
+    return {
+      format:     'champions',
+      champion:   koData.champion,
+      groups:     groupData,
+      koRounds:   koData.rounds,
+      thirdPlace: koData.thirdPlace || null,
+      teams:      _teams,
+    };
+  }
+
+  // ── UEFA Euro / Copa América — groups → top 2 + best thirds → KO ────────
+  // Euro: 6 groups → top 2 (12) + 4 best thirds = 16 teams (R16)
+  // Copa Am: 4 groups → top 2 (8) per QF directly (handled by _simulateChampions)
+  async function _simulateEuro2024() {
+    const GRP_SIZE = 4;
+    const groups = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: Math.ceil(s.length / GRP_SIZE) }, (_, g) => s.slice(g * GRP_SIZE, (g + 1) * GRP_SIZE));
+    })();
+
+    const totalGroups = groups.length;
+    const groupData   = [];
+
+    for (let g = 0; g < groups.length; g++) {
+      const grpPct = 5 + Math.round((g / totalGroups) * 55);
+      _setProgress(`${t('trn-progress-groups')} (${g + 1}/${totalGroups})`, grpPct);
+      const grp   = groups[g];
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idxG  = {};
+      table.forEach((r, i) => { idxG[r.slug] = i; });
+      const grpFixtures = [];
+      for (let i = 0; i < grp.length; i++)
+        for (let j = i + 1; j < grp.length; j++)
+          grpFixtures.push({ a: grp[i], b: grp[j] });
+      const specs = grpFixtures.map((f, i) => ({
+        teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: (g + 1) * 300 + i, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: false,
+      }));
+      const res = await _bulkSim(specs);
+      grpFixtures.forEach((f, i) => {
+        const r = res[i];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB;
+        f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || [];
+        f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idxG[f.a.slug]], rB = table[idxG[f.b.slug]];
+        rA.p++; rB.p++;
+        rA.gf += r.scoreA; rA.ga += r.scoreB;
+        rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if      (r.scoreA > r.scoreB) { rA.w++; rA.pts += 3; rB.l++; }
+        else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 3; rA.l++; }
+        else                          { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      const grpLabel = String.fromCharCode(65 + g);
+      table.forEach((r, i) => { r._grp = grpLabel; r._grpPos = i; });
+      groupData.push({ label: `${t('trn-draw-group-prefix')}${grpLabel}`, table, matches: grpFixtures });
+    }
+
+    // Collect qualifiers: top 2 from each group + 4 best thirds
+    const groupWinners = groupData.map(g => g.table[0]);
+    const groupRunners = groupData.map(g => g.table[1]);
+    const thirds = groupData.map(g => g.table[2])
+      .sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+    const bestThirds = thirds.slice(0, 4);
+    thirds.slice(4).forEach(t  => { t.status = 'out'; });
+    groupWinners.forEach(t  => { t.status = 'direct'; });
+    groupRunners.forEach(t  => { t.status = 'direct'; });
+    bestThirds.forEach(t    => { t.status = 'playoff'; });
+    groupData.forEach(g     => { if (g.table[3]) g.table[3].status = 'out'; });
+
+    // Build R16 bracket: 6 winners vs 6 runners, 4 thirds paired vs remaining runners/winners
+    const shuffledWinners  = [...groupWinners].sort(() => Math.random() - 0.5);
+    const shuffledRunners  = [...groupRunners].sort(() => Math.random() - 0.5);
+    const shuffledThirds   = [...bestThirds].sort(() => Math.random() - 0.5);
+    // Pair winners vs runners for 6 matches, then mix thirds
+    const r16 = [];
+    for (let i = 0; i < 6; i++) r16.push(shuffledWinners[i], shuffledRunners[i]);
+    // Add 4 thirds as extra pairs (they'll play each other, seeded into bracket)
+    // To make 16, pair 4 thirds: 2 extra matches against 2 remaining runners
+    // Simple approach: append in shuffled order; _simulateCopa_internal handles odd bracket
+    for (let i = 0; i < shuffledThirds.length; i++) r16.push(shuffledThirds[i]);
+
+    _setProgress(t('trn-progress-ko'), 65);
+    const koData = await _simulateCopa_internal(r16, { idaVuelta: false, startPct: 65 });
 
     return {
       format:     'champions',

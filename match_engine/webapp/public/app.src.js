@@ -968,7 +968,7 @@ async function surpriseMe() {
   }
 
   _gx('surprise_me');
-  showToast(`✅ ${(tA.nameEs || tA.name)} · ${(tB.nameEs || tB.name)} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
+  showToast(`✅ ${_entryName(tA)} · ${_entryName(tB)} · ${t('rivalry-ready') || '¡Pulsa ▶ para simular!'}`);
 }
 
 // ── Partidos Históricos / Grandes Rivalidades ─────────────────

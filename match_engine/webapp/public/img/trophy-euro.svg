@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 116">
+  <defs>
+    <linearGradient id="eu-cup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6a9bd0"/>
+      <stop offset="38%"  stop-color="#d8eaff"/>
+      <stop offset="65%"  stop-color="#a8c8f0"/>
+      <stop offset="100%" stop-color="#5080b8"/>
+    </linearGradient>
+    <linearGradient id="eu-hdl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#4878b0"/>
+      <stop offset="50%"  stop-color="#b8d4f0"/>
+      <stop offset="100%" stop-color="#4878b0"/>
+    </linearGradient>
+    <linearGradient id="eu-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#5888c0"/>
+      <stop offset="50%"  stop-color="#c0d8f8"/>
+      <stop offset="100%" stop-color="#5888c0"/>
+    </linearGradient>
+    <linearGradient id="eu-base" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#1e3c8c"/>
+      <stop offset="100%" stop-color="#0a1e58"/>
+    </linearGradient>
+    <linearGradient id="eu-base2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#2a4aa0"/>
+      <stop offset="100%" stop-color="#0e2470"/>
+    </linearGradient>
+    <filter id="eu-glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Cup bowl -->
+  <path d="M27,6 Q20,6 18,22 Q16,40 20,53 Q26,66 40,70 Q54,66 60,53 Q64,40 62,22 Q60,6 53,6 Z"
+        fill="url(#eu-cup)"/>
+
+  <!-- Cup inner shadow -->
+  <path d="M30,10 Q24,12 22,26 Q20,42 24,54"
+        fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M50,10 Q56,12 58,26 Q60,42 56,54"
+        fill="none" stroke="rgba(80,120,200,0.3)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Decorative band near rim -->
+  <path d="M18,25 Q40,29 62,25" fill="none" stroke="rgba(160,200,255,0.6)" stroke-width="1.5"/>
+
+  <!-- Left handle -->
+  <path d="M19,24 Q3,28 3,44 Q3,58 17,56 Q20,55.5 22,53"
+        fill="none" stroke="url(#eu-hdl)" stroke-width="6.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left handle highlight -->
+  <path d="M18,26 Q5,30 5,44 Q5,56 16,55"
+        fill="none" stroke="rgba(200,228,255,0.45)" stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Right handle -->
+  <path d="M61,24 Q77,28 77,44 Q77,58 63,56 Q60,55.5 58,53"
+        fill="none" stroke="url(#eu-hdl)" stroke-width="6.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right handle highlight -->
+  <path d="M62,26 Q75,30 75,44 Q75,56 64,55"
+        fill="none" stroke="rgba(200,228,255,0.45)" stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Stem -->
+  <rect x="34" y="70" width="12" height="20" rx="3" fill="url(#eu-stem)"/>
+  <!-- Stem highlight -->
+  <rect x="36" y="71" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- Base platform 1 -->
+  <rect x="22" y="90" width="36" height="8" rx="2.5" fill="url(#eu-base2)"/>
+  <!-- Base platform 2 (wider) -->
+  <rect x="14" y="98" width="52" height="12" rx="3" fill="url(#eu-base)"/>
+  <!-- Base top shine -->
+  <rect x="14" y="98" width="52" height="2.5" rx="1" fill="rgba(100,150,255,0.3)"/>
+
+  <!-- Stars on cup front -->
+  <text x="40" y="53" text-anchor="middle" font-size="9"
+        fill="rgba(20,60,160,0.45)" font-family="sans-serif" letter-spacing="2">★★★</text>
+</svg>

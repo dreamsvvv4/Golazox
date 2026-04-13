@@ -554,9 +554,10 @@
     "badgeLocalPath": "/img/badges/palmeiras.png"
   },
   "flamengo-rio-de-janeiro": {
-    "group": "🌍 Otros",
+    "group": "�🇷 Brasileirão",
     "nameEn": "Flamengo",
-    "nameEs": "Flamengo"
+    "nameEs": "Flamengo",
+    "badgeLocalPath": "/img/badges/flamengo-rio-de-janeiro.png"
   },
   "clube-atletico-mineiro": {
     "group": "🇧🇷 Brasileirão",
@@ -933,10 +934,14 @@
   },
   "river-plate": {
     "group": "🌎 Argentina Primera",
+    "nameEn": "River Plate",
+    "nameEs": "River Plate",
     "badgeLocalPath": "/img/badges/river-plate.png"
   },
   "boca-juniors": {
     "group": "🌎 Argentina Primera",
+    "nameEn": "Boca Juniors",
+    "nameEs": "Boca Juniors",
     "badgeLocalPath": "/img/badges/boca-juniors.png"
   },
   "racing-club": {
@@ -1164,13 +1169,22 @@
     "group": "🌍 Otros"
   },
   "corinthians-sao-paulo": {
-    "group": "🌍 Otros"
+    "group": "�🇷 Brasileirão",
+    "nameEn": "Corinthians",
+    "nameEs": "Corinthians",
+    "badgeLocalPath": "/img/badges/corinthians-sao-paulo.png"
   },
   "fluminense-rio-de-janeiro": {
-    "group": "🌍 Otros"
+    "group": "�🇷 Brasileirão",
+    "nameEn": "Fluminense",
+    "nameEs": "Fluminense",
+    "badgeLocalPath": "/img/badges/fluminense-rio-de-janeiro.png"
   },
   "se-palmeiras-sao-paulo": {
-    "group": "🌍 Otros"
+    "group": "🇧🇷 Brasileirão",
+    "nameEn": "Palmeiras",
+    "nameEs": "Palmeiras",
+    "badgeLocalPath": "/img/badges/se-palmeiras-sao-paulo.png"
   },
   "club-atletico-boca-juniors": {
     "group": "🌍 Otros"

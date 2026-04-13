@@ -43,17 +43,62 @@ function latestVideoFile() {
   return path.join(VIDEOS_DIR, files[0].f);
 }
 
+// ── Chapter timestamps per video type ────────────────────────────────────────
+const CHAPTERS = {
+  ucl: [
+    '00:00 Intro — GolazOX',
+    '00:05 Sorteo Champions League',
+    '00:55 Fase de Grupos',
+    '01:40 Octavos de Final',
+    '02:10 Cuartos de Final',
+    '02:35 Semifinales',
+    '02:55 FINAL',
+    '03:20 🏆 Campeón',
+  ].join('\n'),
+  wc: [
+    '00:00 Intro — GolazOX',
+    '00:05 Sorteo Mundial 2026',
+    '00:55 Fase de Grupos',
+    '01:50 Octavos de Final',
+    '02:20 Cuartos de Final',
+    '02:45 Semifinales',
+    '03:05 FINAL',
+    '03:30 🏆 Campeón del Mundo',
+  ].join('\n'),
+  match: [
+    '00:00 Intro — GolazOX',
+    '00:05 Presentación del partido',
+    '00:20 ¡Comienza el partido!',
+    '01:10 Goles y jugadas clave',
+    '02:00 Resultado final',
+  ].join('\n'),
+};
+
 // ── YouTube Shorts ────────────────────────────────────────────────────────────
 // Auth: OAuth2 (run `node uploader.js --auth youtube` first)
 // Docs: https://developers.google.com/youtube/v3/guides/uploading_a_video
 
-async function uploadYouTube({ file, title, description, tags }) {
+async function uploadYouTube({ file, title, description, tags, type }) {
   console.log('[youtube] Uploading...');
+
+  // Guard: prevent uploading the same file twice within 10 minutes
+  const lockFile = path.join(__dirname, 'logs', `yt_${path.basename(file)}.lock`);
+  try {
+    if (fs.existsSync(lockFile)) {
+      const age = Date.now() - fs.statSync(lockFile).mtimeMs;
+      if (age < 10 * 60 * 1000) {
+        console.warn(`[youtube] SKIPPED — already uploaded this file ${Math.round(age/1000)}s ago (lock: ${lockFile})`);
+        return null;
+      }
+    }
+    fs.mkdirSync(path.dirname(lockFile), { recursive: true });
+    fs.writeFileSync(lockFile, String(Date.now()));
+  } catch { /* non-fatal */ }
 
   const oauth2 = new google.auth.OAuth2(
     env('YOUTUBE_CLIENT_ID'),
     env('YOUTUBE_CLIENT_SECRET'),
-    'urn:ietf:wg:oauth:2.0:oob',
+    'http://localhost:8085',
   );
   oauth2.setCredentials({
     refresh_token: env('YOUTUBE_REFRESH_TOKEN'),
@@ -61,15 +106,21 @@ async function uploadYouTube({ file, title, description, tags }) {
 
   const youtube = google.youtube({ version: 'v3', auth: oauth2 });
 
+  const chapters = CHAPTERS[type] || (type === 'rival' ? CHAPTERS.match : CHAPTERS.ucl);
+  const typeDesc  = DESCRIPTIONS[type] || DESCRIPTIONS.ucl;
+  const fullDescription = description ||
+    `${DEFAULT_HASHTAGS}\n\n${title}\n\n${typeDesc}\n\n${chapters}`;
+
   const res = await youtube.videos.insert({
     part: ['snippet', 'status'],
     requestBody: {
       snippet: {
         title,
-        description: description || `${title}\n\n${DEFAULT_DESCRIPTION}`,
+        description: fullDescription,
         tags: tags || DEFAULT_TAGS,
         categoryId: '17',  // Sports
         defaultLanguage: 'es',
+        defaultAudioLanguage: 'es',
       },
       status: {
         privacyStatus: 'public',
@@ -95,15 +146,9 @@ async function uploadInstagram({ file, title, description }) {
   const igUserId    = env('INSTAGRAM_USER_ID');
   const caption     = `${title}\n\n${description || DEFAULT_DESCRIPTION}\n\n${DEFAULT_HASHTAGS}`;
 
-  console.log('[instagram] Step 1/2 — Creating container...');
-
-  // Step 1: Upload video to Meta container
-  const videoUrl = env('META_VIDEO_CDN_URL', false);
-  if (!videoUrl) {
-    console.warn('[instagram] ⚠ META_VIDEO_CDN_URL not set. Instagram Reels API requires the video to be hosted on a public HTTPS URL.');
-    console.warn('[instagram]   Upload your video to a CDN/S3 bucket and set META_VIDEO_CDN_URL=https://...');
-    throw new Error('META_VIDEO_CDN_URL required for Instagram (see .env.example)');
-  }
+  // Build CDN URL from golazox.com/videos/ (server.js serves this path statically)
+  const videoUrl = env('META_VIDEO_CDN_URL', false) || `https://golazox.com/videos/${path.basename(file)}`;
+  console.log(`[instagram] Step 1/2 — Creating container (video: ${videoUrl})...`);
 
   const createRes = await fetch(
     `https://graph.facebook.com/v21.0/${igUserId}/media`,
@@ -162,13 +207,8 @@ async function uploadFacebook({ file, title, description }) {
   const pageId      = env('FACEBOOK_PAGE_ID');
   const caption     = `${title}\n\n${description || DEFAULT_DESCRIPTION}\n\n${DEFAULT_HASHTAGS}`;
 
-  const videoUrl = env('META_VIDEO_CDN_URL', false);
-  if (!videoUrl) {
-    console.warn('[facebook] ⚠ META_VIDEO_CDN_URL required (same as Instagram). Skipping.');
-    throw new Error('META_VIDEO_CDN_URL required for Facebook Reels');
-  }
-
-  console.log('[facebook] Uploading Reel...');
+  const videoUrl = env('META_VIDEO_CDN_URL', false) || `https://golazox.com/videos/${path.basename(file)}`;
+  console.log(`[facebook] Uploading Reel (video: ${videoUrl})...`);
 
   const res = await fetch(
     `https://graph.facebook.com/v21.0/${pageId}/video_reels`,
@@ -232,25 +272,152 @@ async function uploadX({ file, title }) {
   });
   console.log(`[x] Media uploaded: ${mediaId}`);
 
-  // Post tweet
-  const tweet = await client.v2.tweet({
-    text: tweetText,
-    media: { media_ids: [mediaId] },
-  });
+  // Post tweet via v1.1 (compatible with Pay Per Use plan)
+  const tweet = await client.v1.tweet(tweetText, { media_ids: mediaId });
 
-  console.log(`[x] ✓ https://x.com/i/status/${tweet.data.id}`);
-  return tweet.data.id;
+  console.log(`[x] ✓ https://x.com/i/status/${tweet.id_str}`);
+  return tweet.id_str;
 }
 
-// ── TikTok ────────────────────────────────────────────────────────────────────
-// Auth: TikTok Content Posting API (requires creator app approval)
-// Docs: https://developers.tiktok.com/doc/content-posting-api-get-started
-// NOTE: TikTok's API requires direct_post permission approved by TikTok.
-//       For now this uses the "inbox upload" flow (draft) which works without approval.
+// ── X text-only tweet via OAuth 2.0 (free plan compatible) ───────────────────
+async function tweetYouTubeLink({ title, ytUrl }) {
+  console.log('[x] Posting tweet with YouTube link...');
 
-async function uploadTikTok({ file, title }) {
+  const clientId     = env('X_OAUTH2_CLIENT_ID');
+  const clientSecret = env('X_OAUTH2_CLIENT_SECRET');
+  const refreshToken = env('X_OAUTH2_REFRESH_TOKEN');
+
+  // Exchange refresh token → new access token
+  const tokenRes = await fetch('https://api.x.com/2/oauth2/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
+    },
+    body: new URLSearchParams({
+      grant_type:    'refresh_token',
+      refresh_token: refreshToken,
+    }),
+  });
+  if (!tokenRes.ok) {
+    const err = await tokenRes.text();
+    throw new Error(`X OAuth2 token refresh failed: ${err}`);
+  }
+  const tokens = await tokenRes.json();
+  const accessToken = tokens.access_token;
+  const newRefresh  = tokens.refresh_token;
+
+  // Persist updated refresh token to .env
+  if (newRefresh && newRefresh !== refreshToken) {
+    const envPath = require('path').join(__dirname, '.env');
+    let envContent = fs.readFileSync(envPath, 'utf8');
+    envContent = envContent.replace(/X_OAUTH2_REFRESH_TOKEN=.*/, `X_OAUTH2_REFRESH_TOKEN=${newRefresh}`);
+    fs.writeFileSync(envPath, envContent);
+  }
+
+  // Post tweet
+  const tweetText = `${title}\n\n▶️ ${ytUrl}\n\n${DEFAULT_HASHTAGS_SHORT}\n\n🌐 golazox.com`;
+  const tweetRes = await fetch('https://api.x.com/2/tweets', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify({ text: tweetText }),
+  });
+  if (!tweetRes.ok) {
+    const err = await tweetRes.text();
+    throw new Error(`X tweet failed (${tweetRes.status}): ${err}`);
+  }
+  const tweet = await tweetRes.json();
+  const tweetId = tweet.data.id;
+  console.log(`[x] ✓ https://x.com/i/status/${tweetId}`);
+  return tweetId;
+}
+
+// ── X OAuth 2.0 auth setup (run once: node uploader.js --auth x) ─────────────
+async function authX() {
+  const http   = require('http');
+  const crypto = require('crypto');
+  const { exec } = require('child_process');
+
+  const clientId   = env('X_OAUTH2_CLIENT_ID');
+  const REDIRECT   = 'http://localhost:8086';
+  const codeVerifier  = crypto.randomBytes(32).toString('base64url');
+  const codeChallenge = crypto.createHash('sha256').update(codeVerifier).digest('base64url');
+  const state = crypto.randomBytes(8).toString('hex');
+
+  const authUrl = `https://x.com/i/oauth2/authorize?` +
+    `response_type=code` +
+    `&client_id=${clientId}` +
+    `&redirect_uri=${encodeURIComponent(REDIRECT)}` +
+    `&scope=${encodeURIComponent('tweet.write tweet.read users.read offline.access')}` +
+    `&state=${state}` +
+    `&code_challenge=${codeChallenge}` +
+    `&code_challenge_method=S256`;
+
+  console.log('\n[x] Opening browser for X OAuth 2.0 authorization...');
+  const openCmd = `start "" "${authUrl}"`;
+  exec(openCmd);
+
+  return new Promise((resolve, reject) => {
+    const server = http.createServer(async (req, res) => {
+      const url  = new URL(req.url, REDIRECT);
+      const code = url.searchParams.get('code');
+      if (!code) { res.end('<h2>Waiting...</h2>'); return; }
+
+      res.end('<h2 style="font-family:sans-serif;color:green">✓ Autorizado. Puedes cerrar esta ventana.</h2>');
+      server.close();
+
+      try {
+        const clientSecret = env('X_OAUTH2_CLIENT_SECRET');
+        const tokenRes = await fetch('https://api.x.com/2/oauth2/token', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
+          },
+          body: new URLSearchParams({
+            code,
+            grant_type:    'authorization_code',
+            redirect_uri:  REDIRECT,
+            code_verifier: codeVerifier,
+          }),
+        });
+        const tokens = await tokenRes.json();
+        if (!tokens.refresh_token) throw new Error('No refresh_token in response: ' + JSON.stringify(tokens));
+
+        const envPath = require('path').join(__dirname, '.env');
+        let envContent = fs.readFileSync(envPath, 'utf8');
+        envContent = envContent.replace(/X_OAUTH2_REFRESH_TOKEN=.*/, `X_OAUTH2_REFRESH_TOKEN=${tokens.refresh_token}`);
+        fs.writeFileSync(envPath, envContent);
+
+        console.log('\n[x] ✓ X OAuth 2.0 configurado correctamente!');
+        console.log('[x] Test: node uploader.js --auth-test-x');
+        resolve(tokens);
+      } catch (e) { reject(e); }
+    });
+    server.listen(8086, '127.0.0.1', () => console.log('[x] Esperando autorización en http://localhost:8086 ...'));
+    server.on('error', reject);
+  });
+}
+
+
+// Docs: https://developers.tiktok.com/doc/content-posting-api-get-started
+// NOTE: Uses Direct Post (video.publish) with PUBLIC_TO_EVERYONE — approved in TikTok developer portal.
+
+const TIKTOK_HASHTAGS = {
+  ucl:   '#Futbol #ChampionsLeague #UCL #Simulacion #GolazOX #Football #IA #Deportes',
+  wc:    '#Futbol #Mundial2026 #WorldCup #Simulacion #GolazOX #Football #IA #Deportes',
+  match: '#Futbol #Simulacion #GolazOX #Football #IA #Deportes #FutbolIA',
+};
+
+async function uploadTikTok({ file, title, type }) {
   const accessToken = env('TIKTOK_ACCESS_TOKEN');
 
+  const hashtags = TIKTOK_HASHTAGS[type] || TIKTOK_HASHTAGS.ucl;
+  const caption = `${title}\n\n⚽ Simulación IA — golazox.com\n¿Quién ganará? Simúlalo tú mismo en golazox.com\n\n${hashtags}`;
+  console.log('[tiktok] Caption:', caption);
   console.log('[tiktok] Initializing upload...');
 
   const fileSize = fs.statSync(file).size;
@@ -264,7 +431,7 @@ async function uploadTikTok({ file, title }) {
     },
     body: JSON.stringify({
       post_info: {
-        title,
+        title: caption,
         privacy_level: 'PUBLIC_TO_EVERYONE',
         disable_duet: false,
         disable_comment: false,
@@ -320,13 +487,54 @@ async function uploadTikTok({ file, title }) {
 }
 
 // ── Defaults ──────────────────────────────────────────────────────────────────
-const DEFAULT_DESCRIPTION = 'Simulación generada por IA en golazox.com\nSimula partidos históricos con cualquier equipo y era 🔥';
-const DEFAULT_TAGS        = ['futbol', 'champions league', 'simulacion', 'golazox', 'football', 'ucl', 'deportes'];
-const DEFAULT_HASHTAGS    = '#Futbol #ChampionsLeague #Simulacion #GolazOX #Football #UCL #Deportes';
+const DESCRIPTIONS = {
+  ucl: [
+    '⚽ Simulación generada por IA — golazox.com',
+    '¿Quién ganará la Champions League 2025/26? Lo simulamos con inteligencia artificial.',
+    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
+    '',
+    '🌐 Simula tu propio torneo en https://golazox.com',
+  ].join('\n'),
+  wc: [
+    '⚽ Simulación generada por IA — golazox.com',
+    '¿Quién ganará el Mundial 2026? Lo simulamos con inteligencia artificial.',
+    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
+    '',
+    '🌐 Simula tu propio torneo en https://golazox.com',
+  ].join('\n'),
+  rival: [
+    '⚽ Simulación generada por IA — golazox.com',
+    '¿Quién ganará este partido histórico? Lo simulamos con inteligencia artificial.',
+    'Partido simulado con datos reales de los mejores jugadores.',
+    '',
+    '🌐 Simula tu propio partido en https://golazox.com',
+  ].join('\n'),
+  match: [
+    '⚽ Simulación generada por IA — golazox.com',
+    '¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
+    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
+    '',
+    '🌐 Simula tu propio partido en https://golazox.com',
+  ].join('\n'),
+  daily: [
+    '⚽ Simulación generada por IA — golazox.com',
+    '¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
+    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
+    '',
+    '🌐 Simula tu propio partido en https://golazox.com',
+  ].join('\n'),
+};
+const DEFAULT_DESCRIPTION = DESCRIPTIONS.ucl;
+const DEFAULT_TAGS        = [
+  'futbol', 'champions league', 'simulacion', 'golazox', 'football',
+  'ucl', 'deportes', 'futbol historico', 'inteligencia artificial',
+  'real madrid', 'barcelona', 'simulador futbol', 'partido historico',
+];
+const DEFAULT_HASHTAGS    = '#Futbol #ChampionsLeague #Simulacion #GolazOX #Football #UCL #Deportes #FutbolHistorico #IA';
 const DEFAULT_HASHTAGS_SHORT = '#Futbol #UCL #GolazOX #Football';
 
 // ── Main upload orchestrator ──────────────────────────────────────────────────
-async function uploadAll({ file, title, description, platforms }) {
+async function uploadAll({ file, title, description, platforms, type }) {
   const active = platforms === 'all'
     ? ['youtube', 'instagram', 'facebook', 'x', 'tiktok']
     : platforms.split(',').map(p => p.trim().toLowerCase());
@@ -340,12 +548,12 @@ async function uploadAll({ file, title, description, platforms }) {
   for (const platform of active) {
     try {
       switch (platform) {
-        case 'youtube':   results.youtube   = await uploadYouTube({ file, title, description }); break;
+        case 'youtube':   results.youtube   = await uploadYouTube({ file, title, description, type }); break;
         case 'instagram': results.instagram = await uploadInstagram({ file, title, description }); break;
         case 'facebook':  results.facebook  = await uploadFacebook({ file, title, description }); break;
         case 'x':
         case 'twitter':   results.x         = await uploadX({ file, title }); break;
-        case 'tiktok':    results.tiktok     = await uploadTikTok({ file, title }); break;
+        case 'tiktok':    results.tiktok     = await uploadTikTok({ file, title, type }); break;
         default: console.warn(`[upload] Unknown platform: ${platform}`);
       }
     } catch (e) {
@@ -360,30 +568,155 @@ async function uploadAll({ file, title, description, platforms }) {
 
 // ── OAuth setup helper (YouTube) ──────────────────────────────────────────────
 async function authYouTube() {
+  const http = require('http');
+  const { exec } = require('child_process');
+
+  const REDIRECT = 'http://localhost:8085';
+
   const oauth2 = new google.auth.OAuth2(
     env('YOUTUBE_CLIENT_ID'),
     env('YOUTUBE_CLIENT_SECRET'),
-    'urn:ietf:wg:oauth:2.0:oob',
+    REDIRECT,
   );
   const authUrl = oauth2.generateAuthUrl({
     access_type: 'offline',
     scope: ['https://www.googleapis.com/auth/youtube.upload'],
+    prompt: 'consent',
   });
-  console.log('\n[youtube] Open this URL in your browser:\n');
-  console.log(authUrl);
-  console.log('\nPaste the code here and add it to .env as YOUTUBE_REFRESH_TOKEN after exchanging:\n');
-  console.log('  node uploader.js --auth-exchange <CODE>');
+
+  console.log('\n[youtube] Opening browser for authorization...');
+
+  // Open browser automatically
+  const openCmd = process.platform === 'win32' ? `start "" "${authUrl}"` : `open "${authUrl}"`;
+  exec(openCmd);
+
+  // Spin up a temporary local HTTP server to capture the auth code
+  return new Promise((resolve, reject) => {
+    const server = http.createServer(async (req, res) => {
+      const url = new URL(req.url, REDIRECT);
+      const code = url.searchParams.get('code');
+      const error = url.searchParams.get('error');
+
+      if (error) {
+        res.end('<h2>Error: ' + error + '</h2>');
+        server.close();
+        return reject(new Error('Auth denied: ' + error));
+      }
+
+      if (!code) {
+        res.end('<h2>Waiting...</h2>');
+        return;
+      }
+
+      res.end('<h2 style="font-family:sans-serif;color:green">✓ Autorizado correctamente. Puedes cerrar esta ventana.</h2>');
+      server.close();
+
+      try {
+        const { tokens } = await oauth2.getToken(code);
+        console.log('\n[youtube] ✓ Got refresh token — saving to .env...');
+
+        // Write YOUTUBE_REFRESH_TOKEN into .env
+        const envPath = require('path').join(__dirname, '.env');
+        let envContent = require('fs').readFileSync(envPath, 'utf8');
+        envContent = envContent.replace(/YOUTUBE_REFRESH_TOKEN=.*/, `YOUTUBE_REFRESH_TOKEN=${tokens.refresh_token}`);
+        require('fs').writeFileSync(envPath, envContent);
+
+        console.log('[youtube] ✓ .env updated — YouTube is ready!');
+        console.log('[youtube] Test: node uploader.js --latest --platforms youtube');
+        resolve(tokens);
+      } catch (e) {
+        reject(e);
+      }
+    });
+
+    server.listen(8085, '127.0.0.1', () => {
+      console.log('[youtube] Waiting for browser authorization on http://localhost:8085 ...');
+    });
+
+    server.on('error', reject);
+  });
 }
 
 async function authExchangeYouTube(code) {
   const oauth2 = new google.auth.OAuth2(
     env('YOUTUBE_CLIENT_ID'),
     env('YOUTUBE_CLIENT_SECRET'),
-    'urn:ietf:wg:oauth:2.0:oob',
+    'http://localhost:8085',
   );
   const { tokens } = await oauth2.getToken(code);
   console.log('\n[youtube] Add to your .env:\n');
   console.log(`YOUTUBE_REFRESH_TOKEN=${tokens.refresh_token}`);
+}
+
+// ── OAuth setup helper (TikTok) ───────────────────────────────────────────────
+// Docs: https://developers.tiktok.com/doc/oauth-user-access-token-management
+async function authTikTok() {
+  const { exec } = require('child_process');
+  const crypto = require('crypto');
+
+  const clientKey    = env('TIKTOK_CLIENT_KEY');
+  const REDIRECT     = 'https://golazox.com/tiktok-callback';
+  const codeVerifier = crypto.randomBytes(32).toString('base64url');
+  const codeChallenge = crypto.createHash('sha256').update(codeVerifier).digest('base64url');
+  const state = crypto.randomBytes(8).toString('hex');
+
+  // Save codeVerifier temporarily so auth-exchange-tiktok can use it
+  const verifierFile = require('path').join(__dirname, '.tiktok_verifier');
+  require('fs').writeFileSync(verifierFile, JSON.stringify({ codeVerifier, state }));
+
+  const authUrl = `https://www.tiktok.com/v2/auth/authorize/?` +
+    `client_key=${clientKey}` +
+    `&scope=user.info.basic,video.publish,video.upload` +
+    `&response_type=code` +
+    `&redirect_uri=${encodeURIComponent(REDIRECT)}` +
+    `&state=${state}` +
+    `&code_challenge=${codeChallenge}` +
+    `&code_challenge_method=S256`;
+
+  console.log('\n[tiktok] Opening browser for authorization...');
+  console.log('[tiktok] Auth URL:', authUrl);
+  console.log('[tiktok] After authorizing, copy the code from golazox.com/tiktok-callback');
+  console.log('[tiktok] Then run: node uploader.js --auth-exchange-tiktok YOUR_CODE\n');
+  const openCmd = process.platform === 'win32' ? `start "" "${authUrl}"` : `open "${authUrl}"`;
+  exec(openCmd);
+}
+
+async function authExchangeTikTok(code) {
+  const clientKey    = env('TIKTOK_CLIENT_KEY');
+  const clientSecret = env('TIKTOK_CLIENT_SECRET');
+  const REDIRECT     = 'https://golazox.com/tiktok-callback';
+
+  const verifierFile = path.join(__dirname, '.tiktok_verifier');
+  let codeVerifier = '';
+  try {
+    codeVerifier = JSON.parse(fs.readFileSync(verifierFile, 'utf8')).codeVerifier;
+  } catch { throw new Error('Run --auth tiktok first to generate a code verifier'); }
+
+  const tokenRes = await fetch('https://open.tiktokapis.com/v2/oauth/token/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      client_key: clientKey, client_secret: clientSecret,
+      code, grant_type: 'authorization_code',
+      redirect_uri: REDIRECT, code_verifier: codeVerifier,
+    }).toString(),
+  });
+  const rawBody = await tokenRes.text();
+  console.log('[tiktok] Token response:', rawBody);
+  const tokenData = JSON.parse(rawBody);
+  if (tokenData.error) throw new Error(`TikTok token error: ${tokenData.error} — ${tokenData.error_description}`);
+
+  const { access_token, refresh_token, open_id } = tokenData;
+  const envPath = path.join(__dirname, '.env');
+  let envContent = fs.readFileSync(envPath, 'utf8');
+  envContent = envContent
+    .replace(/TIKTOK_ACCESS_TOKEN=.*/, `TIKTOK_ACCESS_TOKEN=${access_token}`)
+    .replace(/TIKTOK_REFRESH_TOKEN=.*/, `TIKTOK_REFRESH_TOKEN=${refresh_token || ''}`);
+  fs.writeFileSync(envPath, envContent);
+  try { fs.unlinkSync(verifierFile); } catch {}
+  console.log('\n[tiktok] ✓ Access token saved to .env!');
+  console.log(`[tiktok] open_id: ${open_id}`);
+  console.log('[tiktok] Test: node uploader.js --latest --platforms tiktok');
 }
 
 // ── CLI ───────────────────────────────────────────────────────────────────────
@@ -394,22 +727,36 @@ if (require.main === module) {
 
   if (has('--auth') && get('--auth') === 'youtube') {
     authYouTube().catch(e => { console.error(e.message); process.exit(1); });
+  } else if (has('--auth') && get('--auth') === 'x') {
+    authX().catch(e => { console.error(e.message); process.exit(1); });
+  } else if (has('--auth') && get('--auth') === 'tiktok') {
+    authTikTok().catch(e => { console.error(e.message); process.exit(1); });
   } else if (has('--auth-exchange')) {
     authExchangeYouTube(get('--auth-exchange')).catch(e => { console.error(e.message); process.exit(1); });
+  } else if (has('--auth-exchange-tiktok')) {
+    authExchangeTikTok(get('--auth-exchange-tiktok')).catch(e => { console.error(e.message); process.exit(1); });
   } else {
     let file = get('--file');
     if (!file && has('--latest')) file = latestVideoFile();
     if (!file) { console.error('Usage: node uploader.js --file <path> --title "..." --platforms all'); process.exit(1); }
     if (!path.isAbsolute(file)) file = path.resolve(file);
 
-    const title       = get('--title')       || 'Champions League 2025/26 Simulado — golazox.com';
-    const description = get('--description') || DEFAULT_DESCRIPTION;
+    const type        = get('--type')        || 'ucl';
+    const DEFAULT_TITLES = {
+      ucl:   'Champions League 2025/26 Simulado por IA · golazox.com',
+      wc:    'FIFA World Cup 2026 Simulado por IA · golazox.com',
+      match: 'Partido Histórico Simulado por IA · golazox.com',
+      rival: 'Partido Histórico Simulado por IA · golazox.com',
+    };
+    const title       = get('--title')       || DEFAULT_TITLES[type] || DEFAULT_TITLES.ucl;
+    const description = get('--description') || undefined;
     const platforms   = get('--platforms')   || 'all';
 
-    uploadAll({ file, title, description, platforms })
+    uploadAll({ file, title, description, platforms, type })
       .then(() => process.exit(0))
       .catch(e => { console.error('[upload] Fatal:', e.message); process.exit(1); });
   }
 }
 
 module.exports = { uploadAll, uploadYouTube, uploadInstagram, uploadFacebook, uploadX, uploadTikTok };
+

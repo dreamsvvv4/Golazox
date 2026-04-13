@@ -127,6 +127,9 @@ const _catalogNameMap = (() => {
     m.set(e.slug.toLowerCase(), e.slug);
     if (e.nameEn) m.set(e.nameEn.toLowerCase(), e.slug);
     if (e.nameEs) m.set(e.nameEs.toLowerCase(), e.slug);
+    // Also map slug-with-spaces so "river plate" → "river-plate", etc.
+    const slugWords = e.slug.toLowerCase().replace(/-/g, ' ');
+    if (!m.has(slugWords)) m.set(slugWords, e.slug);
   }
   return m;
 })();
@@ -814,7 +817,193 @@ app.get('/partida/:matchup', (req, res) => {
   res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
 });
 
-// Fuentes auto-alojadas: cache inmutable 1 aÃ±o
+// ── /equipo/:slug and /team/:slug — SSR team profile pages for SEO ──────────
+// URL examples:
+//   /equipo/real-madrid        → Spanish profile (latest season)
+//   /equipo/real-madrid:2002   → Spanish profile for 2002 season
+//   /team/real-madrid:2002     → English version
+const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const isEn = lang === 'en';
+  const name = isEn ? (entry.nameEn||entry.nameEs) : (entry.nameEs||entry.nameEn);
+  const badgeUrl = (entry.badge && entry.badge !== BADGE_PLACEHOLDER) ? `${siteUrl}${entry.badge}` : '';
+
+  // Load 11-man roster for selected era (or latest season by default)
+  let players = [], resolvedEra = '';
+  try {
+    const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
+    const seasons = Object.keys(d.seasons||{}).sort((a,b) => Number(b)-Number(a));
+    const key = (era && d.seasons[era]) ? era : seasons[0];
+    resolvedEra = key;
+    players = (d.seasons[key]?.players||[]).slice(0, 11);
+  } catch (_) {}
+
+  const displayEra   = era || resolvedEra;
+  const label        = displayEra ? `${name} ${displayEra}` : name;
+  const allSeasons   = entry.seasons || [];
+  const routePrefix  = isEn ? 'team'    : 'equipo';
+  const matchPrefix  = isEn ? 'match'   : 'partido';
+  const canonUrl     = `${siteUrl}/${routePrefix}/${displayEra ? slug+':'+displayEra : slug}`;
+  const deepLink     = `${siteUrl}/?a=${encodeURIComponent(displayEra ? `${slug}:${displayEra}` : slug)}`;
+
+  const pageTitle = isEn
+    ? `${esc(label)} — Historical Squad & Simulator | GolazoX`
+    : `${esc(label)} — Plantilla Histórica y Simulador | GolazoX`;
+  const pageDesc = isEn
+    ? `${esc(label)}: full historical squad, key players, stats. Simulate ${esc(name)} against the greatest teams in football history with GolazoX's free Monte Carlo engine.`
+    : `Plantilla histórica de ${esc(label)}: jugadores titulares, estadísticas y posiciones. Simula ${esc(name)} contra los mejores equipos de la historia. Motor Monte Carlo, gratis.`;
+
+  const TOP_RIVALS = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen',
+    'ac-mailand','inter-mailand','juventus-turin','fc-liverpool',
+    'brasilien','argentinien','deutschland','ajax-amsterdam'];
+  const rivals = TOP_RIVALS
+    .filter(r => r !== slug)
+    .map(r => CATALOG.find(c => c.slug === r)).filter(Boolean)
+    .slice(0, 6)
+    .map(r => ({ slug: r.slug, name: isEn ? (r.nameEn||r.nameEs) : (r.nameEs||r.nameEn) }));
+
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'BreadcrumbList', 'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': siteUrl },
+        { '@type': 'ListItem', 'position': 2, 'name': name, 'item': `${siteUrl}/${routePrefix}/${slug}` },
+        ...(displayEra ? [{ '@type': 'ListItem', 'position': 3, 'name': label }] : []),
+      ]},
+      { '@type': 'SportsTeam', 'name': name, 'sport': 'Soccer', 'url': canonUrl,
+        ...(badgeUrl ? { 'logo': badgeUrl } : {}),
+        ...(players.length ? { 'member': players.map(p => ({ '@type': 'Person', 'name': p.name })) } : {}),
+      },
+    ],
+  });
+
+  return `<!DOCTYPE html>
+<html lang="${isEn ? 'en' : 'es'}">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>${pageTitle}</title>
+  <meta name="description" content="${esc(pageDesc)}"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="${canonUrl}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="${pageTitle}"/>
+  <meta property="og:description" content="${esc(pageDesc)}"/>
+  <meta property="og:url" content="${canonUrl}"/>
+  <meta property="og:image" content="${siteUrl}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">${jsonLd}</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
+    .tp{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .tp-back{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
+    .tp-back:hover{opacity:1;text-decoration:underline}
+    .tp-hdr{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.8rem}
+    .tp-badge{width:80px;height:80px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .tp-grp{font-size:.72rem;color:#64748b;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+    h1{font-size:1.7rem;font-weight:900;line-height:1.2;color:#f1f5f9;margin-bottom:.4rem}
+    .tp-era{font-size:.82rem;color:#7b2ff7;font-weight:700;background:rgba(123,47,247,.12);padding:.2rem .65rem;border-radius:999px;border:1px solid rgba(123,47,247,.2);width:fit-content}
+    .tp-intro{color:#94a3b8;font-size:.97rem;line-height:1.7;margin-bottom:2rem;border-left:3px solid #7b2ff7;padding-left:1rem}
+    .tp-sec{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.7rem}
+    .tp-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
+    .tp-pill{color:#38bdf8;font-size:.85rem;text-decoration:none;background:rgba(56,189,248,.07);padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(56,189,248,.12)}
+    .tp-pill:hover,.tp-pill.active{background:rgba(56,189,248,.18)}
+    .tp-pill.active{border-color:rgba(56,189,248,.5);font-weight:700}
+    .tp-roster{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:.875rem;padding:1.4rem;margin-bottom:2rem}
+    .tp-row{display:flex;justify-content:space-between;align-items:center;padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem}
+    .tp-row:last-child{border-bottom:0}
+    .tp-pname{color:#e2e8f0}
+    .tp-pos{color:#64748b;font-size:.72rem;font-weight:700;background:rgba(255,255,255,.05);padding:.1rem .4rem;border-radius:4px}
+    .tp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1.1rem 2rem;border-radius:.875rem;font-size:1.1rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:.8rem;transition:opacity .15s}
+    .tp-cta:hover{opacity:.9}
+    .tp-note{font-size:.8rem;color:#475569;text-align:center;margin-bottom:2.5rem}
+    .tp-rivals{margin-bottom:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+    .tp-rlinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+    .tp-rlink{color:#38bdf8;font-size:.875rem;text-decoration:none;background:rgba(56,189,248,.07);padding:.3rem .8rem;border-radius:999px;border:1px solid rgba(56,189,248,.15)}
+    .tp-rlink:hover{background:rgba(56,189,248,.15)}
+    .tp-footer{padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
+    .tp-footer a{color:#475569;text-decoration:none}.tp-footer a:hover{text-decoration:underline}
+    @media(max-width:520px){.tp-badge{width:60px;height:60px}h1{font-size:1.4rem}}
+  </style>
+</head>
+<body><main class="tp">
+  <a class="tp-back" href="/">← GolazoX — Football Time Machine</a>
+
+  <div class="tp-hdr">
+    ${badgeUrl ? `<img class="tp-badge" src="${badgeUrl}" alt="${esc(name)}" width="80" height="80" loading="eager"/>` : ''}
+    <div>
+      ${entry.group ? `<div class="tp-grp">${esc(entry.group.replace(/\p{Emoji_Presentation}/gu,'').trim())}</div>` : ''}
+      <h1>${esc(name)}</h1>
+      ${displayEra ? `<div class="tp-era">${esc(displayEra)}</div>` : ''}
+    </div>
+  </div>
+
+  <p class="tp-intro">
+    ${isEn
+      ? `Explore the full historical squad of <strong>${esc(label)}</strong> and simulate matches against any team from any era. Our Monte Carlo engine uses real player stats, tactics and historical performance to decide the match. Free, no sign-up required.`
+      : `Explora la plantilla histórica completa de <strong>${esc(label)}</strong> y simula partidos contra cualquier equipo de cualquier era. Nuestro motor Monte Carlo usa estadísticas reales de jugadores, tácticas y rendimiento histórico. Gratis, sin registro.`}
+  </p>
+
+  ${allSeasons.length > 1 ? `
+  <div>
+    <div class="tp-sec">${isEn ? 'Available seasons' : 'Temporadas disponibles'}</div>
+    <div class="tp-pills">
+      ${allSeasons.map(s => `<a class="tp-pill${s === displayEra ? ' active' : ''}" href="/${routePrefix}/${slug}:${s}">${esc(s)}</a>`).join('')}
+    </div>
+  </div>` : ''}
+
+  ${players.length ? `
+  <div class="tp-roster">
+    <div class="tp-sec">${isEn ? `${esc(label)} lineup` : `Alineación — ${esc(label)}`}</div>
+    ${players.map(p => `<div class="tp-row"><span class="tp-pname">${esc(p.name)}</span><span class="tp-pos">${esc(p.position)}</span></div>`).join('')}
+  </div>` : ''}
+
+  <a class="tp-cta" href="${deepLink}">⚽ ${isEn ? `Simulate ${esc(label)} now` : `Simular ${esc(label)} ahora`}</a>
+  <p class="tp-note">${isEn ? 'Monte Carlo Engine · 500+ historical squads · Result in seconds' : 'Motor Monte Carlo · +500 plantillas históricas · Resultado en segundos'}</p>
+
+  ${rivals.length ? `
+  <div class="tp-rivals">
+    <div class="tp-sec">${isEn ? 'Simulate against legendary rivals' : 'Simular contra rivales legendarios'}</div>
+    <div class="tp-rlinks">
+      ${rivals.map(r => `<a class="tp-rlink" href="/${matchPrefix}/${encodeURIComponent(displayEra ? slug+':'+displayEra : slug)}-vs-${encodeURIComponent(r.slug)}">${esc(label)} vs ${esc(r.name)}</a>`).join('')}
+    </div>
+  </div>` : ''}
+
+  <div class="tp-footer">
+    <a href="/">GolazoX</a> · <a href="/legal">${isEn ? 'Legal Notice' : 'Aviso Legal'}</a> · <a href="/privacy">${isEn ? 'Privacy' : 'Privacidad'}</a>
+    · ${isEn ? 'Historical football simulator · Not affiliated with FIFA, UEFA or any club' : 'Simulador de fútbol histórico · Sin afiliación con FIFA, UEFA ni clubes'}
+  </div>
+</main></body></html>`;
+};
+
+app.get('/equipo/:slug', (req, res) => {
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
+  const raw = req.params.slug || '';
+  const ci  = raw.indexOf(':');
+  const slug = ci === -1 ? raw : raw.slice(0, ci);
+  const era  = ci === -1 ? '' : raw.slice(ci + 1);
+  if (!/^[a-z0-9-]+$/i.test(slug) || (era && !/^[a-z0-9-]+$/i.test(era))) return res.status(404).send('Not Found');
+  const entry = CATALOG.find(c => c.slug === slug);
+  if (!entry) return res.status(404).send('Not Found');
+  res.set('Cache-Control', 'public, max-age=3600').type('text/html')
+     .send(_buildTeamPage({ entry, slug, era, lang: 'es', siteUrl: _routeSiteUrl }));
+});
+
+app.get('/team/:slug', (req, res) => {
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
+  const raw = req.params.slug || '';
+  const ci  = raw.indexOf(':');
+  const slug = ci === -1 ? raw : raw.slice(0, ci);
+  const era  = ci === -1 ? '' : raw.slice(ci + 1);
+  if (!/^[a-z0-9-]+$/i.test(slug) || (era && !/^[a-z0-9-]+$/i.test(era))) return res.status(404).send('Not Found');
+  const entry = CATALOG.find(c => c.slug === slug);
+  if (!entry) return res.status(404).send('Not Found');
+  res.set('Cache-Control', 'public, max-age=3600').type('text/html')
+     .send(_buildTeamPage({ entry, slug, era, lang: 'en', siteUrl: _routeSiteUrl }));
+});
+
+// Fuentes auto-alojadas: cache inmutable 1 año
 app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   maxAge: '1y',
   immutable: true,
@@ -1239,10 +1428,10 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 
     // Reject simulation if either team was not found anywhere
     if (!luA.found) {
-      return res.status(404).json({ error: `Â¡Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}Â¡ Prueba sin aÃ±o o con el nombre en inglÃ©s.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
     }
     if (!luB.found) {
-      return res.status(404).json({ error: `Â¡Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}Â¡ Prueba sin aÃ±o o con el nombre en inglÃ©s.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
     }
 
     // Apply pre-match player overrides (from user substitutions in the pre-match screen).
@@ -1754,6 +1943,41 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
 // corruption seen in GA ("Ã¢â‚¬"" instead of "â€”").
 // Bots probing unknown paths (/cmd_sco, /wp-adminâ€¦) get a 404 status so
 // Google doesn't index phantom pages, but still receive the SPA HTML.
+// ── POST /subscribe — Newsletter opt-in ──────────────────────────────────
+// Stores emails in subscribers.json. Rate: 5/hour per IP. Deduplicates.
+const SUBS_FILE = require('path').join(__dirname, 'subscribers.json');
+const _subscribeLimit = _rl(5, 60 * 60000);
+app.post('/subscribe', _requireJSON, _subscribeLimit, (req, res) => {
+  const email = String(req.body.email || '').slice(0, 200).trim().toLowerCase();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    return res.status(400).json({ error: 'Email inválido.' });
+  }
+  try {
+    let subs = [];
+    const subsFile = require('path').join(__dirname, 'subscribers.json');
+    if (require('fs').existsSync(subsFile)) {
+      try { subs = JSON.parse(require('fs').readFileSync(subsFile, 'utf8')); } catch (_) {}
+    }
+    if (subs.some(s => s.email === email)) return res.json({ ok: true, already: true });
+    if (subs.length >= 10000) subs = subs.slice(-9999);
+    subs.push({ email, ts: new Date().toISOString() });
+    require('fs').writeFileSync(subsFile, JSON.stringify(subs, null, 2), 'utf8');
+    console.log('[subscribe] ' + email + ' (total: ' + subs.length + ')');
+    if (_mailer) {
+      _mailer.sendMail({
+        from: '"GolazoX" <' + process.env.EMAIL_USER + '>',
+        to: OWNER_EMAIL,
+        subject: '[GolazoX] Nuevo suscriptor #' + subs.length,
+        text: 'Email: ' + email + '\nTotal: ' + subs.length,
+      }).catch(e => console.warn('[subscribe] notify:', e.message));
+    }
+  } catch (err) {
+    console.error('[subscribe]', err.message);
+    return res.status(500).json({ error: 'Error. Inténtalo de nuevo.' });
+  }
+  res.json({ ok: true });
+});
+
 app.get('*', (req, res) => {
   const p = req.path;
   const isBotProbe = p.length > 1;

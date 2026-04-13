@@ -222,6 +222,19 @@ const RIVALS_LIST = [
     question: 'Se repetira la historia en',
     a: { slug: 'manchester-united',          era: '1999', stadium: 'wembley',   referee: 'webb',     weather: 'rain' },
     b: { slug: 'fc-arsenal',                 era: '2004' } },
+  // ── Actualidad UCL 2025-26 ────────────────────────────────────────────────
+  { label: 'Arsenal vs Real Madrid UCL 26',  en: 'Arsenal vs Real Madrid UCL 2026', category: 'Champions · Cuartos 2025-26', flag: '🏆',
+    desc: 'Arsenal vs Real Madrid',
+    goals: { a: ['Saka', 'Havertz', 'Martinelli'], b: ['Vinicius', 'Mbappe', 'Bellingham'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'fc-arsenal',                 era: '2025', stadium: 'wembley',   referee: 'kuipers',  weather: 'night' },
+    b: { slug: 'real-madrid',                era: '2025' } },
+  { label: 'Inter vs Barcelona UCL 26',      en: 'Inter vs Barcelona UCL 2026',     category: 'Champions · Cuartos 2025-26', flag: '🏆',
+    desc: 'Inter de Milan vs Barcelona',
+    goals: { a: ['Lautaro', 'Calhanoglu'], b: ['Yamal', 'Raphinha', 'Lewandowski'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'inter-mailand',              era: '2025', stadium: 'sansiro',   referee: 'collina',  weather: 'night' },
+    b: { slug: 'fc-barcelona',               era: '2025' } },
 ];
 
 // ── Grandes Derbis mundiales (sync with WORLD_DERBIES in app.js) ─────────────
@@ -323,6 +336,14 @@ const DERBIES_LIST = [
 // label ('¿Pelé o Maradona?', 'El Milagro de Estambul', etc.) and the full
 // rivalry intro card, so videos always feel like special events.
 const EPIC_LIST = [...RIVALS_LIST, ...DERBIES_LIST];
+
+// ── Topical / current list — updated with the week's biggest matches ─────────
+// Uses entries already in RIVALS_LIST that are timely this week.
+// Run `node video_generator.js --topical` to pick from this list.
+const CURRENT_LIST = RIVALS_LIST.filter(r =>
+  (r.category || '').includes('2025-26') ||
+  (r.label    || '').includes('UCL 26')
+);
 
 // ── No-repeat tracker ───────────────────────────────────────────────────────
 // Persists used match labels to videos/used_matches.json.
@@ -548,11 +569,23 @@ function createIntroVideo(outFile, durationSec = 5, type = 'ucl', introTitle = n
 }
 
 /**
+ * displayEra — maps internal season year to display year.
+ * Season '2025' = 2025/26 season → always display as '2026'.
+ */
+function displayEra(era) {
+  if (!era) return era;
+  const map = { '2025': '2026' };
+  return map[String(era)] || String(era);
+}
+
+/**
  * createMatchIntroVideo — 5-second intro specific to a clásico.
  * Shows both team badges (from local /img/badges/ cache), team names, eras,
  * a big "VS", the golazox coin + wordmark. Falls back to text-only if badge missing.
  */
 function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 5, labelText = null, subLabel = null) {
+  eraA = displayEra(eraA);
+  eraB = displayEra(eraB);
   const w = WIDTH, h = HEIGHT, d = durationSec;
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
 
@@ -754,6 +787,8 @@ function createCtaCard(outFile, durationSec = 5) {
  * Layout: coin · wordmark · "RESULTADO FINAL" · badges · names + eras · HUGE score
  */
 function createHookCard(scoreA, scoreB, teamA, teamB, eraA, eraB, outFile, durationSec = 3) {
+  eraA = displayEra(eraA);
+  eraB = displayEra(eraB);
   const w = WIDTH, h = HEIGHT, d = durationSec;
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
   const esc = (s) => String(s).replace(/['\\]/g, '').replace(/:/g, '\\:').replace(/%/g, '%%');
@@ -885,8 +920,8 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
 
   const nameA = slugToDisplayName(rivalry.a.slug);
   const nameB = slugToDisplayName(rivalry.b.slug);
-  const eraA  = rivalry.a.era || '';
-  const eraB  = rivalry.b.era || '';
+  const eraA  = displayEra(rivalry.a.era || '');
+  const eraB  = displayEra(rivalry.b.era || '');
   const badgeAFile  = _badgeFile(rivalry.a.slug);
   const badgeBFile  = _badgeFile(rivalry.b.slug);
   const coinImg     = path.join(__dirname, 'public', 'golazox-coin.png');
@@ -1267,7 +1302,8 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
         matchMeta.finalScore.scoreA,
         matchMeta.finalScore.scoreB,
         matchMeta.teamA, matchMeta.teamB,
-        matchMeta.eraA,  matchMeta.eraB,
+        matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''),
+        matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''),
         hookPath,
       );
       hasHook = fs.existsSync(hookPath);
@@ -1277,12 +1313,12 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     }
   }
 
-  // Concat: intro → match → score reveal → CTA
+  // Concat: intro → match → hook (score reveal) → CTA
   console.log('[post] Concatenating parts...');
   const parts = [];
   if (hasIntro) parts.push(introPath.replace(/\\/g, '/'));
   parts.push(mainPath.replace(/\\/g, '/'));
-  if (hasHook)  parts.push(hookPath.replace(/\\/g, '/'));
+  if (hasHook)  parts.push(hookPath.replace(/\\/g, '/'));   // ← score reveal after match
   if (hasCta)   parts.push(ctaPath.replace(/\\/g, '/'));
   fs.writeFileSync(listFile, parts.map(p => `file '${p}'`).join('\n'));
   try {
@@ -1356,11 +1392,15 @@ async function generateVideo(opts = {}) {
       '--disable-application-cache',
       '--disable-cache',
       '--disk-cache-size=0',
+      '--disable-features=ServiceWorker',
+      '--disable-service-workers-in-background',
       '--window-size=360,640',
       '--force-device-scale-factor=3', // 3× physical DPI → screencast at 1080×1920 (3× CSS viewport)
       '--disable-background-timer-throttling',
       '--disable-renderer-backgrounding',
       '--disable-backgrounding-occluded-windows',
+      // Allow overriding DNS via env — useful when local DNS is broken but VPS is reachable by IP
+      ...(process.env.DNS_OVERRIDE ? [`--host-resolver-rules=${process.env.DNS_OVERRIDE}`] : []),
     ],
   });
 
@@ -1433,6 +1473,11 @@ async function generateVideo(opts = {}) {
       // Default: pick from combined RIVALS+DERBIES, no repeat
       opts._list = EPIC_LIST;
       opts._noRepeat = true;
+      ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
+    } else if (type === 'topical') {
+      // Topical: always pick from CURRENT_LIST (UCL quarters etc.)
+      opts._list = CURRENT_LIST.length > 0 ? CURRENT_LIST : EPIC_LIST;
+      opts._noRepeat = false; // repeat allowed — current matches should reappear
       ({ title: videoTitle, speedSegments, matchMeta } = await recordMatch(page, recorder, outPath, opts));
     } else if (type === 'ucl') {
       ({ title: videoTitle, speedSegments } = await recordUCL(page, recorder, outPath));
@@ -1592,7 +1637,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   await page.evaluate(() => document.getElementById('col-a').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(400);
   await page.evaluate(() => document.getElementById('preview-A').scrollIntoView({ block: 'start', behavior: 'smooth' }));
-  await wait(2800);  // viewers read the lineup
+  await wait(4000);  // viewers read the lineup
   await page.evaluate(() => { document.getElementById('col-b').style.visibility = ''; });
 
   // ── STEP 2: Click lookup B — show team B lineup ──
@@ -1611,7 +1656,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   await page.evaluate(() => document.getElementById('col-b').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(400);
   await page.evaluate(() => document.getElementById('preview-B').scrollIntoView({ block: 'start', behavior: 'smooth' }));
-  await wait(2800);  // viewers read the lineup
+  await wait(2000);  // viewers read the lineup
   await page.evaluate(() => { document.getElementById('col-a').style.visibility = ''; });
 
   // ── STEP 3: Stadium picker — scroll to section, select card, then scroll picker row to show it ──
@@ -1630,7 +1675,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       }, 150);
     }, clasico.stadiumId);
     console.log(`[match] Stadium: ${clasico.stadiumId}`);
-    await wait(2000);  // show the selected card highlighted
+    await wait(1500);  // show the selected card highlighted
   }
 
   // ── STEP 4: Referee picker ──
@@ -1648,7 +1693,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       }, 150);
     }, clasico.refereeId);
     console.log(`[match] Referee: ${clasico.refereeId}`);
-    await wait(2000);
+    await wait(1500);
   }
 
   // ── STEP 5: Weather picker ──
@@ -1666,7 +1711,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       }, 150);
     }, clasico.weatherId);
     console.log(`[match] Weather: ${clasico.weatherId}`);
-    await wait(2000);
+    await wait(1500);
   }
 
   // ── STEP 6: Brief scroll back up to show VS button, then click ──
@@ -2301,6 +2346,7 @@ if (require.main === module) {
   if (!type && args.includes('--rivalry')) type = 'rivalry';
   if (!type && args.includes('--derby'))   type = 'derby';
   if (!type && args.includes('--match'))   type = 'match';
+  if (!type && args.includes('--topical')) type = 'topical';  // current UCL/news matches
   // Default (no flag) stays undefined → resolves to 'epic' inside generateVideo
 
   const count     = parseInt(get('--count') || '1', 10);
@@ -2314,10 +2360,14 @@ if (require.main === module) {
     teamB:     get('--teamB'),
     eraA:      get('--eraA'),
     eraB:      get('--eraB'),
-    stadiumId: get('--stadiumId') || get('--stadium'),
-    refereeId: get('--refereeId') || get('--referee'),
-    weatherId: get('--weatherId') || get('--weather'),
-    preview:   args.includes('--preview'),
+    stadiumId:  get('--stadiumId') || get('--stadium'),
+    refereeId:  get('--refereeId') || get('--referee'),
+    weatherId:  get('--weatherId') || get('--weather'),
+    introTitle: get('--introTitle'),   // custom label on match intro card
+    introSub:   get('--introSub'),     // custom subtitle on match intro card
+    introEraA:  get('--introEraA'),    // display era for team A (overrides eraA on card)
+    introEraB:  get('--introEraB'),    // display era for team B (overrides eraB on card)
+    preview:    args.includes('--preview'),
   };
 
   // --card-only: generate just the rivalry intro card (5s), no simulation

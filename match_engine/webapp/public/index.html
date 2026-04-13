@@ -139,7 +139,7 @@
   <!-- Full stylesheet — async (non-blocking). Safe: deferred JS executes ~2s+ on
        The inline CSS above ensures .hidden guard and above-fold layout
        are available immediately, reducing FOUC even as full CSS loads. -->
-  <link rel="stylesheet" href="style.min.css?v=73" />
+  <link rel="stylesheet" href="style.min.css?v=93" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -429,27 +429,44 @@
 
     <!-- ── PRE-MATCH PRESENTATION ────────────── -->
     <div id="prematch-screen" class="prematch-screen glass-card hidden">
-      <div class="pm-eyebrow">PRESENTACIÓN DE EQUIPOS</div>
-      <div class="pm-intro" id="pm-intro"></div>
-      <div class="pm-matchup">
-        <div class="pm-team-block" id="pm-block-a"></div>
-        <div class="pm-center-col">
-          <div class="pm-vs-text">VS</div>
-          <div class="pm-stadium-info hidden" id="pm-stadium-info"></div>
-          <div class="pm-speed-label">Duración del partido</div>
+      <!-- Hero: team confrontation (filled by JS) -->
+      <div class="pm-hero-bar" id="pm-hero-bar"></div>
+
+      <!-- Analysis: preview text + stat bars (filled by JS) -->
+      <div class="pm-analysis">
+        <div class="pm-preview-text" id="pm-intro"></div>
+        <div class="pm-stat-bars" id="pm-stat-bars"></div>
+      </div>
+
+      <!-- Controls: speed selector + start button -->
+      <div class="pm-controls-row">
+        <div class="pm-speed-group">
+          <span class="pm-speed-label">DURACIÓN</span>
           <div class="pm-speed-pills" id="pm-speed-pills">
             <button class="pm-speed-pill" data-tick="0">⚡ Directo</button>
             <button class="pm-speed-pill" data-tick="333">30 seg</button>
             <button class="pm-speed-pill pm-speed-active" data-tick="667">1 min</button>
             <button class="pm-speed-pill" data-tick="2000">3 min</button>
           </div>
-          <button class="pm-start-btn" id="pm-start-btn" data-i18n="pm-start-btn">▶ Iniciar partido</button>
-          <div class="pm-radar-row" id="pm-radar-row">
-            <!-- radar-card moved here by showPreMatch() -->
-          </div>
         </div>
+        <button class="pm-start-btn" id="pm-start-btn" data-i18n="pm-start-btn">▶ Iniciar partido</button>
+      </div>
+
+      <!-- Tactical pitch field -->
+      <div class="pm-pitch-field" id="pm-pitch-field">
+        <!-- SVG markings injected by JS -->
+        <div class="pm-team-block" id="pm-block-a"></div>
         <div class="pm-team-block pm-team-block-b" id="pm-block-b"></div>
       </div>
+
+      <!-- Bench strip (below pitch) -->
+      <div class="pm-pitch-benches" id="pm-pitch-benches"></div>
+
+      <!-- Radar (moved here by JS) -->
+      <div class="pm-radar-row" id="pm-radar-row"></div>
+
+      <!-- Hidden compat elements -->
+      <div class="pm-stadium-info hidden" id="pm-stadium-info"></div>
     </div>
 
     <!-- ── LIVE MATCH VIEWER ─────────────────── -->
@@ -756,8 +773,10 @@
   <!-- ── PENALTIES TAB wrap ────────────────────────────────────── -->
   <div id="main-pen-wrap" class="hidden">
     <section class="pen-tab-panel glass-card">
-      <div class="pen-tab-title">🥅 <span data-i18n="pen-tab-title">Tanda de Penaltis</span></div>
-      <div class="pen-tab-subtitle" data-i18n="pen-tab-sub">Elige dos equipos y lanza directamente a los penaltis</div>
+      <div class="pen-tab-header-zone">
+        <div class="pen-tab-title"><span data-i18n="pen-tab-title">Tanda de Penaltis</span></div>
+        <div class="pen-tab-subtitle" data-i18n="pen-tab-sub">Elige dos equipos y lanza directamente a los penaltis</div>
+      </div>
 
       <div class="pen-teams-grid">
         <!-- Team A -->
@@ -850,161 +869,299 @@
         <div class="pen-goal-stage" id="pen-goal-stage">
           <svg id="pen-goal-svg" class="pen-goal-svg" viewBox="0 0 600 310" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id="pg-bg" cx="50%" cy="35%" r="75%">
-                <stop offset="0%" stop-color="#091525"/>
-                <stop offset="100%" stop-color="#020509"/>
+              <!-- Background gradient: deep night stadium -->
+              <radialGradient id="pg-bg" cx="50%" cy="30%" r="80%">
+                <stop offset="0%" stop-color="#0c1f3a"/>
+                <stop offset="60%" stop-color="#060e1e"/>
+                <stop offset="100%" stop-color="#020508"/>
               </radialGradient>
+              <!-- Pitch gradient -->
+              <linearGradient id="pg-pitch-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0e2410"/>
+                <stop offset="100%" stop-color="#081408"/>
+              </linearGradient>
+              <!-- Net gradient (slight perspective depth) -->
+              <linearGradient id="pg-net-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#06162e" stop-opacity="0.92"/>
+                <stop offset="100%" stop-color="#020a18" stop-opacity="0.98"/>
+              </linearGradient>
+              <!-- Post metallic gradient -->
+              <linearGradient id="pg-post-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#8ab0c8"/>
+                <stop offset="35%"  stop-color="#e8f4ff"/>
+                <stop offset="65%"  stop-color="#d0e8f8"/>
+                <stop offset="100%" stop-color="#6888a0"/>
+              </linearGradient>
+              <linearGradient id="pg-cross-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#e8f4ff"/>
+                <stop offset="50%"  stop-color="#c8dff0"/>
+                <stop offset="100%" stop-color="#8ab0c8"/>
+              </linearGradient>
+              <!-- Floodlight cone gradient -->
+              <radialGradient id="pg-flood-l" cx="0%" cy="0%" r="100%">
+                <stop offset="0%" stop-color="#4488ff" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#4488ff" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="pg-flood-r" cx="100%" cy="0%" r="100%">
+                <stop offset="0%" stop-color="#4488ff" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#4488ff" stop-opacity="0"/>
+              </radialGradient>
+              <!-- GK body gradient -->
+              <linearGradient id="pg-shirt-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#1a7aff"/>
+                <stop offset="100%" stop-color="#0050cc"/>
+              </linearGradient>
+              <linearGradient id="pg-short-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#1a1a2e"/>
+                <stop offset="100%" stop-color="#0d0d1a"/>
+              </linearGradient>
+              <!-- Glove gradient -->
+              <linearGradient id="pg-glove-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#ffe040"/>
+                <stop offset="50%"  stop-color="#ffca00"/>
+                <stop offset="100%" stop-color="#cc9c00"/>
+              </linearGradient>
+              <!-- Skin -->
+              <radialGradient id="pg-skin" cx="40%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#f5c98a"/>
+                <stop offset="100%" stop-color="#d4924a"/>
+              </radialGradient>
+              <!-- Ball shine -->
+              <radialGradient id="pg-ball-shine" cx="35%" cy="30%" r="65%">
+                <stop offset="0%"   stop-color="#ffffff"/>
+                <stop offset="45%"  stop-color="#f2f2f2"/>
+                <stop offset="100%" stop-color="#cccccc"/>
+              </radialGradient>
+              <!-- Filters -->
               <filter id="pg-glow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
               <filter id="pg-glow2" x="-80%" y="-80%" width="260%" height="260%">
                 <feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <clipPath id="pg-net-clip"><rect x="148" y="76" width="304" height="178"/></clipPath>
+              <filter id="pg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.6)"/>
+              </filter>
+              <clipPath id="pg-net-clip"><rect x="152" y="74" width="296" height="178"/></clipPath>
             </defs>
 
-            <!-- Background -->
+            <!-- ── BACKGROUND ─────────────────────────── -->
             <rect width="600" height="310" fill="url(#pg-bg)"/>
-            <!-- Floodlights glow -->
-            <ellipse cx="60"  cy="12" rx="75" ry="22" fill="#1836a0" opacity="0.3"/>
-            <ellipse cx="540" cy="12" rx="75" ry="22" fill="#1836a0" opacity="0.3"/>
-            <!-- Stadium silhouette outlines -->
-            <path d="M0,0 L130,0 L130,55 L0,55 Z" fill="none" stroke="#1a2840" stroke-width="0.8" opacity="0.35"/>
-            <path d="M470,0 L600,0 L600,55 L470,55 Z" fill="none" stroke="#1a2840" stroke-width="0.8" opacity="0.35"/>
-            <!-- Atmospheric mist band -->
-            <rect x="0" y="85" width="600" height="100" fill="#0a1830" opacity="0.18"/>
-            <!-- Pitch surface -->
-            <rect x="0" y="262" width="600" height="48" fill="#0a1a08"/>
-            <!-- Pitch light stripes -->
-            <rect x="0"   y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
-            <rect x="150" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
-            <rect x="300" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
-            <rect x="450" y="262" width="75"  height="48" fill="#0d200a" opacity="0.7"/>
-            <!-- Holographic pitch markings -->
-            <g opacity="0.18" stroke="#00ff88" stroke-width="0.7" fill="none">
-              <ellipse cx="300" cy="288" rx="128" ry="22"/>
-              <ellipse cx="300" cy="257" rx="60" ry="8"/>
-              <line x1="148" y1="262" x2="452" y2="262"/>
-              <rect x="214" y="250" width="172" height="16"/>
-              <circle cx="300" cy="278" r="2.5" fill="#00ff88" opacity="0.7"/>
+
+            <!-- Floodlight cones — top corners -->
+            <polygon points="0,0 180,310 0,310" fill="url(#pg-flood-l)" opacity="0.6"/>
+            <polygon points="600,0 420,310 600,310" fill="url(#pg-flood-r)" opacity="0.6"/>
+            <!-- Floodlight source glows -->
+            <ellipse cx="28"  cy="8" rx="55" ry="16" fill="#3366ff" opacity="0.35"/>
+            <ellipse cx="572" cy="8" rx="55" ry="16" fill="#3366ff" opacity="0.35"/>
+            <!-- Subtle stadium crowd silhouette -->
+            <path d="M0,45 Q30,38 60,42 Q90,36 120,40 Q150,34 180,38 Q210,32 240,36 Q270,30 300,34 Q330,30 360,36 Q390,32 420,38 Q450,34 480,40 Q510,36 540,42 Q570,38 600,45 L600,0 L0,0 Z" fill="#0a1628" opacity="0.7"/>
+            <!-- Crowd dots texture -->
+            <g fill="#1c2c44" opacity="0.5">
+              <circle cx="80"  cy="25" r="2.5"/><circle cx="120" cy="20" r="2"/><circle cx="160" cy="28" r="2.5"/>
+              <circle cx="200" cy="18" r="2"/><circle cx="240" cy="26" r="2.5"/><circle cx="280" cy="16" r="2"/>
+              <circle cx="320" cy="22" r="2.5"/><circle cx="360" cy="18" r="2"/><circle cx="400" cy="26" r="2.5"/>
+              <circle cx="440" cy="20" r="2"/><circle cx="480" cy="28" r="2.5"/><circle cx="520" cy="22" r="2"/>
             </g>
 
-            <!-- Net background -->
-            <rect x="148" y="76" width="304" height="178" fill="#040e1c" opacity="0.85" rx="1"/>
+            <!-- ── PITCH ──────────────────────────────── -->
+            <!-- Main pitch surface -->
+            <rect x="0" y="258" width="600" height="52" fill="url(#pg-pitch-grad)"/>
+            <!-- Lighter stripes (alternating) -->
+            <rect x="0"   y="258" width="75"  height="52" fill="#132816" opacity="0.6"/>
+            <rect x="150" y="258" width="75"  height="52" fill="#132816" opacity="0.6"/>
+            <rect x="300" y="258" width="75"  height="52" fill="#132816" opacity="0.6"/>
+            <rect x="450" y="258" width="75"  height="52" fill="#132816" opacity="0.6"/>
+            <!-- Pitch line (goal line) -->
+            <line x1="148" y1="258" x2="452" y2="258" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <!-- Penalty spot -->
+            <circle cx="300" cy="292" r="3" fill="rgba(255,255,255,0.5)"/>
+            <!-- Penalty arc markings -->
+            <g stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none">
+              <path d="M220,258 Q300,232 380,258"/>
+              <rect x="214" y="245" width="172" height="13" stroke-width="1"/>
+              <line x1="214" y1="258" x2="214" y2="245"/>
+              <line x1="386" y1="258" x2="386" y2="245"/>
+            </g>
 
-            <!-- Net grid — vertical lines -->
-            <g stroke="#1d4e82" stroke-width="0.75" opacity="0.65" clip-path="url(#pg-net-clip)">
-              <line x1="163" y1="76" x2="163" y2="254"/><line x1="178" y1="76" x2="178" y2="254"/>
-              <line x1="193" y1="76" x2="193" y2="254"/><line x1="208" y1="76" x2="208" y2="254"/>
-              <line x1="223" y1="76" x2="223" y2="254"/><line x1="238" y1="76" x2="238" y2="254"/>
-              <line x1="253" y1="76" x2="253" y2="254"/><line x1="268" y1="76" x2="268" y2="254"/>
-              <line x1="283" y1="76" x2="283" y2="254"/><line x1="298" y1="76" x2="298" y2="254"/>
-              <line x1="313" y1="76" x2="313" y2="254"/><line x1="328" y1="76" x2="328" y2="254"/>
-              <line x1="343" y1="76" x2="343" y2="254"/><line x1="358" y1="76" x2="358" y2="254"/>
-              <line x1="373" y1="76" x2="373" y2="254"/><line x1="388" y1="76" x2="388" y2="254"/>
-              <line x1="403" y1="76" x2="403" y2="254"/><line x1="418" y1="76" x2="418" y2="254"/>
-              <line x1="433" y1="76" x2="433" y2="254"/>
+            <!-- ── NET ────────────────────────────────── -->
+            <rect x="152" y="74" width="296" height="178" fill="url(#pg-net-grad)" rx="1"/>
+            <!-- Perspective perspective effect — darker sides -->
+            <rect x="152" y="74" width="40"  height="178" fill="rgba(0,0,0,0.18)"/>
+            <rect x="408" y="74" width="40"  height="178" fill="rgba(0,0,0,0.18)"/>
+            <!-- Net top shadow -->
+            <rect x="152" y="74" width="296" height="18" fill="rgba(0,0,0,0.3)"/>
+
+            <!-- Net grid — vertical lines (perspective: converge slightly) -->
+            <g stroke="#1e5590" stroke-width="0.9" opacity="0.7" clip-path="url(#pg-net-clip)">
+              <line x1="167" y1="74" x2="165" y2="252"/><line x1="182" y1="74" x2="179" y2="252"/>
+              <line x1="197" y1="74" x2="193" y2="252"/><line x1="212" y1="74" x2="207" y2="252"/>
+              <line x1="227" y1="74" x2="221" y2="252"/><line x1="242" y1="74" x2="235" y2="252"/>
+              <line x1="257" y1="74" x2="249" y2="252"/><line x1="272" y1="74" x2="263" y2="252"/>
+              <line x1="287" y1="74" x2="277" y2="252"/><line x1="302" y1="74" x2="291" y2="252"/>
+              <line x1="317" y1="74" x2="309" y2="252"/><line x1="332" y1="74" x2="323" y2="252"/>
+              <line x1="347" y1="74" x2="337" y2="252"/><line x1="362" y1="74" x2="351" y2="252"/>
+              <line x1="377" y1="74" x2="365" y2="252"/><line x1="392" y1="74" x2="379" y2="252"/>
+              <line x1="407" y1="74" x2="393" y2="252"/><line x1="422" y1="74" x2="407" y2="252"/>
+              <line x1="437" y1="74" x2="421" y2="252"/>
             </g>
             <!-- Net grid — horizontal lines -->
-            <g stroke="#1d4e82" stroke-width="0.75" opacity="0.65" clip-path="url(#pg-net-clip)">
-              <line x1="148" y1="91"  x2="452" y2="91"/> <line x1="148" y1="106" x2="452" y2="106"/>
-              <line x1="148" y1="121" x2="452" y2="121"/><line x1="148" y1="136" x2="452" y2="136"/>
-              <line x1="148" y1="151" x2="452" y2="151"/><line x1="148" y1="166" x2="452" y2="166"/>
-              <line x1="148" y1="181" x2="452" y2="181"/><line x1="148" y1="196" x2="452" y2="196"/>
-              <line x1="148" y1="211" x2="452" y2="211"/><line x1="148" y1="226" x2="452" y2="226"/>
-              <line x1="148" y1="241" x2="452" y2="241"/>
+            <g stroke="#1e5590" stroke-width="0.9" opacity="0.7" clip-path="url(#pg-net-clip)">
+              <line x1="152" y1="90"  x2="448" y2="90"/> <line x1="152" y1="106" x2="448" y2="106"/>
+              <line x1="152" y1="122" x2="448" y2="122"/><line x1="152" y1="138" x2="448" y2="138"/>
+              <line x1="152" y1="154" x2="448" y2="154"/><line x1="152" y1="170" x2="448" y2="170"/>
+              <line x1="152" y1="186" x2="448" y2="186"/><line x1="152" y1="202" x2="448" y2="202"/>
+              <line x1="152" y1="218" x2="448" y2="218"/><line x1="152" y1="234" x2="448" y2="234"/>
+              <line x1="152" y1="250" x2="448" y2="250"/>
             </g>
+            <!-- Net highlight glint top-left -->
+            <line x1="152" y1="74" x2="350" y2="74" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
 
-            <!-- HUD zone dividers (holographic, dashed) -->
-            <g stroke="#00d4ff" stroke-width="0.6" opacity="0.1" stroke-dasharray="4,5" fill="none">
-              <line x1="249" y1="76" x2="249" y2="254"/>
-              <line x1="351" y1="76" x2="351" y2="254"/>
-              <line x1="148" y1="135" x2="452" y2="135"/>
-              <line x1="148" y1="195" x2="452" y2="195"/>
-            </g>
-
-            <!-- Goal frame posts & crossbar -->
-            <rect x="141" y="76" width="11" height="180" fill="#ccdde8" rx="2"/>
-            <rect x="448" y="76" width="11" height="180" fill="#ccdde8" rx="2"/>
-            <rect x="141" y="70" width="318" height="11" fill="#ccdde8" rx="2"/>
-            <line x1="141" y1="256" x2="459" y2="256" stroke="#ccdde8" stroke-width="4"/>
+            <!-- ── GOAL FRAME ──────────────────────────── -->
+            <!-- Post depth shadow (3D effect) -->
+            <rect x="455" y="74" width="6"   height="182" fill="#1a3650" rx="1" opacity="0.8"/>
+            <rect x="141" y="252" width="322" height="6"  fill="#1a3650" rx="1" opacity="0.8"/>
+            <!-- Left post -->
+            <rect x="141" y="74" width="12" height="182" fill="url(#pg-post-grad)" rx="2"/>
+            <!-- Right post -->
+            <rect x="447" y="74" width="12" height="182" fill="url(#pg-post-grad)" rx="2"/>
+            <!-- Crossbar -->
+            <rect x="141" y="68" width="318" height="12" fill="url(#pg-cross-grad)" rx="2"/>
+            <!-- Goal line base -->
+            <rect x="141" y="252" width="318" height="6" fill="#9ab8cc" rx="1"/>
+            <!-- Post inner edge highlight -->
+            <rect x="152" y="74" width="2" height="178" fill="rgba(255,255,255,0.3)" rx="1"/>
+            <rect x="446" y="74" width="2" height="178" fill="rgba(255,255,255,0.3)" rx="1"/>
+            <!-- Crossbar inner highlight -->
+            <rect x="143" y="79" width="314" height="2" fill="rgba(255,255,255,0.25)" rx="1"/>
             <!-- Post neon glow -->
-            <rect x="141" y="76" width="11" height="180" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
-            <rect x="448" y="76" width="11" height="180" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
-            <rect x="141" y="70" width="318" height="11" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" filter="url(#pg-glow)"/>
+            <rect x="141" y="74" width="12" height="182" fill="none" stroke="#70c8f8" stroke-width="1.2" opacity="0.35" filter="url(#pg-glow)"/>
+            <rect x="447" y="74" width="12" height="182" fill="none" stroke="#70c8f8" stroke-width="1.2" opacity="0.35" filter="url(#pg-glow)"/>
+            <rect x="141" y="68" width="318" height="12" fill="none" stroke="#70c8f8" stroke-width="1.2" opacity="0.35" filter="url(#pg-glow)"/>
 
-            <!-- ── Goalkeeper ────────────── -->
+            <!-- ── GOALKEEPER ──────────────────────────── -->
             <g id="pg-gk">
-              <!-- Shadow -->
-              <ellipse cx="300" cy="256" rx="22" ry="5" fill="rgba(0,0,0,0.45)"/>
 
-              <!-- Left boot -->
-              <ellipse cx="289" cy="252" rx="9" ry="5" fill="#1a1a1a"/>
-              <rect x="281" y="237" width="15" height="17" rx="3" fill="#1a1a1a"/>
-              <!-- Right boot -->
-              <ellipse cx="311" cy="252" rx="9" ry="5" fill="#1a1a1a"/>
-              <rect x="304" y="237" width="15" height="17" rx="3" fill="#1a1a1a"/>
+              <!-- Ground shadow -->
+              <ellipse cx="300" cy="258" rx="32" ry="7" fill="rgba(0,0,0,0.5)"/>
 
-              <!-- Left shin / short -->
-              <rect x="283" y="218" width="13" height="21" rx="3" fill="#ff7820"/>
-              <rect x="283" y="218" width="13" height="8"  rx="2" fill="#e84a00"/>
-              <!-- Right shin / short -->
-              <rect x="305" y="218" width="13" height="21" rx="3" fill="#ff7820"/>
-              <rect x="305" y="218" width="13" height="8"  rx="2" fill="#e84a00"/>
+              <!-- ── BOOTS ── -->
+              <!-- Left boot toe cap -->
+              <path d="M286,256 Q281,257 279,255 Q277,252 279,249 L285,247 L288,247 L288,256 Z" fill="#111"/>
+              <!-- Left boot shaft -->
+              <rect x="284" y="237" width="13" height="16" rx="3" fill="#1c1c1c"/>
+              <rect x="284" y="237" width="13" height="4" rx="2" fill="#2e2e2e"/>
+              <!-- Right boot toe cap -->
+              <path d="M314,256 Q319,257 321,255 Q323,252 321,249 L315,247 L312,247 L312,256 Z" fill="#111"/>
+              <!-- Right boot shaft -->
+              <rect x="303" y="237" width="13" height="16" rx="3" fill="#1c1c1c"/>
+              <rect x="303" y="237" width="13" height="4" rx="2" fill="#2e2e2e"/>
+              <!-- Boot lace detail -->
+              <g stroke="#444" stroke-width="1" opacity="0.8" fill="none">
+                <line x1="287" y1="241" x2="295" y2="241"/><line x1="287" y1="244" x2="295" y2="244"/>
+                <line x1="305" y1="241" x2="313" y2="241"/><line x1="305" y1="244" x2="313" y2="244"/>
+              </g>
 
-              <!-- Shirt body — tapered trapezoid via path -->
-              <path d="M278,215 Q275,200 270,193 L278,188 Q280,194 300,195 Q320,194 322,188 L330,193 Q325,200 322,215 Z" fill="#ff6a00"/>
-              <!-- Shirt chest highlight -->
-              <ellipse cx="300" cy="200" rx="11" ry="7" fill="#ff8c30" opacity="0.55"/>
-              <!-- Jersey number -->
-              <text x="300" y="208" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="'Arial Black',Impact,sans-serif" opacity="0.95">1</text>
+              <!-- ── SOCKS + SHIN GUARDS ── -->
+              <!-- Left sock -->
+              <rect x="284" y="218" width="13" height="21" rx="2" fill="#0c1840"/>
+              <rect x="284" y="235" width="13" height="4" rx="1" fill="#1a2860"/>
+              <!-- Left shin guard -->
+              <rect x="285" y="220" width="11" height="14" rx="2" fill="#1a40c0" opacity="0.65"/>
+              <line x1="290" y1="221" x2="290" y2="233" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <!-- Right sock -->
+              <rect x="303" y="218" width="13" height="21" rx="2" fill="#0c1840"/>
+              <rect x="303" y="235" width="13" height="4" rx="1" fill="#1a2860"/>
+              <!-- Right shin guard -->
+              <rect x="304" y="220" width="11" height="14" rx="2" fill="#1a40c0" opacity="0.65"/>
+              <line x1="309" y1="221" x2="309" y2="233" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
 
-              <!-- Left upper arm -->
-              <path d="M278,190 Q267,193 258,196 Q256,200 258,205 Q265,203 278,198 Z" fill="#ff6a00"/>
-              <!-- Right upper arm -->
-              <path d="M322,190 Q333,193 342,196 Q344,200 342,205 Q335,203 322,198 Z" fill="#ff6a00"/>
+              <!-- ── SHORTS (single connected shape — no gap) ── -->
+              <path d="M281,215 L319,215 L321,240 L308,240 L304,228 L296,228 L292,240 L279,240 Z" fill="url(#pg-short-grad)"/>
+              <!-- Centre seam -->
+              <line x1="300" y1="215" x2="300" y2="228" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
 
-              <!-- Left glove — chunky but shaped -->
-              <ellipse cx="255" cy="205" rx="11" ry="8" fill="#f0c800" opacity="0.95"/>
-              <ellipse cx="255" cy="203" rx="8"  ry="5" fill="#ffd820" opacity="0.7"/>
-              <line x1="249" y1="205" x2="261" y2="205" stroke="#c8a000" stroke-width="1" opacity="0.6"/>
-              <line x1="251" y1="202" x2="251" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
-              <line x1="255" y1="201" x2="255" y2="211" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
-              <line x1="259" y1="202" x2="259" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <!-- ── SHIRT ── -->
+              <path d="M279,239 L274,215 L271,200 Q280,190 300,191 Q320,190 329,200 L326,215 L321,239 Z" fill="url(#pg-shirt-grad)"/>
+              <!-- V collar -->
+              <path d="M294,191 L300,200 L306,191" fill="none" stroke="rgba(0,30,120,0.9)" stroke-width="1.8"/>
+              <!-- Sponsor / number area -->
+              <rect x="288" y="205" width="24" height="14" rx="3" fill="rgba(255,255,255,0.07)"/>
+              <text x="300" y="216" text-anchor="middle" font-size="10" font-weight="900" fill="rgba(255,255,255,0.92)" font-family="'Arial Black',Impact,sans-serif">1</text>
+              <!-- Shoulder seams -->
+              <line x1="278" y1="196" x2="271" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+              <line x1="322" y1="196" x2="329" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+
+              <!-- ── ARMS (goalkeeper wide stance) ── -->
+              <!-- Left arm — reaching out to ~x=245 -->
+              <path d="M274,200 Q261,198 248,204 Q243,210 245,218 Q256,213 270,208 Z" fill="#1668e8"/>
+              <path d="M267,199 Q254,199 246,205" stroke="rgba(255,255,255,0.22)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <!-- Right arm — reaching out to ~x=355 -->
+              <path d="M326,200 Q339,198 352,204 Q357,210 355,218 Q344,213 330,208 Z" fill="#1668e8"/>
+              <path d="M333,199 Q346,199 354,205" stroke="rgba(255,255,255,0.22)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+              <!-- ── GLOVES ── -->
+              <!-- Left glove -->
+              <g>
+                <rect x="239" y="196" width="14" height="10" rx="3" fill="#1668e8"/>
+                <path d="M236,206 Q232,211 233,217 Q236,222 242,222 Q249,222 252,218 Q255,212 253,207 Q251,203 245,202 Z" fill="url(#pg-glove-grad)"/>
+                <!-- Thumb -->
+                <path d="M253,207 Q259,205 260,209 Q259,214 253,215 Z" fill="#ffca00"/>
+                <!-- Grip ridges -->
+                <g stroke="#a07800" stroke-width="0.9" opacity="0.75" fill="none">
+                  <line x1="237" y1="210" x2="251" y2="210"/>
+                  <line x1="237" y1="213" x2="251" y2="213"/>
+                  <line x1="237" y1="216" x2="251" y2="216"/>
+                </g>
+                <ellipse cx="244" cy="212" rx="5.5" ry="4" fill="rgba(255,220,0,0.3)"/>
+              </g>
               <!-- Right glove -->
-              <ellipse cx="345" cy="205" rx="11" ry="8" fill="#f0c800" opacity="0.95"/>
-              <ellipse cx="345" cy="203" rx="8"  ry="5" fill="#ffd820" opacity="0.7"/>
-              <line x1="339" y1="205" x2="351" y2="205" stroke="#c8a000" stroke-width="1" opacity="0.6"/>
-              <line x1="341" y1="202" x2="341" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
-              <line x1="345" y1="201" x2="345" y2="211" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
-              <line x1="349" y1="202" x2="349" y2="210" stroke="#c8a000" stroke-width="0.8" opacity="0.5"/>
+              <g>
+                <rect x="347" y="196" width="14" height="10" rx="3" fill="#1668e8"/>
+                <path d="M364,206 Q368,211 367,217 Q364,222 358,222 Q351,222 348,218 Q345,212 347,207 Q349,203 355,202 Z" fill="url(#pg-glove-grad)"/>
+                <!-- Thumb -->
+                <path d="M347,207 Q341,205 340,209 Q341,214 347,215 Z" fill="#ffca00"/>
+                <!-- Grip ridges -->
+                <g stroke="#a07800" stroke-width="0.9" opacity="0.75" fill="none">
+                  <line x1="349" y1="210" x2="363" y2="210"/>
+                  <line x1="349" y1="213" x2="363" y2="213"/>
+                  <line x1="349" y1="216" x2="363" y2="216"/>
+                </g>
+                <ellipse cx="356" cy="212" rx="5.5" ry="4" fill="rgba(255,220,0,0.3)"/>
+              </g>
 
-              <!-- Neck -->
-              <rect x="295" y="179" width="10" height="12" rx="3" fill="#e8bc7a"/>
+              <!-- ── NECK ── -->
+              <rect x="295" y="177" width="10" height="14" rx="4" fill="url(#pg-skin)"/>
 
-              <!-- Head — slightly oval -->
-              <ellipse cx="300" cy="169" rx="15" ry="16" fill="#e8bc7a"/>
-              <!-- Face shading / ear -->
-              <ellipse cx="285" cy="169" rx="3" ry="4.5" fill="#d8a86a"/>
-              <ellipse cx="315" cy="169" rx="3" ry="4.5" fill="#d8a86a"/>
+              <!-- ── HEAD ── -->
+              <ellipse cx="300" cy="162" rx="18" ry="19" fill="url(#pg-skin)"/>
+              <!-- Ears -->
+              <path d="M282,160 Q279,163 280,168 Q282,170 284,168 Q283,163 284,158 Z" fill="#c8854a"/>
+              <path d="M318,160 Q321,163 320,168 Q318,170 316,168 Q317,163 316,158 Z" fill="#c8854a"/>
+              <!-- Short dark hair -->
+              <path d="M282,152 Q290,143 300,141 Q310,143 318,152 Q313,147 300,146 Q287,147 282,152 Z" fill="#2a1200"/>
+              <path d="M282,152 Q291,149 300,148 Q309,149 318,152 Q313,150 300,149 Q287,150 282,152 Z" fill="#3c1c08"/>
+
               <!-- Eyes -->
-              <ellipse cx="295" cy="166" rx="3" ry="3.2" fill="white"/>
-              <ellipse cx="305" cy="166" rx="3" ry="3.2" fill="white"/>
-              <circle  cx="295.8" cy="166.5" r="1.9" fill="#2a1800"/>
-              <circle  cx="305.8" cy="166.5" r="1.9" fill="#2a1800"/>
-              <circle  cx="296.4" cy="165.8" r="0.7" fill="white"/>
-              <circle  cx="306.4" cy="165.8" r="0.7" fill="white"/>
-              <!-- Eyebrows (focused) -->
-              <path d="M292,162 Q295.5,160.5 299,162" stroke="#6b3d0e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <path d="M301,162 Q304.5,160.5 308,162" stroke="#6b3d0e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="293" cy="160" rx="4.2" ry="3.6" fill="white"/>
+              <circle  cx="294" cy="160.5" r="2.3" fill="#1a0c00"/>
+              <circle  cx="294.9" cy="159.5" r="0.95" fill="white"/>
+              <ellipse cx="307" cy="160" rx="4.2" ry="3.6" fill="white"/>
+              <circle  cx="308" cy="160.5" r="2.3" fill="#1a0c00"/>
+              <circle  cx="308.9" cy="159.5" r="0.95" fill="white"/>
+              <!-- Eyebrows -->
+              <path d="M288,155 Q293,153 297,155" stroke="#2a1200" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M303,155 Q307,153 312,155" stroke="#2a1200" stroke-width="2.2" fill="none" stroke-linecap="round"/>
               <!-- Nose -->
-              <ellipse cx="300" cy="170" rx="2" ry="2.5" fill="#d8a870" opacity="0.7"/>
-              <!-- Mouth (determined) -->
-              <path d="M296,175 Q300,173 304,175" stroke="#a06030" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <path d="M298,163 Q300,166 302,163" fill="none" stroke="#a06830" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Mouth -->
+              <path d="M295,169 Q300,168 305,169" stroke="#7a3820" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
-              <!-- Keeper glove cuffs -->
-              <rect x="249" y="193" width="12" height="8" rx="3" fill="#ff6a00" opacity="0.9"/>
-              <rect x="339" y="193" width="12" height="8" rx="3" fill="#ff6a00" opacity="0.9"/>
+              <!-- ── KEEPER CAP ── -->
+              <path d="M282,152 Q285,144 300,141 Q315,144 318,152 Q314,148 300,147 Q286,148 282,152 Z" fill="#0030aa" opacity="0.88"/>
+              <path d="M282,152 Q291,148 300,147 Q309,148 318,152" stroke="rgba(255,255,255,0.22)" stroke-width="0.9" fill="none"/>
+              <!-- Visor -->
+              <path d="M289,152 Q300,156 311,152 Q309,158 300,159 Q291,158 289,152 Z" fill="#0030aa" opacity="0.72"/>
             </g>
 
             <!-- Net flash zone (on goal) -->
@@ -1014,33 +1171,35 @@
             <path id="pg-traj" d="M300,278 L300,278" stroke="#00d4ff" stroke-width="2.5" fill="none" opacity="0" stroke-linecap="round"/>
             <path id="pg-traj-glow" d="M300,278 L300,278" stroke="#00d4ff" stroke-width="8" fill="none" opacity="0" filter="url(#pg-glow)" stroke-linecap="round"/>
 
-            <!-- ── Ball ────────────────── -->
+            <!-- ── BALL ────────────────────────────────────── -->
             <g id="pg-ball-g" style="transform:translate(0px,0px)">
-              <ellipse cx="300" cy="285" rx="8" ry="3" fill="rgba(0,0,0,0.45)"/>
-              <circle cx="300" cy="278" r="10" fill="white"/>
-              <circle id="pg-ball-glow-c" cx="300" cy="278" r="10" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="8" filter="url(#pg-glow)" opacity="0"/>
-              <!-- Ball pattern -->
-              <circle cx="300" cy="278" r="4.5" fill="#1a1a1a" opacity="0.65"/>
-              <circle cx="293" cy="273" r="2" fill="#1a1a1a" opacity="0.4"/>
-              <circle cx="307" cy="273" r="2" fill="#1a1a1a" opacity="0.4"/>
-              <circle cx="293" cy="283" r="2" fill="#1a1a1a" opacity="0.3"/>
-              <circle cx="307" cy="283" r="2" fill="#1a1a1a" opacity="0.3"/>
+              <!-- Ball shadow -->
+              <ellipse cx="300" cy="285" rx="9" ry="3.5" fill="rgba(0,0,0,0.5)"/>
+              <!-- Ball base with SVG radial gradient -->
+              <circle cx="300" cy="276" r="11" fill="url(#pg-ball-shine)"/>
+              <!-- Ball glow (for goal flash) -->
+              <circle id="pg-ball-glow-c" cx="300" cy="276" r="11" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="8" filter="url(#pg-glow)" opacity="0"/>
+              <!-- Classic ball hexagon/pentagon pattern -->
+              <polygon points="300,270 305,273 303,279 297,279 295,273" fill="#1a1a1a" opacity="0.55"/>
+              <polygon points="295,273 297,279 290,280 287,274 290,269" fill="none" stroke="#1a1a1a" stroke-width="0.8" opacity="0.35"/>
+              <polygon points="305,273 310,269 313,274 310,280 303,279" fill="none" stroke="#1a1a1a" stroke-width="0.8" opacity="0.35"/>
             </g>
 
-            <!-- ── Burst texts ────────── -->
+            <!-- ── BURST TEXTS ─────────────────────────── -->
             <g id="pg-burst-gol" opacity="0" filter="url(#pg-glow2)">
-              <text id="pg-burst-gol-txt" x="300" y="195" text-anchor="middle" font-size="58" font-weight="900" fill="#ffdd00" stroke="#ff6600" stroke-width="2" font-family="Impact,'Arial Black',sans-serif">¡GOL!</text>
+              <text id="pg-burst-gol-txt" x="300" y="195" text-anchor="middle" font-size="62" font-weight="900" fill="#ffe000" stroke="#ff5500" stroke-width="2.5" font-family="Impact,'Arial Black',sans-serif">¡GOL!</text>
             </g>
             <g id="pg-burst-save" opacity="0" filter="url(#pg-glow2)">
-              <text id="pg-burst-save-txt" x="300" y="195" text-anchor="middle" font-size="40" font-weight="900" fill="#ff3333" stroke="#aa0000" stroke-width="2" font-family="Impact,'Arial Black',sans-serif">¡PARADA!</text>
+              <text id="pg-burst-save-txt" x="300" y="195" text-anchor="middle" font-size="42" font-weight="900" fill="#ff2222" stroke="#880000" stroke-width="2" font-family="Impact,'Arial Black',sans-serif">¡PARADA!</text>
             </g>
             <g id="pg-burst-miss" opacity="0">
-              <text id="pg-burst-miss-txt" x="300" y="195" text-anchor="middle" font-size="40" font-weight="900" fill="#777" stroke="#444" stroke-width="1.5" font-family="Impact,'Arial Black',sans-serif">FALLO</text>
+              <text id="pg-burst-miss-txt" x="300" y="195" text-anchor="middle" font-size="42" font-weight="900" fill="#888" stroke="#444" stroke-width="1.5" font-family="Impact,'Arial Black',sans-serif">FALLO</text>
             </g>
 
-            <!-- HUD status strip -->
-            <rect x="0" y="0" width="600" height="22" fill="rgba(0,0,0,0.55)"/>
-            <text id="pg-hud-txt" x="300" y="14" text-anchor="middle" font-size="8.5" font-weight="700" fill="#00d4ff" letter-spacing="2.5" font-family="'Courier New',monospace" opacity="0.8">● SIMULACIÓN ACTIVA</text>
+            <!-- ── HUD STATUS STRIP ───────────────────── -->
+            <rect x="0" y="0" width="600" height="22" fill="rgba(0,0,0,0.6)"/>
+            <rect x="0" y="21" width="600" height="1" fill="rgba(0,212,255,0.15)"/>
+            <text id="pg-hud-txt" x="300" y="14" text-anchor="middle" font-size="8.5" font-weight="700" fill="#00d4ff" letter-spacing="2.5" font-family="'Courier New',monospace" opacity="0.85">● SIMULACIÓN ACTIVA</text>
           </svg>
         </div>
 
@@ -1088,9 +1247,9 @@
       </div>
 
       <button class="pen-shoot-btn" id="pen-shoot-btn" disabled>
-        <svg class="pen-shoot-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="6,1 11,6 6,11 1,6" stroke="currentColor" stroke-width="1.2" fill="none"/>
-          <polygon points="6,3.5 8.5,6 6,8.5 3.5,6" fill="currentColor" opacity=".5"/>
+        <svg class="pen-shoot-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/>
+          <polygon points="8,6.5 14.5,10 8,13.5" fill="currentColor"/>
         </svg>
         <span data-i18n="pen-shoot-btn">¡Lanzar Penaltis!</span>
       </button>
@@ -1206,57 +1365,111 @@
       <div id="trn-step-1" class="trn-step">
         <div class="trn-step-header">
           <h2 class="trn-step-title" data-i18n="trn-step1-title">Elige el formato</h2>
-          <p class="trn-step-hint" data-i18n="trn-step1-hint">¿Cómo quieres que sea tu torneo?</p>
+          <p class="trn-step-hint" data-i18n="trn-step1-hint">Elige un torneo oficial o crea uno personalizado</p>
         </div>
 
         <!-- Predefined official tournaments -->
         <div class="trn-preset-section">
           <div class="trn-preset-label" data-i18n="trn-preset-label">⭐ Torneos Oficiales</div>
           <div class="trn-preset-grid">
+
             <button class="trn-preset-card" data-preset="ucl2026">
-              <div class="trn-preset-trophy trn-trophy-ucl">
-                <img src="img/trophy-ucl.webp" alt="Champions League Trophy" class="trn-trophy-img" width="403" height="619" loading="lazy">
+              <div class="trn-preset-badge trn-badge-ucl">
+                <img src="img/trophy-ucl.webp" alt="" class="trn-badge-trophy-img" loading="lazy">
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">UEFA Champions League</div>
                 <div class="trn-preset-season">2025/26</div>
-                <div class="trn-preset-meta">36 equipos · Fase de grupos + KO</div>
+                <div class="trn-preset-meta">36 equipos · 9 grupos + KO ida/vuelta</div>
               </div>
+              <div class="trn-preset-arrow">›</div>
             </button>
+
             <button class="trn-preset-card" data-preset="wc2026">
-              <div class="trn-preset-trophy trn-trophy-wc">
-                <img src="img/trophy-wc.webp" alt="FIFA World Cup Trophy" class="trn-trophy-img" width="403" height="619" loading="lazy">
+              <div class="trn-preset-badge trn-badge-wc">
+                <img src="img/trophy-wc.webp" alt="" class="trn-badge-trophy-img" loading="lazy">
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">FIFA World Cup</div>
                 <div class="trn-preset-season">2026</div>
                 <div class="trn-preset-meta">48 selecciones · 12 grupos + KO</div>
               </div>
+              <div class="trn-preset-arrow">›</div>
             </button>
+
+            <button class="trn-preset-card" data-preset="euro2024">
+              <div class="trn-preset-badge trn-badge-euro">
+                <img src="img/trophy-euro.png" alt="" class="trn-badge-trophy-img" loading="lazy">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">UEFA Euro</div>
+                <div class="trn-preset-season">2024</div>
+                <div class="trn-preset-meta">24 selecciones · 6 grupos + KO</div>
+              </div>
+              <div class="trn-preset-arrow">›</div>
+            </button>
+
+            <button class="trn-preset-card" data-preset="copamerica2024">
+              <div class="trn-preset-badge trn-badge-copa-america">
+                <img src="img/trophy-copa-america.png" alt="" class="trn-badge-trophy-img" loading="lazy">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">Copa América</div>
+                <div class="trn-preset-season">2024</div>
+                <div class="trn-preset-meta">16 selecciones · 4 grupos + KO</div>
+              </div>
+              <div class="trn-preset-arrow">›</div>
+            </button>
+
+            <button class="trn-preset-card" data-preset="libertadores2025">
+              <div class="trn-preset-badge trn-badge-libertadores">
+                <img src="img/trophy-libertadores.png" alt="" class="trn-badge-trophy-img" loading="lazy">
+              </div>
+              <div class="trn-preset-info">
+                <div class="trn-preset-name">Copa Libertadores</div>
+                <div class="trn-preset-season">2025</div>
+                <div class="trn-preset-meta">32 clubes · 8 grupos + KO</div>
+              </div>
+              <div class="trn-preset-arrow">›</div>
+            </button>
+
           </div>
         </div>
 
         <div class="trn-preset-divider"><span data-i18n="trn-custom-label">o crea tu propio torneo</span></div>
         <div class="trn-fmt-grid">
           <button class="trn-fmt-card" data-fmt="copa">
-            <div class="trn-fmt-visual">🏆</div>
+            <div class="trn-fmt-badge trn-fmt-badge-copa">
+              <img src="img/trophy-copa.png" alt="" class="trn-badge-trophy-img" loading="lazy">
+            </div>
             <div class="trn-fmt-info">
-              <div class="trn-fmt-name" data-i18n="trn-fmt-copa-name">Copa</div>
+              <div class="trn-fmt-name">Copa <span class="trn-fmt-brand">GolazoX</span></div>
               <div class="trn-fmt-desc" data-i18n="trn-fmt-copa-desc">Eliminatoria directa · o Fase de Grupos + KO</div>
               <div class="trn-fmt-tags"><span>4–32 equipos (KO) / 8–32 (Grupos)</span><span>KO / Grupos+KO</span></div>
             </div>
-            <div class="trn-fmt-check">✓</div>
+            <div class="trn-fmt-check">ELEGIDO</div>
           </button>
           <button class="trn-fmt-card" data-fmt="liga">
-            <div class="trn-fmt-visual">📊</div>
+            <div class="trn-fmt-badge trn-fmt-badge-liga">
+              <img src="img/trophy-liga.png" alt="" class="trn-badge-trophy-img" loading="lazy">
+            </div>
             <div class="trn-fmt-info">
-              <div class="trn-fmt-name" data-i18n="trn-fmt-liga-name">Liga</div>
+              <div class="trn-fmt-name">Liga <span class="trn-fmt-brand">GolazoX</span></div>
               <div class="trn-fmt-desc" data-i18n="trn-fmt-liga-desc">Todos contra todos · Clasificación por puntos</div>
               <div class="trn-fmt-tags"><span>4–20 equipos</span><span>Round Robin</span></div>
             </div>
-            <div class="trn-fmt-check">✓</div>
+            <div class="trn-fmt-check">ELEGIDO</div>
           </button>
 
+        </div>
+
+        <!-- Format mini preview (shown after selection) -->
+        <div id="trn-fmt-preview" class="trn-fmt-preview hidden">
+          <div class="trn-fmtp-icon" id="trn-fmtp-icon">🏆</div>
+          <div class="trn-fmtp-body">
+            <div class="trn-fmtp-title" id="trn-fmtp-title"></div>
+            <div class="trn-fmtp-stats" id="trn-fmtp-stats"></div>
+          </div>
         </div>
         <div class="trn-num-teams-row">
           <span class="trn-label" data-i18n="trn-num-teams-lbl">Nº de equipos</span>
@@ -1429,7 +1642,26 @@
         <li><a href="/partido/manchester-united:1999-vs-fc-bayern-munchen:2001">Manchester United 1999 vs Bayern Múnich 2001</a></li>
         <li><a href="/partido/argentina:1986-vs-brasil:1970">Argentina 1986 vs Brasil 1970</a></li>
       </ul>
+      <h3>Plantillas históricas</h3>
+      <ul>
+        <li><a href="/equipo/real-madrid:2002">Real Madrid 2002 — Plantilla y simulador</a></li>
+        <li><a href="/equipo/fc-barcelona:2009">FC Barcelona 2009 — Plantilla y simulador</a></li>
+        <li><a href="/equipo/brasilien:1970">Brasil 1970 — Plantilla y simulador</a></li>
+        <li><a href="/equipo/fc-bayern-munchen:2013">Bayern Múnich 2013 — Plantilla y simulador</a></li>
+        <li><a href="/equipo/argentinien:1986">Argentina 1986 — Plantilla y simulador</a></li>
+      </ul>
     </section>
+
+    <!-- Subscribe widget: visible to users + Google, builds email list -->
+    <div class="footer-subscribe" id="footer-subscribe">
+      <p class="footer-subscribe-label">🔔 Avísame cuando haya nuevos equipos y torneos</p>
+      <form class="footer-subscribe-form" id="subscribe-form" novalidate>
+        <input type="email" name="email" id="subscribe-email" placeholder="tu@email.com" autocomplete="email" required maxlength="200" />
+        <button type="submit">Suscribirse</button>
+      </form>
+      <p class="footer-subscribe-msg" id="subscribe-msg" aria-live="polite"></p>
+    </div>
+
     <p class="footer-tagline"><strong>GolazoX — Simulador de Fútbol Histórico</strong> · Enfrenta a los mejores equipos de todas las épocas · +500 plantillas históricas · Motor Monte Carlo · Gratis, sin registro</p>
     <p class="footer-legal footer-disclaimer">
       Simulador independiente de entretenimiento. Sin afiliación con FIFA, UEFA, clubes ni jugadores. Nombres usados con fines estadísticos e históricos. Escudos: representaciones genéricas. Datos parcialmente derivados de Wikipedia (CC BY-SA 4.0).
@@ -1446,9 +1678,12 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=67" defer></script>
-  <script src="tournament.min.js?v=30" defer></script>
+  <script src="app.min.js?v=80" defer></script>
+  <script src="tournament.min.js?v=36" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
+  <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->
+  <div id="pm-tt-portal" aria-hidden="true"></div>
+  <script src="/subscribe.js?v=1" defer></script>
 </body>
 </html>
