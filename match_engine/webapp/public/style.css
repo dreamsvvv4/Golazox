@@ -3312,7 +3312,7 @@ body {
   .pm-analysis { grid-template-columns: 1fr; gap: .6rem; }
   .pm-stat-bars { min-width: 0; max-width: 100%; width: 100%; }
   .pm-controls-row { flex-wrap: wrap; gap: .5rem; }
-  .pm-start-btn { font-size: .8rem; padding: .6rem .9rem; }
+  .pm-start-btn { font-size: .85rem; padding: .7rem 1rem; width: 100%; text-align: center; justify-content: center; }
   .pm-speed-pills { flex-wrap: wrap; }
   .pm-speed-pill { padding: .34rem .5rem; font-size: .63rem; }
   /* Bench label: keep team name compact */
@@ -3506,14 +3506,24 @@ body {
    MOBILE OVERFLOW GUARD v2 — full audit fixes (April 2026)
 ══════════════════════════════════════════════════════════ */
 
-/* ── 1. Team-picker type labels: prevent wrapping in both tabs ── */
+/* ── 1. Team-picker type labels: prevent overflow on narrow phones ── */
 @media (max-width: 600px) {
   .tp-type-label {
-    font-size: .62rem;
-    letter-spacing: .02em;
-    overflow-wrap: break-word;
+    font-size: .6rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
-  .tp-type-btn { padding: .8rem .3rem; }
+  .tp-type-btn { padding: .65rem .25rem; gap: .32rem; }
+  .tp-type-svg  { width: 1.7rem; height: 1.7rem; }
+}
+@media (max-width: 380px) {
+  /* Very small phones: hide text labels, icon only */
+  .tp-type-label { display: none; }
+  .tp-type-btn   { padding: .75rem .4rem; }
+  .tp-type-svg   { width: 1.9rem; height: 1.9rem; }
 }
 
 /* ── 2. Tournament dashboard 4 tabs: 2-per-row on mobile ── */

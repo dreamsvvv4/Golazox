@@ -133,13 +133,18 @@
     .team-col{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
     .team-col .team-label,.team-col .team-picker,.team-col .btn-lookup,.team-col .lookup-preview{grid-column:1/-1}
     input.inp,select.inp{font-size:16px}
+    .tp-type-label{font-size:.6rem;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+    .tp-type-btn{padding:.65rem .25rem;gap:.32rem}
+    .tp-type-svg{width:1.7rem;height:1.7rem}
+    .pm-start-btn{width:100%;text-align:center;justify-content:center}
   }
   @media(max-width:480px){html{font-size:15px}.site-header{padding:.5rem .75rem}.logo-img{height:30px}.main-wrap{padding:0 .5rem}}
+  @media(max-width:380px){.tp-type-label{display:none}.tp-type-btn{padding:.75rem .4rem}.tp-type-svg{width:1.9rem;height:1.9rem}}
   </style>
   <!-- Full stylesheet — async (non-blocking). Safe: deferred JS executes ~2s+ on
        The inline CSS above ensures .hidden guard and above-fold layout
        are available immediately, reducing FOUC even as full CSS loads. -->
-  <link rel="stylesheet" href="style.min.css?v=94" />
+  <link rel="stylesheet" href="style.min.css?v=95" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1678,7 +1683,7 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=83" defer></script>
+  <script src="app.min.js?v=84" defer></script>
   <script src="tournament.min.js?v=36" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->

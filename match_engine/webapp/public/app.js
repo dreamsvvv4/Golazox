@@ -45,7 +45,7 @@ gtag('config', 'G-2BSP5YDS7N');
     const sheet = document.getElementById('pwa-install-sheet');
     if (!sheet) return;
     sheet.classList.remove('pwa-sheet--visible');
-    setTimeout(() => { sheet.hidden = true; }, 380);
+    sheet.hidden = true; // immediate: CSS [hidden] → visibility:hidden + pointer-events:none
   }
 
   // ── Android Chrome: native beforeinstallprompt ──────────
@@ -92,10 +92,13 @@ gtag('config', 'G-2BSP5YDS7N');
         if (titleEl) titleEl.textContent   = 'Añade GolazoX a tu pantalla de inicio';
         if (subEl)   subEl.innerHTML       = 'Toca <strong>⎁ Compartir</strong> en Safari y luego <strong>"Añadir a inicio"</strong> para jugar sin conexión.';
         if (iBtn)  { iBtn.textContent = '✓ Entendido';
-          iBtn.onclick = () => {
+          iBtn.onclick = null;
+          iBtn.addEventListener('click', function _iosOK() {
+            iBtn.removeEventListener('click', _iosOK);
             try { localStorage.setItem('ios_pwa_dismiss_ts', String(Date.now())); } catch (_) {}
+            _dismissed = true;
             _hideSheet();
-          };
+          });
         }
         sheet.hidden = false;
         requestAnimationFrame(() => sheet.classList.add('pwa-sheet--visible'));
