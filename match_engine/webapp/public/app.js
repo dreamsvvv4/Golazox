@@ -47,6 +47,8 @@ gtag('config', 'G-2BSP5YDS7N');
     sheet.classList.remove('pwa-sheet--visible');
     setTimeout(() => { sheet.hidden = true; }, 380);
   }
+
+  // ── Android Chrome: native beforeinstallprompt ──────────
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     _deferredInstall = e;
@@ -56,6 +58,7 @@ gtag('config', 'G-2BSP5YDS7N');
       if (sheet) { sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('pwa-sheet--visible')); }
     }, 2500);
   });
+
   window.addEventListener('DOMContentLoaded', () => {
     const installBtn = document.getElementById('pwa-install-btn');
     const dismissBtn = document.getElementById('pwa-dismiss-btn');
@@ -69,7 +72,37 @@ gtag('config', 'G-2BSP5YDS7N');
       try { localStorage.setItem('pwa_dismiss_ts', String(Date.now())); } catch (_) {}
       _hideSheet();
     });
+
+    // ── iOS Safari: no beforeinstallprompt — show manual instructions ──
+    // Detect: iOS WebKit, not already in standalone mode, not dismissed recently
+    const _isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !('MSStream' in window);
+    const _isStandalone = ('standalone' in navigator) && navigator.standalone;
+    if (_isIOS && !_isStandalone && !_dismissed) {
+      try {
+        const iosDismissTs = localStorage.getItem('ios_pwa_dismiss_ts');
+        if (iosDismissTs && (Date.now() - parseInt(iosDismissTs, 10)) < 14 * 24 * 60 * 60 * 1000) return;
+      } catch (_) {}
+      setTimeout(() => {
+        const sheet = document.getElementById('pwa-install-sheet');
+        if (!sheet) return;
+        // Rewrite the sheet content for iOS instructions
+        const titleEl  = sheet.querySelector('.pwa-sheet-title');
+        const subEl    = sheet.querySelector('.pwa-sheet-sub');
+        const iBtn     = document.getElementById('pwa-install-btn');
+        if (titleEl) titleEl.textContent   = 'Añade GolazoX a tu pantalla de inicio';
+        if (subEl)   subEl.innerHTML       = 'Toca <strong>⎁ Compartir</strong> en Safari y luego <strong>"Añadir a inicio"</strong> para jugar sin conexión.';
+        if (iBtn)  { iBtn.textContent = '✓ Entendido';
+          iBtn.onclick = () => {
+            try { localStorage.setItem('ios_pwa_dismiss_ts', String(Date.now())); } catch (_) {}
+            _hideSheet();
+          };
+        }
+        sheet.hidden = false;
+        requestAnimationFrame(() => sheet.classList.add('pwa-sheet--visible'));
+      }, 3000);
+    }
   });
+
   window.addEventListener('appinstalled', () => { _hideSheet(); _dismissed = true; });
 })();
 
@@ -5339,6 +5372,15 @@ function buildPlayerCard(player, teamRatings, delayMs, side, badgeUrl, kitOverri
       top = r.top - TIP_H - 10;   // above (fixed)
     } else {
       top = r.bottom + 10;         // below (fixed)
+    }
+
+    // On touch/coarse-pointer: center tooltip horizontally and anchor to the
+    // bottom of the viewport so it never overlaps the match controls above the pitch.
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      left = Math.max(8, Math.min(Math.round((window.innerWidth - TIP_W) / 2), window.innerWidth - TIP_W - 8));
+      // Place above the bottom native UI (nav bar ≈ 80px) but never above the top 60px
+      top  = Math.min(window.innerHeight - TIP_H - 85, window.innerHeight * 0.55);
+      top  = Math.max(60, top);
     }
 
     portal.style.transform = `translate(${left}px, ${top}px)`;
