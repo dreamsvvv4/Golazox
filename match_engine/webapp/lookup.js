@@ -550,14 +550,18 @@ function saveToSquadsDir(teamName, era, squadData) {
   if (!squadData.players || squadData.players.length < 8) return;
 
   // Guard: if the scraped teamLabel doesn't loosely match what we were searching for,
-  // skip the save. Prevents "New England Revolution" from overwriting "England".
+  // skip the save. Prevents "New England Revolution" from overwriting "England"
+  // and "SC Internacional" from overwriting "Club Nacional" (word-boundary check).
   if (squadData.teamLabel) {
-    const normalize = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const query     = normalize(teamName);
-    const label     = normalize(squadData.teamLabel);
-    // The query must appear inside the label OR the label inside the query
-    if (!label.includes(query) && !query.includes(label)) {
-      console.warn(`[squads] Skipping save: query "${teamName}" doesn't match scraped label "${squadData.teamLabel}"`);
+    // Preserve spaces so word boundaries work, strip only punctuation
+    const normalizeWB = s => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+    const query = normalizeWB(teamName);
+    const label = normalizeWB(squadData.teamLabel);
+    // Whole-word boundary check: query must appear as a standalone word in label or vice versa
+    const wb = (hay, needle) =>
+      new RegExp('(?:^|\\s)' + needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+') + '(?:\\s|$)').test(hay);
+    if (!wb(label, query) && !wb(query, label)) {
+      console.warn(`[squads] Skipping save: "${teamName}" doesn't match label "${squadData.teamLabel}"`);
       return;
     }
   }
