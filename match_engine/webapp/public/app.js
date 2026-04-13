@@ -6721,11 +6721,11 @@ function _refreshDistList() {
 
 // Realistic km scaling: drift samples fire every 2nd drift tick (420ms × 2 = 840ms each).
 // 1-min mode (90×667ms ≈ 60s real-time) accumulates ~71 distance-samples.
-// Multiplier 4.0 calibrated so midfielders show ~10-12 km, GKs ~5-6 km.
+// Multiplier 2.0 calibrated so midfielders show ~10-12 km, GKs ~5-6 km.
 function _pxToKm(px) {
   const REF_SAMPLES = 71;  // calibrated for 1-min mode (60s / 0.84s per sample)
   const factor = _distSamples > 0 ? REF_SAMPLES / _distSamples : 1;
-  return (px / _LP.W * 4.0 * factor);
+  return (px / _LP.W * 2.0 * factor);
 }
 
 function renderMatchAnalysis(teamA, teamB) {
