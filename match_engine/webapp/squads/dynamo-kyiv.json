@@ -79,7 +79,13 @@
           "position": "ST",
           "rating": 85
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 87,
+        "defense": 83,
+        "goalkeeping": 83
+      }
     },
     "1986": {
       "formation": "4-4-2",
@@ -151,7 +157,13 @@
         }
       ],
       "source": "Dynamo Kyiv <\r Otros�\u001d Recopa de Europa 1985-86 (Blokhin, Belanov Balón de Oro)",
-      "teamLabel": "Dynamo Kyiv (1985-86)"
+      "teamLabel": "Dynamo Kyiv (1985-86)",
+      "ratings": {
+        "attack": 88,
+        "midfield": 88,
+        "defense": 84,
+        "goalkeeping": 83
+      }
     },
     "1999": {
       "formation": "4-4-2",
@@ -223,7 +235,13 @@
         }
       ],
       "source": "Dynamo Kyiv 🌍 Otros€” UCL Semifinal 1998-99 (Shevchenko 8 goles, Rebrov, Luzhny)",
-      "teamLabel": "Dynamo Kyiv (1998-99)"
+      "teamLabel": "Dynamo Kyiv (1998-99)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -303,7 +321,13 @@
           "position": "LM",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 77
+      }
     }
   },
   "badgeLocalPath": "/img/badges/dynamo-kyiv.png",

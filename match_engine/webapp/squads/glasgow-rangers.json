@@ -79,7 +79,13 @@
           "position": "LM",
           "rating": 78
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "1993": {
       "formation": "4-4-2",
@@ -159,7 +165,13 @@
           "position": "CM",
           "rating": 83
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2021": {
       "formation": "4-4-2",
@@ -478,10 +490,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 69,
-        "goalkeeping": 61
+        "attack": 83,
+        "midfield": 81,
+        "defense": 83,
+        "goalkeeping": 72
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2021/2022)",
       "teamLabel": "Rangers (2021-22)"
@@ -779,10 +791,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 69,
-        "goalkeeping": 61
+        "attack": 81,
+        "midfield": 81,
+        "defense": 81,
+        "goalkeeping": 71
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2022/2023)",
       "teamLabel": "Rangers (2022-23)"
@@ -954,10 +966,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 69,
-        "goalkeeping": 61
+        "attack": 82,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 70
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2025/2026)",
       "teamLabel": "Rangers (2025-26)"

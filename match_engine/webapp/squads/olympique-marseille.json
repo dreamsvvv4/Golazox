@@ -79,7 +79,13 @@
           "position": "ST",
           "rating": 87
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 83
+      }
     },
     "1992": {
       "formation": "4-4-2",
@@ -196,10 +202,10 @@
         }
       ],
       "ratings": {
-        "attack": 62,
-        "midfield": 68,
-        "defense": 60,
-        "goalkeeping": 65
+        "attack": 82,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Marseille (1992/1993)",
       "teamLabel": "Marseille (1992-93)"

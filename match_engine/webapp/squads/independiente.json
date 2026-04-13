@@ -71,7 +71,13 @@
         }
       ],
       "source": "Independiente 🌍 Otros€” Copa Libertadores 1974-75 (cuarta consecutive, El Rey de Copas, Bochini)",
-      "teamLabel": "Independiente (1974-75)"
+      "teamLabel": "Independiente (1974-75)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "1984": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Independiente <\r Otros�\u001d Copa Libertadores 1984 (Bochini, Burruchaga <\r Otros�\u001d séptima Copa)",
-      "teamLabel": "Independiente (1984)"
+      "teamLabel": "Independiente (1984)",
+      "ratings": {
+        "attack": 82,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "RW",
           "rating": 76
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 77,
+        "defense": 75,
+        "goalkeeping": 74
+      }
     }
   },
   "badgeLocalPath": "/img/badges/independiente.png",

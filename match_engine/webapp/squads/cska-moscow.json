@@ -71,7 +71,13 @@
         }
       ],
       "source": "CSKA Moscú - Copa UEFA 2004-05 (Akinfeev, Ignashevich, Vagner Love - primer titulo europeo ruso)",
-      "teamLabel": "CSKA Moscú (2004-05)"
+      "teamLabel": "CSKA Moscú (2004-05)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 82
+      }
     },
     "2016": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "CSKA Moscú - Liga rusa 2015-16 + UCL (Golovin, Dzagoev, Akinfeev)",
-      "teamLabel": "CSKA Moscú (2015-16)"
+      "teamLabel": "CSKA Moscú (2015-16)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -223,7 +235,13 @@
           "position": "CB",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      }
     }
   },
   "badgeLocalPath": "/img/badges/cska-moscow.png",

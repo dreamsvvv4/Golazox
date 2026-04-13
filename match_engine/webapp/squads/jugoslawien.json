@@ -85,7 +85,13 @@
           "position": "CM",
           "rating": 79
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 80
+      }
     },
     "1982": {
       "formation": "4-4-2",
@@ -165,7 +171,13 @@
           "position": "GK",
           "rating": 81
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 84,
+        "defense": 81,
+        "goalkeeping": 82
+      }
     },
     "1990": {
       "formation": "4-4-2",
@@ -245,7 +257,13 @@
           "position": "GK",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 89,
+        "defense": 82,
+        "goalkeeping": 83
+      }
     }
   }
 }

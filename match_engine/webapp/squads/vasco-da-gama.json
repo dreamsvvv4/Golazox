@@ -71,7 +71,13 @@
         }
       ],
       "source": "Vasco da Gama - Copa Libertadores 1998 (Romario, Edmundo, Juninho Pernambucano)",
-      "teamLabel": "Vasco da Gama (1998)"
+      "teamLabel": "Vasco da Gama (1998)",
+      "ratings": {
+        "attack": 92,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -151,7 +157,13 @@
           "position": "CM",
           "rating": 75
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 76
+      }
     }
   },
   "badgeLocalPath": "/img/badges/vasco-da-gama.png",

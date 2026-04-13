@@ -71,7 +71,13 @@
         }
       ],
       "source": "Penarol - Copa Libertadores 1966 (Spencer, Mazurkiewicz, Rocha - tres Libertadores consecutivas)",
-      "teamLabel": "Penarol (1966)"
+      "teamLabel": "Penarol (1966)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 81,
+        "goalkeeping": 82
+      }
     },
     "1982": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Penarol - Copa Libertadores 1982 (Morena, Ruben Paz - quinta Libertadores)",
-      "teamLabel": "Penarol (1982)"
+      "teamLabel": "Penarol (1982)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 82,
+        "defense": 81,
+        "goalkeeping": 80
+      }
     },
     "2025": {
       "formation": "4-4-2",
@@ -223,7 +235,13 @@
           "position": "RW",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 76,
+        "goalkeeping": 77
+      }
     }
   },
   "badgeLocalPath": "/img/badges/penarol.png",

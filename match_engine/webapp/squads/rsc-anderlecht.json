@@ -71,7 +71,13 @@
         }
       ],
       "source": "Anderlecht - UEFA Cup Winners Cup 1975-76 (Rensenbrink, Van Binst, Arie Haan)",
-      "teamLabel": "Anderlecht (1975-76)"
+      "teamLabel": "Anderlecht (1975-76)",
+      "ratings": {
+        "attack": 87,
+        "midfield": 87,
+        "defense": 82,
+        "goalkeeping": 84
+      }
     },
     "1978": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Anderlecht - UEFA Cup 1976-77 + 1977-78 doble (Rensenbrink, Gran era belga)",
-      "teamLabel": "Anderlecht (1977-78)"
+      "teamLabel": "Anderlecht (1977-78)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 87,
+        "defense": 82,
+        "goalkeeping": 83
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "LW",
           "rating": 76
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 77
+      }
     }
   },
   "badgeLocalPath": "/img/badges/rsc-anderlecht.png",

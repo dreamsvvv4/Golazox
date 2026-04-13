@@ -71,7 +71,13 @@
         }
       ],
       "source": "Partizan - Copa de Europa Final 1965-66 (Vasovic, Milan Galic - unico finalista yugoslavo)",
-      "teamLabel": "Partizan (1965-66)"
+      "teamLabel": "Partizan (1965-66)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "1999": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Partizan - Liga yugoslava 1998-99 + UCL group stage (Ilic, Krstajic, Bunjevcevic)",
-      "teamLabel": "Partizan (1998-99)"
+      "teamLabel": "Partizan (1998-99)",
+      "ratings": {
+        "attack": 83,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "ST",
           "rating": 75
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 77,
+        "defense": 77,
+        "goalkeeping": 74
+      }
     }
   },
   "badgeLocalPath": "/img/badges/partizan.png",

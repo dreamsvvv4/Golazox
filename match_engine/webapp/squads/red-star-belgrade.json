@@ -76,7 +76,13 @@
         }
       ],
       "source": "Estrella Roja de Belgrado 🌍 Otros€” European Cup 1990-91 (Savicevic, Prosinecki, Pancev)",
-      "teamLabel": "Estrella Roja (1990-91)"
+      "teamLabel": "Estrella Roja (1990-91)",
+      "ratings": {
+        "attack": 83,
+        "midfield": 91,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -156,7 +162,13 @@
           "position": "CB",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 77,
+        "goalkeeping": 75
+      }
     }
   },
   "badgeLocalPath": "/img/badges/red-star-belgrade.png",

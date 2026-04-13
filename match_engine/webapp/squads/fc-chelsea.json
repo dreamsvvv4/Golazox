@@ -510,7 +510,13 @@
         }
       ],
       "source": "Chelsea <\r Otros�\u001d 2003-04 primer año Abramovich (Ranieri)",
-      "teamLabel": "Chelsea (2003-04)"
+      "teamLabel": "Chelsea (2003-04)",
+      "ratings": {
+        "attack": 86,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 83
+      }
     },
     "2004": {
       "formation": "4-4-2",
@@ -918,7 +924,13 @@
         }
       ],
       "source": "Chelsea 🌍 Otros€” League 2009-10 + FA Cup double (Ancelotti)",
-      "teamLabel": "Chelsea (2009-10)"
+      "teamLabel": "Chelsea (2009-10)",
+      "ratings": {
+        "attack": 87,
+        "midfield": 88,
+        "defense": 88,
+        "goalkeeping": 85
+      }
     },
     "2010": {
       "formation": "4-4-2",
@@ -990,7 +1002,13 @@
         }
       ],
       "source": "Chelsea 🌍 Otros€” Premier League 2010-11 + UCL run (Ancelotti)",
-      "teamLabel": "Chelsea (2010-11)"
+      "teamLabel": "Chelsea (2010-11)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 87,
+        "goalkeeping": 84
+      }
     },
     "2011": {
       "formation": "4-2-3-1",

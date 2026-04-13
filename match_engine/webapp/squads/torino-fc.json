@@ -71,7 +71,13 @@
         }
       ],
       "source": "Grande Torino - Serie A 1942-49, 5 Scudetti consecutivos (Valentino Mazzola, tragedia Superga)",
-      "teamLabel": "Grande Torino (1948-49)"
+      "teamLabel": "Grande Torino (1948-49)",
+      "ratings": {
+        "attack": 87,
+        "midfield": 90,
+        "defense": 86,
+        "goalkeeping": 85
+      }
     },
     "1976": {
       "formation": "4-3-3",
@@ -151,7 +157,13 @@
           "position": "CF",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "3-4-2-1",
@@ -231,7 +243,13 @@
           "position": "AM",
           "rating": 78
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 75
+      }
     }
   },
   "badgeLocalPath": "/img/badges/torino-fc.png",

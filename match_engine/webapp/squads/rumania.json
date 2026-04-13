@@ -85,7 +85,13 @@
           "position": "LM",
           "rating": 79
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 82
+      }
     },
     "1998": {
       "formation": "4-4-2",
@@ -165,7 +171,13 @@
           "position": "ST",
           "rating": 82
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -245,7 +257,13 @@
           "position": "GK",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      }
     }
   }
 }

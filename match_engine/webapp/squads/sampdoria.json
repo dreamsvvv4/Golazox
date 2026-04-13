@@ -71,7 +71,13 @@
         }
       ],
       "source": "Sampdoria - Scudetto Serie A 1990-91 + UCL Final (Vialli, Mancini, Gullit, Pagliuca)",
-      "teamLabel": "Sampdoria (1990-91)"
+      "teamLabel": "Sampdoria (1990-91)",
+      "ratings": {
+        "attack": 89,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 84
+      }
     },
     "1992": {
       "formation": "4-4-2",
@@ -151,7 +157,13 @@
           "position": "CB",
           "rating": 81
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -231,7 +243,13 @@
           "position": "ST",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 71
+      }
     }
   },
   "badgeLocalPath": "/img/badges/sampdoria.png",

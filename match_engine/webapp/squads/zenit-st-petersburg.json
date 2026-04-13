@@ -71,7 +71,13 @@
         }
       ],
       "source": "Zenit San Petersburgo - Copa UEFA 2007-08 (Arshavin, Danny - primer titulo europeo)",
-      "teamLabel": "Zenit (2007-08)"
+      "teamLabel": "Zenit (2007-08)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2019": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Zenit San Petersburgo - Liga rusa 2018-19 (Paredes, Azmoun, Ivanovic)",
-      "teamLabel": "Zenit (2018-19)"
+      "teamLabel": "Zenit (2018-19)",
+      "ratings": {
+        "attack": 83,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "LB",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 77
+      }
     }
   },
   "badgeLocalPath": "/img/badges/zenit-st-petersburg.png",

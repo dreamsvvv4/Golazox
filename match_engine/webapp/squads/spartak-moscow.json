@@ -71,7 +71,13 @@
         }
       ],
       "source": "Spartak Moscú <\r Otros�\u001d UCL 1994-95 (7 triunfos en fase de grupos, Onopko, Karpin)",
-      "teamLabel": "Spartak Moscú (1994-95)"
+      "teamLabel": "Spartak Moscú (1994-95)",
+      "ratings": {
+        "attack": 83,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 82
+      }
     },
     "1998": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Spartak Moscú <\r Otros�\u001d Liga rusa 1998 (Alenichev, Tsymbalar, Karpin <\r Otros�\u001d era gloriosa)",
-      "teamLabel": "Spartak Moscú (1998)"
+      "teamLabel": "Spartak Moscú (1998)",
+      "ratings": {
+        "attack": 82,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "RB",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 75
+      }
     }
   },
   "badgeLocalPath": "/img/badges/spartak-moscow.png",

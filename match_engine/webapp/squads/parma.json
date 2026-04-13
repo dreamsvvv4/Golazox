@@ -76,7 +76,13 @@
         }
       ],
       "source": "Parma 🌍 Otros€” UEFA Cup 1992-93 (Zola, Asprilla, Brolin 🌍 Otros€” Scala)",
-      "teamLabel": "Parma AC (1992-93)"
+      "teamLabel": "Parma AC (1992-93)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "1999": {
       "formation": "4-4-2",
@@ -153,7 +159,13 @@
         }
       ],
       "source": "Parma 🌍 Otros€” UEFA Cup + Copa Italia 1998-99 (Buffon, Thuram, Cannavaro, Crespo)",
-      "teamLabel": "Parma AC (1998-99)"
+      "teamLabel": "Parma AC (1998-99)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 83,
+        "defense": 87,
+        "goalkeeping": 83
+      }
     },
     "2025": {
       "formation": "4-3-3",

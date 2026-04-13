@@ -85,7 +85,13 @@
           "position": "CB",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 77,
+        "defense": 77,
+        "goalkeeping": 75
+      }
     }
   }
 }

@@ -71,7 +71,13 @@
         }
       ],
       "source": "Grêmio <\r Otros�\u001d Copa Libertadores 1983 (Renato Gaúcho, Baltazar <\r Otros�\u001d primer título Lib)",
-      "teamLabel": "Grêmio (1983)"
+      "teamLabel": "Grêmio (1983)",
+      "ratings": {
+        "attack": 83,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 80
+      }
     },
     "1995": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Grêmio <\r Otros�\u001d Copa Libertadores 1995 (Ronaldo, Jardel, Zinho <\r Otros�\u001d Felipão era)",
-      "teamLabel": "Grêmio (1995)"
+      "teamLabel": "Grêmio (1995)",
+      "ratings": {
+        "attack": 88,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -223,7 +235,13 @@
           "position": "ST",
           "rating": 75
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 76
+      }
     }
   },
   "badgeLocalPath": "/img/badges/gremio.png",

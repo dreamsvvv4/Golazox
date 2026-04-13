@@ -71,7 +71,13 @@
         }
       ],
       "source": "Nacional - Copa Libertadores 1971 (Artime, Pedro Rocha, Esparrago)",
-      "teamLabel": "Nacional Montevideo (1971)"
+      "teamLabel": "Nacional Montevideo (1971)",
+      "ratings": {
+        "attack": 86,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "1988": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Nacional - Copa Libertadores 1988 (Ruben Sosa, Aguilera, Aguirre)",
-      "teamLabel": "Nacional Montevideo (1988)"
+      "teamLabel": "Nacional Montevideo (1988)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "CB",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 77
+      }
     }
   },
   "badgeLocalPath": "/img/badges/nacional.png",

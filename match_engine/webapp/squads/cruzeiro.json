@@ -71,7 +71,13 @@
         }
       ],
       "source": "Cruzeiro - Copa Libertadores 1997 (Ronaldo, Djalminha, Dida - doble con league)",
-      "teamLabel": "Cruzeiro (1997)"
+      "teamLabel": "Cruzeiro (1997)",
+      "ratings": {
+        "attack": 89,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 83
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -151,7 +157,13 @@
           "position": "LW",
           "rating": 75
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 79
+      }
     }
   },
   "badgeLocalPath": "/img/badges/cruzeiro.png",

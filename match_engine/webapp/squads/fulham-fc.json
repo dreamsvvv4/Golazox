@@ -61,7 +61,12 @@
           "rating": 77
         }
       ],
-      "ratings": null,
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 74
+      },
       "source": "Wikipedia 🌍 Otros€” \"Fulham F.C.\"",
       "teamLabel": "fulham-fc (2025)"
     }

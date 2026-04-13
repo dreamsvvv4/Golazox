@@ -71,7 +71,13 @@
         }
       ],
       "source": "Liverpool 🌍 Otros€” FA Cup winners 1964-65 (Shankly era)",
-      "teamLabel": "Liverpool (1964-65)"
+      "teamLabel": "Liverpool (1964-65)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 82,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "1973": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Liverpool 🌍 Otros€” League + UEFA Cup double 1972-73 (Shankly)",
-      "teamLabel": "Liverpool (1972-73)"
+      "teamLabel": "Liverpool (1972-73)",
+      "ratings": {
+        "attack": 86,
+        "midfield": 82,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "1977": {
       "formation": "4-4-2",
@@ -747,7 +759,13 @@
         }
       ],
       "source": "Liverpool 🌍 Otros€” League + FA Cup double 1985-86 (Dalglish player-manager)",
-      "teamLabel": "Liverpool (1985-86)"
+      "teamLabel": "Liverpool (1985-86)",
+      "ratings": {
+        "attack": 89,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 83
+      }
     },
     "2001": {
       "formation": "4-4-2",
@@ -824,7 +842,13 @@
         }
       ],
       "source": "Liverpool 🌍 Otros€” Treble 2000-01: UEFA Cup + FA Cup + League Cup (Houllier)",
-      "teamLabel": "Liverpool (2000-01)"
+      "teamLabel": "Liverpool (2000-01)",
+      "ratings": {
+        "attack": 88,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2004": {
       "formation": "4-4-2",
@@ -1478,10 +1502,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 63
+        "attack": 84,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — Liverpool (2007/2008)",
       "teamLabel": "Liverpool (2007-08)"
@@ -2162,10 +2186,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 60,
-        "defense": 60,
-        "goalkeeping": 63
+        "attack": 87,
+        "midfield": 85,
+        "defense": 87,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — Liverpool (2018/2019)",
       "teamLabel": "Liverpool (2018-19)"

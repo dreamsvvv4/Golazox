@@ -76,7 +76,13 @@
         }
       ],
       "source": "Steaua București 🌍 Otros€” European Cup 1985-86 (Duckadam 4 penales, Hagi)",
-      "teamLabel": "Steaua București (1985-86)"
+      "teamLabel": "Steaua București (1985-86)",
+      "ratings": {
+        "attack": 85,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "1989": {
       "formation": "4-4-2",
@@ -148,7 +154,13 @@
         }
       ],
       "source": "Steaua Bucure�\"ti <\r Otros�\u001d UCL Final 1988-89 (Hagi en su máximo esplendor)",
-      "teamLabel": "Steaua București (1988-89)"
+      "teamLabel": "Steaua București (1988-89)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 82
+      }
     },
     "2025": {
       "formation": "4-4-2",
@@ -228,7 +240,13 @@
           "position": "LW",
           "rating": 78
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      }
     }
   },
   "badgeLocalPath": "/img/badges/steaua-bucharest.png",

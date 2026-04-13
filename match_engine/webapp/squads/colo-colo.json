@@ -71,7 +71,13 @@
         }
       ],
       "source": "Colo-Colo <\r Otros�\u001d Copa Libertadores 1991 (único título chileno, Espina, Barticciotto)",
-      "teamLabel": "Colo-Colo (1991)"
+      "teamLabel": "Colo-Colo (1991)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "2006": {
       "formation": "4-4-2",
@@ -143,7 +149,13 @@
         }
       ],
       "source": "Colo-Colo <\r Otros�\u001d Liga chilena 2006 (Humberto Suazo, joven Alexis Sánchez)",
-      "teamLabel": "Colo-Colo (2006)"
+      "teamLabel": "Colo-Colo (2006)",
+      "ratings": {
+        "attack": 84,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 80
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -223,7 +235,13 @@
           "position": "RW",
           "rating": 76
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 80,
+        "defense": 78,
+        "goalkeeping": 76
+      }
     }
   },
   "badgeLocalPath": "/img/badges/colo-colo.png",

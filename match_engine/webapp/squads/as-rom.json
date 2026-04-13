@@ -79,7 +79,13 @@
           "position": "CB",
           "rating": 85
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 88,
+        "defense": 83,
+        "goalkeeping": 82
+      }
     },
     "2001": {
       "formation": "4-2-3-1",
@@ -542,10 +548,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 82,
+        "midfield": 81,
+        "defense": 80,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2003/2004)",
       "teamLabel": "Roma (2003-04)"
@@ -1002,10 +1008,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 83,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 76
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2021/2022)",
       "teamLabel": "Roma (2021-22)"
@@ -1803,10 +1809,10 @@
         }
       ],
       "ratings": {
-        "attack": 60,
-        "midfield": 65,
-        "defense": 60,
-        "goalkeeping": 60
+        "attack": 83,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2024/2025)",
       "teamLabel": "Roma (2024-25)"

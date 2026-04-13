@@ -589,7 +589,13 @@
         }
       ],
       "source": "Real Madrid <\r Otros�\u001d La Liga + Copa del Rey 1967-68 (era Muñoz, Gento)",
-      "teamLabel": "Real Madrid (1967-68)"
+      "teamLabel": "Real Madrid (1967-68)",
+      "ratings": {
+        "attack": 86,
+        "midfield": 82,
+        "defense": 81,
+        "goalkeeping": 79
+      }
     },
     "1974": {
       "formation": "4-3-3",
@@ -666,7 +672,13 @@
         }
       ],
       "source": "Real Madrid 🌍 Otros€” La Liga 1974-75 (Netzer + Breitner era)",
-      "teamLabel": "Real Madrid (1974-75)"
+      "teamLabel": "Real Madrid (1974-75)",
+      "ratings": {
+        "attack": 87,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 82
+      }
     },
     "1976": {
       "formation": "4-4-2",
@@ -1177,7 +1189,13 @@
         }
       ],
       "source": "Real Madrid <\r Otros�\u001d La Quinta del Buitre, La Liga 1988-89 (5 títulos consecutivos)",
-      "teamLabel": "Real Madrid La Quinta (1988-89)"
+      "teamLabel": "Real Madrid La Quinta (1988-89)",
+      "ratings": {
+        "attack": 92,
+        "midfield": 89,
+        "defense": 85,
+        "goalkeeping": 84
+      }
     },
     "1998": {
       "formation": "4-4-2",
@@ -2034,10 +2052,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
+        "attack": 91,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt — Real Madrid (2011/2012)",
       "teamLabel": "Real Madrid (2011-12)"
@@ -3529,10 +3547,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 60,
-        "defense": 65,
-        "goalkeeping": 62
+        "attack": 89,
+        "midfield": 88,
+        "defense": 89,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — Real Madrid (2018/2019)",
       "teamLabel": "Real Madrid (2018-19)"
