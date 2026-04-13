@@ -942,8 +942,8 @@ async function surpriseMe() {
   const randEra = t => { const s = seasons(t); return s.length ? s[Math.floor(Math.random() * s.length)] : ''; };
   const eA = randEra(tA);
   const eB = randEra(tB);
-  document.getElementById('teamA').value = tA.slug;
-  document.getElementById('teamB').value = tB.slug;
+  document.getElementById('teamA').value = tA.name || tA.slug;
+  document.getElementById('teamB').value = tB.name || tB.slug;
   _populateEraSelect(tA.slug, 'A');
   _populateEraSelect(tB.slug, 'B');
   if (eA) { const sel = document.getElementById('eraA'); if (sel) sel.value = eA; }
@@ -1583,8 +1583,10 @@ async function rivalryMe() {
   _hideDerbyBanner();
 
   // Set teams + eras
-  document.getElementById('teamA').value = match.a.slug;
-  document.getElementById('teamB').value = match.b.slug;
+  const _catA = _catalog.find(c => c.slug === match.a.slug);
+  const _catB = _catalog.find(c => c.slug === match.b.slug);
+  document.getElementById('teamA').value = (_catA?.name) || match.a.slug;
+  document.getElementById('teamB').value = (_catB?.name) || match.b.slug;
   _populateEraSelect(match.a.slug, 'A');
   _populateEraSelect(match.b.slug, 'B');
   const selA = document.getElementById('eraA');
@@ -1741,8 +1743,10 @@ async function derbyMe() {
   const eraA = _bestEra(derby.a.slug, derby.a.era);
   const eraB = _bestEra(derby.b.slug, derby.b.era);
 
-  document.getElementById('teamA').value = derby.a.slug;
-  document.getElementById('teamB').value = derby.b.slug;
+  const _dCatA = _catalog.find(c => c.slug === derby.a.slug);
+  const _dCatB = _catalog.find(c => c.slug === derby.b.slug);
+  document.getElementById('teamA').value = (_dCatA?.name) || derby.a.slug;
+  document.getElementById('teamB').value = (_dCatB?.name) || derby.b.slug;
   _populateEraSelect(derby.a.slug, 'A');
   _populateEraSelect(derby.b.slug, 'B');
   const selA = document.getElementById('eraA');
@@ -4617,7 +4621,7 @@ function showPreMatch(data, payload) {
       <div class="pm-hero-team pm-hero-team-a">
         <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baA)}" alt="" onerror="this.style.display='none'"></div>
         <div class="pm-hero-team-info">
-          <div class="pm-hero-team-name">${escHtml(payload.teamA)}</div>
+          <div class="pm-hero-team-name">${escHtml(data.lineups?.teamA?.name?.replace(/\s+\d{4}(-\d{2,4})?(\s+.*)?$/, '').trim() || payload.teamA)}</div>
           ${payload.eraA ? `<div class="pm-hero-team-era">${escHtml(payload.eraA)}</div>` : ''}
         </div>
         <div class="pm-hero-ovr pm-hero-ovr-a">${ovrA}</div>
@@ -4636,7 +4640,7 @@ function showPreMatch(data, payload) {
       <div class="pm-hero-team pm-hero-team-b">
         <div class="pm-hero-ovr pm-hero-ovr-b">${ovrB}</div>
         <div class="pm-hero-team-info pm-hero-info-b">
-          <div class="pm-hero-team-name">${escHtml(payload.teamB)}</div>
+          <div class="pm-hero-team-name">${escHtml(data.lineups?.teamB?.name?.replace(/\s+\d{4}(-\d{2,4})?(\s+.*)?$/, '').trim() || payload.teamB)}</div>
           ${payload.eraB ? `<div class="pm-hero-team-era">${escHtml(payload.eraB)}</div>` : ''}
         </div>
         <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baB)}" alt="" onerror="this.style.display='none'"></div>
@@ -4895,9 +4899,13 @@ function buildPreMatchSide(side, lineup, teamName, era, badgeUrl, ratings) {
 
       const hdr = document.createElement('div');
       hdr.className = 'pm-bench-label';
+      // Use lineup.name (server-resolved display name) over raw teamName (could be slug)
+      const _dispTeam = lineup.name
+        ? lineup.name.replace(/\s+\d{4}(-\d{2,4})?(\s+.*)?$/, '').trim() || lineup.name
+        : teamName;
       hdr.innerHTML =
         `<img class="pm-bench-badge" src="${escHtml(badgeUrl||'')}" alt="" onerror="this.style.display='none'">` +
-        `<span>${escHtml(teamName)}</span>`;
+        `<span>${escHtml(_dispTeam)}</span>`;
       strip.appendChild(hdr);
 
       const row = document.createElement('div');

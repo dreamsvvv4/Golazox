@@ -3302,10 +3302,10 @@ body {
   .section-title { font-size: .84rem; margin-bottom: .75rem; }
 
   /* ── Pre-match ── */
-  .pm-pitch-field { min-height: 200px; aspect-ratio: 2/1; }
-  .pm-card-inner  { width: 34px; height: 34px; border-radius: 7px; }
-  .pc-ovr  { font-size: .88rem; }
-  .pc-name { font-size: .36rem; max-width: 38px; }
+  .pm-pitch-field { min-height: 0; aspect-ratio: 2/1; }
+  .pm-card-inner  { width: 36px; height: 36px; border-radius: 7px; }
+  .pc-ovr  { font-size: .9rem; }
+  .pc-name { font-size: .37rem; max-width: 40px; }
   .pm-pitch-benches { flex-direction: column; gap: .4rem; }
   .pm-hero-team-name { font-size: .84rem; }
   .pm-hero-ovr { font-size: 1.5rem; }
@@ -3315,6 +3315,8 @@ body {
   .pm-start-btn { font-size: .8rem; padding: .6rem .9rem; }
   .pm-speed-pills { flex-wrap: wrap; }
   .pm-speed-pill { padding: .34rem .5rem; font-size: .63rem; }
+  /* Bench label: keep team name compact */
+  .pm-bench-label { font-size: .52rem; }
 }
 
 /* ── 480px · Small phones ────────────────────────────────── */
@@ -3620,13 +3622,16 @@ body {
 }
 
 /* ── Touch devices: disable hover effects ────────────────── */
-@media (hover: none) {
+@media (hover: none), (pointer: coarse) {
   .player-tooltip { display: none !important; }
   .player-chip:hover .player-jersey {
     transform: none;
     filter: drop-shadow(0 3px 8px rgba(0,0,0,.6));
   }
-  .pm-card:hover  { transform: none !important; z-index: auto; box-shadow: inherit; }
+  /* Keep the base translate(-50%,-50%) so absolutely-positioned pitch cards
+     don't jump when tap triggers a transient :hover state on iOS/Android */
+  .pm-card:hover  { transform: translate(-50%,-50%) !important; z-index: auto; }
+  .pm-card-bench:hover { transform: none !important; }
   .spk-card:hover, .ref-card:hover, .wth-card:hover { transform: none; }
 }
 
@@ -6253,13 +6258,17 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   grid-template-columns: repeat(2, minmax(118px, 200px));
   justify-content: center;
 }
-/* Libertadores — 4 groups per row */
+/* Libertadores — 4 groups per row (desktop) */
 .trn-preset-groups-libertadores {
   grid-template-columns: repeat(4, minmax(118px, 1fr));
 }
 /* hide scrollbar on mobile strip */
 .trn-preset-groups-wc::-webkit-scrollbar { display: none; }
 .trn-preset-groups-wc { scrollbar-width: none; }
+.trn-preset-groups-libertadores::-webkit-scrollbar { display: none; }
+.trn-preset-groups-libertadores { scrollbar-width: none; }
+.trn-preset-groups-copa-america::-webkit-scrollbar { display: none; }
+.trn-preset-groups-copa-america { scrollbar-width: none; }
 .trn-pg-group {
   background: rgba(255,255,255,.03);
   border: 1px solid rgba(255,255,255,.08);
@@ -6297,6 +6306,54 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   justify-content: center;
   padding: .25rem 1rem .75rem;
   flex-wrap: wrap;
+}
+
+/* ── Libertadores / Copa América: horizontal scroll on mobile ── */
+@media (max-width: 700px) {
+  .trn-preset-groups-libertadores,
+  .trn-preset-groups-copa-america {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: .45rem;
+    padding: 0 .75rem .5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+  .trn-preset-groups-libertadores .trn-pg-group,
+  .trn-preset-groups-copa-america .trn-pg-group {
+    flex: 0 0 110px;
+    scroll-snap-align: start;
+    padding: .5rem .52rem .45rem;
+  }
+  .trn-preset-groups-libertadores .trn-pg-label,
+  .trn-preset-groups-copa-america .trn-pg-label {
+    font-size: .68rem;
+    margin-bottom: .35rem;
+  }
+  .trn-preset-groups-libertadores .trn-pg-team,
+  .trn-preset-groups-copa-america .trn-pg-team {
+    gap: .3rem;
+    padding: .15rem 0;
+  }
+  .trn-preset-groups-libertadores .trn-pg-team .trn-mini-badge,
+  .trn-preset-groups-copa-america .trn-pg-team .trn-mini-badge {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .trn-preset-groups-libertadores .trn-pg-team span,
+  .trn-preset-groups-copa-america .trn-pg-team span {
+    font-size: .7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 78px;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════
