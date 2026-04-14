@@ -321,7 +321,7 @@ const PLAYER_RATINGS_RAW = [
   ['gianluigi donnarumma',   90], ['donnarumma',           90],
   ['keylor navas',           86], ['navas',                86],
   ['david de gea',           87], ['de gea',               87],
-  ['manuel neuer',           93], ['neuer',                93],
+  ['manuel neuer',           85], ['neuer',                85],
   ['hugo lloris',            87], ['lloris',               87],
   ['thibaut courtois',       91], ['courtois',             91],
   ['joe hart',               83],
@@ -690,7 +690,7 @@ const PLAYER_RATINGS_RAW = [
   ['david villa',            89],
   ['angel di maria',         88], ['ángel di maría',       88], ['di maria', 88], ['di maría', 88],
   ['robert lewandowski',     93], ['lewandowski',          93],
-  ['harry kane',             91], ['kane',                 91],
+  ['harry kane',             90], ['kane',                 90],
   ['mo salah',               91], ['salah',                91], ['mohamed salah', 91],
   ['sadio mane',             89], ['sadio mané',           89], ['mané',    85],
   ['son heung-min',          88], ['son',                  88], ['heung-min', 88],
@@ -855,22 +855,22 @@ const PLAYER_RATINGS_RAW = [
   ['riyad mahrez',           85],
 
   // -- FC Bayern (actuales) ---------------------------------------------
-  ['joshua kimmich',         88], ['kimmich',              88],
-  ['alphonso davies',        87], ['davies alphonso',      87],
-  ['dayot upamecano',        84], ['upamecano',            84],
-  ['jonathan tah',           83], ['tah',                  83],
-  ['leon goretzka',          84], ['goretzka',             84],
-  ['michael olise',          90], ['olise',                90],
-  ['raphael guerreiro',      84],
-  ['konrad laimer',          83], ['laimer',               83],
-  ['josip stanisic',         78],
-  ['aleksandar pavlovic',    82], ['pavlovic aleksandar',  82],
-  ['min-jae kim',            87],
-  ['harry kane',             91],
+  ['joshua kimmich',         87], ['kimmich',              87],
+  ['alphonso davies',        84], ['davies alphonso',      84],
+  ['dayot upamecano',        83], ['upamecano',            83],
+  ['jonathan tah',           82], ['tah',                  82],
+  ['leon goretzka',          81], ['goretzka',             81],
+  ['michael olise',          86], ['olise',                86],
+  ['raphael guerreiro',      79],
+  ['konrad laimer',          82], ['laimer',               82],
+  ['josip stanisic',         76],
+  ['aleksandar pavlovic',    81], ['pavlovic aleksandar',  81],
+  ['min-jae kim',            84],
+  ['harry kane',             90],
   ['thomas muller',          78],
-  ['serge gnabry',           85],
-  ['jamal musiala',          90],
-  ['leroy sane',             86],
+  ['serge gnabry',           78],
+  ['jamal musiala',          88],
+  ['leroy sane',             84],
 
   // -- Real Madrid (actuales 2025) ---------------------------------------
   ['arda guler',             83], ['arda g�ler',           83],
@@ -1687,7 +1687,7 @@ const PLAYER_RATINGS_RAW = [
   ['cliff jones',            82], ['jones cliff',          82], // Welsh winger, 1961 Double
   ['paul gascoigne',         89], // alias guard
   ['gary lineker',           87], // alias guard
-  ['harry kane',             91], // alias guard
+  ['harry kane',             90], // alias guard
   ['son heung-min',          88], // alias guard
   ['christian eriksen',      87], ['eriksen',              87],
   ['jan vertonghen',         84], ['vertonghen',           84], // alias duplicate guard
