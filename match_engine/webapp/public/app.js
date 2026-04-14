@@ -4674,12 +4674,12 @@ function showPreMatch(data, payload) {
         </div>
       </div>
       <div class="pm-hero-team pm-hero-team-b">
-        <div class="pm-hero-ovr pm-hero-ovr-b">${ovrB}</div>
-        <div class="pm-hero-team-info pm-hero-info-b">
+        <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baB)}" alt="" onerror="this.style.display='none'"></div>
+        <div class="pm-hero-team-info">
           <div class="pm-hero-team-name">${escHtml(data.lineups?.teamB?.name?.replace(/\s+\d{4}(-\d{2,4})?(\s+.*)?$/, '').trim() || payload.teamB)}</div>
           ${payload.eraB ? `<div class="pm-hero-team-era">${escHtml(payload.eraB)}</div>` : ''}
         </div>
-        <div class="pm-hero-badge-wrap"><img class="pm-hero-badge" src="${escHtml(baB)}" alt="" onerror="this.style.display='none'"></div>
+        <div class="pm-hero-ovr pm-hero-ovr-b">${ovrB}</div>
       </div>`;
   }
 

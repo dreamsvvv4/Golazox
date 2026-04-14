@@ -3718,10 +3718,39 @@ function _updateClashButton() {
 }
 
 // Picks players by role for a given match mode (prevents 5v5 showing 4 defenders)
-function _pickForMode(players, mode) {
+function _pickForMode(players, mode, formation) {
   const POS_SORT = { GK:0, RB:1, CB:1, LB:1, DM:2, CM:3, RM:3, LM:3, AM:3.5, RW:4, LW:4, ST:4 };
   const sorted   = [...players].sort((a,b) => (POS_SORT[a.position]??3) - (POS_SORT[b.position]??3));
-  if (mode === '11v11' || mode === 'penalties') return sorted.slice(0, 11);
+  if (mode === '11v11' || mode === 'penalties') {
+    // Formation-aware: pick best GK + best DEF/MID/FWD per formation slot
+    // so squads with many GKs or many DEFs don't push forwards out of the visible 11.
+    const parts   = (formation || '4-3-3').split('-').map(Number).filter(n => !isNaN(n));
+    const nDef    = parts[0] || 4;
+    const nFwd    = parts[parts.length - 1] || 3;
+    const nMid    = parts.slice(1, -1).reduce((a, b) => a + b, 0) || (parts.length === 1 ? 6 : 3);
+    const top = arr => [...arr].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    const byPos = {};
+    players.forEach(p => { (byPos[p.position] = byPos[p.position] || []).push(p); });
+    const GKS  = top(byPos.GK  || []);
+    const DEFS = top([...(byPos.CB||[]), ...(byPos.RB||[]), ...(byPos.LB||[])]);
+    const MIDS = top([...(byPos.DM||[]), ...(byPos.CM||[]), ...(byPos.RM||[]), ...(byPos.LM||[]), ...(byPos.AM||[])]);
+    const FWDS = top([...(byPos.ST||[]), ...(byPos.RW||[]), ...(byPos.LW||[])]);
+    const starters = [
+      ...GKS.slice(0, 1),
+      ...DEFS.slice(0, nDef),
+      ...MIDS.slice(0, nMid),
+      ...FWDS.slice(0, nFwd),
+    ].filter(Boolean);
+    // Fill to 11 if formation slots > available players in a category
+    if (starters.length < 11) {
+      const used = new Set(starters.map(p => p.name));
+      for (const p of sorted) {
+        if (starters.length >= 11) break;
+        if (!used.has(p.name)) { starters.push(p); used.add(p.name); }
+      }
+    }
+    return starters.slice(0, 11);
+  }
 
   // Build pool grouped by position
   const byPos = {};
@@ -3756,7 +3785,7 @@ function _pickForMode(players, mode) {
 // Renders the jersey-card grid inside a lookup preview panel.
 // Re-used both from handleLookup and from setMatchMode (mode switch).
 function _renderLookupPlayers(side, data) {
-  const picked = _pickForMode(data.players, _matchMode);
+  const picked = _pickForMode(data.players, _matchMode, data.formation);
   const kitCol  = _getKitColor(data.teamLabel || document.getElementById(`team${side}`)?.value, side.toLowerCase());
   const el      = document.getElementById(`preview-players-${side}`);
   if (!el) return;
