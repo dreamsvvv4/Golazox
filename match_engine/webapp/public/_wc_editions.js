@@ -78,10 +78,10 @@ const _WC_EDITIONS = {
         { slug: 'schweiz', era: '1938', name: 'Suiza', badge: '/img/badges/schweiz.png' },
       ] },
       { label: 'C', teams: [
-        { slug: 'cuba', era: '1938', name: 'Cuba', badge: '/img/badges/cuba.png' },
+        { slug: 'cuba', era: '1938', name: 'Cuba', badge: '/img/badges/cuba.svg' },
         { slug: 'rumania', era: '1938', name: 'Rumania', badge: '/img/badges/rumania.png' },
         { slug: 'ungarn', era: '1938', name: 'Hungría', badge: '/img/badges/hungary.png' },
-        { slug: 'indonesia', era: '1938', name: 'Indonesia', badge: '/img/badges/indonesia.png' },
+        { slug: 'indonesia', era: '1938', name: 'Indonesia', badge: '/img/badges/indonesia.svg' },
       ] },
       { label: 'D', teams: [
         { slug: 'tschechien', era: '1938', name: 'Checoslovaquia', badge: '/img/badges/tschechien.png' },
@@ -278,7 +278,7 @@ const _WC_EDITIONS = {
         { slug: 'deutschland', era: '1974', name: 'Alemania Federal', badge: '/img/badges/deutschland.png' },
         { slug: 'australien', era: '1974', name: 'Australia', badge: '/img/badges/australia.png' },
         { slug: 'chile', era: '1974', name: 'Chile', badge: '/img/badges/chile.png' },
-        { slug: 'ddr', era: '1974', name: 'RDA', badge: '/img/badges/ddr.png' },
+        { slug: 'ddr', era: '1974', name: 'RDA', badge: '/img/badges/ddr.svg' },
       ] },
       { label: 'B', teams: [
         { slug: 'brasilien', era: '1974', name: 'Brasil', badge: '/img/badges/brasilien.png' },
