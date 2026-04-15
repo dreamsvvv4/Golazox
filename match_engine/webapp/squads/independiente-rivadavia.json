@@ -1,0 +1,96 @@
+{
+  "name": "Club Atlético Independiente Rivadavia",
+  "slug": "independiente-rivadavia",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/independiente-rivadavia.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Facundo Bonelli",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Marco Di Césare",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Cristián Ortiz",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Lucas Morales",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Franco Andrada",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Maximiliano Ortiz",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Braian Salvareschi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gerardo Torales",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Elías Gómez",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Brusco",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Bruno Sepúlveda",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Sebastián Ramírez",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Jonatan Gómez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Rodrigo Aliendro",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Jean Franco Ramírez",
+          "position": "ST",
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Ind. Rivadavia (2025/2026)",
+      "teamLabel": "Ind. Rivadavia (2025–26)"
+    }
+  }
+}

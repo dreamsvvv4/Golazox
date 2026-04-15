@@ -1,531 +1,531 @@
-{
-  "slug": "corinthians-sao-paulo",
-  "seasons": {
-    "2012": {
-      "formation": "4-4-2",
-      "players": [
-        {
-          "name": "Júlio César",
-          "position": "GK",
-          "marketValue": 3000000,
-          "rating": 86
-        },
-        {
-          "name": "Cássio",
-          "position": "GK",
-          "marketValue": 700000,
-          "rating": 72
-        },
-        {
-          "name": "Danilo Fernandes",
-          "position": "GK",
-          "marketValue": 200000,
-          "rating": 67
-        },
-        {
-          "name": "Matheus",
-          "position": "GK",
-          "marketValue": 0,
-          "rating": 77
-        },
-        {
-          "name": "Caíque França",
-          "position": "GK",
-          "marketValue": 0,
-          "rating": 77
-        },
-        {
-          "name": "Walter",
-          "position": "GK",
-          "marketValue": 0,
-          "rating": 77
-        },
-        {
-          "name": "Ânderson Polga",
-          "position": "CB",
-          "marketValue": 2800000,
-          "rating": 77
-        },
-        {
-          "name": "Chicão",
-          "position": "CB",
-          "marketValue": 2250000,
-          "rating": 76
-        },
-        {
-          "name": "Gil",
-          "position": "CB",
-          "marketValue": 2250000,
-          "rating": 76
-        },
-        {
-          "name": "Fábio Santos",
-          "position": "CB",
-          "marketValue": 2000000,
-          "rating": 76
-        },
-        {
-          "name": "Wallace",
-          "position": "CB",
-          "marketValue": 1000000,
-          "rating": 73
-        },
-        {
-          "name": "Weldinho",
-          "position": "CB",
-          "marketValue": 1000000,
-          "rating": 73
-        },
-        {
-          "name": "Alessandro",
-          "position": "CB",
-          "marketValue": 800000,
-          "rating": 72
-        },
-        {
-          "name": "Paulo André",
-          "position": "CB",
-          "marketValue": 500000,
-          "rating": 70
-        },
-        {
-          "name": "Uendel",
-          "position": "CB",
-          "marketValue": 500000,
-          "rating": 70
-        },
-        {
-          "name": "André Vinicius",
-          "position": "CB",
-          "marketValue": 150000,
-          "rating": 66
-        },
-        {
-          "name": "Lucas",
-          "position": "CB",
-          "marketValue": 50000,
-          "rating": 62
-        },
-        {
-          "name": "Yago",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Wanderson",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Cléber Reis",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Antônio Carlos",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Felipe",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Igor Fernandes",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Guilherme Andrade",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Rodinei",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Lucão",
-          "position": "CB",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Renato Augusto",
-          "position": "CM",
-          "marketValue": 14000000,
-          "rating": 84
-        },
-        {
-          "name": "Danilo",
-          "position": "CM",
-          "marketValue": 1000000,
-          "rating": 84
-        },
-        {
-          "name": "Paulinho",
-          "position": "CM",
-          "marketValue": 6000000,
-          "rating": 82
-        },
-        {
-          "name": "Ralf",
-          "position": "CM",
-          "marketValue": 4000000,
-          "rating": 79
-        },
-        {
-          "name": "Ibson",
-          "position": "CM",
-          "marketValue": 3500000,
-          "rating": 78
-        },
-        {
-          "name": "Douglas",
-          "position": "CM",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
-          "name": "Jorge Henrique",
-          "position": "CM",
-          "marketValue": 1800000,
-          "rating": 76
-        },
-        {
-          "name": "Edenilson",
-          "position": "CM",
-          "marketValue": 750000,
-          "rating": 72
-        },
-        {
-          "name": "Claudio Maldonado",
-          "position": "CM",
-          "marketValue": 400000,
-          "rating": 70
-        },
-        {
-          "name": "Rodriguinho",
-          "position": "CM",
-          "marketValue": 400000,
-          "rating": 70
-        },
-        {
-          "name": "Nenê Bonilha",
-          "position": "CM",
-          "marketValue": 250000,
-          "rating": 68
-        },
-        {
-          "name": "Willian Arão",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Guilherme",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Diego Macedo",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Giovanni",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Matheuzinho",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Anderson Rosa",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Léo Artur",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Jocinei",
-          "position": "CM",
-          "marketValue": 0,
-          "rating": 76
-        },
-        {
-          "name": "Alexandre Pato",
-          "position": "ST",
-          "marketValue": 34000000,
-          "rating": 87
-        },
-        {
-          "name": "Emerson",
-          "position": "ST",
-          "marketValue": 1000000,
-          "rating": 84
-        },
-        {
-          "name": "Paulinho",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 82
-        },
-        {
-          "name": "Paolo Guerrero",
-          "position": "ST",
-          "marketValue": 6000000,
-          "rating": 80
-        },
-        {
-          "name": "Juan Manuel Martínez",
-          "position": "ST",
-          "marketValue": 3500000,
-          "rating": 78
-        },
-        {
-          "name": "Zhizhao Chen",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 78
-        },
-        {
-          "name": "Douglas Tanque",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 78
-        },
-        {
-          "name": "Leandro",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 78
-        },
-        {
-          "name": "Romarinho",
-          "position": "ST",
-          "marketValue": 0,
-          "rating": 78
-        }
-      ],
-      "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 76,
-        "goalkeeping": 79
-      },
-      "source": "Transfermarkt 🌍 Otros€” Corinthians (2012/2013)",
-      "teamLabel": "Corinthians (2012-13)"
-    },
-    "2025": {
-      "formation": "4-3-3",
-      "players": [
-        {
-          "name": "Hugo Souza",
-          "position": "GK",
-          "rating": 77
-        },
-        {
-          "name": "Matheus Donelli",
-          "position": "GK",
-          "rating": 77
-        },
-        {
-          "name": "Felipe Longo",
-          "position": "GK",
-          "rating": 77
-        },
-        {
-          "name": "Kauê",
-          "position": "GK",
-          "rating": 77
-        },
-        {
-          "name": "Tchoca",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "André Ramalho",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Gustavo Henrique",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Gabriel Paulista",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Renato Santos",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Matheus Bidu",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Hugo",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Fabrizio Angileri",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Matheuzinho",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Pedro Milans",
-          "position": "CB",
-          "rating": 76
-        },
-        {
-          "name": "Raniele",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Allan",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Charles",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Breno Bidon",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "André",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Matheus Pereira",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Alex Santana",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "André Carrillo",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Bahia",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Rodrigo Garro",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Jesse Lingard",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Zakaria Labyad",
-          "position": "CM",
-          "rating": 76
-        },
-        {
-          "name": "Kayke",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Vitinho",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Kaio César",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Dieguinho",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Memphis Depay",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Yuri Alberto",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Gui Negão",
-          "position": "ST",
-          "rating": 78
-        },
-        {
-          "name": "Pedro Raul",
-          "position": "ST",
-          "rating": 78
-        }
-      ],
-      "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
-      },
-      "source": "Transfermarkt 🌍 Otros€” Corinthians (2025/2026)",
-      "teamLabel": "Corinthians (2025-26)"
-    }
-  },
-  "id": 199,
-  "name": "Corinthians",
-  "group": "🌎 América del Sur",
-  "nameEs": "Corinthians",
-  "nameEn": "Corinthians",
-  "badgeLocalPath": "/img/badges/corinthians-sao-paulo.png"
+﻿{
+    "slug":  "corinthians-sao-paulo",
+    "seasons":  {
+                    "2012":  {
+                                 "formation":  "4-4-2",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Júlio César",
+                                                     "position":  "GK",
+                                                     "marketValue":  3000000,
+                                                     "rating":  86
+                                                 },
+                                                 {
+                                                     "name":  "Cássio",
+                                                     "position":  "GK",
+                                                     "marketValue":  700000,
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Danilo Fernandes",
+                                                     "position":  "GK",
+                                                     "marketValue":  200000,
+                                                     "rating":  67
+                                                 },
+                                                 {
+                                                     "name":  "Matheus",
+                                                     "position":  "GK",
+                                                     "marketValue":  0,
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Caíque França",
+                                                     "position":  "GK",
+                                                     "marketValue":  0,
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Walter",
+                                                     "position":  "GK",
+                                                     "marketValue":  0,
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Ânderson Polga",
+                                                     "position":  "CB",
+                                                     "marketValue":  2800000,
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Chicão",
+                                                     "position":  "CB",
+                                                     "marketValue":  2250000,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Gil",
+                                                     "position":  "CB",
+                                                     "marketValue":  2250000,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Fábio Santos",
+                                                     "position":  "CB",
+                                                     "marketValue":  2000000,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Wallace",
+                                                     "position":  "CB",
+                                                     "marketValue":  1000000,
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Weldinho",
+                                                     "position":  "CB",
+                                                     "marketValue":  1000000,
+                                                     "rating":  73
+                                                 },
+                                                 {
+                                                     "name":  "Alessandro",
+                                                     "position":  "CB",
+                                                     "marketValue":  800000,
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Paulo André",
+                                                     "position":  "CB",
+                                                     "marketValue":  500000,
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Uendel",
+                                                     "position":  "CB",
+                                                     "marketValue":  500000,
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "André Vinicius",
+                                                     "position":  "CB",
+                                                     "marketValue":  150000,
+                                                     "rating":  66
+                                                 },
+                                                 {
+                                                     "name":  "Lucas",
+                                                     "position":  "CB",
+                                                     "marketValue":  50000,
+                                                     "rating":  62
+                                                 },
+                                                 {
+                                                     "name":  "Yago",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Wanderson",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Cléber Reis",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Antônio Carlos",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Felipe",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Igor Fernandes",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Guilherme Andrade",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Rodinei",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Lucão",
+                                                     "position":  "CB",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Renato Augusto",
+                                                     "position":  "CM",
+                                                     "marketValue":  14000000,
+                                                     "rating":  84
+                                                 },
+                                                 {
+                                                     "name":  "Danilo",
+                                                     "position":  "CM",
+                                                     "marketValue":  1000000,
+                                                     "rating":  84
+                                                 },
+                                                 {
+                                                     "name":  "Paulinho",
+                                                     "position":  "CM",
+                                                     "marketValue":  6000000,
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Ralf",
+                                                     "position":  "CM",
+                                                     "marketValue":  4000000,
+                                                     "rating":  79
+                                                 },
+                                                 {
+                                                     "name":  "Ibson",
+                                                     "position":  "CM",
+                                                     "marketValue":  3500000,
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Douglas",
+                                                     "position":  "CM",
+                                                     "marketValue":  2500000,
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Jorge Henrique",
+                                                     "position":  "CM",
+                                                     "marketValue":  1800000,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Edenilson",
+                                                     "position":  "CM",
+                                                     "marketValue":  750000,
+                                                     "rating":  72
+                                                 },
+                                                 {
+                                                     "name":  "Claudio Maldonado",
+                                                     "position":  "CM",
+                                                     "marketValue":  400000,
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Rodriguinho",
+                                                     "position":  "CM",
+                                                     "marketValue":  400000,
+                                                     "rating":  70
+                                                 },
+                                                 {
+                                                     "name":  "Nenê Bonilha",
+                                                     "position":  "CM",
+                                                     "marketValue":  250000,
+                                                     "rating":  68
+                                                 },
+                                                 {
+                                                     "name":  "Willian Arão",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Guilherme",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Diego Macedo",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Giovanni",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Matheuzinho",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Anderson Rosa",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Léo Artur",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Jocinei",
+                                                     "position":  "CM",
+                                                     "marketValue":  0,
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Alexandre Pato",
+                                                     "position":  "ST",
+                                                     "marketValue":  34000000,
+                                                     "rating":  87
+                                                 },
+                                                 {
+                                                     "name":  "Emerson",
+                                                     "position":  "ST",
+                                                     "marketValue":  1000000,
+                                                     "rating":  84
+                                                 },
+                                                 {
+                                                     "name":  "Paulinho",
+                                                     "position":  "ST",
+                                                     "marketValue":  0,
+                                                     "rating":  82
+                                                 },
+                                                 {
+                                                     "name":  "Paolo Guerrero",
+                                                     "position":  "ST",
+                                                     "marketValue":  6000000,
+                                                     "rating":  80
+                                                 },
+                                                 {
+                                                     "name":  "Juan Manuel Martínez",
+                                                     "position":  "ST",
+                                                     "marketValue":  3500000,
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Zhizhao Chen",
+                                                     "position":  "ST",
+                                                     "marketValue":  0,
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Douglas Tanque",
+                                                     "position":  "ST",
+                                                     "marketValue":  0,
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Leandro",
+                                                     "position":  "ST",
+                                                     "marketValue":  0,
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Romarinho",
+                                                     "position":  "ST",
+                                                     "marketValue":  0,
+                                                     "rating":  78
+                                                 }
+                                             ],
+                                 "ratings":  {
+                                                 "attack":  83,
+                                                 "midfield":  82,
+                                                 "defense":  76,
+                                                 "goalkeeping":  79
+                                             },
+                                 "source":  "Transfermarkt 🌍 Otros€” Corinthians (2012/2013)",
+                                 "teamLabel":  "Corinthians (2012-13)"
+                             },
+                    "2025":  {
+                                 "formation":  "4-3-3",
+                                 "players":  [
+                                                 {
+                                                     "name":  "Hugo Souza",
+                                                     "position":  "GK",
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Matheus Donelli",
+                                                     "position":  "GK",
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Felipe Longo",
+                                                     "position":  "GK",
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Kauê",
+                                                     "position":  "GK",
+                                                     "rating":  77
+                                                 },
+                                                 {
+                                                     "name":  "Tchoca",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "André Ramalho",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Gustavo Henrique",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Gabriel Paulista",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Renato Santos",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Matheus Bidu",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Hugo",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Fabrizio Angileri",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Matheuzinho",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Pedro Milans",
+                                                     "position":  "CB",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Raniele",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Allan",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Charles",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Breno Bidon",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "André",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Matheus Pereira",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Alex Santana",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "André Carrillo",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Bahia",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Rodrigo Garro",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Jesse Lingard",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Zakaria Labyad",
+                                                     "position":  "CM",
+                                                     "rating":  76
+                                                 },
+                                                 {
+                                                     "name":  "Kayke",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Vitinho",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Kaio César",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Dieguinho",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Memphis Depay",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Yuri Alberto",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Gui Negão",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 },
+                                                 {
+                                                     "name":  "Pedro Raul",
+                                                     "position":  "ST",
+                                                     "rating":  78
+                                                 }
+                                             ],
+                                 "ratings":  {
+                                                 "attack":  78,
+                                                 "midfield":  76,
+                                                 "defense":  76,
+                                                 "goalkeeping":  77
+                                             },
+                                 "source":  "Transfermarkt 🌍 Otros€” Corinthians (2025/2026)",
+                                 "teamLabel":  "Corinthians (2025-26)"
+                             }
+                },
+    "id":  199,
+    "name":  "Corinthians",
+    "group":  "🇧🇷 Brasileirão",
+    "nameEs":  "Corinthians",
+    "nameEn":  "Corinthians",
+    "badgeLocalPath":  "/img/badges/corinthians-sao-paulo.png"
 }

@@ -1,0 +1,96 @@
+{
+  "name": "Club Libertad",
+  "slug": "libertad",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/libertad.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Justo Villar",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Iván Torres",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gustavo Gómez",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Rodrigo Valizuela",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Mathías Villasanti",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Rodrigo Rojas",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Miguel Almirón",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Pablo Velázquez",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Roque Santa Cruz",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Santiago Arzamendia",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Vladimir Muñoz",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Junior Alonso",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gastón Giménez",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Óscar Cardozo",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Club Libertad (2025/2026)",
+      "teamLabel": "Libertad (2025–26)"
+    }
+  }
+}

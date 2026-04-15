@@ -1,6 +1,348 @@
 {
   "slug": "norwegen",
   "seasons": {
+    "1938": {
+      "players": [
+        {
+          "name": "Arne Brustad",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Knut Brynildsen",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Nils Eriksen",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Odd Frantzen",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Kristian Henriksen",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Rolf Holmberg",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Øivind Holmsen",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Arne Ileby",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Magnar Isaksen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rolf Johannessen",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Henry Johansen",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Jørgen Juve",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Reidar Kvammen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sverre Nordby",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Roald Amundsen",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Oddmund Andersen",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Gunnar Andreassen",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hjalmar Andresen",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Sigurd Hansen",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Anker Kihle",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Alf Martinsen",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Sverre Berglie",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1994": {
+      "players": [
+        {
+          "name": "Erik Thorstvedt",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gunnar Halle",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Erland Johnsen",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Rune Bratseth",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Stig Inge Bjørnebye",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jostein Flo",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Erik Mykland",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Øyvind Leonhardsen",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jan Åge Fjørtoft",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kjetil Rekdal",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mini Jakobsen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Frode Grodås",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ola By Rise",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Roger Nilsen",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Karl Petter Løken",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Gøran Sørloth",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Dan Eggen",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Alfie Haaland",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Roar Strand",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Henning Berg",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Sigurd Rushfeldt",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Lars Bohinen",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1998": {
+      "players": [
+        {
+          "name": "Frode Grodås",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gunnar Halle",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ronny Johnsen",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Henning Berg",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Stig Inge Bjørnebye",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ståle Solbakken",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Erik Mykland",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Øyvind Leonhardsen",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Tore André Flo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kjetil Rekdal",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mini Jakobsen",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Thomas Myhre",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Espen Baardsen",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Vegard Heggem",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dan Eggen",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jostein Flo",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Håvard Flo",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Egil Østenstad",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Erik Hoftun",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ole Gunnar Solskjær",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Vidar Riseth",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Roar Strand",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

@@ -148,7 +148,7 @@
   <!-- Full stylesheet — async (non-blocking). Safe: deferred JS executes ~2s+ on
        The inline CSS above ensures .hidden guard and above-fold layout
        are available immediately, reducing FOUC even as full CSS loads. -->
-  <link rel="stylesheet" href="style.min.css?v=96" />
+  <link rel="stylesheet" href="style.min.css?v=99" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1394,14 +1394,14 @@
               <div class="trn-preset-arrow">›</div>
             </button>
 
-            <button class="trn-preset-card" data-preset="wc2026">
+            <button class="trn-preset-card" data-preset="wc-historical">
               <div class="trn-preset-badge trn-badge-wc">
                 <img src="img/trophy-wc.webp" alt="" class="trn-badge-trophy-img" loading="lazy">
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">FIFA World Cup</div>
-                <div class="trn-preset-season">2026</div>
-                <div class="trn-preset-meta">48 selecciones · 12 grupos + KO</div>
+                <div class="trn-preset-season">1930 – 2026</div>
+                <div class="trn-preset-meta">24 ediciones · elige el año</div>
               </div>
               <div class="trn-preset-arrow">›</div>
             </button>
@@ -1436,7 +1436,7 @@
               </div>
               <div class="trn-preset-info">
                 <div class="trn-preset-name">Copa Libertadores</div>
-                <div class="trn-preset-season">2025</div>
+                <div class="trn-preset-season">2026</div>
                 <div class="trn-preset-meta">32 clubes · 8 grupos + KO</div>
               </div>
               <div class="trn-preset-arrow">›</div>
@@ -1663,7 +1663,7 @@
 
     <!-- Subscribe widget: visible to users + Google, builds email list -->
     <div class="footer-subscribe" id="footer-subscribe">
-      <p class="footer-subscribe-label">🔔 Avísame cuando haya nuevos equipos y torneos</p>
+      <p class="footer-subscribe-label">� Suscríbete · Novedades de GolazoX</p>
       <form class="footer-subscribe-form" id="subscribe-form" novalidate>
         <input type="email" name="email" id="subscribe-email" placeholder="tu@email.com" autocomplete="email" required maxlength="200" />
         <button type="submit">Suscribirse</button>
@@ -1687,8 +1687,9 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=84" defer></script>
-  <script src="tournament.min.js?v=36" defer></script>
+  <script src="app.min.js?v=85" defer></script>
+  <script src="_wc_editions.js?v=1" defer></script>
+  <script src="tournament.min.js?v=38" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->

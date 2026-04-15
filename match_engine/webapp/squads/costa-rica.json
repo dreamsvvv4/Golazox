@@ -1,6 +1,715 @@
 {
   "slug": "costa-rica",
   "seasons": {
+    "1990": {
+      "players": [
+        {
+          "name": "Luis Gabelo Conejo",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Vladimir Quesada",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Róger Flores",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Rónald González Brenes",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Marvin Obando",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "José Carlos Chaves",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Hernán Medford",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Germán Chavarría",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alexandre Guimarães",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oscar Ramírez",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Claudio Jara",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Róger Gómez",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Miguel Davis",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Juan Cayasso",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Rónald Marín",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "José Jaikel",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Roy Myers",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Geovanny Jara",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Héctor Marchena",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Mauricio Montero",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Hermidio Barrantes",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Miguel Segura",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "Erick Lonnis",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jervis Drummond",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luis Marín",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mauricio Wright",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gilberto Martínez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Wílmer López",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Rolando Fonseca",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Mauricio Solís",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paulo Wanchope",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Walter Centeno",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rónald Gómez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Winston Parks",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Daniel Vallejos",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Juan José Rodríguez",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Harold Wallace",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Steven Bryce",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Hernán Medford",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Álvaro Mesén",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Rodrigo Cordero",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "William Sunsing",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Pablo Chinchilla",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Castro",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lester Morgan",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2006": {
+      "players": [
+        {
+          "name": "Álvaro Mesén",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jervis Drummond",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luis Marín",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Michael Umaña",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gilberto Martínez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Danny Fonseca",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Christian Bolaños",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Mauricio Solís",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Paulo Wanchope",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Walter Centeno",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rónald Gómez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Leonardo González",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Kurt Bernard",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Randall Azofeifa",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Harold Wallace",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Hernández",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gabriel Badilla",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "José Francisco Porras",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Álvaro Saborío",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Douglas Sequeira",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Víctor Núñez",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Michael Rodríguez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Wardy Alfaro",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jhonny Acosta",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Giancarlo González",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Michael Umaña",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Celso Borges",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Óscar Duarte",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Christian Bolaños",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "David Myrie",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Joel Campbell",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bryan Ruiz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Michael Barrantes",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Waylon Francis",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Óscar Granados",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Randall Brenes",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Júnior Díaz",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Cristian Gamboa",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Yeltsin Tejeda",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Patrick Pemberton",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Roy Miller",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Diego Calvo",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Marco Ureña",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "José Miguel Cubero",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Daniel Cambronero",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jhonny Acosta",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Giancarlo González",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ian Smith",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Celso Borges",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Óscar Duarte",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Christian Bolaños",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Bryan Oviedo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Daniel Colindres",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Bryan Ruiz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Johan Venegas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joel Campbell",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rodney Wallace",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Randall Azofeifa",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Francisco Calvo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Cristian Gamboa",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Yeltsin Tejeda",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Patrick Pemberton",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Kendall Waston",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "David Guzmán",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Marco Ureña",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Kenner Gutiérrez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Leonel Moreira",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Keylor Navas",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Daniel Chacón",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Juan Pablo Vargas",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Keysher Fuller",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Celso Borges",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Óscar Duarte",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Anthony Contreras",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Bryan Oviedo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jewison Bennette",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Bryan Ruiz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Johan Venegas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joel Campbell",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gerson Torres",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Youstin Salas",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Francisco Calvo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Martínez",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Yeltsin Tejeda",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Esteban Alvarado",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Kendall Waston",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Brandon Aguilera",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Douglas López",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rónald Matarrita",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Patrick Sequeira",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

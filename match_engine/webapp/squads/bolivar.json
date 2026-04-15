@@ -1,0 +1,101 @@
+{
+  "name": "Club Bolívar",
+  "slug": "bolivar",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/bolivar.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Guillermo Viscarra",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "José Sagredo",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jesús Sagredo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gustavo Méndez",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Jairo Quinteros",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Leonel Justiniano",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Ramiro Vaca",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Stiven Banguero",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jeyson Chura",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Rodrigo Ramallo",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Marcio Pereyra",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Daniel Vaca",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Jorge Flores",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Diego Bejarano",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Adrián Montaño",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Miguel Moreira",
+          "position": "LW",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Club Bolívar (2025/2026)",
+      "teamLabel": "Bolívar (2025–26)"
+    }
+  }
+}

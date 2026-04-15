@@ -1,8 +1,433 @@
 {
   "slug": "frankreich",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1930": {
+      "players": [
+        {
+          "name": "Numa Andoire",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Marcel Capelle",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Augustin Chantrel",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Edmond Delfour",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Célestin Delmer",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Marcel Langiller",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean Laurent",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lucien Laurent",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ernest Libérati",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "André Maschinot",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Étienne Mattler",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Marcel Pinel",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "André Tassin",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Alex Thépot",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Émile Veinante",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Alexandre Villaplane",
+          "position": "CM",
+          "rating": 75
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Joseph Alcazar",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Alfred Aston",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Georges Beaucourt",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Roger Courtois",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Robert Défossé",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Edmond Delfour",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Célestin Delmer",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Louis Gabrillargues",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Joseph Gonzales",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Fritz Keller",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pierre Korb",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lucien Laurent",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Noël Liétaer",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "René Llense",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Jacques Mairesse",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Étienne Mattler",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jean Nicolas",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Roger Rio",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Alex Thépot",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Jules Vandooren",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Émile Veinante",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Georges Verriest",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Alfred Aston",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean Bastien",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Abdelkader Ben Bouali",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "François Bourbotte",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Michel Brusseaux",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Hector Cazenave",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roger Courtois",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Julien Darui",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Edmond Delfour",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Laurent Di Lorto",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Raoul Diagne",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oscar Heisserer",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lucien Jasseron",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Auguste Jordan",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ignace Kowalczyk",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "René Llense",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Étienne Mattler",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jean Nicolas",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Martin Povolny",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jules Vandooren",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Émile Veinante",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Mario Zatelli",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "François Remetter",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "César Ruminski",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Claude Abbes",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Lazare Gianessi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jacques Grimonpon",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Raymond Kaelbel",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roger Marche",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Guillaume Bieganski",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Antoine Cuissard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Robert Jonquet",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Xercès Louis",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jean-Jacques Marcel",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Abderrahmane Mahjoub",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Armand Penverne",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Abdelaziz Ben Tifour",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "René Dereuddre",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Léon Glovacki",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Raymond Kopa",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Michel Leblond",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ernest Schultz",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "André Strappe",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Jean Vincent",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
       "players": [
         {
           "name": "Daniel Eon",
@@ -174,15 +599,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 74,
-        "midfield": 74,
-        "defense": 73,
-        "goalkeeping": 74
-      },
-      "source": "Transfermarkt 🌍 Otros€” france (1966/1967)",
-      "teamLabel": "france (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Marcel Aubour",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Marcel Artelesa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Edmond Baraffe",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Joseph Bonnel",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Bernard Bosquier",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Robert Budzynski",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "André Chorda",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Nestor Combin",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Didier Couécou",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Héctor De Bourgoing",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gabriel De Michele",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jean Djorkaeff",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Philippe Gondet",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gérard Hausser",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Yves Herbet",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Robert Herbin",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Lucien Muller",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jean-Claude Piumi",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Laurent Robuschi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jacques Simon",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Georges Carnus",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Johnny Schuth",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

@@ -1,0 +1,96 @@
+{
+  "name": "Independiente Santa Fe",
+  "slug": "independiente-santa-fe",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/independiente-santa-fe.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Leandro Castellanos",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Maicol Balanta",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jhon Lucumí",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Santiago Montoya",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Juan Camilo Salcedo",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Héctor Urrego",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Gonzalo Castellani",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Hugo Rodallega",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Neyder Lozano",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Edison Toloza",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Luis Díaz",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Gerardo Ortiz",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "William Tesillo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Kelvin Osorio",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Rivas",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "source": "Transfermarkt — Independiente Santa Fe (2025/2026)",
+      "teamLabel": "Ind. Santa Fe (2025–26)"
+    }
+  }
+}

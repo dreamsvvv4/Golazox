@@ -1,198 +1,1013 @@
 {
   "slug": "ungarn",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "István Avar",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Sándor Bíró",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "János Dudás",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Gyula Futó",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "József Háda",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Tibor Kemény",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Gyula Lázár",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Imre Markos",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "István Palotás",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gyula Polgár",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "György Sárosi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rezső Somlai",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "László Sternberg",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Antal Szabó",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Gábor P. Szabó",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Antal Szalay",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "György Szűcs",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "István Tamássy",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Pál Teleki",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Géza Toldi",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "József Vágó",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jenő Vincze",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "István Balogh",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Mihály Bíró",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Sándor Bíró",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "László Cseh",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "János Dudás",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "József Háda",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Vilmos Kohut",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Lajos Korányi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gyula Lázár",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "József Pálinkás",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Gyula Polgár",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Béla Sárosi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "György Sárosi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ferenc Sas",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Antal Szabó",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Antal Szalay",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "György Szűcs",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Pál Titkos",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Géza Toldi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "József Turay",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Jenő Vincze",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Gyula Zsengellér",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
     "1954": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gyula Grosics",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jenő Buzánszky",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gyula Lóránt",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mihály Lantos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "József Bozsik",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "József Zakariás",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "József Tóth",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Sándor Kocsis",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nándor Hidegkuti",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ferenc Puskás",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Zoltán Czibor",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Béla Kárpáti",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Pál Várhidi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Imre Kovács",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ferenc Szojka",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "László Budai",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ferenc Machos",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Lajos Csordás",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Péter Palotás",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mihály Tóth",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Sándor Gellér",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Géza Gulyás",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
       "players": [
         {
           "name": "Gyula Grosics",
           "position": "GK",
           "marketValue": 0,
-          "rating": 88
+          "rating": 82
         },
         {
           "name": "János Palotai",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sándor Gellér",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Lajos Faragó",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Géza Oláh",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Tibor Komáromi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Géza Gulyás",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Gyula Lóránt",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Gyula Teleki",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Pál Várhidi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Mihály Lantos",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jenő Buzánszky",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Béla Kárpáti",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Antal Kotász",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "József Zakariás",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Imre Kovács",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ferenc Szojka",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "József Bozsik",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Mihály Tóth",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ferenc Puskás",
           "position": "ST",
           "marketValue": 0,
-          "rating": 96
+          "rating": 82
         },
         {
           "name": "Sándor Kocsis",
           "position": "ST",
           "marketValue": 0,
-          "rating": 90
+          "rating": 82
         },
         {
           "name": "Máté Fenyvesi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Zoltán Czibor",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "József Tóth",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Nándor Hidegkuti",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Károly Sándor",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "László Budai",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ferenc Machos",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Lajos Csordás",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Péter Palotás",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         }
-      ],
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "József Gelei",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Sándor Mátrai",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Kálmán Mészöly",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Mihály Dunai",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ferenc Sipos",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "László Puskás",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Ferenc Bene",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "János Farkas",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Flórián Albert",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Dezső Novák",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Imre Mathesz",
+          "position": "LW",
+          "rating": 76
+        }
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Antal Szentmihályi",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Benő Káposzta",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sándor Mátrai",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kálmán Sóvári",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kálmán Mészöly",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ferenc Sipos",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ferenc Bene",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Zoltán Varga",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Flórián Albert",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "János Farkas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gyula Rákosi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Máté Fenyvesi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Imre Mathesz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "István Nagy",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Dezső Molnár",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Lajos Tichy",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Gusztáv Szepesi",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Kálmán Ihász",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Lajos Puskás",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Antal Nagy",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "József Gelei",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "István Géczi",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-3-3",
+      "teamLabel": "Hungría (1970)",
+      "source": "Hungary - World Cup 1970",
       "ratings": {
-        "attack": 91,
-        "midfield": 89,
-        "defense": 84,
-        "goalkeeping": 88
+        "attack": 77,
+        "midfield": 75,
+        "defense": 73,
+        "goalkeeping": 72
       },
-      "source": "Transfermarkt — Hungary (1954/1955)",
-      "teamLabel": "Hungary (1954-55)"
+      "players": [
+        {
+          "name": "Antal Szentmihályi",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Sándor Mátrai",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Lajos Dunai",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Mihály Dunai",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Lajos Kocsis",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Lajos Szűcs",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "László Fazekas",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "István Szoke",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ferenc Bene",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Ede Dunai",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Zoltán Varga",
+          "position": "LW",
+          "rating": 77
+        }
+      ]
+    },
+    "1978": {
+      "formation": "4-4-2",
+      "teamLabel": "Hungría (1978)",
+      "source": "Hungary - World Cup 1978",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Sándor Gujdár",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "József Tóth",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Tibor Rab",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Miklós Páncsics",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "László Balint",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Imre Garaba",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Tibor Nyilasi",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "László Fazekas",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "András Töröcsik",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Sándor Zombori",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Karoly Csapo",
+          "position": "ST",
+          "rating": 72
+        }
+      ]
+    },
+    "1982": {
+      "players": [
+        {
+          "name": "Ferenc Mészáros",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Győző Martos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "László Bálint",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "József Tóth",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sándor Müller",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Imre Garaba",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "László Fazekas",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Tibor Nyilasi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "András Törőcsik",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "László Kiss",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gábor Pölöskei",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lázár Szentes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tibor Rab",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Sándor Sallai",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Béla Bodonyi",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ferenc Csongrádi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Károly Csapó",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Attila Kerekes",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "József Varga",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "József Csuhay",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Béla Katzirz",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Imre Kiss",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1986": {
+      "players": [
+        {
+          "name": "Ferenc Mészáros",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Péter Várhidi",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Tibor Rab",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Imre Garaba",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "László Balint",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Tibor Nyilasi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Laszlo Fazekas",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sándor Sallai",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "László Kiss",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Géza Toldi",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "György Kerekes",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

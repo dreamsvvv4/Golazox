@@ -1,6 +1,343 @@
 {
   "slug": "agypten",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "Mohammed Bakhati",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Hassan El-Far",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Mahmoud El-Nigero",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ali El-Kaf",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yacout El-Soury",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Mahmoud 'El-Tetsh' Mokhtar",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Aziz Fahmy",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Abdulrahman Fawzi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ahmed Halim Ibrahim",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hamidu",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mohammed Hassan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hafez Kasseb",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Latif",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Labib Mahmoud",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Mustafa Mansour",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Kamel Mosaoud",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ismail Rafaat",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hassan Raghab",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mostafa Taha",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Moustafa Helmi Youssef",
+          "position": "CM",
+          "rating": 73
+        }
+      ]
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Ahmed Shobair",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Ibrahim Hassan",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Rabie Yassin",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Hany Ramzy",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Hesham Yakan",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ashraf Kasem",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ismail Youssef",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Magdi Abdelghani",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hossam Hassan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gamal Abdel-Hamid",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Tarek Soliman",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Taher Abouzeid",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ahmed Ramzy",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Alaa Maihoub",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Saber Eid",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Magdy Tolba",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ayman Shawky",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Osama Orabi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Adel Abdel Rahman",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ahmed El-Kass",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ayman Taher",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Thabet El-Batal",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Essam El Hadary",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Ali Gabr",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ahmed Elmohamady",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Omar Gaber",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Sam Morsy",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ahmed Hegazi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ahmed Fathy",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Tarek Hamed",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Marwan Mohsen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Mohamed Salah",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kahraba",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ayman Ashraf",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Abdel Shafy",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ramadan Sobhi",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Mahmoud Hamdy",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Sherif Ekramy",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Mohamed Elneny",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Shikabala",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Abdallah El Said",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Saad Samir",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Trézéguet",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Amr Warda",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Mohamed El Shenawy",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

@@ -7,13 +7,126 @@
   "badgeLocalPath": "/img/badges/rusia.png",
   "id": "urss",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1958": {
       "players": [
         {
           "name": "Lev Yashin",
           "position": "GK",
-          "rating": 97
+          "rating": 81
+        },
+        {
+          "name": "Vladimir Kesarev",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Konstantin Krizhevsky",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Boris Kuznetsov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yuri Voinov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Igor Netto",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "German Apukhtin",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Valentin Ivanov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nikita Simonyan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sergei Salnikov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Anatoli Ilyin",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Vladimir Maslachenko",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Vladimir Belyayev",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Leonid Ostrovskiy",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Anatoli Maslyonkin",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Viktor Tsarev",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Aleksandr Ivanov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Valentin Bubukin",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gennadi Gusarov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Yuri Falin",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Genrich Fedosov",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Vladimir Yerokhin",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "Lev Yashin",
+          "position": "GK",
+          "rating": 82
         },
         {
           "name": "Vladimir Ponomarev",
@@ -23,7 +136,7 @@
         {
           "name": "Albert Shesternyov",
           "position": "CB",
-          "rating": 87
+          "rating": 82
         },
         {
           "name": "Vasyl Turyansky",
@@ -38,22 +151,22 @@
         {
           "name": "Valeriy Voronin",
           "position": "CM",
-          "rating": 88
+          "rating": 82
         },
         {
           "name": "Gennady Logofet",
           "position": "DM",
-          "rating": 83
+          "rating": 82
         },
         {
           "name": "Igor Chislenko",
           "position": "RM",
-          "rating": 85
+          "rating": 82
         },
         {
           "name": "Slava Metreveli",
           "position": "RW",
-          "rating": 84
+          "rating": 82
         },
         {
           "name": "Eduard Malofeev",
@@ -83,15 +196,123 @@
         {
           "name": "Anatoli Banishevskiy",
           "position": "ST",
-          "rating": 83
+          "rating": 82
         }
-      ],
-      "ratings": {
-        "attack": 83,
-        "midfield": 84,
-        "defense": 83,
-        "goalkeeping": 88
-      }
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Lev Yashin",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Viktor Serebryanikov",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Leonid Ostrovskiy",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Vladimir Ponomaryov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Valentin Afonin",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Albert Shesternyov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Murtaz Khurtsilava",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Yozhef Sabo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Viktor Getmanov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Vasiliy Danilov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Igor Chislenko",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Valery Voronin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alexey Korneyev",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Georgi Sichinava",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Galimzyan Khusainov",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Slava Metreveli",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Valeriy Porkujan",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Anatoliy Banishevskiy",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Eduard Malofeyev",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Eduard Markarov",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Anzor Kavazashvili",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Viktor Bannikov",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",
@@ -265,6 +486,120 @@
         "goalkeeping": 82
       }
     },
+    "1986": {
+      "players": [
+        {
+          "name": "Rinat Dasayev",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Volodymyr Bezsonov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Aleksandr Chivadze",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gennady Morozov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Anatoliy Demyanenko",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandr Bubnov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ivan Yaremchuk",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Pavlo Yakovenko",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oleksandr Zavarov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oleh Kuznetsov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Oleh Blokhin",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Andriy Bal",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hennadiy Litovchenko",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sergey Rodionov",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Nikolay Larionov",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Viktor Chanov",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Vadym Yevtushenko",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Oleh Protasov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ihor Belanov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sergei Aleinikov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Vasyl Rats",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Serhiy Krakovskiy",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "1988": {
       "formation": "4-4-2",
       "players": [
@@ -350,6 +685,120 @@
         "defense": 83,
         "goalkeeping": 82
       }
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Rinat Dasayev",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Volodymyr Bezsonov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Vagiz Khidiyatullin",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Oleh Kuznetsov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Anatoliy Demyanenko",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vasyl Rats",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Sergei Aleinikov",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Gennadiy Lytovchenko",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oleksandr Zavarov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oleh Protasov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Igor Dobrovolski",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandr Borodyuk",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Akhrik Tsveiba",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Volodymyr Lyutyi",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ivan Yaremchuk",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Viktor Chanov",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Andrei Zygmantovich",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Igor Shalimov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sergei Fokin",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Sergei Gorlukovich",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Valeri Broshin",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Aleksandr Uvarov",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     }
   }
 }

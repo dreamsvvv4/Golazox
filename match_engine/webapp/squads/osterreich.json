@@ -1,6 +1,348 @@
 {
   "slug": "osterreich",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "Josef Bican",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Georg Braun",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Franz Cisar",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Friederich Franzl",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Josef Hassmann",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Leopold Hofmann",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Johann Horvath",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Anton Janda",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Matthias Kaburek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Peter Platzer",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Rudolf Raftl",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Anton Schall",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Willibald Schmaus",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Karl Sesta",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Matthias Sindelar",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Josef Smistik",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Josef Stroh",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Johann Urbanek",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Rudolf Viertl",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Franz Wagner",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Hans Walzhofer",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Karl Zischek",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Kurt Schmied",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gerhard Hanappi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ernst Happel",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Leopold Barschandt",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ernst Ocwirk",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Karl Koller",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Robert Körner",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Walter Schleger",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Theodor Wagner",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Erich Probst",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alfred Körner",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Karl Stotz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Walter Kollmann",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Karl Giesser",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Franz Pelikan",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Walter Zeman",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Alfred Teinitzer",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Johann Riegler",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Robert Dienst",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Paul Halla",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ernst Stojaspal",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Walter Haummer",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Rudolf Szanwald",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Paul Halla",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ernst Happel",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Franz Swoboda",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gerhard Hanappi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Karl Koller",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Walter Horak",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Paul Kozlicek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hans Buzek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alfred Körner",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Helmut Senekowitsch",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kurt Schmied",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Walter Schleger",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Josef Hamerl",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Walter Kollmann",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Karl Stotz",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ernst Kozlicek",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Leopold Barschandt",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Robert Dienst",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Herbert Ninaus",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ignaz Puschnik",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Bruno Engelmeier",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "1966": {
       "formation": "4-4-2",
       "players": [

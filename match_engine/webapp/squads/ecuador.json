@@ -1,6 +1,482 @@
 {
   "slug": "ecuador",
   "seasons": {
+    "2002": {
+      "players": [
+        {
+          "name": "José Francisco Cevallos",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Augusto Poroso",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Iván Hurtado",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ulises de la Cruz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alfonso Obregón",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Raúl Guerrón",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Nicolás Asencio",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Luis Gómez",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Iván Kaviedes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Álex Aguinaga",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Agustín Delgado",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Oswaldo Ibarra",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ángel Fernández",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Juan Carlos Burbano",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Marlon Ayoví",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Cléber Chalá",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Giovanny Espinoza",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Carlos Tenorio",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Édison Méndez",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Edwin Tenorio",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Wellington Sánchez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Daniel Viteri",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Walter Ayoví",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2006": {
+      "players": [
+        {
+          "name": "Edwin Villafuerte",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jorge Guagua",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Iván Hurtado",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ulises de la Cruz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "José Luis Perlaza",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Patricio Urrutia",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Christian Lara",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Edison Méndez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Félix Borja",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Iván Kaviedes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Agustín Delgado",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Cristian Mora",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Paúl Ambrosi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Segundo Castillo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Marlon Ayoví",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Giovanny Espinoza",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Néicer Reasco",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Luis Saritama",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Edwin Tenorio",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Tenorio",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Damián Lanza",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Christian Benítez",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Máximo Banguera",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jorge Guagua",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Frickson Erazo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Juan Carlos Paredes",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Renato Ibarra",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Christian Noboa",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jefferson Montero",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Édison Méndez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joao Rojas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Walter Ayoví",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Felipe Caicedo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Adrián Bone",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Enner Valencia",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Oswaldo Minda",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Michael Arroyo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jaime Ayoví",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Óscar Bagüí",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Luis Saritama",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Fidel Martínez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Gabriel Achilier",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Alexander Domínguez",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Gruezo",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Hernán Galíndez",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Félix Torres",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Piero Hincapié",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Robert Arboleda",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "José Cifuentes",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Willian Pacho",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Pervis Estupiñán",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Gruezo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ayrton Preciado",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Romario Ibarra",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Michael Estrada",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Moisés Ramírez",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Enner Valencia",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Xavier Arreaga",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ángel Mena",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ángelo Preciado",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Diego Palacios",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Gonzalo Plata",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sebas Méndez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Alan Franco",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Alexander Domínguez",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

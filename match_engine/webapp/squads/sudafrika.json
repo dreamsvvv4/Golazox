@@ -1,6 +1,363 @@
 {
   "slug": "sudafrika",
   "seasons": {
+    "1998": {
+      "players": [
+        {
+          "name": "Hans Vonk",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Themba Mnguni",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "David Nyathi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Willem Jackson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mark Fish",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Phil Masinga",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Quinton Fortune",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Alfred Phiri",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Shaun Bartlett",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Moshoeu",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Helman Mkhalele",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Brendan Augustine",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Delron Buckley",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jerry Sikhosana",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Doctor Khumalo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Brian Baloyi",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Benni McCarthy",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Lebogang Morula",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Lucas Radebe",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "William Mokoena",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Pierre Issa",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Paul Evans*",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Simon Gopane*",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "Hans Vonk",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Cyril Nzama",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Bradley Carnell",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Aaron Mokoena",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jacob Lekgetho",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "MacBeth Sibaya",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Quinton Fortune",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Thabo Mngomeni",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "MacDonald Mukansi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Bennett Mnguni",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jabu Pule",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Teboho Mokoena",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Pierre Issa",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Siyabonga Nomvethe",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Sibusiso Zuma",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Andre Arendse",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Benni McCarthy",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Delron Buckley",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Lucas Radebe",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Calvin Marlin",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Steven Pienaar",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Thabang Molefe",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "George Koumantarakis",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Moeneeb Josephs",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Siboniso Gaxa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Tsepo Masilela",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Aaron Mokoena",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Anele Ngcongca",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "MacBeth Sibaya",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Lance Davids",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Siphiwe Tshabalala",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Katlego Mphela",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Steven Pienaar",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Teko Modise",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Reneilwe Letsholonyane",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Kagisho Dikgacoi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Matthew Booth",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Lucas Thwala",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Itumeleng Khune",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Bernard Parker",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Siyabonga Nomvethe",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Surprise Moriri",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Bongani Khumalo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Siyabonga Sangweni",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Shu-Aib Walters",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Thanduyise Khuboni",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-2-3-1",
       "players": [

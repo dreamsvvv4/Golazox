@@ -1,6 +1,120 @@
 {
   "slug": "jamaika",
   "seasons": {
+    "1998": {
+      "players": [
+        {
+          "name": "Warren Barrett",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Stephen Malcolm",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Chris Dawes",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Linval Dixon",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ian Goodison",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Fitzroy Simpson",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Peter Cargill",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Marcus Gayle",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Andy Williams",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Walter Boyd",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Theodore Whitmore",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Dean Sewell",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Aaron Lawrence",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Donovan Ricketts",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Ricardo Gardner",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Robbie Earle",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Onandi Lowe",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Deon Burton",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Frank Sinclair",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Darryl Powell",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Durrant Brown",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Paul Hall",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

@@ -1,0 +1,96 @@
+{
+  "name": "Deportes Tolima",
+  "slug": "deportes-tolima",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/deportes-tolima.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Álvaro Montero",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Juan García",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Ánderson Plata",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Julián Quiñones",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Deinner Quiñones",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Yeison Gordillo",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Juan Guillermo Cuadrado",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Brayan Angulo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Jader Obrian",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Dayro Moreno",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Larry Angulo",
+          "position": "LW",
+          "rating": 76
+        },
+        {
+          "name": "Harold Rivera",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Marcelino Carreazo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Leonardo Castro",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Rafael Robayo",
+          "position": "ST",
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 75,
+        "goalkeeping": 75
+      },
+      "source": "Transfermarkt — Deportes Tolima (2025/2026)",
+      "teamLabel": "Deportes Tolima (2025–26)"
+    }
+  }
+}

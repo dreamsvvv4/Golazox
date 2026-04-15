@@ -3,6 +3,353 @@
   "name": "Ireland",
   "badgeLocalPath": "/img/badges/ireland.png",
   "seasons": {
+    "1990": {
+      "players": [
+        {
+          "name": "Packie Bonner",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Chris Morris",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Steve Staunton",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mick McCarthy",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kevin Moran",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ronnie Whelan",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Paul McGrath",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ray Houghton",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "John Aldridge",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tony Cascarino",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kevin Sheedy",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "David O'Leary",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Andy Townsend",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Chris Hughton",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Bernie Slaven",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "John Sheridan",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Niall Quinn",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Frank Stapleton",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "David Kelly",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "John Byrne",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Alan McLoughlin",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Gerry Peyton",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1994": {
+      "players": [
+        {
+          "name": "Packie Bonner",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Denis Irwin",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Terry Phelan",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kevin Moran",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Paul McGrath",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roy Keane",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Andy Townsend",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ray Houghton",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "John Aldridge",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Sheridan",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Steve Staunton",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gary Kelly",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Alan Kernaghan",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Phil Babb",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Tommy Coyne",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Tony Cascarino",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Eddie McGoldrick",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ronnie Whelan",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Alan McLoughlin",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "David Kelly",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Jason McAteer",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Alan Kelly",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "Shay Given",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Steve Finnan",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ian Harte",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kenny Cunningham",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Steve Staunton",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roy Keane*",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jason McAteer",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Matt Holland",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Damien Duff",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Robbie Keane",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kevin Kilbane",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mark Kinsella",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "David Connolly",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gary Breen",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Richard Dunne",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dean Kiely",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Niall Quinn",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Gary Kelly",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Clinton Morrison",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Andrew O'Brien",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Steven Reid",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Lee Carsley",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Alan Kelly",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-2-3-1",
       "players": [

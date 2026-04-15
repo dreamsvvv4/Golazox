@@ -1,6 +1,482 @@
 {
   "slug": "serbien",
   "seasons": {
+    "2006": {
+      "players": [
+        {
+          "name": "Dragoslav Jevrić",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Ivan Ergić",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ivica Dragutinović",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Igor Duljaj",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Nemanja Vidić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Goran Gavrančić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ognjen Koroman",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Mateja Kežman",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Savo Milošević",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dejan Stanković",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Predrag Đorđević",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oliver Kovačević",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Dušan Basta",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nenad Đorđević",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Milan Dudić",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dušan Petković",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Albert Nađ",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Zvonimir Vukić",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nikola Žigić",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mladen Krstajić",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Danijel Ljuboja",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Saša Ilić",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Vladimir Stojković",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Vladimir Stojković",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Antonio Rukavina",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Aleksandar Kolarov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gojko Kačar",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Nemanja Vidić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Branislav Ivanović",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Zoran Tošić",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Danko Lazović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marko Pantelić",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dejan Stanković",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nenad Milijaš",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Bojan Isailović",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandar Luković",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Milan Jovanović",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Nikola Žigić",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ivan Obradović",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Miloš Krasić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Miloš Ninković",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Radosav Petrović",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Neven Subotić",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Dragan Mrđa",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Zdravko Kuzmanović",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Anđelko Đuričić",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Vladimir Stojković",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Antonio Rukavina",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Duško Tošić",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luka Milivojević",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Uroš Spajić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Branislav Ivanović",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Andrija Živković",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandar Prijović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dušan Tadić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandar Kolarov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Predrag Rajković",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Miloš Veljković",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Milan Rodić",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Nikola Milenković",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Marko Grujić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Filip Kostić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Nemanja Radonjić",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Luka Jović",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Sergej Milinković-Savić",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Nemanja Matić",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Adem Ljajić",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Marko Dmitrović",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Marko Dmitrović",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Strahinja Pavlović",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Strahinja Eraković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nikola Milenković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Miloš Veljković",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Nemanja Maksimović",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Nemanja Radonjić",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Nemanja Gudelj",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandar Mitrović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dušan Tadić",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luka Jović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Predrag Rajković",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Stefan Mitrović",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Andrija Živković",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Srđan Babić",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Saša Lukić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Filip Kostić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Dušan Vlahović",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Uroš Račić",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Sergej Milinković-Savić",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Filip Đuričić",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Darko Lazović",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Vanja Milinković-Savić",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

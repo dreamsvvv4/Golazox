@@ -1,246 +1,1392 @@
 {
   "slug": "sudkorea",
   "seasons": {
+    "1954": {
+      "players": [
+        {
+          "name": "Hong Deok-young",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Park Kyu-chung",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Park Jae-seung",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kang Chang-gi",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Lee Sang-yi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Min Byung-dae",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lee Soo-nam",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Choi Chung-min",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Woo Sang-kwon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sung Nak-woon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Chung Nam-sik",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ham Heung-chul",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Li Jong-kap",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Han Chang-wha",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Kim Ji-sung",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Chu Yung-kwang",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Park Il-kap",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Choi Yung-keun",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Li Ki-joo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Chung Kook-chin",
+          "position": "ST",
+          "rating": 74
+        }
+      ]
+    },
+    "1986": {
+      "players": [
+        {
+          "name": "Cho Byung-deuk",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Park Kyung-hoon",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Chung Jong-soo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Cho Kwang-rae",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Chung Yong-hwan",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lee Tae-ho",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Kim Jong-boo",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Cho Young-jeung",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Choi Soon-ho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Park Chang-sun",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Cha Bum-kun",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kim Pyung-seok",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Noh Soo-jin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Cho Min-kook",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Yoo Byung-ok",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Kim Joo-sung",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Huh Jung-moo",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Kim Sam-soo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Byun Byung-joo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Kim Yong-se",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Oh Yun-kyo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Kang Deuk-soo",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Kim Poong-joo",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Park Kyung-hoon",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Choi Kang-hee",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yoon Deok-yeo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Chung Yong-hwan",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lee Tae-ho",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Noh Soo-jin",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Chung Hae-won",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hwangbo Kwan",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Lee Sang-yoon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Byun Byung-joo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Heung-sil",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Chung Jong-soo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Choi Soon-ho",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Cho Min-kook",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Kim Joo-sung",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gu Sang-bum",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Hwang Sun-hong",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jeong Gi-dong",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Choi In-young",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Lee Young-jin",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1994": {
+      "players": [
+        {
+          "name": "Choi In-young",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Chung Jong-son",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Lee Jong-hwa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Pan-keun",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Park Jung-bae",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lee Young-jin",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Shin Hong-gi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Noh Jung-yoon",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Kim Joo-sung",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ko Jeong-woon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Seo Jung-won",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Choi Young-il",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "An Ik-soo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Choi Dae-shik",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Cho Jin-ho",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ha Seok-ju",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gu Sang-bum",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Hwang Sun-hong",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Choi Moon-sik",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Park Chul-woo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Lee Woon-jae",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1998": {
+      "players": [
+        {
+          "name": "Kim Byung-ji",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Choi Sung-yong",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Lee Lim-saeng",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Choi Young-il",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Lee Min-sung",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Yoo Sang-chul",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Kim Do-keun",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Noh Jung-yoon",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Kim Do-hoon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Choi Yong-soo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Seo Jung-won",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Sang-hun",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Kim Tae-young",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ko Jong-soo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Lee Sang-yoon",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Jang Hyung-seok",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Ha Seok-ju",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hwang Sun-hong",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jang Dae-il",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Lee Dong-gook",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Seo Dong-myung",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2002": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lee Woon-jae",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Hyun Young-min",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Choi Sung-yong",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Choi Jin-cheul",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Nam-il",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Yoo Sang-chul",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Kim Tae-young",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Choi Tae-uk",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Seol Ki-hyeon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Young-pyo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Choi Yong-soo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kim Byung-ji",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Lee Eul-yong",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Lee Chun-soo",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Lee Min-sung",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Cha Du-ri",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Yoon Jong-hwan",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hwang Sun-hong",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ahn Jung-hwan",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Park Ji-sung",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Song Chong-gug",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Choi Eun-sung",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2006": {
+      "players": [
+        {
+          "name": "Lee Woon-jae",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Kim Young-chul",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Dong-jin",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Choi Jin-cheul",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Nam-il",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Kim Jin-kyu",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Park Ji-sung",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Kim Do-heon",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ahn Jung-hwan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Park Chu-young",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Seol Ki-hyeon",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Young-pyo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Lee Eul-yong",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Lee Chun-soo",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Baek Ji-hoon",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Chung Kyung-ho",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Lee Ho",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Kim Sang-sik",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Cho Jae-jin",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Kim Yong-dae",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Kim Young-kwang",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Song Chong-gug",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Cho Won-hee",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2010": {
       "players": [
         {
           "name": "Yong-dae Kim",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Woon-jae Lee",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Byung-ji Kim",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Eun-sung Choi",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jung-hyuk Kwon",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Myung-bo Hong",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jae-won Sim",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Byeong-guk Jo",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Lim-saeng Lee",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jin-cheul Choi",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Tae-young Kim",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sung-hwan Cho",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Young-min Hyeon",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Young-pyo Lee",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Du-ri Cha",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Chong-gug Song",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Min-sung Lee",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Dong-keun Shin",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sung-yong Choi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Nam-il Kim",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sang-sik Kim",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Yo-seb Park",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sang-chul Yoo",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Do-keun Kim",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jong-hwan Yoon",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Eul-yong Lee",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Tae-wook Choi",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ji-sung Park",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ki-hyeon Seol",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Seung-hyun Kim",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Chun-soo Lee",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jung-hwan Ahn",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Do-hoon Kim",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Yong-soo Choi",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Dae-eui Kim",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Sun-hong Hwang",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Hyo-yeon An",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Dong-gook Lee",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         }
-      ],
-      "ratings": {
-        "attack": 84,
-        "midfield": 77,
-        "defense": 83,
-        "goalkeeping": 79
-      },
-      "source": "Transfermarkt — South Korea (2002/2003)",
-      "teamLabel": "South Korea (2002-03)"
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Jung Sung-ryong",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Kim Chang-soo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yun Suk-young",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kwak Tae-hwi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Young-gwon",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Hwang Seok-ho",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Kim Bo-kyung",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ha Dae-sung",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Son Heung-min",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Park Chu-young",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Keun-ho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Yong",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Koo Ja-cheol",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Han Kook-young",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Park Jong-woo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ki Sung-yueng",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Lee Chung-yong",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Kim Shin-wook",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ji Dong-won",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Hong Jeong-ho",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Kim Seung-gyu",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Park Joo-ho",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lee Bum-young",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Kim Seung-gyu",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Lee Yong",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jung Seung-hyun",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Oh Ban-suk",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yun Young-sun",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Park Joo-ho",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Son Heung-min",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ju Se-jong",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Kim Shin-wook",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Seung-woo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hwang Hee-chan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kim Min-woo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Koo Ja-cheol",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hong Chul",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jung Woo-young",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ki Sung-yueng",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Lee Jae-sung",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Moon Seon-min",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Kim Young-gwon",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jang Hyun-soo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Kim Jin-hyeon",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Go Yo-han",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jo Hyeon-woo",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Kim Seung-gyu",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Yoon Jong-gyu",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Jin-su",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kim Min-jae",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jung Woo-young",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Hwang In-beom",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Son Heung-min",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Paik Seung-ho",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Cho Gue-sung",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lee Jae-sung",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hwang Hee-chan",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Song Bum-keun",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Son Jun-ho",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hong Chul",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Kim Moon-hwan",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Hwang Ui-jo",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Na Sang-ho",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Lee Kang-in",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Kim Young-gwon",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Kwon Kyung-won",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jo Hyeon-woo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Kwon Chang-hoon",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Kim Tae-hwan",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

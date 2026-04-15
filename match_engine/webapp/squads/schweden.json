@@ -1,6 +1,452 @@
 {
   "slug": "schweden",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "Ernst Andersson",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Otto Andersson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sven Andersson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nils Axelsson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Lennart Bunke",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rune Carlsson",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Victor Carlund",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Gösta Dunker",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ragnar Gustavsson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Carl-Erik Holmberg",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sture Hult",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Gunnar Jansson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sven Jonasson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tore Keller",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Knut Kroon",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Harry Lundahl",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Gunnar Olsson",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Anders Rydberg",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Nils Rosén",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Arvid Thörn",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Eivar Widlund",
+          "position": "GK",
+          "rating": 74
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Henock Abrahamsson",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Erik Almgren",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Åke Andersson",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Harry Andersson",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Curt Bergsten",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Lennart Bunke",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ivar Eriksson",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Karl-Erik Grahn",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Knut Hansson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sven Jacobsson",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sven Jonasson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Olle Källgren",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Tore Keller",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Arne Linderholm",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Erik Nilsson",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Harry Nilsson",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Arne Nyberg",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Erik Persson",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gustav Sjöberg",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Kurt Svanström",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sven Unger",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Gustav Wetterström",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Sune Andersson",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Ingvar Gärd",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Hasse Jeppson",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Gunnar Johansson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Egon Jönsson",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Torsten Lindberg",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Arne Månsson",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Bror Mellberg",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Erik Nilsson",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Stellan Nilsson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Knut Nordahl",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Karl-Erik Palmér",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ingvar Rydell",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lennart Samuelsson",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Lennart Skoglund",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Stig Sundqvist",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Kalle Svensson",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Kurt Svensson",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Tore Svensson",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Börje Tapper",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Olle Åhlund",
+          "position": "CM",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Kalle Svensson",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Orvar Bergmark",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sven Axbom",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nils Liedholm",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Åke Johansson",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Sigge Parling",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Kurt Hamrin",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Gunnar Gren",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Agne Simonsson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Arne Selmosson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lennart Skoglund",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Tore Svensson",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Prawitz Öberg",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Bengt Gustavsson",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Reino Börjesson",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ingemar Haraldsson",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Olle Håkansson",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gösta Löfgren",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Henry Källgren",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Bror Mellberg",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Bengt Berndtsson",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Owe Ohlsson",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
     "1966": {
       "formation": "4-4-2",
       "players": [

@@ -1,0 +1,96 @@
+{
+  "name": "Club Always Ready",
+  "slug": "always-ready",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/always-ready.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rubén Cordano",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Roberto Carlos Fernández",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Alejandro Chumacero",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jaiber Jiménez",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Danny Bejarano",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Leonel Morales",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Michael Hoyos",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Julián Álvarez Jr.",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Chumacero Alejandro",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Rodrigo Ramallo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Sandro Vaca",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Jorge Michel",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Pablo Escobar",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Ariel Martins",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Nixon Quispe",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — Always Ready (2025/2026)",
+      "teamLabel": "Always Ready (2025–26)"
+    }
+  }
+}

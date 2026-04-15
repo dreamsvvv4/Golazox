@@ -1,8 +1,215 @@
 {
   "slug": "argentinien",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1930": {
+      "players": [
+        {
+          "name": "Ángel Bossio",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Juan Botasso",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Roberto Cherro",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Alberto Chividini",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Attilio Demaría",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "José Della Torre",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Juan Evaristo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Mario Evaristo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Manuel Ferreira",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luis Monti",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ramón Muttis",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Rodolfo Orlandini",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fernando Paternoster",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Natalio Perinetti",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Carlos Peucelle",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Edmundo Piaggio",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Scopelli",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Spadaro",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Guillermo Stábile",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Arico Suárez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Francisco Varallo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Adolfo Zumelzú",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Ernesto Albarracín",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ramón Astudillo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ernesto Belis",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Enrique Chimento",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alfredo Devincenzi",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Héctor Freschi",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Alberto Galateo",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ángel Grippa",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Irañeta",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luis Izzeta",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Arcadio López",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alfonso Lorenzo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "José Nehin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Juan Pedevilla",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Francisco Pérez",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Francisco Rúa",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Constantino Urbieta Sosa",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Federico Wilde",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    },
+    "1938": {
       "players": [
         {
           "name": "Rolando Irusta",
@@ -97,42 +304,376 @@
         {
           "name": "Oscar Más",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         },
         {
           "name": "Mario Chaldú",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         },
         {
           "name": "Alfredo Rojas",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         },
         {
           "name": "Daniel Onega",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         },
         {
           "name": "Juan Sarnari",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         },
         {
           "name": "Luis Artime",
           "position": "ST",
-          "rating": 80
+          "rating": 79
         }
-      ],
-      "ratings": {
-        "attack": 79,
-        "midfield": 82,
-        "defense": 79,
-        "goalkeeping": 80
-      },
-      "source": "Transfermarkt 🌍 Otros€” argentina (1966/1967)",
-      "teamLabel": "argentina (1966-67)"
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Amadeo Carrizo",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Pedro Dellacha",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Federico Vairo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Juan Francisco Lombardo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Néstor Rossi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "José Varacka",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Oreste Corbatta",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Eliseo Prado",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Norberto Menéndez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alfredo Rojas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ángel Labruna",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Julio Musimessi",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Alfredo Pérez",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Federico Edwards",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "David Acevedo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Eliseo Mouriño",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "José Ramos Delgado",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Norberto Boggio",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ludovico Avio",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ricardo Infante",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "José Sanfilippo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Osvaldo Cruz",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "Antonio Roma",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "José Ramos Delgado",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Silvio Marzolini",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alberto Sainz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Federico Sacchi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Raúl Páez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Héctor Facundo",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Martín Pando",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marcelo Pagani",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "José Sanfilippo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Raúl Belén",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rogelio Domínguez",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Oscar Rossi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alberto Mariotti",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Rubén Navarro",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Antonio Rattín",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Rafael Albrecht",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Vladislao Cap",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Rubén Sosa",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Juan Carlos Oleniak",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ramón Abeledo",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Alberto González",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Antonio Roma",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Rolando Irusta",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Hugo Gatti",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Roberto Perfumo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "José Varacka",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Oscar Calics",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Silvio Marzolini",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Ferreiro",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Carmelo Simeone",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Antonio Rattín",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "José Omar Pastoriza",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rafael Albrecht",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nelson López",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mario Chaldú",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Jorge Solari",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Alberto González",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Juan Carlos Sarnari",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Alfredo Rojas",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Luis Artime",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ermindo Onega",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Oscar Más",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Aníbal Tarabini",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

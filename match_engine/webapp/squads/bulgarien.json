@@ -1,6 +1,429 @@
 {
   "slug": "bulgarien",
   "seasons": {
+    "1962": {
+      "players": [
+        {
+          "name": "Georgi Naidenov",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Dimitar Largov",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Boris Gaganelov",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandar Shalamanov",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ivan Davidov",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Georgi Asparuhov",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Ivan Kolev",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Georgi Sokolov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Todor Diev",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Ivan Dermendzhiev",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Dinko Dermendzhiev",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Georgi Naydenov",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Aleksandar Shalamanov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ivan Vutsov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Boris Gaganelov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Dimitar Penev",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Dobromir Zhechev",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Dinko Dermendzhiev",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Stoyan Kitov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Georgi Asparuhov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Petar Zhekov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ivan Kolev",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Vasil Metodiev",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Dimitar Yakimov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nikola Kotkov",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Dimitar Largov",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Aleksandar Kostov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Stefan Abadzhiev",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Evgeni Yanchovski",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Vidin Apostolov",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ivan Davidov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Simeon Simeonov",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Ivan Deyanov",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "teamLabel": "Bulgaria (1970)",
+      "source": "Bulgaria - World Cup 1970",
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Simeon Simeonov",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Aleksandar Shalamanov",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Boris Gaganelov",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Georg Filipov",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Rumen Goranov",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Georgi Asparuhov",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ivan Kolev",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Georgi Sokolov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Petar Zhekov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Milko Gaydarski",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Hristo Bonev",
+          "position": "LW",
+          "rating": 76
+        }
+      ]
+    },
+    "1974": {
+      "formation": "4-4-2",
+      "teamLabel": "Bulgaria (1974)",
+      "source": "Bulgaria - World Cup 1974",
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Stoyan Yordanov",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Kiril Ivkov",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Nikola Arabov",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Georg Filipov",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Rumen Goranov",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Hristo Bonev",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ivan Kolev",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Petar Zhekov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Mikhail Minchev",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Dinu Stankov",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Dimitar Milenov",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "1986": {
+      "players": [
+        {
+          "name": "Borislav Mihaylov",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Nasko Sirakov",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Nikolay Arabov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Petar Petrov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Georgi Dimitrov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Andrey Zhelyazkov",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Bozhidar Iskrenov",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ayan Sadakov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Stoycho Mladenov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Zhivko Gospodinov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Plamen Getov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Radoslav Zdravkov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandar Markov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Plamen Markov",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Georgi Yordanov",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Vasil Dragolov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Hristo Kolev",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Boycho Velichkov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Atanas Pashev",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Kostadin Kostadinov",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Iliya Dyakov",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Iliya Valov",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "1994": {
       "formation": "4-4-2",
       "players": [
@@ -199,6 +622,74 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Bulgaria (1994/1995)",
       "teamLabel": "Bulgaria (1994-95)"
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Bulgaria (1998)",
+      "source": "Bulgaria - World Cup 1998",
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 75,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Zdravko Zdravkov",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Trifon Ivanov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Zlatan Yankov",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Emil Kremenliev",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Petar Hubchev",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Krasimir Balakov",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Stilian Petrov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Daniel Borimirov",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Hristo Stoichkov",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Petar Aleksandrov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ilian Kiriakov",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
     }
   },
   "id": 3394,

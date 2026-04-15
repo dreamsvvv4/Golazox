@@ -1,0 +1,96 @@
+{
+  "name": "Club Cerro Porteño",
+  "slug": "cerro-porteno",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/cerro-porteno.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jean-Claude Ndondele",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Blas Riveros",
+          "position": "LB",
+          "rating": 80
+        },
+        {
+          "name": "Lorenzo Melgarejo",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Fabián Balbuena",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Oscar Romero",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Rojas",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Gastón Olveira",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ángel Cardozo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Marcos Cáceres",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Hernán González",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Rodrigo Muñoz",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Robert Morales",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nelson Haedo Valdez",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Víctor Bernay",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Cerro Porteño (2025/2026)",
+      "teamLabel": "Cerro Porteño (2025–26)"
+    }
+  }
+}

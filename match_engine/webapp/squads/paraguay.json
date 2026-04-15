@@ -1,6 +1,933 @@
 {
   "slug": "paraguay",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Francisco Aguirre",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Pedro Benítez",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Santiago Benítez",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Delfín Benítez Cáceres",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Saguier Carreras",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Eustacio Chamorro",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Modesto Denis",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Eusebio Díaz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Diógenes Domínguez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Romildo Etcheverry",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Diego Florentín",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Salvador Flores",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Tranquilino Garcete",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aurelio González",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "José Miracca",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Lino Nessi",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Quiterio Olmedo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Amadeo Ortega",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Bernabé Rivera",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gerardo Romero",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Luis Vargas Peña",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Jacinto Villalba",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Enrique Avalos",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Marcial Avalos",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Melanio Baez",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ángel Berni",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Antonio Cabrera",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Lorenzo Calonga",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Juan Cañete",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Castor Cantero",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Pablo Centurión",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Casiano Céspedes",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Manuel Gavilán",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Alberto González",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Armando González",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Victoriano Leguizamón",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Atilio López",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "César López Fretes",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Hilarión Osorio",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Elioro Paredes",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Darío Jara Saguier",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Francisco Sosa",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Leongino Unzaim",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Marcelino Vargas",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Ramón Mayeregger",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Edelmiro Arévalo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Juan Vicente Lezcano",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ignacio Achúcarro",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Salvador Villalba",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Eligio Echagüe",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Juan Bautista Agüero",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "José Parodi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jorge Lino Romero",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Oscar Aguilera",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Florencio Amarilla",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Samuel Aguilar",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Luis Gini",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Darío Segovia",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Luis Santos Silva",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Claudio Lezcano",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Agustín Miranda",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Gilberto Penayo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Eliseo Insfrán",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "José Raúl Aveiro",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Cayetano Ré",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Eligio Insfrán",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1986": {
+      "players": [
+        {
+          "name": "Roberto Fernández",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Juan Torales",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "César Zabala",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Vladimiro Schettina",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Rogelio Delgado",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jorge Amado Nunes",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Buenaventura Ferreira",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Julio César Romero",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Roberto Cabañas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Adolfino Cañete",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alfredo Mendoza",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jorge Battaglia",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Virginio Cáceres",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Luis Caballero",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Eufemio Cabral",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Jorge Guasch",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Francisco Alcaraz",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Evaristo Isasi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Rolando Chilavert",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ramón Hicks",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Faustino Alonso",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Julián Coronel",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1998": {
+      "players": [
+        {
+          "name": "José Luis Chilavert",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Francisco Arce",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Catalino Rivarola",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Carlos Gamarra",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Celso Ayala",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Edgar Aguilera",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Julio César Yegros",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Arístides Rojas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "José Cardozo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Acuña",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Pedro Sarabia",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Danilo Aceval",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Paredes",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ricardo Rojas",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Miguel Ángel Benítez",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Julio César Enciso",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hugo Brizuela",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "César Ramírez",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Carlos Morales",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Denis Caniza",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jorge Luis Campos",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rubén Ruiz Díaz",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "José Luis Chilavert",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Francisco Arce",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Pedro Sarabia",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Carlos Gamarra",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Celso Ayala",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Estanislao Struway",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Richart Báez",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Guido Alvarenga",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Roque Santa Cruz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Acuña",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jorge Luis Campos",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Justo Villar",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Paredes",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Diego Gavilán",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Bonet",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Gustavo Morínigo",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Juan Carlos Franco",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Julio César Cáceres",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Daniel Sanabria",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "José Cardozo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Denis Caniza",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ricardo Tavarelli",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Nelson Cuevas",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2006": {
+      "players": [
+        {
+          "name": "Justo Villar",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jorge Núñez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Delio Toledo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Carlos Gamarra",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Julio César Cáceres",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Bonet",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Salvador Cabañas",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Édgar Barreto",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Roque Santa Cruz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Acuña",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Diego Gavilán",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Derlis Gómez",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Paredes",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paulo da Silva",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Julio César Manzur",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Cristian Riveros",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "José Montiel",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Nelson Haedo Valdez",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Julio dos Santos",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Dante López",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Denis Caniza",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Aldo Bobadilla",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Nelson Cuevas",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Justo Villar",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Darío Verón",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Claudio Morel",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Denis Caniza",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Julio César Cáceres",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Bonet",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Óscar Cardozo",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Édgar Barreto",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Roque Santa Cruz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Édgar Benítez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Santana",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Diego Barreto",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Enrique Vera",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paulo da Silva",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Víctor Cáceres",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Cristian Riveros",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Aureliano Torres",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nelson Valdez",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Lucas Barrios",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Néstor Ortigoza",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Antolín Alcaraz",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Aldo Bobadilla",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Rodolfo Gamarra",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-2-3-1",
       "players": [

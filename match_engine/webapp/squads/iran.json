@@ -1,6 +1,414 @@
 {
   "slug": "iran",
   "seasons": {
+    "1978": {
+      "formation": "4-4-2",
+      "teamLabel": "Irán (1978)",
+      "source": "Iran - World Cup 1978",
+      "ratings": {
+        "attack": 73,
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Nasser Hejazi",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Hassan Nazari",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Andranik Eskandarian",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Hossein Kazerani",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Jahangir Nazari",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Iraj Danaeifar",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Mehdi Rashidi",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Parviz Ghlichkhani",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Ali Parvin",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Hassan Rowshan",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Nasser Nourayi",
+          "position": "LW",
+          "rating": 71
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Irán (1998)",
+      "source": "Iran - World Cup 1998",
+      "ratings": {
+        "attack": 73,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Ahmad Abedzadeh",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Mehdi Pashazadeh",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Mohammad Khakpour",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Sirous Pourmousavi",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Jahanbakhsh Bakhshandeh",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Khodadad Azizi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ali Daei",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Mehdi Mahdavikia",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Hamid Estili",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Karim Bagheri",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Reza Ghotbi",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "teamLabel": "Irán (2006)",
+      "source": "Iran - World Cup 2006",
+      "ratings": {
+        "attack": 71,
+        "midfield": 70,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Ebrahim Mirzapour",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Mohammad Nosrati",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Hossein Kaebi",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yahya Golmohammadi",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Sohrab Bakhtiarizadeh",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Mehdi Mahdavikia",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Jawad Nekounam",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Andranik Teymourian",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Ali Karimi",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Ali Daei",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Vahid Hashemian",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "2014": {
+      "formation": "4-5-1",
+      "teamLabel": "Irán (2014)",
+      "source": "Iran - World Cup 2014",
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 73,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Alireza Haghighi",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Amir Sadeghi",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Jalal Hosseini",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Pejman Montazeri",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Mohammad Reza Khalatbari",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Javad Nekounam",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Andranik Teymourian",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Steven Beitashour",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Masoud Shojaei",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Reza Ghoochannejhad",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Ashkan Dejagah",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
+    },
+    "2018": {
+      "formation": "4-3-3",
+      "teamLabel": "Irán (2018)",
+      "source": "Iran - World Cup 2018",
+      "ratings": {
+        "attack": 72,
+        "midfield": 71,
+        "defense": 73,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Ali Beiranvand",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Rouzbeh Cheshmi",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Morteza Pouraliganji",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Milad Mohammadi",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Pejman Montazeri",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Saeid Ezatolahi",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Masoud Shojaei",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Omid Ebrahimi",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Alireza Jahanbakhsh",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Sardar Azmoun",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Reza Ghoochannejhad",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2022": {
+      "formation": "4-3-3",
+      "teamLabel": "Irán (2022)",
+      "source": "Iran - World Cup 2022",
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 74,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Alireza Beiranvand",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Sadegh Moharrami",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Morteza Pouraliganji",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Shojae Khalilzadeh",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Milad Mohammadi",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Ahmad Noorollahi",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Saeid Ezatolahi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ali Gholizadeh",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Alireza Jahanbakhsh",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Mehdi Taremi",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Sardar Azmoun",
+          "position": "LW",
+          "rating": 79
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

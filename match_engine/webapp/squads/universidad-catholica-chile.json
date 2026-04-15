@@ -1,0 +1,96 @@
+{
+  "name": "Club Deportivo Universidad Católica",
+  "slug": "universidad-catholica-chile",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/universidad-catholica-chile.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ariel Holan",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Valber Huerta",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Germán Lanaro",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ariel Martínez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Patricio Rubio",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Sebastián Galani",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Diego Valencia",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "José Pedro Fuenzalida",
+          "position": "CM",
+          "rating": 81
+        },
+        {
+          "name": "Gabriel Castellón",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Edson Puch",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Fernando Zampedri",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Cristián Álvarez",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Arturo Vidal",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Ignacio Saavedra",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Felipe Gutiérrez",
+          "position": "AM",
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — U. Católica Chile (2025/2026)",
+      "teamLabel": "U. Católica (2025–26)"
+    }
+  }
+}

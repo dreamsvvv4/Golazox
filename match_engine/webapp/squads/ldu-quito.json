@@ -1,0 +1,96 @@
+{
+  "name": "Liga Deportiva Universitaria de Quito",
+  "slug": "ldu-quito",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/ldu-quito.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Alexander Domínguez",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Cristian Cruz",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Lautaro Díaz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nilson Angulo",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Luis Miranda",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Luis Caicedo",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Anderson Ordóñez",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Jean Sánchez",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Jhojan Julio",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Carlos Rodríguez",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Lisandro Alzugaray",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Eduardo Espinoza",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Jorge Pinos",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Diego Caicedo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Pablo Marini",
+          "position": "ST",
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 81,
+        "defense": 80,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — LDU Quito (2025/2026)",
+      "teamLabel": "LDU Quito (2025–26)"
+    }
+  }
+}

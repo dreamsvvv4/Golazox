@@ -1,8 +1,245 @@
 {
   "slug": "ghana",
   "seasons": {
+    "2006": {
+      "players": [
+        {
+          "name": "Sammy Adjei",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Hans Sarpei",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Asamoah Gyan",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Samuel Kuffour",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "John Mensah",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Emmanuel Pappoe",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Illiasu Shilla",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Michael Essien",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Derek Boateng",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Stephen Appiah",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sulley Muntari",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alex Tachie-Mensah",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Habib Mohamed",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Matthew Amoah",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "John Paintsil",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "George Owu",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Daniel Quaye",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Eric Addo",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Razak Pimpong",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Otto Addo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Issah Ahmed",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Richard Kingson",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Haminu Draman",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2010": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Daniel Agyei",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Hans Sarpei",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Asamoah Gyan",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "John Paintsil",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "John Mensah",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Anthony Annan",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Samuel Inkoom",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Mensah",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Derek Boateng",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Stephen Appiah",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sulley Muntari",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Prince Tagoe",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "André Ayew",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Matthew Amoah",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Isaac Vorsah",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Stephen Ahorlu",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Ibrahim Ayew",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Dominic Adiyiah",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Lee Addy",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Quincy Owusu-Abeyie",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Kwadwo Asamoah",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Richard Kingson",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Kevin-Prince Boateng",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "2014": {
       "players": [
         {
           "name": "Richard Kingson",
@@ -20,13 +257,13 @@
           "name": "Daniel Agyei",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Stephen Ahorlu",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "John Mensah",
@@ -92,13 +329,13 @@
           "name": "Jonathan Mensah",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Lee Addy",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Michael Essien",
@@ -158,19 +395,19 @@
           "name": "Bright Addae",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Emmanuel Badu",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Opoku Agyemang",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Asamoah Gyan",
@@ -244,15 +481,126 @@
           "marketValue": 100000,
           "rating": 64
         }
-      ],
-      "ratings": {
-        "attack": 76,
-        "midfield": 82,
-        "defense": 77,
-        "goalkeeping": 69
-      },
-      "source": "Transfermarkt — Ghana (2010/2011)",
-      "teamLabel": "Ghana (2010-11)"
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Lawrence Ati-Zigi",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Denis Odoi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mohammed Salisu",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Thomas Partey",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Elisha Owusu",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Abdul Fatawu Issahaku",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Daniel-Kofi Kyereh",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jordan Ayew",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "André Ayew",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Osman Bukari",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ibrahim Danlad",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Daniel Afriyie",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gideon Mensah",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Joseph Aidoo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Abdul Manaf Nurudeen",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Baba Rahman",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Daniel Amartey",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Iñaki Williams",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mohammed Kudus",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Salis Abdul Samed",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Kamaldeen Sulemana",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Alexander Djiku",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

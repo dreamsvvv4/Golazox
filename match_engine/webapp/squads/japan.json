@@ -1,6 +1,482 @@
 {
   "slug": "japan",
   "seasons": {
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Japón (1998)",
+      "source": "Japan - World Cup 1998 (debut)",
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 68,
+        "goalkeeping": 68
+      },
+      "players": [
+        {
+          "name": "Yoshikatsu Kawaguchi",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Naoki Soma",
+          "position": "RB",
+          "rating": 68
+        },
+        {
+          "name": "Masami Ihara",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Akira Narahashi",
+          "position": "CB",
+          "rating": 68
+        },
+        {
+          "name": "Norio Omura",
+          "position": "LB",
+          "rating": 68
+        },
+        {
+          "name": "Hidetoshi Nakata",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Masashi Nakayama",
+          "position": "AM",
+          "rating": 72
+        },
+        {
+          "name": "Motohiro Yamaguchi",
+          "position": "DM",
+          "rating": 69
+        },
+        {
+          "name": "Shinji Ono",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Shunsuke Nakamura",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Takuya Takagi",
+          "position": "ST",
+          "rating": 69
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "teamLabel": "Japón (2002)",
+      "source": "Japan - World Cup 2002 (co-host, QF)",
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Yoshikatsu Kawaguchi",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Koji Nakata",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Tsuneyasu Miyamoto",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Santos",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ryuzo Morioka",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Hidetoshi Nakata",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Shinji Ono",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Junichi Inamoto",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Shunsuke Nakamura",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Takayuki Suzuki",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Atsushi Yanagisawa",
+          "position": "ST",
+          "rating": 72
+        }
+      ]
+    },
+    "2006": {
+      "formation": "4-3-3",
+      "teamLabel": "Japón (2006)",
+      "source": "Japan - World Cup 2006",
+      "ratings": {
+        "attack": 72,
+        "midfield": 72,
+        "defense": 70,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Yoshikatsu Kawaguchi",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Yuichi Komano",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Tsuneyasu Miyamoto",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Marcus Tulio Tanaka",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Akira Kaji",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Hidetoshi Nakata",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Shunsuke Nakamura",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Shinji Ono",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Koji Nakata",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Seiichiro Maki",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Masashi Oguro",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "teamLabel": "Japón (2010)",
+      "source": "Japan - World Cup 2010 (R16)",
+      "ratings": {
+        "attack": 73,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Eiji Kawashima",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Tulio Tanaka",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Atsuto Uchida",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Yasuhito Endo",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Shunsuke Nakamura",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Makoto Hasebe",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Daisuke Matsui",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Shinji Okazaki",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Keisuke Honda",
+          "position": "AM",
+          "rating": 78
+        }
+      ]
+    },
+    "2014": {
+      "formation": "4-2-3-1",
+      "teamLabel": "Japón (2014)",
+      "source": "Japan - World Cup 2014",
+      "ratings": {
+        "attack": 73,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Eiji Kawashima",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Atsuto Uchida",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Masahiko Inoha",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Makoto Hasebe",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Yasuhito Endo",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Keisuke Honda",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Shinji Kagawa",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Shinji Okazaki",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Yoshito Okubo",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2018": {
+      "formation": "4-2-3-1",
+      "teamLabel": "Japón (2018)",
+      "source": "Japan - World Cup 2018 (R16)",
+      "ratings": {
+        "attack": 74,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Eiji Kawashima",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Hiroki Sakai",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Gen Shoji",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Makoto Hasebe",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Gaku Shibasaki",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Keisuke Honda",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Shinji Kagawa",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Shinji Okazaki",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Takashi Inui",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
+    },
+    "2022": {
+      "formation": "4-3-3",
+      "teamLabel": "Japón (2022)",
+      "source": "Japan - World Cup 2022 (R16, beat Germany & Spain)",
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Shuichi Gonda",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Hiroki Sakai",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Ko Itakura",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Wataru Endo",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Ritsu Doan",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Junya Ito",
+          "position": "RW",
+          "rating": 77
+        },
+        {
+          "name": "Takefusa Kubo",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "rating": 74
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

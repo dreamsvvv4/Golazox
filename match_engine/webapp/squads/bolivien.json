@@ -7,6 +7,313 @@
   "badgeLocalPath": "/img/badges/bolivien.png",
   "id": "bolivien",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Mario Alborta",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Juan Argote",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jesús Bermúdez",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Brito",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "José Bustamante",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Casiano Chavarría",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Segundo Durandal",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "René Fernández",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gumercindo Gómez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Diógenes Lara",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rafael Méndez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Miguel Murillo",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Constantino Noya",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Eduardo Reyes Ortiz",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Luis Reyes",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Renato Sáinz",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jorge Valderrama",
+          "position": "CM",
+          "rating": 75
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Alberto Achá",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Víctor Celestino Algarañaz",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Alberto Aparicio",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Duberty Aráoz",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Vicente Arraya",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Víctor Brown",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "José Bustamante",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "René Cabrera",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Roberto Capparelli",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Leonardo Ferrel",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Benedicto Godoy Véizaga",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Antonio Greco",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Juan Guerra",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Benigno Gutiérrez",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Eduardo Gutiérrez",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Benjamin Maldonado",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Mario Mena",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Humberto Saavedra",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Víctor Agustín Ugarte",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Antonio Valencia",
+          "position": "CM",
+          "rating": 73
+        }
+      ]
+    },
+    "1994": {
+      "players": [
+        {
+          "name": "Carlos Trucco",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Juan Manuel Peña",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Marco Sandy",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Rimba",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gustavo Quinteros",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Borja",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Mario Pinedo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "José Milton Melgar",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Álvaro Peña",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marco Etcheverry",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jaime Moreno",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Darío Rojas",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Modesto Soruco",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mauricio Ramos",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Vladimir Soria",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Luis Cristaldo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Óscar Sánchez",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "William Ramallo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Marcelo Torrico",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Ramiro Castillo",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Erwin Sánchez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Julio César Baldivieso",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-4-2",
       "players": [

@@ -17,8 +17,9 @@ const TRN = (() => {
   let _seasonCache = {};     // slug → seasons[] from suggest results
   let _modalIdx   = -1;     // current match in modal for prev/next nav
   let _trnCatalog  = null;   // cached catalog for league loader
-  let _activePreset = null;  // 'ucl2026' | 'wc2026' | null
+  let _activePreset = null;  // 'ucl2026' | 'wc2026' | 'wc-historical' | null
   let _uclFixtures  = null;  // pre-generated UCL league phase fixtures (144 matches)
+  let _wcHistoricalYear = null;  // year of selected historical WC edition
   let _uclDrawRunning = false;
   let _potEditMode  = false; // pot editor: click-to-swap mode
   let _potEditSel   = null;  // { slug, potIdx } of first selected team in swap
@@ -1331,55 +1332,56 @@ const TRN = (() => {
     ]},
   ];
 
-  // Copa Libertadores 2025 — 8 grupos × 4 = 32 clubes sudamericanos
+  // Copa Libertadores 2026 — 8 grupos × 4 = 32 clubes sudamericanos
+  // Copa CONMEBOL Libertadores 2026 — Group stage draw (19 March 2026)
   const _LIBERTADORES2025_GROUPS = [
     { label: 'A', teams: [
-      { slug: 'flamengo',              era:'2025', name:'Flamengo',          badge:'/img/badges/flamengo.png'              },
-      { slug: 'club-atletico-river-plate', era:'2025', name:'River Plate',   badge:'/img/badges/club-atletico-river-plate.png' },
-      { slug: 'nacional',              era:'2025', name:'Nacional',          badge:'/img/badges/nacional.png'              },
-      { slug: 'colo-colo',             era:'2025', name:'Colo-Colo',         badge:'/img/badges/colo-colo.png'             },
+      { slug: 'flamengo',                   era:'2025', name:'Flamengo',              badge:'/img/badges/flamengo.png'                        },
+      { slug: 'estudiantes',                era:'2025', name:'Estudiantes',           badge:'/img/badges/estudiantes.png'                     },
+      { slug: 'cusco-fc',                   era:'2025', name:'Cusco FC',              badge:'/img/badges/cusco-fc.png?v=38'                   },
+      { slug: 'independiente-medellin',     era:'2025', name:'Ind. Medellín',         badge:'/img/badges/independiente-medellin.png'          },
     ]},
     { label: 'B', teams: [
-      { slug: 'palmeiras',             era:'2025', name:'Palmeiras',         badge:'/img/badges/palmeiras.png'             },
-      { slug: 'boca-juniors',          era:'2025', name:'Boca Juniors',      badge:'/img/badges/boca-juniors.png'          },
-      { slug: 'penarol',               era:'2025', name:'Peñarol',           badge:'/img/badges/penarol.png'               },
-      { slug: 'talleres-cordoba',      era:'2025', name:'Talleres',          badge:'/img/badges/talleres-cordoba.png'      },
+      { slug: 'nacional',                   era:'2025', name:'Nacional',              badge:'/img/badges/nacional.png'                        },
+      { slug: 'universitario',              era:'2025', name:'Universitario',         badge:'/img/badges/universitario.png'                   },
+      { slug: 'coquimbo-unido',             era:'2025', name:'Coquimbo Unido',        badge:'/img/badges/coquimbo-unido.png'                  },
+      { slug: 'deportes-tolima',            era:'2025', name:'Deportes Tolima',       badge:'/img/badges/deportes-tolima.png'                 },
     ]},
     { label: 'C', teams: [
-      { slug: 'clube-atletico-mineiro', era:'2025', name:'Atlético Mineiro', badge:'/img/badges/clube-atletico-mineiro.png' },
-      { slug: 'racing-club',           era:'2025', name:'Racing Club',       badge:'/img/badges/racing-club.png'           },
-      { slug: 'sc-internacional',      era:'2025', name:'Internacional',     badge:'/img/badges/sc-internacional.png'      },
-      { slug: 'fluminense',            era:'2025', name:'Fluminense',        badge:'/img/badges/fluminense.png'            },
+      { slug: 'fluminense',                 era:'2025', name:'Fluminense',            badge:'/img/badges/fluminense.png'                      },
+      { slug: 'bolivar',                    era:'2025', name:'Bolívar',               badge:'/img/badges/bolivar.png'                         },
+      { slug: 'deportivo-la-guaira',        era:'2025', name:'Deportivo La Guaira',   badge:'/img/badges/deportivo-la-guaira.png'             },
+      { slug: 'independiente-rivadavia',    era:'2025', name:'Ind. Rivadavia',        badge:'/img/badges/independiente-rivadavia.png'         },
     ]},
     { label: 'D', teams: [
-      { slug: 'cruzeiro',              era:'2025', name:'Cruzeiro',          badge:'/img/badges/cruzeiro.png'              },
-      { slug: 'estudiantes',           era:'2025', name:'Estudiantes',       badge:'/img/badges/estudiantes.png'           },
-      { slug: 'gremio',                era:'2025', name:'Grêmio',            badge:'/img/badges/gremio.png'                },
-      { slug: 'velez-sarsfield',       era:'2025', name:'Vélez Sarsfield',   badge:'/img/badges/velez-sarsfield.png'       },
+      { slug: 'boca-juniors',               era:'2025', name:'Boca Juniors',          badge:'/img/badges/boca-juniors.png'                    },
+      { slug: 'cruzeiro',                   era:'2025', name:'Cruzeiro',              badge:'/img/badges/cruzeiro.png'                        },
+      { slug: 'universidad-catholica-chile',era:'2025', name:'U. Católica (Chile)',   badge:'/img/badges/universidad-catholica-chile.png'     },
+      { slug: 'barcelona-sc',               era:'2025', name:'Barcelona SC',          badge:'/img/badges/barcelona-sc.png'                    },
     ]},
     { label: 'E', teams: [
-      { slug: 'sao-paulo-fc',          era:'2025', name:'São Paulo',         badge:'/img/badges/sao-paulo-fc.png'          },
-      { slug: 'san-lorenzo',           era:'2025', name:'San Lorenzo',       badge:'/img/badges/san-lorenzo.png'           },
-      { slug: 'santos',                era:'2025', name:'Santos',            badge:'/img/badges/santos.png'                },
-      { slug: 'athletico-paranaense',  era:'2025', name:'Athletico PR',      badge:'/img/badges/athletico-paranaense.png'  },
+      { slug: 'penarol',                    era:'2025', name:'Peñarol',               badge:'/img/badges/penarol.png'                         },
+      { slug: 'corinthians',                era:'2025', name:'Corinthians',           badge:'/img/badges/corinthians.png'                     },
+      { slug: 'independiente-santa-fe',     era:'2025', name:'Ind. Santa Fe',         badge:'/img/badges/independiente-santa-fe.png'          },
+      { slug: 'platense',                   era:'2025', name:'Platense',              badge:'/img/badges/platense.png'                        },
     ]},
     { label: 'F', teams: [
-      { slug: 'corinthians',           era:'2025', name:'Corinthians',       badge:'/img/badges/corinthians.png'           },
-      { slug: 'independiente',         era:'2025', name:'Independiente',     badge:'/img/badges/independiente.png'         },
-      { slug: 'fortaleza',             era:'2025', name:'Fortaleza',         badge:'/img/badges/fortaleza.png'             },
-      { slug: 'huracan',               era:'2025', name:'Huracán',           badge:'/img/badges/huracan.png'               },
+      { slug: 'se-palmeiras',               era:'2025', name:'Palmeiras',             badge:'/img/badges/palmeiras.png'                       },
+      { slug: 'cerro-porteno',              era:'2025', name:'Cerro Porteño',         badge:'/img/badges/cerro-porteno.png'                   },
+      { slug: 'junior-barranquilla',        era:'2025', name:'Junior',                badge:'/img/badges/junior-barranquilla.png'             },
+      { slug: 'sporting-cristal',           era:'2025', name:'Sporting Cristal',      badge:'/img/badges/sporting-cristal.png'                },
     ]},
     { label: 'G', teams: [
-      { slug: 'vasco-da-gama',         era:'2025', name:'Vasco da Gama',     badge:'/img/badges/vasco-da-gama.png'         },
-      { slug: 'lanus',                 era:'2025', name:'Lanús',             badge:'/img/badges/lanus.png'                 },
-      { slug: 'defensa-y-justicia',    era:'2025', name:'Defensa y Justicia', badge:'/img/badges/defensa-y-justicia.png'   },
-      { slug: 'godoy-cruz',            era:'2025', name:'Godoy Cruz',        badge:'/img/badges/godoy-cruz.png'            },
+      { slug: 'ldu-quito',                  era:'2025', name:'LDU Quito',             badge:'/img/badges/ldu-quito.png'                       },
+      { slug: 'lanus',                      era:'2025', name:'Lanús',                 badge:'/img/badges/lanus.png'                           },
+      { slug: 'always-ready',               era:'2025', name:'Always Ready',          badge:'/img/badges/always-ready.png'                    },
+      { slug: 'mirassol',                   era:'2025', name:'Mirassol',              badge:'/img/badges/mirassol.png'                        },
     ]},
     { label: 'H', teams: [
-      { slug: 'atletico-tucuman',      era:'2025', name:'Atlético Tucumán',  badge:'/img/badges/atletico-tucuman.png'      },
-      { slug: 'tigre',                 era:'2025', name:'Club Tigre',        badge:'/img/badges/tigre.png'                 },
-      { slug: 'cuiaba',                era:'2025', name:'Cuiabá',            badge:'/img/badges/cuiaba.png'                },
-      { slug: 'deportivo-riestra',     era:'2025', name:'Depo. Riestra',     badge:'/img/badges/deportivo-riestra.png'     },
+      { slug: 'independiente-del-valle',    era:'2025', name:'Ind. del Valle',        badge:'/img/badges/independiente-del-valle.png'         },
+      { slug: 'libertad',                   era:'2025', name:'Libertad',              badge:'/img/badges/libertad.png'                        },
+      { slug: 'rosario-central',            era:'2025', name:'Rosario Central',       badge:'/img/badges/rosario-central.png'                 },
+      { slug: 'universidad-central-vzla',   era:'2025', name:'Universidad Central',   badge:'/img/badges/universidad-central-vzla.png'        },
     ]},
   ];
 
@@ -1617,7 +1619,130 @@ const TRN = (() => {
     if (startBtn) startBtn.style.display = 'none';
   }
 
+  // ── Historical World Cup year picker ─────────────────────────────────────
+  function _showWCYearPicker() {
+    // Hide other overlay screens
+    const conf = $('trn-preset-confirm'); if (conf) hide(conf);
+    const ucl  = $('trn-ucl-draw');      if (ucl)  hide(ucl);
+
+    // Build or reuse picker element
+    let el = $('trn-wc-year-picker');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'trn-wc-year-picker';
+      el.className = 'trn-step';
+      $('trn-wizard').appendChild(el);
+    }
+    show(el);
+
+    // Collect editions (may not be available if script failed to load)
+    const years  = (typeof _WC_EDITION_YEARS !== 'undefined') ? _WC_EDITION_YEARS : [];
+    const edsMap = (typeof _WC_EDITIONS      !== 'undefined') ? _WC_EDITIONS      : {};
+
+    const yearsHtml = years.map(yr => {
+      const ed = edsMap[yr] || {};
+      const isCancelled = ed.format === 'cancelled';
+      const normativa = ed.normativa || '';
+
+      // Determine visual era for retro theming
+      const era = yr <= 1950 ? 'pioneer'
+                : yr <= 1970 ? 'classic'
+                : yr <= 1990 ? 'retro'
+                : yr >= 2026 ? 'future'
+                : 'modern';
+      const eraLabel = yr <= 1950 ? 'Pioneros'
+                     : yr <= 1970 ? 'Clásica'
+                     : yr <= 1990 ? 'Retro'
+                     : yr >= 2026 ? 'En curso'
+                     : 'Moderna';
+
+      if (isCancelled) {
+        return `<div class="trn-wcy-btn trn-wcy-btn--cancelled" aria-disabled="true" data-era="${era}">
+          <span class="trn-wcy-year">${yr}</span>
+          <span class="trn-wcy-cancelled-label">⚔️ ${_esc(normativa)}</span>
+        </div>`;
+      }
+      return `<button class="trn-wcy-btn" data-year="${yr}" data-era="${era}">
+        <span class="trn-wcy-era">${eraLabel}</span>
+        <span class="trn-wcy-year">${yr}</span>
+        <span class="trn-wcy-host">${_esc(ed.host || '')}</span>
+        ${normativa ? `<span class="trn-wcy-fmt">${_esc(normativa)}</span>` : ''}
+      </button>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div class="trn-preset-confirm-header">
+        <div class="trn-preset-confirm-icon">
+          <img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">
+        </div>
+        <div>
+          <h2 class="trn-step-title" style="margin:0">FIFA World Cup</h2>
+          <p class="trn-step-hint" style="margin:.2rem 0 0">Elige una edición histórica</p>
+        </div>
+      </div>
+      <div class="trn-wcy-grid">${yearsHtml}</div>
+      <div class="trn-step-actions trn-preset-confirm-actions">
+        <button class="btn-secondary" id="wcy-cancel-btn">${t('trn-btn-back')}</button>
+      </div>
+    `;
+
+    el.querySelector('#wcy-cancel-btn')?.addEventListener('click', cancelPreset);
+    el.querySelector('.trn-wcy-grid')?.addEventListener('click', e => {
+      const btn = e.target.closest('.trn-wcy-btn');
+      if (!btn) return;
+      const yr = +btn.dataset.year;
+      if (yr) _loadWCEdition(yr);
+    });
+  }
+
+  function _loadWCEdition(year) {
+    const edsMap = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS : {};
+    const ed = edsMap[year];
+    if (!ed) return;
+
+    // Hide year picker
+    const yrPicker = $('trn-wc-year-picker'); if (yrPicker) hide(yrPicker);
+
+    // 2026: route to the full wc2026 preset
+    if (ed.format === 'wc2026') {
+      loadPreset('wc2026');
+      return;
+    }
+
+    // Cancelled editions — nothing to load
+    if (ed.format === 'cancelled' || !ed.groups) return;
+
+    _wcHistoricalYear = year;
+    _activePreset     = 'wc-historical';
+    _fmt              = 'champions';
+    _uclFixtures      = null;
+    _rules = { idaVuelta: false, grupasIdaVuelta: false, koIdaVuelta: false, extraTime: true, tercerPuesto: true, copaMode: 'groups' };
+
+    _teams      = [];
+    _groupsDraw = [];
+    ed.groups.forEach(g => g.teams.forEach(tm => {
+      _teams.push({ slug: tm.slug, era: tm.era, name: tm.name, ovr: null });
+    }));
+    _numTeams   = _teams.length;
+    _groupsDraw = ed.groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
+
+    // Pre-seed badge cache from edition data
+    ed.groups.forEach(g => g.teams.forEach(t => {
+      if (t.badge) _badgeCache[t.slug] = t.badge;
+    }));
+    _setPresetBadges(_teams);
+
+    _showPresetConfirm('wc-historical');
+  }
+
   function loadPreset(presetId) {
+    // Historical WC editions: show year picker first
+    if (presetId === 'wc-historical') {
+      _activePreset = 'wc-historical';
+      _showWCYearPicker();
+      return;
+    }
+
     const _PRESET_GROUPS = {
       'wc2026':          _WC2026_GROUPS,
       'ucl2026':         _UCL2026_GROUPS,
@@ -1687,14 +1812,32 @@ const TRN = (() => {
   }
 
   function _showPresetConfirm(presetId) {
-    const isWC    = presetId === 'wc2026';
+    const isWC    = presetId === 'wc2026' || presetId === 'wc-historical';
+    const isHistoricalWC = presetId === 'wc-historical';
+
+    // Build dynamic historical WC meta using the selected year
+    const _wcHistMeta = (() => {
+      if (!isHistoricalWC || !_wcHistoricalYear) return null;
+      const ed = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS[_wcHistoricalYear] : null;
+      const sub  = ed ? (ed.normativa || (_teams.length + ' selecciones')) : '';
+      const host = ed ? (ed.host || '') : '';
+      return {
+        title:     `FIFA World Cup ${_wcHistoricalYear}`,
+        icon:      `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">`,
+        subtitle:  host ? `${host} · ${sub}` : sub,
+        gridClass: _groupsDraw.length <= 4  ? 'trn-preset-groups-copa-america'
+                 : _groupsDraw.length <= 6  ? 'trn-preset-groups-euro'
+                 :                            'trn-preset-groups-wc',
+      };
+    })();
+
     const _PRESET_META = {
       'wc2026':          { title: 'FIFA World Cup 2026',             icon: `<img src="/img/trophy-wc.png"  class="trn-preset-confirm-trophy" alt="WC Trophy">`, subtitle: t('trn-preset-subtitle-wc'),           gridClass: 'trn-preset-groups-wc' },
       'euro2024':        { title: 'UEFA Euro 2024',                  icon: `<img src="/img/trophy-euro.png"          class="trn-preset-confirm-trophy" alt="Euro Trophy">`,         subtitle: t('trn-preset-subtitle-euro') || '6 grupos + KO · 24 selecciones',            gridClass: 'trn-preset-groups-euro' },
       'copamerica2024':  { title: 'Copa América 2024',               icon: `<img src="/img/trophy-copa-america.png"  class="trn-preset-confirm-trophy" alt="Copa America Trophy">`, subtitle: t('trn-preset-subtitle-copa-america') || '4 grupos + KO · 16 selecciones',   gridClass: 'trn-preset-groups-copa-america' },
-      'libertadores2025':{ title: 'Copa Libertadores 2025',          icon: `<img src="/img/trophy-libertadores.png"  class="trn-preset-confirm-trophy" alt="Libertadores Trophy">`, subtitle: t('trn-preset-subtitle-libertadores') || '8 grupos + KO ida y vuelta · 32 clubes', gridClass: 'trn-preset-groups-libertadores' },
+      'libertadores2025':{ title: 'Copa Libertadores 2026',          icon: `<img src="/img/trophy-libertadores.png"  class="trn-preset-confirm-trophy" alt="Libertadores Trophy">`, subtitle: t('trn-preset-subtitle-libertadores') || '8 grupos + KO ida y vuelta · 32 clubes', gridClass: 'trn-preset-groups-libertadores' },
     };
-    const meta  = _PRESET_META[presetId] || _PRESET_META['wc2026'];
+    const meta  = _wcHistMeta || _PRESET_META[presetId] || _PRESET_META['wc2026'];
     const title = meta.title;
     const iconHtml = isWC ? `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">` : meta.icon;
     const numGrps = _groupsDraw.length;
@@ -1733,30 +1876,47 @@ const TRN = (() => {
           <p class="trn-step-hint" style="margin:.2rem 0 0">${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}</p>
         </div>
       </div>
-      <div class="trn-preset-groups-preview${isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
+      <div class="trn-preset-groups-preview${isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
       <div class="trn-step-actions trn-preset-confirm-actions">
         <button class="btn-secondary" id="preset-confirm-cancel">${t('trn-btn-back')}</button>
+        <button class="btn-secondary" id="preset-confirm-edit" title="${t('trn-btn-edit')}">✏️ ${t('trn-btn-edit').replace(/^✏️\s*/,'')}</button>
         ${isWC ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
         <button class="btn-primary" id="preset-confirm-run">▶ Simular &nbsp;${_esc(title)}</button>
       </div>
     `;
 
+    let _presetEditMode = false;
+
     // Wire up buttons (CSP blocks inline onclick)
-    el.querySelector('#preset-confirm-cancel')?.addEventListener('click', cancelPreset);
+    // For historical WC: back button goes to year picker, not step 1
+    const cancelHandler = isHistoricalWC
+      ? () => { hide(el); _showWCYearPicker(); }
+      : cancelPreset;
+    el.querySelector('#preset-confirm-cancel')?.addEventListener('click', cancelHandler);
     el.querySelector('#preset-confirm-shuffle')?.addEventListener('click', shufflePresetGroups);
     el.querySelector('#preset-confirm-run')?.addEventListener('click', runPresetSimulation);
 
-    // Click on team → open replace search (WC confirm)
-    if (isWC) {
-      el.querySelector('.trn-preset-groups-preview')?.addEventListener('click', e => {
-        const teamEl = e.target.closest('.trn-pg-team');
-        if (!teamEl) return;
-        const groupEl = teamEl.closest('.trn-pg-group');
-        const groupIdx = [...el.querySelectorAll('.trn-pg-group')].indexOf(groupEl);
-        const teamIdx  = [...groupEl.querySelectorAll('.trn-pg-team')].indexOf(teamEl);
-        _openPresetReplace({ type: 'wc', groupIdx, teamIdx });
-      });
-    }
+    // Edit button: toggle click-to-replace mode
+    el.querySelector('#preset-confirm-edit')?.addEventListener('click', () => {
+      _presetEditMode = !_presetEditMode;
+      const editBtn = el.querySelector('#preset-confirm-edit');
+      if (editBtn) {
+        editBtn.classList.toggle('ucl-tool-active', _presetEditMode);
+        editBtn.textContent = _presetEditMode ? '✅ ' + (t('trn-btn-edit') || 'Editar') : '✏️ ' + (t('trn-btn-edit') || 'Editar').replace(/^✏️\s*/,'');
+      }
+      el.querySelectorAll('.trn-pg-team').forEach(te => te.classList.toggle('ucl-pot-editable', _presetEditMode));
+    });
+
+    // Click on team → open replace search (all group-stage presets)
+    el.querySelector('.trn-preset-groups-preview')?.addEventListener('click', e => {
+      if (!_presetEditMode && !isWC) return;
+      const teamEl = e.target.closest('.trn-pg-team');
+      if (!teamEl) return;
+      const groupEl = teamEl.closest('.trn-pg-group');
+      const groupIdx = [...el.querySelectorAll('.trn-pg-group')].indexOf(groupEl);
+      const teamIdx  = [...groupEl.querySelectorAll('.trn-pg-team')].indexOf(teamEl);
+      _openPresetReplace({ type: 'wc', groupIdx, teamIdx });
+    });
 
     // Retroactively update badge img src as catalog resolves
     _getTrnCatalog().then(cat => {
@@ -1890,8 +2050,10 @@ const TRN = (() => {
 
   function cancelPreset() {
     _teams = []; _groupsDraw = []; _fmt = null; _activePreset = null; _uclFixtures = null;
-    const conf = $('trn-preset-confirm'); if (conf) hide(conf);
-    const ucl  = $('trn-ucl-draw');      if (ucl)  hide(ucl);
+    _wcHistoricalYear = null;
+    const conf    = $('trn-preset-confirm');    if (conf)    hide(conf);
+    const ucl     = $('trn-ucl-draw');          if (ucl)     hide(ucl);
+    const yrPicker = $('trn-wc-year-picker');   if (yrPicker) hide(yrPicker);
     showStep(1);
   }
 
@@ -1913,7 +2075,9 @@ const TRN = (() => {
               ? await _simulateChampions()     // 4 groups, top 2 → QF
               : _activePreset === 'libertadores2025'
                 ? await _simulateChampions()   // 8 groups, top 2, KO ida y vuelta
-                : await _simulateChampions();
+                : _activePreset === 'wc-historical'
+                  ? await _simulateHistoricalWC()  // routes by edition format
+                  : await _simulateChampions();
       _stopTrnLoadCycle();
       _data = data;
       _computeTournamentStats(_data);
@@ -2544,7 +2708,7 @@ const TRN = (() => {
       _activePreset === 'wc2026'          ? 'FIFA World Cup 2026' :
       _activePreset === 'euro2024'        ? 'UEFA Euro 2024' :
       _activePreset === 'copamerica2024'  ? 'Copa América 2024' :
-      _activePreset === 'libertadores2025'? 'Copa Libertadores 2025' :
+      _activePreset === 'libertadores2025'? 'Copa Libertadores 2026' :
       t('trn-reveal-champions');
     el.classList.remove('hidden');
     _confetti();
@@ -2950,6 +3114,17 @@ const TRN = (() => {
       koRounds: koData.rounds,
       teams: _teams,
     };
+  }
+
+  // ── HISTORICAL WORLD CUP — routes to correct sim by format ────────────
+  async function _simulateHistoricalWC() {
+    const edsMap = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS : {};
+    const ed     = _wcHistoricalYear ? edsMap[_wcHistoricalYear] : null;
+    const fmt    = ed ? ed.format : 'groups32_ko';
+    // groups24_ko (1982-1994): 6 groups + best 4 thirds → 16 team R16
+    if (fmt === 'groups24_ko') return _simulateEuro2024();
+    // all other formats (16-team or 32-team groups KO): standard champions sim
+    return _simulateChampions();
   }
 
   // ── CHAMPIONS ────────────────────────────────────────────

@@ -1,0 +1,96 @@
+{
+  "name": "Barcelona SC",
+  "slug": "barcelona-sc",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/barcelona-sc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Javier Burrai",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Carlos Garcés",
+          "position": "RB",
+          "rating": 76
+        },
+        {
+          "name": "Adonis Preciado",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Xavier Mejía",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jesús Rodríguez",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Joffre Escobar",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Carlos Vera",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Damián Díaz",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Bryan Angulo",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Fidel Martínez",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jonatan Álvez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Wellington Sancho",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Gabriel Cortez",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ariel Moran",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Joao Ortiz",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Barcelona SC (2025/2026)",
+      "teamLabel": "Barcelona SC (2025–26)"
+    }
+  }
+}

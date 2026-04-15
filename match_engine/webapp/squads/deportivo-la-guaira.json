@@ -1,0 +1,91 @@
+{
+  "name": "Caracas FC / Deportivo La Guaira",
+  "slug": "deportivo-la-guaira",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/deportivo-la-guaira.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Rafael Romo",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Jhon González",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Michael Morantes",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yohandry Orozco",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Kervin Andrade",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Arquímedes Figuera",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Moisés Navarro",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sandro Merino",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Alejandro Cichero",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Daniel Morales",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Salomón Rondón",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Alexis Blanco",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Juan Arango",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Josef Martínez",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — Deportivo La Guaira (2025/2026)",
+      "teamLabel": "Dep. La Guaira (2025–26)"
+    }
+  }
+}

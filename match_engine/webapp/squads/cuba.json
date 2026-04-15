@@ -1,0 +1,47 @@
+{
+  "slug": "cuba",
+  "name": "Cuba",
+  "shortName": "CUB",
+  "group": "🌍 Selecciones",
+  "badge": "/img/badges/_placeholder.svg",
+  "seasons": {
+    "1938": {
+      "formation": "4-4-2",
+      "teamLabel": "Cuba (1938)",
+      "source": "Cuba - World Cup 1938 (beat Romania, QF vs Brazil)",
+      "ratings": { "attack": 67, "midfield": 65, "defense": 66, "goalkeeping": 65 },
+      "players": [
+        { "name": "Benito Carvajales",   "position": "GK", "rating": 66 },
+        { "name": "Fausto Fajardo",      "position": "RB", "rating": 65 },
+        { "name": "Juan Tunas",          "position": "CB", "rating": 66 },
+        { "name": "Antonio Rodriguez",   "position": "CB", "rating": 65 },
+        { "name": "Rafael Arencibia",    "position": "LB", "rating": 64 },
+        { "name": "Félipe Pedroso",      "position": "DM", "rating": 65 },
+        { "name": "Roberto Vicente",     "position": "CM", "rating": 65 },
+        { "name": "Tomás Fernández",     "position": "CM", "rating": 65 },
+        { "name": "Héctor Socorro",      "position": "RW", "rating": 66 },
+        { "name": "Isidoro Díaz",        "position": "ST", "rating": 67 },
+        { "name": "Carlos Oliveira",     "position": "LW", "rating": 65 }
+      ]
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "teamLabel": "Cuba",
+      "source": "Cuba - historical stub",
+      "ratings": { "attack": 62, "midfield": 61, "defense": 62, "goalkeeping": 61 },
+      "players": [
+        { "name": "Sandy Sánchez",       "position": "GK", "rating": 62 },
+        { "name": "Reinier Alcántara",   "position": "RB", "rating": 61 },
+        { "name": "Yasmany Duvergel",    "position": "CB", "rating": 62 },
+        { "name": "Osvaldo Alonso",      "position": "CB", "rating": 62 },
+        { "name": "Roberto Linares",     "position": "LB", "rating": 60 },
+        { "name": "Erick Caín",          "position": "DM", "rating": 61 },
+        { "name": "Ariel Martínez",      "position": "CM", "rating": 61 },
+        { "name": "Emelio Córdoba",      "position": "CM", "rating": 61 },
+        { "name": "Alexis Landín",       "position": "RW", "rating": 62 },
+        { "name": "Maykel Reyes",        "position": "ST", "rating": 63 },
+        { "name": "Adrián Rodríguez",    "position": "LW", "rating": 61 }
+      ]
+    }
+  }
+}

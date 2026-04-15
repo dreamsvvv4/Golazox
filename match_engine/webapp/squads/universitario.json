@@ -1,0 +1,96 @@
+{
+  "name": "Club Universitario de Deportes",
+  "slug": "universitario",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/universitario.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Diego Romero",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Gustavo Dulanto",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nelson Cabanillas",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Aldo Corzo",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Segundo Portocarrero",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Rodrigo Ureña",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Manuel Barreto",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Andy Polo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Piero Quispe",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Alex Valera",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Edison Flores",
+          "position": "LW",
+          "rating": 79
+        },
+        {
+          "name": "José Carvallo",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Brayan Velarde",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Martín Pérez Guedes",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Brenner",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "source": "Transfermarkt — Universitario de Deportes (2025/2026)",
+      "teamLabel": "Universitario (2025–26)"
+    }
+  }
+}

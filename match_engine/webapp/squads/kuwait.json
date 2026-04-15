@@ -1,0 +1,144 @@
+{
+  "slug": "kuwait",
+  "name": "Kuwait",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/kuwait.png",
+  "seasons": {
+    "1982": {
+      "formation": "4-4-2",
+      "teamLabel": "Kuwait (1982)",
+      "source": "Kuwait - World Cup 1982 Spain",
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 68,
+        "goalkeeping": 67
+      },
+      "players": [
+        {
+          "name": "Ahmed Al-Tarabolsi",
+          "position": "GK",
+          "rating": 68
+        },
+        {
+          "name": "Waleed Al-Osaimi",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Naeem Mubarak",
+          "position": "CB",
+          "rating": 69
+        },
+        {
+          "name": "Mahboub Mubarak",
+          "position": "RB",
+          "rating": 68
+        },
+        {
+          "name": "Yusuf Al-Suwayed",
+          "position": "LB",
+          "rating": 68
+        },
+        {
+          "name": "Fathi Marzouk",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Jasem Yaqoub",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Abdullah Al-Buloushi",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Khaled Al-Mutairi",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Jassem Al-Huwaidi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Faisal Al-Dakhil",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "teamLabel": "Kuwait (2025-26)",
+      "source": "Kuwait National Team 2025",
+      "ratings": {
+        "attack": 66,
+        "midfield": 66,
+        "defense": 65,
+        "goalkeeping": 65
+      },
+      "players": [
+        {
+          "name": "Sulaiman Abdullah",
+          "position": "GK",
+          "rating": 65
+        },
+        {
+          "name": "Hamad Al-Enezi",
+          "position": "CB",
+          "rating": 66
+        },
+        {
+          "name": "Musaed Neda",
+          "position": "CB",
+          "rating": 65
+        },
+        {
+          "name": "Bader Al-Mutawa",
+          "position": "RB",
+          "rating": 66
+        },
+        {
+          "name": "Yousef Al-Sulaiman",
+          "position": "LB",
+          "rating": 65
+        },
+        {
+          "name": "Fahad Al-Ansari",
+          "position": "CM",
+          "rating": 67
+        },
+        {
+          "name": "Khaled Al-Rashidi",
+          "position": "CM",
+          "rating": 67
+        },
+        {
+          "name": "Naif Hazazi",
+          "position": "AM",
+          "rating": 69
+        },
+        {
+          "name": "Mubarak Al-Faneeni",
+          "position": "RW",
+          "rating": 67
+        },
+        {
+          "name": "Yousef Nasser",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Meshari Al-Harbi",
+          "position": "LW",
+          "rating": 67
+        }
+      ]
+    }
+  }
+}

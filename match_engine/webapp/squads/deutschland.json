@@ -1,261 +1,593 @@
 {
   "slug": "deutschland",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "Ernst Albrecht",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jakob Bender",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Fritz Buchloh",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Willy Busch",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Edmund Conen",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Franz Dienert",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rudolf Gramlich",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Sigmund Haringer",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Matthias Heidemann",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Karl Hohmann",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hans Jakob",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Paul Janes",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Stanislaus Kobierski",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Willibald Kreß",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Ernst Lehner",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Reinhold Münzenberg",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Rudolf Noack",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Hans Schwartz",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Otto Siffling",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Josef Streb",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Fritz Szepan",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Paul Zielinski",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Fritz Buchloh",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Josef Gauchel",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rudolf Gellesch",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ludwig Goldbrunner",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Wilhelm Hahnemann",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Hans Jakob",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Paul Janes",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Albin Kitzinger",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Andreas Kupfer",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ernst Lehner",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hans Mock",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Reinhold Münzenberg",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Leopold Neumer",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hans Pesser",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Rudolf Raftl",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Willibald Schmaus",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Otto Siffling",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Stefan Skoumal",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Jakob Streitle",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Josef Stroh",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Fritz Szepan",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Franz Wagner",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "1954": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Toni Turek",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Fritz Laband",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Werner Kohlmeyer",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Hans Bauer",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Herbert Erhardt",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Horst Eckel",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Josef Posipal",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Karl Mai",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paul Mebus",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Werner Liebrich",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Karl-Heinz Metzner",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Helmut Rahn",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Max Morlock",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bernhard Klodt",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ottmar Walter",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Fritz Walter",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Richard Herrmann",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ulrich Biesinger",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Alfred Pfaff",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Hans Schäfer",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Heinz Kubsch",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Heinz Kwiatkowski",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
       "players": [
         {
           "name": "Fritz Herkenrath",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Toni Turek",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Heinz Kubsch",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Heinz Kwiatkowski",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Werner Liebrich",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Erich Retter",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Fritz Laband",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Josef Posipal",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Erich Juskowiak",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Werner Kohlmeyer",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Hans Bauer",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Herbert Erhardt",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Fritz Walter",
           "position": "CM",
           "marketValue": 0,
-          "rating": 88
+          "rating": 82
         },
         {
           "name": "Michael Pfeiffer",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Gerhard Harpers",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Karl-Heinz Metzner",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Friedel Schicks",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Horst Eckel",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jakob Miltz",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Karl Mai",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Erich Schanko",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Josef Röhrig",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jupp Derwall",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Max Morlock",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Alfred Pfaff",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Hans Schäfer",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Paul Mebus",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Uwe Seeler",
           "position": "ST",
           "marketValue": 0,
-          "rating": 88
+          "rating": 82
         },
         {
           "name": "Helmut Rahn",
           "position": "ST",
           "marketValue": 0,
-          "rating": 87
+          "rating": 82
         },
         {
           "name": "Bernhard Termath",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Alfred Beck",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Erwin Waldner",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Richard Kreß",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Bernhard Klodt",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Gerhard Kaufhold",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Klaus Stürmer",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Franz Islacker",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Richard Herrmann",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ulrich Biesinger",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ottmar Walter",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         }
-      ],
-      "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 87,
-        "goalkeeping": 80
-      },
-      "source": "Transfermarkt — Germany (1954/1955)",
-      "teamLabel": "Germany (1954-55)"
+      ]
     },
-    "1966": {
-      "formation": "4-4-2",
+    "1962": {
       "players": [
         {
           "name": "Hans Tilkowski",
@@ -427,15 +759,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 85,
-        "goalkeeping": 80
-      },
-      "source": "Transfermarkt 🌍 Otros€” germany (1966/1967)",
-      "teamLabel": "germany (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Hans Tilkowski",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Horst-Dieter Höttges",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Karl-Heinz Schnellinger",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Willi Schulz",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Wolfgang Weber",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Albert Brülls",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Helmut Haller",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Uwe Seeler",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Sigfried Held",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lothar Emmerich",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Wolfgang Overath",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Heinz Hornig",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Friedel Lutz",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Bernd Patzke",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Max Lorenz",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Wolfgang Paul",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Klaus-Dieter Sieloff",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Werner Krämer",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jürgen Grabowski",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Günter Bernard",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Sepp Maier",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

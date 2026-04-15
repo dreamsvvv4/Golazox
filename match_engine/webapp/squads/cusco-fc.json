@@ -1,0 +1,96 @@
+{
+  "name": "Cusco FC",
+  "slug": "cusco-fc",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/cusco-fc.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Ángel Zamora",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Wilber Cartagena",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Alberto Rodríguez",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jean Deza",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "César Huanca",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Raziel García",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Joao Contreras",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Christian Ramos",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Aldair Fuentes",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Jorge Cazulo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Reimond Manco",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Carlos Cáceda",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Francis Ortiz",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Dany Flores",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Tony Urbano",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — Cusco FC (2025/2026)",
+      "teamLabel": "Cusco FC (2025–26)"
+    }
+  }
+}

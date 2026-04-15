@@ -1,6 +1,74 @@
 {
   "slug": "senegal",
   "seasons": {
+    "2002": {
+      "formation": "4-4-2",
+      "teamLabel": "Senegal (2002)",
+      "source": "Senegal - World Cup 2002 (QF, beat France)",
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Tony Sylva",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Omar Daf",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Lamine Diatta",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ferdinand Coly",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Pape Sarr",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Aliou Cissé",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Salif Diao",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Pape Bouba Diop",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "El Hadji Diouf",
+          "position": "RW",
+          "rating": 81
+        },
+        {
+          "name": "Henri Camara",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Khalilou Fadiga",
+          "position": "LW",
+          "rating": 77
+        }
+      ]
+    },
     "2008": {
       "formation": "4-4-2",
       "players": [
@@ -211,6 +279,142 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Senegal (2008/2009)",
       "teamLabel": "Senegal (2008-09)"
+    },
+    "2018": {
+      "formation": "4-4-2",
+      "teamLabel": "Senegal (2018)",
+      "source": "Senegal - World Cup 2018",
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Khadim N'Diaye",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Youssouf Sabaly",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Salif Sané",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Cheikh Koulibaly",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Saliou Ciss",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Cheikhou Kouyaté",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Alfred Ndiaye",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Moussa Wagué",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Sadio Mané",
+          "position": "LW",
+          "rating": 87
+        },
+        {
+          "name": "M'Baye Niang",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    },
+    "2022": {
+      "formation": "4-3-3",
+      "teamLabel": "Senegal (2022)",
+      "source": "Senegal - World Cup 2022 (R16, AFCON holders)",
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Édouard Mendy",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "Bouna Sarr",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "rating": 83
+        },
+        {
+          "name": "Abdou Diallo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Fodé Ballo-Touré",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Cheikhou Kouyaté",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nampalys Mendy",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ismaïla Sarr",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Sadio Mané",
+          "position": "LW",
+          "rating": 87
+        },
+        {
+          "name": "Boulaye Dia",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

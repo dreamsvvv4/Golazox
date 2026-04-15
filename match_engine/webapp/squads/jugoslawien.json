@@ -7,6 +7,551 @@
   "badgeLocalPath": "/img/badges/serbia.png",
   "id": "jugoslawien",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Milorad Arsenijević",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ivan Bek",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Momčilo Đokić",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Branislav Hrnjiček",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Milutin Ivković",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Milovan Jakšić",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Blagoje Marjanović",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Božidar Marković",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dragoslav Mihajlović",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Dragutin Najdanović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Branislav Sekulić",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Teofilo Spasojević",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ljubiša Stefanović",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Milutin Stojanović",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandar Tirnanić",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Dragomir Tošić",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Đorđe Vujadinović",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Aleksandar Atanacković",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Vladimir Beara",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Stjepan Bobek",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Božo Broketa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Željko Čajkovski",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Zlatko Čajkovski",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ratko Čolić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Predrag Đajić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vladimir Firm",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ivica Horvat",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Miodrag Jovanović",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ervin Katnić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Prvoslav Mihajlović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rajko Mitić",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Srđan Mrkušić",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Tihomir Ognjanov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Bela Palfi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ivo Radovniković",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Branko Stanković",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Kosta Tomašević",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Bernard Vukas",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Siniša Zlatković",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Vladimir Beara",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Branko Stanković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Tomislav Crnković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Zlatko Čajkovski",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ivan Horvat",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vujadin Boškov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Tihomir Ognjanov",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rajko Mitić",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bernard Vukas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Stjepan Bobek",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Branko Zebec",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Branko Kralj",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Miljan Zeković",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Lav Mantula",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ljubiša Spajić",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Sima Milovanov",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Bruno Belin",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Miloš Milutinović",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Zlatko Papec",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Dionizije Dvornić",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Todor Veselinović",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandar Petaković",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Vladimir Beara",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Srboljub Krivokuća",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Vasilije Šijaković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Tomislav Crnković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Novak Tomić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Branko Zebec",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Miloš Milutinović",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Dobrosav Krstić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vujadin Boškov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ivan Šantek",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vladimir Popović",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandar Petaković",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Todor Veselinović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Milorad Milutinović",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dragoslav Šekularac",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ilijas Pašić",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Zdravko Rajkov",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Luka Lipošinović",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Radivoje Ognjanović",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gordan Irović",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Nikola Radović",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Dražan Jerković",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "Milutin Šoškić",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Vladimir Durković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Fahrudin Jusufi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Petar Radaković",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Vlatko Marković",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vladica Popović",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Andrija Anković",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Dragoslav Šekularac",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Dražan Jerković",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Milan Galić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Josip Skoblar",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Srboljub Krivokuća",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Slavko Svinjarević",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Vasilije Šijaković",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Željko Matuš",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Muhamed Mujić",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Vojislav Melić",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Vladica Kovačević",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Mirko Stojanović",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Žarko Nikolić",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Nikola Stipić",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandar Ivoš",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "1974": {
       "formation": "4-4-2",
       "players": [
@@ -180,7 +725,120 @@
       }
     },
     "1990": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Tomislav Ivković",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Vujadin Stanojković",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Predrag Spasić",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Zoran Vulić",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Faruk Hadžibegić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Davor Jozić",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Dragoljub Brnović",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Safet Sušić",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Darko Pančev",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Dragan Stojković",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Zlatko Vujović",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Fahrudin Omerović",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Srečko Katanec",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alen Bokšić",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Robert Prosinečki",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Refik Šabanadžović",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Robert Jarni",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Mirsad Baljić",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Dejan Savićević",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Davor Šuker",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Andrej Panadić",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Dragoje Leković",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1998": {
       "players": [
         {
           "name": "Tomislav Ivkovic",
@@ -210,37 +868,37 @@
         {
           "name": "Robert Prosinečki",
           "position": "CM",
-          "rating": 90
+          "rating": 86
         },
         {
           "name": "Predrag Mijatovic",
           "position": "AM",
-          "rating": 87
+          "rating": 86
         },
         {
           "name": "Dragan Stojković",
           "position": "AM",
-          "rating": 92
+          "rating": 86
         },
         {
           "name": "Dejan Savicevic",
           "position": "LW",
-          "rating": 91
+          "rating": 86
         },
         {
           "name": "Predrag Suker",
           "position": "ST",
-          "rating": 88
+          "rating": 86
         },
         {
           "name": "Darko Pančev",
           "position": "ST",
-          "rating": 89
+          "rating": 86
         },
         {
           "name": "Zvonimir Boban",
           "position": "DM",
-          "rating": 88
+          "rating": 86
         },
         {
           "name": "Darko Vojvodic",
@@ -257,13 +915,7 @@
           "position": "GK",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 87,
-        "midfield": 89,
-        "defense": 82,
-        "goalkeeping": 83
-      }
+      ]
     }
   }
 }

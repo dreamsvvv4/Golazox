@@ -1,97 +1,144 @@
 {
   "slug": "angola",
   "name": "Angola",
-  "nameEn": "Angola",
-  "nameEs": "Angola",
   "group": "🌍 Selecciones",
   "badgeLocalPath": "/img/badges/angola.png",
-  "id": "angola",
   "seasons": {
-    "2025": {
-      "formation": "4-3-3",
+    "2006": {
+      "formation": "4-4-2",
+      "teamLabel": "Angola (2006)",
+      "source": "Angola - World Cup 2006 Germany",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 71
+      },
       "players": [
         {
-          "name": "Tony",
+          "name": "João Ricardo",
           "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Jamba",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Kali",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Delgado",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Lebo Lebo",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Figueiredo",
+          "position": "CM",
           "rating": 74
+        },
+        {
+          "name": "André",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Mendonça",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Pedro Mantorras",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Akwá",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Flávio",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "teamLabel": "Angola (2025-26)",
+      "source": "Angola National Team 2025",
+      "ratings": {
+        "attack": 71,
+        "midfield": 70,
+        "defense": 69,
+        "goalkeeping": 68
+      },
+      "players": [
+        {
+          "name": "Ney Percival",
+          "position": "GK",
+          "rating": 69
         },
         {
           "name": "Bastos",
           "position": "CB",
-          "rating": 77
-        },
-        {
-          "name": "Milson",
-          "position": "RB",
           "rating": 73
         },
         {
-          "name": "Kialonda",
+          "name": "Djalma",
           "position": "CB",
-          "rating": 73
+          "rating": 70
         },
         {
-          "name": "Zuela",
-          "position": "LB",
-          "rating": 72
-        },
-        {
-          "name": "Manucho",
-          "position": "ST",
-          "rating": 79
-        },
-        {
-          "name": "Gelson",
-          "position": "RW",
-          "rating": 76
-        },
-        {
-          "name": "Fredy",
-          "position": "LW",
-          "rating": 74
-        },
-        {
-          "name": "Herenilson",
-          "position": "DM",
-          "rating": 73
+          "name": "Geraldo",
+          "position": "RB",
+          "rating": 70
         },
         {
           "name": "Wilson Eduardo",
-          "position": "AM",
-          "rating": 76
+          "position": "LB",
+          "rating": 70
         },
         {
-          "name": "Dala",
-          "position": "CM",
-          "rating": 75
-        },
-        {
-          "name": "Jacinto",
+          "name": "Will",
           "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Zito",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Nando",
+          "position": "AM",
           "rating": 72
         },
         {
-          "name": "Bruno Gaspar",
-          "position": "RB",
+          "name": "Mabululu",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Gelson Dala",
+          "position": "ST",
           "rating": 74
         },
         {
-          "name": "Koffi",
-          "position": "ST",
-          "rating": 73
-        },
-        {
-          "name": "Kulumbinha",
+          "name": "Carneiro",
           "position": "LW",
-          "rating": 73
+          "rating": 72
         }
-      ],
-      "ratings": {
-        "attack": 76,
-        "midfield": 74,
-        "defense": 74,
-        "goalkeeping": 72
-      }
+      ]
     }
   }
 }

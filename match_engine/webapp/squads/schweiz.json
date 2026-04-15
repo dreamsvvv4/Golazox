@@ -1,8 +1,463 @@
 {
   "slug": "schweiz",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1934": {
+      "players": [
+        {
+          "name": "André Abegglen",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Renato Bizzozero",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Joseph Bossi",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Albert Büche",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Otto Bühler",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ernst Frick",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Louis Gobet",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Albert Guinchard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Erwin Hochsträsser",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Willy Huber",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ernst Hufschmid",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fernand Jaccard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alfred Jäck",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Willy Jäggi",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Leopold Kielholz",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Edmond Loichot",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Severino Minelli",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Arnoldo Ortelli",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Raymond Passello",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Frank Séchehaye",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Willy von Känel",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Walter Weiler",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "André Abegglen",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Georges Aeby",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Paul Aeby",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Lauro Amadò",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Erwin Ballabio",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Alfred Bickel",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Renato Bizzozero",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Alessandro Frigerio",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tullio Grassi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Albert Guinchard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Willy Huber",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Leopold Kielholz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "August Lehmann",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ernst Lörtscher",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Severino Minelli",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Oscar Rauch",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Eugen Rupf",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Hermann Springer",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Adolf Stelzer",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Sirio Vernati",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Fritz Wagner",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Eugen Walaschek",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Charles Antenen",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "René Bader",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Walter Beerli",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Alfred Bickel",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Roger Bocquet",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Eugen Corrodi",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Oliver Eggimann",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jacques Fatton",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hans-Peter Friedländer",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rudolf Gyger",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Robert Hasler",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Adolphe Hug",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Willy Kernen",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gerhard Lusenti",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "André Neury",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Roger Quinche",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Kurt Rey",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Walter Schneiter",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Hans Siegenthaler",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Willi Steffen",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Georges Stuber",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Jean Tamini",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Walter Eich",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Eugene Parlier",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Georges Stuber",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Roger Bocquet",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Marcel Flückiger",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Roger Mathis",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "André Neury",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Heinz Bigler",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Charles Casali",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oliver Eggimann",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Norbert Eschmann",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gilbert Fesselet",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ivo Frosio",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Willy Kernen",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Charles Antenen",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Robert Ballaman",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jacques Fatton",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Josef Hügi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Marcel Mauron",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Eugen Meier",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ferdinando Riva",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Roger Vonlanthen",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
       "players": [
         {
           "name": "Mario Prosperi",
@@ -164,15 +619,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 74,
-        "midfield": 84,
-        "defense": 75,
-        "goalkeeping": 77
-      },
-      "source": "Transfermarkt 🌍 Otros€” switzerland (1966/1967)",
-      "teamLabel": "switzerland (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Karl Elsener",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Willy Allemann",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kurt Armbruster",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Heinz Bäni",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "René Brodmann",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Richard Dürr",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Hansruedi Führer",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Vittore Gottardi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "André Grobéty",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Robert Hosp",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Köbi Kuhn",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Léo Eichmann",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Fritz Künzli",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Werner Leimgruber",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Karl Odermatt",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "René-Pierre Quentin",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jean-Claude Schindelholz",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Heinz Schneiter",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Xavier Stierli",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ely Tacchella",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Georges Vuilleumier",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Mario Prosperi",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

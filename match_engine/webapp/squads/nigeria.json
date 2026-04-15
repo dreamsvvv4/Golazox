@@ -1,6 +1,414 @@
 {
   "slug": "nigeria",
   "seasons": {
+    "1994": {
+      "formation": "4-4-2",
+      "teamLabel": "Nigeria (1994)",
+      "source": "Nigeria - World Cup 1994 (R16)",
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 75,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Peter Rufai",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Uche Okechukwu",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ben Iroha",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Chidi Nwanu",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Finidi George",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Jay-Jay Okocha",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Emmanuel Amuneke",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Sunday Oliseh",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Rashidi Yekini",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Daniel Amokachi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "AM",
+          "rating": 75
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Nigeria (1998)",
+      "source": "Nigeria - World Cup 1998",
+      "ratings": {
+        "attack": 78,
+        "midfield": 76,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Peter Rufai",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Taribo West",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Uche Okechukwu",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Celestine Babayaro",
+          "position": "LB",
+          "rating": 77
+        },
+        {
+          "name": "Finidi George",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Jay-Jay Okocha",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Sunday Oliseh",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Emmanuel Amuneke",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Rashidi Yekini",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Victor Ikpeba",
+          "position": "LW",
+          "rating": 76
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-3-3",
+      "teamLabel": "Nigeria (2002)",
+      "source": "Nigeria - World Cup 2002",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Ike Shorunmu",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Taribo West",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Joseph Yobo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Celestine Babayaro",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ifeanyi Udeze",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Jay-Jay Okocha",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Nwankwo Kanu",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Sunday Oliseh",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Julius Aghahowa",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Yakubu Aiyegbeni",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Finidi George",
+          "position": "LW",
+          "rating": 75
+        }
+      ]
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "teamLabel": "Nigeria (2010)",
+      "source": "Nigeria - World Cup 2010",
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Vincent Enyeama",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Joseph Yobo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Taye Taiwo",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Chidi Odiah",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Danny Shittu",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "John Obi Mikel",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Sani Kaita",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Yakubu Aiyegbeni",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Peter Odemwingie",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Obafemi Martins",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Sani Oduya",
+          "position": "LW",
+          "rating": 71
+        }
+      ]
+    },
+    "2014": {
+      "formation": "4-3-3",
+      "teamLabel": "Nigeria (2014)",
+      "source": "Nigeria - World Cup 2014 (R16)",
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Vincent Enyeama",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Joseph Yobo",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Efe Ambrose",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Juwon Oshaniwa",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Elderson Echiejile",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "John Obi Mikel",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Ogenyi Onazi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Victor Moses",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Ahmed Musa",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Peter Odemwingie",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Emmanuel Emenike",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    },
+    "2018": {
+      "formation": "4-2-3-1",
+      "teamLabel": "Nigeria (2018)",
+      "source": "Nigeria - World Cup 2018",
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Francis Uzoho",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "William Troost-Ekong",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Leon Balogun",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Tyronne Ebuehi",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Brian Idowu",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "John Obi Mikel",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Ahmed Musa",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Victor Moses",
+          "position": "LW",
+          "rating": 75
+        },
+        {
+          "name": "Odion Ighalo",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

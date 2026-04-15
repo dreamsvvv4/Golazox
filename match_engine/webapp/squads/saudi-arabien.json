@@ -1,6 +1,516 @@
 {
   "slug": "saudi-arabien",
   "seasons": {
+    "1994": {
+      "formation": "4-4-2",
+      "teamLabel": "Arabia Saudí (1994)",
+      "source": "Saudi Arabia - World Cup 1994 (R16)",
+      "ratings": {
+        "attack": 77,
+        "midfield": 75,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Mohamed Al-Deayea",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Abdulwahab Nasser",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Youssef Al-Thunayan",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Yaami",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Madani",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Fahad Al-Bishi",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Khamees Al-Owairan",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fuad Anwar",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sami Al-Jaber",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Saeed Al-Owairan",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Yasser Al-Qahtani",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Arabia Saudí (1998)",
+      "source": "Saudi Arabia - World Cup 1998",
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Mohamed Al-Deayea",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Amin Beinker",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Youssef Al-Thunayan",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Hussein Sulimani",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Ahmed Dokhi",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Mohamed Khojah",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Sami Al-Jaber",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mustafa Al-Wahsh",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Fuad Anwar",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Fawzi Al-Thunayan",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Fahad Al-Mehalel",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "teamLabel": "Arabia Saudí (2002)",
+      "source": "Saudi Arabia - World Cup 2002",
+      "ratings": {
+        "attack": 71,
+        "midfield": 70,
+        "defense": 69,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Mohamed Al-Deayea",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Omar Al-Ghamdi",
+          "position": "RB",
+          "rating": 69
+        },
+        {
+          "name": "Redha Tukar",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Mohammed Al-Shlhoub",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Abdelslam Khathran",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Ahmed Al-Dokhi",
+          "position": "DM",
+          "rating": 70
+        },
+        {
+          "name": "Sami Al-Jaber",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Nawaf Al-Temyat",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Yasser Al-Qahtani",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Noor",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Abdullah Al-Dosari",
+          "position": "LW",
+          "rating": 69
+        }
+      ]
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "teamLabel": "Arabia Saudí (2006)",
+      "source": "Saudi Arabia - World Cup 2006",
+      "ratings": {
+        "attack": 70,
+        "midfield": 69,
+        "defense": 69,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Mabrouk Zaid",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Hussein Abd Robou",
+          "position": "RB",
+          "rating": 69
+        },
+        {
+          "name": "Mohammed Zubromawi",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Hamad Al-Montashari",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Abdullah Jumaan",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Mohammed Al-Anbar",
+          "position": "DM",
+          "rating": 69
+        },
+        {
+          "name": "Sami Al-Jaber",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Yasser Al-Qahtani",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Bahri",
+          "position": "RW",
+          "rating": 70
+        },
+        {
+          "name": "Saud Khariri",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Abdullah Al-Ghreiz",
+          "position": "LW",
+          "rating": 69
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Abdullah Al-Mayouf",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Mansoor Al-Harbi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Osama Hawsawi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ali Al-Bulaihi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Omar Hawsawi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Mohammed Al-Breik",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Salman Al-Faraj",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Yahya Al-Shehri",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hattan Bahebri",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mohammad Al-Sahlawi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Abdulmalek Al-Khaibri",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Kanno",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Yasser Al-Shahrani",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Abdullah Otayf",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Abdullah Al-Khaibari",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Housain Al-Mogahwi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Taisir Al-Jassim",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Salem Al-Dawsari",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Fahad Al-Muwallad",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Muhannad Assiri",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Yasser Al-Mosailem",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Mohammed Al-Owais",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Motaz Hawsawi",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Mohammed Al-Rubaie",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Sultan Al-Ghannam",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Abdullah Madu",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Abdulelah Al-Amri",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ali Al-Bulaihi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Mohammed Al-Breik",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Salman Al-Faraj",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Abdulellah Al-Malki",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Firas Al-Buraikan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Salem Al-Dawsari",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Saleh Al-Shehri",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Saud Abdulhamid",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Yasser Al-Shahrani",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Abdullah Otayf",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ali Al-Hassan",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Sami Al-Najei",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hassan Al-Tambakti",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Nawaf Al-Abed",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Hattan Bahebri",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Abdulrahman Al-Aboud",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Mohammed Al-Owais",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Nawaf Al-Aqidi",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Mohamed Kanno",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

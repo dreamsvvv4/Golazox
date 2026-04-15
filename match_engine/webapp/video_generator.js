@@ -126,7 +126,7 @@ const CLASICOS = [
   { label: 'Cuartos UCL',             category: 'Cuartos UCL',          teamA: 'fc-paris-saint-germain', eraA: '2017', teamB: 'fc-barcelona',       eraB: '2017',  stadiumId: 'campnou',     refereeId: 'kuipers',     weatherId: 'night' },
   // 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wrexham scenarios virales
   { label: 'Final UCL Imposible',     category: 'Final UCL',            teamA: 'wrexham',              eraA: '2025', teamB: 'real-madrid',          eraB: '2025',  stadiumId: 'wembley',     refereeId: 'collina',     weatherId: 'night' },
-  { label: 'Premier League Épica',    category: 'Premier League',       teamA: 'wrexham',              eraA: '2025', teamB: 'manchester-united',    eraB: '2025',  stadiumId: 'wembley',     refereeId: 'webb',        weatherId: 'rain' },
+  { label: 'Premier League \u00c9pica',    category: 'Premier League',       teamA: 'wrexham',              eraA: '2025', teamB: 'manchester-united',    eraB: '2025',  stadiumId: 'wembley',     refereeId: 'webb',        weatherId: 'rain' },
 ];
 
 // ── Rivalidades históricas (sync with HISTORIC_MATCHES in app.js) ──────────
@@ -317,6 +317,12 @@ const DERBIES_LIST = [
     question: 'Se repetira la historia en',
     a: { slug: 'fc-liverpool',                era: '2025', stadium: 'anfield',  referee: 'clattenburg', weather: 'rain' },
     b: { slug: 'fc-everton',                  era: '2025' } },
+  { label: 'Derby de Yorkshire',    en: 'Yorkshire Derby',       country: 'Inglaterra',  flag: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
+    desc: 'Manchester United vs Leeds United',
+    history: 'El duelo mas enfurecido del norte',
+    question: 'Se repetira la historia en',
+    a: { slug: 'manchester-united',           era: '2025', stadium: 'wembley',  referee: 'webb',     weather: 'rain' },
+    b: { slug: 'leeds-united',                era: '2025' } },
   { label: 'Fla-Flu',               en: 'Fla-Flu',               country: 'Brasil',      flag: '\ud83c\udde7\ud83c\uddf7',
     desc: 'Flamengo vs Fluminense',
     history: 'Maracana lleno - el classico carioca',
@@ -381,9 +387,37 @@ function pickNoRepeat(list) {
 }
 
 const BADGE_DIR = path.join(__dirname, 'public', 'img', 'badges');
+
+// Convert SVG badge to PNG (cached); returns PNG path or null
+function _svgToPng(svgPath, pngPath, size = 400) {
+  try {
+    const sharp = require('sharp');
+    const svgBuf = fs.readFileSync(svgPath);
+    // sharp can render SVG → PNG synchronously via execSync trick
+    // We use spawnSync to run a tiny inline node script instead
+    const script = [
+      `const sharp=require('sharp');`,
+      `sharp(Buffer.from(${JSON.stringify(svgBuf.toString('base64'))},'base64'))`,
+      `.resize(${size},${size},{fit:'contain',background:{r:0,g:0,b:0,alpha:0}})`,
+      `.png().toFile(${JSON.stringify(pngPath)},(e)=>{if(e)process.exit(1);});`,
+    ].join('');
+    const r = spawnSync(process.execPath, ['-e', script], { stdio: ['ignore','pipe','pipe'], timeout: 15000 });
+    return r.status === 0 && fs.existsSync(pngPath) ? pngPath : null;
+  } catch { return null; }
+}
+
 function _badgeFile(slug) {
-  const direct = path.join(BADGE_DIR, `${slug}.png`);
-  if (fs.existsSync(direct)) return direct;
+  // 1. Direct PNG
+  const directPng = path.join(BADGE_DIR, `${slug}.png`);
+  if (fs.existsSync(directPng)) return directPng;
+  // 2. SVG with underscore prefix (fantasy teams) → convert to cached PNG
+  const svgPath   = path.join(BADGE_DIR, `_${slug}.svg`);
+  const cachedPng = path.join(BADGE_DIR, `_${slug}_converted.png`);
+  if (fs.existsSync(cachedPng)) return cachedPng;
+  if (fs.existsSync(svgPath)) {
+    const result = _svgToPng(svgPath, cachedPng, 400);
+    if (result) return result;
+  }
   return null;
 }
 
@@ -430,6 +464,7 @@ const SLUG_NAME_ES = {
   'real-betis-balompie':    'Real Betis',
   'manchester-united':      'Manchester United',
   'manchester-city':        'Manchester City',
+  'leeds-united':           'Leeds United',
   'tottenham-hotspur':      'Tottenham',
   'fc-everton':             'Everton',
   'borussia-dortmund':      'Borussia Dortmund',
@@ -454,6 +489,84 @@ function slugToDisplayName(slug) {
   return slug.replace(/-/g, ' ')
     .replace(/\b\w/g, c => c.toUpperCase())
     .replace(/\bFc\b/g, 'FC').replace(/\bAs\b/g, 'AS').replace(/\bAc\b/g, 'AC');
+}
+
+// ── Dynamic context line builder ─────────────────────────────────────────────
+// Reads squad JSON and returns up to 3 context lines for the intro card:
+//   Line 0: competition/category label (from rival/clasico meta, or generic)
+//   Line 1: Top 3 outfield players of team A sorted by rating
+//   Line 2: Top 3 outfield players of team B sorted by rating
+// Falls back gracefully when squad data is unavailable.
+const SQUADS_DIR = path.join(__dirname, 'squads');
+
+function _topPlayers(slug, era, count = 3) {
+  try {
+    const squadFile = path.join(SQUADS_DIR, `${slug}.json`);
+    if (!fs.existsSync(squadFile)) return [];
+    const data = JSON.parse(fs.readFileSync(squadFile, 'utf8'));
+    const season = (data.seasons && data.seasons[era]) ||
+                   (data.seasons && data.seasons[String(parseInt(era) - 1)]) ||
+                   null;
+    if (!season || !season.players) return [];
+    return season.players
+      .filter(p => p.position !== 'GK' && p.rating >= 75)
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, count)
+      .map(p => {
+        // Shorten name: keep first surname only to fit the line
+        const parts = p.name.split(' ');
+        return parts.length >= 3 ? parts.slice(1).join(' ') : p.name;
+      });
+  } catch { return []; }
+}
+
+function buildContextLines(teamA, eraA, teamB, eraB, categoryLabel = null, desc = null) {
+  const dispEraA = displayEra(eraA) || eraA || '';
+  const dispEraB = displayEra(eraB) || eraB || '';
+  const nameA    = slugToDisplayName(teamA);
+  const nameB    = slugToDisplayName(teamB);
+
+  const lines = [];
+
+  // Line 0: historical result (desc) when available — most hooky
+  // otherwise fall back to category/label
+  if (desc) {
+    lines.push(desc);
+  } else if (categoryLabel) {
+    lines.push(categoryLabel);
+  } else {
+    lines.push(`${nameA} ${dispEraA} vs ${nameB} ${dispEraB}`);
+  }
+
+  // Line 1: top players team A
+  const playersA = _topPlayers(teamA, eraA);
+  if (playersA.length > 0) lines.push(playersA.join(' · '));
+
+  // Line 2: top players team B
+  const playersB = _topPlayers(teamB, eraB);
+  if (playersB.length > 0) lines.push(playersB.join(' · '));
+
+  return lines.slice(0, 3);
+}
+
+// ── Average rating of best 11 starters ───────────────────────────────────────
+// Used to render the power comparison bar in the intro card.
+function avgRating(slug, era) {
+  try {
+    const squadFile = path.join(SQUADS_DIR, `${slug}.json`);
+    if (!fs.existsSync(squadFile)) return null;
+    const data = JSON.parse(fs.readFileSync(squadFile, 'utf8'));
+    const season = (data.seasons && data.seasons[era]) ||
+                   (data.seasons && data.seasons[String(parseInt(era) - 1)]) ||
+                   null;
+    if (!season?.players) return null;
+    const starters = season.players
+      .filter(p => p.rating >= 70)
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 11);
+    if (starters.length === 0) return null;
+    return Math.round(starters.reduce((s, p) => s + p.rating, 0) / starters.length);
+  } catch { return null; }
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -574,93 +687,314 @@ function createIntroVideo(outFile, durationSec = 5, type = 'ucl', introTitle = n
  */
 function displayEra(era) {
   if (!era) return era;
+  const s = String(era);
+  // Only map 4-digit season years, not string labels like 'all-time'
+  if (!/^\d{4}$/.test(s)) return s;
   const map = { '2025': '2026' };
-  return map[String(era)] || String(era);
+  return map[s] || s;
 }
 
 /**
- * createMatchIntroVideo — 5-second intro specific to a clásico.
- * Shows both team badges (from local /img/badges/ cache), team names, eras,
- * a big "VS", the golazox coin + wordmark. Falls back to text-only if badge missing.
+ * wrapText — splits a string into lines fitting maxWidth chars, at most maxLines lines.
+ * Returns an array of escaped strings ready for ffmpeg drawtext.
  */
-function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 5, labelText = null, subLabel = null) {
+function wrapText(text, maxCharsPerLine, maxLines = 3) {
+  const words = text.split(' ');
+  const lines = [];
+  let cur = '';
+  for (const w of words) {
+    if ((cur + ' ' + w).trim().length <= maxCharsPerLine) {
+      cur = (cur + ' ' + w).trim();
+    } else {
+      if (cur) lines.push(cur);
+      cur = w;
+    }
+    if (lines.length >= maxLines - 1 && cur.length > maxCharsPerLine) break;
+  }
+  if (cur) lines.push(cur);
+  return lines.slice(0, maxLines);
+}
+
+/**
+ * _getLineup — returns the starting 11 sorted by position order.
+ * Forces 1 GK from the squad even if not in top-11 by rating.
+ */
+function _getLineup(slug, era) {
+  try {
+    const squadFile = path.join(SQUADS_DIR, `${slug}.json`);
+    if (!fs.existsSync(squadFile)) return { formation: '4-4-2', players: [] };
+    const data = JSON.parse(fs.readFileSync(squadFile, 'utf8'));
+    const season = (data.seasons && data.seasons[era]) ||
+                   (data.seasons && data.seasons[String(parseInt(era) - 1)]) || null;
+    if (!season || !season.players) return { formation: '4-4-2', players: [] };
+    const formation = season.formation || '4-4-2';
+    const all       = [...season.players].sort((a, b) => b.rating - a.rating);
+    const gk        = all.find(p => p.position === 'GK');
+    const outfield  = all.filter(p => p.position !== 'GK').slice(0, 10);
+    const lineup    = gk ? [gk, ...outfield] : all.slice(0, 11);
+    const POS_ORDER = { GK:0, CB:1, RB:2, LB:3, CDM:4, DM:4, CM:5, MF:5, MC:5, CAM:6, AM:6, SS:7, RW:8, LW:8, FW:9, CF:9, ST:10 };
+    lineup.sort((a, b) => (POS_ORDER[a.position] ?? 5) - (POS_ORDER[b.position] ?? 5));
+    return { formation, players: lineup.slice(0, 11) };
+  } catch { return { formation: '4-4-2', players: [] }; }
+}
+
+/**
+ * createMatchIntroVideo — 3-slide premium intro (4s + 4s + 4s = 12s total).
+ *
+ * SLIDE 1 (4s) — Badge clash, zero clutter.
+ *   Coin · Wordmark · Amber glow badge A · Blue glow badge B · VS · Names · Era pills · Scanline · Hook
+ *
+ * SLIDE 2 (4s) — Team A lineup card.
+ *   Dark-amber bg · Badge · Team name · Era · Formation · 11 starters staggered in
+ *
+ * SLIDE 3 (4s) — Team B lineup card.
+ *   Dark-blue bg  · Badge · Team name · Era · Formation · 11 starters staggered in
+ */
+function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 7, labelText = null, subLabel = null, competition = null, matchDesc = null, trophy = null) {
+  const eraAraw = eraA;
+  const eraBraw = eraB;
   eraA = displayEra(eraA);
   eraB = displayEra(eraB);
-  const w = WIDTH, h = HEIGHT, d = durationSec;
+  const w = WIDTH, h = HEIGHT;
   const { bold: fontAlt, main: fontBold, reg: fontReg } = getFonts();
+  const esc = (s) => String(s || '').replace(/['\\]/g, '').replace(/:/g, '\\:').replace(/%/g, '%%');
 
   const coinImg     = path.join(__dirname, 'public', 'golazox-coin.png');
   const wordmarkImg = path.join(__dirname, 'public', 'golazox-wordmark.png');
   const badgeAFile  = _badgeFile(teamA);
   const badgeBFile  = _badgeFile(teamB);
+  const nameA       = slugToDisplayName(teamA);
+  const nameB       = slugToDisplayName(teamB);
 
-  // Escape text for ffmpeg drawtext
-  const esc = (s) => s.replace(/'/g, '').replace(/:/g, '\\:').replace(/%/g, '%%');
+  const uid      = `${Date.now()}_${process.pid}`;
+  const slide1   = path.join(os.tmpdir(), `gx_s1_${uid}.mp4`);
+  const slide2   = path.join(os.tmpdir(), `gx_s2_${uid}.mp4`);
+  const slide3   = path.join(os.tmpdir(), `gx_s3_${uid}.mp4`);
+  const listFile = path.join(os.tmpdir(), `gx_list_${uid}.txt`);
 
-  const nameA = slugToDisplayName(teamA);
-  const nameB = slugToDisplayName(teamB);
+  // ── SLIDE 1 (4s): Badge clash via Puppeteer ──────────────────────────────
+  (() => {
+    const d1 = 4;
+    const uid1     = `${Date.now()}_${process.pid}_${Math.random().toString(36).slice(2)}`;
+    const pngTmp1  = path.join(os.tmpdir(), `gx_intro_${uid1}.png`);
+    const jsonTmp1 = path.join(os.tmpdir(), `gx_intro_${uid1}.json`);
 
-  const inputs = [
-    '-f', 'lavfi', '-i', `color=c=0x000000:size=${w}x${h}:rate=30:duration=${d}`,
-  ];
+    fs.writeFileSync(jsonTmp1, JSON.stringify({
+      teamA, teamB,
+      eraA: eraAraw, eraB: eraBraw,
+      hookText:    labelText    || 'EL DEBATE DEFINITIVO',
+      matchDesc:   matchDesc    || null,
+      subLabel:    subLabel     || null,
+      competition: competition  || null,
+      trophy:      trophy       || null,
+    }));
 
-  const imgDefs = [];
-  if (fs.existsSync(coinImg))  imgDefs.push({ file: coinImg,    key: 'coin' });
-  if (fs.existsSync(wordmarkImg)) imgDefs.push({ file: wordmarkImg, key: 'wm' });
-  if (badgeAFile)              imgDefs.push({ file: badgeAFile, key: 'ba' });
-  if (badgeBFile)              imgDefs.push({ file: badgeBFile, key: 'bb' });
-  imgDefs.forEach(i => inputs.push('-i', i.file));
+    const introScript = path.join(__dirname, '_intro_screenshot.js');
+    const introResult = spawnSync(process.execPath, [introScript, jsonTmp1, pngTmp1], {
+      encoding: 'utf8',
+      timeout: 90000,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
 
-  const filterParts = [];
-  let lastLabel = '0:v';
-  let inputIdx  = 1;
+    try { fs.unlinkSync(jsonTmp1); } catch {}
 
-  const overlay = (key, scaleW, x, y, outLbl) => {
-    filterParts.push(`[${inputIdx}:v]scale=${scaleW}:-1,format=rgba[${key}]`);
-    filterParts.push(`[${lastLabel}][${key}]overlay=${x}:${y}[${outLbl}]`);
-    lastLabel = outLbl;
-    inputIdx++;
+    if (introResult.status !== 0 || !fs.existsSync(pngTmp1)) {
+      console.warn('[intro-screenshot] failed, using blank frame:', introResult.stderr || introResult.error);
+      // Fallback: plain dark frame
+      ffmpeg(['-y', '-f', 'lavfi', '-i', `color=c=0x050609:size=${w}x${h}:rate=30:duration=${d1}`,
+        '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', '-pix_fmt', 'yuv420p', '-an', '-t', String(d1), slide1]);
+    } else {
+      try {
+        ffmpeg([
+          '-y',
+          '-loop', '1', '-i', pngTmp1,
+          '-vf', `scale=1080:1920:flags=lanczos,fade=t=in:st=0:d=0.4,fade=t=out:st=${d1 - 0.4}:d=0.4`,
+          '-c:v', 'libx264', '-preset', 'slow', '-crf', '10',
+          '-pix_fmt', 'yuv420p', '-an', '-t', String(d1), '-r', '30',
+          slide1,
+        ]);
+      } finally {
+        try { fs.unlinkSync(pngTmp1); } catch {}
+      }
+    }
+    return; // all done for slide 1
+  })();
+
+  // ── (dead code branch kept for reference only) ────────────────────────────
+  if (false) {
+    const d1 = 4;
+    const BADGE_W = 310, GLOW_W = 430;
+    const BADGE_Y = 480, GLOW_Y = BADGE_Y - (GLOW_W - BADGE_W) / 2;
+
+    const inputs = [
+      '-f', 'lavfi', '-i', `color=c=0x050609:size=${w}x${h}:rate=30:duration=${d1}`,
+      '-f', 'lavfi', '-i', `color=c=0x241808:size=540x${h}:rate=30:duration=${d1}`,
+      '-f', 'lavfi', '-i', `color=c=0x071628:size=540x${h}:rate=30:duration=${d1}`,
+    ];
+    let idx = 3;
+    const baI = badgeAFile ? (inputs.push('-i', badgeAFile), idx++) : -1;
+    const bbI = badgeBFile ? (inputs.push('-i', badgeBFile), idx++) : -1;
+    const cI  = fs.existsSync(coinImg)     ? (inputs.push('-i', coinImg),     idx++) : -1;
+    const wI  = fs.existsSync(wordmarkImg) ? (inputs.push('-i', wordmarkImg), idx++) : -1;
+
+    const fp = []; let last = '0:v';
+    fp.push(`[1:v]hue=s=0.28,curves=all='0/0 0.5/0.50 1/0.88'[lp]`, `[${last}][lp]overlay=0:0[bg1]`); last = 'bg1';
+    fp.push(`[2:v]hue=h=215:s=2.0,curves=b='0/0 0.35/0.60 1/1'[rp]`, `[${last}][rp]overlay=540:0[bg2]`); last = 'bg2';
+
+    if (baI >= 0) {
+      fp.push(`[${baI}:v]split=2[baG][baS]`);
+      fp.push(`[baG]scale=${GLOW_W}:-1,format=rgba,gblur=sigma=30,colorchannelmixer=1.25:0:0:0:0:0.90:0:0:0:0:0.38:0[baGl]`);
+      fp.push(`[${last}][baGl]overlay='270-w/2':${GLOW_Y}[bg3]`); last = 'bg3';
+      fp.push(`[baS]scale=${BADGE_W}:-1,format=rgba,hue=s=0.24,colorchannelmixer=.32:.40:.28:0:.30:.42:.28:0:.18:.34:.48:0[baSh]`);
+      fp.push(`[${last}][baSh]overlay='270-w/2':${BADGE_Y}[bg4]`); last = 'bg4';
+    }
+    if (bbI >= 0) {
+      fp.push(`[${bbI}:v]split=2[bbG][bbS]`);
+      fp.push(`[bbG]scale=${GLOW_W}:-1,format=rgba,gblur=sigma=30,colorchannelmixer=0.38:0:0:0:0:0.70:0:0:0:0:1.90:0[bbGl]`);
+      fp.push(`[${last}][bbGl]overlay='810-w/2':${GLOW_Y}[bg5]`); last = 'bg5';
+      fp.push(`[bbS]scale=${BADGE_W}:-1,format=rgba,eq=saturation=1.65:brightness=0.07[bbSh]`);
+      fp.push(`[${last}][bbSh]overlay='810-w/2':${BADGE_Y}[bg6]`); last = 'bg6';
+    }
+    if (cI >= 0) {
+      fp.push(`[${cI}:v]scale=162:-1,format=rgba[ci]`, `[${last}][ci]overlay=(W-w)/2:78[bg7]`); last = 'bg7';
+    }
+    if (wI >= 0) {
+      fp.push(`[${wI}:v]scale=600:-1,format=rgba[wmi]`, `[${last}][wmi]overlay=(W-w)/2:272[bg8]`); last = 'bg8';
+    }
+
+    const fi  = (s, dur = 0.4) => `if(lt(t,${s}),0,min(1,(t-${s})/${dur}))`;
+    const alp = (s) => `min(${fi(s)},if(gt(t,${d1 - 0.5}),max(0,(${d1}-t)/0.5),1))`;
+
+    const nameALines = wrapText(nameA.toUpperCase(), 14, 2);
+    const nameBLines = wrapText(nameB.toUpperCase(), 14, 2);
+    const eraLA      = eraA || eraAraw || '';
+    const eraLB      = eraB || eraBraw || '';
+    const nameBaseY  = BADGE_Y + BADGE_W + 18;  // ~808
+    // Always align era pills to the bottom of whichever name is longer
+    const eraCommonY  = nameBaseY + Math.max(nameALines.length, nameBLines.length) * 68;
+    const VS_Y        = BADGE_Y + Math.round(BADGE_W * 0.38);
+
+    const hookText   = labelText || 'EL DEBATE DEFINITIVO';
+    const hookLines  = wrapText(hookText.toUpperCase(), 22, 3);
+    const hookFontSz = hookText.length > 28 ? 60 : 74;
+    const hookBaseY  = eraCommonY + 110;
+
+    const scanline = [
+      `drawbox=x=0:y='${h}*(t-0.60)/0.55-8':w=${w}:h=18:color=FFD700@0.14:t=fill:enable='between(t,0.60,1.15)'`,
+      `drawbox=x=0:y='${h}*(t-0.60)/0.55-2':w=${w}:h=6:color=FFD700@0.45:t=fill:enable='between(t,0.60,1.15)'`,
+      `drawbox=x=0:y='${h}*(t-0.60)/0.55':w=${w}:h=2:color=FFFFFF@0.82:t=fill:enable='between(t,0.60,1.15)'`,
+    ];
+    const sA = [
+      `drawbox=x=${270 - 200}:y=${BADGE_Y - 44}:w=400:h=${BADGE_W + 88}:color=D49A00@0.08:t=fill:enable='between(t,0.20,${d1})'`,
+      `drawbox=x=${270 - 90}:y=${BADGE_Y}:w=180:h=${BADGE_W}:color=D4B800@0.04:t=fill:enable='between(t,0.20,${d1})'`,
+    ];
+    const sB = [
+      `drawbox=x=${810 - 200}:y=${BADGE_Y - 44}:w=400:h=${BADGE_W + 88}:color=1155DD@0.10:t=fill:enable='between(t,0.20,${d1})'`,
+      `drawbox=x=${810 - 90}:y=${BADGE_Y}:w=180:h=${BADGE_W}:color=2277FF@0.05:t=fill:enable='between(t,0.20,${d1})'`,
+    ];
+    const pA = eraLA ? [`drawbox=x=${270 - 68}:y=${eraCommonY - 6}:w=136:h=62:color=8C6800@0.70:t=fill:enable='between(t,0.42,${d1})'`] : [];
+    const pB = eraLB ? [`drawbox=x=${810 - 68}:y=${eraCommonY - 6}:w=136:h=62:color=0D3A88@0.70:t=fill:enable='between(t,0.42,${d1})'`] : [];
+
+    const hookFiltrs = hookLines.map((line, i) =>
+      `drawtext=fontfile='${fontAlt}':text='${esc(line)}':fontsize=${hookFontSz}:fontcolor=FFD700:x=(w-text_w)/2:y=${hookBaseY + i * (hookFontSz + 14)}:shadowx=3:shadowy=3:shadowcolor=0x00000099:alpha='${alp(0.88)}'`
+    );
+
+    const texts = [
+      ...scanline, ...sA, ...sB, ...pA, ...pB,
+      `drawtext=fontfile='${fontAlt}':text='VS':fontsize=188:fontcolor=886600@0.30:x=(w-text_w)/2+8:y=${VS_Y + 8}:alpha='${alp(0.30)}'`,
+      `drawtext=fontfile='${fontAlt}':text='VS':fontsize=188:fontcolor=FFD700@0.20:x=(w-text_w)/2:y=${VS_Y}:alpha='${alp(0.30)}'`,
+      `drawtext=fontfile='${fontAlt}':text='VS':fontsize=188:fontcolor=white@0.96:x=(w-text_w)/2:y=${VS_Y}:alpha='${alp(0.30)}'`,
+      ...nameALines.map((line, i) =>
+        `drawtext=fontfile='${fontAlt}':text='${esc(line)}':fontsize=64:fontcolor=F0E4CB:x=270-text_w/2:y=${nameBaseY + i * 68}:shadowx=3:shadowy=3:shadowcolor=00000099:alpha='${alp(0.45)}'`
+      ),
+      ...(eraLA ? [`drawtext=fontfile='${fontAlt}':text='${esc(eraLA)}':fontsize=50:fontcolor=FFD060:x=270-text_w/2:y=${eraCommonY + 2}:alpha='${alp(0.52)}'`] : []),
+      ...nameBLines.map((line, i) =>
+        `drawtext=fontfile='${fontAlt}':text='${esc(line)}':fontsize=64:fontcolor=D6ECFF:x=810-text_w/2:y=${nameBaseY + i * 68}:shadowx=3:shadowy=3:shadowcolor=00000099:alpha='${alp(0.45)}'`
+      ),
+      ...(eraLB ? [
+        `drawtext=fontfile='${fontAlt}':text='${esc(eraLB)}':fontsize=50:fontcolor=3377FF@0.45:x=810-text_w/2+3:y=${eraCommonY + 3}:alpha='${alp(0.52)}'`,
+        `drawtext=fontfile='${fontAlt}':text='${esc(eraLB)}':fontsize=50:fontcolor=88CCFF:x=810-text_w/2:y=${eraCommonY}:alpha='${alp(0.52)}'`,
+      ] : []),
+      ...hookFiltrs,
+      // Match date / first-leg result below hook
+      ...(matchDesc ? [
+        `drawtext=fontfile='${fontAlt}':text='${esc(matchDesc)}':fontsize=44:fontcolor=FFB700@0.92:x=(w-text_w)/2:y=${hookBaseY + hookLines.length * (hookFontSz + 14) + 20}:alpha='${alp(1.30)}'`,
+      ] : []),
+      // Venue / time / subtitle below matchDesc
+      ...(subLabel ? [
+        `drawtext=fontfile='${fontBold}':text='${esc(subLabel.toUpperCase())}':fontsize=36:fontcolor=AAAAAA@0.80:x=(w-text_w)/2:y=${hookBaseY + hookLines.length * (hookFontSz + 14) + (matchDesc ? 82 : 20)}:alpha='${alp(1.55)}'`,
+      ] : []),
+      `drawtext=fontfile='${fontReg}':text='golazox.com':fontsize=44:fontcolor=444444:x=(w-text_w)/2:y=1840:alpha='${alp(1.55)}'`,
+    ];
+
+    fp.push(`[${last}]` + texts.join(',') + `,fade=t=in:st=0:d=0.45,fade=t=out:st=${d1 - 0.45}:d=0.45[vout]`);
+    ffmpeg(['-y', ...inputs, '-filter_complex', fp.join(';'), '-map', '[vout]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', '-pix_fmt', 'yuv420p', '-an', '-t', String(d1), slide1]);
+  } // end if(false) dead code
+
+  // ── SLIDES 2 & 3: Lineup cards ────────────────────────────────────────────
+  // makeLineupSlide: screenshot the real web-style card via Puppeteer, then encode as video
+  const makeLineupSlide = (slug, eraRaw, teamName, eraLabel, _badgeFile2, _isB, outSlide) => {
+    const d2  = 5;
+    const uid2 = `${Date.now()}_${process.pid}_${Math.random().toString(36).slice(2)}`;
+    const pngTmp = path.join(os.tmpdir(), `gx_lineup_${uid2}.png`);
+
+    // If era is empty, try to resolve the latest available season from the squad file
+    let resolvedEra = eraRaw || '';
+    if (!resolvedEra) {
+      try {
+        const squadFile = path.join(__dirname, 'squads', `${slug}.json`);
+        if (fs.existsSync(squadFile)) {
+          const seasons = Object.keys(JSON.parse(fs.readFileSync(squadFile, 'utf8')).seasons || {});
+          if (seasons.length) resolvedEra = seasons.sort().pop(); // latest era
+        }
+      } catch (_) {}
+    }
+
+    // Run the Puppeteer screenshot script synchronously as a child process
+    const screenshotScript = path.join(__dirname, '_lineup_screenshot.js');
+    const result = spawnSync(process.execPath, [screenshotScript, slug, resolvedEra, pngTmp, teamName], {
+      encoding: 'utf8',
+      timeout: 60000,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    if (result.status !== 0 || !fs.existsSync(pngTmp)) {
+      console.warn(`[lineup-screenshot] failed for ${slug} ${resolvedEra}: ${result.stderr || result.error}`);
+      // Fallback: blank dark frame
+      ffmpeg(['-y', '-f', 'lavfi', '-i', `color=c=0x0a0700:size=${w}x${h}:rate=30:duration=${d2}`,
+        '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', '-pix_fmt', 'yuv420p', '-an', '-t', String(d2), outSlide]);
+      return;
+    }
+
+    // Encode PNG → video with fade in/out
+    try {
+      ffmpeg([
+        '-y',
+        '-loop', '1', '-i', pngTmp,
+        '-vf', `scale=1080:1920:flags=lanczos,fade=t=in:st=0:d=0.4,fade=t=out:st=${d2 - 0.4}:d=0.4`,
+        '-c:v', 'libx264', '-preset', 'slow', '-crf', '10',
+        '-pix_fmt', 'yuv420p', '-an', '-t', String(d2), '-r', '30',
+        outSlide,
+      ]);
+    } finally {
+      try { fs.unlinkSync(pngTmp); } catch {}
+    }
   };
 
-  if (imgDefs.find(i => i.key === 'coin')) overlay('coin', 165, '(W-w)/2', 100, 'lc');
-  if (imgDefs.find(i => i.key === 'wm'))   overlay('wm',   510, '(W-w)/2', 290, 'lwm');
-  if (badgeAFile) overlay('ba', 310, '245-w/2', 580, 'lba');
-  if (badgeBFile) overlay('bb', 310, '835-w/2', 580, 'lbb');
+  makeLineupSlide(teamA, eraAraw, nameA, eraA || eraAraw, badgeAFile, false, slide2);
+  makeLineupSlide(teamB, eraBraw, nameB, eraB || eraBraw, badgeBFile, true,  slide3);
 
-  const fadeIn = (s) => `if(lt(t,${s}),0,min(1,(t-${s})/0.5))`;
-  const alpha  = (s) => `min(${fadeIn(s)},if(gt(t,${d - 0.6}),max(0,(${d}-t)/0.6),1))`;
-
-  const texts = [
-    // Thin gold separator lines above/below VS
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=28:fontcolor=FFD700:x=(w-text_w)/2:y=600:alpha='${alpha(0.3)}'`,
-    `drawtext=fontfile='${fontAlt}':text='VS':fontsize=175:fontcolor=white:x=(w-text_w)/2:y=648:shadowx=0:shadowy=0:shadowcolor=0x00000000:alpha='${alpha(0.4)}'`,
-    `drawtext=fontfile='${fontReg}':text='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501':fontsize=28:fontcolor=FFD700:x=(w-text_w)/2:y=810:alpha='${alpha(0.3)}'`,
-    // Team names in uppercase
-    `drawtext=fontfile='${fontBold}':text='${esc(nameA.toUpperCase())}':fontsize=52:fontcolor=white:x=245-text_w/2:y=925:alpha='${alpha(0.8)}'`,
-    ...(eraA ? [`drawtext=fontfile='${fontBold}':text='${esc(eraA)}':fontsize=44:fontcolor=FFD700:x=245-text_w/2:y=990:alpha='${alpha(1.0)}'`] : []),
-    `drawtext=fontfile='${fontBold}':text='${esc(nameB.toUpperCase())}':fontsize=52:fontcolor=white:x=835-text_w/2:y=925:alpha='${alpha(0.8)}'`,
-    ...(eraB ? [`drawtext=fontfile='${fontBold}':text='${esc(eraB)}':fontsize=44:fontcolor=FFD700:x=835-text_w/2:y=990:alpha='${alpha(1.0)}'`] : []),
-    // Label
-    `drawtext=fontfile='${fontBold}':text='${esc(labelText || '\u00bfQui\u00e9n Ganar\u00e1 Hoy?')}':fontsize=54:fontcolor=FFD700:x=(w-text_w)/2:y=1120:alpha='${alpha(1.3)}'`,
-    ...(subLabel ? [`drawtext=fontfile='${fontReg}':text='${esc(subLabel)}':fontsize=42:fontcolor=0xCCCCCC:x=(w-text_w)/2:y=1185:alpha='${alpha(1.5)}'`] : []),
-    // URL footer
-    `drawtext=fontfile='${fontReg}':text='golazox.com':fontsize=46:fontcolor=0x888888:x=(w-text_w)/2:y=1810:alpha='${alpha(1.8)}'`,
-  ];
-
-  filterParts.push(
-    `[${lastLabel}]` + texts.join(',') +
-    `,fade=t=in:st=0:d=0.7,fade=t=out:st=${d - 0.7}:d=0.7[vout]`,
+  // ── Concat slide1 + slide2 + slide3 → outFile ─────────────────────────────
+  fs.writeFileSync(
+    listFile,
+    `file '${slide1.replace(/\\/g, '/')}'\nfile '${slide2.replace(/\\/g, '/')}'\nfile '${slide3.replace(/\\/g, '/')}'`
   );
-
-  ffmpeg([
-    '-y', ...inputs,
-    '-filter_complex', filterParts.join(';'),
-    '-map', '[vout]',
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '12',
-    '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
-    outFile,
-  ]);
+  try {
+    ffmpeg(['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', outFile]);
+  } finally {
+    [slide1, slide2, slide3, listFile].forEach(f => { try { fs.unlinkSync(f); } catch {} });
+  }
 }
+
 
 /**
  * createShortClip — produces a ≤58s vertical clip from a full video.
@@ -779,6 +1113,60 @@ function createCtaCard(outFile, durationSec = 5) {
     '-pix_fmt', 'yuv420p', '-an', '-t', String(d),
     outFile,
   ]);
+}
+
+/**
+ * createOutroCard — Premium outro: score + goalscorers + stats + CTA.
+ * Replaces hookCard + ctaCard with a single polished 9-second ending.
+ * Uses Puppeteer (same pattern as makeLineupSlide) to render the HTML card.
+ */
+function createOutroCard(matchMeta, outFile, durationSec = 9) {
+  const d = durationSec;
+  const uid = `${Date.now()}_${process.pid}_${Math.random().toString(36).slice(2)}`;
+  const pngTmp  = path.join(os.tmpdir(), `gx_outro_${uid}.png`);
+  const jsonTmp = path.join(os.tmpdir(), `gx_outro_${uid}.json`);
+
+  const data = {
+    teamA:    matchMeta.teamA,
+    teamB:    matchMeta.teamB,
+    eraA:     matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''),
+    eraB:     matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''),
+    scoreA:   matchMeta.finalScore?.scoreA ?? 0,
+    scoreB:   matchMeta.finalScore?.scoreB ?? 0,
+    scorersA: matchMeta.scorersA || [],
+    scorersB: matchMeta.scorersB || [],
+    stats:    matchMeta.matchStats || {},
+  };
+
+  fs.writeFileSync(jsonTmp, JSON.stringify(data));
+
+  const screenshotScript = path.join(__dirname, '_outro_screenshot.js');
+  const result = spawnSync(process.execPath, [screenshotScript, pngTmp, jsonTmp], {
+    encoding: 'utf8',
+    timeout: 60000,
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+
+  try { fs.unlinkSync(jsonTmp); } catch {}
+
+  if (result.status !== 0 || !fs.existsSync(pngTmp)) {
+    console.warn('[outro-card] Puppeteer screenshot failed:', (result.stderr || result.error || '').toString().slice(0, 200));
+    throw new Error('Outro screenshot failed');
+  }
+
+  // Encode PNG → video with fade in/out
+  try {
+    ffmpeg([
+      '-y',
+      '-loop', '1', '-i', pngTmp,
+      '-vf', `scale=1080:1920:flags=lanczos,fade=t=in:st=0:d=0.5,fade=t=out:st=${d - 0.5}:d=0.5`,
+      '-c:v', 'libx264', '-preset', 'slow', '-crf', '10',
+      '-pix_fmt', 'yuv420p', '-an', '-t', String(d), '-r', '30',
+      outFile,
+    ]);
+  } finally {
+    try { fs.unlinkSync(pngTmp); } catch {}
+  }
 }
 
 /**
@@ -1132,7 +1520,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   ]);
 }
 
-async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null) {
+async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null, introContext = null, introTrophy = null) {
   if (!fs.existsSync(MUSIC_FILE)) {
     console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
     return outPath;
@@ -1194,12 +1582,13 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     console.warn('[post] Upscale failed, using original:', scaleErr.message.slice(0, 150));
   }
 
-  const introPath   = path.join(tmp, `golazox_intro_${uid}.mp4`);
-  const hookPath    = path.join(tmp, `golazox_hook_${uid}.mp4`);
-  const speededPath = path.join(tmp, `golazox_speeded_${uid}.mp4`);
-  const concatPath  = path.join(tmp, `golazox_concat_${uid}.mp4`);
-  const ctaPath     = path.join(tmp, `golazox_cta_${uid}.mp4`);
-  const listFile    = path.join(tmp, `golazox_list_${uid}.txt`);
+  const introPath      = path.join(tmp, `golazox_intro_${uid}.mp4`);
+  const hookPath       = path.join(tmp, `golazox_hook_${uid}.mp4`);
+  const speededPath    = path.join(tmp, `golazox_speeded_${uid}.mp4`);
+  const concatPath     = path.join(tmp, `golazox_concat_${uid}.mp4`);
+  const ctaPath        = path.join(tmp, `golazox_cta_${uid}.mp4`);
+  const subscribePath  = path.join(tmp, `golazox_subscribe_${uid}.mp4`);
+  const listFile       = path.join(tmp, `golazox_list_${uid}.txt`);
 
   // Apply 3x speedup on simulation waiting segments before concat
   let mainPath = outPath;
@@ -1244,7 +1633,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     } else {
       console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
       try {
-        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 5, introTitle, introSub);
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, introTitle, introSub, introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
       } catch (e) {
         console.warn('[post] Match intro failed:', e.message.slice(0, 200));
       }
@@ -1282,44 +1671,63 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
 
   const hasIntro = fs.existsSync(introPath);
 
-  // Build CTA card
-  let hasCta = false;
-  try {
-    createCtaCard(ctaPath, 7);
-    hasCta = fs.existsSync(ctaPath);
-    if (hasCta) console.log('[post] CTA card created');
-  } catch (e) {
-    console.warn('[post] CTA card failed:', e.message.slice(0, 150));
-  }
-
-  // Hook card: shows final score AFTER the match, just before CTA
-  // Placement: [INTRO] → [MATCH] → [HOOK score reveal] → [CTA]
-  let hasHook = false;
+  // Outro card: score + goalscorers + stats + CTA — replaces hookCard + ctaCard
+  // Placement: [INTRO] → [MATCH] → [OUTRO: score + scorers + stats + CTA]
+  let hasOutro = false;
   if ((type === 'match' || type === 'rivalry' || type === 'derby' || type === 'epic' || !type) && matchMeta?.finalScore) {
     try {
-      console.log('[post] Generating hook card (score reveal)...');
-      createHookCard(
-        matchMeta.finalScore.scoreA,
-        matchMeta.finalScore.scoreB,
-        matchMeta.teamA, matchMeta.teamB,
-        matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''),
-        matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''),
-        hookPath,
-      );
-      hasHook = fs.existsSync(hookPath);
-      if (hasHook) console.log('[post] Hook card created');
+      console.log('[post] Generating outro card (score + scorers + stats + CTA)...');
+      createOutroCard(matchMeta, hookPath);
+      hasOutro = fs.existsSync(hookPath);
+      if (hasOutro) console.log('[post] Outro card created');
     } catch (e) {
-      console.warn('[post] Hook card failed:', e.message.slice(0, 200));
+      console.warn('[post] Outro card failed, falling back to basic CTA:', e.message.slice(0, 200));
+      // Fallback: plain CTA card
+      try {
+        createCtaCard(ctaPath, 7);
+        if (fs.existsSync(ctaPath)) {
+          fs.copyFileSync(ctaPath, hookPath);
+          hasOutro = true;
+        }
+      } catch {}
     }
   }
 
-  // Concat: intro → match → hook (score reveal) → CTA
+  // Subscribe slide: like + subscribe + share CTA with golazox.com
+  let hasSubscribe = false;
+  try {
+    console.log('[post] Generating subscribe slide...');
+    const subScript = path.join(__dirname, '_subscribe_screenshot.js');
+    const subPng    = path.join(tmp, `golazox_subpng_${uid}.png`);
+    const subResult = spawnSync(process.execPath, [subScript, subPng, 'golazox.com'], {
+      encoding: 'utf8', timeout: 90000, stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    if (subResult.status === 0 && fs.existsSync(subPng)) {
+      const d = 5;
+      ffmpeg([
+        '-y', '-loop', '1', '-i', subPng,
+        '-vf', `scale=1080:1920:flags=lanczos,fade=t=in:st=0:d=0.4,fade=t=out:st=${d - 0.4}:d=0.4`,
+        '-c:v', 'libx264', '-preset', 'slow', '-crf', '10',
+        '-pix_fmt', 'yuv420p', '-an', '-t', String(d), '-r', '30',
+        subscribePath,
+      ]);
+      try { fs.unlinkSync(subPng); } catch {}
+      hasSubscribe = fs.existsSync(subscribePath);
+      if (hasSubscribe) console.log('[post] Subscribe slide created');
+    } else {
+      console.warn('[post] Subscribe screenshot failed:', (subResult.stderr || '').toString().slice(0, 200));
+    }
+  } catch (e) {
+    console.warn('[post] Subscribe slide error:', e.message.slice(0, 200));
+  }
+
+  // Concat: intro → match → outro (score + scorers + stats + CTA)
   console.log('[post] Concatenating parts...');
   const parts = [];
   if (hasIntro) parts.push(introPath.replace(/\\/g, '/'));
   parts.push(mainPath.replace(/\\/g, '/'));
-  if (hasHook)  parts.push(hookPath.replace(/\\/g, '/'));   // ← score reveal after match
-  if (hasCta)   parts.push(ctaPath.replace(/\\/g, '/'));
+  if (hasOutro) parts.push(hookPath.replace(/\\/g, '/'));
+  if (hasSubscribe) parts.push(subscribePath.replace(/\\/g, '/'));
   fs.writeFileSync(listFile, parts.map(p => `file '${p}'`).join('\n'));
   try {
     ffmpeg(['-y', '-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', concatPath]);
@@ -1366,7 +1774,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
   }
 
   // Cleanup temp files (including finalPath which lives in videos/ dir)
-  [hookPath, introPath, concatPath, ctaPath, listFile, finalPath, speededPath].forEach(f => { try { fs.unlinkSync(f); } catch {} });
+  [hookPath, introPath, concatPath, ctaPath, subscribePath, listFile, finalPath, speededPath].forEach(f => { try { fs.unlinkSync(f); } catch {} });
 
   return outPath;
 }
@@ -1405,9 +1813,6 @@ async function generateVideo(opts = {}) {
   });
 
   const page = await browser.newPage();
-  // DPR=3: CSS viewport 360×640 → physical 1080×1920.
-  // We wrap the app in a 12px CSS margin on all sides (36px physical) so the content
-  // floats inside a dark border — looks much cleaner as a vertical video.
   await page.setViewport({ width: 360, height: 640, deviceScaleFactor: 3 });
 
   // Full-width CSS override + 12px margin wrapper for cinematic look.
@@ -1433,7 +1838,6 @@ async function generateVideo(opts = {}) {
       'html body .input-panel { padding: .8rem .55rem .7rem !important; width: 100% !important; box-sizing: border-box !important; }',
       'html body .glass-card { border-radius: 10px !important; }',
       'html body .live-viewer { padding-left: .3rem !important; padding-right: .3rem !important; }',
-      // Live match: full-width column layout
       'html body .live-body { display: flex !important; flex-direction: column !important; width: 100% !important; }',
       'html body .live-pitch-wrap { width: 100% !important; max-height: 220px !important; }',
       'html body .live-pitch-svg { width: 100% !important; max-width: 100% !important; height: 185px !important; flex: 1 !important; }',
@@ -1491,7 +1895,7 @@ async function generateVideo(opts = {}) {
   }
 
   // Post-process: add intro card + background music (+ optional speedup)
-  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub);
+  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub, opts.introContext || null, opts.introTrophy || null);
 
   console.log(`[video] Done → ${outPath}`);
   return { path: outPath, title: videoTitle, matchMeta };
@@ -1554,10 +1958,43 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     try { localStorage.removeItem('golazox_state'); } catch {}
     try { sessionStorage.clear(); } catch {}
   });
+  // Inject formation-aware starter picker so lineup display always shows the real 11.
+  // _pickForMode('11v11') just does positional-sort-then-slice(0,11): squads with 8+ DEFs
+  // push forwards (Kane, Olise, etc.) out. This helper uses the formation template instead.
+  await page.evaluateOnNewDocument(() => {
+    window._pickFormationStarters = function(players, formation) {
+      const parts = (formation || '4-3-3').split('-').map(Number);
+      const needDef = parts[0] || 4;
+      // For formations like 4-2-3-1 sum remaining parts: mids = parts[1..n-1], fwds = parts[n]
+      const needFwd = parts[parts.length - 1] || 3;
+      const needMid = parts.slice(1, -1).reduce((a, b) => a + b, 0) || 3;
+      const top = (arr) => [...arr].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+      const byPos = {};
+      players.forEach(p => { (byPos[p.position] = byPos[p.position] || []).push(p); });
+      const GKS  = top([...(byPos.GK  || [])]);
+      const DEFS = top([...(byPos.CB  || []), ...(byPos.RB  || []), ...(byPos.LB  || [])]);
+      const MIDS = top([...(byPos.DM  || []), ...(byPos.CM  || []), ...(byPos.RM  || []),
+                        ...(byPos.LM  || []), ...(byPos.AM  || [])]);
+      const FWDS = top([...(byPos.ST  || []), ...(byPos.RW  || []), ...(byPos.LW  || [])]);
+      const starters = [
+        ...GKS.slice(0, 1),
+        ...DEFS.slice(0, needDef),
+        ...MIDS.slice(0, needMid),
+        ...FWDS.slice(0, needFwd),
+      ].filter(Boolean);
+      // If we still don't have 11 (unusual formation), fill from remaining pool
+      if (starters.length < 11) {
+        const used = new Set(starters.map(p => p.name));
+        for (const p of players) {
+          if (starters.length >= 11) break;
+          if (!used.has(p.name)) { starters.push(p); used.add(p.name); }
+        }
+      }
+      return starters.slice(0, 11);
+    };
+  });
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
   await wait(2000); // give _deepLinkRestore() time to populate inputs
-
-  await recorder.start(outPath);
 
   // Suppress event-overlay immediately — prevent any stale events showing over lineups
   await page.evaluate(() => {
@@ -1565,40 +2002,19 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     if (ov) ov.style.visibility = 'hidden';
   });
 
-  // ── Goal event tracking ───────────────────────────────────────────────────
-  const recStartMs = Date.now();
+  // ── Goal event tracking — set up early, recStartMs assigned when recording begins ──
+  let recStartMs = 0;
   const goalEvents = [];
   try {
     await page.exposeFunction('_videoGoalCallback', (a, b, side) => {
-      const sec = (Date.now() - recStartMs) / 1000;
+      const sec = recStartMs ? (Date.now() - recStartMs) / 1000 : 0;
       goalEvents.push({ videoSec: sec, scoreA: a, scoreB: b, side });
       console.log(`[match] ⚽ Goal at ${sec.toFixed(1)}s — ${side}: ${a}-${b}`);
     });
   } catch (_) {} // already exposed if page was reused
 
-  // --preview: cut recording at 20s, apply the same crop+pad as full video, then exit
-  if (opts.preview) {
-    setTimeout(async () => {
-      try { await recorder.stop(); } catch {}
-      // Apply Windows DPI crop + 30px margin so preview looks identical to final video
-      try {
-        const prevScaled = outPath + '.preview.mp4';
-        const CW = WIDTH; // recorder videoFrame already constrains to 1080px
-        const needsCrop = CW > WIDTH + 50;
-        const innerW = WIDTH - 60; // 1020
-        const innerH = Math.round(innerW * HEIGHT / WIDTH); // 1813
-        const cropF = needsCrop ? `crop=iw*${(WIDTH / CW).toFixed(4)}:ih:0:0,` : '';
-        ffmpeg(['-y', '-i', outPath,
-          '-vf', `${cropF}scale=${innerW}:${innerH}:flags=lanczos,pad=${WIDTH}:${HEIGHT}:30:${Math.round((HEIGHT - innerH) / 2)}:color=0x05080f`,
-          '-c:v', 'libx264', '-preset', 'medium', '-crf', '14', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
-          prevScaled,
-        ]);
-        fs.renameSync(prevScaled, outPath);
-      } catch (pe) { console.warn('[preview] crop failed:', pe.message.slice(0, 100)); }
-      console.log('[preview] 20s cut — video ready at', outPath);
-      process.exit(0);
-    }, 20000);
-  }
+  // --preview flag stored to use after recorder.start() below
+  const _previewMode = opts.preview;
 
   // Install speedup for short timers (≤500ms) — covers the 400ms prematch→live fade
   await page.evaluate(() => {
@@ -1632,6 +2048,14 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     { timeout: 30000 },
   );
   console.log('[match] Lineup A loaded');
+  // Fix: replace full squad with formation-correct 11 starters so forwards always appear.
+  // _pickForMode (11v11) just slices first 11 by pos-weight: with 8+ DEFs, FWDs never reach the cut.
+  await page.evaluate(() => {
+    const cache = window._lookupCache?.A;
+    if (!cache?.players) return;
+    cache.players = _pickFormationStarters(cache.players, cache.formation);
+    if (typeof window._renderLookupPlayers === 'function') window._renderLookupPlayers('A', cache);
+  });
   // Smooth scroll to show the full lineup A (label is visible above it)
   await page.evaluate(() => { document.getElementById('col-b').style.visibility = 'hidden'; });
   await page.evaluate(() => document.getElementById('col-a').scrollIntoView({ block: 'start', behavior: 'smooth' }));
@@ -1652,12 +2076,67 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     { timeout: 30000 },
   );
   console.log('[match] Lineup B loaded');
+  await page.evaluate(() => {
+    const cache = window._lookupCache?.B;
+    if (!cache?.players) return;
+    cache.players = _pickFormationStarters(cache.players, cache.formation);
+    if (typeof window._renderLookupPlayers === 'function') window._renderLookupPlayers('B', cache);
+  });
   await page.evaluate(() => { document.getElementById('col-a').style.visibility = 'hidden'; });
   await page.evaluate(() => document.getElementById('col-b').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(400);
   await page.evaluate(() => document.getElementById('preview-B').scrollIntoView({ block: 'start', behavior: 'smooth' }));
   await wait(2000);  // viewers read the lineup
   await page.evaluate(() => { document.getElementById('col-a').style.visibility = ''; });
+
+  // ── OPTIONAL: Unavailable players (injured/suspended) ──
+  // Filters them from the lineup preview AND injects playersOverrideA/B into the /simulate POST.
+  if (opts.unavailableA?.length || opts.unavailableB?.length) {
+    if (opts.unavailableA?.length) {
+      await page.evaluate((names) => {
+        try {
+          if (_lookupCache?.A?.players) {
+            _lookupCache.A.players = _lookupCache.A.players.filter(
+              p => !names.some(n => p.name.toLowerCase().includes(n.toLowerCase()))
+            );
+            if (typeof _renderLookupPlayers === 'function') _renderLookupPlayers('A', _lookupCache.A);
+          }
+        } catch (_) {}
+      }, opts.unavailableA);
+    }
+    if (opts.unavailableB?.length) {
+      await page.evaluate((names) => {
+        try {
+          if (_lookupCache?.B?.players) {
+            _lookupCache.B.players = _lookupCache.B.players.filter(
+              p => !names.some(n => p.name.toLowerCase().includes(n.toLowerCase()))
+            );
+            if (typeof _renderLookupPlayers === 'function') _renderLookupPlayers('B', _lookupCache.B);
+          }
+        } catch (_) {}
+      }, opts.unavailableB);
+    }
+    // Patch window.fetch so the /simulate POST includes playersOverrideA/B
+    await page.evaluate((excludeA, excludeB) => {
+      const _origFetch = window.fetch;
+      window.fetch = function(url, init, ...rest) {
+        if (typeof url === 'string' && url.includes('/simulate') && init?.method === 'POST') {
+          try {
+            const body = JSON.parse(init.body || '{}');
+            if (excludeA?.length) {
+              try { body.playersOverrideA = _lookupCache.A.players.map(p => ({ name: p.name, position: p.position })); } catch (_) {}
+            }
+            if (excludeB?.length) {
+              try { body.playersOverrideB = _lookupCache.B.players.map(p => ({ name: p.name, position: p.position })); } catch (_) {}
+            }
+            init = { ...init, body: JSON.stringify(body) };
+          } catch (_) {}
+        }
+        return _origFetch.call(this, url, init, ...rest);
+      };
+    }, opts.unavailableA || [], opts.unavailableB || []);
+    console.log(`[match] Unavailable — A:[${(opts.unavailableA||[]).join(',')}] B:[${(opts.unavailableB||[]).join(',')}]`);
+  }
 
   // ── STEP 3: Stadium picker — scroll to section, select card, then scroll picker row to show it ──
   if (clasico.stadiumId) {
@@ -1760,6 +2239,35 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   });
   await wait(300);
 
+  // ── Recording starts HERE — when the match is actually live ─────────────────
+  await recorder.start(outPath);
+  recStartMs = Date.now();
+  console.log('[match] Recording started — match is live');
+
+  // --preview: cut recording at 20s from now
+  if (_previewMode) {
+    setTimeout(async () => {
+      try { await recorder.stop(); } catch {}
+      // Apply Windows DPI crop so preview looks identical to final video
+      try {
+        const prevScaled = outPath + '.preview.mp4';
+        const CW = WIDTH;
+        const needsCrop = CW > WIDTH + 50;
+        const innerW = WIDTH - 60;
+        const innerH = Math.round(innerW * HEIGHT / WIDTH);
+        const cropF = needsCrop ? `crop=iw*${(WIDTH / CW).toFixed(4)}:ih:0:0,` : '';
+        ffmpeg(['-y', '-i', outPath,
+          '-vf', `${cropF}scale=${innerW}:${innerH}:flags=lanczos,pad=${WIDTH}:${HEIGHT}:30:${Math.round((HEIGHT - innerH) / 2)}:color=0x05080f`,
+          '-c:v', 'libx264', '-preset', 'medium', '-crf', '14', '-pix_fmt', 'yuv420p', '-r', '30', '-an',
+          prevScaled,
+        ]);
+        fs.renameSync(prevScaled, outPath);
+      } catch (pe) { console.warn('[preview] crop failed:', pe.message.slice(0, 100)); }
+      console.log('[preview] 20s cut — video ready at', outPath);
+      process.exit(0);
+    }, 20000);
+  }
+
   // Restore event-overlay now that the match is live — hide kick-off blast for 3.5s then show
   await page.evaluate(() => {
     const ov = document.getElementById('event-overlay');
@@ -1790,7 +2298,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   // ── STEP 7: Wait for results ──
   await page.waitForFunction(
     () => !document.getElementById('results')?.classList.contains('hidden'),
-    { timeout: 120000 },
+    { timeout: 300000 },
   );
   console.log('[match] Results revealed');
 
@@ -1834,12 +2342,39 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
 
   await recorder.stop();
 
-  // Read final score from live-score elements (still visible after results appear)
-  const finalScore = await page.evaluate(() => ({
-    scoreA: parseInt(document.getElementById('live-score-a')?.textContent) || 0,
-    scoreB: parseInt(document.getElementById('live-score-b')?.textContent) || 0,
-  })).catch(() => ({ scoreA: 0, scoreB: 0 }));
-  console.log(`[match] Final: ${finalScore.scoreA}-${finalScore.scoreB}, ${goalEvents.length} goal(s) tracked`);
+  // Read final score + scorers + stats from DOM (still rendered after results appear)
+  const rawResult = await page.evaluate(() => {
+    const scoreA = parseInt(document.getElementById('live-score-a')?.textContent) || 0;
+    const scoreB = parseInt(document.getElementById('live-score-b')?.textContent) || 0;
+
+    // Parse scorer entries: [{name, minute}]
+    const parseScorers = (id) => {
+      const entries = document.getElementById(id)?.querySelectorAll('.scorer-entry') || [];
+      return Array.from(entries).map(e => ({
+        name:   (e.querySelector('.scorer-name')?.textContent || '').trim(),
+        minute: parseInt(e.querySelector('.goal-min')?.textContent) || 0,
+      })).filter(s => s.name);
+    };
+
+    // Parse stat rows from hth-rows: order is 4 attr rows then possession/shots/corners/saves/fouls
+    const rows = document.querySelectorAll('#hth-rows .hth-row');
+    const getVals = (row) => row ? {
+      teamA: parseFloat(row.querySelector('.hth-val-a')?.textContent) || 0,
+      teamB: parseFloat(row.querySelector('.hth-val-b')?.textContent) || 0,
+    } : null;
+    const matchStats = {
+      possession: getVals(rows[4]),
+      shots:      getVals(rows[5]),
+      corners:    getVals(rows[6]),
+      saves:      getVals(rows[7]),
+      fouls:      getVals(rows[8]),
+    };
+
+    return { scoreA, scoreB, scorersA: parseScorers('scorers-a'), scorersB: parseScorers('scorers-b'), matchStats };
+  }).catch(() => ({ scoreA: 0, scoreB: 0, scorersA: [], scorersB: [], matchStats: {} }));
+
+  const finalScore = { scoreA: rawResult.scoreA, scoreB: rawResult.scoreB };
+  console.log(`[match] Final: ${finalScore.scoreA}-${finalScore.scoreB}, ${goalEvents.length} goal(s) tracked, scorers: ${rawResult.scorersA.length}+${rawResult.scorersB.length}`);
 
   const titleA = clasico.teamA.replace(/-/g, ' ');
   const titleB = clasico.teamB.replace(/-/g, ' ');
@@ -1854,9 +2389,22 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       teamB: clasico.teamB, eraB: clasico.eraB,
       introEraB: clasico.introEraB !== undefined ? clasico.introEraB : clasico.eraB,
       finalScore,
+      scorersA: rawResult.scorersA,
+      scorersB: rawResult.scorersB,
+      matchStats: rawResult.matchStats,
       goalEvents,
       rivalry,
       clasico: rivalry ? null : { label: clasico.label, category: clasico.category },
+      // Build context lines dynamically from squad data (always era-accurate)
+      contextLines: buildContextLines(
+        clasico.teamA, clasico.eraA,
+        clasico.teamB, clasico.eraB,
+        rivalry
+          ? (rivalry.category || rivalry.label || null)
+          : (clasico.category || clasico.label || null),
+        rivalry?.desc || null,
+      ),
+      matchDesc: opts.matchDesc || rivalry?.desc || null,
     },
   };
 }
@@ -2513,4 +3061,4 @@ function buildUploadMeta(videoTitle, matchMeta, type) {
   return { title, description, tags };
 }
 
-module.exports = { generateVideo, buildUploadMeta, createMatchIntroVideo, createCtaCard };
+module.exports = { generateVideo, buildUploadMeta, createMatchIntroVideo, createCtaCard, buildContextLines, avgRating };

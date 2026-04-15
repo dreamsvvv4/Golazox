@@ -1,6 +1,363 @@
 {
   "slug": "elfenbeinkuste",
   "seasons": {
+    "2006": {
+      "players": [
+        {
+          "name": "Jean-Jacques Tizié",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Kanga Akalé",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Arthur Boka",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Didier Zokora",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Blaise Kouassi",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Emerse Faé",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Bonaventure Kalou",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Arouna Koné",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gilles Yapi Yapo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Abdoulaye Méïté",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Marco Zoro",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Bakari Koné",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Aruna Dindane",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Gérard Gnanhouan",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Cyril Domoraud",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Abdul Kader Keïta",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Guy Demel",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Emmanuel Eboué",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Romaric",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Boubacar Barry",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Boubacar Barry",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Benjamin Angoua",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Arthur Boka",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Didier Zokora",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Steve Gohouri",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Seydou Doumbia",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Salomon Kalou",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Cheick Tioté",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gervinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jean-Jacques Gosso",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Romaric",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Emmanuel Koné",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Aruna Dindane",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Aristide Zogbo",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Siaka Tiéné",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Kader Keïta",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Guy Demel",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Emmanuel Eboué",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Sol Bamba",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Daniel Yeboah",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Boubacar Barry",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Ousmane Viera",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Arthur Boka",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kolo Touré",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Didier Zokora",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Mathis Bolly",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean-Daniel Akpa Akpro",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Salomon Kalou",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Cheick Tioté",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gervinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Didier Drogba",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Wilfried Bony",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Didier Ya Konan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ismaël Diomandé",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Max Gradel",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Sylvain Gbohouo",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Serge Aurier",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Constant Djakpa",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Yaya Touré",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Serey Dié",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Giovanni Sio",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Sol Bamba",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Sayouba Mandé",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

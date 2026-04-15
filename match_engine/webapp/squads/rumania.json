@@ -7,6 +7,449 @@
   "badgeLocalPath": "/img/badges/rumania.png",
   "id": "rumania",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Ștefan Barbu",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rudolf Bürger",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Iosif Czako",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Adalbert Deșu",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Alfred Eisenbeisser",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Nicolae Kovács",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ion Lăpușneanu",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "László Raffinsky",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Corneliu Robe",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Constantin Stanciu",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Adalbert Steiner",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ilie Subășeanu",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Emerich Vogl",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Rudolf Wetzer",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Samuel Zauber",
+          "position": "GK",
+          "rating": 77
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Gheorghe Albu",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Iuliu Baratky",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Silviu Bindea",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Iuliu Bodola",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Rudolf Bürger",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Gheorghe Ciolac",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Alexandru Cuedan",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vasile Deheleanu",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ștefan Dobay",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gusztáv Juhász",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "István Klimek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Stanislav Konrad",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Rudolf Kotormány",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nicolae Kovács",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "József Moravetz",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Adalbert Püllöck",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Sándor Schwartz",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Grațian Sepi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Lazăr Sfera",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Emerich Vogl",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Károly Weichelt",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Vilmos Zombori",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Iuliu Baratky",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Andrei Bărbulescu",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Silviu Bindea",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Iuliu Bodola",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ion Bogdan",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Gheorghe Brandabura",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Rudolf Bürger",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vasile Chiroiu",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Vintilă Cossini",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Mircea David",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ștefan Dobay",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Coloman Braun-Bogdan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Iacob Felecan",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nicolae Kovács",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ioachim Moldoveanu",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Miklós Nagy",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Dumitru Pavlovici",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Gyula Prassler",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gheorghe Rășinaru",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "László Raffinsky",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Robert Sadowski",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Lazăr Sfera",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "teamLabel": "Rumania (1970)",
+      "source": "Romania - World Cup 1970",
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Stere Adamache",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Mircea Sătmăreanu",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Mihai Mocanu",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Nicolae Lupescu",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ion Dinu",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Mihai Dobrescu",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Radu Nunweiller",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Cornel Dinu",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Florentin Dumitrache",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Lucescu",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ion Ionescu",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
+    },
+    "1990": {
+      "formation": "4-4-2",
+      "teamLabel": "Rumania (1990)",
+      "source": "Romania - World Cup 1990",
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 76
+      },
+      "players": [
+        {
+          "name": "Silviu Lung",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Miodrag Belodedici",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Dan Petrescu",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Ioan Andone",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Gheorghe Popescu",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Marius Lăcătuș",
+          "position": "RM",
+          "rating": 80
+        },
+        {
+          "name": "Rodion Cămătaru",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Iosif Rotariu",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gheorghe Hagi",
+          "position": "AM",
+          "rating": 88
+        },
+        {
+          "name": "Florin Răducioiu",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ioan Sabau",
+          "position": "LW",
+          "rating": 76
+        }
+      ]
+    },
     "1994": {
       "formation": "4-4-2",
       "players": [

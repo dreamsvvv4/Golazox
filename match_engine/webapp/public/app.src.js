@@ -264,7 +264,7 @@ const I18N = {
     // ── Preset cards ──────────────────────────────────────────
     'trn-preset-label':'⭐ Torneos Oficiales',
     'trn-custom-label':'o crea tu propio torneo',
-    'trn-btn-shuffle':'🔀 Aleatorizar',
+    'trn-btn-shuffle':'🔀 Aleatorio',
     'trn-btn-edit':'✏️ Editar',
     'trn-btn-simulate-ucl':'⚽ Simular Champions',
     'trn-preset-subtitle-wc':'Fase de grupos + Eliminatoria',

@@ -1,6 +1,358 @@
 {
   "slug": "honduras",
   "seasons": {
+    "1982": {
+      "players": [
+        {
+          "name": "Salomón Nazar",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Efraín Gutiérrez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jaime Villegas",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Fernando Bulnes",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Anthony Costly",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ramón Maradiaga",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Antonio Laing",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Francisco Javier Toledo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Armando Betancourt",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roberto Figueroa",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "David Buezo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Domingo Drummond",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Prudencio Norales",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Juan Cruz",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Héctor Zelaya",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Roberto Bailey",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Luis Cruz",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Carlos Caballero",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Celso Güity",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Gilberto Yearwood",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Julio César Arzú",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Jimmy Steward",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Ricardo Canales",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Osman Chávez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Maynor Figueroa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Johnny Palacios",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Víctor Bernárdez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Hendry Thomas",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ramón Núñez",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Wilson Palacios",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Carlos Pavón",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jerry Palacios",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "David Suazo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Georgie Welcome",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roger Espinoza",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Boniek García",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Walter Martínez",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Mauricio Sabillón",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Édgar Álvarez",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Noel Valladares",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Danilo Turcios",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Amado Guevara",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Emilio Izaguirre",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Donis Escober",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Sergio Mendoza",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Luis López",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Osman Chávez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Maynor Figueroa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Juan Pablo Montes",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Víctor Bernárdez",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Juan Carlos García",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Emilio Izaguirre",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Wilson Palacios",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jerry Palacios",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Mario Martínez",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jerry Bengtson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Edder Delgado",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Carlo Costly",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Boniek García",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Roger Espinoza",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Rony Martínez",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Andy Najar",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Noel Valladares",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Luis Garrido",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Jorge Claros",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Brayan Beckeles",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Donis Escober",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Marvin Chávez",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

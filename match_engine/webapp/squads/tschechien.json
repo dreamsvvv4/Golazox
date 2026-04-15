@@ -1,6 +1,918 @@
 {
   "slug": "tschechien",
   "seasons": {
+    "1934": {
+      "players": [
+        {
+          "name": "Jaroslav Bouček",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jaroslav Burgr",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Štefan Čambal",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Josef Čtyřoký",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ferdinand Daučík",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "František Junek",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Géza Kalocsay",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Vlastimil Kopecký",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Josef Košťálek",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rudolf Krčil",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oldřich Nejedlý",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Čestmír Patzel",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "František Plánička",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Antonín Puč",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Josef Silný",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Adolf Šimperský",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jiří Sobotka",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Erich Srbek",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "František Šterc",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "František Svoboda",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Antonín Vodička",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ladislav Ženíšek",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Jaroslav Bouček",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Vojtěch Bradáč",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jaroslav Burgr",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Karel Burkert",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Karel Černý",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ferdinand Daučík",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Václav Horák",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Karel Kolský",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vlastimil Kopecký",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Josef Košťálek",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Arnošt Kreuz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Josef Ludl",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Oldřich Nejedlý",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Otakar Nožíř",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Josef Orth",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "František Plánička",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Antonín Puč",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jan Říha",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Oldřich Rulc",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Karel Senecký",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ladislav Šimůnek",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Josef Zeman",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Theodor Reimann",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "František Šafránek",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Svatopluk Pluskal",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ladislav Novák",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jiří Trnka",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Michal Benedikovič",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ladislav Hlaváček",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Otto Hemele",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Anton Malatinský",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Emil Pažický",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jiří Pešek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Anton Krásnohorský",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jiří Hledík",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jan Hertl",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ladislav Kačáni",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Zdeněk Procházka",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Tadeáš Kraus",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Josef Majer",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jaroslav Košnar",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Kazimír Gajdoš",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Imrich Stacho",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Viliam Schrojf",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Imrich Stacho",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gustav Mráz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jiří Čadek",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ladislav Novák",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Josef Masopust",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Svatopluk Pluskal",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Kazimír Gajdoš",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Milan Dvořák",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pavol Molnár",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jaroslav Borovička",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tadeáš Kraus",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Zdeněk Zikán",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Václav Hovorka",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jiří Feureisl",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Jan Hertl",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ján Popluhár",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Titus Buberník",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Adolf Scherer",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Břetislav Dolejší",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Anton Moravčík",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "František Šafránek",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Viliam Schrojf",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "Viliam Schrojf",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jan Lála",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ján Popluhár",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ladislav Novák",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Svatopluk Pluskal",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Josef Masopust",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jozef Štibrányi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Adolf Scherer",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pavol Molnár",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jozef Adamec",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Josef Jelínek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jiří Tichý",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "František Schmucker",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Václav Mašek",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Vladimír Kos",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Titus Buberník",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Tomáš Pospíchal",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Josef Kadraba",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Andrej Kvašňák",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Jaroslav Borovička",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Pavel Kouba",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Jozef Bomba",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1970": {
+      "players": [
+        {
+          "name": "Ivo Viktor",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Karol Dobiaš",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Václav Migas",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Vladimír Hagara",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alexander Horváth",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Andrej Kvašňák",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Bohumil Veselý",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ladislav Petráš",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ladislav Kuna",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jozef Adamec",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Karol Jokl",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ján Pivarník",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Anton Flešár",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Vladimír Hrivnák",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ján Zlocha",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ivan Hrdlička",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jaroslav Pollák",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "František Veselý",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Josef Jurkanin",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Milan Albrecht",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ján Čapkovič",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Alexander Vencel",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1982": {
+      "players": [
+        {
+          "name": "Stanislav Seman",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "František Jakubec",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jan Fiala",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ladislav Jurkemik",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jozef Barmoš",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Rostislav Vojáček",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Ján Kozák",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Antonín Panenka",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ladislav Vízek",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tomáš Kříž",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Zdeněk Nehoda",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Přemysl Bičovský",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jan Berger",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Libor Radimec",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jozef Kukučka",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Pavel Chaloupka",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "František Štambachr",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Petr Janečka",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Marián Masný",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Vlastimil Petržela",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Zdeněk Hruška",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Karel Stromšík",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Jan Stejskal",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Július Bielik",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Miroslav Kadlec",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ivan Hašek",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ján Kocian",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "František Straka",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Michal Bílek",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jozef Chovanec",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Luboš Kubík",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Tomáš Skuhravý",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ľubomír Moravčík",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Peter Fieber",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jiří Němec",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vladimír Weiss",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Vladimír Kinier",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Viliam Hýravý",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Ivo Knoflíček",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Milan Luhový",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Stanislav Griga",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Václav Němeček",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Luděk Mikloško",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Peter Palúch",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "1994": {
       "formation": "4-4-2",
       "players": [

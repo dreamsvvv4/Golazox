@@ -1,8 +1,463 @@
 {
   "slug": "italien",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1934": {
+      "players": [
+        {
+          "name": "Luigi Allemandi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Pietro Arcari",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Luigi Bertolini",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Felice Borel",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Umberto Caligaris",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Armando Castellazzi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Giuseppe Cavanna",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Gianpiero Combi",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Attilio Demaria",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Giovanni Ferrari",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Attilio Ferraris",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Enrique Guaita",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Anfilogino Guarisi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Guido Masetti",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Giuseppe Meazza",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Luis Monti",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Eraldo Monzeglio",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Raimundo Orsi",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mario Pizziolo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Virginio Rosetta",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Angelo Schiavio",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Mario Varglien",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Michele Andreolo",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Sergio Bertoni",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Amedeo Biavati",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Carlo Ceresoli",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Bruno Chizzo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Gino Colaussi",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Aldo Donati",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Giovanni Ferrari",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pietro Ferraris",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alfredo Foni",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Mario Genta",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ugo Locatelli",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Guido Masetti",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Giuseppe Meazza",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Eraldo Monzeglio",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Aldo Olivieri",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Renato Olmi",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Piero Pasinati",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Mario Perazzolo",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Silvio Piola",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Pietro Rava",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Pietro Serantoni",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Amedeo Amadei",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Carlo Annovazzi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ivano Blason",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Giampiero Boniperti",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Aldo Campatelli",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Gino Cappello",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Emilio Caprile",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Riccardo Carapellese",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Giuseppe Casari",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Osvaldo Fattori",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Zeffiro Furiassi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Attilio Giovannini",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Benito Lorenzi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Augusto Magli",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Giacomo Mari",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Giuseppe Moro",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Ermes Muccinelli",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Egisto Pandolfini",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Carlo Parola",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Leandro Remondini",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Lucidio Sentimenti",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Omero Tognon",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Giorgio Ghezzi",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Guido Vincenzi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Giovanni Giacomazzi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Maino Neri",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Omero Tognon",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Fulvio Nesti",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ermes Muccinelli",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Egisto Pandolfini",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Carlo Galli",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gino Cappello",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Benito Lorenzi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Giovanni Viola",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ardico Magnini",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Sergio Cervato",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Giacomo Mari",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Rino Ferrario",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Armando Segato",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Gino Pivatelli",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Giampiero Boniperti",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Guido Gratton",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Amleto Frignani",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Leonardo Costagliola",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
       "players": [
         {
           "name": "Giuliano Sarti",
@@ -164,15 +619,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 78,
-        "midfield": 82,
-        "defense": 83,
-        "goalkeeping": 80
-      },
-      "source": "Transfermarkt 🌍 Otros€” italy (1966/1967)",
-      "teamLabel": "italy (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Enrico Albertosi",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Roberto Anzolin",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Paolo Barison",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Giacomo Bulgarelli",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Tarcisio Burgnich",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Giacinto Facchetti",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Romano Fogli",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Aristide Guarneri",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Francesco Janich",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Antonio Juliano",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Spartaco Landini",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gianfranco Leoncini",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Giovanni Lodetti",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sandro Mazzola",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Luigi Meroni",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ezio Pascutti",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Marino Perani",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Pierluigi Pizzaballa",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Gianni Rivera",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Francesco Rizzo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Roberto Rosato",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Sandro Salvadore",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
     },
     "1968": {
       "formation": "4-4-2",

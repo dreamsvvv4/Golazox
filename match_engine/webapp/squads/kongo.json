@@ -2,6 +2,74 @@
   "slug": "kongo",
   "name": "DR Kongo",
   "seasons": {
+    "1974": {
+      "formation": "4-4-2",
+      "teamLabel": "Zaire (1974)",
+      "source": "Zaire/DR Congo - World Cup 1974",
+      "ratings": {
+        "attack": 67,
+        "midfield": 66,
+        "defense": 66,
+        "goalkeeping": 65
+      },
+      "players": [
+        {
+          "name": "Kazadi Mwamba",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Mwepu Ilunga",
+          "position": "RB",
+          "rating": 67
+        },
+        {
+          "name": "Bwanga Tshimen",
+          "position": "CB",
+          "rating": 67
+        },
+        {
+          "name": "Lobilo Boba",
+          "position": "CB",
+          "rating": 66
+        },
+        {
+          "name": "Mana Mamuwene",
+          "position": "LB",
+          "rating": 66
+        },
+        {
+          "name": "Kembo Uba",
+          "position": "DM",
+          "rating": 66
+        },
+        {
+          "name": "Kilasu Massamba",
+          "position": "CM",
+          "rating": 68
+        },
+        {
+          "name": "Mulamba Ndaye",
+          "position": "CM",
+          "rating": 70
+        },
+        {
+          "name": "Ntumba Kabila",
+          "position": "RW",
+          "rating": 67
+        },
+        {
+          "name": "Kidumu Mantantu",
+          "position": "ST",
+          "rating": 67
+        },
+        {
+          "name": "Mayanga Maku",
+          "position": "LW",
+          "rating": 67
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

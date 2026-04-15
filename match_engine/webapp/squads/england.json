@@ -1,6 +1,652 @@
 {
   "slug": "england",
   "seasons": {
+    "1950": {
+      "players": [
+        {
+          "name": "John Aston",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Eddie Baily",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Roy Bentley",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Henry Cockburn",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jimmy Dickinson",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Ted Ditchburn",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Bill Eckersley",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Tom Finney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Laurie Hughes",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Wilf Mannion",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Stanley Matthews",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jackie Milburn",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Stan Mortensen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jimmy Mullen",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Bill Nicholson",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Alf Ramsey",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Laurie Scott",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jim Taylor",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Willie Watson",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Bert Williams",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Billy Wright",
+          "position": "CM",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Gil Merrick",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Ron Staniforth",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Roger Byrne",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Billy Wright",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Syd Owen",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jimmy Dickinson",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Stanley Matthews",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Ivor Broadis",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nat Lofthouse",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tommy Taylor",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tom Finney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ted Burgin",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Ken Green",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Bill McGarry",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Dennis Wilshaw",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Albert Quixall",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jimmy Mullen",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Allenby Chilton*",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Ken Armstrong*",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Bedford Jezzard*",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Johnny Haynes*",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Harry Hooper*",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
+      "players": [
+        {
+          "name": "Colin McDonald",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Don Howe",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Tommy Banks",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Eddie Clamp",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Billy Wright",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Bill Slater",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Bryan Douglas",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Bobby Robson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Derek Kevan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Johnny Haynes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Tom Finney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Eddie Hopkinson",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Alan Hodgkinson*",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Peter Sillett",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ronnie Clayton",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Maurice Norman",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Peter Brabrook",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Peter Broadbent",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Bobby Smith",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Bobby Charlton",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Alan A'Court",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Maurice Setters*",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1962": {
+      "players": [
+        {
+          "name": "Gordon Banks",
+          "position": "GK",
+          "rating": 82
+        },
+        {
+          "name": "George Cohen",
+          "position": "RB",
+          "rating": 82
+        },
+        {
+          "name": "Bobby Moore",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Jack Charlton",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Ray Wilson",
+          "position": "LB",
+          "rating": 82
+        },
+        {
+          "name": "Alan Ball",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Nobby Stiles",
+          "position": "DM",
+          "rating": 82
+        },
+        {
+          "name": "Bobby Charlton",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Martin Peters",
+          "position": "AM",
+          "rating": 82
+        },
+        {
+          "name": "Geoff Hurst",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Roger Hunt",
+          "position": "ST",
+          "rating": 82
+        }
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Gordon Banks",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "George Cohen",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ray Wilson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nobby Stiles",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jack Charlton",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Bobby Moore",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Alan Ball",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jimmy Greaves",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bobby Charlton",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Geoff Hurst",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Connelly",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ron Springett",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Peter Bonetti",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Jimmy Armfield",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Gerry Byrne",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Martin Peters",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Ron Flowers",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Norman Hunter",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Terry Paine",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ian Callaghan",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Roger Hunt",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "George Eastham",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "teamLabel": "England (1970)",
+      "source": "England - World Cup 1970",
+      "ratings": {
+        "attack": 84,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 86
+      },
+      "players": [
+        {
+          "name": "Gordon Banks",
+          "position": "GK",
+          "rating": 87
+        },
+        {
+          "name": "Keith Newton",
+          "position": "RB",
+          "rating": 80
+        },
+        {
+          "name": "Bobby Moore",
+          "position": "CB",
+          "rating": 89
+        },
+        {
+          "name": "Brian Labone",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Terry Cooper",
+          "position": "LB",
+          "rating": 81
+        },
+        {
+          "name": "Alan Mullery",
+          "position": "DM",
+          "rating": 81
+        },
+        {
+          "name": "Bobby Charlton",
+          "position": "CM",
+          "rating": 87
+        },
+        {
+          "name": "Alan Ball",
+          "position": "CM",
+          "rating": 83
+        },
+        {
+          "name": "Martin Peters",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Geoff Hurst",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Francis Lee",
+          "position": "ST",
+          "rating": 81
+        }
+      ]
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "teamLabel": "England (1982)",
+      "source": "England - World Cup 1982",
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 80,
+        "goalkeeping": 80
+      },
+      "players": [
+        {
+          "name": "Peter Shilton",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Mick Mills",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Terry Butcher",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Phil Thompson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Kenny Sansom",
+          "position": "LB",
+          "rating": 79
+        },
+        {
+          "name": "Ray Wilkins",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Bryan Robson",
+          "position": "CM",
+          "rating": 85
+        },
+        {
+          "name": "Glenn Hoddle",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Trevor Francis",
+          "position": "RW",
+          "rating": 80
+        },
+        {
+          "name": "Paul Mariner",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Kevin Keegan",
+          "position": "ST",
+          "rating": 82
+        }
+      ]
+    },
     "1986": {
       "formation": "4-4-2",
       "players": [
@@ -217,6 +863,650 @@
       },
       "source": "Transfermarkt — England (1986/1987)",
       "teamLabel": "England (1986-87)"
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Peter Shilton",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gary Stevens",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Stuart Pearce",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Neil Webb",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Des Walker",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Terry Butcher",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Bryan Robson",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Chris Waddle",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Peter Beardsley",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gary Lineker",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Barnes",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paul Parker",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Chris Woods",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Mark Wright",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Tony Dorigo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Steve McMahon",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "David Platt",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Steve Hodge",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Paul Gascoigne",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Trevor Steven",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Steve Bull",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "David Seaman*",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1998": {
+      "players": [
+        {
+          "name": "David Seaman",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Graeme Le Saux",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Paul Ince",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Tony Adams",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Gareth Southgate",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "David Batty",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alan Shearer",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Teddy Sheringham",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Steve McManaman",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nigel Martyn",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Darren Anderton",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Paul Merson",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Paul Scholes",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Rob Lee",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Martin Keown",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Les Ferdinand",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Michael Owen",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Tim Flowers",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "Peter Shilton",
+          "position": "GK",
+          "rating": 83
+        },
+        {
+          "name": "Paul Parker",
+          "position": "RB",
+          "rating": 78
+        },
+        {
+          "name": "Terry Butcher",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Des Walker",
+          "position": "CB",
+          "rating": 82
+        },
+        {
+          "name": "Stuart Pearce",
+          "position": "LB",
+          "rating": 83
+        },
+        {
+          "name": "Bryan Robson",
+          "position": "CM",
+          "rating": 82
+        },
+        {
+          "name": "Paul Gascoigne",
+          "position": "CM",
+          "rating": 86
+        },
+        {
+          "name": "Chris Waddle",
+          "position": "RW",
+          "rating": 82
+        },
+        {
+          "name": "Peter Beardsley",
+          "position": "AM",
+          "rating": 83
+        },
+        {
+          "name": "Gary Lineker",
+          "position": "ST",
+          "rating": 86
+        },
+        {
+          "name": "John Barnes",
+          "position": "LW",
+          "rating": 82
+        }
+      ]
+    },
+    "2006": {
+      "players": [
+        {
+          "name": "Paul Robinson",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gary Neville",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Rio Ferdinand",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "John Terry",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "David Beckham",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Frank Lampard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Michael Owen",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joe Cole",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Sol Campbell",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "David James",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Wayne Bridge",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jamie Carragher",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Owen Hargreaves",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jermaine Jenas",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Aaron Lennon",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Stewart Downing",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Peter Crouch",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Scott Carson",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Theo Walcott",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "David James",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Glen Johnson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ashley Cole",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Michael Dawson",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "John Terry",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Aaron Lennon",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Frank Lampard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Peter Crouch",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joe Cole",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Robert Green",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Stephen Warnock",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Gareth Barry",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Matthew Upson",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "James Milner",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Shaun Wright-Phillips",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Jamie Carragher",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jermain Defoe",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Ledley King",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Emile Heskey",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Michael Carrick",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Joe Hart",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Joe Hart",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Glen Johnson",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Leighton Baines",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Gary Cahill",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Phil Jagielka",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jack Wilshere",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Frank Lampard",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Daniel Sturridge",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Wayne Rooney",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Chris Smalling",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ben Foster",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Alex Oxlade-Chamberlain",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Phil Jones",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "James Milner",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Rickie Lambert",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Raheem Sterling",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Adam Lallana",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ross Barkley",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Fraser Forster",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Luke Shaw",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
     },
     "2018": {
       "formation": "4-4-2",
@@ -512,6 +1802,125 @@
       },
       "source": "Transfermarkt — England (2018/2019)",
       "teamLabel": "England (2018-19)"
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luke Shaw",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Harry Maguire",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jack Grealish",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Raheem Sterling",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Kieran Trippier",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nick Pope",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Kalvin Phillips",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Eric Dier",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Conor Coady",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Trent Alexander-Arnold",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Mason Mount",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Phil Foden",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ben White",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Aaron Ramsdale",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "2025": {
       "formation": "4-4-2",

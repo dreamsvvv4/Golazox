@@ -1,0 +1,96 @@
+{
+  "name": "Atlético Junior",
+  "slug": "junior-barranquilla",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/junior-barranquilla.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sebastián Viera",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Mariano Barbieri",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jorge Arias",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Walmer Pacheco",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Déinner Quiñones",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Edwuin Cetré",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "James Rodríguez",
+          "position": "CM",
+          "rating": 84
+        },
+        {
+          "name": "Carlos Bacca",
+          "position": "CM",
+          "rating": 80
+        },
+        {
+          "name": "Stiven Barreiro",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Ángel Borja",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Marco Pérez",
+          "position": "LW",
+          "rating": 80
+        },
+        {
+          "name": "Éver Meza",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Gerard Moreno",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Freddy Hinestroza",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Carmelo Valencia",
+          "position": "ST",
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Junior Barranquilla (2025/2026)",
+      "teamLabel": "Junior (2025–26)"
+    }
+  }
+}

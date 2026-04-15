@@ -1,6 +1,239 @@
 {
   "slug": "russland",
   "seasons": {
+    "1994": {
+      "players": [
+        {
+          "name": "Stanislav Cherchesov",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Dmitri Kuznetsov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sergei Gorlukovich",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Dmitri Galiamin",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yuriy Nikiforov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Vladislav Ternavsky",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Andrey Pyatnitsky",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Dmitri Popov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oleg Salenko",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Valeri Karpin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vladimir Beschastnykh",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Omari Tetradze",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandr Borodyuk",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Igor Korneev",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Dmitri Radchenko",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Dmitri Kharine",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Ilya Tsymbalar",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Viktor Onopko",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandr Mostovoi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Igor Lediakhov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Dmitri Khlestov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Sergei Yuran",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "players": [
+        {
+          "name": "Ruslan Nigmatullin",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Yuri Kovtun",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yuriy Nikiforov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alexey Smertin",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Andrei Solomatin",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Igor Semshov",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Viktor Onopko",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Valery Karpin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Yegor Titov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandr Mostovoi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Vladimir Beschastnykh",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Stanislav Cherchesov",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Vyacheslav Dayev",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Igor Chugainov",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dmitri Alenichev",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Aleksandr Kerzhakov",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Sergei Semak",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Dmitri Sennikov",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Ruslan Pimenov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Marat Izmailov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Dmitri Khokhlov",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Dmitri Sychev",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Aleksandr Filimonov",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
     "2010": {
       "formation": "4-4-2",
       "players": [
@@ -187,6 +420,244 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Rusia (2010/2011)",
       "teamLabel": "Rusia (2010-11)"
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Igor Akinfeev",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Aleksei Kozlov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Georgi Shchennikov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sergei Ignashevich",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Andrei Semyonov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Maksim Kanunnikov",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Igor Denisov",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Denis Glushakov",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandr Kokorin",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alan Dzagoev",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Aleksandr Kerzhakov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Yuri Lodygin",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Vladimir Granat",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Vasili Berezutski",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Pavel Mogilevets",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Sergey Ryzhikov",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Oleg Shatov",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Yuri Zhirkov",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandr Samedov",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Viktor Fayzulin",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Aleksei Ionov",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Andrey Yeshchenko",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Dmitri Kombarov",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Igor Akinfeev",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Mário Fernandes",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Ilya Kutepov",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sergei Ignashevich",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Andrei Semyonov",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Denis Cheryshev",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Daler Kuzyayev",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Yury Gazinsky",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Alan Dzagoev",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fyodor Smolov",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Roman Zobnin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Andrey Lunyov",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Fyodor Kudryashov",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Vladimir Granat",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Aleksei Miranchuk",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Anton Miranchuk",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Aleksandr Golovin",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Yuri Zhirkov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandr Samedov",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Vladimir Gabulov",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Aleksandr Yerokhin",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Artem Dzyuba",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Igor Smolnikov",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
     }
   },
   "id": 3448,

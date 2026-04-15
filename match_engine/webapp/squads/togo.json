@@ -1,0 +1,144 @@
+{
+  "slug": "togo",
+  "name": "Togo",
+  "group": "🌍 Selecciones",
+  "badgeLocalPath": "/img/badges/togo.png",
+  "seasons": {
+    "2006": {
+      "formation": "4-5-1",
+      "teamLabel": "Togo (2006)",
+      "source": "Togo - World Cup 2006 Germany",
+      "ratings": {
+        "attack": 74,
+        "midfield": 72,
+        "defense": 70,
+        "goalkeeping": 69
+      },
+      "players": [
+        {
+          "name": "Kossi Agassa",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Massamasso Tchangai",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Dare Nibombé",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Jean-Paul Abalo",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Richmond Forson",
+          "position": "LB",
+          "rating": 69
+        },
+        {
+          "name": "Alaixys Romao",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Yao Junior",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Moustapha Salifou",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Mohamed Kader",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Emmanuel Adebayor",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Thomas Dossevi",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "teamLabel": "Togo (2025-26)",
+      "source": "Togo National Team 2025",
+      "ratings": {
+        "attack": 68,
+        "midfield": 67,
+        "defense": 66,
+        "goalkeeping": 65
+      },
+      "players": [
+        {
+          "name": "Kossi Agassa Jr.",
+          "position": "GK",
+          "rating": 66
+        },
+        {
+          "name": "Gagliardi Dossou",
+          "position": "CB",
+          "rating": 67
+        },
+        {
+          "name": "Ismaël Sama",
+          "position": "CB",
+          "rating": 66
+        },
+        {
+          "name": "Alassane Ametowoyona",
+          "position": "RB",
+          "rating": 66
+        },
+        {
+          "name": "Gilles Sallou",
+          "position": "LB",
+          "rating": 66
+        },
+        {
+          "name": "Carlos Slim",
+          "position": "DM",
+          "rating": 68
+        },
+        {
+          "name": "Laba Kodjo",
+          "position": "CM",
+          "rating": 67
+        },
+        {
+          "name": "Mathieu Dossevi",
+          "position": "AM",
+          "rating": 69
+        },
+        {
+          "name": "Caleb Ekuban",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Ladan Najim",
+          "position": "ST",
+          "rating": 70
+        },
+        {
+          "name": "Kodjovi Obilalé",
+          "position": "LW",
+          "rating": 68
+        }
+      ]
+    }
+  }
+}

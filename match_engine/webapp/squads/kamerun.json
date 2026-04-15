@@ -1,6 +1,74 @@
 {
   "slug": "kamerun",
   "seasons": {
+    "1982": {
+      "formation": "4-4-2",
+      "teamLabel": "Camerún (1982)",
+      "source": "Cameroon - World Cup 1982",
+      "ratings": {
+        "attack": 74,
+        "midfield": 72,
+        "defense": 73,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Thomas N'Kono",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Emmanuel Kunde",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Théophile Abega",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Jean Manga Onguéné",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Victor Ndip",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Michel Kaham",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Grégoire Mbida",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Roger Milla",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Eugène Ekéké",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Pius Ndiefi",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "René Ndjeya",
+          "position": "LW",
+          "rating": 71
+        }
+      ]
+    },
     "1990": {
       "formation": "4-4-2",
       "players": [
@@ -175,6 +243,507 @@
       },
       "source": "Transfermarkt — Cameroon (1990/1991)",
       "teamLabel": "Cameroon (1990-91)"
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "teamLabel": "Camerún (1994)",
+      "source": "Cameroon - World Cup 1994",
+      "ratings": {
+        "attack": 75,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Jacques Songo'o",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Stephen Tataw",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Rigobert Song",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Michel Kaham",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Raymond Kalla",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "François Omam-Biyik",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Marc-Vivien Foé",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Joseph-Antoine Bell",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "David Embé",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Patrick Mboma",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Emile Mbouh",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Camerún (1998)",
+      "source": "Cameroon - World Cup 1998",
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Jacques Songo'o",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Rigobert Song",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Cyrille Njitap",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Pierre Wome",
+          "position": "LB",
+          "rating": 75
+        },
+        {
+          "name": "Hans Agbo",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Marc-Vivien Foé",
+          "position": "DM",
+          "rating": 79
+        },
+        {
+          "name": "Geremi",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Raymond Kalla",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "RW",
+          "rating": 75
+        },
+        {
+          "name": "Patrick Mboma",
+          "position": "ST",
+          "rating": 81
+        },
+        {
+          "name": "Alphonse Tchami",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-3-3",
+      "teamLabel": "Camerún (2002)",
+      "source": "Cameroon - World Cup 2002",
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 74,
+        "goalkeeping": 74
+      },
+      "players": [
+        {
+          "name": "Boukar Alioum",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Rigobert Song",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Geremi",
+          "position": "RB",
+          "rating": 79
+        },
+        {
+          "name": "Pierre Wome",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Timothée Atouba",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Marc-Vivien Foé",
+          "position": "DM",
+          "rating": 80
+        },
+        {
+          "name": "Lauren",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Bill Tchato",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST",
+          "rating": 82
+        },
+        {
+          "name": "Patrick Mboma",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Salomon Olembe",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2010": {
+      "players": [
+        {
+          "name": "Carlos Kameni",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Benoît Assou-Ekotto",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nicolas Nkoulou",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Rigobert Song",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Sébastien Bassong",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Alex Song",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Landry N'Guémo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Geremi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Achille Emaná",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jean Makoun",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Gaëtan Bong",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Eric Maxim Choupo-Moting",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Aurélien Chedjou",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Pierre Webó",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Souleymanou Hamidou",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Mohammadou Idrissou",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Eyong Enoh",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Stéphane Mbia",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Georges Mandjeck",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Joël Matip",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Guy N'dy Assembé",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Vincent Aboubakar",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "2014": {
+      "players": [
+        {
+          "name": "Carlos Kameni",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Rigobert Song",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Nicolas Nkoulou",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Aurelien Chedjou",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Benoit Assou-Ekotto",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Stephane Mbia",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Alex Song",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jean Makoun",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Samuel Eto'o",
+          "position": "ST",
+          "rating": 85
+        },
+        {
+          "name": "Mohamadou Idrissou",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Achille Emana",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Simon Ngapandouetnbu",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Jerome Ngom Mbekeli",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nicolas Nkoulou",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Christopher Wooh",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Gaël Ondoua",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Moumi Ngamaleu",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Georges-Kévin Nkoudou",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "André-Frank Zambo Anguissa",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jean-Pierre Nsame",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Vincent Aboubakar",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Christian Bassogog",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Karl Toko Ekambi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Eric Maxim Choupo-Moting",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Samuel Gouet",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Pierre Kunde",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Devis Epassy",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Olivier Mbaizo",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Martin Hongla",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Collins Fai",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Bryan Mbeumo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Jean-Charles Castelletto",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Olivier Ntcham",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "André Onana",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

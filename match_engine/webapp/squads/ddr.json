@@ -1,0 +1,191 @@
+{
+  "slug": "ddr",
+  "name": "Alemania Oriental",
+  "shortName": "DDR",
+  "group": "🌍 Selecciones",
+  "badge": "/img/badges/_placeholder.svg",
+  "seasons": {
+    "1974": {
+      "players": [
+        {
+          "name": "Jürgen Croy",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Lothar Kurbjuweit",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Bernd Bransch",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Konrad Weise",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Joachim Fritsche",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Rüdiger Schnuphase",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jürgen Pommerenke",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Wolfram Löwe",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Peter Ducke",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Hans-Jürgen Kreische",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joachim Streich",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Siegmar Wätzlich",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Reinhard Lauck",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jürgen Sparwasser",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Eberhard Vogel",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Harald Irmscher",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Erich Hamann",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Gerd Kische",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Wolfgang Seguin",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Martin Hoffmann",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Wolfgang Blochwitz",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Werner Friese",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "2025": {
+      "formation": "4-4-2",
+      "teamLabel": "Alemania Oriental",
+      "source": "DDR (historical stub)",
+      "ratings": {
+        "attack": 74,
+        "midfield": 75,
+        "defense": 77,
+        "goalkeeping": 77
+      },
+      "players": [
+        {
+          "name": "Jürgen Croy",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Konrad Weise",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Lothar Kurbjuweit",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Bernd Bransch",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Eberhard Vogel",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Harald Irmscher",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Reinhard Lauck",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Martin Hoffmann",
+          "position": "RM",
+          "rating": 73
+        },
+        {
+          "name": "Jürgen Sparwasser",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Hans-Jürgen Kreische",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Joachim Streich",
+          "position": "ST",
+          "rating": 78
+        }
+      ]
+    }
+  }
+}

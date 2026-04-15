@@ -1,6 +1,805 @@
 {
   "slug": "vereinigte-staaten",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Andy Auld",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Mike Bookie",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jim Brown",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jimmy Douglas",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Tom Florie",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jimmy Gallagher",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "James Gentle",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Billy Gonsalves",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bart McGhee",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "George Moorhouse",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Arnie Oliver",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Bert Patenaude",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Philip Slone",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Raphael Tracey",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Frank Vaughn",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Alexander Wood",
+          "position": "CB",
+          "rating": 75
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Tom Amrhein",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ed Czerkiewicz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Walter Dick",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Aldo Donelli",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Bill Fiedler",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Tom Florie",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jimmy Gallagher",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Billy Gonsalves",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Al Harker",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Julius Hjulian",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "William Lehman",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Tom Lynch",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Joe Martinelli",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Willie McLean",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "George Moorhouse",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Werner Nilsen",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Peter Pietras",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Herman Rapp",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Francis Ryan",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Robert Annis",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Walter Bahr",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Frank Borghi",
+          "position": "GK",
+          "rating": 80
+        },
+        {
+          "name": "Charlie Colombo",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Geoff Coombes",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Robert Craddock",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Nicholas DiOrio",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Joe Gaetjens",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gino Gardassanich",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Harry Keough",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Joe Maca",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ed McIlvenny",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Benny McLaughlin",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gino Pariani",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Ed Souza",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "John Souza",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Frank Wallace",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Adam Wolanin",
+          "position": "ST",
+          "rating": 75
+        }
+      ]
+    },
+    "1990": {
+      "players": [
+        {
+          "name": "Tony Meola",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Steve Trittschuh",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "John Doyle",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Jimmy Banks",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Mike Windischmann",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "John Harkes",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Tab Ramos",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Brian Bliss",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Christopher Sullivan",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Peter Vermes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Eric Wynalda",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Paul Krumpe",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Eric Eichmann",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "John Stollmeyer",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Desmond Armstrong",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Bruce Murray",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Marcelo Balboa",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Kasey Keller",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Chris Henderson",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Paul Caligiuri",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Neil Covone",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "David Vanole",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (1994)",
+      "source": "USA - World Cup 1994 (host, QF)",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Tony Meola",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Thomas Dooley",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Alexi Lalas",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Paul Caligiuri",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Mike Burns",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Tab Ramos",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "John Harkes",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Fernando Clavijo",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Ernie Stewart",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Roy Wegerle",
+          "position": "AM",
+          "rating": 73
+        },
+        {
+          "name": "Eric Wynalda",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (1998)",
+      "source": "USA - World Cup 1998",
+      "ratings": {
+        "attack": 70,
+        "midfield": 70,
+        "defense": 70,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Kasey Keller",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Frankie Hejduk",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Alexi Lalas",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jeff Agoos",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Eddie Pope",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Tab Ramos",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "John Harkes",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Brian Maisonneuve",
+          "position": "DM",
+          "rating": 69
+        },
+        {
+          "name": "Earnie Stewart",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Brian McBride",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Eric Wynalda",
+          "position": "LW",
+          "rating": 73
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (2002)",
+      "source": "USA - World Cup 2002 (QF)",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 74,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Brad Friedel",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Frankie Hejduk",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Tony Sanneh",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Carlos Bocanegra",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Eddie Pope",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Claudio Reyna",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "DaMarcus Beasley",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pablo Mastroeni",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Landon Donovan",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Brian McBride",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Josh Wolff",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (2006)",
+      "source": "USA - World Cup 2006",
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Kasey Keller",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Steve Cherundolo",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Oguchi Onyewu",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Carlos Bocanegra",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Eddie Lewis",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Claudio Reyna",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Pablo Mastroeni",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "DaMarcus Beasley",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Landon Donovan",
+          "position": "AM",
+          "rating": 77
+        },
+        {
+          "name": "Brian McBride",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Ben Olsen",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "2010": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (2010)",
+      "source": "USA - World Cup 2010 (R16)",
+      "ratings": {
+        "attack": 73,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Tim Howard",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Steve Cherundolo",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Jay DeMerit",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Oguchi Onyewu",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Carlos Bocanegra",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Maurice Edu",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Michael Bradley",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Clint Dempsey",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Landon Donovan",
+          "position": "AM",
+          "rating": 79
+        },
+        {
+          "name": "Jozy Altidore",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "DaMarcus Beasley",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2014": {
+      "formation": "4-4-2",
+      "teamLabel": "USA (2014)",
+      "source": "USA - World Cup 2014 (R16)",
+      "ratings": {
+        "attack": 73,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Tim Howard",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "DeAndre Yedlin",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Geoff Cameron",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Matt Besler",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "DaMarcus Beasley",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Michael Bradley",
+          "position": "DM",
+          "rating": 75
+        },
+        {
+          "name": "Kyle Beckerman",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Clint Dempsey",
+          "position": "AM",
+          "rating": 78
+        },
+        {
+          "name": "Alejandro Bedoya",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Jozy Altidore",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Aron Jóhannsson",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
     "2019": {
       "formation": "4-4-2",
       "players": [
@@ -301,6 +1100,125 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Estados Unidos (2019/2020)",
       "teamLabel": "Estados Unidos (2019-20)"
+    },
+    "2022": {
+      "players": [
+        {
+          "name": "Matt Turner",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Sergiño Dest",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Walker Zimmerman",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Tyler Adams",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Yunus Musah",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Giovanni Reyna",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Weston McKennie",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jesús Ferreira",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Christian Pulisic",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ethan Horvath",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Tim Ream",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Luca de la Torre",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Aaron Long",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jordan Morris",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Cristian Roldan",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Shaq Moore",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Haji Wright",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Timothy Weah",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "DeAndre Yedlin",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Kellyn Acosta",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
     },
     "2025": {
       "formation": "4-3-3",

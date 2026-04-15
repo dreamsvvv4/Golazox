@@ -1,0 +1,96 @@
+{
+  "name": "Club Sporting Cristal",
+  "slug": "sporting-cristal",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/sporting-cristal.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Renato Solís",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Johan Madrid",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Omar Merlo",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Gino Peruzzi",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Nilson Loyola",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Jesús Pretell",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Christofer Gonzales",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Joao Grimaldo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Percy Liza",
+          "position": "RW",
+          "rating": 76
+        },
+        {
+          "name": "Irven Ávila",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alejandro Hohberg",
+          "position": "LW",
+          "rating": 77
+        },
+        {
+          "name": "Christopher Olivares",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Renzo Garcés",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Martín Távara",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Lenyn Güenaga",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 76,
+        "defense": 75,
+        "goalkeeping": 74
+      },
+      "source": "Transfermarkt — Sporting Cristal (2025/2026)",
+      "teamLabel": "Sporting Cristal (2025–26)"
+    }
+  }
+}

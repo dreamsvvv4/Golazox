@@ -1,6 +1,433 @@
 {
   "slug": "peru",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Eduardo Astengo",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Carlos Cillóniz",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Mario de las Casas",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alberto Denegri",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Arturo Fernández",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Plácido Galindo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Domingo García",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "José María Lavalle",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Julio Lores",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Antonio Maquilón",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Demetrio Neyra",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pablo Pacheco",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jorge Pardon",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Julio Quintana",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Lizardo Rodríguez Nue",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Jorge Sarmiento",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Alberto Soria",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Luis de Souza",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Juan Valdivieso",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Villanueva",
+          "position": "ST",
+          "rating": 74
+        }
+      ]
+    },
+    "1970": {
+      "formation": "4-4-2",
+      "teamLabel": "Perú (1970)",
+      "source": "Peru - World Cup 1970 (QF)",
+      "ratings": {
+        "attack": 78,
+        "midfield": 76,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Luis Rubiños",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Pedro Gonzales",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Héctor Chumpitaz",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Roberto Challe",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Néstor Drago",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Percy Rojas",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Ramón Mifflin",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Oswaldo Ramírez",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Hugo Sotil",
+          "position": "RW",
+          "rating": 78
+        },
+        {
+          "name": "Teófilo Cubillas",
+          "position": "AM",
+          "rating": 84
+        },
+        {
+          "name": "Pedro León",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    },
+    "1978": {
+      "formation": "4-3-3",
+      "teamLabel": "Perú (1978)",
+      "source": "Peru - World Cup 1978 (QF)",
+      "ratings": {
+        "attack": 80,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 75
+      },
+      "players": [
+        {
+          "name": "Ramón Quiroga",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Jorge Muñante",
+          "position": "RB",
+          "rating": 75
+        },
+        {
+          "name": "Héctor Chumpitaz",
+          "position": "CB",
+          "rating": 80
+        },
+        {
+          "name": "Roberto Rojas",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Jaime Duarte",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "José Velásquez",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Julio Meléndez",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Ramón Mifflin",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Hugo Sotil",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Teófilo Cubillas",
+          "position": "AM",
+          "rating": 85
+        },
+        {
+          "name": "César Cueto",
+          "position": "LW",
+          "rating": 78
+        }
+      ]
+    },
+    "1982": {
+      "formation": "4-4-2",
+      "teamLabel": "Perú (1982)",
+      "source": "Peru - World Cup 1982",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Ramón Quiroga",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Jorge Olaechea",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Didí Sánchez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jorge Muñante",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Reyes Ramos",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "César Cueto",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "José Velásquez",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Teófilo Cubillas",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Uribe Marcos",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Roberto Guerrero",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Luis Reyes",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Pedro Gallese",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Alberto Rodríguez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Aldo Corzo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Anderson Santamaría",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Miguel Araujo",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Miguel Trauco",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Paolo Hurtado",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Christian Cueva",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Paolo Guerrero",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jefferson Farfán",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Raúl Ruidíaz",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Carlos Cáceda",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Renato Tapia",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Andy Polo",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Christian Ramos",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Wilder Cartagena",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Luis Advíncula",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "André Carrillo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Yoshimar Yotún",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Edison Flores",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "José Carvallo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Nilson Loyola",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Pedro Aquino",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

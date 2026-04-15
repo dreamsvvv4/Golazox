@@ -1,0 +1,96 @@
+{
+  "name": "Deportivo Independiente Medellín",
+  "slug": "independiente-medellin",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/independiente-medellin.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "name": "Andrés Mosquera Marmolejo",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Pablo Rojas",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Jesús Murillo",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Yulian Gómez",
+          "position": "RB",
+          "rating": 77
+        },
+        {
+          "name": "Yeferson Rodallega",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Andrés Cadavid",
+          "position": "DM",
+          "rating": 78
+        },
+        {
+          "name": "Javier Reina",
+          "position": "DM",
+          "rating": 77
+        },
+        {
+          "name": "Daniel Torres",
+          "position": "AM",
+          "rating": 80
+        },
+        {
+          "name": "Luciano Pons",
+          "position": "RW",
+          "rating": 79
+        },
+        {
+          "name": "Ryan Lamont",
+          "position": "LW",
+          "rating": 78
+        },
+        {
+          "name": "Dorlan Pabón",
+          "position": "ST",
+          "rating": 80
+        },
+        {
+          "name": "Harlen Castillo",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Jhon Velásquez",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Baldomero Perlaza",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Adrián Arregui",
+          "position": "ST",
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Independiente Medellín (2025/2026)",
+      "teamLabel": "Ind. Medellín (2025–26)"
+    }
+  }
+}

@@ -1,6 +1,414 @@
 {
   "slug": "tunesien",
   "seasons": {
+    "1978": {
+      "formation": "4-4-2",
+      "teamLabel": "Túnez (1978)",
+      "source": "Tunisia - World Cup 1978 (first African win at WC)",
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Ali Dhahri",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Néjib Ghommidh",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Amor Jelali",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Lassaad Khalifa",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Hedi M'Nari",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Tarak Dhiab",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Aïssa Ayari",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Mondher Chetali",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Mokhtar Dhouieb",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Néjib Ghommidh Jr.",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Khemais Labidi",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Túnez (1998)",
+      "source": "Tunisia - World Cup 1998",
+      "ratings": {
+        "attack": 72,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Chokri El Ouaer",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Mhamed Trabelsi",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Karim Bagheri",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Khaled Badra",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Siaka Tiéné",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Adel Sellimi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Slim Ben Amor",
+          "position": "DM",
+          "rating": 71
+        },
+        {
+          "name": "Youssef Chibah",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Skander Souayah",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Ziad Jaziri",
+          "position": "ST",
+          "rating": 72
+        },
+        {
+          "name": "Mehdi Ben Slimane",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "2002": {
+      "formation": "4-4-2",
+      "teamLabel": "Túnez (2002)",
+      "source": "Tunisia - World Cup 2002",
+      "ratings": {
+        "attack": 72,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Chokri El Ouaer",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Mhamed Trabelsi",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Hatem Trabelsi",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Radhi Jaïdi",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Khaled Badra",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Slim Ben Amor",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Raouf Bouzaiene",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Adel Sellimi",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Santos",
+          "position": "RW",
+          "rating": 72
+        },
+        {
+          "name": "Ziad Jaziri",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Imed Mhedhebi",
+          "position": "LW",
+          "rating": 71
+        }
+      ]
+    },
+    "2006": {
+      "formation": "4-4-2",
+      "teamLabel": "Túnez (2006)",
+      "source": "Tunisia - World Cup 2006",
+      "ratings": {
+        "attack": 71,
+        "midfield": 71,
+        "defense": 72,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Ali Boumnijel",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Hatem Trabelsi",
+          "position": "RB",
+          "rating": 74
+        },
+        {
+          "name": "Radhi Jaïdi",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Anis Ayari",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Karim Haggui",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Jawhar Mnari",
+          "position": "DM",
+          "rating": 72
+        },
+        {
+          "name": "Mehdi Nafti",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Oussama Darragi",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Hocine Ragued",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Ziad Jaziri",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Chaouki Ben Saada",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2018": {
+      "formation": "4-3-3",
+      "teamLabel": "Túnez (2018)",
+      "source": "Tunisia - World Cup 2018",
+      "ratings": {
+        "attack": 72,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 70
+      },
+      "players": [
+        {
+          "name": "Mouez Hassen",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Dylan Bronn",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Syam Ben Youssef",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Yassine Meriah",
+          "position": "RB",
+          "rating": 71
+        },
+        {
+          "name": "Ali Maaloul",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ellyes Skhiri",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Ferjani Sassi",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Anice Badri",
+          "position": "CM",
+          "rating": 72
+        },
+        {
+          "name": "Wahbi Khazri",
+          "position": "AM",
+          "rating": 76
+        },
+        {
+          "name": "Fakhreddine Ben Youssef",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Naïm Sliti",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "2022": {
+      "formation": "4-3-3",
+      "teamLabel": "Túnez (2022)",
+      "source": "Tunisia - World Cup 2022",
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 73,
+        "goalkeeping": 71
+      },
+      "players": [
+        {
+          "name": "Aymen Dahmen",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Montassar Talbi",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Dylan Bronn",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Wajdi Kechrida",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Ali Maaloul",
+          "position": "LB",
+          "rating": 74
+        },
+        {
+          "name": "Ellyes Skhiri",
+          "position": "DM",
+          "rating": 76
+        },
+        {
+          "name": "Aissa Laidouni",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ferjani Sassi",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Wahbi Khazri",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Youssef Msakni",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Seifeddine Jaziri",
+          "position": "ST",
+          "rating": 72
+        }
+      ]
+    },
     "2025": {
       "formation": "4-3-3",
       "players": [

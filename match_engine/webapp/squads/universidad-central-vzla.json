@@ -1,0 +1,96 @@
+{
+  "name": "Universidad Central de Venezuela",
+  "slug": "universidad-central-vzla",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/universidad-central-vzla.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Daniel Santander",
+          "position": "GK",
+          "rating": 71
+        },
+        {
+          "name": "Fernando Aristeguieta",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Jhon Chancellor",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Yohandry Orozco",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Víctor García",
+          "position": "LB",
+          "rating": 71
+        },
+        {
+          "name": "Edson Castillo",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Eric Ramírez",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rómulo Otero",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Alejandro Guerra",
+          "position": "RW",
+          "rating": 73
+        },
+        {
+          "name": "Adalberto Peñaranda",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Nicolás Benedetti",
+          "position": "LW",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Vargas",
+          "position": "GK",
+          "rating": 69
+        },
+        {
+          "name": "Luis Chávez",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Jan Hurtado",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Jhon Murillo",
+          "position": "ST",
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 72,
+        "defense": 71,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — Universidad Central VZL (2025/2026)",
+      "teamLabel": "Univ. Central (2025–26)"
+    }
+  }
+}

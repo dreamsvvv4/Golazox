@@ -1,0 +1,96 @@
+{
+  "name": "Coquimbo Unido",
+  "slug": "coquimbo-unido",
+  "group": "🌎 América del Sur",
+  "badgeLocalPath": "/img/badges/coquimbo-unido.png",
+  "seasons": {
+    "2025": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Martín Parra",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Gabriel Suazo",
+          "position": "LB",
+          "rating": 76
+        },
+        {
+          "name": "Ángel González",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Matías Muñoz",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Brian Kalter",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Leandro Vásquez",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Pablo Solari",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Germán Lanaro",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Ignacio Carreño",
+          "position": "RW",
+          "rating": 74
+        },
+        {
+          "name": "Agustín Farías",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Holgado",
+          "position": "LW",
+          "rating": 74
+        },
+        {
+          "name": "Ariel Cólzera",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Felipe Gutiérrez",
+          "position": "CB",
+          "rating": 72
+        },
+        {
+          "name": "Rodrigo Mora",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Máximo Núñez",
+          "position": "ST",
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "source": "Transfermarkt — Coquimbo Unido (2025/2026)",
+      "teamLabel": "Coquimbo Unido (2025–26)"
+    }
+  }
+}

@@ -1,8 +1,235 @@
 {
   "slug": "spanien",
   "seasons": {
-    "1966": {
-      "formation": "4-4-2",
+    "1934": {
+      "players": [
+        {
+          "name": "Crisant Bosch",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Campanal I",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Chacho",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Leonardo Cilaurren",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ciriaco",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Fede",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Guillermo Gorostiza",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Hilario",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "José Iraragorri",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lafuente",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Isidro Lángara",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Simón Lecue",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Martín Marculeta",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Luis Marín Sabater",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "José Muguerza",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Juan José Nogués",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Jacinto Quincoces",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Luis Regueiro",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Pedro Solé",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Martí Ventolrà",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ramón Zabalo",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Ricardo Zamora",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1950": {
+      "players": [
+        {
+          "name": "Juan Acuña",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Gabriel Alonso",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Francisco Antúnez",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Vicente Asensi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Estanislau Basora",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "César",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Agustín Gaínza",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Josep Gonzalvo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Marià Gonzalvo",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Rosendo Hernández",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Silvestre Igoa",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ignacio Eizaguirre",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "José Juncosa",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rafael Lesmes",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Luis Molowny",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Nando",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "José Luis Panizo",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "José Parra",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Antonio Puchades",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Antoni Ramallets",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Alfonso Silva",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Telmo Zarra",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1962": {
       "players": [
         {
           "name": "Antonio Betancort",
@@ -159,15 +386,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 79,
-        "midfield": 82,
-        "defense": 79,
-        "goalkeeping": 80
-      },
-      "source": "Transfermarkt 🌍 Otros€” spain (1966/1967)",
-      "teamLabel": "spain (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "José Ángel Iribar",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Manuel Sanchís",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Eladio Silvestre",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Luis del Sol",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Ignacio Zoco",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jesús Glaría",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "José Ufarte",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Amancio",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Marcelino",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Paco Gento",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Antonio Betancort",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Miguel Reina",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Feliciano Rivilla",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Severino Reija",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Ferran Olivella",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Gallego",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Pirri",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Josep Maria Fusté",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Joaquín Peiró",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Adelardo",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Carlos Lapetra",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

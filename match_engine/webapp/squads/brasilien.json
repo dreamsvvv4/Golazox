@@ -1,171 +1,731 @@
 {
   "slug": "brasilien",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Araken",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Benedicto",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Brilhante",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Carvalho Leite",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Fausto",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Fernando",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Fortes",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Hermógenes",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Itália",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ivan Mariz",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Joel",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Manoelzinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Moderato",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Nilo",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Oscarino",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Pamplona",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Poly",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Preguinho",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Russinho",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Teóphilo",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Velloso",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Zé Luiz",
+          "position": "CB",
+          "rating": 72
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Ariel",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Armandinho",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Áttila",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Canalli",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Carvalho Leite",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Domingos da Guia",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Germano",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Luisinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gabriel Fernando Bile",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Leônidas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luiz Luz",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Luisinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Martim",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Octacílio",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Pamplona",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Patesko",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Pedrosa",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Sylvio Hoffmann",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Tinoco",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Tunga",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Waldyr",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Waldemar de Brito",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Afonsinho",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Argemiro",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Batatais",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Brandão",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Britto",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Domingos da Guia",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Hércules",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jaú",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Leônidas",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Lopes",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Luisinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Machado",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Martim",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nariz",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Niginho",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Patesko",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Perácio",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Roberto",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Romeu",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Tim",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Walter",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Zezé Procópio",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "1950": {
-      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Barbosa",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Augusto",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nílton Santos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Bauer",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Danilo",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Bigode",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Friaça",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Zizinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Ademir",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jair",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Chico",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Adãozinho",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Alfredo",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Baltazar",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Castilho",
+          "position": "GK",
+          "rating": 77
+        },
+        {
+          "name": "Ely",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Juvenal",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Maneca",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Nena",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Noronha",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Rodrigues",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Rui",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Castilho",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Djalma Santos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Nílton Santos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Brandãozinho",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Pinheiro",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Bauer",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Julinho",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Didi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Baltazar",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Pinga",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Rodrigues",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Paulinho",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Alfredo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Ely",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Mauro Ramos",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Dequinha",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Maurinho",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Humberto",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Índio",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Rubens",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Veludo",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Cabeção",
+          "position": "GK",
+          "rating": 73
+        }
+      ]
+    },
+    "1958": {
       "players": [
         {
           "name": "Castilho",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Barbosa",
           "position": "GK",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Mauro Ramos",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Nena",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Juvenal",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Bauer",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Nilton Santos",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Noronha",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Bigode",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ely do Amparo",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Augusto da Costa",
           "position": "CB",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Jair",
           "position": "CM",
           "marketValue": 0,
-          "rating": 84
+          "rating": 82
         },
         {
           "name": "Rui Campos",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Alfredo",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Danilo Alvim",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Zizinho",
           "position": "CM",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Ademir",
           "position": "ST",
           "marketValue": 0,
-          "rating": 86
+          "rating": 82
         },
         {
           "name": "Chico",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Friaça",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Pinga",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Rodrigues Tatu",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Baltazar",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Maneca",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Adãozinho",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         },
         {
           "name": "Tesourinha",
           "position": "ST",
           "marketValue": 0,
-          "rating": null
+          "rating": 0
         }
-      ],
-      "ratings": {
-        "attack": 89,
-        "midfield": 80,
-        "defense": 88,
-        "goalkeeping": 78
-      },
-      "source": "Transfermarkt — Brazil (1950/1951)",
-      "teamLabel": "Brazil (1950-51)"
+      ]
     },
-    "1966": {
-      "formation": "4-4-2",
+    "1962": {
       "players": [
         {
           "name": "Ubirajara",
@@ -452,15 +1012,121 @@
           "position": "ST",
           "rating": 80
         }
-      ],
-      "ratings": {
-        "attack": 88,
-        "midfield": 85,
-        "defense": 83,
-        "goalkeeping": 82
-      },
-      "source": "Transfermarkt 🌍 Otros€” brasil (1966/1967)",
-      "teamLabel": "brasil (1966-67)"
+      ]
+    },
+    "1966": {
+      "players": [
+        {
+          "name": "Gilmar",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Djalma Santos",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Fidélis",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Hilderaldo Bellini",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Brito",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Altair",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Orlando",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Paulo Henrique",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Rildo",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Pelé",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Gérson",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Manga",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Denílson",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Lima",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Zito",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Garrincha",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Jairzinho",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Alcindo",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Silva",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Tostão",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Paraná",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Edu",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
     },
     "1970": {
       "formation": "4-4-2",

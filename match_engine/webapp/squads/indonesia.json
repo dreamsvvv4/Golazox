@@ -1,0 +1,47 @@
+{
+  "slug": "indonesia",
+  "name": "Indonesia",
+  "shortName": "IDN",
+  "group": "🌍 Selecciones",
+  "badge": "/img/badges/_placeholder.svg",
+  "seasons": {
+    "1938": {
+      "formation": "4-4-2",
+      "teamLabel": "Indias Orient. Holand. (1938)",
+      "source": "Dutch East Indies - World Cup 1938 (only WC appearance, lost 6-0 to Hungary)",
+      "ratings": { "attack": 60, "midfield": 60, "defense": 60, "goalkeeping": 60 },
+      "players": [
+        { "name": "Tan Mo Heng",         "position": "GK", "rating": 61 },
+        { "name": "Jack Sammuels",       "position": "RB", "rating": 60 },
+        { "name": "Frans Meeng",         "position": "CB", "rating": 61 },
+        { "name": "Achmad Nawir",        "position": "CB", "rating": 62 },
+        { "name": "Fred Hutschemaekers", "position": "LB", "rating": 60 },
+        { "name": "Suvarte Soedarmadji", "position": "DM", "rating": 60 },
+        { "name": "Hans Taihuttu",       "position": "CM", "rating": 61 },
+        { "name": "Henk Sommers",        "position": "CM", "rating": 60 },
+        { "name": "G. van den Burg",     "position": "RW", "rating": 61 },
+        { "name": "Ismail Nawir",        "position": "ST", "rating": 62 },
+        { "name": "Mo Heng",             "position": "LW", "rating": 60 }
+      ]
+    },
+    "2025": {
+      "formation": "4-3-3",
+      "teamLabel": "Indonesia (2025)",
+      "source": "Indonesia - modern squad",
+      "ratings": { "attack": 68, "midfield": 67, "defense": 67, "goalkeeping": 67 },
+      "players": [
+        { "name": "Maarten Paes",        "position": "GK", "rating": 72 },
+        { "name": "Elkan Baggott",       "position": "CB", "rating": 70 },
+        { "name": "Justin Hubner",       "position": "CB", "rating": 70 },
+        { "name": "Iván Jenner",         "position": "RB", "rating": 68 },
+        { "name": "Pratama Arhan",       "position": "LB", "rating": 68 },
+        { "name": "Ragnar Oratmangoen",  "position": "DM", "rating": 69 },
+        { "name": "Joey Pelupessy",      "position": "CM", "rating": 68 },
+        { "name": "Thom Haye",           "position": "CM", "rating": 70 },
+        { "name": "Shayne Pattynama",    "position": "RW", "rating": 70 },
+        { "name": "Rafael Struick",      "position": "ST", "rating": 73 },
+        { "name": "Marselino Ferdinan",  "position": "LW", "rating": 72 }
+      ]
+    }
+  }
+}

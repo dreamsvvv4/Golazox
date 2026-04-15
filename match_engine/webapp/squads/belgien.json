@@ -1,6 +1,432 @@
 {
   "slug": "belgien",
   "seasons": {
+    "1930": {
+      "players": [
+        {
+          "name": "Ferdinand Adams",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Arnold Badjou",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Pierre Braine",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Alexis Chantraine",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jean De Bie",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Jean De Clercq",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Henri De Deken",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Gérard Delbeke",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jan Diddens",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "August Hellemans",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Nicolas Hoydonckx",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Jacques Moeschal",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Théodore Nouwens",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "André Saeys",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Louis Versyp",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Bernard Voorhoof",
+          "position": "ST",
+          "rating": 76
+        }
+      ]
+    },
+    "1934": {
+      "players": [
+        {
+          "name": "Arnold Badjou",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Désiré Bourgeois",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Jean Brichaut",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean Capelle",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean Claessens",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "François Devries",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Laurent Grimmonprez",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "August Hellemans",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Albert Heremans",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Constant Joacim",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Robert Lamoot",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Francois Ledent",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Jules Pappaert",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Frans Peeraer",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Victor Putmans",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Rene Simons",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Philibert Smellinckx",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Joseph Van Ingelgem",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "André Vandewyer",
+          "position": "GK",
+          "rating": 75
+        },
+        {
+          "name": "Louis Versyp",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Bernard Voorhoof",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Félix Welkenhuysen",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
+    "1938": {
+      "players": [
+        {
+          "name": "Arnold Badjou",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Robert Braet",
+          "position": "GK",
+          "rating": 79
+        },
+        {
+          "name": "Raymond Braine",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Fernand Buyle",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Jean Capelle",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Arthur Ceuleers",
+          "position": "ST",
+          "rating": 79
+        },
+        {
+          "name": "Pierre Dalem",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Alfons De Winter",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Jean Fievez",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Frans Gommers",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Paul Henry",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Hendrik Isemborghs",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joseph Nelis",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Robert Paverick",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Jean Petit",
+          "position": "CB",
+          "rating": 76
+        },
+        {
+          "name": "Corneel Seys",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Philibert Smellinckx",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Émile Stijnen",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "John Van Alphen",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Charles Vanden Wouwer",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "André Vandeweyer",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Bernard Voorhoof",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
+    "1954": {
+      "players": [
+        {
+          "name": "Léopold Gernaey",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Marcel Dries",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Alfons Van Brandt",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Constant Huysmans",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Louis Carré",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Victor Mees",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Jozef Vliers",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Denis Houf",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Henri Coppens",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Léopold Anoul",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Joseph Mermans",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Charles Geerts",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Henri Dirickx",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Robert Van Kerkhoven",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Hippolyte Van Den Bosch",
+          "position": "ST",
+          "rating": 77
+        },
+        {
+          "name": "Pieter Van Den Bosch",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Raymond Ausloos",
+          "position": "GK",
+          "rating": 76
+        },
+        {
+          "name": "Jef Van Der Linden",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "Jo Backaert",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Robert Maertens",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Jean Van Steen",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Luc Van Hoyweghen",
+          "position": "ST",
+          "rating": 73
+        }
+      ]
+    },
     "1966": {
       "formation": "4-4-2",
       "players": [

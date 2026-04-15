@@ -1,6 +1,397 @@
 {
   "slug": "marokko",
   "seasons": {
+    "1970": {
+      "formation": "4-4-2",
+      "teamLabel": "Marruecos (1970)",
+      "source": "Morocco - World Cup 1970",
+      "ratings": {
+        "attack": 71,
+        "midfield": 70,
+        "defense": 70,
+        "goalkeeping": 69
+      },
+      "players": [
+        {
+          "name": "Allal Ben Kassou",
+          "position": "GK",
+          "rating": 70
+        },
+        {
+          "name": "Mohamed Maaroufi",
+          "position": "RB",
+          "rating": 70
+        },
+        {
+          "name": "Boujemaa Benkhrif",
+          "position": "CB",
+          "rating": 71
+        },
+        {
+          "name": "Mohamed Meknassi",
+          "position": "CB",
+          "rating": 70
+        },
+        {
+          "name": "Brahim Taj",
+          "position": "LB",
+          "rating": 70
+        },
+        {
+          "name": "Ahmed Faras",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Khalil Azmi",
+          "position": "DM",
+          "rating": 70
+        },
+        {
+          "name": "Abderrazak Khairi",
+          "position": "CM",
+          "rating": 71
+        },
+        {
+          "name": "Mbarek Touibi",
+          "position": "RW",
+          "rating": 71
+        },
+        {
+          "name": "Houmane Jarir",
+          "position": "ST",
+          "rating": 71
+        },
+        {
+          "name": "Mohamed Ghazouani",
+          "position": "LW",
+          "rating": 70
+        }
+      ]
+    },
+    "1986": {
+      "formation": "4-4-2",
+      "teamLabel": "Marruecos (1986)",
+      "source": "Morocco - World Cup 1986 (R16, group leaders)",
+      "ratings": {
+        "attack": 76,
+        "midfield": 74,
+        "defense": 74,
+        "goalkeeping": 73
+      },
+      "players": [
+        {
+          "name": "Badou Zaki",
+          "position": "GK",
+          "rating": 74
+        },
+        {
+          "name": "Lahcen Abrami",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Aziz Bouderbala",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Mohamed Bouyahiaoui",
+          "position": "CB",
+          "rating": 74
+        },
+        {
+          "name": "El Haddaoui",
+          "position": "LB",
+          "rating": 73
+        },
+        {
+          "name": "Mustafa El Haddaoui",
+          "position": "DM",
+          "rating": 74
+        },
+        {
+          "name": "Moustapha Merry",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Abdelmajid Dolmy",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Baddou Zaki",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Ahmed Faras",
+          "position": "ST",
+          "rating": 76
+        },
+        {
+          "name": "Abderrazak Khairi",
+          "position": "LW",
+          "rating": 74
+        }
+      ]
+    },
+    "1994": {
+      "formation": "4-4-2",
+      "teamLabel": "Marruecos (1994)",
+      "source": "Morocco - World Cup 1994",
+      "ratings": {
+        "attack": 74,
+        "midfield": 73,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Khalil Azmi",
+          "position": "GK",
+          "rating": 72
+        },
+        {
+          "name": "Abdeslam Laghrissi",
+          "position": "RB",
+          "rating": 72
+        },
+        {
+          "name": "Noureddine Naybet",
+          "position": "CB",
+          "rating": 77
+        },
+        {
+          "name": "Rachid Daoudi",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Mustapha El Haddaoui",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Rachid Azzouzi",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Mustapha Hadji",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Abdelkrim El Hadrioui",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Tahar El Khalej",
+          "position": "AM",
+          "rating": 74
+        },
+        {
+          "name": "Said Chiba",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Younès Kaboul",
+          "position": "LW",
+          "rating": 72
+        }
+      ]
+    },
+    "1998": {
+      "formation": "4-4-2",
+      "teamLabel": "Marruecos (1998)",
+      "source": "Morocco - World Cup 1998",
+      "ratings": {
+        "attack": 75,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 72
+      },
+      "players": [
+        {
+          "name": "Driss Benzekri",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Abdelkhalek Losri",
+          "position": "RB",
+          "rating": 73
+        },
+        {
+          "name": "Noureddine Naybet",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Rachid El Hadrioui",
+          "position": "CB",
+          "rating": 73
+        },
+        {
+          "name": "Abdelouahed Naybet",
+          "position": "LB",
+          "rating": 72
+        },
+        {
+          "name": "Rachid Azzouzi",
+          "position": "DM",
+          "rating": 73
+        },
+        {
+          "name": "Mustapha Hadji",
+          "position": "CM",
+          "rating": 79
+        },
+        {
+          "name": "Hicham Zerouali",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Salaheddine Bassir",
+          "position": "AM",
+          "rating": 75
+        },
+        {
+          "name": "Abdeljalil Hadda",
+          "position": "ST",
+          "rating": 73
+        },
+        {
+          "name": "Youssef Chippo",
+          "position": "LW",
+          "rating": 75
+        }
+      ]
+    },
+    "2018": {
+      "players": [
+        {
+          "name": "Yassine Bounou",
+          "position": "GK",
+          "rating": 81
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Hamza Mendyl",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Manuel da Costa",
+          "position": "CB",
+          "rating": 79
+        },
+        {
+          "name": "Medhi Benatia",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Romain Saïss",
+          "position": "CB",
+          "rating": 78
+        },
+        {
+          "name": "Hakim Ziyech",
+          "position": "CM",
+          "rating": 78
+        },
+        {
+          "name": "Karim El Ahmadi",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Ayoub El Kaabi",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Younès Belhanda",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Fayçal Fajr",
+          "position": "CM",
+          "rating": 77
+        },
+        {
+          "name": "Munir Mohamedi",
+          "position": "GK",
+          "rating": 78
+        },
+        {
+          "name": "Khalid Boutaïb",
+          "position": "ST",
+          "rating": 78
+        },
+        {
+          "name": "Mbark Boussoufa",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Youssef Aït Bennasser",
+          "position": "CM",
+          "rating": 76
+        },
+        {
+          "name": "Nordin Amrabat",
+          "position": "CM",
+          "rating": 75
+        },
+        {
+          "name": "Nabil Dirar",
+          "position": "CB",
+          "rating": 75
+        },
+        {
+          "name": "Amine Harit",
+          "position": "CM",
+          "rating": 74
+        },
+        {
+          "name": "Youssef En-Nesyri",
+          "position": "ST",
+          "rating": 75
+        },
+        {
+          "name": "Aziz Bouhaddouz",
+          "position": "ST",
+          "rating": 74
+        },
+        {
+          "name": "Sofyan Amrabat",
+          "position": "CM",
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Reda Tagnaouti",
+          "position": "GK",
+          "rating": 73
+        },
+        {
+          "name": "Mehdi Carcela",
+          "position": "CM",
+          "rating": 72
+        }
+      ]
+    },
     "2022": {
       "formation": "4-4-2",
       "players": [
