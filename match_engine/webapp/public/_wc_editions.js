@@ -242,7 +242,7 @@ const _WC_EDITIONS = {
   },
   1970: {
     year: 1970, format: 'groups_of_4_ko', host: 'Mexico',
-    normativa: '4 grupos → semis · tarjetas amarilla/roja',
+    normativa: '4 grupos → cuartos · tarjetas amarilla/roja',
     groups: [
       { label: 'A', teams: [
         { slug: 'brasilien', era: '1970', name: 'Brasil', badge: '/img/badges/brasilien.png' },
@@ -271,7 +271,7 @@ const _WC_EDITIONS = {
     ],
   },
   1974: {
-    year: 1974, format: 'groups_of_4_ko', host: 'Alemania Federal',
+    year: 1974, format: 'groups_second_round', host: 'Alemania Federal',
     normativa: '4 grupos → 2ª fase grupos → final',
     groups: [
       { label: 'A', teams: [
@@ -301,7 +301,7 @@ const _WC_EDITIONS = {
     ],
   },
   1978: {
-    year: 1978, format: 'groups_of_4_ko', host: 'Argentina',
+    year: 1978, format: 'groups_second_round', host: 'Argentina',
     normativa: '4 grupos → 2ª fase grupos → final',
     groups: [
       { label: 'A', teams: [
@@ -331,8 +331,8 @@ const _WC_EDITIONS = {
     ],
   },
   1982: {
-    year: 1982, format: 'groups24_ko', host: 'Espana',
-    normativa: '6 grupos → octavos · 2º + 4 mejores terceros',
+    year: 1982, format: 'groups82', host: 'Espana',
+    normativa: '6 grupos → 2ª fase 4 grupos de 3 · solo campeones pasan',  
     groups: [
       { label: 'A', teams: [
         { slug: 'belgien', era: '1982', name: 'Bélgica', badge: '/img/badges/belgien.png' },

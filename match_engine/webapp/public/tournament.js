@@ -3143,10 +3143,188 @@ const TRN = (() => {
     if (fmt === 'knockout16') return _simulateCopa();
     // groups_semifinal (1930): 4 groups, winner of each → semis directly
     if (fmt === 'groups_semifinal') return _simulateGroupsSemifinal();
-    // groups24_ko (1982-1994): 6 groups + best 4 thirds → 16 team R16
+    // groups_second_round (1974, 1978): 4 groups → 2nd round groups → final
+    if (fmt === 'groups_second_round') return _simulateGroupsSecondRound();
+    // groups_final_pool (1950): 4 groups, top 1 → round-robin pool
+    if (fmt === 'groups_final_pool') return _simulateGroupsFinalPool();
+    // groups82 (1982): 6 groups → 2nd round 4 groups of 3 → semis → final
+    if (fmt === 'groups82') return _simulateGroups82();
+    // groups24_ko (1986-1994): 6 groups + best 4 thirds → 16 team R16
     if (fmt === 'groups24_ko') return _simulateEuro2024();
     // all other formats (16-team or 32-team groups KO): standard champions sim
     return _simulateChampions();
+  }
+
+  // ── GROUPS → 2ND ROUND 4 GROUPS OF 3 → SEMIS (1982 format) ────────────────
+  // Phase 1: 6 groups of 4, top 2 → 12 teams
+  // Phase 2: 4 groups of 3 (cross-bracket, no rematches), only winner advances
+  // Semis + 3rd + Final
+  async function _simulateGroups82() {
+    const grpSrc = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: 6 }, (_, g) => s.slice(g * 4, (g + 1) * 4));
+    })();
+
+    const _simGrp = async (grp, gIdx, saltBase) => {
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idx = {}; table.forEach((r, i) => { idx[r.slug] = i; });
+      const fx = [];
+      for (let i = 0; i < grp.length; i++) for (let j = i + 1; j < grp.length; j++) fx.push({ a: grp[i], b: grp[j] });
+      const res = await _bulkSim(fx.map((f, fi) => ({
+        teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: saltBase + gIdx * 100 + fi, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: false,
+      })));
+      fx.forEach((f, fi) => {
+        const r = res[fi];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB; f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || []; f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idx[f.a.slug]], rB = table[idx[f.b.slug]];
+        rA.p++; rB.p++; rA.gf += r.scoreA; rA.ga += r.scoreB; rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if (r.scoreA > r.scoreB) { rA.w++; rA.pts += 2; rB.l++; } else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 2; rA.l++; } else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      return { label: `Grupo ${String.fromCharCode(65 + gIdx)}`, table, matches: fx };
+    };
+
+    // Phase 1: 6 groups of 4
+    const gd1 = [];
+    for (let g = 0; g < grpSrc.length; g++) {
+      _setProgress(`${t('trn-progress-groups')} 1ª fase (${g + 1}/${grpSrc.length})`, 3 + g * 7);
+      gd1.push(await _simGrp(grpSrc[g], g, 100));
+    }
+
+    // Phase 2: 4 groups of 3, cross-bracket (no same Phase1 group pair)
+    // A1,C2,E1 | B1,D2,F1 | C1,A2,F2 | D1,B2,E2
+    const p2 = [
+      [gd1[0].table[0], gd1[2].table[1], gd1[4].table[0]],
+      [gd1[1].table[0], gd1[3].table[1], gd1[5].table[0]],
+      [gd1[2].table[0], gd1[0].table[1], gd1[5].table[1]],
+      [gd1[3].table[0], gd1[1].table[1], gd1[4].table[1]],
+    ];
+    const gd2 = [];
+    for (let g = 0; g < 4; g++) {
+      _setProgress(`${t('trn-progress-groups')} 2ª fase (${g + 1}/4)`, 48 + g * 7);
+      const gd = await _simGrp(p2[g], g, 900);
+      gd.label = `2ª fase Grupo ${['A', 'B', 'C', 'D'][g]}`;
+      gd2.push(gd);
+    }
+
+    // Semis + final: 4 group winners
+    _setProgress(t('trn-progress-ko'), 78);
+    const koTeams = gd2.map(gd => gd.table[0]);
+    const koData = await _simulateCopa_internal(koTeams, { idaVuelta: false, startPct: 80 });
+    return { format: 'champions', champion: koData.champion, groups: [...gd1, ...gd2], koRounds: koData.rounds, teams: _teams };
+  }
+
+  // ── GROUPS → 2ND ROUND GROUPS → FINAL (1974, 1978 format) ───────────────
+  // Phase 1: 4 groups of 4, top 2 → Phase 2: 2 groups of 4 → Final + 3rd
+  async function _simulateGroupsSecondRound() {
+    const grpSrc = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: 4 }, (_, g) => s.slice(g * 4, (g + 1) * 4));
+    })();
+
+    // Shared inline group simulator
+    const _simGrp = async (grp, gIdx, saltBase) => {
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idx = {}; table.forEach((r, i) => { idx[r.slug] = i; });
+      const fx = [];
+      for (let i = 0; i < grp.length; i++) for (let j = i + 1; j < grp.length; j++) fx.push({ a: grp[i], b: grp[j] });
+      const res = await _bulkSim(fx.map((f, fi) => ({
+        teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: saltBase + gIdx * 100 + fi, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: false,
+      })));
+      fx.forEach((f, fi) => {
+        const r = res[fi];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB; f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || []; f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idx[f.a.slug]], rB = table[idx[f.b.slug]];
+        rA.p++; rB.p++; rA.gf += r.scoreA; rA.ga += r.scoreB; rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if (r.scoreA > r.scoreB) { rA.w++; rA.pts += 3; rB.l++; } else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 3; rA.l++; } else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      return { label: `Grupo ${String.fromCharCode(65 + gIdx)}`, table, matches: fx };
+    };
+
+    // Phase 1
+    const gd1 = [];
+    for (let g = 0; g < grpSrc.length; g++) {
+      _setProgress(`${t('trn-progress-groups')} 1ª fase (${g + 1}/${grpSrc.length})`, 5 + g * 10);
+      gd1.push(await _simGrp(grpSrc[g], g, 200));
+    }
+
+    // Phase 2: cross-bracket to avoid same-group rematches
+    const p2 = [
+      [gd1[0].table[0], gd1[1].table[1], gd1[2].table[0], gd1[3].table[1]],
+      [gd1[1].table[0], gd1[0].table[1], gd1[3].table[0], gd1[2].table[1]],
+    ];
+    const gd2 = [];
+    for (let g = 0; g < 2; g++) {
+      _setProgress(`${t('trn-progress-groups')} 2ª fase (${g + 1}/2)`, 50 + g * 12);
+      const gd = await _simGrp(p2[g], g, 800);
+      gd.label = `2ª fase Grupo ${g === 0 ? 'I' : 'II'}`;
+      gd2.push(gd);
+    }
+
+    // Final + 3rd: top 2 of each 2nd-round group
+    _setProgress(t('trn-progress-ko'), 78);
+    const koTeams = [gd2[0].table[0], gd2[1].table[0], gd2[0].table[1], gd2[1].table[1]];
+    const koData = await _simulateCopa_internal(koTeams, { idaVuelta: false, startPct: 80 });
+    return { format: 'champions', champion: koData.champion, groups: [...gd1, ...gd2], koRounds: koData.rounds, teams: _teams };
+  }
+
+  // ── GROUPS → FINAL POOL (1950 format) ────────────────────
+  // 4 groups (varied sizes), top 1 from each → round-robin pool of 4
+  async function _simulateGroupsFinalPool() {
+    const grpSrc = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return Array.from({ length: 4 }, (_, g) => s.slice(g * 3, (g + 1) * 3)).filter(g => g.length > 0);
+    })();
+
+    // Phase 1: groups, top 1 qualifies
+    const gd1 = [];
+    for (let g = 0; g < grpSrc.length; g++) {
+      _setProgress(`${t('trn-progress-groups')} (${g + 1}/${grpSrc.length})`, 5 + g * 12);
+      const grp = grpSrc[g];
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idx = {}; table.forEach((r, i) => { idx[r.slug] = i; });
+      const fx = [];
+      for (let i = 0; i < grp.length; i++) for (let j = i + 1; j < grp.length; j++) fx.push({ a: grp[i], b: grp[j] });
+      const res = await _bulkSim(fx.map((f, fi) => ({
+        teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: (g + 1) * 300 + fi, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: true,
+      })));
+      fx.forEach((f, fi) => {
+        const r = res[fi];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB; f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || []; f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idx[f.a.slug]], rB = table[idx[f.b.slug]];
+        rA.p++; rB.p++; rA.gf += r.scoreA; rA.ga += r.scoreB; rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if (r.scoreA > r.scoreB) { rA.w++; rA.pts += 2; rB.l++; } else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 2; rA.l++; } else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      gd1.push({ label: `Grupo ${String.fromCharCode(65 + g)}`, table, matches: fx });
+    }
+
+    // Phase 2: round-robin liguilla of 4 group winners (no KO, no final — highest pts wins)
+    _setProgress(`${t('trn-progress-groups')} liguilla final`, 60);
+    const pool = gd1.map(gd => gd.table[0]);
+    const poolTable = pool.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+    const pidx = {}; poolTable.forEach((r, i) => { pidx[r.slug] = i; });
+    const poolFx = [];
+    for (let i = 0; i < pool.length; i++) for (let j = i + 1; j < pool.length; j++) poolFx.push({ a: pool[i], b: pool[j] });
+    const pRes = await _bulkSim(poolFx.map((f, fi) => ({
+      teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+      salt: 9000 + fi, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: false,
+    })));
+    poolFx.forEach((f, fi) => {
+      const r = pRes[fi];
+      f.scoreA = r.scoreA; f.scoreB = r.scoreB; f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || []; f.mom = r.mom || null; f.stats = r.stats || null;
+      const rA = poolTable[pidx[f.a.slug]], rB = poolTable[pidx[f.b.slug]];
+      rA.p++; rB.p++; rA.gf += r.scoreA; rA.ga += r.scoreB; rB.gf += r.scoreB; rB.ga += r.scoreA;
+      if (r.scoreA > r.scoreB) { rA.w++; rA.pts += 2; rB.l++; } else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 2; rA.l++; } else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+    });
+    poolTable.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+    const champion = poolTable[0];
+    const liguilla = { label: 'Liguilla final', table: poolTable, matches: poolFx };
+    return { format: 'champions', champion, groups: [...gd1, liguilla], koRounds: [], teams: _teams };
   }
 
   // ── GROUPS → SEMIFINAL (1930 format) ─────────────────────
