@@ -8,22 +8,26 @@ const _WC_EDITIONS = {
     year: 1930, format: 'groups_semifinal', host: 'Uruguay',
     normativa: '4 grupos → semis directas · 13 sel. · 2 pts victoria',
     groups: [
-      { label: 'I', teams: [
+      { label: '1', teams: [
         { slug: 'argentinien', era: '1930', name: 'Argentina', badge: '/img/badges/argentinien.png' },
         { slug: 'chile', era: '1930', name: 'Chile', badge: '/img/badges/chile.png' },
         { slug: 'frankreich', era: '1930', name: 'Francia', badge: '/img/badges/frankreich.png' },
         { slug: 'mexiko', era: '1930', name: 'México', badge: '/img/badges/mexico.png' },
-        { slug: 'brasilien', era: '1930', name: 'Brasil', badge: '/img/badges/brasilien.png' },
-        { slug: 'bolivien', era: '1930', name: 'Bolivia', badge: '/img/badges/bolivien.png' },
-        { slug: 'jugoslawien', era: '1930', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
       ] },
-      { label: 'II', teams: [
-        { slug: 'uruguay', era: '1930', name: 'Uruguay', badge: '/img/badges/uruguay.png' },
-        { slug: 'rumania', era: '1930', name: 'Rumania', badge: '/img/badges/rumania.png' },
-        { slug: 'peru', era: '1930', name: 'Perú', badge: '/img/badges/peru.png' },
+      { label: '2', teams: [
         { slug: 'vereinigte-staaten', era: '1930', name: 'Estados Unidos', badge: '/img/badges/united-states.png' },
         { slug: 'belgien', era: '1930', name: 'Bélgica', badge: '/img/badges/belgien.png' },
         { slug: 'paraguay', era: '1930', name: 'Paraguay', badge: '/img/badges/paraguay.png' },
+      ] },
+      { label: '3', teams: [
+        { slug: 'uruguay', era: '1930', name: 'Uruguay', badge: '/img/badges/uruguay.png' },
+        { slug: 'rumania', era: '1930', name: 'Rumania', badge: '/img/badges/rumania.png' },
+        { slug: 'peru', era: '1930', name: 'Perú', badge: '/img/badges/peru.png' },
+      ] },
+      { label: '4', teams: [
+        { slug: 'brasilien', era: '1930', name: 'Brasil', badge: '/img/badges/brasilien.png' },
+        { slug: 'bolivien', era: '1930', name: 'Bolivia', badge: '/img/badges/bolivien.png' },
+        { slug: 'jugoslawien', era: '1930', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
       ] },
     ],
   },

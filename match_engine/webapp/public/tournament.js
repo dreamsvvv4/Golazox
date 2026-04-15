@@ -3131,10 +3131,61 @@ const TRN = (() => {
     const fmt    = ed ? ed.format : 'groups32_ko';
     // knockout16 (1934, 1938): pure knockout tournament — no group stage
     if (fmt === 'knockout16') return _simulateCopa();
+    // groups_semifinal (1930): 4 groups, winner of each → semis directly
+    if (fmt === 'groups_semifinal') return _simulateGroupsSemifinal();
     // groups24_ko (1982-1994): 6 groups + best 4 thirds → 16 team R16
     if (fmt === 'groups24_ko') return _simulateEuro2024();
     // all other formats (16-team or 32-team groups KO): standard champions sim
     return _simulateChampions();
+  }
+
+  // ── GROUPS → SEMIFINAL (1930 format) ─────────────────────
+  // 4 groups of 3-4 teams. Winner of each group → 4 semis directly (no R16/QF).
+  async function _simulateGroupsSemifinal() {
+    const groups = _groupsDraw.length > 0 ? _groupsDraw : (() => {
+      const s = [..._teams].sort(() => Math.random() - 0.5);
+      return [s.slice(0, 4), s.slice(4, 7), s.slice(7, 10), s.slice(10)];
+    })();
+
+    // Group stage
+    const totalGroups = groups.length;
+    const groupData = [];
+    for (let g = 0; g < groups.length; g++) {
+      _setProgress(`${t('trn-progress-groups')} (${g + 1}/${totalGroups})`, 5 + Math.round((g / totalGroups) * 50));
+      const grp = groups[g];
+      const table = grp.map(tm => ({ ...tm, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+      const idxG = {};
+      table.forEach((r, i) => { idxG[r.slug] = i; });
+      const fixtures = [];
+      for (let i = 0; i < grp.length; i++)
+        for (let j = i + 1; j < grp.length; j++)
+          fixtures.push({ a: grp[i], b: grp[j] });
+      const res = await _bulkSim(fixtures.map((f, i) => ({
+        teamA: f.a.slug, teamB: f.b.slug, eraA: f.a.era || '', eraB: f.b.era || '',
+        salt: (g + 1) * 300 + i, penalties: false, ovrA: f.a.ovr || null, ovrB: f.b.ovr || null, homeAdvantage: true,
+      })));
+      fixtures.forEach((f, i) => {
+        const r = res[i];
+        f.scoreA = r.scoreA; f.scoreB = r.scoreB;
+        f.scorersA = r.scorersA || []; f.scorersB = r.scorersB || [];
+        f.mom = r.mom || null; f.stats = r.stats || null;
+        const rA = table[idxG[f.a.slug]], rB = table[idxG[f.b.slug]];
+        rA.p++; rB.p++; rA.gf += r.scoreA; rA.ga += r.scoreB; rB.gf += r.scoreB; rB.ga += r.scoreA;
+        if (r.scoreA > r.scoreB) { rA.w++; rA.pts += 2; rB.l++; }
+        else if (r.scoreA < r.scoreB) { rB.w++; rB.pts += 2; rA.l++; }
+        else { rA.d++; rB.d++; rA.pts++; rB.pts++; }
+      });
+      table.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+      groupData.push({ label: `Grupo ${g + 1}`, table, matches: fixtures });
+    }
+
+    // 4 group winners → 2 semi-finals
+    _setProgress(t('trn-progress-ko'), 60);
+    const winners = groupData.map(g => g.table[0]);
+    // SF: G1 winner vs G2 winner, G3 winner vs G4 winner (historical: Arg vs USA, Uru vs Yug)
+    const koData = await _simulateCopa_internal(winners, { idaVuelta: false, startPct: 62 });
+
+    return { format: 'champions', champion: koData.champion, groups: groupData, koRounds: koData.rounds, teams: _teams };
   }
 
   // ── CHAMPIONS ────────────────────────────────────────────
