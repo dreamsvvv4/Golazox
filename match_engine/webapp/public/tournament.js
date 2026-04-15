@@ -1728,11 +1728,14 @@ const TRN = (() => {
       _groupsDraw = ed.groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
     }
 
-    // Pre-seed badge cache from edition data
+    // Pre-seed badge cache from edition data; lock non-placeholder slugs so
+    // the catalog can never overwrite historical badges with modern ones.
+    const _lockedBadges = new Set();
     ed.groups.forEach(g => g.teams.forEach(t => {
       if (t.badge) _badgeCache[t.slug] = t.badge;
+      if (t.badge && !t.badge.includes('_placeholder')) _lockedBadges.add(t.slug);
     }));
-    _setPresetBadges(_teams);
+    _setPresetBadges(_teams, _lockedBadges);
 
     _showPresetConfirm('wc-historical');
   }
@@ -1792,9 +1795,11 @@ const TRN = (() => {
     }
   }
 
-  function _setPresetBadges(teams) {
+  function _setPresetBadges(teams, lockedSlugs) {
+    const locked = lockedSlugs instanceof Set ? lockedSlugs : new Set();
     if (Array.isArray(_trnCatalog)) {
       teams.forEach(t => {
+        if (locked.has(t.slug)) return;
         const cat = _trnCatalog.find(c => c.slug === t.slug);
         if (cat && cat.badge) _badgeCache[t.slug] = cat.badge;
       });
@@ -1803,6 +1808,7 @@ const TRN = (() => {
         if (!Array.isArray(d)) return;
         _trnCatalog = d;
         teams.forEach(t => {
+          if (locked.has(t.slug)) return;
           const cat = d.find(c => c.slug === t.slug);
           if (cat && cat.badge) {
             _badgeCache[t.slug] = cat.badge;
