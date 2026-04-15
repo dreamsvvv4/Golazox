@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v73';
+const CACHE_VERSION  = 'v74';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -105,13 +105,19 @@ self.addEventListener('fetch', event => {
   // If the URL has a version query (?v=49) treat it as network-only so the
   // browser ALWAYS gets the exact versioned file from the server — never
   // from cache. Versioned assets are immutable: a new version = new URL.
-  if (p === '/app.js' || p === '/style.css' || p === '/tournament.js') {
+  if (p === '/app.js' || p === '/style.css' || p === '/tournament.js' || p === '/tournament.min.js') {
     if (url.search) {
       // Has ?v=... → always fetch fresh, never cache
       event.respondWith(fetch(request).catch(() => caches.match(request)));
       return;
     }
-    // No query string (direct /app.js) → Network-First with cache fallback
+    // No query string → Network-First with cache fallback
+    event.respondWith(_networkFirst(request, STATIC_CACHE));
+    return;
+  }
+
+  // ── Edition data (updated on each deploy) ────────────────────────────────
+  if (p === '/_wc_editions.js' || p === '/_wc_squads.js') {
     event.respondWith(_networkFirst(request, STATIC_CACHE));
     return;
   }
