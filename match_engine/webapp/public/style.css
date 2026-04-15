@@ -6171,6 +6171,15 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   display: block;
   filter: drop-shadow(0 3px 10px rgba(0,0,0,.5));
 }
+/* Larger trophy in WC year-picker header */
+.trn-wcy-header {
+  padding: .9rem 1rem .6rem;
+  gap: 1.1rem;
+}
+.trn-wcy-trophy-icon {
+  width: 5.5rem !important;
+  height: 5.5rem !important;
+}
 /* Emoji trophy fallback (still used in confirm header) */
 .trn-preset-emoji-trophy {
   font-size: 2.5rem;

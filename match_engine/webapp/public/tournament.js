@@ -1671,9 +1671,9 @@ const TRN = (() => {
     }).join('');
 
     el.innerHTML = `
-      <div class="trn-preset-confirm-header">
-        <div class="trn-preset-confirm-icon">
-          <img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">
+      <div class="trn-preset-confirm-header trn-wcy-header">
+        <div class="trn-preset-confirm-icon trn-wcy-trophy-icon">
+          <img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy" alt="WC Trophy">
         </div>
         <div>
           <h2 class="trn-step-title" style="margin:0">FIFA World Cup</h2>
@@ -1831,7 +1831,7 @@ const TRN = (() => {
       const host = ed ? (ed.host || '') : '';
       return {
         title:     `FIFA World Cup ${_wcHistoricalYear}`,
-        icon:      `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">`,
+        icon:      `<img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy" alt="WC Trophy">`,
         subtitle:  host ? `${host} · ${sub}` : sub,
         gridClass: _groupsDraw.length <= 4  ? 'trn-preset-groups-copa-america'
                  : _groupsDraw.length <= 6  ? 'trn-preset-groups-euro'
@@ -1840,14 +1840,14 @@ const TRN = (() => {
     })();
 
     const _PRESET_META = {
-      'wc2026':          { title: 'FIFA World Cup 2026',             icon: `<img src="/img/trophy-wc.png"  class="trn-preset-confirm-trophy" alt="WC Trophy">`, subtitle: t('trn-preset-subtitle-wc'),           gridClass: 'trn-preset-groups-wc' },
+      'wc2026':          { title: 'FIFA World Cup 2026',             icon: `<img src="/img/trophy-wc.webp"  class="trn-preset-confirm-trophy" alt="WC Trophy">`, subtitle: t('trn-preset-subtitle-wc'),           gridClass: 'trn-preset-groups-wc' },
       'euro2024':        { title: 'UEFA Euro 2024',                  icon: `<img src="/img/trophy-euro.png"          class="trn-preset-confirm-trophy" alt="Euro Trophy">`,         subtitle: t('trn-preset-subtitle-euro') || '6 grupos + KO · 24 selecciones',            gridClass: 'trn-preset-groups-euro' },
       'copamerica2024':  { title: 'Copa América 2024',               icon: `<img src="/img/trophy-copa-america.png"  class="trn-preset-confirm-trophy" alt="Copa America Trophy">`, subtitle: t('trn-preset-subtitle-copa-america') || '4 grupos + KO · 16 selecciones',   gridClass: 'trn-preset-groups-copa-america' },
       'libertadores2025':{ title: 'Copa Libertadores 2026',          icon: `<img src="/img/trophy-libertadores.png"  class="trn-preset-confirm-trophy" alt="Libertadores Trophy">`, subtitle: t('trn-preset-subtitle-libertadores') || '8 grupos + KO ida y vuelta · 32 clubes', gridClass: 'trn-preset-groups-libertadores' },
     };
     const meta  = _wcHistMeta || _PRESET_META[presetId] || _PRESET_META['wc2026'];
     const title = meta.title;
-    const iconHtml = isWC ? `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">` : meta.icon;
+    const iconHtml = isWC ? `<img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy" alt="WC Trophy">` : meta.icon;
     const isKO16 = isHistoricalWC && (typeof _WC_EDITIONS !== 'undefined') && _WC_EDITIONS[_wcHistoricalYear]?.format === 'knockout16';
     const numGrps = _groupsDraw.length;
 
@@ -2556,7 +2556,7 @@ const TRN = (() => {
     if (isUCL && _activePreset)
       return `<img src="/img/trophy-ucl.png"          class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="UCL Trophy">`;
     if (isWC && _activePreset)
-      return `<img src="/img/trophy-wc.png"           class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="WC Trophy">`;
+      return `<img src="/img/trophy-wc.webp"           class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="WC Trophy">`;
     if (isEuro)
       return `<img src="/img/trophy-euro.png"         class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="Euro Trophy">`;
     if (isCopa)
