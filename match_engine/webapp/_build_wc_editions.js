@@ -63,7 +63,7 @@ const TEAM_MAP = {
   'Inglaterra':          { slug: 'england',               badge: 'england.png'        },
   'Irán':                { slug: 'iran',                  badge: 'iran.png'           },
   'Irlanda':             { slug: 'ireland',               badge: 'ireland.png'        },
-  'Irlanda del Norte':   { slug: 'nordirland',            badge: '_placeholder.svg'   },
+  'Irlanda del Norte':   { slug: 'nordirland',            badge: 'nordirland.svg'     },
   'Islandia':            { slug: 'island',                badge: 'iceland.png'        },
   'Israel':              { slug: 'israel',                badge: 'israel.png'         },
   'Italia':              { slug: 'italien',               badge: 'italien.png'        },
@@ -102,7 +102,7 @@ const TEAM_MAP = {
   'Ucrania':             { slug: 'ukraine',               badge: 'ukraine.png'        },
   'Uruguay':             { slug: 'uruguay',               badge: 'uruguay.png'        },
   'URSS':                { slug: 'urss',                  badge: 'urss.svg'           },
-  'Yugoslavia':          { slug: 'jugoslawien',           badge: '_placeholder.svg'   },
+  'Yugoslavia':          { slug: 'jugoslawien',           badge: 'jugoslawien.svg'    },
   'Zaire':               { slug: 'kongo',                 badge: 'kongo.svg'          },
 };
 

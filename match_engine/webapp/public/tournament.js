@@ -1875,7 +1875,7 @@ const TRN = (() => {
         <div class="trn-preset-confirm-icon">${iconHtml}</div>
         <div>
           <h2 class="trn-step-title" style="margin:0">${_esc(title)}</h2>
-          <p class="trn-step-hint" style="margin:.2rem 0 0">${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}</p>
+          <p class="trn-step-hint" style="margin:.2rem 0 0">${isHistoricalWC ? meta.subtitle : `${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}`}</p>
         </div>
       </div>
       <div class="trn-preset-groups-preview${isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>

@@ -15,7 +15,7 @@ const _WC_EDITIONS = {
         { slug: 'mexiko', era: '1930', name: 'México', badge: '/img/badges/mexico.png' },
         { slug: 'brasilien', era: '1930', name: 'Brasil', badge: '/img/badges/brasilien.png' },
         { slug: 'bolivien', era: '1930', name: 'Bolivia', badge: '/img/badges/bolivien.png' },
-        { slug: 'jugoslawien', era: '1930', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1930', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
       ] },
       { label: 'II', teams: [
         { slug: 'uruguay', era: '1930', name: 'Uruguay', badge: '/img/badges/uruguay.png' },
@@ -96,7 +96,7 @@ const _WC_EDITIONS = {
       { label: 'A', teams: [
         { slug: 'brasilien', era: '1950', name: 'Brasil', badge: '/img/badges/brasilien.png' },
         { slug: 'mexiko', era: '1950', name: 'México', badge: '/img/badges/mexico.png' },
-        { slug: 'jugoslawien', era: '1950', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1950', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'schweiz', era: '1950', name: 'Suiza', badge: '/img/badges/schweiz.png' },
       ] },
       { label: 'B', teams: [
@@ -122,7 +122,7 @@ const _WC_EDITIONS = {
     groups: [
       { label: 'A', teams: [
         { slug: 'brasilien', era: '1954', name: 'Brasil', badge: '/img/badges/brasilien.png' },
-        { slug: 'jugoslawien', era: '1954', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1954', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'frankreich', era: '1954', name: 'Francia', badge: '/img/badges/frankreich.png' },
         { slug: 'mexiko', era: '1954', name: 'México', badge: '/img/badges/mexico.png' },
       ] },
@@ -152,13 +152,13 @@ const _WC_EDITIONS = {
     groups: [
       { label: 'A', teams: [
         { slug: 'deutschland', era: '1958', name: 'Alemania Federal', badge: '/img/badges/deutschland.png' },
-        { slug: 'nordirland', era: '1958', name: 'Irlanda del Norte', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'nordirland', era: '1958', name: 'Irlanda del Norte', badge: '/img/badges/nordirland.svg' },
         { slug: 'tschechien', era: '1958', name: 'Checoslovaquia', badge: '/img/badges/tschechien.png' },
         { slug: 'argentinien', era: '1958', name: 'Argentina', badge: '/img/badges/argentinien.png' },
       ] },
       { label: 'B', teams: [
         { slug: 'frankreich', era: '1958', name: 'Francia', badge: '/img/badges/frankreich.png' },
-        { slug: 'jugoslawien', era: '1958', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1958', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'paraguay', era: '1958', name: 'Paraguay', badge: '/img/badges/paraguay.png' },
         { slug: 'schottland', era: '1958', name: 'Escocia', badge: '/img/badges/schottland.png' },
       ] },
@@ -195,7 +195,7 @@ const _WC_EDITIONS = {
       { label: 'C', teams: [
         { slug: 'uruguay', era: '1962', name: 'Uruguay', badge: '/img/badges/uruguay.png' },
         { slug: 'kolumbien', era: '1962', name: 'Colombia', badge: '/img/badges/colombia.png' },
-        { slug: 'jugoslawien', era: '1962', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1962', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'urss', era: '1962', name: 'URSS', badge: '/img/badges/urss.svg' },
       ] },
       { label: 'D', teams: [
@@ -278,7 +278,7 @@ const _WC_EDITIONS = {
       ] },
       { label: 'B', teams: [
         { slug: 'brasilien', era: '1974', name: 'Brasil', badge: '/img/badges/brasilien.png' },
-        { slug: 'jugoslawien', era: '1974', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1974', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'schottland', era: '1974', name: 'Escocia', badge: '/img/badges/schottland.png' },
         { slug: 'kongo', era: '1974', name: 'Zaire', badge: '/img/badges/kongo.svg' },
       ] },
@@ -363,8 +363,8 @@ const _WC_EDITIONS = {
       { label: 'F', teams: [
         { slug: 'spanien', era: '1982', name: 'España', badge: '/img/badges/spanien.png' },
         { slug: 'honduras', era: '1982', name: 'Honduras', badge: '/img/badges/honduras.png' },
-        { slug: 'jugoslawien', era: '1982', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
-        { slug: 'nordirland', era: '1982', name: 'Irlanda del Norte', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1982', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
+        { slug: 'nordirland', era: '1982', name: 'Irlanda del Norte', badge: '/img/badges/nordirland.svg' },
       ] },
     ],
   },
@@ -399,7 +399,7 @@ const _WC_EDITIONS = {
       { label: 'E', teams: [
         { slug: 'brasilien', era: '1986', name: 'Brasil', badge: '/img/badges/brasilien.png' },
         { slug: 'spanien', era: '1986', name: 'España', badge: '/img/badges/spanien.png' },
-        { slug: 'nordirland', era: '1986', name: 'Irlanda del Norte', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'nordirland', era: '1986', name: 'Irlanda del Norte', badge: '/img/badges/nordirland.svg' },
         { slug: 'algerien', era: '1986', name: 'Argelia', badge: '/img/badges/algerien.png' },
       ] },
       { label: 'F', teams: [
@@ -434,7 +434,7 @@ const _WC_EDITIONS = {
       ] },
       { label: 'D', teams: [
         { slug: 'deutschland', era: '1990', name: 'Alemania Federal', badge: '/img/badges/deutschland.png' },
-        { slug: 'jugoslawien', era: '1990', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1990', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'kolumbien', era: '1990', name: 'Colombia', badge: '/img/badges/colombia.png' },
         { slug: 'emirate', era: '1990', name: 'EAU', badge: '/img/badges/_placeholder.svg' },
       ] },
@@ -530,7 +530,7 @@ const _WC_EDITIONS = {
       ] },
       { label: 'F', teams: [
         { slug: 'deutschland', era: '1998', name: 'Alemania', badge: '/img/badges/deutschland.png' },
-        { slug: 'jugoslawien', era: '1998', name: 'Yugoslavia', badge: '/img/badges/_placeholder.svg' },
+        { slug: 'jugoslawien', era: '1998', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.svg' },
         { slug: 'iran', era: '1998', name: 'Irán', badge: '/img/badges/iran.png' },
         { slug: 'vereinigte-staaten', era: '1998', name: 'EE.UU.', badge: '/img/badges/united-states.png' },
       ] },
