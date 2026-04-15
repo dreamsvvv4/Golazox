@@ -6,25 +6,21 @@ const _WC_EDITION_YEARS = [1930, 1934, 1938, 1942, 1946, 1950, 1954, 1958, 1962,
 const _WC_EDITIONS = {
   1930: {
     year: 1930, format: 'groups_semifinal', host: 'Uruguay',
-    normativa: '4 grupos → semis directas · 13 sel. · 2 pts victoria',
+    normativa: '2 grupos → semis · 13 sel. · 2 pts victoria',
     groups: [
-      { label: 'A', teams: [
+      { label: 'I', teams: [
         { slug: 'argentinien', era: '1930', name: 'Argentina', badge: '/img/badges/argentinien.png' },
         { slug: 'chile', era: '1930', name: 'Chile', badge: '/img/badges/chile.png' },
         { slug: 'frankreich', era: '1930', name: 'Francia', badge: '/img/badges/frankreich.png' },
         { slug: 'mexiko', era: '1930', name: 'México', badge: '/img/badges/mexico.png' },
-      ] },
-      { label: 'B', teams: [
         { slug: 'brasilien', era: '1930', name: 'Brasil', badge: '/img/badges/brasilien.png' },
         { slug: 'bolivien', era: '1930', name: 'Bolivia', badge: '/img/badges/bolivien.png' },
         { slug: 'jugoslawien', era: '1930', name: 'Yugoslavia', badge: '/img/badges/jugoslawien.png' },
       ] },
-      { label: 'C', teams: [
+      { label: 'II', teams: [
         { slug: 'uruguay', era: '1930', name: 'Uruguay', badge: '/img/badges/uruguay.png' },
         { slug: 'rumania', era: '1930', name: 'Rumania', badge: '/img/badges/rumania.png' },
         { slug: 'peru', era: '1930', name: 'Perú', badge: '/img/badges/peru.png' },
-      ] },
-      { label: 'D', teams: [
         { slug: 'vereinigte-staaten', era: '1930', name: 'Estados Unidos', badge: '/img/badges/usa.png' },
         { slug: 'belgien', era: '1930', name: 'Bélgica', badge: '/img/badges/belgien.png' },
         { slug: 'paraguay', era: '1930', name: 'Paraguay', badge: '/img/badges/paraguay.png' },
@@ -32,7 +28,7 @@ const _WC_EDITIONS = {
     ],
   },
   1934: {
-    year: 1934, format: 'groups_of_4_ko', host: 'Italia',
+    year: 1934, format: 'knockout16', host: 'Italia',
     normativa: 'Eliminación directa completa · prórroga y desempate',
     groups: [
       { label: 'A', teams: [
@@ -62,7 +58,7 @@ const _WC_EDITIONS = {
     ],
   },
   1938: {
-    year: 1938, format: 'groups_of_4_ko', host: 'Francia',
+    year: 1938, format: 'knockout16', host: 'Francia',
     normativa: 'Eliminación directa desde octavos · 15 sel.',
     groups: [
       { label: 'A', teams: [

@@ -3121,6 +3121,8 @@ const TRN = (() => {
     const edsMap = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS : {};
     const ed     = _wcHistoricalYear ? edsMap[_wcHistoricalYear] : null;
     const fmt    = ed ? ed.format : 'groups32_ko';
+    // knockout16 (1934, 1938): pure knockout tournament — no group stage
+    if (fmt === 'knockout16') return _simulateCopa();
     // groups24_ko (1982-1994): 6 groups + best 4 thirds → 16 team R16
     if (fmt === 'groups24_ko') return _simulateEuro2024();
     // all other formats (16-team or 32-team groups KO): standard champions sim

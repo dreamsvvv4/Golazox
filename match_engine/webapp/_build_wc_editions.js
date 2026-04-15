@@ -217,12 +217,12 @@ const ERA_OVERRIDES = {
 // ─────────────────────────────────────────────────────────────────────────────
 const EDITIONS_RAW = [
   { year:1930, format:'groups_semifinal',  host:'Uruguay',
-    normativa:'4 grupos → semis directas · 13 sel. · 2 pts victoria',
-    groups:[['Argentina','Chile','Francia','Mexico'],['Brasil','Bolivia','Yugoslavia'],['Uruguay','Rumania','Peru'],['Estados Unidos','Belgica','Paraguay']] },
-  { year:1934, format:'groups_of_4_ko',    host:'Italia',
+    normativa:'2 grupos → semis · 13 sel. · 2 pts victoria',
+    groups:[['Argentina','Chile','Francia','Mexico','Brasil','Bolivia','Yugoslavia'],['Uruguay','Rumania','Peru','Estados Unidos','Belgica','Paraguay']] },
+  { year:1934, format:'knockout16',        host:'Italia',
     normativa:'Eliminación directa completa · prórroga y desempate',
     groups:[['Italia','Estados Unidos','Espana','Brasil'],['Austria','Francia','Hungria','Egipto'],['Alemania Federal','Belgica','Suecia','Argentina'],['Checoslovaquia','Rumania','Suiza','Paises Bajos']] },
-  { year:1938, format:'groups_of_4_ko',    host:'Francia',
+  { year:1938, format:'knockout16',        host:'Francia',
     normativa:'Eliminación directa desde octavos · 15 sel.',
     groups:[['Italia','Noruega','Francia','Belgica'],['Brasil','Polonia','Alemania Federal','Suiza'],['Cuba','Rumania','Hungria','Indonesia'],['Checoslovaquia','Paises Bajos','Suecia','Argentina']] },
   { year:1942, format:'cancelled',         host:null,   normativa:'Cancelada — II Guerra Mundial', groups:null },
