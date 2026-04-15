@@ -1848,6 +1848,7 @@ const TRN = (() => {
     const meta  = _wcHistMeta || _PRESET_META[presetId] || _PRESET_META['wc2026'];
     const title = meta.title;
     const iconHtml = isWC ? `<img src="/img/trophy-wc.png" class="trn-preset-confirm-trophy" alt="WC Trophy">` : meta.icon;
+    const isKO16 = isHistoricalWC && (typeof _WC_EDITIONS !== 'undefined') && _WC_EDITIONS[_wcHistoricalYear]?.format === 'knockout16';
     const numGrps = _groupsDraw.length;
 
     hide($('trn-step-1'));
@@ -1864,17 +1865,26 @@ const TRN = (() => {
     }
     show(el);
 
-    const groupsHtml = _groupsDraw.map((grp, gi) => {
-      const lbl = String.fromCharCode(65 + gi);
-      const rows = grp.map(tm => {
-        const badge = _badgeCache[tm.slug] || tm.badge || '/img/badges/_placeholder.svg';
-        return `<div class="trn-pg-team" data-slug="${_esc(tm.slug)}">
-          <img class="trn-mini-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-          <span>${_esc(tm.name)}</span>
-        </div>`;
-      }).join('');
-      return `<div class="trn-pg-group"><div class="trn-pg-label">${_esc(t('trn-draw-group-prefix') || 'Grupo ')}${lbl}</div>${rows}</div>`;
-    }).join('');
+    // KO16: show all teams as a simple grid (no group labels)
+    const groupsHtml = isKO16
+      ? `<div class="trn-pg-group" style="display:contents">${_teams.map(tm => {
+          const badge = _badgeCache[tm.slug] || tm.badge || '/img/badges/_placeholder.svg';
+          return `<div class="trn-pg-team" data-slug="${_esc(tm.slug)}">
+            <img class="trn-mini-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+            <span>${_esc(tm.name)}</span>
+          </div>`;
+        }).join('')}</div>`
+      : _groupsDraw.map((grp, gi) => {
+          const lbl = String.fromCharCode(65 + gi);
+          const rows = grp.map(tm => {
+            const badge = _badgeCache[tm.slug] || tm.badge || '/img/badges/_placeholder.svg';
+            return `<div class="trn-pg-team" data-slug="${_esc(tm.slug)}">
+              <img class="trn-mini-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
+              <span>${_esc(tm.name)}</span>
+            </div>`;
+          }).join('');
+          return `<div class="trn-pg-group"><div class="trn-pg-label">${_esc(t('trn-draw-group-prefix') || 'Grupo ')}${lbl}</div>${rows}</div>`;
+        }).join('');
 
     el.innerHTML = `
       <div class="trn-preset-confirm-header">
@@ -1884,11 +1894,11 @@ const TRN = (() => {
           <p class="trn-step-hint" style="margin:.2rem 0 0">${isHistoricalWC ? meta.subtitle : `${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}`}</p>
         </div>
       </div>
-      <div class="trn-preset-groups-preview${isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
+      <div class="trn-preset-groups-preview${isKO16 ? ' trn-preset-groups-copa-america' : isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
       <div class="trn-step-actions trn-preset-confirm-actions">
         <button class="btn-secondary" id="preset-confirm-cancel">${t('trn-btn-back')}</button>
         <button class="btn-secondary" id="preset-confirm-edit" title="${t('trn-btn-edit')}">✏️ ${t('trn-btn-edit').replace(/^✏️\s*/,'')}</button>
-        ${isWC ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
+        ${isWC && !isKO16 ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
         <button class="btn-primary" id="preset-confirm-run">▶ Simular &nbsp;${_esc(title)}</button>
       </div>
     `;
