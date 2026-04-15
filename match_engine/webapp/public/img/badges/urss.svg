@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40">
+  <!-- USSR/Soviet Union flag: red background + hammer & sickle + star -->
+  <rect width="60" height="40" fill="#CC0000"/>
+  <!-- Sickle (arc) -->
+  <path d="M18,26 A10,10 0 1,1 28,16" fill="none" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Sickle blade tip -->
+  <path d="M27,15 L30,13 L29,17Z" fill="#FFD700"/>
+  <!-- Hammer handle -->
+  <line x1="22" y1="27" x2="30" y2="19" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+  <!-- Hammer head -->
+  <rect x="27" y="14" width="6" height="3" rx="0.5" fill="#FFD700" transform="rotate(-45 30 15.5)"/>
+  <!-- Star (top right) -->
+  <polygon points="48,5 49.2,8.5 53,8.5 50.1,10.5 51.2,14 48,12 44.8,14 45.9,10.5 43,8.5 46.8,8.5" fill="#FFD700"/>
+</svg>

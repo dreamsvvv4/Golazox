@@ -1724,7 +1724,9 @@ const TRN = (() => {
       _teams.push({ slug: tm.slug, era: tm.era, name: tm.name, ovr: null });
     }));
     _numTeams   = _teams.length;
-    _groupsDraw = ed.groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
+    if (ed.format !== 'knockout16') {
+      _groupsDraw = ed.groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
+    }
 
     // Pre-seed badge cache from edition data
     ed.groups.forEach(g => g.teams.forEach(t => {

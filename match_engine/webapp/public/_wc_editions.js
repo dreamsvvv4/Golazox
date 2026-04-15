@@ -6,7 +6,7 @@ const _WC_EDITION_YEARS = [1930, 1934, 1938, 1942, 1946, 1950, 1954, 1958, 1962,
 const _WC_EDITIONS = {
   1930: {
     year: 1930, format: 'groups_semifinal', host: 'Uruguay',
-    normativa: '2 grupos → semis · 13 sel. · 2 pts victoria',
+    normativa: '4 grupos → semis directas · 13 sel. · 2 pts victoria',
     groups: [
       { label: 'I', teams: [
         { slug: 'argentinien', era: '1930', name: 'Argentina', badge: '/img/badges/argentinien.png' },

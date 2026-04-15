@@ -217,7 +217,7 @@ const ERA_OVERRIDES = {
 // ─────────────────────────────────────────────────────────────────────────────
 const EDITIONS_RAW = [
   { year:1930, format:'groups_semifinal',  host:'Uruguay',
-    normativa:'2 grupos → semis · 13 sel. · 2 pts victoria',
+    normativa:'4 grupos → semis directas · 13 sel. · 2 pts victoria',
     groups:[['Argentina','Chile','Francia','Mexico','Brasil','Bolivia','Yugoslavia'],['Uruguay','Rumania','Peru','Estados Unidos','Belgica','Paraguay']] },
   { year:1934, format:'knockout16',        host:'Italia',
     normativa:'Eliminación directa completa · prórroga y desempate',
