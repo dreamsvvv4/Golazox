@@ -401,7 +401,7 @@ ${trophySrc ? `
 ${competition ? `
 <div class="competition-block">
   <div class="competition-line"></div>
-  <div class="competition-label">${escHtml(competition.toUpperCase())}</div>
+  <div class="competition-label">${escHtml((typeof competition === 'string' ? competition : Array.isArray(competition) ? competition.join(' · ') : String(competition)).toUpperCase())}</div>
   <div class="competition-line"></div>
 </div>
 ` : ''}

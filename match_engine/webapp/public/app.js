@@ -3185,6 +3185,7 @@ function _initTeamPicker(side) {
     if      (a === 'type')   _pickerSelectType(side, v);
     else if (a === 'league') _pickerSelectLeague(side, v);
     else if (a === 'team')   _pickerSelectTeam(side, v);
+    else if (a === 'locked') { if (window.gxUI) gxUI.showLockModal(v, parseInt(btn.dataset.lockXp || '0')); }
     else if (a === 'reset')  _pickerReset(side);
     else if (a === 'back')   { _pickerState[side] = { type: _pickerState[side]?.type || 'club', league: null }; _renderPicker(side); }
     else if (a === 'backtype') { _pickerState[side] = { type: null, league: null }; _renderPicker(side); }
@@ -3352,12 +3353,18 @@ function _renderPicker(side) {
   container.innerHTML =
     `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(lgName)}</button></div>` +
     `<div class="tp-teams-grid">` +
-    teams.map(t =>
-      `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
-      `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
-      `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
-      `</button>`
-    ).join('') +
+    teams.map(t => {
+      const _gxLocked = window.gxUser?.isLocked(t.slug);
+      const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
+      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}" ` +
+        `data-pa="${_gxLocked ? 'locked' : 'team'}" data-pv="${escHtml(t.slug)}"` +
+        (_gxLocked ? ` data-lock-xp="${_gxInfo.xp}" title="🔒 ${_gxInfo.xp} XP para desbloquear"` : '') +
+        `>` +
+        `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
+        `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
+        (_gxLocked ? `<span class="tp-team-lock">🔒 ${_gxInfo.xp} XP</span>` : '') +
+        `</button>`;
+    }).join('') +
     `</div>`;
 }
 
@@ -7362,6 +7369,19 @@ function finishLive() {
     // Render post-match analysis card (heatmap + distance)
     renderMatchAnalysis(_livePayload?.teamA || '', _livePayload?.teamB || '');
     renderResult(_liveData, _livePayload);
+    // GX: registrar XP tras partido/penaltis
+    if (window.gxUser && _liveData?.finalScore && _livePayload) {
+      const _gxIsPen = _livePayload.matchMode === 'penalties';
+      const _gxGoals = _gxIsPen ? 0
+        : ((_liveData.finalScore.teamA || 0) + (_liveData.finalScore.teamB || 0));
+      const _gxR = gxUser.addXP(_gxIsPen ? 'penalties' : 'match', {
+        goals: _gxGoals,
+        teamA: _livePayload._slugA || _livePayload.teamA,
+        teamB: _livePayload._slugB || _livePayload.teamB,
+      });
+      _gxR._reason = _gxIsPen ? 'penalties' : 'match';
+      if (window.gxUI) gxUI.onXpGained(_gxR);
+    }
   }, 620);
 }
 
