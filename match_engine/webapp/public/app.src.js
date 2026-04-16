@@ -2995,8 +2995,8 @@ const _NATION_ISO = {
   'emirate':'ae',       'georgien':'ge',       'guatemala':'gt',    'israel':'il',
   'katar':'qa',         'kuwait':'kw',         'nordmazedonien':'mk', 'palastina':'ps',    'rumania':'ro',
   'sambia':'zm',        'tadschikistan':'tj',  'thailand':'th',     'uganda':'ug',
-  // Historical nations — flagcdn supports these legacy ISO codes
-  'jugoslawien':'rs',   'urss':'ru',           'togo':'tg',
+  // Historical nations — served from local flag images (flagcdn doesn't support su/yu)
+  'jugoslawien':'yu',   'urss':'su',           'togo':'tg',
 };
 const _LEAGUE_META = {
   '🇪🇸 La Liga':           { name:'La Liga',          iso:'es'     , tier:1 },

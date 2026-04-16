@@ -1722,14 +1722,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Subdivision codes not supported by flagcdn ? map to closest alternative
 const _FLAG_ISO_MAP = {
   'gb-eng': 'gb',       // England → UK flag
-  'gb-sct': 'gb',       // Scotland → UK flag (flagcdn has no gb-sct)
-  'gb-wls': 'gb',       // Wales → UK flag
+  'gb-sct': 'gb-sct',   // Scotland → Saltire (served from local public/img/flags/gb-sct.png)
+  'gb-wls': 'gb-wls',   // Wales → Welsh dragon (flagcdn supports gb-wls)
   'gb-nir': 'gb-nir',   // Northern Ireland → Ulster Banner (flagcdn supports gb-nir)
 };
 const _flagCache = new Map();
 app.get('/flag/:iso', async (req, res) => {
-  const rawIso = req.params.iso.replace(/[^a-z0-9-]/gi, '').toLowerCase().slice(0, 6);
+  const rawIso = req.params.iso.replace(/[^a-z0-9-]/gi, '').toLowerCase().slice(0, 8);
   if (!rawIso) return res.status(400).end();
+  // Check local override image first (e.g. historical nations: su, yu)
+  const localFlagPath = path.join(__dirname, 'public', 'img', 'flags', `${rawIso}.png`);
+  if (fs.existsSync(localFlagPath)) {
+    return res.set('Content-Type', 'image/png')
+              .set('Cache-Control', 'public, max-age=604800')
+              .sendFile(localFlagPath);
+  }
   const iso = _FLAG_ISO_MAP[rawIso] || rawIso.slice(0, 3);
   if (_flagCache.has(iso)) {
     const cached = _flagCache.get(iso);
