@@ -715,7 +715,7 @@ const TRN = (() => {
     const safeName  = _esc(name);
     const safeBadge = _esc(badge);
 
-    panel.innerHTML = `<div class="trn-preview-loading"><div class="trn-spinner"></div>Cargando plantilla…</div>`;
+    panel.innerHTML = `<div class="trn-preview-loading"><div class="trn-spinner"></div>${t('trn-loading-squad')}</div>`;
     panel.classList.remove('hidden');
 
     const GK_SET  = new Set(['GK']);
@@ -742,7 +742,7 @@ const TRN = (() => {
       const chips = _yrSeasons.map(y =>
         `<button class="trn-era-chip${y === _activeEra ? ' trn-era-chip-active' : ''}" data-slug="${safeSlug}" data-name="${safeName}" data-badge="${safeBadge}" data-era="${_esc(y)}">${y}</button>`
       ).join('');
-      eraPickerHtml = `<div class="trn-era-picker"><span class="trn-era-label">Temporada:</span><div class="trn-era-chips">${chips}</div></div>`;
+      eraPickerHtml = `<div class="trn-era-picker"><span class="trn-era-label">${t('trn-era-label')}</span><div class="trn-era-chips">${chips}</div></div>`;
     }
 
     try {
@@ -764,10 +764,10 @@ const TRN = (() => {
           !GK_SET.has(p.position) && !DEF_SET.has(p.position) &&
           !MID_SET.has(p.position) && !ATT_SET.has(p.position));
         playersHtml = [
-          ...gk.map(p    => renderRow(p, 'pos-gk',  'POR')),
+          ...gk.map(p    => renderRow(p, 'pos-gk',  t('trn-pos-gk'))),
           ...def.map(p   => renderRow(p, 'pos-def', 'DEF')),
-          ...mid.map(p   => renderRow(p, 'pos-mid', 'MED')),
-          ...att.map(p   => renderRow(p, 'pos-att', 'DEL')),
+          ...mid.map(p   => renderRow(p, 'pos-mid', t('trn-pos-mid'))),
+          ...att.map(p   => renderRow(p, 'pos-att', t('trn-pos-att'))),
           ...other.map(p => renderRow(p, '',        p.position || '?')),
         ].join('');
       }
@@ -910,7 +910,7 @@ const TRN = (() => {
 
       _refreshCatalogBrowserState(panel);
     } catch (e) {
-      panel.innerHTML = `<div style="padding:.75rem;color:rgba(255,255,255,.5);font-size:.8rem">Error al cargar catálogo</div>`;
+      panel.innerHTML = `<div style="padding:.75rem;color:rgba(255,255,255,.5);font-size:.8rem">${t('trn-catalog-err')}</div>`;
     }
   }
 
@@ -963,7 +963,7 @@ const TRN = (() => {
         if (groupBadges[c.group].length < 4 && c.badge) groupBadges[c.group].push(c.badge);
       });
       const groups = Object.entries(groupMap).sort((a, b) => b[1] - a[1]);
-      if (!groups.length) { panel.innerHTML = '<p class="trn-ll-empty">Sin ligas disponibles</p>'; return; }
+      if (!groups.length) { panel.innerHTML = `<p class="trn-ll-empty">${t('trn-ll-no-leagues')}</p>`; return; }
       const _toFlag = code => {
         if (!code || code.length !== 2 || !/^[A-Za-z]{2}$/.test(code)) return null;
         const ch = code.toUpperCase();
@@ -993,7 +993,7 @@ const TRN = (() => {
         html += `<button class="trn-ll-btn" data-league="${_esc(g)}">
           <div class="trn-ll-card-top">
             ${flagHtml}
-            <span class="trn-ll-count">${count} eq.</span>
+            <span class="trn-ll-count">${count} ${t('trn-ll-teams-abbr')}</span>
           </div>
           <span class="trn-ll-name">${name}</span>
           <div class="trn-ll-badges-row">${badgeRow}</div>
@@ -1002,7 +1002,7 @@ const TRN = (() => {
       html += '</div>';
       panel.innerHTML = html;
     } catch (_) {
-      panel.innerHTML = '<p class="trn-ll-empty">Error al cargar ligas.</p>';
+      panel.innerHTML = `<p class="trn-ll-empty">${t('trn-ll-err')}</p>`;
     }
   }
 
@@ -1053,8 +1053,12 @@ const TRN = (() => {
       const leagueName = _esc(groupKey.replace(/^\S+\s*/, ''));
       const filled = target - leagueTeams.length;
       const msg = filled > 0
-        ? `✅ ${leagueTeams.length} eq. de ${leagueName} + ${filled} aleatorios`
-        : `✅ ${_teams.length} equipos de ${leagueName} cargados`;
+        ? (_getLang() === 'en'
+            ? `✅ ${leagueTeams.length} teams from ${leagueName} + ${filled} random`
+            : `✅ ${leagueTeams.length} eq. de ${leagueName} + ${filled} aleatorios`)
+        : (_getLang() === 'en'
+            ? `✅ ${_teams.length} teams from ${leagueName} loaded`
+            : `✅ ${_teams.length} equipos de ${leagueName} cargados`);
       _showToast(msg);
       try { _gx('trn_load_real_league', { league: groupKey, count: _teams.length }); } catch(_) {}
     } catch (_) {
@@ -1215,6 +1219,9 @@ const TRN = (() => {
       { slug: 'villarreal-cf',       era:'2025', name:'Villarreal',           badge:'/img/badges/villarreal-cf.png' },
     ]},
   ];
+
+  // UCL pot label helper — respects current language
+  const _uclPotLabel = n => `${t('ucl-pot-label')} ${n}`;
 
   // ── UCL 2025/26 — 4 pots × 9 teams (broadcast draw) ────────
   const _UCL_POTS = [
@@ -1450,7 +1457,7 @@ const TRN = (() => {
         </div>`
       ).join('');
       return `<div class="ucl-pot" data-pot="${pot.pot}" style="--pot-clr:${_esc(pot.color)}">
-        <div class="ucl-pot-header">${_esc(pot.label)}</div>
+        <div class="ucl-pot-header">${_esc(`${t('ucl-pot-label')} ${pot.pot}`)}</div>
         <div class="ucl-pot-teams">${teamRows}</div>
       </div>`;
     }).join('');
@@ -1461,7 +1468,7 @@ const TRN = (() => {
       <div class="ucl-broadcast-header">
         <div class="ucl-bh-stars">✦ ✦ ✦</div>
         <div class="ucl-bh-title">UEFA Champions League</div>
-        <div class="ucl-bh-subtitle">SORTEO FASE DE LIGA · 2025/26</div>
+        <div class="ucl-bh-subtitle">${t('ucl-draw-subtitle')}</div>
       </div>
       <div class="ucl-pots-grid" id="ucl-pots-grid">${_buildPotsHTML()}</div>
       <div class="ucl-draw-results-wrap">
@@ -1558,13 +1565,13 @@ const TRN = (() => {
     const resultsEl  = $('ucl-draw-results');
     let drawn = 0;
 
-    // Draw pot by pot (Bombo 1 → 4), random order within each pot
+    // Draw pot by pot (Pot 1 → 4), random order within each pot
     for (const pot of _UCL_POTS) {
       // Pot section header in results
       if (resultsEl) {
         const sec = document.createElement('div');
         sec.className = 'ucl-res-section';
-        sec.innerHTML = `<span style="color:${pot.color}">● ${_esc(pot.label)}</span>`;
+        sec.innerHTML = `<span style="color:${pot.color}">● ${_esc(t('ucl-pot-label') + ' ' + pot.pot)}</span>`;
         resultsEl.appendChild(sec);
       }
 
@@ -1620,8 +1627,69 @@ const TRN = (() => {
   }
 
   // ── Historical World Cup year picker ─────────────────────────────────────
+  // ── Historical milestone per edition ─────────────────────
+  const _WC_HITO_ES = {
+    1930: 'El primer Mundial. Uruguay campeón en casa.',
+    1934: 'Italia campeona en el estadio del PNF.',
+    1938: 'Italia bicampeona. El último torneo pre-guerra.',
+    1942: 'No se disputó por la II Guerra Mundial.',
+    1946: 'No se disputó por la II Guerra Mundial.',
+    1950: 'La tragedia del Maracanazo. Uruguay vence a Brasil.',
+    1954: 'El partido del siglo: Hungría 4-2 Alemania Occ.',
+    1958: 'El debut de Pelé a los 17 años.',
+    1962: 'Garrincha lleva a Brasil al título sin Pelé.',
+    1966: 'El primer y único título de Inglaterra.',
+    1970: 'El Brazil de Pelé: el mejor equipo de la historia.',
+    1974: 'El fútbol total de Cruyff y la Naranja Mecánica.',
+    1978: 'Argentina campeona en casa. La polémica de Perú.',
+    1982: 'La Italia de Paolo Rossi. El Brasil más bello sin título.',
+    1986: 'La Mano de Dios y el gol del siglo de Maradona.',
+    1990: 'El Mundial más defensivo. Campeones con 1 gol/partido.',
+    1994: 'Brasil tetracampeón. Baggio falla el penalti final.',
+    1998: 'El trofeo dorado de Zidane en casa.',
+    2002: 'El primer Mundial en Asia. Ronaldo se redime.',
+    2006: 'El cabezazo de Zidane. Italia campeona.',
+    2010: 'El tiki-taka de España conquista África.',
+    2014: 'El 7-1 al Brasil anfitrión. Alemania histórica.',
+    2018: 'La Francia de Mbappé: el futuro llega al poder.',
+    2022: 'La final épica de Messi. Argentina sobre Francia.',
+    2026: 'El mayor Mundial de la historia: 48 selecciones.',
+  };
+  const _WC_HITO_EN = {
+    1930: 'The first World Cup. Uruguay champions on home soil.',
+    1934: 'Italy champions at the PNF stadium.',
+    1938: 'Italy back-to-back champions. The last pre-war tournament.',
+    1942: 'Not held due to World War II.',
+    1946: 'Not held due to World War II.',
+    1950: 'The Maracanazo tragedy. Uruguay stuns Brazil.',
+    1954: 'The match of the century: Hungary 4-2 West Germany.',
+    1958: "Pelé's debut at just 17 years old.",
+    1962: 'Garrincha carries Brazil to the title without Pelé.',
+    1966: "England's first and only World Cup title.",
+    1970: "Pelé's Brazil: the greatest team in history.",
+    1974: "Cruyff's total football and the Clockwork Orange.",
+    1978: 'Argentina champions at home. The Peru controversy.',
+    1982: "Paolo Rossi's Italy. The most beautiful Brazil without a title.",
+    1986: "Maradona's Hand of God and the Goal of the Century.",
+    1990: 'The most defensive World Cup. Champions averaging 1 goal/game.',
+    1994: 'Brazil four-time champions. Baggio misses the final penalty.',
+    1998: "Zidane's golden trophy on home soil.",
+    2002: 'The first World Cup in Asia. Ronaldo redeems himself.',
+    2006: "Zidane's headbutt. Italy champions.",
+    2010: "Spain's tiki-taka conquers Africa.",
+    2014: 'The 7-1 against host Brazil. Historic Germany.',
+    2018: "Mbappé's France: the future arrives.",
+    2022: "Messi's epic final. Argentina over France.",
+    2026: 'The biggest World Cup in history: 48 nations.',
+  };
+  const _getWCHito = yr => (document.documentElement.lang === 'en' ? _WC_HITO_EN : _WC_HITO_ES)[yr] || '';
+
   function _showWCYearPicker() {
-    // Hide other overlay screens
+    // Hide step-1 and other overlay screens so picker takes their place
+    hide($('trn-step-1'));
+    hide($('trn-step-2'));
+    hide($('trn-step-3'));
+    const stepbar = document.querySelector('.trn-stepbar'); if (stepbar) hide(stepbar);
     const conf = $('trn-preset-confirm'); if (conf) hide(conf);
     const ucl  = $('trn-ucl-draw');      if (ucl)  hide(ucl);
 
@@ -1643,6 +1711,7 @@ const TRN = (() => {
       const ed = edsMap[yr] || {};
       const isCancelled = ed.format === 'cancelled';
       const normativa = ed.normativa || '';
+      const hito = _getWCHito(yr);
 
       // Determine visual era for retro theming
       const era = yr <= 1950 ? 'pioneer'
@@ -1650,48 +1719,107 @@ const TRN = (() => {
                 : yr <= 1990 ? 'retro'
                 : yr >= 2026 ? 'future'
                 : 'modern';
-      const eraLabel = yr <= 1950 ? 'Pioneros'
-                     : yr <= 1970 ? 'Clásica'
-                     : yr <= 1990 ? 'Retro'
-                     : yr >= 2026 ? 'En curso'
-                     : 'Moderna';
+      const eraLabel = yr <= 1950 ? t('wcy-era-pioneer')
+                     : yr <= 1970 ? t('wcy-era-classic')
+                     : yr <= 1990 ? t('wcy-era-retro')
+                     : yr >= 2026 ? t('wcy-era-future')
+                     : t('wcy-era-modern');
 
       if (isCancelled) {
-        return `<div class="trn-wcy-btn trn-wcy-btn--cancelled" aria-disabled="true" data-era="${era}">
+        return `<div class="trn-wcy-btn trn-wcy-btn--cancelled" data-era="${era}" data-era-filter="${era}">
+          <span class="trn-wcy-era trn-wcy-era--cancelled">${t('wcy-era-cancelled')}</span>
           <span class="trn-wcy-year">${yr}</span>
-          <span class="trn-wcy-cancelled-label">⚔️ ${_esc(normativa)}</span>
+          <span class="trn-wcy-cancelled-label">${t('wcy-not-held')}</span>
+          ${hito ? `<span class="trn-wcy-hito">${_esc(hito)}</span>` : ''}
         </div>`;
       }
-      return `<button class="trn-wcy-btn" data-year="${yr}" data-era="${era}">
-        <span class="trn-wcy-era">${eraLabel}</span>
+      const isFuture = era === 'future';
+      return `<button class="trn-wcy-btn${isFuture ? ' trn-wcy-btn--future' : ''}" data-year="${yr}" data-era="${era}" data-era-filter="${era}">
         <span class="trn-wcy-year">${yr}</span>
         <span class="trn-wcy-host">${_esc(ed.host || '')}</span>
-        ${normativa ? `<span class="trn-wcy-fmt">${_esc(normativa)}</span>` : ''}
+        <div class="trn-wcy-tooltip">
+          <span class="trn-wcy-era">${_esc(eraLabel)}</span>
+          ${normativa ? `<span class="trn-wcy-fmt">${_esc(normativa)}</span>` : ''}
+          ${hito ? `<span class="trn-wcy-hito">${_esc(hito)}</span>` : ''}
+        </div>
       </button>`;
     }).join('');
 
     el.innerHTML = `
       <div class="trn-preset-confirm-header trn-wcy-header">
         <div class="trn-preset-confirm-icon trn-wcy-trophy-icon">
-          <img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy" alt="WC Trophy">
+          <img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy trn-wcy-trophy-glow" alt="WC Trophy">
         </div>
         <div>
           <h2 class="trn-step-title" style="margin:0">FIFA World Cup</h2>
-          <p class="trn-step-hint" style="margin:.2rem 0 0">Elige una edición histórica</p>
+          <p class="trn-step-hint" style="margin:.2rem 0 0">${t('wcy-subtitle')}</p>
         </div>
       </div>
-      <div class="trn-wcy-grid">${yearsHtml}</div>
+      <div class="trn-wcy-filters" id="trn-wcy-filters">
+        <button class="trn-wcy-filter-btn trn-wcy-filter-active" data-filter="all">${t('wcy-filter-all')}</button>
+        <button class="trn-wcy-filter-btn" data-filter="pioneer">${t('wcy-filter-pioneer')}</button>
+        <button class="trn-wcy-filter-btn" data-filter="classic">${t('wcy-filter-classic')}</button>
+        <button class="trn-wcy-filter-btn" data-filter="retro">${t('wcy-filter-retro')}</button>
+        <button class="trn-wcy-filter-btn" data-filter="modern">${t('wcy-filter-modern')}</button>
+        <button class="trn-wcy-filter-btn" data-filter="future">${t('wcy-filter-future')}</button>
+      </div>
+      <div class="trn-wcy-grid" id="trn-wcy-grid">${yearsHtml}</div>
       <div class="trn-step-actions trn-preset-confirm-actions">
         <button class="btn-secondary" id="wcy-cancel-btn">${t('trn-btn-back')}</button>
       </div>
     `;
 
     el.querySelector('#wcy-cancel-btn')?.addEventListener('click', cancelPreset);
-    el.querySelector('.trn-wcy-grid')?.addEventListener('click', e => {
-      const btn = e.target.closest('.trn-wcy-btn');
+
+    // Era filter pills
+    el.querySelector('#trn-wcy-filters')?.addEventListener('click', e => {
+      const btn = e.target.closest('.trn-wcy-filter-btn');
       if (!btn) return;
+      el.querySelectorAll('.trn-wcy-filter-btn').forEach(b => b.classList.remove('trn-wcy-filter-active'));
+      btn.classList.add('trn-wcy-filter-active');
+      const filter = btn.dataset.filter;
+      let visIdx = 0;
+      el.querySelectorAll('.trn-wcy-btn').forEach(card => {
+        const visible = filter === 'all' || card.dataset.eraFilter === filter;
+        card.style.display = visible ? '' : 'none';
+        if (visible) {
+          card.classList.remove('trn-wcy-stagger');
+          // Force reflow so animation re-triggers
+          void card.offsetWidth;
+          card.style.setProperty('--i', visIdx);
+          card.classList.add('trn-wcy-stagger');
+          visIdx++;
+        }
+      });
+    });
+
+    el.querySelector('#trn-wcy-grid')?.addEventListener('click', e => {
+      const btn = e.target.closest('.trn-wcy-btn');
+      if (!btn || btn.classList.contains('trn-wcy-btn--cancelled')) return;
       const yr = +btn.dataset.year;
-      if (yr) _loadWCEdition(yr);
+      if (!yr) return;
+
+      // On touch devices: first tap reveals tooltip, second tap loads
+      const isTouch = window.matchMedia('(hover: none)').matches;
+      if (isTouch && !btn.classList.contains('trn-wcy-touch-open')) {
+        // Close any other open tooltip
+        el.querySelectorAll('.trn-wcy-touch-open').forEach(b => b.classList.remove('trn-wcy-touch-open'));
+        btn.classList.add('trn-wcy-touch-open');
+        return; // don't load yet
+      }
+
+      // Mouse or second tap: load
+      el.querySelectorAll('.trn-wcy-touch-open').forEach(b => b.classList.remove('trn-wcy-touch-open'));
+      el.querySelectorAll('.trn-wcy-btn--selected').forEach(b => b.classList.remove('trn-wcy-btn--selected'));
+      btn.classList.add('trn-wcy-btn--selected');
+      _loadWCEdition(yr);
+    });
+
+    // Tap outside a card dismisses open tooltip
+    el.addEventListener('click', e => {
+      if (!e.target.closest('.trn-wcy-btn')) {
+        el.querySelectorAll('.trn-wcy-touch-open').forEach(b => b.classList.remove('trn-wcy-touch-open'));
+      }
     });
   }
 
@@ -1720,11 +1848,19 @@ const TRN = (() => {
 
     _teams      = [];
     _groupsDraw = [];
+    _draw       = [];
     ed.groups.forEach(g => g.teams.forEach(tm => {
       _teams.push({ slug: tm.slug, era: tm.era, name: tm.name, ovr: null });
     }));
     _numTeams   = _teams.length;
-    if (ed.format !== 'knockout16') {
+    if (ed.format === 'knockout16') {
+      // Each group encodes 2 R16 pairs: teams[0] vs teams[1], teams[2] vs teams[3]
+      const _findT = slug => _teams.find(x => x.slug === slug);
+      _draw = ed.groups.flatMap(g => [
+        { a: _findT(g.teams[0].slug) || g.teams[0], b: _findT(g.teams[1].slug) || g.teams[1] },
+        { a: _findT(g.teams[2].slug) || g.teams[2], b: _findT(g.teams[3].slug) || g.teams[3] },
+      ]);
+    } else {
       _groupsDraw = ed.groups.map(g => g.teams.map(t => _teams.find(x => x.slug === t.slug) || t));
     }
 
@@ -1737,10 +1873,21 @@ const TRN = (() => {
     }));
     _setPresetBadges(_teams, _lockedBadges);
 
+    // SEO: update meta description with the historical hito phrase
+    const _metaDesc = document.querySelector('meta[name="description"]');
+    if (_metaDesc) {
+      if (!_metaDesc.dataset.original) _metaDesc.dataset.original = _metaDesc.content;
+      const _hito = _getWCHito(year);
+      _metaDesc.content = `FIFA World Cup ${year}${_hito ? ' · ' + _hito : ''}`;
+    }
+
     _showPresetConfirm('wc-historical');
   }
 
   function loadPreset(presetId) {
+    // Always hide the WC year picker when switching to any preset
+    const yrPicker = $('trn-wc-year-picker'); if (yrPicker) hide(yrPicker);
+
     // Historical WC editions: show year picker first
     if (presetId === 'wc-historical') {
       _activePreset = 'wc-historical';
@@ -1826,13 +1973,15 @@ const TRN = (() => {
     // Build dynamic historical WC meta using the selected year
     const _wcHistMeta = (() => {
       if (!isHistoricalWC || !_wcHistoricalYear) return null;
-      const ed = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS[_wcHistoricalYear] : null;
+      const ed   = (typeof _WC_EDITIONS !== 'undefined') ? _WC_EDITIONS[_wcHistoricalYear] : null;
+      const hito = _getWCHito(_wcHistoricalYear);
       const sub  = ed ? (ed.normativa || (_teams.length + ' selecciones')) : '';
       const host = ed ? (ed.host || '') : '';
       return {
         title:     `FIFA World Cup ${_wcHistoricalYear}`,
         icon:      `<img src="/img/trophy-wc.webp" class="trn-preset-confirm-trophy" alt="WC Trophy">`,
         subtitle:  host ? `${host} · ${sub}` : sub,
+        hito,
         gridClass: _groupsDraw.length <= 4  ? 'trn-preset-groups-copa-america'
                  : _groupsDraw.length <= 6  ? 'trn-preset-groups-euro'
                  :                            'trn-preset-groups-wc',
@@ -1865,13 +2014,15 @@ const TRN = (() => {
     }
     show(el);
 
-    // KO16: show all teams as a simple grid (no group labels)
+    // KO16: show pre-set R16 matchup pairs
     const groupsHtml = isKO16
-      ? `<div class="trn-pg-group" style="display:contents">${_teams.map(tm => {
-          const badge = _badgeCache[tm.slug] || tm.badge || '/img/badges/_placeholder.svg';
-          return `<div class="trn-pg-team" data-slug="${_esc(tm.slug)}">
-            <img class="trn-mini-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
-            <span>${_esc(tm.name)}</span>
+      ? `<div class="trn-ko16-draw">${_draw.map(m => {
+          const bA = _badgeCache[m.a.slug] || m.a.badge || '/img/badges/_placeholder.svg';
+          const bB = _badgeCache[m.b.slug] || m.b.badge || '/img/badges/_placeholder.svg';
+          return `<div class="trn-ko16-match">
+            <div class="trn-pg-team" data-slug="${_esc(m.a.slug)}"><img class="trn-mini-badge" src="${_esc(bA)}" onerror="this.src='/img/badges/_placeholder.svg'" alt=""><span>${_esc(m.a.name)}</span></div>
+            <span class="trn-ko16-vs">vs</span>
+            <div class="trn-pg-team" data-slug="${_esc(m.b.slug)}"><img class="trn-mini-badge" src="${_esc(bB)}" onerror="this.src='/img/badges/_placeholder.svg'" alt=""><span>${_esc(m.b.name)}</span></div>
           </div>`;
         }).join('')}</div>`
       : _groupsDraw.map((grp, gi) => {
@@ -1892,12 +2043,13 @@ const TRN = (() => {
         <div>
           <h2 class="trn-step-title" style="margin:0">${_esc(title)}</h2>
           <p class="trn-step-hint" style="margin:.2rem 0 0">${isHistoricalWC ? meta.subtitle : `${_teams.length} ${t('trn-teams-unit')} · ${numGrps} ${t('trn-groups-unit')} · ${meta.subtitle}`}</p>
+          ${isHistoricalWC && meta.hito ? `<p class="trn-wcy-confirm-hito">${_esc(meta.hito)}</p>` : ''}
         </div>
       </div>
-      <div class="trn-preset-groups-preview${isKO16 ? ' trn-preset-groups-copa-america' : isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
+      <div class="trn-preset-groups-preview${isKO16 ? ' trn-preset-ko16' : isHistoricalWC ? ' ' + (meta.gridClass || 'trn-preset-groups-wc') : isWC ? ' trn-preset-groups-wc' : meta.gridClass ? ' ' + meta.gridClass : ''}">${groupsHtml}</div>
       <div class="trn-step-actions trn-preset-confirm-actions">
         <button class="btn-secondary" id="preset-confirm-cancel">${t('trn-btn-back')}</button>
-        <button class="btn-secondary" id="preset-confirm-edit" title="${t('trn-btn-edit')}">✏️ ${t('trn-btn-edit').replace(/^✏️\s*/,'')}</button>
+        ${!isKO16 ? `<button class="btn-secondary" id="preset-confirm-edit" title="${t('trn-btn-edit')}">✏️ ${t('trn-btn-edit').replace(/^✏️\s*/,'')}</button>` : ''}
         ${isWC && !isKO16 ? `<button class="btn-secondary" id="preset-confirm-shuffle" title="${t('trn-btn-shuffle')}">🔀 ${t('trn-btn-shuffle').replace(/^🔀\s*/,'')}</button>` : ''}
         <button class="btn-primary" id="preset-confirm-run">▶ Simular &nbsp;${_esc(title)}</button>
       </div>
@@ -1908,7 +2060,15 @@ const TRN = (() => {
     // Wire up buttons (CSP blocks inline onclick)
     // For historical WC: back button goes to year picker, not step 1
     const cancelHandler = isHistoricalWC
-      ? () => { hide(el); _showWCYearPicker(); }
+      ? () => {
+          hide(el);
+          _showWCYearPicker();
+          // Re-highlight the previously selected card
+          if (_wcHistoricalYear) {
+            const picker = $('trn-wc-year-picker');
+            picker?.querySelector(`[data-year="${_wcHistoricalYear}"]`)?.classList.add('trn-wcy-btn--selected');
+          }
+        }
       : cancelPreset;
     el.querySelector('#preset-confirm-cancel')?.addEventListener('click', cancelHandler);
     el.querySelector('#preset-confirm-shuffle')?.addEventListener('click', shufflePresetGroups);
@@ -1988,7 +2148,7 @@ const TRN = (() => {
           const n = ((e.nameEs || '') + ' ' + (e.nameEn || '')).toLowerCase();
           return n.includes(ql) || e.slug.includes(ql);
         }).slice(0, 8);
-        if (!matches.length) { res.innerHTML = `<div class="preset-replace-empty">Sin resultados</div>`; return; }
+        if (!matches.length) { res.innerHTML = `<div class="preset-replace-empty">${t('trn-replace-no-results')}</div>`; return; }
         // One row per (team × season) so user can pick any era
         res.innerHTML = matches.map(e => {
           const badge   = e.badge || '/img/badges/_placeholder.svg';
@@ -2069,6 +2229,9 @@ const TRN = (() => {
   function cancelPreset() {
     _teams = []; _groupsDraw = []; _fmt = null; _activePreset = null; _uclFixtures = null;
     _wcHistoricalYear = null;
+    // Restore original meta description
+    const _metaDesc = document.querySelector('meta[name="description"]');
+    if (_metaDesc?.dataset.original) { _metaDesc.content = _metaDesc.dataset.original; delete _metaDesc.dataset.original; }
     const conf    = $('trn-preset-confirm');    if (conf)    hide(conf);
     const ucl     = $('trn-ucl-draw');          if (ucl)     hide(ucl);
     const yrPicker = $('trn-wc-year-picker');   if (yrPicker) hide(yrPicker);
@@ -2521,7 +2684,7 @@ const TRN = (() => {
       const chunk = Math.max(1, Math.floor(data.teams.length / 2));
       data.matches.forEach((m, i) => add(m, `${t('trn-cal-jornada')} ${Math.floor(i / chunk) + 1} × ${t('trn-fmt-name-liga')}`));
     } else if (data.format === 'ucl-league') {
-      (data.leagueMatches || []).forEach((m, i) => add(m, `Fase de Liga — J${Math.floor(i / 36) + 1}`));
+      (data.leagueMatches || []).forEach((m, i) => add(m, `${t('ucl-phase-league')} — J${Math.floor(i / 36) + 1}`));
       (data.playoffRound?.matches || []).forEach(m => add(m, 'Play-In'));
       (data.koRounds || []).forEach(r => r.matches.forEach(m => add(m, r.label + ' × Champions')));
     } else if (data.format === 'copa' && !data.groups) {
@@ -2540,7 +2703,7 @@ const TRN = (() => {
   // pfx: unique ID prefix so gradient IDs never clash between poster and reveal
   function _trophySVG(fmt, pfx) {
     const p = pfx || 't' + (Math.random() * 1e5 | 0);
-    const isWC   = fmt === 'champions' && _activePreset === 'wc2026';
+    const isWC   = (_activePreset === 'wc2026' || _activePreset === 'wc-historical') && (fmt === 'champions' || fmt === 'copa');
     const isEuro  = fmt === 'champions' && _activePreset === 'euro2024';
     const isCopa  = fmt === 'champions' && _activePreset === 'copamerica2024';
     const isLibt  = fmt === 'champions' && _activePreset === 'libertadores2025';
@@ -2724,6 +2887,7 @@ const TRN = (() => {
       data.format === 'copa' ? t('trn-reveal-copa') :
       data.format === 'ucl-league' ? 'Champions League 2025/26' :
       _activePreset === 'wc2026'          ? 'FIFA World Cup 2026' :
+      _activePreset === 'wc-historical'   ? `FIFA World Cup ${_wcHistoricalYear || ''}`.trim() :
       _activePreset === 'euro2024'        ? 'UEFA Euro 2024' :
       _activePreset === 'copamerica2024'  ? 'Copa América 2024' :
       _activePreset === 'libertadores2025'? 'Copa Libertadores 2026' :
@@ -3046,7 +3210,7 @@ const TRN = (() => {
     const allFx = [];
     for (let b = 0; b < fixtures.length; b += BATCH) {
       const chunk = fixtures.slice(b, b + BATCH);
-      _setProgress(`Fase de Liga… (${b+chunk.length}/${fixtures.length})`, 5 + Math.round((b/fixtures.length)*50));
+      _setProgress(`${t('ucl-progress-league')} (${b+chunk.length}/${fixtures.length})`, 5 + Math.round((b/fixtures.length)*50));
       const specs = chunk.map((f, i) => ({
         teamA: f.home.slug, teamB: f.away.slug,
         eraA: f.home.era||'', eraB: f.away.era||'',
@@ -3113,7 +3277,7 @@ const TRN = (() => {
     const playoffRound = { label: 'Play-In', matches: playoffMatches };
 
     // ── Round of 16: top 8 direct + 8 playoff winners
-    _setProgress('Octavos de final…', 67);
+    _setProgress(t('ucl-progress-r16'), 67);
     // Seeded (1-8) vs unseeded (playoff winners) — no same-team clash
     const direct = leagueTable.slice(0, 8);
     const r16Bracket = [];
@@ -3756,7 +3920,7 @@ const TRN = (() => {
           const opp  = isHome ? m.away : m.home;
           const gfC  = isHome ? m.scoreA : m.scoreB;
           const gaC  = isHome ? m.scoreB : m.scoreA;
-          path.push({ round: 'Fase de Liga', opp, gfC, gaC, result: gfC > gaC ? 'w' : gaC > gfC ? 'l' : 'd', legs: 1, penA: null });
+          path.push({ round: t('ucl-champion-path-phase'), opp, gfC, gaC, result: gfC > gaC ? 'w' : gaC > gfC ? 'l' : 'd', legs: 1, penA: null });
         });
       }
       // Playoff if champion came through it
@@ -3992,19 +4156,19 @@ const TRN = (() => {
     let html = '';
 
     if (d.format === 'ucl-league') {
-      html = `<h3 class="trn-section-h">Fase de Liga — ${(d.leagueMatches||[]).length} partidos</h3>`;
+      html = `<h3 class="trn-section-h">${t('ucl-matches-title')} — ${(d.leagueMatches||[]).length} ${t('trn-cal-matches-lbl').toLowerCase()}</h3>`;
       const lm = d.leagueMatches || [];
       const batchSize = 36;
       const numBatches = Math.ceil(lm.length / batchSize) || 1;
       for (let bi = 0; bi < numBatches; bi++) {
         const batch = lm.slice(bi * batchSize, (bi + 1) * batchSize);
         const openAttr = bi === 0 ? ' open' : '';
-        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">Jornada ${bi + 1} <span class="trn-jornada-cnt">${batch.length}</span></summary>`;
+        html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${t('trn-cal-jornada')} ${bi + 1} <span class="trn-jornada-cnt">${batch.length}</span></summary>`;
         batch.forEach(m => { html += _matchCard(m, _tLabel(m.a), _tLabel(m.b), `${m.scoreA} – ${m.scoreB}`); });
         html += '</details>';
       }
       if (d.playoffRound?.matches?.length) {
-        html += `<h3 class="trn-section-h trn-section-h-mt">🔵 Play-In (9-24)</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-playin-calendar')}</h3>`;
         html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Play-In <span class="trn-jornada-cnt">${d.playoffRound.matches.length}</span></summary>`;
         d.playoffRound.matches.forEach(m => {
           const penStr = m.penA != null ? ` (p: ${m.penA}–${m.penB})` : '';
@@ -4013,7 +4177,7 @@ const TRN = (() => {
         html += '</details>';
       }
       if (d.koRounds?.length) {
-        html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase Eliminatoria</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-phase-ko')}</h3>`;
         [...d.koRounds].reverse().forEach((r, ri) => {
           const openAttr = ri === 0 ? ' open' : '';
           html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -4183,7 +4347,7 @@ const TRN = (() => {
     if (d.format === 'ucl-league') {
       let html = '';
       if (d.playoffRound?.matches?.length) {
-        html += `<h3 class="trn-section-h">\uD83D\uDD35 Play-In \u2014 Clasificaci\u00F3n a Octavos</h3>
+        html += `<h3 class="trn-section-h">${t('ucl-playin-ko')}</h3>
           <div class="trn-bkt-playoff-grid">`;
         d.playoffRound.matches.forEach(m => {
           const isWinA = m.winner?.slug === m.a?.slug;
@@ -4207,7 +4371,7 @@ const TRN = (() => {
         });
         html += `</div>`;
       }
-      html += `<h3 class="trn-section-h trn-section-h-mt">\u26BD Fase Eliminatoria</h3>`;
+      html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-phase-ko')}</h3>`;
       html += `<div class="trn-bkt-scroll">${_renderVisualBracket(d.koRounds || [])}</div>`;
       el.innerHTML = html;
       return;
@@ -4247,7 +4411,7 @@ const TRN = (() => {
         </div>`;
       });
       html += `</div>`;
-      if (koRounds.length) html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase Eliminatoria</h3>`;
+      if (koRounds.length) html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-phase-ko')}</h3>`;
     }
     html += `<div class="trn-bkt-scroll">${_renderVisualBracket(koRounds)}</div>`;
     el.innerHTML = html;
@@ -4310,15 +4474,15 @@ const TRN = (() => {
       // ── UCL League Phase format ────────────────────────────
       if (d.format === 'ucl-league') {
         // Full 36-team league table
-        html += `<h3 class="trn-section-h trn-section-h-mt">📊 Clasificación — Fase de Liga</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-standings-title')}</h3>`;
         html += `<div class="trn-ucl-table-wrap"><table class="trn-ucl-table">
           <thead><tr>
             <th>#</th><th></th><th>Club</th>
-            <th title="Partidos jugados">PJ</th><th title="Victorias">G</th><th title="Empates">E</th><th title="Derrotas">P</th>
-            <th title="Goles a favor">GF</th><th title="Goles en contra">GC</th><th title="Diferencia">DIF</th><th title="Puntos">PTS</th>
+            <th title="${t('trn-col-pj')}">${t('trn-col-pj-abbr')}</th><th>${t('trn-col-w-abbr')}</th><th>${t('trn-col-d-abbr')}</th><th>${t('trn-col-l-abbr')}</th>
+            <th>${t('trn-col-gf-abbr')}</th><th>${t('trn-col-gc-abbr')}</th><th>${t('trn-col-dif')}</th><th>${t('trn-col-pts')}</th>
           </tr></thead><tbody>`;
         const statusColor = { direct:'#2a9', playoff:'#c8a030', out:'rgba(255,255,255,.25)' };
-        const statusLabel = { direct:'Octavos', playoff:'Playoff', out:'Eliminado' };
+        const statusLabel = { direct: t('ucl-status-direct'), playoff: t('ucl-status-playoff'), out: t('ucl-status-out') };
         d.leagueTable.forEach((r, i) => {
           const gd = r.gf - r.ga;
           const sc = statusColor[r.status] || '';
@@ -4333,21 +4497,21 @@ const TRN = (() => {
             <td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
             <td>${r.gf}</td><td>${r.ga}</td>
             <td style="color:${gd>0?'#7adf7a':gd<0?'#f06':''}">${gd>0?'+':''}${gd}</td>
-            <td class="trn-ucl-pts">${r.pts}</td>
+            <td class="trn-ucl-pts">${r.pts}${t('ucl-pts-suffix')}</td>
           </tr>`;
         });
         html += `</tbody></table></div>`;
 
         // Legend
         html += `<div class="trn-ucl-legend">
-          <span style="border-left:3px solid #2a9;padding-left:.4rem">Directo a Octavos (1-8)</span>
-          <span style="border-left:3px solid #c8a030;padding-left:.4rem">Play-In (9-24)</span>
-          <span style="border-left:3px solid rgba(255,255,255,.25);padding-left:.4rem">Eliminados (25-36)</span>
+          <span style="border-left:3px solid #2a9;padding-left:.4rem">${t('ucl-legend-direct')}</span>
+          <span style="border-left:3px solid #c8a030;padding-left:.4rem">${t('ucl-legend-playoff')}</span>
+          <span style="border-left:3px solid rgba(255,255,255,.25);padding-left:.4rem">${t('ucl-legend-out')}</span>
         </div>`;
 
         // Playoff round
         if (d.playoffRound) {
-          html += `<h3 class="trn-section-h trn-section-h-mt">🔵 Play-In (ida y vuelta)</h3>`;
+          html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-playin-legs')}</h3>`;
           html += `<details class="trn-cal-jornada" open><summary class="trn-cal-jornada-label">Play-In <span class="trn-jornada-cnt">${d.playoffRound.matches.length}</span></summary>`;
           d.playoffRound.matches.forEach(m => {
             const penStr = m.penA != null ? ` (p: ${m.penA}–${m.penB})` : '';
@@ -4357,7 +4521,7 @@ const TRN = (() => {
         }
 
         // KO rounds
-        html += `<h3 class="trn-section-h trn-section-h-mt">⚽ Fase eliminatoria</h3>`;
+        html += `<h3 class="trn-section-h trn-section-h-mt">${t('ucl-phase-ko')}</h3>`;
         [...(d.koRounds || [])].reverse().forEach((r, ri) => {
           const openAttr = ri === 0 ? ' open' : '';
           html += `<details class="trn-cal-jornada"${openAttr}><summary class="trn-cal-jornada-label">${_esc(r.label)} <span class="trn-jornada-cnt">${r.matches.length}</span></summary>`;
@@ -4887,7 +5051,7 @@ const TRN = (() => {
       const ATT_SET = new Set(['ST','CF','LW','RW','SS','FW']);
       const posRank  = p => GK_SET.has(p.position) ? 0 : DEF_SET.has(p.position) ? 1 : MID_SET.has(p.position) ? 2 : ATT_SET.has(p.position) ? 3 : 4;
       const posClass = p => GK_SET.has(p.position) ? 'pos-gk' : DEF_SET.has(p.position) ? 'pos-def' : MID_SET.has(p.position) ? 'pos-mid' : ATT_SET.has(p.position) ? 'pos-att' : '';
-      const posLabel = p => GK_SET.has(p.position) ? 'POR' : DEF_SET.has(p.position) ? 'DEF' : MID_SET.has(p.position) ? 'MED' : ATT_SET.has(p.position) ? 'DEL' : (p.position || '?');
+      const posLabel = p => GK_SET.has(p.position) ? t('trn-pos-gk') : DEF_SET.has(p.position) ? 'DEF' : MID_SET.has(p.position) ? t('trn-pos-mid') : ATT_SET.has(p.position) ? t('trn-pos-att') : (p.position || '?');
       const buildCol = (d, t) => {
         const yr = t?.era ? String(t.era).match(/\d{4}/)?.[0]
           : (d?.source ? String(d.source).match(/\((\d{4})/)?.[1] : null);

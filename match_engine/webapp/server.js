@@ -1,6 +1,6 @@
 ﻿/**
- * Football Match Simulator — Express Backend
- * ─────────────────────────────────────────────
+ * Football Match Simulator � Express Backend
+ * ---------------------------------------------
  * Start:  node server.js
  * API:    POST /simulate
  */
@@ -23,6 +23,79 @@ app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
 app.disable('x-powered-by');  // Don't expose server fingerprint
 const PORT = process.env.PORT || 3000;
 
+// -- Squad JSON async cache ------------------------------------------------
+// LRU-style Map: evicts oldest entry when size exceeds MAX.
+// Avoids blocking the event loop with fs.readFileSync on every SSR request.
+const _SQUAD_CACHE_MAX = 300; // ~300 squads � ~8 KB avg = ~2.4 MB RAM
+const _squadCache = new Map(); // slug ? parsed JSON
+async function _loadSquad(slug) {
+  if (_squadCache.has(slug)) return _squadCache.get(slug);
+  const raw = await fs.promises.readFile(
+    path.join(__dirname, 'squads', `${slug}.json`), 'utf8'
+  );
+  const data = JSON.parse(raw.replace(/^\uFEFF/, ''));
+  if (_squadCache.size >= _SQUAD_CACHE_MAX) {
+    // Evict oldest inserted entry (Map preserves insertion order)
+    _squadCache.delete(_squadCache.keys().next().value);
+  }
+  _squadCache.set(slug, data);
+  return data;
+}
+
+// Module-level rosterFull � used by all 3 matchup SSR routes and equipo/team.
+// Returns { players, ratings, formation, avgRating, top3 } for a squad+era.
+async function _rosterFull(slug, era) {
+  try {
+    const lu = await lookupTeam(slug, era);
+    const d = await _loadSquad(slug);
+    const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
+    const key = era && d.seasons[era] ? era : seasons[0];
+    const season = d.seasons[key] || {};
+    const ratings = season.ratings || {};
+    const formation = lu.found ? (lu.formation || season.formation || '-') : (season.formation || '-');
+    const allPlayers = lu.found ? (lu.players || []) : (season.players || []);
+
+    // Build a proper starting XI by formation: parse "4-3-3" -> [4,3,3]
+    const GK_POS  = new Set(['GK']);
+    const DEF_POS = new Set(['CB','RB','LB','RWB','LWB']);
+    const MID_POS = new Set(['DM','CM','RM','LM','AM']);
+    const FWD_POS = new Set(['RW','LW','ST','CF','SS','AM']);
+    const byRating = (a, b) => (b.rating || 0) - (a.rating || 0);
+    const pick = (pool, n) => [...pool].sort(byRating).slice(0, n);
+
+    const fmParts = formation.match(/^(\d+)-(\d+)-(\d+)$/);
+    const nDef = fmParts ? parseInt(fmParts[1]) : 4;
+    const nMid = fmParts ? parseInt(fmParts[2]) : 3;
+    const nFwd = fmParts ? parseInt(fmParts[3]) : 3;
+
+    const gks  = allPlayers.filter(p => GK_POS.has(p.position));
+    const defs = allPlayers.filter(p => DEF_POS.has(p.position));
+    const mids = allPlayers.filter(p => MID_POS.has(p.position) && !GK_POS.has(p.position) && !FWD_POS.has(p.position));
+    const fwds = allPlayers.filter(p => FWD_POS.has(p.position) && !GK_POS.has(p.position) && !DEF_POS.has(p.position));
+
+    let xi = [
+      ...pick(gks, 1),
+      ...pick(defs, nDef),
+      ...pick(mids, nMid),
+      ...pick(fwds, nFwd),
+    ];
+    // Fallback: if not enough players per position, fill from remaining
+    if (xi.length < 11) {
+      const used = new Set(xi.map(p => p.name));
+      const rest = allPlayers.filter(p => !used.has(p.name)).sort(byRating);
+      xi = [...xi, ...rest].slice(0, 11);
+    }
+
+    const avgRating = xi.length
+      ? (xi.reduce((s, p) => s + (p.rating || 0), 0) / xi.length).toFixed(1)
+      : null;
+    const top3 = [...xi].sort(byRating).slice(0, 3);
+    return { players: xi, ratings, formation, avgRating, top3 };
+  } catch (_) {
+    return { players: [], ratings: {}, formation: '', avgRating: null, top3: [] };
+  }
+}
+
 // Auto-create logs/ dir (used by PM2 ecosystem config)
 const logsDir = path.join(__dirname, 'logs');
 if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir, { recursive: true });
@@ -32,13 +105,13 @@ const SQUAD_SUGGESTIONS = [...new Set(
   Object.keys(SQUADS).map(k => k.replace(/\b\w/g, c => c.toUpperCase()))
 )].sort();
 
-// Badge map: lowercased name → local path (built from squads/ at startup)
+// Badge map: lowercased name ? local path (built from squads/ at startup)
 // Falls back to placeholder when nothing is found.
 const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
 const _squadFiles = fs.readdirSync(path.join(__dirname, 'squads'))
   .filter(f => f.endsWith('.json') && !f.startsWith('.'));
-const _badgeMap = new Map();  // name.lc → localPath
-const _allTeams = [];         // { name, badge, slug } — full list for /badges
+const _badgeMap = new Map();  // name.lc ? localPath
+const _allTeams = [];         // { name, badge, slug } � full list for /badges
 for (const file of _squadFiles) {
   try {
     const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', file), 'utf8'));
@@ -50,24 +123,24 @@ for (const file of _squadFiles) {
 }
 _allTeams.sort((a, b) => a.name.localeCompare(b.name));
 
-// ── League/group mapping: slug → display group ───────────────
+// -- League/group mapping: slug ? display group ---------------
 // Order determines display order in the UI.
 const _GROUP_ORDER = [
-  '⭐ Fantasy XI',
-  '🌐 Continentes Históricos',
-  '🌍 Selecciones',
-  '🇪🇸 La Liga', '🇪🇸 La Liga 2',
-  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League', '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship',
-  '🇩🇪 Bundesliga', '🇩🇪 2. Bundesliga',
-  '🇮🇹 Serie A', '🇮🇹 Serie B',
-  '🇫🇷 Ligue 1', '🇫🇷 Ligue 2',
-  '🇳🇱 Eredivisie', '🇵🇹 Liga Portugal',
-  '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
-  '🇸🇦 Saudi Pro League', '🇺🇸 MLS',
-  '🇧🇷 Brasileirão', '🌎 Argentina Primera', '🌎 América del Sur', '🌍 Otros',
+  '? Fantasy XI',
+  '?? Continentes Hist�ricos',
+  '?? Selecciones',
+  '???? La Liga', '???? La Liga 2',
+  '?????????????? Premier League', '?????????????? Championship',
+  '???? Bundesliga', '???? 2. Bundesliga',
+  '???? Serie A', '???? Serie B',
+  '???? Ligue 1', '???? Ligue 2',
+  '???? Eredivisie', '???? Liga Portugal',
+  '?????????????? Escocia',
+  '???? Saudi Pro League', '???? MLS',
+  '???? Brasileir�o', '?? Argentina Primera', '?? Am�rica del Sur', '?? Otros',
 ];
 // group, nameEn, nameEs: stored in each squad JSON, with squads-meta.json as overlay.
-// squads-meta.json maps slug → { group, nameEn, nameEs } and overrides per-file values.
+// squads-meta.json maps slug ? { group, nameEn, nameEs } and overrides per-file values.
 // This allows correct metadata even for squad files that are gitignored (seeded on server).
 const _SQUADS_META = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8').replace(/^\uFEFF/, '')); }
@@ -75,7 +148,7 @@ const _SQUADS_META = (() => {
 })();
 
 
-// Catalog: name + slug + available seasons (only teams with ≥1 season)
+// Catalog: name + slug + available seasons (only teams with =1 season)
 // Built once at startup from squads/ JSON files. Used by the era dropdown in the UI.
 const CATALOG = [];
 for (const file of _squadFiles) {
@@ -89,7 +162,7 @@ for (const file of _squadFiles) {
     if (seasons.length === 0) continue;
     const slug = d.slug || file.replace('.json', '');
     const _meta = _SQUADS_META[slug] || {};
-    const group = _meta.group || d.group || '🌍 Otros';
+    const group = _meta.group || d.group || '?? Otros';
     const nameEn = _meta.nameEn || d.nameEn || d.name || slug;
     const nameEs = _meta.nameEs || d.nameEs || d.nameEn || d.name || slug;
     const badge = _meta.badgeLocalPath || d.badgeLocalPath || BADGE_PLACEHOLDER;
@@ -119,7 +192,7 @@ function _badgeFor(teamName) {
       || BADGE_PLACEHOLDER;
 }
 
-// Resolve a display name / slug / localized label → canonical squad slug
+// Resolve a display name / slug / localized label ? canonical squad slug
 // Used by /simulate so picker-submitted slugs and typed names both work.
 const _catalogNameMap = (() => {
   const m = new Map();
@@ -127,7 +200,7 @@ const _catalogNameMap = (() => {
     m.set(e.slug.toLowerCase(), e.slug);
     if (e.nameEn) m.set(e.nameEn.toLowerCase(), e.slug);
     if (e.nameEs) m.set(e.nameEs.toLowerCase(), e.slug);
-    // Also map slug-with-spaces so "river plate" → "river-plate", etc.
+    // Also map slug-with-spaces so "river plate" ? "river-plate", etc.
     const slugWords = e.slug.toLowerCase().replace(/-/g, ' ');
     if (!m.has(slugWords)) m.set(slugWords, e.slug);
   }
@@ -137,12 +210,12 @@ function _resolveTeamSlug(input) {
   return _catalogNameMap.get(input.trim().toLowerCase()) || input.trim();
 }
 
-// ── Middleware ────────────────────────────────
-// ── www → non-www redirect (301) ─────────────────────────────────────────
+// -- Middleware --------------------------------
+// -- www ? non-www redirect (301) -----------------------------------------
 // Prevents duplicate content: www.golazox.com and golazox.com must not both
 // serve the same pages or Google will reject indexing requests.
 app.use((req, res, next) => {
-  const host = req.headers.host || '';
+  const host = req.headers.host || '-';
   if (host.startsWith('www.')) {
     return res.redirect(301, `https://${host.slice(4)}${req.url}`);
   }
@@ -150,11 +223,11 @@ app.use((req, res, next) => {
 });
 
 // Gzip/Brotli compression for all text responses (HTML, CSS, JS, JSON).
-// Reduces bandwidth ~70-80% — essential for mobile performance and hosting costs.
+// Reduces bandwidth ~70-80% � essential for mobile performance and hosting costs.
 app.use(compress({ level: 6, threshold: 1024 }));
 app.use(express.json({ limit: '32kb' }));
 
-// ── Per-request timeout: 25 s hard cap ───────────────────────────────────
+// -- Per-request timeout: 25 s hard cap -----------------------------------
 // Prevents a hung /simulate (e.g. external API not responding) from holding
 // a Node.js worker open indefinitely and eventually exhausting memory.
 app.use((req, res, next) => {
@@ -168,12 +241,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// Security headers — registered FIRST so they apply to ALL responses,
+// Security headers � registered FIRST so they apply to ALL responses,
 // including static files (index.html, CSS, JS, images).
 // upgrade-insecure-requests is only valid (and needed) when serving over HTTPS.
 // On HTTP (local dev via LAN IP), it causes browsers to upgrade same-origin requests
 // to HTTPS (which fails), making the page completely unstyled on mobile devices.
-const _siteIsHttps = (process.env.SITE_URL || '').startsWith('https://');
+const _siteIsHttps = (process.env.SITE_URL || '-').startsWith('https://');
 
 app.use((_req, res, next) => {
   res.set('X-Content-Type-Options', 'nosniff');
@@ -203,9 +276,9 @@ app.use((_req, res, next) => {
   next();
 });
 
-// ── Dynamic index.html (injects og:url + canonical from SITE_URL env var) ──
+// -- Dynamic index.html (injects og:url + canonical from SITE_URL env var) --
 // Must come before express.static so the route wins over the static file handler.
-// ── sitemap_index.xml alias → prevents GSC 404 if that URL was submitted ──
+// -- sitemap_index.xml alias ? prevents GSC 404 if that URL was submitted --
 app.get('/sitemap_index.xml', (_req, res) => res.redirect(301, '/sitemap.xml'));
 
 app.get('/', (_req, res) => {
@@ -220,15 +293,16 @@ app.get('/', (_req, res) => {
   res.set('Cache-Control', 'no-cache').type('text/html').send(injected);
 });
 
-// ── /partido/:matchup — SSR matchup pages for SEO ─────────────────
+// -- /partido/:matchup � SSR matchup pages for SEO -----------------
 // URL format: /partido/real-madrid:2002-vs-barcelona:2009
 // or without era: /partido/real-madrid-vs-barcelona
 // Generates a full HTML page with real content (title, description, h1, h2,
 // roster snippets, JSON-LD) that Google can index, while the SPA app loads
 // underneath so users can actually simulate the match.
-app.get('/partido/:matchup', (req, res) => {
+app.get('/partido/:matchup', async (req, res) => {
+  try {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
-  const raw = req.params.matchup || '';
+  const raw = req.params.matchup || '-';
   // Parse "slugA:eraA-vs-slugB:eraB"  or  "slugA-vs-slugB"
   const vsIdx = raw.indexOf('-vs-');
   if (vsIdx === -1) return res.status(404).send('Not Found');
@@ -248,17 +322,10 @@ app.get('/partido/:matchup', (req, res) => {
   const labelB = eraB ? `${nameB} ${eraB}` : nameB;
   const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-  // Full roster for SEO page — all 11 players with position
-  const rosterFull = (slug, era) => {
-    try {
-      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
-      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
-      const key = era && d.seasons[era] ? era : seasons[0];
-      return (d.seasons[key]?.players || []).slice(0, 11);
-    } catch (_) { return []; }
-  };
-  const playersA = rosterFull(slugA, eraA);
-  const playersB = rosterFull(slugB, eraB);
+  // Load rosters in parallel from cache (non-blocking)
+  const [dataA, dataB] = await Promise.all([_rosterFull(slugA, eraA), _rosterFull(slugB, eraB)]);
+  const playersA = dataA.players;
+  const playersB = dataB.players;
   // Also get 3 related matches for internal linking (same team A vs other rivals)
   const relatedMatches = (() => {
     const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','brasil','alemania','argentina'];
@@ -273,12 +340,42 @@ app.get('/partido/:matchup', (req, res) => {
     return related;
   })();
 
-  const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} — Simula el partido | GolazoX`;
+  const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} · Simula el partido | GolazoX`;
   const pageDesc    = `¿Quién ganaría ${esc(labelA)} contra ${esc(labelB)}? Simúlalo ahora con el motor de Monte Carlo de GolazoX. Estadísticas, alineaciones históricas y resultado en segundos.`;
   const canonUrl    = `${_routeSiteUrl}/partido/${esc(raw)}`;
   const deepLink    = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
-  const badgeA      = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
-  const badgeB      = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
+  const badgeA      = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
+  const badgeB      = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
+
+  // Build FAQ items for this specific matchup (AEO / featured snippets)
+  const faqItems = [
+    {
+      q: `¿Quién ganaría entre ${labelA} y ${labelB}?`,
+      a: `Según el motor estadístico de GolazoX, que simula miles de partidos usando las alineaciones reales de ${labelA} y ${labelB}, el resultado más probable se puede calcular de forma gratuita en golazox.com. El simulador tiene en cuenta las estadísticas históricas reales de cada jugador y la formación táctica de cada equipo.`,
+    },
+    {
+      q: `¿Cuál es la alineación de ${labelA}?`,
+      a: dataA.players.length
+        ? `La alineación titular de ${labelA} en GolazoX es: ${dataA.players.map(p => p.name).join(', ')}. Formación: ${dataA.formation || 'variable'}.`
+        : `GolazoX dispone de la plantilla histórica completa de ${nameA} con las estadísticas reales de cada jugador.`,
+    },
+    {
+      q: `¿Cuál es la alineación de ${labelB}?`,
+      a: dataB.players.length
+        ? `La alineación titular de ${labelB} en GolazoX es: ${dataB.players.map(p => p.name).join(', ')}. Formación: ${dataB.formation || 'variable'}.`
+        : `GolazoX dispone de la plantilla histórica completa de ${nameB} con las estadísticas reales de cada jugador.`,
+    },
+    {
+      q: `¿Cuál es el mejor jugador de ${labelA}?`,
+      a: dataA.top3.length
+        ? `Los jugadores mejor valorados de ${labelA} en GolazoX son: ${dataA.top3.map(p => `${p.name} (${p.rating})`).join(', ')}.`
+        : `GolazoX incluye las valoraciones individuales de todos los jugadores de ${nameA}.`,
+    },
+    {
+      q: `¿Cómo simular ${labelA} contra ${labelB} gratis?`,
+      a: `Entra en golazox.com, selecciona ${nameA} (era ${eraA || 'actual'}) como equipo A y ${nameB} (era ${eraB || 'actual'}) como equipo B, y pulsa Simular. El motor Monte Carlo ejecuta miles de partidos en milisegundos y muestra el resultado más probable. Es completamente gratuito, sin registro.`,
+    },
+  ];
 
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
@@ -292,7 +389,7 @@ app.get('/partido/:matchup', (req, res) => {
       },
       {
         '@type': 'WebPage',
-        'name': `${labelA} vs ${labelB} — Simulación de Fútbol`,
+        'name': `${labelA} vs ${labelB} · Simulación de Fútbol`,
         'description': pageDesc.replace(/&\w+;/g, ' '),
         'url': canonUrl,
         'inLanguage': 'es',
@@ -301,6 +398,14 @@ app.get('/partido/:matchup', (req, res) => {
           { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
         ],
         'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
+      {
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.map(({ q, a }) => ({
+          '@type': 'Question',
+          'name': q,
+          'acceptedAnswer': { '@type': 'Answer', 'text': a },
+        })),
       },
     ],
   });
@@ -314,7 +419,9 @@ app.get('/partido/:matchup', (req, res) => {
   <meta name="description" content="${pageDesc}"/>
   <meta name="robots" content="index,follow"/>
   <link rel="canonical" href="${canonUrl}"/>
-  <meta property="og:type" content="website"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
+  <meta property="article:section" content="Simulaciones de Fútbol Histórico"/>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -355,12 +462,21 @@ app.get('/partido/:matchup', (req, res) => {
     .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
     .mp-footer a{color:#475569;text-decoration:none}
     .mp-footer a:hover{text-decoration:underline}
+    .mp-stats-section{margin-bottom:2rem}
+    .mp-stats-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.6rem}
+    .mp-stats-table{width:100%;border-collapse:collapse;font-size:.9rem}
+    .mp-stats-table caption{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;caption-side:top;text-align:left;padding-bottom:.4rem}
+    .mp-stats-table th{color:#94a3b8;font-size:.75rem;font-weight:700;letter-spacing:.06em;padding:.5rem .6rem;text-align:center}
+    .mp-stats-table th:nth-child(2){color:#7b2ff7}
+    .mp-stats-table td{padding:.4rem .6rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.05);font-weight:700;color:#e2e8f0}
+    .mp-stats-table td:nth-child(2){color:#64748b;font-size:.8rem;font-weight:600}
+    .mp-stats-hi{color:#7b2ff7}
     @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
   </style>
 </head>
 <body>
 <main class="mp-wrap">
-  <a class="mp-backlink" href="/">← GolazoX — Football Time Machine</a>
+  <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
     ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
@@ -377,6 +493,33 @@ app.get('/partido/:matchup', (req, res) => {
   </div>
 
   <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
+
+  ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
+  <section class="mp-stats-section" aria-label="Comparación de estadísticas ${esc(labelA)} vs ${esc(labelB)}">
+    <h2 class="mp-stats-title">Comparación de estadísticas</h2>
+    <table class="mp-stats-table">
+      <caption>${esc(labelA)} vs ${esc(labelB)} · estadísticas por categoría</caption>
+      <thead><tr><th>${esc(labelA)}</th><th>Categoría</th><th>${esc(labelB)}</th></tr></thead>
+      <tbody>
+        ${[['attack','Ataque'],['midfield','Mediocampo'],['defense','Defensa'],['goalkeeping','Portería']].map(([k,label]) => {
+          const va = dataA.ratings[k] ?? '-';
+          const vb = dataB.ratings[k] ?? '-';
+          const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
+          const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
+          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+        }).join('')}
+        ${dataA.avgRating || dataB.avgRating ? `<tr>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
+          <td>Media overall</td>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataB.avgRating) > Number(dataA.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataB.avgRating ?? '-'}</td>
+        </tr>` : ''}
+        ${dataA.formation || dataB.formation ? `<tr>
+          <td>${esc(dataA.formation) || '-'}</td><td>Formación</td><td>${esc(dataB.formation) || '-'}</td>
+        </tr>` : ''}
+      </tbody>
+    </table>
+  </section>` : ''}
+
   <p class="mp-intro">
     Usa el simulador de fútbol histórico GolazoX para enfrentar a <strong>${esc(labelA)}</strong> y <strong>${esc(labelB)}</strong>.
     Nuestro motor probabilístico ejecuta miles de simulaciones con las alineaciones reales de cada era,
@@ -419,12 +562,17 @@ app.get('/partido/:matchup', (req, res) => {
 </html>`;
 
   res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+  } catch (err) {
+    console.error('[/partido/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-// ── /match/:matchup — English SSR page (mirrors /partido/ for EN SEO) ──────
-app.get('/match/:matchup', (req, res) => {
+// -- /match/:matchup � English SSR page (mirrors /partido/ for EN SEO) ------
+app.get('/match/:matchup', async (req, res) => {
+  try {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
-  const raw = req.params.matchup || '';
+  const raw = req.params.matchup || '-';
   const vsIdx = raw.indexOf('-vs-');
   if (vsIdx === -1) return res.status(404).send('Not Found');
   const partA = raw.slice(0, vsIdx);
@@ -442,16 +590,10 @@ app.get('/match/:matchup', (req, res) => {
   const labelB = eraB ? `${nameB} ${eraB}` : nameB;
   const esc    = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-  const rosterFull = (slug, era) => {
-    try {
-      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
-      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
-      const key = era && d.seasons[era] ? era : seasons[0];
-      return (d.seasons[key]?.players || []).slice(0, 11);
-    } catch (_) { return []; }
-  };
-  const playersA = rosterFull(slugA, eraA);
-  const playersB = rosterFull(slugB, eraB);
+  // Load rosters in parallel from cache (non-blocking)
+  const [dataA, dataB] = await Promise.all([_rosterFull(slugA, eraA), _rosterFull(slugB, eraB)]);
+  const playersA = dataA.players;
+  const playersB = dataB.players;
 
   const relatedMatches = (() => {
     const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','brasilien','deutschland','argentinien'];
@@ -466,13 +608,42 @@ app.get('/match/:matchup', (req, res) => {
     return related;
   })();
 
-  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} — Simulate the Match | GolazoX`;
+  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} · Simulate the Match | GolazoX`;
   const pageDesc  = `Who would win: ${esc(labelA)} vs ${esc(labelB)}? Simulate it now with GolazoX's Monte Carlo engine. Real historical squads, stats, and result in seconds.`;
   const canonUrl  = `${_routeSiteUrl}/match/${esc(raw)}`;
   const esUrl     = `${_routeSiteUrl}/partido/${esc(raw)}`;
   const deepLink  = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}&lang=en`;
-  const badgeA    = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
-  const badgeB    = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
+  const badgeA    = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
+  const badgeB    = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
+
+  const faqItems = [
+    {
+      q: `Who would win between ${labelA} and ${labelB}?`,
+      a: `According to GolazoX's statistical engine, which simulates thousands of matches using the real historical squads of ${labelA} and ${labelB}, the most likely result can be calculated for free at golazox.com. The simulator takes into account real historical stats for each player and the tactical formation of each team.`,
+    },
+    {
+      q: `What is the lineup of ${labelA}?`,
+      a: dataA.players.length
+        ? `The starting lineup of ${labelA} in GolazoX is: ${dataA.players.map(p => p.name).join(', ')}. Formation: ${dataA.formation || 'variable'}.`
+        : `GolazoX has the full historical squad of ${nameA} with real stats for each player.`,
+    },
+    {
+      q: `What is the lineup of ${labelB}?`,
+      a: dataB.players.length
+        ? `The starting lineup of ${labelB} in GolazoX is: ${dataB.players.map(p => p.name).join(', ')}. Formation: ${dataB.formation || 'variable'}.`
+        : `GolazoX has the full historical squad of ${nameB} with real stats for each player.`,
+    },
+    {
+      q: `Who is the best player in ${labelA}?`,
+      a: dataA.top3.length
+        ? `The top-rated players in ${labelA} on GolazoX are: ${dataA.top3.map(p => `${p.name} (${p.rating})`).join(', ')}.`
+        : `GolazoX includes individual ratings for all players in ${nameA}.`,
+    },
+    {
+      q: `How to simulate ${labelA} vs ${labelB} for free?`,
+      a: `Go to golazox.com, select ${nameA} (era ${eraA || 'current'}) as team A and ${nameB} (era ${eraB || 'current'}) as team B, then click Simulate. The Monte Carlo engine runs thousands of matches in milliseconds and shows the most likely result. Completely free, no registration required.`,
+    },
+  ];
 
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
@@ -486,7 +657,7 @@ app.get('/match/:matchup', (req, res) => {
       },
       {
         '@type': 'WebPage',
-        'name': `${labelA} vs ${labelB} — Football Simulation`,
+        'name': `${labelA} vs ${labelB} · Football Simulation`,
         'description': pageDesc,
         'url': canonUrl,
         'inLanguage': 'en',
@@ -495,6 +666,14 @@ app.get('/match/:matchup', (req, res) => {
           { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
         ],
         'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
+      {
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.map(({ q, a }) => ({
+          '@type': 'Question',
+          'name': q,
+          'acceptedAnswer': { '@type': 'Answer', 'text': a },
+        })),
       },
     ],
   });
@@ -511,7 +690,9 @@ app.get('/match/:matchup', (req, res) => {
   <link rel="alternate" hreflang="es" href="${esUrl}"/>
   <link rel="alternate" hreflang="en" href="${canonUrl}"/>
   <link rel="alternate" hreflang="x-default" href="${canonUrl}"/>
-  <meta property="og:type" content="website"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
+  <meta property="article:section" content="Historical Football Simulation"/>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -552,12 +733,21 @@ app.get('/match/:matchup', (req, res) => {
     .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
     .mp-footer a{color:#475569;text-decoration:none}
     .mp-footer a:hover{text-decoration:underline}
+    .mp-stats-section{margin-bottom:2rem}
+    .mp-stats-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.6rem}
+    .mp-stats-table{width:100%;border-collapse:collapse;font-size:.9rem}
+    .mp-stats-table caption{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;caption-side:top;text-align:left;padding-bottom:.4rem}
+    .mp-stats-table th{color:#94a3b8;font-size:.75rem;font-weight:700;letter-spacing:.06em;padding:.5rem .6rem;text-align:center}
+    .mp-stats-table th:nth-child(2){color:#7b2ff7}
+    .mp-stats-table td{padding:.4rem .6rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.05);font-weight:700;color:#e2e8f0}
+    .mp-stats-table td:nth-child(2){color:#64748b;font-size:.8rem;font-weight:600}
+    .mp-stats-hi{color:#7b2ff7}
     @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
   </style>
 </head>
 <body>
 <main class="mp-wrap">
-  <a class="mp-backlink" href="/">← GolazoX — Football Time Machine</a>
+  <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
     ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
@@ -574,6 +764,33 @@ app.get('/match/:matchup', (req, res) => {
   </div>
 
   <h1>Who would win: ${esc(labelA)} vs ${esc(labelB)}?</h1>
+
+  ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
+  <section class="mp-stats-section" aria-label="Stats comparison ${esc(labelA)} vs ${esc(labelB)}">
+    <h2 class="mp-stats-title">Stats Comparison</h2>
+    <table class="mp-stats-table">
+      <caption>${esc(labelA)} vs ${esc(labelB)} · stats by category</caption>
+      <thead><tr><th>${esc(labelA)}</th><th>Category</th><th>${esc(labelB)}</th></tr></thead>
+      <tbody>
+        ${[['attack','Attack'],['midfield','Midfield'],['defense','Defense'],['goalkeeping','Goalkeeping']].map(([k,label]) => {
+          const va = dataA.ratings[k] ?? '-';
+          const vb = dataB.ratings[k] ?? '-';
+          const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
+          const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
+          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+        }).join('')}
+        ${dataA.avgRating || dataB.avgRating ? `<tr>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
+          <td>Avg. Overall</td>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataB.avgRating) > Number(dataA.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataB.avgRating ?? '-'}</td>
+        </tr>` : ''}
+        ${dataA.formation || dataB.formation ? `<tr>
+          <td>${esc(dataA.formation) || '-'}</td><td>Formation</td><td>${esc(dataB.formation) || '-'}</td>
+        </tr>` : ''}
+      </tbody>
+    </table>
+  </section>` : ''}
+
   <p class="mp-intro">
     Use GolazoX's historical football simulator to pit <strong>${esc(labelA)}</strong> against <strong>${esc(labelB)}</strong>.
     Our probabilistic engine runs thousands of simulations using each era's real squads,
@@ -616,12 +833,17 @@ app.get('/match/:matchup', (req, res) => {
 </html>`;
 
   res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+  } catch (err) {
+    console.error('[/match/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-// ── /partida/:matchup — Portuguese (PT-BR) SSR page ──────────────────────────
-app.get('/partida/:matchup', (req, res) => {
+// -- /partida/:matchup � Portuguese (PT-BR) SSR page --------------------------
+app.get('/partida/:matchup', async (req, res) => {
+  try {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
-  const raw = req.params.matchup || '';
+  const raw = req.params.matchup || '-';
   const vsIdx = raw.indexOf('-vs-');
   if (vsIdx === -1) return res.status(404).send('Not Found');
   const partA = raw.slice(0, vsIdx);
@@ -639,16 +861,10 @@ app.get('/partida/:matchup', (req, res) => {
   const labelB = eraB ? `${nameB} ${eraB}` : nameB;
   const esc    = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-  const rosterFull = (slug, era) => {
-    try {
-      const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
-      const seasons = Object.keys(d.seasons || {}).sort((a, b) => Number(b) - Number(a));
-      const key = era && d.seasons[era] ? era : seasons[0];
-      return (d.seasons[key]?.players || []).slice(0, 11);
-    } catch (_) { return []; }
-  };
-  const playersA = rosterFull(slugA, eraA);
-  const playersB = rosterFull(slugB, eraB);
+  // Load rosters in parallel from cache (non-blocking)
+  const [dataA, dataB] = await Promise.all([_rosterFull(slugA, eraA), _rosterFull(slugB, eraB)]);
+  const playersA = dataA.players;
+  const playersB = dataB.players;
 
   const relatedMatches = (() => {
     const rivals = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen','ac-mailand','flamengo','brasilien','argentinien'];
@@ -663,14 +879,43 @@ app.get('/partida/:matchup', (req, res) => {
     return related;
   })();
 
-  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} — Simule a Partida | GolazoX`;
+  const pageTitle = `${esc(labelA)} vs ${esc(labelB)} · Simule a Partida | GolazoX`;
   const pageDesc  = `Quem venceria ${esc(labelA)} contra ${esc(labelB)}? Simule agora com o motor Monte Carlo do GolazoX. Elencos históricos reais, estatísticas e resultado em segundos.`;
   const canonUrl  = `${_routeSiteUrl}/partida/${esc(raw)}`;
   const esUrl     = `${_routeSiteUrl}/partido/${esc(raw)}`;
   const enUrl     = `${_routeSiteUrl}/match/${esc(raw)}`;
   const deepLink  = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
-  const badgeA    = entryA.badge && entryA.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryA.badge}` : '';
-  const badgeB    = entryB.badge && entryB.badge !== '/img/badge_placeholder.svg' ? `${_routeSiteUrl}${entryB.badge}` : '';
+  const badgeA    = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
+  const badgeB    = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
+
+  const faqItems = [
+    {
+      q: `Quem venceria entre ${labelA} e ${labelB}?`,
+      a: `De acordo com o motor estatístico do GolazoX, que simula milhares de partidas usando os elencos históricos reais de ${labelA} e ${labelB}, o resultado mais provável pode ser calculado gratuitamente em golazox.com. O simulador leva em conta as estatísticas históricas reais de cada jogador e a formação tática de cada equipe.`,
+    },
+    {
+      q: `Qual é a escalação de ${labelA}?`,
+      a: dataA.players.length
+        ? `A escalação titular de ${labelA} no GolazoX é: ${dataA.players.map(p => p.name).join(', ')}. Formação: ${dataA.formation || 'variável'}.`
+        : `O GolazoX possui o elenco histórico completo de ${nameA} com as estatísticas reais de cada jogador.`,
+    },
+    {
+      q: `Qual é a escalação de ${labelB}?`,
+      a: dataB.players.length
+        ? `A escalação titular de ${labelB} no GolazoX é: ${dataB.players.map(p => p.name).join(', ')}. Formação: ${dataB.formation || 'variável'}.`
+        : `O GolazoX possui o elenco histórico completo de ${nameB} com as estatísticas reais de cada jogador.`,
+    },
+    {
+      q: `Quem é o melhor jogador de ${labelA}?`,
+      a: dataA.top3.length
+        ? `Os jogadores mais bem avaliados de ${labelA} no GolazoX são: ${dataA.top3.map(p => `${p.name} (${p.rating})`).join(', ')}.`
+        : `O GolazoX inclui avaliações individuais de todos os jogadores de ${nameA}.`,
+    },
+    {
+      q: `Como simular ${labelA} contra ${labelB} de graça?`,
+      a: `Acesse golazox.com, selecione ${nameA} (era ${eraA || 'atual'}) como equipe A e ${nameB} (era ${eraB || 'atual'}) como equipe B, e clique em Simular. O motor Monte Carlo executa milhares de partidas em milissegundos e mostra o resultado mais provável. Completamente grátis, sem cadastro.`,
+    },
+  ];
 
   const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
@@ -684,7 +929,7 @@ app.get('/partida/:matchup', (req, res) => {
       },
       {
         '@type': 'WebPage',
-        'name': `${labelA} vs ${labelB} — Simulação de Futebol`,
+        'name': `${labelA} vs ${labelB} · Simulação de Futebol`,
         'description': pageDesc,
         'url': canonUrl,
         'inLanguage': 'pt-BR',
@@ -693,6 +938,14 @@ app.get('/partida/:matchup', (req, res) => {
           { '@type': 'SportsTeam', 'name': labelB, 'sport': 'Soccer', ...(badgeB ? { 'logo': badgeB } : {}) },
         ],
         'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _routeSiteUrl },
+      },
+      {
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.map(({ q, a }) => ({
+          '@type': 'Question',
+          'name': q,
+          'acceptedAnswer': { '@type': 'Answer', 'text': a },
+        })),
       },
     ],
   });
@@ -710,7 +963,9 @@ app.get('/partida/:matchup', (req, res) => {
   <link rel="alternate" hreflang="es" href="${esUrl}"/>
   <link rel="alternate" hreflang="en" href="${enUrl}"/>
   <link rel="alternate" hreflang="x-default" href="${esUrl}"/>
-  <meta property="og:type" content="website"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
+  <meta property="article:section" content="Simulação de Futebol Histórico"/>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -751,12 +1006,21 @@ app.get('/partida/:matchup', (req, res) => {
     .mp-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
     .mp-footer a{color:#475569;text-decoration:none}
     .mp-footer a:hover{text-decoration:underline}
+    .mp-stats-section{margin-bottom:2rem}
+    .mp-stats-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.6rem}
+    .mp-stats-table{width:100%;border-collapse:collapse;font-size:.9rem}
+    .mp-stats-table caption{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;caption-side:top;text-align:left;padding-bottom:.4rem}
+    .mp-stats-table th{color:#94a3b8;font-size:.75rem;font-weight:700;letter-spacing:.06em;padding:.5rem .6rem;text-align:center}
+    .mp-stats-table th:nth-child(2){color:#7b2ff7}
+    .mp-stats-table td{padding:.4rem .6rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.05);font-weight:700;color:#e2e8f0}
+    .mp-stats-table td:nth-child(2){color:#64748b;font-size:.8rem;font-weight:600}
+    .mp-stats-hi{color:#7b2ff7}
     @media(max-width:520px){.mp-rosters{grid-template-columns:1fr}.mp-teams{gap:.8rem}.mp-badge{width:52px;height:52px}}
   </style>
 </head>
 <body>
 <main class="mp-wrap">
-  <a class="mp-backlink" href="/">← GolazoX — Football Time Machine</a>
+  <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
     ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
@@ -773,6 +1037,33 @@ app.get('/partida/:matchup', (req, res) => {
   </div>
 
   <h1>Quem venceria: ${esc(labelA)} vs ${esc(labelB)}?</h1>
+
+  ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
+  <section class="mp-stats-section" aria-label="Comparação de estatísticas ${esc(labelA)} vs ${esc(labelB)}">
+    <h2 class="mp-stats-title">Comparação de Estatísticas</h2>
+    <table class="mp-stats-table">
+      <caption>${esc(labelA)} vs ${esc(labelB)} · estatísticas por categoria</caption>
+      <thead><tr><th>${esc(labelA)}</th><th>Categoria</th><th>${esc(labelB)}</th></tr></thead>
+      <tbody>
+        ${[['attack','Ataque'],['midfield','Meio-campo'],['defense','Defesa'],['goalkeeping','Goleiro']].map(([k,label]) => {
+          const va = dataA.ratings[k] ?? '-';
+          const vb = dataB.ratings[k] ?? '-';
+          const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
+          const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
+          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+        }).join('')}
+        ${dataA.avgRating || dataB.avgRating ? `<tr>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
+          <td>Média overall</td>
+          <td${dataA.avgRating && dataB.avgRating && Number(dataB.avgRating) > Number(dataA.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataB.avgRating ?? '-'}</td>
+        </tr>` : ''}
+        ${dataA.formation || dataB.formation ? `<tr>
+          <td>${esc(dataA.formation) || '-'}</td><td>Formação</td><td>${esc(dataB.formation) || '-'}</td>
+        </tr>` : ''}
+      </tbody>
+    </table>
+  </section>` : ''}
+
   <p class="mp-intro">
     Use o simulador de futebol histórico GolazoX para enfrentar <strong>${esc(labelA)}</strong> e <strong>${esc(labelB)}</strong>.
     Nosso motor probabilístico executa milhares de simulações com os elencos reais de cada era,
@@ -815,23 +1106,333 @@ app.get('/partida/:matchup', (req, res) => {
 </html>`;
 
   res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+  } catch (err) {
+    console.error('[/partida/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-// ── /equipo/:slug and /team/:slug — SSR team profile pages for SEO ──────────
+// -- /resultado/:matchup, /result/:matchup, /jogo/:matchup -----------------
+// Canonical pages for a pre-simulated result (indexed by Google for long-tail).
+// The simulation runs server-side with a stable salt derived from the URL,
+// so the result stays consistent across crawls. Cached 24 h per matchup.
+//
+// URL format: /resultado/real-madrid:2014-vs-fc-barcelona:2009
+// Supports: /resultado/ (ES), /result/ (EN), /jogo/ (PT-BR)
+
+// 24-hour result cache: "slugA:eraA-vs-slugB:eraB" ? { html, cachedAt }
+const _resultCache = new Map();
+const _RESULT_CACHE_TTL = 24 * 3600 * 1000; // 24 h
+
+async function _buildResultPage(slugA, eraA, slugB, eraB, lang, siteUrl) {
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const entryA = CATALOG.find(c => c.slug === slugA);
+  const entryB = CATALOG.find(c => c.slug === slugB);
+  if (!entryA || !entryB) return null;
+
+  const isEn = lang === 'en';
+  const isPt = lang === 'pt';
+  const nameA = isEn ? (entryA.nameEn || entryA.nameEs) : (entryA.nameEs || entryA.nameEn);
+  const nameB = isEn ? (entryB.nameEn || entryB.nameEs) : (entryB.nameEs || entryB.nameEn);
+  const labelA = eraA ? `${nameA} ${eraA}` : nameA;
+  const labelB = eraB ? `${nameB} ${eraB}` : nameB;
+
+  // Run the simulation with a deterministic salt (so Googlebot always sees the same result)
+  const saltStr = `${slugA}${eraA}${slugB}${eraB}`;
+  const stableSalt = saltStr.split('').reduce((h, c) => (Math.imul(31, h) + c.charCodeAt(0)) | 0, 0) & 0x7fffffff;
+
+  const [luA, luB] = await Promise.all([
+    lookupTeam(slugA, eraA),
+    lookupTeam(slugB, eraB),
+  ]);
+  if (!luA.found || !luB.found) return null;
+
+  const params = {
+    teamA: nameA, teamB: nameB,
+    eraA, eraB,
+    formationA: luA.formation || '-', formationB: luB.formation || '-',
+    cachedLineupA: luA, cachedLineupB: luB,
+    matchMode: '11v11',
+    matchSalt: stableSalt,
+    refereeId: null, isFinal: false, weatherId: null,
+  };
+  const sim = simulateMatch(params);
+  const scoreA = sim.finalScore?.teamA ?? 0;
+  const scoreB = sim.finalScore?.teamB ?? 0;
+  const pA = sim.probabilities?.teamA_win ?? 0;
+  const pD = sim.probabilities?.draw ?? 0;
+  const pB = sim.probabilities?.teamB_win ?? 0;
+  const topMom = sim.stats?.manOfMatch;
+
+  // I18n strings
+  const ui = {
+    es: {
+      titleSuffix: 'Resultado Simulado | GolazoX',
+      h1prefix: 'Resultado simulado:',
+      subTitle: 'Simulación GolazoX · Motor Monte Carlo',
+      probsTitle: 'Probabilidades a lo largo de 1000 partidas',
+      momTitle: 'Mejor jugador del partido',
+      ctaText: 'Ver estadísticas completas →',
+      altTitle: 'Resultados alternativos',
+      backLabel: '← GolazoX · Football Time Machine',
+      descPrefix: 'Resultado de la simulación',
+      winLabel: 'victorias', drawLabel: 'empates',
+      routePrefix: 'partido',
+    },
+    en: {
+      titleSuffix: 'Simulated Result | GolazoX',
+      h1prefix: 'Simulated result:',
+      subTitle: 'GolazoX Simulation · Monte Carlo Engine',
+      probsTitle: 'Win probabilities across 1,000 matches',
+      momTitle: 'Man of the Match',
+      ctaText: 'See full stats & historical squads →',
+      altTitle: 'Alternative scorelines',
+      backLabel: '← GolazoX · Football Time Machine',
+      descPrefix: 'Simulation result',
+      winLabel: 'wins', drawLabel: 'draws',
+      routePrefix: 'match',
+    },
+    pt: {
+      titleSuffix: 'Resultado Simulado | GolazoX',
+      h1prefix: 'Resultado simulado:',
+      subTitle: 'Simulação GolazoX · Motor Monte Carlo',
+      probsTitle: 'Probabilidades em 1.000 partidas',
+      momTitle: 'Melhor jogador da partida',
+      ctaText: 'Ver estatísticas completas →',
+      altTitle: 'Resultados alternativos',
+      backLabel: '← GolazoX · Football Time Machine',
+      descPrefix: 'Resultado da simulação',
+      winLabel: 'vitórias', drawLabel: 'empates',
+      routePrefix: 'partida',
+    },
+  };
+  const s = ui[isPt ? 'pt' : isEn ? 'en' : 'es'];
+
+  const matchupParam = `${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}-vs-${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
+  const ssrUrl  = `${siteUrl}/${s.routePrefix}/${matchupParam}`;
+  const selfUrl = `${siteUrl}/${isPt ? 'jogo' : isEn ? 'result' : 'resultado'}/${matchupParam}`;
+
+  const canonLang = isPt ? 'pt-BR' : isEn ? 'en' : 'es';
+  const pageTitle = `${esc(labelA)} ${scoreA} - ${scoreB} ${esc(labelB)} · ${s.titleSuffix}`;
+  const pageDesc  = `${s.descPrefix}: ${esc(labelA)} ${scoreA} - ${scoreB} ${esc(labelB)}. ${esc(labelA)}: ${pA}% ${s.winLabel}, ${pD}% ${s.drawLabel}. Motor Monte Carlo de GolazoX, gratis.`;
+  const badgeA = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
+  const badgeB = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
+
+  const altScores = (sim.altScores || []).slice(0, 5);
+
+  // Determine result label for schema
+  const winner = scoreA > scoreB ? labelA : scoreB > scoreA ? labelB : null;
+
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': siteUrl },
+          { '@type': 'ListItem', 'position': 2, 'name': `${labelA} vs ${labelB}`, 'item': ssrUrl },
+          { '@type': 'ListItem', 'position': 3, 'name': `${scoreA} - ${scoreB}` },
+        ],
+      },
+      {
+        '@type': 'SportsEvent',
+        'name': `${labelA} vs ${labelB} · ${s.subTitle}`,
+        'description': pageDesc.replace(/&\w+;/g, ' '),
+        'url': selfUrl,
+        'sport': 'Soccer',
+        'competitor': [
+          { '@type': 'SportsTeam', 'name': labelA, ...(badgeA ? { 'logo': badgeA } : {}) },
+          { '@type': 'SportsTeam', 'name': labelB, ...(badgeB ? { 'logo': badgeB } : {}) },
+        ],
+        ...(winner ? { 'winner': { '@type': 'SportsTeam', 'name': winner } } : {}),
+        'organizer': { '@type': 'Organization', 'name': 'GolazoX', 'url': siteUrl },
+      },
+      {
+        '@type': 'WebPage',
+        'url': selfUrl,
+        'name': pageTitle,
+        'description': pageDesc.replace(/&\w+;/g, ' '),
+        'inLanguage': canonLang,
+        'isPartOf': { '@type': 'WebSite', 'url': siteUrl, 'name': 'GolazoX' },
+      },
+    ],
+  });
+
+  return `<!DOCTYPE html>
+<html lang="${canonLang}">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>${pageTitle}</title>
+  <meta name="description" content="${pageDesc}"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="${selfUrl}"/>
+  <link rel="alternate" hreflang="es" href="${siteUrl}/resultado/${matchupParam}"/>
+  <link rel="alternate" hreflang="en" href="${siteUrl}/result/${matchupParam}"/>
+  <link rel="alternate" hreflang="pt-BR" href="${siteUrl}/jogo/${matchupParam}"/>
+  <link rel="alternate" hreflang="x-default" href="${siteUrl}/resultado/${matchupParam}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
+  <meta property="article:section" content="${isEn ? 'Football Simulation' : 'Simulación de Fútbol'}"/>
+  <meta property="og:title" content="${pageTitle}"/>
+  <meta property="og:description" content="${pageDesc}"/>
+  <meta property="og:url" content="${selfUrl}"/>
+  <meta property="og:image" content="${siteUrl}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">${jsonLd}</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
+    .rp-wrap{max-width:600px;margin:0 auto;padding:2rem 1.2rem 4rem}
+    .rp-back{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
+    .rp-back:hover{opacity:1;text-decoration:underline}
+    .rp-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.75rem}
+    .rp-scoreboard{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:1rem;padding:1.6rem 1.2rem;margin-bottom:1.5rem}
+    .rp-team{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1;min-width:100px;max-width:160px}
+    .rp-badge{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6))}
+    .rp-team-name{font-size:.9rem;font-weight:700;text-align:center;color:#f1f5f9;line-height:1.2}
+    .rp-era-badge{font-size:.72rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.12rem .45rem;border-radius:999px}
+    .rp-score{font-size:3.5rem;font-weight:900;color:#f8fafc;letter-spacing:-.02em;line-height:1;flex-shrink:0}
+    .rp-score-sep{font-size:2rem;font-weight:900;color:#475569;margin:0 -.3rem}
+    h1{font-size:1.1rem;font-weight:700;color:#94a3b8;margin-bottom:1.4rem;text-align:center}
+    .rp-probs{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:.875rem;padding:1.1rem 1.2rem;margin-bottom:1.2rem}
+    .rp-probs-title{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.85rem}
+    .rp-prob-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;text-align:center}
+    .rp-prob-val{font-size:1.6rem;font-weight:900;color:#f1f5f9}
+    .rp-prob-lbl{font-size:.7rem;color:#64748b;font-weight:600;margin-top:.2rem}
+    .rp-bar-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.3rem;margin-top:.7rem}
+    .rp-bar-bg{background:rgba(255,255,255,.06);border-radius:4px;height:5px;overflow:hidden}
+    .rp-bar-fill-a{background:#7b2ff7;height:100%;border-radius:4px}
+    .rp-bar-fill-d{background:#475569;height:100%;border-radius:4px}
+    .rp-bar-fill-b{background:#00d4ff;height:100%;border-radius:4px}
+    .rp-alt{margin-bottom:1.2rem}
+    .rp-alt-title{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:.6rem}
+    .rp-alt-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+    .rp-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.25rem .7rem;font-size:.82rem;font-weight:700;color:#cbd5e1}
+    .rp-chip small{font-weight:400;color:#64748b;margin-left:.3rem}
+    .rp-mom{background:rgba(123,47,247,.07);border:1px solid rgba(123,47,247,.2);border-radius:.875rem;padding:.9rem 1.1rem;margin-bottom:1.4rem;font-size:.9rem}
+    .rp-mom-title{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7b2ff7;margin-bottom:.4rem}
+    .rp-mom-name{font-weight:700;color:#f1f5f9}
+    .rp-cta{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;text-align:center;padding:1rem 2rem;border-radius:.875rem;font-size:1rem;font-weight:800;text-decoration:none;letter-spacing:.04em;margin-bottom:2rem;transition:opacity .15s}
+    .rp-cta:hover{opacity:.9}
+    .rp-footer{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:#334155;text-align:center}
+    .rp-footer a{color:#475569;text-decoration:none}
+    .rp-footer a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+<main class="rp-wrap">
+  <a class="rp-back" href="/">${esc(s.backLabel)}</a>
+  <div class="rp-eyebrow">${esc(s.subTitle)}</div>
+
+  <div class="rp-scoreboard">
+    <div class="rp-team">
+      ${badgeA ? `<img class="rp-badge" src="${badgeA}" alt="${esc(nameA)}" width="64" height="64" loading="eager"/>` : ''}
+      <div class="rp-team-name">${esc(nameA)}</div>
+      ${eraA ? `<div class="rp-era-badge">${esc(eraA)}</div>` : ''}
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <span class="rp-score">${scoreA}</span>
+      <span class="rp-score-sep">-</span>
+      <span class="rp-score">${scoreB}</span>
+    </div>
+    <div class="rp-team">
+      ${badgeB ? `<img class="rp-badge" src="${badgeB}" alt="${esc(nameB)}" width="64" height="64" loading="eager"/>` : ''}
+      <div class="rp-team-name">${esc(nameB)}</div>
+      ${eraB ? `<div class="rp-era-badge">${esc(eraB)}</div>` : ''}
+    </div>
+  </div>
+
+  <h1>${esc(s.h1prefix)} ${esc(labelA)} vs ${esc(labelB)}</h1>
+
+  <div class="rp-probs">
+    <div class="rp-probs-title">${esc(s.probsTitle)}</div>
+    <div class="rp-prob-row">
+      <div><div class="rp-prob-val">${pA}%</div><div class="rp-prob-lbl">${esc(labelA)}</div></div>
+      <div><div class="rp-prob-val">${pD}%</div><div class="rp-prob-lbl">${esc(s.drawLabel)}</div></div>
+      <div><div class="rp-prob-val">${pB}%</div><div class="rp-prob-lbl">${esc(labelB)}</div></div>
+    </div>
+    <div class="rp-bar-row">
+      <div class="rp-bar-bg"><div class="rp-bar-fill-a" style="width:${pA}%"></div></div>
+      <div class="rp-bar-bg"><div class="rp-bar-fill-d" style="width:${pD}%"></div></div>
+      <div class="rp-bar-bg"><div class="rp-bar-fill-b" style="width:${pB}%"></div></div>
+    </div>
+  </div>
+
+  ${altScores.length ? `
+  <div class="rp-alt">
+    <div class="rp-alt-title">${esc(s.altTitle)}</div>
+    <div class="rp-alt-chips">
+      ${altScores.map(a => `<span class="rp-chip">${esc(a.score)}<small>${a.probability}%</small></span>`).join('')}
+    </div>
+  </div>` : ''}
+
+  ${topMom ? `
+  <div class="rp-mom">
+    <div class="rp-mom-title">${esc(s.momTitle)}</div>
+    <div class="rp-mom-name">${esc(topMom.name)}${topMom.rating ? ` · ${topMom.rating}` : ''}</div>
+  </div>` : ''}
+
+  <a class="rp-cta" href="${ssrUrl}">${esc(s.ctaText)}</a>
+
+  <div class="rp-footer">
+    <a href="/">GolazoX</a> · <a href="/legal">${isEn ? 'Legal Notice' : 'Aviso Legal'}</a> · <a href="/privacy">${isEn ? 'Privacy' : 'Privacidad'}</a>
+    · ${isEn ? 'Historical football simulator · Not affiliated with FIFA, UEFA or any club' : 'Simulador de fútbol histórico · Sin afiliación con FIFA, UEFA ni clubes'}
+  </div>
+</main>
+</body>
+</html>`;
+}
+
+const _handleResultRoute = (routeLang) => async (req, res) => {
+  const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
+  const raw = req.params.matchup || '-';
+  const vsIdx = raw.indexOf('-vs-');
+  if (vsIdx === -1) return res.status(404).send('Not Found');
+  const [slugA, eraA = ''] = raw.slice(0, vsIdx).split(':');
+  const [slugB, eraB = ''] = raw.slice(vsIdx + 4).split(':');
+
+  // Reject unknown slugs early
+  if (!CATALOG.find(c => c.slug === slugA) || !CATALOG.find(c => c.slug === slugB)) {
+    return res.status(404).send('Not Found');
+  }
+
+  const cacheKey = `${routeLang}:${slugA}:${eraA}-vs-${slugB}:${eraB}`;
+  const cached = _resultCache.get(cacheKey);
+  if (cached && (Date.now() - cached.cachedAt) < _RESULT_CACHE_TTL) {
+    return res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(cached.html);
+  }
+
+  try {
+    const html = await _buildResultPage(slugA, eraA, slugB, eraB, routeLang, _routeSiteUrl);
+    if (!html) return res.status(404).send('Not Found');
+    _resultCache.set(cacheKey, { html, cachedAt: Date.now() });
+    res.set('Cache-Control', 'public, max-age=3600').type('text/html').send(html);
+  } catch (err) {
+    console.error('[/resultado/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
+};
+
+app.get('/resultado/:matchup', _handleResultRoute('es'));
+app.get('/result/:matchup',    _handleResultRoute('en'));
+app.get('/jogo/:matchup',      _handleResultRoute('pt'));
+
+// -- /equipo/:slug and /team/:slug � SSR team profile pages for SEO ----------
 // URL examples:
-//   /equipo/real-madrid        → Spanish profile (latest season)
-//   /equipo/real-madrid:2002   → Spanish profile for 2002 season
-//   /team/real-madrid:2002     → English version
-const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
+//   /equipo/real-madrid        ? Spanish profile (latest season)
+//   /equipo/real-madrid:2002   ? Spanish profile for 2002 season
+//   /team/real-madrid:2002     ? English version
+const _buildTeamPage = ({ entry, slug, era, lang, siteUrl, squadData }) => {
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   const isEn = lang === 'en';
   const name = isEn ? (entry.nameEn||entry.nameEs) : (entry.nameEs||entry.nameEn);
-  const badgeUrl = (entry.badge && entry.badge !== BADGE_PLACEHOLDER) ? `${siteUrl}${entry.badge}` : '';
+  const badgeUrl = (entry.badge && entry.badge !== BADGE_PLACEHOLDER) ? entry.badge : '';
 
-  // Load 11-man roster for selected era (or latest season by default)
+  // Use pre-loaded squadData (from async cache) or fall back to sync read
   let players = [], resolvedEra = '';
   try {
-    const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
+    const d = squadData || JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', `${slug}.json`), 'utf8').replace(/^\uFEFF/, ''));
     const seasons = Object.keys(d.seasons||{}).sort((a,b) => Number(b)-Number(a));
     const key = (era && d.seasons[era]) ? era : seasons[0];
     resolvedEra = key;
@@ -847,8 +1448,8 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
   const deepLink     = `${siteUrl}/?a=${encodeURIComponent(displayEra ? `${slug}:${displayEra}` : slug)}`;
 
   const pageTitle = isEn
-    ? `${esc(label)} — Historical Squad & Simulator | GolazoX`
-    : `${esc(label)} — Plantilla Histórica y Simulador | GolazoX`;
+    ? `${esc(label)} · Historical Squad & Simulator | GolazoX`
+    : `${esc(label)} · Plantilla Histórica y Simulador | GolazoX`;
   const pageDesc = isEn
     ? `${esc(label)}: full historical squad, key players, stats. Simulate ${esc(name)} against the greatest teams in football history with GolazoX's free Monte Carlo engine.`
     : `Plantilla histórica de ${esc(label)}: jugadores titulares, estadísticas y posiciones. Simula ${esc(name)} contra los mejores equipos de la historia. Motor Monte Carlo, gratis.`;
@@ -928,7 +1529,7 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
   </style>
 </head>
 <body><main class="tp">
-  <a class="tp-back" href="/">← GolazoX — Football Time Machine</a>
+  <a class="tp-back" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="tp-hdr">
     ${badgeUrl ? `<img class="tp-badge" src="${badgeUrl}" alt="${esc(name)}" width="80" height="80" loading="eager"/>` : ''}
@@ -955,7 +1556,7 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
 
   ${players.length ? `
   <div class="tp-roster">
-    <div class="tp-sec">${isEn ? `${esc(label)} lineup` : `Alineación — ${esc(label)}`}</div>
+    <div class="tp-sec">${isEn ? `${esc(label)} lineup` : `Alineación · ${esc(label)}`}</div>
     ${players.map(p => `<div class="tp-row"><span class="tp-pname">${esc(p.name)}</span><span class="tp-pos">${esc(p.position)}</span></div>`).join('')}
   </div>` : ''}
 
@@ -977,41 +1578,53 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl }) => {
 </main></body></html>`;
 };
 
-app.get('/equipo/:slug', (req, res) => {
+app.get('/equipo/:slug', async (req, res) => {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
-  const raw = req.params.slug || '';
+  const raw = req.params.slug || '-';
   const ci  = raw.indexOf(':');
   const slug = ci === -1 ? raw : raw.slice(0, ci);
   const era  = ci === -1 ? '' : raw.slice(ci + 1);
   if (!/^[a-z0-9-]+$/i.test(slug) || (era && !/^[a-z0-9-]+$/i.test(era))) return res.status(404).send('Not Found');
   const entry = CATALOG.find(c => c.slug === slug);
   if (!entry) return res.status(404).send('Not Found');
-  res.set('Cache-Control', 'public, max-age=3600').type('text/html')
-     .send(_buildTeamPage({ entry, slug, era, lang: 'es', siteUrl: _routeSiteUrl }));
+  try {
+    const squadData = await _loadSquad(slug);
+    res.set('Cache-Control', 'public, max-age=3600').type('text/html')
+       .send(_buildTeamPage({ entry, slug, era, lang: 'es', siteUrl: _routeSiteUrl, squadData }));
+  } catch (err) {
+    console.error('[/equipo/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-app.get('/team/:slug', (req, res) => {
+app.get('/team/:slug', async (req, res) => {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
-  const raw = req.params.slug || '';
+  const raw = req.params.slug || '-';
   const ci  = raw.indexOf(':');
   const slug = ci === -1 ? raw : raw.slice(0, ci);
   const era  = ci === -1 ? '' : raw.slice(ci + 1);
   if (!/^[a-z0-9-]+$/i.test(slug) || (era && !/^[a-z0-9-]+$/i.test(era))) return res.status(404).send('Not Found');
   const entry = CATALOG.find(c => c.slug === slug);
   if (!entry) return res.status(404).send('Not Found');
-  res.set('Cache-Control', 'public, max-age=3600').type('text/html')
-     .send(_buildTeamPage({ entry, slug, era, lang: 'en', siteUrl: _routeSiteUrl }));
+  try {
+    const squadData = await _loadSquad(slug);
+    res.set('Cache-Control', 'public, max-age=3600').type('text/html')
+       .send(_buildTeamPage({ entry, slug, era, lang: 'en', siteUrl: _routeSiteUrl, squadData }));
+  } catch (err) {
+    console.error('[/team/] SSR error:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-// Fuentes auto-alojadas: cache inmutable 1 año
+// Fuentes auto-alojadas: cache inmutable 1 a�o
 app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   maxAge: '1y',
   immutable: true,
 }));
 
-// Imágenes de árbitros y estadios — nunca cachear (se pueden sustituir en cualquier momento)
+// Im�genes de �rbitros y estadios � nunca cachear (se pueden sustituir en cualquier momento)
 app.use('/img/referees', (req, res, next) => {
-  const accepts = req.headers['accept'] || '';
+  const accepts = req.headers['accept'] || '-';
   if (accepts.includes('image/webp') && /\.(jpg|jpeg|png)$/i.test(req.path)) {
     const webpFile = req.path.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     const webpPath = path.join(__dirname, 'public', 'img', 'referees', webpFile);
@@ -1027,7 +1640,7 @@ app.use('/img/referees', (req, res, next) => {
   setHeaders: (res) => res.set('Cache-Control', 'public, max-age=604800'),
 }));
 app.use('/img/stadiums', (req, res, next) => {
-  const accepts = req.headers['accept'] || '';
+  const accepts = req.headers['accept'] || '-';
   if (accepts.includes('image/webp') && /\.(jpg|jpeg|png)$/i.test(req.path)) {
     const webpFile = req.path.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     const webpPath = path.join(__dirname, 'public', 'img', 'stadiums', webpFile);
@@ -1043,7 +1656,7 @@ app.use('/img/stadiums', (req, res, next) => {
   setHeaders: (res) => res.set('Cache-Control', 'public, max-age=604800'),
 }));
 
-// Service Worker — must be served from the root scope with the correct header
+// Service Worker � must be served from the root scope with the correct header
 // so it can intercept all requests under '/'.
 // The Service-Worker-Allowed header grants it scope beyond its script directory.
 app.get('/sw.js', (_req, res) => {
@@ -1053,7 +1666,7 @@ app.get('/sw.js', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'sw.js'));
 });
 
-// Versioned assets (app.js?v=N, style.css?v=N) — serve minified in production.
+// Versioned assets (app.js?v=N, style.css?v=N) � serve minified in production.
 const IS_PROD = process.env.NODE_ENV === 'production';
 app.get('/app.js', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=31536000, immutable');
@@ -1070,9 +1683,9 @@ app.get('/style.css', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', file));
 });
 
-// Badge images — serve WebP when available and browser accepts it (transparent format negotiation)
+// Badge images � serve WebP when available and browser accepts it (transparent format negotiation)
 app.use('/img/badges', (req, res, next) => {
-  const accepts = req.headers['accept'] || '';
+  const accepts = req.headers['accept'] || '-';
   if (accepts.includes('image/webp') && /\.(png|jpg)$/i.test(req.path)) {
     const webpPath = path.join(__dirname, 'public', 'img', 'badges', req.path.replace(/\.(png|jpg)$/i, '.webp'));
     if (fs.existsSync(webpPath)) {
@@ -1087,7 +1700,7 @@ app.use('/img/badges', (req, res, next) => {
   setHeaders: (res) => res.set('Cache-Control', 'public, max-age=2592000'),
 }));
 
-// Long-cache for any request with ?v= (versioned static assets — safe to cache 1 year)
+// Long-cache for any request with ?v= (versioned static assets � safe to cache 1 year)
 app.use((req, res, next) => {
   if (req.query.v && /\.(js|css|woff2?|png|webp|jpg|svg|ico)$/.test(req.path)) {
     res.set('Cache-Control', 'public, max-age=31536000, immutable');
@@ -1097,13 +1710,13 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ── Flag proxy — caches country flags locally from flagcdn.com ────────────────
-// Subdivision codes not supported by flagcdn → map to closest alternative
+// -- Flag proxy � caches country flags locally from flagcdn.com ----------------
+// Subdivision codes not supported by flagcdn ? map to closest alternative
 const _FLAG_ISO_MAP = {
-  'gb-eng': 'gb',   // England → UK flag
-  'gb-sct': 'gb',   // Scotland → UK flag (flagcdn has no gb-sct)
-  'gb-wls': 'gb',   // Wales → UK flag
-  'gb-nir': 'gb',   // Northern Ireland → UK flag
+  'gb-eng': 'gb',   // England ? UK flag
+  'gb-sct': 'gb',   // Scotland ? UK flag (flagcdn has no gb-sct)
+  'gb-wls': 'gb',   // Wales ? UK flag
+  'gb-nir': 'gb',   // Northern Ireland ? UK flag
 };
 const _flagCache = new Map();
 app.get('/flag/:iso', async (req, res) => {
@@ -1133,7 +1746,7 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
   setHeaders: (res) => { res.set('Access-Control-Allow-Origin', '*'); },
 }));
 
-// Shared JS modules — served from webapp root (used by both Node.js and browser)
+// Shared JS modules � served from webapp root (used by both Node.js and browser)
 app.get('/player_ratings.min.js', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.type('application/javascript');
@@ -1146,8 +1759,8 @@ app.get('/player_ratings.js', (_req, res) => {
   res.sendFile(path.join(__dirname, 'player_ratings.js'));
 });
 
-// ── Config endpoint: injects site URL into the frontend ──────────────────────
-// Loaded as /config.js — exposes only safe, non-secret config to the client.
+// -- Config endpoint: injects site URL into the frontend ----------------------
+// Loaded as /config.js � exposes only safe, non-secret config to the client.
 app.get('/config.js', (_req, res) => {
   const safeUrl = SITE_URL.replace(/[\\"'<>]/g, '');
   res.type('application/javascript').set('Cache-Control', 'public, max-age=3600').send(
@@ -1164,54 +1777,54 @@ const _rl = (max, windowMs) => rateLimit({
   message:         { error: 'Too many requests. Please wait.' },
   keyGenerator:    ipKeyGenerator,
 });
-const _rateLimit = _rl;  // alias — all call sites unchanged
+const _rateLimit = _rl;  // alias � all call sites unchanged
 
-// ════════════════════════════════════════════════════════════════════════════
+// ----------------------------------------------------------------------------
 // CAPA DE SEGURIDAD ANTI-DDOS / ANTI-SCRAPING / ANTI-BRUTEFORCE
-// ════════════════════════════════════════════════════════════════════════════
+// ----------------------------------------------------------------------------
 
-// ── 1. Bloqueo de bots y clientes automatizados (API endpoints) ──────────
-// Regla: si el UA está vacío o coincide con herramientas CLI/scraping, devuelve
-// 403. Los navegadores reales siempre envían un UA con "Mozilla/". Los crawlers
-// SEO legítimos (Googlebot, Bingbot) nunca deberían llamar a los endpoints de
-// la API, pero si lo hacen no se les bloquea para no romper indexación.
+// -- 1. Bloqueo de bots y clientes automatizados (API endpoints) ----------
+// Regla: si el UA est� vac�o o coincide con herramientas CLI/scraping, devuelve
+// 403. Los navegadores reales siempre env�an un UA con "Mozilla/". Los crawlers
+// SEO leg�timos (Googlebot, Bingbot) nunca deber�an llamar a los endpoints de
+// la API, pero si lo hacen no se les bloquea para no romper indexaci�n.
 const _BLOCKED_UA_RE = /^(curl|wget|python[\s\-/]|scrapy|go-http-client|java\/|okhttp\/|axios\/|node-fetch|got\/|libwww|libcurl|perl\/|ruby\/|php\/|nikto|sqlmap|masscan|nmap|zgrab|nuclei[/ ]|dirbuster|gobuster|wfuzz|ffuf|hydra[/ ]|acunetix|nessus|burp|zap\/)/i;
 
 const _apiBotBlock = (req, res, next) => {
-  const ua = req.headers['user-agent'] || '';
+  const ua = req.headers['user-agent'] || '-';
   if (!ua || _BLOCKED_UA_RE.test(ua)) {
     console.warn(`[security:bot] BLOCKED IP=${req.ip} UA="${ua.slice(0, 120)}" ${req.method} ${req.path}`);
     return res.status(403).set('Retry-After', '3600').json({ error: 'Forbidden' });
   }
   next();
 };
-// Sólo se aplica a los endpoints de datos — NO a ficheros estáticos ni HTML
+// S�lo se aplica a los endpoints de datos � NO a ficheros est�ticos ni HTML
 app.use(['/simulate', '/simulate-bulk', '/lookup', '/catalog', '/suggest', '/referees'], _apiBotBlock);
 
-// ── 2. Presupuesto global de peticiones: 200 req / 5 min por IP ──────────
-// Capa compartida para TODAS las rutas. Un usuario legítimo rara vez supera
+// -- 2. Presupuesto global de peticiones: 200 req / 5 min por IP ----------
+// Capa compartida para TODAS las rutas. Un usuario leg�timo rara vez supera
 // 40 req/min; un bot en paralelo lo satura en segundos.
-// Si se supera: 429 con Retry-After. Se registra IP + ruta para análisis.
+// Si se supera: 429 con Retry-After. Se registra IP + ruta para an�lisis.
 app.use(rateLimit({
   windowMs: 5 * 60 * 1000,   // ventana de 5 minutos
-  max:      200,              // máximo acumulado entre TODOS los endpoints
+  max:      200,              // m�ximo acumulado entre TODOS los endpoints
   standardHeaders: 'draft-6',
   legacyHeaders:   false,
   message:         { error: 'Rate limit global. Espera unos minutos.' },
   keyGenerator:    ipKeyGenerator,
   handler: (req, res, _next, options) => {
-    console.warn(`[security:global-rl] IP=${req.ip} ${req.method} ${req.path} → HTTP 429`);
+    console.warn(`[security:global-rl] IP=${req.ip} ${req.method} ${req.path} ? HTTP 429`);
     res.status(options.statusCode)
        .set('Retry-After', String(Math.ceil(options.windowMs / 1000)))
        .json(options.message);
   },
 }));
 
-// ── 3. Slow-down progresivo en /simulate ─────────────────────────────────
+// -- 3. Slow-down progresivo en /simulate ---------------------------------
 // Las primeras 3 simulaciones/min: sin demora (flujo normal de usuario).
-// A partir de la 4ª: +1 s por llamada extra, máximo 6 s.
+// A partir de la 4�: +1 s por llamada extra, m�ximo 6 s.
 // Efecto: el usuario lo nota levemente; un script en bucle queda bloqueado
-// esperando sin consumir tus créditos de hosting en cómputo intensivo.
+// esperando sin consumir tus cr�ditos de hosting en c�mputo intensivo.
 const _simulateSlowDown = slowDown({
   windowMs:     60_000,   // ventana de 1 minuto
   delayAfter:   3,        // sin demora en las primeras 3 llamadas
@@ -1223,11 +1836,11 @@ const _simulateSlowDown = slowDown({
   headers:      true,     // X-SlowDown-* headers para debug
 });
 
-// ── 4. Validación de Content-Type en /simulate ───────────────────────────
+// -- 4. Validaci�n de Content-Type en /simulate ---------------------------
 // Rechaza payloads que no sean JSON plano (bloquea formularios HTML y ataques
 // de tipo content-type confusion que intentan bypassar parsers).
 const _requireJSON = (req, res, next) => {
-  const ct = req.headers['content-type'] || '';
+  const ct = req.headers['content-type'] || '-';
   if (!ct.includes('application/json')) {
     return res.status(415).json({ error: 'Content-Type must be application/json' });
   }
@@ -1240,17 +1853,17 @@ const _VALID_FORMATIONS = new Set([
   '4-1-2-1-2','1-2-1','1-1-2','2-1-1','1-1','1-2','2-1','3-2','2-3',
 ]);
 
-// ── GET /catalog ──────────────────────────────
+// -- GET /catalog ------------------------------
 // Returns the full catalog of local teams + their available seasons.
 // Cached for 5 min (re-run seed to update).
-// Rate: 8/5min per IP (1.6/min) — it's a ~150 kB JSON payload with all 471 teams;
+// Rate: 8/5min per IP (1.6/min) � it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
   res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=60');
   res.json(CATALOG);
 });
 
-// ── GET /catalog-groups ───────────────────────
+// -- GET /catalog-groups -----------------------
 // Diagnostic: returns each team's slug, group, and source (meta vs file).
 // Publicly readable since /catalog already exposes group data.
 app.get('/catalog-groups', (_req, res) => {
@@ -1266,11 +1879,11 @@ app.get('/catalog-groups', (_req, res) => {
   res.json(summary);
 });
 
-// ── GET /suggest ─────────────────────────────
-// Query: ?q=bar  → returns up to 15 matching {name, slug, badge} objects for autocomplete
-// Rate: 40/min — fast autocomplete, pero con margen para que un bot necesite más.
+// -- GET /suggest -----------------------------
+// Query: ?q=bar  ? returns up to 15 matching {name, slug, badge} objects for autocomplete
+// Rate: 40/min � fast autocomplete, pero con margen para que un bot necesite m�s.
 app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
-  const q = String(req.query.q || '').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
+  const q = String(req.query.q || '-').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
   const matches = q.length < 1
     ? CATALOG.slice(0, 20)
     : CATALOG.filter(t =>
@@ -1297,7 +1910,7 @@ app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
   res.json(result);
 });
 
-// ── GET /badges ───────────────────────────────
+// -- GET /badges -------------------------------
 // Gallery page: returns all known teams with badges as HTML
 app.get('/badges', _rateLimit(30, 60000), (_req, res) => {
   const rows = _allTeams.map(t =>
@@ -1316,19 +1929,19 @@ h1{color:#00d4ff;margin-bottom:1.2rem}input{background:#1a2236;color:#e2e8f0;bor
 .bg-card img{width:56px;height:56px;object-fit:contain;display:block;margin:0 auto 6px}
 .bg-name{font-size:.65rem;line-height:1.3;word-break:break-word;color:#94a3b8}
 </style></head><body>
-<h1>⚽ Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
-<input id="f" placeholder="Filtrar…" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
+<h1>? Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
+<input id="f" placeholder="Filtrar�" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
 <div class="bg-grid">${rows}</div></body></html>`);
 });
 
-// ── GET /lookup ──────────────────────────────
+// -- GET /lookup ------------------------------
 // Query: ?team=Arsenal&era=2004
 // Returns live squad data from local DB or TheSportsDB API
-// Rate: 15/min — cada lookup puede llegar a hacer una llamada externa; 15 es
-// más que suficiente para uso interactivo y inhibe el harvesting automatizado.
+// Rate: 15/min � cada lookup puede llegar a hacer una llamada externa; 15 es
+// m�s que suficiente para uso interactivo y inhibe el harvesting automatizado.
 app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
   try {
-    const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
+    const sanitise = (s) => String(s || '-').replace(/[<>]/g, '').trim().slice(0, 80);
     const team = sanitise(req.query.team);
     const era  = sanitise(req.query.era);
 
@@ -1336,15 +1949,15 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
 
     const result  = await lookupTeam(team, era);
 
-    // Team not found — return a helpful error distinguishing offline vs unknown
+    // Team not found � return a helpful error distinguishing offline vs unknown
     if (!result.found) {
       const isOffline = process.env.OFFLINE_MODE === 'true';
       return res.status(404).json({
         found:   false,
         offline: isOffline,
         error:   isOffline
-          ? `"${team}" no está en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
-          : `No se encontró "${team}". Comprueba el nombre o prueba otra temporada.`,
+          ? `"${team}" no est� en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
+          : `No se encontr� "${team}". Comprueba el nombre o prueba otra temporada.`,
       });
     }
 
@@ -1358,8 +1971,8 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     // lineup instead of the raw ~25-player squad stored in cache.
     let displayResult = result;
     if (result.found && result.players && result.players.length > 0) {
-      const formationOverride = String(req.query.formation || '').replace(/[^0-9\-]/g, '').trim();
-      const lineup = buildLineupFromCache(result, formationOverride || '');
+      const formationOverride = String(req.query.formation || '-').replace(/[^0-9\-]/g, '').trim();
+      const lineup = buildLineupFromCache(result, formationOverride || '-');
       // Resolve to catalog display name (same as /simulate) so deriveRatings hint tokens match
       const slug         = _resolveTeamSlug(team);
       const catalogEntry = CATALOG.find(c => c.slug === slug);
@@ -1371,14 +1984,14 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     res.json({ ...displayResult, badgeUrl });
   } catch (err) {
     console.error('[/lookup error]', err.message);
-    res.status(500).json({ found: false, error: 'Error al buscar el equipo. Inténtalo de nuevo.' });
+    res.status(500).json({ found: false, error: 'Error al buscar el equipo. Int�ntalo de nuevo.' });
   }
 });
 
-// ── POST /simulate ────────────────────────────
+// -- POST /simulate ----------------------------
 // Body: { teamA, teamB, eraA, eraB, formationA, formationB }
 // Returns: { lineups, ratings, probabilities, finalScore, scorers, altScores, narrative }
-// Rate: 10/min hard block + slow-down progresivo a partir de la 4ª llamada.
+// Rate: 10/min hard block + slow-down progresivo a partir de la 4� llamada.
 // Content-Type: application/json requerido (bloquea formularios y payloads raw).
 app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), async (req, res) => {
   try {
@@ -1393,7 +2006,7 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
     // Sanitise inputs (max 80 chars each, strip HTML)
     const sanitise = (s) => String(s).replace(/[<>]/g, '').trim().slice(0, 80);
     const sanitiseFormation = (s) => {
-      const f = String(s || '').replace(/[^0-9\-]/g, '').trim();
+      const f = String(s || '-').replace(/[^0-9\-]/g, '').trim();
       return _VALID_FORMATIONS.has(f) ? f : '';
     };
 
@@ -1428,10 +2041,10 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 
     // Reject simulation if either team was not found anywhere
     if (!luA.found) {
-      return res.status(404).json({ error: `Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}. Prueba sin a�o o con el nombre en ingl�s.` });
     }
     if (!luB.found) {
-      return res.status(404).json({ error: `Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}. Prueba sin a�o o con el nombre en ingl�s.` });
     }
 
     // Apply pre-match player overrides (from user substitutions in the pre-match screen).
@@ -1440,8 +2053,8 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
     const sanitisePlayers = (arr) => {
       if (!Array.isArray(arr) || arr.length < 8) return null;
       const cleaned = arr.slice(0, 25).map(p => ({
-        name:     String(p.name || '').replace(/[<>]/g, '').trim().slice(0, 60),
-        position: VALID_POSITIONS.has(String(p.position || '').toUpperCase()) ? String(p.position).toUpperCase() : null,
+        name:     String(p.name || '-').replace(/[<>]/g, '').trim().slice(0, 60),
+        position: VALID_POSITIONS.has(String(p.position || '-').toUpperCase()) ? String(p.position).toUpperCase() : null,
       })).filter(p => p.name.length > 0 && p.position);
       return cleaned.length >= 8 ? cleaned : null;
     };
@@ -1486,9 +2099,9 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
   }
 });
 
-// ── POST /simulate-bulk ───────────────────────────────────────────────────
+// -- POST /simulate-bulk ---------------------------------------------------
 // Batch simulator for tournaments. Accepts up to 50 match pairs, returns
-// minimal results (score + optional penalties) — no narrative, no badges.
+// minimal results (score + optional penalties) � no narrative, no badges.
 // Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
 app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
   try {
@@ -1502,15 +2115,15 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       return res.status(400).json({ error: 'max 50 matches per bulk call' });
     }
 
-    const sanitise = (s) => String(s || '').replace(/[<>]/g, '').trim().slice(0, 80);
+    const sanitise = (s) => String(s || '-').replace(/[<>]/g, '').trim().slice(0, 80);
 
     // Build pairs and collect unique team lookup keys
     const _clampOvr = (v) => (v != null) ? Math.max(60, Math.min(99, Math.trunc(Number(v)) || 0)) || null : null;
     const teamPairs = matches.map((m, i) => ({
       slugA:    _resolveTeamSlug(sanitise(m.teamA)),
       slugB:    _resolveTeamSlug(sanitise(m.teamB)),
-      eraA:     sanitise(m.eraA || ''),
-      eraB:     sanitise(m.eraB || ''),
+      eraA:     sanitise(m.eraA || '-'),
+      eraB:     sanitise(m.eraB || '-'),
       salt:     (Math.trunc(Number(m.salt || i)) || 0) & 0x7fffffff,
       penalties: !!m.penalties,
       isFinal:  !!m.isFinal,
@@ -1535,7 +2148,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       teamCache.set(key, r);
     }));
 
-    // Convert OVR scalar (60–99) → synthetic ATK/MID/DEF/GK for biasing deriveRatings.
+    // Convert OVR scalar (60�99) ? synthetic ATK/MID/DEF/GK for biasing deriveRatings.
     // The four offsets average to zero so avg(result) == ovr.
     const _ovrToRatings = (ovr) => ({
       attack:      Math.min(99, ovr + 3),
@@ -1544,7 +2157,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       goalkeeping: Math.max(60, ovr - 2),
     });
 
-    // Simulate each match (synchronous — no timeline/narrative needed)
+    // Simulate each match (synchronous � no timeline/narrative needed)
     const results = teamPairs.map(pair => {
       const luA = teamCache.get(lookupKey(pair.slugA, pair.eraA)) || { found: false };
       const luB = teamCache.get(lookupKey(pair.slugB, pair.eraB)) || { found: false };
@@ -1563,7 +2176,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       const params = {
         teamA: dispA, teamB: dispB,
         eraA: pair.eraA, eraB: pair.eraB,
-        formationA: effLuA.formation || '', formationB: effLuB.formation || '',
+        formationA: effLuA.formation || '-', formationB: effLuB.formation || '-',
         cachedLineupA: effLuA, cachedLineupB: effLuB,
         matchMode: '11v11',
         matchSalt: pair.salt,
@@ -1606,32 +2219,32 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
   }
 });
 
-// ── GET /referees ─────────────────────────────────────────────────────────
+// -- GET /referees ---------------------------------------------------------
 // Returns the full list of available referees (id, name, multipliers).
 // Used by the client to populate the referee picker.
 app.get('/referees', _rateLimit(30, 60000), (_req, res) => {
   res.json(REFEREES);
 });
 
-// Images are served as static files from public/img/ — no proxy needed.
-// ── HTML escape helper (XSS prevention) ───────────────────
+// Images are served as static files from public/img/ � no proxy needed.
+// -- HTML escape helper (XSS prevention) -------------------
 const _esc = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-// ── Language helper — reads cookie or ?lang= param ────────
+// -- Language helper � reads cookie or ?lang= param --------
 const _lang = (req) => {
   const q = req.query && req.query.lang;
   if (q === 'en' || q === 'es') return q;
-  const cookie = req.headers.cookie || '';
+  const cookie = req.headers.cookie || '-';
   const m = cookie.match(/(?:^|;\s*)golazox_lang=([^;]+)/);
   if (m && (m[1] === 'en' || m[1] === 'es')) return m[1];
   return 'es';
 };
-// ── Páginas legales (LSSI-CE / RGPD) ─────────────────────
+// -- P�ginas legales (LSSI-CE / RGPD) ---------------------
 const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>${title} — GolazoX</title>
+  <title>${title} · GolazoX</title>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
   <link rel="stylesheet" href="/style.css?v=21"/>
   <style>
@@ -1651,11 +2264,11 @@ const OWNER_EMAIL = process.env.OWNER_EMAIL || 'info@golazox.com'; // NEVER rend
 const SITE_URL    = process.env.SITE_URL    || 'https://golazox.com';
 const CONTACT_FILE = path.join(__dirname, 'contact_messages.json');
 
-// ── Nodemailer transporter (optional — only active when EMAIL_PASS is set) ──
+// -- Nodemailer transporter (optional � only active when EMAIL_PASS is set) --
 // Set env vars in Hostinger panel:
 //   EMAIL_USER = info@golazox.com
-//   EMAIL_PASS = <password del buzón info@golazox.com en Hostinger>
-//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com — ver panel Hostinger → Email → Configure)
+//   EMAIL_PASS = <password del buz�n info@golazox.com en Hostinger>
+//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com � ver panel Hostinger ? Email ? Configure)
 //   EMAIL_PORT = 465  (SSL) o 587 (STARTTLS)
 const _emailHost = process.env.EMAIL_HOST || 'smtp.hostinger.com';
 const _emailPort = parseInt(process.env.EMAIL_PORT || '465', 10);
@@ -1671,10 +2284,10 @@ const _mailer = (process.env.EMAIL_USER && process.env.EMAIL_PASS)
 if (_mailer) {
   _mailer.verify(err => {
     if (err) console.warn('[mail] SMTP verify failed:', err.message);
-    else     console.log('[mail] SMTP ready → will email', OWNER_EMAIL);
+    else     console.log('[mail] SMTP ready ? will email', OWNER_EMAIL);
   });
 } else {
-  console.log('[mail] No EMAIL_USER/EMAIL_PASS set — contact messages saved to file only.');
+  console.log('[mail] No EMAIL_USER/EMAIL_PASS set � contact messages saved to file only.');
 }
 
 async function _sendContactEmail({ name, email, subject, message }) {
@@ -1684,7 +2297,7 @@ async function _sendContactEmail({ name, email, subject, message }) {
       from:    `"GolazoX Contact" <${process.env.EMAIL_USER}>`,
       to:      OWNER_EMAIL,
       replyTo: email,
-      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} – ${name}`,
+      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} � ${name}`,
       text:    `De: ${name} <${email}>\n\nAsunto: ${subject || '(sin asunto)'}\n\n${message}`,
       html:    `<p><strong>De:</strong> ${_esc(name)} &lt;${_esc(email)}&gt;</p>
                 <p><strong>Asunto:</strong> ${_esc(subject || '(sin asunto)')}</p>
@@ -1702,12 +2315,12 @@ app.get('/legal', (req, res) => {
   if (lang === 'en') {
     res.type('text/html').send(LEGAL_HTML('Legal Notice', `
     <h1>Legal Notice</h1>
-    <p><strong>Site Owner:</strong> \"GolazoX — Football Time Machine\" is a non-commercial personal fan project.
+    <p><strong>Site Owner:</strong> \"GolazoX � Football Time Machine\" is a non-commercial personal fan project.
     Owner: ${OWNER_NAME}. Contact: <a href=\"/contact?lang=en\">Contact form</a>.</p>
     <h2>Purpose and Nature of the Service</h2>
     <p>GolazoX is a probabilistic simulation engine for historical football teams, intended solely for entertainment
     purposes. It does not provide gambling services, official match predictions, or any official sports information.</p>
-    <h2>Intellectual Property — Code and Design</h2>
+    <h2>Intellectual Property � Code and Design</h2>
     <p>The source code, design, and simulation logic are the property of the site owner and are published under a
     personal non-commercial licence. Team and player names are used in a purely referential and informational capacity,
     under the descriptive trademark use doctrine and the public-domain nature of professional athletes\' public activities.</p>
@@ -1731,49 +2344,49 @@ app.get('/legal', (req, res) => {
   } else {
   res.type('text/html').send(LEGAL_HTML('Aviso Legal', `
     <h1>Aviso Legal</h1>
-    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX — Football Time Machine\", es un proyecto
-    personal de carácter no comercial y sin ánimo de lucro. Titular: ${_esc(OWNER_NAME)}.
+    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX � Football Time Machine\", es un proyecto
+    personal de car�cter no comercial y sin �nimo de lucro. Titular: ${_esc(OWNER_NAME)}.
     Contacto: <a href=\"/contact\">Formulario de contacto</a>.</p>
     <h2>Objeto y naturaleza del servicio</h2>
-    <p>GolazoX es un simulador probabilístico de partidos de fútbol históricos con fines exclusivamente lúdicos
-    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni información oficial.</p>
-    <h2>Propiedad intelectual — código y diseño</h2>
-    <p>El código fuente, diseño y lógica de simulación son propiedad del titular y se publican bajo licencia
-    personal no comercial. Los nombres de equipos y jugadores se usan con carácter referencial e informativo
-    bajo la doctrina de uso descriptivo de marcas y de figuras públicas en el ejercicio de su actividad profesional.</p>
+    <p>GolazoX es un simulador probabil�stico de partidos de f�tbol hist�ricos con fines exclusivamente l�dicos
+    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni informaci�n oficial.</p>
+    <h2>Propiedad intelectual � c�digo y dise�o</h2>
+    <p>El c�digo fuente, dise�o y l�gica de simulaci�n son propiedad del titular y se publican bajo licencia
+    personal no comercial. Los nombres de equipos y jugadores se usan con car�cter referencial e informativo
+    bajo la doctrina de uso descriptivo de marcas y de figuras p�blicas en el ejercicio de su actividad profesional.</p>
     <h2>Marcas registradas y escudos de terceros</h2>
     <p>Los logotipos e identificadores visuales de clubes y selecciones nacionales mostrados en este sitio son
     marcas registradas de sus respectivos titulares (clubes, federaciones nacionales, UEFA, FIFA y organismos
-    equivalentes). Su uso se limita exclusivamente a la identificación referencial de los equipos simulados
-    en un contexto no comercial, lúdico y educativo, sin que ello implique afiliación, patrocinio, asociación
+    equivalentes). Su uso se limita exclusivamente a la identificaci�n referencial de los equipos simulados
+    en un contexto no comercial, l�dico y educativo, sin que ello implique afiliaci�n, patrocinio, asociaci�n
     ni respaldo por parte de ninguno de dichos titulares.</p>
-    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a través del
+    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a trav�s del
     <a href=\"/contact\">formulario de contacto</a> y atenderemos tu solicitud a la mayor brevedad posible.</p>
     <h2>Fuentes de datos</h2>
-    <p>Los datos de plantillas históricas se obtienen de fuentes de acceso público. Ninguna de
+    <p>Los datos de plantillas hist�ricas se obtienen de fuentes de acceso p�blico. Ninguna de
     estas fuentes constituye datos oficiales de los clubes o federaciones.</p>
-    <h2>Exclusión de responsabilidad</h2>
-    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabilístico.
+    <h2>Exclusi�n de responsabilidad</h2>
+    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabil�stico.
     No reflejan resultados reales ni constituyen predicciones. El titular no se responsabiliza del uso que los
-    usuarios hagan de los resultados ni de la exactitud de los datos históricos.</p>
-    <h2>Legislación aplicable</h2>
-    <p>Este aviso se rige por la legislación española (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
+    usuarios hagan de los resultados ni de la exactitud de los datos hist�ricos.</p>
+    <h2>Legislaci�n aplicable</h2>
+    <p>Este aviso se rige por la legislaci�n espa�ola (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
   `));
   }
 });
 
-// ── TikTok OAuth callback ─────────────────────────────────────────────────────
+// -- TikTok OAuth callback -----------------------------------------------------
 app.get('/tiktok-callback', (req, res) => {
-  const code  = req.query.code  || '';
-  const error = req.query.error || '';
+  const code  = req.query.code  || '-';
+  const error = req.query.error || '-';
   if (error) {
     return res.type('text/html').send(`<h2 style="color:red;font-family:sans-serif">Error: ${_esc(error)}</h2>`);
   }
   res.type('text/html').send(`
     <html><head><title>TikTok Auth</title></head>
     <body style="font-family:sans-serif;max-width:600px;margin:60px auto;text-align:center">
-      <h2 style="color:green">✓ TikTok autorizado</h2>
-      <p>Copia este código y pégalo en el terminal:</p>
+      <h2 style="color:green">? TikTok autorizado</h2>
+      <p>Copia este c�digo y p�galo en el terminal:</p>
       <code style="display:block;background:#f0f0f0;padding:16px;font-size:14px;word-break:break-all;border-radius:8px">${_esc(code)}</code>
       <p style="margin-top:24px;color:#666">Luego ejecuta:<br>
       <code>node uploader.js --auth-exchange-tiktok PEGA_EL_CODIGO_AQUI</code></p>
@@ -1788,7 +2401,7 @@ app.get('/privacy', (req, res) => {
     <h1>Privacy Policy</h1>
     <p>Last updated: ${new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Data Controller</h2>
-    <p>${_esc(OWNER_NAME)} — <a href="/contact?lang=en">Contact form</a></p>
+    <p>${_esc(OWNER_NAME)} � <a href="/contact?lang=en">Contact form</a></p>
     <h2>Data We Collect</h2>
     <p>GolazoX <strong>does not require registration</strong>, does not use tracking cookies, and does not actively
     collect personally identifiable information.</p>
@@ -1813,38 +2426,38 @@ app.get('/privacy', (req, res) => {
     <p>Any changes will be published on this page with an updated date.</p>
   `, 'en'));
   } else {
-  res.type('text/html').send(LEGAL_HTML('Política de Privacidad', `
-    <h1>Política de Privacidad</h1>
-    <p>Última actualización: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
+  res.type('text/html').send(LEGAL_HTML('Pol�tica de Privacidad', `
+    <h1>Pol�tica de Privacidad</h1>
+    <p>�ltima actualizaci�n: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Responsable del tratamiento</h2>
-    <p>${_esc(OWNER_NAME)} — <a href="/contact">Formulario de contacto</a></p>
+    <p>${_esc(OWNER_NAME)} � <a href="/contact">Formulario de contacto</a></p>
     <h2>Datos que recopilamos</h2>
     <p>GolazoX <strong>no solicita registro</strong>, no usa cookies de seguimiento y no recopila datos personales
     identificativos de forma activa.</p>
     <h2>Almacenamiento local (localStorage)</h2>
-    <p>La aplicación guarda en el almacenamiento local de tu navegador únicamente:</p>
+    <p>La aplicaci�n guarda en el almacenamiento local de tu navegador �nicamente:</p>
     <ul>
       <li><strong>golazox_lang</strong>: idioma preferido de la interfaz (ES/EN). No contiene datos personales.
-      No se transmite a ningún servidor. Se elimina al borrar los datos del navegador.</li>
+      No se transmite a ning�n servidor. Se elimina al borrar los datos del navegador.</li>
     </ul>
     <h2>Registros del servidor (logs)</h2>
-    <p>El servidor de alojamiento puede registrar automáticamente la dirección IP de las peticiones con fines
-    de seguridad y diagnóstico técnico. Estos registros se conservan un máximo de 30 días y no se ceden a terceros.</p>
+    <p>El servidor de alojamiento puede registrar autom�ticamente la direcci�n IP de las peticiones con fines
+    de seguridad y diagn�stico t�cnico. Estos registros se conservan un m�ximo de 30 d�as y no se ceden a terceros.</p>
     <h2>Cookies</h2>
     <p>Este sitio web <strong>no utiliza cookies</strong> propias ni de terceros para seguimiento o publicidad.</p>
     <h2>Fuentes de datos externas</h2>
-    <p>Para obtener datos de plantillas históricas, la aplicación puede consultar APIs públicas
-    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias políticas de privacidad.</p>
+    <p>Para obtener datos de plantillas hist�ricas, la aplicaci�n puede consultar APIs p�blicas
+    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias pol�ticas de privacidad.</p>
     <h2>Derechos del usuario</h2>
     <p>Dado que no tratamos datos personales identificativos, no aplica el ejercicio de derechos ARCO/ARCOPOL
     en sentido estricto. Para cualquier consulta: <a href="/contact">formulario de contacto</a>.</p>
-    <h2>Cambios en esta política</h2>
-    <p>Cualquier modificación se publicará en esta página con la fecha de actualización actualizada.</p>
+    <h2>Cambios en esta pol�tica</h2>
+    <p>Cualquier modificaci�n se publicar� en esta p�gina con la fecha de actualizaci�n actualizada.</p>
   `));
   }
 });
 
-// ── Contact form ────────────────────────────────────────────────────────────
+// -- Contact form ------------------------------------------------------------
 const _contactLimit = _rateLimit(5, 10 * 60 * 1000); // 5 sends per 10 minutes
 
 app.get('/contact', (req, res) => {
@@ -1889,17 +2502,17 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   const lang    = _lang(req);
   const isEn    = lang === 'en';
   // Honeypot check: bots fill the hidden 'url' field, humans leave it empty
-  const honeypot = String(req.body.url || '').trim();
+  const honeypot = String(req.body.url || '-').trim();
   if (honeypot.length > 0) {
-    // Silent reject — return success to not hint to bots
+    // Silent reject � return success to not hint to bots
     return res.type('text/html').send(LEGAL_HTML(lang === 'en' ? 'Message sent' : 'Mensaje enviado', `
-      <h1>${lang === 'en' ? 'Message received ✓' : 'Mensaje recibido ✓'}</h1>
+      <h1>${lang === 'en' ? 'Message received ?' : 'Mensaje recibido ?'}</h1>
       <p><a href="/">${lang === 'en' ? 'Back to simulator' : 'Volver al simulador'}</a></p>`, lang));
   }
-  const name    = String(req.body.name    || '').slice(0, 120).trim();
-  const email   = String(req.body.email   || '').slice(0, 120).trim();
-  const subject = String(req.body.subject || '').slice(0, 200).trim();
-  const message = String(req.body.message || '').slice(0, 2000).trim();
+  const name    = String(req.body.name    || '-').slice(0, 120).trim();
+  const email   = String(req.body.email   || '-').slice(0, 120).trim();
+  const subject = String(req.body.subject || '-').slice(0, 200).trim();
+  const message = String(req.body.message || '-').slice(0, 2000).trim();
 
   if (!name || !email || !message) {
     return res.status(400).type('text/html').send(LEGAL_HTML(isEn ? 'Error' : 'Error', `
@@ -1909,7 +2522,7 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).type('text/html').send(LEGAL_HTML(isEn ? 'Error' : 'Error', `
-      <h1>${isEn ? 'Invalid email' : 'Email no válido'}</h1>
+      <h1>${isEn ? 'Invalid email' : 'Email no v�lido'}</h1>
       <p><a href="/contact${isEn ? '?lang=en' : ''}">${isEn ? 'Back to form' : 'Volver al formulario'}</a>.</p>`, lang));
   }
 
@@ -1938,21 +2551,21 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   `, lang));
 });
 
-// ── Serve index.html for all other routes ─────
+// -- Serve index.html for all other routes -----
 // Always serve with explicit charset=utf-8 to prevent the em-dash encoding
-// corruption seen in GA ("â€"" instead of "—").
-// Bots probing unknown paths (/cmd_sco, /wp-admin…) get a 404 status so
+// corruption seen in GA ("�"" instead of "�").
+// Bots probing unknown paths (/cmd_sco, /wp-admin�) get a 404 status so
 // Google doesn't index phantom pages, but still receive the SPA HTML.
-// ── Subscribers storage: MySQL (primary) + JSON fallback ─────────────────
+// -- Subscribers storage: MySQL (primary) + JSON fallback -----------------
 // MySQL config: set DB_HOST, DB_USER, DB_PASS, DB_NAME in .env to activate.
 // JSON fallback always stays in sync so you can read it without DB access.
 //
-// Hostinger cPanel: Databases → MySQL Databases → create DB + user.
+// Hostinger cPanel: Databases ? MySQL Databases ? create DB + user.
 // Then add to .env:  DB_HOST=127.0.0.1  DB_USER=u123_golazox
 //                    DB_PASS=<password>  DB_NAME=u123_golazox
 const SUBS_FILE = path.join(__dirname, 'subscribers.json');
 
-// Attempt to load mysql2 — package is optional (npm install mysql2 on server)
+// Attempt to load mysql2 � package is optional (npm install mysql2 on server)
 let _db = null;
 (async () => {
   if (!process.env.DB_HOST || !process.env.DB_USER || !process.env.DB_PASS || !process.env.DB_NAME) return;
@@ -1977,25 +2590,25 @@ let _db = null;
   }
 })();
 
-// ── Admin token for /admin/* endpoints ─────────────────────────────────
+// -- Admin token for /admin/* endpoints ---------------------------------
 // Set ADMIN_TOKEN=<random secret> in .env on the server.
 // Access: GET /admin/subscribers?token=<ADMIN_TOKEN>
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || null;
 
-// ── POST /subscribe — Newsletter opt-in ──────────────────────────────────
+// -- POST /subscribe � Newsletter opt-in ----------------------------------
 // Stores emails in MySQL + JSON. Rate: 5/hour per IP. Deduplicates.
 const _subscribeLimit = _rl(5, 60 * 60000);
 app.post('/subscribe', _requireJSON, _subscribeLimit, async (req, res) => {
-  const email = String(req.body.email || '').slice(0, 200).trim().toLowerCase();
+  const email = String(req.body.email || '-').slice(0, 200).trim().toLowerCase();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-    return res.status(400).json({ error: 'Email inválido.' });
+    return res.status(400).json({ error: 'Email inv�lido.' });
   }
   try {
     let total = 0;
     let already = false;
 
     if (_db) {
-      // ── MySQL path ──────────────────────────────────────────────────
+      // -- MySQL path --------------------------------------------------
       try {
         await _db.execute('INSERT INTO subscribers (email) VALUES (?)', [email]);
         const [[{ cnt }]] = await _db.execute('SELECT COUNT(*) AS cnt FROM subscribers');
@@ -2005,7 +2618,7 @@ app.post('/subscribe', _requireJSON, _subscribeLimit, async (req, res) => {
         else throw e;
       }
     } else {
-      // ── JSON fallback ───────────────────────────────────────────────
+      // -- JSON fallback -----------------------------------------------
       let subs = [];
       if (fs.existsSync(SUBS_FILE)) {
         try { subs = JSON.parse(fs.readFileSync(SUBS_FILE, 'utf8')); } catch (_) {}
@@ -2041,16 +2654,16 @@ app.post('/subscribe', _requireJSON, _subscribeLimit, async (req, res) => {
     res.json({ ok: true, already });
   } catch (err) {
     console.error('[subscribe]', err.message);
-    res.status(500).json({ error: 'Error. Inténtalo de nuevo.' });
+    res.status(500).json({ error: 'Error. Int�ntalo de nuevo.' });
   }
 });
 
-// ── GET /admin/subscribers — Export CSV (token-protected) ────────────────
+// -- GET /admin/subscribers � Export CSV (token-protected) ----------------
 // Usage: https://golazox.com/admin/subscribers?token=TU_TOKEN
 // Returns CSV with all subscriber emails + signup dates, ready to import
 // into Mailchimp, Brevo, Hostinger Email Campaigns, etc.
 app.get('/admin/subscribers', async (req, res) => {
-  const tok = String(req.query.token || '').trim();
+  const tok = String(req.query.token || '-').trim();
   if (!ADMIN_TOKEN || tok !== ADMIN_TOKEN) {
     return res.status(401).set('WWW-Authenticate', 'Bearer').json({ error: 'Unauthorized' });
   }
@@ -2064,10 +2677,10 @@ app.get('/admin/subscribers', async (req, res) => {
     }
     const fmt = req.query.format === 'json' ? 'json' : 'csv';
     if (fmt === 'json') return res.json({ total: rows.length, subscribers: rows });
-    const csv = ['Email,Fecha registro', ...rows.map(r => `${r.email},${r.ts || ''}`)].join('\n');
+    const csv = ['Email,Fecha registro', ...rows.map(r => `${r.email},${r.ts || '-'}`)].join('\n');
     res.set('Content-Type', 'text/csv; charset=utf-8')
        .set('Content-Disposition', `attachment; filename="golazox-suscriptores-${new Date().toISOString().slice(0,10)}.csv"`)
-       .send('\uFEFF' + csv); // BOM prefix → Excel opens UTF-8 correctly
+       .send('\uFEFF' + csv); // BOM prefix ? Excel opens UTF-8 correctly
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -2089,7 +2702,7 @@ app.get('*', (req, res) => {
      .send(injected);
 });
 
-// ── Process crash guards ─────────────────────
+// -- Process crash guards ---------------------
 process.on('uncaughtException', (err) => {
   console.error('[uncaughtException]', err.message);
 });
@@ -2107,8 +2720,8 @@ app.listen(PORT, '0.0.0.0', () => {
       if (net.family === 'IPv4' && !net.internal) localIPs.push(net.address);
     }
   }
-  console.log(`\n  ⚽  Football Simulator running at:`);
+  console.log(`\n  ?  Football Simulator running at:`);
   console.log(`       http://localhost:${PORT}`);
-  localIPs.forEach(ip => console.log(`       http://${ip}:${PORT}  ← use this on your iPhone`));
+  localIPs.forEach(ip => console.log(`       http://${ip}:${PORT}  ? use this on your iPhone`));
   console.log();
 });

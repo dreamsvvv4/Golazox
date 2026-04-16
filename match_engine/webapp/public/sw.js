@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION to invalidate ALL caches on next deploy.
  */
 
-const CACHE_VERSION  = 'v79';
+const CACHE_VERSION  = 'v82';
 const STATIC_CACHE   = `golazox-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE  = `golazox-dynamic-${CACHE_VERSION}`;
 const IMAGE_CACHE    = `golazox-images-${CACHE_VERSION}`;
@@ -59,6 +59,10 @@ self.addEventListener('activate', event => {
 });
 
 // ── Fetch ─────────────────────────────────────────────────────────────────────
+// SSR routes: always fetch from network — never cache, never intercept.
+// These are server-rendered HTML pages (not SPA shells).
+const _SSR_PREFIXES = ['/partido/', '/match/', '/partida/', '/equipo/', '/team/', '/resultado/', '/result/', '/jogo/'];
+
 self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
@@ -69,6 +73,12 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
 
   const p = url.pathname;
+
+  // ── SSR pages — always bypass SW, go straight to network ─────────────────
+  if (_SSR_PREFIXES.some(prefix => p.startsWith(prefix))) {
+    event.respondWith(fetch(request));
+    return;
+  }
 
   // ── Images: badges, flags, stadium photos ─────────────────────────────────
   // Cache-First with fallback fetch → images are large and change rarely.

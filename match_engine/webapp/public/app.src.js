@@ -661,6 +661,27 @@ function _initials(name) {
   return name.split(' ').filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
 }
 
+// ── Horizontal-scroll fade mask helper ───────────────────────────
+// Toggles .hscroll--at-start / .hscroll--at-end on the given row so
+// the CSS mask-image fades activate or deactivate at the scroll edges.
+// Called once after each picker is built; also wires a passive scroll
+// listener and a ResizeObserver so the state stays accurate as content
+// or the viewport changes (orientation flip, PWA resize, etc.).
+function _attachHScrollFade(row) {
+  if (!row) return;
+  function _update() {
+    const atStart = row.scrollLeft < 1;
+    const atEnd   = row.scrollLeft + row.clientWidth >= row.scrollWidth - 1;
+    row.classList.toggle('hscroll--at-start', atStart);
+    row.classList.toggle('hscroll--at-end',   atEnd);
+  }
+  row.addEventListener('scroll', _update, { passive: true });
+  _update();
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(_update).observe(row);
+  }
+}
+
 // ── Clima ───────────────────────────────────────────────────────
 const _WEATHER_SVG = {
   // Sun rotates slowly around its own center
@@ -3342,6 +3363,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.onclick = () => selectStadium(s.id);
       pickerRow.appendChild(card);
     });
+    // Attach scroll-fade mask after all cards are in the DOM
+    _attachHScrollFade(pickerRow);
   }
 
   // Allow Enter key to trigger simulation from the era selects
@@ -3650,9 +3673,12 @@ function _buildRefereePicker(referees) {
     card.onclick = () => selectReferee(ref.id);
     row.appendChild(card);
   });
+  // Attach scroll-fade mask after all referee cards are in the DOM
+  _attachHScrollFade(row);
 }
 
 // ── Weather picker builder ───────────────────────────────────────
+// (Called right after _buildRefereePicker — fade already attached above)
 function _buildWeatherPicker() {
   const row = document.getElementById('weather-picker-row');
   if (!row) return;

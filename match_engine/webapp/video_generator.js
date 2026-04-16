@@ -1802,8 +1802,8 @@ async function generateVideo(opts = {}) {
       '--disk-cache-size=0',
       '--disable-features=ServiceWorker',
       '--disable-service-workers-in-background',
-      '--window-size=360,640',
-      '--force-device-scale-factor=3', // 3× physical DPI → screencast at 1080×1920 (3× CSS viewport)
+      '--window-size=1080,1920',  // physical window = 1080×1920 → screencast always full-res
+      '--force-device-scale-factor=3', // CSS viewport = 360px (mobile layout) + screenshots at 1080×1920
       '--disable-background-timer-throttling',
       '--disable-renderer-backgrounding',
       '--disable-backgrounding-occluded-windows',
@@ -1851,8 +1851,6 @@ async function generateVideo(opts = {}) {
 
   const recorder = new PuppeteerScreenRecorder(page, {
     fps: 30,
-    // DPR=3 → physical 1080×1920 capture. videoFrame at 1080×1920 means no scaling
-    // before encode — full native quality. postProcess then crop+scale is only 1.38×.
     videoFrame: { width: 1080, height: 1920 },
     videoCrf: 14,
     videoCodec: 'libx264',
@@ -2240,6 +2238,13 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   await wait(300);
 
   // ── Recording starts HERE — when the match is actually live ─────────────────
+  // DIAGNOSTIC: capture a screenshot to compare with video frame
+  try {
+    const _dbgSs = await page.screenshot();
+    require('fs').writeFileSync(require('path').join(__dirname, 'diag_live_ss.png'), _dbgSs);
+    const _dbgInfo = await page.evaluate(() => ({dpr:window.devicePixelRatio,w:window.innerWidth,liveW:(document.getElementById('live-viewer')||{offsetWidth:'n/a'}).offsetWidth}));
+    console.log('[diag] live screenshot saved, info:', JSON.stringify(_dbgInfo));
+  } catch(_e) { console.warn('[diag] screenshot failed:', _e.message); }
   await recorder.start(outPath);
   recStartMs = Date.now();
   console.log('[match] Recording started — match is live');

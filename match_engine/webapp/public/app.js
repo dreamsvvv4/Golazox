@@ -317,6 +317,36 @@ const I18N = {
     'trn-draw-complete':'✓ Sorteo completado',
     'trn-add-team':'✓ Añadir equipo',
     'trn-preview-back':'→ Volver',
+    // ── WC Year Picker ────────────────────────────────────────
+    'wcy-subtitle':'Elige una edición histórica',
+    'wcy-filter-all':'Todas','wcy-filter-pioneer':'Pioneros','wcy-filter-classic':'Clásica','wcy-filter-retro':'Retro','wcy-filter-modern':'Moderna','wcy-filter-future':'En curso',
+    'wcy-era-pioneer':'Pioneros','wcy-era-classic':'Clásica','wcy-era-retro':'Retro','wcy-era-modern':'Moderna','wcy-era-future':'En curso','wcy-era-cancelled':'Guerra',
+    'wcy-not-held':'No se disputó',
+    // ── Extra UI strings ─────────────────────────────────
+    'trn-loading-squad':'Cargando plantilla…',
+    'trn-era-label':'Temporada:',
+    'trn-pos-gk':'POR','trn-pos-mid':'MED','trn-pos-att':'DEL',
+    'trn-catalog-err':'Error al cargar catálogo',
+    'trn-ll-no-leagues':'Sin ligas disponibles',
+    'trn-ll-select-title':'🏆 Selecciona una liga',
+    'trn-ll-teams-abbr':'eq.',
+    'trn-ll-err':'Error al cargar ligas.',
+    'trn-replace-no-results':'Sin resultados',
+    'ucl-draw-subtitle':'SORTEO FASE DE LIGA · 2025/26',
+    // ── UCL result tabs ───────────────────────────────
+    'ucl-pot-label':'Bombo',
+    'ucl-phase-league':'Fase de Liga',
+    'ucl-phase-ko':'⚽ Fase Eliminatoria',
+    'ucl-standings-title':'📊 Clasificación — Fase de Liga',
+    'ucl-matches-title':'Fase de Liga',
+    'ucl-playin-calendar':'🔵 Play-In (9–24)',
+    'ucl-playin-ko':'🔵 Play-In — Clasificación a Octavos',
+    'ucl-playin-legs':'🔵 Play-In (ida y vuelta)',
+    'ucl-status-direct':'Octavos','ucl-status-playoff':'Playoff','ucl-status-out':'Eliminado',
+    'ucl-legend-direct':'Directo a Octavos (1–8)','ucl-legend-playoff':'Play-In (9–24)','ucl-legend-out':'Eliminados (25–36)',
+    'ucl-pts-suffix':'p',
+    'ucl-progress-league':'Fase de Liga…','ucl-progress-r16':'Octavos de final…',
+    'ucl-champion-path-phase':'Fase de Liga',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -502,6 +532,36 @@ const I18N = {
     'trn-draw-complete':'✓ Draw complete',
     'trn-add-team':'✓ Add team',
     'trn-preview-back':'→ Back',
+    // ── WC Year Picker ────────────────────────────────────────
+    'wcy-subtitle':'Choose a historical edition',
+    'wcy-filter-all':'All','wcy-filter-pioneer':'Pioneers','wcy-filter-classic':'Classic','wcy-filter-retro':'Retro','wcy-filter-modern':'Modern','wcy-filter-future':'Ongoing',
+    'wcy-era-pioneer':'Pioneers','wcy-era-classic':'Classic','wcy-era-retro':'Retro','wcy-era-modern':'Modern','wcy-era-future':'Ongoing','wcy-era-cancelled':'War',
+    'wcy-not-held':'Not held',
+    // ── Extra UI strings ─────────────────────────────────
+    'trn-loading-squad':'Loading squad…',
+    'trn-era-label':'Season:',
+    'trn-pos-gk':'GK','trn-pos-mid':'MID','trn-pos-att':'ATT',
+    'trn-catalog-err':'Error loading catalog',
+    'trn-ll-no-leagues':'No leagues available',
+    'trn-ll-select-title':'🏆 Select a league',
+    'trn-ll-teams-abbr':'teams',
+    'trn-ll-err':'Error loading leagues.',
+    'trn-replace-no-results':'No results',
+    'ucl-draw-subtitle':'LEAGUE PHASE DRAW · 2025/26',
+    // ── UCL result tabs ───────────────────────────────
+    'ucl-pot-label':'Pot',
+    'ucl-phase-league':'League Phase',
+    'ucl-phase-ko':'⚽ Knockout Rounds',
+    'ucl-standings-title':'📊 Standings — League Phase',
+    'ucl-matches-title':'League Phase',
+    'ucl-playin-calendar':'🔵 Play-In (9–24)',
+    'ucl-playin-ko':'🔵 Play-In — Path to R16',
+    'ucl-playin-legs':'🔵 Play-In (two legs)',
+    'ucl-status-direct':'R16','ucl-status-playoff':'Playoff','ucl-status-out':'Eliminated',
+    'ucl-legend-direct':'Direct to R16 (1–8)','ucl-legend-playoff':'Play-In (9–24)','ucl-legend-out':'Eliminated (25–36)',
+    'ucl-pts-suffix':'',
+    'ucl-progress-league':'League Phase…','ucl-progress-r16':'Round of 16…',
+    'ucl-champion-path-phase':'League Phase',
   },
 };
 
@@ -4020,14 +4080,19 @@ async function handleSimulate() {
     weatherId:  _selectedWeather ? _selectedWeather.id : null,
     matchSalt:  Date.now() & 0x7fffffff,
     lang:       _lang,
+    // client-only: slug identifiers for building SSR matchup links (not sent to server — stripped below)
+    _slugA:     entryA?.slug || slugA,
+    _slugB:     entryB?.slug || slugB,
   };
 
   try {
     // ── POST /simulate ──────────────────────────────────
+    // Strip client-only fields before sending to server
+    const { _slugA, _slugB, ...serverPayload } = payload;
     const response = await fetch('/simulate', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload),
+      body:    JSON.stringify(serverPayload),
     });
 
     if (!response.ok) {
@@ -4221,6 +4286,29 @@ function renderResult(data, payload) {
     lineupA: isPenMode ? null : (lineups.teamA || null),
     lineupB: isPenMode ? null : (lineups.teamB || null),
   };
+
+  // ── SEO matchup link banner ───────────────────────────────
+  // Only show for 11v11 mode (the SSR pages cover standard matchups)
+  const _seoLinkEl = document.getElementById('seo-matchup-link');
+  if (_seoLinkEl && payload._slugA && payload._slugB && !isPenMode && payload.matchMode !== 'penalties') {
+    const _sA = payload._slugA;
+    const _sB = payload._slugB;
+    const _eA = payload.eraA || '';
+    const _eB = payload.eraB || '';
+    const _pA = _eA ? `${_sA}:${_eA}` : _sA;
+    const _pB = _eB ? `${_sB}:${_eB}` : _sB;
+    const _ssrPath = `/partido/${encodeURIComponent(_pA)}-vs-${encodeURIComponent(_pB)}`;
+    const _ssrLabel = _lang === 'pt' ? `Ver página completa de ${escHtml(payload.teamA)} vs ${escHtml(payload.teamB)}` :
+                      _lang === 'en' ? `See full page: ${escHtml(payload.teamA)} vs ${escHtml(payload.teamB)}` :
+                                       `Ver página completa: ${escHtml(payload.teamA)} vs ${escHtml(payload.teamB)}`;
+    const _ssrHref  = _lang === 'en' ? `/match/${encodeURIComponent(_pA)}-vs-${encodeURIComponent(_pB)}` :
+                      _lang === 'pt' ? `/partida/${encodeURIComponent(_pA)}-vs-${encodeURIComponent(_pB)}` :
+                                       _ssrPath;
+    _seoLinkEl.innerHTML = `📄 <a href="${_ssrHref}" rel="noopener">${_ssrLabel}</a>`;
+    _seoLinkEl.classList.remove('hidden');
+  } else if (_seoLinkEl) {
+    _seoLinkEl.classList.add('hidden');
+  }
 }
 
 // ── Lineup pitch renderer ─────────────────────────────────

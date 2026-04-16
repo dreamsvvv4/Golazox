@@ -227,7 +227,6 @@ const RIVALS = [
   ['spanien',                'portugal'],
   ['spanien',                'england'],
   ['frankreich',             'italien'],
-  ['frankreich',             'portugals'],
   ['frankreich',             'portugal'],
   ['frankreich',             'niederlande'],
   ['frankreich',             'england'],
@@ -386,6 +385,31 @@ const urlEntries = [
     <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/match/${seg}"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/partida/${seg}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/partido/${seg}"/>`;
+    const hreflangResultTags = `
+    <xhtml:link rel="alternate" hreflang="es" href="${SITE_URL}/resultado/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/result/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="${SITE_URL}/jogo/${seg}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/resultado/${seg}"/>`;
+    const resultPages = isTop ? [
+      `  <url>
+    <loc>${SITE_URL}/resultado/${seg}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>${hreflangResultTags}
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/result/${seg}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>${hreflangResultTags}
+  </url>`,
+      `  <url>
+    <loc>${SITE_URL}/jogo/${seg}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>${hreflangResultTags}
+  </url>`,
+    ] : [];
     return [
       `  <url>
     <loc>${SITE_URL}/partido/${seg}</loc>
@@ -405,6 +429,7 @@ const urlEntries = [
     <changefreq>${changefreq}</changefreq>
     <priority>${priorityPt}</priority>${hreflangTags}
   </url>`,
+      ...resultPages,
     ];
   }),
 ];

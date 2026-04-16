@@ -18,12 +18,11 @@
 'use strict';
 
 const fsNode = require('fs');
+const fs     = fsNode;           // alias — same module, no double require
 const path   = require('path');
 
 require('dotenv').config();
 const fetch  = require('node-fetch');
-const path   = require('path');
-const fs     = require('fs');
 
 // ── Team name → GolazoX slug mapping ────────────────────────────────────────
 // Keys are lowercased team names / aliases from football-data.org
