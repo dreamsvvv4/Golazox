@@ -9321,26 +9321,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   grid-auto-rows: minmax(76px, auto);   /* uniform row heights */
   gap: .6rem;
   margin: .6rem 0 1.4rem;
-  max-height: 52vh;
-  overflow-y: auto;
-  padding: .1rem .4rem .3rem .1rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0,212,255,.25) rgba(255,255,255,.04);
-}
-.trn-wcy-grid::-webkit-scrollbar {
-  width: 4px;
-}
-.trn-wcy-grid::-webkit-scrollbar-track {
-  background: rgba(255,255,255,.04);
-  border-radius: 4px;
-}
-.trn-wcy-grid::-webkit-scrollbar-thumb {
-  background: rgba(0,212,255,.22);
-  border-radius: 4px;
-  transition: background .2s;
-}
-.trn-wcy-grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(123,47,247,.55);
+  padding: .1rem .1rem .3rem;
 }
 .trn-wcy-btn {
   display: flex;
@@ -9403,6 +9384,8 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 
 /* Era/fmt/hito hidden when bare in card; only shown inside tooltip overlay */
 .trn-wcy-era, .trn-wcy-fmt, .trn-wcy-hito { display: none; }
+/* Exception: show hito (WWII reason) directly on cancelled cards */
+.trn-wcy-btn--cancelled .trn-wcy-hito { display: block; font: italic .62rem/1.3 var(--font); color: #a06060; margin-top: .1rem; text-align: center; }
 
 /* ── Hover popover — expands downward from the card ─── */
 .trn-wcy-tooltip {

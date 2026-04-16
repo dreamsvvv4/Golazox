@@ -1729,7 +1729,6 @@ const TRN = (() => {
         return `<div class="trn-wcy-btn trn-wcy-btn--cancelled" data-era="${era}" data-era-filter="${era}">
           <span class="trn-wcy-era trn-wcy-era--cancelled">${t('wcy-era-cancelled')}</span>
           <span class="trn-wcy-year">${yr}</span>
-          <span class="trn-wcy-cancelled-label">${t('wcy-not-held')}</span>
           ${hito ? `<span class="trn-wcy-hito">${_esc(hito)}</span>` : ''}
         </div>`;
       }

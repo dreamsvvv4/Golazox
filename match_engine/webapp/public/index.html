@@ -149,7 +149,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=101" />
+  <link rel="stylesheet" href="style.min.css?v=102" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1749,9 +1749,9 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=86" defer></script>
+  <script src="app.min.js?v=87" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
-  <script src="tournament.min.js?v=46" defer></script>
+  <script src="tournament.min.js?v=47" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->
