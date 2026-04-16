@@ -2993,9 +2993,10 @@ const _NATION_ISO = {
   'angola':'ao',        'bielorrussland':'by', 'benin':'bj',        'bolivien':'bo',
   'burkina-faso':'bf',  'curacao':'cw',        'dominikanische-republik':'do', 'el-salvador':'sv',
   'emirate':'ae',       'georgien':'ge',       'guatemala':'gt',    'israel':'il',
-  'katar':'qa',         'nordmazedonien':'mk', 'palastina':'ps',    'rumania':'ro',
+  'katar':'qa',         'kuwait':'kw',         'nordmazedonien':'mk', 'palastina':'ps',    'rumania':'ro',
   'sambia':'zm',        'tadschikistan':'tj',  'thailand':'th',     'uganda':'ug',
-  // jugoslawien + urss: no ISO in flagcdn — uses local badge SVG fallback
+  // Historical nations — flagcdn supports these legacy ISO codes
+  'jugoslawien':'rs',   'urss':'ru',           'togo':'tg',
 };
 const _LEAGUE_META = {
   '🇪🇸 La Liga':           { name:'La Liga',          iso:'es'     , tier:1 },

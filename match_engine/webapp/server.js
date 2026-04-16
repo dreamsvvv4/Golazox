@@ -1721,10 +1721,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // -- Flag proxy � caches country flags locally from flagcdn.com ----------------
 // Subdivision codes not supported by flagcdn ? map to closest alternative
 const _FLAG_ISO_MAP = {
-  'gb-eng': 'gb',   // England ? UK flag
-  'gb-sct': 'gb',   // Scotland ? UK flag (flagcdn has no gb-sct)
-  'gb-wls': 'gb',   // Wales ? UK flag
-  'gb-nir': 'gb',   // Northern Ireland ? UK flag
+  'gb-eng': 'gb',       // England → UK flag
+  'gb-sct': 'gb',       // Scotland → UK flag (flagcdn has no gb-sct)
+  'gb-wls': 'gb',       // Wales → UK flag
+  'gb-nir': 'gb-nir',   // Northern Ireland → Ulster Banner (flagcdn supports gb-nir)
 };
 const _flagCache = new Map();
 app.get('/flag/:iso', async (req, res) => {
