@@ -2164,7 +2164,7 @@ const TRN = (() => {
     const isWC  = fmt === 'champions' && _activePreset === 'wc2026';
     const isUCL = fmt === 'ucl-league' || (fmt === 'champions' && !isWC);
     const isRv  = pfx === 'rv';
-    const sz    = isRv ? '94px' : '58px';
+    const sz    = isRv ? '94px' : '68px';
     // Use real trophy PNGs for preset tournaments
     if (isUCL && _activePreset)
       return `<img src="/img/trophy-ucl.png" class="trn-trophy-img trn-trophy-ani${isRv ? ' trn-trophy-ani-rv' : ''}" style="width:${sz};height:auto" alt="UCL Trophy">`;

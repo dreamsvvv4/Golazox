@@ -7664,6 +7664,9 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
 
 /* Champion poster — same vibe as .score-poster */
 .trn-champ-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 2rem 1.5rem 1.6rem;
   margin-bottom: .75rem;
@@ -7687,15 +7690,16 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   margin-bottom: .7rem;
 }
 .trn-champ-trophy-big {
-  margin-bottom: .6rem;
+  margin-bottom: .4rem;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 84px;
 }
 .trn-champ-trophy-big .trn-trophy-svg {
-  width: 58px;
-  height: 78px;
+  width: 68px;
+  height: 92px;
   animation: trn-trophy-glow 3s ease-in-out infinite;
 }
 .trn-trophy-ani {
@@ -8102,10 +8106,12 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 /* ── Calendar group standings: hide stat columns on narrow screens ── */
 @media (max-width: 480px) {
   /* Show only: # | badge | name | PJ | DIF | PTS (drop W D L GF GC) */
-  .trn-cls-table { min-width: 0; }
+  /* min-width forces horizontal scroll so full team names are visible */
+  .trn-cls-table { min-width: 380px; }
   .trn-cls-header,
   .trn-cls-row {
-    grid-template-columns: 1.6rem 20px 1fr 2.2rem 2.5rem 3rem;
+    /* minmax(8rem,1fr) ensures name column is always at least 8rem wide */
+    grid-template-columns: 1.6rem 20px minmax(8rem, 1fr) 2.2rem 2.5rem 3rem;
   }
   /* hide W, D, L, GF, GC columns (original positions 5-9) */
   .trn-cls-header span:nth-child(5),
@@ -8500,12 +8506,13 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 }
 /* Champion poster badge */
 .trn-champ-badge-big {
-  width: 70px;
-  height: 70px;
+  display: block;
+  width: 88px;
+  height: 88px;
   object-fit: contain;
   filter: drop-shadow(0 0 16px rgba(255,215,0,.45));
   animation: trn-badge-pulse 3.5s 1s ease-in-out infinite;
-  margin-bottom: .4rem;
+  margin: .4rem auto .6rem;
 }
 @keyframes trn-badge-pulse {
   0%, 100% { filter: drop-shadow(0 0 12px rgba(255,215,0,.4))  drop-shadow(0 0 4px rgba(0,212,255,.2)); }
@@ -9257,9 +9264,8 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   /* Second col: badge, spans info rows */
   .trn-champ-badge-big {
     grid-area: 2 / 2 / 5 / 3;
-    width: 64px; height: 64px;
+    width: 72px; height: 72px;
     margin: 0 auto;
-    margin-bottom: 0;
   }
   /* Info rows */
   .trn-champ-name   { grid-area: 2 / 3 / 3 / 4; font-size: 1.6rem; margin: 0; }
