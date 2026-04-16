@@ -1813,7 +1813,7 @@ function _showDerbyBanner(derby) {
   const iconEl = document.getElementById('derby-banner-icon');
   const iso = _flagToISO(derby.flag);
   if (iso) {
-    iconEl.innerHTML = `<img src="/flag/${iso}" alt="${derby.country || ''}" class="derby-flag-img">`;
+    iconEl.innerHTML = `<img src="/flag/${iso}?v=2" alt="${derby.country || ''}" class="derby-flag-img">`;
   } else {
     iconEl.textContent = derby.flag || '⚽';
   }
@@ -3149,7 +3149,7 @@ function _renderPicker(side) {
       nations.map(n => {
         const iso = _NATION_ISO[n.slug.toLowerCase()];
         const flagHtml = iso
-          ? `<img class="tp-flag-img" src="/flag/${iso}" alt="" loading="lazy">`
+          ? `<img class="tp-flag-img" src="/flag/${iso}?v=2" alt="" loading="lazy">`
           : n.badge && !n.badge.includes('_placeholder')
             ? `<img class="tp-flag-img" src="${escHtml(n.badge)}" alt="" loading="lazy">`
             : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
@@ -3215,7 +3215,7 @@ function _renderPicker(side) {
         const meta  = _LEAGUE_META[g] || { name: g.replace(/^\S+ /,''), iso: null, tier: 1 };
         const count = _catalog.filter(c => c.group === g && c.badge && !c.badge.includes('_placeholder')).length;
         const flagInner = meta.iso
-          ? `<img class="tp-league-flag" src="/flag/${meta.iso}" alt="" loading="lazy">`
+          ? `<img class="tp-league-flag" src="/flag/${meta.iso}?v=2" alt="" loading="lazy">`
           : meta.svg
             ? `<img class="tp-league-flag tp-league-flag-svg" src="${meta.svg}" alt="" loading="lazy">`
             : `<span class="tp-league-flag-dot"></span>`;
