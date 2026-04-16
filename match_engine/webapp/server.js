@@ -1273,12 +1273,12 @@ async function _buildResultPage(slugA, eraA, slugB, eraB, lang, siteUrl) {
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
-  <meta name="robots" content="index,follow"/>
-  <link rel="canonical" href="${selfUrl}"/>
-  <link rel="alternate" hreflang="es" href="${siteUrl}/resultado/${matchupParam}"/>
-  <link rel="alternate" hreflang="en" href="${siteUrl}/result/${matchupParam}"/>
-  <link rel="alternate" hreflang="pt-BR" href="${siteUrl}/jogo/${matchupParam}"/>
-  <link rel="alternate" hreflang="x-default" href="${siteUrl}/resultado/${matchupParam}"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="canonical" href="${ssrUrl}"/>
+  <link rel="alternate" hreflang="es" href="${siteUrl}/partido/${matchupParam}"/>
+  <link rel="alternate" hreflang="en" href="${siteUrl}/match/${matchupParam}"/>
+  <link rel="alternate" hreflang="pt-BR" href="${siteUrl}/partida/${matchupParam}"/>
+  <link rel="alternate" hreflang="x-default" href="${siteUrl}/partido/${matchupParam}"/>
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="${isEn ? 'Football Simulation' : 'Simulación de Fútbol'}"/>
