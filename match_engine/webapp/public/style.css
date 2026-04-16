@@ -2016,16 +2016,16 @@ body::before {
 .pm-hero-ovr-a { color: rgba(100,160,255,.9); }
 .pm-hero-ovr-b { color: rgba(220,100,80,.9); }
 .pm-hero-center {
-  display: flex; flex-direction: row; align-items: center;
-  gap: .5rem;
-  padding: .28rem .85rem;
+  display: flex; flex-direction: column; align-items: center;
+  gap: .28rem;
+  padding: .32rem .85rem;
   background: rgba(5,8,22,.7);
   border-top: 1px solid rgba(255,255,255,.06);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
-.pm-hero-stad { font: 600 .53rem/1 var(--font); color: rgba(255,255,255,.25); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0; }
+.pm-hero-stad { font: 600 .53rem/1 var(--font); color: rgba(255,255,255,.25); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; text-align: center; }
 .pm-hero-vs-badge { font: 900 1.25rem/1 var(--font); color: var(--gold); letter-spacing: .08em; text-shadow: 0 0 14px rgba(245,197,24,.4); flex-shrink: 0; }
-.pm-hero-strength-wrap { flex: 1; display: flex; flex-direction: column; gap: .18rem; }
+.pm-hero-strength-wrap { width: 100%; display: flex; flex-direction: column; gap: .18rem; }
 .pm-hero-str-track { width: 100%; height: 5px; border-radius: 3px; background: rgba(255,255,255,.07); position: relative; overflow: hidden; }
 .pm-hero-str-a { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg,rgba(30,99,240,.9),rgba(74,157,248,.6)); border-radius: 3px 0 0 3px; transition: width .65s ease .3s; }
 .pm-hero-str-b { position: absolute; right: 0; top: 0; bottom: 0; background: linear-gradient(270deg,rgba(192,57,43,.9),rgba(220,100,80,.6)); border-radius: 0 3px 3px 0; transition: width .65s ease .3s; }
