@@ -343,6 +343,8 @@ app.get('/partido/:matchup', async (req, res) => {
   const pageTitle   = `${esc(labelA)} vs ${esc(labelB)} · Simula el partido | GolazoX`;
   const pageDesc    = `¿Quién ganaría ${esc(labelA)} contra ${esc(labelB)}? Simúlalo ahora con el motor de Monte Carlo de GolazoX. Estadísticas, alineaciones históricas y resultado en segundos.`;
   const canonUrl    = `${_routeSiteUrl}/partido/${esc(raw)}`;
+  const enUrl       = `${_routeSiteUrl}/match/${esc(raw)}`;
+  const ptUrl       = `${_routeSiteUrl}/partida/${esc(raw)}`;
   const deepLink    = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}`;
   const badgeA      = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
   const badgeB      = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
@@ -419,6 +421,10 @@ app.get('/partido/:matchup', async (req, res) => {
   <meta name="description" content="${pageDesc}"/>
   <meta name="robots" content="index,follow"/>
   <link rel="canonical" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="es" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="en" href="${enUrl}"/>
+  <link rel="alternate" hreflang="pt-BR" href="${ptUrl}"/>
+  <link rel="alternate" hreflang="x-default" href="${canonUrl}"/>
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Simulaciones de Fútbol Histórico"/>
@@ -612,6 +618,7 @@ app.get('/match/:matchup', async (req, res) => {
   const pageDesc  = `Who would win: ${esc(labelA)} vs ${esc(labelB)}? Simulate it now with GolazoX's Monte Carlo engine. Real historical squads, stats, and result in seconds.`;
   const canonUrl  = `${_routeSiteUrl}/match/${esc(raw)}`;
   const esUrl     = `${_routeSiteUrl}/partido/${esc(raw)}`;
+  const ptUrl     = `${_routeSiteUrl}/partida/${esc(raw)}`;
   const deepLink  = `${_routeSiteUrl}/?a=${encodeURIComponent(eraA ? `${slugA}:${eraA}` : slugA)}&b=${encodeURIComponent(eraB ? `${slugB}:${eraB}` : slugB)}&lang=en`;
   const badgeA    = entryA.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
   const badgeB    = entryB.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
@@ -689,6 +696,7 @@ app.get('/match/:matchup', async (req, res) => {
   <link rel="canonical" href="${canonUrl}"/>
   <link rel="alternate" hreflang="es" href="${esUrl}"/>
   <link rel="alternate" hreflang="en" href="${canonUrl}"/>
+  <link rel="alternate" hreflang="pt-BR" href="${ptUrl}"/>
   <link rel="alternate" hreflang="x-default" href="${canonUrl}"/>
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# No indexar endpoints de API ni rutas internas
+# API endpoints — no indexar
 Disallow: /simulate
 Disallow: /lookup
 Disallow: /catalog
@@ -12,4 +12,11 @@ Disallow: /legal
 Disallow: /privacy
 Disallow: /contact
 
+# Rutas de resultado simulado — no indexar directamente
+# (se encuentran via links internos una vez ganemos autoridad)
+Disallow: /resultado/
+Disallow: /result/
+Disallow: /jogo/
+
+Sitemap: https://golazox.com/sitemap-index.xml
 Sitemap: https://golazox.com/sitemap.xml
