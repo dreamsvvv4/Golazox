@@ -1,6 +1,60 @@
 {
   "slug": "ivory-coast",
-  "seasons": {},
+  "seasons": {
+    "2025": {
+      "found": true,
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Yahia Fofana",
+          "position": "GK"
+        },
+        {
+          "name": "Ghislain Konan",
+          "position": "RB"
+        },
+        {
+          "name": "Odilon Kossounou",
+          "position": "CB"
+        },
+        {
+          "name": "Wilfried Singo",
+          "position": "CB"
+        },
+        {
+          "name": "Evan Ndicka",
+          "position": "LB"
+        },
+        {
+          "name": "Franck Kessié",
+          "position": "DM"
+        },
+        {
+          "name": "Jean Michaël Seri",
+          "position": "CM"
+        },
+        {
+          "name": "Ibrahim Sangaré",
+          "position": "CM"
+        },
+        {
+          "name": "Nicolas Pépé",
+          "position": "RW"
+        },
+        {
+          "name": "Simon Adingra",
+          "position": "ST"
+        },
+        {
+          "name": "Evann Guessand",
+          "position": "LW"
+        }
+      ],
+      "ratings": null,
+      "source": "Wikipedia — \"Ivory Coast national football team\"",
+      "teamLabel": "ivory-coast (2025)"
+    }
+  },
   "badgeLocalPath": "/img/badges/ivory-coast.png",
   "group": "🌍 Selecciones",
   "nameEn": "Ivory Coast",

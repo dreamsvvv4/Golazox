@@ -103,12 +103,20 @@ const TEAM_SLUG_MAP = {
   '1. fc köln':               '1-fc-koln',
   'fc augsburg':              'fc-augsburg',
   'sv werder bremen':         'sv-werder-bremen',
+  // Bundesliga — ESPN short names
+  'st. pauli':                'fc-st-pauli',
+  'st pauli':                 'fc-st-pauli',
+  'fc st. pauli':             'fc-st-pauli',
+  'fc cologne':               '1-fc-koln',
+  'cologne':                  '1-fc-koln',
+  'köln':                     '1-fc-koln',
   // Serie A
   'juventus fc':              'juventus-turin',
   'juventus':                 'juventus-turin',
   'fc internazionale milano': 'inter-mailand',
   'inter milan':              'inter-mailand',
   'inter':                    'inter-mailand',
+  'internazionale':           'inter-mailand',  // ESPN short name
   'ac milan':                 'ac-mailand',
   'milan':                    'ac-mailand',
   'ssc napoli':               'ssc-neapel',
@@ -144,6 +152,10 @@ const TEAM_SLUG_MAP = {
   'fc metz':                  'fc-metz',
   'lille osc':                'losc-lille',
   'lille':                    'losc-lille',
+  // Ligue 1 — ESPN short names
+  'lens':                     'rc-lens',
+  'toulouse':                 'fc-toulouse',
+  'toulouse fc':              'fc-toulouse',
   // Serie A — extra
   'pisa sporting club':       'ac-pisa',
   'pisa':                     'ac-pisa',
@@ -223,6 +235,8 @@ const TEAM_SLUG_MAP = {
   'como 1907':                'como-1907',
   'wrexham afc':              'wrexham',
   'wrexham':                  'wrexham',
+  // Serie A — ESPN short names
+  'como':                     'como-1907',
   // 🌍 Arabia — Saudi Pro League completa
   'al-hilal':                 'al-hilal',
   'al hilal':                 'al-hilal',
@@ -360,6 +374,7 @@ const TEAM_SLUG_MAP = {
   'unión':                     'union-santa-fe',
   'union':                     'union-santa-fe',
   'unión santa fe':            'union-santa-fe',
+  'unión (santa fe)':          'union-santa-fe',  // ESPN format with parentheses
   'atletico tucuman':          'atletico-tucuman',
   'atlético tucumán':          'atletico-tucuman',
   'ca atlético tucumán':       'atletico-tucuman',

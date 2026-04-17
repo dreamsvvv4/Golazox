@@ -235,6 +235,19 @@ const RIVALS_LIST = [
     question: 'Se repetira la historia en',
     a: { slug: 'inter-mailand',              era: '2025', stadium: 'sansiro',   referee: 'collina',  weather: 'night' },
     b: { slug: 'fc-barcelona',               era: '2025' } },
+  // ── Semifinales UCL 2025-26 ───────────────────────────────────────────────
+  { label: 'PSG vs Bayern UCL Semis 26',     en: 'PSG vs Bayern UCL Semi 2026',     category: 'Champions · Semis 2025-26', flag: '🏆',
+    desc: 'PSG vs Bayern Múnich · 28 Abr / 6 May',
+    goals: { a: ['Dembele', 'Barcola', 'Doue'], b: ['Musiala', 'Kane', 'Gnabry'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'fc-paris-saint-germain',     era: '2025', stadium: 'parc-des-princes', referee: 'kuipers', weather: 'night' },
+    b: { slug: 'fc-bayern-munchen',          era: '2025' } },
+  { label: 'Atletico vs Arsenal UCL Semis 26', en: 'Atletico vs Arsenal UCL Semi 2026', category: 'Champions · Semis 2025-26', flag: '🏆',
+    desc: 'Atlético de Madrid vs Arsenal · 29 Abr / 5 May',
+    goals: { a: ['Griezmann', 'Morata', 'Llorente'], b: ['Saka', 'Havertz', 'Martinelli'] },
+    question: 'Se repetira la historia en',
+    a: { slug: 'atletico-madrid',            era: '2025', stadium: 'bernabeu',  referee: 'brych',    weather: 'night' },
+    b: { slug: 'fc-arsenal',                 era: '2025' } },
 ];
 
 // ── Grandes Derbis mundiales (sync with WORLD_DERBIES in app.js) ─────────────

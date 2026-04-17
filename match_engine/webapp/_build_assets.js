@@ -36,6 +36,26 @@ async function build() {
     logLevel:    'silent',
   });
 
+  // GX user logic
+  await esbuild.build({
+    entryPoints: [path.join(pub, 'gx-user.js')],
+    outfile:     path.join(pub, 'gx-user.min.js'),
+    bundle:      false,
+    minify:      true,
+    target:      ['es2017'],
+    logLevel:    'silent',
+  });
+
+  // GX UI
+  await esbuild.build({
+    entryPoints: [path.join(pub, 'gx-ui.js')],
+    outfile:     path.join(pub, 'gx-ui.min.js'),
+    bundle:      false,
+    minify:      true,
+    target:      ['es2017'],
+    logLevel:    'silent',
+  });
+
   // CSS
   const cssResult = await esbuild.build({
     entryPoints: [path.join(pub, 'style.css')],
@@ -49,6 +69,10 @@ async function build() {
   const jsMin   = fs.statSync(path.join(pub, 'app.min.js')).size;
   const trnOrig = fs.statSync(path.join(pub, 'tournament.js')).size;
   const trnMin  = fs.statSync(path.join(pub, 'tournament.min.js')).size;
+  const gxuOrig = fs.statSync(path.join(pub, 'gx-user.js')).size;
+  const gxuMin  = fs.statSync(path.join(pub, 'gx-user.min.js')).size;
+  const gxiOrig = fs.statSync(path.join(pub, 'gx-ui.js')).size;
+  const gxiMin  = fs.statSync(path.join(pub, 'gx-ui.min.js')).size;
   const cssOrig = fs.statSync(path.join(pub, 'style.css')).size;
   const cssMin  = fs.statSync(path.join(pub, 'style.min.css')).size;
 
@@ -57,6 +81,8 @@ async function build() {
 
   console.log(`[build] app.js        ${kb(jsOrig)} → ${kb(jsMin)}  (-${pct(jsOrig, jsMin)})`);
   console.log(`[build] tournament.js ${kb(trnOrig)} → ${kb(trnMin)}  (-${pct(trnOrig, trnMin)})`);
+  console.log(`[build] gx-user.js    ${kb(gxuOrig)} → ${kb(gxuMin)}  (-${pct(gxuOrig, gxuMin)})`);
+  console.log(`[build] gx-ui.js      ${kb(gxiOrig)} → ${kb(gxiMin)}  (-${pct(gxiOrig, gxiMin)})`);
   console.log(`[build] style.css     ${kb(cssOrig)} → ${kb(cssMin)}  (-${pct(cssOrig, cssMin)})`);
   console.log(`[build] Done in ${Date.now() - t}ms`);
 }
