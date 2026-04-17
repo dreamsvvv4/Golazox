@@ -10253,6 +10253,13 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .gx-global-lb-header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px 8px; border-bottom:1px solid rgba(0,212,255,.1); }
 .gx-global-lb-title { font-size:.82rem; font-weight:700; color:#00d4ff; letter-spacing:.04em; }
 .gx-global-lb-week { font-size:.68rem; color:rgba(255,255,255,.35); }
+/* Ranking tabs */
+.gx-rank-tabs { display:flex; gap:.35rem; padding:8px 10px 0; }
+.gx-rank-tab { flex:1; padding:.28rem .5rem; border:1px solid rgba(255,255,255,.12); border-radius:6px; background:rgba(255,255,255,.04); color:rgba(255,255,255,.5); font-size:.7rem; font-weight:700; cursor:pointer; letter-spacing:.03em; transition:background .13s,color .13s,border-color .13s; }
+.gx-rank-tab:hover { background:rgba(255,255,255,.09); color:#fff; }
+.gx-rank-tab--active { background:rgba(0,212,255,.14); border-color:rgba(0,212,255,.5); color:#00d4ff; }
+.gx-rank-tab-sub { font-size:.6rem; color:rgba(255,255,255,.3); text-align:center; padding:4px 0 2px; letter-spacing:.03em; }
+.gx-lb-hidden { display:none !important; }
 .gx-global-lb-body { padding:6px 0; }
 .gx-lb-loading, .gx-lb-empty { padding:14px; text-align:center; font-size:.75rem; color:rgba(255,255,255,.3); }
 .gx-lb-row { display:grid; grid-template-columns:28px 24px 1fr 42px 70px; align-items:center; gap:4px; padding:5px 14px; transition:background .15s; }

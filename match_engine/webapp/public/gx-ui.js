@@ -314,8 +314,12 @@
   }
 
   // ── i18n strings nuevas para ranking ──────────────────────
-  _GX_STR['rank-title']        = { es: '🌍 Muro de la Fama',       en: '🌍 Hall of Fame'                };
+  _GX_STR['rank-title']        = { es: '� Clasificación',          en: '🏆 Rankings'                    };
   _GX_STR['rank-week']         = { es: 'Semana actual',             en: 'Current week'                   };
+  _GX_STR['rank-tab-weekly']   = { es: '📅 Semanal',               en: '📅 Weekly'                      };
+  _GX_STR['rank-tab-global']   = { es: '🌍 All-Time',              en: '🌍 All-Time'                    };
+  _GX_STR['rank-weekly-sub']   = { es: 'XP esta semana',           en: 'XP this week'                   };
+  _GX_STR['rank-global-sub']   = { es: 'XP total acumulado',       en: 'total XP all-time'              };
   _GX_STR['rank-sync']         = { es: '🔄 Sincronizar',            en: '🔄 Sync score'                  };
   _GX_STR['rank-syncing']      = { es: '⏳ Enviando…',              en: '⏳ Uploading…'                  };
   _GX_STR['rank-synced']       = { es: '✔ ¡Top ',                  en: '✔ Top '                         };
@@ -337,15 +341,17 @@
     var ds    = gxUser.getDailyStats();
     var score = gxUser.dailyScore(ds);
     var u     = gxUser.get();
-    var weekKey = gxUser.gxWeekKey();
-    var hash    = gxUser.gxHash(u.name, score, u.level, weekKey);
+    var xp    = u.xp || 0;
+    var weekKey    = gxUser.gxWeekKey();
+    var hash       = gxUser.gxHash(u.name, score, u.level, weekKey);
+    var hashGlobal = gxUser.gxHash(u.name, xp, u.level, 'global');
     var btn     = document.getElementById('gx-sync-btn');
     if (btn) { btn.disabled = true; btn.textContent = _gt('rank-syncing'); }
 
     fetch('/gx/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: u.name, score: score, level: u.level, country: u.country || '', flag: u.flag || '', hash: hash }),
+      body: JSON.stringify({ name: u.name, score: score, level: u.level, country: u.country || '', flag: u.flag || '', hash: hash, xp: xp, hashGlobal: hashGlobal }),
     })
     .then(function(r){ return r.json(); })
     .then(function(data) {
@@ -364,8 +370,10 @@
           var newAchs = gxUser.addWeeklyBadge(data.week, data.rank);
           newAchs.forEach(function(a, i){ setTimeout(function(){ showAchievementToast(a); }, 1200 + i*500); });
         }
-        // Recargar tabla global
-        _gxLoadLeaderboard();
+        // Recargar tabla activa
+        var activeTab = document.querySelector('.gx-rank-tab--active');
+        var activeType = activeTab ? (activeTab.dataset.rtype || 'weekly') : 'weekly';
+        _gxLoadLeaderboard(activeType);
       }
     })
     .catch(function() {
@@ -373,11 +381,13 @@
     });
   }
 
-  function _gxLoadLeaderboard() {
-    var el = document.getElementById('gx-global-lb-body');
+  function _gxLoadLeaderboard(type) {
+    var isGlobal = (type === 'global');
+    var elId = isGlobal ? 'gx-global-lb-body' : 'gx-weekly-lb-body';
+    var el = document.getElementById(elId);
     if (!el) return;
     el.innerHTML = '<div class="gx-lb-loading">' + _gt('rank-loading') + '</div>';
-    fetch('/gx/leaderboard')
+    fetch('/gx/leaderboard' + (isGlobal ? '?type=global' : ''))
     .then(function(r){ return r.json(); })
     .then(function(data) {
       var u = gxUser.get();
@@ -389,12 +399,14 @@
       el.innerHTML = data.entries.slice(0, 10).map(function(e, i) {
         var isMe = e.name === u.name;
         var medal = i < 3 ? medals[i] : (i+1);
+        var scoreVal = isGlobal ? (e.xp || 0) : (e.score || 0);
+        var scoreSuffix = isGlobal ? ' XP' : ' pts';
         return '<div class="gx-lb-row' + (isMe ? ' gx-lb-row--me' : '') + '">' +
           '<span class="gx-lb-pos">' + medal + '</span>' +
           '<span class="gx-lb-flag">' + _esc(e.flag || '') + '</span>' +
           '<span class="gx-lb-name">' + _esc(e.name) + '</span>' +
           '<span class="gx-lb-lv">Lv.' + _esc(String(e.level)) + '</span>' +
-          '<span class="gx-lb-score">' + Number(e.score).toLocaleString() + '</span>' +
+          '<span class="gx-lb-score">' + Number(scoreVal).toLocaleString() + scoreSuffix + '</span>' +
         '</div>';
       }).join('');
     })
@@ -514,11 +526,16 @@
       '<div class="gx-global-lb">' +
         '<div class="gx-global-lb-header">' +
           '<span class="gx-global-lb-title">' + _gt('rank-title') + '</span>' +
-          '<span class="gx-global-lb-week">' + _gt('rank-week') + ' · ' + _esc(gxUser.gxWeekKey()) + '</span>' +
         '</div>' +
-        '<div id="gx-global-lb-body" class="gx-global-lb-body">' +
+        '<div class="gx-rank-tabs">' +
+          '<button class="gx-rank-tab gx-rank-tab--active" data-rtype="weekly">' + _gt('rank-tab-weekly') + '</button>' +
+          '<button class="gx-rank-tab" data-rtype="global">' + _gt('rank-tab-global') + '</button>' +
+        '</div>' +
+        '<div class="gx-rank-tab-sub" id="gx-rank-tab-sub">' + _gt('rank-weekly-sub') + '</div>' +
+        '<div id="gx-weekly-lb-body" class="gx-global-lb-body">' +
           '<div class="gx-lb-loading">' + _gt('rank-loading') + '</div>' +
         '</div>' +
+        '<div id="gx-global-lb-body" class="gx-global-lb-body gx-lb-hidden"></div>' +
       '</div>' +
 
       '</div>';
@@ -556,8 +573,23 @@
     // Wiring sync button
     var syncBtn = document.getElementById('gx-sync-btn');
     if (syncBtn) syncBtn.addEventListener('click', _gxSyncScore);
-    // Load leaderboard on open
-    _gxLoadLeaderboard();
+    // Wire ranking tabs (semanal / all-time)
+    document.querySelectorAll('.gx-rank-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var type = btn.dataset.rtype;
+        document.querySelectorAll('.gx-rank-tab').forEach(function(b){ b.classList.remove('gx-rank-tab--active'); });
+        btn.classList.add('gx-rank-tab--active');
+        var wEl = document.getElementById('gx-weekly-lb-body');
+        var gEl = document.getElementById('gx-global-lb-body');
+        var subEl = document.getElementById('gx-rank-tab-sub');
+        if (wEl) wEl.classList.toggle('gx-lb-hidden', type !== 'weekly');
+        if (gEl) gEl.classList.toggle('gx-lb-hidden', type !== 'global');
+        if (subEl) subEl.textContent = _gt(type === 'global' ? 'rank-global-sub' : 'rank-weekly-sub');
+        _gxLoadLeaderboard(type);
+      });
+    });
+    // Load weekly by default
+    _gxLoadLeaderboard('weekly');
     // Detect country silently if unknown
     _gxDetectCountry();
   }

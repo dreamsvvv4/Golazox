@@ -1791,6 +1791,7 @@ app.get('/config.js', (_req, res) => {
 // Se autolimpia manteniendo solo las últimas 8 semanas.
 // Reset: automático por clave de semana ISO — no necesita cron.
 const GX_LB_FILE  = path.join(__dirname, 'data', 'gx_leaderboard.json');
+const GX_GLOBAL_FILE = path.join(__dirname, 'data', 'gx_global_lb.json');
 const GX_SALT     = process.env.GX_SALT || 'golazox_2026_xp';
 const GX_MAX_PER_WEEK  = 200;
 const GX_MAX_NAME_LEN  = 28;
@@ -1838,15 +1839,32 @@ function _gxSaveLB(data) {
   } catch (_) {}
 }
 
-// GET /gx/leaderboard?week=current|prev
+function _gxLoadGlobal() {
+  try {
+    if (!fs.existsSync(GX_GLOBAL_FILE)) return [];
+    return JSON.parse(fs.readFileSync(GX_GLOBAL_FILE, 'utf8'));
+  } catch (_) { return []; }
+}
+
+function _gxSaveGlobal(entries) {
+  try {
+    fs.writeFileSync(GX_GLOBAL_FILE, JSON.stringify(entries.slice(0, 500)), 'utf8');
+  } catch (_) {}
+}
+
+// GET /gx/leaderboard?week=current|prev&type=weekly|global
 app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  if (req.query.type === 'global') {
+    const entries = _gxLoadGlobal().slice(0, 20);
+    return res.json({ type: 'global', entries, total: entries.length });
+  }
   const lb      = _gxLoadLB();
   const now     = new Date();
   const wkKey   = req.query.week === 'prev'
     ? _gxWeekKey(new Date(now - 7 * 86400000))
     : _gxWeekKey(now);
   const entries = (lb[wkKey] || []).slice(0, 20);
-  res.set('Cache-Control', 'no-store');
   res.json({ week: wkKey, entries, total: entries.length });
 });
 
@@ -1855,7 +1873,7 @@ app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
 const _gxCheckJson = (req, res, next) => { const ct = req.headers['content-type'] || ''; return ct.includes('application/json') ? next() : res.status(415).json({ error: 'Content-Type must be application/json' }); };
 app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, (req, res) => {
   try {
-    const { name, score, level, country, flag, hash } = req.body || {};
+    const { name, score, level, country, flag, hash, xp: rawXp, hashGlobal } = req.body || {};
 
     // Validación
     if (typeof name !== 'string' || typeof score !== 'number' || typeof level !== 'number') {
@@ -1901,9 +1919,32 @@ app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, 
 
     _gxSaveLB(lb);
 
+    // Global leaderboard update (based on total XP, never resets)
+    let globalRank = null;
+    if (typeof rawXp === 'number' && typeof hashGlobal === 'string') {
+      const safeXp = Math.min(Math.max(0, Math.floor(rawXp)), GX_MAX_SCORE);
+      const expectG = _gxHash(safeName, safeXp, safeLevel, 'global');
+      if (hashGlobal === expectG) {
+        const global = _gxLoadGlobal();
+        const gIdx = global.findIndex(e => e.name === safeName);
+        if (gIdx >= 0) {
+          if (safeXp >= global[gIdx].xp) {
+            global[gIdx] = { name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() };
+          }
+        } else if (global.length < 500) {
+          global.push({ name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
+        }
+        global.sort((a, b) => b.xp - a.xp);
+        _gxSaveGlobal(global);
+        globalRank = global.findIndex(e => e.name === safeName) + 1;
+      }
+    }
+
     // Devuelve posición del usuario
     const pos = lb[wkKey].findIndex(e => e.name === safeName) + 1;
-    res.json({ ok: true, week: wkKey, rank: pos, total: lb[wkKey].length });
+    const resp = { ok: true, week: wkKey, rank: pos, total: lb[wkKey].length };
+    if (globalRank) resp.globalRank = globalRank;
+    res.json(resp);
   } catch (err) {
     console.error('[gx:score]', err);
     res.status(500).json({ error: 'internal' });
