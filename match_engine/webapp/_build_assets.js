@@ -45,34 +45,12 @@ async function build() {
     logLevel:    'silent',
   });
 
-  // Gamification modules
-  await esbuild.build({
-    entryPoints: [path.join(pub, 'gx-user.js')],
-    outfile:     path.join(pub, 'gx-user.min.js'),
-    bundle:      false,
-    minify:      true,
-    target:      ['es2017'],
-    logLevel:    'silent',
-  });
-  await esbuild.build({
-    entryPoints: [path.join(pub, 'gx-ui.js')],
-    outfile:     path.join(pub, 'gx-ui.min.js'),
-    bundle:      false,
-    minify:      true,
-    target:      ['es2017'],
-    logLevel:    'silent',
-  });
-
   const jsOrig  = fs.statSync(path.join(pub, 'app.js')).size;
   const jsMin   = fs.statSync(path.join(pub, 'app.min.js')).size;
   const trnOrig = fs.statSync(path.join(pub, 'tournament.js')).size;
   const trnMin  = fs.statSync(path.join(pub, 'tournament.min.js')).size;
   const cssOrig = fs.statSync(path.join(pub, 'style.css')).size;
   const cssMin  = fs.statSync(path.join(pub, 'style.min.css')).size;
-  const gxUOrig = fs.statSync(path.join(pub, 'gx-user.js')).size;
-  const gxUMin  = fs.statSync(path.join(pub, 'gx-user.min.js')).size;
-  const gxIOrig = fs.statSync(path.join(pub, 'gx-ui.js')).size;
-  const gxIMin  = fs.statSync(path.join(pub, 'gx-ui.min.js')).size;
 
   const kb = n => (n / 1024).toFixed(1) + ' KB';
   const pct = (orig, min) => (((orig - min) / orig) * 100).toFixed(0) + '%';
@@ -80,8 +58,6 @@ async function build() {
   console.log(`[build] app.js        ${kb(jsOrig)} → ${kb(jsMin)}  (-${pct(jsOrig, jsMin)})`);
   console.log(`[build] tournament.js ${kb(trnOrig)} → ${kb(trnMin)}  (-${pct(trnOrig, trnMin)})`);
   console.log(`[build] style.css     ${kb(cssOrig)} → ${kb(cssMin)}  (-${pct(cssOrig, cssMin)})`);
-  console.log(`[build] gx-user.js    ${kb(gxUOrig)} → ${kb(gxUMin)}  (-${pct(gxUOrig, gxUMin)})`);
-  console.log(`[build] gx-ui.js      ${kb(gxIOrig)} → ${kb(gxIMin)}  (-${pct(gxIOrig, gxIMin)})`);
   console.log(`[build] Done in ${Date.now() - t}ms`);
 }
 

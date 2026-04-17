@@ -75,11 +75,6 @@ const TRN = (() => {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
     $('main-pen-wrap') && $('main-pen-wrap').classList.toggle('hidden', tab !== 'pen');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
-    const profileWrap = $('main-profile-wrap');
-    if (profileWrap) {
-      profileWrap.classList.toggle('hidden', tab !== 'profile');
-      if (tab === 'profile' && window.gxUI) gxUI.renderProfileTab();
-    }
     document.querySelectorAll('.main-tab-btn').forEach(b =>
       b.classList.toggle('main-tab-active', b.dataset.tab === tab));
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2299,14 +2294,6 @@ const TRN = (() => {
       _stopTrnLoadCycle();
       _data = data;
       try { _gx('trn_simulate_success', { format: _fmt, champion: _data.champion?.name }); } catch(_) {}
-      // GX: registrar XP por torneo completado
-      if (window.gxUser) {
-        try {
-          const _gxTrnR = gxUser.addXP('tournament', { format: _fmt });
-          _gxTrnR._reason = 'tournament';
-          if (window.gxUI) gxUI.onXpGained(_gxTrnR);
-        } catch (_) {}
-      }
       _computeTournamentStats(_data);
       _buildMatchCache(_data);
       hide($('trn-step-3'));

@@ -1520,7 +1520,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   ]);
 }
 
-async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null, introContext = null, introTrophy = null, introCompetition = null) {
+async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null, introContext = null, introTrophy = null) {
   if (!fs.existsSync(MUSIC_FILE)) {
     console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
     return outPath;
@@ -1633,7 +1633,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     } else {
       console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
       try {
-        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, introTitle, introSub, introCompetition || matchMeta.competition || null, matchMeta.matchDesc || null, introTrophy || null);
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, introTitle, introSub, introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
       } catch (e) {
         console.warn('[post] Match intro failed:', e.message.slice(0, 200));
       }
@@ -1893,7 +1893,7 @@ async function generateVideo(opts = {}) {
   }
 
   // Post-process: add intro card + background music (+ optional speedup)
-  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub, opts.introContext || null, opts.introTrophy || null, opts.introCompetition || null);
+  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub, opts.introContext || null, opts.introTrophy || null);
 
   console.log(`[video] Done → ${outPath}`);
   return { path: outPath, title: videoTitle, matchMeta };
@@ -2393,7 +2393,6 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
       introEraA: clasico.introEraA !== undefined ? clasico.introEraA : clasico.eraA,
       teamB: clasico.teamB, eraB: clasico.eraB,
       introEraB: clasico.introEraB !== undefined ? clasico.introEraB : clasico.eraB,
-      competition: opts.introCompetition || clasico.category || null,
       finalScore,
       scorersA: rawResult.scorersA,
       scorersB: rawResult.scorersB,
@@ -2917,13 +2916,11 @@ if (require.main === module) {
     stadiumId:  get('--stadiumId') || get('--stadium'),
     refereeId:  get('--refereeId') || get('--referee'),
     weatherId:  get('--weatherId') || get('--weather'),
-    introTitle:       get('--introTitle') || get('--hookText'),  // custom label on match intro card
-    introSub:         get('--introSub'),      // custom subtitle on match intro card
-    introCompetition: get('--introCompetition'),  // competition label shown in intro card
-    matchDesc:        get('--matchDesc'),     // first-leg / aggregate note
-    introEraA:        get('--introEraA'),     // display era for team A (overrides eraA on card)
-    introEraB:        get('--introEraB'),     // display era for team B (overrides eraB on card)
-    preview:          args.includes('--preview'),
+    introTitle: get('--introTitle'),   // custom label on match intro card
+    introSub:   get('--introSub'),     // custom subtitle on match intro card
+    introEraA:  get('--introEraA'),    // display era for team A (overrides eraA on card)
+    introEraB:  get('--introEraB'),    // display era for team B (overrides eraB on card)
+    preview:    args.includes('--preview'),
   };
 
   // --card-only: generate just the rivalry intro card (5s), no simulation

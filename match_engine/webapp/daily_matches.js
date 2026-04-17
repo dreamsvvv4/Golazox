@@ -169,40 +169,13 @@ const TEAM_SLUG_MAP = {
   'sassuolo':                 'us-sassuolo',
   // Champions League fixtures — extra mappings
   'fc porto':                 'fc-porto',
-  'porto':                    'fc-porto',
   'sl benfica':               'benfica-lissabon',
-  'benfica':                  'benfica-lissabon',
-  'sporting cp':              'sporting-lissabon',
-  'sporting clube de portugal': 'sporting-lissabon',
-  'sporting lisbon':          'sporting-lissabon',
-  'sc braga':                 'braga',
-  'braga':                    'braga',
-  'sporting de braga':        'braga',
-  'vitória sc':               'vitoria-guimaraes',
-  'vitoria sc':               'vitoria-guimaraes',
-  'vitória guimarães':        'vitoria-guimaraes',
-  'vitoria guimaraes':        'vitoria-guimaraes',
-  'boavista fc':              'boavista',
-  'boavista':                 'boavista',
-  'moreirense fc':            'moreirense',
-  'moreirense':               'moreirense',
-  'fc famalicão':             'famalicao',
-  'fc famalicao':             'famalicao',
-  'famalicão':                'famalicao',
-  'famalicao':                'famalicao',
-  'casa pia ac':              'casa-pia',
-  'casa pia':                 'casa-pia',
-  'rio ave fc':               'rio-ave',
-  'rio ave':                  'rio-ave',
-  'cd nacional':              'nacional',
   'celtic fc':                'celtic-glasgow',
   'ajax':                     'ajax-amsterdam',
   'psv eindhoven':            'psv-eindhoven',
   'club brugge kv':           'fc-brugge',
   'galatasaray a.ş.':         'galatasaray-istanbul',
   'galatasaray':              'galatasaray-istanbul',
-  'nottingham forest':        'nottingham-forest',
-  'nottingham forest fc':     'nottingham-forest',
   // 🌎 LATAM (alta viralidad)
   'flamengo':                 'flamengo',
   'clube de regatas do flamengo': 'flamengo',
@@ -237,26 +210,8 @@ const TEAM_SLUG_MAP = {
   'estudiantes':              'estudiantes',
   'talleres':                 'talleres-cordoba',
   'nacional':                 'nacional',
-  'club nacional de football': 'nacional',
   'peñarol':                  'penarol',
-  'club atlético peñarol':    'penarol',
   'colo-colo':                'colo-colo',
-  // 🌎 Libertadores — equipos adicionales
-  'always ready':             'always-ready',
-  'sporting cristal':         'sporting-cristal',
-  'club sporting cristal':    'sporting-cristal',
-  'independiente medellín':   'independiente-medellin',
-  'independiente medellin':   'independiente-medellin',
-  'deportivo independiente medellín': 'independiente-medellin',
-  'bolivar':                  'bolivar',
-  'club bolivar':             'bolivar',
-  'the strongest':            'strongest',
-  'universitario de deportes': 'universitario',
-  'universitario':            'universitario',
-  'cerro porteño':            'cerro-porteno',
-  'cerro porteno':            'cerro-porteno',
-  'olimpia':                  'olimpia',
-  'club olimpia':             'olimpia',
   'deportivo de la coruña':   'rc-deportivo',
   // 🌙 Nicho — Giants caídos
   'sampdoria':                'sampdoria',
@@ -519,19 +474,15 @@ async function fetchFromESPN(dateStr) {
       if (!res.ok) return;
       const data = await res.json();
       for (const ev of (data.events || [])) {
-        const comp0 = ev.competitions?.[0] || {};
-        const comps = comp0.competitors || [];
+        const comps = ev.competitions?.[0]?.competitors || [];
         const home  = comps.find(c => c.homeAway === 'home');
         const away  = comps.find(c => c.homeAway === 'away');
         if (!home || !away) continue;
-        // Extract aggregate / first-leg note (e.g. "2nd Leg - Tied on aggregate")
-        const aggNote = (comp0.notes || []).find(n => n.headline && /leg|aggregate/i.test(n.headline));
         matches.push({
           homeTeam:    { name: home.team?.displayName || '' },
           awayTeam:    { name: away.team?.displayName || '' },
           competition: { name: league.name },
           utcDate:     ev.date || dateStr,
-          aggregate:   aggNote?.headline || null,
         });
       }
     } catch { /* skip league on error */ }
@@ -597,7 +548,6 @@ function pickBestMatch(matches) {
       awayName: m.awayTeam.name,
       competition: m.competition?.name || 'Partido del Día',
       utcDate: m.utcDate,
-      aggregate: m.aggregate || null,
       priority,
     });
   }
@@ -656,55 +606,21 @@ async function getDailyMatchVideo({ dryRun = false, date = null } = {}) {
   };
   const compDisplay = COMP_DISPLAY[best.competition] || best.competition;
 
-  // Format kick-off time + date in local CET (Spain) — e.g. "JUE 16 ABR · 21:00"
-  const DAYS_ES  = ['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
-  const MONTHS_ES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+  // Format kick-off time in local CET (Spain) — e.g. "La Liga · 21:00"
   let introSub = compDisplay;
-  let kickoffDt = null;
   try {
-    kickoffDt = new Date(best.utcDate);
-    const madridOpts = { timeZone: 'Europe/Madrid' };
-    const timeStr  = kickoffDt.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', ...madridOpts });
-    const localDay = parseInt(kickoffDt.toLocaleDateString('es-ES', { day: 'numeric',   ...madridOpts }), 10);
-    const localDow = parseInt(kickoffDt.toLocaleDateString('es-ES', { weekday: 'short', ...madridOpts }).slice(0,1) === '?' ? kickoffDt.getDay() : kickoffDt.toLocaleDateString('en-US', { weekday: 'short', ...madridOpts }).slice(0,100), 10);
-    // simpler approach: convert to Madrid timezone via Intl
-    const parts = new Intl.DateTimeFormat('en-US', { weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', hour12:false, timeZone:'Europe/Madrid' }).formatToParts(kickoffDt);
-    const dow   = parts.find(p=>p.type==='weekday')?.value || '';
-    const dayN  = parseInt(parts.find(p=>p.type==='day')?.value || '0', 10);
-    const monN  = parts.find(p=>p.type==='month')?.value || '';
-    const MONTHS_MAP = {Jan:'ENE',Feb:'FEB',Mar:'MAR',Apr:'ABR',May:'MAY',Jun:'JUN',Jul:'JUL',Aug:'AGO',Sep:'SEP',Oct:'OCT',Nov:'NOV',Dec:'DIC'};
-    const DAYS_MAP   = {Sun:'DOM',Mon:'LUN',Tue:'MAR',Wed:'MIÉ',Thu:'JUE',Fri:'VIE',Sat:'SÁB'};
-    const dateLabel = `${DAYS_MAP[dow]||dow} ${dayN} ${MONTHS_MAP[monN]||monN}`;
-    introSub = `${dateLabel} · ${timeStr}`;
+    const kickoff = new Date(best.utcDate);
+    const timeStr = kickoff.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+    introSub = `${compDisplay} · ${timeStr}`;
   } catch { /* use competition name only */ }
 
-  // Format aggregate / first-leg note in Spanish
-  const formatAggregate = (agg) => {
-    if (!agg) return null;
-    const m2 = agg.match(/2nd Leg\s*[-–]\s*Tied on aggregate/i);
-    if (m2) return '2ª Vuelta · Global igualado';
-    const mLead = agg.match(/2nd Leg\s*[-–]\s*(.+?)\s+lead\s+(\d+[–-]\d+)\s+on aggregate/i);
-    if (mLead) return `2ª Vuelta · ${mLead[1]} gana ${mLead[2].replace('-','–')} en el global`;
-    const m1 = agg.match(/1st Leg/i);
-    if (m1) return '1ª Vuelta';
-    return agg;
-  };
-  const matchDescFormatted = formatAggregate(best.aggregate);
-
-  // hookText: "¿QUIÉN PASA?" for knockout 2nd legs, else competition name
-  const isSecondLeg = best.aggregate && /2nd leg/i.test(best.aggregate);
-  const introTitle  = isSecondLeg ? '¿QUIÉN PASA?' : null;  // null → default "EL DEBATE DEFINITIVO"
-
   const result = await generateVideo({
-    type:             'match',
-    teamA:            best.homeSlug,
-    eraA:             best.era,
-    teamB:            best.awaySlug,
-    eraB:             best.era,
-    introTitle,                        // "¿QUIÉN PASA?" for 2nd legs
-    introSub,                          // "JUE 16 ABR · 21:00"
-    introCompetition:  compDisplay,    // shown as competition label in intro card
-    matchDesc:         matchDescFormatted || null,  // "2ª Vuelta · Global igualado"
+    type:       'match',
+    teamA:      best.homeSlug,
+    eraA:       best.era,
+    teamB:      best.awaySlug,
+    eraB:       best.era,
+    introSub,   // "Primera Division · 21:00"
   });
 
   // Build a score-based title if the simulation produced a result
