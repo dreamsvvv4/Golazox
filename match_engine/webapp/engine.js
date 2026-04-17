@@ -724,6 +724,27 @@ function _fixRedCardScorers(scorers, reds, players, rand) {
   });
 }
 
+// Injured / substituted players cannot score after their sub minute — reassign to a still-active player
+function _fixSubScorers(scorers, injuries, players, rand) {
+  if (!injuries || !injuries.length) return scorers;
+  const subAt = {};
+  injuries.forEach(inj => { subAt[inj.name] = inj.minute; });
+  return scorers.map(g => {
+    const subMinute = subAt[g.name];
+    if (subMinute !== undefined && subMinute <= g.minute) {
+      const pool = players.filter(p =>
+        (SCORER_WEIGHTS[p.position] || 0) > 0 &&
+        p.name !== g.name &&
+        (!subAt[p.name] || subAt[p.name] > g.minute)
+      );
+      if (pool.length) {
+        return { ...g, name: pool[Math.floor(rand() * pool.length)].name };
+      }
+    }
+    return g;
+  });
+}
+
 // ─────────────────────────────────────────────────────────────
 // Position weights for yellow cards (DM/CB highest; GK lowest)
 const YELLOW_WEIGHTS = { GK:0.3, RB:2.0, CB:2.5, LB:2.0, DM:3.0, CM:1.8, RM:1.5, LM:1.5, AM:1.2, RW:1.0, LW:1.0, ST:1.5 };
@@ -1094,6 +1115,10 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   scorersB = _fixRedCardScorers(scorersB, cardsB.red, lineupB.players, fixRand);
   const injuriesA     = pickInjuries(lineupA.players, mulberry32(saltedSeed + 11));
   const injuriesB     = pickInjuries(lineupB.players, mulberry32(saltedSeed + 13));
+  // Injured/subbed players cannot score after they leave — reassign those goals
+  const injRand = mulberry32(saltedSeed + 101);
+  scorersA = _fixSubScorers(scorersA, injuriesA, lineupA.players, injRand);
+  scorersB = _fixSubScorers(scorersB, injuriesB, lineupB.players, injRand);
   // Build excluded-player sets (red cards + injuries) before picking penalties
   const excludedA = new Set([
     ...(cardsA.red    || []).map(c => c.name),
