@@ -1852,6 +1852,16 @@ function _gxSaveGlobal(entries) {
   } catch (_) {}
 }
 
+// GET /gx/check-name?name=xxx — comprueba si un nombre ya existe en el ranking global
+app.get('/gx/check-name', _gxRlRead, (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  const name = String(req.query.name || '').trim().slice(0, 28);
+  if (name.length < 3) return res.json({ taken: false });
+  const global = _gxLoadGlobal();
+  const taken  = global.some(e => e.name === name);
+  res.json({ taken });
+});
+
 // GET /gx/leaderboard?week=current|prev&type=weekly|global
 app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
   res.set('Cache-Control', 'no-store');

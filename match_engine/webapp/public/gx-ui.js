@@ -68,6 +68,7 @@
     'reset-done':    { es: 'Progreso borrado',             en: 'Progress deleted'            },
     'name-too-short':{ es: '⚠️ El nombre debe tener al menos 3 caracteres', en: '⚠️ Name must be at least 3 characters' },
     'name-invalid':  { es: '⚠️ Solo letras, números, puntos y guiones', en: '⚠️ Only letters, numbers, dots and dashes' },
+    'name-taken':    { es: '⚠️ Ese nombre ya está en uso en el ranking. Tu progreso se fusionará con esa cuenta si coincide el score.', en: '⚠️ That name is already used in the ranking. Your progress may merge with that account.' },
     'name-updated':  { es: '✔ Nombre actualizado: ',      en: '✔ Name updated: '            },
     'card-share':    { es: '📤 Compartir tarjeta',         en: '📤 Share card'               },
     'card-dl':       { es: '⬇️ Descargar',                en: '⬇️ Download'                 },
@@ -1256,6 +1257,11 @@
     if (!/^[\w.\-]+$/.test(nm)) { _toast(_gt('name-invalid'), 'xp', 2500); return false; }
     var uu = gxUser.get(); uu.name = nm;
     try { localStorage.setItem('gx_user', JSON.stringify(uu)); } catch(_) {}
+    // Verificar en servidor si ese nombre ya existe en el ranking (sin bloquear el guardado)
+    fetch('/gx/check-name?name=' + encodeURIComponent(nm))
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ if (d && d.taken) { _toast(_gt('name-taken'), 'xp', 5000); } })
+      .catch(function(){});
     // Refrescar todos los elementos que muestran el nombre
     ['gx-prof-name-display','gx-daily-player-name','gx-card-name-val'].forEach(function(id){
       var el = document.getElementById(id); if (el) el.textContent = nm;
