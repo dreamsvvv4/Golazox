@@ -625,14 +625,20 @@
       inp.type = 'text'; inp.value = cur; inp.maxLength = 24; inp.className = 'gx-prof-name-input';
       disp.replaceWith(inp); inp.focus();
       btn.innerHTML = '✔ OK'; btn.style.minWidth = '52px';
+      var _busy = false;
       function _done() {
+        if (_busy) return;
         var nm = inp.value.trim().slice(0, 24) || cur;
-        _saveName(nm);
-        var sp = document.createElement('span');
-        sp.id = 'gx-card-name-val'; sp.className = 'gx-card-name-val'; sp.textContent = nm;
-        inp.replaceWith(sp);
-        btn.innerHTML = '✏️ Cambiar'; btn.style.minWidth = '';
-        _toast('✔ Nombre actualizado: <strong>' + _esc(nm) + '</strong>', 'unlock', 2500);
+        _busy = true; btn.disabled = true;
+        _saveName(nm, cur).then(function(ok) {
+          _busy = false; btn.disabled = false;
+          if (!ok) { inp.focus(); inp.select(); return; }
+          var sp = document.createElement('span');
+          sp.id = 'gx-card-name-val'; sp.className = 'gx-card-name-val'; sp.textContent = nm;
+          inp.replaceWith(sp);
+          btn.innerHTML = '✏️ Cambiar'; btn.style.minWidth = '';
+          _toast('✔ Nombre actualizado: <strong>' + _esc(nm) + '</strong>', 'unlock', 2500);
+        });
       }
       btn.addEventListener('click', _done, { once: true });
       inp.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); _done(); } });
@@ -1250,26 +1256,43 @@
   }
 
   // ── Nombre compartido: guarda + refresca todos los puntos de display ─
-  function _saveName(nm) {
+  // Devuelve una Promise<boolean>: true = guardado OK, false = bloqueado.
+  function _saveName(nm, curName) {
     nm = (nm || '').trim().slice(0, 20);
-    // Validación: 3-20 caracteres, solo letras, números, guión bajo o punto
-    if (!nm || nm.length < 3) { _toast(_gt('name-too-short'), 'xp', 2500); return false; }
-    if (!/^[\w.\-]+$/.test(nm)) { _toast(_gt('name-invalid'), 'xp', 2500); return false; }
-    var uu = gxUser.get(); uu.name = nm;
-    try { localStorage.setItem('gx_user', JSON.stringify(uu)); } catch(_) {}
-    // Verificar en servidor si ese nombre ya existe en el ranking (sin bloquear el guardado)
-    fetch('/gx/check-name?name=' + encodeURIComponent(nm))
+    // Validación síncrona
+    if (!nm || nm.length < 3) { _toast(_gt('name-too-short'), 'xp', 2500); return Promise.resolve(false); }
+    if (!/^[\w.\-]+$/.test(nm)) { _toast(_gt('name-invalid'), 'xp', 2500); return Promise.resolve(false); }
+    // Si el nombre no cambia respecto al actual, guardar directamente sin check
+    if (nm === (curName || gxUser.get().name)) { return Promise.resolve(true); }
+    // Verificar en servidor si ese nombre ya está en uso
+    return fetch('/gx/check-name?name=' + encodeURIComponent(nm))
       .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){ if (d && d.taken) { _toast(_gt('name-taken'), 'xp', 5000); } })
-      .catch(function(){});
-    // Refrescar todos los elementos que muestran el nombre
-    ['gx-prof-name-display','gx-daily-player-name','gx-card-name-val'].forEach(function(id){
-      var el = document.getElementById(id); if (el) el.textContent = nm;
-    });
-    _updateXpBar();
-    // Redibujar la tarjeta canvas con el nuevo nombre
-    setTimeout(_drawPlayerCard, 40);
-    return true;
+      .then(function(d) {
+        if (d && d.taken) {
+          _toast(_gt('name-taken'), 'xp', 5000);
+          return false;
+        }
+        // Nombre libre — persistir
+        var uu = gxUser.get(); uu.name = nm;
+        try { localStorage.setItem('gx_user', JSON.stringify(uu)); } catch(_) {}
+        ['gx-prof-name-display','gx-daily-player-name','gx-card-name-val'].forEach(function(id){
+          var el = document.getElementById(id); if (el) el.textContent = nm;
+        });
+        _updateXpBar();
+        setTimeout(_drawPlayerCard, 40);
+        return true;
+      })
+      .catch(function() {
+        // Si el servidor no responde, permitir el guardado (no bloquear al usuario)
+        var uu = gxUser.get(); uu.name = nm;
+        try { localStorage.setItem('gx_user', JSON.stringify(uu)); } catch(_) {}
+        ['gx-prof-name-display','gx-daily-player-name','gx-card-name-val'].forEach(function(id){
+          var el = document.getElementById(id); if (el) el.textContent = nm;
+        });
+        _updateXpBar();
+        setTimeout(_drawPlayerCard, 40);
+        return true;
+      });
   }
 
   // ── Abre inline edit en el elemento dado y llama _saveName al confirmar ─
@@ -1281,14 +1304,22 @@
     inp.placeholder = 'user123, Messi25...';
     dispEl.replaceWith(inp); inp.focus(); inp.select();
     if (btnEl) { btnEl.textContent = '✔'; btnEl.title = 'Confirmar'; }
+    var _busy = false;
     function _done() {
+      if (_busy) return;
       var nm = inp.value.trim().slice(0, 20) || cur;
-      var ok = _saveName(nm);
-      if (ok === false) { inp.focus(); inp.select(); return; }
-      var sp = document.createElement('span');
-      sp.id = dispEl.id; sp.className = dispEl.className; sp.textContent = nm;
-      inp.replaceWith(sp);
-      if (btnEl) { btnEl.textContent = '✏️'; btnEl.title = _gt('edit-name-title'); }
+      _busy = true;
+      if (btnEl) btnEl.disabled = true;
+      _saveName(nm, cur).then(function(ok) {
+        _busy = false;
+        if (btnEl) btnEl.disabled = false;
+        if (!ok) { inp.focus(); inp.select(); return; }
+        var sp = document.createElement('span');
+        sp.id = dispEl.id; sp.className = dispEl.className; sp.textContent = nm;
+        inp.replaceWith(sp);
+        if (btnEl) { btnEl.textContent = '✏️'; btnEl.title = _gt('edit-name-title'); }
+        _toast(_gt('name-updated') + '<strong>' + _esc(nm) + '</strong>', 'unlock', 2500);
+      });
     }
     if (btnEl) btnEl.addEventListener('click', _done, { once: true });
     inp.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); _done(); } });
