@@ -30,7 +30,38 @@ function escHtml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// Proper display names for German-slugged national teams and common edge cases
+const SLUG_NAMES = {
+  'frankreich': 'Francia', 'brasilien': 'Brasil', 'argentinien': 'Argentina',
+  'deutschland': 'Alemania', 'england': 'Inglaterra', 'spanien': 'España',
+  'italien': 'Italia', 'portugal': 'Portugal', 'niederlande': 'Países Bajos',
+  'agypten': 'Egipto', 'kamerun': 'Camerún', 'marokko': 'Marruecos',
+  'fc-paris-saint-germain': 'PSG', 'juventus-turin': 'Juventus',
+  'fc-bayern-munchen': 'Bayern Múnich', 'ac-mailand': 'AC Milán',
+  'inter-mailand': 'Inter de Milán', 'as-rom': 'AS Roma', 'lazio-rom': 'Lazio',
+  'fc-liverpool': 'Liverpool', 'fc-arsenal': 'Arsenal', 'fc-chelsea': 'Chelsea',
+  'fc-barcelona': 'Barcelona', 'real-madrid': 'Real Madrid',
+  'atletico-madrid': 'Atlético', 'manchester-united': 'Man. United',
+  'manchester-city': 'Man. City', 'borussia-dortmund': 'Dortmund',
+  'ssc-neapel': 'Nápoles', 'ajax-amsterdam': 'Ajax',
+  'celtic-glasgow': 'Celtic', 'glasgow-rangers': 'Rangers',
+  'benfica-lissabon': 'Benfica', 'sporting-cp': 'Sporting CP',
+  'club-atletico-boca-juniors': 'Boca Juniors',
+  'club-atletico-river-plate': 'River Plate',
+  'fluminense-rio-de-janeiro': 'Fluminense',
+  'olympique-marseille': 'Marsella',
+};
 function slugToName(slug) {
+  if (SLUG_NAMES[slug]) return SLUG_NAMES[slug];
+  // Try squads-meta.json if available
+  try {
+    const metaPath = path.join(__base, 'squads-meta.json');
+    if (fs.existsSync(metaPath)) {
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8').replace(/^\uFEFF/, ''));
+      const entry = meta[slug] || meta[slug.toLowerCase()];
+      if (entry && entry.nameEs) return entry.nameEs;
+    }
+  } catch (_) {}
   return (slug || '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
@@ -402,6 +433,10 @@ ${trophySrc ? `
 <div class="trophy-center">
   <img class="trophy-img" src="${trophySrc}" alt="">
 </div>
+` : coinSrc ? `
+<div class="trophy-center" style="padding-top:20px;padding-bottom:10px;">
+  <img src="${coinSrc}" style="width:160px;height:160px;object-fit:contain;filter:drop-shadow(0 0 40px rgba(255,215,0,.5)) drop-shadow(0 0 80px rgba(255,215,0,.2));opacity:.9;" alt="">
+</div>
 ` : '<div class="spacer-top"></div>'}
 
 <div class="content-block">
@@ -410,13 +445,18 @@ ${trophySrc ? `
   ${subLabel  ? `<div class="sub-label">${escHtml(subLabel)}</div>` : ''}
 </div>
 
-${competition ? `
+${competition ? (() => {
+  // competition may be an array (contextLines) — show only the category label (first item)
+  const compLabel = Array.isArray(competition)
+    ? (competition[0] || '')
+    : String(competition || '');
+  return compLabel ? `
 <div class="competition-block">
   <div class="competition-line"></div>
-  <div class="competition-label">${escHtml(competition.toUpperCase())}</div>
+  <div class="competition-label">${escHtml(compLabel.toUpperCase())}</div>
   <div class="competition-line"></div>
-</div>
-` : ''}
+</div>` : '';
+})() : ''}
 
 <div class="spacer"></div>
 
