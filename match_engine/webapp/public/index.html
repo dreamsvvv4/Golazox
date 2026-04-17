@@ -126,7 +126,9 @@
     .logo-img{height:36px}.logo-text{display:none}.tagline{display:none}
     .header-right{margin-left:auto}
     .main-tabs-bar{justify-content:stretch}
-    .main-tab-btn{flex:1;padding:.75rem .5rem;font-size:.75rem}
+    .main-tab-btn{flex:1;padding:.75rem .3rem;font-size:.72rem;letter-spacing:.04em}
+    /* 4 tabs: below 400px show emoji only */
+    @media(max-width:399px){.main-tab-btn{padding:.7rem .1rem;font-size:.8rem}.tab-lbl{display:none}}
     .main-wrap{padding:0 .7rem;gap:.8rem;margin-top:.8rem}
     .input-panel{padding:1.1rem .9rem .95rem}
     .teams-grid{grid-template-columns:1fr;gap:.65rem;margin-bottom:1.4rem}
@@ -149,7 +151,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=103" />
+  <link rel="stylesheet" href="style.min.css?v=113" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -357,9 +359,10 @@
     <h1 class="sr-only">GolazoX — Simulador de Fútbol Histórico · Football Time Machine</h1>
     <!-- ── Main mode tabs ─── -->
     <div class="main-tabs-bar">
-      <button class="main-tab-btn main-tab-active" data-tab="match">⚽ <span data-i18n="tab-match">Partido</span></button>
-      <button class="main-tab-btn" data-tab="pen">🥅 <span data-i18n="tab-pen">Penaltis</span></button>
-      <button class="main-tab-btn" data-tab="trn" data-i18n="trn-tab-btn">🏆 Torneo</button>
+      <button class="main-tab-btn main-tab-active" data-tab="match">⚽ <span class="tab-lbl" data-i18n="tab-match">Partido</span></button>
+      <button class="main-tab-btn" data-tab="pen">🥅 <span class="tab-lbl" data-i18n="tab-pen">Penaltis</span></button>
+      <button class="main-tab-btn" data-tab="trn" data-i18n="trn-tab-btn">🏆 <span class="tab-lbl">Torneo</span></button>
+      <button class="main-tab-btn" data-tab="profile">👤 <span class="tab-lbl" data-i18n="tab-profile">Perfil</span></button>
     </div>
   </header>
 
@@ -695,6 +698,7 @@
         </div>
         <!-- Share -->
         <div class="share-row">
+          <button class="btn-rematch" id="btn-rematch">🔄 Revancha</button>
           <button class="btn-share" id="btn-share" data-i18n="btn-share">📤 Compartir resultado</button>
           <button class="btn-ghost btn-deeplink" id="btn-deeplink" title="Copiar enlace a este partido">🔗 Enlace</button>
         </div>
@@ -1649,6 +1653,9 @@
 
   </div><!-- /main-trn-wrap -->
 
+  <!-- ── PERFIL (Gamification) ──────────────────── -->
+  <div id="main-profile-wrap" class="hidden"></div>
+
   <!-- noscript: rich text block for Googlebot first-wave crawl & JS-disabled browsers.
        Summarises key content that JS would otherwise render. Hidden visually but crawlable. -->
   <noscript>
@@ -1772,9 +1779,11 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="app.min.js?v=87" defer></script>
+  <script src="gx-user.min.js?v=10" defer></script>
+  <script src="gx-ui.min.js?v=11" defer></script>
+  <script src="app.min.js?v=90" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
-  <script src="tournament.min.js?v=47" defer></script>
+  <script src="tournament.min.js?v=50" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->

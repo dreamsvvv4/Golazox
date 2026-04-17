@@ -99,6 +99,8 @@ async function _rosterFull(slug, era) {
 // Auto-create logs/ dir (used by PM2 ecosystem config)
 const logsDir = path.join(__dirname, 'logs');
 if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir, { recursive: true });
+const dataDir = path.join(__dirname, 'data');
+if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
 // Pre-build autocomplete list from local squad DB (capitalised, sorted)
 const SQUAD_SUGGESTIONS = [...new Set(
@@ -1781,6 +1783,146 @@ app.get('/config.js', (_req, res) => {
   res.type('application/javascript').set('Cache-Control', 'public, max-age=3600').send(
     `window.GOLAZOX_CONFIG=${JSON.stringify({ siteUrl: safeUrl, version: '2.0' })};`
   );
+});
+
+// ── GX Ranking: El Muro de la Fama ────────────────────────────────────────────
+// Archivo de datos: data/gx_leaderboard.json
+// Formato: { "2026-W16": [ { name, score, level, country, flag, ts }, ... ] }
+// Se autolimpia manteniendo solo las últimas 8 semanas.
+// Reset: automático por clave de semana ISO — no necesita cron.
+const GX_LB_FILE  = path.join(__dirname, 'data', 'gx_leaderboard.json');
+const GX_SALT     = process.env.GX_SALT || 'golazox_2026_xp';
+const GX_MAX_PER_WEEK  = 200;
+const GX_MAX_NAME_LEN  = 28;
+const GX_MAX_SCORE     = 9_999_999;
+// Rate limiters específicos para GX (definidos inline para no depender de _rl)
+const _gxRlRead  = rateLimit({ windowMs: 60000, max: 20, standardHeaders: 'draft-6', legacyHeaders: false, keyGenerator: ipKeyGenerator, message: { error: 'Too many requests' } });
+const _gxRlWrite = rateLimit({ windowMs: 60000, max: 10, standardHeaders: 'draft-6', legacyHeaders: false, keyGenerator: ipKeyGenerator, message: { error: 'Too many requests' } });
+const _gxRlGeo   = rateLimit({ windowMs: 60000, max: 5,  standardHeaders: 'draft-6', legacyHeaders: false, keyGenerator: ipKeyGenerator, message: { error: 'Too many requests' } });
+
+function _gxWeekKey(d) {
+  // ISO week number (lunes = inicio de semana)
+  const day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const dow = day.getUTCDay() || 7; // 1(Lun)…7(Dom)
+  day.setUTCDate(day.getUTCDate() + 4 - dow);
+  const jan4 = new Date(Date.UTC(day.getUTCFullYear(), 0, 4));
+  const wk   = 1 + Math.round(((day - jan4) / 86400000 - 3 + ((jan4.getUTCDay() || 7) - 1)) / 7);
+  return `${day.getUTCFullYear()}-W${String(wk).padStart(2, '0')}`;
+}
+
+function _gxHash(name, score, level, weekKey) {
+  // FNV-1a 32-bit sobre el string combinado + salt — sin deps externos
+  const str = `${name}:${score}:${level}:${weekKey}:${GX_SALT}`;
+  let h = 0x811c9dc5 >>> 0;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16);
+}
+
+function _gxLoadLB() {
+  try {
+    if (!fs.existsSync(GX_LB_FILE)) return {};
+    return JSON.parse(fs.readFileSync(GX_LB_FILE, 'utf8'));
+  } catch (_) { return {}; }
+}
+
+function _gxSaveLB(data) {
+  try {
+    // Mantener solo las últimas 8 semanas (evitar crecimiento infinito)
+    const keys = Object.keys(data).sort().reverse();
+    const pruned = {};
+    keys.slice(0, 8).forEach(k => { pruned[k] = data[k]; });
+    fs.writeFileSync(GX_LB_FILE, JSON.stringify(pruned), 'utf8');
+  } catch (_) {}
+}
+
+// GET /gx/leaderboard?week=current|prev
+app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
+  const lb      = _gxLoadLB();
+  const now     = new Date();
+  const wkKey   = req.query.week === 'prev'
+    ? _gxWeekKey(new Date(now - 7 * 86400000))
+    : _gxWeekKey(now);
+  const entries = (lb[wkKey] || []).slice(0, 20);
+  res.set('Cache-Control', 'no-store');
+  res.json({ week: wkKey, entries, total: entries.length });
+});
+
+// POST /gx/score
+// Body: { name, score, level, country, flag, hash }
+const _gxCheckJson = (req, res, next) => { const ct = req.headers['content-type'] || ''; return ct.includes('application/json') ? next() : res.status(415).json({ error: 'Content-Type must be application/json' }); };
+app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, (req, res) => {
+  try {
+    const { name, score, level, country, flag, hash } = req.body || {};
+
+    // Validación
+    if (typeof name !== 'string' || typeof score !== 'number' || typeof level !== 'number') {
+      return res.status(400).json({ error: 'invalid payload' });
+    }
+    const safeName  = String(name).replace(/[<>&"']/g, '').trim().slice(0, GX_MAX_NAME_LEN);
+    const safeScore = Math.min(Math.max(0, Math.floor(score)), GX_MAX_SCORE);
+    const safeLevel = Math.min(Math.max(1, Math.floor(level)), 12);
+    const safeCountry = String(country || '').replace(/[^A-Z]/g, '').slice(0, 2).toUpperCase();
+    const safeFlag  = String(flag || '').replace(/[^🌍-🌏🇦-🇿]/gu, '').slice(0, 4);
+
+    if (safeName.length < 3) return res.status(400).json({ error: 'name too short' });
+
+    // Verificación del hash anti-spoofing
+    const wkKey   = _gxWeekKey(new Date());
+    const expect  = _gxHash(safeName, safeScore, safeLevel, wkKey);
+    if (hash !== expect) {
+      console.warn(`[gx:score] hash mismatch IP=${req.ip} name="${safeName}"`);
+      return res.status(403).json({ error: 'invalid hash' });
+    }
+
+    const lb = _gxLoadLB();
+    if (!lb[wkKey]) lb[wkKey] = [];
+
+    // Upsert: si el mismo nombre ya existe esta semana, actualizar solo si el score es mayor
+    const idx = lb[wkKey].findIndex(e => e.name === safeName);
+    if (idx >= 0) {
+      if (safeScore > lb[wkKey][idx].score) {
+        lb[wkKey][idx].score = safeScore;
+        lb[wkKey][idx].level = safeLevel;
+        lb[wkKey][idx].ts    = Date.now();
+        if (safeCountry) lb[wkKey][idx].country = safeCountry;
+        if (safeFlag)    lb[wkKey][idx].flag    = safeFlag;
+      }
+    } else {
+      if (lb[wkKey].length < GX_MAX_PER_WEEK) {
+        lb[wkKey].push({ name: safeName, score: safeScore, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
+      }
+    }
+
+    // Ordenar por score desc
+    lb[wkKey].sort((a, b) => b.score - a.score);
+
+    _gxSaveLB(lb);
+
+    // Devuelve posición del usuario
+    const pos = lb[wkKey].findIndex(e => e.name === safeName) + 1;
+    res.json({ ok: true, week: wkKey, rank: pos, total: lb[wkKey].length });
+  } catch (err) {
+    console.error('[gx:score]', err);
+    res.status(500).json({ error: 'internal' });
+  }
+});
+
+// GET /gx/country — detección de país del usuario por IP + Accept-Language fallback
+app.get('/gx/country', _gxRlGeo, (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  // Cloudflare expone CF-IPCountry (2-letter ISO). Si no, usar Accept-Language como señal.
+  const cfCountry = req.headers['cf-ipcountry'];
+  if (cfCountry && /^[A-Z]{2}$/.test(cfCountry) && cfCountry !== 'T1') {
+    return res.json({ country: cfCountry, source: 'cf' });
+  }
+  // Accept-Language: "es-ES,es;q=0.9,en;q=0.8" → primary language locale
+  const al  = String(req.headers['accept-language'] || '');
+  const m   = al.match(/^([a-z]{2})-([A-Z]{2})/);
+  const country = m ? m[2] : '';
+  res.json({ country, source: 'lang' });
 });
 
 // Per-endpoint rate limiters (sliding window, survives restarts via express-rate-limit)

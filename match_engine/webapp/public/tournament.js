@@ -75,11 +75,15 @@ const TRN = (() => {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
     $('main-pen-wrap') && $('main-pen-wrap').classList.toggle('hidden', tab !== 'pen');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
+    const _profWrap = $('main-profile-wrap');
+    if (_profWrap) _profWrap.classList.toggle('hidden', tab !== 'profile');
     document.querySelectorAll('.main-tab-btn').forEach(b =>
       b.classList.toggle('main-tab-active', b.dataset.tab === tab));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (tab === 'trn' && !_fmt && !_data) showStep(1);
+    if (tab === 'trn' && typeof _refreshTrnFormatLocks === 'function') _refreshTrnFormatLocks();
     if (tab === 'pen' && typeof _initPenPickers === 'function') _initPenPickers();
+    if (tab === 'profile' && window.gxUI) gxUI.renderProfileTab();
   }
 
   // ── Wizard step navigation ───────────────────────────────
@@ -660,7 +664,7 @@ const TRN = (() => {
           meta = '';
         }
 
-        const isLocked = !_isUnlocked() && !!_LOCKED_TEAMS[t.slug];
+        const isLocked = window.gxUser ? gxUser.isLocked(t.slug, bestEra) : (!_isUnlocked() && !!_LOCKED_TEAMS[t.slug]);
         if (isLocked) {
           return `<div class="trn-search-item trn-search-item-locked" data-action="showLockedHint">
             <img class="trn-si-badge" src="${badge || '/img/badges/_placeholder.svg'}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
@@ -889,9 +893,14 @@ const TRN = (() => {
           const name  = (_getLang() === 'en' ? (e.nameEn || e.nameEs) : (e.nameEs || e.nameEn)) || e.slug;
           const bestEra = (e.seasons || [])[0] || '';
           const slug = _esc(e.slug); const nameE = _esc(name);
-          html += `<div class="trn-cb-item" data-slug="${slug}" data-name="${nameE}" data-badge="${_esc(badge)}" data-era="${_esc(bestEra)}">
+          const _gxLocked = window.gxUser && gxUser.isLocked(e.slug, bestEra);
+          const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(e.slug) : null;
+          const _gxFlash  = window.gxUser && gxUser.isFlash(e.slug);
+          html += `<div class="trn-cb-item${_gxLocked ? ' trn-cb-locked' : ''}${_gxFlash ? ' trn-cb-flash' : ''}" data-slug="${slug}" data-name="${nameE}" data-badge="${_esc(badge)}" data-era="${_esc(bestEra)}">
             <img class="trn-cb-badge" src="${_esc(badge)}" onerror="this.src='/img/badges/_placeholder.svg'" alt="">
             <span class="trn-cb-name">${nameE}</span>
+            ${_gxLocked ? `<span class="trn-cb-lock">\ud83d\udd12 ${_gxInfo?.xp || '?'}xp</span>` : ''}
+            ${_gxFlash  ? `<span class="trn-cb-flash-tag">\u26a1</span>` : ''}
           </div>`;
         }
         html += `</div></details>`;
@@ -2294,6 +2303,14 @@ const TRN = (() => {
       _stopTrnLoadCycle();
       _data = data;
       try { _gx('trn_simulate_success', { format: _fmt, champion: _data.champion?.name }); } catch(_) {}
+      // ── GX: conceder XP por completar torneo ──────────────────────────
+      try {
+        if (window.gxUser) {
+          const _gxT = gxUser.addXP('tournament', { format: _fmt, preset: _activePreset || '' });
+          _gxT._reason = 'tournament';
+          if (window.gxUI) gxUI.onXpGained(_gxT);
+        }
+      } catch (_gxErr) { console.warn('[GX]', _gxErr); }
       _computeTournamentStats(_data);
       _buildMatchCache(_data);
       hide($('trn-step-3'));
@@ -5124,6 +5141,12 @@ const TRN = (() => {
       const item = e.target.closest('.trn-cb-item');
       if (!item) return;
       const { slug, name, badge, era } = item.dataset;
+      // GX: bloquear si no tiene XP
+      if (window.gxUser && gxUser.isLocked(slug, era)) {
+        const info = gxUser.getLockedInfo(slug);
+        if (window.gxUI) gxUI.showLockModal(slug, info?.xp);
+        return;
+      }
       if (_teams.some(t => t.slug === slug)) { removeTeam(_teams.findIndex(t => t.slug === slug)); return; }
       addTeam(slug, name, era || '', badge || '');
       _refreshCatalogBrowserState($('trn-catalog-browser'));

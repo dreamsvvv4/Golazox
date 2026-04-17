@@ -150,7 +150,7 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
-    'tab-match':'Partido','tab-pen':'Penaltis',
+    'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil',
     'pen-tab-title':'Tanda de Penaltis','pen-tab-sub':'Elige dos equipos y lanza directamente a los penaltis',
     'pen-team-a':'EQUIPO A','pen-team-b':'EQUIPO B',
     'pen-shoot-btn':'¡Lanzar Penaltis!','pen-error-no-teams':'Elige los dos equipos antes de lanzar.',
@@ -365,7 +365,7 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
-    'tab-match':'Match','tab-pen':'Penalties',
+    'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile',
     'pen-tab-title':'Penalty Shootout','pen-tab-sub':'Pick two teams and go straight to penalties',
     'pen-team-a':'TEAM A','pen-team-b':'TEAM B',
     'pen-shoot-btn':'Take Penalties!','pen-error-no-teams':'Select both teams before shooting.',
@@ -3147,6 +3147,12 @@ function _entryName(entry) {
     : (entry.nameEs || entry.name || entry.nameEn);
 }
 function _pickerSelectTeam(side, slugVal) {
+  // GX: bloquear equipo si no tiene XP suficiente
+  if (window.gxUser && gxUser.isLocked(slugVal)) {
+    const info = gxUser.getLockedInfo(slugVal);
+    if (window.gxUI) gxUI.showLockModal(slugVal, info?.xp);
+    return;
+  }
   document.getElementById(`team${side}`).value = slugVal;
   _populateEraSelect(slugVal, side);
   _updateClashButton();
@@ -3352,12 +3358,17 @@ function _renderPicker(side) {
   container.innerHTML =
     `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(lgName)}</button></div>` +
     `<div class="tp-teams-grid">` +
-    teams.map(t =>
-      `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
+    teams.map(t => {
+      const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
+      const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
+      const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
+      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>` +
       `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
       `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
-      `</button>`
-    ).join('') +
+      (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
+      (_gxFlash  ? `<span class="tp-flash-tag">⚡</span>` : '') +
+      `</button>`;
+    }).join('') +
     `</div>`;
 }
 
@@ -3463,7 +3474,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     STADIUMS.forEach(s => {
       const card = document.createElement('div');
-      card.className = 'spk-card';
+      const _stkLocked = window.gxUser && gxUser.isLockedStadium(s.id);
+      const _stkInfo   = _stkLocked ? gxUser.getLockedStadiumInfo(s.id) : null;
+      card.className = 'spk-card' + (_stkLocked ? ' spk-locked' : '');
       card.dataset.id = s.id;
       card.innerHTML =
         `<div class="spk-card-inner">` +
@@ -3474,10 +3487,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `<span class="spk-cap">👥 ${s.capacity ? s.capacity.toLocaleString() : '—'}</span>` +
             `<span class="spk-climate">${escHtml(s.climate || '')}</span>` +
           `</div>` +
+          (_stkLocked ? `<span class="spk-lock-overlay">🔒<span class="spk-lock-xp">${_stkInfo.xp}xp</span></span>` : '') +
         `</div>` +
         `<div class="spk-name">${escHtml(s.name)}</div>` +
         `<div class="spk-city">${escHtml(s.city)}</div>`;
-      card.onclick = () => selectStadium(s.id);
+      card.onclick = () => _stkLocked
+        ? (window.gxUI && gxUI.showLockModal(s.id, _stkInfo.xp))
+        : selectStadium(s.id);
       pickerRow.appendChild(card);
     });
   }
@@ -3565,8 +3581,15 @@ document.addEventListener('DOMContentLoaded', () => {
           };
         }
       }
-      // Launch animated shootout
-      _animatePenShootout(displayData, dispNameA, dispNameB);
+      // Launch animated shootout; award GX XP after animation completes
+      _animatePenShootout(displayData, dispNameA, dispNameB).then(function() {
+        try {
+          if (window.gxUser) {
+            var _gxPR = gxUser.addXP('penalties', {});
+            if (window.gxUI && _gxPR) gxUI.onXpGained(_gxPR);
+          }
+        } catch(_e) {}
+      });
     } catch(e) {
       btn.disabled = false;
       btn.querySelector('span').textContent = t('pen-shoot-btn');
@@ -3694,6 +3717,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Match result
   _on('btn-share',    () => shareResult());
   _on('btn-deeplink', () => _deepLinkShare());
+  _on('btn-rematch',  () => {
+    if (!_livePayload) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => startMatch(_livePayload), 200);
+  });
 
   // Match analysis heatmap tabs (delegation on persistent container)
   document.getElementById('match-analysis-card')?.addEventListener('click', e => {
@@ -3704,13 +3732,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Tournament format cards
   document.querySelector('.trn-fmt-grid')?.addEventListener('click', e => {
     const card = e.target.closest('.trn-fmt-card');
-    if (card) TRN.selectFormat(card.dataset.fmt);
+    if (!card) return;
+    const fmt = card.dataset.fmt;
+    if (window.gxUser && gxUser.isLockedFormat(fmt)) {
+      const info = gxUser.getLockedFormatInfo(fmt);
+      _showTrnLockToast(info);
+      return;
+    }
+    TRN.selectFormat(fmt);
   });
 
   // Predefined official tournament preset cards
   document.querySelector('.trn-preset-grid')?.addEventListener('click', e => {
     const card = e.target.closest('.trn-preset-card');
     if (!card || !card.dataset.preset) return;
+    const preset = card.dataset.preset;
+    if (window.gxUser && gxUser.isLockedFormat(preset)) {
+      const info = gxUser.getLockedFormatInfo(preset);
+      _showTrnLockToast(info);
+      return;
+    }
     // Flash the selected-border effect before navigating (mirrors trn-fmt-selected)
     document.querySelectorAll('.trn-preset-card').forEach(c => c.classList.remove('trn-preset-active'));
     card.classList.add('trn-preset-active');
@@ -3767,12 +3808,15 @@ function _buildRefereePicker(referees) {
 
   referees.filter(r => r.id !== 'neutral').forEach(ref => {
     const card = document.createElement('div');
-    card.className = 'ref-card';
+    const _rkLocked = window.gxUser && gxUser.isLockedRef(ref.id);
+    const _rkInfo   = _rkLocked ? gxUser.getLockedRefInfo(ref.id) : null;
+    card.className = 'ref-card' + (_rkLocked ? ' ref-locked' : '');
     card.dataset.id = ref.id;
     const tip = `📋 ${ref.strictness.toFixed(2)} · 🟥 ${ref.red_card_bias.toFixed(2)} · 🥊 ${ref.penalty_rate.toFixed(2)}`;
     card.title = tip;
     const ini  = _initials(ref.name);
     const grad = _avatarColor(ref.id);
+    const lockOverlay = _rkLocked ? `<span class="ref-lock-overlay">🔒<span class="ref-lock-xp">${_rkInfo.xp}xp</span></span>` : '';
     if (ref.img) {
       const imgSrc = _refImgProxy(ref.img);
       card.innerHTML =
@@ -3780,16 +3824,19 @@ function _buildRefereePicker(referees) {
           `<img class="ref-photo" src="${escHtml(imgSrc)}" alt="${escHtml(ref.name)}" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display=''">` +
           `<div class="ref-initials-av" style="display:none;background:${grad}">${ini}</div>` +
+          lockOverlay +
         `</div>` +
         `<div class="ref-name">${escHtml(ref.name)}</div>` +
         `<div class="ref-stats">${tip}</div>`;
     } else {
       card.innerHTML =
-        `<div class="ref-photo-area"><div class="ref-initials-av" style="background:${grad}">${ini}</div></div>` +
+        `<div class="ref-photo-area"><div class="ref-initials-av" style="background:${grad}">${ini}</div>${lockOverlay}</div>` +
         `<div class="ref-name">${escHtml(ref.name)}</div>` +
         `<div class="ref-stats">${tip}</div>`;
     }
-    card.onclick = () => selectReferee(ref.id);
+    card.onclick = () => _rkLocked
+      ? (window.gxUI && gxUI.showLockModal(ref.id, _rkInfo.xp))
+      : selectReferee(ref.id);
     row.appendChild(card);
   });
 }
@@ -3801,12 +3848,17 @@ function _buildWeatherPicker() {
   row.innerHTML = '';
   WEATHER.forEach(w => {
     const card = document.createElement('div');
-    card.className = 'wth-card';
+    const _wtkLocked = window.gxUser && gxUser.isLockedWeather(w.id);
+    const _wtkInfo   = _wtkLocked ? gxUser.getLockedWeatherInfo(w.id) : null;
+    card.className = 'wth-card' + (_wtkLocked ? ' wth-locked' : '');
     card.dataset.id = w.id;
     const label = _lang === 'en' ? w.labelEn : w.labelEs;
     const icon = _WEATHER_SVG[w.id] || '';
-    card.innerHTML = `<div class="wth-icon">${icon}</div><div class="wth-label">${escHtml(label)}</div>`;
-    card.onclick = () => selectWeather(w.id);
+    card.innerHTML = `<div class="wth-icon">${icon}</div><div class="wth-label">${escHtml(label)}</div>` +
+      (_wtkLocked ? `<div class="wth-lock">🔒 ${_wtkInfo.xp}xp</div>` : '');
+    card.onclick = () => _wtkLocked
+      ? (window.gxUI && gxUI.showLockModal(w.id, _wtkInfo.xp))
+      : selectWeather(w.id);
     row.appendChild(card);
   });
 }
@@ -7362,6 +7414,32 @@ function finishLive() {
     // Render post-match analysis card (heatmap + distance)
     renderMatchAnalysis(_livePayload?.teamA || '', _livePayload?.teamB || '');
     renderResult(_liveData, _livePayload);
+    // ── GX: conceder XP después del partido/penaltis ──────────────────────
+    try {
+      if (window.gxUser && _liveData?.finalScore && _livePayload) {
+        const _gxIsPen = _livePayload.matchMode === 'penalties';
+        const _gxGoals = _gxIsPen ? 0 : ((_liveData.finalScore.teamA||0)+(_liveData.finalScore.teamB||0));
+        const _gxWon   = (_liveData.finalScore.teamA||0) > (_liveData.finalScore.teamB||0);
+        const _gxWonB  = (_liveData.finalScore.teamB||0) > (_liveData.finalScore.teamA||0);
+        // Underdog: equipo ganador con ≥8 pts de media inferior al perdedor
+        const _rA = _liveData?.ratings?.teamA || {}, _rB = _liveData?.ratings?.teamB || {};
+        const _avgA = ((_rA.attack||70)+(_rA.midfield||70)+(_rA.defense||70)+(_rA.goalkeeping||70))/4;
+        const _avgB = ((_rB.attack||70)+(_rB.midfield||70)+(_rB.defense||70)+(_rB.goalkeeping||70))/4;
+        const _gxIsUnderdog = (_gxWon && (_avgB - _avgA >= 8)) || (_gxWonB && (_avgA - _avgB >= 8));
+        const _gxR = gxUser.addXP(_gxIsPen ? 'penalties' : 'match', {
+          goals: _gxGoals, goalsAgainst: _liveData.finalScore.teamB||0,
+          won: _gxWon, wonAsB: _gxWonB,
+          teamA: _livePayload._slugA || _livePayload.teamA,
+          teamB: _livePayload._slugB || _livePayload.teamB,
+          eraA: _livePayload.eraA, eraB: _livePayload.eraB,
+          mode: _livePayload.matchMode || '11v11',
+          isInstant: _pmTick === 0,
+          isUnderdog: _gxIsUnderdog,
+        });
+        _gxR._reason = _gxIsPen ? 'penalties' : 'match';
+        if (window.gxUI) gxUI.onXpGained(_gxR);
+      }
+    } catch(_gxErr) { console.warn('[GX]', _gxErr); }
   }, 620);
 }
 
@@ -7584,6 +7662,46 @@ function showToast(msg) {
   el.textContent = msg;
   el.classList.add('toast-show');
   setTimeout(() => el.classList.remove('toast-show'), 2500);
+}
+
+// ── Tournament format / preset lock helpers ──────────────────
+function _showTrnLockToast(info) {
+  if (!info) return;
+  const curXP = window.gxUser ? gxUser.get().xp : 0;
+  const need  = info.xp - curXP;
+  showToast(`🔒 ${info.label} — Necesitas ${info.xp} XP (te faltan ${need})`);
+}
+
+function _refreshTrnFormatLocks() {
+  if (!window.gxUser) return;
+  // Format cards (liga, copa)
+  document.querySelectorAll('.trn-fmt-card[data-fmt]').forEach(card => {
+    const locked = gxUser.isLockedFormat(card.dataset.fmt);
+    card.classList.toggle('trn-fmt-locked', locked);
+    let lockEl = card.querySelector('.trn-fmt-lock-badge');
+    if (locked && !lockEl) {
+      lockEl = document.createElement('span');
+      lockEl.className = 'trn-fmt-lock-badge';
+      lockEl.innerHTML = `🔒 <span class="trn-fmt-lock-xp">${gxUser.getLockedFormatInfo(card.dataset.fmt)?.xp} XP</span>`;
+      card.appendChild(lockEl);
+    } else if (!locked && lockEl) {
+      lockEl.remove();
+    }
+  });
+  // Preset cards
+  document.querySelectorAll('.trn-preset-card[data-preset]').forEach(card => {
+    const locked = gxUser.isLockedFormat(card.dataset.preset);
+    card.classList.toggle('trn-preset-locked', locked);
+    let lockEl = card.querySelector('.trn-fmt-lock-badge');
+    if (locked && !lockEl) {
+      lockEl = document.createElement('span');
+      lockEl.className = 'trn-fmt-lock-badge';
+      lockEl.innerHTML = `🔒 <span class="trn-fmt-lock-xp">${gxUser.getLockedFormatInfo(card.dataset.preset)?.xp} XP</span>`;
+      card.appendChild(lockEl);
+    } else if (!locked && lockEl) {
+      lockEl.remove();
+    }
+  });
 }
 
 // ── Penalty shootout renderer ────────────────────────────────
