@@ -86,8 +86,20 @@ function buildHtml(data) {
 
   const nameA    = slugToName(teamA);
   const nameB    = slugToName(teamB);
-  const eraDispA = displayEra(eraA);
-  const eraDispB = displayEra(eraB);
+  // When both eras belong to the same football season (consecutive years, e.g. 2011 + 2012),
+  // show a single combined label "11/12" for both teams instead of two conflicting years.
+  const [eraDispA, eraDispB] = (() => {
+    const dA = displayEra(eraA);
+    const dB = displayEra(eraB);
+    const yA = parseInt(eraA), yB = parseInt(eraB);
+    if (dA && dB && !isNaN(yA) && !isNaN(yB) && yA !== yB && Math.abs(yA - yB) === 1) {
+      const start    = Math.min(yA, yB);
+      const end      = Math.max(yA, yB);
+      const combined = `${String(start).slice(-2)}/${String(end).slice(-2)}`;
+      return [combined, combined];
+    }
+    return [dA, dB];
+  })();
   const kA       = getKitColor(teamA, rawKA);
   const kB       = getKitColor(teamB, rawKB);
 
