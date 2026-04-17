@@ -26,8 +26,7 @@ DEST="$HOME/domains/golazox.com/nodejs"
 echo "==> git pull..."
 cd "$REPO"
 git fetch origin main
-git checkout -- .
-git checkout -B main FETCH_HEAD
+git reset --hard FETCH_HEAD
 echo "    GIT OK"
 echo "==> Copiando archivos..."
 cp -r "$WEBAPP/public/." "$DEST/public/" 2>/dev/null || true
