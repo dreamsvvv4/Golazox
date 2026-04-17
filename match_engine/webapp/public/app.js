@@ -150,7 +150,8 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
-    'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil',
+    'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil','tab-trn':'Torneo',
+    'lock-tooltip':'Necesitas %xp XP para desbloquear','lock-toast':'%label — Necesitas %xp XP (te faltan %need)',
     'pen-tab-title':'Tanda de Penaltis','pen-tab-sub':'Elige dos equipos y lanza directamente a los penaltis',
     'pen-team-a':'EQUIPO A','pen-team-b':'EQUIPO B',
     'pen-shoot-btn':'¡Lanzar Penaltis!','pen-error-no-teams':'Elige los dos equipos antes de lanzar.',
@@ -365,7 +366,8 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
-    'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile',
+    'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile','tab-trn':'Tournament',
+    'lock-tooltip':'Needs %xp XP to unlock','lock-toast':'%label — Needs %xp XP (%need more)',
     'pen-tab-title':'Penalty Shootout','pen-tab-sub':'Pick two teams and go straight to penalties',
     'pen-team-a':'TEAM A','pen-team-b':'TEAM B',
     'pen-shoot-btn':'Take Penalties!','pen-error-no-teams':'Select both teams before shooting.',
@@ -647,6 +649,8 @@ function applyI18n() {
   // Re-render team pickers so type-select labels (Clubs/Nations/Back…) update
   if (typeof _renderPicker === 'function') { _renderPicker('A'); _renderPicker('B'); }
   if (typeof _renderPenPicker === 'function') { _renderPenPicker('A'); _renderPenPicker('B'); }
+  // Re-render profile tab so museum/achievements/quests translate
+  if (window.gxUI && typeof gxUI.renderProfileTab === 'function') gxUI.renderProfileTab();
   // Footer
   const ftTag = document.querySelector('.site-footer > p:first-child');
   if (ftTag) ftTag.textContent = t('footer-tagline');
@@ -3271,7 +3275,7 @@ function _renderPicker(side) {
           : n.badge && !n.badge.includes('_placeholder')
             ? `<img class="tp-flag-img" src="${escHtml(n.badge)}" alt="" loading="lazy">`
             : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
-        return `<button class="tp-nation-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(n.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>`+
+        return `<button class="tp-nation-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(n.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>`+
           flagHtml +
           `<span class="tp-nation-name">${escHtml(_entryName(n))}</span>` +
           (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
@@ -3317,7 +3321,7 @@ function _renderPicker(side) {
         const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
         const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
         const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
-        return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>`+
+        return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>`+
         `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
         `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
         (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
@@ -3372,7 +3376,7 @@ function _renderPicker(side) {
       const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
       const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
       const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
-      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>` +
+      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>` +
       `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
       `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
       (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
@@ -7679,7 +7683,7 @@ function _showTrnLockToast(info) {
   if (!info) return;
   const curXP = window.gxUser ? gxUser.get().xp : 0;
   const need  = info.xp - curXP;
-  showToast(`🔒 ${info.label} — Necesitas ${info.xp} XP (te faltan ${need})`);
+  showToast('🔒 ' + t('lock-toast').replace('%label', info.label).replace('%xp', info.xp).replace('%need', need));
 }
 
 function _refreshTrnFormatLocks() {
