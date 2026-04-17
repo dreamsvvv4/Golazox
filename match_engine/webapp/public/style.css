@@ -10428,6 +10428,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 
 /* -- Team picker: equipo bloqueado --------------------------- */
 .tp-team-card { position: relative; overflow: hidden; }
+.tp-nation-card { position: relative; overflow: hidden; }
 .tp-team-locked {
   opacity: .55;
   cursor: pointer;
