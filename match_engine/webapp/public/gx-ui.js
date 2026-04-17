@@ -63,6 +63,7 @@
     'backup-copied': { es: '✔ Copiado',                    en: '✔ Copied'                    },
     'backup-restore-ok': { es: '✔ Progreso restaurado',   en: '✔ Progress restored'         },
     'backup-invalid':{ es: '⚠️ Código inválido',           en: '⚠️ Invalid code'             },
+    'restore-tab-code':  { es: 'Por código',               en: 'By code'                     },
     'confirm-reset': { es: '¿Borrar todo tu progreso? Esta acción no se puede deshacer.', en: 'Delete all your progress? This cannot be undone.' },
     'reset-done':    { es: 'Progreso borrado',             en: 'Progress deleted'            },
     'name-too-short':{ es: '⚠️ El nombre debe tener al menos 3 caracteres', en: '⚠️ Name must be at least 3 characters' },
@@ -86,6 +87,15 @@
     'card-wm':       { es: 'golazox.com',                  en: 'golazox.com'                 },
     'underdog-toast':{ es: '🐉 ¡Victoria del Underdog! ×1.5 XP', en: '🐉 Underdog Victory! ×1.5 XP' },
     'backup-reminder':{ es: '¡No pierdas tu legado!',            en: 'Don\'t lose your legacy!'     },
+    'edit-name-title':{ es: 'Cambiar nombre',                    en: 'Change name'                  },
+    'canvas-level':   { es: 'NIVEL',                             en: 'LEVEL'                        },
+    'canvas-matches': { es: 'Partidos',                          en: 'Matches'                      },
+    'canvas-goals':   { es: 'Goles',                             en: 'Goals'                        },
+    'canvas-trn':     { es: 'Torneos',                           en: 'Tourneys'                     },
+    'share-quests':   { es: 'Misiones:',                         en: 'Quests:'                      },
+    'share-matches':  { es: 'partidos',                          en: 'matches'                      },
+    'share-goals':    { es: 'goles',                             en: 'goals'                        },
+    'my-progress':    { es: 'Mi progreso · Tab Perfil',          en: 'My progress · Profile tab'    },
   };
   function _gt(key) {
     var lang = _gxLang();
@@ -280,7 +290,7 @@
     wrap.id  = 'gx-xp-bar';
     wrap.className = 'gx-xp-wrap';
     wrap.setAttribute('role','button'), wrap.setAttribute('tabindex','0');
-    wrap.setAttribute('title','Tu progreso · Tab Perfil');
+    wrap.setAttribute('title', _gt('my-progress'));
     document.getElementById('lang-toggle') ? hr.insertBefore(wrap, document.getElementById('lang-toggle')) : hr.appendChild(wrap);
     _xpBarWrap = wrap;
     wrap.addEventListener('click', function(){ _openProfileTab(); });
@@ -318,7 +328,7 @@
   _GX_STR['rank-week']         = { es: 'Semana actual',             en: 'Current week'                   };
   _GX_STR['rank-tab-weekly']   = { es: '📅 Semanal',               en: '📅 Weekly'                      };
   _GX_STR['rank-tab-global']   = { es: '🌍 All-Time',              en: '🌍 All-Time'                    };
-  _GX_STR['rank-weekly-sub']   = { es: 'XP esta semana',           en: 'XP this week'                   };
+  _GX_STR['rank-weekly-sub']   = { es: 'Puntuación esta semana',    en: 'Score this week'                };
   _GX_STR['rank-global-sub']   = { es: 'XP total acumulado',       en: 'total XP all-time'              };
   _GX_STR['rank-sync']         = { es: '🔄 Sincronizar',            en: '🔄 Sync score'                  };
   _GX_STR['rank-syncing']      = { es: '⏳ Enviando…',              en: '⏳ Uploading…'                  };
@@ -479,7 +489,7 @@
     var ds    = gxUser.getDailyStats();
     var score = gxUser.dailyScore(ds);
     var u     = gxUser.get();
-    var emojis = ['🌱','⚡','🔥','🌟','💫','🏅','🥈','🥇','🏆','📎','👑','⭐'];
+    var emojis = ['⚽','🥅','👟','🔥','⚡','🌟','🏅','🥈','🥇','🏆','👑','🐐'];
     var avatar = emojis[Math.min((u.level||1)-1, emojis.length-1)];
 
     // Etiqueta de fecha legible
@@ -502,7 +512,7 @@
           '<span class="gx-daily-player-name" id="gx-daily-player-name">' + _esc(u.name) + '</span>' +
           '<span class="gx-daily-rank-chip">' + _esc(gxUser.getLevelTitle(u.level)) + (u.flag ? ' ' + u.flag : '') + '</span>' +
         '</div>' +
-        '<button class="gx-daily-name-edit-btn" id="gx-daily-name-edit" title="Cambiar nombre">✏️</button>' +
+        '<button class="gx-daily-name-edit-btn" id="gx-daily-name-edit" title="' + _gt('edit-name-title') + '">✏️</button>' +
       '</div>' +
 
       '<div class="gx-daily-score-wrap">' +
@@ -548,8 +558,9 @@
       var ds    = gxUser.getDailyStats();
       var score = gxUser.dailyScore(ds);
       var now   = new Date();
-      var days  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-      var mons  = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      var isEN  = _gxLang() === 'en';
+      var days  = isEN ? ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'] : ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+      var mons  = isEN ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] : ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
       var dateLabel = days[now.getDay()] + ' ' + now.getDate() + ' ' + mons[now.getMonth()];
       var _ql = ['⬜','⬜','⬜']; for (var _qi=0;_qi<ds.quests;_qi++) _ql[_qi]='✅';
       var _slvl = score<300?1:score<800?2:score<2000?3:score<4000?4:5;
@@ -557,16 +568,16 @@
       var _rank = gxUser.getLevelTitle(gxUser.get().level);
       var text  = '⚽ GolazoX · ' + dateLabel + '\n'
         + _sballs + ' ' + score.toLocaleString() + ' pts\n'
-        + _ql.join('') + ' Misiones: ' + ds.quests + '/3\n'
+        + _ql.join('') + ' ' + _gt('share-quests') + ' ' + ds.quests + '/3\n'
         + '🏆 ' + _rank + '\n'
-        + '⚽ ' + ds.matches + ' partidos · 🎯 ' + ds.goals + ' goles\n'
+        + '⚽ ' + ds.matches + ' ' + _gt('share-matches') + ' · 🎯 ' + ds.goals + ' ' + _gt('share-goals') + '\n'
         + '🔗 golazox.com';
       if (navigator.share) {
         navigator.share({ text: text }).catch(function(){});
       } else if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(function() {
-          btn.textContent = '✔ ¡Copiado!';
-          setTimeout(function(){ btn.textContent = '📤 Compartir puntuación'; }, 2500);
+          btn.textContent = _gxLang() === 'en' ? '✔ Copied!' : '✔ ¡Copiado!';
+          setTimeout(function(){ btn.textContent = _gt('share-daily'); }, 2500);
         }).catch(function(){});
       }
     });
@@ -870,7 +881,7 @@
     }
 
     // Emoji nivel (grande)
-    var emojis = ['🌱','⚡','🔥','🌟','💫','🏅','🥈','🥇','🏆','💎','👑','⭐'];
+    var emojis = ['⚽','🥅','👟','🔥','⚡','🌟','🏅','🥈','🥇','🏆','👑','🐐'];
     ctx.font = '72px serif';
     ctx.textAlign = 'center';
     ctx.fillText(emojis[Math.min(lv-1, emojis.length-1)], 78, 140);
@@ -896,7 +907,7 @@
     // Nivel badge
     var base  = gxUser.xpForLevel(lv);
     var next  = gxUser.nextLevelXP(lv);
-    var lvTag = 'NIVEL ' + lv + (next ? '  ·  ' + (xp - base) + '/' + (next - base) + ' XP' : '  ·  MAX');
+    var lvTag = _gt('canvas-level') + ' ' + lv + (next ? '  ·  ' + (xp - base) + '/' + (next - base) + ' XP' : '  ·  MAX');
     ctx.font      = 'bold 13px system-ui';
     ctx.fillStyle = '#00d4ff';
     ctx.fillText(lvTag, 148, 115);
@@ -908,9 +919,9 @@
 
     // Stats en 3 columnas
     var stats = [
-      { label: 'Partidos', val: u.stats.matchesPlayed },
-      { label: 'Goles', val: u.stats.totalGoals },
-      { label: 'Torneos', val: u.stats.tournamentsCompleted },
+      { label: _gt('canvas-matches'), val: u.stats.matchesPlayed },
+      { label: _gt('canvas-goals'), val: u.stats.totalGoals },
+      { label: _gt('canvas-trn'), val: u.stats.tournamentsCompleted },
     ];
     stats.forEach(function(s, i) {
       var sx = 148 + i * 124;
@@ -1126,7 +1137,7 @@
         '<div class="gx-prof-info">' +
           '<div class="gx-prof-name-row">' +
             '<span class="gx-prof-name" id="gx-prof-name-display">' + _esc(u.name) + '</span>' +
-            '<button class="gx-prof-edit-btn" id="gx-prof-edit-name" title="Cambiar nombre">✏️</button>' +
+            '<button class="gx-prof-edit-btn" id="gx-prof-edit-name" title="' + _gt('edit-name-title') + '">✏️</button>' +
           '</div>' +
           '<div class="gx-prof-rank-row">' +
             '<span class="gx-prof-level-badge">NIVEL ' + lv + '</span>' +
@@ -1205,8 +1216,10 @@
         '<div id="gx-export-result" class="gx-export-result hidden"></div>' +
         '<div id="gx-import-form" class="gx-import-form hidden">' +
           '<textarea id="gx-import-input" class="gx-import-textarea" placeholder="' + _gt('backup-input-ph') + '" rows="4"></textarea>' +
-          '<button class="gx-btn gx-btn-primary" id="gx-import-confirm">' + _gt('restore-btn').replace('🔑 ','') + '</button>' +
-          '<button class="gx-btn gx-btn-secondary" id="gx-import-cancel">' + (_gxLang() === 'en' ? 'Cancel' : 'Cancelar') + '</button>' +
+          '<div class="gx-import-actions">' +
+            '<button class="gx-btn gx-btn-primary" id="gx-import-confirm">' + _gt('restore-btn').replace('🔑 ','') + '</button>' +
+            '<button class="gx-btn gx-btn-secondary" id="gx-import-cancel">' + (_gxLang() === 'en' ? 'Cancel' : 'Cancelar') + '</button>' +
+          '</div>' +
         '</div>' +
       '</div>' +
 
@@ -1269,7 +1282,7 @@
       var sp = document.createElement('span');
       sp.id = dispEl.id; sp.className = dispEl.className; sp.textContent = nm;
       inp.replaceWith(sp);
-      if (btnEl) { btnEl.textContent = '✏️'; btnEl.title = 'Cambiar nombre'; }
+      if (btnEl) { btnEl.textContent = '✏️'; btnEl.title = _gt('edit-name-title'); }
     }
     if (btnEl) btnEl.addEventListener('click', _done, { once: true });
     inp.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); _done(); } });
@@ -1335,12 +1348,13 @@
       });
     });
     if (impBtn) impBtn.addEventListener('click', function(){ impForm.classList.toggle('hidden'); });
-    if (impNo)  impNo.addEventListener('click',  function(){ impForm.classList.add('hidden'); });
+    function _closeForm() { impForm && impForm.classList.add('hidden'); }
+    if (impNo)  impNo.addEventListener('click',  _closeForm);
     if (impOk)  impOk.addEventListener('click', function() {
       var b64 = impInp && impInp.value.trim();
       if (!b64) return;
       if (gxUser.importCode(b64)) {
-        impForm.classList.add('hidden');
+        _closeForm();
         _toast(_gt('backup-restore-ok'), 'unlock', 3500);
         setTimeout(function(){ renderProfileTab(); _updateXpBar(); }, 300);
       } else {
@@ -1348,6 +1362,7 @@
         _toast(_gt('backup-invalid'), 'xp', 3000);
       }
     });
+
     if (resetBtn) resetBtn.addEventListener('click', function() {
       if (!confirm(_gt('confirm-reset'))) return;
       gxUser.reset(); renderProfileTab(); _updateXpBar();
@@ -1356,11 +1371,11 @@
   }
 
   // ── Modal equipo bloqueado ────────────────────────────────
-  function showLockModal(slug, xpRequired) {
+  function showLockModal(slug, xpRequired, customLabel) {
     var ex = document.getElementById('gx-lock-modal'); if (ex) ex.remove();
     var info  = w.gxUser ? gxUser.getLockedInfo(slug) : null;
     var xp    = xpRequired || (info && info.xp) || 0;
-    var label = (info && info.label) || slug;
+    var label = customLabel || (info && info.label) || slug;
     var era   = (info && info.era) || '';
     var allEras = !!(info && info.allEras);
     // Si allEras=true, mostrar "(todas las ediciones)" en lugar del año específico

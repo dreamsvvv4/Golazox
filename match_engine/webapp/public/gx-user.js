@@ -344,15 +344,15 @@
     'Hincha Novato',       // Lv1
     'Aficionado',          // Lv2
     'Crack Local',         // Lv3
-    'Mediocampista',       // Lv4
-    'Gladiador Maestro',   // Lv5
-    'Estrella Regional',   // Lv6
+    'Promesa',             // Lv4
+    'Profesional',         // Lv5
+    'Estrella',            // Lv6
     'Ídolo Nacional',      // Lv7
     'Figura Histórica',    // Lv8
     'Fenómeno',            // Lv9
     'Leyenda Viva',        // Lv10
     'El Elegido',          // Lv11
-    'Inmortal',            // Lv12
+    'El GOAT',             // Lv12
   ];
 
   // ── Nombres de usuario auto-generados (userXXXXXX) ───────────
@@ -409,6 +409,8 @@
   }
   function _migrate(u) {
     if (!u || typeof u !== 'object') return _defaultUser();
+    if (typeof u.xp !== 'number' || isNaN(u.xp) || u.xp < 0) u.xp = 0;
+    if (typeof u.level !== 'number' || isNaN(u.level) || u.level < 1) u.level = 1;
     if (!u.stats)  u.stats  = {};
     if (!Array.isArray(u.stats.uniqueTeamsUsed)) u.stats.uniqueTeamsUsed = [];
     if (!Array.isArray(u.unlockedTeams))  u.unlockedTeams  = [];

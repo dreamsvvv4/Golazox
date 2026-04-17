@@ -1441,14 +1441,16 @@ body::before {
 .share-row { display: flex; justify-content: center; gap: .6rem; margin-top: 1.2rem; flex-wrap: wrap; }
 .btn-share {
   display: inline-flex; align-items: center; gap: .55rem;
-  padding: .65rem 2.2rem; font-size: .88rem; font-weight: 900;
+  padding: .65rem 2.2rem;
+  font: 900 .88rem/1 'Rajdhani', var(--font);
   letter-spacing: .08em; text-transform: uppercase;
   color: #fff;
   background: linear-gradient(135deg, rgba(0,212,255,.22), rgba(0,212,255,.08));
   border: 1.5px solid rgba(0,212,255,.55);
   border-radius: 26px; cursor: pointer;
   box-shadow: 0 0 22px rgba(0,212,255,.2), inset 0 1px 0 rgba(255,255,255,.1);
-  transition: all .2s;
+  transition: background .18s, border-color .18s, color .18s, box-shadow .18s, transform .12s;
+  white-space: nowrap;
 }
 .btn-share:hover {
   background: linear-gradient(135deg, rgba(0,212,255,.34), rgba(0,212,255,.16));
@@ -1459,13 +1461,17 @@ body::before {
 .btn-share:active { transform: translateY(0); box-shadow: 0 0 16px rgba(0,212,255,.2); }
 .btn-share:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 .btn-deeplink {
-  display: inline-flex; align-items: center; gap: .4rem;
-  padding: .45rem 1rem; font-size: .8rem; font-weight: 600;
-  color: rgba(0,212,255,.7); background: transparent;
-  border: 1px solid rgba(0,212,255,.25); border-radius: 20px; cursor: pointer;
-  transition: all .15s;
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .65rem 1.3rem;
+  font: 700 .88rem/1 'Rajdhani', var(--font);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(0,212,255,.75); background: transparent;
+  border: 1.5px solid rgba(0,212,255,.3); border-radius: 26px; cursor: pointer;
+  transition: background .18s, border-color .18s, color .18s, transform .12s;
+  white-space: nowrap;
 }
-.btn-deeplink:hover { background: rgba(0,212,255,.08); color: var(--neon); border-color: var(--neon); }
+.btn-deeplink:hover { background: rgba(0,212,255,.08); color: var(--neon); border-color: rgba(0,212,255,.65); transform: translateY(-1px); }
+.btn-deeplink:active { transform: translateY(0); }
 
 /* ── SEO matchup link banner (shown after simulation) ──────────── */
 .seo-matchup-link {
@@ -3383,7 +3389,7 @@ body::before {
   .scorers-side, .cards-side { font-size: .77rem; line-height: 1.6; }
   .goal-min      { font-size: .62rem; }
   .share-row     { margin-top: .7rem; }
-  .btn-share     { width: 100%; justify-content: center; }
+  .btn-share, .btn-rematch { width: 100%; justify-content: center; }
 
   /* ── Probabilities: keep 3-col, compact values ── */
   .probs-card    { padding: 1rem .85rem; }
@@ -8135,6 +8141,28 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 /* Qualifier highlight */
 .trn-q { color: var(--neon) !important; }
 
+/* ── Calendar match cards: full names + h-scroll on mobile ────── */
+@media (max-width: 480px) {
+  /* Match card row: wide enough for full team names */
+  .trn-cal-match { min-width: 260px; }
+  /* Jornada and group-match containers: internal horizontal scroll */
+  .trn-cal-jornada,
+  .trn-cal-grp-matches {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,212,255,.2) transparent;
+  }
+  .trn-cal-jornada::-webkit-scrollbar,
+  .trn-cal-grp-matches::-webkit-scrollbar { height: 3px; }
+  .trn-cal-jornada::-webkit-scrollbar-thumb,
+  .trn-cal-grp-matches::-webkit-scrollbar-thumb { background: rgba(0,212,255,.2); border-radius: 2px; }
+  /* Team name: no ellipsis — the container scrolls instead */
+  .trn-cal-tname { overflow: visible; text-overflow: clip; }
+  /* Group block: ensure full width */
+  .trn-cal-group-block { width: 100%; }
+}
+
 /* ── Calendar group standings: hide stat columns on narrow screens ── */
 @media (max-width: 480px) {
   /* Show only: # | badge | name | PJ | DIF | PTS (drop W D L GF GC) */
@@ -9340,6 +9368,12 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
     -webkit-overflow-scrolling: touch;
   }
 
+  /* Calendar: override the tab-panel clip so match-card containers can scroll */
+  #trn-tab-calendar {
+    overflow: visible;
+    /* block page-level scroll via html,body overflow-x:hidden already set above */
+  }
+
   /* Liga standings table: internal scroll */
   .trn-cls-wrap {
     overflow-x: auto;
@@ -10292,6 +10326,17 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .gx-import-form    { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
 .gx-import-textarea{ width:100%; background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:10px; color:#fff; font-family:monospace; font-size:.72rem; resize:vertical; }
 .gx-import-textarea:focus { outline:none; border-color:#00d4ff; }
+.gx-import-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.gx-restore-tabs   { display:flex; gap:4px; border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:6px; margin-bottom:10px; }
+.gx-restore-tab    { background:transparent; border:1px solid rgba(255,255,255,.15); border-radius:6px; padding:4px 12px; color:rgba(255,255,255,.55); cursor:pointer; font-size:.78rem; transition:all .2s; }
+.gx-restore-tab:hover { color:#fff; border-color:rgba(0,212,255,.4); }
+.gx-restore-tab--active { background:rgba(0,212,255,.15); border-color:#00d4ff; color:#00d4ff; }
+.gx-restore-user-warn  { font-size:.75rem; color:rgba(255,200,100,.85); background:rgba(255,200,100,.08); border:1px solid rgba(255,200,100,.2); border-radius:6px; padding:8px 10px; margin:0 0 10px; }
+.gx-restore-user-row   { display:flex; gap:8px; align-items:center; }
+.gx-import-userinput   { flex:1; background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:8px 10px; color:#fff; font-size:.82rem; outline:none; }
+.gx-import-userinput:focus { border-color:#00d4ff; }
+.gx-restore-user-result{ margin-top:8px; padding:7px 10px; border-radius:6px; font-size:.78rem; }
+.gx-restore-user-result--error { color:#ff4d6d; background:rgba(255,77,109,.08); border:1px solid rgba(255,77,109,.2); }
 .gx-export-result  { margin-top:6px; }
 .gx-reset-section  { text-align:center; background:rgba(255,77,109,.04); border-color:rgba(255,77,109,.15) !important; }
 
@@ -10336,7 +10381,7 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 .gx-lm-paths { background:rgba(0,212,255,.05); border:1px solid rgba(0,212,255,.15); border-radius:8px; padding:8px 12px; margin-bottom:14px; display:flex; flex-direction:column; gap:5px; }
 .gx-lm-paths-title { font-size:.7rem; color:rgba(255,255,255,.45); font-weight:600; letter-spacing:.06em; margin-bottom:2px; }
 .gx-lm-path-item { font-size:.8rem; color:#c0e8ff; font-weight:500; }
-.gx-lm-btns { display:flex; gap:8px; flex-wrap:wrap; }
+.gx-lm-btns { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
 
 /* -- Variables CSS de tema ---------------------------------------- */
 :root { --gx-cyan:#00d4ff; --gx-purple:#7b2ff7; --gx-mid:#4da8e0; }
@@ -10481,21 +10526,31 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
   border-radius: 3px; padding: 0 3px; font-weight: 800; margin-left: 4px;
 }
 
-/* -- Bot�n Revancha ------------------------------------------- */
+/* -- Botón Revancha ------------------------------------------- */
 .btn-rematch {
-  padding: .68rem 1.4rem;
-  border-radius: 22px;
-  border: 1.5px solid rgba(0,212,255,.5);
-  background: rgba(0,212,255,.08);
-  color: #00d4ff;
-  font: 700 .82rem/1 'Rajdhani', sans-serif;
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .65rem 2rem;
+  border-radius: 26px;
+  border: 1.5px solid rgba(0,212,255,.35);
+  background: rgba(0,212,255,.07);
+  color: rgba(0,212,255,.85);
+  font: 900 .88rem/1 'Rajdhani', var(--font);
   letter-spacing: .08em;
-  cursor: pointer;
-  transition: background .18s, border-color .18s, transform .12s;
   text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0,212,255,.08), inset 0 1px 0 rgba(255,255,255,.06);
+  transition: background .18s, border-color .18s, color .18s, box-shadow .18s, transform .12s;
+  white-space: nowrap;
 }
-.btn-rematch:hover { background: rgba(0,212,255,.18); border-color: #00d4ff; }
-.btn-rematch:active { transform: scale(.97); }
+.btn-rematch:hover {
+  background: rgba(0,212,255,.16);
+  border-color: rgba(0,212,255,.7);
+  color: #00d4ff;
+  box-shadow: 0 0 26px rgba(0,212,255,.22), inset 0 1px 0 rgba(255,255,255,.1);
+  transform: translateY(-1px);
+}
+.btn-rematch:active  { transform: translateY(0); box-shadow: 0 0 12px rgba(0,212,255,.15); }
+.btn-rematch:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 
 /* ── Locked stadiums, weather, referees ────────────────────────── */
 /* Stadium */

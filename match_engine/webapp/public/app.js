@@ -89,9 +89,9 @@ gtag('config', 'G-2BSP5YDS7N');
         const titleEl  = sheet.querySelector('.pwa-sheet-title');
         const subEl    = sheet.querySelector('.pwa-sheet-sub');
         const iBtn     = document.getElementById('pwa-install-btn');
-        if (titleEl) titleEl.textContent   = 'Añade GolazoX a tu pantalla de inicio';
-        if (subEl)   subEl.innerHTML       = 'Toca <strong>⎁ Compartir</strong> en Safari y luego <strong>"Añadir a inicio"</strong> para jugar sin conexión.';
-        if (iBtn)  { iBtn.textContent = '✓ Entendido';
+        if (titleEl) titleEl.textContent   = t('pwa-ios-title');
+        if (subEl)   subEl.innerHTML       = t('pwa-ios-sub');
+        if (iBtn)  { iBtn.textContent = t('pwa-ios-ok');
           iBtn.onclick = null;
           iBtn.addEventListener('click', function _iosOK() {
             iBtn.removeEventListener('click', _iosOK);
@@ -147,7 +147,7 @@ const I18N = {
     'section-lineup':'ALINEACIONES','section-stats':'ESTADÍSTICAS','section-mom':'MEJOR JUGADOR',
     'btn-share':'📤 Compartir resultado',
     'btn-share-loading':'⏳ Generando imagen…',
-    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…',
+    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…','rival-all-locked':'🔒 Juega más partidos para desbloquear estos enfrentamientos históricos',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
     'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil','tab-trn':'Torneo',
@@ -169,7 +169,8 @@ const I18N = {
     'fail-lookup':'❌ No encontrado','hint-lookup':'Prueba sin época, o con el nombre en inglés',
     'timeout-lookup':'Tiempo de espera agotado (scraper lento). Intenta de nuevo.',
     'no-connection':'Sin conexión al servidor. ¿Está iniciado?',
-    'pen-shootout-title':'🎯 Tandas de Penaltis','pen-winner-suffix':'gana la tanda','pen-winner-sd':' (muerte súbita)',
+    'pen-shootout-splash':'TANDAS DE PENALTIS','pen-shootout-title':'🎯 Tandas de Penaltis','pen-winner-suffix':'gana la tanda','pen-winner-sd':' (muerte súbita)',
+    'mh-title':'🕹 Últimas simulaciones','pen-no-bench':'Sin suplentes','pen-no-bench-swap':'Sin suplentes disponibles',
     'timeline-events-suffix':'evento','timeline-events-suffix-pl':'eventos','timeline-empty':'Sin incidencias destacadas',
     'km-title':'Puntos clave','km-reds':'Tanda de tarjetas rojas — el árbitro se mostró muy estricto','km-clutch':'Factor decisivo','km-clean-sheet':'Portería a cero','km-thrashing':'Goleada','km-draw':'Empate muy disputado','km-extra-time':'Se decidió en los penaltis',
     'mom-badge-text':'MEJOR JUGADOR','bench-label':'BANQUILLO','ovr-lbl':'OVR',
@@ -348,6 +349,27 @@ const I18N = {
     'ucl-pts-suffix':'p',
     'ucl-progress-league':'Fase de Liga…','ucl-progress-r16':'Octavos de final…',
     'ucl-champion-path-phase':'Fase de Liga',
+    // ── PWA install sheet ─────────────────────────────────
+    'pwa-title':'Juega sin conexión, sin navegador',
+    'pwa-sub':'Instala la Máquina del Tiempo en tu pantalla de inicio — acceso instantáneo, cero anuncios.',
+    'pwa-install-btn':'⚡ Instalar',
+    'pwa-dismiss-btn':'Más tarde',
+    'pwa-ios-title':'Añade GolazoX a tu pantalla de inicio',
+    'pwa-ios-sub':'Toca <strong>⎁ Compartir</strong> en Safari y luego <strong>"Añadir a inicio"</strong> para jugar sin conexión.',
+    'pwa-ios-ok':'✓ Entendido',
+    // ── GX generic ────────────────────────────────────────
+    'cancel':'Cancelar',
+    'edit-name-title':'Cambiar nombre',
+    'my-progress-title':'Mi progreso · Tab Perfil',
+    // ── Share text ────────────────────────────────────────
+    'share-quests-label':'Misiones:',
+    'share-matches-label':'partidos',
+    'share-goals-label':'goles',
+    'canvas-level':'NIVEL',
+    'canvas-matches':'Partidos',
+    'canvas-goals':'Goles',
+    'canvas-tournaments':'Torneos',
+    'btn-rematch':'🔄 Revancha',
   },
   en: {
     'label-a':'TEAM A','label-b':'TEAM B',
@@ -363,7 +385,7 @@ const I18N = {
     'section-lineup':'LINEUPS','section-stats':'MATCH STATISTICS','section-mom':'PLAYER OF THE MATCH',
     'btn-share':'📤 Share result',
     'btn-share-loading':'⏳ Generating image…',
-    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…',
+    'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…','rival-all-locked':'🔒 Play more matches to unlock these historic clashes',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
     'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile','tab-trn':'Tournament',
@@ -385,7 +407,8 @@ const I18N = {
     'fail-lookup':'❌ Not found','hint-lookup':'Try without era, or use the English team name',
     'timeout-lookup':'Request timed out (slow scraper). Try again.',
     'no-connection':'No connection to server. Is it running?',
-    'pen-shootout-title':'🎯 Penalty Shootout','pen-winner-suffix':'wins on penalties','pen-winner-sd':' (sudden death)',
+    'pen-shootout-splash':'PENALTY SHOOTOUT','pen-shootout-title':'🎯 Penalty Shootout','pen-winner-suffix':'wins on penalties','pen-winner-sd':' (sudden death)',
+    'mh-title':'🕹 Recent simulations','pen-no-bench':'No bench players','pen-no-bench-swap':'No bench players available',
     'timeline-events-suffix':'event','timeline-events-suffix-pl':'events','timeline-empty':'No notable incidents',
     'km-title':'Key moments','km-reds':'Lots of red cards — the referee was very strict','km-clutch':'Decisive factor','km-clean-sheet':'Clean sheet','km-thrashing':'Dominant victory','km-draw':'Closely contested draw','km-extra-time':'Decided on penalties',
     'mom-badge-text':'PLAYER OF THE MATCH','bench-label':'BENCH','ovr-lbl':'OVR',
@@ -564,6 +587,27 @@ const I18N = {
     'ucl-pts-suffix':'',
     'ucl-progress-league':'League Phase…','ucl-progress-r16':'Round of 16…',
     'ucl-champion-path-phase':'League Phase',
+    // ── PWA install sheet ─────────────────────────────────
+    'pwa-title':'Play offline, no browser needed',
+    'pwa-sub':'Install GolazoX on your home screen — instant access, zero ads.',
+    'pwa-install-btn':'⚡ Install',
+    'pwa-dismiss-btn':'Later',
+    'pwa-ios-title':'Add GolazoX to your home screen',
+    'pwa-ios-sub':'Tap <strong>⎁ Share</strong> in Safari, then <strong>"Add to Home Screen"</strong> to play offline.',
+    'pwa-ios-ok':'✓ Got it',
+    // ── GX generic ────────────────────────────────────────
+    'cancel':'Cancel',
+    'edit-name-title':'Change name',
+    'my-progress-title':'My progress · Profile tab',
+    // ── Share text ────────────────────────────────────────
+    'share-quests-label':'Quests:',
+    'share-matches-label':'matches',
+    'share-goals-label':'goals',
+    'canvas-level':'LEVEL',
+    'canvas-matches':'Matches',
+    'canvas-goals':'Goals',
+    'canvas-tournaments':'Tourneys',
+    'btn-rematch':'🔄 Rematch',
   },
 };
 
@@ -585,6 +629,17 @@ function setLang(lang) {
   _lang = (lang === 'en') ? 'en' : 'es';
   try { localStorage.setItem('golazox_lang', _lang); } catch(_) {}
   applyI18n();
+}
+
+// ── Scroll helper — compensates for sticky header ─────────────
+// Uses the actual rendered header height so it works on all screen sizes.
+function _scrollTo(el, extraGap) {
+  if (!el) return;
+  const gap    = extraGap != null ? extraGap : 16;
+  const header = document.querySelector('.site-header');
+  const offset = header ? header.getBoundingClientRect().height : 60;
+  const top    = el.getBoundingClientRect().top + window.scrollY - offset - gap;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
 }
 
 function applyI18n() {
@@ -674,6 +729,9 @@ function applyI18n() {
     const val = t(key);
     if (val && val !== key) node.textContent = val;
   });
+  // GX XP bar tooltip
+  const xpBar = document.getElementById('gx-xp-bar');
+  if (xpBar) xpBar.setAttribute('title', t('my-progress-title'));
 }
 
 /** Strip data-source prefix from lookup result for display (hides internal source names) */
@@ -987,7 +1045,7 @@ function _histRender() {
   if (wrap) wrap.classList.toggle('hidden', hist.length === 0);
   if (!hist.length) return;
   el.innerHTML = hist.map((h, i) => {
-    const date = new Date(h.ts).toLocaleDateString('es-ES', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' });
+    const date = new Date(h.ts).toLocaleDateString(_lang === 'en' ? 'en-GB' : 'es-ES', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' });
     const eA = h.eraA ? ` <small>'${String(h.eraA).slice(-2)}</small>` : '';
     const eB = h.eraB ? ` <small>'${String(h.eraB).slice(-2)}</small>` : '';
     const badgeSrcA = h.badgeA || `/img/badges/${h.slugA}.svg`;
@@ -1018,7 +1076,7 @@ function histReplay(idx) {
   _pickerState.B = { type: null, league: null }; _renderPicker('B');
   _updateClashButton();
   // Scroll to top
-  document.getElementById('col-a')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('col-a') && _scrollTo(document.getElementById('col-a'));
   showToast('♻ Equipos restaurados · Pulsa ⚔ para simular');
 }
 
@@ -1038,8 +1096,9 @@ async function surpriseMe() {
   const pick = () => pool[Math.floor(Math.random() * pool.length)];
   let tA = pick(), tB;
   do { tB = pick(); } while (tB.slug === tA.slug);
-  const seasons = s => s.seasons || [];
-  const randEra = t => { const s = seasons(t); return s.length ? s[Math.floor(Math.random() * s.length)] : ''; };
+  // Only pick from eras that are not locked for this user
+  const unlockedSeasons = s => (s.seasons || []).filter(era => !window.gxUser || !gxUser.isLocked(s.slug, era));
+  const randEra = team => { const s = unlockedSeasons(team); return s.length ? s[Math.floor(Math.random() * s.length)] : (team.seasons?.[0] || ''); };
   const eA = randEra(tA);
   const eB = randEra(tB);
   document.getElementById('teamA').value = tA.name || tA.slug;
@@ -1667,14 +1726,21 @@ const HISTORIC_MATCHES = [
     b: { slug: 'benfica-lissabon',era: '1988' } },
 ];
 
+// Returns true if either team+era combo is currently locked for this user
+function _isComboLocked(aSlug, aEra, bSlug, bEra) {
+  if (!window.gxUser) return false;
+  return gxUser.isLocked(aSlug, aEra) || gxUser.isLocked(bSlug, bEra);
+}
+
 async function rivalryMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
 
-  // Filter to only matches where both teams exist in catalog
+  // Filter to only matches where both teams exist in catalog AND neither is locked
   const available = HISTORIC_MATCHES.filter(m =>
-    _catalog.find(c => c.slug === m.a.slug) && _catalog.find(c => c.slug === m.b.slug)
+    _catalog.find(c => c.slug === m.a.slug) && _catalog.find(c => c.slug === m.b.slug) &&
+    !_isComboLocked(m.a.slug, m.a.era, m.b.slug, m.b.era)
   );
-  if (!available.length) { showToast('⚡ ' + (t('btn-rivalry') || 'Rivals')); return; }
+  if (!available.length) { showToast(t('rival-all-locked') || '🔒 Juega más partidos para desbloquear estos enfrentamientos históricos'); return; }
 
   const match = available[Math.floor(Math.random() * available.length)];
 
@@ -1822,11 +1888,12 @@ const WORLD_DERBIES = [
 async function derbyMe() {
   if (!_catalogReady || !_catalog.length) { showToast(t('catalog-loading') || 'Cargando catálogo…'); return; }
 
-  // Filter to only derbies where both teams exist in catalog
+  // Filter to only derbies where both teams exist in catalog AND neither is locked
   const available = WORLD_DERBIES.filter(d =>
-    _catalog.find(c => c.slug === d.a.slug) && _catalog.find(c => c.slug === d.b.slug)
+    _catalog.find(c => c.slug === d.a.slug) && _catalog.find(c => c.slug === d.b.slug) &&
+    !_isComboLocked(d.a.slug, d.a.era, d.b.slug, d.b.era)
   );
-  if (!available.length) return;
+  if (!available.length) { showToast(t('rival-all-locked') || '🔒 Juega más partidos para desbloquear estos derbis'); return; }
 
   const derby = available[Math.floor(Math.random() * available.length)];
 
@@ -2219,7 +2286,7 @@ function _renderPenTakersList(side) {
         });
       });
     } else {
-      benchEl.innerHTML = `<li class="pen-bench-empty">Sin suplentes</li>`;
+      benchEl.innerHTML = `<li class="pen-bench-empty">${t('pen-no-bench')}</li>`;
     }
   }
 }
@@ -2244,7 +2311,7 @@ function _penOpenSwapMenu(side, takerIdx) {
           `<span class="pen-taker-pos" data-pos="${escHtml(p.position)}">${escHtml(p.position)}</span> ${escHtml(p.name)}` +
           `</button>`
         ).join('')
-      : `<div class="pen-swap-menu-empty">Sin suplentes disponibles</div>`
+      : `<div class="pen-swap-menu-empty">${t('pen-no-bench-swap')}</div>`
     ) +
     `<button class="pen-swap-cancel">✕ Cancelar</button>`;
 
@@ -3317,13 +3384,13 @@ function _renderPicker(side) {
     container.innerHTML =
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(spName)}</button></div>` +
       `<div class="tp-teams-grid">` +
-      spTeams.map(t => {
-        const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
-        const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
-        const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
-        return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>`+
-        `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
-        `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
+      spTeams.map(tm => {
+        const _gxLocked = window.gxUser && gxUser.isLocked(tm.slug);
+        const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(tm.slug) : null;
+        const _gxFlash  = window.gxUser && gxUser.isFlash(tm.slug);
+        return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(tm.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>`+
+        `<img class="tp-team-badge" src="${escHtml(tm.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
+        `<span class="tp-team-name">${escHtml(_entryName(tm))}</span>` +
         (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
         (_gxFlash  ? `<span class="tp-flash-tag">⚡</span>` : '') +
         `</button>`;
@@ -3372,13 +3439,13 @@ function _renderPicker(side) {
   container.innerHTML =
     `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(lgName)}</button></div>` +
     `<div class="tp-teams-grid">` +
-    teams.map(t => {
-      const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
-      const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
-      const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
-      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>` +
-      `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
-      `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
+    teams.map(tm => {
+      const _gxLocked = window.gxUser && gxUser.isLocked(tm.slug);
+      const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(tm.slug) : null;
+      const _gxFlash  = window.gxUser && gxUser.isFlash(tm.slug);
+      return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(tm.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>` +
+      `<img class="tp-team-badge" src="${escHtml(tm.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
+      `<span class="tp-team-name">${escHtml(_entryName(tm))}</span>` +
       (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
       (_gxFlash  ? `<span class="tp-flash-tag">⚡</span>` : '') +
       `</button>`;
@@ -3626,7 +3693,7 @@ document.addEventListener('DOMContentLoaded', () => {
     _penGkA = null;   _penGkB = null;
     // Scroll back up to the team picker area
     const pickerArea = document.getElementById('pen-picker-A');
-    pickerArea?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (pickerArea) _scrollTo(pickerArea);
   });
 
   // Dismiss winner overlay → show footer result
@@ -3731,11 +3798,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Match result
   _on('btn-share',    () => shareResult());
   _on('btn-deeplink', () => _deepLinkShare());
-  _on('btn-rematch',  () => {
-    if (!_livePayload) return;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => startMatch(_livePayload), 200);
-  });
+  _on('btn-rematch',  () => _rematch());
 
   // Match analysis heatmap tabs (delegation on persistent container)
   document.getElementById('match-analysis-card')?.addEventListener('click', e => {
@@ -4190,6 +4253,60 @@ async function handleSimulate() {
   }
 }
 
+// ── Revancha: re-simulate same teams, skip pre-match, go straight to live ──
+async function _rematch() {
+  if (!_livePayload) return;
+  const btn = document.getElementById('btn-rematch');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳…'; }
+
+  // Clear previous match state (same as handleSimulate)
+  ['prematch-screen', 'live-viewer', 'event-overlay'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.classList.add('hidden'); el.classList.remove('pm-fade-out', 'live-fade-out', 'eo-fade-in', 'eo-fade-out'); }
+  });
+  document.getElementById('results')?.classList.add('hidden');
+  _timelineStarted = false;
+  const _kmEl = document.getElementById('key-moments');
+  if (_kmEl) { _kmEl.innerHTML = ''; _kmEl.style.display = 'none'; }
+  const _momName = document.getElementById('mom-name');
+  const _momMeta = document.getElementById('mom-meta');
+  if (_momName) _momName.textContent = '-';
+  if (_momMeta) _momMeta.textContent = '-';
+  if (_liveTimer)           { clearTimeout(_liveTimer);            _liveTimer = null; }
+  if (_liveClockInterval)   { clearInterval(_liveClockInterval);   _liveClockInterval = null; }
+  if (_pitchDriftInterval)  { clearInterval(_pitchDriftInterval);  _pitchDriftInterval = null; }
+  _eventTimers.forEach(id => clearTimeout(id)); _eventTimers = [];
+
+  setLoading(true);
+
+  // Fresh salt so results differ from the previous match
+  const payload = { ..._livePayload, matchSalt: Date.now() & 0x7fffffff };
+
+  try {
+    const { _slugA, _slugB, ...serverPayload } = payload;
+    const response = await fetch('/simulate', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(serverPayload),
+    });
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      if (response.status === 429) throw new Error(t('error-rate-limit'));
+      throw new Error(err.error || `${t('sim-error-prefix')} ${response.status}`);
+    }
+    const data = await response.json();
+    _histSave(payload, data);
+    // Skip pre-match — launch live directly at the same speed the user had set
+    playLiveMatch(data, payload, _pmTick);
+    requestAnimationFrame(() => _scrollTo(document.getElementById('live-viewer')));
+  } catch (err) {
+    showError(`${t('sim-error-prefix')} ${err.message}`);
+  } finally {
+    setLoading(false);
+    if (btn) { btn.disabled = false; btn.textContent = t('btn-rematch') || '🔄 Revancha'; }
+  }
+}
+
 // ── Render all result sections ────────────────────────────
 function renderResult(data, payload) {
   const { lineups, ratings, probabilities, finalScore, altScores, simulation } = data;
@@ -4198,7 +4315,8 @@ function renderResult(data, payload) {
   const section = document.getElementById('results');
   section.classList.remove('hidden');
   section.classList.add('fade-in');
-  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Use rAF to ensure display:none is removed before measuring position
+  requestAnimationFrame(() => _scrollTo(section));
 
   // ── Show/hide cards that don't apply to a pure penalties contest ──
   const isPenMode = payload.matchMode === 'penalties';
@@ -4758,7 +4876,7 @@ function showPreMatch(data, payload) {
 
   const screen = document.getElementById('prematch-screen');
   screen.classList.remove('hidden', 'pm-fade-out');
-  screen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  requestAnimationFrame(() => _scrollTo(screen));
 
   // ── Init / clear pitch ───────────────────────────────────
   const pitchField = document.getElementById('pm-pitch-field');
@@ -6955,13 +7073,15 @@ let _liveClockInterval = null;
 let _eventTimers = [];   // all per-event setTimeout IDs, cleared on skip
 let _liveData    = null;
 let _livePayload = null;
+let _liveFinished = false; // guard against double finishLive calls
 let _lastGoalSide = 'A';  // tracks last team to score (for overlay)
 let _overlayHideTimer1 = null;  // pending "start fade-out" timer
 let _overlayHideTimer2 = null;  // pending "add hidden" timer
 
 function playLiveMatch(data, payload, tickMs = 300) {
-  _liveData    = data;
-  _livePayload = payload;
+  _liveData     = data;
+  _livePayload  = payload;
+  _liveFinished = false;
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
   // Clear any leftover timers from a previous live match (prevents phantom events/wrong scores)
@@ -7050,7 +7170,7 @@ function playLiveMatch(data, payload, tickMs = 300) {
   } else {
     initLivePitch(data.lineups?.teamA, data.lineups?.teamB);
   }
-  viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  requestAnimationFrame(() => _scrollTo(viewer));
   // tickMs=0 → instant result (no animation delay)
   const TICK = tickMs;
 
@@ -7395,6 +7515,8 @@ function triggerEventOverlay(type, name, score, side) {
 }
 
 function finishLive() {
+  if (_liveFinished) return;
+  _liveFinished = true;
   if (_liveTimer)         { clearTimeout(_liveTimer);          _liveTimer = null; }
   if (_liveClockInterval) { clearInterval(_liveClockInterval); _liveClockInterval = null; }
   if (_overlayHideTimer1) { clearTimeout(_overlayHideTimer1);  _overlayHideTimer1 = null; }
@@ -7681,6 +7803,7 @@ function showToast(msg) {
 // ── Tournament format / preset lock helpers ──────────────────
 function _showTrnLockToast(info) {
   if (!info) return;
+  if (window.gxUI) { gxUI.showLockModal('_fmt', info.xp, info.label); return; }
   const curXP = window.gxUser ? gxUser.get().xp : 0;
   const need  = info.xp - curXP;
   showToast('🔒 ' + t('lock-toast').replace('%label', info.label).replace('%xp', info.xp).replace('%need', need));

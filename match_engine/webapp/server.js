@@ -1928,7 +1928,7 @@ app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, 
         const global = _gxLoadGlobal();
         const gIdx = global.findIndex(e => e.name === safeName);
         if (gIdx >= 0) {
-          if (safeXp >= global[gIdx].xp) {
+          if (safeXp >= (global[gIdx].xp || 0)) {
             global[gIdx] = { name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() };
           }
         } else if (global.length < 500) {

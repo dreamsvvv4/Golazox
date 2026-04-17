@@ -151,7 +151,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=115" />
+  <link rel="stylesheet" href="style.min.css?v=119" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -328,12 +328,12 @@
         </picture>
       </div>
       <div class="pwa-sheet-text">
-        <p class="pwa-sheet-title" id="pwa-sheet-title">Juega sin conexión, sin navegador</p>
-        <p class="pwa-sheet-sub">Instala la Máquina del Tiempo en tu pantalla de inicio — acceso instantáneo, cero anuncios.</p>
+        <p class="pwa-sheet-title" id="pwa-sheet-title" data-i18n="pwa-title">Juega sin conexión, sin navegador</p>
+        <p class="pwa-sheet-sub" data-i18n="pwa-sub">Instala la Máquina del Tiempo en tu pantalla de inicio — acceso instantáneo, cero anuncios.</p>
       </div>
       <div class="pwa-sheet-actions">
-        <button id="pwa-install-btn" class="pwa-btn pwa-btn-install">⚡ Instalar</button>
-        <button id="pwa-dismiss-btn" class="pwa-btn pwa-btn-later">Más tarde</button>
+        <button id="pwa-install-btn" class="pwa-btn pwa-btn-install" data-i18n="pwa-install-btn">⚡ Instalar</button>
+        <button id="pwa-dismiss-btn" class="pwa-btn pwa-btn-later" data-i18n="pwa-dismiss-btn">Más tarde</button>
       </div>
     </div>
   </div>
@@ -483,7 +483,7 @@
       </div>
     <details id="match-history-wrap" class="match-history-wrap glass-card hidden">
       <summary class="mh-summary">
-        <span>🕹 Últimas simulaciones</span>
+        <span data-i18n="mh-title">🕹 Últimas simulaciones</span>
         <button class="mh-clear-btn" id="mh-clear-btn" title="Borrar historial">✕</button>
       </summary>
       <div id="match-history-list" class="mh-list"></div>
@@ -648,7 +648,7 @@
         <div class="pso-spot pso-spot-3"></div>
       </div>
       <div class="pso-inner">
-        <div class="pso-label">🎯 <span id="pso-title-text">TANDAS DE PENALTIS</span></div>
+        <div class="pso-label">🎯 <span id="pso-title-text" data-i18n="pen-shootout-splash">TANDAS DE PENALTIS</span></div>
         <div class="pso-teams-row">
           <span class="pso-team-a">-</span>
           <span class="pso-vs">VS</span>
@@ -698,7 +698,7 @@
         </div>
         <!-- Share -->
         <div class="share-row">
-          <button class="btn-rematch" id="btn-rematch">🔄 Revancha</button>
+          <button class="btn-rematch" id="btn-rematch" data-i18n="btn-rematch">🔄 Revancha</button>
           <button class="btn-share" id="btn-share" data-i18n="btn-share">📤 Compartir resultado</button>
           <button class="btn-ghost btn-deeplink" id="btn-deeplink" title="Copiar enlace a este partido">🔗 Enlace</button>
         </div>
@@ -1779,9 +1779,9 @@
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
   <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="gx-user.min.js?v=11" defer></script>
-  <script src="gx-ui.min.js?v=13" defer></script>
-  <script src="app.min.js?v=92" defer></script>
+  <script src="gx-user.min.js?v=12" defer></script>
+  <script src="gx-ui.min.js?v=17" defer></script>
+  <script src="app.min.js?v=100" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
   <script src="tournament.min.js?v=50" defer></script>
 
