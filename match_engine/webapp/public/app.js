@@ -3262,15 +3262,20 @@ function _renderPicker(side) {
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-nations-label')}</span></div>` +
       `<div class="tp-nations-grid">` +
       nations.map(n => {
+        const _gxLocked = window.gxUser && gxUser.isLocked(n.slug);
+        const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(n.slug) : null;
+        const _gxFlash  = window.gxUser && gxUser.isFlash(n.slug);
         const iso = _NATION_ISO[n.slug.toLowerCase()];
         const flagHtml = iso
           ? `<img class="tp-flag-img" src="/flag/${iso}?v=2" alt="" loading="lazy">`
           : n.badge && !n.badge.includes('_placeholder')
             ? `<img class="tp-flag-img" src="${escHtml(n.badge)}" alt="" loading="lazy">`
             : `<span class="tp-flag-fallback">${escHtml(_entryName(n).slice(0,2).toUpperCase())}</span>`;
-        return `<button class="tp-nation-card" data-pa="team" data-pv="${escHtml(n.slug)}">` +
+        return `<button class="tp-nation-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(n.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>`+
           flagHtml +
           `<span class="tp-nation-name">${escHtml(_entryName(n))}</span>` +
+          (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
+          (_gxFlash  ? `<span class="tp-flash-tag">⚡</span>` : '') +
           `</button>`;
       }).join('') +
       `</div>`;
@@ -3308,12 +3313,17 @@ function _renderPicker(side) {
     container.innerHTML =
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(spName)}</button></div>` +
       `<div class="tp-teams-grid">` +
-      spTeams.map(t =>
-        `<button class="tp-team-card" data-pa="team" data-pv="${escHtml(t.slug)}">` +
+      spTeams.map(t => {
+        const _gxLocked = window.gxUser && gxUser.isLocked(t.slug);
+        const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(t.slug) : null;
+        const _gxFlash  = window.gxUser && gxUser.isFlash(t.slug);
+        return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(t.slug)}" ${_gxLocked ? `title="Necesitas ${_gxInfo?.xp || '?'} XP para desbloquear"` : ''}>`+
         `<img class="tp-team-badge" src="${escHtml(t.badge || BADGE_PLACEHOLDER)}" alt="" loading="lazy">` +
         `<span class="tp-team-name">${escHtml(_entryName(t))}</span>` +
-        `</button>`
-      ).join('') +
+        (_gxLocked ? `<span class="tp-lock-overlay">🔒<span class="tp-lock-xp">${_gxInfo?.xp || ''}xp</span></span>` : '') +
+        (_gxFlash  ? `<span class="tp-flash-tag">⚡</span>` : '') +
+        `</button>`;
+      }).join('') +
       `</div>`;
     return;
   }
