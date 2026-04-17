@@ -1,6 +1,23 @@
 $key = "C:\Users\vvvfb\.ssh\id_golazox_deploy"
 $srv = "u990866731@147.93.88.37"
 
+# ── Guardia: verificar que no hay cambios sin commitear/pushear ──
+$unpushed = git log origin/main..HEAD --oneline 2>&1
+$dirty    = git status --porcelain 2>&1 | Where-Object { $_ -match '^\s*M|^\s*A|^\s*D' }
+if ($dirty) {
+    Write-Host "ERROR: Hay archivos modificados sin commitear:" -ForegroundColor Red
+    $dirty | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+    Write-Host "Haz 'git add + git commit + git push' antes de deployar." -ForegroundColor Yellow
+    exit 1
+}
+if ($unpushed) {
+    Write-Host "ERROR: Hay commits locales sin pushear:" -ForegroundColor Red
+    $unpushed | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+    Write-Host "Haz 'git push origin main' antes de deployar." -ForegroundColor Yellow
+    exit 1
+}
+Write-Host "    Git OK - todo commiteado y pusheado" -ForegroundColor Green
+
 $bash = @'
 set -e
 REPO="$HOME/domains/golazox.com/public_html/.builds/source/repository"
@@ -13,7 +30,7 @@ git checkout -B main FETCH_HEAD
 git checkout -- .
 echo "    GIT OK"
 echo "==> Copiando archivos..."
-cp -r "$WEBAPP/public/." "$DEST/public/"
+cp -r "$WEBAPP/public/." "$DEST/public/" 2>/dev/null || true
 cp "$WEBAPP/server.js" "$WEBAPP/engine.js" "$WEBAPP/player_ratings.js" "$WEBAPP/narrator.js" "$WEBAPP/squads.js" "$WEBAPP/lookup.js" "$WEBAPP/utils.js" "$WEBAPP/referee_logic.js" "$DEST/"
 cp -r "$WEBAPP/squads/." "$DEST/squads/"
 cp "$WEBAPP/squads-meta.json" "$DEST/squads-meta.json"
