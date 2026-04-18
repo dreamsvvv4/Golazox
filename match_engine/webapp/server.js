@@ -1941,7 +1941,7 @@ app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, 
           if (safeXp >= (global[gIdx].xp || 0)) {
             global[gIdx] = { name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() };
           }
-        if (global.length < 2000) {
+        } else if (global.length < 2000) {
           global.push({ name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
         }
         global.sort((a, b) => b.xp - a.xp);
