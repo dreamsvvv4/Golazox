@@ -349,8 +349,8 @@
 
   function _gxSyncScore() {
     if (!w.gxUser) return;
-    var ds    = gxUser.getDailyStats();
-    var score = gxUser.dailyScore(ds);
+    var ws    = gxUser.getWeeklyStats ? gxUser.getWeeklyStats() : gxUser.getDailyStats();
+    var score = gxUser.weeklyScore ? gxUser.weeklyScore(ws) : gxUser.dailyScore(ws);
     var u     = gxUser.get();
     var xp    = u.xp || 0;
     var weekKey    = gxUser.gxWeekKey();

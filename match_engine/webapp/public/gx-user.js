@@ -393,7 +393,8 @@
       recentMatches: [],
       recentMatchHistory: [],
       dailyQuests: { date: null, completed: [] }, // ids completados hoy
-      dailyStats: { date: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 },
+      dailyStats:  { date: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 },
+      weeklyStats: { week: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 },
       favoriteTeam: null,   // slug del equipo favorito
       country: '',          // ISO 2-letter, e.g. 'ES'
       flag: '',             // emoji bandera
@@ -417,8 +418,9 @@
     if (!Array.isArray(u.achievements))   u.achievements   = [];
     if (!Array.isArray(u.recentMatches))  u.recentMatches  = [];
     if (!u.streak) u.streak = { current: 0, best: 0, lastDate: null };
-    if (!u.dailyQuests) u.dailyQuests = { date: null, completed: [] };
-    if (!u.dailyStats)  u.dailyStats  = { date: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+    if (!u.dailyQuests)  u.dailyQuests  = { date: null, completed: [] };
+    if (!u.dailyStats)   u.dailyStats   = { date: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+    if (!u.weeklyStats)  u.weeklyStats  = { week: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
     var fields = ['maxReplays','minutesActive','questsCompleted','flashWins','matchesPlayed','tournamentsCompleted','totalGoals','penaltiesPlayed','instantMatches','championsCompleted','worldCupsCompleted','copasPlayed','ligasPlayed'];
     fields.forEach(function(f){ if (u.stats[f] === undefined) u.stats[f] = 0; });
     if (!u.stats.matchesByMode || typeof u.stats.matchesByMode !== 'object') u.stats.matchesByMode = {};
@@ -641,6 +643,26 @@
     if (reason === 'tournament') { u.dailyStats.tournaments++; }
     u.dailyStats.quests = (u.dailyQuests.date === todayStr) ? u.dailyQuests.completed.length : 0;
 
+    // ── Actualizar estadísticas semanales (acumulativo) ──────────
+    var wkStr = typeof w.gxUser !== 'undefined' && w.gxUser.gxWeekKey
+      ? w.gxUser.gxWeekKey()
+      : (function(){
+          var d = new Date(), day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+          var dow = day.getUTCDay() || 7; day.setUTCDate(day.getUTCDate() + 4 - dow);
+          var jan4 = new Date(Date.UTC(day.getUTCFullYear(), 0, 4));
+          var wk = 1 + Math.round(((day - jan4) / 86400000 - 3 + ((jan4.getUTCDay() || 7) - 1)) / 7);
+          return day.getUTCFullYear() + '-W' + (wk < 10 ? '0' + wk : wk);
+        })();
+    if (!u.weeklyStats || u.weeklyStats.week !== wkStr) {
+      u.weeklyStats = { week: wkStr, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+    }
+    u.weeklyStats.xpEarned  += gained;
+    if (reason === 'match')      { u.weeklyStats.matches++; u.weeklyStats.goals += (opts.goals || 0); }
+    if (reason === 'penalties')  { u.weeklyStats.matches++; }
+    if (reason === 'tournament') { u.weeklyStats.tournaments++; }
+    // Quests: acumular las nuevas completadas esta llamada (questBonuses son las recién completadas)
+    u.weeklyStats.quests += questBonuses.length;
+
     _save(u);
 
     return {
@@ -740,10 +762,22 @@
       return Object.assign({}, u.dailyStats, { quests: qDone });
     },
 
+    getWeeklyStats: function () {
+      var u = _getOrCreate();
+      if (!u.weeklyStats) return { week: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+      return u.weeklyStats;
+    },
+
     // Fórmula de puntuación diaria (para clasificación)
     dailyScore: function (ds) {
       if (!ds) return 0;
       return (ds.xpEarned * 10) + (ds.quests * 500) + (ds.tournaments * 200) + (ds.goals * 5);
+    },
+
+    // Fórmula de puntuación semanal acumulada (para ranking semanal)
+    weeklyScore: function (ws) {
+      if (!ws) return 0;
+      return (ws.xpEarned * 10) + (ws.quests * 500) + (ws.tournaments * 200) + (ws.goals * 5);
     },
 
     // ── Ranking anonúmero: hash anti-spoofing (mismo algoritmo que server.js) ──
