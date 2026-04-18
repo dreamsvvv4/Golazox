@@ -40,6 +40,7 @@
     'cell-goals':    { es: '🎯 Goles',                     en: '🎯 Goals'                    },
     'cell-quests':   { es: '📋 Misiones',                  en: '📋 Quests'                   },
     'pts-today':     { es: 'puntos hoy',                   en: 'points today'                },
+    'pts-week':      { es: 'puntos esta semana',           en: 'points this week'            },
     'flash-only':    { es: 'Solo hoy y mañana',            en: 'Today and tomorrow only'     },
     'unlock-ach':    { es: 'Logro desbloqueado',           en: 'Achievement unlocked'        },
     'unlock-team':   { es: '¡Equipo desbloqueado!',        en: 'Team unlocked!'              },
@@ -484,23 +485,23 @@
     });
   }
 
-  // ── Clasificación Diaria ──────────────────────────────
+  // ── Clasificación Semanal ──────────────────────────────
   function _buildDailyLeaderboard() {
     if (!w.gxUser) return '';
     var ds    = gxUser.getDailyStats();
-    var score = gxUser.dailyScore(ds);
+    var ws    = gxUser.getWeeklyStats ? gxUser.getWeeklyStats() : ds;
+    var score = gxUser.weeklyScore ? gxUser.weeklyScore(ws) : gxUser.dailyScore(ws); // Puntuación semanal para ranking
+    var dscore = gxUser.dailyScore(ds); // Puntuación de hoy (para info)
     var u     = gxUser.get();
     var emojis = ['⚽','🥅','👟','🔥','⚡','🌟','🏅','🥈','🥇','🏆','👑','🐐'];
     var avatar = emojis[Math.min((u.level||1)-1, emojis.length-1)];
 
-    // Etiqueta de fecha legible
-    var now  = new Date();
-    var days = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-    var mons = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-    var dateLabel = days[now.getDay()] + ' ' + now.getDate() + ' ' + mons[now.getMonth()];
+    // Etiqueta de semana
+    var wkKey  = gxUser.gxWeekKey ? gxUser.gxWeekKey() : '';
+    var dateLabel = wkKey ? _gt('rank-weekly-sub') : '';
 
-    // Barra de puntuación (relativa a 5000 pts como "buen día")
-    var barPct = Math.min(100, Math.round(score / 50));  // 5000 pts = 100%
+    // Barra de puntuación (relativa a 25000 pts como "buena semana")
+    var barPct = Math.min(100, Math.round(score / 250));  // 25000 pts = 100%
 
     return '<div class="gx-daily-board">' +
       '<div class="gx-daily-header">' +
@@ -518,14 +519,15 @@
 
       '<div class="gx-daily-score-wrap">' +
         '<div class="gx-daily-score-big">' + score.toLocaleString() + '</div>' +
-        '<div class="gx-daily-score-label">' + _gt('pts-today') + '</div>' +
+        '<div class="gx-daily-score-label">' + _gt('pts-week') + '</div>' +
         '<div class="gx-daily-score-bar"><div class="gx-daily-score-fill" style="width:' + barPct + '%"></div></div>' +
+        '<div class="gx-daily-score-sub">Hoy: ' + dscore.toLocaleString() + ' pts</div>' +
       '</div>' +
 
       '<div class="gx-daily-row-grid">' +
-        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ds.xpEarned + '</span><span class="gx-daily-cell-lbl">' + _gt('xp-earned') + '</span></div>' +
-        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ds.matches + '</span><span class="gx-daily-cell-lbl">' + _gt('cell-matches') + '</span></div>' +
-        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ds.goals + '</span><span class="gx-daily-cell-lbl">' + _gt('cell-goals') + '</span></div>' +
+        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ws.xpEarned + '</span><span class="gx-daily-cell-lbl">' + _gt('xp-earned') + '</span></div>' +
+        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ws.matches + '</span><span class="gx-daily-cell-lbl">' + _gt('cell-matches') + '</span></div>' +
+        '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ws.goals + '</span><span class="gx-daily-cell-lbl">' + _gt('cell-goals') + '</span></div>' +
         '<div class="gx-daily-cell"><span class="gx-daily-cell-val">' + ds.quests + '/3</span><span class="gx-daily-cell-lbl">' + _gt('cell-quests') + '</span></div>' +
       '</div>' +
 
@@ -557,7 +559,8 @@
     if (!btn) return;
     btn.addEventListener('click', function() {
       var ds    = gxUser.getDailyStats();
-      var score = gxUser.dailyScore(ds);
+      var ws    = gxUser.getWeeklyStats ? gxUser.getWeeklyStats() : ds;
+      var score = gxUser.weeklyScore ? gxUser.weeklyScore(ws) : gxUser.dailyScore(ds);
       var now   = new Date();
       var isEN  = _gxLang() === 'en';
       var days  = isEN ? ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'] : ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];

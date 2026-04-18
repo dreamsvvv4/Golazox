@@ -1793,7 +1793,7 @@ app.get('/config.js', (_req, res) => {
 const GX_LB_FILE  = path.join(__dirname, 'data', 'gx_leaderboard.json');
 const GX_GLOBAL_FILE = path.join(__dirname, 'data', 'gx_global_lb.json');
 const GX_SALT     = process.env.GX_SALT || 'golazox_2026_xp';
-const GX_MAX_PER_WEEK  = 200;
+const GX_MAX_PER_WEEK  = 1000;
 const GX_MAX_NAME_LEN  = 28;
 const GX_MAX_SCORE     = 9_999_999;
 // Rate limiters específicos para GX (definidos inline para no depender de _rl)
@@ -1848,7 +1848,7 @@ function _gxLoadGlobal() {
 
 function _gxSaveGlobal(entries) {
   try {
-    fs.writeFileSync(GX_GLOBAL_FILE, JSON.stringify(entries.slice(0, 500)), 'utf8');
+    fs.writeFileSync(GX_GLOBAL_FILE, JSON.stringify(entries.slice(0, 2000)), 'utf8');
   } catch (_) {}
 }
 
@@ -1941,7 +1941,7 @@ app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, 
           if (safeXp >= (global[gIdx].xp || 0)) {
             global[gIdx] = { name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() };
           }
-        } else if (global.length < 500) {
+        if (global.length < 2000) {
           global.push({ name: safeName, xp: safeXp, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
         }
         global.sort((a, b) => b.xp - a.xp);
