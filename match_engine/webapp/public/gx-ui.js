@@ -408,7 +408,7 @@
         return;
       }
       var medals = ['🥇','🥈','🥉'];
-      el.innerHTML = data.entries.slice(0, 10).map(function(e, i) {
+      el.innerHTML = data.entries.slice(0, 20).map(function(e, i) {
         var isMe = e.name === u.name;
         var medal = i < 3 ? medals[i] : (i+1);
         var scoreVal = isGlobal ? (e.xp || 0) : (e.score || 0);
@@ -491,7 +491,6 @@
     var ds    = gxUser.getDailyStats();
     var ws    = gxUser.getWeeklyStats ? gxUser.getWeeklyStats() : ds;
     var score = gxUser.weeklyScore ? gxUser.weeklyScore(ws) : gxUser.dailyScore(ws); // Puntuación semanal para ranking
-    var dscore = gxUser.dailyScore(ds); // Puntuación de hoy (para info)
     var u     = gxUser.get();
     var emojis = ['⚽','🥅','👟','🔥','⚡','🌟','🏅','🥈','🥇','🏆','👑','🐐'];
     var avatar = emojis[Math.min((u.level||1)-1, emojis.length-1)];
@@ -521,7 +520,6 @@
         '<div class="gx-daily-score-big">' + score.toLocaleString() + '</div>' +
         '<div class="gx-daily-score-label">' + _gt('pts-week') + '</div>' +
         '<div class="gx-daily-score-bar"><div class="gx-daily-score-fill" style="width:' + barPct + '%"></div></div>' +
-        '<div class="gx-daily-score-sub">Hoy: ' + dscore.toLocaleString() + ' pts</div>' +
       '</div>' +
 
       '<div class="gx-daily-row-grid">' +
@@ -585,9 +583,11 @@
         }).catch(function(){});
       }
     });
-    // Wiring sync button
-    var syncBtn = document.getElementById('gx-sync-btn');
-    if (syncBtn) syncBtn.addEventListener('click', _gxSyncScore);
+    // Auto-sync al abrir el perfil
+    var _u = w.gxUser ? gxUser.get() : null;
+    if (_u && _u.name && _u.name.length >= 3) {
+      setTimeout(function() { _gxSyncScore(); }, 800);
+    }
     // Wire ranking tabs (semanal / all-time)
     document.querySelectorAll('.gx-rank-tab').forEach(function(btn) {
       btn.addEventListener('click', function() {

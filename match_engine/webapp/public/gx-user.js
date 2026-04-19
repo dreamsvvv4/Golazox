@@ -362,6 +362,17 @@
 
   function _today() { return new Date().toISOString().slice(0, 10); }
 
+  function _weekKey() {
+    // ISO week number (lunes = inicio de semana)
+    var d   = new Date();
+    var day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    var dow = day.getUTCDay() || 7;
+    day.setUTCDate(day.getUTCDate() + 4 - dow);
+    var jan4 = new Date(Date.UTC(day.getUTCFullYear(), 0, 4));
+    var wk   = 1 + Math.round(((day - jan4) / 86400000 - 3 + ((jan4.getUTCDay() || 7) - 1)) / 7);
+    return day.getUTCFullYear() + '-W' + (wk < 10 ? '0' + wk : wk);
+  }
+
   function _defaultUser() {
     return {
       id: 'gx_' + Math.random().toString(36).slice(2, 10),
@@ -644,15 +655,7 @@
     u.dailyStats.quests = (u.dailyQuests.date === todayStr) ? u.dailyQuests.completed.length : 0;
 
     // ── Actualizar estadísticas semanales (acumulativo) ──────────
-    var wkStr = typeof w.gxUser !== 'undefined' && w.gxUser.gxWeekKey
-      ? w.gxUser.gxWeekKey()
-      : (function(){
-          var d = new Date(), day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-          var dow = day.getUTCDay() || 7; day.setUTCDate(day.getUTCDate() + 4 - dow);
-          var jan4 = new Date(Date.UTC(day.getUTCFullYear(), 0, 4));
-          var wk = 1 + Math.round(((day - jan4) / 86400000 - 3 + ((jan4.getUTCDay() || 7) - 1)) / 7);
-          return day.getUTCFullYear() + '-W' + (wk < 10 ? '0' + wk : wk);
-        })();
+    var wkStr = _weekKey();
     if (!u.weeklyStats || u.weeklyStats.week !== wkStr) {
       u.weeklyStats = { week: wkStr, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
     }
@@ -763,8 +766,11 @@
     },
 
     getWeeklyStats: function () {
-      var u = _getOrCreate();
-      if (!u.weeklyStats) return { week: null, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+      var u   = _getOrCreate();
+      var wk  = _weekKey();
+      if (!u.weeklyStats || u.weeklyStats.week !== wk) {
+        return { week: wk, xpEarned: 0, matches: 0, goals: 0, quests: 0, tournaments: 0 };
+      }
       return u.weeklyStats;
     },
 
@@ -792,15 +798,7 @@
       return h.toString(16);
     },
 
-    gxWeekKey: function () {
-      var d   = new Date();
-      var day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-      var dow = day.getUTCDay() || 7;
-      day.setUTCDate(day.getUTCDate() + 4 - dow);
-      var jan4 = new Date(Date.UTC(day.getUTCFullYear(), 0, 4));
-      var wk   = 1 + Math.round(((day - jan4) / 86400000 - 3 + ((jan4.getUTCDay() || 7) - 1)) / 7);
-      return day.getUTCFullYear() + '-W' + (wk < 10 ? '0' + wk : wk);
-    },
+    gxWeekKey: function () { return _weekKey(); },
 
     // Guardar equipo favorito
     setFavoriteTeam: function (slug) {
