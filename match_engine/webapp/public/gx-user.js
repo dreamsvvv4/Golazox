@@ -64,7 +64,7 @@
       label: 'Selecciones Históricas',
       desc: 'Las selecciones nacionales más legendarias de la historia del fútbol',
       icon: '🌍',
-      slugs: ['england', 'jugoslawien', 'urss', 'belgien', 'portugal'],
+      slugs: ['england', 'jugoslawien', 'urss', 'belgien'],
     },
     legends_xi: {
       label: 'Leyendas All-Stars',
@@ -126,7 +126,6 @@
     'jugoslawien':                 { xp: 650,  label: 'Yugoslavia 1982',            era: '1982', collection: 'nations' },
     'urss':                        { xp: 750,  label: 'URSS 1988',                  era: '1988', collection: 'nations' },
     'belgien':                     { xp: 1350, label: 'Bélgica 2018',               era: '2018', collection: 'nations' },
-    'portugal':                    { xp: 1700, label: 'Portugal 2016',              era: '2016', collection: 'nations' },
     // ── Leyendas All-Stars ────────────────────────────
     'best-xi-2025':                { xp: 1500, label: 'Mejor XI 2025',              era: '2025',     collection: 'legends_xi' },
     'best-xi-history':             { xp: 4500, label: 'Mejor XI Histórico',         era: 'all-time', collection: 'legends_xi' },
