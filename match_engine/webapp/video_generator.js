@@ -795,7 +795,7 @@ function createMatchIntroVideo(teamA, eraA, teamB, eraB, outFile, durationSec = 
     fs.writeFileSync(jsonTmp1, JSON.stringify({
       teamA, teamB,
       eraA: eraAraw, eraB: eraBraw,
-      hookText:    labelText    || 'EL DEBATE DEFINITIVO',
+      hookText:    labelText    || 'TITLE RACE',
       matchDesc:   matchDesc    || null,
       subLabel:    subLabel     || null,
       competition: competition  || null,
@@ -1172,7 +1172,7 @@ function createOutroCard(matchMeta, outFile, durationSec = 9) {
     ffmpeg([
       '-y',
       '-loop', '1', '-i', pngTmp,
-      '-vf', `scale=1080:1920:flags=lanczos,fade=t=in:st=0:d=0.5,fade=t=out:st=${d - 0.5}:d=0.5`,
+      '-vf', `fade=t=in:st=0:d=0.5,fade=t=out:st=${d - 0.5}:d=0.5`,
       '-c:v', 'libx264', '-preset', 'slow', '-crf', '10',
       '-pix_fmt', 'yuv420p', '-an', '-t', String(d), '-r', '30',
       outFile,
@@ -1564,8 +1564,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
       ], { stdio: ['ignore', 'pipe', 'pipe'] });
       capturedWidth = parseInt((wProbe.stdout || '').toString().trim()) || 0;
     }
-    // If ffprobe failed, the recorder's videoFrame: {width:1080} already constrains
-    // the output — no crop needed, just pad.
+    // If ffprobe failed, assume 360px (CSS viewport) — scale=1080:1920 handles the 3x upscale.
     if (capturedWidth === 0) {
       capturedWidth = WIDTH;
     }
@@ -1646,7 +1645,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     } else {
       console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
       try {
-        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, introTitle, introSub, introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, null, introSub, introTitle || introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
       } catch (e) {
         console.warn('[post] Match intro failed:', e.message.slice(0, 200));
       }
@@ -2358,6 +2357,76 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     });
   });
 
+  // ── STEP 9: Profile tab — show XP gain, achievements, locked teams ──────────
+  // Inject a demo user profile with enough XP to show interesting content
+  await page.evaluate(() => {
+    try {
+      const demoProfile = {
+        name: 'Tú',
+        level: 3,
+        xp: 220,
+        streak: { current: 4, last: new Date().toDateString() },
+        achievements: ['first_match', 'first_goal', 'streak_3'],
+        stats: {
+          matchesPlayed: 12,
+          totalGoals: 34,
+          uniqueTeamsUsed: ['real-madrid','barcelona','manchester-united','liverpool','juventus','brasil','argentina','france'],
+          tournamentsCompleted: 1,
+        },
+        history: [],
+        createdAt: new Date().toLocaleDateString('es-ES'),
+      };
+      localStorage.setItem('gx_user', JSON.stringify(demoProfile));
+    } catch(_) {}
+  });
+  await wait(300);
+
+  // Click the Profile tab button
+  await page.evaluate(() => {
+    // Scroll to top first so the tab bar is visible
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const btn = document.querySelector('.main-tab-btn[data-tab="profile"]');
+    if (btn) btn.click();
+    else if (typeof TRN !== 'undefined' && TRN.switchMainTab) TRN.switchMainTab('profile');
+    // Force re-render the profile with the new demo data
+    setTimeout(() => {
+      if (typeof GXui !== 'undefined' && GXui.renderProfileTab) GXui.renderProfileTab();
+    }, 200);
+  });
+  await wait(1200);
+
+  // Scroll down through profile: XP bar → stats → achievements → locked teams
+  await page.evaluate(async () => {
+    await new Promise(resolve => {
+      const totalH = Math.max(0, document.body.scrollHeight - window.innerHeight);
+      if (totalH <= 0) { resolve(); return; }
+      let y = 0;
+      let pauseTicks = 0;
+      // Pause at XP bar (~15%), stats (~35%), achievements (~60%), locked teams (~85%)
+      const PAUSE_FRACS = [0.15, 0.35, 0.60, 0.82];
+      const pausedSet   = new Set();
+      const SPEED       = 7;
+
+      const timer = setInterval(() => {
+        if (pauseTicks > 0) { pauseTicks--; return; }
+        const frac = totalH > 0 ? y / totalH : 1;
+        for (const pf of PAUSE_FRACS) {
+          if (!pausedSet.has(pf) && frac >= pf - 0.012) {
+            pausedSet.add(pf);
+            pauseTicks = 55; // ~1.8s pause at each section
+            return;
+          }
+        }
+        y = Math.min(y + SPEED, totalH);
+        window.scrollTo(0, y);
+        if (y >= totalH) {
+          clearInterval(timer);
+          setTimeout(resolve, 2000);
+        }
+      }, 33);
+    });
+  });
+
   await recorder.stop();
 
   // Read final score + scorers + stats from DOM (still rendered after results appear)
@@ -2398,8 +2467,14 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   const titleB = clasico.teamB.replace(/-/g, ' ');
   const eraStr = clasico.eraA && clasico.eraB ? ` (${clasico.eraA} vs ${clasico.eraB})` : '';
   const titleLabel = rivalry ? (rivalry.label || rivalry.en) : `${titleA} vs ${titleB}`;
+
+  // Build an engaging title with the final score for social media
+  const scoreStr = `${rawResult.scoreA}-${rawResult.scoreB}`;
+  const HOOKS = ['¿Quién gana?', '¡Increíble resultado!', '¡La IA lo decide!', '¿Lo esperabas?', '¡Sorpresa!'];
+  const hook = HOOKS[Math.floor(Math.random() * HOOKS.length)];
+  const engagingTitle = `${titleLabel}${eraStr} ${scoreStr} — ${hook} golazox.com`;
   return {
-    title: `${titleLabel}${eraStr} — golazox.com`,
+    title: engagingTitle,
     speedSegments: [],
     matchMeta: {
       teamA: clasico.teamA, eraA: clasico.eraA,
@@ -2933,6 +3008,7 @@ if (require.main === module) {
     introSub:   get('--introSub'),     // custom subtitle on match intro card
     introEraA:  get('--introEraA'),    // display era for team A (overrides eraA on card)
     introEraB:  get('--introEraB'),    // display era for team B (overrides eraB on card)
+    matchDesc:  get('--matchDesc'),    // matchday / time line on intro (e.g. "Jornada 35 · 20:00h")
     preview:    args.includes('--preview'),
   };
 

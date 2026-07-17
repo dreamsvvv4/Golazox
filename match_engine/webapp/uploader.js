@@ -109,7 +109,7 @@ async function uploadYouTube({ file, title, description, tags, type }) {
   const chapters = CHAPTERS[type] || (type === 'rival' ? CHAPTERS.match : CHAPTERS.ucl);
   const typeDesc  = DESCRIPTIONS[type] || DESCRIPTIONS.ucl;
   const fullDescription = description ||
-    `${DEFAULT_HASHTAGS}\n\n${title}\n\n${typeDesc}\n\n${chapters}`;
+    `${typeDesc}\n\n${title}\n\n${chapters}\n\n${DEFAULT_HASHTAGS}`;
 
   const res = await youtube.videos.insert({
     part: ['snippet', 'status'],
@@ -416,7 +416,7 @@ async function uploadTikTok({ file, title, type }) {
   const accessToken = env('TIKTOK_ACCESS_TOKEN');
 
   const hashtags = TIKTOK_HASHTAGS[type] || TIKTOK_HASHTAGS.ucl;
-  const caption = `${title}\n\n⚽ Simulación IA — golazox.com\n¿Quién ganará? Simúlalo tú mismo en golazox.com\n\n${hashtags}`;
+  const caption = `${title}\n\n⚽ Simúlalo TÚ en golazox.com 👆\n\n${hashtags}`;
   console.log('[tiktok] Caption:', caption);
   console.log('[tiktok] Initializing upload...');
 
@@ -489,39 +489,34 @@ async function uploadTikTok({ file, title, type }) {
 // ── Defaults ──────────────────────────────────────────────────────────────────
 const DESCRIPTIONS = {
   ucl: [
-    '⚽ Simulación generada por IA — golazox.com',
-    '¿Quién ganará la Champions League 2025/26? Lo simulamos con inteligencia artificial.',
-    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
+    '🌐 https://golazox.com — Simula tu propio torneo',
     '',
-    '🌐 Simula tu propio torneo en https://golazox.com',
+    '⚽ ¿Quién ganará la Champions League 2025/26? Lo simulamos con inteligencia artificial.',
+    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
   ].join('\n'),
   wc: [
-    '⚽ Simulación generada por IA — golazox.com',
-    '¿Quién ganará el Mundial 2026? Lo simulamos con inteligencia artificial.',
-    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
+    '🌐 https://golazox.com — Simula tu propio Mundial',
     '',
-    '🌐 Simula tu propio torneo en https://golazox.com',
+    '⚽ ¿Quién ganará el Mundial 2026? Lo simulamos con inteligencia artificial.',
+    'Sorteo, fase de grupos, eliminatorias y final — todo simulado con datos reales.',
   ].join('\n'),
   rival: [
-    '⚽ Simulación generada por IA — golazox.com',
-    '¿Quién ganará este partido histórico? Lo simulamos con inteligencia artificial.',
-    'Partido simulado con datos reales de los mejores jugadores.',
+    '🌐 https://golazox.com — Simula tu propio partido',
     '',
-    '🌐 Simula tu propio partido en https://golazox.com',
+    '⚽ ¿Quién ganará este partido histórico? Lo simulamos con inteligencia artificial.',
+    'Partido simulado con datos reales de los mejores jugadores.',
   ].join('\n'),
   match: [
-    '⚽ Simulación generada por IA — golazox.com',
-    '¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
-    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
+    '🌐 https://golazox.com — Simula el partido de hoy',
     '',
-    '🌐 Simula tu propio partido en https://golazox.com',
+    '⚽ ¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
+    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
   ].join('\n'),
   daily: [
-    '⚽ Simulación generada por IA — golazox.com',
-    '¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
-    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
+    '🌐 https://golazox.com — Simula el partido de hoy',
     '',
-    '🌐 Simula tu propio partido en https://golazox.com',
+    '⚽ ¿Quién ganará hoy? Simulamos el partido del día con inteligencia artificial.',
+    'Alineaciones reales, estadísticas actualizadas y resultado sorprendente.',
   ].join('\n'),
 };
 const DEFAULT_DESCRIPTION = DESCRIPTIONS.ucl;
