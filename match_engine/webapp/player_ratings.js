@@ -251,6 +251,11 @@ const PLAYER_POSITIONS_RAW = [
   ['ademola lookman',          'RW'],
   ['florian wirtz',            'AM'],
   ['wirtz',                    'AM'],
+  // WC2026 role adjustments
+  ['mikel oyarzabal',          'ST'],   // CF/9 for Spain 2026 (overrides LW)
+  ['dani olmo',                'CM'],   // interior CM for Spain 2026 (overrides AM)
+  ['pedri',                    'AM'],   // dynamic #8 in Spain 2026 system
+  ['rodrigo de paul',          'RM'],   // right midfield for Argentina 2026 (overrides CM)
 ];
 
 const PLAYER_POSITIONS_MAP = new Map(PLAYER_POSITIONS_RAW);
@@ -1766,6 +1771,16 @@ const PLAYER_RATINGS_RAW = [
   ['michael essien lyon',    85], // before Chelsea
   ['samuel eto',             92], // alias guard
   ['karim benzema',          91], // alias guard – OL academy
+
+  // ── WC2026 form ratings ────────────────────────────────────────────
+  ['gavi',                   87],              // bench option Spain 2026 (Fabián starts over him)
+  ['unai simon',             87], ['unai simón',             87],   // #1 GK Spain 2026
+  ['marc cucurella',         89], ['cucurella',              89],   // first-choice LB Spain
+  ['alejandro grimaldo',     87], ['alex grimaldo',          87],   // backup LB Spain
+  ['alex baena',             88], ['baena',                  88],   // LW starter Spain
+  ['dani olmo',              88], ['olmo',                   88],   // CM starter Spain
+  ['nicolas tagliafico',     83],                                   // first-choice LB Argentina
+  ['exequiel palacios',      84], ['palacios',               84],   // squad depth Argentina
 ];
 
 
