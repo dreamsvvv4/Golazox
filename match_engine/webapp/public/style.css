@@ -3459,7 +3459,10 @@ body::before {
 @media (max-width: 480px) {
   html { font-size: 15px; }
 
-  .site-header  { padding: .5rem .75rem; }
+  .site-header  {
+    padding: .5rem .75rem;
+    padding-top: max(.5rem, calc(.5rem + env(safe-area-inset-top, 0px)));
+  }
   .logo-img     { height: 30px; }
   .gx-text-golazo, .gx-text-ox { font-size: 1.15rem; }
   .main-wrap    { padding: 0 .5rem; gap: .65rem; }
