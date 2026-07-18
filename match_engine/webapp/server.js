@@ -330,7 +330,22 @@ app.get('/final-card', async (_req, res) => {
     const pA     = sim.probabilities?.teamA_win ?? 0;
     const pB     = sim.probabilities?.teamB_win ?? 0;
     const pD     = sim.probabilities?.draw       ?? 0;
-    const winner = scoreA > scoreB ? nameA : scoreB > scoreA ? nameB : 'Empate';
+
+    // Penalty shootout if draw (deterministic with offset salt)
+    let penWinner = null, penScoreA = null, penScoreB = null;
+    if (scoreA === scoreB) {
+      const penSim = simulateMatch({
+        teamA: nameA, teamB: nameB, eraA: '2026', eraB: '2026',
+        formationA: luA.formation||'4-3-3', formationB: luB.formation||'4-5-1',
+        cachedLineupA: luA, cachedLineupB: luB,
+        matchMode: 'penalties', matchSalt: salt + 7919,
+        refereeId: null, isFinal: true, weatherId: null,
+      });
+      const pen = penSim.finalScore?.penalties;
+      if (pen) { penWinner = pen.winner === 'A' ? nameA : nameB; penScoreA = pen.scoreA; penScoreB = pen.scoreB; }
+    }
+
+    const winner = scoreA > scoreB ? nameA : scoreB > scoreA ? nameB : (penWinner || 'Empate');
     const winnerColor = scoreA > scoreB ? '#c60b1e' : scoreB > scoreA ? '#74acdf' : '#f8c300';
 
     res.set('Cache-Control', 'public, max-age=900').type('text/html').send(`<!DOCTYPE html>
@@ -372,7 +387,7 @@ app.get('/final-card', async (_req, res) => {
     .trophy{font-size:1.1rem}
     .teams{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:1.4rem}
     .team{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1}
-    .team img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
+    .team img{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
     .team-name{font-size:.95rem;font-weight:800;text-align:center;color:#e2e8f0;line-height:1.2}
     .score-wrap{display:flex;flex-direction:column;align-items:center;gap:.3rem}
     .score{display:flex;align-items:center;gap:.15rem}
@@ -443,9 +458,9 @@ app.get('/final-card', async (_req, res) => {
 
   <div class="winner-bar">
     <div class="winner-label">Resultado más probable</div>
-    <div class="winner-name">${scoreA === scoreB ? '⚖️ Empate — Penaltis' : `🏆 Gana ${winner}`}</div>
-  </div>
-
+        <div class="winner-name">${scoreA === scoreB
+          ? penWinner ? `⚽ Empate · ${penWinner} gana en penaltis (${penScoreA}-${penScoreB})` : '⚖️ Empate — Penaltis'
+          : `🏆 Gana ${winner}`}</div>
   ${mom ? `
   <div class="mvp">
     <div class="mvp-icon">⭐</div>

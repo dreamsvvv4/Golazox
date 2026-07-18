@@ -1777,7 +1777,8 @@ const PLAYER_RATINGS_RAW = [
   ['unai simon',             87], ['unai simón',             87],   // #1 GK Spain 2026
   ['marc cucurella',         89], ['cucurella',              89],   // first-choice LB Spain
   ['alejandro grimaldo',     87], ['alex grimaldo',          87],   // backup LB Spain
-  ['alex baena',             88], ['baena',                  88],   // LW starter Spain
+  ['alex baena',             87], ['baena',                  87],   // LW backup Spain (Williams starts)
+  ['nico williams',          89], ['nicolas williams',       89],   // LW starter Spain 2026
   ['dani olmo',              88], ['olmo',                   88],   // CM starter Spain
   ['nicolas tagliafico',     83],                                   // first-choice LB Argentina
   ['exequiel palacios',      84], ['palacios',               84],   // squad depth Argentina
