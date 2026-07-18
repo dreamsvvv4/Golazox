@@ -679,6 +679,8 @@ app.get('/partido/:matchup', async (req, res) => {
   <meta name="twitter:title" content="${pageTitle}"/>
   <meta name="twitter:description" content="${pageDesc}"/>
   <script type="application/ld+json">${jsonLd}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2BSP5YDS7N');</script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
@@ -953,6 +955,8 @@ app.get('/match/:matchup', async (req, res) => {
   <meta name="twitter:title" content="${pageTitle}"/>
   <meta name="twitter:description" content="${pageDesc}"/>
   <script type="application/ld+json">${jsonLd}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2BSP5YDS7N');</script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
@@ -1227,6 +1231,8 @@ app.get('/partida/:matchup', async (req, res) => {
   <meta name="twitter:title" content="${pageTitle}"/>
   <meta name="twitter:description" content="${pageDesc}"/>
   <script type="application/ld+json">${jsonLd}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2BSP5YDS7N');</script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:#0a0f1a;color:#e2e8f0;font-family:system-ui,sans-serif;min-height:100vh}
@@ -1573,6 +1579,8 @@ async function _buildResultPage(slugA, eraA, slugB, eraB, lang, siteUrl) {
     .rp-footer a{color:#475569;text-decoration:none}
     .rp-footer a:hover{text-decoration:underline}
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2BSP5YDS7N');</script>
 </head>
 <body>
 <main class="rp-wrap">
@@ -1785,6 +1793,8 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl, squadData }) => {
     .tp-footer a{color:#475569;text-decoration:none}.tp-footer a:hover{text-decoration:underline}
     @media(max-width:520px){.tp-badge{width:60px;height:60px}h1{font-size:1.4rem}}
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BSP5YDS7N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2BSP5YDS7N');</script>
 </head>
 <body><main class="tp">
   <a class="tp-back" href="/">← GolazoX · Football Time Machine</a>
