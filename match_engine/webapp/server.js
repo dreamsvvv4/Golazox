@@ -390,8 +390,11 @@ app.get('/final-card', async (_req, res) => {
     .prob-lbl{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#475569;margin-top:.15rem}
     .probs-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#475569;text-align:center;margin-bottom:.5rem}
     .cta-wrap{text-align:center}
-    .cta-url{font-size:1.1rem;font-weight:900;color:#7b2ff7;letter-spacing:.02em}
-    .cta-sub{font-size:.72rem;color:#475569;margin-top:.25rem}
+    .cta-btn{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;
+      font-size:1rem;font-weight:900;text-decoration:none;padding:.85rem 1.5rem;
+      border-radius:.875rem;letter-spacing:.03em;transition:opacity .15s;margin-bottom:.5rem}
+    .cta-btn:hover{opacity:.88}
+    .cta-sub{font-size:.7rem;color:#475569}
     .gx-brand{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.4rem}
     .gx-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7b2ff7,#00d4ff)}
     .gx-name{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#475569}
@@ -445,8 +448,8 @@ app.get('/final-card', async (_req, res) => {
   </div>
 
   <div class="cta-wrap">
-    <div class="cta-url">golazox.com/final</div>
-    <div class="cta-sub">Simula tú mismo · Gratis · Sin registro</div>
+    <a class="cta-btn" href="/partido/spanien:2026-vs-argentinien:2026">⚽ Simula tú mismo en GolazoX</a>
+    <div class="cta-sub">golazox.com/final · Gratis · Sin registro</div>
   </div>
 </div>
 </body>
