@@ -762,7 +762,10 @@ app.get('/partido/:matchup', async (req, res) => {
           const vb = dataB.ratings[k] ?? '-';
           const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
           const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
-          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+          const bw = v => typeof v === 'number' ? Math.round(Math.max(0,Math.min(100,(v-60)/40*100))) : 0;
+          const bgA = `background:linear-gradient(to left,rgba(${hiA?'0,212,255,.42':'123,47,247,.28'}) ${bw(va)}%,transparent ${bw(va)}%)`;
+          const bgB = `background:linear-gradient(to right,rgba(${hiB?'0,212,255,.42':'123,47,247,.28'}) ${bw(vb)}%,transparent ${bw(vb)}%)`;
+          return `<tr><td${hiA?' class="mp-stats-hi"':''} style="${bgA}">${va}</td><td>${label}</td><td${hiB?' class="mp-stats-hi"':''} style="${bgB}">${vb}</td></tr>`;
         }).join('')}
         ${dataA.avgRating || dataB.avgRating ? `<tr>
           <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
@@ -1043,7 +1046,9 @@ app.get('/match/:matchup', async (req, res) => {
           const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
           const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
           const bw = v => typeof v === 'number' ? Math.round(Math.max(0,Math.min(100,(v-60)/40*100))) : 0;
-          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-a"><div class="mp-stat-bar" style="width:${bw(va)}%"></div><span class="mp-stat-val">${va}</span></div></td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-b"><div class="mp-stat-bar" style="width:${bw(vb)}%"></div><span class="mp-stat-val">${vb}</span></div></td></tr>`;
+          const bgA = `background:linear-gradient(to left,rgba(${hiA?'0,212,255,.42':'123,47,247,.28'}) ${bw(va)}%,transparent ${bw(va)}%)`;
+          const bgB = `background:linear-gradient(to right,rgba(${hiB?'0,212,255,.42':'123,47,247,.28'}) ${bw(vb)}%,transparent ${bw(vb)}%)`;
+          return `<tr><td${hiA?' class="mp-stats-hi"':''} style="${bgA}">${va}</td><td>${label}</td><td${hiB?' class="mp-stats-hi"':''} style="${bgB}">${vb}</td></tr>`;
         }).join('')}
         ${dataA.avgRating || dataB.avgRating ? `<tr>
           <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
@@ -1324,7 +1329,9 @@ app.get('/partida/:matchup', async (req, res) => {
           const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
           const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
           const bw = v => typeof v === 'number' ? Math.round(Math.max(0,Math.min(100,(v-60)/40*100))) : 0;
-          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-a"><div class="mp-stat-bar" style="width:${bw(va)}%"></div><span class="mp-stat-val">${va}</span></div></td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-b"><div class="mp-stat-bar" style="width:${bw(vb)}%"></div><span class="mp-stat-val">${vb}</span></div></td></tr>`;
+          const bgA = `background:linear-gradient(to left,rgba(${hiA?'0,212,255,.42':'123,47,247,.28'}) ${bw(va)}%,transparent ${bw(va)}%)`;
+          const bgB = `background:linear-gradient(to right,rgba(${hiB?'0,212,255,.42':'123,47,247,.28'}) ${bw(vb)}%,transparent ${bw(vb)}%)`;
+          return `<tr><td${hiA?' class="mp-stats-hi"':''} style="${bgA}">${va}</td><td>${label}</td><td${hiB?' class="mp-stats-hi"':''} style="${bgB}">${vb}</td></tr>`;
         }).join('')}
         ${dataA.avgRating || dataB.avgRating ? `<tr>
           <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
