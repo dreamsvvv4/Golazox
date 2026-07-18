@@ -89,11 +89,26 @@ async function _rosterFull(slug, era) {
       defXI = pick(defs, nDef);
     }
 
+    // Position-aware forward selection for 4-3-3 (RW×1, ST×1, LW×1)
+    let fwdXI;
+    if (nFwd === 3) {
+      const rws = fwds.filter(p => p.position === 'RW');
+      const lws = fwds.filter(p => p.position === 'LW');
+      const sts = fwds.filter(p => ['ST','CF'].includes(p.position));
+      const fwdSlots = [...pick(rws, 1), ...pick(sts, 1), ...pick(lws, 1)];
+      if (fwdSlots.length < 3) {
+        const used = new Set(fwdSlots.map(p => p.name));
+        fwdXI = [...fwdSlots, ...fwds.filter(p => !used.has(p.name)).sort(byRating)].slice(0, 3);
+      } else { fwdXI = fwdSlots; }
+    } else {
+      fwdXI = pick(fwds, nFwd);
+    }
+
     let xi = [
       ...pick(gks, 1),
       ...defXI,
       ...pick(mids, nMid),
-      ...pick(fwds, nFwd),
+      ...fwdXI,
     ];
     // Fallback: if not enough players per position, fill from remaining
     if (xi.length < 11) {
@@ -652,10 +667,11 @@ app.get('/partido/:matchup', async (req, res) => {
     .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
     .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
     .mp-backlink:hover{opacity:1;text-decoration:underline}
-    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
-    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-teams{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
     .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
-    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-team-block{display:flex;flex-direction:column;align-items:center;gap:.35rem;flex:1;min-width:0;text-align:center}
+    .mp-team-info{display:flex;flex-direction:column;align-items:center;gap:.2rem}
     .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
     .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
     h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
@@ -695,17 +711,17 @@ app.get('/partido/:matchup', async (req, res) => {
   <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
-    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameA)}</div>
       ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
     </div>
     <span class="mp-vs">VS</span>
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameB)}</div>
       ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
     </div>
-    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
   </div>
 
   <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
@@ -925,10 +941,11 @@ app.get('/match/:matchup', async (req, res) => {
     .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
     .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
     .mp-backlink:hover{opacity:1;text-decoration:underline}
-    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
-    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-teams{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
     .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
-    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-team-block{display:flex;flex-direction:column;align-items:center;gap:.35rem;flex:1;min-width:0;text-align:center}
+    .mp-team-info{display:flex;flex-direction:column;align-items:center;gap:.2rem}
     .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
     .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
     h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
@@ -968,17 +985,17 @@ app.get('/match/:matchup', async (req, res) => {
   <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
-    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameA)}</div>
       ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
     </div>
     <span class="mp-vs">VS</span>
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameB)}</div>
       ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
     </div>
-    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
   </div>
 
   <h1>Who would win: ${esc(labelA)} vs ${esc(labelB)}?</h1>
@@ -1198,10 +1215,11 @@ app.get('/partida/:matchup', async (req, res) => {
     .mp-wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem}
     .mp-backlink{display:inline-flex;align-items:center;gap:.4rem;color:#38bdf8;font-size:.85rem;margin-bottom:1.8rem;text-decoration:none;opacity:.8}
     .mp-backlink:hover{opacity:1;text-decoration:underline}
-    .mp-teams{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
-    .mp-badge{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
+    .mp-teams{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.6rem}
+    .mp-badge{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
     .mp-vs{font-size:1.4rem;font-weight:900;color:#7b2ff7;flex-shrink:0;padding:0 .4rem}
-    .mp-team-info{display:flex;flex-direction:column;gap:.2rem}
+    .mp-team-block{display:flex;flex-direction:column;align-items:center;gap:.35rem;flex:1;min-width:0;text-align:center}
+    .mp-team-info{display:flex;flex-direction:column;align-items:center;gap:.2rem}
     .mp-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:#f1f5f9}
     .mp-era{font-size:.8rem;color:#7b2ff7;font-weight:600;background:rgba(123,47,247,.12);padding:.15rem .5rem;border-radius:999px;width:fit-content}
     h1{font-size:1.65rem;font-weight:900;line-height:1.2;margin-bottom:.8rem;color:#f1f5f9}
@@ -1241,17 +1259,17 @@ app.get('/partida/:matchup', async (req, res) => {
   <a class="mp-backlink" href="/">← GolazoX · Football Time Machine</a>
 
   <div class="mp-teams">
-    ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeA ? `<img class="mp-badge" src="${badgeA}" alt="${esc(nameA)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameA)}</div>
       ${eraA ? `<div class="mp-era">${esc(eraA)}</div>` : ''}
     </div>
     <span class="mp-vs">VS</span>
-    <div class="mp-team-info">
+    <div class="mp-team-block">
+      ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
       <div class="mp-name">${esc(nameB)}</div>
       ${eraB ? `<div class="mp-era">${esc(eraB)}</div>` : ''}
     </div>
-    ${badgeB ? `<img class="mp-badge" src="${badgeB}" alt="${esc(nameB)}" width="72" height="72" loading="eager"/>` : ''}
   </div>
 
   <h1>Quem venceria: ${esc(labelA)} vs ${esc(labelB)}?</h1>
