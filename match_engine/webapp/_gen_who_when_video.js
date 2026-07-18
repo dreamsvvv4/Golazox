@@ -260,28 +260,33 @@ requestAnimationFrame(loop);
 </script></body></html>`;
 }
 
-// ── HTML: Video 2 — Minute histogram ─────────────────────────────────────
+// ── HTML: Video 2 — Minute histogram (dynamic clock version) ─────────────
 function buildMinutesHTML(d) {
   const badgeA = badgeB64('spanien');
   const badgeB = badgeB64('argentinien');
 
-  const maxCount   = Math.max(...d.minuteBuckets, 1);
-  const maxBarH    = 780;  // px for the tallest bar
-  const barW       = 76;
-  const gapW       = 14;
+  const maxCount = Math.max(...d.minuteBuckets, 1);
+  const maxBarH  = 720;
+  const barW     = 76;
+  const gapW     = 14;
+
+  const sortedCounts = [...d.minuteBuckets].sort((a, b) => b - a);
+  const top3Threshold = sortedCounts[2] || 0;
 
   const barsHTML = d.minuteBuckets.map((cnt, i) => {
-    const h       = Math.round(cnt / maxCount * maxBarH);
-    const isTop   = cnt >= d.minuteBuckets.slice().sort((a,b)=>b-a)[2];   // top 3
-    const isBest  = i === d.maxBucket;
-    const pct     = (cnt / d.totalGoals * 100).toFixed(1);
+    const h      = Math.round(cnt / maxCount * maxBarH);
+    const isBest = i === d.maxBucket;
+    const isTop  = cnt >= top3Threshold && !isBest;
+    const pct    = (cnt / d.totalGoals * 100).toFixed(1);
     return `<div class="hcol">
       <div class="hbar-wrap">
-        <div class="hbar ${isBest?'hbar-best':isTop?'hbar-top':''}" data-h="${h}" style="height:0px">
+        <div class="hbar ${isBest ? 'hbar-best' : isTop ? 'hbar-top' : ''}"
+             id="hbar-${i}" data-h="${h}" data-cnt="${cnt}" style="height:0px">
+          <div class="hbar-cnt" id="hcnt-${i}"></div>
           ${isBest ? `<div class="hbar-pct">${pct}%</div>` : ''}
         </div>
       </div>
-      <div class="hlabel ${isBest?'hlabel-best':''}">${d.bucketLabels[i]}</div>
+      <div class="hlabel ${isBest ? 'hlabel-best' : ''}">${d.bucketLabels[i]}</div>
     </div>`;
   }).join('');
 
@@ -306,30 +311,46 @@ canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 .h1-vs{font-size:2.8rem;font-weight:900;color:#333}
 
 /* S2 — Histogram */
-#s2{background:radial-gradient(ellipse 80% 45% at 50% 15%,#041a06 0%,#050d07 60%);justify-content:flex-start;padding-top:100px}
+#s2{background:radial-gradient(ellipse 80% 45% at 50% 15%,#041a06 0%,#050d07 60%);justify-content:flex-start;padding-top:80px}
 .s2-hed{font-size:2.8rem;font-weight:900;color:#00E676;text-align:center;margin-bottom:.5rem}
-.s2-sub{font-size:2rem;color:#445;text-align:center;margin-bottom:3rem}
+.s2-sub{font-size:2rem;color:#445;text-align:center;margin-bottom:2rem}
+/* Match clock + goal tally row */
+.s2-hud{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:2rem;padding:0 0.5rem}
+.hud-clock{display:flex;align-items:center;gap:1rem}
+.hud-clock-icon{font-size:3.5rem}
+.hud-clock-val{font-size:5rem;font-weight:900;color:#fff;min-width:5rem;font-variant-numeric:tabular-nums}
+.hud-goals{display:flex;align-items:center;gap:1rem}
+.hud-goals-icon{font-size:3.5rem}
+.hud-goals-val{font-size:4.5rem;font-weight:900;color:#00E676;min-width:4rem;text-align:right;font-variant-numeric:tabular-nums}
+.hud-goals-lbl{font-size:2rem;color:#445}
+/* Histogram */
 .hist{
   width:100%;display:flex;align-items:flex-end;justify-content:center;
-  gap:${gapW}px;height:${maxBarH + 60}px;position:relative;
+  gap:${gapW}px;height:${maxBarH + 70}px;
 }
-.hcol{display:flex;flex-direction:column;align-items:center;gap:0;width:${barW}px;flex-shrink:0}
+.hcol{display:flex;flex-direction:column;align-items:center;width:${barW}px;flex-shrink:0}
 .hbar-wrap{display:flex;align-items:flex-end;height:${maxBarH}px;width:100%}
 .hbar{
   width:100%;border-radius:6px 6px 0 0;
-  background:rgba(255,255,255,.15);
-  transition:height 1s ease;
-  position:relative;
+  background:rgba(255,255,255,.12);
+  position:relative;overflow:visible;
 }
-.hbar-top{background:linear-gradient(0deg,#006600,#00CC44)}
-.hbar-best{background:linear-gradient(0deg,#FFB300,#FFD700);box-shadow:0 0 20px rgba(255,215,0,.5)}
+.hbar-top{background:linear-gradient(0deg,#005500,#00CC44)}
+.hbar-best{background:linear-gradient(0deg,#c87000,#FFD700);box-shadow:0 0 24px rgba(255,215,0,.55)}
+@keyframes flashBar{0%{filter:brightness(2.5) drop-shadow(0 0 18px #fff)}100%{filter:brightness(1) drop-shadow(0 0 0px transparent)}}
+.hbar-flash{animation:flashBar .7s ease-out forwards}
+.hbar-cnt{
+  position:absolute;top:-3.2rem;left:50%;transform:translateX(-50%);
+  font-size:1.9rem;font-weight:900;color:#888;white-space:nowrap;
+  opacity:0;transition:opacity .3s;
+}
+.hbar-cnt.show{opacity:1}
 .hbar-pct{
-  position:absolute;top:-3.8rem;left:50%;transform:translateX(-50%);
-  font-size:2rem;font-weight:900;color:#FFD700;white-space:nowrap;
+  position:absolute;top:-6.5rem;left:50%;transform:translateX(-50%);
+  font-size:2.2rem;font-weight:900;color:#FFD700;white-space:nowrap;
 }
-.hlabel{font-size:1.75rem;color:#445;margin-top:1rem;text-align:center;white-space:nowrap}
+.hlabel{font-size:1.75rem;color:#445;margin-top:.8rem;text-align:center;white-space:nowrap}
 .hlabel-best{color:#FFD700;font-weight:900}
-.s2-note{font-size:2rem;color:#556;margin-top:2.5rem;text-align:center}
 
 /* S3 — Key stat */
 #s3{background:radial-gradient(ellipse 70% 60% at 50% 50%,#0a1400 0%,#050d07 65%)}
@@ -374,12 +395,22 @@ canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
 <!-- S2 -->
 <div class="scene" id="s2">
-  <div class="s2-hed">📊 Distribución de Goles</div>
-  <div class="s2-sub">Por franja de 10 minutos — ${d.totalGoals.toLocaleString('es-ES')} goles analizados</div>
-  <div class="hist" id="hist">
+  <div class="s2-hed">⚽ Goles por franja — ${N_SIMS.toLocaleString('es-ES')} finales</div>
+  <div class="s2-sub">${d.totalGoals.toLocaleString('es-ES')} goles analizados</div>
+  <div class="s2-hud">
+    <div class="hud-clock">
+      <span class="hud-clock-icon">⏱️</span>
+      <span class="hud-clock-val" id="mclock">0'</span>
+    </div>
+    <div class="hud-goals">
+      <span class="hud-goals-val" id="gctr">0</span>
+      <span class="hud-goals-lbl">goles</span>
+      <span class="hud-goals-icon">⚽</span>
+    </div>
+  </div>
+  <div class="hist">
     ${barsHTML}
   </div>
-  <div class="s2-note">🔶 Minuto más peligroso: <strong style="color:#FFD700">${dangerMinute}</strong></div>
 </div>
 
 <!-- S3 -->
@@ -410,17 +441,45 @@ canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 })();
 
 const SCENES=[{id:'s1',start:0,end:3.5},{id:'s2',start:3.5,end:17},{id:'s3',start:17,end:22.5},{id:'s4',start:22.5,end:26}];
-let t0=null,histDone=false;
+const BUCKETS=[${d.minuteBuckets.join(',')}];
+const BUCKET_LABELS=[${d.bucketLabels.map(l=>`'${l}'`).join(',')}];
+// Each bar reveals every 1.05s → 10 bars over ~10.5s (3.5→14s)
+const REVEAL_EVERY=1.05;
+let t0=null,lastBar=-1,accumulated=0;
+
 function loop(ts){
   if(!t0)t0=ts;
   const e=(ts-t0)/1000;
   SCENES.forEach(s=>{const el=document.getElementById(s.id);if(el)el.classList.toggle('active',e>=s.start&&e<s.end)});
-  if(e>=3.8&&!histDone){
-    histDone=true;
-    document.querySelectorAll('.hbar').forEach(bar=>{
-      const h=parseInt(bar.dataset.h);
-      setTimeout(()=>{ bar.style.height=h+'px'; bar.style.transition='height 1.6s cubic-bezier(.2,0,.1,1)'; }, 400);
-    });
+
+  // ── S2: clock-driven bar reveal ──
+  if(e>=3.5&&e<17){
+    const elapsed=e-3.5;
+    // Clock: 0'→90+' over 10.5s
+    const minute=Math.min(Math.floor(elapsed/10.5*95),95);
+    const clockEl=document.getElementById('mclock');
+    if(clockEl) clockEl.textContent=(minute>=90?'90+\'':minute+'\'');
+
+    // Reveal bars sequentially
+    const barIdx=Math.min(Math.floor(elapsed/REVEAL_EVERY),9);
+    if(barIdx>lastBar){
+      for(let b=lastBar+1;b<=barIdx;b++){
+        const bar=document.getElementById('hbar-'+b);
+        if(bar){
+          bar.style.transition='height 0.85s cubic-bezier(0.34,1.1,0.64,1)';
+          bar.style.height=bar.dataset.h+'px';
+          bar.classList.add('hbar-flash');
+          setTimeout(()=>bar.classList.remove('hbar-flash'),800);
+          // Show count label
+          const cntEl=document.getElementById('hcnt-'+b);
+          if(cntEl){setTimeout(()=>{cntEl.textContent=BUCKETS[b];cntEl.classList.add('show');},600);}
+          accumulated+=BUCKETS[b];
+        }
+      }
+      lastBar=barIdx;
+      const gEl=document.getElementById('gctr');
+      if(gEl) gEl.textContent=accumulated.toLocaleString('es-ES');
+    }
   }
   if(e<26)requestAnimationFrame(loop);
 }
