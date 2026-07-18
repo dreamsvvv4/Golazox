@@ -283,6 +283,11 @@ app.use((_req, res, next) => {
 // -- sitemap_index.xml alias ? prevents GSC 404 if that URL was submitted --
 app.get('/sitemap_index.xml', (_req, res) => res.redirect(301, '/sitemap.xml'));
 
+// ── WC2026 Final shortlink ─────────────────────────────────────────────────
+app.get('/final',    (_req, res) => res.redirect(302, '/partido/spanien:2026-vs-argentinien:2026'));
+app.get('/final-en', (_req, res) => res.redirect(302, '/match/spanien:2026-vs-argentinien:2026'));
+app.get('/final-pt', (_req, res) => res.redirect(302, '/partida/spanien:2026-vs-argentinien:2026'));
+
 app.get('/', (_req, res) => {
   const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
