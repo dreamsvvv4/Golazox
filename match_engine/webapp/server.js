@@ -104,10 +104,26 @@ async function _rosterFull(slug, era) {
       fwdXI = pick(fwds, nFwd);
     }
 
+    // Position-aware mid selection: 1 DM + (nMid-1) non-DM mids
+    let midXI;
+    const dm_pool   = mids.filter(p => p.position === 'DM');
+    const non_dm    = mids.filter(p => p.position !== 'DM');
+    if (dm_pool.length > 0 && non_dm.length >= nMid - 1) {
+      const dmSlot = pick(dm_pool, 1);
+      const cmSlots = pick(non_dm, nMid - 1);
+      midXI = [...dmSlot, ...cmSlots];
+      if (midXI.length < nMid) {
+        const used = new Set(midXI.map(p => p.name));
+        midXI = [...midXI, ...mids.filter(p => !used.has(p.name)).sort(byRating)].slice(0, nMid);
+      }
+    } else {
+      midXI = pick(mids, nMid);
+    }
+
     let xi = [
       ...pick(gks, 1),
       ...defXI,
-      ...pick(mids, nMid),
+      ...midXI,
       ...fwdXI,
     ];
     // Fallback: if not enough players per position, fill from remaining
