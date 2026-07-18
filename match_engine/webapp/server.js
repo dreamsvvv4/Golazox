@@ -288,6 +288,173 @@ app.get('/final',    (_req, res) => res.redirect(302, '/partido/spanien:2026-vs-
 app.get('/final-en', (_req, res) => res.redirect(302, '/match/spanien:2026-vs-argentinien:2026'));
 app.get('/final-pt', (_req, res) => res.redirect(302, '/partida/spanien:2026-vs-argentinien:2026'));
 
+// ── /final-card  : screenshot-ready visual card for TikTok/social ──────────
+app.get('/final-card', async (_req, res) => {
+  try {
+    const siteUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/\/$/, '');
+    const [luA, luB] = await Promise.all([lookupTeam('spanien','2026'), lookupTeam('argentinien','2026')]);
+    const entryA = CATALOG.find(c => c.slug === 'spanien');
+    const entryB = CATALOG.find(c => c.slug === 'argentinien');
+    const nameA  = (entryA?.nameEs || 'España');
+    const nameB  = (entryB?.nameEs || 'Argentina');
+    const badgeA = entryA?.badge && entryA.badge !== BADGE_PLACEHOLDER ? entryA.badge : '';
+    const badgeB = entryB?.badge && entryB.badge !== BADGE_PLACEHOLDER ? entryB.badge : '';
+
+    // Stable deterministic simulation (same result every time)
+    const salt = 'spanien2026argentinien2026final'.split('').reduce((h,c) => (Math.imul(31,h)+c.charCodeAt(0))|0, 0) & 0x7fffffff;
+    const sim  = simulateMatch({
+      teamA: nameA, teamB: nameB, eraA: '2026', eraB: '2026',
+      formationA: luA.formation||'4-3-3', formationB: luB.formation||'4-5-1',
+      cachedLineupA: luA, cachedLineupB: luB,
+      matchMode: '11v11', matchSalt: salt, refereeId: null, isFinal: true, weatherId: null,
+    });
+    const scoreA = sim.finalScore?.teamA ?? 1;
+    const scoreB = sim.finalScore?.teamB ?? 0;
+    const mom    = sim.stats?.manOfMatch;
+    const pA     = sim.probabilities?.teamA_win ?? 0;
+    const pB     = sim.probabilities?.teamB_win ?? 0;
+    const pD     = sim.probabilities?.draw       ?? 0;
+    const winner = scoreA > scoreB ? nameA : scoreB > scoreA ? nameB : 'Empate';
+    const winnerColor = scoreA > scoreB ? '#c60b1e' : scoreB > scoreA ? '#74acdf' : '#f8c300';
+
+    res.set('Cache-Control', 'public, max-age=900').type('text/html').send(`<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex"/>
+  <title>Final Copa del Mundo 2026 · GolazoX</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;min-height:100vh;background:#060a14;
+      font-family:'Segoe UI',system-ui,sans-serif;color:#fff;
+      display:flex;align-items:center;justify-content:center}
+    .card{
+      width:min(420px,98vw);
+      background:linear-gradient(160deg,#0d1528 0%,#060a14 60%,#0d0820 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:1.5rem;
+      padding:2rem 1.6rem 2.2rem;
+      box-shadow:0 0 60px rgba(123,47,247,.25),0 0 120px rgba(0,212,255,.08);
+      position:relative;overflow:hidden;
+    }
+    .card::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(123,47,247,.18),transparent);
+      pointer-events:none;
+    }
+    .badge-top{
+      display:flex;align-items:center;justify-content:center;gap:.5rem;
+      margin-bottom:1.6rem;
+    }
+    .badge-top span{
+      font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+      color:#f8c300;background:rgba(248,195,0,.12);
+      border:1px solid rgba(248,195,0,.3);
+      padding:.3rem .9rem;border-radius:999px;
+    }
+    .trophy{font-size:1.1rem}
+    .teams{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:1.4rem}
+    .team{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1}
+    .team img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
+    .team-name{font-size:.95rem;font-weight:800;text-align:center;color:#e2e8f0;line-height:1.2}
+    .score-wrap{display:flex;flex-direction:column;align-items:center;gap:.3rem}
+    .score{font-size:4.5rem;font-weight:900;line-height:1;letter-spacing:-.04em;
+      background:linear-gradient(135deg,#fff 40%,rgba(255,255,255,.6));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .score-sep{font-size:2rem;font-weight:900;color:#334155;margin:0 .2rem}
+    .sim-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:#475569;margin-top:.2rem}
+    .winner-bar{
+      text-align:center;padding:.6rem 1rem;border-radius:.75rem;margin-bottom:1.3rem;
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+    }
+    .winner-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.2rem}
+    .winner-name{font-size:1.25rem;font-weight:900;color:${winnerColor}}
+    .mvp{
+      background:linear-gradient(135deg,rgba(248,195,0,.08),rgba(248,195,0,.03));
+      border:1px solid rgba(248,195,0,.2);border-radius:.875rem;
+      padding:.9rem 1.2rem;margin-bottom:1.3rem;
+      display:flex;align-items:center;gap:.8rem;
+    }
+    .mvp-icon{font-size:1.6rem}
+    .mvp-info{flex:1}
+    .mvp-label{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f8c300;margin-bottom:.15rem}
+    .mvp-name{font-size:1.1rem;font-weight:900;color:#fff;line-height:1.2}
+    .mvp-team{font-size:.75rem;color:#94a3b8;margin-top:.1rem}
+    .probs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:1.5rem}
+    .prob{text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:.75rem;padding:.6rem .4rem}
+    .prob-val{font-size:1.2rem;font-weight:900;color:#38bdf8}
+    .prob-lbl{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#475569;margin-top:.15rem}
+    .probs-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#475569;text-align:center;margin-bottom:.5rem}
+    .cta-wrap{text-align:center}
+    .cta-url{font-size:1.1rem;font-weight:900;color:#7b2ff7;letter-spacing:.02em}
+    .cta-sub{font-size:.72rem;color:#475569;margin-top:.25rem}
+    .gx-brand{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.4rem}
+    .gx-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7b2ff7,#00d4ff)}
+    .gx-name{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#475569}
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="gx-brand"><div class="gx-dot"></div><span class="gx-name">GolazoX · Monte Carlo Engine</span><div class="gx-dot"></div></div>
+
+  <div class="badge-top">
+    <span class="trophy">🏆</span>
+    <span>Final Copa del Mundo 2026</span>
+    <span class="trophy">🏆</span>
+  </div>
+
+  <div class="teams">
+    <div class="team">
+      ${badgeA ? `<img src="${badgeA}" alt="${nameA}"/>` : '<div style="width:72px;height:72px;background:rgba(255,255,255,.05);border-radius:50%"></div>'}
+      <div class="team-name">${nameA}</div>
+    </div>
+    <div class="score-wrap">
+      <div class="score">${scoreA}<span class="score-sep">-</span>${scoreB}</div>
+      <div class="sim-label">simulación · 1.000 partidos</div>
+    </div>
+    <div class="team">
+      ${badgeB ? `<img src="${badgeB}" alt="${nameB}"/>` : '<div style="width:72px;height:72px;background:rgba(255,255,255,.05);border-radius:50%"></div>'}
+      <div class="team-name">${nameB}</div>
+    </div>
+  </div>
+
+  <div class="winner-bar">
+    <div class="winner-label">Resultado más probable</div>
+    <div class="winner-name">${scoreA === scoreB ? '⚖️ Empate — Penaltis' : `🏆 Gana ${winner}`}</div>
+  </div>
+
+  ${mom ? `
+  <div class="mvp">
+    <div class="mvp-icon">⭐</div>
+    <div class="mvp-info">
+      <div class="mvp-label">MVP · Mejor jugador</div>
+      <div class="mvp-name">${mom.name}</div>
+      <div class="mvp-team">${mom.teamName} · ${mom.reason?.type === 'goals' ? `${mom.reason.count} gol${mom.reason.count > 1 ? 'es' : ''}` : 'Mejor del campo'}</div>
+    </div>
+  </div>` : ''}
+
+  <div class="probs-title">Probabilidades en 1.000 simulaciones</div>
+  <div class="probs">
+    <div class="prob"><div class="prob-val">${pA}%</div><div class="prob-lbl">Gana ${nameA}</div></div>
+    <div class="prob"><div class="prob-val">${pD}%</div><div class="prob-lbl">Empate</div></div>
+    <div class="prob"><div class="prob-val">${pB}%</div><div class="prob-lbl">Gana ${nameB}</div></div>
+  </div>
+
+  <div class="cta-wrap">
+    <div class="cta-url">golazox.com/final</div>
+    <div class="cta-sub">Simula tú mismo · Gratis · Sin registro</div>
+  </div>
+</div>
+</body>
+</html>`);
+  } catch(err) {
+    console.error('[/final-card]', err.message);
+    res.status(500).send('Error');
+  }
+});
+
 app.get('/', (_req, res) => {
   const cleanUrl = (process.env.SITE_URL || 'https://golazox.com').replace(/[\\"'<>]/g, '').replace(/\/$/, '');
   const indexPath = path.join(__dirname, 'public', 'index.html');
