@@ -73,9 +73,25 @@ async function _rosterFull(slug, era) {
     const mids = allPlayers.filter(p => MID_POS.has(p.position) && !GK_POS.has(p.position) && !FWD_POS.has(p.position));
     const fwds = allPlayers.filter(p => FWD_POS.has(p.position) && !GK_POS.has(p.position) && !DEF_POS.has(p.position));
 
+    // Position-aware defender selection: avoid duplicate LBs/RBs
+    let defXI;
+    if (nDef === 4) {
+      const cbs  = defs.filter(p => p.position === 'CB');
+      const rbs  = defs.filter(p => p.position === 'RB' || p.position === 'RWB');
+      const lbs  = defs.filter(p => p.position === 'LB' || p.position === 'LWB');
+      const defSlots = [...pick(cbs, 2), ...pick(rbs, 1), ...pick(lbs, 1)];
+      // Fallback: if not enough positional matches, fill from remaining defs
+      if (defSlots.length < 4) {
+        const used = new Set(defSlots.map(p => p.name));
+        defXI = [...defSlots, ...defs.filter(p => !used.has(p.name)).sort(byRating)].slice(0, 4);
+      } else { defXI = defSlots; }
+    } else {
+      defXI = pick(defs, nDef);
+    }
+
     let xi = [
       ...pick(gks, 1),
-      ...pick(defs, nDef),
+      ...defXI,
       ...pick(mids, nMid),
       ...pick(fwds, nFwd),
     ];
