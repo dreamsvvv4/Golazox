@@ -671,7 +671,7 @@ app.get('/partido/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Simulaciones de Fútbol Histórico"/>
-  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.4rem;padding:.35rem .6rem;min-height:2.2rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.25);border-radius:.4rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.38)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -951,7 +951,7 @@ app.get('/match/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Historical Football Simulation"/>
-  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.4rem;padding:.35rem .6rem;min-height:2.2rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.25);border-radius:.4rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.38)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -1232,7 +1232,7 @@ app.get('/partida/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Simulação de Futebol Histórico"/>
-  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.4rem;padding:.35rem .6rem;min-height:2.2rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.25);border-radius:.4rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.38)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
