@@ -359,10 +359,12 @@ app.get('/final-card', async (_req, res) => {
     .team img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
     .team-name{font-size:.95rem;font-weight:800;text-align:center;color:#e2e8f0;line-height:1.2}
     .score-wrap{display:flex;flex-direction:column;align-items:center;gap:.3rem}
-    .score{font-size:4.5rem;font-weight:900;line-height:1;letter-spacing:-.04em;
+    .score{display:flex;align-items:center;gap:.15rem}
+    .score-num{font-size:4.5rem;font-weight:900;line-height:1;letter-spacing:-.04em;
       background:linear-gradient(135deg,#fff 40%,rgba(255,255,255,.6));
       -webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .score-sep{font-size:2rem;font-weight:900;color:#334155;margin:0 .2rem}
+    .score-sep{font-size:2.2rem;font-weight:900;color:#475569;margin:0 .3rem;
+      -webkit-text-fill-color:#475569;line-height:1}
     .sim-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
       color:#475569;margin-top:.2rem}
     .winner-bar{
@@ -411,7 +413,7 @@ app.get('/final-card', async (_req, res) => {
       <div class="team-name">${nameA}</div>
     </div>
     <div class="score-wrap">
-      <div class="score">${scoreA}<span class="score-sep">-</span>${scoreB}</div>
+      <div class="score"><span class="score-num">${scoreA}</span><span class="score-sep">-</span><span class="score-num">${scoreB}</span></div>
       <div class="sim-label">simulación · 1.000 partidos</div>
     </div>
     <div class="team">
