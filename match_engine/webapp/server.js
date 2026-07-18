@@ -1460,9 +1460,13 @@ const _buildTeamPage = ({ entry, slug, era, lang, siteUrl, squadData }) => {
   const pageTitle = isEn
     ? `${esc(label)} · Historical Squad & Simulator | GolazoX`
     : `${esc(label)} · Plantilla Histórica y Simulador | GolazoX`;
+
+  // Build description with actual player names for rich, unique snippets
+  const topPlayers = players.slice(0, 4).map(p => p.name).filter(Boolean);
+  const playerSnippet = topPlayers.length ? topPlayers.join(', ') + ' y más. ' : '';
   const pageDesc = isEn
     ? `${esc(label)}: full historical squad, key players, stats. Simulate ${esc(name)} against the greatest teams in football history with GolazoX's free Monte Carlo engine.`
-    : `Plantilla histórica de ${esc(label)}: jugadores titulares, estadísticas y posiciones. Simula ${esc(name)} contra los mejores equipos de la historia. Motor Monte Carlo, gratis.`;
+    : `Plantel completo de ${esc(label)}${topPlayers.length ? `: ${topPlayers.join(', ')}` : ''}. Simula ${esc(name)} contra los mejores equipos de la historia con el motor Monte Carlo de GolazoX. Gratis.`;
 
   const TOP_RIVALS = ['real-madrid','fc-barcelona','manchester-united','fc-bayern-munchen',
     'ac-mailand','inter-mailand','juventus-turin','fc-liverpool',
