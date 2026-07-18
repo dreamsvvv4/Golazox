@@ -1519,7 +1519,7 @@ async function _buildResultPage(slugA, eraA, slugB, eraB, lang, siteUrl) {
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
-  <meta name="robots" content="noindex,follow"/>
+  <meta name="robots" content="index,follow"/>
   <link rel="canonical" href="${ssrUrl}"/>
   <link rel="alternate" hreflang="es" href="${siteUrl}/partido/${matchupParam}"/>
   <link rel="alternate" hreflang="en" href="${siteUrl}/match/${matchupParam}"/>
