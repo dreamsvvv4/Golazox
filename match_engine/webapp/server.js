@@ -380,7 +380,7 @@ app.get('/final-card', async (_req, res) => {
       background:linear-gradient(160deg,#0d1528 0%,#060a14 60%,#0d0820 100%);
       border:1px solid rgba(255,255,255,.08);
       border-radius:1.5rem;
-      padding:2rem 1.6rem 2.2rem;
+      padding:2.2rem 2rem 2.4rem;
       box-shadow:0 0 60px rgba(123,47,247,.25),0 0 120px rgba(0,212,255,.08);
       position:relative;overflow:hidden;
     }
@@ -400,48 +400,48 @@ app.get('/final-card', async (_req, res) => {
       padding:.3rem .9rem;border-radius:999px;
     }
     .trophy{font-size:1.1rem}
-    .teams{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:1.4rem}
-    .team{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1}
-    .team img{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
-    .team-name{font-size:.95rem;font-weight:800;text-align:center;color:#e2e8f0;line-height:1.2}
-    .score-wrap{display:flex;flex-direction:column;align-items:center;gap:.3rem}
+    .teams{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:1.6rem}
+    .team{display:flex;flex-direction:column;align-items:center;gap:.7rem;flex:1}
+    .team img{width:80px;height:80px;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6))}
+    .team-name{font-size:1rem;font-weight:800;text-align:center;color:#e2e8f0;line-height:1.2}
+    .score-wrap{display:flex;flex-direction:column;align-items:center;gap:.35rem}
     .score{display:flex;align-items:center;gap:.15rem}
-    .score-num{font-size:4.5rem;font-weight:900;line-height:1;letter-spacing:-.04em;
+    .score-num{font-size:5rem;font-weight:900;line-height:1;letter-spacing:-.04em;
       background:linear-gradient(135deg,#fff 40%,rgba(255,255,255,.6));
       -webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .score-sep{font-size:2.2rem;font-weight:900;color:#475569;margin:0 .3rem;
+    .score-sep{font-size:2.5rem;font-weight:900;color:#475569;margin:0 .35rem;
       -webkit-text-fill-color:#475569;line-height:1}
-    .sim-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-      color:#475569;margin-top:.2rem}
+    .sim-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:#475569;margin-top:.15rem}
     .winner-bar{
-      text-align:center;padding:.6rem 1rem;border-radius:.75rem;margin-bottom:1.3rem;
+      text-align:center;padding:.9rem 1.2rem;border-radius:.875rem;margin-bottom:1.4rem;
       background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
     }
-    .winner-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.2rem}
-    .winner-name{font-size:1.25rem;font-weight:900;color:${winnerColor}}
+    .winner-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:.35rem}
+    .winner-name{font-size:1.35rem;font-weight:900;color:${winnerColor};line-height:1.3}
     .mvp{
       background:linear-gradient(135deg,rgba(248,195,0,.08),rgba(248,195,0,.03));
       border:1px solid rgba(248,195,0,.2);border-radius:.875rem;
-      padding:.9rem 1.2rem;margin-bottom:1.3rem;
-      display:flex;align-items:center;gap:.8rem;
+      padding:1rem 1.3rem;margin-bottom:1.4rem;
+      display:flex;align-items:center;gap:.9rem;
     }
-    .mvp-icon{font-size:1.6rem}
+    .mvp-icon{font-size:1.8rem}
     .mvp-info{flex:1}
-    .mvp-label{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f8c300;margin-bottom:.15rem}
-    .mvp-name{font-size:1.1rem;font-weight:900;color:#fff;line-height:1.2}
-    .mvp-team{font-size:.75rem;color:#94a3b8;margin-top:.1rem}
-    .probs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:1.5rem}
-    .prob{text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:.75rem;padding:.6rem .4rem}
-    .prob-val{font-size:1.2rem;font-weight:900;color:#38bdf8}
-    .prob-lbl{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#475569;margin-top:.15rem}
-    .probs-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#475569;text-align:center;margin-bottom:.5rem}
+    .mvp-label{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f8c300;margin-bottom:.2rem}
+    .mvp-name{font-size:1.15rem;font-weight:900;color:#fff;line-height:1.2}
+    .mvp-team{font-size:.78rem;color:#94a3b8;margin-top:.2rem}
+    .probs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-bottom:1.6rem}
+    .prob{text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:.875rem;padding:.8rem .4rem}
+    .prob-val{font-size:1.35rem;font-weight:900;color:#38bdf8}
+    .prob-lbl{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#475569;margin-top:.2rem}
+    .probs-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#475569;text-align:center;margin-bottom:.6rem}
     .cta-wrap{text-align:center}
     .cta-btn{display:block;background:linear-gradient(135deg,#7b2ff7,#00d4ff);color:#fff;
-      font-size:1rem;font-weight:900;text-decoration:none;padding:.85rem 1.5rem;
-      border-radius:.875rem;letter-spacing:.03em;transition:opacity .15s;margin-bottom:.5rem}
+      font-size:1.05rem;font-weight:900;text-decoration:none;padding:.95rem 1.5rem;
+      border-radius:.875rem;letter-spacing:.03em;transition:opacity .15s;margin-bottom:.55rem}
     .cta-btn:hover{opacity:.88}
-    .cta-sub{font-size:.7rem;color:#475569}
-    .gx-brand{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.4rem}
+    .cta-sub{font-size:.72rem;color:#475569}
+    .gx-brand{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-bottom:1.6rem}
     .gx-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7b2ff7,#00d4ff)}
     .gx-name{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#475569}
   </style>
@@ -476,6 +476,8 @@ app.get('/final-card', async (_req, res) => {
         <div class="winner-name">${scoreA === scoreB
           ? penWinner ? `⚽ Empate · ${penWinner} gana en penaltis (${penScoreA}-${penScoreB})` : '⚖️ Empate — Penaltis'
           : `🏆 Gana ${winner}`}</div>
+  </div>
+
   ${mom ? `
   <div class="mvp">
     <div class="mvp-icon">⭐</div>
