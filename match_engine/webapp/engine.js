@@ -684,8 +684,13 @@ function pickScorers(players, nGoals, rand, opts = {}) {
 
     // ── 2. Apply clutch bonus: isClutch players get +15% weight when late & losing ──
     const weights = pool.map(p => {
-      const base = SCORER_WEIGHTS[p.position] || 0;
-      return base * clutchModifier(!!p.isClutch, opts.scoreDiff ?? 0, minute);
+      // Blend position tendency (50%) with individual quality/rating (50%).
+      // posW  : ST=1, LW/RW=0.75, AM=0.5, CM/RM/LM=0.25, DM=0.075  (SCORER_WEIGHTS / 4)
+      // ratW  : linear 0→1 for ratings 60–100 (a 99-rated LM is a real threat)
+      const posW    = (SCORER_WEIGHTS[p.position] || 0) / 4;
+      const ratW    = Math.max(0, ((p.rating || 72) - 60) / 40);
+      const combined = posW * 0.50 + ratW * 0.50;
+      return combined * clutchModifier(!!p.isClutch, opts.scoreDiff ?? 0, minute);
     });
     const total = weights.reduce((a, b) => a + b, 0);
 
