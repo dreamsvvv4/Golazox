@@ -654,6 +654,53 @@ function monteCarlo(xgA, xgB, seed = 42) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// 4b. DYNAMIC TEAM RATINGS FROM ACTUAL LINEUP PLAYERS
+// ─────────────────────────────────────────────────────────────
+/**
+ * Derives attack / midfield / defense / goalkeeping ratings directly from
+ * the players in a built lineup.  Used instead of hardcoded squad.ratings so
+ * that individual player rating changes automatically flow through to match
+ * probabilities (i.e. boosting Messi's rating also improves Argentina's xG).
+ *
+ * Attack   = top-4 forwards + creative mids (AM/RM/LM) — 70 % fwd, 30 % mid
+ * Midfield = top-5 midfielders (all mid types)
+ * Defense  = top-4 defenders + 15 % GK contribution
+ * GK       = best keeper
+ */
+function computeRatingsFromPlayers(players) {
+  if (!players || !players.length) return null;
+
+  const getPos = p => _getPos(p.name) || p.position;
+  const topAvg = (pool, n) => {
+    if (!pool.length) return 74;
+    const sorted = pool.map(p => p.rating || 74).sort((a, b) => b - a).slice(0, n);
+    return sorted.reduce((s, r) => s + r, 0) / sorted.length;
+  };
+
+  const gks  = players.filter(p => ['GK', 'PO'].includes(getPos(p)));
+  const defs = players.filter(p => ['CB','RB','LB','RWB','LWB'].includes(getPos(p)));
+  const mids = players.filter(p => ['DM','CM','RM','LM','AM'].includes(getPos(p)));
+  const atks = players.filter(p => ['RW','LW','ST','CF','SS'].includes(getPos(p)));
+
+  // Creative mids (AM/RM/LM) contribute to the attack rating alongside forwards
+  const creative = mids.filter(p => ['AM','RM','LM'].includes(getPos(p)));
+  const atkPool  = [...atks, ...creative];
+
+  const fwdScore = topAvg(atkPool.length >= 2 ? atkPool : [...atks, ...mids], 4);
+  const midScore = topAvg(mids, 5);
+  const defScore = topAvg(defs, 4);
+  const gkScore  = topAvg(gks,  1);
+
+  const clamp = v => Math.max(65, Math.min(97, Math.round(v)));
+  return {
+    attack:      clamp(fwdScore * 0.70 + midScore * 0.30),
+    midfield:    clamp(midScore),
+    defense:     clamp(defScore * 0.85 + gkScore * 0.15),
+    goalkeeping: clamp(gkScore),
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
 // 5. SCORER PICKER
 // ─────────────────────────────────────────────────────────────
 const SCORER_WEIGHTS = { ST: 4, LW: 3, RW: 3, AM: 2, CM: 1, RM: 1, LM: 1, DM: 0.3, CB: 0.2, RB: 0.1, LB: 0.1, GK: 0 };
@@ -1064,9 +1111,13 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const benchA = buildBench(teamA, eraA, cachedLineupA, benchSize, starterNamesA);
   const benchB = buildBench(teamB, eraB, cachedLineupB, benchSize, starterNamesB);
 
-  // 2. Derive ratings — priority: known squads DB → scraper data → heuristic
-  const ratingsA = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
-  const ratingsB = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
+  // 2. Derive ratings — if we have actual players, compute dynamically so
+  //    individual rating changes flow through to xG/probabilities.
+  //    Falls back to deriveRatings (known-squads DB → scraper data → heuristic).
+  const ratingsA = (cachedLineupA && computeRatingsFromPlayers(lineupA.players))
+    || deriveRatings(teamA, eraA, cachedLineupA?.ratings);
+  const ratingsB = (cachedLineupB && computeRatingsFromPlayers(lineupB.players))
+    || deriveRatings(teamB, eraB, cachedLineupB?.ratings);
 
   // 2b. Resolve play styles: explicit param > cached lineup metadata > sensible default
   const pStyleA = playStyleA || cachedLineupA?.playStyle || 'directo';
