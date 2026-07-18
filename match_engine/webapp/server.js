@@ -671,6 +671,7 @@ app.get('/partido/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Simulaciones de Fútbol Histórico"/>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -745,6 +746,9 @@ app.get('/partido/:matchup', async (req, res) => {
   </div>
 
   <h1>¿Quién ganaría ${esc(labelA)} vs ${esc(labelB)}?</h1>
+
+  <a class="mp-cta" href="${deepLink}">⚽ Simular ${esc(labelA)} vs ${esc(labelB)} ahora</a>
+  <p class="mp-note">Motor Monte Carlo · +500 plantillas históricas · Resultado en segundos</p>
 
   ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
   <section class="mp-stats-section" aria-label="Comparación de estadísticas ${esc(labelA)} vs ${esc(labelB)}">
@@ -947,6 +951,7 @@ app.get('/match/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Historical Football Simulation"/>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -1022,6 +1027,9 @@ app.get('/match/:matchup', async (req, res) => {
 
   <h1>Who would win: ${esc(labelA)} vs ${esc(labelB)}?</h1>
 
+  <a class="mp-cta" href="${deepLink}">⚽ Simulate ${esc(labelA)} vs ${esc(labelB)} now</a>
+  <p class="mp-note">Monte Carlo Engine · 500+ historical squads · Result in seconds</p>
+
   ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
   <section class="mp-stats-section" aria-label="Stats comparison ${esc(labelA)} vs ${esc(labelB)}">
     <h2 class="mp-stats-title">Stats Comparison</h2>
@@ -1034,7 +1042,8 @@ app.get('/match/:matchup', async (req, res) => {
           const vb = dataB.ratings[k] ?? '-';
           const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
           const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
-          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+          const bw = v => typeof v === 'number' ? Math.round(Math.max(0,Math.min(100,(v-60)/40*100))) : 0;
+          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-a"><div class="mp-stat-bar" style="width:${bw(va)}%"></div><span class="mp-stat-val">${va}</span></div></td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-b"><div class="mp-stat-bar" style="width:${bw(vb)}%"></div><span class="mp-stat-val">${vb}</span></div></td></tr>`;
         }).join('')}
         ${dataA.avgRating || dataB.avgRating ? `<tr>
           <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
@@ -1223,6 +1232,7 @@ app.get('/partida/:matchup', async (req, res) => {
   <meta property="og:type" content="article"/>
   <meta property="article:published_time" content="${new Date().toISOString().slice(0,10)}T00:00:00Z"/>
   <meta property="article:section" content="Simulação de Futebol Histórico"/>
+  <style>.mp-stat-wrap{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.35rem;padding:.25rem .5rem}.mp-stat-bar{position:absolute;top:0;bottom:0;background:rgba(123,47,247,.15);border-radius:.35rem}.mp-stat-a .mp-stat-bar{right:0;left:auto}.mp-stat-b .mp-stat-bar{left:0;right:auto}.mp-stats-hi .mp-stat-bar{background:rgba(0,212,255,.28)}.mp-stat-val{position:relative;z-index:1;font-weight:700}</style>
   <meta property="og:title" content="${pageTitle}"/>
   <meta property="og:description" content="${pageDesc}"/>
   <meta property="og:url" content="${canonUrl}"/>
@@ -1298,6 +1308,9 @@ app.get('/partida/:matchup', async (req, res) => {
 
   <h1>Quem venceria: ${esc(labelA)} vs ${esc(labelB)}?</h1>
 
+  <a class="mp-cta" href="${deepLink}">⚽ Simular ${esc(labelA)} vs ${esc(labelB)} agora</a>
+  <p class="mp-note">Motor Monte Carlo · +500 elencos históricos · Resultado em segundos</p>
+
   ${(dataA.ratings && Object.keys(dataA.ratings).length) || (dataB.ratings && Object.keys(dataB.ratings).length) ? `
   <section class="mp-stats-section" aria-label="Comparação de estatísticas ${esc(labelA)} vs ${esc(labelB)}">
     <h2 class="mp-stats-title">Comparação de Estatísticas</h2>
@@ -1310,7 +1323,8 @@ app.get('/partida/:matchup', async (req, res) => {
           const vb = dataB.ratings[k] ?? '-';
           const hiA = typeof va === 'number' && typeof vb === 'number' && va > vb;
           const hiB = typeof va === 'number' && typeof vb === 'number' && vb > va;
-          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}>${va}</td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}>${vb}</td></tr>`;
+          const bw = v => typeof v === 'number' ? Math.round(Math.max(0,Math.min(100,(v-60)/40*100))) : 0;
+          return `<tr><td${hiA ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-a"><div class="mp-stat-bar" style="width:${bw(va)}%"></div><span class="mp-stat-val">${va}</span></div></td><td>${label}</td><td${hiB ? ' class="mp-stats-hi"' : ''}><div class="mp-stat-wrap mp-stat-b"><div class="mp-stat-bar" style="width:${bw(vb)}%"></div><span class="mp-stat-val">${vb}</span></div></td></tr>`;
         }).join('')}
         ${dataA.avgRating || dataB.avgRating ? `<tr>
           <td${dataA.avgRating && dataB.avgRating && Number(dataA.avgRating) > Number(dataB.avgRating) ? ' class="mp-stats-hi"' : ''}>${dataA.avgRating ?? '-'}</td>
