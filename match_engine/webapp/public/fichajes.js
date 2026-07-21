@@ -19,6 +19,11 @@
   function show(name) {
     tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.tab === name); });
     panels.forEach(function (p) { p.classList.toggle('active', p.id === 'tab-' + name); });
+    var hero = document.getElementById('heroTitle');
+    if (hero) {
+      var t = hero.getAttribute('data-title-' + name);
+      if (t) hero.textContent = t;
+    }
     syncSideNav(name);
   }
 

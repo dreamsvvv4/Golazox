@@ -3656,7 +3656,7 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
 <body class="has-side-nav">
   ${GX_SIDE_NAV('transfers')}
   <header class="hero">
-    <h1>Mercado de Fichajes</h1>
+    <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias">Mercado de Fichajes</h1>
     <p><span class="live">En directo</span> · <span class="ago" data-updated="${transfers.updated || news.updated || Date.now()}">actualizado ${_timeAgo(transfers.updated) || _timeAgo(news.updated) || 'ahora'}</span></p>
   </header>
 
@@ -3710,7 +3710,7 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=3" defer></script>
+  <script src="/fichajes.js?v=4" defer></script>
 </body>
 </html>`;
 
