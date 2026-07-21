@@ -3460,47 +3460,58 @@ const GX_SIDE_NAV = (active) => `
       <a class="side-link${active === 'transfers' ? ' side-link-active' : ''}" href="/fichajes"${active === 'transfers' ? ' aria-current="page"' : ''}>
         <span class="side-ico">💸</span><span class="side-lbl">Fichajes</span>
       </a>
-      <a class="side-link${active === 'news' ? ' side-link-active' : ''}" href="/fichajes#noticias">
+      <a class="side-link${active === 'news' ? ' side-link-active' : ''}" href="/noticias"${active === 'news' ? ' aria-current="page"' : ''}>
         <span class="side-ico">📰</span><span class="side-lbl">Noticias</span>
       </a>
     </nav>
   </aside>
   <script src="/gx-nav.js?v=1" defer></script>`;
 
-const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
+const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
+  const _base = SITE_URL.replace(/\/$/, '');
+  const _isNews = page === 'noticias';
+  const _url = _isNews ? `${_base}/noticias` : `${_base}/fichajes`;
+  const _title = _isNews
+    ? 'Noticias de fútbol hoy · última hora · GolazoX'
+    : 'Fichajes de fútbol hoy · mercado y traspasos · GolazoX';
+  const _desc = _isNews
+    ? 'Noticias de fútbol de última hora: actualidad, mercado de fichajes y titulares de Marca, AS, SPORT y Mundo Deportivo. Actualizado automáticamente.'
+    : 'Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente.';
+  const _crumbName = _isNews ? 'Noticias' : 'Fichajes';
+  return `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Fichajes y noticias de fútbol · GolazoX</title>
-  <meta name="description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente."/>
+  <title>${_title}</title>
+  <meta name="description" content="${_desc}"/>
   <meta name="robots" content="index,follow,max-image-preview:large"/>
-  <link rel="canonical" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
-  <link rel="alternate" hreflang="es" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
-  <link rel="alternate" hreflang="x-default" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
+  <link rel="canonical" href="${_url}"/>
+  <link rel="alternate" hreflang="es" href="${_url}"/>
+  <link rel="alternate" hreflang="x-default" href="${_url}"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="GolazoX"/>
   <meta property="og:locale" content="es_ES"/>
-  <meta property="og:title" content="Fichajes y noticias de fútbol · GolazoX"/>
-  <meta property="og:description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente."/>
-  <meta property="og:url" content="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
-  <meta property="og:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <meta property="og:title" content="${_title}"/>
+  <meta property="og:description" content="${_desc}"/>
+  <meta property="og:url" content="${_url}"/>
+  <meta property="og:image" content="${_base}/og-image.png?v=2"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Fichajes y noticias de fútbol · GolazoX"/>
-  <meta name="twitter:description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias."/>
-  <meta name="twitter:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <meta name="twitter:title" content="${_title}"/>
+  <meta name="twitter:description" content="${_desc}"/>
+  <meta name="twitter:image" content="${_base}/og-image.png?v=2"/>
   <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    'name': 'Fichajes y noticias de fútbol',
-    'description': 'Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias.',
-    'url': `${SITE_URL.replace(/\/$/, '')}/fichajes`,
+    'name': _title.replace(' · GolazoX', ''),
+    'description': _desc,
+    'url': _url,
     'inLanguage': 'es',
-    'isPartOf': { '@type': 'WebSite', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, '') },
-    'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, ''), 'logo': `${SITE_URL.replace(/\/$/, '')}/golazox-coin.png` },
+    'isPartOf': { '@type': 'WebSite', 'name': 'GolazoX', 'url': _base },
+    'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': _base, 'logo': `${_base}/golazox-coin.png` },
     'breadcrumb': { '@type': 'BreadcrumbList', 'itemListElement': [
-      { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': SITE_URL.replace(/\/$/, '') },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Fichajes', 'item': `${SITE_URL.replace(/\/$/, '')}/fichajes` }
+      { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': _base },
+      { '@type': 'ListItem', 'position': 2, 'name': _crumbName, 'item': _url }
     ] }
   })}</script>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
@@ -3655,20 +3666,20 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
   </style>
 </head>
 <body class="has-side-nav">
-  ${GX_SIDE_NAV('transfers')}
+  ${GX_SIDE_NAV(_isNews ? 'news' : 'transfers')}
   <header class="hero">
-    <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias">Mercado de Fichajes</h1>
+    <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias">${_isNews ? 'Noticias' : 'Mercado de Fichajes'}</h1>
     <p><span class="live">En directo</span> · <span class="ago" data-updated="${transfers.updated || news.updated || Date.now()}">actualizado ${_timeAgo(transfers.updated) || _timeAgo(news.updated) || 'ahora'}</span></p>
   </header>
 
   <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="fichajes" role="tab">💸 Fichajes<span class="count">${transfers.list.length}</span></button>
-    <button class="tab" data-tab="noticias" role="tab">📰 Noticias<span class="count">${(news.fichajes.length + news.general.length)}</span></button>
+    <button class="tab${_isNews ? '' : ' active'}" data-tab="fichajes" role="tab">💸 Fichajes<span class="count">${transfers.list.length}</span></button>
+    <button class="tab${_isNews ? ' active' : ''}" data-tab="noticias" role="tab">📰 Noticias<span class="count">${(news.fichajes.length + news.general.length)}</span></button>
   </nav>
 
-  <section id="tab-fichajes" class="panel active" role="tabpanel">
+  <section id="tab-fichajes" class="panel${_isNews ? '' : ' active'}" role="tabpanel">
     ${_statsHTML(transfers)}
 
     <div class="subtabs">
@@ -3698,7 +3709,7 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
     </div>
   </section>
 
-  <section id="tab-noticias" class="panel" role="tabpanel">
+  <section id="tab-noticias" class="panel${_isNews ? ' active' : ''}" role="tabpanel">
     ${_newsFilterHTML([...news.fichajes, ...news.general])}
     ${_newsSectionHTML('🔄 Mercado de fichajes', news.fichajes, 13)}
     ${_newsSectionHTML('🗞️ Actualidad', news.general, 13)}
@@ -3711,9 +3722,10 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=4" defer></script>
+  <script src="/fichajes.js?v=5" defer></script>
 </body>
 </html>`;
+};
 
 app.get('/fichajes', _newsLimit, async (_req, res) => {
   try {
@@ -3738,6 +3750,24 @@ app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
     res.set('Cache-Control', 'no-store').json({ updated });
   } catch {
     res.json({ updated: 0 });
+  }
+});
+
+// Página de Noticias — misma plantilla que /fichajes pero con la pestaña de
+// noticias activa y SEO propio (URL indexable independiente).
+app.get('/noticias', _newsLimit, async (_req, res) => {
+  try {
+    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
+    res.set('Cache-Control', 'public, max-age=300')
+       .type('text/html')
+       .send(FICHAJES_HTML(transfers, news, 'noticias'));
+  } catch (e) {
+    console.error('[noticias] error:', e.message);
+    res.status(503).type('text/html').send(FICHAJES_HTML(
+      { list: [], top: [], latest: [], updated: 0 },
+      { fichajes: [], general: [], updated: 0 },
+      'noticias',
+    ));
   }
 });
 

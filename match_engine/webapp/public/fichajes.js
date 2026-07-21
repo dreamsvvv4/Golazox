@@ -9,7 +9,7 @@
     var wantNews = name === 'noticias';
     sideLinks.forEach(function (l) {
       var href = l.getAttribute('href') || '';
-      var isNews = /#noticias/.test(href);
+      var isNews = /#noticias/.test(href) || /\/noticias$/.test(href);
       var isTransfers = /\/fichajes$/.test(href);
       if (isNews) l.classList.toggle('side-link-active', wantNews);
       else if (isTransfers) l.classList.toggle('side-link-active', !wantNews);

@@ -288,6 +288,10 @@ mainEntries.push(urlBlock(
   [['es', `${SITE_URL}/fichajes`], ['x-default', `${SITE_URL}/fichajes`]]
 ));
 mainEntries.push(urlBlock(
+  `${SITE_URL}/noticias`, TODAY, 'hourly', '0.8',
+  [['es', `${SITE_URL}/noticias`], ['x-default', `${SITE_URL}/noticias`]]
+));
+mainEntries.push(urlBlock(
   `${SITE_URL}/clasificaciones`, TODAY, 'daily', '0.8',
   [['es', `${SITE_URL}/clasificaciones`], ['x-default', `${SITE_URL}/clasificaciones`]]
 ));
