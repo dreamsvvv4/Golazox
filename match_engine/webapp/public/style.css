@@ -4811,6 +4811,7 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
     flex: none;
     align-self: auto;
     padding: 1.4rem 1.1rem;
+    padding-top: max(1.4rem, calc(1rem + env(safe-area-inset-top, 0px)));
     border-right: 1px solid rgba(255,255,255,.08);
     background: linear-gradient(180deg, rgba(9,13,22,.98) 0%, rgba(6,9,17,.98) 100%);
     backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2);
