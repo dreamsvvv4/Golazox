@@ -3464,7 +3464,8 @@ const GX_SIDE_NAV = (active) => `
         <span class="side-ico">📰</span><span class="side-lbl">Noticias</span>
       </a>
     </nav>
-  </aside>`;
+  </aside>
+  <script src="/gx-nav.js?v=1" defer></script>`;
 
 const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
 <html lang="es">
@@ -3503,7 +3504,7 @@ const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
     ] }
   })}</script>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
-  <link rel="stylesheet" href="/style.css?v=26"/>
+  <link rel="stylesheet" href="/style.css?v=27"/>
   <style>
     :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
     * { box-sizing:border-box; }
@@ -3918,7 +3919,7 @@ const CLASIFICACIONES_HTML = (standings) => {
     ] }
   })}</script>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
-  <link rel="stylesheet" href="/style.css?v=26"/>
+  <link rel="stylesheet" href="/style.css?v=27"/>
   <style>
     :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
     * { box-sizing:border-box; }

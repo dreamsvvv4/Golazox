@@ -92,7 +92,7 @@
   /* Alinea la barra de pestañas superior con la columna de contenido, que el
      sidebar desplaza a la derecha (250px en escritorio, 56px en riel). */
   @media(min-width:1041px){.main-tabs-bar{padding-left:250px}}
-  @media(max-width:1040px){.main-tabs-bar{padding-left:56px}}
+  @media(max-width:1040px){.main-tabs-bar{padding-left:0}}
   /* Main wrap */
   .main-wrap{max-width:1300px;margin:2.5rem auto;padding:0 1.5rem;display:flex;flex-direction:column;gap:2rem}
   #main-match-wrap{max-width:1000px;margin:0 auto;width:100%}
@@ -155,7 +155,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=132" />
+  <link rel="stylesheet" href="style.min.css?v=133" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -1831,6 +1831,7 @@
   <script src="app.min.js?v=104" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
   <script src="tournament.min.js?v=50" defer></script>
+  <script src="/gx-nav.js?v=1" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->

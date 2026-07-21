@@ -4766,44 +4766,82 @@ body[data-wx="heat"] .vs-badge.vs-ready .clash-logo-img {
   }
 }
 
-/* Tablet & narrow: sidebar becomes a slim icon rail so content keeps its width */
+/* ── Mobile drawer toggle + backdrop (hidden on desktop) ── */
+.nav-toggle {
+  display: none;
+  position: fixed;
+  left: 14px; bottom: 16px;
+  z-index: 210;
+  width: 48px; height: 48px;
+  align-items: center; justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(0,212,255,.32);
+  background: linear-gradient(160deg, rgba(9,13,22,.96), rgba(6,9,17,.96));
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  color: #eaf7ff; cursor: pointer;
+  box-shadow: 0 10px 26px -10px rgba(0,0,0,.7);
+  transition: border-color .18s, transform .18s;
+}
+.nav-toggle:hover { border-color: rgba(0,212,255,.55); }
+.nav-toggle:active { transform: scale(.94); }
+.nav-toggle .nt-ico { font-size: 1.35rem; line-height: 1; pointer-events: none; }
+.nav-backdrop {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(3,6,12,.58);
+  backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+  z-index: 190;
+  opacity: 0; pointer-events: none;
+  transition: opacity .28s ease;
+}
+body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
+
+/* Tablet & mobile: the sidebar becomes an off-canvas drawer that slides in and
+   out, so the page content always uses the full width. */
 @media (max-width: 1040px) {
-  .app-shell { flex-direction: row; align-items: flex-start; max-width: 100%; }
-  .app-shell > .main-wrap { min-width: 0; }
-  .side-nav {
-    position: sticky;
-    top: 0;
-    flex: 0 0 56px;
-    width: 56px;
-    height: auto;
-    align-self: stretch;
-    padding: .8rem .25rem;
-    border-right: 1px solid var(--border);
-    border-bottom: none;
-    overflow: visible;
-  }
+  .app-shell { flex-direction: column; align-items: stretch; max-width: 100%; }
+  .app-shell > .main-wrap { min-width: 0; width: 100%; }
+
+  .side-nav,
   .side-nav--fixed {
     position: fixed;
     top: 0; left: 0;
-    width: 56px;
+    width: 264px; max-width: 82vw;
     height: 100vh;
-    z-index: 90;
-    background: rgba(6,9,17,.92);
+    flex: none;
+    align-self: auto;
+    padding: 1.4rem 1.1rem;
+    border-right: 1px solid rgba(255,255,255,.08);
+    background: linear-gradient(180deg, rgba(9,13,22,.98) 0%, rgba(6,9,17,.98) 100%);
+    backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    overflow-y: auto;
+    z-index: 200;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform .28s cubic-bezier(.4,0,.2,1), visibility .28s;
   }
-  body.has-side-nav {
-    max-width: 100%;
-    padding-left: 64px;
+  body.nav-open .side-nav,
+  body.nav-open .side-nav--fixed {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 24px 0 60px -20px rgba(0,0,0,.8);
   }
-  .side-nav-inner { flex-direction: column; align-items: center; gap: .35rem; }
-  .side-group-label, .side-brand, .side-lbl { display: none; }
-  .side-link {
-    justify-content: center;
-    padding: .4rem;
-    gap: 0;
-  }
-  .side-ico { width: 34px; height: 34px; font-size: 1.05rem; }
-  .side-link-active { background: transparent; }
-  .side-link-active::before { display: none; }
+
+  /* Full labels inside the drawer (no icon-rail collapsing) */
+  .side-nav-inner { flex-direction: column; align-items: stretch; gap: .18rem; }
+  .side-group-label { display: block; }
+  .side-brand { display: flex; }
+  .side-lbl { display: inline; }
+  .side-link { justify-content: flex-start; padding: .64rem .8rem; gap: .72rem; }
+  .side-ico { width: 32px; height: 32px; font-size: 1rem; }
+  .side-link-active { background: linear-gradient(90deg, rgba(0,212,255,.16), rgba(0,212,255,.015) 82%); }
+  .side-link-active::before { display: block; }
+
+  /* Content spans full width — no room reserved for the sidebar */
+  body.has-side-nav { max-width: 100%; padding-left: 0; }
+
+  .nav-toggle { display: inline-flex; }
+  .nav-backdrop { display: block; }
 }
 .main-tab-btn::after {
   content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 2px;
