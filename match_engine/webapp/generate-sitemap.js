@@ -282,6 +282,16 @@ mainEntries.push(urlBlock(
   [['es', `${SITE_URL}/`], ['en', `${SITE_URL}/?lang=en`], ['x-default', `${SITE_URL}/`]]
 ));
 
+// Secciones editoriales (server-rendered, alto valor SEO)
+mainEntries.push(urlBlock(
+  `${SITE_URL}/fichajes`, TODAY, 'hourly', '0.8',
+  [['es', `${SITE_URL}/fichajes`], ['x-default', `${SITE_URL}/fichajes`]]
+));
+mainEntries.push(urlBlock(
+  `${SITE_URL}/clasificaciones`, TODAY, 'daily', '0.8',
+  [['es', `${SITE_URL}/clasificaciones`], ['x-default', `${SITE_URL}/clasificaciones`]]
+));
+
 for (const [slug] of Object.entries(ICONIC)) {
   const isTop = TOP_SLUGS.has(slug);
   mainEntries.push(urlBlock(

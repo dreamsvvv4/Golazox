@@ -150,7 +150,7 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Aleatorio','rivalry-loading':'Buscando…','rivalry-ready':'¡Pulsa ▶ para simular!','derby-loading':'Cargando…','derby-ready':'¡Pulsa ▶ para simular!','catalog-loading':'Cargando catálogo…','rival-all-locked':'🔒 Juega más partidos para desbloquear estos enfrentamientos históricos',
     'era-pending':'⏳ Selecciona un equipo primero','era-any':'⏳ Temporada (cualquiera)','era-no-seasons':'Sin temporadas locales',
     'mode-penalties':'🥅 Penaltis','pm-speed-label':'Duración del partido','pm-start-btn':'▶ Iniciar partido','speed-instant':'⚡ Directo',
-    'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil','tab-trn':'Torneo',
+    'tab-match':'Partido','tab-pen':'Penaltis','tab-profile':'Perfil','tab-trn':'Torneo','tab-standings':'Clasificaciones','tab-transfers':'Fichajes','showcase-live':'EN VIVO','showcase-new':'NUEVO','showcase-standings-t':'Clasificaciones','showcase-standings-s':'Tablas y goleadores de las grandes ligas','showcase-transfers-t':'Fichajes','showcase-transfers-s':'Mercado y noticias al día','hero-eyebrow':'Simulador de fútbol con IA · Gratis','hero-t1':'Enfrenta a','hero-t2':'cualquier equipo','hero-t3':'de','hero-t4':'cualquier época','hero-sub':'El Barça de Guardiola contra el Madrid de los Galácticos. El Milan de Sacchi contra la Juve de hoy. Tú eliges los rivales y nuestra IA simula el partido en directo.','hero-s1':'equipos reales','hero-s2b':'Todas','hero-s2':'las épocas','hero-s3b':'Motor IA','hero-s3':'táctico y realista','side-sim':'Simulador','side-explore':'Explorar','side-news':'Noticias',
     'lock-tooltip':'Necesitas %xp XP para desbloquear','lock-toast':'%label — Necesitas %xp XP (te faltan %need)',
     'pen-tab-title':'Tanda de Penaltis','pen-tab-sub':'Elige dos equipos y lanza directamente a los penaltis',
     'pen-team-a':'EQUIPO A','pen-team-b':'EQUIPO B',
@@ -388,7 +388,7 @@ const I18N = {
     'btn-rivalry':'Rivals','btn-derby':'Derbis','btn-surprise':'Random','rivalry-loading':'Fetching…','rivalry-ready':'Press ▶ to simulate!','derby-loading':'Loading…','derby-ready':'Press ▶ to simulate!','catalog-loading':'Loading catalog…','rival-all-locked':'🔒 Play more matches to unlock these historic clashes',
     'era-pending':'⏳ Select a team first','era-any':'⏳ Season (any)','era-no-seasons':'No local seasons',
     'mode-penalties':'🥅 Penalties','pm-speed-label':'Match duration','pm-start-btn':'▶ Start match','speed-instant':'⚡ Instant',
-    'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile','tab-trn':'Tournament',
+    'tab-match':'Match','tab-pen':'Penalties','tab-profile':'Profile','tab-trn':'Tournament','tab-standings':'Standings','tab-transfers':'Transfers','showcase-live':'LIVE','showcase-new':'NEW','showcase-standings-t':'Standings','showcase-standings-s':'Tables and top scorers of the major leagues','showcase-transfers-t':'Transfers','showcase-transfers-s':'Market and news, up to date','hero-eyebrow':'AI football simulator · Free','hero-t1':'Pit','hero-t2':'any team','hero-t3':'against','hero-t4':'any era','hero-sub':'Guardiola\'s Barça against the Galácticos. Sacchi\'s Milan against today\'s Juve. You pick the rivals and our AI simulates the match live.','hero-s1':'real teams','hero-s2b':'Every','hero-s2':'era','hero-s3b':'AI engine','hero-s3':'tactical & realistic','side-sim':'Simulator','side-explore':'Explore','side-news':'News',
     'lock-tooltip':'Needs %xp XP to unlock','lock-toast':'%label — Needs %xp XP (%need more)',
     'pen-tab-title':'Penalty Shootout','pen-tab-sub':'Pick two teams and go straight to penalties',
     'pen-team-a':'TEAM A','pen-team-b':'TEAM B',
@@ -3753,7 +3753,7 @@ document.addEventListener('DOMContentLoaded', () => {
   _on('lang-toggle', () => setLang(_lang === 'es' ? 'en' : 'es'));
   document.querySelector('.main-tabs-bar')?.addEventListener('click', e => {
     const btn = e.target.closest('.main-tab-btn');
-    if (btn) TRN.switchMainTab(btn.dataset.tab);
+    if (btn && btn.dataset.tab) TRN.switchMainTab(btn.dataset.tab);
   });
 
   // Match input

@@ -13,16 +13,16 @@
 'use strict';
 
 /**
- * PLAYER_POSITIONS � correcci�n de posici�n para jugadores famosos
+ * PLAYER_POSITIONS — corrección de posición para jugadores famosos
  * que en algunas bases de datos aparecen mal clasificados.
- * Normalizaci�n de nombre id�ntica a getPlayerOverride().
+ * Normalización de nombre idéntica a getPlayerOverride().
  */
 const PLAYER_POSITIONS_RAW = [
   // Laterales que BDFutbol/TM registra a veces como CB
   ['paolo maldini',            'LB'],
   ['roberto carlos',           'LB'],
   ['cafu',                     'RB'],
-  ['caf�',                     'RB'],
+  ['café',                     'RB'],
   ['philipp lahm',             'RB'],
   ['dani alves',               'RB'],
   ['dani alvez',               'RB'],
@@ -200,11 +200,11 @@ const PLAYER_POSITIONS_RAW = [
   // Pivotes defensivos (aparecen como CM en TM)
   ['casemiro',                 'DM'],
   ['aurelien tchouameni',      'DM'],
-  ['aur�lien tchouam�ni',      'DM'],
+  ['aurélien tchouaméni',      'DM'],
   ['rodri',                    'DM'],
   ['declan rice',              'DM'],
   ['joao neves',               'DM'],
-  ['jo�o neves',               'DM'],
+  ['joão neves',               'DM'],
   ['granit xhaka',             'DM'],
   ['idrissa gueye',            'DM'],
   ['sofyan amrabat',           'DM'],
@@ -213,18 +213,18 @@ const PLAYER_POSITIONS_RAW = [
   // Extremos que TM registra como ST
   ['vinicius junior',          'LW'],
   ['raphinha',                 'RW'],
-  ['kylian mbapp�',            'ST'],
+  ['kylian mbappé',            'ST'],
   ['kylian mbappe',            'ST'],
-  ['ousmane demb�l�',          'RW'],
+  ['ousmane dembélé',          'RW'],
   ['ousmane dembele',          'RW'],
   ['leroy sane',               'LW'],
-  ['leroy san�',               'LW'],
+  ['leroy sané',               'LW'],
   ['son heung-min',            'LW'],
   ['bukayo saka',              'RW'],
   ['sadio mane',               'LW'],
-  ['sadio man�',               'LW'],
+  ['sadio mané',               'LW'],
   ['luis diaz',                'LW'],
-  ['luis d�az',                'LW'],
+  ['luis díaz',                'LW'],
   ['bradley barcola',          'LW'],
   ['michael olise',            'RW'],
   ['lamine yamal',             'RW'],
@@ -261,8 +261,8 @@ const PLAYER_POSITIONS_RAW = [
 const PLAYER_POSITIONS_MAP = new Map(PLAYER_POSITIONS_RAW);
 
 /**
- * Si el jugador tiene una posici�n can�nica conocida, la devuelve.
- * Usa la misma normalizaci�n que getPlayerOverride.
+ * Si el jugador tiene una posición canónica conocida, la devuelve.
+ * Usa la misma normalización que getPlayerOverride.
  * @param {string} name
  * @returns {string|null} position code (GK/RB/CB/LB/DM/CM/AM/RW/LW/ST) o null
  */
@@ -546,7 +546,7 @@ const PLAYER_RATINGS_RAW = [
   ['lucas moura',            82],
   ['paulinho',               82],
   // -- Actuales (2023-26) --
-  ['rodrigo hernandez',      92], ['rodrigo hernandez cascante', 92], // Rodri Man City (no usar 'rodri' solo � colisiona)
+  ['rodrigo hernandez',      92], ['rodrigo hernandez cascante', 92], // Rodri Man City (no usar 'rodri' solo — colisiona)
   ['jude bellingham',        90], ['bellingham',           90],
   ['pedri',                  88],
   ['gavi',                   88],
@@ -792,7 +792,7 @@ const PLAYER_RATINGS_RAW = [
   ['vinicius jr',            92], ['vinícius jr',          92], ['vinícius', 92], ['vinicius',92],
   ['rodrygo',                86], ['rodrygo goes',         86],
   ['raphinha',               89], ['raphinha coutinho',    89],
-  ['savinho',                86], ['estevao',              84], ['est�v�o',             84],
+  ['savinho',                86], ['estevao',              84], ['estévão',             84],
   ['gabriel martinelli',     85], ['martinelli',           85],
   ['bukayo saka',            88], ['saka',                 88],
   ['marcus rashford',        86], ['rashford',             86],
@@ -878,7 +878,7 @@ const PLAYER_RATINGS_RAW = [
   ['leroy sane',             84],
 
   // -- Real Madrid (actuales 2025) ---------------------------------------
-  ['arda guler',             83], ['arda g�ler',           83],
+  ['arda guler',             83], ['arda güler',           83],
   ['dean huijsen',           82], ['huijsen',              82],
   ['raul asencio',           80], ['asencio',              80],
   ['alvaro carreras',        81],
@@ -886,10 +886,10 @@ const PLAYER_RATINGS_RAW = [
 
   // -- Barcelona (actuales 2025) -----------------------------------------
   ['joan garcia',            83],
-  ['pau cubarsi',            83], ['cubars�',              83], ['cubarsi', 83],
+  ['pau cubarsi',            83], ['cubarsí',              83], ['cubarsi', 83],
   ['alejandro balde',        84], ['balde',                84], ['alejandro balde', 84],
   ['gerard martin',          80],
-  ['fermin lopez',           83], ['ferm�n',               83],
+  ['fermin lopez',           83], ['fermín',               83],
   ['eric garcia camara',     79],
 
   // -- Premier League (actuales 2025) ------------------------------------
@@ -901,7 +901,7 @@ const PLAYER_RATINGS_RAW = [
   ['reece james',            85], ['james reece',          85],
   ['kyle walker',            82], ['walker kyle',          82],
   ['levi colwill',           85], ['colwill',              85],
-  ['marc gu�hi',             85], ['marc guehi',           85], ['gu�hi',  85],
+  ['marc guéhi',             85], ['marc guehi',           85], ['guéhi',  85],
   ['john stones',            84], ['stones',               84],
   ['ezri konsa',             83], ['konsa',                83],
   ['jarell quansah',         81], ['quansah',              81],
@@ -946,7 +946,7 @@ const PLAYER_RATINGS_RAW = [
   ['sandro tonali',          85], ['tonali',               85],
   ['federico chiesa',        83], ['chiesa',               83],
   ['piotr zielinski',        84], ['zielinski',            84],
-  ['hakan calhanoglu',       87], ['calhanoglu',           87], ['�alhanoglu', 87],
+  ['hakan calhanoglu',       87], ['calhanoglu',           87], ['çalhanoglu', 87],
   ['matias vecino',          79],
   ['kristjan asllani',       80],
   ['yann bisseck',           81],
@@ -966,7 +966,7 @@ const PLAYER_RATINGS_RAW = [
   ['luca ranieri',           79],
   ['federico dimarco',       89], ['dimarco',              89],
   ['davide frattesi',        86], ['frattesi',             86],
-  ['nicol� barella',         87], ['barella',              87], ['nicolo barella', 87],
+  ['nicolò barella',         87], ['barella',              87], ['nicolo barella', 87],
   ['cesare casadei',         84], ['casadei',              84],
   ['manuel locatelli',       84], ['locatelli',            84],
   ['giacomo raspadori',      85], ['raspadori',            85],
@@ -990,38 +990,38 @@ const PLAYER_RATINGS_RAW = [
   ['pedro porro',            87], ['porro',                87],
   ['pablo barrios',          84], ['barrios',              84],
   ['mikel merino',           86], ['merino',               86],
-  ['fabi�n ruiz',            87], ['fabian ruiz',          87],
+  ['fabián ruiz',            87], ['fabian ruiz',          87],
   ['joselu',                 80],
   ['alvaro morata',          83], ['morata',               83],
   ['alex baena',             86], ['baena',                86],
   ['bryan gil',              82], ['gil bryan',            82],
 
   // -- Germany national team (2025) extra -------------------------------
-  ['antonio r�diger',        87], ['rudiger',              87], ['r�diger', 87],
+  ['antonio rüdiger',        87], ['rudiger',              87], ['rüdiger', 87],
   ['nico schlotterbeck',     85], ['schlotterbeck',        85],
   ['benjamin henrichs',      82], ['henrichs',             82],
   ['david raum',             83], ['raum',                 83],
   ['florian wirtz',          91], ['wirtz',                91],
   ['kai havertz',            86], ['havertz',              86],
   ['toni kroos',             89], ['kroos',                89],
-  ['ilkay g�ndogan',         86], ['gundogan',             86], ['g�ndogan', 86],
+  ['ilkay gündogan',         86], ['gundogan',             86], ['gündogan', 86],
   ['julian brandt',          84], ['brandt',               84],
   ['niclas fullkrug',        83], ['fullkrug',             83],
   ['deniz undav',            82], ['undav',                82],
 
   // -- Portugal national squad (2025) extra -----------------------------
-  ['r�ben dias',             89], ['ruben dias',           89], ['dias ruben', 89],
+  ['rúben dias',             89], ['ruben dias',           89], ['dias ruben', 89],
   ['bernardo silva',         89], ['b.silva',              89],
   ['vitinha',                87],
-  ['joao felix',             84], ['jo�o f�lix',           84],
-  ['rafael leao',            88], ['le�o',                 88],
+  ['joao felix',             84], ['joão félix',           84],
+  ['rafael leao',            88], ['leão',                 88],
   // CR7 current form — DO NOT override the all-time 99 entry above (Map last-wins);
   // actual rating is set by the definitive entry ['cristiano ronaldo', 99] earlier.
   // ['cristiano ronaldo', 88] removed to avoid overwriting legendary peak.
   ['nuno mendes',            87], ['mendes nuno',          87],
   ['ruben neves',            85], ['neves ruben',          85],
   ['pedro neto',             83],
-  ['francisco conceicao',    85], ['francisco concei��o',  85], ['chico concei��o', 85],
+  ['francisco conceicao',    85], ['francisco conceição',  85], ['chico conceição', 85],
   ['diogo costa',            86], ['d.costa',              86],
 
   // -- Belgium (2025) ----------------------------------------------------
@@ -1031,7 +1031,7 @@ const PLAYER_RATINGS_RAW = [
   ['axel witsel',            80], ['witsel',               80],
   ['amadou onana',           86], ['onana amadou',         86],
   ['charles de ketelaere',   85], ['de ketelaere',         85], ['cdk',    85],
-  ['lo�s openda',             84], ['openda',               84],
+  ['loïs openda',             84], ['openda',               84],
   ['arthur theate',          83], ['theate',               83],
   ['wout faes',              82], ['faes',                 82],
   ['leandro trossard',       84], ['trossard',             84],
@@ -1044,7 +1044,7 @@ const PLAYER_RATINGS_RAW = [
   ['virgil van dijk',        89], ['van dijk',             89],
   ['stefan de vrij',         85], ['de vrij',              85],
   ['denzel dumfries',        86], ['dumfries',             86],
-  ['nathan ake',             85], ['ak�',                  85], ['ake',    85],
+  ['nathan ake',             85], ['aké',                  85], ['ake',    85],
   ['frenkie de jong',        87], ['f. de jong',           87],
   ['ryan gravenberch',       87], ['gravenberch',          87],
   ['tijjani reijnders',      86], ['reijnders',            86],
@@ -1060,8 +1060,8 @@ const PLAYER_RATINGS_RAW = [
 
   // -- France CB / defenders extra ---------------------------------------
   ['william saliba',         86], ['saliba',               86],
-  ['ibrahima konat�',        86], ['konate',               86], ['konat�',  86],
-  ['theo hernandez',         88], ['theo hern�ndez',       88], ['t.hernandez', 88],
+  ['ibrahima konaté',        86], ['konate',               86], ['konaté',  86],
+  ['theo hernandez',         88], ['theo hernández',       88], ['t.hernandez', 88],
   ['malo gusto',             84], ['gusto',                84],
   ['adrien rabiot',          84], ['rabiot',               84],
   ['matteo guendouzi',       83], ['guendouzi',            83],
@@ -1080,33 +1080,33 @@ const PLAYER_RATINGS_RAW = [
   ['alan varela',            83], ['varela alan',          83],
   ['nicolas de la cruz',     85], ['de la cruz',           85],
   ['giorgian de arrascaeta', 84], ['arrascaeta',           84], ['de arrascaeta', 84],
-  ['valent�n barco',         80], ['barco',                80],
+  ['valentín barco',         80], ['barco',                80],
   ['franco mastantuono',     82], ['mastantuono',          82],
   ['joaquin correa',         82], ['correa',               82],
   ['giovani lo celso',       84], ['lo celso',             84],
   ['nico paz',               84], ['paz nico',             84],
   ['rodrigo de paul',        85], ['de paul',              85],
-  ['enzo fernandez',         86], ['enzo fern�ndez',       86],
+  ['enzo fernandez',         86], ['enzo fernández',       86],
   ['alexis mac allister',    86], ['mac allister',         86],
 
   // -- Uruguay extra -----------------------------------------------------
-  ['jose maria gimenez',     85], ['gimenez jose',         85], ['gim�nez',  85],
+  ['jose maria gimenez',     85], ['gimenez jose',         85], ['giménez',  85],
   ['mathias olivera',        85], ['olivera mathias',      85],
   ['federico valverde',      88], ['valverde',             88],
   ['rodrigo bentancur',      83], ['bentancur',            83],
   ['lucas torreira',         84], ['torreira',             84],
   ['manuel ugarte',          83], ['ugarte',               83],
-  ['darwin nunez',           84], ['darwin n��ez',         84],
+  ['darwin nunez',           84], ['darwin núñez',         84],
   ['facundo torres',         84], ['torres facundo',       84],
   ['nicolas de la cruz',     85],
 
   // -- Norway extra ------------------------------------------------------
-  ['martin odegaard',        89], ['�degaard',             89], ['odegaard', 89],
+  ['martin odegaard',        89], ['ødegaard',             89], ['odegaard', 89],
   ['erling haaland',         95], ['haaland',              95],
   ['julian ryerson',         83], ['ryerson',              83],
   ['marcus pedersen',        81], ['pedersen marcus',      81],
-  ['fredrik bjorkan',        80], ['bj�rkan',              80], ['bjorkan', 80],
-  ['leo ostigard',           81], ['�stig�rd',             81], ['ostigard', 81],
+  ['fredrik bjorkan',        80], ['bjørkan',              80], ['bjorkan', 80],
+  ['leo ostigard',           81], ['østigård',             81], ['ostigard', 81],
   ['antonio nusa',           85], ['nusa',                 85],
   ['oscar bobb',             85], ['bobb',                 85],
   ['jorgen strand larsen',   84], ['strand larsen',        84],
@@ -1115,7 +1115,7 @@ const PLAYER_RATINGS_RAW = [
   // -- Morocco extra -----------------------------------------------------
   ['achraf hakimi',          89], ['hakimi',               89],
   ['noussair mazraoui',      87], ['mazraoui',             87],
-  ['brahim diaz',            86], ['brahim d�az',          86],
+  ['brahim diaz',            86], ['brahim díaz',          86],
   ['hakim ziyech',           85], ['ziyech',               85],
   ['sofyan amrabat',         86], ['amrabat',              86],
   ['youssef en-nesyri',      82], ['en-nesyri',            82],
@@ -1127,18 +1127,18 @@ const PLAYER_RATINGS_RAW = [
   ['bilal el khannouss',     85], ['el khannouss',         85],
 
   // -- Colombia extra ----------------------------------------------------
-  ['james rodriguez',        85], ['james rodr�guez',      85],
-  ['luis diaz',              90], ['luis d�az',            90],
-  ['jhon cordoba',           82], ['c�rdoba',              82],
-  ['daniel munoz',           86], ['mu�oz daniel',         86],
-  ['davinson sanchez',       85], ['s�nchez davinson',     85],
+  ['james rodriguez',        85], ['james rodríguez',      85],
+  ['luis diaz',              90], ['luis díaz',            90],
+  ['jhon cordoba',           82], ['córdoba',              82],
+  ['daniel munoz',           86], ['muñoz daniel',         86],
+  ['davinson sanchez',       85], ['sánchez davinson',     85],
   ['jhon lucumi',            85], ['lucumi',               85],
-  ['richard rios',           84], ['r�os richard',         84],
+  ['richard rios',           84], ['ríos richard',         84],
   ['yaser asprilla',         84], ['asprilla',             84],
   ['jhon arias',             84], ['arias jhon',           84],
-  ['cucho hernandez',        84], ['hern�ndez cucho',      84],
+  ['cucho hernandez',        84], ['hernández cucho',      84],
   ['jhon duran',             82],
-  ['rafael borre',           82], ['borr�',                82],
+  ['rafael borre',           82], ['borré',                82],
   ['juan cuadrado',          81], ['cuadrado',             81],
 
   // -- Croatia extra -----------------------------------------------------
@@ -1168,7 +1168,7 @@ const PLAYER_RATINGS_RAW = [
   ['reo hatate',             83], ['hatate',               83],
 
   // -- Senegal extra -----------------------------------------------------
-  ['sadio mane',             89], ['man�',                 89], ['mane',   89],
+  ['sadio mane',             89], ['mané',                 89], ['mane',   89],
   ['ismaila sarr',           85], ['sarr ismaila',         85],
   ['kalidou koulibaly',      86], ['koulibaly',            86],
   ['pape matar sarr',        87], ['p.m. sarr',            87],
@@ -1198,25 +1198,25 @@ const PLAYER_RATINGS_RAW = [
   ['thomas partey',          84], ['partey',               84],
   ['antoine semenyo',        84], ['semenyo',              84],
   ['kamaldeen sulemana',     83], ['k.sulemana',           83],
-  ['inaki williams',         83], ['��aki williams',       83],
+  ['inaki williams',         83], ['iñaki williams',       83],
   ['ibrahim osman',          82], ['i.osman',              82],
   ['ernest nuamah',          83], ['nuamah',               83],
   ['abdul fatawu',           82], ['fatawu',               82],
   ['tariq lamptey',          83], ['lamptey',              83],
   ['gideon mensah',          79],
-  ['derrick kohn',           80], ['k�hn',                 80],
+  ['derrick kohn',           80], ['köhn',                 80],
   ['mohammed salisu',        84], ['salisu',               84],
   ['ibrahim sulemana',       82], ['ibrahim sulemana ibrahim', 82],
   ['salis abdul samed',      81], ['samed',                81],
 
   // -- Turkey extra -----------------------------------------------------
-  ['hakan calhanoglu',       87], ['�alhanoglu',           87],
-  ['arda guler',             85], ['arda g�ler',           85],
+  ['hakan calhanoglu',       87], ['çalhanoglu',           87],
+  ['arda guler',             85], ['arda güler',           85],
   ['kenan yildiz',           88], ['kenan yildiz',         88],
   ['ferdi kadioglu',         87], ['kadioglu',             87],
-  ['kerem akt�rkoglu',       84], ['akt�rkoglu',           84], ['akturkoglu', 84],
-  ['orkun kokcu',            84], ['k�k��',                84], ['kokcu',   84],
-  ['ugurcan cakir',          84], ['�akir',                84], ['cakir',   84],
+  ['kerem aktürkoglu',       84], ['aktürkoglu',           84], ['akturkoglu', 84],
+  ['orkun kokcu',            84], ['kökçü',                84], ['kokcu',   84],
+  ['ugurcan cakir',          84], ['çakir',                84], ['cakir',   84],
   ['baris alper yilmaz',     84], ['baris alper yilmaz',   84],
   ['merih demiral',          84], ['demiral',              84],
 
@@ -1232,16 +1232,16 @@ const PLAYER_RATINGS_RAW = [
   ['anatoliy trubin',        85], ['trubin',               85],
 
   // -- Serbia extra -----------------------------------------------------
-  ['dusan vlahovic',         86], ['vlahov�c',             86],
+  ['dusan vlahovic',         86], ['vlahović',             86],
   ['aleksandar mitrovic',    84], ['a.mitrovic',           84],
   ['nikola milenkovic',      86], ['milenkovic',           86],
   ['strahinja pavlovic',     85], ['s.pavlovic',           85],
   ['ivan ilic',              85], ['ilic',                 85], ['ilic',   85],
-  ['lazar samardzic',        84], ['samard�ic',            84],
+  ['lazar samardzic',        84], ['samardžic',            84],
   ['filip kostic',           82], ['kostic',               82], ['kostic',  82],
   ['djordje petrovic',       83], ['d.petrovic',           83],
   ['kosta nedeljkovic',      82], ['nedeljkovic',          82],
-  ['andrija zivkovic',       82], ['�ivkovic',             82],
+  ['andrija zivkovic',       82], ['živkovic',             82],
 
   // -- Miscellaneous WC2026 nations -------------------------------------
   ['keylor navas',           84], ['navas',                84],
@@ -1252,19 +1252,19 @@ const PLAYER_RATINGS_RAW = [
   ['kang-in lee',            87], ['lee kang-in',          87],
   ['heung-min son',          88], ['son',                  88],
   ['hee-chan hwang',         85], ['hwang',                85],
-  ['piero hincapie',         87], ['hincapi�',             87],
+  ['piero hincapie',         87], ['hincapié',             87],
   ['willian pacho',          87], ['pacho',                87],
-  ['mois�s caicedo',         86], ['caicedo',              86],
-  ['pervis estupinian',      85], ['estupi��n',            85], ['estupinian', 85],
-  ['lautaro martinez',       89], ['lautaro mart�nez',     89],
-  ['julian alvarez',         89], ['juli�n �lvarez',       89],
+  ['moisés caicedo',         86], ['caicedo',              86],
+  ['pervis estupinian',      85], ['estupiñán',            85], ['estupinian', 85],
+  ['lautaro martinez',       89], ['lautaro martínez',     89],
+  ['julian alvarez',         89], ['julián álvarez',       89],
   // Messi current form — same as CR7: definitive entry ['lionel messi', 99] wins.
   // ['lionel messi', 88] removed to preserve the legendary all-time rating.
   ['paulo dybala',           86], ['dybala',               86],
   ['min-jae kim',            87], ['kim min-jae',          87],
   ['joel pohjanpalo',        82], ['pohjanpalo',           82],
   ['leon bailey',            84], ['bailey leon',          84],
-  ['levi garcia',            82], ['levi garc�a',          82], ['garcia levi', 82],
+  ['levi garcia',            82], ['levi garcía',          82], ['garcia levi', 82],
   ['achraf hakimi',          90],
   ['andre de jong nz',       82],
   ['marko stamenic',         81], ['stamenic',             81],
@@ -1786,14 +1786,14 @@ const PLAYER_RATINGS_RAW = [
 
 
 /**
- * Map de key ? OVR para b�squedas r�pidas.
+ * Map de key → OVR para búsquedas rápidas.
  * Compatible con Node.js y browser.
  */
 const PLAYER_RATINGS_MAP = new Map(PLAYER_RATINGS_RAW);
 
 /**
  * Devuelve el rating override de un jugador, o null si no hay entrada.
- * Normaliza acentos y min�sculas antes de comparar.
+ * Normaliza acentos y minúsculas antes de comparar.
  */
 function getPlayerOverride(name) {
   if (!name) return null;

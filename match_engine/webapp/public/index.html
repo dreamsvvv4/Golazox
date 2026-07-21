@@ -151,7 +151,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=119" />
+  <link rel="stylesheet" href="style.min.css?v=132" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -369,9 +369,47 @@
   <!-- ═══════════════════════════════════════════
        MAIN CONTENT
   ══════════════════════════════════════════════ -->
+  <div class="app-shell">
+  <aside class="side-nav" aria-label="Secciones">
+    <nav class="side-nav-inner">
+      <a class="side-link side-link-active" href="/" aria-current="page">
+        <span class="side-ico">⚽</span><span class="side-lbl" data-i18n="side-sim">Simulador</span>
+      </a>
+      <div class="side-group-label" data-i18n="side-explore">Explorar</div>
+      <a class="side-link" href="/clasificaciones">
+        <span class="side-ico">📊</span><span class="side-lbl" data-i18n="tab-standings">Clasificaciones</span>
+      </a>
+      <a class="side-link" href="/fichajes">
+        <span class="side-ico">💸</span><span class="side-lbl" data-i18n="tab-transfers">Fichajes</span>
+      </a>
+      <a class="side-link" href="/fichajes#noticias">
+        <span class="side-ico">📰</span><span class="side-lbl" data-i18n="side-news">Noticias</span>
+      </a>
+    </nav>
+  </aside>
   <main class="main-wrap">
   <!-- ── MATCH MODE wrap ─────────────────────── -->
   <div id="main-match-wrap">
+
+    <!-- ── HERO — portada ─────────────────────── -->
+    <section class="home-hero" aria-label="Presentación">
+      <div class="home-hero-glow" aria-hidden="true"></div>
+      <span class="home-hero-eyebrow">⚽ <span data-i18n="hero-eyebrow">Simulador de fútbol con IA · Gratis</span></span>
+      <h2 class="home-hero-title">
+        <span data-i18n="hero-t1">Enfrenta a</span>
+        <span class="hero-grad" data-i18n="hero-t2">cualquier equipo</span>
+        <span data-i18n="hero-t3">de</span>
+        <span class="hero-grad-2" data-i18n="hero-t4">cualquier época</span>
+      </h2>
+      <p class="home-hero-sub" data-i18n="hero-sub">El Barça de Guardiola contra el Madrid de los Galácticos. El Milan de Sacchi contra la Juve de hoy. Tú eliges los rivales y nuestra IA simula el partido en directo.</p>
+      <div class="home-hero-stats">
+        <span class="hero-stat"><b>600+</b> <span data-i18n="hero-s1">equipos reales</span></span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat"><b data-i18n="hero-s2b">Todas</b> <span data-i18n="hero-s2">las épocas</span></span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat"><b data-i18n="hero-s3b">Motor IA</b> <span data-i18n="hero-s3">táctico y realista</span></span>
+      </div>
+    </section>
 
     <!-- ── INPUT PANEL ────────────────────────── -->
     <section class="input-panel glass-card">
@@ -1694,6 +1732,7 @@
   </noscript>
 
   </main>
+  </div>
 
   <!-- ── Tournament Match Detail Modal ──────────────────────── -->
   <div id="trn-match-modal" class="trn-modal-overlay hidden">
@@ -1768,6 +1807,10 @@
       Simulador independiente de entretenimiento. Sin afiliación con FIFA, UEFA, clubes ni jugadores. Nombres usados con fines estadísticos e históricos. Escudos: representaciones genéricas. Datos parcialmente derivados de Wikipedia (CC BY-SA 4.0).
     </p>
     <p class="footer-links">
+      <a href="/fichajes" class="footer-link">Fichajes y noticias</a>
+      &nbsp;·&nbsp;
+      <a href="/clasificaciones" class="footer-link">Clasificaciones</a>
+      &nbsp;·&nbsp;
       <a href="/legal" class="footer-link">Aviso Legal</a>
       &nbsp;·&nbsp;
       <a href="/privacy" class="footer-link">Política de Privacidad</a>
@@ -1781,7 +1824,7 @@
   <script src="/player_ratings.min.js?v=5" defer></script>
   <script src="gx-user.min.js?v=13" defer></script>
   <script src="gx-ui.min.js?v=17" defer></script>
-  <script src="app.min.js?v=100" defer></script>
+  <script src="app.min.js?v=104" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
   <script src="tournament.min.js?v=50" defer></script>
 

@@ -1,5 +1,5 @@
 ﻿/**
- * Football Match Simulator � Express Backend
+ * Football Match Simulator — Express Backend
  * ---------------------------------------------
  * Start:  node server.js
  * API:    POST /simulate
@@ -17,6 +17,8 @@ const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
+const { getNews, getTransfers, IMG_HOSTS } = require('./news');
+const { getStandings } = require('./standings');
 
 const app    = express();
 app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
@@ -26,7 +28,7 @@ const PORT = process.env.PORT || 3000;
 // -- Squad JSON async cache ------------------------------------------------
 // LRU-style Map: evicts oldest entry when size exceeds MAX.
 // Avoids blocking the event loop with fs.readFileSync on every SSR request.
-const _SQUAD_CACHE_MAX = 300; // ~300 squads � ~8 KB avg = ~2.4 MB RAM
+const _SQUAD_CACHE_MAX = 300; // ~300 squads — ~8 KB avg = ~2.4 MB RAM
 const _squadCache = new Map(); // slug ? parsed JSON
 async function _loadSquad(slug) {
   if (_squadCache.has(slug)) return _squadCache.get(slug);
@@ -42,7 +44,7 @@ async function _loadSquad(slug) {
   return data;
 }
 
-// Module-level rosterFull � used by all 3 matchup SSR routes and equipo/team.
+// Module-level rosterFull — used by all 3 matchup SSR routes and equipo/team.
 // Returns { players, ratings, formation, avgRating, top3 } for a squad+era.
 async function _rosterFull(slug, era) {
   try {
@@ -160,7 +162,7 @@ const BADGE_PLACEHOLDER = '/img/badges/_placeholder.svg';
 const _squadFiles = fs.readdirSync(path.join(__dirname, 'squads'))
   .filter(f => f.endsWith('.json') && !f.startsWith('.'));
 const _badgeMap = new Map();  // name.lc ? localPath
-const _allTeams = [];         // { name, badge, slug } � full list for /badges
+const _allTeams = [];         // { name, badge, slug } — full list for /badges
 for (const file of _squadFiles) {
   try {
     const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', file), 'utf8'));
@@ -175,18 +177,18 @@ _allTeams.sort((a, b) => a.name.localeCompare(b.name));
 // -- League/group mapping: slug ? display group ---------------
 // Order determines display order in the UI.
 const _GROUP_ORDER = [
-  '? Fantasy XI',
-  '?? Continentes Hist�ricos',
-  '?? Selecciones',
-  '???? La Liga', '???? La Liga 2',
-  '?????????????? Premier League', '?????????????? Championship',
-  '???? Bundesliga', '???? 2. Bundesliga',
-  '???? Serie A', '???? Serie B',
-  '???? Ligue 1', '???? Ligue 2',
-  '???? Eredivisie', '???? Liga Portugal',
-  '?????????????? Escocia',
-  '???? Saudi Pro League', '???? MLS',
-  '???? Brasileir�o', '?? Argentina Primera', '?? Am�rica del Sur', '?? Otros',
+  '⭐ Fantasy XI',
+  '🌐 Continentes Históricos',
+  '🌍 Selecciones',
+  '🇪🇸 La Liga', '🇪🇸 La Liga 2',
+  '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League', '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship',
+  '🇩🇪 Bundesliga', '🇩🇪 2. Bundesliga',
+  '🇮🇹 Serie A', '🇮🇹 Serie B',
+  '🇫🇷 Ligue 1', '🇫🇷 Ligue 2',
+  '🇳🇱 Eredivisie', '🇵🇹 Liga Portugal',
+  '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia',
+  '🇸🇦 Saudi Pro League', '🇺🇸 MLS',
+  '🇧🇷 Brasileirão', '🌎 Argentina Primera', '🌎 América del Sur', '🌍 Otros',
 ];
 // group, nameEn, nameEs: stored in each squad JSON, with squads-meta.json as overlay.
 // squads-meta.json maps slug ? { group, nameEn, nameEs } and overrides per-file values.
@@ -259,6 +261,42 @@ function _resolveTeamSlug(input) {
   return _catalogNameMap.get(input.trim().toLowerCase()) || input.trim();
 }
 
+// -- Resolver robusto: nombre de equipo (Transfermarkt) -> slug del catalogo.
+// Usado por el boton "Simular" del calendario. Devuelve null si no hay match seguro
+// (preferimos NO poner boton antes que enlazar a un equipo equivocado).
+const _FX_ZW = /[\u200b-\u200f\u202a-\u202e\u2060\ufeff\u00ad]/g;
+const _fxNorm = (s) => s.toLowerCase().replace(_FX_ZW, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/&/g, ' ')
+  .replace(/\b(fc|cf|cd|ud|rc|rcd|sc|sd|ss|ssc|ac|afc|as|sk|club|deportivo|balompie|calcio|futbol|football|de|do|the|1846|1848|1860|1889|1893|1899|1900|1904|1905|1907|1909|1910|05|04|07|29|96)\b/g, ' ')
+  .replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+// Alias curados para colisiones europeas/sudamericanas y variantes de idioma.
+const _FX_ALIASES = {
+  'fc barcelona': 'fc-barcelona', 'racing club de estrasburgo': 'rc-strasbourg', 'estrasburgo': 'rc-strasbourg',
+  'genova': 'cfc-genua', 'genoa': 'cfc-genua', 'rc celta': 'celta-vigo', 'celta': 'celta-vigo',
+  'augsburgo': 'fc-augsburg', 'niza': 'ogc-nice', 'ogc niza': 'ogc-nice', 'francfort': 'eintracht-frankfurt',
+  'eintracht francfort': 'eintracht-frankfurt', 'brestois': 'stade-brest-29', 'stade brestois': 'stade-brest-29',
+  'coruna': 'rc-deportivo', 'a coruna': 'rc-deportivo', 'deportivo a coruna': 'rc-deportivo',
+  'atalanta de bergamo': 'atalanta-bc', 'bolonia': 'bologna', 'fc colonia': '1-fc-koln', 'colonia': '1-fc-koln',
+  'sc friburgo': 'freiburg', 'friburgo': 'freiburg',
+  'estac troyes': 'es-troyes-ac', 'troyes': 'es-troyes-ac', 'le mans fc': 'le-mans-fc', 'le mans': 'le-mans-fc',
+  'paris fc': 'paris-fc',
+};
+const _fxSlugSet = new Set(CATALOG.map(c => c.slug));
+const _fxNormMap = (() => {
+  const m = new Map();
+  for (const e of CATALOG) for (const k of [e.slug.replace(/-/g, ' '), e.nameEn, e.nameEs]) {
+    const n = _fxNorm(k); if (n && !m.has(n)) m.set(n, e.slug);
+  }
+  return m;
+})();
+function _resolveFixtureSlug(name) {
+  if (!name) return null;
+  const raw = name.toLowerCase().replace(_FX_ZW, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
+  if (_FX_ALIASES[raw] && _fxSlugSet.has(_FX_ALIASES[raw])) return _FX_ALIASES[raw];
+  const n = _fxNorm(name);
+  if (_FX_ALIASES[n] && _fxSlugSet.has(_FX_ALIASES[n])) return _FX_ALIASES[n];
+  return _fxNormMap.get(n) || null;
+}
+
 // -- Middleware --------------------------------
 // -- www ? non-www redirect (301) -----------------------------------------
 // Prevents duplicate content: www.golazox.com and golazox.com must not both
@@ -272,7 +310,7 @@ app.use((req, res, next) => {
 });
 
 // Gzip/Brotli compression for all text responses (HTML, CSS, JS, JSON).
-// Reduces bandwidth ~70-80% � essential for mobile performance and hosting costs.
+// Reduces bandwidth ~70-80% — essential for mobile performance and hosting costs.
 app.use(compress({ level: 6, threshold: 1024 }));
 app.use(express.json({ limit: '32kb' }));
 
@@ -290,7 +328,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Security headers � registered FIRST so they apply to ALL responses,
+// Security headers — registered FIRST so they apply to ALL responses,
 // including static files (index.html, CSS, JS, images).
 // upgrade-insecure-requests is only valid (and needed) when serving over HTTPS.
 // On HTTP (local dev via LAN IP), it causes browsers to upgrade same-origin requests
@@ -536,7 +574,7 @@ app.get('/', (_req, res) => {
   res.set('Cache-Control', 'no-cache').type('text/html').send(injected);
 });
 
-// -- /partido/:matchup � SSR matchup pages for SEO -----------------
+// -- /partido/:matchup — SSR matchup pages for SEO -----------------
 // URL format: /partido/real-madrid:2002-vs-barcelona:2009
 // or without era: /partido/real-madrid-vs-barcelona
 // Generates a full HTML page with real content (title, description, h1, h2,
@@ -827,7 +865,7 @@ app.get('/partido/:matchup', async (req, res) => {
   }
 });
 
-// -- /match/:matchup � English SSR page (mirrors /partido/ for EN SEO) ------
+// -- /match/:matchup — English SSR page (mirrors /partido/ for EN SEO) ------
 app.get('/match/:matchup', async (req, res) => {
   try {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
@@ -1110,7 +1148,7 @@ app.get('/match/:matchup', async (req, res) => {
   }
 });
 
-// -- /partida/:matchup � Portuguese (PT-BR) SSR page --------------------------
+// -- /partida/:matchup — Portuguese (PT-BR) SSR page --------------------------
 app.get('/partida/:matchup', async (req, res) => {
   try {
   const _routeSiteUrl = SITE_URL.replace(/\/$/, '');
@@ -1701,7 +1739,7 @@ app.get('/resultado/:matchup', _handleResultRoute('es'));
 app.get('/result/:matchup',    _handleResultRoute('en'));
 app.get('/jogo/:matchup',      _handleResultRoute('pt'));
 
-// -- /equipo/:slug and /team/:slug � SSR team profile pages for SEO ----------
+// -- /equipo/:slug and /team/:slug — SSR team profile pages for SEO ----------
 // URL examples:
 //   /equipo/real-madrid        ? Spanish profile (latest season)
 //   /equipo/real-madrid:2002   ? Spanish profile for 2002 season
@@ -1905,13 +1943,13 @@ app.get('/team/:slug', async (req, res) => {
   }
 });
 
-// Fuentes auto-alojadas: cache inmutable 1 a�o
+// Fuentes auto-alojadas: cache inmutable 1 año
 app.use('/fonts', express.static(path.join(__dirname, 'public', 'fonts'), {
   maxAge: '1y',
   immutable: true,
 }));
 
-// Im�genes de �rbitros y estadios � nunca cachear (se pueden sustituir en cualquier momento)
+// Imágenes de árbitros y estadios — nunca cachear (se pueden sustituir en cualquier momento)
 app.use('/img/referees', (req, res, next) => {
   const accepts = req.headers['accept'] || '-';
   if (accepts.includes('image/webp') && /\.(jpg|jpeg|png)$/i.test(req.path)) {
@@ -1945,7 +1983,7 @@ app.use('/img/stadiums', (req, res, next) => {
   setHeaders: (res) => res.set('Cache-Control', 'public, max-age=604800'),
 }));
 
-// Service Worker � must be served from the root scope with the correct header
+// Service Worker — must be served from the root scope with the correct header
 // so it can intercept all requests under '/'.
 // The Service-Worker-Allowed header grants it scope beyond its script directory.
 app.get('/sw.js', (_req, res) => {
@@ -1955,7 +1993,7 @@ app.get('/sw.js', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'sw.js'));
 });
 
-// Versioned assets (app.js?v=N, style.css?v=N) � serve minified in production.
+// Versioned assets (app.js?v=N, style.css?v=N) — serve minified in production.
 const IS_PROD = process.env.NODE_ENV === 'production';
 app.get('/app.js', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=31536000, immutable');
@@ -1972,7 +2010,7 @@ app.get('/style.css', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', file));
 });
 
-// Badge images � serve WebP when available and browser accepts it (transparent format negotiation)
+// Badge images — serve WebP when available and browser accepts it (transparent format negotiation)
 app.use('/img/badges', (req, res, next) => {
   const accepts = req.headers['accept'] || '-';
   if (accepts.includes('image/webp') && /\.(png|jpg)$/i.test(req.path)) {
@@ -1989,7 +2027,7 @@ app.use('/img/badges', (req, res, next) => {
   setHeaders: (res) => res.set('Cache-Control', 'public, max-age=2592000'),
 }));
 
-// Long-cache for any request with ?v= (versioned static assets � safe to cache 1 year)
+// Long-cache for any request with ?v= (versioned static assets — safe to cache 1 year)
 app.use((req, res, next) => {
   if (req.query.v && /\.(js|css|woff2?|png|webp|jpg|svg|ico)$/.test(req.path)) {
     res.set('Cache-Control', 'public, max-age=31536000, immutable');
@@ -1999,7 +2037,7 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// -- Flag proxy � caches country flags locally from flagcdn.com ----------------
+// -- Flag proxy — caches country flags locally from flagcdn.com ----------------
 // Subdivision codes not supported by flagcdn ? map to closest alternative
 const _FLAG_ISO_MAP = {
   'gb-eng': 'gb',       // England → UK flag
@@ -2042,7 +2080,70 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
   setHeaders: (res) => { res.set('Access-Control-Allow-Origin', '*'); },
 }));
 
-// Shared JS modules � served from webapp root (used by both Node.js and browser)
+// -- Club badge proxy — caches Transfermarkt club crests locally --------------
+// The /fichajes page references badges as same-origin /tmbadge/:id so they pass
+// the strict img-src 'self' CSP. Upstream images are cached in memory; clients
+// cache 7 days via Cache-Control.
+const _tmBadgeCache = new Map();
+app.get('/tmbadge/:id', async (req, res) => {
+  const id = String(req.params.id).replace(/\D/g, '').slice(0, 10);
+  if (!id) return res.status(400).end();
+  if (_tmBadgeCache.has(id)) {
+    return res.set('Content-Type', 'image/png')
+              .set('Cache-Control', 'public, max-age=604800')
+              .send(_tmBadgeCache.get(id));
+  }
+  try {
+    const up = await fetch(`https://tmssl.akamaized.net/images/wappen/head/${id}.png`, {
+      headers: { 'User-Agent': 'Mozilla/5.0', 'Referer': 'https://www.transfermarkt.es/' },
+    });
+    if (!up.ok) return res.status(404).end();
+    const buf = Buffer.from(await up.arrayBuffer());
+    if (_tmBadgeCache.size > 2000) _tmBadgeCache.clear(); // simple bound
+    _tmBadgeCache.set(id, buf);
+    res.set('Content-Type', 'image/png')
+       .set('Cache-Control', 'public, max-age=604800')
+       .send(buf);
+  } catch { res.status(502).end(); }
+});
+
+// -- News image proxy — same-origin thumbnails for RSS items ------------------
+// External media is blocked by the strict img-src 'self' CSP, so news images are
+// referenced as /newsimg?u=<url>. Only whitelisted hosts are fetched (anti-SSRF).
+const _newsImgCache = new Map();
+app.get('/newsimg', async (req, res) => {
+  const raw = String(req.query.u || '');
+  let url;
+  try { url = new URL(raw); } catch { return res.status(400).end(); }
+  if (url.protocol !== 'https:') return res.status(400).end();
+  const host = url.hostname;
+  const ok = (IMG_HOSTS || []).some(h => host === h || host.endsWith('.' + h) || host.includes(h));
+  if (!ok) return res.status(403).end();
+
+  const key = url.href;
+  const cached = _newsImgCache.get(key);
+  if (cached) {
+    return res.set('Content-Type', cached.type)
+              .set('Cache-Control', 'public, max-age=86400')
+              .send(cached.buf);
+  }
+  try {
+    const up = await fetch(url.href, {
+      timeout: 8000,
+      headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'image/*' },
+    });
+    if (!up.ok) return res.status(404).end();
+    const type = up.headers.get('content-type') || 'image/jpeg';
+    if (!/^image\//i.test(type)) return res.status(415).end();
+    const buf = Buffer.from(await up.arrayBuffer());
+    if (buf.length > 3_000_000) return res.status(413).end();
+    if (_newsImgCache.size > 400) _newsImgCache.clear(); // simple bound
+    _newsImgCache.set(key, { buf, type });
+    res.set('Content-Type', type)
+       .set('Cache-Control', 'public, max-age=86400')
+       .send(buf);
+  } catch { res.status(502).end(); }
+});
 app.get('/player_ratings.min.js', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=31536000, immutable');
   res.type('application/javascript');
@@ -2056,7 +2157,7 @@ app.get('/player_ratings.js', (_req, res) => {
 });
 
 // -- Config endpoint: injects site URL into the frontend ----------------------
-// Loaded as /config.js � exposes only safe, non-secret config to the client.
+// Loaded as /config.js — exposes only safe, non-secret config to the client.
 app.get('/config.js', (_req, res) => {
   const safeUrl = SITE_URL.replace(/[\\"'<>]/g, '');
   res.type('application/javascript').set('Cache-Control', 'public, max-age=3600').send(
@@ -2264,17 +2365,17 @@ const _rl = (max, windowMs) => rateLimit({
   message:         { error: 'Too many requests. Please wait.' },
   keyGenerator:    ipKeyGenerator,
 });
-const _rateLimit = _rl;  // alias � all call sites unchanged
+const _rateLimit = _rl;  // alias — all call sites unchanged
 
 // ----------------------------------------------------------------------------
 // CAPA DE SEGURIDAD ANTI-DDOS / ANTI-SCRAPING / ANTI-BRUTEFORCE
 // ----------------------------------------------------------------------------
 
 // -- 1. Bloqueo de bots y clientes automatizados (API endpoints) ----------
-// Regla: si el UA est� vac�o o coincide con herramientas CLI/scraping, devuelve
-// 403. Los navegadores reales siempre env�an un UA con "Mozilla/". Los crawlers
-// SEO leg�timos (Googlebot, Bingbot) nunca deber�an llamar a los endpoints de
-// la API, pero si lo hacen no se les bloquea para no romper indexaci�n.
+// Regla: si el UA está vacío o coincide con herramientas CLI/scraping, devuelve
+// 403. Los navegadores reales siempre envían un UA con "Mozilla/". Los crawlers
+// SEO legítimos (Googlebot, Bingbot) nunca deberían llamar a los endpoints de
+// la API, pero si lo hacen no se les bloquea para no romper indexación.
 const _BLOCKED_UA_RE = /^(curl|wget|python[\s\-/]|scrapy|go-http-client|java\/|okhttp\/|axios\/|node-fetch|got\/|libwww|libcurl|perl\/|ruby\/|php\/|nikto|sqlmap|masscan|nmap|zgrab|nuclei[/ ]|dirbuster|gobuster|wfuzz|ffuf|hydra[/ ]|acunetix|nessus|burp|zap\/)/i;
 
 const _apiBotBlock = (req, res, next) => {
@@ -2285,16 +2386,16 @@ const _apiBotBlock = (req, res, next) => {
   }
   next();
 };
-// S�lo se aplica a los endpoints de datos � NO a ficheros est�ticos ni HTML
+// Sólo se aplica a los endpoints de datos — NO a ficheros estáticos ni HTML
 app.use(['/simulate', '/simulate-bulk', '/lookup', '/catalog', '/suggest', '/referees'], _apiBotBlock);
 
 // -- 2. Presupuesto global de peticiones: 200 req / 5 min por IP ----------
-// Capa compartida para TODAS las rutas. Un usuario leg�timo rara vez supera
+// Capa compartida para TODAS las rutas. Un usuario legítimo rara vez supera
 // 40 req/min; un bot en paralelo lo satura en segundos.
-// Si se supera: 429 con Retry-After. Se registra IP + ruta para an�lisis.
+// Si se supera: 429 con Retry-After. Se registra IP + ruta para análisis.
 app.use(rateLimit({
   windowMs: 5 * 60 * 1000,   // ventana de 5 minutos
-  max:      200,              // m�ximo acumulado entre TODOS los endpoints
+  max:      200,              // máximo acumulado entre TODOS los endpoints
   standardHeaders: 'draft-6',
   legacyHeaders:   false,
   message:         { error: 'Rate limit global. Espera unos minutos.' },
@@ -2309,9 +2410,9 @@ app.use(rateLimit({
 
 // -- 3. Slow-down progresivo en /simulate ---------------------------------
 // Las primeras 3 simulaciones/min: sin demora (flujo normal de usuario).
-// A partir de la 4�: +1 s por llamada extra, m�ximo 6 s.
+// A partir de la 4ª: +1 s por llamada extra, máximo 6 s.
 // Efecto: el usuario lo nota levemente; un script en bucle queda bloqueado
-// esperando sin consumir tus cr�ditos de hosting en c�mputo intensivo.
+// esperando sin consumir tus créditos de hosting en cómputo intensivo.
 const _simulateSlowDown = slowDown({
   windowMs:     60_000,   // ventana de 1 minuto
   delayAfter:   3,        // sin demora en las primeras 3 llamadas
@@ -2323,7 +2424,7 @@ const _simulateSlowDown = slowDown({
   headers:      true,     // X-SlowDown-* headers para debug
 });
 
-// -- 4. Validaci�n de Content-Type en /simulate ---------------------------
+// -- 4. Validación de Content-Type en /simulate ---------------------------
 // Rechaza payloads que no sean JSON plano (bloquea formularios HTML y ataques
 // de tipo content-type confusion que intentan bypassar parsers).
 const _requireJSON = (req, res, next) => {
@@ -2343,7 +2444,7 @@ const _VALID_FORMATIONS = new Set([
 // -- GET /catalog ------------------------------
 // Returns the full catalog of local teams + their available seasons.
 // Cached for 5 min (re-run seed to update).
-// Rate: 8/5min per IP (1.6/min) � it's a ~150 kB JSON payload with all 471 teams;
+// Rate: 8/5min per IP (1.6/min) — it's a ~150 kB JSON payload with all 471 teams;
 // a legitimate client loads it once at startup and caches it for 5 minutes.
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
   res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=60');
@@ -2368,7 +2469,7 @@ app.get('/catalog-groups', (_req, res) => {
 
 // -- GET /suggest -----------------------------
 // Query: ?q=bar  ? returns up to 15 matching {name, slug, badge} objects for autocomplete
-// Rate: 40/min � fast autocomplete, pero con margen para que un bot necesite m�s.
+// Rate: 40/min — fast autocomplete, pero con margen para que un bot necesite más.
 app.get('/suggest', _rateLimit(40, 60000), (req, res) => {
   const q = String(req.query.q || '-').replace(/[<>]/g, '').trim().toLowerCase().slice(0, 40);
   const matches = q.length < 1
@@ -2417,15 +2518,15 @@ h1{color:#00d4ff;margin-bottom:1.2rem}input{background:#1a2236;color:#e2e8f0;bor
 .bg-name{font-size:.65rem;line-height:1.3;word-break:break-word;color:#94a3b8}
 </style></head><body>
 <h1>? Badge Gallery &nbsp;<small style="font-size:.7rem;color:#94a3b8">${_allTeams.length} equipos</small></h1>
-<input id="f" placeholder="Filtrar�" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
+<input id="f" placeholder="Filtrar…" oninput="document.querySelectorAll('.bg-card').forEach(c=>c.style.display=this.value&&!c.querySelector('.bg-name').textContent.toLowerCase().includes(this.value.toLowerCase())?'none':'')">
 <div class="bg-grid">${rows}</div></body></html>`);
 });
 
 // -- GET /lookup ------------------------------
 // Query: ?team=Arsenal&era=2004
 // Returns live squad data from local DB or TheSportsDB API
-// Rate: 15/min � cada lookup puede llegar a hacer una llamada externa; 15 es
-// m�s que suficiente para uso interactivo y inhibe el harvesting automatizado.
+// Rate: 15/min — cada lookup puede llegar a hacer una llamada externa; 15 es
+// más que suficiente para uso interactivo y inhibe el harvesting automatizado.
 app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
   try {
     const sanitise = (s) => String(s || '-').replace(/[<>]/g, '').trim().slice(0, 80);
@@ -2436,15 +2537,15 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
 
     const result  = await lookupTeam(team, era);
 
-    // Team not found � return a helpful error distinguishing offline vs unknown
+    // Team not found — return a helpful error distinguishing offline vs unknown
     if (!result.found) {
       const isOffline = process.env.OFFLINE_MODE === 'true';
       return res.status(404).json({
         found:   false,
         offline: isOffline,
         error:   isOffline
-          ? `"${team}" no est� en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
-          : `No se encontr� "${team}". Comprueba el nombre o prueba otra temporada.`,
+          ? `"${team}" no está en la base de datos local. Prueba con otro equipo o usa el buscador de sugerencias.`
+          : `No se encontró "${team}". Comprueba el nombre o prueba otra temporada.`,
       });
     }
 
@@ -2471,14 +2572,14 @@ app.get('/lookup', _rateLimit(15, 60000), async (req, res) => {
     res.json({ ...displayResult, badgeUrl });
   } catch (err) {
     console.error('[/lookup error]', err.message);
-    res.status(500).json({ found: false, error: 'Error al buscar el equipo. Int�ntalo de nuevo.' });
+    res.status(500).json({ found: false, error: 'Error al buscar el equipo. Inténtalo de nuevo.' });
   }
 });
 
 // -- POST /simulate ----------------------------
 // Body: { teamA, teamB, eraA, eraB, formationA, formationB }
 // Returns: { lineups, ratings, probabilities, finalScore, scorers, altScores, narrative }
-// Rate: 10/min hard block + slow-down progresivo a partir de la 4� llamada.
+// Rate: 10/min hard block + slow-down progresivo a partir de la 4ª llamada.
 // Content-Type: application/json requerido (bloquea formularios y payloads raw).
 app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), async (req, res) => {
   try {
@@ -2528,10 +2629,10 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 
     // Reject simulation if either team was not found anywhere
     if (!luA.found) {
-      return res.status(404).json({ error: `Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}. Prueba sin a�o o con el nombre en ingl�s.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispA}"${sEraA ? ' (' + sEraA + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
     }
     if (!luB.found) {
-      return res.status(404).json({ error: `Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}. Prueba sin a�o o con el nombre en ingl�s.` });
+      return res.status(404).json({ error: `Equipo no encontrado: "${dispB}"${sEraB ? ' (' + sEraB + ')' : ''}. Prueba sin año o con el nombre en inglés.` });
     }
 
     // Apply pre-match player overrides (from user substitutions in the pre-match screen).
@@ -2588,7 +2689,7 @@ app.post('/simulate', _requireJSON, _simulateSlowDown, _rateLimit(10, 60000), as
 
 // -- POST /simulate-bulk ---------------------------------------------------
 // Batch simulator for tournaments. Accepts up to 50 match pairs, returns
-// minimal results (score + optional penalties) � no narrative, no badges.
+// minimal results (score + optional penalties) — no narrative, no badges.
 // Rate limit: 3 calls per minute per IP (each call can have up to 50 matches).
 app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), async (req, res) => {
   try {
@@ -2635,7 +2736,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       teamCache.set(key, r);
     }));
 
-    // Convert OVR scalar (60�99) ? synthetic ATK/MID/DEF/GK for biasing deriveRatings.
+    // Convert OVR scalar (60–99) → synthetic ATK/MID/DEF/GK for biasing deriveRatings.
     // The four offsets average to zero so avg(result) == ovr.
     const _ovrToRatings = (ovr) => ({
       attack:      Math.min(99, ovr + 3),
@@ -2644,7 +2745,7 @@ app.post('/simulate-bulk', _requireJSON, _apiBotBlock, _rateLimit(3, 60000), asy
       goalkeeping: Math.max(60, ovr - 2),
     });
 
-    // Simulate each match (synchronous � no timeline/narrative needed)
+    // Simulate each match (synchronous — no timeline/narrative needed)
     const results = teamPairs.map(pair => {
       const luA = teamCache.get(lookupKey(pair.slugA, pair.eraA)) || { found: false };
       const luB = teamCache.get(lookupKey(pair.slugB, pair.eraB)) || { found: false };
@@ -2713,10 +2814,10 @@ app.get('/referees', _rateLimit(30, 60000), (_req, res) => {
   res.json(REFEREES);
 });
 
-// Images are served as static files from public/img/ � no proxy needed.
+// Images are served as static files from public/img/ — no proxy needed.
 // -- HTML escape helper (XSS prevention) -------------------
 const _esc = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-// -- Language helper � reads cookie or ?lang= param --------
+// -- Language helper — reads cookie or ?lang= param --------
 const _lang = (req) => {
   const q = req.query && req.query.lang;
   if (q === 'en' || q === 'es') return q;
@@ -2725,7 +2826,7 @@ const _lang = (req) => {
   if (m && (m[1] === 'en' || m[1] === 'es')) return m[1];
   return 'es';
 };
-// -- P�ginas legales (LSSI-CE / RGPD) ---------------------
+// -- Páginas legales (LSSI-CE / RGPD) ---------------------
 const LEGAL_HTML = (title, body) => `<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -2751,11 +2852,11 @@ const OWNER_EMAIL = process.env.OWNER_EMAIL || 'info@golazox.com'; // NEVER rend
 const SITE_URL    = process.env.SITE_URL    || 'https://golazox.com';
 const CONTACT_FILE = path.join(__dirname, 'contact_messages.json');
 
-// -- Nodemailer transporter (optional � only active when EMAIL_PASS is set) --
+// -- Nodemailer transporter (optional — only active when EMAIL_PASS is set) --
 // Set env vars in Hostinger panel:
 //   EMAIL_USER = info@golazox.com
-//   EMAIL_PASS = <password del buz�n info@golazox.com en Hostinger>
-//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com � ver panel Hostinger ? Email ? Configure)
+//   EMAIL_PASS = <password del buzón info@golazox.com en Hostinger>
+//   EMAIL_HOST = mail.golazox.com  (o smtp.hostinger.com — ver panel Hostinger → Email → Configure)
 //   EMAIL_PORT = 465  (SSL) o 587 (STARTTLS)
 const _emailHost = process.env.EMAIL_HOST || 'smtp.hostinger.com';
 const _emailPort = parseInt(process.env.EMAIL_PORT || '465', 10);
@@ -2774,7 +2875,7 @@ if (_mailer) {
     else     console.log('[mail] SMTP ready ? will email', OWNER_EMAIL);
   });
 } else {
-  console.log('[mail] No EMAIL_USER/EMAIL_PASS set � contact messages saved to file only.');
+  console.log('[mail] No EMAIL_USER/EMAIL_PASS set — contact messages saved to file only.');
 }
 
 async function _sendContactEmail({ name, email, subject, message }) {
@@ -2784,7 +2885,7 @@ async function _sendContactEmail({ name, email, subject, message }) {
       from:    `"GolazoX Contact" <${process.env.EMAIL_USER}>`,
       to:      OWNER_EMAIL,
       replyTo: email,
-      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} � ${name}`,
+      subject: `[GolazoX] ${subject || 'Nuevo mensaje de contacto'} — ${name}`,
       text:    `De: ${name} <${email}>\n\nAsunto: ${subject || '(sin asunto)'}\n\n${message}`,
       html:    `<p><strong>De:</strong> ${_esc(name)} &lt;${_esc(email)}&gt;</p>
                 <p><strong>Asunto:</strong> ${_esc(subject || '(sin asunto)')}</p>
@@ -2802,12 +2903,12 @@ app.get('/legal', (req, res) => {
   if (lang === 'en') {
     res.type('text/html').send(LEGAL_HTML('Legal Notice', `
     <h1>Legal Notice</h1>
-    <p><strong>Site Owner:</strong> \"GolazoX � Football Time Machine\" is a non-commercial personal fan project.
+    <p><strong>Site Owner:</strong> \"GolazoX — Football Time Machine\" is a non-commercial personal fan project.
     Owner: ${OWNER_NAME}. Contact: <a href=\"/contact?lang=en\">Contact form</a>.</p>
     <h2>Purpose and Nature of the Service</h2>
     <p>GolazoX is a probabilistic simulation engine for historical football teams, intended solely for entertainment
     purposes. It does not provide gambling services, official match predictions, or any official sports information.</p>
-    <h2>Intellectual Property � Code and Design</h2>
+    <h2>Intellectual Property — Code and Design</h2>
     <p>The source code, design, and simulation logic are the property of the site owner and are published under a
     personal non-commercial licence. Team and player names are used in a purely referential and informational capacity,
     under the descriptive trademark use doctrine and the public-domain nature of professional athletes\' public activities.</p>
@@ -2831,33 +2932,33 @@ app.get('/legal', (req, res) => {
   } else {
   res.type('text/html').send(LEGAL_HTML('Aviso Legal', `
     <h1>Aviso Legal</h1>
-    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX � Football Time Machine\", es un proyecto
-    personal de car�cter no comercial y sin �nimo de lucro. Titular: ${_esc(OWNER_NAME)}.
+    <p><strong>Identidad del titular:</strong> Este sitio web, \"GolazoX — Football Time Machine\", es un proyecto
+    personal de carácter no comercial y sin ánimo de lucro. Titular: ${_esc(OWNER_NAME)}.
     Contacto: <a href=\"/contact\">Formulario de contacto</a>.</p>
     <h2>Objeto y naturaleza del servicio</h2>
-    <p>GolazoX es un simulador probabil�stico de partidos de f�tbol hist�ricos con fines exclusivamente l�dicos
-    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni informaci�n oficial.</p>
-    <h2>Propiedad intelectual � c�digo y dise�o</h2>
-    <p>El c�digo fuente, dise�o y l�gica de simulaci�n son propiedad del titular y se publican bajo licencia
-    personal no comercial. Los nombres de equipos y jugadores se usan con car�cter referencial e informativo
-    bajo la doctrina de uso descriptivo de marcas y de figuras p�blicas en el ejercicio de su actividad profesional.</p>
+    <p>GolazoX es un simulador probabilístico de partidos de fútbol históricos con fines exclusivamente lúdicos
+    y de entretenimiento. No ofrece servicios de apuestas, predicciones deportivas ni información oficial.</p>
+    <h2>Propiedad intelectual — código y diseño</h2>
+    <p>El código fuente, diseño y lógica de simulación son propiedad del titular y se publican bajo licencia
+    personal no comercial. Los nombres de equipos y jugadores se usan con carácter referencial e informativo
+    bajo la doctrina de uso descriptivo de marcas y de figuras públicas en el ejercicio de su actividad profesional.</p>
     <h2>Marcas registradas y escudos de terceros</h2>
     <p>Los logotipos e identificadores visuales de clubes y selecciones nacionales mostrados en este sitio son
     marcas registradas de sus respectivos titulares (clubes, federaciones nacionales, UEFA, FIFA y organismos
-    equivalentes). Su uso se limita exclusivamente a la identificaci�n referencial de los equipos simulados
-    en un contexto no comercial, l�dico y educativo, sin que ello implique afiliaci�n, patrocinio, asociaci�n
+    equivalentes). Su uso se limita exclusivamente a la identificación referencial de los equipos simulados
+    en un contexto no comercial, lúdico y educativo, sin que ello implique afiliación, patrocinio, asociación
     ni respaldo por parte de ninguno de dichos titulares.</p>
-    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a trav�s del
+    <p>Si eres titular de alguna de estas marcas y consideras que su uso no es adecuado, puedes contactarnos a través del
     <a href=\"/contact\">formulario de contacto</a> y atenderemos tu solicitud a la mayor brevedad posible.</p>
     <h2>Fuentes de datos</h2>
-    <p>Los datos de plantillas hist�ricas se obtienen de fuentes de acceso p�blico. Ninguna de
+    <p>Los datos de plantillas históricas se obtienen de fuentes de acceso público. Ninguna de
     estas fuentes constituye datos oficiales de los clubes o federaciones.</p>
-    <h2>Exclusi�n de responsabilidad</h2>
-    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabil�stico.
+    <h2>Exclusión de responsabilidad</h2>
+    <p>Los resultados del simulador son ficticios y generados aleatoriamente mediante un modelo probabilístico.
     No reflejan resultados reales ni constituyen predicciones. El titular no se responsabiliza del uso que los
-    usuarios hagan de los resultados ni de la exactitud de los datos hist�ricos.</p>
-    <h2>Legislaci�n aplicable</h2>
-    <p>Este aviso se rige por la legislaci�n espa�ola (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
+    usuarios hagan de los resultados ni de la exactitud de los datos históricos.</p>
+    <h2>Legislación aplicable</h2>
+    <p>Este aviso se rige por la legislación española (Ley 34/2002 LSSI-CE) y la normativa europea aplicable.</p>
   `));
   }
 });
@@ -2873,7 +2974,7 @@ app.get('/tiktok-callback', (req, res) => {
     <html><head><title>TikTok Auth</title></head>
     <body style="font-family:sans-serif;max-width:600px;margin:60px auto;text-align:center">
       <h2 style="color:green">? TikTok autorizado</h2>
-      <p>Copia este c�digo y p�galo en el terminal:</p>
+      <p>Copia este código y pégalo en el terminal:</p>
       <code style="display:block;background:#f0f0f0;padding:16px;font-size:14px;word-break:break-all;border-radius:8px">${_esc(code)}</code>
       <p style="margin-top:24px;color:#666">Luego ejecuta:<br>
       <code>node uploader.js --auth-exchange-tiktok PEGA_EL_CODIGO_AQUI</code></p>
@@ -2888,7 +2989,7 @@ app.get('/privacy', (req, res) => {
     <h1>Privacy Policy</h1>
     <p>Last updated: ${new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Data Controller</h2>
-    <p>${_esc(OWNER_NAME)} � <a href="/contact?lang=en">Contact form</a></p>
+    <p>${_esc(OWNER_NAME)} — <a href="/contact?lang=en">Contact form</a></p>
     <h2>Data We Collect</h2>
     <p>GolazoX <strong>does not require registration</strong>, does not use tracking cookies, and does not actively
     collect personally identifiable information.</p>
@@ -2913,33 +3014,33 @@ app.get('/privacy', (req, res) => {
     <p>Any changes will be published on this page with an updated date.</p>
   `, 'en'));
   } else {
-  res.type('text/html').send(LEGAL_HTML('Pol�tica de Privacidad', `
-    <h1>Pol�tica de Privacidad</h1>
-    <p>�ltima actualizaci�n: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
+  res.type('text/html').send(LEGAL_HTML('Política de Privacidad', `
+    <h1>Política de Privacidad</h1>
+    <p>Última actualización: ${new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</p>
     <h2>Responsable del tratamiento</h2>
-    <p>${_esc(OWNER_NAME)} � <a href="/contact">Formulario de contacto</a></p>
+    <p>${_esc(OWNER_NAME)} — <a href="/contact">Formulario de contacto</a></p>
     <h2>Datos que recopilamos</h2>
     <p>GolazoX <strong>no solicita registro</strong>, no usa cookies de seguimiento y no recopila datos personales
     identificativos de forma activa.</p>
     <h2>Almacenamiento local (localStorage)</h2>
-    <p>La aplicaci�n guarda en el almacenamiento local de tu navegador �nicamente:</p>
+    <p>La aplicación guarda en el almacenamiento local de tu navegador únicamente:</p>
     <ul>
       <li><strong>golazox_lang</strong>: idioma preferido de la interfaz (ES/EN). No contiene datos personales.
-      No se transmite a ning�n servidor. Se elimina al borrar los datos del navegador.</li>
+      No se transmite a ningún servidor. Se elimina al borrar los datos del navegador.</li>
     </ul>
     <h2>Registros del servidor (logs)</h2>
-    <p>El servidor de alojamiento puede registrar autom�ticamente la direcci�n IP de las peticiones con fines
-    de seguridad y diagn�stico t�cnico. Estos registros se conservan un m�ximo de 30 d�as y no se ceden a terceros.</p>
+    <p>El servidor de alojamiento puede registrar automáticamente la dirección IP de las peticiones con fines
+    de seguridad y diagnóstico técnico. Estos registros se conservan un máximo de 30 días y no se ceden a terceros.</p>
     <h2>Cookies</h2>
     <p>Este sitio web <strong>no utiliza cookies</strong> propias ni de terceros para seguimiento o publicidad.</p>
     <h2>Fuentes de datos externas</h2>
-    <p>Para obtener datos de plantillas hist�ricas, la aplicaci�n puede consultar APIs p�blicas
-    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias pol�ticas de privacidad.</p>
+    <p>Para obtener datos de plantillas históricas, la aplicación puede consultar APIs públicas
+    (sin clave de usuario, sin datos personales del visitante). Estas fuentes tienen sus propias políticas de privacidad.</p>
     <h2>Derechos del usuario</h2>
     <p>Dado que no tratamos datos personales identificativos, no aplica el ejercicio de derechos ARCO/ARCOPOL
     en sentido estricto. Para cualquier consulta: <a href="/contact">formulario de contacto</a>.</p>
-    <h2>Cambios en esta pol�tica</h2>
-    <p>Cualquier modificaci�n se publicar� en esta p�gina con la fecha de actualizaci�n actualizada.</p>
+    <h2>Cambios en esta política</h2>
+    <p>Cualquier modificación se publicará en esta página con la fecha de actualización actualizada.</p>
   `));
   }
 });
@@ -2991,7 +3092,7 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   // Honeypot check: bots fill the hidden 'url' field, humans leave it empty
   const honeypot = String(req.body.url || '-').trim();
   if (honeypot.length > 0) {
-    // Silent reject � return success to not hint to bots
+    // Silent reject — return success to not hint to bots
     return res.type('text/html').send(LEGAL_HTML(lang === 'en' ? 'Message sent' : 'Mensaje enviado', `
       <h1>${lang === 'en' ? 'Message received ?' : 'Mensaje recibido ?'}</h1>
       <p><a href="/">${lang === 'en' ? 'Back to simulator' : 'Volver al simulador'}</a></p>`, lang));
@@ -3009,7 +3110,7 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).type('text/html').send(LEGAL_HTML(isEn ? 'Error' : 'Error', `
-      <h1>${isEn ? 'Invalid email' : 'Email no v�lido'}</h1>
+      <h1>${isEn ? 'Invalid email' : 'Email no válido'}</h1>
       <p><a href="/contact${isEn ? '?lang=en' : ''}">${isEn ? 'Back to form' : 'Volver al formulario'}</a>.</p>`, lang));
   }
 
@@ -3040,8 +3141,8 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
 
 // -- Serve index.html for all other routes -----
 // Always serve with explicit charset=utf-8 to prevent the em-dash encoding
-// corruption seen in GA ("�"" instead of "�").
-// Bots probing unknown paths (/cmd_sco, /wp-admin�) get a 404 status so
+// corruption seen in GA (garbled bytes instead of "—").
+// Bots probing unknown paths (/cmd_sco, /wp-admin…) get a 404 status so
 // Google doesn't index phantom pages, but still receive the SPA HTML.
 // -- Subscribers storage: MySQL (primary) + JSON fallback -----------------
 // MySQL config: set DB_HOST, DB_USER, DB_PASS, DB_NAME in .env to activate.
@@ -3052,7 +3153,7 @@ app.post('/contact', _contactLimit, express.urlencoded({ extended: false, limit:
 //                    DB_PASS=<password>  DB_NAME=u123_golazox
 const SUBS_FILE = path.join(__dirname, 'subscribers.json');
 
-// Attempt to load mysql2 � package is optional (npm install mysql2 on server)
+// Attempt to load mysql2 — package is optional (npm install mysql2 on server)
 let _db = null;
 (async () => {
   if (!process.env.DB_HOST || !process.env.DB_USER || !process.env.DB_PASS || !process.env.DB_NAME) return;
@@ -3082,13 +3183,13 @@ let _db = null;
 // Access: GET /admin/subscribers?token=<ADMIN_TOKEN>
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || null;
 
-// -- POST /subscribe � Newsletter opt-in ----------------------------------
+// -- POST /subscribe — Newsletter opt-in ----------------------------------
 // Stores emails in MySQL + JSON. Rate: 5/hour per IP. Deduplicates.
 const _subscribeLimit = _rl(5, 60 * 60000);
 app.post('/subscribe', _requireJSON, _subscribeLimit, async (req, res) => {
   const email = String(req.body.email || '-').slice(0, 200).trim().toLowerCase();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-    return res.status(400).json({ error: 'Email inv�lido.' });
+    return res.status(400).json({ error: 'Email inválido.' });
   }
   try {
     let total = 0;
@@ -3141,11 +3242,11 @@ app.post('/subscribe', _requireJSON, _subscribeLimit, async (req, res) => {
     res.json({ ok: true, already });
   } catch (err) {
     console.error('[subscribe]', err.message);
-    res.status(500).json({ error: 'Error. Int�ntalo de nuevo.' });
+    res.status(500).json({ error: 'Error. Inténtalo de nuevo.' });
   }
 });
 
-// -- GET /admin/subscribers � Export CSV (token-protected) ----------------
+// -- GET /admin/subscribers — Export CSV (token-protected) ----------------
 // Usage: https://golazox.com/admin/subscribers?token=TU_TOKEN
 // Returns CSV with all subscriber emails + signup dates, ready to import
 // into Mailchimp, Brevo, Hostinger Email Campaigns, etc.
@@ -3170,6 +3271,817 @@ app.get('/admin/subscribers', async (req, res) => {
        .send('\uFEFF' + csv); // BOM prefix ? Excel opens UTF-8 correctly
   } catch (e) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// -- GET /fichajes — Fichajes (Transfermarkt) + tablón de noticias (RSS) ------
+// Datos de fichajes: club origen→destino con escudo, jugador, precio y tipo.
+// Tablón: titulares agregados de medios (título + fuente + enlace).
+// Todo se auto-actualiza vía caché en news.js (fichajes 30 min, noticias 15 min).
+const _newsLimit = _rateLimit(60, 5 * 60 * 1000); // 60 vistas / 5 min por IP
+
+const _timeAgo = (ms) => {
+  if (!ms) return '';
+  const s = Math.floor((Date.now() - ms) / 1000);
+  if (s < 60)     return 'hace un momento';
+  const m = Math.floor(s / 60);
+  if (m < 60)     return `hace ${m} min`;
+  const h = Math.floor(m / 60);
+  if (h < 24)     return `hace ${h} h`;
+  const d = Math.floor(h / 24);
+  return d === 1 ? 'ayer' : `hace ${d} días`;
+};
+
+// Formatea un importe en € a texto compacto (26 M €, 876 K €).
+const _fmtFee = (v) => {
+  if (!v) return '';
+  if (v >= 1e6) return `${(v / 1e6).toFixed(v % 1e6 ? 1 : 0).replace('.', ',')} M €`;
+  return `${Math.round(v / 1e3)} K €`;
+};
+
+// Color del badge de precio según tipo de operación.
+const _feeStyle = (fee) => {
+  if (fee.type === 'fee')  return 'background:rgba(16,185,129,.15);color:#10d98a;border-color:rgba(16,185,129,.35)';
+  if (fee.type === 'loan') return 'background:rgba(0,212,255,.13);color:#00d4ff;border-color:rgba(0,212,255,.35)';
+  if (fee.type === 'free') return 'background:rgba(251,191,36,.13);color:#fbbf24;border-color:rgba(251,191,36,.35)';
+  return 'background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.15)';
+};
+
+const _badgeImg = (club) => club.badge
+  ? `<img src="${_esc(club.badge)}" alt="" loading="lazy" width="34" height="34" style="width:34px;height:34px;object-fit:contain"/>`
+  : `<span class="crest-fallback">${_esc((club.name || '?').slice(0, 1))}</span>`;
+
+const _transferCardHTML = (t, rank) => `
+  <article class="tcard${rank && rank <= 3 ? ' tcard-podium tcard-r' + rank : ''}" data-search="${_esc((t.player + ' ' + t.from.name + ' ' + t.to.name + ' ' + t.position).toLowerCase())}">
+    ${rank ? `<span class="trank">${rank}</span>` : ''}
+    <div class="tcard-head">
+      <span class="tplayer">${_esc(t.player)}</span>
+      <span class="tpos">${_esc(t.position)}${t.age ? ' · ' + _esc(t.age) : ''}</span>
+    </div>
+    <div class="tflow">
+      <div class="tclub">${_badgeImg(t.from)}<span>${_esc(t.from.name)}</span></div>
+      <span class="tarrow">→</span>
+      <div class="tclub tclub-to">${_badgeImg(t.to)}<span>${_esc(t.to.name)}</span></div>
+    </div>
+    <div class="tfee" style="${_feeStyle(t.fee)}">${_esc(t.fee.label)}</div>
+  </article>`;
+
+// Barra de estadísticas del mercado con contadores animados.
+const _statsHTML = (transfers) => {
+  const list = transfers.list || [];
+  const latest = transfers.latest || [];
+  // Inversión y récord salen de los récords de la temporada (ordenados por importe).
+  const paid = list.filter(t => t.fee.type === 'fee');
+  const total = paid.reduce((s, t) => s + (t.fee.value || 0), 0);
+  const record = list.length ? list[0].fee.value : 0;
+  // Cesiones y libres pueden no estar entre los récords (importe 0): se cuentan
+  // sobre el conjunto combinado (récords + recién cerrados), sin duplicar.
+  const seen = new Set();
+  const all = [];
+  for (const t of [...list, ...latest]) {
+    const key = (t.player + '|' + t.to.name).toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    all.push(t);
+  }
+  const loans = all.filter(t => t.fee.type === 'loan').length;
+  const free = all.filter(t => t.fee.type === 'free').length;
+  const stat = (icon, val, label, cls) =>
+    `<div class="stat"><span class="stat-ico">${icon}</span>
+      <span class="stat-val ${cls}" data-count="${val}">0</span>
+      <span class="stat-lbl">${label}</span></div>`;
+  return `<section class="stats">
+    ${stat('💰', total, 'Inversión top', 'is-money')}
+    ${stat('🚀', record, 'Fichaje récord', 'is-money')}
+    ${stat('🤝', loans, 'Cesiones', '')}
+    ${stat('🆓', free, 'Libres', '')}
+  </section>`;
+};
+
+const _chartHTML = (top) => {
+  if (!top.length) return '';
+  const max = top[0].fee.value || 1;
+  const rows = top.map((t, i) => {
+    const pct = Math.max(6, Math.round((t.fee.value / max) * 100));
+    return `
+    <div class="bar-row">
+      <span class="bar-rank">${i + 1}</span>
+      <span class="bar-label">${_esc(t.player)}<em>${_badgeImg(t.to)}${_esc(t.to.name)}</em></span>
+      <span class="bar-track"><span class="bar-fill" style="width:${pct}%"></span></span>
+      <span class="bar-val">${_fmtFee(t.fee.value)}</span>
+    </div>`;
+  }).join('');
+  return `<section class="chart-box">
+    <div class="chart-head"><h2>🏆 Ranking por importe</h2><span class="chart-tag">Temporada actual</span></div>
+    <div class="chart">${rows}</div>
+  </section>`;
+};
+
+// Color de acento por medio para el tablón de noticias.
+const _sourceColor = (src = '') => {
+  const s = src.toLowerCase();
+  if (s.includes('marca'))  return '#e3130b';
+  if (s.includes('as'))     return '#1d6fd6';
+  if (s.includes('sport'))  return '#e30613';
+  if (s.includes('mundo'))  return '#00963f';
+  return '#00d4ff';
+};
+
+// Tarjeta destacada (noticia más reciente, ocupa todo el ancho).
+const _newsFeaturedHTML = (it) => {
+  const c = _sourceColor(it.source);
+  const img = it.image
+    ? `<span class="news-hero-img"><img src="${_esc(it.image)}" alt="" loading="lazy"/></span>`
+    : '';
+  return `
+  <a class="news-hero${it.image ? ' has-img' : ''}" data-source="${_esc((it.source || '').toLowerCase())}" style="--src:${c}" href="${_esc(it.link)}" target="_blank" rel="noopener nofollow">
+    ${img}
+    <span class="news-hero-body">
+      <span class="news-chip" style="background:${c}">${_esc(it.source)}</span>
+      <span class="news-hero-title">${_esc(it.title)}</span>
+      <span class="news-hero-meta">${it.ts ? '🕒 ' + _timeAgo(it.ts) : ''} · Leer en ${_esc(it.source)} →</span>
+    </span>
+  </a>`;
+};
+
+const _newsItemHTML = (it) => {
+  const c = _sourceColor(it.source);
+  const img = it.image
+    ? `<span class="news-thumb"><img src="${_esc(it.image)}" alt="" loading="lazy"/></span>`
+    : '';
+  return `
+  <li class="news-item${it.image ? ' has-img' : ''}" data-source="${_esc((it.source || '').toLowerCase())}" style="--src:${c}">
+    <a href="${_esc(it.link)}" target="_blank" rel="noopener nofollow">
+      ${img}
+      <span class="news-body">
+        <span class="news-chip" style="background:${c}">${_esc(it.source)}</span>
+        <span class="news-title">${_esc(it.title)}</span>
+        <span class="news-meta">${it.ts ? _timeAgo(it.ts) : ''}</span>
+      </span>
+    </a>
+  </li>`;
+};
+
+// Chips de filtro por medio (deriva las fuentes presentes en los items).
+const _newsFilterHTML = (items) => {
+  const sources = [...new Set(items.map(i => i.source).filter(Boolean))];
+  if (sources.length < 2) return '';
+  const chips = sources.map(s =>
+    `<button class="nfilter" data-src="${_esc(s.toLowerCase())}" style="--src:${_sourceColor(s)}">${_esc(s)}</button>`
+  ).join('');
+  return `<div class="nfilters"><button class="nfilter active" data-src="">Todos</button>${chips}</div>`;
+};
+
+// Bloque de noticias: destacada + rejilla. `items` ya viene ordenado por fecha.
+const _newsSectionHTML = (title, items, limit) => {
+  if (!items.length) return '';
+  const [head, ...rest] = items.slice(0, limit);
+  return `<div class="news-group">
+    <h2>${title}</h2>
+    ${_newsFeaturedHTML(head)}
+    ${rest.length ? `<ul class="news-list">${rest.map(_newsItemHTML).join('')}</ul>` : ''}
+  </div>`;
+};
+
+// ── Sidebar persistente (mismo menú en todas las páginas) ──
+const GX_SIDE_NAV = (active) => `
+  <aside class="side-nav side-nav--fixed" aria-label="Secciones">
+    <nav class="side-nav-inner">
+      <a class="side-brand" href="/" aria-label="GolazoX — inicio">
+        <span class="side-brand-mark"><span class="bx-go">GOLAZ</span><span class="bx-ox">OX</span></span>
+      </a>
+      <a class="side-link${active === 'sim' ? ' side-link-active' : ''}" href="/"${active === 'sim' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">⚽</span><span class="side-lbl">Simulador</span>
+      </a>
+      <div class="side-group-label">Explorar</div>
+      <a class="side-link${active === 'standings' ? ' side-link-active' : ''}" href="/clasificaciones"${active === 'standings' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">📊</span><span class="side-lbl">Clasificaciones</span>
+      </a>
+      <a class="side-link${active === 'transfers' ? ' side-link-active' : ''}" href="/fichajes"${active === 'transfers' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">💸</span><span class="side-lbl">Fichajes</span>
+      </a>
+      <a class="side-link${active === 'news' ? ' side-link-active' : ''}" href="/fichajes#noticias">
+        <span class="side-ico">📰</span><span class="side-lbl">Noticias</span>
+      </a>
+    </nav>
+  </aside>`;
+
+const FICHAJES_HTML = (transfers, news) => `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Fichajes y noticias de fútbol · GolazoX</title>
+  <meta name="description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente."/>
+  <meta name="robots" content="index,follow,max-image-preview:large"/>
+  <link rel="canonical" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
+  <link rel="alternate" hreflang="es" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
+  <link rel="alternate" hreflang="x-default" href="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="GolazoX"/>
+  <meta property="og:locale" content="es_ES"/>
+  <meta property="og:title" content="Fichajes y noticias de fútbol · GolazoX"/>
+  <meta property="og:description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente."/>
+  <meta property="og:url" content="${SITE_URL.replace(/\/$/, '')}/fichajes"/>
+  <meta property="og:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Fichajes y noticias de fútbol · GolazoX"/>
+  <meta name="twitter:description" content="Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias."/>
+  <meta name="twitter:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Fichajes y noticias de fútbol',
+    'description': 'Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias.',
+    'url': `${SITE_URL.replace(/\/$/, '')}/fichajes`,
+    'inLanguage': 'es',
+    'isPartOf': { '@type': 'WebSite', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, '') },
+    'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, ''), 'logo': `${SITE_URL.replace(/\/$/, '')}/golazox-coin.png` },
+    'breadcrumb': { '@type': 'BreadcrumbList', 'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': SITE_URL.replace(/\/$/, '') },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Fichajes', 'item': `${SITE_URL.replace(/\/$/, '')}/fichajes` }
+    ] }
+  })}</script>
+  <link rel="icon" type="image/png" href="/golazox-coin.png"/>
+  <link rel="stylesheet" href="/style.css?v=26"/>
+  <style>
+    :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
+    * { box-sizing:border-box; }
+    body { max-width:1080px; margin:0 auto; padding:0 1.1rem 4rem; }
+
+    /* ── Hero ── */
+    .hero { position:relative; text-align:center; padding:3rem 1rem 2.4rem; margin-bottom:.5rem; overflow:hidden; }
+    .hero::before { content:""; position:absolute; inset:-40% 0 auto 0; height:340px; background:radial-gradient(60% 100% at 50% 0%, rgba(0,212,255,.16), transparent 70%); pointer-events:none; z-index:-1; }
+    .hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:800; letter-spacing:-.02em; margin:0 0 .5rem; background:linear-gradient(92deg,#fff 10%,var(--cyan) 55%,var(--green) 95%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero p { font-size:.9rem; color:rgba(255,255,255,.5); margin:0; display:inline-flex; align-items:center; gap:.5rem; }
+    .live { display:inline-flex; align-items:center; gap:.4rem; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--green); }
+    .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 rgba(16,217,138,.6); animation:pulse 1.8s infinite; }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(16,217,138,.55);} 70%{box-shadow:0 0 0 9px rgba(16,217,138,0);} 100%{box-shadow:0 0 0 0 rgba(16,217,138,0);} }
+
+    /* ── Tabs (segmented) ── */
+    .tabs { display:flex; gap:.3rem; margin:0 auto 2rem; padding:.35rem; max-width:640px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow-x:auto; }
+    /* En escritorio el menú lateral ya rotula Fichajes/Noticias → el switcher superior sobra. */
+    @media (min-width:1041px){ .tabs { display:none; } }
+    .tab { flex:1 0 auto; appearance:none; background:none; border:0; border-radius:999px; color:rgba(255,255,255,.55); font-size:.92rem; font-weight:700; padding:.65rem .8rem; cursor:pointer; white-space:nowrap; text-decoration:none; text-align:center; transition:all .2s; }
+    .tab:hover { color:#fff; }
+    .tab.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); box-shadow:0 6px 20px -8px rgba(0,212,255,.6); }
+    .tab .count { font-size:.68rem; opacity:.7; margin-left:.35rem; }
+    .tab-link { color:rgba(255,255,255,.5); }
+    .tab-link:hover { color:var(--cyan); background:rgba(255,255,255,.04); }
+
+    h2 { font-size:1.15rem; margin:1.8rem 0 1rem; }
+
+    /* ── Chart / ranking ── */
+    .chart-box { background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1.2rem 1.3rem; margin-bottom:2rem; }
+    .chart-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
+    .chart-head h2 { margin:0; font-size:1.1rem; }
+    .chart-tag { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); background:rgba(0,212,255,.1); border:1px solid rgba(0,212,255,.25); padding:.25rem .6rem; border-radius:999px; }
+    .chart { display:flex; flex-direction:column; gap:.7rem; }
+    .bar-row { display:grid; grid-template-columns:26px minmax(120px,190px) 1fr 74px; align-items:center; gap:.7rem; }
+    .bar-rank { font-size:.82rem; font-weight:800; color:rgba(255,255,255,.35); text-align:center; }
+    .bar-label { font-size:.82rem; color:#fff; font-weight:600; line-height:1.15; overflow:hidden; }
+    .bar-label em { display:flex; align-items:center; gap:.3rem; font-style:normal; font-size:.66rem; font-weight:500; color:rgba(255,255,255,.45); margin-top:.15rem; }
+    .bar-label em img { width:15px; height:15px; object-fit:contain; }
+    .bar-track { height:10px; background:rgba(255,255,255,.06); border-radius:6px; overflow:hidden; }
+    .bar-fill { display:block; height:100%; background:linear-gradient(90deg,var(--green),var(--cyan)); border-radius:6px; box-shadow:0 0 12px -2px rgba(0,212,255,.5); animation:grow 1s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes grow { from{transform:scaleX(0); transform-origin:left;} to{transform:scaleX(1);} }
+    .bar-val { font-size:.84rem; color:var(--green); text-align:right; font-weight:800; }
+
+    /* ── Transfer cards ── */
+    .tgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:.9rem; }
+    .tcard { position:relative; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.09); border-radius:16px; padding:1rem 1.05rem; display:flex; flex-direction:column; gap:.75rem; transition:transform .18s, border-color .18s, box-shadow .18s; }
+    .tcard:hover { transform:translateY(-4px); border-color:rgba(0,212,255,.4); box-shadow:0 14px 30px -18px rgba(0,212,255,.55); }
+    .trank { position:absolute; top:.7rem; right:.85rem; font-size:.95rem; font-weight:800; color:rgba(255,255,255,.18); }
+    .tcard-podium { border-color:rgba(255,255,255,.16); }
+    .tcard-r1 { border-color:rgba(255,215,0,.5); box-shadow:0 0 0 1px rgba(255,215,0,.18) inset; }
+    .tcard-r1 .trank { color:#ffd700; }
+    .tcard-r2 .trank { color:#cfd6df; }
+    .tcard-r3 .trank { color:#e0965b; }
+    .tcard-head { display:flex; flex-direction:column; padding-right:1.4rem; }
+    .tplayer { font-size:1rem; font-weight:700; color:#fff; line-height:1.2; }
+    .tpos { font-size:.72rem; color:rgba(255,255,255,.42); margin-top:.1rem; }
+    .tflow { display:flex; align-items:center; gap:.5rem; padding:.55rem 0; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); }
+    .tclub { display:flex; align-items:center; gap:.45rem; flex:1; min-width:0; font-size:.8rem; color:rgba(255,255,255,.85); }
+    .tclub img, .crest-fallback { width:30px; height:30px; flex:0 0 auto; }
+    .tclub span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .tclub-to { justify-content:flex-end; text-align:right; font-weight:600; color:#fff; }
+    .tarrow { color:var(--cyan); font-size:1.15rem; flex:0 0 auto; }
+    .crest-fallback { display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.08); font-size:.8rem; font-weight:700; color:rgba(255,255,255,.6); }
+    .tfee { align-self:flex-start; font-size:.82rem; font-weight:800; padding:.28rem .75rem; border-radius:999px; border:1px solid; }
+
+    /* ── News board ── */
+    .news-chip { display:inline-block; align-self:flex-start; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#fff; padding:.16rem .5rem; border-radius:6px; }
+    .news-hero { display:flex; flex-direction:column; text-decoration:none; margin-bottom:1.4rem; border-radius:16px; overflow:hidden; background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.1); border-left:4px solid var(--src,var(--cyan)); transition:transform .18s, box-shadow .18s; }
+    .news-hero:hover { transform:translateY(-3px); box-shadow:0 16px 34px -20px var(--src,rgba(0,212,255,.6)); }
+    .news-hero-img { display:block; width:100%; height:230px; background:rgba(0,0,0,.25); }
+    .news-hero-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .news-hero-body { display:flex; flex-direction:column; gap:.55rem; padding:1.2rem 1.5rem 1.4rem; }
+    .news-hero-title { font-size:1.28rem; line-height:1.3; font-weight:800; color:#fff; letter-spacing:-.01em; }
+    .news-hero:hover .news-hero-title { color:var(--src,var(--cyan)); }
+    .news-hero-meta { font-size:.74rem; color:rgba(255,255,255,.45); font-weight:600; }
+    @media (min-width:720px){
+      .news-hero.has-img { flex-direction:row; }
+      .news-hero.has-img .news-hero-img { width:42%; height:auto; min-height:210px; flex:0 0 42%; }
+      .news-hero.has-img .news-hero-body { justify-content:center; flex:1; }
+    }
+    /* Rejilla */
+    .news-list { list-style:none; padding:0; margin:0 0 .5rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem; }
+    .news-item { background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.07); border-radius:12px; overflow:hidden; transition:transform .15s, background .15s, border-color .15s; }
+    .news-item:hover { transform:translateY(-3px); background:rgba(255,255,255,.06); border-color:color-mix(in srgb, var(--src) 45%, transparent); }
+    .news-item a { display:flex; gap:.85rem; padding:0; color:#fff; text-decoration:none; height:100%; align-items:stretch; }
+    .news-thumb { display:block; flex:0 0 96px; width:96px; background:rgba(0,0,0,.25); }
+    .news-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .news-body { display:flex; flex-direction:column; gap:.5rem; padding:.85rem 1rem .85rem .1rem; flex:1; min-width:0; }
+    .news-item:not(.has-img) .news-body { padding-left:1rem; }
+    .news-title { display:block; font-size:.9rem; line-height:1.4; font-weight:600; }
+    .news-item:hover .news-title { color:var(--src,var(--cyan)); }
+    .news-meta { margin-top:auto; font-size:.7rem; color:rgba(255,255,255,.4); font-weight:600; }
+
+    .empty { color:rgba(255,255,255,.4); font-size:.9rem; padding:1.5rem 0; text-align:center; }
+    .disclaimer { margin-top:3rem; font-size:.72rem; color:rgba(255,255,255,.3); line-height:1.6; border-top:1px solid rgba(255,255,255,.07); padding-top:1.2rem; }
+    .back { display:inline-block; margin-top:1.4rem; font-size:.82rem; opacity:.6; color:var(--cyan); text-decoration:none; }
+    .back:hover { opacity:1; }
+
+    .panel { display:none; }
+    .panel.active { display:block; animation:fade .3s ease; }
+    @keyframes fade { from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+    /* Sub-tabs dentro de Fichajes */
+    .subtabs { display:flex; gap:.5rem; flex-wrap:wrap; margin:0 0 1.5rem; }
+    .subtab { appearance:none; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:999px; color:rgba(255,255,255,.6); font-size:.84rem; font-weight:700; padding:.5rem 1rem; cursor:pointer; transition:all .18s; }
+    .subtab:hover { color:#fff; border-color:rgba(255,255,255,.28); }
+    .subtab.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); border-color:transparent; }
+    .subtab .count { font-size:.68rem; opacity:.7; margin-left:.3rem; }
+    .subpanel { display:none; }
+    .subpanel.active { display:block; animation:fade .25s ease; }
+    .sub-note { font-size:.8rem; color:rgba(255,255,255,.42); margin:0 0 1.1rem; }
+
+    /* ── Stats bar (contadores animados) ── */
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; margin:0 0 1.8rem; }
+    .stat { display:flex; flex-direction:column; align-items:center; gap:.15rem; text-align:center; padding:1rem .6rem; border-radius:14px; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }
+    .stat-ico { font-size:1.3rem; }
+    .stat-val { font-size:1.35rem; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1.1; }
+    .stat-val.is-money { background:linear-gradient(92deg,var(--green),var(--cyan)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .stat-lbl { font-size:.68rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.04em; font-weight:600; }
+    @media (max-width:560px){ .stats { grid-template-columns:repeat(2,1fr); } }
+
+    /* ── Buscador ── */
+    .searchbar { position:relative; display:flex; align-items:center; margin:0 0 1.4rem; }
+    .searchbar .search-ico { position:absolute; left:.9rem; font-size:.95rem; opacity:.5; pointer-events:none; }
+    .searchbar input { width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:999px; color:#fff; font-size:.92rem; padding:.7rem 2.4rem; outline:none; transition:border-color .15s, background .15s; }
+    .searchbar input:focus { border-color:var(--cyan); background:rgba(255,255,255,.07); }
+    .searchbar input::placeholder { color:rgba(255,255,255,.4); }
+    .search-clear { position:absolute; right:1rem; cursor:pointer; font-size:.8rem; opacity:.6; color:#fff; }
+    .search-clear:hover { opacity:1; }
+    .search-empty { text-align:center; color:rgba(255,255,255,.45); font-size:.9rem; padding:1.5rem 0; }
+    .tcard.hide, .news-item.hide, .news-hero.hide, .news-group.hide { display:none !important; }
+
+    /* ── Filtro por medio (noticias) ── */
+    .nfilters { display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.5rem; }
+    .nfilter { appearance:none; cursor:pointer; font-size:.78rem; font-weight:700; padding:.42rem .9rem; border-radius:999px; color:rgba(255,255,255,.7); background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); transition:all .15s; }
+    .nfilter:hover { color:#fff; border-color:var(--src,rgba(255,255,255,.3)); }
+    .nfilter.active { color:#fff; background:var(--src,#1d6fd6); border-color:transparent; }
+
+    /* ── Refresh pill (auto-refresh) ── */
+    .refresh-pill { position:fixed; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:50; cursor:pointer; font-size:.85rem; font-weight:700; color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); padding:.65rem 1.2rem; border-radius:999px; box-shadow:0 10px 30px -8px rgba(0,212,255,.6); animation:pop .3s ease; }
+    .refresh-pill span { text-decoration:underline; }
+    @keyframes pop { from{opacity:0; transform:translate(-50%,10px);} to{opacity:1; transform:translate(-50%,0);} }
+
+    @media (max-width:640px){
+      .bar-row { grid-template-columns:20px 1fr 60px; }
+      .bar-track { display:none; }
+    }
+  </style>
+</head>
+<body class="has-side-nav">
+  ${GX_SIDE_NAV('transfers')}
+  <header class="hero">
+    <h1>Mercado de Fichajes</h1>
+    <p><span class="live">En directo</span> · <span class="ago" data-updated="${transfers.updated || news.updated || Date.now()}">actualizado ${_timeAgo(transfers.updated) || _timeAgo(news.updated) || 'ahora'}</span></p>
+  </header>
+
+  <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="fichajes" role="tab">💸 Fichajes<span class="count">${transfers.list.length}</span></button>
+    <button class="tab" data-tab="noticias" role="tab">📰 Noticias<span class="count">${(news.fichajes.length + news.general.length)}</span></button>
+  </nav>
+
+  <section id="tab-fichajes" class="panel active" role="tabpanel">
+    ${_statsHTML(transfers)}
+
+    <div class="subtabs">
+      <button class="subtab active" data-sub="top">🏆 Bombazos de la temporada</button>
+      <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
+    </div>
+
+    <div class="searchbar">
+      <span class="search-ico">🔍</span>
+      <input id="tsearch" type="search" placeholder="Buscar jugador, club o posición…" autocomplete="off" aria-label="Buscar fichajes"/>
+      <span class="search-clear" id="tsearchClear" hidden>✕</span>
+    </div>
+    <p class="search-empty" id="searchEmpty" hidden>Sin resultados para tu búsqueda.</p>
+
+    <div id="sub-top" class="subpanel active">
+      ${_chartHTML(transfers.top)}
+      ${transfers.list.length
+        ? `<h2>💎 Los más caros del mercado</h2><div class="tgrid">${transfers.list.map((t, i) => _transferCardHTML(t, i + 1)).join('')}</div>`
+        : '<p class="empty">No hay datos de fichajes disponibles ahora mismo. Vuelve en unos minutos.</p>'}
+    </div>
+
+    <div id="sub-latest" class="subpanel">
+      <p class="sub-note">Operaciones cerradas más recientes, en orden cronológico.</p>
+      ${(transfers.latest && transfers.latest.length)
+        ? `<div class="tgrid">${transfers.latest.map(t => _transferCardHTML(t)).join('')}</div>`
+        : '<p class="empty">No hay fichajes recientes disponibles ahora mismo.</p>'}
+    </div>
+  </section>
+
+  <section id="tab-noticias" class="panel" role="tabpanel">
+    ${_newsFilterHTML([...news.fichajes, ...news.general])}
+    ${_newsSectionHTML('🔄 Mercado de fichajes', news.fichajes, 13)}
+    ${_newsSectionHTML('🗞️ Actualidad', news.general, 13)}
+    ${(!news.fichajes.length && !news.general.length)
+      ? '<p class="empty">No hay noticias disponibles ahora mismo.</p>' : ''}
+  </section>
+
+  <p class="disclaimer">Datos de fichajes y escudos: Transfermarkt. Titulares: Marca, AS, SPORT, Mundo Deportivo.
+  GolazoX agrega y enlaza a las fuentes originales con fines informativos; no reproduce el contenido de las noticias.
+  La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
+  <a class="back" href="/">← Volver al simulador</a>
+
+  <script src="/fichajes.js?v=3" defer></script>
+</body>
+</html>`;
+
+app.get('/fichajes', _newsLimit, async (_req, res) => {
+  try {
+    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
+    res.set('Cache-Control', 'public, max-age=300')
+       .type('text/html')
+       .send(FICHAJES_HTML(transfers, news));
+  } catch (e) {
+    console.error('[fichajes] error:', e.message);
+    res.status(503).type('text/html').send(FICHAJES_HTML(
+      { list: [], top: [], latest: [], updated: 0 },
+      { fichajes: [], general: [], updated: 0 },
+    ));
+  }
+});
+
+// Ping ligero para el auto-refresh: devuelve solo el timestamp de los datos.
+app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
+  try {
+    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
+    const updated = Math.max(transfers.updated || 0, news.updated || 0);
+    res.set('Cache-Control', 'no-store').json({ updated });
+  } catch {
+    res.json({ updated: 0 });
+  }
+});
+
+// ═══════════════════════ CLASIFICACIONES ═══════════════════════
+// Escudo de club (reutiliza el proxy /tmbadge). `badge` puede ser null.
+const _crest = (badge, name, size = 26) => badge
+  ? `<img src="${_esc(badge)}" alt="" loading="lazy" width="${size}" height="${size}" style="width:${size}px;height:${size}px;object-fit:contain"/>`
+  : `<span class="crest-fallback" style="width:${size}px;height:${size}px">${_esc((name || '?').slice(0, 1))}</span>`;
+
+// Zona de la tabla según posición (UCL, Europa, descenso) → clase CSS.
+const _zone = (pos, total) => {
+  if (pos <= 4)            return 'z-ucl';
+  if (pos === 5)           return 'z-uel';
+  if (pos === 6)           return 'z-conf';
+  if (pos > total - 3)     return 'z-rel';
+  return '';
+};
+
+const _standingsRowHTML = (r, total) => {
+  const [gf, ga] = (r.goals || '0:0').split(':');
+  const gdNum = parseInt(r.gd, 10) || 0;
+  const gdCls = gdNum > 0 ? 'pos' : (gdNum < 0 ? 'neg' : '');
+  return `<tr class="${_zone(r.pos, total)}" data-search="${_esc((r.club || '').toLowerCase())}">
+    <td class="c-pos">${r.pos}</td>
+    <td class="c-club"><span class="crest">${_crest(r.badge, r.club, 24)}</span><span class="club-name">${_esc(r.club)}</span></td>
+    <td class="c-num">${r.played}</td>
+    <td class="c-num hide-sm">${r.won}</td>
+    <td class="c-num hide-sm">${r.drawn}</td>
+    <td class="c-num hide-sm">${r.lost}</td>
+    <td class="c-num hide-md">${_esc(gf)}:${_esc(ga)}</td>
+    <td class="c-num c-gd ${gdCls}">${gdNum > 0 ? '+' + gdNum : gdNum}</td>
+    <td class="c-pts">${r.points}</td>
+  </tr>`;
+};
+
+const _scorerRowHTML = (s, i) => `
+  <li class="scorer">
+    <span class="sc-rank">${i + 1}</span>
+    <span class="sc-crest">${_crest(s.badge, s.club, 22)}</span>
+    <span class="sc-name">${_esc(s.player)}<em>${_esc(s.club)}</em></span>
+    <span class="sc-goals">${s.goals}<small>gol${s.goals === 1 ? '' : 'es'}</small></span>
+  </li>`;
+
+// Limpia la hora del calendario ("desconocido" / vacío → sin hora).
+const _fxTime = (t) => (!t || /desconocido/i.test(t)) ? '' : t;
+
+// Una jornada del calendario.
+const _fxRoundHTML = (rnd) => {
+  const matches = rnd.matches.map(m => {
+    const mid = m.played
+      ? `<span class="fx-score">${_esc(m.score)}</span>`
+      : `<span class="fx-vs">${_fxTime(m.time) ? _esc(_fxTime(m.time)) : 'vs'}</span>`;
+    // Boton "Simular": solo si ambos equipos resuelven a un slug del catalogo.
+    const hs = _resolveFixtureSlug(m.home.name);
+    const as = _resolveFixtureSlug(m.away.name);
+    const canSim = hs && as && hs !== as;
+    // Reservamos siempre la columna (boton o hueco) para que todas las filas se alineen.
+    const simBtn = canSim
+      ? `<a class="fx-sim" href="/?a=${encodeURIComponent(hs)}&amp;b=${encodeURIComponent(as)}" title="Simular ${_esc(m.home.name)} vs ${_esc(m.away.name)}" aria-label="Simular ${_esc(m.home.name)} contra ${_esc(m.away.name)}">\u25B6</a>`
+      : `<span class="fx-sim-empty" aria-hidden="true"></span>`;
+    return `<li class="fx-match">
+      <span class="fx-team fx-home"><span class="fx-name">${_esc(m.home.name)}</span><span class="fx-crest">${_crest(m.home.badge, m.home.name, 22)}</span></span>
+      <span class="fx-mid${m.played ? ' is-played' : ''}">${mid}</span>
+      <span class="fx-team fx-away"><span class="fx-crest">${_crest(m.away.badge, m.away.name, 22)}</span><span class="fx-name">${_esc(m.away.name)}</span></span>
+      ${simBtn}
+    </li>`;
+  }).join('');
+  // Fecha de referencia de la jornada = fecha del primer partido.
+  const day = rnd.matches[0] ? rnd.matches[0].date : '';
+  return `<div class="fx-round">
+    <div class="fx-round-head"><span class="fx-jornada">Jornada ${rnd.round}</span><span class="fx-date">${_esc(day)}</span></div>
+    <ul class="fx-list">${matches}</ul>
+  </div>`;
+};
+
+const _fixturesHTML = (lg) => {
+  if (!lg.fixtures || !lg.fixtures.length) {
+    return '<p class="empty">Calendario no disponible todavía para esta liga.</p>';
+  }
+  return `<div class="fx-head">
+      <h2>📅 Próximos partidos</h2>
+      <span class="fx-tag">Temporada ${_esc(lg.fxSeason)}</span>
+    </div>
+    <div class="fx-rounds">${lg.fixtures.map(_fxRoundHTML).join('')}</div>`;
+};
+
+const _leaguePanelHTML = (lg, idx) => {
+  const total = lg.table.length;
+  const rows = lg.table.map(r => _standingsRowHTML(r, total)).join('');
+  const scorers = lg.scorers.length
+    ? `<aside class="scorers-box">
+        <div class="sc-head"><h2>⚽ Máximos goleadores</h2><span class="sc-tag">${_esc(lg.season)}</span></div>
+        <ol class="scorers">${lg.scorers.map(_scorerRowHTML).join('')}</ol>
+      </aside>`
+    : '';
+  return `<section id="lg-${_esc(lg.code)}" class="panel${idx === 0 ? ' active' : ''}" role="tabpanel">
+    <div class="lgviews">
+      <button class="lgview active" data-view="table">📊 Clasificación</button>
+      <button class="lgview" data-view="calendar">📅 Calendario</button>
+    </div>
+
+    <div class="lgview-panel view-table active">
+    <div class="lg-layout">
+      <div class="table-box">
+        <div class="tbl-head"><h2>${lg.flag} ${_esc(lg.name)}</h2><span class="tbl-tag">Temporada ${_esc(lg.season)}</span></div>
+        <div class="tbl-scroll">
+        <table class="ltable">
+          <thead><tr>
+            <th class="c-pos">#</th><th class="c-club">Equipo</th>
+            <th class="c-num" title="Partidos jugados">PJ</th>
+            <th class="c-num hide-sm" title="Ganados">G</th>
+            <th class="c-num hide-sm" title="Empatados">E</th>
+            <th class="c-num hide-sm" title="Perdidos">P</th>
+            <th class="c-num hide-md" title="Goles a favor y en contra">GF:GC</th>
+            <th class="c-num" title="Diferencia de goles">DG</th>
+            <th class="c-pts">Pts</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        </div>
+        <div class="tbl-legend">
+          <span><i class="lg-ucl"></i> Champions</span>
+          <span><i class="lg-uel"></i> Europa League</span>
+          <span><i class="lg-conf"></i> Conference</span>
+          <span><i class="lg-rel"></i> Descenso</span>
+        </div>
+      </div>
+      ${scorers}
+    </div>
+    </div>
+
+    <div class="lgview-panel view-calendar">
+      ${_fixturesHTML(lg)}
+    </div>
+  </section>`;
+};
+
+const CLASIFICACIONES_HTML = (standings) => {
+  const leagues = standings.leagues || [];
+  const tabs = leagues.map((lg, i) =>
+    `<button class="tab${i === 0 ? ' active' : ''}" data-tab="${_esc(lg.code)}" role="tab">${lg.flag} <span class="tab-txt">${_esc(lg.name)}</span></button>`
+  ).join('');
+  const panels = leagues.map(_leaguePanelHTML).join('');
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Clasificaciones y goleadores de las grandes ligas · GolazoX</title>
+  <meta name="description" content="Clasificaciones de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1 con máximos goleadores. Tablas actualizadas automáticamente."/>
+  <meta name="robots" content="index,follow,max-image-preview:large"/>
+  <link rel="canonical" href="${SITE_URL.replace(/\/$/, '')}/clasificaciones"/>
+  <link rel="alternate" hreflang="es" href="${SITE_URL.replace(/\/$/, '')}/clasificaciones"/>
+  <link rel="alternate" hreflang="x-default" href="${SITE_URL.replace(/\/$/, '')}/clasificaciones"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="GolazoX"/>
+  <meta property="og:locale" content="es_ES"/>
+  <meta property="og:title" content="Clasificaciones y goleadores de las grandes ligas · GolazoX"/>
+  <meta property="og:description" content="Clasificaciones de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1 con máximos goleadores. Tablas actualizadas automáticamente."/>
+  <meta property="og:url" content="${SITE_URL.replace(/\/$/, '')}/clasificaciones"/>
+  <meta property="og:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Clasificaciones y goleadores de las grandes ligas · GolazoX"/>
+  <meta name="twitter:description" content="Clasificaciones de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1 con máximos goleadores."/>
+  <meta name="twitter:image" content="${SITE_URL.replace(/\/$/, '')}/og-image.png?v=2"/>
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Clasificaciones y goleadores de las grandes ligas',
+    'description': 'Clasificaciones de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1 con máximos goleadores.',
+    'url': `${SITE_URL.replace(/\/$/, '')}/clasificaciones`,
+    'inLanguage': 'es',
+    'isPartOf': { '@type': 'WebSite', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, '') },
+    'publisher': { '@type': 'Organization', 'name': 'GolazoX', 'url': SITE_URL.replace(/\/$/, ''), 'logo': `${SITE_URL.replace(/\/$/, '')}/golazox-coin.png` },
+    'mainEntity': { '@type': 'ItemList', 'itemListElement': leagues.map((lg, i) => ({ '@type': 'ListItem', 'position': i + 1, 'name': lg.name })) },
+    'breadcrumb': { '@type': 'BreadcrumbList', 'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'GolazoX', 'item': SITE_URL.replace(/\/$/, '') },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Clasificaciones', 'item': `${SITE_URL.replace(/\/$/, '')}/clasificaciones` }
+    ] }
+  })}</script>
+  <link rel="icon" type="image/png" href="/golazox-coin.png"/>
+  <link rel="stylesheet" href="/style.css?v=26"/>
+  <style>
+    :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
+    * { box-sizing:border-box; }
+    body { max-width:1080px; margin:0 auto; padding:0 1.1rem 4rem; }
+
+    .hero { position:relative; text-align:center; padding:3rem 1rem 2.2rem; margin-bottom:.5rem; overflow:hidden; }
+    .hero::before { content:""; position:absolute; inset:-40% 0 auto 0; height:340px; background:radial-gradient(60% 100% at 50% 0%, rgba(0,212,255,.16), transparent 70%); pointer-events:none; z-index:-1; }
+    .hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:800; letter-spacing:-.02em; margin:0 0 .5rem; background:linear-gradient(92deg,#fff 10%,var(--cyan) 55%,var(--green) 95%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero p { font-size:.9rem; color:rgba(255,255,255,.5); margin:0; display:inline-flex; align-items:center; gap:.5rem; }
+    .live { display:inline-flex; align-items:center; gap:.4rem; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--green); }
+    .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 rgba(16,217,138,.6); animation:pulse 1.8s infinite; }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(16,217,138,.55);} 70%{box-shadow:0 0 0 9px rgba(16,217,138,0);} 100%{box-shadow:0 0 0 0 rgba(16,217,138,0);} }
+
+    /* Menú principal (consistente con la página de fichajes) */
+    .mainnav { display:flex; gap:.3rem; margin:0 auto 1.6rem; padding:.35rem; max-width:560px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow-x:auto; }
+    .mnav { flex:1 0 auto; text-align:center; text-decoration:none; border-radius:999px; color:rgba(255,255,255,.55); font-size:.9rem; font-weight:700; padding:.6rem .85rem; white-space:nowrap; transition:all .2s; }
+    .mnav:hover { color:#fff; }
+    .mnav.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); box-shadow:0 6px 20px -8px rgba(0,212,255,.6); }
+
+    /* Tabs de liga */
+    .tabs { display:flex; align-items:center; gap:.4rem; margin:0 auto 2rem; padding:.35rem; max-width:760px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow-x:auto; }
+    .tab { flex:1 0 auto; appearance:none; background:none; border:0; border-radius:12px; color:rgba(255,255,255,.55); font-size:.9rem; font-weight:700; padding:.6rem .9rem; cursor:pointer; white-space:nowrap; text-decoration:none; text-align:center; transition:all .2s; }
+    .tab:hover { color:#fff; }
+    .tab.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); box-shadow:0 6px 20px -8px rgba(0,212,255,.6); }
+
+    .panel { display:none; }
+    .panel.active { display:block; animation:fade .3s ease; }
+    @keyframes fade { from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+    /* Sub-toggle Clasificación / Calendario */
+    .lgviews { display:flex; gap:.5rem; margin:0 0 1.3rem; flex-wrap:wrap; }
+    .lgview { appearance:none; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:999px; color:rgba(255,255,255,.6); font-size:.84rem; font-weight:700; padding:.5rem 1rem; cursor:pointer; transition:all .18s; }
+    .lgview:hover { color:#fff; border-color:rgba(255,255,255,.28); }
+    .lgview.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); border-color:transparent; }
+    .lgview-panel { display:none; }
+    .lgview-panel.active { display:block; animation:fade .25s ease; }
+
+    /* Calendario */
+    .fx-head { display:flex; align-items:center; justify-content:space-between; gap:.6rem; margin-bottom:1.1rem; }
+    .fx-head h2 { margin:0; font-size:1.1rem; }
+    .fx-tag { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); background:rgba(0,212,255,.1); border:1px solid rgba(0,212,255,.25); padding:.25rem .6rem; border-radius:999px; white-space:nowrap; }
+    .fx-rounds { display:grid; grid-template-columns:1fr; gap:1.1rem; }
+    @media (min-width:760px){ .fx-rounds { grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); align-items:start; } }
+    .fx-round { background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1rem 1.1rem 1.1rem; }
+    .fx-round-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; margin-bottom:.8rem; padding-bottom:.6rem; border-bottom:1px solid rgba(255,255,255,.08); }
+    .fx-jornada { font-size:.9rem; font-weight:800; color:#fff; }
+    .fx-date { font-size:.72rem; color:rgba(255,255,255,.45); font-weight:600; text-transform:capitalize; }
+    .fx-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.15rem; }
+    .fx-match { display:grid; grid-template-columns:1fr auto 1fr 26px; align-items:center; gap:.5rem; padding:.5rem .2rem; border-radius:8px; transition:background .15s; }
+    .fx-match:hover { background:rgba(255,255,255,.035); }
+    .fx-sim { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:7px; font-size:.6rem; color:#fff; text-decoration:none; background:linear-gradient(135deg,var(--cyan,#00d4ff),#0077ff); box-shadow:0 2px 6px rgba(0,119,255,.35); opacity:.55; transition:opacity .15s, transform .15s; }
+    .fx-sim-empty { display:inline-block; width:26px; height:26px; }
+    .fx-match:hover .fx-sim { opacity:1; }
+    .fx-sim:hover { transform:scale(1.12); opacity:1; }
+    .fx-team { display:flex; align-items:center; gap:.45rem; min-width:0; font-size:.82rem; font-weight:600; color:#fff; }
+    .fx-home { justify-content:flex-end; text-align:right; }
+    .fx-away { justify-content:flex-start; text-align:left; }
+    .fx-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; line-height:1.2; }
+    .fx-team .fx-crest { flex:0 0 auto; display:inline-flex; }
+    .fx-crest img, .fx-crest .crest-fallback { width:22px; height:22px; }
+    .fx-mid { flex:0 0 auto; min-width:58px; text-align:center; }
+    .fx-vs { font-size:.72rem; font-weight:700; color:rgba(255,255,255,.5); background:rgba(255,255,255,.05); border-radius:6px; padding:.2rem .45rem; display:inline-block; }
+    .fx-mid.is-played .fx-score { font-size:.9rem; font-weight:800; color:var(--cyan); background:rgba(0,212,255,.1); border-radius:6px; padding:.2rem .5rem; display:inline-block; }
+
+    .lg-layout { display:grid; grid-template-columns:1fr; gap:1.4rem; }
+    @media (min-width:900px){ .lg-layout { grid-template-columns:1fr 320px; align-items:start; } }
+
+    .table-box, .scorers-box { background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1.1rem 1.2rem 1.2rem; }
+    .tbl-head, .sc-head { display:flex; align-items:center; justify-content:space-between; gap:.6rem; margin-bottom:1rem; }
+    .tbl-head h2, .sc-head h2 { margin:0; font-size:1.1rem; }
+    .tbl-tag, .sc-tag { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); background:rgba(0,212,255,.1); border:1px solid rgba(0,212,255,.25); padding:.25rem .6rem; border-radius:999px; white-space:nowrap; }
+
+    .tbl-scroll { overflow-x:auto; }
+    .ltable { width:100%; border-collapse:collapse; font-size:.86rem; }
+    .ltable th { font-size:.64rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.4); font-weight:700; padding:.4rem .35rem; text-align:center; border-bottom:1px solid rgba(255,255,255,.1); }
+    .ltable td { padding:.5rem .35rem; text-align:center; border-bottom:1px solid rgba(255,255,255,.05); color:rgba(255,255,255,.8); }
+    .ltable tbody tr { transition:background .15s; }
+    .ltable tbody tr:hover { background:rgba(255,255,255,.04); }
+    .c-pos { width:30px; font-weight:800; color:rgba(255,255,255,.45); position:relative; }
+    .c-club { text-align:left !important; }
+    .c-club .crest { display:inline-flex; vertical-align:middle; width:24px; margin-right:.5rem; }
+    .club-name { vertical-align:middle; font-weight:600; color:#fff; }
+    .c-num { color:rgba(255,255,255,.7); font-variant-numeric:tabular-nums; }
+    .c-gd.pos { color:var(--green); } .c-gd.neg { color:#ff6b6b; }
+    .c-pts { font-weight:800; color:#fff; width:44px; font-variant-numeric:tabular-nums; }
+    .crest-fallback { display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.08); font-size:.72rem; font-weight:700; color:rgba(255,255,255,.6); }
+
+    /* Zonas (borde izquierdo de color en la posición) */
+    .ltable tbody tr .c-pos::before { content:""; position:absolute; left:0; top:6px; bottom:6px; width:3px; border-radius:3px; background:transparent; }
+    tr.z-ucl  .c-pos::before { background:var(--green); }
+    tr.z-uel  .c-pos::before { background:var(--cyan); }
+    tr.z-conf .c-pos::before { background:#7c9cff; }
+    tr.z-rel  .c-pos::before { background:#ff6b6b; }
+
+    .tbl-legend { display:flex; flex-wrap:wrap; gap:.6rem 1.1rem; margin-top:1rem; font-size:.68rem; color:rgba(255,255,255,.45); }
+    .tbl-legend span { display:inline-flex; align-items:center; gap:.35rem; }
+    .tbl-legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+    .lg-ucl { background:var(--green); } .lg-uel { background:var(--cyan); } .lg-conf { background:#7c9cff; } .lg-rel { background:#ff6b6b; }
+
+    /* Goleadores */
+    .scorers { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.55rem; }
+    .scorer { display:flex; align-items:center; gap:.6rem; }
+    .sc-rank { flex:0 0 20px; text-align:center; font-size:.8rem; font-weight:800; color:rgba(255,255,255,.35); }
+    .scorer:nth-child(1) .sc-rank { color:#ffd700; } .scorer:nth-child(2) .sc-rank { color:#cfd6df; } .scorer:nth-child(3) .sc-rank { color:#e0965b; }
+    .sc-crest { flex:0 0 22px; display:inline-flex; }
+    .sc-name { flex:1; min-width:0; font-size:.85rem; font-weight:600; color:#fff; line-height:1.2; overflow:hidden; }
+    .sc-name em { display:block; font-style:normal; font-size:.68rem; font-weight:500; color:rgba(255,255,255,.42); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .sc-goals { flex:0 0 auto; font-size:1.05rem; font-weight:800; color:var(--green); text-align:right; }
+    .sc-goals small { display:block; font-size:.58rem; font-weight:600; color:rgba(255,255,255,.4); text-transform:uppercase; letter-spacing:.04em; }
+
+    .searchbar { position:relative; display:flex; align-items:center; margin:0 auto 1.6rem; max-width:420px; }
+    .searchbar .search-ico { position:absolute; left:.9rem; font-size:.95rem; opacity:.5; pointer-events:none; }
+    .searchbar input { width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:999px; color:#fff; font-size:.92rem; padding:.65rem 2.4rem; outline:none; transition:border-color .15s, background .15s; }
+    .searchbar input:focus { border-color:var(--cyan); background:rgba(255,255,255,.07); }
+    .searchbar input::placeholder { color:rgba(255,255,255,.4); }
+    .search-clear { position:absolute; right:1rem; cursor:pointer; font-size:.8rem; opacity:.6; color:#fff; }
+    .ltable tr.hide { display:none !important; }
+
+    .empty { color:rgba(255,255,255,.4); font-size:.9rem; padding:2rem 0; text-align:center; }
+    .disclaimer { margin-top:3rem; font-size:.72rem; color:rgba(255,255,255,.3); line-height:1.6; border-top:1px solid rgba(255,255,255,.07); padding-top:1.2rem; }
+    .back { display:inline-block; margin-top:1.4rem; font-size:.82rem; opacity:.6; color:var(--cyan); text-decoration:none; }
+    .back:hover { opacity:1; }
+
+    @media (max-width:640px){ .hide-sm { display:none !important; } }
+    @media (max-width:440px){ .hide-md { display:none !important; } .tab-txt { display:none; } .tab { padding:.6rem .8rem; font-size:1.1rem; } }
+  </style>
+</head>
+<body class="has-side-nav">
+  ${GX_SIDE_NAV('standings')}
+  <header class="hero">
+    <h1>Clasificaciones</h1>
+    <p><span class="live">En directo</span> · <span class="ago" data-updated="${standings.updated || Date.now()}">actualizado ${_timeAgo(standings.updated) || 'ahora'}</span></p>
+  </header>
+
+  ${leagues.length ? `
+  <div class="searchbar">
+    <span class="search-ico">🔍</span>
+    <input id="lsearch" type="search" placeholder="Buscar equipo…" autocomplete="off" aria-label="Buscar equipo"/>
+    <span class="search-clear" id="lsearchClear" hidden>✕</span>
+  </div>
+
+  <nav class="tabs" role="tablist">${tabs}</nav>
+  ${panels}
+  ` : '<p class="empty">No hay clasificaciones disponibles ahora mismo. Vuelve en unos minutos.</p>'}
+
+  <p class="disclaimer">Datos de clasificaciones, goleadores y escudos: Transfermarkt. Cifras de una tabla deportiva pública, actualizadas automáticamente.
+  En pretemporada se muestra la última temporada con partidos disputados.</p>
+  <a class="back" href="/">← Volver al simulador</a>
+
+  <script src="/clasificaciones.js" defer></script>
+</body>
+</html>`;
+};
+
+app.get('/clasificaciones', _newsLimit, async (_req, res) => {
+  try {
+    const standings = await getStandings();
+    res.set('Cache-Control', 'public, max-age=600')
+       .type('text/html')
+       .send(CLASIFICACIONES_HTML(standings));
+  } catch (e) {
+    console.error('[clasificaciones] error:', e.message);
+    res.status(503).type('text/html').send(CLASIFICACIONES_HTML({ leagues: [], updated: 0 }));
   }
 });
 
