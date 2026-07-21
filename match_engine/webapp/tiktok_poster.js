@@ -25,7 +25,7 @@ const https = require('https');
 
 // ── TikTok API constants ──────────────────────────────────────────────────────
 const TIKTOK_API  = 'open.tiktokapis.com';
-const INIT_PATH   = '/v2/post/publish/video/init/';
+const INIT_PATH   = '/v2/post/publish/inbox/video/init/';
 const STATUS_PATH = '/v2/post/publish/status/fetch/';
 
 // ── Default hashtags ──────────────────────────────────────────────────────────
@@ -101,7 +101,7 @@ async function postToTikTok(videoPath, title, hashtags = DEFAULT_HASHTAGS) {
 
   const videoBuffer = fs.readFileSync(videoPath);
   const videoSize   = videoBuffer.length;
-  const CHUNK_SIZE  = 10 * 1024 * 1024; // 10 MB chunks
+  const CHUNK_SIZE  = Math.min(10 * 1024 * 1024, videoSize); // chunk ≤ file size
 
   console.log(`[tiktok] Uploading ${path.basename(videoPath)} (${(videoSize / 1024 / 1024).toFixed(1)} MB)`);
 
@@ -111,18 +111,11 @@ async function postToTikTok(videoPath, title, hashtags = DEFAULT_HASHTAGS) {
 
   // 1. Init upload
   const initBody = {
-    post_info: {
-      title:         caption.slice(0, 2200),
-      privacy_level: 'SELF_ONLY', // ← cambiar a 'PUBLIC_TO_EVERYONE' cuando esté listo
-      disable_duet:  false,
-      disable_stitch: false,
-      disable_comment: false,
-    },
     source_info: {
-      source:          'FILE_UPLOAD',
-      video_size:      videoSize,
-      chunk_size:      CHUNK_SIZE,
-      total_chunk_count: Math.ceil(videoSize / CHUNK_SIZE),
+      source:             'FILE_UPLOAD',
+      video_size:         videoSize,
+      chunk_size:         CHUNK_SIZE,
+      total_chunk_count:  Math.ceil(videoSize / CHUNK_SIZE),
     },
   };
 
@@ -173,9 +166,9 @@ async function postToTikTok(videoPath, title, hashtags = DEFAULT_HASHTAGS) {
     const st = statusResp.data?.status;
     console.log(`[tiktok]   status=${st}`);
 
-    if (st === 'PUBLISH_COMPLETE') {
-      console.log(`[tiktok] Published! publish_id=${publishId}`);
-      return { publishId, status: 'published' };
+    if (st === 'PUBLISH_COMPLETE' || st === 'SEND_TO_USER_INBOX') {
+      console.log(`[tiktok] ✅ Done! status=${st}, publish_id=${publishId}`);
+      return { publishId, status: st };
     }
     if (st === 'FAILED') {
       throw new Error(`[tiktok] Publish failed: ${JSON.stringify(statusResp)}`);

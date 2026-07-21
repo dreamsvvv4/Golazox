@@ -49,8 +49,10 @@ if (callbackArg) {
     console.log(`[debug] code       : "${code.slice(0,20)}..." (len=${code.length})`);
     console.log(`[debug] verifier   : "${verifier.slice(0,20)}..." (len=${verifier.length})`);
 
+    const clientSecret = getEnv('TIKTOK_CLIENT_SECRET');
     const body = new URLSearchParams({
       client_key:    clientKey,
+      client_secret: clientSecret,
       code,
       grant_type:    'authorization_code',
       redirect_uri:  'https://golazox.com/tiktok-callback',
@@ -58,7 +60,7 @@ if (callbackArg) {
     }).toString();
 
     console.log('\n[TikTok Auth] Intercambiando codigo...');
-    console.log(`[debug] body: ${body.slice(0, 120)}...`);
+    console.log(`[debug] body: client_key=${clientKey}&client_secret=***&code=${code.slice(0,20)}...`);
 
     const res = await fetch('https://open.tiktokapis.com/v2/oauth/token/', {
       method: 'POST',
@@ -79,6 +81,11 @@ if (callbackArg) {
       envStr = envStr.replace(/TIKTOK_REFRESH_TOKEN=[^\r\n]*/, `TIKTOK_REFRESH_TOKEN=${data.refresh_token}`);
     } else {
       envStr += `\nTIKTOK_REFRESH_TOKEN=${data.refresh_token}`;
+    }
+    if (/TIKTOK_OPEN_ID=/.test(envStr)) {
+      envStr = envStr.replace(/TIKTOK_OPEN_ID=[^\r\n]*/, `TIKTOK_OPEN_ID=${data.open_id}`);
+    } else {
+      envStr += `\nTIKTOK_OPEN_ID=${data.open_id}`;
     }
     fs.writeFileSync(envPath, envStr);
     fs.unlinkSync(verifierPath); // cleanup
