@@ -3707,24 +3707,30 @@ const _agendaHTML = (events) => {
   }).join('')}</div>`;
 };
 
-// Guía de TV: partidos de fútbol de HOY con hora, competición, equipos y canal
-// (fuente: Marca). Datos factuales; los canales son de la parrilla española.
+// Guía de TV: partidos de fútbol con hora, competición, equipos y canal,
+// agrupados por día (Hoy / Mañana / …). Fuente: Marca. Datos factuales;
+// los canales son de la parrilla española.
 const _tvGuideHTML = (tv) => {
-  const events = (tv && tv.events) || [];
-  if (!events.length) return '';
-  return `<div class="tvguide">
-    <div class="tvguide-head">
-      <h2>📺 Fútbol en TV · Hoy</h2>
-      <span class="tvguide-src">Datos: Marca · parrilla España</span>
-    </div>
-    <div class="tvlist">${events.map(e => `<div class="tvitem${e.big ? ' tvbig' : ''}">
+  const days = (tv && tv.days) || [];
+  const total = days.reduce((s, d) => s + (d.events ? d.events.length : 0), 0);
+  if (!total) return '';
+  const _row = (e) => `<div class="tvitem${e.big ? ' tvbig' : ''}">
       <span class="tvhour">${_esc(e.time || '')}</span>
       <span class="tvbody">
         <span class="tvteams">${_esc(e.teams)}</span>
         ${e.competition ? `<span class="tvcomp">${_esc(e.competition)}</span>` : ''}
       </span>
       ${e.channel ? `<span class="tvchannel">${_esc(e.channel)}</span>` : ''}
-    </div>`).join('')}</div>
+    </div>`;
+  return `<div class="tvguide">
+    <div class="tvguide-head">
+      <h2>📺 Fútbol en TV</h2>
+      <span class="tvguide-src">Datos: Marca · parrilla España</span>
+    </div>
+    ${days.map(d => `<div class="tvday">
+      <div class="tvday-label">${_esc(d.label)}${d.dateStr ? ` <span class="tvday-date">${_esc(d.dateStr)}</span>` : ''}</div>
+      <div class="tvlist">${d.events.map(_row).join('')}</div>
+    </div>`).join('')}
   </div>`;
 };
 
@@ -3754,7 +3760,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const values   = extra.values   || { list: [] };
   const stats    = extra.stats    || { scorers: [], assists: [], season: '' };
   const agenda   = extra.agenda   || { events: [] };
-  const tvGuide  = extra.tvGuide  || { events: [] };
+  const tvGuide  = extra.tvGuide  || { days: [] };
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
@@ -4044,6 +4050,9 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .tvguide-head { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.4rem; margin-bottom:.7rem; }
     .tvguide-head h2 { font-size:1.05rem; font-weight:800; color:#fff; margin:0; }
     .tvguide-src { font-size:.64rem; color:rgba(255,255,255,.38); text-transform:uppercase; letter-spacing:.04em; }
+    .tvday { margin-bottom:.9rem; }
+    .tvday-label { font-size:.74rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--cyan); margin:0 0 .45rem; }
+    .tvday-date { color:rgba(255,255,255,.4); font-weight:600; }
     .tvlist { display:flex; flex-direction:column; gap:.5rem; }
     .tvitem { display:flex; align-items:center; gap:.7rem; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:.6rem .8rem; }
     .tvitem.tvbig { border-color:rgba(0,212,255,.28); background:linear-gradient(180deg,rgba(0,212,255,.07),rgba(255,255,255,.02)); }
