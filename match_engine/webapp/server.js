@@ -236,6 +236,41 @@ CATALOG.sort((a, b) => {
   return a.nameEn.localeCompare(b.nameEn, 'es', { sensitivity: 'base' });
 });
 
+// ── SEO indexing whitelist ─────────────────────────────────────────────────
+// Only matchup pages present in the curated sitemaps (top rivalries × iconic
+// eras, ~700 URLs) are indexable. Every other /partido/, /match/, /partida/
+// combination is served with robots:noindex,follow so Google's crawl budget and
+// the site-wide quality signal stay concentrated on pages with real search
+// demand, instead of on thousands of thin near-duplicate combinations.
+const _seoMatchupWhitelist = new Set();
+function _matchupKey(slugA, eraA, slugB, eraB) {
+  const a = eraA ? `${slugA}:${eraA}` : slugA;
+  const b = eraB ? `${slugB}:${eraB}` : slugB;
+  return [a, b].sort().join('|');
+}
+function _matchupIndexable(slugA, eraA, slugB, eraB) {
+  return _seoMatchupWhitelist.has(_matchupKey(slugA, eraA, slugB, eraB));
+}
+(() => {
+  const files = ['sitemap-matches-es.xml', 'sitemap-matches-en.xml', 'sitemap-matches-pt.xml'];
+  const re = /\/(?:partido|match|partida)\/([a-z0-9:-]+-vs-[a-z0-9:-]+)</gi;
+  for (const f of files) {
+    try {
+      const xml = fs.readFileSync(path.join(__dirname, 'public', f), 'utf8');
+      let m;
+      while ((m = re.exec(xml)) !== null) {
+        const raw = m[1];
+        const vi = raw.indexOf('-vs-');
+        if (vi === -1) continue;
+        const [sA, eA = ''] = raw.slice(0, vi).split(':');
+        const [sB, eB = ''] = raw.slice(vi + 4).split(':');
+        _seoMatchupWhitelist.add(_matchupKey(sA, eA, sB, eB));
+      }
+    } catch (_) { /* sitemap missing → whitelist stays empty → all noindex */ }
+  }
+  console.log(`[seo] matchup whitelist: ${_seoMatchupWhitelist.size} indexable pages`);
+})();
+
 function _badgeFor(teamName) {
   if (!teamName) return BADGE_PLACEHOLDER;
   return _badgeMap.get(teamName.toLowerCase())
@@ -700,7 +735,7 @@ app.get('/partido/:matchup', async (req, res) => {
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
-  <meta name="robots" content="index,follow"/>
+  <meta name="robots" content="${_matchupIndexable(slugA, eraA, slugB, eraB) ? 'index,follow' : 'noindex,follow'}"/>
   <link rel="canonical" href="${canonUrl}"/>
   <link rel="alternate" hreflang="es" href="${canonUrl}"/>
   <link rel="alternate" hreflang="en" href="${enUrl}"/>
@@ -983,7 +1018,7 @@ app.get('/match/:matchup', async (req, res) => {
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
-  <meta name="robots" content="index,follow"/>
+  <meta name="robots" content="${_matchupIndexable(slugA, eraA, slugB, eraB) ? 'index,follow' : 'noindex,follow'}"/>
   <link rel="canonical" href="${canonUrl}"/>
   <link rel="alternate" hreflang="es" href="${esUrl}"/>
   <link rel="alternate" hreflang="en" href="${canonUrl}"/>
@@ -1266,7 +1301,7 @@ app.get('/partida/:matchup', async (req, res) => {
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDesc}"/>
-  <meta name="robots" content="index,follow"/>
+  <meta name="robots" content="${_matchupIndexable(slugA, eraA, slugB, eraB) ? 'index,follow' : 'noindex,follow'}"/>
   <link rel="canonical" href="${canonUrl}"/>
   <link rel="alternate" hreflang="pt-BR" href="${canonUrl}"/>
   <link rel="alternate" hreflang="es" href="${esUrl}"/>

@@ -97,6 +97,20 @@
   /* Main wrap */
   .main-wrap{max-width:1300px;margin:2.5rem auto;padding:0 1.5rem;display:flex;flex-direction:column;gap:2rem}
   #main-match-wrap{max-width:1000px;margin:0 auto;width:100%}
+  /* Hoy en el fútbol — tira de descubrimiento de contenido del hub */
+  .home-today{max-width:1000px;margin:0 auto;width:100%}
+  .home-today-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .9rem;margin-bottom:1rem}
+  .home-today-head h2{font:800 1.15rem/1.1 'Rajdhani',sans-serif;letter-spacing:.02em;color:#f0f4ff}
+  .home-today-head p{font-size:.82rem;color:var(--grey)}
+  .home-today-head a{color:#00d4ff;text-decoration:none;font-weight:700;white-space:nowrap}
+  .home-today-head a:hover{text-decoration:underline}
+  .home-today-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  @media(max-width:720px){.home-today-grid{grid-template-columns:1fr}}
+  .ht-card{display:flex;flex-direction:column;gap:.35rem;padding:1rem 1.1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);text-decoration:none;color:#f0f4ff;transition:border-color .15s,transform .15s}
+  .ht-card:hover{border-color:var(--border-glow);transform:translateY(-2px)}
+  .ht-tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#00d4ff}
+  .ht-title{font-size:1rem;font-weight:700;line-height:1.2}
+  .ht-sub{font-size:.8rem;color:var(--grey);line-height:1.3}
   /* Input panel */
   .input-panel{padding:2.2rem 2.2rem 1.8rem}
   .teams-grid{display:grid;grid-template-columns:1fr 130px 1fr;gap:1rem;align-items:start;margin-bottom:2rem}
@@ -1760,6 +1774,15 @@
     </div>
   </noscript>
 
+  <!-- ── HOY EN EL FÚTBOL — descubrimiento de contenido del hub ── -->
+  <section class="home-today" id="home-today" hidden aria-label="Lo más importante del fútbol hoy">
+    <div class="home-today-head">
+      <h2>📰 Hoy en el fútbol</h2>
+      <p>Lo más importante del mercado, en directo. <a href="/fichajes">Ver todo →</a></p>
+    </div>
+    <div class="home-today-grid" id="home-today-grid"></div>
+  </section>
+
   </main>
   </div>
 
@@ -1863,5 +1886,6 @@
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->
   <div id="pm-tt-portal" aria-hidden="true"></div>
   <script src="/subscribe.js?v=1" defer></script>
+  <script src="/home-today.js?v=1" defer></script>
 </body>
 </html>
