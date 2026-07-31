@@ -30,9 +30,11 @@ git reset --hard FETCH_HEAD
 echo "    GIT OK"
 echo "==> Copiando archivos..."
 cp -r "$WEBAPP/public/." "$DEST/public/" 2>/dev/null || true
-cp "$WEBAPP/server.js" "$WEBAPP/engine.js" "$WEBAPP/player_ratings.js" "$WEBAPP/narrator.js" "$WEBAPP/squads.js" "$WEBAPP/lookup.js" "$WEBAPP/utils.js" "$WEBAPP/referee_logic.js" "$DEST/"
+cp "$WEBAPP/server.js" "$WEBAPP/engine.js" "$WEBAPP/news.js" "$WEBAPP/player_ratings.js" "$WEBAPP/narrator.js" "$WEBAPP/squads.js" "$WEBAPP/lookup.js" "$WEBAPP/utils.js" "$WEBAPP/referee_logic.js" "$DEST/"
 cp -r "$WEBAPP/squads/." "$DEST/squads/"
 cp "$WEBAPP/squads-meta.json" "$DEST/squads-meta.json"
+mkdir -p "$DEST/data"
+cp "$WEBAPP/data/agenda.json" "$WEBAPP/data/salaries.json" "$WEBAPP/data/legends.json" "$DEST/data/"
 echo "    $(ls "$DEST/squads/" | wc -l) squads en disco"
 echo "    CP OK"
 echo "==> Reiniciando Passenger..."
