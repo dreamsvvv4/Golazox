@@ -39,7 +39,7 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 - [x] **12. RSS propio de Golazox** — `/feed/fichajes.xml` generado desde los fichajes cerrados. *(bajo riesgo)*
 - [x] **13. Página de estado visual** — `/status` HTML que consume `/health` con semáforos por fuente. *(bajo riesgo)*
 - [ ] **14. Sitemap dinámico ampliado** — ~~incluir las nuevas rutas en el sitemap~~. **Descartada:** la API y los feeds no son páginas indexables y `/status` es `noindex`; añadirlos al sitemap sería incorrecto SEO. Se deja fuera a propósito.
-- [ ] **15. Mejoras de accesibilidad y rendimiento** — `aria-*`, `prefers-reduced-motion`, lazy de secciones pesadas, foco visible. *(bajo riesgo)*
+- [x] **15. Mejoras de accesibilidad y rendimiento** — `aria-*`, `prefers-reduced-motion`, lazy de secciones pesadas, foco visible. *(bajo riesgo)*
 
 ---
 

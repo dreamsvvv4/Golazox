@@ -3360,9 +3360,9 @@ const _rumorPulseHTML = (rumors) => {
   const cold = list.filter(r => r.prob < 25).length;
   const total = list.length;
   const seg = (n, color) => n ? `<span class="pulse-seg" style="flex:${n};background:${color}"></span>` : '';
-  const chip = (icon, n, label) => `<span class="pulse-chip">${icon} <strong>${n}</strong> ${label}</span>`;
+  const chip = (icon, n, label) => `<span class="pulse-chip"><span aria-hidden="true">${icon}</span> <strong>${n}</strong> ${label}</span>`;
   return `<div class="rumor-pulse">
-    <div class="pulse-bar">${seg(hot, '#ff4d4d')}${seg(warm, '#ff9f1a')}${seg(mild, '#ffd21a')}${seg(cold, '#00d4ff')}</div>
+    <div class="pulse-bar" role="img" aria-label="Temperatura del mercado de rumores: ${hot} muy calientes, ${warm} calientes, ${mild} templados, ${cold} fríos">${seg(hot, '#ff4d4d')}${seg(warm, '#ff9f1a')}${seg(mild, '#ffd21a')}${seg(cold, '#00d4ff')}</div>
     <div class="pulse-legend">${chip('🔥', hot, 'muy calientes')}${chip('🌡️', warm, 'calientes')}${chip('🌥️', mild, 'templados')}${chip('❄️', cold, 'fríos')}</div>
   </div>`;
 };
@@ -3862,6 +3862,8 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .tact-fav.is-fav { color:#ffd700; background:rgba(255,215,0,.15); }
     .tact-share.copied { color:#10d98a; background:rgba(16,217,138,.16); }
     @media (prefers-reduced-motion:reduce){ .tact,.tact:hover{ transition:none; transform:none; } }
+    a:focus-visible, button:focus-visible, input:focus-visible, .subtab:focus-visible, [tabindex]:focus-visible { outline:2px solid #00d4ff; outline-offset:2px; border-radius:6px; }
+    @media (prefers-reduced-motion:reduce){ *,*::before,*::after{ animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important; scroll-behavior:auto!important; } }
     .tcard-head { display:flex; flex-direction:column; padding-right:1.4rem; }
     .tplayer { font-size:1rem; font-weight:700; color:#fff; line-height:1.2; }
     .tpos { font-size:.72rem; color:rgba(255,255,255,.42); margin-top:.1rem; }
