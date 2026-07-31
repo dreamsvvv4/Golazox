@@ -3350,6 +3350,23 @@ const _transferCardHTML = (t, rank) => `
     <div class="tfee" style="${_feeStyle(t.fee)}">${_esc(t.fee.label)}</div>
   </article>`;
 
+// Resumen de temperatura del mercado de rumores: cuántos calientes/templados/fríos.
+const _rumorPulseHTML = (rumors) => {
+  const list = (rumors.list || []).filter(r => typeof r.prob === 'number');
+  if (list.length < 3) return '';
+  const hot  = list.filter(r => r.prob >= 75).length;
+  const warm = list.filter(r => r.prob >= 50 && r.prob < 75).length;
+  const mild = list.filter(r => r.prob >= 25 && r.prob < 50).length;
+  const cold = list.filter(r => r.prob < 25).length;
+  const total = list.length;
+  const seg = (n, color) => n ? `<span class="pulse-seg" style="flex:${n};background:${color}"></span>` : '';
+  const chip = (icon, n, label) => `<span class="pulse-chip">${icon} <strong>${n}</strong> ${label}</span>`;
+  return `<div class="rumor-pulse">
+    <div class="pulse-bar">${seg(hot, '#ff4d4d')}${seg(warm, '#ff9f1a')}${seg(mild, '#ffd21a')}${seg(cold, '#00d4ff')}</div>
+    <div class="pulse-legend">${chip('🔥', hot, 'muy calientes')}${chip('🌡️', warm, 'calientes')}${chip('🌥️', mild, 'templados')}${chip('❄️', cold, 'fríos')}</div>
+  </div>`;
+};
+
 // Temperatura del rumor según la probabilidad de traspaso (voto de usuarios TM).
 const _probMeta = (p) => {
   if (p == null)  return { icon: '❔', word: 'Sin valorar', color: '#8a93a6', pct: 0 };
@@ -3465,6 +3482,26 @@ const _marketThermoHTML = (transfers) => {
     <div class="thermo-head"><h2>🌡️ Termómetro del mercado</h2>
       <span class="thermo-sub">Gasto medio por operación: <strong>${_fmtFee(avg)}</strong></span></div>
     <ul class="thermo-list">${rows}</ul>
+  </section>`;
+};
+
+// Fichaje del Día: destacado determinista que rota cada día. Usa el día del año
+// como semilla para que todos los visitantes vean el mismo y cambie a diario.
+const _dealOfDayHTML = (transfers) => {
+  const pool = (transfers.list || []).filter(t => t.fee && t.fee.value > 0).slice(0, 15);
+  if (pool.length < 3) return '';
+  const now = new Date();
+  const dayIdx = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+  const t = pool[dayIdx % pool.length];
+  return `<section class="deal-day">
+    <span class="deal-tag">⭐ Fichaje del día</span>
+    <div class="deal-body">
+      <span class="deal-player">${_esc(t.player)}</span>
+      <span class="deal-flow">${_badgeImg(t.from)}<span class="deal-club">${_esc(t.from.name)}</span>
+        <span class="deal-arrow">→</span>
+        ${_badgeImg(t.to)}<span class="deal-club">${_esc(t.to.name)}</span></span>
+      <span class="deal-fee">${_esc(t.fee.label)}</span>
+    </div>
   </section>`;
 };
 
@@ -3723,6 +3760,14 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .chart-box { background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1.2rem 1.3rem; margin-bottom:2rem; }
     .chart-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
     .thermo { background:linear-gradient(180deg,rgba(255,77,77,.06),rgba(255,159,26,.03)); border:1px solid rgba(255,159,26,.18); border-radius:16px; padding:1.1rem 1.3rem; margin:0 0 2rem; }
+    .deal-day { background:linear-gradient(115deg,rgba(255,215,0,.1),rgba(0,212,255,.06)); border:1px solid rgba(255,215,0,.25); border-radius:16px; padding:1rem 1.2rem; margin:0 0 1.4rem; }
+    .deal-tag { display:inline-block; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#ffd700; margin-bottom:.5rem; }
+    .deal-body { display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; }
+    .deal-player { font-size:1.1rem; font-weight:800; color:#fff; }
+    .deal-flow { display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color:rgba(255,255,255,.7); }
+    .deal-flow img { width:24px; height:24px; object-fit:contain; }
+    .deal-arrow { color:rgba(255,255,255,.4); }
+    .deal-fee { margin-left:auto; font-weight:800; color:#10d98a; font-size:1rem; }
     .thermo-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem; }
     .thermo-head h2 { margin:0; font-size:1.05rem; }
     .thermo-sub { font-size:.78rem; color:rgba(255,255,255,.55); }
@@ -3783,6 +3828,12 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .rprob-pct { font-size:1.05rem; font-weight:900; font-variant-numeric:tabular-nums; }
     .rprob-bar { height:7px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }
     .rprob-fill { display:block; height:100%; border-radius:999px; transition:width .5s cubic-bezier(.4,0,.2,1); box-shadow:0 0 10px -1px currentColor; }
+    .rumor-pulse { margin:0 0 1.3rem; }
+    .pulse-bar { display:flex; height:10px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.06); }
+    .pulse-seg { display:block; }
+    .pulse-legend { display:flex; flex-wrap:wrap; gap:.4rem .9rem; margin-top:.55rem; }
+    .pulse-chip { font-size:.74rem; color:rgba(255,255,255,.6); }
+    .pulse-chip strong { color:#fff; }
 
     /* ── News board ── */
     .news-chip { display:inline-block; align-self:flex-start; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#fff; padding:.16rem .5rem; border-radius:6px; }
@@ -3916,6 +3967,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 
   <section id="tab-fichajes" class="panel${_activeTab === 'fichajes' ? ' active' : ''}" role="tabpanel">
     ${_statsHTML(transfers)}
+    ${_dealOfDayHTML(transfers)}
     ${_marketThermoHTML(transfers)}
 
     <div class="subtabs">
@@ -3955,6 +4007,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 
     <div id="sub-rumores" class="subpanel">
       <p class="sub-note">Rumores de fichaje con la <strong>probabilidad de traspaso</strong> según los votos de los usuarios de Transfermarkt. 🔥 caliente = muy probable · ❄️ frío = poco probable.</p>
+      ${_rumorPulseHTML(rumors)}
       ${rumors.list.length
         ? `<div class="tgrid">${rumors.list.map(_rumorCardHTML).join('')}</div>`
         : (news.fichajes.length

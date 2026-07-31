@@ -30,9 +30,9 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 
 ### Funcionalidades deportivas
 - [ ] **7. Net Spend de clubes** — nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
-- [ ] **8. Fichaje del Día** — destacado rotativo (determinista por fecha) del bombazo más relevante, en home y cabecera de `/fichajes`. *(bajo riesgo)*
+- [x] **8. Fichaje del Día** — destacado rotativo (determinista por fecha) del bombazo más relevante, en home y cabecera de `/fichajes`. *(bajo riesgo)*
 - [ ] **9. Clasificaciones de las 5 grandes ligas** — scraping de standings (LaLiga, Premier, Serie A, Bundesliga, Ligue 1) con caché. Nueva pestaña. *(alto)*
-- [ ] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*
+- [x] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*
 
 ### Integraciones técnicas
 - [x] **11. API pública JSON** — `/api/transfers`, `/api/values`, `/api/rumors`, `/api/stats` (solo lectura, rate-limited, CORS). *(medio)*
