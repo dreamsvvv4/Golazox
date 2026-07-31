@@ -3523,7 +3523,11 @@ const _marketThermoHTML = (transfers) => {
 // Fichaje del Día: destacado determinista que rota cada día. Usa el día del año
 // como semilla para que todos los visitantes vean el mismo y cambie a diario.
 const _dealOfDayHTML = (transfers) => {
-  const pool = (transfers.list || []).filter(t => t.fee && t.fee.value > 0).slice(0, 15);
+  // Preferir fichajes RECIENTES (cronológico) con importe real, para que el
+  // destacado sea fresco y no un traspaso caro cerrado hace semanas.
+  const recent   = (transfers.latest || []).filter(t => t.fee && t.fee.value > 0);
+  const bySeason = (transfers.list   || []).filter(t => t.fee && t.fee.value > 0);
+  const pool = (recent.length >= 3 ? recent : bySeason).slice(0, 12);
   if (pool.length < 3) return '';
   const now = new Date();
   const dayIdx = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
@@ -3669,8 +3673,12 @@ const _salaryRowsHTML = (list) => list.map((p, i) =>
 
 const _statRowsHTML = (list, kind) => list.map((p, i) =>
   _rankRowHTML(i + 1, p.player,
-    `${_clubLine(p.club)}${p.league ? ' · ' + _esc(p.league) : ''}`,
-    kind === 'assists' ? p.assists : p.goals, kind === 'assists' ? 'asist.' : 'goles')).join('');
+    kind === 'contrib'
+      ? `${_clubLine(p.club)} · <span class="ga-break">${p.goals || 0}G + ${p.assists || 0}A${p.apps ? ` · ${p.apps} PJ` : ''}</span>`
+      : `${_clubLine(p.club)}${p.league ? ' · ' + _esc(p.league) : ''}`,
+    kind === 'contrib' ? (p.ga != null ? p.ga : (p.goals || 0) + (p.assists || 0))
+      : kind === 'assists' ? p.assists : p.goals,
+    kind === 'contrib' ? 'G+A' : kind === 'assists' ? 'asist.' : 'goles')).join('');
 
 const _legendRowsHTML = (list, kind) => list.map((p, i) =>
   _rankRowHTML(i + 1, p.player,
@@ -4125,6 +4133,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     <div class="subtabs">
       <button class="subtab active" data-sub="goleadores">⚽ Goleadores<span class="count">${stats.scorers.length}</span></button>
       <button class="subtab" data-sub="asistentes">🎯 Asistencias<span class="count">${stats.assists.length}</span></button>
+      <button class="subtab" data-sub="participaciones">⚡ G+A<span class="count">${(stats.contributions || []).length}</span></button>
       <button class="subtab" data-sub="historicos">🏅 Históricos<span class="count">${legends.scorers.length}</span></button>
     </div>
     <div id="sub-goleadores" class="subpanel active">
@@ -4138,6 +4147,12 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       ${stats.assists.length
         ? `<div class="rtable">${_statRowsHTML(stats.assists, 'assists')}</div>`
         : '<p class="empty">No hay datos de asistencias ahora mismo.</p>'}
+    </div>
+    <div id="sub-participaciones" class="subpanel">
+      <p class="sub-note">Máximas <strong>participaciones de gol</strong> (goles + asistencias) de la temporada ${stats.season || ''}. La estadística que mide quién más decide partidos.</p>
+      ${(stats.contributions && stats.contributions.length)
+        ? `<div class="rtable">${_statRowsHTML(stats.contributions, 'contrib')}</div>`
+        : '<p class="empty">No hay datos de participaciones ahora mismo.</p>'}
     </div>
     <div id="sub-historicos" class="subpanel">
       ${legends.note ? `<div class="note-box">ℹ️ ${_esc(legends.note)}${_updatedNote(legends.updated)}</div>` : ''}

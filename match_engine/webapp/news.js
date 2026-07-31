@@ -606,10 +606,28 @@ async function _fetchScorers(saison) {
   return all;
 }
 
+// Reconstruye el ranking de participaciones (G+A) a partir de la unión de
+// goleadores + asistentes cuando el dato cacheado no lo trae (compatibilidad
+// con cachés antiguas). Así la pestaña G+A funciona sin esperar al refresco.
+function _ensureContribs(data) {
+  if (!data) return data;
+  if (Array.isArray(data.contributions) && data.contributions.length) return data;
+  const map = new Map();
+  for (const p of [...(data.scorers || []), ...(data.assists || [])]) {
+    const key = `${p.player}|${(p.club && p.club.name) || ''}`;
+    if (!map.has(key)) map.set(key, { ...p, ga: (p.goals || 0) + (p.assists || 0) });
+  }
+  data.contributions = [...map.values()]
+    .filter(p => p.ga > 0)
+    .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
+    .slice(0, 30);
+  return data;
+}
+
 async function getStats() {
   const now = Date.now();
   if (!_sCache.data) { const d = _cacheGet('stats'); if (d) { _sCache = d; _seed('stats', d); } }
-  if (_sCache.data && (now - _sCache.ts) < RANK_TTL) return _sCache.data;
+  if (_sCache.data && (now - _sCache.ts) < RANK_TTL) return _ensureContribs(_sCache.data);
   try {
     const saison = _currentSaison();
     let all = await _fetchScorers(saison);
@@ -622,14 +640,19 @@ async function getStats() {
     }
     const scorers = all.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists).slice(0, 30);
     const assists = all.slice().sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
+    const contributions = all.slice()
+      .map(p => ({ ...p, ga: (p.goals || 0) + (p.assists || 0) }))
+      .filter(p => p.ga > 0)
+      .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
+      .slice(0, 30);
     const label = `${season}/${String(season + 1).slice(-2)}`;
-    const data = { scorers, assists, season: label, updated: now };
+    const data = { scorers, assists, contributions, season: label, updated: now };
     if (all.length) { _sCache = { ts: now, data }; _cachePut('stats', _sCache); _mark('stats', 'ok', all.length); }
     else _mark('stats', 'empty', 0);
     return data;
   } catch (e) {
     _mark('stats', 'fail', 0, e.message);
-    return _sCache.data || { scorers: [], assists: [], season: '', updated: 0 };
+    return _ensureContribs(_sCache.data) || { scorers: [], assists: [], contributions: [], season: '', updated: 0 };
   }
 }
 
