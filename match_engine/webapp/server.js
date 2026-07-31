@@ -3485,6 +3485,49 @@ const _marketThermoHTML = (transfers) => {
   </section>`;
 };
 
+// Net Spend: balance de gasto por club a partir del histórico propio. Compras
+// (importe con destino = club) menos ventas (importe con origen = club).
+const _netSpendHTML = (transfers) => {
+  const pool = [...(transfers.history || []), ...(transfers.list || [])]
+    .filter(t => t.fee && t.fee.type === 'fee' && t.fee.value > 0);
+  if (pool.length < 6) return '<p class="empty">Aún no hay suficientes fichajes con importe para calcular el balance. Vuelve pronto.</p>';
+  const clubs = new Map();
+  const get = (c) => {
+    const name = (c && c.name) || '?';
+    if (!clubs.has(name)) clubs.set(name, { club: c, spent: 0, earned: 0, in: 0, out: 0 });
+    return clubs.get(name);
+  };
+  const seen = new Set();
+  for (const t of pool) {
+    const k = (t.player + '|' + (t.to && t.to.name) + '|' + t.fee.value).toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k);
+    if (t.to && t.to.name)   { const g = get(t.to);   g.spent  += t.fee.value; g.in++; }
+    if (t.from && t.from.name && t.from.name !== '—') { const g = get(t.from); g.earned += t.fee.value; g.out++; }
+  }
+  const ranked = [...clubs.values()]
+    .map(c => ({ ...c, net: c.spent - c.earned }))
+    .filter(c => c.in + c.out >= 1)
+    .sort((a, b) => b.spent - a.spent)
+    .slice(0, 20);
+  if (!ranked.length) return '<p class="empty">Sin datos de balance todavía.</p>';
+  const rows = ranked.map((c, i) => {
+    const netCls = c.net > 0 ? 'net-neg' : 'net-pos';
+    const netTxt = (c.net > 0 ? '−' : '+') + _fmtFee(Math.abs(c.net));
+    return `<div class="ns-row">
+      <span class="ns-rank">${i + 1}</span>
+      ${_badgeImg(c.club)}
+      <span class="ns-name">${_esc(c.club.name)}</span>
+      <span class="ns-spent" title="Gastado en fichajes">${_fmtFee(c.spent)}</span>
+      <span class="ns-net ${netCls}" title="Balance (gastos − ventas)">${netTxt}</span>
+    </div>`;
+  }).join('');
+  return `<div class="ns-table">
+    <div class="ns-row ns-head"><span class="ns-rank">#</span><span></span><span class="ns-name">Club</span><span class="ns-spent">Gastado</span><span class="ns-net">Balance</span></div>
+    ${rows}
+  </div>`;
+};
+
 // Fichaje del Día: destacado determinista que rota cada día. Usa el día del año
 // como semilla para que todos los visitantes vean el mismo y cambie a diario.
 const _dealOfDayHTML = (transfers) => {
@@ -3768,6 +3811,17 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .deal-flow img { width:24px; height:24px; object-fit:contain; }
     .deal-arrow { color:rgba(255,255,255,.4); }
     .deal-fee { margin-left:auto; font-weight:800; color:#10d98a; font-size:1rem; }
+    .ns-table { display:flex; flex-direction:column; gap:.2rem; }
+    .ns-row { display:grid; grid-template-columns:2rem 28px 1fr auto auto; align-items:center; gap:.7rem; padding:.55rem .7rem; border-radius:10px; }
+    .ns-row:not(.ns-head):nth-child(odd) { background:rgba(255,255,255,.03); }
+    .ns-head { font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.45); padding-bottom:.3rem; }
+    .ns-rank { font-weight:800; color:rgba(255,255,255,.55); text-align:center; }
+    .ns-row img { width:26px; height:26px; object-fit:contain; }
+    .ns-name { font-weight:700; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .ns-spent { font-weight:700; color:rgba(255,255,255,.85); font-variant-numeric:tabular-nums; }
+    .ns-net { font-weight:800; font-variant-numeric:tabular-nums; min-width:5.5rem; text-align:right; }
+    .net-pos { color:#10d98a; }
+    .net-neg { color:#ff6b6b; }
     .thermo-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem; }
     .thermo-head h2 { margin:0; font-size:1.05rem; }
     .thermo-sub { font-size:.78rem; color:rgba(255,255,255,.55); }
@@ -3975,6 +4029,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
       <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
       <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length || news.fichajes.length}</span></button>
+      <button class="subtab" data-sub="balance">💰 Balance de clubes</button>
     </div>
 
     <div class="searchbar">
@@ -4013,6 +4068,11 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
         : (news.fichajes.length
             ? `<ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
             : '<p class="empty">No hay rumores destacados ahora mismo.</p>')}
+    </div>
+
+    <div id="sub-balance" class="subpanel">
+      <p class="sub-note">Balance de mercado por club: cuánto ha <strong>gastado</strong> en fichajes y su <strong>balance neto</strong> (gastos − ventas), a partir de nuestro histórico. <span class="net-pos">+</span> ingresa más de lo que gasta · <span class="net-neg">−</span> gasta más de lo que ingresa.</p>
+      ${_netSpendHTML(transfers)}
     </div>
   </section>
 

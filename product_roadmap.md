@@ -29,7 +29,7 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 - [ ] **6. Buscador global en la home** — un único buscador que filtra jugadores/clubes across fichajes, valores y stats. *(medio)*
 
 ### Funcionalidades deportivas
-- [ ] **7. Net Spend de clubes** — nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
+- [x] **7. Net Spend de clubes** — nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
 - [x] **8. Fichaje del Día** — destacado rotativo (determinista por fecha) del bombazo más relevante, en home y cabecera de `/fichajes`. *(bajo riesgo)*
 - [ ] **9. Clasificaciones de las 5 grandes ligas** — scraping de standings (LaLiga, Premier, Serie A, Bundesliga, Ligue 1) con caché. Nueva pestaña. *(alto)*
 - [x] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*
