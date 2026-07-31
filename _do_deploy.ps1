@@ -1,4 +1,4 @@
-$key = "C:\Users\vvvfb\.ssh\id_golazox_deploy"
+$key = "$env:USERPROFILE\.ssh\id_golazox_deploy"
 $srv = "u990866731@147.93.88.37"
 
 # ── Guardia: verificar que no hay cambios sin commitear/pushear ──

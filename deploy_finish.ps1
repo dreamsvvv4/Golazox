@@ -5,7 +5,7 @@ Write-Host "  git pull + cp files + restart + scp img" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-$keyFile = "C:\Users\vvvfb\.ssh\id_golazox_deploy"
+$keyFile = "$env:USERPROFILE\.ssh\id_golazox_deploy"
 $server  = "u990866731@147.93.88.37"
 $sshArgs = @("-i", $keyFile, "-p", "65002", "-o", "StrictHostKeyChecking=no", "-o", "BatchMode=yes", $server, "bash")
 
