@@ -3332,8 +3332,12 @@ const _badgeImg = (club) => club.badge
   : `<span class="crest-fallback">${_esc((club.name || '?').slice(0, 1))}</span>`;
 
 const _transferCardHTML = (t, rank) => `
-  <article class="tcard${rank && rank <= 3 ? ' tcard-podium tcard-r' + rank : ''}" data-search="${_esc((t.player + ' ' + t.from.name + ' ' + t.to.name + ' ' + t.position).toLowerCase())}">
+  <article class="tcard${rank && rank <= 3 ? ' tcard-podium tcard-r' + rank : ''}" data-search="${_esc((t.player + ' ' + t.from.name + ' ' + t.to.name + ' ' + t.position).toLowerCase())}" data-fav="${_esc((t.player + '|' + t.to.name).toLowerCase())}">
     ${rank ? `<span class="trank">${rank}</span>` : ''}
+    <div class="tcard-actions">
+      <button class="tact tact-fav" data-fav-btn title="Seguir" aria-label="Seguir este fichaje">☆</button>
+      <button class="tact tact-share" data-share="${_esc(t.player + ': ' + t.from.name + ' → ' + t.to.name + (t.fee && t.fee.label ? ' (' + t.fee.label + ')' : ''))}" title="Compartir" aria-label="Compartir este fichaje">↗</button>
+    </div>
     <div class="tcard-head">
       <span class="tplayer">${_esc(t.player)}</span>
       <span class="tpos">${_esc(t.position)}${t.age ? ' · ' + _esc(t.age) : ''}</span>
@@ -3752,6 +3756,13 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .tcard-r1 .trank { color:#ffd700; }
     .tcard-r2 .trank { color:#cfd6df; }
     .tcard-r3 .trank { color:#e0965b; }
+    .tcard-actions { position:absolute; top:.55rem; right:.6rem; display:flex; gap:.25rem; z-index:2; }
+    .tcard .trank { right:2.7rem; }
+    .tact { width:26px; height:26px; border:none; border-radius:8px; background:rgba(255,255,255,.06); color:rgba(255,255,255,.55); font-size:.85rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, color .15s, transform .15s; padding:0; }
+    .tact:hover { background:rgba(255,255,255,.14); color:#fff; transform:scale(1.08); }
+    .tact-fav.is-fav { color:#ffd700; background:rgba(255,215,0,.15); }
+    .tact-share.copied { color:#10d98a; background:rgba(16,217,138,.16); }
+    @media (prefers-reduced-motion:reduce){ .tact,.tact:hover{ transition:none; transform:none; } }
     .tcard-head { display:flex; flex-direction:column; padding-right:1.4rem; }
     .tplayer { font-size:1rem; font-weight:700; color:#fff; line-height:1.2; }
     .tpos { font-size:.72rem; color:rgba(255,255,255,.42); margin-top:.1rem; }
@@ -3816,6 +3827,8 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .subtab:hover { color:#fff; border-color:rgba(255,255,255,.28); }
     .subtab.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); border-color:transparent; }
     .subtab .count { font-size:.68rem; opacity:.7; margin-left:.3rem; }
+    .subtab-fav.fav-active { color:#04231a; background:linear-gradient(92deg,#ffd700,#ff9f1a); border-color:transparent; }
+    .tcard.fav-hide { display:none !important; }
     .subpanel { display:none; }
     .subpanel.active { display:block; animation:fade .25s ease; }
     .sub-note { font-size:.8rem; color:rgba(255,255,255,.42); margin:0 0 1.1rem; }
@@ -4018,7 +4031,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=6" defer></script>
+  <script src="/fichajes.js?v=7" defer></script>
 </body>
 </html>`;
 };

@@ -173,5 +173,94 @@
     }, 180000);
   }
   if (pill) pill.addEventListener('click', function () { location.reload(); });
+
+  // ── Favoritos (seguir fichajes) + Compartir ──
+  var FAV_KEY = 'gx_fav_transfers';
+  function loadFavs() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function saveFavs(arr) {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+  var favs = loadFavs();
+
+  function paintFav(card) {
+    var btn = card.querySelector('[data-fav-btn]');
+    if (!btn) return;
+    var key = card.dataset.fav;
+    var on = favs.indexOf(key) !== -1;
+    btn.classList.toggle('is-fav', on);
+    btn.textContent = on ? '★' : '☆';
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  // Estado inicial de todas las tarjetas.
+  document.querySelectorAll('.tcard[data-fav]').forEach(paintFav);
+
+  // Delegación: un solo listener para favoritos y compartir (tarjetas dinámicas).
+  document.addEventListener('click', function (ev) {
+    var favBtn = ev.target.closest && ev.target.closest('[data-fav-btn]');
+    if (favBtn) {
+      var card = favBtn.closest('.tcard[data-fav]');
+      if (!card) return;
+      var key = card.dataset.fav;
+      var i = favs.indexOf(key);
+      if (i === -1) favs.push(key); else favs.splice(i, 1);
+      saveFavs(favs);
+      document.querySelectorAll('.tcard[data-fav="' + (window.CSS && CSS.escape ? CSS.escape(key) : key) + '"]').forEach(paintFav);
+      paintFav(card);
+      updateFavToggle();
+      applyFavFilter();
+      return;
+    }
+    var shareBtn = ev.target.closest && ev.target.closest('[data-share]');
+    if (shareBtn) {
+      var text = shareBtn.getAttribute('data-share') || '';
+      var url = location.origin + '/fichajes';
+      if (navigator.share) {
+        navigator.share({ title: 'GolazoX · Fichajes', text: text, url: url }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text + ' — ' + url).then(function () {
+          shareBtn.classList.add('copied');
+          shareBtn.textContent = '✓';
+          setTimeout(function () { shareBtn.classList.remove('copied'); shareBtn.textContent = '↗'; }, 1500);
+        }).catch(function () {});
+      }
+    }
+  });
+
+  // Botón "Solo favoritos" en la barra de subtabs de fichajes.
+  var favToggle = null;
+  (function initFavToggle() {
+    var subtabs = document.querySelector('#tab-fichajes .subtabs');
+    if (!subtabs) return;
+    favToggle = document.createElement('button');
+    favToggle.className = 'subtab subtab-fav';
+    favToggle.type = 'button';
+    favToggle.innerHTML = '★ Favoritos<span class="count">0</span>';
+    favToggle.addEventListener('click', function () {
+      favToggle.classList.toggle('fav-active');
+      applyFavFilter();
+    });
+    subtabs.appendChild(favToggle);
+    updateFavToggle();
+  })();
+
+  function updateFavToggle() {
+    if (!favToggle) return;
+    var c = favToggle.querySelector('.count');
+    if (c) c.textContent = favs.length;
+    favToggle.hidden = favs.length === 0;
+    if (favs.length === 0) { favToggle.classList.remove('fav-active'); applyFavFilter(); }
+  }
+  function applyFavFilter() {
+    var onlyFav = favToggle && favToggle.classList.contains('fav-active');
+    var active = document.querySelector('#tab-fichajes .subpanel.active');
+    if (!active) return;
+    active.querySelectorAll('.tcard[data-fav]').forEach(function (card) {
+      var isFav = favs.indexOf(card.dataset.fav) !== -1;
+      card.classList.toggle('fav-hide', onlyFav && !isFav);
+    });
+  }
 })();
+
 
