@@ -278,9 +278,9 @@
       var items = [];
       // Tarjetas de fichajes
       document.querySelectorAll('#tab-fichajes .tcard[data-fav]').forEach(function (el) {
-        var name = (el.querySelector('.tcard-player, .tname, h3') || {}).textContent || el.dataset.fav || '';
-        var sub = (el.querySelector('.tcard-flow, .tflow, .tcard-meta') || {}).textContent || '';
-        items.push({ el: el, tab: 'fichajes', name: name.trim(), sub: sub.replace(/\s+/g, ' ').trim() });
+        var name = (el.querySelector('.tplayer') || {}).textContent || '';
+        var sub = (el.querySelector('.tflow') || {}).textContent || '';
+        if (name.trim()) items.push({ el: el, tab: 'fichajes', name: name.trim(), sub: sub.replace(/\s+/g, ' ').trim() });
       });
       // Filas de rankings (valores + estadísticas)
       [['#tab-valores', 'valores'], ['#tab-estadisticas', 'estadisticas']].forEach(function (pair) {
