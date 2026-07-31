@@ -22,14 +22,14 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 
 ### UI / UX
 - [x] **1. Termómetro del Mercado** — panel resumen en `/fichajes`: total invertido, nº de operaciones, fichaje más caro y club que más gasta. Calculado en vivo desde los datos ya raspados. *(bajo riesgo)*
-- [x] **2. Comparador de Cracks** — seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
+- [ ] **2. Comparador de Cracks** — ~~seleccionar 2 jugadores y compararlos~~. **Descartado:** solo podíamos comparar por valor de mercado; las stats reales por característica (disparo, velocidad, cabezazo, pierna izq./der.) no se pueden obtener de forma fiable (ratings estilo FIFA, protegidos y no reales). Sin esos datos no aporta, se retira.— seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
 - [x] **3. Favoritos (seguir jugadores/clubes)** — estrella en tarjetas + filtro "solo favoritos", persistido en `localStorage`. *(bajo riesgo)*
 - [x] **4. Compartir tarjeta de fichaje** — botón con Web Share API + copiar enlace con fallback. *(bajo riesgo)*
 - [x] **5. Skeletons de carga** — placeholders animados en vez de páginas vacías/503 mientras carga. *(bajo riesgo)*
-- [ ] **6. Buscador global en la home** — un único buscador que filtra jugadores/clubes across fichajes, valores y stats. *(medio)*
+- [x] **6. Buscador global** — buscador único en el hub `/fichajes` que filtra a la vez jugadores/clubes en fichajes, valores (Cracks) y estadísticas, con teclado (↑↓/Enter/Esc) y salto directo a la pestaña. *(medio)* — Nota: la home `/` es la SPA del simulador, por eso vive en el hub de contenidos.
 
 ### Funcionalidades deportivas
-- [x] **7. Net Spend de clubes** — nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
+- [ ] **7. Net Spend de clubes** — ~~ranking de clubes por gasto/balance~~. **Descartado:** solo podíamos sumar los fichajes que detecta nuestro propio histórico (parcial, sin el gasto real completo ni operaciones antiguas). Da una impresión falsa de fiabilidad, se retira.— nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
 - [x] **8. Fichaje del Día** — destacado rotativo (determinista por fecha) del bombazo más relevante, en home y cabecera de `/fichajes`. *(bajo riesgo)*
 - [x] **9. Clasificaciones de las 5 grandes ligas** — scraping de standings (LaLiga, Premier, Serie A, Bundesliga, Ligue 1) con caché. Nueva pestaña. *(alto)*
 - [x] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*

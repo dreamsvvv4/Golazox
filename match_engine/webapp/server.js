@@ -3485,74 +3485,6 @@ const _marketThermoHTML = (transfers) => {
   </section>`;
 };
 
-// Comparador de cracks: dos jugadores lado a lado (valor, edad, posición, club).
-// Los datos se embeben como JSON; el render lo hace fichajes.js en cliente.
-const _comparadorHTML = (values) => {
-  const pool = (values.list || []).slice(0, 40);
-  if (pool.length < 2) return '';
-  const data = pool.map((p, i) => ({
-    i, n: p.player, pos: p.position || '', age: p.age || '',
-    nat: p.nat || '', club: (p.club && p.club.name) || '',
-    badge: (p.club && p.club.badge) || '', v: p.value || 0, vl: p.valueLabel || ''
-  }));
-  const opts = (sel) => data.map(d =>
-    `<option value="${d.i}"${d.i === sel ? ' selected' : ''}>${_esc(d.n)}</option>`).join('');
-  const json = JSON.stringify(data).replace(/</g, '\\u003c');
-  return `<div class="cmp" data-cmp>
-    <h3 class="cmp-title">⚔️ Comparador de cracks</h3>
-    <p class="cmp-hint">Elige dos jugadores y compara su valor de mercado.</p>
-    <div class="cmp-selects">
-      <select class="cmp-sel" data-cmp-a aria-label="Primer jugador a comparar">${opts(0)}</select>
-      <span class="cmp-vs">VS</span>
-      <select class="cmp-sel" data-cmp-b aria-label="Segundo jugador a comparar">${opts(1)}</select>
-    </div>
-    <div class="cmp-result" data-cmp-out aria-live="polite"></div>
-    <script type="application/json" data-cmp-data>${json}</script>
-  </div>`;
-};
-
-// Net Spend: balance de gasto por club a partir del histórico propio. Compras
-const _netSpendHTML = (transfers) => {
-  const pool = [...(transfers.history || []), ...(transfers.list || [])]
-    .filter(t => t.fee && t.fee.type === 'fee' && t.fee.value > 0);
-  if (pool.length < 6) return '<p class="empty">Aún no hay suficientes fichajes con importe para calcular el balance. Vuelve pronto.</p>';
-  const clubs = new Map();
-  const get = (c) => {
-    const name = (c && c.name) || '?';
-    if (!clubs.has(name)) clubs.set(name, { club: c, spent: 0, earned: 0, in: 0, out: 0 });
-    return clubs.get(name);
-  };
-  const seen = new Set();
-  for (const t of pool) {
-    const k = (t.player + '|' + (t.to && t.to.name) + '|' + t.fee.value).toLowerCase();
-    if (seen.has(k)) continue;
-    seen.add(k);
-    if (t.to && t.to.name)   { const g = get(t.to);   g.spent  += t.fee.value; g.in++; }
-    if (t.from && t.from.name && t.from.name !== '—') { const g = get(t.from); g.earned += t.fee.value; g.out++; }
-  }
-  const ranked = [...clubs.values()]
-    .map(c => ({ ...c, net: c.spent - c.earned }))
-    .filter(c => c.in + c.out >= 1)
-    .sort((a, b) => b.spent - a.spent)
-    .slice(0, 20);
-  if (!ranked.length) return '<p class="empty">Sin datos de balance todavía.</p>';
-  const rows = ranked.map((c, i) => {
-    const netCls = c.net > 0 ? 'net-neg' : 'net-pos';
-    const netTxt = (c.net > 0 ? '−' : '+') + _fmtFee(Math.abs(c.net));
-    return `<div class="ns-row">
-      <span class="ns-rank">${i + 1}</span>
-      ${_badgeImg(c.club)}
-      <span class="ns-name">${_esc(c.club.name)}</span>
-      <span class="ns-spent" title="Gastado en fichajes">${_fmtFee(c.spent)}</span>
-      <span class="ns-net ${netCls}" title="Balance (gastos − ventas)">${netTxt}</span>
-    </div>`;
-  }).join('');
-  return `<div class="ns-table">
-    <div class="ns-row ns-head"><span class="ns-rank">#</span><span></span><span class="ns-name">Club</span><span class="ns-spent">Gastado</span><span class="ns-net">Balance</span></div>
-    ${rows}
-  </div>`;
-};
-
 // Fichaje del Día: destacado determinista que rota cada día. Usa el día del año
 // como semilla para que todos los visitantes vean el mismo y cambie a diario.
 const _dealOfDayHTML = (transfers) => {
@@ -3836,38 +3768,27 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .deal-flow img { width:24px; height:24px; object-fit:contain; }
     .deal-arrow { color:rgba(255,255,255,.4); }
     .deal-fee { margin-left:auto; font-weight:800; color:#10d98a; font-size:1rem; }
-    .ns-table { display:flex; flex-direction:column; gap:.2rem; }
-    .ns-row { display:grid; grid-template-columns:2rem 28px 1fr auto auto; align-items:center; gap:.7rem; padding:.55rem .7rem; border-radius:10px; }
-    .ns-row:not(.ns-head):nth-child(odd) { background:rgba(255,255,255,.03); }
-    .ns-head { font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.45); padding-bottom:.3rem; }
-    .ns-rank { font-weight:800; color:rgba(255,255,255,.55); text-align:center; }
-    .ns-row img { width:26px; height:26px; object-fit:contain; }
-    .ns-name { font-weight:700; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .ns-spent { font-weight:700; color:rgba(255,255,255,.85); font-variant-numeric:tabular-nums; }
-    .ns-net { font-weight:800; font-variant-numeric:tabular-nums; min-width:5.5rem; text-align:right; }
-    .net-pos { color:#10d98a; }
-    .net-neg { color:#ff6b6b; }
-    .cmp { background:linear-gradient(160deg,rgba(0,212,255,.06),rgba(124,92,255,.05)); border:1px solid rgba(0,212,255,.2); border-radius:16px; padding:1.1rem 1.2rem; margin:0 0 1.6rem; }
-    .cmp-title { margin:0 0 .2rem; font-size:1rem; }
-    .cmp-hint { margin:0 0 .8rem; font-size:.8rem; color:rgba(255,255,255,.55); }
-    .cmp-selects { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
-    .cmp-sel { flex:1; min-width:130px; padding:.55rem .7rem; border-radius:10px; background:rgba(255,255,255,.06); color:#fff; border:1px solid rgba(255,255,255,.14); font-size:.85rem; }
-    .cmp-vs { font-weight:800; color:#00d4ff; font-size:.85rem; }
-    .cmp-result { display:none; margin-top:1rem; }
-    .cmp-result.on { display:grid; grid-template-columns:1fr auto 1fr; gap:.5rem 1rem; align-items:stretch; }
-    .cmp-card { background:rgba(255,255,255,.04); border-radius:12px; padding:.9rem; text-align:center; }
-    .cmp-card img { width:38px; height:38px; object-fit:contain; }
-    .cmp-name { font-weight:800; color:#fff; margin:.3rem 0 .1rem; }
-    .cmp-meta { font-size:.75rem; color:rgba(255,255,255,.55); }
-    .cmp-val { font-size:1.15rem; font-weight:800; color:#10d98a; margin-top:.5rem; font-variant-numeric:tabular-nums; }
-    .cmp-val.win { color:#ffd700; }
-    .cmp-mid { align-self:center; font-weight:800; color:rgba(255,255,255,.4); }
-    .cmp-diff { grid-column:1 / -1; text-align:center; font-size:.8rem; color:rgba(255,255,255,.7); margin-top:.4rem; }
     .skel-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
     .skel-card { background:rgba(255,255,255,.04); border-radius:14px; padding:1.1rem; }
     .skel-line { height:12px; border-radius:6px; margin:.55rem 0; background:linear-gradient(90deg,rgba(255,255,255,.06) 25%,rgba(255,255,255,.13) 37%,rgba(255,255,255,.06) 63%); background-size:400% 100%; animation:skel 1.4s ease infinite; }
     .skel-line.w40 { width:40%; } .skel-line.w60 { width:60%; } .skel-line.w80 { width:80%; }
     @keyframes skel { 0%{background-position:100% 0;} 100%{background-position:-100% 0;} }
+    .gsearch { position:relative; max-width:640px; margin:0 auto 1.6rem; }
+    .gsearch-ico { position:absolute; left:.9rem; top:50%; transform:translateY(-50%); opacity:.6; pointer-events:none; }
+    #gsearch-input { width:100%; padding:.75rem 2.4rem; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color:#fff; font-size:.9rem; }
+    .gsearch-clear { position:absolute; right:.9rem; top:50%; transform:translateY(-50%); cursor:pointer; opacity:.6; }
+    .gsearch-clear:hover { opacity:1; }
+    .gsearch-results { position:absolute; z-index:30; left:0; right:0; top:calc(100% + .4rem); max-height:340px; overflow-y:auto; background:#141a24; border:1px solid rgba(255,255,255,.14); border-radius:14px; box-shadow:0 12px 40px -8px rgba(0,0,0,.6); }
+    .gs-item { display:flex; align-items:center; gap:.7rem; padding:.6rem .9rem; cursor:pointer; border-bottom:1px solid rgba(255,255,255,.05); }
+    .gs-item:hover, .gs-item.active { background:rgba(0,212,255,.1); }
+    .gs-item img { width:24px; height:24px; object-fit:contain; }
+    .gs-txt { flex:1; min-width:0; }
+    .gs-name { font-weight:700; color:#fff; font-size:.85rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .gs-sub { font-size:.72rem; color:rgba(255,255,255,.5); }
+    .gs-tag { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:#00d4ff; background:rgba(0,212,255,.12); padding:.15rem .45rem; border-radius:6px; white-space:nowrap; }
+    .gs-empty { padding:.9rem; text-align:center; color:rgba(255,255,255,.5); font-size:.82rem; }
+    .gs-flash { animation:gsFlash 1.4s ease; }
+    @keyframes gsFlash { 0%,100%{ box-shadow:0 0 0 0 rgba(0,212,255,0); } 30%{ box-shadow:0 0 0 3px rgba(0,212,255,.55); } }
     .thermo-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem; }
     .thermo-head h2 { margin:0; font-size:1.05rem; }
     .thermo-sub { font-size:.78rem; color:rgba(255,255,255,.55); }
@@ -4067,6 +3988,13 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     <button class="tab${_activeTab === 'estadisticas' ? ' active' : ''}" data-tab="estadisticas" role="tab">📊 Estadísticas<span class="count">${stats.scorers.length}</span></button>
   </nav>
 
+  <div class="gsearch" data-gsearch>
+    <span class="gsearch-ico" aria-hidden="true">🔎</span>
+    <input id="gsearch-input" type="search" placeholder="Buscar en todo: jugadores, clubes, goleadores…" autocomplete="off" aria-label="Buscador global" role="combobox" aria-expanded="false" aria-controls="gsearch-results"/>
+    <span class="gsearch-clear" data-gsearch-clear hidden aria-label="Limpiar">✕</span>
+    <div class="gsearch-results" id="gsearch-results" data-gsearch-out role="listbox" hidden></div>
+  </div>
+
   <section id="tab-fichajes" class="panel${_activeTab === 'fichajes' ? ' active' : ''}" role="tabpanel">
     ${_statsHTML(transfers)}
     ${_dealOfDayHTML(transfers)}
@@ -4077,7 +4005,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
       <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
       <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length || news.fichajes.length}</span></button>
-      <button class="subtab" data-sub="balance">💰 Balance de clubes</button>
     </div>
 
     <div class="searchbar">
@@ -4117,11 +4044,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
             ? `<ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
             : '<p class="empty">No hay rumores destacados ahora mismo.</p>')}
     </div>
-
-    <div id="sub-balance" class="subpanel">
-      <p class="sub-note">Balance de mercado por club: cuánto ha <strong>gastado</strong> en fichajes y su <strong>balance neto</strong> (gastos − ventas), a partir de nuestro histórico. <span class="net-pos">+</span> ingresa más de lo que gasta · <span class="net-neg">−</span> gasta más de lo que ingresa.</p>
-      ${_netSpendHTML(transfers)}
-    </div>
   </section>
 
   <section id="tab-noticias" class="panel${_activeTab === 'noticias' ? ' active' : ''}" role="tabpanel">
@@ -4144,7 +4066,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     </div>
     <div id="sub-valiosos" class="subpanel active">
       <p class="sub-note">Jugadores con mayor valor de mercado (Transfermarkt). Se actualiza automáticamente.${values.updated ? ` · <span class="upd-date">${_timeAgo(values.updated)}</span>` : ''}</p>
-      ${_comparadorHTML(values)}
       ${values.list.length
         ? `<div class="rtable">${_valueRowsHTML(values.list)}</div>`
         : '<p class="empty">No hay datos de valor de mercado ahora mismo.</p>'}

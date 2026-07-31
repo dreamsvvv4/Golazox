@@ -262,51 +262,138 @@
     });
   }
 
-  // ---- Comparador de cracks ----
-  (function initComparador() {
-    var box = document.querySelector('[data-cmp]');
+  // ---- Buscador global (cross-tab) ----
+  (function initGlobalSearch() {
+    var box = document.querySelector('[data-gsearch]');
     if (!box) return;
-    var dataEl = box.querySelector('[data-cmp-data]');
-    var selA = box.querySelector('[data-cmp-a]');
-    var selB = box.querySelector('[data-cmp-b]');
-    var out = box.querySelector('[data-cmp-out]');
-    if (!dataEl || !selA || !selB || !out) return;
-    var players;
-    try { players = JSON.parse(dataEl.textContent); } catch (e) { return; }
+    var input = box.querySelector('#gsearch-input');
+    var out = box.querySelector('[data-gsearch-out]');
+    var clearBtn = box.querySelector('[data-gsearch-clear]');
+    if (!input || !out) return;
+
+    var TAB_LABEL = { fichajes: 'Fichajes', noticias: 'Noticias', agenda: 'Agenda', valores: 'Cracks', estadisticas: 'Estadísticas' };
+
+    // Construye el índice desde el DOM ya renderizado.
+    function buildIndex() {
+      var items = [];
+      // Tarjetas de fichajes
+      document.querySelectorAll('#tab-fichajes .tcard[data-fav]').forEach(function (el) {
+        var name = (el.querySelector('.tcard-player, .tname, h3') || {}).textContent || el.dataset.fav || '';
+        var sub = (el.querySelector('.tcard-flow, .tflow, .tcard-meta') || {}).textContent || '';
+        items.push({ el: el, tab: 'fichajes', name: name.trim(), sub: sub.replace(/\s+/g, ' ').trim() });
+      });
+      // Filas de rankings (valores + estadísticas)
+      [['#tab-valores', 'valores'], ['#tab-estadisticas', 'estadisticas']].forEach(function (pair) {
+        document.querySelectorAll(pair[0] + ' .rrow').forEach(function (el) {
+          var name = (el.querySelector('.rname') || {}).textContent || '';
+          var sub = (el.querySelector('.rsub') || {}).textContent || '';
+          if (name.trim()) items.push({ el: el, tab: pair[1], name: name.trim(), sub: sub.replace(/\s+/g, ' ').trim() });
+        });
+      });
+      return items;
+    }
+    var index = null;
+
     function esc(s) {
       return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
         return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
       });
     }
-    function fmt(v) {
-      if (!v) return '—';
-      if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace('.', ',') + ' M€';
-      if (v >= 1e3) return Math.round(v / 1e3) + ' mil €';
-      return v + ' €';
+    function norm(s) {
+      return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
-    function cardHTML(p, win) {
-      var badge = p.badge ? '<img src="' + esc(p.badge) + '" alt="" loading="lazy"/>' : '';
-      var meta = [p.pos, p.age ? p.age + ' años' : '', p.club].filter(Boolean).join(' · ');
-      return '<div class="cmp-card">' + badge +
-        '<div class="cmp-name">' + esc(p.n) + '</div>' +
-        '<div class="cmp-meta">' + esc(meta) + '</div>' +
-        '<div class="cmp-val' + (win ? ' win' : '') + '">' + (p.vl ? esc(p.vl) : fmt(p.v)) + '</div></div>';
+
+    var activeIdx = -1, current = [];
+
+    function search(q) {
+      if (index === null) index = buildIndex();
+      var nq = norm(q);
+      var seen = {}, res = [];
+      for (var i = 0; i < index.length && res.length < 12; i++) {
+        var it = index[i];
+        if (norm(it.name).indexOf(nq) === -1 && norm(it.sub).indexOf(nq) === -1) continue;
+        var key = it.tab + '|' + it.name;
+        if (seen[key]) continue;
+        seen[key] = 1;
+        res.push(it);
+      }
+      return res;
     }
-    function render() {
-      var a = players[+selA.value], b = players[+selB.value];
-      if (!a || !b) { out.className = 'cmp-result'; out.innerHTML = ''; return; }
-      var aWin = a.v > b.v, bWin = b.v > a.v;
-      var diff = Math.abs(a.v - b.v);
-      var diffTxt = diff > 0
-        ? esc((aWin ? a.n : b.n)) + ' vale ' + fmt(diff) + ' más'
-        : 'Mismo valor de mercado';
-      out.className = 'cmp-result on';
-      out.innerHTML = cardHTML(a, aWin) + '<span class="cmp-mid">VS</span>' + cardHTML(b, bWin) +
-        '<div class="cmp-diff">' + diffTxt + '</div>';
+
+    function renderResults(res) {
+      current = res; activeIdx = -1;
+      if (!res.length) {
+        out.innerHTML = '<div class="gs-empty">Sin coincidencias.</div>';
+        out.hidden = false; input.setAttribute('aria-expanded', 'true');
+        return;
+      }
+      out.innerHTML = res.map(function (it, i) {
+        return '<div class="gs-item" role="option" data-gi="' + i + '">' +
+          '<div class="gs-txt"><div class="gs-name">' + esc(it.name) + '</div>' +
+          (it.sub ? '<div class="gs-sub">' + esc(it.sub) + '</div>' : '') + '</div>' +
+          '<span class="gs-tag">' + esc(TAB_LABEL[it.tab] || it.tab) + '</span></div>';
+      }).join('');
+      out.hidden = false; input.setAttribute('aria-expanded', 'true');
     }
-    selA.addEventListener('change', render);
-    selB.addEventListener('change', render);
-    render();
+
+    function close() {
+      out.hidden = true; input.setAttribute('aria-expanded', 'false'); activeIdx = -1;
+    }
+
+    function go(it) {
+      if (!it) return;
+      var tabBtn = document.querySelector('.tabs .tab[data-tab="' + it.tab + '"]');
+      if (tabBtn) tabBtn.click();
+      // Si el elemento está en un subpanel no activo, activa su subtab.
+      var subpanel = it.el.closest('.subpanel');
+      if (subpanel && !subpanel.classList.contains('active')) {
+        var sub = subpanel.id.replace('sub-', '');
+        var subBtn = document.querySelector('#tab-' + it.tab + ' .subtab[data-sub="' + sub + '"]');
+        if (subBtn) subBtn.click();
+      }
+      close();
+      input.value = '';
+      if (clearBtn) clearBtn.hidden = true;
+      setTimeout(function () {
+        it.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        it.el.classList.add('gs-flash');
+        setTimeout(function () { it.el.classList.remove('gs-flash'); }, 1400);
+      }, 120);
+    }
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim();
+      if (clearBtn) clearBtn.hidden = !q;
+      if (q.length < 2) { close(); return; }
+      renderResults(search(q));
+    });
+    input.addEventListener('keydown', function (e) {
+      if (out.hidden) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIdx += (e.key === 'ArrowDown' ? 1 : -1);
+        if (activeIdx < 0) activeIdx = current.length - 1;
+        if (activeIdx >= current.length) activeIdx = 0;
+        out.querySelectorAll('.gs-item').forEach(function (el, i) {
+          el.classList.toggle('active', i === activeIdx);
+        });
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        go(current[activeIdx >= 0 ? activeIdx : 0]);
+      } else if (e.key === 'Escape') {
+        close();
+      }
+    });
+    out.addEventListener('click', function (e) {
+      var item = e.target.closest('.gs-item');
+      if (item) go(current[+item.dataset.gi]);
+    });
+    if (clearBtn) clearBtn.addEventListener('click', function () {
+      input.value = ''; clearBtn.hidden = true; close(); input.focus();
+    });
+    document.addEventListener('click', function (e) {
+      if (!box.contains(e.target)) close();
+    });
   })();
 })();
 
