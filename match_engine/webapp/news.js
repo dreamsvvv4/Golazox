@@ -55,7 +55,7 @@ function _normTitle(t) {
 const IMG_HOSTS = [
   'estaticos-marca.com', 'e00-marca.uecdn.es',
   'mundodeportivo.com', 'epimg.net', 'as.com',
-  'prensaiberica.es', 'sport.es', 'caughtoffside.com',
+  'prensaiberica.es', 'sport.es',
 ];
 
 // Extrae la primera imagen válida de un item RSS (enclosure / media:*).
@@ -594,55 +594,6 @@ async function getRumors() {
 }
 
 // ════════════════════════════════════════════════════════════════════
-//  HERE WE GO — Fabrizio Romano (vía su columna oficial en CaughtOffside)
-//  Su web propia (fabrizioromano.com) es de otra persona (un artista) y X
-//  requiere API de pago. CaughtOffside publica su columna en RSS público.
-//  Mostramos SOLO título + fuente + enlace + imagen (igual que las noticias,
-//  sin reproducir el cuerpo). Marcamos "here we go" = fichaje confirmado.
-// ════════════════════════════════════════════════════════════════════
-let _hwgCache = { ts: 0, data: null };
-const HWG_URL = 'https://www.caughtoffside.com/tag/fabrizio-romano/feed/';
-const HWG_TTL = 20 * 60 * 1000; // 20 min
-
-// Detecta un fichaje confirmado por la frase-firma de Romano y sinónimos.
-const _HWG_DONE = /here we go|done deal|deal done|agreement (?:reached|sealed|done|in place)|agree(?:d|ment)? .*(?:deal|transfer|to sign)|medical (?:booked|scheduled|completed)|official(?:ly)?|signed|completed/i;
-
-async function getHereWeGo() {
-  const now = Date.now();
-  if (_hwgCache.data && (now - _hwgCache.ts) < HWG_TTL) return _hwgCache.data;
-  try {
-    const r = await fetch(HWG_URL, {
-      timeout: FETCH_TIMEOUT,
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GolazoX/1.0; +https://golazox.com)' },
-    });
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const $ = cheerio.load(await r.text(), { xmlMode: true });
-    const list = [];
-    $('item').each((_, el) => {
-      const $el = $(el);
-      const title = ($el.children('title').first().text() || '').trim();
-      const link = ($el.children('link').first().text() || '').trim();
-      if (!title || !/^https?:\/\//i.test(link)) return;
-      const dateStr = ($el.children('pubDate').first().text() || '').trim();
-      const ts = dateStr ? Date.parse(dateStr) : NaN;
-      const desc = ($el.children('description').first().text() || '').replace(/<[^>]+>/g, ' ');
-      const image = _extractImage($, $el);
-      const confirmed = _HWG_DONE.test(title) || /here we go/i.test(desc);
-      list.push({ title, link, source: 'Fabrizio Romano', ts: Number.isNaN(ts) ? 0 : ts, image, confirmed });
-    });
-    // Confirmados primero, luego por fecha descendente.
-    list.sort((a, b) => (b.confirmed - a.confirmed) || (b.ts - a.ts));
-    const data = { list: list.slice(0, 24), updated: now };
-    if (list.length) _hwgCache = { ts: now, data };
-    else console.warn('[news] getHereWeGo: 0 items (¿cambió el feed de CaughtOffside?)');
-    return data;
-  } catch (e) {
-    console.warn('[news] getHereWeGo falló:', e.message);
-    return _hwgCache.data || { list: [], updated: 0 };
-  }
-}
-
-// ════════════════════════════════════════════════════════════════════
 //  DATOS CURADOS  (no existen en fuentes gratuitas fiables)
 //  Se leen de /data/*.json y son editables a mano. Si el archivo no
 //  existe se devuelve un valor vacío sin romper la página.
@@ -681,7 +632,7 @@ function getLegends() {
 }
 
 module.exports = {
-  getNews, getTransfers, getValues, getStats, getRumors, getHereWeGo,
+  getNews, getTransfers, getValues, getStats, getRumors,
   getAgenda, getSalaries, getLegends,
   FEEDS, IMG_HOSTS,
 };

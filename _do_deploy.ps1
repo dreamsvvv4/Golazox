@@ -57,18 +57,26 @@ Write-Host "`n==> DEPLOY COMPLETADO!" -ForegroundColor Green
 Write-Host "==> Verificando produccion (esperando reinicio de Passenger)..." -ForegroundColor Cyan
 Start-Sleep -Seconds 6
 $routes = '/', '/fichajes', '/noticias', '/agenda', '/valores', '/estadisticas'
+# Timeout amplio: la primera peticion a /fichajes calienta cachés (fichajes,
+# rumores, Here we go) con fetches en frío que pueden tardar. Reintenta 1 vez.
+function Test-Route($r) {
+    for ($i = 1; $i -le 2; $i++) {
+        try {
+            $code = (Invoke-WebRequest -Uri "https://golazox.com$r" -Method Head -TimeoutSec 30 -UseBasicParsing).StatusCode
+            if ($code -eq 200) { return $code }
+        } catch {
+            $code = $_.Exception.Response.StatusCode.value__
+            if ($code) { return $code }
+        }
+        if ($i -eq 1) { Start-Sleep -Seconds 4 }
+    }
+    return $code
+}
 $failed = @()
 foreach ($r in $routes) {
-    $url = "https://golazox.com$r"
-    try {
-        $code = (Invoke-WebRequest -Uri $url -Method Head -TimeoutSec 15 -UseBasicParsing).StatusCode
-        if ($code -eq 200) { Write-Host ("    200  {0}" -f $r) -ForegroundColor Green }
-        else { Write-Host ("    {0}  {1}" -f $code, $r) -ForegroundColor Yellow; $failed += "$r ($code)" }
-    } catch {
-        $sc = $_.Exception.Response.StatusCode.value__
-        Write-Host ("    ERR  {0}  {1}" -f $r, ($sc | ForEach-Object { $_ })) -ForegroundColor Red
-        $failed += "$r ($sc)"
-    }
+    $code = Test-Route $r
+    if ($code -eq 200) { Write-Host ("    200  {0}" -f $r) -ForegroundColor Green }
+    else { Write-Host ("    {0}  {1}" -f ($code | ForEach-Object { $_ }), $r) -ForegroundColor Red; $failed += "$r ($code)" }
 }
 if ($failed.Count) {
     Write-Host "`nVERIFICACION FALLIDA en:" -ForegroundColor Red
