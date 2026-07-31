@@ -22,7 +22,7 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 
 ### UI / UX
 - [x] **1. Termómetro del Mercado** — panel resumen en `/fichajes`: total invertido, nº de operaciones, fichaje más caro y club que más gasta. Calculado en vivo desde los datos ya raspados. *(bajo riesgo)*
-- [ ] **2. Comparador de Cracks** — seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
+- [x] **2. Comparador de Cracks** — seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
 - [x] **3. Favoritos (seguir jugadores/clubes)** — estrella en tarjetas + filtro "solo favoritos", persistido en `localStorage`. *(bajo riesgo)*
 - [x] **4. Compartir tarjeta de fichaje** — botón con Web Share API + copiar enlace con fallback. *(bajo riesgo)*
 - [ ] **5. Skeletons de carga** — placeholders animados en vez de páginas vacías/503 mientras carga. *(bajo riesgo)*

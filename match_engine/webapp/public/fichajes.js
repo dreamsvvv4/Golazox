@@ -261,6 +261,53 @@
       card.classList.toggle('fav-hide', onlyFav && !isFav);
     });
   }
+
+  // ---- Comparador de cracks ----
+  (function initComparador() {
+    var box = document.querySelector('[data-cmp]');
+    if (!box) return;
+    var dataEl = box.querySelector('[data-cmp-data]');
+    var selA = box.querySelector('[data-cmp-a]');
+    var selB = box.querySelector('[data-cmp-b]');
+    var out = box.querySelector('[data-cmp-out]');
+    if (!dataEl || !selA || !selB || !out) return;
+    var players;
+    try { players = JSON.parse(dataEl.textContent); } catch (e) { return; }
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function fmt(v) {
+      if (!v) return '—';
+      if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace('.', ',') + ' M€';
+      if (v >= 1e3) return Math.round(v / 1e3) + ' mil €';
+      return v + ' €';
+    }
+    function cardHTML(p, win) {
+      var badge = p.badge ? '<img src="' + esc(p.badge) + '" alt="" loading="lazy"/>' : '';
+      var meta = [p.pos, p.age ? p.age + ' años' : '', p.club].filter(Boolean).join(' · ');
+      return '<div class="cmp-card">' + badge +
+        '<div class="cmp-name">' + esc(p.n) + '</div>' +
+        '<div class="cmp-meta">' + esc(meta) + '</div>' +
+        '<div class="cmp-val' + (win ? ' win' : '') + '">' + (p.vl ? esc(p.vl) : fmt(p.v)) + '</div></div>';
+    }
+    function render() {
+      var a = players[+selA.value], b = players[+selB.value];
+      if (!a || !b) { out.className = 'cmp-result'; out.innerHTML = ''; return; }
+      var aWin = a.v > b.v, bWin = b.v > a.v;
+      var diff = Math.abs(a.v - b.v);
+      var diffTxt = diff > 0
+        ? esc((aWin ? a.n : b.n)) + ' vale ' + fmt(diff) + ' más'
+        : 'Mismo valor de mercado';
+      out.className = 'cmp-result on';
+      out.innerHTML = cardHTML(a, aWin) + '<span class="cmp-mid">VS</span>' + cardHTML(b, bWin) +
+        '<div class="cmp-diff">' + diffTxt + '</div>';
+    }
+    selA.addEventListener('change', render);
+    selB.addEventListener('change', render);
+    render();
+  })();
 })();
 
 
