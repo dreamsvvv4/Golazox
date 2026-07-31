@@ -34,6 +34,9 @@ match_engine/webapp/data/transfers_db.json
 match_engine/webapp/data/gx_leaderboard.json
 match_engine/webapp/data/gx_global_lb.json
 
+# Caché en disco de los scrapers (se regenera sola en runtime)
+match_engine/webapp/data/.cache/
+
 # Squads JSON — versionar todos para que Hostinger reciba los datos por git
 # (anteriormente ignorados por RGPD/marcas, pero son datos públicos de plantillas históricas)
 

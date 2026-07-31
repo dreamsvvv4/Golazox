@@ -17,7 +17,7 @@ const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
-const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, IMG_HOSTS } = require('./news');
+const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, getStatus, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
 
 const app    = express();
@@ -2111,6 +2111,18 @@ app.get('/tmbadge/:id', async (req, res) => {
 // External media is blocked by the strict img-src 'self' CSP, so news images are
 // referenced as /newsimg?u=<url>. Only whitelisted hosts are fetched (anti-SSRF).
 const _newsImgCache = new Map();
+// -- GET /health — estado de los scrapers (para monitorización) -------------
+// Devuelve 200 si todas las fuentes están OK, 503 si alguna falla, con el
+// detalle por fuente (última vez que respondió, nº de registros, error).
+app.get('/health', (req, res) => {
+  try {
+    const st = getStatus();
+    res.status(st.ok ? 200 : 503).json(st);
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
 app.get('/newsimg', async (req, res) => {
   const raw = String(req.query.u || '');
   let url;
@@ -3912,7 +3924,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab" data-sub="pagados">💵 Mejor pagados<span class="count">${salaries.players.length}</span></button>
     </div>
     <div id="sub-valiosos" class="subpanel active">
-      <p class="sub-note">Jugadores con mayor valor de mercado (Transfermarkt). Se actualiza automáticamente.</p>
+      <p class="sub-note">Jugadores con mayor valor de mercado (Transfermarkt). Se actualiza automáticamente.${values.updated ? ` · <span class="upd-date">${_timeAgo(values.updated)}</span>` : ''}</p>
       ${values.list.length
         ? `<div class="rtable">${_valueRowsHTML(values.list)}</div>`
         : '<p class="empty">No hay datos de valor de mercado ahora mismo.</p>'}
@@ -3932,7 +3944,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab" data-sub="historicos">🏅 Históricos<span class="count">${legends.scorers.length}</span></button>
     </div>
     <div id="sub-goleadores" class="subpanel active">
-      <p class="sub-note">Máximos goleadores de la temporada ${stats.season || ''} en las grandes ligas europeas.</p>
+      <p class="sub-note">Máximos goleadores de la temporada ${stats.season || ''} en las grandes ligas europeas.${stats.updated ? ` · <span class="upd-date">${_timeAgo(stats.updated)}</span>` : ''}</p>
       ${stats.scorers.length
         ? `<div class="rtable">${_statRowsHTML(stats.scorers, 'goals')}</div>`
         : '<p class="empty">No hay datos de goleadores ahora mismo.</p>'}

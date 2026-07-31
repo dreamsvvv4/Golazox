@@ -120,12 +120,104 @@ async function _fetchFeed(feed) {
   }
 }
 
+// ════════════════════════════════════════════════════════════════════
+//  CACHÉ EN DISCO + ESTADO DE SCRAPERS + ALERTAS
+//  - Persiste el último resultado bueno de cada scraper en data/.cache/
+//    para que un reinicio (Passenger) no obligue a re-raspar en frío.
+//  - Registra el estado de cada fuente (ok / vacío / fallo) para /health.
+//  - Si ALERT_WEBHOOK está definido, avisa (throttled) cuando algo falla.
+// ════════════════════════════════════════════════════════════════════
+const _CACHE_DIR = path.join(__dirname, 'data', '.cache');
+const _cacheFile = (key) => path.join(_CACHE_DIR, `${key}.json`);
+
+// Lee del disco el último resultado persistido: { ts, data } | null.
+function _cacheGet(key) {
+  try {
+    const raw = JSON.parse(fs.readFileSync(_cacheFile(key), 'utf8'));
+    if (raw && raw.data && typeof raw.ts === 'number') return { ts: raw.ts, data: raw.data };
+  } catch (_) { /* no existe o corrupto */ }
+  return null;
+}
+
+// Persiste { ts, data } en disco (fire-and-forget, nunca rompe la respuesta).
+function _cachePut(key, entry) {
+  try {
+    fs.mkdirSync(_CACHE_DIR, { recursive: true });
+    fs.writeFileSync(_cacheFile(key), JSON.stringify({ ts: entry.ts, data: entry.data }), 'utf8');
+  } catch (_) { /* disco no disponible */ }
+}
+
+// Registro de estado por scraper (para el endpoint /health y las alertas).
+const _status = {};   // key -> { state, count, lastOk, lastErr, err }
+let _lastAlert = {};   // key -> ts del último aviso (throttle)
+const _ALERT_TTL = 30 * 60 * 1000; // no repetir el mismo aviso en 30 min
+
+// Cuenta los registros de un data-object cacheado (según su forma).
+function _countData(d) {
+  if (!d) return 0;
+  if (Array.isArray(d.list)) return d.list.length;
+  if (Array.isArray(d.scorers)) return d.scorers.length;
+  if (d.fichajes || d.general) return (d.fichajes || []).length + (d.general || []).length;
+  return 0;
+}
+
+// Marca una fuente como OK sembrada desde disco, para que /health la refleje
+// aunque no se haya vuelto a raspar en la vida de este proceso.
+function _seed(key, entry) {
+  if (!entry || _status[key]) return;
+  _status[key] = { state: 'ok', count: _countData(entry.data), lastOk: entry.ts || 0, lastErr: 0, err: '' };
+}
+
+function _mark(key, state, count, err) {
+  const prev = _status[key] || {};
+  _status[key] = {
+    state,
+    count: count != null ? count : (prev.count || 0),
+    lastOk: state === 'ok' ? Date.now() : (prev.lastOk || 0),
+    lastErr: (state === 'fail' || state === 'empty') ? Date.now() : (prev.lastErr || 0),
+    err: err || (state === 'ok' ? '' : (prev.err || '')),
+  };
+  if (state === 'fail' || state === 'empty') _alert(key, state, err);
+}
+
+// Aviso opcional a un webhook (Slack/Discord/Telegram-compatible via texto).
+function _alert(key, state, err) {
+  const url = process.env.ALERT_WEBHOOK;
+  if (!url) return;
+  const now = Date.now();
+  if (_lastAlert[key] && (now - _lastAlert[key]) < _ALERT_TTL) return; // throttle
+  _lastAlert[key] = now;
+  const msg = `⚠️ GolazoX scraper "${key}": ${state}${err ? ' — ' + err : ''}`;
+  fetch(url, {
+    method: 'POST',
+    timeout: FETCH_TIMEOUT,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: msg, content: msg }),
+  }).catch(() => { /* el aviso nunca debe romper nada */ });
+}
+
+// Estado agregado de todas las fuentes (para GET /health).
+function getStatus() {
+  const now = Date.now();
+  const sources = Object.entries(_status).map(([key, s]) => ({
+    key,
+    state: s.state,
+    count: s.count,
+    ageMin: s.lastOk ? Math.round((now - s.lastOk) / 60000) : null,
+    lastOk: s.lastOk || null,
+    err: s.err || undefined,
+  }));
+  const healthy = sources.length === 0 || sources.every(s => s.state === 'ok');
+  return { ok: healthy, ts: now, sources };
+}
+
 /**
  * Devuelve { fichajes: [...], general: [...], updated: <ms> }.
  * Usa caché de 15 min. Cada item: { title, link, source, ts }.
  */
 async function getNews() {
   const now = Date.now();
+  if (!_cache.data) { const d = _cacheGet('news'); if (d) { _cache = d; _seed('news', d); } }
   if (_cache.data && (now - _cache.ts) < CACHE_TTL) return _cache.data;
 
   const results = await Promise.allSettled(FEEDS.map(_fetchFeed));
@@ -158,7 +250,8 @@ async function getNews() {
   };
 
   // Solo cachear si obtuvimos algo; si todo falló, reintentar en la próxima visita.
-  if (unique.length > 0) _cache = { ts: now, data };
+  if (unique.length > 0) { _cache = { ts: now, data }; _cachePut('news', _cache); _mark('news', 'ok', unique.length); }
+  else _mark('news', 'empty', 0);
   return data;
 }
 
@@ -376,6 +469,7 @@ async function _fetchLatest() {
 
 async function getTransfers() {
   const now = Date.now();
+  if (!_tCache.data) { const d = _cacheGet('transfers'); if (d) { _tCache = d; _seed('transfers', d); } }
   if (_tCache.data && (now - _tCache.ts) < TRANSFERS_TTL) return _tCache.data;
   try {
     const saison = _currentSaison();
@@ -409,9 +503,11 @@ async function getTransfers() {
     const historyTotal = _loadDb().items.length;
 
     const data = { list: list.slice(0, 40), top, latest, history, historyTotal, updated: now };
-    if (list.length > 0 || latest.length > 0) _tCache = { ts: now, data };
+    if (list.length > 0 || latest.length > 0) { _tCache = { ts: now, data }; _cachePut('transfers', _tCache); _mark('transfers', 'ok', list.length); }
+    else _mark('transfers', 'empty', 0);
     return data;
-  } catch (_) {
+  } catch (e) {
+    _mark('transfers', 'fail', 0, e.message);
     return _tCache.data || { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
   }
 }
@@ -450,6 +546,7 @@ function _parseValueRow($, el) {
 
 async function getValues() {
   const now = Date.now();
+  if (!_vCache.data) { const d = _cacheGet('values'); if (d) { _vCache = d; _seed('values', d); } }
   if (_vCache.data && (now - _vCache.ts) < RANK_TTL) return _vCache.data;
   try {
     const r = await fetch(VALUES_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
@@ -459,9 +556,11 @@ async function getValues() {
     const list = [];
     for (const el of rows) { const t = _parseValueRow($, el); if (t) list.push(t); }
     const data = { list: list.slice(0, 50), updated: now };
-    if (list.length) _vCache = { ts: now, data };
+    if (list.length) { _vCache = { ts: now, data }; _cachePut('values', _vCache); _mark('values', 'ok', list.length); }
+    else _mark('values', 'empty', 0);
     return data;
-  } catch (_) {
+  } catch (e) {
+    _mark('values', 'fail', 0, e.message);
     return _vCache.data || { list: [], updated: 0 };
   }
 }
@@ -509,6 +608,7 @@ async function _fetchScorers(saison) {
 
 async function getStats() {
   const now = Date.now();
+  if (!_sCache.data) { const d = _cacheGet('stats'); if (d) { _sCache = d; _seed('stats', d); } }
   if (_sCache.data && (now - _sCache.ts) < RANK_TTL) return _sCache.data;
   try {
     const saison = _currentSaison();
@@ -524,9 +624,11 @@ async function getStats() {
     const assists = all.slice().sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
     const label = `${season}/${String(season + 1).slice(-2)}`;
     const data = { scorers, assists, season: label, updated: now };
-    if (all.length) _sCache = { ts: now, data };
+    if (all.length) { _sCache = { ts: now, data }; _cachePut('stats', _sCache); _mark('stats', 'ok', all.length); }
+    else _mark('stats', 'empty', 0);
     return data;
-  } catch (_) {
+  } catch (e) {
+    _mark('stats', 'fail', 0, e.message);
     return _sCache.data || { scorers: [], assists: [], season: '', updated: 0 };
   }
 }
@@ -573,6 +675,7 @@ function _parseRumorRow($, el) {
 
 async function getRumors() {
   const now = Date.now();
+  if (!_rCache.data) { const d = _cacheGet('rumors'); if (d) { _rCache = d; _seed('rumors', d); } }
   if (_rCache.data && (now - _rCache.ts) < RUMORS_TTL) return _rCache.data;
   try {
     const r = await fetch(RUMORS_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
@@ -584,10 +687,11 @@ async function getRumors() {
     // Los que tienen probabilidad primero (mayor a menor); los sin % al final.
     list.sort((a, b) => (b.prob == null ? -1 : b.prob) - (a.prob == null ? -1 : a.prob));
     const data = { list: list.slice(0, 30), updated: now };
-    if (list.length) _rCache = { ts: now, data };
-    else console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)');
+    if (list.length) { _rCache = { ts: now, data }; _cachePut('rumors', _rCache); _mark('rumors', 'ok', list.length); }
+    else { _mark('rumors', 'empty', 0); console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)'); }
     return data;
   } catch (e) {
+    _mark('rumors', 'fail', 0, e.message);
     console.warn('[news] getRumors falló:', e.message);
     return _rCache.data || { list: [], updated: 0 };
   }
@@ -633,7 +737,7 @@ function getLegends() {
 
 module.exports = {
   getNews, getTransfers, getValues, getStats, getRumors,
-  getAgenda, getSalaries, getLegends,
+  getAgenda, getSalaries, getLegends, getStatus,
   FEEDS, IMG_HOSTS,
 };
 
