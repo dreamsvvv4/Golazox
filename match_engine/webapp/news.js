@@ -758,9 +758,68 @@ function getLegends() {
   return { scorers: raw.scorers || [], assists: raw.assists || [], note: raw.note || '', updated: raw.updated || 0 };
 }
 
+// ════════════════════════════════════════════════════════════════════
+//  GUÍA DE TV — partidos de fútbol de HOY con hora, competición y canal
+//  Fuente: marca.com/programacion-tv.html (SSR, sin JS). Cada evento es
+//  un <li class="dailyevent"> con .dailyhour, .dailycompetition,
+//  .dailyteams y .dailychannel. Filtramos solo fútbol (icon-futbol).
+//  Son datos FACTUALES (hora/canal), cacheados 3 h y citando la fuente;
+//  los canales son de la parrilla ESPAÑOLA (los derechos varían por país).
+// ════════════════════════════════════════════════════════════════════
+let _tvCache = { ts: 0, data: null };
+const TV_URL = 'https://www.marca.com/programacion-tv.html';
+const TV_TTL = 3 * 60 * 60 * 1000; // 3 h
+
+const _TV_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+  'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+};
+
+// Competiciones de primer nivel: se marcan como destacadas (orden y estilo).
+const _TV_BIG_RE = /\b(LALIGA|LA LIGA|PRIMERA|CHAMPIONS|LIGA DE CAMPEONES|EUROPA LEAGUE|CONFERENCE|PREMIER|SERIE A|BUNDESLIGA|LIGUE 1|COPA DEL REY|SUPERCOPA|MUNDIAL|EUROCOPA|NATIONS LEAGUE|CLASIFICACI)/i;
+
+async function getTvGuide() {
+  const now = Date.now();
+  if (!_tvCache.data) { const d = _cacheGet('tvguide'); if (d) { _tvCache = d; _seed('tvguide', d); } }
+  // Servir de caché solo si es fresca Y del día de hoy (la parrilla cambia a diario).
+  if (_tvCache.data && (now - _tvCache.ts) < TV_TTL &&
+      new Date(_tvCache.ts).toDateString() === new Date(now).toDateString()) {
+    return _tvCache.data;
+  }
+  try {
+    const r = await fetch(TV_URL, { timeout: FETCH_TIMEOUT, headers: _TV_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const $ = cheerio.load(await r.text());
+    const events = [];
+    $('li.dailyevent').each((_, el) => {
+      const $el = $(el);
+      const isFootball = $el.find('.dailytime i').is('.icon-futbol') ||
+                         /f[uú]tbol/i.test($el.find('.dailyday').text());
+      if (!isFootball) return;
+      const time    = $el.find('.dailyhour').text().replace(/\s+/g, ' ').trim();
+      const comp     = $el.find('.dailycompetition').text().replace(/\s+/g, ' ').trim();
+      const teams    = $el.find('.dailyteams').text().replace(/\s+/g, ' ').trim();
+      const channel = $el.find('.dailychannel').text().replace(/\s+/g, ' ').trim();
+      if (!teams) return;
+      events.push({ time, competition: comp, teams, channel, big: _TV_BIG_RE.test(comp) });
+    });
+    // Orden: destacadas primero, luego por hora ascendente.
+    events.sort((a, b) => (b.big - a.big) || a.time.localeCompare(b.time));
+    const data = { events: events.slice(0, 30), updated: now };
+    if (events.length) { _tvCache = { ts: now, data }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', events.length); }
+    else { _mark('tvguide', 'empty', 0); console.warn('[news] getTvGuide: 0 partidos parseados (¿cambió el HTML de Marca?)'); }
+    return data;
+  } catch (e) {
+    _mark('tvguide', 'fail', 0, e.message);
+    console.warn('[news] getTvGuide falló:', e.message);
+    return _tvCache.data || { events: [], updated: 0 };
+  }
+}
+
 module.exports = {
   getNews, getTransfers, getValues, getStats, getRumors,
-  getAgenda, getSalaries, getLegends, getStatus,
+  getAgenda, getSalaries, getLegends, getStatus, getTvGuide,
   FEEDS, IMG_HOSTS,
 };
 
