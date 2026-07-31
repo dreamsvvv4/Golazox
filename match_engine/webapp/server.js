@@ -3698,10 +3698,6 @@ const _agendaHTML = (events) => {
       <div class="adate">${e.icon || '📅'} ${_esc(dtxt)} <span class="adays">${badge}</span></div>
       <div class="atitle">${_esc(e.title)}</div>
       ${e.desc ? `<div class="adesc">${_esc(e.desc)}</div>` : ''}
-      ${(e.time || e.tv) ? `<div class="ameta">
-        ${e.time ? `<span class="ameta-chip ameta-time">🕒 ${_esc(e.time)}</span>` : ''}
-        ${e.tv ? `<span class="ameta-chip ameta-tv">📺 ${_esc(e.tv)}</span>` : ''}
-      </div>` : ''}
       ${e.comp ? `<div class="acomp">${_esc(e.comp)}</div>` : ''}
     </div>`;
   }).join('')}</div>`;
@@ -4012,10 +4008,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .adays { font-size:.62rem; font-weight:700; color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); padding:.1rem .5rem; border-radius:999px; }
     .atitle { font-size:1rem; font-weight:700; color:#fff; line-height:1.25; }
     .adesc { font-size:.8rem; color:rgba(255,255,255,.5); margin-top:.25rem; }
-    .ameta { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.5rem; }
-    .ameta-chip { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-weight:700; padding:.22rem .6rem; border-radius:999px; border:1px solid rgba(255,255,255,.12); }
-    .ameta-time { color:var(--cyan); background:rgba(0,212,255,.1); border-color:rgba(0,212,255,.28); }
-    .ameta-tv { color:#ffd27a; background:rgba(255,196,84,.1); border-color:rgba(255,196,84,.28); }
     .acomp { font-size:.68rem; color:rgba(255,255,255,.4); margin-top:.3rem; }
 
     .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
