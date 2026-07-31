@@ -3431,6 +3431,39 @@ const _chartHTML = (top) => {
   </section>`;
 };
 
+// Termómetro del Mercado: pulso agregado de la ventana de fichajes.
+// Calcula qué clubes más invierten (top 3 con escudo) a partir de los datos
+// ya raspados, sin pedir nada nuevo a la fuente.
+const _marketThermoHTML = (transfers) => {
+  const list = (transfers.list || []).filter(t => t.fee && t.fee.type === 'fee' && t.fee.value > 0);
+  if (list.length < 3) return '';
+  const byClub = new Map();
+  for (const t of list) {
+    const name = (t.to && t.to.name) || '?';
+    const cur = byClub.get(name) || { club: t.to, spent: 0, count: 0 };
+    cur.spent += t.fee.value;
+    cur.count += 1;
+    byClub.set(name, cur);
+  }
+  const ranked = [...byClub.values()].sort((a, b) => b.spent - a.spent).slice(0, 3);
+  const totalOps = list.length;
+  const avg = Math.round(list.reduce((s, t) => s + t.fee.value, 0) / totalOps);
+  const medals = ['🥇', '🥈', '🥉'];
+  const rows = ranked.map((r, i) => `
+    <li class="thermo-club">
+      <span class="thermo-medal">${medals[i]}</span>
+      ${_badgeImg(r.club)}
+      <span class="thermo-name">${_esc(r.club.name)}</span>
+      <span class="thermo-spent">${_fmtFee(r.spent)}</span>
+      <span class="thermo-count">${r.count} ${r.count === 1 ? 'fichaje' : 'fichajes'}</span>
+    </li>`).join('');
+  return `<section class="thermo">
+    <div class="thermo-head"><h2>🌡️ Termómetro del mercado</h2>
+      <span class="thermo-sub">Gasto medio por operación: <strong>${_fmtFee(avg)}</strong></span></div>
+    <ul class="thermo-list">${rows}</ul>
+  </section>`;
+};
+
 // Color de acento por medio para el tablón de noticias.
 const _sourceColor = (src = '') => {
   const s = src.toLowerCase();
@@ -3685,6 +3718,17 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     /* ── Chart / ranking ── */
     .chart-box { background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1.2rem 1.3rem; margin-bottom:2rem; }
     .chart-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; }
+    .thermo { background:linear-gradient(180deg,rgba(255,77,77,.06),rgba(255,159,26,.03)); border:1px solid rgba(255,159,26,.18); border-radius:16px; padding:1.1rem 1.3rem; margin:0 0 2rem; }
+    .thermo-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem; }
+    .thermo-head h2 { margin:0; font-size:1.05rem; }
+    .thermo-sub { font-size:.78rem; color:rgba(255,255,255,.55); }
+    .thermo-sub strong { color:#ff9f1a; }
+    .thermo-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.5rem; }
+    .thermo-club { display:grid; grid-template-columns:auto 34px 1fr auto; align-items:center; gap:.7rem; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:.5rem .8rem; }
+    .thermo-medal { font-size:1.15rem; }
+    .thermo-name { font-weight:700; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .thermo-spent { font-weight:800; color:#10d98a; font-variant-numeric:tabular-nums; }
+    .thermo-count { grid-column:3 / 5; font-size:.72rem; color:rgba(255,255,255,.45); }
     .chart-head h2 { margin:0; font-size:1.1rem; }
     .chart-tag { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); background:rgba(0,212,255,.1); border:1px solid rgba(0,212,255,.25); padding:.25rem .6rem; border-radius:999px; }
     .chart { display:flex; flex-direction:column; gap:.7rem; }
@@ -3859,6 +3903,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 
   <section id="tab-fichajes" class="panel${_activeTab === 'fichajes' ? ' active' : ''}" role="tabpanel">
     ${_statsHTML(transfers)}
+    ${_marketThermoHTML(transfers)}
 
     <div class="subtabs">
       <button class="subtab active" data-sub="top">🏆 Bombazos de la temporada</button>
@@ -4025,6 +4070,121 @@ app.get('/noticias', _newsLimit, _renderFichajes('noticias'));
 app.get('/agenda', _newsLimit, _renderFichajes('agenda'));
 app.get('/valores', _newsLimit, _renderFichajes('valores'));
 app.get('/estadisticas', _newsLimit, _renderFichajes('estadisticas'));
+
+// ═══════════════════════ API PÚBLICA JSON (solo lectura) ═══════════════════════
+// Endpoints de solo lectura, con CORS abierto y rate-limit propio. Reutilizan
+// exactamente las mismas funciones cacheadas que las páginas (sin coste extra).
+const _apiLimit = _rateLimit(120, 5 * 60 * 1000); // 120 req / 5 min por IP
+const _apiSend = (res, payload) => res
+  .set('Access-Control-Allow-Origin', '*')
+  .set('Cache-Control', 'public, max-age=120')
+  .json(payload);
+
+app.get('/api', _apiLimit, (_req, res) => _apiSend(res, {
+  name: 'GolazoX API',
+  version: 1,
+  endpoints: [
+    { path: '/api/transfers', desc: 'Fichajes más caros + recién cerrados + histórico' },
+    { path: '/api/values',    desc: 'Jugadores más valiosos (valor de mercado)' },
+    { path: '/api/stats',     desc: 'Goleadores y asistentes de las grandes ligas' },
+    { path: '/api/rumors',    desc: 'Rumores con probabilidad de traspaso' },
+    { path: '/health',        desc: 'Estado de las fuentes de datos' },
+  ],
+  note: 'Datos agregados de fuentes públicas (Transfermarkt, RSS). Solo lectura.',
+}));
+
+app.get('/api/transfers', _apiLimit, async (_req, res) => {
+  try { const d = await getTransfers(); _apiSend(res, { updated: d.updated, list: d.list, latest: d.latest, top: d.top }); }
+  catch (e) { res.status(503).json({ error: e.message }); }
+});
+app.get('/api/values', _apiLimit, async (_req, res) => {
+  try { const d = await getValues(); _apiSend(res, d); }
+  catch (e) { res.status(503).json({ error: e.message }); }
+});
+app.get('/api/stats', _apiLimit, async (_req, res) => {
+  try { const d = await getStats(); _apiSend(res, d); }
+  catch (e) { res.status(503).json({ error: e.message }); }
+});
+app.get('/api/rumors', _apiLimit, async (_req, res) => {
+  try { const d = await getRumors(); _apiSend(res, d); }
+  catch (e) { res.status(503).json({ error: e.message }); }
+});
+
+// ═══════════════════════ RSS PROPIO DE GOLAZOX ═══════════════════════
+// Feed de los fichajes recién cerrados, generado desde nuestros propios datos.
+app.get('/feed/fichajes.xml', _apiLimit, async (_req, res) => {
+  try {
+    const d = await getTransfers();
+    const site = 'https://golazox.com';
+    const items = (d.latest && d.latest.length ? d.latest : d.list).slice(0, 30);
+    const xmlItems = items.map(t => {
+      const title = `${t.player}: ${(t.from && t.from.name) || '?'} → ${(t.to && t.to.name) || '?'}${t.fee && t.fee.label ? ' (' + t.fee.label + ')' : ''}`;
+      const link = `${site}/fichajes`;
+      const guid = `${_esc((t.player + '-' + ((t.to && t.to.name) || '')).toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`;
+      return `    <item>
+      <title>${_esc(title)}</title>
+      <link>${link}</link>
+      <guid isPermaLink="false">golazox-${guid}</guid>
+      <description>${_esc(title)}</description>
+    </item>`;
+    }).join('\n');
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GolazoX · Fichajes</title>
+    <link>${site}/fichajes</link>
+    <description>Últimos fichajes del mercado, agregados por GolazoX.</description>
+    <language>es</language>
+    <lastBuildDate>${new Date(d.updated || Date.now()).toUTCString()}</lastBuildDate>
+${xmlItems}
+  </channel>
+</rss>`;
+    res.set('Content-Type', 'application/rss+xml; charset=utf-8')
+       .set('Cache-Control', 'public, max-age=600')
+       .send(xml);
+  } catch (e) {
+    res.status(503).type('text/plain').send('Feed no disponible: ' + e.message);
+  }
+});
+
+// ═══════════════════════ PÁGINA DE ESTADO (/status) ═══════════════════════
+// HTML ligero con semáforos por fuente, consumiendo getStatus().
+app.get('/status', (_req, res) => {
+  const st = getStatus();
+  const dot = (state) => state === 'ok' ? '#10d98a' : state === 'empty' ? '#ffd21a' : '#ff4d4d';
+  const label = (state) => state === 'ok' ? 'Operativa' : state === 'empty' ? 'Sin datos' : 'Caída';
+  const rows = st.sources.length ? st.sources.map(s => `
+      <tr>
+        <td><span class="dot" style="background:${dot(s.state)}"></span>${_esc(s.key)}</td>
+        <td>${label(s.state)}</td>
+        <td>${s.count != null ? s.count : '—'}</td>
+        <td>${s.ageMin != null ? 'hace ' + s.ageMin + ' min' : '—'}</td>
+      </tr>`).join('') : '<tr><td colspan="4" style="opacity:.5">Aún no se ha consultado ninguna fuente.</td></tr>';
+  const html = `<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="robots" content="noindex"/>
+    <title>Estado del sistema · GolazoX</title>
+    <style>
+      body { font-family:system-ui,sans-serif; background:#0a0e1a; color:#fff; margin:0; padding:2rem 1rem; }
+      .wrap { max-width:640px; margin:0 auto; }
+      h1 { font-size:1.4rem; margin:0 0 .3rem; }
+      .sub { color:rgba(255,255,255,.5); font-size:.85rem; margin:0 0 1.5rem; }
+      .badge { display:inline-block; padding:.3rem .8rem; border-radius:20px; font-weight:700; font-size:.85rem; background:${st.ok ? 'rgba(16,217,138,.15)' : 'rgba(255,77,77,.15)'}; color:${st.ok ? '#10d98a' : '#ff4d4d'}; }
+      table { width:100%; border-collapse:collapse; margin-top:1rem; }
+      th,td { text-align:left; padding:.7rem .5rem; border-bottom:1px solid rgba(255,255,255,.08); font-size:.9rem; }
+      th { color:rgba(255,255,255,.4); font-weight:600; font-size:.75rem; text-transform:uppercase; }
+      .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:.5rem; vertical-align:middle; }
+      a { color:#00d4ff; }
+    </style></head><body><div class="wrap">
+    <h1>Estado del sistema</h1>
+    <p class="sub">Fuentes de datos de GolazoX · <span class="badge">${st.ok ? '✅ Todo operativo' : '⚠️ Incidencia'}</span></p>
+    <table><thead><tr><th>Fuente</th><th>Estado</th><th>Registros</th><th>Última actualización</th></tr></thead>
+    <tbody>${rows}</tbody></table>
+    <p class="sub" style="margin-top:1.5rem">JSON: <a href="/health">/health</a> · <a href="/">← Volver</a></p>
+  </div></body></html>`;
+  res.set('Cache-Control', 'no-store').type('text/html').send(html);
+});
+
 
 // ═══════════════════════ CLASIFICACIONES ═══════════════════════
 // Escudo de club (reutiliza el proxy /tmbadge). `badge` puede ser null.

@@ -21,7 +21,7 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 ## Roadmap (15 mejoras)
 
 ### UI / UX
-- [ ] **1. Termómetro del Mercado** — panel resumen en `/fichajes`: total invertido, nº de operaciones, fichaje más caro y club que más gasta. Calculado en vivo desde los datos ya raspados. *(bajo riesgo)*
+- [x] **1. Termómetro del Mercado** — panel resumen en `/fichajes`: total invertido, nº de operaciones, fichaje más caro y club que más gasta. Calculado en vivo desde los datos ya raspados. *(bajo riesgo)*
 - [ ] **2. Comparador de Cracks** — seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
 - [ ] **3. Favoritos (seguir jugadores/clubes)** — estrella en tarjetas + filtro "solo favoritos", persistido en `localStorage`. *(bajo riesgo)*
 - [ ] **4. Compartir tarjeta de fichaje** — botón con Web Share API + copiar enlace con fallback. *(bajo riesgo)*
@@ -35,10 +35,10 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 - [ ] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*
 
 ### Integraciones técnicas
-- [ ] **11. API pública JSON** — `/api/transfers`, `/api/values`, `/api/rumors`, `/api/stats` (solo lectura, rate-limited, CORS). *(medio)*
-- [ ] **12. RSS propio de Golazox** — `/feed/fichajes.xml` generado desde los fichajes cerrados. *(bajo riesgo)*
-- [ ] **13. Página de estado visual** — `/status` HTML que consume `/health` con semáforos por fuente. *(bajo riesgo)*
-- [ ] **14. Sitemap dinámico ampliado** — incluir las nuevas rutas (`/status`, feeds, API doc) en el sitemap. *(bajo riesgo)*
+- [x] **11. API pública JSON** — `/api/transfers`, `/api/values`, `/api/rumors`, `/api/stats` (solo lectura, rate-limited, CORS). *(medio)*
+- [x] **12. RSS propio de Golazox** — `/feed/fichajes.xml` generado desde los fichajes cerrados. *(bajo riesgo)*
+- [x] **13. Página de estado visual** — `/status` HTML que consume `/health` con semáforos por fuente. *(bajo riesgo)*
+- [ ] **14. Sitemap dinámico ampliado** — ~~incluir las nuevas rutas en el sitemap~~. **Descartada:** la API y los feeds no son páginas indexables y `/status` es `noindex`; añadirlos al sitemap sería incorrecto SEO. Se deja fuera a propósito.
 - [ ] **15. Mejoras de accesibilidad y rendimiento** — `aria-*`, `prefers-reduced-motion`, lazy de secciones pesadas, foco visible. *(bajo riesgo)*
 
 ---
