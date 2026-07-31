@@ -52,3 +52,27 @@ $exit = $LASTEXITCODE
 Remove-Item $tmpFile -Force
 if ($exit -ne 0) { Write-Host "DEPLOY FAILED (exit $exit)" -ForegroundColor Red; exit 1 }
 Write-Host "`n==> DEPLOY COMPLETADO!" -ForegroundColor Green
+
+# ── Verificación post-deploy: las rutas críticas deben responder 200 ──
+Write-Host "==> Verificando produccion (esperando reinicio de Passenger)..." -ForegroundColor Cyan
+Start-Sleep -Seconds 6
+$routes = '/', '/fichajes', '/noticias', '/agenda', '/valores', '/estadisticas'
+$failed = @()
+foreach ($r in $routes) {
+    $url = "https://golazox.com$r"
+    try {
+        $code = (Invoke-WebRequest -Uri $url -Method Head -TimeoutSec 15 -UseBasicParsing).StatusCode
+        if ($code -eq 200) { Write-Host ("    200  {0}" -f $r) -ForegroundColor Green }
+        else { Write-Host ("    {0}  {1}" -f $code, $r) -ForegroundColor Yellow; $failed += "$r ($code)" }
+    } catch {
+        $sc = $_.Exception.Response.StatusCode.value__
+        Write-Host ("    ERR  {0}  {1}" -f $r, ($sc | ForEach-Object { $_ })) -ForegroundColor Red
+        $failed += "$r ($sc)"
+    }
+}
+if ($failed.Count) {
+    Write-Host "`nVERIFICACION FALLIDA en:" -ForegroundColor Red
+    $failed | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+    exit 1
+}
+Write-Host "==> Produccion verificada: todas las rutas responden 200." -ForegroundColor Green

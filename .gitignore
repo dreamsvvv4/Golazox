@@ -26,6 +26,14 @@ match_engine/webapp/_wp_sn_test.js
 .seed-progress.json
 match_engine/webapp/squads/.seed-progress.json
 
+# Datos escritos en runtime por el servidor (NO versionar: sobrescribirían
+# los datos reales de producción). Los leaderboards ya estaban trackeados
+# de antes; nunca hacer `git add .` sobre ellos ni `git rm --cached`
+# (el servidor hace git pull y borraría los datos en vivo).
+match_engine/webapp/data/transfers_db.json
+match_engine/webapp/data/gx_leaderboard.json
+match_engine/webapp/data/gx_global_lb.json
+
 # Squads JSON — versionar todos para que Hostinger reciba los datos por git
 # (anteriormente ignorados por RGPD/marcas, pero son datos públicos de plantillas históricas)
 

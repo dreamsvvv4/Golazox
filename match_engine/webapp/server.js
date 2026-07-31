@@ -17,7 +17,7 @@ const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
-const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, IMG_HOSTS } = require('./news');
+const { getNews, getTransfers, getValues, getStats, getRumors, getHereWeGo, getAgenda, getSalaries, getLegends, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
 
 const app    = express();
@@ -3292,6 +3292,14 @@ const _timeAgo = (ms) => {
   return d === 1 ? 'ayer' : `hace ${d} días`;
 };
 
+// Fecha legible corta (ej. "jul 2025") para datos curados manualmente.
+const _fmtDate = (ms) => {
+  if (!ms) return '';
+  try { return new Date(ms).toLocaleDateString('es-ES', { month: 'short', year: 'numeric' }); }
+  catch { return ''; }
+};
+const _updatedNote = (ms) => ms ? ` · <span class="upd-date">actualizado ${_fmtDate(ms)}</span>` : '';
+
 // Formatea un importe en € a texto compacto (26 M €, 876 K €).
 const _fmtFee = (v) => {
   if (!v) return '';
@@ -3456,6 +3464,24 @@ const _newsItemHTML = (it) => {
   </li>`;
 };
 
+// Item «Here we go» de Fabrizio Romano: badge verde si está confirmado.
+const _hwgItemHTML = (it) => {
+  const img = it.image
+    ? `<span class="news-thumb"><img src="${_esc(it.image)}" alt="" loading="lazy"/></span>`
+    : '';
+  return `
+  <li class="news-item hwg-item${it.image ? ' has-img' : ''}${it.confirmed ? ' hwg-done' : ''}" style="--src:#10d98a">
+    <a href="${_esc(it.link)}" target="_blank" rel="noopener nofollow">
+      ${img}
+      <span class="news-body">
+        <span class="hwg-chip${it.confirmed ? ' is-done' : ''}">${it.confirmed ? '🟢 Here we go' : '🎙️ Romano'}</span>
+        <span class="news-title">${_esc(it.title)}</span>
+        <span class="news-meta">${it.ts ? _timeAgo(it.ts) : ''} · Fabrizio Romano</span>
+      </span>
+    </a>
+  </li>`;
+};
+
 // Chips de filtro por medio (deriva las fuentes presentes en los items).
 const _newsFilterHTML = (items) => {
   const sources = [...new Set(items.map(i => i.source).filter(Boolean))];
@@ -3595,6 +3621,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
+  const herewego = extra.herewego || { list: [] };
   const _url = `${_base}${_cfg.path}`;
   const _title = _cfg.title;
   const _desc = _cfg.desc;
@@ -3737,6 +3764,11 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .news-item:hover .news-title { color:var(--src,var(--cyan)); }
     .news-meta { margin-top:auto; font-size:.7rem; color:rgba(255,255,255,.4); font-weight:600; }
 
+    .hwg-chip { display:inline-block; align-self:flex-start; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; padding:.16rem .5rem; border-radius:6px; background:rgba(255,255,255,.08); color:rgba(255,255,255,.75); }
+    .hwg-chip.is-done { background:linear-gradient(135deg,#10d98a,#00d4ff); color:#04231a; }
+    .hwg-item.hwg-done { border-color:rgba(16,217,138,.35); }
+    .hwg-item.hwg-done:hover { border-color:rgba(16,217,138,.6); }
+
     .empty { color:rgba(255,255,255,.4); font-size:.9rem; padding:1.5rem 0; text-align:center; }
     .disclaimer { margin-top:3rem; font-size:.72rem; color:rgba(255,255,255,.3); line-height:1.6; border-top:1px solid rgba(255,255,255,.07); padding-top:1.2rem; }
     .back { display:inline-block; margin-top:1.4rem; font-size:.82rem; opacity:.6; color:var(--cyan); text-decoration:none; }
@@ -3817,6 +3849,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .acomp { font-size:.68rem; color:rgba(255,255,255,.4); margin-top:.3rem; }
 
     .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
+    .upd-date { color:rgba(0,212,255,.7); font-weight:700; white-space:nowrap; }
   </style>
 </head>
 <body class="has-side-nav">
@@ -3844,6 +3877,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
       <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
       <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length || news.fichajes.length}</span></button>
+      <button class="subtab" data-sub="herewego">🟢 Here we go<span class="count">${herewego.list.length}</span></button>
     </div>
 
     <div class="searchbar">
@@ -3882,6 +3916,13 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
             ? `<ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
             : '<p class="empty">No hay rumores destacados ahora mismo.</p>')}
     </div>
+
+    <div id="sub-herewego" class="subpanel">
+      <p class="sub-note">Los <strong>«Here we go»</strong> de <strong>Fabrizio Romano</strong>: sus fichajes confirmados y últimas exclusivas, vía su columna oficial en CaughtOffside. 🟢 = operación cerrada. <em>Titulares en inglés (fuente original).</em></p>
+      ${herewego.list.length
+        ? `<ul class="news-list hwg-list">${herewego.list.map(_hwgItemHTML).join('')}</ul>`
+        : '<p class="empty">No hay actualizaciones de Fabrizio Romano ahora mismo. Vuelve en unos minutos.</p>'}
+    </div>
   </section>
 
   <section id="tab-noticias" class="panel${_activeTab === 'noticias' ? ' active' : ''}" role="tabpanel">
@@ -3893,7 +3934,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   </section>
 
   <section id="tab-agenda" class="panel${_activeTab === 'agenda' ? ' active' : ''}" role="tabpanel">
-    <p class="sub-note">Próximas fechas clave del fútbol: sorteos, arranques de liga, parones de selecciones y grandes citas. Los eventos pasados se ocultan solos.</p>
+    <p class="sub-note">Próximas fechas clave del fútbol: sorteos, arranques de liga, parones de selecciones y grandes citas. Los eventos pasados se ocultan solos.${_updatedNote(agenda.updated)}</p>
     ${_agendaHTML(agenda.events)}
   </section>
 
@@ -3909,7 +3950,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
         : '<p class="empty">No hay datos de valor de mercado ahora mismo.</p>'}
     </div>
     <div id="sub-pagados" class="subpanel">
-      ${salaries.note ? `<div class="note-box">⚠️ ${_esc(salaries.note)}</div>` : ''}
+      ${salaries.note ? `<div class="note-box">⚠️ ${_esc(salaries.note)}${_updatedNote(salaries.updated)}</div>` : ''}
       ${salaries.players.length
         ? `<div class="rtable">${_salaryRowsHTML(salaries.players)}</div>`
         : '<p class="empty">No hay datos de salarios ahora mismo.</p>'}
@@ -3935,7 +3976,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
         : '<p class="empty">No hay datos de asistencias ahora mismo.</p>'}
     </div>
     <div id="sub-historicos" class="subpanel">
-      ${legends.note ? `<div class="note-box">ℹ️ ${_esc(legends.note)}</div>` : ''}
+      ${legends.note ? `<div class="note-box">ℹ️ ${_esc(legends.note)}${_updatedNote(legends.updated)}</div>` : ''}
       <h2>⚽ Máximos goleadores de la historia</h2>
       ${(legends.scorers && legends.scorers.length)
         ? `<div class="rtable">${_legendRowsHTML(legends.scorers, 'goals')}</div>`
@@ -3961,12 +4002,12 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 // Se piden todos porque la barra de pestañas muestra contadores de cada sección.
 // Todo está cacheado (fichajes 30 min, noticias 15 min, rankings 6 h, curados al vuelo).
 async function _fichajesData() {
-  const [transfers, news, values, stats, rumors] = await Promise.all([
-    getTransfers(), getNews(), getValues(), getStats(), getRumors(),
+  const [transfers, news, values, stats, rumors, herewego] = await Promise.all([
+    getTransfers(), getNews(), getValues(), getStats(), getRumors(), getHereWeGo(),
   ]);
   return {
     transfers, news,
-    extra: { values, stats, rumors, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
+    extra: { values, stats, rumors, herewego, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
   };
 }
 const _FALLBACK_T = { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
