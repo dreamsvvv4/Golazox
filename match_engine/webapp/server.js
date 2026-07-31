@@ -17,7 +17,7 @@ const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
-const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, getStatus, getTvGuide, IMG_HOSTS } = require('./news');
+const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, getStatus, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
 
 const app    = express();
@@ -3707,33 +3707,6 @@ const _agendaHTML = (events) => {
   }).join('')}</div>`;
 };
 
-// Guía de TV: partidos de fútbol con hora, competición, equipos y canal,
-// agrupados por día (Hoy / Mañana / …). Fuente: Marca. Datos factuales;
-// los canales son de la parrilla española.
-const _tvGuideHTML = (tv) => {
-  const days = (tv && tv.days) || [];
-  const total = days.reduce((s, d) => s + (d.events ? d.events.length : 0), 0);
-  if (!total) return '';
-  const _row = (e) => `<div class="tvitem${e.big ? ' tvbig' : ''}">
-      <span class="tvhour">${_esc(e.time || '')}</span>
-      <span class="tvbody">
-        <span class="tvteams">${_esc(e.teams)}</span>
-        ${e.competition ? `<span class="tvcomp">${_esc(e.competition)}</span>` : ''}
-      </span>
-      ${e.channel ? `<span class="tvchannel">${_esc(e.channel)}</span>` : ''}
-    </div>`;
-  return `<div class="tvguide">
-    <div class="tvguide-head">
-      <h2>📺 Fútbol en TV</h2>
-      <span class="tvguide-src">Datos: Marca · parrilla España</span>
-    </div>
-    ${days.map(d => `<div class="tvday">
-      <div class="tvday-label">${_esc(d.label)}${d.dateStr ? ` <span class="tvday-date">${_esc(d.dateStr)}</span>` : ''}</div>
-      <div class="tvlist">${d.events.map(_row).join('')}</div>
-    </div>`).join('')}
-  </div>`;
-};
-
 const _PAGE_CFG = {
   fichajes:     { tab: 'fichajes', crumb: 'Fichajes', path: '/fichajes', hero: 'Mercado de Fichajes',
                   title: 'Fichajes de fútbol hoy · mercado y traspasos · GolazoX',
@@ -3760,7 +3733,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const values   = extra.values   || { list: [] };
   const stats    = extra.stats    || { scorers: [], assists: [], season: '' };
   const agenda   = extra.agenda   || { events: [] };
-  const tvGuide  = extra.tvGuide  || { days: [] };
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
@@ -4046,22 +4018,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .ameta-tv { color:#ffd27a; background:rgba(255,196,84,.1); border-color:rgba(255,196,84,.28); }
     .acomp { font-size:.68rem; color:rgba(255,255,255,.4); margin-top:.3rem; }
 
-    .tvguide { margin:.2rem 0 1.5rem; }
-    .tvguide-head { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.4rem; margin-bottom:.7rem; }
-    .tvguide-head h2 { font-size:1.05rem; font-weight:800; color:#fff; margin:0; }
-    .tvguide-src { font-size:.64rem; color:rgba(255,255,255,.38); text-transform:uppercase; letter-spacing:.04em; }
-    .tvday { margin-bottom:.9rem; }
-    .tvday-label { font-size:.74rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--cyan); margin:0 0 .45rem; }
-    .tvday-date { color:rgba(255,255,255,.4); font-weight:600; }
-    .tvlist { display:flex; flex-direction:column; gap:.5rem; }
-    .tvitem { display:flex; align-items:center; gap:.7rem; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:.6rem .8rem; }
-    .tvitem.tvbig { border-color:rgba(0,212,255,.28); background:linear-gradient(180deg,rgba(0,212,255,.07),rgba(255,255,255,.02)); }
-    .tvhour { flex:0 0 auto; font-size:.9rem; font-weight:800; color:var(--cyan); min-width:3.1rem; font-variant-numeric:tabular-nums; }
-    .tvbody { flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:.1rem; }
-    .tvteams { font-size:.9rem; font-weight:700; color:#fff; line-height:1.2; }
-    .tvcomp { font-size:.64rem; color:rgba(255,255,255,.42); text-transform:uppercase; letter-spacing:.03em; }
-    .tvchannel { flex:0 0 auto; font-size:.72rem; font-weight:700; color:#ffd27a; background:rgba(255,196,84,.1); border:1px solid rgba(255,196,84,.28); padding:.22rem .55rem; border-radius:999px; text-align:center; max-width:9rem; }
-
     .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
     .upd-date { color:rgba(0,212,255,.7); font-weight:700; white-space:nowrap; }
   </style>
@@ -4150,7 +4106,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   </section>
 
   <section id="tab-agenda" class="panel${_activeTab === 'agenda' ? ' active' : ''}" role="tabpanel">
-    ${_tvGuideHTML(tvGuide)}
     <p class="sub-note">Próximas fechas clave del fútbol: sorteos, arranques de liga, parones de selecciones y grandes citas. Los eventos pasados se ocultan solos.${_updatedNote(agenda.updated)}</p>
     ${_agendaHTML(agenda.events)}
   </section>
@@ -4211,7 +4166,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     </div>
   </section>
 
-  <p class="disclaimer">Datos de fichajes, valores de mercado, goleadores y escudos: Transfermarkt. Titulares y rumores: Marca, AS, SPORT, Mundo Deportivo. Programación de fútbol en TV: Marca (parrilla de España; los derechos de emisión varían según el país).
+  <p class="disclaimer">Datos de fichajes, valores de mercado, goleadores y escudos: Transfermarkt. Titulares y rumores: Marca, AS, SPORT, Mundo Deportivo.
   Salarios, agenda de fechas y récords históricos son estimaciones/datos curados a partir de información pública (aproximados, no oficiales).
   GolazoX agrega y enlaza a las fuentes originales con fines informativos; no reproduce el contenido de las noticias.
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
@@ -4226,12 +4181,12 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 // Se piden todos porque la barra de pestañas muestra contadores de cada sección.
 // Todo está cacheado (fichajes 30 min, noticias 15 min, rankings 6 h, curados al vuelo).
 async function _fichajesData() {
-  const [transfers, news, values, stats, rumors, tvGuide] = await Promise.all([
-    getTransfers(), getNews(), getValues(), getStats(), getRumors(), getTvGuide(),
+  const [transfers, news, values, stats, rumors] = await Promise.all([
+    getTransfers(), getNews(), getValues(), getStats(), getRumors(),
   ]);
   return {
     transfers, news,
-    extra: { values, stats, rumors, tvGuide, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
+    extra: { values, stats, rumors, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
   };
 }
 const _FALLBACK_T = { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
