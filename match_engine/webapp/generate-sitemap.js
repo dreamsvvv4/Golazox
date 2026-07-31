@@ -295,6 +295,18 @@ mainEntries.push(urlBlock(
   `${SITE_URL}/clasificaciones`, TODAY, 'daily', '0.8',
   [['es', `${SITE_URL}/clasificaciones`], ['x-default', `${SITE_URL}/clasificaciones`]]
 ));
+mainEntries.push(urlBlock(
+  `${SITE_URL}/agenda`, TODAY, 'daily', '0.7',
+  [['es', `${SITE_URL}/agenda`], ['x-default', `${SITE_URL}/agenda`]]
+));
+mainEntries.push(urlBlock(
+  `${SITE_URL}/valores`, TODAY, 'daily', '0.7',
+  [['es', `${SITE_URL}/valores`], ['x-default', `${SITE_URL}/valores`]]
+));
+mainEntries.push(urlBlock(
+  `${SITE_URL}/estadisticas`, TODAY, 'daily', '0.7',
+  [['es', `${SITE_URL}/estadisticas`], ['x-default', `${SITE_URL}/estadisticas`]]
+));
 
 for (const [slug] of Object.entries(ICONIC)) {
   const isTop = TOP_SLUGS.has(slug);

@@ -8,7 +8,7 @@
   btn.type = 'button';
   btn.setAttribute('aria-label', 'Abrir menú');
   btn.setAttribute('aria-expanded', 'false');
-  btn.innerHTML = '<span class="nt-ico" aria-hidden="true">\u2630</span>';
+  btn.innerHTML = '<span class="nt-ico" aria-hidden="true">\u2630</span><span class="nt-label">Menú</span>';
 
   var backdrop = document.createElement('div');
   backdrop.className = 'nav-backdrop';
@@ -22,6 +22,8 @@
     btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     var ico = btn.querySelector('.nt-ico');
     if (ico) ico.textContent = open ? '\u2715' : '\u2630';
+    var lbl = btn.querySelector('.nt-label');
+    if (lbl) lbl.textContent = open ? 'Cerrar' : 'Menú';
   }
 
   btn.addEventListener('click', function () {

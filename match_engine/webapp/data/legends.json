@@ -1,0 +1,20 @@
+{
+  "updated": 1753920000000,
+  "note": "Máximos históricos (carrera, cifras ampliamente citadas; algunas discutidas según la fuente).",
+  "scorers": [
+    { "player": "Cristiano Ronaldo", "nat": "Portugal",       "goals": 930, "detail": "Clubes + selección" },
+    { "player": "Lionel Messi",      "nat": "Argentina",      "goals": 875, "detail": "Clubes + selección" },
+    { "player": "Josef Bican",       "nat": "Austria/Chequia","goals": 805, "detail": "Histórico (estimado)" },
+    { "player": "Romário",           "nat": "Brasil",         "goals": 772, "detail": "Reclamados por el jugador" },
+    { "player": "Pelé",              "nat": "Brasil",         "goals": 767, "detail": "Partidos oficiales" },
+    { "player": "Ferenc Puskás",     "nat": "Hungría",        "goals": 746, "detail": "Histórico" },
+    { "player": "Gerd Müller",       "nat": "Alemania",       "goals": 634, "detail": "Clubes + selección" }
+  ],
+  "assists": [
+    { "player": "Lionel Messi",      "nat": "Argentina", "assists": 380, "detail": "Era moderna (registrada)" },
+    { "player": "Thomas Müller",     "nat": "Alemania",  "assists": 300, "detail": "Era moderna (registrada)" },
+    { "player": "Cristiano Ronaldo", "nat": "Portugal",  "assists": 275, "detail": "Era moderna (registrada)" },
+    { "player": "Kevin De Bruyne",   "nat": "Bélgica",   "assists": 260, "detail": "Era moderna (registrada)" },
+    { "player": "Ángel Di María",    "nat": "Argentina", "assists": 250, "detail": "Era moderna (registrada)" }
+  ]
+}

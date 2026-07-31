@@ -17,7 +17,7 @@ const { describeTimeline }                      = require('./narrator');
 const { lookupTeam, fetchTeamBadge } = require('./lookup');
 const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
-const { getNews, getTransfers, IMG_HOSTS } = require('./news');
+const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
 
 const app    = express();
@@ -3326,6 +3326,40 @@ const _transferCardHTML = (t, rank) => `
     <div class="tfee" style="${_feeStyle(t.fee)}">${_esc(t.fee.label)}</div>
   </article>`;
 
+// Temperatura del rumor según la probabilidad de traspaso (voto de usuarios TM).
+const _probMeta = (p) => {
+  if (p == null)  return { icon: '❔', word: 'Sin valorar', color: '#8a93a6', pct: 0 };
+  if (p >= 75)    return { icon: '🔥', word: 'Muy caliente', color: '#ff4d4d', pct: p };
+  if (p >= 50)    return { icon: '🌡️', word: 'Caliente',     color: '#ff9f1a', pct: p };
+  if (p >= 25)    return { icon: '🌥️', word: 'Templado',     color: '#ffd21a', pct: p };
+  return { icon: '❄️', word: 'Frío', color: '#00d4ff', pct: p };
+};
+
+// Tarjeta de rumor: jugador, club actual → club interesado y probabilidad.
+const _rumorCardHTML = (r) => {
+  const m = _probMeta(r.prob);
+  const pctTxt = r.prob == null ? '—' : r.prob + '%';
+  return `
+  <article class="tcard rcard" data-search="${_esc((r.player + ' ' + r.from.name + ' ' + r.to.name + ' ' + (r.position || '')).toLowerCase())}">
+    <div class="tcard-head">
+      <span class="tplayer">${_esc(r.player)}</span>
+      <span class="tpos">${_esc(r.position || '')}${r.age ? ' · ' + _esc(r.age) : ''}${r.nat ? ' · ' + _esc(r.nat) : ''}</span>
+    </div>
+    <div class="tflow">
+      <div class="tclub">${_badgeImg(r.from)}<span>${_esc(r.from.name)}</span></div>
+      <span class="tarrow">→</span>
+      <div class="tclub tclub-to">${_badgeImg(r.to)}<span>${_esc(r.to.name)}</span></div>
+    </div>
+    <div class="rprob">
+      <div class="rprob-top">
+        <span class="rprob-tag" style="color:${m.color}">${m.icon} ${_esc(m.word)}</span>
+        <span class="rprob-pct" style="color:${m.color}">${pctTxt}</span>
+      </div>
+      <div class="rprob-bar"><span class="rprob-fill" style="width:${m.pct}%;background:${m.color}"></span></div>
+    </div>
+  </article>`;
+};
+
 // Barra de estadísticas del mercado con contadores animados.
 const _statsHTML = (transfers) => {
   const list = transfers.list || [];
@@ -3463,21 +3497,108 @@ const GX_SIDE_NAV = (active) => `
       <a class="side-link${active === 'news' ? ' side-link-active' : ''}" href="/noticias"${active === 'news' ? ' aria-current="page"' : ''}>
         <span class="side-ico">📰</span><span class="side-lbl">Noticias</span>
       </a>
+      <a class="side-link${active === 'agenda' ? ' side-link-active' : ''}" href="/agenda"${active === 'agenda' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">📅</span><span class="side-lbl">Agenda</span>
+      </a>
+      <a class="side-link${active === 'valores' ? ' side-link-active' : ''}" href="/valores"${active === 'valores' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">💎</span><span class="side-lbl">Cracks</span>
+      </a>
+      <a class="side-link${active === 'estadisticas' ? ' side-link-active' : ''}" href="/estadisticas"${active === 'estadisticas' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">📈</span><span class="side-lbl">Estadísticas</span>
+      </a>
     </nav>
   </aside>
-  <script src="/gx-nav.js?v=1" defer></script>`;
+  <script src="/gx-nav.js?v=2" defer></script>`;
 
-const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
+// ── Rankings de jugadores (valor / salario / estadísticas) ──
+const _MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+
+// Escudo pequeño + nombre de club para la línea secundaria de un ranking.
+const _clubLine = (club) =>
+  `${club && club.badge ? `<img src="${_esc(club.badge)}" alt="" loading="lazy"/>` : ''}<span>${_esc((club && club.name) || '')}</span>`;
+
+// Fila genérica de ranking (rango, nombre, línea secundaria, valor + unidad).
+const _rankRowHTML = (rank, name, subHtml, valMain, valSub) => `
+  <div class="rrow${rank <= 3 ? ' rrow-' + rank : ''}">
+    <span class="rrank">${rank}</span>
+    <div class="rmain">
+      <div class="rname">${_esc(name)}</div>
+      <div class="rsub">${subHtml}</div>
+    </div>
+    <div class="rval">${_esc(String(valMain))}${valSub ? `<small>${_esc(valSub)}</small>` : ''}</div>
+  </div>`;
+
+const _valueRowsHTML = (list) => list.map((p, i) =>
+  _rankRowHTML(i + 1, p.player,
+    `${_clubLine(p.club)}${p.position ? ' · ' + _esc(p.position) : ''}${p.age ? ' · ' + _esc(p.age) : ''}`,
+    p.valueLabel || '')).join('');
+
+const _salaryRowsHTML = (list) => list.map((p, i) =>
+  _rankRowHTML(i + 1, p.player,
+    `<span>${_esc(p.club || '')}</span>${p.nat ? ' · ' + _esc(p.nat) : ''}`,
+    p.salaryLabel || '')).join('');
+
+const _statRowsHTML = (list, kind) => list.map((p, i) =>
+  _rankRowHTML(i + 1, p.player,
+    `${_clubLine(p.club)}${p.league ? ' · ' + _esc(p.league) : ''}`,
+    kind === 'assists' ? p.assists : p.goals, kind === 'assists' ? 'asist.' : 'goles')).join('');
+
+const _legendRowsHTML = (list, kind) => list.map((p, i) =>
+  _rankRowHTML(i + 1, p.player,
+    `<span>${_esc(p.nat || '')}</span>${p.detail ? ' · ' + _esc(p.detail) : ''}`,
+    kind === 'assists' ? p.assists : p.goals, kind === 'assists' ? 'asist.' : 'goles')).join('');
+
+// Agenda: línea de tiempo de próximos eventos.
+const _agendaHTML = (events) => {
+  if (!events.length) return '<p class="empty">No hay eventos próximos programados.</p>';
+  const now = Date.now();
+  return `<div class="agenda">${events.map(e => {
+    const d = new Date(e.date);
+    const days = Math.max(0, Math.ceil((d.getTime() - now) / 86400000));
+    const dtxt = `${d.getDate()} ${_MESES[d.getMonth()]} ${d.getFullYear()}`;
+    const badge = days === 0 ? 'hoy' : days === 1 ? 'mañana' : `en ${days} días`;
+    return `<div class="aitem">
+      <div class="adate">${e.icon || '📅'} ${_esc(dtxt)} <span class="adays">${badge}</span></div>
+      <div class="atitle">${_esc(e.title)}</div>
+      ${e.desc ? `<div class="adesc">${_esc(e.desc)}</div>` : ''}
+      ${e.comp ? `<div class="acomp">${_esc(e.comp)}</div>` : ''}
+    </div>`;
+  }).join('')}</div>`;
+};
+
+const _PAGE_CFG = {
+  fichajes:     { tab: 'fichajes', crumb: 'Fichajes', path: '/fichajes', hero: 'Mercado de Fichajes',
+                  title: 'Fichajes de fútbol hoy · mercado y traspasos · GolazoX',
+                  desc: 'Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, rumores del mercado y un tablón de noticias. Actualizado automáticamente.' },
+  noticias:     { tab: 'noticias', crumb: 'Noticias', path: '/noticias', hero: 'Noticias',
+                  title: 'Noticias de fútbol hoy · última hora · GolazoX',
+                  desc: 'Noticias de fútbol de última hora: actualidad, mercado de fichajes y titulares de Marca, AS, SPORT y Mundo Deportivo. Actualizado automáticamente.' },
+  agenda:       { tab: 'agenda', crumb: 'Agenda', path: '/agenda', hero: 'Agenda del Fútbol',
+                  title: 'Agenda del fútbol · próximas fechas clave · GolazoX',
+                  desc: 'Calendario con las próximas fechas importantes del fútbol: sorteos de la Champions, inicios de liga, parones de selecciones y grandes citas.' },
+  valores:      { tab: 'valores', crumb: 'Cracks', path: '/valores', hero: 'Cracks del Fútbol',
+                  title: 'Jugadores más valiosos y mejor pagados · GolazoX',
+                  desc: 'Ranking de los futbolistas con mayor valor de mercado y los mejor pagados del mundo. Valor de mercado actualizado automáticamente.' },
+  estadisticas: { tab: 'estadisticas', crumb: 'Estadísticas', path: '/estadisticas', hero: 'Estadísticas',
+                  title: 'Estadísticas de fútbol · goleadores y asistentes · GolazoX',
+                  desc: 'Máximos goleadores y asistentes de la temporada en las grandes ligas europeas, más los récords históricos del fútbol.' },
+};
+
+const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const _base = SITE_URL.replace(/\/$/, '');
-  const _isNews = page === 'noticias';
-  const _url = _isNews ? `${_base}/noticias` : `${_base}/fichajes`;
-  const _title = _isNews
-    ? 'Noticias de fútbol hoy · última hora · GolazoX'
-    : 'Fichajes de fútbol hoy · mercado y traspasos · GolazoX';
-  const _desc = _isNews
-    ? 'Noticias de fútbol de última hora: actualidad, mercado de fichajes y titulares de Marca, AS, SPORT y Mundo Deportivo. Actualizado automáticamente.'
-    : 'Últimos fichajes del fútbol con club de origen y destino, precio y tipo de operación, más un tablón de noticias. Actualizado automáticamente.';
-  const _crumbName = _isNews ? 'Noticias' : 'Fichajes';
+  const _cfg = _PAGE_CFG[page] || _PAGE_CFG.fichajes;
+  const _activeTab = _cfg.tab;
+  const _isNews = _activeTab === 'noticias';
+  const values   = extra.values   || { list: [] };
+  const stats    = extra.stats    || { scorers: [], assists: [], season: '' };
+  const agenda   = extra.agenda   || { events: [] };
+  const salaries = extra.salaries || { players: [], note: '' };
+  const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
+  const rumors   = extra.rumors   || { list: [] };
+  const _url = `${_base}${_cfg.path}`;
+  const _title = _cfg.title;
+  const _desc = _cfg.desc;
+  const _crumbName = _cfg.crumb;
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -3515,7 +3636,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
     ] }
   })}</script>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
-  <link rel="stylesheet" href="/style.css?v=28"/>
+  <link rel="stylesheet" href="/style.css?v=29"/>
   <style>
     :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
     * { box-sizing:border-box; }
@@ -3531,9 +3652,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
     @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(16,217,138,.55);} 70%{box-shadow:0 0 0 9px rgba(16,217,138,0);} 100%{box-shadow:0 0 0 0 rgba(16,217,138,0);} }
 
     /* ── Tabs (segmented) ── */
-    .tabs { display:flex; gap:.3rem; margin:0 auto 2rem; padding:.35rem; max-width:640px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow-x:auto; }
-    /* En escritorio el menú lateral ya rotula Fichajes/Noticias → el switcher superior sobra. */
-    @media (min-width:1041px){ .tabs { display:none; } }
+    .tabs { display:flex; gap:.3rem; margin:0 auto 2rem; padding:.35rem; max-width:760px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow-x:auto; }
     .tab { flex:1 0 auto; appearance:none; background:none; border:0; border-radius:999px; color:rgba(255,255,255,.55); font-size:.92rem; font-weight:700; padding:.65rem .8rem; cursor:pointer; white-space:nowrap; text-decoration:none; text-align:center; transition:all .2s; }
     .tab:hover { color:#fff; }
     .tab.active { color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); box-shadow:0 6px 20px -8px rgba(0,212,255,.6); }
@@ -3580,6 +3699,15 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
     .tarrow { color:var(--cyan); font-size:1.15rem; flex:0 0 auto; }
     .crest-fallback { display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,.08); font-size:.8rem; font-weight:700; color:rgba(255,255,255,.6); }
     .tfee { align-self:flex-start; font-size:.82rem; font-weight:800; padding:.28rem .75rem; border-radius:999px; border:1px solid; }
+
+    /* ── Rumores: barra de probabilidad de traspaso ── */
+    .rcard { border-left:3px solid rgba(255,255,255,.08); }
+    .rprob { margin-top:.15rem; }
+    .rprob-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:.32rem; }
+    .rprob-tag { font-size:.72rem; font-weight:800; letter-spacing:.01em; }
+    .rprob-pct { font-size:1.05rem; font-weight:900; font-variant-numeric:tabular-nums; }
+    .rprob-bar { height:7px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }
+    .rprob-fill { display:block; height:100%; border-radius:999px; transition:width .5s cubic-bezier(.4,0,.2,1); box-shadow:0 0 10px -1px currentColor; }
 
     /* ── News board ── */
     .news-chip { display:inline-block; align-self:flex-start; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#fff; padding:.16rem .5rem; border-radius:6px; }
@@ -3663,28 +3791,59 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
       .bar-row { grid-template-columns:20px 1fr 60px; }
       .bar-track { display:none; }
     }
+
+    /* ── Rankings de jugadores (valor / salario / estadísticas) ── */
+    .rtable { display:flex; flex-direction:column; gap:.5rem; margin:0 0 1.5rem; }
+    .rrow { display:grid; grid-template-columns:34px 1fr auto; align-items:center; gap:.8rem; padding:.7rem .9rem; border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); transition:transform .15s, border-color .15s; }
+    .rrow:hover { transform:translateX(3px); border-color:rgba(0,212,255,.35); }
+    .rrow-1 { border-color:rgba(255,215,0,.45); }
+    .rrank { font-size:1rem; font-weight:800; color:rgba(255,255,255,.32); text-align:center; }
+    .rrow-1 .rrank { color:#ffd700; } .rrow-2 .rrank { color:#cfd6df; } .rrow-3 .rrank { color:#e0965b; }
+    .rmain { min-width:0; }
+    .rname { font-size:.95rem; font-weight:700; color:#fff; line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .rsub { font-size:.72rem; color:rgba(255,255,255,.45); margin-top:.15rem; display:flex; align-items:center; gap:.35rem; }
+    .rsub img { width:15px; height:15px; object-fit:contain; }
+    .rval { font-size:.95rem; font-weight:800; color:var(--green); text-align:right; white-space:nowrap; }
+    .rval small { display:block; font-size:.64rem; font-weight:600; color:rgba(255,255,255,.4); }
+
+    /* ── Agenda / timeline ── */
+    .agenda { position:relative; margin:.5rem 0 1.5rem; padding-left:1.3rem; border-left:2px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:1rem; }
+    .aitem { position:relative; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:1rem 1.1rem; }
+    .aitem::before { content:""; position:absolute; left:-1.68rem; top:1.15rem; width:12px; height:12px; border-radius:50%; background:linear-gradient(92deg,var(--green),var(--cyan)); box-shadow:0 0 0 3px rgba(0,212,255,.12); }
+    .adate { display:inline-flex; align-items:center; gap:.4rem; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--cyan); margin-bottom:.35rem; }
+    .adays { font-size:.62rem; font-weight:700; color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); padding:.1rem .5rem; border-radius:999px; }
+    .atitle { font-size:1rem; font-weight:700; color:#fff; line-height:1.25; }
+    .adesc { font-size:.8rem; color:rgba(255,255,255,.5); margin-top:.25rem; }
+    .acomp { font-size:.68rem; color:rgba(255,255,255,.4); margin-top:.3rem; }
+
+    .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
   </style>
 </head>
 <body class="has-side-nav">
-  ${GX_SIDE_NAV(_isNews ? 'news' : 'transfers')}
+  ${GX_SIDE_NAV(_activeTab === 'fichajes' ? 'transfers' : _activeTab === 'noticias' ? 'news' : _activeTab)}
   <header class="hero">
-    <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias">${_isNews ? 'Noticias' : 'Mercado de Fichajes'}</h1>
+    <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias" data-title-agenda="Agenda del Fútbol" data-title-valores="Cracks del Fútbol" data-title-estadisticas="Estadísticas">${_cfg.hero}</h1>
     <p><span class="live">En directo</span> · <span class="ago" data-updated="${transfers.updated || news.updated || Date.now()}">actualizado ${_timeAgo(transfers.updated) || _timeAgo(news.updated) || 'ahora'}</span></p>
   </header>
 
   <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
 
   <nav class="tabs" role="tablist">
-    <button class="tab${_isNews ? '' : ' active'}" data-tab="fichajes" role="tab">💸 Fichajes<span class="count">${transfers.list.length}</span></button>
-    <button class="tab${_isNews ? ' active' : ''}" data-tab="noticias" role="tab">📰 Noticias<span class="count">${(news.fichajes.length + news.general.length)}</span></button>
+    <button class="tab${_activeTab === 'fichajes' ? ' active' : ''}" data-tab="fichajes" role="tab">💸 Fichajes<span class="count">${transfers.list.length}</span></button>
+    <button class="tab${_activeTab === 'noticias' ? ' active' : ''}" data-tab="noticias" role="tab">📰 Noticias<span class="count">${(news.fichajes.length + news.general.length)}</span></button>
+    <button class="tab${_activeTab === 'agenda' ? ' active' : ''}" data-tab="agenda" role="tab">📅 Agenda<span class="count">${agenda.events.length}</span></button>
+    <button class="tab${_activeTab === 'valores' ? ' active' : ''}" data-tab="valores" role="tab">💰 Cracks<span class="count">${values.list.length}</span></button>
+    <button class="tab${_activeTab === 'estadisticas' ? ' active' : ''}" data-tab="estadisticas" role="tab">📊 Estadísticas<span class="count">${stats.scorers.length}</span></button>
   </nav>
 
-  <section id="tab-fichajes" class="panel${_isNews ? '' : ' active'}" role="tabpanel">
+  <section id="tab-fichajes" class="panel${_activeTab === 'fichajes' ? ' active' : ''}" role="tabpanel">
     ${_statsHTML(transfers)}
 
     <div class="subtabs">
       <button class="subtab active" data-sub="top">🏆 Bombazos de la temporada</button>
       <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
+      <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
+      <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length || news.fichajes.length}</span></button>
     </div>
 
     <div class="searchbar">
@@ -3707,40 +3866,127 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes') => {
         ? `<div class="tgrid">${transfers.latest.map(t => _transferCardHTML(t)).join('')}</div>`
         : '<p class="empty">No hay fichajes recientes disponibles ahora mismo.</p>'}
     </div>
+
+    <div id="sub-history" class="subpanel">
+      <p class="sub-note">Histórico propio de GolazoX${transfers.historyTotal ? ` · ${transfers.historyTotal.toLocaleString('es-ES')} fichajes acumulados` : ''}. Crece automáticamente cada vez que detectamos operaciones nuevas; usa el buscador para filtrar por jugador, club o posición.</p>
+      ${(transfers.history && transfers.history.length)
+        ? `<div class="tgrid">${transfers.history.map(t => _transferCardHTML(t)).join('')}</div>`
+        : '<p class="empty">El histórico se irá llenando a medida que detectemos fichajes. Vuelve en unos minutos.</p>'}
+    </div>
+
+    <div id="sub-rumores" class="subpanel">
+      <p class="sub-note">Rumores de fichaje con la <strong>probabilidad de traspaso</strong> según los votos de los usuarios de Transfermarkt. 🔥 caliente = muy probable · ❄️ frío = poco probable.</p>
+      ${rumors.list.length
+        ? `<div class="tgrid">${rumors.list.map(_rumorCardHTML).join('')}</div>`
+        : (news.fichajes.length
+            ? `<ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
+            : '<p class="empty">No hay rumores destacados ahora mismo.</p>')}
+    </div>
   </section>
 
-  <section id="tab-noticias" class="panel${_isNews ? ' active' : ''}" role="tabpanel">
+  <section id="tab-noticias" class="panel${_activeTab === 'noticias' ? ' active' : ''}" role="tabpanel">
     ${_newsFilterHTML([...news.fichajes, ...news.general])}
-    ${_newsSectionHTML('🔄 Mercado de fichajes', news.fichajes, 13)}
-    ${_newsSectionHTML('🗞️ Actualidad', news.general, 13)}
+    ${_newsSectionHTML('🔄 Mercado de fichajes', news.fichajes, 25)}
+    ${_newsSectionHTML('🗞️ Actualidad', news.general, 25)}
     ${(!news.fichajes.length && !news.general.length)
       ? '<p class="empty">No hay noticias disponibles ahora mismo.</p>' : ''}
   </section>
 
-  <p class="disclaimer">Datos de fichajes y escudos: Transfermarkt. Titulares: Marca, AS, SPORT, Mundo Deportivo.
+  <section id="tab-agenda" class="panel${_activeTab === 'agenda' ? ' active' : ''}" role="tabpanel">
+    <p class="sub-note">Próximas fechas clave del fútbol: sorteos, arranques de liga, parones de selecciones y grandes citas. Los eventos pasados se ocultan solos.</p>
+    ${_agendaHTML(agenda.events)}
+  </section>
+
+  <section id="tab-valores" class="panel${_activeTab === 'valores' ? ' active' : ''}" role="tabpanel">
+    <div class="subtabs">
+      <button class="subtab active" data-sub="valiosos">💎 Más valiosos<span class="count">${values.list.length}</span></button>
+      <button class="subtab" data-sub="pagados">💵 Mejor pagados<span class="count">${salaries.players.length}</span></button>
+    </div>
+    <div id="sub-valiosos" class="subpanel active">
+      <p class="sub-note">Jugadores con mayor valor de mercado (Transfermarkt). Se actualiza automáticamente.</p>
+      ${values.list.length
+        ? `<div class="rtable">${_valueRowsHTML(values.list)}</div>`
+        : '<p class="empty">No hay datos de valor de mercado ahora mismo.</p>'}
+    </div>
+    <div id="sub-pagados" class="subpanel">
+      ${salaries.note ? `<div class="note-box">⚠️ ${_esc(salaries.note)}</div>` : ''}
+      ${salaries.players.length
+        ? `<div class="rtable">${_salaryRowsHTML(salaries.players)}</div>`
+        : '<p class="empty">No hay datos de salarios ahora mismo.</p>'}
+    </div>
+  </section>
+
+  <section id="tab-estadisticas" class="panel${_activeTab === 'estadisticas' ? ' active' : ''}" role="tabpanel">
+    <div class="subtabs">
+      <button class="subtab active" data-sub="goleadores">⚽ Goleadores<span class="count">${stats.scorers.length}</span></button>
+      <button class="subtab" data-sub="asistentes">🎯 Asistencias<span class="count">${stats.assists.length}</span></button>
+      <button class="subtab" data-sub="historicos">🏅 Históricos<span class="count">${legends.scorers.length}</span></button>
+    </div>
+    <div id="sub-goleadores" class="subpanel active">
+      <p class="sub-note">Máximos goleadores de la temporada ${stats.season || ''} en las grandes ligas europeas.</p>
+      ${stats.scorers.length
+        ? `<div class="rtable">${_statRowsHTML(stats.scorers, 'goals')}</div>`
+        : '<p class="empty">No hay datos de goleadores ahora mismo.</p>'}
+    </div>
+    <div id="sub-asistentes" class="subpanel">
+      <p class="sub-note">Máximos asistentes de la temporada ${stats.season || ''} en las grandes ligas europeas.</p>
+      ${stats.assists.length
+        ? `<div class="rtable">${_statRowsHTML(stats.assists, 'assists')}</div>`
+        : '<p class="empty">No hay datos de asistencias ahora mismo.</p>'}
+    </div>
+    <div id="sub-historicos" class="subpanel">
+      ${legends.note ? `<div class="note-box">ℹ️ ${_esc(legends.note)}</div>` : ''}
+      <h2>⚽ Máximos goleadores de la historia</h2>
+      ${(legends.scorers && legends.scorers.length)
+        ? `<div class="rtable">${_legendRowsHTML(legends.scorers, 'goals')}</div>`
+        : '<p class="empty">Sin datos.</p>'}
+      ${(legends.assists && legends.assists.length)
+        ? `<h2>🎯 Máximos asistentes (era moderna)</h2><div class="rtable">${_legendRowsHTML(legends.assists, 'assists')}</div>`
+        : ''}
+    </div>
+  </section>
+
+  <p class="disclaimer">Datos de fichajes, valores de mercado, goleadores y escudos: Transfermarkt. Titulares y rumores: Marca, AS, SPORT, Mundo Deportivo.
+  Salarios, agenda de fechas y récords históricos son estimaciones/datos curados a partir de información pública (aproximados, no oficiales).
   GolazoX agrega y enlaza a las fuentes originales con fines informativos; no reproduce el contenido de las noticias.
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=5" defer></script>
+  <script src="/fichajes.js?v=6" defer></script>
 </body>
 </html>`;
 };
 
-app.get('/fichajes', _newsLimit, async (_req, res) => {
+// Datos completos de la página de fichajes/noticias/agenda/cracks/estadísticas.
+// Se piden todos porque la barra de pestañas muestra contadores de cada sección.
+// Todo está cacheado (fichajes 30 min, noticias 15 min, rankings 6 h, curados al vuelo).
+async function _fichajesData() {
+  const [transfers, news, values, stats, rumors] = await Promise.all([
+    getTransfers(), getNews(), getValues(), getStats(), getRumors(),
+  ]);
+  return {
+    transfers, news,
+    extra: { values, stats, rumors, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
+  };
+}
+const _FALLBACK_T = { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
+const _FALLBACK_N = { fichajes: [], general: [], updated: 0 };
+
+// Un solo render para todas las variantes de la página (misma plantilla, distinta
+// pestaña activa y SEO propio). Cada ruta es una URL indexable independiente.
+const _renderFichajes = (page) => async (_req, res) => {
   try {
-    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
+    const d = await _fichajesData();
     res.set('Cache-Control', 'public, max-age=300')
        .type('text/html')
-       .send(FICHAJES_HTML(transfers, news));
+       .send(FICHAJES_HTML(d.transfers, d.news, page, d.extra));
   } catch (e) {
-    console.error('[fichajes] error:', e.message);
-    res.status(503).type('text/html').send(FICHAJES_HTML(
-      { list: [], top: [], latest: [], updated: 0 },
-      { fichajes: [], general: [], updated: 0 },
-    ));
+    console.error(`[${page}] error:`, e.message);
+    res.status(503).type('text/html').send(FICHAJES_HTML(_FALLBACK_T, _FALLBACK_N, page, {}));
   }
-});
+};
+
+app.get('/fichajes', _newsLimit, _renderFichajes('fichajes'));
 
 // Ping ligero para el auto-refresh: devuelve solo el timestamp de los datos.
 app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
@@ -3753,23 +3999,11 @@ app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
   }
 });
 
-// Página de Noticias — misma plantilla que /fichajes pero con la pestaña de
-// noticias activa y SEO propio (URL indexable independiente).
-app.get('/noticias', _newsLimit, async (_req, res) => {
-  try {
-    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
-    res.set('Cache-Control', 'public, max-age=300')
-       .type('text/html')
-       .send(FICHAJES_HTML(transfers, news, 'noticias'));
-  } catch (e) {
-    console.error('[noticias] error:', e.message);
-    res.status(503).type('text/html').send(FICHAJES_HTML(
-      { list: [], top: [], latest: [], updated: 0 },
-      { fichajes: [], general: [], updated: 0 },
-      'noticias',
-    ));
-  }
-});
+// Variantes con SEO propio y pestaña activa distinta (misma plantilla).
+app.get('/noticias', _newsLimit, _renderFichajes('noticias'));
+app.get('/agenda', _newsLimit, _renderFichajes('agenda'));
+app.get('/valores', _newsLimit, _renderFichajes('valores'));
+app.get('/estadisticas', _newsLimit, _renderFichajes('estadisticas'));
 
 // ═══════════════════════ CLASIFICACIONES ═══════════════════════
 // Escudo de club (reutiliza el proxy /tmbadge). `badge` puede ser null.
@@ -3949,7 +4183,7 @@ const CLASIFICACIONES_HTML = (standings) => {
     ] }
   })}</script>
   <link rel="icon" type="image/png" href="/golazox-coin.png"/>
-  <link rel="stylesheet" href="/style.css?v=28"/>
+  <link rel="stylesheet" href="/style.css?v=29"/>
   <style>
     :root { --cyan:#00d4ff; --green:#10d98a; --ink:#0b0f14; }
     * { box-sizing:border-box; }

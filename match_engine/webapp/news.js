@@ -15,19 +15,29 @@
 
 const fetch   = require('node-fetch');
 const cheerio = require('cheerio');
+const fs      = require('fs');
+const path    = require('path');
 
 const FETCH_TIMEOUT = 8000;
 const CACHE_TTL     = 15 * 60 * 1000; // 15 minutos
 
 // Fuentes RSS. cat: 'fichajes' (mercado) | 'general' (actualidad).
+// Todas verificadas (responden con items frescos). Los feeds 'general'
+// también aportan fichajes: se reclasifican por palabras clave en getNews().
 const FEEDS = [
   { name: 'Marca',            cat: 'fichajes', url: 'https://e00-marca.uecdn.es/rss/futbol/mercado-fichajes.xml' },
   { name: 'Mundo Deportivo',  cat: 'fichajes', url: 'https://www.mundodeportivo.com/feed/rss/futbol/fichajes' },
   { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/mas-futbol.xml' },
+  { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/primera-division.xml' },
+  { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/champions-league.xml' },
   { name: 'AS',               cat: 'general',  url: 'https://as.com/rss/futbol/portada.xml' },
   { name: 'SPORT',            cat: 'general',  url: 'https://www.sport.es/es/rss/futbol/rss.xml' },
   { name: 'Mundo Deportivo',  cat: 'general',  url: 'https://www.mundodeportivo.com/feed/rss/futbol' },
 ];
+
+// Detecta titulares de mercado dentro de feeds generales (para nutrir el
+// tablón de fichajes con más volumen sin depender solo de feeds dedicados).
+const _FICH_RE = /fich|traspas|acuerdo|firma|renov|refuerz|cesi[oó]n|libre|se marcha|adi[oó]s|nuevo\s+(jugador|fichaje)|se incorpora|oficial:/i;
 
 // -- caché en memoria -------------------------------------------------------
 let _cache = { ts: 0, data: null };
@@ -132,16 +142,20 @@ async function getNews() {
   }
   unique.sort((a, b) => b.ts - a.ts);
 
+  // Reparto en dos tablones disjuntos: un titular de un feed 'general' que
+  // hable de mercado se muestra en Fichajes (no en Actualidad) para no duplicar.
+  const fichajes = [];
+  const general  = [];
+  for (const it of unique) {
+    if (it.cat === 'fichajes' || _FICH_RE.test(it.title)) fichajes.push(it);
+    else general.push(it);
+  }
+
   const data = {
-    fichajes: unique.filter(i => i.cat === 'fichajes').slice(0, 25),
-    general:  unique.filter(i => i.cat === 'general').slice(0, 30),
+    fichajes: fichajes.slice(0, 40),
+    general:  general.slice(0, 60),
     updated:  now,
   };
-
-  // Si por lo que sea no hubo fichajes específicos, degradar con generales.
-  if (data.fichajes.length === 0) {
-    data.fichajes = unique.filter(i => /fich|traspas|acuerd|firma|refuerz/i.test(i.title)).slice(0, 15);
-  }
 
   // Solo cachear si obtuvimos algo; si todo falló, reintentar en la próxima visita.
   if (unique.length > 0) _cache = { ts: now, data };
@@ -180,6 +194,98 @@ const _transfersUrl = (saison) =>
 
 // Últimos fichajes cerrados (orden cronológico, los más recientes primero).
 const LATEST_URL = 'https://www.transfermarkt.es/statistik/neuestetransfers';
+
+// ══ Base de datos propia de fichajes (histórico acumulativo) ════════════
+// Transfermarkt no ofrece API ni un histórico completo descargable; cada
+// raspado devuelve una ventana (~40 movimientos). Aquí persistimos los
+// fichajes únicos que vamos viendo en un JSON propio que crece con el tiempo:
+// una base de datos que controlamos, sin depender de terceros ni violar ToS.
+const _DB_DIR      = path.join(__dirname, 'data');
+const _DB_FILE     = path.join(_DB_DIR, 'transfers_db.json');
+const _DB_MAX      = 5000;   // tope de registros (poda los más antiguos por descubrimiento)
+const _HISTORY_VIEW = 300;   // cuántos registros exponer al front
+
+let _db = null;              // caché en memoria del histórico
+
+function _normKey(s) {
+  return String(s || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+// Identidad de un fichaje: jugador + origen + destino + temporada (el importe
+// puede cambiar de rumor a confirmado, por eso NO forma parte de la clave).
+function _transferKey(t, saison) {
+  return `${_normKey(t.player)}|${_normKey(t.from && t.from.name)}|${_normKey(t.to && t.to.name)}|${saison}`;
+}
+
+function _loadDb() {
+  if (_db) return _db;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(_DB_FILE, 'utf8'));
+    _db = (parsed && Array.isArray(parsed.items)) ? { items: parsed.items } : { items: [] };
+  } catch (_) {
+    _db = { items: [] };   // no existe aún o está corrupto: empezar limpio
+  }
+  return _db;
+}
+
+function _saveDb() {
+  try {
+    fs.mkdirSync(_DB_DIR, { recursive: true });
+    fs.writeFileSync(_DB_FILE, JSON.stringify({ items: _db.items }), 'utf8');
+  } catch (_) { /* disco no disponible: no romper la página */ }
+}
+
+// Fusiona fichajes raspados en el histórico. Devuelve el número de nuevos.
+function _mergeTransfers(items, saison) {
+  const db = _loadDb();
+  const now = Date.now();
+  if (!db._idx) {
+    db._idx = new Map();
+    for (const it of db.items) db._idx.set(it.key, it);
+  }
+  let added = 0;
+  for (const t of items) {
+    if (!t || !t.player || !t.to || t.to.name === '—') continue;
+    const key = _transferKey(t, saison);
+    const existing = db._idx.get(key);
+    if (existing) {
+      existing.lastSeen = now;
+      const prevFee = existing.fee ? existing.fee.value : 0;
+      if (t.fee && (t.fee.value || 0) > prevFee) existing.fee = t.fee;
+      continue;
+    }
+    const rec = {
+      key,
+      player: t.player, position: t.position || '', age: t.age || '', nat: t.nat || '',
+      from: t.from, to: t.to, fee: t.fee || { value: 0, label: '', type: '' },
+      saison, firstSeen: now, lastSeen: now,
+    };
+    db.items.push(rec);
+    db._idx.set(key, rec);
+    added++;
+  }
+  if (added) {
+    if (db.items.length > _DB_MAX) {   // poda: conservar los más recientes
+      db.items.sort((a, b) => b.firstSeen - a.firstSeen);
+      db.items = db.items.slice(0, _DB_MAX);
+      db._idx = new Map(db.items.map(it => [it.key, it]));
+    }
+    _saveDb();
+  }
+  return added;
+}
+
+// Vista para el front: más recientes primero (por orden de descubrimiento).
+function _historyView() {
+  const db = _loadDb();
+  return db.items
+    .slice()
+    .sort((a, b) => b.firstSeen - a.firstSeen)
+    .slice(0, _HISTORY_VIEW)
+    .map(({ key, firstSeen, lastSeen, ...pub }) => pub);
+}
 
 // Convierte "145,00 mill. €" | "876 mil €" | "Libre" | "Cesión" a estructura.
 function _parseFee(raw) {
@@ -280,27 +386,252 @@ async function getTransfers() {
 
     // ── Fichajes más caros de la temporada ──
     let list = seasonRes.status === 'fulfilled' ? seasonRes.value : [];
+    let usedSaison = saison;
     // Si la ventana actual aún tiene pocos movimientos, usar la anterior.
     if (list.length < 10) {
       try {
         const prev = await _fetchTransfers(saison - 1);
-        if (prev.length > list.length) list = prev;
+        if (prev.length > list.length) { list = prev; usedSaison = saison - 1; }
       } catch (_) {}
     }
     list.sort((a, b) => b.fee.value - a.fee.value); // reforzar orden por importe
     const top = list.filter(t => t.fee.value > 0).slice(0, 8);
 
     // ── Últimos fichajes cerrados (cronológico) ──
-    const latest = latestRes.status === 'fulfilled' ? latestRes.value.slice(0, 24) : [];
+    const latest = latestRes.status === 'fulfilled' ? latestRes.value.slice(0, 40) : [];
 
-    const data = { list: list.slice(0, 30), top, latest, updated: now };
+    // ── Persistir en el histórico propio (fichajes únicos vistos) ──
+    try {
+      _mergeTransfers(list, usedSaison);
+      _mergeTransfers(latest, saison);
+    } catch (_) { /* no bloquear la respuesta por un fallo de persistencia */ }
+    const history = _historyView();
+    const historyTotal = _loadDb().items.length;
+
+    const data = { list: list.slice(0, 40), top, latest, history, historyTotal, updated: now };
     if (list.length > 0 || latest.length > 0) _tCache = { ts: now, data };
     return data;
   } catch (_) {
-    return _tCache.data || { list: [], top: [], latest: [], updated: 0 };
+    return _tCache.data || { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
   }
 }
 
-module.exports = { getNews, getTransfers, FEEDS, IMG_HOSTS };
+// ════════════════════════════════════════════════════════════════════
+//  RANKINGS DE JUGADORES  (valor de mercado + estadísticas)
+// ════════════════════════════════════════════════════════════════════
+const RANK_TTL = 6 * 60 * 60 * 1000; // 6 h — cambian despacio
+
+// Nombre + posición desde una celda "jugador" de Transfermarkt.
+function _playerFromCell($cell) {
+  const $img = $cell.find('img').first();
+  const name = ($img.attr('alt') || $cell.find('a').first().attr('title') ||
+                $cell.find('a').first().text() || '').trim();
+  const position = $cell.text().replace(/\s+/g, ' ').replace(name, '').trim();
+  return { name, position };
+}
+
+// ── Jugadores más valiosos (valor de mercado) ──
+let _vCache = { ts: 0, data: null };
+const VALUES_URL = 'https://www.transfermarkt.es/marktwertetop/wertvollstespieler';
+
+// Fila de valor de mercado: 6 celdas
+// [0]=rango [1]=jugador+pos [2]=edad [3]=nac [4]=club [5]=valor
+function _parseValueRow($, el) {
+  const tds = $(el).children('td').toArray();
+  if (tds.length < 6) return null;
+  const { name: player, position } = _playerFromCell($(tds[1]));
+  if (!player) return null;
+  const age  = $(tds[2]).text().trim();
+  const nat  = ($(tds[3]).find('img').first().attr('alt') || '').split('|')[0].trim();
+  const club = _clubFromCell($(tds[4]));
+  const fee  = _parseFee($(tds[5]).text());
+  return { player, position, age, nat, club, value: fee.value, valueLabel: fee.label };
+}
+
+async function getValues() {
+  const now = Date.now();
+  if (_vCache.data && (now - _vCache.ts) < RANK_TTL) return _vCache.data;
+  try {
+    const r = await fetch(VALUES_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const $ = cheerio.load(await r.text());
+    const rows = $('table.items').first().find('tbody > tr').toArray();
+    const list = [];
+    for (const el of rows) { const t = _parseValueRow($, el); if (t) list.push(t); }
+    const data = { list: list.slice(0, 50), updated: now };
+    if (list.length) _vCache = { ts: now, data };
+    return data;
+  } catch (_) {
+    return _vCache.data || { list: [], updated: 0 };
+  }
+}
+
+// ── Estadísticas: goleadores y asistentes (scorerliste por liga) ──
+let _sCache = { ts: 0, data: null };
+const _STAT_LEAGUES = [
+  { slug: 'laliga',                code: 'ES1', name: 'LaLiga' },
+  { slug: 'premier-league',        code: 'GB1', name: 'Premier League' },
+  { slug: 'serie-a',               code: 'IT1', name: 'Serie A' },
+  { slug: 'bundesliga',            code: 'L1',  name: 'Bundesliga' },
+  { slug: 'ligue-1',               code: 'FR1', name: 'Ligue 1' },
+];
+const _scorerUrl = (slug, code, saison) =>
+  `https://www.transfermarkt.es/${slug}/scorerliste/wettbewerb/${code}/saison_id/${saison}`;
+
+// Fila scorerliste: 9 celdas
+// [0]=rango [1]=jugador+pos [2]=club [3]=nac [4]=edad [5]=partidos [6]=goles [7]=asist [8]=puntos
+function _parseScorerRow($, el, league) {
+  const tds = $(el).children('td').toArray();
+  if (tds.length < 9) return null;
+  const { name: player, position } = _playerFromCell($(tds[1]));
+  if (!player) return null;
+  const club = _clubFromCell($(tds[2]));
+  const nat  = ($(tds[3]).find('img').first().attr('alt') || '').split('|')[0].trim();
+  const age  = $(tds[4]).text().trim();
+  const toInt = (i) => parseInt(($(tds[i]).text() || '').replace(/[^\d]/g, ''), 10) || 0;
+  return { player, position, club, nat, age, apps: toInt(5), goals: toInt(6), assists: toInt(7), league };
+}
+
+async function _fetchScorers(saison) {
+  const results = await Promise.allSettled(_STAT_LEAGUES.map(async (lg) => {
+    const r = await fetch(_scorerUrl(lg.slug, lg.code, saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const $ = cheerio.load(await r.text());
+    const rows = $('table.items').first().find('tbody > tr').toArray();
+    const out = [];
+    for (const el of rows) { const t = _parseScorerRow($, el, lg.name); if (t) out.push(t); }
+    return out;
+  }));
+  const all = [];
+  for (const res of results) if (res.status === 'fulfilled') all.push(...res.value);
+  return all;
+}
+
+async function getStats() {
+  const now = Date.now();
+  if (_sCache.data && (now - _sCache.ts) < RANK_TTL) return _sCache.data;
+  try {
+    const saison = _currentSaison();
+    let all = await _fetchScorers(saison);
+    let season = saison;
+    // Al inicio de temporada aún no hay datos: usar la temporada anterior.
+    const totalGoals = all.reduce((s, p) => s + p.goals, 0);
+    if (all.length < 20 || totalGoals < 20) {
+      const prev = await _fetchScorers(saison - 1);
+      if (prev.reduce((s, p) => s + p.goals, 0) > totalGoals) { all = prev; season = saison - 1; }
+    }
+    const scorers = all.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists).slice(0, 30);
+    const assists = all.slice().sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
+    const label = `${season}/${String(season + 1).slice(-2)}`;
+    const data = { scorers, assists, season: label, updated: now };
+    if (all.length) _sCache = { ts: now, data };
+    return data;
+  } catch (_) {
+    return _sCache.data || { scorers: [], assists: [], season: '', updated: 0 };
+  }
+}
+
+// ── Rumores de fichajes (con probabilidad de traspaso) ──
+// Transfermarkt publica la "probabilidad de cambio" votada por usuarios en
+// /geruechte/aktuellegeruechte/statistik. Cada fila: jugador, club actual →
+// club interesado, edad, nacionalidad, fecha y % de probabilidad.
+let _rCache = { ts: 0, data: null };
+const RUMORS_URL = 'https://www.transfermarkt.es/geruechte/aktuellegeruechte/statistik';
+const RUMORS_TTL = 30 * 60 * 1000; // 30 min
+
+// Quita texto duplicado tipo "Sin equipoSin equipo" → "Sin equipo".
+function _dedupText(s) {
+  s = (s || '').replace(/\s+/g, ' ').trim();
+  const h = s.slice(0, s.length / 2);
+  if (h && s === h + h) return h.trim();
+  return s;
+}
+
+// Fila de rumor: 13 celdas (con inline-tables anidadas).
+// [2]=jugador [3]=pos [4]=edad [5]=nac [6]=club actual [7]=club interesado
+// [9]=nombre club interesado [11]=fecha [12]=probabilidad
+function _parseRumorRow($, el) {
+  const tds = $(el).find('td');
+  if (tds.length < 12) return null;
+  const player = _dedupText($(tds[2]).find('a').first().text() || $(tds[2]).text());
+  if (!player) return null;
+  const position = $(tds[3]).text().trim();
+  const age = $(tds[4]).text().trim();
+  const nat = ($(tds[5]).find('img').first().attr('title') ||
+               $(tds[5]).find('img').first().attr('alt') || '').split('|')[0].trim();
+  const from = _clubFromCell($(tds[6]));
+  // El club interesado: escudo en la celda 7, nombre completo en su título.
+  const to = _clubFromCell($(tds[7]));
+  const toFull = _dedupText($(tds[7]).find('a').first().attr('title') || '');
+  if (toFull) to.name = toFull;
+  const probRaw = $(tds[12]).text().replace(/\s+/g, ' ').trim();
+  const pm = probRaw.match(/(\d{1,3})\s?%/);
+  const prob = pm ? parseInt(pm[1], 10) : null;
+  if (from.name === '—' && to.name === '—') return null;
+  return { player, position, age, nat, from, to, prob };
+}
+
+async function getRumors() {
+  const now = Date.now();
+  if (_rCache.data && (now - _rCache.ts) < RUMORS_TTL) return _rCache.data;
+  try {
+    const r = await fetch(RUMORS_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const $ = cheerio.load(await r.text());
+    const trs = $('table.items').first().children('tbody').children('tr').toArray();
+    const list = [];
+    for (const el of trs) { const it = _parseRumorRow($, el); if (it) list.push(it); }
+    // Los que tienen probabilidad primero (mayor a menor); los sin % al final.
+    list.sort((a, b) => (b.prob == null ? -1 : b.prob) - (a.prob == null ? -1 : a.prob));
+    const data = { list: list.slice(0, 30), updated: now };
+    if (list.length) _rCache = { ts: now, data };
+    return data;
+  } catch (_) {
+    return _rCache.data || { list: [], updated: 0 };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+//  DATOS CURADOS  (no existen en fuentes gratuitas fiables)
+//  Se leen de /data/*.json y son editables a mano. Si el archivo no
+//  existe se devuelve un valor vacío sin romper la página.
+// ════════════════════════════════════════════════════════════════════
+function _readJson(file, fallback) {
+  try { return JSON.parse(fs.readFileSync(path.join(_DB_DIR, file), 'utf8')); }
+  catch (_) { return fallback; }
+}
+
+// Agenda: próximos eventos importantes (sorteos, inicios de liga, finales…).
+// Se filtran los ya pasados y se ordenan por fecha ascendente.
+function getAgenda() {
+  const raw = _readJson('agenda.json', { events: [] });
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const events = (raw.events || [])
+    .filter(e => e && e.date && new Date(e.date) >= today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(0, 40);
+  return { events, updated: raw.updated || 0 };
+}
+
+// Mejor pagados: estimaciones de salario anual según prensa (curado).
+function getSalaries() {
+  const raw = _readJson('salaries.json', { players: [] });
+  const players = (raw.players || [])
+    .slice()
+    .sort((a, b) => (b.salary || 0) - (a.salary || 0))
+    .slice(0, 30);
+  return { players, updated: raw.updated || 0, note: raw.note || '' };
+}
+
+// Leyendas / máximos históricos (curado).
+function getLegends() {
+  return _readJson('legends.json', { scorers: [], assists: [], note: '' });
+}
+
+module.exports = {
+  getNews, getTransfers, getValues, getStats, getRumors,
+  getAgenda, getSalaries, getLegends,
+  FEEDS, IMG_HOSTS,
+};
 
 

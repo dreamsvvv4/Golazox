@@ -35,19 +35,24 @@
   });
   function showFromHash() {
     var name = (location.hash || '').replace('#', '');
-    if (name === 'noticias' || name === 'fichajes') show(name);
+    if (name && document.querySelector('.tab[data-tab="' + name + '"]')) show(name);
   }
   showFromHash();
   // Al pulsar un enlace del menú (/fichajes#noticias) estando ya en la página,
   // el navegador solo cambia el hash sin recargar → escuchar hashchange.
   window.addEventListener('hashchange', showFromHash);
 
-  var subtabs = document.querySelectorAll('.subtab');
-  var subpanels = document.querySelectorAll('.subpanel');
-  subtabs.forEach(function (s) {
-    s.addEventListener('click', function () {
-      subtabs.forEach(function (x) { x.classList.toggle('active', x === s); });
-      subpanels.forEach(function (p) { p.classList.toggle('active', p.id === 'sub-' + s.dataset.sub); });
+  // Sub-pestañas: se gestionan por panel para que cada grupo mantenga su propio
+  // estado activo (Fichajes, Cracks y Estadísticas tienen grupos independientes).
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    var st = panel.querySelectorAll('.subtab');
+    var sp = panel.querySelectorAll('.subpanel');
+    st.forEach(function (s) {
+      s.addEventListener('click', function () {
+        st.forEach(function (x) { x.classList.toggle('active', x === s); });
+        sp.forEach(function (p) { p.classList.toggle('active', p.id === 'sub-' + s.dataset.sub); });
+        if (typeof runSearch === 'function') runSearch();
+      });
     });
   });
 
@@ -102,11 +107,14 @@
   var searchClear = document.getElementById('tsearchClear');
   var searchEmpty = document.getElementById('searchEmpty');
   function runSearch() {
+    if (!search) return;
     var q = (search.value || '').trim().toLowerCase();
-    searchClear.hidden = !q;
-    var active = document.querySelector('.subpanel.active');
+    if (searchClear) searchClear.hidden = !q;
+    // El buscador solo aplica al panel de Fichajes (tarjetas de traspaso).
+    var active = document.querySelector('#tab-fichajes .subpanel.active');
     if (!active) return;
     var cards = active.querySelectorAll('.tcard');
+    if (!cards.length) { if (searchEmpty) searchEmpty.hidden = true; return; }
     var visible = 0;
     cards.forEach(function (c) {
       var hit = !q || (c.dataset.search || '').indexOf(q) !== -1;
@@ -122,7 +130,6 @@
   if (search) {
     search.addEventListener('input', runSearch);
     searchClear.addEventListener('click', function () { search.value = ''; runSearch(); search.focus(); });
-    subtabs.forEach(function (s) { s.addEventListener('click', runSearch); });
   }
 
   // ── Filtro por medio (noticias) ──
