@@ -3863,6 +3863,11 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .cmp-val.win { color:#ffd700; }
     .cmp-mid { align-self:center; font-weight:800; color:rgba(255,255,255,.4); }
     .cmp-diff { grid-column:1 / -1; text-align:center; font-size:.8rem; color:rgba(255,255,255,.7); margin-top:.4rem; }
+    .skel-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
+    .skel-card { background:rgba(255,255,255,.04); border-radius:14px; padding:1.1rem; }
+    .skel-line { height:12px; border-radius:6px; margin:.55rem 0; background:linear-gradient(90deg,rgba(255,255,255,.06) 25%,rgba(255,255,255,.13) 37%,rgba(255,255,255,.06) 63%); background-size:400% 100%; animation:skel 1.4s ease infinite; }
+    .skel-line.w40 { width:40%; } .skel-line.w60 { width:60%; } .skel-line.w80 { width:80%; }
+    @keyframes skel { 0%{background-position:100% 0;} 100%{background-position:-100% 0;} }
     .thermo-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem; }
     .thermo-head h2 { margin:0; font-size:1.05rem; }
     .thermo-sub { font-size:.78rem; color:rgba(255,255,255,.55); }
@@ -4086,7 +4091,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       ${_chartHTML(transfers.top)}
       ${transfers.list.length
         ? `<h2>💎 Los más caros del mercado</h2><div class="tgrid">${transfers.list.map((t, i) => _transferCardHTML(t, i + 1)).join('')}</div>`
-        : '<p class="empty">No hay datos de fichajes disponibles ahora mismo. Vuelve en unos minutos.</p>'}
+        : `<p class="empty">Cargando los últimos fichajes… la página se actualizará en unos segundos.</p>${_skeletonGrid(6)}`}
     </div>
 
     <div id="sub-latest" class="subpanel">
@@ -4207,6 +4212,11 @@ async function _fichajesData() {
 }
 const _FALLBACK_T = { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
 const _FALLBACK_N = { fichajes: [], general: [], updated: 0 };
+// Skeleton animado para estados vacíos / cold-start: mejor percepción que una
+// página en blanco. La página se auto-refresca (fichajes.js) cuando hay datos.
+const _skeletonGrid = (n = 6) => `<div class="skel-grid" aria-hidden="true">${
+  Array.from({ length: n }, () => `<div class="skel-card"><div class="skel-line w60"></div><div class="skel-line w40"></div><div class="skel-line w80"></div></div>`).join('')
+}</div>`;
 
 // Un solo render para todas las variantes de la página (misma plantilla, distinta
 // pestaña activa y SEO propio). Cada ruta es una URL indexable independiente.

@@ -25,13 +25,13 @@ romper rutas vivas, verificar con `node --check` + `npm test` + smoke HTTP antes
 - [x] **2. Comparador de Cracks** — seleccionar 2 jugadores de la tabla de valores y compararlos lado a lado (valor, edad, club, nacionalidad). 100% cliente. *(bajo riesgo)*
 - [x] **3. Favoritos (seguir jugadores/clubes)** — estrella en tarjetas + filtro "solo favoritos", persistido en `localStorage`. *(bajo riesgo)*
 - [x] **4. Compartir tarjeta de fichaje** — botón con Web Share API + copiar enlace con fallback. *(bajo riesgo)*
-- [ ] **5. Skeletons de carga** — placeholders animados en vez de páginas vacías/503 mientras carga. *(bajo riesgo)*
+- [x] **5. Skeletons de carga** — placeholders animados en vez de páginas vacías/503 mientras carga. *(bajo riesgo)*
 - [ ] **6. Buscador global en la home** — un único buscador que filtra jugadores/clubes across fichajes, valores y stats. *(medio)*
 
 ### Funcionalidades deportivas
 - [x] **7. Net Spend de clubes** — nueva subpestaña: ranking de clubes por gasto en fichajes de la temporada (desde el histórico propio). *(medio)*
 - [x] **8. Fichaje del Día** — destacado rotativo (determinista por fecha) del bombazo más relevante, en home y cabecera de `/fichajes`. *(bajo riesgo)*
-- [ ] **9. Clasificaciones de las 5 grandes ligas** — scraping de standings (LaLiga, Premier, Serie A, Bundesliga, Ligue 1) con caché. Nueva pestaña. *(alto)*
+- [x] **9. Clasificaciones de las 5 grandes ligas** — scraping de standings (LaLiga, Premier, Serie A, Bundesliga, Ligue 1) con caché. Nueva pestaña. *(alto)*
 - [x] **10. Termómetro por jugador en rumores** — mini-histograma/insignia de "temperatura" agregada del mercado de rumores. *(bajo riesgo)*
 
 ### Integraciones técnicas
