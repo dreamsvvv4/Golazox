@@ -3705,11 +3705,29 @@ const _agendaHTML = (events) => {
 
 // Guía de TV: partidos de fútbol con hora, competición, equipos y canal,
 // agrupados por día (Hoy / Mañana / …). Fuente: Marca. Datos factuales;
-// los canales son de la parrilla española.
-const _tvGuideHTML = (tv) => {
+// los canales son de la parrilla española. Si no hay fútbol en la parrilla
+// (p. ej. pretemporada), se muestra un aviso con el próximo evento de la
+// agenda como gancho, en vez de ocultar la sección (parecería rota).
+const _tvGuideHTML = (tv, agenda) => {
   const days = (tv && tv.days) || [];
   const total = days.reduce((s, d) => s + (d.events ? d.events.length : 0), 0);
-  if (!total) return '';
+  if (!total) {
+    const next = ((agenda && agenda.events) || [])[0];
+    let hook = 'Vuelve pronto para consultar la parrilla.';
+    if (next && next.date) {
+      const d = new Date(next.date);
+      const days2 = Math.max(0, Math.ceil((d.getTime() - Date.now()) / 86400000));
+      const badge = days2 === 0 ? 'hoy' : days2 === 1 ? 'mañana' : `en ${days2} días`;
+      hook = `Próxima cita: <strong>${_esc(next.title)}</strong> (${badge}).`;
+    }
+    return `<div class="tvguide">
+    <div class="tvguide-head">
+      <h2>📺 Fútbol en TV</h2>
+      <span class="tvguide-src">Datos: Marca · parrilla España</span>
+    </div>
+    <p class="tvempty">No hay fútbol en la parrilla de hoy. ${hook}</p>
+  </div>`;
+  }
   const _row = (e) => `<div class="tvitem${e.big ? ' tvbig' : ''}">
       <span class="tvhour">${_esc(e.time || '')}</span>
       <span class="tvbody">
@@ -4053,6 +4071,8 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     .tvteams { font-size:.9rem; font-weight:700; color:#fff; line-height:1.2; }
     .tvcomp { font-size:.64rem; color:rgba(255,255,255,.42); text-transform:uppercase; letter-spacing:.03em; }
     .tvchannel { flex:0 0 auto; font-size:.72rem; font-weight:700; color:#ffd27a; background:rgba(255,196,84,.1); border:1px solid rgba(255,196,84,.28); padding:.22rem .55rem; border-radius:999px; text-align:center; max-width:9rem; }
+    .tvempty { font-size:.82rem; color:rgba(255,255,255,.55); background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:.8rem .9rem; margin:0; line-height:1.5; }
+    .tvempty strong { color:#fff; font-weight:700; }
 
     .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
     .upd-date { color:rgba(0,212,255,.7); font-weight:700; white-space:nowrap; }
@@ -4142,7 +4162,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   </section>
 
   <section id="tab-agenda" class="panel${_activeTab === 'agenda' ? ' active' : ''}" role="tabpanel">
-    ${_tvGuideHTML(tvGuide)}
+    ${_tvGuideHTML(tvGuide, agenda)}
     <p class="sub-note">Próximas fechas clave del fútbol: sorteos, arranques de liga, parones de selecciones y grandes citas. Los eventos pasados se ocultan solos.${_updatedNote(agenda.updated)}</p>
     ${_agendaHTML(agenda.events)}
   </section>
