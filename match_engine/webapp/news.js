@@ -810,7 +810,11 @@ async function getTvGuide() {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     // La página es iso-8859-15: decodificar el buffer como latin1 (compatible
     // para las tildes españolas); .text() asumiría UTF-8 y rompería los acentos.
-    const html = (await r.buffer()).toString('latin1');
+    // node-fetch v2 expone .buffer(); el fetch global de Node solo .arrayBuffer().
+    const buf = typeof r.buffer === 'function'
+      ? await r.buffer()
+      : Buffer.from(await r.arrayBuffer());
+    const html = buf.toString('latin1');
     const $ = cheerio.load(html);
 
     const parseEvents = ($scope) => {
