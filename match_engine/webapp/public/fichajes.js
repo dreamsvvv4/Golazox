@@ -5,14 +5,23 @@
   var sideLinks = document.querySelectorAll('.side-link');
 
   function syncSideNav(name) {
-    // Resalta en el menú izquierdo el enlace acorde a la pestaña activa.
-    var wantNews = name === 'noticias';
+    // Resalta en el menú izquierdo la sección acorde a la pestaña activa.
+    // Las 5 pestañas de esta página son secciones propias del menú lateral
+    // (Fichajes, Noticias, Agenda, Cracks/Valores, Estadísticas): al cambiar
+    // de pestaña, el menú refleja dónde estás.
+    var map = {
+      fichajes: '/fichajes', noticias: '/noticias', agenda: '/agenda',
+      valores: '/valores', estadisticas: '/estadisticas',
+    };
+    var tabPaths = { '/fichajes': 1, '/noticias': 1, '/agenda': 1, '/valores': 1, '/estadisticas': 1 };
+    var target = map[name] || '/fichajes';
     sideLinks.forEach(function (l) {
-      var href = l.getAttribute('href') || '';
-      var isNews = /#noticias/.test(href) || /\/noticias$/.test(href);
-      var isTransfers = /\/fichajes$/.test(href);
-      if (isNews) l.classList.toggle('side-link-active', wantNews);
-      else if (isTransfers) l.classList.toggle('side-link-active', !wantNews);
+      var p;
+      try { p = new URL(l.href, location.origin).pathname.replace(/\/$/, ''); }
+      catch (e) { p = (l.getAttribute('href') || '').split(/[?#]/)[0].replace(/\/$/, ''); }
+      // Solo togglear las secciones que son pestañas de esta página; el resto
+      // (Simulador, Clasificaciones) conserva su estado.
+      if (tabPaths[p]) l.classList.toggle('side-link-active', p === target);
     });
   }
 

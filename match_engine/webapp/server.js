@@ -3617,7 +3617,10 @@ const GX_SIDE_NAV = (active) => `
       <a class="side-brand" href="/" aria-label="GolazoX — inicio">
         <span class="side-brand-mark"><span class="bx-go">GOLAZ</span><span class="bx-ox">OX</span></span>
       </a>
-      <a class="side-link${active === 'sim' ? ' side-link-active' : ''}" href="/"${active === 'sim' ? ' aria-current="page"' : ''}>
+      <a class="side-link${active === 'hub' ? ' side-link-active' : ''}" href="/"${active === 'hub' ? ' aria-current="page"' : ''}>
+        <span class="side-ico">🏠</span><span class="side-lbl">Portada</span>
+      </a>
+      <a class="side-link${active === 'sim' ? ' side-link-active' : ''}" href="/?tab=match"${active === 'sim' ? ' aria-current="page"' : ''}>
         <span class="side-ico">⚽</span><span class="side-lbl">Simulador</span>
       </a>
       <div class="side-group-label">Explorar</div>
@@ -4229,7 +4232,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=9" defer></script>
+  <script src="/fichajes.js?v=10" defer></script>
 </body>
 </html>`;
 };
@@ -4304,6 +4307,9 @@ app.get('/api', _apiLimit, (_req, res) => _apiSend(res, {
     { path: '/api/values',    desc: 'Jugadores más valiosos (valor de mercado)' },
     { path: '/api/stats',     desc: 'Goleadores y asistentes de las grandes ligas' },
     { path: '/api/rumors',    desc: 'Rumores con probabilidad de traspaso' },
+    { path: '/api/news',      desc: 'Titulares de actualidad y mercado (portada)' },
+    { path: '/api/standings-summary', desc: 'Líderes (top 5) de las grandes ligas' },
+    { path: '/api/home',      desc: 'Portada agregada: noticias + mercado + clasificación + agenda en una llamada' },
     { path: '/health',        desc: 'Estado de las fuentes de datos' },
   ],
   note: 'Datos agregados de fuentes públicas (Transfermarkt, RSS). Solo lectura.',
@@ -4324,6 +4330,84 @@ app.get('/api/stats', _apiLimit, async (_req, res) => {
 app.get('/api/rumors', _apiLimit, async (_req, res) => {
   try { const d = await getRumors(); _apiSend(res, d); }
   catch (e) { res.status(503).json({ error: e.message }); }
+});
+// Agenda de fechas clave (curada). getAgenda es síncrono (lee JSON local).
+app.get('/api/agenda', _apiLimit, (_req, res) => {
+  try { const d = getAgenda(); _apiSend(res, { updated: d.updated, events: (d.events || []).slice(0, 20) }); }
+  catch (e) { res.status(503).json({ error: e.message }); }
+});
+// Titulares para la portada (actualidad + mercado), forma ligera.
+app.get('/api/news', _apiLimit, async (_req, res) => {
+  try {
+    const d = await getNews();
+    const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
+    _apiSend(res, {
+      updated: d.updated,
+      general: (d.general || []).slice(0, 8).map(pick),
+      fichajes: (d.fichajes || []).slice(0, 6).map(pick),
+    });
+  } catch (e) { res.status(503).json({ error: e.message }); }
+});
+// Resumen de clasificaciones para la portada: líderes (top 5) por gran liga.
+app.get('/api/standings-summary', _apiLimit, async (_req, res) => {
+  try {
+    const d = await getStandings();
+    _apiSend(res, {
+      updated: d.updated,
+      leagues: (d.leagues || []).map(l => ({
+        code: l.code, name: l.name, short: l.short, flag: l.flag, season: l.season,
+        top: (l.table || []).slice(0, 5).map(t => ({
+          pos: t.pos, club: t.club, badge: t.badge, played: t.played, points: t.points,
+        })),
+      })),
+    });
+  } catch (e) { res.status(503).json({ error: e.message }); }
+});
+
+// Portada agregada: una sola llamada devuelve todo lo que necesita el hub de la
+// home (noticias, mercado, rumores, clasificación, cracks). Reutiliza las cachés
+// de cada fuente; si alguna cae, su bloque va vacío pero el resto responde.
+app.get('/api/home', _apiLimit, async (_req, res) => {
+  const settled = async (p, fallback) => { try { return await p; } catch { return fallback; } };
+  try {
+    const [news, transfers, rumors, standings, tv] = await Promise.all([
+      settled(getNews(), {}),
+      settled(getTransfers(), {}),
+      settled(getRumors(), {}),
+      settled(getStandings(), {}),
+      settled(getTvGuide(), {}),
+    ]);
+    let agenda = { events: [], updated: 0 };
+    try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
+    const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
+    _apiSend(res, {
+      news: {
+        updated: news.updated,
+        general: (news.general || []).slice(0, 8).map(pick),
+        fichajes: (news.fichajes || []).slice(0, 6).map(pick),
+      },
+      transfers: { updated: transfers.updated, list: (transfers.list || []).slice(0, 6) },
+      rumors: { updated: rumors.updated, list: (rumors.list || []).slice(0, 12) },
+      agenda: { updated: agenda.updated, events: (agenda.events || []).slice(0, 8) },
+      standings: {
+        updated: standings.updated,
+        leagues: (standings.leagues || []).map(l => ({
+          code: l.code, name: l.name, short: l.short, flag: l.flag, season: l.season,
+          top: (l.table || []).slice(0, 5).map(t => ({
+            pos: t.pos, club: t.club, badge: t.badge, played: t.played, points: t.points,
+          })),
+        })),
+      },
+      tv: {
+        updated: tv.updated,
+        // Solo el primer día (Hoy) para la portada, hasta 10 partidos.
+        today: (tv.days && tv.days[0]) ? {
+          label: tv.days[0].label, dateStr: tv.days[0].dateStr,
+          events: (tv.days[0].events || []).slice(0, 10),
+        } : null,
+      },
+    });
+  } catch (e) { res.status(503).json({ error: e.message }); }
 });
 
 // ═══════════════════════ RSS PROPIO DE GOLAZOX ═══════════════════════
