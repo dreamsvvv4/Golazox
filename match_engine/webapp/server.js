@@ -3782,6 +3782,20 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
+  // Robustez: si Transfermarkt está caído, `transfers.list/top/latest` llegan
+  // vacíos y la pestaña "Bombazos" se quedaba en un skeleton "Cargando…" eterno.
+  // Rellenamos desde el histórico propio (transfers_db.json) — fichajes reales
+  // de la ventana en curso — con el mismo criterio que la portada. Así la página
+  // SIEMPRE muestra fichajes en vez de un cargando permanente.
+  if (!(transfers.list && transfers.list.length) && transfers.history && transfers.history.length) {
+    const _byFee = transfers.history.slice().sort((a, b) =>
+      ((b.fee && b.fee.value) || 0) - ((a.fee && a.fee.value) || 0));
+    transfers = Object.assign({}, transfers, {
+      list: _byFee,
+      top: _byFee.filter(t => t.fee && t.fee.value > 0).slice(0, 8),
+      latest: (transfers.latest && transfers.latest.length) ? transfers.latest : _byFee.slice(0, 20),
+    });
+  }
   const _url = `${_base}${_cfg.path}`;
   const _title = _cfg.title;
   const _desc = _cfg.desc;
