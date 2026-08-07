@@ -4399,16 +4399,19 @@ async function _buildHomePayload(fast) {
   ]);
   let agenda = { events: [], updated: 0 };
   try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
-  // Fichajes para la portada: preferimos los ÚLTIMOS cerrados (transfers.latest,
-  // cronológico → novedad real, distinta de la tabla de "más caros" que ya vive
-  // en /fichajes); si no hay, los más caros de la temporada. NO usamos el
-  // histórico antiguo (transfers_db.json): eran fichajes del año pasado que solo
-  // confundían al repetir lo de /fichajes. Cuando no hay datos estructurados
-  // frescos (p. ej. Transfermarkt caído), el front cae a la última hora de
-  // fichajes vía noticias RSS (news.fichajes), que sí están al día.
+  // Fichajes confirmados para la portada: preferimos los más caros de la
+  // temporada (transfers.list → los bombazos); si aún no hay, los últimos
+  // cerrados (latest → recientes) y, en último término, nuestro histórico propio
+  // (history, desde transfers_db.json) ordenado por importe para destacar los
+  // grandes. Así SIEMPRE hay confirmados reales aunque Transfermarkt esté caído.
+  // Si aun así no hubiera ninguno, el front cae a la última hora del mercado vía
+  // noticias RSS (news.fichajes).
+  const _byFee = arr => (arr || []).slice().sort((a, b) =>
+    ((b.fee && b.fee.value) || 0) - ((a.fee && a.fee.value) || 0));
   const _confirmed =
+    (transfers.list && transfers.list.length) ? transfers.list :
     (transfers.latest && transfers.latest.length) ? transfers.latest :
-    (transfers.list && transfers.list.length) ? transfers.list : [];
+    _byFee(transfers.history);
   // Agenda del día: primero los partidos que se juegan HOY (ESPN), y detrás las
   // próximas fechas clave del calendario propio (arranques de liga, sorteos…).
   const _today = new Date().toISOString().slice(0, 10);
