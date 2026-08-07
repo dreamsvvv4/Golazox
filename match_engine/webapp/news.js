@@ -56,6 +56,7 @@ const IMG_HOSTS = [
   'estaticos-marca.com', 'e00-marca.uecdn.es',
   'mundodeportivo.com', 'epimg.net', 'as.com',
   'prensaiberica.es', 'sport.es',
+  'espncdn.com',
 ];
 
 // Extrae la primera imagen válida de un item RSS (enclosure / media:*).
@@ -508,7 +509,13 @@ async function getTransfers() {
     return data;
   } catch (e) {
     _mark('transfers', 'fail', 0, e.message);
-    return _tCache.data || { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
+    // Aunque el scrapeo falle, el histórico propio (transfers_db.json) es local
+    // y siempre está disponible: lo servimos para que la portada muestre
+    // fichajes confirmados reales incluso sin Transfermarkt.
+    if (_tCache.data) return _tCache.data;
+    let history = [], historyTotal = 0;
+    try { history = _historyView(); historyTotal = _loadDb().items.length; } catch (_) {}
+    return { list: [], top: [], latest: [], history, historyTotal, updated: 0 };
   }
 }
 

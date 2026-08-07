@@ -16,9 +16,11 @@
 
 const fetch   = require('node-fetch');
 const cheerio = require('cheerio');
+const espn    = require('./espn');
 
 const FETCH_TIMEOUT = 8000;
 const CACHE_TTL     = 30 * 60 * 1000; // 30 min
+const TM_CAP        = 9000;           // tope para el enriquecimiento de Transfermarkt
 
 // Ligas soportadas (código de competición de Transfermarkt).
 const LEAGUES = [
@@ -223,15 +225,41 @@ async function _fetchLeague(league) {
 /**
  * Devuelve { leagues: [{ code, name, table, scorers, season }], updated }.
  * Caché de 30 min. Resiliente: ligas que fallan se omiten.
+ *
+ * Fuentes: Transfermarkt (tabla + goleadores + calendario) y, como respaldo,
+ * ESPN (solo tabla, sin clave). Si Transfermarkt no devuelve la tabla de una
+ * liga (bloqueo/pretemporada), se usa la de ESPN para que la clasificación
+ * nunca aparezca vacía. Los goleadores y el calendario siguen siendo de TM.
  */
 async function getStandings() {
   const now = Date.now();
   if (_cache.data && (now - _cache.ts) < CACHE_TTL) return _cache.data;
   try {
-    const results = await Promise.allSettled(LEAGUES.map(_fetchLeague));
-    const leagues = results
-      .filter(r => r.status === 'fulfilled' && r.value.table.length)
-      .map(r => r.value);
+    // ESPN es la base rápida y fiable (solo tabla). Transfermarkt enriquece con
+    // goleadores y calendario, pero está IP-bloqueado a veces y cada liga puede
+    // agotar varios timeouts de 8 s: por eso lo acotamos con TM_CAP para no
+    // bloquear la respuesta. Si TM no llega a tiempo, se sirve la tabla de ESPN.
+    const espnP = espn.getEspnStandings(LEAGUES).catch(() => ({ leagues: [] }));
+    const tmP   = Promise.allSettled(LEAGUES.map(_fetchLeague));
+    const tmCapped = Promise.race([
+      tmP,
+      new Promise(resolve => setTimeout(() => resolve(null), TM_CAP)),
+    ]);
+    const [espnData, tmSettled] = await Promise.all([espnP, tmCapped]);
+
+    // Transfermarkt: ligas con tabla no vacía (datos ricos: + goleadores/calendario).
+    const tmLeagues = Array.isArray(tmSettled)
+      ? tmSettled.filter(r => r.status === 'fulfilled' && r.value.table.length).map(r => r.value)
+      : [];
+    // ESPN: respaldo de solo tabla.
+    const espnLeagues = (espnData && espnData.leagues) || [];
+
+    // Fusión por código: TM manda cuando tiene tabla; si no, entra ESPN.
+    const byCode = {};
+    for (const l of espnLeagues) byCode[l.code] = l;
+    for (const l of tmLeagues) byCode[l.code] = l;
+    const leagues = LEAGUES.map(L => byCode[L.code]).filter(Boolean);
+
     const data = { leagues, updated: now };
     if (leagues.length) _cache = { ts: now, data };
     return data;

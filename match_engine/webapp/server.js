@@ -19,6 +19,7 @@ const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
 const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, getStatus, getTvGuide, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
+const { getEspnMatches } = require('./espn');
 
 const app    = express();
 app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
@@ -4388,15 +4389,38 @@ async function _buildHomePayload(fast) {
     if (!fast) return safe;
     return Promise.race([safe, new Promise(r => setTimeout(() => r(fb), ms))]);
   };
-  const [news, transfers, rumors, standings, tv] = await Promise.all([
+  const [news, transfers, rumors, standings, tv, espnMatches] = await Promise.all([
     cap(getNews(), 4500, {}),
     cap(getTransfers(), 4500, {}),
     cap(getRumors(), 4500, {}),
     cap(getStandings(), 5000, {}),
     cap(getTvGuide(), 4500, {}),
+    cap(getEspnMatches(), 4500, { events: [] }),
   ]);
   let agenda = { events: [], updated: 0 };
   try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
+  // Fichajes confirmados para la portada: preferimos los más caros de la
+  // temporada (transfers.list); si aún no hay (pretemporada) usamos los últimos
+  // cerrados (latest) y, en último término, nuestro histórico propio (history,
+  // desde transfers_db.json) ordenado por importe para destacar los grandes.
+  const _byFee = arr => (arr || []).slice().sort((a, b) =>
+    ((b.fee && b.fee.value) || 0) - ((a.fee && a.fee.value) || 0));
+  const _confirmed =
+    (transfers.list && transfers.list.length) ? transfers.list :
+    (transfers.latest && transfers.latest.length) ? transfers.latest :
+    _byFee(transfers.history);
+  // Agenda del día: primero los partidos que se juegan HOY (ESPN), y detrás las
+  // próximas fechas clave del calendario propio (arranques de liga, sorteos…).
+  const _today = new Date().toISOString().slice(0, 10);
+  const _matchEvents = (espnMatches.events || []).map(m => ({
+    date: _today,
+    type: 'match',
+    icon: m.icon || '⚽',
+    title: `${m.home} - ${m.away}`,
+    comp: m.competition,
+    time: m.time || '',
+  }));
+  const _agendaEvents = _matchEvents.concat(agenda.events || []);
   const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
   return {
     news: {
@@ -4404,9 +4428,9 @@ async function _buildHomePayload(fast) {
       general: (news.general || []).slice(0, 8).map(pick),
       fichajes: (news.fichajes || []).slice(0, 6).map(pick),
     },
-    transfers: { updated: transfers.updated, list: (transfers.list || []).slice(0, 6) },
+    transfers: { updated: transfers.updated, list: (_confirmed || []).slice(0, 6) },
     rumors: { updated: rumors.updated, list: (rumors.list || []).slice(0, 12) },
-    agenda: { updated: agenda.updated, events: (agenda.events || []).slice(0, 8) },
+    agenda: { updated: agenda.updated, events: _agendaEvents.slice(0, 8) },
     standings: {
       updated: standings.updated,
       leagues: (standings.leagues || []).map(l => ({
