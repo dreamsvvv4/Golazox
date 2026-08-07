@@ -4274,7 +4274,7 @@ const _skeletonGrid = (n = 6) => `<div class="skel-grid" aria-hidden="true">${
 const _renderFichajes = (page) => async (_req, res) => {
   try {
     const d = await _fichajesData();
-    res.set('Cache-Control', 'public, max-age=300')
+    res.set('Cache-Control', 'public, max-age=60')
        .type('text/html')
        .send(FICHAJES_HTML(d.transfers, d.news, page, d.extra));
   } catch (e) {
