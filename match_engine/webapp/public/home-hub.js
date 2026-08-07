@@ -127,12 +127,13 @@
       rList.sort(function (a, b) { return b.prob - a.prob; });
       var confirmed = tList.filter(function (t) { return t && t.player; });
       var rums = rList.filter(function (r) { return r && r.player; });
-      var nConf = Math.min(confirmed.length, 4);
-      var nRum = Math.min(rums.length, Math.max(3, TARGET - nConf));
-      confirmed = confirmed.slice(0, nConf);
-      rums = rums.slice(0, nRum);
+      var fich = (nData && nData.fichajes) || [];
       var html = '';
       if (confirmed.length) {
+        // Datos frescos de Transfermarkt → fichajes confirmados reales.
+        var nConf = Math.min(confirmed.length, 4);
+        var nRum = Math.min(rums.length, Math.max(3, TARGET - nConf));
+        confirmed = confirmed.slice(0, nConf);
         html += '<div class="hub-sub-head hub-sub-fee">✅ Fichajes confirmados</div>';
         html += confirmed.map(function (t) {
           return '<a class="hub-block" href="/fichajes">' +
@@ -140,6 +141,24 @@
             '<span class="hub-block-flow">' + flow(t) + (t.fee && t.fee.label ? ' <b>· ' + esc(t.fee.label) + '</b>' : '') + '</span>' +
             playerMeta(t) + '</a>';
         }).join('');
+        rums = rums.slice(0, nRum);
+      } else if (fich.length) {
+        // Sin confirmados frescos (p. ej. Transfermarkt caído): mostramos la
+        // última hora del mercado de ESTE AÑO desde las noticias de fichajes, en
+        // vez de repetir un snapshot antiguo. Esto es lo genuinamente actual.
+        var nNews = Math.min(fich.length, 4);
+        html += '<div class="hub-sub-head hub-sub-news">📰 Última hora del mercado</div>';
+        html += fich.slice(0, nNews).map(function (n) {
+          var thumb = n.image ? '<img class="hub-mkt-thumb" src="' + esc(newsImg(n.image)) + '" alt="" loading="lazy">' : '';
+          return '<a class="hub-mkt-news" href="' + esc(n.link || '/noticias') + '" target="_blank" rel="noopener">' + thumb +
+            '<span class="hub-mkt-news-body">' +
+            '<span class="hub-mkt-news-src">' + esc(n.source || 'Mercado') + (n.ts ? ' · ' + esc(timeAgo(n.ts)) : '') + '</span>' +
+            '<span class="hub-mkt-news-title">' + esc(n.title) + '</span>' +
+            '</span></a>';
+        }).join('');
+        rums = rums.slice(0, Math.min(rums.length, Math.max(3, TARGET - nNews)));
+      } else {
+        rums = rums.slice(0, Math.min(rums.length, TARGET));
       }
       if (rums.length) {
         html += '<div class="hub-sub-head hub-sub-hot">🔥 Rumores del día</div>';
@@ -151,23 +170,6 @@
             '<span class="hub-prob"><span class="hub-prob-bar"><span class="hub-prob-fill" style="width:' + esc(p) + '%"></span></span>' +
             '<span class="hub-prob-val">' + esc(r.prob) + '%</span></span></a>';
         }).join('');
-      }
-      // Sin datos estructurados frescos (p. ej. Transfermarkt caído): mostramos
-      // la última hora del mercado desde las noticias de fichajes, que sí están
-      // al día, en vez de repetir fichajes antiguos.
-      if (!confirmed.length && !rums.length) {
-        var fich = (nData && nData.fichajes) || [];
-        if (fich.length) {
-          html += '<div class="hub-sub-head hub-sub-news">📰 Última hora del mercado</div>';
-          html += fich.slice(0, 6).map(function (n) {
-            var thumb = n.image ? '<img class="hub-mkt-thumb" src="' + esc(newsImg(n.image)) + '" alt="" loading="lazy">' : '';
-            return '<a class="hub-mkt-news" href="' + esc(n.link || '/noticias') + '" target="_blank" rel="noopener">' + thumb +
-              '<span class="hub-mkt-news-body">' +
-              '<span class="hub-mkt-news-src">' + esc(n.source || 'Mercado') + (n.ts ? ' · ' + esc(timeAgo(n.ts)) : '') + '</span>' +
-              '<span class="hub-mkt-news-title">' + esc(n.title) + '</span>' +
-              '</span></a>';
-          }).join('');
-        }
       }
       body.innerHTML = html || '<p style="color:var(--grey);font-size:.82rem;padding:.6rem 0">Mercado sin novedades.</p>';
       hideBrokenImgs(body, 'hidden');

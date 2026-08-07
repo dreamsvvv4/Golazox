@@ -3782,20 +3782,6 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
-  // Robustez: si Transfermarkt está caído, `transfers.list/top/latest` llegan
-  // vacíos y la pestaña "Bombazos" se quedaba en un skeleton "Cargando…" eterno.
-  // Rellenamos desde el histórico propio (transfers_db.json) — fichajes reales
-  // de la ventana en curso — con el mismo criterio que la portada. Así la página
-  // SIEMPRE muestra fichajes en vez de un cargando permanente.
-  if (!(transfers.list && transfers.list.length) && transfers.history && transfers.history.length) {
-    const _byFee = transfers.history.slice().sort((a, b) =>
-      ((b.fee && b.fee.value) || 0) - ((a.fee && a.fee.value) || 0));
-    transfers = Object.assign({}, transfers, {
-      list: _byFee,
-      top: _byFee.filter(t => t.fee && t.fee.value > 0).slice(0, 8),
-      latest: (transfers.latest && transfers.latest.length) ? transfers.latest : _byFee.slice(0, 20),
-    });
-  }
   const _url = `${_base}${_cfg.path}`;
   const _title = _cfg.title;
   const _desc = _cfg.desc;
@@ -4143,7 +4129,9 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       ${_chartHTML(transfers.top)}
       ${transfers.list.length
         ? `<h2>💎 Los más caros del mercado</h2><div class="tgrid">${transfers.list.map((t, i) => _transferCardHTML(t, i + 1)).join('')}</div>`
-        : `<p class="empty">Cargando los últimos fichajes… la página se actualizará en unos segundos.</p>${_skeletonGrid(6)}`}
+        : (news.fichajes && news.fichajes.length
+            ? `<p class="sub-note">📡 Transfermarkt no responde ahora mismo; te mostramos la <strong>última hora del mercado</strong> de este año. Los fichajes estructurados volverán en cuanto la fuente se recupere.</p><h2>📰 Última hora del mercado</h2><ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
+            : `<p class="empty">Cargando los últimos fichajes… la página se actualizará en unos segundos.</p>${_skeletonGrid(6)}`)}
     </div>
 
     <div id="sub-latest" class="subpanel">
@@ -4259,8 +4247,17 @@ async function _fichajesData() {
   const [transfers, news, values, stats, rumors, tvGuide] = await Promise.all([
     getTransfers(), getNews(), getValues(), getStats(), getRumors(), getTvGuide(),
   ]);
+  // Si el scrape de Transfermarkt no es fresco (lleva caído horas), getTransfers
+  // sigue sirviendo el último snapshot con éxito, que trae nombres del mercado
+  // anterior ("los de 2025"). En ese caso vaciamos list/top/latest para que la
+  // página muestre la última hora del mercado (noticias de este año) en vez del
+  // snapshot rancio. El histórico propio se conserva para su pestaña "Histórico",
+  // que está honestamente etiquetada como archivo propio.
+  const _tx = _isFresh(transfers.updated)
+    ? transfers
+    : { ...transfers, list: [], top: [], latest: [] };
   return {
-    transfers, news,
+    transfers: _tx, news,
     extra: { values, stats, rumors, tvGuide, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
   };
 }
@@ -4331,7 +4328,18 @@ app.get('/api', _apiLimit, (_req, res) => _apiSend(res, {
 }));
 
 app.get('/api/transfers', _apiLimit, async (_req, res) => {
-  try { const d = await getTransfers(); _apiSend(res, { updated: d.updated, list: d.list, latest: d.latest, top: d.top }); }
+  try {
+    const d = await getTransfers();
+    // Si no es fresco (TM caído), no exponemos el snapshot rancio como actual:
+    // vaciamos list/latest/top para que los consumidores caigan a las noticias.
+    const fresh = _isFresh(d.updated);
+    _apiSend(res, {
+      updated: d.updated,
+      list: fresh ? d.list : [],
+      latest: fresh ? d.latest : [],
+      top: fresh ? d.top : [],
+    });
+  }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
 app.get('/api/values', _apiLimit, async (_req, res) => {
@@ -4394,6 +4402,15 @@ const HOME_TTL = 90 * 1000;          // frescura del payload agregado de la home
 let _homeCache = { payload: null, ts: 0 };
 let _homeRefreshing = false;
 
+// Los datos de fichajes de Transfermarkt se consideran "de este año" (frescos)
+// solo si se scrapearon hace menos de 6 h. getTransfers() sirve el último scrape
+// con éxito aunque TM lleve un día caído, y ese snapshot rancio trae nombres del
+// mercado anterior; por eso lo descartamos cuando no es fresco.
+const TX_FRESH_MS = 6 * 60 * 60 * 1000; // 6 h
+function _isFresh(updated) {
+  return !!updated && (Date.now() - updated) < TX_FRESH_MS;
+}
+
 async function _buildHomePayload(fast) {
   // Con fast=true cada fuente tiene su propio tope: si no responde a tiempo se
   // usa un fallback vacío y ese bloque aparece vacío, pero la portada responde.
@@ -4413,19 +4430,21 @@ async function _buildHomePayload(fast) {
   ]);
   let agenda = { events: [], updated: 0 };
   try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
-  // Fichajes confirmados para la portada: preferimos los más caros de la
-  // temporada (transfers.list → los bombazos); si aún no hay, los últimos
-  // cerrados (latest → recientes) y, en último término, nuestro histórico propio
-  // (history, desde transfers_db.json) ordenado por importe para destacar los
-  // grandes. Así SIEMPRE hay confirmados reales aunque Transfermarkt esté caído.
-  // Si aun así no hubiera ninguno, el front cae a la última hora del mercado vía
-  // noticias RSS (news.fichajes).
-  const _byFee = arr => (arr || []).slice().sort((a, b) =>
-    ((b.fee && b.fee.value) || 0) - ((a.fee && a.fee.value) || 0));
-  const _confirmed =
+  // Fichajes confirmados para la portada: SOLO datos frescos de Transfermarkt
+  // (los bombazos de la temporada o los últimos cerrados). NO usamos el histórico
+  // propio aquí: cuando TM está caído preferimos que el front muestre la última
+  // hora del mercado (noticias de este año) en vez de un snapshot antiguo que el
+  // usuario percibe como "fichajes del año pasado". Si TM funciona, estos son los
+  // fichajes reales y actuales.
+  //
+  // OJO: getTransfers() sirve el ÚLTIMO scrape con éxito aunque Transfermarkt
+  // lleve horas caído (caché en disco). Ese snapshot rancio contiene nombres del
+  // mercado anterior ("los de 2025"), así que si los datos no son frescos los
+  // descartamos por completo y dejamos que el front muestre las noticias.
+  const _txFresh = _isFresh(transfers.updated);
+  const _confirmed = !_txFresh ? [] :
     (transfers.list && transfers.list.length) ? transfers.list :
-    (transfers.latest && transfers.latest.length) ? transfers.latest :
-    _byFee(transfers.history);
+    (transfers.latest && transfers.latest.length) ? transfers.latest : [];
   // Agenda del día: primero los partidos que se juegan HOY (ESPN), y detrás las
   // próximas fechas clave del calendario propio (arranques de liga, sorteos…).
   const _today = new Date().toISOString().slice(0, 10);
