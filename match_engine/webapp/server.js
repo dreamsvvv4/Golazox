@@ -4365,50 +4365,98 @@ app.get('/api/standings-summary', _apiLimit, async (_req, res) => {
 });
 
 // Portada agregada: una sola llamada devuelve todo lo que necesita el hub de la
-// home (noticias, mercado, rumores, clasificación, cracks). Reutiliza las cachés
-// de cada fuente; si alguna cae, su bloque va vacío pero el resto responde.
-app.get('/api/home', _apiLimit, async (_req, res) => {
-  const settled = async (p, fallback) => { try { return await p; } catch { return fallback; } };
-  try {
-    const [news, transfers, rumors, standings, tv] = await Promise.all([
-      settled(getNews(), {}),
-      settled(getTransfers(), {}),
-      settled(getRumors(), {}),
-      settled(getStandings(), {}),
-      settled(getTvGuide(), {}),
-    ]);
-    let agenda = { events: [], updated: 0 };
-    try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
-    const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
-    _apiSend(res, {
-      news: {
-        updated: news.updated,
-        general: (news.general || []).slice(0, 8).map(pick),
-        fichajes: (news.fichajes || []).slice(0, 6).map(pick),
-      },
-      transfers: { updated: transfers.updated, list: (transfers.list || []).slice(0, 6) },
-      rumors: { updated: rumors.updated, list: (rumors.list || []).slice(0, 12) },
-      agenda: { updated: agenda.updated, events: (agenda.events || []).slice(0, 8) },
-      standings: {
-        updated: standings.updated,
-        leagues: (standings.leagues || []).map(l => ({
-          code: l.code, name: l.name, short: l.short, flag: l.flag, season: l.season,
-          top: (l.table || []).slice(0, 5).map(t => ({
-            pos: t.pos, club: t.club, badge: t.badge, played: t.played, points: t.points,
-          })),
+// home (noticias, mercado, rumores, clasificación, cracks).
+//
+// Construir la portada implica scrapear varias fuentes externas (Transfermarkt,
+// RSS, Marca) que a veces tardan segundos o se cuelgan. Para que la home NUNCA
+// se quede colgada (antes saltaba el timeout global de 25 s en pretemporada):
+//   1) Cacheamos el payload agregado en memoria y lo servimos AL INSTANTE.
+//   2) Si está caducado, lo refrescamos en segundo plano sin bloquear a nadie.
+//   3) En frío (sin caché todavía) construimos con un TOPE por fuente para no
+//      pasar de unos pocos segundos aunque una fuente esté muerta; acto seguido
+//      un refresco completo en background rellena lo que no llegó a tiempo.
+const HOME_TTL = 90 * 1000;          // frescura del payload agregado de la home
+let _homeCache = { payload: null, ts: 0 };
+let _homeRefreshing = false;
+
+async function _buildHomePayload(fast) {
+  // Con fast=true cada fuente tiene su propio tope: si no responde a tiempo se
+  // usa un fallback vacío y ese bloque aparece vacío, pero la portada responde.
+  // En background (fast=false) esperamos la fuente entera para calentar su caché.
+  const cap = (p, ms, fb) => {
+    const safe = Promise.resolve(p).catch(() => fb);
+    if (!fast) return safe;
+    return Promise.race([safe, new Promise(r => setTimeout(() => r(fb), ms))]);
+  };
+  const [news, transfers, rumors, standings, tv] = await Promise.all([
+    cap(getNews(), 4500, {}),
+    cap(getTransfers(), 4500, {}),
+    cap(getRumors(), 4500, {}),
+    cap(getStandings(), 5000, {}),
+    cap(getTvGuide(), 4500, {}),
+  ]);
+  let agenda = { events: [], updated: 0 };
+  try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
+  const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
+  return {
+    news: {
+      updated: news.updated,
+      general: (news.general || []).slice(0, 8).map(pick),
+      fichajes: (news.fichajes || []).slice(0, 6).map(pick),
+    },
+    transfers: { updated: transfers.updated, list: (transfers.list || []).slice(0, 6) },
+    rumors: { updated: rumors.updated, list: (rumors.list || []).slice(0, 12) },
+    agenda: { updated: agenda.updated, events: (agenda.events || []).slice(0, 8) },
+    standings: {
+      updated: standings.updated,
+      leagues: (standings.leagues || []).map(l => ({
+        code: l.code, name: l.name, short: l.short, flag: l.flag, season: l.season,
+        top: (l.table || []).slice(0, 5).map(t => ({
+          pos: t.pos, club: t.club, badge: t.badge, played: t.played, points: t.points,
         })),
-      },
-      tv: {
-        updated: tv.updated,
-        // Solo el primer día (Hoy) para la portada, hasta 10 partidos.
-        today: (tv.days && tv.days[0]) ? {
-          label: tv.days[0].label, dateStr: tv.days[0].dateStr,
-          events: (tv.days[0].events || []).slice(0, 10),
-        } : null,
-      },
-    });
+      })),
+    },
+    tv: {
+      updated: tv.updated,
+      // Solo el primer día (Hoy) para la portada, hasta 10 partidos.
+      today: (tv.days && tv.days[0]) ? {
+        label: tv.days[0].label, dateStr: tv.days[0].dateStr,
+        events: (tv.days[0].events || []).slice(0, 10),
+      } : null,
+    },
+  };
+}
+
+// Refresco completo en segundo plano (sin tope). Un solo refresco a la vez.
+function _refreshHomeInBackground() {
+  if (_homeRefreshing) return;
+  _homeRefreshing = true;
+  _buildHomePayload(false)
+    .then(payload => { _homeCache = { payload, ts: Date.now() }; })
+    .catch(() => { /* mantenemos el último payload bueno */ })
+    .finally(() => { _homeRefreshing = false; });
+}
+
+app.get('/api/home', _apiLimit, async (_req, res) => {
+  try {
+    const fresh = _homeCache.payload && (Date.now() - _homeCache.ts) < HOME_TTL;
+    if (_homeCache.payload) {
+      // Servimos al instante lo último bueno; si caducó, refrescamos por detrás.
+      if (!fresh) _refreshHomeInBackground();
+      return _apiSend(res, _homeCache.payload);
+    }
+    // Frío: construir con tope por fuente (~5 s peor caso) y cachear.
+    const payload = await _buildHomePayload(true);
+    _homeCache = { payload, ts: Date.now() };
+    // Dispara un refresco completo para rellenar fuentes lentas que no llegaron.
+    _refreshHomeInBackground();
+    _apiSend(res, payload);
   } catch (e) { res.status(503).json({ error: e.message }); }
 });
+
+// Calentamos la portada al arrancar para que ni el primer visitante espere el
+// scrapeo. Va detrás del arranque, sin bloquear el listen.
+setTimeout(_refreshHomeInBackground, 1500);
 
 // ═══════════════════════ RSS PROPIO DE GOLAZOX ═══════════════════════
 // Feed de los fichajes recién cerrados, generado desde nuestros propios datos.
