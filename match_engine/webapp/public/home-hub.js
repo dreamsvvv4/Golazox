@@ -114,14 +114,14 @@
   }
 
   /* ── 2) MERCADO — fichajes confirmados + rumores del día (juntos) ── */
-  function renderMarket(transfers, rumors) {
+  function renderMarket(transfers, rumors, news) {
     var body = $('hub-market-body');
     if (!body) return;
     // Objetivo: mantener la columna (alta) llena en cualquier escenario. Si no
     // hay confirmados (típico en dev), rellenamos con más rumores; si los hay,
     // equilibramos ambos bloques hasta ~7 fichas en total.
     var TARGET = 7;
-    var apply = function (tData, rData) {
+    var apply = function (tData, rData, nData) {
       var tList = (tData && tData.list) || [];
       var rList = ((rData && rData.list) || []).filter(function (x) { return typeof x.prob === 'number'; });
       rList.sort(function (a, b) { return b.prob - a.prob; });
@@ -152,14 +152,32 @@
             '<span class="hub-prob-val">' + esc(r.prob) + '%</span></span></a>';
         }).join('');
       }
+      // Sin datos estructurados frescos (p. ej. Transfermarkt caído): mostramos
+      // la última hora del mercado desde las noticias de fichajes, que sí están
+      // al día, en vez de repetir fichajes antiguos.
+      if (!confirmed.length && !rums.length) {
+        var fich = (nData && nData.fichajes) || [];
+        if (fich.length) {
+          html += '<div class="hub-sub-head hub-sub-news">📰 Última hora del mercado</div>';
+          html += fich.slice(0, 6).map(function (n) {
+            var thumb = n.image ? '<img class="hub-mkt-thumb" src="' + esc(newsImg(n.image)) + '" alt="" loading="lazy">' : '';
+            return '<a class="hub-mkt-news" href="' + esc(n.link || '/noticias') + '" target="_blank" rel="noopener">' + thumb +
+              '<span class="hub-mkt-news-body">' +
+              '<span class="hub-mkt-news-src">' + esc(n.source || 'Mercado') + (n.ts ? ' · ' + esc(timeAgo(n.ts)) : '') + '</span>' +
+              '<span class="hub-mkt-news-title">' + esc(n.title) + '</span>' +
+              '</span></a>';
+          }).join('');
+        }
+      }
       body.innerHTML = html || '<p style="color:var(--grey);font-size:.82rem;padding:.6rem 0">Mercado sin novedades.</p>';
       hideBrokenImgs(body, 'hidden');
     };
-    if (transfers || rumors) { try { apply(transfers, rumors); } catch (e) {} return; }
-    var td = null, rd = null, pending = 2;
-    var done = function () { pending--; if (pending > 0) return; apply(td, rd); };
+    if (transfers || rumors || news) { try { apply(transfers, rumors, news); } catch (e) {} return; }
+    var td = null, rd = null, nd = null, pending = 3;
+    var done = function () { pending--; if (pending > 0) return; apply(td, rd, nd); };
     getJSON('/api/transfers').then(function (d) { td = d; }).catch(function () {}).then(done);
     getJSON('/api/rumors').then(function (d) { rd = d; }).catch(function () {}).then(done);
+    getJSON('/api/news').then(function (d) { nd = d; }).catch(function () {}).then(done);
   }
 
   /* ── 3) CLASIFICACIÓN (con pestañas de liga + rotación automática) ── */
@@ -225,7 +243,7 @@
     getJSON('/api/standings-summary').then(apply).catch(function () { if (tabs) tabs.innerHTML = ''; fail(body, 'Clasificación no disponible.'); });
   }
 
-  /* ── 4) AGENDA DEL DÍA — próximas fechas clave del calendario ── */
+  /* ── 4) AGENDA DEL DÍA — partidos de hoy + próximas fechas clave ── */
   var _MES_AG = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
   function renderAgenda(data) {
     var body = $('hub-agenda-body');
@@ -234,6 +252,20 @@
       var evs = (d && d.events) || [];
       if (!evs.length) { fail(body, 'Sin fechas próximas.'); return; }
       body.innerHTML = evs.slice(0, 6).map(function (e) {
+        // Partido de hoy → tarjeta de encuentro (local vs visitante).
+        if (e.type === 'match') {
+          var parts = splitTeams(e.title);
+          var home = e.home || parts[0] || 'Por confirmar';
+          var away = e.away || parts[1] || '';
+          return '<a class="hub-ag-match" href="/agenda">' +
+            '<span class="hub-agm-time">' + esc(e.time || 'HOY') + '<small>hoy</small></span>' +
+            '<span class="hub-agm-body">' +
+            (e.comp ? '<span class="hub-agm-comp">' + (e.icon ? esc(e.icon) + ' ' : '') + esc(e.comp) + '</span>' : '') +
+            '<span class="hub-agm-teams"><b>' + esc(home) + '</b>' +
+            (away ? '<i>vs</i><b>' + esc(away) + '</b>' : '') + '</span>' +
+            '</span></a>';
+        }
+        // Hito de calendario (arranque de liga, sorteo, gala…).
         var dt = e.date ? new Date(e.date) : null;
         var day = dt && !isNaN(dt) ? dt.getDate() : '';
         var mon = dt && !isNaN(dt) ? _MES_AG[dt.getMonth()] : '';
@@ -298,7 +330,7 @@
     // Un solo fetch agregado para portada rápida; si falla, endpoints sueltos.
     getJSON('/api/home').then(function (d) {
       renderNews(d.news || {});
-      renderMarket(d.transfers || {}, d.rumors || {});
+      renderMarket(d.transfers || {}, d.rumors || {}, d.news || {});
       renderStandings(d.standings || {});
       renderAgenda(d.agenda || {});
       renderTv(d.tv || {});
