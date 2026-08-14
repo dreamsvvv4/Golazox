@@ -51,6 +51,48 @@ function _normTitle(t) {
     .trim();
 }
 
+// ── Ranking de relevancia (para la Actualidad) ──────────────────────────
+// Objetivo: que lo IMPORTANTE encabece, no solo lo más reciente. Se puntúa
+// cada titular por: temática (clubes/estrellas/competiciones grandes, hitos),
+// cobertura (nº de medios que publican la misma noticia) y frescura. Se
+// penaliza el relleno de bajo valor (previas, "dónde ver", entrenamientos…).
+const _BIG_CLUBS = /real madrid|barcelona|barça|atl[eé]tico|manchester (city|united)|man city|man utd|liverpool|chelsea|arsenal|tottenham|bayern|psg|paris saint|juventus|\binter\b|milan|napoli|dortmund|ajax|benfica|porto|sevilla|valencia|athletic|betis|villarreal|roma|leverkusen/i;
+const _BIG_NAMES = /messi|cristiano|ronaldo|mbapp|haaland|vinicius|vin[ií]cius|bellingham|lamine|yamal|lewandowski|benzema|neymar|griezmann|modric|kroos|de bruyne|salah|\bkane\b|pedri|gavi|\brodri\b|courtois|ter stegen|lautaro|osimhen|endrick|guardiola|ancelotti|xabi alonso|flick|mourinho|klopp/i;
+const _BIG_COMP  = /champions|liga de campeones|mundial|world cup|eurocopa|euro 202|copa del rey|europa league|final\b|semifinal|cl[aá]sico|derbi|bal[oó]n de oro|ballon|the best|fifa|uefa|supercopa/i;
+const _HOT_WORDS = /oficial|confirmad|bombazo|acuerdo total|hist[oó]rico|r[eé]cord|lesi[oó]n|sanci[oó]n|dimite|destitu|despido|se marcha|adi[oó]s|renueva|nuevo entrenador|campe[oó]n|t[ií]tulo|remontada|hat[- ]?trick|golazo|expulsi[oó]n|pol[eé]mic|denuncia|investiga|dopaje|ces[ae]|estalla|estall[oó]|traici[oó]n|guerra/i;
+const _LOW_WORDS = /previa|d[oó]nde ver|a qu[eé] hora|horario|alineaciones probables|c[oó]mo llegan|en directo|minuto a minuto|narraci[oó]n|s[ií]guelo|opini[oó]n|columna|editorial|encuesta|qu[ií]niela|hor[oó]scopo|entrenamiento|rueda de prensa|apuestas|cu[oó]tas|pron[oó]stico|\bfoto[s]?\b|galer[ií]a|as[ií] fue el|resumen del|lo mejor de|el d[ií]a de/i;
+
+// Puntúa la importancia temática de un titular (independiente de la fecha).
+function _importancePts(title) {
+  let s = 0;
+  if (_HOT_WORDS.test(title)) s += 6;
+  if (_BIG_COMP.test(title))  s += 4;
+  if (_BIG_NAMES.test(title)) s += 4;
+  if (_BIG_CLUBS.test(title)) s += 3;
+  if (_LOW_WORDS.test(title)) s -= 7;
+  return s;
+}
+
+// Puntúa la frescura (decae con las horas). Mantiene relevante lo reciente
+// sin dejar que domine por completo sobre un notición un poco más antiguo.
+function _recencyPts(ts, now) {
+  if (!ts) return 0;
+  const h = (now - ts) / 3600000;
+  if (h < 1)  return 9;
+  if (h < 3)  return 7;
+  if (h < 6)  return 5;
+  if (h < 12) return 3;
+  if (h < 24) return 2;
+  if (h < 48) return 1;
+  return 0;
+}
+
+// Puntuación global: importancia + cobertura (nº de medios) + frescura.
+function _newsRank(it, now) {
+  const cov = Math.min(it._cov || 1, 4);         // 1..4 medios cubriendo
+  return _importancePts(it.title) + (cov - 1) * 3 + _recencyPts(it.ts, now);
+}
+
 // Dominios de imágenes permitidos (whitelist anti-SSRF para el proxy).
 const IMG_HOSTS = [
   'estaticos-marca.com', 'e00-marca.uecdn.es',
@@ -224,16 +266,20 @@ async function getNews() {
   const results = await Promise.allSettled(FEEDS.map(_fetchFeed));
   const all = results.flatMap(r => (r.status === 'fulfilled' ? r.value : []));
 
-  // Deduplicar por título normalizado (distintos medios repiten noticia).
-  const seen = new Set();
+  // Ordenar por recencia y deduplicar CONTANDO cobertura: cuántos medios
+  // publican la misma noticia es una señal fuerte de importancia.
+  all.sort((a, b) => b.ts - a.ts);
+  const byKey = new Map();
   const unique = [];
   for (const it of all) {
     const k = _normTitle(it.title);
-    if (k.length < 8 || seen.has(k)) continue;
-    seen.add(k);
+    if (k.length < 8) continue;
+    const prev = byKey.get(k);
+    if (prev) { prev._cov = (prev._cov || 1) + 1; continue; } // ya visto (más nuevo)
+    it._cov = 1;
+    byKey.set(k, it);
     unique.push(it);
   }
-  unique.sort((a, b) => b.ts - a.ts);
 
   // Reparto en dos tablones disjuntos: un titular de un feed 'general' que
   // hable de mercado se muestra en Fichajes (no en Actualidad) para no duplicar.
@@ -243,6 +289,12 @@ async function getNews() {
     if (it.cat === 'fichajes' || _FICH_RE.test(it.title)) fichajes.push(it);
     else general.push(it);
   }
+
+  // Fichajes: se mantiene el orden cronológico (el mercado quiere lo último).
+  // Actualidad: se ordena por RELEVANCIA (importancia + cobertura + frescura)
+  // para que lo más importante encabece y la portada destaque un notición.
+  for (const it of general) it._rank = _newsRank(it, now);
+  general.sort((a, b) => (b._rank - a._rank) || (b.ts - a.ts));
 
   const data = {
     fichajes: fichajes.slice(0, 40),
