@@ -179,6 +179,46 @@ function _ymd(d) {
   return `${y}${m}${day}`;
 }
 
+// Normaliza un nombre de club para emparejar entre fuentes (TM ↔ ESPN):
+// minúsculas, sin acentos, sin sufijos/prefijos genéricos ni puntuación.
+// "Deportivo Alavés" y "Alavés" → "alaves"; "Getafe CF" y "Getafe" → "getafe".
+function _normName(s) {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/\b(cf|fc|ud|ca|rc|rcd|cd|sd|sad|club|de|del|balompie|deportivo|real|athletic|atletico)\b/g, '')
+    .replace(/[^a-z0-9]/g, '')
+    .trim();
+}
+
+// Palabras corporativas/genéricas que no identifican al club (se descartan al
+// tokenizar). OJO: NO incluimos "real"/"atletico"/"deportivo" porque SÍ
+// distinguen (Real Madrid vs Atlético; Real Sociedad vs Real Betis).
+const _STOP_TOKENS = new Set([
+  'cf', 'fc', 'ud', 'ca', 'rc', 'rcd', 'cd', 'sd', 'sad', 'ac', 'as', 'ss', 'sc',
+  'club', 'balompie', 'futbol', 'calcio', 'ssd', 'afc', 'bfc', 'the',
+]);
+
+// Convierte un nombre de club en un conjunto de tokens identificativos.
+// "Deportivo Alavés" → {deportivo, alaves}; "Rayo Vallecano" → {rayo, vallecano};
+// "Alavés" → {alaves}. Descarta sufijos corporativos y tokens de <3 letras.
+function _teamTokens(name) {
+  return new Set(
+    String(name || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .split(/[^a-z0-9]+/)
+      .filter(t => t.length >= 3 && !_STOP_TOKENS.has(t))
+  );
+}
+
+// Nº de tokens compartidos entre dos nombres (fuerza del emparejamiento).
+function _tokenOverlap(aSet, bSet) {
+  let n = 0;
+  for (const t of aSet) if (bSet.has(t)) n++;
+  return n;
+}
+
 // Hora local (Europe/Madrid) a partir del ISO UTC del evento.
 function _timeMadrid(iso) {
   try {
@@ -299,4 +339,87 @@ async function getEspnUpcoming(days) {
   return data;
 }
 
-module.exports = { getEspnStandings, getEspnMatches, getEspnUpcoming, LEAGUE_MAP };
+// -- caché en memoria (resultados por rango) --------------------------------
+let _resCache = { ts: 0, key: '', data: null };
+const RESULTS_TTL = 10 * 60 * 1000; // 10 min (marcadores en vivo)
+
+// Parsea un evento del scoreboard en un resultado con goleadores.
+// Devuelve { dayIso, home, away, tHome, tAway, score, state, live, scorers[] } | null.
+// tHome/tAway = tokens del nombre COMPLETO (para emparejar con Transfermarkt).
+function _resultFromEvent(ev) {
+  const comp = (ev.competitions && ev.competitions[0]) || {};
+  const cs = comp.competitors || [];
+  const home = cs.find(c => c.homeAway === 'home');
+  const away = cs.find(c => c.homeAway === 'away');
+  if (!home || !away) return null;
+  const homeName = (home.team && (home.team.displayName || home.team.shortDisplayName)) || '';
+  const awayName = (away.team && (away.team.displayName || away.team.shortDisplayName)) || '';
+  const status = (comp.status && comp.status.type) || (ev.status && ev.status.type) || {};
+  const state = status.state || 'pre';                 // 'pre' | 'in' | 'post'
+  const played = state === 'in' || state === 'post';
+  const hScore = home.score != null ? String(home.score) : '';
+  const aScore = away.score != null ? String(away.score) : '';
+  // Goleadores desde competition.details (viene en la misma respuesta).
+  const scorers = [];
+  const hId = home.team && String(home.team.id);
+  for (const dt of (comp.details || [])) {
+    if (!dt.scoringPlay) continue;
+    const side = (dt.team && String(dt.team.id) === hId) ? 'home' : 'away';
+    const name = (dt.athletesInvolved && dt.athletesInvolved[0] && dt.athletesInvolved[0].displayName) || '';
+    if (!name) continue;
+    const min = (dt.clock && dt.clock.displayValue) || '';
+    scorers.push({ name, min, side, pen: !!dt.penaltyKick, og: !!dt.ownGoal });
+  }
+  return {
+    dayIso: (ev.date || '').slice(0, 10),
+    home: homeName, away: awayName,
+    tHome: _teamTokens(homeName), tAway: _teamTokens(awayName),
+    score: (played && hScore !== '' && aScore !== '') ? `${hScore}:${aScore}` : '',
+    state, live: state === 'in', scorers,
+  };
+}
+
+// Trae los resultados (marcador + estado + goleadores) de las grandes ligas
+// para el rango [fromYmd, toYmd] (YYYYMMDD). Como ESPN topa a ~100 eventos por
+// petición, paginamos en ventanas de 50 días. No está bloqueado en prod, así
+// que sirve de fuente en vivo para rellenar el calendario. Devuelve
+// { byCode: { ES1:[res…], … }, updated }.
+async function getEspnResults(fromYmd, toYmd) {
+  const now = Date.now();
+  const key = `${fromYmd}-${toYmd}`;
+  if (_resCache.data && _resCache.key === key && (now - _resCache.ts) < RESULTS_TTL) {
+    return _resCache.data;
+  }
+  const parse = (s) => new Date(Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)));
+  const codes = Object.keys(LEAGUE_MAP);
+  const jobs = [];
+  for (const code of codes) {
+    const slug = LEAGUE_MAP[code];
+    let cur = parse(fromYmd);
+    const end = parse(toYmd);
+    while (cur <= end) {
+      const chunkEnd = new Date(cur); chunkEnd.setUTCDate(chunkEnd.getUTCDate() + 49);
+      const to = chunkEnd < end ? chunkEnd : end;
+      const range = `${_ymd(cur)}-${_ymd(to)}`;
+      jobs.push({ code, url: _SCOREBOARD_URL(slug, range) });
+      cur = new Date(to); cur.setUTCDate(cur.getUTCDate() + 1);
+    }
+  }
+  const byCode = {};
+  for (const c of codes) byCode[c] = [];
+  await Promise.allSettled(jobs.map(async (j) => {
+    const r = await fetch(j.url, { timeout: FETCH_TIMEOUT, headers: _HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    for (const ev of (d.events || [])) {
+      const res = _resultFromEvent(ev);
+      if (res) byCode[j.code].push(res);
+    }
+  }));
+  const data = { byCode, updated: now };
+  // Cacheamos aunque venga parcial: mejor algo que nada, y evita martillear.
+  _resCache = { ts: now, key, data };
+  return data;
+}
+
+module.exports = { getEspnStandings, getEspnMatches, getEspnUpcoming, getEspnResults, teamTokens: _teamTokens, tokenOverlap: _tokenOverlap, LEAGUE_MAP };

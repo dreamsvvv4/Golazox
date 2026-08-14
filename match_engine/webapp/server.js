@@ -4694,12 +4694,24 @@ const _scorerRowHTML = (s, i) => `
 // Limpia la hora del calendario ("desconocido" / vacío → sin hora).
 const _fxTime = (t) => (!t || /desconocido/i.test(t)) ? '' : t;
 
+// Goleadores de un partido (de ESPN), agrupados por equipo. Vacío si no hay.
+const _fxGoalsHTML = (m) => {
+  if (!m.scorers || !m.scorers.length) return '';
+  const fmt = (s) => `${_esc(s.name)}${s.min ? " <em>" + _esc(s.min) + "</em>" : ''}${s.pen ? ' (p)' : ''}${s.og ? ' (pp)' : ''}`;
+  const home = m.scorers.filter(s => s.side === 'home').map(fmt).join(', ');
+  const away = m.scorers.filter(s => s.side === 'away').map(fmt).join(', ');
+  if (!home && !away) return '';
+  return `<div class="fx-goals"><span class="fxg-home">${home}</span><span class="fxg-sep">⚽</span><span class="fxg-away">${away}</span></div>`;
+};
+
 // Una jornada del calendario.
 const _fxRoundHTML = (rnd) => {
   const matches = rnd.matches.map(m => {
-    const mid = m.played
+    const isLive = m.state === 'in';
+    const mid = ((m.played || isLive) && m.score)
       ? `<span class="fx-score">${_esc(m.score)}</span>`
       : `<span class="fx-vs">${_fxTime(m.time) ? _esc(_fxTime(m.time)) : 'vs'}</span>`;
+    const midClass = 'fx-mid' + (m.played ? ' is-played' : '') + (isLive ? ' is-live' : '');
     // Boton "Simular": solo si ambos equipos resuelven a un slug del catalogo.
     const hs = _resolveFixtureSlug(m.home.name);
     const as = _resolveFixtureSlug(m.away.name);
@@ -4708,11 +4720,12 @@ const _fxRoundHTML = (rnd) => {
     const simBtn = canSim
       ? `<a class="fx-sim" href="/?a=${encodeURIComponent(hs)}&amp;b=${encodeURIComponent(as)}" title="Simular ${_esc(m.home.name)} vs ${_esc(m.away.name)}" aria-label="Simular ${_esc(m.home.name)} contra ${_esc(m.away.name)}">\u25B6</a>`
       : `<span class="fx-sim-empty" aria-hidden="true"></span>`;
-    return `<li class="fx-match">
+    return `<li class="fx-match${isLive ? ' is-live-row' : ''}">
       <span class="fx-team fx-home"><span class="fx-name">${_esc(m.home.name)}</span><span class="fx-crest">${_crest(m.home.badge, m.home.name, 22)}</span></span>
-      <span class="fx-mid${m.played ? ' is-played' : ''}">${mid}</span>
+      <span class="${midClass}">${isLive ? '<span class="fx-livedot" title="En vivo"></span>' : ''}${mid}</span>
       <span class="fx-team fx-away"><span class="fx-crest">${_crest(m.away.badge, m.away.name, 22)}</span><span class="fx-name">${_esc(m.away.name)}</span></span>
       ${simBtn}
+      ${_fxGoalsHTML(m)}
     </li>`;
   }).join('');
   // Fecha de referencia de la jornada = fecha del primer partido.
@@ -4893,6 +4906,14 @@ const CLASIFICACIONES_HTML = (standings) => {
     .fx-mid { flex:0 0 auto; min-width:46px; text-align:center; }
     .fx-vs { font-size:.72rem; font-weight:700; color:rgba(255,255,255,.5); background:rgba(255,255,255,.05); border-radius:6px; padding:.2rem .45rem; display:inline-block; }
     .fx-mid.is-played .fx-score { font-size:.9rem; font-weight:800; color:var(--cyan); background:rgba(0,212,255,.1); border-radius:6px; padding:.2rem .5rem; display:inline-block; }
+    .fx-mid.is-live .fx-score { color:#ff5a5a; background:rgba(255,90,90,.13); }
+    .fx-livedot { display:inline-block; width:7px; height:7px; border-radius:50%; background:#ff3b3b; margin-right:4px; vertical-align:middle; animation:fxpulse 1.2s infinite; }
+    @keyframes fxpulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
+    .fx-goals { grid-column:1 / -1; display:flex; align-items:flex-start; justify-content:space-between; gap:.5rem; font-size:.66rem; line-height:1.25; color:rgba(255,255,255,.5); padding:.05rem .4rem .25rem; }
+    .fx-goals em { font-style:normal; color:rgba(255,255,255,.35); }
+    .fxg-home { flex:1; text-align:right; min-width:0; }
+    .fxg-away { flex:1; text-align:left; min-width:0; }
+    .fxg-sep { flex:0 0 auto; opacity:.35; }
 
     .lg-layout { display:grid; grid-template-columns:1fr; gap:1.4rem; }
     @media (min-width:900px){ .lg-layout { grid-template-columns:1fr 320px; align-items:start; } }

@@ -54,6 +54,49 @@ function _writeFixturesSnapshot(leagues) {
   } catch (_) { /* disco no disponible: no romper */ }
 }
 
+// Superpone los resultados en vivo de ESPN sobre el esqueleto de jornadas.
+// Empareja cada partido por SOLAPAMIENTO DE TOKENS del par local-visitante
+// (robusto ante nombres cortos/largos: "Rayo Vallecano"↔"Rayo", "Deportivo
+// Alavés"↔"Alavés"). La restricción de par (ambos equipos deben solapar) evita
+// colisiones tipo Real Madrid ↔ Real Sociedad. Rellena marcador, estado (jugado
+// / en vivo) y goleadores. No toca los partidos futuros.
+async function _overlayResults(leagues) {
+  const withFx = (leagues || []).filter(l => l.fixtures && l.fixtures.length);
+  if (!withFx.length) return;
+  // Rango: desde el 1 de julio de la temporada en curso hasta hoy + 2 días.
+  const d = new Date();
+  const startY = d.getMonth() >= 6 ? d.getFullYear() : d.getFullYear() - 1;
+  const pad = (n) => String(n).padStart(2, '0');
+  const fromYmd = `${startY}0701`;
+  const to = new Date(d.getTime() + 2 * 86400000);
+  const toYmd = `${to.getFullYear()}${pad(to.getMonth() + 1)}${pad(to.getDate())}`;
+  const { byCode } = await espn.getEspnResults(fromYmd, toYmd);
+  if (!byCode) return;
+  for (const l of withFx) {
+    const results = byCode[l.code];
+    if (!results || !results.length) continue;
+    for (const rnd of l.fixtures) {
+      for (const m of (rnd.matches || [])) {
+        const th = espn.teamTokens(m.home.name);
+        const ta = espn.teamTokens(m.away.name);
+        let best = null, bestScore = 0;
+        for (const r of results) {
+          const oh = espn.tokenOverlap(th, r.tHome);
+          const oa = espn.tokenOverlap(ta, r.tAway);
+          if (oh < 1 || oa < 1) continue;            // ambos equipos deben coincidir
+          const s = oh + oa;
+          if (s > bestScore) { bestScore = s; best = r; }
+        }
+        if (!best) continue;
+        if (best.score) { m.score = best.score; m.played = true; }
+        m.state = best.state;
+        m.live = !!best.live;
+        if (best.scorers && best.scorers.length) m.scorers = best.scorers;
+      }
+    }
+  }
+}
+
 // Ligas soportadas (código de competición de Transfermarkt).
 const LEAGUES = [
   { code: 'ES1', name: 'LaLiga',        short: 'ESP', flag: '🇪🇸' },
@@ -312,6 +355,13 @@ async function getStandings() {
         }
       }
     }
+
+    // Resultados EN VIVO desde ESPN (no bloqueado en prod): rellenan marcador,
+    // estado y goleadores sobre el esqueleto de jornadas. Así el calendario se
+    // actualiza solo según se juegan los partidos, sin regenerar el snapshot.
+    try {
+      await _overlayResults(leagues);
+    } catch (_) { /* si ESPN falla, el calendario queda como esté (sin regresión) */ }
 
     const data = { leagues, updated: now };
     if (leagues.length) _cache = { ts: now, data };
