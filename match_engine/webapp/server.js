@@ -2085,24 +2085,41 @@ app.use('/videos', express.static(path.join(__dirname, 'videos'), {
 // The /fichajes page references badges as same-origin /tmbadge/:id so they pass
 // the strict img-src 'self' CSP. Upstream images are cached in memory; clients
 // cache 7 days via Cache-Control.
+// sharp es OPCIONAL: si está presente, escudos y fotos de prensa se redimensionan
+// y recomprimen a WebP al vuelo (una foto de 1 MB → ~40 KB; un escudo de 30 KB →
+// ~3 KB). Si NO está (prod puede no tenerlo), los proxies caen limpiamente a
+// reenviar los bytes originales — sin regresión.
+let _sharp = null;
+try { _sharp = require('sharp'); } catch (_) { _sharp = null; }
 const _tmBadgeCache = new Map();
 app.get('/tmbadge/:id', async (req, res) => {
   const id = String(req.params.id).replace(/\D/g, '').slice(0, 10);
   if (!id) return res.status(400).end();
-  if (_tmBadgeCache.has(id)) {
-    return res.set('Content-Type', 'image/png')
+  const hit = _tmBadgeCache.get(id);
+  if (hit) {
+    return res.set('Content-Type', hit.type)
               .set('Cache-Control', 'public, max-age=604800')
-              .send(_tmBadgeCache.get(id));
+              .send(hit.buf);
   }
   try {
     const up = await fetch(`https://tmssl.akamaized.net/images/wappen/head/${id}.png`, {
       headers: { 'User-Agent': 'Mozilla/5.0', 'Referer': 'https://www.transfermarkt.es/' },
     });
     if (!up.ok) return res.status(404).end();
-    const buf = Buffer.from(await up.arrayBuffer());
+    let buf = Buffer.from(await up.arrayBuffer());
+    let type = 'image/png';
+    if (_sharp) {
+      try {
+        const out = await _sharp(buf)
+          .resize({ width: 96, withoutEnlargement: true })
+          .webp({ quality: 80 })
+          .toBuffer();
+        if (out && out.length && out.length < buf.length) { buf = out; type = 'image/webp'; }
+      } catch (_) { /* conserva el png original */ }
+    }
     if (_tmBadgeCache.size > 2000) _tmBadgeCache.clear(); // simple bound
-    _tmBadgeCache.set(id, buf);
-    res.set('Content-Type', 'image/png')
+    _tmBadgeCache.set(id, { buf, type });
+    res.set('Content-Type', type)
        .set('Cache-Control', 'public, max-age=604800')
        .send(buf);
   } catch { res.status(502).end(); }
@@ -2133,11 +2150,12 @@ app.get('/newsimg', async (req, res) => {
   const ok = (IMG_HOSTS || []).some(h => host === h || host.endsWith('.' + h) || host.includes(h));
   if (!ok) return res.status(403).end();
 
-  const key = url.href;
+  const reqW = Math.min(1200, Math.max(0, parseInt(req.query.w, 10) || 0));
+  const key = url.href + '|w' + reqW;
   const cached = _newsImgCache.get(key);
   if (cached) {
     return res.set('Content-Type', cached.type)
-              .set('Cache-Control', 'public, max-age=86400')
+              .set('Cache-Control', 'public, max-age=604800')
               .send(cached.buf);
   }
   try {
@@ -2148,12 +2166,30 @@ app.get('/newsimg', async (req, res) => {
     if (!up.ok) return res.status(404).end();
     const type = up.headers.get('content-type') || 'image/jpeg';
     if (!/^image\//i.test(type)) return res.status(415).end();
-    const buf = Buffer.from(await up.arrayBuffer());
-    if (buf.length > 3_000_000) return res.status(413).end();
+    let buf = Buffer.from(await up.arrayBuffer());
+    // Con sharp toleramos originales más grandes (se van a encoger); sin él,
+    // mantenemos el tope conservador previo para no reenviar imágenes enormes.
+    if (buf.length > (_sharp ? 8_000_000 : 3_000_000)) return res.status(413).end();
+    let outType = type;
+    // Downscale + WebP re-encode cuando sharp está disponible y la fuente es un
+    // ráster (jpeg/png/webp). Recorta el peso ~90% en fotos de prensa.
+    if (_sharp && /^image\/(jpe?g|png|webp)$/i.test(type)) {
+      try {
+        const w = reqW || 800;
+        const out = await _sharp(buf)
+          .resize({ width: w, withoutEnlargement: true })
+          .webp({ quality: 72 })
+          .toBuffer();
+        if (out && out.length && out.length < buf.length) {
+          buf = out;
+          outType = 'image/webp';
+        }
+      } catch (_) { /* conserva el buffer original */ }
+    }
     if (_newsImgCache.size > 400) _newsImgCache.clear(); // simple bound
-    _newsImgCache.set(key, { buf, type });
-    res.set('Content-Type', type)
-       .set('Cache-Control', 'public, max-age=86400')
+    _newsImgCache.set(key, { buf, type: outType });
+    res.set('Content-Type', outType)
+       .set('Cache-Control', 'public, max-age=604800')
        .send(buf);
   } catch { res.status(502).end(); }
 });

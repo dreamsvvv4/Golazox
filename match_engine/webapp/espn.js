@@ -58,6 +58,15 @@ const _seasonLabel = (y) => `${y}/${String((y + 1) % 100).padStart(2, '0')}`;
 // Escudo de ESPN vía proxy propio (respeta CSP img-src 'self').
 function _badge(href) {
   if (!href || !/^https?:\/\//i.test(href)) return null;
+  try {
+    const u = new URL(href);
+    // Los escudos de ESPN llegan a 500px (~100 KB). El combiner devuelve una
+    // copia de 80px (~7 KB) — de sobra para los badges diminutos que pintamos.
+    // Reduce ~90% el peso de cada escudo.
+    if (/espncdn\.com$/i.test(u.hostname) && /\/teamlogos\//i.test(u.pathname)) {
+      href = `https://a.espncdn.com/combiner/i?img=${u.pathname}&h=80&w=80`;
+    }
+  } catch (_) { /* deja el href original */ }
   return '/newsimg?u=' + encodeURIComponent(href);
 }
 
