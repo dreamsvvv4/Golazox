@@ -14,6 +14,8 @@
 
 'use strict';
 
+const fs      = require('fs');
+const path    = require('path');
 const fetch   = require('node-fetch');
 const cheerio = require('cheerio');
 const espn    = require('./espn');
@@ -21,6 +23,36 @@ const espn    = require('./espn');
 const FETCH_TIMEOUT = 8000;
 const CACHE_TTL     = 30 * 60 * 1000; // 30 min
 const TM_CAP        = 9000;           // tope para el enriquecimiento de Transfermarkt
+
+// ── Snapshot de calendario (para servidores con la IP bloqueada por TM) ──────
+// El calendario (gesamtspielplan) solo lo publica Transfermarkt, que bloquea las
+// IP de datacenter. En prod las tablas llegan por ESPN pero el calendario vendría
+// vacío. Igual que con los fichajes, generamos un snapshot desde una IP que SÍ
+// puede scrapear (`snapshotFixtures()`), lo commiteamos y lo servimos cuando el
+// scrape en vivo devuelve calendario vacío.
+const _FX_SNAP_FILE = path.join(__dirname, 'data', 'fixtures_snapshot.json');
+
+// Lee el snapshot de calendario commiteado → { ES1:{fxSeason,fixtures}, … } | null.
+function _readFixturesSnapshot() {
+  try {
+    const s = JSON.parse(fs.readFileSync(_FX_SNAP_FILE, 'utf8'));
+    if (s && s.leagues && typeof s.leagues === 'object') return s.leagues;
+  } catch (_) { /* no existe aún */ }
+  return null;
+}
+
+// Persiste el calendario de las ligas que tengan datos (nunca sobrescribe con
+// vacío). Estructura: { updated, leagues: { <code>: { fxSeason, fixtures } } }.
+function _writeFixturesSnapshot(leagues) {
+  const withFx = (leagues || []).filter(l => l.fixtures && l.fixtures.length);
+  if (!withFx.length) return;
+  try {
+    fs.mkdirSync(path.dirname(_FX_SNAP_FILE), { recursive: true });
+    const out = { updated: Date.now(), leagues: {} };
+    for (const l of withFx) out.leagues[l.code] = { fxSeason: l.fxSeason, fixtures: l.fixtures };
+    fs.writeFileSync(_FX_SNAP_FILE, JSON.stringify(out), 'utf8');
+  } catch (_) { /* disco no disponible: no romper */ }
+}
 
 // Ligas soportadas (código de competición de Transfermarkt).
 const LEAGUES = [
@@ -262,6 +294,25 @@ async function getStandings() {
     for (const l of tmLeagues) byCode[l.code] = l;
     const leagues = LEAGUES.map(L => byCode[L.code]).filter(Boolean);
 
+    // Calendario: si alguna liga viene sin fixtures (ESPN no los trae y TM está
+    // bloqueado), los rellenamos desde el snapshot commiteado. Si el scrape en
+    // vivo sí trajo calendario, refrescamos el snapshot para mantenerlo al día.
+    const anyLive = leagues.some(l => l.fixtures && l.fixtures.length);
+    if (anyLive) {
+      try { _writeFixturesSnapshot(leagues); } catch (_) {}
+    }
+    if (leagues.some(l => !l.fixtures || !l.fixtures.length)) {
+      const snap = _readFixturesSnapshot();
+      if (snap) {
+        for (const l of leagues) {
+          if ((!l.fixtures || !l.fixtures.length) && snap[l.code] && snap[l.code].fixtures.length) {
+            l.fixtures = snap[l.code].fixtures;
+            l.fxSeason = snap[l.code].fxSeason || l.fxSeason;
+          }
+        }
+      }
+    }
+
     const data = { leagues, updated: now };
     if (leagues.length) _cache = { ts: now, data };
     return data;
@@ -270,4 +321,17 @@ async function getStandings() {
   }
 }
 
-module.exports = { getStandings, LEAGUES };
+// Genera y persiste el snapshot de calendario desde una IP que SÍ puede scrapear
+// Transfermarkt. Se commitea y despliega para que prod (IP bloqueada) lo sirva.
+// Lanza si el scrape viene vacío para no sobrescribir un snapshot bueno.
+async function snapshotFixtures() {
+  const settled = await Promise.allSettled(LEAGUES.map(_fetchLeague));
+  const leagues = settled
+    .filter(r => r.status === 'fulfilled' && r.value.fixtures && r.value.fixtures.length)
+    .map(r => r.value);
+  if (!leagues.length) throw new Error('scrape de calendario vacío (¿IP bloqueada por Transfermarkt?)');
+  _writeFixturesSnapshot(leagues);
+  return leagues.map(l => ({ code: l.code, fxSeason: l.fxSeason, rounds: l.fixtures.length }));
+}
+
+module.exports = { getStandings, snapshotFixtures, LEAGUES };

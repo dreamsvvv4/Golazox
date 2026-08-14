@@ -752,6 +752,28 @@ async function getStats() {
 let _rCache = { ts: 0, data: null };
 const RUMORS_URL = 'https://www.transfermarkt.es/geruechte/aktuellegeruechte/statistik';
 const RUMORS_TTL = 30 * 60 * 1000; // 30 min
+const _RUMORS_SNAP_FILE = path.join(_DB_DIR, 'rumors_snapshot.json');
+
+// Lee el snapshot de rumores commiteado (para servidores con la IP bloqueada por
+// TM). Devuelve el payload con `source:'snapshot'`, o null si no existe.
+function _readRumorsSnapshot() {
+  try {
+    const s = JSON.parse(fs.readFileSync(_RUMORS_SNAP_FILE, 'utf8'));
+    if (s && Array.isArray(s.list) && s.list.length) {
+      return { list: s.list, updated: s.updated || 0, source: 'snapshot' };
+    }
+  } catch (_) { /* no existe aún */ }
+  return null;
+}
+
+// Persiste el snapshot de rumores (nunca sobrescribe con vacío).
+function _writeRumorsSnapshot(data) {
+  if (!data || !data.list || !data.list.length) return;
+  try {
+    fs.mkdirSync(_DB_DIR, { recursive: true });
+    fs.writeFileSync(_RUMORS_SNAP_FILE, JSON.stringify({ list: data.list, updated: data.updated || Date.now() }), 'utf8');
+  } catch (_) { /* disco no disponible: no romper */ }
+}
 
 // Quita texto duplicado tipo "Sin equipoSin equipo" → "Sin equipo".
 function _dedupText(s) {
@@ -799,14 +821,42 @@ async function getRumors() {
     // Los que tienen probabilidad primero (mayor a menor); los sin % al final.
     list.sort((a, b) => (b.prob == null ? -1 : b.prob) - (a.prob == null ? -1 : a.prob));
     const data = { list: list.slice(0, 30), updated: now };
-    if (list.length) { _rCache = { ts: now, data }; _cachePut('rumors', _rCache); _mark('rumors', 'ok', list.length); }
-    else { _mark('rumors', 'empty', 0); console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)'); }
+    if (list.length) {
+      _rCache = { ts: now, data }; _cachePut('rumors', _rCache); _mark('rumors', 'ok', list.length);
+      try { _writeRumorsSnapshot(data); } catch (_) {} // mantener snapshot fresco donde el scrape funciona
+      return data;
+    }
+    // Scrape vacío (IP bloqueada por TM o cambió el HTML): servir el snapshot
+    // commiteado si existe, en vez de dejar la pestaña de rumores vacía.
+    _mark('rumors', 'empty', 0); console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)');
+    const snap = _readRumorsSnapshot();
+    if (snap) { _rCache = { ts: now, data: snap }; return snap; }
     return data;
   } catch (e) {
     _mark('rumors', 'fail', 0, e.message);
     console.warn('[news] getRumors falló:', e.message);
-    return _rCache.data || { list: [], updated: 0 };
+    if (_rCache.data) return _rCache.data;
+    const snap = _readRumorsSnapshot();
+    if (snap) { _rCache = { ts: now, data: snap }; return snap; }
+    return { list: [], updated: 0 };
   }
+}
+
+// Genera y persiste el snapshot de rumores desde una IP que SÍ puede scrapear
+// Transfermarkt. Se commitea y despliega para que prod (IP bloqueada) lo sirva.
+// Lanza si el scrape viene vacío para no sobrescribir un snapshot bueno.
+async function snapshotRumors() {
+  const r = await fetch(RUMORS_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  const $ = cheerio.load(await r.text());
+  const trs = $('table.items').first().children('tbody').children('tr').toArray();
+  const list = [];
+  for (const el of trs) { const it = _parseRumorRow($, el); if (it) list.push(it); }
+  list.sort((a, b) => (b.prob == null ? -1 : b.prob) - (a.prob == null ? -1 : a.prob));
+  if (!list.length) throw new Error('scrape de rumores vacío (¿IP bloqueada por Transfermarkt?)');
+  const data = { list: list.slice(0, 30), updated: Date.now() };
+  _writeRumorsSnapshot(data);
+  return data;
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -972,7 +1022,7 @@ async function getTvGuide() {
 }
 
 module.exports = {
-  getNews, getTransfers, snapshotTransfers, getValues, getStats, getRumors,
+  getNews, getTransfers, snapshotTransfers, getValues, getStats, getRumors, snapshotRumors,
   getAgenda, getSalaries, getLegends, getStatus, getTvGuide,
   FEEDS, IMG_HOSTS,
 };

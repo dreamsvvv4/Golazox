@@ -39,6 +39,9 @@ cp "$WEBAPP/data/agenda.json" "$WEBAPP/data/salaries.json" "$WEBAPP/data/legends
 # desde una IP residencial). NO copiamos transfers_db.json: el histórico de prod
 # crece por su cuenta y es mayor que el local.
 [ -f "$WEBAPP/data/transfers_snapshot.json" ] && cp "$WEBAPP/data/transfers_snapshot.json" "$DEST/data/" || true
+# Snapshots de rumores y calendario (mismo motivo: TM bloquea la IP del server).
+[ -f "$WEBAPP/data/rumors_snapshot.json" ] && cp "$WEBAPP/data/rumors_snapshot.json" "$DEST/data/" || true
+[ -f "$WEBAPP/data/fixtures_snapshot.json" ] && cp "$WEBAPP/data/fixtures_snapshot.json" "$DEST/data/" || true
 echo "    $(ls "$DEST/squads/" | wc -l) squads en disco"
 echo "    CP OK"
 echo "==> Reiniciando Passenger..."
