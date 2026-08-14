@@ -4117,7 +4117,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       <button class="subtab active" data-sub="top">🏆 Bombazos de la temporada</button>
       <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
       <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
-      <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length || news.fichajes.length}</span></button>
+      <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length}</span></button>
     </div>
 
     <div class="searchbar">
@@ -4155,9 +4155,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
       ${_rumorPulseHTML(rumors)}
       ${rumors.list.length
         ? `<div class="tgrid">${rumors.list.map(_rumorCardHTML).join('')}</div>`
-        : (news.fichajes.length
-            ? `<ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
-            : '<p class="empty">No hay rumores destacados ahora mismo.</p>')}
+        : '<p class="empty">No hay rumores destacados ahora mismo. Vuelve en unos minutos: los rumores con probabilidad de traspaso se actualizan automáticamente.</p>'}
     </div>
   </section>
 
@@ -4981,7 +4979,7 @@ const CLASIFICACIONES_HTML = (standings) => {
   Al inicio de temporada la tabla arranca a cero y se llena con cada jornada.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/clasificaciones.js" defer></script>
+  <script src="/clasificaciones.js?v=2" defer></script>
 </body>
 </html>`;
 };

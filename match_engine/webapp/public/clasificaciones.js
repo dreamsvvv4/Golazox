@@ -62,18 +62,38 @@
   }
 
   // ── Sub-toggle Clasificación / Calendario (por liga) ──
+  // Persiste la vista elegida (tabla/calendario) por liga para que sobreviva
+  // al recargar (la píldora de actualizar hace location.reload()).
   Array.prototype.forEach.call(document.querySelectorAll('.lgviews'), function (group) {
     var btns = Array.prototype.slice.call(group.querySelectorAll('.lgview'));
     var panel = group.parentNode; // .panel de la liga
+    var storeKey = 'gx_lgview_' + (panel.id || '');
+
+    function activate(view, save) {
+      var matched = false;
+      btns.forEach(function (b) {
+        var on = b.getAttribute('data-view') === view;
+        b.classList.toggle('active', on);
+        if (on) matched = true;
+      });
+      if (!matched) return;
+      Array.prototype.forEach.call(panel.querySelectorAll('.lgview-panel'), function (p) {
+        p.classList.toggle('active', p.classList.contains('view-' + view));
+      });
+      if (save) { try { sessionStorage.setItem(storeKey, view); } catch (e) {} }
+    }
+
     btns.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var view = btn.getAttribute('data-view');
-        btns.forEach(function (b) { b.classList.toggle('active', b === btn); });
-        Array.prototype.forEach.call(panel.querySelectorAll('.lgview-panel'), function (p) {
-          p.classList.toggle('active', p.classList.contains('view-' + view));
-        });
+        activate(btn.getAttribute('data-view'), true);
       });
     });
+
+    // Restaura la vista guardada tras recargar.
+    try {
+      var saved = sessionStorage.getItem(storeKey);
+      if (saved) activate(saved, false);
+    } catch (e) {}
   });
 
   // ── Escudos rotos → inicial del club (CSP-safe, sin onerror inline) ──
