@@ -4237,7 +4237,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   La duración de contrato no se muestra por no estar disponible en la fuente; se indica el tipo de operación (fichaje, cesión o libre) y el importe.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/fichajes.js?v=10" defer></script>
+  <script src="/fichajes.js?v=11" defer></script>
 </body>
 </html>`;
 };

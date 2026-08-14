@@ -53,16 +53,34 @@
 
   // Sub-pestañas: se gestionan por panel para que cada grupo mantenga su propio
   // estado activo (Fichajes, Cracks y Estadísticas tienen grupos independientes).
+  // La sub-pestaña activa se recuerda en sessionStorage para que al ACTUALIZAR
+  // (la píldora hace location.reload()) el usuario siga en la misma (ej. Rumores)
+  // en vez de volver siempre a la primera (Bombazos).
   document.querySelectorAll('.panel').forEach(function (panel) {
     var st = panel.querySelectorAll('.subtab');
     var sp = panel.querySelectorAll('.subpanel');
-    st.forEach(function (s) {
-      s.addEventListener('click', function () {
-        st.forEach(function (x) { x.classList.toggle('active', x === s); });
-        sp.forEach(function (p) { p.classList.toggle('active', p.id === 'sub-' + s.dataset.sub); });
-        if (typeof runSearch === 'function') runSearch();
+    if (!st.length) return;
+    var storeKey = 'gx_subtab_' + panel.id;
+    function activate(sub, save) {
+      var matched = false;
+      st.forEach(function (x) {
+        var on = x.dataset.sub === sub;
+        x.classList.toggle('active', on);
+        if (on) matched = true;
       });
+      if (!matched) return; // sub desconocida (ej. botón favoritos sin data-sub)
+      sp.forEach(function (p) { p.classList.toggle('active', p.id === 'sub-' + sub); });
+      if (save) { try { sessionStorage.setItem(storeKey, sub); } catch (e) {} }
+      if (typeof runSearch === 'function') runSearch();
+    }
+    st.forEach(function (s) {
+      s.addEventListener('click', function () { activate(s.dataset.sub, true); });
     });
+    // Restaura la sub-pestaña activa tras recargar.
+    try {
+      var saved = sessionStorage.getItem(storeKey);
+      if (saved) activate(saved, false);
+    } catch (e) {}
   });
 
   // Imágenes de noticias que fallan: ocultar el contenedor y colapsar el hueco.

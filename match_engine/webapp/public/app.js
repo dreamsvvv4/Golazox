@@ -2024,6 +2024,7 @@ function _deepLinkRestore() {
       setTimeout(() => { if (typeof TRN !== 'undefined') TRN.switchMainTab(tabParam); }, 0);
     }
     const a = p.get('a'), b = p.get('b'), mode = p.get('m') || p.get('mode');
+    const auto = p.get('auto'); // '1' → carga alineaciones y simula automáticamente (duelos de leyenda de la portada)
     if (!a || !b) return;
     const [slugA, eraA = ''] = a.split(':');
     const [slugB, eraB = ''] = b.split(':');
@@ -2090,6 +2091,21 @@ function _deepLinkRestore() {
       _pickerState.B = { type: null, league: null }; _renderPicker('B');
       if (mode) setMatchMode(mode);
       _updateClashButton();
+      // ── Duelo de leyenda (auto=1): carga las dos alineaciones y simula solo ──
+      if (auto === '1') {
+        (async () => {
+          try {
+            // Intenta cargar los previews (mejor UX); si tardan/fallan, simula igual:
+            // handleSimulate resuelve los equipos en el servidor por su cuenta.
+            await Promise.race([
+              Promise.all([handleLookup('A'), handleLookup('B')]).catch(() => {}),
+              new Promise(r => setTimeout(r, 6000)),
+            ]);
+          } catch (_) {}
+          _gx('legend_auto_sim', { team_a: slugA, team_b: slugB });
+          handleSimulate();
+        })();
+      }
     };
     if (_catalogReady) restore();
     else {

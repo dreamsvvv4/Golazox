@@ -634,6 +634,22 @@
     .hub-today .hub-tv-head h3{font-size:1.32rem}
     .hub-today .hub-tv-chip{width:224px}
     @media(max-width:640px){.hub-today{margin-bottom:1.1rem;padding:.9rem .8rem .7rem}.hub-today .hub-tv-head h3{font-size:1.15rem}}
+    /* ⚔️ Duelos de leyenda — partidos de ensueño, gancho del simulador */
+    .hub-legends{max-width:1200px;margin:.2rem auto 1.5rem;width:100%;background:linear-gradient(120deg,rgba(123,47,247,.11),rgba(0,212,255,.05));border:1px solid var(--border-glow);border-radius:var(--radius-lg);padding:1.05rem 1.2rem .9rem;box-shadow:0 14px 46px -24px rgba(123,47,247,.5)}
+    .hub-legends .hub-tv-head{margin:0 .1rem .9rem}
+    .hub-legends .hub-tv-head h3{font-size:1.32rem}
+    .legends-scroll{display:flex;gap:.85rem;overflow-x:auto;padding:.15rem .2rem .7rem;scroll-snap-type:x proximity;scrollbar-width:thin}
+    .legends-scroll::-webkit-scrollbar{height:6px}
+    .legends-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:3px}
+    .legend-chip{flex:0 0 auto;width:210px;scroll-snap-align:start;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:.85rem .8rem;display:flex;flex-direction:column;gap:.55rem;text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
+    .legend-chip:hover{border-color:var(--border-glow);transform:translateY(-3px);box-shadow:0 10px 26px -14px rgba(123,47,247,.55)}
+    .lc-tag{font:800 .6rem/1 'Rajdhani',var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--neon)}
+    .lc-teams{display:flex;flex-direction:column;gap:.26rem}
+    .lc-teams b{font:800 1.02rem/1.1 'Rajdhani',var(--font);color:#f0f4ff}
+    .lc-teams i{font:800 .6rem/1 'Rajdhani',var(--font);font-style:normal;letter-spacing:.12em;color:var(--grey)}
+    .lc-cta{margin-top:.15rem;font:800 .74rem/1 'Rajdhani',var(--font);letter-spacing:.03em;color:var(--neon);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.22);border-radius:999px;padding:.36rem .6rem;text-align:center;transition:background .15s}
+    .legend-chip:hover .lc-cta{background:rgba(0,212,255,.16)}
+    @media(max-width:640px){.hub-legends{margin-bottom:1.1rem;padding:.9rem .8rem .7rem}.hub-legends .hub-tv-head h3{font-size:1.15rem}.legend-chip{width:182px}}
     @media(max-width:980px){
       .hub-grid{grid-template-columns:1fr 1fr}
       .hub-news{grid-column:1 / -1;grid-row:auto}
@@ -656,6 +672,45 @@
         <div class="hub-tv-chip hub-sk" style="height:132px" aria-hidden="true"></div>
         <div class="hub-tv-chip hub-sk" style="height:132px" aria-hidden="true"></div>
         <div class="hub-tv-chip hub-sk" style="height:132px" aria-hidden="true"></div>
+      </div>
+    </section>
+    <!-- ⚔️ Duelos de leyenda — partidos de ensueño curados, gancho del simulador -->
+    <section class="hub-legends" aria-label="Duelos de leyenda">
+      <div class="hub-tv-head">
+        <h3 data-i18n="legends-title">⚔️ Duelos de leyenda</h3>
+        <span class="hub-tv-date" data-i18n="legends-cta">Pulsa y simula</span>
+      </div>
+      <div class="legends-scroll">
+        <a class="legend-chip" href="/?a=brasilien:1970&amp;b=argentinien:1986&amp;auto=1">
+          <span class="lc-tag">El Gran Debate</span>
+          <span class="lc-teams"><b>Brasil '70</b><i>VS</i><b>Argentina '86</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
+        <a class="legend-chip" href="/?a=ssc-neapel:1988&amp;b=fc-barcelona:2009&amp;auto=1">
+          <span class="lc-tag">Maradona vs Messi</span>
+          <span class="lc-teams"><b>Nápoles '88</b><i>VS</i><b>Barça '09</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
+        <a class="legend-chip" href="/?a=fc-barcelona:2015&amp;b=real-madrid:2015&amp;auto=1">
+          <span class="lc-tag">El Clásico · MSN vs BBC</span>
+          <span class="lc-teams"><b>Barça '15</b><i>VS</i><b>Madrid '15</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
+        <a class="legend-chip" href="/?a=real-madrid:2002&amp;b=fc-arsenal:2004&amp;auto=1">
+          <span class="lc-tag">Galácticos vs Invencibles</span>
+          <span class="lc-teams"><b>Madrid '02</b><i>VS</i><b>Arsenal '04</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
+        <a class="legend-chip" href="/?a=ac-mailand:2003&amp;b=fc-liverpool:2005&amp;auto=1">
+          <span class="lc-tag">La Final de Estambul</span>
+          <span class="lc-teams"><b>Milan '03</b><i>VS</i><b>Liverpool '05</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
+        <a class="legend-chip" href="/?a=brasilien:2002&amp;b=real-madrid:2017&amp;auto=1">
+          <span class="lc-tag">Ronaldo vs Ronaldo</span>
+          <span class="lc-teams"><b>Brasil '02</b><i>VS</i><b>Madrid '17</b></span>
+          <span class="lc-cta">▶ Simular</span>
+        </a>
       </div>
     </section>
     <section class="gx-hub" id="gx-hub" aria-label="Portada — lo más importante del fútbol">
@@ -2137,7 +2192,7 @@
   <script src="/player_ratings.min.js?v=5" defer></script>
   <script src="gx-user.min.js?v=13" defer></script>
   <script src="gx-ui.min.js?v=17" defer></script>
-  <script src="app.min.js?v=104" defer></script>
+  <script src="app.min.js?v=105" defer></script>
   <script src="_wc_editions.js?v=6" defer></script>
   <script src="tournament.min.js?v=50" defer></script>
   <script src="/gx-nav.js?v=2" defer></script>
