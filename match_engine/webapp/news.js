@@ -30,9 +30,14 @@ const FEEDS = [
   { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/mas-futbol.xml' },
   { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/primera-division.xml' },
   { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/champions-league.xml' },
+  { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/real-madrid.xml' },
+  { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/barcelona.xml' },
+  { name: 'Marca',            cat: 'general',  url: 'https://e00-marca.uecdn.es/rss/futbol/futbol-internacional.xml' },
   { name: 'AS',               cat: 'general',  url: 'https://as.com/rss/futbol/portada.xml' },
   { name: 'SPORT',            cat: 'general',  url: 'https://www.sport.es/es/rss/futbol/rss.xml' },
   { name: 'Mundo Deportivo',  cat: 'general',  url: 'https://www.mundodeportivo.com/feed/rss/futbol' },
+  { name: 'ABC',              cat: 'general',  url: 'https://www.abc.es/rss/2.0/deportes/futbol/' },
+  { name: 'El Mundo',         cat: 'general',  url: 'https://e00-elmundo.uecdn.es/elmundodeporte/rss/futbol.xml' },
 ];
 
 // Detecta titulares de mercado dentro de feeds generales (para nutrir el
@@ -99,6 +104,7 @@ const IMG_HOSTS = [
   'mundodeportivo.com', 'epimg.net', 'as.com',
   'prensaiberica.es', 'sport.es',
   'espncdn.com',
+  'abcstatics.com', 'e00-elmundo.uecdn.es',
 ];
 
 // Extrae la primera imagen válida de un item RSS (enclosure / media:*).

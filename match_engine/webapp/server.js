@@ -3549,6 +3549,8 @@ const _dealOfDayHTML = (transfers) => {
 // Color de acento por medio para el tablón de noticias.
 const _sourceColor = (src = '') => {
   const s = src.toLowerCase();
+  if (s.includes('abc'))       return '#e2001a';
+  if (s.includes('el mundo'))  return '#111827';
   if (s.includes('marca'))  return '#e3130b';
   if (s.includes('as'))     return '#1d6fd6';
   if (s.includes('sport'))  return '#e30613';
