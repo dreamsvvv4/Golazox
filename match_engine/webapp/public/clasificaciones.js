@@ -75,4 +75,19 @@
       });
     });
   });
+
+  // ── Escudos rotos → inicial del club (CSP-safe, sin onerror inline) ──
+  function replaceBadge(img) {
+    var span = document.createElement('span');
+    span.className = 'crest-fallback';
+    span.style.width = (img.getAttribute('width') || 24) + 'px';
+    span.style.height = (img.getAttribute('height') || 24) + 'px';
+    span.textContent = img.getAttribute('data-crest') || '?';
+    if (img.parentNode) img.parentNode.replaceChild(span, img);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-crest]'), function (img) {
+    img.addEventListener('error', function () { replaceBadge(img); });
+    // Ya cargada desde caché y rota antes de registrar el handler.
+    if (img.complete && img.naturalWidth === 0) replaceBadge(img);
+  });
 })();

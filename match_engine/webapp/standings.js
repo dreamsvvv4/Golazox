@@ -171,9 +171,9 @@ async function _fetchFixtures(code, saison) {
   return rounds;
 }
 
-// Selecciona la ventana relevante del calendario: la próxima jornada sin
-// disputar y las siguientes. Si la temporada terminó, las últimas.
-const _FX_WINDOW = 10;
+// Calendario completo de la liga: desde la próxima jornada sin disputar hasta el
+// final de la temporada ("toda la liga"). Si la temporada terminó, las últimas.
+const _FX_WINDOW = 40; // cubre las 34-38 jornadas de cualquier gran liga
 function _fixtureWindow(rounds) {
   if (!rounds.length) return [];
   let idx = rounds.findIndex(r => r.matches.some(m => !m.played));
@@ -189,14 +189,16 @@ async function _fetchLeague(league) {
   try {
     table = await _fetchTable(league.code, saison);
   } catch (_) { table = []; }
-  // Pretemporada: si nadie ha jugado aún, usar la temporada anterior.
-  const anyPlayed = table.some(t => t.played > 0);
-  if (!table.length || !anyPlayed) {
+  // Mostramos SIEMPRE la temporada en curso (la de ESTE año) en cuanto TM publica
+  // su tabla, aunque todavía no se haya jugado (pretemporada = todos a 0). Solo
+  // caemos a la temporada anterior si la actual aún no existe.
+  if (!table.length) {
     try {
       const prev = await _fetchTable(league.code, saison - 1);
       if (prev.length) { table = prev; used = saison - 1; }
     } catch (_) {}
   }
+  // Goleadores de la temporada mostrada (en pretemporada vendrá vacío: correcto).
   let scorers = [];
   try {
     scorers = await _fetchScorers(league.code, used);

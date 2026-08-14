@@ -294,35 +294,65 @@
     if (m.length >= 2) return [m[0], m.slice(1).join(' ')];
     return [s, ''];
   }
-  function renderTv(data) {
+  function renderTv(data, agenda) {
     var wrap = $('hub-tv');
     var scroll = $('hub-tv-scroll');
     var dateEl = $('hub-tv-date');
     if (!wrap || !scroll) return;
+    var moreChip = '<a class="hub-tv-more" href="/agenda"><span>📅</span><b>Ver agenda<br>completa</b></a>';
+    // Chip a partir de un evento de la parrilla TV.
+    function chipFromTv(e) {
+      var t = splitTeams(e.teams);
+      var match = t[1]
+        ? '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(t[0]) + '</span>' +
+          '<span class="hub-tv-vs">VS</span>' +
+          '<span class="hub-tv-team">' + esc(t[1]) + '</span></span>'
+        : '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(t[0] || 'Por confirmar') + '</span></span>';
+      return '<a class="hub-tv-chip' + (e.big ? ' is-big' : '') + '" href="/agenda">' +
+        '<span class="hub-tv-top">' +
+        '<span class="hub-tv-comp">' + esc(e.competition || 'Fútbol') + '</span>' +
+        '<span class="hub-tv-time">' + esc(e.time || '') + '</span></span>' +
+        match +
+        (e.channel ? '<span class="hub-tv-chan">' + esc(e.channel) + '</span>' : '') + '</a>';
+    }
+    // Chip a partir de un partido de la agenda (ESPN) — fallback si no hay parrilla TV.
+    function chipFromAgenda(e) {
+      var parts = splitTeams(e.title);
+      var home = e.home || parts[0] || 'Por confirmar';
+      var away = e.away || parts[1] || '';
+      var match = away
+        ? '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(home) + '</span>' +
+          '<span class="hub-tv-vs">VS</span>' +
+          '<span class="hub-tv-team">' + esc(away) + '</span></span>'
+        : '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(home) + '</span></span>';
+      return '<a class="hub-tv-chip is-big" href="/agenda">' +
+        '<span class="hub-tv-top">' +
+        '<span class="hub-tv-comp">' + esc((e.icon ? e.icon + ' ' : '') + (e.comp || 'Fútbol')) + '</span>' +
+        '<span class="hub-tv-time">' + esc(e.time || 'HOY') + '</span></span>' +
+        match + '</a>';
+    }
     var apply = function (d) {
       var day = d && d.today;
       var evs = (day && day.events) || [];
-      if (!evs.length) { wrap.hidden = true; return; }
-      if (dateEl) dateEl.textContent = (day.label || 'Hoy') + (day.dateStr ? ' · ' + day.dateStr : '');
-      var chips = evs.map(function (e) {
-        var t = splitTeams(e.teams);
-        var match = t[1]
-          ? '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(t[0]) + '</span>' +
-            '<span class="hub-tv-vs">VS</span>' +
-            '<span class="hub-tv-team">' + esc(t[1]) + '</span></span>'
-          : '<span class="hub-tv-match"><span class="hub-tv-team">' + esc(t[0] || 'Por confirmar') + '</span></span>';
-        return '<a class="hub-tv-chip' + (e.big ? ' is-big' : '') + '" href="/agenda">' +
-          '<span class="hub-tv-top">' +
-          '<span class="hub-tv-comp">' + esc(e.competition || 'Fútbol') + '</span>' +
-          '<span class="hub-tv-time">' + esc(e.time || '') + '</span></span>' +
-          match +
-          (e.channel ? '<span class="hub-tv-chan">' + esc(e.channel) + '</span>' : '') + '</a>';
-      });
-      // Cierre con una tarjeta de "ver toda la agenda" para que la tira nunca
-      // parezca a medias cuando hay pocos partidos.
-      chips.push('<a class="hub-tv-more" href="/agenda"><span>📅</span><b>Ver agenda<br>completa</b></a>');
-      scroll.innerHTML = chips.join('');
-      wrap.hidden = false;
+      if (evs.length) {
+        if (dateEl) dateEl.textContent = (day.label || 'Hoy') + (day.dateStr ? ' · ' + day.dateStr : '');
+        var chips = evs.map(chipFromTv);
+        chips.push(moreChip);
+        scroll.innerHTML = chips.join('');
+        wrap.hidden = false;
+        return;
+      }
+      // Fallback: partidos de hoy desde la agenda (fuente ESPN).
+      var matches = ((agenda && agenda.events) || []).filter(function (e) { return e && e.type === 'match'; });
+      if (matches.length) {
+        if (dateEl) dateEl.textContent = 'Hoy';
+        var chips2 = matches.map(chipFromAgenda);
+        chips2.push(moreChip);
+        scroll.innerHTML = chips2.join('');
+        wrap.hidden = false;
+        return;
+      }
+      wrap.hidden = true;
     };
     if (data) { try { apply(data); } catch (e) { wrap.hidden = true; } return; }
     wrap.hidden = true;
@@ -335,7 +365,7 @@
       renderMarket(d.transfers || {}, d.rumors || {}, d.news || {});
       renderStandings(d.standings || {});
       renderAgenda(d.agenda || {});
-      renderTv(d.tv || {});
+      renderTv(d.tv || {}, d.agenda || {});
     }).catch(function () {
       renderNews();
       renderMarket();
@@ -415,4 +445,20 @@
   } else {
     setTimeout(load, 400);
   }
+
+  /* ── Auto-refresco de la portada ──
+     Re-carga los datos agregados (/api/home) cada 3 min mientras la pestaña está
+     visible, para que noticias/mercado/clasificación/agenda/partidos se
+     actualicen solos sin recargar la página. Se pausa en segundo plano y
+     refresca al instante al volver si los datos ya llevan rato. */
+  var AUTO_MS = 3 * 60 * 1000;
+  var _lastLoad = Date.now();
+  function autoLoad() {
+    if (document.visibilityState !== 'visible') return;
+    if (Date.now() - _lastLoad < AUTO_MS) return;
+    _lastLoad = Date.now();
+    load();
+  }
+  setInterval(autoLoad, 60 * 1000);
+  document.addEventListener('visibilitychange', autoLoad);
 })();

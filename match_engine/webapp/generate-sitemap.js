@@ -20,7 +20,6 @@ const fs   = require('fs');
 const path = require('path');
 
 const SITE_URL = 'https://golazox.com';
-const TODAY    = new Date().toISOString().slice(0, 10);
 const OUT_DIR  = path.join(__dirname, 'public');
 
 // ── Iconic seasons per team slug (verified against live catalog) ──────────────
@@ -275,6 +274,8 @@ ${entries.join('\n')}
 }
 
 // ── sitemap-main.xml: homepage + team pages ───────────────────────────────────
+function generateSitemaps() {
+const TODAY = new Date().toISOString().slice(0, 10);
 const mainEntries = [];
 
 mainEntries.push(urlBlock(
@@ -382,3 +383,12 @@ console.log(`   Matches EN:   ${matchesEn.length} URLs`);
 console.log(`   Matches PT:   ${matchesPt.length} URLs`);
 console.log(`   TOTAL flat:   ${mainEntries.length + matchesEs.length + matchesEn.length + matchesPt.length} URLs`);
 console.log(`   Duelos:       ${matchupSegs.length} × 3 idiomas`);
+return { main: mainEntries.length, es: matchesEs.length, en: matchesEn.length, pt: matchesPt.length, today: TODAY };
+}
+
+module.exports = { generateSitemaps };
+
+// Ejecución directa por CLI: `node generate-sitemap.js`
+if (require.main === module) {
+  generateSitemaps();
+}

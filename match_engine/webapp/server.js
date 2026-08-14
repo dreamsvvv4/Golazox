@@ -3645,7 +3645,8 @@ const GX_SIDE_NAV = (active) => `
       </a>
     </nav>
   </aside>
-  <script src="/gx-nav.js?v=2" defer></script>`;
+  <script src="/gx-nav.js?v=2" defer></script>
+  <script src="/gx-autorefresh.js?v=1" defer></script>`;
 
 // ── Rankings de jugadores (valor / salario / estadísticas) ──
 const _MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
@@ -4253,7 +4254,10 @@ async function _fichajesData() {
   // página muestre la última hora del mercado (noticias de este año) en vez del
   // snapshot rancio. El histórico propio se conserva para su pestaña "Histórico",
   // que está honestamente etiquetada como archivo propio.
-  const _tx = _isFresh(transfers.updated)
+  // EXCEPCIÓN: si `source==='snapshot'`, el dato es un snapshot commiteado a
+  // propósito (mercado actual capturado desde una IP no bloqueada por TM): se
+  // muestra tal cual aunque tenga horas, porque es lo mejor disponible y real.
+  const _tx = (transfers.source === 'snapshot' || _isFresh(transfers.updated))
     ? transfers
     : { ...transfers, list: [], top: [], latest: [] };
   return {
@@ -4516,9 +4520,61 @@ app.get('/api/home', _apiLimit, async (_req, res) => {
   } catch (e) { res.status(503).json({ error: e.message }); }
 });
 
-// Calentamos la portada al arrancar para que ni el primer visitante espere el
-// scrapeo. Va detrás del arranque, sin bloquear el listen.
-setTimeout(_refreshHomeInBackground, 1500);
+// ═══════════════════ AUTO-REFRESCO AUTÓNOMO (scheduler) ═══════════════════
+// Mantiene TODAS las cachés calientes en segundo plano para que ninguna página
+// (portada, clasificaciones, fichajes, noticias, valores, estadísticas, agenda)
+// dependa de que un visitante dispare el scrapeo. Cada fuente se refresca a un
+// ritmo ligado a su TTL. Los getters ya están protegidos por TTL + try/catch, así
+// que volver a llamarlos solo relanza el scrape cuando toca y nunca rompe si una
+// fuente (p.ej. Transfermarkt, bloqueado por IP en prod) está caída: se mantiene
+// la última copia buena en caché.
+const _REFRESH_MIN = 60 * 1000;
+function _safeRefresh(label, fn) {
+  Promise.resolve().then(fn).catch(e => {
+    console.warn(`[scheduler] ${label} falló:`, e && e.message);
+  });
+}
+// Regenera los sitemaps (public/sitemap*.xml) con la fecha de hoy para que
+// Google vea el sitio como fresco y descubra las páginas nuevas. In-process, sin
+// spawnear procesos (compatible con Passenger). generate-sitemap.js exporta
+// generateSitemaps(); si falla, se conservan los sitemaps ya escritos.
+function _regenSitemaps() {
+  try {
+    const { generateSitemaps } = require('./generate-sitemap');
+    const r = generateSitemaps();
+    console.log(`[seo] sitemaps regenerados (${r.today}): ${r.main} main + ${r.es}/${r.en}/${r.pt} partidos`);
+  } catch (e) {
+    console.warn('[seo] no se pudieron regenerar los sitemaps:', e && e.message);
+  }
+}
+function _startAutoRefresh() {
+  // Warm-up al arrancar. La portada ya calienta news/transfers/rumors/standings/
+  // tv/espn; values y stats no entran en la portada → los calentamos aparte.
+  setTimeout(_refreshHomeInBackground, 1500);
+  setTimeout(() => _safeRefresh('values', getValues), 5000);
+  setTimeout(() => _safeRefresh('stats', getStats), 7000);
+
+  // Refrescos periódicos por fuente, alineados con su TTL.
+  setInterval(() => _safeRefresh('news', getNews), 15 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('standings', getStandings), 30 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('rumors', getRumors), 30 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('transfers', getTransfers), 30 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('tvGuide', getTvGuide), 180 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('values', getValues), 360 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('stats', getStats), 360 * _REFRESH_MIN);
+
+  // La portada se reagrega a partir de las cachés anteriores (barato): la
+  // mantenemos caliente cada 2 min aunque no haya visitas.
+  setInterval(_refreshHomeInBackground, 2 * _REFRESH_MIN);
+
+  // Sitemaps: regenerar al arrancar (fecha fresca) y cada 24 h para no quedar
+  // nunca obsoletos y anunciar a Google las páginas nuevas.
+  setTimeout(_regenSitemaps, 8000);
+  setInterval(_regenSitemaps, 24 * 60 * _REFRESH_MIN);
+
+  console.log('[scheduler] auto-refresco autónomo activo (news 15m · standings/rumors/transfers 30m · tv 3h · values/stats 6h · portada 2m · sitemaps 24h)');
+}
+_startAutoRefresh();
 
 // ═══════════════════════ RSS PROPIO DE GOLAZOX ═══════════════════════
 // Feed de los fichajes recién cerrados, generado desde nuestros propios datos.
@@ -4599,7 +4655,7 @@ app.get('/status', (_req, res) => {
 // ═══════════════════════ CLASIFICACIONES ═══════════════════════
 // Escudo de club (reutiliza el proxy /tmbadge). `badge` puede ser null.
 const _crest = (badge, name, size = 26) => badge
-  ? `<img src="${_esc(badge)}" alt="" loading="lazy" width="${size}" height="${size}" style="width:${size}px;height:${size}px;object-fit:contain"/>`
+  ? `<img src="${_esc(badge)}" alt="" loading="lazy" width="${size}" height="${size}" data-crest="${_esc((name || '?').slice(0, 1).toUpperCase())}" style="width:${size}px;height:${size}px;object-fit:contain"/>`
   : `<span class="crest-fallback" style="width:${size}px;height:${size}px">${_esc((name || '?').slice(0, 1))}</span>`;
 
 // Zona de la tabla según posición (UCL, Europa, descenso) → clase CSS.
@@ -4823,19 +4879,19 @@ const CLASIFICACIONES_HTML = (standings) => {
     .fx-jornada { font-size:.9rem; font-weight:800; color:#fff; }
     .fx-date { font-size:.72rem; color:rgba(255,255,255,.45); font-weight:600; text-transform:capitalize; }
     .fx-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.15rem; }
-    .fx-match { display:grid; grid-template-columns:1fr auto 1fr 26px; align-items:center; gap:.5rem; padding:.5rem .2rem; border-radius:8px; transition:background .15s; }
+    .fx-match { display:grid; grid-template-columns:1fr auto 1fr 24px; align-items:center; gap:.3rem; padding:.5rem .1rem; border-radius:8px; transition:background .15s; }
     .fx-match:hover { background:rgba(255,255,255,.035); }
-    .fx-sim { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:7px; font-size:.6rem; color:#fff; text-decoration:none; background:linear-gradient(135deg,var(--cyan,#00d4ff),#0077ff); box-shadow:0 2px 6px rgba(0,119,255,.35); opacity:.55; transition:opacity .15s, transform .15s; }
-    .fx-sim-empty { display:inline-block; width:26px; height:26px; }
+    .fx-sim { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:7px; font-size:.58rem; color:#fff; text-decoration:none; background:linear-gradient(135deg,var(--cyan,#00d4ff),#0077ff); box-shadow:0 2px 6px rgba(0,119,255,.35); opacity:.55; transition:opacity .15s, transform .15s; }
+    .fx-sim-empty { display:inline-block; width:24px; height:24px; }
     .fx-match:hover .fx-sim { opacity:1; }
     .fx-sim:hover { transform:scale(1.12); opacity:1; }
-    .fx-team { display:flex; align-items:center; gap:.45rem; min-width:0; font-size:.82rem; font-weight:600; color:#fff; }
+    .fx-team { display:flex; align-items:center; gap:.4rem; min-width:0; font-size:.8rem; font-weight:600; color:#fff; }
     .fx-home { justify-content:flex-end; text-align:right; }
     .fx-away { justify-content:flex-start; text-align:left; }
-    .fx-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; line-height:1.2; }
+    .fx-name { min-width:0; line-height:1.15; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; word-break:break-word; }
     .fx-team .fx-crest { flex:0 0 auto; display:inline-flex; }
-    .fx-crest img, .fx-crest .crest-fallback { width:22px; height:22px; }
-    .fx-mid { flex:0 0 auto; min-width:58px; text-align:center; }
+    .fx-crest img, .fx-crest .crest-fallback { width:20px; height:20px; }
+    .fx-mid { flex:0 0 auto; min-width:46px; text-align:center; }
     .fx-vs { font-size:.72rem; font-weight:700; color:rgba(255,255,255,.5); background:rgba(255,255,255,.05); border-radius:6px; padding:.2rem .45rem; display:inline-block; }
     .fx-mid.is-played .fx-score { font-size:.9rem; font-weight:800; color:var(--cyan); background:rgba(0,212,255,.1); border-radius:6px; padding:.2rem .5rem; display:inline-block; }
 
@@ -4920,8 +4976,8 @@ const CLASIFICACIONES_HTML = (standings) => {
   ${panels}
   ` : '<p class="empty">No hay clasificaciones disponibles ahora mismo. Vuelve en unos minutos.</p>'}
 
-  <p class="disclaimer">Datos de clasificaciones, goleadores y escudos: Transfermarkt. Cifras de una tabla deportiva pública, actualizadas automáticamente.
-  En pretemporada se muestra la última temporada con partidos disputados.</p>
+  <p class="disclaimer">Datos de clasificaciones, goleadores, calendario y escudos: Transfermarkt y ESPN. Cifras de una tabla deportiva pública, actualizadas automáticamente.
+  Al inicio de temporada la tabla arranca a cero y se llena con cada jornada.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
   <script src="/clasificaciones.js" defer></script>

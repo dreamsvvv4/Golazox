@@ -299,6 +299,15 @@ const _DB_FILE     = path.join(_DB_DIR, 'transfers_db.json');
 const _DB_MAX      = 5000;   // tope de registros (poda los más antiguos por descubrimiento)
 const _HISTORY_VIEW = 300;   // cuántos registros exponer al front
 
+// ── Snapshot de fichajes (para servidores con la IP bloqueada por TM) ────
+// Transfermarkt bloquea las IP de datacenter (403/429), así que el scrape en
+// vivo solo funciona desde una IP residencial (tu PC / un cron local). Para que
+// producción muestre fichajes igualmente, generamos un snapshot completo desde
+// donde SÍ funciona (`snapshotTransfers()`), lo commiteamos y lo desplegamos;
+// el server lo sirve cuando el scrape en vivo devuelve vacío. Es la última hora
+// del mercado real, no una caché rancia: por eso se etiqueta `source:'snapshot'`.
+const _SNAP_FILE = path.join(_DB_DIR, 'transfers_snapshot.json');
+
 let _db = null;              // caché en memoria del histórico
 
 function _normKey(s) {
@@ -379,6 +388,38 @@ function _historyView() {
     .sort((a, b) => b.firstSeen - a.firstSeen)
     .slice(0, _HISTORY_VIEW)
     .map(({ key, firstSeen, lastSeen, ...pub }) => pub);
+}
+
+// Persiste un snapshot completo del mercado (list/top/latest/history) para que
+// un server con la IP bloqueada por TM pueda servirlo. Solo se escribe desde
+// donde el scrape en vivo funciona (nunca se sobrescribe con datos vacíos).
+function _writeSnapshot(data) {
+  if (!data || (!data.list?.length && !data.latest?.length)) return;
+  try {
+    fs.mkdirSync(_DB_DIR, { recursive: true });
+    const snap = {
+      list: data.list || [], top: data.top || [], latest: data.latest || [],
+      history: data.history || [], historyTotal: data.historyTotal || 0,
+      updated: data.updated || Date.now(),
+    };
+    fs.writeFileSync(_SNAP_FILE, JSON.stringify(snap), 'utf8');
+  } catch (_) { /* disco no disponible: no romper */ }
+}
+
+// Lee el snapshot commiteado. Devuelve el payload con `source:'snapshot'` para
+// que el server sepa que es dato deliberado (mercado actual), no caché rancia.
+function _readSnapshot() {
+  try {
+    const s = JSON.parse(fs.readFileSync(_SNAP_FILE, 'utf8'));
+    if (s && (Array.isArray(s.list) || Array.isArray(s.latest))) {
+      return {
+        list: s.list || [], top: s.top || [], latest: s.latest || [],
+        history: s.history || [], historyTotal: s.historyTotal || 0,
+        updated: s.updated || 0, source: 'snapshot',
+      };
+    }
+  } catch (_) { /* no existe aún */ }
+  return null;
 }
 
 // Convierte "145,00 mill. €" | "876 mil €" | "Libre" | "Cesión" a estructura.
@@ -468,50 +509,91 @@ async function _fetchLatest() {
   return list;
 }
 
+// Scrape en vivo de Transfermarkt (récords de la temporada + últimos cerrados).
+// Solo devuelve datos si la IP no está bloqueada por TM (residencial). Devuelve
+// { list, top, latest, usedSaison, saison } con `list` ordenada por importe.
+async function _scrapeLive() {
+  const saison = _currentSaison();
+  const [seasonRes, latestRes] = await Promise.allSettled([
+    _fetchTransfers(saison),
+    _fetchLatest(),
+  ]);
+
+  // ── Fichajes más caros de la temporada ──
+  let list = seasonRes.status === 'fulfilled' ? seasonRes.value : [];
+  let usedSaison = saison;
+  // Si la ventana actual aún tiene pocos movimientos, usar la anterior.
+  if (list.length < 10) {
+    try {
+      const prev = await _fetchTransfers(saison - 1);
+      if (prev.length > list.length) { list = prev; usedSaison = saison - 1; }
+    } catch (_) {}
+  }
+  list.sort((a, b) => b.fee.value - a.fee.value); // reforzar orden por importe
+  const top = list.filter(t => t.fee.value > 0).slice(0, 8);
+
+  // ── Últimos fichajes cerrados (cronológico) ──
+  const latest = latestRes.status === 'fulfilled' ? latestRes.value.slice(0, 40) : [];
+  return { list, top, latest, usedSaison, saison };
+}
+
+// Construye el payload público a partir de un scrape, fusionando en el histórico.
+function _buildTransferData(scr, updated, source) {
+  try {
+    _mergeTransfers(scr.list, scr.usedSaison);
+    _mergeTransfers(scr.latest, scr.saison);
+  } catch (_) { /* no bloquear la respuesta por un fallo de persistencia */ }
+  return {
+    list: scr.list.slice(0, 40), top: scr.top, latest: scr.latest,
+    history: _historyView(), historyTotal: _loadDb().items.length,
+    updated, source,
+  };
+}
+
+// Genera y persiste el snapshot de fichajes desde una IP que SÍ puede scrapear
+// Transfermarkt (tu PC / cron local). Se commitea y despliega para que producción
+// lo sirva. Lanza si el scrape viene vacío (probable bloqueo de IP) para no
+// sobrescribir un snapshot bueno con datos vacíos.
+async function snapshotTransfers() {
+  const scr = await _scrapeLive();
+  if (!scr.list.length && !scr.latest.length) {
+    throw new Error('scrape vacío (¿IP bloqueada por Transfermarkt?)');
+  }
+  const data = _buildTransferData(scr, Date.now(), 'snapshot');
+  _writeSnapshot(data);
+  return data;
+}
+
 async function getTransfers() {
   const now = Date.now();
   if (!_tCache.data) { const d = _cacheGet('transfers'); if (d) { _tCache = d; _seed('transfers', d); } }
   if (_tCache.data && (now - _tCache.ts) < TRANSFERS_TTL) return _tCache.data;
   try {
-    const saison = _currentSaison();
-    const [seasonRes, latestRes] = await Promise.allSettled([
-      _fetchTransfers(saison),
-      _fetchLatest(),
-    ]);
+    const scr = await _scrapeLive();
 
-    // ── Fichajes más caros de la temporada ──
-    let list = seasonRes.status === 'fulfilled' ? seasonRes.value : [];
-    let usedSaison = saison;
-    // Si la ventana actual aún tiene pocos movimientos, usar la anterior.
-    if (list.length < 10) {
-      try {
-        const prev = await _fetchTransfers(saison - 1);
-        if (prev.length > list.length) { list = prev; usedSaison = saison - 1; }
-      } catch (_) {}
+    if (scr.list.length > 0 || scr.latest.length > 0) {
+      const data = _buildTransferData(scr, now, 'live');
+      _tCache = { ts: now, data }; _cachePut('transfers', _tCache);
+      _mark('transfers', 'ok', scr.list.length);
+      try { _writeSnapshot(data); } catch (_) {} // mantener snapshot fresco donde el scrape funciona
+      return data;
     }
-    list.sort((a, b) => b.fee.value - a.fee.value); // reforzar orden por importe
-    const top = list.filter(t => t.fee.value > 0).slice(0, 8);
 
-    // ── Últimos fichajes cerrados (cronológico) ──
-    const latest = latestRes.status === 'fulfilled' ? latestRes.value.slice(0, 40) : [];
-
-    // ── Persistir en el histórico propio (fichajes únicos vistos) ──
-    try {
-      _mergeTransfers(list, usedSaison);
-      _mergeTransfers(latest, saison);
-    } catch (_) { /* no bloquear la respuesta por un fallo de persistencia */ }
-    const history = _historyView();
-    const historyTotal = _loadDb().items.length;
-
-    const data = { list: list.slice(0, 40), top, latest, history, historyTotal, updated: now };
-    if (list.length > 0 || latest.length > 0) { _tCache = { ts: now, data }; _cachePut('transfers', _tCache); _mark('transfers', 'ok', list.length); }
-    else _mark('transfers', 'empty', 0);
-    return data;
+    // Scrape vacío (IP bloqueada por TM): servir el snapshot commiteado, que trae
+    // el mercado real capturado desde una IP residencial.
+    _mark('transfers', 'empty', 0);
+    const snap = _readSnapshot();
+    if (snap) { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; _tCache = { ts: now, data: snap }; return snap; }
+    let history = [], historyTotal = 0;
+    try { history = _historyView(); historyTotal = _loadDb().items.length; } catch (_) {}
+    return { list: [], top: [], latest: [], history, historyTotal, updated: 0 };
   } catch (e) {
     _mark('transfers', 'fail', 0, e.message);
-    // Aunque el scrapeo falle, el histórico propio (transfers_db.json) es local
-    // y siempre está disponible: lo servimos para que la portada muestre
-    // fichajes confirmados reales incluso sin Transfermarkt.
+    // Aunque el scrapeo falle: 1) caché en vivo reciente, 2) snapshot commiteado,
+    // 3) histórico propio. Así producción muestra fichajes reales sin TM en vivo.
+    if (_tCache.data && _tCache.data.source === 'live') return _tCache.data;
+    const snap = _readSnapshot();
+    if (snap) { try { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; } catch (_) {} _tCache = { ts: now, data: snap }; return snap; }
     if (_tCache.data) return _tCache.data;
     let history = [], historyTotal = 0;
     try { history = _historyView(); historyTotal = _loadDb().items.length; } catch (_) {}
@@ -890,7 +972,7 @@ async function getTvGuide() {
 }
 
 module.exports = {
-  getNews, getTransfers, getValues, getStats, getRumors,
+  getNews, getTransfers, snapshotTransfers, getValues, getStats, getRumors,
   getAgenda, getSalaries, getLegends, getStatus, getTvGuide,
   FEEDS, IMG_HOSTS,
 };
