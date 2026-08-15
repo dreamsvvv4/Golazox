@@ -55,7 +55,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-600.woff2" crossorigin fetchpriority="low" />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/rajdhani-700.woff2" crossorigin fetchpriority="low" />
   <link rel="preload" as="image"
-    imagesrcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w"
+    imagesrcset="/golazox-wordmark-300.webp?v=01b02ece 300w, /golazox-wordmark-mobile.webp?v=9d422cac 600w"
     imagesizes="(max-width:640px) 150px, 295px"
     fetchpriority="high" type="image/webp" />
 
@@ -170,7 +170,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=135" />
+  <link rel="stylesheet" href="style.min.css?v=7aeab0b0" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -357,8 +357,8 @@
     <div class="pwa-sheet-inner">
       <div class="pwa-sheet-logo">
         <picture>
-          <source srcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
-          <img src="/golazox-wordmark.png?v=2" alt="GolazOX" class="pwa-sheet-wordmark" width="300" height="63" loading="lazy" />
+          <source srcset="/golazox-wordmark-300.webp?v=01b02ece 300w, /golazox-wordmark-mobile.webp?v=9d422cac 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
+          <img src="/golazox-wordmark.png?v=d2105bd5" alt="GolazOX" class="pwa-sheet-wordmark" width="300" height="63" loading="lazy" />
         </picture>
       </div>
       <div class="pwa-sheet-text">
@@ -376,8 +376,8 @@
       <div class="logo-mark">
         <a href="/" aria-label="GolazoX — Ir a la página principal" style="display:contents">
           <picture>
-            <source srcset="/golazox-wordmark-300.webp?v=4 300w, /golazox-wordmark-mobile.webp?v=4 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
-            <img class="logo-img" src="/golazox-wordmark.png?v=2" alt="GolazOX" id="gx-wordmark" width="300" height="63" fetchpriority="high" />
+            <source srcset="/golazox-wordmark-300.webp?v=01b02ece 300w, /golazox-wordmark-mobile.webp?v=9d422cac 600w" sizes="(max-width:640px) 150px, 295px" type="image/webp" />
+            <img class="logo-img" src="/golazox-wordmark.png?v=d2105bd5" alt="GolazOX" id="gx-wordmark" width="300" height="63" fetchpriority="high" />
           </picture>
         </a>
       </div>
@@ -2189,18 +2189,18 @@
 
   <!-- Site config: inlined to avoid extra round-trip -->
   <script>window.GOLAZOX_CONFIG={siteUrl:"https://golazox.com",version:"2.0"};</script>
-  <script src="/player_ratings.min.js?v=5" defer></script>
-  <script src="gx-user.min.js?v=13" defer></script>
-  <script src="gx-ui.min.js?v=17" defer></script>
-  <script src="app.min.js?v=105" defer></script>
-  <script src="_wc_editions.js?v=6" defer></script>
-  <script src="tournament.min.js?v=50" defer></script>
-  <script src="/gx-nav.js?v=2" defer></script>
+  <script src="/player_ratings.min.js?v=dec58451" defer></script>
+  <script src="gx-user.min.js?v=4171d242" defer></script>
+  <script src="gx-ui.min.js?v=d1ad4da5" defer></script>
+  <script src="app.min.js?v=bc82fe3b" defer></script>
+  <script src="_wc_editions.js?v=b4f4c22f" defer></script>
+  <script src="tournament.min.js?v=25afbc24" defer></script>
+  <script src="/gx-nav.js?v=8503258a" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->
   <div id="pm-tt-portal" aria-hidden="true"></div>
-  <script src="/subscribe.js?v=1" defer></script>
-  <script src="/home-hub.js?v=12" defer></script>
+  <script src="/subscribe.js?v=94c31cf5" defer></script>
+  <script src="/home-hub.js?v=f31b9024" defer></script>
 </body>
 </html>
