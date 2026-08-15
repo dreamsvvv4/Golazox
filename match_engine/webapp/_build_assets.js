@@ -10,8 +10,48 @@
 const esbuild = require('esbuild');
 const path    = require('path');
 const fs      = require('fs');
+const crypto  = require('crypto');
 
 const pub = path.join(__dirname, 'public');
+
+/**
+ * Cache-busting: reescribe el `?v=` de cada asset local referenciado en
+ * index.html con un hash corto de su contenido. El `?v=` solo cambia cuando
+ * el fichero cambia de verdad, así que:
+ *   - un deploy sin cambios en un asset → mismo `?v=` → sigue cacheado (rápido)
+ *   - un asset modificado → nuevo `?v=` → el navegador lo re-descarga (fresco)
+ * Evita depender de acordarse de subir el número a mano.
+ */
+function bumpAssetVersions() {
+  const htmlPath = path.join(pub, 'index.html');
+  if (!fs.existsSync(htmlPath)) return;
+  let html = fs.readFileSync(htmlPath, 'utf8');
+
+  const hashCache = new Map();
+  const bumped = [];
+
+  // Matchea rutas locales con ?v=... precedidas por comilla, espacio o coma
+  // (src=, href=, srcset). Excluye URLs absolutas (precedidas por '/').
+  const RE = /(["'\s,])(\/?[\w][\w./-]*\.(?:js|css|png|webp|jpg|jpeg|svg|ico|woff2?))\?v=[\w]+/g;
+
+  html = html.replace(RE, (match, lead, assetPath) => {
+    // Resolver a fichero bajo public/
+    const rel = assetPath.replace(/^\//, '');
+    const file = path.join(pub, rel);
+    if (!fs.existsSync(file)) return match; // no tocar si no existe localmente
+
+    let hash = hashCache.get(file);
+    if (!hash) {
+      hash = crypto.createHash('sha1').update(fs.readFileSync(file)).digest('hex').slice(0, 8);
+      hashCache.set(file, hash);
+    }
+    if (!bumped.includes(assetPath)) bumped.push(assetPath);
+    return `${lead}${assetPath}?v=${hash}`;
+  });
+
+  fs.writeFileSync(htmlPath, html);
+  console.log(`[build] index.html cache-bust → ${bumped.length} assets versionados (hash de contenido)`);
+}
 
 async function build() {
   const t = Date.now();
@@ -84,6 +124,10 @@ async function build() {
   console.log(`[build] gx-user.js    ${kb(gxuOrig)} → ${kb(gxuMin)}  (-${pct(gxuOrig, gxuMin)})`);
   console.log(`[build] gx-ui.js      ${kb(gxiOrig)} → ${kb(gxiMin)}  (-${pct(gxiOrig, gxiMin)})`);
   console.log(`[build] style.css     ${kb(cssOrig)} → ${kb(cssMin)}  (-${pct(cssOrig, cssMin)})`);
+
+  // Reescribe los ?v= de index.html con hash de contenido (cache-busting)
+  bumpAssetVersions();
+
   console.log(`[build] Done in ${Date.now() - t}ms`);
 }
 
