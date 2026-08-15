@@ -2,8 +2,21 @@ $key = "$env:USERPROFILE\.ssh\id_golazox_deploy"
 $srv = "u990866731@147.93.88.37"
 
 # ── Guardia: verificar que no hay cambios sin commitear/pushear ──
+# Los data/*.json runtime cambian solos al correr el server local (leaderboards,
+# snapshots scrapeados). NO deben bloquear el deploy: el deploy hace
+# 'git reset --hard FETCH_HEAD' en prod, así que solo cuenta lo pusheado.
+$runtimeData = @(
+    'match_engine/webapp/data/fixtures_snapshot.json',
+    'match_engine/webapp/data/gx_global_lb.json',
+    'match_engine/webapp/data/gx_leaderboard.json',
+    'match_engine/webapp/data/rumors_snapshot.json',
+    'match_engine/webapp/data/transfers_snapshot.json',
+    'match_engine/webapp/data/transfers_db.json'
+)
 $unpushed = git log origin/main..HEAD --oneline 2>&1
-$dirty    = git status --porcelain 2>&1 | Where-Object { $_ -match '^\s*M|^\s*A|^\s*D' }
+$dirty    = git status --porcelain 2>&1 |
+    Where-Object { $_ -match '^\s*M|^\s*A|^\s*D' } |
+    Where-Object { $p = ($_ -replace '^..\s*', '').Trim(); $runtimeData -notcontains $p }
 if ($dirty) {
     Write-Host "ERROR: Hay archivos modificados sin commitear:" -ForegroundColor Red
     $dirty | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }

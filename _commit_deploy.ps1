@@ -17,6 +17,7 @@ Pop-Location
 
 # 2. Stage todos los cambios relevantes
 $files = @(
+    "$webapp\_build_assets.js",
     "$webapp\public\app.js",
     "$webapp\public\app.min.js",
     "$webapp\public\tournament.js",
