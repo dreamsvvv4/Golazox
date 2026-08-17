@@ -115,7 +115,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1994": {
       "players": [
@@ -229,7 +235,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 83,
+        "defense": 80,
+        "goalkeeping": 81
+      }
     },
     "2002": {
       "players": [
@@ -348,7 +360,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -410,10 +428,10 @@
         }
       ],
       "ratings": {
-        "attack": 74,
+        "attack": 75,
         "midfield": 75,
-        "defense": 75,
-        "goalkeeping": 73
+        "defense": 76,
+        "goalkeeping": 78
       },
       "source": "Republic of Ireland NT 🌍 Otros€” UEFA Nations League B 2024-25",
       "teamLabel": "Ireland (2025)"

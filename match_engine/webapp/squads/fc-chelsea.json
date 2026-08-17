@@ -234,10 +234,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 84
+        "attack": 82,
+        "midfield": 81,
+        "defense": 85,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2000/2001)",
       "teamLabel": "Chelsea (2000-01)"
@@ -427,10 +427,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 75,
-        "defense": 74,
-        "goalkeeping": 74
+        "attack": 84,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2001/2002)",
       "teamLabel": "Chelsea (2001-02)"
@@ -512,10 +512,10 @@
       "source": "Chelsea <\r Otros�\u001d 2003-04 primer año Abramovich (Ranieri)",
       "teamLabel": "Chelsea (2003-04)",
       "ratings": {
-        "attack": 86,
+        "attack": 85,
         "midfield": 86,
-        "defense": 84,
-        "goalkeeping": 83
+        "defense": 83,
+        "goalkeeping": 84
       }
     },
     "2004": {
@@ -678,9 +678,9 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 89,
+        "attack": 85,
+        "midfield": 84,
+        "defense": 87,
         "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2004/2005)",
@@ -841,10 +841,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
+        "attack": 88,
         "midfield": 87,
-        "defense": 89,
-        "goalkeeping": 89
+        "defense": 85,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2005/2006)",
       "teamLabel": "Chelsea (2005-06)"
@@ -928,8 +928,8 @@
       "ratings": {
         "attack": 87,
         "midfield": 88,
-        "defense": 88,
-        "goalkeeping": 85
+        "defense": 86,
+        "goalkeeping": 88
       }
     },
     "2010": {
@@ -1004,10 +1004,10 @@
       "source": "Chelsea 🌍 Otros€” Premier League 2010-11 + UCL run (Ancelotti)",
       "teamLabel": "Chelsea (2010-11)",
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
-        "defense": 87,
-        "goalkeeping": 84
+        "attack": 84,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 88
       }
     },
     "2011": {
@@ -1175,10 +1175,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 84,
+        "attack": 87,
+        "midfield": 86,
         "defense": 84,
-        "goalkeeping": 85
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2011/2012)",
       "teamLabel": "Chelsea (2011-12)"
@@ -1358,10 +1358,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
+        "attack": 86,
+        "midfield": 86,
         "defense": 85,
-        "goalkeeping": 86
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2012/2013)",
       "teamLabel": "Chelsea (2012-13)"
@@ -1561,10 +1561,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 83,
+        "attack": 87,
+        "midfield": 85,
         "defense": 84,
-        "goalkeeping": 83
+        "goalkeeping": 91
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2014/2015)",
       "teamLabel": "Chelsea (2014-15)"
@@ -1794,10 +1794,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 81,
-        "defense": 82,
-        "goalkeeping": 81
+        "attack": 84,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2021/2022)",
       "teamLabel": "Chelsea (2021-22)"
@@ -2065,10 +2065,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 82,
-        "goalkeeping": 83
+        "attack": 88,
+        "midfield": 89,
+        "defense": 87,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2022/2023)",
       "teamLabel": "Chelsea (2022-23)"
@@ -2414,10 +2414,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 72,
-        "defense": 71,
-        "goalkeeping": 71
+        "attack": 86,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2023/2024)",
       "teamLabel": "Chelsea (2023-24)"
@@ -2607,13 +2607,266 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 82,
-        "defense": 80,
-        "goalkeeping": 80
+        "attack": 87,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Chelsea (2025/2026)",
       "teamLabel": "Chelsea (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mike Penders",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Robert Sánchez",
+          "position": "GK",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Gabriel Slonina",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Teddy Sharman-Lowe",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Maxence Lacroix",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Wesley Fofana",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Mamadou Sarr",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Levi Colwill",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Axel Disasi",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Benoît Badiashile",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Aarón Anselmino",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Jorrel Hato",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Pep Chavarría",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Caleb Wiley",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Denner",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marco Palestra",
+          "position": "RB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Josh Acheampong",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Reece James",
+          "position": "RB",
+          "marketValue": 60000000,
+          "rating": 85
+        },
+        {
+          "name": "Malo Gusto",
+          "position": "RB",
+          "marketValue": 35000000,
+          "rating": 84
+        },
+        {
+          "name": "Moisés Caicedo",
+          "position": "DM",
+          "marketValue": 100000000,
+          "rating": 86
+        },
+        {
+          "name": "Roméo Lavia",
+          "position": "DM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Dário Essugo",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Enzo Fernández",
+          "position": "CM",
+          "marketValue": 100000000,
+          "rating": 86
+        },
+        {
+          "name": "Valentín Barco",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 80
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 80
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "AM",
+          "marketValue": 100000000,
+          "rating": 88
+        },
+        {
+          "name": "Morgan Rogers",
+          "position": "AM",
+          "marketValue": 110000000,
+          "rating": 82
+        },
+        {
+          "name": "Jamie Gittens",
+          "position": "LW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Mykhaylo Mudryk",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Geovany Quenda",
+          "position": "RW",
+          "marketValue": 42000000,
+          "rating": 88
+        },
+        {
+          "name": "Estêvão",
+          "position": "RW",
+          "marketValue": 80000000,
+          "rating": 84
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "RW",
+          "marketValue": 60000000,
+          "rating": 83
+        },
+        {
+          "name": "João Pedro",
+          "position": "ST",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Liam Delap",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Emmanuel Emegha",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Nicolas Jackson",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Marc Guiu",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "David Datro Fofana",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Danny Welbeck",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 84,
+        "defense": 87,
+        "goalkeeping": 86
+      },
+      "source": "Transfermarkt — Chelsea (2026/2027)",
+      "teamLabel": "Chelsea (2026-27)"
     }
   },
   "id": 631,

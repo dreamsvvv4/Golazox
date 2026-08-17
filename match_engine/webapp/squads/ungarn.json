@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 79
+      }
     },
     "1938": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1954": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 81,
+        "defense": 83,
+        "goalkeeping": 88
+      }
     },
     "1958": {
       "players": [
@@ -525,7 +543,13 @@
           "marketValue": 0,
           "rating": 82
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 88
+      }
     },
     "1962": {
       "players": [
@@ -584,7 +608,13 @@
           "position": "LW",
           "rating": 76
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 75,
+        "goalkeeping": 74
+      }
     },
     "1966": {
       "players": [
@@ -698,17 +728,23 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1970": {
       "formation": "4-3-3",
       "teamLabel": "Hungría (1970)",
       "source": "Hungary - World Cup 1970",
       "ratings": {
-        "attack": 77,
+        "attack": 76,
         "midfield": 75,
         "defense": 73,
-        "goalkeeping": 72
+        "goalkeeping": 73
       },
       "players": [
         {
@@ -774,9 +810,9 @@
       "source": "Hungary - World Cup 1978",
       "ratings": {
         "attack": 74,
-        "midfield": 73,
-        "defense": 72,
-        "goalkeeping": 71
+        "midfield": 75,
+        "defense": 71,
+        "goalkeeping": 72
       },
       "players": [
         {
@@ -948,7 +984,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1986": {
       "players": [
@@ -1007,7 +1049,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 74,
+        "midfield": 74,
+        "defense": 72,
+        "goalkeeping": 72
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -1248,10 +1296,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 82,
-        "defense": 81,
-        "goalkeeping": 75
+        "attack": 79,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” hungary (2025/2026)",
       "teamLabel": "hungary (2025-26)"

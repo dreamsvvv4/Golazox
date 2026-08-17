@@ -186,10 +186,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 73,
-        "defense": 72,
-        "goalkeeping": 71
+        "attack": 77,
+        "midfield": 78,
+        "defense": 82,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt 🌍 Otros€” Sporting CP (1999/2000)",
       "teamLabel": "Sporting CP (1999-00)"
@@ -369,10 +369,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
-        "midfield": 74,
-        "defense": 73,
-        "goalkeeping": 72
+        "attack": 78,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Sporting CP (2001/2002)",
       "teamLabel": "Sporting CP (2001-02)"
@@ -572,10 +572,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 79,
-        "defense": 77,
-        "goalkeeping": 75
+        "attack": 77,
+        "midfield": 76,
+        "defense": 82,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Sporting CP (2021/2022)",
       "teamLabel": "Sporting CP (2021-22)"
@@ -843,10 +843,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 80,
-        "defense": 78,
-        "goalkeeping": 76
+        "attack": 83,
+        "midfield": 82,
+        "defense": 84,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Sporting CP (2022/2023)",
       "teamLabel": "Sporting CP (2022-23)"
@@ -1000,13 +1000,218 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 80,
-        "goalkeeping": 77
+        "attack": 86,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Sporting CP (2025/2026)",
       "teamLabel": "Sporting CP (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Rui Silva",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Diego Callai",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "João Virgínia",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Gonçalo Inácio",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Zeno Debast",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Eduardo Quaresma",
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Ibrahima Ba",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Maxi Araújo",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Nuno Santos",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Dias",
+          "position": "LB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Iván Fresneda",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Georgios Vagiannidis",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Salvador Blopa",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sergi Altimira",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Silas Andersen",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Issa Doumbia",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "João Simões",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Daniel Bragança",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Nestory Irankunda",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Giorgi Kochorashvili",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Koba Koindredi",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Pedro Lima",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Sotiris Alexandropoulos",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Rodrigo Zalazar",
+          "position": "AM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Flávio Gonçalves",
+          "position": "AM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Pedro Gonçalves",
+          "position": "LW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jesse Derry",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Geny Catamo",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Luís Guilherme",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 91
+        },
+        {
+          "name": "Fotis Ioannidis",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Rafael Nel",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 81
+      },
+      "source": "Transfermarkt — Sporting CP (2026/2027)",
+      "teamLabel": "Sporting CP (2026-27)"
     }
   },
   "id": 336,

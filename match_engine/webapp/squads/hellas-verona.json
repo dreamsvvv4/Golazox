@@ -156,13 +156,242 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Hellas Verona (2025/2026)",
       "teamLabel": "Hellas Verona (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lorenzo Montipò",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Nicola Leali",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Simone Perilli",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Giacomo Toniolo",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Arthur Borghi",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Andrias Edmundsson",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tobias Slotsager",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Nicolò Calabrese",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Seid Korac",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Noe Mael Tagne",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Martin Frese",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Domagoj Bradarić",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Davide De Battisti",
+          "position": "LB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Rafik Belghali",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel Oyegoke",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Fallou Cham",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Andréa Le Borgne",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Cheikh Niasse",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Charlys",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Leorat Bega",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Antoine Bernede",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Suat Serdar",
+          "position": "CM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Abdou Harroui",
+          "position": "CM",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Grigoris Kastanos",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Mattia Compagnon",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tomas Suslov",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Kacper Sezonienko",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Salvatore Cerbone",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Amin Sarr",
+          "position": "ST",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Samuele Mulattieri",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daniel Mosquera",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Ioan Vermeșan",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Dailon Livramento",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Isaac",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ruben Akalé",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Juan Manuel Cruz",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 77,
+        "defense": 78,
+        "goalkeeping": 74
+      },
+      "source": "Transfermarkt — Hellas Verona (2026/2027)",
+      "teamLabel": "Hellas Verona (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/hellas-verona.png",

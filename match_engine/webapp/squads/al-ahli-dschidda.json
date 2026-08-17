@@ -201,10 +201,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 79,
         "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "defense": 79,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Al-Ahli (2023/2024)",
       "teamLabel": "Al-Ahli (2023-24)"
@@ -339,13 +339,194 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 80,
         "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "defense": 79,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Al-Ahli (2025/2026)",
       "teamLabel": "Al-Ahli (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Edouard Mendy",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 82
+        },
+        {
+          "name": "Abdulrahman Al-Sanbi",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Abdullah Abdo",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Roger Ibañez",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Merih Demiral",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 84
+        },
+        {
+          "name": "Abubacarr Sedi Kinteh",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Rayan Hamed",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Sulaiman",
+          "position": "CB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Matteo Dams",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Zakaria Hawsawi",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Saad Balobaid",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ali Majrashi",
+          "position": "RB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Mohammed Abdulrahman",
+          "position": "RB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Ziyad Al-Johani",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Abdullah Otayf",
+          "position": "DM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Valentin Atangana",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Naif Masoud",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Eduard Spertsyan",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Enzo Millot",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Galeno",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Saleh Abu Al-Shamat",
+          "position": "LW",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Meshal Al-Mutairi",
+          "position": "LW",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Francisco Trincão",
+          "position": "RW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Matheus Gonçalves",
+          "position": "RW",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Ivan Toney",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 82
+        },
+        {
+          "name": "Ricardo Mathias",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Firas Al-Buraikan",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Abdullah Radif",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 75,
+        "defense": 81,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Al-Ahli (2026/2027)",
+      "teamLabel": "Al-Ahli (2026-27)"
     }
   },
   "id": 18487,

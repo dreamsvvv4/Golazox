@@ -113,7 +113,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 78
+      }
     },
     "1934": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 79
+      }
     },
     "1938": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 82
+      }
     },
     "1950": {
       "players": [
@@ -455,7 +473,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 77,
+        "goalkeeping": 81
+      }
     },
     "1954": {
       "players": [
@@ -569,7 +593,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "1958": {
       "players": [
@@ -723,7 +753,13 @@
           "marketValue": 0,
           "rating": 78
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 86
+      }
     },
     "1962": {
       "players": [
@@ -1012,7 +1048,13 @@
           "position": "ST",
           "rating": 91
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 79
+      }
     },
     "1966": {
       "players": [
@@ -1126,7 +1168,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 90,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "1970": {
       "formation": "4-4-2",
@@ -1263,10 +1311,10 @@
         }
       ],
       "ratings": {
-        "attack": 96,
-        "midfield": 93,
-        "defense": 87,
-        "goalkeeping": 86
+        "attack": 90,
+        "midfield": 87,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1970/1971)",
       "teamLabel": "brasil (1970-71)"
@@ -1406,10 +1454,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 90,
-        "defense": 85,
-        "goalkeeping": 84
+        "attack": 85,
+        "midfield": 85,
+        "defense": 78,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1974/1975)",
       "teamLabel": "brasil (1974-75)"
@@ -1574,10 +1622,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 89,
-        "defense": 84,
-        "goalkeeping": 83
+        "attack": 79,
+        "midfield": 79,
+        "defense": 79,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1975/1976)",
       "teamLabel": "brasil (1975-76)"
@@ -1712,10 +1760,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 88,
-        "defense": 85,
-        "goalkeeping": 83
+        "attack": 85,
+        "midfield": 86,
+        "defense": 80,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1978/1979)",
       "teamLabel": "brasil (1978-79)"
@@ -1907,8 +1955,8 @@
       "ratings": {
         "attack": 87,
         "midfield": 88,
-        "defense": 84,
-        "goalkeeping": 83
+        "defense": 81,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1979/1980)",
       "teamLabel": "brasil (1979-80)"
@@ -2058,10 +2106,10 @@
         }
       ],
       "ratings": {
-        "attack": 93,
-        "midfield": 93,
-        "defense": 83,
-        "goalkeeping": 83
+        "attack": 88,
+        "midfield": 88,
+        "defense": 81,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1982/1983)",
       "teamLabel": "brasil (1982-83)"
@@ -2256,10 +2304,10 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 90,
-        "defense": 83,
-        "goalkeeping": 83
+        "attack": 87,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1983/1984)",
       "teamLabel": "brasil (1983-84)"
@@ -2424,10 +2472,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 90,
+        "attack": 88,
+        "midfield": 87,
         "defense": 83,
-        "goalkeeping": 82
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1986/1987)",
       "teamLabel": "brasil (1986-87)"
@@ -2602,10 +2650,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 82,
-        "goalkeeping": 82
+        "attack": 82,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1987/1988)",
       "teamLabel": "brasil (1987-88)"
@@ -2870,10 +2918,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
-        "defense": 84,
-        "goalkeeping": 82
+        "attack": 84,
+        "midfield": 82,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1990/1991)",
       "teamLabel": "brasil (1990-91)"
@@ -3138,10 +3186,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 82,
+        "midfield": 80,
+        "defense": 85,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1991/1992)",
       "teamLabel": "brasil (1991-92)"
@@ -3436,10 +3484,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 86,
-        "defense": 84,
-        "goalkeeping": 83
+        "attack": 86,
+        "midfield": 82,
+        "defense": 88,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1993/1994)",
       "teamLabel": "brasil (1993-94)"
@@ -3614,10 +3662,10 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 89,
-        "defense": 87,
-        "goalkeeping": 87
+        "attack": 88,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1994/1995)",
       "teamLabel": "brasil (1994-95)"
@@ -3922,10 +3970,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 88,
-        "defense": 85,
-        "goalkeeping": 85
+        "attack": 87,
+        "midfield": 82,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1995/1996)",
       "teamLabel": "brasil (1995-96)"
@@ -4166,9 +4214,9 @@
       ],
       "ratings": {
         "attack": 89,
-        "midfield": 89,
-        "defense": 84,
-        "goalkeeping": 84
+        "midfield": 83,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1997/1998)",
       "teamLabel": "brasil (1997-98)"
@@ -4443,9 +4491,9 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 89,
-        "defense": 85,
+        "attack": 89,
+        "midfield": 84,
+        "defense": 86,
         "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1998/1999)",
@@ -4696,10 +4744,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 89,
-        "defense": 83,
-        "goalkeeping": 84
+        "attack": 92,
+        "midfield": 91,
+        "defense": 86,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (1999/2000)",
       "teamLabel": "brasil (1999-00)"
@@ -5054,10 +5102,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 88,
-        "defense": 83,
-        "goalkeeping": 83
+        "attack": 91,
+        "midfield": 91,
+        "defense": 86,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2001/2002)",
       "teamLabel": "brasil (2001-02)"
@@ -5252,10 +5300,10 @@
         }
       ],
       "ratings": {
-        "attack": 95,
-        "midfield": 92,
-        "defense": 83,
-        "goalkeeping": 85
+        "attack": 91,
+        "midfield": 89,
+        "defense": 86,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2002/2003)",
       "teamLabel": "brasil (2002-03)"
@@ -5500,10 +5548,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 82,
-        "goalkeeping": 83
+        "attack": 92,
+        "midfield": 90,
+        "defense": 88,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2004/2005)",
       "teamLabel": "brasil (2004-05)"
@@ -5733,10 +5781,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
+        "attack": 92,
         "midfield": 90,
-        "defense": 82,
-        "goalkeeping": 84
+        "defense": 88,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2006/2007)",
       "teamLabel": "brasil (2006-07)"
@@ -5947,9 +5995,9 @@
       ],
       "ratings": {
         "attack": 88,
-        "midfield": 89,
-        "defense": 82,
-        "goalkeeping": 83
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2007/2008)",
       "teamLabel": "brasil (2007-08)"
@@ -6224,10 +6272,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 84,
-        "goalkeeping": 83
+        "attack": 89,
+        "midfield": 91,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2010/2011)",
       "teamLabel": "brasil (2010-11)"
@@ -6577,10 +6625,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 92,
+        "midfield": 89,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2011/2012)",
       "teamLabel": "brasil (2011-12)"
@@ -6850,10 +6898,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 86,
-        "defense": 79,
-        "goalkeeping": 83
+        "attack": 88,
+        "midfield": 89,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2014/2015)",
       "teamLabel": "brasil (2014-15)"
@@ -7083,10 +7131,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
-        "defense": 82,
-        "goalkeeping": 82
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2015/2016)",
       "teamLabel": "brasil (2015-16)"
@@ -7336,10 +7384,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 85,
-        "defense": 82,
-        "goalkeeping": 83
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2016/2017)",
       "teamLabel": "brasil (2016-17)"
@@ -7589,10 +7637,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 87,
-        "defense": 83,
-        "goalkeeping": 85
+        "attack": 85,
+        "midfield": 85,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2018/2019)",
       "teamLabel": "brasil (2018-19)"
@@ -7837,10 +7885,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 87,
-        "defense": 83,
-        "goalkeeping": 84
+        "attack": 88,
+        "midfield": 86,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2019/2020)",
       "teamLabel": "brasil (2019-20)"
@@ -8070,10 +8118,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 83,
-        "goalkeeping": 84
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2021/2022)",
       "teamLabel": "brasil (2021-22)"
@@ -8288,10 +8336,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 84,
-        "goalkeeping": 86
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2022/2023)",
       "teamLabel": "brasil (2022-23)"
@@ -8595,10 +8643,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 84,
-        "goalkeeping": 85
+        "attack": 90,
+        "midfield": 87,
+        "defense": 88,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” brasil (2025/2026)",
       "teamLabel": "brasil (2025-26)"

@@ -141,7 +141,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -284,7 +284,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -407,8 +407,8 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 81,
+        "midfield": 80,
         "defense": 76,
         "goalkeeping": 77
       },
@@ -578,8 +578,8 @@
       "ratings": {
         "attack": 78,
         "midfield": 79,
-        "defense": 76,
-        "goalkeeping": 76
+        "defense": 78,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Feyenord (1995/1996)",
       "teamLabel": "Feyenord (1995-96)"
@@ -744,10 +744,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 79,
         "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "defense": 77,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Feyenoord (2001/2002)",
       "teamLabel": "Feyenoord (2001-02)"
@@ -1139,10 +1139,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
+        "attack": 84,
         "midfield": 83,
-        "defense": 86,
-        "goalkeeping": 78
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Feyenoord (2023/2024)",
       "teamLabel": "Feyenoord (2023-24)"
@@ -1350,13 +1350,218 @@
         }
       ],
       "ratings": {
-        "attack": 85,
+        "attack": 84,
         "midfield": 83,
         "defense": 83,
-        "goalkeeping": 72
+        "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Feyenoord (2025/2026)",
       "teamLabel": "Feyenoord (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Tjark Ernst",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Liam Bossin",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Tsuyoshi Watanabe",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Anel Ahmedhodzic",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mika Mármol",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Thomas Beelen",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Thijs Kraaijeveld",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jeremiah St. Juste",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Neraysho Kasanwirjo",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Tijme Wessels",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jordan Bos",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Gijs Smal",
+          "position": "LB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Givairo Read",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jordan Lotomba",
+          "position": "RB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Mats Deijl",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Bart Nieuwkoop",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Oussama Targhalline",
+          "position": "DM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Charles Vanhoutte",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jakub Moder",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Gjivai Zechiël",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luciano Valente",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Sem Steijn",
+          "position": "AM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Luka Ivanušec",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tobias van den Elshout",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Gaoussou Diarra",
+          "position": "LW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Jivayno Zinhagel",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Anis Hadj Moussa",
+          "position": "RW",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Gonçalo Borges",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Shaqueel van Persie",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 88
+        },
+        {
+          "name": "Ayase Ueda",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nacho Ferri",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Casper Tengstedt",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — Feyenoord (2026/2027)",
+      "teamLabel": "Feyenoord (2026-27)"
     }
   },
   "id": 234,

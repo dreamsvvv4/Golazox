@@ -111,16 +111,197 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 79,
+        "midfield": 77,
         "defense": 76,
         "goalkeeping": 77
       },
       "source": "Transfermarkt <\r Otros�\u001d FC Südtirol 2024-25 Serie B",
       "teamLabel": "FC Südtirol 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Marius Adamonis",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alessandro Plizzari",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Rok Vadjunec",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Andrea Giorgini",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nicola Pietrangeli",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Giacomo Stabile",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Davide Veroli",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Marco Varnier",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Riccardo Stivanello",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Frédéric Veseli",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Alessandro Vimercati",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Simone Davi",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Hamza El Kaouakibi",
+          "position": "RB",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Federico Davi",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Dhirar Brik",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Niklas Pyyhtiä",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Simone Tronchin",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jacopo Martini",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Aljosa Vasic",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Bjarki Bjarkason",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Marco Frigerio",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Fabian Tait",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Salvatore Molina",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Daniele Casiraghi",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Vasco Lopes",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Silvio Merkaj",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Rareș Burnete",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kenny Mixtur",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 74,
+        "defense": 73,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — FC Südtirol (2026/2027)",
+      "teamLabel": "FC Südtirol (2026-27)"
     }
   },
-  "id": 38477,
+  "id": 4554,
   "name": "FC Südtirol",
   "badgeLocalPath": "/img/badges/fc-sudtirol.png",
   "group": "🇮🇹 Serie B",

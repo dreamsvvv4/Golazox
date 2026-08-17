@@ -120,10 +120,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 80,
         "midfield": 80,
-        "defense": 78,
-        "goalkeeping": 75
+        "defense": 80,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt — Eintracht Frankfurt (1960/1961)",
       "teamLabel": "Eintracht Frankfurt (1960-61)"
@@ -351,8 +351,8 @@
       "ratings": {
         "attack": 84,
         "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 72
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Eintracht Frankfurt (2022/2023)",
       "teamLabel": "Eintracht Frankfurt (2022-23)"
@@ -507,13 +507,212 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 81,
-        "defense": 82,
-        "goalkeeping": 73
+        "attack": 80,
+        "midfield": 80,
+        "defense": 81,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Eintracht Frankfurt (2025/2026)",
       "teamLabel": "Eintracht Frankfurt (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Kauã Santos",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Michael Zetterer",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jens Grahl",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Amil Siljevic",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nnamdi Collins",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Arthur Theate",
+          "position": "CB",
+          "marketValue": 17000000,
+          "rating": 83
+        },
+        {
+          "name": "Robin Koch",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Otávio",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Keita Kosugi",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Niels Nkounkou",
+          "position": "LB",
+          "marketValue": 2600000,
+          "rating": 77
+        },
+        {
+          "name": "Elias Baum",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Timothy Chandler",
+          "position": "RB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Raphael Onyedika",
+          "position": "DM",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Noël Aséko",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Ellyes Skhiri",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Oscar Højlund",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Hugo Larsson",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 81
+        },
+        {
+          "name": "Farès Chaïbi",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mario Götze",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 84
+        },
+        {
+          "name": "Can Uzun",
+          "position": "AM",
+          "marketValue": 45000000,
+          "rating": 82
+        },
+        {
+          "name": "Love Arrhov",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jean-Mattéo Bahoya",
+          "position": "LW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Malik Pimpong",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ritsu Doan",
+          "position": "RW",
+          "marketValue": 17000000,
+          "rating": 84
+        },
+        {
+          "name": "Ansgar Knauff",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ayoube Amaimouni-Echghouyab",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Elye Wahi",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jonathan Burkardt",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 82
+        },
+        {
+          "name": "Younes Ebnoutalib",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Michy Batshuayi",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 78
+        },
+        {
+          "name": "Jessic Ngankam",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 81
+      },
+      "source": "Transfermarkt — Eintracht Frankfurt (2026/2027)",
+      "teamLabel": "Eintracht Frankfurt (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/eintracht-frankfurt.png",

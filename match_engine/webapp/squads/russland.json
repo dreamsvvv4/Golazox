@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2002": {
       "players": [
@@ -232,7 +238,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "formation": "4-4-2",
@@ -415,8 +427,8 @@
       "ratings": {
         "attack": 83,
         "midfield": 83,
-        "defense": 80,
-        "goalkeeping": 81
+        "defense": 81,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Rusia (2010/2011)",
       "teamLabel": "Rusia (2010-11)"
@@ -538,7 +550,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2018": {
       "players": [
@@ -657,7 +675,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     }
   },
   "id": 3448,

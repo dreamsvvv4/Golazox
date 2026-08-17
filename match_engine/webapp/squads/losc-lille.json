@@ -200,8 +200,8 @@
       "ratings": {
         "attack": 86,
         "midfield": 86,
-        "defense": 82,
-        "goalkeeping": 76
+        "defense": 83,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Lille (2020/2021)",
       "teamLabel": "Lille (2020-21)"
@@ -381,11 +381,198 @@
       "ratings": {
         "attack": 84,
         "midfield": 85,
-        "defense": 84,
-        "goalkeeping": 74
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Lille (2025/2026)",
       "teamLabel": "Lille (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Berke Özer",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Arnaud Bodart",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nathan Ngoy",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Alexsandro",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Isaac Cossier",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tanguy Nianzou",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ousmane Touré",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Romain Perraud",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Calvin Verdonk",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tiago Santos",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Loun Srdanovic",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ngal'ayel Mukau",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Nabil Bentaleb",
+          "position": "DM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Benjamin André",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ayyoub Bouaddi",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Hákon Arnar Haraldsson",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Félix Correia",
+          "position": "LW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Osame Sahraoui",
+          "position": "LW",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Başar Önal",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Soriba Diaoune",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Tiago Morais",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Ethan Mbappé",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Marius Broholm",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Noah Edjouma",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Gaëtan Perrin",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Matias Fernandez-Pardo",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Hamza Igamane",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Olivier Giroud",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 83
+        },
+        {
+          "name": "Mohamed Bayo",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 87,
+        "defense": 83,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Lille (2026/2027)",
+      "teamLabel": "Lille (2026-27)"
     }
   },
   "id": 1082,

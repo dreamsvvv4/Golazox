@@ -174,7 +174,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -391,10 +391,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 80,
-        "defense": 81,
-        "goalkeeping": 70
+        "defense": 80,
+        "goalkeeping": 75
       },
       "source": "Transfermarkt 🌍 Otros€” Besiktas (2009/2010)",
       "teamLabel": "Besiktas (2009-10)"
@@ -644,10 +644,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 80,
         "midfield": 79,
-        "defense": 82,
-        "goalkeeping": 72
+        "defense": 81,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” Besiktas (2017/2018)",
       "teamLabel": "Besiktas (2017-18)"
@@ -906,7 +906,7 @@
         "attack": 80,
         "midfield": 80,
         "defense": 79,
-        "goalkeeping": 72
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Besiktas (2021/2022)",
       "teamLabel": "Besiktas (2021-22)"
@@ -1084,13 +1084,254 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 82,
         "midfield": 82,
-        "defense": 82,
-        "goalkeeping": 72
+        "defense": 81,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Besiktas (2025/2026)",
       "teamLabel": "Besiktas (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alexander Nübel",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Doğan Alemdar",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Emir Yaşar",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Emmanuel Agbadou",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Tiago Djaló",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Emirhan Topçu",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Yasin Özcan",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Felix Uduokhai",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Emrecan Uzunhan",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Azem Yortaç",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Cumali Gürsel",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kassoum Ouattara",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Rıdvan Yılmaz",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Amir Murillo",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Taylan Bulut",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Wilfred Ndidi",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 83
+        },
+        {
+          "name": "Moatasem Al-Musrati",
+          "position": "DM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Amir Hadziahmetovic",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Salih Özcan",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kartal Yılmaz",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jean Onana",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Orkun Kökçü",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Élan Ricardo",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fahri Ay",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "João Mário",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 82
+        },
+        {
+          "name": "Junior Olaitan",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Leandro Trossard",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 84
+        },
+        {
+          "name": "İlhan Fakılı",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Arda Kılıç",
+          "position": "LW",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Ozan Sevim",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vaclav Cerny",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Milot Rashica",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Can Keleş",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Dušan Vlahović",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 86
+        },
+        {
+          "name": "Hyeon-gyu Oh",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Semih Kılıçsoy",
+          "position": "ST",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Mustafa Hekimoğlu",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ahmet Sami Bircan",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 83
+      },
+      "source": "Transfermarkt — Besiktas (2026/2027)",
+      "teamLabel": "Besiktas (2026-27)"
     }
   },
   "id": 114,

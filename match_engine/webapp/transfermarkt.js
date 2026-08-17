@@ -1075,8 +1075,15 @@ async function fetchTransfermarktSquad(teamName, era) {
   $table.find('tr.odd, tr.even').each((_, row) => {
     const $row = $(row);
 
-    // Position from title attribute of jersey-number cell
-    const posTitle = $row.find('td.zentriert').first().attr('title') || '';
+    // Position — prefer the fine-grained role from the inline detail table
+    // ("Defensa central" → CB, "Lateral derecho" → RB, "Extremo izquierdo" → LW,
+    // "Pivote" → DM, "Mediocentro ofensivo" → AM…). The jersey-number cell's
+    // title attribute only carries the coarse line ("Portero/Defensa/Centrocampo/
+    // Delantero"), which collapses full-backs, wingers and pivots into CB/CM/ST
+    // and degrades the engine's XI + formation detection. Fall back to the coarse
+    // title only when the inline table is absent.
+    const finePos  = $row.find('table.inline-table tr').eq(1).find('td').first().text().trim();
+    const posTitle = finePos || $row.find('td.zentriert').first().attr('title') || '';
     const position = mapTmPos(posTitle);
     if (!position) return;
 

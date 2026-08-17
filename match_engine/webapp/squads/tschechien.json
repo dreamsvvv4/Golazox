@@ -113,7 +113,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 78
+      }
     },
     "1938": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1954": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1958": {
       "players": [
@@ -455,7 +473,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "1962": {
       "players": [
@@ -569,7 +593,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1970": {
       "players": [
@@ -683,7 +713,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1982": {
       "players": [
@@ -797,7 +833,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1990": {
       "players": [
@@ -911,7 +953,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1994": {
       "formation": "4-4-2",
@@ -1053,10 +1101,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 80,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (1994/1995)",
       "teamLabel": "czech republic (1994-95)"
@@ -1276,10 +1324,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 80,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (1996/1997)",
       "teamLabel": "czech republic (1996-97)"
@@ -1454,10 +1502,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 80,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (1998/1999)",
       "teamLabel": "czech republic (1998-99)"
@@ -1692,10 +1740,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 80,
+        "midfield": 83,
+        "defense": 78,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2000/2001)",
       "teamLabel": "czech republic (2000-01)"
@@ -1900,10 +1948,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 80,
+        "midfield": 83,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2002/2003)",
       "teamLabel": "czech republic (2002-03)"
@@ -2078,10 +2126,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 80,
+        "midfield": 83,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2004/2005)",
       "teamLabel": "czech republic (2004-05)"
@@ -2281,10 +2329,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 80,
+        "midfield": 83,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2006/2007)",
       "teamLabel": "czech republic (2006-07)"
@@ -2494,10 +2542,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 79,
+        "midfield": 78,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2008/2009)",
       "teamLabel": "czech republic (2008-09)"
@@ -2707,10 +2755,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 79,
+        "midfield": 80,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2010/2011)",
       "teamLabel": "czech republic (2010-11)"
@@ -2910,10 +2958,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 79,
+        "midfield": 80,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2012/2013)",
       "teamLabel": "czech republic (2012-13)"
@@ -3143,10 +3191,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 79,
+        "midfield": 80,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2014/2015)",
       "teamLabel": "czech republic (2014-15)"
@@ -3401,10 +3449,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
+        "attack": 79,
+        "midfield": 80,
         "defense": 80,
-        "goalkeeping": 76
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2016/2017)",
       "teamLabel": "czech republic (2016-17)"
@@ -3629,10 +3677,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2018/2019)",
       "teamLabel": "czech republic (2018-19)"
@@ -3932,10 +3980,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2020/2021)",
       "teamLabel": "czech republic (2020-21)"
@@ -4180,10 +4228,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 79,
+        "midfield": 79,
+        "defense": 79,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2022/2023)",
       "teamLabel": "czech republic (2022-23)"
@@ -4469,10 +4517,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 74,
-        "defense": 80,
-        "goalkeeping": 76
+        "attack": 82,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” czech republic (2025/2026)",
       "teamLabel": "czech republic (2025-26)"

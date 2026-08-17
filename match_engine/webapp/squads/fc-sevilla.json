@@ -176,10 +176,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 72,
-        "defense": 63,
-        "goalkeeping": 63
+        "attack": 78,
+        "midfield": 80,
+        "defense": 76,
+        "goalkeeping": 80
       },
       "source": "BDFutbol <\r Otros�\u001d Sevilla 1997-98 Segunda División",
       "teamLabel": "Sevilla 1997-98 Segunda División"
@@ -341,7 +341,7 @@
       "ratings": {
         "attack": 78,
         "midfield": 76,
-        "defense": 76,
+        "defense": 79,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Sevilla (2006/2007)",
@@ -542,7 +542,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 79,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -948,9 +948,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 81,
+        "midfield": 80,
+        "defense": 78,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Sevilla (2020/2021)",
@@ -1213,10 +1213,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 84,
+        "attack": 83,
+        "midfield": 85,
         "defense": 82,
-        "goalkeeping": 77
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Sevilla (2022/2023)",
       "teamLabel": "Sevilla (2022-23)"
@@ -1520,10 +1520,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 83,
         "midfield": 84,
         "defense": 85,
-        "goalkeeping": 77
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Sevilla (2023/2024)",
       "teamLabel": "Sevilla (2023-24)"
@@ -1702,12 +1702,163 @@
       ],
       "ratings": {
         "attack": 83,
-        "midfield": 81,
-        "defense": 83,
-        "goalkeeping": 76
+        "midfield": 83,
+        "defense": 80,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” Sevilla (2025/2026)",
       "teamLabel": "Sevilla (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Odysseas Vlachodimos",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Fran González",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kike Salas",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Arouna Sangante",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Andrés Castrín",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Marcão",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Fábio Cardoso",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Oso",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Gabriel Suazo",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Adrià Pedrosa",
+          "position": "LB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Julio Díaz",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "José Ángel Carmona",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Juan Iglesias",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lucien Agoumé",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Jon Guridi",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Manu Bueno",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Rubén Vargas",
+          "position": "LW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Chidera Ejuke",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alfon González",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Miguel Sierra",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Peque Fernández",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Robbie Ure",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Isaac Romero",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 82,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — Sevilla (2026/2027)",
+      "teamLabel": "Sevilla (2026-27)"
     }
   },
   "id": 368,

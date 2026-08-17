@@ -115,7 +115,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -178,9 +184,9 @@
       ],
       "ratings": {
         "attack": 73,
-        "midfield": 70,
-        "defense": 68,
-        "goalkeeping": 65
+        "midfield": 71,
+        "defense": 70,
+        "goalkeeping": 68
       },
       "source": "Haiti NT 🌍 Otros€” CONCACAF Nations League 2024-25",
       "teamLabel": "Haiti (2025)"

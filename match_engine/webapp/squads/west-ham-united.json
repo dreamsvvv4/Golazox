@@ -81,10 +81,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 80
+        "attack": 83,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 82
       }
     },
     "2021": {
@@ -277,10 +277,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 76,
-        "defense": 75,
-        "goalkeeping": 74
+        "attack": 82,
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” West Ham United (2021/2022)",
       "teamLabel": "West Ham United (2021-22)"
@@ -510,10 +510,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 76,
-        "defense": 75,
-        "goalkeeping": 74
+        "attack": 82,
+        "midfield": 82,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” West Ham United (2022/2023)",
       "teamLabel": "West Ham United (2022-23)"
@@ -703,10 +703,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
-        "midfield": 74,
-        "defense": 74,
-        "goalkeeping": 73
+        "attack": 82,
+        "midfield": 81,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” West Ham United (2023/2024)",
       "teamLabel": "West Ham United (2023-24)"
@@ -861,10 +861,10 @@
         }
       ],
       "ratings": {
-        "attack": 74,
-        "midfield": 74,
-        "defense": 73,
-        "goalkeeping": 73
+        "attack": 83,
+        "midfield": 81,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” West Ham United (2024/2025)",
       "teamLabel": "West Ham United (2024-25)"
@@ -994,13 +994,194 @@
         }
       ],
       "ratings": {
-        "attack": 74,
-        "midfield": 73,
-        "defense": 73,
-        "goalkeeping": 73
+        "attack": 81,
+        "midfield": 79,
+        "defense": 83,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” West Ham United (2025/2026)",
       "teamLabel": "West Ham United (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mads Hermansen",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Alphonse Areola",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Finlay Herrick",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jean-Clair Todibo",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Konstantinos Mavropanos",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Maximilian Kilman",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Ezra Mayers",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Kaelan Casey",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "El Hadji Malick Diouf",
+          "position": "LB",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Oliver Scarles",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Aaron Wan-Bissaka",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Kyle Walker-Peters",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 82
+        },
+        {
+          "name": "Joël Veltman",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Soungoutou Magassa",
+          "position": "DM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Edson Álvarez",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Tomáš Souček",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mohamadou Kanté",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Arne Engels",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "James Ward-Prowse",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lewis Orford",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "George Earthy",
+          "position": "AM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Manor Solomon",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Maxwel Cornet",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Keiber Lamadrid",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jarrod Bowen",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Taty Castellanos",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Pablo",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Niclas Füllkrug",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 83
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 84
+      },
+      "source": "Transfermarkt — West Ham United (2026/2027)",
+      "teamLabel": "West Ham United (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/west-ham-united.png",

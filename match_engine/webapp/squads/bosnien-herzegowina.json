@@ -118,7 +118,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -353,10 +359,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 83,
         "midfield": 79,
         "defense": 82,
-        "goalkeeping": 74
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” bosnia (2025/2026)",
       "teamLabel": "bosnia (2025-26)"

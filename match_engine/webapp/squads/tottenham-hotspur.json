@@ -78,8 +78,8 @@
       "source": "Tottenham Hotspur 🌍 Otros€” Double 1960-61 (Blanchflower/Mackay, primero en s. XX)",
       "teamLabel": "Tottenham Hotspur (1960-61)",
       "ratings": {
-        "attack": 84,
-        "midfield": 89,
+        "attack": 85,
+        "midfield": 87,
         "defense": 81,
         "goalkeeping": 82
       }
@@ -156,9 +156,9 @@
       "source": "Tottenham Hotspur 🌍 Otros€” European Cup Winners' Cup 1962-63 (Greaves, Blanchflower)",
       "teamLabel": "Tottenham Hotspur (1962-63)",
       "ratings": {
-        "attack": 87,
-        "midfield": 89,
-        "defense": 82,
+        "attack": 85,
+        "midfield": 84,
+        "defense": 84,
         "goalkeeping": 83
       }
     },
@@ -371,10 +371,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 83
+        "attack": 87,
+        "midfield": 86,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2017/2018)",
       "teamLabel": "Tottenham Hotspur (2017-18)"
@@ -588,10 +588,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 84
+        "attack": 87,
+        "midfield": 86,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2018/2019)",
       "teamLabel": "Tottenham Hotspur (2018-19)"
@@ -817,10 +817,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 85,
-        "defense": 83,
-        "goalkeeping": 83
+        "attack": 88,
+        "midfield": 88,
+        "defense": 85,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2019/2020)",
       "teamLabel": "Tottenham Hotspur (2019-20)"
@@ -1055,10 +1055,10 @@
         }
       ],
       "ratings": {
-        "attack": 77,
-        "midfield": 76,
-        "defense": 75,
-        "goalkeeping": 75
+        "attack": 85,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2021/2022)",
       "teamLabel": "Tottenham Hotspur (2021-22)"
@@ -1238,10 +1238,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 80,
-        "defense": 79,
-        "goalkeeping": 78
+        "attack": 85,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2022/2023)",
       "teamLabel": "Tottenham Hotspur (2022-23)"
@@ -1456,10 +1456,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 79,
-        "defense": 78,
-        "goalkeeping": 78
+        "attack": 85,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2023/2024)",
       "teamLabel": "Tottenham Hotspur (2023-24)"
@@ -1674,10 +1674,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 78,
-        "defense": 77,
-        "goalkeeping": 77
+        "attack": 85,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2024/2025)",
       "teamLabel": "Tottenham Hotspur (2024-25)"
@@ -1827,13 +1827,212 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 81,
-        "defense": 78,
-        "goalkeeping": 79
+        "attack": 85,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Tottenham Hotspur (2025/2026)",
       "teamLabel": "Tottenham Hotspur (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Guglielmo Vicario",
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Antonín Kinský",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Martin Dúbravka",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Brandon Austin",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Marcos Senesi",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Kevin Danso",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Micky van de Ven",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 84
+        },
+        {
+          "name": "Kota Takai",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ben Davies",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Andrew Robertson",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 86
+        },
+        {
+          "name": "Destiny Udogie",
+          "position": "LB",
+          "marketValue": 30000000,
+          "rating": 85
+        },
+        {
+          "name": "Souza",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Pedro Porro",
+          "position": "RB",
+          "marketValue": 45000000,
+          "rating": 87
+        },
+        {
+          "name": "Archie Gray",
+          "position": "DM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Sandro Tonali",
+          "position": "DM",
+          "marketValue": 80000000,
+          "rating": 85
+        },
+        {
+          "name": "Rodrigo Bentancur",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 83
+        },
+        {
+          "name": "Mateus Fernandes",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Lucas Bergvall",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Pape Matar Sarr",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Conor Gallagher",
+          "position": "CM",
+          "marketValue": 32000000,
+          "rating": 83
+        },
+        {
+          "name": "Xavi Simons",
+          "position": "AM",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "James Maddison",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Dejan Kulusevski",
+          "position": "AM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Mathys Tel",
+          "position": "LW",
+          "marketValue": 22000000,
+          "rating": 85
+        },
+        {
+          "name": "Wilson Odobert",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Mikey Moore",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Mohammed Kudus",
+          "position": "RW",
+          "marketValue": 50000000,
+          "rating": 87
+        },
+        {
+          "name": "Richarlison",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Dominic Solanke",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 82
+        },
+        {
+          "name": "Dane Scarlett",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 88,
+        "defense": 87,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Tottenham Hotspur (2026/2027)",
+      "teamLabel": "Tottenham Hotspur (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/tottenham-hotspur.png",

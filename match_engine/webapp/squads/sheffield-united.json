@@ -226,8 +226,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 81,
+        "midfield": 81,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -424,7 +424,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -599,6 +599,181 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Sheffield United (2025/2026)",
       "teamLabel": "Sheffield United (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Michael Cooper",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ivo Grbic",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Adam Davies",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Mark McGuinness",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Japhet Tanganga",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Nils Zätterström",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Harrison Burrows",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Rhys Norrington-Davies",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sam McCallum",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Femi Seriki",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Matt Doherty",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jamie Shackleton",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sam Curtis",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Kalvin Phillips",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jaïro Riedewald",
+          "position": "DM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Sydie Peck",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Oliver Arblaster",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Joe Rothwell",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Callum O'Hare",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tahith Chong",
+          "position": "AM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Romelle Donovan",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ehije Ukaki",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Louie Marsh",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Tom Cannon",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Tyrese Campbell",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Patrick Bamford",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ryan Oné",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 79,
+        "defense": 81,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Sheffield United (2026/2027)",
+      "teamLabel": "Sheffield United (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/sheffield-united.png",

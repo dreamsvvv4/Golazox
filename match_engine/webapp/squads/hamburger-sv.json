@@ -73,10 +73,10 @@
       "source": "Hamburger SV 🌍 Otros€” Bundesliga 1975-76 (Keegan debut era, Kaltz)",
       "teamLabel": "Hamburger SV (1975-76)",
       "ratings": {
-        "attack": 84,
-        "midfield": 85,
+        "attack": 83,
+        "midfield": 84,
         "defense": 82,
-        "goalkeeping": 81
+        "goalkeeping": 82
       }
     },
     "1983": {
@@ -151,10 +151,10 @@
       "source": "Hamburger SV <\r Otros�\u001d European Cup 1982-83 (único club alemán campeón con Magath, Allofs)",
       "teamLabel": "Hamburger SV (1982-83)",
       "ratings": {
-        "attack": 88,
+        "attack": 83,
         "midfield": 83,
         "defense": 84,
-        "goalkeeping": 82
+        "goalkeeping": 84
       }
     },
     "2025": {
@@ -267,13 +267,200 @@
         }
       ],
       "ratings": {
-        "attack": 70,
-        "midfield": 70,
-        "defense": 68,
-        "goalkeeping": 68
+        "attack": 75,
+        "midfield": 73,
+        "defense": 75,
+        "goalkeeping": 76
       },
       "source": "Transfermarkt 🌍 Otros€” Hamburger SV (2025/2026)",
       "teamLabel": "Hamburger SV (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sander Tangvik",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Daniel Heuer Fernandes",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fernando Dickes",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Elias Lahti",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nicolás Capaldo",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Warmed Omari",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jordan Torunarigha",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Daniel Elfadli",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Shafiq Nandja",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Joel Agyekum",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Miro Muheim",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Louis Lemke",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Nicolai Remberg",
+          "position": "DM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Kofi Amoako",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Albert Sambi Lokonga",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Bilal Nadir",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Martin Adeline",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Albert Grønbaek",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Immanuel Pherai",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Mads Bröcker",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alexander Røssing-Lelesiit",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jean-Luc Dompé",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Finn Barkowsky",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rayan Philippe",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Emir Sahiti",
+          "position": "RW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Bakery Jatta",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Otto Stange",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Patson Daka",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yussuf Poulsen",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 78
+      },
+      "source": "Transfermarkt — Hamburger SV (2026/2027)",
+      "teamLabel": "Hamburger SV (2026-27)"
     }
   },
   "id": 41,

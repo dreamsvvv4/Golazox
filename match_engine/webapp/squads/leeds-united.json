@@ -78,10 +78,10 @@
       "source": "Leeds United <\r Otros�\u001d Primera División inglesa 1968-69 (Don Revie, Bremner, Giles)",
       "teamLabel": "Leeds United (1968-69)",
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 85,
-        "goalkeeping": 83
+        "attack": 86,
+        "midfield": 88,
+        "defense": 84,
+        "goalkeeping": 82
       }
     },
     "1974": {
@@ -161,9 +161,9 @@
       "source": "Leeds United <\r Otros�\u001d Primera División inglesa 1973-74 (Don Revie, último título)",
       "teamLabel": "Leeds United (1973-74)",
       "ratings": {
-        "attack": 85,
-        "midfield": 86,
-        "defense": 85,
+        "attack": 86,
+        "midfield": 87,
+        "defense": 84,
         "goalkeeping": 83
       }
     },
@@ -347,7 +347,7 @@
         }
       ],
       "ratings": {
-        "attack": 84,
+        "attack": 83,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -595,7 +595,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -803,7 +803,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -966,7 +966,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -1109,13 +1109,182 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Leeds United (2025/2026)",
       "teamLabel": "Leeds United (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lucas Perri",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "James Trafford",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 79
+        },
+        {
+          "name": "Alex Cairns",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Tarik Muharemović",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Jaka Bijol",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Joe Rodon",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Sebastiaan Bornauw",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Gabriel Gudmundsson",
+          "position": "LB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Sam Byram",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jayden Bogle",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "James Justin",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Ethan Ampadu",
+          "position": "DM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Anton Stach",
+          "position": "DM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Ilia Gruev",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Sean Longstaff",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ao Tanaka",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Brenden Aaronson",
+          "position": "AM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Noah Okafor",
+          "position": "LW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Largie Ramazani",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Harry Wilson",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Wilfried Gnonto",
+          "position": "RW",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Daniel James",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Dominic Calvert-Lewin",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Joël Piroe",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lukas Nmecha",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mateo Joseph",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Leeds United (2026/2027)",
+      "teamLabel": "Leeds United (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/leeds-united.png",

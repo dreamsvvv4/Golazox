@@ -81,10 +81,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 84,
+        "attack": 82,
+        "midfield": 82,
         "defense": 82,
-        "goalkeeping": 81
+        "goalkeeping": 82
       }
     },
     "1993": {
@@ -167,10 +167,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 84,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 85,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 90
       }
     },
     "2021": {
@@ -490,10 +490,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 82,
         "midfield": 81,
-        "defense": 83,
-        "goalkeeping": 72
+        "defense": 82,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2021/2022)",
       "teamLabel": "Rangers (2021-22)"
@@ -793,8 +793,8 @@
       "ratings": {
         "attack": 81,
         "midfield": 81,
-        "defense": 81,
-        "goalkeeping": 71
+        "defense": 80,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2022/2023)",
       "teamLabel": "Rangers (2022-23)"
@@ -966,13 +966,194 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 70
+        "defense": 79,
+        "goalkeeping": 75
       },
       "source": "Transfermarkt 🌍 Otros€” Rangers (2025/2026)",
       "teamLabel": "Rangers (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ivor Pandur",
+          "position": "GK",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Liam Kelly",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Emmanuel Fernandez",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ben Godfrey",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "John Souttar",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Olwethu Makhanya",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Clinton Nsiala",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tuur Rommens",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "James Penrice",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ross McCrorie",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dujon Sterling",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicolas Raskin",
+          "position": "DM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Vanja Dragojevic",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Tochi Chukwuani",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Connor Barron",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Dan Neil",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "José Cifuentes",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Cammy Devlin",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Lyall Cameron",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Thelo Aasgaard",
+          "position": "AM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Djeidi Gassama",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Findlay Curtis",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daisuke Yokota",
+          "position": "RW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Ross McCausland",
+          "position": "RW",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Youssef Chermiti",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ryan Naderi",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Lawrence Shankland",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Bojan Miovski",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 81,
+        "defense": 81,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — Rangers (2026/2027)",
+      "teamLabel": "Rangers (2026-27)"
     }
   },
   "id": 124,

@@ -212,8 +212,8 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "midfield": 83,
+        "defense": 82,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (1996/1997)",
@@ -394,10 +394,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 84
+        "attack": 82,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (1997/1998)",
       "teamLabel": "Borussia Dortmund (1997-98)"
@@ -557,10 +557,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 84,
-        "goalkeeping": 83
+        "attack": 84,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2011/2012)",
       "teamLabel": "Borussia Dortmund (2011-12)"
@@ -725,10 +725,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 85,
-        "goalkeeping": 83
+        "attack": 85,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2012/2013)",
       "teamLabel": "Borussia Dortmund (2012-13)"
@@ -924,10 +924,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
+        "attack": 87,
         "midfield": 86,
-        "defense": 85,
-        "goalkeeping": 71
+        "defense": 84,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt — Borussia Dortmund (2013/2014)",
       "teamLabel": "Borussia Dortmund (2013-14)"
@@ -1159,9 +1159,9 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 85,
-        "defense": 82,
+        "attack": 87,
+        "midfield": 86,
+        "defense": 86,
         "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2019/2020)",
@@ -1436,10 +1436,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
+        "attack": 87,
         "midfield": 87,
-        "defense": 85,
-        "goalkeeping": 79
+        "defense": 84,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2021/2022)",
       "teamLabel": "Borussia Dortmund (2021-22)"
@@ -1671,10 +1671,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
+        "attack": 88,
         "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 76
+        "defense": 85,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2022/2023)",
       "teamLabel": "Borussia Dortmund (2022-23)"
@@ -1900,10 +1900,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
+        "attack": 85,
         "midfield": 84,
-        "defense": 82,
-        "goalkeeping": 82
+        "defense": 85,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2023/2024)",
       "teamLabel": "Borussia Dortmund (2023-24)"
@@ -2171,10 +2171,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 81,
-        "goalkeeping": 81
+        "attack": 86,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2024/2025)",
       "teamLabel": "Borussia Dortmund (2024-25)"
@@ -2340,13 +2340,188 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 81,
-        "goalkeeping": 81
+        "attack": 85,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Borussia Dortmund (2025/2026)",
       "teamLabel": "Borussia Dortmund (2025-26)"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Gregor Kobel",
+          "position": "GK",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "Diant Ramaj",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Alexander Meyer",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Patrick Drewes",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Silas Ostrzinski",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Nico Schlotterbeck",
+          "position": "CB",
+          "marketValue": 55000000,
+          "rating": 85
+        },
+        {
+          "name": "Joane Gadou",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Waldemar Anton",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Luca Reggiani",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ramy Bensebaini",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Emre Can",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Filippo Mane",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Daniel Svensson",
+          "position": "LB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Kauã Prates",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Julian Ryerson",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Mussa Kaba",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Felix Nmecha",
+          "position": "CM",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Jobe Bellingham",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Carney Chukwuemeka",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Marcel Sabitzer",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Konstantinos Karetsas",
+          "position": "AM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Justin Lerma",
+          "position": "AM",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Mathis Albert",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Samuele Inácio",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Fábio Silva",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Serhou Guirassy",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 84
+        },
+        {
+          "name": "Maximilian Beier",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 83
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 87,
+        "defense": 85,
+        "goalkeeping": 86
+      },
+      "source": "Transfermarkt — Borussia Dortmund (2026/2027)",
+      "teamLabel": "Borussia Dortmund (2026-27)"
     }
   },
   "id": 16,

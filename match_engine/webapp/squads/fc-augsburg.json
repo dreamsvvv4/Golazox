@@ -151,13 +151,194 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Augsburg (2025/2026)",
       "teamLabel": "Augsburg (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Finn Dahmen",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Nediljko Labrovic",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tom Wisbereit",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Chrislain Matsima",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Noahkai Banks",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Keven Schlotterbeck",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Calvin Brackelmann",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jeffrey Gouweleeuw",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Hennes Behrens",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Mads Pedersen",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Marius Wolf",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Kristijan Jakic",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Robin Fellhauer",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Yannik Keitel",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tim Breithaupt",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Han-Noah Massengo",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Sima Suso",
+          "position": "CM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Alexis Claude-Maurice",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Fabian Rieder",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Mert Kömür",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Anton Kade",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Nathanaël Mbuku",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Faik Sakar",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Rodrigo Ribeiro",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Uchenna Ogundu",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Michael Gregoritsch",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Steve Mounié",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Thomas Kastanaras",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 83
+      },
+      "source": "Transfermarkt — Augsburg (2026/2027)",
+      "teamLabel": "Augsburg (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/fc-augsburg.png",

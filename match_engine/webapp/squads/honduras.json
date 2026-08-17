@@ -113,7 +113,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 80,
+        "goalkeeping": 86
+      }
     },
     "2010": {
       "players": [
@@ -232,7 +238,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2014": {
       "players": [
@@ -351,7 +363,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -640,10 +658,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 73,
-        "defense": 72,
-        "goalkeeping": 67
+        "attack": 74,
+        "midfield": 71,
+        "defense": 71,
+        "goalkeeping": 69
       },
       "source": "Transfermarkt 🌍 Otros€” honduras (2025/2026)",
       "teamLabel": "honduras (2025-26)"

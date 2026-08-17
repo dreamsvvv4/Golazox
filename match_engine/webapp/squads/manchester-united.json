@@ -83,10 +83,10 @@
       "source": "Manchester United 🌍 Otros€” European Cup winners 1967-68 (Busby, Best, Charlton, Law)",
       "teamLabel": "Manchester United (1967-68)",
       "ratings": {
-        "attack": 88,
-        "midfield": 84,
+        "attack": 86,
+        "midfield": 87,
         "defense": 82,
-        "goalkeeping": 82
+        "goalkeeping": 83
       }
     },
     "1985": {
@@ -169,7 +169,7 @@
         "attack": 84,
         "midfield": 85,
         "defense": 81,
-        "goalkeeping": 80
+        "goalkeeping": 81
       }
     },
     "1994": {
@@ -375,9 +375,9 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 86,
+        "attack": 87,
+        "midfield": 88,
+        "defense": 85,
         "goalkeeping": 91
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (1994/1995)",
@@ -642,8 +642,8 @@
       "ratings": {
         "attack": 87,
         "midfield": 88,
-        "defense": 86,
-        "goalkeeping": 90
+        "defense": 85,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (1998/1999)",
       "teamLabel": "Manchester United (1998-99)"
@@ -899,10 +899,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 89,
-        "defense": 87,
-        "goalkeeping": 91
+        "attack": 87,
+        "midfield": 88,
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (1999/2000)",
       "teamLabel": "Manchester United (1999-00)"
@@ -1116,10 +1116,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 85,
-        "goalkeeping": 87
+        "attack": 88,
+        "midfield": 88,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (2002/2003)",
       "teamLabel": "Manchester United (2002-03)"
@@ -1206,10 +1206,10 @@
       "source": "Manchester United 🌍 Otros€” Premier League 2002-03 (Fergie, Keane, van Nistelrooy era)",
       "teamLabel": "Manchester United (2002-03)",
       "ratings": {
-        "attack": 88,
-        "midfield": 86,
-        "defense": 83,
-        "goalkeeping": 83
+        "attack": 91,
+        "midfield": 91,
+        "defense": 82,
+        "goalkeeping": 82
       }
     },
     "2007": {
@@ -1445,10 +1445,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 88,
+        "attack": 91,
+        "midfield": 90,
         "defense": 87,
-        "goalkeeping": 83
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (2007/2008)",
       "teamLabel": "Manchester United (2007-08)"
@@ -1712,8 +1712,8 @@
       "ratings": {
         "attack": 91,
         "midfield": 89,
-        "defense": 88,
-        "goalkeeping": 84
+        "defense": 87,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (2008/2009)",
       "teamLabel": "Manchester United (2008-09)"
@@ -1957,10 +1957,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 87,
-        "defense": 87,
-        "goalkeeping": 78
+        "attack": 91,
+        "midfield": 91,
+        "defense": 89,
+        "goalkeeping": 93
       },
       "source": "Transfermarkt — Manchester United (2009/2010)",
       "teamLabel": "Manchester United (2009-10)"
@@ -2216,10 +2216,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 87,
-        "defense": 87,
-        "goalkeeping": 78
+        "attack": 91,
+        "midfield": 91,
+        "defense": 90,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt — Manchester United (2011/2012)",
       "teamLabel": "Manchester United (2011-12)"
@@ -2385,13 +2385,206 @@
         }
       ],
       "ratings": {
-        "attack": 77,
-        "midfield": 76,
-        "defense": 74,
-        "goalkeeping": 75
+        "attack": 88,
+        "midfield": 85,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester United (2025/2026)",
       "teamLabel": "Manchester United (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Senne Lammens",
+          "position": "GK",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Karl Darlow",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Tom Heaton",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Dermot Mee",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Leny Yoro",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Lisandro Martínez",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Matthijs de Ligt",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Ayden Heaven",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Harry Maguire",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 81
+        },
+        {
+          "name": "Patrick Dorgu",
+          "position": "LB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Luke Shaw",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Harry Amass",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Diogo Dalot",
+          "position": "RB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Noussair Mazraoui",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 87
+        },
+        {
+          "name": "Andrey Santos",
+          "position": "DM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Manuel Ugarte",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Toby Collyer",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Youri Tielemans",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Kobbie Mainoo",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 83
+        },
+        {
+          "name": "Tyler Fletcher",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bruno Fernandes",
+          "position": "AM",
+          "marketValue": 35000000,
+          "rating": 88
+        },
+        {
+          "name": "Mason Mount",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jack Fletcher",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "Bryan Mbeumo",
+          "position": "RW",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Amad Diallo",
+          "position": "RW",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Shea Lacey",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Matheus Cunha",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Benjamin Sesko",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 86
+        },
+        {
+          "name": "Joshua Zirkzee",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 85,
+        "defense": 88,
+        "goalkeeping": 87
+      },
+      "source": "Transfermarkt — Manchester United (2026/2027)",
+      "teamLabel": "Manchester United (2026-27)"
     }
   },
   "id": 985,

@@ -118,7 +118,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 81,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -237,7 +243,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 81,
+        "goalkeeping": 81
+      }
     },
     "2018": {
       "players": [
@@ -356,7 +368,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 81
+      }
     },
     "2022": {
       "players": [
@@ -475,7 +493,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -783,9 +807,9 @@
       ],
       "ratings": {
         "attack": 83,
-        "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 80
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” serbia (2025/2026)",
       "teamLabel": "serbia (2025-26)"

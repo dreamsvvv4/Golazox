@@ -138,11 +138,204 @@
       "ratings": {
         "attack": 81,
         "midfield": 79,
-        "defense": 80,
-        "goalkeeping": 77
+        "defense": 81,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Bournemouth (2025/2026)",
       "teamLabel": "Bournemouth (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Djordje Petrovic",
+          "position": "GK",
+          "marketValue": 28000000,
+          "rating": 83
+        },
+        {
+          "name": "Fraser Forster",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Will Dennis",
+          "position": "GK",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "António Silva",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Bafodé Diakité",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "James Hill",
+          "position": "CB",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Veljko Milosavljevic",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Matai Akinmboni",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Adrien Truffert",
+          "position": "LB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Julio Soler",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Juanlu Sánchez",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Julián Araujo",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 79
+        },
+        {
+          "name": "Max Aarons",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Adam Smith",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Tyler Adams",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Ben Winterburn",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Alex Tóth",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Lewis Cook",
+          "position": "CM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Ryan Christie",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Alex Scott",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 78
+        },
+        {
+          "name": "Marcus Tavernier",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Justin Kluivert",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Amine Adli",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 83
+        },
+        {
+          "name": "Rayan",
+          "position": "RW",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Ben Gannon-Doak",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "David Brooks",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Junior Kroupi",
+          "position": "ST",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Evanilson",
+          "position": "ST",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Álvaro Rodríguez",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Daniel Jebbison",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 83
+      },
+      "source": "Transfermarkt — Bournemouth (2026/2027)",
+      "teamLabel": "Bournemouth (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/afc-bournemouth.png",

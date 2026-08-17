@@ -118,7 +118,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -237,7 +243,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -454,10 +466,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
+        "attack": 79,
         "midfield": 80,
-        "defense": 79,
-        "goalkeeping": 76
+        "defense": 80,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” slovenia (2025/2026)",
       "teamLabel": "slovenia (2025-26)"

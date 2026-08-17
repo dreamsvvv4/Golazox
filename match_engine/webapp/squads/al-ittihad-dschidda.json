@@ -196,9 +196,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 81,
+        "midfield": 78,
+        "defense": 80,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Al-Ittihad (2023/2024)",
@@ -364,13 +364,254 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 80,
+        "midfield": 80,
         "defense": 76,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Al-Ittihad (2025/2026)",
       "teamLabel": "Al-Ittihad (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Predrag Rajković",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Mohammed Al-Absi",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Osama Al-Mermesh",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Jan-Carlo Simić",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Danilo Pereira",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Saad Al-Mousa",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ahmed Sharahili",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Stephane Keller",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mohammed Barnawi",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Faris Abdi",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Muath Faqihi",
+          "position": "LB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Hassan Kadesh",
+          "position": "LB",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Isaías Rodríguez",
+          "position": "LB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Muhannad Al-Shanqeeti",
+          "position": "RB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Julaydan",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Fawaz Al-Sqoor",
+          "position": "RB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Dion Lopy",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mukhtar Ali",
+          "position": "DM",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Rakan Kaabi",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mohammed Fallatah",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Mateo Borrell",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Mahamadou Doumbia",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Bryant Ortega",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Abdalellah Hawsawi",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Hamed Al-Ghamdi",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Kassoum Koné",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Houssem Aouar",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Farhah Al-Shamrani",
+          "position": "AM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Steven Bergwijn",
+          "position": "LW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Marwan Al-Sahafi",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ahmed Al-Ghamdi",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Moussa Diaby",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Roger Fernandes",
+          "position": "RW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Abdulrahman Al-Oboud",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Youssef En-Nesyri",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 82
+        },
+        {
+          "name": "George Ilenikhena",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Talal Haji",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Saleh Al-Shehri",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 81
+      },
+      "source": "Transfermarkt — Al-Ittihad (2026/2027)",
+      "teamLabel": "Al-Ittihad (2026-27)"
     }
   },
   "id": 8023,

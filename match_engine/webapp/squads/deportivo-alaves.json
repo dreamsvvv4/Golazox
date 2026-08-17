@@ -141,10 +141,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 75,
-        "defense": 70,
-        "goalkeeping": 73
+        "attack": 78,
+        "midfield": 79,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "BDFutbol <\r Otros�\u001d Alavés 2001-02 Primera División",
       "teamLabel": "Alavés 2001-02 Primera División"
@@ -309,10 +309,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 75,
-        "defense": 70,
-        "goalkeeping": 73
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "BDFutbol <\r Otros�\u001d Alavés 2018-19 Primera División",
       "teamLabel": "Alavés 2018-19 Primera División"
@@ -466,13 +466,188 @@
         }
       ],
       "ratings": {
-        "attack": 77,
+        "attack": 79,
         "midfield": 79,
         "defense": 79,
-        "goalkeeping": 74
+        "goalkeeping": 80
       },
       "source": "Transfermarkt <\r Otros�\u001d Alavés (2025/2026)",
       "teamLabel": "Alavés (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Antonio Sivera",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jesús Owono",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Adrián Rodríguez",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Nicolás Valentini",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Moussa Diarra",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ville Koski",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Facundo Garcés",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Youssef Enríquez",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Nahuel Tenaglia",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jonny Otto",
+          "position": "RB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Hugo Novoa",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Antonio Blanco",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Carlos Protesoni",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tomás Mendes",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Pablo Ibáñez",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Carles Aleñá",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ander Guevara",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mikel Rodriguez",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Selu Diallo",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Denis Suárez",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Abde Rebbach",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Miguel Rodríguez",
+          "position": "RW",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Ángel Pérez",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Toni Martínez",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Lucas Boyé",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Aitor Mañas",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mariano Díaz",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 80,
+        "defense": 78,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Alavés (2026/2027)",
+      "teamLabel": "Alavés (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/deportivo-alaves.png",

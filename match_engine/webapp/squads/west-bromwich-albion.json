@@ -111,13 +111,158 @@
         }
       ],
       "ratings": {
-        "attack": 67,
-        "midfield": 67,
-        "defense": 66,
-        "goalkeeping": 64
+        "attack": 73,
+        "midfield": 72,
+        "defense": 74,
+        "goalkeeping": 74
       },
       "source": "Transfermarkt 🌍 Otros€” West Bromwich Albion (2025/2026)",
       "teamLabel": "West Brom (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Max O'Leary",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Matt Ingram",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Chris Mepham",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Nat Phillips",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Krystian Bielik",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "George Campbell",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Callum Styles",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Conor Townsend",
+          "position": "LB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Nolan Galves",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Alex Williams",
+          "position": "RB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Rabby Nzingoula",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ousmane Diakité",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Isaac Price",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Felix Horn Myhre",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Jayson Molumby",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Harry Whitwell",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mikey Johnston",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ollie Bostock",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Aune Heggebø",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Barney Stewart",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jimmy-Jay Morgan",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Tammer Bany",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — WBA (2026/2027)",
+      "teamLabel": "WBA (2026-27)"
     }
   },
   "id": 984,

@@ -81,10 +81,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 82,
+        "attack": 82,
+        "midfield": 83,
         "defense": 81,
-        "goalkeeping": 81
+        "goalkeeping": 82
       }
     },
     "1982": {
@@ -242,10 +242,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 82,
-        "goalkeeping": 82
+        "attack": 81,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Aston Villa (1982/1983)",
       "teamLabel": "Aston Villa (1982-83)"
@@ -483,10 +483,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 73,
-        "defense": 72,
-        "goalkeeping": 71
+        "attack": 84,
+        "midfield": 83,
+        "defense": 84,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Aston Villa (2019/2020)",
       "teamLabel": "Aston Villa (2019-20)"
@@ -742,10 +742,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 81,
-        "goalkeeping": 81
+        "attack": 85,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Aston Villa (2024/2025)",
       "teamLabel": "Aston Villa (2024-25)"
@@ -905,13 +905,176 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 83,
-        "defense": 82,
-        "goalkeeping": 82
+        "attack": 85,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Aston Villa (2025/2026)",
       "teamLabel": "Aston Villa (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Emiliano Martínez",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 86
+        },
+        {
+          "name": "Marco Bizot",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Pau Torres",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Ezri Konsa",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 83
+        },
+        {
+          "name": "Modou Kéba Cissé",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Victor Lindelöf",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tyrone Mings",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ian Maatsen",
+          "position": "LB",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Matty Cash",
+          "position": "RB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Kosta Nedeljkovic",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 82
+        },
+        {
+          "name": "Boubacar Kamara",
+          "position": "DM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Amadou Onana",
+          "position": "DM",
+          "marketValue": 45000000,
+          "rating": 86
+        },
+        {
+          "name": "Lamare Bogarde",
+          "position": "DM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "João Gomes",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "John McGinn",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Ross Barkley",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "George Hemmings",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Johan Manzambi",
+          "position": "AM",
+          "marketValue": 65000000,
+          "rating": 90
+        },
+        {
+          "name": "Alejandro Garnacho",
+          "position": "LW",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Emiliano Buendía",
+          "position": "LW",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Leon Bailey",
+          "position": "RW",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Alysson",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ollie Watkins",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Brian Madjo",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Tammy Abraham",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 86
+      },
+      "source": "Transfermarkt — Aston Villa (2026/2027)",
+      "teamLabel": "Aston Villa (2026-27)"
     }
   },
   "id": 405,

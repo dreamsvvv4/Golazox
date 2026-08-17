@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "1982": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 87
+      }
     },
     "1986": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 87
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -588,10 +606,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
+        "attack": 75,
         "midfield": 81,
-        "defense": 84,
-        "goalkeeping": 71
+        "defense": 80,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt 🌍 Otros€” northern ireland (2025/2026)",
       "teamLabel": "northern ireland (2025-26)"

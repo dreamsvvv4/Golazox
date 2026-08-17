@@ -171,10 +171,10 @@
         }
       ],
       "ratings": {
-        "attack": 72,
-        "midfield": 72,
-        "defense": 73,
-        "goalkeeping": 73
+        "attack": 84,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Crystal Palace (2021/2022)",
       "teamLabel": "Crystal Palace (2021-22)"
@@ -379,9 +379,9 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 83,
+        "midfield": 82,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Crystal Palace (2022/2023)",
@@ -592,9 +592,9 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 84,
+        "midfield": 83,
+        "defense": 82,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Crystal Palace (2023/2024)",
@@ -805,10 +805,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 72,
-        "defense": 73,
-        "goalkeeping": 73
+        "attack": 84,
+        "midfield": 84,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Crystal Palace (2024/2025)",
       "teamLabel": "Crystal Palace (2024-25)"
@@ -958,13 +958,200 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 81,
+        "attack": 82,
+        "midfield": 76,
         "defense": 82,
-        "goalkeeping": 75
+        "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Crystal Palace (2025/2026)",
       "teamLabel": "Crystal Palace (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dean Henderson",
+          "position": "GK",
+          "marketValue": 28000000,
+          "rating": 80
+        },
+        {
+          "name": "Walter Benítez",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Remi Matthews",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Jaydee Canvot",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Chris Richards",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Chadi Riad",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Takehiro Tomiyasu",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tyrick Mitchell",
+          "position": "LB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Borna Sosa",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Daniel Muñoz",
+          "position": "RB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Óscar Mingueza",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Adam Wharton",
+          "position": "DM",
+          "marketValue": 70000000,
+          "rating": 83
+        },
+        {
+          "name": "Cheick Doucouré",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Jefferson Lerma",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "David Ozoh",
+          "position": "DM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Anan Khalaili",
+          "position": "CM",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Will Hughes",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Daichi Kamada",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 84
+        },
+        {
+          "name": "Justin Devenny",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Matheus França",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Yéremy Pino",
+          "position": "LW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Dwight McNeil",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Evann Guessand",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Ismaïla Sarr",
+          "position": "RW",
+          "marketValue": 45000000,
+          "rating": 85
+        },
+        {
+          "name": "Romain Esse",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Jesurun Rak-Sakyi",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jørgen Strand Larsen",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Eddie Nketiah",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 83,
+        "defense": 86,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Crystal Palace (2026/2027)",
+      "teamLabel": "Crystal Palace (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/crystal-palace.png",

@@ -103,17 +103,23 @@
           "position": "ST",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 78
+      }
     },
     "1970": {
       "formation": "4-4-2",
       "teamLabel": "Perú (1970)",
       "source": "Peru - World Cup 1970 (QF)",
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 74,
-        "goalkeeping": 73
+        "attack": 79,
+        "midfield": 79,
+        "defense": 75,
+        "goalkeeping": 74
       },
       "players": [
         {
@@ -179,9 +185,9 @@
       "source": "Peru - World Cup 1978 (QF)",
       "ratings": {
         "attack": 80,
-        "midfield": 78,
+        "midfield": 76,
         "defense": 76,
-        "goalkeeping": 75
+        "goalkeeping": 76
       },
       "players": [
         {
@@ -246,10 +252,10 @@
       "teamLabel": "Perú (1982)",
       "source": "Peru - World Cup 1982",
       "ratings": {
-        "attack": 74,
-        "midfield": 73,
+        "attack": 76,
+        "midfield": 77,
         "defense": 72,
-        "goalkeeping": 71
+        "goalkeeping": 72
       },
       "players": [
         {
@@ -426,7 +432,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -865,10 +877,10 @@
         }
       ],
       "ratings": {
-        "attack": 74,
+        "attack": 75,
         "midfield": 77,
-        "defense": 77,
-        "goalkeeping": 72
+        "defense": 76,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt 🌍 Otros€” peru (2025/2026)",
       "teamLabel": "peru (2025-26)"

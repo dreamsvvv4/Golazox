@@ -61,7 +61,12 @@
           "rating": 79
         }
       ],
-      "ratings": null,
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 82
+      },
       "source": "Wikipedia — \"Ivory Coast national football team\"",
       "teamLabel": "ivory-coast (2025)"
     }

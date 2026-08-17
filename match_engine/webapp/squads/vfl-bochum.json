@@ -111,13 +111,188 @@
         }
       ],
       "ratings": {
-        "attack": 72,
-        "midfield": 72,
+        "attack": 73,
+        "midfield": 73,
         "defense": 72,
-        "goalkeeping": 71
+        "goalkeeping": 73
       },
       "source": "Transfermarkt 🌍 Otros€” VfL Bochum (2025/2026)",
       "teamLabel": "VfL Bochum (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Timo Horn",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Tino Casali",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Hugo Rölleke",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Michael Steinwender",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Philipp Strompf",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Karol Mets",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Yiğit Karademir",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Maximilian Wittek",
+          "position": "LB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Mikkel Rakneberg",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Leon Sawas",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Oliver Olsen",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jean Manuel Mbom",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Enis Cokaj",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lasse Isbruch",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mats Pannewig",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Koji Miyoshi",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tom Meyer",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Berkan Taz",
+          "position": "AM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Gerrit Holtmann",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Alessandro Crimaldi",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Christian Rasmussen",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Babis Drakas",
+          "position": "RW",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Daniel Hanslik",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ibrahim Sissoko",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mansour Ouro-Tagba",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Philipp Hofmann",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Luis Pick",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 75,
+        "defense": 73,
+        "goalkeeping": 71
+      },
+      "source": "Transfermarkt — VfL Bochum (2026/2027)",
+      "teamLabel": "VfL Bochum (2026-27)"
     }
   },
   "id": 80,

@@ -156,10 +156,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
-        "midfield": 70,
-        "defense": 69,
-        "goalkeeping": 69
+        "attack": 80,
+        "midfield": 76,
+        "defense": 77,
+        "goalkeeping": 86
       },
       "source": "BDFutbol <\r Otros�\u001d Valencia 1996-97 Primera División",
       "teamLabel": "Valencia 1996-97 Primera División"
@@ -334,8 +334,8 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 77,
+        "midfield": 77,
         "defense": 76,
         "goalkeeping": 77
       },
@@ -492,10 +492,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
-        "midfield": 70,
-        "defense": 69,
-        "goalkeeping": 69
+        "attack": 80,
+        "midfield": 82,
+        "defense": 78,
+        "goalkeeping": 77
       },
       "source": "BDFutbol <\r Otros�\u001d Valencia 2000-01 Primera División",
       "teamLabel": "Valencia 2000-01 Primera División"
@@ -655,9 +655,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 77,
+        "midfield": 79,
+        "defense": 80,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Valencia (2001/2002)",
@@ -823,9 +823,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 77,
+        "midfield": 79,
+        "defense": 81,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Valencia (2003/2004)",
@@ -912,9 +912,9 @@
       ],
       "ratings": {
         "attack": 84,
-        "midfield": 85,
+        "midfield": 84,
         "defense": 83,
-        "goalkeeping": 81
+        "goalkeeping": 87
       }
     },
     "2025": {
@@ -1084,13 +1084,176 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 82,
         "midfield": 82,
         "defense": 81,
-        "goalkeeping": 75
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Valencia (2025/2026)",
       "teamLabel": "Valencia (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Stole Dimitrievski",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Cristian Rivero",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "César Tárrega",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Justin de Haas",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "José Copete",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Mouctar Diakhaby",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Iker Córdoba",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "José Gayà",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jesús Vázquez",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Dimitri Foulquier",
+          "position": "RB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Pepelu",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Guido Rodríguez",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Aliou Dieng",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Javi Guerra",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Filip Ugrinic",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "André Almeida",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Arnaut Danjuma",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ryunosuke Sato",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Sergi Canós",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Diego López",
+          "position": "RW",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Luis Rioja",
+          "position": "RW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Dani Raba",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Hugo Duro",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Umar Sadiq",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alberto Marí",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 83,
+        "defense": 78,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Valencia (2026/2027)",
+      "teamLabel": "Valencia (2026-27)"
     }
   },
   "name": "Valencia",

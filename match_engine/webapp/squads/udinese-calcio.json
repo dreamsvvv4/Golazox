@@ -136,13 +136,224 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
-        "goalkeeping": 80
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Udinese (2025/2026)",
       "teamLabel": "Udinese (2025-26)"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Maduka Okoye",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 81
+        },
+        {
+          "name": "Edoardo Piana",
+          "position": "GK",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Daniele Padelli",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Oumar Solet",
+          "position": "CB",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Nicolò Bertola",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Matteo Palma",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Branimir Mlacic",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Saba Goglichidze",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "James Abankwah",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Enzo Ebosse",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Christian Kabasele",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Hassane Kamara",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Leonardo Buta",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alessandro Zanoli",
+          "position": "RB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Mërgim Vojvoda",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jesper Karlström",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Abdoulaye Camara",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jurgen Ekkelenkamp",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lennon Miller",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Jakub Piotrowski",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Sandi Lovrić",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Juan Arizala",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rui Modesto",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Oier Zarraga",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nicolò Zaniolo",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Unai Gómez",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Giorgi Chakvetadze",
+          "position": "AM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "David Pejičić",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Keinan Davis",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Idrissa Gueye",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Adam Buksa",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Vakoun Bayo",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Giulio Vinciati",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 82,
+        "defense": 81,
+        "goalkeeping": 81
+      },
+      "source": "Transfermarkt — Udinese (2026/2027)",
+      "teamLabel": "Udinese (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/udinese-calcio.png",

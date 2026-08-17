@@ -111,10 +111,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 90,
-        "defense": 88,
-        "goalkeeping": 87
+        "attack": 88,
+        "midfield": 84,
+        "defense": 81,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1971/1972)",
       "teamLabel": "Ajax (1971-72)"
@@ -274,10 +274,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 91,
-        "defense": 88,
-        "goalkeeping": 87
+        "attack": 87,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1972/1973)",
       "teamLabel": "Ajax (1972-73)"
@@ -432,10 +432,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 90,
-        "defense": 87,
-        "goalkeeping": 86
+        "attack": 86,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1973/1974)",
       "teamLabel": "Ajax (1973-74)"
@@ -643,10 +643,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 77,
+        "midfield": 76,
+        "defense": 78,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1978/1979)",
       "teamLabel": "Ajax (1978-79)"
@@ -837,9 +837,9 @@
       ],
       "ratings": {
         "attack": 84,
-        "midfield": 84,
-        "defense": 83,
-        "goalkeeping": 83
+        "midfield": 85,
+        "defense": 79,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1987/1988)",
       "teamLabel": "Ajax (1987-88)"
@@ -979,10 +979,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 85,
+        "midfield": 87,
+        "defense": 82,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1994/1995)",
       "teamLabel": "Ajax (1994-95)"
@@ -1122,10 +1122,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 89,
-        "defense": 88,
-        "goalkeeping": 88
+        "attack": 83,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (1995/1996)",
       "teamLabel": "Ajax (1995-96)"
@@ -1330,10 +1330,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 69,
-        "defense": 65,
-        "goalkeeping": 60
+        "attack": 84,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (2018/2019)",
       "teamLabel": "Ajax (2018-19)"
@@ -1577,10 +1577,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
+        "attack": 86,
         "midfield": 88,
-        "defense": 87,
-        "goalkeeping": 87
+        "defense": 86,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (2019/2020)",
       "teamLabel": "Ajax (2019-20)"
@@ -1754,11 +1754,198 @@
       "ratings": {
         "attack": 82,
         "midfield": 82,
-        "defense": 80,
+        "defense": 83,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Ajax (2025/2026)",
       "teamLabel": "Ajax (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marc ter Stegen",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 89
+        },
+        {
+          "name": "Maarten Paes",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joeri Heerkens",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Youri Baas",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Josip Sutalo",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 85
+        },
+        {
+          "name": "Ko Itakura",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 84
+        },
+        {
+          "name": "Ahmetcan Kaplan",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Dies Janse",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Aaron Bouwman",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Daley Blind",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Caio Henrique",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Owen Wijndal",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Lucas Rosa",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Anton Gaaei",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jorthy Mokio",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Youri Regeer",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Davy Klaassen",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Julian Brandt",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Oscar Gloukh",
+          "position": "AM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Rayane Bounida",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Abdellah Ouazane",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Oliver Edvardsen",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Amourricho van Axel Dongen",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Maher Carrizo",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Steven Berghuis",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 82
+        },
+        {
+          "name": "Marcos Leonardo",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Tolu Arokodare",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Kasper Dolberg",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Don-Angelo Konadu",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 81,
+        "defense": 84,
+        "goalkeeping": 89
+      },
+      "source": "Transfermarkt — Ajax (2026/2027)",
+      "teamLabel": "Ajax (2026-27)"
     }
   },
   "id": 610,

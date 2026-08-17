@@ -94,7 +94,13 @@
           "position": "ST",
           "rating": 76
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1950": {
       "players": [
@@ -208,7 +214,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 88
+      }
     },
     "1954": {
       "players": [
@@ -322,7 +334,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 80,
+        "goalkeeping": 88
+      }
     },
     "1958": {
       "players": [
@@ -436,7 +454,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 80,
+        "goalkeeping": 88
+      }
     },
     "1962": {
       "players": [
@@ -550,7 +574,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1974": {
       "formation": "4-4-2",
@@ -632,10 +662,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 82,
-        "defense": 82,
-        "goalkeeping": 80
+        "attack": 84,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 82
       }
     },
     "1982": {
@@ -719,9 +749,9 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 84,
+        "midfield": 82,
         "defense": 81,
-        "goalkeeping": 82
+        "goalkeeping": 83
       }
     },
     "1990": {
@@ -836,7 +866,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1998": {
       "players": [
@@ -915,7 +951,13 @@
           "position": "GK",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 88
+      }
     }
   }
 }

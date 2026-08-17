@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 79
+      }
     },
     "1950": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 78,
+        "defense": 77,
+        "goalkeeping": 78
+      }
     },
     "1958": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1986": {
       "players": [
@@ -455,7 +473,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1998": {
       "players": [
@@ -569,7 +593,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 85,
+        "defense": 79,
+        "goalkeeping": 82
+      }
     },
     "2002": {
       "players": [
@@ -688,7 +718,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 81,
+        "goalkeeping": 82
+      }
     },
     "2006": {
       "players": [
@@ -807,7 +843,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -926,7 +968,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 81,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-2-3-1",
@@ -1161,10 +1209,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 84,
-        "defense": 80,
-        "goalkeeping": 71
+        "attack": 83,
+        "midfield": 82,
+        "defense": 77,
+        "goalkeeping": 75
       },
       "source": "Transfermarkt 🌍 Otros€” paraguay (2025/2026)",
       "teamLabel": "paraguay (2025-26)"

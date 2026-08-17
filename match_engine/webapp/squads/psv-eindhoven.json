@@ -136,10 +136,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "attack": 82,
+        "midfield": 79,
+        "defense": 81,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (1987/1988)",
       "teamLabel": "PSV (1987-88)"
@@ -274,9 +274,9 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 86,
-        "defense": 86,
+        "attack": 81,
+        "midfield": 77,
+        "defense": 81,
         "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (1988/1989)",
@@ -402,10 +402,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "attack": 82,
+        "midfield": 79,
+        "defense": 82,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (1991/1992)",
       "teamLabel": "PSV (1991-92)"
@@ -582,7 +582,7 @@
       "ratings": {
         "attack": 78,
         "midfield": 76,
-        "defense": 76,
+        "defense": 78,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (1997/1998)",
@@ -769,8 +769,8 @@
       ],
       "ratings": {
         "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "midfield": 79,
+        "defense": 77,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (2005/2006)",
@@ -951,10 +951,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 79,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (2006/2007)",
       "teamLabel": "PSV (2006-07)"
@@ -1174,10 +1174,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 83,
-        "defense": 81,
-        "goalkeeping": 81
+        "attack": 86,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (2023/2024)",
       "teamLabel": "PSV (2023-24)"
@@ -1337,13 +1337,200 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 82,
-        "defense": 81,
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” PSV (2025/2026)",
       "teamLabel": "PSV (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Matej Kovar",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Nick Olij",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tijn Smolenaars",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Yarek Gasiorowski",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ryan Flamingo",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Armando Obispo",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Adamo Nagalo",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Fabian Merién",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Mauro Júnior",
+          "position": "LB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Sergiño Dest",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Kiliann Sildillia",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jerdy Schouten",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Joey Veerman",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Paul Wanner",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Kodai Sano",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Filip Kostic",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 82
+        },
+        {
+          "name": "Noah Fernandez",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Joël van den Berg",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Guus Til",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Sven Mijnans",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Isaac Babadi",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ruben van Bommel",
+          "position": "LW",
+          "marketValue": 10000000,
+          "rating": 83
+        },
+        {
+          "name": "Couhaib Driouech",
+          "position": "LW",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Ivan Perisic",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Amir Bouhamdi",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Dennis Man",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Esmir Bajraktarevic",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ricardo Pepi",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Alassane Pléa",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — PSV (2026/2027)",
+      "teamLabel": "PSV (2026-27)"
     }
   },
   "id": 383,

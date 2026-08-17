@@ -61,7 +61,12 @@
           "rating": 79
         }
       ],
-      "ratings": null,
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 82
+      },
       "source": "Wikipedia — \"South Korea national football team\"",
       "teamLabel": "south-korea (2025)"
     }

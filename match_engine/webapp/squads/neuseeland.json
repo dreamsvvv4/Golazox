@@ -113,7 +113,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -232,7 +238,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -461,10 +473,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 79,
-        "defense": 73,
-        "goalkeeping": 69
+        "attack": 76,
+        "midfield": 80,
+        "defense": 72,
+        "goalkeeping": 70
       },
       "source": "Transfermarkt 🌍 Otros€” new zealand (2025/2026)",
       "teamLabel": "new zealand (2025-26)"

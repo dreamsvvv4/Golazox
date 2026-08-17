@@ -146,10 +146,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 84
+        "attack": 77,
+        "midfield": 76,
+        "defense": 77,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (1987/1988)",
       "teamLabel": "Porto (1987-88)"
@@ -294,9 +294,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 77,
+        "midfield": 78,
+        "defense": 77,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (1994/1995)",
@@ -517,9 +517,9 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 82,
+        "midfield": 84,
+        "defense": 84,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (2003/2004)",
@@ -705,10 +705,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 85
+        "attack": 78,
+        "midfield": 79,
+        "defense": 82,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (2004/2005)",
       "teamLabel": "Porto (2004-05)"
@@ -934,10 +934,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 84,
         "midfield": 84,
-        "defense": 82,
-        "goalkeeping": 82
+        "defense": 84,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (2011/2012)",
       "teamLabel": "Porto (2011-12)"
@@ -1109,13 +1109,200 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 78,
-        "goalkeeping": 78
+        "attack": 86,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Porto (2025/2026)",
       "teamLabel": "Porto (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Diogo Costa",
+          "position": "GK",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "João Afonso",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Cláudio Ramos",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "João Costa",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jakub Kiwior",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Nehuén Pérez",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Jan Bednarek",
+          "position": "CB",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Dominik Prpić",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Francisco Moura",
+          "position": "LB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Zaidu Sanusi",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Alberto Costa",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Martim Fernandes",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Alan Varela",
+          "position": "DM",
+          "marketValue": 32000000,
+          "rating": 83
+        },
+        {
+          "name": "Pablo Rosario",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "In-beom Hwang",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Victor Froholdt",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Stephen Eustaquio",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Vasco Sousa",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo Mora",
+          "position": "AM",
+          "marketValue": 38000000,
+          "rating": 88
+        },
+        {
+          "name": "Gabri Veiga",
+          "position": "AM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Iván Jaime",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Oskar Pietuszewski",
+          "position": "LW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Borja Sainz",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "William Gomes",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Pepê",
+          "position": "RW",
+          "marketValue": 17000000,
+          "rating": 86
+        },
+        {
+          "name": "Gabriel Veron",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Samu Aghehowa",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Deniz Gül",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "André Silva",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 86
+      },
+      "source": "Transfermarkt — Porto (2026/2027)",
+      "teamLabel": "Porto (2026-27)"
     }
   },
   "id": 720,

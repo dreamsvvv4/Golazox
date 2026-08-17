@@ -103,7 +103,13 @@
           "position": "CM",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1990": {
       "players": [
@@ -217,7 +223,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2018": {
       "players": [
@@ -336,7 +348,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -703,10 +721,10 @@
         }
       ],
       "ratings": {
-        "attack": 65,
-        "midfield": 68,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 83,
+        "midfield": 75,
+        "defense": 75,
+        "goalkeeping": 76
       },
       "source": "Transfermarkt 🌍 Otros€” egypt (2025/2026)",
       "teamLabel": "egypt (2025-26)"

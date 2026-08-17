@@ -146,13 +146,194 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Lens (2025/2026)",
       "teamLabel": "Lens (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Robin Risser",
+          "position": "GK",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Mathieu Gorgelin",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Régis Gurtner",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ilan Jourdren",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Samson Baidoo",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Ismaëlo Ganiou",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nidal Celik",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Kyllian Antonio",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Gradit",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Maik Nawrocki",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Souleymane Sagnan",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Matthieu Udol",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jhoanner Chávez",
+          "position": "LB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Saud Abdulhamid",
+          "position": "RB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Ruben Aguilar",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Andrija Bulatovic",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Yacine Titraoui",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Amadou Haidara",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Michaël Cuisance",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mezian Mesloub",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Thorgan Hazard",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Abdallah Sima",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Michal Skoras",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Florian Thauvin",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Franjo Ivanović",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Odsonne Édouard",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Rayan Fofana",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Florian Sotoca",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 81,
+        "defense": 84,
+        "goalkeeping": 87
+      },
+      "source": "Transfermarkt — Lens (2026/2027)",
+      "teamLabel": "Lens (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/rc-lens.png",

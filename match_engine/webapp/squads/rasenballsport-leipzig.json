@@ -199,9 +199,9 @@
       ],
       "ratings": {
         "attack": 86,
-        "midfield": 86,
-        "defense": 86,
-        "goalkeeping": 76
+        "midfield": 87,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” RB Leipzig (2020/2021)",
       "teamLabel": "RB Leipzig (2020-21)"
@@ -385,10 +385,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
+        "attack": 85,
         "midfield": 86,
-        "defense": 86,
-        "goalkeeping": 74
+        "defense": 85,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” RB Leipzig (2022/2023)",
       "teamLabel": "RB Leipzig (2022-23)"
@@ -553,13 +553,230 @@
         }
       ],
       "ratings": {
-        "attack": 79,
+        "attack": 81,
         "midfield": 81,
-        "defense": 82,
-        "goalkeeping": 78
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” RB Leipzig (2025/2026)",
       "teamLabel": "RB Leipzig (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Maarten Vandevoordt",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ørjan Nyland",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Leopold Zingerle",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Maxime Estève",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Castello Lukeba",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 85
+        },
+        {
+          "name": "El Chadaille Bitshiabu",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Abdoul Koné",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Willi Orbán",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lukas Klostermann",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "David Raum",
+          "position": "LB",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Max Finkgräfe",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lutsharel Geertruida",
+          "position": "RB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Ridle Baku",
+          "position": "RB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Benjamin Henrichs",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 82
+        },
+        {
+          "name": "Arthur Vermeeren",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nicolas Seiwald",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Benno Kaltefleiter",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Assan Ouédraogo",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Rocco Reitz",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Ezechiel Banzuzi",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Joyeux Masanka Bungi",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Brajan Gruda",
+          "position": "AM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Eljif Elmas",
+          "position": "AM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Christoph Baumgartner",
+          "position": "AM",
+          "marketValue": 40000000,
+          "rating": 82
+        },
+        {
+          "name": "Andrija Maksimovic",
+          "position": "AM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Viggo Gebel",
+          "position": "AM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Antonio Nusa",
+          "position": "LW",
+          "marketValue": 32000000,
+          "rating": 85
+        },
+        {
+          "name": "Suleman Sani",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tidiam Gomis",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ayodele Thomas",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Johan Bakayoko",
+          "position": "RW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Rômulo",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Conrad Harder",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Robert Ramsak",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 84
+      },
+      "source": "Transfermarkt — RB Leipzig (2026/2027)",
+      "teamLabel": "RB Leipzig (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/rasenballsport-leipzig.png",

@@ -113,7 +113,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2006": {
       "players": [
@@ -232,7 +238,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -351,7 +363,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2014": {
       "players": [
@@ -470,7 +488,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2018": {
       "players": [
@@ -589,7 +613,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2022": {
       "players": [
@@ -708,7 +738,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -1027,10 +1063,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
+        "attack": 76,
         "midfield": 77,
-        "defense": 77,
-        "goalkeeping": 74
+        "defense": 75,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” australia (2025/2026)",
       "teamLabel": "australia (2025-26)"

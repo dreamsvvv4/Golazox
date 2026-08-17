@@ -52,7 +52,14 @@ function buildXI(raw) {
 
   const attCount = (pool['ST']||[]).length + (pool['RW']||[]).length + (pool['LW']||[]).length;
   const midCount = (pool['CM']||[]).length + (pool['DM']||[]).length + (pool['AM']||[]).length;
-  const useTwoUp = attCount >= 2 && midCount >= 4;
+  const wingCount = (pool['RW']||[]).length + (pool['LW']||[]).length;
+  const stCount   = (pool['ST']||[]).length;
+  // Use a two-striker 4-4-2 only for squads genuinely built around a strike
+  // pairing: ≥2 natural strikers AND no natural wide front three (<2 wingers).
+  // Squads with ≥2 wingers (Madrid, Barça, Liverpool, City…) play a 4-3-3 front
+  // three so the wingers start on the flanks instead of being benched or shoved
+  // into central midfield slots.
+  const useTwoUp = stCount >= 2 && wingCount < 2 && midCount >= 4;
 
   take('GK', 1);
   take('RB', 1, 'CB');

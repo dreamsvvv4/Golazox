@@ -119,7 +119,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -201,10 +207,10 @@
         }
       ],
       "ratings": {
-        "attack": 76,
-        "midfield": 76,
+        "attack": 75,
+        "midfield": 73,
         "defense": 72,
-        "goalkeeping": 71
+        "goalkeeping": 72
       }
     }
   }

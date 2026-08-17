@@ -58,7 +58,13 @@
           "position": "LW",
           "rating": 74
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 77,
+        "defense": 73,
+        "goalkeeping": 73
+      }
     },
     "1966": {
       "players": [
@@ -172,7 +178,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1970": {
       "formation": "4-4-2",
@@ -180,9 +192,9 @@
       "source": "Bulgaria - World Cup 1970",
       "ratings": {
         "attack": 75,
-        "midfield": 73,
+        "midfield": 75,
         "defense": 72,
-        "goalkeeping": 71
+        "goalkeeping": 72
       },
       "players": [
         {
@@ -247,7 +259,7 @@
       "teamLabel": "Bulgaria (1974)",
       "source": "Bulgaria - World Cup 1974",
       "ratings": {
-        "attack": 75,
+        "attack": 74,
         "midfield": 74,
         "defense": 73,
         "goalkeeping": 72
@@ -422,7 +434,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1994": {
       "formation": "4-4-2",
@@ -615,8 +633,8 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 78,
+        "attack": 82,
+        "midfield": 81,
         "defense": 78,
         "goalkeeping": 79
       },
@@ -628,10 +646,10 @@
       "teamLabel": "Bulgaria (1998)",
       "source": "Bulgaria - World Cup 1998",
       "ratings": {
-        "attack": 77,
-        "midfield": 76,
+        "attack": 79,
+        "midfield": 81,
         "defense": 75,
-        "goalkeeping": 74
+        "goalkeeping": 75
       },
       "players": [
         {

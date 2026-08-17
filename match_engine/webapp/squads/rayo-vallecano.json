@@ -168,13 +168,164 @@
         }
       ],
       "ratings": {
-        "attack": 80,
+        "attack": 79,
         "midfield": 77,
-        "defense": 82,
-        "goalkeeping": 78
+        "defense": 81,
+        "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Rayo Vallecano (2025/2026)",
       "teamLabel": "Rayo Vallecano (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Augusto Batalla",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Dani Cárdenas",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Marash Kumbulla",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luiz Felipe",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jozhua Vertrouwd",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Florian Lejeune",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Pelayo Fernández",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Andrei Rațiu",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Iván Balliu",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pedro Díaz",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Unai López",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Óscar Valentín",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Pathé Ciss",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Randy Nteka",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Giorgi Tsitaishvili",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Álvaro García",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jorge de Frutos",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Fran Pérez",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Isi Palazón",
+          "position": "AM",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Etienne Eto'o",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 92
+        },
+        {
+          "name": "Alemão",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Sergio Camello",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Raúl de Tomás",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Rayo Vallecano (2026/2027)",
+      "teamLabel": "Rayo Vallecano (2026-27)"
     }
   },
   "id": 367,

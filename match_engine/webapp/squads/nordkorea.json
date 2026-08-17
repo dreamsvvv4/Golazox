@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -232,7 +238,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -382,10 +394,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
+        "attack": 68,
         "midfield": 67,
         "defense": 68,
-        "goalkeeping": 67
+        "goalkeeping": 69
       },
       "source": "Transfermarkt 🌍 Otros€” north korea (2025/2026)",
       "teamLabel": "north korea (2025-26)"

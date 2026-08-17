@@ -221,10 +221,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 66,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 83,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Brighton (2021/2022)",
       "teamLabel": "Brighton (2021-22)"
@@ -444,10 +444,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 66,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 85,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Brighton (2022/2023)",
       "teamLabel": "Brighton (2022-23)"
@@ -702,10 +702,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 66,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 83,
+        "midfield": 82,
+        "defense": 81,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Brighton (2023/2024)",
       "teamLabel": "Brighton (2023-24)"
@@ -960,10 +960,10 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 66,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 83,
+        "midfield": 82,
+        "defense": 81,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Brighton (2024/2025)",
       "teamLabel": "Brighton (2024-25)"
@@ -1103,13 +1103,206 @@
         }
       ],
       "ratings": {
-        "attack": 69,
-        "midfield": 66,
-        "defense": 63,
-        "goalkeeping": 65
+        "attack": 84,
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Brighton (2025/2026)",
       "teamLabel": "Brighton (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bart Verbruggen",
+          "position": "GK",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Jason Steele",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tom McGill",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luka Vuskovic",
+          "position": "CB",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Pascal Struijk",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Olivier Boscagli",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Igor Julio",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Eiran Cashin",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Michael Svoboda",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Lewis Dunk",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ferdi Kadıoğlu",
+          "position": "LB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Maxim De Cuyper",
+          "position": "LB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Mats Wieffer",
+          "position": "RB",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Costinha",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 80
+        },
+        {
+          "name": "Jack Hinshelwood",
+          "position": "DM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Carlos Baleba",
+          "position": "DM",
+          "marketValue": 55000000,
+          "rating": 84
+        },
+        {
+          "name": "Yasin Ayari",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Diego Gómez",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Matt O'Riley",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Malick Yalcouyé",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Pascal Groß",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Kaoru Mitoma",
+          "position": "LW",
+          "marketValue": 22000000,
+          "rating": 89
+        },
+        {
+          "name": "Ibrahim Osman",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 82
+        },
+        {
+          "name": "Yankuba Minteh",
+          "position": "RW",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Zadok Yohanna",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Amario Cozier-Duberry",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Georginio Rutter",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Charalampos Kostoulas",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Evan Ferguson",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Stefanos Tzimas",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 88
+      },
+      "source": "Transfermarkt — Brighton (2026/2027)",
+      "teamLabel": "Brighton (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/brighton-hove-albion.png",

@@ -62,10 +62,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 83,
         "midfield": 80,
         "defense": 80,
-        "goalkeeping": 78
+        "goalkeeping": 81
       },
       "source": "Wikipedia 🌍 Otros€” \"1993🌍 Otros€“94 Paris Saint-Germain FC season\"",
       "teamLabel": "Paris saint germain (1994)"
@@ -134,7 +134,7 @@
         "attack": 81,
         "midfield": 80,
         "defense": 80,
-        "goalkeeping": 78
+        "goalkeeping": 81
       },
       "source": "Wikipedia 🌍 Otros€” \"1998🌍 Otros€“99 Paris Saint-Germain FC season\"",
       "teamLabel": "Paris saint germain (1999)"
@@ -324,8 +324,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 86,
+        "midfield": 85,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -512,9 +512,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 88,
+        "midfield": 84,
+        "defense": 82,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2015/2016)",
@@ -720,9 +720,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 86,
+        "midfield": 84,
+        "defense": 82,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2016/2017)",
@@ -943,10 +943,10 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 88,
-        "defense": 85,
-        "goalkeeping": 79
+        "attack": 92,
+        "midfield": 91,
+        "defense": 91,
+        "goalkeeping": 94
       },
       "source": "Transfermarkt — PSG (2017/2018)",
       "teamLabel": "PSG (2017-18)"
@@ -1131,10 +1131,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
+        "attack": 89,
         "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "defense": 83,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2019/2020)",
       "teamLabel": "Paris Saint-Germain (2019-20)"
@@ -1349,10 +1349,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 82,
-        "defense": 80,
-        "goalkeeping": 81
+        "attack": 89,
+        "midfield": 80,
+        "defense": 83,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2020/2021)",
       "teamLabel": "Paris Saint-Germain (2020-21)"
@@ -1608,10 +1608,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 89,
+        "attack": 90,
+        "midfield": 86,
         "defense": 89,
-        "goalkeeping": 81
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2021/2022)",
       "teamLabel": "Paris Saint-Germain (2021-22)"
@@ -1843,10 +1843,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 89,
+        "attack": 93,
+        "midfield": 85,
         "defense": 89,
-        "goalkeeping": 80
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2022/2023)",
       "teamLabel": "Paris Saint-Germain (2022-23)"
@@ -2072,10 +2072,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 87,
+        "attack": 89,
+        "midfield": 86,
         "defense": 88,
-        "goalkeeping": 84
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2023/2024)",
       "teamLabel": "Paris Saint-Germain (2023-24)"
@@ -2230,12 +2230,181 @@
       ],
       "ratings": {
         "attack": 89,
-        "midfield": 88,
+        "midfield": 89,
         "defense": 88,
-        "goalkeeping": 81
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Paris Saint-Germain (2025/2026)",
       "teamLabel": "Paris Saint-Germain (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Matvey Safonov",
+          "position": "GK",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Lucas Chevalier",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Alessandro Longoni",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Willian Pacho",
+          "position": "CB",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Ilya Zabarnyi",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 87
+        },
+        {
+          "name": "Marquinhos",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Lucas Beraldo",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Nuno Mendes",
+          "position": "LB",
+          "marketValue": 80000000,
+          "rating": 87
+        },
+        {
+          "name": "Lucas Hernández",
+          "position": "LB",
+          "marketValue": 18000000,
+          "rating": 84
+        },
+        {
+          "name": "Lucas Digne",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Vitinha",
+          "position": "DM",
+          "marketValue": 140000000,
+          "rating": 87
+        },
+        {
+          "name": "João Neves",
+          "position": "CM",
+          "marketValue": 140000000,
+          "rating": 91
+        },
+        {
+          "name": "Senny Mayulu",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Fabián Ruiz",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Warren Zaïre-Emery",
+          "position": "CM",
+          "marketValue": 80000000,
+          "rating": 82
+        },
+        {
+          "name": "Dro Fernández",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Bradley Barcola",
+          "position": "LW",
+          "marketValue": 90000000,
+          "rating": 90
+        },
+        {
+          "name": "Khvicha Kvaratskhelia",
+          "position": "LW",
+          "marketValue": 140000000,
+          "rating": 88
+        },
+        {
+          "name": "Mika Godts",
+          "position": "LW",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Quentin Ndjantou",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Désiré Doué",
+          "position": "RW",
+          "marketValue": 120000000,
+          "rating": 90
+        },
+        {
+          "name": "Maghnes Akliouche",
+          "position": "RW",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Ibrahim Mbaye",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "position": "ST",
+          "marketValue": 100000000,
+          "rating": 87
+        },
+        {
+          "name": "Ferran Torres",
+          "position": "ST",
+          "marketValue": 55000000,
+          "rating": 84
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 87
+      },
+      "source": "Transfermarkt — Paris Saint-Germain (2026/2027)",
+      "teamLabel": "Paris Saint-Germain (2026-27)"
     }
   },
   "id": 583,

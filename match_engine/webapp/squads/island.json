@@ -118,7 +118,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 79,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -330,9 +336,9 @@
       ],
       "ratings": {
         "attack": 81,
-        "midfield": 80,
-        "defense": 75,
-        "goalkeeping": 71
+        "midfield": 77,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” iceland (2025/2026)",
       "teamLabel": "iceland (2025-26)"

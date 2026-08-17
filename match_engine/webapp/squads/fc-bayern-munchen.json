@@ -116,10 +116,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 87,
-        "defense": 89,
-        "goalkeeping": 90
+        "attack": 84,
+        "midfield": 80,
+        "defense": 85,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (1974/1975)",
       "teamLabel": "Bayern Munich (1974-75)"
@@ -264,10 +264,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 87,
-        "defense": 89,
-        "goalkeeping": 90
+        "attack": 84,
+        "midfield": 80,
+        "defense": 85,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (1975/1976)",
       "teamLabel": "Bayern Munich (1975-76)"
@@ -402,9 +402,9 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 86,
-        "defense": 88,
+        "attack": 84,
+        "midfield": 80,
+        "defense": 85,
         "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (1976/1977)",
@@ -575,10 +575,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 84,
-        "goalkeeping": 91
+        "attack": 83,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (1999/2000)",
       "teamLabel": "Bayern Munich (1999-00)"
@@ -758,10 +758,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 86,
+        "attack": 82,
+        "midfield": 83,
         "defense": 84,
-        "goalkeeping": 91
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2000/2001)",
       "teamLabel": "Bayern Munich (2000-01)"
@@ -931,9 +931,9 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 88,
-        "defense": 85,
+        "attack": 82,
+        "midfield": 83,
+        "defense": 84,
         "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2001/2002)",
@@ -1132,8 +1132,8 @@
       "ratings": {
         "attack": 87,
         "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 71
+        "defense": 84,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt — Bayern Munich (2010/2011)",
       "teamLabel": "Bayern Munich (2010-11)"
@@ -1288,10 +1288,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 88,
-        "defense": 87,
-        "goalkeeping": 92
+        "attack": 85,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2012/2013)",
       "teamLabel": "Bayern Munich (2012-13)"
@@ -1466,10 +1466,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 89,
-        "defense": 88,
-        "goalkeeping": 93
+        "attack": 86,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2013/2014)",
       "teamLabel": "Bayern Munich (2013-14)"
@@ -1670,9 +1670,9 @@
       ],
       "ratings": {
         "attack": 88,
-        "midfield": 87,
+        "midfield": 88,
         "defense": 86,
-        "goalkeeping": 90
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2019/2020)",
       "teamLabel": "Bayern Munich (2019-20)"
@@ -1907,10 +1907,10 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 89,
-        "defense": 88,
-        "goalkeeping": 90
+        "attack": 87,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2020/2021)",
       "teamLabel": "Bayern Munich (2020-21)"
@@ -2154,10 +2154,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 87,
-        "defense": 84,
-        "goalkeeping": 87
+        "attack": 85,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Bayern Munich (2023/2024)",
       "teamLabel": "Bayern Munich (2023-24)"
@@ -2312,12 +2312,193 @@
       ],
       "ratings": {
         "attack": 87,
-        "midfield": 84,
-        "defense": 83,
+        "midfield": 82,
+        "defense": 86,
         "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” FC Bayern (2025/2026)",
       "teamLabel": "FC Bayern (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jonas Urbig",
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Manuel Neuer",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 85
+        },
+        {
+          "name": "Sven Ulreich",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Min-jae Kim",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 87
+        },
+        {
+          "name": "Hiroki Ito",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 87
+        },
+        {
+          "name": "Dayot Upamecano",
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 83
+        },
+        {
+          "name": "Jonathan Tah",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 82
+        },
+        {
+          "name": "Nathaniel Brown",
+          "position": "LB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Alphonso Davies",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "Konrad Laimer",
+          "position": "RB",
+          "marketValue": 32000000,
+          "rating": 82
+        },
+        {
+          "name": "Sacha Boey",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Josip Stanisic",
+          "position": "RB",
+          "marketValue": 40000000,
+          "rating": 76
+        },
+        {
+          "name": "Joshua Kimmich",
+          "position": "DM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "João Palhinha",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Aleksandar Pavlovic",
+          "position": "DM",
+          "marketValue": 90000000,
+          "rating": 81
+        },
+        {
+          "name": "David Santos Daiber",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tom Bischof",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Felipe Chávez",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Bara Sapoko Ndiaye",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jamal Musiala",
+          "position": "AM",
+          "marketValue": 100000000,
+          "rating": 92
+        },
+        {
+          "name": "Lennart Karl",
+          "position": "AM",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Ismael Saibari",
+          "position": "AM",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Luis Díaz",
+          "position": "LW",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Arijon Ibrahimovic",
+          "position": "LW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Bryan Zaragoza",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Michael Olise",
+          "position": "RW",
+          "marketValue": 170000000,
+          "rating": 86
+        },
+        {
+          "name": "Serge Gnabry",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 78
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 90
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Bayern Munich (2026/2027)",
+      "teamLabel": "Bayern Munich (2026-27)"
     }
   },
   "id": 27,

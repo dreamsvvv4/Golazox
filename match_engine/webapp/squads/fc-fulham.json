@@ -196,7 +196,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -444,9 +444,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Fulham (2022/2023)",
@@ -632,9 +632,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
+        "defense": 82,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Fulham (2023/2024)",
@@ -786,8 +786,8 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "midfield": 81,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Fulham (2024/2025)",
@@ -920,11 +920,156 @@
       "ratings": {
         "attack": 82,
         "midfield": 80,
-        "defense": 81,
-        "goalkeeping": 79
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Fulham (2025/2026)",
       "teamLabel": "Fulham (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bernd Leno",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Benjamin Lecomte",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Joachim Andersen",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Calvin Bassey",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Jorge Cuenca",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ryan Sessegnon",
+          "position": "LB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Antonee Robinson",
+          "position": "LB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Kenny Tete",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Timothy Castagne",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Sander Berge",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Shea Charles",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Harrison Reed",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tom Cairney",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Josh King",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Emile Smith Rowe",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 84
+        },
+        {
+          "name": "César Palacios",
+          "position": "AM",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Kevin",
+          "position": "LW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Alex Iwobi",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 82
+        },
+        {
+          "name": "Oscar Bobb",
+          "position": "RW",
+          "marketValue": 28000000,
+          "rating": 84
+        },
+        {
+          "name": "Gonzalo García",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Rodrigo Muniz",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Jonah Kusi-Asare",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 77,
+        "defense": 84,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Fulham (2026/2027)",
+      "teamLabel": "Fulham (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/fc-fulham.png",

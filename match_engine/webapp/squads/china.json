@@ -118,7 +118,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-4-2",
@@ -281,10 +287,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 85,
-        "defense": 88,
-        "goalkeeping": 78
+        "attack": 88,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” China (2025/2026)",
       "teamLabel": "China (2025-26)"

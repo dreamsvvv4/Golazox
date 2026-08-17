@@ -151,10 +151,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "attack": 84,
+        "midfield": 84,
+        "defense": 81,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2004/2005)",
       "teamLabel": "Lyon (2004-05)"
@@ -304,10 +304,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "attack": 83,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2005/2006)",
       "teamLabel": "Lyon (2005-06)"
@@ -492,10 +492,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 83,
-        "goalkeeping": 84
+        "attack": 83,
+        "midfield": 83,
+        "defense": 81,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2006/2007)",
       "teamLabel": "Lyon (2006-07)"
@@ -665,10 +665,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 83,
+        "midfield": 82,
         "defense": 80,
-        "goalkeeping": 81
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2007/2008)",
       "teamLabel": "Lyon (2007-08)"
@@ -863,10 +863,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "attack": 84,
+        "midfield": 85,
+        "defense": 81,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2008/2009)",
       "teamLabel": "Lyon (2008-09)"
@@ -1021,13 +1021,224 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 81,
+        "attack": 82,
+        "midfield": 80,
         "defense": 79,
-        "goalkeeping": 80
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” Lyon (2025/2026)",
       "teamLabel": "Lyon (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dominik Greif",
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Rémy Descamps",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Justin Bengui",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Lassine Diarra",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Moussa Niakhaté",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ruben Kluivert",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Felix Bacher",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Noham Kamara",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Duje Caleta-Car",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Clinton Mata",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicolás Tagliafico",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 83
+        },
+        {
+          "name": "Abner",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mohamed Ouédraogo",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Zachary Athekame",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Ainsley Maitland-Niles",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Steeve Kango",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tyler Morton",
+          "position": "DM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Tanner Tessmann",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mathys de Carvalho",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Paul Akouokou",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Khalis Merah",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mads Bidstrup",
+          "position": "CM",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Corentin Tolisso",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Mahamadou Diawara",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pavel Sulc",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Noah Nartey",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Malick Fofana",
+          "position": "LW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Rémi Himbert",
+          "position": "LW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Julien Duranville",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Ernest Nuamah",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 83
+        },
+        {
+          "name": "Kaïl Boudache",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Loïs Openda",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Alejandro Gomes Rodríguez",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 85,
+        "defense": 83,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Lyon (2026/2027)",
+      "teamLabel": "Lyon (2026-27)"
     }
   },
   "id": 1041,

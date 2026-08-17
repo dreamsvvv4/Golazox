@@ -161,13 +161,206 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
         "defense": 79,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Mainz 05 (2025/2026)",
       "teamLabel": "Mainz 05 (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Robin Zentner",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Alexander Schwolow",
+          "position": "GK",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Maximilian Kinzig",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Kacper Potulski",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Stefan Posch",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Andreas Hanche-Olsen",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Fabio Gruber",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dominik Kohr",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Danny da Costa",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Stefan Bell",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Phillipp Mwene",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Anthony Caci",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Silvan Widmer",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Kaishu Sano",
+          "position": "DM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Eric Martel",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lennard Maloney",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sota Kawasaki",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nadiem Amiri",
+          "position": "CM",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Paul Nebel",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Hyun-seok Hong",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jae-sung Lee",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Marco Richter",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Otto Ruoppi",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sheraldo Becker",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Silas",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Benedict Hollerbach",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ransford Königsdörffer",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Phillip Tietz",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "William Bøving",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Alynho Haidara",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 86,
+        "defense": 80,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Mainz 05 (2026/2027)",
+      "teamLabel": "Mainz 05 (2026-27)"
     }
   },
   "id": 39,

@@ -74,7 +74,7 @@
       "teamLabel": "Manchester City (1967-68)",
       "ratings": {
         "attack": 85,
-        "midfield": 87,
+        "midfield": 86,
         "defense": 82,
         "goalkeeping": 81
       }
@@ -147,9 +147,9 @@
       "teamLabel": "Manchester City (1975-76)",
       "ratings": {
         "attack": 83,
-        "midfield": 87,
+        "midfield": 85,
         "defense": 83,
-        "goalkeeping": 81
+        "goalkeeping": 84
       }
     },
     "2011": {
@@ -373,10 +373,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 82,
-        "defense": 82,
-        "goalkeeping": 81
+        "attack": 89,
+        "midfield": 89,
+        "defense": 85,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2011/2012)",
       "teamLabel": "Manchester City (2011-12)"
@@ -632,8 +632,8 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 84,
+        "attack": 88,
+        "midfield": 88,
         "defense": 85,
         "goalkeeping": 83
       },
@@ -927,9 +927,9 @@
         }
       ],
       "ratings": {
-        "attack": 93,
-        "midfield": 93,
-        "defense": 90,
+        "attack": 90,
+        "midfield": 90,
+        "defense": 85,
         "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2018/2019)",
@@ -1150,9 +1150,9 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 91,
-        "defense": 91,
+        "attack": 90,
+        "midfield": 90,
+        "defense": 86,
         "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2019/2020)",
@@ -1397,10 +1397,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 90,
-        "defense": 88,
-        "goalkeeping": 87
+        "attack": 88,
+        "midfield": 89,
+        "defense": 86,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2021/2022)",
       "teamLabel": "Manchester City (2021-22)"
@@ -1615,9 +1615,9 @@
       ],
       "ratings": {
         "attack": 91,
-        "midfield": 91,
-        "defense": 90,
-        "goalkeeping": 87
+        "midfield": 90,
+        "defense": 87,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2022/2023)",
       "teamLabel": "Manchester City (2022-23)"
@@ -1843,9 +1843,9 @@
         }
       ],
       "ratings": {
-        "attack": 93,
-        "midfield": 94,
-        "defense": 91,
+        "attack": 88,
+        "midfield": 89,
+        "defense": 88,
         "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2023/2024)",
@@ -2018,13 +2018,206 @@
         }
       ],
       "ratings": {
-        "attack": 88,
+        "attack": 89,
         "midfield": 89,
-        "defense": 86,
-        "goalkeeping": 86
+        "defense": 89,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” Manchester City (2025/2026)",
       "teamLabel": "Manchester City (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Gianluigi Donnarumma",
+          "position": "GK",
+          "marketValue": 45000000,
+          "rating": 90
+        },
+        {
+          "name": "Gerónimo Rulli",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Marcus Bettinelli",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Josko Gvardiol",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Rúben Dias",
+          "position": "CB",
+          "marketValue": 55000000,
+          "rating": 90
+        },
+        {
+          "name": "Vitor Reis",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 85
+        },
+        {
+          "name": "Abdukodir Khusanov",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Juma Bah",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Nico O'Reilly",
+          "position": "LB",
+          "marketValue": 70000000,
+          "rating": 79
+        },
+        {
+          "name": "Josh Wilson-Esbrand",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Rico Lewis",
+          "position": "RB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Matheus Nunes",
+          "position": "RB",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Issa Kaboré",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rodri",
+          "position": "DM",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Nico González",
+          "position": "DM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 87
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 86
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM",
+          "marketValue": 110000000,
+          "rating": 80
+        },
+        {
+          "name": "Phil Foden",
+          "position": "AM",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Claudio Echeverri",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Rayan Cherki",
+          "position": "AM",
+          "marketValue": 90000000,
+          "rating": 83
+        },
+        {
+          "name": "Savinho",
+          "position": "LW",
+          "marketValue": 35000000,
+          "rating": 86
+        },
+        {
+          "name": "Jérémy Doku",
+          "position": "LW",
+          "marketValue": 75000000,
+          "rating": 85
+        },
+        {
+          "name": "Jack Grealish",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Jeremy Monga",
+          "position": "LW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Antoine Semenyo",
+          "position": "RW",
+          "marketValue": 80000000,
+          "rating": 84
+        },
+        {
+          "name": "Erling Haaland",
+          "position": "ST",
+          "marketValue": 220000000,
+          "rating": 95
+        },
+        {
+          "name": "Omar Marmoush",
+          "position": "ST",
+          "marketValue": 50000000,
+          "rating": 85
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 87,
+        "defense": 89,
+        "goalkeeping": 90
+      },
+      "source": "Transfermarkt — Manchester City (2026/2027)",
+      "teamLabel": "Manchester City (2026-27)"
     }
   },
   "id": 281,

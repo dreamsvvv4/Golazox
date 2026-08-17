@@ -34,6 +34,10 @@ const BATCH    = getArg('--batch')            || 'all';
 const ONLY_TEAM= getArg('--team');
 const FROM     = parseInt(getArg('--from')    || '0', 10);
 const ONLY_NEW = hasFlag('--only-new');
+// --year <YYYY>: override the per-team `years` list and fetch ONLY that season for
+// every team in the batch. Used to seed a new current season (e.g. 2026 = 2026/27)
+// across all clubs without editing each team's year list by hand.
+const YEAR_OVR = getArg('--year');
 
 // ── Años por competición ───────────────────────────────────────
 // (año de inicio de temporada, ej. 2010 = temporada 2010/11)
@@ -395,7 +399,8 @@ function buildQueue() {
 
   const queue = [];
   for (const { team, years, region } of catalog) {
-    for (const year of years) {
+    const yrs = YEAR_OVR ? [YEAR_OVR] : years;
+    for (const year of yrs) {
       queue.push({ team, year: String(year), region: region || '' });
     }
   }
@@ -471,7 +476,8 @@ async function main() {
   let downloaded = 0, cached = 0, failed = 0, skipped = 0;
   const startTime = Date.now();
   let lastRegion  = '';
-  let consecutiveFails = 0; // track rate-limiting
+  let consecutiveFails = 0; // track rate-limiting (any failure)
+  let consecutiveNetFails = 0; // track only slow/timeout failures (real IP block)
   const PROGRESS_FILE = path.join(SQUADS_DIR, '.seed-progress.json');
 
   function writeProgress(i, currentTeam, currentYear) {
@@ -527,10 +533,15 @@ async function main() {
         if (!ONLY_NEW) console.log(`  [${num}/${total}] ${pct}%  ⬛  ${team.padEnd(22)} ${year}  — sin datos TM`);
         failed++;
         consecutiveFails++;
+        // Distinguish a real IP block (slow timeout) from a name-resolution miss
+        // (TM responds fast with the wrong club). Only slow failures count toward
+        // the hard abort so a cluster of unresolvable minor teams (MLS, Saudi 2nd
+        // tier…) doesn't kill an otherwise-healthy run.
+        if (ms > 4000) consecutiveNetFails++; else consecutiveNetFails = 0;
 
-        // If we get ≥10 consecutive failures, TM is almost certainly blocking us — abort
-        if (consecutiveFails >= 10) {
-          console.log(`\n  🚫  ${consecutiveFails} fallos seguidos — TM está bloqueando la IP. Abortando.`);
+        // If we get ≥10 consecutive SLOW failures, TM is almost certainly blocking us — abort
+        if (consecutiveNetFails >= 10) {
+          console.log(`\n  🚫  ${consecutiveNetFails} fallos lentos seguidos — TM está bloqueando la IP. Abortando.`);
           console.log(`  💡  Espera unas horas y vuelve a lanzar con --only-new para reanudar.`);
           process.exit(1);
         }
@@ -547,6 +558,7 @@ async function main() {
       } else {
         // Real network download — show GK for spot-checking
         consecutiveFails = 0; // reset on success
+        consecutiveNetFails = 0;
         downloaded++;
         const gk     = result.players.find(p => p.position === 'GK');
         const gkName = gk ? gk.name : '(sin GK?)';

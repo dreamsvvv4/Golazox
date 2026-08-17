@@ -222,7 +222,7 @@
       ],
       "ratings": {
         "attack": 78,
-        "midfield": 76,
+        "midfield": 80,
         "defense": 76,
         "goalkeeping": 77
       },
@@ -360,12 +360,181 @@
       ],
       "ratings": {
         "attack": 78,
-        "midfield": 76,
+        "midfield": 79,
         "defense": 76,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Al-Ettifaq (2025/2026)",
       "teamLabel": "Al-Ettifaq (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marek Rodák",
+          "position": "GK",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Abdulbasit Hawsawi",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Ahmad Al-Rehaili",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Turki Ba Al-Jawsh",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jack Hendry",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Abdullah Madu",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Abdullah Khateeb",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Meshal Al-Sibyani",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Mishal Al-Alaeli",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Radhi Al-Otaibi",
+          "position": "RB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Madallah Al-Olayan",
+          "position": "RB",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Awad Dahal",
+          "position": "RB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Álvaro Medrán",
+          "position": "CM",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Ondrej Duda",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Faris Al-Ghamdi",
+          "position": "CM",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Abdulrahman Nabza",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Bersant Celina",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Abdulhakim Maghfouri",
+          "position": "AM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Yasir Al-Shammari",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rayane Messi",
+          "position": "LW",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Khalid Al-Ghannam",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Matija Gluscevic",
+          "position": "LW",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Mohau Nkota",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Jalal Al-Salem",
+          "position": "RW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ziyad Al-Ghamdi",
+          "position": "RW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Moussa Dembélé",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 75,
+        "defense": 72,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Al-Ettifaq (2026/2027)",
+      "teamLabel": "Al-Ettifaq (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/al-ettifaq.png",

@@ -136,10 +136,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "defense": 81,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Nottingham Forest (1979/1980)",
       "teamLabel": "Nottingham Forest (1979-80)"
@@ -269,10 +269,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "defense": 81,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Nottingham Forest (1980/1981)",
       "teamLabel": "Nottingham Forest (1980-81)"
@@ -456,13 +456,206 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 86,
-        "defense": 87,
-        "goalkeeping": 79
+        "attack": 85,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Nottingham Forest (2025/2026)",
       "teamLabel": "Nottingham Forest (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "John Victor",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Matz Sels",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Steven Benda",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Murillo",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Ousmane Diomande",
+          "position": "CB",
+          "marketValue": 42000000,
+          "rating": 88
+        },
+        {
+          "name": "Nikola Milenković",
+          "position": "CB",
+          "marketValue": 28000000,
+          "rating": 86
+        },
+        {
+          "name": "Jair Cunha",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Morato",
+          "position": "CB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Zach Abbott",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Tyler Bindon",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Neco Williams",
+          "position": "LB",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Luca Netz",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Omar Richards",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ola Aina",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 84
+        },
+        {
+          "name": "Nicolò Savona",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Eric da Silva Moreira",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ibrahim Sangaré",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nicolás Domínguez",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Xaver Schlager",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ryan Yates",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "James McAtee",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Morgan Gibbs-White",
+          "position": "AM",
+          "marketValue": 70000000,
+          "rating": 84
+        },
+        {
+          "name": "Callum Hudson-Odoi",
+          "position": "LW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Dan Ndoye",
+          "position": "RW",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Omari Hutchinson",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Dilane Bakwa",
+          "position": "RW",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Arnaud Kalimuendo",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Igor Jesus",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Taiwo Awoniyi",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Chris Wood",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Nottingham Forest (2026/2027)",
+      "teamLabel": "Nottingham Forest (2026-27)"
     }
   },
   "id": 703,

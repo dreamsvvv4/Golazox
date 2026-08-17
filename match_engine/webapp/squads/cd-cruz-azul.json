@@ -278,8 +278,8 @@
       "ratings": {
         "attack": 80,
         "midfield": 80,
-        "defense": 81,
-        "goalkeeping": 74
+        "defense": 80,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Cruz Azul (2021/2022)",
       "teamLabel": "Cruz Azul (2021-22)"
@@ -433,13 +433,194 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 80,
         "midfield": 81,
         "defense": 79,
-        "goalkeeping": 77
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Cruz Azul (2025/2026)",
       "teamLabel": "Cruz Azul (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Kevin Mier",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Andrés Gudiño",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Emmanuel Ochoa",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Willer Ditta",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Jesús Orozco Chiquete",
+          "position": "CB",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Gonzalo Piovi",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alán Montes",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Raymundo Rubio",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Cristian Jiménez",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Omar Campos",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jorge Rodarte",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Fernando Sámano",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Érik Lira",
+          "position": "DM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Amaury García",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jeremy Márquez",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Carlos Rodríguez",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Agustín Palavecino",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Andrés Montaño",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "José Paradela",
+          "position": "AM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Carlos Rotondi",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luka Romero",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Amaury Morales",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicolás Ibáñez",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Gabriel Fernández",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Christian Ebere",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Juan Calero",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mateo Levy",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Bryan Gamboa",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 82,
+        "defense": 79,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Cruz Azul (2026/2027)",
+      "teamLabel": "Cruz Azul (2026-27)"
     }
   },
   "id": 3711,

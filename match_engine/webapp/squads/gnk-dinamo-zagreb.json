@@ -161,13 +161,230 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Dinamo Zagreb (2025/2026)",
       "teamLabel": "Dinamo Zagreb (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ivan Nevistic",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ivan Filipovic",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Danijel Zagorac",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Sergi Domínguez",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Scott McKenna",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Niko Galesic",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Stjepan Radeljic",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Raúl Torrente",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Marko Zebic",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Borna Orlic",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Kévin Théophile-Catherine",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Matteo Pérez Vinlöf",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Bruno Goda",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Moris Valincic",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Noa Mikic",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Paul Tabinas",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Josip Misic",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Miha Zajc",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Luka Stojkovic",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Robert Mudrazija",
+          "position": "AM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Lukas Kacavenda",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lovre Kulusic",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sven Sunta",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Gabriel Vidovic",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Arbër Hoxha",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Noah Nsoki",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mislav Orsic",
+          "position": "LW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Mateo Lisica",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dani Rodríguez",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Fran Topic",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tin Miljak",
+          "position": "RW",
+          "marketValue": 10000,
+          "rating": 62
+        },
+        {
+          "name": "Dion Beljo",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Aleks Stojakovic",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Smail Prevljak",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 76,
+        "defense": 77,
+        "goalkeeping": 70
+      },
+      "source": "Transfermarkt — Dinamo Zagreb (2026/2027)",
+      "teamLabel": "Dinamo Zagreb (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/gnk-dinamo-zagreb.png",

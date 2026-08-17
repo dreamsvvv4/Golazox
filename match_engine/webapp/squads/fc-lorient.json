@@ -161,10 +161,167 @@
         "attack": 80,
         "midfield": 80,
         "defense": 81,
-        "goalkeeping": 71
+        "goalkeeping": 78
       },
       "source": "Transfermarkt 🌍 Otros€” Lorient (2025/2026)",
       "teamLabel": "Lorient (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Yvon Mvogo",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Bingourou Kamara",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Benjamin Leroy",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Montassar Talbi",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Formose Mendy",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nathaniel Adjei",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Isaak Touré",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Enzo Genton",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Arsène Kouassi",
+          "position": "LB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Dembo Sylla",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Alec Georgen",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Arthur Avom",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Théo Le Bris",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Noah Cadiou",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Noah Mbamba",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Panos Katseris",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joel Mvuka",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jean-Victor Makengo",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Gabin Bernardeau",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Bandiougou Fadiga",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jérémy Hatchi",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Souleymane Faye",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mohamed Bamba",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Aiyegun Tosin",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Lorient (2026/2027)",
+      "teamLabel": "Lorient (2026-27)"
     }
   },
   "name": "Lorient",

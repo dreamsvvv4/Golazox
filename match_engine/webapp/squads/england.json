@@ -108,7 +108,13 @@
           "position": "CM",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1954": {
       "players": [
@@ -222,7 +228,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1958": {
       "players": [
@@ -336,7 +348,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 83,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "1962": {
       "players": [
@@ -395,7 +413,13 @@
           "position": "ST",
           "rating": 85
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 87,
+        "defense": 86,
+        "goalkeeping": 90
+      }
     },
     "1966": {
       "players": [
@@ -509,17 +533,23 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 87,
+        "defense": 86,
+        "goalkeeping": 90
+      }
     },
     "1970": {
       "formation": "4-4-2",
       "teamLabel": "England (1970)",
       "source": "England - World Cup 1970",
       "ratings": {
-        "attack": 84,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 86
+        "attack": 85,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 90
       },
       "players": [
         {
@@ -584,10 +614,10 @@
       "teamLabel": "England (1982)",
       "source": "England - World Cup 1982",
       "ratings": {
-        "attack": 79,
-        "midfield": 79,
-        "defense": 80,
-        "goalkeeping": 80
+        "attack": 83,
+        "midfield": 84,
+        "defense": 81,
+        "goalkeeping": 87
       },
       "players": [
         {
@@ -856,10 +886,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 79,
-        "defense": 83,
-        "goalkeeping": 78
+        "attack": 86,
+        "midfield": 86,
+        "defense": 81,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt — England (1986/1987)",
       "teamLabel": "England (1986-87)"
@@ -976,7 +1006,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 81,
+        "defense": 80,
+        "goalkeeping": 87
+      }
     },
     "1998": {
       "players": [
@@ -1090,7 +1126,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 81
+      }
     },
     "2002": {
       "players": [
@@ -1149,7 +1191,13 @@
           "position": "LW",
           "rating": 88
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 87,
+        "defense": 82,
+        "goalkeeping": 87
+      }
     },
     "2006": {
       "players": [
@@ -1268,7 +1316,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 88,
+        "defense": 86,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -1387,7 +1441,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 87,
+        "defense": 83,
+        "goalkeeping": 83
+      }
     },
     "2014": {
       "players": [
@@ -1506,7 +1566,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 87,
+        "defense": 78,
+        "goalkeeping": 83
+      }
     },
     "2018": {
       "formation": "4-4-2",
@@ -1795,10 +1861,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 79,
-        "defense": 83,
-        "goalkeeping": 78
+        "attack": 87,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt — England (2018/2019)",
       "teamLabel": "England (2018-19)"
@@ -1920,7 +1986,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 85
+      }
     },
     "2025": {
       "formation": "4-4-2",
@@ -2167,13 +2239,182 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 80,
-        "goalkeeping": 82
+        "attack": 90,
+        "midfield": 90,
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "DB local 🌍 Otros€” England (2025)",
       "teamLabel": "England (2025)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 85
+        },
+        {
+          "name": "Dean Henderson",
+          "position": "GK",
+          "marketValue": 28000000,
+          "rating": 80
+        },
+        {
+          "name": "James Trafford",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 79
+        },
+        {
+          "name": "Marc Guéhi",
+          "position": "CB",
+          "marketValue": 70000000,
+          "rating": 85
+        },
+        {
+          "name": "John Stones",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 84
+        },
+        {
+          "name": "Ezri Konsa",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 83
+        },
+        {
+          "name": "Jarell Quansah",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 81
+        },
+        {
+          "name": "Trevoh Chalobah",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 80
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 80
+        },
+        {
+          "name": "Nico O'Reilly",
+          "position": "LB",
+          "marketValue": 70000000,
+          "rating": 79
+        },
+        {
+          "name": "Reece James",
+          "position": "RB",
+          "marketValue": 60000000,
+          "rating": 85
+        },
+        {
+          "name": "Djed Spence",
+          "position": "RB",
+          "marketValue": 40000000,
+          "rating": 79
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM",
+          "marketValue": 120000000,
+          "rating": 88
+        },
+        {
+          "name": "Kobbie Mainoo",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 83
+        },
+        {
+          "name": "Elliot Anderson",
+          "position": "CM",
+          "marketValue": 110000000,
+          "rating": 80
+        },
+        {
+          "name": "Jordan Henderson",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 80
+        },
+        {
+          "name": "Jude Bellingham",
+          "position": "AM",
+          "marketValue": 160000000,
+          "rating": 91
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "AM",
+          "marketValue": 65000000,
+          "rating": 90
+        },
+        {
+          "name": "Morgan Rogers",
+          "position": "AM",
+          "marketValue": 110000000,
+          "rating": 82
+        },
+        {
+          "name": "Anthony Gordon",
+          "position": "LW",
+          "marketValue": 80000000,
+          "rating": 90
+        },
+        {
+          "name": "Marcus Rashford",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 86
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "RW",
+          "marketValue": 110000000,
+          "rating": 90
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "RW",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Harry Kane",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Ollie Watkins",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Ivan Toney",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — New England Revolution (2026/2027)",
+      "teamLabel": "New England Revolution (2026-27)"
     }
   },
   "name": "England",

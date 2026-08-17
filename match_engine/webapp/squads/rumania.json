@@ -84,7 +84,13 @@
           "position": "GK",
           "rating": 77
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1934": {
       "players": [
@@ -198,7 +204,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 77,
+        "goalkeeping": 78
+      }
     },
     "1938": {
       "players": [
@@ -312,7 +324,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 78
+      }
     },
     "1970": {
       "formation": "4-4-2",
@@ -320,9 +338,9 @@
       "source": "Romania - World Cup 1970",
       "ratings": {
         "attack": 76,
-        "midfield": 74,
+        "midfield": 76,
         "defense": 73,
-        "goalkeeping": 72
+        "goalkeeping": 73
       },
       "players": [
         {
@@ -387,10 +405,10 @@
       "teamLabel": "Rumania (1990)",
       "source": "Romania - World Cup 1990",
       "ratings": {
-        "attack": 80,
-        "midfield": 79,
-        "defense": 77,
-        "goalkeeping": 76
+        "attack": 79,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 77
       },
       "players": [
         {
@@ -530,10 +548,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
+        "attack": 84,
+        "midfield": 84,
         "defense": 85,
-        "goalkeeping": 82
+        "goalkeeping": 84
       }
     },
     "1998": {
@@ -616,10 +634,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 85,
         "midfield": 84,
-        "defense": 85,
-        "goalkeeping": 81
+        "defense": 84,
+        "goalkeeping": 83
       }
     },
     "2025": {
@@ -705,7 +723,7 @@
         "attack": 80,
         "midfield": 79,
         "defense": 78,
-        "goalkeeping": 77
+        "goalkeeping": 79
       }
     }
   }

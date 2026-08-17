@@ -113,7 +113,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 79
+      }
     },
     "1938": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 78,
+        "goalkeeping": 79
+      }
     },
     "1954": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 79,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1958": {
       "players": [
@@ -585,7 +603,13 @@
           "marketValue": 0,
           "rating": 86
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 81,
+        "defense": 81,
+        "goalkeeping": 82
+      }
     },
     "1962": {
       "players": [
@@ -759,7 +783,13 @@
           "position": "ST",
           "rating": 80
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 84,
+        "defense": 83,
+        "goalkeeping": 89
+      }
     },
     "1966": {
       "players": [
@@ -873,7 +903,13 @@
           "position": "GK",
           "rating": 90
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 81,
+        "defense": 84,
+        "goalkeeping": 89
+      }
     },
     "1970": {
       "formation": "4-4-2",
@@ -1030,10 +1066,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 81
+        "attack": 87,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1970/1971)",
       "teamLabel": "germany (1970-71)"
@@ -1148,10 +1184,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 85,
-        "goalkeeping": 81
+        "attack": 83,
+        "midfield": 83,
+        "defense": 88,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1972/1973)",
       "teamLabel": "germany (1972-73)"
@@ -1321,10 +1357,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 85
+        "attack": 85,
+        "midfield": 85,
+        "defense": 88,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1974/1975)",
       "teamLabel": "germany (1974-75)"
@@ -1479,10 +1515,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 81,
-        "goalkeeping": 80
+        "attack": 84,
+        "midfield": 83,
+        "defense": 82,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1978/1979)",
       "teamLabel": "germany (1978-79)"
@@ -1652,10 +1688,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 83,
-        "defense": 84,
-        "goalkeeping": 81
+        "attack": 86,
+        "midfield": 87,
+        "defense": 80,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1980/1981)",
       "teamLabel": "germany (1980-81)"
@@ -1815,10 +1851,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 84,
-        "defense": 85,
-        "goalkeeping": 82
+        "attack": 86,
+        "midfield": 87,
+        "defense": 81,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1982/1983)",
       "teamLabel": "germany (1982-83)"
@@ -2003,10 +2039,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 82
+        "attack": 83,
+        "midfield": 83,
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1986/1987)",
       "teamLabel": "germany (1986-87)"
@@ -2186,10 +2222,10 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 90,
-        "defense": 86,
-        "goalkeeping": 84
+        "attack": 85,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1990/1991)",
       "teamLabel": "germany (1990-91)"
@@ -2369,10 +2405,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 82,
+        "attack": 86,
+        "midfield": 87,
         "defense": 84,
-        "goalkeeping": 82
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1994/1995)",
       "teamLabel": "germany (1994-95)"
@@ -2532,10 +2568,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 84,
-        "goalkeeping": 82
+        "attack": 82,
+        "midfield": 81,
+        "defense": 81,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1996/1997)",
       "teamLabel": "germany (1996-97)"
@@ -2780,10 +2816,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 80,
-        "defense": 82,
-        "goalkeeping": 80
+        "attack": 86,
+        "midfield": 88,
+        "defense": 81,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (1998/1999)",
       "teamLabel": "germany (1998-99)"
@@ -2948,10 +2984,10 @@
         }
       ],
       "ratings": {
-        "attack": 74,
-        "midfield": 75,
-        "defense": 75,
-        "goalkeeping": 73
+        "attack": 83,
+        "midfield": 86,
+        "defense": 80,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2000/2001)",
       "teamLabel": "germany (2000-01)"
@@ -3176,10 +3212,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 80,
-        "defense": 82,
-        "goalkeeping": 80
+        "attack": 83,
+        "midfield": 83,
+        "defense": 80,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2002/2003)",
       "teamLabel": "germany (2002-03)"
@@ -3399,10 +3435,10 @@
         }
       ],
       "ratings": {
-        "attack": 75,
-        "midfield": 77,
-        "defense": 78,
-        "goalkeeping": 76
+        "attack": 82,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2004/2005)",
       "teamLabel": "germany (2004-05)"
@@ -3582,10 +3618,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 82,
+        "midfield": 84,
+        "defense": 85,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2006/2007)",
       "teamLabel": "germany (2006-07)"
@@ -3785,10 +3821,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
+        "attack": 82,
         "midfield": 84,
-        "defense": 82,
-        "goalkeeping": 82
+        "defense": 83,
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2008/2009)",
       "teamLabel": "germany (2008-09)"
@@ -4013,10 +4049,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
-        "defense": 84,
-        "goalkeeping": 84
+        "attack": 87,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2010/2011)",
       "teamLabel": "germany (2010-11)"
@@ -4201,10 +4237,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 80
+        "attack": 87,
+        "midfield": 88,
+        "defense": 88,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2012/2013)",
       "teamLabel": "germany (2012-13)"
@@ -4434,10 +4470,10 @@
         }
       ],
       "ratings": {
-        "attack": 90,
-        "midfield": 90,
+        "attack": 87,
+        "midfield": 88,
         "defense": 88,
-        "goalkeeping": 87
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2014/2015)",
       "teamLabel": "germany (2014-15)"
@@ -4642,10 +4678,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 82,
-        "defense": 83,
-        "goalkeeping": 81
+        "attack": 85,
+        "midfield": 88,
+        "defense": 87,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2016/2017)",
       "teamLabel": "germany (2016-17)"
@@ -4830,10 +4866,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 82
+        "attack": 86,
+        "midfield": 87,
+        "defense": 87,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2018/2019)",
       "teamLabel": "germany (2018-19)"
@@ -5023,10 +5059,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 79,
-        "defense": 80,
-        "goalkeeping": 80
+        "attack": 85,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2020/2021)",
       "teamLabel": "germany (2020-21)"
@@ -5221,10 +5257,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "attack": 86,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2022/2023)",
       "teamLabel": "germany (2022-23)"
@@ -5498,10 +5534,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 81,
-        "defense": 82,
-        "goalkeeping": 82
+        "attack": 87,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 89
       },
       "source": "Transfermarkt 🌍 Otros€” germany (2025/2026)",
       "teamLabel": "germany (2025-26)"

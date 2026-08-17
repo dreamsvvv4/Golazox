@@ -82,9 +82,9 @@
       ],
       "ratings": {
         "attack": 86,
-        "midfield": 86,
-        "defense": 83,
-        "goalkeeping": 83
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 87
       }
     },
     "2021": {
@@ -302,10 +302,10 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 73,
-        "defense": 73,
-        "goalkeeping": 74
+        "attack": 82,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Everton (2021/2022)",
       "teamLabel": "Everton (2021-22)"
@@ -515,10 +515,10 @@
         }
       ],
       "ratings": {
-        "attack": 72,
-        "midfield": 72,
-        "defense": 72,
-        "goalkeeping": 73
+        "attack": 82,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Everton (2022/2023)",
       "teamLabel": "Everton (2022-23)"
@@ -698,10 +698,10 @@
         }
       ],
       "ratings": {
-        "attack": 71,
-        "midfield": 71,
-        "defense": 72,
-        "goalkeeping": 73
+        "attack": 81,
+        "midfield": 82,
+        "defense": 83,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Everton (2023/2024)",
       "teamLabel": "Everton (2023-24)"
@@ -906,10 +906,10 @@
         }
       ],
       "ratings": {
-        "attack": 72,
-        "midfield": 71,
-        "defense": 72,
-        "goalkeeping": 73
+        "attack": 81,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Everton (2024/2025)",
       "teamLabel": "Everton (2024-25)"
@@ -1044,13 +1044,170 @@
         }
       ],
       "ratings": {
-        "attack": 73,
-        "midfield": 72,
-        "defense": 73,
-        "goalkeeping": 74
+        "attack": 81,
+        "midfield": 79,
+        "defense": 81,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Everton (2025/2026)",
       "teamLabel": "Everton (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "marketValue": 13000000,
+          "rating": 85
+        },
+        {
+          "name": "Mark Travers",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tom King",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jarrad Branthwaite",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 84
+        },
+        {
+          "name": "James Tarkowski",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Michael Keane",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Vitaliy Mykolenko",
+          "position": "LB",
+          "marketValue": 25000000,
+          "rating": 83
+        },
+        {
+          "name": "Adam Aznou",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jake O'Brien",
+          "position": "RB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Nathan Patterson",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "James Garner",
+          "position": "DM",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Hayden Hackney",
+          "position": "DM",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Christian Nørgaard",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Kiernan Dewsbury-Hall",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Tim Iroegbunam",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Carlos Alcaraz",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Harrison Armstrong",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Merlin Röhl",
+          "position": "AM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Tyrique George",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Tyler Dibling",
+          "position": "RW",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Iliman Ndiaye",
+          "position": "RW",
+          "marketValue": 55000000,
+          "rating": 83
+        },
+        {
+          "name": "Brennan Johnson",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 83
+        },
+        {
+          "name": "Thierno Barry",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Beto",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 87,
+        "defense": 83,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Everton (2026/2027)",
+      "teamLabel": "Everton (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/fc-everton.png",

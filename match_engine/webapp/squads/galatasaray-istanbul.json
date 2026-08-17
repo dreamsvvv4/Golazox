@@ -198,10 +198,10 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 80
+        "attack": 80,
+        "midfield": 80,
+        "defense": 78,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Galatasaray (2000/2001)",
       "teamLabel": "Galatasaray (2000-01)"
@@ -445,7 +445,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -659,7 +659,7 @@
         "attack": 84,
         "midfield": 84,
         "defense": 80,
-        "goalkeeping": 71
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Galatasaray (2012/2013)",
       "teamLabel": "Galatasaray (2012-13)"
@@ -921,10 +921,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
+        "attack": 83,
         "midfield": 82,
         "defense": 79,
-        "goalkeeping": 69
+        "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” Galatasaray (2019/2020)",
       "teamLabel": "Galatasaray (2019-20)"
@@ -1210,10 +1210,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
+        "attack": 82,
         "midfield": 81,
-        "defense": 84,
-        "goalkeeping": 71
+        "defense": 83,
+        "goalkeeping": 75
       },
       "source": "Transfermarkt 🌍 Otros€” Galatasaray (2023/2024)",
       "teamLabel": "Galatasaray (2023-24)"
@@ -1368,13 +1368,212 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
-        "defense": 76,
+        "attack": 82,
+        "midfield": 82,
+        "defense": 79,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Galatasaray (2025/2026)",
       "teamLabel": "Galatasaray (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Uğurcan Çakır",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Jankat Yılmaz",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Günay Güvenç",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Enes Emre Büyük",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Davinson Sánchez",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 85
+        },
+        {
+          "name": "Abdülkerim Bardakcı",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Victor Nelsson",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Metehan Baltacı",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Kaan Ayhan",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Arda Ünyay",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ismail Jakobs",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Eren Elmalı",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Kazımcan Karataş",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Wilfried Singo",
+          "position": "RB",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Roland Sallai",
+          "position": "RB",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Elias Jelert",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ali Turap Bülbül",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lesley Ugochukwu",
+          "position": "DM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Lucas Torreira",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 84
+        },
+        {
+          "name": "Mario Lemina",
+          "position": "DM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Eyüp Aydın",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Gabriel Sara",
+          "position": "CM",
+          "marketValue": 27000000,
+          "rating": 86
+        },
+        {
+          "name": "İlkay Gündoğan",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 86
+        },
+        {
+          "name": "Renato Nhaga",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Siraçhan Nas",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Barış Alper Yılmaz",
+          "position": "LW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Berat Luş",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yunus Akgün",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Leroy Sané",
+          "position": "RW",
+          "marketValue": 20000000,
+          "rating": 84
+        },
+        {
+          "name": "Armando Güner",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Victor Osimhen",
+          "position": "ST",
+          "marketValue": 75000000,
+          "rating": 87
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 84
+      },
+      "source": "Transfermarkt — Galatasaray (2026/2027)",
+      "teamLabel": "Galatasaray (2026-27)"
     }
   },
   "id": 141,

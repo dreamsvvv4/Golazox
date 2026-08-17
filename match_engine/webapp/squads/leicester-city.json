@@ -206,9 +206,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 84,
+        "midfield": 84,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Leicester City (2021/2022)",
@@ -410,8 +410,8 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "midfield": 83,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Leicester City (2022/2023)",
@@ -607,9 +607,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 81,
+        "midfield": 82,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Leicester City (2023/2024)",
@@ -820,8 +820,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 81,
+        "midfield": 82,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -985,6 +985,175 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Leicester City (2025/2026)",
       "teamLabel": "Leicester City (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jakub Stolarczyk",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Franco Ravizzoli",
+          "position": "GK",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Alex McCarthy",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Wout Faes",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Caleb Okoli",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Harry Souttar",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ben Nelson",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Luke Thomas",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Christian McFarlane",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Woyo Coulibaly",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Olabade Aluko",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jayden Joseph",
+          "position": "RB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Hamza Choudhury",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Oliver Skipp",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Sammy Braybrooke",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Louis Page",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Harry Howell",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Liam Cullen",
+          "position": "AM",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Bobby De Cordova-Reid",
+          "position": "AM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Will Alves",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tommy Watson",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Stephy Mavididi",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Wes Burns",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Conor Chaplin",
+          "position": "AM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Admir Bristric",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Nathaniel Opoku",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 76
+      },
+      "source": "Transfermarkt — Leicester City (2026/2027)",
+      "teamLabel": "Leicester City (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/leicester-city.png",

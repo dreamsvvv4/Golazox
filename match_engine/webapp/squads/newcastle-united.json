@@ -150,8 +150,8 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 80,
+        "attack": 83,
+        "midfield": 81,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -397,8 +397,8 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 80,
+        "attack": 86,
+        "midfield": 83,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -580,8 +580,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 81,
+        "midfield": 81,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -783,8 +783,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 83,
+        "midfield": 82,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -1021,8 +1021,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 83,
+        "midfield": 83,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -1214,8 +1214,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
+        "attack": 83,
+        "midfield": 83,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -1357,13 +1357,176 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 85,
+        "attack": 84,
+        "midfield": 86,
         "defense": 82,
-        "goalkeeping": 76
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Newcastle United (2025/2026)",
       "teamLabel": "Newcastle United (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Lukas Hornicek",
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ewen Jaouen",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Nick Pope",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Aidan Harris",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Mark Gillespie",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Malick Thiaw",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Sven Botman",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Dan Burn",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 80
+        },
+        {
+          "name": "Fabian Schär",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Lewis Hall",
+          "position": "LB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Tino Livramento",
+          "position": "RB",
+          "marketValue": 45000000,
+          "rating": 81
+        },
+        {
+          "name": "Leo Shahar",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Aladji Bamba",
+          "position": "DM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jacob Ramsey",
+          "position": "CM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Lewis Miley",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Joe Willock",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Joelinton",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 82
+        },
+        {
+          "name": "Sean Steur",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Bazoumana Touré",
+          "position": "LW",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Harvey Barnes",
+          "position": "LW",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Anthony Elanga",
+          "position": "RW",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Jacob Murphy",
+          "position": "RW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Nick Woltemade",
+          "position": "ST",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "William Osula",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Yoane Wissa",
+          "position": "ST",
+          "marketValue": 25000000,
+          "rating": 84
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 86,
+        "defense": 86,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Newcastle United (2026/2027)",
+      "teamLabel": "Newcastle United (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/newcastle-united.png",

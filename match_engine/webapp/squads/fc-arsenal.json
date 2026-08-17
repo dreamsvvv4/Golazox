@@ -188,8 +188,8 @@
       "ratings": {
         "attack": 83,
         "midfield": 83,
-        "defense": 85,
-        "goalkeeping": 82
+        "defense": 83,
+        "goalkeeping": 83
       }
     },
     "1994": {
@@ -362,10 +362,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 84,
-        "defense": 86,
-        "goalkeeping": 85
+        "attack": 82,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (1994/1995)",
       "teamLabel": "Arsenal (1994-95)"
@@ -560,10 +560,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 86,
-        "defense": 86,
-        "goalkeeping": 84
+        "attack": 88,
+        "midfield": 88,
+        "defense": 85,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2001/2002)",
       "teamLabel": "Arsenal (2001-02)"
@@ -755,8 +755,8 @@
       "ratings": {
         "attack": 88,
         "midfield": 88,
-        "defense": 88,
-        "goalkeeping": 85
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2002/2003)",
       "teamLabel": "Arsenal (2002-03)"
@@ -859,9 +859,9 @@
       "teamLabel": "Arsenal Invincibles (2003-04)",
       "ratings": {
         "attack": 88,
-        "midfield": 88,
-        "defense": 86,
-        "goalkeeping": 85
+        "midfield": 87,
+        "defense": 85,
+        "goalkeeping": 88
       }
     },
     "2004": {
@@ -1054,10 +1054,10 @@
         }
       ],
       "ratings": {
-        "attack": 91,
-        "midfield": 91,
-        "defense": 89,
-        "goalkeeping": 85
+        "attack": 90,
+        "midfield": 89,
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2004/2005)",
       "teamLabel": "Arsenal (2004-05)"
@@ -1155,9 +1155,9 @@
       "teamLabel": "Arsenal (2005-06)",
       "ratings": {
         "attack": 87,
-        "midfield": 86,
+        "midfield": 84,
         "defense": 85,
-        "goalkeeping": 84
+        "goalkeeping": 87
       }
     },
     "2023": {
@@ -1405,10 +1405,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 87,
-        "defense": 85,
-        "goalkeeping": 84
+        "attack": 87,
+        "midfield": 86,
+        "defense": 87,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2023/2024)",
       "teamLabel": "Arsenal (2023-24)"
@@ -1672,8 +1672,8 @@
       "ratings": {
         "attack": 87,
         "midfield": 88,
-        "defense": 87,
-        "goalkeeping": 86
+        "defense": 86,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2024/2025)",
       "teamLabel": "Arsenal (2024-25)"
@@ -1803,13 +1803,200 @@
         }
       ],
       "ratings": {
-        "attack": 87,
+        "attack": 88,
         "midfield": 88,
-        "defense": 87,
-        "goalkeeping": 86
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2025/2026)",
       "teamLabel": "Arsenal (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "David Raya",
+          "position": "GK",
+          "marketValue": 30000000,
+          "rating": 85
+        },
+        {
+          "name": "Illan Meslier",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Kepa Arrizabalaga",
+          "position": "GK",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tommy Setford",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Gabriel",
+          "position": "CB",
+          "marketValue": 75000000,
+          "rating": 90
+        },
+        {
+          "name": "Cristhian Mosquera",
+          "position": "CB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Piero Hincapié",
+          "position": "CB",
+          "marketValue": 50000000,
+          "rating": 87
+        },
+        {
+          "name": "William Saliba",
+          "position": "CB",
+          "marketValue": 100000000,
+          "rating": 86
+        },
+        {
+          "name": "Riccardo Calafiori",
+          "position": "LB",
+          "marketValue": 55000000,
+          "rating": 89
+        },
+        {
+          "name": "Myles Lewis-Skelly",
+          "position": "LB",
+          "marketValue": 45000000,
+          "rating": 81
+        },
+        {
+          "name": "Jurriën Timber",
+          "position": "RB",
+          "marketValue": 70000000,
+          "rating": 85
+        },
+        {
+          "name": "Ben White",
+          "position": "RB",
+          "marketValue": 30000000,
+          "rating": 84
+        },
+        {
+          "name": "Martín Zubimendi",
+          "position": "DM",
+          "marketValue": 75000000,
+          "rating": 87
+        },
+        {
+          "name": "Bruno Guimarães",
+          "position": "CM",
+          "marketValue": 70000000,
+          "rating": 90
+        },
+        {
+          "name": "Declan Rice",
+          "position": "CM",
+          "marketValue": 120000000,
+          "rating": 88
+        },
+        {
+          "name": "Mikel Merino",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Eberechi Eze",
+          "position": "AM",
+          "marketValue": 65000000,
+          "rating": 90
+        },
+        {
+          "name": "Martin Ødegaard",
+          "position": "AM",
+          "marketValue": 70000000,
+          "rating": 89
+        },
+        {
+          "name": "Ethan Nwaneri",
+          "position": "AM",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Fábio Vieira",
+          "position": "AM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Christos Tzolis",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Gabriel Martinelli",
+          "position": "LW",
+          "marketValue": 45000000,
+          "rating": 85
+        },
+        {
+          "name": "Reiss Nelson",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Bukayo Saka",
+          "position": "RW",
+          "marketValue": 110000000,
+          "rating": 90
+        },
+        {
+          "name": "Max Dowman",
+          "position": "RW",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "RW",
+          "marketValue": 50000000,
+          "rating": 83
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "position": "ST",
+          "marketValue": 65000000,
+          "rating": 88
+        },
+        {
+          "name": "Kai Havertz",
+          "position": "ST",
+          "marketValue": 55000000,
+          "rating": 86
+        },
+        {
+          "name": "Gabriel Jesus",
+          "position": "ST",
+          "marketValue": 17000000,
+          "rating": 84
+        }
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 88,
+        "defense": 88,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Arsenal (2026/2027)",
+      "teamLabel": "Arsenal (2026-27)"
     },
     "2003_scraped_REMOVED": {
       "formation": "4-4-2",
@@ -2006,10 +2193,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
+        "attack": 89,
         "midfield": 89,
-        "defense": 87,
-        "goalkeeping": 85
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Arsenal (2003/2004)",
       "teamLabel": "Arsenal (2003-04)"

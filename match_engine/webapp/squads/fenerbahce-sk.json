@@ -156,10 +156,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 80,
         "defense": 77,
-        "goalkeeping": 73
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Fenerbahce (2005/2006)",
       "teamLabel": "Fenerbahce (2005-06)"
@@ -361,10 +361,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
+        "attack": 80,
         "midfield": 81,
-        "defense": 83,
-        "goalkeeping": 72
+        "defense": 82,
+        "goalkeeping": 78
       },
       "source": "Transfermarkt 🌍 Otros€” Fenerbahce (2007/2008)",
       "teamLabel": "Fenerbahce (2007-08)"
@@ -596,10 +596,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 80,
         "defense": 80,
-        "goalkeeping": 74
+        "goalkeeping": 78
       },
       "source": "Transfermarkt 🌍 Otros€” Fenerbahce (2014/2015)",
       "teamLabel": "Fenerbahce (2014-15)"
@@ -939,10 +939,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 83,
         "midfield": 83,
         "defense": 84,
-        "goalkeeping": 80
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Fenerbahce (2023/2024)",
       "teamLabel": "Fenerbahce (2023-24)"
@@ -1114,13 +1114,266 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 86,
-        "defense": 83,
-        "goalkeeping": 77
+        "attack": 84,
+        "midfield": 84,
+        "defense": 86,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Fenerbahce (2025/2026)",
       "teamLabel": "Fenerbahce (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ederson",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 88
+        },
+        {
+          "name": "Dominik Livakovic",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Tarık Çetin",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mert Günok",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jayden Oosterwolde",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nathan Aké",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 85
+        },
+        {
+          "name": "Milan Škriniar",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Yiğit Efe Demir",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Diego Carlos",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Çağlar Söyüncü",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rodrigo Becão",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Omar Fayed",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Archie Brown",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Levent Mercan",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Mert Müldür",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nélson Semedo",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Ognjen Mimović",
+          "position": "RB",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "N'Golo Kanté",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 91
+        },
+        {
+          "name": "Sofyan Amrabat",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 86
+        },
+        {
+          "name": "İsmail Yüksek",
+          "position": "DM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Bartuğ Elmaz",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Mattéo Guendouzi",
+          "position": "CM",
+          "marketValue": 27000000,
+          "rating": 83
+        },
+        {
+          "name": "Abdou Aziz Fall",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Marco Asensio",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 83
+        },
+        {
+          "name": "Talisca",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Emre Demir",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mert Hakan Yandaş",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kerem Aktürkoğlu",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 84
+        },
+        {
+          "name": "Anthony Musaba",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Oğuz Aydın",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Amara Diouf",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mason Greenwood",
+          "position": "RW",
+          "marketValue": 55000000,
+          "rating": 86
+        },
+        {
+          "name": "Dorgeles Nene",
+          "position": "RW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Cengiz Ünder",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "İrfan Can Kahveci",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Adem Yeşilyurt",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sidiki Chérif",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Romelu Lukaku",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 85
+        },
+        {
+          "name": "Vedat Muriqi",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Çağrı Fedai",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 79,
+        "defense": 84,
+        "goalkeeping": 88
+      },
+      "source": "Transfermarkt — Fenerbahce (2026/2027)",
+      "teamLabel": "Fenerbahce (2026-27)"
     }
   },
   "id": 36,

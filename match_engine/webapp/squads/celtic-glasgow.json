@@ -136,7 +136,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -259,7 +259,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 79,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -392,7 +392,7 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 79,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
@@ -480,10 +480,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 84,
+        "attack": 85,
+        "midfield": 83,
         "defense": 82,
-        "goalkeeping": 81
+        "goalkeeping": 82
       }
     },
     "2003": {
@@ -566,10 +566,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 84,
+        "attack": 85,
+        "midfield": 83,
         "defense": 82,
-        "goalkeeping": 81
+        "goalkeeping": 82
       }
     },
     "2019": {
@@ -859,10 +859,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 78,
         "defense": 80,
-        "goalkeeping": 75
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Celtic (2019/2020)",
       "teamLabel": "Celtic (2019-20)"
@@ -1106,10 +1106,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 82,
         "midfield": 82,
         "defense": 82,
-        "goalkeeping": 74
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Celtic (2022/2023)",
       "teamLabel": "Celtic (2022-23)"
@@ -1324,12 +1324,187 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 81,
-        "defense": 82,
-        "goalkeeping": 70
+        "midfield": 82,
+        "defense": 80,
+        "goalkeeping": 73
       },
       "source": "Transfermarkt 🌍 Otros€” Celtic (2025/2026)",
       "teamLabel": "Celtic (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Viljami Sinisalo",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ross Doohan",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Cameron Carter-Vickers",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Auston Trusty",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Liam Scales",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Dane Murray",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Kieran Tierney",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Adam Montgomery",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alistair Johnston",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Colby Donovan",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Anthony Ralston",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Callum McGregor",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Reo Hatate",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 83
+        },
+        {
+          "name": "Alex Oxlade-Chamberlain",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 82
+        },
+        {
+          "name": "Mika Baur",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Luke McCowan",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Benjamin Nygren",
+          "position": "AM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Jota",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 85
+        },
+        {
+          "name": "Sebastian Tounekti",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Michel-Ange Balikwisha",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Haissem Hassan",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Hyun-jun Yang",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "James Forrest",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Kasper Høgh",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Camilo Durán",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Johnny Kenny",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Callum Osmand",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 73
+      },
+      "source": "Transfermarkt — Celtic (2026/2027)",
+      "teamLabel": "Celtic (2026-27)"
     }
   },
   "id": 371,

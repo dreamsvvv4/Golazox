@@ -136,10 +136,10 @@
         }
       ],
       "ratings": {
-        "attack": 71,
-        "midfield": 72,
-        "defense": 72,
-        "goalkeeping": 70
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "BDFutbol <\r Otros�\u001d Betis 1983-84 Primera División",
       "teamLabel": "Betis 1983-84 Primera División"
@@ -269,8 +269,8 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 77,
+        "midfield": 79,
         "defense": 76,
         "goalkeeping": 77
       },
@@ -412,10 +412,10 @@
         }
       ],
       "ratings": {
-        "attack": 71,
-        "midfield": 72,
-        "defense": 72,
-        "goalkeeping": 70
+        "attack": 77,
+        "midfield": 79,
+        "defense": 80,
+        "goalkeeping": 77
       },
       "source": "BDFutbol <\r Otros�\u001d Betis 1996-97 Primera División",
       "teamLabel": "Betis 1996-97 Primera División"
@@ -580,8 +580,8 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 77,
+        "midfield": 78,
         "defense": 76,
         "goalkeeping": 77
       },
@@ -728,13 +728,176 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 76,
+        "attack": 81,
+        "midfield": 85,
         "defense": 78,
-        "goalkeeping": 78
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Real Betis (2025/2026)",
       "teamLabel": "Real Betis (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Álvaro Valles",
+          "position": "GK",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Diego Conde",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Natan",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Valentín Gómez",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Diego Llorente",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Marc Bartra",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Fran García",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Junior Firpo",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ángel Ortiz",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Héctor Bellerín",
+          "position": "RB",
+          "marketValue": 2400000,
+          "rating": 77
+        },
+        {
+          "name": "Facundo Bernal",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Marc Roca",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Nelson Deossa",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Pablo Fornals",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Álvaro Fidalgo",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Isco",
+          "position": "AM",
+          "marketValue": 3500000,
+          "rating": 85
+        },
+        {
+          "name": "Giovani Lo Celso",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 84
+        },
+        {
+          "name": "Abde Ezzalzouli",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Rodrigo Riquelme",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Antony",
+          "position": "RW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Pablo García",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Aitor Ruibal",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Iker Losada",
+          "position": "AM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Cucho Hernández",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 84
+        },
+        {
+          "name": "Gonzalo Petit",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 81
+      },
+      "source": "Transfermarkt — Real Betis (2026/2027)",
+      "teamLabel": "Real Betis (2026-27)"
     }
   },
   "name": "Betis",

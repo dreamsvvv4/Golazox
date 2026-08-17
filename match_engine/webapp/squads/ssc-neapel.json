@@ -126,9 +126,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 85,
+        "midfield": 85,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (1986/1987)",
@@ -249,9 +249,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 86,
+        "midfield": 85,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (1987/1988)",
@@ -392,9 +392,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 86,
+        "midfield": 85,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (1988/1989)",
@@ -606,9 +606,9 @@
       ],
       "ratings": {
         "attack": 82,
-        "midfield": 80,
-        "defense": 80,
-        "goalkeeping": 81
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (2017/2018)",
       "teamLabel": "Napoli (2017-18)"
@@ -773,9 +773,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 80,
-        "defense": 80,
+        "attack": 84,
+        "midfield": 81,
+        "defense": 83,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (2022/2023)",
@@ -996,10 +996,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
+        "attack": 86,
         "midfield": 86,
         "defense": 84,
-        "goalkeeping": 75
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (2023/2024)",
       "teamLabel": "Napoli (2023-24)"
@@ -1165,13 +1165,218 @@
         }
       ],
       "ratings": {
-        "attack": 86,
+        "attack": 87,
         "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 77
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Napoli (2025/2026)",
       "teamLabel": "Napoli (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Vanja Milinković-Savić",
+          "position": "GK",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Alex Meret",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Nikita Contini",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alessandro Buongiorno",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Sam Beukema",
+          "position": "CB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Rafa Marín",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Amir Rrahmani",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Luca Marianucci",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nosa Edward Obaretin",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Christian Garofalo",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Mathías Olivera",
+          "position": "LB",
+          "marketValue": 15000000,
+          "rating": 85
+        },
+        {
+          "name": "Leonardo Spinazzola",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Giovanni Di Lorenzo",
+          "position": "RB",
+          "marketValue": 7500000,
+          "rating": 83
+        },
+        {
+          "name": "Pasquale Mazzocchi",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Billy Gilmour",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Stanislav Lobotka",
+          "position": "DM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Jens Cajuste",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Scott McTominay",
+          "position": "CM",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Frank Anguissa",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Michael Folorunsho",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 90
+        },
+        {
+          "name": "Antonio Vergara",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Alisson Santos",
+          "position": "LW",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Noa Lang",
+          "position": "LW",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "David Neres",
+          "position": "RW",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Matteo Politano",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 82
+        },
+        {
+          "name": "Cyril Ngonge",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jesper Lindstrøm",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rasmus Højlund",
+          "position": "ST",
+          "marketValue": 60000000,
+          "rating": 90
+        },
+        {
+          "name": "Lorenzo Lucca",
+          "position": "ST",
+          "marketValue": 20000000,
+          "rating": 83
+        },
+        {
+          "name": "Giovane",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Walid Cheddira",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        }
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 86,
+        "defense": 85,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Napoli (2026/2027)",
+      "teamLabel": "Napoli (2026-27)"
     }
   },
   "id": 6195,

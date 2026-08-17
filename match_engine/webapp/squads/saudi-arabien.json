@@ -6,10 +6,10 @@
       "teamLabel": "Arabia Saudí (1994)",
       "source": "Saudi Arabia - World Cup 1994 (R16)",
       "ratings": {
-        "attack": 77,
+        "attack": 76,
         "midfield": 75,
         "defense": 73,
-        "goalkeeping": 72
+        "goalkeeping": 74
       },
       "players": [
         {
@@ -74,10 +74,10 @@
       "teamLabel": "Arabia Saudí (1998)",
       "source": "Saudi Arabia - World Cup 1998",
       "ratings": {
-        "attack": 73,
-        "midfield": 72,
-        "defense": 71,
-        "goalkeeping": 72
+        "attack": 72,
+        "midfield": 73,
+        "defense": 72,
+        "goalkeeping": 74
       },
       "players": [
         {
@@ -143,9 +143,9 @@
       "source": "Saudi Arabia - World Cup 2002",
       "ratings": {
         "attack": 71,
-        "midfield": 70,
-        "defense": 69,
-        "goalkeeping": 71
+        "midfield": 72,
+        "defense": 70,
+        "goalkeeping": 73
       },
       "players": [
         {
@@ -211,8 +211,8 @@
       "source": "Saudi Arabia - World Cup 2006",
       "ratings": {
         "attack": 70,
-        "midfield": 69,
-        "defense": 69,
+        "midfield": 71,
+        "defense": 70,
         "goalkeeping": 70
       },
       "players": [
@@ -390,7 +390,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 76,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2022": {
       "players": [
@@ -509,7 +515,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -813,7 +825,7 @@
         "attack": 76,
         "midfield": 75,
         "defense": 75,
-        "goalkeeping": 69
+        "goalkeeping": 71
       },
       "source": "Transfermarkt 🌍 Otros€” saudi arabia (2025/2026)",
       "teamLabel": "saudi arabia (2025-26)"

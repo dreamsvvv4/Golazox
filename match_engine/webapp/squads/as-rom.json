@@ -81,10 +81,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 88,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 84,
+        "midfield": 85,
+        "defense": 82,
+        "goalkeeping": 85
       }
     },
     "2001": {
@@ -277,10 +277,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 85,
+        "attack": 87,
+        "midfield": 87,
         "defense": 84,
-        "goalkeeping": 83
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2001/2002)",
       "teamLabel": "Roma (2001-02)"
@@ -548,8 +548,8 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 81,
+        "attack": 85,
+        "midfield": 86,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -763,8 +763,8 @@
       "ratings": {
         "attack": 84,
         "midfield": 85,
-        "defense": 83,
-        "goalkeeping": 83
+        "defense": 80,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2006/2007)",
       "teamLabel": "Roma (2006-07)"
@@ -1008,10 +1008,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
+        "attack": 84,
         "midfield": 85,
         "defense": 85,
-        "goalkeeping": 76
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2021/2022)",
       "teamLabel": "Roma (2021-22)"
@@ -1303,10 +1303,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 80,
-        "defense": 79,
-        "goalkeeping": 79
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2022/2023)",
       "teamLabel": "Roma (2022-23)"
@@ -1562,10 +1562,10 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 79,
-        "defense": 78,
-        "goalkeeping": 79
+        "attack": 85,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2023/2024)",
       "teamLabel": "Roma (2023-24)"
@@ -1809,10 +1809,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 86,
+        "attack": 85,
+        "midfield": 85,
         "defense": 86,
-        "goalkeeping": 81
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2024/2025)",
       "teamLabel": "Roma (2024-25)"
@@ -1984,13 +1984,194 @@
         }
       ],
       "ratings": {
-        "attack": 78,
-        "midfield": 78,
-        "defense": 77,
-        "goalkeeping": 78
+        "attack": 85,
+        "midfield": 85,
+        "defense": 86,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Roma (2025/2026)",
       "teamLabel": "Roma (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mile Svilar",
+          "position": "GK",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Devis Vásquez",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Pierluigi Gollini",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Giorgio De Marzi",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Evan Ndicka",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Konstantinos Koulierakis",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Daniele Ghilardi",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Gianluca Mancini",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Jan Ziolkowski",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Mario Hermoso",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Filippo Reale",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Anass Salah-Eddine",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Wesley",
+          "position": "RB",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Nahuel Molina",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 86
+        },
+        {
+          "name": "Devyne Rensch",
+          "position": "RB",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Mattia Mannini",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Bryan Cristante",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 80
+        },
+        {
+          "name": "Manu Koné",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 89
+        },
+        {
+          "name": "Neil El Aynaoui",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Niccolò Pisilli",
+          "position": "CM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Muhammed Bah",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lorenzo Pellegrini",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Luigi Cherubini",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Matías Soulé",
+          "position": "RW",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Paulo Dybala",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 86
+        },
+        {
+          "name": "Santiago Castro",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 87
+        },
+        {
+          "name": "Robinio Vaz",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Donyell Malen",
+          "position": "ST",
+          "marketValue": 45000000,
+          "rating": 83
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 88,
+        "defense": 86,
+        "goalkeeping": 87
+      },
+      "source": "Transfermarkt — Roma (2026/2027)",
+      "teamLabel": "Roma (2026-27)"
     }
   },
   "id": 12,

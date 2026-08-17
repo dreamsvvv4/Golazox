@@ -176,16 +176,245 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
-        "defense": 76,
-        "goalkeeping": 77
+        "defense": 78,
+        "goalkeeping": 90
       },
       "source": "Transfermarkt 🌍 Otros€” Shakhtar Donetsk (2025/2026)",
       "teamLabel": "Shakhtar Donetsk (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dmytro Riznyk",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Kiril Fesyun",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Denys Tvardovskyi",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tymur Puzankov",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mykola Matvienko",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Valeriy Bondar",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Marlon",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Alaa Ghram",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Diego Arroyo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Pedro Henrique",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Irakli Azarovi",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Viktor Korniyenko",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Vinícius Tobias",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Giorgi Gocholeishvili",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Oleksandr Karavaev",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Marlon Gomes",
+          "position": "CM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Dmytro Kryskiv",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Yegor Nazaryna",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Viktor Tsukanov",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Isaque",
+          "position": "AM",
+          "marketValue": 11000000,
+          "rating": 83
+        },
+        {
+          "name": "Artem Bondarenko",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Oleg Ocheretko",
+          "position": "AM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Newerton",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Eguinaldo",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Gleiker Mendoza",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Oleg Pushkaryov",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ryan Roberto",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Pedrinho",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Alisson",
+          "position": "RW",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Bruninho",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Lucas Ferreira",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Prosper Obah",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Maryan Shved",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Kauã Elias",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Luca Meirelles",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lassina Traoré",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 80,
+        "defense": 82,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Shakhtar Donetsk (2026/2027)",
+      "teamLabel": "Shakhtar Donetsk (2026-27)"
     }
   },
-  "id": 2533,
+  "id": 660,
   "name": "Shakhtar Donetsk",
   "badgeLocalPath": "/img/badges/schachtar-donezk.png",
   "group": "🌍 Otros",

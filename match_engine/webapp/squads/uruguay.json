@@ -113,7 +113,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 78,
+        "defense": 76,
+        "goalkeeping": 79
+      }
     },
     "1950": {
       "players": [
@@ -227,7 +233,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 81,
+        "defense": 78,
+        "goalkeeping": 78
+      }
     },
     "1954": {
       "players": [
@@ -341,7 +353,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 82,
+        "defense": 78,
+        "goalkeeping": 81
+      }
     },
     "1962": {
       "players": [
@@ -455,7 +473,13 @@
           "position": "ST",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1966": {
       "players": [
@@ -569,7 +593,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 81,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1970": {
       "players": [
@@ -683,7 +713,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 80,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1974": {
       "players": [
@@ -849,7 +885,13 @@
           "marketValue": 0,
           "rating": 79
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 87,
+        "midfield": 87,
+        "defense": 85,
+        "goalkeeping": 87
+      }
     },
     "1986": {
       "players": [
@@ -963,7 +1005,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1990": {
       "players": [
@@ -1077,7 +1125,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 79,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2002": {
       "players": [
@@ -1196,7 +1250,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 81,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2010": {
       "players": [
@@ -1315,7 +1375,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "2014": {
       "players": [
@@ -1505,7 +1571,13 @@
           "marketValue": 700000,
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 81,
+        "defense": 81,
+        "goalkeeping": 78
+      }
     },
     "2018": {
       "formation": "4-4-2",
@@ -1722,10 +1794,10 @@
         }
       ],
       "ratings": {
-        "attack": 77,
-        "midfield": 81,
-        "defense": 78,
-        "goalkeeping": 73
+        "attack": 88,
+        "midfield": 87,
+        "defense": 90,
+        "goalkeeping": 92
       },
       "source": "Transfermarkt — Uruguay (2018/2019)",
       "teamLabel": "Uruguay (2018-19)"
@@ -1847,7 +1919,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 88,
+        "midfield": 86,
+        "defense": 83,
+        "goalkeeping": 81
+      }
     },
     "2025": {
       "formation": "4-3-3",
@@ -2142,10 +2220,10 @@
         }
       ],
       "ratings": {
-        "attack": 77,
-        "midfield": 81,
-        "defense": 78,
-        "goalkeeping": 73
+        "attack": 85,
+        "midfield": 86,
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” uruguay (2025/2026)",
       "teamLabel": "uruguay (2025-26)"

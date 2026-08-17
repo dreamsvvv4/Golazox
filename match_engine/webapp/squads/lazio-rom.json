@@ -81,10 +81,10 @@
         }
       ],
       "ratings": {
-        "attack": 83,
-        "midfield": 83,
+        "attack": 82,
+        "midfield": 82,
         "defense": 82,
-        "goalkeeping": 80
+        "goalkeeping": 84
       }
     },
     "1998": {
@@ -308,9 +308,9 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 80,
-        "defense": 88,
+        "attack": 85,
+        "midfield": 84,
+        "defense": 87,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Lazio (1998/1999)",
@@ -549,9 +549,9 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 86,
-        "defense": 84,
+        "attack": 84,
+        "midfield": 85,
+        "defense": 83,
         "goalkeeping": 84
       },
       "source": "Transfermarkt 🌍 Otros€” Lazio (2000/2001)",
@@ -637,8 +637,8 @@
         }
       ],
       "ratings": {
-        "attack": 89,
-        "midfield": 87,
+        "attack": 85,
+        "midfield": 85,
         "defense": 86,
         "goalkeeping": 84
       }
@@ -972,10 +972,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 84,
         "midfield": 85,
         "defense": 80,
-        "goalkeeping": 73
+        "goalkeeping": 83
       },
       "source": "Transfermarkt 🌍 Otros€” Lazio (2013/2014)",
       "teamLabel": "Lazio (2013-14)"
@@ -1125,13 +1125,230 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 78,
-        "goalkeeping": 78
+        "attack": 82,
+        "midfield": 81,
+        "defense": 82,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Lazio (2025/2026)",
       "teamLabel": "Lazio (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Christos Mandas",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Edoardo Motta",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Alessio Furlanetto",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Davide Renzetti",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Oliver Provstgaard",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Danilho Doekhi",
+          "position": "CB",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Alessio Romagnoli",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Patric",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Samuel Gigot",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Filipe Bordon",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Nuno Tavares",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Luca Pellegrini",
+          "position": "LB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Alfonso Pedraza",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Fares",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Romano Floriani Mussolini",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Adam Marusic",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Manuel Lazzari",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nicolò Rovella",
+          "position": "DM",
+          "marketValue": 23000000,
+          "rating": 86
+        },
+        {
+          "name": "Reda Belahyane",
+          "position": "DM",
+          "marketValue": 6800000,
+          "rating": 81
+        },
+        {
+          "name": "Danilo Cataldi",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kenneth Taylor",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Davide Frattesi",
+          "position": "CM",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Fisayo Dele-Bashiru",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Bruno Galassi",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Valerio Farcomeni",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Adrian Przyborek",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Mattia Zaccagni",
+          "position": "LW",
+          "marketValue": 7500000,
+          "rating": 84
+        },
+        {
+          "name": "Gustav Isaksen",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Tijjani Noslin",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Matteo Cancellieri",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Boulaye Dia",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 83
+        },
+        {
+          "name": "Petar Ratkov",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Gabriele Artistico",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Federico Serra",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 84,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — Lazio (2026/2027)",
+      "teamLabel": "Lazio (2026-27)"
     }
   },
   "id": 398,

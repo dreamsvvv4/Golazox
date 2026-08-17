@@ -7,9 +7,9 @@
       "source": "Morocco - World Cup 1970",
       "ratings": {
         "attack": 71,
-        "midfield": 70,
+        "midfield": 71,
         "defense": 70,
-        "goalkeeping": 69
+        "goalkeeping": 70
       },
       "players": [
         {
@@ -74,10 +74,10 @@
       "teamLabel": "Marruecos (1986)",
       "source": "Morocco - World Cup 1986 (R16, group leaders)",
       "ratings": {
-        "attack": 76,
-        "midfield": 74,
+        "attack": 75,
+        "midfield": 75,
         "defense": 74,
-        "goalkeeping": 73
+        "goalkeeping": 74
       },
       "players": [
         {
@@ -142,8 +142,8 @@
       "teamLabel": "Marruecos (1994)",
       "source": "Morocco - World Cup 1994",
       "ratings": {
-        "attack": 74,
-        "midfield": 73,
+        "attack": 73,
+        "midfield": 74,
         "defense": 73,
         "goalkeeping": 72
       },
@@ -211,9 +211,9 @@
       "source": "Morocco - World Cup 1998",
       "ratings": {
         "attack": 75,
-        "midfield": 74,
-        "defense": 73,
-        "goalkeeping": 72
+        "midfield": 76,
+        "defense": 74,
+        "goalkeeping": 73
       },
       "players": [
         {
@@ -390,7 +390,13 @@
           "position": "CM",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 82,
+        "defense": 82,
+        "goalkeeping": 81
+      }
     },
     "2022": {
       "formation": "4-4-2",
@@ -667,10 +673,10 @@
         }
       ],
       "ratings": {
-        "attack": 81,
-        "midfield": 72,
-        "defense": 83,
-        "goalkeeping": 76
+        "attack": 83,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 84
       },
       "source": "Transfermarkt — Morocco (2022/2023)",
       "teamLabel": "Morocco (2022-23)"
@@ -1172,10 +1178,10 @@
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 77,
-        "defense": 81,
-        "goalkeeping": 73
+        "attack": 83,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” MArruecos (2025/2026)",
       "teamLabel": "MArruecos (2025-26)"

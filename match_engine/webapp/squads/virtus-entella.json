@@ -111,16 +111,203 @@
         }
       ],
       "ratings": {
-        "attack": 78,
+        "attack": 77,
         "midfield": 76,
         "defense": 76,
         "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Virtus Entella 2024-25 Serie B",
       "teamLabel": "Virtus Entella 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Federico Del Frate",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Simone Colombi",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Edoardo Torrielli",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Andrea Tiritiello",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Parodi",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Mattia Motolese",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ivan Marconi",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Riccardo Turicchia",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mattia Alborghetti",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Nicolas Previtali",
+          "position": "RB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Niccolò Squizzato",
+          "position": "DM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Lucas Felippe",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Stefano Di Mario",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 98
+        },
+        {
+          "name": "Nermin Karić",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Leonardo Benedetti",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Francesco Mezzoni",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mattia Valori",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Davide Bariti",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ernesto Matteazzi",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Gabriele Costa",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Tommaso Annoni",
+          "position": "CM",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Andrea Franzoni",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Andrea Traniello",
+          "position": "RW",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Bernat Guiu",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Giacomo Corona",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Luigi Cuppone",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Matteo Casarotto",
+          "position": "ST",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Mattia Tirelli",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Francesco Forte",
+          "position": "ST",
+          "marketValue": 175000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 73,
+        "midfield": 78,
+        "defense": 69,
+        "goalkeeping": 67
+      },
+      "source": "Transfermarkt — Virtus Entella (2026/2027)",
+      "teamLabel": "Virtus Entella (2026-27)"
     }
   },
-  "id": 15879,
+  "id": 20519,
   "name": "Virtus Entella",
   "badgeLocalPath": "/img/badges/virtus-entella.png",
   "group": "🇮🇹 Serie B",

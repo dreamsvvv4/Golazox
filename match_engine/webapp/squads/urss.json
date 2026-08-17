@@ -119,7 +119,13 @@
           "position": "CB",
           "rating": 72
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 81,
+        "goalkeeping": 95
+      }
     },
     "1962": {
       "players": [
@@ -198,7 +204,13 @@
           "position": "ST",
           "rating": 82
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 82,
+        "midfield": 81,
+        "defense": 83,
+        "goalkeeping": 95
+      }
     },
     "1966": {
       "players": [
@@ -312,7 +324,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 81,
+        "goalkeeping": 95
+      }
     },
     "1970": {
       "formation": "4-4-2",
@@ -394,10 +412,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
-        "midfield": 82,
-        "defense": 81,
-        "goalkeeping": 80
+        "attack": 85,
+        "midfield": 86,
+        "defense": 82,
+        "goalkeeping": 83
       }
     },
     "1982": {
@@ -480,10 +498,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 85,
+        "attack": 86,
+        "midfield": 86,
         "defense": 83,
-        "goalkeeping": 82
+        "goalkeeping": 90
       }
     },
     "1986": {
@@ -598,7 +616,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 77,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     },
     "1988": {
       "formation": "4-4-2",
@@ -680,10 +704,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 85,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 88,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 90
       }
     },
     "1990": {
@@ -798,7 +822,13 @@
           "position": "GK",
           "rating": 73
         }
-      ]
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 78,
+        "defense": 79,
+        "goalkeeping": 81
+      }
     }
   }
 }

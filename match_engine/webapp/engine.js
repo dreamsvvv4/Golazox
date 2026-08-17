@@ -541,19 +541,46 @@ function deriveRatings(teamInput, eraInput, scraperRatings = null) {
 // 3. xG CALCULATOR
 // ─────────────────────────────────────────────────────────────
 /**
- * Expected goals per 90 min.
- * Coefficients tuned so rating differentials produce realistic win probabilities:
- *   - Equal teams (ovr 80 each) → xG ≈ 1.20 each (2.4 goals/game)
- *   - Elite vs weak (ovr 93 vs 71) → xG ≈ 1.96 vs 0.45 → ~80% win rate
- *   - Top-of-table clash (ovr 93 vs 88) → xG ≈ 1.39 vs 1.05 → ~47% win rate
+ * Expected goals per 90 min — team-overall-driven model.
+ *
+ * Design goals:
+ *   1. MONOTONIC in team quality — a higher-rated squad ALWAYS has a higher xG
+ *      (all else equal). The previous linear atk-vs-def model could invert this
+ *      (a lower-overall team with a great attack out-xG'd a better balanced side).
+ *   2. AVERAGES MATTER — the squad's overall rating (from the actual XI) is the
+ *      main driver via an EXPONENTIAL response on the overall gap, so a +10 media
+ *      gap produces a clearly dominant favourite (not a near coin-flip).
+ *   3. Realistic texture — a bounded attack-vs-defence / GK term still lets a
+ *      high-attack side play more open games, without breaking monotonicity.
+ *
+ * Calibration targets (neutral venue, no form/weather):
+ *   - Equal teams          → xG ≈ 1.34 each        → ~38 / 24 / 38
+ *   - +3 media  (90 v 87)  → xG ≈ 1.53 vs 1.18     → favourite ~46 / 27 / 27
+ *   - +13 media (90 v 77)  → xG ≈ 2.15 vs 0.84     → favourite ~72 / 18 / 10
+ *   - +20 media (90 v 70)  → xG ≈ 2.75 vs 0.66     → favourite ~82 / 12 / 6
+ *
+ * @param {{attack,midfield,defense,goalkeeping}} own
+ * @param {{attack,midfield,defense,goalkeeping}} opp
  */
-function calcXG(atkOwn, defOpp, midOwn, gkOpp) {
-  const atkAdv = (atkOwn - defOpp) / 100;    // positive when attack > opponent defense
-  const midAdv = (midOwn - 68)     / 100;    // midfield advantage over "average" tier
-  const gkAdj  = (gkOpp  - 70)     / 100;    // positive = strong GK (suppresses goals)
-  const base   = 1.05;   // slightly lower base so weak teams don't automatically get 1.15 xG
-  const raw    = base + atkAdv * 2.6 + midAdv * 0.90 - gkAdj * 0.75;
-  return Math.max(0.25, Math.min(3.5, raw));
+const LEAGUE_AVG_XG = 1.34;   // avg goals per team per 90 in a top league (~2.7/game)
+function _teamOverall(r) {
+  // Attack-weighted overall — attack & midfield drive goal creation more than a keeper.
+  return r.attack * 0.34 + r.midfield * 0.28 + r.defense * 0.26 + r.goalkeeping * 0.12;
+}
+function calcXG(own, opp) {
+  // Back-compat: old signature calcXG(atkOwn, defOpp, midOwn, gkOpp)
+  if (typeof own === 'number') {
+    own = { attack: own,  midfield: arguments[2], defense: 74, goalkeeping: 74 };
+    opp = { attack: 74,   midfield: 68,           defense: arguments[1], goalkeeping: arguments[3] };
+  }
+  const gap = (_teamOverall(own) - _teamOverall(opp)) / 100;   // e.g. 90 vs 77 → 0.13
+  const S   = 3.4;   // steepness of the exponential quality response
+  // Bounded attacking texture: own attack vs opp defense, minus opp-GK suppression.
+  const atkEdge = (own.attack - opp.defense) / 100;
+  const gkSupp  = (opp.goalkeeping - 74)      / 100;
+  const texture = 1 + Math.max(-0.15, Math.min(0.15, atkEdge * 0.35 - gkSupp * 0.22));
+  const raw = LEAGUE_AVG_XG * Math.exp(gap * S) * texture;
+  return Math.max(0.22, Math.min(3.6, raw));
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -620,14 +647,19 @@ const N_ITERATIONS = 10_000;
  * monteCarlo(xgA, xgB, seed)
  * Returns { probA, probDraw, probB, topScores[], rawCounts{} }
  */
-function monteCarlo(xgA, xgB, seed = 42) {
+function monteCarlo(xgA, xgB, seed = 42, formAmp = 0.10) {
   const rand    = mulberry32(seed);
   let winsA = 0, winsB = 0, draws = 0;
   const scoreDist = {};
 
   for (let i = 0; i < N_ITERATIONS; i++) {
-    const goalsA = poissonSample(xgA, rand);
-    const goalsB = poissonSample(xgB, rand);
+    // Sample per-iteration form/luck so the probabilities represent the true
+    // matchup distribution (not a single fixed form draw). This makes the odds
+    // stable and independent of which team is passed first.
+    const fA = 1 - formAmp + rand() * 2 * formAmp;
+    const fB = 1 - formAmp + rand() * 2 * formAmp;
+    const goalsA = poissonSample(Math.max(0.22, xgA * fA), rand);
+    const goalsB = poissonSample(Math.max(0.22, xgB * fB), rand);
     const key    = `${goalsA}-${goalsB}`;
     scoreDist[key] = (scoreDist[key] || 0) + 1;
 
@@ -1141,19 +1173,26 @@ function simulateMatch({ teamA, teamB, eraA = '', eraB = '', formationA = '', fo
   const formA = 0.90 + randForm() * 0.20;   // multiplier 0.90–1.10 (was 0.82–1.18)
   const formB = 0.90 + randForm() * 0.20;
 
-  // 5. Calculate xG (base formula × per-match form)
-  const rawXgA = calcXG(ratingsA.attack, ratingsB.defense, ratingsA.midfield, ratingsB.goalkeeping);
-  const rawXgB = calcXG(ratingsB.attack, ratingsA.defense, ratingsB.midfield, ratingsA.goalkeeping);
+  // 5. Calculate xG. Structural modifiers (mode/weather/ref/home) apply to BOTH the
+  //    published probabilities and the single scoreline; the random per-match form is
+  //    applied only to THIS play's scoreline — the Monte Carlo samples its own form
+  //    per iteration, so the odds represent the true matchup (order-independent).
+  const rawXgA = calcXG(ratingsA, ratingsB);
+  const rawXgB = calcXG(ratingsB, ratingsA);
   const weatherFx  = WEATHER_EFFECTS[weatherId] || WEATHER_EFFECTS.sunny;
   const paXgBoost  = calcPlayAdvantageXgBoost(referee); // play_advantage > 1 → ref lets play flow → more open play
   // Home advantage: hosting team generates ~0.18 extra expected goals per match
   // (roughly equivalent to ~+5–6% win probability shift for the home side).
   const homeBonus  = homeAdvantage ? 0.18 : 0;
-  const xgA = +Math.max(0.25, rawXgA * formA * modeGoalMult * weatherFx.goalMult * paXgBoost + homeBonus).toFixed(3);
-  const xgB = +Math.max(0.25, rawXgB * formB * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
+  // Structural xG (no random form) — feeds Monte Carlo for stable published odds.
+  const structXgA = +Math.max(0.22, rawXgA * modeGoalMult * weatherFx.goalMult * paXgBoost + homeBonus).toFixed(3);
+  const structXgB = +Math.max(0.22, rawXgB * modeGoalMult * weatherFx.goalMult * paXgBoost).toFixed(3);
+  // This play's form-adjusted xG — drives the single displayed scoreline.
+  const xgA = +Math.max(0.25, structXgA * formA).toFixed(3);
+  const xgB = +Math.max(0.25, structXgB * formB).toFixed(3);
 
-  // 6. Monte Carlo
-  const sim = monteCarlo(xgA, xgB, seed);
+  // 6. Monte Carlo — form sampled per iteration inside monteCarlo (±10%).
+  const sim = monteCarlo(structXgA, structXgB, seed, 0.10);
 
   // 7. Final score — salted Poisson sample changes each simulation
   const singleRand = mulberry32(saltedSeed + 3);
@@ -1420,10 +1459,17 @@ function buildTimeline(scorersA, scorersB, cardsA, cardsB, injuriesA, injuriesB,
 function analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, matchMode, matchSalt) {
   const N            = 10_000;
   const modeGoalMult = matchMode === '5v5' ? 1.6 : matchMode === '3v3' ? 2.2 : 1.0;
-  const ratingsA     = deriveRatings(teamA, eraA, cachedLineupA?.ratings);
-  const ratingsB     = deriveRatings(teamB, eraB, cachedLineupB?.ratings);
-  const rawXgA       = calcXG(ratingsA.attack, ratingsB.defense,  ratingsA.midfield, ratingsB.goalkeeping);
-  const rawXgB       = calcXG(ratingsB.attack, ratingsA.defense,  ratingsB.midfield, ratingsA.goalkeeping);
+  // Build lineups and derive ratings from the ACTUAL XI players (same as visual mode),
+  // so pre-match probabilities reflect the real squad averages — not the stale
+  // league-context ratings stored in the squad file.
+  const lineupA = cachedLineupA ? buildLineupFromCache(cachedLineupA, '') : buildLineup(teamA, eraA, '');
+  const lineupB = cachedLineupB ? buildLineupFromCache(cachedLineupB, '') : buildLineup(teamB, eraB, '');
+  const ratingsA     = (cachedLineupA && computeRatingsFromPlayers(lineupA.players))
+    || deriveRatings(teamA, eraA, cachedLineupA?.ratings);
+  const ratingsB     = (cachedLineupB && computeRatingsFromPlayers(lineupB.players))
+    || deriveRatings(teamB, eraB, cachedLineupB?.ratings);
+  const rawXgA       = calcXG(ratingsA, ratingsB);
+  const rawXgB       = calcXG(ratingsB, ratingsA);
   const seed         = [...(teamA + teamB + eraA + eraB)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 17);
   const rand         = mulberry32((seed ^ ((matchSalt | 0) >>> 0)) >>> 0);
 
@@ -1459,4 +1505,4 @@ function analyzeMatch(teamA, teamB, eraA, eraB, cachedLineupA, cachedLineupB, ma
   };
 }
 
-module.exports = { simulateMatch, analyzeMatch, buildLineupFromCache, deriveRatings };
+module.exports = { simulateMatch, analyzeMatch, buildLineupFromCache, deriveRatings, computeRatingsFromPlayers };

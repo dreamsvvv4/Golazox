@@ -220,8 +220,8 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 83,
+        "attack": 82,
+        "midfield": 82,
         "defense": 82,
         "goalkeeping": 83
       }
@@ -306,10 +306,10 @@
         }
       ],
       "ratings": {
-        "attack": 86,
-        "midfield": 88,
-        "defense": 80,
-        "goalkeeping": 82
+        "attack": 85,
+        "midfield": 84,
+        "defense": 81,
+        "goalkeeping": 87
       }
     },
     "1999": {
@@ -521,8 +521,8 @@
         }
       ],
       "ratings": {
-        "attack": 85,
-        "midfield": 80,
+        "attack": 84,
+        "midfield": 83,
         "defense": 80,
         "goalkeeping": 81
       },
@@ -780,10 +780,10 @@
         }
       ],
       "ratings": {
-        "attack": 84,
+        "attack": 83,
         "midfield": 83,
         "defense": 85,
-        "goalkeeping": 75
+        "goalkeeping": 78
       },
       "source": "Transfermarkt 🌍 Otros€” Fiorentina (2023/2024)",
       "teamLabel": "Fiorentina (2023-24)"
@@ -930,11 +930,198 @@
       "ratings": {
         "attack": 81,
         "midfield": 79,
-        "defense": 79,
-        "goalkeeping": 80
+        "defense": 81,
+        "goalkeeping": 87
       },
       "source": "Transfermarkt 🌍 Otros€” Fiorentina (2025/2026)",
       "teamLabel": "Fiorentina (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "David de Gea",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 87
+        },
+        {
+          "name": "Oliver Christensen",
+          "position": "GK",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Luca Lezzerini",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Radu Drăgușin",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Marin Pongracic",
+          "position": "CB",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Viery",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Víctor Valdepeñas",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Luca Ranieri",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 79
+        },
+        {
+          "name": "Eman Košpo",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Niccolò Fortini",
+          "position": "LB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Fabiano Parisi",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Álex Jiménez",
+          "position": "RB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Dodô",
+          "position": "RB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "João Mário",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Rolando Mandragora",
+          "position": "DM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Christ Inao Oulaï",
+          "position": "CM",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Arthur Atta",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Cher Ndour",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nicolò Fagioli",
+          "position": "CM",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Marco Brescianini",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Giovanni Fabbian",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Antonín Barák",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Riccardo Sottil",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Federico Croci",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Franco Mastantuono",
+          "position": "RW",
+          "marketValue": 45000000,
+          "rating": 84
+        },
+        {
+          "name": "Albert Gudmundsson",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Moise Kean",
+          "position": "ST",
+          "marketValue": 32000000,
+          "rating": 85
+        },
+        {
+          "name": "Mateo Pellegrino",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "M'Bala Nzola",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        }
+      ],
+      "ratings": {
+        "attack": 83,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 87
+      },
+      "source": "Transfermarkt — Fiorentina (2026/2027)",
+      "teamLabel": "Fiorentina (2026-27)"
     }
   },
   "id": 430,

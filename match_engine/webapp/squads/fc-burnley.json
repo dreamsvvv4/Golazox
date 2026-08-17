@@ -181,7 +181,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -389,9 +389,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Burnley (2022/2023)",
@@ -597,7 +597,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -885,7 +885,7 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
         "defense": 80,
         "goalkeeping": 81
@@ -1043,13 +1043,206 @@
         }
       ],
       "ratings": {
-        "attack": 81,
+        "attack": 80,
         "midfield": 79,
-        "defense": 79,
+        "defense": 80,
         "goalkeeping": 80
       },
       "source": "Transfermarkt 🌍 Otros€” Burnley (2025/2026)",
       "teamLabel": "Burnley (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Max Weiß",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ben Amos",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Bashir Humphreys",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Max Alleyne",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Hjalmar Ekdal",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Joe Worrall",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jordan Beyer",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Lucas Pires",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Kyle Walker",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 82
+        },
+        {
+          "name": "Oliver Sonne",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Connor Roberts",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Shurandy Sambo",
+          "position": "RB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Ugo Raghouber",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Josh Cullen",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Josh Laurent",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Hannibal",
+          "position": "AM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Aaron Ramsey",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Mike Tresor",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jacob Bruun Larsen",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jaydon Banel",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lluc Castell",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Marcus Edwards",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Zian Flemming",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Zeki Amdouni",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Armando Broja",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Dastan Satpaev",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Andréas Hountondji",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Michael Obafemi",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ashley Barnes",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 77,
+        "defense": 81,
+        "goalkeeping": 79
+      },
+      "source": "Transfermarkt — Burnley (2026/2027)",
+      "teamLabel": "Burnley (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/fc-burnley.png",

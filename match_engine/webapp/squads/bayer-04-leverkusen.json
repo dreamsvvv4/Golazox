@@ -196,9 +196,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
+        "attack": 81,
         "midfield": 80,
-        "defense": 80,
+        "defense": 81,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2002/2003)",
@@ -369,9 +369,9 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 83,
-        "defense": 80,
+        "attack": 85,
+        "midfield": 84,
+        "defense": 83,
         "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2023/2024)",
@@ -586,10 +586,10 @@
         }
       ],
       "ratings": {
-        "attack": 85,
+        "attack": 87,
         "midfield": 87,
-        "defense": 88,
-        "goalkeeping": 80
+        "defense": 87,
+        "goalkeeping": 81
       },
       "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2024/2025)",
       "teamLabel": "Bayer Leverkusen (2024-25)"
@@ -763,11 +763,222 @@
       "ratings": {
         "attack": 86,
         "midfield": 87,
-        "defense": 86,
-        "goalkeeping": 74
+        "defense": 84,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” Bayer Leverkusen (2025/2026)",
       "teamLabel": "Bayer Leverkusen (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mark Flekken",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Janis Blaswich",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Niklas Lomb",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Edmond Tapsoba",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Loïc Badé",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Facundo Medina",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jeanuël Belocian",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Axel Tape",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jarell Quansah",
+          "position": "CB",
+          "marketValue": 45000000,
+          "rating": 81
+        },
+        {
+          "name": "Tim Oermann",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Miguel Gutiérrez",
+          "position": "LB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Arthur",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Vázquez",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Equi Fernández",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Kennet Eichhorn",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Robert Andrich",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Aleix García",
+          "position": "CM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Exequiel Palacios",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Naba Mensah",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ibrahim Maza",
+          "position": "AM",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Malik Tillman",
+          "position": "AM",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Jonas Hofmann",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Afonso Moreira",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Eliesse Ben Seghir",
+          "position": "LW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Martin Terrier",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ernest Poku",
+          "position": "RW",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Nathan Tella",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Montrell Culbreath",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Farid Alfa-Ruprecht",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Christian Kofane",
+          "position": "ST",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Victor Boniface",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 86
+        },
+        {
+          "name": "Patrik Schick",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ndjicoura Bomba",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 86,
+        "midfield": 85,
+        "defense": 84,
+        "goalkeeping": 80
+      },
+      "source": "Transfermarkt — Bayer Leverkusen (2026/2027)",
+      "teamLabel": "Bayer Leverkusen (2026-27)"
     }
   },
   "id": 15,

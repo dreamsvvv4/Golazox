@@ -96,10 +96,10 @@
         }
       ],
       "ratings": {
-        "attack": 87,
-        "midfield": 83,
-        "defense": 83,
-        "goalkeeping": 82
+        "attack": 84,
+        "midfield": 79,
+        "defense": 77,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (1961/1962)",
       "teamLabel": "Benfica (1961-62)"
@@ -229,10 +229,10 @@
         }
       ],
       "ratings": {
-        "attack": 88,
-        "midfield": 84,
-        "defense": 84,
-        "goalkeeping": 83
+        "attack": 81,
+        "midfield": 79,
+        "defense": 76,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (1962/1963)",
       "teamLabel": "Benfica (1962-63)"
@@ -437,10 +437,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 67,
-        "defense": 60,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 76,
+        "defense": 78,
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (1987/1988)",
       "teamLabel": "Benfica (1987-88)"
@@ -606,10 +606,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 67,
-        "defense": 60,
-        "goalkeeping": 65
+        "attack": 89,
+        "midfield": 89,
+        "defense": 88,
+        "goalkeeping": 91
       },
       "source": "Transfermarkt — Benfica (1988/1989)",
       "teamLabel": "Benfica (1988-89)"
@@ -809,10 +809,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 82,
-        "defense": 82,
-        "goalkeeping": 83
+        "attack": 77,
+        "midfield": 77,
+        "defense": 78,
+        "goalkeeping": 86
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (2014/2015)",
       "teamLabel": "Benfica (2014-15)"
@@ -1002,10 +1002,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 67,
-        "defense": 60,
-        "goalkeeping": 65
+        "attack": 77,
+        "midfield": 77,
+        "defense": 83,
+        "goalkeeping": 88
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (2015/2016)",
       "teamLabel": "Benfica (2015-16)"
@@ -1230,10 +1230,10 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 83,
+        "attack": 80,
+        "midfield": 80,
         "defense": 82,
-        "goalkeeping": 83
+        "goalkeeping": 77
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (2022/2023)",
       "teamLabel": "Benfica (2022-23)"
@@ -1489,10 +1489,10 @@
         }
       ],
       "ratings": {
-        "attack": 68,
-        "midfield": 67,
-        "defense": 60,
-        "goalkeeping": 65
+        "attack": 86,
+        "midfield": 87,
+        "defense": 84,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (2023/2024)",
       "teamLabel": "Benfica (2023-24)"
@@ -1670,13 +1670,188 @@
         }
       ],
       "ratings": {
-        "attack": 79,
-        "midfield": 80,
-        "defense": 79,
-        "goalkeeping": 79
+        "attack": 85,
+        "midfield": 85,
+        "defense": 85,
+        "goalkeeping": 85
       },
       "source": "Transfermarkt 🌍 Otros€” Benfica (2025/2026)",
       "teamLabel": "Benfica (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Anatoliy Trubin",
+          "position": "GK",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "Samuel Soares",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tomás Araújo",
+          "position": "CB",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Clément Lenglet",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Gabriel Índio",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Samuel Dahl",
+          "position": "LB",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "José Neto",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Amar Dedić",
+          "position": "RB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Alexander Bah",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Daniel Banjaqui",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Richard Ríos",
+          "position": "DM",
+          "marketValue": 25000000,
+          "rating": 84
+        },
+        {
+          "name": "Enzo Barrenechea",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Manu Silva",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Leandro Barreiro",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Fredrik Aursnes",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Georgiy Sudakov",
+          "position": "AM",
+          "marketValue": 25000000,
+          "rating": 85
+        },
+        {
+          "name": "João Rego",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jakub Kamiński",
+          "position": "LW",
+          "marketValue": 17000000,
+          "rating": 85
+        },
+        {
+          "name": "Andreas Schjelderup",
+          "position": "LW",
+          "marketValue": 40000000,
+          "rating": 83
+        },
+        {
+          "name": "Bruma",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Gianluca Prestianni",
+          "position": "RW",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Dodi Lukébakio",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Tiago Gouveia",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rafa Silva",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Vangelis Pavlidis",
+          "position": "ST",
+          "marketValue": 28000000,
+          "rating": 87
+        },
+        {
+          "name": "Jhon Durán",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 82
+        },
+        {
+          "name": "Anísio Cabral",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 84,
+        "defense": 84,
+        "goalkeeping": 85
+      },
+      "source": "Transfermarkt — Benfica (2026/2027)",
+      "teamLabel": "Benfica (2026-27)"
     }
   },
   "id": 294,

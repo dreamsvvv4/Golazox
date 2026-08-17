@@ -1,6 +1,218 @@
 {
   "slug": "fc-turin",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Franco Israel",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Diego Mascardi",
+          "position": "GK",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Alberto Paleari",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Lapo Siviero",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Pietro Comuzzo",
+          "position": "CB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Saúl Coco",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Ardian Ismajli",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Eray Cömert",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Cristiano Biraghi",
+          "position": "LB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Marcus Pedersen",
+          "position": "RB",
+          "marketValue": 3500000,
+          "rating": 81
+        },
+        {
+          "name": "Ali Dembélé",
+          "position": "RB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Côme Bianay Balcot",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Wisdom Acquah",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ivan Ilić",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 85
+        },
+        {
+          "name": "Cesare Casadei",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Emirhan İlkhan",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Gvidas Gineitis",
+          "position": "CM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Tino Anjorin",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alessio Cacciamani",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Kian Fitz-Jim",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Aaron Ciammaglichella",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Marco Dalla Vecchia",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Andrea Luongo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nikola Vlašić",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Gaetano Oristanio",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Alieu Njie",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Zakaria Aboukhlal",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Giovanni Simeone",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Ché Adams",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Sandro Kulenović",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Duván Zapata",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tommaso Gabellini",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pietro Pellegri",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 80,
+        "midfield": 80,
+        "defense": 80,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Torino (2026/2027)",
+      "teamLabel": "Torino (2026-27)"
+    }
+  },
   "id": 416,
   "name": "Torino",
   "badgeLocalPath": "/img/badges/fc-turin.png",

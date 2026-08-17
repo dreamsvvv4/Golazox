@@ -166,10 +166,10 @@
         }
       ],
       "ratings": {
-        "attack": 74,
-        "midfield": 69,
-        "defense": 78,
-        "goalkeeping": 69
+        "attack": 77,
+        "midfield": 76,
+        "defense": 76,
+        "goalkeeping": 82
       },
       "source": "BDFutbol <\r Otros�\u001d Osasuna 2008-09 Primera División",
       "teamLabel": "Osasuna 2008-09 Primera División"
@@ -295,12 +295,157 @@
       ],
       "ratings": {
         "attack": 78,
-        "midfield": 76,
+        "midfield": 78,
         "defense": 79,
         "goalkeeping": 79
       },
       "source": "Transfermarkt 🌍 Otros€” Osasuna (2025/2026)",
       "teamLabel": "Osasuna (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sergio Herrera",
+          "position": "GK",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Aitor Fernández",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Enzo Boyomo",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Jorge Herrando",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Alejandro Catena",
+          "position": "CB",
+          "marketValue": 2600000,
+          "rating": 77
+        },
+        {
+          "name": "Rockson Yeboah",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Abel Bretones",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Diego Rico",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Valentin Rosier",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Iñigo Arguibide",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lucas Torró",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Iker Muñoz",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jon Moncayola",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Asier Osambela",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Aimar Oroz",
+          "position": "AM",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Moi Gómez",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Raúl Moro",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Jonathan Dubasin",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Rubén García",
+          "position": "RW",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Kike Barja",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Raúl García",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ante Budimir",
+          "position": "ST",
+          "marketValue": 2800000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 78,
+        "midfield": 77,
+        "defense": 79,
+        "goalkeeping": 77
+      },
+      "source": "Transfermarkt — Osasuna (2026/2027)",
+      "teamLabel": "Osasuna (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/ca-osasuna.png",

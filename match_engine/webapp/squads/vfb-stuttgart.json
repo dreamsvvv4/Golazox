@@ -112,12 +112,241 @@
       ],
       "ratings": {
         "attack": 80,
-        "midfield": 78,
-        "defense": 77,
-        "goalkeeping": 78
+        "midfield": 79,
+        "defense": 81,
+        "goalkeeping": 82
       },
       "source": "Transfermarkt 🌍 Otros€” VfB Stuttgart (2025/2026)",
       "teamLabel": "VfB Stuttgart (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dennis Seimen",
+          "position": "GK",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Fabian Bredlow",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Marius Funk",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Stefan Drljaca",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Finn Jeltsch",
+          "position": "CB",
+          "marketValue": 35000000,
+          "rating": 87
+        },
+        {
+          "name": "Ramon Hendriks",
+          "position": "CB",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Jeff Chabot",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Luca Jaquez",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ameen Al-Dakhil",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dan-Axel Zagadou",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Maximilian Mittelstädt",
+          "position": "LB",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Josha Vagnoman",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lorenz Assignon",
+          "position": "RB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Leonidas Stergiou",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Angelo Stiller",
+          "position": "DM",
+          "marketValue": 45000000,
+          "rating": 88
+        },
+        {
+          "name": "Chema Andrés",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Atakan Karazor",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Mirza Catovic",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Nikolas Nartey",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Grischa Prömel",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Yanik Spalt",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Ertugrul Yigit",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Bilal El Khannouss",
+          "position": "AM",
+          "marketValue": 35000000,
+          "rating": 85
+        },
+        {
+          "name": "Chris Führich",
+          "position": "LW",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Leo Sauer",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jarzinho Malanga",
+          "position": "LW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Justin Diehl",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jamie Leweling",
+          "position": "RW",
+          "marketValue": 40000000,
+          "rating": 88
+        },
+        {
+          "name": "Tiago Tomás",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Badredine Bouanani",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lazar Jovanovic",
+          "position": "RW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ermedin Demirovic",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Dzenan Pejcinovic",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Deniz Undav",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 82
+        },
+        {
+          "name": "Jovan Milosevic",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jeremy Arévalo",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        }
+      ],
+      "ratings": {
+        "attack": 85,
+        "midfield": 83,
+        "defense": 85,
+        "goalkeeping": 82
+      },
+      "source": "Transfermarkt — VfB Stuttgart (2026/2027)",
+      "teamLabel": "VfB Stuttgart (2026-27)"
     }
   },
   "id": 79,
