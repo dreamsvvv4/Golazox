@@ -3233,9 +3233,20 @@ function _entryName(entry) {
     ? (entry.nameEn || entry.name)
     : (entry.nameEs || entry.name || entry.nameEn);
 }
+// Un equipo solo se bloquea a nivel de selección/badge cuando NINGUNA de sus
+// temporadas está disponible (coleccionables puros como el Mejor XI Histórico).
+// Equipos con edición histórica bloqueada pero temporada moderna libre
+// (Real Madrid, Barça…) son seleccionables; solo la era antigua se bloquea.
+function _teamFullyLocked(slug) {
+  if (!window.gxUser) return false;
+  const entry = _catalog.find(c => c.slug === slug);
+  const seasons = entry && entry.seasons ? entry.seasons : [];
+  if (!seasons.length) return gxUser.isLocked(slug);
+  return seasons.every(era => gxUser.isLocked(slug, era));
+}
 function _pickerSelectTeam(side, slugVal) {
-  // GX: bloquear equipo si no tiene XP suficiente
-  if (window.gxUser && gxUser.isLocked(slugVal)) {
+  // GX: bloquear equipo solo si TODAS sus eras están bloqueadas
+  if (_teamFullyLocked(slugVal)) {
     const info = gxUser.getLockedInfo(slugVal);
     if (window.gxUI) gxUI.showLockModal(slugVal, info?.xp);
     return;
@@ -3349,7 +3360,7 @@ function _renderPicker(side) {
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="backtype">${t('tp-back')}</button><span class="tp-bread-label">${t('tp-nations-label')}</span></div>` +
       `<div class="tp-nations-grid">` +
       nations.map(n => {
-        const _gxLocked = window.gxUser && gxUser.isLocked(n.slug);
+        const _gxLocked = _teamFullyLocked(n.slug);
         const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(n.slug) : null;
         const _gxFlash  = window.gxUser && gxUser.isFlash(n.slug);
         const iso = _NATION_ISO[n.slug.toLowerCase()];
@@ -3401,7 +3412,7 @@ function _renderPicker(side) {
       `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(spName)}</button></div>` +
       `<div class="tp-teams-grid">` +
       spTeams.map(tm => {
-        const _gxLocked = window.gxUser && gxUser.isLocked(tm.slug);
+        const _gxLocked = _teamFullyLocked(tm.slug);
         const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(tm.slug) : null;
         const _gxFlash  = window.gxUser && gxUser.isFlash(tm.slug);
         return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(tm.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>`+
@@ -3456,7 +3467,7 @@ function _renderPicker(side) {
     `<div class="tp-breadcrumb"><button class="tp-back-btn" data-pa="back">‹ ${escHtml(lgName)}</button></div>` +
     `<div class="tp-teams-grid">` +
     teams.map(tm => {
-      const _gxLocked = window.gxUser && gxUser.isLocked(tm.slug);
+      const _gxLocked = _teamFullyLocked(tm.slug);
       const _gxInfo   = _gxLocked ? gxUser.getLockedInfo(tm.slug) : null;
       const _gxFlash  = window.gxUser && gxUser.isFlash(tm.slug);
       return `<button class="tp-team-card${_gxLocked ? ' tp-team-locked' : ''}${_gxFlash ? ' tp-team-flash' : ''}" data-pa="team" data-pv="${escHtml(tm.slug)}" ${_gxLocked ? `title="${t('lock-tooltip').replace('%xp', _gxInfo?.xp || '?')}"` : ''}>` +
@@ -3495,9 +3506,11 @@ function _populateEraSelect(teamName, side) {
     const prev = sel.value;
     sel.innerHTML =
       (entry.seasons.length > 1 ? `<option value="">${t('era-any')}</option>` : '') +
-      entry.seasons.map(y =>
-        `<option value="${y}"${y === prev ? ' selected' : ''}>${y === 'all-time' ? '★ All Time' : (() => { const n = parseInt(y,10); return n >= 1000 ? `${String(n).slice(2)}/${String(n+1).slice(2)}` : y; })()}</option>`
-      ).join('');
+      entry.seasons.map(y => {
+        const _locked = window.gxUser && gxUser.isLocked(entry.slug, y);
+        const _label = y === 'all-time' ? '★ All Time' : (() => { const n = parseInt(y,10); return n >= 1000 ? `${String(n).slice(2)}/${String(n+1).slice(2)}` : y; })();
+        return `<option value="${y}"${y === prev ? ' selected' : ''}${_locked ? ' disabled' : ''}>${_locked ? '🔒 ' : ''}${_label}</option>`;
+      }).join('');
     sel.disabled = false;
     // Auto-select when there is exactly one season (no choice to make)
     if (entry.seasons.length === 1) {

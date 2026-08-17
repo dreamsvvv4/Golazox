@@ -699,19 +699,21 @@
 
     isLocked: function (slug, era) {
       if (!LOCKED_TEAMS[slug]) return false;
-      // Era-aware: si el equipo tiene allEras=true, todas sus ediciones
-      // están bloqueadas (equipos grandes como Bayern, Barça, Real Madrid).
-      // Sin allEras, solo la edición histórica específica está bloqueada
-      // (equipos como Ajax donde solo el 1971 requiere XP).
-      if (!LOCKED_TEAMS[slug].allEras) {
-        var lockedEra = LOCKED_TEAMS[slug].era;
-        if (era != null && era !== '' && lockedEra) {
-          if (String(era) !== String(lockedEra)) return false;
-        }
-      }
       // Flash: temporalmente desbloqueado
       if (_getFlashTeam() === slug) return false;
-      return !_getOrCreate().unlockedTeams.includes(slug);
+      // Ya desbloqueado por el usuario
+      if (_getOrCreate().unlockedTeams.includes(slug)) return false;
+      // Era-aware: con allEras=true todas las ediciones están bloqueadas.
+      // Sin allEras, SOLO la edición histórica concreta requiere XP (p.ej.
+      // Real Madrid 1960, Barça 2009). Cualquier otra era —o una llamada sin
+      // era— juega la edición moderna libremente; nunca bloquea el equipo.
+      if (!LOCKED_TEAMS[slug].allEras) {
+        var lockedEra = LOCKED_TEAMS[slug].era;
+        if (lockedEra && (era == null || era === '' || String(era) !== String(lockedEra))) {
+          return false;
+        }
+      }
+      return true;
     },
     isFlash:       function (slug) { return _getFlashTeam() === slug; },
     getLockedInfo: function (slug) { return LOCKED_TEAMS[slug] || null; },
