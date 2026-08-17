@@ -396,7 +396,9 @@
     }
 
     // Parche: cualquier cambio de tab (por click o programático) sincroniza la portada.
-    if (window.TRN && typeof TRN.switchMainTab === 'function' && !TRN.__hubPatched) {
+    // OJO: TRN se declara con `const` en tournament.js → es un binding léxico global,
+    // accesible por nombre desnudo pero NO como `window.TRN` (siempre undefined).
+    if (typeof TRN !== 'undefined' && typeof TRN.switchMainTab === 'function' && !TRN.__hubPatched) {
       var orig = TRN.switchMainTab;
       TRN.switchMainTab = function (t) {
         var r = orig.apply(this, arguments);
@@ -407,7 +409,7 @@
     }
 
     function go(view) {
-      if (window.TRN && typeof TRN.switchMainTab === 'function') { TRN.switchMainTab(view); return; }
+      if (typeof TRN !== 'undefined' && typeof TRN.switchMainTab === 'function') { TRN.switchMainTab(view); return; }
       // Fallback si el bundle del simulador no cargó.
       ['main-match-wrap', 'main-pen-wrap', 'main-trn-wrap', 'main-profile-wrap'].forEach(function (id) {
         var el = document.getElementById(id); if (el) el.classList.toggle('hidden', !(id === 'main-' + view + '-wrap'));
