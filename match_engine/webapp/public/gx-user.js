@@ -115,12 +115,12 @@
     'ac-mailand':                  { xp: 1450, label: "AC Milan '89",               era: '1989', collection: 'icons'   },
     'manchester-united':           { xp: 1800, label: "Manchester United '99",      era: '1999', collection: 'icons'   },
     'frankreich':                  { xp: 2200, label: "France '98",                 era: '1998', collection: 'icons'   },
-    // ── Élite Histórica (2600-3500 XP) ───────────────
-    'fc-barcelona':                { xp: 2600, label: 'FC Barcelona 2009',          era: '2009', collection: 'elite'   },
-    'deutschland':                 { xp: 3000, label: 'Alemania 1974',              era: '1974', collection: 'elite'   },
-    'atletico-madrid':             { xp: 3500, label: 'Atlético Madrid 2014',       era: '2014', collection: 'elite'   },
-    // ── Mitológicos (5000 XP) — el Santo Grial ───────
-    'real-madrid':                 { xp: 5000, label: 'Real Madrid 1960',           era: '1960', collection: 'mythics' },
+    // ── Élite Histórica (2300-2700 XP) ───────────────
+    'fc-barcelona':                { xp: 2300, label: 'FC Barcelona 2009',          era: '2009', collection: 'elite'   },
+    'deutschland':                 { xp: 2500, label: 'Alemania 1974',              era: '1974', collection: 'elite'   },
+    'atletico-madrid':             { xp: 2700, label: 'Atlético Madrid 2014',       era: '2014', collection: 'elite'   },
+    // ── Mitológicos (3000 XP) — el Santo Grial ───────
+    'real-madrid':                 { xp: 3000, label: 'Real Madrid 1960',           era: '1960', collection: 'mythics' },
     // ── Selecciones Históricas (550-2100 XP) ─────────
     'england':                     { xp: 550,  label: 'Inglaterra 1966',            era: '1966', collection: 'nations' },
     'jugoslawien':                 { xp: 650,  label: 'Yugoslavia 1982',            era: '1982', collection: 'nations' },
@@ -128,7 +128,7 @@
     'belgien':                     { xp: 1350, label: 'Bélgica 2018',               era: '2018', collection: 'nations' },
     // ── Leyendas All-Stars ────────────────────────────
     'best-xi-2025':                { xp: 1500, label: 'Mejor XI 2025',              era: '2025',     collection: 'legends_xi' },
-    'best-xi-history':             { xp: 4500, label: 'Mejor XI Histórico',         era: 'all-time', collection: 'legends_xi' },
+    'best-xi-history':             { xp: 2800, label: 'Mejor XI Histórico',         era: 'all-time', collection: 'legends_xi' },
   };
 
   // ── Estadios bloqueados ───────────────────────────────────
@@ -165,15 +165,12 @@
     'merk':        { xp: 1500, label: 'Markus Merk'      },
   };
 
-  // ── Formatos y torneos bloqueados ─────────────────────────
+  // ── Formatos y torneos ────────────────────────────────────
   // id = data-fmt value (format cards) or data-preset value (preset cards)
-  var LOCKED_FORMATS = {
-    'liga':             { xp: 100, label: 'Liga GolazoX',         icon: '📊', desc: 'Todos contra todos · Clasificación por puntos' },
-    'euro2024':         { xp: 200, label: 'UEFA Euro 2024',       icon: '🏆', desc: 'Desbloqueas un nuevo torneo oficial' },
-    'libertadores2025': { xp: 350, label: 'Copa Libertadores',    icon: '🌎', desc: '32 clubes sudamericanos' },
-    'wc-historical':    { xp: 500, label: 'Copa del Mundo',       icon: '🌍', desc: 'Todas las ediciones históricas' },
-    'ucl2026':          { xp: 700, label: 'UEFA Champions League',icon: '⭐', desc: 'La competición más prestigiosa' },
-  };
+  // Todos los formatos/torneos son LIBRES: forman parte del núcleo del
+  // producto, no del sistema de recompensas. La gamificación se centra en
+  // la colección de equipos-leyenda y escenarios (estadios, clima, árbitros).
+  var LOCKED_FORMATS = {};
 
   // ── Flash Events (fin de semana = viernes noche - domingo) ──
   // Se desbloquean temporalmente según la semana del año (mod rotación)

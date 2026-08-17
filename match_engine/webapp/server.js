@@ -2295,7 +2295,8 @@ app.get('/gx/check-name', _gxRlRead, (req, res) => {
 app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
   res.set('Cache-Control', 'no-store');
   if (req.query.type === 'global') {
-    const entries = _gxLoadGlobal().slice(0, 20);
+    // Ocultar entradas fantasma sin XP (perfiles que sincronizaron sin jugar)
+    const entries = _gxLoadGlobal().filter(e => (e.xp || 0) > 0).slice(0, 20);
     return res.json({ type: 'global', entries, total: entries.length });
   }
   const lb      = _gxLoadLB();
@@ -2303,7 +2304,8 @@ app.get('/gx/leaderboard', _gxRlRead, (req, res) => {
   const wkKey   = req.query.week === 'prev'
     ? _gxWeekKey(new Date(now - 7 * 86400000))
     : _gxWeekKey(now);
-  const entries = (lb[wkKey] || []).slice(0, 20);
+  // Ocultar entradas con score 0 (sin actividad esta semana) para que la tabla no salga "vacía de ceros"
+  const entries = (lb[wkKey] || []).filter(e => (e.score || 0) > 0).slice(0, 20);
   res.json({ week: wkKey, entries, total: entries.length });
 });
 
@@ -2337,26 +2339,31 @@ app.post('/gx/score', _gxRlWrite, express.json({ limit: '2kb' }), _gxCheckJson, 
     const lb = _gxLoadLB();
     if (!lb[wkKey]) lb[wkKey] = [];
 
-    // Upsert: si el mismo nombre ya existe esta semana, actualizar solo si el score es mayor
-    const idx = lb[wkKey].findIndex(e => e.name === safeName);
-    if (idx >= 0) {
-      if (safeScore > lb[wkKey][idx].score) {
-        lb[wkKey][idx].score = safeScore;
-        lb[wkKey][idx].level = safeLevel;
-        lb[wkKey][idx].ts    = Date.now();
-        if (safeCountry) lb[wkKey][idx].country = safeCountry;
-        if (safeFlag)    lb[wkKey][idx].flag    = safeFlag;
+    // Solo registrar en la tabla SEMANAL si hay actividad real (score > 0).
+    // Los perfiles que sincronizan sin jugar (score 0) llenaban la tabla de
+    // entradas fantasma; se ignoran aquí y aun así se actualiza su XP global.
+    if (safeScore > 0) {
+      // Upsert: si el mismo nombre ya existe esta semana, actualizar solo si el score es mayor
+      const idx = lb[wkKey].findIndex(e => e.name === safeName);
+      if (idx >= 0) {
+        if (safeScore > lb[wkKey][idx].score) {
+          lb[wkKey][idx].score = safeScore;
+          lb[wkKey][idx].level = safeLevel;
+          lb[wkKey][idx].ts    = Date.now();
+          if (safeCountry) lb[wkKey][idx].country = safeCountry;
+          if (safeFlag)    lb[wkKey][idx].flag    = safeFlag;
+        }
+      } else {
+        if (lb[wkKey].length < GX_MAX_PER_WEEK) {
+          lb[wkKey].push({ name: safeName, score: safeScore, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
+        }
       }
-    } else {
-      if (lb[wkKey].length < GX_MAX_PER_WEEK) {
-        lb[wkKey].push({ name: safeName, score: safeScore, level: safeLevel, country: safeCountry, flag: safeFlag, ts: Date.now() });
-      }
+
+      // Ordenar por score desc
+      lb[wkKey].sort((a, b) => b.score - a.score);
+
+      _gxSaveLB(lb);
     }
-
-    // Ordenar por score desc
-    lb[wkKey].sort((a, b) => b.score - a.score);
-
-    _gxSaveLB(lb);
 
     // Global leaderboard update (based on total XP, never resets)
     let globalRank = null;

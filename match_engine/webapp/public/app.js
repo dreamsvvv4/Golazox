@@ -2041,8 +2041,8 @@ function _deepLinkRestore() {
       const penRaw = p.get('pen');
       const penParts = penRaw ? penRaw.split('-') : null;
       const hasEra = !!(eraA || eraB);
-      const eraNote = (eraA && eraA === eraB) ? `[${eraA}]`
-        : (eraA || eraB) ? `[${[eraA, eraB].filter(Boolean).join(' / ')}]` : '';
+      const eraNote = (eraA && eraA === eraB) ? `[${displayEra(eraA)}]`
+        : (eraA || eraB) ? `[${[eraA, eraB].filter(Boolean).map(displayEra).join(' / ')}]` : '';
       const scorersA = parseScorers(p.get('ga'));
       const scorersB = parseScorers(p.get('gb'));
       const fmtList = arr => arr.length
@@ -2058,9 +2058,9 @@ function _deepLinkRestore() {
       banner.innerHTML = `
         <div class="srb-label">${isEN ? '🔗 Shared result' : '🔗 Resultado compartido'}</div>
         <div class="srb-teams">
-          <span class="srb-team srb-team-a">${escHtml(slugA)}${eraA ? `<span class="srb-era">${escHtml(eraA)}</span>` : ''}</span>
+          <span class="srb-team srb-team-a">${escHtml(slugA)}${eraA ? `<span class="srb-era">${escHtml(displayEra(eraA))}</span>` : ''}</span>
           <span class="srb-score">${escHtml(sa)} – ${escHtml(sb)}${penParts ? `<span class="srb-pen">(${penParts[0]}–${penParts[1]} pen.)</span>` : ''}</span>
-          <span class="srb-team srb-team-b">${escHtml(slugB)}${eraB ? `<span class="srb-era">${escHtml(eraB)}</span>` : ''}</span>
+          <span class="srb-team srb-team-b">${escHtml(slugB)}${eraB ? `<span class="srb-era">${escHtml(displayEra(eraB))}</span>` : ''}</span>
         </div>
         <div class="srb-scorers srb-scorers-a">${escHtml(fmtList(scorersA))}</div>
         <div class="srb-scorers srb-scorers-b">${escHtml(fmtList(scorersB))}</div>
@@ -5003,8 +5003,8 @@ function showPreMatch(data, payload) {
     const stad  = _selectedStadium;
     const rA    = data.ratings?.teamA || {};
     const rB    = data.ratings?.teamB || {};
-    const eraStrA = eraA ? ` <span class="pm-intro-era">${escHtml(eraA)}</span>` : '';
-    const eraStrB = eraB ? ` <span class="pm-intro-era">${escHtml(eraB)}</span>` : '';
+    const eraStrA = eraA ? ` <span class="pm-intro-era">${escHtml(displayEra(eraA))}</span>` : '';
+    const eraStrB = eraB ? ` <span class="pm-intro-era">${escHtml(displayEra(eraB))}</span>` : '';
     const stadHtml = stad
       ? `<div class="pm-intro-stad">🏟️ <strong>${escHtml(stad.name)}</strong> &middot; ${escHtml(stad.city)}</div>`
       : `<div class="pm-intro-stad">🏟️ ${escHtml(t('pm-intro-neutral'))}</div>`;
@@ -7631,8 +7631,8 @@ function _openSharePanel(data) {
 
   // ── Rich share text ────────────────────────────────────────────────────────
   const scoreText = `${data.teamA} ${data.scoreA}\u2013${data.scoreB} ${data.teamB}`;
-  const eraNote   = (data.eraA && data.eraA === data.eraB) ? ` [${data.eraA}]`
-                  : (data.eraA || data.eraB) ? ` [${[data.eraA, data.eraB].filter(Boolean).join(' / ')}]` : '';
+  const eraNote   = (data.eraA && data.eraA === data.eraB) ? ` [${displayEra(data.eraA)}]`
+                  : (data.eraA || data.eraB) ? ` [${[data.eraA, data.eraB].filter(Boolean).map(displayEra).join(' / ')}]` : '';
 
   // Scorers line (up to 3 per side)
   const fmtScorers = arr => (arr || []).slice(0, 3).map(g => `${g.name} ${g.minute || '?'}'`).join(', ');

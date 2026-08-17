@@ -370,9 +370,12 @@
       _gxLastSyncScore = score;
       if (btn) { btn.disabled = false; btn.textContent = _gt('rank-sync'); }
       if (data.ok) {
-        var isTop3 = data.rank <= 3;
+        var isRanked = data.rank >= 1;
+        var isTop3 = isRanked && data.rank <= 3;
         var wasPb  = !_gxLastSyncScore || score > (_gxLastSyncScore || 0);
-        _toast(_gt('rank-synced') + data.rank + '!</span>', 'unlock', 3500);
+        if (isRanked) {
+          _toast(_gt('rank-synced') + data.rank + '!</span>', 'unlock', 3500);
+        }
         if (isTop3) {
           setTimeout(function(){
             _confetti();
@@ -583,9 +586,11 @@
         }).catch(function(){});
       }
     });
-    // Auto-sync al abrir el perfil
+    // Auto-sync al abrir el perfil (solo si hay actividad real: XP o score > 0).
+    // Evita subir perfiles vacíos que ensuciaban el ranking con entradas score:0
+    // y disparaban un falso "TOP 3" (rank 0 <= 3).
     var _u = w.gxUser ? gxUser.get() : null;
-    if (_u && _u.name && _u.name.length >= 3) {
+    if (_u && _u.name && _u.name.length >= 3 && (_u.xp || 0) > 0) {
       setTimeout(function() { _gxSyncScore(); }, 800);
     }
     // Wire ranking tabs (semanal / all-time)
