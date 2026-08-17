@@ -151,9 +151,9 @@ const TM_CLUBS = {
   'celta':                     { id: 940,   slug: 'celta-vigo' },
   'osasuna':                   { id: 331,   slug: 'ca-osasuna' },
   'ca osasuna':                { id: 331,   slug: 'ca-osasuna' },
-  'deportivo':                 { id: 716,   slug: 'rc-deportivo' },
-  'deportivo la coruña':       { id: 716,   slug: 'rc-deportivo' },
-  'deportivo de la coruña':    { id: 716,   slug: 'rc-deportivo' },
+  'deportivo':                 { id: 897,   slug: 'rc-deportivo' },
+  'deportivo la coruña':       { id: 897,   slug: 'rc-deportivo' },
+  'deportivo de la coruña':    { id: 897,   slug: 'rc-deportivo' },
   'espanyol':                  { id: 714,   slug: 'espanyol-barcelona' },
   'rcd espanyol':              { id: 714,   slug: 'espanyol-barcelona' },
   'girona':                    { id: 12321, slug: 'fc-girona' },
@@ -1056,9 +1056,17 @@ async function fetchTransfermarktSquad(teamName, era) {
   const slugInPage = (canonicalHref.match(/transfermarkt\.\w+\/([^/]+)\/kader/) || [])[1] || '';
   if (slugInPage && slugInPage !== club.slug) {
     // Accept if slug is a close variant (same first token, TM renaming)
+    const GENERIC = new Set(['rc', 'cf', 'fc', 'ac', 'sc', 'cd', 'ud', 'sd', 'club', 'de', 'la', 'el', 'real', 'atletico']);
+    const tokens = (s) => s.split('-').filter(t => t.length >= 3 && !GENERIC.has(t));
+    const tokA = tokens(club.slug);
+    const tokB = tokens(slugInPage);
     const rootA = club.slug.split('-')[0];
     const rootB = slugInPage.split('-')[0];
-    if (rootA !== rootB) {
+    // Same club if they share the first token OR any meaningful (non-generic) token.
+    // We fetched by the registry's stable club ID, so a shared token confirms identity
+    // even when TM's slug differs (e.g. rc-deportivo ↔ deportivo-la-coruna).
+    const sharesToken = tokA.some(t => tokB.includes(t));
+    if (rootA !== rootB && !sharesToken) {
       console.warn(`[TM] ⚠️  Página recibida para "${slugInPage}" pero esperábamos "${club.slug}" — descartando (raíces distintas)`);
       return null;
     }

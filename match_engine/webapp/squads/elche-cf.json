@@ -113,9 +113,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Elche CF (2025/2026)",
       "teamLabel": "Elche CF (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alejandro Iturbe",
+          "position": "GK",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Matías Dituro",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "David Affengruber",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Víctor Chust",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Matia Barzic",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "John Donald",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Bambo Diaby",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pedro Bigas",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Buba Sangaré",
+          "position": "RB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Marc Aguado",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Federico Redondo",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Martim Neto",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Gonzalo Villar",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Javi Morcillo",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Facundo Buonanotte",
+          "position": "AM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Germán Valera",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Lucas Cepeda",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tete Morente",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Yago Santiago",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Rafa Núñez",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Grady Diangana",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Josan",
+          "position": "RW",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Adam Boayar",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ali Houary",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ezequiel Ponce",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Fer Niño",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Abiel Osorio",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 61,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Elche CF (2026/2027)",
+      "teamLabel": "Elche CF (2026-27)"
     }
   },
-  "id": 1538,
+  "id": 1531,
   "name": "Elche CF",
   "badgeLocalPath": "/img/badges/elche-cf.png",
   "group": "🇪🇸 La Liga",

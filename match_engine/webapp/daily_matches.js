@@ -546,8 +546,103 @@ async function fetchTodayMatches(dateStr) {
   return [];
 }
 
-// ── Pick best match that has both teams in our catalog ───────────────────────
-function pickBestMatch(matches) {
+// ── Team strength — media del mejor XI de la plantilla ───────────────────────
+// Lee squads/{slug}.json, elige la temporada `era` (o la más cercana disponible)
+// y devuelve la media de rating de los 11 jugadores mejor valorados.
+const _SQUADS_DIR = path.join(__dirname, 'squads');
+const _strengthCache = new Map();
+function teamStrength(slug, era) {
+  const key = `${slug}|${era}`;
+  if (_strengthCache.has(key)) return _strengthCache.get(key);
+  let out = null;
+  try {
+    const p = path.join(_SQUADS_DIR, `${slug}.json`);
+    if (fsNode.existsSync(p)) {
+      const data    = JSON.parse(fsNode.readFileSync(p, 'utf8'));
+      const seasons = data.seasons || {};
+      let s = seasons[String(era)];
+      if (!s) {
+        // Fallback: temporada más reciente ≤ era; si no, la más nueva disponible
+        const yrs = Object.keys(seasons).filter(y => /^\d+$/.test(y)).map(Number).sort((a, b) => b - a);
+        const pick = yrs.find(y => y <= Number(era)) ?? yrs[0];
+        if (pick != null) s = seasons[String(pick)];
+      }
+      if (s && Array.isArray(s.players) && s.players.length) {
+        const rated = s.players.map(pl => Number(pl.rating) || 0).filter(r => r > 0).sort((a, b) => b - a);
+        if (rated.length) {
+          const top = rated.slice(0, 11);
+          out = Math.round((top.reduce((a, b) => a + b, 0) / top.length) * 10) / 10;
+        }
+      }
+    }
+  } catch { /* sin datos → null */ }
+  _strengthCache.set(key, out);
+  return out;
+}
+
+// ── Derbis / rivalidades (bonus de interés) ──────────────────────────────────
+// Pares de slugs (orden indiferente). Se comparan de forma canónica.
+const DERBIES = [
+  ['real-madrid', 'fc-barcelona'],        // El Clásico
+  ['real-madrid', 'atletico-madrid'],     // Derbi madrileño
+  ['fc-barcelona', 'espanyol-barcelona'], // Derbi barcelonés
+  ['sevilla-fc', 'real-betis-balompie'],  // Derbi sevillano
+  ['athletic-club', 'real-sociedad'],     // Derbi vasco
+  ['manchester-united', 'manchester-city'],
+  ['liverpool-fc', 'everton-fc'],
+  ['arsenal-fc', 'tottenham-hotspur'],
+  ['inter-mailand', 'ac-mailand'],        // Derby della Madonnina
+  ['as-rom', 'lazio-rom'],                // Derby della Capitale
+  ['juventus-turin', 'inter-mailand'],    // Derby d'Italia
+  ['fc-bayern-munchen', 'borussia-dortmund'], // Der Klassiker
+  ['boca-juniors', 'river-plate'],        // Superclásico
+  ['al-hilal', 'al-nassr'],               // Riyadh derby
+  ['fc-porto', 'benfica-lissabon'],
+  ['sporting-lissabon', 'benfica-lissabon'],
+  ['galatasaray-istanbul', 'fenerbahce-istanbul'],
+  ['celtic-glasgow', 'glasgow-rangers'],
+  ['flamengo', 'fluminense'],
+  ['corinthians', 'se-palmeiras'],
+];
+const _derbySet = new Set(DERBIES.map(p => [...p].sort().join('|')));
+function isDerby(a, b) { return _derbySet.has([a, b].sort().join('|')); }
+
+// ── Clubes taquilleros (caras conocidas, bonus de reconocimiento) ────────────
+const MARQUEE_CLUBS = new Set([
+  'real-madrid', 'fc-barcelona', 'atletico-madrid', 'manchester-united',
+  'manchester-city', 'liverpool-fc', 'arsenal-fc', 'chelsea-fc',
+  'fc-bayern-munchen', 'borussia-dortmund', 'juventus-turin', 'inter-mailand',
+  'ac-mailand', 'ssc-neapel', 'fc-paris-saint-germain', 'ajax-amsterdam',
+  'benfica-lissabon', 'fc-porto', 'boca-juniors', 'river-plate', 'flamengo',
+  'al-hilal', 'al-nassr', 'galatasaray-istanbul',
+]);
+
+// ── Interest score (0-100) ───────────────────────────────────────────────────
+// Combina: competición (0-30) + fuerza de ambos equipos (0-40) +
+// igualdad del duelo (0-15) + derbi (+10) + club taquillero (+5).
+// Si falta el rating de un equipo se estima con un valor neutro (72) para no
+// penalizar en exceso a equipos recién sembrados.
+function scoreMatch(c) {
+  const NEUTRAL = 72;
+  const sA = teamStrength(c.homeSlug, c.era);
+  const sB = teamStrength(c.awaySlug, c.era);
+  const rA = sA == null ? NEUTRAL : sA;
+  const rB = sB == null ? NEUTRAL : sB;
+
+  const compPts     = (c.priority / 11) * 30;
+  const avg         = (rA + rB) / 2;
+  const strengthPts = Math.max(0, Math.min(1, (avg - 70) / 20)) * 40; // 70→0, 90→40
+  const diff        = Math.abs(rA - rB);
+  const balancePts  = (1 - Math.max(0, Math.min(1, diff / 15))) * 15;  // igualdad
+  const derbyPts    = isDerby(c.homeSlug, c.awaySlug) ? 10 : 0;
+  const marqueePts  = (MARQUEE_CLUBS.has(c.homeSlug) || MARQUEE_CLUBS.has(c.awaySlug)) ? 5 : 0;
+
+  const interest = Math.round((compPts + strengthPts + balancePts + derbyPts + marqueePts) * 10) / 10;
+  return { ...c, strengthA: sA, strengthB: sB, ratingA: rA, ratingB: rB, isDerby: derbyPts > 0, interest };
+}
+
+// ── Rank all catalog-mapped matches by interest (desc) ───────────────────────
+function rankMatches(matches) {
   const era = getCurrentEra();
   const candidates = [];
 
@@ -555,23 +650,32 @@ function pickBestMatch(matches) {
     const homeSlug = slugFromName(m.homeTeam?.name || '');
     const awaySlug = slugFromName(m.awayTeam?.name || '');
     if (!homeSlug || !awaySlug) continue;
+    if (homeSlug === awaySlug) continue;
 
     const priority = competitionPriority(m.competition?.name || '');
-    candidates.push({
+    candidates.push(scoreMatch({
       homeSlug, awaySlug, era,
       homeName: m.homeTeam.name,
       awayName: m.awayTeam.name,
       competition: m.competition?.name || 'Partido del Día',
       utcDate: m.utcDate,
       priority,
-    });
+    }));
   }
 
-  if (!candidates.length) return null;
+  // Interés desc; desempate por prioridad de competición y hora
+  candidates.sort((a, b) =>
+    b.interest - a.interest ||
+    b.priority - a.priority ||
+    String(a.utcDate).localeCompare(String(b.utcDate))
+  );
+  return candidates;
+}
 
-  // Sort by priority desc
-  candidates.sort((a, b) => b.priority - a.priority);
-  return candidates[0];
+// ── Pick best match that has both teams in our catalog ───────────────────────
+function pickBestMatch(matches) {
+  const ranked = rankMatches(matches);
+  return ranked.length ? ranked[0] : null;
 }
 
 // ── Format title for video/upload ────────────────────────────────────────────
@@ -581,31 +685,23 @@ function formatTitle(match) {
   return `${homeShort} vs ${awayShort} | ${match.competition} | golazox.com`;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
-async function getDailyMatchVideo({ dryRun = false, date = null } = {}) {
-  const matches = await fetchTodayMatches(date);
-  console.log(`[daily] ${matches.length} partidos encontrados para ${date || 'hoy'}`);
+// ── Muestra el ranking de interés en consola ─────────────────────────────────
+function printRanking(ranked, limit = 10) {
+  console.log(`\n[daily] 🔥 Partidos del día por interés (top ${Math.min(limit, ranked.length)}):`);
+  ranked.slice(0, limit).forEach((c, i) => {
+    const rA = c.strengthA == null ? '—' : c.strengthA;
+    const rB = c.strengthB == null ? '—' : c.strengthB;
+    const tags = [c.isDerby ? '🔥DERBI' : '', `${c.competition}`].filter(Boolean).join(' · ');
+    console.log(
+      `  ${String(i + 1).padStart(2)}. [${String(c.interest).padStart(5)}]  ` +
+      `${c.homeName} (${rA}) vs ${c.awayName} (${rB})  — ${tags}`
+    );
+  });
+  console.log('');
+}
 
-  const best = pickBestMatch(matches);
-  if (!best) {
-    console.log('[daily] Ningún partido del día tiene ambos equipos en el catálogo.');
-    console.log('[daily] Equipos no mapeados:', [...new Set(
-      matches.flatMap(m => [m.homeTeam?.name, m.awayTeam?.name])
-        .filter(n => n && !slugFromName(n))
-    )].slice(0, 10).join(', '));
-    return null;
-  }
-
-  const title = formatTitle(best);
-  console.log(`[daily] ✓ Partido elegido: ${title}`);
-  console.log(`[daily]   Slugs: ${best.homeSlug} (${best.era}) vs ${best.awaySlug} (${best.era})`);
-  console.log(`[daily]   Prioridad: ${best.priority} | Hora UTC: ${best.utcDate}`);
-
-  if (dryRun) {
-    console.log('[daily] DRY RUN — no se genera video.');
-    return { title, match: best };
-  }
-
+// ── Genera el vídeo de UN partido concreto (ya rankeado) ─────────────────────
+async function generateForMatch(best) {
   const { generateVideo } = require('./video_generator');
 
   // Friendly display names for competitions
@@ -639,7 +735,7 @@ async function getDailyMatchVideo({ dryRun = false, date = null } = {}) {
   });
 
   // Build a score-based title if the simulation produced a result
-  let uploadTitle = title;
+  let uploadTitle = formatTitle(best);
   const finalScore = result.matchMeta?.finalScore;
   if (finalScore && typeof finalScore.scoreA === 'number' && typeof finalScore.scoreB === 'number') {
     const homeShort = best.homeName.replace(/\s(FC|CF|SC|SV|AC|AS|RC|UD|RCD|FSV|TSG|VFL|VFB)$/i, '').trim();
@@ -650,6 +746,55 @@ async function getDailyMatchVideo({ dryRun = false, date = null } = {}) {
 
   return { title: uploadTitle, path: result.path, match: best };
 }
+
+// ── Main ─────────────────────────────────────────────────────────────────────
+// Opciones:
+//   dryRun → solo muestra el ranking, no genera vídeo
+//   date   → 'YYYY-MM-DD' (default hoy)
+//   top    → nº de vídeos a generar de los más interesantes (default 1)
+// Devuelve el resultado del más interesante (retrocompat) y, si top>1,
+// un array `results` con todos los vídeos generados.
+async function getDailyMatchVideo({ dryRun = false, date = null, top = 1 } = {}) {
+  const matches = await fetchTodayMatches(date);
+  console.log(`[daily] ${matches.length} partidos encontrados para ${date || 'hoy'}`);
+
+  const ranked = rankMatches(matches);
+  if (!ranked.length) {
+    console.log('[daily] Ningún partido del día tiene ambos equipos en el catálogo.');
+    console.log('[daily] Equipos no mapeados:', [...new Set(
+      matches.flatMap(m => [m.homeTeam?.name, m.awayTeam?.name])
+        .filter(n => n && !slugFromName(n))
+    )].slice(0, 10).join(', '));
+    return null;
+  }
+
+  printRanking(ranked, Math.max(10, top));
+
+  const best  = ranked[0];
+  const title = formatTitle(best);
+  console.log(`[daily] ✓ Más interesante: ${title}  (interés ${best.interest})`);
+  console.log(`[daily]   Slugs: ${best.homeSlug} (${best.era}) vs ${best.awaySlug} (${best.era})`);
+
+  if (dryRun) {
+    console.log('[daily] DRY RUN — no se genera vídeo.');
+    return { title, match: best, ranking: ranked };
+  }
+
+  const n       = Math.max(1, Math.min(top, ranked.length));
+  const results = [];
+  for (let i = 0; i < n; i++) {
+    console.log(`\n[daily] 🎬 Generando vídeo ${i + 1}/${n}: ${ranked[i].homeName} vs ${ranked[i].awayName}...`);
+    try {
+      results.push(await generateForMatch(ranked[i]));
+    } catch (e) {
+      console.warn(`[daily] ⚠️  Falló el vídeo de ${ranked[i].homeSlug} vs ${ranked[i].awaySlug}: ${e.message}`);
+    }
+  }
+
+  if (!results.length) return null;
+  return { ...results[0], ranking: ranked, results };
+}
+
 
 // ── Auto-cleanup old golazox_*.mp4 files ────────────────────────────────────
 // Keeps the KEEP_LAST newest golazox_* videos; never removes intro_*, preview_*, or the just-uploaded file.
@@ -682,30 +827,37 @@ function cleanupOldVideos(keepPath = null) {
   }
 }
 
-module.exports = { getDailyMatchVideo, fetchTodayMatches, pickBestMatch, TEAM_SLUG_MAP };
+module.exports = { getDailyMatchVideo, fetchTodayMatches, pickBestMatch, rankMatches, teamStrength, scoreMatch, isDerby, TEAM_SLUG_MAP };
 
-// ── CLI ───────────────────────────────────────────────────────────────────────
+// ── CLI ────────────────────────────────────────────────────────────────────────────────
+// Uso:
+//   node daily_matches.js                 → vídeo del partido más interesante
+//   node daily_matches.js --dry-run        → solo el ranking de interés
+//   node daily_matches.js --top 3          → los 3 más interesantes
+//   node daily_matches.js --date 2026-08-17
+//   node daily_matches.js --upload         → (+) sube a YouTube tras generar
 if (require.main === module) {
   const args       = process.argv.slice(2);
   const dryRun     = args.includes('--dry-run');
   const autoUpload = !dryRun && (args.includes('--upload') || process.env.AUTO_UPLOAD === '1');
   const dateArg    = args.find(a => a.match(/^\d{4}-\d{2}-\d{2}$/));
+  const topArg     = (() => { const i = args.indexOf('--top'); return i >= 0 ? Math.max(1, parseInt(args[i + 1], 10) || 1) : 1; })();
 
-  getDailyMatchVideo({ dryRun, date: dateArg })
+  getDailyMatchVideo({ dryRun, date: dateArg, top: topArg })
     .then(async r => {
       if (!r) { process.exit(0); return; }
-      console.log('\n[daily] Done:', r.title);
+      const generated = r.results || (r.path ? [r] : []);
+      console.log(`\n[daily] Done: ${generated.length} vídeo(s) generado(s).`);
+      generated.forEach(g => console.log(`  • ${g.title}\n    ${g.path}`));
 
-      if (autoUpload && r.path) {
-        console.log('[daily] AUTO_UPLOAD — uploading to YouTube...');
+      if (autoUpload && generated.length) {
         const { uploadAll } = require('./uploader');
-        await uploadAll({
-          file:      r.path,
-          title:     r.title,
-          platforms: 'youtube',
-          type:      'match',
-        });
-        cleanupOldVideos(r.path);
+        for (const g of generated) {
+          if (!g.path) continue;
+          console.log(`[daily] AUTO_UPLOAD — subiendo a YouTube: ${g.title}`);
+          await uploadAll({ file: g.path, title: g.title, platforms: 'youtube', type: 'match' });
+        }
+        cleanupOldVideos(generated[0].path);
       }
 
       process.exit(0);

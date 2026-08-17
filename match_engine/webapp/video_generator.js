@@ -1533,7 +1533,7 @@ async function createRivalryIntroVideo(rivalry, outFile, durationSec = 5) {
   ]);
 }
 
-async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null, introContext = null, introTrophy = null) {
+async function postProcess(outPath, type, speedSegments = [], matchMeta = null, introTitle = null, introSub = null, introContext = null, introTrophy = null, promo = false) {
   if (!fs.existsSync(MUSIC_FILE)) {
     console.log('[post] No music file found at', MUSIC_FILE, '— skipping audio mix');
     return outPath;
@@ -1600,6 +1600,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
   const concatPath     = path.join(tmp, `golazox_concat_${uid}.mp4`);
   const ctaPath        = path.join(tmp, `golazox_cta_${uid}.mp4`);
   const subscribePath  = path.join(tmp, `golazox_subscribe_${uid}.mp4`);
+  const promoSpeedPath = path.join(tmp, `golazox_promo_${uid}.mp4`);
   const listFile       = path.join(tmp, `golazox_list_${uid}.txt`);
 
   // Apply 3x speedup on simulation waiting segments before concat
@@ -1628,6 +1629,10 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
       console.warn('[post] Speedup failed:', e2.message.slice(0, 200), '— using original');
     }
   }
+
+  // PROMO mode uses Directo (instant result), so the match clip is already short —
+  // just the score reveal. No 2x speedup needed; keeping the score readable.
+
   const finalPath  = outPath.replace('.mp4', '_final.mp4');
 
   // For match type: always generate a dynamic intro with team badges + names.
@@ -1645,7 +1650,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
     } else {
       console.log(`[post] Generating match intro: ${matchMeta.teamA} vs ${matchMeta.teamB}...`);
       try {
-        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, 7, null, introSub, introTitle || introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
+        createMatchIntroVideo(matchMeta.teamA, matchMeta.introEraA !== undefined ? matchMeta.introEraA : (matchMeta.eraA || ''), matchMeta.teamB, matchMeta.introEraB !== undefined ? matchMeta.introEraB : (matchMeta.eraB || ''), introPath, promo ? 3 : 7, null, introSub, introTitle || introContext || matchMeta.contextLines || null, matchMeta.matchDesc || null, introTrophy || null);
       } catch (e) {
         console.warn('[post] Match intro failed:', e.message.slice(0, 200));
       }
@@ -1689,7 +1694,7 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
   if ((type === 'match' || type === 'rivalry' || type === 'derby' || type === 'epic' || !type) && matchMeta?.finalScore) {
     try {
       console.log('[post] Generating outro card (score + scorers + stats + CTA)...');
-      createOutroCard(matchMeta, hookPath);
+      createOutroCard(matchMeta, hookPath, promo ? 5 : 9);
       hasOutro = fs.existsSync(hookPath);
       if (hasOutro) console.log('[post] Outro card created');
     } catch (e) {
@@ -1706,8 +1711,10 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
   }
 
   // Subscribe slide: like + subscribe + share CTA with golazox.com
+  // Skipped in PROMO mode — the outro card already promotes golazox.com and we want it short.
   let hasSubscribe = false;
   try {
+    if (promo) { console.log('[post] PROMO — skipping subscribe slide'); throw { _skip: true }; }
     console.log('[post] Generating subscribe slide...');
     const subScript = path.join(__dirname, '_subscribe_screenshot.js');
     const subPng    = path.join(tmp, `golazox_subpng_${uid}.png`);
@@ -1730,14 +1737,21 @@ async function postProcess(outPath, type, speedSegments = [], matchMeta = null, 
       console.warn('[post] Subscribe screenshot failed:', (subResult.stderr || '').toString().slice(0, 200));
     }
   } catch (e) {
-    console.warn('[post] Subscribe slide error:', e.message.slice(0, 200));
+    if (!e || !e._skip) console.warn('[post] Subscribe slide error:', (e && e.message ? e.message : String(e)).slice(0, 200));
   }
 
   // Concat: intro → match → outro (score + scorers + stats + CTA)
   console.log('[post] Concatenating parts...');
   const parts = [];
   if (hasIntro) parts.push(introPath.replace(/\\/g, '/'));
-  parts.push(mainPath.replace(/\\/g, '/'));
+  // PROMO/Directo: the recorded main clip is just the static result poster, which the
+  // screen-recorder captures at CSS resolution (small, top-left). It's redundant with the
+  // full-frame outro card, so skip it — promo = intro (badges + lineups) + outro card.
+  if (promo) {
+    console.log('[post] PROMO — skipping small recorded clip (using full-frame intro + outro only)');
+  } else {
+    parts.push(mainPath.replace(/\\/g, '/'));
+  }
   if (hasOutro) parts.push(hookPath.replace(/\\/g, '/'));
   if (hasSubscribe) parts.push(subscribePath.replace(/\\/g, '/'));
   fs.writeFileSync(listFile, parts.map(p => `file '${p}'`).join('\n'));
@@ -1905,7 +1919,7 @@ async function generateVideo(opts = {}) {
   }
 
   // Post-process: add intro card + background music (+ optional speedup)
-  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub, opts.introContext || null, opts.introTrophy || null);
+  await postProcess(outPath, type, speedSegments, matchMeta, opts.introTitle, opts.introSub, opts.introContext || null, opts.introTrophy || null, opts.promo || false);
 
   console.log(`[video] Done → ${outPath}`);
   return { path: outPath, title: videoTitle, matchMeta };
@@ -2229,25 +2243,35 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     if (ip) ip.style.display = 'none';
   });
 
-  // Select normal speed and start
-  await page.evaluate(() => {
-    document.querySelector('.pm-speed-pill[data-tick="667"]')?.click();
-  });
+  // Select match speed and start. Default tick 667 (~60s "1 min").
+  // opts.matchSpeed can override — e.g. 333 for a punchier ~30s highlights pace.
+  // PROMO → Directo (tick=0): instant result, no small live-viewer, punchy & short.
+  const _matchTick = opts.promo ? '0' : (opts.matchSpeed != null ? String(opts.matchSpeed) : '667');
+  await page.evaluate((tick) => {
+    const pill = document.querySelector(`.pm-speed-pill[data-tick="${tick}"]`)
+              || document.querySelector('.pm-speed-pill[data-tick="667"]');
+    pill?.click();
+  }, _matchTick);
   await wait(100);
   await page.evaluate(() => document.getElementById('pm-start-btn').click());
 
-  // Wait for live viewer — transition fires in ~40ms with speedup active
-  await page.waitForFunction(
-    () => !document.getElementById('live-viewer')?.classList.contains('hidden'),
-    { timeout: 5000 },
-  );
+  if (opts.promo) {
+    // Directo/instant mode: no live viewer appears — results render directly.
+    console.log('[match] PROMO — Directo (instant) mode, waiting for results...');
+  } else {
+    // Wait for live viewer — transition fires in ~40ms with speedup active
+    await page.waitForFunction(
+      () => !document.getElementById('live-viewer')?.classList.contains('hidden'),
+      { timeout: 5000 },
+    );
 
-  // Scroll to live viewer — now that input-panel is hidden it should be near top
-  await page.evaluate(() => {
-    const lv = document.getElementById('live-viewer');
-    if (lv) lv.scrollIntoView({ block: 'start', behavior: 'instant' });
-  });
-  await wait(300);
+    // Scroll to live viewer — now that input-panel is hidden it should be near top
+    await page.evaluate(() => {
+      const lv = document.getElementById('live-viewer');
+      if (lv) lv.scrollIntoView({ block: 'start', behavior: 'instant' });
+    });
+    await wait(300);
+  }
 
   // ── Recording starts HERE — when the match is actually live ─────────────────
   // DIAGNOSTIC: capture a screenshot to compare with video frame
@@ -2310,7 +2334,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
   }).catch(() => {});
   // Disable transition speedup — live match events play at real speed (667ms/tick)
   await page.evaluate(() => { window._fastTransition = false; });
-  console.log('[match] Live viewer — match running at normal speed (~60s)');
+  console.log(`[match] Live viewer — match running (tick=${_matchTick}ms)`);
 
   // ── STEP 7: Wait for results ──
   await page.waitForFunction(
@@ -2318,6 +2342,18 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     { timeout: 300000 },
   );
   console.log('[match] Results revealed');
+
+  // PROMO / Directo: scroll to the score header and hold on it (readable reveal), then
+  // stop — skip the long stats + profile tour. Clean outro card added in postProcess.
+  if (opts.promo) {
+    await page.evaluate(() => {
+      const r = document.getElementById('results');
+      if (r) r.scrollIntoView({ block: 'start', behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+    await wait(3500);
+    console.log('[match] PROMO — instant score reveal captured (skipping stats/profile tour)');
+  } else {
 
   // scroll-behavior:auto (injected via CSS) ensures renderResult's scrollIntoView is instant.
   // Hold 2.5s on the score (slightly faster than before), then scroll down through stats.
@@ -2427,12 +2463,25 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     });
   });
 
+  } // end if (!opts.promo) — stats + profile tour skipped in promo mode
+
   await recorder.stop();
 
   // Read final score + scorers + stats from DOM (still rendered after results appear)
-  const rawResult = await page.evaluate(() => {
-    const scoreA = parseInt(document.getElementById('live-score-a')?.textContent) || 0;
-    const scoreB = parseInt(document.getElementById('live-score-b')?.textContent) || 0;
+  const rawResult = await page.evaluate((isInstant) => {
+    // Live mode: read the live-viewer score. Directo/instant mode (promo) has no live
+    // updates \u2014 live-score-* keep their initial "0", so read the results poster-score.
+    let scoreA, scoreB;
+    if (isInstant) {
+      const poster = (document.getElementById('poster-score')?.textContent || '').trim();
+      const m = poster.match(/(\d+)\s*[:\-\u2013]\s*(\d+)/);
+      if (m) { scoreA = parseInt(m[1]); scoreB = parseInt(m[2]); }
+    } else {
+      scoreA = parseInt(document.getElementById('live-score-a')?.textContent);
+      scoreB = parseInt(document.getElementById('live-score-b')?.textContent);
+    }
+    scoreA = Number.isFinite(scoreA) ? scoreA : 0;
+    scoreB = Number.isFinite(scoreB) ? scoreB : 0;
 
     // Parse scorer entries: [{name, minute}]
     const parseScorers = (id) => {
@@ -2458,7 +2507,7 @@ async function recordMatch(page, recorder, outPath, opts = {}) {
     };
 
     return { scoreA, scoreB, scorersA: parseScorers('scorers-a'), scorersB: parseScorers('scorers-b'), matchStats };
-  }).catch(() => ({ scoreA: 0, scoreB: 0, scorersA: [], scorersB: [], matchStats: {} }));
+  }, !!opts.promo).catch(() => ({ scoreA: 0, scoreB: 0, scorersA: [], scorersB: [], matchStats: {} }));
 
   const finalScore = { scoreA: rawResult.scoreA, scoreB: rawResult.scoreB };
   console.log(`[match] Final: ${finalScore.scoreA}-${finalScore.scoreB}, ${goalEvents.length} goal(s) tracked, scorers: ${rawResult.scorersA.length}+${rawResult.scorersB.length}`);
