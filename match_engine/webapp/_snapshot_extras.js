@@ -30,7 +30,7 @@ const { snapshotFixtures } = require('./standings');
   try {
     const f = await snapshotFixtures();
     console.log('✓ Calendario → data/fixtures_snapshot.json');
-    for (const lg of f) console.log(`    ${lg.code} ${lg.fxSeason}: ${lg.rounds} jornadas`);
+    for (const lg of f) console.log(`    ${lg.code} ${lg.fxSeason}: ${lg.rounds} jornadas · ${lg.scorers} goleadores`);
   } catch (e) {
     ok = false;
     console.error('✗ Calendario:', e.message);

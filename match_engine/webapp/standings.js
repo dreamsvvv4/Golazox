@@ -41,15 +41,21 @@ function _readFixturesSnapshot() {
   return null;
 }
 
-// Persiste el calendario de las ligas que tengan datos (nunca sobrescribe con
-// vacío). Estructura: { updated, leagues: { <code>: { fxSeason, fixtures } } }.
+// Persiste el calendario Y los goleadores de las ligas que tengan datos (nunca
+// sobrescribe con vacío). Transfermarkt bloquea la IP del server, así que en
+// prod tanto el calendario como los goleadores llegan de este snapshot.
+// Estructura: { updated, leagues: { <code>: { fxSeason, fixtures, season, scorers } } }.
 function _writeFixturesSnapshot(leagues) {
-  const withFx = (leagues || []).filter(l => l.fixtures && l.fixtures.length);
-  if (!withFx.length) return;
+  const withData = (leagues || []).filter(l =>
+    (l.fixtures && l.fixtures.length) || (l.scorers && l.scorers.length));
+  if (!withData.length) return;
   try {
     fs.mkdirSync(path.dirname(_FX_SNAP_FILE), { recursive: true });
     const out = { updated: Date.now(), leagues: {} };
-    for (const l of withFx) out.leagues[l.code] = { fxSeason: l.fxSeason, fixtures: l.fixtures };
+    for (const l of withData) out.leagues[l.code] = {
+      fxSeason: l.fxSeason, fixtures: l.fixtures || [],
+      season: l.season, scorers: l.scorers || [],
+    };
     fs.writeFileSync(_FX_SNAP_FILE, JSON.stringify(out), 'utf8');
   } catch (_) { /* disco no disponible: no romper */ }
 }
@@ -246,14 +252,23 @@ async function _fetchFixtures(code, saison) {
   return rounds;
 }
 
-// Calendario completo de la liga: desde la próxima jornada sin disputar hasta el
-// final de la temporada ("toda la liga"). Si la temporada terminó, las últimas.
+// Calendario de la liga: unas cuantas jornadas ya jugadas (para ver los ÚLTIMOS
+// RESULTADOS) + las próximas sin disputar hasta el final ("toda la liga"). Si la
+// temporada terminó, las últimas.
+// OJO: arrancar en la primera jornada sin jugar (comportamiento anterior)
+// ocultaba jornadas RECIÉN COMPLETADAS. En ligas cuya última jornada está
+// entera jugada (p. ej. Serie A/Bundesliga al inicio, con la J1 completa y la J2
+// aún futura) el calendario empezaba en la J2 sin marcadores → "no se ven los
+// resultados". Retrocedemos `_FX_BACK` jornadas para incluir los últimos
+// resultados disputados.
 const _FX_WINDOW = 40; // cubre las 34-38 jornadas de cualquier gran liga
+const _FX_BACK   = 4;  // jornadas ya jugadas que mostramos (resultados recientes)
 function _fixtureWindow(rounds) {
   if (!rounds.length) return [];
   let idx = rounds.findIndex(r => r.matches.some(m => !m.played));
   if (idx === -1) idx = Math.max(0, rounds.length - _FX_WINDOW);
-  return rounds.slice(idx, idx + _FX_WINDOW);
+  const start = Math.max(0, idx - _FX_BACK);
+  return rounds.slice(start, start + _FX_WINDOW);
 }
 
 // Obtiene tabla + goleadores de una liga, con detección de temporada.
@@ -337,20 +352,28 @@ async function getStandings() {
     for (const l of tmLeagues) byCode[l.code] = l;
     const leagues = LEAGUES.map(L => byCode[L.code]).filter(Boolean);
 
-    // Calendario: si alguna liga viene sin fixtures (ESPN no los trae y TM está
-    // bloqueado), los rellenamos desde el snapshot commiteado. Si el scrape en
-    // vivo sí trajo calendario, refrescamos el snapshot para mantenerlo al día.
-    const anyLive = leagues.some(l => l.fixtures && l.fixtures.length);
+    // Calendario Y goleadores: si alguna liga viene sin fixtures o sin goleadores
+    // (ESPN trae la tabla pero no goleadores/calendario, y TM está bloqueado en
+    // prod), los rellenamos desde el snapshot commiteado. Si el scrape en vivo
+    // sí los trajo, refrescamos el snapshot para mantenerlo al día.
+    const anyLive = leagues.some(l =>
+      (l.fixtures && l.fixtures.length) || (l.scorers && l.scorers.length));
     if (anyLive) {
       try { _writeFixturesSnapshot(leagues); } catch (_) {}
     }
-    if (leagues.some(l => !l.fixtures || !l.fixtures.length)) {
+    if (leagues.some(l => !l.fixtures || !l.fixtures.length || !l.scorers || !l.scorers.length)) {
       const snap = _readFixturesSnapshot();
       if (snap) {
         for (const l of leagues) {
-          if ((!l.fixtures || !l.fixtures.length) && snap[l.code] && snap[l.code].fixtures.length) {
-            l.fixtures = snap[l.code].fixtures;
-            l.fxSeason = snap[l.code].fxSeason || l.fxSeason;
+          const s = snap[l.code];
+          if (!s) continue;
+          if ((!l.fixtures || !l.fixtures.length) && s.fixtures && s.fixtures.length) {
+            l.fixtures = s.fixtures;
+            l.fxSeason = s.fxSeason || l.fxSeason;
+          }
+          if ((!l.scorers || !l.scorers.length) && s.scorers && s.scorers.length) {
+            l.scorers = s.scorers;
+            l.season = s.season || l.season;
           }
         }
       }
@@ -377,11 +400,12 @@ async function getStandings() {
 async function snapshotFixtures() {
   const settled = await Promise.allSettled(LEAGUES.map(_fetchLeague));
   const leagues = settled
-    .filter(r => r.status === 'fulfilled' && r.value.fixtures && r.value.fixtures.length)
+    .filter(r => r.status === 'fulfilled' &&
+      ((r.value.fixtures && r.value.fixtures.length) || (r.value.scorers && r.value.scorers.length)))
     .map(r => r.value);
   if (!leagues.length) throw new Error('scrape de calendario vacío (¿IP bloqueada por Transfermarkt?)');
   _writeFixturesSnapshot(leagues);
-  return leagues.map(l => ({ code: l.code, fxSeason: l.fxSeason, rounds: l.fixtures.length }));
+  return leagues.map(l => ({ code: l.code, fxSeason: l.fxSeason, rounds: (l.fixtures || []).length, scorers: (l.scorers || []).length }));
 }
 
 module.exports = { getStandings, snapshotFixtures, LEAGUES };
