@@ -101,6 +101,17 @@ async function _overlayResults(leagues) {
       }
     }
   }
+  // Pichichi EN VIVO: agrega los goleadores de la temporada desde los mismos
+  // resultados de ESPN y los cuelga de cada liga (l._espnScorers). getStandings
+  // los usa con prioridad para que la tabla de goleadores se actualice sola en
+  // prod (donde Transfermarkt está bloqueado y el snapshot queda estancado).
+  try {
+    const agg = espn.aggregateScorers(byCode);
+    for (const l of (leagues || [])) {
+      const sc = agg[l.code];
+      if (sc && sc.length) l._espnScorers = sc;
+    }
+  } catch (_) { /* la agregación es opcional: no romper el overlay */ }
 }
 
 // Ligas soportadas (código de competición de Transfermarkt).
@@ -385,6 +396,14 @@ async function getStandings() {
     try {
       await _overlayResults(leagues);
     } catch (_) { /* si ESPN falla, el calendario queda como esté (sin regresión) */ }
+
+    // Pichichi EN VIVO: si ESPN ha agregado goleadores (temporada en curso),
+    // reemplazan a los de TM/snapshot para que la tabla se actualice sola. Solo
+    // cae al snapshot cuando ESPN aún no tiene datos (arranque de temporada).
+    for (const l of leagues) {
+      if (l._espnScorers && l._espnScorers.length) l.scorers = l._espnScorers;
+      delete l._espnScorers;
+    }
 
     const data = { leagues, updated: now };
     if (leagues.length) _cache = { ts: now, data };

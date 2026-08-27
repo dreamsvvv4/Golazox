@@ -4097,7 +4097,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   ${GX_SIDE_NAV(_activeTab === 'fichajes' ? 'transfers' : _activeTab === 'noticias' ? 'news' : _activeTab)}
   <header class="hero">
     <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias" data-title-agenda="Agenda del Fútbol" data-title-valores="Cracks del Fútbol" data-title-estadisticas="Estadísticas">${_cfg.hero}</h1>
-    <p><span class="live">En directo</span> · <span class="ago" data-updated="${transfers.updated || news.updated || Date.now()}">actualizado ${_timeAgo(transfers.updated) || _timeAgo(news.updated) || 'ahora'}</span></p>
+    <p><span class="live">En directo</span> · <span class="ago" data-updated="${Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0) || Date.now()}">actualizado ${_timeAgo(Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0)) || 'ahora'}</span></p>
   </header>
 
   <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
@@ -4298,10 +4298,19 @@ const _renderFichajes = (page) => async (_req, res) => {
 app.get('/fichajes', _newsLimit, _renderFichajes('fichajes'));
 
 // Ping ligero para el auto-refresh: devuelve solo el timestamp de los datos.
+// Cubre TODAS las fuentes de las pestañas (fichajes, noticias, cracks,
+// estadísticas, agenda) para que la píldora salte en cualquier sección.
 app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
   try {
-    const [transfers, news] = await Promise.all([getTransfers(), getNews()]);
-    const updated = Math.max(transfers.updated || 0, news.updated || 0);
+    const [transfers, news, values, stats] = await Promise.all([
+      getTransfers(), getNews(), getValues().catch(() => ({})), getStats().catch(() => ({})),
+    ]);
+    let agendaUpd = 0;
+    try { agendaUpd = (getAgenda() || {}).updated || 0; } catch { /* ignore */ }
+    const updated = Math.max(
+      transfers.updated || 0, news.updated || 0,
+      values.updated || 0, stats.updated || 0, agendaUpd,
+    );
     res.set('Cache-Control', 'no-store').json({ updated });
   } catch {
     res.json({ updated: 0 });
@@ -4865,6 +4874,10 @@ const CLASIFICACIONES_HTML = (standings) => {
     .live::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 rgba(16,217,138,.6); animation:pulse 1.8s infinite; }
     @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(16,217,138,.55);} 70%{box-shadow:0 0 0 9px rgba(16,217,138,0);} 100%{box-shadow:0 0 0 0 rgba(16,217,138,0);} }
 
+    .refresh-pill { position:fixed; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:50; cursor:pointer; font-size:.85rem; font-weight:700; color:var(--ink); background:linear-gradient(92deg,var(--green),var(--cyan)); padding:.65rem 1.2rem; border-radius:999px; box-shadow:0 10px 30px -8px rgba(0,212,255,.6); animation:pop .3s ease; }
+    .refresh-pill span { text-decoration:underline; }
+    @keyframes pop { from{opacity:0; transform:translate(-50%,10px);} to{opacity:1; transform:translate(-50%,0);} }
+
     /* Menú principal (consistente con la página de fichajes) */
     .mainnav { display:flex; gap:.3rem; margin:0 auto 1.6rem; padding:.35rem; max-width:560px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow-x:auto; }
     .mnav { flex:1 0 auto; text-align:center; text-decoration:none; border-radius:999px; color:rgba(255,255,255,.55); font-size:.9rem; font-weight:700; padding:.6rem .85rem; white-space:nowrap; transition:all .2s; }
@@ -4994,6 +5007,8 @@ const CLASIFICACIONES_HTML = (standings) => {
     <p><span class="live">En directo</span> · <span class="ago" data-updated="${standings.updated || Date.now()}">actualizado ${_timeAgo(standings.updated) || 'ahora'}</span></p>
   </header>
 
+  <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
+
   ${leagues.length ? `
   <div class="searchbar">
     <span class="search-ico">🔍</span>
@@ -5009,7 +5024,7 @@ const CLASIFICACIONES_HTML = (standings) => {
   Al inicio de temporada la tabla arranca a cero y se llena con cada jornada.</p>
   <a class="back" href="/">← Volver al simulador</a>
 
-  <script src="/clasificaciones.js?v=2" defer></script>
+  <script src="/clasificaciones.js?v=3" defer></script>
 </body>
 </html>`;
 };
@@ -5023,6 +5038,16 @@ app.get('/clasificaciones', _newsLimit, async (_req, res) => {
   } catch (e) {
     console.error('[clasificaciones] error:', e.message);
     res.status(503).type('text/html').send(CLASIFICACIONES_HTML({ leagues: [], updated: 0 }));
+  }
+});
+
+// Ping ligero para el auto-refresh de clasificaciones: solo el timestamp.
+app.get('/clasificaciones/ping', _newsLimit, async (_req, res) => {
+  try {
+    const standings = await getStandings();
+    res.set('Cache-Control', 'no-store').json({ updated: standings.updated || 0 });
+  } catch {
+    res.json({ updated: 0 });
   }
 });
 

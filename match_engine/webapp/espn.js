@@ -370,9 +370,11 @@ function _resultFromEvent(ev) {
     const min = (dt.clock && dt.clock.displayValue) || '';
     scorers.push({ name, min, side, pen: !!dt.penaltyKick, og: !!dt.ownGoal });
   }
+  const _logo = (t) => (t && (t.logo || (t.logos && t.logos[0] && t.logos[0].href))) || '';
   return {
     dayIso: (ev.date || '').slice(0, 10),
     home: homeName, away: awayName,
+    homeBadge: _badge(_logo(home.team)), awayBadge: _badge(_logo(away.team)),
     tHome: _teamTokens(homeName), tAway: _teamTokens(awayName),
     score: (played && hScore !== '' && aScore !== '') ? `${hScore}:${aScore}` : '',
     state, live: state === 'in', scorers,
@@ -422,4 +424,58 @@ async function getEspnResults(fromYmd, toYmd) {
   return data;
 }
 
-module.exports = { getEspnStandings, getEspnMatches, getEspnUpcoming, getEspnResults, teamTokens: _teamTokens, tokenOverlap: _tokenOverlap, LEAGUE_MAP };
+// Agrega los goleadores de una temporada a partir de los resultados por partido
+// de ESPN. Cada gol de `details` (excepto en propia puerta) suma para su autor;
+// los penaltis SÍ cuentan (como en cualquier tabla de goleadores). El club del
+// jugador se toma del lado en el que marcó (su aparición más reciente manda,
+// por si ha cambiado de equipo). Devuelve { <code>: [{player,club,badge,goals,
+// pens,position}] } ordenado de más a menos goles. Como ESPN NO está bloqueado
+// en prod, esta tabla se actualiza sola según se juegan los partidos.
+function aggregateScorers(byCode, topN = 30) {
+  const out = {};
+  for (const code of Object.keys(byCode || {})) {
+    const tally = new Map(); // player → { player, goals, pens, club, badge }
+    for (const r of (byCode[code] || [])) {
+      for (const s of (r.scorers || [])) {
+        if (s.og || !s.name) continue;            // gol en propia no cuenta para el autor
+        const club  = s.side === 'home' ? r.home : r.away;
+        const badge = s.side === 'home' ? r.homeBadge : r.awayBadge;
+        const cur = tally.get(s.name) || { player: s.name, goals: 0, pens: 0, club: '', badge: null };
+        cur.goals += 1;
+        if (s.pen) cur.pens += 1;
+        if (club)  cur.club = club;               // el club más reciente en el que marcó
+        if (badge) cur.badge = badge;
+        tally.set(s.name, cur);
+      }
+    }
+    const list = Array.from(tally.values())
+      .sort((a, b) => b.goals - a.goals || a.player.localeCompare(b.player))
+      .slice(0, topN)
+      .map(x => ({ player: x.player, position: '', club: x.club || '—', badge: x.badge, goals: x.goals, pens: x.pens }));
+    if (list.length) out[code] = list;
+  }
+  return out;
+}
+
+// Rango de la temporada en curso (1-jul → hoy+2) en formato YYYYMMDD.
+function _seasonRange() {
+  const d = new Date();
+  const startY = d.getMonth() >= 6 ? d.getFullYear() : d.getFullYear() - 1;
+  const pad = (n) => String(n).padStart(2, '0');
+  const to = new Date(d.getTime() + 2 * 86400000);
+  return {
+    from: `${startY}0701`,
+    to: `${to.getFullYear()}${pad(to.getMonth() + 1)}${pad(to.getDate())}`,
+  };
+}
+
+// Pichichi por liga desde ESPN (temporada en curso). Reutiliza la caché de
+// getEspnResults, así que si las clasificaciones ya lo han pedido no hay fetch
+// extra. Devuelve { <code>: [{player,club,badge,goals,pens}] }.
+async function getEspnScorers() {
+  const { from, to } = _seasonRange();
+  const { byCode } = await getEspnResults(from, to);
+  return aggregateScorers(byCode);
+}
+
+module.exports = { getEspnStandings, getEspnMatches, getEspnUpcoming, getEspnResults, getEspnScorers, aggregateScorers, teamTokens: _teamTokens, tokenOverlap: _tokenOverlap, LEAGUE_MAP };

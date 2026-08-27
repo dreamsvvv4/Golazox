@@ -110,4 +110,29 @@
     // Ya cargada desde caché y rota antes de registrar el handler.
     if (img.complete && img.naturalWidth === 0) replaceBadge(img);
   });
+
+  // ── Auto-refresh en vivo (igual que /fichajes) ──
+  var ago  = document.querySelector('.ago');
+  var pill = document.getElementById('refreshPill');
+  function relative(ms) {
+    var s = Math.floor((Date.now() - ms) / 1000);
+    if (s < 60) return 'hace un momento';
+    var m = Math.floor(s / 60);
+    if (m < 60) return 'hace ' + m + ' min';
+    var h = Math.floor(m / 60);
+    if (h < 24) return 'hace ' + h + ' h';
+    var d = Math.floor(h / 24);
+    return d === 1 ? 'ayer' : 'hace ' + d + ' días';
+  }
+  if (ago && ago.dataset.updated) {
+    var updated = parseInt(ago.dataset.updated, 10);
+    setInterval(function () { ago.textContent = 'actualizado ' + relative(updated); }, 60000);
+    // Sondea el servidor cada 3 min; si hay datos más nuevos, muestra la píldora.
+    setInterval(function () {
+      fetch('/clasificaciones/ping').then(function (r) { return r.json(); }).then(function (d) {
+        if (d && d.updated && d.updated > updated + 1000) { if (pill) pill.hidden = false; }
+      }).catch(function () {});
+    }, 180000);
+  }
+  if (pill) pill.addEventListener('click', function () { location.reload(); });
 })();

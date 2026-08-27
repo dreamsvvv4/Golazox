@@ -17,6 +17,7 @@ const fetch   = require('node-fetch');
 const cheerio = require('cheerio');
 const fs      = require('fs');
 const path    = require('path');
+const espn    = require('./espn');
 
 const FETCH_TIMEOUT = 8000;
 const CACHE_TTL     = 15 * 60 * 1000; // 15 minutos
@@ -795,11 +796,37 @@ async function getStats() {
     const data = { scorers, assists, contributions, season: label, updated: now };
     if (all.length) { _sCache = { ts: now, data }; _cachePut('stats', _sCache); _mark('stats', 'ok', all.length); }
     else _mark('stats', 'empty', 0);
+    if (all.length) return data;
+    // Transfermarkt no respondió (IP bloqueada en prod): construimos el Pichichi
+    // desde ESPN, que sí funciona y se actualiza solo según se juegan partidos.
+    const fromEspn = await _statsFromEspn(now);
+    if (fromEspn) { _sCache = { ts: now, data: fromEspn }; _cachePut('stats', _sCache); _mark('stats', 'ok', fromEspn.scorers.length); return fromEspn; }
     return data;
   } catch (e) {
     _mark('stats', 'fail', 0, e.message);
+    const fromEspn = await _statsFromEspn(Date.now()).catch(() => null);
+    if (fromEspn) { _sCache = { ts: Date.now(), data: fromEspn }; return fromEspn; }
     return _ensureContribs(_sCache.data) || { scorers: [], assists: [], contributions: [], season: '', updated: 0 };
   }
+}
+
+// Pichichi global desde ESPN (respaldo cuando Transfermarkt está bloqueado).
+// Fusiona los goleadores de las 5 grandes ligas en una sola tabla de goles.
+// ESPN no da asistencias fiables, así que ese ranking queda vacío (secundario).
+async function _statsFromEspn(now) {
+  const byCode = await espn.getEspnScorers();       // { ES1:[{player,club,badge,goals,pens}], … }
+  const merged = [];
+  for (const code of Object.keys(byCode || {})) {
+    for (const s of byCode[code]) {
+      merged.push({ player: s.player, club: { name: s.club, badge: s.badge }, goals: s.goals, assists: 0 });
+    }
+  }
+  if (!merged.length) return null;
+  merged.sort((a, b) => b.goals - a.goals || a.player.localeCompare(b.player));
+  const scorers = merged.slice(0, 30);
+  const contributions = scorers.map(p => ({ ...p, ga: p.goals }));
+  const y = _currentSaison();
+  return { scorers, assists: [], contributions, season: `${y}/${String(y + 1).slice(-2)}`, updated: now, source: 'espn' };
 }
 
 // ── Rumores de fichajes (con probabilidad de traspaso) ──
