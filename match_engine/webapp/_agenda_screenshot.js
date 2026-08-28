@@ -605,7 +605,7 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   // Build complex filter: scale inputs, xfade between pngA (loop) and ken video, prepare wordmark fade, overlay, map output
   const filter = `
     [0:v]scale=1080:1920,setsar=1[v0];
-    [1:v]scale=1080:1920,setsar=1[v1];
+    [1:v]fps=${fps},scale=1080:1920,setsar=1[v1];
     [v0][v1]xfade=transition=${transition}:duration=${td}:offset=${pre}[xf];
     [2:v]format=rgba,scale=600:-1,fade=t=in:st=0:d=${tIn}:alpha=1,fade=t=out:st=${tOutStart}:d=${tOut}:alpha=1[wm];
     [xf][wm]overlay=(W-w)/2:200:format=auto[out]
