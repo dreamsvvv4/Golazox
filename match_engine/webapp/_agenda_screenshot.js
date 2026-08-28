@@ -626,6 +626,7 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
 
   const args = [
     '-y',
+    '-framerate', String(fps),
     '-loop','1','-t',String(pre + td),'-i',pngA,
     '-i',tmpKen,
     '-i',wmPath,
