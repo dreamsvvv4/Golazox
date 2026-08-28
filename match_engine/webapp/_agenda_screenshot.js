@@ -524,9 +524,10 @@ async function renderIntroKenBurns(dateStr, outBase = `agenda_${dateStr}_intro_k
   const zoomEnd = typeof opts.zoomEnd === 'number' ? opts.zoomEnd : 1.08;
   const zoomInc = (zoomEnd - 1) / frames;
 
-  // zoompan: increment zoom slightly each output frame
-  const filter = `[0:v]format=rgba,scale=1080:1920,zoompan=z='min(zoom+${zoomInc.toFixed(6)},${zoomEnd})':d=${frames}:s=1080x1920,framerate=${fps},format=yuv420p[v]`;
-  const args = ['-y','-loop','1','-i',png,'-filter_complex',filter,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(duration), outMp4];
+  // zoompan: increment zoom slightly each output frame. Use -vf to avoid complex filter mapping.
+  const zoomExpr = `min(zoom+${zoomInc.toFixed(6)},${zoomEnd})`;
+  const vf = `zoompan=z='${zoomExpr}':d=${frames}:s=1080x1920,framerate=${fps},format=yuv420p`;
+  const args = ['-y','-loop','1','-i',png,'-vf',vf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(duration), outMp4];
   const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
   if (r.status !== 0) throw new Error('ffmpeg kenburns failed');
   try { fs.unlinkSync(png); } catch (e) {}
