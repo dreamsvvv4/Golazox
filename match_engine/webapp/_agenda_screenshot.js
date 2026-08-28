@@ -583,6 +583,18 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   await renderHtmlToPng(buildVariant(true), pngA);
   await renderHtmlToPng(buildVariant(false), pngB);
 
+  // Create an intermediate KenBurns video from pngB so we can xfade into a moving clip
+  const tmpKen = path.join(OUT_DIR, `${outBase}_b_ken.mp4`);
+  const kenDuration = post + td;
+  const kenFps = fps;
+  const kenFrames = Math.max(2, Math.round(kenDuration * kenFps));
+  const kenZoomInc = (zoomEnd - 1) / kenFrames;
+  const kenZoomExpr = `min(zoom+${kenZoomInc.toFixed(6)},${zoomEnd})`;
+  const kenVf = `zoompan=z='${kenZoomExpr}':d=${kenFrames}:s=1080x1920,framerate=${kenFps},format=yuv420p`;
+  const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), tmpKen];
+  const rk = spawnSync(ffmpeg, kenArgs, { stdio: 'inherit', timeout: 120000 });
+  if (rk.status !== 0) throw new Error('ffmpeg kenburns (tmp) failed');
+
   const wmPath = path.join(PUBLIC_DIR, 'golazox-wordmark.png');
   if (!fs.existsSync(wmPath)) throw new Error('wordmark not found');
 
@@ -600,20 +612,19 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   const tOut = 0.25;
   const tOutStart = Math.max(0.8, totalSec - tOut - 0.2);
 
-  // Build complex filter: scale inputs, xfade, apply zoompan, prepare wordmark fade, overlay, map output
+  // Build complex filter: scale inputs, xfade between pngA (loop) and ken video, prepare wordmark fade, overlay, map output
   const filter = `
     [0:v]scale=1080:1920,setsar=1[v0];
     [1:v]scale=1080:1920,setsar=1[v1];
     [v0][v1]xfade=transition=${transition}:duration=${td}:offset=${pre}[xf];
-    [xf]zoompan=z='min(zoom+${zoomInc.toFixed(6)},${zoomEnd})':d=${frames}:s=1080x1920:fps=${fps}[vz];
     [2:v]format=rgba,scale=600:-1,fade=t=in:st=0:d=${tIn}:alpha=1,fade=t=out:st=${tOutStart}:d=${tOut}:alpha=1[wm];
-    [vz][wm]overlay=(W-w)/2:200:format=auto[out]
+    [xf][wm]overlay=(W-w)/2:200:format=auto[out]
   `.replace(/\n\s+/g,'');
 
   const args = [
     '-y',
     '-loop','1','-t',String(pre + td),'-i',pngA,
-    '-loop','1','-t',String(post + td),'-i',pngB,
+    '-i',tmpKen,
     '-i',wmPath,
     '-filter_complex', filter,
     '-map','[out]','-c:v','libx264','-pix_fmt','yuv420p', outMp4
@@ -624,6 +635,7 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
 
   try { fs.unlinkSync(pngA); } catch (e) {}
   try { fs.unlinkSync(pngB); } catch (e) {}
+  try { fs.unlinkSync(tmpKen); } catch (e) {}
   return { mp4: outMp4 };
 }
 
