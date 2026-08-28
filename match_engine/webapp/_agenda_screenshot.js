@@ -331,7 +331,7 @@ function buildHtml(context) {
 
   // Header differs for intro (no events) to center title and logos
   const headerHtml = isIntro ?
-    `${wm?`<img class="wm" src="${wm}">`:''}<div class="titlebig">Agenda del día</div><div class="date">${date}</div>` :
+    `${wm?`<img class="wm" src="${wm}">`:''}<div class="titlebig">Agenda del día</div><div class="date">${date}</div><div class="decor"></div>` :
     `${wm?`<img class="wm" src="${wm}">`:''}<div style="margin-left:auto;text-align:right"><div class="titlebig">Agenda del día</div><div class="date">${date}</div></div>`;
 
   return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=1080"><style>${rajFace}${bebasFace}
@@ -347,6 +347,8 @@ function buildHtml(context) {
   .wrap.intro .wm{display:block;width:360px;margin-bottom:10px;opacity:1}
   .wrap.intro .titlebig{font-family:BebasNeue,Arial;font-size:${introTitleBig}px;color:#FFDD00;letter-spacing:0.02em;text-shadow:0 18px 48px rgba(0,0,0,0.7)}
   .wrap.intro .date{font-size:56px;color:#cfe8ff;letter-spacing:0.06em;text-shadow:0 8px 20px rgba(0,0,0,0.5);margin-top:6px}
+  .wrap.intro .titlebig{ -webkit-text-stroke: 1px rgba(0,0,0,0.25); background: linear-gradient(180deg,#fff6c2,#ffd700); -webkit-background-clip: text; background-clip: text; color: transparent }
+  .wrap.intro .decor{width:420px;height:6px;background:linear-gradient(90deg,#ffd700,#ffb84d);border-radius:6px;margin-top:18px;box-shadow:0 8px 24px rgba(255,180,60,0.12);opacity:0.95}
   .list{margin-top:22px;display:flex;flex-direction:column;gap:${listGap}px;overflow:auto;width:100%;max-width:920px}
   .event{display:flex;gap:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
   .left{width:160px;display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -363,6 +365,8 @@ function buildHtml(context) {
   .cta{margin-top:14px;text-align:center;font-size:26px;color:#fff;font-weight:700;letter-spacing:.05em;background:linear-gradient(90deg,#0b1220,rgba(255,255,255,0.02));padding:8px 14px;border-radius:8px;display:inline-block}
   /* stronger hero background accent for intro */
   .wrap.intro{background:radial-gradient(900px 900px at 30% 12%, rgba(12,55,96,0.65), rgba(3,6,18,0.92)), linear-gradient(180deg,#041e2b 0%, #021022 100%)}
+  /* subtle sparkle overlay */
+  .wrap.intro:after{content:'';position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;background-image:radial-gradient(circle at 20% 15%, rgba(255,240,200,0.03), transparent 8%), radial-gradient(circle at 80% 30%, rgba(200,235,255,0.02), transparent 10%)}
   .cta .site{color:#FFD700;margin-left:8px}
   </style></head><body><div class="wrap ${events && events.length? 'has-events':'intro'}"><div class="hdr">${headerHtml}</div><div class="list">${itemsHtml}</div><div class="footer">golazox.com</div></div></body></html>`;
 }
@@ -475,14 +479,15 @@ async function renderIntroXfade(dateStr, outBase = `agenda_${dateStr}_intro_xfad
   await renderHtmlToPng(htmlB, pngB);
 
   // timing: show A for preMs, transition td, show B for postMs (seconds)
-  const totalSec = typeof opts.durationSec === 'number' ? opts.durationSec : 3;
-  const td = typeof opts.transitionSec === 'number' ? opts.transitionSec : 0.8;
-  const pre = typeof opts.preSec === 'number' ? opts.preSec : Math.max(0.4, (totalSec - td) * 0.33);
+  const totalSec = typeof opts.durationSec === 'number' ? opts.durationSec : 4;
+  const td = typeof opts.transitionSec === 'number' ? opts.transitionSec : 1.0;
+  const pre = typeof opts.preSec === 'number' ? opts.preSec : Math.max(0.45, (totalSec - td) * 0.33);
   const post = Math.max(0.6, totalSec - pre - td);
+  const transition = typeof opts.transition === 'string' ? opts.transition : 'fade';
 
   if (!ffmpeg) throw new Error('ffmpeg-static not available');
 
-  const filter = `[0:v]scale=1080:1920,setsar=1[v0];[1:v]scale=1080:1920,setsar=1[v1];[v0][v1]xfade=transition=slideleft:duration=${td}:offset=${pre},format=yuv420p`;
+  const filter = `[0:v]scale=1080:1920,setsar=1[v0];[1:v]scale=1080:1920,setsar=1[v1];[v0][v1]xfade=transition=${transition}:duration=${td}:offset=${pre},format=yuv420p`;
   const args = [
     '-y',
     '-loop','1','-t',String(pre + td),'-i',pngA,
