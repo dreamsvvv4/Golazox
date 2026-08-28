@@ -318,6 +318,8 @@ function buildHtml(context) {
 
   const rajFace = fonts.raj ? `@font-face{font-family:Rajdhani;src:url(data:font/truetype;base64,${fonts.raj})}` : '';
   const bebasFace = fonts.bebas ? `@font-face{font-family:BebasNeue;src:url(data:font/truetype;base64,${fonts.bebas})}` : '';
+  // slightly larger hero title for the intro cover
+  const introTitleBig = Math.round(titleBigSize * 1.3);
 
   const isIntro = !events || events.length === 0;
   const itemsHtml = events.map(ev => {
@@ -342,9 +344,9 @@ function buildHtml(context) {
   .coin{width:48px;opacity:0.95;display:none}
   .wm{width:260px;opacity:0.95;display:none}
   /* show wordmark on the intro/cover view */
-  .wrap.intro .wm{display:block}
-  .titlebig{font-family:BebasNeue,Arial;font-size:${titleBigSize}px;color:#FFDD00;letter-spacing:0.02em}
-  .date{font-size:40px;color:#cfe8ff}
+  .wrap.intro .wm{display:block;width:360px;margin-bottom:10px;opacity:1}
+  .wrap.intro .titlebig{font-family:BebasNeue,Arial;font-size:${introTitleBig}px;color:#FFDD00;letter-spacing:0.02em;text-shadow:0 18px 48px rgba(0,0,0,0.7)}
+  .wrap.intro .date{font-size:56px;color:#cfe8ff;letter-spacing:0.06em;text-shadow:0 8px 20px rgba(0,0,0,0.5);margin-top:6px}
   .list{margin-top:22px;display:flex;flex-direction:column;gap:${listGap}px;overflow:auto;width:100%;max-width:920px}
   .event{display:flex;gap:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
   .left{width:160px;display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -359,6 +361,8 @@ function buildHtml(context) {
   .tv{display:inline-block;padding:8px 12px;background:#10231a;border-radius:12px;font-size:34px;font-weight:800;color:#fff}
   .footer{margin-top:auto;text-align:center;font-size:18px;color:rgba(255,255,255,0.12);padding-bottom:28px}
   .cta{margin-top:14px;text-align:center;font-size:26px;color:#fff;font-weight:700;letter-spacing:.05em;background:linear-gradient(90deg,#0b1220,rgba(255,255,255,0.02));padding:8px 14px;border-radius:8px;display:inline-block}
+  /* stronger hero background accent for intro */
+  .wrap.intro{background:radial-gradient(900px 900px at 30% 12%, rgba(12,55,96,0.65), rgba(3,6,18,0.92)), linear-gradient(180deg,#041e2b 0%, #021022 100%)}
   .cta .site{color:#FFD700;margin-left:8px}
   </style></head><body><div class="wrap ${events && events.length? 'has-events':'intro'}"><div class="hdr">${headerHtml}</div><div class="list">${itemsHtml}</div><div class="footer">golazox.com</div></div></body></html>`;
 }
@@ -512,8 +516,9 @@ async function renderAnimatedIntro(dateStr, outBase = `agenda_${dateStr}_intro_a
     .center{position:absolute;left:50%;top:30%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px}
     .coin{display:none}
     .wm{width:240px;opacity:0.95;transform:translateY(-6px);animation:wmIn 500ms 120ms ease-out forwards}
-    .titlebig{font-family:BebasNeue,Arial;font-size:150px;letter-spacing:0.02em;color:#FFD700;opacity:0;transform:translateY(30px);text-shadow:0 12px 36px rgba(0,0,0,0.6);}
-    .date{font-size:40px;color:#cfe8ff;opacity:0;transform:translateY(30px);}
+      .wm{width:320px}
+      .titlebig{font-family:BebasNeue,Arial;font-size:160px;letter-spacing:0.02em;color:#FFD700;opacity:0;transform:translateY(30px);text-shadow:0 18px 48px rgba(0,0,0,0.6);}
+      .date{font-size:52px;color:#cfe8ff;opacity:0;transform:translateY(30px);letter-spacing:0.06em}
     .items{margin-top:24px;display:flex;flex-direction:column;gap:18px;align-items:center}
     .item{width:860px;display:flex;gap:18px;align-items:center;opacity:0;transform:translateY(30px) scale(0.68) rotate(-2deg);}
     .item .left{min-width:160px;text-align:right;color:#fff;font-weight:900;font-size:34px}
@@ -523,6 +528,8 @@ async function renderAnimatedIntro(dateStr, outBase = `agenda_${dateStr}_intro_a
     /* per-item animation delay set inline via style attribute */
     .item .title{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.5))}
     .flash{position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;background:radial-gradient(circle at 50% 10%, rgba(255,215,0,0.02), rgba(255,255,255,0) 24%)}
+    /* subtle vignette for better contrast */
+    body:before{content:' ';position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;background:radial-gradient(60% 40% at 50% 10%, rgba(255,255,255,0.02), rgba(0,0,0,0.35));mix-blend-mode:multiply}
     @keyframes coinIn{to{opacity:1;transform:translateY(0)}}
     @keyframes wmIn{to{opacity:1;transform:translateY(0)}}
     @keyframes titleIn{to{opacity:1;transform:translateY(0)}}
