@@ -565,6 +565,70 @@ async function renderIntroBrandBlink(dateStr, outBase = `agenda_${dateStr}_intro
 module.exports.renderIntroKenBurns = renderIntroKenBurns;
 module.exports.renderIntroBrandBlink = renderIntroBrandBlink;
 
+// Combined renderer: xfade between two variants, apply slow zoom and overlay brand blink
+async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_combined`, opts = {}) {
+  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+  const ffmpeg = require('ffmpeg-static');
+  const pngA = path.join(OUT_DIR, `${outBase}_a.png`);
+  const pngB = path.join(OUT_DIR, `${outBase}_b.png`);
+  const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
+
+  const ctxIntro = { date: dateStr, events: [] };
+  const buildVariant = (initial) => {
+    const html = buildHtml(ctxIntro);
+    if (initial) return html.replace('</style></head>', `.wrap.intro .titlebig{opacity:0;transform:translateY(40px)}.wrap.intro .date{opacity:0;transform:translateY(30px)} </style></head>`);
+    return html;
+  };
+
+  await renderHtmlToPng(buildVariant(true), pngA);
+  await renderHtmlToPng(buildVariant(false), pngB);
+
+  const wmPath = path.join(PUBLIC_DIR, 'golazox-wordmark.png');
+  if (!fs.existsSync(wmPath)) throw new Error('wordmark not found');
+
+  const totalSec = typeof opts.durationSec === 'number' ? opts.durationSec : 5;
+  const td = typeof opts.transitionSec === 'number' ? opts.transitionSec : 1.0;
+  const pre = typeof opts.preSec === 'number' ? opts.preSec : Math.max(0.5, (totalSec - td) * 0.33);
+  const post = Math.max(0.6, totalSec - pre - td);
+  const transition = typeof opts.transition === 'string' ? opts.transition : 'fade';
+  const fps = typeof opts.fps === 'number' ? opts.fps : 25;
+  const zoomEnd = typeof opts.zoomEnd === 'number' ? opts.zoomEnd : 1.06;
+  const frames = Math.max(2, Math.round(totalSec * fps));
+  const zoomInc = (zoomEnd - 1) / frames;
+
+  const tIn = 0.25;
+  const tOut = 0.25;
+  const tOutStart = Math.max(0.8, totalSec - tOut - 0.2);
+
+  // Build complex filter: scale inputs, xfade, apply zoompan, prepare wordmark fade, overlay, map output
+  const filter = `
+    [0:v]scale=1080:1920,setsar=1[v0];
+    [1:v]scale=1080:1920,setsar=1[v1];
+    [v0][v1]xfade=transition=${transition}:duration=${td}:offset=${pre}[xf];
+    [xf]zoompan=z='min(zoom+${zoomInc.toFixed(6)},${zoomEnd})':d=${frames}:s=1080x1920:fps=${fps}[vz];
+    [2:v]format=rgba,scale=600:-1,fade=t=in:st=0:d=${tIn}:alpha=1,fade=t=out:st=${tOutStart}:d=${tOut}:alpha=1[wm];
+    [vz][wm]overlay=(W-w)/2:200:format=auto[out]
+  `.replace(/\n\s+/g,'');
+
+  const args = [
+    '-y',
+    '-loop','1','-t',String(pre + td),'-i',pngA,
+    '-loop','1','-t',String(post + td),'-i',pngB,
+    '-i',wmPath,
+    '-filter_complex', filter,
+    '-map','[out]','-c:v','libx264','-pix_fmt','yuv420p', outMp4
+  ];
+
+  const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 180000 });
+  if (r.status !== 0) throw new Error('ffmpeg combined failed');
+
+  try { fs.unlinkSync(pngA); } catch (e) {}
+  try { fs.unlinkSync(pngB); } catch (e) {}
+  return { mp4: outMp4 };
+}
+
+module.exports.renderIntroCombined = renderIntroCombined;
+
 if (require.main === module) {
   const arg = process.argv[2];
   run(arg).then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); });
