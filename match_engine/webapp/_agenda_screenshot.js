@@ -506,4 +506,4 @@ if (require.main === module) {
   run(arg).then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); });
 }
 
-module.exports = { run, pickEventsFor, buildHtml, renderHtmlToPngMp4 };
+module.exports = { run, pickEventsFor, buildHtml, renderHtmlToPngMp4, renderIntroXfade, renderHtmlToPng };
