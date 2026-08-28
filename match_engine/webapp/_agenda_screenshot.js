@@ -583,17 +583,7 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   await renderHtmlToPng(buildVariant(true), pngA);
   await renderHtmlToPng(buildVariant(false), pngB);
 
-  // Create an intermediate KenBurns video from pngB so we can xfade into a moving clip
-  const tmpKen = path.join(OUT_DIR, `${outBase}_b_ken.mp4`);
-  const kenDuration = post + td;
-  const kenFps = fps;
-  const kenFrames = Math.max(2, Math.round(kenDuration * kenFps));
-  const kenZoomInc = (zoomEnd - 1) / kenFrames;
-  const kenZoomExpr = `min(zoom+${kenZoomInc.toFixed(6)},${zoomEnd})`;
-  const kenVf = `zoompan=z='${kenZoomExpr}':d=${kenFrames}:s=1080x1920,framerate=${kenFps},format=yuv420p`;
-  const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), tmpKen];
-  const rk = spawnSync(ffmpeg, kenArgs, { stdio: 'inherit', timeout: 120000 });
-  if (rk.status !== 0) throw new Error('ffmpeg kenburns (tmp) failed');
+  
 
   const wmPath = path.join(PUBLIC_DIR, 'golazox-wordmark.png');
   if (!fs.existsSync(wmPath)) throw new Error('wordmark not found');
@@ -629,6 +619,18 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
     '-filter_complex', filter,
     '-map','[out]','-c:v','libx264','-pix_fmt','yuv420p', outMp4
   ];
+
+  // Create an intermediate KenBurns video from pngB so we can xfade into a moving clip
+  const tmpKen = path.join(OUT_DIR, `${outBase}_b_ken.mp4`);
+  const kenDuration = post + td;
+  const kenFps = fps;
+  const kenFrames = Math.max(2, Math.round(kenDuration * kenFps));
+  const kenZoomInc = (zoomEnd - 1) / kenFrames;
+  const kenZoomExpr = `min(zoom+${kenZoomInc.toFixed(6)},${zoomEnd})`;
+  const kenVf = `zoompan=z='${kenZoomExpr}':d=${kenFrames}:s=1080x1920,framerate=${kenFps},format=yuv420p`;
+  const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), tmpKen];
+  const rk = spawnSync(ffmpeg, kenArgs, { stdio: 'inherit', timeout: 120000 });
+  if (rk.status !== 0) throw new Error('ffmpeg kenburns (tmp) failed');
 
   const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 180000 });
   if (r.status !== 0) throw new Error('ffmpeg combined failed');
