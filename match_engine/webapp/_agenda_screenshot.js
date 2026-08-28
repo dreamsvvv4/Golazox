@@ -620,7 +620,7 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   const kenZoomInc = (zoomEnd - 1) / kenFrames;
   const kenZoomExpr = `min(zoom+${kenZoomInc.toFixed(6)},${zoomEnd})`;
   const kenVf = `zoompan=z='${kenZoomExpr}':d=${kenFrames}:s=1080x1920,framerate=${kenFps},format=yuv420p`;
-  const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), tmpKen];
+  const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), '-r', String(kenFps), tmpKen];
   const rk = spawnSync(ffmpeg, kenArgs, { stdio: 'inherit', timeout: 120000 });
   if (rk.status !== 0) throw new Error('ffmpeg kenburns (tmp) failed');
 
