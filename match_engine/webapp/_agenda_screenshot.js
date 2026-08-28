@@ -507,6 +507,63 @@ async function renderIntroXfade(dateStr, outBase = `agenda_${dateStr}_intro_xfad
 
 module.exports.renderIntroXfade = renderIntroXfade;
 
+// Create a simple Ken Burns (slow zoom-in) MP4 from the intro HTML PNG
+async function renderIntroKenBurns(dateStr, outBase = `agenda_${dateStr}_intro_ken`, opts = {}) {
+  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+  const ffmpeg = require('ffmpeg-static');
+  const png = path.join(OUT_DIR, `${outBase}.png`);
+  const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
+
+  const ctxIntro = { date: dateStr, events: [] };
+  const html = buildHtml(ctxIntro);
+  await renderHtmlToPng(html, png);
+
+  const duration = typeof opts.durationSec === 'number' ? opts.durationSec : 4;
+  const fps = typeof opts.fps === 'number' ? opts.fps : 25;
+  const frames = Math.max(2, Math.round(duration * fps));
+  const zoomEnd = typeof opts.zoomEnd === 'number' ? opts.zoomEnd : 1.08;
+  const zoomInc = (zoomEnd - 1) / frames;
+
+  // zoompan: increment zoom slightly each output frame
+  const filter = `[0:v]format=rgba,scale=1080:1920,zoompan=z='min(zoom+${zoomInc.toFixed(6)},${zoomEnd})':d=${frames}:s=1080x1920,framerate=${fps},format=yuv420p[v]`;
+  const args = ['-y','-loop','1','-i',png,'-filter_complex',filter,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(duration), outMp4];
+  const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
+  if (r.status !== 0) throw new Error('ffmpeg kenburns failed');
+  try { fs.unlinkSync(png); } catch (e) {}
+  return { mp4: outMp4 };
+}
+
+// Overlay the wordmark with a short fade-in/out (blink) over the intro image
+async function renderIntroBrandBlink(dateStr, outBase = `agenda_${dateStr}_intro_brand`, opts = {}) {
+  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+  const ffmpeg = require('ffmpeg-static');
+  const png = path.join(OUT_DIR, `${outBase}.png`);
+  const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
+
+  const ctxIntro = { date: dateStr, events: [] };
+  const html = buildHtml(ctxIntro);
+  await renderHtmlToPng(html, png);
+
+  const wmPath = path.join(PUBLIC_DIR, 'golazox-wordmark.png');
+  if (!fs.existsSync(wmPath)) throw new Error('wordmark not found');
+
+  const duration = typeof opts.durationSec === 'number' ? opts.durationSec : 4;
+  const tIn = 0.25;
+  const tOut = 0.25;
+  const tOutStart = Math.max(0.8, duration - tOut - 0.2);
+
+  // build filter: scale wordmark, fade in/out, overlay centered near top
+  const filter = `[1:v]format=rgba,scale=600:-1,fade=t=in:st=0:d=${tIn}:alpha=1,fade=t=out:st=${tOutStart}:d=${tOut}:alpha=1[wm];[0:v][wm]overlay=(W-w)/2:200:format=auto,format=yuv420p`;
+  const args = ['-y','-loop','1','-t',String(duration),'-i',png,'-i',wmPath,'-filter_complex',filter,'-c:v','libx264','-pix_fmt','yuv420p', outMp4];
+  const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
+  if (r.status !== 0) throw new Error('ffmpeg brand blink failed');
+  try { fs.unlinkSync(png); } catch (e) {}
+  return { mp4: outMp4 };
+}
+
+module.exports.renderIntroKenBurns = renderIntroKenBurns;
+module.exports.renderIntroBrandBlink = renderIntroBrandBlink;
+
 if (require.main === module) {
   const arg = process.argv[2];
   run(arg).then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); });
