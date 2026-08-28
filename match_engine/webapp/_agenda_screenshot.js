@@ -429,6 +429,78 @@ async function renderHtmlToPngMp4(html, outBase, duration = 6) {
   } finally { await browser.close(); }
 }
 
+// Render an HTML string to a PNG file (returns png path)
+async function renderHtmlToPng(html, outPath) {
+  const puppeteer = require('puppeteer');
+  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox','--disable-setuid-sandbox'] });
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({ width:1080, height:1920, deviceScaleFactor: 1 });
+    await page.setContent(html, { waitUntil: 'networkidle0' });
+    await page.evaluateHandle('document.fonts.ready');
+    await page.screenshot({ path: outPath, type: 'png' });
+    return outPath;
+  } finally {
+    await browser.close();
+  }
+}
+
+// Lightweight animated intro: render two PNGs (initial/final) and use ffmpeg xfade
+async function renderIntroXfade(dateStr, outBase = `agenda_${dateStr}_intro_xfade`, opts = {}) {
+  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+  const ffmpeg = require('ffmpeg-static');
+  const pngA = path.join(OUT_DIR, `${outBase}_a.png`);
+  const pngB = path.join(OUT_DIR, `${outBase}_b.png`);
+  const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
+
+  // Build two HTML variants: A = title hidden/translated, B = title visible
+  const ctx = pickEventsFor(dateStr) || { date: dateStr, events: [] };
+  const fonts = loadFonts();
+  // create a wrapper that injects small CSS tweaks for initial/final states
+  const buildVariant = (initial) => {
+    const html = buildHtml(ctx);
+    if (initial) {
+      // hide/move down titlebig and date for initial frame
+      return html.replace('</style></head>', `.wrap.intro .titlebig{opacity:0;transform:translateY(40px)}.wrap.intro .date{opacity:0;transform:translateY(30px)} </style></head>`);
+    }
+    // final state uses the default styles already in buildHtml
+    return html;
+  };
+
+  const htmlA = buildVariant(true);
+  const htmlB = buildVariant(false);
+
+  // render both PNGs
+  await renderHtmlToPng(htmlA, pngA);
+  await renderHtmlToPng(htmlB, pngB);
+
+  // timing: show A for preMs, transition td, show B for postMs (seconds)
+  const totalSec = typeof opts.durationSec === 'number' ? opts.durationSec : 3;
+  const td = typeof opts.transitionSec === 'number' ? opts.transitionSec : 0.8;
+  const pre = typeof opts.preSec === 'number' ? opts.preSec : Math.max(0.4, (totalSec - td) * 0.33);
+  const post = Math.max(0.6, totalSec - pre - td);
+
+  if (!ffmpeg) throw new Error('ffmpeg-static not available');
+
+  const args = [
+    '-y',
+    '-loop','1','-t',String(pre + td),'-i',pngA,
+    '-loop','1','-t',String(post + td),'-i',pngB,
+    '-filter_complex', `[0:v][1:v]xfade=transition=slideleft:duration=${td}:offset=${pre},format=yuv420p`,
+    '-c:v','libx264','-pix_fmt','yuv420p','-vf','scale=1080:1920', outMp4
+  ];
+
+  const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
+  if (r.status !== 0) throw new Error('ffmpeg xfade failed');
+
+  // cleanup pnGs on success
+  try { fs.unlinkSync(pngA); } catch (e) {}
+  try { fs.unlinkSync(pngB); } catch (e) {}
+  return { mp4: outMp4 };
+}
+
+module.exports.renderIntroXfade = renderIntroXfade;
+
 if (require.main === module) {
   const arg = process.argv[2];
   run(arg).then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); });
