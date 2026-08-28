@@ -611,14 +611,6 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
     [xf][wm]overlay=(W-w)/2:200:format=auto[out]
   `.replace(/\n\s+/g,'');
 
-  const args = [
-    '-y',
-    '-loop','1','-t',String(pre + td),'-i',pngA,
-    '-i',tmpKen,
-    '-i',wmPath,
-    '-filter_complex', filter,
-    '-map','[out]','-c:v','libx264','-pix_fmt','yuv420p', outMp4
-  ];
 
   // Create an intermediate KenBurns video from pngB so we can xfade into a moving clip
   const tmpKen = path.join(OUT_DIR, `${outBase}_b_ken.mp4`);
@@ -631,6 +623,15 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
   const kenArgs = ['-y','-loop','1','-i',pngB,'-vf',kenVf,'-c:v','libx264','-pix_fmt','yuv420p','-t',String(kenDuration), tmpKen];
   const rk = spawnSync(ffmpeg, kenArgs, { stdio: 'inherit', timeout: 120000 });
   if (rk.status !== 0) throw new Error('ffmpeg kenburns (tmp) failed');
+
+  const args = [
+    '-y',
+    '-loop','1','-t',String(pre + td),'-i',pngA,
+    '-i',tmpKen,
+    '-i',wmPath,
+    '-filter_complex', filter,
+    '-map','[out]','-c:v','libx264','-pix_fmt','yuv420p', outMp4
+  ];
 
   const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 180000 });
   if (r.status !== 0) throw new Error('ffmpeg combined failed');
