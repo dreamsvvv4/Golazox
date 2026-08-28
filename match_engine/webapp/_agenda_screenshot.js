@@ -453,12 +453,12 @@ async function renderIntroXfade(dateStr, outBase = `agenda_${dateStr}_intro_xfad
   const pngB = path.join(OUT_DIR, `${outBase}_b.png`);
   const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
 
-  // Build two HTML variants: A = title hidden/translated, B = title visible
-  const ctx = pickEventsFor(dateStr) || { date: dateStr, events: [] };
+  // Build two HTML variants for the portada (intro): use an explicit intro context
+  const ctxIntro = { date: dateStr, events: [] };
   const fonts = loadFonts();
   // create a wrapper that injects small CSS tweaks for initial/final states
   const buildVariant = (initial) => {
-    const html = buildHtml(ctx);
+    const html = buildHtml(ctxIntro);
     if (initial) {
       // hide/move down titlebig and date for initial frame
       return html.replace('</style></head>', `.wrap.intro .titlebig{opacity:0;transform:translateY(40px)}.wrap.intro .date{opacity:0;transform:translateY(30px)} </style></head>`);
@@ -482,12 +482,13 @@ async function renderIntroXfade(dateStr, outBase = `agenda_${dateStr}_intro_xfad
 
   if (!ffmpeg) throw new Error('ffmpeg-static not available');
 
+  const filter = `[0:v]scale=1080:1920,setsar=1[v0];[1:v]scale=1080:1920,setsar=1[v1];[v0][v1]xfade=transition=slideleft:duration=${td}:offset=${pre},format=yuv420p`;
   const args = [
     '-y',
     '-loop','1','-t',String(pre + td),'-i',pngA,
     '-loop','1','-t',String(post + td),'-i',pngB,
-    '-filter_complex', `[0:v][1:v]xfade=transition=slideleft:duration=${td}:offset=${pre},format=yuv420p`,
-    '-c:v','libx264','-pix_fmt','yuv420p','-vf','scale=1080:1920', outMp4
+    '-filter_complex', filter,
+    '-c:v','libx264','-pix_fmt','yuv420p', outMp4
   ];
 
   const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
