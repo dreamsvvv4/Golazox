@@ -524,10 +524,19 @@ function _parseRecordRow($, el) {
   return { player, position, age, nat, from, to, fee };
 }
 
-async function _fetchTransfers(saison) {
-  const r = await fetch(_transfersUrl(saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+// Obtiene el HTML de una URL de Transfermarkt. Por defecto usa node-fetch
+// (funciona desde IP residencial). En CI se inyecta un `htmlFetcher` basado en
+// navegador headless (Playwright) que resuelve el challenge de Datadome, así el
+// snapshot puede generarse desde GitHub Actions sin depender de una IP concreta.
+async function _fetchHtml(url, htmlFetcher) {
+  if (htmlFetcher) return htmlFetcher(url);
+  const r = await fetch(url, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
   if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+  return r.text();
+}
+
+async function _fetchTransfers(saison, htmlFetcher) {
+  const $ = cheerio.load(await _fetchHtml(_transfersUrl(saison), htmlFetcher));
   const rows = $('table.items').first().find('tbody > tr').toArray();
   const list = [];
   for (const el of rows) {
@@ -554,10 +563,8 @@ function _parseLatestRow($, el) {
   return { player, position, age, nat, from, to, fee };
 }
 
-async function _fetchLatest() {
-  const r = await fetch(LATEST_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
-  if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+async function _fetchLatest(htmlFetcher) {
+  const $ = cheerio.load(await _fetchHtml(LATEST_URL, htmlFetcher));
   const rows = $('table.items').first().find('tbody > tr').toArray();
   const list = [];
   for (const el of rows) {
@@ -570,11 +577,11 @@ async function _fetchLatest() {
 // Scrape en vivo de Transfermarkt (récords de la temporada + últimos cerrados).
 // Solo devuelve datos si la IP no está bloqueada por TM (residencial). Devuelve
 // { list, top, latest, usedSaison, saison } con `list` ordenada por importe.
-async function _scrapeLive() {
+async function _scrapeLive(htmlFetcher) {
   const saison = _currentSaison();
   const [seasonRes, latestRes] = await Promise.allSettled([
-    _fetchTransfers(saison),
-    _fetchLatest(),
+    _fetchTransfers(saison, htmlFetcher),
+    _fetchLatest(htmlFetcher),
   ]);
 
   // ── Fichajes más caros de la temporada ──
@@ -583,7 +590,7 @@ async function _scrapeLive() {
   // Si la ventana actual aún tiene pocos movimientos, usar la anterior.
   if (list.length < 10) {
     try {
-      const prev = await _fetchTransfers(saison - 1);
+      const prev = await _fetchTransfers(saison - 1, htmlFetcher);
       if (prev.length > list.length) { list = prev; usedSaison = saison - 1; }
     } catch (_) {}
   }
@@ -612,8 +619,8 @@ function _buildTransferData(scr, updated, source) {
 // Transfermarkt (tu PC / cron local). Se commitea y despliega para que producción
 // lo sirva. Lanza si el scrape viene vacío (probable bloqueo de IP) para no
 // sobrescribir un snapshot bueno con datos vacíos.
-async function snapshotTransfers() {
-  const scr = await _scrapeLive();
+async function snapshotTransfers(htmlFetcher) {
+  const scr = await _scrapeLive(htmlFetcher);
   if (!scr.list.length && !scr.latest.length) {
     throw new Error('scrape vacío (¿IP bloqueada por Transfermarkt?)');
   }
