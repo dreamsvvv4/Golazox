@@ -645,9 +645,62 @@ async function renderIntroCombined(dateStr, outBase = `agenda_${dateStr}_intro_c
 
 module.exports.renderIntroCombined = renderIntroCombined;
 
+// Per-event reveal renderer: for a page with multiple events create a short
+// animated MP4 where events appear one-by-one. Returns { mp4: path }
+async function renderAgendaPageEventReveal(dateStr, outBase, events, opts = {}) {
+  if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+  const ffmpeg = require('ffmpeg-static');
+  if (!ffmpeg) throw new Error('ffmpeg-static not available');
+  if (!Array.isArray(events) || events.length === 0) {
+    // fallback to static cover
+    const html = buildHtml({ date: dateStr, events: [] });
+    return renderHtmlToPngMp4(html, outBase, typeof opts.totalSec === 'number' ? opts.totalSec : 3);
+  }
+
+  const pngs = [];
+  // ensure consistent sizing across steps: allow caller to pass sizingMax, otherwise use full events length
+  const sizingMax = typeof opts.sizingMax === 'number' ? opts.sizingMax : events.length;
+  // create step images: show first i events
+  for (let i = 1; i <= events.length; i++) {
+    const ctx = { date: dateStr, events: events.slice(0, i), sizingMax };
+    const html = buildHtml(ctx);
+    const png = path.join(OUT_DIR, `${outBase}_step${String(i).padStart(2,'0')}.png`);
+    await renderHtmlToPng(html, png);
+    pngs.push(png);
+  }
+
+  // render short MP4 for each step
+  const stepDur = typeof opts.durationPerStep === 'number' ? opts.durationPerStep : 0.8;
+  const stepMp4s = [];
+  for (let idx = 0; idx < pngs.length; idx++) {
+    const png = pngs[idx];
+    const stepMp4 = path.join(OUT_DIR, `${outBase}_step${String(idx+1).padStart(2,'0')}.mp4`);
+    const args = ['-y','-loop','1','-i',png,'-c:v','libx264','-t',String(stepDur),'-pix_fmt','yuv420p','-vf','scale=1080:1920', stepMp4];
+    const r = spawnSync(ffmpeg, args, { stdio: 'inherit', timeout: 120000 });
+    if (r.status !== 0) throw new Error('ffmpeg failed creating step mp4');
+    stepMp4s.push(stepMp4);
+  }
+
+  // Create list file for concat
+  const listFile = path.join(OUT_DIR, `${outBase}_list.txt`);
+  const lines = stepMp4s.map(f => `file '${f.replace(/'/g, "'\\''")}'`).join('\n');
+  fs.writeFileSync(listFile, lines, 'utf8');
+  const outMp4 = path.join(OUT_DIR, `${outBase}.mp4`);
+  const rcat = spawnSync(ffmpeg, ['-y','-f','concat','-safe','0','-i',listFile,'-c','copy', outMp4], { stdio: 'inherit', timeout: 120000 });
+  if (rcat.status !== 0) throw new Error('ffmpeg concat failed');
+
+  // cleanup intermediates
+  for (const f of stepMp4s) try { fs.unlinkSync(f); } catch (e) {}
+  for (const p of pngs) try { fs.unlinkSync(p); } catch (e) {}
+  try { fs.unlinkSync(listFile); } catch (e) {}
+  return { mp4: outMp4 };
+}
+
+module.exports.renderAgendaPageEventReveal = renderAgendaPageEventReveal;
+
 if (require.main === module) {
   const arg = process.argv[2];
   run(arg).then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); });
 }
 
-module.exports = { run, pickEventsFor, buildHtml, renderHtmlToPngMp4, renderIntroXfade, renderIntroKenBurns, renderIntroBrandBlink, renderIntroCombined, renderHtmlToPng };
+module.exports = { run, pickEventsFor, buildHtml, renderHtmlToPngMp4, renderIntroXfade, renderIntroKenBurns, renderIntroBrandBlink, renderIntroCombined, renderAgendaPageEventReveal, renderHtmlToPng };

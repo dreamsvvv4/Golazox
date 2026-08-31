@@ -9,7 +9,7 @@ const OUT_DIR = path.join(BASE, 'videos');
 const AGENDA = require('./_agenda_screenshot');
 const FICHAJES = require('./_fichajes_cerrados_diarios');
 
-async function generateAgendaPages(dateStr, maxPerPage = 6) {
+async function generateAgendaPages(dateStr, maxPerPage = 6, opts = {}) {
   const ctx = AGENDA.pickEventsFor(dateStr);
   const events = (ctx && ctx.events) || [];
   if (!events.length) {
@@ -29,7 +29,15 @@ async function generateAgendaPages(dateStr, maxPerPage = 6) {
     const html = AGENDA.buildHtml(pageCtx);
     const outBase = `agenda_${dateStr}_p${String(p+1).padStart(2,'0')}`;
     console.log('Rendering', outBase, 'with', pageEvents.length, 'events');
-    const res = await AGENDA.renderHtmlToPngMp4(html, outBase, 6);
+    let res;
+    // Force per-event reveal on ALL pages for consistent effect.
+    try {
+      const durationPerStep = opts.durationPerStep || 1.2;
+      res = await AGENDA.renderAgendaPageEventReveal(dateStr, outBase, pageEvents, { durationPerStep, sizingMax: maxOnAnyPage });
+    } catch (e) {
+      console.error('Per-event reveal failed for', outBase, e);
+      res = await AGENDA.renderHtmlToPngMp4(html, outBase, 6);
+    }
     outputs.push({ outBase, ...res });
   }
   return outputs;
@@ -51,29 +59,42 @@ async function generateFichajes(dateStr, topN = 6) {
 async function main() {
   const args = process.argv.slice(2);
   const dateStr = args[0] || new Date().toISOString().slice(0,10);
-  const maxPerPage = parseInt(args[1] || '6', 10);
-  const topFichajes = parseInt(args[2] || '6', 10);
+  let maxPerPage = parseInt(args[1], 10);
+  if (isNaN(maxPerPage)) maxPerPage = 6;
+  let topFichajes = parseInt(args[2], 10);
+  if (isNaN(topFichajes)) topFichajes = 6;
+  const noFichajes = args.includes('--no-fichajes');
 
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  // Generate fichajes (best effort)
-  const fichajesMp4 = await generateFichajes(dateStr, topFichajes);
-  if (fichajesMp4) console.log('Fichajes video:', fichajesMp4);
+  // Optionally generate fichajes (best effort)
+  let fichajesMp4 = null;
+  if (!noFichajes) {
+    fichajesMp4 = await generateFichajes(dateStr, topFichajes);
+    if (fichajesMp4) console.log('Fichajes video:', fichajesMp4);
+  } else {
+    console.log('Skipping fichajes generation (--no-fichajes)');
+  }
 
   // Generate agenda pages (split if necessary)
-  const agendaOutputs = await generateAgendaPages(dateStr, maxPerPage);
+  const agendaOutputs = await generateAgendaPages(dateStr, maxPerPage, { durationPerStep: 1.2 });
   console.log('Agenda outputs:', agendaOutputs.map(o=>o.mp4 || o.png));
   // Always generate a short intro/portada for the agenda (used when concatenating)
   let introOutput = null;
+  const introBase = `agenda_${dateStr}_intro`;
   try {
-    // Prefer the animated intro if available
-    // Use static intro (cover) to avoid generating frame PNGs
-    console.log('Rendering static intro (cover)');
-    const introHtml = AGENDA.buildHtml({ date: dateStr, events: [] });
-    const introBase = `agenda_${dateStr}_intro`;
+    // Prefer the combined animated intro
+    console.log('Rendering combined animated intro (cover)');
     console.log('Rendering intro', introBase);
-    introOutput = await AGENDA.renderHtmlToPngMp4(introHtml, introBase, 3);
-  } catch (e) { console.error('Intro generation failed', e); }
+    introOutput = await AGENDA.renderIntroCombined(dateStr, introBase, { totalSec: 4, transitionSec: 1, fps: 25 });
+  } catch (e) {
+    console.error('Combined intro generation failed, falling back to static', e);
+    try {
+      const introHtml = AGENDA.buildHtml({ date: dateStr, events: [] });
+      console.log('Rendering static intro (fallback)', introBase);
+      introOutput = await AGENDA.renderHtmlToPngMp4(introHtml, introBase, 3);
+    } catch (e2) { console.error('Static intro generation failed', e2); }
+  }
 
   // If more than one page, optionally concatenate into a single video named agenda_<date>_multi.mp4
   if (agendaOutputs.length > 1) {

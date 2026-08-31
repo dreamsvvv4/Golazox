@@ -4254,7 +4254,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 // Todo está cacheado (fichajes 30 min, noticias 15 min, rankings 6 h, curados al vuelo).
 async function _fichajesData() {
   const [transfers, news, values, stats, rumors, tvGuide] = await Promise.all([
-    getTransfers(), getNews(), getValues(), getStats(), getRumors(), getTvGuide(),
+    getTransfers({ forceRefresh: true }), getNews(), getValues(), getStats(), getRumors(), getTvGuide(),
   ]);
   // Si el scrape de Transfermarkt no es fresco (lleva caído horas), getTransfers
   // sigue sirviendo el último snapshot con éxito, que trae nombres del mercado
@@ -4350,7 +4350,7 @@ app.get('/api', _apiLimit, (_req, res) => _apiSend(res, {
 
 app.get('/api/transfers', _apiLimit, async (_req, res) => {
   try {
-    const d = await getTransfers();
+    const d = await getTransfers({ forceRefresh: true });
     // Si no es fresco (TM caído), no exponemos el snapshot rancio como actual:
     // vaciamos list/latest/top para que los consumidores caigan a las noticias.
     const fresh = _isFresh(d.updated);
@@ -4443,7 +4443,7 @@ async function _buildHomePayload(fast) {
   };
   const [news, transfers, rumors, standings, tv, espnMatches] = await Promise.all([
     cap(getNews(), 4500, {}),
-    cap(getTransfers(), 4500, {}),
+    cap(getTransfers({ forceRefresh: true }), 4500, {}),
     cap(getRumors(), 4500, {}),
     cap(getStandings(), 5000, {}),
     cap(getTvGuide(), 4500, {}),

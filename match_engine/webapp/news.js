@@ -622,10 +622,10 @@ async function snapshotTransfers() {
   return data;
 }
 
-async function getTransfers() {
+async function getTransfers({ forceRefresh = false } = {}) {
   const now = Date.now();
   if (!_tCache.data) { const d = _cacheGet('transfers'); if (d) { _tCache = d; _seed('transfers', d); } }
-  if (_tCache.data && (now - _tCache.ts) < TRANSFERS_TTL) return _tCache.data;
+  if (!forceRefresh && _tCache.data && (now - _tCache.ts) < TRANSFERS_TTL) return _tCache.data;
   try {
     const scr = await _scrapeLive();
 
@@ -953,15 +953,101 @@ function _readJson(file, fallback) {
   catch (_) { return fallback; }
 }
 
+// Parsea fechas cortas de Transfermarkt en fixtures_snapshot.json
+// ejemplos: "jue 27/08/26" -> "2026-08-27"
+function _parseFixtureShortDate(txt) {
+  if (!txt) return null;
+  const m = (txt || '').match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);
+  if (!m) return null;
+  let day = parseInt(m[1], 10);
+  let mon = parseInt(m[2], 10);
+  let yr = parseInt(m[3], 10);
+  if (yr < 100) yr += 2000;
+  const dd = String(day).padStart(2, '0');
+  const mm = String(mon).padStart(2, '0');
+  return `${yr}-${mm}-${dd}`;
+}
+
+// Lee fixtures_snapshot.json y devuelve matches cuya fecha coincide con
+// dateStr (YYYY-MM-DD). Devuelve array de { time, home, away, league, homeBadge, awayBadge }
+function _readFixturesForDate(dateStr) {
+  try {
+    const snap = _readJson('fixtures_snapshot.json', { leagues: {} });
+    const out = [];
+    const leagues = snap && snap.leagues ? snap.leagues : {};
+    Object.keys(leagues).forEach(lc => {
+      const lg = leagues[lc];
+      if (!lg || !Array.isArray(lg.fixtures)) return;
+      lg.fixtures.forEach(round => {
+        if (!round.matches || !Array.isArray(round.matches)) return;
+        round.matches.forEach(m => {
+          const d = _parseFixtureShortDate(m.date || '');
+          if (d === dateStr) {
+            out.push({
+              time: m.time || '',
+              home: m.home && m.home.name ? m.home.name : (m.home || {}).name || '',
+              away: m.away && m.away.name ? m.away.name : (m.away || {}).name || '',
+              league: lc || '',
+              homeBadge: (m.home && m.home.badge) || '',
+              awayBadge: (m.away && m.away.badge) || '',
+            });
+          }
+        });
+      });
+    });
+    return out;
+  } catch (e) {
+    return [];
+  }
+}
+
 // Agenda: próximos eventos importantes (sorteos, inicios de liga, finales…).
 // Se filtran los ya pasados y se ordenan por fecha ascendente.
 function getAgenda() {
   const raw = _readJson('agenda.json', { events: [] });
   const today = new Date(); today.setHours(0, 0, 0, 0);
-  const events = (raw.events || [])
+  const eventsCurated = (raw.events || [])
     .filter(e => e && e.date && new Date(e.date) >= today)
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .slice(0, 40);
+
+  // Fallback: si no hay eventos curados para hoy, usar fixtures_snapshot.json
+  // para mostrar los partidos que se juegan hoy (Transfermarkt snapshot).
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const fx = _readFixturesForDate(todayStr);
+  const fxEvents = (fx || []).map(f => ({
+    date: `${todayStr}T${(f.time || '').trim() || '00:00'}`,
+    type: 'match',
+    icon: '⚽',
+    title: `${f.home} - ${f.away}`,
+    desc: f.time ? `${f.time}` : '',
+    comp: f.league || '',
+    meta: { homeBadge: f.homeBadge, awayBadge: f.awayBadge },
+  }));
+
+  // También intentar leer la caché local de la guía de TV (Marca) para HOY.
+  try {
+    const tvCacheFile = path.join(_DB_DIR, '.cache', 'tvguide.json');
+    const rawTv = JSON.parse(fs.readFileSync(tvCacheFile, 'utf8'));
+    if (rawTv && rawTv.data && Array.isArray(rawTv.data.days) && rawTv.data.days.length) {
+      const day0 = rawTv.data.days[0];
+      if (day0 && Array.isArray(day0.events)) {
+        const tvEvents = day0.events.map(e => ({
+          date: `${todayStr}T${(e.time || '').trim() || '00:00'}`,
+          type: 'tv', icon: '📺', title: e.teams || `${e.home} - ${e.away}` || e.teams,
+          desc: e.time || '', comp: e.competition || '', meta: { channel: e.channel || '' },
+        }));
+        // Prepend TV events (but avoid duplicate titles already in fxEvents)
+        const fxTitles = new Set(fxEvents.map(x => x.title));
+        const tvFiltered = tvEvents.filter(t => !fxTitles.has(t.title));
+        fxEvents.unshift.apply(fxEvents, tvFiltered);
+      }
+    }
+  } catch (e) {
+    // ignore cache read errors
+  }
+
+  const events = fxEvents.concat(eventsCurated).slice(0, 40);
   return { events, updated: raw.updated || 0 };
 }
 
