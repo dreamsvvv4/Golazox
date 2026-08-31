@@ -480,6 +480,40 @@ function _readSnapshot() {
   return null;
 }
 
+// ── Snapshot remoto (auto-actualización sin PC ni SSH) ───────────────────
+// El workflow `.github/workflows/snapshot-transfers.yml` scrapea Transfermarkt
+// con Chromium headless (que sí resuelve el challenge de Datadome) cada pocas
+// horas y commitea el snapshot al repo. El servidor de producción NO puede
+// scrapear TM (IP de datacenter bloqueada) pero SÍ alcanza GitHub, así que se
+// descarga el snapshot fresco directamente del repo público. Resultado: el
+// mercado se actualiza solo, sin depender de ninguna PC encendida.
+const _SNAP_RAW_URL =
+  'https://raw.githubusercontent.com/dreamsvvv4/Golazox/main/match_engine/webapp/data/transfers_snapshot.json';
+const _SNAP_RAW_TTL = 30 * 60 * 1000; // no golpear GitHub más de 1 vez / 30 min
+let _snapRawTs = 0;
+
+// Descarga el snapshot del repo y sobrescribe el local SOLO si es más reciente.
+// TTL-guarded para no pegarle a GitHub en cada request. Silenciosa: si GitHub no
+// responde, se sigue sirviendo el snapshot local que ya hubiera.
+async function _refreshSnapshotFromGitHub() {
+  const now = Date.now();
+  if (now - _snapRawTs < _SNAP_RAW_TTL) return;
+  _snapRawTs = now;
+  try {
+    const r = await fetch(_SNAP_RAW_URL, { timeout: 6000, headers: { 'Accept': 'application/json' } });
+    if (!r.ok) return;
+    const remote = await r.json();
+    if (!remote || (!remote.list?.length && !remote.latest?.length)) return;
+    let localUpdated = 0;
+    try { localUpdated = JSON.parse(fs.readFileSync(_SNAP_FILE, 'utf8')).updated || 0; } catch (_) {}
+    if ((remote.updated || 0) > localUpdated) {
+      fs.mkdirSync(_DB_DIR, { recursive: true });
+      fs.writeFileSync(_SNAP_FILE, JSON.stringify(remote), 'utf8');
+    }
+  } catch (_) { /* GitHub no accesible: seguimos con el snapshot local */ }
+}
+
+
 // Convierte "145,00 mill. €" | "876 mil €" | "Libre" | "Cesión" a estructura.
 function _parseFee(raw) {
   const t = (raw || '').replace(/\s+/g, ' ').trim();
@@ -647,6 +681,7 @@ async function getTransfers({ forceRefresh = false } = {}) {
     // Scrape vacío (IP bloqueada por TM): servir el snapshot commiteado, que trae
     // el mercado real capturado desde una IP residencial.
     _mark('transfers', 'empty', 0);
+    await _refreshSnapshotFromGitHub();   // baja el último snapshot del repo (auto-update)
     const snap = _readSnapshot();
     if (snap) { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; _tCache = { ts: now, data: snap }; return snap; }
     let history = [], historyTotal = 0;
@@ -657,6 +692,7 @@ async function getTransfers({ forceRefresh = false } = {}) {
     // Aunque el scrapeo falle: 1) caché en vivo reciente, 2) snapshot commiteado,
     // 3) histórico propio. Así producción muestra fichajes reales sin TM en vivo.
     if (_tCache.data && _tCache.data.source === 'live') return _tCache.data;
+    await _refreshSnapshotFromGitHub();   // baja el último snapshot del repo (auto-update)
     const snap = _readSnapshot();
     if (snap) { try { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; } catch (_) {} _tCache = { ts: now, data: snap }; return snap; }
     if (_tCache.data) return _tCache.data;
