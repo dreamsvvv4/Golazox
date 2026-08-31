@@ -39,11 +39,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Solo lo que necesita _snapshot_ci.js -> news.js -> espn.js:
-          # node-fetch + cheerio para el parseo, playwright para el navegador real.
-          # Evitamos `npm ci` (instalaría puppeteer/sharp/ffmpeg y puede fallar).
-          npm i --no-save cheerio@1 node-fetch@2 playwright@1.47.0
+          # Instalamos SOLO lo necesario en un directorio aislado para no arrastrar
+          # todo package.json (puppeteer/sharp/ffmpeg y sus postinstall pesados que
+          # rompen el install). El script las resuelve vía NODE_PATH.
+          mkdir -p /tmp/deps
+          cd /tmp/deps
+          npm init -y >/dev/null 2>&1
+          npm i cheerio@1 node-fetch@2 playwright@1.47.0
           npx playwright install chromium --with-deps
+          echo "NODE_PATH=/tmp/deps/node_modules" >> "$GITHUB_ENV"
 
       - name: Generate snapshot (headless Chromium)
         run: node _snapshot_ci.js
