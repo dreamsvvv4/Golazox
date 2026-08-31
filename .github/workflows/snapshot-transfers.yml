@@ -38,11 +38,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: '1'   # no bajar el Chromium de puppeteer (no se usa aquí)
         run: |
-          npm ci
-          npm i playwright@1.47.0 --no-save
+          # Solo lo que necesita _snapshot_ci.js -> news.js -> espn.js:
+          # node-fetch + cheerio para el parseo, playwright para el navegador real.
+          # Evitamos `npm ci` (instalaría puppeteer/sharp/ffmpeg y puede fallar).
+          npm i --no-save cheerio@1 node-fetch@2 playwright@1.47.0
           npx playwright install chromium --with-deps
 
       - name: Generate snapshot (headless Chromium)
