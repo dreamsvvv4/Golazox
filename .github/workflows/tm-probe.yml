@@ -1,0 +1,42 @@
+name: TM Reachability Probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/tm-probe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Curl Transfermarkt
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+          CODE=$(curl -s -o /tmp/tm.html -w "%{http_code}" \
+            -A "$UA" \
+            -H "Referer: https://www.transfermarkt.es/" \
+            -H "Accept-Language: es-ES,es;q=0.9" \
+            "https://www.transfermarkt.es/statistik/neuestetransfers" || echo "000")
+          SIZE=$(wc -c < /tmp/tm.html | tr -d ' ')
+          ROWS=$(grep -c "responsive-table" /tmp/tm.html || true)
+          mkdir -p match_engine/webapp/data
+          printf '{"http":"%s","size":%s,"responsiveTables":%s,"date":"%s"}\n' \
+            "$CODE" "$SIZE" "$ROWS" "$(date -u +%FT%TZ)" \
+            > match_engine/webapp/data/_tm_probe.json
+          cat match_engine/webapp/data/_tm_probe.json
+
+      - name: Commit probe result
+        run: |
+          git config user.name "gh-actions"
+          git config user.email "actions@github.com"
+          git add match_engine/webapp/data/_tm_probe.json
+          git commit -m "chore: TM probe result [skip ci]" || echo "no changes"
+          git push
