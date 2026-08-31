@@ -9,11 +9,6 @@ on:
   schedule:
     - cron: '0 */6 * * *'   # cada 6 horas (00, 06, 12, 18 UTC)
   workflow_dispatch:          # permite lanzarlo a mano desde la pestaña Actions
-  push:                       # se ejecuta al cambiar la propia lógica (para probar)
-    branches: [main]
-    paths:
-      - '.github/workflows/snapshot-transfers.yml'
-      - 'match_engine/webapp/_snapshot_ci.js'
 
 permissions:
   contents: write
