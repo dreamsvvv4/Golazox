@@ -17,21 +17,45 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Curl Transfermarkt
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
         run: |
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-          CODE=$(curl -s -o /tmp/tm.html -w "%{http_code}" \
-            -A "$UA" \
-            -H "Referer: https://www.transfermarkt.es/" \
-            -H "Accept-Language: es-ES,es;q=0.9" \
-            "https://www.transfermarkt.es/statistik/neuestetransfers" || echo "000")
-          SIZE=$(wc -c < /tmp/tm.html | tr -d ' ')
-          ROWS=$(grep -c "responsive-table" /tmp/tm.html || true)
-          mkdir -p match_engine/webapp/data
-          printf '{"http":"%s","size":%s,"responsiveTables":%s,"date":"%s"}\n' \
-            "$CODE" "$SIZE" "$ROWS" "$(date -u +%FT%TZ)" \
-            > match_engine/webapp/data/_tm_probe.json
-          cat match_engine/webapp/data/_tm_probe.json
+          npm i playwright@1.47.0
+          npx playwright install chromium --with-deps
+
+      - name: Probe TM with headless Chromium
+        run: |
+          cat > probe.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          const out = { http: 'ERR', rows: 0, len: 0, title: '', date: new Date().toISOString() };
+          try {
+            const browser = await chromium.launch({ args: ['--no-sandbox'] });
+            const ctx = await browser.newContext({
+              locale: 'es-ES',
+              userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+            });
+            const page = await ctx.newPage();
+            const resp = await page.goto('https://www.transfermarkt.es/statistik/neuestetransfers', { waitUntil: 'domcontentloaded', timeout: 45000 });
+            out.http = resp ? String(resp.status()) : 'no-resp';
+            await page.waitForTimeout(4000);
+            const html = await page.content();
+            out.len = html.length;
+            out.title = (await page.title()).slice(0, 80);
+            out.rows = (html.match(/responsive-table/g) || []).length;
+            await browser.close();
+          } catch (e) {
+            out.title = 'EXC: ' + String(e.message).slice(0, 120);
+          }
+          const fs = await import('fs');
+          fs.mkdirSync('match_engine/webapp/data', { recursive: true });
+          fs.writeFileSync('match_engine/webapp/data/_tm_probe.json', JSON.stringify(out));
+          console.log(out);
+          EOF
+          node probe.mjs
 
       - name: Commit probe result
         run: |
