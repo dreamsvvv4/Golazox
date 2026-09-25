@@ -3769,6 +3769,9 @@ async function _getLiveAgenda(days = 7) {
 // agenda como gancho, en vez de ocultar la sección (parecería rota).
 const _tvGuideHTML = (tv, agenda) => {
   const days = (tv && tv.days) || [];
+  const sourceLabel = tv && String(tv.source || '').includes('espn')
+    ? 'Datos: Marca + ESPN · canales en España'
+    : 'Datos: Marca · parrilla España';
   const total = days.reduce((s, d) => s + (d.events ? d.events.length : 0), 0);
   if (!total) {
     const next = ((agenda && agenda.events) || [])[0];
@@ -3782,7 +3785,7 @@ const _tvGuideHTML = (tv, agenda) => {
     return `<div class="tvguide">
     <div class="tvguide-head">
       <h2>📺 Fútbol en TV</h2>
-      <span class="tvguide-src">Datos: Marca · parrilla España</span>
+      <span class="tvguide-src">${sourceLabel}</span>
     </div>
     <p class="tvempty">No hay fútbol en la parrilla de hoy. ${hook}</p>
   </div>`;
@@ -3798,7 +3801,7 @@ const _tvGuideHTML = (tv, agenda) => {
   return `<div class="tvguide">
     <div class="tvguide-head">
       <h2>📺 Fútbol en TV</h2>
-      <span class="tvguide-src">Datos: Marca · parrilla España</span>
+      <span class="tvguide-src">${sourceLabel}</span>
     </div>
     ${days.map(d => `<div class="tvday">
       <div class="tvday-label">${_esc(d.label)}${d.dateStr ? ` <span class="tvday-date">${_esc(d.dateStr)}</span>` : ''}</div>

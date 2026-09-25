@@ -735,6 +735,7 @@ async function getTransfers({ forceRefresh = false } = {}) {
 // ════════════════════════════════════════════════════════════════════
 const RANK_TTL = 6 * 60 * 60 * 1000; // 6 h — los valores cambian despacio
 const STATS_TTL = 30 * 60 * 1000;     // Los goles deben reflejar cada jornada
+const _STATS_SNAP_FILE = path.join(_DB_DIR, 'stats_snapshot.json');
 
 // Nombre + posición desde una celda "jugador" de Transfermarkt.
 function _playerFromCell($cell) {
@@ -854,11 +855,9 @@ function _parseScorerRow($, el, league) {
   return { player, position, club, nat, age, apps: toInt(5), goals: toInt(6), assists: toInt(7), league };
 }
 
-async function _fetchScorers(saison) {
+async function _fetchScorers(saison, htmlFetcher) {
   const results = await Promise.allSettled(_STAT_LEAGUES.map(async (lg) => {
-    const r = await fetch(_scorerUrl(lg.slug, lg.code, saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const $ = cheerio.load(await r.text());
+    const $ = cheerio.load(await _fetchHtml(_scorerUrl(lg.slug, lg.code, saison), htmlFetcher));
     const rows = $('table.items').first().find('tbody > tr').toArray();
     const out = [];
     for (const el of rows) { const t = _parseScorerRow($, el, lg.name); if (t) out.push(t); }
@@ -867,6 +866,53 @@ async function _fetchScorers(saison) {
   const all = [];
   for (const res of results) if (res.status === 'fulfilled') all.push(...res.value);
   return all;
+}
+
+function _statsFromTransfermarkt(all, season, updated, source) {
+  const scorers = all.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists).slice(0, 30);
+  const assists = all.slice().filter(p => p.assists > 0)
+    .sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
+  const contributions = all.slice()
+    .map(p => ({ ...p, ga: (p.goals || 0) + (p.assists || 0) }))
+    .filter(p => p.ga > 0)
+    .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
+    .slice(0, 30);
+  return { scorers, assists, contributions, season, updated, source };
+}
+
+function _readStatsSnapshot() {
+  try {
+    const data = JSON.parse(fs.readFileSync(_STATS_SNAP_FILE, 'utf8'));
+    if (data && Array.isArray(data.assists) && data.assists.length) return { ...data, source: 'espn+snapshot' };
+  } catch (_) {}
+  return null;
+}
+
+async function snapshotStats(htmlFetcher) {
+  const saison = _currentSaison();
+  const season = `${saison}/${String(saison + 1).slice(-2)}`;
+  const all = await _fetchScorers(saison, htmlFetcher);
+  if (!all.length) throw new Error('scrape de estadísticas vacío (¿IP bloqueada por Transfermarkt?)');
+  const data = _statsFromTransfermarkt(all, season, Date.now(), 'snapshot');
+  fs.mkdirSync(_DB_DIR, { recursive: true });
+  fs.writeFileSync(_STATS_SNAP_FILE, JSON.stringify(data), 'utf8');
+  return data;
+}
+
+function _mergeEspnWithAssists(espnData, tmData) {
+  if (!espnData || !tmData || !tmData.assists || !tmData.assists.length) return espnData;
+  const assistByPlayer = new Map(tmData.assists.map(p => [String(p.player || '').toLowerCase(), p]));
+  const scorers = espnData.scorers.map(p => {
+    const tm = assistByPlayer.get(String(p.player || '').toLowerCase());
+    return tm ? { ...p, assists: tm.assists || 0, apps: tm.apps || p.apps, position: tm.position || p.position } : p;
+  });
+  const contributions = scorers.concat(tmData.assists.filter(a =>
+    !scorers.some(s => String(s.player || '').toLowerCase() === String(a.player || '').toLowerCase())))
+    .map(p => ({ ...p, ga: (p.goals || 0) + (p.assists || 0) }))
+    .filter(p => p.ga > 0)
+    .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
+    .slice(0, 30);
+  return { ...espnData, scorers, assists: tmData.assists, contributions, source: tmData.source === 'snapshot' || tmData.source === 'espn+snapshot' ? 'espn+snapshot' : 'espn+transfermarkt' };
 }
 
 // Reconstruye el ranking de participaciones (G+A) a partir de la unión de
@@ -893,28 +939,34 @@ async function getStats() {
   const saison = _currentSaison();
   const currentLabel = `${saison}/${String(saison + 1).slice(-2)}`;
   const cacheIsCurrent = _sCache.data && _sCache.data.season === currentLabel;
-  const cacheIsPrimary = cacheIsCurrent && _sCache.data.source === 'espn';
+  const cacheIsPrimary = cacheIsCurrent && _sCache.data.source === 'espn' && _sCache.data.assists && _sCache.data.assists.length;
   if (cacheIsPrimary && (now - _sCache.ts) < STATS_TTL) return _ensureContribs(_sCache.data);
   try {
     // ESPN se actualiza tras cada partido y no bloquea la IP de producción.
     // Transfermarkt queda como respaldo enriquecido (asistencias/posición).
     const fromEspn = await _statsFromEspn(now);
     if (fromEspn) {
-      _sCache = { ts: now, data: fromEspn };
+      let enrichment = null;
+      try {
+        const all = await _fetchScorers(saison);
+        if (all.length) {
+          enrichment = _statsFromTransfermarkt(all, currentLabel, now, 'transfermarkt');
+          fs.writeFileSync(_STATS_SNAP_FILE, JSON.stringify({ ...enrichment, source: 'snapshot' }), 'utf8');
+        }
+      } catch (_) {}
+      if (!enrichment) {
+        await _refreshAuxSnapshotFromGitHub('stats_snapshot.json', _STATS_SNAP_FILE, d => Array.isArray(d.assists) && d.assists.length > 0);
+        enrichment = _readStatsSnapshot();
+      }
+      const data = _mergeEspnWithAssists(fromEspn, enrichment);
+      _sCache = { ts: now, data };
       _cachePut('stats', _sCache);
-      _mark('stats', 'ok', fromEspn.scorers.length);
-      return fromEspn;
+      _mark('stats', 'ok', data.scorers.length + data.assists.length);
+      return data;
     }
 
     const all = await _fetchScorers(saison);
-    const scorers = all.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists).slice(0, 30);
-    const assists = all.slice().sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
-    const contributions = all.slice()
-      .map(p => ({ ...p, ga: (p.goals || 0) + (p.assists || 0) }))
-      .filter(p => p.ga > 0)
-      .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
-      .slice(0, 30);
-    const data = { scorers, assists, contributions, season: currentLabel, updated: now, source: 'transfermarkt' };
+    const data = _statsFromTransfermarkt(all, currentLabel, now, 'transfermarkt');
     if (all.length) { _sCache = { ts: now, data }; _cachePut('stats', _sCache); _mark('stats', 'ok', all.length); }
     else _mark('stats', 'empty', 0);
     if (all.length) return data;
@@ -1260,6 +1312,36 @@ async function _tvFallbackFromEspn(now) {
   return { days, updated: live.updated || now, source: 'espn-schedule' };
 }
 
+function _mergeTvSources(primary, supplemental) {
+  if (!supplemental || !supplemental.days || !supplemental.days.length) return primary;
+  const days = (primary.days || []).map(day => ({ ...day, events: [...(day.events || [])] }));
+  const norm = value => String(value || '').toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\bengland\b/g, 'inglaterra').replace(/\bspain\b/g, 'espana')
+    .replace(/\bgermany\b/g, 'alemania').replace(/\bitaly\b/g, 'italia')
+    .replace(/\bfrance\b/g, 'francia').replace(/\bnetherlands\b/g, 'paises bajos')
+    .replace(/\brep ireland\b/g, 'irlanda').replace(/\bn ireland\b/g, 'irlanda norte')
+    .replace(/\bczechia\b/g, 'republica checa').replace(/\bturkiye\b/g, 'turquia')
+    .replace(/[^a-z0-9]/g, '');
+  for (const extraDay of supplemental.days) {
+    let day = days.find(item => norm(item.label) === norm(extraDay.label));
+    if (!day) {
+      day = { ...extraDay, events: [] };
+      days.push(day);
+    }
+    for (const event of (extraDay.events || [])) {
+      const duplicate = day.events.some(current => norm(current.teams) === norm(event.teams));
+      if (!duplicate) day.events.push(event);
+    }
+    day.events.sort((a, b) => (b.big - a.big) || String(a.time).localeCompare(String(b.time)));
+  }
+  return {
+    days: days.slice(0, 3),
+    updated: Math.max(primary.updated || 0, supplemental.updated || 0),
+    source: primary.days && primary.days.length ? 'marca+espn' : supplemental.source,
+  };
+}
+
 async function getTvGuide() {
   const now = Date.now();
   if (!_tvCache.data) { const d = _cacheGet('tvguide'); if (d) { _tvCache = d; _seed('tvguide', d); } }
@@ -1334,8 +1416,12 @@ async function getTvGuide() {
     }
 
     const total = days.reduce((s, d) => s + d.events.length, 0);
-    const data = { days, updated: now, source: 'marca' };
-    if (total) { _tvCache = { ts: now, data }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', total); }
+    let data = { days, updated: now, source: 'marca' };
+    if (total) {
+      data = _mergeTvSources(data, await _tvFallbackFromEspn(now));
+      const mergedTotal = data.days.reduce((sum, day) => sum + day.events.length, 0);
+      _tvCache = { ts: now, data }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', mergedTotal);
+    }
     else {
       console.warn('[news] getTvGuide: 0 partidos parseados; usando horarios ESPN sin canal');
       const fallback = await _tvFallbackFromEspn(now);
@@ -1362,7 +1448,7 @@ async function getTvGuide() {
 }
 
 module.exports = {
-  getNews, getTransfers, snapshotTransfers, getValues, snapshotValues, getStats, getRumors, snapshotRumors,
+  getNews, getTransfers, snapshotTransfers, getValues, snapshotValues, getStats, snapshotStats, getRumors, snapshotRumors,
   getAgenda, getSalaries, getLegends, getStatus, getTvGuide,
   FEEDS, IMG_HOSTS,
 };

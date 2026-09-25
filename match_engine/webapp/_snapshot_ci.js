@@ -20,7 +20,7 @@
 'use strict';
 
 const { chromium } = require('playwright');
-const { snapshotTransfers, snapshotValues, snapshotRumors } = require('./news');
+const { snapshotTransfers, snapshotValues, snapshotStats, snapshotRumors } = require('./news');
 const { snapshotFixtures } = require('./standings');
 
 const UA =
@@ -69,9 +69,10 @@ async function attemptSnapshot(browser, n) {
 
     const transfers = await snapshotTransfers(htmlFetcher);
     const values = await snapshotValues(htmlFetcher);
+    const stats = await snapshotStats(htmlFetcher);
     const rumors = await snapshotRumors(htmlFetcher);
     const fixtures = await snapshotFixtures(htmlFetcher);
-    return { transfers, values, rumors, fixtures };
+    return { transfers, values, stats, rumors, fixtures };
   } finally {
     await ctx.close().catch(() => {});
   }
@@ -85,7 +86,7 @@ async function attemptSnapshot(browser, n) {
   for (let n = 1; n <= MAX_ATTEMPTS; n++) {
     try {
       const d = await attemptSnapshot(browser, n);
-      if (d && (d.transfers.list.length || d.transfers.latest.length) && d.values.list.length && d.rumors.list.length && d.fixtures.length === 5) { data = d; break; }
+      if (d && (d.transfers.list.length || d.transfers.latest.length) && d.values.list.length && d.stats.assists.length && d.rumors.list.length && d.fixtures.length === 5) { data = d; break; }
       lastErr = new Error('scrape vacío (Datadome)');
     } catch (e) {
       lastErr = e;
@@ -102,6 +103,7 @@ async function attemptSnapshot(browser, n) {
     console.log('✓ Snapshots generados desde CI:');
     console.log(`  · fichajes: ${data.transfers.list.length} · recientes: ${data.transfers.latest.length}`);
     console.log(`  · valores:  ${data.values.list.length}`);
+    console.log(`  · asistencias: ${data.stats.assists.length}`);
     console.log(`  · rumores:  ${data.rumors.list.length}`);
     console.log(`  · calendarios: ${data.fixtures.map(x => `${x.code} ${x.rounds}j`).join(' · ')}`);
     console.log(`  · actualizado: ${new Date(data.transfers.updated).toISOString()}`);
