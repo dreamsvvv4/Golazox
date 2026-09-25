@@ -31,6 +31,29 @@ const TM_CAP        = 9000;           // tope para el enriquecimiento de Transfe
 // puede scrapear (`snapshotFixtures()`), lo commiteamos y lo servimos cuando el
 // scrape en vivo devuelve calendario vacío.
 const _FX_SNAP_FILE = path.join(__dirname, 'data', 'fixtures_snapshot.json');
+const _FX_SNAP_RAW_URL =
+  'https://raw.githubusercontent.com/dreamsvvv4/Golazox/main/match_engine/webapp/data/fixtures_snapshot.json';
+const _FX_SNAP_RAW_TTL = 30 * 60 * 1000;
+let _fxSnapRawTs = 0;
+
+async function _refreshFixturesSnapshot() {
+  const now = Date.now();
+  if (now - _fxSnapRawTs < _FX_SNAP_RAW_TTL) return;
+  _fxSnapRawTs = now;
+  try {
+    const r = await fetch(_FX_SNAP_RAW_URL, { timeout: 6000, headers: { Accept: 'application/json' } });
+    if (!r.ok) return;
+    const remote = await r.json();
+    const leagues = remote && remote.leagues;
+    if (!leagues || LEAGUES.some(league => !leagues[league.code] || !leagues[league.code].fixtures?.length)) return;
+    let localUpdated = 0;
+    try { localUpdated = JSON.parse(fs.readFileSync(_FX_SNAP_FILE, 'utf8')).updated || 0; } catch (_) {}
+    if ((remote.updated || 0) > localUpdated) {
+      fs.mkdirSync(path.dirname(_FX_SNAP_FILE), { recursive: true });
+      fs.writeFileSync(_FX_SNAP_FILE, JSON.stringify(remote), 'utf8');
+    }
+  } catch (_) { /* conserva el snapshot local */ }
+}
 
 // Lee el snapshot de calendario commiteado → { ES1:{fxSeason,fixtures}, … } | null.
 function _readFixturesSnapshot() {
@@ -51,7 +74,9 @@ function _writeFixturesSnapshot(leagues) {
   if (!withData.length) return;
   try {
     fs.mkdirSync(path.dirname(_FX_SNAP_FILE), { recursive: true });
-    const out = { updated: Date.now(), leagues: {} };
+    let previous = { leagues: {} };
+    try { previous = JSON.parse(fs.readFileSync(_FX_SNAP_FILE, 'utf8')); } catch (_) {}
+    const out = { updated: Date.now(), leagues: { ...(previous.leagues || {}) } };
     for (const l of withData) out.leagues[l.code] = {
       fxSeason: l.fxSeason, fixtures: l.fixtures || [],
       season: l.season, scorers: l.scorers || [],
@@ -174,10 +199,15 @@ function _parseTableRow($, el) {
   return { pos, club: club.name, badge: club.badge, played, won, drawn, lost, goals, gd, points };
 }
 
-async function _fetchTable(code, saison) {
-  const r = await fetch(_tableUrl(code, saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+async function _fetchHtml(url, htmlFetcher) {
+  if (htmlFetcher) return htmlFetcher(url);
+  const r = await fetch(url, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
   if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+  return r.text();
+}
+
+async function _fetchTable(code, saison, htmlFetcher) {
+  const $ = cheerio.load(await _fetchHtml(_tableUrl(code, saison), htmlFetcher));
   const rows = $('table.items').first().find('tbody > tr').toArray();
   const list = [];
   for (const el of rows) {
@@ -201,10 +231,8 @@ function _parseScorerRow($, el) {
   return { player, position, club: club.name, badge: club.badge, goals };
 }
 
-async function _fetchScorers(code, saison) {
-  const r = await fetch(_scorersUrl(code, saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
-  if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+async function _fetchScorers(code, saison, htmlFetcher) {
+  const $ = cheerio.load(await _fetchHtml(_scorersUrl(code, saison), htmlFetcher));
   const rows = $('table.items').first().find('tbody > tr').toArray();
   const list = [];
   for (const el of rows) {
@@ -228,10 +256,8 @@ function _teamFromCell($cell) {
 }
 
 // Parsea el calendario completo → [{ round, matches:[{date,time,home,away,score,played}] }].
-async function _fetchFixtures(code, saison) {
-  const r = await fetch(_fixturesUrl(code, saison), { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
-  if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+async function _fetchFixtures(code, saison, htmlFetcher) {
+  const $ = cheerio.load(await _fetchHtml(_fixturesUrl(code, saison), htmlFetcher));
   const rounds = [];
   $('.box').each((_, box) => {
     const $box = $(box);
@@ -263,56 +289,43 @@ async function _fetchFixtures(code, saison) {
   return rounds;
 }
 
-// Calendario de la liga: unas cuantas jornadas ya jugadas (para ver los ÚLTIMOS
-// RESULTADOS) + las próximas sin disputar hasta el final ("toda la liga"). Si la
-// temporada terminó, las últimas.
-// OJO: arrancar en la primera jornada sin jugar (comportamiento anterior)
-// ocultaba jornadas RECIÉN COMPLETADAS. En ligas cuya última jornada está
-// entera jugada (p. ej. Serie A/Bundesliga al inicio, con la J1 completa y la J2
-// aún futura) el calendario empezaba en la J2 sin marcadores → "no se ven los
-// resultados". Retrocedemos `_FX_BACK` jornadas para incluir los últimos
-// resultados disputados.
-const _FX_WINDOW = 40; // cubre las 34-38 jornadas de cualquier gran liga
-const _FX_BACK   = 4;  // jornadas ya jugadas que mostramos (resultados recientes)
+// Calendario completo de la temporada. Las cinco grandes ligas tienen 34-38
+// jornadas, un volumen pequeño que permite conservar también todo el histórico.
 function _fixtureWindow(rounds) {
-  if (!rounds.length) return [];
-  let idx = rounds.findIndex(r => r.matches.some(m => !m.played));
-  if (idx === -1) idx = Math.max(0, rounds.length - _FX_WINDOW);
-  const start = Math.max(0, idx - _FX_BACK);
-  return rounds.slice(start, start + _FX_WINDOW);
+  return rounds.slice();
 }
 
 // Obtiene tabla + goleadores de una liga, con detección de temporada.
-async function _fetchLeague(league) {
+async function _fetchLeague(league, htmlFetcher) {
   const saison = _currentSaison();
   let table = [];
   let used = saison;
   try {
-    table = await _fetchTable(league.code, saison);
+    table = await _fetchTable(league.code, saison, htmlFetcher);
   } catch (_) { table = []; }
   // Mostramos SIEMPRE la temporada en curso (la de ESTE año) en cuanto TM publica
   // su tabla, aunque todavía no se haya jugado (pretemporada = todos a 0). Solo
   // caemos a la temporada anterior si la actual aún no existe.
   if (!table.length) {
     try {
-      const prev = await _fetchTable(league.code, saison - 1);
+      const prev = await _fetchTable(league.code, saison - 1, htmlFetcher);
       if (prev.length) { table = prev; used = saison - 1; }
     } catch (_) {}
   }
   // Goleadores de la temporada mostrada (en pretemporada vendrá vacío: correcto).
   let scorers = [];
   try {
-    scorers = await _fetchScorers(league.code, used);
+    scorers = await _fetchScorers(league.code, used, htmlFetcher);
   } catch (_) { scorers = []; }
   // Calendario: siempre de la temporada en curso (próximos partidos).
   let fixtures = [];
   let fxSeason = saison;
   try {
-    const rounds = await _fetchFixtures(league.code, saison);
+    const rounds = await _fetchFixtures(league.code, saison, htmlFetcher);
     fixtures = _fixtureWindow(rounds);
     // Si la temporada en curso aún no tiene calendario publicado, prueba la anterior.
     if (!fixtures.length) {
-      const prevRounds = await _fetchFixtures(league.code, saison - 1);
+      const prevRounds = await _fetchFixtures(league.code, saison - 1, htmlFetcher);
       fixtures = _fixtureWindow(prevRounds);
       if (fixtures.length) fxSeason = saison - 1;
     }
@@ -373,6 +386,7 @@ async function getStandings() {
       try { _writeFixturesSnapshot(leagues); } catch (_) {}
     }
     if (leagues.some(l => !l.fixtures || !l.fixtures.length || !l.scorers || !l.scorers.length)) {
+      await _refreshFixturesSnapshot();
       const snap = _readFixturesSnapshot();
       if (snap) {
         for (const l of leagues) {
@@ -416,8 +430,8 @@ async function getStandings() {
 // Genera y persiste el snapshot de calendario desde una IP que SÍ puede scrapear
 // Transfermarkt. Se commitea y despliega para que prod (IP bloqueada) lo sirva.
 // Lanza si el scrape viene vacío para no sobrescribir un snapshot bueno.
-async function snapshotFixtures() {
-  const settled = await Promise.allSettled(LEAGUES.map(_fetchLeague));
+async function snapshotFixtures(htmlFetcher) {
+  const settled = await Promise.allSettled(LEAGUES.map(league => _fetchLeague(league, htmlFetcher)));
   const leagues = settled
     .filter(r => r.status === 'fulfilled' &&
       ((r.value.fixtures && r.value.fixtures.length) || (r.value.scorers && r.value.scorers.length)))

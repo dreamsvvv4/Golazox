@@ -35,6 +35,9 @@ const LEAGUE_MAP = {
 // Ligas cuyos partidos del día mostramos en la agenda (grandes + Champions).
 const MATCH_LEAGUES = [
   { slug: 'uefa.champions', name: 'Champions League', icon: '⭐' },
+  { slug: 'uefa.europa', name: 'Europa League', icon: '⭐' },
+  { slug: 'uefa.europa.conf', name: 'Conference League', icon: '⭐' },
+  { slug: 'uefa.nations', name: 'Nations League', icon: '🌍' },
   { slug: 'esp.1', name: 'LaLiga',        icon: '⚽' },
   { slug: 'eng.1', name: 'Premier League', icon: '⚽' },
   { slug: 'ita.1', name: 'Serie A',        icon: '⚽' },
@@ -239,7 +242,8 @@ function _teamLogo(team) {
 
 // Peso de importancia de un partido para ordenar los más atractivos primero.
 const _LEAGUE_WEIGHT = {
-  'uefa.champions': 100, 'esp.1': 42, 'eng.1': 42, 'ita.1': 36, 'ger.1': 34, 'fra.1': 30,
+  'uefa.champions': 100, 'uefa.nations': 70, 'uefa.europa': 58, 'uefa.europa.conf': 44,
+  'esp.1': 42, 'eng.1': 42, 'ita.1': 36, 'ger.1': 34, 'fra.1': 30,
 };
 const _BIG_CLUBS = /(real madrid|barcelona|bar[cç]a|atl[eé]tico|manchester city|manchester united|man city|man utd|liverpool|arsenal|chelsea|tottenham|bayern|dortmund|leverkusen|inter|a\.?c\.? milan|ac milan|milan|juventus|napoli|as roma|\broma\b|paris|psg|benfica|porto|ajax|athletic|sevilla|valencia|villarreal|real sociedad|betis)/i;
 function _matchImportance(slug, home, away) {
@@ -328,11 +332,19 @@ async function getEspnUpcoming(days) {
   const madrid = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Madrid' }));
   const start = _ymd(madrid);
   const endD = new Date(madrid); endD.setDate(endD.getDate() + n);
-  const range = `${start}-${_ymd(endD)}`;
+  const end = _ymd(endD);
+  const months = start.slice(0, 6) === end.slice(0, 6) ? [start.slice(0, 6)] : [start.slice(0, 6), end.slice(0, 6)];
+  const range = `${start}-${end}`;
   if (_upCache.data && _upCache.range === range && (now - _upCache.ts) < MATCH_TTL) return _upCache.data;
-  const results = await Promise.allSettled(MATCH_LEAGUES.map(lg => _fetchScoreboard(lg, range)));
+  const results = await Promise.allSettled(MATCH_LEAGUES.flatMap(lg => months.map(month => _fetchScoreboard(lg, month))));
   const events = [];
-  results.forEach(r => { if (r.status === 'fulfilled') events.push(...r.value); });
+  results.forEach(r => {
+    if (r.status !== 'fulfilled') return;
+    events.push(...r.value.filter(event => {
+      const day = event._ts ? _ymd(new Date(event._ts)) : '';
+      return day >= start && day <= end;
+    }));
+  });
   events.sort((a, b) => a._ts - b._ts);
   const data = { events, updated: now };
   _upCache = { ts: now, range, data };
@@ -392,20 +404,17 @@ async function getEspnResults(fromYmd, toYmd) {
   if (_resCache.data && _resCache.key === key && (now - _resCache.ts) < RESULTS_TTL) {
     return _resCache.data;
   }
-  const parse = (s) => new Date(Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)));
   const codes = Object.keys(LEAGUE_MAP);
   const jobs = [];
+  const fromMonth = new Date(Date.UTC(+fromYmd.slice(0, 4), +fromYmd.slice(4, 6) - 1, 1));
+  const toMonth = new Date(Date.UTC(+toYmd.slice(0, 4), +toYmd.slice(4, 6) - 1, 1));
+  const months = [];
+  for (let cur = fromMonth; cur <= toMonth; cur = new Date(Date.UTC(cur.getUTCFullYear(), cur.getUTCMonth() + 1, 1))) {
+    months.push(`${cur.getUTCFullYear()}${String(cur.getUTCMonth() + 1).padStart(2, '0')}`);
+  }
   for (const code of codes) {
     const slug = LEAGUE_MAP[code];
-    let cur = parse(fromYmd);
-    const end = parse(toYmd);
-    while (cur <= end) {
-      const chunkEnd = new Date(cur); chunkEnd.setUTCDate(chunkEnd.getUTCDate() + 49);
-      const to = chunkEnd < end ? chunkEnd : end;
-      const range = `${_ymd(cur)}-${_ymd(to)}`;
-      jobs.push({ code, url: _SCOREBOARD_URL(slug, range) });
-      cur = new Date(to); cur.setUTCDate(cur.getUTCDate() + 1);
-    }
+    for (const month of months) jobs.push({ code, url: _SCOREBOARD_URL(slug, month) });
   }
   const byCode = {};
   for (const c of codes) byCode[c] = [];
@@ -415,7 +424,8 @@ async function getEspnResults(fromYmd, toYmd) {
     const d = await r.json();
     for (const ev of (d.events || [])) {
       const res = _resultFromEvent(ev);
-      if (res) byCode[j.code].push(res);
+      const day = res && res.dayIso ? res.dayIso.replace(/-/g, '') : '';
+      if (res && day >= fromYmd && day <= toYmd) byCode[j.code].push(res);
     }
   }));
   const data = { byCode, updated: now };

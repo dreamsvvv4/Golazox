@@ -75,6 +75,8 @@ const TRN = (() => {
     $('main-match-wrap').classList.toggle('hidden', tab !== 'match');
     $('main-pen-wrap') && $('main-pen-wrap').classList.toggle('hidden', tab !== 'pen');
     $('main-trn-wrap').classList.toggle('hidden', tab !== 'trn');
+    const _gamesWrap = $('main-games-wrap');
+    if (_gamesWrap) _gamesWrap.classList.toggle('hidden', tab !== 'games');
     const _profWrap = $('main-profile-wrap');
     if (_profWrap) _profWrap.classList.toggle('hidden', tab !== 'profile');
     document.querySelectorAll('.main-tab-btn').forEach(b =>

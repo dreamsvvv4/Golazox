@@ -11,6 +11,7 @@ $runtimeData = @(
     'match_engine/webapp/data/gx_leaderboard.json',
     'match_engine/webapp/data/rumors_snapshot.json',
     'match_engine/webapp/data/transfers_snapshot.json',
+    'match_engine/webapp/data/values_snapshot.json',
     'match_engine/webapp/data/transfers_db.json'
 )
 $unpushed = git log origin/main..HEAD --oneline 2>&1
@@ -55,6 +56,7 @@ cp "$WEBAPP/data/agenda.json" "$WEBAPP/data/salaries.json" "$WEBAPP/data/legends
 # Snapshots de rumores y calendario (mismo motivo: TM bloquea la IP del server).
 [ -f "$WEBAPP/data/rumors_snapshot.json" ] && cp "$WEBAPP/data/rumors_snapshot.json" "$DEST/data/" || true
 [ -f "$WEBAPP/data/fixtures_snapshot.json" ] && cp "$WEBAPP/data/fixtures_snapshot.json" "$DEST/data/" || true
+[ -f "$WEBAPP/data/values_snapshot.json" ] && cp "$WEBAPP/data/values_snapshot.json" "$DEST/data/" || true
 echo "    $(ls "$DEST/squads/" | wc -l) squads en disco"
 echo "    CP OK"
 echo "==> Reiniciando Passenger..."

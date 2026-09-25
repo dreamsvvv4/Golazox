@@ -170,7 +170,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=7aeab0b0" />
+  <link rel="stylesheet" href="style.min.css?v=79325a6c" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -397,6 +397,7 @@
       <button class="main-tab-btn" data-tab="match">⚽ <span class="tab-lbl" data-i18n="tab-match">Partido</span></button>
       <button class="main-tab-btn" data-tab="pen">🥅 <span class="tab-lbl" data-i18n="tab-pen">Penaltis</span></button>
       <button class="main-tab-btn" data-tab="trn">🏆 <span class="tab-lbl" data-i18n="tab-trn">Torneo</span></button>
+      <button class="main-tab-btn" data-tab="games">🎮 <span class="tab-lbl">Juegos</span></button>
       <button class="main-tab-btn" data-tab="profile">👤 <span class="tab-lbl" data-i18n="tab-profile">Perfil</span></button>
     </div>
   </header>
@@ -412,6 +413,9 @@
       </a>
       <a class="side-link" href="/?tab=match" data-view="match">
         <span class="side-ico">⚽</span><span class="side-lbl" data-i18n="side-sim">Simulador</span>
+      </a>
+      <a class="side-link" href="/?tab=games" data-view="games">
+        <span class="side-ico">🎮</span><span class="side-lbl">Juegos</span>
       </a>
       <div class="side-group-label" data-i18n="side-explore">Explorar</div>
       <a class="side-link" href="/clasificaciones">
@@ -2058,6 +2062,63 @@
 
   </div><!-- /main-trn-wrap -->
 
+  <!-- ── JUEGOS ───────────────────────────────── -->
+  <div id="main-games-wrap" class="hidden">
+    <section class="games-shell" aria-labelledby="games-title">
+      <header class="games-head">
+        <span class="games-kicker">GOLAZOX ARCADE</span>
+        <h2 id="games-title">Tu fútbol, tus reglas</h2>
+        <p>Partidas rápidas y carreras con consecuencias. Sin energía, esperas ni pagos para avanzar.</p>
+      </header>
+
+      <nav class="games-modes" aria-label="Modos de juego">
+        <a href="/?tab=match" data-view="match"><span>⚡</span><strong>Partido rápido</strong><small>Cualquier equipo y época</small></a>
+        <a href="/?tab=pen" data-view="pen"><span>🥅</span><strong>Penaltis</strong><small>Decide desde los once metros</small></a>
+        <a href="/?tab=trn" data-view="trn"><span>🏆</span><strong>Torneo</strong><small>Crea tu propia competición</small></a>
+        <button type="button" class="is-active" id="games-career-shortcut"><span>👟</span><strong>Carrera Express</strong><small>De promesa a leyenda</small></button>
+      </nav>
+
+      <section class="career-zone" id="career-zone" aria-labelledby="career-title">
+        <div class="career-intro">
+          <div>
+            <span class="career-tag">PROTOTIPO JUGABLE</span>
+            <h3 id="career-title">Carrera Express</h3>
+            <p>Empieza con 16 años. Elige cómo entrenar, completa temporadas y construye un legado antes de retirarte.</p>
+          </div>
+          <div class="career-promise"><b>3-5 min</b><span>por carrera</span></div>
+        </div>
+
+        <form id="career-create" class="career-create">
+          <label>Nombre del jugador<input id="career-name" maxlength="24" required placeholder="Tu nombre" autocomplete="off"></label>
+          <label>Posición<select id="career-position"><option value="DEL">Delantero</option><option value="MED">Centrocampista</option><option value="DEF">Defensa</option><option value="POR">Portero</option></select></label>
+          <label>Estilo<select id="career-style"><option value="tecnico">Técnico</option><option value="fisico">Físico</option><option value="creador">Creador</option><option value="lider">Líder</option></select></label>
+          <button type="submit" class="career-primary">Comenzar carrera</button>
+        </form>
+
+        <div id="career-game" class="career-game hidden" aria-live="polite">
+          <div class="career-scoreboard">
+            <div><span id="career-avatar">10</span><p><strong id="career-player">—</strong><small id="career-club">Cantera local</small></p></div>
+            <dl><div><dt>Edad</dt><dd id="career-age">16</dd></div><div><dt>Media</dt><dd id="career-rating">58</dd></div><div><dt>Valor</dt><dd id="career-value">0,5 M€</dd></div><div><dt>Temporada</dt><dd id="career-season">1</dd></div></dl>
+          </div>
+
+          <div id="career-action" class="career-action">
+            <p class="career-question">¿Dónde concentras el entrenamiento?</p>
+            <div class="career-focus" role="group" aria-label="Tipo de entrenamiento">
+              <button type="button" data-focus="tecnica">Técnica <small>más goles y asistencias</small></button>
+              <button type="button" data-focus="fisico">Físico <small>más partidos y regularidad</small></button>
+              <button type="button" data-focus="mental">Mental <small>mejor media y títulos</small></button>
+            </div>
+            <button type="button" id="career-play-season" class="career-primary" disabled>Jugar temporada</button>
+          </div>
+
+          <div id="career-result" class="career-result hidden"></div>
+          <div class="career-history-wrap"><h4>Tu historia</h4><ol id="career-history" class="career-history"></ol></div>
+          <button type="button" id="career-reset" class="career-reset">Borrar carrera</button>
+        </div>
+      </section>
+    </section>
+  </div><!-- /main-games-wrap -->
+
   <!-- ── PERFIL (Gamification) ──────────────────── -->
   <div id="main-profile-wrap" class="hidden"></div>
 
@@ -2194,13 +2255,14 @@
   <script src="gx-ui.min.js?v=f80d3773" defer></script>
   <script src="app.min.js?v=a49193b7" defer></script>
   <script src="_wc_editions.js?v=b4f4c22f" defer></script>
-  <script src="tournament.min.js?v=25afbc24" defer></script>
+  <script src="tournament.min.js?v=4f3731ef" defer></script>
   <script src="/gx-nav.js?v=8503258a" defer></script>
 
   <!-- PWA install + SW registration moved to app.js (CSP: no inline scripts needed) -->
   <!-- Global tooltip portal — lives outside pm-pitch-field so overflow:hidden doesn't clip it -->
   <div id="pm-tt-portal" aria-hidden="true"></div>
   <script src="/subscribe.js?v=94c31cf5" defer></script>
-  <script src="/home-hub.js?v=0c5052ff" defer></script>
+  <script src="/home-hub.js?v=41ebf10c" defer></script>
+  <script src="/juegos.js?v=cc31b4a0" defer></script>
 </body>
 </html>

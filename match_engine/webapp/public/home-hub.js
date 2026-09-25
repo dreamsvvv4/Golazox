@@ -69,6 +69,14 @@
   function fail(el, msg) {
     if (el) el.innerHTML = '<p style="color:var(--grey);font-size:.82rem;padding:.6rem 0">' + esc(msg) + '</p>';
   }
+  function marketWindowStatus() {
+    var now = new Date();
+    var month = now.getMonth();
+    var day = now.getDate();
+    var open = (month === 0 && day <= 31) || (month >= 6 && month <= 7);
+    var next = month < 6 ? new Date(now.getFullYear(), 6, 1) : new Date(now.getFullYear() + 1, 0, 1);
+    return { open: open, days: Math.max(1, Math.ceil((next.getTime() - now.getTime()) / 86400000)) };
+  }
   // CSP no permite onerror inline: ocultamos imágenes rotas asignando el
   // handler por JS sobre las <img> ya insertadas en el contenedor.
   function hideBrokenImgs(container, mode) {
@@ -122,19 +130,20 @@
     // equilibramos ambos bloques hasta ~7 fichas en total.
     var TARGET = 7;
     var apply = function (tData, rData, nData) {
+      var market = marketWindowStatus();
       var tList = (tData && tData.list) || [];
       var rList = ((rData && rData.list) || []).filter(function (x) { return typeof x.prob === 'number'; });
       rList.sort(function (a, b) { return b.prob - a.prob; });
       var confirmed = tList.filter(function (t) { return t && t.player; });
       var rums = rList.filter(function (r) { return r && r.player; });
       var fich = (nData && nData.fichajes) || [];
-      var html = '';
+      var html = market.open ? '' : '<div class="hub-sub-head">🔒 Mercado cerrado · enero en ' + market.days + ' días</div>';
       if (confirmed.length) {
         // Datos frescos de Transfermarkt → fichajes confirmados reales.
         var nConf = Math.min(confirmed.length, 4);
         var nRum = Math.min(rums.length, Math.max(3, TARGET - nConf));
         confirmed = confirmed.slice(0, nConf);
-        html += '<div class="hub-sub-head hub-sub-fee">✅ Fichajes confirmados</div>';
+        html += '<div class="hub-sub-head hub-sub-fee">' + (market.open ? '✅ Fichajes confirmados' : '📋 Últimos fichajes cerrados') + '</div>';
         html += confirmed.map(function (t) {
           return '<a class="hub-block" href="/fichajes">' +
             '<span class="hub-block-name">' + esc(t.player) + '</span>' +
@@ -147,7 +156,7 @@
         // última hora del mercado de ESTE AÑO desde las noticias de fichajes, en
         // vez de repetir un snapshot antiguo. Esto es lo genuinamente actual.
         var nNews = Math.min(fich.length, 4);
-        html += '<div class="hub-sub-head hub-sub-news">📰 Última hora del mercado</div>';
+        html += '<div class="hub-sub-head hub-sub-news">' + (market.open ? '📰 Última hora del mercado' : '📰 Planificación y renovaciones') + '</div>';
         html += fich.slice(0, nNews).map(function (n) {
           var thumb = n.image ? '<img class="hub-mkt-thumb" src="' + esc(newsImg(n.image)) + '" alt="" loading="lazy">' : '';
           return '<a class="hub-mkt-news" href="' + esc(n.link || '/noticias') + '" target="_blank" rel="noopener">' + thumb +
@@ -161,7 +170,7 @@
         rums = rums.slice(0, Math.min(rums.length, TARGET));
       }
       if (rums.length) {
-        html += '<div class="hub-sub-head hub-sub-hot">🔥 Rumores del día</div>';
+        html += '<div class="hub-sub-head hub-sub-hot">' + (market.open ? '🔥 Rumores del día' : '🎯 Objetivos para enero') + '</div>';
         html += rums.map(function (r) {
           var p = Math.max(0, Math.min(100, r.prob));
           return '<a class="hub-block" href="/fichajes">' +
@@ -390,9 +399,9 @@
         if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
       });
     }
-    function showHub(isHub) {
+    function showHub(isHub, view) {
       hubWrap.classList.toggle('hidden', !isHub);
-      setNavActive(isHub ? 'hub' : 'match');
+      setNavActive(isHub ? 'hub' : (view || 'match'));
     }
 
     // Parche: cualquier cambio de tab (por click o programático) sincroniza la portada.
@@ -402,7 +411,7 @@
       var orig = TRN.switchMainTab;
       TRN.switchMainTab = function (t) {
         var r = orig.apply(this, arguments);
-        showHub(t === 'hub');
+        showHub(t === 'hub', t);
         return r;
       };
       TRN.__hubPatched = true;
@@ -411,14 +420,14 @@
     function go(view) {
       if (typeof TRN !== 'undefined' && typeof TRN.switchMainTab === 'function') { TRN.switchMainTab(view); return; }
       // Fallback si el bundle del simulador no cargó.
-      ['main-match-wrap', 'main-pen-wrap', 'main-trn-wrap', 'main-profile-wrap'].forEach(function (id) {
+      ['main-match-wrap', 'main-pen-wrap', 'main-trn-wrap', 'main-games-wrap', 'main-profile-wrap'].forEach(function (id) {
         var el = document.getElementById(id); if (el) el.classList.toggle('hidden', !(id === 'main-' + view + '-wrap'));
       });
       var bar = document.querySelector('.main-tabs-bar');
       if (bar) Array.prototype.forEach.call(bar.querySelectorAll('.main-tab-btn'), function (b) {
         b.classList.toggle('main-tab-active', b.getAttribute('data-tab') === view);
       });
-      showHub(view === 'hub');
+      showHub(view === 'hub', view);
       window.scrollTo(0, 0);
     }
 
@@ -437,7 +446,7 @@
     var tab = p.get('tab');
     var hasMatch = !!(p.get('a') && p.get('b'));
     if (hasMatch) { go('match'); }
-    else if (tab && ['match', 'pen', 'trn'].indexOf(tab) !== -1) { showHub(false); }
+    else if (tab && ['match', 'pen', 'trn', 'games', 'profile'].indexOf(tab) !== -1) { go(tab); }
     else { showHub(true); }
   }
   initViewRouter();

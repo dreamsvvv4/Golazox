@@ -19,7 +19,7 @@ const { SQUADS }        = require('./squads');
 const { REFEREES }      = require('./referee_logic');
 const { getNews, getTransfers, getValues, getStats, getRumors, getAgenda, getSalaries, getLegends, getStatus, getTvGuide, IMG_HOSTS } = require('./news');
 const { getStandings } = require('./standings');
-const { getEspnMatches } = require('./espn');
+const { getEspnUpcoming } = require('./espn');
 
 const app    = express();
 app.set('trust proxy', 1); // Correct req.ip behind nginx/Cloudflare
@@ -2132,9 +2132,23 @@ const _newsImgCache = new Map();
 // -- GET /health — estado de los scrapers (para monitorización) -------------
 // Devuelve 200 si todas las fuentes están OK, 503 si alguna falla, con el
 // detalle por fuente (última vez que respondió, nº de registros, error).
-app.get('/health', (req, res) => {
+app.get('/health', async (req, res) => {
   try {
     const st = getStatus();
+    const [standings, agenda] = await Promise.all([
+      getStandings().catch(() => ({ leagues: [], updated: 0 })),
+      _getLiveAgenda(7).catch(() => ({ events: [], updated: 0, source: 'unavailable' })),
+    ]);
+    const now = Date.now();
+    st.sources.push({
+      key: 'standings', state: standings.leagues.length ? 'ok' : 'empty', count: standings.leagues.length,
+      ageMin: standings.updated ? Math.round((now - standings.updated) / 60000) : null, lastOk: standings.updated || null,
+    });
+    st.sources.push({
+      key: 'agenda', state: agenda.events.length ? 'ok' : 'empty', count: agenda.events.length, source: agenda.source,
+      ageMin: agenda.updated ? Math.round((now - agenda.updated) / 60000) : null, lastOk: agenda.updated || null,
+    });
+    st.ok = st.sources.every(source => source.state === 'ok');
     res.status(st.ok ? 200 : 503).json(st);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
@@ -3634,6 +3648,9 @@ const GX_SIDE_NAV = (active) => `
       <a class="side-link${active === 'sim' ? ' side-link-active' : ''}" href="/?tab=match"${active === 'sim' ? ' aria-current="page"' : ''}>
         <span class="side-ico">⚽</span><span class="side-lbl">Simulador</span>
       </a>
+      <a class="side-link" href="/?tab=games">
+        <span class="side-ico">🎮</span><span class="side-lbl">Juegos</span>
+      </a>
       <div class="side-group-label">Explorar</div>
       <a class="side-link${active === 'standings' ? ' side-link-active' : ''}" href="/clasificaciones"${active === 'standings' ? ' aria-current="page"' : ''}>
         <span class="side-ico">📊</span><span class="side-lbl">Clasificaciones</span>
@@ -3718,6 +3735,33 @@ const _agendaHTML = (events) => {
   }).join('')}</div>`;
 };
 
+// Agenda viva: partidos de los próximos 7 días desde ESPN + eventos curados
+// (sorteos, parones, finales). Si ESPN falla, la agenda local sigue disponible.
+async function _getLiveAgenda(days = 7) {
+  let local = { events: [], updated: 0 };
+  try { local = getAgenda(); } catch { /* el JSON local no debe romper la agenda */ }
+  const live = await getEspnUpcoming(days).catch(() => ({ events: [], updated: 0 }));
+  const matches = (live.events || []).map(m => ({
+    date: m._ts ? new Date(m._ts).toISOString() : new Date().toISOString(),
+    type: 'match',
+    icon: m.icon || '⚽',
+    title: `${m.home} - ${m.away}`,
+    home: m.home,
+    away: m.away,
+    time: m.time || '',
+    comp: m.competition || '',
+    meta: { homeBadge: m.homeBadge || '', awayBadge: m.awayBadge || '' },
+  }));
+  const seen = new Set();
+  const events = matches.concat(local.events || []).filter(event => {
+    const key = `${String(event.date || '').slice(0, 10)}|${String(event.title || '').toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+  return { events, updated: Math.max(local.updated || 0, live.updated || 0), source: matches.length ? 'espn+curated' : 'curated' };
+}
+
 // Guía de TV: partidos de fútbol con hora, competición, equipos y canal,
 // agrupados por día (Hoy / Mañana / …). Fuente: Marca. Datos factuales;
 // los canales son de la parrilla española. Si no hay fútbol en la parrilla
@@ -3781,6 +3825,20 @@ const _PAGE_CFG = {
                   desc: 'Máximos goleadores y asistentes de la temporada en las grandes ligas europeas, más los récords históricos del fútbol.' },
 };
 
+// Ventanas principales de las cinco grandes ligas. Las fechas exactas pueden
+// variar unos días por federación, así que comunicamos el estado general y no
+// prometemos que una operación concreta pueda inscribirse en todos los países.
+function _marketWindowStatus(now = new Date()) {
+  const month = now.getMonth();
+  const day = now.getDate();
+  const open = (month === 0 && day <= 31) || (month >= 6 && month <= 7);
+  const nextOpen = month < 6
+    ? new Date(now.getFullYear(), 6, 1)
+    : new Date(now.getFullYear() + 1, 0, 1);
+  const days = Math.max(1, Math.ceil((nextOpen.getTime() - now.getTime()) / 86400000));
+  return { open, days, nextLabel: month < 6 ? 'verano' : 'invierno' };
+}
+
 const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const _base = SITE_URL.replace(/\/$/, '');
   const _cfg = _PAGE_CFG[page] || _PAGE_CFG.fichajes;
@@ -3793,6 +3851,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
   const salaries = extra.salaries || { players: [], note: '' };
   const legends  = extra.legends  || { scorers: [], assists: [], note: '' };
   const rumors   = extra.rumors   || { list: [] };
+  const market   = _marketWindowStatus();
   const _url = `${_base}${_cfg.path}`;
   const _title = _cfg.title;
   const _desc = _cfg.desc;
@@ -4091,13 +4150,15 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 
     .note-box { font-size:.72rem; color:rgba(255,255,255,.42); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:.7rem .9rem; margin:0 0 1.2rem; line-height:1.5; }
     .upd-date { color:rgba(0,212,255,.7); font-weight:700; white-space:nowrap; }
+    .market-state { display:inline-flex; align-items:center; gap:.35rem; color:#9aa8ba; font-weight:700; }
+    .market-state.closed { color:#ffd27a; }
   </style>
 </head>
 <body class="has-side-nav">
   ${GX_SIDE_NAV(_activeTab === 'fichajes' ? 'transfers' : _activeTab === 'noticias' ? 'news' : _activeTab)}
   <header class="hero">
     <h1 id="heroTitle" data-title-fichajes="Mercado de Fichajes" data-title-noticias="Noticias" data-title-agenda="Agenda del Fútbol" data-title-valores="Cracks del Fútbol" data-title-estadisticas="Estadísticas">${_cfg.hero}</h1>
-    <p><span class="live">En directo</span> · <span class="ago" data-updated="${Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0) || Date.now()}">actualizado ${_timeAgo(Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0)) || 'ahora'}</span></p>
+    <p>${_activeTab === 'fichajes' && !market.open ? `<span class="market-state closed">🔒 Mercado cerrado · ventana de ${market.nextLabel} en ${market.days} días</span>` : '<span class="live">En directo</span>'} · <span class="ago" data-updated="${Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0) || Date.now()}">actualizado ${_timeAgo(Math.max(transfers.updated || 0, news.updated || 0, values.updated || 0, stats.updated || 0, agenda.updated || 0)) || 'ahora'}</span></p>
   </header>
 
   <div class="refresh-pill" id="refreshPill" hidden>✨ Hay novedades · <span>actualizar</span></div>
@@ -4123,8 +4184,8 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     ${_marketThermoHTML(transfers)}
 
     <div class="subtabs">
-      <button class="subtab active" data-sub="top">🏆 Bombazos de la temporada</button>
-      <button class="subtab" data-sub="latest">🔥 Recién cerrados<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
+      <button class="subtab active" data-sub="top">${market.open ? '🏆 Bombazos de la temporada' : '📊 Balance del último mercado'}</button>
+      <button class="subtab" data-sub="latest">${market.open ? '🔥 Recién cerrados' : '📋 Últimos movimientos'}<span class="count">${transfers.latest ? transfers.latest.length : 0}</span></button>
       <button class="subtab" data-sub="history">📚 Histórico<span class="count">${transfers.historyTotal || (transfers.history ? transfers.history.length : 0)}</span></button>
       <button class="subtab" data-sub="rumores">🗣️ Rumores<span class="count">${rumors.list.length}</span></button>
     </div>
@@ -4139,7 +4200,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     <div id="sub-top" class="subpanel active">
       ${_chartHTML(transfers.top)}
       ${transfers.list.length
-        ? `<h2>💎 Los más caros del mercado</h2><div class="tgrid">${transfers.list.map((t, i) => _transferCardHTML(t, i + 1)).join('')}</div>`
+        ? `<h2>💎 ${market.open ? 'Los más caros del mercado' : 'Los más caros del último mercado'}</h2><div class="tgrid">${transfers.list.map((t, i) => _transferCardHTML(t, i + 1)).join('')}</div>`
         : (news.fichajes && news.fichajes.length
             ? `<p class="sub-note">📡 Transfermarkt no responde ahora mismo; te mostramos la <strong>última hora del mercado</strong> de este año. Los fichajes estructurados volverán en cuanto la fuente se recupere.</p><h2>📰 Última hora del mercado</h2><ul class="news-list">${news.fichajes.map(_newsItemHTML).join('')}</ul>`
             : `<p class="empty">Cargando los últimos fichajes… la página se actualizará en unos segundos.</p>${_skeletonGrid(6)}`)}
@@ -4160,7 +4221,7 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
     </div>
 
     <div id="sub-rumores" class="subpanel">
-      <p class="sub-note">Rumores de fichaje con la <strong>probabilidad de traspaso</strong> según los votos de los usuarios de Transfermarkt. 🔥 caliente = muy probable · ❄️ frío = poco probable.</p>
+      <p class="sub-note">${market.open ? 'Rumores de fichaje con la <strong>probabilidad de traspaso</strong> según los votos de los usuarios de Transfermarkt.' : 'Seguimiento de posibles objetivos para la ventana de invierno. Son rumores y planificación: no operaciones cerradas.'} 🔥 caliente = muy probable · ❄️ frío = poco probable.</p>
       ${_rumorPulseHTML(rumors)}
       ${rumors.list.length
         ? `<div class="tgrid">${rumors.list.map(_rumorCardHTML).join('')}</div>`
@@ -4253,8 +4314,8 @@ const FICHAJES_HTML = (transfers, news, page = 'fichajes', extra = {}) => {
 // Se piden todos porque la barra de pestañas muestra contadores de cada sección.
 // Todo está cacheado (fichajes 30 min, noticias 15 min, rankings 6 h, curados al vuelo).
 async function _fichajesData() {
-  const [transfers, news, values, stats, rumors, tvGuide] = await Promise.all([
-    getTransfers({ forceRefresh: true }), getNews(), getValues(), getStats(), getRumors(), getTvGuide(),
+  const [transfers, news, values, stats, rumors, tvGuide, agenda] = await Promise.all([
+    getTransfers({ forceRefresh: true }), getNews(), getValues(), getStats(), getRumors(), getTvGuide(), _getLiveAgenda(7),
   ]);
   // Si el scrape de Transfermarkt no es fresco (lleva caído horas), getTransfers
   // sigue sirviendo el último snapshot con éxito, que trae nombres del mercado
@@ -4270,7 +4331,7 @@ async function _fichajesData() {
     : { ...transfers, list: [], top: [], latest: [] };
   return {
     transfers: _tx, news,
-    extra: { values, stats, rumors, tvGuide, agenda: getAgenda(), salaries: getSalaries(), legends: getLegends() },
+    extra: { values, stats, rumors, tvGuide, agenda, salaries: getSalaries(), legends: getLegends() },
   };
 }
 const _FALLBACK_T = { list: [], top: [], latest: [], history: [], historyTotal: 0, updated: 0 };
@@ -4302,14 +4363,12 @@ app.get('/fichajes', _newsLimit, _renderFichajes('fichajes'));
 // estadísticas, agenda) para que la píldora salte en cualquier sección.
 app.get('/fichajes/ping', _newsLimit, async (_req, res) => {
   try {
-    const [transfers, news, values, stats] = await Promise.all([
-      getTransfers(), getNews(), getValues().catch(() => ({})), getStats().catch(() => ({})),
+    const [transfers, news, values, stats, agenda] = await Promise.all([
+      getTransfers(), getNews(), getValues().catch(() => ({})), getStats().catch(() => ({})), _getLiveAgenda(7),
     ]);
-    let agendaUpd = 0;
-    try { agendaUpd = (getAgenda() || {}).updated || 0; } catch { /* ignore */ }
     const updated = Math.max(
       transfers.updated || 0, news.updated || 0,
-      values.updated || 0, stats.updated || 0, agendaUpd,
+      values.updated || 0, stats.updated || 0, agenda.updated || 0,
     );
     res.set('Cache-Control', 'no-store').json({ updated });
   } catch {
@@ -4331,6 +4390,17 @@ const _apiSend = (res, payload) => res
   .set('Access-Control-Allow-Origin', '*')
   .set('Cache-Control', 'public, max-age=120')
   .json(payload);
+const _apiMeta = (data, source, staleMs, count) => {
+  const updated = Number(data && data.updated) || 0;
+  const ageMs = updated ? Math.max(0, Date.now() - updated) : null;
+  return {
+    source: (data && data.source) || source,
+    updated: updated || null,
+    ageMinutes: ageMs == null ? null : Math.round(ageMs / 60000),
+    stale: ageMs == null || ageMs > staleMs,
+    available: count > 0,
+  };
+};
 
 app.get('/api', _apiLimit, (_req, res) => _apiSend(res, {
   name: 'GolazoX API',
@@ -4356,28 +4426,30 @@ app.get('/api/transfers', _apiLimit, async (_req, res) => {
     const fresh = _isFresh(d.updated);
     _apiSend(res, {
       updated: d.updated,
+      source: d.source || 'transfermarkt',
       list: fresh ? d.list : [],
       latest: fresh ? d.latest : [],
       top: fresh ? d.top : [],
+      _meta: _apiMeta(d, 'transfermarkt', TX_FRESH_MS, fresh ? (d.list || []).length : 0),
     });
   }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
 app.get('/api/values', _apiLimit, async (_req, res) => {
-  try { const d = await getValues(); _apiSend(res, d); }
+  try { const d = await getValues(); _apiSend(res, { ...d, _meta: _apiMeta(d, 'transfermarkt', 72 * 60 * 60 * 1000, (d.list || []).length) }); }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
 app.get('/api/stats', _apiLimit, async (_req, res) => {
-  try { const d = await getStats(); _apiSend(res, d); }
+  try { const d = await getStats(); _apiSend(res, { ...d, _meta: _apiMeta(d, d.source || 'transfermarkt', 60 * 60 * 1000, (d.scorers || []).length) }); }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
 app.get('/api/rumors', _apiLimit, async (_req, res) => {
-  try { const d = await getRumors(); _apiSend(res, d); }
+  try { const d = await getRumors(); _apiSend(res, { ...d, _meta: _apiMeta(d, 'transfermarkt', 24 * 60 * 60 * 1000, (d.list || []).length) }); }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
-// Agenda de fechas clave (curada). getAgenda es síncrono (lee JSON local).
-app.get('/api/agenda', _apiLimit, (_req, res) => {
-  try { const d = getAgenda(); _apiSend(res, { updated: d.updated, events: (d.events || []).slice(0, 20) }); }
+// Agenda viva: próximos partidos ESPN + fechas clave curadas.
+app.get('/api/agenda', _apiLimit, async (_req, res) => {
+  try { const d = await _getLiveAgenda(7); _apiSend(res, { updated: d.updated, source: d.source, events: d.events || [], _meta: _apiMeta(d, d.source, 60 * 60 * 1000, (d.events || []).length) }); }
   catch (e) { res.status(503).json({ error: e.message }); }
 });
 // Titulares para la portada (actualidad + mercado), forma ligera.
@@ -4389,6 +4461,7 @@ app.get('/api/news', _apiLimit, async (_req, res) => {
       updated: d.updated,
       general: (d.general || []).slice(0, 8).map(pick),
       fichajes: (d.fichajes || []).slice(0, 6).map(pick),
+      _meta: _apiMeta(d, 'rss', 60 * 60 * 1000, (d.general || []).length + (d.fichajes || []).length),
     });
   } catch (e) { res.status(503).json({ error: e.message }); }
 });
@@ -4404,6 +4477,7 @@ app.get('/api/standings-summary', _apiLimit, async (_req, res) => {
           pos: t.pos, club: t.club, badge: t.badge, played: t.played, points: t.points,
         })),
       })),
+      _meta: _apiMeta(d, 'espn+transfermarkt', 60 * 60 * 1000, (d.leagues || []).length),
     });
   } catch (e) { res.status(503).json({ error: e.message }); }
 });
@@ -4441,16 +4515,14 @@ async function _buildHomePayload(fast) {
     if (!fast) return safe;
     return Promise.race([safe, new Promise(r => setTimeout(() => r(fb), ms))]);
   };
-  const [news, transfers, rumors, standings, tv, espnMatches] = await Promise.all([
+  const [news, transfers, rumors, standings, tv, agenda] = await Promise.all([
     cap(getNews(), 4500, {}),
     cap(getTransfers({ forceRefresh: true }), 4500, {}),
     cap(getRumors(), 4500, {}),
     cap(getStandings(), 5000, {}),
     cap(getTvGuide(), 4500, {}),
-    cap(getEspnMatches(), 4500, { events: [] }),
+    cap(_getLiveAgenda(7), 4500, { events: [], updated: 0 }),
   ]);
-  let agenda = { events: [], updated: 0 };
-  try { agenda = getAgenda(); } catch { /* agenda local, no debe romper la portada */ }
   // Fichajes confirmados para la portada: SOLO datos frescos de Transfermarkt
   // (los bombazos de la temporada o los últimos cerrados). NO usamos el histórico
   // propio aquí: cuando TM está caído preferimos que el front muestre la última
@@ -4466,20 +4538,6 @@ async function _buildHomePayload(fast) {
   const _confirmed = !_txFresh ? [] :
     (transfers.list && transfers.list.length) ? transfers.list :
     (transfers.latest && transfers.latest.length) ? transfers.latest : [];
-  // Agenda del día: primero los partidos que se juegan HOY (ESPN), y detrás las
-  // próximas fechas clave del calendario propio (arranques de liga, sorteos…).
-  const _today = new Date().toISOString().slice(0, 10);
-  const _matchEvents = (espnMatches.events || []).map(m => ({
-    date: _today,
-    type: 'match',
-    icon: m.icon || '⚽',
-    title: `${m.home} - ${m.away}`,
-    home: m.home,
-    away: m.away,
-    comp: m.competition,
-    time: m.time || '',
-  }));
-  const _agendaEvents = _matchEvents.concat(agenda.events || []);
   const pick = it => ({ title: it.title, link: it.link, source: it.source, ts: it.ts, image: it.image || null });
   return {
     news: {
@@ -4489,7 +4547,7 @@ async function _buildHomePayload(fast) {
     },
     transfers: { updated: transfers.updated, list: (_confirmed || []).slice(0, 6) },
     rumors: { updated: rumors.updated, list: (rumors.list || []).slice(0, 12) },
-    agenda: { updated: agenda.updated, events: _agendaEvents.slice(0, 8) },
+    agenda: { updated: agenda.updated, events: (agenda.events || []).slice(0, 8) },
     standings: {
       updated: standings.updated,
       leagues: (standings.leagues || []).map(l => ({
@@ -4578,7 +4636,8 @@ function _startAutoRefresh() {
   setInterval(() => _safeRefresh('transfers', getTransfers), 30 * _REFRESH_MIN);
   setInterval(() => _safeRefresh('tvGuide', getTvGuide), 180 * _REFRESH_MIN);
   setInterval(() => _safeRefresh('values', getValues), 360 * _REFRESH_MIN);
-  setInterval(() => _safeRefresh('stats', getStats), 360 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('stats', getStats), 30 * _REFRESH_MIN);
+  setInterval(() => _safeRefresh('agenda', () => _getLiveAgenda(7)), 15 * _REFRESH_MIN);
 
   // La portada se reagrega a partir de las cachés anteriores (barato): la
   // mantenemos caliente cada 2 min aunque no haya visitas.
@@ -4589,7 +4648,7 @@ function _startAutoRefresh() {
   setTimeout(_regenSitemaps, 8000);
   setInterval(_regenSitemaps, 24 * 60 * _REFRESH_MIN);
 
-  console.log('[scheduler] auto-refresco autónomo activo (news 15m · standings/rumors/transfers 30m · tv 3h · values/stats 6h · portada 2m · sitemaps 24h)');
+  console.log('[scheduler] auto-refresco autónomo activo (news/agenda 15m · stats/standings/rumors/transfers 30m · tv 3h · values 6h · portada 2m · sitemaps 24h)');
 }
 _startAutoRefresh();
 

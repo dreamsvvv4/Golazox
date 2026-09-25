@@ -10297,6 +10297,36 @@ details.trn-cal-jornada[open] > summary.trn-cal-jornada-label::after { content: 
 
 /* -- Profile Tab -------------------------------------------------- */
 #main-profile-wrap { padding: 0 0 80px; }
+
+/* ── Juegos / Carrera Express ─────────────────────────────── */
+#main-games-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 1rem 5rem}
+.games-shell{display:grid;gap:1.25rem}
+.games-head{padding:2.2rem 0 .4rem;border-bottom:1px solid rgba(255,255,255,.09)}
+.games-kicker,.career-tag{display:block;color:#00d4ff;font:700 .73rem/1 'Rajdhani',var(--font);letter-spacing:.12em;margin-bottom:.55rem}
+.games-head h2{font:800 clamp(2rem,5vw,3.6rem)/.95 'Rajdhani',var(--font);letter-spacing:0;margin:0;color:#fff}
+.games-head p{color:#9ca9bd;max-width:650px;margin:.8rem 0 0;font-size:.95rem}
+.games-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
+.games-modes a,.games-modes button{min-height:112px;padding:1rem;text-align:left;color:#dbe7f7;background:#0b1320;border:1px solid rgba(255,255,255,.09);border-radius:6px;text-decoration:none;display:grid;grid-template-columns:auto 1fr;column-gap:.65rem;align-content:center;font:inherit;cursor:pointer}
+.games-modes a:hover,.games-modes button:hover,.games-modes .is-active{border-color:rgba(0,212,255,.55);background:#0e1d2b;transform:translateY(-2px)}
+.games-modes span{grid-row:1/3;font-size:1.45rem}.games-modes strong{font:700 1rem/1.1 'Rajdhani',var(--font);letter-spacing:0}.games-modes small{color:#7f8ca1;margin-top:.25rem}
+.career-zone{border:1px solid rgba(255,255,255,.1);border-radius:8px;background:linear-gradient(135deg,#0c1724 0%,#101723 58%,#111b18 100%);overflow:hidden}
+.career-intro{display:flex;justify-content:space-between;gap:2rem;padding:1.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.career-intro h3{font:800 1.8rem/1 'Rajdhani',var(--font);letter-spacing:0;color:#fff;margin:0}.career-intro p{color:#9ca9bd;margin:.55rem 0 0;max-width:620px}
+.career-promise{min-width:100px;text-align:right}.career-promise b{display:block;color:#55e6a5;font:800 1.35rem/1 'Rajdhani',var(--font)}.career-promise span{color:#8290a4;font-size:.72rem}
+.career-create{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:.75rem;align-items:end;padding:1.5rem}
+.career-create label{display:grid;gap:.35rem;color:#91a0b5;font-size:.72rem;text-transform:uppercase}
+.career-create input,.career-create select{height:44px;border:1px solid rgba(255,255,255,.13);border-radius:5px;background:#08111d;color:#fff;padding:0 .75rem;font:inherit}
+.career-primary{min-height:44px;padding:.65rem 1.2rem;border:0;border-radius:5px;background:#00d4ff;color:#031018;font-weight:800;cursor:pointer}.career-primary:disabled{opacity:.35;cursor:not-allowed}
+.career-game{padding:1.5rem}.career-scoreboard{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.career-scoreboard>div{display:flex;align-items:center;gap:.75rem}.career-scoreboard>div>span{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#00d4ff;color:#07111a;font:800 1.25rem 'Rajdhani',var(--font)}
+.career-scoreboard p{display:grid;margin:0}.career-scoreboard p strong{color:#fff;font:800 1.25rem 'Rajdhani',var(--font)}.career-scoreboard p small{color:#55e6a5}
+.career-scoreboard dl{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:0}.career-scoreboard dl div{display:grid;text-align:center}.career-scoreboard dt{color:#76859a;font-size:.65rem;text-transform:uppercase}.career-scoreboard dd{color:#fff;font:800 1.25rem 'Rajdhani',var(--font);margin:0}
+.career-action{padding:1.3rem 0}.career-question{color:#fff;font-weight:700;margin:0 0 .7rem}.career-focus{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.8rem}.career-focus button{padding:.75rem;border:1px solid rgba(255,255,255,.1);border-radius:5px;background:#09131f;color:#e7effa;font-weight:700;cursor:pointer}.career-focus button small{display:block;color:#738299;font-weight:400;margin-top:.2rem}.career-focus button.is-selected{border-color:#55e6a5;background:#10251f;color:#55e6a5}
+.career-result{padding:1rem;border-left:3px solid #55e6a5;background:rgba(85,230,165,.07);margin:.25rem 0 1.2rem;color:#dfe9f5}.career-result strong{color:#55e6a5}.career-result .career-next{margin-top:.8rem}
+.career-history-wrap h4{font:700 1rem 'Rajdhani',var(--font);color:#fff;margin:0 0 .5rem}.career-history{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.08)}.career-history li{display:grid;grid-template-columns:70px 1fr auto;gap:.75rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.06);color:#a8b5c8;font-size:.82rem}.career-history b{color:#e8f1fb}.career-history em{color:#55e6a5;font-style:normal}
+.career-reset{margin-top:1rem;border:0;background:none;color:#758397;text-decoration:underline;cursor:pointer}
+@media(max-width:800px){.games-modes{grid-template-columns:repeat(2,1fr)}.career-create{grid-template-columns:1fr 1fr}.career-create label:first-child,.career-create .career-primary{grid-column:1/-1}.career-scoreboard{align-items:flex-start;flex-direction:column}.career-scoreboard dl{width:100%;gap:.5rem}.career-focus{grid-template-columns:1fr}}
+@media(max-width:460px){#main-games-wrap{padding-inline:.65rem}.games-modes{grid-template-columns:1fr}.career-intro{flex-direction:column}.career-promise{text-align:left}.career-create{grid-template-columns:1fr}.career-create label,.career-create label:first-child,.career-create .career-primary{grid-column:1}.career-history li{grid-template-columns:58px 1fr}.career-history em{grid-column:2}}
 .gx-profile-inner { max-width: 700px; margin: 0 auto; padding: 16px 12px; display: flex; flex-direction: column; gap: 20px; }
 
 .gx-prof-header {

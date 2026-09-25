@@ -206,6 +206,7 @@ function _countData(d) {
   if (!d) return 0;
   if (Array.isArray(d.list)) return d.list.length;
   if (Array.isArray(d.scorers)) return d.scorers.length;
+  if (Array.isArray(d.days)) return d.days.reduce((total, day) => total + (Array.isArray(day.events) ? day.events.length : 0), 0);
   if (d.fichajes || d.general) return (d.fichajes || []).length + (d.general || []).length;
   return 0;
 }
@@ -214,7 +215,8 @@ function _countData(d) {
 // aunque no se haya vuelto a raspar en la vida de este proceso.
 function _seed(key, entry) {
   if (!entry || _status[key]) return;
-  _status[key] = { state: 'ok', count: _countData(entry.data), lastOk: entry.ts || 0, lastErr: 0, err: '' };
+  const count = _countData(entry.data);
+  _status[key] = { state: count > 0 ? 'ok' : 'empty', count, lastOk: count > 0 ? (entry.ts || 0) : 0, lastErr: 0, err: '' };
 }
 
 function _mark(key, state, count, err) {
@@ -306,11 +308,15 @@ async function getNews() {
     fichajes: fichajes.slice(0, 40),
     general:  general.slice(0, 60),
     updated:  now,
+    source:   'rss',
   };
 
   // Solo cachear si obtuvimos algo; si todo falló, reintentar en la próxima visita.
   if (unique.length > 0) { _cache = { ts: now, data }; _cachePut('news', _cache); _mark('news', 'ok', unique.length); }
-  else _mark('news', 'empty', 0);
+  else {
+    _mark('news', 'empty', 0);
+    if (_cache.data) return { ..._cache.data, source: 'cache' };
+  }
   return data;
 }
 
@@ -513,6 +519,27 @@ async function _refreshSnapshotFromGitHub() {
   } catch (_) { /* GitHub no accesible: seguimos con el snapshot local */ }
 }
 
+const _AUX_SNAPSHOT_RAW_BASE =
+  'https://raw.githubusercontent.com/dreamsvvv4/Golazox/main/match_engine/webapp/data/';
+const _auxSnapshotTs = new Map();
+async function _refreshAuxSnapshotFromGitHub(fileName, localFile, isValid) {
+  const now = Date.now();
+  if (now - (_auxSnapshotTs.get(fileName) || 0) < _SNAP_RAW_TTL) return;
+  _auxSnapshotTs.set(fileName, now);
+  try {
+    const r = await fetch(_AUX_SNAPSHOT_RAW_BASE + fileName, { timeout: 6000, headers: { Accept: 'application/json' } });
+    if (!r.ok) return;
+    const remote = await r.json();
+    if (!isValid(remote)) return;
+    let localUpdated = 0;
+    try { localUpdated = JSON.parse(fs.readFileSync(localFile, 'utf8')).updated || 0; } catch (_) {}
+    if ((remote.updated || 0) > localUpdated) {
+      fs.mkdirSync(_DB_DIR, { recursive: true });
+      fs.writeFileSync(localFile, JSON.stringify(remote), 'utf8');
+    }
+  } catch (_) { /* conserva el snapshot local */ }
+}
+
 
 // Convierte "145,00 mill. €" | "876 mil €" | "Libre" | "Cesión" a estructura.
 function _parseFee(raw) {
@@ -705,7 +732,8 @@ async function getTransfers({ forceRefresh = false } = {}) {
 // ════════════════════════════════════════════════════════════════════
 //  RANKINGS DE JUGADORES  (valor de mercado + estadísticas)
 // ════════════════════════════════════════════════════════════════════
-const RANK_TTL = 6 * 60 * 60 * 1000; // 6 h — cambian despacio
+const RANK_TTL = 6 * 60 * 60 * 1000; // 6 h — los valores cambian despacio
+const STATS_TTL = 30 * 60 * 1000;     // Los goles deben reflejar cada jornada
 
 // Nombre + posición desde una celda "jugador" de Transfermarkt.
 function _playerFromCell($cell) {
@@ -719,6 +747,7 @@ function _playerFromCell($cell) {
 // ── Jugadores más valiosos (valor de mercado) ──
 let _vCache = { ts: 0, data: null };
 const VALUES_URL = 'https://www.transfermarkt.es/marktwertetop/wertvollstespieler';
+const _VALUES_SNAP_FILE = path.join(_DB_DIR, 'values_snapshot.json');
 
 // Fila de valor de mercado: 6 celdas
 // [0]=rango [1]=jugador+pos [2]=edad [3]=nac [4]=club [5]=valor
@@ -734,6 +763,40 @@ function _parseValueRow($, el) {
   return { player, position, age, nat, club, value: fee.value, valueLabel: fee.label };
 }
 
+function _parseValuesHtml(html) {
+  const $ = cheerio.load(html);
+  const list = [];
+  for (const el of $('table.items').first().find('tbody > tr').toArray()) {
+    const player = _parseValueRow($, el);
+    if (player) list.push(player);
+  }
+  return list.slice(0, 50);
+}
+
+function _readValuesSnapshot() {
+  try {
+    const data = JSON.parse(fs.readFileSync(_VALUES_SNAP_FILE, 'utf8'));
+    if (data && Array.isArray(data.list) && data.list.length) return { ...data, source: 'snapshot' };
+  } catch (_) {}
+  return null;
+}
+
+async function snapshotValues(htmlFetcher) {
+  let html;
+  if (htmlFetcher) html = await htmlFetcher(VALUES_URL);
+  else {
+    const r = await fetch(VALUES_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    html = await r.text();
+  }
+  const list = _parseValuesHtml(html);
+  if (!list.length) throw new Error('scrape de valores vacío (¿IP bloqueada por Transfermarkt?)');
+  const data = { list, updated: Date.now(), source: 'snapshot' };
+  fs.mkdirSync(_DB_DIR, { recursive: true });
+  fs.writeFileSync(_VALUES_SNAP_FILE, JSON.stringify(data), 'utf8');
+  return data;
+}
+
 async function getValues() {
   const now = Date.now();
   if (!_vCache.data) { const d = _cacheGet('values'); if (d) { _vCache = d; _seed('values', d); } }
@@ -741,17 +804,24 @@ async function getValues() {
   try {
     const r = await fetch(VALUES_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
     if (!r.ok) throw new Error('HTTP ' + r.status);
-    const $ = cheerio.load(await r.text());
-    const rows = $('table.items').first().find('tbody > tr').toArray();
-    const list = [];
-    for (const el of rows) { const t = _parseValueRow($, el); if (t) list.push(t); }
-    const data = { list: list.slice(0, 50), updated: now };
-    if (list.length) { _vCache = { ts: now, data }; _cachePut('values', _vCache); _mark('values', 'ok', list.length); }
+    const list = _parseValuesHtml(await r.text());
+    const data = { list, updated: now, source: 'live' };
+    if (list.length) {
+      _vCache = { ts: now, data }; _cachePut('values', _vCache); _mark('values', 'ok', list.length);
+      try { fs.writeFileSync(_VALUES_SNAP_FILE, JSON.stringify({ ...data, source: 'snapshot' }), 'utf8'); } catch (_) {}
+    }
     else _mark('values', 'empty', 0);
+    if (list.length) return data;
+    await _refreshAuxSnapshotFromGitHub('values_snapshot.json', _VALUES_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
+    const snap = _readValuesSnapshot();
+    if (snap) return snap;
+    if (_vCache.data && _vCache.data.list && _vCache.data.list.length) return { ..._vCache.data, source: 'cache' };
     return data;
   } catch (e) {
     _mark('values', 'fail', 0, e.message);
-    return _vCache.data || { list: [], updated: 0 };
+    if (_vCache.data && _vCache.data.list && _vCache.data.list.length) return _vCache.data;
+    await _refreshAuxSnapshotFromGitHub('values_snapshot.json', _VALUES_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
+    return _readValuesSnapshot() || { list: [], updated: 0, source: 'unavailable' };
   }
 }
 
@@ -817,17 +887,23 @@ function _ensureContribs(data) {
 async function getStats() {
   const now = Date.now();
   if (!_sCache.data) { const d = _cacheGet('stats'); if (d) { _sCache = d; _seed('stats', d); } }
-  if (_sCache.data && (now - _sCache.ts) < RANK_TTL) return _ensureContribs(_sCache.data);
+  const saison = _currentSaison();
+  const currentLabel = `${saison}/${String(saison + 1).slice(-2)}`;
+  const cacheIsCurrent = _sCache.data && _sCache.data.season === currentLabel;
+  const cacheIsPrimary = cacheIsCurrent && _sCache.data.source === 'espn';
+  if (cacheIsPrimary && (now - _sCache.ts) < STATS_TTL) return _ensureContribs(_sCache.data);
   try {
-    const saison = _currentSaison();
-    let all = await _fetchScorers(saison);
-    let season = saison;
-    // Al inicio de temporada aún no hay datos: usar la temporada anterior.
-    const totalGoals = all.reduce((s, p) => s + p.goals, 0);
-    if (all.length < 20 || totalGoals < 20) {
-      const prev = await _fetchScorers(saison - 1);
-      if (prev.reduce((s, p) => s + p.goals, 0) > totalGoals) { all = prev; season = saison - 1; }
+    // ESPN se actualiza tras cada partido y no bloquea la IP de producción.
+    // Transfermarkt queda como respaldo enriquecido (asistencias/posición).
+    const fromEspn = await _statsFromEspn(now);
+    if (fromEspn) {
+      _sCache = { ts: now, data: fromEspn };
+      _cachePut('stats', _sCache);
+      _mark('stats', 'ok', fromEspn.scorers.length);
+      return fromEspn;
     }
+
+    const all = await _fetchScorers(saison);
     const scorers = all.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists).slice(0, 30);
     const assists = all.slice().sort((a, b) => b.assists - a.assists || b.goals - a.goals).slice(0, 30);
     const contributions = all.slice()
@@ -835,15 +911,11 @@ async function getStats() {
       .filter(p => p.ga > 0)
       .sort((a, b) => b.ga - a.ga || b.goals - a.goals)
       .slice(0, 30);
-    const label = `${season}/${String(season + 1).slice(-2)}`;
-    const data = { scorers, assists, contributions, season: label, updated: now };
+    const data = { scorers, assists, contributions, season: currentLabel, updated: now, source: 'transfermarkt' };
     if (all.length) { _sCache = { ts: now, data }; _cachePut('stats', _sCache); _mark('stats', 'ok', all.length); }
     else _mark('stats', 'empty', 0);
     if (all.length) return data;
-    // Transfermarkt no respondió (IP bloqueada en prod): construimos el Pichichi
-    // desde ESPN, que sí funciona y se actualiza solo según se juegan partidos.
-    const fromEspn = await _statsFromEspn(now);
-    if (fromEspn) { _sCache = { ts: now, data: fromEspn }; _cachePut('stats', _sCache); _mark('stats', 'ok', fromEspn.scorers.length); return fromEspn; }
+    if (_sCache.data) return { ..._ensureContribs(_sCache.data), source: 'cache' };
     return data;
   } catch (e) {
     _mark('stats', 'fail', 0, e.message);
@@ -947,7 +1019,7 @@ async function getRumors() {
     for (const el of trs) { const it = _parseRumorRow($, el); if (it) list.push(it); }
     // Los que tienen probabilidad primero (mayor a menor); los sin % al final.
     list.sort((a, b) => (b.prob == null ? -1 : b.prob) - (a.prob == null ? -1 : a.prob));
-    const data = { list: list.slice(0, 30), updated: now };
+    const data = { list: list.slice(0, 30), updated: now, source: 'live' };
     if (list.length) {
       _rCache = { ts: now, data }; _cachePut('rumors', _rCache); _mark('rumors', 'ok', list.length);
       try { _writeRumorsSnapshot(data); } catch (_) {} // mantener snapshot fresco donde el scrape funciona
@@ -956,15 +1028,19 @@ async function getRumors() {
     // Scrape vacío (IP bloqueada por TM o cambió el HTML): servir el snapshot
     // commiteado si existe, en vez de dejar la pestaña de rumores vacía.
     _mark('rumors', 'empty', 0); console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)');
+    await _refreshAuxSnapshotFromGitHub('rumors_snapshot.json', _RUMORS_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
     const snap = _readRumorsSnapshot();
     if (snap) { _rCache = { ts: now, data: snap }; return snap; }
+    if (_rCache.data) return { ..._rCache.data, source: 'cache' };
     return data;
   } catch (e) {
     _mark('rumors', 'fail', 0, e.message);
     console.warn('[news] getRumors falló:', e.message);
-    if (_rCache.data) return _rCache.data;
+    if (_rCache.data && _rCache.data.source === 'live') return _rCache.data;
+    await _refreshAuxSnapshotFromGitHub('rumors_snapshot.json', _RUMORS_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
     const snap = _readRumorsSnapshot();
     if (snap) { _rCache = { ts: now, data: snap }; return snap; }
+    if (_rCache.data) return _rCache.data;
     return { list: [], updated: 0 };
   }
 }
@@ -972,10 +1048,15 @@ async function getRumors() {
 // Genera y persiste el snapshot de rumores desde una IP que SÍ puede scrapear
 // Transfermarkt. Se commitea y despliega para que prod (IP bloqueada) lo sirva.
 // Lanza si el scrape viene vacío para no sobrescribir un snapshot bueno.
-async function snapshotRumors() {
-  const r = await fetch(RUMORS_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
-  if (!r.ok) throw new Error('HTTP ' + r.status);
-  const $ = cheerio.load(await r.text());
+async function snapshotRumors(htmlFetcher) {
+  let html;
+  if (htmlFetcher) html = await htmlFetcher(RUMORS_URL);
+  else {
+    const r = await fetch(RUMORS_URL, { timeout: FETCH_TIMEOUT, headers: _TM_HEADERS });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    html = await r.text();
+  }
+  const $ = cheerio.load(html);
   const trs = $('table.items').first().children('tbody').children('tr').toArray();
   const list = [];
   for (const el of trs) { const it = _parseRumorRow($, el); if (it) list.push(it); }
@@ -1149,6 +1230,33 @@ function _parseTvDate(txt) {
   return new Date(parseInt(m[3], 10), mon, parseInt(m[1], 10));
 }
 
+async function _tvFallbackFromEspn(now) {
+  const live = await espn.getEspnUpcoming(2).catch(() => ({ events: [] }));
+  if (!live.events || !live.events.length) return null;
+  const grouped = new Map();
+  for (const event of live.events) {
+    const date = new Date(event._ts || now);
+    const key = date.toISOString().slice(0, 10);
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key).push({
+      time: event.time || '',
+      competition: event.competition || '',
+      teams: `${event.home} - ${event.away}`,
+      channel: 'Canal por confirmar',
+      big: _TV_BIG_RE.test(event.competition || ''),
+    });
+  }
+  const todayKey = new Date(now).toISOString().slice(0, 10);
+  const days = Array.from(grouped.entries()).sort((a, b) => a[0].localeCompare(b[0])).slice(0, 3).map(([key, events]) => {
+    const date = new Date(`${key}T12:00:00`);
+    const diff = Math.round((date.getTime() - new Date(`${todayKey}T12:00:00`).getTime()) / 86400000);
+    const label = diff === 0 ? 'Hoy' : diff === 1 ? 'Mañana' : date.toLocaleDateString('es-ES', { weekday: 'long' });
+    events.sort((a, b) => (b.big - a.big) || a.time.localeCompare(b.time));
+    return { label, dateStr: date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }), events: events.slice(0, 20) };
+  });
+  return { days, updated: live.updated || now, source: 'espn-schedule' };
+}
+
 async function getTvGuide() {
   const now = Date.now();
   if (!_tvCache.data) { const d = _cacheGet('tvguide'); if (d) { _tvCache = d; _seed('tvguide', d); } }
@@ -1223,19 +1331,35 @@ async function getTvGuide() {
     }
 
     const total = days.reduce((s, d) => s + d.events.length, 0);
-    const data = { days, updated: now };
+    const data = { days, updated: now, source: 'marca' };
     if (total) { _tvCache = { ts: now, data }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', total); }
-    else { _mark('tvguide', 'empty', 0); console.warn('[news] getTvGuide: 0 partidos parseados (¿cambió el HTML de Marca?)'); }
+    else {
+      console.warn('[news] getTvGuide: 0 partidos parseados; usando horarios ESPN sin canal');
+      const fallback = await _tvFallbackFromEspn(now);
+      if (fallback) {
+        const fallbackTotal = fallback.days.reduce((sum, day) => sum + day.events.length, 0);
+        _tvCache = { ts: now, data: fallback }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', fallbackTotal);
+        return fallback;
+      }
+      _mark('tvguide', 'empty', 0);
+    }
     return data;
   } catch (e) {
     _mark('tvguide', 'fail', 0, e.message);
     console.warn('[news] getTvGuide falló:', e.message);
-    return _tvCache.data || { days: [], updated: 0 };
+    if (_tvCache.data && (_tvCache.data.days || []).some(day => day.events && day.events.length)) return _tvCache.data;
+    const fallback = await _tvFallbackFromEspn(now);
+    if (fallback) {
+      const fallbackTotal = fallback.days.reduce((sum, day) => sum + day.events.length, 0);
+      _tvCache = { ts: now, data: fallback }; _cachePut('tvguide', _tvCache); _mark('tvguide', 'ok', fallbackTotal);
+      return fallback;
+    }
+    return { days: [], updated: 0, source: 'unavailable' };
   }
 }
 
 module.exports = {
-  getNews, getTransfers, snapshotTransfers, getValues, getStats, getRumors, snapshotRumors,
+  getNews, getTransfers, snapshotTransfers, getValues, snapshotValues, getStats, getRumors, snapshotRumors,
   getAgenda, getSalaries, getLegends, getStatus, getTvGuide,
   FEEDS, IMG_HOSTS,
 };
