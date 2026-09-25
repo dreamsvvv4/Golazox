@@ -170,7 +170,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=79325a6c" />
+  <link rel="stylesheet" href="style.min.css?v=af6b5a1e" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -2075,45 +2075,68 @@
         <a href="/?tab=match" data-view="match"><span>⚡</span><strong>Partido rápido</strong><small>Cualquier equipo y época</small></a>
         <a href="/?tab=pen" data-view="pen"><span>🥅</span><strong>Penaltis</strong><small>Decide desde los once metros</small></a>
         <a href="/?tab=trn" data-view="trn"><span>🏆</span><strong>Torneo</strong><small>Crea tu propia competición</small></a>
-        <button type="button" class="is-active" id="games-career-shortcut"><span>👟</span><strong>Carrera Express</strong><small>De promesa a leyenda</small></button>
+        <button type="button" class="is-active" id="games-career-shortcut"><span>🧠</span><strong>Modo Carrera</strong><small>Dirige tu propio club</small></button>
       </nav>
 
       <section class="career-zone" id="career-zone" aria-labelledby="career-title">
         <div class="career-intro">
           <div>
-            <span class="career-tag">PROTOTIPO JUGABLE</span>
-            <h3 id="career-title">Carrera Express</h3>
-            <p>Empieza con 16 años. Elige cómo entrenar, completa temporadas y construye un legado antes de retirarte.</p>
+            <span class="career-tag">DESPACHO DEL MÁNAGER</span>
+            <h3 id="career-title">Modo Carrera</h3>
+            <p>Vive el fútbol como entrenador, seleccionador o jugador. Cada decisión cambia tu historia.</p>
           </div>
-          <div class="career-promise"><b>3-5 min</b><span>por carrera</span></div>
+          <div class="career-promise"><b>18</b><span>jornadas por temporada</span></div>
         </div>
 
         <form id="career-create" class="career-create">
-          <label>Nombre del jugador<input id="career-name" maxlength="24" required placeholder="Tu nombre" autocomplete="off"></label>
-          <label>Posición<select id="career-position"><option value="DEL">Delantero</option><option value="MED">Centrocampista</option><option value="DEF">Defensa</option><option value="POR">Portero</option></select></label>
-          <label>Estilo<select id="career-style"><option value="tecnico">Técnico</option><option value="fisico">Físico</option><option value="creador">Creador</option><option value="lider">Líder</option></select></label>
-          <button type="submit" class="career-primary">Comenzar carrera</button>
+          <label>Tipo de carrera<select id="career-role"><option value="manager">Entrenador de club</option><option value="selector">Seleccionador nacional</option><option value="player">Jugador profesional</option></select></label>
+          <label>Tu nombre<input id="career-name" maxlength="24" required placeholder="Nombre" autocomplete="off"></label>
+          <label>Competición<select id="career-league"><option value="🇪🇸 La Liga">LaLiga</option><option value="🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League">Premier League</option><option value="🇮🇹 Serie A">Serie A</option><option value="🇩🇪 Bundesliga">Bundesliga</option><option value="🇫🇷 Ligue 1">Ligue 1</option><option value="🇧🇷 Brasileirão">Brasileirão</option><option value="🌎 Argentina Primera">Argentina Primera</option></select></label>
+          <label>Club<select id="career-team" disabled><option>Cargando clubes…</option></select></label>
+          <label id="career-position-field" class="hidden">Posición<select id="career-player-position"><option value="ST">Delantero</option><option value="AM">Mediapunta</option><option value="CM">Centrocampista</option><option value="CB">Defensa</option><option value="GK">Portero</option></select></label>
+          <label id="career-style-field" class="hidden">Perfil<select id="career-player-style"><option value="technical">Técnico</option><option value="physical">Físico</option><option value="creator">Creador</option><option value="leader">Líder</option></select></label>
+          <button type="submit" class="career-primary" id="career-start" disabled>Firmar contrato</button>
         </form>
 
         <div id="career-game" class="career-game hidden" aria-live="polite">
           <div class="career-scoreboard">
-            <div><span id="career-avatar">10</span><p><strong id="career-player">—</strong><small id="career-club">Cantera local</small></p></div>
-            <dl><div><dt>Edad</dt><dd id="career-age">16</dd></div><div><dt>Media</dt><dd id="career-rating">58</dd></div><div><dt>Valor</dt><dd id="career-value">0,5 M€</dd></div><div><dt>Temporada</dt><dd id="career-season">1</dd></div></dl>
+            <div class="career-identity"><img id="career-badge" alt=""><p><strong id="career-club">—</strong><small id="career-manager">—</small></p></div>
+            <dl><div><dt>Jornada</dt><dd id="career-round">1/18</dd></div><div><dt>Posición</dt><dd id="career-position">—</dd></div><div><dt>Presupuesto</dt><dd id="career-budget">—</dd></div><div><dt>Directiva</dt><dd id="career-board">—</dd></div></dl>
           </div>
 
-          <div id="career-action" class="career-action">
-            <p class="career-question">¿Dónde concentras el entrenamiento?</p>
-            <div class="career-focus" role="group" aria-label="Tipo de entrenamiento">
-              <button type="button" data-focus="tecnica">Técnica <small>más goles y asistencias</small></button>
-              <button type="button" data-focus="fisico">Físico <small>más partidos y regularidad</small></button>
-              <button type="button" data-focus="mental">Mental <small>mejor media y títulos</small></button>
+          <nav class="career-tabs" aria-label="Áreas del club">
+            <button type="button" class="is-active" data-career-tab="hub">Resumen</button>
+            <button type="button" data-career-tab="squad">Plantilla</button>
+            <button type="button" data-career-tab="tactics">Táctica</button>
+            <button type="button" data-career-tab="calendar">Calendario</button>
+            <button type="button" data-career-tab="table">Clasificación</button>
+            <button type="button" data-career-tab="competitions">Competiciones</button>
+            <button type="button" data-career-tab="market">Mercado</button>
+            <button type="button" data-career-tab="office">Despacho</button>
+          </nav>
+
+          <div class="career-panel is-active" data-career-panel="hub">
+            <div class="career-hub-grid">
+              <article class="career-next"><span>PRÓXIMO PARTIDO</span><div id="career-next-match"></div><div class="career-sim-actions"><button type="button" id="career-play-match" class="career-primary">Jugar jornada</button><button type="button" id="career-sim-season">Simular temporada</button><button type="button" id="career-sim-career">Simular carrera completa</button></div></article>
+              <article class="career-inbox"><span>BANDEJA DEL MÍSTER</span><div id="career-inbox"></div></article>
             </div>
-            <button type="button" id="career-play-season" class="career-primary" disabled>Jugar temporada</button>
+            <div class="career-decisions">
+              <label>Plan semanal<select id="career-training"><option value="balanced">Equilibrado</option><option value="intense">Intensidad alta</option><option value="recovery">Recuperación</option><option value="youth">Cantera</option></select></label>
+              <label>Charla al equipo<select id="career-talk"><option value="calm">Sin presión</option><option value="demand">Exigir victoria</option><option value="motivate">Motivar al grupo</option></select></label>
+              <label>Prioridad del club<select id="career-priority"><option value="sport">Resultados</option><option value="finance">Sanear cuentas</option><option value="fans">Afición</option></select></label>
+            </div>
+            <div id="career-result" class="career-result hidden"></div>
           </div>
 
-          <div id="career-result" class="career-result hidden"></div>
-          <div class="career-history-wrap"><h4>Tu historia</h4><ol id="career-history" class="career-history"></ol></div>
-          <button type="button" id="career-reset" class="career-reset">Borrar carrera</button>
+          <div class="career-panel" data-career-panel="squad"><div class="career-section-head"><div><span>VESTUARIO</span><h4>Convocatoria y once titular</h4></div><b id="career-lineup-count">0/11</b></div><div id="career-squad" class="career-squad"></div></div>
+          <div class="career-panel" data-career-panel="tactics"><div class="career-tactics" id="career-tactics"></div></div>
+          <div class="career-panel" data-career-panel="calendar"><div id="career-calendar" class="career-calendar"></div></div>
+          <div class="career-panel" data-career-panel="table"><div id="career-table" class="career-table"></div></div>
+          <div class="career-panel" data-career-panel="competitions"><div id="career-competitions" class="career-competitions"></div></div>
+          <div class="career-panel" data-career-panel="market"><div id="career-market" class="career-market"></div></div>
+          <div class="career-panel" data-career-panel="office"><div id="career-office" class="career-office"></div></div>
+
+          <footer class="career-footer"><span id="career-save-state">Guardado automático</span><button type="button" id="career-reset" class="career-reset">Abandonar carrera</button></footer>
         </div>
       </section>
     </section>
@@ -2263,6 +2286,6 @@
   <div id="pm-tt-portal" aria-hidden="true"></div>
   <script src="/subscribe.js?v=94c31cf5" defer></script>
   <script src="/home-hub.js?v=41ebf10c" defer></script>
-  <script src="/juegos.js?v=cc31b4a0" defer></script>
+  <script src="/juegos.js?v=7745d60b" defer></script>
 </body>
 </html>
