@@ -17,6 +17,7 @@ const getArg = (flag, fallback) => {
 const CONFIG_FILE = path.resolve(__dirname, getArg('--config', 'league-expansion.json'));
 const STATE_FILE = path.resolve(__dirname, getArg('--state', 'data/league-expansion-progress.json'));
 const MANIFEST_FILE = path.join(__dirname, 'data', 'expanded-leagues.json');
+const OFFICIAL_FILE = path.join(__dirname, 'data', 'official-leagues.json');
 const META_FILE = path.join(__dirname, 'squads-meta.json');
 const SQUADS_DIR = path.join(__dirname, 'squads');
 const BADGES_DIR = path.join(__dirname, 'public', 'img', 'badges');
@@ -66,9 +67,13 @@ function loadConfig() {
 
 function localClubsById() {
   const clubs = new Map();
+  const official = new Set(Object.values(readJson(OFFICIAL_FILE, {})).flat());
   for (const file of fs.readdirSync(SQUADS_DIR).filter(name => name.endsWith('.json'))) {
     const data = readJson(path.join(SQUADS_DIR, file), null);
-    if (Number.isInteger(data?.id) && data.id > 0) clubs.set(data.id, data.slug || file.replace(/\.json$/, ''));
+    if (!Number.isInteger(data?.id) || data.id <= 0) continue;
+    const slug = data.slug || file.replace(/\.json$/, '');
+    const existing = clubs.get(data.id);
+    if (!existing || (official.has(slug) && !official.has(existing))) clubs.set(data.id, slug);
   }
   return clubs;
 }
