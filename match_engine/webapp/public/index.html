@@ -170,7 +170,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=82faee08" />
+  <link rel="stylesheet" href="style.min.css?v=811a5d30" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -2085,7 +2085,7 @@
             <h3 id="career-title">Modo Carrera</h3>
             <p>Vive el fútbol como entrenador, seleccionador o jugador. Cada decisión cambia tu historia.</p>
           </div>
-          <div class="career-promise"><b>18</b><span>jornadas por temporada</span></div>
+          <div class="career-promise"><b>—</b><span>calendario completo</span></div>
         </div>
 
         <form id="career-create" class="career-create">
@@ -2105,14 +2105,15 @@
           </div>
 
           <nav class="career-tabs" aria-label="Áreas del club">
-            <button type="button" class="is-active" data-career-tab="hub">Resumen</button>
-            <button type="button" data-career-tab="squad">Plantilla</button>
-            <button type="button" data-career-tab="tactics">Táctica</button>
-            <button type="button" data-career-tab="calendar">Calendario</button>
-            <button type="button" data-career-tab="table">Clasificación</button>
-            <button type="button" data-career-tab="competitions">Competiciones</button>
-            <button type="button" data-career-tab="market">Mercado</button>
-            <button type="button" data-career-tab="office">Despacho</button>
+            <button type="button" class="is-active" data-career-tab="hub"><span class="career-tab-icon">⌂</span><span>Resumen</span></button>
+            <button type="button" data-career-tab="squad"><span class="career-tab-icon">XI</span><span>Plantilla</span></button>
+            <button type="button" data-career-tab="tactics"><span class="career-tab-icon">↗</span><span>Táctica</span></button>
+            <button type="button" data-career-tab="calendar"><span class="career-tab-icon">▦</span><span>Calendario</span></button>
+            <button type="button" data-career-tab="table"><span class="career-tab-icon">#</span><span>Clasificación</span></button>
+            <button type="button" data-career-tab="competitions"><span class="career-tab-icon">★</span><span>Competiciones</span></button>
+            <button type="button" data-career-tab="awards"><span class="career-tab-icon">◆</span><span>Premios</span></button>
+            <button type="button" data-career-tab="market"><span class="career-tab-icon">↔</span><span>Mercado</span></button>
+            <button type="button" data-career-tab="office"><span class="career-tab-icon">€</span><span>Despacho</span></button>
           </nav>
 
           <div class="career-panel is-active" data-career-panel="hub">
@@ -2134,6 +2135,7 @@
           <div class="career-panel" data-career-panel="calendar"><div id="career-calendar" class="career-calendar"></div></div>
           <div class="career-panel" data-career-panel="table"><div id="career-table" class="career-table"></div></div>
           <div class="career-panel" data-career-panel="competitions"><div id="career-competitions" class="career-competitions"></div></div>
+          <div class="career-panel" data-career-panel="awards"><div id="career-awards" class="career-awards"></div></div>
           <div class="career-panel" data-career-panel="market"><div id="career-market" class="career-market"></div></div>
           <div class="career-panel" data-career-panel="office"><div id="career-office" class="career-office"></div></div>
 
@@ -2287,6 +2289,6 @@
   <div id="pm-tt-portal" aria-hidden="true"></div>
   <script src="/subscribe.js?v=94c31cf5" defer></script>
   <script src="/home-hub.js?v=41ebf10c" defer></script>
-  <script src="/juegos.js?v=56540474" defer></script>
+  <script src="/juegos.js?v=efa5b8c4" defer></script>
 </body>
 </html>

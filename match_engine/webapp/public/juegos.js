@@ -1,7 +1,9 @@
 (function () {
   'use strict';
 
-  const KEY = 'gx_manager_career_v5';
+  const KEY = 'gx_manager_career_v6';
+  const CAREER_VERSION = 6;
+  const MODERN_SEASON = 2025;
   const ROLE_LABELS = { manager: 'Entrenador', selector: 'Seleccionador', player: 'Jugador' };
   const FORMATIONS = ['4-3-3', '4-4-2', '4-2-3-1', '3-5-2', '3-4-3', '5-3-2'];
   const PYRAMIDS = [
@@ -28,14 +30,19 @@
   const average = (items, key) => items.reduce((sum, item) => sum + Number(item[key] || 0), 0) / Math.max(1, items.length);
   const teamKey = team => teamName(team).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
     .replace(/\b(fc|cf|cd|ud|rc|sd|ac|as|ss|sc|sm|club|futbol|football)\b/g, '').replace(/[^a-z0-9]/g, '');
+  const isModernTeam = team => team?.seasons?.some(season => Number.parseInt(season, 10) >= MODERN_SEASON);
+  const isCareerClub = team => isModernTeam(team) && team.group !== '🌍 Selecciones' && !/Otros|Fantasy XI|América del Sur/i.test(team.group || '');
+  const findCareerTeam = (slug, group) => catalog.find(team => team.slug === slug && isCareerClub(team) && (!group || team.group === group));
+  const activeEra = team => (team?.seasons || []).filter(season => Number.parseInt(season, 10) >= MODERN_SEASON).sort((a, b) => Number(b) - Number(a))[0] || '';
   const divisionProfile = group => {
     const pyramid = PYRAMIDS.find(item => item.first === group || item.second === group);
     return pyramid ? { ...pyramid, tier: pyramid.first === group ? 1 : 2 } : { first: group, second: null, tier: 1 };
   };
-  const catalogGroup = group => catalog.filter(team => team.group === group && team.seasons?.length);
+  const uniqueTeams = teams => [...new Map(teams.map(team => [teamKey(team), team])).values()];
+  const catalogGroup = group => uniqueTeams(catalog.filter(team => team.group === group && isModernTeam(team)));
   const careerTeam = team => ({
     slug: team.slug, name: teamName(team), nameEs: team.nameEs, badge: team.badge,
-    seasons: team.seasons, ovr: team.ovr || 74, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0
+    group: team.group, seasons: team.seasons, ovr: team.ovr || 74, seasonForm: random(-3, 3), p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0
   });
 
   function save() {
@@ -47,14 +54,14 @@
   function load() {
     try {
       const parsed = JSON.parse(localStorage.getItem(KEY));
-      return parsed?.version === 5 && parsed.club && parsed.schedule ? parsed : null;
+      return parsed?.version === CAREER_VERSION && parsed.club && parsed.schedule ? parsed : null;
     } catch (_) {
       return null;
     }
   }
 
   function makeSchedule(teams) {
-    const ids = teams.map(team => team.slug);
+    const ids = shuffled(teams.map(team => team.slug));
     if (ids.length % 2) ids.push(null);
     const fixed = ids[0];
     const rotating = ids.slice(1);
@@ -87,7 +94,7 @@
 
   async function getSquad(club) {
     try {
-      const era = club.seasons?.[0] || '';
+      const era = activeEra(club);
       const response = await fetch(`/lookup?team=${encodeURIComponent(club.slug)}&era=${encodeURIComponent(era)}`);
       if (!response.ok) throw new Error('Plantilla no disponible');
       const data = await response.json();
@@ -107,7 +114,7 @@
   function matchingTeams() {
     const role = el('career-role').value;
     const group = role === 'selector' ? '🌍 Selecciones' : el('career-league').value;
-    return catalog.filter(team => team.group === group && team.seasons?.length);
+    return uniqueTeams(catalog.filter(team => team.group === group && isModernTeam(team)));
   }
 
   function populateTeams() {
@@ -115,6 +122,15 @@
     el('career-team').innerHTML = teams.map(team => `<option value="${clean(team.slug)}">${clean(teamName(team))} · ${team.ovr || '—'}</option>`).join('');
     el('career-team').disabled = !teams.length;
     el('career-start').disabled = !teams.length;
+    const role = el('career-role').value;
+    const careerTeams = role === 'selector' ? Math.min(16, teams.length) : teams.length;
+    const rounds = careerTeams > 1 ? (careerTeams % 2 ? careerTeams * 2 : (careerTeams - 1) * 2) : 0;
+    document.querySelector('.career-promise b').textContent = rounds || '—';
+    document.querySelector('.career-promise span').textContent = roleRoundsLabel(role, careerTeams, rounds);
+  }
+
+  function roleRoundsLabel(role, teams, rounds) {
+    return role === 'selector' ? `${teams} selecciones disponibles` : `${teams} equipos · ida y vuelta`;
   }
 
   function populateLeagues() {
@@ -122,7 +138,7 @@
     const previous = select.value;
     const counts = new Map();
     catalog.forEach(team => {
-      if (team.group && team.group !== '🌍 Selecciones' && team.seasons?.length) counts.set(team.group, (counts.get(team.group) || 0) + 1);
+      if (team.group && isCareerClub(team)) counts.set(team.group, (counts.get(team.group) || 0) + 1);
     });
     const groups = [...counts.entries()].filter(([, count]) => count >= 2).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     select.innerHTML = groups.map(([group, count]) => `<option value="${clean(group)}">${clean(group)} · ${count} equipos</option>`).join('');
@@ -149,17 +165,15 @@
       .filter(team => { const key = teamKey(team); if (seen.has(key)) return false; seen.add(key); return true; });
     const selectedKey = teamKey(selected);
     const rivals = available.filter(team => team.slug !== selected.slug && teamKey(team) !== selectedKey);
-    const chosen = [];
-    for (let index = 0; index < Math.min(9, rivals.length); index++) {
-      const poolIndex = Math.round(index * Math.max(0, rivals.length - 1) / Math.max(1, Math.min(9, rivals.length) - 1));
-      if (!chosen.some(team => team.slug === rivals[poolIndex].slug)) chosen.push(rivals[poolIndex]);
-    }
-    rivals.forEach(team => { if (chosen.length < 9 && !chosen.some(item => item.slug === team.slug)) chosen.push(team); });
-    return chosen.concat(selected).map(careerTeam);
+    return rivals.concat(selected).map(careerTeam);
   }
 
   function competitionTeams(selected, role) {
-    if (role === 'selector') return careerLeagueTeams('🌍 Selecciones', selected);
+    if (role === 'selector') {
+      const national = catalogGroup('🌍 Selecciones');
+      const regional = national.filter(team => UEFA.has(selected.slug) ? UEFA.has(team.slug) : CONMEBOL.has(selected.slug) ? CONMEBOL.has(team.slug) : !UEFA.has(team.slug) && !CONMEBOL.has(team.slug));
+      return shuffled(regional.filter(team => team.slug !== selected.slug)).slice(0, 15).concat(selected).map(careerTeam);
+    }
     return careerLeagueTeams(selected.group, selected);
   }
 
@@ -196,7 +210,7 @@
   }
 
   function simulateFootballWorld() {
-    const groups = state.world?.groups || Object.fromEntries([...new Set(catalog.filter(team => team.group !== '🌍 Selecciones').map(team => team.group))]
+    const groups = state.world?.groups || Object.fromEntries([...new Set(catalog.filter(isCareerClub).map(team => team.group))]
       .map(group => [group, catalogGroup(group).map(team => team.slug)]));
     const rankings = {};
     Object.entries(groups).forEach(([group, slugs]) => {
@@ -226,39 +240,62 @@
     return copy;
   }
 
-  function createCompetition(id, name, type, participants, seeded) {
+  function createCompetition(id, name, type, participants, seeded, requestedSize = 16) {
     const unique = [...new Set(participants)];
     const user = state.club.slug;
     const rivals = unique.filter(slug => slug !== user);
+    const availableSize = Math.max(2, 2 ** Math.floor(Math.log2(Math.max(2, unique.length))));
+    const bracketSize = Math.min(requestedSize, availableSize);
     const selectedRivals = seeded
-      ? rivals.sort((a, b) => (findTeam(b)?.ovr || 0) - (findTeam(a)?.ovr || 0)).slice(0, 7)
-      : shuffled(rivals).slice(0, 7);
-    const draw = unique.includes(user) ? selectedRivals.concat(user) : selectedRivals.concat(unique.find(slug => !selectedRivals.includes(slug))).filter(Boolean);
+      ? rivals.sort((a, b) => (findTeam(b)?.ovr || 0) - (findTeam(a)?.ovr || 0)).slice(0, bracketSize - 1)
+      : shuffled(rivals).slice(0, bracketSize - 1);
+    const draw = unique.includes(user) ? selectedRivals.concat(user) : shuffled(unique).slice(0, bracketSize);
     return { id, name, type, participants: shuffled(draw), rounds: [], status: 'ready', champion: null };
+  }
+
+  function groupRanking(group) {
+    return state.world?.rankings?.[group]
+      || catalogGroup(group).sort((a, b) => (b.ovr || 0) - (a.ovr || 0)).map(team => team.slug);
+  }
+
+  function rankedPool(groups, from, to) {
+    return [...new Set(groups.flatMap(group => groupRanking(group).slice(from, to)))];
   }
 
   function buildSeasonCompetitions() {
     const slugs = state.teams.map(team => team.slug);
     if (state.role === 'selector') {
-      const national = catalog.filter(team => team.group === '🌍 Selecciones');
-      if (state.season % 2 === 0) return [createCompetition('world', 'Mundial', 'Selecciones · fase final', national.map(team => team.slug))];
-      if (UEFA.has(state.club.slug)) return [createCompetition('euro', 'Eurocopa', 'UEFA · fase final', national.filter(team => UEFA.has(team.slug)).map(team => team.slug))];
-      if (CONMEBOL.has(state.club.slug)) return [createCompetition('copa-america', 'Copa América', 'CONMEBOL · fase final', national.filter(team => CONMEBOL.has(team.slug)).map(team => team.slug))];
-      return [createCompetition('continental', 'Copa continental', 'Selecciones · fase final', national.filter(team => !UEFA.has(team.slug) && !CONMEBOL.has(team.slug)).map(team => team.slug))];
+      const national = catalog.filter(team => team.group === '🌍 Selecciones' && isModernTeam(team));
+      if (state.season % 2 === 0) return [createCompetition('world', 'Mundial', 'Selecciones · fase final', national.map(team => team.slug), false, 16)];
+      if (UEFA.has(state.club.slug)) return [createCompetition('euro', 'Eurocopa', 'UEFA · fase final', national.filter(team => UEFA.has(team.slug)).map(team => team.slug), false, 16)];
+      if (CONMEBOL.has(state.club.slug)) return [createCompetition('copa-america', 'Copa América', 'CONMEBOL · fase final', national.filter(team => CONMEBOL.has(team.slug)).map(team => team.slug), false, 16)];
+      return [createCompetition('continental', 'Copa continental', 'Selecciones · fase final', national.filter(team => !UEFA.has(team.slug) && !CONMEBOL.has(team.slug)).map(team => team.slug), false, 16)];
     }
     const division = divisionProfile(state.league);
-    const continentalName = /libertadores|brasil|argentina|conmebol/i.test(state.league) ? 'Copa Libertadores' : 'Champions League';
-    const isSouthAmerica = continentalName === 'Copa Libertadores';
-    const regionalPool = catalog.filter(team => team.seasons?.length && (isSouthAmerica
-      ? /Brasileirão|Argentina Primera|América del Sur/.test(team.group || '')
-      : /La Liga$|Premier League|Serie A$|Bundesliga$|Ligue 1$|Eredivisie|Liga Portugal/.test(team.group || '')));
-    const continentalPool = state.world?.qualifiers?.length
-      ? regionalPool.filter(team => state.world.qualifiers.includes(team.slug))
-      : regionalPool.filter(team => catalogGroup(team.group).sort((a, b) => (b.ovr || 0) - (a.ovr || 0)).slice(0, 4).some(item => item.slug === team.slug));
-    const ranked = division.tier === 1 && (state.world?.qualifiers?.includes(state.club.slug)
-      ?? state.teams.slice().sort((a, b) => b.ovr - a.ovr).findIndex(team => team.slug === state.club.slug) < 4);
-    const competitions = [createCompetition('cup', 'Copa nacional', 'Eliminación directa', slugs)];
-    if (ranked) competitions.push(createCompetition('continental', continentalName, 'Fase final · élite continental', continentalPool.map(team => team.slug).concat(state.club.slug), true));
+    const groups = [...new Set(catalog.filter(isCareerClub).map(team => team.group))];
+    const europeanGroups = groups.filter(group => /La Liga$|Premier League|Serie A$|Bundesliga$|Ligue 1$|Eredivisie|Liga Portugal/.test(group || ''));
+    const southAmericanGroups = groups.filter(group => /Brasileirão|Argentina Primera|América del Sur/.test(group || ''));
+    const isSouthAmerica = southAmericanGroups.includes(state.league);
+    const ownRanking = groupRanking(state.league);
+    const champions = rankedPool(europeanGroups, 0, 4);
+    const europa = rankedPool(europeanGroups, 4, 6);
+    const conference = rankedPool(europeanGroups, 6, 8);
+    const libertadores = rankedPool(southAmericanGroups, 0, 4);
+    const sudamericana = rankedPool(southAmericanGroups, 4, 8);
+    const competitions = [createCompetition('cup', 'Copa nacional', 'Eliminación directa · 16 equipos', slugs, false, 16)];
+    if (division.tier === 1 && isSouthAmerica && libertadores.includes(state.club.slug)) competitions.push(createCompetition('libertadores', 'Copa Libertadores', 'Élite de Sudamérica · 16 equipos', libertadores, true, 16));
+    else if (division.tier === 1 && isSouthAmerica && sudamericana.includes(state.club.slug)) competitions.push(createCompetition('sudamericana', 'Copa Sudamericana', 'Torneo continental · 16 equipos', sudamericana, false, 16));
+    else if (division.tier === 1 && champions.includes(state.club.slug)) competitions.push(createCompetition('champions', 'Champions League', 'Élite europea · 16 equipos', champions, true, 16));
+    else if (division.tier === 1 && europa.includes(state.club.slug)) competitions.push(createCompetition('europa', 'Europa League', 'Torneo continental · 16 equipos', europa, false, 16));
+    else if (division.tier === 1 && conference.includes(state.club.slug)) competitions.push(createCompetition('conference', 'Conference League', 'Torneo continental · 16 equipos', conference, false, 16));
+    const previous = state.history[state.history.length - 1];
+    if (previous && (previous.position === 1 || previous.trophies?.some(trophy => /Copa nacional/.test(trophy)))) {
+      const rival = ownRanking.find(slug => slug !== state.club.slug);
+      if (rival) competitions.push(createCompetition('supercup', 'Supercopa', 'Campeones nacionales · partido único', [state.club.slug, rival], true, 2));
+    }
+    if (state.season % 4 === 0 && previous?.trophies?.some(trophy => /Champions|Libertadores/.test(trophy))) {
+      competitions.push(createCompetition('club-world-cup', 'Mundial de Clubes', 'Campeones continentales · 16 equipos', champions.concat(libertadores, state.club.slug), true, 16));
+    }
     return competitions;
   }
 
@@ -267,11 +304,44 @@
     return Number(clamp(((player.rating - 55) ** 2) / 13 * ageFactor, 0.8, 145).toFixed(1));
   }
 
+  function simulatedPlayerStats(player) {
+    const matches = Math.max(18, state.schedule.length);
+    const positionFactor = player.position === 'ST' ? 1.3 : ['LW', 'RW', 'AM'].includes(player.position) ? 1 : ['CM', 'RM', 'LM'].includes(player.position) ? .55 : .18;
+    const expectedGoals = clamp((player.rating - 58) * .62 * positionFactor * (matches / 38), .5, 34);
+    let goals = 0;
+    for (let period = 0; period < 6; period++) goals += poisson(expectedGoals / 6);
+    const assists = Math.max(0, Math.round(goals * random(20, 65) / 100 + (player.rating - 65) / 5 + random(-2, 3)));
+    return { goals, assists };
+  }
+
+  function calculateSeasonAwards(trophies) {
+    const userPlayers = state.squad.map(player => ({
+      name: player.name, club: state.club.slug, position: player.position, rating: player.rating,
+      goals: player.goals || 0, assists: player.assists || 0, user: Boolean(player.user)
+    }));
+    const simulated = (state.awardPool || state.market || []).map(player => {
+      const stats = simulatedPlayerStats(player);
+      return { name: player.name, club: player.club, position: player.position, rating: player.rating, ...stats, user: false };
+    });
+    const candidates = [...new Map(userPlayers.concat(simulated).map(player => [`${player.name}|${player.club}`, player])).values()];
+    const goldenBoot = candidates.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists || b.rating - a.rating)[0];
+    const trophyBoost = trophies.length ? 5 + trophies.length * 2 : 0;
+    const ballonDor = candidates.map(player => ({
+      ...player,
+      awardScore: player.rating + player.goals * .42 + player.assists * .22 + (player.club === state.club.slug ? trophyBoost : 0) + Math.random() * 6
+    })).sort((a, b) => b.awardScore - a.awardScore)[0];
+    return {
+      season: state.season,
+      goldenBoot: goldenBoot ? { name: goldenBoot.name, club: goldenBoot.club, goals: goldenBoot.goals, rating: goldenBoot.rating, user: goldenBoot.user } : null,
+      ballonDor: ballonDor ? { name: ballonDor.name, club: ballonDor.club, goals: ballonDor.goals, assists: ballonDor.assists, rating: ballonDor.rating, user: ballonDor.user } : null
+    };
+  }
+
   async function getMarketPlayers(club) {
     const rivals = state.teams.filter(team => team.slug !== club.slug).slice(0, 5);
     const squads = await Promise.all(rivals.map(async team => {
       try {
-        const response = await fetch(`/lookup?team=${encodeURIComponent(team.slug)}&era=${encodeURIComponent(team.seasons?.[0] || '')}`);
+        const response = await fetch(`/lookup?team=${encodeURIComponent(team.slug)}&era=${encodeURIComponent(activeEra(team))}`);
         const data = response.ok ? await response.json() : {};
         const players = data.allPlayers?.length ? data.allPlayers : data.players || [];
         return players.slice(0, 5).map((player, index) => {
@@ -291,7 +361,7 @@
     const team = catalog.find(item => item.slug === slug);
     if (!team) return;
     try {
-      const response = await fetch(`/lookup?team=${encodeURIComponent(team.slug)}&era=${encodeURIComponent(team.seasons?.[0] || '')}`);
+      const response = await fetch(`/lookup?team=${encodeURIComponent(team.slug)}&era=${encodeURIComponent(activeEra(team))}`);
       const data = response.ok ? await response.json() : {};
       const source = data.allPlayers?.length ? data.allPlayers : data.players || [];
       state.market = source.slice(0, 25).map((player, index) => {
@@ -317,14 +387,14 @@
     const teams = competitionTeams(selected, role);
     const club = teams.find(team => team.slug === selected.slug) || teams[0];
     state = {
-      version: 5, role, name: el('career-name').value.trim() || ROLE_LABELS[role],
+      version: CAREER_VERSION, role, name: el('career-name').value.trim() || ROLE_LABELS[role],
       league: role === 'selector' ? '🌍 Selecciones' : el('career-league').value,
       club, teams, squad: [], schedule: makeSchedule(teams), round: 0, season: 1,
       budget: role === 'selector' ? 0 : Math.max(10, Math.round(((selected.ovr || 74) - 65) * 3.2)),
       balance: 0, board: 72, fans: 68, training: 'balanced', talk: 'calm', priority: 'sport',
       tactics: { formation: '4-3-3', mentality: 'balanced', press: 'medium', tempo: 'balanced' },
       inbox: [{ title: role === 'player' ? 'Tu oportunidad empieza aquí' : 'Bienvenido al cargo', text: role === 'selector' ? 'La federación exige resultados y una convocatoria con identidad.' : role === 'player' ? 'Gana minutos, mejora tus atributos y construye tu carrera.' : 'La directiva espera identidad, resultados y cuentas bajo control.' }],
-      history: [], lastResult: null, market: [], offers: [], transfers: [], competitions: [], dismissed: false,
+      history: [], awards: [], lastResult: null, market: [], awardPool: [], offers: [], transfers: [], competitions: [], dismissed: false,
       player: role === 'player' ? {
         name: el('career-name').value.trim() || 'Promesa', position: el('career-player-position').value,
         style: el('career-player-style').value, rating: 67, age: 18, minutes: 0, goals: 0, assists: 0,
@@ -335,6 +405,7 @@
     state.squad = await getSquad(selected);
     if (state.player) injectCareerPlayer();
     if (role !== 'selector') state.market = await getMarketPlayers(club);
+    state.awardPool = state.market.slice(0, 40);
     state.competitions = buildSeasonCompetitions();
     save();
     render();
@@ -371,10 +442,11 @@
       : state.role === 'player'
         ? { squad: 'Equipo', market: 'Ofertas', office: 'Mi carrera', inbox: 'MENSAJES DEL AGENTE', budget: 'Valor', board: 'Confianza' }
         : { squad: 'Plantilla', market: 'Mercado', office: 'Despacho', inbox: 'BANDEJA DEL MÍSTER', budget: 'Presupuesto', board: 'Directiva' };
-    document.querySelector('[data-career-tab="squad"]').textContent = labels.squad;
-    document.querySelector('[data-career-tab="tactics"]').textContent = state.role === 'player' ? 'Desarrollo' : state.role === 'selector' ? 'Sistema' : 'Táctica';
-    document.querySelector('[data-career-tab="market"]').textContent = labels.market;
-    document.querySelector('[data-career-tab="office"]').textContent = labels.office;
+    const setTabLabel = (name, label) => { document.querySelector(`[data-career-tab="${name}"] span:last-child`).textContent = label; };
+    setTabLabel('squad', labels.squad);
+    setTabLabel('tactics', state.role === 'player' ? 'Desarrollo' : state.role === 'selector' ? 'Sistema' : 'Táctica');
+    setTabLabel('market', labels.market);
+    setTabLabel('office', labels.office);
     el('career-game').dataset.role = state.role;
     document.querySelector('.career-inbox > span').textContent = labels.inbox;
     const terms = document.querySelectorAll('.career-scoreboard dt');
@@ -429,7 +501,9 @@
   }
 
   function fixtureHtml(match) {
-    if (!match) return '<p>Temporada finalizada.</p>';
+    if (!match) return state.round < state.schedule.length
+      ? '<div class="career-bye"><b>Jornada de descanso</b><span>El equipo recupera energía mientras se disputa el resto de partidos.</span></div>'
+      : '<p>Temporada finalizada.</p>';
     const home = findTeam(match.home);
     const away = findTeam(match.away);
     return `<div class="career-fixture"><div class="career-fixture-team"><img src="${clean(badge(home))}" alt=""><span>${clean(teamName(home))}</span></div><b class="career-fixture-vs">VS</b><div class="career-fixture-team"><img src="${clean(badge(away))}" alt=""><span>${clean(teamName(away))}</span></div></div>`;
@@ -447,18 +521,31 @@
     el('career-priority').value = state.priority;
     const result = el('career-result');
     result.classList.toggle('hidden', !state.lastResult);
-    if (state.lastResult) result.innerHTML = `<strong>${clean(state.lastResult.headline)}</strong><div class="career-result-score">${clean(state.lastResult.score)}</div><span>${clean(state.lastResult.detail)}</span>`;
+    result.classList.remove('is-win', 'is-draw', 'is-loss');
+    if (state.lastResult) {
+      result.classList.add(`is-${state.lastResult.outcome || 'draw'}`);
+      result.innerHTML = state.lastResult.home
+        ? `<div class="career-result-top"><span>${clean(state.lastResult.headline)}</span><b>JORNADA ${state.lastResult.round}</b></div><div class="career-result-board"><div><img src="${clean(badge(findTeam(state.lastResult.home)))}" alt=""><strong>${clean(teamName(findTeam(state.lastResult.home)))}</strong></div><p><b>${state.lastResult.homeGoals}</b><i>—</i><b>${state.lastResult.awayGoals}</b></p><div><img src="${clean(badge(findTeam(state.lastResult.away)))}" alt=""><strong>${clean(teamName(findTeam(state.lastResult.away)))}</strong></div></div><footer><span>${clean(state.lastResult.detail)}</span><b>${userPosition()}º en liga</b></footer>`
+        : `<strong>${clean(state.lastResult.headline)}</strong><div class="career-result-score">${clean(state.lastResult.score)}</div><span>${clean(state.lastResult.detail)}</span>`;
+    }
     const review = el('career-season-review');
     review.classList.toggle('hidden', !state.seasonReview);
     if (state.seasonReview) {
       const season = state.seasonReview;
+      if (!season.awards) {
+        season.awards = calculateSeasonAwards(season.trophies || []);
+        state.awards = state.awards || [];
+        if (!state.awards.some(item => item.season === season.season)) state.awards.unshift(season.awards);
+        save();
+      }
       const offers = state.role === 'player'
-        ? state.offers.filter(offer => offer.type === 'player').map(offer => `<button data-season-action="agent">${clean(teamName(findTeam(offer.club)))} · ${offer.salary.toFixed(1)} M€/año</button>`).join('')
-        : (state.jobOffers || []).map(offer => `<button data-season-action="job" data-club="${clean(offer.club)}">${clean(teamName(findTeam(offer.club)))} · ${money(offer.budget)}</button>`).join('');
+        ? state.offers.filter(offer => offer.type === 'player').map(offer => { const team = findCareerTeam(offer.club, offer.group) || findTeam(offer.club); return `<button class="career-next-offer" data-season-action="agent"><img src="${clean(badge(team))}" alt=""><span><strong>${clean(teamName(team))}</strong><small>${clean(offer.group || team?.group || 'Nuevo club')} · ${offer.contract || 1} temporadas</small></span><b>${offer.salary.toFixed(1)} M€/año</b></button>`; }).join('')
+        : (state.jobOffers || []).map(offer => { const slug = offer.club || offer.slug; const team = findCareerTeam(slug, offer.group) || findTeam(slug) || offer; return `<button class="career-next-offer" data-season-action="job" data-club="${clean(slug)}"><img src="${clean(badge(team))}" alt=""><span><strong>${clean(teamName(team))}</strong><small>${clean(offer.group || team?.group || 'Nuevo proyecto')}</small></span><b>${money(offer.budget)}</b></button>`; }).join('');
       const seasonDetail = state.role === 'player' && season.playerStats
         ? `${clean(season.outcome)} · ${season.playerStats.goals} goles · ${season.playerStats.assists} asistencias · media ${season.playerStats.rating}`
-        : state.role === 'selector' ? clean(season.outcome) : `${clean(season.outcome)} · Premio y presupuesto: ${money(season.prize)}`;
-      review.innerHTML = `<span>CIERRE DE TEMPORADA ${season.season}</span><div class="career-season-rank"><b>${season.position}º</b><strong>${season.points} puntos</strong><small>${season.gf} GF · ${season.ga} GC</small></div><div class="career-season-trophies">${season.trophies.length ? season.trophies.map(trophy => `<strong>🏆 ${clean(trophy)}</strong>`).join('') : '<span>Sin trofeos esta temporada</span>'}</div><p>${seasonDetail}</p>${offers ? `<div class="career-job-offers"><strong>${state.role === 'player' ? 'Propuestas de tu agente' : 'Ofertas para la próxima temporada'}</strong>${offers}</div>` : ''}<div><button data-season-action="continue">${state.careerRun ? 'Simular siguiente temporada' : 'Continuar en el club'}</button>${state.careerRun ? '<button data-season-action="stop">Detener simulación</button>' : ''}</div>`;
+        : state.role === 'selector' ? clean(season.outcome) : clean(season.outcome);
+      const awardHtml = `<div class="career-season-awards"><span><b>◆ BALÓN DE ORO</b><strong>${clean(season.awards.ballonDor?.name || 'Sin ganador')}</strong></span><span><b>▲ BOTA DE ORO</b><strong>${clean(season.awards.goldenBoot?.name || 'Sin ganador')}</strong><small>${season.awards.goldenBoot?.goals || 0} goles</small></span></div>`;
+      review.innerHTML = `<header><span>CIERRE DE TEMPORADA ${season.season}</span><strong>${seasonDetail}</strong></header><div class="career-season-stats"><span><small>POSICIÓN</small><b>${season.position}º</b></span><span><small>PUNTOS</small><b>${season.points}</b></span><span><small>BALANCE GOLEADOR</small><b>${season.gf}–${season.ga}</b></span><span><small>PREMIO</small><b>${money(season.prize)}</b></span></div><div class="career-season-honours"><div class="career-season-trophies"><small>PALMARÉS</small>${season.trophies.length ? season.trophies.map(trophy => `<strong>🏆 ${clean(trophy)}</strong>`).join('') : '<span>Sin títulos</span>'}</div>${awardHtml}</div>${offers ? `<section class="career-job-offers"><header><strong>${state.role === 'player' ? 'Propuestas de tu agente' : 'Tu futuro'}</strong><span>Elige proyecto o continúa construyendo el actual</span></header><div>${offers}</div></section>` : ''}<footer><button data-season-action="continue">${state.careerRun ? 'Simular siguiente temporada' : 'Continuar en el club'}</button>${state.careerRun ? '<button data-season-action="stop">Detener simulación</button>' : ''}</footer>`;
     }
   }
 
@@ -487,7 +574,8 @@
   }
 
   function renderCalendar() {
-    el('career-calendar').innerHTML = state.schedule.map((matches, index) => `<section class="career-round-block"><h5>Jornada ${index + 1}${index === state.round ? ' · próxima' : ''}${index === 8 ? ' · mercado de invierno' : ''}</h5>${matches.map(match => `<div class="career-match-row${match.home === state.club.slug || match.away === state.club.slug ? ' is-user' : ''}"><span><img src="${clean(badge(findTeam(match.home)))}" alt="">${clean(teamName(findTeam(match.home)))}</span><b>${match.played ? `${match.homeGoals} - ${match.awayGoals}` : '—'}</b><span><img src="${clean(badge(findTeam(match.away)))}" alt="">${clean(teamName(findTeam(match.away)))}</span></div>`).join('')}</section>`).join('');
+    const winterRound = Math.floor(state.schedule.length / 2);
+    el('career-calendar').innerHTML = state.schedule.map((matches, index) => `<section class="career-round-block"><h5>Jornada ${index + 1}${index === state.round ? ' · próxima' : ''}${index === winterRound ? ' · mercado de invierno' : ''}</h5>${matches.map(match => `<div class="career-match-row${match.home === state.club.slug || match.away === state.club.slug ? ' is-user' : ''}"><span><img src="${clean(badge(findTeam(match.home)))}" alt="">${clean(teamName(findTeam(match.home)))}</span><b>${match.played ? `${match.homeGoals} - ${match.awayGoals}` : '—'}</b><span><img src="${clean(badge(findTeam(match.away)))}" alt="">${clean(teamName(findTeam(match.away)))}</span></div>`).join('')}</section>`).join('');
   }
 
   function renderTable() {
@@ -504,14 +592,24 @@
     const competitions = state.competitions.map(competition => {
       const champion = competition.champion ? findTeam(competition.champion) : null;
       const rounds = competition.rounds.map(round => `<div class="career-bracket-round"><h5>${clean(round.label)}</h5>${round.matches.map(match => `<div class="career-bracket-match"><span><img src="${clean(badge(findTeam(match.home)))}" alt="">${clean(teamName(findTeam(match.home)))}</span><b>${match.homeGoals} - ${match.awayGoals}</b><span><img src="${clean(badge(findTeam(match.away)))}" alt="">${clean(teamName(findTeam(match.away)))}</span></div>`).join('')}</div>`).join('');
-      return `<article class="career-competition"><header><div><span>${clean(competition.type)}</span><h4>${clean(competition.name)}</h4></div>${champion ? `<strong><img src="${clean(badge(champion))}" alt="">${clean(teamName(champion))} campeón</strong>` : '<strong>En juego</strong>'}</header><div class="career-bracket">${rounds || '<p>Cuadro preparado. Ocho equipos, eliminación directa.</p>'}</div>${competition.status === 'finished' ? '' : `<footer><button data-comp="${clean(competition.id)}">Simular ronda</button><button data-comp-all="${clean(competition.id)}">Simular torneo completo</button></footer>`}</article>`;
+      return `<article class="career-competition"><header><div><span>${clean(competition.type)}</span><h4>${clean(competition.name)}</h4></div>${champion ? `<strong><img src="${clean(badge(champion))}" alt="">${clean(teamName(champion))} campeón</strong>` : `<strong>${competition.participants.length} equipos · En juego</strong>`}</header><div class="career-bracket">${rounds || `<p>Cuadro preparado. ${competition.participants.length} equipos, eliminación directa.</p>`}</div>${competition.status === 'finished' ? '' : `<footer><button data-comp="${clean(competition.id)}">Simular ronda</button><button data-comp-all="${clean(competition.id)}">Simular torneo completo</button></footer>`}</article>`;
     }).join('') || '<p class="career-market-note">No te has clasificado para competiciones esta temporada.</p>';
     const world = state.world?.rankings ? `<section class="career-world"><header><div><span>MOTOR DE TEMPORADA</span><h4>Ligas simuladas en segundo plano</h4></div><b>${Object.keys(state.world.rankings).length} competiciones</b></header><div>${PYRAMIDS.map(({ first }) => `<article><strong>${clean(first)}</strong>${(state.world.rankings[first] || []).slice(0, 4).map((slug, index) => `<span><i>${index + 1}</i><img src="${clean(badge(findTeam(slug)))}" alt="">${clean(teamName(findTeam(slug)))}</span>`).join('')}</article>`).join('')}</div></section>` : '';
     el('career-competitions').innerHTML = competitions + world;
   }
 
+  function renderAwards() {
+    const liveRace = state.squad.slice().sort((a, b) => (b.goals || 0) - (a.goals || 0) || b.rating - a.rating).slice(0, 5);
+    const archive = state.awards || [];
+    const winner = (award, type) => award
+      ? `<article class="career-award-winner ${type}"><img src="${clean(badge(findTeam(award.club)))}" alt=""><div><span>${type === 'ballon' ? 'BALÓN DE ORO' : 'BOTA DE ORO'}</span><strong>${clean(award.name)}</strong><small>${clean(teamName(findTeam(award.club)))} · ${type === 'ballon' ? `${award.rating} media · ${award.goals} G · ${award.assists} A` : `${award.goals} goles`}</small></div>${award.user ? '<b>TÚ</b>' : ''}</article>`
+      : '';
+    el('career-awards').innerHTML = `<header class="career-awards-head"><div><span>PREMIOS INDIVIDUALES</span><h4>La élite de cada temporada</h4></div><b>${archive.length} galas celebradas</b></header><section class="career-awards-live"><div><span>CARRERA POR LA BOTA · TEMPORADA ${state.season}</span><h5>Máximos goleadores del club</h5></div>${liveRace.map((player, index) => `<div class="career-award-race"><i>${index + 1}</i><span><strong>${clean(player.name)}</strong><small>${clean(player.position)} · ${player.apps || 0} PJ</small></span><b>${player.goals || 0} G</b></div>`).join('')}</section>${archive.length ? `<section class="career-awards-archive">${archive.map(season => `<div class="career-awards-season"><h5>TEMPORADA ${season.season}</h5>${winner(season.ballonDor, 'ballon')}${winner(season.goldenBoot, 'boot')}</div>`).join('')}</section>` : '<p class="career-market-note">La primera gala se celebrará al terminar la temporada.</p>'}`;
+  }
+
   function transferWindow() {
-    return state.round <= 2 || (state.round >= 8 && state.round <= 10);
+    const winterRound = Math.floor(state.schedule.length / 2);
+    return state.round <= 2 || (state.round >= winterRound - 1 && state.round <= winterRound + 1);
   }
 
   function renderMarket() {
@@ -525,7 +623,7 @@
       return;
     }
     const open = transferWindow();
-    const scoutGroups = catalog.filter(team => team.seasons?.length && team.group !== '🌍 Selecciones').sort((a, b) => teamName(a).localeCompare(teamName(b)));
+    const scoutGroups = catalog.filter(isCareerClub).sort((a, b) => teamName(a).localeCompare(teamName(b)));
     const search = (state.marketSearch || '').toLowerCase();
     const visibleMarket = state.market.filter(player => !search || player.name.toLowerCase().includes(search) || teamName(findTeam(player.club)).toLowerCase().includes(search));
     const negotiation = state.negotiation;
@@ -567,6 +665,7 @@
     renderCalendar();
     renderTable();
     renderCompetitions();
+    renderAwards();
     renderMarket();
     renderOffice();
   }
@@ -590,7 +689,7 @@
 
   function localScore(home, away, userSlug) {
     const bonus = team => team.slug === userSlug ? careerModifier() : 0;
-    const basePower = team => team.slug === state.club.slug ? average(starters(), 'rating') : (team.ovr || 70);
+    const basePower = team => (team.slug === state.club.slug ? average(starters(), 'rating') : (team.ovr || 70)) + (team.seasonForm || 0);
     const homePower = basePower(home) + bonus(home) + 1.5;
     const awayPower = basePower(away) + bonus(away);
     const difference = homePower - awayPower;
@@ -633,7 +732,7 @@
       competition.status = 'finished';
       return;
     }
-    const labels = { 8: 'Cuartos de final', 4: 'Semifinales', 2: 'Final' };
+    const labels = { 32: 'Dieciseisavos', 16: 'Octavos de final', 8: 'Cuartos de final', 4: 'Semifinales', 2: 'Final' };
     const matches = [];
     for (let index = 0; index < participants.length; index += 2) {
       const home = findTeam(participants[index]);
@@ -743,13 +842,13 @@
 
   function createPlayerOffers(count, summer) {
     const existing = new Set(state.offers.filter(offer => offer.type === 'player').map(offer => offer.club));
-    const source = summer ? catalog.filter(team => team.group !== '🌍 Selecciones' && team.seasons?.length) : state.teams;
+    const source = summer ? catalog.filter(isCareerClub) : state.teams;
     const candidates = source.filter(team => team.slug !== state.club.slug && !existing.has(team.slug)
       && (team.ovr || 70) <= state.player.rating + 10 && (team.ovr || 70) >= state.player.rating - 6);
     shuffled(candidates).slice(0, count).forEach((team, index) => {
       const qualityFactor = clamp(((team.ovr || 70) - 62) / 18, .65, 1.8);
       const salary = Number(Math.max(.5, state.player.salary * random(115, 165) / 100 * qualityFactor).toFixed(1));
-      state.offers.push({ id: `o-${Date.now()}-${index}`, type: 'player', club: team.slug, salary, contract: random(2, 5), summer });
+      state.offers.push({ id: `o-${Date.now()}-${index}`, type: 'player', club: team.slug, group: team.group, salary, contract: random(2, 5), summer });
     });
   }
 
@@ -893,7 +992,7 @@
 
   async function acceptPlayerOffer(id) {
     const offer = state.offers.find(item => item.id === id && item.type === 'player');
-    const destination = offer && findTeam(offer.club);
+    const destination = offer && (findCareerTeam(offer.club, offer.group) || findCareerTeam(offer.club) || findTeam(offer.club));
     if (!destination) return;
     if (destination.group !== state.league || !state.teams.some(team => team.slug === destination.slug)) {
       state.league = destination.group;
@@ -908,6 +1007,11 @@
     state.squad = await getSquad(destination);
     injectCareerPlayer();
     state.transfers.unshift({ text: `Fichaje por ${teamName(destination)}`, amount: `${offer.salary.toFixed(1)} M€/año` });
+    if (offer.summer && state.seasonReview) {
+      state.seasonReview.movement = null;
+      prepareNextSeason();
+      state.lastResult = { headline: 'Nuevo club', score: `${teamName(destination)} · ${destination.group}`, detail: 'Tu nueva temporada comienza en otra competición.' };
+    }
     state.offers = [];
     state.competitions = buildSeasonCompetitions();
     state.inbox.unshift({ title: 'Nuevo club', text: `Has firmado por ${teamName(destination)}. Empieza una nueva competencia por el puesto.` });
@@ -936,7 +1040,20 @@
     button.textContent = 'Simulando jornada…';
     try {
       const userMatch = nextUserMatch();
-      if (!userMatch) throw new Error('No se encontró el partido de esta jornada');
+      if (!userMatch) {
+        state.schedule[state.round].forEach(match => {
+          const score = localScore(findTeam(match.home), findTeam(match.away), '');
+          applyResult(match, score[0], score[1]);
+        });
+        state.squad.forEach(player => { player.fitness = clamp(player.fitness + 12, 40, 100); });
+        state.lastResult = { headline: 'Jornada de descanso', outcome: 'draw', score: 'Sin partido', detail: 'La plantilla recuperó energía mientras avanzaba la competición.' };
+        state.round++;
+        if (state.round >= state.schedule.length) finishSeason();
+        save();
+        render();
+        switchTab('hub');
+        return;
+      }
       const result = await simulateUserMatch(userMatch);
       state.schedule[state.round].forEach(match => {
         const score = match === userMatch ? result.goals : localScore(findTeam(match.home), findTeam(match.away), '');
@@ -950,6 +1067,8 @@
       const rivalGoals = userHome ? userMatch.awayGoals : userMatch.homeGoals;
       state.lastResult = {
         headline: userGoals > rivalGoals ? 'Victoria' : userGoals === rivalGoals ? 'Reparto de puntos' : 'Derrota',
+        outcome: userGoals > rivalGoals ? 'win' : userGoals === rivalGoals ? 'draw' : 'loss',
+        round: state.round + 1, home: home.slug, away: away.slug, homeGoals: userMatch.homeGoals, awayGoals: userMatch.awayGoals,
         score: `${teamName(home)} ${userMatch.homeGoals} - ${userMatch.awayGoals} ${teamName(away)}`,
         detail: `${result.engine ? 'Partido resuelto por el motor GolazoX.' : 'Resultado local de respaldo.'} Ahora el equipo es ${userPosition()}º.`
       };
@@ -969,12 +1088,12 @@
 
   function simulateLocalRound() {
     const userMatch = nextUserMatch();
-    if (!userMatch) return false;
     state.schedule[state.round].forEach(match => {
-      const score = localScore(findTeam(match.home), findTeam(match.away), state.club.slug);
+      const score = localScore(findTeam(match.home), findTeam(match.away), userMatch ? state.club.slug : '');
       applyResult(match, score[0], score[1]);
     });
-    weeklyConsequences(userMatch);
+    if (userMatch) weeklyConsequences(userMatch);
+    else state.squad.forEach(player => { player.fitness = clamp(player.fitness + 12, 40, 100); });
     state.round++;
     return true;
   }
@@ -995,6 +1114,11 @@
       state.teams = careerLeagueTeams(state.league, selected, state.world?.groups?.[state.league]);
       state.club = state.teams.find(team => team.slug === selected.slug) || state.teams[0];
     }
+    if (state.role !== 'selector') {
+      const selected = findCareerTeam(state.club.slug, state.league) || state.club;
+      state.teams = careerLeagueTeams(state.league, selected, state.world?.groups?.[state.league]);
+      state.club = state.teams.find(team => team.slug === selected.slug) || state.teams[0];
+    }
     state.season++;
     if (state.player?.contract === 0) {
       state.player.contract = 1;
@@ -1004,7 +1128,7 @@
     if (state.player) Object.assign(state.player, { minutes: 0, goals: 0, assists: 0, starts: 0 });
     state.round = 0;
     state.schedule = makeSchedule(state.teams);
-    state.teams.forEach(team => Object.assign(team, { p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
+    state.teams.forEach(team => Object.assign(team, { seasonForm: random(-3, 3), p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }));
     state.squad.forEach(player => {
       player.fitness = 100;
       player.morale = clamp(player.morale + 5, 40, 100);
@@ -1087,13 +1211,16 @@
     else if (position === 5) outcome = 'Clasificado para Europa League';
     const trophies = state.competitions.filter(item => item.champion === state.club.slug).map(item => item.name);
     if (trophies.length) outcome += ` · ${trophies.join(' + ')}`;
+    const awards = calculateSeasonAwards(trophies);
+    state.awards = state.awards || [];
+    state.awards.unshift(awards);
     const squadValue = state.squad.reduce((sum, player) => sum + playerValue(player), 0);
     const leaguePrize = Math.max(1, (state.teams.length - position + 1) * (division.tier === 2 ? .75 : 1.6));
     const trophyPrize = trophies.reduce((sum, trophy) => sum + (/Champions|Libertadores|Mundial/.test(trophy) ? 22 : 8), 0);
     const reputationBonus = Math.max(0, (state.board - 50) / 10);
     const prize = Number((leaguePrize + trophyPrize + reputationBonus + squadValue * .018).toFixed(1));
     const playerStats = state.player ? { goals: state.player.goals, assists: state.player.assists, rating: state.player.form.toFixed(1), salary: state.player.salary } : null;
-    const summary = { season: state.season, league: state.league, position, points: club.pts, gf: club.gf, ga: club.ga, outcome, trophies, prize, movement, playerStats };
+    const summary = { season: state.season, league: state.league, position, points: club.pts, gf: club.gf, ga: club.ga, outcome, trophies, prize, movement, playerStats, awards };
     state.history.push(summary);
     state.seasonReview = summary;
     state.board = clamp(state.board + (position <= 3 ? 12 : position <= 5 ? 4 : -8), 10, 100);
@@ -1101,10 +1228,10 @@
     state.balance += prize;
     if (state.role === 'manager') {
       const reputation = currentTeam().ovr + (state.board - 50) / 10 + (position <= 3 ? 3 : position >= state.teams.length - 1 ? -4 : 0);
-      state.jobOffers = catalog.filter(team => team.seasons?.length && team.group !== '🌍 Selecciones' && team.slug !== state.club.slug && (team.ovr || 70) <= reputation + 3)
+      state.jobOffers = catalog.filter(team => isCareerClub(team) && team.slug !== state.club.slug && (team.ovr || 70) <= reputation + 3)
         .sort((a, b) => Math.abs((a.ovr || 70) - reputation) - Math.abs((b.ovr || 70) - reputation))
         .slice(0, 3)
-        .map(team => ({ club: team.slug, budget: Math.max(8, Math.round(((team.ovr || 70) - 62) * 3.4)) }));
+        .map(team => ({ club: team.slug, group: team.group, budget: Math.max(8, Math.round(((team.ovr || 70) - 62) * 3.4)) }));
     }
     if (state.player) {
       state.player.earnings = Number(((state.player.earnings || 0) + state.player.salary).toFixed(1));
@@ -1120,13 +1247,14 @@
   async function startNextSeason() {
     prepareNextSeason();
     if (state.role !== 'selector') state.market = await getMarketPlayers(currentTeam());
+    state.awardPool = state.market.slice(0, 40);
     save();
     render();
   }
 
   async function acceptJob(slug) {
-    const destination = catalog.find(team => team.slug === slug);
-    const offer = state.jobOffers?.find(item => item.club === slug);
+    const offer = state.jobOffers?.find(item => (item.club || item.slug) === slug);
+    const destination = offer && (findCareerTeam(slug, offer.group) || findCareerTeam(slug));
     if (!destination || !offer) return;
     state.league = destination.group;
     state.season++;
@@ -1142,6 +1270,7 @@
     state.offers = [];
     state.jobOffers = [];
     state.market = await getMarketPlayers(state.club);
+    state.awardPool = state.market.slice(0, 40);
     state.competitions = buildSeasonCompetitions();
     state.seasonReview = null;
     state.lastResult = { headline: 'Nuevo proyecto', score: `${teamName(destination)} · Temporada ${state.season}`, detail: 'La nueva temporada está lista para comenzar.' };
@@ -1155,7 +1284,27 @@
       const response = await fetch('/catalog');
       if (!response.ok) throw new Error('Catálogo no disponible');
       catalog = await response.json();
+      if (state && state.role !== 'selector') {
+        const resolved = findCareerTeam(state.club.slug, state.club.group) || findCareerTeam(state.club.slug);
+        const fullLeagueSize = catalogGroup(state.league).length;
+        const wrongLeague = resolved && resolved.group !== state.league;
+        const untouchedLegacyLeague = state.round === 0 && state.teams.every(team => !team.p) && state.teams.length < fullLeagueSize;
+        if (resolved && (wrongLeague || untouchedLegacyLeague)) {
+          if (wrongLeague) state.league = resolved.group;
+          state.teams = careerLeagueTeams(state.league, resolved, state.world?.groups?.[state.league]);
+          state.club = state.teams.find(team => team.slug === resolved.slug) || state.teams[0];
+          state.schedule = makeSchedule(state.teams);
+          state.round = 0;
+          if (wrongLeague) {
+            state.seasonReview = null;
+            state.competitions = buildSeasonCompetitions();
+            state.lastResult = { headline: 'Competición corregida', score: `${teamName(resolved)} · ${resolved.group}`, detail: 'La carrera continúa en la liga real de tu club.' };
+          }
+          save();
+        }
+      }
       updateRoleForm();
+      if (state) render();
     } catch (_) {
       el('career-team').innerHTML = '<option>No se pudo cargar el catálogo</option>';
     }
