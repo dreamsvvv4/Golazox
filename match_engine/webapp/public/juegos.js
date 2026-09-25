@@ -117,6 +117,30 @@
     return uniqueTeams(catalog.filter(team => team.group === group && isModernTeam(team)));
   }
 
+  function renderTeamPicker(query = '') {
+    const teams = matchingTeams().sort((a, b) => (b.ovr || 0) - (a.ovr || 0));
+    const select = el('career-team');
+    const selected = teams.find(team => team.slug === select.value) || teams[0];
+    const trigger = el('career-team-trigger');
+    trigger.disabled = !selected;
+    if (!selected) {
+      el('career-team-badge').src = '/img/badges/_placeholder.svg';
+      el('career-team-name').textContent = 'Sin equipos disponibles';
+      el('career-team-meta').textContent = 'Cambia de competición';
+      el('career-team-grid').innerHTML = '';
+      return;
+    }
+    select.value = selected.slug;
+    el('career-team-badge').src = badge(selected);
+    el('career-team-name').textContent = teamName(selected);
+    el('career-team-meta').textContent = `${selected.ovr || '—'} media · ${selected.group}`;
+    const needle = query.trim().toLowerCase();
+    const visible = teams.filter(team => !needle || teamName(team).toLowerCase().includes(needle));
+    el('career-team-grid').innerHTML = visible.length
+      ? visible.map(team => `<button type="button" class="tp-team-card${team.slug === selected.slug ? ' is-selected' : ''}" data-career-team="${clean(team.slug)}"><img class="tp-team-badge" src="${clean(badge(team))}" alt=""><span class="tp-team-name">${clean(teamName(team))}</span><small>${team.ovr || '—'}</small></button>`).join('')
+      : '<p class="career-team-empty">No hay equipos con ese nombre.</p>';
+  }
+
   function populateTeams() {
     const teams = matchingTeams().sort((a, b) => (b.ovr || 0) - (a.ovr || 0));
     el('career-team').innerHTML = teams.map(team => `<option value="${clean(team.slug)}">${clean(teamName(team))} · ${team.ovr || '—'}</option>`).join('');
@@ -127,6 +151,10 @@
     const rounds = careerTeams > 1 ? (careerTeams % 2 ? careerTeams * 2 : (careerTeams - 1) * 2) : 0;
     document.querySelector('.career-promise b').textContent = rounds || '—';
     document.querySelector('.career-promise span').textContent = roleRoundsLabel(role, careerTeams, rounds);
+    el('career-team-search').value = '';
+    el('career-team-menu').classList.add('hidden');
+    el('career-team-trigger').setAttribute('aria-expanded', 'false');
+    renderTeamPicker();
   }
 
   function roleRoundsLabel(role, teams, rounds) {
@@ -381,7 +409,7 @@
 
   async function createCareer(event) {
     event.preventDefault();
-    const selected = catalog.find(team => team.slug === el('career-team').value);
+    const selected = matchingTeams().find(team => team.slug === el('career-team').value);
     if (!selected) return;
     const role = el('career-role').value;
     const teams = competitionTeams(selected, role);
@@ -1315,6 +1343,30 @@
     el('career-create').addEventListener('submit', createCareer);
     el('career-role').addEventListener('change', updateRoleForm);
     el('career-league').addEventListener('change', populateTeams);
+    el('career-team-picker').addEventListener('click', event => {
+      const team = event.target.closest('[data-career-team]');
+      if (team) {
+        el('career-team').value = team.dataset.careerTeam;
+        el('career-team-search').value = '';
+        renderTeamPicker();
+        el('career-team-menu').classList.add('hidden');
+        el('career-team-trigger').setAttribute('aria-expanded', 'false');
+        return;
+      }
+      if (event.target.closest('#career-team-trigger')) {
+        const menu = el('career-team-menu');
+        menu.classList.toggle('hidden');
+        el('career-team-trigger').setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+        if (!menu.classList.contains('hidden')) el('career-team-search').focus();
+      }
+    });
+    el('career-team-search').addEventListener('input', event => renderTeamPicker(event.target.value));
+    document.addEventListener('click', event => {
+      if (!event.target.closest('#career-team-picker')) {
+        el('career-team-menu').classList.add('hidden');
+        el('career-team-trigger').setAttribute('aria-expanded', 'false');
+      }
+    });
     document.querySelector('.career-tabs').addEventListener('click', event => {
       const button = event.target.closest('[data-career-tab]');
       if (button) switchTab(button.dataset.careerTab);

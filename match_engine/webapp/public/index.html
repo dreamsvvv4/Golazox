@@ -170,7 +170,7 @@
   <!-- Full stylesheet — loaded synchronously. The media="print" async trick
        is blocked by CSP (script-src 'self', no unsafe-inline), so the onload
        handler would never fire and styles would never apply to screen. -->
-  <link rel="stylesheet" href="style.min.css?v=811a5d30" />
+  <link rel="stylesheet" href="style.min.css?v=b92cb186" />
 
   <!-- hreflang: ES + EN versions (same URL, content switches via JS) -->
   <link rel="alternate" hreflang="es" href="https://golazox.com/" />
@@ -2092,7 +2092,7 @@
           <label>Tipo de carrera<select id="career-role"><option value="manager">Entrenador de club</option><option value="selector">Seleccionador nacional</option><option value="player">Jugador profesional</option></select></label>
           <label>Tu nombre<input id="career-name" maxlength="24" required placeholder="Nombre" autocomplete="off"></label>
           <label>Competición<select id="career-league"><option value="🇪🇸 La Liga">LaLiga</option><option value="🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League">Premier League</option><option value="🇮🇹 Serie A">Serie A</option><option value="🇩🇪 Bundesliga">Bundesliga</option><option value="🇫🇷 Ligue 1">Ligue 1</option><option value="🇧🇷 Brasileirão">Brasileirão</option><option value="🌎 Argentina Primera">Argentina Primera</option></select></label>
-          <label>Club<select id="career-team" disabled><option>Cargando clubes…</option></select></label>
+          <label class="career-team-field">Club<select id="career-team" class="career-team-native" disabled><option>Cargando clubes…</option></select><div id="career-team-picker" class="career-team-picker"><button type="button" id="career-team-trigger" class="career-team-trigger" disabled><img id="career-team-badge" src="/img/badges/_placeholder.svg" alt=""><span><strong id="career-team-name">Cargando clubes…</strong><small id="career-team-meta">Selecciona una competición</small></span><i>⌄</i></button><div id="career-team-menu" class="career-team-menu hidden"><input id="career-team-search" type="search" placeholder="Buscar equipo…" autocomplete="off"><div id="career-team-grid" class="tp-teams-grid"></div></div></div></label>
           <label id="career-position-field" class="hidden">Posición<select id="career-player-position"><option value="ST">Delantero</option><option value="AM">Mediapunta</option><option value="CM">Centrocampista</option><option value="CB">Defensa</option><option value="GK">Portero</option></select></label>
           <label id="career-style-field" class="hidden">Perfil<select id="career-player-style"><option value="technical">Técnico</option><option value="physical">Físico</option><option value="creator">Creador</option><option value="leader">Líder</option></select></label>
           <button type="submit" class="career-primary" id="career-start" disabled>Firmar contrato</button>
@@ -2289,6 +2289,6 @@
   <div id="pm-tt-portal" aria-hidden="true"></div>
   <script src="/subscribe.js?v=94c31cf5" defer></script>
   <script src="/home-hub.js?v=41ebf10c" defer></script>
-  <script src="/juegos.js?v=efa5b8c4" defer></script>
+  <script src="/juegos.js?v=7e557b5a" defer></script>
 </body>
 </html>
