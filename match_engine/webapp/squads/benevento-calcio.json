@@ -1,0 +1,220 @@
+{
+  "slug": "benevento-calcio",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Gianmarco Vannucchi",
+          "position": "GK",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Manuel Esposito",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Alioune Sylla",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Stefano Scognamillo",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Christian Dalle Mura",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Caldirola",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Pietro Saio",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Raffaele Romano",
+          "position": "CB",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Leonardo Sernicola",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Pietro Beruatto",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Raffaele Celia",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Giacomo Ricci",
+          "position": "LB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Edoardo Pierozzi",
+          "position": "RB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Antonio Prisco",
+          "position": "DM",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Mattia Mannini",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mattia Maita",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Christian Kouan",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Angelo Talia",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Antonis Siatounis",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Pier Luigi Simonetti",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Matteo Del Gaudio",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Matteo Donatiello",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Simone Verdi",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Luigi Cherubini",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Logan",
+          "position": "LW",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Davide Lamesta",
+          "position": "RW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Emanuele Schimmenti",
+          "position": "RW",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Vincenzo Battista",
+          "position": "RW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "David Okereke",
+          "position": "ST",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Marco Tumminello",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Guglielmo Mignani",
+          "position": "ST",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Francesco Salvemini",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Marco Giugliano",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 67,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Benevento Calcio (2026/2027)",
+      "teamLabel": "Benevento Calcio (2026-27)"
+    }
+  },
+  "id": 4171,
+  "name": "Benevento Calcio",
+  "group": "🇮🇹 Serie B",
+  "badgeLocalPath": "/img/badges/benevento-calcio.png"
+}

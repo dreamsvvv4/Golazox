@@ -1,5 +1,178 @@
 {
   "slug": "damac-fc",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/damac-fc.png"
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Moataz Al-Baqaawi",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ahmed Al-Rashidi",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Naser Al-Ghamdi",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Abdelkader Bedrane",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Hassan Rabei",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Noor Al-Rashidi",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Ali Al-Shaqiqi",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Abdullah Al-Yousif",
+          "position": "LB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Sanousi Al-Hawsawi",
+          "position": "RB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Yahya Sunbul",
+          "position": "RB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Jawad Al-Hassan",
+          "position": "RB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Riyadh Yami",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tariq Abdullah",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Khaled Al-Sumairi",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Osama Al-Khalaf",
+          "position": "DM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Morlaye Sylla",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Issam Al-Qarni",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ahmed Namazi",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Ahmed Omar",
+          "position": "DM",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Ibrahim Al-Harbi",
+          "position": "AM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Abdulaziz Al-Shahrani",
+          "position": "AM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Mohammed Al-Omari",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mohammad Al-Salkhadi",
+          "position": "RW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Yahya Naji",
+          "position": "RW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Yakou Méïté",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Freej Al-Jizani",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 69,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Damac FC (2026/2027)",
+      "teamLabel": "Damac FC (2026-27)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/damac-fc.png",
+  "group": "🇸🇦 Saudi Pro League",
+  "id": 50532,
+  "name": "Damac FC"
 }

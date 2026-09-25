@@ -74,6 +74,200 @@
       "source": "Al-Najma — Saudi Pro League 2025-26",
       "teamLabel": "Al-Najma (2025)",
       "badgeUrl": "/img/badges/al-najma.png"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Bader Al-Khamali",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Salim Gabous",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Belal Al-Dawaa",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Diogo Queirós",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Mubarak Al-Rajeh",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Khalid Al-Shuwayyi",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Khaled Al-Shammari",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mohammed Al-Kunaydiri",
+          "position": "LB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Khaled Al-Khathlan",
+          "position": "LB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Rayan Al-Ghamdi",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nabil Dunga",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Afonso Taira",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Marin Prekodravac",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Eyad Madani",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "João Novais",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Abdulwahid Al-Nakhli",
+          "position": "CM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Mohammed Suhluli",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Mohammed Al-Furaydi",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jathub Al-Dhafieri",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Abdulelah Al-Shammari",
+          "position": "AM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ammar Al-Najjar",
+          "position": "AM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Ahmed Al-Badah",
+          "position": "AM",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Masalah Al-Shaekh",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mohammed Al-Marri",
+          "position": "LW",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Faisal Al-Mutairi",
+          "position": "RW",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Yazid Al-Garzaie",
+          "position": "RW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcos André",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ronald José Rodríguez",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Souleymane Cissé",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Suleiman Al-Saeed",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 61,
+        "defense": 67,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Al-Najma FC (2026/2027)",
+      "teamLabel": "Al-Najma FC (2026-27)"
     }
-  }
+  },
+  "id": 32328
 }

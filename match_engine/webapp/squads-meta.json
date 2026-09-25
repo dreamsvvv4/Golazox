@@ -145,7 +145,7 @@
     "badgeLocalPath": "/img/badges/cd-leganes.png"
   },
   "cd-mirandes": {
-    "group": "🇪🇸 La Liga 2",
+    "group": "🌍 Otros",
     "nameEn": "CD Mirandés",
     "nameEs": "CD Mirandés",
     "badgeLocalPath": "/img/badges/cd-mirandes.png"
@@ -157,7 +157,7 @@
     "badgeLocalPath": "/img/badges/cordoba.png"
   },
   "cultural-leonesa": {
-    "group": "🇪🇸 La Liga 2",
+    "group": "🌍 Otros",
     "nameEn": "Cultural Leonesa",
     "nameEs": "Cultural Leonesa",
     "badgeLocalPath": "/img/badges/cultural-leonesa.png"
@@ -217,7 +217,7 @@
     "badgeLocalPath": "/img/badges/real-valladolid.png"
   },
   "real-zaragoza": {
-    "group": "🇪🇸 La Liga 2",
+    "group": "🌍 Otros",
     "nameEn": "Real Zaragoza",
     "nameEs": "Real Zaragoza",
     "badgeLocalPath": "/img/badges/real-zaragoza.png"
@@ -229,7 +229,7 @@
     "badgeLocalPath": "/img/badges/sd-eibar.png"
   },
   "sd-huesca": {
-    "group": "🇪🇸 La Liga 2",
+    "group": "🌍 Otros",
     "nameEn": "SD Huesca",
     "nameEs": "SD Huesca",
     "badgeLocalPath": "/img/badges/sd-huesca.png"
@@ -307,7 +307,7 @@
     "badgeLocalPath": "/img/badges/watford-fc.png"
   },
   "cardiff-city": {
-    "group": "🌍 Otros",
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
     "nameEn": "Cardiff City",
     "nameEs": "Cardiff City",
     "badgeLocalPath": "/img/badges/cardiff-city.png"
@@ -348,7 +348,7 @@
     "badgeLocalPath": "/img/badges/eintracht-frankfurt.png"
   },
   "fc-st-pauli": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🇩🇪 2. Bundesliga",
     "nameEn": "FC St. Pauli",
     "nameEs": "St. Pauli",
     "badgeLocalPath": "/img/badges/st-pauli.png"
@@ -417,13 +417,13 @@
     "badgeLocalPath": "/img/badges/lorient.png"
   },
   "as-saint-etienne": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🇫🇷 Ligue 2",
     "nameEn": "AS Saint-Étienne",
     "nameEs": "Saint-Étienne",
     "badgeLocalPath": "/img/badges/saint-etienne.png"
   },
   "stade-reims": {
-    "group": "🌍 Otros",
+    "group": "🇫🇷 Ligue 2",
     "nameEn": "Stade de Reims",
     "nameEs": "Reims",
     "badgeLocalPath": "/img/badges/stade-reims.png"
@@ -458,7 +458,7 @@
     "nameEs": "Nápoles"
   },
   "acf-fiorentina": {
-    "group": "🇮🇹 Serie A",
+    "group": "🌍 Otros",
     "nameEn": "Fiorentina",
     "nameEs": "Fiorentina",
     "badgeLocalPath": "/img/badges/acf-fiorentina.png"
@@ -488,7 +488,7 @@
     "badgeLocalPath": "/img/badges/avellino.png"
   },
   "bari": {
-    "group": "🇮🇹 Serie B",
+    "group": "🌍 Otros",
     "nameEn": "SSC Bari",
     "nameEs": "Bari",
     "badgeLocalPath": "/img/badges/bari.png"
@@ -608,7 +608,7 @@
     "badgeLocalPath": "/img/badges/al-ahli.png"
   },
   "atlanta-united": {
-    "group": "🇺🇸 MLS",
+    "group": "🌍 Otros",
     "nameEn": "Atlanta United FC",
     "nameEs": "Atlanta United",
     "badgeLocalPath": "/img/badges/atlanta-united.png"
@@ -660,37 +660,37 @@
     "badgeLocalPath": "/img/badges/trabzonspor.png"
   },
   "atalanta-bergamo": {
-    "group": "🇮🇹 Serie A",
+    "group": "🌍 Otros",
     "nameEn": "Atalanta BC",
     "nameEs": "Atalanta Bergamo",
     "badgeLocalPath": "/img/badges/atalanta-bc.png"
   },
   "fc-bondues": {
-    "group": "🇫🇷 Ligue 2",
+    "group": "🌍 Otros",
     "nameEn": "Clermont Foot",
     "nameEs": "Clermont",
     "badgeLocalPath": "/img/badges/fc-bondues.png"
   },
   "fc-einheit-rudolstadt": {
-    "group": "🇫🇷 Ligue 2",
+    "group": "🌍 Otros",
     "nameEn": "Red Star FC",
     "nameEs": "Red Star",
     "badgeLocalPath": "/img/badges/fc-einheit-rudolstadt.png"
   },
   "montpellier-hsc": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🇫🇷 Ligue 2",
     "nameEn": "Montpellier HSC",
     "nameEs": "Montpellier",
     "badgeLocalPath": "/img/badges/montpellier-hsc.png"
   },
   "bournemouth": {
-    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+    "group": "🌍 Otros",
     "nameEn": "AFC Bournemouth",
     "nameEs": "Bournemouth",
     "badgeLocalPath": "/img/badges/bournemouth.png"
   },
   "brentford-fc": {
-    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League",
+    "group": "🌍 Otros",
     "nameEn": "Brentford FC",
     "nameEs": "Brentford",
     "badgeLocalPath": "/img/badges/brentford-fc.png"
@@ -702,121 +702,121 @@
     "badgeLocalPath": "/img/badges/sheffield-wednesday.png"
   },
   "wrexham": {
-    "group": "🌍 Otros",
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
     "nameEn": "Wrexham",
     "nameEs": "Wrexham",
     "badgeLocalPath": "/img/badges/wrexham.png"
   },
   "watford-fc": {
-    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "group": "🌍 Otros",
     "nameEn": "Watford FC",
     "nameEs": "Watford",
     "badgeLocalPath": "/img/badges/watford-fc.png"
   },
   "fc-koln": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "1. FC Köln",
     "nameEs": "FC Colonia",
     "badgeLocalPath": "/img/badges/fc-koln.png"
   },
   "fc-union-berlin": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "1. FC Union Berlin",
     "nameEs": "Union Berlin",
     "badgeLocalPath": "/img/badges/fc-union-berlin.png"
   },
   "mainz-05": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "FSV Mainz 05",
     "nameEs": "Mainz 05",
     "badgeLocalPath": "/img/badges/mainz-05.png"
   },
   "st-pauli": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "FC St. Pauli",
     "nameEs": "FC St. Pauli",
     "badgeLocalPath": "/img/badges/st-pauli.png"
   },
   "werder-bremen": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "SV Werder Bremen",
     "nameEs": "Werder Bremen",
     "badgeLocalPath": "/img/badges/werder-bremen.png"
   },
   "sport-club-freiburg": {
-    "group": "🇩🇪 Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "SC Freiburg",
     "nameEs": "SC Friburgo",
     "badgeLocalPath": "/img/badges/sport-club-freiburg.png"
   },
   "sv-darmstadt-98": {
-    "group": "🇩🇪 2. Bundesliga",
+    "group": "🌍 Otros",
     "nameEn": "SV Darmstadt 98",
     "nameEs": "Darmstadt 98",
     "badgeLocalPath": "/img/badges/sv-darmstadt-98.png"
   },
   "fc-bologna-1909": {
-    "group": "🇮🇹 Serie A",
+    "group": "🌍 Otros",
     "nameEn": "Bologna FC",
     "nameEs": "Bolonia",
     "badgeLocalPath": "/img/badges/fc-bologna-1909.png"
   },
   "ss-lazio": {
-    "group": "🇮🇹 Serie A",
+    "group": "🌍 Otros",
     "nameEn": "SS Lazio",
     "nameEs": "Lazio",
     "badgeLocalPath": "/img/badges/ss-lazio.png"
   },
   "torino-fc": {
-    "group": "🇮🇹 Serie A",
+    "group": "🌍 Otros",
     "nameEn": "Torino FC",
     "nameEs": "Torino",
     "badgeLocalPath": "/img/badges/torino-fc.png"
   },
   "us-catanzaro": {
-    "group": "🇮🇹 Serie B",
+    "group": "🌍 Otros",
     "nameEn": "US Catanzaro",
     "nameEs": "Catanzaro",
     "badgeLocalPath": "/img/badges/us-catanzaro.png"
   },
   "lille": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "Lille OSC",
     "nameEs": "Lille",
     "badgeLocalPath": "/img/badges/lille.png"
   },
   "nice": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "OGC Nice",
     "nameEs": "Niza",
     "badgeLocalPath": "/img/badges/nice.png"
   },
   "strasbourg": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "RC Strasbourg",
     "nameEs": "Estrasburgo",
     "badgeLocalPath": "/img/badges/strasbourg.png"
   },
   "brest": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "Stade Brest 29",
     "nameEs": "Brest",
     "badgeLocalPath": "/img/badges/brest.png"
   },
   "stade-rennais-fc": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "Stade Rennais FC",
     "nameEs": "Rennes",
     "badgeLocalPath": "/img/badges/stade-rennais-fc.png"
   },
   "toulouse-fc": {
-    "group": "🇫🇷 Ligue 1",
+    "group": "🌍 Otros",
     "nameEn": "Toulouse FC",
     "nameEs": "Toulouse",
     "badgeLocalPath": "/img/badges/toulouse-fc.png"
   },
   "sm-caen": {
-    "group": "🇫🇷 Ligue 2",
+    "group": "🌍 Otros",
     "nameEn": "SM Caen",
     "nameEs": "Caen",
     "badgeLocalPath": "/img/badges/sm-caen.png"
@@ -1016,7 +1016,7 @@
     "group": "🌎 Argentina Primera"
   },
   "al-qadisiyah-fc": {
-    "group": "🇸🇦 Saudi Pro League",
+    "group": "🌍 Otros",
     "badgeLocalPath": "/img/badges/al-qadisiyah-fc.png"
   },
   "al-taawoun": {
@@ -1028,7 +1028,7 @@
     "badgeLocalPath": "/img/badges/al-ettifaq.png"
   },
   "damac": {
-    "group": "🇸🇦 Saudi Pro League",
+    "group": "🌍 Otros",
     "badgeLocalPath": "/img/badges/damac-fc.png"
   },
   "al-fayha": {
@@ -1055,7 +1055,7 @@
     "badgeLocalPath": "/img/badges/al-riyadh-fc.png"
   },
   "al-akhdood": {
-    "group": "🇸🇦 Saudi Pro League",
+    "group": "🌍 Otros",
     "badgeLocalPath": "/img/badges/al-okhdood.png"
   },
   "al-fateh": {
@@ -1166,7 +1166,7 @@
     "group": "🌍 Otros"
   },
   "al-qadsiah": {
-    "group": "🌍 Otros"
+    "group": "🇸🇦 Saudi Pro League"
   },
   "corinthians-sao-paulo": {
     "group": "🇧🇷 Brasileirão",
@@ -1227,13 +1227,13 @@
     "group": "🌍 Otros"
   },
   "al-okhdood": {
-    "group": "🌍 Otros"
+    "group": "🇸🇦 Saudi Pro League"
   },
   "al-riyadh-fc": {
     "group": "🌍 Otros"
   },
   "damac-fc": {
-    "group": "🌍 Otros"
+    "group": "🇸🇦 Saudi Pro League"
   },
   "coritiba-fc": {
     "group": "🌍 Otros"
@@ -1258,7 +1258,7 @@
     "badgeLocalPath": "/img/badges/persib-bandung.png"
   },
   "cd-tenerife": {
-    "group": "🌍 Otros",
+    "group": "🇪🇸 La Liga 2",
     "nameEn": "CD Tenerife",
     "nameEs": "CD Tenerife",
     "badgeLocalPath": "/img/badges/cd-tenerife.png"
@@ -1301,5 +1301,270 @@
     "group": "🇫🇷 Ligue 1",
     "nameEn": "ESTAC Troyes",
     "nameEs": "ESTAC Troyes"
+  },
+  "celta-vigo-b": {
+    "group": "🇪🇸 La Liga 2",
+    "nameEn": "RC Celta Fortuna",
+    "nameEs": "RC Celta Fortuna"
+  },
+  "cd-eldense": {
+    "group": "🇪🇸 La Liga 2",
+    "nameEn": "Eldense",
+    "nameEs": "Eldense"
+  },
+  "ce-sabadell": {
+    "group": "🇪🇸 La Liga 2",
+    "nameEn": "CE Sabadell FC",
+    "nameEs": "CE Sabadell FC"
+  },
+  "bolton-wanderers": {
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "nameEn": "Bolton Wanderers",
+    "nameEs": "Bolton Wanderers"
+  },
+  "fc-burnley": {
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "nameEn": "Burnley FC",
+    "nameEs": "Burnley FC"
+  },
+  "lincoln-city": {
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "nameEn": "Lincoln City",
+    "nameEs": "Lincoln City"
+  },
+  "west-ham-united": {
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "nameEn": "West Ham United",
+    "nameEs": "West Ham United"
+  },
+  "wolverhampton-wanderers": {
+    "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
+    "nameEn": "Wolverhampton Wanderers",
+    "nameEs": "Wolverhampton"
+  },
+  "ss-arezzo": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "SS Arezzo",
+    "nameEs": "SS Arezzo"
+  },
+  "ascoli-calcio": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "Ascoli Calcio",
+    "nameEs": "Ascoli Calcio"
+  },
+  "benevento-calcio": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "Benevento Calcio",
+    "nameEs": "Benevento Calcio"
+  },
+  "cremonese": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "US Cremonese",
+    "nameEs": "US Cremonese"
+  },
+  "hellas-verona": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "Hellas Verona",
+    "nameEs": "Hellas Verona"
+  },
+  "pisa": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "AC Pisa",
+    "nameEs": "AC Pisa"
+  },
+  "lr-vicenza-virtus": {
+    "group": "🇮🇹 Serie B",
+    "nameEn": "Vicenza",
+    "nameEs": "Vicenza"
+  },
+  "fc-energie-cottbus": {
+    "group": "🇩🇪 2. Bundesliga",
+    "nameEn": "Energie Cottbus",
+    "nameEs": "Energie Cottbus"
+  },
+  "heidenheim": {
+    "group": "🇩🇪 2. Bundesliga",
+    "nameEn": "1. FC Heidenheim",
+    "nameEs": "1. FC Heidenheim"
+  },
+  "vfl-osnabruck": {
+    "group": "🇩🇪 2. Bundesliga",
+    "nameEn": "VfL Osnabruck",
+    "nameEs": "VfL Osnabruck"
+  },
+  "vfl-wolfsburg": {
+    "group": "🇩🇪 2. Bundesliga",
+    "nameEn": "VfL Wolfsburg",
+    "nameEs": "VfL Wolfsburg"
+  },
+  "us-boulogne": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "US Boulogne",
+    "nameEs": "US Boulogne"
+  },
+  "clermont-foot-63": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Clermont Foot",
+    "nameEs": "Clermont Foot"
+  },
+  "dijon-fco": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Dijon FCO",
+    "nameEs": "Dijon FCO"
+  },
+  "usl-dunkerque": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Dunkerque",
+    "nameEs": "Dunkerque"
+  },
+  "stade-laval": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Stade Lavallois",
+    "nameEs": "Stade Lavallois"
+  },
+  "fc-metz": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "FC Metz",
+    "nameEs": "FC Metz"
+  },
+  "as-nancy-lorraine": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "AS Nancy Lorraine",
+    "nameEs": "AS Nancy Lorraine"
+  },
+  "nantes": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "FC Nantes",
+    "nameEs": "FC Nantes"
+  },
+  "pau-fc": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Pau FC",
+    "nameEs": "Pau FC"
+  },
+  "red-star-fc": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Red Star FC",
+    "nameEs": "Red Star FC"
+  },
+  "fc-sochaux-montbeliard": {
+    "group": "🇫🇷 Ligue 2",
+    "nameEn": "Sochaux",
+    "nameEs": "Sochaux"
+  },
+  "caen": {
+    "group": "🌍 Otros",
+    "nameEn": "SM Caen",
+    "nameEs": "SM Caen"
+  },
+  "columbus-crew-sc": {
+    "group": "🌍 Otros",
+    "nameEn": "Columbus Crew",
+    "nameEs": "Columbus Crew"
+  },
+  "fortuna-dusseldorf": {
+    "group": "🌍 Otros",
+    "nameEn": "Fortuna Dusseldorf",
+    "nameEs": "Fortuna Düsseldorf"
+  },
+  "leicester-city": {
+    "group": "🌍 Otros",
+    "nameEn": "Leicester City",
+    "nameEs": "Leicester City"
+  },
+  "los-angeles-galaxy": {
+    "group": "🌍 Otros",
+    "nameEn": "LA Galaxy",
+    "nameEs": "LA Galaxy"
+  },
+  "new-york-red-bulls-ii": {
+    "group": "🌍 Otros",
+    "nameEn": "New York Red Bulls",
+    "nameEs": "New York Red Bulls"
+  },
+  "oxford-united": {
+    "group": "🌍 Otros",
+    "nameEn": "Oxford United",
+    "nameEs": "Oxford United"
+  },
+  "pescara": {
+    "group": "🌍 Otros",
+    "nameEn": "Pescara",
+    "nameEs": "Pescara Calcio"
+  },
+  "preussen-munster": {
+    "group": "🌍 Otros",
+    "nameEn": "Preussen Münster",
+    "nameEs": "Preu�xen Münster"
+  },
+  "reggiana": {
+    "group": "🌍 Otros",
+    "nameEn": "AC Reggiana",
+    "nameEs": "AC Reggiana"
+  },
+  "seattle-sounders-fc": {
+    "group": "🌍 Otros",
+    "nameEn": "Seattle Sounders",
+    "nameEs": "Seattle Sounders"
+  },
+  "spezia": {
+    "group": "🌍 Otros",
+    "nameEn": "Spezia",
+    "nameEs": "Spezia Calcio"
+  },
+  "charlotte-fc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Charlotte FC",
+    "nameEs": "Charlotte FC"
+  },
+  "colorado-rapids": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Colorado Rapids",
+    "nameEs": "Colorado Rapids"
+  },
+  "d-c-united": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "DC United",
+    "nameEs": "DC United"
+  },
+  "fc-cincinnati": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "FC Cincinnati",
+    "nameEs": "FC Cincinnati"
+  },
+  "houston-dynamo-fc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Houston Dynamo",
+    "nameEs": "Houston Dynamo"
+  },
+  "minnesota-united-fc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Minnesota United",
+    "nameEs": "Minnesota United"
+  },
+  "nashville-sc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Nashville SC",
+    "nameEs": "Nashville SC"
+  },
+  "orlando-city-sc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "Orlando City",
+    "nameEs": "Orlando City"
+  },
+  "san-diego-fc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "San Diego FC",
+    "nameEs": "San Diego FC"
+  },
+  "san-jose-earthquakes": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "San Jose Earthquakes",
+    "nameEs": "San Jose Earthquakes"
+  },
+  "st-louis-city-sc": {
+    "group": "🇺🇸 MLS",
+    "nameEn": "St. Louis City SC",
+    "nameEs": "St. Louis City SC"
   }
 }

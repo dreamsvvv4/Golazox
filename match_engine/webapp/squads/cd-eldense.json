@@ -1,0 +1,184 @@
+{
+  "slug": "cd-eldense",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ramón Vila",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Juan Palomares",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Iker Recio",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Floris Smand",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Álex Serradell",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Javier Olaizola",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Juan Larios",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jordi Martín",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "David Ruiz",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Julien Yanda",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jesús Clemente",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alejandro Ibarrondo",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Carlos Guirao",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Justin Smith",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Guillermo Macho",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Borja Calvo",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Javi Martínez",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Roberto López",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Marcos Bustillo",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Waldo Rubio",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jorge Rastrojo",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Fidel",
+          "position": "LW",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Aingeru Olabarrieta",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pau Cabanes",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Manu Nieto",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mariano Carmona",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Dinis Rodrigues",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Eldense (2026/2027)",
+      "teamLabel": "Eldense (2026-27)"
+    }
+  },
+  "id": 12567,
+  "name": "Eldense",
+  "group": "🇪🇸 La Liga 2",
+  "badgeLocalPath": "/img/badges/cd-eldense.png"
+}

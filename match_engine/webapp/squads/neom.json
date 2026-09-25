@@ -74,6 +74,182 @@
       "source": "NEOM SC — Saudi Pro League 2025-26 (promoted)",
       "teamLabel": "NEOM (2025)",
       "badgeUrl": "/img/badges/neom.png"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marcin Bulka",
+          "position": "GK",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Luís Maximiano",
+          "position": "GK",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Abdulrahman Dagriri",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Mohammed Al-Hakim",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Malang Sarr",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Nathan Zézé",
+          "position": "CB",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Mohammed Waleed Al-Dossary",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Khalifah Al-Dawsari",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Mohannad Abu Taha",
+          "position": "LB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Islam Hawsawi",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Khaled Al-Rammah",
+          "position": "LB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Abdulmalik Al-Oyayari",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Al-Burayk",
+          "position": "RB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Amadou Koné",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Valentín Vada",
+          "position": "CM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Faisal Al-Ghamdi",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Abbas Al-Hassan",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Alaa Hejji",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Saïd Benrahma",
+          "position": "LW",
+          "marketValue": 8500000,
+          "rating": 82
+        },
+        {
+          "name": "Georgios Masouras",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Khalil Al-Absi",
+          "position": "LW",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ahmed Al-Anzi",
+          "position": "LW",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Abdulaziz Noor",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Muhanad Al-Saad",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alexandre Lacazette",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Haroune Camara",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Abdulaziz Al-Othman",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Neom SC (2026/2027)",
+      "teamLabel": "Neom SC (2026-27)"
     }
-  }
+  },
+  "id": 34911
 }

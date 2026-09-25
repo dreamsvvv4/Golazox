@@ -1,0 +1,184 @@
+{
+  "slug": "ce-sabadell",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Diego Fuoli",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Marc Vidal",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "José Ortega",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Edgar González",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Miki Codina",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Arthur Bonaldo",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Kaiser",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "José Luis Català",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Genar Fornés",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Pipa",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Yussif Owusu",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Quadri Liameed",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Albert Orriols",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Pere Pons",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Óscar Sanz",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Eneko Aguilar",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Alain Ribeiro",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Patrick Nuamah",
+          "position": "LW",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Javi López",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Joel Priego",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Yanis Rahmani",
+          "position": "LW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Ángel Baena",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ton Ripoll",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Xavi Moreno",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Nicholas Gioacchini",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Gastón Valles",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Nikolay Obolskiy",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 67,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — CE Sabadell FC (2026/2027)",
+      "teamLabel": "CE Sabadell FC (2026-27)"
+    }
+  },
+  "id": 11422,
+  "name": "CE Sabadell FC",
+  "group": "🇪🇸 La Liga 2",
+  "badgeLocalPath": "/img/badges/ce-sabadell.png"
+}

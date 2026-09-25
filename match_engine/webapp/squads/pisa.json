@@ -118,12 +118,205 @@
       },
       "source": "Transfermarkt 🌍 Otros€” AC Pisa 1909 (2025/2026)",
       "teamLabel": "AC Pisa 1909 (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Simone Scuffet",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Alessandro Confente",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Leonardo Loria",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Simone Canestrelli",
+          "position": "CB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Rosen Bozhinov",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Francesco Coppola",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Antonio Caracciolo",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Arturo Calabresi",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mateus Lusuardi",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Daniel Denoon",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Andrea Primasso",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Simone Zanon",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Giuseppe Leone",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Omar Correia",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jacopo Frosali",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Felipe Loyola",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "İsak Vural",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Samuele Angori",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Gabriele Piccinini",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tomás Esteves",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Matteo Tramoni",
+          "position": "AM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Emanuele Rao",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Ichem Ferrah",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Mehdi Léris",
+          "position": "RW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Tommaso Marras",
+          "position": "RW",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Stefano Moreo",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Filippo Pittarello",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Louis Buffon",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Andrea Petagna",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Elia Giani",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 68,
+        "defense": 66,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Pisa (2026/2027)",
+      "teamLabel": "Pisa (2026-27)"
     }
   },
-  "id": 1573,
+  "id": 4172,
   "name": "Pisa",
   "badgeLocalPath": "/img/badges/pisa.png",
-  "group": "🇮🇹 Serie A",
+  "group": "🇮🇹 Serie B",
   "nameEs": "AC Pisa",
   "nameEn": "AC Pisa"
 }

@@ -118,9 +118,232 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Venezia FC (2025/2026)",
       "teamLabel": "Venezia FC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Filip Stanković",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Lorenzo Montipò",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Alessio Pozzi",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Matteo Grandi",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Armel Bella-Kotchap",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Matías Moreno",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Joël Schingtienne",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Redouane Halhal",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Marin Šverko",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ale Gomes",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bartol Franjic",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Juan Jesus",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Rufai Mohammed",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Pasquale Mazzocchi",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Gianluca Busio",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Simone Panada",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Simon Sohm",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Antoine Hainaut",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Matteo Dagasso",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Toma Bašić",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kike Pérez",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Thierry Correia",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Thórir Jóhann Helgason",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Lamine Fanne",
+          "position": "CM",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Richie Sagrado",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Alfred Duncan",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Lorenzo Berardi",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ridgeciano Haps",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Toni Fernández",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Kornel Lisman",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "John Yeboah",
+          "position": "AM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Akor Adams",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Albion Rrahmani",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Andrea Adorante",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Lion Lauberbach",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Venezia (2026/2027)",
+      "teamLabel": "Venezia (2026-27)"
     }
   },
-  "id": 360,
+  "id": 607,
   "name": "Venezia FC",
   "badgeLocalPath": "/img/badges/venezia-fc.png",
   "group": "🇮🇹 Serie B",

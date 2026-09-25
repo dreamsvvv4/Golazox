@@ -1,0 +1,172 @@
+{
+  "slug": "red-star-fc",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Gaëtan Poussin",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Mouez Hassen",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Yanis Benchaouch",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Dylan Durivaux",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Elyaz Zidane",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Bradley Danger",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Josué Escartin",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Pierre Lemonnier",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Leonardo Buta",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Matthieu Huard",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Théo Magnin",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Côme Bianay Balcot",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Islamdine Halifa",
+          "position": "DM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Idrissa Sabaly",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Cheick Konaté",
+          "position": "DM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mahamadou Diawara",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Samuel Renel",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Saîf-Eddine Khaoui",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Guillaume Trani",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Damien Durand",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Kemo Cissé",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Godson Kyeremeh",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jovany Ikanga",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Kévin Cabral",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ilija Despotovic",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Red Star FC (2026/2027)",
+      "teamLabel": "Red Star FC (2026-27)"
+    }
+  },
+  "id": 1154,
+  "name": "Red Star FC",
+  "group": "🇫🇷 Ligue 2",
+  "badgeLocalPath": "/img/badges/red-star-fc.png"
+}

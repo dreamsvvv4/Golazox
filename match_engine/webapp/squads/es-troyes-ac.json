@@ -187,8 +187,190 @@
       },
       "source": "Transfermarkt — ESTAC Troyes (2025/2026)",
       "teamLabel": "ESTAC Troyes (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Patrick Beach",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Hillel Konaté",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Zacharie Boucher",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Junior Diaz",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Paolo Gozzi",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Adrien Monfray",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ismaël Boura",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Anis Ouzenadji",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Yvann Titi",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Lucas Maronnier",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Noah Donkor",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alexandre Phliponeau",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Roman Murcy",
+          "position": "DM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Mouhamed Diop",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Hugo Picard",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Antoine Mille",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Iron Gomis",
+          "position": "CM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Dermane Karim",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Idrissa Soukouna",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kandet Diawara",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Merwan Ifnaoui",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Amadou Diakité",
+          "position": "RW",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Jérémy Le Douaron",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Timothé Nkada",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Renaud Ripart",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Yacouba Koné",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ibrahim Traoré",
+          "position": "ST",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Christ Batola",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Troyes (2026/2027)",
+      "teamLabel": "Troyes (2026-27)"
     }
   },
   "id": 1095,
-  "name": "ESTAC Troyes"
+  "name": "ESTAC Troyes",
+  "badgeLocalPath": "/img/badges/es-troyes-ac.png"
 }

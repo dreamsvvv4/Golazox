@@ -1,0 +1,178 @@
+{
+  "slug": "vfl-osnabruck",
+  "seasons": {
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Jonas Krumrey",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Niklas Sauter",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Luca Böggemann",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Robin Fabinski",
+          "position": "CB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Jannik Müller",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Joel Abu Hanna",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Niklas Wiemann",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Elias Bakatukanda",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Theo Janotta",
+          "position": "CB",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Jonathan Gómez",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Leon Flach",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fridolin Wagner",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Bjarke Jacobsen",
+          "position": "DM",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Leon Opitz",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Konrad Faber",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Patrick Kammerbauer",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Bryan Henning",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Tony Lesueur",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Adrian Beck",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ismail Badjie",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Leonhard Münst",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jonathan Wensing",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Daniel-Kofi Kyereh",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Luca Raimund",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Robin Meißner",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Bernd Riesselmann",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — VfL Osnabruck (2026/2027)",
+      "teamLabel": "VfL Osnabruck (2026-27)"
+    }
+  },
+  "id": 81,
+  "name": "VfL Osnabruck",
+  "group": "🇩🇪 2. Bundesliga",
+  "badgeLocalPath": "/img/badges/vfl-osnabruck.png"
+}

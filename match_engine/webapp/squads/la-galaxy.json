@@ -1,9 +1,186 @@
 {
   "slug": "la-galaxy",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Novak Mićović",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "JT Marcinkowski",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Brady Scott",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Justin Haak",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jakob Glesnes",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Carlos Garcés",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Chris Rindov",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Julián Aude",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "John Nelson",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Riley Dalgado",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Calegari",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Harbor Miller",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lucas Sanabria",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Riqui Puig",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Sergi Roberto",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Elijah Wynder",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Pablo Ruiz",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Isaiah Parente",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Marco Reus",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 86
+        },
+        {
+          "name": "Erik Thommy",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Joseph Paintsil",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Hirving Lozano",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Robert Taylor",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Troy Elgersma",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Kyogo Furuhashi",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 84
+        },
+        {
+          "name": "João Klauss",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — LA Galaxy (2026/2027)",
+      "teamLabel": "LA Galaxy (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/la-galaxy.png",
   "group": "🇺🇸 MLS",
   "nameEn": "LA Galaxy",
   "nameEs": "LA Galaxy",
-  "name": "LA Galaxy"
+  "name": "LA Galaxy",
+  "id": 1061
 }

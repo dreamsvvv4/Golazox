@@ -69,11 +69,205 @@
       "source": "Al-Fateh — Saudi Pro League 2025",
       "teamLabel": "Al-Fateh (2025)",
       "badgeUrl": "/img/badges/al-fateh.png"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Adrian Semper",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Walid Al-Enezi",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Habib Al-Watyan",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Kennedy Boateng",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Marwane Saadane",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Abdulaziz Al-Suwailem",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ziyad Al-Jari",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Faisal Darsi",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Robin Kelder",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Abdulelah Al-Khaibri",
+          "position": "LB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Abdulrahman Talal Al-Khaibari",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Sattam Al-Tumbukti",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ali Alamine",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ali Al-Hassan",
+          "position": "DM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Mehdi Al-Aboud",
+          "position": "DM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Zaydou Youssouf",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Mihai Lixandru",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Abdul Aziz Al-Fawaz",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Mohammed Al-Sahihi",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Hossam Essadak",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lukas Haraslin",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Sorriso",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jefferson Ramos",
+          "position": "LW",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mourad Batna",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Fahad Aqeel Al-Zubaidi",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Othman Al-Othman",
+          "position": "RW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Faisal Al-Abdulwahed",
+          "position": "RW",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Wilfried Kanga",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ali Al-Masoud",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Saad Al-Sharfa",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 60,
+        "defense": 63,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Al-Fateh SC (2026/2027)",
+      "teamLabel": "Al-Fateh SC (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/al-fateh.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Fateh",
   "nameEs": "Al-Fateh",
-  "name": "Al-Fateh"
+  "name": "Al-Fateh",
+  "id": 27221
 }

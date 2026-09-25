@@ -118,9 +118,172 @@
       },
       "source": "Transfermarkt 🌍 Otros€” AD Ceuta 2024-25 La Liga 2",
       "teamLabel": "AD Ceuta 2024-25 La Liga 2"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Guillermo Vallejo",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Pedro López",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Adrián Lapeña",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Albert Caparrós",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Carlos Hernández",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "José Matos",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Carlos Redru",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Toni Abad",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Álex Petxarroman",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Yann Bodiger",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mawuli Mensah",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ale Meléndez",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Joaquín González",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Gabriel Okoro",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kuki Zalazar",
+          "position": "AM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Marino Illescas",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Cedric Teguia",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Kialy Koné",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Edgar Sevikyan",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kenneth Mamah",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Anuar",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Alex Camacho",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Omar Sadik",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jordi Escobar",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Umaru Konaré",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Ceuta (2026/2027)",
+      "teamLabel": "Ceuta (2026-27)"
     }
   },
-  "id": 14143,
+  "id": 8568,
   "name": "AD Ceuta",
   "badgeLocalPath": "/img/badges/ceuta.png",
   "group": "🇪🇸 La Liga 2",

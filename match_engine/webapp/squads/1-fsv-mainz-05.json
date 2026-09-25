@@ -203,12 +203,6 @@
           "rating": 80
         },
         {
-          "name": "Andreas Hanche-Olsen",
-          "position": "CB",
-          "marketValue": 3500000,
-          "rating": 78
-        },
-        {
           "name": "Fabio Gruber",
           "position": "CB",
           "marketValue": 3000000,
@@ -237,6 +231,12 @@
           "position": "LB",
           "marketValue": 1500000,
           "rating": 75
+        },
+        {
+          "name": "Rael Nakuzola",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
         },
         {
           "name": "Anthony Caci",
@@ -275,34 +275,22 @@
           "rating": 76
         },
         {
-          "name": "Nadiem Amiri",
-          "position": "CM",
-          "marketValue": 17000000,
-          "rating": 85
-        },
-        {
           "name": "Paul Nebel",
           "position": "AM",
           "marketValue": 18000000,
           "rating": 85
         },
         {
-          "name": "Hyun-seok Hong",
+          "name": "Nadiem Amiri",
           "position": "AM",
-          "marketValue": 2500000,
-          "rating": 77
+          "marketValue": 17000000,
+          "rating": 85
         },
         {
           "name": "Jae-sung Lee",
           "position": "AM",
           "marketValue": 2000000,
           "rating": 76
-        },
-        {
-          "name": "Marco Richter",
-          "position": "AM",
-          "marketValue": 1500000,
-          "rating": 75
         },
         {
           "name": "Otto Ruoppi",
@@ -341,23 +329,17 @@
           "rating": 79
         },
         {
-          "name": "William Bøving",
-          "position": "ST",
-          "marketValue": 3500000,
-          "rating": 78
-        },
-        {
           "name": "Alynho Haidara",
           "position": "ST",
-          "marketValue": 0,
-          "rating": null
+          "marketValue": 500000,
+          "rating": 70
         }
       ],
       "ratings": {
-        "attack": 80,
-        "midfield": 86,
-        "defense": 80,
-        "goalkeeping": 77
+        "attack": 68,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
       },
       "source": "Transfermarkt — Mainz 05 (2026/2027)",
       "teamLabel": "Mainz 05 (2026-27)"

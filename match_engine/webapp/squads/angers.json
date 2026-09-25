@@ -118,9 +118,154 @@
       },
       "source": "Transfermarkt 🌍 Otros€” SCO Angers (2025/2026)",
       "teamLabel": "SCO Angers (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Anthony Lopes",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Melvin Zinga",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Oumar Pona",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ousmane Camara",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Emmanuel Biumla",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jordan Lefort",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Joseph Kalulu",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Lilian Raolisoa",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Marius Louër",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Carlens Arcus",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Yassin Belkhdim",
+          "position": "CM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Branco van den Boomen",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Haris Belkebla",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Louis Mouton",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Bané Diatta",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Amine Sbaï",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Anthony Bermont",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Harouna Djibirin",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jim Allevinah",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Prosper Peter",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Amine El Ouazzani",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Usman Simbakoli",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 64,
+        "defense": 66,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Angers (2026/2027)",
+      "teamLabel": "Angers (2026-27)"
     }
   },
-  "id": 3284,
+  "id": 1420,
   "name": "SCO Angers",
   "badgeLocalPath": "/img/badges/angers.png",
   "group": "🇫🇷 Ligue 1",

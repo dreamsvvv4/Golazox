@@ -118,9 +118,178 @@
       },
       "source": "Transfermarkt 🌍 Otros€” En Avant de Guingamp (2025/2026)",
       "teamLabel": "EA Guingamp (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Adrián Ortolá",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Teddy Bartouche-Selbonne",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Noah Marec",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Albin Demouchy",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Donatien Gomis",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Jeovanni Dianganga",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Idriss Planeix",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tuomas Ollila",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Vimoj Muntu Wa Mungu",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Erwin Koffi",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jérémie Matumona",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Dylan Louiserre",
+          "position": "DM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Tom Ducrocq",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tanguy Ahile",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Teddy Averlant",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Florent Sanchez",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Samir Ben Brahim",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Darly N'Landu",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Jasser Chamakh",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Joël Matondo",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Amine Hemia",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Gautier Ott",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Amadou Samoura",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Zayon Chtaï-Telamio",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Stanislas Kielt",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Brandon Bokangu",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 64,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Guingamp (2026/2027)",
+      "teamLabel": "Guingamp (2026-27)"
     }
   },
-  "id": 296,
+  "id": 855,
   "name": "EA Guingamp",
   "badgeLocalPath": "/img/badges/guingamp.png",
   "group": "🇫🇷 Ligue 2",

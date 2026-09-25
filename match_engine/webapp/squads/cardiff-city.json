@@ -118,12 +118,169 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Cardiff City (2025/2026)",
       "teamLabel": "Cardiff City (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nathan Trott",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Harry Tyrer",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Matthew Turner",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Krystian Bielik",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Dylan Lawlor",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Gabriel Osho",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Calum Chambers",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Will Fish",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Joel Bagan",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Calum Scanlon",
+          "position": "LB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Perry Ng",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ronan Kpakio",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "David Turnbull",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alex Robertson",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Rob Tankiewicz",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Rubin Colwill",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joel Colwill",
+          "position": "AM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jack Moylan",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Chris Willock",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Isaak Davies",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Cian Ashford",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ollie Tanner",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Yousef Salech",
+          "position": "ST",
+          "marketValue": 3800000,
+          "rating": 79
+        },
+        {
+          "name": "Callum Robinson",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 60,
+        "defense": 62,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Cardiff City (2026/2027)",
+      "teamLabel": "Cardiff City (2026-27)"
     }
   },
-  "id": 1020,
+  "id": 603,
   "name": "Cardiff City",
   "badgeLocalPath": "/img/badges/cardiff-city.png",
-  "group": "🌍 Otros",
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
   "nameEn": "Cardiff City",
   "nameEs": "Cardiff City"
 }

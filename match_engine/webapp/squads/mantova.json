@@ -118,9 +118,202 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Mantova FC 2024-25 Serie B",
       "teamLabel": "Mantova FC 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Luca Gemello",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Francesco Bardi",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Manuel Gasparini",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Alessio Castellini",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Eman Košpo",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Stefano Cella",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Andrea Meroni",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tommaso Del Lungo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Bodin Tomasevic",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Cristian Marai",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Fahem Benaïssa",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Nicolò Radaelli",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jean-Pierre Longonda",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Rachid Kouda",
+          "position": "CM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Simone Trimboli",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Lorenzo Ignacchiti",
+          "position": "CM",
+          "marketValue": 1600000,
+          "rating": 75
+        },
+        {
+          "name": "Flavio Paoletti",
+          "position": "CM",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "David Wieser",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sambaly Keïta",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Filippo Vesentini",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Yassin Banna",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Francesco Ruocco",
+          "position": "AM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Rareș Ilie",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jonathan Silva",
+          "position": "AM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Davide Bragantini",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ismael Cajazzo",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Federico Chinetti",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Vanja Vlahović",
+          "position": "ST",
+          "marketValue": 3800000,
+          "rating": 79
+        },
+        {
+          "name": "Matteo Spinaccè",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ettore Gliozzi",
+          "position": "ST",
+          "marketValue": 750000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Mantova (2026/2027)",
+      "teamLabel": "Mantova (2026-27)"
     }
   },
-  "id": 7619,
+  "id": 2581,
   "name": "Mantova FC",
   "badgeLocalPath": "/img/badges/mantova.png",
   "group": "🇮🇹 Serie B",

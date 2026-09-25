@@ -118,9 +118,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Queens Park Rangers (2025/2026)",
       "teamLabel": "QPR (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Pierce Charles",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Calum Ward",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Matteo Salamon",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jimmy Dunne",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Ronnie Edwards",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Amadou Mbengue",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Liam Morrison",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jake Clarke-Salter",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Denniss Cirkins",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Boy Kemper",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tariq Lamptey",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 83
+        },
+        {
+          "name": "Kealey Adamson",
+          "position": "RB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Jonathan Varane",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicolas Madsen",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Harvey Vale",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Glen Kamara",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ilias Chair",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Karamoko Dembélé",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Isak Alemayehu",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Koki Saito",
+          "position": "LW",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Kwame Poku",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Paul Smyth",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Richard Kone",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Rumarn Burrell",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Rayan Kolli",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alfie Lloyd",
+          "position": "ST",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Justin Obikwu",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Queens Park Rangers (2026/2027)",
+      "teamLabel": "Queens Park Rangers (2026-27)"
     }
   },
-  "id": 1027,
+  "id": 1039,
   "name": "QPR",
   "badgeLocalPath": "/img/badges/queens-park-rangers.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

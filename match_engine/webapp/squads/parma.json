@@ -284,9 +284,190 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Parma Calcio (2025/2026)",
       "teamLabel": "Parma Calcio (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Giovanni Daffara",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Edoardo Corvi",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Simone Ghidotti",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mariano Troilo",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Abdoulaye Ndiaye",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Diego Carlos",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Lautaro Valenti",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Dominik Drobnic",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Emanuele Valeri",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Franco Carboni",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Sascha Britschgi",
+          "position": "RB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Enrico Delprato",
+          "position": "RB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Mandela Keita",
+          "position": "DM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Hans Nicolussi Caviglia",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Adrián Bernabé",
+          "position": "CM",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Christian Ordóñez",
+          "position": "CM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Benja Cremaschi",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Vincent Sierro",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Abdou-Salam Konate",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Giovanni Fabbian",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "El Bilal Touré",
+          "position": "LW",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Ousmane Diallo",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Pontus Almqvist",
+          "position": "RW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Simone Lontani",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "David Romero",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Matija Frigan",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Nesta Elphege",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Thomás De Martis",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 66,
+        "defense": 66,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Parma (2026/2027)",
+      "teamLabel": "Parma (2026-27)"
     }
   },
-  "id": 99,
+  "id": 130,
   "name": "Parma Calcio",
   "badgeLocalPath": "/img/badges/parma.png",
   "group": "🇮🇹 Serie A",

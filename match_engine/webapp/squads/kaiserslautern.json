@@ -118,9 +118,196 @@
       },
       "source": "Transfermarkt 🌍 Otros€” 1. FC Kaiserslautern (2025/2026)",
       "teamLabel": "1. FC Kaiserslautern (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Julian Krahl",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Enis Kamga",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Yannick Onohiol",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Maxwell Gyamfi",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jacob Rasmussen",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jan Elvedi",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Kelven Frees",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mika Haas",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Alex Murphy",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Paul Joly",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Simon Asta",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Fabian Kunze",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Leon Robinson",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "David Schramm",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Semih Sahin",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Mário Sauer",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dion Hofmeister",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kian Scheer",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Naatan Skyttä",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Marlon Ritter",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Owen Gibs",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ibrahim Kanaté",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ben Jungfleisch",
+          "position": "RW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Erik Müller",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Milos Lukovic",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Erencan Yardımcı",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Mergim Berisha",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ivan Prtajin",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Thierry Tazemeta",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Kaiserslautern (2026/2027)",
+      "teamLabel": "Kaiserslautern (2026-27)"
     }
   },
-  "id": 22,
+  "id": 2,
   "name": "1. FC Kaiserslautern",
   "badgeLocalPath": "/img/badges/kaiserslautern.png",
   "group": "🇩🇪 2. Bundesliga",

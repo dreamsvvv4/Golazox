@@ -175,8 +175,196 @@
       },
       "source": "Transfermarkt — Le Mans FC (2025/2026)",
       "teamLabel": "Le Mans FC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nicolas Kocik",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ewan Hatfout",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Augustin Delbecque",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Noa Boissé",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Raúl Torrente",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Théo Eyoum",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Harold Voyer",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Samuel Yohou",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Lucas Calodat",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yasser Larouci",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "João Almeida",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lucas Buades",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Rayan Bamba",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Djibril Sidibé",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lucas Bretelle",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Alexandre Lauray",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Adil Bourabaa",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Jean Vercruysse",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Edwin Quarshie",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Daouda Traoré",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Martin Rossignol",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Erwan Colas",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Billal Brahimi",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Habib Diallo",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Louis Mafouta",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Dame Gueye",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Antoine Rabillard",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "William Harhouz",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Enzo Vagner",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Le Mans (2026/2027)",
+      "teamLabel": "Le Mans (2026-27)"
     }
   },
   "id": 1164,
-  "name": "Le Mans FC"
+  "name": "Le Mans FC",
+  "badgeLocalPath": "/img/badges/le-mans-fc.png"
 }

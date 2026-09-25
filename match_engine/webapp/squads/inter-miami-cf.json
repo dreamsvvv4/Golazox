@@ -138,9 +138,209 @@
       },
       "source": "Wikipedia 🌍 Otros€” Inter Miami CF 🌍 Otros· MLS 2025",
       "teamLabel": "Inter Miami (2025)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dayne St. Clair",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Rocco Ríos Novo",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luis Barraza",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Micael",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Gonzalo Luján",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Maximiliano Falcón",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Ian Fray",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Fricio Caicedo",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tyler Hall",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Daniel Sumalla",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Sergio Reguilón",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Ezequiel Abadia-Reda",
+          "position": "LB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Facundo Mura",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Israel Boatwright",
+          "position": "RB",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Casemiro",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 83
+        },
+        {
+          "name": "David Ayala",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Yannick Bright",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Rodrigo De Paul",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 85
+        },
+        {
+          "name": "Telasco Segovia",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Matías Galarza",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Preston Plambeck",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Santi Morales",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Alexander Shaw",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Mateo Silvetti",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Riquelme Fillipi",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Dániel Pintér",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lionel Messi",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 99
+        },
+        {
+          "name": "Tadeo Allende",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Luis Suárez",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 91
+        },
+        {
+          "name": "Germán Berterame",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Lovend's Delinois",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 62,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Inter Miami (2026/2027)",
+      "teamLabel": "Inter Miami (2026-27)"
     }
   },
   "group": "🇺🇸 MLS",
   "nameEs": "Inter Miami",
-  "nameEn": "Inter Miami"
+  "nameEn": "Inter Miami",
+  "id": 69261
 }

@@ -1,9 +1,234 @@
 {
   "slug": "fc-dallas",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jonathan Sirois",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Daniel",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Michael Collodi",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Osaze Urhoghide",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Lalas Abubakar",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Álvaro Augusto",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Sebastien Ibeagha",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Slade Starnes",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kaka Scabin",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Nolan Norris",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Joshua Torquato",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Shaq Moore",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Geovane Jesus",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Enzo Newman",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kaick",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Patrickson Delgado",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Herman Johansson",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Ran Binyamin",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Christian Cappis",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ramiro",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Clay Holstad",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Diego García",
+          "position": "CM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Caleb Swann",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Joaquín Valiente",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Daniel Job",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Benji Flowers",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniel Baran",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Santiago Moreno",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Anderson Julio",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Bernard Kamungo",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sam Sarver",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Petar Musa",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 81
+        },
+        {
+          "name": "Logan Farrington",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ricky Louis",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Nicholas Simmonds",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 66,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — FC Dallas (2026/2027)",
+      "teamLabel": "FC Dallas (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/fc-dallas.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Fc Dallas",
   "nameEs": "Fc Dallas",
-  "name": "Fc Dallas"
+  "name": "Fc Dallas",
+  "id": 8816
 }

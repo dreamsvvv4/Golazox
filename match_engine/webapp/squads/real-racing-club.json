@@ -173,11 +173,169 @@
       },
       "source": "BDFutbol <\r Otros�\u001d Racing de Santander 2002-03 Primera División",
       "teamLabel": "Racing de Santander 2002-03 Primera División"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Julen Agirrezabala",
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Simon Eriksson",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jeanuël Belocian",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Facundo González",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Pedro Felipe",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Manu Hernando",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Pablo Ramón",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Jorge Salinas",
+          "position": "LB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Aarón Martín",
+          "position": "LB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Álvaro Mantilla",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Matteo Prati",
+          "position": "DM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Maguette Gueye",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Iván Martín",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Íñigo Sainz-Maza",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sergio Canales",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 83
+        },
+        {
+          "name": "André Almeida",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Iñigo Vicente",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Giorgi Guliashvili",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Andrés Martín",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Pablo García",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Iker Luque",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Yassir Zabiri",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Asier Villalibre",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Juan Carlos Arana",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Racing Santander (2026/2027)",
+      "teamLabel": "Racing Santander (2026-27)"
     }
   },
   "name": "Racing de santander",
   "badgeLocalPath": "/img/badges/real-racing-club.png",
   "group": "🇪🇸 La Liga 2",
   "nameEs": "Racing de Santander",
-  "nameEn": "Racing Santander"
+  "nameEn": "Racing Santander",
+  "id": 630
 }

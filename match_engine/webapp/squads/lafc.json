@@ -1,9 +1,192 @@
 {
   "slug": "lafc",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Hugo Lloris",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 87
+        },
+        {
+          "name": "Thomas Hasal",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Cabral Carter",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Ryan Porteous",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Eddie Segura",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nkosi Tafari",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Yevgen Cheberko",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Aaron Long",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Kenny Nielsen",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Christian Díaz",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ryan Hollingshead",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sergi Palencia",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Igor Jesus",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Sergio Vásquez",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Timothy Tillman",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Mark Delgado",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jude Terry",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mathieu Choinière",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ryan Raposo",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Leo Walta",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Heung-min Son",
+          "position": "LW",
+          "marketValue": 15000000,
+          "rating": 88
+        },
+        {
+          "name": "Denis Bouanga",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Jacob Shaffelburg",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tyler Boyd",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tommy Mihalić",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Thayllon",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Armindo Sieb",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jeremy Ebobisse",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 63,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — LAFC (2026/2027)",
+      "teamLabel": "LAFC (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/lafc.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Lafc",
   "nameEs": "Lafc",
-  "name": "Lafc"
+  "name": "Lafc",
+  "id": 51828
 }

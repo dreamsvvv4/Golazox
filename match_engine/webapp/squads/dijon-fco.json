@@ -1,0 +1,184 @@
+{
+  "slug": "dijon-fco",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Paul Delecroix",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ylann Marie-Rose",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Lenny Lacroix",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Waly Diouf",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Quentin Bernard",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Anass Benyahya",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Axel Bargain",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Moussa Faty",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ylan Aka",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Tom Meynadier",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ismaïl Bouleghcha",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "César Obongo",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Paul Bellon",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Brandon Ndezi",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Samy Chouchane",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ben-Chayeel Hamada",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jordan Marié",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Hugo Vargas-Ríos",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Adel Lembezat",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Michaël Barreto",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Abdelmajid Djae",
+          "position": "LW",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Florian Rombogouera",
+          "position": "LW",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Yanis Barka",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tyris Dong",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Alexis Ntamack",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ange Lago",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Julio Tavarès",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 68,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Dijon FCO (2026/2027)",
+      "teamLabel": "Dijon FCO (2026-27)"
+    }
+  },
+  "id": 2969,
+  "name": "Dijon FCO",
+  "group": "🇫🇷 Ligue 2",
+  "badgeLocalPath": "/img/badges/dijon-fco.png"
+}

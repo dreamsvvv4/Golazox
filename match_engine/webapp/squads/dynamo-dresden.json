@@ -118,9 +118,196 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Dynamo Dresden 2024-25 2. Bundesliga",
       "teamLabel": "Dynamo Dresden 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Tim Schreiber",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Elias Bethke",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lennart Grill",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Daniel Mesenhöler",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Thomas Keller",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Friedrich Müller",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kenneth Schmidt",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ahmet Muhamedbegovic",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lukas Boeder",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lars Bünning",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Till Neininger",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Alexander Rossipal",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Brooklyn Ezeh",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Jonas Sterner",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Simon Straudi",
+          "position": "RB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Nicolai Rapp",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Robert Wagner",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tobias Raschl",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Herrmann",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Patrice Covic",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Niklas Hauptmann",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Quentin Enold",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ben Bobzien",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nils Fröling",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jakob Lemmer",
+          "position": "RW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Kennedy Okpala",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Christoph Daferner",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Vincent Vermeij",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kaan Inanoglu",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 62,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Dynamo Dresden (2026/2027)",
+      "teamLabel": "Dynamo Dresden (2026-27)"
     }
   },
-  "id": 38,
+  "id": 129,
   "name": "Dynamo Dresden",
   "badgeLocalPath": "/img/badges/dynamo-dresden.png",
   "group": "🇩🇪 2. Bundesliga",

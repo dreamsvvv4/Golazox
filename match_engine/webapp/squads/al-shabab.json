@@ -69,11 +69,199 @@
       "source": "Al-Shabab — Saudi Pro League 2025",
       "teamLabel": "Al-Shabab (2025)",
       "badgeUrl": "/img/badges/al-shabab.png"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mory Diaw",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Al-Mahasneh",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Abdulaziz Al-Owairdhi",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Tin Jedvaj",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Mamadou Thierno Barry",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Lazar Stojanovic",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Mohammed Al-Shwirekh",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ali Al-Bulayhi",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Ali Makki",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Dhari Al-Enezi",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Hussain Al-Sibyani",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Sultan Al-Anazi",
+          "position": "LB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Mohamed Al-Thani",
+          "position": "RB",
+          "marketValue": 850000,
+          "rating": 73
+        },
+        {
+          "name": "Mohammed Harbush",
+          "position": "RB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Abdullah Al-Hawsawi",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Thomas Partey",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 84
+        },
+        {
+          "name": "Yacine Adli",
+          "position": "DM",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Ali Al-Asmari",
+          "position": "DM",
+          "marketValue": 325000,
+          "rating": 69
+        },
+        {
+          "name": "Awad Al-Nashri",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Josh Brownhill",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Abdulaziz Al-Hadhood",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Yannick Carrasco",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 83
+        },
+        {
+          "name": "Daniel Podence",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Abdullah Matuq",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Abdulrahman Al-Oboud",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Hammam Al-Hammami",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ricardo Mathias",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Roger Martínez",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Murad Khadhari",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 62,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Al-Shabab FC (2026/2027)",
+      "teamLabel": "Al-Shabab FC (2026-27)"
     }
   },
   "badgeLocalPath": "/img/badges/al-shabab.png",
   "group": "🇸🇦 Saudi Pro League",
   "nameEn": "Al-Shabab",
   "nameEs": "Al-Shabab",
-  "name": "Al-Shabab"
+  "name": "Al-Shabab",
+  "id": 9840
 }

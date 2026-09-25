@@ -1,0 +1,214 @@
+{
+  "slug": "st-louis-city-sc",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Roman Bürki",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ben Lundt",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Zackory Campagnolo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fallou Fall",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Dante Polvara",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kyle Hiebert",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lukas MacNaughton",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Timo Baumgartl",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mamadou Mbacke",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Rafael Santos",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tahir Reid-Brown",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Tomas Totland",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jaziel Orozco",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tyson Pearce",
+          "position": "RB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Chris Durkin",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daniel Edelman",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Charles-Emile Brunet",
+          "position": "DM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Conrad Wallem",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Miguel Perez",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "MyKhi Joyner",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Carlo Holse",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Alexandru Matan",
+          "position": "AM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Tomas Ostrák",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Célio Pompeu",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Zach Zengue",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Rafael Navarro",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Damion Downs",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Sang-bin Jeong",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Simon Becher",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Brendan McSorley",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Palmer Ault",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Caden Glover",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 61,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — St. Louis City SC (2026/2027)",
+      "teamLabel": "St. Louis City SC (2026-27)"
+    }
+  },
+  "id": 82686,
+  "name": "St. Louis City SC",
+  "group": "🇺🇸 MLS",
+  "badgeLocalPath": "/img/badges/st-louis-city-sc.png"
+}

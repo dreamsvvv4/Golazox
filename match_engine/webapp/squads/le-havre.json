@@ -118,9 +118,178 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Le Havre AC (2025/2026)",
       "teamLabel": "Le Havre AC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Arnaud Bodart",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Lionel Mpasi-Nzau",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Gauthier Gallon",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ayumu Seko",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Stephan Zagadou",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ahmed Touba",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Vincent Sasso",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Enzo Koffi",
+          "position": "LB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Elias Jelert",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Timothée Pembélé",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Djibril Ouziad",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Junior Mwanga",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Daren Mosengo",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Rassoul Ndiaye",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Simon Ebonog",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Amir Richardson",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Guy-Noël Zohouri",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kaito Mizuta",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ismaïl Bouneb",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Felix Mambimbi",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Rayan Fofana",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Josh Maja",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Sota Nakamura",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Mbwana Samatta",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Elysée Logbo",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Joan Tincrès",
+          "position": "ST",
+          "marketValue": 100000,
+          "rating": 64
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 66,
+        "defense": 66,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Le Havre (2026/2027)",
+      "teamLabel": "Le Havre (2026-27)"
     }
   },
-  "id": 1174,
+  "id": 738,
   "name": "Le Havre",
   "badgeLocalPath": "/img/badges/le-havre.png",
   "group": "🇫🇷 Ligue 1",

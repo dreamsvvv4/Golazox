@@ -1,0 +1,190 @@
+{
+  "slug": "fc-energie-cottbus",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marcel Lotka",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kevin Kratzsch",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Max Böhnke",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Malte Wilke",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "King Manu",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Fousseny Doumbia",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Tim Campulka",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Ryan Malone",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Joey Taubeneck",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jannis Zaydan",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Axel Borgmann",
+          "position": "LB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Anderson Lucoqui",
+          "position": "LB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Luca Erlein",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Henry Rorig",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Lukas Michelbrink",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Dominik Pelivan",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Leonardo Bittencourt",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jonas Hofmann",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Aaron Reschke",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tolcay Cigerci",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Julian Guttau",
+          "position": "AM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Jannis Boziaris",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Justin Butler",
+          "position": "LW",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Christian Kinsombi",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Moritz Hannemann",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Dmytro Bogdanov",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Erik Engelhardt",
+          "position": "ST",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Lucas Copado",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 65,
+        "defense": 68,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Energie Cottbus (2026/2027)",
+      "teamLabel": "Energie Cottbus (2026-27)"
+    }
+  },
+  "id": 25,
+  "name": "Energie Cottbus",
+  "group": "🇩🇪 2. Bundesliga",
+  "badgeLocalPath": "/img/badges/fc-energie-cottbus.png"
+}

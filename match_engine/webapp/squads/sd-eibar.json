@@ -118,9 +118,172 @@
       },
       "source": "Transfermarkt 🌍 Otros€” SD Éibar (2025/2026)",
       "teamLabel": "SD Éibar (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jonmi Magunagoitia",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Luis López",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Unai Elgezabal",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Markel Arana",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jair Amador",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Anaitz Arbilla",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Imanol García de Albéniz",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Juan Bernat",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sergio Cubero",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Álvaro Rodríguez",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Peru Nolaskoain",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sergio Álvarez",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Aleix Garrido",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ander Madariaga",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lander Olaetxea",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lucas Núñez",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jon Magunazelaia",
+          "position": "AM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Iván Gil",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Elijah Gift",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Eric Pérez",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Adu Ares",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jon Guruzeta",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Pejiño",
+          "position": "RW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Javi Martón",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jon Bautista",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 64,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Eibar (2026/2027)",
+      "teamLabel": "Eibar (2026-27)"
     }
   },
-  "id": 1537,
+  "id": 1533,
   "name": "SD Éibar",
   "badgeLocalPath": "/img/badges/sd-eibar.png",
   "group": "🇪🇸 La Liga 2",

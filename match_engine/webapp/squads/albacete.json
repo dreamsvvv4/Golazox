@@ -188,11 +188,181 @@
       },
       "source": "BDFutbol <\r Otros�\u001d Albacete 2020-21 Segunda División",
       "teamLabel": "Albacete 2020-21 Segunda División"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Carlos Marín",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Diego Mariño",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jesús Vallejo",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pepe Sánchez",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lluís López",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Javi Moreno",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Carlos Neva",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Dani Bernabéu",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Lorenzo Aguado",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Fran Gámez",
+          "position": "RB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Sergio Ortuño",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Agus Medina",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Antonio Pacheco",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Javi Villar",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Capi",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Víctor San Bartolomé",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Agustín Albarracín",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Munir El Haddadi",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Rober González",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Victor Valverde",
+          "position": "RW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Antonio Puertas",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "José Corpas",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Álex Rubio",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mario Soberón",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Samuel Obeng",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Higinio Marín",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 62,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Albacete (2026/2027)",
+      "teamLabel": "Albacete (2026-27)"
     }
   },
   "name": "Albacete",
   "badgeLocalPath": "/img/badges/albacete.png",
   "group": "🇪🇸 La Liga 2",
   "nameEs": "Albacete BP",
-  "nameEn": "Albacete BP"
+  "nameEn": "Albacete BP",
+  "id": 1532
 }

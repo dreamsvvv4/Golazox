@@ -163,9 +163,214 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Werder Bremen (2025/2026)",
       "teamLabel": "Werder Bremen (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Karl Hein",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Alexander Schlager",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Markus Kolke",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Stefan Smarkalev",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Marco Friedl",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Oskar Wójcik",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Amos Pieper",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Niklas Stark",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mick Schmetgens",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Felix Agu",
+          "position": "LB",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Moussa Ndiaye",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Olivier Deman",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Arthur",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Mitchell Weiser",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Senne Lynen",
+          "position": "DM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Youri Regeer",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Skelly Alvero",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Dariusz Stalmach",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jens Stage",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Ludovit Reis",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Chuki",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Darwin Soylu",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marco Grüll",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Eren Dinkçi",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Justin Njinmah",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Paul Erevbenagie",
+          "position": "RW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Niclas Füllkrug",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 83
+        },
+        {
+          "name": "Keke Topp",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kenny Quetant",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Salim Musah",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Cedric Itten",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Dawid Kownacki",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 69,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Werder Bremen (2026/2027)",
+      "teamLabel": "Werder Bremen (2026-27)"
     }
   },
-  "id": 66,
+  "id": 86,
   "name": "Werder Bremen",
   "badgeLocalPath": "/img/badges/werder-bremen.png",
   "group": "🇩🇪 Bundesliga",

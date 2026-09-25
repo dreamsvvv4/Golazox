@@ -1,9 +1,186 @@
 {
   "slug": "chicago-fire",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Chris Brady",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Josh Cohen",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jeff Gal",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Mbekezeli Mbokazi",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Andreas Hanche-Olsen",
+          "position": "CB",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Jack Elliott",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mauricio Pineda",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Sam Rogers",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Noah Allen",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Andrew Gutman",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Leonardo Barroso",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jonathan Dean",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Djé D'Avilla",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Anzor Mekvabishvili",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Anton Salétros",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Maren Haile-Selassie",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Robin Lod",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sergio Oregel",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "André Franco",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Johan Gómez",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "David Poreba",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Robert Turdean",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jonathan Bamba",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Philip Zinckernagel",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Puso Dithejane",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Robert Lewandowski",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 93
+        },
+        {
+          "name": "Dean Boltz",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 68,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Chicago Fire (2026/2027)",
+      "teamLabel": "Chicago Fire (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/chicago-fire.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Chicago Fire FC",
   "nameEs": "Chicago Fire FC",
-  "name": "Chicago Fire FC"
+  "name": "Chicago Fire FC",
+  "id": 432
 }

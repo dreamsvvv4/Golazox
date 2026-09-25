@@ -118,9 +118,190 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Middlesbrough FC (2025/2026)",
       "teamLabel": "Middlesbrough (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Sol Brynn",
+          "position": "GK",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Radek Vítek",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Jon McLaughlin",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Adilson Malanda",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Ashley Phillips",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Alfie Jones",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "George Edmundson",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Luke Ayling",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Neto Borges",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Alex Bangura",
+          "position": "LB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Callum Brittain",
+          "position": "RB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Sam Byram",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Connor Barron",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Aidan Morris",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Sebastian Berhalter",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Riley McGree",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Law McCabe",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Rokas Pukstas",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Leo Castledine",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Myles Peart-Harris",
+          "position": "AM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Jeremy Sarmiento",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Max Arfsten",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Micah Hamilton",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Amario Cozier-Duberry",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tommy Conway",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "David Strelec",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Will Lankshear",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Kyle Joseph",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 67,
+        "defense": 61,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Middlesbrough (2026/2027)",
+      "teamLabel": "Middlesbrough (2026-27)"
     }
   },
-  "id": 1453,
+  "id": 641,
   "name": "Middlesbrough",
   "badgeLocalPath": "/img/badges/middlesbrough.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

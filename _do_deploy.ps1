@@ -48,8 +48,9 @@ cp -r "$WEBAPP/public/." "$DEST/public/" 2>/dev/null || true
 cp "$WEBAPP/server.js" "$WEBAPP/engine.js" "$WEBAPP/news.js" "$WEBAPP/standings.js" "$WEBAPP/espn.js" "$WEBAPP/player_ratings.js" "$WEBAPP/narrator.js" "$WEBAPP/squads.js" "$WEBAPP/lookup.js" "$WEBAPP/utils.js" "$WEBAPP/referee_logic.js" "$WEBAPP/generate-sitemap.js" "$DEST/"
 cp -r "$WEBAPP/squads/." "$DEST/squads/"
 cp "$WEBAPP/squads-meta.json" "$DEST/squads-meta.json"
+cp "$WEBAPP/list.json" "$DEST/list.json"
 mkdir -p "$DEST/data"
-cp "$WEBAPP/data/agenda.json" "$WEBAPP/data/salaries.json" "$WEBAPP/data/legends.json" "$DEST/data/"
+cp "$WEBAPP/data/agenda.json" "$WEBAPP/data/salaries.json" "$WEBAPP/data/legends.json" "$WEBAPP/data/official-leagues.json" "$DEST/data/"
 # Snapshot de fichajes (TM bloquea la IP del server; se sirve este JSON generado
 # desde una IP residencial). NO copiamos transfers_db.json: el histórico de prod
 # crece por su cuenta y es mayor que el local.

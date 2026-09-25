@@ -69,6 +69,193 @@
       "source": "Al-Qadsiah — Saudi Pro League 2025",
       "teamLabel": "Al-Qadsiah (2025)",
       "badgeUrl": "/img/badges/al-qadsiah.png"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Koen Casteels",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Meshary Sanyor",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Ahmed Al-Kassar",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Gastón Álvarez",
+          "position": "CB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Nacho Fernández",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 82
+        },
+        {
+          "name": "Waleed Al-Ahmad",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Jehad Thakri",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ali Badra Diabaté",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yasser Al-Shahrani",
+          "position": "LB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Mohammed Qassim",
+          "position": "LB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Mohammed Abu Al-Shamat",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Julian Weigl",
+          "position": "DM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Ahmed Al-Siyahi",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "marketValue": 50000000,
+          "rating": 86
+        },
+        {
+          "name": "Musab Al-Juwayr",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Nahitan Nández",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Abdulmalik Al-Jaber",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ali Hazazi",
+          "position": "CM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Eyad Housa",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Christopher Bonsu Baah",
+          "position": "LW",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Suleman Sani",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Turki Al-Ammar",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Abdulaziz Al-Aliwa",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mohammed Al-Qahtani",
+          "position": "RW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Haitham Asiri",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Mateo Retegui",
+          "position": "ST",
+          "marketValue": 30000000,
+          "rating": 87
+        },
+        {
+          "name": "Julián Quiñones",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Abdullah Al-Salem",
+          "position": "ST",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Mahamadou Sangaré",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 63,
+        "defense": 69,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Al-Qadsiah FC (2026/2027)",
+      "teamLabel": "Al-Qadsiah FC (2026-27)"
     }
   },
   "group": "🇸🇦 Saudi Pro League",
@@ -76,5 +263,6 @@
   "nameEs": "Al-Qadsiah",
   "name": "Al-Qadsiah",
   "badgeLocalPath": "/img/badges/al-qadsiah.png",
-  "badge": "/img/badges/al-qadsiah.png"
+  "badge": "/img/badges/al-qadsiah.png",
+  "id": 26069
 }

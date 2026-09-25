@@ -118,9 +118,214 @@
       },
       "source": "Transfermarkt 🌍 Otros€” SC Paderborn 07 (2025/2026)",
       "teamLabel": "SC Paderborn 07 (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nahuel Noll",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Markus Schubert",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Florian Pruhs",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mattes Hansen",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tjark Scheller",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Felix Götze",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jano ter Horst",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Marcel Hoffmeier",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jonah Sticker",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Nyamekye Awortwie-Grant",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tristan Zobel",
+          "position": "CB",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Santiago Castañeda",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Tom Baack",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Laurin Ulrich",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Laurin Curda",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Raphael Obermair",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Sebastian Klaas",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Ruben Müller",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Luka Duric",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Timur Gayret",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Clemens Lippmann",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Niklas Mohr",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Deniz Zeitler",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Gabriel Vidovic",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Oliver Batista Meier",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Albert Millgramm",
+          "position": "LW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Rayan Philippe",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Sven Michel",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Marvin Pieringer",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Stefano Marino",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Steffen Tigges",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Lasse Eickel",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 62,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Paderborn (2026/2027)",
+      "teamLabel": "Paderborn (2026-27)"
     }
   },
-  "id": 5081,
+  "id": 127,
   "name": "SC Paderborn 07",
   "badgeLocalPath": "/img/badges/sc-paderborn-07.png",
   "group": "🇩🇪 2. Bundesliga",

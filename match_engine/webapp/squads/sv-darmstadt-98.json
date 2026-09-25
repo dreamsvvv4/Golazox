@@ -1,9 +1,216 @@
 {
   "slug": "sv-darmstadt-98",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marcel Schuhen",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Alexander Brunst",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Benedikt Börner",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Patric Pfeiffer",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Aleksandar Vukotic",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Yannik Lührs",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Meldin Dreskovic",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Grayson Dettoni",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Max Pfister",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fabian Nürnberger",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Raoul Petretta",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Florian Kleinhansl",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "William Mikelbrencis",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Matthias Bader",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Christopher Lannert",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Hiroki Akiyama",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Kai Klefisch",
+          "position": "DM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Carlo Sickinger",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Merveille Papela",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Marco Richter",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Lance Duijvestijn",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lars Kehl",
+          "position": "AM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Nicolas Verkooijen",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Milian Herbst",
+          "position": "AM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Luca Marseiler",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Yosuke Furukawa",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ibrahim El Kadiri",
+          "position": "LW",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Noah Weißhaupt",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Manolo Merx",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Milan Smit",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ho-jae Lee",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Fynn Lakenmacher",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 67,
+        "defense": 63,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Darmstadt 98 (2026/2027)",
+      "teamLabel": "Darmstadt 98 (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/sv-darmstadt-98.png",
-  "group": "🇩🇪 2. Bundesliga",
+  "group": "🌍 Otros",
   "nameEn": "Sv Darmstadt 98",
   "nameEs": "Sv Darmstadt 98",
-  "name": "Sv Darmstadt 98"
+  "name": "Sv Darmstadt 98",
+  "id": 105
 }

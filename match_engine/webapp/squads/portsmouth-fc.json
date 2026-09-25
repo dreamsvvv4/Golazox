@@ -113,9 +113,226 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Portsmouth FC (2025/2026)",
       "teamLabel": "Portsmouth FC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nicolas Schmid",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daniel Bielica",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ben Killip",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Regan Poole",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Conor Shaughnessy",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Madiodio Dia",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Benjamin Arthur",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jayden Meghoma",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Connor Ogilvie",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Terry Devlin",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Zak Swanson",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Chinedu Agu",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Michael Ani",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Iyad Mohamed",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Rocco Shein",
+          "position": "CM",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Márk Kosznovszky",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Ebou Adams",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Marlon Pack",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "John Swift",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Odin Bailey",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Josh Murphy",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Keshi Anderson",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Harvey Blair",
+          "position": "LW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luke Brooke-Smith",
+          "position": "LW",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Adrian Segečić",
+          "position": "RW",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Abu Kamara",
+          "position": "RW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ryan Kavuma-McQueen",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Franco Umeh",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Tyrese Shade",
+          "position": "RW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Marko Milovanović",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Colby Bishop",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Thomas Waddingham",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Eoin Kenny",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Nathaniel Chioma",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Portsmouth (2026/2027)",
+      "teamLabel": "Portsmouth (2026-27)"
     }
   },
-  "id": 1045,
+  "id": 1020,
   "name": "Portsmouth",
   "badgeLocalPath": "/img/badges/portsmouth-fc.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

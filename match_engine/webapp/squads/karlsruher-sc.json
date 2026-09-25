@@ -118,9 +118,178 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Karlsruher SC 2024-25 2. Bundesliga",
       "teamLabel": "Karlsruher SC 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Hans Christian Bernat",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Robin Himmelmann",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ferdinand Gebert",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Héliton",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Paul Scholl",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Christoph Kobald",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Marcel Franke",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sandro Trémoulet",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Deniz Ofli",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Viktor Bergh",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Rafael Pinto Pedrosa",
+          "position": "RB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Sebastian Jung",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Hyeok-kyu Kwon",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Santeri Väänänen",
+          "position": "DM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Danyal Zor",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Marvin Wanitzek",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kevin Wiethaup",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tim Civeja",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lilian Egloff",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Noel Eichinger",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jason Ponente-Ramirez",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Louey Ben Farhat",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Shio Fukuda",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Eymen Laghrissi",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "John Davis Meyer",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Moritz Broschinski",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 65,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Karlsruher SC (2026/2027)",
+      "teamLabel": "Karlsruher SC (2026-27)"
     }
   },
-  "id": 349,
+  "id": 48,
   "name": "Karlsruher SC",
   "badgeLocalPath": "/img/badges/karlsruher-sc.png",
   "group": "🇩🇪 2. Bundesliga",

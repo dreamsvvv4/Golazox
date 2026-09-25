@@ -19,6 +19,7 @@ const path = require('path');
 
 const APPLY         = process.argv.includes('--apply');
 const UPDATE_DGROUP = process.argv.includes('--update-dgroup');
+const AUDIT         = process.argv.includes('--audit');
 
 // ── 1. Group labels ────────────────────────────────────────────────────────────
 const GROUP_MAP = {
@@ -65,14 +66,17 @@ const NAME_TO_SLUG = {
   'rayo vallecano':               'rayo-vallecano',
   // ─── España — La Liga 2 ─────────────────────────────────────────────────────
   'albacete':                     'albacete',
+  'almeria':                      'ud-almeria',
   'andorra':                      'fc-andorra',
   'burgos':                       'burgos-cf',
   'cadiz':                        'cadiz-cf',
   'castellon':                    'castellon',
+  'celta fortuna':                'celta-vigo-b',
   'cordoba':                      'cordoba',
   'cultural leonesa':             'cultural-leonesa',
   'deportivo la coruna':          'rc-deportivo',
   'eibar':                        'sd-eibar',
+  'eldense':                      'cd-eldense',
   'granada':                      'granada-cf',
   'huesca':                       'sd-huesca',
   'las palmas':                   'ud-las-palmas',
@@ -82,7 +86,9 @@ const NAME_TO_SLUG = {
   'racing santander':             'real-racing-club',
   'real zaragoza':                'real-zaragoza',
   'real sociedad b':              'real-sociedad-ii',
+  'sabadell':                     'ce-sabadell',
   'sporting gijon':               'sporting-gijon',
+  'tenerife':                     'cd-tenerife',
   'valladolid':                   'real-valladolid',
   // ─── Inglaterra — Premier League ────────────────────────────────────────────
   'arsenal':                      'fc-arsenal',
@@ -108,6 +114,7 @@ const NAME_TO_SLUG = {
   // ─── Inglaterra — Championship ──────────────────────────────────────────────
   'birmingham city':              'birmingham-city',
   'blackburn rovers':             'blackburn-rovers',
+  'bolton wanderers':             'bolton-wanderers',
   'bristol city':                 'bristol-city',
   'charlton athletic':            'charlton-athletic',
   'coventry city':                'coventry-city',
@@ -115,6 +122,7 @@ const NAME_TO_SLUG = {
   'hull city':                    'hull-city',
   'ipswich town':                 'ipswich-town',
   'leicester city':               'leicester-city',
+  'lincoln city':                 'lincoln-city',
   'middlesbrough':                'middlesbrough',
   'millwall':                     'millwall',
   'norwich city':                 'norwich-city',
@@ -151,8 +159,11 @@ const NAME_TO_SLUG = {
   'udinese':                      'udinese-calcio',
   'verona':                       'hellas-verona',
   // ─── Italia — Serie B ───────────────────────────────────────────────────────
+  'arezzo':                       'ss-arezzo',
+  'ascoli':                       'ascoli-calcio',
   'avellino':                     'avellino',
   'bari':                         'bari',
+  'benevento':                    'benevento-calcio',
   'carrarese':                    'carrarese',
   'catanzaro':                    'catanzaro',
   'cesena':                       'cesena',
@@ -172,6 +183,7 @@ const NAME_TO_SLUG = {
   'spezia':                       'spezia',
   'sudtirol':                     'fc-sudtirol',
   'venezia':                      'venezia-fc',
+  'vicenza':                      'lr-vicenza-virtus',
   // ─── Alemania — Bundesliga ──────────────────────────────────────────────────
   'augsburg':                     'fc-augsburg',
   'bayer leverkusen':             'bayer-04-leverkusen',
@@ -199,6 +211,7 @@ const NAME_TO_SLUG = {
   'darmstadt 98':                 'darmstadt',
   'dynamo dresden':               'dynamo-dresden',
   'eintracht braunschweig':       'eintracht-braunschweig',
+  'energie cottbus':              'fc-energie-cottbus',
   'elversberg':                   'sv-elversberg',
   'fortuna dusseldorf':           'fortuna-dusseldorf',
   'greuther furth':               'greuther-furth',
@@ -209,6 +222,7 @@ const NAME_TO_SLUG = {
   'kaiserslautern':               'kaiserslautern',
   'magdeburg':                    '1-fc-magdeburg',
   'nurnberg':                     '1-fc-nurnberg',
+  'vfl osnabruck':                'vfl-osnabruck',
   'paderborn':                    'sc-paderborn-07',
   'schalke 04':                   'fc-schalke-04',
   'preussen munster':             'preussen-munster',
@@ -218,6 +232,7 @@ const NAME_TO_SLUG = {
   'auxerre':                      'auxerre',
   'brest':                        'stade-brest-29',
   'le havre':                     'le-havre',
+  'le mans':                      'le-mans-fc',
   'lens':                         'rc-lens',
   'lille':                        'losc-lille',
   'lyon':                         'olympique-lyon',
@@ -231,24 +246,39 @@ const NAME_TO_SLUG = {
   'saint etienne':                'as-saint-etienne',
   'strasbourg':                   'rc-strasbourg',
   'toulouse':                     'fc-toulouse',
+  'troyes':                       'es-troyes-ac',
   // ─── Francia — Ligue 2 ──────────────────────────────────────────────────────
   'annecy':                       'fc-annecy',
+  'boulogne':                     'us-boulogne',
   'caen':                         'caen',
+  'clermont':                     'clermont-foot-63',
+  'dijon':                        'dijon-fco',
+  'dunkerque':                    'usl-dunkerque',
   'grenoble':                     'grenoble-foot-38',
   'guingamp':                     'guingamp',
+  'laval':                        'stade-laval',
   'lorient':                      'fc-lorient',
+  'metz':                         'fc-metz',
+  'nancy':                        'as-nancy-lorraine',
+  'pau':                          'pau-fc',
+  'red star':                     'red-star-fc',
+  'reims':                        'stade-reims',
   'rodez':                        'rodez-af',
+  'sochaux':                      'fc-sochaux-montbeliard',
   // ─── MLS ────────────────────────────────────────────────────────────────────
   'atlanta united':               'atlanta-united-fc',
   'austin fc':                    'austin-fc',
   'cf montreal':                  'cf-montreal',
   'chicago fire':                 'chicago-fire',
   'columbus crew':                'columbus-crew',
-  'dc united':                    'dc-united',
+  'dc united':                    'd-c-united',
   'fc dallas':                    'fc-dallas',
+  'houston dynamo':               'houston-dynamo-fc',
   'inter miami':                  'inter-miami-cf',
   'la galaxy':                    'la-galaxy',
   'lafc':                         'lafc',
+  'minnesota united':             'minnesota-united-fc',
+  'orlando city':                 'orlando-city-sc',
   'new york city fc':             'new-york-city-fc',
   'new york red bulls':           'new-york-red-bulls',
   'philadelphia union':           'philadelphia-union',
@@ -262,11 +292,20 @@ const NAME_TO_SLUG = {
   'al ahli sfc':                  'al-ahli',
   'al ettifaq':                   'al-ettifaq',
   'al fateh sc':                  'al-fateh',
+  'al fayha fc':                  'al-fayha',
+  'al hazem sc':                  'al-hazm',
   'al hilal sfc':                 'al-hilal',
   'al ittihad':                   'al-ittihad',
+  'al khaleej fc':                'al-khaleej',
+  'al kholood club':              'al-kholood',
+  'al najma fc':                  'al-najma',
   'al nassr fc':                  'al-nassr',
+  'al okhdood club':              'al-okhdood',
   'al qadsiah fc':                'al-qadsiah',
+  'al riyadh sc':                 'al-riyadh',
   'al shabab fc':                 'al-shabab',
+  'al taawoun fc':                'al-taawoun',
+  'neom sc':                      'neom',
 };
 
 // ── 3. Flatten list.json into [{name, slug, wantedGroup}] ─────────────────────
@@ -294,6 +333,37 @@ flatten(list);
 const metaPath = path.join(__dirname, 'squads-meta.json');
 const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 
+const officialLeagues = {};
+for (const team of wanted) {
+  (officialLeagues[team.wantedGroup] ||= []).push(team.slug);
+}
+
+if (AUDIT) {
+  const failures = [];
+  const duplicateSlugs = [...new Set(wanted.map(team => team.slug).filter((slug, index, slugs) => slugs.indexOf(slug) !== index))];
+  if (duplicateSlugs.length) failures.push(`Slugs duplicados: ${duplicateSlugs.join(', ')}`);
+
+  for (const [group, slugs] of Object.entries(officialLeagues)) {
+    console.log(`  ${group}: ${slugs.length} equipos`);
+  }
+  for (const team of wanted) {
+    const squadPath = path.join(__dirname, 'squads', `${team.slug}.json`);
+    const squad = JSON.parse(fs.readFileSync(squadPath, 'utf8'));
+    const players = squad.seasons?.['2026']?.players;
+    if (!Array.isArray(players) || players.length < 8) failures.push(`${team.slug}: sin plantilla 2026 válida`);
+    const badge = meta[team.slug]?.badgeLocalPath || squad.badgeLocalPath;
+    const badgePath = badge?.startsWith('/') ? path.join(__dirname, 'public', badge.slice(1)) : '';
+    if (!badgePath || !fs.existsSync(badgePath)) failures.push(`${team.slug}: sin escudo local`);
+  }
+
+  if (failures.length) {
+    console.error(`\n❌ Auditoría fallida (${failures.length}):\n  ${failures.join('\n  ')}`);
+    process.exit(1);
+  }
+  console.log(`\n✅ Auditoría completa: ${wanted.length} equipos, temporada 2026, plantillas y escudos correctos.`);
+  process.exit(0);
+}
+
 function currentGroup(slug) {
   if (meta[slug]?.group) return meta[slug].group;
   try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads', slug + '.json'), 'utf8')).group || '🌍 Otros'; }
@@ -303,6 +373,14 @@ function currentGroup(slug) {
 const changes = wanted
   .map(t => ({ ...t, from: currentGroup(t.slug) }))
   .filter(t => t.from !== t.wantedGroup);
+const managedGroups = new Set(Object.values(GROUP_MAP));
+const wantedSlugs = new Set(wanted.map(team => team.slug));
+const stale = fs.readdirSync(path.join(__dirname, 'squads'))
+  .filter(file => file.endsWith('.json'))
+  .map(file => file.slice(0, -5))
+  .filter(slug => !wantedSlugs.has(slug) && managedGroups.has(currentGroup(slug)))
+  .map(slug => ({ slug, from: currentGroup(slug), wantedGroup: '🌍 Otros', name: meta[slug]?.nameEs || slug }));
+changes.push(...stale);
 
 // ── 5. Report ──────────────────────────────────────────────────────────────────
 console.log(`\n📊 Equipos verificados: ${wanted.length}  |  Sin archivo squad: ${missing.length}\n`);
@@ -310,7 +388,7 @@ console.log(`\n📊 Equipos verificados: ${wanted.length}  |  Sin archivo squad:
 if (changes.length === 0) {
   console.log('✅ Todo correcto — ningún cambio necesario.');
 } else {
-  console.log(`⚠️  ${changes.length} equipos con grupo incorrecto:`);
+  console.log(`⚠️  ${changes.length} equipos con grupo incorrecto o fuera de la liga oficial:`);
   for (const c of changes) {
     console.log(`  [${c.slug}]  "${c.name}"  →  ${c.from}  ⟹  ${c.wantedGroup}`);
   }
@@ -335,6 +413,13 @@ if (!APPLY) {
 }
 
 // ── 6. Apply ──────────────────────────────────────────────────────────────────
+fs.writeFileSync(
+  path.join(__dirname, 'data', 'official-leagues.json'),
+  JSON.stringify(officialLeagues, null, 2),
+  'utf8'
+);
+console.log('\n✅ data/official-leagues.json actualizado.');
+
 if (changes.length === 0) process.exit(0);
 
 console.log('\n📝 Aplicando cambios a squads-meta.json...');

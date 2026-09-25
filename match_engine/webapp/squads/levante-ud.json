@@ -118,9 +118,172 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Levante UD (2025/2026)",
       "teamLabel": "Levante UD (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mathew Ryan",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Pablo Campos",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Álex Primo",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Axel Tape",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Adrián Dela",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ifeanyi Ndukwe",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Aïssa Mandi",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jorge Cabello",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Manu Sánchez",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Marc Santos",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jeremy Toljan",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nacho Pérez",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Oriol Rey",
+          "position": "DM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Enzo Bardeli",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Hugo Sotelo",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jon Ander Olasagasti",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Dani Requena",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Thiago Fernández",
+          "position": "LW",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Roger Brugué",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Paco Cortés",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Víctor García",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Karl Etta Eyong",
+          "position": "ST",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Petar Ratkov",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Iván Romero",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Yanis Musuayi",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 68,
+        "defense": 69,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Levante (2026/2027)",
+      "teamLabel": "Levante (2026-27)"
     }
   },
-  "id": 745,
+  "id": 3368,
   "name": "Levante UD",
   "badgeLocalPath": "/img/badges/levante-ud.png",
   "group": "🇪🇸 La Liga",

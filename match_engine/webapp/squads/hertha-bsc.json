@@ -118,9 +118,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Hertha BSC (2025/2026)",
       "teamLabel": "Hertha BSC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Marius Gersbeck",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Tim Goller",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Konstantin Heide",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Linus Gechter",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Márton Dárdai",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Pascal Klemens",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Niklas Kolbe",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Jerome Diallo",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mads Pedersen",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Mayson Grothe",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Julian Eitschberger",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Deyovaisio Zeefuik",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Boris Mamuzah Lum",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Selim Telib",
+          "position": "DM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Kevin Sessa",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Paul Seguin",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Soufian Gouram",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Kian Todorovic",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Oluwaseun Adewumi",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Josip Brekalo",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jón Dagur Thorsteinsson",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Farid Alfa-Ruprecht",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Jelani Ndi",
+          "position": "RW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Gustaf Nilsson",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Luca Schuler",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Sebastian Grönning",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Niklas Hildebrandt",
+          "position": "ST",
+          "marketValue": 75000,
+          "rating": 63
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Hertha BSC (2026/2027)",
+      "teamLabel": "Hertha BSC (2026-27)"
     }
   },
-  "id": 86,
+  "id": 44,
   "name": "Hertha BSC",
   "badgeLocalPath": "/img/badges/hertha-bsc.png",
   "group": "🇩🇪 2. Bundesliga",

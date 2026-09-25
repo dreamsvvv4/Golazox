@@ -165,12 +165,6 @@
           "rating": 78
         },
         {
-          "name": "Julian Pauli",
-          "position": "CB",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
           "name": "Luka Lochoshvili",
           "position": "CB",
           "marketValue": 2500000,
@@ -183,21 +177,33 @@
           "rating": 75
         },
         {
-          "name": "Elias Bakatukanda",
-          "position": "CB",
-          "marketValue": 300000,
-          "rating": 68
-        },
-        {
           "name": "Gideon Mensah",
           "position": "LB",
           "marketValue": 4000000,
           "rating": 79
         },
         {
+          "name": "Borna Sosa",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
           "name": "Sebastian Sebulonsen",
           "position": "RB",
           "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Alessio Castro-Montes",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ellyes Skhiri",
+          "position": "DM",
+          "marketValue": 5000000,
           "rating": 80
         },
         {
@@ -219,14 +225,8 @@
           "rating": 82
         },
         {
-          "name": "Alessio Castro-Montes",
-          "position": "CM",
-          "marketValue": 2500000,
-          "rating": 77
-        },
-        {
           "name": "Gil Neves",
-          "position": "AM",
+          "position": "CM",
           "marketValue": 0,
           "rating": null
         },
@@ -237,10 +237,10 @@
           "rating": 88
         },
         {
-          "name": "Linton Maina",
+          "name": "Reigan Heskey",
           "position": "LW",
-          "marketValue": 3000000,
-          "rating": 78
+          "marketValue": 2000000,
+          "rating": 76
         },
         {
           "name": "Marius Bülter",
@@ -249,10 +249,10 @@
           "rating": 76
         },
         {
-          "name": "Reigan Heskey",
-          "position": "LW",
-          "marketValue": 0,
-          "rating": null
+          "name": "Mikey Moore",
+          "position": "RW",
+          "marketValue": 18000000,
+          "rating": 85
         },
         {
           "name": "Jan Thielmann",
@@ -261,13 +261,19 @@
           "rating": 80
         },
         {
-          "name": "Youssoupha Niang",
+          "name": "Linton Maina",
           "position": "RW",
-          "marketValue": 2000000,
-          "rating": 76
+          "marketValue": 3000000,
+          "rating": 78
         },
         {
           "name": "Ragnar Ache",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Thijs Dallinga",
           "position": "ST",
           "marketValue": 9000000,
           "rating": 82
@@ -292,13 +298,13 @@
         }
       ],
       "ratings": {
-        "attack": 82,
-        "midfield": 79,
-        "defense": 80,
-        "goalkeeping": 78
+        "attack": 60,
+        "midfield": 63,
+        "defense": 60,
+        "goalkeeping": 60
       },
-      "source": "Transfermarkt — FC Köln (2026/2027)",
-      "teamLabel": "FC Köln (2026-27)"
+      "source": "Transfermarkt — Cologne (2026/2027)",
+      "teamLabel": "Cologne (2026-27)"
     }
   },
   "id": 3,

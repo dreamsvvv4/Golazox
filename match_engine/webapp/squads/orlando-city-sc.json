@@ -1,0 +1,190 @@
+{
+  "slug": "orlando-city-sc",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Maxime Crépeau",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Javier Otero",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Tristan Himes",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "David Brekalo",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Iago Teodoro",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nolan Miller",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Robin Jansson",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Clovis Archange",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Vinícius Nogueira",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Adrián Marín",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Bernardo Rhein",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Griffin Dorsey",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Zakaria Taifi",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Braian Ojeda",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Luis Otávio",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Wilder Cartagena",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Joran Gerbet",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Eduard Atuesta",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Martín Ojeda",
+          "position": "AM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Tiago",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 84
+        },
+        {
+          "name": "Iván Angulo",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tyrese Spicer",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Harvey Sarajian",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Marco Pasalic",
+          "position": "RW",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Gustavo Caraballo",
+          "position": "RW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Antoine Griezmann",
+          "position": "AM",
+          "marketValue": 8000000,
+          "rating": 89
+        },
+        {
+          "name": "Justin Ellis",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Daryl Dike",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 60,
+        "defense": 65,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Orlando City (2026/2027)",
+      "teamLabel": "Orlando City (2026-27)"
+    }
+  },
+  "id": 45604,
+  "name": "Orlando City",
+  "group": "🇺🇸 MLS",
+  "badgeLocalPath": "/img/badges/orlando-city-sc.png"
+}

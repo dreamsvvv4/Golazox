@@ -1,0 +1,166 @@
+{
+  "slug": "houston-dynamo-fc",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jonathan Bond",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Blake Gillingham",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jimmy Maurer",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Logan Erb",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lucas Halter",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Agustin Resch",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Antônio Carlos",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Felipe Andrade",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Marcelo Saracchi",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Franco Negri",
+          "position": "LB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Reese Miller",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Artur",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Diadié Samassékou",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Agustín Bouzat",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Héctor Herrera",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Duane Holmes",
+          "position": "CM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Matthew Arana",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mateusz Bogusz",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Guilherme",
+          "position": "LW",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Lawrence Ennali",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nick Markanich",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Lyle Foster",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Duncan McGuire",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ibrahim Aliyu",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        }
+      ],
+      "ratings": {
+        "attack": 64,
+        "midfield": 60,
+        "defense": 64,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Houston Dynamo (2026/2027)",
+      "teamLabel": "Houston Dynamo (2026-27)"
+    }
+  },
+  "id": 9168,
+  "name": "Houston Dynamo",
+  "group": "🇺🇸 MLS",
+  "badgeLocalPath": "/img/badges/houston-dynamo-fc.png"
+}

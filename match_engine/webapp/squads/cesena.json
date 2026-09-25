@@ -118,9 +118,202 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Cesena FC 2024-25 Serie B",
       "teamLabel": "Cesena FC 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Jonathan Klinsmann",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Alessandro Siano",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Tommaso Mazzi",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Niccolò Fontana",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Luca Ferretti",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Mihajlo Ilić",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Andrea Ciofi",
+          "position": "CB",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Massimiliano Mangraviti",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jacopo Gelli",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Mark Natta",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Matteo Piacentini",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Gianluca Frabotta",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Antonio David",
+          "position": "LB",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Vittorio Magni",
+          "position": "RB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Emil Bohinen",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Matteo Guidi",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Riccardo Pagano",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Matteo Francesconi",
+          "position": "CM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Marco Dalla Vecchia",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Dimitri Bisoli",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Schirone",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Matteo Casadei",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Enea Casadei",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Filippo Bertaccini",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Maat Daniel Caprini",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Antonio Fiori",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Luca D'Andrea",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Xavello Druiventak",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Cristian Shpendi",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Alessandro Debenedetti",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 69,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Cesena (2026/2027)",
+      "teamLabel": "Cesena (2026-27)"
     }
   },
-  "id": 4558,
+  "id": 1429,
   "name": "Cesena FC",
   "badgeLocalPath": "/img/badges/cesena.png",
   "group": "🇮🇹 Serie B",

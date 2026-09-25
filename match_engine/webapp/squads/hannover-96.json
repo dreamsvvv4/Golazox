@@ -118,9 +118,214 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Hannover 96 (2025/2026)",
       "teamLabel": "Hannover 96 (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Pascal Loretz",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Leo Weinkauf",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Jonas Schwanke",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Ime Okon",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Virgil Ghiță",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Boris Tomiak",
+          "position": "CB",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Jean Hugonet",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Bastian Allgeier",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Joschua Siewert",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Noah Engelbreth",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Asuma Ikari",
+          "position": "DM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Marcel Hartel",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Hayate Matsuda",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Kolja Oudenne",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Waniss Taïbi",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Stefán Teitur Thórdarson",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Maurice Neubauer",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Franz Roggow",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jasper Reinhold",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Karl Steinmann",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Mwisho Mhango",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lars Gindorf",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alexander Vogel",
+          "position": "AM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Husseyn Chakroun",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Yunus Ünal",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Taycan Kurt",
+          "position": "LW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Emir Sahiti",
+          "position": "RW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Mustapha Bundu",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Benjamin Källman",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Benedikt Pichler",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Tom Hobrecht",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Taycan Etcibasi",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 60,
+        "defense": 63,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Hannover 96 (2026/2027)",
+      "teamLabel": "Hannover 96 (2026-27)"
     }
   },
-  "id": 534,
+  "id": 42,
   "name": "Hannover 96",
   "badgeLocalPath": "/img/badges/hannover-96.png",
   "group": "🇩🇪 2. Bundesliga",

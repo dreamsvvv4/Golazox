@@ -118,9 +118,196 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Coventry City (2025/2026)",
       "teamLabel": "Coventry City (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Carl Rushworth",
+          "position": "GK",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Daniel Bentley",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Ben Wilson",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Bobby Thomas",
+          "position": "CB",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Aurèle Amenda",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Ethan Pinnock",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Joel Latibeaudiere",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luke Woolfenden",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Stephen Mfuni",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jay Dasilva",
+          "position": "LB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Jake Bidwell",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Milan van Ewijk",
+          "position": "RB",
+          "marketValue": 22000000,
+          "rating": 86
+        },
+        {
+          "name": "Kaine Kesler-Hayden",
+          "position": "RB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Matt Grimes",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Caleb Yirenkyi",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Victor Torp",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Gustavo Hamer",
+          "position": "CM",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Josh Eccles",
+          "position": "CM",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Frank Onyeka",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Tatsuhiro Sakamoto",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Jack Rudoni",
+          "position": "AM",
+          "marketValue": 20000000,
+          "rating": 85
+        },
+        {
+          "name": "Yann Gboho",
+          "position": "LW",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Ephron Mason-Clark",
+          "position": "LW",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Loum Tchaouna",
+          "position": "RW",
+          "marketValue": 13000000,
+          "rating": 83
+        },
+        {
+          "name": "Sidiki Chérif",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Haji Wright",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Brandon Thomas-Asante",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Ellis Simms",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Taiwo Awoniyi",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 60,
+        "defense": 69,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Coventry City (2026/2027)",
+      "teamLabel": "Coventry City (2026-27)"
     }
   },
-  "id": 1162,
+  "id": 990,
   "name": "Coventry City",
   "badgeLocalPath": "/img/badges/coventry-city.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

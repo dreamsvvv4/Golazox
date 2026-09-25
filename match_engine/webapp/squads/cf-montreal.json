@@ -1,9 +1,198 @@
 {
   "slug": "cf-montreal",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Thomas Gillier",
+          "position": "GK",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Sébastian Breza",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Emil Gazdov",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Samsy Keita",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Brayan Ceballos",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Brayan Vera",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jalen Neal",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Efraín Morales",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Brandan Craig",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Viktor Radojević",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Luca Petrasso",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Bode Hidalgo",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dawid Bugaj",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Samuel Piette",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Josh Nteziryayo",
+          "position": "DM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniel Pereira",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Matty Longstaff",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Frankie Amaya",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Victor Loturi",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fabian Herbers",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ivan Losenko",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Wikelman Carmona",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Olger Escobar",
+          "position": "AM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Gennadiy Synchuk",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dante Sealy",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Noah Streit",
+          "position": "RW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Alexis Sánchez",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 84
+        },
+        {
+          "name": "Prince Owusu",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Daniel Ríos",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 63,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — CF Montreal (2026/2027)",
+      "teamLabel": "CF Montreal (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/cf-montreal.png",
   "group": "🇺🇸 MLS",
   "nameEn": "CF Montréal",
   "nameEs": "CF Montréal",
-  "name": "CF Montréal"
+  "name": "CF Montréal",
+  "id": 4078
 }

@@ -118,9 +118,190 @@
       },
       "source": "Transfermarkt <\r Otros�\u001d Castellón 2024-25 La Liga 2",
       "teamLabel": "Castellón 2024-25 La Liga 2"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Amir Saipi",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Romain Matthys",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Sergi Torner",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Fabrizio Brignani",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Agustín Sienra",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Federico Ceccherini",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ilias Kostis",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alberto Jiménez",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Lucas Alcázar",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tincho Conde",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jérémy Mellot",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Juanjo Nieto",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Matías Orozco",
+          "position": "DM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jari Vlak",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Diego Barri",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Fran Castillo",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Álvaro Martín",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Antonio Gala",
+          "position": "CM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Israel Suero",
+          "position": "AM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Iñigo Córdoba",
+          "position": "LW",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Raúl Sánchez",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pablo Santiago",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Rodrigo Rêgo",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Hamza Bellari",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ousmane Camara",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Adam Jakobsen",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Álvaro García",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Nzanza",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — Castellon (2026/2027)",
+      "teamLabel": "Castellon (2026-27)"
     }
   },
-  "id": 3839,
+  "id": 2502,
   "name": "UD Castellón",
   "badgeLocalPath": "/img/badges/castellon.png",
   "group": "🇪🇸 La Liga 2",

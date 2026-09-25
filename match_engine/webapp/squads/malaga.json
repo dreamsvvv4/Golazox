@@ -118,9 +118,190 @@
       },
       "source": "Transfermarkt <\r Otros�\u001d Málaga CF 2024-25 La Liga 2",
       "teamLabel": "Málaga CF 2024-25 La Liga 2"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alfonso Herrero",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Carlos López",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Fernando Calero",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Diego Murillo",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Juan Berrocal",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Einar Galilea",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Álex Pastor",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Ángel Recio",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Adam Aznou",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "José Salinas",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Rafita Garrido",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Carlos Puga",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jens Cajuste",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Pablo Martínez",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Izan Merino",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Carlos Dotor",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Ramón Enríquez",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Dani Lorenzo",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Rafa Rodríguez",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Aarón Ochoa",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Juan Cruz",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Joaquín Muñoz",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Julen Lobete",
+          "position": "LW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "David Larrubia",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Haitam Abaida",
+          "position": "RW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Chupe",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Adrián Niño",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Eneko Jauregi",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Malaga (2026/2027)",
+      "teamLabel": "Malaga (2026-27)"
     }
   },
-  "id": 59,
+  "id": 1084,
   "name": "Málaga CF",
   "badgeLocalPath": "/img/badges/malaga.png",
   "group": "🇪🇸 La Liga 2",

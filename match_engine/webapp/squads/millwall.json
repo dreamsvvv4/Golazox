@@ -118,9 +118,220 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Millwall FC (2025/2026)",
       "teamLabel": "Millwall (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Filip Marschall",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Max Crocombe",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Lukas Jensen",
+          "position": "GK",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "George Evans",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Joel Coleman",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Tristan Crama",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Caleb Taylor",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Jake Cooper",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Elkan Baggott",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Danny Batth",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Zak Sturge",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jordi Osei-Tutu",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ryan Leonard",
+          "position": "RB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Casper De Norre",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alfie Doughty",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Luke Cundle",
+          "position": "CM",
+          "marketValue": 3200000,
+          "rating": 78
+        },
+        {
+          "name": "Mark Sykes",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Derek Mazou-Sacko",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Daniel Kelly",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Jenson Metcalfe",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Massimo Luongo",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Alfie Massey",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mathis Servais",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Yanis Issoufou",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Zak Lovelace",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kyrell Lisbie",
+          "position": "LW",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Romain Esse",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Camiel Neghli",
+          "position": "RW",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Benicio Baker",
+          "position": "RW",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Mihailo Ivanović",
+          "position": "ST",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Josh Coburn",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Taïryk Arconte",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Lyndon Dykes",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 62,
+        "midfield": 63,
+        "defense": 69,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Millwall (2026/2027)",
+      "teamLabel": "Millwall (2026-27)"
     }
   },
-  "id": 1353,
+  "id": 1028,
   "name": "Millwall",
   "badgeLocalPath": "/img/badges/millwall.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

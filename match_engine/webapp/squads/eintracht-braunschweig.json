@@ -118,9 +118,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Eintracht Braunschweig 2024-25 2. Bundesliga",
       "teamLabel": "Eintracht Braunschweig 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ron-Thorben Hoffmann",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Benjamin Uphoff",
+          "position": "GK",
+          "marketValue": 275000,
+          "rating": 68
+        },
+        {
+          "name": "Nick Bodon",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kevin Ehlers",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Lukas Frenkert",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Andi Hoti",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Frederik Jäkel",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Isidoros Koutsidis",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Fabio Di Michele Sanchez",
+          "position": "LB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Noah Katterbach",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mehmet Aydin",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Damjan Kovacevic",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Sanoussy Ba",
+          "position": "RB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Florian Flick",
+          "position": "DM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Max Marie",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Lino Tempelmann",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Samuele Di Benedetto",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Robin Heußer",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Sidney Raebiger",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Tristan Wagner",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Junior Zé",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Sidi Sané",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Yann Sturm",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Aaron Opoku",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Jovan Mijatovic",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Maximilian Entrup",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jan Urbich",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 66,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Eintracht Braunschweig (2026/2027)",
+      "teamLabel": "Eintracht Braunschweig (2026-27)"
     }
   },
-  "id": 36,
+  "id": 23,
   "name": "Eintracht Braunschweig",
   "badgeLocalPath": "/img/badges/eintracht-braunschweig.png",
   "group": "🇩🇪 2. Bundesliga",

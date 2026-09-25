@@ -118,9 +118,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Freiburg 2024-25 Bundesliga",
       "teamLabel": "SC Freiburg 2024-25 Bundesliga"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mio Backhaus",
+          "position": "GK",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Florian Müller",
+          "position": "GK",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jannik Huth",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Bruno Ogbus",
+          "position": "CB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Philipp Lienhart",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Max Rosenfelder",
+          "position": "CB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Matthias Ginter",
+          "position": "CB",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Anthony Jung",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Berkay Yılmaz",
+          "position": "LB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Jordy Makengo",
+          "position": "LB",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Christian Günter",
+          "position": "LB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Philipp Treu",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Lukas Kübler",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Patrick Osterhage",
+          "position": "DM",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Yannik Engelhardt",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Rihito Yamamoto",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Maximilian Eggestein",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Rouven Tarnutzer",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Derry Scherhant",
+          "position": "LW",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Vincenzo Grifo",
+          "position": "LW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Florent Muslija",
+          "position": "LW",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Niklas Beste",
+          "position": "RW",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Cyriaque Irié",
+          "position": "RW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Yuito Suzuki",
+          "position": "AM",
+          "marketValue": 24000000,
+          "rating": 86
+        },
+        {
+          "name": "Igor Matanovic",
+          "position": "ST",
+          "marketValue": 22000000,
+          "rating": 82
+        },
+        {
+          "name": "Keisuke Goto",
+          "position": "ST",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Höler",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 60,
+        "defense": 64,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Freiburg (2026/2027)",
+      "teamLabel": "Freiburg (2026-27)"
     }
   },
-  "id": 17,
+  "id": 60,
   "name": "SC Freiburg",
   "badgeLocalPath": "/img/badges/freiburg.png",
   "group": "🇩🇪 Bundesliga",

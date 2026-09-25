@@ -1,9 +1,210 @@
 {
   "slug": "columbus-crew",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Patrick Schulte",
+          "position": "GK",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Nicholas Hagen",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Evan Bush",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Luke Pruter",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Stanislav Lapkes",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Malte Amundsen",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sean Zawadzki",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Eric Bailly",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Cesar Ruvalcaba",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Rudy Camacho",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Tristan Brown",
+          "position": "LB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Brooks Lennon",
+          "position": "RB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Andrés Herrera",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Steven Moreira",
+          "position": "RB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Tarun Karumanchi",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Amar Sejdić",
+          "position": "DM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Taha Habroune",
+          "position": "CM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "André Gomes",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dylan Chambost",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Mohamed Farsi",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sekou Bangoura",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Cole Mrowka",
+          "position": "CM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Brais Méndez",
+          "position": "AM",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Santiago Rodríguez",
+          "position": "AM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Anass Zaroury",
+          "position": "LW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Lautaro Giaccone",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Wessam Abou Ali",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Gonzalo Tapia",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Josef Martínez",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jamal Thiaré",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Chase Adams",
+          "position": "ST",
+          "marketValue": 200000,
+          "rating": 67
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Columbus Crew (2026/2027)",
+      "teamLabel": "Columbus Crew (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/columbus-crew.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Columbus Crew SC",
   "nameEs": "Columbus Crew SC",
-  "name": "Columbus Crew SC"
+  "name": "Columbus Crew SC",
+  "id": 813
 }

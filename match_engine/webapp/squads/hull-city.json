@@ -118,9 +118,220 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Hull City (2025/2026)",
       "teamLabel": "Hull City (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Konstantinos Tzolakis",
+          "position": "GK",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Jack Butland",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dillon Phillips",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Charlie Hughes",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Lucas Herrington",
+          "position": "CB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Nobel Mendy",
+          "position": "CB",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "Paddy McNair",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "John Egan",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Semi Ajayi",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ryan Giles",
+          "position": "LB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Matt Targett",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Brooke Norton-Cuffy",
+          "position": "RB",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Lewie Coyle",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Lucas Gourna-Douath",
+          "position": "DM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Regan Slater",
+          "position": "DM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Óscar Zambrano",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Christos Mouzakitis",
+          "position": "CM",
+          "marketValue": 25000000,
+          "rating": 86
+        },
+        {
+          "name": "Tim Iroegbunam",
+          "position": "CM",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "marketValue": 8000000,
+          "rating": 84
+        },
+        {
+          "name": "Jens Hjertø-Dahl",
+          "position": "CM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Darko Gyabi",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Eliot Matazo",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Abdülkadir Ömür",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Matt Crooks",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Kieran Dowell",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sorba Thomas",
+          "position": "LW",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Elliot Stroud",
+          "position": "LW",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Mohamed-Ali Cho",
+          "position": "RW",
+          "marketValue": 15000000,
+          "rating": 84
+        },
+        {
+          "name": "Mohamed Belloumi",
+          "position": "RW",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Robinio Vaz",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "Joe Gelhardt",
+          "position": "ST",
+          "marketValue": 14000000,
+          "rating": 84
+        },
+        {
+          "name": "Ilyas Ansah",
+          "position": "ST",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Oli McBurnie",
+          "position": "ST",
+          "marketValue": 5000000,
+          "rating": 80
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Hull City (2026/2027)",
+      "teamLabel": "Hull City (2026-27)"
     }
   },
-  "id": 1190,
+  "id": 3008,
   "name": "Hull City",
   "badgeLocalPath": "/img/badges/hull-city.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

@@ -118,9 +118,208 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Holstein Kiel (2025/2026)",
       "teamLabel": "Holstein Kiel (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Timon Weiner",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lio Rothenhagen",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Marcel Engelhardt",
+          "position": "GK",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Ben Schmit",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "David Zec",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ivan Nekic",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Noah Madsen",
+          "position": "CB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Frederik Roslyng",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Sebastian Schonlau",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Caspar Medlin",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "John Tolkin",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Niko Takahashi",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Leon Parduzi",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Lasse Rosenboom",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Hiroki Sekine",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Kasper Davidsen",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Taisei Abe",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jonas Meffert",
+          "position": "DM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ikem Ugoh",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Hamza Muqaj",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Jonas Therkelsen",
+          "position": "AM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Guillermo Balzi",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Tayar Tasdelen",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Gyan de Regt",
+          "position": "LW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Faride Alidou",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Andu Kelati",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Moritz Reimers",
+          "position": "LW",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Adrián Kaprálik",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Phil Harres",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Giorgi Kvilitaia",
+          "position": "ST",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Steven Skrzybski",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 60,
+        "defense": 67,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Holstein Kiel (2026/2027)",
+      "teamLabel": "Holstein Kiel (2026-27)"
     }
   },
-  "id": 1503,
+  "id": 269,
   "name": "Holstein Kiel",
   "badgeLocalPath": "/img/badges/holstein-kiel.png",
   "group": "🇩🇪 2. Bundesliga",

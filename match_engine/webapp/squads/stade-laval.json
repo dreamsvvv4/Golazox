@@ -1,0 +1,172 @@
+{
+  "slug": "stade-laval",
+  "seasons": {
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Mamadou Samassa",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Maxime Hautbois",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Sidi Bane",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "William Bianda",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Aboubacar Lô",
+          "position": "CB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Mattéo Commaret",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mamadou Sidibé",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Jules Gaudin",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Layousse Samb",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Esteban Mouton",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sam Sanna",
+          "position": "DM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Teddy Bouriaud",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Francis Coquelin",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Alessio Beaudouin",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Hermann Esmel",
+          "position": "DM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Cyril Mandouki",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Julien Maggiotti",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Chafik Gourichy",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Alpha Diallo",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Yanis Court",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ethan Clavreul",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Mathys Houdayer",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Trévis Dago",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Corentin Fatou",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Abou Kanté",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 68,
+        "defense": 60,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Stade Lavallois (2026/2027)",
+      "teamLabel": "Stade Lavallois (2026-27)"
+    }
+  },
+  "id": 1080,
+  "name": "Stade Lavallois",
+  "group": "🇫🇷 Ligue 2",
+  "badgeLocalPath": "/img/badges/stade-laval.png"
+}

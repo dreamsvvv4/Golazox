@@ -1,5 +1,154 @@
 {
   "slug": "al-okhdood",
-  "seasons": {},
-  "badgeLocalPath": "/img/badges/al-okhdood.png"
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Ali Al-Ameri",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Rakan Al-Najjar",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Saad Al-Qarni",
+          "position": "GK",
+          "marketValue": 25000,
+          "rating": 62
+        },
+        {
+          "name": "Alex",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Hassan Al-Harbi",
+          "position": "CB",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Mohammed Al-Hassaniyah",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Faisal Al-Hadri",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ali Al-Makrami",
+          "position": "LB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Nawaf Al-Hawsawi",
+          "position": "LB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Yousef Al-Zaraia",
+          "position": "LB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mohammed Abu Abd",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ibrahim Ashi",
+          "position": "RB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Abdullah Hazazi",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Nasser Al-Bishi",
+          "position": "CM",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Rui Pedro",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mohammed Al-Jahif",
+          "position": "AM",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Saud Salem",
+          "position": "AM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Agi Dambelley",
+          "position": "RW",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Ahmed Ali Majrashi",
+          "position": "RW",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Zinho Gano",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Khaled Al-Lazam",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Balla Sangaré",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Al-Okhdood Club (2026/2027)",
+      "teamLabel": "Al-Okhdood Club (2026-27)"
+    }
+  },
+  "badgeLocalPath": "/img/badges/al-okhdood.png",
+  "group": "🇸🇦 Saudi Pro League",
+  "id": 71665,
+  "name": "Al-Okhdood Club"
 }

@@ -1,9 +1,186 @@
 {
   "slug": "seattle-sounders",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Andrew Thomas",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Max Anchor",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Stefan Frei",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Jackson Ragen",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yeimar Gómez Andrade",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Antino Lopez",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ryan Sailor",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Stuart Hawkins",
+          "position": "CB",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Kee-hee Kim",
+          "position": "CB",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Nouhou",
+          "position": "LB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Álex Roldán",
+          "position": "RB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Kalani Kossa-Rienzi",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Snyder Brunell",
+          "position": "DM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Peter Kingston",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Cristian Roldán",
+          "position": "CM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Hassani Dotson",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Nikola Petković",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Albert Rusnák",
+          "position": "AM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Caden Clark",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Sebastian Gomez",
+          "position": "AM",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Paul Rothrock",
+          "position": "LW",
+          "marketValue": 2800000,
+          "rating": 77
+        },
+        {
+          "name": "Paul Arriola",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Pedro de la Vega",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dejan Joveljić",
+          "position": "ST",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Jesús Ferreira",
+          "position": "ST",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Jordan Morris",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Danny Musovski",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        }
+      ],
+      "ratings": {
+        "attack": 65,
+        "midfield": 63,
+        "defense": 67,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Seattle Sounders (2026/2027)",
+      "teamLabel": "Seattle Sounders (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/seattle-sounders.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Seattle Sounders FC",
   "nameEs": "Seattle Sounders FC",
-  "name": "Seattle Sounders FC"
+  "name": "Seattle Sounders FC",
+  "id": 9636
 }

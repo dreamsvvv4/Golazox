@@ -69,12 +69,193 @@
       "source": "Wrexham AFC — Championship 2024-25 (proyecto Ryan Reynolds)",
       "teamLabel": "Wrexham (2025)",
       "badgeUrl": "/img/badges/wrexham.png"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Anthony Patterson",
+          "position": "GK",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Danny Ward",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Callum Burton",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Callum Doyle",
+          "position": "CB",
+          "marketValue": 12000000,
+          "rating": 83
+        },
+        {
+          "name": "Max Cleworth",
+          "position": "CB",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Zak Vyner",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Dominic Hyam",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joe Worrall",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jacques Ekomié",
+          "position": "LB",
+          "marketValue": 9000000,
+          "rating": 82
+        },
+        {
+          "name": "Liberato Cacace",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sebastian Revan",
+          "position": "LB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Issa Kaboré",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Danny Imray",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Aaron James",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ben Sheaf",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "George Dobson",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Lewis O'Brien",
+          "position": "CM",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "George Thomason",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ryan Longman",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Ben Whiteman",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Oliver Rathbone",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Matty James",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Callum O'Hare",
+          "position": "AM",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Josh Windass",
+          "position": "AM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Nathan Broadhead",
+          "position": "LW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Bailey Cadamarteri",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Kieffer Moore",
+          "position": "ST",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Sam Smith",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 60,
+        "defense": 62,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — Wrexham (2026/2027)",
+      "teamLabel": "Wrexham (2026-27)"
     }
   },
-  "id": 67,
+  "id": 1112,
   "name": "Wrexham AFC",
   "badgeLocalPath": "/img/badges/wrexham.png",
-  "group": "Championship",
+  "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",
   "nameEn": "Wrexham AFC",
   "nameEs": "Wrexham AFC"
 }

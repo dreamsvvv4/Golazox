@@ -16,6 +16,7 @@
   const UEFA = new Set(['albanien', 'ddr', 'osterreich', 'bielorrussland', 'belgien', 'bosnien-herzegowina', 'bulgarien', 'kroatien', 'tschechien', 'danemark', 'england', 'finnland', 'frankreich', 'georgien', 'deutschland', 'griechenland', 'ungarn', 'island', 'ireland', 'israel', 'italien', 'niederlande', 'nordmazedonien', 'nordirland', 'norwegen', 'polen', 'portugal', 'rumania', 'russland', 'schottland', 'serbien', 'slowakei', 'slowenien', 'urss', 'spanien', 'schweden', 'schweiz', 'turkei', 'ukraine', 'wales', 'jugoslawien']);
   const CONMEBOL = new Set(['argentinien', 'bolivien', 'brasilien', 'chile', 'kolumbien', 'ecuador', 'paraguay', 'peru', 'uruguay', 'venezuela']);
   let catalog = [];
+  let officialLeagues = {};
   let state = null;
 
   const el = id => document.getElementById(id);
@@ -39,7 +40,13 @@
     return pyramid ? { ...pyramid, tier: pyramid.first === group ? 1 : 2 } : { first: group, second: null, tier: 1 };
   };
   const uniqueTeams = teams => [...new Map(teams.map(team => [teamKey(team), team])).values()];
-  const catalogGroup = group => uniqueTeams(catalog.filter(team => team.group === group && isModernTeam(team)));
+  const catalogGroup = group => {
+    const officialSlugs = officialLeagues[group];
+    const teams = officialSlugs?.length
+      ? officialSlugs.map(slug => catalog.find(team => team.slug === slug)).filter(Boolean)
+      : catalog.filter(team => team.group === group && isModernTeam(team));
+    return uniqueTeams(teams.filter(isModernTeam));
+  };
   const careerTeam = team => ({
     slug: team.slug, name: teamName(team), nameEs: team.nameEs, badge: team.badge,
     group: team.group, seasons: team.seasons, ovr: team.ovr || 74, seasonForm: random(-3, 3), p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0
@@ -114,7 +121,7 @@
   function matchingTeams() {
     const role = el('career-role').value;
     const group = role === 'selector' ? '🌍 Selecciones' : el('career-league').value;
-    return uniqueTeams(catalog.filter(team => team.group === group && isModernTeam(team)));
+    return catalogGroup(group);
   }
 
   function renderTeamPicker(query = '') {
@@ -165,8 +172,8 @@
     const select = el('career-league');
     const previous = select.value;
     const counts = new Map();
-    catalog.forEach(team => {
-      if (team.group && isCareerClub(team)) counts.set(team.group, (counts.get(team.group) || 0) + 1);
+    [...new Set(catalog.filter(isCareerClub).map(team => team.group))].forEach(group => {
+      counts.set(group, catalogGroup(group).length);
     });
     const groups = [...counts.entries()].filter(([, count]) => count >= 2).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     select.innerHTML = groups.map(([group, count]) => `<option value="${clean(group)}">${clean(group)} · ${count} equipos</option>`).join('');
@@ -187,12 +194,14 @@
   }
 
   function careerLeagueTeams(group, selected, slugs) {
-    const seen = new Set();
-    const available = (slugs?.length ? slugs.map(slug => catalog.find(team => team.slug === slug)).filter(Boolean) : catalogGroup(group))
-      .sort((a, b) => (b.ovr || 0) - (a.ovr || 0))
-      .filter(team => { const key = teamKey(team); if (seen.has(key)) return false; seen.add(key); return true; });
-    const selectedKey = teamKey(selected);
-    const rivals = available.filter(team => team.slug !== selected.slug && teamKey(team) !== selectedKey);
+    const officialSlugs = officialLeagues[group] || [];
+    const requestedSlugs = slugs?.length ? slugs : officialSlugs.length ? officialSlugs : catalogGroup(group).map(team => team.slug);
+    const targetSize = officialSlugs.length || requestedSlugs.length;
+    const primary = [...new Set(requestedSlugs)].map(slug => catalog.find(team => team.slug === slug)).filter(Boolean);
+    const primarySlugs = new Set(primary.map(team => team.slug));
+    const fallback = officialSlugs.filter(slug => !primarySlugs.has(slug)).map(slug => catalog.find(team => team.slug === slug)).filter(Boolean);
+    const available = primary.concat(fallback).slice(0, targetSize);
+    const rivals = available.filter(team => team.slug !== selected.slug).slice(0, Math.max(0, targetSize - 1));
     return rivals.concat(selected).map(careerTeam);
   }
 
@@ -291,7 +300,6 @@
   }
 
   function buildSeasonCompetitions() {
-    const slugs = state.teams.map(team => team.slug);
     if (state.role === 'selector') {
       const national = catalog.filter(team => team.group === '🌍 Selecciones' && isModernTeam(team));
       if (state.season % 2 === 0) return [createCompetition('world', 'Mundial', 'Selecciones · fase final', national.map(team => team.slug), false, 16)];
@@ -301,35 +309,53 @@
     }
     const division = divisionProfile(state.league);
     const groups = [...new Set(catalog.filter(isCareerClub).map(team => team.group))];
-    const europeanGroups = groups.filter(group => /La Liga$|Premier League|Serie A$|Bundesliga$|Ligue 1$|Eredivisie|Liga Portugal/.test(group || ''));
-    const southAmericanGroups = groups.filter(group => /Brasileirão|Argentina Primera|América del Sur/.test(group || ''));
-    const isSouthAmerica = southAmericanGroups.includes(state.league);
-    const ownRanking = groupRanking(state.league);
+    const europeanGroups = PYRAMIDS.map(pyramid => pyramid.first).filter(group => groups.includes(group));
+    const domesticGroups = division.second ? [division.first, division.second] : [state.league];
+    const cupSlugs = [...new Set(domesticGroups.flatMap(group => state.world?.groups?.[group] || catalogGroup(group).map(team => team.slug)))];
     const champions = rankedPool(europeanGroups, 0, 4);
     const europa = rankedPool(europeanGroups, 4, 6);
     const conference = rankedPool(europeanGroups, 6, 8);
-    const libertadores = rankedPool(southAmericanGroups, 0, 4);
-    const sudamericana = rankedPool(southAmericanGroups, 4, 8);
-    const competitions = [createCompetition('cup', 'Copa nacional', 'Eliminación directa · 16 equipos', slugs, false, 16)];
-    if (division.tier === 1 && isSouthAmerica && libertadores.includes(state.club.slug)) competitions.push(createCompetition('libertadores', 'Copa Libertadores', 'Élite de Sudamérica · 16 equipos', libertadores, true, 16));
-    else if (division.tier === 1 && isSouthAmerica && sudamericana.includes(state.club.slug)) competitions.push(createCompetition('sudamericana', 'Copa Sudamericana', 'Torneo continental · 16 equipos', sudamericana, false, 16));
-    else if (division.tier === 1 && champions.includes(state.club.slug)) competitions.push(createCompetition('champions', 'Champions League', 'Élite europea · 16 equipos', champions, true, 16));
+    const competitions = [createCompetition('cup', 'Copa nacional', 'Primera y Segunda · eliminación directa', cupSlugs, false, 16)];
+    if (division.tier === 1 && champions.includes(state.club.slug)) competitions.push(createCompetition('champions', 'Champions League', 'Élite europea · 16 equipos', champions, true, 16));
     else if (division.tier === 1 && europa.includes(state.club.slug)) competitions.push(createCompetition('europa', 'Europa League', 'Torneo continental · 16 equipos', europa, false, 16));
     else if (division.tier === 1 && conference.includes(state.club.slug)) competitions.push(createCompetition('conference', 'Conference League', 'Torneo continental · 16 equipos', conference, false, 16));
-    const previous = state.history[state.history.length - 1];
-    if (previous && (previous.position === 1 || previous.trophies?.some(trophy => /Copa nacional/.test(trophy)))) {
-      const rival = ownRanking.find(slug => slug !== state.club.slug);
-      if (rival) competitions.push(createCompetition('supercup', 'Supercopa', 'Campeones nacionales · partido único', [state.club.slug, rival], true, 2));
-    }
-    if (state.season % 4 === 0 && previous?.trophies?.some(trophy => /Champions|Libertadores/.test(trophy))) {
-      competitions.push(createCompetition('club-world-cup', 'Mundial de Clubes', 'Campeones continentales · 16 equipos', champions.concat(libertadores, state.club.slug), true, 16));
-    }
     return competitions;
   }
 
   function playerValue(player) {
     const ageFactor = player.age <= 23 ? 1.25 : player.age >= 30 ? 0.72 : 1;
     return Number(clamp(((player.rating - 55) ** 2) / 13 * ageFactor, 0.8, 145).toFixed(1));
+  }
+
+  const squadValue = () => Number(state.squad.reduce((sum, player) => sum + playerValue(player), 0).toFixed(1));
+  const clubAssets = () => Number((Math.max(0, state.budget || 0) + squadValue()).toFixed(1));
+
+  function updateClubOverall() {
+    const best = state.squad.filter(player => player.loan?.type !== 'out').sort((a, b) => b.rating - a.rating).slice(0, 11);
+    if (!best.length) return;
+    const overall = Math.round(average(best, 'rating'));
+    state.club.ovr = overall;
+    const leagueClub = state.teams.find(team => team.slug === state.club.slug);
+    if (leagueClub) leagueClub.ovr = overall;
+  }
+
+  function developSquad() {
+    const improvements = [];
+    state.squad.forEach(player => {
+      if (player.user || player.loan?.type === 'out') return;
+      const previous = player.rating;
+      const age = Number(player.age) || 24;
+      const appearances = Number(player.apps) || 0;
+      const contribution = Number(player.goals || 0) + Number(player.assists || 0);
+      let growth = age <= 20 ? 1 : age <= 23 && appearances >= 8 ? 1 : 0;
+      if (age <= 24 && state.training === 'youth') growth++;
+      if (age <= 28 && (appearances >= 22 || contribution >= 12)) growth++;
+      if (age >= 33 && appearances < 18) growth--;
+      player.rating = clamp(player.rating + growth, 55, 96);
+      if (player.rating !== previous) improvements.push({ name: player.name, from: previous, to: player.rating, delta: player.rating - previous });
+    });
+    updateClubOverall();
+    return improvements.sort((a, b) => b.delta - a.delta || b.to - a.to);
   }
 
   function simulatedPlayerStats(player) {
@@ -342,7 +368,7 @@
     return { goals, assists };
   }
 
-  function calculateSeasonAwards(trophies) {
+  function calculateSeasonAwards() {
     const userPlayers = state.squad.map(player => ({
       name: player.name, club: state.club.slug, position: player.position, rating: player.rating,
       goals: player.goals || 0, assists: player.assists || 0, user: Boolean(player.user)
@@ -353,14 +379,13 @@
     });
     const candidates = [...new Map(userPlayers.concat(simulated).map(player => [`${player.name}|${player.club}`, player])).values()];
     const goldenBoot = candidates.slice().sort((a, b) => b.goals - a.goals || b.assists - a.assists || b.rating - a.rating)[0];
-    const trophyBoost = trophies.length ? 5 + trophies.length * 2 : 0;
     const ballonDor = candidates.map(player => ({
       ...player,
-      awardScore: player.rating + player.goals * .42 + player.assists * .22 + (player.club === state.club.slug ? trophyBoost : 0) + Math.random() * 6
+      awardScore: player.rating * 1.2 + player.goals * .9 + player.assists * .35
     })).sort((a, b) => b.awardScore - a.awardScore)[0];
     return {
       season: state.season,
-      goldenBoot: goldenBoot ? { name: goldenBoot.name, club: goldenBoot.club, goals: goldenBoot.goals, rating: goldenBoot.rating, user: goldenBoot.user } : null,
+      goldenBoot: goldenBoot ? { name: goldenBoot.name, club: goldenBoot.club, goals: goldenBoot.goals, assists: goldenBoot.assists, rating: goldenBoot.rating, user: goldenBoot.user } : null,
       ballonDor: ballonDor ? { name: ballonDor.name, club: ballonDor.club, goals: ballonDor.goals, assists: ballonDor.assists, rating: ballonDor.rating, user: ballonDor.user } : null
     };
   }
@@ -574,6 +599,9 @@
         : state.role === 'selector' ? clean(season.outcome) : clean(season.outcome);
       const awardHtml = `<div class="career-season-awards"><span><b>◆ BALÓN DE ORO</b><strong>${clean(season.awards.ballonDor?.name || 'Sin ganador')}</strong></span><span><b>▲ BOTA DE ORO</b><strong>${clean(season.awards.goldenBoot?.name || 'Sin ganador')}</strong><small>${season.awards.goldenBoot?.goals || 0} goles</small></span></div>`;
       review.innerHTML = `<header><span>CIERRE DE TEMPORADA ${season.season}</span><strong>${seasonDetail}</strong></header><div class="career-season-stats"><span><small>POSICIÓN</small><b>${season.position}º</b></span><span><small>PUNTOS</small><b>${season.points}</b></span><span><small>BALANCE GOLEADOR</small><b>${season.gf}–${season.ga}</b></span><span><small>PREMIO</small><b>${money(season.prize)}</b></span></div><div class="career-season-honours"><div class="career-season-trophies"><small>PALMARÉS</small>${season.trophies.length ? season.trophies.map(trophy => `<strong>🏆 ${clean(trophy)}</strong>`).join('') : '<span>Sin títulos</span>'}</div>${awardHtml}</div>${offers ? `<section class="career-job-offers"><header><strong>${state.role === 'player' ? 'Propuestas de tu agente' : 'Tu futuro'}</strong><span>Elige proyecto o continúa construyendo el actual</span></header><div>${offers}</div></section>` : ''}<footer><button data-season-action="continue">${state.careerRun ? 'Simular siguiente temporada' : 'Continuar en el club'}</button>${state.careerRun ? '<button data-season-action="stop">Detener simulación</button>' : ''}</footer>`;
+      const goalStat = review.querySelector('.career-season-stats span:nth-child(3)');
+      if (goalStat) goalStat.innerHTML = `<small>GOLES A FAVOR / EN CONTRA</small><b>${season.gf} GF · ${season.ga} GC</b>`;
+      if (season.development?.length) review.querySelector('footer')?.insertAdjacentHTML('beforebegin', `<section class="career-development"><header><span>EVOLUCIÓN DE MEDIA</span><strong>${season.development.filter(item => item.delta > 0).length} jugadores mejoran</strong></header><div>${season.development.slice(0, 8).map(item => `<span><b>${clean(item.name)}</b><small>${item.from} → ${item.to}</small><i class="${item.delta > 0 ? 'is-up' : 'is-down'}">${item.delta > 0 ? '+' : ''}${item.delta}</i></span>`).join('')}</div></section>`);
     }
   }
 
@@ -581,8 +609,9 @@
     el('career-lineup-count').textContent = `${starters().length}/11`;
     document.querySelector('[data-career-panel="squad"] h4').textContent = state.role === 'selector' ? 'Convocatoria y once nacional' : state.role === 'player' ? 'Competencia por un puesto' : 'Convocatoria y once titular';
     el('career-squad').innerHTML = state.squad.slice().sort((a, b) => Number(b.user) - Number(a.user) || Number(b.starter) - Number(a.starter) || b.rating - a.rating).map(player => {
-      const locked = state.role === 'player' ? ' disabled' : '';
-      return `<button type="button" class="career-player-row${player.starter ? ' is-starting' : ''}${player.user ? ' is-user' : ''}" data-player="${clean(player.id)}"${locked}><span class="career-player-pos">${clean(player.position)}</span><span><b>${clean(player.name)}${player.user ? ' · TÚ' : ''}</b><small>${player.starter ? 'Titular' : 'Suplente'} · ${player.apps || 0} PJ · ${player.goals || 0} G · ${player.assists || 0} A</small></span><span class="career-player-rating">${player.rating}</span><span class="career-player-energy">${Math.round(player.fitness)}%</span></button>`;
+      const locked = state.role === 'player' || player.loan?.type === 'out' ? ' disabled' : '';
+      const status = player.loan?.type === 'out' ? `Cedido a ${teamName(findTeam(player.loan.club))}` : player.loan?.type === 'in' ? `Cedido por ${teamName(findTeam(player.loan.club))}` : player.starter ? 'Titular' : 'Suplente';
+      return `<button type="button" class="career-player-row${player.starter ? ' is-starting' : ''}${player.user ? ' is-user' : ''}${player.loan ? ' is-loan' : ''}" data-player="${clean(player.id)}"${locked}><span class="career-player-pos">${clean(player.position)}</span><span><b>${clean(player.name)}${player.user ? ' · TÚ' : ''}</b><small>${clean(status)} · ${player.apps || 0} PJ · ${player.goals || 0} G · ${player.assists || 0} A</small></span><span class="career-player-rating">${player.rating}</span><span class="career-player-energy">${Math.round(player.fitness)}%</span></button>`;
     }).join('');
   }
 
@@ -627,12 +656,12 @@
   }
 
   function renderAwards() {
-    const liveRace = state.squad.slice().sort((a, b) => (b.goals || 0) - (a.goals || 0) || b.rating - a.rating).slice(0, 5);
+    const liveRace = state.squad.filter(player => player.loan?.type !== 'out').slice().sort((a, b) => (b.goals || 0) - (a.goals || 0) || b.rating - a.rating).slice(0, 5);
     const archive = state.awards || [];
     const winner = (award, type) => award
-      ? `<article class="career-award-winner ${type}"><img src="${clean(badge(findTeam(award.club)))}" alt=""><div><span>${type === 'ballon' ? 'BALÓN DE ORO' : 'BOTA DE ORO'}</span><strong>${clean(award.name)}</strong><small>${clean(teamName(findTeam(award.club)))} · ${type === 'ballon' ? `${award.rating} media · ${award.goals} G · ${award.assists} A` : `${award.goals} goles`}</small></div>${award.user ? '<b>TÚ</b>' : ''}</article>`
+      ? `<article class="career-award-winner ${type}"><div class="career-award-medal">${type === 'ballon' ? 'BO' : 'BG'}</div><div><span>${type === 'ballon' ? 'BALÓN DE ORO' : 'BOTA DE ORO'}</span><strong>${clean(award.name)}</strong><small>${clean(teamName(findTeam(award.club)))} · ${award.rating} media · ${award.goals} G${type === 'ballon' ? ` · ${award.assists} A` : ''}</small></div><img src="${clean(badge(findTeam(award.club)))}" alt="">${award.user ? '<b>TÚ</b>' : ''}</article>`
       : '';
-    el('career-awards').innerHTML = `<header class="career-awards-head"><div><span>PREMIOS INDIVIDUALES</span><h4>La élite de cada temporada</h4></div><b>${archive.length} galas celebradas</b></header><section class="career-awards-live"><div><span>CARRERA POR LA BOTA · TEMPORADA ${state.season}</span><h5>Máximos goleadores del club</h5></div>${liveRace.map((player, index) => `<div class="career-award-race"><i>${index + 1}</i><span><strong>${clean(player.name)}</strong><small>${clean(player.position)} · ${player.apps || 0} PJ</small></span><b>${player.goals || 0} G</b></div>`).join('')}</section>${archive.length ? `<section class="career-awards-archive">${archive.map(season => `<div class="career-awards-season"><h5>TEMPORADA ${season.season}</h5>${winner(season.ballonDor, 'ballon')}${winner(season.goldenBoot, 'boot')}</div>`).join('')}</section>` : '<p class="career-market-note">La primera gala se celebrará al terminar la temporada.</p>'}`;
+    el('career-awards').innerHTML = `<header class="career-awards-head"><div><span>PREMIOS INDIVIDUALES</span><h4>Rendimiento real de cada jugador</h4></div><b>${archive.length} galas celebradas</b></header><section class="career-awards-live"><div><span>CARRERA POR LA BOTA · TEMPORADA ${state.season}</span><h5>Goles, asistencias y media individual</h5></div>${liveRace.map((player, index) => `<div class="career-award-race"><i>${index + 1}</i><span><strong>${clean(player.name)}</strong><small>${player.rating} media · ${player.apps || 0} PJ · ${player.assists || 0} A</small></span><b>${player.goals || 0} G</b></div>`).join('')}</section>${archive.length ? `<section class="career-awards-archive">${archive.map(season => `<div class="career-awards-season"><h5>TEMPORADA ${season.season}</h5>${winner(season.ballonDor, 'ballon')}${winner(season.goldenBoot, 'boot')}</div>`).join('')}</section>` : '<p class="career-market-note">La primera gala se celebrará al terminar la temporada.</p>'}`;
   }
 
   function transferWindow() {
@@ -648,6 +677,10 @@
     if (state.role === 'player') {
       const offers = state.offers.filter(offer => offer.type === 'player');
       el('career-market').innerHTML = `<div class="career-market-head"><div><span>AGENTE Y CONTRATOS</span><h4>Tu futuro profesional</h4></div><b>${offers.length} ofertas</b></div><div class="career-contract-strip"><div><span>CLUB ACTUAL</span><b>${clean(teamName(currentTeam()))}</b></div><div><span>SALARIO</span><b>${state.player.salary.toFixed(1)} M€/año</b></div><div><span>CONTRATO</span><b>${state.player.contract} temporadas</b></div><div><span>VALOR ESTIMADO</span><b>${money(playerValue(state.player))}</b></div></div><div class="career-offers">${offers.length ? offers.map(offer => `<article class="career-offer"><img src="${clean(badge(findTeam(offer.club)))}" alt=""><span><strong>${clean(teamName(findTeam(offer.club)))}</strong><small>${clean(findTeam(offer.club)?.group || '')} · ${offer.salary.toFixed(1)} M€/año · ${offer.contract} temporadas</small></span><button data-market-action="accept-player" data-offer="${clean(offer.id)}">Firmar</button><button data-market-action="reject" data-offer="${clean(offer.id)}">Rechazar</button></article>`).join('') : '<p class="career-market-note">Sin propuestas formales. Jugar, rendir y mejorar tu media hará que tu agente reciba ofertas.</p>'}</div>${marketHistoryHtml()}`;
+      el('career-market').querySelectorAll('.career-offer small').forEach((detail, index) => {
+        const offer = offers[index];
+        if (offer?.projection) detail.textContent += ` · media ${state.player.rating} · proyección ${offer.projection}`;
+      });
       return;
     }
     const open = transferWindow();
@@ -661,6 +694,18 @@
       return `<article class="career-negotiation"><header><img src="${clean(badge(findTeam(player.club)))}" alt=""><span><strong>Negociación por ${clean(player.name)}</strong><small>Ronda ${negotiation.round}/3 · valor ${money(player.value)}</small></span><b>${negotiation.counter ? `Contraoferta ${money(negotiation.counter)}` : 'Esperando tu oferta'}</b></header><p>${clean(negotiation.message)}</p><div>${negotiation.counter ? `<button data-market-action="accept-counter">Aceptar ${money(negotiation.counter)}</button>` : `<button data-market-action="bid" data-ratio="0.9">Ofrecer ${money(player.value * .9)}</button><button data-market-action="bid" data-ratio="1">Ofrecer ${money(player.value)}</button><button data-market-action="bid" data-ratio="1.12">Ofrecer ${money(player.value * 1.12)}</button>`}<button data-market-action="cancel-negotiation">Retirarse</button></div></article>`;
     })() : '';
     el('career-market').innerHTML = `<div class="career-market-head"><div><span>${open ? 'VENTANA ABIERTA' : 'MERCADO CERRADO'}</span><h4>${state.round >= 8 ? 'Mercado de invierno' : 'Mercado de fichajes'}</h4></div><b>${money(state.budget)}</b></div><div class="career-scout"><select id="career-scout-team"><option value="">Buscar plantilla de un equipo</option>${scoutGroups.map(team => `<option value="${clean(team.slug)}">${clean(teamName(team))} · ${clean(team.group)}</option>`).join('')}</select><button data-market-action="scout">Cargar equipo</button><input id="career-market-search" value="${clean(state.marketSearch || '')}" placeholder="Buscar jugador o club"></div>${negotiationHtml}<div class="career-offers">${state.offers.filter(offer => offer.type === 'sale').map(offer => { const player = state.squad.find(item => item.id === offer.player); return player ? `<article class="career-offer"><img src="${clean(badge(findTeam(offer.club)))}" alt=""><span><strong>${clean(teamName(findTeam(offer.club)))} quiere a ${clean(player.name)}</strong><small>Oferta: ${money(offer.amount)}</small></span><button data-market-action="accept-sale" data-offer="${clean(offer.id)}">Aceptar</button><button data-market-action="reject" data-offer="${clean(offer.id)}">Rechazar</button></article>` : ''; }).join('')}</div><div class="career-market-list">${visibleMarket.map(player => `<article class="career-target"><img src="${clean(badge(findTeam(player.club)))}" alt=""><span><strong>${clean(player.name)}</strong><small>${clean(player.position)} · ${player.age} años · ${clean(teamName(findTeam(player.club)))}</small></span><b>${player.rating}</b><span><strong>${money(player.value)}</strong><small>Cláusula ${money(player.clause)}</small></span><button data-market-action="buy" data-player="${clean(player.id)}"${open || negotiation ? '' : ' disabled'}>Negociar</button><button data-market-action="clause" data-player="${clean(player.id)}"${open ? '' : ' disabled'}>Cláusula</button></article>`).join('') || '<p class="career-market-note">No hay jugadores que coincidan.</p>'}</div>${marketHistoryHtml()}`;
+    if (state.role === 'manager' && open) {
+      el('career-market').querySelectorAll('[data-market-action="clause"]').forEach(button => {
+        const loanButton = document.createElement('button');
+        loanButton.className = 'career-loan-btn';
+        loanButton.dataset.marketAction = 'loan-in';
+        loanButton.dataset.player = button.dataset.player;
+        loanButton.textContent = 'Cesión';
+        button.insertAdjacentElement('afterend', loanButton);
+      });
+      const loanCandidates = state.squad.filter(player => !player.user && !player.loan && !player.starter).slice(0, 8);
+      if (loanCandidates.length) el('career-market').insertAdjacentHTML('beforeend', `<section class="career-loan-panel"><header><span>CESIONES DE SALIDA</span><strong>Desarrolla jugadores sin perder sus derechos</strong></header><div>${loanCandidates.map(player => `<article><span><b>${clean(player.name)}</b><small>${clean(player.position)} · ${player.age} años · ${player.rating} media</small></span><button data-market-action="loan-out" data-player="${clean(player.id)}">Ceder 1 temporada</button></article>`).join('')}</div></section>`);
+    }
   }
 
   function marketHistoryHtml() {
@@ -671,10 +716,29 @@
     if (state.role === 'player') {
       const player = state.player;
       el('career-office').innerHTML = `<div class="career-player-contract"><span>CONTRATO PROFESIONAL</span><h4>${clean(teamName(currentTeam()))}</h4><strong>${player.salary.toFixed(1)} M€ <small>por temporada</small></strong><p>${player.contract} temporadas restantes · valor ${money(playerValue(player))} · ingresos de carrera ${money(player.earnings || 0)}</p></div><div class="career-office-kpis"><div class="career-office-kpi"><span>VALORACIÓN</span><b>${player.rating}</b></div><div class="career-office-kpi"><span>MINUTOS</span><b>${player.minutes}</b></div><div class="career-office-kpi"><span>GOLES</span><b>${player.goals}</b></div><div class="career-office-kpi"><span>ASISTENCIAS</span><b>${player.assists}</b></div></div><div class="career-objectives"><div class="career-objective"><span><strong>Rol actual</strong><small>Gana el puesto con forma y entrenamiento</small></span><b>${clean(player.status)}</b></div><div class="career-objective"><span><strong>Situación contractual</strong><small>${player.contract <= 1 ? 'Tu agente negociará la renovación o una salida' : 'Contrato estable'}</small></span><b>${player.contract} años</b></div><div class="career-objective"><span><strong>Nota media</strong><small>Rendimiento de la temporada</small></span><b>${player.form.toFixed(1)}</b></div></div>${historyHtml()}`;
+      el('career-office').insertAdjacentHTML('beforeend', careerAchievementsHtml());
       return;
     }
     const target = Math.max(3, Math.ceil(state.teams.length / 2));
     el('career-office').innerHTML = `<div class="career-office-kpis"><div class="career-office-kpi"><span>${state.role === 'selector' ? 'PRESTIGIO' : 'SALDO TEMPORADA'}</span><b>${state.role === 'selector' ? Math.round((state.board + state.fans) / 2) : money(state.balance)}</b></div><div class="career-office-kpi"><span>AFICIÓN</span><b>${Math.round(state.fans)}%</b></div><div class="career-office-kpi"><span>CONFIANZA</span><b>${Math.round(state.board)}%</b></div><div class="career-office-kpi"><span>REPUTACIÓN</span><b>${Math.round((state.board + state.fans) / 2)}</b></div></div>${state.dismissed ? '<div class="career-dismissed"><strong>Has sido destituido</strong><span>Tu historial continúa. Acepta un proyecto de menor reputación para reconstruir tu carrera.</span><button data-career-action="seek-job">Buscar nuevo club</button></div>' : ''}<div class="career-objectives"><div class="career-objective"><span><strong>Objetivo deportivo</strong><small>Terminar entre los ${target} primeros</small></span><b>${userPosition() <= target ? 'En objetivo' : 'En riesgo'}</b></div><div class="career-objective"><span><strong>Vestuario</strong><small>Mantener la moral por encima de 60</small></span><b>${Math.round(average(state.squad, 'morale'))}/100</b></div></div>${historyHtml()}`;
+    if (state.role === 'manager') el('career-office').insertAdjacentHTML('afterbegin', `<section class="career-assets"><div><span>PATRIMONIO TOTAL</span><strong>${money(clubAssets())}</strong><small>Presupuesto + valor de plantilla</small></div><dl><div><dt>PRESUPUESTO</dt><dd>${money(state.budget)}</dd></div><div><dt>PLANTILLA</dt><dd>${money(squadValue())}</dd></div><div><dt>MEDIA DEL CLUB</dt><dd>${currentTeam().ovr}</dd></div></dl></section>`);
+    el('career-office').insertAdjacentHTML('beforeend', careerAchievementsHtml());
+  }
+
+  function careerAchievementsHtml() {
+    const seasons = state.history || [];
+    const trophies = seasons.flatMap(season => season.trophies || []);
+    const totalGoals = seasons.reduce((sum, season) => sum + Number(season.gf || 0), 0) + Number(currentTeam()?.gf || 0);
+    const achievements = [
+      { code: '01', title: 'Primera temporada', detail: 'Completa una temporada', earned: seasons.length >= 1, progress: `${Math.min(seasons.length, 1)}/1` },
+      { code: 'CH', title: 'Campeón de liga', detail: 'Termina primero en liga', earned: seasons.some(season => season.position === 1), progress: seasons.some(season => season.position === 1) ? '1/1' : '0/1' },
+      { code: 'CP', title: 'Rey de Copa', detail: 'Gana la Copa nacional', earned: trophies.includes('Copa nacional'), progress: trophies.includes('Copa nacional') ? '1/1' : '0/1' },
+      { code: 'EU', title: 'Gloria europea', detail: 'Gana una competición UEFA', earned: trophies.some(trophy => /Champions|Europa|Conference/.test(trophy)), progress: trophies.some(trophy => /Champions|Europa|Conference/.test(trophy)) ? '1/1' : '0/1' },
+      { code: 'AS', title: 'Ascenso', detail: 'Sube a Primera División', earned: seasons.some(season => season.movement?.type === 'promotion'), progress: seasons.some(season => season.movement?.type === 'promotion') ? '1/1' : '0/1' },
+      { code: '100', title: 'Ataque centenario', detail: 'Marca 100 goles en tu carrera', earned: totalGoals >= 100, progress: `${Math.min(totalGoals, 100)}/100` }
+    ];
+    const earned = achievements.filter(item => item.earned).length;
+    return `<section class="career-achievements"><header><div><span>GABINETE DE LOGROS</span><h4>Tu legado</h4></div><b>${earned}/${achievements.length}</b></header><div>${achievements.map(item => `<article class="${item.earned ? 'is-earned' : 'is-locked'}"><i>${item.code}</i><span><strong>${clean(item.title)}</strong><small>${clean(item.detail)}</small></span><b>${item.earned ? 'CONSEGUIDO' : item.progress}</b></article>`).join('')}</div></section>`;
   }
 
   function historyHtml() {
@@ -706,7 +770,7 @@
   function togglePlayer(id) {
     if (state.role === 'player') return;
     const player = state.squad.find(item => item.id === id);
-    if (!player) return;
+    if (!player || player.loan?.type === 'out') return;
     const count = starters().length;
     if ((!player.starter && count >= 11) || (player.starter && count <= 8)) return;
     player.starter = !player.starter;
@@ -870,13 +934,22 @@
 
   function createPlayerOffers(count, summer) {
     const existing = new Set(state.offers.filter(offer => offer.type === 'player').map(offer => offer.club));
-    const source = summer ? catalog.filter(isCareerClub) : state.teams;
+    const player = state.player;
+    const agePotential = player.age <= 20 ? 7 : player.age <= 23 ? 5 : player.age <= 26 ? 2 : player.age >= 31 ? -2 : 0;
+    const performance = clamp((player.form - 6.5) * 1.6 + player.goals * .12 + player.assists * .08, -2, 6);
+    const projection = clamp(player.rating + agePotential + performance, player.rating - 2, 95);
+    const targetLevel = clamp(player.rating + performance * .55 + (summer ? agePotential * .35 : 0), 60, 94);
+    const minimumLevel = Math.max(58, player.rating - (player.form < 6.2 ? 5 : 2));
+    const maximumLevel = Math.min(96, projection + 2);
+    const source = catalog.filter(isCareerClub);
     const candidates = source.filter(team => team.slug !== state.club.slug && !existing.has(team.slug)
-      && (team.ovr || 70) <= state.player.rating + 10 && (team.ovr || 70) >= state.player.rating - 6);
-    shuffled(candidates).slice(0, count).forEach((team, index) => {
-      const qualityFactor = clamp(((team.ovr || 70) - 62) / 18, .65, 1.8);
-      const salary = Number(Math.max(.5, state.player.salary * random(115, 165) / 100 * qualityFactor).toFixed(1));
-      state.offers.push({ id: `o-${Date.now()}-${index}`, type: 'player', club: team.slug, group: team.group, salary, contract: random(2, 5), summer });
+      && (team.ovr || 70) >= minimumLevel && (team.ovr || 70) <= maximumLevel)
+      .map(team => ({ team, fit: Math.abs((team.ovr || 70) - targetLevel) + Math.random() * (summer ? 2.5 : 1.2) }))
+      .sort((a, b) => a.fit - b.fit);
+    candidates.slice(0, count).forEach(({ team }, index) => {
+      const marketSalary = playerValue(player) * clamp(((team.ovr || 70) - 58) / 30, .45, 1.35) / 8;
+      const salary = Number(Math.max(.5, player.salary * 1.12, marketSalary).toFixed(1));
+      state.offers.push({ id: `o-${Date.now()}-${index}`, type: 'player', club: team.slug, group: team.group, salary, contract: random(2, 5), summer, projection: Number(projection.toFixed(1)) });
     });
   }
 
@@ -954,6 +1027,54 @@
     save();
     render();
     return true;
+  }
+
+  function loanPlayerIn(id) {
+    if (state.role !== 'manager' || !transferWindow()) return;
+    const target = state.market.find(player => player.id === id);
+    if (!target || state.squad.length >= 25) return;
+    const fee = Number(Math.max(.2, target.value * .08).toFixed(1));
+    if (state.budget < fee) {
+      state.inbox.unshift({ title: 'Cesión bloqueada', text: `Necesitas ${money(fee)} para cubrir la cesión de ${target.name}.` });
+      render();
+      return;
+    }
+    state.budget -= fee;
+    state.balance -= fee;
+    state.squad.push({ id: `l-${Date.now()}`, name: target.name, position: target.position, rating: target.rating, age: target.age, fitness: 100, morale: 76, starter: false, apps: 0, goals: 0, assists: 0, loan: { type: 'in', club: target.club, expires: state.season + 1 } });
+    state.market = state.market.filter(player => player.id !== id);
+    state.transfers.unshift({ text: `Cesión recibida: ${target.name}`, amount: `-${money(fee)}` });
+    state.inbox.unshift({ title: `${target.name} llega cedido`, text: `Se incorpora por una temporada. Coste: ${money(fee)}.` });
+    updateClubOverall();
+    save();
+    render();
+  }
+
+  function loanPlayerOut(id) {
+    if (state.role !== 'manager' || !transferWindow()) return;
+    const player = state.squad.find(item => item.id === id);
+    const destinations = state.teams.filter(team => team.slug !== state.club.slug);
+    if (!player || player.user || player.loan || !destinations.length || state.squad.filter(item => item.loan?.type !== 'out').length <= 14) return;
+    const destination = destinations[random(0, destinations.length - 1)];
+    const fee = Number(Math.max(.1, playerValue(player) * .04).toFixed(1));
+    player.loan = { type: 'out', club: destination.slug, expires: state.season + 1 };
+    player.starter = false;
+    state.budget += fee;
+    state.balance += fee;
+    state.transfers.unshift({ text: `Cesión: ${player.name} a ${teamName(destination)}`, amount: `+${money(fee)}` });
+    state.inbox.unshift({ title: `${player.name} sale cedido`, text: `${teamName(destination)} pagará ${money(fee)} y el jugador volverá la próxima temporada.` });
+    updateClubOverall();
+    save();
+    render();
+  }
+
+  function resolveSeasonLoans(nextSeason) {
+    const returning = state.squad.filter(player => player.loan?.type === 'out' && player.loan.expires <= nextSeason);
+    const departing = state.squad.filter(player => player.loan?.type === 'in' && player.loan.expires <= nextSeason);
+    state.squad = state.squad.filter(player => !departing.includes(player));
+    returning.forEach(player => { delete player.loan; });
+    if (returning.length || departing.length) state.inbox.unshift({ title: 'Fin de cesiones', text: `${returning.length} jugadores regresan y ${departing.length} vuelven a su club de origen.` });
+    updateClubOverall();
   }
 
   function signPlayer(id, payClause) {
@@ -1147,6 +1268,7 @@
       state.teams = careerLeagueTeams(state.league, selected, state.world?.groups?.[state.league]);
       state.club = state.teams.find(team => team.slug === selected.slug) || state.teams[0];
     }
+    resolveSeasonLoans(state.season + 1);
     state.season++;
     if (state.player?.contract === 0) {
       state.player.contract = 1;
@@ -1185,11 +1307,22 @@
 
   function simulateCareerFast() {
     if (state.dismissed || !window.confirm('¿Simular toda la carrera? El proceso se detendrá si te despiden o te retiras.')) return;
+    const initialHistoryLength = state.history.length;
+    const seasonsToRun = state.player ? Math.max(1, 36 - state.player.age) : 10;
+    const finalSeason = state.season + seasonsToRun - 1;
     state.careerRun = true;
-    state.careerEndSeason = state.season + (state.player ? Math.max(1, 36 - state.player.age) : 10) - 1;
-    if (state.round >= state.schedule.length) prepareNextSeason();
-    simulateRemainingSeason();
-    state.lastResult = { headline: 'Carrera en curso', score: `Temporada ${state.season} completada`, detail: 'Revisa el resultado anual y continúa cuando quieras.' };
+    state.careerEndSeason = finalSeason;
+    while (!state.dismissed && state.season <= finalSeason && (!state.player || state.player.age < 36)) {
+      if (state.round >= state.schedule.length) prepareNextSeason();
+      simulateRemainingSeason();
+      if (state.dismissed || state.season >= finalSeason || (state.player && state.player.age >= 36)) break;
+      prepareNextSeason();
+    }
+    state.careerRun = false;
+    const completedSeasons = state.history.length - initialHistoryLength;
+    state.lastResult = state.dismissed
+      ? { headline: 'Carrera interrumpida', score: `${completedSeasons} temporadas simuladas`, detail: 'La directiva te destituyó antes de completar el recorrido.' }
+      : { headline: state.player ? 'Carrera completada · retirada' : 'Carrera completa', score: `${state.history.length} temporadas`, detail: `${completedSeasons} temporadas simuladas de una vez. Todo el historial está guardado.` };
     save();
     render();
     switchTab('hub');
@@ -1239,16 +1372,17 @@
     else if (position === 5) outcome = 'Clasificado para Europa League';
     const trophies = state.competitions.filter(item => item.champion === state.club.slug).map(item => item.name);
     if (trophies.length) outcome += ` · ${trophies.join(' + ')}`;
-    const awards = calculateSeasonAwards(trophies);
+    const awards = calculateSeasonAwards();
     state.awards = state.awards || [];
     state.awards.unshift(awards);
-    const squadValue = state.squad.reduce((sum, player) => sum + playerValue(player), 0);
+    const currentSquadValue = squadValue();
     const leaguePrize = Math.max(1, (state.teams.length - position + 1) * (division.tier === 2 ? .75 : 1.6));
     const trophyPrize = trophies.reduce((sum, trophy) => sum + (/Champions|Libertadores|Mundial/.test(trophy) ? 22 : 8), 0);
     const reputationBonus = Math.max(0, (state.board - 50) / 10);
-    const prize = Number((leaguePrize + trophyPrize + reputationBonus + squadValue * .018).toFixed(1));
+    const prize = Number((leaguePrize + trophyPrize + reputationBonus + currentSquadValue * .018).toFixed(1));
     const playerStats = state.player ? { goals: state.player.goals, assists: state.player.assists, rating: state.player.form.toFixed(1), salary: state.player.salary } : null;
-    const summary = { season: state.season, league: state.league, position, points: club.pts, gf: club.gf, ga: club.ga, outcome, trophies, prize, movement, playerStats, awards };
+    const development = developSquad();
+    const summary = { season: state.season, league: state.league, position, points: club.pts, gf: club.gf, ga: club.ga, outcome, trophies, prize, movement, playerStats, awards, development };
     state.history.push(summary);
     state.seasonReview = summary;
     state.board = clamp(state.board + (position <= 3 ? 12 : position <= 5 ? 4 : -8), 10, 100);
@@ -1309,15 +1443,19 @@
 
   async function loadCatalog() {
     try {
-      const response = await fetch('/catalog');
-      if (!response.ok) throw new Error('Catálogo no disponible');
-      catalog = await response.json();
+      const [catalogResponse, leaguesResponse] = await Promise.all([fetch('/catalog'), fetch('/official-leagues')]);
+      if (!catalogResponse.ok) throw new Error('Catálogo no disponible');
+      catalog = await catalogResponse.json();
+      officialLeagues = leaguesResponse.ok ? await leaguesResponse.json() : {};
       if (state && state.role !== 'selector') {
+        const allowedCompetitions = new Set(['cup', 'champions', 'europa', 'conference']);
+        state.competitions = (state.competitions || []).filter(competition => allowedCompetitions.has(competition.id));
         const resolved = findCareerTeam(state.club.slug, state.club.group) || findCareerTeam(state.club.slug);
         const fullLeagueSize = catalogGroup(state.league).length;
         const wrongLeague = resolved && resolved.group !== state.league;
         const untouchedLegacyLeague = state.round === 0 && state.teams.every(team => !team.p) && state.teams.length < fullLeagueSize;
-        if (resolved && (wrongLeague || untouchedLegacyLeague)) {
+        const incompleteLeague = state.round === 0 && fullLeagueSize && state.teams.length !== fullLeagueSize;
+        if (resolved && (wrongLeague || untouchedLegacyLeague || incompleteLeague)) {
           if (wrongLeague) state.league = resolved.group;
           state.teams = careerLeagueTeams(state.league, resolved, state.world?.groups?.[state.league]);
           state.club = state.teams.find(team => team.slug === resolved.slug) || state.teams[0];
@@ -1384,6 +1522,8 @@
       if (!button) return;
       const action = button.dataset.marketAction;
       if (action === 'buy' || action === 'clause') signPlayer(button.dataset.player, action === 'clause');
+      else if (action === 'loan-in') loanPlayerIn(button.dataset.player);
+      else if (action === 'loan-out') loanPlayerOut(button.dataset.player);
       else if (action === 'scout') scoutTeam(el('career-scout-team').value);
       else if (action === 'bid') submitNegotiation(Number(button.dataset.ratio));
       else if (action === 'accept-counter') acceptCounter();

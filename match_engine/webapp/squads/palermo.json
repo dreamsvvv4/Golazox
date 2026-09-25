@@ -118,9 +118,178 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Palermo FC (2025/2026)",
       "teamLabel": "Palermo FC (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mattia Fortin",
+          "position": "GK",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Mattia Perin",
+          "position": "GK",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jesse Joronen",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Manfredi Nespola",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Patryk Peda",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tommaso Cassandro",
+          "position": "CB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Pietro Ceccaroni",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Mattia Bani",
+          "position": "CB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Giangiacomo Magnani",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Federico Barba",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Andrea Bozzolan",
+          "position": "LB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Tommaso Augello",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Niccolò Pierozzi",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Claudio Gomes",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Nahuel Estévez",
+          "position": "DM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Filippo Ranocchia",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Jacopo Segre",
+          "position": "CM",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Hernani",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Luca Mazzitelli",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Emmanuel Gyasi",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Antonio Palumbo",
+          "position": "AM",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Dennis Johnsen",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Gabriel Strefezza",
+          "position": "RW",
+          "marketValue": 6500000,
+          "rating": 81
+        },
+        {
+          "name": "Dominic Vavassori",
+          "position": "AM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Joel Pohjanpalo",
+          "position": "ST",
+          "marketValue": 3500000,
+          "rating": 82
+        },
+        {
+          "name": "Alessandro Gabrielloni",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Palermo (2026/2027)",
+      "teamLabel": "Palermo (2026-27)"
     }
   },
-  "id": 197,
+  "id": 458,
   "name": "Palermo",
   "badgeLocalPath": "/img/badges/palermo.png",
   "group": "🇮🇹 Serie B",

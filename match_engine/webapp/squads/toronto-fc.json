@@ -1,9 +1,210 @@
 {
   "slug": "toronto-fc",
-  "seasons": {},
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Luka Gavran",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "William Yarbrough",
+          "position": "GK",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Adisa De Rosario",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Benjamín Kuscevic",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Walker Zimmerman",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Zane Monlouis",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Nicksoen Gomis",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Lazar Stefanović",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Richard Chukwu",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jackson Gilman",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Stefan Kapor",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Matheus Pereira",
+          "position": "LB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Raheem Edwards",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Richie Laryea",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Kobe Franklin",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Henry Wingo",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Niklas Dorsch",
+          "position": "DM",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Nelson Palacio",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Alonso Coello",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jonathan Osorio",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Malik Henry",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Markus Cimermancic",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Djordje Mihailovic",
+          "position": "AM",
+          "marketValue": 5500000,
+          "rating": 80
+        },
+        {
+          "name": "Dániel Sallói",
+          "position": "LW",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Lewis Morgan",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Alejandro Piedrahita",
+          "position": "LW",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Derrick Etienne Jr.",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Theo Corbeanu",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Josh Sargent",
+          "position": "ST",
+          "marketValue": 16000000,
+          "rating": 84
+        },
+        {
+          "name": "Emilio Aristizábal",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jules-Anthony Vilsaint",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 66,
+        "midfield": 62,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Toronto FC (2026/2027)",
+      "teamLabel": "Toronto FC (2026-27)"
+    }
+  },
   "badgeLocalPath": "/img/badges/toronto-fc.png",
   "group": "🇺🇸 MLS",
   "nameEn": "Toronto FC",
   "nameEs": "Toronto FC",
-  "name": "Toronto FC"
+  "name": "Toronto FC",
+  "id": 11141
 }

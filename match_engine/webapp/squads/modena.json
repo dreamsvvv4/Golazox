@@ -118,9 +118,208 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Modena FC 2024-25 Serie B",
       "teamLabel": "Modena FC 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Abdullah Laidani",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Leandro Chichizola",
+          "position": "GK",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Leonardo Consiglio",
+          "position": "GK",
+          "marketValue": 225000,
+          "rating": 67
+        },
+        {
+          "name": "Andrea Maran",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Daniel Tonoli",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Bryant Nieling",
+          "position": "CB",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Francesco Folino",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Steven Nador",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Davide Adorni",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Diego Ronco",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Martino Odero",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Gastón Brugman",
+          "position": "DM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Pietro Arnaboldi",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Wisdom Acquah",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alessandro Bianco",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alessandro Sersanti",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Simone Santoro",
+          "position": "CM",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Francesco Zampano",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Paulo Azzi",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Antonio Imputato",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Treasure Egharevba",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Giuseppe Caso",
+          "position": "AM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Tito Fabbri",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Giacomo Olzer",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Kleis Bozhanaj",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Stênio",
+          "position": "RW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Luca Bacchin",
+          "position": "AM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Giuseppe Ambrosino",
+          "position": "ST",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Andrea Belotti",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Daniele Montevago",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Joris Manquant",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 62,
+        "defense": 68,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Modena (2026/2027)",
+      "teamLabel": "Modena (2026-27)"
     }
   },
-  "id": 3297,
+  "id": 1385,
   "name": "Modena FC",
   "badgeLocalPath": "/img/badges/modena.png",
   "group": "🇮🇹 Serie B",

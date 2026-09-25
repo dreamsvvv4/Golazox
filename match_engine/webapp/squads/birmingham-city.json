@@ -118,9 +118,178 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Birmingham City 2024-25 Championship",
       "teamLabel": "Birmingham City 2024-25 Championship"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "James Beadle",
+          "position": "GK",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Ryan Allsop",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Bradley Mayo",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Christoph Klarer",
+          "position": "CB",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Dael Fry",
+          "position": "CB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Phil Neumann",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Kristoffer Lund",
+          "position": "LB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Alex Cochrane",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Lee Buchanan",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Bright Osayi-Samuel",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Ethan Laird",
+          "position": "RB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Taylor Gardner-Hickman",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Tomoki Iwata",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Jhon Solís",
+          "position": "CM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Max Bird",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Seung-ho Paik",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Marc Leonard",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Liam Millar",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Demarai Gray",
+          "position": "LW",
+          "marketValue": 3500000,
+          "rating": 78
+        },
+        {
+          "name": "Carlos Vicente",
+          "position": "RW",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Patrick Roberts",
+          "position": "RW",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Scott Wright",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Jay Stansfield",
+          "position": "ST",
+          "marketValue": 18000000,
+          "rating": 85
+        },
+        {
+          "name": "August Priske",
+          "position": "ST",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Luis Vázquez",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Marvin Ducksch",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 66,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Birmingham City (2026/2027)",
+      "teamLabel": "Birmingham City (2026-27)"
     }
   },
-  "id": 1069,
+  "id": 337,
   "name": "Birmingham City",
   "badgeLocalPath": "/img/badges/birmingham-city.png",
   "group": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Championship",

@@ -118,9 +118,202 @@
       },
       "source": "Transfermarkt 🌍 Otros€” Calcio Padova 2024-25 Serie B",
       "teamLabel": "Calcio Padova 2024-25 Serie B"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Alessandro Sorrentino",
+          "position": "GK",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Louis Mouquet",
+          "position": "GK",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Simone Scaglia",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Alessandro Dellavalle",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Matteo Lovato",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Carlo Faedo",
+          "position": "CB",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Filippo Sgarbi",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Christian Pastina",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Enrico Silletti",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Matteo Cocchi",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Antonio Barreca",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Lorenzo Carissoni",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Marco Pompetti",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Diego Marcolini",
+          "position": "DM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Emanuele Zuelli",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Giovanni Giunti",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Pietro Fusi",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Alessandro Capelli",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kevin Varas",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Nicolas Galazzi",
+          "position": "AM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Papu Gómez",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Francesco Di Mariano",
+          "position": "LW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Cristian Buonaiuto",
+          "position": "LW",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Luca Zanimacchia",
+          "position": "RW",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Gianluca Caprari",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Alessandro Seghetti",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Gabriele Artistico",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Luca Moro",
+          "position": "ST",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Mattia Bortolussi",
+          "position": "ST",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Kevin Lasagna",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 67,
+        "midfield": 65,
+        "defense": 64,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Padova (2026/2027)",
+      "teamLabel": "Padova (2026-27)"
     }
   },
-  "id": 56569,
+  "id": 3037,
   "name": "Calcio Padova",
   "badgeLocalPath": "/img/badges/padova.png",
   "group": "🇮🇹 Serie B",

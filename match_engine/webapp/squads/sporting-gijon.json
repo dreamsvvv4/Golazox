@@ -118,9 +118,160 @@
       },
       "source": "Transfermarkt <\r Otros�\u001d Sporting de Gijón (2025/2026)",
       "teamLabel": "Sporting de Gijón (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Rubén Yáñez",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Egoitz Arana",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Emanuel Gularte",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Diego Sánchez",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Jorge Sáenz",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Andrés Cuenca",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Aimar Duñabeitia",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Pablo Vázquez",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Pablo García",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Guille Rosas",
+          "position": "RB",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Hugo Guillamón",
+          "position": "DM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mamadou Loum",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Nacho Martín",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Manu Rodríguez",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Àlex Corredera",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "César Gelabert",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Konrad de la Fuente",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 80
+        },
+        {
+          "name": "Gaspar Campos",
+          "position": "LW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nikita Iosifov",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Alejo Sarco",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Andrés Ferrari",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Juan Otero",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Antonio Casas",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 61,
+        "midfield": 63,
+        "defense": 60,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Sporting Gijon (2026/2027)",
+      "teamLabel": "Sporting Gijon (2026-27)"
     }
   },
-  "id": 369,
+  "id": 2448,
   "name": "Sporting de Gijón",
   "badgeLocalPath": "/img/badges/sporting-gijon.png",
   "group": "🇪🇸 La Liga 2",

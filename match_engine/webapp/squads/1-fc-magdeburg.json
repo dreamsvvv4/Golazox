@@ -118,9 +118,202 @@
       },
       "source": "Transfermarkt 🌍 Otros€” 1. FC Magdeburg 2024-25 2. Bundesliga",
       "teamLabel": "1. FC Magdeburg 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Dominik Reimann",
+          "position": "GK",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Noah Kruth",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Robert Kampa",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Tjark Möbius",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Anselmo García MacNulty",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Paul Jaeckel",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Tobias Müller",
+          "position": "CB",
+          "marketValue": 550000,
+          "rating": 71
+        },
+        {
+          "name": "Daniel Heber",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Tarek Chahed",
+          "position": "CB",
+          "marketValue": 75000,
+          "rating": 63
+        },
+        {
+          "name": "Alexander Nollenberger",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Lubambo Musonda",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Herbert Bockhorn",
+          "position": "RB",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Pierre Nadjombe",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Eldin Dzogovic",
+          "position": "RB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Luka Hyryläinen",
+          "position": "DM",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Falko Michel",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Tony Reitz",
+          "position": "DM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Felipe Chávez",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Torben Müsel",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Leon Mergner",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Moritz-Broni Kwarteng",
+          "position": "AM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Baris Atik",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Chung-hyun Lee",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Emmanuel Iyoha",
+          "position": "RW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Do-young Yoon",
+          "position": "RW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Magnus Baars",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mateusz Zukowski",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Roko Simic",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Richmond Tachie",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kevin Manthey",
+          "position": "ST",
+          "marketValue": 150000,
+          "rating": 66
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Magdeburg (2026/2027)",
+      "teamLabel": "Magdeburg (2026-27)"
     }
   },
-  "id": 14,
+  "id": 187,
   "name": "1. FC Magdeburg",
   "badgeLocalPath": "/img/badges/1-fc-magdeburg.png",
   "group": "🇩🇪 2. Bundesliga",

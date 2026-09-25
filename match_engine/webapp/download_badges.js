@@ -29,9 +29,11 @@ const hasFlag = (f) => args.includes(f);
 const DRY_RUN  = hasFlag('--dry-run');
 const FORCE    = hasFlag('--force');
 const EXTENDED = hasFlag('--extended');
+const OFFICIAL_MISSING = hasFlag('--official-missing');
 const DELAY    = parseInt(getArg('--delay') || '1500', 10);
 
 const SQUADS_DIR = path.join(__dirname, 'squads');
+const BADGES_DIR = path.join(__dirname, 'public', 'img', 'badges');
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
@@ -126,10 +128,58 @@ function loadAllTeams() {
   return teams.sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
+async function fetchTransfermarktBadge(slug) {
+  const squadPath = path.join(SQUADS_DIR, `${slug}.json`);
+  const data = JSON.parse(fs.readFileSync(squadPath, 'utf8'));
+  if (!Number.isInteger(data.id) || data.id <= 0) return null;
+  const response = await fetch(`https://tmssl.akamaized.net/images/wappen/head/${data.id}.png`, {
+    headers: { 'User-Agent': 'Mozilla/5.0' },
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!response.ok || !(response.headers.get('content-type') || '').startsWith('image/')) return null;
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (!bytes.length || bytes.length > 512 * 1024) return null;
+  const localPath = `/img/badges/${slug}.png`;
+  fs.writeFileSync(path.join(BADGES_DIR, `${slug}.png`), bytes);
+  data.badgeLocalPath = localPath;
+  fs.writeFileSync(squadPath, JSON.stringify(data, null, 2), 'utf8');
+  return localPath;
+}
+
 // ─────────────────────────────────────────────────────────────
 // Main
 // ─────────────────────────────────────────────────────────────
 async function main() {
+  if (OFFICIAL_MISSING) {
+    const leagues = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'official-leagues.json'), 'utf8'));
+    const meta = JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8'));
+    const slugs = [...new Set(Object.values(leagues).flat())];
+    const pending = slugs.filter(slug => {
+      const squad = JSON.parse(fs.readFileSync(path.join(SQUADS_DIR, `${slug}.json`), 'utf8'));
+      const badge = meta[slug]?.badgeLocalPath || squad.badgeLocalPath;
+      return !badge || !fs.existsSync(path.join(__dirname, 'public', badge.replace(/^\//, '')));
+    });
+    console.log(`\nEscudos oficiales pendientes: ${pending.length}`);
+    let ok = 0;
+    const failed = [];
+    for (let index = 0; index < pending.length; index++) {
+      const slug = pending[index];
+      if (DRY_RUN) { console.log(`[${index + 1}/${pending.length}] ${slug}`); continue; }
+      try {
+        const localPath = await fetchTransfermarktBadge(slug);
+        if (localPath) { console.log(`[${index + 1}/${pending.length}] OK ${slug}`); ok++; }
+        else { console.log(`[${index + 1}/${pending.length}] MISS ${slug}`); failed.push(slug); }
+      } catch (error) {
+        console.log(`[${index + 1}/${pending.length}] ERROR ${slug}: ${error.message}`);
+        failed.push(slug);
+      }
+      if (index < pending.length - 1) await sleep(DELAY);
+    }
+    console.log(JSON.stringify({ ok, total: pending.length, failed }, null, 2));
+    if (failed.length) process.exitCode = 1;
+    return;
+  }
+
   // ── Modo extendido (-extended): top 50 selecciones + top 100 clubes ──
   if (EXTENDED) {
     const allNames = [...new Set([...EXTENDED_NATIONALS, ...EXTENDED_CLUBS])];

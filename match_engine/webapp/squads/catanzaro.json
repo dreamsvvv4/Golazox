@@ -118,9 +118,202 @@
       },
       "source": "Transfermarkt 🌍 Otros€” US Catanzaro (2025/2026)",
       "teamLabel": "US Catanzaro (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Mirko Pigliacelli",
+          "position": "GK",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Christian Marietta",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Edoardo Borrelli",
+          "position": "GK",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Matias Antonini",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Marco Imperiale",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Marco Ruggero",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Niccolò Postiglione",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Bruno Verrengia",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Mehdi Dorval",
+          "position": "LB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Antonio Candela",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Ruggero Frosinini",
+          "position": "RB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jacopo Petriccione",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Samuel Giovane",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Franky Tchaouna",
+          "position": "CM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Simone Pafundi",
+          "position": "AM",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Gabriele Alesi",
+          "position": "AM",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Federico Cassa",
+          "position": "AM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Nicola Mosti",
+          "position": "AM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Andrej Pogacar",
+          "position": "AM",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Federico Di Francesco",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Marco D'Alessandro",
+          "position": "RW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Alejo Garnica",
+          "position": "RW",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Nicolò Buso",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Francesco Reita",
+          "position": "AM",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Pietro Iemmello",
+          "position": "ST",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Emanuele Pecorino",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "N'Dri Koffi",
+          "position": "ST",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Solomon Loubao",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Gabriel Arditi",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Franck Tchaouna",
+          "position": "ST",
+          "marketValue": 125000,
+          "rating": 65
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 69,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Catanzaro (2026/2027)",
+      "teamLabel": "Catanzaro (2026-27)"
     }
   },
-  "id": 5268,
+  "id": 4097,
   "name": "US Catanzaro",
   "badgeLocalPath": "/img/badges/catanzaro.png",
   "group": "🇮🇹 Serie B",

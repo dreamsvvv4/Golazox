@@ -118,9 +118,184 @@
       },
       "source": "Transfermarkt 🌍 Otros€” SV Elversberg 2024-25 2. Bundesliga",
       "teamLabel": "SV Elversberg 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nicolas Kristof",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tim Boss",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Frank Lehmann",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Elias Etringer",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Lukas Pinckert",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Luca Sirch",
+          "position": "CB",
+          "marketValue": 2200000,
+          "rating": 76
+        },
+        {
+          "name": "Maximilian Rohr",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Florian Le Joncour",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luis Seifert",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Lasse Günther",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Nicholas Mickelson",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Jan Gyamerah",
+          "position": "RB",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Lukasz Poreba",
+          "position": "DM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Felix Keidel",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Amara Condé",
+          "position": "DM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Frederik Schmahl",
+          "position": "CM",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Francis Onyeka",
+          "position": "AM",
+          "marketValue": 10000000,
+          "rating": 82
+        },
+        {
+          "name": "Noah Darvich",
+          "position": "AM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Maurice Krattenmacher",
+          "position": "LW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tom Zimmerschied",
+          "position": "LW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Cole Campbell",
+          "position": "RW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Lukas Petkov",
+          "position": "RW",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Raif Adam",
+          "position": "RW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Noel Futkeu",
+          "position": "ST",
+          "marketValue": 7500000,
+          "rating": 81
+        },
+        {
+          "name": "David Mokwa",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Luca Pfeiffer",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Luca Schnellbacher",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 67,
+        "defense": 69,
+        "goalkeeping": 64
+      },
+      "source": "Transfermarkt — Elversberg (2026/2027)",
+      "teamLabel": "Elversberg (2026-27)"
     }
   },
-  "id": 5924,
+  "id": 64,
   "name": "SV Elversberg",
   "badgeLocalPath": "/img/badges/sv-elversberg.png",
   "group": "🇩🇪 2. Bundesliga",

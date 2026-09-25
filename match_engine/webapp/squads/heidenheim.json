@@ -118,12 +118,181 @@
       },
       "source": "Transfermarkt 🌍 Otros€” 1. FC Heidenheim (2025/2026)",
       "teamLabel": "1. FC Heidenheim (2025-26)"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Frank Feller",
+          "position": "GK",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Thomas Dähne",
+          "position": "GK",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Paul Tschernuth",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Felix Mark",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Patrick Mainka",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Tim Siersleben",
+          "position": "CB",
+          "marketValue": 1800000,
+          "rating": 76
+        },
+        {
+          "name": "Adam Kölle",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Michael Heule",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Jonas Föhrenbach",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Leart Paçarada",
+          "position": "LB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Marnon Busch",
+          "position": "RB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Oualid Mhamdi",
+          "position": "RB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Julian Niehues",
+          "position": "DM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Marko Zrilić",
+          "position": "DM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Jan Schöppner",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Luca Kerber",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Mathias Honsak",
+          "position": "LW",
+          "marketValue": 1700000,
+          "rating": 75
+        },
+        {
+          "name": "Yannik Wagner",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Christian Conteh",
+          "position": "RW",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Paul Hennrich",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Sirlord Conteh",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Marcel Costly",
+          "position": "RW",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Alessandro Vogt",
+          "position": "ST",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Mikkel Kaufmann",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Budu Zivzivadze",
+          "position": "ST",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Maximilian Breunig",
+          "position": "ST",
+          "marketValue": 600000,
+          "rating": 71
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 65,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Heidenheim (2026/2027)",
+      "teamLabel": "Heidenheim (2026-27)"
     }
   },
-  "id": 2090,
+  "id": 2036,
   "name": "1. FC Heidenheim 1846",
   "badgeLocalPath": "/img/badges/heidenheim.png",
-  "group": "🇩🇪 Bundesliga",
+  "group": "🇩🇪 2. Bundesliga",
   "nameEs": "1. FC Heidenheim",
   "nameEn": "1. FC Heidenheim"
 }

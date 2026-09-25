@@ -198,6 +198,10 @@ const _SQUADS_META = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'squads-meta.json'), 'utf8').replace(/^\uFEFF/, '')); }
   catch (_) { return {}; }
 })();
+const OFFICIAL_LEAGUES = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'official-leagues.json'), 'utf8')); }
+  catch (_) { return {}; }
+})();
 
 
 // Catalog: name + slug + available seasons (only teams with =1 season)
@@ -2519,6 +2523,11 @@ const _VALID_FORMATIONS = new Set([
 app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
   res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=60');
   res.json(CATALOG);
+});
+
+app.get('/official-leagues', (_req, res) => {
+  res.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=300');
+  res.json(OFFICIAL_LEAGUES);
 });
 
 // -- GET /catalog-groups -----------------------

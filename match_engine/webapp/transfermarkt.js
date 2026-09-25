@@ -445,6 +445,71 @@ const TM_CLUBS = {
   // ── Ligue 2 additions ─────────────────────────────────────────
   'guingamp':                  { id: 296,   slug: 'guingamp' },
   'ea guingamp':               { id: 296,   slug: 'guingamp' },
+  'ascoli calcio':             { id: 408,   slug: 'ascoli-calcio' },
+  'fc metz':                   { id: 347,   slug: 'fc-metz' },
+  'as nancy lorraine':         { id: 1159,  slug: 'as-nancy-lorraine' },
+  // ── 2026/27 refreshed club IDs ────────────────────────────────
+  'malaga':                    { id: 1084,  slug: 'malaga' },
+  'racing santander':          { id: 630,   slug: 'real-racing-club' },
+  'albacete':                  { id: 1532,  slug: 'albacete' },
+  'cordoba':                   { id: 993,   slug: 'cordoba' },
+  'las palmas':                { id: 472,   slug: 'ud-las-palmas' },
+  'leganes':                   { id: 1244,  slug: 'cd-leganes' },
+  'sporting gijon':            { id: 2448,  slug: 'sporting-gijon' },
+  'tenerife':                  { id: 648,   slug: 'cd-tenerife' },
+  'bournemouth':               { id: 989,   slug: 'afc-bournemouth' },
+  'hull city':                 { id: 3008,  slug: 'hull-city' },
+  'birmingham city':           { id: 337,   slug: 'birmingham-city' },
+  'bristol city':              { id: 698,   slug: 'bristol-city' },
+  'norwich city':              { id: 1123,  slug: 'norwich-city' },
+  'lecce':                     { id: 1005,  slug: 'us-lecce' },
+  'monza':                     { id: 2919,  slug: 'ac-monza' },
+  'sassuolo':                  { id: 6574,  slug: 'sassuolo' },
+  'avellino':                  { id: 2331,  slug: 'avellino' },
+  'cremonese':                 { id: 2239,  slug: 'cremonese' },
+  'pisa':                      { id: 4172,  slug: 'pisa' },
+  'sampdoria':                 { id: 1038,  slug: 'sampdoria' },
+  'elversberg':                { id: 64,    slug: 'sv-elversberg' },
+  'cologne':                   { id: 3,     slug: '1-fc-koln' },
+  'mainz 05':                  { id: 39,    slug: '1-fsv-mainz-05' },
+  'arminia bielefeld':         { id: 10,    slug: 'arminia-bielefeld' },
+  'darmstadt 98':              { id: 105,   slug: 'darmstadt' },
+  'greuther furth':            { id: 65,    slug: 'greuther-furth', tmSlug: 'spvgg-greuther-furth' },
+  'heidenheim':                { id: 2036,  slug: 'heidenheim' },
+  'holstein kiel':             { id: 269,   slug: 'holstein-kiel' },
+  'kaiserslautern':            { id: 2,     slug: 'kaiserslautern' },
+  'angers':                    { id: 1420,  slug: 'angers' },
+  'auxerre':                   { id: 290,   slug: 'auxerre' },
+  'nice':                      { id: 417,   slug: 'ogc-nice' },
+  'paris fc':                  { id: 10004, slug: 'paris-fc' },
+  'troyes':                    { id: 1095,  slug: 'es-troyes-ac' },
+  'clermont':                  { id: 3524,  slug: 'clermont-foot-63' },
+  'guingamp':                  { id: 855,   slug: 'guingamp' },
+  'carrarese':                 { id: 4159,  slug: 'carrarese', tmSlug: 'carrarese-calcio-1908' },
+  'modena':                    { id: 1385,  slug: 'modena', tmSlug: 'modena-fc-2018' },
+  // ── MLS additions ─────────────────────────────────────────────
+  'charlotte fc':              { id: 78435, slug: 'charlotte-fc' },
+  'colorado rapids':           { id: 1247,  slug: 'colorado-rapids' },
+  'dc united':                 { id: 2440,  slug: 'd-c-united' },
+  'fc cincinnati':             { id: 51772, slug: 'fc-cincinnati' },
+  'houston dynamo':            { id: 9168,  slug: 'houston-dynamo-fc' },
+  'minnesota united':          { id: 56089, slug: 'minnesota-united-fc' },
+  'nashville sc':              { id: 63966, slug: 'nashville-sc' },
+  'new england revolution':    { id: 626,   slug: 'new-england-revolution' },
+  'orlando city':              { id: 45604, slug: 'orlando-city-sc' },
+  'san diego fc':              { id: 114977, slug: 'san-diego-fc' },
+  'san jose earthquakes':      { id: 218,   slug: 'san-jose-earthquakes' },
+  'st. louis city sc':         { id: 82686, slug: 'st-louis-city-sc' },
+  'cf montreal':               { id: 4078,  slug: 'cf-montreal' },
+  'chicago fire':              { id: 432,   slug: 'chicago-fire' },
+  'columbus crew':             { id: 813,   slug: 'columbus-crew' },
+  'la galaxy':                 { id: 1061,  slug: 'la-galaxy' },
+  'new york red bulls':        { id: 623,   slug: 'new-york-red-bulls' },
+  'real salt lake':            { id: 6643,  slug: 'real-salt-lake' },
+  'seattle sounders':          { id: 9636,  slug: 'seattle-sounders' },
+  'sporting kansas city':      { id: 4284,  slug: 'sporting-kansas-city' },
+  'vancouver whitecaps':       { id: 6321,  slug: 'vancouver-whitecaps' },
+  'neom sc':                   { id: 34911, slug: 'neom', tmSlug: 'al-suqoor' },
   // ── UCL / Europa ─────────────────────────────────────────────
   'young boys':                { id: 2025,  slug: 'bsc-young-boys' },
   'bsc young boys':            { id: 2025,  slug: 'bsc-young-boys' },
@@ -458,11 +523,11 @@ const TM_CLUBS = {
   'al nassr':                  { id: 18544, slug: 'al-nasr-riad' },
   'al-nassr fc':               { id: 18544, slug: 'al-nasr-riad' },
   // ── MLS ──────────────────────────────────────────────────────
-  'inter miami':               { id: 68274, slug: 'inter-miami-cf' },
-  'inter miami cf':            { id: 68274, slug: 'inter-miami-cf' },
+  'inter miami':               { id: 69261, slug: 'inter-miami-cf' },
+  'inter miami cf':            { id: 69261, slug: 'inter-miami-cf' },
   'inter de miami':            { id: 68274, slug: 'inter-miami-cf' },
   'inter de miami cf':         { id: 68274, slug: 'inter-miami-cf' },
-  'lafc':                      { id: 38464, slug: 'los-angeles-fc' },
+  'lafc':                      { id: 51828, slug: 'lafc', tmSlug: 'los-angeles-fc' },
   'los angeles fc':            { id: 38464, slug: 'los-angeles-fc' },
   'la fc':                     { id: 38464, slug: 'los-angeles-fc' },
   // ── Saudi Pro League ─────────────────────────────────────────
@@ -629,6 +694,8 @@ function resolveClub(teamName) {
   const key = teamName.toLowerCase().trim()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+  if (TM_CLUBS[key]) return TM_CLUBS[key];
+
   for (const [k, info] of Object.entries(TM_CLUBS)) {
     const normK = k.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     if (normK === key) return info;
@@ -651,12 +718,12 @@ function resolveClub(teamName) {
     return null; // slug not found in TM_CLUBS — avoid false fuzzy positives
   }
 
-  // Partial/fuzzy match — normK.includes(key) only fires when key ≥5 chars,
-  // preventing short words like 'iran' or 'peru' from matching unrelated club names.
+  // Partial match only allows a shorter query to match a longer registered alias.
+  // The reverse made reserve teams such as "Celta Fortuna" resolve as "Celta".
   let best = null, bestLen = 0;
   for (const [k, info] of Object.entries(TM_CLUBS)) {
     const normK = k.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    if ((key.includes(normK) || (key.length >= 5 && normK.includes(key))) && normK.length > bestLen) {
+    if (key.length >= 5 && normK.includes(key) && normK.length > bestLen) {
       best = info;
       bestLen = normK.length;
     }
@@ -906,21 +973,24 @@ async function searchTransfermarktClub(teamName) {
         }
       }
     } else {
-      // Club search: prefer /verband/ links first, fallback to /verein/
-      $('a[href*="/verband/"]').each((_, a) => {
-        if (found) return false;
+      const tokens = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/\b(fc|cf|cd|ud|rc|sd|ac|as|ss|sc|club|calcio|foot|football)\b/g, ' ')
+        .replace(/[^a-z0-9]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+      const queryTokens = tokens(teamName);
+      const candidates = [];
+      $('a[href*="/verein/"]').each((_, a) => {
         const href = $(a).attr('href') || '';
-        const m = href.match(/^\/([^/]+)\/[^/]+\/verband\/(\d+)/);
-        if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verband' };
+        const match = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
+        if (!match) return;
+        const candidateText = `${$(a).text()} ${$(a).closest('tr').text()} ${match[1].replace(/-/g, ' ')}`;
+        const candidateTokens = new Set(tokens(candidateText));
+        const matched = queryTokens.filter(token => candidateTokens.has(token)).length;
+        const isReserve = /(?:-ii|-b|-u\d+|-academy|-jugend|-2)$/.test(match[1]);
+        const score = matched * 10 - Math.abs(candidateTokens.size - queryTokens.length) - (isReserve ? 100 : 0);
+        candidates.push({ slug: match[1], id: parseInt(match[2], 10), type: 'verein', score, matched });
       });
-      if (!found) {
-        $('a[href*="/verein/"]').each((_, a) => {
-          if (found) return false;
-          const href = $(a).attr('href') || '';
-          const m = href.match(/^\/([^/]+)\/[^/]+\/verein\/(\d+)/);
-          if (m) found = { slug: m[1], id: parseInt(m[2], 10), type: 'verein' };
-        });
-      }
+      candidates.sort((a, b) => b.score - a.score);
+      if (candidates[0]?.matched === queryTokens.length) found = candidates[0];
     }
 
     if (_tmSearchCache.size >= _TM_CACHE_MAX) {
@@ -946,6 +1016,18 @@ function eraToSaisonId(era) {
   const m = era.match(/(\d{4})/);
   return m ? m[1] : null;
 }
+
+const MLS_2026_SLUGS = new Set([
+  'atlanta-united-fc', 'austin-fc', 'cf-montreal', 'charlotte-fc',
+  'chicago-fire', 'colorado-rapids', 'columbus-crew', 'd-c-united',
+  'fc-cincinnati', 'fc-dallas', 'houston-dynamo-fc', 'inter-miami-cf',
+  'la-galaxy', 'lafc', 'minnesota-united-fc', 'nashville-sc',
+  'new-england-revolution', 'new-york-city-fc', 'new-york-red-bulls',
+  'orlando-city-sc', 'philadelphia-union', 'portland-timbers',
+  'real-salt-lake', 'san-diego-fc', 'san-jose-earthquakes',
+  'seattle-sounders', 'sporting-kansas-city', 'st-louis-city-sc',
+  'toronto-fc', 'vancouver-whitecaps',
+]);
 
 // ─────────────────────────────────────────────────────────────
 // League-based rating estimator
@@ -995,9 +1077,9 @@ function ratingsFromLeague(leagueText = '', teamName = '') {
 // ─────────────────────────────────────────────────────────────
 // Main export: fetch squad from Transfermarkt
 // ─────────────────────────────────────────────────────────────
-async function fetchTransfermarktSquad(teamName, era) {
+async function fetchTransfermarktSquad(teamName, era, clubOverride = null, storageSlug = null) {
   // 1. Try registry first (fast, no network)
-  let club = resolveClub(teamName);
+  let club = clubOverride || resolveClub(teamName);
 
   // 2. Not in registry → dynamic search on Transfermarkt
   if (!club) {
@@ -1018,16 +1100,20 @@ async function fetchTransfermarktSquad(teamName, era) {
 
   const saisonId = eraToSaisonId(era);
   if (!saisonId) return null;
+  const localSlug = storageSlug || club.slug;
+  const transfermarktSaisonId = MLS_2026_SLUGS.has(club.slug) && saisonId === '2026'
+    ? '2025'
+    : saisonId;
 
   // 3. Check per-team file cache before hitting Transfermarkt
-  const teamFile = _loadTeamFile(club.slug);
-  if (teamFile.seasons && teamFile.seasons[saisonId]) {
+  const teamFile = _loadTeamFile(localSlug);
+  if (!process.env.TM_FORCE_REFRESH && teamFile.seasons && teamFile.seasons[saisonId]) {
     return teamFile.seasons[saisonId];
   }
 
   // National teams fetched via dynamic search come back with type:'verband'
   const urlType = club.type || 'verein';
-  const url = `https://www.transfermarkt.es/${club.slug}/kader/${urlType}/${club.id}/saison_id/${saisonId}`;
+  const url = `https://www.transfermarkt.es/${club.tmSlug || club.slug}/kader/${urlType}/${club.id}/saison_id/${transfermarktSaisonId}`;
 
   let html;
   try {
@@ -1054,19 +1140,25 @@ async function fetchTransfermarktSquad(teamName, era) {
   // We only discard if the slug clearly belongs to a DIFFERENT team (different root word).
   const canonicalHref = $('link[rel="canonical"]').attr('href') || '';
   const slugInPage = (canonicalHref.match(/transfermarkt\.\w+\/([^/]+)\/kader/) || [])[1] || '';
-  if (slugInPage && slugInPage !== club.slug) {
+  const expectedClubSlug = club.tmSlug || club.slug;
+  if (slugInPage && slugInPage !== expectedClubSlug) {
     // Accept if slug is a close variant (same first token, TM renaming)
     const GENERIC = new Set(['rc', 'cf', 'fc', 'ac', 'sc', 'cd', 'ud', 'sd', 'club', 'de', 'la', 'el', 'real', 'atletico']);
     const tokens = (s) => s.split('-').filter(t => t.length >= 3 && !GENERIC.has(t));
-    const tokA = tokens(club.slug);
+    const tokA = tokens(expectedClubSlug);
     const tokB = tokens(slugInPage);
-    const rootA = club.slug.split('-')[0];
+    const rootA = expectedClubSlug.split('-')[0];
     const rootB = slugInPage.split('-')[0];
     // Same club if they share the first token OR any meaningful (non-generic) token.
     // We fetched by the registry's stable club ID, so a shared token confirms identity
     // even when TM's slug differs (e.g. rc-deportivo ↔ deportivo-la-coruna).
     const sharesToken = tokA.some(t => tokB.includes(t));
     if (rootA !== rootB && !sharesToken) {
+      const searchedClub = await searchTransfermarktClub(teamName);
+      if (searchedClub && searchedClub.id !== club.id) {
+        console.warn(`[TM] ⚠️  ID obsoleto para "${teamName}"; reintentando con ${searchedClub.id}`);
+        return fetchTransfermarktSquad(teamName, era, searchedClub, localSlug);
+      }
       console.warn(`[TM] ⚠️  Página recibida para "${slugInPage}" pero esperábamos "${club.slug}" — descartando (raíces distintas)`);
       return null;
     }
@@ -1080,6 +1172,7 @@ async function fetchTransfermarktSquad(teamName, era) {
     || '';
 
   const rawPlayers = [];
+  const unknownPositions = new Set();
   $table.find('tr.odd, tr.even').each((_, row) => {
     const $row = $(row);
 
@@ -1093,7 +1186,10 @@ async function fetchTransfermarktSquad(teamName, era) {
     const finePos  = $row.find('table.inline-table tr').eq(1).find('td').first().text().trim();
     const posTitle = finePos || $row.find('td.zentriert').first().attr('title') || '';
     const position = mapTmPos(posTitle);
-    if (!position) return;
+    if (!position) {
+      if (posTitle) unknownPositions.add(posTitle);
+      return;
+    }
 
     // Name: club pages use td.posrela > td.hauptlink > a
     //       national team pages use td.hauptlink directly (no posrela wrapper)
@@ -1126,7 +1222,10 @@ async function fetchTransfermarktSquad(teamName, era) {
     rawPlayers.push({ name, position, marketValue });
   });
 
-  if (rawPlayers.length < 14) return null; // un plantel real tiene mínimo 14
+  if (rawPlayers.length < 14) {
+    console.warn(`[TM] ⚠️  Plantilla insuficiente para "${teamName}": ${rawPlayers.length} jugadores parseados; posiciones omitidas: ${[...unknownPositions].join(', ') || 'ninguna'}`);
+    return null;
+  }
 
   // Apply PLAYER_RATINGS overrides first (covers all famous players regardless of era),
   // then mvToRating as fallback — so Ronaldo is always 99 even if TM shows €12M today.
@@ -1158,7 +1257,7 @@ async function fetchTransfermarktSquad(teamName, era) {
   };
 
   // Save to per-team file so future requests don't need to hit Transfermarkt
-  _saveTeamFile(club.slug, club.id, teamName, saisonId, result);
+  _saveTeamFile(localSlug, club.id, teamName, saisonId, result);
 
   return result;
 }

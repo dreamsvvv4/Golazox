@@ -336,11 +336,163 @@
       },
       "source": "Transfermarkt <\r Otros�\u001d Leganés 2024-25 La Liga 2",
       "teamLabel": "Leganés 2024-25 La Liga 2"
+    },
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Luca Zidane",
+          "position": "GK",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Raúl Fernández",
+          "position": "GK",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Lalo Aguilar",
+          "position": "CB",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Marvel",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Javi Montero",
+          "position": "CB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Rubén Pulido",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Ignasi Miquel",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Enric Franquesa",
+          "position": "LB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Álvaro Tejero",
+          "position": "RB",
+          "marketValue": 1400000,
+          "rating": 75
+        },
+        {
+          "name": "Rubén Peña",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Amadou Diawara",
+          "position": "DM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Yassine Kechta",
+          "position": "CM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Zico Buurmeester",
+          "position": "CM",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Miguel Atienza",
+          "position": "CM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Andrés Campos",
+          "position": "CM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Dani Rodríguez",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Ismaël Gharbi",
+          "position": "LW",
+          "marketValue": 5000000,
+          "rating": 80
+        },
+        {
+          "name": "Patrick Soko",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Álex Sancris",
+          "position": "RW",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Naim García",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Álvaro Morata",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 83
+        },
+        {
+          "name": "Unax del Cura",
+          "position": "ST",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Álex Millán",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 64,
+        "defense": 60,
+        "goalkeeping": 62
+      },
+      "source": "Transfermarkt — Leganes (2026/2027)",
+      "teamLabel": "Leganes (2026-27)"
     }
   },
   "name": "Leganes",
   "badgeLocalPath": "/img/badges/cd-leganes.png",
   "group": "🇪🇸 La Liga 2",
   "nameEs": "CD Leganés",
-  "nameEn": "CD Leganés"
+  "nameEn": "CD Leganés",
+  "id": 1244
 }

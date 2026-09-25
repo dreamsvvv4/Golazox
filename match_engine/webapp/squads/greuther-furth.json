@@ -118,9 +118,190 @@
       },
       "source": "Transfermarkt <\r Otros�\u001d SpVgg Greuther Fürth 2024-25 2. Bundesliga",
       "teamLabel": "SpVgg Greuther Fürth 2024-25 2. Bundesliga"
+    },
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Florian Hellstern",
+          "position": "GK",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Silas Prüfrock",
+          "position": "GK",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Christian Ortag",
+          "position": "GK",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Hendry Blank",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jannis Heuer",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Krisztián Keresztes",
+          "position": "CB",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Elias Benkara",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Maxim Dal",
+          "position": "CB",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Luca Itter",
+          "position": "LB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Loris Giandomenico",
+          "position": "LB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Lukas Reich",
+          "position": "RB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Jannik Dehm",
+          "position": "RB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Sacha Bansé",
+          "position": "DM",
+          "marketValue": 650000,
+          "rating": 71
+        },
+        {
+          "name": "Paul Will",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Doni Arifi",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Philipp Müller",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Aaron Keller",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Mika Wallentowitz",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Faton Ademi",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Felix Klaus",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Mehmet Avlayici",
+          "position": "CM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Shinta Appelkamp",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Ole Pohlmann",
+          "position": "AM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Omar Megeed",
+          "position": "AM",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Jordan",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Dennis Srbeny",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Omar Sillah",
+          "position": "ST",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Benjamin Zank",
+          "position": "ST",
+          "marketValue": 250000,
+          "rating": 68
+        }
+      ],
+      "ratings": {
+        "attack": 63,
+        "midfield": 63,
+        "defense": 60,
+        "goalkeeping": 60
+      },
+      "source": "Transfermarkt — Greuther Furth (2026/2027)",
+      "teamLabel": "Greuther Furth (2026-27)"
     }
   },
-  "id": 2405,
+  "id": 65,
   "name": "SpVgg Greuther Fürth",
   "badgeLocalPath": "/img/badges/greuther-furth.png",
   "group": "🇩🇪 2. Bundesliga",

@@ -1,0 +1,172 @@
+{
+  "slug": "celta-vigo-b",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Coke Carrillo",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Caio Barone",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Marcos González",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Anxo Rodríguez",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Kike Ribes",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Pablo Meixús",
+          "position": "CB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Alexis Olmedo",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Anthony Khayat",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Seyni Mbaye Ndiaye",
+          "position": "CB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Joel López",
+          "position": "LB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Jan Oliveras",
+          "position": "LB",
+          "marketValue": 50000,
+          "rating": 62
+        },
+        {
+          "name": "Pablo Gavián",
+          "position": "RB",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Stefan Bajcetic",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Hugo Burcio",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Andrés Antañón",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Adrià Capdevila",
+          "position": "CM",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Óscar Marcos",
+          "position": "AM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Hugo Cuenca",
+          "position": "AM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Aldrine Kibet",
+          "position": "AM",
+          "marketValue": 100000,
+          "rating": 64
+        },
+        {
+          "name": "Vlad",
+          "position": "LW",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Bernard Somuah",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Ángel Arcos",
+          "position": "LW",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Germain Milla",
+          "position": "RW",
+          "marketValue": 400000,
+          "rating": 70
+        },
+        {
+          "name": "Álvaro Marín",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Ángel Davila",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 69,
+        "midfield": 65,
+        "defense": 60,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — RC Celta Fortuna (2026/2027)",
+      "teamLabel": "RC Celta Fortuna (2026-27)"
+    }
+  },
+  "id": 8733,
+  "name": "RC Celta Fortuna",
+  "group": "🇪🇸 La Liga 2",
+  "badgeLocalPath": "/img/badges/celta-vigo-b.png"
+}
