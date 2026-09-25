@@ -96,8 +96,9 @@ async function main() {
     } catch (e2) { console.error('Static intro generation failed', e2); }
   }
 
-  // If more than one page, optionally concatenate into a single video named agenda_<date>_multi.mp4
-  if (agendaOutputs.length > 1) {
+  // Always concatenate portada (intro) + all agenda pages into a single final video
+  // named "Agenda futbol TV DD-MM-YYYY.mp4".
+  if (agendaOutputs.length >= 1) {
     const listFile = path.join(OUT_DIR, `agenda_${dateStr}_multi_list.txt`);
     // include intro first if available
     const ordered = [];
@@ -109,7 +110,10 @@ async function main() {
     }
     const lines = ordered.map(f => `file '${f.replace(/'/g, "'\\''")}'`).join('\n');
     fs.writeFileSync(listFile, lines, 'utf8');
-    const outAll = path.join(OUT_DIR, `agenda_${dateStr}_multi.mp4`);
+    // Friendly output name: "Agenda futbol TV DD-MM-YYYY.mp4"
+    const [yyyy, mm, dd] = dateStr.split('-');
+    const friendlyName = `Agenda futbol TV ${dd}-${mm}-${yyyy}.mp4`;
+    const outAll = path.join(OUT_DIR, friendlyName);
     const ffmpeg = require('ffmpeg-static');
     if (ffmpeg) {
       const r = spawnSync(ffmpeg, ['-y','-f','concat','-safe','0','-i',listFile,'-c','copy', outAll], { stdio: 'inherit' });
