@@ -2148,7 +2148,7 @@ app.get('/health', async (req, res) => {
       key: 'agenda', state: agenda.events.length ? 'ok' : 'empty', count: agenda.events.length, source: agenda.source,
       ageMin: agenda.updated ? Math.round((now - agenda.updated) / 60000) : null, lastOk: agenda.updated || null,
     });
-    st.ok = st.sources.every(source => source.state === 'ok');
+    st.ok = st.sources.every(source => source.state === 'ok' || source.state === 'fallback');
     res.status(st.ok ? 200 : 503).json(st);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
