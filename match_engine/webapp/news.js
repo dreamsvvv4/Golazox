@@ -221,10 +221,11 @@ function _seed(key, entry) {
 
 function _mark(key, state, count, err) {
   const prev = _status[key] || {};
+  const available = state === 'ok' || state === 'fallback';
   _status[key] = {
     state,
     count: count != null ? count : (prev.count || 0),
-    lastOk: state === 'ok' ? Date.now() : (prev.lastOk || 0),
+    lastOk: available ? Date.now() : (prev.lastOk || 0),
     lastErr: (state === 'fail' || state === 'empty') ? Date.now() : (prev.lastErr || 0),
     err: err || (state === 'ok' ? '' : (prev.err || '')),
   };
@@ -258,7 +259,7 @@ function getStatus() {
     lastOk: s.lastOk || null,
     err: s.err || undefined,
   }));
-  const healthy = sources.length === 0 || sources.every(s => s.state === 'ok');
+  const healthy = sources.length === 0 || sources.every(s => s.state === 'ok' || s.state === 'fallback');
   return { ok: healthy, ts: now, sources };
 }
 
@@ -710,7 +711,7 @@ async function getTransfers({ forceRefresh = false } = {}) {
     _mark('transfers', 'empty', 0);
     await _refreshSnapshotFromGitHub();   // baja el último snapshot del repo (auto-update)
     const snap = _readSnapshot();
-    if (snap) { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; _tCache = { ts: now, data: snap }; return snap; }
+    if (snap) { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; _tCache = { ts: now, data: snap }; _mark('transfers', 'fallback', snap.list.length); return snap; }
     let history = [], historyTotal = 0;
     try { history = _historyView(); historyTotal = _loadDb().items.length; } catch (_) {}
     return { list: [], top: [], latest: [], history, historyTotal, updated: 0 };
@@ -721,7 +722,7 @@ async function getTransfers({ forceRefresh = false } = {}) {
     if (_tCache.data && _tCache.data.source === 'live') return _tCache.data;
     await _refreshSnapshotFromGitHub();   // baja el último snapshot del repo (auto-update)
     const snap = _readSnapshot();
-    if (snap) { try { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; } catch (_) {} _tCache = { ts: now, data: snap }; return snap; }
+    if (snap) { try { snap.history = _historyView(); snap.historyTotal = _loadDb().items.length; } catch (_) {} _tCache = { ts: now, data: snap }; _mark('transfers', 'fallback', snap.list.length); return snap; }
     if (_tCache.data) return _tCache.data;
     let history = [], historyTotal = 0;
     try { history = _historyView(); historyTotal = _loadDb().items.length; } catch (_) {}
@@ -814,14 +815,16 @@ async function getValues() {
     if (list.length) return data;
     await _refreshAuxSnapshotFromGitHub('values_snapshot.json', _VALUES_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
     const snap = _readValuesSnapshot();
-    if (snap) return snap;
+    if (snap) { _mark('values', 'fallback', snap.list.length); return snap; }
     if (_vCache.data && _vCache.data.list && _vCache.data.list.length) return { ..._vCache.data, source: 'cache' };
     return data;
   } catch (e) {
     _mark('values', 'fail', 0, e.message);
     if (_vCache.data && _vCache.data.list && _vCache.data.list.length) return _vCache.data;
     await _refreshAuxSnapshotFromGitHub('values_snapshot.json', _VALUES_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
-    return _readValuesSnapshot() || { list: [], updated: 0, source: 'unavailable' };
+    const snap = _readValuesSnapshot();
+    if (snap) { _mark('values', 'fallback', snap.list.length); return snap; }
+    return { list: [], updated: 0, source: 'unavailable' };
   }
 }
 
@@ -1030,7 +1033,7 @@ async function getRumors() {
     _mark('rumors', 'empty', 0); console.warn('[news] getRumors: 0 rumores parseados (¿cambió el HTML de Transfermarkt?)');
     await _refreshAuxSnapshotFromGitHub('rumors_snapshot.json', _RUMORS_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
     const snap = _readRumorsSnapshot();
-    if (snap) { _rCache = { ts: now, data: snap }; return snap; }
+    if (snap) { _rCache = { ts: now, data: snap }; _mark('rumors', 'fallback', snap.list.length); return snap; }
     if (_rCache.data) return { ..._rCache.data, source: 'cache' };
     return data;
   } catch (e) {
@@ -1039,7 +1042,7 @@ async function getRumors() {
     if (_rCache.data && _rCache.data.source === 'live') return _rCache.data;
     await _refreshAuxSnapshotFromGitHub('rumors_snapshot.json', _RUMORS_SNAP_FILE, d => Array.isArray(d.list) && d.list.length > 0);
     const snap = _readRumorsSnapshot();
-    if (snap) { _rCache = { ts: now, data: snap }; return snap; }
+    if (snap) { _rCache = { ts: now, data: snap }; _mark('rumors', 'fallback', snap.list.length); return snap; }
     if (_rCache.data) return _rCache.data;
     return { list: [], updated: 0 };
   }
