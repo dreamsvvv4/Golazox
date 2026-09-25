@@ -90,5 +90,22 @@ module.exports = {
       error_file: './logs/daily-error.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss',
     },
+
+    // ── Resumable global league and squad expansion ────────────────────────
+    {
+      name:         'golazox-league-expansion',
+      script:       'expand_leagues_bg.js',
+      args:         '--watch --limit 25 --delay 5000 --cycle-delay 600000',
+      instances:    1,
+      exec_mode:    'fork',
+      autorestart:  true,
+      watch:        false,
+      max_memory_restart: '384M',
+      restart_delay: 30000,
+      env_production: { NODE_ENV: 'production' },
+      out_file:     './logs/league-expansion-pm2.log',
+      error_file:   './logs/league-expansion-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss',
+    },
   ],
 };

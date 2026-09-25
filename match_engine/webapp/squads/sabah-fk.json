@@ -1,0 +1,189 @@
+{
+  "slug": "sabah-fk",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Stas Pokatilov",
+          "position": "GK",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Amin Ramazanov",
+          "position": "GK",
+          "marketValue": 125000,
+          "rating": 65
+        },
+        {
+          "name": "Ravan Mirzammadov",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Steve Solvet",
+          "position": "CB",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Aden McCarthy",
+          "position": "CB",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Rahman Dashdamirov",
+          "position": "CB",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Júnior Almeida",
+          "position": "CB",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Godfred Boakye",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tymoteusz Puchacz",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Akim Zedadka",
+          "position": "RB",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Tellur Mütallimov",
+          "position": "RB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "Ivan Lepinjica",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Umarali Rakhmonaliev",
+          "position": "DM",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Zinédine Ould Khaled",
+          "position": "DM",
+          "marketValue": 350000,
+          "rating": 69
+        },
+        {
+          "name": "Rodrigo Fernandes",
+          "position": "DM",
+          "marketValue": 175000,
+          "rating": 66
+        },
+        {
+          "name": "Du Queiroz",
+          "position": "CM",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Aleksey Isayev",
+          "position": "CM",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Abdulakh Khaybulayev",
+          "position": "CM",
+          "marketValue": 450000,
+          "rating": 70
+        },
+        {
+          "name": "Rauf Rüstamli",
+          "position": "CM",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Khayal Aliyev",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Joy-Lance Mickels",
+          "position": "LW",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Veljko Simic",
+          "position": "LW",
+          "marketValue": 750000,
+          "rating": 72
+        },
+        {
+          "name": "Christian Nwachukwu",
+          "position": "LW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Younes Lachaab",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Kaheem Parris",
+          "position": "RW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Xander Severina",
+          "position": "RW",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Carlos Eduardo",
+          "position": "ST",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Orphé Mbina",
+          "position": "ST",
+          "marketValue": 350000,
+          "rating": 69
+        }
+      ],
+      "ratings": {
+        "attack": 68,
+        "midfield": 60,
+        "defense": 61,
+        "goalkeeping": 63
+      },
+      "source": "Transfermarkt — Sabah FK (2026/2027)",
+      "teamLabel": "Sabah FK (2026-27)"
+    }
+  },
+  "id": 63993,
+  "name": "Sabah FK",
+  "badgeLocalPath": "/img/badges/sabah-fk.png"
+}

@@ -1,0 +1,231 @@
+{
+  "slug": "fk-bodo-glimt",
+  "seasons": {
+    "2026": {
+      "formation": "4-3-3",
+      "players": [
+        {
+          "name": "Nikita Haikin",
+          "position": "GK",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Julian Faye Lund",
+          "position": "GK",
+          "marketValue": 300000,
+          "rating": 68
+        },
+        {
+          "name": "Martin Lund Andersen",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Odin Bjørtuft",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Villads Nielsen",
+          "position": "CB",
+          "marketValue": 2300000,
+          "rating": 77
+        },
+        {
+          "name": "Jostein Gundersen",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Haitam Aleesami",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Matias Bobo Høgsæt Jaiteh",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Mathias Blix Olsen",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Tobias Solbakken",
+          "position": "CB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Fredrik Bjørkan",
+          "position": "LB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Isak Dybvik Määttä",
+          "position": "LB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Fredrik Sjøvold",
+          "position": "RB",
+          "marketValue": 8000000,
+          "rating": 82
+        },
+        {
+          "name": "Kasper Solhaug",
+          "position": "RB",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Patrick Berg",
+          "position": "DM",
+          "marketValue": 7000000,
+          "rating": 81
+        },
+        {
+          "name": "Joshua Kitolano",
+          "position": "DM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Sondre Auklend",
+          "position": "CM",
+          "marketValue": 2700000,
+          "rating": 77
+        },
+        {
+          "name": "Magnus Riisnæs",
+          "position": "CM",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Sondre Brunstad Fet",
+          "position": "CM",
+          "marketValue": 900000,
+          "rating": 73
+        },
+        {
+          "name": "Ulrik Saltnes",
+          "position": "CM",
+          "marketValue": 700000,
+          "rating": 72
+        },
+        {
+          "name": "Erling Eliassen",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jesper Rabben Nygård",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Teo Ingilæ",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Levi Monsen Yeboah",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Milton Käld",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Assan Sanyang",
+          "position": "CM",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Jens Petter Hauge",
+          "position": "LW",
+          "marketValue": 4500000,
+          "rating": 79
+        },
+        {
+          "name": "Daniel Bassi",
+          "position": "LW",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Hindrin Chooly",
+          "position": "LW",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Ole Didrik Blomberg",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Joel Mvuka",
+          "position": "RW",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Ola Brynhildsen",
+          "position": "ST",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Andreas Helmersen",
+          "position": "ST",
+          "marketValue": 1000000,
+          "rating": 73
+        },
+        {
+          "name": "Mikkel Bro Hansen",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Jakob Strand",
+          "position": "ST",
+          "marketValue": 0,
+          "rating": null
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 65,
+        "defense": 69,
+        "goalkeeping": 61
+      },
+      "source": "Transfermarkt — FK Bodø/Glimt (2026/2027)",
+      "teamLabel": "FK Bodø/Glimt (2026-27)"
+    }
+  },
+  "id": 501,
+  "name": "FK Bodø/Glimt",
+  "badgeLocalPath": "/img/badges/fk-bodo-glimt.png"
+}

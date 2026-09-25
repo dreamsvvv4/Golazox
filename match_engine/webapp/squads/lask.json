@@ -1,0 +1,177 @@
+{
+  "slug": "lask",
+  "seasons": {
+    "2026": {
+      "formation": "4-4-2",
+      "players": [
+        {
+          "name": "Lukas Jungwirth",
+          "position": "GK",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Tobias Schützenauer",
+          "position": "GK",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Fabian Schillinger",
+          "position": "GK",
+          "marketValue": 0,
+          "rating": null
+        },
+        {
+          "name": "Daniel Elfadli",
+          "position": "CB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Andrés Andrade",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "João Tornich",
+          "position": "CB",
+          "marketValue": 2500000,
+          "rating": 77
+        },
+        {
+          "name": "Xavier Mbuyamba",
+          "position": "CB",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Manoël Verhaeghe",
+          "position": "CB",
+          "marketValue": 1200000,
+          "rating": 74
+        },
+        {
+          "name": "Cheikne Kébé",
+          "position": "CB",
+          "marketValue": 250000,
+          "rating": 68
+        },
+        {
+          "name": "Miguel Freckleton",
+          "position": "CB",
+          "marketValue": 200000,
+          "rating": 67
+        },
+        {
+          "name": "George Bello",
+          "position": "LB",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Yvan Dibango",
+          "position": "LB",
+          "marketValue": 1300000,
+          "rating": 74
+        },
+        {
+          "name": "Kasper Jørgensen",
+          "position": "RB",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Melayro Bogarde",
+          "position": "DM",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Art Smakaj",
+          "position": "DM",
+          "marketValue": 600000,
+          "rating": 71
+        },
+        {
+          "name": "Robert Ljubicic",
+          "position": "CM",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Sascha Horvath",
+          "position": "CM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Alessandro Schöpf",
+          "position": "CM",
+          "marketValue": 800000,
+          "rating": 72
+        },
+        {
+          "name": "Florian Flecker",
+          "position": "CM",
+          "marketValue": 500000,
+          "rating": 70
+        },
+        {
+          "name": "Krystof Danek",
+          "position": "AM",
+          "marketValue": 2000000,
+          "rating": 76
+        },
+        {
+          "name": "Nael Kane",
+          "position": "RW",
+          "marketValue": 150000,
+          "rating": 66
+        },
+        {
+          "name": "Moses Usor",
+          "position": "ST",
+          "marketValue": 6000000,
+          "rating": 80
+        },
+        {
+          "name": "Sasa Kalajdzic",
+          "position": "ST",
+          "marketValue": 4000000,
+          "rating": 79
+        },
+        {
+          "name": "Samuel Adeniran",
+          "position": "ST",
+          "marketValue": 3000000,
+          "rating": 78
+        },
+        {
+          "name": "Ramiz Harakaté",
+          "position": "ST",
+          "marketValue": 1500000,
+          "rating": 75
+        },
+        {
+          "name": "Christoph Lang",
+          "position": "ST",
+          "marketValue": 800000,
+          "rating": 72
+        }
+      ],
+      "ratings": {
+        "attack": 60,
+        "midfield": 60,
+        "defense": 60,
+        "goalkeeping": 65
+      },
+      "source": "Transfermarkt — LASK (2026/2027)",
+      "teamLabel": "LASK (2026-27)"
+    }
+  },
+  "id": 413,
+  "name": "LASK",
+  "badgeLocalPath": "/img/badges/lask.png"
+}

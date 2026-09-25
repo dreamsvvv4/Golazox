@@ -17,6 +17,7 @@
   const CONMEBOL = new Set(['argentinien', 'bolivien', 'brasilien', 'chile', 'kolumbien', 'ecuador', 'paraguay', 'peru', 'uruguay', 'venezuela']);
   let catalog = [];
   let officialLeagues = {};
+  let expandedLeagues = {};
   let state = null;
 
   const el = id => document.getElementById(id);
@@ -41,7 +42,7 @@
   };
   const uniqueTeams = teams => [...new Map(teams.map(team => [teamKey(team), team])).values()];
   const catalogGroup = group => {
-    const officialSlugs = officialLeagues[group];
+    const officialSlugs = officialLeagues[group] || expandedLeagues[group];
     const teams = officialSlugs?.length
       ? officialSlugs.map(slug => catalog.find(team => team.slug === slug)).filter(Boolean)
       : catalog.filter(team => team.group === group && isModernTeam(team));
@@ -290,6 +291,16 @@
     return { id, name, type, participants: shuffled(draw), rounds: [], status: 'ready', champion: null };
   }
 
+  function createLeaguePhaseCompetition(participants) {
+    const available = [...new Set(participants)].filter(slug => findTeam(slug));
+    return {
+      id: 'champions', name: 'Champions League', type: 'Fase liga · 36 equipos · 8 jornadas',
+      format: 'league-phase', participants: shuffled(available), rounds: [], leagueTable: [],
+      leaguePhaseComplete: false, knockoutParticipants: [], knockoutStartRound: 0,
+      status: 'ready', champion: null
+    };
+  }
+
   function groupRanking(group) {
     return state.world?.rankings?.[group]
       || catalogGroup(group).sort((a, b) => (b.ovr || 0) - (a.ovr || 0)).map(team => team.slug);
@@ -312,11 +323,14 @@
     const europeanGroups = PYRAMIDS.map(pyramid => pyramid.first).filter(group => groups.includes(group));
     const domesticGroups = division.second ? [division.first, division.second] : [state.league];
     const cupSlugs = [...new Set(domesticGroups.flatMap(group => state.world?.groups?.[group] || catalogGroup(group).map(team => team.slug)))];
-    const champions = rankedPool(europeanGroups, 0, 4);
+    const currentChampions = expandedLeagues['🏆 UEFA Champions League'] || [];
+    const champions = state.season === 1 && currentChampions.length === 36
+      ? currentChampions.filter(slug => findTeam(slug))
+      : rankedPool(europeanGroups, 0, 8).slice(0, 36);
     const europa = rankedPool(europeanGroups, 4, 6);
     const conference = rankedPool(europeanGroups, 6, 8);
     const competitions = [createCompetition('cup', 'Copa nacional', 'Primera y Segunda · eliminación directa', cupSlugs, false, 16)];
-    if (division.tier === 1 && champions.includes(state.club.slug)) competitions.push(createCompetition('champions', 'Champions League', 'Élite europea · 16 equipos', champions, true, 16));
+    if (division.tier === 1 && champions.includes(state.club.slug) && champions.length === 36) competitions.push(createLeaguePhaseCompetition(champions));
     else if (division.tier === 1 && europa.includes(state.club.slug)) competitions.push(createCompetition('europa', 'Europa League', 'Torneo continental · 16 equipos', europa, false, 16));
     else if (division.tier === 1 && conference.includes(state.club.slug)) competitions.push(createCompetition('conference', 'Conference League', 'Torneo continental · 16 equipos', conference, false, 16));
     return competitions;
@@ -649,7 +663,9 @@
     const competitions = state.competitions.map(competition => {
       const champion = competition.champion ? findTeam(competition.champion) : null;
       const rounds = competition.rounds.map(round => `<div class="career-bracket-round"><h5>${clean(round.label)}</h5>${round.matches.map(match => `<div class="career-bracket-match"><span><img src="${clean(badge(findTeam(match.home)))}" alt="">${clean(teamName(findTeam(match.home)))}</span><b>${match.homeGoals} - ${match.awayGoals}</b><span><img src="${clean(badge(findTeam(match.away)))}" alt="">${clean(teamName(findTeam(match.away)))}</span></div>`).join('')}</div>`).join('');
-      return `<article class="career-competition"><header><div><span>${clean(competition.type)}</span><h4>${clean(competition.name)}</h4></div>${champion ? `<strong><img src="${clean(badge(champion))}" alt="">${clean(teamName(champion))} campeón</strong>` : `<strong>${competition.participants.length} equipos · En juego</strong>`}</header><div class="career-bracket">${rounds || `<p>Cuadro preparado. ${competition.participants.length} equipos, eliminación directa.</p>`}</div>${competition.status === 'finished' ? '' : `<footer><button data-comp="${clean(competition.id)}">Simular ronda</button><button data-comp-all="${clean(competition.id)}">Simular torneo completo</button></footer>`}</article>`;
+      const leagueTable = competition.leagueTable?.length ? `<div class="career-bracket-round"><h5>Clasificación de la fase liga</h5>${competition.leagueTable.map((row, index) => `<div class="career-bracket-match"><b>${index + 1}</b><span><img src="${clean(badge(findTeam(row.slug)))}" alt="">${clean(teamName(findTeam(row.slug)))}</span><strong>${row.pts} pts · ${row.gf - row.ga >= 0 ? '+' : ''}${row.gf - row.ga}</strong></div>`).join('')}</div>` : '';
+      const pending = competition.format === 'league-phase' ? 'Fase liga preparada: 36 equipos, 8 rivales por club.' : `Cuadro preparado. ${competition.participants.length} equipos, eliminación directa.`;
+      return `<article class="career-competition"><header><div><span>${clean(competition.type)}</span><h4>${clean(competition.name)}</h4></div>${champion ? `<strong><img src="${clean(badge(champion))}" alt="">${clean(teamName(champion))} campeón</strong>` : `<strong>${competition.participants.length} equipos · En juego</strong>`}</header><div class="career-bracket">${leagueTable}${rounds || `<p>${pending}</p>`}</div>${competition.status === 'finished' ? '' : `<footer><button data-comp="${clean(competition.id)}">Simular ronda</button><button data-comp-all="${clean(competition.id)}">Simular torneo completo</button></footer>`}</article>`;
     }).join('') || '<p class="career-market-note">No te has clasificado para competiciones esta temporada.</p>';
     const world = state.world?.rankings ? `<section class="career-world"><header><div><span>MOTOR DE TEMPORADA</span><h4>Ligas simuladas en segundo plano</h4></div><b>${Object.keys(state.world.rankings).length} competiciones</b></header><div>${PYRAMIDS.map(({ first }) => `<article><strong>${clean(first)}</strong>${(state.world.rankings[first] || []).slice(0, 4).map((slug, index) => `<span><i>${index + 1}</i><img src="${clean(badge(findTeam(slug)))}" alt="">${clean(teamName(findTeam(slug)))}</span>`).join('')}</article>`).join('')}</div></section>` : '';
     el('career-competitions').innerHTML = competitions + world;
@@ -814,9 +830,53 @@
     return clamp(careerFactors().reduce((sum, factor) => sum + factor.value, 0), -6, 6);
   }
 
+  function simulateLeaguePhase(competition) {
+    const participants = competition.participants;
+    const table = new Map(participants.map(slug => [slug, { slug, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 }]));
+    const userMatches = [];
+    for (let offset = 1; offset <= 4; offset++) {
+      for (let index = 0; index < participants.length; index++) {
+        const home = findTeam(participants[index]);
+        const away = findTeam(participants[(index + offset) % participants.length]);
+        const userInMatch = home.slug === state.club.slug || away.slug === state.club.slug;
+        const score = localScore(home, away, userInMatch ? state.club.slug : '');
+        const homeRow = table.get(home.slug);
+        const awayRow = table.get(away.slug);
+        homeRow.p++; awayRow.p++; homeRow.gf += score[0]; homeRow.ga += score[1]; awayRow.gf += score[1]; awayRow.ga += score[0];
+        if (score[0] > score[1]) { homeRow.w++; awayRow.l++; homeRow.pts += 3; }
+        else if (score[1] > score[0]) { awayRow.w++; homeRow.l++; awayRow.pts += 3; }
+        else { homeRow.d++; awayRow.d++; homeRow.pts++; awayRow.pts++; }
+        if (userInMatch) userMatches.push({ home: home.slug, away: away.slug, homeGoals: score[0], awayGoals: score[1] });
+      }
+    }
+    competition.leagueTable = [...table.values()].sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+    const direct = competition.leagueTable.slice(0, 8).map(row => row.slug);
+    const playoffPool = competition.leagueTable.slice(8, 24).map(row => row.slug);
+    const playoffMatches = [];
+    for (let index = 0; index < 8; index++) {
+      const home = findTeam(playoffPool[index]);
+      const away = findTeam(playoffPool[15 - index]);
+      let score = localScore(home, away, home.slug === state.club.slug || away.slug === state.club.slug ? state.club.slug : '');
+      if (score[0] === score[1]) score[random(0, 1)]++;
+      playoffMatches.push({ home: home.slug, away: away.slug, homeGoals: score[0], awayGoals: score[1], winner: score[0] > score[1] ? home.slug : away.slug });
+    }
+    competition.rounds.push({ label: 'Fase liga · tus 8 jornadas', matches: userMatches });
+    competition.rounds.push({ label: 'Playoff de acceso a octavos', matches: playoffMatches });
+    competition.knockoutParticipants = shuffled(direct.concat(playoffMatches.map(match => match.winner)));
+    competition.knockoutStartRound = competition.rounds.length;
+    competition.leaguePhaseComplete = true;
+    competition.status = 'playing';
+  }
+
   function simulateCompetitionRound(competition) {
     if (competition.status === 'finished') return;
-    const participants = competition.rounds.length
+    if (competition.format === 'league-phase' && !competition.leaguePhaseComplete) {
+      simulateLeaguePhase(competition);
+      return;
+    }
+    const participants = competition.format === 'league-phase' && competition.rounds.length === competition.knockoutStartRound
+      ? competition.knockoutParticipants
+      : competition.rounds.length
       ? competition.rounds[competition.rounds.length - 1].matches.map(match => match.winner)
       : competition.participants;
     if (participants.length <= 1) {
@@ -1443,10 +1503,11 @@
 
   async function loadCatalog() {
     try {
-      const [catalogResponse, leaguesResponse] = await Promise.all([fetch('/catalog'), fetch('/official-leagues')]);
+      const [catalogResponse, leaguesResponse, expandedResponse] = await Promise.all([fetch('/catalog'), fetch('/official-leagues'), fetch('/expanded-leagues')]);
       if (!catalogResponse.ok) throw new Error('Catálogo no disponible');
       catalog = await catalogResponse.json();
       officialLeagues = leaguesResponse.ok ? await leaguesResponse.json() : {};
+      expandedLeagues = expandedResponse.ok ? await expandedResponse.json() : {};
       if (state && state.role !== 'selector') {
         const allowedCompetitions = new Set(['cup', 'champions', 'europa', 'conference']);
         state.competitions = (state.competitions || []).filter(competition => allowedCompetitions.has(competition.id));
@@ -1455,6 +1516,7 @@
         const wrongLeague = resolved && resolved.group !== state.league;
         const untouchedLegacyLeague = state.round === 0 && state.teams.every(team => !team.p) && state.teams.length < fullLeagueSize;
         const incompleteLeague = state.round === 0 && fullLeagueSize && state.teams.length !== fullLeagueSize;
+        const legacyChampions = state.round === 0 && state.competitions.some(competition => competition.id === 'champions' && competition.format !== 'league-phase');
         if (resolved && (wrongLeague || untouchedLegacyLeague || incompleteLeague)) {
           if (wrongLeague) state.league = resolved.group;
           state.teams = careerLeagueTeams(state.league, resolved, state.world?.groups?.[state.league]);
@@ -1466,6 +1528,10 @@
             state.competitions = buildSeasonCompetitions();
             state.lastResult = { headline: 'Competición corregida', score: `${teamName(resolved)} · ${resolved.group}`, detail: 'La carrera continúa en la liga real de tu club.' };
           }
+          save();
+        }
+        if (legacyChampions) {
+          state.competitions = buildSeasonCompetitions();
           save();
         }
       }

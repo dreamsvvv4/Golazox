@@ -1,0 +1,16 @@
+{
+  "season": "2026",
+  "competitions": [
+    { "code": "CL", "group": "🏆 UEFA Champions League", "kind": "overlay", "expectedTeams": 36, "priority": 1 },
+    { "code": "NL1", "group": "🇳🇱 Eredivisie", "kind": "league", "expectedTeams": 18, "priority": 2 },
+    { "code": "PO1", "group": "🇵🇹 Liga Portugal", "kind": "league", "expectedTeams": 18, "priority": 2 },
+    { "code": "BE1", "group": "🇧🇪 Belgian Pro League", "kind": "league", "expectedTeams": 18, "priority": 3 },
+    { "code": "SC1", "group": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership", "kind": "league", "expectedTeams": 12, "priority": 3 },
+    { "code": "TR1", "group": "🇹🇷 Süper Lig", "kind": "league", "expectedTeams": 18, "priority": 3 },
+    { "code": "A1", "group": "🇦🇹 Austrian Bundesliga", "kind": "league", "expectedTeams": 12, "priority": 4 },
+    { "code": "RU1", "group": "🇷🇺 Russian Premier League", "kind": "league", "expectedTeams": 16, "priority": 4 },
+    { "code": "MEXA", "group": "🇲🇽 Liga MX", "kind": "league", "expectedTeams": 18, "priority": 4 },
+    { "code": "JAP1", "group": "🇯🇵 J1 League", "kind": "league", "expectedTeams": 20, "priority": 5 },
+    { "code": "CSL", "group": "🇨🇳 Chinese Super League", "kind": "league", "expectedTeams": 16, "priority": 5 }
+  ]
+}

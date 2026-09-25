@@ -20,7 +20,9 @@
     "seed:bg": "node seed_squads_bg.js",
     "seed:dry": "node seed_squads_bg.js --dry-run",
     "seed:once": "node seed_squads_bg.js --once",
-    "seed:badges": "node seed_squads_bg.js --badges-only --once"
+    "seed:badges": "node seed_squads_bg.js --badges-only --once",
+    "expand:discover": "node expand_leagues_bg.js --discover-only",
+    "expand:leagues": "node expand_leagues_bg.js"
   },
   "dependencies": {
     "cheerio": "^1.1.0",

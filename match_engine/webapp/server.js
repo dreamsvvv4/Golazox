@@ -202,6 +202,10 @@ const OFFICIAL_LEAGUES = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'official-leagues.json'), 'utf8')); }
   catch (_) { return {}; }
 })();
+const EXPANDED_LEAGUES = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'expanded-leagues.json'), 'utf8')); }
+  catch (_) { return {}; }
+})();
 
 
 // Catalog: name + slug + available seasons (only teams with =1 season)
@@ -2528,6 +2532,11 @@ app.get('/catalog', _rateLimit(8, 5 * 60000), (_req, res) => {
 app.get('/official-leagues', (_req, res) => {
   res.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=300');
   res.json(OFFICIAL_LEAGUES);
+});
+
+app.get('/expanded-leagues', (_req, res) => {
+  res.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=300');
+  res.json(EXPANDED_LEAGUES);
 });
 
 // -- GET /catalog-groups -----------------------
